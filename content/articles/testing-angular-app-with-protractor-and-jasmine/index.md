@@ -19,7 +19,7 @@ As a prerequisite, the reader must have a good understanding of:
 - AngularJS framework
 
 ### Table of contents
-- [Terms and Terminologies](#terms-and-terminologies)
+- [Terminologies](#terminologies)
 - [Why Protractor?](#why-protractor)
 - [Why Jasmine?](#why-jasmine)
 - [Setup and configuration](#setup-and-configuration)
@@ -27,7 +27,7 @@ As a prerequisite, the reader must have a good understanding of:
 - [Conclusion](#conclusion)
 - [Further reading](#further-reading)
 
-### Terms and Terminologies
+### Terminologies
 - [AngularJs](https://angularjs.org/) is an open-source javascript framework used to build front-end applications.
 - [Jasmine](https://jasmine.github.io/) is an open-source, behavior-driven development framework for testing JavaScript code.
 - [WebDriver Js](https://www.npmjs.com/package/webdriver-manager) is the official Javascript implementation of [Selenium](https://www.selenium.dev). It helps to interact with elements on the web.
@@ -111,16 +111,18 @@ In this case, it checks the outcome of the expectation against a given outcome/v
 In Jasmine, you will find several matchers that helps you achieve the expected test scenarios.
 
 ### Setup and configuration
-- Download and install [nodeJs](https://nodejs.org/en/download/)
-Next, you install protractor globally so it can be accessed anywhere
+Firstly, download and install [NodeJS](https://nodejs.org/en/download/).
+
+Next, we install protractor globally.
 
 `npm install -g protractor`
 
-Next, run the command
+Then, run the command the update the webdriver manager.
 
 `webdriver-manager update`
 
-Create a conf.js file in the root directory of your angular application and input the following.
+Create a `conf.js` file in the root directory of the Angular application and input the following:
+
 ```javascript
 exports.config = {
    directConnect: 'http://localhost:4444/wd/hub',
@@ -128,81 +130,90 @@ exports.config = {
    framework: ‘jasmine’,
 };
 ```
-- The "directConnect: true" option specifies where to talk to your Selenium Server (seleniumAddress). It will use the defaults for all other configurations. Chrome is the default browser.
-- The option for the "specs" should be the path to the spec javascript file which will be run when the test is being executed.
-- The "framework" property specifies the test framework to use. In our case it’s jasmine.
-- The value for the specs in the above code tells protractor to check the current directory and execute all files that have the letters "-spec.js" as their ending characters. This makes use of relative paths to files.
 
-Create a test-spec.js file anywhere you see fit in the root directory. Here you will write your tests. For now, test using the code below in your test
+- The "directConnect: true" option specifies the host that interacts with the Selenium Server (seleniumAddress). It will use the default configurations unless specified. Chrome will be used as the default browser.
+- The option for the "specs" should be the path to the specification JavaScript file that runs while testing.
+- The "framework" property specifies the test framework that we use. Here, it's Jasmine.
+- The value for the specs in the above code tells protractor to check the current directory and execute all files that have the letters "-spec.js" as their ending characters.
 
-Install Jasmine as a dependency if it is not already installed.
+Create a `test-spec.js` file in the root directory.
 
-` npm install —save-dev jasmine `
+Here, we specify the testcases.
 
-On your terminal navigate to the directory where the conf.js  file is located and run the command to begin your testing.
+Install Jasmine as a dependency, if it is not already installed.
 
-` protractor conf.js `
+`npm install --save-dev jasmine`
+
+On the terminal, navigate to the directory where the `conf.js` file is located and run the command to begin your testing:
+
+`protractor conf.js`
 
 ### Testing
-For this test, we will be carrying out a test on a popular website created using the angularJs framework. We will first navigate to the page in the search. We will then navigate to www.video.blender.org.
+For this tutorial, we will be testing a popular website called [Blender](www.video.blender.org.), built using AngularJS.
 
-Since this website is built with angularJs we will make use of protractor to capture the elements we need to manipulate.
+Since this website is built using AngularJS, we will make use of Protractor to capture the elements we need to manipulate.
 
-In this case, we will capture a search input element located at the top right corner of the page. Then we will proceed to search requests for free videos by performing functions made available to us in the protractor API that suits what we want to perform., 
+Here, we will capture a "search input" element located at the top right corner of the page.
 
-Finally, we will check the DOM interaction it causes. It is expected that video-blender will have available free videos and that a list of those free videos will be inserted in the DOM page layout and replace the initial webpage loaded list of available videos.
+Then, we will proceed to search requests for "free" videos by using the protractor API. 
 
-This will represent the interaction we expect. Performing another search for a non-existing word should also produce a change to display the result of the search.
+Finally, we will verify the DOM interaction. It is expected that video-blender will have available free videos thats lists those free videos in the DOM page layout, while replacing the initial webpage.
 
-- First we will create the describe function that will house our test. The string specifies the name of this block of tests we will be writing. The second parameter is a function that our specs will be written within.
+Performing another search for a non-existing word should also produce a change to display the result of the search.
+
+- First we will create the `describe()` function that will house our test. The string specifies the name of this block of tests we will be writing. The second parameter is a function that our specs will be written within.
 
 ```javascript
-describe("Testing exercise for protractor and Javascript application", function(){
-  })
+describe("Testing exercise for protractor and Javascript application", function() {
+})
 ```
 
-- The changes we have made will be to insert our spec. This specifies a set of related tests we will be writing. Same as the describe it has a string parameter that specifies what the test does and a function that will house the various tests.
+> Note that the function is an asynchronous function with the parameter as "done".
 
-> Note that the function is an asynchronous function, and has the parameter "done".
+This specifies that some operations within this function will not occur at the very first instance, rather it may occur later in the future by halting the flow of operations. Such operations are marked with the `await` keyphrase.
 
-This specifies that some operations within this function will not occur in an instance and may occur later in the future but then we want the normal operations to halt its flow and not continue execution until that operation is completed. Such operations are marked with the await keyphrase.
-
-The done() method is a function caller for the argument passed into the function and is called at the end of all tests to mark the end of testing the spec.
+The `done()` method is a function caller for the argument passed into the function that is called at the end of all tests, to mark the end of testing the spec.
 
 ```javascript
-describe("Testing exercise for protractor and Javascript application", function(){
+describe("Testing exercise for protractor and Javascript application", function() {
   it("Navigate to Blender Video search for videos",  async function(done){
-
-      done();
+    done();
   })
 })
 ```
-- Looking at the code below, we have added a couple of lines to it. First we are saving into the variable "url", a string to link to the angularJs powered website we want to carry out our test on. We are making use of a protractor API method (browser.get()) to make a request to the link specified.
 
-This method does get the page in an instance but takes a while and because we need its completion inorder to proceed to the next round we specify the await keyword telling it to further pause execution until the page is returned.
+In the code below, we first save a string (website URL) into the variable "url". We are making use of a protractor API method `browser.get()` to make a request to the link specified.
+
+We specify this function as `await` to process it asynchronously.
 
 ```javascript
 describe("Testing exercise for protractor and Javascript application", function(){
-  it("Navigate to Blender Video search for videos",  async function(done){
-
+  it("Navigate to Blender Video search for videos",  async function(done) {
       let url = "https://video.blender.org/"
       await browser.get(url);
-
       done();
   })
 })
 ```
 
-- Here we have written our first test. we are expecting the current page we are on to be the page we searched for. For this we also make use of the protractor API method (browser.getCurrentUrl()) to achieve this.
+Here, we have written our first testcase.
 
-- We then now go ahead to grab elements we need to perform further tests from the DOM. With the aid of the browser inspection tool we can highlight specific elements we want to grab and get information on how to grab them.
-- Based on the element, you can get them using -  it's id, class, xPath, css Selector or tag. Be sure to grab it using the most stable method, one unlikely to change.
+We are expecting the the website's home page to be loaded. For this, we also make use of the protractor API method `browser.getCurrentUrl()`.
 
-We are grabbing the search input element (searchBar), the search button click (searchButton), and the result element (searchResult).
+Now, we go ahead to grab elements that we need to perform further tests from the DOM using the browser inspection tool.
+
+Based on the element, you can fetch information using:
+- `id`
+- `class`
+- `xPath`
+- CSS selector
+- Tag
+
+We are grabbing the search input element `searchBar`, the search button click `searchButton`, and the result element `searchResult`.
 
 ```javascript
 describe("Testing exercise for protractor and Javascript application", function(){
-  it("Navigate to Blender Video search for videos",  async function(done){
+  it("Navigate to Blender Video search for videos",  async function(done) {
       let url = "https://video.blender.org/"
       await browser.get(url);
 
@@ -217,7 +228,9 @@ describe("Testing exercise for protractor and Javascript application", function(
 })
 ```
 
-- For the "searchBar", we are inputting a string value we want to test for ("free") then making a click action on the "searchButton" variable. We are expecting the 'searchResult' element to be visible on the page after the search has been made hence we test for the presence of the css style "display":"block".
+For the "searchBar", we input a string value to be `free`. If so, make a click action on the "searchButton" variable.
+
+We expect the 'searchResult' element to be visible on the page after the search has been made, hence we test for the presence of the css style `"display":"block"`.
 
 ```javascript
 describe("Testing exercise for protractor and Javascript application", function(){
@@ -231,7 +244,6 @@ describe("Testing exercise for protractor and Javascript application", function(
       let searchButton = element(by.css('.icon-search'));
       let searchResult = element(by.css('.search-result'));
     
-     
       searchBar.sendKeys("free");
       searchButton.click();
     
@@ -242,15 +254,19 @@ describe("Testing exercise for protractor and Javascript application", function(
 })
 ```
 
-- We then make a further tests for an non existing search result ("neverdwelt"). We do not clear the text in the search bar so our search gets appended to the existing "free" text in the search bar. If you want to clear the search bar so as to make a new search uses the code.
+We then make a further tests for an non-existing search result "random".
+
+We do not clear the text in the search bar, so our search gets appended to the existing "free" text in the search bar.
+
+If you want to clear the search bar, before searching for a new keyword, we have do the following:
 
 ```javascript
-  searchBar.clear().then(function() {
-  searchBar.sendKeys('neverdwelt');
+searchBar.clear().then(function() {
+  searchBar.sendKeys('random');
   })
 ```
 
-So, without changing the existing text, we append to it "neverdwelt" and programmatically trigger the search button. We are expecting the same outcome as the first, it should display the search result only in this case there are no elements in the list
+So, the result would be an empty page, since we don't find elements based on that search.
 
 ```javascript
 describe("Testing exercise for protractor and Javascript application", function(){
@@ -262,13 +278,12 @@ describe("Testing exercise for protractor and Javascript application", function(
       let searchButton = element(by.css('.icon-search'));
       let searchResult = element(by.css('.search-result'));
     
-     
       searchBar.sendKeys("free");
       searchButton.click();
     
       expect(searchResult.getCssValue('display')).toBe('block');
     
-      searchBar.sendKeys('neverdwelt');
+      searchBar.sendKeys('random');
       searchButton.click();
     
       expect(searchResult.getCssValue('display')).toBe('block');
@@ -278,23 +293,23 @@ describe("Testing exercise for protractor and Javascript application", function(
 })
 ```
 
-You should see a Chrome browser window open up and navigate to the webpage specified, perform a search and carry out the test. The test output should be 1 test, 1 assertion, 0 failures. Congratulations, you've run your first Protractor test!
+On running the code, you should see a Chrome browser window open up and navigate to the webpage specified, perform a search and carry out the test.
+
+The test output should be:
+
+`1 test, 1 assertion, 0 failures`
+
+Congratulations on your first test using Protractor!
 
 ### Conclusion
-In this tutorial you have learnt what testing is, why testing is important and the various definitions for terms used in testing. Also we got busy with codes, pulled elements from the DOM and tested our outcome, just like in a real testing application.
+In this tutorial you have learnt what testing is, why testing is important and the various definitions for terms used in testing. 
 
-Definitely with this breakdown you are good to go begin testing your angular application. It is that easy, you grab the elements from the DOM using the methods made available by protractor and you test what you expect their interactions to be.
+Also, we understood basic codes that pull elements from the DOM and test their outcome.
 
-There are a lot of options present which we can use to capture DOM elements so we can use and manipulate them.
+There are several options to capture the DOM elements for testing. Protractor is one such framework for testing Angular applications.
 
-Also available are methods that can be used to provide interaction with the elements on the page.
-
-### Further Reading
+### Further reading
 For more reference check out the jasmine docs
 - [Jasmine Your_first_suite](https://jasmine.github.io/tutorials/your_first_suite)
 - [Protractor](https://www.protractortest.org/#/)
 - [Protractor API](https://www.protractortest.org/#/api)
- 
- 
- 
-
