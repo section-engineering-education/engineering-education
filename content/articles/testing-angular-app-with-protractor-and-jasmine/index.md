@@ -313,3 +313,6 @@ For more reference check out the jasmine docs
 - [Jasmine Your_first_suite](https://jasmine.github.io/tutorials/your_first_suite)
 - [Protractor](https://www.protractortest.org/#/)
 - [Protractor API](https://www.protractortest.org/#/api)
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
