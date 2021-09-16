@@ -51,8 +51,8 @@ A _web browser_ or a _mail client_ is the most widely used resolvers. To access 
 
 Chrome, Opera, Firefox, and Safari are some of the most popular browsers.
 
-#### The following is a procedure of a DNS Workflow:
-Below is what is required:
+#### Procedure of a DNS Workflow 
+We require the following:
 1. Two DNS servers
 2. A web browser
 3. A computer
@@ -74,7 +74,7 @@ The InetAddress class caches the results of the DNS lookups such that once it ha
 
 Negative results such as `host not found` are slightly problematic. It happens for the first time, and in the second trial, one succeeds. This error will occur when the first attempt timed out while the information was in transit from the remote DNS server.
 
-#### public static InetAddress getByName(String hostName) throws UnknownHostException
+> public static InetAddress getByName(String hostName) throws UnknownHostException
 `InetAddress.getByName()` is the frequently used method. It is a static method that takes the hostname that you are looking for as its arguments. It looks up the host's IP address using DNS. 
 
 It is called: `getByName()`. Assuming there is an import **java.net.\*** statement at the top of the program and any other necessary import statements.
@@ -99,7 +99,7 @@ catch(UnknownHostException ex){
 
 ```
 
-### Commonly used methods.
+### Commonly used methods
 Below is a sample code using `getByName()` method:
 
 ```java
@@ -135,7 +135,7 @@ InetAddress address = InetAddress.getByName("172.217.170.164");
 
 > Hostnames are more stable than IP addresses. Most services have lived at the same hostnames but have changed their IP addresses severally. When choosing between hostnames like `www.google.com` and IP addresses like `172.217.170.164`, always go with the hostname.
 
-#### public static InetAddress[]getAllByName(String hostName) throws UnknownHostException
+> public static InetAddress[]getAllByName(String hostName) throws UnknownHostException
 Some computers will have more than one IP address. When given a hostname, the `InetAddress.getAllByName()` returns an array of addresses that correspond to that name.
 
 This is shown in this snippet:
