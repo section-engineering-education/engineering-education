@@ -16,7 +16,7 @@ images:
 ### Introduction
 
 `Service classes` are an excellent method to keep third-party code implementation details out of your software when calling an API method from numerous locations in your code. A side consequence of Services is that it produces a domain language specific to your app through the APIs of your services. So your view models can be read as well. Moreover, the view models can be read as well. 
-<!--more-->
+
 Creating services becomes second nature once you have mastered the concept. However, that certain functionality may be so simple when you follow that path.
 
 With the help of service classes, we will learn how to encapsulate third-party libraries and APIs and isolate them from other parts of the program. As an example, we'll look at authentication. You can hide the implementation details of third-party code in your app using service classes. When you need to call an API function numerous times across your codebase, they can be very useful.
@@ -27,7 +27,7 @@ This service class gives API functionality to the rest of the app and is commonl
 - To remove third-party packages from your codebase.
 - When there is a collection of features that can be combined.
 - To exchange functionality between different ViewModels.
-- 
+ 
 ### Common scenarios for which you might develop a service
 - Local storage can be read and written to.
 - Make use of a web API.
@@ -61,10 +61,12 @@ In its role as `API wrapper`, the service class hides any implementation details
 ```dart
 // new login class
 class Login extends StatelessWidget {
+//sign in activity
   Future<void> _signInAnonymously() async {
     try {
     //FirebaseAuth=> Firebase Authentication
       final firebaseAuth = Provider.of<FirebaseAuth>(context);
+      
       await firebaseAuth.signInAnonymously();
     } catch (e) {
       print(e); 
@@ -85,8 +87,7 @@ Although we are using the Firebase Authentication API in our code, we are still 
 
 All Firebase Authentication calls in our codebase will need to be modified or replaced. If and when our project expands, we will likely add a lot more content to our application. The most frequent security features include sharing preferences, providing privileges, tracking statistics, and local authentication. This makes it more difficult to maintain our code as APIs change.
 ### Creating service classes
-As we covered previously, a service class is nothing more than a wrapper. A solution for all of our problems. It is possible to create a generic authentication service using Firebase Authentication :
-
+As we covered previously, a service class is nothing more than a wrapper. A solution for all of our problems. Using Firebase Authentication, it is possible to create a generic authentication service:
 ```Dart
 class TheUser {
   const TheUser({@required this.id});
@@ -141,7 +142,7 @@ class ThisApp extends StatelessWidget
 }
 ```
 
-Provider.ofFirebaseAuth>(context) will be replaced by Provider.ofFirebaseAuthService> (context) for all calls. As a result, this line is no longer required to be imported in any of our client code.
+`Provider.ofFirebaseAuth>(context)` will be replaced by `Provider.ofFirebaseAuthService>(context)` for all calls. As a result, this line is no longer required to be imported in any of our client code.
 
 ```dart
 import 'package:firebaseAuth/firebaseAuth.dart';
@@ -166,8 +167,10 @@ Using the base class type, build an instance of a subclass.
 class ThisApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Provider<AuthService>( // base class
-      builder: (_) => FirebaseAuthService(), // concrete subclass
+    return Provider<AuthService>( 
+    // base class
+      builder: (_) => FirebaseAuthService(), 
+      // concrete subclass
       child: MaterialApp(
         theme: ThemeData(
           primarySwatch: Colors.blue,
