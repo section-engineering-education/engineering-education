@@ -1,4 +1,3 @@
-### Shooting method using Matlab
 ### Introduction
 In numerical analysis, the shooting method reduces a boundary value problem to an initial value problem. It is a popular method for the solution of two-point boundary value problems. If the problem is first defined by *y=f(x); y(x0)=a* and *$y(X_1)$*, it is transformed into the initial problem *y' =z(x)* and *z'(x) = f(x)* with some initial values. 
 
@@ -26,7 +25,9 @@ So if we know everything at the initial value, we would step the integration for
 The formulation of boundary value problems is different. It might be the same differential equation but what is different is that we know `y` at maybe two different time values, y(t0), y(t1).
 
 ### Why do we need a different strategy for the boundary value problem(BVP)?
-Well, thinking about the second-order initial value, there are two basic approaches: Runga Kutta 4 and the multistep method. Both approaches require that we know the solution's value (s) at `t=t0` and step forward in time using the ODE function f(t,y). Now, this is not the case with BVP. It is because we don't know the condition at the first point of integration. There are two basic approaches to BVPs, that is;
+Well, thinking about the second-order initial value, there are two basic approaches: Runga Kutta 4 and the multistep method. Both approaches require that we know the solution's value (s) at `t=t0` and step forward in time using the ODE function f(t,y). 
+
+Now, this is not the case with BVP. It is because we don't know the condition at the first point of integration. There are two basic approaches to BVPs, that is;
 - Shooting method
 - Finite difference method
 
@@ -146,7 +147,7 @@ newIC = interp1(shots, ICguesses, yL, 'linear', 'extrap');
 
 To demonstrate what is happening in the code above, we look at the sketch below. We have our `ICguesses` on the `y-axis` and `y-end` on the `x-axis`.
 
-![demonstration](shooting_four.png)
+![demonstration](/engineering-education/Implementing-shooting-method-in-Matlab/shooting_four.png)
 
 Now, that's the plot for the 'shots' and the guesses. We then want to know the guess to get `yl`. So we have three points that we know for the interpolation. They are all our target boundary conditions, that is, shots to the boundary condition and the actual target boundary condition `$y_l$`. The unknown value is the unknown guess. It is why we use them for the call to the enterprise. Shots are the `x-values`, and `ICguess` the y-values. 
 
@@ -182,4 +183,6 @@ title('Beam Deflection')
 As we can see from the plot, the shooting method is accurate as of the analytical method. For the error behavior for the shooting method, it is going to be the same as whichever IVP solver you are using.
 
 ### Conclusion
-Using the shooting method to get the solution for the linear differential equations is straightforward. The advantage of the shooting method is that you don't need the initial values. You can use guess for these values, but still, you get the solution. Thus, it reduces the time that could be spent to get the initial values. Also, at some point, the methods used to find these initial values are so tiresome, e.g., the Runga Kutta method, which is not involved in the shooting method. Matlab also makes it easier since it has some in-built functions that help to work such problems easier.
+Using the shooting method to get the solution for the linear differential equations is straightforward. The advantage of the shooting method is that you don't need the initial values. You can use guess for these values, but still, you get the solution. Thus, it reduces the time that could be spent to get the initial values.  
+
+Also, at some point, the methods used to find these initial values are so tiresome, e.g., the Runga Kutta method, which is not involved in the shooting method. Matlab also makes it easier since it has some in-built functions that help to work such problems easier.
