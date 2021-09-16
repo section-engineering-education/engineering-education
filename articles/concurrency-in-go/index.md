@@ -72,7 +72,7 @@ This program contains two functions: the *request function* and the *main functi
 
 The *main function* is set to hold more than two arguments. Next, we iterate over the URLs and send requests.
 
-In our terminal, we will pass in some URLs as a request and see how much time it took for our request to complete. Now, using the *time* command in your bash terminal pass in these URLs: `time go run main.go google.com github.com youtube.com amazon.com plaid.com gitlab.com` and run the command. 
+In our terminal, we will pass in some URLs as a request and see how much time it took for our request to complete. Now, using the *time* command in your bash terminal pass in these URLs: `time go run main.go google.com github.com youtube.com amazon.com plaid.com gitlab.com heroku.com notion.com` and run the command. 
 
 ![Zero concurrency](/engineering-education/concurrency-in-go/noconcurrency.png)
 
