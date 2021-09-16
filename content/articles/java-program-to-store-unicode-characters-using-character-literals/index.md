@@ -4,6 +4,13 @@ Only a single String object may be stored in memory by Java's virtual engine if 
 There is an international standard for encoding characters that can be used by everyone. 
 
 Many different characters can be represented in various forms such as text files and websites, using this character set. Characters can be stored in 4 bytes in Unicode. Character literals can be stored in char data types. There are three types of character encoding: UTF-8, UTF-16, and UTF-32. Web content should use only UTF-8.
+If you want to use character literals, put them in single quotation marks.
+Single quotes can be used to specify any printable character other than a backslash () as the character itself. `a`, `A` and `+` are examples of these literals.
+In order to represent characters that cannot be typed out in this manner, such as the backspace, escape sequences must be used instead. As with other character literals, escape sequences are wrapped in single quotes.
+There is a backslash and one of the following after it.
+- By just one character.
+- Octal number in the range of 000 to 377.
+- Characters in Unicode that are identified by the letter "U" and four decimal-digit numbers.
 ### Encoding approaches
 #### 1. First method: Giving the char datatypes Unicode.
 
@@ -114,7 +121,12 @@ A
 To print Unicode characters, enter the escape sequence "u".
 
 Unicode sequences can be used everywhere in Java code. As long as it contains Unicode characters, it can be used as an identifier. Using Unicode, you may convey comments, IDs, and even the content of character and string literals, as well as other information. Use caution, as they are interpreted by the compiler early. Using the Unicode linefeed as part of a print statement would cause an error in your source code because your source code would treat this as an actual linefeed that appears before the closing single quote of a character literal, which would result in an error. 'n' and 'r' for line termination literals is the basis for the prior warning to always use these characters.
-
+Look at the following to understand this better:
+```
+System.out.print( "\n" );   // This is okay
+System.out.print( '\u000a' ); // This will give a compiler error
+```
+Both statements are correct. The first one corresponds to a call to the system function `System.out.println()`. A compiler error is thrown by the second statement, which is not a valid statement. A linefeed is used to prematurely terminate the Unicode sequence. As previously indicated, a compiler interprets the Unicode sequence as a character literal.
 ### Advantages of unit code
 - Symbols for reading and writing character data are contained in a single code page when an application component employs Unicode. Applications may now be developed much more quickly thanks to this.
 - Each of the standard ASCII characters in UTF-8's first 127 places is assigned its ASCII value. For ASCII applications, this simplifies the conversion process.
