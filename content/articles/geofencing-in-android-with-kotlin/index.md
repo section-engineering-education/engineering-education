@@ -1,7 +1,7 @@
 ### Introduction
 Geofence is an imitated variable that describes a real geographical area of interest. Geo-Fencing API lets you define the outline or limit of a specific area and feature that surrounds a point of interest.
 
- When users cross the Geofence, he will be alerted by a notificaton. This gives a beneficial experience when users are inside the facility. Geo-Fencing API employs the use of device sensors to detect user's location in a battery-efficient manner.
+ When users cross the Geofence, he will be alerted by a notificaton. This gives an advantageous point out when individual is around the facility. Geo-Fencing API employs the use of device sensors to detect user's location in a battery-efficient manner.
  #### Geofence comprises of three transition types:
 - Enter – This demonstrates that people have entered the geofence.
 - Dwelling – Indicates that the user exists within the geofence for a given period.
@@ -72,21 +72,21 @@ private fun approveForegroundAndBackgroundLocation(): Boolean {
 If the device is running Android Q (API 29), ensure that the permissions `ACCESS_BACKGROUND_LOCATION` and `ACCESS_FINE_LOCATION` are enabled. If the device is running an older version, you don't require permission to view the location in the background.
 
 ```kotlin
-@TargetApi(29)
-private fun approveForegroundAndBackgroundLocation(): Boolean {
-    val foregroundLocationApproved = (
-            PERMISSION_GRANTED == ActivityCompat.checkSelfPermission(
-                this, Manifest.permission.ACCESS_FINE_LOCATION
-            ))
-    val backgroundPermissionApproved =
-        if (runningOrLater) {
-            PERMISSION_GRANTED == ActivityCompat.checkSelfPermission(
-                this, Manifest.permission.ACCESS_BACKGROUND_LOCATION
-            )
-        } else {
-            true
-        }
-    return foregroundLocationApproved && backgroundPermissionApproved
+    private fun authorizedLocation(): Boolean {
+        val formalizeForeground = (
+                PERMISSION_GRANTED == ActivityCompat.checkSelfPermission(
+                    this, Manifest.permission.ACCESS_FINE_LOCATION
+                ))
+        val formalizeBackground =
+            if (gadgetQ) {
+                PERMISSION_GRANTED == ActivityCompat.checkSelfPermission(
+                    this, Manifest.permission.ACCESS_BACKGROUND_LOCATION
+                )
+            } else {
+                true
+            }
+        return formalizeForeground && formalizeBackground
+    }
 }
 ```
 
@@ -94,24 +94,24 @@ private fun approveForegroundAndBackgroundLocation(): Boolean {
 This is where you request permission from the user to access their location if not granted.
 
 ```kotlin
-@TargetApi(29)
-    private fun requestForegroundAndBackgroundLocationPermissions() {
-        if (approveForegroundAndBackgroundLocation())
+ private fun askLocationPermission() {
+        if (authorizedLocation())
             return
-        var permissionArray = arrayOf(Manifest.permission.ACCESS_FINE_LOCATION)
-        val resultCode = when {
-            runningOrLater -> {
-                permissionArray += Manifest.permission.ACCESS_BACKGROUND_LOCATION
+        var grantingPermission = arrayOf(Manifest.permission.ACCESS_FINE_LOCATION)
+        val customResult = when {
+            gadgetQ -> {
+                grantingPermission += Manifest.permission.ACCESS_BACKGROUND_LOCATION
                 REQUEST_FOREGROUND_AND_BACKGROUND_PERMISSION_RESULT_CODE
             }
             else -> REQUEST_FOREGROUND_ONLY_PERMISSIONS_REQUEST_CODE
         }
-        Log.d(TAG, "requestForegroundAndBackgroundLocationPermissions: ")
+        Log.d(TAG, "askLocationPermission: ")
         ActivityCompat.requestPermissions(
             this,
-            permissionArray,
-            resultCode
+            grantingPermission,
+            customResult
         )
+
     }
 ```
 
@@ -137,17 +137,17 @@ Permissions granted will be worthless if the user's device location is deactivat
 ##### To get started, check the device location settings and start the Geofence.
 
 ```kotlin 
-private fun confirmDeviceLocationAndStartGeofencing(resolve: Boolean = true) {
+private fun validateGadgetAreaInitiateGeofence(resolve: Boolean = true) {
         val locationRequest = LocationRequest.create().apply {
             priority = LocationRequest.PRIORITY_LOW_POWER
         }
         val builder = LocationSettingsRequest.Builder().addLocationRequest(locationRequest)
 
-        val settingsClient = LocationServices.getSettingsClient(this)
-        val locationSettingsResponseTask =
-            settingsClient.checkLocationSettings(builder.build())
+        val client = LocationServices.getSettingsClient(this)
+        val locationResponses =
+            client.checkLocationSettings(builder.build())
 
-        locationSettingsResponseTask.addOnFailureListener { exception ->
+        locationResponses.addOnFailureListener { exception ->
             if (exception is ResolvableApiException && resolve) {
                 try {
                     exception.startResolutionForResult(
@@ -161,7 +161,7 @@ private fun confirmDeviceLocationAndStartGeofencing(resolve: Boolean = true) {
                 Toast.makeText(this, "Enable your location", Toast.LENGTH_SHORT).show()
             }
         }
-        locationSettingsResponseTask.addOnCompleteListener {
+        locationResponses.addOnCompleteListener {
             if (it.isSuccessful) {
                 addGeofence()
             }
@@ -174,7 +174,7 @@ Check if the user has chosen to accept or reject the request in the `onActivityR
 ```kotlin
 override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        confirmDeviceLocationAndStartGeofencing(false)
+        validateGadgetAreaInitiateGeofence(false)
     }
 ```
 
@@ -186,7 +186,7 @@ You'll need a method which `PendingIntent` provides to manage Geofence transiti
 A `PendingIntent` describes both an `intent` and the `action` that should be done in response to it. You'll define a pending intent for a BroadcastReceiver to control the Geofence transitions.
 
 ```kotlin
- private val geofencePendingIntent: PendingIntent by lazy {
+ private val geofenceIntent: PendingIntent by lazy {
         val intent = Intent(this, GeofenceBroadcastReceiver::class.java)
         PendingIntent.getBroadcast(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)
     }
@@ -195,13 +195,13 @@ A `PendingIntent` describes both an `intent` and the `action` that should be do
 A GeofencingClient is the most basic way to interact with the geofencing APIs. Create an instance of GeofencingClient. 
 
 ```kotlin
-private lateinit var geofencingClient: GeofencingClient
+private lateinit var geoClient: GeofencingClient
 ```
 
 In the `onCreate()` method, initialize the `geofencingClient`
 
 ```kotlin
-geofencingClient = LocationServices.getGeofencingClient(this)
+geoClient = LocationServices.getGeofencingClient(this)
 ```
 
 Also within the onCreate method, add a geofenceList that holds geofences. In this step, we have added one geofence but you can have many geofences. 
@@ -219,7 +219,7 @@ geofenceList.add(Geofence.Builder()
 Create function that specify the geofence to monitor and the initial trigger.
 
 ```kotlin
-private fun getGeofencingRequest(): GeofencingRequest {
+private fun seekGeofencing(): GeofencingRequest {
         return GeofencingRequest.Builder().apply {
             setInitialTrigger(GeofencingRequest.INITIAL_TRIGGER_ENTER)
             addGeofences(geofenceList)
