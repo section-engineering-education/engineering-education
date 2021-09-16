@@ -21,7 +21,7 @@ JRE includes JVM (Java Runtime Environment). WORA is a term for Java application
 As a run-time engine for Java applications, JVM (Java Virtual Machine) is a must. The Java Virtual Machine (JVM) is responsible for calling the main method in java code. JRE includes JVM (Java Runtime Environment). WORA is a term for Java applications (Write Once Run Anywhere). Therefore, Java code can be developed on one system and run on any other Java-enabled system without any modifications. 
 
 JVM makes all of this possible. As part of the Java compiler's process of compiling a `.java` file,`.class` files (which contain bytecode) with the same class names are generated. When we run this `.class` file, it goes through a series of steps. These steps describe the JVM as a whole, and we will discuss them in this article.
-Java compiler compiles a `.java` program,` to .class` files (which contain bytecode). When we run the `.class` file, it goes through a series of steps which will be discussed in this article.
+Java compiler compiles a `.java` program, to `.class` files (which contain bytecode). When we run the `.class` file, it goes through a series of steps which will be discussed in this article.
 ### Types of virtual machines
 1. **System-based virtual machines (SVM)**: As a replacement for physical computers, SVMs were developed. A host computer runs them and uses its hardware resources.
 SVMs were developed to replace physical computers. A host computer executes them using its hardware resources.
