@@ -1,34 +1,45 @@
-### Introduction
+---
+layout: engineering-education
+status: publish
+published: true
+url: /html-client-for-web-services-using-dhtml-behavior/
+title: Html client for web services using dhtml behavior
+description: This article takes the reader through Html client for web services using dhtml behavior. The Dynamic Hypertext Markup Language (DHTML) is the most efficient and widely used web development strategy in websites with non-trivial user-input capabilities.
+author: stephen-boro
+date: 2021-09-14T00:00:00-17:50
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-The DHTML (Dynamic Hypertext Markup Language) is a markup language, which the most efficient and widely used web development strategies in websites with non-trivial user-input capabilities. DHTML refers to tinkering with an HTML document's Document Object Model, tinkering with styling information's CSS declarations, and tying everything together with client-side JavaScript programming.
+  - url: /engineering-education/html-client-for-web-services-using-dhtml-behavior/hero.jpg
+    alt: Html client for web services using dhtml behavior Hero Image
+---
 
+The Dynamic Hypertext Markup Language (DHTML) is the most efficient and widely used web development strategy in websites with non-trivial user-input capabilities. DHTML refers to tinkering with an HTML document's Document Object Model, tinkering with styling information's CSS declarations, and tying everything together with client-side JavaScript programming.
+<!--more-->
 The coupling of cascading style sheets (CSS) formatting and HTML component functionality is represented by DHTML behavior. Any element on an HTML page can be assigned to DHTML behaviors, allowing for amazing content presentation freedom.
 
-### Table of Contents
+### Table of contents
 - [Importance of using DHTML](#importance-of-using-dhtml)
 
 - [Distinction Amongst HTML and DHTML](#distinction-amongst-html-and-dhtml)
 
 - [How would we make the Web Services](#how-would-we-make-the-web-services)
 
-- [How we can create an HTML client](#how-we-can-create-an-html-client)
+- [How we can create a HTML client](#how-we-can-create-a-html-client)
 
 - [Testing our web services and HTML client](#testing-our-web-services-and-html-client)
 
 ### Importance of using DHTML
-
-These are some of the advantages we can get when using DHTML.
-
+These are some of the advantages we can get when using DHTML:
 1. We use it to create dynamic, animated website pages that update in real-time.
 2. DHTML has more features than just a static HTML page. DHTML has the ability to hold more content on a web page simultaneously.
 3. By sending fewer requests to the server, the user saves time. As we can utilize it to change and swap components after a page has been loaded, we do not require to construct separate web pages for updating styles save time when creating pages and reduce the number of queries sent to the server.
-4. It  allows page authors to add drop-down menus and rollover buttons to their web pages.
+4. It allows page authors to add drop-down menus and rollover buttons to their web pages.
 5. Viewers do not require any additional plug-ins to browse through DHTML-based webpages, nor do they require any additional prerequisites or software to see them.
 6. It is used to embed the ticker on other websites with material and information that needs to be updated on a frequent basis.
 
-
-#### Some major features DHTML have are ;
-
+#### Some major features of DHTML
 - Its most basic and important characteristic is that it allows us to dynamically construct web pages.
 - DHTML can change identifiers and their attributes.
 - It allows you to utilize the events, methods, and properties. Additionally, it has the capability of reusability of code.
@@ -36,10 +47,8 @@ These are some of the advantages we can get when using DHTML.
 - Users can simply build dynamic fonts for their websites or web pages using DHTML.
 - Since DHTML uses a low-bandwidth impact, the the internet's performance is improved.
 
-### Distinction Amongst HTML and DHTML
-
+### Distinction between HTML and DHTML
 HTML and DHTML have some of their differences which are as follows;
-
 1. DHTML language is a collection of different technologies, unlike HTML which is a markup language.
 2. DHTML language needs database connectivity while in HTML it does not need connectivity.
 3. We use DHTML to create dynamic web pages but HTML (a markup language) is employed to construct web pages that are not changing or static.
@@ -50,24 +59,22 @@ HTML and DHTML have some of their differences which are as follows;
 8. Only HTML can be used for user-side code, but DHTML is utilized for server-side code.
 9. File in the HTML are saved with .html or .htm extensions while DHTML uses .dhtml extension.
 
-### How would we make the Web Services
-
+### How would we make the Web services?
 Web service are code snippets that may be reused to allows many applications interact with one another. Web services are being utilized with any type of application developed in any technology once it is produced and hosted on a server on the Internet.
- 
- #### Step one
 
-Click on the "File" then go to "Website" finally click "ASP.NET empty website template" in Visual Studio, then you should give a name for the website. We will use *webservicesample* as our example.
+#### Step one
+Click on the "File" then go to "Website" finally click "ASP.NET empty website template" in Visual Studio, then you should give a name for the website. We will use _webservicesample_ as our example.
 
 ![This shows a website template](engineering-education/html-client-for-web-services-using-dhtml-behavior./webservice.jpg)
 
 #### step two
-
 In the solution explorer, choose the icon in the solution, add a new item by clicking `add new item`.
 ![This shows a airthmatic.cs](engineering-education/html-client-for-web-services-using-dhtml-behavior./addnew.jpg)
 
 This will create two files as follows ;
-- *Arithmetics.asmx* which is our service file.
-- *Arithmetic.cs* `Appcode` folder will be able to host the code file for the service.
+
+- _Arithmetics.asmx_ which is our service file.
+- _Arithmetic.cs_ `Appcode` folder will be able to host the code file for the service.
 
 ![This shows the App code](engineering-education/html-client-for-web-services-using-dhtml-behavior./appcode.jpg)
 
@@ -75,46 +82,46 @@ The code explains our file in arithmetic.
 
 ```C#
 
- using System;  
- using System.Collection.Generic;  
- using System.Linq;  
- using System.OurWeb;  
- using System.OurWeb.Service;  
-  
- [OurWebService(Namespace = "http://nicacious.org/")]  
- [OurWebServiceBinds(ConformsTo = WsbProfiles.BasicProfile3_3)]  
-.  
-  [System.OurWeb.Script.Services.ScriptService]  
- public class Airthmatic : System.OurWeb.Services.OurWebService  
- {  
-     public Airthmatic()   {  
-         InitializeComponent();  
-     }  
-     [WebMethod]  
-     public int Add(int a, int c, int b)  
-     {  
-         return a + c + b;  
-     }  
-     [WebMethod]  
-     public int Sub(int c, int e)  
-     {  
-         return c - e;  
-     }  
-     [WebMethod]  
-     public int Mul(int c, int b)  
-     {  
-         return c * b;  
-     }  
-     [WebMethod]  
-     public int Div(int e, int b)  
-     {  
-         return e / b;  
-     }  
+ using System;
+ using System.Collection.Generic;
+ using System.Linq;
+ using System.OurWeb;
+ using System.OurWeb.Service;
+
+ [OurWebService(Namespace = "http://nicacious.org/")]
+ [OurWebServiceBinds(ConformsTo = WsbProfiles.BasicProfile3_3)]
+.
+  [System.OurWeb.Script.Services.ScriptService]
+ public class Airthmatic : System.OurWeb.Services.OurWebService
+ {
+     public Airthmatic()   {
+         InitializeComponent();
+     }
+     [WebMethod]
+     public int Add(int a, int c, int b)
+     {
+         return a + c + b;
+     }
+     [WebMethod]
+     public int Sub(int c, int e)
+     {
+         return c - e;
+     }
+     [WebMethod]
+     public int Mul(int c, int b)
+     {
+         return c * b;
+     }
+     [WebMethod]
+     public int Div(int e, int b)
+     {
+         return e / b;
+     }
  }
 
 ```
 
-We use web method property on a public method to make it available as a component of an XML Webserver The characteristics of this attribute are also used to further customize the functionality of XML web-based services in our method. 
+We use web method property on a public method to make it available as a component of an XML Webserver The characteristics of this attribute are also used to further customize the functionality of XML web-based services in our method.
 
 A variety of properties are available in Web method, which includes;
 - Cache duration
@@ -125,7 +132,6 @@ A variety of properties are available in Web method, which includes;
 - Transaction option
 
 #### Step three
-
 To check whether the service is able to run correctly, run the program by opening Arithmetic.asmx in the solution explorer.
 
 We will find all the method names as shown below;
@@ -134,21 +140,22 @@ We will find all the method names as shown below;
 
 Now at this point, our service can be used.
 
-### How we can create an HTML client
-
+### How we can create a HTML client
 The web behavior will be specified in the Html file as the initial stage.
 
 ```html
-
-<div id="Ourservice" style="behavior:url(ourwebservice.htc)" onresult="onWebServiceresult()">
-</div> 
-
+<div
+  id="Ourservice"
+  style="behavior:url(ourwebservice.htc)"
+  onresult="onWebServiceresult()"
+></div>
 ```
+
 We use one of the provided ids for the element in the script to refer to it.
 The web service URL will then be mapped to a user-friendly name, in our instance `Section`.
 
 This code is added to the page's on the load handler first before any functions are implemented on the web service, it must be mapped.  
-*ourservice.useourService('http://localhost/site/code/testwebservice.asmx?WSDL','section');*
+_ourservice.useourService('http://localhost/site/code/testwebservice.asmx?WSDL','section');_
 
 We will call the web service methods asynchronously in two phases because our web service is set up for access. We use an asynchronous invocation to avoid the web page having to wait for the return of the web service. The web service method is used in the first phase.
 
@@ -199,17 +206,16 @@ Total:<input type="message" name='total'\">
 </body>
 
 ```
+
 We now name the file `ourtest.html` and save it in the same folder as webservice.htc.
 
 ### Testing our web services and HTML client
-
 Web services are a mechanism or a medium of communication that allows two applications or machines to exchange data regardless of their underpinning architecture or technology.
 
 A web service assessment is a sort of software testing that verifies the functionality of web services. The fundamental goal of testing is to ensure that an API's functionality, security, and performance are all up to standard (Application Program Interface.)
 In some ways, a web service assessment is same as unit testing. We can manually test a web service, write our own automation code, or utilize off-the-shelf automation like Postman.
 
-#### Protocols use in web service
-
+#### Protocols used in Web services
 A web service can be used in a variety of ways, but the two most frequent implementations are as follows.
 
 1. Simple Object Acces Protocol (SOAP)
@@ -231,8 +237,8 @@ A web service's services are described using the Online Services Description Lan
 In XML format, WSDL highlights every actions that are capable for a web service to provide. In addition, it specifies how such services can be delivered that is, what source value are we required to provide and what format the return will take for each type of service.
 
 #### How can we test Web service?
-
 In web service testing, we can opt several ways.
+
 1. We can test manually
 2. We can create our own Automation code
 3. Use of an off-shelf automation tool like SoapUI
@@ -240,9 +246,11 @@ In web service testing, we can opt several ways.
 To demonstrate web service testing, we will utilize SoapUI. We shall explore how the REST API, which SoapUI supports, is utilized in web service testing.
 
 #### Step one
-First, we will need to get the SoapUI application. Then, from the start menu, open the SoapUI program. 
+First, we will need to get the SoapUI application. Then, from the start menu, open the SoapUI program.
+
 #### Step two
 After you have opened the SoapUi tool, go to the RESt icon and click it to open the second page, where you will enter the API URL and click OK.
+
 #### Step three
 We have to use the post function to create a new employee. In the database, it will create a new employee.
 
@@ -273,9 +281,9 @@ We have shown how SoapUI can be employed to put any kind of object to test any 
 The free version may be readily downloaded and used to test the Restful service.
 
 ### Conclusion
-
 In this tutorial, we have discussed about how WebServices allow software applications to communicate and exchange data with one another. To establish a WebService, two popular protocols are SOAP and REST.SOAP allows data to be exchanged using XML.
 
-For WebServices API Testing, REST supports XML or data interchange via a simple URL.WSDL is an XML language that is used  for describing the services provided by a web service and SOAP is defined by WSDL.  We have also learnt how we can Use WebService Test Automation solutions like SoapUI to test Web Services Automation Testing efforts.
+For WebServices API Testing, REST supports XML or data interchange via a simple URL.WSDL is an XML language that is used for describing the services provided by a web service and SOAP is defined by WSDL. We have also learnt how we can Use WebService Test Automation solutions like SoapUI to test Web Services Automation Testing efforts.
 
-
+---
+Peer Review Contributions by: [Dawe-Daniel](/engineering-education/authors/dawe-daniel/)
