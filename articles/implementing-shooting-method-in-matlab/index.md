@@ -1,3 +1,23 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /implementing-shooting-method-in-matlab/
+title: Implementing shooting method in Matlab
+description: This tutorial walks the reader through the concepts of Matlab shooting methods.
+author: atieno-dorine
+date: 2021-09-09T00:00:00-16:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/implementing-shooting-method-in-matlab/hero.png
+    alt: shooting method Matlab
+    
+In numerical analysis, the shooting method reduces a boundary value problem to an initial value problem. It is a popular method for the solution of two-point boundary value problems. 
+<!--more-->
+
+
 ### Introduction
 In numerical analysis, the shooting method reduces a boundary value problem to an initial value problem. It is a popular method for the solution of two-point boundary value problems. If the problem is first defined by *y=f(x); y(x0)=a* and *$y(X_1)$*, it is transformed into the initial problem *y' =z(x)* and *z'(x) = f(x)* with some initial values. 
 
@@ -50,7 +70,7 @@ At x = 0, $y_1=y_0$ and at x =0, $y_2=\frac{dy}{dx}|_{x=0}$
 
 Now in this situation, we don't know one of the initial conditions, that is, between y0 and $\frac{dy}{dx}|_{t=0}$, one value is not known. Therefore, we will guess the unknown initial condition in the shooting method and use the IVP solver. For example, we can guess $\frac{dy}{dt}|_{t=0}$, run the integration, and land into a different point which is not the target boundary condition as demonstrated below.
 
-![demonstration](/engineering-education/Implementing-shooting-method-in-Matlab/shooting_one.png)
+![demonstration](/engineering-education/implementing-shooting-method-in-matlab/shooting_one.png)
 
 This way, it is called the shooting method. First, we aim the solution at the target and then use the IVP solver such as ODE45 to integrate the solution forward and see if we will hit the target. The next step in the shooting method is coming up with an intelligent way to keep improving our guesses to hit that target.
 
@@ -63,7 +83,7 @@ It is the combination of all that we have been doing;
 >For linear ODEs: Can use the linear interpolation requiring only two shots.
 We do the first and second shots with a different guess and interpolate between the two shots for the correct guess.
 
-![demonstration](/engineering-education/Implementing-shooting-method-in-Matlab/shooting_two.png)
+![demonstration](/engineering-education/implementing-shooting-method-in-matlab/shooting_two.png)
 
 ### Example implementation of the shooting method
 The ODE governing the deflection of a supported beam with a constant distributed load is;
@@ -74,7 +94,7 @@ $
 
 With the boundary conditions *y(0)=y(l)=0*. Determine y(x) if E=200Gp, $I=3000cm^4$, w=kN/m, and l=3m.
 
-![Question](/engineering-education/Implementing-shooting-method-in-Matlab/shooting_three.png)
+![Question](/engineering-education/implementing-shooting-method-in-matlab/shooting_three.png)
 
 Where;
 EI=flexual rigidity
@@ -147,7 +167,7 @@ newIC = interp1(shots, ICguesses, yL, 'linear', 'extrap');
 
 To demonstrate what is happening in the code above, we look at the sketch below. We have our `ICguesses` on the `y-axis` and `y-end` on the `x-axis`.
 
-![demonstration](/engineering-education/Implementing-shooting-method-in-Matlab/shooting_four.png)
+![demonstration](/engineering-education/implementing-shooting-method-in-matlab/shooting_four.png)
 
 Now, that's the plot for the 'shots' and the guesses. We then want to know the guess to get `yl`. So we have three points that we know for the interpolation. They are all our target boundary conditions, that is, shots to the boundary condition and the actual target boundary condition `$y_l$`. The unknown value is the unknown guess. It is why we use them for the call to the enterprise. Shots are the `x-values`, and `ICguess` the y-values. 
 
@@ -178,7 +198,7 @@ legend('analytical solution', 'Shooting method')
 title('Beam Deflection')
 ```
 
-![solution](/engineering-education/Implementing-shooting-method-in-Matlab/shooting_five.png)
+![solution](/engineering-education/implementing-shooting-method-in-matlab/shooting_five.png)
 
 As we can see from the plot, the shooting method is accurate as of the analytical method. For the error behavior for the shooting method, it is going to be the same as whichever IVP solver you are using.
 
