@@ -1,11 +1,11 @@
-Building a website can be a little overwhelming in the current online world, especially without extreme knowledge of building one. However, building a website can be easier with well-established and ready-made content management systems such as WordPress. WordPress is an open-source content management system (CMS). CMS is software that is run on a webserver to host ready-made and customizable website templates. This means you can build a full-fledged website using or modifying WordPress for free. Being a CMS, it allows you to manage different aspects of a website, such as changing WordPress appearance, adding and modifying content, search engine enhancement, etc.
+Building a website can be overwhelming in the current online world, especially without extreme knowledge of building one. However, building a website can be easier with well-established and ready-made content management systems such as WordPress. WordPress is an open-source content management system (CMS). CMS is software that is run on a webserver to host ready-made and customizable website templates. This means you can build a full-fledged website using or modifying WordPress for free. Being a CMS, it allows you to manage different aspects of a website, such as changing WordPress appearance, adding and modifying content, search engine enhancement, etc.
 
 However, with WordPress being beginner-friendly, its backing technology is server-side rendered (SSR). This means you can encounter some performance overhead over other technologies such as Next.js. WordPress content is served directly from the server. This means every request has to go over to the server, requesting the necessary resources. With many requests to process, servers with less processing power can be overwhelmed when such requesting traffic increases.
 
-Technology such as Next.js supports hybrid content generation. They support both SSR and CSR for Static Site Generation. This means server-side content is served ahead of time. Thus, a user makes a request to the server, and the content is served ahead of time. Next.js uses generators that render a page statically, making it load ahead of time. With outstanding technologies such as Next.js, you can combine them with CMS such as WordPress and run them as headless. This way, WordPress will run a headless CMS. This produces a performant website with a great user experience.
+Technology such as Next.js supports hybrid content generation. They support both SSR and CSR for Static Site Generation. This means server-side content is served ahead of time. Thus, a user requests the server, and the content is served ahead of time. Next.js uses generators that render a page statically, making it load ahead of time. With superior technologies such as Next.js, you can combine them with CMS such as WordPress and run them as headless. This way, WordPress will run a headless CMS. This produces a performant website with a great user experience.
 
 ### Overview
-- [Overview](#overview)
+- [Prerequisites](#prerequisites)
 - [What is a headless CMS](#what-is-a-headless-cms)
 - [Reasons for running WordPress as a headless CMS](#reasons-for-running-wordpress-as-a-headless-cms)
 - [Prerequisites](#prerequisites)
@@ -22,32 +22,33 @@ Technology such as Next.js supports hybrid content generation. They support both
 - [Conclusion](#conclusion)
 - [References](#references)
 
-### What is a headless CMS
-First, a WordPress CMS, the backend (where you manage your content) and frontend (where the content is displayed to the website visitors) are integrated as one monolithic system. When WordPress runs as a headless CMS, both the content and the content presentation are decoupled. This makes the content presentation layer flexible. You can now build a website, a mobile application, etc to present the raw WordPress-driven content. The backed and the frontend are not tied to the CMS any more.
-
-In simple terms, you still have WordPress CMS for content creation, and management saved to a database. The only difference is that content presentation is delivered through the Application Programming Interface (API) as raw data format such as JSON. Then the data is presented in the websites, mobile applications, or any other channels and devices.
-
-### Reasons for running WordPress as a headless CMS
-- You can change the content delivery channels when you would like to without re-authoring the content.
-
-- Since the content is delivered as raw data through an API, you can use any technology you wish to present this data. As a developer, this allows you things that matter most, such as creating great digital experiences for your users.
-
-- API-driven data promote omnichannel architectures. You create WordPress content and channel it through API. Thus the content shines across all touchpoints.
-
-- It creates more efficient, scalable, and fast applications. Both backend and frontend are separated from the monolith CMS architecture. This means if the WordPress-backed CMS has any issues, the channel delivery pipelines are not affected. Hence the performance of the delivery channel is not compromised.
-
-In this guide, we will learn how we can use Next.js to run WordPress as a headless CMS. The following prerequisites will help you navigate around this tutorial.
-
 ### Prerequisites
+The following prerequisites will help you navigate around this tutorial:
 
 - A [remote hosted and running hosted WordPress](https://themeisle.com/blog/install-wordpress-on-aws/) blog.
 - Basic understanding of working with [Next.js](https://www.youtube.com/watch?v=mTz0GXj8NN0&t=54s).
 - Good understanding of [how WordPress works](https://webdesign.tutsplus.com/articles/how-does-wordpress-work--cms-34542) and [how to use it to build a website](https://themeisle.com/blog/install-wordpress-on-aws/).
 
+### What is a headless CMS
+In a WordPress CMS, the backend (where you manage your content) and frontend (where the content is displayed to the website visitors) are integrated as one monolithic system. When WordPress runs as a headless CMS, both the content and the content presentation are decoupled. This makes the content presentation layer flexible. You can now build a website or a mobile application to present the raw WordPress-driven content. The backed and the frontend are not tied to the CMS anymore.
+
+You still have WordPress CMS for content creation, and management saved to a database in simple terms. The only difference is that content presentation is delivered through the Application Programming Interface (API) as raw data format such as JSON. Then the data is presented in the websites, mobile applications, or any other channels and devices.
+
+### Reasons for running WordPress as a headless CMS
+- You can change the content delivery channels when you would like to without re-authoring the content.
+
+- Since the content is delivered as raw data through an API, you can use any technology you wish to present this data. This allows you to focus on things that matter most, such as creating great digital experiences for your users as a developer.
+
+- API-driven data promote omnichannel architectures. You create WordPress content and channel it through API. Thus the content shines across all touchpoints.
+
+- It creates more efficient, scalable, and fast applications. Both backend and frontend are separated from the monolith CMS architecture. This means if the WordPress-backed CMS has any issues, the channel delivery pipelines are not affected. Hence the performance of the delivery channel is not compromised.
+
+In this guide, we will learn how we can use Next.js to run WordPress as a headless CMS. 
+
 Let's dive in.
 
 ### Adding a post
-First, head over to your remote WordPress website Admin dashboard. If you don't have a running WordPress website, check [this guide](https://themeisle.com/blog/install-wordpress-on-aws/) and set up one.
+First, head over to your remote WordPress website Admin dashboard. If you don't have a running WordPress website, check this [guide](https://themeisle.com/blog/install-wordpress-on-aws/) and set up one.
 
 Since WordPress and Next.js are used to develop blog-based websites, we will use this scenario by first adding and posting a post in WordPress admin.
 
@@ -71,7 +72,7 @@ Once done, navigate to the top right corner and click `Publish`, and your post w
 
 ![post-publish-button](/engineering-education/create-a-headless-cms-website-using-wordpress-nextjs-and-graphql/post-publish-button.png)
 
-With that, you have a post set up. Repeat the process a couple of times so that you can have a number of posts to query from.
+With that, you have a post set up. Repeat the process a couple of times to have several posts to query from.
 
 ### Installing the WpGraphQL plugin
 
@@ -83,9 +84,9 @@ From the left sidebar of the dashboard, Navigate to plugins. On the resulting po
 
 Click `Install now` on the following result. Once the installation is over, make sure you activate the plugin.
 
-![wp-graphql-plugin](/engineering-education/create-a-headless-cms-website-using-wordpress-nextjs-and-graphql/wpgraphql-activate.png)
-
 ![wp-graphql-plugin](/engineering-education/create-a-headless-cms-website-using-wordpress-nextjs-and-graphql/wp-graphql-plugin.png)
+
+![wp-graphql-plugin](/engineering-education/create-a-headless-cms-website-using-wordpress-nextjs-and-graphql/wpgraphql-activate.png)
 
 ### Running a query from the GraphiQL IDE
 
@@ -115,9 +116,9 @@ query postsQuery{
  }
 ```
 
-We are fetching all posts from the above query, with each getting the post title, category, excerpt, and content. On the left pane, paste in the above query. Then, execute the query by hitting the play button.
+We are fetching all posts from the above query, each query getting the post title, category, excerpt, and content. On the left pane, paste in the above query. Then, execute the query by hitting the play button.
 
-![wp-graphql-playbatton](/engineering-education/create-a-headless-cms-website-using-wordpress-nextjs-and-graphql/wp-graphql-playbatton.png)
+![wp-graphql-playbutton](/engineering-education/create-a-headless-cms-website-using-wordpress-nextjs-and-graphql/wp-graphql-playbutton.png)
 
 ### Setting up the Next.js environment
 
@@ -434,7 +435,7 @@ export default function Post({post}) {
 }
 ```
 
-Here we are simply getting the post passed and rendering it to the view from the above function by showing its title, excerpt, and content. Feel free to show as many fields as you want but make sure they are in the query.
+Here, we get the post passed and render it to the view from the above function by showing its title, excerpt, and content. Feel free to show as many fields as you want but make sure they are in the query.
 
 To test this, ensure the development server is running, else start it by running;
 
