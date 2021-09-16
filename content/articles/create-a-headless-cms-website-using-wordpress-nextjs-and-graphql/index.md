@@ -476,3 +476,6 @@ We have managed to create posts in WordPress, query, and show them from a Next.j
 - [Next.js](https://nextjs.org/)
 - [GraphQL](https://graphql.org/)
 - [Data fetching in Next.js](https://nextjs.org/docs/basic-features/data-fetching)
+
+---
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
