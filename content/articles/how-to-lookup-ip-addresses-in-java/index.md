@@ -17,12 +17,23 @@ images:
 A **host** is a computer that can connect to the internet. Every host has a unique identification number that allows its identification anytime it is online. 
 <!--more-->
 An IP address is a name given to this specific number.
+### Prerequisites
+#### High-Level prerequisites :
+- OOPS concept
+- Basic Java 
+- Networking
+
+#### Low-Level prerequisites :
+- Proper Java.net package knowledge in Java library
+- Exception handling mechanisms
+- Networking concepts based on TCP layer (DNS)
+ 
 
 ### Table of contents
 - [Definition of an IP Address](#definition-of-an-ip-address)
 - [Definition of a DNS and its Workflow](#definition-of-a-dns-and-its-workflow)
-- [Representing IP Addresses in Java using InetAddress](#representing-ip-addresses-in-java-using-inetaddress)
-- [Exception Handling Mechanisms used](#exception-handling-mechanisms-used)
+- [Representing IP Addresses in Java using the InetAddress Class](#representing-ip-addresses-in-java-using-the-inetaddress-class)
+- [Exception Handling Mechanism used](#exception-handling-mechanism-used)
 - [Commonly used methods](#commonly-used-methods)
 - [Conclusion](#conclusion)
 
