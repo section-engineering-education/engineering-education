@@ -1,3 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /null-safety-support-for-flutter-and-dart/
+title: Null Safety support for Flutter and Dart
+description: Null Safety means that a variable cannot have a null value unless it starts with null. Null Safety helps you prevent a wide range of issues by catching null errors during development rather than at runtime. This article will cover all the null safety features and their benefits.
+author: francisca-ngodu
+date: 2021-09-16T00:00:00-15:10
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/null-safety-support-for-flutter-and-dart/hero.jpg
+    alt: Null Safety support for Flutter and Dart Cover image
+---
 ### Introduction
 As soon as a variable begins with "null", it cannot end with "null." If there is a problem, it will now be shown at compilation time thanks to null safety. Null Safety helps you avoid a wide range of problems during development, rather than waiting until runtime to capture null errors.
 When it comes to type safety, Dart excels.
