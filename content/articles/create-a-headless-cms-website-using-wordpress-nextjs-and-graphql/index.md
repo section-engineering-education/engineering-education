@@ -1,4 +1,22 @@
-Building a website can be overwhelming in the current online world, especially without extreme knowledge of building one. However, building a website can be easier with well-established and ready-made content management systems such as WordPress. WordPress is an open-source content management system (CMS). CMS is software that is run on a webserver to host ready-made and customizable website templates. This means you can build a full-fledged website using or modifying WordPress for free. Being a CMS, it allows you to manage different aspects of a website, such as changing WordPress appearance, adding and modifying content, search engine enhancement, etc.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /create-a-headless-cms-website-using-wordpress-nextjs-and-graphql/
+title: How to create a headless CMS website using WordPress, Next.js and GraphQL Queries (WPGraphQL)
+description: In this guide, we will learn how we can use Next.js to run WordPress as a headless CMS.
+author: catherine-macharia
+date: 2021-09-16T00:00:00-21:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/create-a-headless-cms-website-using-wordpress-nextjs-and-graphql/hero.jpg 
+    alt: WordPress Image Example
+---
+Building a website can be overwhelming in the current online world, especially without extreme knowledge of building one. However, building a website can be easier with well-established and ready-made content management systems such as WordPress. 
+<!--more-->
+WordPress is an open-source content management system (CMS). CMS is software that is run on a webserver to host ready-made and customizable website templates. This means you can build a full-fledged website using or modifying WordPress for free. Being a CMS, it allows you to manage different aspects of a website, such as changing WordPress appearance, adding and modifying content, search engine enhancement, etc.
 
 However, with WordPress being beginner-friendly, its backing technology is server-side rendered (SSR). This means you can encounter some performance overhead over other technologies such as Next.js. WordPress content is served directly from the server. This means every request has to go over to the server, requesting the necessary resources. With many requests to process, servers with less processing power can be overwhelmed when such requesting traffic increases.
 
