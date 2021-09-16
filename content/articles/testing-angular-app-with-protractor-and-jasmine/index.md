@@ -1,16 +1,25 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /testing-angular-app-with-protractor-and-jasmine/
+title: Testing Angular application with Protractor and Jasmine
+description: This article will be an introduction to testing an Angular application using Protractor and Jasmine
+author: emmanuel-ezenagu
+date: 2021-09-17T00:00:00-17:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/testing-angular-app-with-protractor-and-jasmine/hero.jpg
+    alt: Protractor AngularJS example image
+---
 In the World of software development, testing is a way to be sure that an application with a set of stated functionalities will perform those functions without fail. It involves running your software through a series of checks either manually or using automated tools to verify its effectiveness.
-
+<!--more-->
 When developing softwares, errors are bound to happen and testing makes it possible for those errors to be detected and corrected before the software is released.
 
 A well-tested software is reliable, secured, and highly accountable. It saves cost in the long run and helps prevent wastage of manpower and resources.
 
 In this tutorial, we will be looking at testing an AngularJS based website using Protractor and Jasmine.
-
----
-We will navigate to www.video.blender.org.
-
-Then we will first grab the angular enabled search input DOM elements using protractor API methods, then search for "free" videos by programmatically inputting the text we wish to search, then we will check the DOM interaction it causes. Based on our expectations we are bound to get one or more free videos available. The result causes an interactive change which will be our action to test for in our test case using jasmine.
-
 
 ### Prerequisite
 As a prerequisite, the reader must have a good understanding of:
