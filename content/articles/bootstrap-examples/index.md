@@ -341,6 +341,64 @@ Assuming you are asking a user to rate your work and the user rates your work us
 
 In the code snippet above, we have used the `star icon` to represent the star rating.
 
+### Bootstrap Flex Box
+The flex box is a component that allows you to create a layout that can be easily resized and adjusted.
+
+To change the allignment of the flex box, you can use the `justify-content` property as shown in the snippet below:
+
+```html
+<html>
+  <head>
+    <title>Bootstrap Flex</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" type="text/css"/>
+  </head>
+  <body>
+    <div class="container" style=" width: 400px; height: 600px; border: 1px solid; top: 60px; position: absolute; margin-left: 500px;">
+      <h6 style="text-align: center;">Example of a Flix</h6>
+      <div class="d-flex justify-content-end bg-secondary mb-3">
+        <!--flex items aligned at the end -->
+        <div class="p-2 my-flex-item">A</div>
+        <div class="p-2 my-flex-item">B</div>
+        <div class="p-2 my-flex-item">C</div>
+        <div class="p-2 my-flex-item">D</div>
+      </div>
+
+      <div class="d-flex justify-content-center bg-secondary mb-3">
+        <!--  flex items aligned at the center -->
+        <div class="p-2 my-flex-item">A</div>
+        <div class="p-2 my-flex-item">B</div>
+        <div class="p-2 my-flex-item">C</div>
+        <div class="p-2 my-flex-item">D</div>
+      </div>
+
+      <div class="d-flex justify-content-left bg-secondary mb-3">
+        <!--  flex items aligned on the left -->
+        <div class="p-2 my-flex-item">A</div>
+        <div class="p-2 my-flex-item">B</div>
+        <div class="p-2 my-flex-item">C</div>
+        <div class="p-2 my-flex-item">D</div>
+      </div>
+
+      <div class="d-flex flex-column bg-secondary mb-3 my-flex-container-column">
+        <!--  flex items aligned in a column manner -->
+        <div class="p-2 my-flex-item">A</div>
+        <div class="p-2 my-flex-item">B</div>
+        <div class="p-2 my-flex-item">C</div>
+        <div class="p-2 my-flex-item">D</div>
+      </div>
+
+      <div class="d-flex flex-column flex-column-reverse bg-secondary mb-3 my-flex-container-column">
+        <!--  reverse order of the column -->
+        <div class="p-2 my-flex-item">A</div>
+        <div class="p-2 my-flex-item">B</div>
+        <div class="p-2 my-flex-item">C</div>
+        <div class="p-2 my-flex-item">D</div>
+      </div>
+    </div>
+  </body>
+</html>
+```
+
 ### Conclusion
 Bootstrap can be used to create a better-looking website. It is a very popular framework and it is used by many companies including [Spotify](https://www.spotify.com/us/) and [Twitter](https://twitter.com/?laneng=).
 
