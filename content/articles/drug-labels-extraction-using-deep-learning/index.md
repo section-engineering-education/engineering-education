@@ -22,7 +22,7 @@ One notable area of concern in healthcare that hasn't been explored a lot is dru
 
 OCR has been used on Google's visual translation service. A large number of companies that process paper-based forms also use OCR to extract texts from documents. Recently, most companies offering PDF services, such as Adobe, provided this feature on their app.
 
-This technology is what our tutorial will be based on. We'll use OCR to enable us to extract drug labels/text from prescription medicine automatically. 
+We'll use OCR to enable us to automatically extract drug labels/text from prescription medicine.
 
 We'll specifically use the PaddleOCR, previously referenced in a paper known as [PP-OCR: A Practical Ultra Lightweight OCR System](https://arxiv.org/pdf/2009.09941v3.pdf). The PaddleOCR is a model that the engineers originally built at [Baidu](https://www.baidu.com/).
 
