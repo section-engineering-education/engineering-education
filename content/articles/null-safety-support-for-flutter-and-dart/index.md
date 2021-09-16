@@ -19,9 +19,16 @@ Null Safety means that a variable cannot have a null value unless it starts with
 
 All runtime null-dereference problems will now be shown at compile-time, thanks to null Safety. Null Safety helps you avoid many problems during development, rather than waiting until runtime to capture null errors. When it comes to type safety, Dart excels.
 
-If you get a variable or something similar, the compiler can ensure it. But even if the variable is not null, type safety alone does not guarantee that it is. When an error occurs, the null value is returned. 
+If you get a variable or something similar, the compiler can ensure it but even if the variable is not null, type safety alone does not guarantee that it is and when an error occurs, the null value is returned. 
 
 This article will cover how null Safety is implemented in Flutter, how it impacts the development process, the benefits it brings, and how to transition your flutter applications to Null Safety.
+
+Table of content:
+- [Principles of Null Safety](#principles-of-null-safety)
+- [What are Nullable and Non-nullable types?](#what-are-nullable-and-non-nullable-types)
+- [Sound and Unsound null safety](#sound-and-unsound-null-safety)
+- [How Null-safety migration works in Flutter](#how-null-safety-migration-works-in-flutter)
+- [Reasons for Null-safety migration in Flutter](#reasons-for-null-safety-migration-in-flutter)
 
 ### Principles of Null Safety
 - **Non-nullable**: Without explicit nullability declarations, variables in the Dart programming language cannot be null because non-null was by far the most popular option in API research.
@@ -104,11 +111,11 @@ As a result, if any of your dependencies' APIs change during the migration proce
 
 Your application or package's readiness for migration can be determined with the dart pub outdated in null-safety mode. In the Resolvable part of the model, this application is ready for migration if it upgrades its dependencies to the prerelease versions of path and process.
 
-2. Use the migration tool to migrate:
+#### Step two: Use the migration tool to migrate:
 
 Fortunately, the migration tool is clever, so you may check the nullability attributes that the apparatus has acquired for you. To change a device's conclusion, you can add nullability clues. Some of the migration cues included can have a major impact on the migration quality.The migration guide provides further ideas on how to use the migrating tool most effectively.
 
-3. Analyze your migrated code statically:
+#### Step three: Analyze your migrated code statically:
 
  When using your IDE or the command line, you can update your packages by executing pub get. Your flutter and Dart code can then be evaluated statically respectively by using your IDE or the command line, as follows:
  ```
@@ -118,11 +125,11 @@ $ flutter analyze
 $ dart pub get
 $ dart analyze
  ```
- 4. Verify that the tests are passing:
+ #### Step four: Verify that the tests are passing:
 
  Make sure that your tests pass. If you updated your package code to no longer allow nulls, you may need to re-run tests that expect null values.
 
- 5. Packages that are null-safe should be published:
+ #### Step five: Packages that are null-safe should be published:
 
  your prerelease can be published as soon as your migration is complete and all tests have passed. As a prerelease version,  publish your package to a public repository (pub). dev.
  
