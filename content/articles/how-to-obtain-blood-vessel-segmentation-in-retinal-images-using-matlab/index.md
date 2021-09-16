@@ -136,6 +136,8 @@ title('filtered image')
 subtracted_image = imsubtract(filtered_image, enhanced_image);
 ```
 
+### Calculating the threshold level
+
 Now we need to calculate the threshold level to segment the blood vessels. Let us create a function script named `threshold_level.m` for this. This function will take the image as the argument as seen below:
 
 ```Matlab
@@ -247,6 +249,8 @@ title('complemented image')
 ```
 
 ![complemented image](/engineering-education/how-to-obtain-blood-vessel-segmentation-in-retinal-images-using-matlab/retinal_three.png)
+
+### Colorizing the image
 
 Let us now colorize this image. In order to do that, we will create a function named `colorized_image.m`.
 
