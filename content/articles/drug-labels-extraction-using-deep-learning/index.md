@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/drug-labels-extraction-using-deep-learning/hero.png
     alt: Drug Label Image
 ---
-Optical Character Recognition (OCR) is a technology that can use optics to extract readable text into machine-encoded text. A large number of companies that process paper-based forms use OCR to extract texts from documents.
+Optical Character Recognition (OCR) uses optics to extract readable text into machine-encoded text. A large number of companies that process paper-based forms use OCR to extract texts from documents.
 <!--more-->
 Applying cutting-edge technologies to modern problems has enabled various problem-solving in healthcare, thereby improving people's lives. Machine learning has been used in hospitals to identify patients faster in disease identification and diagnosis, robotic surgery, and medical imaging diagnosis.
 
