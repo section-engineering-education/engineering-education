@@ -128,7 +128,7 @@ avg_filter = special('average', [9 9]);
 filtered_image = imfilter(enhanced_image, avg_filter);
 ```
 
-We will now view the `filtered image` and subtract the from the enhanced image. To view the image we will use the `imshow` function as seen below:
+We will now view the `filtered image` and subtract it from the enhanced image using the `imsubtract` function. To view the image we will use the `imshow` function as seen below:
 
 ```matlab
 figure, imshow(filtered_image)
