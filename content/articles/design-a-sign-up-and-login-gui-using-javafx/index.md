@@ -41,8 +41,10 @@ At the end of this article, you will have gained the following knowledge:
 The basics of the article include the following:
 
 - Knowledge and use of the Java language.
-- A Java IDE is set up in the machine. I recommend IntelliJ IDEA Community Edition, which is free and very interactive. The ultimate version also supports JavaFX.
+- A Java IDE is set up in the machine. I recommend the latest version of IntelliJ IDEA Community Edition, which is free and very interactive. Download it [here](https://www.jetbrains.com/idea/download/). The latest ultimate version also supports JavaFX.
 - A stable internet connection.
+
+> Screenshot images found in the article are of the Intellij Ultimate `2021.2.2` version.
 
 ### What is JavaFX
 
