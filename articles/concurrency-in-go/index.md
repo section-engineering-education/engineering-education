@@ -17,41 +17,27 @@ images:
 
 
 
-The term "concurrency" describes a process that happens at the same time with one or more other activities. It is assumed that all these processes are operating at the same time. Smaller sub-programs make up large programs. What is ideal is for these smaller sub-programs to together run at a similar time for the functioning of the larger application or program. This means that a program with two or more tasks can run at the same time while remaining part of the same program. This is what is referred to as Concurrency. In programming, concurrency is "the composition of independently executed processes...". Simply, concurrency refers to a program's ability to be divided into independent tasks that can all be carried out at the same time. it could be handling many requests from users or sending many responses to users.
 
-### Concurrency vs Parallelism
 
-A lot of developers intertwine concurrency with parallelism. Though these two terms may seem similar and are often confusing and substituted for the other, they do not mean the same thing. Concurrency is the ability to deal with lots of programs at the same time. These programs are executed at the same time one after another. For example, a coffee shop with many customers requesting to get a cup of their preferred choice of coffee. While one customer gets served, the other customer makes their order according to their choice and gets served from the same coffee machine.
+Concurrency describes a process that occurs at the same time as one or more other activities. It assumes that all these processes are operating at the same time. Smaller sub-programs make up large programs and they work together to run at a similar for the larger program to function. This means that a program with two or more tasks can run at the same time while they remain part of the same program. This is referred to as Concurrency. 
 
-Parallelism on the other hand is the ability to do lots of programs at the same time. Using the same analogy as earlier, here there is a different coffee machine for customers according to their choice of coffee. 
+In programming, concurrency is "*the composition of independently executed processes...*". Concurrency refers to the ability of a program to divide into independent tasks that can all execute at the same time. it could be handling many requests from users or sending many responses to users.
 
-In both scenarios, customers are served at the same time. Therefore, parallelism is a tool that concurrency can employ to accomplish its goals, but it should be remembered that the goal of concurrency is not parallelism.
+### **Concurrency vs Parallelism**
 
-### Concurrency in Go
+A lot of developers intertwine concurrency with parallelism. Though these two terms may seem similar and are often confusing and substituted for the other, they do not mean the same thing. Concurrency is the ability to deal with lots of programs at the same time. These programs execute at the same time one after another. For example, a coffee shop with many customers requesting a cup of their choice of coffee. As a customer gets served, the order of another customer processes. Every customer gets served from the same coffee machine. Parallelism is the ability to do lots of programs at the same time. The same analogy applies, although, here there are different coffee machines.
 
-Before the development of Go, concurrent codes in other programming languages were written in threads and if there are lots of things to be executed concurrently which the machine can not handle, threat pools were created to handle that.  
+In both scenarios, customers are served at the same time. Parallelism is a tool used by concurrency to achieve its goal however, it is not the goal of concurrency.
 
-In Go, concurrency is done through the use of in-built functions known as Goroutines and channels. [Goroutines](https://www.golangprograms.com/goroutines.html) are functions that run simultaneously alongside other code or programs. Goroutines are unique to Go. They’re not OS threads though they may be considered lightweight threads. Goroutines are deeply integrated with Go runtime. Go's runtime monitors goroutine behavior and suspends them when they become blocked, then resumes them once they are unblocked. This makes them preemptible in some ways, but only when the goroutine is blocked. The runtime and the logic of a goroutine work together beautifully.
+### **Concurrency in Go**
 
- 
+Before the development of Go, concurrent codes in other programming languages are in threads and if there are lots of things to execute which the machine can not handle, thread pools are created to handle that. In Go, concurrency works through the use of in-built functions known as Goroutines.
 
-**[Channels](https://www.golangprograms.com/go-language/channels.html)**
+ [Goroutines](https://www.golangprograms.com/goroutines.html) are functions that run at the same time alongside other code or programs. Goroutines are unique to Go. They’re not OS threads though they may be considered lightweight threads. Goroutines are deeply integrated with Go runtime. Go's runtime monitors goroutine behavior and suspends them when they become blocked, then resumes them once they are not blocked. This makes them preemptible in some ways, but only when the goroutine is blocking. The runtime and the logic of a goroutine work together. Goroutines can communicate with one another and synchronize their execution. In Go, one of the synchronization elements is called a channel. Though they are used to synchronize memory access, they are best used for communicating information between goroutines. When data is to be shared across goroutines while performing a concurrent activity as a goroutine, channels function as a conduit (pipe) between the goroutines and provide a method that ensures asynchronous exchange.
 
-Through channels, goroutines can communicate with one another and synchronize their execution.
+After understanding the basics of Concurrency in Go, we will be building a simple command-line application that takes in some URLs, sends HTTP requests, and displays responses as output. Using this application, we will work with Go concurrency features and in-built functions. Let's get started!
 
-In Go, one of the synchronization elements is called a channel. Though they are used to synchronize memory access, they are ideal for communicating information between goroutines. 
-
-When data has to be shared across goroutines while performing a concurrent activity as a goroutine, channels function as a conduit (pipe) between the goroutines and provide a method that ensures asynchronous exchange.
-
-After understanding the basics of Concurrency in Go, we will be building a simple command-line application that takes in some URLs and sends HTTP requests, and displays responses as output. 
-
-Through this application, we will use the Go concurrency model and have a better understanding of how it works. 
-
- 
-
-*Let's get started!*
-
-We begin by writing a Go code with no concurrency, then subsequently we will add concurrency. 
+In this application, we will create a simple command-line application in Go to show how concurrency features in Go operate and how they help our program run faster. This program would receive several URLs as input, sends HTTP GET requests, and returns the status code of the URLs. We will begin with writing a Go code with no concurrency and take note of the time of execution, afterwards, we will add concurrency and compare the difference in time of execution.
 
 ```go
 package main
@@ -86,33 +72,66 @@ This program contains two functions: the *request function* and the *main functi
 
 The *main function* is set to hold more than two arguments. Next, we iterate over the URLs and send requests.
 
-Let's run this on our terminal, using the *time* command we can see how long this program can run. I will pass in some URLs. Add this in your bash terminal: `time go run main.go google.com github.com youtube.com facebook.com` run this command and see how many seconds it took. 
+In our terminal, we will pass in some URLs as a request and see how much time it took for our request to complete. Now, using the *time* command in your bash terminal pass in these URLs: `time go run main.go google.com github.com youtube.com amazon.com plaid.com gitlab.com` and run the command. 
 
-So, we sent a request to the first argument and once it's completed and a response comes in, then the program returns to the for loop and sends another request to the next argument, and the process continues.
+![Zero concurrency](/engineering-education/concurrency-in-go/noconcurrency.png)
 
-We can see a waste of time while waiting for the response from one argument before a request is made to another argument. 
+The program was executed at exactly, 8.937s
 
-*Think of it this way*, what if we close up the gap in time while waiting for the response of the first argument we can send another request for the second argument. That is, as the response for the first argument is processing another request is made for the second argument. Instead of waiting for the first response to come back before another request can be made.  
+In this program, we sent a request to the first argument and when its completes, a response comes in, then the program returns to the for loop and sends another request to the next argument, and the process continues. We can see a waste of time while waiting for the response from one argument before a request is made to another argument. Which is a problem. 
 
-Now, this is what concurrency using Goroutines solves. 
+*Now think of it this way*, what if while waiting for the response of the first argument we close up the gap in time, by sending another request for the second argument. That is, as the response for the first argument is processing another request is made for the second argument instead of waiting for the first response to complete before another request can be made.  
+
+Now, this is what concurrency using Goroutines comes in. 
 
 **How Goroutines work**  
 
-Goroutines allow our application to become asynchronous. 
+Goroutines allow our application to become asynchronous. Where there are more than one Goroutines, these Goroutines are submitted to the Go runtime scheduler which manages their lifecycle. Then allocates the Goroutine to several OS threads. If a goroutine starts blocking the Go scheduler performs what is referred to as a *"context-switch".*
 
-Where there are more than one Goroutines, these Goroutines are submitted to the Go runtime scheduler which manages their lifecycle. Then allocates the Goroutine to a number of os threads. If a goroutine starts blocking the Go scheduler performs what is referred to as a *"context-switch".*
+> *"Context switch is the process of storing the state of a thread so it can be restored and resume execution at a later point"*
 
-> *The context switch is the process of storing the state of a thread so it can be restored and resume execution at a later point*
+So while one goroutine is stored in the background the Go scheduler gives the thread to another goroutine. 
 
-So while one goroutine is stored in the background the go scheduler gives the thread to another goroutine. 
+Back in our program, let's add concurrency by creating a distinct goroutine for our main function. This way, every time we enter the *for loop*, each of our function calls gets its own goroutine, and each of our URLs executes ***concurrently***.  
 
-Now we are running a separate goroutine for each of our URLs and we are running the same request function inside those goroutines. Though there are goroutines for each of the URLs when running none of the goroutines would be completely processed yet the program would finish executing. This is because the main goroutine exists before them and we never told the main function to *wait* for them. 
+```go
+package main
 
-To solve this problem we use *WaitGroup.* 
+import (
+	"fmt"
+	"log"
+	"net/http"
+	"os"
+)
 
-*WaitGroup* is included in the golang sync package. It includes features that allow it to block and wait for any number of goroutines to complete their execution.
+func request(url string) {
+	res, err := http.Get(url)
+	if err != nil {
+		panic(err)
+	}
 
-Think of it in this manner, whenever we create a new goroutine we add 1 to that **WaitGroup** to increment it and when that goroutine completes the process we remove 1 to decrement it.
+	fmt.Printf("[%d] %s\n", res.StatusCode, url)
+}
+
+func main() {
+	if len(os.Args) < 2 {
+		log.Fatalln("Usage: go run main.go <url1> <url2> ... <urln>")
+	}
+	for _, url := range os.Args[1:] {
+		go request("https://" + url)
+	}
+}
+```
+
+Here we are ran a separate goroutine for each of our URLs while running the same request function inside those goroutines.
+
+![Goroutine](/engineering-education/concurrency-in-go/goroutine.png)
+
+This program was completed at *1.895s* which is faster than the request without concurrency however there was no output. This is because though there are goroutines for each of the URLs when running none of the goroutines are completely processed till the program finishes executing. You can also observe that there is no output, our `print` command does not display the response because the main goroutine ends before them, and the main function was not told to wait for them. 
+
+To solve this problem we use *WaitGroup. WaitGroup* is included in the Golang sync package. It includes features that allow it to block and wait for any number of goroutines to complete their execution.
+
+Think of it in this manner, whenever we create a new goroutine we add 1 to that **WaitGroup** to increment it and when that goroutine completes the process we remove 1 to decrement it. As a result, when the counter reaches zero, we can be certain that all our goroutines were successfully executed.
 
 Let's implement WaitGroup. 
 
@@ -151,10 +170,22 @@ func main() {
 }
 ```
 
-Firstly, we declared a global variable, **WaitGroup** `var wg sync.WaitGroup` Next, anytime we create a goroutine in our main function we increment it by adding one, `wg.Add(1)`  Once we are doing with the goroutine we proceed to call `wg.Done()` function. Lastly, we make our *main function* wait till all the goroutines are complete using `wg.Wait`. 
+Firstly, we declared a global variable, **WaitGroup** `var wg sync.WaitGroup` Next, we added `wg.Add(1)` to increment our main function anytime we create a goroutine by adding one. Once we are done with the goroutine we proceed to call `wg.Done()` function. Lastly, we make our *main function* wait till all the goroutines are complete using `wg.Wait`. 
 
-When we run this, all the application processes are complete. We have covered every aspect of concurrency in Go. From the introduction of concurrency to the distinction between concurrency and parallelism, to Go concurrency built-in, how concurrency using goroutines work in Go, and other concepts such as Go scheduler, runtime, and **WaitGroup**. I hope this article gave you a good grasp of what concurrency in Go means. 
+Let's quickly run this to see our output.
 
-Thank you! 
+![Waitgroup](/engineering-education/concurrency-in-go/waitgroup.png)
 
-Happy coding! 🙂
+All the application processes are completed and our application completed in *7.717s* which is two times faster than the first program with no concurrency and we have our output displayed. 
+
+### Conclusion
+
+We have covered the important aspect of concurrency in Go. From the introduction of concurrency to the distinction between concurrency and parallelism, Go concurrency built-in, how concurrency using goroutines work in Go, and other concepts such as Go scheduler, runtime, and WaitGroup.
+
+Most importantly, we saw how concurrency helps our application work faster while receiving several requests. 
+
+I hope this article gave you a good grasp of how concurrency works in Go. 
+
+Thank you 
+
+ Happy coding! 🙂
