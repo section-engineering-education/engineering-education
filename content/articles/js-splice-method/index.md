@@ -1,3 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /js-splice-method/
+title: Understanding the Slice(), Splice() and Split() methods in JavaScript
+description: This article will debunk the Slice(), Split() and Splice() methods used in Javascript. These methods are often confused because of their similar nomenclature.
+author: caroline-gatwiri
+date: 2021-09-16T00:00:00-15:10
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/js-splice-method//hero.jpg
+    alt: Understanding the Slice(), Splice() and Split() methods in JavaScript Cover image
+---
 ### Introduction 
 In this tutorial we are going to look at some of the JavaScript in-built functions, which are often confused because of their similar nomenclature. If you are a beginner and find them difficult you don't have to worry cause even experienced developers do confuse them sometimes. The functions are :
 - slice() method
