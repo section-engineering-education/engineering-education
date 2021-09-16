@@ -15,11 +15,13 @@ images:
     alt: Understanding the Slice(), Splice() and Split() methods in JavaScript Cover image
 ---
 ### Introduction 
-In this tutorial we are going to look at some of the JavaScript in-built functions, which are often confused because of their similar nomenclature. If you are a beginner and find them difficult you don't have to worry cause even experienced developers do confuse them sometimes. The functions are :
+One of JavaScript in-built functions, which are often confused are:
 - slice() method
 - splice() method
 - split() method 
- Once we grasp how to use JavaScript's built-in methods, we can save a lot of time when developing.
+This is because of their similar nomenclature. If you are a beginner and find them challenging, do not worry cause even experienced developers sometimes confuse them. 
+Once we grasp how to use these built-in JavaScript methods, we can save much time when developing.
+
 ### JavaScript Arrays
 To begin, you must first comprehend how JavaScript arrays work. In JS, we utilize arrays to store numerous data, much like in other programming languages. The distinction is that JavaScript arrays can hold multiple types of data at the same time.
 
@@ -28,20 +30,32 @@ On occasion, we must perform operations on those arrays. After that, we use JS f
 ```js
 let array_name = []; 
 ```
-Let's create a new array containing a variety of data kinds. I will use the same example through out the tutorial to help you learn the different uses of the slice(), spice() and split() methods.
+Let us create a new array containing a variety of data kinds. I will use the same example throughout the tutorial to help you learn the different uses of the slice (), spice(), and split() methods. 
+
 The following is the example we will use:
+
 ```js
 let myArray = [5, 6, 7, "pizza", 3.32, true];
 ```
-This is an acceptable JavaScript use. The above array contains many datatypes, such as string, integer and boolean.
-### Slice ( )
+
+This is an acceptable JavaScript use. The above array contains many datatypes, such as string, integer, and boolean.
+
+#### Slice ( )
 The slice( ) method duplicates a portion of an array and gives it back as a new array without changing the initial one.
+
 ```js
 array.slice(start, to);
 ```
+
 Start: Slice the array from the specified element index
+
 To: Slice the array to another element index that you specify.
-To show you how the slice() method works let's us follow the example below. We will focus on slicing the first 3 items from the array. I hope you all know that indexing in an array starts from 0.
+
+To show you how the slice() method works, let us follow the example below. We will focus on slicing the first three items from the array.
+
+**Note: Indexing in an array starts from 0.**
+
+array.slice(0, 3);
 ```js
 array.slice(0, 3);
 ``` 
