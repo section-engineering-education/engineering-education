@@ -94,7 +94,7 @@ import java.net.UnknownHostException;
 
 public class GetIpAddress {
    public static void main(String[]args) throws UnknownHostException{
-        InetAddress address = InetAddress.getByName("localhost");
+        InetAddress address = InetAddress.getByName("www.microsoft.com");
 
         System.out.println("my local machine: " + address);
     }
