@@ -15,7 +15,7 @@ images:
 ---
 In the World of software development, testing is a way to be sure that an application with a set of stated functionalities will perform those functions without fail. It involves running your software through a series of checks either manually or using automated tools to verify its effectiveness.
 <!--more-->
-When developing softwares, errors are bound to happen and testing makes it possible for those errors to be detected and corrected before the software is released.
+When developing software, errors are bound to happen and testing makes it possible for those errors to be detected and corrected before the software is released.
 
 A well-tested software is reliable, secured, and highly accountable. It saves cost in the long run and helps prevent wastage of manpower and resources.
 
@@ -43,18 +43,18 @@ As a prerequisite, the reader must have a good understanding of:
 - [Protractor](https://www.protractortest.org/#/) is a NodeJS program built on top of WebDriverJs that supports the Jasmine test framework and is used as an end-to-end test framework for testing Angular applications. Protractor extends what WebDriverJs can do by enabling automation and interactions of possible user events on the browser.
 - End-to-End testing refers to the test that is carried out on operations that occur through the various modules that make up your angular application flow.
 
-For example, we start testing a simple flow of a web page, by testing Registration page, to Login page, to Profile page, and to Logout can be an end-to-end test flow. While each module here, have their own unit test cases.
+For example, we start testing a simple flow of a web page, by testing the Registration page, to the Login page, to a Profile page, and Logout can be an end-to-end test flow. While each module here, have their unit test cases.
 
 ### Why protractor
-If you open a non-angular webpage, you have elements that users can interact with such as an input field, a dropdown tab, or a clickable buttons. All these elements can be tested using [Selenium](https://www.selenium.dev) web framework.
+If you open a non-angular webpage, you have elements that users can interact with such as an input field, a dropdown tab, or clickable buttons. All these elements can be tested using the [Selenium](https://www.selenium.dev) web framework.
 
-A website built using AngularJS introduces to the extra DOM properties that are identifiable only to Angular applications like "ng-model", "ng-repeater", or "ng-controller".
+A website built using AngularJS introduces the extra DOM properties that are identifiable only to Angular applications like "ng-model", "ng-repeater", or "ng-controller".
 
-These properties wraps the existing HTML DOM elements. These properties are not visible to Selenium for testing.
+These properties wrap the existing HTML DOM elements. These properties are not visible to Selenium for testing.
 
-Using protractor, enables the ability to capture these hidden elements.
+Using Protractor enables the ability to capture these hidden elements.
 
-In addition, protractor provides functions like `waitForAngular`,` by.binding`, `WebElement.evaluate`, and others, provides a variety of options to perform your tests.
+In addition, protractor provides functions like `waitForAngular`,` by.binding`, `WebElement.evaluate`, and others, provide a variety of options to perform your tests.
 
 Selenium WebDriver deals with a lot of synchronization issues related to using bare selenium. On the other hand, Angular (like pure Javascript) works asynchronously making use of promises to handle the callbacks.
 
@@ -98,26 +98,26 @@ On the other hand, the function defines a test.
 
 A spec can contain multiple expectations described using the "expect" statement (which will be discussed later) that is used to test the state of the code.
 
-An expectation of a test case with original result can either be true or false.
+An expectation of a test case with an original result can either be true or false.
 
 #### It
 `it()` in a nutshell is a function that includes executable code to carry out the required test.
 
-Since jasmine is a JavaScript testing framework, the variable scope applies in the same way it does with vanilla JavaScript codes.
+Since Jasmine is a JavaScript testing framework, the variable scope applies in the same way it does with vanilla JavaScript codes.
 
-A variable defined within a function is local and visible only with that particular function. This helps in data sharing within the `it()` blocks.
+A variable defined within a function is local and visible only with that particular function. This helps in data sharing within `it()` blocks.
 
 If you want to share data between other test blocks just use a global variable.
 
 #### Expect
-They are functions that takes in resultant and the expected value. These functions determine if a test if successful or a failure.
+They are functions that take in the resultant and the expected value. These functions determine if a test is successful or a failure.
 
 #### Matchers
 A matcher is an implementation of a boolean outcome i.e., the result of a matcher confirms if something is either true or it is false.
 
 In this case, it checks the outcome of the expectation against a given outcome/value. This determines if a test case passes or fails.
 
-In Jasmine, you will find several matchers that helps you achieve the expected test scenarios.
+In Jasmine, you will find several matchers that help you achieve the expected test scenarios.
 
 ### Setup and configuration
 Firstly, download and install [NodeJS](https://nodejs.org/en/download/).
@@ -147,7 +147,7 @@ exports.config = {
 
 Create a `test-spec.js` file in the root directory.
 
-Here, we specify the testcases.
+Here, we specify the test cases.
 
 Install Jasmine as a dependency, if it is not already installed.
 
@@ -166,11 +166,11 @@ Here, we will capture a "search input" element located at the top right corner o
 
 Then, we will proceed to search requests for "free" videos by using the protractor API. 
 
-Finally, we will verify the DOM interaction. It is expected that video-blender will have available free videos thats lists those free videos in the DOM page layout, while replacing the initial webpage.
+Finally, we will verify the DOM interaction. It is expected that video-blender will have available free videos that list those free videos in the DOM page layout while replacing the initial webpage.
 
 Performing another search for a non-existing word should also produce a change to display the result of the search.
 
-- First we will create the `describe()` function that will house our test. The string specifies the name of this block of tests we will be writing. The second parameter is a function that our specs will be written within.
+First, we will create the `describe()` function that will house our test. The string specifies the name of this block of tests we will be writing. The second parameter is a function that our specs will be written within.
 
 ```javascript
 describe("Testing exercise for protractor and Javascript application", function() {
@@ -191,7 +191,7 @@ describe("Testing exercise for protractor and Javascript application", function(
 })
 ```
 
-In the code below, we first save a string (website URL) into the variable "url". We are making use of a protractor API method `browser.get()` to make a request to the link specified.
+In the code below, we first save a string (website URL) into the variable "url". We are making use of a protractor API method `browser.get()` to request to the link specified.
 
 We specify this function as `await` to process it asynchronously.
 
@@ -205,11 +205,11 @@ describe("Testing exercise for protractor and Javascript application", function(
 })
 ```
 
-Here, we have written our first testcase.
+Here, we have written our first test case.
 
-We are expecting the the website's home page to be loaded. For this, we also make use of the protractor API method `browser.getCurrentUrl()`.
+We are expecting the website's home page to be loaded. For this, we also make use of the protractor API method `browser.getCurrentUrl()`.
 
-Now, we go ahead to grab elements that we need to perform further tests from the DOM using the browser inspection tool.
+Now, we grab elements that we need to perform further tests from the DOM using the browser inspection tool.
 
 Based on the element, you can fetch information using:
 - `id`
@@ -263,7 +263,7 @@ describe("Testing exercise for protractor and Javascript application", function(
 })
 ```
 
-We then make a further tests for an non-existing search result "random".
+We then make further tests for a non-existing search result "random".
 
 We do not clear the text in the search bar, so our search gets appended to the existing "free" text in the search bar.
 
@@ -311,7 +311,7 @@ The test output should be:
 Congratulations on your first test using Protractor!
 
 ### Conclusion
-In this tutorial you have learnt what testing is, why testing is important and the various definitions for terms used in testing. 
+In this tutorial, you have learned what testing is, why testing is important, and the various definitions for terms used in testing. 
 
 Also, we understood basic codes that pull elements from the DOM and test their outcome.
 
