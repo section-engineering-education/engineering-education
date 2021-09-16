@@ -3,4 +3,4 @@ title: Francisca Ngondu
 type: authors
 github: https://github.com/FranciscaNg
 ---
-I’m interested in programming. I’m currently learning computer science. I’m looking to collaborate on software development. I  portray excellent skills and demonstrated the ability to improve knowledge advancement in technology.
+Francisca is interested in programming and is currently learning computer science. She also enjoys collaborating on software development projects. She portrays excellent skills and enjoys demonstrating ways to improve knowledge advancement in technology.
