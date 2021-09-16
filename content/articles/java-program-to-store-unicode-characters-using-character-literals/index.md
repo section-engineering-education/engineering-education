@@ -11,6 +11,13 @@ There is a backslash and one of the following after it.
 - By just one character.
 - Octal number in the range of 000 to 377.
 - Characters in Unicode that are identified by the letter "U" and four decimal-digit numbers.
+
+Table of content:
+- [Encoding approaches](#encoding-approaches)
+- [Advantages of unit code](#advantages-of-unit-code)
+- [Unicode character literals](#unicode-character-literals)
+- [More on Literals](#more-on-literals)
+
 ### Encoding approaches
 #### 1. First method: Giving the char datatypes Unicode.
 
@@ -118,8 +125,8 @@ $
 a
 A
 ```
+### Unicode character literals
 To print Unicode characters, enter the escape sequence "u".
-
 Unicode sequences can be used everywhere in Java code. As long as it contains Unicode characters, it can be used as an identifier. Using Unicode, you may convey comments, IDs, and even the content of character and string literals, as well as other information. Use caution, as they are interpreted by the compiler early. Using the Unicode linefeed as part of a print statement would cause an error in your source code because your source code would treat this as an actual linefeed that appears before the closing single quote of a character literal, which would result in an error. 'n' and 'r' for line termination literals is the basis for the prior warning to always use these characters.
 Look at the following to understand this better:
 ```
