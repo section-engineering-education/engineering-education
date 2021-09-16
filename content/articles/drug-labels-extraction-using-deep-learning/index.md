@@ -68,7 +68,7 @@ If you have a CPU-enabled machine, use the following command to install the Padd
 ```
 > If you happen to get an error when installing, it's because you haven't installed the `pip` command. To install it, use the command, `pip3 install --upgrade pip`. Also, since we're installing it on our notebook, we have to include the exclamation mark `!` before the installation command.
 
-Let's now install PaddleOCR. It is a quick pip install. Let's type in the following command:
+Let's install PaddleOCR through a quick pip install, using the following command:
 
 ```bash
 pip install paddleocr
