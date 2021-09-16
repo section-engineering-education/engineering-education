@@ -14,6 +14,13 @@ images:
   - url: /engineering-education/null-safety-support-for-flutter-and-dart/hero.jpg
     alt: Null Safety support for Flutter and Dart Cover image
 ---
+Table of content:
+- [Principles of Null Safety](#principles-of-null-safety)
+- [What are Nullable and Non-nullable types?](#what-are-nullable-and-non-nullable-types)
+- [Sound and Unsound null safety](#sound-and-unsound-null-safety)
+- [How Null-safety migration works in Flutter](#how-null-safety-migration-works-in-flutter)
+- [Reasons for Null-safety migration in Flutter](#reasons-for-null-safety-migration-in-flutter)
+
 ### Introduction
 Null Safety means that a variable cannot have a null value unless it starts with null. If a variable begins with "null," it cannot end with "null." 
 
@@ -30,6 +37,10 @@ Table of content:
 - [How Null-safety migration works in Flutter](#how-null-safety-migration-works-in-flutter)
 - [Reasons for Null-safety migration in Flutter](#reasons-for-null-safety-migration-in-flutter)
 
+### Prerequisites
+There are several basic requirements that must be met before you can use Null Safety in your Flutter apps.
+1. Flutter SDK version 2.0.0
+2. Dart SDK version 2.12.0
 ### Principles of Null Safety
 - **Non-nullable**: Without explicit nullability declarations, variables in the Dart programming language cannot be null because non-null was by far the most popular option in API research.
 - **Incrementally Adoptable**: It is entirely up to you to make the switch to null safety. You can decide when and what to move to null safety. The same project can have null-safe and non-null-safe code stages.
