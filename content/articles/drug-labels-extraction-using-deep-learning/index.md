@@ -18,7 +18,7 @@ Optical Character Recognition (OCR) uses optics to extract readable text into ma
 <!--more-->
 Applying cutting-edge technologies to modern problems has enabled various problem-solving in healthcare, thereby improving people's lives. Machine learning has been used in hospitals to identify patients faster in disease identification and diagnosis, robotic surgery, and medical imaging diagnosis.
 
-One notable area of concern in healthcare that hasn't been explored a lot is drug label extraction. Optical Character Recognition (OCR) is a technology that can use optics to extract readable text into machine-encoded text.
+One notable area of concern in healthcare that hasn't been explored a lot is drug label extraction. Optical Character Recognition (OCR) uses optics to extract readable text into machine-encoded text.
 
 The OCR technology has been used on Google's visual translation service. Also, a large number of companies that process paper-based forms use OCR to extract texts from documents. Recently, most companies offering PDF services, such as Adobe, provided this feature on their app.   
 
