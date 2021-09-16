@@ -14,7 +14,6 @@ images:
   - url: /engineering-education/how-to-lookup-ip-addresses-in-java/hero.jpg
     alt: How to Lookup Ip Addresses in Java Hero Image
 ---
-
 A **host** is a computer that can connect to the internet. Every host has a unique identification number that allows its identification anytime it is online. 
 <!--more-->
 An IP address is a name given to this specific number.
