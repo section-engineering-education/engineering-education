@@ -83,8 +83,7 @@ Although we are using the Firebase Authentication API in our code, we are still 
 1. How will you deal with modifications in future versions of Firebase Authentication that cause problems?
 2. In the future, let us say that we want to switch from Firebase Authentication to a different auth service.
 
-All Firebase Authentication calls in our codebase will need to be modified or replaced. If and when our project expands, we will likely add a lot more content to our application. The most frequent security features include sharing preferences, providing privileges, tracking statistics, and local authentication. Maintaining our code as APIs change becomes more challenging as a result of this.
-
+All Firebase Authentication calls in our codebase will need to be modified or replaced. If and when our project expands, we will likely add a lot more content to our application. The most frequent security features include sharing preferences, providing privileges, tracking statistics, and local authentication. This makes it more difficult to maintain our code as APIs change.
 ### Creating service classes
 As we covered previously, a service class is nothing more than a wrapper. A solution for all of our problems. It is possible to create a generic authentication service using Firebase Authentication :
 
@@ -193,7 +192,7 @@ In this case, you'll need assistance. StorageService, for example, is the name o
 ### Conclusion
 You can hide the implementation details of third-party code in your app using service classes. However, this is especially true if you need to contact an API method multiple times in your codebase.
 In a nutshell:
-1. The API wrapper class can be used to hide implementation details.
+1. Use the API wrapper class to mask implementation details.
 2. All input and output arguments for API methods are included.
 3. To make swapping out another version easier, a basic abstract service class can be built.
 
