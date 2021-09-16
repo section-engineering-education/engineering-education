@@ -69,7 +69,7 @@ class Book(models.Model):
 
 [Unicorn](https://www.django-unicorn.com/docs/) is a reactive component framework that progressively enhances a normal Django view. It performs AJAX calls in the background, and dynamically updates the DOM.
 
-Add it to our installed application:
+Add it to your installed application:
 
 ```py
 INSTALLED_APPS = [
