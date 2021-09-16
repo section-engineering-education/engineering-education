@@ -206,3 +206,6 @@ As we can see from the plot, the shooting method is accurate as of the analytica
 Using the shooting method to get the solution for the linear differential equations is straightforward. The advantage of the shooting method is that you don't need the initial values. You can use guess for these values, but still, you get the solution. Thus, it reduces the time that could be spent to get the initial values.  
 
 Also, at some point, the methods used to find these initial values are so tiresome, e.g., the Runga Kutta method, which is not involved in the shooting method. Matlab also makes it easier since it has some in-built functions that help to work such problems easier.
+
+---
+Peer Review Contributions by: [Miller Juma](/engineering-education/authors/miller-juma/)
