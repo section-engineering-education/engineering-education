@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /how-to-lookup-ip-addresses-in-java/
-title: How to LookUp Ip Addresses in Java
+title: How to Lookup Ip Addresses in Java
 description: This tutorial will guide the reader on how to check IP addresses on the internet using  the Java Programming Language. They will understand how IP addresses and hostnames are accessible via the InetAddress class.
 author: apondi-ashley
 date: 2021-09-16T00:00:00-16:20
