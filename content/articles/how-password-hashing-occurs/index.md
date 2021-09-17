@@ -69,11 +69,15 @@ A visual representation of the code input and output is as shown below:
 
 ##### Hashing Algorithms
 
-Hashing can be successfully achieved by the use of different formats also considered as different `Types of Hashing Algorithm`
+Hashing can be successfully achieved by the use of different formats also considered as different `Types of Hashing Algorithm`. There are a lot of hashing algorithms and we will discuss some of the commonly used hashing algorithms.
 Below is a list of different formats that can be applied during the password hashing process. 
-- `SHA(Secure Hashing Algorithm)` - This is the default hashing algorithm that converts plain passwords into hashed passwords of 256-bit size.
-- `SSHA(Salted Secure Hashing Algorithm)` - This is a process of adding random characters into the raw password to generate a different hash from the intended hash.
-- `MD5(Message-Digest Algorithm)` - This format is the same as SHA only that it produces a string of size 128 bits.
+- `SHA(Secure Hashing Algorithm)` - This is the default hashing algorithm that converts plain passwords into hashed passwords of 256-bit size. Different versions are depending on the size of the password hash it produces. For instance, `SHA1` produces a password hash of 160 bits and `SHA2` gives an output of 256 bits.
+
+- `SSHA(Salted Secure Hashing Algorithm)` - This Hashing Algorithm is similar to SHA only that it involves adding random characters into the raw password to generate a different hash from the intended hash. The process mentioned above is known as salting
+
+
+- `MD5(Message-Digest Algorithm)` - This format is the fifth version of the Message-Digest Algorithm. It is almost the same as SHA only that it produces a string of size 128 bits. In recent times, this was the commonly used Hashing Algorithm until was noted that MD5 generates the same hash for two different passwords. This limitation is known as `collision`. This called for other password hashing algorithms.
+
 
 #### Storage of Password Hash
 
@@ -96,6 +100,19 @@ The path to the files is shown below:
 
 `etc/shadow`
 
+#### Password Hashing Mechanisms
+
+1. **Salting**
+
+**Salting** is the process where a user adds a series of random characters into their password so that the hash generated is more complex and harder for an unauthorized party to crack. Hackers have noticed that most users use a combination of common names or names of their pets to generate passwords. This hence posed a threat since hackers made a list of commonly used words known as a `dictionary`. They then generated the hashes of these words and use them to match them with password hashes stored by users. If a match is found, the hacker would just decode the hash to a word in the dictionary, and just like that, they have your password.
+
+To solve this, it is advised that you set a strong password that is not common and hard to decode. That is where password salting comes in. You add a series of random characters into your original password and the hash generated will be different from the initial password hash expected. The process of adding salt is known as salting.
+
+2. **Peppering**
+
+For an instance where a hacker has exploited an SQL injection vulnerability, they will have full access to your password hash whether salted or not. To solve this problem, the user adds encryption to the hashed password with a symmetrical encryption key. This Key is now referred to as the `pepper`. The key is not stored in the database as the password hash since we assume in this instance that the attacker has access to the database.
+
+
 #### Password protecting Yourself
 With all this knowledge of password hashing and cracking, lots of accounts have and are in danger of access by unauthorized parties and hackers. This calls for your awareness to protect your data and accounts by using strong passwords.
 Let's see how we can achieve this.
@@ -116,10 +133,13 @@ Avoid using characters in your name or predictable numbers.
 
 Changing your Password frequently will synchronize your password hash and this will be safer for you as it will lower any odds of it being decoded by a hacker or any threat.
 
+If you want to learn how Password Cracking occurs, go through the [Password Cracking with John the Ripper](https://www.section.io/engineering-education/password-cracking-with-john-the-ripper/).
+
 #### Summary
 From this tutorial, we have learned the following:
 - Introduced Password Hashing.
 - Learned using a Practical example of how hashing occurs.
 - Different Formats of Hashing Algorithms.
+- Password Hashing Mechanisms.
 - How Passwords are stored in our Computers in hashed form.
 - Protecting our Passwords.
