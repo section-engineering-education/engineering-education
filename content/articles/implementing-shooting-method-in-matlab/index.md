@@ -33,9 +33,9 @@ To follow along with this tutorial, you'll need:
 ### Overview
 Higher-order ODE's are written as;
 
-$
+
 \frac{d^n y}{dt^n}= f(t,y,\frac{dy}{dt},\frac{d^2}{dt^2},---,\frac{d^{n-1}y}{dt^{n-1}})
-$
+
 
 From the above equation, nth order ODEs will require *n* conditions for a unique solution. In the initial value problem, the conditions of the solution function `y` and all its derivatives up to the `N-1`. All at some initial value t=t0. The expression for the equation is;
 
