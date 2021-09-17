@@ -23,7 +23,6 @@ Yet, with WordPress being beginner-friendly, its backing technology is server-si
 Technology such as Next.js supports hybrid content generation. They support both SSR and CSR for Static Site Generation. This means server-side content is served ahead of time. Thus, a user requests the server, and the content is served ahead of time. Next.js uses generators that render a page statically, making it load ahead of time. With superior technologies such as Next.js, you can combine them with CMS such as WordPress and run them as headless. This way, WordPress will run a headless CMS. This produces a performant website with a great user experience.
 
 ### Overview
-- [Overview](#overview)
 - [Prerequisites](#prerequisites)
 - [What is a headless CMS](#what-is-a-headless-cms)
 - [Reasons for running WordPress as a headless CMS](#reasons-for-running-wordpress-as-a-headless-cms)
