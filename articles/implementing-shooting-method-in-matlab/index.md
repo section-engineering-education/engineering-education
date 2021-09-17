@@ -13,13 +13,11 @@ images:
 
   - url: /engineering-education/implementing-shooting-method-in-matlab/hero.png
     alt: shooting method Matlab
-    
+---
+
 In numerical analysis, the shooting method reduces a boundary value problem to an initial value problem. It is a popular method for the solution of two-point boundary value problems. 
 <!--more-->
-
-
-### Introduction
-In numerical analysis, the shooting method reduces a boundary value problem to an initial value problem. It is a popular method for the solution of two-point boundary value problems. If the problem is first defined by *y=f(x); y(x0)=a* and *$y(X_1)$*, it is transformed into the initial problem *y' =z(x)* and *z'(x) = f(x)* with some initial values. 
+If the problem is first defined by *y=f(x); y(x0)=a* and *$y(X_1)$*, it is transformed into the initial problem *y' =z(x)* and *z'(x) = f(x)* with some initial values. 
 
 Since this method is a two-point boundary value problem, then it has two initial values. In the shooting method, one of the initial values is not known. This value is guessed and compared to the known solution at the boundary conditions until the target thus shooting method. This article contains the construction of the shooting method code for a linear BVP. We will look at recognizing the boundary value problem and formulate the BVP as an equivalent system of IVP.
 
