@@ -2,17 +2,17 @@
 layout: engineering-education
 status: publish
 published: true
-url: /concept-of-first-hop-redundancy-protocol/
-title: Concept of First Hop Redundancy Protocol
+url: /integrate-ml-to-flask-api-and-deploy-to-heroku/
+title: Integrate Flask API with ML Models and Deploying to Heroku
 description: In this article we will discuss the process of integrating an ML model into a Flask REST API. We will deploy the model to Heroku.
 author: 
-date: 2021-06-10T00:00:00-18:00
-topics: [Networking]
+date: 2021-09-15T00:00:00-18:00
+topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
 
-  -url: /engineering-education/concept-of-first-hop-redundancy-protocol/hero.jpg
-   alt: First Hop Redundancy Protocol example image
+  -url: /engineering-education/integrate-ml-to-flask-api-and-deploy-to-heroku/hero.jpg
+   alt: ML Flask API example image
 ---
 
 It is not enough to build and train ML models. Your ML model is useless if it just sits in your PC after training. Would it not be great to show others what your machine learning model can do after training it? This article covers how to integrate an ML model into a Flask REST API. It also covers how to deploy a Flask REST API to Heroku. You can merge this REST API into web applications and android applications. The repo for this project is [here.](https://github.com/Inyrkz/diagnose-diabetes-svm)
