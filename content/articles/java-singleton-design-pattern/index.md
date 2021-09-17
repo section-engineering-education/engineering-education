@@ -29,9 +29,7 @@ They are quite useful yet they violate the modularity of the code. We use this m
 ### Overview of Singleton design pattern
 The term "singleton" refers to a component that only has one instance. By preventing the construction of a class, it guarantees that only one entity of the class resides within the Java virtual machine.
 
-In Java, a Singleton class facilitates the creation of only one instance. This one object or instance is accessible to all other classes.
-
-Fields that are unique to each case if we have such a feature like a class, such as the unique or static components, will only be used once.
+In Java, a Singleton class facilitates the creation of only one instance. And, this one object or instance provides global access to all other classes. Fields that are unique to each other and have such a feature like a class, such as the unique or static components, will only be used once.
 
 #### Purpose of using a Singleton class function
 One of the fundamental goals that a singleton type has is to reduce the number of entities that would be created to only one. This guarantees that to get the components, like a socket or database connection, is controlled.
@@ -63,9 +61,8 @@ public class BluePrint
 }
 ```
 
-When you create multiple instances, the values for both reference variables will be different. As a result, it is not a Singleton class.
-
-In the example above, r1 and r2 are two reference elements with different values. If an object is null, lazy, and eager, design trends produce a new singleton entity or any specific entity.
+When you create multiple instances, the values for both reference variables will be different. As a result, it will not a Singleton class.
+If an object is null, lazy, and eager, design trends produces a new singleton entity or any specific entity.
 
 But, if the entity is not empty, they have to return another singleton entity object or other specific elements of the object. We will start with eager loading, for which we will need to remember a few guidelines for building eager loading entities.
 
@@ -243,7 +240,7 @@ public class BluePrint
 }
 ```
 
-In the code above, two threads, r1 and r2, are specified, both of which call the same procedure, and both are initialized at an equal moment. We should note that with thread, we may use synchronized with the `getInstance` method.
+In the code above, two threads r1 and r2 are specified and both of which call the same procedure. These are initialized at the same time. We should note that when we have a thread, we should use synchronization with the help of a get `getInstance` method.
 
 However, making a method synchronized results in a lot of work, as the `getInstance()` function performs a lot of work. And, it will reduce performance by a proportion of about one hundred, which is the issue with synchronized threading.
 
