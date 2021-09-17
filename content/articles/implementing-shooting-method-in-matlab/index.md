@@ -17,7 +17,7 @@ images:
 
 In numerical analysis, the shooting method reduces a boundary value problem to an initial value problem. It is a popular method for the solution of two-point boundary value problems. 
 <!--more-->
-If the problem is first defined by *y=f(x); y(x0)=a* and *$y(X_1)$*, it is transformed into the initial problem *y' =z(x)* and *z'(x) = f(x)* with some initial values. 
+If the problem is first defined by `y=f(x); y(x0)=a` and `y(X_1)`, it is transformed into the initial problem `y' =z(x)` and `z'(x) = f(x)` with some initial values. 
 
 Since this method is a two-point boundary value problem, then it has two initial values. 
 
@@ -33,23 +33,17 @@ To follow along with this tutorial, you'll need:
 ### Overview
 Higher-order ODE's are written as;
 
-$ x^2 + y^2 = 6 $
+<img src="https://render.githubusercontent.com/render/math?math=\frac{d^n y}{dt^n}= f(t,y,\frac{dy}{dt},\frac{d^2}{dt^2},---,\frac{d^{n-1}y}{dt^{n-1}})">
 
+From the above equation, nth order ODEs will require `n` conditions for a unique solution. In the initial value problem, the conditions of the solution function `y`, all its derivatives up to the `N-1`, have an unknown initial value t=t0. The expression for the equation is;
 
-\frac{d^n y}{dt^n}= f(t,y,\frac{dy}{dt},\frac{d^2}{dt^2},---,\frac{d^{n-1}y}{dt^{n-1}})
-
-
-From the above equation, nth order ODEs will require *n* conditions for a unique solution. In the initial value problem, the conditions of the solution function `y` and all its derivatives up to the `N-1`. All at some initial value t=t0. The expression for the equation is;
-
-$
-y(t0),\frac{dy}{dt}|_{t=t0}\mathrm({,---,\frac{d^{n-1}y}{dt^{n-1}}})\mathrm{}|_{t=t0}
-$
+<img src="https://render.githubusercontent.com/render/math?math=\frac{dy}{dt}|_{t=t0}({,---,\frac{d^{n-1}y}{dt^{n-1}}}){}|_{t=t0}">
 
 So if we know everything at the initial value, we would step the integration forward in time. 
-The formulation of boundary value problems is different. It might be the same differential equation but what is different is that we know `y` at maybe two different time values, y(t0), y(t1).
+The formulation of boundary value problems is different. It might be the same differential equation but what is different is that we know `y` at maybe two different time values, `y(t0)`, `y(t1)`.
 
 ### Why do we need a different strategy for the boundary value problem(BVP)?
-Well, thinking about the second-order initial value, there are two basic approaches: Runga Kutta 4 and the multistep method. Both approaches require that we know the solution's value (s) at `t=t0` and step forward in time using the ODE function f(t,y). 
+Well, thinking about the second-order initial value, there are two basic approaches: Runga Kutta 4 and the multistep method. Both approaches require that we know the solution's value(s) at `t=t0` and step forward in time using the ODE function f(t,y). 
 
 Now, this is not the case with BVP. It is because we don't know the condition at the first point of integration. There are two basic approaches to BVPs, that is;
 - Shooting method
@@ -58,23 +52,17 @@ Now, this is not the case with BVP. It is because we don't know the condition at
 ### Shooting method concept
 The basic idea of the shooting method is that we take the second-order ODE and write it as a system of the first-order ODE. This system is known as equivalent IVP.
 
-$
-\frac{d^n y}{dt^n}= f(x,y,\frac{dy}{dx})
-$
+<img src="https://render.githubusercontent.com/render/math?math=\frac{d^n y}{dt^n}= f(x,y,\frac{dy}{dx})">
 
 The two first-order ODE of this system will be;
 
-$
-\frac{d^n y}{dt^n}= f(x,y_1,y_2)
-$ or $
-\frac{d^n y}{dt^n}= f(x,y_1,y_2)
-$
+<img src="https://render.githubusercontent.com/render/math?math=\frac{d^n y}{dt^n}= f(x,y_1,y_2)"> or <img src="https://render.githubusercontent.com/render/math?math=\frac{d^n y}{dt^n}= f(x,y_1,y_2)">
 
-At `x = 0`, `$y_1=y_0$` and at `x =0`, `$y_2=\frac{dy}{dx}|_{x=0}$`
+At `x = 0`, <img src="https://render.githubusercontent.com/render/math?math=y_1=y_0"> and at `x =0`, <img src="https://render.githubusercontent.com/render/math?math=y_2=\frac{dy}{dx}|_{x=0}">
 
-Now in this situation, we don't know one of the initial conditions, i.e, between y0 and $\frac{dy}{dx}|_{t=0}$, one value is not known. Therefore, we will guess the unknown initial condition in the shooting method and use the IVP solver. 
+Now in this situation, we don't know one of the initial conditions, i.e, between y0 and <img src="https://render.githubusercontent.com/render/math?math=\frac{dy}{dx}|_{t=0}">, one value is not known. Therefore, we will guess the unknown initial condition in the shooting method and use the IVP solver. 
 
-For example, we can guess $\frac{dy}{dt}|_{t=0}$, run the integration, and land into a different point which is not the target boundary condition as demonstrated below.
+For example, we can guess <img src="https://render.githubusercontent.com/render/math?math=\frac{dy}{dt}|_{t=0}">, run the integration, and land into a different point which is not the target boundary condition as demonstrated below.
 
 ![demonstration](/engineering-education/implementing-shooting-method-in-matlab/shooting_one.png)
 
@@ -84,7 +72,7 @@ This way, it is called the shooting method. First, we aim the solution at the ta
 It is the combination of all that we have been doing;
 1. Convert the BVP into equivalent IVP.
 2. Guess the value for the undefined `y0` initial condition.
-3. Change guess until the final solution satisfies the end boundary condition i.e., $y(end)=BC_2$(boundary condition 2)
+3. Change guess until the final solution satisfies the end boundary condition i.e., <img src="https://render.githubusercontent.com/render/math?math=y(end)=BC_2">(boundary condition 2)
 
 >For linear ODEs: Can use the linear interpolation requiring only two shots.
 We do the first and second shots with a different guess and interpolate between the two shots for the correct guess.
@@ -94,11 +82,9 @@ We do the first and second shots with a different guess and interpolate between 
 ### Example implementation of the shooting method
 The ODE governing the deflection of a supported beam with a constant distributed load is;
 
-$
-EI\frac{d^2}{dx^2}=\frac{wlx}{2}-\frac{wx}{2}
-$
+<img src="https://render.githubusercontent.com/render/math?math=EI\frac{d^2}{dx^2}=\frac{wlx}{2}-\frac{wx}{2}">
 
-With the boundary conditions *y(0)=y(l)=0*. Determine y(x) if E=200Gp, $I=3000cm^4$, w=kN/m, and l=3m.
+With the boundary conditions `y(0)=y(l)=0`. Determine y(x) if E=200Gp, I=3000cm^4, w=kN/m, and l=3m.
 
 ![Question](/engineering-education/implementing-shooting-method-in-matlab/shooting_three.png)
 
@@ -123,11 +109,9 @@ This is followed by definning the linear differential equation
 yp = @(x,y) [y(2); 1/(E*I)*((w*L*x/2)-(w*x^2)/2)];
 ```
 
-The above is our $\frac{dy}{dx}$ function. Just like we have been using our IVP, we've written the differential equation as a system of two. The systems are first-order differential equation and the $\frac{dy}{dx}$ function. It returns a column vector of
+The above is our <img src="https://render.githubusercontent.com/render/math?math=\frac{dy}{dx}"> function. Just like we have been using our IVP, we've written the differential equation as a system of two. The systems are first-order differential equation and the <img src="https://render.githubusercontent.com/render/math?math=\frac{dy}{dx}"> function. It returns a column vector of
 
-$$
-[dy_1 dx\\dy_2 dx]
-$$
+<img src="https://render.githubusercontent.com/render/math?math=[dy_1 dx\\dy_2 dx]">
 
 Now give the boundary conditions
 
@@ -175,9 +159,9 @@ To demonstrate what is happening in the code above, we look at the sketch below.
 
 ![demonstration](/engineering-education/implementing-shooting-method-in-matlab/shooting_four.png)
 
-Now, that's the plot for the 'shots' and the guesses. We then want to know the guess to get `yl`. So we have three points that we know for the interpolation. They are all our target boundary conditions, that is, shots to the boundary condition and the actual target boundary condition `$y_l$`. The unknown value is the unknown guess. It is why we use them for the call to the enterprise. Shots are the `x-values`, and `ICguess` the y-values. 
+Now, that's the plot for the 'shots' and the guesses. We then want to know the guess to get `yl`. So we have three points that we know for the interpolation. They are all our target boundary conditions, that is, shots to the boundary condition and the actual target boundary condition `y_l`. The unknown value is the unknown guess. It is why we use them for the call to the enterprise. Shots are the `x-values`, and `ICguess` the y-values. 
 
-Since this is a linear equation, we use the linear interpolation defined by `linear interp`. The last call in that function is the `extrap`, which means extrapolation. It is in case the `$y_l$` is not between the two shots.
+Since this is a linear equation, we use the linear interpolation defined by `linear interp`. The last call in that function is the `extrap`, which means extrapolation. It is in case the `y_l` is not between the two shots.
 
 The final step for the shooting method is to use the new initial condition for the final call to ODE45 to our solution.
 
