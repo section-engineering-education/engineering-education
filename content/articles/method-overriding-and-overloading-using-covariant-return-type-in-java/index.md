@@ -127,6 +127,6 @@ class Red extends Color {
 }
 ```
 ### Conclusion
-Knowing that we can override a method in Java by declaring it as a child class or derived class, it has to have a name that is the same as the parent class or base class with the same amount of parameters. As a result of this, the overriding method is said to be "invariant" in terms of the return type.
+Knowing that we can override a method in Java by declaring it as a child class or derived class, it has to have a name that is the same as the parent class or base class with the same amount of parameters. As a result of this, the overriding method is said to be `invariant` in terms of the return type.
 Only if the return type is a subclass of the overridden method's return type can we override a method by modifying its return value.
 
