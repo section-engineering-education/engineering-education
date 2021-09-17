@@ -11,11 +11,15 @@ topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
 
-  -url: /engineering-education/integrate-ml-to-flask-api-and-deploy-to-heroku/hero.jpg
+  -url: /engineering-education/integrate-ml-to-flask-api-and-deploy-to-heroku/hero.png
    alt: ML Flask API example image
 ---
 
-It is not enough to build and train ML models. Your ML model is useless if it just sits in your PC after training. Would it not be great to show others what your machine learning model can do after training it? This article covers how to integrate an ML model into a Flask REST API. It also covers how to deploy a Flask REST API to Heroku. You can merge this REST API into web applications and android applications. The repo for this project is [here.](https://github.com/Inyrkz/diagnose-diabetes-svm)
+It is not enough to build and train ML models. Your ML model is useless if it just sits in your PC after training. Would it not be great to show others what your machine learning model can do after training it? 
+
+<!--more-->
+
+This article covers how to integrate an ML model into a Flask REST API. It also covers how to deploy a Flask REST API to Heroku. You can merge this REST API into web applications and android applications. The repo for this project is [here.](https://github.com/Inyrkz/diagnose-diabetes-svm)
 
 ### Prerequisites
 -	Building [ML model](https://www.section.io/engineering-education/diagnose-diabetes-with-svm/) guide,
