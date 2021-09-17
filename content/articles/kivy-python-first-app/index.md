@@ -1,5 +1,22 @@
-There is a recent transformation into the development of multi-platform languages and frameworks where are one library is used to develop applications that can run on Windows, macOS, Android, and Linux. Fortunately, this trend levies programmers from having to rewrite the same code again for a different platform. So, for instance, an Android developer could write one code base that can efficiently run on different devices.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /kivy-python-first-app/
+title: Building your first mobile application using Python
+description: In this tutorial, the reader will learn to set up Kivy for development and creating a basic application using the same library. Then, we will build a graphical user interface application for a user to do quick basic age calculations.
+author: dolores-merceline
+date: 2021-09-17T00:00:00-15:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+ - url: /engineering-education/kivy-python-first-app/hero.png
+   alt: Kivy Python mobile app image
+---
+
+There is a recent transformation into the development of multi-platform languages and frameworks where are one library is used to develop applications that can run on Windows, macOS, Android, and Linux. Fortunately, this trend levies programmers from having to rewrite the same code again for a different platform. So, for instance, an Android developer could write one code base that can efficiently run on different devices.
+ <!--more-->
 Kivy python takes the same path, allowing developers to develop multi-platform applications for several operating systems and devices. Thus, applications developed using this library a similar across all the platforms on which they run. One advantage of Kivy is providing a graphical user interface that the developer interacts with as he develops the application.
 
 In this tutorial, the reader will learn to set up Kivy for development and creating a basic application using the same library. Then, we will build a graphical user interface application for a user to do quick basic age calculations.
