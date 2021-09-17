@@ -245,7 +245,7 @@ public class BluePrint
 
 In the code above, two threads, r1 and r2, are specified, both of which call the same procedure, and both are initialized at an equal moment. We should note that with thread, we may use synchronized with the `getInstance` method.
 
-However, making a method synchronized results is a lot of work, as the `getInstance()` function performs a lot of work. And, it will reduce performance by a proportion of about one hundred, which is the issue with synchronized threading.
+However, making a method synchronized results in a lot of work, as the `getInstance()` function performs a lot of work. And, it will reduce performance by a proportion of about one hundred, which is the issue with synchronized threading.
 
 ### Lazy loading using thread double-checked locking technique
 To solve the disadvantages of the earlier method with its time complexity, we can use the idea of Double-Checked Locking.
