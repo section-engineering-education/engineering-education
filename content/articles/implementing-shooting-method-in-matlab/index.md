@@ -76,7 +76,9 @@ For example, we can guess $\frac{dy}{dt}|_{t=0}$, run the integration, and land 
 
 ![demonstration](/engineering-education/implementing-shooting-method-in-matlab/shooting_one.png)
 
-This way, it is called the shooting method. First, we aim the solution at the target and then use the IVP solver such as ODE45 to integrate the solution forward and see if we will hit the target. The next step in the shooting method is coming up with an intelligent way to keep improving our guesses to hit that target.
+This way, it is called the shooting method. First, we aim the solution at the target and then use the IVP solver such as ODE45 to integrate the solution forward and see if we will hit the target. 
+
+The next step in the shooting method is coming up with an intelligent way to keep improving our guesses to hit that target.
 
 ### Shooting method algorithm
 It is the combination of all that we have been doing;
@@ -84,13 +86,13 @@ It is the combination of all that we have been doing;
 2. Guess the value for the undefined `y0` initial condition.
 3. Change guess until the final solution satisfies the end boundary condition i.e., $y(end)=BC_2$(boundary condition 2)
 
->For linear ODEs: Can use the linear interpolation requiring only two shots.
+>For linear ODEs, we can use the linear interpolation requiring only two shots.
 We do the first and second shots with a different guess and interpolate between the two shots for the correct guess.
 
 ![demonstration](/engineering-education/implementing-shooting-method-in-matlab/shooting_two.png)
 
 ### Example implementation of the shooting method
-The ODE governing the deflection of a supported beam with a constant distributed load is;
+The ODE governing the deflection of a supported beam with a constant distributed load is:
 
 $
 EI\frac{d^2}{dx^2}=\frac{wlx}{2}-\frac{wx}{2}
@@ -100,12 +102,15 @@ With the boundary conditions *y(0)=y(l)=0*. Determine y(x) if E=200Gp, $I=3000cm
 
 ![Question](/engineering-education/implementing-shooting-method-in-matlab/shooting_three.png)
 
-Where;
+Where:
+
+```bash
 EI=flexual rigidity
 w = Magnitude of the equally distributed load
 l=length
-We will look at how to solve this problem using Matlab.
-We first define our variables.
+```
+
+We will look at how to solve this problem using Matlab. We first define our variables.
 
 ```Matlab
 %Shooting method example for linear BVP
@@ -173,7 +178,11 @@ To demonstrate what is happening in the code above, we look at the sketch below.
 
 ![demonstration](/engineering-education/implementing-shooting-method-in-matlab/shooting_four.png)
 
-Now, that's the plot for the 'shots' and the guesses. We then want to know the guess to get `yl`. So we have three points that we know for the interpolation. They are all our target boundary conditions, that is, shots to the boundary condition and the actual target boundary condition `$y_l$`. The unknown value is the unknown guess. It is why we use them for the call to the enterprise. Shots are the `x-values`, and `ICguess` the y-values. 
+Now, that's the plot for the 'shots' and the guesses. 
+
+We then want to know the guess to get `yl`. So we have three points that we know for the interpolation. They are all our target boundary conditions, that is, shots to the boundary condition and the actual target boundary condition `$y_l$`. 
+
+The unknown value is the unknown guess. It is why we use them for the call to the enterprise. Shots are the `x-values` and `ICguess` the y-values. 
 
 Since this is a linear equation, we use the linear interpolation defined by `linear interp`. The last call in that function is the `extrap`, which means extrapolation. It is in case the `$y_l$` is not between the two shots.
 
@@ -191,7 +200,7 @@ xx = linspace(0,L);
 y_analytical = w/(24*E*I)*(2*L*xx.^3-xx.^4-L^3*xx);
 ```
 
-We will now plot the two solution in the same figure so that we can be able to compare the two. We plot using the code below;
+We will now plot the two solution in the same figure so we can be able to compare the two. We plot using the code below;
 
 ```matlab
 figure(1)
@@ -204,12 +213,41 @@ title('Beam Deflection')
 
 ![solution](/engineering-education/implementing-shooting-method-in-matlab/shooting_five.png)
 
-As we can see from the plot, the shooting method is accurate as of the analytical method. For the error behavior for the shooting method, it is going to be the same as whichever IVP solver you are using.
+As we can see from the plot, the shooting method is accurate as the analytical method. For the error behavior of the shooting method, it's going to be the same as whichever IVP solver you are using.
 
 ### Conclusion
-Using the shooting method to get the solution for the linear differential equations is straightforward. The advantage of the shooting method is that you don't need the initial values. You can use guess for these values, but still, you get the solution. Thus, it reduces the time that could be spent to get the initial values.  
+Using the shooting method to get the solution for the linear differential equations is straightforward. The advantage of the shooting method is that you don't need the initial values. You can use guesses for these values, but still, you get the solution. Thus, it reduces the time that could be spent to get the initial values.  
 
 Also, at some point, the methods used to find these initial values are so tiresome, e.g., the Runga Kutta method, which is not involved in the shooting method. Matlab also makes it easier since it has some in-built functions that help to work such problems easier.
 
 ---
 Peer Review Contributions by: [Miller Juma](/engineering-education/authors/miller-juma/)
+
+<!-- MathJax script -->
+<script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+           extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    }
+    });
+    MathJax.Hub.Queue(function() {
+      // Fix <code> tags after MathJax finishes running. This is a
+      // hack to overcome a shortcoming of Markdown. Discussion at
+      // https://github.com/mojombo/jekyll/issues/199
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i = 0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+    MathJax.Hub.Config({
+    // Autonumbering by mathjax
+    TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+  </script>
