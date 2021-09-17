@@ -6,7 +6,7 @@ url: /angular-12-dependency-injection/
 title: Angular 12+ Dependency Injection Tutorial
 description: This tutorial walks the reader through the concepts of dependency injection using Angular.
 author: naomi-seint
-date: 2021-09-09T00:00:00-16:00
+date: 2021-09-17T00:00:00-12:30
 topics: []
 excerpt_separator: <!--more-->
 images:
