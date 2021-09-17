@@ -33,6 +33,8 @@ To follow along with this tutorial, you'll need:
 ### Overview
 Higher-order ODE's are written as;
 
+\frac{2}{3}
+
 
 \frac{d^n y}{dt^n}= f(t,y,\frac{dy}{dt},\frac{d^2}{dt^2},---,\frac{d^{n-1}y}{dt^{n-1}})
 
