@@ -2,19 +2,21 @@
 layout: engineering-education
 status: publish
 published: true
-url: /How-Java-Virtual-Machine-Works/
-title: How Java Virtual Machine Works
-description: In this article we will discuss Java Virtual Machine
+url: /how-java-virtual-machine-works/
+title: How the Java Virtual Machine Works
+description: In this article, we will discuss Java Virtual Machine which is used to compile Java code. We will understand the various types of virtual machines and discuss them in detail.
 author: geofrey-mwangi
-date: 2021-09-10T00:00:00-18:00
+date: 2021-09-17T00:00:00-18:00
 topics: []
 excerpt_separator: <!--more-->
 images:
 
-  -url: /engineering-education//How-Java-Virtual-Machine-Works/hero.jpg
-   alt: First Hop Redundancy Protocol example image
+   -url: /engineering-education/how-java-virtual-machine-works/hero.jpg
+    alt: Java Virtual Machine example image
 ---
-
+The Java Virtual Machine (JVM) allows a computer to interpret or run Java programs. It acts as a compiler for generating machine code. All Java programs require a Runtime Environment. 
+<!--more-->
+ 
 ### Introduction
 As a run-time engine for Java applications, JVM (Java Virtual Machine) is a must. The Java Virtual Machine (JVM) is responsible for calling the main method in java code. JRE includes JVM (Java Runtime Environment). WORA is a term for Java applications (Write Once Run Anywhere). Therefore, Java code can be developed on one system and run on any other Java-enabled system without any modifications. 
 
@@ -89,6 +91,7 @@ name
 roll_No
 ```
 > Note that each `.class` file loaded creates only one object of the class.
+> 
 2. **Linking**:
 Executes three operations, including:
 - **Preparation**: It allocates memory and initializes it to default settings for class variables.
@@ -96,8 +99,10 @@ Executes three operations, including:
 - **Resolution**: There is a straightforward substitution for the sorts of symbolic references as the name suggests. Searching for the referenced entity in the method area is how it is accomplished.
 
 > Delegation-Hierarchy principle is used by JVM to load classes. Loading requests are delegated to extension classloaders, which in turn delegate requests to bootstrapping classloaders by system classloaders. Any other requests that are not routed through an extension class loader are routed through the system class loader (if found in the bootstrap path). As a last resort, `java.lang` run-time errors are thrown when the system class loader cannot load the class that was supplied.
+> 
 ### JVM Memory 
 The `Runtime Data Area` is another name for the memory area. As defined by the JVM specification, some run-time data regions are required throughout the program's execution. A few of these are created when the JVM is booting up. 
+
 Another type of object is a thread-specific object, formed just when a thread is created and destroyed when the thread is destroyed. It's usually used to keep track of instructions. In total, JVM is broken down into five sub-areas:
 1. **Method area**: Class information such as the class name, parent class name and methods are preserved in the method area.
 2. **Heap area**: In the heap area, all objects' information is saved. There is also a Heap Area for each Java Virtual Machine and It's also conciderd as a resource that's shared.
@@ -112,7 +117,7 @@ To run a `.class` file, you need an execution engine. For example, reading bytec
 - Code Optimizer.
 - Target Code Generator.
 - Profiler.
-4. **Garbage Collector(GC)**: Objects that are not referenced can be removed by the garbage collector as a background process, freeing up space on the heap.
+3. **Garbage Collector(GC)**: Objects that are not referenced can be removed by the garbage collector as a background process, freeing up space on the heap.
 ### Java Native Interface (JNI)
 Interacting with Native Method Libraries and providing native libraries (C, C++) for execution, a hardware-specific C/C++ library can call and be called from the JVM as a result.
 > Native Method Libraries are a set of native libraries (C, C++) that are required by the Execution Engine.
