@@ -48,13 +48,10 @@ There are three components of the class loaders:
 As one of the phases of JVM, it mainly consists of three activities which are listed below:
 
 1. **Loading**: `.class` files are loaded into the method area by the ClassLoader, which generates the binary data corresponding to the class file. The method area of each `.class` file in JVM contains the following information.
-1. **Loading**
-
-`.class` files are loaded into the method area by the ClassLoader, which generates the binary data corresponding to the class file. The method area of each `.class` file in JVM contains the following information.
-
 - Class name and its immediate parent class.
 - `.class` files can be classified as Class or Interface.
 - There is a lot of detail on the modifier, variables, and method.
+
 For each `.class` file loaded, the JVM produces a Class object to represent it in heap memory. One should note that this object belongs to the `Java.lang` package's Class type. 
 If the programmer wants information about a class, such as its name, its parent, or any methods or variables associated with it, they can use these Class objects. One can use the getClass() function of the Object class to retrieve this object reference.
 ```java
