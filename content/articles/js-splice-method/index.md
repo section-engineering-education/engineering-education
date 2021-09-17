@@ -27,6 +27,12 @@ Once we grasp how to use these built-in JavaScript methods, we can save much tim
 ### Preferences
 To follow along with this tutorial, you need to have some knowledge of how arrays work. You can read more about the arrays [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
 
+### The Approach
+- We will at first create an array that we are going to use through out the tutorial.
+- I will explain about each JavaScript in-built method, that is slice(), splice() and split() functions.
+- We will perform different operations on the array using the three in-built JavaScript functions.
+
+
 ### JavaScript Arrays
 To begin, you must first comprehend how JavaScript arrays work. In JS, we utilize arrays to store numerous data, much like in other programming languages. The distinction is that JavaScript arrays can hold multiple types of data at the same time.
 
