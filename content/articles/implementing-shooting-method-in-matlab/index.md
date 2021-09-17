@@ -6,7 +6,7 @@ url: /implementing-shooting-method-in-matlab/
 title: Implementing shooting method in Matlab
 description: This tutorial walks the reader through the concepts of Matlab shooting methods.
 author: atieno-dorine
-date: 2021-09-16T00:00:00-16:00
+date: 2021-09-17T00:00:00-12:00
 topics: []
 excerpt_separator: <!--more-->
 images:
