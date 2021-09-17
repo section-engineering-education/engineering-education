@@ -14,18 +14,11 @@ images:
   - url: /engineering-education/angular-12-dependency-injection/hero.png
     alt: dependincy injection angular 12
 ---
-Dependency injection, in a nutshell, refers to classes that reference other classes. It's a design pattern that allows a single class to request dependencies from other sources.
+Dependency injection, in a nutshell, refers to classes that reference other classes. It is a design pattern that allows a single class to request dependencies from other sources.
 <!--more-->
-
-
-### Introduction
-Dependency injection, in a nutshell, refers to classes that reference other classes. It's a design pattern that allows a single class to request dependencies from other sources.
-
 In this tutorial, we'll be building a sample student listing Angular 12 application that uses the dependency Injection.
 
 ### Table of contents
-- [Introduction](#introduction)
-- [Table of contents](#table-of-contents)
 - [Tutorial requirements](#tutorial-requirements)
 - [Expected outcome](#expected-outcome)
 - [Getting started with Angular dependency injection](#getting-started-with-angular-dependency-injection)
@@ -43,9 +36,13 @@ In this tutorial, we'll be building a sample student listing Angular 12 applicat
 This tutorial aims to get you started with Angular 12 dependency injection. By following this tutorial, you'll have an in-depth knowledge of DI, which you may advance as you implement your own projects.
 
 ### Getting started with Angular dependency injection
-Dependency injection is all about resource sharing. Let's say, for example; you have a `StudentService` and `StudentComponent` that displays a list of students in a school. We may argue that the component class depends on the service class to display data since we're using the service to get data from API, as we'll see in the next section.  
+Dependency injection is all about resource sharing. 
 
-So it's essential to keep in mind that dependency injection is a style of programming approach that enables you as the developer to write code that communicates to each other. So, for example, when one class doesn't have a given resource, it can quickly get it from another type that has it and so on and forth.
+Let's say, for example you have a `StudentService` and `StudentComponent` that displays a list of students in a school. We may argue that the component class depends on the service class to display data since we're using the service to get data from API, as we'll see in the next section.  
+
+So it's essential to keep in mind that dependency injection is a style of programming approach that enables you as the developer to write code that communicates to each other. 
+
+So, for example, when one class doesn't have a given resource, it can quickly get it from another type that has it and so on and forth.
 
 ### Creating Angular services
 Now that we've background knowledge in DI let's create a service that we'll use to return the list of interns in a given company.
@@ -79,7 +76,7 @@ export interface Student {
 }
 
 ```
-Now that we have got the model let's proceed and create a service that will contain the functions to display the list of students.
+Now that we have the model, let's proceed and create a service that will contain the functions to display the list of students.
 
 > It's important to note that the reason we're creating these services is to loosely couple our application and to allow for reusability.
 
@@ -162,10 +159,10 @@ Let's analyze the above service:
 
 - **Line 1** - We're importing `injectable` decorator. Without this decorator, this service cannot be injected (requested) by other application components.
 - **Line 2** - `Student` model is imported from `./student`. It's a common practice to always keep all your services in a `service` directory. Feel free to test it out.
-- **Line 5**- We've a class `StudentListService`, inside this class we have defined the `getInternsDetails()` method that returns an array of `Student` information.
+- **Line 5**- We have a `StudentListService` class. Inside this class we have defined the `getInternsDetails()` method that returns an array of `Student` information.
 
 ### How to inject service inside a component
-Now that we have got a service ready to consume, let's now proceed and create a student component by executing the following commands:  
+Now that we have a service ready to consume, let's proceed and create a student component by executing the following commands:  
 
 ```bash
 ng g c student
@@ -180,7 +177,8 @@ CREATE src/app/student/student.component.spec.ts (635 bytes)
 CREATE src/app/student/student.component.ts (273 bytes)
 UPDATE src/app/app.module.ts (400 bytes)
 ```
-Now proceed and edit the `src/app/student/student.component.ts` as shown below:
+
+Edit the `src/app/student/student.component.ts` as shown below:
 
 ```ts
 import { Component, OnInit } from '@angular/core';
@@ -209,14 +207,17 @@ export class StudentComponent implements OnInit {
 }
 
 ```
-In the above component class, we've defined the `students` array that we will use to hold the list of students. We then inject the ``StudentListService` that we previously created. This is how Dependency injection is achieved in Angular.
 
-We've also created the `getStudentsList()` method that we're using to get student details from the service. We then assign the results to the students array we've locally created. We call this method in the `ngOnInit()` method to get students' details on page load.
+In the above component class, we've defined the `students` array that we will use to hold the list of students. 
+
+We then inject the `StudentListService` that we previously created. This is how Dependency injection is achieved in Angular.
+
+We've also created the `getStudentsList()` method that we're using to get student details from the service. We assign the results to the students array we've locally created. We call this method in the `ngOnInit()` method to get students' details on page load.
 
 ### Displaying data from a service
-Now that we've consumed our service let's proceed and display these data on the browser.
+Now that we've consumed our service, let's proceed and display these data on the browser.
 
-Let's edit the `src/app/student/student.component.html` as shown below:
+Edit the `src/app/student/student.component.html` as shown below:
 
 ```html
 <div>
@@ -256,10 +257,12 @@ ng serve --port 4200
 
 Expected output:
 
-![Student table](/engineering-education/angular-di/output.png)
+![Student table](/engineering-education/angular-12-dependency-injection/output.png) 
 
 ### Conclusion
-In this tutorial, we've discussed a wide range of concepts of Angular DI with examples. We've seen how the services are created and then consumed within a component. We've also gone a step further to test our application on the browser.
+In this tutorial, we've discussed a wide range of concepts of Angular DI with examples. We've seen how the services are created and then consumed within a component. We've also gone a step further and tested our application on the browser.
+
+Happy coding!
 
 ---
 Peer Review Contributions by: [Miller Juma](/engineering-education/authors/miller-juma/)
