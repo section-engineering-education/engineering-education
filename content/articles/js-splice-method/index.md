@@ -14,18 +14,23 @@ images:
   - url: /engineering-education/js-splice-method//hero.jpg
     alt: Understanding the Slice(), Splice() and Split() methods in JavaScript Cover image
 ---
+
 ### Introduction 
 One of JavaScript in-built functions, which are often confused are:
 - slice() method
 - splice() method
 - split() method 
-This is because of their similar nomenclature. If you are a beginner and find them challenging, do not worry cause even experienced developers sometimes confuse them. 
+
+The above functions are often confused because of their similar nomenclature. If you are a beginner and find them challenging, do not worry cause even experienced developers sometimes confuse them. 
 Once we grasp how to use these built-in JavaScript methods, we can save much time when developing.
+
+### Preferences
+To follow along with this tutorial, you need to have some knowledge of how arrays work. You can read more about the arrays [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
 
 ### JavaScript Arrays
 To begin, you must first comprehend how JavaScript arrays work. In JS, we utilize arrays to store numerous data, much like in other programming languages. The distinction is that JavaScript arrays can hold multiple types of data at the same time.
 
-On occasion, we must perform operations on those arrays. After that, we use JS functions like slice (), splice () and split(). You can declare an array with JavaScript as follows:
+On occasion, we must perform operations on those arrays. The most commonly used functions on arrays are slice (), splice (), and split() functions. You can declare an array in JavaScript as follows:
 
 ```js
 let array_name = []; 
@@ -38,7 +43,7 @@ The following is the example we will use:
 let myArray = [5, 6, 7, "pizza", 3.32, true];
 ```
 
-This is an acceptable JavaScript use. The above array contains many datatypes, such as string, integer, and boolean.
+The above syntax is an acceptable JavaScript use. The above array contains many data types, such as string, integer, and boolean.
 
 #### Slice ( )
 The slice( ) method duplicates a portion of an array and gives it back as a new array without changing the initial one.
@@ -49,17 +54,16 @@ array.slice(start, to);
 
 Start: Slice the array from the specified element index
 
-To: Slice the array to another element index that you specify.
+To: Slice the array up to the specified index.
 
 To show you how the slice() method works, let us follow the example below. We will focus on slicing the first three items from the array.
 
-**Note: Indexing in an array starts from 0.**
+>Note: Indexing in an array starts from 0.
 
-array.slice(0, 3);
 ```js
 array.slice(0, 3);
 ``` 
-So the above code is going to remove the values from index 0 to index 2. This is where things maybe a bit difficult. I must set the to parameter to index 3 when slicing the first three elements. The last supplied element is not included in the slice() method.
+So the above code is going to remove the values from index 0 to index 2. This is where things may be a bit difficult. I must set the parameter to index 3 when slicing the first three elements. The last supplied element is not included in the slice() method.
 Now let create a new code that will slice the array elements and also assign a newArray variable for the sliced Array.
 ```js
 let myArray = [5, 6, 7, "pizza", 3.32, true];
@@ -72,20 +76,20 @@ the result will be
 >Note: Slice() method can be used in strings.
 
 ### Splice ( )
-This function's name is extremely similar to slice ( ). Developers are frequently perplexed by this naming resemblance. An array is changed by the splice() method by addin. Let's look at how to use splice( ) to add and remove elements
-g or removing items from the array.
+This function's name is highly similar to the slice ( ) method, and developers are frequently perplexed by this naming resemblance. An array is changed by the splice() method by adding or removing items from the array. 
 ### Removing Elements Using Splice() Method
-We must provide the index parameter as well as the number of elements to be eliminated in order to remove elements:
+We must provide the index parameter as well as the number of elements to be eliminated to remove elements:
 ```js
 array.splice(from, upto);
 ```
-**From** is the place to start when it comes to eliminating elements. Elements with a lower index number will not be deleted from the supplied index., what i mean is:
+**From** is the place to start when it comes to eliminating elements. Elements with a lower index number will not be deleted from the supplied index., what I mean is:
 ```js
 array.splice(2);  // Starting at index 2, every item will be eliminated.
 ```
-**Upto** specifie till where the elements will be removed.
-If the second option is not specified, every element in the array beginning at the specified index will be eliminated.
-As a second example, I set the second option to 1, which means that each time we execute the splice ( )function, elements starting at index 2 will be removed one by one:
+**Upto** specify's till where the elements will be removed.
+If the second option is not specified, it will eliminate
+every array component from the beginning of the specified index.
+As a second example, I set the second option to 1, which means that each time we execute the splice ( )function, elements starting at index two will be removed one by one:
 ```js
 array.splice(2, 1);
 ```
@@ -105,13 +109,13 @@ After 2nd call:
 array
 (4)[5, 6, 3.32, true]
 ```
-Starting at index 2, every piece will be eliminated until there is no more index 2.
+From index 2, every piece will be eliminated until there is no more index 2.
 ### Adding Elements Using Splice() Method
-No matter how many items we are needed to add to an arrau we must always pass them through the splice() method.
-Syntax for the splice method is:
+No matter how many items we are needed to add to an array, we must always pass them through the splice() method.
+The syntax for the splice method is:
 
 ```js
-array.splice(index, number of items, item1, ..., itemN);//itemN means tou can enter any number of items.
+array.splice(index, number of items, item1, ..., itemN);//itemN means you can enter any number of items.
 ```
 I'm adding m and n to the very beginning of the array as an example, and I'm not removing anything:
 ```js
@@ -123,17 +127,17 @@ array
 (8)["m","n",5,6,7,"pizza",3.32,true]
 ```
 ### Split ( )
-For arrays, the slice( ) and splice( ) functions are used but as for the strings the split () function is used to divide the strings and return subtrings after splitting the string.The substrings are returned in an array.
-The split() method has some parameters which are not compusory to use.
-THe split () method syntax is shown below.
+For arrays, the slice( ) and splice( ) functions are used, but as for the strings, the split () function is used to divide the strings and return substrings after splitting the string. The substrings are returned in an array.
+The split() method has some parameters which are not compulsory to use.
+The split () method syntax is shown below.
 ```js
 string.split(separator, limit);
 ```
 Separator: This parameter shows how a string is separated, for example, by a comma or a character.
-Limit: Sets a limit on the number of splits that can be made with a given number of divides. 
-It is important to note that the split() function won't with arrays directly therefore we need to change the members of our array into a string.
-Let's take a closer look at how it functions. Converting our array into a string requires the use of toString( ) method:
-Using the toString() method let us convert our array into string:
+Limit: Sets a limit on the number of splits made with a given number of divides. 
+It is important to note that the split() function won't work with arrays directly; therefore, we need to change the members of our array into a string.
+Let's take a closer look at how it functions. Converting our array into a string requires the use of the toString( ) method:
+Using the toString( ) method, let us convert our array into a string:
 ```js
 let ourString = array.toString();
 ```
@@ -156,31 +160,30 @@ Result:
 ```js
 (3)["5","6","7"]
 ```
-ourString is separated by commas, as we can see. Only the top three elements are returned because we limit split to three.
+ourString is separated by commas, as we can see. Only the top three elements are returned because we limit the split to three.
 
 
 ### Conclusion
 Finally, we discovered the following:
 #### Slice ( ) method
-- Copies an array's contents.
-- This function returns a new array of them.
-- Nothing happens to the original array.
-- array.slice begins slicing at... and continues until the supplied index is reached: (from, until)
-- The “until” index argument is not included in Slice.
-- Both arrays and strings can be used.
+- Slice() method copies an array's contents and returns a new array of them.
+- Nothing happens to the original array when using the slice() method.
+- array. slice begins slicing from (start...to) and continues until the supplied index is reached.
+- The “to” index argument is not included in Slice.
+- Slice() method can use both arrays and strings
 #### Splice ( ) method
 - Use this function to add/remove entries from an array.
 - Returns a list of elements that have been removed from the list.
-- The array has been modified.
-- array.splice is used to add elements (index, number of elements, element)
-- array.splice is used to remove elements (index, number of elements)
-- It's just good for arrays.
+- The array is changed after using the splice() method.
+- array.splice is used to add elements (index, number of items, item1, ..., itemN).
+- array.splice is used to remove elements (from, upto).
+- It's just good for arrays; this means it can't be used for strings.
 #### Split ( ) method
-- Substrings are created by dividing a string into substrings.
-- Returns an array of them.
-- It accepts two parameters, both of which are optional: string. sever (separator, limit)
-- The original string is unaffected.
-- Strings are the only thing that it can be used for.
+- Substrings are created by dividing a string into substrings using the split function.
+- Returns the string as an array.
+- It accepts two parameters, both of which are optional.
+- Split() function does not affect the original string.
+- Split () method can only work on strings.
 
 I'm hoping that the slice(), splice(), and split() methods will no longer cause problems.
 
