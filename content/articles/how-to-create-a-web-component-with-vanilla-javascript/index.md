@@ -2,7 +2,7 @@ Web application development is a pretty crowded field of technology. There are d
 
 Therefore, when you use frameworks like React, Vue, Angular, or any other front-end framework, you break everything in your UI up into components. However, we can do something similar without even using a framework or a library, and that's plain JavaScript (Vanilla JavaScript).
 
-This article will talk about what web components are and why they are useful. Finally, it will take you through how to create a web component from scratch.
+This article will talk about what web components are and why they are helpful. Finally, it will take you through how to create a web component from scratch.
 
 ### Table of contents
 - [What are web components](#what-are-web-components)
@@ -44,7 +44,7 @@ Code reusability has proven to be useful, and before the initiation of web compo
 Web Components allow web developers to build reusable UI's using built-in web APIs. This means we can create a web component for one project and carry it to another with no additional coding.
 
 ### Creating a web component with vanilla JavaScript
-In this tutorial, we create a web component with [Vanilla JavaScript](https://snipcart.com/blog/learn-vanilla-javascript-before-using-js-frameworks#:~:text=What%20is%20%22Vanilla%20JavaScript%22%3F&text=%22VanillaJS%20is%20a%20name%20to,need%20for%20additional%20JavaScript%20libraries.%22) or without the help of any framework or libraries.
+This tutorial creates a web component with [Vanilla JavaScript](https://snipcart.com/blog/learn-vanilla-javascript-before-using-js-frameworks#:~:text=What%20is%20%22Vanilla%20JavaScript%22%3F&text=%22VanillaJS%20is%20a%20name%20to,need%20for%20additional%20JavaScript%20libraries.%22) or without the help of any framework or libraries.
 
 We are going to create an employee card web component. It will contain a user image, name, id, job title, phone, and email. Below is the user image we will use:
 
@@ -237,6 +237,6 @@ With this tutorial, you have learned how to build a simple web component with va
 Happy Coding!
 
 ### References
- https://developer.mozilla.org/en-US/docs/Web/Web_Components
- https://www.webcomponents.org/introduction
- 
+- https://developer.mozilla.org/en-US/docs/Web/Web_Components
+- https://www.webcomponents.org/introduction
+
