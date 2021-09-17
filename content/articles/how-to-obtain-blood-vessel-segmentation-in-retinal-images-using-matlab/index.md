@@ -3,31 +3,33 @@ layout: engineering-education
 status: publish
 published: true
 url: /how-to-obtain-blood-vessels-segmentation-in-retinal-images-using-matlab/
-title: How to Obtain Blood Vessels Segmentation in Retinal Images Using Matlab 
-description: 
+title: How to Obtain Blood Vessels Segmentation in Retinal Images Using Matlab
+description: This tutorial will discuss the simple steps of obtaining blood vessels in retinal images using Matlab. We will see how the in-built functions in Matlab can be used in segmentation, to obtain clear optical nerves and blood vessels required in the field of medicine.
 author: queenter-bruce
 date: 2021-08-18T00:00:00-09:38
 topics: []
 excerpt_separator: <!--more-->
 images:
-
   - url: /engineering-education/how-to-obtain-blood-vessels-segmentation-in-retinal-images-using-matlab/hero.jpg
     alt: Blood Vessels Segmentation in Retinal Images Using Matlab Hero image.
 ---
 
 ### Introduction
-Segmentation is the process of Retinal partitioning a digital image into multiple regions and extracting the significant region.
 
-Retinal images are the digital images of the eyeball that shows the retina, the optical nerves, and the blood vessels that send information to the brain.
+Segmentation is the process of Retinal partitioning a digital image into multiple regions and extracting the significant ones.
+
+Retinal images are the digital images of the eyeball that show the retina, the optical nerves, and the blood vessels that send information to the brain.
+
 <!--more-->
 
-This practice helps the optometrist finding diseases and also give a health check on the eyes.
+This practice helps the optometrist to find diseases and also give a health check on the eyes.
 
 This segmentation process is essential in the field of medicine. When the vessels are segmented and viewed closely, the solution or cause of a given problem may be defined.
 
 Therefore, it makes it a good application in this field. This article will look at how we can obtain the blood vessel segmentation in the retinal image.
 
 ### Prerequisites
+
 To follow along with this tutorial, you'll need:
 
 - [MATLAB](https://www.mathworks.com/products/get-matlab.html?s_tid=gn_getml) installed.
@@ -43,7 +45,7 @@ It is made possible by the `imread` function.
 test_image = imread('retinal_image.jpg');
 ```
 
-Our image looks bigger at this point. We should therefore resize it using the `imresize` function. This function uses the image name and the prefered dimensions in vector form as the arguments.
+Our image looks bigger at this point. We should therefore resize it using the `imresize` function. This function uses the image name and the preferred dimensions in vector form as the arguments.
 
 The dimensions are in pixels. This means that decimal dimensions are not accepted.
 
@@ -51,7 +53,9 @@ The dimensions are in pixels. This means that decimal dimensions are not accepte
 resized_image = imresize(test_image, [584 565]);
 ```
 
-Since we will be segmenting very tiny blood vessels, we will need to convert the resized image into double data time using the `im2double` function. This function only uses the image name as the argument:
+Since we will be segmenting very tiny blood vessels, we will need to convert the resized image into double data time using the `im2double` function.
+
+This function only uses the image name as the argument:
 
 ```Matlab
 converted_image = im2double(resized_image);
@@ -64,6 +68,8 @@ According to this colour space, the `l` represents the `likeness` of the colour.
 The `a` represents green to red, starting from negative to positive as the range. The higher the negative value, the brighter the green color, while the higher the positive value, the brighter the red colour.
 
 The `b` represents blue to yellow. It also ranges from negative to positive.
+
+The image will be converted as shown below:
 
 ```matlab
 lab_image = rgb2lab(converted_image);
@@ -80,7 +86,9 @@ From the code above, the `3` represents the dimensions of the concatenated areas
 
 Then, we used the `bsx` function to perform an element-wise binary operation between the `filled` and `lab` images.
 
-Next, we will reshape the filled image. The dimension arguments will be blank since we do not need any here. Instead, we will use `3` since it is the existing dimension of the `filled` image, as shown below:
+Next, we will reshape the filled image. The dimension arguments will be blank since we do not need any here.
+
+Instead, we will use `3` since it is the existing dimension of the `filled` image, as shown below:
 
 ```matlab
 reshaped_lab_image = reshape(filled_image, [], 3);
@@ -90,20 +98,20 @@ Now we apply the principal component analysis(PCA) function. Also, we are using 
 
 The function returns the coefficients and the score of the principal component. Variables `C` and `S` will store coefficients of the principal component.
 
-You can then resize the scores based on the size of the `lab` image:
+You can then resize the scores based on the size of the `lab` image as shown:
 
 ```matlab
 [C, S] = pca(reshaped_lab_image);
 S = reshape(S, size(lab_image));
 ```
 
-We need all the rows and the columns of the first channel,
+We need all the rows and the columns of the first channel:
 
 ```Matlab
 S = S(:, :, 1);
 ```
 
-It is time to convert the `S` into a grayscale image. First, we subtract `S`'s minimum value from `S` and then divide it by the maximum and minimum of `S`.
+Now, let us convert the `S` into a grayscale image. First, we subtract `S`'s minimum value from `S` and then divide it by the maximum and minimum of `S`.
 
 The division is going to be an element-wise division, and that is why we use the dot before the division sign as shown in the code below:
 
@@ -137,16 +145,15 @@ subtracted_image = imsubtract(filtered_image, enhanced_image);
 ```
 
 ### Calculating the threshold level
-
 Now we need to calculate the threshold level to segment the blood vessels. Let us create a function script named `threshold_level.m` for this. This function will take the image as the argument as seen below:
 
 ```Matlab
 function level = Threshold_level(image)
 ```
 
-Here, we first convert the image into `uint8`. This is a type of datatype of 8bits. This conversion is done using the `im2uint8` function.
+Now we convert the image into `uint8`. This is a type of data type of `8-bits`. This conversion is done using the `im2uint8` function.
 
-We then use the `imhist` function and the converted image as the argument to get the histogram count and beam number.
+We then use the `imhist` function and the converted image as the argument to get the histogram count and beam number like this:
 
 ```matlab
 image = im2uint8(image(:));
@@ -176,7 +183,7 @@ cumulative_sum_3 = cumsum(Histogram_count(T(i):end));
 MAT = sum(Bin_number(T(i):end).*Histogram_count(T(i):end))/cumulative_sum_3(end);
 ```
 
-We are now to find the threshold. This is done using the code below:
+We will now find the threshold. This is achieved by using the code below:
 
 ```matlab
 i = i+1;
@@ -242,16 +249,19 @@ Since this is a binary image, we need to convert it into a colour image. We will
 
 A complement image is an image in which the pixels are subtracted from the maximum pixel that the class can support. It is mainly used to improve the contrast.
 
+To convert, add the following block of code:
+
 ```Matlab
 complemented_image = imcomplement(clean_image);
 figure, imshow(complemented_image)
 title('complemented image')
 ```
 
+This is how the complemented image will look like:
+
 ![complemented image](/engineering-education/how-to-obtain-blood-vessel-segmentation-in-retinal-images-using-matlab/retinal_three.png)
 
 ### Colorizing the image
-
 Let us now colorize this image. In order to do that, we will create a function named `colorized_image.m`.
 
 The function will return the color image. To avoid any difficulty we will use the default color defined by `DEFAULT COLOR` like this:
@@ -261,7 +271,7 @@ function color_image = colorize_image(resized_image, complemented_image, colorsp
 DEFAULT_COLOR = [1 1 1];     % default color is white.
 ```
 
-We can now introduce the condition for the colour channels. We will be using the `nargin` function such that if `nargin` is less than 3, then we use the default colour.
+We can now introduce the condition for the colour channels. We will be using the `nargin` function such that if `nargin` is less than 3, we will use the default colour.
 
 `nargin` is a function that returns the number of the input argument of the function.
 
@@ -279,7 +289,7 @@ We now make the complemented image to be a logical image, like this:
 complemented_image = (complemented_image~=0);
 ```
 
-Then convert the resized image and the colorspace into `uint8`:
+Then convert the resized image and the color space into `uint8`:
 
 ```matlab
 resized_uint8 = im2uint8(resized_image);
@@ -288,7 +298,7 @@ color_uint8 = im2uint8(colorspace_defination);
 
 If the dimensions of the `resized_uint8` is 2, then it is a grayscale. We use the `ndims` to return the dimension of the input array.
 
-If this is the case, we have to initialize all our input channel with same values as follows:
+If this is the case, we have to initialize all our input channel with same values, as follows:
 
 ```matlab
 if ndims(resized_uint8) == 2
@@ -297,8 +307,8 @@ green_channel = resized_uint8;
 blue_channel = resized_uint8;
 ```
 
-However, in other cases, we have to define the channel as shown below:
- 
+However, in other cases, we have to define the channel, as shown below:
+
 ```matlab
 else
 red_channel = resized_uint8(:, :, 1);
@@ -306,6 +316,8 @@ green_channel = resized_uint8(:, :, 2);
 blue_channel = resized_uint8(:, :, 3);
 end
 ```
+From the code above:
+
 - `1` represents red, `2` represents the green and `3` represents the blue.
 
 Now apply the colors to the complemented image:
@@ -331,7 +343,7 @@ figure, imshow(final_results)
 title('final_result')
 ```
 
-Here is our final image:
+Finally, this is how our final image looks like:
 
 ![final output](/engineering-education/how-to-obtain-blood-vessel-segmentation-in-retinal-images-using-matlab/retinal_four.png)
 
@@ -347,4 +359,5 @@ I hope you find this tutorial beneficial.
 Happy coding!
 
 ---
+
 Peer Review Contributions by: [Monica Masae](/engineering-education/authors/monica-masae/)
