@@ -1,0 +1,78 @@
+.pointer {
+  cursor: pointer;
+}
+
+.z99 {
+  z-index: $z99;
+}
+
+.white-link-arrow {
+
+  &:after {
+    margin-left: pxem(8);
+    content: "";
+    background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='15px' height='14px' viewBox='0 0 15 14' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3C!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch --%3E%3Ctitle%3EGroup 7 Copy%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='Updates---Feb-6' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='gla-landingpage-copy' transform='translate(-551.000000, -529.000000)' fill-rule='nonzero'%3E%3Cg id='Group-13' transform='translate(444.000000, 524.000000)'%3E%3Cg id='Group-7-Copy' transform='translate(107.000000, 6.000000)'%3E%3Cg id='Group-25'%3E%3Crect id='Rectangle' fill='%23FFFFFF' x='0' y='5' width='12' height='2'%3E%3C/rect%3E%3Cpolyline id='Path' stroke='%23FFFFFF' stroke-width='2' transform='translate(7.071068, 6.071068) rotate(-225.000000) translate(-7.071068, -6.071068) ' points='3.07106781 10.0710678 3.07106781 2.07106781 11.0710678 2.07106781'%3E%3C/polyline%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-size: cover;
+    display: inline-block;
+    height: pxem(12);
+    width: pxem(13);
+    transition: margin-left 240ms $t-1;
+  }
+
+  &:hover {
+
+    &:after {
+      margin-left: pxem(12);
+      transition: margin-left 240ms $t-1;
+      background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='15px' height='14px' viewBox='0 0 15 14' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3C!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch --%3E%3Ctitle%3EGroup 7 Copy%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='Updates---Feb-6' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='gla-landingpage-copy' transform='translate(-551.000000, -529.000000)' fill-rule='nonzero'%3E%3Cg id='Group-13' transform='translate(444.000000, 524.000000)'%3E%3Cg id='Group-7-Copy' transform='translate(107.000000, 6.000000)'%3E%3Cg id='Group-25'%3E%3Crect id='Rectangle' fill='%23FFFFFF' x='0' y='5' width='12' height='2'%3E%3C/rect%3E%3Cpolyline id='Path' stroke='%23FFFFFF' stroke-width='2' transform='translate(7.071068, 6.071068) rotate(-225.000000) translate(-7.071068, -6.071068) ' points='3.07106781 10.0710678 3.07106781 2.07106781 11.0710678 2.07106781'%3E%3C/polyline%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+  }
+}
+
+.pink-link-arrow {
+
+  &:after {
+    margin-left: pxem(8);
+    content: "";
+    background-size: cover;
+    display: inline-block;
+    height: pxem(12);
+    width: pxem(13);
+    transition: margin-left 240ms $t-1;
+    background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='14px' height='12px' viewBox='0 0 14 12' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3C!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch --%3E%3Ctitle%3EGroup 7 Copy%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='Updates---Feb-6' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='gla-landingpage-copy' transform='translate(-547.000000, -1567.000000)' fill='%23F05675' fill-rule='nonzero'%3E%3Cg id='Group-13-Copy' transform='translate(440.000000, 1561.000000)'%3E%3Cg id='Group-7-Copy' transform='translate(107.000000, 6.000000)'%3E%3Cg id='Group-25'%3E%3Crect id='Rectangle' x='0' y='5' width='12' height='2'%3E%3C/rect%3E%3Cpolygon id='Path' transform='translate(8.071068, 6.071068) rotate(-225.000000) translate(-8.071068, -6.071068) ' points='5.84884559 3.84884559 5.84884559 10.0710678 4.07106781 10.0710678 4.07106781 2.07106781 12.0710678 2.07106781 12.0710678 3.84884559'%3E%3C/polygon%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  &:hover {
+
+    &:after {
+      margin-left: pxem(8);
+      transition: margin-left 240ms $t-1;
+      background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='14px' height='12px' viewBox='0 0 14 12' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3C!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch --%3E%3Ctitle%3EGroup 7 Copy%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='Updates---Feb-6' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='gla-landingpage-copy' transform='translate(-547.000000, -1567.000000)' fill='%23F05675' fill-rule='nonzero'%3E%3Cg id='Group-13-Copy' transform='translate(440.000000, 1561.000000)'%3E%3Cg id='Group-7-Copy' transform='translate(107.000000, 6.000000)'%3E%3Cg id='Group-25'%3E%3Crect id='Rectangle' x='0' y='5' width='12' height='2'%3E%3C/rect%3E%3Cpolygon id='Path' transform='translate(8.071068, 6.071068) rotate(-225.000000) translate(-8.071068, -6.071068) ' points='5.84884559 3.84884559 5.84884559 10.0710678 4.07106781 10.0710678 4.07106781 2.07106781 12.0710678 2.07106781 12.0710678 3.84884559'%3E%3C/polygon%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+  }
+}
+
+.rounded {
+  position: relative;
+  z-index: 200;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
+
+  &:after {
+    content: "";
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    display: block;
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    box-shadow: 0 0.25rem 0.5rem 0 rgba(0,0,0,.2);
+    z-index: -1;
+    border-radius: 100%;
+  }
+}

@@ -4,7 +4,7 @@ First of all we would like to welcome you to the EngEd Program!
 The Engineering Education Program at Section was created as a *Get PAID to WRITE program*.
 We offer students the chance to write content about related and approved topics about Information Technology Web-related services. (Could be something you are learning currently)
 
-To get started **we recommend you begin by going over the most recently published student** articles at the link provided to get ideas on [potential topics](/engineering-education/) and get a better sense of style and tonality.
+To get started **we recommend you begin by going over the most recently published student** articles at the link provided to get ideas on [potential topics](https://www.section.io/engineering-education/) and get a better sense of style and tonality.
 
 Then you are ready to suggests a topic idea to be approved [via this form](https://github.com/section-io/engineering-education/issues/new?assignees=&labels=topic+suggestion&template=enged-content-idea-suggestion.md&title=).
 
