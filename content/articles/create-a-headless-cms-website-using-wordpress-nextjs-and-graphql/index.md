@@ -14,11 +14,11 @@ images:
   - url: /engineering-education/create-a-headless-cms-website-using-wordpress-nextjs-and-graphql/hero.jpg 
     alt: WordPress Image Example
 ---
-Building a website can be overwhelming in the current online world, especially without extreme knowledge of building one. However, building a website can be easier with well-established and ready-made content management systems such as WordPress. 
+Building a website can be overwhelming in the current online world, especially without extreme knowledge of building one. But, building a website can be easier with well-established and ready-made content management systems such as WordPress. 
 <!--more-->
-WordPress is an open-source content management system (CMS). CMS is software that is run on a webserver to host ready-made and customizable website templates. This means you can build a full-fledged website using or modifying WordPress for free. Being a CMS, it allows you to manage different aspects of a website, such as changing WordPress appearance, adding and modifying content, search engine enhancement, etc.
+WordPress is an open-source content management system (CMS). CMS is a software that is run on a web server to host ready-made and customizable website templates. This means you can build a full-fledged website using or modifying WordPress for free. Being a CMS, it allows you to manage different aspects of a website, such as changing WordPress appearance, adding and modifying content, and search engine enhancement.
 
-However, with WordPress being beginner-friendly, its backing technology is server-side rendered (SSR). This means you can encounter some performance overhead over other technologies such as Next.js. WordPress content is served directly from the server. This means every request has to go over to the server, requesting the necessary resources. With many requests to process, servers with less processing power can be overwhelmed when such requesting traffic increases.
+Yet, with WordPress being beginner-friendly, its backing technology is server-side rendered (SSR). This alludes that you can encounter some performance overhead over other technologies such as Next.js. WordPress content is served directly from the server. Every request has to go over to the server, requesting the necessary resources. With many requests to process, servers with less processing power can be overwhelmed when such requesting traffic increases.
 
 Technology such as Next.js supports hybrid content generation. They support both SSR and CSR for Static Site Generation. This means server-side content is served ahead of time. Thus, a user requests the server, and the content is served ahead of time. Next.js uses generators that render a page statically, making it load ahead of time. With superior technologies such as Next.js, you can combine them with CMS such as WordPress and run them as headless. This way, WordPress will run a headless CMS. This produces a performant website with a great user experience.
 
@@ -43,38 +43,39 @@ Technology such as Next.js supports hybrid content generation. They support both
 ### Prerequisites
 The following prerequisites will help you navigate around this tutorial:
 
-- A [remote hosted and running hosted WordPress](https://themeisle.com/blog/install-wordpress-on-aws/) blog.
 - Basic understanding of working with [Next.js](https://www.youtube.com/watch?v=mTz0GXj8NN0&t=54s).
 - Good understanding of [how WordPress works](https://webdesign.tutsplus.com/articles/how-does-wordpress-work--cms-34542) and [how to use it to build a website](https://themeisle.com/blog/install-wordpress-on-aws/).
 
 ### What is a headless CMS
 In a WordPress CMS, the backend (where you manage your content) and frontend (where the content is displayed to the website visitors) are integrated as one monolithic system. When WordPress runs as a headless CMS, both the content and the content presentation are decoupled. This makes the content presentation layer flexible. You can now build a website or a mobile application to present the raw WordPress-driven content. The backed and the frontend are not tied to the CMS anymore.
 
-You still have WordPress CMS for content creation, and management saved to a database in simple terms. The only difference is that content presentation is delivered through the Application Programming Interface (API) as raw data format such as JSON. Then the data is presented in the websites, mobile applications, or any other channels and devices.
+You still have WordPress CMS for content creation, and management saved to a database. The only difference is that content presentation is delivered through the application programming interface (API) as raw data format such as JSON. Then the data is presented in the websites, mobile applications, or any other channels and devices.
 
 ### Reasons for running WordPress as a headless CMS
-- You can change the content delivery channels when you would like to without re-authoring the content.
+- It enables you to change the content delivery channels when you would like to without re-authoring the content.
 
-- Since the content is delivered as raw data through an API, you can use any technology you wish to present this data. This allows you to focus on things that matter most, such as creating great digital experiences for your users as a developer.
+- Since the content is delivered as raw data through an API, you can use any technology you wish to present this data. As a developer, this allows you to focus on things that matter most, such as creating great digital experiences for your users.
 
-- API-driven data promote omnichannel architectures. You create WordPress content and channel it through API. Thus the content shines across all touchpoints.
+- API-driven data promote omni-channel architectures. You create WordPress content and channel it through API. Thus, the content shines across all touch points.
 
-- It creates more efficient, scalable, and fast applications. Both backend and frontend are separated from the monolith CMS architecture. This means if the WordPress-backed CMS has any issues, the channel delivery pipelines are not affected. Hence the performance of the delivery channel is not compromised.
+- It creates more efficient, scalable, and fast applications. Both backend and frontend are separated from the monolith CMS architecture. If the WordPress-backed CMS has any issues, the channel delivery pipelines are not affected. Hence, the performance of the delivery channel is not compromised.
 
 In this guide, we will learn how we can use Next.js to run WordPress as a headless CMS. 
 
 Let's dive in.
 
 ### Adding a post
-First, head over to your remote WordPress website Admin dashboard. If you don't have a running WordPress website, check this [guide](https://themeisle.com/blog/install-wordpress-on-aws/) and set up one.
+First, head over to your remote WordPress website Admin dashboard. If you don't have a running WordPress website, check this [guide](https://themeisle.com/blog/install-wordpress-on-aws/) on how to install WordPress and set up one.
 
 Since WordPress and Next.js are used to develop blog-based websites, we will use this scenario by first adding and posting a post in WordPress admin.
 
-First, from your [WordPress Admin dashboard](https://colibriwp.com/blog/wordpress-admin-dashboard-area/), navigate to `posts` and add a `category`. On the left pane of the resulting page, enter a name, slug, and a description for the post category, and then click the button `Add new category`. The following image shows how to set up these fields.
+First, from your WordPress [admin dashboard](https://colibriwp.com/blog/wordpress-admin-dashboard-area/), navigate to `posts` and add a `category`. On the left pane of the resulting page, enter a name, slug, and a description for the post category, and then click the button `Add new category`. 
+
+The following image shows how to set up these fields.
 
 ![add-post-category](/engineering-education/create-a-headless-cms-website-using-wordpress-nextjs-and-graphql/add-post-category.png)
 
-Now add a new post. From the Admin dashboard, navigate to the left sidebar and click on `posts`. On the resulting right pop-up, click on `Add new`. In the resulting panel, enter the title and some dummy content as below:
+Now add a new post. From the admin dashboard, navigate to the left sidebar and click on `posts`. On the resulting right pop-up, click on `Add new`. In the resulting panel, enter the title and some dummy content as below:
 
 ![add-post-form](/engineering-education/create-a-headless-cms-website-using-wordpress-nextjs-and-graphql/add-post-form.png)
 
@@ -94,15 +95,17 @@ With that, you have a post set up. Repeat the process a couple of times to have 
 
 ### Installing the WpGraphQL plugin
 
-[WPGraphQL](https://www.wpgraphql.com/docs/introduction/) is a free, open-source WordPress plugin that provides an extendable GraphQL schema and API for any WordPress site. We will be using it to fetch GraphQL schema to help the WordPress API communicate with Next.js. So go ahead and install this plugin.
+[WPGraphQL](https://www.wpgraphql.com/docs/introduction/) is a free, open-source WordPress plugin that provides an extendable GraphQL schema and API for any WordPress site. We will be using it to fetch GraphQL schema to help the WordPress API communicate with Next.js. Let's go ahead and install this plugin.
 
-From the left sidebar of the dashboard, Navigate to plugins. On the resulting pop-up to the right, click on `Add new`. On the search bar, search `WpGraphQL`:
+From the left sidebar of the dashboard, navigate to plugins. On the resulting pop-up to the right, click on `Add new`. On the search bar, search `WpGraphQL`:
 
 ![plugins-search-bar](/engineering-education/create-a-headless-cms-website-using-wordpress-nextjs-and-graphql/plugins-search-bar.png)
 
-Click `Install now` on the following result. Once the installation is over, make sure you activate the plugin.
+Click `Install now` on the following result. 
 
 ![wp-graphql-plugin](/engineering-education/create-a-headless-cms-website-using-wordpress-nextjs-and-graphql/wp-graphql-plugin.png)
+
+Once the installation is over, make sure to activate the plugin.
 
 ![wp-graphql-plugin](/engineering-education/create-a-headless-cms-website-using-wordpress-nextjs-and-graphql/wpgraphql-activate.png)
 
@@ -110,7 +113,7 @@ Click `Install now` on the following result. Once the installation is over, make
 
 After installing the plugin on your WordPress site, you will have a `GraphQL` tab at the bottom of the left sidebar. Navigate to it, and on the resulting pop-up, click `GraphiQL IDE`. This will redirect you to a GraphQL playground where you can write your queries.
 
-To query the posts we have published, we will use the following GraphQL schema.
+To query the posts we have published, we will use the following GraphQL schema:
 
 ```js
 query postsQuery{
@@ -134,27 +137,27 @@ query postsQuery{
  }
 ```
 
-We are fetching all posts from the above query, each query getting the post title, category, excerpt, and content. On the left pane, paste in the above query. Then, execute the query by hitting the play button.
+We are fetching all posts from the above query, each query getting the post title, category, excerpt, and content. On the left pane, paste in the above query. Then, execute the query by hitting the play button as shown.
 
 ![wp-graphql-playbutton](/engineering-education/create-a-headless-cms-website-using-wordpress-nextjs-and-graphql/wp-graphql-playbutton.png)
 
 ### Setting up the Next.js environment
 
-To set up the Next.js environment, follow the following steps;
+To set up the Next.js environment, follow the following steps:
 
-- Create a simple Next.js app using [create-next-app](https://nextjs.org/docs/api-reference/create-next-app) by running the following command.
+- Create a simple Next.js app using [create-next-app](https://nextjs.org/docs/api-reference/create-next-app) by running the following command:
 
 ```bash
 npx create-next-app cms-wordpress-app
 ```
 
-- A folder `cms-wordpress-app` will be created, which will contain all the necessary files to start working on a Next.js project. Use the Change Directory (cd) command to get into the project folder `cms-wordpress-app` we just created;
+- A folder `cms-wordpress-app` will be created, which will contain all the necessary files to start working on a Next.js project. Use the `Change Directory (cd)` command to get into the project folder `cms-wordpress-app` we created.
 
 ```bash
 cd cms-wordpress-app
 ```
 
-- To test if everything is working fine, run the following command to start the Next.js development server.
+- To test if everything is working fine, run the following command to start the Next.js development server:
 
 ```bash
 npm run dev
@@ -166,7 +169,7 @@ The above command will start the development server on port 3000 and expose it t
 
 ### Adding WordPress API to Next.js using the GraphQL schema
 
-Create a `.env.local` file and a `WORDPRESS_API_URL` in the root folder as described below.
+Create a `.env.local` file and a `WORDPRESS_API_URL` in the root folder as shown below:
 
 ```bash
 WORDPRESS_API_URL=your_wordpress_api_url
@@ -184,7 +187,7 @@ To get your `API_URL`;
 
 ### Connecting to the WordPress CMS
 
-Create a folder `lib`. In this folder, we will handle the connection from our app to the WordPress CMS.
+To connect to the WordPress CMS, create a folder called `lib`. In this folder, we will handle the connection from our app to the WordPress CMS.
 
 In the `pages` folder is an `api.js` file where we will implement the various functions for communicating with the WordPress API.
 
@@ -194,7 +197,7 @@ So in the `api.js` file, get the `API_URL` we saved in the `env.local` file by a
 const API_URL = process.env.WORDPRESS_API_URL;
 ```
 
-Configure a function to be called to send the request to the API as below.
+Configure a function to be called to send the request to the API as shown below:
 
 ```js
 async function fetchAPI(query, { variables } = {}) {
@@ -224,17 +227,13 @@ async function fetchAPI(query, { variables } = {}) {
   }
 ```
 
-The above function;
+The above function will receive two parameters; the query to run and the variables to pass with the query. Then, we will fetch the data from the CMS using the query.
 
-- Will receive two parameters, the query to run and the variables to pass with the query. Then, we will fetch the data from the CMS using the query.
-
-- The request will be sent as a POST using [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API).
-
-- If an error occurs when running the query, a message will be thrown else the data will be returned.
+The request will be sent as a POST using [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API). If an error occurs when running the query, a message will be thrown else the data will be returned.
 
 ### Fetch all WordPress posts
 
-Add a function to fetch all the posts as follows;
+Add a function to fetch all the posts as follows:
 
 ```js
 export async function getPosts(){
@@ -273,11 +272,11 @@ export async function getPosts(){
 }
 ```
 
-From above, we are sending a request to the WordPress API to get the first twenty posts.
+In the code above, we are sending a request to the WordPress API to get the first twenty posts.
 
 ### Fetch a single WordPress post
 
-Similarly, we add a function to get a single post as follows;
+Similarly, we add a function to get a single post as follows:
 
 ```js
 export async function getSinglePost(id){
@@ -317,13 +316,13 @@ To show the posts in our app,  we will utilize the [getServerSideProps()](https:
 
 To implement the method on the home page, follow the below steps in `pages/index.js`.
 
-- Import the `getPosts` function;
+- Let's import the `getPosts` function;
 
 ```js
 import {getPosts} from "../lib/api";
 ```
 
-- Below the `Home` function call the `getServerSideProps()` as below:
+- Below the `Home` function, call the `getServerSideProps()` as shown below:
 
 ```js
 export async function getServerSideProps(ctx){
@@ -336,9 +335,9 @@ export async function getServerSideProps(ctx){
 }
 ```
 
-In the above `getServerSideProps()`, we are calling the `getPosts()` function to get the posts and returning them inside the `props` object. The data will be sent to the component. We have to get it and map through it to show the posts.
+In the above `getServerSideProps()`, we are calling the `getPosts()` function to get the posts and return them inside the `props` object. The data will be sent to the component. We have to get it and map through it to show the posts.
 
-- Edit the `Home` function as below;
+- Edit the `Home` function as shown below:
 
 ```js
 export default function Home({posts}) {
@@ -375,15 +374,15 @@ export default function Home({posts}) {
   }
 ```
 
-In the above function, we are;
+In the above functionL
 
-- Getting the posts sent from the `getServerSideProps()`.
+- We are getting the posts sent from the `getServerSideProps()`.
 
 - Mapping through the posts and for each post showing the title, excerpt, and the author. The title is a link to a specific posts page.
 
 ### Testing
 
-To test the above, ensure the development server is up and running, using the command;
+To test, ensure the development server is up and running using the following command:
 
 ```bash
 npm run dev
@@ -401,13 +400,13 @@ To show a single post page, navigate to the the `pages` directory and create the
 import {getSinglePost} from "../../lib/api";
 ```
 
-This function;
+This function does two things:
 
-- Gets the posts sent from the `getServerSideProps()`.
+- It gets the posts sent from the `getServerSideProps()`.
 
-- Maps through the posts and for each post showing the title, excerpt, and the author. The title is a link to a specific posts page.
+- It maps through the posts and for each post showing the title, excerpt, and the author. The title is a link to a specific posts page.
 
-Next, implement `getServerSideProps()` as follows;
+Next, implement `getServerSideProps()` as follows:
 
 ```js
 export async function getServerSideProps(ctx){
@@ -422,16 +421,16 @@ export async function getServerSideProps(ctx){
 }
 ```
 
-From the above block of code, we get the post's id, fetching the post based on that id, and sending the post inside the props object. The next step is to implement a function for the view. To do that:
+From the above block of code, we get the post's id, fetch the post based on that id, and send the post inside the props object. The next step is to implement a function for the view. 
 
-Import the styles module and Head package from Next.js:
+To do that, import the `styles` module and `Head` package from Next.js:
 
 ```js
 import Head from "next/head";
 import styles from '../../styles/Home.module.css';
 ```
 
-Create a `Post` function as below:
+Next, create a `Post` function as shown below:
 
 ```js
 export default function Post({post}) {
@@ -468,7 +467,7 @@ In your browser, navigate to `http://localhost:3000`.
 To test the implementation, click on the title of any post on the home page. You should be redirected to a single post page. Then, click on the back arrow and explore the other posts.
 
 ### Conclusion
-We have managed to create posts in WordPress, query, and show them from a Next.js application. To gain more insightful knowledge about the various technologies and concepts used, check out the following resources in the reference section.
+We have managed to create posts in WordPress, query, and show them from a Next.js application. To gain more insightful knowledge about the various technologies and concepts used, check out the resources listed in the reference section.
 
 ### References
 - [WpGraphQL](https://www.wpgraphql.com/)
