@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/create-a-headless-cms-website-using-wordpress-nextjs-and-graphql/hero.jpg 
     alt: WordPress Image Example
 ---
-Building a website can be overwhelming in the current online world, especially without extreme knowledge of building one. But, building a website can be easier with well-established and ready-made content management systems such as WordPress. 
+Building a website can be overwhelming in the current online world, especially without extreme knowledge of building one. But, building a website can be easier with well-established and ready-made content management systems such as WordPress.
 <!--more-->
 WordPress is an open-source content management system (CMS). CMS is a software that is run on a web server to host ready-made and customizable website templates. This means you can build a full-fledged website using or modifying WordPress for free. Being a CMS, it allows you to manage different aspects of a website, such as changing WordPress appearance, adding and modifying content, and search engine enhancement.
 
@@ -23,10 +23,10 @@ Yet, with WordPress being beginner-friendly, its backing technology is server-si
 Technology such as Next.js supports hybrid content generation. They support both SSR and CSR for Static Site Generation. This means server-side content is served ahead of time. Thus, a user requests the server, and the content is served ahead of time. Next.js uses generators that render a page statically, making it load ahead of time. With superior technologies such as Next.js, you can combine them with CMS such as WordPress and run them as headless. This way, WordPress will run a headless CMS. This produces a performant website with a great user experience.
 
 ### Overview
+- [Overview](#overview)
 - [Prerequisites](#prerequisites)
 - [What is a headless CMS](#what-is-a-headless-cms)
 - [Reasons for running WordPress as a headless CMS](#reasons-for-running-wordpress-as-a-headless-cms)
-- [Prerequisites](#prerequisites)
 - [Adding a post](#adding-a-post)
 - [Installing the WpGraphQL plugin](#installing-the-wpgraphql-plugin)
 - [Running a query from the GraphiQL IDE](#running-a-query-from-the-graphiql-ide)
@@ -60,7 +60,7 @@ You still have WordPress CMS for content creation, and management saved to a dat
 
 - It creates more efficient, scalable, and fast applications. Both backend and frontend are separated from the monolith CMS architecture. If the WordPress-backed CMS has any issues, the channel delivery pipelines are not affected. Hence, the performance of the delivery channel is not compromised.
 
-In this guide, we will learn how we can use Next.js to run WordPress as a headless CMS. 
+In this guide, we will learn how we can use Next.js to run WordPress as a headless CMS.
 
 Let's dive in.
 
@@ -69,7 +69,7 @@ First, head over to your remote WordPress website Admin dashboard. If you don't 
 
 Since WordPress and Next.js are used to develop blog-based websites, we will use this scenario by first adding and posting a post in WordPress admin.
 
-First, from your WordPress [admin dashboard](https://colibriwp.com/blog/wordpress-admin-dashboard-area/), navigate to `posts` and add a `category`. On the left pane of the resulting page, enter a name, slug, and a description for the post category, and then click the button `Add new category`. 
+First, from your WordPress [admin dashboard](https://colibriwp.com/blog/wordpress-admin-dashboard-area/), navigate to `posts` and add a `category`. On the left pane of the resulting page, enter a name, slug, and a description for the post category, and then click the button `Add new category`.
 
 The following image shows how to set up these fields.
 
@@ -101,7 +101,7 @@ From the left sidebar of the dashboard, navigate to plugins. On the resulting po
 
 ![plugins-search-bar](/engineering-education/create-a-headless-cms-website-using-wordpress-nextjs-and-graphql/plugins-search-bar.png)
 
-Click `Install now` on the following result. 
+Click `Install now` on the following result.
 
 ![wp-graphql-plugin](/engineering-education/create-a-headless-cms-website-using-wordpress-nextjs-and-graphql/wp-graphql-plugin.png)
 
@@ -421,7 +421,7 @@ export async function getServerSideProps(ctx){
 }
 ```
 
-From the above block of code, we get the post's id, fetch the post based on that id, and send the post inside the props object. The next step is to implement a function for the view. 
+From the above block of code, we get the post's id, fetch the post based on that id, and send the post inside the props object. The next step is to implement a function for the view.
 
 To do that, import the `styles` module and `Head` package from Next.js:
 
