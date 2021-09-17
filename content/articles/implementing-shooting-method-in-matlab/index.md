@@ -6,12 +6,12 @@ url: /implementing-shooting-method-in-matlab/
 title: Implementing shooting method in Matlab
 description: This tutorial walks the reader through the concepts of Matlab shooting methods.
 author: atieno-dorine
-date: 2021-09-09T00:00:00-16:00
+date: 2021-09-16T00:00:00-16:00
 topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/implementing-shooting-method-in-matlab/hero.png
+  - url: /engineering-education/implementing-shooting-method-in-matlab/hero.jpg
     alt: shooting method Matlab
 ---
 
@@ -19,7 +19,11 @@ In numerical analysis, the shooting method reduces a boundary value problem to a
 <!--more-->
 If the problem is first defined by *y=f(x); y(x0)=a* and *$y(X_1)$*, it is transformed into the initial problem *y' =z(x)* and *z'(x) = f(x)* with some initial values. 
 
-Since this method is a two-point boundary value problem, then it has two initial values. In the shooting method, one of the initial values is not known. This value is guessed and compared to the known solution at the boundary conditions until the target thus shooting method. This article contains the construction of the shooting method code for a linear BVP. We will look at recognizing the boundary value problem and formulate the BVP as an equivalent system of IVP.
+Since this method is a two-point boundary value problem, then it has two initial values. 
+
+In the shooting method, one of the initial values is not known. This value is guessed and compared to the known solution at the boundary conditions until the target thus shooting method. 
+
+This article contains the construction of the shooting method code for a linear BVP. We will look at recognizing the boundary value problem and formulate the BVP as an equivalent system of IVP.
 
 ### Prerequisites
 To follow along with this tutorial, you'll need:
@@ -64,9 +68,11 @@ $ or $
 \frac{d^n y}{dt^n}= f(x,y_1,y_2)
 $
 
-At x = 0, $y_1=y_0$ and at x =0, $y_2=\frac{dy}{dx}|_{x=0}$
+At `x = 0`, `$y_1=y_0$` and at `x =0`, `$y_2=\frac{dy}{dx}|_{x=0}$`
 
-Now in this situation, we don't know one of the initial conditions, that is, between y0 and $\frac{dy}{dx}|_{t=0}$, one value is not known. Therefore, we will guess the unknown initial condition in the shooting method and use the IVP solver. For example, we can guess $\frac{dy}{dt}|_{t=0}$, run the integration, and land into a different point which is not the target boundary condition as demonstrated below.
+Now in this situation, we don't know one of the initial conditions, i.e, between y0 and $\frac{dy}{dx}|_{t=0}$, one value is not known. Therefore, we will guess the unknown initial condition in the shooting method and use the IVP solver. 
+
+For example, we can guess $\frac{dy}{dt}|_{t=0}$, run the integration, and land into a different point which is not the target boundary condition as demonstrated below.
 
 ![demonstration](/engineering-education/implementing-shooting-method-in-matlab/shooting_one.png)
 
