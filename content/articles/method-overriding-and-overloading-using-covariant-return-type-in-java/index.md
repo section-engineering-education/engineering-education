@@ -16,13 +16,22 @@ images:
     alt: Method Overriding and Overloading using Covariant Return Type in Java
 ---
 Table of content:
-- [@override annotation](#override-annotation)
+- [The Covariant Return type](#the-covariant-return-type)
 - [Rules regarding covariant return type](#rules-regarding-covariant-return-type)
-- [Return types](#return-types)
-- [Method overriding](#method-overriding)
+- [@override annotation](#override-annotation)
+- [Advantages of Covariant Return Type](#advantages-of-covariant-return-type)
 ### Introduction
-In an object-oriented programming language, `return type covariance` means that a method's return type can be replaced with a narrower one when it is overridden in a subclass or child class. Instead of `overriding`, as some people believe, method `overloading` refers to the process of changing the parameters of a method. If the overriding method's return type is a subtype of the base class' return type, return types can be modified in subclass methods to override base class methods. 
+In an object-oriented programming language, `return type covariance` means that a method's return type can be replaced with a narrower one when it is overridden in a subclass or child class. It eliminates the need to cast or validate the return type when limiting the return type of a custom method. Only non-primitive return types can use a covariant return type. 
+Instead of `overriding`, as some people believe, method `overloading` refers to the process of changing the parameters of a method. If the overriding method's return type is a subtype of the base classes' return type, return types can be modified in subclass methods to override base class methods. 
+> It's impossible for you to change only return type while method overloading. If we merely alter the return type, the compiler will have a difficult time determining which function to use. As a result, changing the return type isn't an option.
 
+### The Covariant Return type
+The return statement returns control to the method's caller. Every Java method must have a return type stated before it can be used. A primitive type like int, float, a reference type, or a void type can be the return value.
+When it comes to returning values, there are a few key concepts to grasp.
+- A method's return type must be consistent with the data it returns. If a method returns boolean, we can't return an integer.
+- riables that receive method returns must be compatible with the method's return type as well.
+- The parameters must be accepted by the method in the same order in which they are supplied.
+As we said earlier, covarint return type means that a method's return type can be replaced with a narrower one when it is overridden in a subclass or child class. Here we will will look deeper on how we can override methods using covariant return types.
 ### Rules regarding covariant return type
 For covariant return types, there are primarily three rules to keep in mind. Following is a list of them.
 1. If a subclass's overriding method returns the same type as its superclass or subclass, then the overriding method's return type should match.
@@ -54,8 +63,13 @@ class Red extends Color{
 ```
 > It fails after swapping return types of Base and Derived in the above application.
 ### @override annotation
-If you don't utilize the `@Override annotation`, it won't cause any problems. It also has some advantages which I have listed below:
+Method overriding is the act of declaring a method in a subclass that is already existent in the parent class. Overriding is used to allow a child class to override a parent class's implementation of a method. Overriding a method with an exception will require you to follow these three crucial guidelines while using Java. These are a few of them:
 
+1. Overridden methods can't throw checked or compile-time exceptions or unchecked or runtime exceptions if the overriding method doesn't use the throws clause.
+2. Overridden methods that throw unchecked or runtime exceptions can throw any unchecked or runtime exception, or the same exception as the overridden method.
+3. Exceptions thrown by superclass methods can be subclassed by subclass methods, but superclass exceptions cannot be subclassed by subclass methods, and subclass methods can throw any unchecked or run-time exception.
+
+If you don't utilize the `@Override annotation`, it won't cause any problems. This means that when a superclass method (an overridden method) says it can throw an exception, then any overrides must declare that they can throw the same type of exception or a subtype of that exception. It also has some advantages which I have listed below:
 - It makes the code easier to read.
 - It simplifies the program's maintenance.
 - As a result, the return types are more explicit, reducing the need for typecasting.
@@ -100,7 +114,6 @@ Derived class method from Base class.
 
 3. ClassCastExceptions on returns can be prevented by using a covariant return type at runtime.
 
-### Return types
 The `Java Virtual Machine` (JVM) has always supported overloading based on the return type. As the JVM uses the whole signature of a method for its lookup or resolution, this is permissible in JVM. Multiple methods of the same type may exist in the same class. Covariant return types are supported and implemented by the java compiler (javac).
 
 On the other hand, you can use the Java class file disassembler Javap to verify the code. Javac's usage of this approach allows us to use the covariant return type in Java. To support covariant return types, the JVM does not require any changes.
@@ -113,15 +126,7 @@ class Red extends Color {
   public Color getColor();
 }
 ```
-### Method overriding
-This means that when a superclass method (an overridden method) says it can throw an exception, then any overrides must declare that they can throw the same type of exception or a subtype of that exception.
-
-Overriding a method with an exception will require you to follow these three crucial guidelines while using Java. These are the names of them:
-1. Overridden methods can't throw checked or compile-time exceptions or unchecked or runtime exceptions if the overriding method doesn't use the throws clause.
-
-2. Overridden methods that throw unchecked or runtime exceptions can throw any unchecked or runtime exception, or the same exception as the overridden method.
-
-3. Exceptions thrown by superclass methods can be subclassed by subclass methods, but superclass exceptions cannot be subclassed by subclass methods, and subclass methods can throw any unchecked or run-time exception.
 ### Conclusion
 Knowing that we can override a method in Java by declaring it as a child class or derived class, it has to have a name that is the same as the parent class or base class with the same amount of parameters. As a result of this, the overriding method is said to be "invariant" in terms of the return type.
+Only if the return type is a subclass of the overridden method's return type can we override a method by modifying its return value.
 
