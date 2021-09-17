@@ -16,7 +16,7 @@ images:
 ---
 
 Web application development is a pretty crowded field of technology. There are different types of frameworks, libraries, and tools. While developing web apps, the main objective is delivering high-quality user interfaces (UI) with encapsulated components. 
-
+<!--more-->
 Therefore, when you use frameworks like React, Vue, Angular, or any other front-end framework, you break everything in your UI up into components. However, we can do something similar without even using a framework or a library, and that's plain JavaScript (Vanilla JavaScript).
 
 This article will talk about what web components are and why they are helpful. Finally, it will take you through how to create a web component from scratch.
