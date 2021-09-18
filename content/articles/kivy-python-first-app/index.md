@@ -167,3 +167,6 @@ python main.py
 ![Kivy app running ](app.png)
 ### Conclusion
 In this article, the reader learned the mobile application creation process using the Kivy python library. We developed an age calculator application using the multi-platform python module and tested our applications' functionality. We realized how every component of development using Kivy is based on understanding Python Classes and Objects.
+
+---
+Peer Review Contributions by: [Mercy Meave](/engineering-education/authors/mercy-meave/)
