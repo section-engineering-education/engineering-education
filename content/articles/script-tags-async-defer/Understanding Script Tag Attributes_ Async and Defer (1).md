@@ -1,5 +1,5 @@
 # Understanding Script Tag Attributes: Async and Defer
-![hero](/understanding-script-tags-async-defer/hero.jpg)
+![hero](/script-tags-async-defer/hero.jpg)
 
 
 You may have come across one of [Hypertext Markup Language(HTML)](https://www.section.io/engineering-education/semantic-html-for-beginners/) tags as shown below, the `script` tag. 
