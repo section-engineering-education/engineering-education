@@ -1,10 +1,8 @@
 ![banner-image](hero.jpg)
 
-As we build and projects get bigger, the tendency to tilt towards spaghetti code becomes inevitable –
-conditions here and there, choices up and down; all to accommodate the intricacies of a growing system.
-One way to avoid these complications is to apply Finite State Machines (FSM) concept in handling state changes
-of objects. This is because FSM helps you simplify code, avoid numerous if/else conditions by defining states and
-the connections between them.
+As we build and projects get bigger, the tendency to tilt towards spaghetti code becomes inevitable – conditions here and there, choices up and down; all to accommodate the intricacies of a growing system. One way to avoid these complications is to apply Finite State Machines (FSM) concept in handling state changes of objects. This is because FSM helps you simplify code, avoid numerous if/else conditions by defining states and the connections between them.
+
+In this article, we would learn how to manipulate and change an object's state at runtime. To demonstrate how this work, we will be building a lightweight cylinder tracking system, with basic CRUD operations
 
 ### Table of Contents
 The tutorial will cover the following items:
@@ -20,16 +18,8 @@ To make the most of this tutorial, it is required to have the following readied:
 - Familiarity with the Django rest framework browseable API interface
 - PyCharm Professional code editor installed.
 
-### Introduction
-In this article, we would learn how to manipulate and change an object's state at runtime.
-To demonstrate how this work, we will be building a lightweight cylinder tracking system, with basic CRUD operations
-
 ### What is Finite State Machine
-A Finite State Machine (FSM) is a system that facilitates an object’s dynamism in object-oriented programming.
-The idea is that objects can only assume one state per time. The most popular, most relatable example would be
-the traffic lights. At any given point, regardless of the number of light boards there are, each board can only
-have one light at a time, or there might be chaos on our roads. In this tutorial, we would be implementing transitions
-of objects states using the CynTrack application built in Django, to explain how FSM works.
+A Finite State Machine (FSM) is a system that facilitates an object’s dynamism in object-oriented programming. The idea is that objects can only assume one state per time. The most popular, most relatable example would be the traffic lights. At any given point, regardless of the number of light boards there are, each board can only have one light at a time, or there might be chaos on our roads. In this tutorial, we would be implementing transitions of objects states using the CynTrack application built in Django, to explain how FSM works.
 
 ### How does the Finite State Machine work in Django
 CynTrack is a simple application that tracks a cylinder, based on who is in possession at the time of checking.
@@ -49,14 +39,14 @@ To create this system, we will work with four steps:
 We want to assume readers are familiar with quick setup of a Django project.
 However, the commands for quickly setting up one are shared below:
 
-``django-admin startproject project .``
-``python manage.py startapp tracker``
+`django-admin startproject project .`
+`python manage.py startapp tracker`
 
 You can read up on setting up a Django project on other articles here on Section.io
 Before we create the object’s model class, we need to install the Django-fsm library into our system.
 You can use the following command to do this:
 
-``pip install django-fsm``
+`pip install django-fsm`
 
 This is what the cylinder object would look like after defining its states and creating the object:
 
@@ -81,7 +71,7 @@ class Cylinder(models.Model):
         return self.cylinder_number
 ```
 
-From the picture above, we see a field names ``assigned_to``. With this field, we can check for the current
+From the code snippet above, we see a field names ``assigned_to``. With this field, we can check for the current
 location of a cylinder. It is named an FSMField with the following parameters:
 - Choices: the list of states that any cylinder can assume
 - Default: the initial state that a cylinder object assumes upon creation
@@ -268,11 +258,11 @@ urlpatterns = [
 ```
 
 ### Points to note when choosing approach to changing a state from one value to another
-For a moment, let us assume we want to alter more than one field. For instance, in our cylinder tracker project,
-we might want to check the gas level of each cylinder – whether empty or filled – as it moves from one location
-to another. Doing this is very simple. We simply create another tuple of choices, like the location tuple, in the model.
-We then include a field in the model to refer to this new tuple and then write transitions for this gas volume states.
-Finally, we call the transition state for each gas volume state in the corresponding views file.
+For a moment, let us assume we want to alter more than one field. For instance, in our cylinder tracker project, we might want to check the gas level of each cylinder – whether empty or filled – as it moves from one location to another. Doing this is very simple. We simply create another tuple of choices, like the location tuple, in the model. We then include a field in the model to refer to this new tuple and then write transitions for this gas volume states. Finally, we call the transition state for each gas volume state in the corresponding views file.
+
+
+### Further Reading
+
 
 ### Conclusion
 To conclude, using FSM offers us a wonderful way to deal with complexity issues of projects.  By adopting it, we can
