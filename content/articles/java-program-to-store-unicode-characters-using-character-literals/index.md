@@ -63,9 +63,9 @@ import java.io.*;
 class Example {
     public static void main(String[] args)
     {       
-        char first1 = '\u0041';
+        char first1 = '\u002F';
         System.out.println(first1);
-        char second2 = '\u03C0';
+        char second2 = '\u003F';
         System.out.println(second2);
         char third3 = '\u0031';
         System.out.println(third3);
@@ -73,9 +73,9 @@ class Example {
         System.out.println(fourth4);
         char fifth5 = '\u0024';
         System.out.println(fifth5);
-        char sixth6 = '\u002F';
+        char sixth6 = '\u0061';
         System.out.println(sixth6);
-        char seventh7 = '\u03C0';
+        char seventh7 = '\u0041';
         System.out.println(seventh7);
     }
 }
@@ -98,27 +98,24 @@ import java.io.*;
 class Example {
     public static void main(String[] args)
     {
-        char first1 = 36;
+        char first1 = 47;
         System.out.println(first1);
-        char second2 = 47;
+        char second2 = 49;
         System.out.println(second2);
-        char third3 = 49;
+        char third3 = 126;
         System.out.println(third3);
-        char fourth4 = 126;
+        char fourth4 = 36;
         System.out.println(fourth4);
-        char fifth5 = 36;
+        char fifth5 = 97;
         System.out.println(fifth5);
-        char sixth6 = 97;
+        char sixth6 = 65;
         System.out.println(sixth6);
-        char seventh7 = 65;
-        System.out.println(seventh7);
     }
 }
 ```
 **OUTPUT**
 ```
 /
-?
 1
 ~
 $
