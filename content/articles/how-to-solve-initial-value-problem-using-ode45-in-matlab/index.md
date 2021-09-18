@@ -15,28 +15,44 @@ images:
    alt: MATLAB solve Initial Value Problem example image
 ---
 
-
 ### Introduction
 
-MATLAB’s uses the `ode45` function as the standard solver for ordinary differential equations. The `ode45` function applies Runga-Kutta formulae with the time step variable for easy computation. `ode45` is meant to solve the equation of the general form shown below;
+MATLAB’s uses the `ode45` function as the standard solver for ordinary differential equations of fifth-order(ode45). The `ode45` function applies Runge-Kutta formulae with the time step variable for easy computation. `ode45` is meant to solve the equation of the general form shown below;
 
-dx/dt = f(t,x), x(t0) = xo
+$
+dx/dt = f(t,x), x(t0) = x0
+$
 
-Here, `t` is the independent variable, `x` is a vector of dependent variables to be found, and f (t, x) is a function of t and x. The mathematical equation is defined when the `x` of functions on the right-hand side of Eq. (1), f (t, x), is pre-determined, and the initial conditions, x = x0 at time t0, are given.
+Here, `t` is the independent variable, `x` is a vector of dependent variables to be found, and f (t, x) is a function of t and x. The mathematical equation is defined when the `x` of functions on the right-hand side of Eq. (1), `f (t, x)`, is pre-determined, and the initial conditions, `x = x0` at the time `t0`, are given.
 
-In this article, we will consider the Matlab algorithm `ode45` to solve the IVP. IVP is an ODE together with some initial value(s). Here you have a differential equation describing the dynamics of how something is changing, but you know where to start. The initial value tells you where to start, but the differential equation tells you where to go next. `ode45` is a work course in Matlab, and it's the first algorithm you go to solve ode problems.
+This article will consider the Matlab algorithm `ode45` to solve the initial value problem(IVP). IVP is an ODE together with some initial value(s). Here you have a differential equation describing the dynamics of how something is changing, but you know where to start. The initial value tells you where to start, but the differential equation tells you where to go next. `ode45` is a work course in Matlab, and it's the first algorithm you go to solve ode problems.
 
 To follow along with this tutorial, you'll need:
 - [MATLAB](https://www.mathworks.com/products/get-matlab.html?s_tid=gn_getml) installed.
 - Proper understanding of [MATLAB](https://www.section.io/engineering-education/getting-started-with-matlab/) basics.
 
-In Runga Kutta 4 method, we obtain the solution of $y_i$ at various values of $t_i$ between the range $t_0$ and $t_n$. The intermediate value at which the computations are done is calculated internally by the ODE45. ODE45 uses adaptive step size Runga Kutta 4 method. This indicates that stepsize `H` is a varying value. It means that you have to define the stepsize.  Step size is the distance between the current value and the subsequent initial value.
+### Overview of Runge Kutta 4 method
+
+In Runge Kutta 4 method, we obtain the solution of `y_i` at various values of `t_i` between the range `t_0` and `t_n`. The intermediate value at which the computations are done is calculated internally by the ODE45. ODE45 uses adaptive step size Runge Kutta 4 method. It indicates that stepsize `H` is a varying value. It means that you have to define the stepsize.  Step size is the distance between the current value and the subsequent initial value. In this method, you have the initial value of the function . It helps find the solution to the differential equation. The basic formula of the Runge Kutta 4 method is given by;
+
+$
+y_{i+1} = (y_i + \frac{1}{6}(k_1 + 2K_2 + 2K_3 + k_4)
+$
+ 
+ Where;
+ $k_1=f(x_i,y_i)$
+ $k_2=f(x_i + \frac{h}{2},y_i + \frac{k_1}{2})$
+ $k_3=f(x_i + \frac{h}{2},y_i + \frac{k_2}{2})$
+ $k_4=f(x_i + h,y_i + k_3)$
+  
+  `f` is the function, and `h` is the stepsize. This method is more complicated, and to understand more about it; you can see [here](https://lpsa.swarthmore.edu/NumInt/NumIntFourth.html)
 
 In ODE45, the step size is not pre-determined, but at each step, it calculates the optimum size to reduce the error and get the error among the tolerance that we have defined. Note that for all the ODE solvers in Matlab, the variable step size for an adaptive step size is where Matlab decides the step size internally. It is to get errors within the required tolerance interval.
 
-### ODE45 syntax
+### ODE45
+In ODE45, the step size is not pre-determined, but at each step, it calculates the optimum size to reduce the error and get the error among the tolerance that we have defined. Note that for all the ODE solvers in Matlab, the variable step size for an adaptive step size is where Matlab decides the step size internally. It is to get errors within the required tolerance interval.
 
-Typical use of ode45
+The basic Matlab syntax for ode45 is; 
 
 ```matlab
 [tsol, ysol]=ode45(@(t,y) fname(t,y), [t0, t_end], y0)
@@ -48,9 +64,9 @@ Where;
 `t0`, `y0`: Initial condition representing `y(t0)=y0`.
 `t_end`:Final value until which the solution is desired.
 
-To understand our syntax, lets say you are given a function $\frac{dy}{dt}=f(t,y)$ and the initial condition as y(t0)=y0.
+To understand our syntax, lets say you are given a function $\frac{dy}{dt}=f(t,y)$ and the initial condition as `y(t0)=y0`.
 
-In this case, the `F` is the function for both *t* and *y*, which we must provide. This function takes in two variables, that is, the independent variable `t` and dependent variable `y` and returns a vector $\frac{dy}{dt}$. Since we want to look at the single variable equations, the output $\frac{dy}{dt}$ will be a scalar. Single variables are equations with single variables.
+In this case, the `F` is the function for both `t` and `y`, which we must provide. This function takes in two variables, that is, the independent variable `t` and dependent variable `y` and returns a vector $\frac{dy}{dt}$. Since we want to look at the single variable equations, the output $\frac{dy}{dt}$ will be a scalar. Single variables are equations with single variables.
 
 ODE45 gives `t` and `y` as the arguments passed on to the function `fname`. Thus, we pass the initial conditions `t0`, `t_end` and the initial solution `y0` to the function.
 
@@ -89,13 +105,13 @@ plot(tsol, ysol)
 
 Now we save this script and plot the output of our function.
 
-![our function plot](ode_one.png)
+![our function plot](/engineering-education/how-to-solve-initial-value-problem-using-ode45-in-matlab/ode_one.png)
 
 ### Common errors when doing IVP
 
 Let's make a small mistake in the `firstODEfun` by renaming the `t` in the `dy` function as `t1`. Then, when we run our program, we get an error, as displayed in the command window.
 
-![error defination](ode_two.png)
+![error defination](/engineering-education/how-to-solve-initial-value-problem-using-ode45-in-matlab/ode_two.png)
 
 The error indicates that the `t1` is undefined since the input variable was `t`. Keep in mind that our `t` and `y` are dummy variables. It means that they don't have any specification name, but you can use any name. The only thing that you should note is to use a similar name for the input and, in the definition, your function `dy`. Then, it won't be a problem. Also, as you use a different name, the order of the variable must remain, independent variable followed by the independent.
 
@@ -103,17 +119,37 @@ The error indicates that the `t1` is undefined since the input variable was `t`.
 
 Plug flow reactor, also known as tabular reactor, consists of a cylindrical pipe with an opening on each end for the reactor and products to flow through. Consumption of reactors is continuous as they flow down the length of the reactors. It means that as the reaction continues, the products increases.
 
-The plug flow reactor may be figured as one long tube or several short tubes. They range in diameter from few centimetres to several meters. The choice of diameter is based on the construction cost, pumping cost, and heat transfer needed. They have a wide variety of applications in either gas or liquid phase systems.
+You can figure the plug flow reactor as one long tube or several short tubes. They range in diameter from few centimetres to several meters. The choice of diameter is based on the construction cost, pumping cost, and heat transfer needed. They have a wide variety of applications in either gas or liquid phase systems.
+When modelling the PFR, you take an increment of the reactor when balancing the chemical equation occurring in the reactor and integrate the holdings. Holdings are the values that balance the chemical equation. It is because it is a distributed parameter system. Now, after balancing the equation and integrating the holding, you end up with the below equation.
 
+-qdc = -rAdz  (equation1)
+
+Where;
+q = is the flow rate.
+dc = is the change in the concentration.
+r = Is the flow rate.
+z = length of the reactor.
+A = is the crossectional area of the reactor.
+
+Since we assume that this is a first-order reaction, the kinetics will be;
+
+$
+r = kc = k_oexp(-\frac{E}{RT})c  (equation2)
+$
+
+Note that in equation2 above, `k` takes the initial form `ko`. Now, when we plug the equation2 into equation1, we end up with 
+
+$
+\frac{dc}{dz}=\frac{k_0exp(-\frac{E}{RT}}{q})c
+$
+This is how to calculate the concentration profile in the reactor. For more information, you can check [here](http://matlab.cheme.cmu.edu/2011/11/17/modeling-a-transient-plug-flow-reactor/)
 Now, let's look for an example of solving the plug flow reactor equation using Matlab.
 
 ### Example
 
 The concentration along a PFR is given by;
 
-$
-\frac{dc}{dv}=-\frac{1}{2}C^{1.25}
-$
+$-\frac{1}{2}C^{1.25}$
 
 With C(0)=1 and 
 `C` is the concentration, and `V` is the volume.
@@ -151,7 +187,7 @@ dC=-0.5*C^1.25;
 
 When we run our script, we obtain the solutions. The solutions are in the workspace, but you can execute `Vsol` and `Csol` to see them in the command window. The solutions are as shown below;
 
-![Solution](ode_three.png)
+![Solution](/engineering-education/how-to-solve-initial-value-problem-using-ode45-in-matlab/ode_three.png)
 
 Note that the solution in the `V` column vector corresponds to the equivalent position in the `C` column vector. It means that for the initial volume 0, the concentration is 1, and for volume 1, the concentration is 0.6243, and so forth.
 
@@ -163,3 +199,32 @@ Happy coding!
 
 ---
 Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+
+<!-- MathJax script -->
+<script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+           extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    }
+    });
+    MathJax.Hub.Queue(function() {
+      // Fix <code> tags after MathJax finishes running. This is a
+      // hack to overcome a shortcoming of Markdown. Discussion at
+      // https://github.com/mojombo/jekyll/issues/199
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i = 0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+    MathJax.Hub.Config({
+    // Autonumbering by mathjax
+    TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+  </script>
