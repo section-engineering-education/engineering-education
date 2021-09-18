@@ -36,6 +36,7 @@ To follow along with this tutorial, you'll need:
 - Proper understanding of [MATLAB](https://www.section.io/engineering-education/getting-started-with-matlab/) basics.
 - Basic understanding of [image processing](https://www.section.io/engineering-education/image-processing-using-matlab/) using Matlab.
 
+### Matlab code for obtaining the segmentation
 To make this whole process easier, download your image and store it in the current folder in Matlab. The retinal images can be downloaded from the internet.
 
 Thereafter, we will open Matlab and create a new script. The first step is to read the images.
@@ -75,7 +76,7 @@ The image will be converted as shown below:
 lab_image = rgb2lab(converted_image);
 ```
 
-Let us now use the `cat` function to concatenate 1, 0 and 0:
+Let us now use the `cat` function to concatenate 1, 0 and 0. Concatenation is the process of merging two or more variables together.
 
 ```matlab
 fill = cat(3, 1, 0, 0);
@@ -111,6 +112,7 @@ We need all the rows and the columns of the first channel:
 S = S(:, :, 1);
 ```
 
+### Performing contrast enhancement and filter on the grayscale image.
 Now, let us convert the `S` into a grayscale image. First, we subtract `S`'s minimum value from `S` and then divide it by the maximum and minimum of `S`.
 
 The division is going to be an element-wise division, and that is why we use the dot before the division sign as shown in the code below:
