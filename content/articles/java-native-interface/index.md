@@ -25,6 +25,19 @@ We employ native code for a variety of reasons, including the following:
 - When we wish to reuse a library rather than recreating it in Java.
 
 This tool is what we call the` Java Native Interface`which is a coded model for calling and being invoked by applications outside its scope (packages specific to a platform's hardware and operating system)as well as from Java programs in a Java virtual machine, libraries developed in other languages like C, C++, and assembly are generated (JVM).
+
+### Prerequisites
+- Have background information on creating objects using C++.
+- Have a piece of background information on java language and how to create classes.
+- To execute the codes, use the G++ compiler. For my case, I used [oracle terminal online](https://www.tutorialspoint.com/oracle_terminal_online.php) to execute the codes.
+
+### Goals of this Tutorial
+- By the end of this tutorial, the reader should be able to understand the following concepts:
+1. Java native Interface in general and elements in java native interface.
+2. How to implement java native methods using a native method (C++ for our case).
+3. Application of Java methods from Native Code using objects.
+4. Advantages and limitations of using JNI.
+
 ### Table of Contents
 - [Native Methods](#native-methods)
 - [JNI Elements in Code (Java)](#jni-elements-in-code-java)
@@ -62,7 +75,7 @@ Elements found in java code;
  In the article, we will employ C++ as the primary programming language, using G++ as the compiler and linker.
 
 We may choose any type of compiler we like, but this is what to do to get G++ up and running on Ubuntu operating system, Windows OS, and Mac OS:
-1. In ubuntu(Linux), we will have to run a code `sudo apt-get install build-essential` in the terminal.
+1. In ubuntu(Linux), we will have to run a code `Sudo apt-get install build-essential in the terminal.
 2. In a windows operating system we will install the `MinGW
 3. Run a command `g++` in the terminal in the MacOS and if it will not be present, you need to install it first.
 
@@ -83,14 +96,14 @@ public class HelloJavaJNI {
        new JavaNative().remarkHi();
     }
 
-    // remarkHi() is been used as a native method that gets no argument and returns it void
-    protected native void remarkHi();
+    // remark() is been used as a native method that gets no argument and returns it void
+    protected native void remark();
 }
 
 ```
 The static library is loaded in the static block in the illustration above. This enables it to be accessible for use at any time and in any location. We could also load the package only before using our native function in this little script because the native library is not used for anything else.
 
-#### How we implement our native language method in C++
+#### First we implement our native language method in C++
 Our native method will be implemented in another programming language for it to be in a native case. In this case, we are going to utilize the C++ language to implement it.
 In C++, the definition and application will be put in the following order`.h`and`.ccp`file extensions.
 
@@ -98,7 +111,7 @@ To start with, we will use the java compiler's `-h flag` to build the method def
 
 ```java
 
-javac -h . HelloJavaJNI.java
+javac -h. HelloJavaJNI.java
 
 ```
 This will create a file called `example_java's_HelloJavaJNI.h` that holds all the native functions in the class, therefore in case simply one
@@ -141,7 +154,7 @@ We named our argument as java native so we will need to load it whenever we are 
 g++ -shared -o javanative.dll example_java_HelloJavaJNI.o -W0l,--insert-stdreturn-alias
 
 ```
-We can now then utilize the command line to run our script. The entire path to the location hosting the library we just produced, however, must be added. This tells Java where to seek our native libraries. This is shown below.
+We can now then utilize the command line to run our script. The entire path to the location hosting the library we just produced, however, must be added. This tells Java where to find our native libraries. This is shown below.
 
 ```java
 java -cpp . -Directoryjava.library.path=/JAVANATIVE_SHARED_LIBRARY_FOLDER example_java_HelloJavaJNI
@@ -150,7 +163,7 @@ java -cpp . -Directoryjava.library.path=/JAVANATIVE_SHARED_LIBRARY_FOLDER exampl
 One we have shown the path the console output will be;
 
 ```bash
-Welcome back from C++ language
+Welcome back from the C++ language
 
 ```
 ### How we add attributes to Native methods
@@ -164,7 +177,7 @@ private native short totalIntegers(int one, int two);
 protected native String remarkILoveCoding(String names, boolean isMale);
 
 ```
-After that, we will need to use `javac-h` to produce another`.h` file, just like we did in the previous steps. After that, we must construct `a.cpp` file containing these installations of the new C++ technique.
+After that, we will need to use `javac-h` to produce another`.h` file, just like we did in the previous steps. After that, we must construct an `a.cpp` file containing these installations of the new C++ technique.
 
 
 ```C++
