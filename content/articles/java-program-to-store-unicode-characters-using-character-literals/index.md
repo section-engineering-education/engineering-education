@@ -5,7 +5,7 @@ There is an international standard for encoding characters that can be used by e
 
 Many different characters can be represented in various forms such as text files and websites, using this character set. Characters can be stored in 4 bytes in Unicode. Character literals can be stored in char data types. There are three types of character encoding: UTF-8, UTF-16, and UTF-32. Web content should use only UTF-8.
 If you want to use character literals, put them in single quotation marks.
-Single quotes can be used to specify any printable character other than a backslash () as the character itself. `a`, `A` and `+` are examples of these literals.
+Single quotes can be used to specify any printable character other than a backslash (\) as the character itself. `a`, `A` and `+` are examples of these literals.
 In order to represent characters that cannot be typed out in this manner, such as the backspace, escape sequences must be used instead. As with other character literals, escape sequences are wrapped in single quotes.
 There is a backslash and one of the following after it.
 - By just one character.
@@ -134,7 +134,7 @@ System.out.print( "\n" );   // This is okay
 System.out.print( '\u000a' ); // This will give a compiler error
 ```
 Both statements are correct. The first one corresponds to a call to the system function `System.out.println()`. A compiler error is thrown by the second statement, which is not a valid statement. A linefeed is used to prematurely terminate the Unicode sequence. As previously indicated, a compiler interprets the Unicode sequence as a character literal.
-### Advantages of unit code
+### Advantages of unicode
 - Symbols for reading and writing character data are contained in a single code page when an application component employs Unicode. Applications may now be developed much more quickly thanks to this.
 - Each of the standard ASCII characters in UTF-8's first 127 places is assigned its ASCII value. For ASCII applications, this simplifies the conversion process.
 - It is possible for OpenEdge clients that utilize different code pages to read and write to a single UTF-8 database without any problems. With every transfer of data from client to database, OpenEdge transforms the code page to match.
@@ -142,6 +142,9 @@ Both statements are correct. The first one corresponds to a call to the system f
 One disadvantage is that as a result of Unicode's substantially expanded alphabetic symbol set, it requires at least double the amount of memory to store a Roman alphabet character than ASCII does.
 ### More on Literals 
 Token types for literals of a certain type in the lexical analysis include a digit for integer literals, for example. Using literals in your software allows you to specify precise values in your code.
+For more, you may follow the following links: 
+- https://www.hartnetthayes.com/xgjes/character-literal-java
+- https://www.informit.com/articles/article.aspx?p=130880&seqNum=11
 
 When naming variables and assigning values, certain rules must be followed to make the program more readable. Refers to a single fixed value represented in the program's sources as a literal. Because they do not require a computation, Java literals can be defined directly in the source code.
 ### Conclusion
