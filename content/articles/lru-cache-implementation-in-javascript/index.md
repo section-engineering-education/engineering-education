@@ -1,15 +1,25 @@
-The cache holds data in RAM. This makes the retrieval of data much faster than typical databases where data is stored on a disk. RAM has less space compared to the disk. This is why caching algorithms, such as least recently used (LRU) can help invalidate entries that have not been used recently into the RAM. It can also invalidate entries that have been frequently used.
+The cache holds data in RAM. This makes the retrieval of data much faster than typical databases where data is stored on a disk. RAM has less space compared to the disk. This is why caching algorithms, such as least recently used (LRU) can help invalidate entries that have not been used recently in the RAM. It can also invalidate entries that have been frequently used.
 
-### Key takeaways:
+### Key takeaways:https://wordcounter.net/images/wc-gly-instant.png
+
 At the end of this article you will be able to understand:
+
 1. What is LRU cache.
 2. Data structures used to build an efficient LRU cache algorithm.
 3. Implementing LRU cache algorithm using JavaScript.
 
+#### Prerequisite
+
+To be able to follow this article well, one needs
+
+1.  To have installed visual studio code.[Visual Studio](https://code.visualstudio.com/)
+2.  Have a basic understanding of linked list data structure and hash table.[Hash Table](https://www.tutorialspoint.com/data_structures_algorithms/hash_data_structure.htm) [Linked List Data Structure](https://www.geeksforgeeks.org/data-structures/linked-list/)
+
 ### What is LRU Cache?
+
 Let's first start by understanding what is Cache.
 
-The cache is a storage that stores computation, so that the lookup of data later becomes faster. It not only stores computation data but redundant data as well. It is therefore a short-term storage memory.
+The cache is a storage that stores computation so that the lookup of data later becomes faster. It not only stores computation data but redundant data as well. It is therefore a short-term storage memory.
 
 LRU stands for Least Recently Used. It is a cache eviction policy that allows one to identify which item in the cache hasn't been used for a long time.
 
@@ -30,18 +40,20 @@ With LRU, we notice that when we access an item, it shifts to the front of the l
 From the example above, we have performed many operations while building the LRU cache. These operations include:
 
 #### 1. Searching
-When we want to get the color `red` from our list, first, we need to check our entire list to check whether the item is there. 
+
+When we want to get the color `red` from our list, first, we need to check our entire list to check whether the item is there.
 
 If the element is present, we reorder the list and move `red` to the beginning of the list. In this case, the time complexity for the re-ordering will be `O(n)`.
 
 Time complexity is the amount of time a block of code takes to execute. I recommend [this time complexity](https://www.mygreatlearning.com/blog/why-is-time-complexity-essential/) article, to learn about time complexity.
 
 #### 2. Adding items
+
 When adding an item to the list, the time complexity of the operation is O(n).
 
 We can optimize the shifting operation by eliminating it. To do so we use a double liked list. How?
 
-Still using the example `[red, green, white, blue]` we needed to add `black`. Since it wasn't in our list,we removed the oldest element `blue` and shifted the entire list of items.
+Still using the example `[red, green, white, blue]` we needed to add `black`. Since it wasn't in our list,we removed the oldest element `blue`, and shifted the entire list of items.
 
 In a doubly-linked list, all you need to do is to remove the rear item and update the rear element to point to the previous element. Then add a new node and make it point to the second element and update the front. The entire operation takes 0(1) time complexity.
 
@@ -53,7 +65,7 @@ Searching can be optimized by using a hash table. With a Hash, you will have a k
 
 ![Hash Table & Double Linked List Diagram](/ddl_hash.png)
 
-To add `black` to our list, by using a doubly-linked list, we will remove the rear element `blue` from our list. `Blue` in this case is our least recently accessed item. Then, update the rear element to point to the previous element `white`. 
+To add `black` to our list, by using a doubly-linked list, we will remove the rear element `blue` from our list. `Blue` in this case is our least recently accessed item. Then, update the rear element to point to the previous element `white`.
 
 In our hash table, we will remove the value(address) that is associated with our key `blue`. Therefore, the value for our key `blue` will be null in the hashtable. A new node is created where we put `black`. The previous front gets updated to point to the node that has `black`. `Black` will also have an address associated with it as well.
 
@@ -69,124 +81,116 @@ Before adding `black`, we need to search first and see if it is available in the
 - Go through the problem statement.
 - Implement the lrucache class.
 
-Below are the steps we will use to implement the LRU Cache class
+Below are the steps we will use to implement the LRU Cache class.
+
+- Open visual studio code.
+- Go to file ---> New File
+- Copy the code blocks below to the new file.
 
 1. We first initialize the LRU cache with a positive capacity.
-Copy the below code to implement the constructor on line number 4. 
+   Copy the below code to implement the constructor on line number 4.
 
 ```javascript
 var LRUCache = function (capacity) {
-    this.capacity = capacity;
-    this.map = new Map(); //this stores the entire array
+  this.capacity = capacity;
+  this.map = new Map(); //this stores the entire array
 
-    //this is boundaries for double Linked List
-    this.head = {};
-    this.tail = {};
-    this.head.next = this.tail; //initialize your double Linked List
-    this.tail.prev = this.head;
+  //this is boundaries for double Linked List
+  this.head = {};
+  this.tail = {};
+  this.head.next = this.tail; //initialize your double Linked List
+  this.tail.prev = this.head;
 };
 ```
+
 2.  Get operation. This will return the value of the Key if it exists. Else, it returns -1.
-The code below will implement the get function on line number 12.
+    The code below will implement the get function on line number 12.
 
 ```javascript
 LRUCache.prototype.get = function (key) {
-    if (this.map.has(key)) {
-        //remove elem from current position
-        let c = this.map.get(key);
-        c.prev.next = c.next;
-        c.next.prev = c.prev;
+  if (this.map.has(key)) {
+    //remove elem from current position
+    let c = this.map.get(key);
+    c.prev.next = c.next;
+    c.next.prev = c.prev;
 
-        this.tail.prev.next = c; //insert it after last element. Element before tail
-        c.prev = this.tail.prev; //update c.prev and next pointer
-        c.next = this.tail;
-        this.tail.prev = c; //update last element as tail
-        return c.value;
-    } else {
-        return -1; //element does not exist
-    }
-
+    this.tail.prev.next = c; //insert it after last element. Element before tail
+    c.prev = this.tail.prev; //update c.prev and next pointer
+    c.next = this.tail;
+    this.tail.prev = c; //update last element as tail
+    return c.value;
+  } else {
+    return -1; //element does not exist
+  }
 };
 ```
 
-3.  Put operation. The put operation will update the value of the key if it is found. If found, add the `Key` and the value pair to the cache. If the number of keys has exceeded the initialized capacity of the cache, evict the least recently accessed item. 
-The code below will implement the put function on line number 21
+3.  Put operation. The put operation will update the value of the key if it is found. If found, add the `Key` and the value pair to the cache. If the number of keys has exceeded the initialized capacity of the cache, evict the least recently accessed item.
+    The code below will implement the put function on line number 21
 
 ```javascript
 LRUCache.prototype.put = function (key, value) {
-
-    if (this.get(key) !== -1) { // if key does not exist, update last element value
-        this.tail.prev.value = value;
-    } else {
-        //need to check if map size is at capacity
-        if (this.map.size === this.capacity) {
-            //delete item both from map and DLL
-            this.map.delete(this.head.next.key); //delete first element of list
-            this.head.next = this.head.next.next; //update first element as next element
-            this.head.next.prev = this.head;
-        }
-
-        let newNode = {
-            value,
-            key
-        }; //each node is a hashtable that stores key and value
-
-        //When adding a new node, we need to update both map and DLL
-        this.map.set(key, newNode); //add current node to map
-        this.tail.prev.next = newNode; //add node to end of the list
-        newNode.prev = this.tail.prev; //update prev and next pointers of newNode
-        newNode.next = this.tail;
-        this.tail.prev = newNode; //update last element
+  if (this.get(key) !== -1) {
+    // if key does not exist, update last element value
+    this.tail.prev.value = value;
+  } else {
+    //need to check if map size is at capacity
+    if (this.map.size === this.capacity) {
+      //delete item both from map and DLL
+      this.map.delete(this.head.next.key); //delete first element of list
+      this.head.next = this.head.next.next; //update first element as next element
+      this.head.next.prev = this.head;
     }
 
+    let newNode = {
+      value,
+      key,
+    }; //each node is a hashtable that stores key and value
+
+    //When adding a new node, we need to update both map and DLL
+    this.map.set(key, newNode); //add current node to map
+    this.tail.prev.next = newNode; //add node to end of the list
+    newNode.prev = this.tail.prev; //update prev and next pointers of newNode
+    newNode.next = this.tail;
+    this.tail.prev = newNode; //update last element
+  }
 };
 ```
-Once done, click on the run code button. It is located on the bottom right. Below is the explanation of the expected output.
 
-Example
+- Go to File Save As. Save the file as lru.js.
 
-#### Input
+Using the example below, we are going to use this to help us execute the cache class.
+
+["LRUCache", "put", "put", "get", "put", "get"]
+
+[[2], ['red', 'red'], ['grey', 'grey'], ['red'], ['yellow', 'yellow']]
+
+- Copy the code block below after the put function.
+
 ```javascript
-["LRUCache", "put", "put", "get", "put", "get", "put", "get", "get", "get"]
-
-[[2], [1, 1], [2, 2], [1], [3, 3], [2], [4, 4], [1], [3], [4]]
-```
-#### Output
-
-```javascript
-
-[null, null, null, 1, null, -1, null, -1, 3, 4]
-```
-
-#### Explanation
-```javascript
-LRUCache lRUCache = new LRUCache(2);
-
-lRUCache.put(1, 1); // cache is {1=1}
-
-lRUCache.put(2, 2); // cache is {1=1, 2=2}
-
-lRUCache.get(1);    // return 1
-
-lRUCache.put(3, 3); // LRU key was 2, evicts key 2, cache is {1=1, 3=3}
-
-lRUCache.get(2);    // returns -1 (not found)
-
-lRUCache.put(4, 4); // LRU key was 1, evicts key 1, cache is {4=4, 3=3}
-
-lRUCache.get(1);    // return -1 (not found)
-
-lRUCache.get(3);    // return 3
-
-lRUCache.get(4);    // return 4
+var lRUCache = new LRUCache(2); // capacicity of cache is 2.
+lRUCache.put("red", "red"); //cache has {red=red}
+lRUCache.put("grey", "grey"); //cache has {red=red, grey=grey}
+var param_1 = lRUCache.get("red"); // get's red from the cache
+console.log(param_1); // prints the result of the get
+lRUCache.put("yellow", "yellow"); // LRU key was grey, evicts key grey, cache has {red=red, yellow=yellow}
+var param_2 = lRUCache.get("grey");
+console.log(param_2 + " Not found"); // returns -1 (not found)
 ```
 
-![Output](https://user-images.githubusercontent.com/84809276/133435896-f3a34988-fabd-43e2-8071-4fec1f93fede.PNG)
+- Go to Run --> Start Debugging. Choose start debugging. Click on it.
+- Select Node.js as the environment.
+- On the terminal window, the expected result will be displayed on debug console tab.
+- Below is the expected output.
+
+![Output](result.PNG)
 
 ### Conclusion
+
 The best data structure to use when implementing LRU cache is a double-linked list and a hash table. The time complexity for this implementation is O(1). You can go ahead and try it out on your own as well.
 
 ### References
+
 1. [LRU Cache - LeetCode](https://leetcode.com/problems/lru-cache/)
 
 Happy coding! :-)
