@@ -36,7 +36,10 @@ py -m venv .venv
 .venv\Scripts\activate.bat
 ```
 
-Now we can install Django and Django-embed-video simultaneously using:
+Now we can install Django and Django-embed-video simultaneously.
+
+ - Django : this is the Django framework package.
+ - Django-embed-video : this is the Django app that makes the embeding of videos from Youtube, Vimeo and music from    soundcloud easy.
 
 ```
 pip install django django-embed-video
@@ -64,7 +67,7 @@ py manage.py startapp blog
 
 #### 2.1: Register apps
 
-In `settings.py` under `INSTALLED_APPS` add embed_video and blog
+In `settings.py` under `INSTALLED_APPS` add our new apps embed_video and blog
 
 ```python
 INSTALLED_APPS = [
@@ -77,7 +80,8 @@ INSTALLED_APPS = [
 #### 2.2: Creating the models
 
 Our article will have three parts: the title, the body where the content is and lastly the YouTube video.
-In `models.py` create the following model
+
+In `models.py` create the following model and remember to make the necessary import `EmbedVideoField` as shown below.
 
 ```python
 from  embed_video.fields  import  EmbedVideoField
@@ -106,7 +110,8 @@ py manage.py migrate
 
 #### 2.3: Registering the models
 
-In order to have access to our model using Django admin we have to register our model in `admin.py`
+In order to have access to our model using Django admin we have to register our model in `admin.py`.
+Import `AdminVideoMixin` and `tutorial` then register your model as shown below.
 
 ```python
 from  embed_video.admin  import  AdminVideoMixin
@@ -123,7 +128,6 @@ admin.site.register(tutorial, tutorialAdmin)
 
 We will need two views namely `blog` and `blog_detail`. The blog will be responsible for fetching all the objects when `blog.html` is requested.
 Blog_detail will be responsible for fetching the contents of a specific object when `blogdetail.html` is requested.
-In `views.py` add this code
 
 ```python
 from .models  import  tutorial
@@ -143,10 +147,12 @@ def  blog_detail(request,pk):
 	}
 	return  render(request, 'blogdetail.html', context)
 ```
+Tut in `blog()` fetches all objects, in that case all the tutorials created while Tut in `blog_detail()` fetches a specific tutorial that matches the requested id, in this case `pk` 
 
 #### 2.5: Configuring urls
 
-In `demo>urls.py` add the following and remember to import `include`
+Inside `urls.py` in the `demo` directory we will point the root `URLconf` at the `blog.urls` module. 
+Remember to add an import for the `from django.urls import path, include`
 
 ```python
 from  django.urls  import  path, include # new
@@ -156,6 +162,7 @@ urlpatterns = [
 	path('admin/', admin.site.urls),
 ]
 ```
+We used the `include()` to reference `blog.urls`
 
 Then create another `urls.py` file in your blog directory and then point the urls to their corresponding views
 
@@ -169,10 +176,14 @@ path('<int:pk>/', views.blog_detail, name='blog_detail'),
 ]
 ```
 
-#### 2.6: Creating the superuser
+#### 2.6: Creating the superuser account
 
-Create the superuser account using the following commands
-`py manage.py createsuperuser`
+The superuser account will enable us to login into our site as an admin and post our blogs, delete them, and update them. 
+Create the superuser account using the following commands which will prompt you to enter your username, email and password. 
+
+```bash
+py manage.py createsuperuser
+```
 
 ### Step 3: Frontend
 
@@ -285,11 +296,10 @@ Here is how my dummy tutorials look like.
 
 ### Futher reading
 
-For more, you can check out the [documentation](https://django-embed-video.readthedocs.io/en/latest/)
-
+For more, you can check out the [documentation](https://django-embed-video.readthedocs.io/en/latest/) for django embed video.
 ### Conclusion
 
-In this tutorial you have :
+In this tutorial you have done the following:
 
 1.  Created a simple Django app that can render YouTube videos.
 2.  Created a frontend that supports embedded youtube videos.
