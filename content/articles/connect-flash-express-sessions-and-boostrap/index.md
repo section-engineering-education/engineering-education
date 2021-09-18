@@ -6,7 +6,7 @@ url: /connect-flash-express-sessions-and-boostrap/
 title: Connect flash, express sessions and bootstrap in action
 description: This article explores how to handle authentication using the Passport authentication module, display flash messages to the user with proper bootstrap styling, and store messages in sessions to display them correctly in web page navigation.
 author: simon-salva
-date: 2021-09-17T00:00:00-2:25
+date: 2021-09-18T00:00:04:56
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
