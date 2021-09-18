@@ -1,3 +1,3 @@
-Ayemobola Tolulope Mathematics and Computer Science graduate from universities in Nigeria.
-His interests lie in building solutions to problems using technology and doing good music.
-Twitter: @Dluene
+Ayemobola Tolulope is a software engineer from Lagos, Nigeria. He majors in writing Python and Java codes. He is a graduate of Mathematics and Computer Science and has field experience building solutions. He currently works with Homefort Energy in Lagos
+
+
