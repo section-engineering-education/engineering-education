@@ -1,11 +1,26 @@
 ﻿###  Setting Up Hotspot On Kali Linux
+Kali Linux unlike other operating systems is an an open-source. 
+It is considered the best operating system in cyber security implementation by both white hat and black hat hackers, since it is a Debian-based Linux distribution used mainly at advanced Penetration Testing also known as pen testing.
+It is freely available and accessible to professionals and learners.
+Kali Linux has a wide range of features and tools for penetration testing.Each distro of Linux has an intended purpose for implementation, Kali Linux majoring in security.
 
-Kali Linux is considered the best operating system in cyber security implementation by both white hat and black hat hackers.
-Each distro of Linux has an intended purpose for implementation.
+
+### Table of contents
+- [Introduction](#introduction)
+- [Prerequisites](#prerequisites)
+- [Finding wireless drivers](#finding-wireless-drivers)
+- [Installation of the necessary tools](#installation-of-the-necessary-tools)
+- [Setting up configuration files](#setting-up-configuration-files)
+- [Using GUI](#using-gui)
+- [Conclusion](#conclusion)
 
 ### Introduction
 
-Kali Linux distro comes with no mobile hotspot ability due to security issues (makes it less vulnerable to attackers), creating a mobile hotspot can only be done by customizing the network configuration.
+In general a general view, it is a nice idea to disable services that you do not use. Kali makes it easy to do this since network services are disabled by default.
+As long as services remain disabled, they do not pose any security threat. However, you should be careful when you enable them because:
+- It has got no firewall by default, so if they listen on all network interfaces, they are effectively publicly available, that way making it vulnerable.
+
+Kali Linux distro comes also with mobile hotspot ability disabled, creating a mobile hotspot can only be done by customizing the network configuration.
 In this article, we will look into the processes that we will use to create a mobile  hotspot on Kali Linux and other Linux distros like Ubuntu. Throughout this tutorial, we are going to be using Kali Linux to create our hotspot. A person using any other distribution can follow through.
 
 ### Prerequisites
