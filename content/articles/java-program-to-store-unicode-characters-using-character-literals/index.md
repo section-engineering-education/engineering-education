@@ -5,7 +5,7 @@ There is an international standard for encoding characters that can be used by e
 
 Many different characters can be represented in various forms such as text files and websites, using this character set. Characters can be stored in 4 bytes in Unicode. Character literals can be stored in char data types. There are three types of character encoding: UTF-8, UTF-16, and UTF-32. Web content should use only UTF-8.
 If you want to use character literals, put them in single quotation marks.
-Single quotes can be used to specify any printable character other than a backslash (\) as the character itself. `a`, `A` and `+` are examples of these literals.
+Single quotes can be used to specify any printable character other than a backslash `\` as the character itself. `a`, `A` and `+` are examples of these literals.
 In order to represent characters that cannot be typed out in this manner, such as the backspace, escape sequences must be used instead. As with other character literals, escape sequences are wrapped in single quotes.
 There is a backslash and one of the following after it.
 - By just one character.
@@ -14,7 +14,7 @@ There is a backslash and one of the following after it.
 
 Table of content:
 - [Encoding approaches](#encoding-approaches)
-- [Advantages of unit code](#advantages-of-unit-code)
+- [Advantages of unicode](#advantages-of-unicode)
 - [Unicode character literals](#unicode-character-literals)
 - [More on Literals](#more-on-literals)
 
