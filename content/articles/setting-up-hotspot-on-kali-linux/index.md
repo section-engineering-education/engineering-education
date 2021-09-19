@@ -1,33 +1,36 @@
 ﻿###  Setting Up Hotspot On Kali Linux
-Kali Linux unlike other operating systems is an an open-source. 
+Kali Linux unlike other operating systems such as Windows is an an open-source Operating System.
 It is considered the best operating system in cyber security implementation by both white hat and black hat hackers, since it is a Debian-based Linux distribution used mainly at advanced Penetration Testing also known as pen testing.
 It is freely available and accessible to professionals and learners.
 Kali Linux has a wide range of features and tools for penetration testing.Each distro of Linux has an intended purpose for implementation, Kali Linux majoring in security.
 
 
 ### Table of contents
-- [Introduction](#introduction)
+
 - [Prerequisites](#prerequisites)
+- [Introduction](#introduction)
 - [Finding wireless drivers](#finding-wireless-drivers)
 - [Installation of the necessary tools](#installation-of-the-necessary-tools)
 - [Setting up configuration files](#setting-up-configuration-files)
 - [Using GUI](#using-gui)
 - [Conclusion](#conclusion)
 
+### Prerequisites
+
+You have to be familiar with the Linux family of operating systems.
+Introduction to Kali Linux basics and the way to use it can be gotten in the link below.
+[Getting started with kali linux](/engineering-education/getting-started-with-kali-linux/)
+
+
 ### Introduction
 
-In general a general view, it is a nice idea to disable services that you do not use. Kali makes it easy to do this since network services are disabled by default.
+In general, it is a nice idea to disable services that you do not use. Kali makes it easy to do this since network services are disabled by default.
 As long as services remain disabled, they do not pose any security threat. However, you should be careful when you enable them because:
 - It has got no firewall by default, so if they listen on all network interfaces, they are effectively publicly available, that way making it vulnerable.
 
 Kali Linux distro comes also with mobile hotspot ability disabled, creating a mobile hotspot can only be done by customizing the network configuration.
 In this article, we will look into the processes that we will use to create a mobile  hotspot on Kali Linux and other Linux distros like Ubuntu. Throughout this tutorial, we are going to be using Kali Linux to create our hotspot. A person using any other distribution can follow through.
 
-### Prerequisites
-
-You have to be familiar with the Linux family of operating systems.
-Introduction to Kali Linux basics and the way to use it can be gotten in the link below.
-[Getting started with kali linux](/engineering-education/getting-started-with-kali-linux/)
 
 ### Finding wireless drivers
 
@@ -43,29 +46,30 @@ In the case of using a USB adapter use the command shown below:
  The output is as follows:
  ![Drivers](/engineering-education/setting-up-hotspot-on-kali-linux/drivers.png)
 ### Installation of the necessary tools
-In order to create our hotspot, we need to install the required tools. The first and crucial tool is **hostapd** which acts as the hotspot server.
+To create our hotspot, we need to install the required tools. The first and crucial tool is **hostapd** which acts as the hotspot server.
 To install **`hostapd`**, type in the following command:
 
 ```bash
  apt-get install hostapd
  ```
-The second tool will be **dnsmasq** which will act like the server's **dhcp**.
+The second tool will be **dnsmasq** it is a lightweight, easily  configurable DNS forwarder, designed to provide DNS services to small networks. It can serve the names of local machines which are not in the global DNS.The DNS server supports both static and dynamic DHCP leases, multiple networks and IP address ranges.The **dnsmasq** will act as the server to the  **dhcp**.
  To install **`dnsmasq`**, type in the following:
  
 ```bash
  apt-get install dnsmaq
  ```
 Once we're done with the installations, we can now move to the next step.
-We shall proceed to check for the just installed processes. If already started, stop those in progress, and deter them from starting during start-up of the system.
+We will proceed to check for the just installed processes. If already started, stop those in progress, and deter them from starting during start-up of the system. This is because it turns off the wifi and turns into a wifi hotspot.
 
 Below are the commands used for stopping and disabling updates of the services:
-
+To stop services in progress we use the first two commands.
 ```bash
 sudo service hostapd stop
 ```
 ```bash
 sudo service dnsmasq stop
 ```
+To disable services already installed we use the following  two commands.
 ```bash
 sudo update-rc.d hostapd disable
 ```
@@ -77,6 +81,7 @@ The output is as follows:
 ![Installations](/engineering-education/setting-up-hotspot-on-kali-linux/installations.png)
 
  ###  Setting up configuration files
+ Configuration is key since it reduces operation tasks, optimizing IP adressing planning and user mobility is easily managed. 
 After installing the services, we shall then need to configure the necessary files i.e **`hotspot.sh`**.
 
 We will begin by typing the  command below in our terminal.
@@ -98,6 +103,7 @@ In order to perform hostapd configuration, type in the following command in the 
 ```bash
 sudo gedit/etc/hostapd.conf
 ```
+The commented out lines gives an elaboration of the configuration. We use # for commenting.
 To properly configure **hostapd**, add the the following code to our configuration file:
 ```
 # Set interface
@@ -123,6 +129,7 @@ sudo service dnsmasq stop
 ```bash
 sudo service hostapd stop
 ```
+ eth0 is the first ethernet device. ppp0 is the first point to protocol device, usually associated with a modem.
 For a wired connection, you will be required to change **ppp0** to **eth0** or any other number.
 
 ### Using GUI
@@ -136,14 +143,19 @@ To proceed with our configuration, follow the steps below:
 In the new window here we are going to do the configuration of your hotspot.
 ![Connection](/engineering-education/setting-up-hotspot-on-kali-linux/connection.png)
 **Step II**: Under the network type select “Wi-Fi”.
-Ensure your configuration resembles the second screenshot  below
+Ensure your configuration resembles the second screenshot  below:
 
 ![Security](/engineering-education/setting-up-hotspot-on-kali-linux/security.png) 
-**Step III**: To set a password, click on **“Wi-Fi security ”** and select **“ WPA & WPA2 Personal”**
->N/B: Security being an essential  feature, this type of encryption protection is designed for homes and small office networks and does not need authentication server, also  known as WPA-PSK(pre-shared key). WPA Personal is available on all 3 WPA versions that are; WPA, WPA2, and WPA3) 
+**Step III**: To set a password, click on **“Wi-Fi security ”** and select **“ WPA & WPA2 Personal”**,
+(Security being an essential  feature, this type of encryption protection is designed for homes and small office networks and does not need authentication server, also  known as WPA-PSK(pre-shared key). WPA Personal is available on all 3 WPA versions that are; WPA, WPA2, and WPA3) below the input box give an 8 or more memorable digit password of your choice “********” and click on save.
+Finally, you've done it! Close all the opened windows and enjoy your newly created hotspot, share it amongst computers, mobile phones, etc.
 
-and below the input box give an 8 or more memorable digit password of your choice “********” and click on save.
+
 
 ### Conclusion
 
-Finally, you've done it! Close all the opened windows and enjoy your newly created hotspot, share it amongst computers, mobile phones, etc.
+In this article, having gained insights  for setting up hotspot on Kali Linux , you are now equipped to setup and manage your personal hotspot on Kali Linux.
+
+Happy setting up hotspot on Kali Linux!
+
+
