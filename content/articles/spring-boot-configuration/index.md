@@ -11,7 +11,7 @@ topics: [Langauges]
 excerpt_separator: <!--more-->
 images:
 
-  - url:  /engineering-education/spring-boot-configuration/hero.jpg
+  - url:  /engineering-education/spring-boot-configuration/hero.png
     alt: Spring boot configuration image
 ---
 
