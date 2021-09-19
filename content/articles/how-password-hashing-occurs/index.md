@@ -83,9 +83,11 @@ Run the script and you will get an output as shown below:
 
 **Reversing Hash to Plain Text**
 
-By now, you already know how to convert a plain text into a hash. Lets now learn how we can convert back the password hash into the plain text. With plenty of sites in the internet, you can easily enter the password hash and get a plain text. Yes, its that easy. But now for the hash to be successfully reversed, the site should have the password hash in their dictionary.
+By now, you already know how to convert plain text into a hash. Let's now learn how we can convert back the password hash into plain text. With plenty of sites on the internet, you can easily enter the password hash and get plain text. Yes, it is that easy. But now for the hash to be successfully reversed, the site should have the password hash in their dictionary.
 
-Lets take a look at one of the most commonly used Password hash cracking sites, `Crack Station`.
+> **Disclaimer: **- The example below is meant for educational purposes only. Any activity that is directly or indirectly related to the example below is your sole responsibility.
+
+Let us take a look at one of the most commonly used password hash cracking sites, `Crack Station`.
 Navigate to the link below to access the Crack Station site.
 
 [Crack Station](https://crackstation.net/)
@@ -99,7 +101,7 @@ Use the password hash below as an example:
 ```
 The plain text of the hash after being cracked is the word `test`
 
-An visual example of the whole process is shown below:
+A visual example of the whole process is shown below:
 
 ![Password Crack](/engineering-education/how-password-hashing-occurs/crack.png)
 
