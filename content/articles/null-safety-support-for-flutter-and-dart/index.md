@@ -53,7 +53,7 @@ If a variable is non-nullable, it must always be set to a non-null value.
 #### Nullable Types
 The following operators specify if a variable can be null:
 
-- nullable type `'?'` 
+- Nullable type `'?'` 
 ```
 String? houseLocationName;  // By default, it's set to null.
 int? number = 36;  // By default, it's set to non-null.
@@ -64,6 +64,7 @@ A nullable variable does not need to be initialized before being used.
 By default, it is null.
 
 - The Assertion Operator `'!'`
+
 Consider using the null assertion operator '!' the ability to force Dart to regard a non-nullable expression as non-nullable if you know it is not null.
 
 ```dart
@@ -72,6 +73,7 @@ int data = anyNumber!; // Because the value is not nullable, this is valid
 ```
 
 - Type Promotion 
+
 **Flow Analysis** is an algorithm that determines how a program will be executed.
 
 Dart's analyzer guarantees a nullable variable to have a non-null value, which informs the programmer of compile-time problems and warnings. At runtime, Dart promotes types via Flow Analysis.
@@ -91,9 +93,7 @@ void main(){
 }
 ```
 
-Is it null or not?
-
-That is what this code determines. A non-nullable value cannot be nullified. So, `anyNumber.abs()` can be used instead of `anyNumber?.abs` in a secure manner. The `.abs()` function produces a result that is not a decimal.
+Is it null or not? This is what this code determines. A non-nullable value cannot be nullified. So, `anyNumber.abs()` can be used instead of `anyNumber?.abs()` in a secure manner. The `.abs()` function produces a result that is not a decimal.
 
 ### Sound and Unsound null safety
 Using null-safe libraries and non-null safe libraries is possible in a Dart application. While executing these mixed-version applications, Null Safety is compromised.
@@ -124,7 +124,7 @@ Fortunately, the migration tool is clever, so you may check the nullability attr
  ```
 $ flutter pub get
 $ flutter analyze
-// in your dart code
+
 $ dart pub get
 $ dart analyze
  ```
