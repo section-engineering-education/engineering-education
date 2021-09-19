@@ -7,32 +7,27 @@ author: paul-asalu
 topics: []
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/how-to-build-a-clock-with-javascript-and-svg/hero.png
-    alt: Building a clock using JavaScript and SVG
+  - url: 
+    alt: 
 ---
+When building certain kinds of applications, it is important to know what kind of data you'll be working with, so you can make adequate preparations to hold and process them. One such instance is when you need to work with "spatial data" - a typical example of which might be: storing location ( in terms of longitude and latitude values). In addition, you may want to be able to make queries based on these kinds of information, for example, you could imagine querying your database for "10 closest entities to a given location (lon,lat)".
 
-When building certain kinds of applications, it is important to know what kind of data you'll be working with, so you can make adequate preparations to hold and process them. One such instance is when you need to work with "spatial data" - a typical example of which might be: storing location ( in terms of longitude and latitude values).
 <!--more-->
-In this article, we will use Sqlite and its spatial extension to create a database that supports spatial data read and write operations, for a simple flask server.
+In this article, we will use Sqlite and its spatial extension to create a database that supports spatial data read and write operations, for a simple flask server. We will also see how to read and write spatial data from and to the database on our server.
 
 
 ### Table of Contents
-
+         
 - [Introduction](#introduction)
 - [Building A Simple Web Server](#building-a-simple-web-server)
 - [Adding Support For Spatial Data](#adding-support-for-spatial-data)
 - [Conclusion](#conclusion)
 
 
-### Introduction
-
-When building certain kinds of applications, it is important to know what kind of data you'll be working with, so you can make adequate preparations to hold and process them. One such instance is when you need to work with "spatial data" - a typical example of which might be: storing location ( in terms of longitude and latitude values). In addition, you may want to be able to make queries based on these kinds of information, for example, you could imagine querying your database for "10 closest entities to a given location (lon,lat)".
-
-How does one make provisions for such data?, the aim of this article is to show you how to implement a spatial database in your development environment, with the aid of a typical Flask server using GeoAlchemy and Spatialite (for development purposes using SQLite).
-
-
 ### Building A Simple Web Server
-We'll start by creating a simple backend server for a service-hailing platform, where users can connect with 'service providers' in close proximity to them, and get them to offer their services to them for a fee. For this kind of platform, we have to deal with spatial information like "location of client", "location of service-providers", and we might also want to make queries to the database to perhaps find "the closest 10 service-providers" to a given location for example. We can only achieve this if we set things up correctly and add support for these kind of information to our database, since they don't directly have that kind of support for spatial data.
+We'll start by creating a simple backend server for a service-hailing platform, where users can connect with 'service providers' in close proximity to them, and get them to offer their services to them for a fee. 
+
+For this kind of platform, we have to deal with spatial information like "location of client", "location of service-providers", and we might also want to make queries to the database to perhaps find "the closest 10 service-providers" to a given location for example. This section shows how to set things up for the backend server.
 
 #### Pre-Requisites
 - Python3 Installed
@@ -41,20 +36,20 @@ We'll start by creating a simple backend server for a service-hailing platform, 
 We'll start by creating a folder called `server` and in this folder, we'll add a new folder called `core` and three other files called `wsgi.py`, `models.py` and `config.py`. Inside the `core` folder, add two new files called: `__init__.py`, and `views.py`. Once you're done your `server` folder should have a structure like this one below:
 
 ```bash
--server/
-    -core/
-        -__init__.py
-        -views.py
-    -models.py
-    -wsgi.py
-    -config.py
+server
+|   models.py
+|   wsgi.py
+|   config.py
+|___core/
+    |   __init__.py
+    |   views.py
 ```
 
 #### Installing Dependencies
 From the command prompt/terminal, navigate to the server folder we just created and create a new virtual environment for the project, using `virtualenv`. If you don't have `virtualenv` installed you can install via `pip` as follows:
 
 ```bash
- pip install virtualenv
+pip install virtualenv
 ```
 
 If you already have it installed, you can skip that step and install the libraries we need as follows:
@@ -119,7 +114,7 @@ config_ = {
     'production': ProdConfig
 }
 ```
-The `_config` variable in the last line holds a  dictionary that maps each config option to their names, so we can use the `config's name` to reference them when we need to add the config to our flask application. This is what we did in the `__init__.py` file, in the app factory, as shown below:
+The `config_` variable in the last line holds a  dictionary that maps each config option to their names, so we can use the config's name to reference them when we need to add the config to our flask application. This is what we did in the `__init__.py` file, in the app factory, as shown below:
 
 ```python
 # .. code ommited for brevity
@@ -160,14 +155,14 @@ set FLASK_APP=myfilename.py
 
 Once you run this command, you should see the logs on the terminal indicate that the server is running, as shown bellow:
 
-![server-logs](/engineering-education/content/articles/how-to-add-support-for-spatial-data-in-your-database-using-geoalchemy-and-spatialite/demo1.png)
+![server-logs](/engineering-education/how-to-add-support-for-spatial-data-in-your-database-using-geoalchemy-and-spatialite/demo1.png)
 
 ### Adding Support For Spatial Data
 
 #### Pre-requisite
 - Spatialite
 - Pandas
-
+ 
 The first we want to do is to add models for the data we'd be collecting and storing. This is done via the `models.py` file, so open that file and add the following lines of code:
 
 
@@ -210,21 +205,20 @@ Our models defines `User` objects as well as `Gig` objects - a user could be a r
 #### Installing Spatialite
 In order to add support for proper handling of the spatial data we're collecting, we need to install an extension called `Spatialite` which adds the support for us to the database. To install `Spatialite`, visit this [link](http://www.gaia-gis.it/gaia-sins/windows-bin-amd64/) to download the binaries for windows. This should take you to a page like the one shown below:
 
-![spatialite-download-page](/engineering-education/content/articles/how-to-add-support-for-spatial-data-in-your-database-using-geoalchemy-and-spatialite/demo2.Png)
+![spatialite-download-page](/engineering-education/how-to-add-support-for-spatial-data-in-your-database-using-geoalchemy-and-spatialite/demo2.Png)
 
-___
-_If you're on Linux, follow the instructions in this [link](https://xl-optim.com/spatialite-and-python-in-2020/) to get it installed on linux._
-___
+
+> _If you're on Linux, follow the instructions in this [link](https://xl-optim.com/spatialite-and-python-in-2020/) to get it installed on linux._
 
 Once you're on the download page, you need to select the first option to download the compressed file containing Spatialite binaries. Once downloaded, you can extract the folder using any file extractor tool like winrar. The extracted folder should containing files like these:
 
-![spatialite-folder](/engineering-education/content/articles/how-to-add-support-for-spatial-data-in-your-database-using-geoalchemy-and-spatialite/demo3.png)
+![spatialite-folder](/engineering-education/how-to-add-support-for-spatial-data-in-your-database-using-geoalchemy-and-spatialite/demo3.png)
 
 Next, copy the path to this folder and add it as an environment variable called `spat_path` from the terminal
 ```bash
 set spat_path=/path/to/your/spatialite/folder
 ```
-Next go to the `wsgi.py` file where we created the app instance. We'll add some cnofiguration options so that we can load the `Spatialite` extension when we create our application. Update the `wsgi.py` file so it contains these lines of code:
+Next go to the `wsgi.py` file where we created the app instance. We'll add some configuration options so that we can load the `Spatialite` extension when we create our application. Update the `wsgi.py` file so it contains these lines of code:
 
 ```python
 from sqlalchemy import event
@@ -245,11 +239,15 @@ with app.app_context():
     def load_spatialite(dbapi_conn, connection_record):
         dbapi_conn.enable_load_extension(True)
         dbapi_conn.load_extension('mod_spatialite')
-
 ```
-___
-_`Spatialite` is an sqlite extension so this extension works for sqlite only, if you're using a different database like PostgresQL, you need to install the extension for it too (in which case is called PostGIS). However, you may not need to load the extension this way with other databases too. This is just for demonstration purposes on how this could be done in a development environment._
-___
+
+Here we fetch the `spat_path` variable that we stored the location of the spatialite extension in and append it to the user **PATH** variables on my computer. 
+
+Next we invoke the flask app context, which allows us to access the properties  of the running server from outside its original scope (usually this means running code that depends on a running instance of the server, from without the original flask context) you can find more information about flask context from [here](https://flask.palletsprojects.com/en/2.0.x/appcontext/). 
+
+Under this "context" we listen for the `connect` event once the server is running and load the spatialite extension once we see that the server tries to establish a connection to the database.
+
+> _`Spatialite` is an sqlite extension so this extension works for sqlite only, if you're using a different database like PostgresQL, you need to install the extension for it too (in which case is called PostGIS). However, you may not need to load the extension this way with other databases too. This is just for demonstration purposes on how this could be done in a development environment._
 
 Lastly, we need to get a later version of sqlite3 installed because the one that comes preinstalled with python, doesn't include 'RTree' which is a datastructure thats used for handling spatial information. So head over to [Sqlite3's website](https://sqlite.org/download.html) and download the latest one (available under Pre-compiled Binaries for Windows). We will replace this with the one in the python binaries. 
 
@@ -294,13 +292,14 @@ We can now get to creating the database - we will begin by running migrations on
 flask db init
 ```
 This would initialize migrations for our database and create a `migrations/` folder for us in our project folder, this would contain metadata on the current version(s) of our models in a subfolder called `versions/`. We can edit these files before applying them to the database. Next we run migrations to create a version file for us to introspect.
+
 ```bash
 flask db migrate
 ```
 
 Once we run migrations it creates a new version file on our behalf describing the current models, and the changes to be applied to the database once we run the upgrade command. Open the `migrations/versions/` folder in your project directory and open the first file there, it should look like the one below:
 
-![migrations-script-image](/engineering-education/content/articles/how-to-add-support-for-spatial-data-in-your-database-using-geoalchemy-and-spatialite/demo4.png)
+![migrations-script-image](/engineering-education/how-to-add-support-for-spatial-data-in-your-database-using-geoalchemy-and-spatialite/demo4.png)
 
 This file describes what flask_migrate sees from the models as the changes to be applied to the database. These changes are applied by calling the `upgrade` function in this file, and reverted by calling the `downgrade` function. What we want is to apply the changes, so we need to call `upgrade`. 
 
@@ -315,7 +314,7 @@ According to the Spatialite docs we must also run the `InitSpatialMetaData()` fu
 
 Update the script so the first lines in the `upgrade` function are as follows:
 ```python
-def upgrade():
+def upgrade():-
     conn = op.get_bind()
     conn.execute(sa.text('SELECT InitSpatialMetaData();'))
     # .. 
@@ -330,40 +329,13 @@ This should update the database with our tables along with some other tables tha
 #### Running Queries
 Let's populate the database with some user information. I have generated a random list of longitude and latitude values using https://epitools.ausvet.com.au/rgcs, the generated list of values is shown below:
 
-![example-spatial-data](/engineering-education/content/articles/how-to-add-support-for-spatial-data-in-your-database-using-geoalchemy-and-spatialite/demo5.png)
+![example-spatial-data](/engineering-education/how-to-add-support-for-spatial-data-in-your-database-using-geoalchemy-and-spatialite/demo5.png)
 
 The site also allows you to download this as an excel spreadsheet, so head over to the website to get your own list of random lon/lat values. I had to do some editing on the file to remove some unneeded columns and fields, in order for it to look like the image shown above, I also saved it as a csv file instead into the root level of our project directory for ease of access.
 
- So I'm going to use pandas to parse this file. We can do this from a new file called `data.py`, create this file in the root level of your project folder on the same level as `wsgi.py`. If you don't have `Pandas` installed, you can install it using the pip command as follows:
-
-```bash
-pip install pandas
-```
-
-In the `data.py` file add the following lines of code to it to feed data from the spreadsheet (or csv file):
-
-```python
-from wsgi import app
-from core import db
-from models import *
-import pandas as pd
-import random
-
-with app.app_context():
-    data_ = pd.read_csv('sample_locations.csv')
-    df = pd.DataFrame(data_)
-    names = ["Joe", "Mike", "Paul"]
-    for index, row in df.iterrows():
-        new_user = User(
-            name=names[random.randint(0,2)],
-            lon=row.X,
-            lat=row.Y,
-            is_handyman=bool(random.randint(0,1)),
-            geometry='SRID=4269;POINT(%.8f %.8f)'%(row.X, row.Y)
-        )
-        db.session.add(new_user)
+ So I'm going to use pandas to parse this file. We can do this from a new file 
     db.session.commit()
-```
+
 Now we have data we can query and work with. Let's say we need to find if there are any handymen located within a 10,000meter radius to a certain user located at `POINT(145.67, -30.513)`, we can make a spatial query to the database, from `data.py` as follows:
 
 ```python
@@ -389,9 +361,12 @@ Typically, you might want to add these to your api-endpoints or have them as fun
 
 In this tutorial, we have seen how to set up and configure a basic web application, that utilizes Spatialite and sqlite to perform read and write operations to a spatial database. I covered how to install spatiallite, and also showed how to update your existing instance of sqlite to support spatial data. Now you are fully equipped to set-up your development environment for your projects using spatialite and geoalchemy2. 
 
-**Note**: While sqlite3 is great for your development environment, it is advised to not use it for heavy duty applications, you might instead want to consider using a more sophisticated tool like PostgresQL, and PostGIS as an extension for it's support of spatial data.
+>**Note**: While sqlite3 is great for your development environment, it is advised to not use it for heavy duty applications, you might instead want to consider using a more sophisticated tool like PostgresQL, and PostGIS as an extension for it's support of spatial data.
+
+You can find the code to the demo application built in the [further reading](#further-reading) section below
 
 ### Further Reading
-- https://geoalchemy-2.readthedocs.io/en
-- https://xl-optim.com/spatialite-and-python-in-2020/
-- http://www.gaia-gis.it/gaia-sins/spatialite-sql-latest.html
+ - [Geoalchemy documentation](https://geoalchemy-2.readthedocs.io/en)
+- [Spatialite download guide](https://xl-optim.com/spatialite-and-python-in-2020/)
+- [Spatialite Documentation](http://www.gaia-gis.it/gaia-sins/spatialite-sql-latest.html)
+- [Github repo  for demo](https://github.com/Curiouspaul1/spatial-database-demo)
