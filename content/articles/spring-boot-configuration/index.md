@@ -6,7 +6,7 @@ url: /spring-boot-configuration/
 title: Spring Boot basic configuration
 description: A beginner’s guide to configuring a Spring Boot application for different environments.
 author: john-amiscaray
-date: 2021-09-17T00:00:00-15:00
+date: 2021-9-19T00:00:00-02:08
 topics: [Langauges]
 excerpt_separator: <!--more-->
 images:
@@ -266,3 +266,5 @@ Overall, while not that useful, it can be handy to know this bean exists for sma
 ### Conclusion
 In this guide, we looked at configuring your Spring Boot application to handle changes in environments. We looked at how Spring Boot represents environments (as profiles) and ways to change your app’s behaviour based on it. With this, you can start creating more brilliant, more reusable applications using Spring Boot.
 
+---
+Peer Review Contributions by: [Jerim Kaura](/engineering-education/authors/jerim-kaura/)
