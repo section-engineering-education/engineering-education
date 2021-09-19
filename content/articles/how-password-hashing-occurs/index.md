@@ -70,7 +70,7 @@ You can run the complete script once as shown below:
 ```python
     from hashlib import sha256
     h = sha256()
-    h.update(b'python1990K00L')
+    h.update(b'test123')
     hash = h.hexdigest()
     print(hash)
 ```
@@ -80,6 +80,29 @@ Run the script and you will get an output as shown below:
 ```bash
    f84ad825bc3e5ccc7f5e35b6a5e83cb79a998f106e79410ae382c7d43019b6d6
 ```
+
+**Reversing Hash to Plain Text**
+
+By now, you already know how to convert a plain text into a hash. Lets now learn how we can convert back the password hash into the plain text. With plenty of sites in the internet, you can easily enter the password hash and get a plain text. Yes, its that easy. But now for the hash to be successfully reversed, the site should have the password hash in their dictionary.
+
+Lets take a look at one of the most commonly used Password hash cracking sites, `Crack Station`.
+Navigate to the link below to access the Crack Station site.
+
+[Crack Station](https://crackstation.net/)
+
+Enter Your password hash into the space provided and crack the password hash.
+
+Use the password hash below as an example:
+
+```bash
+9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08
+```
+The plain text of the hash after being cracked is the word `test`
+
+An visual example of the whole process is shown below:
+
+![Password Crack](/engineering-education/how-password-hashing-occurs/crack.png)
+
 
 **Summary**
 
