@@ -17,7 +17,7 @@ images:
 
 Google Compute Engine(GCE) is a high-end compute service that allows developers to create and run virtual machines on the underlying secure and reliable infrastructure of Google. Using GCE takes advantage of the complex computing capabilities and heavy workload without acquiring them physically.
 <!--more-->
-Docker allows the encapsulation of an application and its modules into a single independent package. This practice enables running the application on any platform without the need for further configurations of the deplyoment environment.
+Docker allows the encapsulation of an application and its modules into a single independent package. This practice enables running the application on any platform without the need for further configurations of the deployment environment.
 
 ### Table of content
 - [Project Goal](#project-objective)
@@ -92,7 +92,7 @@ Create a new directory and call it `templates`. This directory will contain the 
 ```
 
 ### Dockerizing the application
-Dockerization involves encapsulating the application and the modules it requires to run into one unit so that the newly created unit can be configured to run anywhere without the need to run new installations.
+Dockerization involves encapsulating the application and the modules it requires to run, into one unit so that the newly created unit can be configured to run anywhere without the need to run new installations.
 
 TO set up our container, we begin with creating a new file called `dockerfile`. The file specifies the commands to be executed once the application is uploaded to the platform. First, add the snippets below to the Dockerfile.
 
@@ -206,7 +206,7 @@ In the command above, ensure you replace the PROJECT-ID with your project-id.
 
 ### Testing the application
 - In the running instances, we will select the instance we created `section instance. - The instance has two IP addresses; an `internal IP` and an `external IP'.
-- Copy the external IP address, the run the application on port 8080. 
+- Copy the external IP address, then run the application on port 8080. 
 - Our application runs as shown below:
 
 Now, if we navigate a browser with `http://your-external-ip-address/8080` link, we will see our container running below.
