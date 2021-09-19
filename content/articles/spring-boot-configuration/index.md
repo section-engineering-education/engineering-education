@@ -1,11 +1,22 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /spring-boot-configuration/
+title: Spring Boot basic configuration
+description: A beginner’s guide to configuring a Spring Boot application for different environments.
+author: john-amiscaray
+date: 2021-09-17T00:00:00-15:00
+topics: [Langauges]
+excerpt_separator: <!--more-->
+images:
 
-Title: Spring Boot Configuration Basics
+  - url:  /engineering-education/spring-boot-configuration/hero.jpg
+    alt: Spring boot configuration image
+---
 
-Description: A beginner’s guide to configuring a Spring Boot application for different environments.
-
-### Introduction
 In software development , many changes take place depending on the stage your team is at. For example, you may need to change from a test database to a production-ready database. Whatever it is, the environment where your code runs changes, and so does your configuration.
-
+<!--more-->
 In this guide, we will look at some of the strategies Spring Boot provides us to deal with this challenge. We will look at how to change environments, extract environment variables, and more. By the end of this article, you will be more equipped to deal with spring boot configuration challenges.
 
 ### Table of Contents
