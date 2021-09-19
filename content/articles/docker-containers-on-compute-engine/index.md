@@ -3,11 +3,11 @@ layout: engineering-education
 status: publish
 published: true
 url: /docker-containers-on-compute-engine/
-title: Spring Boot basic configuration
+title: Setup and run Docker container on Google Compute Engine
 description: In this article, the reader will be walked through creating a Flask application, creating a Docker-based container from the application and deploying the container to a virtual machine on Google.
 author: victor-elvis
-date: 2021-09-17T00:00:00-15:00
-topics: [Langauges]
+date: 2021-09-19T00:00:00-02:24
+topics: [Containers]
 excerpt_separator: <!--more-->
 images:
 
