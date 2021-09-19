@@ -1,6 +1,6 @@
 The cache holds data in RAM. This makes the retrieval of data much faster than typical databases where data is stored on a disk. RAM has less space compared to the disk. This is why caching algorithms, such as least recently used (LRU) can help invalidate entries that have not been used recently in the RAM. It can also invalidate entries that have been frequently used.
 
-### Key takeaways:https://wordcounter.net/images/wc-gly-instant.png
+### Key takeaways:
 
 At the end of this article you will be able to understand:
 
@@ -88,7 +88,6 @@ Below are the steps we will use to implement the LRU Cache class.
 - Copy the code blocks below to the new file.
 
 1. We first initialize the LRU cache with a positive capacity.
-   Copy the below code to implement the constructor on line number 4.
 
 ```javascript
 var LRUCache = function (capacity) {
@@ -104,7 +103,6 @@ var LRUCache = function (capacity) {
 ```
 
 2.  Get operation. This will return the value of the Key if it exists. Else, it returns -1.
-    The code below will implement the get function on line number 12.
 
 ```javascript
 LRUCache.prototype.get = function (key) {
@@ -126,7 +124,6 @@ LRUCache.prototype.get = function (key) {
 ```
 
 3.  Put operation. The put operation will update the value of the key if it is found. If found, add the `Key` and the value pair to the cache. If the number of keys has exceeded the initialized capacity of the cache, evict the least recently accessed item.
-    The code below will implement the put function on line number 21
 
 ```javascript
 LRUCache.prototype.put = function (key, value) {
