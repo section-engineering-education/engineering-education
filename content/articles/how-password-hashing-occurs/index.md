@@ -1,6 +1,21 @@
-### Introduction
-Nowadays, many people store a lot of sensitive information on their phones, laptops, and other gadgets. To ensure that this information is safe, the users often set secret passwords, pins, and even biometric sensors like a fingerprint to limit access to the information.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-password-hashing-occurs/
+title: How Password Hashing occurs
+description: In this tutorial, we will specifically look at password protection of data. We are going to see how passwords are converted into hash form and how they are stored. We will further see how passwords are retrieved from hash form to raw format.
+author: koros-wkd
+date: 2021-09-19T00:00:00-16:34
+topics: [Security]
+excerpt_separator: <!--more-->
+images:
 
+    - url: /engineering-education/how-password-hashing-occurs/hero.jpg
+      alt: How Password Hashing occurs hero image
+---
+Nowadays, many people store a lot of sensitive information on their phones, laptops, and other gadgets. To ensure that this information is safe, the users often set secret passwords, PINs, and even biometric sensors like a fingerprint to limit access to the information.
+<!--more-->
 In this tutorial, we will specifically look at password protection of data. We are going to see how passwords are converted into hash form and how they are stored. We will further see how passwords are retrieved from hash form to raw format.
 
 ### What is password hashing?
@@ -130,9 +145,9 @@ A visual example of the whole process is shown below:
 ![Password crack](/engineering-education/how-password-hashing-occurs/crack.png)
 
 ### Storing password hash
-Let's now take a look at how password hashes are stored in our machines - both on Windows and Kali Linux. 
+Let's now take a look at how password hashes are stored in our machines - both on Windows and Kali Linux.
 
-#### On Windows 
+#### On Windows
 
 On the Windows OS, password hashes are stored in a folder in the `C:` drive. It is problematic to open these files on a running machine since they are encrypted using a boot key.
 
@@ -187,3 +202,6 @@ In this tutorial, we have learned the following:
 - Password hashing mechanisms.
 - How Passwords are stored in our computers in hashed form.
 - Protecting our passwords.
+
+---
+Peer Review Contributions by: [Eric Gacoki](/engineering-education/authors/eric-gacoki/)
