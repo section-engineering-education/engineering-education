@@ -126,7 +126,7 @@ A
 To print Unicode characters, enter the escape sequence "u".
 Unicode sequences can be used everywhere in Java code. As long as it contains Unicode characters, it can be used as an identifier. Using Unicode, you may convey comments, IDs, and even the content of character and string literals, as well as other information. Use caution, as they are interpreted by the compiler early. Using the Unicode linefeed as part of a print statement would cause an error in your source code because your source code would treat this as an actual linefeed that appears before the closing single quote of a character literal, which would result in an error. 'n' and 'r' for line termination literals is the basis for the prior warning to always use these characters.
 Look at the following to understand this better:
-```
+```Java
 System.out.print( "\n" );   // This is okay
 System.out.print( '\u000a' ); // This will give a compiler error
 ```
@@ -140,7 +140,7 @@ One disadvantage is that as a result of Unicode's substantially expanded alphabe
 ### More on Literals 
 Token types for literals of a certain type in the lexical analysis include a digit for integer literals, for example. Using literals in your software allows you to specify precise values in your code.
 For more, you may follow the following links: 
-- https://www.hartnetthayes.com/xgjes/character-literal-java
+- https://data-flair.training/blogs/literals-in-java/
 - https://www.informit.com/articles/article.aspx?p=130880&seqNum=11
 
 When naming variables and assigning values, certain rules must be followed to make the program more readable. Refers to a single fixed value represented in the program's sources as a literal. Because they do not require a computation, Java literals can be defined directly in the source code.
