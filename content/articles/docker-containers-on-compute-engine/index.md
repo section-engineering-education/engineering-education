@@ -1,8 +1,23 @@
-Google Compute Engine(GCE) is a high-end compute service that allows developers to create and run virtual machines on the underlying secure and reliable infrastructure of Google. 
+---
+layout: engineering-education
+status: publish
+published: true
+url: /docker-containers-on-compute-engine/
+title: Spring Boot basic configuration
+description: In this article, the reader will be walked through creating a Flask application, creating a Docker-based container from the application and deploying the container to a virtual machine on Google.
+author: victor-elvis
+date: 2021-09-17T00:00:00-15:00
+topics: [Langauges]
+excerpt_separator: <!--more-->
+images:
 
-Using GCE takes advantage of the complex computing capabilities and heavy workload without acquiring them physically.
+  - url:  /engineering-education/docker-containers-on-compute-engine/hero.png
+    alt: Running docker containers on Google computer Engine Image
+---
 
-Docker allows the encapsulation of an application and its modules into a single independent package. This practice enables running the application on any platform without the need for further configurations.
+Google Compute Engine(GCE) is a high-end compute service that allows developers to create and run virtual machines on the underlying secure and reliable infrastructure of Google. Using GCE takes advantage of the complex computing capabilities and heavy workload without acquiring them physically.
+<!--more-->
+Docker allows the encapsulation of an application and its modules into a single independent package. This practice enables running the application on any platform without the need for further configurations of the deplyoment environment.
 
 ### Table of content
 - [Project Goal](#project-objective)
