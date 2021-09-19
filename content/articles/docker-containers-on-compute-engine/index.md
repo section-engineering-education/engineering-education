@@ -219,3 +219,6 @@ In this article, we built a web application from scratch using a Flask. Then, we
 Take note that for you to run an application on Google's platform, you have to provide billing details and once the application is done, shut down the running instances to avoid incurring extra charges.
 
 You can find the code for the Flask application [here.](https://github.com/victorelvice/gce-flask-app)
+
+---
+Peer Review Contributions by: [Jerim Kaura](/engineering-education/authors/jerim-kaura/)
