@@ -26,7 +26,7 @@ By reorganizing your plugin as a federated plugin, anyone can add support for ne
 Platform interfacing is the process of abstracting what plugin package is to be implemented via its platforms. Additionally, platform interfacing explains how the plugin package communicates with the platform implementation and its replacement of what the plugin package needs from the platform.
 
 ### Creating the platform interface package
-In the other example, the plugin sits in a directory like packages/URL launcher in the flutter/plugins directory GitHub repository. First, we will develop the platform interface package and restructure the code to use a federated plugin directory arrangement. 
+The plugin sits in a directory like packages/URL launcher in the flutter/plugins directory on GitHub repository. First, we will develop the platform interface package and restructure the code to use a federated plugin directory arrangement. 
 
 We are creating a directory that contains the plugin package, the platform interface, and web packages. For example, the URL launcher plugin can be moved to a federated sub-folder in the packages/ directory. 
 
