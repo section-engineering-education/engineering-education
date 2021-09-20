@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /java-singleton-design-pattern/
 title: Java Singleton Design Pattern
-description: This article introduces the reader to the singleton design pattern in Java. Singleton is a combination of rules and programs that assures that only one entity of its type exists and gives other code a single point of access to it.
+description: This article introduces the reader to the singleton design pattern in Java. Singleton is a combination of rules and programs that assures that only one entity of its type exists, and gives other code a single point of access to it.
 author: caroline-wanjiku
-date: 2021-09-14T00:00:00-12:00
+date: 2021-09-20T00:00:00-02:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,9 +14,9 @@ images:
   - url: /engineering-education/java-singleton-design-pattern/hero.jpg
     alt: Java Singleton Design Pattern Hero Image
 ---
-Singleton is a combination of rules and programs that assures that only one entity of its type exists and gives other code a single point of access to it. Singletons have similar advantages and disadvantages as global variables.
+Singleton is a combination of rules and programs that assures that only one entity of its type exists, and gives other code a single point of access to it. Singletons have similar advantages and disadvantages as global variables.
 <!--more-->
-They are quite useful yet they violate the modularity of the code. We use this model framework to limit the number of instances of a class that can be created in the Java Virtual Machine. This model guaranties that only a single class instance exists.
+They are quite useful yet violate the modularity of the code. We use this model framework to limit the number of instances of a class that can be created in the Java Virtual Machine. This model guaranties that only a single class instance exists.
 
 ### Table of contents
 - [Overview of Singleton design pattern](#overview-of-singleton-design-pattern)
@@ -27,12 +27,14 @@ They are quite useful yet they violate the modularity of the code. We use this m
 - [Enum with Singleton pattern](#enum-with-singleton-pattern)
 
 ### Overview of Singleton design pattern
-The term "singleton" refers to a component that only has one instance. By preventing the construction of a class, it guarantees that only one entity of the class resides within the Java virtual machine.
+The term _singleton_ refers to a component that only has one instance. By preventing the construction of a class, it guarantees that only one entity of the class resides within the Java virtual machine.
 
-In Java, a Singleton class facilitates the creation of only one instance. And, this one object or instance provides global access to all other classes. Fields that are unique to each other and have such a feature like a class, such as the unique or static components, will only be used once.
+In Java, a Singleton class facilitates the creation of only one instance. Tis one object or instance provides global access to all other classes.
+
+Fields that are unique to each other and have such a feature like a class, such as the unique or static components, will only be used once.
 
 #### Purpose of using a Singleton class function
-One of the fundamental goals that a singleton type has is to reduce the number of entities that would be created to only one. This guarantees that to get the components, like a socket or database connection, is controlled.
+One of the fundamental goals that a singleton type has is to reduce the number of entities that would be created to only one. This guarantees that access to components, such as a socket or database connection, is controlled.
 
 Because it restricts instance creation, there is no memory space waste when using a singleton class. Since this object will only be created once rather than whenever the latest proposal is submitted.
 
@@ -61,7 +63,8 @@ public class BluePrint
 }
 ```
 
-When you create multiple instances, the values for both reference variables will be different. As a result, it will not a Singleton class.
+When you create multiple instances, the values for both reference variables will be different. As a result, it will not be a Singleton class.
+
 If an object is null, lazy, and eager, design trends produces a new singleton entity or any specific entity.
 
 But, if the entity is not empty, they have to return another singleton entity object or other specific elements of the object. We will start with eager loading, for which we will need to remember a few guidelines for building eager loading entities.
@@ -128,25 +131,21 @@ The third step is to use the class type variable we have obtained from the secon
 
 The last step is to structure `getInstance` function to bring our object of singleton type. This is because `getInstance` function will be a static function that will produce only one instance of the class each time it is called.
 
-The illustration above is known as eager loading, but there are some drawbacks to it. One is that the reference object is a category of static, which implies that it will be created and will be available in memory when the class is loaded.
+There are some drawbacks to eager loading. One is that the reference object is a category of static, which implies that it will be created and will be available in memory when the class is loaded.
 
 This makes it a global variable since this object is available in local memory when any class is loaded. This is a disadvantage because if an object is bulky, it wastes memory and computing power.
 
-We use the concept of lazy loading to get around this. It is good to note that if we try to generate more Singleton instances, we will be unable to do so because one object was created before.
-
-Moreover, the singleton design pattern prohibits us from having more than one instance.
+We use the concept of lazy loading to get around this. It is good to note that we can not generate more Singleton instances since one object was created before.
 
 ### Loading lazy Singleton objects
 We already saw that if we use the `Eager Initialization` technique to create the singleton class, it results in the construction of an object that isn't needed, regardless of whether the application uses it or not.
 
-To get around this issue, we can use the `Lazy Initialization` technique to build a singleton class object. The lazy Initialization technique postpones the class's creation until it is required.
-
-To put it in another way, the object is only generated when it is required. This function prevents the class instance from being created twice.
+To get around this issue, we can use the `Lazy Initialization` technique to build a singleton class object. The lazy Initialization technique postpones the class's creation to when it is required.
 
 Lazy initialization requires us to follow the following procedures:
 1. Make the class's constructor not accessible by any other function outside its scope.
-2. Create a class function that will not be used by functions that are outside the class function's scope.
-3. Create a factory method as the last step. This method determines whether the instance attribute is null. This will construct a singleton instance to be used and it will return it since it is not null; else, this will not construct any instance.
+2. Create a class function that will not be used by functions that are outside the class' scope.
+3. Create a factory method as the last step. This method determines whether the instance attribute is null. If instance is null, a Singleton instance will be created. Otherwise, the available instance will be returned.
 
 ```java
 public class UseLazyInitialization
@@ -189,14 +188,12 @@ The first step in the preceding example is to establish a private default constr
 
 This must be non-changeable data because it is utilized when building objects within the constructor. We construct a `getInstance()` function in the third and final stage to return the singleton class object based on a criteria.
 
-> If we try to generate more Singleton instances, we will not be able to operate because the object is produced when the `getInstance()` method is called.
-
 ### Synchronization of thread in lazy loading
 If we have many instances, we have to make the objects solve the flaw of the implementation above. When we first call the `getInstance()` method, the object will be null, so a new object will be created.
 
-But if we call it again, and because we already had an object, the existing one will be given since it will not be executed. In a multi-threaded context, a singleton class is created by a thread-safe singleton technique.
+If we call it again, the already created object will be returned. In a multi-threaded context, a singleton class is created by a thread-safe singleton technique.
 
-The `getInstance()` method must be marked as synchronized. When we want to prevent many threads from accessing this technique at a similar moment, we have to configure the method to be synchronized.
+The `getInstance()` method must be marked as synchronized. We do this when we want to prevent many threads from accessing this function at the same time.
 
 ```java
 class OurSingleton
@@ -240,15 +237,15 @@ public class BluePrint
 }
 ```
 
-In the code above, two threads r1 and r2 are specified and both of which call the same procedure. These are initialized at the same time. We should note that when we have a thread, we should use synchronization with the help of a get `getInstance` method.
+In the code above, two threads r1 and r2 are specified, and both call the same procedure. They are initialized at the same time. We should note that when we have a thread, we should use synchronization with the help of a get `getInstance` method.
 
-However, making a method synchronized results in a lot of work, as the `getInstance()` function performs a lot of work. And, it will reduce performance by a proportion of about one hundred, which is the issue with synchronized threading.
+However, making a method synchronized results in a lot of work, as the `getInstance()` function performs a lot of work. Moreover, it will reduce performance by a proportion of about one hundred, which is the issue with synchronized threading.
 
 ### Lazy loading using thread double-checked locking technique
 To solve the disadvantages of the earlier method with its time complexity, we can use the idea of Double-Checked Locking.
 
 It entails checking the object value twice:
-- Simply-if (object ==null)
+- Simply-if (object == null)
 - In the synchronized block
 
 We can implement synchronized threading while generating objects. This is to cut the duration sophistication by synchronization of the `getInstance` function.
@@ -302,7 +299,7 @@ public class BluePrint
 
 In the example above, we find a solution to the issue of synchronous code overhead. This function's `GetInstance` is not synchronized, but the component that creates the instance is. Therefore, only a few threads must wait the first time.
 
-### Enum with Singleton Pattern
+### Enum with Singleton pattern
 This is a way of creating a singleton pattern that overcomes the disadvantages of all the implementations that we looked at.
 
 From Java 1.5, there is only one other technique for creating a singleton design pattern that is thread-safe and uses fewer resources. This approach can only work if one uses Java 1.5 or higher.
@@ -352,7 +349,7 @@ This will be the result:
 When we are working with enums, there is a method called `readResolve` that will not generate a new object and instead uses the existing one.
 
 ### Conclusion
-In this tutorial, we have seen that this class has only one item in it. We can create a Singleton using private constructors and the `getInstance` constructor function.
+In this tutorial, we have seen that a Singleton class has only one item in it. We can create a Singleton using private constructors and the `getInstance` constructor function.
 
 We have also discussed how to construct a singleton design pattern using eager and lazy loading techniques. As well as, thread, double-checked locking, enum, and the differences between singleton class and normal class.
 
