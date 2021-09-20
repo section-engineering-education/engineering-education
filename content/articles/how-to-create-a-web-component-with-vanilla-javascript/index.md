@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /how-to-create-a-web-component-with-vanilla-javascript/
 title: Creating a web component with Vanilla JavaScript
-description: This article will walk the user through understanding web components and how onw can create a web component using vanilla javascript.
+description: This article will walk the user through understanding web components and how one can create a web component using vanilla javascript.
 author: wangui-leah
-date: 2021-09-17T00:00:00-15:00
+date: 2021-09-20T00:00:00-00:30
 topics: [Langauges]
 excerpt_separator: <!--more-->
 images:
@@ -31,8 +31,8 @@ This article will talk about what web components are and why they are helpful. F
   - [Encapsulate the HTML element](#encapsulate-the-html-element)
   - [Lifecycle methods](#lifecycle-methods)
   - [Creating custom elements](#creating-custom-elements)
-- [Conclusion](conslusion)
-- [References](references)
+- [Conclusion](#conslusion)
+- [References](#references)
 
 
 ### Prerequisites
@@ -124,8 +124,7 @@ template.innerHTML = `
       <p><slot name="phone"/></p>
     </div>
   </div>
-</div>
-`;
+</div>`;
 
 class EmployeeCard extends HTMLElement{
  constructor(){
@@ -207,7 +206,11 @@ constructor(){
  } 
 ```
 
-We have an empty class. Next, we create a constructor and call the base class `super()` method to inherit the features of a class. A shadow DOM is created `this.attachShadow({ mode: 'open'})` and becomes the encapsulated part of our web component. It keeps our component's behaviour independent and from the rest of the Html. You can have your shadow DOM mode closed or open. This means whether you can access shadow DOM via JavaScript in your components.
+We have an empty class. Next, we create a constructor and call the base class `super()` method to inherit the features of a class. 
+
+A shadow DOM is created, i.e, `this.attachShadow({ mode: 'open'})` and becomes the encapsulated part of our web component. It keeps our component's behaviour independent and from the rest of the Html. 
+
+You can have your shadow DOM mode closed or open. This means whether you can access shadow DOM via JavaScript in your components.
 
 Web Components enable us to use shadow DOM, a feature built into the browser. So if child elements are added to a shadow DOM of a component, they are wrapped inside a shadow root.
 
@@ -249,7 +252,9 @@ Finally, to test if we created an employee card web component, open the `index.h
 ![Employee card web component](/engineering-education/how-to-create-a-web-component-with-vanilla-javascript/employee-card.jpg)
 
 ### Conclusion
-With this tutorial, you have learned how to build a simple web component with vanilla JavaScript. Hopefully, you have understood web components, why they are useful, and how to build one. Furthermore, creating a web component can be achieved using frameworks such as react.js and vue.js. I, therefore, encourage you to keep exploring and experimenting.
+With this tutorial, you have learned how to build a simple web component with vanilla JavaScript. 
+
+Hopefully, you have understood web components, why they are useful, and how to build one. Furthermore, creating a web component can be achieved using frameworks such as react.js and vue.js. I, therefore, encourage you to keep exploring and experimenting.
 
 Happy Coding!
 
