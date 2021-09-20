@@ -5,7 +5,7 @@ published: true
 url: /watch-for-system-dark-mode-using-js-css/
 title: How to Watch for System Dark Mode Changes Using JavaScript and CSS
 description: In this article, we will learn how to watch for system dark mode changes using JavaScript and CSS. We will use the matchMedia function to detect if the system is in dark mode.
-author: njeri-kariuki
+author: magdaline-kariuki
 date: 2021-09-20T00:00:00-02:40
 topics: [Languages]
 excerpt_separator: <!--more-->
