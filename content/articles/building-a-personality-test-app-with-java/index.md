@@ -6,7 +6,7 @@ url: /building-a-personality-test-app-with-java/
 title: Building a Personality Test App with Java
 description: The goal of this tutorial is to make convincing concepts clearer and understandable enough for beginners and show the implementation of the multi-dimensional array in java.
 author: badmus-kola
-date: 2021-09-09T00:00:00-04:35
+date: 2021-09-20T00:00:00-16:35
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
