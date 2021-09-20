@@ -91,9 +91,7 @@ This technique preserves label correlation, thus solve the problem encountered b
 #### Label powerset
 
 It transforms the problem into a multi-class problem. Each multi-class classifier is then trained with unique label combinations found in the data.
-
-The goal label powerset is to find a combination of unique labels and assign them different values.
-
+The goal of the label powerset is to find a combination of unique labels and assign them different values.
 Let's see an example.
 
 ![Label powerset](/engineering-education/multi-label-classification-with-scikit-multilearn/label-powerset.png)
