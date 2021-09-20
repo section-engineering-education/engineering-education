@@ -164,7 +164,7 @@ In the `hello-view.fxml` file, view it using the Scene Builder. On the left-hand
 
 Add a border pane by dragging and dropping it from the containers section to the window where the VBox was. A border pane allows one to easily keep controls in the top, left, right, center, and bottom of the window. This step will aid in dividing the window.
 
-Now drag and drop an AnchorPane from the containers section into the left side of the border pane. Here, place the Logo. On the right-hand side, on the properties window, in *Style*, enter the CSS style attribute. It will be `-fx-background-color` and place the value to be `#A9A9A9` next to it.
+Now drag and drop an AnchorPane from the containers section into the left side of the border pane. On the right-hand side, on the properties window, in *Style*, enter the CSS style attribute. It will be `-fx-background-color` and place the value to be `#A9A9A9` next to it.
 
 In the layout tab, set `Pref Width` and `Pref Height` to 400 and 700.
 
@@ -215,7 +215,7 @@ The Code shall look as follows when viewed:
             
         </AnchorPane>
     </right>
-    <!-- Ending of the left part of the Borderpane -->
+    <!-- Ending of the right part of the Borderpane -->
 
     <!-- Beginning of the bottom part of the Borderpane -->
     <bottom>
@@ -485,8 +485,6 @@ This property is for a fade effect.
 - **Style:**
   - `-fx-text-fill`:  #A9A9A9
 - **Layouts:**
-  - `Pref Width`: 130
-  - `Pref Height`: 36
   - `Layout X`: 0
   - `Layout Y`: -110
   - `Start X`: 100
@@ -683,8 +681,6 @@ This step groups the radio buttons of the same group; hence only one can be sele
 - **Properties:**
   - `Text`: I have read the Terms and Conditions
   - `Font`: SanSerif 15px
-  - `Selected` checkbox: Check
-  - `Toggle Group`: Gender
 - **Style:**
   - `-fx-text-fill`:  #A9A9A9
 - **Layouts:**
@@ -696,15 +692,12 @@ This step groups the radio buttons of the same group; hence only one can be sele
 - **Properties:**
   - `Text`: Sign-Up
   - `Font`: SanSerif 15px
-  - `Selected` checkbox: Check
-  - `Toggle Group`: Gender
 - **Style:**
   - `-fx-background-color`:  #24a0ed
   - `-fx-text-fill`: White
   - `-fx-border-radius`: 5
   - `-fx-border-width`: 2
   - `-fx-border-color`: #24a0ed
-  - `-fx-border-radius`: 5
 - **Layouts:**
   - `Pref Width`: 130
   - `Pref Height`: 33
@@ -716,8 +709,6 @@ This step groups the radio buttons of the same group; hence only one can be sele
 - **Properties:**
   - `Text`: Terms and Conditions
   - `Font`: SanSerif 15px
-  - `Selected` checkbox: Check
-  - `Toggle Group`: Gender
 - **Style:**
   - `-fx-background-color`:  transparent
   - `-fx-text-fill`: #A9A9A9
@@ -846,7 +837,7 @@ The FXML Code will look as shown below:
 
 Run the application as before using the `Shift + F10` shortcut. The results are as shown below:
 
-![Final Product](/engineering-education/design-a-sign-up-and-login-gui-using-javafx/Final-product.png "Final Product")
+![Final Product](/engineering-education/design-a-sign-up-and-login-gui-using-javafx/Final-product.png)
 
 Find the source code and files in [this](https://github.com/RisoriTofa/A-JavaFX-Login-and-Sign-Up-Form) repository.
 
