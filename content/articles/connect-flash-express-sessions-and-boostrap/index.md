@@ -21,7 +21,8 @@ We will build an authentication system using the `express-session`, `connect-fla
 
 ### Prerequisites
 To follow along, the reader needs to have the following.
-- Have [Node.js](https://nodejs.org/) installed on your computer.
+- A good understanding of [Node.js](https://nodejs.org/).
+- Working installation of Nodejs.
 - A suitable code editor, preferably [VS Code](https://code.visualstudio.com/download).
 - Basics of MongoDB database
 
@@ -104,8 +105,8 @@ The `connection.js` file will contain the `connection function`. The function is
 ```js
 const mongoose = require('mongoose')
 
-//connnect the system to the database
-const connectDatabase = async () => {
+//connnect the system to the mongo atlas remote db
+const connectToRemoteDatabase = async () => {
     try {
         const conn = await mongoose.connect(process.env.MONGO_URI, {
             useNewUrlParser: true,
@@ -130,8 +131,8 @@ const mongoose = require('mongoose');
 
 //user schema
 const UserSchema = new mongoose.Schema({
-    name: {type: String, required: true },
-    email: {type: String, required: true },
+    username: {type: String, required: true },
+    useremail: {type: String, required: true },
     password: {type: String, required: true },
     date: {type: Date, default: Date.now }
 });
@@ -157,7 +158,10 @@ Next, we need to set up a register-handler that collects the form data from the 
 router.post('/register', (request, response) =>{
 
     //extract the data from request body
-    const { name, email, password, password2 } = request.body;
+    const name,= request.body.name;
+    const email= request.body.email;
+    const password,  = request.password;
+    const passwordConfirm  = request.passwordConfirm;
     let errors = []
 
     //validation
@@ -200,15 +204,15 @@ If the supplied email is unique, `bcryptjs` hashes the password. Saving a plain 
 
 
 ```js
-const newUser = new User({name, email, password});
+const newSystemUser = new User({username, useremail, password});
 
-bcrypt.genSalt(10, (error, salt) =>{
-    bcrypt.hash(password, salt, (error, hash) => {
+bcrypt.genSalt(10, (error, saltpass) =>{
+    bcrypt.hash(password, saltpass, (error, passwordhash) => {
         if(error){
             throw error;
         }else{
-            newUser.password = hash
-            newUser.save().then(user =>{
+            newSystemUser.password = hash
+            newSystemUser.save().then(user =>{
                 request.flash('success_msg', 'Successfully registered. Login')
                 response.redirect('/users/login')
             }).catch(err =>{
@@ -239,7 +243,7 @@ To make every error appear in a different color, we create global variables and 
 ```js
 // Global variables
 app.use(function(request, response, next) {
-    response.locals.success_message = request.flash('success_message');
+    response.locals.success_alert_message = request.flash('success_alert_message');
     response.locals.error_message = request.flash('error_message');
     response.locals.error = request.flash('error');
     next();
@@ -249,9 +253,9 @@ app.use(function(request, response, next) {
 In the `messages.js` file, we check whether a message is a `success` or an `error` then render the respective alert. 
 
 ```html
-<% if(success_message != ''){ %>
+<% if(success_alert_message != ''){ %>
     <div class="alert alert-success alert-dismissible fade show" role="alert">
-      <%= success_message %>
+      <%= success_alert_message %>
       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button>
@@ -277,7 +281,7 @@ Create a new file called `passport.js` in the' config' folder, then add the snip
 const LocalStrategy = require('passport-local').Strategy;
 const bcrypt = require('bcryptjs');
 
-// Load User model
+// Loading the mongoose model from the models folder
 const User = require('../models/User');
 ```
 First, we need to bring in the `local strategy` and `mongoose` to find users in the database. In this case, we are using `bcrypt` to compare the password entered by the user during registration to the one entered during login. 
@@ -285,15 +289,15 @@ First, we need to bring in the `local strategy` and `mongoose` to find users in 
 The passport needs to check email and password, then find a user with the same email. If there exists a record of a user with the same email, then the supplied password is compared against the user's password to see if there is a match; if the password is similar to the entered password, the passport authenticates the user. However, if the password is not similar, an error is displayed to the user telling him to correct the email of the password.
 
 ```js
-module.exports = function(passport) {
+function passport() {
     passport.use(
-        new LocalStrategy({ usernameField: 'email' }, (email, password, done) => {
+        new LocalStrategy({ usernameField: 'useremail' }, (useremail, userpassword, done) => {
             // find user with supplied email
             User.findOne({
-            email: email
+            useremail: useremail
             }).then(user => {
 
-                //user not found
+                //the fetched user  is not found
                 if (!user) {
                     return done(null, false, { message: 'The user email entered is not with our records' });
                 }
@@ -311,16 +315,18 @@ module.exports = function(passport) {
         })
     );
   
-    passport.serializeUser(function(user, done) {
+    passport.serializeUser( (user, done) => {
       done(null, user.id);
     });
   
-    passport.deserializeUser(function(id, done) {
-      User.findById(id, function(error, user) {
+    passport.deserializeUser( (id, done) => {
+      User.findById(id, (error, user) => {
         done(error, user);
       });
     });
 };
+
+module.exports = passport
 ```
 [Login validation](/engineering-education/connect-flash-express-sessions-and-boostrap/login-form-validation.png)
 
@@ -328,7 +334,7 @@ module.exports = function(passport) {
 The login handler uses the Passport middleware to authenticate users. An authenticated user is redirected to the `home` route to see his account details. However, if the user is not authenticated, the system redirects him to the login page to correct their details and try again.
 
 ```js
-//handling login
+//handling sign in route
 router.post('/login', (request, response, next) => {
     passport.authenticate('local', {
         successRedirect: '/home',
@@ -377,7 +383,7 @@ The logout handler is responsible for signing out a user and destroying the sess
 //logout handler
 router.get('/logout', (request, response) => {
     request.logout();
-    request.flash('success_message', 'You are succesfully logged out');
+    request.flash('success_alert_message', 'You are succesfully logged out');
     response.redirect('/users/login');
 });
 ```
