@@ -1,5 +1,21 @@
-Kivy is a popular library for developing media-rich multi-touch enabled applications that can run across all major platforms.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /using-django-in-kivy-application/
+title: Building a Kivy application using Django
+description: In this article, we will look at how to build a simple todo application in Kivy, and use Django as the back-end
+author: john-kiguru
+date: 2021-09-20T00:00:00-07:17
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+ - url: /engineering-education/using-django-in-kivy-application/hero.jpg
+   alt: Django Kivy Example Image
+---
+Kivy is a popular library for developing media-rich multi-touch enabled applications that can run across all major platforms.
+<!--more-->
 However, there may be situations that need your application to get access to and manipulate data provided by a web server hosted at a site.
 
 In this tutorial, we are going to learn how to create a [Kivy](https://kivy.org/#home) application and how to make requests to a server using the `requests` library.
