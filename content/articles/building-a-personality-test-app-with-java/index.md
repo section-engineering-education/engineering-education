@@ -16,8 +16,8 @@ images:
 ---
 If you are trying to build a personality test app or a quiz app, this article is for you. This article will use the concept of Java arrays, StringBuilder class, exception handling, and format specifiers in Java to make a personality test app.
 <!--more-->
-### Table of contents
 
+### Table of contents
 - [How the personality test works](#how-the-personality-test-works)
 - [Prerequisites](#prerequisites)
 - [Introduction to Java arrays](#introduction-to-java-arrays)
@@ -28,52 +28,52 @@ If you are trying to build a personality test app or a quiz app, this article is
 - [Reference](#reference)
 
 ### How the personality test works
+According to Isabel Briggs Myers, there are sixteen types of personality identities, and there are four vital elements of categorizing people into the various sixteen personality identities. 
 
-According to Isabel Briggs Myers, there are sixteen types of personality identities, and there are four vital elements of categorizing people into the various sixteen personality identities. The four key elements are:
-
-- Introversion (I) or Extroversion (E).
-- Sensing (S) or Intuition (N).
-- Thinking (T) or Feeling (F).
-- Judging (J) or Perceiving (P).
+The four key elements are:
+1. Introversion (I) or Extroversion (E).
+2. Sensing (S) or Intuition (N).
+3. Thinking (T) or Feeling (F).
+4. Judging (J) or Perceiving (P).
 
 You can find detailed information about the various personality types [here](https://www.truity.com/page/16-personality-types-myers-briggs).
 
 To learn more about the above key elements, kindly follow this [link](https://www.verywellmind.com/the-myers-briggs-type-indicator-2795583).
 
 ### Prerequisites
-
 To follow along with this tutorial, you need to have:
 - Java JDK 8.0 and above.
 - A Java IDE.
-- Test [Questions](https://pdfcoffee.com/the-myers-test-pdf-free.html) in pdf format.
+- Test [Questions](https://pdfcoffee.com/the-myers-test-pdf-free.html) in a PDF format.
 
 ### Introduction to Java arrays
-
 #### Definition of arrays
+An array in Java is a set of elements of the same data type, either a primitive or reference type. Java can create one-dimensional arrays and multidimensional arrays. 
 
-An array in Java is a set of elements of the same data type, either a primitive or reference type. Java can create one-dimensional arrays and multidimensional arrays. A single-dimensional array can be represented as a list of the same data type, usually defined in one square bracket. In contrast, a multidimensional array depicts the structure of a table with rows and columns.
+A single-dimensional array can be represented as a list of the same data type, usually defined in one square bracket. In contrast, a multidimensional array depicts the structure of a table with rows and columns.
 
 #### Declaration of arrays
-
 We declare a single-dimensional array like this:
 
 ```java
 int [ ] oneDarray;
 ```
 
-At this point, an array object is yet to be created. It is similar to declaring an integer like this:
+At this point, an array object is yet to be created. 
 
+It is similar to declaring an integer like this:
 ```java
 int number;
 ```
 
 We declare a two-dimensional array like this:
-
 ```java
 int [ ][ ] twoDarray;
 ```
 
-The square brackets show the dimensions; for instance, a three-dimensional array will have three square brackets. The int implies that the data type of each element is of type integer, and we give our array a variable name. The variable name is a reference name that can be anything, although we are expected to adhere to java naming conventions.
+The square brackets show the dimensions; for instance, a three-dimensional array will have three square brackets. The int implies that the data type of each element is of type integer, and we give our array a variable name. 
+
+The variable name is a reference name that can be anything, although we are expected to adhere to Java naming conventions.
 
 ```java
 int [ ] oneDarray, numbers[];
@@ -82,13 +82,10 @@ int oneDarray [], numbers[][];
 ```
 
 ### How to create arrays
-
 We create arrays with the new keyword or with array literals. The index of the array is a fixed size. Each element has its respective default values.
 
 #### Creating an array with the new keyword
-
 We create an empty array like this:
-
 ```java
 int[ ] emptyArray = new int[0]; // this is an empty array
 ```
@@ -99,7 +96,9 @@ Below is an array of integers. With four positions, default values are zeros.
 int [] arrayInt = new int [4] // array of integers;
 ```
 
-We set up an integer array that contains four positions. Next, we will see a loop that goes around each position and prints the value at each position:
+We set up an integer array that contains four positions. 
+
+Next, we will see a loop that goes around each position and prints the value at each position:
 
 ```java
 for (int i=0; i &lt; arrayInt.length; i++) {
@@ -118,13 +117,13 @@ String [] arrayOfStrings= new int [4] // array of Strings;
 ```
 
 #### Creating an array with array literals
-
 ```java
 String [ ] subjects = {“English”,”Mathematics”};
 ```
 
-Whenever we declare and initialize an array with array literals, we wouldn't need the new keyword except for a boolean data type. We declare and initialize boolean values like this:
+Whenever we declare and initialize an array with array literals, we wouldn't need the new keyword except for a boolean data type. 
 
+We declare and initialize boolean values like this:
 ```java
 boolean [ ] boolValues = new boolean { true,false,true,false};//exception to array literal rule.
 ```
@@ -136,11 +135,10 @@ String [] oneDstringValue ={“room”, ”door”}
 oneDstringValue [1] = “stores”;
 ```
 
-After the brief introduction to some basics of java array, let's dive into building our app.
+Now that we went over a brief introduction to some basics of Java array, let's dive into building our app.
 
 ### Building the personality test app
-
-#### Step one: Create a file with the name PersonalityTest.java
+#### Step One: Create a file with the name PersonalityTest.java
 
 In this file, define a class with the same name PersonalityTest like this:
 
@@ -148,25 +146,22 @@ In this file, define a class with the same name PersonalityTest like this:
 public class PersonalityTest {
 ```
 
-#### Step two: Define the main method
-
+#### Step Two: Define the main method
 ```java
 public static void main(String[] args) {
 ```
 
-#### Step three: Numbering of questions
-
+#### Step Three: Numbering of questions
 Declare and initialize an integer variable for numbering your questions. It is declared and assigned in the class and not the main method because it is a static variable.
 
 ```java
 static int questionNumber = 1;
 ```
 
-#### Step four: Create array for questions using array literals
-
+#### Step Four: Create array for questions using array literals
 In our main method, let's declare and initialize our array of questions with array literals.
 
-For our app, we are storing strings, so we store values in our array like this;
+For our app, we will be storing strings, so we can store values in our array like this;
 
 ```java
 String[] extroversionVsIntroversionTest = {
@@ -201,9 +196,10 @@ String[] judgingVsPerceivingTest = {
       "A. control, govern B. latitude, freedom"};
 ```
 
-#### Step five: Create arrays for answers with the new keyword
+#### Step Five: Create arrays for answers with the new keyword
+We will be using them to collect users input in A's and B's and then save to our array in 0's and 1's. Remember that by default, int is equal to 0 in an array. 
 
-We will be using them to collect users input in A's and B's and then save to our array in 0's and 1's. Remember that by default, int is equal to 0 in an array. So, Java now knows that we want an integer array with indices. Once Java has executed the lines, a default value is assigned to the arrays; because we have an integer array, all positions will have an identical default of 0 as their values.
+Java now knows that we want an integer array with indices. Once Java has executed the lines, a default value is assigned to the arrays; because we have an integer array, all positions will have an identical default of 0 as their values.
 
 ```java
 int[] extrovertVsIntrovertAnswersStorage = new int[5];
@@ -212,16 +208,16 @@ int[] thinkingVsFeelingAnswersStorage = new int[5];
 int[] judgingVsPerceivingAnswersStorage = new int[5];
 ```
 
-#### Step six: Create a StringBuilder object
+#### Step Six: Create a StringBuilder object
+The StringBuilder class is used to create a mutable String. The code sample below creates an empty StringBuilder with a default capacity of 16. 
 
-The StringBuilder class is used to create a mutable String. The code sample below creates an empty StringBuilder with a default capacity of 16. It must be noted that StringBuilder class is more efficient than implementing an empty string. Each time we add to an empty string we create an object which tend to be less efficient.
+It must be noted that StringBuilder class is more efficient than implementing an empty string. Each time we add to an empty string we create an object which tend to be less efficient.
 
 ```java
 StringBuilder result = new StringBuilder();
 ```
 
-#### Step seven: Serve the questions and collect the answers
-
+#### Step Seven: Serve the questions and collect the answers
 This method serves questions and gets back A's or B's from the console but saves them into our array as 0s and 1s.
 
 ```java
@@ -231,8 +227,7 @@ iterate(thinkingVsFeelingTest,thinkingVsFeelingAnswersStorage);
 iterate(judgingVsPerceivingTest,judgingVsPerceivingAnswersStorage);
 ```
 
-#### Step eight: Calculate answers
-
+#### Step Eight: Calculate answers
 Find the sum of numbers in the array.
 
 ```java
@@ -242,8 +237,7 @@ int sumOfAsInThinking = sum(thinkingVsFeelingAnswersStorage);
 int sumOfAsInJudging = sum(judgingVsPerceivingAnswersStorage);
 ```
 
-#### Step nine: Personality typing
-
+#### Step Nine: Personality typing
 We call the append method in the String builder class and compare the result of the test.
 
 ```java
@@ -266,8 +260,7 @@ result.append("J");
 }
 ```
 
-#### Step ten: Displays personality types in a table
-
+#### Step Ten: Displays personality types in a table
 Print personality results in a table.
 
 ```java
@@ -286,7 +279,7 @@ We set number of questions to 1 because we want to display all question numbers 
 int numbering = 1;
 ```
 
-The code sample below repeats '-' in 74 times on a single line. We use this to demarcate our table sections.
+The code sample below repeats '-' 74 times on a single line. We use this to demarcate our table sections.
 
 ```java
 System.out.printf("%s%n", "-".repeat(74));
@@ -333,7 +326,6 @@ System.out.println("https://www.truity.com/page/16-personality-types-myers-brigg
 ```
 
 ### Explaining the methods
-
 This method handles exceptions, and ignores whitespaces, and capitalization in our I/O operations.
 
 All the methods are static, so we must declare them outside the main method and call them within it.
@@ -357,8 +349,9 @@ while (true){
 ```
 
 #### Method for serving questions and getting options
+This method takes two arrays. The first array contains the list of questions, while the second array contains 0s by default. We aim to collect an option from the user. 
 
-This method takes two arrays. The first array contains the list of questions, while the second array contains 0s by default. We aim to collect an option from the user. If the option is an A,  it saves it into our collection as 1. Alternatively, if the choice is a B, it retains the default value (the default values in the list of answers are zeros).
+If the option is an A, it saves it into our collection as 1. Alternatively, if the choice is a B, it retains the default value (the default values in the list of answers are zeros).
 
 ```java
 public static void iterate(String[] questions, int[] answers) {
@@ -377,8 +370,9 @@ System.out.println("Pick an option: A or B");
 ```
 
 #### Method for summing the number of A's and B's
+This method takes an array of numbers and return the sum of numbers in it. Therefore, we use it to count the number of A's and B's in our answers at all level. 
 
-This method takes an array of numbers and return the sum of numbers in it. Therefore, we use it to count the number of A's and B's in our answers at all level. This enables us to set a personality type with if statement. Remember that an A is denoted as 1, and a B is denoted as zero.
+This enables us to set a personality type with if statement. Remember that an A is denoted as 1, and a B is denoted as zero.
 
 ```java
 public static int sum(int[] intArrays){
@@ -398,7 +392,6 @@ public static String placeCheckmark(int num, int position){
 ```
 
 #### Method for counting number of zeros and ones in our array
-
 This method takes an array and a number. It finds the number of times the number exists in the array.
 
 ```java
@@ -412,15 +405,12 @@ return count;
 ```
 
 ### Conclusion
-
 In this article, we learned about working with arrays, format specifiers, methods, and exception handling. You can find the source code of this project [here](https://github.com/CaptainBKola/myJavaProjects/commit/989ab6f8527c0c8f5ac3f7b8bf13ff1253ed2eba).
 
 Happy coding!
 
 ### Reference
-
 - [An Overview of the Myers-Briggs Type Indicator](https://www.verywellmind.com/the-myers-briggs-type-indicator-2795583)
-
 - [Myers & Briggs' 16 Personality Types](https://www.truity.com/page/16-personality-types-myers-briggs)
 
 ---
