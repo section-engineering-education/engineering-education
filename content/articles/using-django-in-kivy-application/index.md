@@ -25,9 +25,9 @@ We are going to use Django to develop the server that holds the data that we wan
 ### Prerequisites
 For you to follow along, it's important that:
 - You have `Django` and `djangorestframework` frameworks installed.
-- You are familiar with building APIs using Django REST framework.
+- You are familiar with building APIs using the Django REST framework.
 - You have the `kivy` library installed. If you haven't installed it, you can run `pip install kivy`.
-- Basic knowledge of Python is important. Having knowledge in Object-Oriented Programming would help.
+- Basic knowledge of Python is important. Knowing Object-Oriented Programming would help.
 
 ### Key takeaways
 - Improve your python skills.
@@ -45,7 +45,7 @@ requests to our Django server.
 ### Creating the tasks API
 In a folder of choice, let's create a new project by running `django-admin startproject TodoAPI`.
 
-In the `TodoAPI` project, create a new app `tasks` that will handle creation of tasks.
+In the `TodoAPI` project, create a new app `tasks` that will handle the creation of tasks.
 
 Run `python3 manage.py startapp tasks`.
 
@@ -72,7 +72,7 @@ Your project structure should look something like this:
         └── wsgi.py
 ```
 
-We need to register our `tasks` app and `rest_framework` in order to use the app.
+We need to register our `tasks` app and `rest_framework` to use the app.
 
 Edit the `settings.py` file as follows under `INSTALLED APPS`:
 
@@ -104,13 +104,13 @@ class Task(models.Model):
         return self.name
 ```
 
-Let's create a `serializer.py` file that handles serialization and deserialization of task instances.
+Let's create a `serializer.py` file that handles the serialization and deserialization of task instances.
 
 Serialization is the process of saving an object in a way that can be accessed in a uniform format by different applications.
 
 Deserialization is the reverse of serialization.
 
-You may learn more about serialization and deserialization in Django REST framework by visiting [here](https://www.django-rest-framework.org/api-guide/serializers/).
+You may learn more about serialization and deserialization in the Django REST framework by visiting [here](https://www.django-rest-framework.org/api-guide/serializers/).
 
 Add the following lines of code to it:
 
@@ -129,7 +129,7 @@ class TaskSerializer(serializers.ModelSerializer):
 ### Creating views
 We are going to also create some views to render data to a web page.
 
-Views are python functions that handle web requests and return web responses. There are different ways to create the views and we will fuction-based views.
+Views are python functions that handle web requests and return web responses. There are different ways to create the views and we will the function-based views.
 
 Function-based views are views in Django written as python functions.
 
@@ -163,12 +163,12 @@ def create_task(request):
 
 We begin by defining a function `all_tasks` that will return a response containing all our tasks. The function gets all the tasks with the line `tasks = Task.objects.all()`.
 
-The data is then serialized on the succeeding line and the function returns the response.The line `@api_view(['GET'])` is a decorator takes `GET` as the HTTP method that the function should respond to.
+The data is then serialized on the succeeding line and the function returns the response. The line `@api_view(['GET'])` is a decorator that takes `GET` as the HTTP method that the function should respond to.
 
 The same concept applies to the second function, only that this time it takes a `POST` HTTP method.
 
 ### Routing views
-We then create a `urls.py` file to for routing our views.
+We then create a `urls.py` file for routing our views.
 
 Create the file and add the following code:
 
@@ -192,7 +192,7 @@ We have to create a route for our `tasks` app.
 
 This way, the routing first occurs on the `TodoAPI/urls.py` file and then `tasks/urls.py`.
 
-We therefore configure our `urls.py` file in `TodoAPI` like this:
+We, therefore, configure our `urls.py` file in `TodoAPI` like this:
 
 `TodoAPI/urls.py`
 
@@ -227,14 +227,14 @@ You should be able to see something like this:
 
 ![Task Created](/engineering-education/using-django-in-kivy-application/task_created.png)
 
-Our Django API is working and we can now proceed to creating the `kivy` application.
+Our Django API is working and we can now proceed to create the `kivy` application.
 
 ### Creating the Kivy application
 Let's create a `main.py` in a folder of choice.
 
 Here, we'll be using the same directory as our `TodoAPI` project folder.
 
-We are going to get started with these lines of code in the `main.py` file. The `TodoApp` is our main entry point of our application and every execution begins from there.
+We are going to get started with these lines of code in the `main.py` file. The `TodoApp` is the main entry point of our application and every execution begins from there.
 
 `[YOUR-FOLDER]/main.py`
 
@@ -311,8 +311,8 @@ This is what is happening to our files:
 - We then give the menu, a position of bottom set by `size_hint_y: .1`.
 - We also declare that it's managed by `ScreenManager` by declaring `manager: screen_manager`.
 - By setting the `id` property of the `ScreenManager` as `screen_manager` the position of the menu is now on top.
-- We the declare the properties of our `Menu` class.
-- The class will have an action bar which will contain two buttons, the `Home` action button and the `Add New` action button.
+- We declare the properties of our `Menu` class.
+- The class will have an action bar that will contain two buttons, the `Home` action button, and the `Add New` action button.
 
 Your application should be similar to the one below:
 
@@ -320,10 +320,10 @@ Your application should be similar to the one below:
 
 We now need to transition to a different screen when creating a task.
 
-We therefore need to declare two screens so that one
+We, therefore, need to declare two screens so that one
 displays the tasks and another one to add a new task. Both of these screens will be managed by `ScreenManager` class.
 
-Edit your `main.py` file to look as this:
+Edit your `main.py` file to look like this:
 
 `[YOUR-FOLDER]/main.py`
 
@@ -403,7 +403,7 @@ enabling access to the screen by defining ` on_press: root.manager.current = 'sc
 You should now be able to explore the two screens and see the "Home" text in the `HomeScreen`, and "Add to list..." in the `AddScreen`
 
 ### Using the Django API
-Let's create a class that has a function that send requests to our server for available tasks.
+Let's create a class that has a function that sends requests to our server for available tasks.
 
 Under the `class Menu(BoxLayout):` declaration, add the following lines of code:
 
@@ -486,7 +486,7 @@ BoxLayout:
         text: "Add to list..."
 ```
 
-- The `MyRecycleView` class is initialized by having a function `load_data` that make requests to the server using the `requests` library.
+- The `MyRecycleView` class is initialized by having a function `load_data` that makes requests to the server using the `requests` library.
 - The data is appended to a list containing dictionaries of the tasks with the key `text`. The function returns the list as a `data` variable.
 - The function is called every second by setting a clock interval of 1.
 
@@ -500,7 +500,7 @@ You should now be able to see the `code` task we created in our web-based interf
 
 Let us now handle the functionality of creating a new task.
 
-We begin by creating form to submit the creation request to our server.
+We begin by creating a form to submit the creation request to our server.
 
 We then add the form to our `AddScreen` screen. This will make our application complete.
 
