@@ -405,9 +405,7 @@ y = df[['mysql', 'python', 'php']]
 ### Dataset split
 
 We split the dataset into train set and test set. We will use the train set to build our model while the text set is used to gauge the model performance.
-
-We use the `train_test_split` to split our dataset into two. 70% of the split dataset is used as the train set, and 30% is used as the test set.
-
+We use the `train_test_split` to split our dataset into two. 70% of the dataset is used as the train set, and 30% is used as the test set.
 ```python
 X_train,X_test,y_train,y_test = train_test_split(Xfeatures,y,test_size=0.3,random_state=42)
 ```
