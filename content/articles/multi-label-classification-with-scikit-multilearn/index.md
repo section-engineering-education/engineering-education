@@ -3,7 +3,8 @@ Multi-label classification allows us to classify data sets with more than one ta
 For example, when predicting a given movie category, it may belong to horror, romance, adventure, action, or simultaneously. In this example, we have multi-labels that can be assigned to a given movie. In multi-class classification, an input belongs to only a single label. For example, when predicting if a given image belongs to a cat or a dog, the output can be either a cat or dog but not both at the same time.
 
 In this tutorial, we will be dealing with multi-label text classification, and we will build a model that classifies a given text input into different categories. Our text input can belong to multiple categories or labels at the same time.
-We will use scikit-multilearn in building our model. Scikit-multilearn is a python library built on top of scikit-learn and is best suited for multi-label classification.
+We will use [scikit-multilearn](http://scikit.ml/) in building our model. [Scikit-multilearn](http://scikit.ml/) is a python library built on top of [scikit-learn](https://scikit-learn.org/stable/) and is best suited for multi-label classification.
+
 ### Table of contents
 
 - [Prerequisites](#prerequisites)
@@ -45,7 +46,11 @@ A reader must have:
 
 ### Introduction
 
-We have different methods and techniques used for multi-label classification. These methods are as follows.
+Multi-label classification originated from the investigation of text categorization problems, where each document may belong to several predefined topics simultaneously. Multi-label classification of textual data is an important problem that requires advanced methods and specialized machine learning algorithms that support predicting multiple-labeled classes.
+
+In the multi-label problem there is no constraint on how many labels a text can be assigned to, the more the labels the more complex the problem, to solve these problems we have different methods and techniques specific to multi-label classification.
+
+These methods and techniques are as follows.
 
 1. Problem Transformation.
 2. Adapted Algorithm.
@@ -80,6 +85,8 @@ In this technique, we have multiple classifiers connected in a chain. The first 
 This is a sequential process where an output of one classifier is used as the input of the next classifier in the chain, as shown in the image below.
 
 ![Classifier chain sequence](/engineering-education/multi-label-classification-with-scikit-multilearn/chain-sequence.png)
+
+*[Image source: Medium](https://miro.medium.com/max/2000/1*ycwr_uE8_5lnOMNCnFOuXQ.png)*
 
 To give a more detailed understanding, let's use this example as shown in this image.
 ![Classifier chains](/engineering-education/multi-label-classification-with-scikit-multilearn/classifier-chains.png)
@@ -151,9 +158,33 @@ The output is as shown.
 
 ![Dataset structure](/engineering-education/multi-label-classification-with-scikit-multilearn/dataset-structure.jpg)
 
+The image above shows the columns in our dataset, these columns are as follows.
+
+#### title
+
+The title column contains the texts that are used as input for our model during training.
+
+#### tags
+
+This column contains the various labels that are assigned to our input text. These tags are `php`, `mysql` and `python`.
+
+#### mysql
+
+This is used to classify a text that belongs to the `mysql` class. If it is `mysql` it's assigned `1` and `0` if it's not related.
+
+#### php
+
+This is used to classify a text that belongs to the `php` class. If it is `php` it's assigned `1.0` and `0.0` if it's not related.
+
+#### python
+
+This is used to classify a text that belongs to the `python` class. If it is `python` it's assigned `1.0` and `0.0` if it's not related.
+
+From the image above, we can see that some texts belong to the different classes at the same time, the text in the first row belongs to both `mysql` and `python`.
+
 ### Datatype of our labels
 
-We check the datatype of our labels; they need to have a uniform data type.
+We check the data type of our labels; they need to have a uniform data type.
 
 ```python
 df.dtypes
@@ -202,7 +233,7 @@ In the above code snippet, we have imported the following.
 #### MultinomialNB
 
 This is a method found in the Naive Bayes algorithm used in building our model, and it is best suited for classification that contains discrete features such a text.
-For detailed understanding about `MultinomialNB`, click [here](https://towardsdatascience.com/naive-bayes-classifier-81d512f50a7c)
+For a detailed understanding about `MultinomialNB`, click [here](https://towardsdatascience.com/naive-bayes-classifier-81d512f50a7c)
 
 #### accuracy_score
 
@@ -214,7 +245,7 @@ This is used to determine the fraction of incorrect predictions of a given model
 
 #### train_test_split
 
-We use this method to split our dataset into two sets, train set and test set.
+We use this method to split our dataset into two sets, train set, and test set.
 
 #### TfidfVectorizer
 
@@ -252,9 +283,9 @@ Stop words are removed since they do not have a high classification power during
 
 We remove noisy data that affect our model during training and bring errors in our model.
 
-To perform text preprocessing, we need to install the neat text package. Neat text is a Python package that is used for textual data cleaning and text preprocessing.
+To perform text preprocessing, we need to install the [neattext](https://pypi.org/project/neattext/) package. [Neattext](https://pypi.org/project/neattext/) is a Python package that is used for textual data cleaning and text preprocessing.
 
-#### Neat text installating
+#### Neattext installation
 
 Let's install using the following command.
 
@@ -264,7 +295,7 @@ Let's install using the following command.
 
 Let's load this package.
 
-#### Loading neat text
+#### Loading neattext
 
 ```python
 import neattext as nt
@@ -366,19 +397,29 @@ Feature engineering involves extracting features and properties from our data. F
 
 #### TfidfVectorizer initilization
 
+Let's initialize `TfidfVectorizer()`. It will be used used to extract words from the texts in the dataset, it then transforms the words into numeric values based on the frequency of each word that occurs in the entire text.
+
+The numeric values will be the features for our model and are used as inputs for the model, numeric values are more machine-readable as compared to text, that is why convert the text into numeric values.
+
+For a detailed practical guide of how `TfidfVectorizer` works behind the scenes click [here](https://medium.com/@cmukesh8688/tf-idf-vectorizer-scikit-learn-dbc0244a911a)
+
 ```python
 tfidf = TfidfVectorizer()
 ```
 
-#### Building features
+After initialization, we can now start extracting the features.
 
-We build features that act as input in our system; it will use these features for predictive analysis when building our model.
+#### Extracting features
+
+The features will be numeric values as stated above, the features will be used as input for the model during training and predictive analysis.
 
 ```python
 Xfeatures = tfidf.fit_transform(corpus).toarray()
 ```
 
-We fit our `Xfeatures` into our clean data set that we saved in a variable called `corpus`. We also need to transform our feature into an array for it to become machine-readable. Arrays can be easily be loaded into our model.
+We extract features from `corpus`, `corpus` is the variable that contains our clean dataset with all the stop words removed, `tfidf.fit_transform` is used to extract the words from the texts(features) and transform them into numeric values which our model can understand.
+
+We finally convert our feature into an array for it to become machine-readable. Arrays can be easily be loaded into our model.
 
 To see our array of features, use this command.
 
@@ -406,6 +447,7 @@ y = df[['mysql', 'python', 'php']]
 
 We split the dataset into train set and test set. We will use the train set to build our model while the text set is used to gauge the model performance.
 We use the `train_test_split` to split our dataset into two. 70% of the dataset is used as the train set, and 30% is used as the test set.
+
 ```python
 X_train,X_test,y_train,y_test = train_test_split(Xfeatures,y,test_size=0.3,random_state=42)
 ```
@@ -450,7 +492,7 @@ As shown, it uses the `MultinomialNB()` to handle the converted multi-class prob
 
 We test our model using the test data. We see if the model can make a prediction using the test data.
 
-```pyhthon
+```python
 br_prediction = binary_rel_clf.predict(X_test)
 ```
 
@@ -509,6 +551,7 @@ The output is as shown.
 0.06060606060606061
 ```
 
+The Hamming loss is the fraction of labels that are incorrectly predicted, in the output above we have a hamming loss of `6.06%` expressed as a percentage. This shows that out of all the predictions, only `6.06%` of the predictions were wrong, this percentage is low and shows that our model was well trained. Continuous training will reduce this percentage, making the model more accurate.
 Let's go to the next technique.
 
 ### Classifier chains technique
@@ -558,9 +601,9 @@ The output is as shown.
 {'accuracy:': 0.8409090909090909, 'hamming_score': 0.10606060606060606}
 ```
 
-The accuracy score for this technique is slightly lower than that of the binary relevance technique. The accuracy expressed as a percentage is about `84.09%`.
+The accuracy score for this technique is slightly lower than that of the binary relevance technique. The accuracy expressed as a percentage is about `84.09%`. The hamming loss is `10.6%`, this percentage is quite high as compared to the previous technique. This shows that the binary relevance technique is better than the classifier chains technique.
 
-Let's go to the last technique.
+Let's go to the last technique so that we can compare the three techniques and see which one is the best.
 
 ### Labelpowerset technique
 
