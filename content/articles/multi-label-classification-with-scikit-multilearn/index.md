@@ -3,9 +3,7 @@ Multi-label classification allows us to classify data sets with more than one ta
 For example, when predicting a given movie category, it may belong to horror, romance, adventure, action, or simultaneously. In this example, we have multi-labels that can be assigned to a given movie. In multi-class classification, an input belongs to only a single label. For example, when predicting if a given image belongs to a cat or a dog, the output can be either a cat or dog but not both at the same time.
 
 In this tutorial, we will be dealing with multi-label text classification, and we will build a model that classifies a given text input into different categories. Our text input can belong to multiple categories or labels at the same time.
-
-We will use scikit-multi learn in building our model. Scikit-multi learn is a python library built on top of scikit-learn and is best suited for multi-label classification.
-
+We will use scikit-multilearn in building our model. Scikit-multilearn is a python library built on top of scikit-learn and is best suited for multi-label classification.
 ### Table of contents
 
 - [Prerequisites](#prerequisites)
