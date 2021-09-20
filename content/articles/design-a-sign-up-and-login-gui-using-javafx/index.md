@@ -428,9 +428,6 @@ The Scene Builder produces the following Code:
     <font>
         <Font name="SansSerif Regular" size="14.0" />
     </font>
-    <cursor>
-        <Cursor fx:constant="TEXT" />
-    </cursor>
 </TextField>
 <ImageView fitHeight="40.0" fitWidth="35.0" layoutX="110.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
     <image>
@@ -496,7 +493,7 @@ Its code produced is as shown:
 
 ```xml
 <!-- A simple line Separator -->
-<Line endX="500.0" endY="380.0" fill="DARKGRAY" layoutY="-110.0" opacity="0.5" startX="100.0" startY="380.0" stroke="#a8a8a8ad" strokeLineJoin="BEVEL" strokeWidth="3.0" />
+<Line endX="500.0" endY="380.0" fill="DARKGRAY" layoutY="-110.0" startX="100.0" startY="380.0" style="-fx-text-fill: #A9A9A9;" strokeWidth="3.0" />
 
 ```
 
@@ -732,9 +729,6 @@ Its code is shown below:
     <font>
         <Font name="SansSerif Regular" size="14.0" />
     </font>
-    <cursor>
-        <Cursor fx:constant="TEXT" />
-    </cursor>
 </TextField>
 <ImageView fitHeight="40.0" fitWidth="35.0" layoutX="110.0" layoutY="320.0" pickOnBounds="true" preserveRatio="true">
     <image>
@@ -780,17 +774,17 @@ Its code is shown below:
         <Font name="SansSerif Regular" size="15.0" />
     </font>
 </Label>
-<RadioButton layoutX="300.0" layoutY="515.0" mnemonicParsing="false" selected="true" text="Male" textFill="DARKGRAY">
+<RadioButton layoutX="300.0" layoutY="515.0" mnemonicParsing="false" selected="true" text="Male" style="-fx-text-fill: #A9A9A9;">
     <toggleGroup>
         <ToggleGroup fx:id="Gender" />
     </toggleGroup>
     <font>
-        <Font size="14.0" />
+        <Font name="SansSerif Regular" size="14.0" />
     </font>
 </RadioButton>
-<RadioButton layoutX="390.0" layoutY="515.0" mnemonicParsing="false" text="Female" textFill="DARKGRAY" toggleGroup="$Gender">
+<RadioButton layoutX="390.0" layoutY="515.0" mnemonicParsing="false" text="Female" style="-fx-text-fill: #A9A9A9;" toggleGroup="$Gender">
     <font>
-        <Font size="14.0" />
+        <Font name="SansSerif Regular" size="14.0" />
     </font>
 </RadioButton>
 <CheckBox fx:id="termsConditionsCheckbox" layoutX="160.0" layoutY="545.0" mnemonicParsing="false" selected="true" style="-fx-text-fill: #A9A9A9;" text="I have read the Terms and Conditions">
@@ -802,10 +796,10 @@ Its code is shown below:
 <!-- Sign up button -->
 <Button fx:id="signUpButton" layoutX="230.0" layoutY="615.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="130.0" style="-fx-background-color: #24a0ed; -fx-text-fill: white; -fx-border-radius: 5; -fx-border-width: 2; -fx-border-color: #24a0ed;" text="Sign-Up">
     <font>
-        <Font size="15.0" />
+        <Font name="SansSerif Regular" size="15.0" />
     </font>
 </Button>
-<Button layoutX="200.0" layoutY="660.0" mnemonicParsing="false" style="-fx-background-color: transparent; -fx-text-fill: #A9A9A9;" text="Terms and Conditions" underline="true">
+<Button layoutX="230.0" layoutY="660.0" mnemonicParsing="false" style="-fx-background-color: transparent; -fx-text-fill: #A9A9A9;" text="Terms and Conditions" underline="true">
     <font>
         <Font size="15.0" />
     </font>
