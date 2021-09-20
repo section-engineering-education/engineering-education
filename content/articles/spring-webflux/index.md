@@ -1,7 +1,26 @@
-### Introduction
-Reactive programming is a programming paradigm that supports an asynchronous, event-driven, and non-blocking approach to data processing. The reactive programming paradigm organizes events and data as streams.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /spring-webflux/
+title: Getting Started with Spring Boot Webflux
+description: This article will guide you on how to create a simple student management system using Spring Webflux and MongoDB.
+author: sumba-elvis
+date: 2021-09-20T00:00:00-02:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
-In the reactive programming paradigm, when a request is made, other tasks are executed while waiting for the results. When the data is available, a notification is sent with the data through the callback function. The reactive programming paradigm is suitable for data-driven applications such as chat apps.
+  - url: /engineering-education/spring-webflux/hero.png
+    alt: Getting started with Spring Boot Webflux Hero Image
+---
+Reactive programming supports an asynchronous, event-driven, and non-blocking approach to data processing. It organizes events and data as streams.
+<!--more-->
+In reactive programming paradigm, when a request is made, other tasks are executed while waiting for the results. 
+
+When the data is available, a notification is sent with the results through the callback function. 
+
+The reactive programming paradigm is, therefore, suitable for data-driven applications such as chat apps.
 
 In this tutorial, we are going to create a student management system using Spring Webflux and MongoDB.
 
@@ -12,10 +31,10 @@ In this tutorial, we are going to create a student management system using Sprin
 - Knowledge of [MongoDB](https://www.mongodb.com/).
 
 ### Streams API
-Software developers at Netflix, Twitter, Pivotal, and Redhat created the streams API. Streams API defines four interfaces below.
+Software developers at Netflix, Twitter, Pivotal, as well as Redhat collaborated and created the streams API. Streams API defines four interfaces, discussed below.
 
 #### Publisher
-The publisher interface emits events to subscribers based on the request sent by the subscribers. Thus, a single publisher can serve several subscribers.
+The publisher interface emits events to subscribers based on the request sent. Thus, a single publisher can serve several subscribers.
 
 ```java
 public interface Publisher<T> 
@@ -52,28 +71,28 @@ public interface Subscription<T>
 The `Processor` interface represents the processing stage containing both the `Publisher` and the `Subscriber`.
 
 ```java
-public interface Processor<T, R> extends Subscriber<T>, Publisher<R> 
-{
+public interface Processor<T, R> extends Subscriber<T>, Publisher<R>{
 
 }
 ```
 
-> There are two popular implementations of the reactive streams, [RxJava](https://github.com/ReactiveX/RxJava) and [Project reactor](https://projectreactor.io/).
+> The two popular implementations of reactive streams are [RxJava](https://github.com/ReactiveX/RxJava) and [Project reactor](https://projectreactor.io/).
 
 ### Spring Webflux
 Spring Webflux is similar to Spring MVC, but it supports reactive and non-blocking streams.
 
-Webflux has two publishers:
+Spring Webflux has two publishers:
 
 #### Mono
-`Mono` is a publisher that returns 0 or 1 element.
+`Mono` is a publisher that returns `0` or `1` element.
+
 ```java
 Mono<String> mono = Mono.just("Jonh");
 Mono<String> mono = Mono.empty();
 ```
 
 #### Flux
-`Flux` is a publisher that emits 0 or N elements.
+`Flux` is a publisher that emits `0` or `N` elements.
 
 ```java
 Flux<String> flux = Flux.just("x", "y", "z");
@@ -87,12 +106,14 @@ flux.subscribe();
 
 ### Application Setup
 We are going to use [spring initializr](https://start.spring.io/) to generate our application startup code.
+
 1. On your web browser, navigate to [spring initializr](https://start.spring.io/).
 2. Input the group as `io.section` and name as `webfluxexample`.
 3. Add `Spring webflux`, `Mongo reactive`, and `Lombok` as project dependencies.
 4. Click generate to download the startup project files as a zip.
 5. Extract the zip file and open the project in your favorite code editor or IDE.
 6. Add the following dependencies below to the `pom.xml` file.
+
    ```xml
    <dependencies>
      <dependency>
@@ -110,8 +131,7 @@ We are going to use [spring initializr](https://start.spring.io/) to generate ou
    ```
 
 ### Configuration layer
-
-1. Create a new file named `MongoConfig.java` in the `config` package we created earlier and add the code snippet below.
+Create a new file named `MongoConfig.java` in the `config` package that we created earlier and then add the code snippet below.
    
 ```java
 @Configuration
@@ -141,28 +161,30 @@ public class MongoDBConfig extends AbstractReactiveMongoConfiguration {
         return new ReactiveMongoTemplate(reactiveMongoClient(), getDatabaseName());
     }
 }
-
 ```
+
 > For instructions on creating MongoDB collection in Mongo atlas, read [Spring Data and MongoDB](/engineering-education/spring-data-mongodb/).
 
+In the `config` package, create a new file named `WebFluxConfig.java` and add the code snippet below.
 
-4. In the `config` package, create a new file named `WebFluxConfig.java` and add the code snippet below.
 ```java
 @Configuration // Marks the class as configuration class
 @EnableWebFlux // Enables Webflux in our application
 public class WebFluxConfig implements WebFluxConfigurer {
 }
-
 ```
-5. In the resources directory, add the code snippet below in the `applications.properties` file.
+
+In the resources directory, add the code snippet below in the `applications.properties` file.
+
 ```yml
 database.name=myFirstDatabase # database name property
 database.host = mongodb+srv://<username>:<password>@cluster0.mk0n7.gcp.mongodb.net/myFirstDatabase?retryWrites=true&w=majority #database connection string from mongo atlas
 ```
 
 ### Data layer
-1. In the root project package, create a new package named `model`.
-2. In the `model` package created above, create a new file named `Student.java` and add the code snippets below.
+In the root project package, create a new package named `model`.
+
+In the `model` package created above, create a new file named `Student.java` and add the code snippets below.
    
 ```java
 @Scope(scopeName = "request", proxyMode = ScopedProxyMode.TARGET_CLASS)
@@ -178,8 +200,9 @@ public class Student {
 ```
 
 ### Repository layer
-1. In the root project directory, create a new package named `repository`.
-2. Create a new file named `StudentRepository.java` in the `repository` package created above.
+In the root project directory, create a new package named `repository`.
+
+Create a new file named `StudentRepository.java` in the generated `repository` package.
     
 ```java
 public interface StudentRepository extends ReactiveMongoRepository<Student, Integer> {
@@ -190,8 +213,10 @@ public interface StudentRepository extends ReactiveMongoRepository<Student, Inte
 ```
 
 ### Service layer
-1. In the root project package, create a new package named `service`.
-2. Create a file named `StudentService.java` and add the code snippet below. 
+In the root project package, create a new package named `service`.
+
+Create a file named `StudentService.java` and add the code snippet below. 
+
 ```java
 public interface StudentService {
     void createStudent(Student student); // Returns null after creating a student
@@ -209,7 +234,8 @@ public interface StudentService {
 }
 ```
 
-3. In the `service` package, create a new file named `StudentServiceImpl.java` and add the code snippet below.
+In the `service` package, create a new file named `StudentServiceImpl.java` and add the code snippet below.
+
 ```java
 @Service
 @AllArgsConstructor
@@ -257,8 +283,10 @@ public class StudentServiceImpl implements StudentService {
 ```
 
 ### Controller layer
-1. In the root project package, create a new package named `controllers`.
-2. Create a new file named `StudentController.java` in the `controllers` package created above.
+In the root project package, create a new package named `controllers`.
+
+Create a new file named `StudentController.java` in the `controllers` package created above.
+
 ```java
 @RestController // Marks this class as a REST controller
 @RequestMapping("/api/students") // Sets the base URL for students API
@@ -302,7 +330,9 @@ public class StudentController {
 }
 
 ```
+
 We need to populate the database with some dummy data whenever our application starts.
+
 In the application class, add the code snippet below.
 
 ```java
@@ -337,9 +367,10 @@ public class WebFluxExampleApplication {
 
 ```
 ### Testing
-Let's run the application and test in postman.
+We will test the application using [Postman](https://www.postman.com/).
+
 #### Adding a student
-Make a POST request to `http://localhost:8080/api/students` on postman, passing the JSON payload below in the request body.
+Make a POST request to `http://localhost:8080/api/students` on Postman, and pass the following JSON payload in the request body.
 
 ```json
 {
@@ -354,12 +385,12 @@ Make a GET request to `http://localhost:8080/api/students` on Postman.
 ![Get all students](/engineering-education/spring-webflux/get_all.png)
 
 #### Getting a student by id
-Make a GET request to `http://localhost:8080/api/students/id/2` on Postman. Number 2 at the end of the URL is the id of the student.
+Make a GET request to `http://localhost:8080/api/students/id/2` on Postman. Number `2` at the end of the URL is the student's id.
 
 ![Get student by id](/engineering-education/spring-webflux/get_by_id.png)
 
 #### Getting student by name
-Make a GET request to `http://localhost:8080/api/students/name/Denis`on Postman. Denis is the name of the student whose details will be returned.
+Make a GET request to `http://localhost:8080/api/students/name/Denis`on Postman. `Denis` is the name of the student whose details will be returned.
 
 ![Getting student by name](/engineering-education/spring-webflux/get_by_name.png)
 
@@ -383,4 +414,10 @@ The number 2 at the end of the URL is the id of the student to be deleted.
 ![Deleting student](/engineering-education/spring-webflux/delete.png)
 
 ### Conclusion
-With the knowledge you have gained from reading this article, try implementing a chat system using Spring Boot Webflux with any frontend client of your choice. You can download the complete source code [here](https://replit.com/@sumbaelvis/springwebflux#).
+With the knowledge you have gained from reading this article, try implementing a chat system using Spring Boot Webflux with any frontend client of your choice. 
+
+You can download the complete source code [here](https://replit.com/@sumbaelvis/springwebflux#).
+
+
+---
+Peer Review Contributions by: [John Amiscaray](/engineering-education/authors/john-amiscaray/)
