@@ -32,22 +32,32 @@ Below are three major benefits that a private Domain Name System would offer:
 #### Step 1: Update Packages
 
 It is always important to start by updating the Linux packages available in your raspberry PI
+
+```bash
 sudo apt update
 sudo apt upgrade
+```
 
 ![ Updating Packages](/engineering-education/setting-up-a-private-dns-server-with-raspberry-pi/update.png) 
 
 #### Step 2: Install DNSMasq
 The next step is the installation of DNSMasq utility, which is essential to set up this server.
+
+```bash
 sudo apt install dnsmasq
- 
+ ```
+
 ![ Install DNSMasq ](/engineering-education/setting-up-a-private-dns-server-with-raspberry-pi/install_dnsmasq.png)
 
 #### Step 3: DNSMasq Configuration
 
 This step is designed to ensure the best performance of the DNS server.
 1.	Use the command below to edit dnsmasq.conf file using nano editor
+
+```bash
 sudo nano /etc/dnsmasq.conf
+```
+
 2.	Use CTRL+W to search and remove the # sign in front of the following lines:
 •	domain-needed – it makes sure that the DNS server does not forward any incorrect domain names. This checks for names that do not have a dot and keeps them in the local network.
 •	bogus-priv – prevents the server from forwarding queries within local ranges of IP to upstream servers which serve as a security feature that prevents leaking of local IPs to upstream servers. 
@@ -73,9 +83,16 @@ Changing the size of cache to a bigger number helps reduce the response time by 
 
 5. Use CTRL+X to save the file then use Y to accept the changes.
 6. Restart the DNSMasq using the command below: 
+
+```bash
 sudo systemctl restart dnsmasq
+```
+
 7. check the status of the server using the command below:
+
+```bash
 sudo systemctl standing dnsmasq
+```
  
 ![ Restart and Checking Status ](/engineering-education/setting-up-a-private-dns-server-with-raspberry-pi/status.png)
 
@@ -84,7 +101,10 @@ sudo systemctl standing dnsmasq
 1. The server is tested using the dig command.
 dig <domain> @localhost
 For instance:
+
+```bash
 dig section.io/kb @localhost
+ ```
  
 ![ DNS Testing ](/engineering-education/setting-up-a-private-dns-server-with-raspberry-pi/responsetime1.png)
 
