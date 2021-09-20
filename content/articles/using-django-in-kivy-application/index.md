@@ -1,33 +1,35 @@
-### Using Django in Kivy applications
-
-### Introduction
-
 Kivy is a popular library for developing media-rich multi-touch enabled applications that can run across all major platforms.
-There may, however, be situations that need your application to get access to and manipulate data being provided by a web server hosted at a site.In this tutorial, we are going to learn how to create a kivy application and how to make requests to a server using the `requests` library. We are going to use Django to develop the server that holds the data we want to manipulate.
+
+There may, however, be situations that need your application to get access to and manipulate data being provided by a web server hosted at a site.
+
+In this tutorial, we are going to learn how to create a kivy application and how to make requests to a server using the `requests` library.
+
+We are going to use Django to develop the server that holds the data we want to manipulate.
 
 ### Prerequisites
 For you to follow along, it's important that:
-1. You have `Django` and `djangorestframework` installed.
-2. You are familiar with building APIs using Django REST framework.
-3. You have the `kivy` library installed. You can run `pip install kivy`.
-4. Basic knowledge of python is important, especially the concept of object-oriented programming in python.
+- You have `Django` and `djangorestframework` installed.
+- You are familiar with building APIs using Django REST framework.
+- You have the `kivy` library installed. You can run `pip install kivy`.
+- Basic knowledge of python is important, especially the concept of object-oriented programming in python.
 
-### Takeaways
-1. Improve your python skills.
-2. Learn how to build applications using the `kivy` library.
-3. Learn how to use Django for your kivy applications.
+### Key takeaways
+- Improve your python skills.
+- Learn how to build applications using the `kivy` library.
+- Learn how to use Django for your kivy applications.
 
-### Getting Started
-We are going to create a simple to-do application that allows one to view available tasks and
-offers an option for adding a new task.We will begin by creating the tasks API with `djangorestframework`
-and then create our application using `kivy`. We will use the `requests` library to make
+### Getting started
+We are going to create a simple to-do application that allows one to view available tasks  offers an option for adding a new task.We will begin by creating the tasks API with `djangorestframework` and then create our application using `kivy`. We will use the `requests` library to make
 requests to our Django server.
 
 ### Creating the tasks API
-In a folder of choice, let's create a new project by running `django-admin startproject TodoAPI`.Cd into the `TodoAPI` project and create a new app
-`tasks` that will handle creation of tasks. Run `python3 manage.py startapp tasks`. Your project structure should look something like this:
+In a folder of choice, let's create a new project by running `django-admin startproject TodoAPI`.Cd into the `TodoAPI` project and create a new app `tasks` that will handle creation of tasks.
 
-```buildoutcfg
+Run `python3 manage.py startapp tasks`.
+
+Your project structure should look something like this:
+
+```
 .
 └── TodoAPI
     ├── manage.py
@@ -46,10 +48,8 @@ In a folder of choice, let's create a new project by running `django-admin start
         ├── settings.py
         ├── urls.py
         └── wsgi.py
-
-
-
 ```
+
 We need to register our `tasks` app and `rest_framework` in order to use our app and use the  Django REST framework. Edit the `settings.py` file as follows under `INSTALLED APPS`:
 
 `TodoAPI/settings.py`
@@ -64,11 +64,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'tasks',
     'rest_framework'
-
 ```
+
 Let's go ahead and create our tasks model.Edit the `models.py` file to look as follows:
 
 `tasks/models.py`
+
 ```python
 from django.db import models
 
@@ -92,8 +93,8 @@ class TaskSerializer(serializers.ModelSerializer):
     class Meta:
         model = Task
         field = '__all__'
-
 ```
+
 ### Creating views
 We are going to also create some views to render data to a web page. Views are python functions that handle web requests and return web responses. There are different ways to create the views and we will use
 fuction-based views.Function-based views are views in Django written as python functions. Edit the `views.py` file to match the following:
@@ -109,7 +110,6 @@ from rest_framework.response import Response
 from .serializers import *
 from .models import *
 
-
 # Create your views here.
 
 @api_view(['GET'])
@@ -118,19 +118,21 @@ def all_tasks(request):
     serializer = TaskSerializer(tasks, many=True)
     return Response(serializer.data, status=status.HTTP_200_OK)
 
-
 @api_view(['POST'])
 def create_task(request):
     data = request.data
     serializer = TaskSerializer(data=data)
     if serializer.is_valid():
         return Response(serializer.data, status=status.HTTP_200_OK)
-
 ```
-We begin by defining a function `all_tasks` that will return a response containing all our tasks. The function gets all the tasks with the line `tasks = Task,objects.all()` The data is then serialized on the succeeding line and the function returns the response.The line `@api_view(['GET'])` is a decorator takes `GET` as the HTTP method our function should respond to. The same concept applies to the our second function, only that this time it takes a `POST` HTTP method.
+
+We begin by defining a function `all_tasks` that will return a response containing all our tasks. The function gets all the tasks with the line `tasks = Task,objects.all()`.
+
+The data is then serialized on the succeeding line and the function returns the response.The line `@api_view(['GET'])` is a decorator takes `GET` as the HTTP method our function should respond to.
+
+The same concept applies to the our second function, only that this time it takes a `POST` HTTP method.
 
 ### Routing views
-
 We then create a `urls.py` file to for routing our views. Create the file and add the following code:
 
 `tasks/urls.py`
@@ -144,6 +146,7 @@ urlpatterns = [
     path('create', views.create_task, name='create_task')
 ]
 ```
+
 The above mappings imply that our requests will first be handled by this file and then routed to a corresponding view function. For instance, when we visit `http://127.0.0.1:8000/create`, the `create_task` function is called and implemented.
 
 We have to create a route for our `tasks` app.This way, the routing first occurs on the `TodoAPI/urls.py` file and then `tasks/urls.py`. We therefore configure our `urls.py` file in `TodoAPI` like this:
@@ -159,6 +162,7 @@ urlpatterns = [
     path('', include('tasks.urls'))
 ]
 ```
+
 We can now run `python3 manage.py makemigrations` and `python3 manage.py migrate`.
 
 When we run `python3 manage.py runserver`, we should have a page similar to this:
@@ -185,6 +189,7 @@ Our Django API is working and we can now proceed to creating the `kivy` applicat
 Let's create a `main.py` in a folder of choice.I am going to keep the file in the same directory as our `TodoAPI` project folder.We are going to get started with these lines of code in our `main.py` file.The `TodoApp` is our main entry point of our application and every execution begins from there.
 
 `Your folder/main.py`
+
 ```python
 from kivy.app import App
 
@@ -194,6 +199,7 @@ class TodoApp(App):
 if __name__ == '__main__':
     TodoApp().run()
 ```
+
 When you run the file, you should get the following result:
 
 ![Original Kivy App](/engineering-education/content/articles/using-djnago-in-kivy-application/original_kivy_app.png)
@@ -201,12 +207,12 @@ When you run the file, you should get the following result:
 We are now going to replace the `main.py` file with the following lines of code.
 
 `Your folder/main.py`
+
 ```python
 from kivy.app import App
 
 from kivy.uix.screenmanager import ScreenManager
 from kivy.uix.boxlayout import BoxLayout
-
 
 #menu
 class Menu(BoxLayout):
@@ -218,14 +224,15 @@ class ScreenManagement(ScreenManager):
 class TodoApp(App):
     pass
  
-
 if __name__ == '__main__':
     TodoApp().run()
 ```
+
 We also need to create a `kv` file where all details of user interface is entailed.Create a
 `todo.kv` file and make sure it's in the same folder as the `main.py` file. The file should resemble this one.
 
 `Your folder/todo.kv`
+
 ```kv
 
 BoxLayout:
@@ -236,8 +243,6 @@ BoxLayout:
     ScreenManagement:
         size_hint_y: .9
         id: screen_manager
-
-
 
 <Menu>:
     orientation: "vertical"
@@ -250,14 +255,14 @@ BoxLayout:
 
             ActionButton:
                 text: 'Add New'
-
 ```
+
 This is what is happening to our files:
 
-+ We begin by creating a `Menu ` class that inherits from `BoxLayout` class.This menu will contain the buttons we will use to explore the application.
-+ We then proceed by creating the `ScreenManger` class that manages the display of what is displayed where in the application.
-+ In the `todo.kv` file, we declare a `BoxLayout` as our main interface that our program will show.We then  give the menu a position of bottom set by ` size_hint_y: .1`. We also declare that it's managed by `ScreenManager` by declaring ` manager: screen_manager`.By setting the `id` property of the `ScreenManager` as `screen_manager` the position of the Menu is now on top.
-+ We the declare the properties of our `Menu` class. The class will have an action bar which will contain two buttons, the `Home` action button and the `Add New`     action button.
+- We begin by creating a `Menu ` class that inherits from `BoxLayout` class.This menu will contain the buttons we will use to explore the application.
+- We then proceed by creating the `ScreenManger` class that manages the display of what is displayed where in the application.
+- In the `todo.kv` file, we declare a `BoxLayout` as our main interface that our program will show.We then  give the menu a position of bottom set by ` size_hint_y: .1`. We also declare that it's managed by `ScreenManager` by declaring ` manager: screen_manager`.By setting the `id` property of the `ScreenManager` as `screen_manager` the position of the Menu is now on top.
+- We the declare the properties of our `Menu` class. The class will have an action bar which will contain two buttons, the `Home` action button and the `Add New`     action button.
 
 Your application should be similar to the one below:
 
@@ -269,12 +274,12 @@ displays the tasks and another one to add a new task. Both of these screens will
 Edit your `main.py` file to look as this:
 
 `Your folder/main.py`
+
 ```python
 from kivy.app import App
 
 from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.uix.boxlayout import BoxLayout
-
 
 #menu
 class Menu(BoxLayout):
@@ -294,12 +299,12 @@ class TodoApp(App):
 if __name__ == '__main__':
     TodoApp().run()
 ```
+
 And also make the `todo.kv` file to be:
 
 `Your folder/todo.kv`
 
 ```kv
-
 BoxLayout:
     orientation: 'vertical'
     Menu:
@@ -308,9 +313,6 @@ BoxLayout:
     ScreenManagement:
         size_hint_y: .9
         id: screen_manager
-
-
-
 <Menu>:
     orientation: "vertical"
     ActionBar:
@@ -338,18 +340,22 @@ BoxLayout:
 <AddScreen>:
     Label:
         text: "Add to list..."
-
 ```
+
 We declare the `HomeScreen` class and give it a `Label` instance with the text "home".We also do the same for the `AddScreen` with the label text "Add to list..."
+
 We have given both screens as children of `ScreenManagement`. We also have given functionality to our action buttons by
-making them being able to access the screen by defining ` on_press: root.manager.current = 'screen_home'` and ` on_press: root.manager.current = 'screen_add'`. You should now be able to explore the two screens
-and see the "Home" text in the `HomeScreen` and "Add to list..." in the `AddScreen`
+making them being able to access the screen by defining ` on_press: root.manager.current = 'screen_home'` and ` on_press: root.manager.current = 'screen_add'`.
+
+You should now be able to explore the two screens and see the "Home" text in the `HomeScreen` and "Add to list..." in the `AddScreen`
 
 ### Using the Django API
-Let's create a class that has a function that send requests to our server for available tasks. Under the `class Menu(BoxLayout):` declaration
-add the following lines of code:
+Let's create a class that has a function that send requests to our server for available tasks.
+
+Under the `class Menu(BoxLayout):` declaration, add the following lines of code:
 
 `Your folder/main.py`
+
 ```python
 #recycle view for home screen
 class MyRecycleView(RecycleView):
@@ -366,9 +372,9 @@ class MyRecycleView(RecycleView):
         for item in store:
             list_data.append({'text': item['name']})
 
-
         self.data = list_data
 ```
+
 You need to make this imports at the top of the file:
 
 ```python
@@ -376,6 +382,7 @@ import requests
 from kivy.clock import Clock
 from kivy.uix.recycleview import RecycleView
 ```
+
 Make your `todo.kv` file to look like this:
 
 `Your folder/todo.kv`
@@ -389,9 +396,6 @@ BoxLayout:
     ScreenManagement:
         size_hint_y: .9
         id: screen_manager
-
-
-
 <Menu>:
     orientation: "vertical"
     ActionBar:
@@ -430,8 +434,11 @@ BoxLayout:
     Label:
         text: "Add to list..."
 ```
+
 The `MyRecycleView` class is initialized by having a function `load_data` that make requests to our server using the `requests` library.
+
 The data is appended to a list containing dictionaries of our tasks with the key `text`. The function returns the list as a `data` variable.
+
 The function is called every second by setting a clock interval of 1.
 
 In the `todo.kv` file, we replace the contents of our `HomeScreen` with a `BoxLayout` that contains our `MyRecycleView` class.
@@ -458,10 +465,8 @@ from kivy.uix.recycleview import RecycleView
 from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.uix.boxlayout import BoxLayout
 
-
 #menu
 from kivy.uix.widget import Widget
-
 
 class Menu(BoxLayout):
     pass
@@ -479,8 +484,6 @@ class MyRecycleView(RecycleView):
         list_data = []
         for item in store:
             list_data.append({'text': item['name']})
-
-
         self.data = list_data
 #screens
 class HomeScreen(Screen):
@@ -489,8 +492,6 @@ class AddNewForm(Widget):
     text_input = ObjectProperty(None)
 
     input = StringProperty('')
-
-
 
     def submit_input(self):
         self.input = self.text_input.text
@@ -516,6 +517,7 @@ class TodoApp(App):
 if __name__ == '__main__':
     TodoApp().run()
 ```
+
 Let us also edit the `todo.kv ` to:
 
 `your folder/todo.kv`
@@ -529,9 +531,6 @@ BoxLayout:
     ScreenManagement:
         size_hint_y: .9
         id: screen_manager
-
-
-
 <Menu>:
     orientation: "vertical"
     ActionBar:
@@ -578,6 +577,7 @@ BoxLayout:
         text: 'Submit'
         on_release: root.submit_input()
 ```
+
 The `AddNewForm` contains a function `submit_input` that makes a post request to our server passing the input text as data.
 The form has a textinput that one can type the task, and a button that calls the `submit_input` function when released.
 We then declare a `BoxLayout ` class that will contain the `AddNewForm` and a label text "Add to list..."
