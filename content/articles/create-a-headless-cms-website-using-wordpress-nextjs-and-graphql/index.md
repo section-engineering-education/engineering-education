@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /create-a-headless-cms-website-using-wordpress-nextjs-and-graphql/
 title: How to Create a Headless CMS Website using WordPress, Next.js, and GraphQL Queries (WPGraphQL)
-description: In this guide we will learn how we can use Next.js to run WordPress as a headless CMS.
+description: In this guide we will learn how we can use Next.js to run WordPress as a headless CMS. Next.js uses generators that render a static spage.
 author: catherine-macharia
 date: 2021-09-20T00:00:00-14:00
 topics: [Languages]
