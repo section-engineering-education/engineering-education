@@ -1,8 +1,8 @@
-Multi-label classification allows us to classify data sets with more than one target variable. In multi-label classification, we have several labels that are the outputs for a given prediction. When making predictions a given input may belong to more than one label.
+Multi-label classification allows us to classify data sets with more than one target variable. In multi-label classification, we have several labels that are the outputs for a given prediction. When making predictions, a given input may belong to more than one label.
 
-For example, when predicting a given movie category it may belong to horror, romance, adventure, action, or at the same time. In this example, we have multi-labels that can be assigned to a given movie. In multi-class classification, an input belongs to only a single label. For example, when predicting if a given image belongs to a cat or a dog, the output can be either a cat or dog but not both at the same time.
+For example, when predicting a given movie category, it may belong to horror, romance, adventure, action, or simultaneously. In this example, we have multi-labels that can be assigned to a given movie. In multi-class classification, an input belongs to only a single label. For example, when predicting if a given image belongs to a cat or a dog, the output can be either a cat or dog but not both at the same time.
 
-In this tutorial we will be dealing with multi-label text classification, we will build a model that classifies a given text input into different categories. Our text input can belong to multiple categories or labels at the same time.
+In this tutorial, we will be dealing with multi-label text classification, and we will build a model that classifies a given text input into different categories. Our text input can belong to multiple categories or labels at the same time.
 
 We will use scikit-multi learn in building our model. Scikit-multi learn is a python library built on top of scikit-learn and is best suited for multi-label classification.
 
@@ -63,32 +63,32 @@ It refers to converting the multi-label dataset into a single-label dataset. Sin
 
 #### Binary relevance
 
-This technique treats each label independently, the multi-labels are then separated as single-class classification.
+This technique treats each label independently, and the multi-labels are then separated as single-class classification.
 
 For example, let's take this example as shown below.
 
-We have independent features `X1`, `X2` and `X3` and the target variables or labels are `Class1`, `Class2`, and `Class3`.
+We have independent features `X1`, `X2` and `X3`, and the target variables or labels are `Class1`, `Class2`, and `Class3`.
 
-In binary relevance, the multi-label problem is split into three unique single-class classification problems as shown in the figure below.
+In binary relevance, the multi-label problem is split into three unique single-class classification problems, as shown in the figure below.
 
 ![Binary relevance](/engineering-education/multi-label-classification-with-scikit-multilearn/binary-relevance.png)
 
-When using this technique label correlation may be lost hence we introduce a second technique.
+When using this technique, label correlation may be lost; hence we introduce a second technique.
 
 #### Classifier chains
 
-In this technique, we have multiple classifiers connected in a chain. The first classifier is build using the input data, the following classifiers are then trained using the combined inputs and the other previous classifiers in a given chain.
+In this technique, we have multiple classifiers connected in a chain. The first classifier is build using the input data. The following classifiers are trained using the combined inputs and the previous classifiers in a given chain.
 
-This is a sequential process where an output of one classifier is used as the input of the next classifier in the chain as shown in the image below.
+This is a sequential process where an output of one classifier is used as the input of the next classifier in the chain, as shown in the image below.
 
 ![Classifier chain sequence](/engineering-education/multi-label-classification-with-scikit-multilearn/chain-sequence.png)
 
 To give a more detailed understanding, let's use this example as shown in this image.
 ![Classifier chains](/engineering-education/multi-label-classification-with-scikit-multilearn/classifier-chains.png)
 
-In the image above the green-colored is the combined inputs and the remaining part represents the target variable or label. As seen it forms a chain where the output of one classifier is used as the input of the next classifier, all of this is done in sequential order.
+In the image above, the green-colored is the combined inputs, and the remaining part represents the target variable or label. As seen, it forms a chain where the output of one classifier is used as the input of the next classifier, all of this is done in sequential order.
 
-This technique preserves label correlation thus solve the problem encountered by the binary relevance technique, however, it gives a lower accuracy thus we introduce a third technique.
+This technique preserves label correlation, thus solve the problem encountered by the binary relevance technique. However, it gives a lower accuracy; therefore, we introduce a third technique.
 
 #### Label powerset
 
@@ -105,8 +105,8 @@ This technique tends to give higher accuracy.
 
 ### Adapted algorithm
 
-This technique uses adaptive algorithms which are used to directly perform multi-label classification rather than conducting problem transformation.
-In Scikit-multi learn we have multi-label-k-nearest-neighbor (MLkNN) which is used to handle multi-label classification.
+This technique uses adaptive algorithms, which are used to perform multi-label classification rather than conducting problem transformation directly.
+In Scikit-multi learn, we have multi-label-k-nearest-neighbor (MLkNN), which is used to handle multi-label classification.
 
 ### Ensemble methods
 
@@ -114,17 +114,17 @@ This is a hybrid technique that combines the functionalities of the two mentione
 
 For a detailed understanding about ensemble methods click [here](/engineering-education/boosting-algorithms-python/)
 
-> NOTE: In this tutorial, we will focus on the first technique, problem transformation in building our model.
+> NOTE: In this tutorial, we will focus on the first technique, problem transformation, in building our model.
 
-Before we start building our model let's see the dataset that we will be using.
+Before we start building our model, let's see the dataset that we will be using.
 
 ### Dataset
 
-As mentioned earlier, we will build a multi-label text classification, the model will be able to classify given text into different categories. The categories in our dataset are `mysql`, `python`, and `php`, a text can belong to one or more of the given categories. If a text belongs to a certain category it is assigned `1` if it does not it is assigned `0` as shown in the image below.
+As mentioned earlier, we will build a multi-label text classification, and the model will be able to classify given text into different categories. The categories in our dataset are `mysql`, `python`, and `php`, a text can belong to one or more of the given categories. If a text belongs to a certain category it is assigned `1`; if it does not, it is assigned `0` as shown in the image below.
 
 ![Snip of the dataset used](/engineering-education/multi-label-classification-with-scikit-multilearn/dataset-snip.jpg)
 
-To download the CSV file for this dataset click [here](https://drive.google.com/file/d/1_scJyWek8DJUZ14_wZ8GXZslpwT8ubzt/view?usp=sharing). After downloading the dataset name it as `dataset-tags.csv`.
+To download the CSV file for this dataset click [here](https://drive.google.com/file/d/1_scJyWek8DJUZ14_wZ8GXZslpwT8ubzt/view?usp=sharing). After downloading the dataset, name it as `dataset-tags.csv`.
 
 ### Loading exploratory data analysis packages
 
@@ -157,7 +157,7 @@ The output is as shown.
 
 ### Datatype of our labels
 
-We check the datatype of our labels, they need to have a uniform data type.
+We check the datatype of our labels; they need to have a uniform data type.
 
 ```python
 df.dtypes
@@ -174,7 +174,7 @@ php       float64
 dtype: object
 ```
 
-As seen the `mysql` label is an integer. We need to convert the datatype from integer to float so that all the labels can have a uniform data type.
+As seen, the `mysql` label is an integer. We need to convert the datatype from integer to float so that all the labels can have a uniform data type.
 
 #### Convert integer to float
 
@@ -184,7 +184,7 @@ We convert integer to float using the `astype(float)` method.
 df['mysql'] = df['mysql'].astype(float)
 ```
 
-Now that our dataset is clean let's import the machine learning packages.
+Now that our dataset is clean, let's import the machine learning packages.
 
 ### Loading machine learning packages
 
@@ -205,8 +205,8 @@ In the above code snippet, we have imported the following.
 
 #### MultinomialNB
 
-This is a method found in the Naive Bayes algorithm used in building our model and it is best suited for classification that contains discrete features such a text.
-For detailed understanding about `MultinomialNB` click [here](https://towardsdatascience.com/naive-bayes-classifier-81d512f50a7c)
+This is a method found in the Naive Bayes algorithm used in building our model, and it is best suited for classification that contains discrete features such a text.
+For detailed understanding about `MultinomialNB`, click [here](https://towardsdatascience.com/naive-bayes-classifier-81d512f50a7c)
 
 #### accuracy_score
 
@@ -218,11 +218,11 @@ This is used to determine the fraction of incorrect predictions of a given model
 
 #### train_test_split
 
-We use this method to split our dataset into two sets, train set, and test set.
+We use this method to split our dataset into two sets, train set and test set.
 
 #### TfidfVectorizer
 
-Is a statistical measure that evaluates how relevant a word is to a document in a collection of documents. It does this by checking the frequency in which words appear in a certain document, if a word commonly appears in a document it has less relevant as compared to a word that is rare in a document.
+It is a statistical measure that evaluates how relevant a word is to a document in a collection of documents. It does this by checking the frequency in which words appear in a certain document. If a word commonly occurs in a document, it is less relevant than a word that is rare in a document.
 
 For detailed understanding about `TfidfVectorizer` click [here](https://medium.com/@cmukesh8688/tf-idf-vectorizer-scikit-learn-dbc0244a911a)
 
@@ -234,9 +234,9 @@ Since we are using Google Colab, we install this library using the following com
 !pip install scikit-multilearn
 ```
 
-This is the library that we will use to perform multi-label text classification. As mention earlier this tutorial will focus on problem transformation in building our model.
+This is the library that we will use to perform multi-label text classification. As mention earlier, this tutorial will focus on problem transformation in building our model.
 
-We need to import the packages needed to handle the three problem transformation techniques. The three techniques for problem transformation are binary relevance, classifier chains, and label powerset as explained earlier.
+We need to import the required packages to handle the three problem transformation techniques. As explained earlier, the three techniques for problem transformation are binary relevance, classifier chains, and label powerset.
 
 ### Importing problem transformation packages
 
@@ -301,7 +301,7 @@ df['title'].apply(lambda x:nt.TextFrame(x).noise_scan())
 Name: title, Length: 144, dtype: object
 ```
 
-We explore for noise data from the `title` column, it shows all the rows that contain noise words from the first row `0` to `143` and also the number of noise data in these rows. The first value is `11` and the last value is `7`, from these noisy data we can now extract the stop words.
+We explore the noise data from the `title` column. It shows all the rows containing noise words from the first row `0` to `143` and the number of noise data in these rows. The first value is `11,` and the last value is `7`; we can now extract the stop words from these noisy data.
 
 ### Extracting stop words
 
@@ -366,7 +366,7 @@ corpus = df['title'].apply(nfx.remove_stopwords)
 
 ### Feature engineering
 
-Feature engineering involves extracting features and properties from our data. Features are the independent units that are used for predictive analysis to influence the output. We shall use the `TfidfVectorizer()` package to conduct feature extraction which we imported earlier.
+Feature engineering involves extracting features and properties from our data. Features are the independent units that are used for predictive analysis to influence the output. We shall use the `TfidfVectorizer()` package to conduct feature extraction, which we imported earlier.
 
 #### TfidfVectorizer initilization
 
@@ -376,15 +376,15 @@ tfidf = TfidfVectorizer()
 
 #### Building features
 
-We build features that act as input in our system, when building our model, it will use these features for predictive analysis.
+We build features that act as input in our system; it will use these features for predictive analysis when building our model.
 
 ```python
 Xfeatures = tfidf.fit_transform(corpus).toarray()
 ```
 
-We fit our `Xfeatures` into our clean data set that we saved in a variable called `corpus`. We also need to transform our feature into an array for it to become machine-readable, arrays are can be easily be loaded into our model.
+We fit our `Xfeatures` into our clean data set that we saved in a variable called `corpus`. We also need to transform our feature into an array for it to become machine-readable. Arrays can be easily be loaded into our model.
 
-To see our array of features use this command.
+To see our array of features, use this command.
 
 ```python
 Xfeatures
@@ -408,9 +408,9 @@ y = df[['mysql', 'python', 'php']]
 
 ### Dataset split
 
-We split the dataset into train set and test set. The train set will be used to build our model while the text set is used to gauge the model performance.
+We split the dataset into train set and test set. We will use the train set to build our model while the text set is used to gauge the model performance.
 
-We use the `train_test_split` to split our dataset into two. 70% of the split dataset is used as the train set and 30% is used as the test set.
+We use the `train_test_split` to split our dataset into two. 70% of the split dataset is used as the train set, and 30% is used as the test set.
 
 ```python
 X_train,X_test,y_train,y_test = train_test_split(Xfeatures,y,test_size=0.3,random_state=42)
@@ -432,17 +432,17 @@ Let's initialize this technique.
 binary_rel_clf = BinaryRelevance(MultinomialNB())
 ```
 
-We also add the `MultinomialNB()` method. `MultinomialNB()` is the Naive Bayes algorithm method used for classification. This is important because by converting convert our multi-label problem to a multi-class problem we need an algorithm to handle this multi-class problem.
+We also add the `MultinomialNB()` method. `MultinomialNB()` is the Naive Bayes algorithm method used for classification. This is important because by converting convert our multi-label problem to a multi-class problem, we need an algorithm to handle this multi-class problem.
 
 #### Model fitting
 
-We fit the model into the dataset so that the model can recognize patterns from the dataset and learn on its own.
+We fit the model into the dataset to recognize patterns from the dataset and learn on its own.
 
 ```python
 binary_rel_clf.fit(X_train,y_train)
 ```
 
-After training this is the output.
+After training, this is the output.
 
 ```bash
 BinaryRelevance(classifier=MultinomialNB(alpha=1.0, class_prior=None,
@@ -450,7 +450,7 @@ BinaryRelevance(classifier=MultinomialNB(alpha=1.0, class_prior=None,
                 require_dense=[True, True])
 ```
 
-As shown it uses the `MultinomialNB()` to handle the converted multi-class problem.
+As shown, it uses the `MultinomialNB()` to handle the converted multi-class problem.
 
 #### Testing our model
 
@@ -460,7 +460,7 @@ We test our model using the test data. We see if the model can make a prediction
 br_prediction = binary_rel_clf.predict(X_test)
 ```
 
-The get the prediction output in form of an array use this command.
+The get the prediction output in the form of an array, use this command.
 
 ```python
 br_prediction.toarray()
@@ -484,7 +484,7 @@ array([[1., 0., 1.],
        [1., 0., 1.],])
 ```
 
-The above output shows how our model has classified our different text into three categories. If a text belongs to that particular category it's assigned `1`, if it does not belong to that category it's assigned `0`.
+The above output shows how our model has classified our different text into three categories. If a text belongs to that particular category it's assigned `1`; if it does not belong, it's assigned `0`.
 Let's calculate the accuracy score.
 
 #### Accuracy score
@@ -499,11 +499,11 @@ The output:
 0.9090909090909091
 ```
 
-This shows that our model has an accuracy score of `90.91`. This is a good accuracy for our model and our model has a higher chance of making accurate predictions.
+This shows that our model has an accuracy score of `90.91`. This is a good accuracy for our model, and our model has a higher chance of making accurate predictions.
 
 #### Getting Hamming loss
 
-Hamming loss is used to determine the fraction of incorrect predictions of a given model. The lower the hamming loss the better our model is at making predictions.
+Hamming loss is used to determine the fraction of incorrect predictions of a given model. The lower the hamming loss, the better our model is at making predictions.
 
 ```python
 hamming_loss(y_test,br_prediction)
@@ -519,7 +519,7 @@ Let's go to the next technique.
 
 ### Classifier chains technique
 
-This technique reserves label correlation where an output of one classifier is used as the input of the next classifier in the chain. This process occurs in sequential order.
+This technique reserves label correlation, where an output of one classifier is used as the input of the next classifier in the chain. This process occurs in sequential order.
 
 Let's create a function to help us with building our first classifier in the chain.
 
@@ -540,7 +540,7 @@ After building our first classifier instance using `mlb_estimator` and also fitt
 
 Our function then outputs the calculated accuracy and hamming score.
 
-This is the first classifier, we will use the result of this classifier as the input features for the next classifier.
+This is the first classifier. We will use the result of this classifier as the input features for the next classifier.
 
 #### Next classifier
 
@@ -552,7 +552,7 @@ clf_chain_model = build_model(MultinomialNB(),ClassifierChain,X_train,y_train,X_
 
 In this instance, we are using `MultinomialNB()` as the classification algorithm. We also need to initialize our `ClassifierChain()` method to show we are dealing with the classifier chains technique.
 
-In this situation we shall have two classifiers chained together, to get the final accuracy score use this command.
+In this situation, we shall use the following command to have two classifiers chained together to get the final accuracy score.
 
 ```python
 clf_chain_model
@@ -593,9 +593,9 @@ The output is shown.
 {'accuracy:': 0.9090909090909091, 'hamming_score': 0.06060606060606061}
 ```
 
-This gives an accuracy score of `90.9%` is a good accuracy score. When we compare the three techniques in terms of accuracy score binary relevance and label powerset techniques will be best suited for multi-label classification due to their higher accuracy score.
+This gives an accuracy score of `90.9%` which is a good accuracy score. When we compare the three techniques in terms of accuracy score, binary relevance and label powerset techniques will be best suited for multi-label classification due to their higher accuracy score.
 
-This tutorial has shown has how to use the problem transformation technique in building a multi-label text classification model.
+This tutorial has shown how to use the problem transformation technique to build a multi-label text classification model.
 
 ### Making a single prediction
 
@@ -607,7 +607,7 @@ Predictions are used to evaluate a model to see how well it learned.
 ex1 = df['title'].iloc[0]
 ```
 
-This will get the first text from the `title` column in our dataset which is: `Flask-SQLAlchemy - When are the tables/databases created and destroyed?`.
+This will get the first text from the `title` column in our dataset: `Flask-SQLAlchemy - When are the tables/databases created and destroyed?`.
 
 #### Vectorise our sample text
 
@@ -627,7 +627,7 @@ We use the binary relevance classifier to make a prediction.
 binary_rel_clf.predict(vec_example).toarray()
 ```
 
-The output is converted into an array using the `toarray()` method as shown.
+The output is converted into an array using the `toarray()` method, as shown.
 
 ```bash
 array([[1., 1., 0.]])
@@ -637,13 +637,13 @@ This is an accurate prediction since it matches exactly with the labels availabl
 
 ### Conclusion
 
-This is tutorial is helpful to someone who wants to learn about multi-label text classification. We started with the difference between multi-class classification and multi-label classification. We then learned about the three different methods used for multi-label classification.
+This tutorial is helpful to someone who wants to learn about multi-label text classification. We started with the difference between multi-class classification and multi-label classification. We then learned about the three different methods used for multi-label classification.
 
-We then used all these three techniques in building our model. We also did text preprocessing of the dataset by removing stop words and noisy data, text precessing ensures we have clean data before building our model.
+We then used all these three techniques in building our model. We also did text preprocessing of the dataset by removing stop words and noisy data; text preprocessing ensures we have clean data before building our model.
 
-In this tutorial, we were dealing with only one method which is problem transformation. Problem transformation is made up of three techniques: Binary relevance, label powerset, and classifier chains. From this tutorial, we saw that binary relevance and label powerset have a higher accuracy score as compared to classifier chains.
+In this tutorial, we were dealing with only one method, which is problem transformation. Problem transformation is made up of three techniques: Binary relevance, label powerset, and classifier chains. From this tutorial, we saw that binary relevance and label powerset have a higher accuracy score than classifier chains.
 
-Finally, we were able to make predictions using our model. This is what gauges the model, if a model can accurately make predictions the better the model. Using these steps, a reader should comfortably build a multi-label text classification model with scikit-multi learn.
+Finally, we were able to make predictions using our model. This is what gauges the model; if a model can accurately make predictions, the better the model. Using these steps, a reader should comfortably build a multi-label text classification model with scikit-multi learn.
 
 ### References
 
