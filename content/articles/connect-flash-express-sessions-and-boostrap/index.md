@@ -158,7 +158,7 @@ Next, we need to set up a register-handler that collects the form data from the 
 router.post('/register', (request, response) =>{
 
     //extract the data from request body
-    const name,= request.body.name;
+    const name= request.body.name;
     const email= request.body.email;
     const password,  = request.password;
     const passwordConfirm  = request.passwordConfirm;
