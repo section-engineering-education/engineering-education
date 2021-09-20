@@ -1,13 +1,13 @@
 Intent classification is the automated categorization of text data based on customer goals. Intent classification uses the concept of machine learning and natural language understanding to categorize texts or sentences with different intents.
 
-For example, a machine learning model can learn that a word such as "where is the best place to buy the television" is associated with the intent to purchase. Another example is "where can I find a place to eat" which is associated with an intent of finding a restaurant or a hotel.
+For example, a machine learning model can learn that a word such as "where is the best place to buy the television" is associated with the intent to purchase. Another example can be "where can I find a place to eat" which is associated with an intent of finding a restaurant or a hotel.
 
-In a [conversational AI](https://www.interactions.com/conversational-ai/) model, intent refers to the responses given to a customer after typing in a question. In the first example, the model will respond with the best places that sell television, in the second example, the model responds with the available restaurants or hotels.
+In a [conversational AI](https://www.interactions.com/conversational-ai/) model, an intent refers to the responses given to a customer after typing in a question. In the first example, the model will respond with the best places that sell television, in the second example, the model responds with the available restaurants or hotels.
 
 Intent classification is an essential component of chatbots in giving the correct answers when a question is posted. This helps to increase sales of a given business and helps in the customer conversation. This is greatly applied in many chatbot systems to engage customers and give them a personalized conversation.
-This helps in knowing the needs of each customer.
+It helps in knowing the needs of each customer.
 
-In this tutorial, you will use Rasa and Spacy to build the intent classifier. Rasa is a library used for building AI chatbots using Python and [natural language understanding (NLU)](https://en.wikipedia.org/wiki/Natural-language_understanding). You use Spacy for advanced natural language processing and it is used to run backend operations.
+In this tutorial, you will use Rasa and Spacy to build the intent classifier. Rasa is a library used for building AI chatbots using Python and [natural language understanding (NLU)](https://en.wikipedia.org/wiki/Natural-language_understanding). You will use Spacy for advanced natural language processing and it is used to run backend operations.
 
 ### Table of contents
 
@@ -30,7 +30,7 @@ In this tutorial, you will use Rasa and Spacy to build the intent classifier. Ra
 2. A good working knowledge of [machine learning](/engineering-education/house-price-prediction/).
 3. Download the dataset [here](https://drive.google.com/file/d/1gNRMieWZuiMUJwIsPxwU8TaHCvXM7vST/view?usp=sharing).
 4. Have some knowledge of [natural language processing.](https://en.wikipedia.org/wiki/Natural_language_processing)
-   > NOTE: To follow along easily, use [Google Colab](https://research.google.com/) in building model.
+   > NOTE: To follow along easily, use [Google Colab](https://research.google.com/) in building the model.
 
 ### Introduction
 
@@ -49,13 +49,13 @@ Before you begin, install these libraries.
 
 Let's start with Rasa.
 
-Since you are using Google Colab, let's run this command.
+Since you are using Google Colab, run this command to install Rasa.
 
 ```python
 !pip install rasa_nlu
 ```
 
-Let's install Spacy.
+To install Spacy run this command.
 
 ```python
 !pip install -U spacy
@@ -66,7 +66,7 @@ Let's install Spacy.
 The dataset is used in a JSON format. It contains a list of text and the intent they belong to as shown below.
 ![Dataset used](/engineering-education/intent-classification-with-rasa-and-spacy/dataset.jpg).
 
-In the above image, you have intents such as `restaurant_search`, `affirm`, `location`, and `food`. This sample JSON dataset will be used to train the model, this conversational AI model will be used to answer questions related to searching for restaurants.
+In the image above, you have intents such as `restaurant_search`, `affirm`, `location`, and `food`. This sample JSON dataset will be used to train the model, this conversational AI model will be used to answer questions related to searching for restaurants.
 It also gives the location of this restaurant, and the type of food being offered such as `Indian`, `Chinese`, `Italian` and `African fusion`. This will provide a personalized conversation.
 
 To get the JSON file click [here](https://drive.google.com/file/d/1gNRMieWZuiMUJwIsPxwU8TaHCvXM7vST/view?usp=sharing)
@@ -84,7 +84,7 @@ from rasa_nlu.model import Trainer
 from rasa_nlu import config
 ```
 
-In the above code, You have imported the following packages.
+In the code above, you have imported the following packages.
 
 #### load_data
 
@@ -225,14 +225,14 @@ Loading a sample text.
 docx = nlp("I am looking for an Italian Restaurant where I can eat")
 ```
 
-You then loop through the above text to get all the available entities in the text.
+You then loop through the text above to get all the available entities in the text.
 
 ```python
 for word in docx.ents:
     print("value",word.text,"entity",word.label_,"start",word.start_char,"end",word.end_char)
 ```
 
-The above code loops through the text and prints the entities found in the text. You specify where you want to start the extraction using `start` and where you want to finish the extraction using `end`.
+The code above loops through the text and prints the entities found in the text. You specify where you want to start the extraction using `start` and where you want to finish the extraction using `end`.
 
 The output after extraction is as shown.
 
@@ -240,7 +240,7 @@ The output after extraction is as shown.
 value Italian entity NORP start 20 ends 27
 ```
 
-The above output has extracted `Italian` which is a type of food.
+The output above has extracted `Italian` which is a type of food.
 
 ### Making predictions with the model
 
@@ -258,7 +258,7 @@ To make a prediction, you load a sample text. The `interpreter.parse()` method i
 interpreter.parse("I am looking for an Italian Restaurant where I can eat")
 ```
 
-The output is shown.
+The output is as shown.
 
 ```bash
 {'intent': {'name': 'restaurant_search', 'confidence': 0.7455215289019911},
@@ -276,7 +276,7 @@ The output is shown.
  'text': 'I am looking for an Italian Restaurant where I can eat'}
 ```
 
-In the above output, the model has been able to classify the text into the intent of `restaurant_search`. The model also tried to check all the other available intents but `restaurant_search` gave a higher `confidence` or accuracy score of `0.7455215289019911`, which is `74.5%` accurate.
+In the output above, the model has been able to classify the text into the intent of `restaurant_search`. The model also tried to check all the other available intents but `restaurant_search` gave a higher `confidence` or accuracy score of `0.7455215289019911`, which is `74.5%` accurate.
 
 The other intents gave the following accuracies.
 
