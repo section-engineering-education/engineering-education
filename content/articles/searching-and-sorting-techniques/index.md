@@ -21,6 +21,7 @@ Searching is the process of determining the position of an item in a list. This 
 
 Sorting is the process of putting information in a certain order in a data structure.Sorting data makes it easier to navigate through it quickly and efficiently.Sorting reduces the complexity of problems by a large amount, and sorting is a technique for reducing the complexity of searching. 
 
+<!--more-->
 Sorting, for example, is required before using Binary Search, and it is also utilized in Database methods. Sorted arrays and lists make it easier to locate items fast. In this article, we will learn about various sorting and searching techniques and their implementation in data structures and algorithms. 
 ### Table of contents
 - [What is searching?](#what-is-searching)
