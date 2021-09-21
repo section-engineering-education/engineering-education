@@ -26,7 +26,7 @@ The coupling of cascading style sheets (CSS) formatting and HTML component funct
 - [Testing our web services and HTML client](#testing-our-web-services-and-html-client)
 
 ### Importance of using DHTML
-These are some of the advantages we can get when using DHTML:
+Here are some of the advantages we can get when using DHTML:
 1. We use it to create dynamic, animated website pages that update in real-time.
 2. DHTML has more features than just a static HTML page. DHTML has the ability to hold more content on a web page simultaneously.
 3. By sending fewer requests to the server, the user saves time. As we can utilize it to change and swap components after a page has been loaded, we do not require to construct separate web pages for updating styles save time when creating pages and reduce the number of queries sent to the server.
@@ -37,7 +37,7 @@ These are some of the advantages we can get when using DHTML:
 #### Some major features of DHTML
 - Its most basic and important characteristic is that it allows us to dynamically construct web pages.
 - DHTML can change identifiers and their attributes.
-- It allows you to utilize the events, methods, and properties. Additionally, it has the capability of reusability of code.
+- It allows you to utilize the events, methods, and properties. Additionally, it allows reusability of code.
 - It also has a data binding feature in browsers.
 - Users can simply build dynamic fonts for their websites or web pages using DHTML.
 - Since DHTML uses a low-bandwidth impact, the the internet's performance is improved.
@@ -46,13 +46,13 @@ These are some of the advantages we can get when using DHTML:
 HTML and DHTML have some of their differences which are as follows:
 1. DHTML language is a collection of different technologies, unlike HTML which is a markup language.
 2. DHTML language needs database connectivity while in HTML it does not need connectivity.
-3. We use DHTML to create dynamic web pages but HTML (a markup language) is employed to construct web pages that are not changing or static.
-4. DHTML does not need processing from the browsers but HTML requires.
-5. We use DHTML to create animation there are also dynamic menus, but no HTML is used.
+3. We use DHTML to create dynamic web pages but HTML is employed to construct web pages that are not changing or static.
+4. DHTML does not need processing from the browsers but HTML requires it.
+5. We use DHTML to create animations. There are also dynamic menus, but no HTML is used.
 6. While using client-side technology, HTML is slower, DHTML sites, on the other hand, are substantially quicker.
 7. Because HTML employs just one language, web pages built with it are simplistic and lack styling, whereas DHTML uses HTML, CSS, and Javascript to build a far better and more attractive webpage.
 8. Only HTML can be used for user-side code, but DHTML is utilized for server-side code.
-9. File in the HTML are saved with `.html` or `.htm` extensions while DHTML uses `.dhtml` extension.
+9. Files in HTML are saved with `.html` or `.htm` extensions while DHTML uses `.dhtml` extension.
 
 ### How would we make the Web services?
 Web service are code snippets that may be reused to allows many applications interact with one another. Web services are being utilized with any type of application developed in any technology once it is produced and hosted on a server on the Internet.
@@ -146,8 +146,7 @@ The web behavior will be specified in the Html file as the initial stage.
 ></div>
 ```
 
-We use one of the provided IDs for the element in the script to refer to it.
-The web service URL will then be mapped to a user-friendly name, in our instance `Section`.
+We use one of the provided IDs for the element in the script to refer to it. The web service URL will then be mapped to a user-friendly name, in our instance `Section`.
 
 This code is added to the page's on the load handler first before any functions are implemented on the web service, it must be mapped. 
 
@@ -163,7 +162,7 @@ This will ensure that our `onresult` event handler is utilized to check for any 
 
 Web service will be invoked whenever we click the `add number`. The method name acts as the call service method's input parameters as well as the web service's intended input parameters.
 
-Here illustration of the type of code we will use;
+Here is an illustration of the type of code we will use:
 
 ```javascript
 
@@ -204,7 +203,7 @@ Total:<input type="message" name='total'\">
 
 ```
 
-We now name the file `ourtest.html` and save it in the same folder as webservice.htc.
+We now name the file `ourtest.html` and save it in the same folder as `webservice.htc`.
 
 ### Testing our Web services and HTML client
 Web services are a mechanism or a medium of communication that allows two applications or machines to exchange data regardless of their underpinning architecture or technology. A web service assessment is a sort of software testing that verifies the functionality of web services.
@@ -214,7 +213,7 @@ The fundamental goal of testing is to ensure that an API's functionality, securi
 We can manually test a web service, write our automation code, or utilize off-the-shelf automation like Postman.
 
 #### Protocols used in Web services
-A web service can be used in a variety of ways, but the two most frequent implementations are as follows.
+A web service can be used in a variety of ways, but the two most frequent implementations are as follows:
 1. Simple Object Acces Protocol (SOAP)
 2. Representation State Transfer Architecture (REST)
 
@@ -240,7 +239,7 @@ In XML format, WSDL highlights every actions that are capable for a web service 
 In web service testing, we can opt several ways:
 1. We can test manually
 2. We can create our automation code
-3. Use of an off-shelf automation tool like SoapUI
+3. Use of an off-the-shelf automation tool like SoapUI
 
 To demonstrate web service testing, we will utilize SoapUI. We shall explore how the REST API, which SoapUI supports, is utilized in web service testing.
 
@@ -248,7 +247,7 @@ To demonstrate web service testing, we will utilize SoapUI. We shall explore h
 First, we will need to get the SoapUI application. Then, from the start menu, open the SoapUI program.
 
 #### Step two
-After you have opened the SoapUi tool, go to the RESt icon and click it to open the second page, where you will enter the API URL and click OK.
+After you have opened the SoapUi tool, go to the `REST` icon and click it to open the second page, where you will enter the API URL and click OK.
 
 #### Step three
 We have to use the post function to create a new employee. In the database, it will create a new employee.
