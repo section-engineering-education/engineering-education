@@ -46,7 +46,18 @@ Concurrency in some other programming languages is achieved by using threads. If
 In Go, concurrency works through the use of in-built functions known as Goroutines.
 
 
- [Goroutines](https://www.golangprograms.com/goroutines.html) are functions that run at the same time alongside other code or programs. Goroutines are unique to Go. They’re not OS threads though they may be considered lightweight threads. Goroutines are deeply integrated with Go runtime. Go's runtime monitors goroutine behavior and suspends them when they become blocked, then resumes them once they are not blocked. This makes them preemptible in some ways, but only when the goroutine is blocking. The runtime and the logic of a goroutine work together. Goroutines can communicate with one another and synchronize their execution. In Go, one of the synchronization elements is called a channel. Though they are used to synchronize memory access, they are best used for communicating information between goroutines. When data is to be shared across goroutines while performing a concurrent activity as a goroutine, channels function as a conduit (pipe) between the goroutines and provide a method that ensures asynchronous exchange.
+ [Goroutines](https://www.golangprograms.com/goroutines.html) are functions, unique to Go, that run at the same time alongside other code or programs.
+
+They’re not OS threads, though, they may be considered lightweight threads.
+
+Goroutines are deeply integrated with Go's runtime. Go's runtime monitors goroutine behavior and suspends them when they become blocked, then resumes them once they are unblocked. 
+
+This makes them preemptible in some ways, but only when the goroutine is blocking.
+
+The runtime and the logic of a goroutine work together. Goroutines can communicate with one another and synchronize their execution. In Go, one of the synchronization elements is called a channel. 
+
+Though channels are used to synchronize memory access, they are best used for communicating information between goroutines. When data is to be shared across goroutines while performing a concurrent activity as a goroutine, channels function as a conduit (pipe) between the goroutines and provide a method that ensures asynchronous exchange.
+
 
 After understanding the basics of Concurrency in Go, we will be building a simple command-line application that takes in some URLs, sends HTTP requests, and displays responses as output. Using this application, we will work with Go concurrency features and in-built functions. Let's get started!
 
