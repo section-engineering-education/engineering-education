@@ -80,8 +80,6 @@ public enum Roles {
 
 
 ### Permissions
-
-
 |            |                    |                    |     Permissions    |                    |                    |
 |:----------:|:------------------:|:------------------:|:------------------:|:------------------:|:------------------:|
 |**Role**    | **Add a product**      | **View all products**  | **View product**       | **Update product**     | **Delete product**     |
@@ -167,7 +165,6 @@ Create a `Product` database in your Database management server.
 ![database creation](/springboot-antmatchers/db_create.png)
 
 ### Database configuration
-
 Add the following code to your `application.properties` file to configure the database to your Springboot application.
 
 ```java
@@ -195,8 +192,6 @@ server.error.include-message=always
 Replace `<username>` and `<password>` with the actual username and password of your database server.
 
 ### Creating the model
-
-
 ```java
 
 package com.example.demo.model;
@@ -707,7 +702,6 @@ public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
 ```
 
 ## Postman
-
 Click on authorization and set the authorization type to Basic Auth.
 
 ![forbidden add](/springboot-antmatchers/postman_1.png)
