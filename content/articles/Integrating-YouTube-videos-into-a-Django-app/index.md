@@ -11,7 +11,7 @@ We will create a simple blogging app and embed youtube videos in it so that when
 1.  Install and set up a programming environment for python 3
 2.  Have some fundamental knowledge in python and the Django framework
 
-#### Step 1: Setting up the environment and downloading required packages
+#### Step 1: Setting up the environment
 
 We will begin by creating a directory that will contain our project.
 Open the command line and type in the following:
@@ -20,54 +20,59 @@ Open the command line and type in the following:
 mkdir projectX
 ```
 
-Change your current directory to projectX:
+Change your current directory to the newly created folder `projectX` which will contain our project folder:
 
 ```bash
 cd projectX
 ```
 
-Then create and activate the virtual environment respectively (for windows):
+Then create and activate the virtual environment `.venv` which shall help us isolate our project and all its dependacies from other projects in our computer.
+Cteating (for windows):
 
 ```bash
 py -m venv .venv
 ```
-
+Activating(for windows):
 ```bash
 .venv\Scripts\activate.bat
 ```
 
-Now we can install Django and Django-embed-video simultaneously.
+#### Step 2: downloading required packages
+
+Now we can install Django and Django-embed-video simultaneously:
 
  - Django : this is the Django framework package.
- - Django-embed-video : this is the Django app that makes the embeding of videos from Youtube, Vimeo and music from    soundcloud easy.
+ - Django-embed-video : this is the Django app that makes the embeding of videos from Youtube, Vimeo and music from soundcloud easy.
 
-```
+```bash
 pip install django django-embed-video
 ```
 
-Create a Django project:
+#### Step 3: Creating the Django Project 
+
+Create a Django project using the following command:
 
 ```bash
 django-admin startproject demo
 ```
 
-Change directory to demo
+Change directory to demo where our project files are:
 
 ```bash
 cd demo
 ```
 
-Create a Django app
+Create a Django app called `blog` inside the project folder:
 
 ```bash
 py manage.py startapp blog
 ```
 
-### Step 2: Setting up the backend
+### Step 4: Setting up the backend
 
-#### 2.1: Register apps
+#### 4.1: Register apps
 
-In `settings.py` under `INSTALLED_APPS` add our new apps embed_video and blog
+In `settings.py` under `INSTALLED_APPS` add our new apps embed_video and blog:
 
 ```python
 INSTALLED_APPS = [
@@ -77,11 +82,9 @@ INSTALLED_APPS = [
 ]
 ```
 
-#### 2.2: Creating the models
+#### 4.2: Creating the models
 
-Our article will have three parts: the title, the body where the content is and lastly the YouTube video.
-
-In `models.py` create the following model and remember to make the necessary import `EmbedVideoField` as shown below.
+In `models.py` create the following model and remember to make the necessary import `EmbedVideoField` as shown below:
 
 ```python
 from  embed_video.fields  import  EmbedVideoField
@@ -92,13 +95,15 @@ class  tutorial(models.Model):
 	tutorial_Video = EmbedVideoField()
 
 	class  Meta:
-		verbose_name_plural = "Tutorial"
+		verbose_name_plural = "Tutorials"
 
 	def  __str__(self):
 		return  str(self.tutorial_Title) if  self.tutorial_Title  else  " "
 ```
+The `tutorial` class is where we create our model, in `Meta` class we told Django the plural name of our model(if there is more than one object)  and the `__str__` function ensures that our objects are listed with their name properties in Django admin ie: the tutorials shall be listed according to their `tutorial_Title`.
 
-Then run the following commands respectively to make migrations and migrate our model.
+
+Then run the following commands respectively to make migrations and migrate our model:
 
 ```bash
 py manage.py makemigrations
@@ -108,10 +113,12 @@ py manage.py makemigrations
 py manage.py migrate
 ```
 
-#### 2.3: Registering the models
+`makemigrations` tells Django to store the new changes made in our models and `migrate` tells Django to apply those changes to the database.
+
+#### 4.3: Registering the models
 
 In order to have access to our model using Django admin we have to register our model in `admin.py`.
-Import `AdminVideoMixin` and `tutorial` then register your model as shown below.
+Import `AdminVideoMixin` and `tutorial` then register your model as shown below:
 
 ```python
 from  embed_video.admin  import  AdminVideoMixin
@@ -124,11 +131,12 @@ class  tutorialAdmin(AdminVideoMixin, admin.ModelAdmin):
 admin.site.register(tutorial, tutorialAdmin)
 ```
 
-#### 2.4: Creating the views
+#### 4.4: Creating the views
 
 We will need two views namely `blog` and `blog_detail`. The blog will be responsible for fetching all the objects when `blog.html` is requested.
 Blog_detail will be responsible for fetching the contents of a specific object when `blogdetail.html` is requested.
 
+In `views.py`:
 ```python
 from .models  import  tutorial
 #Create your views here.
@@ -149,10 +157,10 @@ def  blog_detail(request,pk):
 ```
 Tut in `blog()` fetches all objects, in that case all the tutorials created while Tut in `blog_detail()` fetches a specific tutorial that matches the requested id, in this case `pk` 
 
-#### 2.5: Configuring urls
+#### 4.5: Configuring urls
 
 Inside `urls.py` in the `demo` directory we will point the root `URLconf` at the `blog.urls` module. 
-Remember to add an import for the `from django.urls import path, include`
+Remember to add an import for the `from django.urls import path, include`:
 
 ```python
 from  django.urls  import  path, include # new
@@ -164,7 +172,7 @@ urlpatterns = [
 ```
 We used the `include()` to reference `blog.urls`
 
-Then create another `urls.py` file in your blog directory and then point the urls to their corresponding views
+Then create another `urls.py` file in your blog directory and then point the urls to their corresponding views:
 
 ```python
 from  django.urls  import  path
@@ -176,21 +184,21 @@ path('<int:pk>/', views.blog_detail, name='blog_detail'),
 ]
 ```
 
-#### 2.6: Creating the superuser account
+#### 4.6: Creating the superuser account
 
 The superuser account will enable us to login into our site as an admin and post our blogs, delete them, and update them. 
-Create the superuser account using the following commands which will prompt you to enter your username, email and password. 
+Create the superuser account using the following commands which will prompt you to enter your username, email and password:
 
 ```bash
 py manage.py createsuperuser
 ```
 
-### Step 3: Frontend
+### Step 5: Frontend
 
 Create a new directory in the `blog` directory and name it `templates` then create three files named `base.html`, `blog.html`, and `blogdetail.html` inside it.
 In `base.html`, we will add the primary HTML code that is shared by both `blog.html` and `blogdetail.html`.
-In `base.html`:
 
+In `base.html`:
 ```HTML
 <!doctype  html>
 <html  lang="en">
@@ -232,7 +240,7 @@ In `base.html`:
 </html>
 ```
 
-In `blog.html` we will display all the tutorials that will be added, but we will only display the titles and a small part of the tutorial body in a list fashion.
+In `blog.html` we will display all the tutorials that will be added, but we will only display the titles and a small part of the tutorial body in a list fashion:
 
 ```HTML
 {% extends 'base.html' %}
@@ -251,7 +259,7 @@ In `blog.html` we will display all the tutorials that will be added, but we will
 	{%endblock%}
 ```
 
-In `blogdetail.html` we will display the title, body and video of the selected tutorial.
+In `blogdetail.html` we will display the title, body and video of the selected tutorial:
 
 ```HTML
 {% extends 'base.html' %} {% load embed_video_tags %}
@@ -274,9 +282,9 @@ The videos can be rendered in different sizes as follows: tiny (420x315), small 
 We can also set custom dimensions for the video if the default ones don't fit our requirements ie:
 {% video Tut.tutorial_Video '600x400' %}
 
-### Step 4: Testing
+### Step 6: Testing
 
-Now that we have set up everything, we can run our app, we can run the server
+Now that we have set up everything, we can run our app, we can run the server:
 
 ```bash
 py manage.py runserver
