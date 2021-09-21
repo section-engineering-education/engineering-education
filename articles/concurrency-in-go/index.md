@@ -19,9 +19,9 @@ images:
 
 
 
-Concurrency describes a process that occurs at the same time as one or more other activities. It assumes that all these processes are operating at the same time. Smaller sub-programs make up large programs and they work together to run at a similar for the larger program to function. This means that a program with two or more tasks can run at the same time while they remain part of the same program. This is referred to as Concurrency. 
+Concurrency describes a process that occurs at the same time with one or more other activity. It assumes that all these activities are operating at the same time. Smaller sub-programs make up large programs and these sub-programs work together at a similar time for the functioning of the large program. In essence, various tasks can run at the same time while they remain part of the same program. This is referred to as Concurrency. 
 
-In programming, concurrency is "*the composition of independently executed processes...*". Concurrency refers to the ability of a program to divide into independent tasks that can all execute at the same time. it could be handling many requests from users or sending many responses to users.
+In programming, concurrency is "*the composition of independently executed processes...*". Concurrency refers to the ability of a program to divide into independent tasks that can all execute at the same time. It could be handling many requests from users or sending many responses to users.
 
 ### **Concurrency vs Parallelism**
 
@@ -100,7 +100,7 @@ In our terminal, we will pass in some URLs as a request and see how much time it
 
 ![Zero concurrency](/engineering-education/concurrency-in-go/noconcurrency.png)
 
-The program was executed at exactly, 8.937s
+The program was executed at exactly, 14.110s
 
 In this program, we sent a request to the first argument and when its completes, a response comes in, then the program returns to the for loop and sends another request to the next argument, and the process continues. We can see a waste of time while waiting for the response from one argument before a request is made to another argument. Which is a problem. 
 
