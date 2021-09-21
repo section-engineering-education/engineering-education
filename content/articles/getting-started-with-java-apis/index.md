@@ -36,7 +36,7 @@ Also, with one crucial exception, an API is identical to a GUI (Graphical User I
 - [Advantages of Java APIs](#advantages-of-java-apis)
 
 #### What are Java APIs
-As a part of the JDK, APIs play a vital role. There are three types of APIs in Java: interfaces and classes. In addition to providing real-time information, they allow developers to integrate a wide range of applications and websites.
+As a part of the JDK, APIs play a vital role. It's a list of all the packages, classes, and interfaces, as well as their fields and methods. In addition to providing real-time information, they allow developers to integrate a wide range of applications and websites.
 
 The Java API is shown in the image below.
 
