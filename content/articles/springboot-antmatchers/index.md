@@ -221,8 +221,9 @@ import javax.persistence.\*;
 
 public class Product {
 
-    @Id
 
+    // Autogenerate the primary key    
+    @Id
     @SequenceGenerator(
 
         name = "product\_sequence",
@@ -448,6 +449,12 @@ public class ProductServiceImpl implements ProductService{
        productRepository.delete(product);
 
    }
+   
+   /* To update the value a property:
+        - validate that the new value is not null nor empty.
+        - validate that the new value is not the same as the old value to be replaced.
+        - If the values are the same, skip the operation.
+   */
 
    @Override
    @Transactional
@@ -491,6 +498,9 @@ public class ProductServiceImpl implements ProductService{
 #### Controller
 
 ```java
+/*
+All requests are received from the client and sent to the service for processing. 
+*/
 
 package com.example.demo.controller;
 
@@ -524,7 +534,8 @@ public class ProductController {
 
     }
 
-    @GetMapping("/{productId}")
+    // Get a product by its ID
+    @GetMapping("/{productId}")  
 
    public Product getProduct(@PathVariable("productId") Integer productId){
 
@@ -533,7 +544,6 @@ public class ProductController {
    }
 
     @GetMapping
-
     public List<Product> getAllProducts(){
 
         return productService.getAllProducts();
@@ -541,15 +551,15 @@ public class ProductController {
     }
 
     @DeleteMapping("{productId}")
-
     public void deleteProduct(@PathVariable("productId") Integer productId){
 
         productService.deleteProduct(productId);
 
     }
 
+    
+    // The product ID is the only required argument. 
     @PutMapping(path = "/{productId}")
-
    public Product updateProduct(
         @PathVariable Integer productId,
 
@@ -580,6 +590,8 @@ A password encoder is required to encrypt the user's password when provided for 
 
 
 ```java
+
+  // Create and configure an instance of a Password encoder to encrypt the users' passwords.
 
     @Bean
     public PasswordEncoder passwordEncoder(){
@@ -640,8 +652,8 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 
 import static com.example.demo.security.Roles.\*;
 
+// The @EnableWebSecurity annotation maps this class as a program which configures the security of the application.
 @Configuration
-
 @EnableWebSecurity
 
 public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
@@ -658,21 +670,27 @@ public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
    }
 
 
+
+    
     @Override
 
    protected void configure(HttpSecurity http) throws Exception {
-
-    http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+    
+    /*
+    Stateless session enables authentication for every request. This would help ease the demonstration 
+    of this tutorial on Postman.
+    */
+    http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS); 
 
         http
 
             .csrf().disable()
             .authorizeRequests()
-           .antMatchers(HttpMethod.DELETE, "/api/v1/products/{productId}").hasRole(ADMIN.name())
-           .antMatchers(HttpMethod.PUT, "/api/v1/products/{productId}").hasRole(ADMIN.name())
-            .antMatchers("/api/v1/products/add").hasAnyRole(ADMIN.name(), SUPERVISOR.name())
-            .antMatchers("/api/v1/products").hasAnyRole(ADMIN.name(), SUPERVISOR.name(), INTERN.name())
-            .antMatchers("/api/v1/products{productId}").hasAnyRole(ADMIN.name(), SUPERVISOR.name(), INTERN.name())
+           .antMatchers(HttpMethod.DELETE, "/api/v1/products/{productId}").hasRole(ADMIN.name()) // Admin should be able to delete
+           .antMatchers(HttpMethod.PUT, "/api/v1/products/{productId}").hasRole(ADMIN.name()) // Admin should be able to update
+            .antMatchers("/api/v1/products/add").hasAnyRole(ADMIN.name(), SUPERVISOR.name()) // Admin and Supervisor should be able to add product.
+            .antMatchers("/api/v1/products").hasAnyRole(ADMIN.name(), SUPERVISOR.name(), INTERN.name()) // All three users should be able to get all products.
+            .antMatchers("/api/v1/products{productId}").hasAnyRole(ADMIN.name(), SUPERVISOR.name(), INTERN.name()) // All three users should be able to get a product by id.
             .anyRequest()
             .authenticated()
             .and()
@@ -680,6 +698,7 @@ public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
 
 }
 
+    // Setting up the details of the application users with their respective usernames, roles and passwords.
     @Bean
     @Override
     protected UserDetailsService userDetailsService() {
