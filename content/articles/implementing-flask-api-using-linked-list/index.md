@@ -29,7 +29,7 @@ There are a number such as [Visual Studio Code](https://code.visualstudio.com/do
 For this tutorial, I'll be using Ubuntu 20.04 and Vim text editor.  
 
 ### Introduction to Flask
-Flask is a micro-framework of Python that is used to create custom web applications. It is lightweight and does not come with any bundled packages and dependencies enabling developers to be on the wheel while building any application on it.
+Flask is a micro-framework of Python that is used to create custom web applications. It is lightweight and does not come with any bundled packages and dependencies. This enables developers to be on the wheel while building any application on it.
 
 If you want to get into more details to understand how Flask works check the official [documentation](https://flask.palletsprojects.com/en/2.0.x/).
 
@@ -91,7 +91,7 @@ The rectangles in the image above represent nodes in a linked list and each node
 
 The left compartment represents the data and has the string value Data in it. The right compartment represents the pointer that points to the next node.
 
-If we look at our Node class we see it has the data and next_node pointer as well. The `LinkedList()` wrapper class only helps us keep track of the head of our linked list.
+If we look at our Node class, we see it has the data and next_node pointer as well. The `LinkedList()` wrapper class only helps us keep track of the head of our linked list.
 
 From the image above the first node in the linked list represents the head. So for instance, if we want to add to the head of our linked list as we'll see in a bit it will be easier to do so.
 
@@ -111,7 +111,7 @@ def to_list(self):
 
 First, we create an empty list. Then proceed to check if the head of the linked list is `None`.
 
-If so, we return the empty list otherwise it's appended onto the list and the node is assigned to the node's next node. The list is then returned.
+If so, we return the empty list. Otherwise it is appended onto the list and the node is assigned to the node's next node. The list is then returned.
 
 The `insert_beginning()` implementation is shown below:
 
@@ -121,7 +121,7 @@ new_node = Node(data, self.head)
 self.head = new_node
 ```
 
-It takes `self` and `data` as arguments. This means that if data is added at the beginning of our linked list, it assumes being the head and the current head becomes the next_node pointer.
+The `insert_beginning()` takes `self` and `data` as arguments. This means that if data is added at the beginning of our linked list, it assumes being the head and the current head becomes the next_node pointer.
 
 We then assign `new_node` as the head using `self` to instantiate it.
 We will write a function to print the testcases later, for now, let's implement the `insert_at_end()`.
@@ -137,7 +137,7 @@ node = node.next_node
 node.next_node = Node(data, None)
 ```
 
-The above code checks if the current head is none. If so, it calls the `insert_beginning()` to insert data and return it. The head value is assigned to a `node` variable and it performs a while loop.
+The above code checks if the current head is none. If so, it then calls the `insert_beginning()` to insert data and return it. The head value is assigned to a `node` variable and it performs a while loop.
 
 If the node's next node is true, it assign it to the node. otherwise, it adds data to the node using the `Node` class.
 
@@ -340,7 +340,7 @@ The `__tablename__` overrides and sets the table name of our model. The `Column`
 
 It is marked True as the `primary_key`. The `name`, `email`, `address`, and `phone` take the `String` type. The `String()` type takes the size parameter of maximum length.
 
-We can now generate our database based on the model we created by running our file through the python shell. Let's save the file and head to the terminal and execute the commands below:
+We can now generate our database, based on the model we created by running our file through the python shell. Let's save the file and head to the terminal and execute the commands below:
 
 ```bash
 python
@@ -348,9 +348,9 @@ from server import db
 db.create_all()
 exit()
 ```
-By executing the word `python` in the terminal it enters into an interactive shell and then executes the preceding commands.
+By executing the word `python` in the terminal, the terminal enters into an interactive shell with the chevron symbols like `>>>`. The python shell enables us to then executes the preceding commands.
 
-If we now `ls` to list the contents of the `FlaskAPI` directory we're able to see a `sqlitedb.file` file and that's our database.
+If we now list the contents of the `FlaskAPI` directory we're able to see a `sqlitedb.file` file and that is our database.
 
 We can go ahead and open it using the DB Browser for SQLite by clicking the `open database` tab. The User model is visible with its corresponding tables.
 
@@ -386,7 +386,7 @@ In the `get_all_users_descending()`, `get_all_users_ascending()`, and `get_user(
 from linked_list import LinkedList
 ```
 
-Let's implement the endpoints.
+Let's implement the endpoints:
 
 ```python
 @app.route('/users/descending_id', methods=['GET'])
@@ -502,16 +502,16 @@ In order to avoid running into `sqlite3.OperationalError` close the DB Browser f
 
 Performing the payload request `get_all_users_descending()`, `get_all_users_descending()`, and `get_user()` is easier as we just only specify the routes and select the `GET` request and send. This performs the logic implemented in each function.
 
-The `get_all_users_descending` fetch the users in descending order and `get_all_users_ascending` perform the same in ascending order.
+The `get_all_users_descending` fetches the users in descending order and `get_all_users_ascending` perform the same in ascending order.
 
 The `get_user()` returns the payload of that particular `id` specified. The `delete_user()` deletes a user with the specified ID passed.
 
 For example if you want to delete a user with the ID of 3, you pass `http://127.0.0.1:5000/user/3` with the `DELETE` request and send. If you check it in the DB Browser it won't be available.
 
 ### Conclusion
-To recap on what this article has covered, we first introduce what Flask is and a few reasons why it is most preferred.We then got a better understanding of what linked lists are and implemented some of its use-cases.
+To recap on what this article has covered, we first introduced what Flask is and a few reasons why it is most preferred.We then got a better understanding of what linked lists are and implemented some of its use-cases.
 
-Afterwards we implemented the Flask API by first going through a basic Flask script and adding models and routes to it. Finally, we implemented the core API endpoints using the LinkedList class.
+Afterwards, we implemented the Flask API by first going through a basic Flask script and adding models and routes to it. Finally, we implemented the core API endpoints using the LinkedList class.
 
 We later tested the endpoints created with Postman and used DB Browser for SQLite to visually check our database tables.
 
