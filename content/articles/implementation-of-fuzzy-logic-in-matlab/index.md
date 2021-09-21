@@ -45,14 +45,8 @@ Now, we can see that the statement's truth does not belong to a single set but c
 Consider a very simple example;
 We need to control the speed of a motor by changing the input voltage when a set point is defined. If the motor runs fast for some reason, we need to slow it down by reducing the input voltage. Conversely, if the motor slows below the set point, the input voltage must be increased so that the motor reaches the set point.
 Below are the description for the inputs. These will help in defining the rules.
-`Too slow` 
-Just right
-Too fast
-The statements are self-explanatory.
-let the output action words be;
-Less voltage(slow down)
-No change
-More voltage(speed up)
+`Too slow` will be for the description of the first curve, `just right` for the second curve, and `too fast` for the third input curve. For the output, let the output action words be; `Less voltage(slow down)` for the first curve, `no change` for the second curve, and `More voltage(speed up)` for the third curve.
+
 The words in the bracket explain the action that the output. We shall see how to combine the inputs and the output statements to form the rules.
 
 The rules base are;
@@ -76,7 +70,8 @@ Here, we have three inputs `mf1`, `mf2` and `mf3`. We should now change these na
 *figure5.0 Rename the variables to make sense*
 
 Apply the same process for all the inputs. You just click on the curve and then rename it. Now back to our first input, `slow`. Let us now define our speed. It is done on the range box. Let's say that our speed ranges from 0 to 100, for example. So we will change the `[0 1]` vector to `[0 100]` as shown in `figure1.0`.
-We can have `n` number of rules for the `n` numbers of members of function, but for the case of simplicity, we will take these number of membership functions to be three. If we keep increasing the member's frequency of corresponding, the number of rules will keep increasing. So we let's say our slow ranges from 0 to 50. Click on that curve, and the `params` box, change the existing vector to `[0 0 50]`. The same applies to all other inputs. The second input rename to `right`, which means right speed. The range of the speed is between 50 and 100. So the vector will be `[0 50 100]`. The last input should be named `high` for high speed, and the range should be between 100 and above. The vector for this is `[50 100 100]`.
+We can have `n` number of rules for the `n` numbers of members of function, but for the case of simplicity, we will take these number of membership functions to be three. If we keep increasing the member's frequency of corresponding, the number of rules will keep increasing. 
+So let's say our slow ranges from 0 to 50. Click on that curve, and the `params` box, change the existing vector to `[0 0 50]`. The same applies to all other inputs. The second input rename to `right`, which means right speed. The range of the speed is between 50 and 100. So the vector will be `[0 50 100]`. The last input should be named `high` for high speed, and the range should be between 100 and above. The vector for this is `[50 100 100]`.
 
 Now, To make the changes on the output, click on the output and modify. You can rename the inputs to any name that make sense to you. Our output parameters are the voltages. Now for the range, we have `[0 5]` as the range. The `mf1` renamed as `down` range from 0 to 2.5 given as `[0 0 2.5]`, `mf2` renamed as `nochange` ranges from 2.5 to 5.0 given as `[0 2.5 5.0]` and lastly `mf3` renamed as `high` is 5volts and above given as `[2.5 5 5]`. It means that if the output voltage falls in `mf1`, the speed is low, and it should take action. And when the volts is within the `mf2` range, the speed is right, and no action is required, but if it falls in `mf3`, the speed is high, and action is required. Once you do this, click on the close. 
 
