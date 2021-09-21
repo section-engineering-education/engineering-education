@@ -46,7 +46,7 @@ Public key encryption also has an added advantage of creation and verification o
   
 ### Modular Exponential
 In cryptography, it is important to be able to find the modulus of p^e mod m when p,e, and m are very large integers. It is very hard to compute p^e then divide by m and find the remainder because p^e is a huge number.
-This can be done using an algorithm that employs the binary expansion of the exponent of e.
+It can be done using an algorithm that employs the binary expansion of the exponent of e.
 Reduce the value given using the binary form of e and in each step compute the modulus of the value.
 **Example:**
 To
