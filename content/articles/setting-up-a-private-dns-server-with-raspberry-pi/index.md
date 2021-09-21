@@ -6,7 +6,7 @@ In order for computers to speak with one another over the web, all participants 
 - [How DNS servers work](#how-dns-servers-work)
 - [Functions of a DNS](#functions-of-a-dns)
 - [Prerequisites](#prerequisites)
-- [Turning Raspberry Pi into a DNS Server](#turning-raspberry-pi-into-a-dns-server)
+- [Setting up a DNS Server on Raspberry PI](#Setting-up-a-dns-server-on-raspberry-pi)
 - [Conclusion](#conclusion)
 
 ### How DNS servers work
@@ -24,46 +24,44 @@ Below are three major benefits that a private Domain Name System would offer:
 
 1.	Raspberry Pi (2-4) with Raspbian OS
 2.	Access to internet
-3.	MicroSD card
-4.	Terminal access
+3.	Aceess to the Raspberry's Terminal 
 
-### Turning Raspberry Pi into a DNS Server 
+### Setting up a DNS Server on Raspberry PI
 
-#### Step 1: Update Packages
+#### Step 1:Updating Raspberry Packages 
 
-It is always important to start by updating the Linux packages available in your raspberry PI
+The first step of the process is updating packages using the following commands:
 
-```bash
-sudo apt update
-sudo apt upgrade
-```
+```sudo apt update```
+
+```sudo apt upgrade```
 
 ![ Updating Packages](/engineering-education/setting-up-a-private-dns-server-with-raspberry-pi/update.png) 
 
-#### Step 2: Install DNSMasq
+#### Step 2: DNSMasq package installation on the Raspberry 
 The next step is the installation of DNSMasq utility, which is essential to set up this server.
 
-```bash
-sudo apt install dnsmasq
- ```
-
+```sudo apt install dnsmasq```
+ 
 ![ Install DNSMasq ](/engineering-education/setting-up-a-private-dns-server-with-raspberry-pi/install_dnsmasq.png)
 
 #### Step 3: DNSMasq Configuration
 
 This step is designed to ensure the best performance of the DNS server.
-1.	Use the command below to edit dnsmasq.conf file using nano editor
+1.	Edit dnsmasq.conf file using:
 
-```bash
-sudo nano /etc/dnsmasq.conf
-```
+```sudo nano /etc/dnsmasq.conf```
 
 2.	Use CTRL+W to search and remove the # sign in front of the following lines:
+
 •	domain-needed – it makes sure that the DNS server does not forward any incorrect domain names. This checks for names that do not have a dot and keeps them in the local network.
+
 •	bogus-priv – prevents the server from forwarding queries within local ranges of IP to upstream servers which serve as a security feature that prevents leaking of local IPs to upstream servers. 
+
 •	no-resolv – tells the DNS server to use the DNSMasq for address resolution instead of /etc/resolv.conf .
 
-3.	Use CTRL+W and delete the line below: 
+3.	Press ```CTRL+W``` to locate the line shown here and then delete it. 
+
 #server=/localnet/192.168.0.1
  
 ![ Edit Server ](/engineering-education/setting-up-a-private-dns-server-with-raspberry-pi/editconf_file.png)
@@ -73,49 +71,50 @@ server=8.8.8.8
 server=8.8.4.4
 The step above ensure that google DNS servers are used as the upstream servers.
 4. Use CTRL+W to look for the following line:
-#cache-size=150
+
+```#cache-size=150```
  
 ![ Edit Cache ](/engineering-education/setting-up-a-private-dns-server-with-raspberry-pi/editcache.png)
 
 Remove the # sign and then change the cache size to 1000:
-cache-size =1000
+
+```cache-size =1000```
+
 Changing the size of cache to a bigger number helps reduce the response time by saving more DNS request responses hence improving performance.
 
-5. Use CTRL+X to save the file then use Y to accept the changes.
+5. Save the edits using ```CTRL + X```.
+
 6. Restart the DNSMasq using the command below: 
 
-```bash
-sudo systemctl restart dnsmasq
-```
+```sudo systemctl restart dnsmasq```
 
-7. check the status of the server using the command below:
+7. check the status of the DNS using the command below:
 
-```bash
-sudo systemctl standing dnsmasq
-```
+```sudo systemctl standing dnsmasq```
  
 ![ Restart and Checking Status ](/engineering-education/setting-up-a-private-dns-server-with-raspberry-pi/status.png)
 
 #### Step 4: DNS Server testing
 
 1. The server is tested using the dig command.
-dig <domain> @localhost
+
+```dig <domain> @localhost```
+
 For instance:
 
-```bash
-dig section.io/kb @localhost
- ```
+```dig section.io/kb @localhost```
  
 ![ DNS Testing ](/engineering-education/setting-up-a-private-dns-server-with-raspberry-pi/responsetime1.png)
 
 2. Check the response time taken by the query.
 
 3. Run the command again.
-You will notice the time reduces because the address is cached.
+
+Because the address is stored in cache, time taken to querry is shorter.
  
 ![ DNS Testing ](/engineering-education/setting-up-a-private-dns-server-with-raspberry-pi/responsetime2.png)
 
-#### Step 5: Configure your laptop to use the setup DNS Server
+#### Step 5: Set the DNS Server on your device
 
 1.	Find out the IP address of the raspberry PI by using the ifconfig command.
  
