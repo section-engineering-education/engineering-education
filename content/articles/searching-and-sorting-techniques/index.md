@@ -234,3 +234,6 @@ Binary search is quicker if the acquired data is sorted and the array size is la
 1. [Difference between Searching and Sorting Algorithms](https://www.geeksforgeeks.org/difference-between-searching-and-sorting-algorithms/)
 2. [Elementary Data Structures](https://learn.saylor.org/course/view.php?id=66&sectionid=628)
 3. [Introduction to Sorting techniques in C++](https://www.softwaretestinghelp.com/sorting-techniques-in-cpp/)
+
+---
+Peer Review Contributions by: [Bonface Muriithi](/engineering-education/authors/bonface-muriithi)
