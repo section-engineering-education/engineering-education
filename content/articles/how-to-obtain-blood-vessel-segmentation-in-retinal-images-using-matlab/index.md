@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /how-to-obtain-blood-vessels-segmentation-in-retinal-images-using-matlab/
 title: How to Obtain Blood Vessels Segmentation in Retinal Images Using Matlab
-description: This tutorial will discuss the simple steps of obtaining blood vessels in retinal images using Matlab. We will see how the in-built functions in Matlab can be used in segmentation, to obtain clear optical nerves and blood vessels required in the field of medicine.
+description: This tutorial will discuss the simple steps of obtaining blood vessels in retinal images using Matlab. The reader will see how the in-built functions in Matlab can be used in segmentation, to obtain clear optical nerves and blood vessels required in the field of medicine.
 author: queenter-bruce
 date: 2021-08-18T00:00:00-09:38
 topics: []
@@ -36,10 +36,10 @@ To follow along with this tutorial, you'll need:
 - Proper understanding of [MATLAB](https://www.section.io/engineering-education/getting-started-with-matlab/) basics.
 - Basic understanding of [image processing](https://www.section.io/engineering-education/image-processing-using-matlab/) using Matlab.
 
-### Matlab code for obtaining the segmentation
-To make this whole process easier, download your image and store it in the current folder in Matlab. The retinal images can be downloaded from the internet.
+#### Matlab code for obtaining the segmentation
+To make this whole process easier, download your image and store it in the current folder in Matlab. The retinal images can be downloaded directly from the internet.
 
-Thereafter, we will open Matlab and create a new script. The first step is to read the images.
+Thereafter, we will open Matlab and create a new script. The first step is reading the images.
 It is made possible by the `imread` function.
 
 ```Matlab
@@ -48,7 +48,7 @@ test_image = imread('retinal_image.jpg');
 
 Our image looks bigger at this point. We should therefore resize it using the `imresize` function. This function uses the image name and the preferred dimensions in vector form as the arguments.
 
-The dimensions are in pixels. This means that decimal dimensions are not accepted.
+The dimensions are in pixels. This means that decimal dimensions are not accepted:
 
 ```Matlab
 resized_image = imresize(test_image, [584 565]);
@@ -87,6 +87,7 @@ From the code above, the `3` represents the dimensions of the concatenated areas
 
 Then, we used the `bsx` function to perform an element-wise binary operation between the `filled` and `lab` images.
 
+
 Next, we will reshape the filled image. The dimension arguments will be blank since we do not need any here.
 
 Instead, we will use `3` since it is the existing dimension of the `filled` image, as shown below:
@@ -112,7 +113,7 @@ We need all the rows and the columns of the first channel:
 S = S(:, :, 1);
 ```
 
-### Performing contrast enhancement and filter on the grayscale image.
+#### Performing contrast enhancement and filter on the grayscale image.
 Now, let us convert the `S` into a grayscale image. First, we subtract `S`'s minimum value from `S` and then divide it by the maximum and minimum of `S`.
 
 The division is going to be an element-wise division, and that is why we use the dot before the division sign as shown in the code below:
@@ -263,7 +264,7 @@ This is how the complemented image will look like:
 
 ![complemented image](/engineering-education/how-to-obtain-blood-vessel-segmentation-in-retinal-images-using-matlab/retinal_three.png)
 
-### Colorizing the image
+#### Colorizing the image
 Let us now colorize this image. In order to do that, we will create a function named `colorized_image.m`.
 
 The function will return the color image. To avoid any difficulty we will use the default color defined by `DEFAULT COLOR` like this:
@@ -345,7 +346,7 @@ figure, imshow(final_results)
 title('final_result')
 ```
 
-Finally, this is how our final image looks like:
+Finally, this is how our final image will look like:
 
 ![final output](/engineering-education/how-to-obtain-blood-vessel-segmentation-in-retinal-images-using-matlab/retinal_four.png)
 
