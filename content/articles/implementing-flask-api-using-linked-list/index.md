@@ -1,5 +1,5 @@
 ### Implementing Flask API using Linked list Data Structure
-![linked_list](/implementing-flask-api-using-linked-list/hero.jpg)
+![hero_image](/engineering-education/implementing-flask-api-using-linked-list/hero.jpg)
 
 ### Introduction
 Understanding data structures is an important aspect when developing applications. As real-world applications consider space and time complexities when designing applications to save on the memory and time taken to run specific programs. Despite the useful trade-offs, they offer to the pool of developers, most rarely use them. These make their programs and software not being to the quality and standards expected and can make organizations incur huge losses in terms of budgeting for storage and consumer loading time of these applications.
@@ -66,7 +66,7 @@ The `LinkedList()` class constructor takes `head` and `last_node` as its attribu
 
 With that said, let's visualize how a linked list works:
 
-![linked_list](/implementing-flask-api-using-linked-list/linked-list.jpg)
+![linked_list](/engineering-education/implementing-flask-api-using-linked-list/linked-list.jpg)
 
 The rectangles in the image above represent nodes in a linked list and each node has two separate compartments. The left compartment represents the data and has the string value Data in it. The right compartment represents the pointer that points to the next node. If we look at our Node class we see it has the data and next_node pointer as well. The `LinkedList()` wrapper class only helps us keep track of the head of our linked list. From the image above the first node in the linked list represents the head. So for instance, if we want to add to the head of our linked list as we'll see in a bit it will be easier to do so.
 
@@ -415,7 +415,7 @@ Next, we'll test our endpoints using a Postman.
 To begin the testing the endpoints, fire up `Postman` and `server.py` file by the `python server.py` command.
 Once the application is running open Postman and create a new collection and name it `flask api`. We then add a request called `create_user` and a `POST` request to it. To begin testing the `create_user()` copy the running server and paste it to Postman and add the `/user` to appear like `http://127.0.0.1:5000/user`. We then choose the `body` tab and enable `raw` this allow us to select the `JSON` format for writing our data. We write our request payload in the canvas space using the User model attributes, `name`, `email`, `address`, and `phone`. The image below shows a snap of that endpoint.
 
-![linked_list](/implementing-flask-api-using-linked-list/create-user.jpg)
+![create_user](/engineering-education/implementing-flask-api-using-linked-list/create-user.jpg)
 
 We create at least five users to enable us to test other endpoints.
 In order to avoid running into `sqlite3.OperationalError` close the DB Browser for SQLite when sending requests.
