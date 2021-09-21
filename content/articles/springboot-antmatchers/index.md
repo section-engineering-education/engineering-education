@@ -7,8 +7,8 @@ The sensitivity of the data carried by an application varies from application to
 In this article:
 
 - We’ll have an overview of the need to secure your application.
-- We’ll be introduced to some of the different mechanisms to secure your application.
 - We’ll dive further into the Springboot Antmatcher technique of securing an application.
+
 ### Prerequisites
 - Fundamental knowledge of the Springboot framework.
 - Fundamental understanding of Application Programming Interfaces (APIs). You can learn how to build a Springboot REST API [here](https://www.section.io/engineering-education/how-to-create-a-rest-api-using-spring-boot-maven-and-mysql/).
@@ -46,8 +46,27 @@ The following are some of the methods applied on `antmatchers()`:
 ### Let’s build an API to demonstrate
 Let us proceed to explore the features of the `antMatchers` technique. We’ll build an API consisting of a `Product` model.
 
+#### Project structure
+
+```java
+controller/
+|--- ProductContoller.java
+model/
+|--- Product.java
+repository/
+|--- ProductRepository.java
+security/
+|--- AppSecurityConfig.java
+|--- Roles.java
+services/
+|--- ProductService.java
+|--- ProductServiceImpl.java
+SpringAntMatcherApplication.java
+
+```
+
 #### Roles
-The roles of the client could be either of the following:
+The role of the client is either of the following:
 
 - Intern
 - Supervisor
@@ -712,26 +731,6 @@ Click on authorization and set the authorization type to Basic Auth.
 ![authorised delete](/springboot-antmatchers/postman_6.png)
 
 As shown via Postman, we achieved authorizations based on the role of the client through the `antmatchers()` method. Unauthorized requests were forbidden, and authorized clients received a status code of 200.
-
-
-### Other methods of securing your Springboot API
-#### Basic Authentication
-This is relatively the simplest form of authentication. It requires the client to provide the username and password when making a request to the server. 
-
-These credentials are encoded as base64 and sent through the request header. The server validates the credentials and if authenticated, returns a `200` status code along with the requested data (if any).
-
-#### Bearer Token
-The bearer token is a sequence of characters that the client may not interpret. The server generates it after successful authentication and returns it to the client.
-
-The token serves as the authentication credential for any subsequent requests within that session. Due to the risk of the token being intercepted through cyberattacks, it is advisable to implement this authentication method over an HTTPS connection.
-
-#### OAuth
-This is an authorization protocol that enables a service to access the permitted data of its users on other services without the users providing their login credentials.
-
-The recipient server generates a token for the requesting application once the user approves this request and the specified permission. This token contains the permissions and is used each time a request is made between these services, as long as the token is not expired.
-
-#### JSON web token (JWT)
-This is another authorization tool that can be the most secure of the token-based authorization tools. It enables applications to communicate using a structure-specific token, as long as authentication has been established.
 
 
 ### Conclusion
