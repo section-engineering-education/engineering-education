@@ -1,3 +1,20 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /design-a-sign-up-and-login-gui-using-javafx/
+title: Design a sign up and login GUI using JavaFX
+description: In this tutorial, the reader will learn how to build a login and signup form with JavaFX
+author: roy-kibet
+date: 2021-09-21T00:00:00-16:00
+topics: [Frontend technologies, Java]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/design-a-sign-up-and-login-gui-using-javafx/hero.png
+    alt: javafx login and signup gui
+---
+
 JavaFX is an open-source Java framework. It's for creating, developing, and delivering portable hardware-accelerated user interfaces. JavaFX creates GUIs for rich internet applications (RIA). It is for web, desktop, and embedded and mobile applications. For example, one would use for it would be for login and sign-up forms. These have a unique design that makes the site presentable and of a unique design.
 
 In this article, you will learn how to build a JavaFX login and sign-up user interface (UI).
@@ -854,3 +871,6 @@ In this guide, you have learned:
 
 - [JavaFX libraries](https://www.educba.com/javafx-libraries/)
 - [JavaFX website](https://openjfx.io/)
+
+---
+Peer Review Contributions by: [John Amiscaray](/engineering-education/authors/john-amiscaray/)
