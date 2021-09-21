@@ -1,5 +1,4 @@
 ### Implementing Flask API using Linked list Data Structure
-![hero_image](/engineering-education/implementing-flask-api-using-linked-list/hero.jpg)
 
 ### Introduction
 Understanding data structures is an important aspect when developing applications. As real-world applications consider space and time complexities when designing applications to save on the memory and time taken to run specific programs. Despite the useful trade-offs, they offer to the pool of developers, most rarely use them. These make their programs and software not being to the quality and standards expected and can make organizations incur huge losses in terms of budgeting for storage and consumer loading time of these applications.
@@ -16,7 +15,9 @@ In this article, we'll build a hands-on Flask API using a linked list data struc
 
 
 ### Prerequisites
-Before we start building the application, you should have the latest version of [Python](https://www.python.org/downloads/) installed or at least version `Python 3.6+`. To help install the necessary packages and dependencies you should have `pip` installed. If not check out the [link](https://pip.pypa.io/en/stable/installation/) to have it in your machine depending on your operating system. We'll be using the DB Browser for SQLite to visually check the database and its tables. You can download it from [here](https://sqlitebrowser.org/). For testing APIs you'll need [Postman](https://www.postman.com/downloads/). Depending on your preference you can choose a text editor of your choice. There are a number such as [Visual Studio Code](https://code.visualstudio.com/download), [Atom](https://atom.io/), [Sublime](https://www.sublimetext.com/3), [Vim](https://www.vim.org/download.php) among others. For this tutorial, I'll be using Ubuntu 20.04 and Vim text editor.  
+Before we start building the application, you should have the latest version of [Python](https://www.python.org/downloads/) installed or at least version `Python 3.6+`. To help install the necessary packages and dependencies you should have `pip` installed. If not check out the [link](https://pip.pypa.io/en/stable/installation/) to have it in your machine depending on your operating system. We'll be using the DB Browser for SQLite to visually check the database and its tables. You can download it from [here](https://sqlitebrowser.org/).
+
+For testing APIs you'll need [Postman](https://www.postman.com/downloads/). Depending on your preference you can choose a text editor of your choice. There are a number such as [Visual Studio Code](https://code.visualstudio.com/download), [Atom](https://atom.io/), [Sublime](https://www.sublimetext.com/3), [Vim](https://www.vim.org/download.php) among others. For this tutorial, I'll be using Ubuntu 20.04 and Vim text editor.  
 
 ### Introduction to Flask
 Flask is a micro-framework of Python that is used to create custom web applications. It is lightweight and does not come with any bundled packages and dependencies enabling developers to be on the wheel while building any application on it. If you want to get into more details to understand how Flask works check the official [documentation](https://flask.palletsprojects.com/en/2.0.x/).
@@ -252,11 +253,15 @@ if __name__ == '__main__':
 app.run(debug=True)
 ```
 ### Database Setup and API Skeleton
-In the `server.py`, first import `sqlite3`, `Flask`, `sqlalchemy`, `Flask_SQLAlchemy`, and `datetime`. The `Flask_SQLAlchemy` acts as an extension of `SQLAlchemy` to the application and allows us to play with the ORM and use the database in our application. The `SQLAlchemy` is the Python Object Relational Mapper(ORM) that gives the application full power and flexibility of SQL. The `event` and `Engine` imported from `sqlalchemy` are python database API that enables core performance of event hooks to a particular connection. For more in-depth on how the ORM works check the [SQLAlchemy documentation](https://docs.sqlalchemy.org/en/14/).
+In the `server.py`, first import `sqlite3`, `Flask`, `sqlalchemy`, `Flask_SQLAlchemy`, and `datetime`. The `Flask_SQLAlchemy` acts as an extension of `SQLAlchemy` to the application and allows us to play with the ORM and use the database in our application. The `SQLAlchemy` is the Python Object Relational Mapper(ORM) that gives the application full power and flexibility of SQL.
+
+The `event` and `Engine` imported from `sqlalchemy` are python database API that enables core performance of event hooks to a particular connection. For more in-depth on how the ORM works check the [SQLAlchemy documentation](https://docs.sqlalchemy.org/en/14/).
 
 We'll use `sqlite3` as our database, we import it and give it an alias `SQLite3Connection`.
 
-We initialize the application by assigning the Flask instance to the `app` variable. This creates a flask object that implements the WSGI application and acts as the central registry for the application packages and modules. Setting the configuration dictionary allow specification of the database path to our database using the `SQLALCHEMY_DATABASE_URI`. The `SQLALCHEMY_TRACK_MODIFICATIONS` is set to True as Flask-SQLAlchemy tracks the modification of objects and emits signals.
+We initialize the application by assigning the Flask instance to the `app` variable. This creates a flask object that implements the WSGI application and acts as the central registry for the application packages and modules.
+
+Setting the configuration dictionary allow specification of the database path to our database using the `SQLALCHEMY_DATABASE_URI`. The `SQLALCHEMY_TRACK_MODIFICATIONS` is set to True as Flask-SQLAlchemy tracks the modification of objects and emits signals.
 
 The configuration of the database takes a `listens_for` decorator from the event API which accepts the `Engine` and `"connect"` as arguments. The `"connect"` identifies the event to be intercepted, and a user-defined listening function. The `_set_sqlite_pragma()` creates a connection based on our `sqlite3` database, enable the foreign key constraints, and closes the connection. For more on event registration check the [event documentation](https://docs.sqlalchemy.org/en/14/core/event.html).
 
@@ -313,7 +318,9 @@ def get_user():
   return jsonify({"message": "User created"}), 200
 ```
 
-We had earlier covered what the decorator does. The `data` will hold requests being parsed in JSON format using the `get_json()` Flask API function. The `new_user` variable is the instance of the User model and its assigned properties to the data in dictionary format. We then add the instance to the database and commit it. If the user is created successfully a JSON formatted response will be displayed with the status `200`. We import the `jsonify` from the Flask's flask.json module. It serializes data to JavaScript Object Notation(JSON) format.  We'll test this in a bit using `Postman` in the next chapter for now let's create the routes.
+We had earlier covered what the decorator does. The `data` will hold requests being parsed in JSON format using the `get_json()` Flask API function. The `new_user` variable is the instance of the User model and its assigned properties to the data in dictionary format. We then add the instance to the database and commit it.
+
+If the user is created successfully a JSON formatted response will be displayed with the status `200`. We import the `jsonify` from the Flask's flask.json module. It serializes data to JavaScript Object Notation(JSON) format.  We'll test this in a bit using `Postman` in the next chapter for now let's create the routes.
 
 In the `get_all_users_descending()`, `get_all_users_ascending()`, and `get_user()` we'll be using the linked list file that we created by importing the `LinkedList` class. So, in our `server.py` file import the `LinkedList` by:
 
@@ -413,14 +420,19 @@ Next, we'll test our endpoints using a Postman.
 
 ### Testing the API using Postman
 To begin the testing the endpoints, fire up `Postman` and `server.py` file by the `python server.py` command.
-Once the application is running open Postman and create a new collection and name it `flask api`. We then add a request called `create_user` and a `POST` request to it. To begin testing the `create_user()` copy the running server and paste it to Postman and add the `/user` to appear like `http://127.0.0.1:5000/user`. We then choose the `body` tab and enable `raw` this allow us to select the `JSON` format for writing our data. We write our request payload in the canvas space using the User model attributes, `name`, `email`, `address`, and `phone`. The image below shows a snap of that endpoint.
+
+Once the application is running open Postman and create a new collection and name it `flask api`. We then add a request called `create_user` and a `POST` request to it. To begin testing the `create_user()` copy the running server and paste it to Postman and add the `/user` to appear like `http://127.0.0.1:5000/user`.
+
+We then choose the `body` tab and enable `raw` this allow us to select the `JSON` format for writing our data. We write our request payload in the canvas space using the User model attributes, `name`, `email`, `address`, and `phone`. The image below shows a snap of that endpoint.
 
 ![create_user](/engineering-education/implementing-flask-api-using-linked-list/create-user.jpg)
 
 We create at least five users to enable us to test other endpoints.
 In order to avoid running into `sqlite3.OperationalError` close the DB Browser for SQLite when sending requests.
 
-Performing the payload request `get_all_users_descending()`, `get_all_users_descending()`, and `get_user()` is easier as we just only specify the routes and select the `GET` request and send. This perform the logic implemented in each function. The `get_all_users_descending` fetch the users in descending order and `get_all_users_ascending` perform the same in ascending order. The `get_user()` returns the payload of that particular `id` specified. The `delete_user()` deletes a user with the specified id passed for example if you want to delete a user with id 3, you pass `http://127.0.0.1:5000/user/3` with the `DELETE` request and send. If you check it in the DB Browser it won't be available.
+Performing the payload request `get_all_users_descending()`, `get_all_users_descending()`, and `get_user()` is easier as we just only specify the routes and select the `GET` request and send. This perform the logic implemented in each function. The `get_all_users_descending` fetch the users in descending order and `get_all_users_ascending` perform the same in ascending order.
+
+The `get_user()` returns the payload of that particular `id` specified. The `delete_user()` deletes a user with the specified id passed for example if you want to delete a user with id 3, you pass `http://127.0.0.1:5000/user/3` with the `DELETE` request and send. If you check it in the DB Browser it won't be available.
 
 ### Conclusion
 To recap on what this article has covered, we first introduce what Flask is and a few reasons why it is most preferred. We then got a better understanding of what linked lists are and implemented some of its use-cases. We then implemented the Flask API by first going through a basic Flask script and adding models and routes to it and finally implemented the core API endpoints using the LinkedList class. We later tested the endpoints created with Postman and used DB Browser for SQLite to visually check our database tables.
