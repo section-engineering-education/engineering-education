@@ -40,7 +40,10 @@ In both scenarios, customers are served at the same time. Parallelism is a tool 
 
 ### **Concurrency in Go**
 
-Before the development of Go, concurrent codes in other programming languages are in threads and if there are lots of things to execute which the machine can not handle, thread pools are created to handle that. In Go, concurrency works through the use of in-built functions known as Goroutines.
+Concurrency in some other programming languages is achieved by using threads. If there are lots of things to be executed that the machine can't handle, thread pools are created to handle them. 
+
+In Go, concurrency works through the use of in-built functions known as Goroutines.
+
 
  [Goroutines](https://www.golangprograms.com/goroutines.html) are functions that run at the same time alongside other code or programs. Goroutines are unique to Go. They’re not OS threads though they may be considered lightweight threads. Goroutines are deeply integrated with Go runtime. Go's runtime monitors goroutine behavior and suspends them when they become blocked, then resumes them once they are not blocked. This makes them preemptible in some ways, but only when the goroutine is blocking. The runtime and the logic of a goroutine work together. Goroutines can communicate with one another and synchronize their execution. In Go, one of the synchronization elements is called a channel. Though they are used to synchronize memory access, they are best used for communicating information between goroutines. When data is to be shared across goroutines while performing a concurrent activity as a goroutine, channels function as a conduit (pipe) between the goroutines and provide a method that ensures asynchronous exchange.
 
