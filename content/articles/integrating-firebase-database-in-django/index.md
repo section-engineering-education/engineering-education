@@ -249,3 +249,5 @@ In this tutorial, we learned how to use the `Realtime Database`. There are other
 You can also check the [Firebase](https://firebase.google.com/docs) documentation for more info on Firebase.
 
 You can check out the full code on [GitHub](https://github.com/shosenwales/django-firebase).
+
+Happy Coding!
