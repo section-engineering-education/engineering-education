@@ -43,7 +43,7 @@ Thereafter, we will open Matlab and create a new script. The first step is readi
 It is made possible by the `imread` function.
 
 ```Matlab
-test_image = imread('retinal_image.jpg');
+test_image = imread('retinal_image.jpg');      %Reading the image
 ```
 
 Our image looks bigger at this point. We should therefore resize it using the `imresize` function. This function uses the image name and the preferred dimensions in vector form as the arguments.
@@ -51,7 +51,7 @@ Our image looks bigger at this point. We should therefore resize it using the `i
 The dimensions are in pixels. This means that decimal dimensions are not accepted:
 
 ```Matlab
-resized_image = imresize(test_image, [584 565]);
+resized_image = imresize(test_image, [584 565]);     %resizing the image
 ```
 
 Since we will be segmenting very tiny blood vessels, we will need to convert the resized image into double data time using the `im2double` function.
@@ -59,10 +59,12 @@ Since we will be segmenting very tiny blood vessels, we will need to convert the
 This function only uses the image name as the argument:
 
 ```Matlab
-converted_image = im2double(resized_image);
+converted_image = im2double(resized_image);       %converting the image to double data time
 ```
 
 At this point, the image is an `RGB` image. We need to convert the image to `CIE lab` colour space. The international commission of illumination defined the CIE Lab colour space.
+
+### Converting the image to CIE lab color space
 
 According to this colour space, the `l` represents the `likeness` of the colour. The `likeliness` ranges from 0 to 100, where 0 is black and 100 is white.
 
@@ -73,13 +75,13 @@ The `b` represents blue to yellow. It also ranges from negative to positive.
 The image will be converted as shown below:
 
 ```matlab
-lab_image = rgb2lab(converted_image);
+lab_image = rgb2lab(converted_image);    %Converting the image from rgb color space to lab color space
 ```
 
 Let us now use the `cat` function to concatenate 1, 0 and 0. Concatenation is the process of merging two or more variables together.
 
 ```matlab
-fill = cat(3, 1, 0, 0);
+fill = cat(3, 1, 0, 0);              %cancating the image
 filled_image = bsxfun(@times, fill, lab_image);
 ```
 
@@ -87,13 +89,13 @@ From the code above, the `3` represents the dimensions of the concatenated areas
 
 Then, we used the `bsx` function to perform an element-wise binary operation between the `filled` and `lab` images.
 
-
+### Reshaping the output image
 Next, we will reshape the filled image. The dimension arguments will be blank since we do not need any here.
 
 Instead, we will use `3` since it is the existing dimension of the `filled` image, as shown below:
 
 ```matlab
-reshaped_lab_image = reshape(filled_image, [], 3);
+reshaped_lab_image = reshape(filled_image, [], 3);    %reshaping the image
 ```
 
 Now we apply the principal component analysis(PCA) function. Also, we are using the `reshaped_lab_image` as the argument.
@@ -103,7 +105,7 @@ The function returns the coefficients and the score of the principal component. 
 You can then resize the scores based on the size of the `lab` image as shown:
 
 ```matlab
-[C, S] = pca(reshaped_lab_image);
+[C, S] = pca(reshaped_lab_image);    %finding the coefficients of the pca
 S = reshape(S, size(lab_image));
 ```
 
@@ -119,13 +121,13 @@ Now, let us convert the `S` into a grayscale image. First, we subtract `S`'s min
 The division is going to be an element-wise division, and that is why we use the dot before the division sign as shown in the code below:
 
 ```Matlab
-gray_image = (S-min(S(:)))./(max(S(:)));
+gray_image = (S-min(S(:)))./(max(S(:)));    %converting image S into a grayscale
 ```
 
 Now we need the contrast enhancement of this gray image. This will be done using the adaptive histogram equalization function `adapthisteq`, as shown:
 
 ```matlab
-enhanced_image = adapthisteq(gray_image, 'numTiles', [8 8], 'nBins', 128);
+enhanced_image = adapthisteq(gray_image, 'numTiles', [8 8], 'nBins', 128);     %enhancing the contrast
 ```
 
 The `numTiles`, which stands for the number of tiles, means the enhancement is done block by block. The size of the block is going to be `8x8`.
@@ -135,15 +137,15 @@ The `numTiles`, which stands for the number of tiles, means the enhancement is d
 The next step is to perform an average filter on the image. To do it, we define the filter using the `special` function. We then apply the `imfilter` function to compute the value of the output image in pixel as shown below:
 
 ```Matlab
-avg_filter = special('average', [9 9]);
+avg_filter = special('average', [9 9]);    %filtering the image
 filtered_image = imfilter(enhanced_image, avg_filter);
 ```
 
 We will now view the `filtered image` and subtract it from the enhanced image using the `imsubtract` function. To view the image we will use the `imshow` function as seen below:
 
 ```matlab
-figure, imshow(filtered_image)
-title('filtered image')
+figure, imshow(filtered_image)             %showing the resulting image
+title('filtered image')                    %adding the title
 subtracted_image = imsubtract(filtered_image, enhanced_image);
 ```
 
@@ -159,47 +161,50 @@ Now we convert the image into `uint8`. This is a type of data type of `8-bits`. 
 We then use the `imhist` function and the converted image as the argument to get the histogram count and beam number like this:
 
 ```matlab
-image = im2uint8(image(:));
-[Histogram_count, Bin_number] = imhist(image);
+image = im2uint8(image(:));     %converting the image to uint8
+[Histogram_count, Bin_number] = imhist(image);    %calculating the histogram count and beam number
 i = 1;     % Initializing the variable
 ```
 
 Calculate the cumulative sum of histogram count using `cumsum` function as shown below:
 
 ```matlab
-cumulative_sum = cumsum(Histogram_count);
+cumulative_sum = cumsum(Histogram_count);    %calculating the cumulative sum
 ```
 
 Let us now find the mean below and above `T`. `T` is the ratio of the sum of the multiplication of bin number and the histogram count to the cumulative sum indexed at the end.
 
 ```matlab
-T(i) = (sum(Bin_number.*Histogram_count))/cumulative_sum(end);
+T(i) = (sum(Bin_number.*Histogram_count))/cumulative_sum(end);  %calculating the ratio of the sum of the multiplication of bin number and the histogram count to the cumulative sum indexed at the end.
+
 T(i) = round(T(i));    %Rounding the T(i)
 ```
 
 We now need to find the cumulative sum of the histogram count from `1` to `T(i)`. We use this to find the mean above T(MAT) and MBT.
 
 ```matlab
-cumulative_sum_2 = cumsum(Histogram_count(1:T(i)));
-MBT = sum(Bin_number(T(i)).*Histogram_count(1:T(i)))/cumulative_sum_2(end);
-cumulative_sum_3 = cumsum(Histogram_count(T(i):end));
-MAT = sum(Bin_number(T(i):end).*Histogram_count(T(i):end))/cumulative_sum_3(end);
+cumulative_sum_2 = cumsum(Histogram_count(1:T(i)));         %finding the cumulative sum at the second index.
+MBT = sum(Bin_number(T(i)).*Histogram_count(1:T(i)))/cumulative_sum_2(end); %finding the MBT 
+cumulative_sum_3 = cumsum(Histogram_count(T(i):end));      %finding the cumulative sum at the second index.
+MAT = sum(Bin_number(T(i):end).*Histogram_count(T(i):end))/cumulative_sum_3(end);    %finding the MBT 
 ```
+### Finding the average of MAT, MBT and the obsolete value of T above one
 
 We will now find the threshold. This is achieved by using the code below:
 
 ```matlab
 i = i+1;
-T(i) = round((MAT+MBT)/2);
+T(i) = round((MAT+MBT)/2);      %Finding the average of MBT and MAT
 ```
+### Making the obsolete value great than one
 
 Let us now introduce a while loop to give the conditions to make the absolete value of `T` to be greater than one:
 
 ````matlab
 while abs(T(i)-T(i-1))>=1
-cumulative_sum_2 = cumsum(Histogram_count(1:T(i)));
-MBT = sum(Bin_number(T(i)).*Histogram_count(1:T(i)))/cumulative_sum_2(end);
-cumulative_sum_3 = cumsum(Histogram_count(T(i):end));
+cumulative_sum_2 = cumsum(Histogram_count(1:T(i)));    %finding the histogram count at the second index
+MBT = sum(Bin_number(T(i)).*Histogram_count(1:T(i)))/cumulative_sum_2(end);  %finding the histogram count at MBT
+cumulative_sum_3 = cumsum(Histogram_count(T(i):end));    %finding the histogram count at the third index
 MAT = sum(Bin_number(T(i):end).*Histogram_count(T(i):end))/cumulative_sum_3(end);
 i = i+1;                      %looping i
 T(i) = round((MAT+MBT)/2);    %rounding off the average mat and mbt.
@@ -222,7 +227,7 @@ level = Threshold_level(subtracted_image);
 Now we can convert this `subtracted_image` to binary image uisng the `im2bw` function.
 
 ```matlab
-binary_image = im2bw(subtracted_image, level-0.008);
+binary_image = im2bw(subtracted_image, level-0.008);    %converting to binary
 ```
 
 We then display the output using the `imshow` to display this binary image in a figure with the following code:
@@ -233,6 +238,8 @@ title('binary image')
 ```
 
 This is what we have when running the code at this point:
+
+### The resulting outputs and the further modifications
 
 ![output image](/engineering-education/how-to-obtain-blood-vessel-segmentation-in-retinal-images-using-matlab/retinal_one.png)
 
@@ -255,7 +262,7 @@ A complement image is an image in which the pixels are subtracted from the maxim
 To convert, add the following block of code:
 
 ```Matlab
-complemented_image = imcomplement(clean_image);
+complemented_image = imcomplement(clean_image);   %complemented image
 figure, imshow(complemented_image)
 title('complemented image')
 ```
@@ -282,20 +289,20 @@ The code will be as follows:
 
 ```Matlab
 if nargin<3
-colorspace_defination = DEFAULT_COLOR;
+colorspace_defination = DEFAULT_COLOR;   %calling the default color function
 end
 ```
 
 We now make the complemented image to be a logical image, like this:
 
 ```matlab
-complemented_image = (complemented_image~=0);
-```
+complemented_image = (complemented_image~=0);      %colored image
+```  
 
 Then convert the resized image and the color space into `uint8`:
 
-```matlab
-resized_uint8 = im2uint8(resized_image);
+```matlab  
+resized_uint8 = im2uint8(resized_image);       %converting the resized image and the color space into uint8.
 color_uint8 = im2uint8(colorspace_defination);
 ```
 
@@ -305,7 +312,7 @@ If this is the case, we have to initialize all our input channel with same value
 
 ```matlab
 if ndims(resized_uint8) == 2
-red_channel = resized_uint8;
+red_channel = resized_uint8;            %initializing the colors
 green_channel = resized_uint8;
 blue_channel = resized_uint8;
 ```
@@ -313,6 +320,7 @@ blue_channel = resized_uint8;
 However, in other cases, we have to define the channel, as shown below:
 
 ```matlab
+%defining the colors
 else
 red_channel = resized_uint8(:, :, 1);
 green_channel = resized_uint8(:, :, 2);
@@ -326,6 +334,7 @@ From the code above:
 Now apply the colors to the complemented image:
 
 ```matlab
+%applying color to the images
 red_channel(complemented_image) = color_uint8(1);
 green_channel(complemented_image) = color_uint8(2);
 blue_channel(complemented_image) = color_uint8(3);
@@ -334,7 +343,7 @@ blue_channel(complemented_image) = color_uint8(3);
 Finally, we concatenate the red, green and the blue channel into a 3-D array with the following code which will give us the coloured image:
 
 ```Matlab
-color_image = cat(3, red_channel, green_channel, blue_channel);
+color_image = cat(3, red_channel, green_channel, blue_channel); %color image
 end
 ```
 
