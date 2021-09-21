@@ -1,4 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /build-digital-clock-using-javascript/
 title: How to build a digital clock with only HTML, CSS, and JavaScript
+description: In this article, we learn how to build a digital clock on the web using HTML, CSS and Javascript.
+author: frank-joseph
+date: 2021-09-21T00:00:00-13:30
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/build-digital-clock-using-javascript/hero.jpg
+    alt: digital clock with js
+---
 
 ### Introduction
 
@@ -311,3 +326,6 @@ With all this, we have been able to build our digital clock using only HTML, CSS
 ### References
 - [JavaScript date object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
 - [W3school on the JavaScript date object](https://www.w3schools.com/js/js_dates.asp)
+
+---
+Peer Review Contributions by: [John Amiscaray](/engineering-education/authors/john-amiscaray/)
