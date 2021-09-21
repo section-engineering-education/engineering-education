@@ -1,0 +1,4 @@
+For the last four years, security researchers have reported a tremendous increase of breaches.About 20-30,000 websites are hacked everyday.There are several ways websites get hacked,XXE being one of them.According to the OWASP Top 10 report of 2017 XXE attacks were ranked number four , this year (2021), XXE has been merged in Security misconfiguration which has been placed in the fifth position.The OWASP Top 10 is a report maintained by the Open Web Application Security Project , it contains a list of high ranking web application security concerns.
+In this article we will be looking at XXE attacks in depth.We will focus on what XML is, What are XML external entities , Impact of this attack and how to mitigate it.
+### What is XML ?
+Extensible Markup Language is a markup language ,just like HTML, that is human and machine-readble used for storing or transporting data .Unlike HTML, Users can define their own tags.
