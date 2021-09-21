@@ -1,6 +1,21 @@
-### Introduction
-This tutorial will help the reader understand how to use `LeakCanary` to detect memory leaks in Android applications. LeakCanary not only detects memory leaks but also helps you to reduce them. The occurrence of memory leaks may lead to a poor user experience due to app crashes caused by `OutOfMemory` (OOM) error.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /handling-memory-leaks-in-android-using-leakcanary/
+title: Handling memory leaks in Android using LeakCanary
+description: This tutorial will help the reader understand how to use LeakCanary to detect memory leaks in Android applications. LeakCanary is an open-source memory leak detection library developed by Square organization.
+author: collince-okeyo
+date: 2021-09-21T00:00:00-21:21
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/handling-memory-leaks-in-android-using-leakcanary/hero.png
+    alt: Handling memory leaks in Android using LeakCanary hero image
+---
+This tutorial will help the reader understand how to use `LeakCanary` to detect memory leaks in Android applications. LeakCanary not only detects memory leaks but also helps you to reduce them. The occurrence of memory leaks may lead to a poor user experience due to app crashes caused by `OutOfMemory` (OOM) error.
+<!--more-->
 ### Prerequisites
 To follow through this tutorial, the reader should have:
 
@@ -139,3 +154,6 @@ LeakCanary is a powerful leak detection library. When you want to deploy your ap
 - [LeakCanary](https://square.github.io/leakcanary/)
 - [How to use LeakCanary](https://stackoverflow.com/questions/33654503/how-to-use-leak-canary)
 - [Android Memory Leaks](https://developer.android.com/studio/profile/memory-profiler)
+
+---
+Peer Review Contributions by: [Eric Gacoki](/engineering-education/authors/eric-gacoki/)
