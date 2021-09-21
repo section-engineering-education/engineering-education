@@ -1,10 +1,10 @@
 In this tutorial, we will learn how to create a geospatial server and database, the server will power the database and will serve as the gateway between the users and the spatial database. Let's define some keywords:
 
-Spatial data is any data that contains the longitude and latitude  of any location, they provide information about a physical location and are also referred to as Geographic Information System(GIS). 
+Spatial data is any data that contains the longitude and latitude of any location, they provide information about a physical location and are also referred to as Geographic Information System(GIS). 
 
 Geoserver is a server that processes spatial data and also powers a geodatabase. It serves as the link between geodatabase and users by giving them access to spatial data.
 
-The geodatabase is a database that stores spatial data, it allows users to create, update, retrieve and delete spatial data. The data can be stored as points, lines or polygons. We will use PostgreSQL extension call Postgis so that the database can handle spatial data.
+The geodatabase is a database that stores spatial data, it allows users to create, update, retrieve and delete spatial data. The data can be stored as points, lines or polygons. We will use a PostgreSQL extension call Postgis so that the database can handle spatial data.
 
 ## Table of Contents
 -  [Prerequisites](#prerequisites)
@@ -15,7 +15,7 @@ The geodatabase is a database that stores spatial data, it allows users to creat
 - [Further Reading](#further-reading)
 
 ##Prerequisites
--   Basic understanding of Python, HTMl and Jinja Templating
+-   Basic understanding of Python, HTML and Jinja Templating
 -   PostgreSQL
 -   PostGis
 
@@ -60,7 +60,7 @@ if __name__ == "__main__":
 
 We created a new Flask instance in the app variable which we can use in some parts of our project. We also created a secret key, it should be changed to a secure key you can generate a random number using UUID. The last section tells the app to run when the condition __name__ == "__main__" is true.
 
-The code app.run starts our server and it's running on the ip 127.0.01 and on the default port 5000 the port can be changed to any 4 number as long as it's not being used by any app/software and the server will work effectively.
+The code app.run starts our server and it's running on the IP 127.0.01 and the default port 5000 the port can be changed to any 4 number as long as it's not being used by any app/software and the server will work effectively.
 ```
 app.config['SQLALCHEMY_DATABASE_URI']='postgresql://postgres:password@localhost/geodata'
 ```
@@ -116,7 +116,7 @@ The `@app.route('/', methods=['GET', 'POST'])` creates the endpoint it means tha
 
 The aoi_coordinate variable selects the coordinates of the Polygon from file_json, the coordinate variable adds the aoi and coordinate as defined in our model. We added the coordinate to our database and committed the changes using the db object.
 
-Flask uses the Jinja templating method to render HTML pages and that's what we will used in this tutorial. [Click here](https://hackersandslackers.com/flask-jinja-templates/)  to read more about Jinja templating.
+Flask uses the Jinja templating method to render HTML pages and that's what we will use in this tutorial. [Click here](https://hackersandslackers.com/flask-jinja-templates/)  to read more about Jinja templating.
 
 HTML pages are stored in the templates folder, so let's create a new folder called templates in our root directory. Inside the templates folder, we will also create a new file called index.html. We will use bootstrap 5.1 to style our form.
 ```
@@ -193,7 +193,7 @@ We looped through the all_coordinates that was passed from the app.py so that we
 
 
 ##Conclusion
-In this tutorial we learnt how to create a soespatial server and database, that saves and return a location coordinates. The app can be further built as an API service and rendered to logistics company because they can easily get's the coordinate of a prticular location. 
+In this tutorial, we learnt how to create a geospatial server and database, that saves and return location coordinates. The app can be further built as an API service and rendered to logistics companies because they can easily get the coordinate of a particular location. 
 
 ## Further Reading
 - [Python Virtual Environment](https://www.section.io/engineering-education/introduction-to-virtual-environments-and-dependency-managers/) 
