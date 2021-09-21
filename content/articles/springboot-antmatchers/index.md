@@ -3,7 +3,7 @@
 Typically, a developer builds an API for consumption by other applications or services. You are expected to make your application communicate the data it fetches from the database to the client or the processed data it receives from the requesting service.
 
 The sensitivity of the data carried by an application varies from application to application. Hence, it is ideal that as a developer building a backend service, only authenticated users should have access to these data based on their level of authorisation.
-## Key takeaways:
+### Key takeaways:
 In this article:
 
 - We’ll have an overview of the need to secure your application.
