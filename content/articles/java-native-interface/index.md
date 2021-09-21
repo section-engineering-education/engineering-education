@@ -14,29 +14,30 @@ images:
   - url: /engineering-education/java-native-interface/hero.jpg
     alt: Java Native Interface Cover image
 ---
-The Java Native Interface (JNI) standard, which has been part of the Java platform since Java 1.1, allows Java code to communicate with code scripted in different languages. Although the JNI was developed primarily for natively compiled languages, C and C++ are two examples of programming languages. It is not something that restricts you from utilizing other languages as long as the proper calling conventions are implemented.
+The Java Native Interface (JNI) standard is part of the Java platform since Java 1.1 allows Java code to communicate with code scripted in different languages. Although the JNI was developed primarily for natively compiled languages, C and C++ are two examples of programming languages. It does not restrict you from utilizing other languages as long as the proper calling conventions are implemented.
 
 ### Introduction
-As we all know, one of Java's key advantages is flexibility, which means that when we create a code compilation, the outcome is bytecode that is platform agnostic. Simply explained, this is possible to execute every system or gadget that can run java programs on a computer. However, there are situations when we have to use natively executable code for a particular infrastructure.
+As we all know, one of Java's key advantages is flexibility, which means that when we create a code compilation, the outcome is bytecode that is platform agnostic. Simply put, this is possible to execute every system or gadget that can run java programs on a computer. 
 
-We employ native code for a variety of reasons, including the following:
+However, there are situations when we have to use natively executable code for a particular infrastructure. We employ native code for a variety of reasons, including the following:
+
 - Some hardware needs to be handled.
 - Every time a challenging procedure is carried out, its performance must be enhanced.
 - When we wish to reuse a library rather than recreating it in Java.
 
-This tool is what we call the` Java Native Interface`which is a coded model for calling and being invoked by applications outside its scope (packages specific to a platform's hardware and operating system)as well as from Java programs in a Java virtual machine, libraries developed in other languages like C, C++, and assembly are generated (JVM).
+This tool is what we call the Java Native Interface. JNI is a coded model for contacting and being invoked by applications outside its scope (packages specific to a platform's hardware and operating system) and from Java programs in a Java virtual machine. Also, libraries developed in other languages like C, C++, and assembly are generated JVM.
 
 ### Prerequisites
-- Have background information on creating objects using C++.
-- Have a piece of background information on java language and how to create classes.
-- To execute the codes, use the G++ compiler. For my case, I used [oracle terminal online](https://www.tutorialspoint.com/oracle_terminal_online.php) to execute the codes.
+- Have a basic understanding of creating objects using C++.
+- Have a basic understanding of the Java programming language and how to create classes.
+- To execute the codes, use the G++ compiler. For my case, I used [oracle terminal online](https://www.tutorialspoint.com/oracle_terminal_online.php) to run the codes.
 
-### Goals of this Tutorial
-- By the end of this tutorial, the reader should be able to understand the following concepts:
-1. Java native Interface in general and elements in java native interface.
-2. How to implement java native methods using a native method (C++ for our case).
-3. Application of Java methods from Native Code using objects.
-4. Advantages and limitations of using JNI.
+### Goal
+By the end of this tutorial, the reader should be able to understand the following concepts:
+- Java Native Interface in general and elements in Java Native Interface.
+- Implementation of Java native methods using a native method (C++ for our case).
+- Application of Java methods from Native Code using objects.
+- Advantages and limitations of using JNI.
 
 ### Table of Contents
 - [Native Methods](#native-methods)
@@ -48,39 +49,38 @@ This tool is what we call the` Java Native Interface`which is a coded model for 
 - [Advantages and disadvantages of Using JNI](#advantages-and-disadvantages-of-using-jni)
 
 ### Native Methods
-The native keyword in relation to Java language is utilized to specify that such a procedure is implemented in the foreign code. During the creation of a foreign or native executable application, we usually have the option of using static or shared libraries:
-- `Static libraries`- During the linking process, we will include all library binaries as part of our executable. As a result, we will no longer require the libs, but our executable file will grow in size.
-- `Shared libraries`- 
-Only the libraries are referenced in the final executable, not the code itself. It is necessary that the configuration in which our program runs is launched will have accessibility to every file in our libraries which our software uses.
+The native keyword in Java language specifies that such a procedure is implemented in the foreign code. During the creation of a foreign or native executable application, we usually have the option of using static or shared libraries:
 
-Because bytecode and natively produced code cannot be mixed in the same binary file, the latter makes perfect sense for Java Native Interface.
+- `Static libraries`- We will include all library binaries as part of our executable during the linking process. As a result, we will no longer require the libs, but our executable file will grow in size.
+- `Shared libraries`- Only the libraries are referenced in the final executable, not the code itself. The configuration in which our program runs must have accessibility to every file in our libraries which our software uses.
+
+Since a binary file cannot mix bytecode and native code in the same binary file, the latter makes perfect sense for Java Native Interface.
 
 ```Java
 private native void theNativeMethod();
 
 ```
-In the code above the keyword (native) is used to transform our method function to a sort of a procedure that is abstract. With the exception that it will be deployed in a distinct a shared foreign package rather than other Java class been responsible for implementing it.
+
+In the code above, the keyword (native) is used to transform our method function to a sort of abstract procedure, with the exception that it will be deployed in a distinct a shared foreign package rather than other Java classes being responsible for implementing it.
 
 ### JNI Elements in Code (Java)
 Elements found in java code;
-- A term is known as `native`- any function highlighted as foreign should be used in a foreign, sharing library, as we have already discussed.
-- A string library name `System.loadLibrary`- a constant procedure that links a sharable library into an address within the address of a system which makes its exported functionalities accessible to our Java code.
+- As we have already discussed, a term is known as `native`, which is any function highlighted as foreign that should be used in an unfamiliar, sharing library.
+- A string library name `System.loadLibrary` is a constant procedure that links a sharable library into an address within the address of a system, making its exported functionalities accessible to our Java code.
 - Java virtual machine -  a framework that allows us to control a current JVM (or even construct one from scratch) by introducing threads, terminating it, and so forth.
 - Java native interface environment (`JNIEnv`) - a structure having methods for accessing Java objects from a foreign code
-- The java native interface Export (`JNIEXPORT`) - Identifies a function in a shared library as exportable, and it will appear in the method table and Java native interface will be able to discover it.
-- Java native interface Call (`JNICALL`) - It guarantees that our techniques are available for the JNI framework when paired with JNIEXPORT.
+- The java native interface Export (`JNIEXPORT`) - Identifies a function in a shared library as exportable. It will appear in the method table, and the Java native interface will discover it.
+- Java native interface Call (`JNICALL`) - guarantees that our techniques are available for the JNI framework when paired with JNIEXPORT.
 
 #### Java native interface hello world
- Let us take a glance at how JNI actually operates.
- In the article, we will employ C++ as the primary programming language, using G++ as the compiler and linker.
+Let us take a glance at how JNI operates. The article will employ C++ as the primary programming language, using G++ as the compiler and linker.
+We may choose any compiler we like, but this is what to do to get G++ up and running on Ubuntu operating system, Windows OS, and Mac OS:
+- In Ubuntu(Linux), we will have to run  `Sudo apt-get` to install build-essential code in the terminal.
+- In a windows operating system we will install the `MinGW`.
+- Run a command g++ in the terminal in the macOS, and if it is not present, you need to install it first.
 
-We may choose any type of compiler we like, but this is what to do to get G++ up and running on Ubuntu operating system, Windows OS, and Mac OS:
-1. In ubuntu(Linux), we will have to run a code `Sudo apt-get install build-essential in the terminal.
-2. In a windows operating system we will install the `MinGW
-3. Run a command `g++` in the terminal in the MacOS and if it will not be present, you need to install it first.
-
-### Creating the Java Class
-By writing our first Java Native Interface program, we must implement the class "Hello World." The very first thing is to develop a Java class that contains the native methods that will be used to complete the task.
+#### Step one: Creating the Java Class
+By writing our first Java Native Interface program, we must implement the class "Hello World." The first thing is to develop a Java class that contains the native methods used to complete the task.
 
 ```java
 package example.java;
@@ -101,6 +101,7 @@ public class HelloJavaJNI {
 }
 
 ```
+
 The static library is loaded in the static block in the illustration above. This enables it to be accessible for use at any time and in any location. We could also load the package only before using our native function in this little script because the native library is not used for anything else.
 
 #### First we implement our native language method in C++
