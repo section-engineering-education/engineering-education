@@ -8,15 +8,12 @@ The term "Language-Integrated Query" (LINQ) refers to a group of technologies th
 3. In the Configure your new project window, type LinqProject in the Project name box. Then, choose Create.
 
 ### Generating sequences with LINQ
-Make sure the below three lines are at the very top of the Program.cs file produced by dotnet new console before you begin. For our program to run, the lines below should be in the program so that the results shall be obtained as expected
+Consider a collection of cards, one set of cards used in various games usually comprises four suites, each with thirteen values. Typically, you'd consider starting with a Card class and manually filling a compilation of those cards objects. With LINQ, one can see a long text with fewer words than you can with the traditional method of generating a pack of playing cards. A class called card may be initiated, but Suits and rankings are represented by sequences, sequences that may be built as two of them. You will then write a pair of straightforward iterator methods to generate the rankings and suits as IEnumerable<T>s of strings.
+  
 ```c#
 using System;
 using System.Collections.Generics;
 using System.Linq;
-```
-Consider a collection of cards, one set of cards used in various games usually comprises four suites, each with thirteen values. Typically, you'd consider starting with a Card class and manually filling a compilation of those cards objects. With LINQ, one can see a long text with fewer words than you can with the traditional method of generating a pack of playing cards. A class called card may be initiated, but Suits and rankings are represented by sequences, sequences that may be built as two of them. You will then write a pair of straightforward iterator methods to generate the rankings and suits as IEnumerable<T>s of strings.
-  
-```c#
 static IEnumerable<String> Suits()
 {
     yield returns "diamonds";
