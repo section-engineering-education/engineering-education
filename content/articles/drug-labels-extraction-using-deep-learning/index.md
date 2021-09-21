@@ -6,7 +6,7 @@ url: /drug-labels-extraction-using-deep-learning/
 title: Drug Label Extraction Using Deep Learning
 description: This tutorial will show the reader how to extract drug labels from prescription medicine using OCR.
 author: wilkister-mumbi
-date: 2021-09-13T00:00:00-18:30
+date: 2021-09-21T00:00:00-10:30
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
