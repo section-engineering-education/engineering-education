@@ -25,7 +25,16 @@ In programming, concurrency is "*the composition of independently executed proce
 
 ### **Concurrency vs Parallelism**
 
-A lot of developers intertwine concurrency with parallelism. Though these two terms may seem similar and are often confusing and substituted for the other, they do not mean the same thing. Concurrency is the ability to deal with lots of programs at the same time. These programs execute at the same time one after another. For example, a coffee shop with many customers requesting a cup of their choice of coffee. As a customer gets served, the order of another customer processes. Every customer gets served from the same coffee machine. Parallelism is the ability to do lots of programs at the same time. The same analogy applies, although, here there are different coffee machines.
+A lot of developers intertwine concurrency and parallelism.
+
+Although these two terms may seem similar and, are often confused and substituted for one another, they do not mean the same thing.
+
+Concurrency is the ability to deal with lots of programs at the same time. These programs execute at the same time one after another.
+
+For example, a coffee shop with many customers requesting a cup of their choice of coffee. As a customer gets served, the order of another customer processes. Every customer gets served from the same coffee machine.
+
+On the other hand, parallelism is the ability to do lots of programs at the same time. The same analogy applies, although, here there are different coffee machines.
+
 
 In both scenarios, customers are served at the same time. Parallelism is a tool used by concurrency to achieve its goal however, it is not the goal of concurrency.
 
