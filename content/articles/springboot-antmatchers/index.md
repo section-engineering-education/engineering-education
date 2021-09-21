@@ -1,11 +1,9 @@
 ﻿
 ### How to set up permissions to URL using the Springboot Ant-Matcher
-Typically, a developer builds an API for consumption by other applications or services. You are expected to make your application communicate the data it fetches from the database to the client or the processed data it receives from the requesting service.
+As a backend developer, the API you build would typically be for consumption by other applications or services. The sensitivity of the data carried by an application varies from application to application. Hence, it is ideal that when building a backend service, only authenticated users should have access to these data based on their level of authorisation.
 
-The sensitivity of the data carried by an application varies from application to application. Hence, it is ideal that as a developer building a backend service, only authenticated users should have access to these data based on their level of authorisation.
 ### Key takeaways:
 In this article:
-
 - We’ll have an overview of the need to secure your application.
 - We’ll dive further into the Springboot Antmatcher technique of securing an application.
 
