@@ -17,18 +17,18 @@ images:
 A **host** is a computer that can connect to the internet. Every host has a unique identification number that allows its identification anytime it is online. 
 <!--more-->
 An IP address is a name given to this specific number.
+
 ### Prerequisites
-#### High-Level prerequisites :
-- OOPS concept
-- Basic Java 
+#### High-Level prerequisites:
+- OOP concept
+- Basic understanding of Java 
 - Networking
 
-#### Low-Level prerequisites :
-- Proper Java.net package knowledge in Java library
+#### Low-Level prerequisites:
+- Proper Java.net package knowledge in the Java library
 - Exception handling mechanisms
 - Networking concepts based on TCP layer (DNS)
  
-
 ### Table of contents
 - [Definition of an IP Address](#definition-of-an-ip-address)
 - [Definition of a DNS and its Workflow](#definition-of-a-dns-and-its-workflow)
@@ -40,9 +40,9 @@ An IP address is a name given to this specific number.
 ### Definition of an IP address
 An IP address is a string of numbers separated by dots that stands for **Internet Protocol**. It is in the OSI model, a layer two protocol. 
 
-IP addresses are either four-digit numbers in **32 bit** format known as **IPv4 addresses**. For example, 192.168.1.3 or **IPv6 addresses** a standardized version of IP addresses that use six-digit numbers in **128 bits** format. 
+IP addresses are either four-digit numbers in a **32-bit** format known as **IPv4 addresses**. For example, 192.168.1.3 or **IPv6 addresses** a standardized version of IP addresses that use six-digit numbers in **128 bits** format. 
 
-Each integer in the set can be anywhere between 0 and 255. Indicating the range of an IP address is from 0.0.0.0 to 255.255.255.255.
+Each integer in the set can be anywhere between 0 and 255. This means that the range of an IP address is from 0.0.0.0 to 255.255.255.255.
 
 IP addresses are not just random numbers that one can assign to a host. The _Internet Assigned Numbers Authority_ creates and allocates them to devices.
 
@@ -54,7 +54,7 @@ IP addresses are not just random numbers that one can assign to a host. The _Int
 - DNS associates hostnames that humans can remember (such as www.google.com) with IP addresses that computers can remember (e.g., 172.217.170.164).
 
 #### How DNS works
-DNS is not self-contained; it requires extra programs, one of which is a _resolver_. A piece of client-side software that makes it easier to connect to a DNS server. 
+DNS is not self-contained; it requires extra programs, one of which is a _resolver_. A `resolver` is a piece of client-side software that makes it easier to connect to a DNS server. 
 
 It is an extra program on the client computer that assists in connecting to a DNS server.
 
@@ -83,7 +83,9 @@ If necessary, the three methods may connect to a local DNS server to fill up the
 
 The InetAddress class caches the results of the DNS lookups such that once it has the address of the given host, it won't have to look it up again. If the IP address does not change while your program is running, there will be no issues.
 
-Negative results such as `host not found` are slightly problematic. It happens for the first time, and in the second trial, one succeeds. This error will occur when the first attempt timed out while the information was in transit from the remote DNS server.
+Negative results such as `host not found` are slightly problematic. It happens for the first time, and in the second trial, one succeeds. 
+
+This error will occur when the first attempt timed out while the information was in transit from the remote DNS server.
 
 > public static InetAddress getByName(String hostName) throws UnknownHostException
 `InetAddress.getByName()` is the frequently used method. It is a static method that takes the hostname that you are looking for as its arguments. It looks up the host's IP address using DNS. 
@@ -132,7 +134,6 @@ A sample output of this code:
 
 ```bash
 my local machine: www.microsoft.com/2.21.100.214
-
 ```
 
 > For machines that do not have hostnames, you can always pass a string that contains a hexadecimal form of the IP address to `InetAddress.getByName()`.
@@ -144,7 +145,9 @@ InetAddress address = InetAddress.getByName("172.217.170.164");
 
 ```
 
-> Hostnames are more stable than IP addresses. Most services have lived at the same hostnames but have changed their IP addresses severally. When choosing between hostnames like `www.google.com` and IP addresses like `172.217.170.164`, always go with the hostname.
+Hostnames are more stable than IP addresses. Most services have lived at the same hostnames but have changed their IP addresses severally. 
+
+When choosing between hostnames like `www.google.com` and IP addresses like `172.217.170.164`, always go with the hostname.
 
 > public static InetAddress[]getAllByName(String hostName) throws UnknownHostException
 Some computers will have more than one IP address. When given a hostname, the `InetAddress.getAllByName()` returns an array of addresses that correspond to that name.
@@ -188,7 +191,7 @@ Google different ip:www.google.com/172.217.170.164
 
 > Hosts with multiple IP addresses are very high-volume web servers.
 
-#### public static InetAddress getLocalHost() throws UnknownHostException
+>public static InetAddress getLocalHost() throws UnknownHostException
 This static method returns the InetAddress of the machine on which it's running.
 
 Just like `InetAddress.getByName()` and `InetAddress.getAllByName()` it throws `UnknownHostException` when it cannot find the address of the host.
@@ -222,14 +225,15 @@ My local machine Ip is: DESKTOP-MC2R176/192.168.43.35
 
 ```
 
-> When not connected to the internet, and the system lacks a fixed IP address or domain name, the domain name is _localhost_, and the IP address is 127.0.0.1.
+When not connected to the internet, and the system lacks a fixed IP address or domain name, the domain name is _localhost_, and the IP address is 127.0.0.1.
 
-> The programs will not work on a standalone computer. Your machine should be connected to the internet for you to get the IP addresses and domain names.
+The programs will not work on a standalone computer. Your machine should be connected to the internet for you to get the IP addresses and domain names.
 
 ### Conclusion
 In this tutorial, we learned about IP addresses and their versions. We managed to look at the DNS and its workflow. 
 
 We also learned that the IP addresses and hostnames are accessible via the InetAddress class.
+
 My advice to the learner is to practice how to lookup IP addresses over the internet using Java Programming Language.
 
 ---
