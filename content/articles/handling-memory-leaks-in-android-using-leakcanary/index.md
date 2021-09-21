@@ -1,5 +1,5 @@
 ### Introduction
-This tutorial will help the reader to understand how to use `LeakCanary` to detect memory leaks in Android applications. LeakCanary not only detects memory leaks but also reduces them. The occurrence of memory leaks may lead to a poor user experience due to app crashes caused by `OutOfMemoryError`.
+This tutorial will help the reader understand how to use `LeakCanary` to detect memory leaks in Android applications. LeakCanary not only detects memory leaks but also helps you to reduce them. The occurrence of memory leaks may lead to a poor user experience due to app crashes caused by `OutOfMemory` (OOM) error.
 
 ### Prerequisites
 To follow through this tutorial, the reader should have:
@@ -14,7 +14,7 @@ By the end of this tutorial, the reader will:
 - Know the best programming practices to avoid memory leaks.
 
 ### Memory Leaks
-Whenever an object is no longer in use, the garbage collector is always responsible for its removal as a heap junk, but if the garbage collector is unable to perform its task, then a condition called memory leak arises.
+Whenever an object is no longer in use, the garbage collector is always responsible for its removal as a heap junk, but if the garbage collector is unable to perform its task, a condition called memory leak arises.
 
 A memory leak can also occur when an application is unable to release memory from an object when the object is no longer in use. App crashes causes a bad user experience and should be avoided. Hence handling memory leaks is important.
 
@@ -23,13 +23,13 @@ Below, are the common practices that can cause memory leaks in Android applicati
 
 1. Adding a `Fragment` instance to the back stack without clearing the Fragment’s view fields in `Fragment.onDestroyView()` method.
 
-In case an instance to a fragment is added to the back stack, it should be cleared to remove its reference during the call of the `onDestroyView` method. This will help in avoiding memory leaks.
+In case an instance to a fragment is added to the back stack, it should be cleared to remove its reference during the `onDestroyView` method call. This will help in avoiding memory leaks.
 
-1. Storing an instance of an `Activity` as a `Context` field in an object that survives activity recreation due to configuration changes.
+2. Storing an instance of an `Activity` as a `Context` field in an object that survives activity recreation due to configuration changes.
 
 During app configuration changes, various tasks run in the background thread. When an instance of an activity is stored in an object that survives activity recreation, a memory leak is likely to occur.
 
-3. Forgetting to deregister a listener, broadcast receiver, or RxJava subscription that refers to a life-cycled object. 
+3. Forgetting to de-register a listener, broadcast receiver, or RxJava subscription that refers to a life-cycled object. 
 
 4. Storing a reference to a `Context` in the background thread.
 
@@ -41,7 +41,7 @@ This will hinder the garbage collector from reclaiming the object held by the re
 - Instead of using context-activity, try using context-application.
 
 ### What is LeakCanary?
-LeakCanary is an open-source memory leak detection library developed by Square Organization. It can detect and decrease memory leaks in android applications. It also notifies the location where the leak is actually happening.
+LeakCanary is an open-source memory leak detection library developed by Square organization. It can detect and decrease memory leaks in android applications. It also notifies the location where the leak is actually happening.
 
 Using LeakCanary is simple because it has predefined functions. It also simplifies the programmer's work since it shows the location of the memory leak which makes it simple to correct and avoid the leak.
 
@@ -60,7 +60,7 @@ LeakCanary handles memory leaks in four steps as listed below:
 Enough theory lets now see in practice how LeakCanary works.
 
 ### Step 1: Adding LeakCanary dependency.
-In the build.gradle (Project level) file, paste the LeakCanary dependency and sync the project.
+In the build.gradle (project level) file, paste the LeakCanary dependency and sync the project.
 
 ```gradle
 debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.7'
@@ -109,7 +109,7 @@ myBackground = getApplicationContext().getResources().getDrawable(R.drawable.ic_
 LeakCanary handles memory leaks in four steps. 
 
 ### 1. Detecting objects that have been retained
-When building your project, the `Leaks` app is also installed with your application. Leaks app is automatically installed due to the LeakCanary library.
+When building your project, the `Leaks` app is also installed alongside your application. Leaks app is automatically installed due to the LeakCanary library.
 
 ![Leaks App](/engineering-education/handling-memory-leaks-in-android-using-leakcanary/leaks.jpg)
 
@@ -136,6 +136,6 @@ This is the final step where LeakCanary shows the location of the memory leak an
 LeakCanary is a powerful leak detection library. When you want to deploy your application for production, it is appropriate to remove the LeakCanary library to avoid taking the `Leaks` app to users. To remove LeakCanary, go to `build.gradle` file and delete the LeakCanary library you added and rebuild the project.
 
 ### References
-- [LeakCanary](https://square.github.io/leakcanary/).
+- [LeakCanary](https://square.github.io/leakcanary/)
 - [How to use LeakCanary](https://stackoverflow.com/questions/33654503/how-to-use-leak-canary)
 - [Android Memory Leaks](https://developer.android.com/studio/profile/memory-profiler)
