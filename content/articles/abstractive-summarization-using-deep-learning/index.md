@@ -14,15 +14,16 @@ images:
   - url: /engineering-education/abstractive-summarization-using-deep-learning/hero.png
     alt: abstractive summarization example image 
 ---
+
 Abstractive summarization uses Google's Pegasus model. The model uses Transformer's Encoder-Decoder architecture. The encoder outputs masked tokens while the decoder generates Gap sentences.
 <!--more-->
-Abstractive summarization aims to take a body of text , turning it into a shorter version. Not only does abstractive summarization shorten body of texts, but also generates new sentences. They cover principal information in the input and is linguistically fluent, generating novel words.
+Abstractive summarization aims to take a body of text, turning it into a shorter version. Not only does abstractive summarization shorten the body of texts, but it also generates new sentences. They cover principal information in the input and are linguistically fluent, generating novel words.
 
-This is not the case for previous versions of text summarizations which only aim to generate accurate and concise summaries from input documents. Basically, it copies informative fragments from input sentences.
+This is not the case for previous versions of text summarizations which only aim to generate accurate and concise summaries from input documents. It copies informative fragments from input sentences.
 
-Abstractive summarization uses Google's [Pegasus](https://huggingface.co/google/pegasus-xsum) model. This is described in a research paper known as [PEGASUS: Pre-training with Extracted Gap-sentences for Abstractive Summarization](https://arxiv.org/pdf/1912.08777.pdf). The model uses Transformer's Encoder-Decoder architecture. The encoder outputs masked tokens while the decoder generates Gap sentences.
+Abstractive summarization uses Google's [Pegasus](https://huggingface.co/google/pegasus-xsum) model. This is described in a research paper as [PEGASUS: Pre-training with Extracted Gap-sentences for Abstractive Summarization](https://arxiv.org/pdf/1912.08777.pdf). The model uses Transformer's Encoder-Decoder architecture. The encoder outputs masked tokens while the decoder generates Gap sentences.
 
-This tutorial will walk you through how to use the Pegasus model to perform abstractive summarization from start to finish. We will perform abstractive summarization on some Wikipedia, News and Scientific Journals documents.
+This tutorial will walk you through how to use the Pegasus model to perform abstractive summarization from start to finish. We will perform abstractive summarization on some Wikipedia, News, and Scientific Journals documents.
 
 ### Table of contents
 - [Prerequisites](#prerequisites) 
@@ -34,7 +35,7 @@ This tutorial will walk you through how to use the Pegasus model to perform abst
 To understand this tutorial, You need to be familiar with:
 - Natural Language Processing.
 - Python programming language.
-- Machine learning modelling.
+- Machine learning modeling.
 - Google Colab or Jupyter Notebook. 
 
 ### Installing dependencies for transformers in Python
@@ -44,9 +45,9 @@ PyTorch will be the underlying framework that powers the Pegasus model.
 
 Let's install PyTorch.
 
-Navigate to PyTorch's main [website](https://pytorch.org/). On the main webpage, you'll see an `install` option. Click on it. Here, you can choose your PyTorch build of choice, your OS, installation package, language, and compute platform. This will generate a code which you will use to install PyTorch. Please note that different selections generate different installation code.
+Navigate to PyTorch's main [website](https://pytorch.org/). On the main webpage, you'll see an `install` option. Click on it. Here, you can choose your PyTorch build of choice, your OS, installation package, language, and compute platform. This will generate a code that you will use to install PyTorch. Please note that different selections generate different installation codes.
 
-For our case, we'll choose the `LTS (1.8.2)` Pytorch build, `Linux` OS, the `Pip` package, `Python` programming language, and finally `CUDA 10.2`. Since I'll be using Google Colab. If you don't have a GPU in your machine, you can still go ahead and choose the CPU option.
+For our case, we'll choose the `LTS (1.8.2)` Pytorch build, `Linux` OS, the `Pip` package, `Python` programming language, and finally `CUDA 10.2`. Since we'll be using Google Colab. If you don't have a GPU in your machine, you can still go ahead and choose the CPU option.
 
 After the selection, the following installation command is generated:
 
@@ -57,7 +58,7 @@ If you're using Jupyter notebook or Google Colab, make sure to add the `!` befor
 
 This command successfully installs PyTorch.
 
-Let's go ahead and install our second dependency which is the HuggingFace transformers
+Let's go ahead and install our second dependency, which is the HuggingFace transformers.
 
 ```python
 !pip3 install transformers
@@ -65,7 +66,7 @@ Let's go ahead and install our second dependency which is the HuggingFace transf
 
 This command will successfully install the huggingface transformer library.
 
-Our third dependency which we need to install is `SentencePiece`. It is a text tokenizer and detokenizer that helps predetermine vocabulary sizes before the neural model training.
+Our third dependency, which we need to install, is `SentencePiece`. It is a text tokenizer and detokenizer that helps predetermine vocabulary sizes before the neural model training.
 
 ```python
 !pip3 install sentencepiece
@@ -82,7 +83,7 @@ from transformers import PegasusForConditionalGeneration, PegasusTokenizer
 
 The above command imports our main dependencies from transformers which we installed earlier. This imports two classes, the `PegasusForConditionalGeneration`, and `PegasusTokenizer`. The `PegasusTokenizer` class will convert our sentences into tokens. This is a numbered representation of our sentences. This allows us to pass it to our deep learning model. The `PegasusForConditionalGeneration` class will allow us to use our model.
 
-Let's now go ahead and create our tokenizer for the model
+Let's now go ahead and create our tokenizer for the model.
 
 ```python
 tokenizer_model = PegasusTokenizer.from_pretrained("google/pegasus-xsum")
@@ -104,28 +105,28 @@ We use the `PegasusForConditionalGeneration` class to perform this task. We also
 
 Our model has now loaded successfully into our Colab.
 
-All that's left to do is to perform abstractive summarization on some wikipedia texts.
+All that's left to do is to perform abstractive summarization on some Wikipedia texts.
 
 ### Performing abstractive summarization 
 This last step involves taking a bunch of texts, pass it through the Pegasus model, and see how it performs abstractive summarization on the text. 
 
-Let's find some text that we want to summarize. Let's create a variable called `text` and add some text into it.
+Let's find some text that we want to summarize. Let's create a variable called `text` and add some text to it.
 
 ```python
 text = """
-Hugging Face is a great open-source library that is doing powerful work in the Natural Language Processing (NLP) space. The library has a bunch of pre-trained models which you can leverage or fine-tune. 
+Hugging Face is a great open-source library doing powerful work in the Natural Language Processing (NLP) space. The library has a bunch of pre-trained models which you can leverage or fine-tune. 
 
-The library has many models including BERT and GPT-2 models that perform various tasks, but for our purpose, we’ll be leveraging the pre-trained language pipeline. Rather than going ahead and training a huge language model such as GPT-2 with 1.5 billion parameters, one can leverage the ML pipeline instead."""
+The library has many models, including BERT and GPT-2 models that perform various tasks, but we’ll be leveraging the pre-trained language pipeline for our purpose. Rather than going ahead and training a huge language model such as GPT-2 with 1.5 billion parameters, one can leverage the ML pipeline instead."""
 ```
 
 We've picked some text from this [tutorial](/engineering-education/building-a-simple-translation-app-using-python-for-beginners/) on Section's website that we want our model to summarize. 
 
-Using our tokenizer which we loaded earlier, let's convert our text into its tokens representation.
+Using our tokenizer, which we loaded earlier, let's convert our text into its tokens representation.
 
 ```python
 tokens = tokenizer_model(text, truncation=True, padding="longest", return_tensors="pt")
 ```
-We've created a variable called `tokens` to store our token representation. We use our tokenizer `tokenizer_model` which we created earlier to tokenize our texts. The `truncation=True` argument allows the model to truncate our texts into a size suitable to be used as input into our model. The `return_tensors` argument tells the model to use tensors from PyTorch.
+We've created a variable called `tokens` to store our token representation. We use our tokenizer `tokenizer_model`, which we created earlier, to tokenize our texts. The `truncation=True` argument allows the model to truncate our texts into a size suitable for input into our model. The `return_tensors` argument tells the model to use tensors from PyTorch.
 
 Let's view our tokens. We achieve this by writing the following command:
 
@@ -137,7 +138,7 @@ Let's now go ahead and try to summarize this text.
 ```python
 summary = model.generate(**tokens)
 ```
-The `**tokens` unpacks our tokens and passes it into our model. The asterics in `**tokens` is just a simple way of adding the `input_ids`, and `attention_mask` present in the results above. 
+The `**tokens` unpacks our tokens and pass them into our model. The asterics in `**tokens` are simply adding the `input_ids` and `attention_mask` present in the results above. 
 
 Let's check our generated summary results. We do this by typing the following command:
 
@@ -151,7 +152,7 @@ To us, these are just a bunch of numbers. But to machines, this is how they unde
 ```python
 tokenizer_model.decode(summary[0])
 ```
-From the `summary` result above, we can see that the results are in a nested list. But we only need the first result, so that's why we've indexed [0].
+The `summary` result above shows that the results are in a nested list. But we only need the first result, so that's why we've indexed [0].
 
 Running that command shows our summarized text. 
 
@@ -166,7 +167,7 @@ This is what abstractive summarization is all about!
 Please find the full code implementation of the tutorial [here](https://colab.research.google.com/drive/1jmyj05vzVLN96Q3uNrZZ9o6QM2PLSXj-#scrollTo=4DIofQXEv-pr).
 
 ### Wrapping up
-This is abstractive summarization in a nutshell. Sometimes the model won't give you an abstractive summary. Rather, a text summary. This might be because you're not using the fine-tuned pegasus model for that particular task. Try and use the Pegasus model fine-tuned for that task for better results. For example, the `pegasus-reddit_tifu` would be most suited for performing abstractive summarization on reddit posts, and not `google/pegasus-xsum`. 
+This is abstractive summarization in a nutshell. Sometimes the model won't give you an abstractive summary. Rather, a text summary. This might be because you're not using the fine-tuned pegasus model for that particular task. Try and use the Pegasus model fine-tuned for that task for better results. For example, the `pegasus-reddit_tifu` would be most suited for abstractive summarization on reddit posts, not `google/pegasus-xsum`. 
 
 Happy coding!
 
