@@ -2,7 +2,7 @@
 
 In this tutorial, I'll explain how serialization works and how we can implement it. I will also include examples of how we can serialize a data structure and how we can use different java concepts to serialize.
 
-A deserialized object can be read from a file and reconstructed in memory. This utilizes the entity's metadata and bytes that constitute its contents.
+You can read a deserialized object from a file and reconstruct it in memory. This utilizes the entity's metadata and bytes that constitute its contents.
 
 ### Table of contents
 
@@ -17,35 +17,35 @@ A deserialized object can be read from a file and reconstructed in memory. This 
 
 ### The concept of serialization and deserialization
 
-The idea of **serialization in Java** is a byte-stream representation of an entity's state. All the entity's data is contained inside the stream of bits.
+The idea of **serialization in Java** is a byte-stream representation of an entity's state. All the entity's data is inside the stream of bits.
 
 **Deserialization** is the reversal of serialization, in which a byte data type stream is turned back to a memory object. The best thing about both techniques is that they're both JVM-agnostic, which means you can serialize on one JVM and de-serialize on another.
 
 ### Characteristics of serialization
 
-- Machine Independent: Any encapsulated item can be deserialized on a separate device.
-- Inheritance: When a parent class is designated as serializable, all its subclasses become serializable as well.
+- Machine Independent: On a separate device you can deserialize any encapsulated item.
+- Inheritance: When a parent class is serializable, all its subclasses become serializable as well.
 
 #### Why serialization?
 
-- Objects are transferred through a network.
+- To transfer objects through a network.
 - To keep Java objects in memory.
 - To save Java objects in files.
 
 ### Benefits of serialization
 
 - It's used to organize troops (by traveling the status of a network attribute).
-- The status of an entity is saved or persistent.
+- The status of an entity becomes saved or persistent.
 - Independent of the JVM.
 - It's simple to comprehend and personalize.
 
 #### When utilizing serialization in Java, please remember the following:
 
 - There are no methods or data members in the serialization interface.
-- Only the serializable interface can be used to serialize an object.
-- A class's fields must all be serializable; otherwise, the temporary keyword should be used.
+- Only use the Serializable interface to serialize an object.
+- A class's fields must all be serializable; otherwise, use the temporary keyword.
 - The child class does not need to implement the `Serializable` interface if its parent class does.
-- During the serialization process, only non-static data members are preserved; static and temporary data members are not.
+- During the serialization process, only preserve non-static data members; static and temporary data members are not.
 - The String and its wrapper classes have the `Serializable` interface implemented by default.
 
 ### How to serialize and deserialize with the help of examples
@@ -115,7 +115,7 @@ public static void serializeLink(Link inputsLink, String filetitle) {
 
 #### Description
 
-This function serializes a `Link` object parameter that is submitted as a parameter. The serialized bytes are then written to a file whose name is specified as the second parameter. Serialization is handled via `out.writeOurObject(inputLink)`. By calling `file.close()`, we terminate the file handle once the bytes have been written to the file.
+ This function will serialize a `Link` object parameter submitted as a parameter.  The serialized bytes are then written to a file in which we will specify the name as the second parameter.  Handle Serialization via `out.writeOurObject(inputLink)`.  By calling `file.close()`, we terminate the file handle.
 
 #### Deserialization example
 
@@ -138,13 +138,13 @@ public static void deserializeLink(Link putoutLink, String filestitle) {
 
 #### Description
 
-The `deserializeLink()` method has two parameters. The first of which, putoutLink, is a blank `Link` object (which can be initialized earlier, but the original values will be replaced by this method). The second parameter, filename, is the location where the deserialized object will be saved.
+The `deserializeLink()` method has two parameters. The first of which, putoutLink, is a blank `Link` object (which we can initialize earlier, but the original values we replace by this method). The second parameter, filename, is the location where we save the deserialized object.
 
-1. The file will be opened in input mode using this procedure.
-2. Deserialization will be performed by in.readObject().
-3. After that, the outcome will be specifically classiﬁed into Link (Link).
+1. The file will open in input mode using this procedure.
+2. We perform Deserialization by in.readObject().
+3. After that, the outcome will be classiﬁed into Link (Link).
 
-If the item is not present, the above procedure may throw an `IOException`. When the expected class is not found, the `ClassNotFoundException` is issued.
+If the item is not present, the above procedure may throw an `IOException`. When the expected class is not found, we issue `ClassNotFoundException`.
 
 #### Object Serialization and Deserialization Example
 
@@ -290,11 +290,11 @@ class SerialLink extends Link {
 
 There are two classes in the example above: `Link` and `SerialLink`. `SerialLink` derives from `Link` and has a `commits` data member that contains all the commits left on the link. Due to the concept of Multilevel Inheritance, `Link` implements `Serializable`, and so `SerialLink` will become serializable as well.
 
-> However, this idea does not operate in reverse as a result. When a child class implements the Serializable interface, the Parent class is unaffected.
+> However, this idea does not operate in reverse as a result. When a child class implements the Serializable interface, the Parent class is not affected.
 
 ### Serialization with aggregation
 
-In Java, aggregation is used to create a `HAS-A` relationship, which means that one class can reference multiple other classes. Only when all the references within these classes are of type `Serializable` will they become serializable. Otherwise, `NotSerializableException` will be dropped when attempting to serialize these types.
+In Java, we use aggregation to create a `HAS-A` relationship, which means that one class can reference multiple other classes. Only when all the references within these classes are of type `Serializable` will they become serializable. Otherwise, `NotSerializableException` drops when we are attempting to serialize these types.
 
 #### Example
 
@@ -344,7 +344,7 @@ class Student implements Serializable
 
 ### Transient members
 
-In some circumstances, the client does not desire all the data members of an entity to be serialized. For this use scenario, Java includes the keyword `transient`. Any data member declared as transient in the serialized object will have a default value for its data type.
+In some circumstances, the client does not desire all the data members of an entity for serialization. For this use scenario, Java includes the keyword `transient`. Any data member declared as transient in the serialized object will have a default value for its data type.
 
 #### Example
 
@@ -376,11 +376,11 @@ OurLink: "This includes our first comment" with 0 comments.
 
 #### Description
 
-After serialization, the numbers of our comments went from 5 to null which is a 0. This occurred since the comments were marked as temporary, thus their value is set to the int datatype's default value of 0.
+After serialization, the numbers of our comments went from 5 to null which is a 0. This occurs since the comments will mark as temporary, thus their value is set to the int datatype's default value of 0.
 
 #### Case in Point
 
-Some variables may have big values that are difficult to convey over a network. As a result, those numbers can be classified as temporary. Furthermore, if a client does not wish to publish or save a variable's value, considering it too minor or too personal, those variables can be marked as transient.
+Some variables may have big values that are difficult to convey over a network. As a result, we classify those numbers as temporary. Furthermore, if a client does not wish to publish or save a variable's value, considering it too minor or too personal, we can mark those variables as transient.
 
 ### Conclusion
 
