@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /docker-containers-on-compute-engine/
-title: Setup and run Docker container on Google Compute Engine
-description: In this article, the reader will be walked through creating a Flask application, creating a Docker-based container from the application and deploying the container to a virtual machine on Google.
+title: Running Docker container on Google Compute Engine
+description: In this article, the reader will be walked through creating a Flask application, creating a Docker-based container for the application and deploying the container to a virtual machine on Google.
 author: victor-elvis
-date: 2021-09-19T00:00:00-02:24
+date: 2021-09-21T00:00:00-00:30
 topics: [Containers]
 excerpt_separator: <!--more-->
 images:
@@ -17,7 +17,7 @@ images:
 
 Google Compute Engine(GCE) is a high-end compute service that allows developers to create and run virtual machines on the underlying secure and reliable infrastructure of Google. Using GCE takes advantage of the complex computing capabilities and heavy workload without acquiring them physically.
 <!--more-->
-Docker allows the encapsulation of an application and its modules into a single independent package. This practice enables running the application on any platform without the need for further configurations of the deployment environment.
+Docker allows the encapsulation of an application and its modules into a single independent package. This practice enables you to run the application on any platform without the need for further configurations of the deployment environment.
 
 ### Table of content
 - [Project Goal](#project-objective)
@@ -35,7 +35,9 @@ Docker allows the encapsulation of an application and its modules into a single 
 
 ### Project Objective
 
-In this article, the reader will be walked through creating a Flask application, creating a Docker-based container from the application and deploying the container to a virtual machine on Google. By the end of the article, the reader should understand the procedure and the skills to execute them efficiently.
+In this article, the reader will be walked through creating a Flask application, creating a Docker-based container from the application and deploying the container to a virtual machine on Google. 
+
+By the end of the article, the reader should understand the procedure and the skills to execute them efficiently.
 
 ### Prerequisites
 A reader will need the following to follow along with this tutorial.
@@ -45,7 +47,9 @@ A reader will need the following to follow along with this tutorial.
 4. [Docker](https://www.docker.com/products/docker-desktop) software running.
 
 ### Creating the Flask app
-The initial step is creating the Flask application to be used for the project. I chose Flask because of its ease of understanding, simplicity, and it does not require any special tools to work with. Next, initiate the process of creating your application by running this command that installs Flask.
+The initial step is creating the Flask application to be used for the project. I chose Flask because it's easy to understand, simple, and it does not require any special tools to work with. 
+
+Next, initiate the process of creating your application by running this command that installs Flask.
 
 ```bash
 pip install Flask
@@ -92,9 +96,9 @@ Create a new directory and call it `templates`. This directory will contain the 
 ```
 
 ### Dockerizing the application
-Dockerization involves encapsulating the application and the modules it requires to run, into one unit so that the newly created unit can be configured to run anywhere without the need to run new installations.
+Dockerization involves encapsulating the application and the modules it requires to run, into one unit. The newly created unit can now be configured to run anywhere without the need to run new installations.
 
-TO set up our container, we begin with creating a new file called `dockerfile`. The file specifies the commands to be executed once the application is uploaded to the platform. First, add the snippets below to the Dockerfile.
+To set up our container, we begin with creating a new file called `dockerfile`. The file specifies the commands to be executed once the application is uploaded to the platform. First, add the snippets below to the Dockerfile.
 
 ```py
 FROM python:3.8
@@ -119,12 +123,12 @@ Now that we have successfully created our Dockerfile, we need to make the file e
 chmod +x Dockerfile
 ```
 
-### Building the container image and pushing to Google Container Registry
+### Building the Container Image
 We will build and publish our container image to Google Container Registry(GCR). The container image masks the application and its requirements into a single container to run on GCE. 
 
 Since we intend to use the `gcloud command-line tool`, we need to open up the console, and upon prompt, we allow the cloud shell application to access the API key.
 
-![Authorize use of API key](/engineering-education/docker-containers-on-compute-engine/authorize-API-key.png)
+![Authorize use of API key](/engineering-education/docker-containers-on-compute-engine/authorize-api-key.png)
 
 To create the container, run the command below:
 
@@ -152,7 +156,7 @@ On the sidebar, head over to the networking tab ⇾ VPC network ⇾ select firew
 ### Creating the GCE VM instance.
 From the sidebar menu in the console, go to COMPUTE ⇾ Compute Engine ⇾ VM instances, then click `CREATE INSTANCE`.
 
-![Creating a virtual machine instance](/engineering-education/docker-containers-on-compute-engine/creating-VM-instance.png)
+![Creating a virtual machine instance](/engineering-education/docker-containers-on-compute-engine/creating-vm-instance.png)
 
 - Name : section-instance
 - Machine configuration(Series): N1
@@ -205,7 +209,7 @@ gcloud compute instances create-with-container section-instance --container-imag
 In the command above, ensure you replace the PROJECT-ID with your project-id.
 
 ### Testing the application
-- In the running instances, we will select the instance we created `section instance. - The instance has two IP addresses; an `internal IP` and an `external IP'.
+- In the running instances, we will select the instance we created `section instance`. - The instance has two IP addresses; an `internal IP` and an `external IP`.
 - Copy the external IP address, then run the application on port 8080. 
 - Our application runs as shown below:
 
