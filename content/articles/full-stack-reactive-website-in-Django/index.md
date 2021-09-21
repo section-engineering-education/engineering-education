@@ -16,11 +16,11 @@ images:
 
 Modern websites that require complex user interaction are built using a dedicated frontend framework like [React](https://reactjs.org/), [Vue.js](https://vuejs.org/) among others. However, some complexity goes with it. They include time complexity, more money to host the dedicated frontend, SEO complexity, syntax differences, in some cases duplicate business logic and a whole lot more.
 
-You can achieve the same reactive website with technologies like React without leaving your Django project or adding another language to your toolkit. It, therefore, is less complex, less code and has a faster development time.
+You can achieve the same reactive website with technologies like React without leaving your Django project or learning another language. It, therefore, is less complex, less code and has a faster development time.
 
 There are several technologies out there that can achieve these functionalities like [Sockpuppet](https://sockpuppet.argpar.se/), [reactor](https://github.com/edelvalle/reactor/) and [Unicorn](https://www.django-unicorn.com/docs/). However, for this tutorial, you would use Unicorn to achieve interactivity within your Django application without any custom JavaSript.
 
-> Note that there may be benefits of using a dedicated frontend for instance it can be useful to have a dedicated team responsible for the frontend and backend of a piece of software.
+> Note that there may be benefits of using a dedicated frontend for instance it can be useful to have a dedicated team responsible for coding the frontend and backend of a piece of software.
 
 ### Project Setup and Overview
 
@@ -67,7 +67,7 @@ class Book(models.Model):
 
 ### Unicorn
 
-[Unicorn](https://www.django-unicorn.com/docs/) is a reactive component framework that progressively enhances a normal Django view. It performs AJAX calls in the background, and dynamically updates the DOM.
+According to [Unicorn](https://www.django-unicorn.com/docs/), it is a component framework that enhances a normal Django view progressively. It dynamically updates the DOM with AJAX calls in the background.
 
 Add it to your installed application:
 
@@ -96,9 +96,9 @@ path("unicorn/", include("django_unicorn.urls")), # new
 
 **How it works?**
 
-1. Unicorn progressively enhances a normal Django view, therefore, the initial render of the component is quick and great for SEO.
-2. Next, Unicorn binds to the elements specified and automatically makes AJAX calls when needed.
-3. Finally, Unicorn dynamically updates the DOM.
+1. Unicorn is an open-source library that progressively enhances a normal Django view, therefore, the initial render of the component is quick and great for SEO.
+2. Next, Unicorn binds to the elements stipulated and automatically performs AJAX calls when required.
+3. Finally, the DOM is updated dynamically by Unicorn
 
 ### Project URLs, Views & Template
 
@@ -154,11 +154,13 @@ Update your books template `index.html` file like so:
 2. Take note that you have to load `unicorn` at the top of the Django HTML template.
 3. You also added the `unicorn_scripts` into the Django HTML template and added the `crsf_token` in the template as well.
 
-> The Unicorn library follows the best practices of Django and therefore it requires a `CRSF` token to be set on any page that is a component. This ensures that no nefarious AJAX POSTs can be executed.
+> According to Unicorn, the library follows the best practices of Django and therefore it requires a `CRSF` token to be set on any page that is a component. This guarantees that no nefarious AJAX POSTs can be done.
 
-Unicorn has the concept of component, to refer to a set of interactive functionality that can be put inside the template. In the `index.html` file, you added a `book` component.
+Also, according to Unicorn, it has the concept of component, to refer to a set of an interactive functionality that can be put inside the template. In the `index.html` file, you added a `book` component.
 
-A component consists of a **Django HTML template** with specific tags and a **Python view class** which provides the backend code for the template.
+Furthermore, a component consists of:
+**Django HTML template** including particular tags.
+**Python view class** which gives the backend logic for the template.
 
 ### Adding and Deleting Books
 
@@ -229,9 +231,9 @@ Inside the `book.html` add the following code:
 3. Also, notice the `Add Books` button that also has an attribute `unicorn:click`, which tells `unicorn` to bind the `add_book` backend method to the click browser event.
 4. Likewise the `Delete Book` button tells `unicorn` to bind the `delete_book` backend method. You also passed the book `id` to the `delete_book` function, to uniquely identify each book.
 
-> To prevent updates from happening on every input, you can append a lazy or defer modifier to the end of `unicorn:model`.
+> To prevent updates from occurring on every input, you can add a lazy or defer modifier to the end of `unicorn:model`.
 
-Attributes used in component templates usually start with `unicorn:` however the shortcut `u:` is also supported. Note that properties of the component can be of many several types including `str`, `int`, `list`, `dictionary`, `decimal`, `Django Model`, etc. Finally, `Unicorn` requires there to be one root element surrounding the component template.
+Attributes used in component templates habitually start with `unicorn:` nevertheless the shortcut `u:` is also supported. Note that properties of the component can be of many numerous types including `str`, `int`, `list`, `dictionary`, `decimal`, `Django Model`, etc. Finally, `Unicorn` requires there to be one root element that envelope the component template.
 
 #### Step 4
 
