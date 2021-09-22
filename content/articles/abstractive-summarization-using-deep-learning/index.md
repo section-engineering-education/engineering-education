@@ -105,7 +105,7 @@ We use the `PegasusForConditionalGeneration` class to perform this task. We also
 
 Our model has now loaded successfully into our Colab.
 
-All that's left to do is to perform abstractive summarization on some Wikipedia texts.
+All that's left to do is to perform abstractive summarization on some Wikipedia text.
 
 ### Performing abstractive summarization 
 This last step involves taking a bunch of text, passing it through the Pegasus model, and seeing how it performs abstractive summarization on the text. 
