@@ -15,13 +15,19 @@ images:
    alt: Kivy Python mobile app image
 ---
 
-There is a recent transformation into the development of multi-platform languages and frameworks where are one library is used to develop applications that can run on Windows, macOS, Android, and Linux. Fortunately, this trend levies programmers from having to rewrite the same code again for a different platform. So, for instance, an Android developer could write one code base that can efficiently run on different devices.
+There is a recent transformation into the development of multi-platform languages and frameworks. This is where are one library is used to develop applications that can run on Windows, macOS, Android, and Linux. 
  <!--more-->
-Kivy python takes the same path, allowing developers to develop multi-platform applications for several operating systems and devices. Thus, applications developed using this library a similar across all the platforms on which they run. One advantage of Kivy is providing a graphical user interface that the developer interacts with as he develops the application.
+This trend prevents programmers from having to rewrite the same code again for a different platform. So, for instance, an Android developer could write one code base that can efficiently run on different devices.
+
+Kivy python takes the same path, allowing developers to develop multi-platform applications for several operating systems and devices. Thus, applications developed using this library a similar across all the platforms on which they run. 
+
+One advantage of Kivy is providing a graphical user interface that the developer interacts with as he develops the application.
 
 In this tutorial, the reader will learn to set up Kivy for development and creating a basic application using the same library. Then, we will build a graphical user interface application for a user to do quick basic age calculations.
 
-The development of this project will enable the reader to understand the entry-level programming with the Kivy library, create a graphical user interface using components such as images, text, buttons, and labels. Besides, this tutorial will teach the user how to interact with various layout components.
+The development of this project will enable the reader to understand the entry-level programming with the Kivy library, create a graphical user interface using components such as images, text, buttons, and labels. 
+
+This tutorial will also teach the user how to interact with various layout components.
 
 ### Prerequisites
 The reader should have a good understanding of the following in order to follow along with this tutorial.
@@ -105,7 +111,9 @@ self.window.add_widget(self.button)
 ```
 
 ### Calculate age function
-This function takes the input year of birth and subtracts it from the current year. We use the `DateTime` Python module and extract the year part from it. Additionally, we convert the user input year from a string to an integer to calculate a uniform data type. Lastly, we convert the result to a string and display it to the user.
+This function takes the input year of birth and subtracts it from the current year. We use the `DateTime` Python module and extract the year part from it. 
+
+Additionally, we convert the user input year from a string to an integer to calculate a uniform data type. Lastly, we convert the result to a string and display it to the user.
 
 ```py
 def getAge(self, event):
@@ -116,7 +124,9 @@ def getAge(self, event):
 ```
 
 ### Styling the application's UI.
-To style our application correctly, we can begin by adding margins to the application's sides and bottom. Margin is the space around a given component in the application. For our case, the margin will be the space around the container layout. Subsequently, we play around with all other components of the application using the snippet below. 
+To style our application correctly, we can begin by adding margins to the application's sides and bottom. Margin is the space around a given component in the application. 
+
+For our case, the margin will be the space around the container layout. Subsequently, we play around with all other components of the application using the snippet below. 
 
 Another advantage of the module is that the application developed automatically responds to screen size and gives a clear outline of the subjected screen size.
 
@@ -167,7 +177,11 @@ python main.py
 ![Kivy app running ](app.png)
 
 ### Conclusion
-In this article, the reader learned the mobile application creation process using the Kivy python library. We developed an age calculator application using the multi-platform python module and tested our applications' functionality. We realized how every component of development using Kivy is based on understanding Python Classes and Objects.
+In this article, the reader learned the mobile application creation process using the Kivy python library. We developed an age calculator application using the multi-platform python module and tested our applications' functionality. 
+
+We realized how every component of development using Kivy is based on understanding Python Classes and Objects.
+
+Happy coding!
 
 ---
 Peer Review Contributions by: [Mercy Meave](/engineering-education/authors/mercy-meave/)
