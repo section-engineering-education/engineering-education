@@ -17,6 +17,9 @@ We will first create User Interface files in HTML and CSS for the login and disp
 
 > I wont explain the UI snippets because that's sort of beyond the scope of this article and also not the main aim.
 
+> The login credentials are: Phone Number - `1234567890` and password- `1111`.
+
+
 ##### Login page
 The code is as follows:
 
@@ -392,6 +395,9 @@ We looked at creating an autologout feature in pure javascript. WE looekd at the
 ### Key reaearch area
 
 THe code does not keep track of the pages in differetnt tabs. For example, if you had loogged in the same page in different tabs, the time resets in the active tab does not affect the other tab such that the other tab will autologout. Having read this, you can delve into it and makek that improvement.
-The GitHub repository for contributing to the code is found [here]. 
+The GitHub repository for contributing to the code is found [here](https://github.com/Agusioma/autologout-javascript). 
+
+### Conclusion
+YOur user's private data is very key. It's always important to let no one else see another person's private information. THe autologotu  is a good workaround around that.
 
 Thank you, reader.Have a great read.
