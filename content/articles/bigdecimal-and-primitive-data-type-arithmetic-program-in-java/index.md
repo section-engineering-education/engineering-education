@@ -17,9 +17,9 @@ images:
 
 Because of their inaccuracy, floating-point data types cannot be used in financial calculations. This is why Java provides a separate class named BigDecimal for executing operations. And, reducing the chances of calculation errors. 
 <!--more-->
-On double numbers, the BigDecimal class provides arithmetic, scale management, rounding, comparison, format conversion, and hashing functions. It compensates for the time complexity, however, by handling extremely large and extremely small floating-point integers with exceptional precision.
+On double numbers, the BigDecimal class provides arithmetic, scale management, rounding, comparison, format conversion, and hashing functions. It compensates for the time complexity, however, by handling large and small floating-point integers with exceptional precision.
 
-These basic arithmetic operations can be performed on BigDecimal as well as between BigDecimal and primitive data types, which is what our article will cover. While both `BigInteger` and `BigDecimal` support arbitrary-precision integers, BigDecimal only supports arbitrary-precision fixed-point numbers. 
+These basic arithmetic operations can be performed on BigDecimal and between BigDecimal and primitive data types. This is what our article will cover. While both `BigInteger` and `BigDecimal` support arbitrary-precision integers, BigDecimal only supports arbitrary-precision fixed-point numbers. 
 
 BigDecimal/BigInteger is not advisable if you're constructing a low-latency application where every microsecond counts. Let us look at our first example of Adding, subtracting, and multiplying two large decimal integers with a Java program:
 
