@@ -66,7 +66,7 @@ Let's go ahead and install our second dependency, which is the HuggingFace trans
 
 This command will successfully install the huggingface transformer library.
 
-Our third dependency, which we need to install, is `SentencePiece`. It is a text tokenizer and detokenizer that helps predetermine vocabulary sizes before the neural model training.
+Our third dependency is `SentencePiece`. It is a text tokenizer and detokenizer that helps predetermine vocabulary sizes before the neural model training.
 
 ```python
 !pip3 install sentencepiece
