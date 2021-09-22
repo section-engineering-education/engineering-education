@@ -167,7 +167,7 @@ This is what abstractive summarization is all about!
 Please find the full code implementation of the tutorial [here](https://colab.research.google.com/drive/1jmyj05vzVLN96Q3uNrZZ9o6QM2PLSXj-#scrollTo=4DIofQXEv-pr).
 
 ### Wrapping up
-This is abstractive summarization in a nutshell. Sometimes the model won't give you an abstractive summary. Rather, a text summary. This might be because you're not using the fine-tuned pegasus model for that particular task. Try and use the Pegasus model fine-tuned for that task for better results. For example, the `pegasus-reddit_tifu` would be most suited for abstractive summarization on Reddit posts, not `google/pegasus-xsum`. 
+This is abstractive summarization in a nutshell. Sometimes the model won't give you an abstractive summary. Rather, a text summary. This might be because you're not using the fine-tuned pegasus model for that particular task. Try and use the Pegasus model fine-tuned for that task for better results. For example, the `pegasus-reddit_tifu` would be most suited for abstractive summarization on Reddit posts as opposed to `google/pegasus-xsum`.
 
 Happy coding!
 
