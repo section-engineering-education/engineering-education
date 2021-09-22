@@ -108,7 +108,7 @@ Our model has now loaded successfully into our Colab.
 All that's left to do is to perform abstractive summarization on some Wikipedia texts.
 
 ### Performing abstractive summarization 
-This last step involves taking a bunch of texts, pass it through the Pegasus model, and see how it performs abstractive summarization on the text. 
+This last step involves taking a bunch of text, passing it through the Pegasus model, and seeing how it performs abstractive summarization on the text. 
 
 Let's find some text that we want to summarize. Let's create a variable called `text` and add some text to it.
 
@@ -138,7 +138,7 @@ Let's now go ahead and try to summarize this text.
 ```python
 summary = model.generate(**tokens)
 ```
-The `**tokens` unpacks our tokens and pass them into our model. The asterics in `**tokens` are simply adding the `input_ids` and `attention_mask` present in the results above. 
+The `**tokens` unpacks our tokens and pass them into our model. The asterisks in `**tokens` are simply adding the `input_ids` and `attention_mask` present in the results above. 
 
 Let's check our generated summary results. We do this by typing the following command:
 
@@ -167,7 +167,7 @@ This is what abstractive summarization is all about!
 Please find the full code implementation of the tutorial [here](https://colab.research.google.com/drive/1jmyj05vzVLN96Q3uNrZZ9o6QM2PLSXj-#scrollTo=4DIofQXEv-pr).
 
 ### Wrapping up
-This is abstractive summarization in a nutshell. Sometimes the model won't give you an abstractive summary. Rather, a text summary. This might be because you're not using the fine-tuned pegasus model for that particular task. Try and use the Pegasus model fine-tuned for that task for better results. For example, the `pegasus-reddit_tifu` would be most suited for abstractive summarization on reddit posts, not `google/pegasus-xsum`. 
+This is abstractive summarization in a nutshell. Sometimes the model won't give you an abstractive summary. Rather, a text summary. This might be because you're not using the fine-tuned pegasus model for that particular task. Try and use the Pegasus model fine-tuned for that task for better results. For example, the `pegasus-reddit_tifu` would be most suited for abstractive summarization on Reddit posts, not `google/pegasus-xsum`. 
 
 Happy coding!
 
