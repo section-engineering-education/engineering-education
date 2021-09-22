@@ -3,66 +3,64 @@ layout: engineering-education
 status: publish
 published: true
 url: /how-to-lookup-ip-addresses-in-java/
-title: How to Lookup Ip Addresses in Java
-description: This tutorial will guide the reader on how to check IP addresses on the internet using  the Java Programming Language. They will understand how IP addresses and hostnames are accessible via the InetAddress class.
+title: How to Lookup IP Addresses in Java
+description: This tutorial will guide the reader on how to check IP addresses on the internet using the InetAddress class in Java.
 author: apondi-ashley
-date: 2021-09-16T00:00:00-16:20
-topics: []
+date: 2021-09-22T00:00:00-12:30
+topics: [Networking]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/how-to-lookup-ip-addresses-in-java/hero.jpg
     alt: How to Lookup Ip Addresses in Java Hero Image
 ---
-A **host** is a computer that can connect to the internet. Every host has a unique identification number that allows its identification anytime it is online. 
+A host is a computer that can connect to the internet. Every host has a unique identification number that distinguishes it from other online devices. 
 <!--more-->
-An IP address is a name given to this specific number.
-
 ### Prerequisites
-#### High-Level prerequisites:
-- OOP concept
-- Basic understanding of Java 
-- Networking
-
-#### Low-Level prerequisites:
-- Proper Java.net package knowledge in the Java library
-- Exception handling mechanisms
-- Networking concepts based on TCP layer (DNS)
+To follow along, you should have:
+- A basic understanding of Java and networking.
+- Some knowledge in using the Java.Net package.
  
 ### Table of contents
-- [Definition of an IP Address](#definition-of-an-ip-address)
-- [Definition of a DNS and its Workflow](#definition-of-a-dns-and-its-workflow)
-- [Representing IP Addresses in Java using the InetAddress Class](#representing-ip-addresses-in-java-using-the-inetaddress-class)
-- [Exception Handling Mechanism used](#exception-handling-mechanism-used)
+- [Definition of an IP address](#definition-of-an-ip-address)
+- [Definition of DNS and its workflow](#definition-of-a-dns-and-its-workflow)
+- [Representing IP addresses in Java using the InetAddress class](#representing-ip-addresses-in-java-using-the-inetaddress-class)
+- [Exception handling](#exception-handling-mechanism-used)
 - [Commonly used methods](#commonly-used-methods)
 - [Conclusion](#conclusion)
 
 ### Definition of an IP address
-An IP address is a string of numbers separated by dots that stands for **Internet Protocol**. It is in the OSI model, a layer two protocol. 
+An IP address is a string of numbers separated by dots that stands for **Internet Protocol**.
 
-IP addresses are either four-digit numbers in a **32-bit** format known as **IPv4 addresses**. For example, 192.168.1.3 or **IPv6 addresses** a standardized version of IP addresses that use six-digit numbers in **128 bits** format. 
+IP addresses are four-digit numbers in a 32-bit format known as IPv4 addresses. For example, 192.168.1.3. 
+
+There are also IPv6 addresses that use six-digit numbers in 128-bit format. 
 
 Each integer in the set can be anywhere between 0 and 255. This means that the range of an IP address is from 0.0.0.0 to 255.255.255.255.
 
-IP addresses are not just random numbers that one can assign to a host. The _Internet Assigned Numbers Authority_ creates and allocates them to devices.
+IP addresses are not just random numbers that one can assign to a host. The _Internet Assigned Numbers Authority_ creates and allocates IP addresses to devices.
 
-#### Definition of a DNS and its workflow
-- DNS, or Domain Name System, is a TCP/IP protocol that defines how application processes in different systems exchange messages.
-- DNS functions similarly to an internet-based database. It has a list of _hostnames_ (domains) and IP addresses in it.
-- With the help of DNS, it is now easier to connect to all types of websites by remembering the domain hostnames. One does not need to carry around a card catalog full of IP addresses.
-- Without DNS, you'll have to write an IP address that may or may not be correct.
-- DNS associates hostnames that humans can remember (such as www.google.com) with IP addresses that computers can remember (e.g., 172.217.170.164).
+#### Definition of DNS and its workflow
+DNS (Domain Name System) is a TCP/IP protocol that defines how application processes in different systems exchange messages.
+
+DNS functions similarly to an internet-based database. It has a list of _hostnames_ (domains) and IP addresses.
+
+DNS helps users to connect to all types of websites by remembering their domain hostnames. Therefore, one does not need to carry around a catalog full of IP addresses.
+
+DNS associates hostnames that humans can remember (such as www.google.com) with IP addresses that computers can remember (e.g., 172.217.170.164).
 
 #### How DNS works
-DNS is not self-contained; it requires extra programs, one of which is a _resolver_. A `resolver` is a piece of client-side software that makes it easier to connect to a DNS server. 
+DNS is not self-contained; it requires extra programs, one of which is a _resolver_. 
 
-It is an extra program on the client computer that assists in connecting to a DNS server.
+A `resolver` is client-side software that makes it easier to connect to a DNS server. 
 
-A _web browser_ or a _mail client_ is the most widely used resolvers. To access the DNS server, you must have a web browser or an e-mail client installed on your computer. 
+It is a program on the client computer that assists in connecting to a DNS server.
+
+A _web browser_ and _mail client_ are the most widely used resolvers. Therefore, to access the DNS server, you must have a web browser or an e-mail client installed on your computer. 
 
 Chrome, Opera, Firefox, and Safari are some of the most popular browsers.
 
-#### Procedure of a DNS Workflow 
+#### Procedure of a DNS workflow 
 We require the following:
 1. Two DNS servers
 2. A web browser
@@ -70,36 +68,34 @@ We require the following:
 
 - The client computer asks the local DNS server for a website's IP address.
 - The local DNS server will check its records and reserve the information.
-- If the DNS server finds the reserved file, it will immediately give the browser app an IP address. If the server can't find it, it sends a request to the other DNS server.
-- Once the IP address has been acquired, the local server puts it in a stash/cache. When the client computer requests the IP address again, the DNS server does not need to contact the other servers. The data or cache is transferred to a different DNS server if it can't get sited on the current server.
+- If the DNS server finds the reserved file, it will immediately give the browser app an IP address. If the server can't find it, it sends a request to the online DNS server.
+- Once the IP address has been acquired, the local server puts it in a stash/cache. When the client computer requests the IP address again, the DNS server does not need to contact other online servers. 
+- The data or cache is transferred to a different DNS server if it can't get sited on the current server.
 
 #### Representing IP Addresses in Java using the InetAddress Class
-Java is used in networking as an interconnection point between two or more computing devices. This allows them to share resources and control applications centrally. 
+Java Net packages act as the interconnection point between two or more computing devices. This allows them to share resources and control applications centrally. 
 
 **_Java.net.InetAddress_** class is a high-level representation of an IP address in Java for IPv4 and IPv6. It generally includes both a hostname and an IP address.
 
 #### Java InetAddress Class Methods
-If necessary, the three methods may connect to a local DNS server to fill up the information in the InetAddress objects. Always remember that these methods make network connections to retrieve all information they need.
+InetAddress methods can connect to a local DNS server to retrieve or send information. 
 
-The InetAddress class caches the results of the DNS lookups such that once it has the address of the given host, it won't have to look it up again. If the IP address does not change while your program is running, there will be no issues.
+The InetAddress class caches the results of DNS lookups for future reference. 
 
-Negative results such as `host not found` are slightly problematic. It happens for the first time, and in the second trial, one succeeds. 
+If the IP address does not change while your program is running, there will be no issues.
 
-This error will occur when the first attempt timed out while the information was in transit from the remote DNS server.
+Negative results such as `host not found` are slightly problematic. This error will occur when the first connection attempt times out while the information was in transit from the remote DNS server.
 
-> public static InetAddress getByName(String hostName) throws UnknownHostException
-`InetAddress.getByName()` is the frequently used method. It is a static method that takes the hostname that you are looking for as its arguments. It looks up the host's IP address using DNS. 
-
-It is called: `getByName()`. Assuming there is an import **java.net.\*** statement at the top of the program and any other necessary import statements.
+`InetAddress.getByName()` is the frequently used method. This static function takes the hostname that you are looking for as its arguments. It then looks up the host's IP address using DNS. 
 
 ```java
  InetAddress address = InetAddress.getByName("www.google.com");
 ```
 
-#### Exception handling mechanism used
-The `InetAddress.getByName()` method throws UnknownHostException if host can't be found.
+#### Exception handling
+The `InetAddress.getByName()` method throws `UnknownHostException` if the host cannot be found.
 
-It can either be declared using the `throws` exception or wrapped in a `try-catch` block. As shown below:
+It can either be declared using the `throws` exception or wrapped in a `try-catch` block, as shown below:
 
 ```java
 try{
@@ -116,7 +112,7 @@ catch(UnknownHostException ex){
 Below is a sample code using `getByName()` method:
 
 ```java
-package com. company;
+package com.company;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
@@ -130,7 +126,7 @@ public class GetIpAddress {
 }
 ```
 
-A sample output of this code:
+Output:
 
 ```bash
 my local machine: www.microsoft.com/2.21.100.214
@@ -142,25 +138,18 @@ Example:
 
 ```java
 InetAddress address = InetAddress.getByName("172.217.170.164");
-
 ```
 
-Hostnames are more stable than IP addresses. Most services have lived at the same hostnames but have changed their IP addresses severally. 
+Hostnames are more stable than IP addresses. Most services have maintained the same hostnames but have changed their IP addresses severally. 
 
-When choosing between hostnames like `www.google.com` and IP addresses like `172.217.170.164`, always go with the hostname.
+Some computers will have more than one IP address. This means that the `InetAddress.getAllByName()` will return an array of addresses that correspond to that hostname.
 
-> public static InetAddress[]getAllByName(String hostName) throws UnknownHostException
-Some computers will have more than one IP address. When given a hostname, the `InetAddress.getAllByName()` returns an array of addresses that correspond to that name.
-
-This is shown in this snippet:
+This is shown in the code snippet below:
 
 ```java
 InetAddress[] address = InetAddress.getAllByName("www.google.com");
 ```
-
-It throws `UnknownHostException` just like `InetAddress.getByName()`.
-
-Below is a sample code using `getAllByName()` method:
+The following code shows how to return an array of addresses using the `getAllByName()` method:
 
 ```java
 package com. company;
@@ -183,24 +172,23 @@ public class GetIpAddress {
 
 ```
 
-A sample output of this code:
+Output:
 
 ```bash
 Google different ip:www.google.com/172.217.170.164
 ```
 
-> Hosts with multiple IP addresses are very high-volume web servers.
+> Hosts with multiple IP addresses are usually high-volume web servers.
 
->public static InetAddress getLocalHost() throws UnknownHostException
-This static method returns the InetAddress of the machine on which it's running.
+The `getLocalHost` method returns the InetAddress of the host machine.
 
-Just like `InetAddress.getByName()` and `InetAddress.getAllByName()` it throws `UnknownHostException` when it cannot find the address of the host.
+The `getLocalHost` function throws `UnknownHostException` when it cannot find the host's address.
 
 ```java
 InetAddress address = InetAddress.getLocalHost();
 ```
 
-Below is a sample code using `getLocalHost()` method:
+The following code shows how to use `getLocalHost()` method:
 
 ```java
 package com. company;
@@ -218,23 +206,19 @@ public class GetIpAddress {
 
 ```
 
-A sample output of this code:
+Output:
 
 ```bash
 My local machine Ip is: DESKTOP-MC2R176/192.168.43.35
-
 ```
 
-When not connected to the internet, and the system lacks a fixed IP address or domain name, the domain name is _localhost_, and the IP address is 127.0.0.1.
-
-The programs will not work on a standalone computer. Your machine should be connected to the internet for you to get the IP addresses and domain names.
+When you are not connected to the internet, and the computer lacks a fixed IP address or domain name, the default domain name and IP address are `localhost`, and `127.0.0.1` respectively.
 
 ### Conclusion
-In this tutorial, we learned about IP addresses and their versions. We managed to look at the DNS and its workflow. 
+In this tutorial, we learned about IP addresses and their versions. We also discussed DNS and its workflow. 
 
-We also learned that the IP addresses and hostnames are accessible via the InetAddress class.
+We learned that IP addresses and hostnames are accessible via the InetAddress class.
 
-My advice to the learner is to practice how to lookup IP addresses over the internet using Java Programming Language.
 
 ---
 Peer Review Contributions by: [Dawe-Daniel](/engineering-education/authors/dawe-daniel/)
