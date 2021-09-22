@@ -76,7 +76,7 @@ Elements found in java code;
 Let us take a glance at how JNI operates. The article will employ C++ as the primary programming language, using G++ as the compiler and linker.
 We may choose any compiler we like, but this is what to do to get G++ up and running on Ubuntu operating system, Windows OS, and Mac OS:
 - In Ubuntu(Linux), we will have to run  `Sudo apt-get` to install build-essential code in the terminal.
-- In a windows operating system we will install the `MinGW`.
+- In a Windows operating system, we will install the `MinGW`.
 - Run a command g++ in the terminal in the macOS, and if it is not present, you need to install it first.
 
 #### Step one: Creating the Java Class
@@ -102,28 +102,25 @@ public class HelloJavaJNI {
 
 ```
 
-The static library is loaded in the static block in the illustration above. This enables it to be accessible for use at any time and in any location. We could also load the package only before using our native function in this little script because the native library is not used for anything else.
+The static library is loaded in the static block in the illustration above. This enables it to be accessible for use at any time and in any location. We could also load the package only before using our native function in this tiny script because the native library has no other purpose.
 
-#### First we implement our native language method in C++
-Our native method will be implemented in another programming language for it to be in a native case. In this case, we are going to utilize the C++ language to implement it.
-In C++, the definition and application will be put in the following order`.h`and`.ccp`file extensions.
+#### Step two: Implementing our native language method in C++
+We can implement our native method in another programming language for it to be in a native case. In this case, we are going to utilize the C++ language to implement it. In C++, the definition and application will be in the following order `.hand` `.ccpfile` extensions.
 
 To start with, we will use the java compiler's `-h flag` to build the method definition.
 
 ```java
-
 javac -h. HelloJavaJNI.java
-
 ```
-This will create a file called `example_java's_HelloJavaJNI.h` that holds all the native functions in the class, therefore in case simply one
+
+A new file is created called example_java's_HelloJavaJNI.h that holds all the native functions in the class.
 
 ```java
-
 JNIEXPORT void JNICALL Java_example_java_HelloJavaJNI.h_remarkHi
   (JNIEnv *, kobject);
-
 ```
-The method class name is produced instantly utilizing the properly approved application, class plus the function names, as can be seen in the above example. Also, we can see that we are obtaining two entities supplied to the method: a marker to the existing JNIEnvironment and with java instance to which the function is associated and which is an instance of our HelloJavaJNI class.
+
+The method class name is produced instantly utilizing the properly approved application, class plus the function names, as seen in the above example. Also, we can see that we are obtaining two entities supplied to the method: a marker to the existing JNIEnvironment and with java instance to which the function is associated and which is an instance of our HelloJavaJNI class.
 
 For the implementation of our remarkHi method, we must now construct a new.cpp directory. This is where we will do things like print "Welcome Back" to such a console.
 
@@ -138,15 +135,13 @@ JNIEXPORT void JNICALL Java_example_java_HelloJavaJNI.h_remarkHi
 ```
  In the above illustration, we have called `.cpp` document will be exactly very much like the`.h` file that contains the name, and we shall include the above code to execute the native function:
 
-### Compiling and Linking
-At this moment we got the necessary components and components we require at hand and have a link involving each one of them. We will have to construct our shared library and run it from the C++ code. For use to accomplish that we use the G++ compiler and we should remember JNI headers from the Java JDK should be included in the installation kit.
+#### Step three: Compiling and Linking
+At this moment, we have the necessary components we require at hand and have a link involving them. We will have to construct our shared library and run it from the C++ code. To accomplish that, we use the G++ compiler, and we should remember JNI headers from the Java JDK should be included in the installation kit.\
 
 Java Native Interface headers from the JDK installation are shown in the code below.
 
 ```C++
-
 g++ -c -I%JAVA_HOME%\include -I%JAVA_HOME%\include\win64 example_java_HelloJavaJNI.cpp -o example_java_HelloJavaJNI.o
-
 ```
 We must include the code in a new shared library when it has been compiled in our platform into the file example java HelloJavaJNI.o. The point of contention or argument supplied into our method which is `System.loadLibrary` is whatever we will decide to call it.
 We named our argument as java native so we will need to load it whenever we are running the java code
@@ -210,7 +205,8 @@ JNIEXPORT pstring JNICALL Java_example_java_ParameterIllustrationJNI_remarkILove
 In our above illustration, we have utilized these methods given through these JNI environment instances. Moreover, we have utilized the pointer *environment of the type JNIEnvironment. In this scenario, JNIEnv allows us to feed strings of java on our C++ function and then back without having concerns about implementation.
 
 ### Applying Java methods from Native Code and using objects
-Looking at this final illustration, we will explore how to incorporate Java objects within native source codes. If we begin by making a new class.UtilizeInformation we will be able to store user information.
+Looking at this final illustration, we will explore how to incorporate Java objects within native source codes. Suppose we begin by making a new class and name it `UtilizeInformation`; we will store user information.
+
 
 ```java
 package example.java;
@@ -227,9 +223,10 @@ public class UtilizeInformation
     }
 }
 ```
-The code script above shows how we can use the desired class to store the information of the user.
 
-Next, we will have to create another java class. This time the class should be utilized to manage objects of the class used. We will use `ObjectIllustrationJNI` as our class.
+The code script above shows how we can use the desired class to store the user's information.
+
+Next, we will have to create another java class. This time, the class will manage objects of the class used. We will use `ObjectIllustrationJNI` as our class.
 
 ```java
 
@@ -237,9 +234,10 @@ public native UtilizeInformation createUsers(String name, float symmetry);
 public native String printUtilizeInformation(UtilizeInformation users);
 
 ```
-In the code above we have just created a java class that contained a native method or function. The function is used to manage our objects in the class we have just created
 
-In the final step, we will construct the `.h header` as well as a C++ implementation on the new `.cpp` file of our foreign operations.
+We have just created a java class that contained a native method or function in the code above. The function manages our objects in the java class we have just created.
+
+In the final step, we will construct the .h header and a C++ implementation on the new `.cpp` file of our foreign operations.
 
 ```java
 JNIEXPORT pobject JNICALL Java_example_java_ObjectIllustrationJNI_createUser
@@ -273,26 +271,27 @@ JNIEXPORT pstring JNICALL Java_example_java_ObjectIllustrationJNII_printUtilizeI
 }
 
 ```
-**Explanation;**
-In the above code script, we were accessing the relevant classes, objects, fields, and functions from the executing JVM using the JNIEnv *environment pointer. To retrieve a Java class, we usually only have to supply the whole class, moreover the exact function name and declaration to obtain an object's method. In our native code, we are even making an instance of the class `example.java.UtilizeInformation`. We can manipulate all of the instance's attributes and techniques in the same fashion to Java representation once we have it.
 
-### Advantages and disadvantages of Using JNI
-**Java Native Interface has its own advantages. Examples of the advantages are described below;**
-- If an operation cannot be created entirely using the java language, then using Java Native Interface will allow one to write programs in other native languages.
-- It can also be employed to adapt application that already exists and build in other programming languages so that Java applications can utilize it.
+In the above code script, we accessed the relevant classes, objects, fields, and functions from the executing JVM using the JNIEnv `*environment pointer`. To retrieve a Java class, we usually only have to supply the whole class, moreover the exact function name and declaration to obtain an object's method. 
+
+In our native code, we are even making an instance of the class `example.java.UtilizeInformation`. We can manipulate all of the instance's attributes and techniques in the same fashion to Java representation once we have it.
+
+#### Advantages of Using JNI
+- If it is impossible to create an operation entirely using the java language, then Java Native Interface will allow one to write programs in other native languages.
+- It can also be employed to adapt an existing application and build in other programming languages so that Java applications can utilize it.
 - It enables all Java programs to safely and platform-independently access performance- and platform-sensitive API implementation features.
 - JNI aids in the resolution of interoperability challenges.
 
- **JNI also has some limitations which are as follows.**
+ #### Limitations of JNI
 - JNI-based applications lose the platform compatibility that Java provides.
-- The JNI framework doesn't really support automatic garbage collection for JVM with no address, of the resources to allocate using native code
+- The JNI framework doesn't support automatic garbage collection for JVM with no address of the resources to allocate using native code.
 - Error handling is required; otherwise, the Java Native Interface side and the Java Virtual Machine might collapse.
 - Runtime errors in native programs are tough to manage.
 
-`Remember `
-It is way quicker to compile code for a given platform than to run bytecode. It comes in handy, whenever we need to get something done quickly in a time-consuming operation. Sometimes we may not have any better choice, such as when we should use a device management library. This, however, comes at a cost because we must keep track of additional scripts of a code to every platform we provide. As a result, it is almost always a smart idea to utilize JNI only when there aren't any Java alternatives.
+**Note: It is way quicker to compile code for a given platform than to run bytecode. It comes in handy whenever we need to get something done quickly in a time-consuming operation. Sometimes we may not have any better choice, such as when to use a device management library. This, however, comes at a cost because we must keep track of additional scripts of a code to every platform we provide. As a result, it is almost always wise to utilize JNI only when there aren't any Java alternatives.**
 
 ### Conclusion
-In this tutorial, we have learned about java native interfaces and how to utilize the technique. We have also learned more about java native elements and how to add parameters in the native methods, advantages, and disadvantages of using the java native interface.
+We have learned about Java native interfaces and how to utilize the technique. We have also covered more about Java native elements and how to add parameters in the native methods, advantages, and disadvantages of using the java native interface.
 
-Till next time! Happy learning.
+Happy coding!
+
