@@ -1,10 +1,27 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /implementing-flask-api-using-linked-list-data-structure/
+title: Implementing Flask API Using Linked List Data Structure
+description: In this tutorial, we will discuss about Flask and linked lists. We will also learn how we can use linked list class to implement the core API endpoints.
+author: oruko-pius
+date: 2021-03-03T00:00:00-13:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/implementing-flask-api-using-linked-list-data-structure/hero.jpg
+    alt: Implementing Flask API Using Linked List Hero Image
+---
 
 ### Introduction
 Understanding data structures is an important aspect when developing applications. As real-world applications consider space and time complexities when designing applications to save on the memory and time taken to run specific programs.
+<!--more-->
 
 Despite the useful trade-offs, they offer to the pool of developers, most rarely use them. These make their programs and software not being to the quality and standards expected and can make organizations incur huge losses in terms of budgeting for storage and consumer loading time of these applications.
 
-In this article, we'll build a hands-on Flask API using a linked list data structure. In the process we'll see how applicable this data structure is and the benefits a user can acquire by using it.
+In this article, we'll build a hands-on Flask API using a linked list data structure. In the process we will see how applicable this data structure is and the benefits a user can acquire by using it.
 
 ### Table of Contents
 1. [Prerequisites](#prerequisites)
@@ -139,7 +156,7 @@ node.next_node = Node(data, None)
 
 The above code checks if the current head is none. If so, it then calls the `insert_beginning()` to insert data and return it. The head value is assigned to a `node` variable and it performs a while loop.
 
-If the node's next node is true, it assign it to the node. otherwise, it adds data to the node using the `Node` class.
+If the node's next node is true, it assign it to the node. Otherwise, it adds data to the node using the `Node` class.
 
 Let's now write a function to test the linked list functions:
 
@@ -157,11 +174,11 @@ print(ll_string)
 ```
 From the above snippet:
 
-We start by creating an empty string called `ll_string` then assign the head to a variable  `node`. If the node is none; empty, the console prints `None`.
+We started by creating an empty string called `ll_string` then assign the head to a variable  `node`. If the node is none; empty, the console prints `None`.
 
 The `while` loop iterates through the block if the node is true. Data passed will be concatenated to the `ll_string` variable.
 
-The `->` is just for visualizing our linked list when it is printed. That particular node will become the node's next node. If the while loop is terminated, `None` is appended at the end of our linked list and the string is printed.
+`->` is just for visualizing our linked list when it is printed. That particular node will become the node's next node. If the while loop is terminated, `None` is appended at the end of our linked list and the string is printed.
 
 We test this by creating a linked list instance as shown below:
 
@@ -313,7 +330,7 @@ The `db` variable creates the instance of the database.
 
 Our application will have one model called `User` which we'll add its attributes in a few.
 
-We define five functions that will handle various logic and takes different parameters. The `create_user()` function takes the route decorator and pass two arguments the `/user` and `POST` HTTP request.
+We define five functions that will handle various logic and takes different parameters. The `create_user()` function takes the route decorator and passes two arguments the `/user` and `POST` HTTP request.
 
 The HTTP method uses the `request` module imported from the Flask package to create a user.
 
@@ -509,7 +526,7 @@ The `get_user()` returns the payload of that particular `id` specified. The `del
 For example if you want to delete a user with the ID of 3, you pass `http://127.0.0.1:5000/user/3` with the `DELETE` request and send. If you check it in the DB Browser it won't be available.
 
 ### Conclusion
-To recap on what this article has covered, we first introduced what Flask is and a few reasons why it is most preferred.We then got a better understanding of what linked lists are and implemented some of its use-cases.
+To recap on what this article has covered, we first introduced what Flask is and a few reasons why it is most preferred. We then got a better understanding of what linked lists are and implemented some of its use-cases.
 
 Afterwards, we implemented the Flask API by first going through a basic Flask script and adding models and routes to it. Finally, we implemented the core API endpoints using the LinkedList class.
 
@@ -518,3 +535,7 @@ We later tested the endpoints created with Postman and used DB Browser for SQLit
 I hope you find this tutorial beneficial.
 
 Happy Coding!
+
+---
+
+Peer Review Contributions by: [Monica Masae](/engineering-education/authors/monica-masae/)
