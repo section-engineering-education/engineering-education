@@ -219,7 +219,7 @@ $mysqli->close();
 
 This is the backend script. Again, you can write yours in any language of your preference.
 
-It uses a POST method for taking in the parameters, remove any trailing spaces then runs a simple SELECT query to check if the credentials are present. If the credentials are OK, we redirect the user to the display page.
+It uses a POST method for taking in the parameters, removes any trailing spaces then runs a simple SELECT query to check if the credentials are present. If the credentials are OK, we redirect the user to the display page.
 
 
 #### Working of the three files
