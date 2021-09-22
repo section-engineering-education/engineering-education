@@ -10,7 +10,7 @@ date: 2021-09-22T00:00:00-18:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/linear-and-binary-search-in-java-data-structures-and-algorithms/hero.png
+  - url: /engineering-education/linear-and-binary-search-in-java-data-structures-and-algorithms/hero.jpg
     alt: Data Structures cover image 
 ---
 <!--more-->
