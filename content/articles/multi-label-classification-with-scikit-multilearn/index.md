@@ -689,3 +689,6 @@ Finally, we were able to make predictions using our model. This is what gauges t
 - [Multi-label classification basics](https://en.wikipedia.org/wiki/Multi-label_classification)
 - [Solving multi-label classification problems](https://www.analyticsvidhya.com/blog/2017/08/introduction-to-multi-label-classification/)
 - [Multi-label classification techniques](https://towardsdatascience.com/journey-to-the-center-of-multi-label-classification-384c40229bff)
+
+---
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
