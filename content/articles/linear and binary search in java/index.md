@@ -255,7 +255,8 @@ Note that the floor integer refers to the greatest integer less than or equal to
 ### Conclusions 
 Linear and Binary Search are searching algorithms that deal with both the unsorted and sorted arrays respectively. Always reference the above concept whenever there is a problem that requires any of these. Thank you for reading!!!
 
-
+---
+Peer Review Contributions by: [Ruth Mare](/engineering-education/authors/ruth-mare/)
 
 
 
