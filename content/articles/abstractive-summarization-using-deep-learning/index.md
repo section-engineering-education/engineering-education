@@ -147,7 +147,7 @@ summary
 ```
 These results represent our output tensors. This is our summary in tokens.
 
-To us, these are just a bunch of numbers. But to machines, this is how they understand language. Let's decode these values so that they make sense to us, humans.
+These may be just a bunch of numbers to humans, but not to machines. This is how they understand language. Decoding these values will help us make sense of these numbers.
 
 ```python
 tokenizer_model.decode(summary[0])
