@@ -14,17 +14,11 @@ images:
   - url: /engineering-education/concurrency-in-go/hero.png
     alt: Go image
 ---
-
-
-
-
-
 Concurrency describes a process that occurs at the same time with one or more other activity. It assumes that all these activities are operating at the same time. Smaller sub-programs make up large programs and these sub-programs work together at a similar time for the functioning of the large program. In essence, various tasks can run at the same time while they remain part of the same program. This is referred to as Concurrency. 
-
+<!--more-->
 In programming, concurrency is "*the composition of independently executed processes...*". Concurrency refers to the ability of a program to divide into independent tasks that can all execute at the same time. It could be handling many requests from users or sending many responses to users.
 
-### **Concurrency vs Parallelism**
-
+### Concurrency vs Parallelism
 A lot of developers intertwine concurrency and parallelism.
 
 Although these two terms may seem similar and, are often confused and substituted for one another, they do not mean the same thing.
@@ -39,14 +33,13 @@ On the other hand, parallelism is the ability to do lots of programs at the same
 In both scenarios, customers are served at the same time. Parallelism is a tool used by concurrency to achieve its goal, however, it is not the goal of concurrency.
 
 
-### **Concurrency in Go**
-
+### Concurrency in Go
 Concurrency in some other programming languages is achieved by using threads. If there are lots of things to be executed that the machine can't handle, thread pools are created to handle them. 
 
 In Go, concurrency works through the use of in-built functions known as Goroutines.
 
 
- [Goroutines](https://www.golangprograms.com/goroutines.html) are functions, unique to Go, that run at the same time alongside other code or programs.
+[Goroutines](https://www.golangprograms.com/goroutines.html) are functions, unique to Go, that run at the same time alongside other code or programs.
 
 They’re not OS threads, though, they may be considered lightweight threads.
 
@@ -108,8 +101,7 @@ In this program, we sent a request to the first argument and when its completes,
 
 Now, this is what concurrency using Goroutines comes in. 
 
-**How Goroutines work**  
-
+### How Goroutines work
 Goroutines allow our application to become asynchronous. Where there are more than one Goroutines, these Goroutines are submitted to the Go runtime scheduler which manages their lifecycle. Then allocates the Goroutine to several OS threads. If a goroutine starts blocking the Go scheduler performs what is referred to as a *"context-switch".*
 
 > *"Context switch is the process of storing the state of a thread so it can be restored and resume execution at a later point"*
@@ -203,13 +195,9 @@ Let's quickly run this to see our output.
 All the application processes are completed and our application completed in *7.717s* which is two times faster than the first program with no concurrency and we have our output displayed. 
 
 ### Conclusion
-
 We have covered the important aspect of concurrency in Go. From the introduction of concurrency to the distinction between concurrency and parallelism, Go concurrency built-in, how concurrency using goroutines work in Go, and other concepts such as Go scheduler, runtime, and WaitGroup.
 
 Most importantly, we saw how concurrency helps our application work faster while receiving several requests. 
 
 I hope this article gave you a good grasp of how concurrency works in Go. 
-
-Thank you 
-
- Happy coding! 🙂
+Happy coding! 🙂
