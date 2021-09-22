@@ -1,4 +1,4 @@
----
+﻿---
 layout: engineering-education
 status: publish
 published: true
@@ -146,10 +146,11 @@ hw_mode=g
 # Ensure to enable only WPA2 
 wpa_passphrase=Wi-Fi connection
 ```
+In the code, `wlan0` is your Wi-Fi card. Wlan stands for wireless lan. The number 0 is the number allocated to the card. This is because the count of the number of cards starts from zero and goes up (0,1,2,3,etc...).
 You can change your `SSID` name and password with your desired choice. The above configuration will create a hotspot called a *Wi-Fi connection* with a password.
 >N/B:  You can create the configuration file anywhere you want, naming it as  `hotspot.sh` using an editor of your choice.
 
-After completing the configuration, we shall stop the running services by  typing in the commands below:
+After completing the configuration, we will stop the running services by  typing in the commands below:
 
 ```bash
 sudo service dnsmasq stop
@@ -157,9 +158,7 @@ sudo service dnsmasq stop
 ```bash
 sudo service hostapd stop
 ```
- `eth0` is the first ethernet device. `ppp0` is the first point to protocol device, usually associated with a modem.
-For a wired connection, you will be required to change `ppp0` to `eth0` or any other number.
-
+ 
 ### Using GUI
 
 In this part, we will be using the graphical interface to do the configurations.
