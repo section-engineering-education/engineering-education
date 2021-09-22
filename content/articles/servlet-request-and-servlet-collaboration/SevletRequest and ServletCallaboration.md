@@ -17,36 +17,36 @@ You will need to install the following tools to go along with the article:
 
 Table of contents:
 
-- [ServletRequest Interface](ServletRequest-Interface )	
-- [Methods of ServletRequest interface](#Methods-of-ServletRequest-interface)	
-- [Example of ServletRequest interface](#Example-of-ServletRequest-interface)	 
-- [RequestDispatcher Interface](#RequestDispatcher-Interface)	
-- [Methods of RequestDispatcher interface](#Methods-of-RequestDispatcher-interface)	
-- [Example of RequestDispatcher](#Example-of-RequestDispatcher)
+- [ServletRequest](ServletRequest-Interface )	
+- [Methods of ServletRequest](#Methods-of-ServletRequest-interface)	
+- [ServletRequest interface example](#Example-of-ServletRequest-interface)	 
+- [RequestDispatcher](#RequestDispatcher-Interface)	
+- [RequestDispatcher Methods](#Methods-of-RequestDispatcher-interface)	
+- [RequestDispatcher example](#Example-of-RequestDispatcher)
 - [Conclusion](#conclusion)
-### ServletRequest Interface.
+### ServletRequest.
 When we talk of websites, we do interact with,
- we keep asking web pages to do something for us, for example, client updating their profiles, etc. Whenever a client or user tries to update their profile. In this case. Java provides us with an object of the ServletRequest interface, which forwards client requested information to a servlet. 
-The service container creates ServletRequest and ServletResponse objects when a client sends a request to a web server, which passe as an argument in the service method.
- The request object allows access to request information such as the header and the requested data body information.
+ we keep asking web pages to do something for us, for example, client updating their profiles, etc. Whenever a client or user tries to update their profile. In this case. Java provides us with an object of the ServletRequest interface, which forwards requested information to a servlet. 
+The service container creates objects for ServletRequest and ServletResponse when a customer sends requests to the web server that pass through the service method as argument. The request object provides access to query information, such as the header and information from the requested database.
 
 
-### Methods of ServletRequest interface
+### Methods of ServletRequest
 The ServletRequest interface provides us with many methods to work with client request information. Some explained as follows.
 
-- `String getParameter(String variableName)`: This method returns a value of parameter requested by a client of a return type `String`. 
+- `getParameter(String parameterName)`: This method returns a client's requested parameter value. of the `String` type. 
 
-- `String[] getParameterValues(type parameterName)`: Majorly used to obtained all values of a given multi-valued parameter name. In this case, useful while working with the multi-select list box where a single parameter may contain multiple values. 
+- `String[] getParameterValues(type parameterName)`: Majorly used to obtained all values of a given multi-valued parameter name. In this case it would be useful to work with a list box that contains multiple values in a single parameter.
 
-- `public int getContentLength()`: It  returns the actual size of requested data of type `int`.
+- `getContentLength()`: The actual size of the type of data requested is returned.
 
-- `Public String getContentType()`:  Returns the data of a request Internet Media Type, or null, if unknown. 
+- `Public String getContentType()`: Returns the Media Type or, if unknown, null data requests. 
 
-- `Enumeration getParameterNames()`: It’s used to return an enumeration of all target parameter name.
+- `Enumeration getParameterNames()`: The name of the target parameter is used to return an enumeration
 
-- `String getCharacterEncoding()`: This method returns the name if the encoded character is specified. If not specified, it returns null in the body of the request.
+- `String getCharacterEncoding()`: The name of the encoded character is returned by this method. If not If not.
+In the body of the application specified, null returns.
 
-- `public int getServerPort()`: This method returns the port number that received this request.
+- `public int getServerPort()`: The port number received by this method is returned.
 
 - ``public abstract String getServerName()``:  It returns the server name which receives the request.
 
@@ -66,9 +66,8 @@ The ServletRequest interface provides us with many methods to work with
 
 - `removeAttribute(String name)`: Used when removing the attribute from the current request of a type `void.`
 
-### Example of ServletRequest interface
-In this example, we are going to create a user login project using servlet. We used the getParameter method () to return the value of the specified request parameter name in this context.
-
+### ServletRequest interface example
+We will create a user login project with a servlet in this example. In this context, we have been using getParameter () to return the value of the specified query parameter name.
 **Steps to create this project.**
 
 1. Open eclipse IDE for Java EE developers.
@@ -139,20 +138,21 @@ public class LoginAction extends HttpServlet {
 ```
 [Get project source code here]
 (https://drive.google.com/drive/folders/1V2gDQ_sJWC0tEIXvdPhZbB400NJ56oCI?usp=sharing)
-### RequestDispatcher Interface
-RequestDispatcher interface provides us a way of dispatching a client request to another resource it may be Html, JSP, or servlet. It also defines an object that receives the request and includes the content of the target resource.
+### RequestDispatcher
+RequestDispatcher interface allows us to send a client query to another resource.
+Servlet, Html, JSP. It also defines an object that receives the request and includes the content of the target resource.
 
-### Methods of RequestDispatcher interface
+### RequestDispatcher Methods
 Here are two methods provided by the RequestDispatcher interface, namely: 
 
 forward() and include() method explained as follows.
-- `public void forward(ServletRequest request, ServletResponse response)throws ServletException,java.io.IOException`: This method provides an effective way of forwarding client requests from servlet to another resource on the server, can be to Html file, servlet, or JSP file.
+- `public void forward(ServletRequest request, ServletResponse response)`: This method offers an efficient way to forward customer requests. It can be to Html file, servlet or JSP file from servlet resource.
 
-- `public void include(ServletRequest request, ServletResponse response)throws ServletException,java.io.IOException`: From its name `include(),` it helps to include the content of another resource in the response.
+- `public void include(ServletRequest request, ServletResponse response)`: From its name `include()`, It helps to include in the response the content of another resource.
 
 **NOTE:** Both of these two methods throw IOExceptions.
-### Example of RequestDispatcher
-This example demonstrates how `RequestDispatcher` can forward or include a resource response on a server. Here we use htmlPage.html to get a user response. In this case, Controller.java Servlet checks the entered response if a user has more than 18 years or less if the user passe  (under18 ) as the reply,  forward() will be called to Under18Page Servlet and  Above18 servlet included if the user has entered (above18) otherwise the client browser will stay in htmlPage.html page.
+### RequestDispatcher example
+This example shows how RequestDispatcher can forward a resource response or include it on a server. Here we use htmlPage.html to get a user response. In this case, Controller.java Servlet checks the entered response if a user has more than 18 years or less if the user passe  (under18 ) as the reply,  forward() will be called to Under18Page Servlet and  Above18 servlet included if the user has entered (above18) otherwise the client browser will stay in htmlPage.html page.
 
 *htmlPage.html*
 ```html
@@ -273,5 +273,6 @@ In conclusion, we learned some of the ServletRequest methods and ServletDispatch
 
  This article will help you get started with servlet and understand how users send requests to a server. From here, you should be able to use servlet and JSP technology to build your dynamic website.
 
-I encourage you to copy the code and play around with it.
+I urge you to copy and play with the code.
+
 Happy coding!!
