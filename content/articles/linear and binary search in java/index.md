@@ -19,7 +19,7 @@ In the world of programming languages, data structures and algorithms are one of
 
 In this article, I will be sharing the ways of utilizing the methods in solving interview questions. 
 
-#### Key takeaways
+#### Table of contents
 In the end, readers would know the following concepts;
 
 1. What are data structures and algorithms in Java.
