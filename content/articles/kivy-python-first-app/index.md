@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /kivy-python-first-app/
 title: Building your first mobile application using Python
-description: In this tutorial, the reader will learn to set up Kivy for development and creating a basic application using the same library. Then, we will build a graphical user interface application for a user to do quick basic age calculations.
+description: In this tutorial, the reader will learn how to set up Kivy for development and create a basic application using the same library. Then, we will build a graphical user interface application for a user to do quick basic age calculations.
 author: dolores-merceline
 date: 2021-09-21T00:00:00-20:00
 topics: [Languages]
