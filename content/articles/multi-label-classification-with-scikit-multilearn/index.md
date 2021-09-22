@@ -43,7 +43,7 @@ We will use [scikit-multilearn](http://scikit.ml/) in building our model. Scikit
 - [Removing stop words](#removing-stop-words)
 - [Feature engineering](#feature-engineering)
 - [Dataset split](#dataset-split)
-- [Builing model](#builing-model)
+- [Building the model](#building-the-model)
 - [Binary relevance technique](#binary-relevance-technique)
 - [Classifier chains technique](#classifier-chains-technique)
 - [Labelpowerset technique](#labelpowerset-technique)
@@ -69,17 +69,17 @@ There is no constraint on how many labels a text can be assigned to in the multi
 
 These methods and techniques are as follows:
 
-1. Problem Transformation.
-2. Adapted Algorithm.
+1. Problem transformation.
+2. Adapted algorithm.
 3. Ensemble methods.
 
 ### Problem transformation
 
-It refers to converting the multi-label dataset into a single-label dataset. Single-label datasets and problems are machine-readable and make it easy with model building. Problem transformation is done using the following techniques.
+It refers to converting the multi-label dataset into a single-label dataset. Single-label datasets and problems are machine-readable and make it easy with model building. Problem transformation is done using the following techniques:
 
-1. Binary Relevance
-2. Classifier Chains
-3. Label Powerset
+1. Binary relevance
+2. Classifier chains
+3. Label powerset
 
 #### Binary relevance
 
@@ -108,6 +108,7 @@ This process is shown in the image below:
 *[Image source: Medium](https://miro.medium.com/max/2000/1*ycwr_uE8_5lnOMNCnFOuXQ.png)*
 
 To give a more detailed understanding, let's use this example as shown in this image.
+
 ![Classifier chains](/engineering-education/multi-label-classification-with-scikit-multilearn/classifier-chains.png)
 
 In the image above, the green-colored boxes are the combined inputs, and the remaining part represents the target variable or label. As seen, it forms a chain where the output of one classifier is used as the input of the next classifier. All of this is done in sequential order.
@@ -127,14 +128,13 @@ This technique tends to give higher accuracy.
 
 ### Adapted algorithm
 
-This technique uses adaptive algorithms, which are used to perform multi-label classification rather than conducting problem transformation directly.
-In Scikit-multi learn, we have multi-label-k-nearest-neighbor (MLkNN), which is used to handle multi-label classification.
+This technique uses adaptive algorithms, which are used to perform multi-label classification rather than conducting problem transformation directly. In Scikit-multilearn, we have multi-label-k-nearest-neighbor (MLkNN), which is used to handle multi-label classification.
 
 ### Ensemble methods
 
 This is a hybrid technique that combines the functionalities of the two mentioned techniques to produce better results. Ensemble methods tend to give a model with a higher accuracy score.
 
-For a detailed understanding about ensemble methods click [here](/engineering-education/boosting-algorithms-python/)
+For a detailed understanding about ensemble methods, click [here](/engineering-education/boosting-algorithms-python/).
 
 > NOTE: In this tutorial, we will focus on the first technique, problem transformation, in building our model.
 
@@ -142,15 +142,15 @@ Before we start building our model, let's see the dataset that we will be using.
 
 ### Dataset
 
-As mentioned earlier, we will build a multi-label text classification, and the model will be able to classify given text into different categories. The categories in our dataset are `mysql`, `python`, and `php`, a text can belong to one or more of the given categories. If a text belongs to a certain category it is assigned `1`; if it does not, it is assigned `0` as shown in the image below.
+As mentioned earlier, we will build a multi-label text classification, and the model will be able to classify given text into different categories. The categories in our dataset are `mysql`, `python`, and `php`, a text can belong to one or more of the given categories. If a text belongs to a certain category, it is assigned `1`; if it does not, it is assigned `0` as shown in the image below.
 
 ![Snip of the dataset used](/engineering-education/multi-label-classification-with-scikit-multilearn/dataset-snip.jpg)
 
-To download the CSV file for this dataset click [here](https://drive.google.com/file/d/1_scJyWek8DJUZ14_wZ8GXZslpwT8ubzt/view?usp=sharing). After downloading the dataset, name it as `dataset-tags.csv`.
+To download the CSV file for this dataset, click [here](https://drive.google.com/file/d/1_scJyWek8DJUZ14_wZ8GXZslpwT8ubzt/view?usp=sharing). After downloading the dataset, name it as `dataset-tags.csv`.
 
 ### Loading exploratory data analysis packages
 
-Exploratory data analysis(EDA) packages are used for data analysis and data manipulation. We shall use pandas to read our dataset and Numpy to perform mathematical computations.
+Exploratory data analysis(EDA) packages are used for data analysis and data manipulation. We shall use pandas to read our dataset and numpy to perform mathematical computations.
 
 ```python
 import pandas as pd
@@ -199,7 +199,7 @@ We check the data type of our labels; they need to have a uniform data type.
 df.dtypes
 ```
 
-The output is as shown.
+The output is as shown:
 
 ```bash
 title      object
@@ -239,32 +239,20 @@ In the above code snippet, we have imported the following.
 4. train_test_split
 5. TfidfVectorizer
 
-#### MultinomialNB
+- `MultinomialNB` is a method found in the Naive Bayes algorithm used in building our model, and it is best suited for classification that contains discrete features such a text. For a detailed understanding about `MultinomialNB`, click [here](https://towardsdatascience.com/naive-bayes-classifier-81d512f50a7c)
 
-This is a method found in the Naive Bayes algorithm used in building our model, and it is best suited for classification that contains discrete features such a text.
-For a detailed understanding about `MultinomialNB`, click [here](https://towardsdatascience.com/naive-bayes-classifier-81d512f50a7c)
+- `accuracy_score` is used to calculate the accuracy of our model when making predictions. The accuracy score is usually expressed in percentages.
 
-#### accuracy_score
+- `hamming_loss` is used to determine the fraction of incorrect predictions of a given model.
 
-This is used to calculate the accuracy of our model when making predictions. The accuracy score is usually expressed in percentages.
+- `train_test_split`is a method used to split our dataset into two sets; train set and test set.
 
-#### hamming_loss
-
-This is used to determine the fraction of incorrect predictions of a given model.
-
-#### train_test_split
-
-We use this method to split our dataset into two sets, train set and test set.
-
-#### TfidfVectorizer
-
-It is a statistical measure that evaluates how relevant a word is to a document in a collection of documents. It does this by checking the frequency in which words appear in a certain document. If a word commonly occurs in a document, it is less relevant than a word that is rare in a document.
-
+- `TfidfVectorizer` is a statistical measure that evaluates how relevant a word is to a document in a collection of documents. It does this by checking the frequency in which words appear in a certain document. If a word commonly occurs in a document, it is less relevant than a word that is rare in a document.
 For detailed understanding about `TfidfVectorizer` click [here](https://medium.com/@cmukesh8688/tf-idf-vectorizer-scikit-learn-dbc0244a911a)
 
 ### Installing Scikit-Multilearn
 
-Since we are using Google Colab, we install this library using the following command.
+Since we are using Google Colab, we install this library using the following command:
 
 ```python
 !pip install scikit-multilearn
@@ -296,7 +284,7 @@ To perform text preprocessing, we need to install the [neattext](https://pypi.or
 
 #### Neattext installation
 
-Let's install using the following command.
+Let's install using the following command:
 
 ```python
 !pip install neattext
@@ -368,13 +356,13 @@ We can now remove the stop words.
 
 ### Removing stop words
 
-We remove stop words using the `nfx.remove_stopwords` function as shown.
+We remove stop words using the `nfx.remove_stopwords` function as shown:
 
 ```python
 df['title'].apply(nfx.remove_stopwords)
 ```
 
-The output is as shown.
+The output is as shown:
 
 ```bash
 df['title'].apply(nfx.remove_stopwords)
@@ -430,13 +418,13 @@ We extract features from `corpus`, `corpus` is the variable that contains our cl
 
 We finally convert our feature into an array for it to become machine-readable. Arrays can be easily be loaded into our model.
 
-To see our array of features, use this command.
+To see our array of features, use this command:
 
 ```python
 Xfeatures
 ```
 
-The output is as shown.
+The output is as shown:
 
 ```bash
 array([[0., 0., 0., ..., 0., 0., 0.],
@@ -461,7 +449,7 @@ We use the `train_test_split` to split our dataset into two. 70% of the dataset 
 X_train,X_test,y_train,y_test = train_test_split(Xfeatures,y,test_size=0.3,random_state=42)
 ```
 
-### Building model
+### Building the model
 
 We will build our model using problem transformation techniques.
 
@@ -530,6 +518,7 @@ array([[1., 0., 1.],
 ```
 
 The above output shows how our model has classified our different text into three categories. If a text belongs to that particular category it's assigned `1`; if it does not belong, it's assigned `0`.
+
 Let's calculate the accuracy score.
 
 #### Accuracy score
@@ -546,7 +535,7 @@ The output:
 
 This shows that our model has an accuracy score of `90.91`. This is a good accuracy for our model, and our model has a higher chance of making accurate predictions.
 
-#### Getting Hamming loss
+#### Getting hamming loss
 
 Hamming loss is used to determine the fraction of incorrect predictions of a given model. The lower the hamming loss, the better our model is at making predictions.
 
@@ -688,7 +677,7 @@ This tutorial is helpful to someone who wants to learn about multi-label text cl
 
 We then used all these three techniques in building our model. We also did text preprocessing of the dataset by removing stop words and noisy data; text preprocessing ensures we have clean data before building our model.
 
-In this tutorial, we were dealing with only one method, which is problem transformation. Problem transformation is made up of three techniques: Binary relevance, label powerset, and classifier chains. This tutorial showed that binary relevance and label powerset have a higher accuracy score than classifier chains.
+In this tutorial, we were dealing with only one method, which is problem transformation. Problem transformation is made up of three techniques: binary relevance, label powerset, and classifier chains. This tutorial showed that binary relevance and label powerset have a higher accuracy score than classifier chains.
 
 Finally, we were able to make predictions using our model. This gauges the model; if a model can accurately make predictions, the better the model. Using these steps, a reader should comfortably build a multi-label text classification model with scikit-multi learn.
 
