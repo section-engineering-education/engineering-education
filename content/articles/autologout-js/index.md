@@ -1,25 +1,25 @@
 ### Creating an auto-logout feature using JavaScript
 
 #### Introduction
-When implementing security for our applications, we will at one point check if the user is still actively using the screen and decide whether to keep him/her logged in or not. This is particularly important if the application handles sensitive or private data to the user for example, bank account details. We will see how to do that using JavaScript basing on the input events such as keypresses, scrolls etc.
+When implementing security for our applications, we will at one point check if the user is still actively using the screen and decide whether to keep him/her logged in or not. This is particularly important if the application handles sensitive or private data to the user, for example, bank account details. We will see how to do that using JavaScript basing on the input events such as keypresses, scrolls, etc.
 
 #### Pre-requisites
-1. A basic knowledge in JavaScript
-2. A basic knowledge in HTML and CSS.
-3. A basic knowledge in PHP(though not that necessary).
+1. A basic knowledge of JavaScript
+2. A basic knowledge of HTML and CSS.
+3. A basic knowledge of PHP(though not that necessary).
 
-You can use any technolgy/language for the backend login script.
+You can use any technology/language for the backend login script.
 
 #### Brief overview
-We will look at an autologout implementation using JavaScript with the help of a simple login interface based on PHP as the backend. The display page will feature a counter that counts the number of seconds remaining befpre the user is loogged out due to inactivity. The timer for auto logging out will be reset if any of the event is detected.
+We will look at an autologout implementation using JavaScript with the help of a simple login interface based on PHP as the backend. The display page will feature a counter that counts the number of seconds remaining before the user is logged out due to inactivity. The timer for auto logging out will be reset if any of the events is detected.
 The demo is found [here](https://sacco.terrence-aluda.com/sacco/eng-edtest.html).
 
 #### Getting started
 We will first create User Interface files in HTML and CSS for the login and display screens.
 
-> I wont explain the UI snippets because that's sort of beyond the scope of this article and also not the main aim of this. You can create any of your own, it is not strictly limited to the ones I use.
+> I won't explain the UI snippets because that's sort of beyond the scope of this article and also not the main aim of this. You can create any of your own, it is not strictly limited to the ones I use.
 
-> The login credentials are: Phone Number - `1234567890` and Password- `1111`.
+> The login credentials are Phone Number - `1234567890` and Password- `1111`.
 
 
 **Login page**
@@ -79,26 +79,26 @@ The code is as follows:
                 <h3>Log in</h3>
               </div>
               <form action="https://sacco.terrence-aluda.com/sacco/backend/eng-ed-auth.php" method="post">
-	              <div class="mb-3">
-	                <div class="d-flex align-items-center justify-content-center vw-30">
-	                  <input class="form-control text-center" name="PhoneNo" type="text" autofocus="true" placeholder="Phone number"
-	                    id="signNum">
-	                </div>
-	              </div>
-	              <div class="mb-3">
-	                <div class="d-flex align-items-center justify-content-center vw-50">
-	                  <input type='password' name="password" class="form-control text-center" placeholder="Confirm password" id="logPass">
-	                </div>
-	              </div>
-	              <div class="mb-3">
-	                <div class="d-flex align-items-center justify-content-center vw-50">
-	                  <span id="banner" class="text-danger"></span>
-	                </div>
-	              </div>
-	              <div class="mb-3" style="text-align: center">
-	                <button id="logBtn" class="btn" style="background-color: red; color: white; "><i
-	                    class="fa fa-unlock-alt"></i> Log in</button>
-	              </div>
+                  <div class="mb-3">
+                    <div class="d-flex align-items-center justify-content-center vw-30">
+                      <input class="form-control text-center" name="PhoneNo" type="text" autofocus="true" placeholder="Phone number"
+                        id="signNum">
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <div class="d-flex align-items-center justify-content-center vw-50">
+                      <input type='password' name="password" class="form-control text-center" placeholder="Confirm password" id="logPass">
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <div class="d-flex align-items-center justify-content-center vw-50">
+                      <span id="banner" class="text-danger"></span>
+                    </div>
+                  </div>
+                  <div class="mb-3" style="text-align: center">
+                    <button id="logBtn" class="btn" style="background-color: red; color: white; "><i
+                        class="fa fa-unlock-alt"></i> Log in</button>
+                  </div>
              </form>
             </div>
           </div>
@@ -189,7 +189,7 @@ Bootstrap 5 is used for styling.
 
 </html>
 ```
-This is the display page where the user will see the countdown before being logged out aftera ceratin period of inactivity.
+This is the display page where the user will see the countdown before being logged out after a certain period of inactivity.
 Note that a method is fired in the body's `onload` attribute. We will talk about that in the JavaScript code.
 
 *Output*
@@ -239,7 +239,7 @@ This is where the autologout feature is 'made'.
   let logoutUrl = "https://sacco.terrence-aluda.com/sacco/eng-edtest.html";
 ```
 
-We first initialise the variable for storing the timeout duration, timer ID, the element where the counter number will be displayed, and the URL address where the script will redirect to after the logout.
+We first initialize the variable for storing the timeout duration, timer ID, the element where the counter number will be displayed, and the URL address where the script will redirect to after the logout.
 
 ```javascript
   function startTimer() {
@@ -249,13 +249,13 @@ We first initialise the variable for storing the timeout duration, timer ID, the
   }
 ```
 
-This is the method for starting the timer. `window.setTimeout()` returns an ID that will be used to start and stop the timer. After the timeout is attained, the `idleLogout()` method is called which the logs the user out. The counter is animated using the `animate()` method. We will talk about these methods in detail in the next parts.
+This is the method for starting the timer. `window.setTimeout()` returns an ID that will be used to start and stop the timer. After the timeout is attained, the `idleLogout()` method is called which logs the user out. The counter is animated using the `animate()` method. We will talk about these methods in detail in the next parts.
 
 > The timer is set to 5 seconds to save our time during testing the system, but you can change the values appropriately eg 3 minutes, 200 seconds, etc.
 
 > We also set the animated counter to run for 5 seconds due to the timer duration. You will set it to match the timer value you use like 100 for 100 seconds, 30 for 30 seconds, etc.
 
-> Another point to note is that due to some User Experience(UX) issues, it is recommended to set two timers, one for waiting for the inactive session and another for warning the user. In this way, you can set the warning timer off after displaying a modal with the counter instead of the counter running the entire time of the program. For example, 10 minutes for waiting the inactive state then 30 seconds for displaying thepopup with the counter. You can have a look at [these](https://stackoverflow.com/questions/23023916/how-to-implement-auto-logout-in-javascript) suggestions connected to the same at StackOverflow.
+> Another point to note is that due to some User Experience(UX) issues, it is recommended to set two timers, one for waiting for the inactive session and another for warning the user. In this way, you can set the warning timer off after displaying a modal with the counter instead of the counter running the entire time of the program. For example, 10 minutes for waiting for the inactive state then 30 seconds for displaying the popup with the counter. You can have a look at [these](https://stackoverflow.com/questions/23023916/how-to-implement-auto-logout-in-javascript) suggestions connected to the same at StackOverflow.
 
 ```javascript
   function resetTimer() {
@@ -297,7 +297,7 @@ This function simply redirects to the login page after a period of inactivity.
 
             const progress = Math.min((currentTime  - startTime) / duration, 1);
 
-        //calculate what to be displayed using the value gotten above
+        //calculate what is to be displayed using the value gotten above
         
             displayValue = Math.floor(progress * (lastVal - initVal) + initVal);
             obj.innerHTML = displayValue;
@@ -318,7 +318,7 @@ This function simply redirects to the login page after a period of inactivity.
 
 This is the `animate()` function. I clearly explained it in this [article](https://www.section.io/engineering-education/javascript-animation-counter/). Please check it out.
 
-In a brief summary, it gets the current timestamp and the timestamp the page loaded. It then calculates what is to be displayed using the difference betweeen the two timestamps and displays it in element. In our case, it displays it in a h5 element in the display page:
+In a summary, it gets the current timestamp and the timestamp the page loaded. It then calculates what is to be displayed using the difference between the two timestamps and displays it in element. In our case, it displays it in a h5 element in the display page:
 
 ```html
 <h5 style="color: #0af53a" id="numCount"><h5>
@@ -395,7 +395,7 @@ Here is the full JavaScript code.
 
             const progress = Math.min((currentTime  - startTime) / duration, 1);
 
-        //calculate what to be displayed using the value gotten above
+        //calculate what is to be displayed using the value gotten above
         
             displayValue = Math.floor(progress * (lastVal - initVal) + initVal);
             obj.innerHTML = displayValue;
@@ -420,10 +420,10 @@ We looked at creating an autologout feature in pure javascript. We looked at the
 
 ### Key research area
 
-The code does not keep track of the pages in different tabs. For example, if you had logged in the same page in different tabs, the timer resets in the active tab does not affect the other tab in that the other tab will autologout. Having read this, you can delve into it and make that improvement.
+The code does not keep track of the pages in different tabs. For example, if you had logged in to the same page in different tabs, the timer resets in the active tab does not affect the other tab in that the other tab will autologout. Having read this, you can delve into it and make that improvement.
 The GitHub repository for contributing to the code is found [here](https://github.com/Agusioma/autologout-javascript). 
 
 ### Conclusion
-The user's private data is very key. It's always important to let no one else see another person's private information. The autologout  is a good workaround around that.
+The user's private data is very key. It's always important to let no one else see another person's private information. The autologout is a good workaround around that.
 
 Thank you, reader. Have a great read.
