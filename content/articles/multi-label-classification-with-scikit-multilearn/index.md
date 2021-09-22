@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /multi-label-classification-with-scikit-multilearn/
 title: Multi-Label Classification with Scikit-MultiLearn
-description: In this tutorial, we will be dealing with multi-label text classification. We will build a model that classifies a given text input into different categories. Our text input can belong to multiple categories or labels simultenously.
+description: In this tutorial, we will be dealing with multi-label text classification. We will build a model that classifies a given text input into different categories. Our text input can belong to multiple categories or labels simultaneously.
 author: charles-kariuki
 date: 2021-09-22T00:00:00-15:00
 topics: [Machine Learning]
@@ -16,7 +16,7 @@ images:
 ---
 Multi-label classification allows us to classify data sets with more than one target variable. In multi-label classification, we have several labels that are the outputs for a given prediction. When making predictions, a given input may belong to more than one label.
 <!--more-->
-For example, when predicting a given movie category, it may belong to horror, romance, adventure, action, or simultaneously. In this example, we have multi-labels that can be assigned to a given movie. In multi-class classification, an input belongs to only a single label. For example, when predicting if a given image belongs to a cat or a dog, the output can be either a cat or dog but not both at the same time.
+For example, when predicting a given movie category, it may belong to horror, romance, adventure, action, or all simultaneously. In this example, we have multi-labels that can be assigned to a given movie. In multi-class classification, an input belongs to only a single label. For example, when predicting if a given image belongs to a cat or a dog, the output can be either a cat or dog but not both at the same time.
 
 In this tutorial, we will be dealing with multi-label text classification, and we will build a model that classifies a given text input into different categories. Our text input can belong to multiple categories or labels at the same time.
 
@@ -65,9 +65,9 @@ A reader must have:
 
 Multi-label classification originated from the investigation of text categorization problems, where each document may belong to several predefined topics simultaneously. Multi-label classification of textual data is an important problem that requires advanced methods and specialized machine learning algorithms that support predicting multiple-labeled classes.
 
-In the multi-label problem there is no constraint on how many labels a text can be assigned to, the more the labels the more complex the problem, to solve these problems we have different methods and techniques specific to multi-label classification.
+In the multi-label problem, there is no constraint on how many labels a text can be assigned to. The more the labels, the more complex the problem. To solve these problems, we have different methods and techniques specific to multi-label classification.
 
-These methods and techniques are as follows.
+These methods and techniques are as follows:
 
 1. Problem Transformation.
 2. Adapted Algorithm.
@@ -171,31 +171,21 @@ We check the structure to be able to see the available columns in our dataset.
 df.head()
 ```
 
-The output is as shown.
+The output is as shown:
 
 ![Dataset structure](/engineering-education/multi-label-classification-with-scikit-multilearn/dataset-structure.jpg)
 
 The image above shows the columns in our dataset, these columns are as follows.
 
-#### title
+- The `title` column contains the texts that are used as input for our model during training.
 
-The title column contains the texts that are used as input for our model during training.
+- The `tags` column contains the various labels that are assigned to our input text. These tags are `php`, `mysql` and `python`.
 
-#### tags
+- The `mysql` column is used to classify a text that belongs to the `mysql` class. If it is `mysql` it's assigned `1` and `0` if it's not related.
 
-This column contains the various labels that are assigned to our input text. These tags are `php`, `mysql` and `python`.
+- The `php` column used to classify a text that belongs to the `php` class. If it is `php` it's assigned `1.0` and `0.0` if it's not related.
 
-#### mysql
-
-This is used to classify a text that belongs to the `mysql` class. If it is `mysql` it's assigned `1` and `0` if it's not related.
-
-#### php
-
-This is used to classify a text that belongs to the `php` class. If it is `php` it's assigned `1.0` and `0.0` if it's not related.
-
-#### python
-
-This is used to classify a text that belongs to the `python` class. If it is `python` it's assigned `1.0` and `0.0` if it's not related.
+- The `php` column is used to classify a text that belongs to the `python` class. If it is `python` it's assigned `1.0` and `0.0` if it's not related.
 
 From the image above, we can see that some texts belong to the different classes at the same time, the text in the first row belongs to both `mysql` and `python`.
 
@@ -412,13 +402,13 @@ corpus = df['title'].apply(nfx.remove_stopwords)
 
 Feature engineering involves extracting features and properties from our data. Features are the independent units that are used for predictive analysis to influence the output. We shall use the `TfidfVectorizer()` package to conduct feature extraction, which we imported earlier.
 
-#### TfidfVectorizer initilization
+#### TfidfVectorizer initialization
 
 Let's initialize `TfidfVectorizer()`. It will be used used to extract words from the texts in the dataset, it then transforms the words into numeric values based on the frequency of each word that occurs in the entire text.
 
-The numeric values will be the features for our model and are used as inputs for the model, numeric values are more machine-readable as compared to text, that is why convert the text into numeric values.
+The numeric values will be the features for our model and are used as inputs for the model. Numeric values are more machine-readable as compared to text, that is why we convert the texts into numeric values.
 
-For a detailed practical guide of how `TfidfVectorizer` works behind the scenes click [here](https://medium.com/@cmukesh8688/tf-idf-vectorizer-scikit-learn-dbc0244a911a)
+For a detailed practical guide on how `TfidfVectorizer` works, click [here](https://medium.com/@cmukesh8688/tf-idf-vectorizer-scikit-learn-dbc0244a911a).
 
 ```python
 tfidf = TfidfVectorizer()
@@ -568,7 +558,8 @@ The output is as shown.
 0.06060606060606061
 ```
 
-The Hamming loss is the fraction of labels that are incorrectly predicted, in the output above we have a hamming loss of `6.06%` expressed as a percentage. This shows that out of all the predictions, only `6.06%` of the predictions were wrong, this percentage is low and shows that our model was well trained. Continuous training will reduce this percentage, making the model more accurate.
+Hamming loss is the fraction of labels that are incorrectly predicted. In the output above, we have a hamming loss of `6.06%` expressed as a percentage. This shows that out of all the predictions, only `6.06%` of the predictions were wrong. This percentage is low and shows that our model was well trained. Continuous training will reduce this percentage, making the model more accurate.
+
 Let's go to the next technique.
 
 ### Classifier chains technique
