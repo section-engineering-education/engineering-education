@@ -116,6 +116,13 @@ This is where you request permission from the user to access their location if n
     }
 ```
 
+> Make sure you have included this two variables outside the `onCreate` method
+
+```kotlin
+private val REQUEST_FOREGROUND_AND_BACKGROUND_PERMISSION_RESULT_CODE = 3
+private val REQUEST_FOREGROUND_ONLY_PERMISSIONS_REQUEST_CODE = 4
+```
+
 Once the user has answered the permissions request, you should process their response in `onRequestPermissionsResult()` as shown below.
 
 ```kotlin
@@ -139,12 +146,17 @@ Permissions granted will be worthless if the user's device location is deactivat
 
 ```kotlin
 private fun validateGadgetAreaInitiateGeofence(resolve: Boolean = true) {
+
+        //create a location request which request for the quality of service to update the location
         val locationRequest = LocationRequest.create().apply {
             priority = LocationRequest.PRIORITY_LOW_POWER
         }
         val builder = LocationSettingsRequest.Builder().addLocationRequest(locationRequest)
 
-        val client = LocationServices.getSettingsClient(this)
+       //check if the client location settings are satified
+       val client = LocationServices.getSettingsClient(this)
+       
+       //create a location response that act as a listener for the device location if enabled
         val locationResponses =
             client.checkLocationSettings(builder.build())
 
@@ -209,6 +221,11 @@ geoClient = LocationServices.getGeofencingClient(this)
 Also within the onCreate method, add a geofenceList that holds geofences. In this step, we will add one geofence but you can have many geofences. 
 
 ```kotlin
+
+ val latitude = 0.616016
+ val longitude = 34.521816
+ val radius = 100f
+
 geofenceList.add(Geofence.Builder()
             .setRequestId("entry.key")
             .setCircularRegion(latitude,longitude,radius)
