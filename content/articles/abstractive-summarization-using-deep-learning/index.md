@@ -21,7 +21,7 @@ Abstractive summarization aims to take a body of text, turning it into a shorter
 
 This is not the case for previous versions of text summarizations which only aim to generate accurate and concise summaries from input documents. It copies informative fragments from input sentences.
 
-Abstractive summarization uses Google's [Pegasus](https://huggingface.co/google/pegasus-xsum) model. This is described in a research paper as [PEGASUS: Pre-training with Extracted Gap-sentences for Abstractive Summarization](https://arxiv.org/pdf/1912.08777.pdf). The model uses Transformer's Encoder-Decoder architecture. The encoder outputs masked tokens while the decoder generates Gap sentences.
+Abstractive summarization uses Google's [Pegasus](https://huggingface.co/google/pegasus-xsum) model. This is described in a research paper as [PEGASUS: Pre-training with Extracted Gap-sentences for Abstractive Summarization](https://arxiv.org/pdf/1912.08777.pdf). The model uses Transformer's Encoder-Decoder architecture. The encoder outputs masked tokens while the decoder generates gap sentences.
 
 This tutorial will walk you through how to use the Pegasus model to perform abstractive summarization from start to finish. We will perform abstractive summarization on some Wikipedia, News, and Scientific Journals documents.
 
