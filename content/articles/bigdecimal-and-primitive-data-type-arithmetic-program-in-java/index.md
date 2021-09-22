@@ -15,13 +15,13 @@ images:
     alt: BigDecimal and Primitive Data Type Arithmetic Program in Java Hero Image
 ---
 
-Because of their inaccuracy, floating-point data types cannot be used in financial calculations. This is why Java provides a separate class named **BigDecimal** for executing operations and reducing the chances of calculation errors. 
+Because of their inaccuracy, floating-point data types cannot be used in financial calculations. This is why Java provides a separate class named BigDecimal for executing operations. And, reducing the chances of calculation errors. 
 <!--more-->
 On double numbers, the BigDecimal class provides arithmetic, scale management, rounding, comparison, format conversion, and hashing functions. It compensates for the time complexity, however, by handling extremely large and extremely small floating-point integers with exceptional precision.
 
 These basic arithmetic operations can be performed on BigDecimal as well as between BigDecimal and primitive data types, which is what our article will cover. While both `BigInteger` and `BigDecimal` support arbitrary-precision integers, BigDecimal only supports arbitrary-precision fixed-point numbers. 
 
-BigDecimal/BigInteger is not for you if you're constructing a low-latency application where every microsecond counts. Let us look at our first example of Adding, subtracting, and multiplying two large decimal integers with a Java program:
+BigDecimal/BigInteger is not advisable if you're constructing a low-latency application where every microsecond counts. Let us look at our first example of Adding, subtracting, and multiplying two large decimal integers with a Java program:
 
 ```Java
 import java.io.*;
@@ -59,9 +59,10 @@ Multiplying first1 and sec2 = 1404.107793
 
 We have done three operations on our two declared BigDecimals. For example the subtraction, addition, and the addition operations. There is now a point to note here, we did not perform the division operation because of one reason that I will be giving.
 
-Because the division of the two numbers is non-terminating, there is an error that will occur, and we know that BigDecimal was established to provide the highest level of precision. As a result, it generates an error. 
+Because the division of the two numbers is non-terminating, there is an error that will occur. And, we know that BigDecimal was established to provide the highest level of precision. As a result, it generates an error. 
 
-We'll fix it in the following code, where we'll divide the same integers, but this time the data type will be double, thus there should be no errors and some responses.
+We'll fix it in the following code, where we'll divide the same integers, but this time the data type will be double. Thus, there should be no errors and some responses.
+
 
 Let us have the second example below:
 
@@ -175,12 +176,12 @@ Multiplying first1 and sec2 = 300
 Dividing first1 and sec2 = 0.75
 ```
 
-> No null values are allowed in a database, application, or view and everything is initialized with new BigDecimal(0), or you execute null checks on every use of nullable values.
+> No null values are allowed in a database, application, or view and everything is initialized with new BigDecimal(0). Or,  you execute null checks on every use of nullable values.
 
 ### Need for BigDecimal
 There is a lot of fun to be had with floating-point numbers. A double type is commonly used for quantities unless the value is an integer, in which case an int type is usually acceptable. 
 
-Also, a float or a long can be used, depending on the size of a value's value type. It should be noted that these kinds are the very worst thing you can use when dealing with money. They do not provide the correct value, but rather one that can be stored in a binary format. As an example, let's look at the dangers of utilizing a double.
+Also, a float or a long can be used, depending on the size of a value's value type. It should be noted that these kinds are the very worst thing you can use when dealing with money. They do not provide the correct value, but rather one that can be stored in a binary format. 
 
 ### About primitive data types
 They are the simplest types. It is possible to design your complicated kinds by using primitive types as a starting point for development. 
@@ -189,7 +190,7 @@ Primitive types are easier to use in applications since they boost the performan
 
 As a result of their name, they can relate to a wide range of objects. The non-primitive data types in Java, but, are built by programmers. 
 
-For the same reason, primitive types are substantially more efficient when compared with instances of wrapper classes.
+For the same reason, primitive types are more efficient when compared with instances of wrapper classes.
 
 ### Primal and non-primitive data types
 Primal and non-primitive data types differ primarily in their underlying data types:
@@ -201,8 +202,6 @@ Primal and non-primitive data types differ primarily in their underlying data ty
 A BigDecimal is a means to represent numbers that is accurate. Having a Double gives you a certain level of precision in your game. 
 
 When working with doubles of varying magnitudes, the smaller one could be dropped from the sum because the magnitude difference is so huge. This would not happen with BigDecimal.
-
-If you want to work with double numbers for arithmetic or scale handling or rounding or comparison or format conversion then the BigDecimal class is for you. While it can handle very large and very small floating-point numbers with remarkable precision, the time complexity compensates a little.
 
 BigDecimal has the drawback of being slower and more difficult to write algorithms with.
 
