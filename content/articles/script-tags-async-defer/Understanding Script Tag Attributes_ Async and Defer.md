@@ -1,7 +1,6 @@
 # Understanding Script Tag Attributes: Async and Defer
 ![hero](/script-tags-async-defer/hero.jpg)
 
-
 You may have come across one of [Hypertext Markup Language(HTML)](https://www.section.io/engineering-education/semantic-html-for-beginners/) tags as shown below, the `script` tag. 
 
 ```HTML
@@ -202,13 +201,11 @@ In the example above:
 
 In this section, we will look at differences between async and defer in terms of order of execution and `DOMContentLoaded`.
 
+
 | | Defer| Async |
-
-|-----------------|-----------|------|
-
-|Load(Execution) order |Order of appearance of script tag matters.|Order of appearance of script tags doesn’t matter.
-
-|DOMContentLoaded| Execute after HTML file is fully loaded and parsed, right before DOMContentloaded.| May execute before or after DOMContentloaded.
+|-----------|-----------|------|
+|Load(Execution) order |Order of appearance of script tag matters.|Order of appearance of script tags doesn’t matter.|
+|DOMContentLoaded| Execute after HTML file is fully loaded and parsed, right before DOMContentloaded.| May execute before or after DOMContentloaded.|
 
 ### When To Use Async or Defer
 
