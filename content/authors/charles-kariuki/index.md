@@ -1,1 +1,1 @@
-Charles is an undergraduate computer science student. She loves developing web solutions, artificial intelligence and machine learning algorithms. He is open to research and colaborating with other developers.
+Charles is an undergraduate computer science student. He loves developing web solutions, artificial intelligence and machine learning algorithms. He is open to research and colaborating with other developers.
