@@ -27,7 +27,6 @@ For example, a coffee shop with many customers requesting a cup of their choice 
 
 On the other hand, parallelism is the ability to do lots of programs at the same time. The same analogy applies, although, here there are different coffee machines. In both scenarios, customers are served at the same time. Parallelism is a tool used by concurrency to achieve its goal, however, it is not the goal of concurrency.
 
-
 ### Concurrency in Go
 Concurrency in some other programming languages is achieved by using threads. If there are lots of things to be executed that the machine can't handle, thread pools are created to handle them. 
 
