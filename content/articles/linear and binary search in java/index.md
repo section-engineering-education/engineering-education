@@ -1,3 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: 
+url: /linear-and-binary-search-in-java-data-structures-and-algorithms/
+title: Linear and Binary Search In Java Data Structures and Algorithms
+description: This article will describe the ways of utilizing the methods of data structures and algorithms as key problem-solving skills in java. 
+author: arafat-olayiwola
+date: 2021-09-22T00:00:00-18:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/linear-and-binary-search-in-java-data-structures-and-algorithms/hero.png
+    alt: Data Structures cover image 
+---
+<!--more-->
 
 In the world of programming languages, data structures and algorithms are one of the problem-solving skills that all engineers must have. Linear and Binary Search are required when there is a problem with unsorted and sorted arrays in Java or any other language respectively. 
 
