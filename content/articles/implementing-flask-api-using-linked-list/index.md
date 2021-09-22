@@ -16,10 +16,10 @@ images:
 ---
 
 ### Introduction
-Understanding data structures is an important aspect when developing applications. As real-world applications consider space and time complexities when designing applications to save on the memory and time taken to run specific programs.
+Understanding data structures is an important aspect when developing applications. Real-world applications consider space and time complexities when designing applications. This improves the efficiency on the memory and time taken to run specific programs.
 <!--more-->
 
-Despite the useful trade-offs, they offer to the pool of developers, most rarely use them. These make their programs and software not being to the quality and standards expected and can make organizations incur huge losses in terms of budgeting for storage and consumer loading time of these applications.
+Despite the useful trade-offs, they offer to the pool of developers, most rarely use them. This make these programs and software not being to the quality and standards expected. Organizations as a result incur huge losses in storage budgets and consumer loading time of these applications.
 
 In this article, we'll build a hands-on Flask API using a linked list data structure. In the process we will see how applicable this data structure is and the benefits a user can acquire by using it.
 
