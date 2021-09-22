@@ -1,9 +1,23 @@
-﻿###  Setting Up Hotspot On Kali Linux
-Kali Linux unlike other operating systems such as Windows is an open-source Operating System.
-It is considered the best operating system in cyber security implementation by both white hat and black hat hackers, since it is a Debian-based Linux distribution used mainly at advanced Penetration Testing also known as pen-testing.
-It is freely available and accessible to professionals and learners.
-Kali Linux has a wide range of features and tools for penetration testing. Each distro of Linux has an intended purpose for implementation, Kali Linux majoring in security.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /setting-up-hotspot-on-kali-linux/
+title: Setting Up Hotspot On Kali Linux
+description: In this tutorial, we will explain how you are going to be using Kali Linux to create our hotspot.
+author: jacob-muganda
+date: 2021-09-22T00:00:00-15:00
+topics: [Networking]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/setting-up-hotspot-on-kali-linux/hero.jpg
+    alt: Setting Up Hotspot on Kali Linux
+---
+Unlike other operating systems such as Windows, Kali Linux is an open-source operating system. It is considered the best operating system in cyber security implementation by both white hat and black hat hackers. 
+<!--more-->
+It is a Debian-based Linux distribution used mainly in advanced penetration testing also known as pen-testing. It is freely available and accessible to professionals and learners.
+Kali Linux has a wide range of features and tools for penetration testing. Each distro of Linux has an intended purpose for implementation, Kali Linux majoring in security.
 
 ### Table of contents
 
