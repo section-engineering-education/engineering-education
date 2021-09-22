@@ -92,7 +92,7 @@ Our tokenizer is now imported.
 
 `from_pretrained` method allows us to import a pre-trained model. In our case, it's the `google/pegasus-xsum`. You can read more about the pre-trained model and its features [here](https://huggingface.co/google/pegasus-xsum).
 
-There are other Pegasus models available in the HuggingFace library. They include but not limited to `google/pegasus-reddit_tifu`, `google/pegasus-newsroom`, `google/pegasus-pubmed`, and `google/pegasus-arxiv`. All these models are based on Pegasus and trained on different datasets. You can play around and see which suits you best. 
+There are other Pegasus models available in the HuggingFace library. Some include `google/pegasus-reddit_tifu`, `google/pegasus-newsroom`, `google/pegasus-pubmed`, and `google/pegasus-arxiv`. All these models are based on Pegasus and trained on different datasets. You can play around with them and see which suits you best.
 
 > To use other models, make sure to replace the `google/pegasus-xsum` model in the `from_pretrained` method in the command above with your preferred one.
 
