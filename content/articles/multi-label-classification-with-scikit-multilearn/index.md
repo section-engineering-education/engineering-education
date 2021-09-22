@@ -1,9 +1,26 @@
-Multi-label classification allows us to classify data sets with more than one target variable. In multi-label classification, we have several labels that are the outputs for a given prediction. When making predictions, a given input may belong to more than one label.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /multi-label-classification-with-scikit-multilearn/
+title: Multi-Label Classification with Scikit-MultiLearn
+description: In this tutorial, we will be dealing with multi-label text classification. We will build a model that classifies a given text input into different categories. Our text input can belong to multiple categories or labels simultenously.
+author: charles-kariuki
+date: 2021-09-22T00:00:00-15:00
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/multi-label-classification-with-scikit-multilearn/hero.png
+    alt: Multi-Label Classification with Scikit-MultiLearn
+---
+Multi-label classification allows us to classify data sets with more than one target variable. In multi-label classification, we have several labels that are the outputs for a given prediction. When making predictions, a given input may belong to more than one label.
+<!--more-->
 For example, when predicting a given movie category, it may belong to horror, romance, adventure, action, or simultaneously. In this example, we have multi-labels that can be assigned to a given movie. In multi-class classification, an input belongs to only a single label. For example, when predicting if a given image belongs to a cat or a dog, the output can be either a cat or dog but not both at the same time.
 
 In this tutorial, we will be dealing with multi-label text classification, and we will build a model that classifies a given text input into different categories. Our text input can belong to multiple categories or labels at the same time.
-We will use [scikit-multilearn](http://scikit.ml/) in building our model. [Scikit-multilearn](http://scikit.ml/) is a python library built on top of [scikit-learn](https://scikit-learn.org/stable/) and is best suited for multi-label classification.
+
+We will use [scikit-multilearn](http://scikit.ml/) in building our model. Scikit-multilearn is a python library built on top of [scikit-learn](https://scikit-learn.org/stable/), and is best suited for multi-label classification.
 
 ### Table of contents
 
