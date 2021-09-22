@@ -40,13 +40,13 @@ To follow along with this tutorial, you'll need:
 To make this whole process easier, download your image and store it in the current folder in Matlab. The retinal images can be downloaded directly from the internet.
 
 Thereafter, we will open Matlab and create a new script. The first step is reading the images.
-It is made possible by the `imread` function.
+This is made possible by the `imread` function:
 
 ```Matlab
 test_image = imread('retinal_image.jpg');      %Reading the image
 ```
 
-Our image looks bigger at this point. We should therefore resize it using the `imresize` function. This function uses the image name and the preferred dimensions in vector form as the arguments.
+Our image looks big at this point. We should therefore resize it using the `imresize` function. This function uses the image name and the preferred dimensions in vector form as the arguments.
 
 The dimensions are in pixels. This means that decimal dimensions are not accepted:
 
@@ -64,9 +64,9 @@ converted_image = im2double(resized_image);       %converting the image to doubl
 
 At this point, the image is an `RGB` image. We need to convert the image to `CIE lab` colour space. The international commission of illumination defined the CIE Lab colour space.
 
-### Converting the image to CIE lab color space
+#### Converting the image to CIE lab color space
 
-According to this colour space, the `l` represents the `likeness` of the colour. The `likeliness` ranges from 0 to 100, where 0 is black and 100 is white.
+According to this colour space, the `l` represents the `likeness` of the colour. The `likeliness` ranges from 0 to 100, where 0 is **black** and 100 is **white**.
 
 The `a` represents green to red, starting from negative to positive as the range. The higher the negative value, the brighter the green color, while the higher the positive value, the brighter the red colour.
 
@@ -89,7 +89,7 @@ From the code above, the `3` represents the dimensions of the concatenated areas
 
 Then, we used the `bsx` function to perform an element-wise binary operation between the `filled` and `lab` images.
 
-### Reshaping the output image
+#### Reshaping the output image
 Next, we will reshape the filled image. The dimension arguments will be blank since we do not need any here.
 
 Instead, we will use `3` since it is the existing dimension of the `filled` image, as shown below:
@@ -149,8 +149,8 @@ title('filtered image')                    %adding the title
 subtracted_image = imsubtract(filtered_image, enhanced_image);
 ```
 
-### Calculating the threshold level
-Now we need to calculate the threshold level to segment the blood vessels. Let us create a function script named `threshold_level.m` for this. This function will take the image as the argument as seen below:
+#### Calculating the threshold level
+Now we need to calculate the threshold level to segment the blood vessels. Let's create a function script named `threshold_level.m` for this. This function will take the image as the argument as seen below:
 
 ```Matlab
 function level = Threshold_level(image)
@@ -158,7 +158,7 @@ function level = Threshold_level(image)
 
 Now we convert the image into `uint8`. This is a type of data type of `8-bits`. This conversion is done using the `im2uint8` function.
 
-We then use the `imhist` function and the converted image as the argument to get the histogram count and beam number like this:
+We then use the `imhist` function and the converted image as the argument to get the histogram count and beam number like shown:
 
 ```matlab
 image = im2uint8(image(:));     %converting the image to uint8
@@ -172,7 +172,7 @@ Calculate the cumulative sum of histogram count using `cumsum` function as shown
 cumulative_sum = cumsum(Histogram_count);    %calculating the cumulative sum
 ```
 
-Let us now find the mean below and above `T`. `T` is the ratio of the sum of the multiplication of bin number and the histogram count to the cumulative sum indexed at the end.
+Let's now find the mean below and above `T`. `T` is the ratio of the sum of the multiplication of bin number and the histogram count to the cumulative sum indexed at the end.
 
 ```matlab
 T(i) = (sum(Bin_number.*Histogram_count))/cumulative_sum(end);  %calculating the ratio of the sum of the multiplication of bin number and the histogram count to the cumulative sum indexed at the end.
@@ -188,17 +188,17 @@ MBT = sum(Bin_number(T(i)).*Histogram_count(1:T(i)))/cumulative_sum_2(end); %fin
 cumulative_sum_3 = cumsum(Histogram_count(T(i):end));      %finding the cumulative sum at the second index.
 MAT = sum(Bin_number(T(i):end).*Histogram_count(T(i):end))/cumulative_sum_3(end);    %finding the MBT 
 ```
-### Finding the average of MAT, MBT and the obsolete value of T above one
+#### Finding the average of MAT, MBT and the obsolete value of T above one
 
-We will now find the threshold. This is achieved by using the code below:
+We will now find the threshold. This is achieved by the code below:
 
 ```matlab
 i = i+1;
 T(i) = round((MAT+MBT)/2);      %Finding the average of MBT and MAT
 ```
-### Making the obsolete value great than one
+#### Making the obsolete value great than one
 
-Let us now introduce a while loop to give the conditions to make the absolete value of `T` to be greater than one:
+Now, let's introduce a while loop to give the conditions to make the absolete value of `T` to be greater than one:
 
 ````matlab
 while abs(T(i)-T(i-1))>=1
@@ -239,7 +239,7 @@ title('binary image')
 
 This is what we have when running the code at this point:
 
-### The resulting outputs and the further modifications
+#### The resulting outputs and the further modifications
 
 ![output image](/engineering-education/how-to-obtain-blood-vessel-segmentation-in-retinal-images-using-matlab/retinal_one.png)
 
@@ -272,7 +272,7 @@ This is how the complemented image will look like:
 ![complemented image](/engineering-education/how-to-obtain-blood-vessel-segmentation-in-retinal-images-using-matlab/retinal_three.png)
 
 #### Colorizing the image
-Let us now colorize this image. In order to do that, we will create a function named `colorized_image.m`.
+We can now colorize this image. In order to do that, we will create a function named `colorized_image.m`.
 
 The function will return the color image. To avoid any difficulty we will use the default color defined by `DEFAULT COLOR` like this:
 
@@ -281,7 +281,7 @@ function color_image = colorize_image(resized_image, complemented_image, colorsp
 DEFAULT_COLOR = [1 1 1];     % default color is white.
 ```
 
-We can now introduce the condition for the colour channels. We will be using the `nargin` function such that if `nargin` is less than 3, we will use the default colour.
+Now, let's introduce the condition for the color channels. We will be using the `nargin` function such that if `nargin` is less than 3, we will use the default color.
 
 `nargin` is a function that returns the number of the input argument of the function.
 
