@@ -121,7 +121,7 @@ The library has many models, including BERT and GPT-2 models that perform variou
 
 We've picked some text from this [tutorial](/engineering-education/building-a-simple-translation-app-using-python-for-beginners/) on Section's website.
 
-Using our tokenizer, which we loaded earlier, let's convert our text into its tokens representation.
+Using our tokenizer, which we loaded earlier, let's convert our text into its token representation.
 
 ```python
 tokens = tokenizer_model(text, truncation=True, padding="longest", return_tensors="pt")
