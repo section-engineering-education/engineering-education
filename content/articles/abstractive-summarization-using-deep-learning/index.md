@@ -17,7 +17,7 @@ images:
 
 Abstractive summarization uses Google's Pegasus model. The model uses Transformer's Encoder-Decoder architecture. The encoder outputs masked tokens while the decoder generates Gap sentences.
 <!--more-->
-Abstractive summarization aims to take a body of text, turning it into a shorter version. Not only does abstractive summarization shorten the body of texts, but it also generates new sentences. They cover principal information in the input and are linguistically fluent, generating novel words.
+Abstractive summarization aims to take a body of text and shorten it. Not only does it shorten the body of texts, but it also generates new sentences. They cover principal information in the input and are linguistically fluent, generating novel words.
 
 This is not the case for previous versions of text summarizations which only aim to generate accurate and concise summaries from input documents. It copies informative fragments from input sentences.
 
