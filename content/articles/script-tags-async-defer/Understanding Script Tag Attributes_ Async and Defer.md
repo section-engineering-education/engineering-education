@@ -218,7 +218,7 @@ We can look at it this way, use `defer` when:
 
 * The script depends on the whole DOM.
 
-* When your script depends on another script, e.g. when using jQuery or other external libraries or frameworks. Making sure we call the external library or framework first.
+* When your script depends on another script, e.g. when using [jQuery](https://jquery.com) or other [external libraries or frameworks](https://www.freecodecamp.org/news/the-difference-between-a-framework-and-a-library-bd133054023f/). Making sure we call the external library or framework first.
 
 * When the relative order of execution of scripts is important.
 
