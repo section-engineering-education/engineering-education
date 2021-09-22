@@ -171,4 +171,5 @@ In this article, having gained insights  for setting up a hotspot on Kali Linux,
 
 Happy setting up a hotspot on Kali Linux !
 
-
+---
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
