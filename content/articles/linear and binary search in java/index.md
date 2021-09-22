@@ -1,9 +1,9 @@
-#### Introduction 
-In the world of programming languages, data structures and algorithms are one of the problem-solving skills that all engineers must have. Linear and Binary Search are required when there is a problem with sorted arrays in Java or any other language. 
+
+In the world of programming languages, data structures and algorithms are one of the problem-solving skills that all engineers must have. Linear and Binary Search are required when there is a problem with unsorted and sorted arrays in Java or any other language respectively. 
 
 In this article, I will be sharing the ways of utilizing the methods in solving interview questions. 
 
-#### Key Takeaways
+#### Key takeaways
 In the end, readers would know the following concepts;
 
 1. What are data structures and algorithms in Java.
@@ -19,21 +19,21 @@ There are many methods of referencing the data stored through an array. Algorith
 
 For instance, stack and queue are algorithms that describe the flow of data through an array or list in real-world applications. 
 
-Stack uses the algorithms of the last-in-first-out methodology which is called `LIFO`. This means that data are stacked on top of one another, while the last will be the first to come up when calling. 
+Stack uses the algorithms of the last-in-first-out methodology which is called `LIFO`. This means that data are stacked on top of one another, while the last one will be the first to come up when calling. 
 
 However, Queue uses the analogy of first-in-first-out and is otherwise known as `FIFO`. Think of this as a public queue where the first person that came in will be the first one attended to. 
 
-There are others data structures and algorithms like liked-in lists, hash maps, and many more. However, we will be looking at binary and linear search algorithms for sorted arrays data.
+There are others data structures and algorithms like liked-in lists, hash maps, and many more. However, we will be looking at binary and linear search algorithms for data stored in arrays.
 
-### Linear Search Algorithm
+### Linear search algorithm
 
 Linear Search can be used to traverse through array problems. Like searching for a particular element, finding a maximum or minimum element e.t.c.
 
 Note that linear search algorithm is useful majorly when the array, in particular, is not sorted whether ascending or descending order. 
 
-Using a linear search algorithm requires looping through the entire array in `N` times. This means that the program will run through all the elements of the array an unknown number of times. 
+Using a linear search algorithm requires looping through the entire array in `N` times. This means that the program will run through all elements of the array in unknown number of times. 
 
-More so, the time complexity of this algorithm shall be `O(N)`. The time complexity is said to be the time it takes the loop to run in an exact length of the array.
+More so, the time complexity of this algorithm shall be `O(N)`. The time complexity is said to be the time it takes the loop to run in exact length of the array.
 
 Fundamentally, the space complexity of the linear search algorithms in most cases is always `O(1)`. That is constant of one because the loop will run one time and no other memory space is consumed.
 
@@ -83,7 +83,7 @@ In the above program, we have a `maxNum` function with one argument which return
 Calling the array above will print to the console `97` be the maximum integer of the array provided.
 
 
-### Binary Search In Java
+### Binary search in Java
 
 Binary Search is a searching algorithm used to solve problems of sorted arrays of integers. To utilize this algorithm, the order of the given array must be known whether ascending or descending.
 
@@ -117,7 +117,7 @@ The time complexity of every binary search algorithm is used to be `O(logN)` whi
 ```
 Let us now look at few problems to explain the concepts in detail.
 
-### Solutions To Interview Questions 
+### Solutions to interview questions 
 
 1. Write the program to find the ceiling integer to a target integer in an array. Where ceiling number is the smallest number greater than or equal to the target given. Test your algorithms with ascending array-like `[2, 4, 6, 7, 9, 10, 16, 18, 21]` with the target of `11`.
 
@@ -237,7 +237,6 @@ Note that the floor integer refers to the greatest integer less than or equal to
 ```
 
 ### Conclusions 
-
 Linear and Binary Search are searching algorithms that deal with both the unsorted and sorted arrays respectively. Always reference the above concept whenever there is a problem that requires any of these. Thank you for reading!!!
 
 
