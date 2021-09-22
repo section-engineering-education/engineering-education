@@ -17,11 +17,11 @@ images:
 
 Abstractive summarization uses Google's Pegasus model. The model uses Transformer's Encoder-Decoder architecture. The encoder outputs masked tokens while the decoder generates Gap sentences.
 <!--more-->
-Abstractive summarization aims to take a body of text and shorten it. Not only does it shorten the body of texts, but it also generates new sentences. They cover principal information in the input and are linguistically fluent, generating novel words.
+Abstractive summarization aims to take a body of text, turning it into a shorter version. Not only does abstractive summarization shorten the body of texts, but it also generates new sentences. 
 
 This is not the case for previous versions of text summarizations which only aim to generate accurate and concise summaries from input documents. It copies informative fragments from input sentences.
 
-Abstractive summarization uses Google's [Pegasus](https://huggingface.co/google/pegasus-xsum) model. This is described in a research paper as [PEGASUS: Pre-training with Extracted Gap-sentences for Abstractive Summarization](https://arxiv.org/pdf/1912.08777.pdf). The model uses Transformer's Encoder-Decoder architecture. The encoder outputs masked tokens while the decoder generates gap sentences.
+Abstractive summarization uses Google's [Pegasus](https://huggingface.co/google/pegasus-xsum) model. This is described in a research paper as [PEGASUS: Pre-training with Extracted Gap-sentences for Abstractive Summarization](https://arxiv.org/pdf/1912.08777.pdf). The model uses Transformer's Encoder-Decoder architecture. The encoder outputs masked tokens while the decoder generates Gap sentences.
 
 This tutorial will walk you through how to use the Pegasus model to perform abstractive summarization from start to finish. We will perform abstractive summarization on some Wikipedia, News, and Scientific Journals documents.
 
@@ -58,7 +58,7 @@ If you're using Jupyter notebook or Google Colab, make sure to add the `!` befor
 
 This command successfully installs PyTorch.
 
-Let's go ahead and install our second dependency, which is the HuggingFace transformers.
+Let's install our second dependency, which is the HuggingFace transformers.
 
 ```python
 !pip3 install transformers
@@ -72,10 +72,9 @@ Our third dependency is `SentencePiece`. It is a text tokenizer and detokenizer 
 !pip3 install sentencepiece
 ```
 
-Let's now go ahead and import them into our Colab.
+We can now go ahead and import them into our Colab.
 
-### Importing and configuring the Pegasus model
-We have installed all the required dependencies. The next step involves importing and configuring the Pegasus model.  
+### Importing and configuring the Pegasus model 
 
 ```python
 from transformers import PegasusForConditionalGeneration, PegasusTokenizer
@@ -83,7 +82,7 @@ from transformers import PegasusForConditionalGeneration, PegasusTokenizer
 
 The above command imports our main dependencies from transformers which we installed earlier. This imports two classes, the `PegasusForConditionalGeneration`, and `PegasusTokenizer`. The `PegasusTokenizer` class will convert our sentences into tokens. This is a numbered representation of our sentences. This allows us to pass it to our deep learning model. The `PegasusForConditionalGeneration` class will allow us to use our model.
 
-Let's now go ahead and create our tokenizer for the model.
+We now need to create our tokenizer for the model.
 
 ```python
 tokenizer_model = PegasusTokenizer.from_pretrained("google/pegasus-xsum")
@@ -96,7 +95,7 @@ There are other Pegasus models available in the HuggingFace library. Some includ
 
 > To use other models, make sure to replace the `google/pegasus-xsum` model in the `from_pretrained` method in the command above with your preferred one.
 
-Let's now load our model.
+This next step involves loading our model.
 
 ```python
 loaded_model = PegasusForConditionalGeneration.from_pretrained("google/pegasus-xsum")
@@ -133,10 +132,10 @@ Let's view our tokens. We achieve this by writing the following command:
 ```python
 tokens
 ```
-Let's now go ahead and try to summarize this text.
+Let's go ahead and try to summarize this text.
 
 ```python
-summary = model.generate(**tokens)
+summary = loaded_model.generate(**tokens)
 ```
 The `**tokens` unpacks our tokens and pass them into our model. The asterisks in `**tokens` are simply adding the `input_ids` and `attention_mask` present in the results above. 
 
