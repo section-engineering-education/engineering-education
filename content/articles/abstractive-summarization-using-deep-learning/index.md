@@ -119,7 +119,7 @@ Hugging Face is a great open-source library doing powerful work in the Natural L
 The library has many models, including BERT and GPT-2 models that perform various tasks, but we’ll be leveraging the pre-trained language pipeline for our purpose. Rather than going ahead and training a huge language model such as GPT-2 with 1.5 billion parameters, one can leverage the ML pipeline instead."""
 ```
 
-We've picked some text from this [tutorial](/engineering-education/building-a-simple-translation-app-using-python-for-beginners/) on Section's website that we want our model to summarize. 
+We've picked some text from this [tutorial](/engineering-education/building-a-simple-translation-app-using-python-for-beginners/) on Section's website.
 
 Using our tokenizer, which we loaded earlier, let's convert our text into its tokens representation.
 
