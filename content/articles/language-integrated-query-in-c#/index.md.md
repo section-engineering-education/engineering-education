@@ -1,3 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /linqinc#/
+title: Getting started with LINQ in C#
+description: In this tutorial we will learn how to use language integrated queries to perform native queries in C#
+author: amos-njoroge
+date: 2021-09-23T00:00:00-00:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/linqinc#/hero.jpg
+    alt: Getting started with LINQ in C# example image
+---
+
 
 ### Itroduction
 The term "Language-Integrated Query" (LINQ) refers to a group of technologies that incorporate query capabilities directly into the C# programming language. Querying data has traditionally been plain text, with no type checking or IntelliSense assistance at build time. LINQ access data from objects, data sets, SQL Server, and XML, among other things.
