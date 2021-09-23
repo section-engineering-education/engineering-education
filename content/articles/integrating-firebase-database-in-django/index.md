@@ -12,14 +12,16 @@ Firebase manages data in real-time, and can also be used in an application that 
 In this tutorial, we'll be looking at how to use the firebase real-time database in Django by building a simple project.
 
 ### Prerequisites
-To follow along with this tutorial, you'll need [Python3](https://www.python.org/downloads/) installed on your machine.
-
-A little understanding of Django would help the reader follow along better.
-
-To understand more about Django, it is recommended to read these articles on [Django CRUD APIs](/engineering-education/django-crud-api/) and [Django API documentation](/engineering-education/django-api-documentation/).
+To follow along with this tutorial, you'll need the following: 
+- [Python3](https://www.python.org/downloads/) installed on your machine.
+- Little understanding of Django
 
 ### Table of contents
 - [Creating Firebase project](#creating-firebase-project)
+- [Creating Database](#creating-database)
+- [Setting Up a new Django Project](#setting-up-a-new-django-project)
+- [Setting up a View](#setting-up-a-view)
+- [Setting up Templates](#setting-up-templates)
 - [Conclusion](#conclusion)
 
 ### Creating Firebase project
@@ -82,12 +84,10 @@ Next, click the `+` icon next to the value field to add another child. Fill in t
 
 Now, let's integrate our newly created database into our Django app. 
 
-### Creating and setting up a new Django project
+### Setting up a new Django project
 Let's begin by setting up a new virtual environment.
 
-A virtual environment allows you to set up a virtual space on your computer.
-
-By creating a virtual environment, you'll be able to separate the necessary library installation for a project without having to install them globally.
+A virtual environment allows you to set up a virtual space on your computer, allowing you to seperate the necessary libary or dependency installation for a project.
 
 Now, lets set up a virtual environment `env` by running the command below:
 
@@ -107,7 +107,7 @@ Next, we install Django using the following command:
 pip install django
 ```
 
-Next, we create a new Django project `firebase` using:
+Next, we set up a new Django project `firebase` using:
 
 ```bash
 django-admin startproject firebase
@@ -142,9 +142,7 @@ To connect Firebase and Django, we need to install a python package named `pyreb
 pip install pyrebase
 ```
 
-### Creating a view
-A view in Django is a function that accepts a web request and returns a web response.
-
+### Setting up a view
 Now, we'll be creating a view by adding the following to our `view.py` file:
 
 ```python
@@ -184,7 +182,7 @@ def index(request):
         return render(request, 'index.html', context)
 ```
 
-### Creating templates
+### Setting up templates
 We start by creating a templates directory in our fireapp directory. This templates directory will house our `index.html` file.
 
 Next, we add the following lines of code to the `index.html` file.
@@ -239,15 +237,15 @@ python manage.py runserver
 
 ![result](/engineering-education/integrating-chart-js-in-django/result.png)
 
-*Display database data*
+*Render database data*
 
 ### Conclusion
-To conclude, we have learned about Firebase, and how to integrate the firebase database in a Django app.
+In conclusion, we have learned about Firebase, and how to integrate the firebase database in a Django app.
 
-In this tutorial, we learned how to use the `Realtime Database`. There are other firebase services you can try out, like authentication.
+We also learned how to use the `Realtime Database`. There are other firebase services you can try out, like authentication.
 
-You can also check the [Firebase](https://firebase.google.com/docs) documentation for more info on Firebase.
+Check out the [Firebase](https://firebase.google.com/docs) documentation to learn more about Firebase.
 
-You can check out the full code on [GitHub](https://github.com/shosenwales/django-firebase).
+Link to the full code on [GitHub](https://github.com/shosenwales/django-firebase).
 
 Happy Coding!
