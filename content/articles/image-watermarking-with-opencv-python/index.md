@@ -44,7 +44,7 @@ The library can be installed in the following ways:
 - **Install using Anaconda**
 Anaconda is a free and open-source conditional distribution of the Python and R computer languages for scientific computing, with the goal of making package management and deployment easier. It can be downloaded and installed from this [page](https://www.anaconda.com/products/individual).
 
-After successfully installing anaconda, use the anaconda prompt and type the command below to install OpenCV:
+After successfully installing anaconda, use the anaconda prompt to install OpenCV using the command below:
 
 ```bash
 conda install -c conda-forge opencv 
@@ -98,7 +98,7 @@ for img_path in images_path: #loop loading the images and getting width and heig
 #### Placing Watermark
 The location of the watermark depends on the user. It is possible to place the location anywhere, but this article will place the watermark at the center of the images. Will write a code to get the center of all the images and use the `cv2.addWeighted()`to specify the opacity of the logo for it to look nice and smooth when placed over the images.
 ```python
-#get center of the images and the location where to place the watermark
+#get the image's center and the spot where the watermark should be placed
 center_y = int(h_img / 2)
 center_x = int(w_img / 2)
 top_y = center_y - int(h_logo / 2)
