@@ -16,7 +16,7 @@ These datasets will be able to build our model that can be able to classify a re
 - [Dataset used](#dataset-used)
 - [Loading dataset](#loading-dataset)
 - [Adding headers](#adding-headers)
-- [Merge or concatinate our datasets with the keys](#merge-or-concatinate-our-datasets-with-the-keys)
+- [Merge or concatenate our datasets with the keys](#merge-or-concatenate-our-datasets-with-the-keys)
 - [Removing stopwords](#removing-stopwords)
 - [Loading machine learning packages](#loading-machine-learning-packages)
 - [Custom transformer class](#custom-transformer-class)
@@ -27,8 +27,8 @@ These datasets will be able to build our model that can be able to classify a re
 - [Creating the pipeline](#creating-the-pipeline)
 - [Accuracy score](#accuracy-score)
 - [Making prediction](#making-prediction)
-- [Conclusion](#Conclusion)
-- [References](#References)
+- [Conclusion](#conclusion)
+- [References](#references)
 
 ### Prerequisites
 
@@ -40,7 +40,13 @@ These datasets will be able to build our model that can be able to classify a re
 
 ### Introduction
 
-There are different types of sentiment analysis, we have those that focus on the polarity of a given text positive, neutral, and negative, others focus on feeling and emotions within a text, and other focus on the intentions and urgency of a customer. They are grouped as follows.
+There are different types of sentiment analysis depending on the goals of the model.
+
+- Models that focus on the polarity of a given text are positive, neutral, and negative.
+- Model that focuses on feeling and emotions within a text.
+- Models that focus on the intentions and urgency of a customer.
+
+Depending on these goals, they are further classified into the following groups.
 
 1. Standard Sentiment Analysis.
 2. Fine-grained Sentiment Analysis.
@@ -87,7 +93,12 @@ For a practical guide on emotion detection click [here](https://towardsdatascien
 
 #### Aspect-based Sentiment Analysis
 
-This focuses on a deeper understanding of the aspects or features that are mentioned in a given text. This ensures a better understanding of customers through their reviews.
+Aspect-based sentiment analysis (ABSA) is a text analysis technique that categorizes data by aspect and identifies the sentiment attributed to each one.
+Aspect-based sentiment analysis can be used to analyze customer feedback by associating specific sentiments with different aspects of a product or service.
+
+Aspects are the attributes or components of a product or service. For example: “The user experience of a new product”, “the response time for a query or complaint” or “the ease of integration of new software”.
+
+Aspect sentiment analysis is important because it can help companies automatically sort and analyze customer data, automate processes like customer support tasks, and gain powerful insights from customer reviews.
 
 For a practical guide on aspect-based sentiment analysis click [here](https://www.analyticsvidhya.com/blog/2021/06/analyzing-customer-feedbacks-using-aspect-based-sentiment-analysis/)
 
@@ -101,7 +112,7 @@ For example.
 
 For a practical guide on intent detection [click](https://rasa.com/blog/rasa-nlu-in-depth-part-1-intent-classification/)
 
-In this tutorial, we will build a `standard sentiment analysis`.
+In this tutorial, we will build a `standard sentiment analysis.`
 
 ### Dataset used
 
@@ -166,14 +177,12 @@ for colname in frames:
 The output is as shown below.
 
 ```bash
-for colname in frames:
-    print(colname.columns)
 Index(['Message', 'Target'], dtype='object')
 Index(['Message', 'Target'], dtype='object')
 Index(['Message', 'Target'], dtype='object')
 ```
 
-We need to assign keys to our dataset so that we can know which each dataset belongs to. The dataset belongs into three groups `Yelp`, `IMDB`, and `Amazon`.
+We need to assign keys to our dataset so that we can know which each dataset belongs to since we have merged the three datasets. The dataset belongs into three groups `Yelp`, `IMDB`, and `Amazon`.
 
 ```python
 keys = ['Yelp','IMDB','Amazon']
@@ -181,7 +190,7 @@ keys = ['Yelp','IMDB','Amazon']
 
 ### Merge or concatenate our datasets with the keys
 
-We add the set keys into our dataset.
+In the above section, we have created three keys: `Yelp`, `IMDB`, and `Amazon`, we add the list of keys into our dataset. This enables the model to know where each dataset belongs to since we have merged the three datasets. This makes it easy for our model to understand the dataset during the training phase.
 
 ```python
 df = pd.concat(frames,keys=keys)
@@ -203,15 +212,15 @@ Now that we have prepared our dataset, we can now start building our model.
 
 Stopwords are list words that are common in a language, they tend to give a lower classification power because they are not unique and make the model biased.
 
-We romove stopwors using Spacy. Let's first install spacy into our machine.
+We romove stopwords using Spacy. Let's first install Spacy into our machine.
 
-Since we are using Google Colab in this tutorial, we install spacy using this command.
+Since we are using Google Colab in this tutorial, we install Spacy using this command.
 
 ```python
 !pip install -U spacy
 ```
 
-After installing spacy let's import this library.
+After installing Spacy let's import this library.
 
 ```python
 import spacy
@@ -221,9 +230,9 @@ nlp = spacy.load('en')
 
 In the above code, we have imported the following.
 
-#### spacy
+#### Spacy
 
-This is the library we will be used for sentiment analysis.
+This is the library we will use for sentiment analysis
 
 #### STOP_WORDS
 
@@ -244,7 +253,7 @@ for word in stopwords:
     if word.is_stop == False and not word.is_punct:
 ```
 
-This will remove the stopwords and also the punctuations using this `word.is_punct` as specified in our `for` loop above.
+The code-snippet above removes the stopwords in our dataset, it also removes all punctuations using `word.is_punct` after looping through our dataset using the `for` loop.
 
 ### Loading machine learning packages
 
@@ -257,7 +266,6 @@ import train_test_split from sklearn.model_selection
 import TransformerMixin from sklearn.base
 import LinearSVC from sklearn.svm
 import Pipeline from sklearn.pipeline
-
 ```
 
 In the above code, we have imported the following.
@@ -341,7 +349,7 @@ Let's go to the next stages.
 ### Vectorization and classifier
 
 In vectorization, we use `CountVectorizer` that converts our text dataset into numeric vectors.
-The classifier is the algorithm used in building the model, in this case, we are using `LinearSVC` .
+The classifier is the algorithm used in building the model, in this case, we are using `LinearSVC`.
 This is the classification method used by the support vector machine algorithm.
 
 ```python
@@ -429,7 +437,7 @@ This shows that our model has an accuracy of `98.497%` expressed as a percentage
 We now use our model to see if can be able to classify a review to be either `positive` or `negative`.
 
 ```python
-pipe.predict(["I recommend this movie to watch, its great"])
+pipe.predict(["I recommend this movie to watch, it's great"])
 ```
 
 The output of the prediction is as shown.
@@ -443,8 +451,8 @@ The output is `1` which is a positive review.
 Let's try another sample text.
 
 ```python
-example = ["I ove this product so much",
- "What an inferior itema! I will purchase a new one",
+example = ["I love this product so much",
+ "What an inferior item! I will purchase a new one",
  "I feel happy when using your product!"]
 ```
 
@@ -458,14 +466,17 @@ This shows that the first word in the array was a `positive` review, the second 
 
 ### Conclusion
 
-In the tutorial, we have learned about sentiment analysis with spacy and scikit-learn. We started by learning about sentiment analysis and its importance to a business, we also learned about the different types of sentiment analysis, in this tutorial we were focusing on the standard sentiment analysis.
+In the tutorial, we have learned about sentiment analysis with Spacy and scikit-learn. We started by learning about sentiment analysis and its importance to a business, we also learned about the different types of sentiment analysis, in this tutorial we were focusing on the standard sentiment analysis.
 
 We then moved to dataset cleaning, we then used this clean dataset to build our sentiment analysis model. We underwent all the stages required to build our model and finally used a pipeline approach that automates all the processes involved in model building and we successfully build our model.
 
-Finally, we used our model to make predictions, our model was able to classify a review as either `positive` or `negative`. Using these steps, a reader should be able to build a sentiment analysis model using spacy and Scikit-learn.
+Finally, we used our model to make predictions, our model was able to classify a review as either `positive` or `negative`. Using these steps, a reader should be able to build a sentiment analysis model using Spacy and Scikit-learn.
+
+To get the implementation for this tutorial in Google Colab click [here](https://colab.research.google.com/drive/10TBCZrFNlGQSZmJwFCze_28QZhJb9eQh?usp=sharing)
 
 ### References
 
+- [Code implementation for this tutorial](https://colab.research.google.com/drive/10TBCZrFNlGQSZmJwFCze_28QZhJb9eQh?usp=sharing)
 - [Spacy documentation](https://spacy.io/)
 - [Scikit-learn documentation](https://scikit-learn.org/stable/)
 - [Support-vector machine algorithm](https://www.javatpoint.com/machine-learning-support-vector-machine-algorithm)
