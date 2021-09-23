@@ -29,7 +29,9 @@ In the artificial intelligence landscape, Java is used in:
 - Machine learning solutions
 
 #### Genetic programming
-Genetic programming is part of [evolutionary computation](https://www.igi-global.com/dictionary/evolutionary-computing/39414), a computational intelligence methodology inspired by natural evolution. Evolutionary computing is a rapidly growing field of AI. Genetic programming is comprised of artificial intelligence metaheuristics. Metaheuristics optimization algorithms and evolutionary algorithms are a subset of artificial intelligence. They imitate nature mechanisms to solve optimization problems.
+Genetic programming is a new method of generating computer programs derived from the model of biological [evolution](https://www.igi-global.com/dictionary/evolutionary-computing/39414). These programs are ‘bred’ through continuous improvement of an initial random population of programs. These Improvements are possible through stochastic variation of programs and selection based on prespecified criteria for judging the quality of a solution.  Evolutionary computing is a rapidly growing field of AI because  Genetic Programming systems evolve to solve pre-described automatic programming and machine learning problems. 
+
+Genetic programming is comprised of artificial intelligence metaheuristics which is a high-level problem-independent algorithmic framework that provides a set of guidelines or strategies to develop heuristic optimization algorithms evolutionary algorithms are a subset of artificial intelligence. They imitate nature mechanisms to solve optimization problems.
 
 Evolutionary techniques are applied to optimization problems, many of which are combinatorial optimization problems such as shortest paths, spanning trees, and matroid problems. Others are multi-objective optimization problems that involve two or more conflicting optimization goals.
 
