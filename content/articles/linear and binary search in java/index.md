@@ -15,9 +15,9 @@ images:
 ---
 <!--more-->
 
-In the world of programming languages, data structures and algorithms are one of the problem-solving skills that all engineers must have. Linear and Binary Search are required when there is a problem with unsorted and sorted arrays in Java or any other language respectively. 
+In the world of programming languages, data structures and algorithms are problem-solving skills that all engineers must have. Linear and Binary Search are required when there is a problem with unsorted and sorted arrays in Java or any other language respectively.
 
-In this article, I will be sharing the ways of utilizing the methods in solving interview questions. 
+In this article, I will be sharing the ways of utilizing the methods in solving interview questions
 
 #### Table of contents
 In the end, readers would know the following concepts;
@@ -27,7 +27,7 @@ In the end, readers would know the following concepts;
 3. Concepts of binary search in sorted java arrays problems.
 4. Solutions to interview questions
 
-### What are data structures and algorithms in Java.
+### What are data structures and algorithms in Java
 
 In Computer Science specifically, data structures have to do with the way data are been structured, modes of flow, storing of data, and methods of referencing. There are many ways of structuring data in programming languages and one of them is an array or list which is the point of discussion. 
 
@@ -51,7 +51,7 @@ Using a linear search algorithm requires looping through the entire array in `N`
 
 More so, the time complexity of this algorithm shall be `O(N)`. The time complexity is said to be the time it takes the loop to run in exact length of the array.
 
-Fundamentally, the space complexity of the linear search algorithms in most cases is always `O(1)`. That is constant of one because the loop will run one time and no other memory space is consumed.
+Fundamentally, the space complexity of the linear search algorithms in most cases is always `O(1)`. That is, constant of one because the loop will run one time and no other memory space is consumed.
 
 Note that there is no other loop of array embedded in the given array for the linear search algorithms. 
 
