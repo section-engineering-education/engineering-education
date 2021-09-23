@@ -130,7 +130,7 @@ Let's view our tokens. We achieve this by writing the following command:
 ```python
 tokens
 ```
-Let's go ahead and try to summarize this text.
+It's time to summarize our text.
 
 ```python
 summary = loaded_model.generate(**tokens)
