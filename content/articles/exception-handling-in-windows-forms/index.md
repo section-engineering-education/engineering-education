@@ -44,7 +44,7 @@ The following example will evaluate the division of two numbers.
 - 2 Labels to name the operations ( ÷ & =).
 - 1 Button to start the operation.
 
-![Exceptionform](/engineering-education/exception-handling-in-windows-forms/exceptionform.png)
+![Exception form](/engineering-education/exception-handling-in-windows-forms/exception-form.png)
 
 ### The code
 The following code will take two inputs from the user using the textboxes. Then, we parse the inputs from `String` to `Int` and back to String after evaluating the answer using the button.
@@ -103,12 +103,12 @@ The Finally scope is optional as mentioned before, but we can use it here to res
 
 This is how the message box will appear when an issue occurs:
 
-![Erroroutput](/engineering-education/exception-handling-in-windows-forms/erroroutput.png)
+![Error output](/engineering-education/exception-handling-in-windows-forms/error-output.png)
 
 ### Useful tip
 Only use the tools of exception handling when you need them, for example, the following code requires the date of birth of a user.
 
-![datenormal](/engineering-education/exception-handling-in-windows-forms/datenormal.png)
+![Date normal](/engineering-education/exception-handling-in-windows-forms/date-normal.png)
 
 ```c#
  private void button1_Click(object sender, EventArgs e)
@@ -136,7 +136,7 @@ Only use the tools of exception handling when you need them, for example, the fo
 
 The previous piece of code will run the code correctly without any errors. This is because we used exception handling, but instead, we could just use the _DateTimePicker_ tool from the Toolbox.
 
-![datetool](/engineering-education/exception-handling-in-windows-forms/datetool.png)
+![Date tool](/engineering-education/exception-handling-in-windows-forms/date-tool.png)
 
 In this case, you don't need to use any of the exception handling tools because the user is not allowed to enter anything from the keyboard. Thus the input will always be valid.
 
