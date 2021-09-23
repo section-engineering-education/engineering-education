@@ -106,17 +106,19 @@ CREATE TABLE `members` (
 insert into members (userName,password) values ('johnD',md5('doe'));
 ```
 
-- Click `build schema` button
+- Click the `build schema` button
   ![schema](schema.png)
-- On the right pane enter :-
+- On the right pane enter:
+
   ```sql
   SELECT * FROM members;
   ```
+
 - and run the code
   ![sql-code](sqlcode.png)
 - Your output will be :
   ![result](result.png)
-- Lets say the user supplies `logan` as the userName and `5678` as the password.
+- Let us say the user supplies `logan` as the userName and `5678` as the password.
 
 The SQL code to execute would probably be :
 
@@ -128,7 +130,7 @@ The above code can be taken advantage of by remarking out the secret key(passwor
 1. `userName = xyz.mnp' OR 1 = 1 LIMIT 1 — ']`
 2. `password = fff`
 
-- The statement to execute would be as follows : -
+- The statement to execute would be as follows: 
 
 ```sql
 SELECT * FROM members WHERE userName = 'xyz.mnp' OR 1 = 1 LIMIT 1 -- ‘ ] AND password = md5(‘5678’);
@@ -149,10 +151,10 @@ Or on the other hand `1 = 1 LIMIT 1` is a condition that will consistently be va
 - I have created a log-in form that we will use to employ SQL injection exploits. you can get it [here](https://github.com/fabulousDesigns/sql-injection-login-page)
 - The form has some fundamental security, for example, sanitizing the username field.
 - This implies our above code can't be utilized to sidestep the login. To get around that, we can rather take advantage of the secret word field.
-- The outline beneath shows the means that you should follow :
+- The outline below shows the steps that you should follow.
 
 #### Step 1
-Clone the source code in your local computer and run it with the xammp server.
+Clone the source code in your local computer and run it with the `xammp` server.
 
 #### step 2
 Enter log-in info :
@@ -169,7 +171,7 @@ If a user provides the following:
 - username = `xyzxyz`
 - password = `xyz') OR 1 = 1 -- ]`
 
-The user will be redirected to the dashboard upon clicking submit button
+The user will be redirected to the dashboard upon clicking submit button.
 
   **Let's take a closer look at the generated statements:**
 
@@ -185,15 +187,15 @@ SQL Injections can accomplish more damage than just bypassing the login calculat
 - Updating information
 - Embeddings information
 - Executing orders on the worker that can download and introduce malignant projects like Trojans
-- Sending out significant information, for example, Mastercard subtleties, email, and passwords to the assailant's far off worker
+- Sending out significant information, for example, Mastercard subtleties, email, and passwords to the assailant's far off worker.
 - Getting client login subtleties and so on.
 
-The above list isn't thorough; it simply gives you a thought of what SQL Injection is capable of
+The above list isn't thorough; it simply gives you a thought of what SQL Injection is capable of.
 
 ### Automation devices for SQL infusion
 In the above model, we utilized manual assault methods dependent on our huge information on SQL. There are mechanized apparatuses that can assist you with playing out the assaults all the more proficiently and inside the briefest conceivable time. 
 
-These apparatuses incorporate
+These apparatuses incorporate:
 - `Sonarqube` – https://www.sonarqube.org/
 - `sqlsus` – http://sqlsus.sourceforge.net/
 
@@ -204,7 +206,7 @@ An association can take on the accompanying strategy to ensure itself against SQ
 3. Arranged explanations – arranged proclamations to work by making the SQL articulation first then, at that point regarding all submitted client information as boundaries. This has no impact on the linguistic structure of the SQL articulation.
 4. Customary articulations – these can be utilized to distinguish possible hurtful code and eliminate it before executing the SQL explanations.
 5. Information base association client access rights – just vital access rights ought to be given to accounts used to interface with the data set. This can assist with lessening what the SQL explanations can perform on the worker.
-6. Blunder messages – these ought not to uncover touchy data and where precisely a mistake happened. Straightforward custom blunder messages, for example, "Heartbroken, we are encountering specialized mistakes. The specialized group has been reached. Kindly attempt again later" can be utilized rather than show the SQL explanations that caused the mistake.
+6. Blunder messages – these ought not to uncover touchy data and the precise area a mistake happened. Straightforward custom blunder messages, for example, "Heartbroken, we are encountering specialized mistakes. The specialized group has been reached. Kindly attempt again later" can be utilized rather than show the SQL explanations that caused the mistake.
 
 ### Conclusion
 SQL Injection is a sort of assault that benefits from terrible SQL articulations. SQL infusion can be utilized to sidestep login calculations, recover, addition, and refresh and erase information.
