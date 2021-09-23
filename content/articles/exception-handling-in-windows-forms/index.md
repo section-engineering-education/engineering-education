@@ -11,10 +11,10 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /exception-handling-in-windows-forms/hero.png
+  - url: /engineering-education/exception-handling-in-windows-forms/hero.png
     alt: Exception Handling in Windows Forms Hero Image
 ---
-Windows forms are one of the best tools used in making applications. It provides a drag & drop functionality for a variety of pre-built objects such as buttons, textbox, drop-down selections, and many other useful tools.
+Windows forms are one of the best tools used in making applications. It provides a drag and drop functionality for a variety of pre-built objects such as buttons, textbox, drop-down selections, and many other useful tools.
 <!--more-->
 However, how do we manage the inputs from the user?.
 
