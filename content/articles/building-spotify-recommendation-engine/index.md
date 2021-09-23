@@ -14,6 +14,7 @@ Ever wondered how Spotify predicts the new playlist to a user based on the user'
   - [Connecting to Spotify Web API](#connecting-to-spotify-web-api)
   - [Creating Playlist Vector](#creating-playlist-vector)
   - [Generating Recommendations](#generating-recommendations)
+- [Few Points to Ponder](#few-points-to-ponder)
 - [Conclusion](#conclusion)
   
 ### Prerequisites
@@ -30,8 +31,8 @@ By the end of this blog, you will know the following:
 #### What is a Recommendation System?
 A Recommendation System aims to predict the user's choices and recommend the product or service that is likely to be interesting. These systems can do so because of user data. The function of a Recommendation System mainly depends on two kinds of information:
 
-- Characteristic information: Information that defines the profile of a product(tag, category, etc.) or a user(preferences, profile, etc.)
-- User-item interactions: Information that defines user-item relationship(rating, like/dislike, etc.)
+- Characteristic information: Information that defines the profile of a product (tag, category, etc.) or a user (preferences, profile, etc.)
+- User-item interactions: Information that defines user-item relationship (rating, like/dislike, etc.)
 
 Based on this, we can categorize two broad classes of the algorithm used in a Recommendation System.
 
@@ -68,7 +69,7 @@ Collaborative filtering systems use user-item interactions to generate recommend
 
 As we can see in the diagram, there are two users, user A, and user B. Both users have similar taste in music as both of them liked song-1 and song-2, but there is a song-3 which user A likes, but user B never listened to it. The system will recommend song-3 to user A based on these user-item interactions.
 
-As in this blog, the recommender system that we will implement is based on Content-Based Filtering. Therefore, we are going to limit our discussion of the Collaborative-Filtering system up to its definition.
+As in this blog, the recommender system that we will implement is based on Content-Based Filtering. Therefore, we are going to limit our discussion of the Collaborative-Filtering system up to its definition. For further reference, you can refer to this informative [article](https://developers.google.com/machine-learning/recommendation/collaborative/basics) from Google.
 
 #### How to use Spotify Web API to fetch data
 
@@ -88,7 +89,7 @@ And now open the application.
 
 ![application-page](/engineering-education/building-spotify-recommendation-engine/spotify-api.png)
 
-Finally, go to the edit settings options and add your localhost URL. It will be used for user authentication later. And now we are all set to implement a Spotify-based playlist recommender system. 
+Finally, go to the edit settings options and add your localhost URL. It will be used for user authentication later. And now we are all set to implement a Spotify-based playlist recommender system. For more information on Spotify Web API and its usability, you can refer to this [blog](https://stmorse.github.io/journal/spotify-api.html) by Steven Morse, which explains the above process in more detail.
 
 
 ### Implementation
@@ -96,7 +97,7 @@ Finally, go to the edit settings options and add your localhost URL. It will be 
 To access the Spotify Web API, we will use a python-based library known as Spotipy, so let us first install this library. 
 
 ```python
-!pip install spotipy
+pip install spotipy
 ```
 Now import the following libraries
 
@@ -344,6 +345,15 @@ visualize_cover_art(top10)
 ```
 ![snapshot](/engineering-education/building-spotify-recommendation-engine/recommendation.png)
 
+I have uploaded the notebook file for this implementation to my Github account. You can access it from [here](https://github.com/tanmay69/Spotify-Recommendation-Engine).
+
+### Few Points to Ponder
+
+- One thing to note is that in our case, we have implemented the Content-Based Filtering mechanism. Thus the model will only be able to make recommendations based on that specific user's interests. Therefore, it limits the ability of a user to expand their existing interests.
+- The Spotify song features data that we have used to develop the recommendation system will not necessarily contain all the songs in your playlist. Therefore sometimes, we will not be able to harness the playlist fully to generate recommendations.
+- To use this recommender, users should have at least one playlist on their Spotify account, which is a disadvantage in the case of an entirely new user of the Spotify application.
+
+
 ### Conclusion
 
-Using the concept of cosine similarity, we have seen that we were able to generate recommendations of songs that are similar to our playlist. But we have to note that Recommendation Systems are not perfect every time. As in this case, we have used a Content-Based Filtering mechanism. The model can only make recommendations based on the user's existing interests. Thus, we have limited the ability of a user to expand their existing interests. One more drawback of this implementation is that the Spotify songs dataset that we have downloaded from the kaggle dataset doesn't necessarily contain all the songs in your Spotify playlist. Therefore, you will not be able to utilize your playlist fully to generate recommendations.
+Using the concept of cosine similarity, we have seen that we were able to generate recommendations of songs that are similar to the songs in our playlist. Therefore, you can follow the steps above to develop your custom Spotify playlist recommender as well.
