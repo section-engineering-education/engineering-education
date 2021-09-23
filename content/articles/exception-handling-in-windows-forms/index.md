@@ -7,7 +7,7 @@ title: Exception Handling in Windows Forms
 description: In this tutorial, we will manage a variety of errors and issues that would occur when using windows forms. We will use exception handling to prevent these errors and guide the user to use the application properly.
 author: mohamed-alghadban
 date: 2021-09-23T00:00:00-08:00
-topics: []
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
