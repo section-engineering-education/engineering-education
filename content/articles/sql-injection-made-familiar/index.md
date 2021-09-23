@@ -76,21 +76,19 @@ Let's take a look at a simple login form with some basic styling:
 ```
 
 ![form](form.jpg)
-The above structure acknowledges the username, and password then, at that point submits them to a PHP record named `loginAuth.php`. It has an alternative of putting away the login session in a cookie. 
+The above structure acknowledges the username, and password then, at that point submits them to a PHP record named `loginAuth.php`.To guarantee that clients are constantly signed in to this site, their sign-in action is saved in a treat.
 
-We have derived this from the `remember-me` checkbox. It utilizes the post strategy to submit information. This implies the user credentials are not shown in the URL.
+By using the `POST` method,  implies that the user credentials are not shown in the URL.
 
 **Suppose user authentication is done using the following statement:**
 
 ```sql
-SELECT * FROM members WHERE userName = $_POST['uName'] AND password = md5($_POST['pass']);
+SELECT userName,password FROM members WHERE userName = $_POST['uName'] AND password = md5($_POST['pass']);
 ```
 
-The above assertion utilizes the upsides of the `$_POST[]` cluster straightforwardly without cleaning them. The secret key, password, is encoded utilizing the `MD5` calculation. 
+The above assertion utilizes the upsides of the `$_POST[]` cluster straightforwardly without cleaning them. Protecting the password is done through the `MD5` calculation. 
 
-We will represent SQL infusion assault utilizing `sqlfiddle`. Open the URL `http://sqlfiddle.com/` in your internet browser. 
-
-You will get the accompanying window:
+For practical purposes `sqlfiddle` will be used here in order to get a glimpse of SQL infusion. 
 
 - The first thing you want to do in `sqlfiddle` is to create a schema
   so, on the left pane paste the SQL code below:
@@ -98,15 +96,15 @@ You will get the accompanying window:
 ```sql
 CREATE TABLE `members` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `userName` VARCHAR(45) NULL,
-  `password` VARCHAR(45) NULL,
+  `userName` VARCHAR(45) NOT NULL UNIQUE,
+  `password` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id`));
 
 
-insert into members (userName,password) values ('johnD',md5('doe'));
+INSERT INTO members (userName,password) VALUES ('johnD',md5('doe'));
 ```
 
-- Click the `build schema` button
+- Snap the `build schema` button
   ![schema](schema.png)
 - On the right pane enter:
 
@@ -123,26 +121,26 @@ insert into members (userName,password) values ('johnD',md5('doe'));
 The SQL code to execute would probably be :
 
 ```sql
-SELECT * FROM members WHERE userName = 'logan` AND password = md5('5678');
+SELECT userName,password FROM members WHERE userName = 'logan` AND password = md5('5678');
 ```
 
-The above code can be taken advantage of by remarking out the secret key(password) part and affixing a condition that will consistently be valid. Let's say an assailant gives the following in the input fields:
+ By remarking out the secret key(password) part and affixing a condition that will consistently be valid we can gain access to this site and also get redirected to the dashboard. Let's say an assailant gives the following in the input fields:
 1. `userName = xyz.mnp' OR 1 = 1 LIMIT 1 — ']`
 2. `password = fff`
 
 - The statement to execute would be as follows: 
 
 ```sql
-SELECT * FROM members WHERE userName = 'xyz.mnp' OR 1 = 1 LIMIT 1 -- ‘ ] AND password = md5(‘5678’);
+SELECT userName,password FROM members WHERE userName = 'xyz.mnp' OR 1 = 1 LIMIT 1 -- ‘ ] AND password = md5('5678');
 ```
 
 `Xyz.mnp` closes with a solitary statement that finishes the string quote.
 
-Or on the other hand `1 = 1 LIMIT 1` is a condition that will consistently be valid and limits the returned results to just one record.
+ `1 = 1 LIMIT 1` This condition will limit records to just one and it will always execute as true.
 
 `-- 'AND … `is a SQL remark that takes out the secret key part.
 
-- Run the above code in SQL FiddleRun SQL Text box as shown below
+- Execute the above code as follows:
   ![image](sql2.png)
 - The result is as shown below
   ![result2](result2.png)
@@ -187,13 +185,11 @@ SQL Injections can accomplish more damage than just bypassing the login calculat
 - Updating information
 - Embeddings information
 - Executing orders on the worker that can download and introduce malignant projects like Trojans
-- Sending out significant information, for example, Mastercard subtleties, email, and passwords to the assailant's far off worker.
+- Sending out significant information, for example, Mastercard subtleties, email, and passwords to the assailants far off the server.
 - Getting client login subtleties and so on.
 
-The above list isn't thorough; it simply gives you a thought of what SQL Injection is capable of.
-
-### Automation devices for SQL infusion
-In the above model, we utilized manual assault methods dependent on our huge information on SQL. There are mechanized apparatuses that can assist you with playing out the assaults all the more proficiently and inside the briefest conceivable time. 
+### Mechanization gadgets for SQL mixture
+ There are mechanized apparatuses that can assist you with playing out the assaults all the more proficiently and inside the briefest conceivable time. 
 
 These apparatuses incorporate:
 - `Sonarqube` – https://www.sonarqube.org/
@@ -204,7 +200,7 @@ An association can take on the accompanying strategy to ensure itself against SQ
 1. Client info ought to never be trusted – It should consistently be disinfected before it is utilized in unique SQL explanations.
 2. Put away methodology – these can exemplify the SQL explanations and treat all contributions as boundaries.
 3. Arranged explanations – arranged proclamations to work by making the SQL articulation first then, at that point regarding all submitted client information as boundaries. This has no impact on the linguistic structure of the SQL articulation.
-4. Customary articulations – these can be utilized to distinguish possible hurtful code and eliminate it before executing the SQL explanations.
+4. Standard enunciations – these can be used to recognize conceivable destructive code and kill it prior to executing the SQL clarifications.
 5. Information base association client access rights – just vital access rights ought to be given to accounts used to interface with the data set. This can assist with lessening what the SQL explanations can perform on the worker.
 6. Blunder messages – these ought not to uncover touchy data and the precise area a mistake happened. Straightforward custom blunder messages, for example, "Heartbroken, we are encountering specialized mistakes. The specialized group has been reached. Kindly attempt again later" can be utilized rather than show the SQL explanations that caused the mistake.
 
@@ -216,4 +212,6 @@ SQL infusion instruments incorporate SqlSus, SQLPing, and Sonarqube, and so on. 
 Happy coding!
 
 ---
-Peer Review Contributions by: [Dawe-Daniel](/engineering-education/authors/dawe-daniel/)
+Peer Review Contributions by: [Dawe-Daniel](/engineering-education/authors/dawe-daniel/)A decent security strategy when composing SQL proclamation can assist with decreasing SQL infusion assaults.
+
+Happy coding!
