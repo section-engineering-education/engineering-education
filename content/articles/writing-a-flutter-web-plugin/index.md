@@ -56,7 +56,7 @@ As a starting point, look at the README.md in the package:url_launcher_interface
 import 'dart:async';
 import 'package:plugin_interface_platform.dart';
 import 'method_channel_url_launcher.dart';
-
+//In order to avoid breaking changes, platform implementations should extend this class rather than implement it. Adding new methods to this interface will break platform implementations that 'implement' it, therefore extending this class assures that the subclass gets the default implementation.
   UrlLauncherPlatform() : super(token: _token);
   static final Object _token = Object();
   static UrlLauncherPlatform _instance = MethodChannelUrlLauncher();
@@ -65,6 +65,7 @@ import 'method_channel_url_launcher.dart';
     PlatformInterface.verifyToken(instance, _token);
     _instance = instance;
   }
+  //Starts the supplied [link] in a new window. If the launch was a success, this function returns [true].
   Future<bool> launch(String url) {
     throw UnimplementedError('launch() is not implemented.');
   }
@@ -84,7 +85,8 @@ import 'dart:async';
 import 'package:flutter/services.dart';
 import 'url_launcher_interface_platform.dart';
 const MethodChannel_chanel = MethodChannel('plugins.flutter.io/url_launcher');
-/// Method channels are used in this [UrlLauncherPlatform] implementation.
+
+// Method channels are used in this [UrlLauncherPlatform] implementation.
 class MethodChannelUrlLauncher extends UrlLauncherPlatform {
   @override
   Future<bool> launch(String url) {
@@ -125,9 +127,11 @@ import 'dart:html' as HTML;
 import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 import 'package:meta.dart';
 import 'package:url_launcher_interface_platform/url_launcher_interface_platform.dart';
-/// The [UrlLauncherPlatform] implementation on the web. For the web, this class implements the package:url launcher functionality.
+
+// The [UrlLauncherPlatform] implementation on the web. For the web, this class implements the package:url launcher functionality.
 class UrlLauncherPlugin extends UrlLauncherPlatform {
-  ///This class is set to be the default [UrlLauncherPlatform].web instance.
+
+  // This class is set to be the default [UrlLauncherPlatform].web instance.
   static void registerWith(Registrar registrar) {
     UrlLauncherPlatform.instance = UrlLauncherPlugin();
   }
