@@ -138,7 +138,7 @@ class UrlLauncherPlugin extends UrlLauncherPlatform {
 }
 ```
 
-Stating that this is the` UrlLauncherPlatform` default instance, rather than registering a `MethodChannel`, makes more sense. When `package:url` launcher calls `UrlLauncherPlatform.instance.launch()`, the `launch()` function defined here is called.
+Stating that this is the `UrlLauncherPlatform` default instance, rather than registering a `MethodChannel`, makes more sense. When `package:url` launcher calls `UrlLauncherPlatform.instance.launch()`, the `launch()` function defined here is called.
 
 All the essential code for creating a package is contained in this class. As a result, understanding Flutter's `MethodChannel` APIs is no longer required to design platform-specific plugin implementations. Web-based URL launcher When designing a platform interface package for a plugin, keep these considerations in mind.
 
