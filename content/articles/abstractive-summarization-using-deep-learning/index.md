@@ -43,9 +43,7 @@ We will start by installing all our dependencies to be able to use the Pegasus m
 
 PyTorch will be the underlying framework that powers the Pegasus model.
 
-Let's install PyTorch.
-
-Navigate to PyTorch's main [website](https://pytorch.org/). On the main webpage, you'll see an `install` option. Click on it. Here, you can choose your PyTorch build of choice, your OS, installation package, language, and compute platform. This will generate a code that you will use to install PyTorch. Please note that different selections generate different installation codes.
+To install PyTorch, navigate to PyTorch's main [website](https://pytorch.org/). On the main webpage, you'll see an `install` option. Click on it. Here, you can choose your PyTorch build of choice, your OS, installation package, language, and compute platform. This will generate a code that you will use to install PyTorch. Please note that different selections generate different installation codes.
 
 For our case, we'll choose the `LTS (1.8.2)` Pytorch build, `Linux` OS, the `Pip` package, `Python` programming language, and finally `CUDA 10.2`. Since we'll be using Google Colab. If you don't have a GPU in your machine, you can still go ahead and choose the CPU option.
 
