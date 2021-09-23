@@ -56,7 +56,7 @@ If you're using Jupyter notebook or Google Colab, make sure to add the `!` befor
 
 This command successfully installs PyTorch.
 
-Let's install our second dependency, which is the HuggingFace transformers.
+The second dependency, we should install is the HuggingFace transformers library.
 
 ```python
 !pip3 install transformers
