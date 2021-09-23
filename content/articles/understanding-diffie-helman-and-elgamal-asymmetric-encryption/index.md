@@ -39,20 +39,31 @@ To follow along, the reader should:
 Is also known as public-key encryption.
 Encryption involves enciphering information in transit from authorized persons and deciphering by authorized persons using keys.
 Asymmetric encryption uses two keys:
-public-key- encryption key is known to all
-private key- which decryption key known to only the receiver of the content.
-Asymmetric encryption is used to curb the problem of key distribution in symmetric encryption which uses one key that should be distributed to both sender and receiver.
-Public key encryption also has an added advantage of creation and verification of the digital signature
-  
+public-key- which is the encryption key and is known to everyone in the network.
+private key- which decryption key is known to only the receiver of the content.
+Asymmetric encryption is used to curb the problem facing symmetric encryption.
+this includes:
+1. Key distribution - Key distribution under symmetric encryption requires
+either
+* That two communicants already share a key which somehow has been distributed to them
+* The use of a Key Distribution Center. This requirement negated the very essence of cryptography, that is, the ability to maintain total secrecy over your communication.
+If their users were forced to share their keys with a Key Distribution Center, it could be compromised by either burglary or subpoena.
+2. Public key encryption also has an added advantage of creation and verification of the digital signature
+* If the use of cryptography was to become widespread, not just in military situations but for commercial and private purposes, then electronic messages and documents would need the equivalent of signatures used in paper documents.
+
+Asymmetric algorithms rely on one key for encryption and a different but related key for decryption. These algorithms have the following important characteristic:
+1. It is computationally infeasible to determine the decryption key given only knowledge of the cryptographic algorithm and the encryption key.
+2. Either of the two related keys can be used for encryption, with the other used for decryption.
+
+![Asymmetric encryption.](/\engineering-education\content\articles\understanding-diffie-helman-and-elgamal-asymmetric-encryption/asymmetric-encryption.png)
+
 ### Modular Exponential
 In cryptography, it is important to be able to find the modulus of p^e mod m when p,e, and m are very large integers. It is very hard to compute p^e then divide by m and find the remainder because p^e is a huge number.
-It can be done using an algorithm that employs the binary expansion of the exponent of e.
+This can be done using an algorithm that employs the binary expansion of the exponent of e.
 Reduce the value given using the binary form of e and in each step compute the modulus of the value.
 **Example:**
-To
-compute 3^9, we have that 9 in binary is 1001 so that 3^9=3^8.3^1
-By
-successively squaring, we find that3^2=9,3^4=9^2=81 and 3^8=81^2=6561
+To compute 3^9, we have that 9 in binary is 1001 so that 3^9=3^8.3^1
+By successively squaring, we find that3^2=9,3^4=9^2=81 and 3^8=81^2=6561
 Consequently,
 Since 3^9=3^8.3^1 which equals 6561.3=19,683
 To work out the modulus of 3^9 mod 5
@@ -84,20 +95,19 @@ Return the last value of x = 3<br>
 ```
 ### Modular Exponential Using Python
 ```python
-    def modular_pow(base, exponent, modulus):   
-   
-     if modulus == 1:
-        return 0
-    x = 1
-    base = base % modulus
-    
-    while exponent > 0:
-        if (exponent % 2 == 1):
-            x = (x * base) % modulus
-        exponent = exponent //2
-        base = (base * base) % modulus
-    return x
+#Input three numbers.
+x = int(input("Enter First Value :"))
+y = int(input("Enter Second Value :"))
+z= (int)(1e9+7) # to compute some very, very large number 
+
+# power function use
+d = power(x, y) % z 
+print ("Value Is =",d) 
 ```
+*Output*
+Enter First Value : 2
+Enter Second Value : 3
+Value  = 8
 ### Working of DHKE Protocol
 It involves exchanging secret/asymmetric keys between sender and receiver by using asymmetric encryption(public and private key)
 #### steps involved
@@ -116,7 +126,11 @@ Kb = Pa<SUP>Xb</SUP> mod Q
 ### Application of DHKE in ElGamal
 It's an asymmetric key encryption algorithm.
 It involves key generation using DHKE, encryption using the key, and decryption using the private key.
-It involves:
+
+![Illustration of DHKE key agreement using colors.](/\engineering-education\content\articles\understanding-diffie-helman-and-elgamal-asymmetric-encryption/Diffie-Helman.png)
+*[Image Source: Wikipedia](https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FDiffie%25E2%2580%2593Hellman_key_exchange&psig=AOvVaw1NIqEyjjySTC7rZb5GimUv&ust=1632470050062000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCIjF0KTPlPMCFQAAAAAdAAAAABAD)*
+
+*It involves:*
 #### Key Generation
 * The key generation process involves the use of the DHKE process mentioned above
 let Q be 19 and B be 10 
@@ -124,7 +138,7 @@ Suppose A generates a key pair as follows:
 
 * A chooses Xa = 5
 Then Pa = 10<sup>5</sup> mod 19 = 3
-A's private key is 5 ; 
+A's the private key is 5 ; 
 A’s pubic key is {19, 10, 3}.
 
 * B chooses Xb = 6
@@ -156,34 +170,10 @@ And 7<SUP>-1</SUP> mod 19 = −8 = 11
 Thus:<br>
 M = 11<SUP> 5</SUP> mod 19 = 17
 
->NOTE Large prime numbers are used make decryption by unauthorized personnel difficult in polynomial time.
+>NOTE Large prime numbers are used to make decryption by unauthorized personnel difficult in polynomial time.
 
 ### Conclusion
 As discussed above it's clear that security plays an important role in the sender-receiver communication using Diffie Helman and Elgamal encryption algorithms since the algorithms solve the problem of key distribution as the same key can be generated by the sender and receiver.
 
 More information about asymmetric encryption can be found [here](https://cryptography.io/en/latest/hazmat/primitives/asymmetric/)
-
-
-
-
-
-
-
-
-
-    
-
-    
-  
-
-
-
-
-
-
- 
-
-                      
-
-
 
