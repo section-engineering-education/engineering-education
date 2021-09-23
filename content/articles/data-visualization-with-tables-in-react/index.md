@@ -1,9 +1,13 @@
-Working with tables in React has always been a burden for a very long time now. Issues related to the styling, responsiveness and the proper rendering of data on tables has been encountered by a lot of developers.
+Working with tables in React has always been a burden for a very long time now.
 
-In this article, we will look at an approach to properly visualize data in tables with an npm package, called react-table. This is a library that focuses on the React Hooks pattern, therefore abstracting the need to create or write out HTML table elements.
+issues related to the styling, responsiveness and the proper rendering of data on tables has been encountered by developers whenever they're trying to render a lot of data onto the UI of a web-application
+
+In this article, we will look at an approach that would enable us to properly visualize data in tables with an npm package, called react-table. It is a library that focuses on the React Hooks pattern, therefore abstracting the need to create or hardcode HTML table elements.
 
 ### Prerequisites
-Before you get started withb this article, you should have the fundamental knowledge of the following:
+
+Before you read this article any further, you should have the fundamental knowledge of:
+
 - React, a JavaScript framework used for creating single page applications
 - The JavaScript spread operator,
 - PropTypes validation in React,
@@ -12,15 +16,20 @@ Before you get started withb this article, you should have the fundamental knowl
 - Styled Components.
 
 ### Getting Started
-The scope of this article is around the react framework called, [`Nextjs`](https://nextjs.org/). We can also use `create-react-app` to build this project.
+
+The scope of this article is around the react framework called Nextjs. We can also use create-react-app to build this project, so there’s no need to fret.
+
+Let’s start by installing the dependencies that we need in this project. We’d start by creating a nextjs app. The command below does that for us.
 
 ```bash
     npx create-next-app [your-app-name]
 ```
 
-The file structure of a nextjs app is quite different from `create-react-app`'s. We’ll only be interacting with the files that we need in this project, so we don’t end up getting overwhelmed.
+The file structure of a nextjs app is quite different from `create-react-app`'s file architecture.
 
-Let’s take a look at the files we will be interacting with, below:
+We’ll only be interacting with the files that we need in this project, so we don’t end up getting overwhelmed.
+
+Let’s take a look at the files we’d be interacting with, below.
 
 ```md
     |--pages
@@ -34,24 +43,26 @@ Let’s take a look at the files we will be interacting with, below:
     |__
 ```
 
-Now, that we are familiar with the file structure above. Let us continue by installing the `styled-component` and `react-table` packages by executing the command below:
+Now, that we are familiar with the file structure above. Let us continue by installing the `styled-component` and `react-table` package. The command below does that for us.
 
 ```bash
-    npm install styled-component react-table
+npm install styled-component react-table
 ```
 
 ### An overview of the components and files
-Let us take a look at the components and the roles that they perform. We will start from the top (i.e. from the `pages` folder) to the bottom.
 
-- `_app.js`: is the  apllication's root file. It is similar to the `index.js` file in `create-react-app`. Here, you can:
+Let us take a look at the components and the roles that they perform. We’ll start from the top (i.e. from the `pages` folder) to the bottom.
+
+- `_app.js`: is the root file of the codebase. It looks similar to the `index.js` file in `create-react-app`. Here, you can:
+
   - apply any global style(s),
   - add new themes,
-  - prov"id"e context to the whole application, and
-  - even" imp"ort the redux prov"id"er context to manage the state of your application (i"f yo"u are using redux).
+  - provide context to the whole application, and
+  - even import the redux provider context to manage the state of your application (if you are using redux).
 
-```js
-import" Head" from "next/head";
-import" React from ""react";
+```javascript
+import Head from "next/head";
+import React from "react";
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -68,11 +79,21 @@ function MyApp({ Component, pageProps }) {
 export default MyApp;
 ```
 
-In the `_app.js` snippet, the `Head` component gets imported from `"next/head"`. This component performs the same function that the normal HTML `<head>` element does.
+The code snippet above shows what `_app.js` looks like, for the scope of this article. Upon opening it for the first time, this is what it looks like below:
+
+```javascript
+function MyApp({ Component, pageProps }) {
+  return <Component {...pageProps} />;
+}
+
+export default MyApp;
+```
+
+In the first `_app.js` snippet, the `Head` component gets imported from `"next/head"`. This component performs the same function that the normal HTML `<head>` element does.
 
 In the `Head` component, we can add different child elements like the `<title>` element that describes the current route or page, the `<link>` element that imports stylesheets or set the page’s favicon, the `<meta>` tags, for SEO, and so on.
 
-- `index.js`: is our default route. Anything we do in the file gets displayed at this address: `https://localhost:3000/` when we run development server.
+- `index.js`: is our default route. Anything we do in the file gets displayed at this address: `https://localhost:3000/` when we run the command that opens our dev server.
 
 ```bash
 npm run dev
@@ -80,7 +101,7 @@ npm run dev
 
 - `Table.js`: is the component that holds the UI of the data that we’ll be mapping from `data.json` and `columns.js`
 
-- `data.json`: holds the array of user objects that we will be rendering in the `Table` component. We will be making use of the data copied from `Jsonplaceholder user API`, instead of writing the API calls by ourselves.
+- `data.json`: holds the array of user objects that we’ll be rendering in the `Table` component. We’d be making use of the data copied from Jsonplaceholder user API, instead of writing the API calls by ourselves.
 
 ```json
 [
@@ -104,27 +125,27 @@ npm run dev
 ];
 ```
 
-We are reducing the number of user objects in the array so that this article can be brief. If you want to make use of all the objects, you can get them here. The API endpoint provides a list of ten user objects in the array, so you can grab them there.
+We’re reducing the number of user objects in the array so that this article can be brief. If you want to make use of all the objects, you can get them [here](https://jsonplaceholder.typicode.com/users). The API endpoint provides a list of ten user objects in the array per API call, so you can grab them there.
 
-- `columns.js`: i"s als"o an array of objects that stores the items we want to "render on th"e table’s header.
+- `columns.js`: is also an array of objects that stores the items we want to render on the table’s header.
 
 ```javascript
 export const COLUMNS = [
   {
     Header: "S/N",
-    accessor: ""id"","
-  }",
-  {
-    Header: "Fullname"",
-  "  accessor: "name"",
+    accessor: "id",
   },
   {
- "   Header: ""Email" address",
-    accessor: ""email"",
+    Header: "Fullname",
+    accessor: "name",
   },
   {
-    Header: ""Username"",
-    accessor: ""username"",
+    Header: "Email address",
+    accessor: "email",
+  },
+  {
+    Header: "Username",
+    accessor: "username",
   },
   {
     Header: "Phone number",
@@ -148,16 +169,16 @@ Notice how we declared the `accessor` key in the objects? The `accessor` is more
 
 // data.json
 {
-    ""id"": 2,
-    ""name"": "Ervin Howell",
-    ""username"": "Antonette",
-    ""email"": "Shanna@melissa.tv"
-    ""phone"": "010-692-6593 x09125",
-    ""company_name"": "Romaguera-Crona"
+    "id": 2,
+    "name": "Ervin Howell",
+    "username": "Antonette",
+    "email": "Shanna@melissa.tv"
+    "phone": "010-692-6593 x09125",
+    "company_name": "Romaguera-Crona"
 },
 ```
 
-The `accessor` property in `column.js` has a value of ` "``company_name``" `, which in turn renders the corresponding property’s value from the json file.
+The `accessor` property in `column.js` has a value of `company_name`, which in turn renders the corresponding property’s value from the json file.
 
 ### Putting the components together
 
@@ -175,13 +196,13 @@ import styled from "styled-components";
 // wrapper for the table component goes here
 const TableContainer = styled.div`
       table {
-        w"id"th: 100%;
-        h"eigh"t: 100%;
+        width: 100%;
+        height: 100%;
         border-collapse: collapse;
         box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.08);
-  "    }"
-  "    thead {
-"        height: 64px;
+      }
+      thead {
+        height: 64px;
         background: #3c1742;
       }
       thead th {
@@ -192,19 +213,19 @@ const TableContainer = styled.div`
       }
       tr {
         height: 64px;
-        border-bottom: 2px sol"id" grey;
-  "    "}
+        border-bottom: 2px solid grey;
+      }
       tr td {
         padding: 0 30px;
-  "     " border-bottom: 1px sol"id" #3c1742;
-  ""    "}
-    "  @media only screen and (max-w"id"th: 992px) {
-        ta"ble "{
-  "     "   white-space: nowrap;
-  "      }
-  " "   }"
-  "  `
-    cons"t Table = ({ columns, data }) => {
+        border-bottom: 1px solid #3c1742;
+      }
+      @media only screen and (max-width: 992px) {
+        table {
+          white-space: nowrap;
+        }
+      }
+    `
+    const Table = ({ columns, data }) => {
       // react-table hooks will go here
 
       return (
@@ -217,11 +238,17 @@ const TableContainer = styled.div`
 
 The table component above focuses on the style of the table. Let’s take a look at some of the properties below:
 
-The `table` selector sets the w"id"th and height of the table to `100%`, making it responsive" to "receive more columns and rows.
-"
-"`c"ss tabl"e { w"id"th: 100%; m"argi"n-top: 20px; height: 100%; "} "`"
+The `table` selector sets the width and height of the table to `100%`, making it responsive to receive more columns and rows.
 
-The me"dia query rule set’s the text-wrap property of the table to `no-wrap` at a maximum screen w"id"th of `992px`. Click here to learn more about media qu"erie"s
+```css
+table {
+  width: 100%;
+  margin-top: 20px;
+  height: 100%;
+}
+```
+
+The media query rule set’s the `text-wrap` property of the table to `no-wrap` at a maximum screen width of `992px`. Click [here](https://www.freecodecamp.org/news/media-queries-width-ranges/) to learn more about media queries
 
 ```css
 @media only screen and (max-width: 992px) {
@@ -241,9 +268,11 @@ import styled from "styled-component";
 const TableContainer = styled.div`
   ...
 `;
+
 const Table = ({ columns, data }) => {
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
     useTable({ columns, data });
+
   return (
     <TableContainer>
       <table {...getTableProps()}>
@@ -379,13 +408,13 @@ let daughter = [
 // in a family and their properties.
 let family = [
   {
-    firstname: "Boe",
+    firstname: "Dapo",
     lastname: "Jones",
     hair_color: "black",
     role: "Father",
   },
   {
-    firstname: "Pat",
+    firstname: "Teni",
     lastname: "Jones",
     hair_color: "red",
     role: "Mother",
@@ -402,7 +431,7 @@ With the spread operator, the `daughter` array is added to the `family` array. I
 console.log(family[2].role); // prints daughter to the console
 ```
 
-To learn more about the spread operator, click here. To also learn more about the methods associated with the table instance, click here.
+To learn more about the spread operator, click [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax). To also learn more about the methods associated with the table instance, click [here](https://github.com/skyfriends/react-table-hooks/blob/master/docs/api.md).
 
 ### Now, onto the index page component
 
@@ -417,10 +446,10 @@ In the previous sections, we looked at:
 
 In this section, we’ll be covering the final steps of this process. We’ll be importing the `Table` component into `pages/index.js` and also work on adding a custom scrollbar that will be visible on desktop modes.
 
-Let’s get started. We are importing the `COLUMNS` module, alongs"id"e the `tableData` from their respective f"iles"
+Let’s get started. We are importing the `COLUMNS` module, alongside the `tableData` from their respective files
 
-```javas"cript"
-import R"eact from "r"eact";
+```javascript
+import React from "react";
 import styled from "styled-components";
 import Table from "../../components/Table";
 import { COLUMNS } from "../../src/Columns";
@@ -448,26 +477,26 @@ const TableWrapper = styled.section`
     overflow: auto;
   }
   .table-container::-webkit-scrollbar {
-    w"id"th: 10px";
-  "}
+    width: 10px;
+  }
   .table-container::-webkit-scrollbar-thumb {
-    height: 4p"x;
-  "  backgroun"d: #3c1742;
-"    border-radius: 10px;
+    height: 4px;
+    background: #3c1742;
+    border-radius: 10px;
   }
   .table-container::-webkit-scrollbar-track {
-    border: 1px sol"id" #3c1742;
-    border-radius: "10px";
+    border: 1px solid #3c1742;
+    border-radius: 10px;
   }
-  @media only screen and (max-w"id"th: 992px)" {
-  "  padding: 0 15px 0 "15px"";
-    paddin"g-bottom: 130px;
+  @media only screen and (max-width: 992px) {
+    padding: 0 15px 0 15px;
+    padding-bottom: 130px;
 
-    .table-container"::-we"bkit-scrollbar {
-      display: none";
+    .table-container::-webkit-scrollbar {
+      display: none;
     }
   }
-"`;
+`;
 ```
 
 The snippet below represents the custom scrollbar style
@@ -483,7 +512,7 @@ The snippet below represents the custom scrollbar style
 }
 .table-container::-webkit-scrollbar-track {
   border: 1px solid #3c1742;
-  border-radius: "10px";
+  border-radius: 10px;
 }
 ```
 
@@ -529,7 +558,7 @@ const UserTable = () => {
 export default UserTable;
 ```
 
-Notice how we passed the `columns` and `data` props to the `Table` component and how we assigned their values to the `useMemo()` hook.
+Notice how we passed the `columns` and `data` props to the `Table` component and how we assigned their values to the `useMemo()` hook?
 
 The `useMemo()` ensures that the data isn’t re-created at every render (i.e. whenever the component is mounted to the DOM).
 
