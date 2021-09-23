@@ -179,3 +179,6 @@ using System.IO;
 ```
 ### Conclusion
 In conclusion, we have got to see some working functionalities of the LINQ in C# and how to implement them in a program or solve real-life problems.
+  
+---
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul)
