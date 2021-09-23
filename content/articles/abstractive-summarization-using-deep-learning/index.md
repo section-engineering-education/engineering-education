@@ -137,7 +137,7 @@ summary = loaded_model.generate(**tokens)
 ```
 The `**tokens` unpacks our tokens and pass them into our model. The asterisks in `**tokens` are simply adding the `input_ids` and `attention_mask` present in the results above. 
 
-Let's check our generated summary results. We do this by typing the following command:
+To check our generated summary results in tokens, we type `summary`.
 
 ```python
 summary
