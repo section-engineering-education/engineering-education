@@ -142,9 +142,7 @@ To check our generated summary results in tokens, we type `summary`.
 ```python
 summary
 ```
-These results represent our output tensors. This is our summary in tokens.
-
-These may be just a bunch of numbers to humans, but not to machines. This is how they understand language. Decoding these values will help us make sense of these numbers.
+These results represent our output tensors. These may be just a bunch of numbers to humans, but not to machines. This is how they understand language. Decoding these values will help us make sense of these numbers.
 
 ```python
 tokenizer_model.decode(summary[0])
