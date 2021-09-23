@@ -1,45 +1,76 @@
-### Introduction
-Three-column web page design is the most widely used web design architecture by modern developers as it provides an efficient way of content presentation. Designing the perfect responsive sidebar a decade ago was a difficult task that required element manipulation with CSS alone. However, modern design libraries such as the Ant design library have reduced the complexity of building the perfect sidebar and other components.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /building-a-responsive-and-collapsible-sidebar-with-react-and-ant-design-library/
+title: Building a responsive collapsible sidebar using React and Ant Design Library
+description: This article will walk the reader through using Ant Design Library to design a responsive and collapsible sidebar in collaboration with React.
+author: tio-umoh
+date: 2021-09-23T00:00:00-04:20
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
-### Prerequisite:
-To better understand and utilise this article, the reader is expected to have basic knowledge of ReactJS and CSS. However, for absolute beginners, the project is beginners friendly, notwithstanding.
+  - url: /engineering-education/building-a-responsive-and-collapsible-sidebar-with-react-and-ant-design-library/hero.png
+    alt: Responsive collapsible sidebar with image
+---
 
-### Getting Started with Ant Design Library
-If you are already familiar with the fundamentals of Ant Design Library, you may proceed to the tutorial. But for absolute beginners, here is a brief overview. Ant Design Library is a modern design library that provides multiple design elements, components and features. It is one of the most widely used design library for `react` front-end web development. Finally, Ant Design Library is used by numerous companies such as Tencent, Alibaba, Baidu in their respective user-interface. Feel free to look up the official documentation of Ant Design Library.
+Three-column web page design is the most widely used web design architecture by modern developers as it provides an efficient way of content presentation. Designing the perfect responsive sidebar a decade ago was a difficult task that required element manipulation with CSS alone. 
+<!--more-->
+However, modern design libraries such as the Ant design library have reduced the complexity of building the perfect sidebar and other components.
 
-### Building the User-Interface
+### Prerequisite
+To better understand and utilise this article, the reader is expected to have basic knowledge of ReactJS and CSS. However, for absolute beginners, the project is beginners friendly.
+
+### Getting started with  Ant Design Library
+If you are already familiar with the fundamentals of Ant Design Library, you may proceed to the tutorial. But for absolute beginners, here is a brief overview. 
+
+Ant Design Library is a modern design library that provides multiple design elements, components and features. It is one of the most widely used design libraries for `react` front-end web development. 
+
+Ant Design Library is used by numerous companies such as Tencent, Alibaba, Baidu in their respective user-interface. Feel free to look up the official documentation of Ant Design Library.
+
+### Building the user-interface
 For better understanding, we will break down the task of building the user interface, which will consist of the `sidebar` and `navbar` components, into the various steps below.
 
-#### Step 1: Creating the React Application
-The first step in building our responsive sidebar is the creation of our `react` Application. This is done by opening our `command` terminal and running the command below.
+#### Creating the React application
+The first step in building our responsive sidebar is the creation of our `react` application. This step is done by opening our `command` terminal and running the command below.
 
 ```bash
 npx create-react-app my-app
 ```
+
 Or
+
 ```bash
 Yarn create-react-app my-app
 ```
 
-After the operation, your `react` Application should be ready for further actions.
-### Step 2: Adding Ant-Design Library to the Application
-To access Ant-Design library and features, we need to install the `@antd` and `@ant-design/icons` dependencies to our Application. We do that by:
+After the operation, your `react` application should be ready for further actions.
+
+### Adding Ant-Design Library to the application
+To access the Ant-Design library and features, we need to install our application's `@antd` and `@ant-design/icons` dependencies. We do that by:
 
 ```bash
 npm install @antd @ant-design/icons
 ```
+
 Or
+
 ```bash
 Yarn add @antd @ant-design/icons
 ```
+
 The above command will install `ant-design` and the `icons` packages to our `react` app.
 Once that is completed, we start our development server by running the command below.
 
 ```bash
 Npm start
 ```
-#### Step 3: Creating the Navbar Components:
-In our `src` folder, we will create a `Navbar.js` file to accommodate the Navbar component. `Navbar` components are usually displayed right above other components on the page. Therefore, it will contain a logo, texts, icons and a button. To achieve that, in the `the navbar.js` file, we implement the code snippet below.
+
+#### Creating the navbar components
+We will create a `Navbar.js` file to accommodate the Navbar component in our `src` folder. `Navbar` components are usually displayed right above other components on the page. Therefore, it will contain a logo, menu links texts, icons and a button. 
+
+To achieve that, in the `the navbar.js` file, we implement the code snippet below.
 
 ```JavaScript
 import React, { useState } from "react";
@@ -121,10 +152,9 @@ function LeftMenu({mode}) {
 }
 
 export default NavBar;
-
-
 ```
-#### Step 4: Customising and Styling the Navbar Component:
+
+#### Customising and styling the navbar components
 We have created a raw navbar that requires styling. To do that, we create a `Navbar.css` file and proceed with the customisation. In the `Navbar.css`, we target the `className` assigned to the various elements and implement the code snippet below:
 
 ```CSS
@@ -214,21 +244,21 @@ We have created a raw navbar that requires styling. To do that, we create a `Nav
     padding: 11px 19px;
   }
 }
-
-
 ```
 
 The snippet above will place the Navbar at the top of the page, add responsiveness, show a drawer on the small screen, and provides additional styles to our component.
-Note: Ensure that the `Navbar.css` is appropriately imported in your `Navbar.js` above.
 
-#### Step 5: Creating the Sidebar Components
+> Note: Ensure that the `Navbar.css` is appropriately imported in your `Navbar.js` above.
+
+#### Creating the sidebar components
 Creating our Sidebar component is pretty easy, just like we created our `Navbar.js`, repeat the steps; this time, the filename should be `Sidebar.js`.
 the Sidebar component, which is the focus of this article, will comprise of the following elements
 - Icons
 - Texts
 - Toggle Button
 - Mini-sidebar component
-We will subsequently import from the `@antd` dependency we installed earlier. in the `Sidebar.js` file, implement the code snippet below.
+
+We will subsequently import from the `@antd` dependency we installed earlier. Then, in the `Sidebar.js` file, implement the code snippet below.
 
 ```JavaScript
 import React from "react";
@@ -290,15 +320,15 @@ export function MiniSidebar() {
   );
 }
 
-
 ```
 
 The code snippet above will provide all the elements required in our sidebar, and it will also provide a `mini-sidebar` that will be displayed on a medium and small screen.
-Note: Ensure all the Icons are imported adequately from the `@ant-design/icons` dependency as shown above.
+> Note: Ensure all the Icons are imported adequately from the `@ant-design/icons` dependency as shown above.
 
-#### Step 6: Customization and styling the Sidebar Component:
+#### Customization and styling the sidebar component
 It is time to customise our `Sidebar`. We will go ahead and include the styles and responsiveness to improve the appearance of our sidebar.
 To do that, we create a `Sidebar.css` file and implement the code snippet below.
+
 ```CSS
 .mini-sidebar {
   display: none;
@@ -381,14 +411,15 @@ To do that, we create a `Sidebar.css` file and implement the code snippet below.
 
 The code snippet above will add the following to our `sidebar.`
 
-- Styles on `hover.`
+- Styles opon `hover.`
 - Responsiveness
 - Font-size and weight adjustments
 - Font colours and Background colours
 - Borders, etc.
-  Note: ensure the `Sidebar.css` file is created in your `src` folder and appropriately imported to your `Sidebar.js` as shown above
 
-#### Step 7: Displaying the Navbar and Sidebar Components on the Web-Page:
+> Note: ensure the `Sidebar.css` file is created in your `src` folder and appropriately imported to your `Sidebar.js` as shown above
+
+####  Displaying the navbar and sidebar components on the webpage
 Finally, we need to display our components on the web page. In the `App.js` file, import both Navbar and Sidebar components as illustrated below.
 
 ```JavaScript
@@ -406,7 +437,6 @@ function App() {
 }
 
 export default App;
-
 ```
 
 Once the code snippet above is correctly implemented in your browser, the responsive `Navbar` and `Sidebar` components will be displayed and styled as expected. In addition, you may interact and adjust the screen size to view the `Mini-sidebar` and confirm the styles.
@@ -416,5 +446,7 @@ This brief article created and styled `Navbar` and `Sidebar` components with Rea
 Happy Coding.
 
 ### References:
-https://ant.design/components/icon/
-https://ant.design/docs/react/introduce
+- https://ant.design/components/icon/
+- https://ant.design/docs/react/introduce
+
+
