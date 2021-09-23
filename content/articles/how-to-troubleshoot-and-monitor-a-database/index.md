@@ -1,5 +1,21 @@
-Database monitoring is the process of examining database performance and resources in order to build and maintain a high-performance and high-availability application architecture.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-troubleshoot-and-monitor-a-database/
+title: Troubleshooting and Monitoring a Database
+description: In this article, we will look at how to monitor a database and troubleshoot them.
+author: extravaganza-77
+date: 2021-09-23T00:00:00-23:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+ - url: /engineering-education/how-to-troubleshoot-and-monitor-a-database/hero.jpg
+   alt: Troubleshoot Monitor DB Example Image
+---
+Database monitoring is the process of examining database performance and resources in order to build and maintain a high-performance and high-availability application architecture.
+<!--more-->
 Databases are at the heart of an organization's most important business procedures. With complexities of applications increasing, the IT infrastructures are getting increasingly varied.
 
 Database troubleshooting that delivers rapid, accurate solution is important for helping IT team diagnose problems before they affect end-users.
