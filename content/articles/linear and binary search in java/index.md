@@ -35,7 +35,7 @@ There are many methods of referencing the data stored through an array. Algorith
 
 For instance, stack and queue are algorithms that describe the flow of data through an array or list in real-world applications. 
 
-Stack uses the algorithms of the last-in-first-out methodology which is called `LIFO`. This means that data are stacked on top of one another, while the last one will be the first to come up when calling. 
+Stack uses the algorithms of the last-in-first-out which is called `LIFO`. This means that data are stacked on top of one another, while the last one will be the first to come up when calling. 
 
 However, Queue uses the analogy of first-in-first-out and is otherwise known as `FIFO`. Think of this as a public queue where the first person that came in will be the first one attended to. 
 
@@ -257,13 +257,3 @@ Linear and Binary Search are searching algorithms that deal with both the unsort
 
 ---
 Peer Review Contributions by: [Ruth Mare](/engineering-education/authors/ruth-mare/)
-
-
-
-
-
-
-
-
-
-
