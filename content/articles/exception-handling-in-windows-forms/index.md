@@ -3,21 +3,20 @@ layout: engineering-education
 status: publish
 published: true
 url: /exception-handling-in-windows-forms/
-title: Exception handling in windows forms
-description: This articles helps the reader to understand the concept of exception handling and how we can use its properties and methods.
+title: Exception Handling in Windows Forms
+description: In this tutorial, we will manage a variety of errors and issues that would occur when using windows forms. We will use exception handling to prevent these errors and guide the user to use the application properly.
 author: mohamed-alghadban
-date: 2021-09-22T00:00:00-11:32
+date: 2021-09-23T00:00:00-08:00
 topics: []
 excerpt_separator: <!--more-->
 images:
 
   - url: /exception-handling-in-windows-forms/hero.png
-    alt: Exception handling in windows forms Hero Image
+    alt: Exception Handling in Windows Forms Hero Image
 ---
-
-Windows forms are one of the best tools used in making applications. It provides a drag & drop functionality for a variety of pre-built objects. 
+Windows forms are one of the best tools used in making applications. It provides a drag & drop functionality for a variety of pre-built objects such as buttons, textbox, drop-down selections, and many other useful tools.
 <!--more-->
-Such as buttons, textbox, drop-down selections, and many other useful tools, but how do we manage the inputs from the user?. 
+However, how do we manage the inputs from the user?.
 
 In this tutorial, we will manage a variety of errors and issues that would occur when using windows forms. We will use exception handling to prevent these errors and guide the user to use the application properly.
 
@@ -27,27 +26,28 @@ In this tutorial, we will manage a variety of errors and issues that would occur
 - Visual Studio installed on your system.
 
 ### Installation guide
-- To install Visual Studio and set up the work environment, you can check [this](https://www.geeksforgeeks.org/setting-environment-c-sharp/) article on how to set up the C# environment in Visual Studio.
-- If you are new to Windows forms, you can check [this](https://www.section.io/engineering-education/getting-started-with-windows-forms-using-c-sharp/) tutorial, which will help you understand the basic concepts.
+- Check [this article](https://www.geeksforgeeks.org/setting-environment-c-sharp/) on how to set up the C# environment in Visual Studio.
+- If you are new to Windows forms, you can check [this](https://www.section.io/engineering-education/getting-started-with-windows-forms-using-c-sharp/) tutorial to help you understand the basic concepts.
 
 ### Exception handling
-Sometimes the program during runtime faces some errors that would interfere with the process or the flow of the program. This is where the concept of exception handling comes in. 
+Sometimes, during runtime, a program may face some errors that interfere with its process or flow. This is where the concept of exception handling comes in.
 
-With exception handling, we can test and fix all kinds of errors and return the flow to the program. We have three main keywords that we will be using when handling a piece of code in exception handling:
-- **Try:** scope is used for the piece of code that might produce an error. It could also be used to throw an error intentionally to test out the code and see how it reacts to the error.
--**Catch:** scope is used to catch the error and explain the issue to the user, and we use it to show a message box or request a data refill for the form. It could also be used to walk the user through the steps that would repair the program or maintain the issue. Sometimes, we use it to change the value of an object or a variable.
-- **Finally:** scope is optional to use and will occur anyway, even if the code doesn't produce any error.
+With exception handling, we can test and fix all kinds of errors in order to maintain the flow of the program.
+
+We have three main keywords that we will be using when handling a piece of code in exception handling:
+- **Try** - This scope is used for the piece of code that might produce an error. It could also be used to throw an error intentionally to test out the code and see how it reacts to the error.
+- **Catch** - This scope is used to catch the error and explain the issue to the user. We use it to show a message box or request a data refill for the form. It could also be used to walk the user through the steps that would be used repair the program. Sometimes, we use it to change the value of an object or a variable.
+- **Finally** - This scope is optional to use and will occur anyway, even if the code doesn't produce any error.
 
 ### Outside the code (Form)
-The following example will evaluate the division of two numbers.
-- 3 Textboxes, 2 of them for the input (numerator & denominator).
+The following example will evaluate the division of two numbers:
+- 3 TextBoxes, 2 of them for the input (numerator & denominator).
 - 2 Labels to name the operations ( ÷ & =).
 - 1 Button to start the operation.
 
 ![Exception form](/engineering-education/exception-handling-in-windows-forms/exception-form.png)
 
-### The code
-The following code will take two inputs from the user using the textboxes. Then, we parse the inputs from `String` to `Int` and back to String after evaluating the answer using the button.
+In the code below, we take two inputs from the user using the TextBoxes. We then parse the inputs from `String` to `Int` and back to String after evaluating the answer using the button.
 
 ```c#
 private void button1_Click(object sender, EventArgs e)
@@ -61,14 +61,14 @@ private void button1_Click(object sender, EventArgs e)
         }
 ```
 
-The previous code will only work in a best-case scenario because we have 2 issues:
+The code above will only work in a best-case scenario. This is because we have 2 known issues:
 - Any input besides numbers will cause an error since we only accept numbers.
-- The denominator has the value of 0 because we can't divide by zero.
+- The denominator has the value zero yet we can't divide any number by zero.
 
-### Fixing the code
-To fix the code and resolve the previous issues, we will use exception handling. The `Try` scope will take care of both the issues and notify any following `Catch` scopes. 
+### Fixing the issues
+To fix the code and resolve the issues, we will use exception handling. The `Try` scope will take care of both issues and notify any following `Catch` scopes.
 
-The first catch scope will resolve the invalid inputs from the two text boxes. And, the second catch will resolve the issue of having zero as a value of the denominator. 
+The first catch scope will resolve the invalid inputs from the two text boxes. The second catch will resolve the issue of having zero as a value of the denominator.
 
 The Finally scope is optional as mentioned before, but we can use it here to reset the value of the two text boxes for the next operation.
 
@@ -105,10 +105,9 @@ This is how the message box will appear when an issue occurs:
 
 ![Error output](/engineering-education/exception-handling-in-windows-forms/error-output.png)
 
-### Useful tip
-Only use the tools of exception handling when you need them, for example, the following code requires the date of birth of a user.
+> 💡Tip: Only use the tools of exception handling when you need them.
 
-![Date normal](/engineering-education/exception-handling-in-windows-forms/date-normal.png)
+For example, the code below requires the date of birth of a user:
 
 ```c#
  private void button1_Click(object sender, EventArgs e)
@@ -134,11 +133,17 @@ Only use the tools of exception handling when you need them, for example, the fo
         }
 ```
 
-The previous piece of code will run the code correctly without any errors. This is because we used exception handling, but instead, we could just use the _DateTimePicker_ tool from the Toolbox.
+Result:
+
+![Date normal](/engineering-education/exception-handling-in-windows-forms/date-normal.png)
+
+The program above will run without any errors. This is because we used exception handling.
+
+However, we could just use the _DateTimePicker_ tool from the Toolbox.
 
 ![Date tool](/engineering-education/exception-handling-in-windows-forms/date-tool.png)
 
-In this case, you don't need to use any of the exception handling tools because the user is not allowed to enter anything from the keyboard. Thus the input will always be valid.
+In this case, you don't need to use any of the exception handling tools because the user is not allowed to enter anything from the keyboard. Therefore, the input will always be valid.
 
 ```c#
 private void button1_Click(object sender, EventArgs e)
@@ -149,14 +154,14 @@ private void button1_Click(object sender, EventArgs e)
 ```
 
 ### Conclusion
-In this tutorial, we have built a form that divides two numbers and learned about Exception handling and how we can use its properties and methods. We have also used an example to show how errors can occur and how we fix them using the Try & Catch methods. 
+In this tutorial, we have built a form that divides two numbers and learned about Exception handling and how we can use its properties and methods. We have also used an example to show how errors can occur and how we fix them using the Try/Catch methods.
 
-Don't forget to test out the code to fully understand how it works.
+Don't forget to test the code to fully understand how it works.
 
 ### Further reading
-- https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/exceptions/exception-handling
-- https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/exceptions/
-- https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/exceptions/using-exceptions
+- [Exception handling](https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/exceptions/exception-handling)
+- [Exceptions](https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/exceptions/)
+- [Using Exceptions](https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/exceptions/using-exceptions)
 
 ---
 Peer Review Contributions by: [Dawe Daniel](/engineering-education/authors/dawe-daniel/)
