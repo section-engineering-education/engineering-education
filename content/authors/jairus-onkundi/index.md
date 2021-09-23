@@ -1,6 +1,7 @@
 ---
 title: Jairus  Onkundi
-type: engineering-education/author
+type: authors
+
 github: https://github.com/Jairusonkundi
 twitter: https://twitter.com/@Jairus15901424
 ---
