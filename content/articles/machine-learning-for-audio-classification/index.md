@@ -11,7 +11,6 @@ In this tutorial, you'll get an introduction to Machine Learning for audio class
 - [Wrapping up](#wrapping-up)
 
 ### Technology stack
-
 - [Python](https://www.python.org/)
 - [Librosa](https://librosa.org/doc/latest/index.html)
 
@@ -25,7 +24,7 @@ Sound is what you hear.
 
 A better definition of sound is that it's a vibration that propagates as an acoustic wave. Unique properties of sound include frequencies, speed, amplitude, and direction. When talking about the primary usage of machine learning in this domain, only frequency and amplitude are the essential features.
 
-Sound waves can often be simplified to sinusoidal waves. A sinusoidal wave shows us how the amplitude of a variable change with time.
+Sound waves can often be simplified to sinusoidal waves. A sinusoidal wave shows us how the amplitude of a variable changes with time.
 
 To capture sound into its electronic representation, we use a microphone.
 
@@ -52,13 +51,11 @@ With these, a machine learning model can extract the dominant audio per time fra
 Now that you know a little more about audio and how machine learning can classify it, let's implement an audio classification task using TensorFlow. 
 
 ### Implementing audio classification using TensorFlow
-
 - We will use the [UrbanSound8K dataset](https://www.kaggle.com/chrisfilo/urbansound8k) available on Kaggle. This dataset contains 8732 labeled sound excerpts of urban sounds from 10 classes. These 10 classes includes `air_conditioner`, `car_horn`, `children_playing`, `dog_bark`, `drilling`, `enginge_idling`, `gun_shot`, `jackhammer`, `siren`, and `street_music`.
 
 - In this tutorial, [Librosa](https://librosa.org/doc/latest/index.html) will be our main library. Librosa is an open-source python package for music and audio analysis. The library can give us the data and the sampling rate. The sample rate is the number of samples per second of audio. By default, librosa mixes all audio to mono and resamples them to 22050 Hz at load time. This plays a vital role as in audio, different sounds have different sample rates.
 
 #### Exploratory data analysis (EDA)
-
 We begin by installing Librosa. 
 
 ```bash
@@ -76,7 +73,7 @@ import IPython.display as ipd
 import matplotlib.pyplot as plt
 %matplotlib inline
 ```
-We've picked a random audio file, `207214-2-0-26.wav`, from our dataset folder for analysis.
+We've picked one random audio file, `207214-2-0-26.wav`, from our dataset folder for analysis. 
 
 ```python
 
@@ -96,7 +93,7 @@ audio_data
 array([-0.05423148, -0.06735592, -0.04484271, ...,  0.0022391 ,
         0.00144733,  0.00318042], dtype=float32)
 ```
-In mono, there is only one signal. So, the results from our audio_data show that librosa has converted the audio into integers with only one 1-dimension. On the other hand, if it was stereo, we'd have two signals and would have been a 2-D array. Librosa simplifies these signals into mono for easier processing.
+In mono, there is only one signal. So, the results from our audio_data show that librosa has converted the audio into integers with only one 1-dimension. On the other hand, if it was stereo, we'd have two signals and would have been a 2-D array. Although we won't use stereo signal in our tutorial, it is important to know that stereo sound is usually preffered in audio as it gives us a sense of directionality, perspective, space. But, librosa simplifies these signals into mono for easier processing.
 
 ```python
 sampling_rate
@@ -164,7 +161,7 @@ The results show that most of the classes in the dataset are balanced. Thus, thi
 Now that we are done with EDA, we've figured that this data is in its raw format. We need to preprocess this data to extract meaningful features from it. We'll then use these extracted features for training instead of using the data in its raw form.
 
 #### Data preprocessing
-To extract the features, we will be using the [Mel-Frequency Cepstral Coefficients (MFCC)](https://link.springer.com/content/pdf/bbm%3A978-3-319-49220-9%2F1.pdf) algorithm. This algorithm summarizes the frequency distribution across the window size. This enables the analysis of both the frequency and time characteristics of the sound. It will allow us to identify features for classification.
+To extract the features, we will be using the [Mel-Frequency Cepstral Coefficients (MFCC)](http://practicalcryptography.com/miscellaneous/machine-learning/guide-mel-frequency-cepstral-coefficients-mfccs/) algorithm. This algorithm is widely used in automatic speech and speaker recognition since the 1980s when it was introduced by Davis and Mermelstein. It summarizes the frequency distribution across the window size. This enables the analysis of both the frequency and time characteristics of the sound. It will allow us to identify features for classification.
 
 ```python
 mfccs = librosa.feature.mfcc(y=audio_data, sr=sampling_rate, n_mfcc=40)
@@ -204,7 +201,7 @@ for index_num,row in tqdm(metadata.iterrows()):
     extracted_features.append([data,final_class_labels])
 ```
 
-Let's convert the entire list into a data frame using the Pandas library. This converts the results into tables for a more straightforward analysis.
+Let's convert the entire list into a data frame using the Pandas library. This converts the results into tables for more straightforward analysis.
 
 ```python
 extracted_features_df=pd.DataFrame(extracted_features,columns=['feature','class'])
@@ -221,7 +218,7 @@ extracted_features_df.head()
 
 The results show the extracted features and their respective classes.
 
-The following command splits the dataset into an independent and dependent datasets, x and y.
+The following command splits the dataset into independent and dependent datasets, x and y.
 
 ```python
 X=np.array(extracted_features_df['feature'].tolist())
@@ -242,10 +239,9 @@ This step involves using sklearn's `train_test_split` method to split our datase
 from sklearn.model_selection import train_test_split
 X_train,X_test,y_train,y_test=train_test_split(X,y,test_size=0.2,random_state=0)
 ```
-Now that we are done with data preprocessing, let's go ahead and create our model.
+Now that we are done with data preprocessing, we now need to create our model.
 
 #### Model creation
-
 We are now going to create a model using TensorFlow. Any TensorFlow version above 2.0.0 is okay to use. 
 
 Let's import it into our notebook.
@@ -323,7 +319,6 @@ model.predict_classes(X_test)
 ```
 
 #### Testing the model
-
 In this section, we will be performing three steps:
 
 - We will be preprocessing the new audio data that we want to test. It involves extracting the features using the MFCC algorithm.
@@ -351,11 +346,11 @@ prediction_class
 ```
 
 ### Wrapping up
-
 Audio signal processing is not easy to understand as you need to have at least some domain knowledge. But it isn't difficult either. Using Python and libraries such as librosa, which have done most of the hard work for you, becomes easy to understand. 
 
 ### References
 - [UrbanSound8K Dataset](https://www.kaggle.com/chrisfilo/urbansound8k)
 - [Complete code](https://colab.research.google.com/drive/1iLMmBnLazIhWBOpnsVfo7lVaQnB3WONv#scrollTo=GlWofJJVcrQT)
 - [Librosa](https://librosa.org/doc/latest/index.html)
-
+- [Google drive folder with complete code](https://drive.google.com/drive/folders/1SzilAZipFiRbPo20Yy0OjbdslfST9LjV?usp=sharing)
+- [A Dataset and Taxonomy for Urban Sound Research](http://www.justinsalamon.com/uploads/4/3/9/4/4394963/salamon_urbansound_acmmm14.pdf)
