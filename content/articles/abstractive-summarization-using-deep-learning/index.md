@@ -125,7 +125,7 @@ tokens = tokenizer_model(text, truncation=True, padding="longest", return_tensor
 ```
 We've created a variable called `tokens` to store our token representation. We use our tokenizer `tokenizer_model`, which we created earlier, to tokenize our texts. The `truncation=True` argument allows the model to truncate our texts into a size suitable for input into our model. The `return_tensors` argument tells the model to use tensors from PyTorch.
 
-Let's view our tokens. We achieve this by writing the following command:
+To view our tokens we write:
 
 ```python
 tokens
