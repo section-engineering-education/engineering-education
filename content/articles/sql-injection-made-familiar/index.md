@@ -26,7 +26,7 @@ This article will take the reader through SQL infusions and will have an unmista
 - [Understanding SQL infusion](#understanding-sql-infusion)
 - [Activity: Infuse a webPage](#activity-infuse-a-webpage)
 - [Other SQL infusion assault types](#other-sql-infusion-assault-types)
-- [Automation devices for SQL infusion](#automation-devices-for-sql-infusion)
+- [Mechanization gadgets for SQL mixture](#mechanization-gadgets-for-sql-mixture)
 - [Forestall SQL infusion assaults](#forestall-sql-infusion-assaults)
 - [Conclusion](#conclusion)
 
