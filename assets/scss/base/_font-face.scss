@@ -1,0 +1,39 @@
+@font-face {
+    font-family: 'gt-regular';
+    src: url('../fonts/GTAmerica-Regular.eot');
+    src: url('../fonts/GTAmerica-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/GTAmerica-Regular.woff2') format('woff2'),
+        url('../fonts/GTAmerica-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'gt-medium';
+    src: url('../fonts/GTAmerica-Medium.eot');
+    src: url('../fonts/GTAmerica-Medium.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/GTAmerica-Medium.woff2') format('woff2'),
+        url('../fonts/GTAmerica-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'gt-bold';
+    src: url('../fonts/GTAmerica-Bold.eot');
+    src: url('../fonts/GTAmerica-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/GTAmerica-Bold.woff2') format('woff2'),
+        url('../fonts/GTAmerica-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'gt-fine';
+    src: url('../fonts/GTSectraFine-Bold.eot');
+    src: url('../fonts/GTSectraFine-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/GTSectraFine-Bold.woff2') format('woff2'),
+        url('../fonts/GTSectraFine-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}

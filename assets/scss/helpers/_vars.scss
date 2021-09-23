@@ -1,0 +1,168 @@
+// Site Wide Variables
+// -------------------------
+
+// Controls whether or not we use font sizing.
+// See the font-smoothing mixin in _mixins.scss
+$font-smoothing: true !default;
+
+
+// Typography Sizes and Weights
+// -------------------------
+
+$base-font-size: 16px !default;
+
+$regular: 400 !default;
+$bold: 700 !default;
+
+// Borders
+// -------------------------
+$border-light: 1px solid rgba(255, 255, 255, 1) !default;
+
+// Breakpoints
+// -------------------------
+$breakpoint-xsmall: 500px;
+$breakpoint-small: 768px;
+$breakpoint-medium: 1025px;
+$breakpoint-large: 1320px;
+$breakpoint-xlarge: 1440px;
+
+// Spacing
+// -------------------------
+
+$space-05: 0.25rem !default; // 4px
+$space-1: 0.5rem !default; // 8px
+$space-2:   1rem !default; // 16px
+$space-3: 1.5rem !default; // 24px
+$space-4:   2rem !default; // 32px
+$space-5:   3rem !default; // 48px
+$space-6: 4.5rem !default; // 72px
+
+// Z-index
+// -------------------------
+$z1: 100 !default;
+$z2: 200 !default;
+$z3: 300 !default;
+$z4: 400 !default;
+$z5: 500 !default;
+$z10: 1000 !default;
+$z99: 9999999999999 !default;
+
+// Transitions
+//--------------------------
+$t-1:                 cubic-bezier(0.2, 0.3, 0.25, 0.9);
+
+// Colors
+// -------------------------
+
+// Fills
+$fill-black:           #000000 !default;
+$fill-bg:              #F9F9F9 !default;
+$fill-bg-gray:         #F7F7F7 !default;
+$fill-white:           #FFFFFF !default;
+$fill-dark-10:         #1D1D1D !default;
+$fill-dark-15:         #2E2E2E !default;
+$fill-dark-20:         #4A4A4A !default;
+$fill-dark-30:         #565656 !default;
+$fill-dark-40:         #888888 !default;
+$fill-dark-50:         #D8D8D8 !default;
+$fill-dark-60:         #B7B7B7 !default;
+$fill-dark-70:         #BABABA !default;
+$fill-dark-75:         #E4E4E4 !default;
+$fill-dark-80:         #F8F8F8 !default;
+$fill-dark-85:         #F5F6F7 !default;
+$fill-dark-90:         #FAFAFA !default;
+$fill-red:             #ff2424 !default;
+
+$fill-menu-title:      #909191 !default;
+
+$fill-1320: rgba(252, 234, 243, 0.5);
+$fill-1600: rgba(252, 234, 243, 0.8);
+
+// Section specific colors
+$text-title: #0A0B09;
+$text-color: #404040;
+$text-light-blue: #1D9AD1;
+$text-blue: #1D9AD1;
+$text-link: #09090B;
+$text-purple: #6D5BE3;
+$text-light-gray: #6C6C6B;
+$text-lighter-gray: #B7B7B7;
+$text-orange: #ED6F15;
+$text-green: #00A86B;
+$text-lighter-blue: #1D9AD1;
+$text-testimonial: #6B6B6C;
+$text-case-study-list: #D0D8D9;
+
+$fill-green: #00A86B;
+$fill-dark-green: #038754;
+$fill-light-green: #43D19A;
+$fill-light-blue: #42C3E3;
+$fill-lighter-blue: #38c3e5;
+$fill-blue: #1D9AD1;
+$fill-dark-blue: #38c3e5;
+$fill-purple: #6D5BE3;
+$fill-dark-purple: #6D5BE3;
+$fill-light-purple: #908AF2;
+$fill-lighter-purple: #908AF2;
+$text-purple-menu: #5747BA;
+$fill-orange: #FF8A24;
+$fill-dark-orange: #FF8A24;
+$fill-light-orange: #FFB759;
+$fill-lighter-orange: #FB812B;
+$fill-dark: #1F2635;
+$fill-ltgreen: #34C37F;
+
+$border-color: #D8D8D8;
+
+// Type Colors
+$text-white:           #ffffff !default;
+$text-black:           #000000 !default;
+$text-dark-10:         #1D1D1D !default;
+$text-dark-20:         #4A4A4A !default;
+$text-dark-30:         #565656 !default;
+$text-dark-40:         #888888 !default;
+$text-dark-50:         #D8D8D8 !default;
+$text-dark-65:         #B7B7B7 !default;
+$text-dark-70:         #BABABA !default;
+$text-dark-75:         #E4E4E4 !default;
+$text-dark-80:         #F8F8F8 !default;
+$text-dark-85:         #F5F5F5 !default;
+$text-dark-90:         #FAFAFA !default;
+$text-light-60:        #ABABAB !default;
+$blockquote-name:      #999999 !default;
+
+// String Colors for SVG
+$svg-white:            "%23FFFFFF";
+$svg-white-hover:      "%2314A9D3";
+$svg-dark:             "%23000000";
+$svg-dark-hover:       "%23474343";
+$svg-blue:             "%233A80F7";
+
+// Shadows
+// -------------------------
+$nav-shadow:           0 2px 0 0 rgba(0, 0, 0, 0.1);
+$dropdown-shadow:        0 0 15px 0 rgba(0, 0, 0, 0.15);
+
+// Line height
+// -------------------------
+// Using a unitless system for consistency.
+// https://css-tricks.com/almanac/properties/l/line-height/
+$line-height-1: 1 !default;
+$line-height-1: 1.2 !default; // set on h1-h3 and .text-1-.text-3
+$line-height-2: 1.3 !default; // set on h4-h6 and .text-4-.text-6
+$line-height-3: 1.5 !default; // default line-height set on the body
+
+// Line heights specific to forms, buttons and tags.
+$line-height-form:       1.5rem !default;
+$line-height-form-small: 1.25rem !default;
+
+// Disabled opacity for buttons, forms, pagination
+$opacity-disabled: 0.3 !default;
+
+// SVG
+// -------------------------
+// encoding this as utf8 is good!
+// https://css-tricks.com/probably-dont-base64-svg/
+// but like url encode it first or IE/FF will hate you
+// http://codepen.io/yoksel/details/JDqvs/
+// svg icons saved as variables
