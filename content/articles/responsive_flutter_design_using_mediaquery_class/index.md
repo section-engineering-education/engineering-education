@@ -7,7 +7,6 @@ In this tutorial, you will acquire the knowledge of how to set up your flutter a
 
 
 
-
 ### Introduction
 
 When you create your application using flutter, you do not know the sizes of the user’s device will view your application on, nor can you guess the orientation of the device. 
@@ -159,7 +158,7 @@ Widget build(BuildContext context) {
 
 
 
-In the above code, the OrientationBuilder builder function re-renders the layout. This function gets called whenever there is a change made to the orientation. If the orientation is portrait  it displays the `_verticalDisplay()`, if landscape it displays `_HorizontalDisplay()`
+In the above code, the OrientationBuilder builder function re-renders the layout. This function will be called whenever a change made to the orientation. If the orientation is portrait  it displays the `_verticalDisplay()`, if landscape it displays `_HorizontalDisplay()`
 
 
 
@@ -263,7 +262,7 @@ class _ListViewWidgetState extends State<ListViewWidget> {
 
        return Padding(
 
-         padding: const EdgeInsets.all(10.0),
+         padding: const EdgeInsets.all(12.0),
 
          child: Card(
 
@@ -445,11 +444,11 @@ There is an OrientationBuilderWidget that surrounds it. What this does is that i
 
 
 
-`isLargeScreen ? Expanded(child: SelectedListViewWidget(value)) : Container(),`
+`isLargeScreen ? Expanded(child: SelectedListViewWidget(value)) : Container()`
 
 
 
-If the size of the display screen is large, we navigate to a detailed widget, if it is not, we return an empty container.
+If the display screen size is large, navigate to detailed widget, else return an empty container.
 
 ```dart
 
@@ -471,7 +470,7 @@ if (isLargeScreen) {
     }
 ```
 
-What this means is that if the larger layout is used, there is no need to go to another screen since the detailed widget exists on the same page itself. If the screen is smaller, then we need to traverse to a different page since only the list is displayed on the current screen.
+This means that if the larger layout is used, then there is no need to traversing to another screen since the detailed widget dwells on the same page. In the event the screen is smaller, we will need to traverse to a different page since only the list will be shown on the current screen.
 
 
 ```dart
@@ -493,22 +492,18 @@ class _DetailedScreenState extends State<DetailedScreen> {
  @override
 
  Widget build(BuildContext context) {
-
    return Scaffold(
-
      body: SelectedListViewWidget(widget.result),
 
    );
-
  }
-
 }
 
 ```
 
 
 
- To design for specific screens, obtain the size from the MediaQuery class and use it to get the actual device width. if you use the width from MediaQuery directly, it will get the width in that orientation only. So when the device is in landscape mode, the length of the phone will be considered to be the width.
+ To design for specific screens, obtain the size from the MediaQuery class and use it to get the actual device width. using the MediaQuery width directly, will fetch the width of that orientation only. So when the device is in landscape mode, the length of the phone will be considered to be the width.
 
 
 ```dart
@@ -546,7 +541,7 @@ By default using Scaffold means your app will scale automatically when the keybo
 
 ### AspectRatio
 
-This widget tries to size its child to a stated aspect ratio. The widget first tries the largest width to see if the layout constraints permit it. The height of the widget is obtained by applying the stated aspect ratio to the width, expressed as a ratio of width to height.
+The Aspect ratio widget attempts to resize its child widget to suite the stipulated aspect ratio. It achieves this by first trying out the highest width size to verify whether the layout constraints allows for it. To obtain the height of the widget, apply the stipulated aspect ratio to the width. This is expressed as the ratio of width to height
 
 
 ```dart
@@ -564,7 +559,7 @@ Widget build(BuildContext context) {
 
     child: AspectRatio(
 
-      aspectRatio: 16 / 9,
+      aspectRatio: 3 / 2,
 
       child: Container(
 
@@ -577,9 +572,9 @@ Widget build(BuildContext context) {
 }
 ```
 
-The code above displays how AspectRatio sets the child widget’s width when its parent widget width constraint is infinite. Since its parent widgets' allowed height is a fixed value, the actual width is determined via the given AspectRatio.
+The code above displays how AspectRatio sets the child widget’s width when its parent widget width constraint is infinite. Since the parents' permited height is a stated value, the actual width is determined via the given AspectRatio.
 
-Since the height is fixed at 120.0 in this example and the aspect ratio is set to 16 / 9, the width should then be 120.0 / 9 * 16.
+Since the height is fixed at 120.0 below and the aspect ratio is set to 3 / 2, the width then should be 120.0 / 2 * 3.
 
 
 ### FittedBox
