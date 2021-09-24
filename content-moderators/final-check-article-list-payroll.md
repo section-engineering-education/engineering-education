@@ -10,5 +10,11 @@ Once an article is published - add the name of the article (with hyperlink to pu
 
 Then add whether the article is an **informative article or a tutorial based articles** - notes to the difference between the two can be found in our [FAQ](https://github.com/section-engineering-education/engineering-education/blob/master/new_contributors/FAQ.md).
 
+At this time we can also do some final checks on the published article:
+- we can look at the author image - see if it is too large (could be cropped)
+- we can look at the topic - if the article has the correct topic, or if it could use one.
+- we can look over the title make sure it is correct - if it needs any capitalized letters.
+- anything else we can think of
+
 >**What is the difference between a tutorial and an article?**
 >A tutorial is a walk-through implementation on a topic. For example: How to set up Ubuntu on Linux. Steps laid out, with screenshots, and accompanying snippets. An article is a piece describing, explaining, or exploring a topic (with out any steps on HOW TO implement). For example - The Difference between Java and C++.
