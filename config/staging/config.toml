@@ -1,3 +1,0 @@
-baseURL = "https://beta.section.io/"
-[params]
-  env = "staging"
