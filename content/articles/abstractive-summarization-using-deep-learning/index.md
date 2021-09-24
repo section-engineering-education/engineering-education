@@ -149,3 +149,6 @@ Happy coding!
 ### References
 - [PEGASUS: Pre-training with Extracted Gap-sentences for Abstractive Summarization](https://arxiv.org/pdf/1912.08777.pdf)
 - [Pegasus-xsum model](https://huggingface.co/google/pegasus-xsum)
+
+---
+Peer Review Contributions by: [Collins Ayuya](https://www.section.io/engineering-education/authors/collins-ayuya/)
