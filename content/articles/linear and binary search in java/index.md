@@ -1,12 +1,12 @@
 ---
 layout: engineering-education
 status: publish
-published: 
+published: true
 url: /linear-and-binary-search-in-java-data-structures-and-algorithms/
 title: Linear and Binary Search In Java Data Structures and Algorithms
 description: This article will describe the ways of utilizing the methods of data structures and algorithms as key problem-solving skills in java. 
 author: arafat-olayiwola
-date: 2021-09-22T00:00:00-18:00
+date: 2021-09-24T00:00:00-18:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -15,9 +15,9 @@ images:
 ---
 <!--more-->
 
-In the world of programming languages, data structures and algorithms are problem-solving skills that all engineers must have. Linear and Binary Search are required when there is a problem with unsorted and sorted arrays in Java or any other language respectively.
+In the world of programming languages, data structures and algorithms are problem-solving skills that all engineers must have. Linear and Binary Search are required when there are problems with unsorted and sorted arrays in Java or any other language respectively.
 
-In this article, I will be sharing the ways of utilizing the methods in solving interview questions
+In this article, I will be sharing the ways of utilizing the methods in solving interview questions.
 
 #### Table of contents
 In the end, readers would know the following concepts;
@@ -25,7 +25,7 @@ In the end, readers would know the following concepts;
 1. What are data structures and algorithms in Java.
 2. When and how to use linear search algorithm.
 3. Concepts of binary search in sorted java arrays problems.
-4. Solutions to interview questions
+4. Solutions to interview questions.
 
 ### What are data structures and algorithms in Java
 
@@ -39,7 +39,7 @@ Stack uses the algorithms of the last-in-first-out which is called `LIFO`. This 
 
 However, Queue uses the analogy of first-in-first-out and is otherwise known as `FIFO`. Think of this as a public queue where the first person that came in will be the first one attended to. 
 
-There are others data structures and algorithms like liked-in lists, hash maps, and many more. However, we will be looking at binary and linear search algorithms for data stored in arrays.
+There are others data structures and algorithms like linked lists, hash maps, and many more. However, we will be looking at binary and linear search algorithms for data stored in arrays.
 
 ### Linear search algorithm
 
@@ -103,15 +103,15 @@ Calling the array above will print to the console `97` be the maximum integer of
 
 Binary Search is a searching algorithm used to solve problems of sorted arrays of integers. To utilize this algorithm, the order of the given array must be known whether ascending or descending.
 
-To make use of a binary search algorithm, the best methodology is to divide the array at every point of time into two spaces. This is achieved with the `start`, `middle`, and `end` indexes of the array.
+To make use of a binary search algorithm, the best methodology is to divide the array at every point in time into two spaces. This is achieved with the `start`, `middle`, and `end` indexes of the array.
 
-While the loop is running, the left, the middle itself and hand sides of the array are getting compared based on the intuition of the problem. 
+While the loop is running, the left, the middle itself and the right hand sides of the array are getting compared based on the intuition of the problem. 
 
 Note that this algorithm runs through the given array by dividing it into two spaces until it remains just one element for comparison i.e when the start, middle and end indexes are pointing to one particular element.
 
 Furthermore, the best case of this searching algorithm is said to be `O(1)`. This means that the problem gets resolved in the first division.
 
-The time complexity of every binary search algorithm is used to be `O(logN)` which in turn corresponds to its worst case. How does this happen?
+The time complexity of every binary search algorithm is said to be `O(logN)` which in turn corresponds to its worst case. How does this happen?
 
 ```
     First division is (N) = N / 2^0,
@@ -189,7 +189,7 @@ Explanations:
 
 In the first division, the array given will be divided into two spaces where the mid element will be `9` at index 4 = `(0+8)/2`. 
 
-While the start index is less than or equal to the end index, the following checks will be carried out.
+While the start index is less than or equal to the end index, the following checks will be carried out:
 
 In the first condition, if the target is not found it will return minus one.
 
@@ -203,7 +203,7 @@ However, the start, mid, and end index all pointing to the same element `10` at 
 
 But now the target `11` is greater than the index 5 element which remains the only element of the search. That will prompt the start index to move forward to index 6 and by doing so, has violated the condition of the while loop.
 
-Then the loop will stop running and then the return statement returns the element at the start index been the smallest integer greater than `11`.
+The loop will then stop running and the return statement returns the element at the start index being the smallest integer greater than `11`.
 
 Finally,  when the function gets called it returns `16` as the ceiling integer for `11` in the array.
 
@@ -253,7 +253,9 @@ Note that the floor integer refers to the greatest integer less than or equal to
 ```
 
 ### Conclusions 
-Linear and Binary Search are searching algorithms that deal with both the unsorted and sorted arrays respectively. Always reference the above concept whenever there is a problem that requires any of these. Thank you for reading!!!
+Linear and Binary Search are searching algorithms that deal with both the unsorted and sorted arrays respectively. Always reference the above concept whenever there is a problem that requires any of these. 
+
+Thank you for reading.
 
 ---
 Peer Review Contributions by: [Ruth Mare](/engineering-education/authors/ruth-mare/)
