@@ -27,3 +27,15 @@ This line declares the version of xml being used , it also states the encoding t
 </Greeting>
 ``` 
 `<Greeting>` acts as the parent/root element for this piece of code.Each XML document must have a root element .XMl tags are case-sensitive , each tag must have a similar closing tag.All other tags in this document will be anchored to this tag.
+**Line 3:**
+```xml
+    <From>Felix</From>
+    <To>Section readers</To>
+    <message>How are you today?</message>
+    <!--this is a comment-->
+```
+This section contains the child nodes of this XML document.This is where we input the rest of the content we would like in our  document.XML like any othe language has comments. To write comments in XML we use `<!--comment-->`,similar to how we write comments in HTML.
+
+Now that we have learnt how a basic XML document looks like , lets learn how XXE works.
+
+### How XXE attacks work
