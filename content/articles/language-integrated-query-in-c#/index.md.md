@@ -16,15 +16,15 @@ images:
 
 
 ### Introduction
-The term "Language-Integrated Query" (LINQ) refers to a group of technologies that incorporate query capabilities directly into the C# programming language. Querying data has traditionally been plain text, with no type checking or IntelliSense assistance at build time. LINQ access data from objects, data sets, SQL Server, and XML, among other things.
+The term `Language-Integrated Query` (LINQ) refers to a group of technologies that incorporate query capabilities directly into the C# programming language. Querying data has traditionally been plain text, with no type checking or IntelliSense assistance at build time. LINQ access data from objects, data sets, SQL Server, and XML, among other things.
 
 ### Project setup
 1. Open Visual studio, select `New Project` on the start window.
-2. On the Create a new project window, enter or type the console in the search box. Next, choose C# from the Language list, and then select Windows from the Platform list.
-3. In the Configure your new project window, type LinqProject in the Project name box. Then, choose Create.
+2. On the `Create a new project` window, enter or type the console in the search box. Next, choose C# from the Language list, and then select Windows from the Platform list.
+3. In the `Configure your new project window`, type LinqProject in the Project name box. Then, choose Create.
 
 ### Generating sequences with LINQ
-Consider a collection of cards. Set of cards used in various games usually comprises four suites, each with thirteen values. Typically, we would consider starting with a Card class and manually filling a compilation of those cards objects. With LINQ, one can see a long text with fewer words than we can with the traditional method of generating a pack of playing cards. A class called `Card` may be initiated, but Suits and rankings are represented by sequence. We will write a pair of straightforward iterator methods to generate the rankings and suits as IEnumerable<T>s of strings.
+Consider a collection of cards. Set of cards used in various games usually comprises four suites, each with thirteen values. Typically, we would consider starting with a Card class and manually filling a compilation of those cards objects. With LINQ, one can see a long text with fewer words than we can with the traditional way of generating a pack of playing cards. A class called `Card` may be initiated, but Suits and rankings are represented by sequence. We will write a pair of straightforward iterator methods to generate the rankings and suits as `IEnumerable<T>s` of strings.
   
 ```c#
 using System;
@@ -54,7 +54,8 @@ static IEnumerable<string> Ranks()
     yield returns "queen";
 }
 ```
-The multiple clauses generate a SelectMany, which combines each element from the first and second sequences into a single sequence. The order is crucial to achieving our goals. The first element in the first source sequence (Suits) is related to every element in the second series (Ranks). As a result, all thirteen cards of the first suit are created. The initial sequence's elements are all treated to the same method (Suits). The final product is a park of playing cards arranged by suit, then by value.
+The order of the generated sequences is crucial to achieving our goals. The first element in the first source sequence (Suits) is related to every element in the second series (Ranks). As a result, all thirteen cards of the first suit are created. The initial sequence's elements are all treated to the same method (Suits). The final product is a park of playing cards arranged by suit, then by value.
+
   
 ```c#
 static void Main(string[] args)
@@ -69,10 +70,10 @@ static void Main(string[] args)
                     
 }
 ```
-In `Program.cs` file, add the code snippet above after the Main method. Both of these methods use the yield return syntax to generate a sequence as they execute. The compiler creates an object that implements IEnumerableT> and generates the specified sequence of strings.
+In `Program.cs` file, add the code snippet above after the Main method. Both of these methods use the yield return syntax to generate a sequence as they execute. The compiler creates an object that implements `IEnumerableT>` and generates the specified sequence of strings.
   
-### Manipulate the order of things.
-Think about how we would mix the cards in the deck. Splitting the deck in half is the first step in any decent shuffle. This capability is provided by the LINQ APIs' `Take` and `Skip` functions
+### Changing the order of Suits
+Think about how we would mix the cards in the deck. Splitting the deck in half is the first step in any decent shuffle. This capability is provided by the LINQ APIs' `Take` and `Skip` functions.
   
 ```c#
 public static void Main(string[] args)
@@ -91,7 +92,7 @@ public static void Main(string[] args)
 ```
 However, the standard library does not have a shuffle method. Therefore, we will develop our own. Because the shuffle method we will be writing demonstrates various strategies we will use with LINQ-based programming; We will break down each step.
 
-To extend how we can work with the IEnumerable returned by LINQ queries, we will need to create extension methods. In a nutshell, an extension method can be said to be a static method with a specific purpose that adds additional functionality to an existing type without needing the original type to be changed.
+We will need to create extension methods to extend how we can work with the IEnumerable returned by LINQ queries. In a nutshell, an extension method is a static method with a specific purpose that adds additional functionality to an existing type without needing the original type to be changed.
 ```c#
 using System;
 using System.Collections.Generic;
@@ -108,7 +109,7 @@ namespace myShuffle
     }
 }
 ```
-### Identifying the difference between an eager and a sluggish evaluation.
+### Identifying the difference between an eager and a lazy evaluation.
 **Lazy evaluation** means that each call to the iterator only processes a single element from the source collection. Depending on the circumstances, an iterator can be a custom class, a `foreach`, or a while loop.
   
 ```c#
@@ -147,9 +148,7 @@ IEnumerable<int> myMethod()
 var ex = myMethod.Take(2);
 var list = ex.ToList();
 ```
-The yield keyword allows the collection to be evaluated gradually. Eager evaluation is the process of forcing the entire collection into memory. When we call ToList, `ToDictionary`, or ToArray, the enumeration is evaluated immediately, and all elements are returned in a collection.
-
-### Identifying places in your code where LINQ queries may have performance difficulties
+The yield keyword allows the collection to be evaluated gradually. **Eager evaluation** is the process of forcing the entire collection into memory. When we call ToList, `ToDictionary`, or ToArray, the enumeration is evaluated immediately, and all elements are returned in a collection.
                          
 The sample we created above performs an out shuffle, with the top and bottom cards remaining unchanged on every run. Let us make one alteration. Instead of an out shuffle, we will employ an in the shuffle, in which all 52 cards shift positions. As a result, the top half's final card becomes the bottom half's final card. Switch the Take and Skip locations in the current shuffle query to update it. The top and bottom half of the deck will now be in reverse order.
                          
@@ -158,7 +157,7 @@ shuffle = shuffle.Skip(26).InterleaveSequenceWith(shuffle.Take(26));
 ```
 Once we execute the program, we will note that the deck takes 52 iterations to reshuffle itself. Several factors contribute to this. First, we may address one of the critical causes of this reduction in performance which is the inefficient, lazy evaluation. Note that we used a LINQ query to create the original deck. The three queries of LINQ on the previous deck are used to generate each shuffle. All of this occurs at a glacial speed. When we reach the fifty-second iteration, we will have regenerated the initial deck several times, i.e. more than once. Let us make a log to show how this works. Then we will take care of it.
                          
-Type or copy the method below into our `Extensions.cs` file. This extension method creates a new file named.log in our project directory and logs the query that is presently being running. We can use this extension method to indicate the completion of a query.
+Copy the method below into our `Extensions.cs` file. This extension method creates a new file named.log in our project directory and logs the query that is presently being running. We can use this extension method to indicate the completion of a query.
                          
 ```c#
 public static IEnumerable<T> LogQuery<T>
