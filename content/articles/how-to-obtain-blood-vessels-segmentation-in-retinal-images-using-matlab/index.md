@@ -233,7 +233,7 @@ title('binary image')
 ### The resulting outputs and the further modifications
 This is what we have when running the code at this point:
 
-![Output image](/engineering-education/how-to-obtain-blood-vessel-segmentation-in-retinal-images-using-matlab/retinal-one.png)
+![Output image](/engineering-education/how-to-obtain-blood-vessels-segmentation-in-retinal-images-using-matlab/retinal-one.png)
 
 This is not the result required. We need to remove the noise from the `binary_image` we have displayed above. To do that, we use the `bwareaopen` function and the binary image as the argument as shown below:
 
@@ -245,7 +245,7 @@ title('clean_image')
 
 We will then see this new image:
 
-![Filtered image](/engineering-education/how-to-obtain-blood-vessel-segmentation-in-retinal-images-using-matlab/retinal-two.png)
+![Filtered image](/engineering-education/how-to-obtain-blood-vessels-segmentation-in-retinal-images-using-matlab/retinal-two.png)
 
 Since this is a binary image, we need to convert it into a colour image. We will take the complement of the binary image first, using the `incomplement` function, which returns the complemented image.
 
@@ -261,7 +261,7 @@ title('complemented image')
 
 This is how the complemented image will look like:
 
-![Complemented image](/engineering-education/how-to-obtain-blood-vessel-segmentation-in-retinal-images-using-matlab/retinal-three.png)
+![Complemented image](/engineering-education/how-to-obtain-blood-vessels-segmentation-in-retinal-images-using-matlab/retinal-three.png)
 
 ### Colorizing the image
 We can now colorize this image. In order to do that, we will create a function named `colorized_image.m`.
@@ -349,7 +349,7 @@ title('final_result')
 
 Finally, this is how our final image will look like:
 
-![Final output](/engineering-education/how-to-obtain-blood-vessel-segmentation-in-retinal-images-using-matlab/retinal-four.png)
+![Final output](/engineering-education/how-to-obtain-blood-vessels-segmentation-in-retinal-images-using-matlab/retinal-four.png)
 
 ### Conclusion
 Through this article we have seen that using Matlab for segmentation is simple. This is because it uses the in-built functions that you do not need to define.
