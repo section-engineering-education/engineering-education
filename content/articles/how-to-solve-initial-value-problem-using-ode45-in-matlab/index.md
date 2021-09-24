@@ -15,15 +15,16 @@ images:
    alt: MATLAB solve Initial Value Problem example image
 ---
 
+
 ### Introduction
 
-MATLAB’s uses the `ode45` function as the standard solver for ordinary differential equations of fifth-order(ode45). The `ode45` function applies Runge-Kutta formulae with the time step variable for easy computation. `ode45` is meant to solve the equation of the general form shown below;
+Matlab’s uses the `ode45` function as the standard solver for ordinary differential equations of fifth-order(ode45). The `ode45` function applies Runge-Kutta formulae with the time step variable for easy computation. `ode45` is used to solve equations of the form;
 
 $
-dx/dt = f(t,x), x(t0) = x0
+dx/dt = f(t,x), x(t0) = x0          equation 1
 $
 
-Here, `t` is the independent variable, `x` is a vector of dependent variables to be found, and f (t, x) is a function of t and x. The mathematical equation is defined when the `x` of functions on the right-hand side of Eq. (1), `f (t, x)`, is pre-determined, and the initial conditions, `x = x0` at the time `t0`, are given.
+Here, `t` is the independent variable, `x` is a vector of dependent variables to be found, and f (t, x) is a function of t and x. You define this equation when the function's `x` is pre-determined, and the initial conditions, `x = x0` at the time `t0`, are given.
 
 This article will consider the Matlab algorithm `ode45` to solve the initial value problem(IVP). IVP is an ODE together with some initial value(s). Here you have a differential equation describing the dynamics of how something is changing, but you know where to start. The initial value tells you where to start, but the differential equation tells you where to go next. `ode45` is a work course in Matlab, and it's the first algorithm you go to solve ode problems.
 
@@ -33,7 +34,7 @@ To follow along with this tutorial, you'll need:
 
 ### Overview of Runge Kutta 4 method
 
-In Runge Kutta 4 method, we obtain the solution of `y_i` at various values of `t_i` between the range `t_0` and `t_n`. The intermediate value at which the computations are done is calculated internally by the ODE45. ODE45 uses adaptive step size Runge Kutta 4 method. It indicates that stepsize `H` is a varying value. It means that you have to define the stepsize.  Step size is the distance between the current value and the subsequent initial value. In this method, you have the initial value of the function . It helps find the solution to the differential equation. The basic formula of the Runge Kutta 4 method is given by;
+In Runge Kutta 4 method, we obtain the solution of `y_i` at various values of `t_i` between the range `t_0` and `t_n`. The intermediate value at which the computations are done is calculated internally by the ODE45. ODE45 uses adaptive step size Runge Kutta 4 method. It indicates that stepsize `H` is a varying value. What this means is that you first determine the stepsize. Step size is the distance between the current value and the subsequent initial value. Here, you have to know the initial value of your function. It is for getting the solution to your differential equation. The basic formula of the Runge Kutta 4 method is given by;
 
 $
 y_{i+1} = (y_i + \frac{1}{6}(k_1 + 2K_2 + 2K_3 + k_4)
@@ -90,7 +91,7 @@ We will now consider our ODE syntax.
 [tsol, ysol]=ode45(@(t,y) firstODEfun(t,y), [t0 tEnd], y0);
 ```
 
-`t` and `y` are the variables passed to the function `ode45` and then call the function `firstODEfun`. Note, the arrangement of `t` and `y` is essential. It has to be `t` and then `y` not the other way round. It is a mistake commonly made by many students. After this, we need to define our function `firstODEfun`. It should be on a separate script. The code below defines our function.
+`t` and `y` are the variables passed to the function `ode45` and then call the function `firstODEfun`. Note, the arrangement of `t` and `y` is essential. The `t` must come first, followed by `y`. It is a mistake commonly made by many students. After this, we need to define our function `firstODEfun`. It should be on a separate script. The code below defines our function.
 
 ```matlab
 function dy = firstODEfun(t,y)
@@ -119,8 +120,9 @@ The error indicates that the `t1` is undefined since the input variable was `t`.
 
 Plug flow reactor, also known as tabular reactor, consists of a cylindrical pipe with an opening on each end for the reactor and products to flow through. Consumption of reactors is continuous as they flow down the length of the reactors. It means that as the reaction continues, the products increases.
 
-You can figure the plug flow reactor as one long tube or several short tubes. They range in diameter from few centimetres to several meters. The choice of diameter is based on the construction cost, pumping cost, and heat transfer needed. They have a wide variety of applications in either gas or liquid phase systems.
-When modelling the PFR, you take an increment of the reactor when balancing the chemical equation occurring in the reactor and integrate the holdings. Holdings are the values that balance the chemical equation. It is because it is a distributed parameter system. Now, after balancing the equation and integrating the holding, you end up with the below equation.
+You can figure the plug flow reactor as one long tube or several short tubes. They have different diameters.  Determining the diameter to use is based on construction cost, pumping cost and the heat transfer needed. Their application is so wide in gas or liquid systems. 
+
+When modelling the PFR, you take an increment of the reactor when balancing the chemical equation occurring in the reactor and integrate the holdings. It is because it is a distributed parameter system. Holdings are the values used to balance the equation. Now, after balancing the equation and integrating the holding, you end up with the below equation.
 
 -qdc = -rAdz  (equation1)
 
@@ -142,7 +144,7 @@ Note that in equation2 above, `k` takes the initial form `ko`. Now, when we plug
 $
 \frac{dc}{dz}=\frac{k_0exp(-\frac{E}{RT}}{q})c
 $
-This is how to calculate the concentration profile in the reactor. For more information, you can check [here](http://matlab.cheme.cmu.edu/2011/11/17/modeling-a-transient-plug-flow-reactor/)
+It is how to calculate the concentration profile in the reactor. To dive more into this, you can check [here](http://matlab.cheme.cmu.edu/2011/11/17/modeling-a-transient-plug-flow-reactor/)
 Now, let's look for an example of solving the plug flow reactor equation using Matlab.
 
 ### Example
@@ -193,10 +195,8 @@ Note that the solution in the `V` column vector corresponds to the equivalent po
 
 ### Conclusion
 
-Solving the initial value problem in Matlab using the ode45 method is made easy in Matlab. It is because Matlab has an in-built function, `ode45`. It is a solver in Matlab that helped to solve ode problems. Using this function is easy as you just need to call the function, and the problem is solved. Also, the ode syntax for solving the initial problem in Matlab is so easy. The other advantage is that you can use this ode function to solve the PFR problems.
-
+Solving the initial value problem in Matlab using the ode45 method is made easy in Matlab. It is because Matlab has an in-built function, `ode45`. It is a solver in Matlab that helped to solve ode problems. Using this function is easy as you just need to call the function, and the problem is solved. Also, the ode syntax for solving the initial problem in Matlab is so easy. Since Matlab can also be used to PFR problems using the `ode45` solver, this becomes an added advantage.
 Happy coding!
-
 ---
 Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
 
