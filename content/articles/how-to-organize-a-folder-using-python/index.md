@@ -111,7 +111,7 @@ The same process was repeated for the other file extensions. At the end of the f
 > Note: the destination_dir is the same as the source_dir because the destination folder is inside the source_dir. 
 
 ### Conclusion
-We were able to write a function that moves files from one folder to the other, which takes the directory that contains files we want to move and a directory we want to move files to as parameters.
+We were able to write a function that moves files from one folder to the other, which takes the directory that contains files we want to move and a directory we want to move files to as parameters. [Link to repo](https://github.com/wobin1/file-management-with-python)
 
  
 
