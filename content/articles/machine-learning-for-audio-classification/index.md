@@ -98,7 +98,7 @@ After downloading, run this command to unzip it.
 !unzip urbansound8k.zip
 ```
 #### Experimenting with one audio file
-We've picked one random audio file, `207214-2-0-26.wav`, from our dataset folder for analysis. 
+We've picked one random audio file, of children playing, `100263-2-0-121.wav`, from our dataset folder for analysis. 
 
 ```python
 file_name='fold5/100263-2-0-121.wav'
@@ -226,10 +226,6 @@ for index_num,row in tqdm(metadata.iterrows()):
     extracted_features.append([data,final_class_labels])
 ```
 
-```bash
-
-```
-
 Let's convert the entire list into a data frame using the Pandas library. This converts the results into tables for more straightforward analysis.
 
 ```python
@@ -322,13 +318,13 @@ model.add(Activation('softmax'))
 ```python
 model.compile(loss='categorical_crossentropy',metrics=['accuracy'],optimizer='adam')
 ```
-Let's now go ahead and train our model. The more the number of epochs, the more the accuracy increases. Try play around and see how it turns out. For our case, we only trained the model for 100 epochs.
+Let's now go ahead and train our model. The more the number of epochs, the more the accuracy increases. Try play around and see how it turns out. For our case, we only trained the model for 200 epochs.
 
 ```python
 from tensorflow.keras.callbacks import ModelCheckpoint
 from datetime import datetime 
 
-num_epochs = 100
+num_epochs = 200
 num_batch_size = 32
 
 checkpointer = ModelCheckpoint(filepath='saved_models/audio_classification.hdf5', 
@@ -349,9 +345,9 @@ test_accuracy=model.evaluate(X_test,y_test,verbose=0)
 print(test_accuracy[1])
 ```
 ```bash
-0.7538637518882751
+00.7870635390281677
 ```
-We get a validation accuracy of 75.39%. Increasing the number of training epochs will increase this accuracy score.
+We get a validation accuracy of 78.71%. Increasing the number of training epochs will increase this accuracy score.
 
 #### Testing the model
 In this section, we will be performing three steps:
@@ -360,12 +356,12 @@ In this section, we will be performing three steps:
 - We will predict its class with the help of the model that we have created.
 - We will inverse transform the predicted label to get our class label.
 
-Let's choose a random audio file of a gunshot, `102105-3-0-0.wav`, from our dataset to use for testing. 
+Let's choose a random audio file of a dog bark, `103076-3-0-0.wav`, from our dataset to use for testing. 
 
-Basically, in the code below, we repeat the steps we used earlier to preprocess audio data. We then perform a prediction of the class it belongs to and finally uses the `inverse_transform` method to give us the name of the predicted label. 
+In the code below, we repeat the steps we used earlier to preprocess audio data. We then perform a prediction of the class it belongs to and finally uses the `inverse_transform` method from scikitlearn to give us the name of the predicted label. 
 
 ```python
-filename="/content/fold3/102105-3-0-0.wav"
+filename="fold8/103076-3-0-0.wav"
 audio, sample_rate = librosa.load(filename, res_type='kaiser_fast') 
 mfccs_features = librosa.feature.mfcc(y=audio, sr=sample_rate, n_mfcc=40)
 mfccs_scaled_features = np.mean(mfccs_features.T,axis=0)
@@ -374,18 +370,27 @@ print(mfccs_scaled_features)
 mfccs_scaled_features=mfccs_scaled_features.reshape(1,-1)
 print(mfccs_scaled_features)
 print(mfccs_scaled_features.shape)
-predicted_label=model.predict_classes(mfccs_scaled_features)
+predicted_label=model.predict(mfccs_scaled_features)
 print(predicted_label)
-prediction_class = labelencoder.inverse_transform(predicted_label) 
+classes_x=np.argmax(predicted_label,axis=1)
+prediction_class = labelencoder.inverse_transform(classes_x)
 prediction_class
 ```
+```bash
+[[1.1630526e-21 5.3596851e-09 2.6831966e-09 9.9984801e-01 4.6294679e-09
+  9.3139047e-12 1.5179862e-04 4.0151480e-34 1.1097348e-07 4.4551591e-08]]
+
+array(['dog_bark'], dtype='<U16')
+```
+The model has correctly predicted the dog bark.
 
 ### Wrapping up
-Audio signal processing is not easy to understand as you need to have at least some domain knowledge. But it isn't difficult either. Using Python and libraries such as librosa, which have done most of the hard work for you, becomes easy to understand. 
+Audio signal processing is not easy to understand as you need to have at least some domain knowledge. But it isn't difficult either. Using Python and libraries such as librosa, which have done most of the hard work for you, becomes easy to understand. You don't have to use the librosa library for this task. Once you have the waveform, you could convert the waveform into a spectrogram and use a Convolution Neural Network (CNN) for classification instead.
+
+Happy coding!
 
 ### References
 - [UrbanSound8K Dataset](https://www.kaggle.com/chrisfilo/urbansound8k)
 - [Complete code](https://colab.research.google.com/drive/1iLMmBnLazIhWBOpnsVfo7lVaQnB3WONv#scrollTo=GlWofJJVcrQT)
 - [Librosa](https://librosa.org/doc/latest/index.html)
-- [Google drive folder with complete code](https://drive.google.com/drive/folders/1SzilAZipFiRbPo20Yy0OjbdslfST9LjV?usp=sharing)
 - [A Dataset and Taxonomy for Urban Sound Research](http://www.justinsalamon.com/uploads/4/3/9/4/4394963/salamon_urbansound_acmmm14.pdf)
