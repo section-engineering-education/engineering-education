@@ -146,7 +146,7 @@ To summarize, we have:
 - Learned how one can load images and get the image heights and width.
 - Learned how one can locate the center of the images.
 
-You can find more information about multiple image watermarking using [here](https://study-ccna.com/ospf-configuration/).
+You can find more information about multiple image watermarking using [here](https://pysource.com/2020/04/10/add-watermark-to-multiple-images-with-opencv-and-python/).
 The full combined code can be found on [GitHub](https://github.com/dentonya/Image_Watermarking)
 
 Happy coding!
