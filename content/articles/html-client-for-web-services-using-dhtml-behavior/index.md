@@ -18,6 +18,12 @@ The Dynamic Hypertext Markup Language (DHTML) is the most efficient and widely u
 <!--more-->
 The coupling of cascading style sheets (CSS) formatting and HTML component functionality is represented by DHTML behavior. Any element on an HTML page can be assigned to DHTML behaviors, allowing for amazing content presentation freedom.
 
+### Prerequisites
+- Have a piece of background information on using Visual Studio.
+- Have a piece of background information about C# and Javascript programming languages.
+- Have a SOAP UI Open source application or download it. [Download] (https://www.soapui.org/downloads/latest-release/) for running our SOAP applications.
+- To execute the C# commands, use the C# compiler. In my case. I used the [oracle-terminal-online] (https://www.tutorialspoint.com/oracle_terminal_online.php)
+
 ### Table of contents
 - [Importance of using DHTML](#importance-of-using-dhtml)
 - [Distinction between HTML and DHTML](#distinction-between-html-and-dhtml)
@@ -28,11 +34,11 @@ The coupling of cascading style sheets (CSS) formatting and HTML component funct
 ### Importance of using DHTML
 Here are some of the advantages we can get when using DHTML:
 1. We use it to create dynamic, animated website pages that update in real-time.
-2. DHTML has more features than just a static HTML page. DHTML has the ability to hold more content on a web page simultaneously.
+2. DHTML has more features than just a static HTML page. DHTML can hold more content on a web page simultaneously.
 3. By sending fewer requests to the server, the user saves time. As we can utilize it to change and swap components after a page has been loaded, we do not require to construct separate web pages for updating styles save time when creating pages and reduce the number of queries sent to the server.
 4. It allows page authors to add drop-down menus and rollover buttons to their web pages.
 5. Viewers do not require any additional plug-ins to browse through DHTML-based webpages, nor do they require any additional prerequisites or software to see them.
-6. It is used to embed the ticker on other websites with material and information that needs to be updated on a frequent basis.
+6. It is used to embed the ticker on other websites with material and information that needs to be updated frequently.
 
 #### Some major features of DHTML
 - Its most basic and important characteristic is that it allows us to dynamically construct web pages.
@@ -40,7 +46,7 @@ Here are some of the advantages we can get when using DHTML:
 - It allows you to utilize the events, methods, and properties. Additionally, it allows reusability of code.
 - It also has a data binding feature in browsers.
 - Users can simply build dynamic fonts for their websites or web pages using DHTML.
-- Since DHTML uses a low-bandwidth impact, the the internet's performance is improved.
+- Since DHTML uses a low-bandwidth impact, then the internet's performance is improved.
 
 ### Distinction between HTML and DHTML
 HTML and DHTML have some of their differences which are as follows:
@@ -51,11 +57,11 @@ HTML and DHTML have some of their differences which are as follows:
 5. We use DHTML to create animations. There are also dynamic menus, but no HTML is used.
 6. While using client-side technology, HTML is slower, DHTML sites, on the other hand, are substantially quicker.
 7. Because HTML employs just one language, web pages built with it are simplistic and lack styling, whereas DHTML uses HTML, CSS, and Javascript to build a far better and more attractive webpage.
-8. Only HTML can be used for user-side code, but DHTML is utilized for server-side code.
+8. HTML can be used in user-side coding whereas DHTML is used for server-side coding.
 9. Files in HTML are saved with `.html` or `.htm` extensions while DHTML uses `.dhtml` extension.
 
 ### How would we make the Web services?
-Web service are code snippets that may be reused to allows many applications interact with one another. Web services are being utilized with any type of application developed in any technology once it is produced and hosted on a server on the Internet.
+Web services are code snippets that may be reused to allow many applications to interact with one another. Web services are used with any type of application developed in any technology once it is produced and hosted on a server on the Internet.
 
 #### Step one
 Click on the `File` then go to `Website` finally click `ASP.NET empty website template` in Visual Studio, then you should give a name for the website. We will use _webservicesample_ as our example.
@@ -216,6 +222,7 @@ We can manually test a web service, write our automation code, or utilize off-th
 A web service can be used in a variety of ways, but the two most frequent implementations are as follows:
 1. Simple Object Acces Protocol (SOAP)
 2. Representation State Transfer Architecture (REST)
+3. Web Services Description Language (WSDL)
 
 - SOAP ;
 
@@ -282,9 +289,9 @@ The free version may be readily downloaded and used to test the Restful service.
 ### Conclusion
 In this tutorial, we have discussed about how WebServices allow software applications to communicate and exchange data with one another. To establish a WebService, two popular protocols are SOAP and REST.
 
-SOAP allows data to be exchanged using XML. For WebServices API Testing, REST supports XML or data interchange via a simple URL.WSDL is an XML language that is used for describing the services provided by a web service and SOAP is defined by WSDL. 
-
-We have also learnt how we can Use WebService Test Automation solutions like SoapUI to test Web Services Automation Testing efforts.
+SOAP allows data to be exchanged using XML. For WebServices API Testing, REST supports XML or data interchange via a simple URL. WSDL is an XML language that is used for describing the services provided by a web service and SOAP is defined by WSDL.
+ 
+We have also learnt how we can use WebService test automation solutions. Like, SoapUI to test Web Services Automation Testing efforts.
 
 ---
 Peer Review Contributions by: [Dawe-Daniel](/engineering-education/authors/dawe-daniel/)
