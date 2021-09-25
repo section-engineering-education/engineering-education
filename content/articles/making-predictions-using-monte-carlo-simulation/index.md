@@ -1,6 +1,6 @@
-﻿###Making predictions using Monte Carlo Simulation (Using python)
+### Making predictions using Monte Carlo Simulation (Using python)
 
-###Table of Contents
+### Table of Contents
 
 -[Introduction](#introduction)
 
@@ -108,8 +108,6 @@ Assemble the information to create the desired outcome.
 Typical outputs include:
 
 *Histogram*
-
-Histogram
 
 Statistics in a nutshell (mean, variance, and standard deviation)
 
