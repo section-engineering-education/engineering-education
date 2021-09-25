@@ -50,23 +50,21 @@ to eliminate uncertainty for better decisions.
 
 This is an approach technique rather than an exact technique.
 
-It's implementation with computers uses **pseudo-random number generators**.
+**Pseudo-random number generators** are used when implementing using computers..
 
-It is widely used in engineering, finance, business, project planning and many more other fields.
+It is frequently utilized in a variety of industries, including engineering, finance, business, project planning, and many more.
 
 ### Unique attributes from other techniques
 
 **Simple, flexible and Scalable algorithms**
 
-On application, they reduce complex model to a set of basic events and interactions,
+They reduce a complex model to a collection of basic events and interactions when used.
 
-opening the probability to encode model behavior through rules can efficiently
+On a computer, opening the probability to encode model behavior through rules may be done quickly.
 
-be implemented on a computer.
+It must **generate random samples** as a result of its output.
 
-Its output must **generate random samples**.
-
-Its **input distribution** must be known.
+The distribution of its inputs must be identified.
 
 
 
@@ -82,9 +80,9 @@ These are discussed below.
 
 #### Basic Steps
 
-I. **Define possible inputs**
+I. **Define inputs probability**
 
-Define the domain of possible inputs.
+Outline the domain of probable inputs.
 
 
 The emulated *reality* should resemble the reality whose behavior we want to study and describe.
@@ -97,23 +95,23 @@ The features of the inputs should be similar to those of the real cosmos we're a
 
 This means that, dependencies between the inputs should be represented.
 
-III. **Computation on the inputs**
+III. **Computat the inputs**
 
 The computation should be deterministic.
 
 By deterministic, we mean that they should be able to give the same output each time they are computed.
 
-IV. **Aggregate the results**
+IV. **Combine the results**
 
-Assemble the results to obtain the required output.
+Assemble the information to create the desired outcome.
 
-Typical outputs:
+Typical outputs include:
 
 *Histogram*
 
-*Summary statistics (mean, variance, standard deviation…)*
+Histogram
 
-*Confidence interval*
+Statistics in a nutshell (mean, variance, and standard deviation)
 
 ### Examples
 
@@ -125,7 +123,7 @@ You can check this article [here](https://re.sajari.com/token/eyJhbGciOiJIUzI1Ni
 
 #### Example 1: Approximate the value of pi ####
 
-Consider a circle of the best fit that can be slot in the square ranging on ℝ2 over *[−1, 1]²*.
+Consider a best-fitting circle that can be slotted into a square with a range of ℝ2 over *[−1, 1]²*.
 
 • the circle radius = 1 and area = π.
 
@@ -135,7 +133,7 @@ Consider a circle of the best fit that can be slot in the square ranging on ℝ2
 
 **Solution**
 
-We can approximate the value of π using the following Monte Carlo procedure:
+The following Monte Carlo approach can be used to approximate the value of π:
 
 1. Draw the square over *[−1, 1]²*.
 
@@ -257,9 +255,9 @@ Let's take a look at how this would work:
 
 Calculate your Body Mass Index(BMI) and the uncertainty interval that goes with it, assuming:
 
-You weigh 84 kg, according to your scale (precision shown to the nearest kilogram).
+You weigh 84 kg, according to your scale.
 
-Your height ranges between 181 and 182 cm tall (take the average value as 181.5 cm).
+Your height ranges between 181 and 182 cm tall.
 
 ```
 
