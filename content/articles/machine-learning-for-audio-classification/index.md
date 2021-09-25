@@ -46,7 +46,7 @@ A [spectrogram](https://pnsn.org/spectrograms/what-is-a-spectrogram) is a visual
 
 We can convert a waveform to a spectrogram. Technically, this is equivalent to an image. Researchers have found that we can effectively apply computer vision techniques to the spectrogram. This means that we can classify sound with the same methods used to classify images. 
 
-With these, a machine learning model can extract the dominant audio per time frame in a waveform by finding patterns in the spectrogram.
+With these, a machine learning model can extract the dominant audio per time frame in a waveform by finding patterns in the spectrogram. That's one way of finding patterns in audio data. However, in this tutorial, we won't be using a spectogram to find patterns, we'll use a library known as librosa to help us achieve this task. 
 
 Now that you know a little more about audio and how machine learning can classify it, let's implement an audio classification task using TensorFlow. 
 
@@ -73,11 +73,35 @@ import IPython.display as ipd
 import matplotlib.pyplot as plt
 %matplotlib inline
 ```
+#### Loading dataset from kaggle
+Let's load our external data on Kaggle into Google Colab.
+
+Step 1: Head over to your Kaggle account and download your `Kaggle API token`. You'll be able to find it in the API section. By clicking the “Create New API Token”, a kaggle.json file will be generated and downloaded to your computer.
+
+Step 2: Upload the downloaded kaggle.json to your Colab project.
+
+Step 3: Update the KAGGLE_CONFIG_DIR path to the current working directory as shown:
+
+> You get your current working directory by typing `!pwd` on the terminal.
+
+```bash
+os.environ['KAGGLE_CONFIG_DIR'] = "/content"
+```
+Step 4: Finally, run the following Kaggle API to download datasets:
+
+```bash
+!kaggle datasets download -d chrisfilo/urbansound8k
+```
+After downloading, run this command to unzip it.
+
+```bash
+!unzip urbansound8k.zip
+```
+#### Experimenting with one audio file
 We've picked one random audio file, `207214-2-0-26.wav`, from our dataset folder for analysis. 
 
 ```python
-
-file_name='207214-2-0-26.wav'
+file_name='fold5/100263-2-0-121.wav'
 
 audio_data, sampling_rate = librosa.load(file_name)
 librosa.display.waveplot(audio_data,sr=sampling_rate)
@@ -90,8 +114,8 @@ Librosa gives us both the `audio_data` and `sampling_rate`. Let's have a look at
 audio_data
 ```
 ```bash
-array([-0.05423148, -0.06735592, -0.04484271, ...,  0.0022391 ,
-        0.00144733,  0.00318042], dtype=float32)
+array([-0.00270751, -0.00303302, -0.00159557, ..., -0.0012889 ,
+       -0.00184731, -0.00210062], dtype=float32)
 ```
 In mono, there is only one signal. So, the results from our audio_data show that librosa has converted the audio into integers with only one 1-dimension. On the other hand, if it was stereo, we'd have two signals and would have been a 2-D array. Although we won't use stereo signal in our tutorial, it is important to know that stereo sound is usually preffered in audio as it gives us a sense of directionality, perspective, space. But, librosa simplifies these signals into mono for easier processing.
 
@@ -107,8 +131,9 @@ By default, Librosa gives us a sampling rate of 22050.
 Let's now use the Pandas library to read our csv file:
 
 ```python
+audio_dataset_path='/content/'
 metadata=pd.read_csv('UrbanSound8K.csv')
-metadata.head(20)
+metadata.head()
 ```
 We load in the `UrbanSound8K.csv` file available in our downloaded dataset folder. We then store it in a variable known as `metadata`. Using the `head()` method, let's take a look at the first 20 files in our dataset.
 
@@ -174,19 +199,19 @@ mfccs
 ```
 
 ```bash
-array([[-202.62022  , -202.01329  , -200.4418   , ..., -227.46278  ,
-        -233.13579  , -233.2963   ],
-       [  91.41425  ,   99.29152  ,  101.70205  , ...,  116.07799  ,
-         111.3082   ,  112.77126  ],
-       [ -47.724377 ,  -49.833    ,  -53.684807 , ...,  -44.822384 ,
-         -52.033344 ,  -48.76033  ],
+array([[-4.6613168e+02, -4.6417816e+02, -4.7455182e+02, ...,
+        -4.4540848e+02, -4.5221939e+02, -4.5637799e+02],
+       [ 1.0846554e+02,  1.1128984e+02,  1.0955853e+02, ...,
+         1.1160173e+02,  1.1063791e+02,  1.1319142e+02],
+       [-2.5252140e+01, -2.7399439e+01, -3.2546665e+01, ...,
+        -3.8440331e+01, -3.4312595e+01, -3.5521683e+01],
        ...,
-       [  11.641698 ,    8.081518 ,    4.690112 , ...,    1.463356 ,
-           2.0927129,    6.530275 ],
-       [  -7.4063973,   -9.472296 ,  -15.40164  , ...,   -4.4523325,
-           2.7201595,    7.076815 ],
-       [  -9.940983 ,  -15.1958885,  -11.68025  , ...,    3.5043163,
-           3.4744172,    2.1109774]], dtype=float32)
+       [ 2.3573508e+00,  1.6371250e+00,  3.2692363e+00, ...,
+         7.8856702e+00,  1.0755114e+01,  1.1197763e+01],
+       [-3.2311397e+00, -2.6380532e+00,  4.6177328e-01, ...,
+         1.0223865e+01,  1.1984882e+01,  1.3385002e+01],
+       [-1.3852274e+01, -1.0576165e+01, -2.1510942e+00, ...,
+         2.9695926e+00,  2.1894133e+00,  6.6635776e-01]], dtype=float32)
 ```
 These are patterns that have been extracted from one audio file based on the frequency and time characteristics.
 
@@ -201,19 +226,28 @@ for index_num,row in tqdm(metadata.iterrows()):
     extracted_features.append([data,final_class_labels])
 ```
 
+```bash
+
+```
+
 Let's convert the entire list into a data frame using the Pandas library. This converts the results into tables for more straightforward analysis.
 
 ```python
 extracted_features_df=pd.DataFrame(extracted_features,columns=['feature','class'])
-extracted_features_df.head()
+extracted_features_df.head(10)
 ```
 ```bash
-                        feature                          class
-0   [-215.79301, 71.66612, -131.81377, -52.091335,...   dog_bark
-1   [-424.68677, 110.56227, -54.148235, 62.01074, ...   children_playing
-2   [-459.56467, 122.800354, -47.92471, 53.265697,...   children_playing
-3   [-414.55377, 102.896904, -36.66495, 54.18041, ...   children_playing
-4   [-447.397, 115.0954, -53.809113, 61.60859, 1.6...   children_playing
+              feature 	                                 class
+0 	[-215.79301, 71.66612, -131.81377, -52.09133, ... 	dog_bark
+1 	[-424.68677, 110.56227, -54.148235, 62.01074, ... 	children_playing
+2 	[-459.56467, 122.800354, -47.92471, 53.265705,... 	children_playing
+3 	[-414.55377, 102.896904, -36.66495, 54.18041, ... 	children_playing
+4 	[-447.397, 115.0954, -53.809113, 61.60859, 1.6... 	children_playing
+5 	[-447.70856, 118.409454, -35.24866, 56.73993, ... 	children_playing
+6 	[-477.1972, 120.63773, -29.692501, 57.051914, ... 	children_playing
+7 	[-464.84656, 117.71454, -30.163269, 50.72254, ... 	children_playing
+8 	[-472.1215, 126.76601, -38.36653, 58.748646, -... 	children_playing
+9 	[-196.18527, 114.94506, -14.661183, 1.2298629,... 	car_horn
 ```
 
 The results show the extracted features and their respective classes.
@@ -314,9 +348,10 @@ We get the validation accuracy by running the following code:
 test_accuracy=model.evaluate(X_test,y_test,verbose=0)
 print(test_accuracy[1])
 ```
-```python
-model.predict_classes(X_test)
+```bash
+0.7538637518882751
 ```
+We get a validation accuracy of 75.39%. Increasing the number of training epochs will increase this accuracy score.
 
 #### Testing the model
 In this section, we will be performing three steps:
@@ -325,12 +360,12 @@ In this section, we will be performing three steps:
 - We will predict its class with the help of the model that we have created.
 - We will inverse transform the predicted label to get our class label.
 
-Let's choose a random audio file of a gunshot, `131571-6-0-0.wav`, from our dataset to use for testing. 
+Let's choose a random audio file of a gunshot, `102105-3-0-0.wav`, from our dataset to use for testing. 
 
 Basically, in the code below, we repeat the steps we used earlier to preprocess audio data. We then perform a prediction of the class it belongs to and finally uses the `inverse_transform` method to give us the name of the predicted label. 
 
 ```python
-filename="131571-6-0-0.wav"
+filename="/content/fold3/102105-3-0-0.wav"
 audio, sample_rate = librosa.load(filename, res_type='kaiser_fast') 
 mfccs_features = librosa.feature.mfcc(y=audio, sr=sample_rate, n_mfcc=40)
 mfccs_scaled_features = np.mean(mfccs_features.T,axis=0)
