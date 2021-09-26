@@ -211,7 +211,8 @@ Let us test this out by starting the server with the following command:
 python manage.py runserver 
 ```
 
-![result](result.png)
+
+![result](/engineering-education/integrating-chart-js-in-django/result.png)
 
 
 ### Conclusion
