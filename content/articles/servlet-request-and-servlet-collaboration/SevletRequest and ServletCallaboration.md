@@ -25,7 +25,8 @@ Table of contents:
 - [RequestDispatcher Methods](#RequestDispatcher-Methods)	
 - [RequestDispatcher example](#RequestDispatcher-example)
 - [Conclusion](#conclusion)
-### ServletRequest.
+- 
+### ServletRequest
 When we talk of websites, we do interact with,
  we keep asking web pages to do something for us, for example, client updating their profiles, etc. Whenever a client or user tries to update their profile. In this case, Java provides us with an object of the ServletRequest interface, which forwards requested information to a servlet. 
 The service container creates objects for `ServletRequest` and `ServletResponse` when a customer sends requests to a web server that pass through the service method as an argument. The request object provides access to query information, such as the header and information from the requested database.
