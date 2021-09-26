@@ -2,13 +2,13 @@
 layout: engineering-education
 url: /how-to-add-support-for-spatial-data-in-your-database-using-geoalchemy-and-spatialite/
 title: How To Add Support For Spatial Data in your Database Using GeoAlchemy and Spatialite
-description: This tutorial will show a step-by-step guide on how to add support to store and query spatial data for their database in their development environment.
+description: This tutorial will be a step-by-step guide on how to add support to store and query spatial data for their database in their development environment.
 author: paul-asalu
 topics: []
 excerpt_separator: <!--more-->
 images:
-  - url: 
-    alt: 
+  - url: /how-to-add-support-for-spatial-data-in-your-database-using-geoalchemy-and-spatialite/hero.png
+    alt: Spatialite database example image
 ---
 When building certain kinds of applications, it is important to know what kind of data you'll be working with, so you can make adequate preparations to hold and process them. One such instance is when you need to work with "spatial data" (location data - in terms of longitude and latitude).
 <!--more-->
