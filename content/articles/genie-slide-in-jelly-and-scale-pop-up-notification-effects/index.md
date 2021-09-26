@@ -1,13 +1,8 @@
-Websites need notifications to display burning events or additional information.
-Pop-ups, used to pass notifications, are sweet if used effectively and at the right time.
-Notification effects depending on the main website theme bring a website's unique taste and signature look.
+Websites need notifications to display urgent or additional information.Pop-ups, used to pass notifications, are effecient if used effectively and at the right time. Notification effects depending on the main website theme bring a website's unique taste and signature look.
 
-In this article, you will learn how to apply some of these notification effects.
-These are the Genie, Slide-in, Jelly, and scale Pop-up notification effects.
-You will see how eye-catching these effects are dependent on the type of information being displayed.
+In this article, you will learn how to apply some of these notification effects including the Genie, Slide-in, Jelly, and scale Pop-up notification effects. You will learn how to build the eye-catching catching effects and appreciate that these effects are dependent on the type of information being displayed.
 
 ### Table of Contents
-
 - [Table of Contents](#table-of-contents)
 - [Key takeaways](#key-takeaways)
 - [Pre-requisites](#pre-requisites)
@@ -27,9 +22,7 @@ You will see how eye-catching these effects are dependent on the type of informa
 - [References](#references)
 
 ### Key takeaways
-
-By the end of this article, you will learn how to apply some of these notification effects to a webpage.
-These are the:
+By the end of this article, you will learn how to apply the following notification effects to a webpage.
 
 - Slide-in effect
 - Genie effect
@@ -39,31 +32,15 @@ These are the:
 You will also get to know some notification effects which we can use on your webpage and when to use them.
 
 ### Pre-requisites
-
-For you to flow easily with this article, you need to have some of these basics:
-
+For you to flow easily with this article, you need to know the following:
 - Basics of HTML. Know-how on creating web pages and linking other files to them.
 - Good use of CSS.
 - Interactions with JavaScript.
 - Web development IDE. It should support webpage preview capabilities. These will be helpful during the development process.
 I definitely recommend Visual Studio Code IDE. You can download it from [here](https://code.visualstudio.com/).
 
-### Brief overview
-
-In this article the reader will be led through the following steps:
-
-- Create a folder structure
-- Make an overall web structure
-- Add some styling to the page
-- Add some notification and effects
-- Add some final styling
-
-Get into action through the steps following below.
-
 ### Create Folder structure
-
-Create a root folder named `Notifications`. All the project code will lie here.
-The root folder structure will be as shown below:
+Create a root folder named `Notifications`. All the project code will lie here. The root folder structure will be as shown below:
 
 ```shell
 .
@@ -82,15 +59,9 @@ The root folder structure will be as shown below:
 └── growl-effects-slide-in.html (file)
 ```
 
-Create the files and folders as shown above.
+### Overall webpage structure
 
-### Overall Webpage Structure
-
-In the `growl-effects-scale.html`, add the following:
-
-- A header
-- A button that shows the notification when clicked.
-- Other web pages containing the other type of notifications.
+In the `growl-effects-scale.html`, add the following snippet:
 
 ```html
 <!DOCTYPE html>
@@ -143,8 +114,6 @@ In the `growl-effects-scale.html`, add the following:
 </html>
 ```
 
-It looks as follows:
-
 ![Webpage Framework](Webpage-framework.png "Webpage Framework")
 
 Copy-paste the above code in the `growl-effects-genie.html` file. Repeat the step in `growl-effects-jelly.html` and `growl-effects-slide-in.html` files.
@@ -191,7 +160,7 @@ Repeat this for the other two files to get the Code below for:
 
 ### Add styling
 
-In the `demo.css` file, do as follows:
+In the `demo.css` file,
 
 - Use `border-box` for all elements before and after. Set clearfix class styling both before and after.
 
@@ -477,12 +446,9 @@ The styling is as shown below:
 }
 ```
 
-This makes it look as shown in the image below:
-
 ![Style the pages](style-the-pages.png "Style the pages")
 
 ### Add a notification to the window
-
 In the Javascript folder, named `js`, open the 'notificationFX.js' file. In the file, you will do the following:
 
 - Create a function that will take in the window as the argument. The function will later invoke it.
@@ -544,158 +510,156 @@ This is shown in the code below:
 - Create a `NotificationFX options` function that allows one to easily set the notification type and styles.
 The function allows one to set the following: 
 
-- - wrapper of the notification
-- - message
-- - layout
-- - effect
-- - time taken to leave the scene once displayed (ttl). The time is in milliseconds(ms).
-- - on-open and on-close callback functions
+    - wrapper of the notification
+    - message
+    - layout
+    - effect
+    - time taken to leave the scene once displayed (ttl). The time is in milliseconds(ms).
+    - on-open and on-close callback functions
 
 These are well displayed below:
 
 ```javascript
-	/**
-	 * NotificationFx options
-	 */
-	NotificationFx.prototype.options = {
-		// element to which the notification will be appended
-		// defaults to the document.body
-		wrapper : document.body,
-		// the message
-		message : 'Hello!',
-		// layout type: growl|attached|bar|other
-		layout : 'growl',
-		// effects for the specified layout:
-		// for growl layout: scale|slide|genie|jelly
-		effect : 'slide',
-		// notice, warning, error, success
-		// will add class ns-type-warning, ns-type-error or ns-type-success
-		type : 'error',
-		// if the user doesn´t close the notification then we remove it
-		// after the following time
-		ttl : 6000,
-		// callbacks
-		onClose : function() { return false; },
-		onOpen : function() { return false; }
-	}
+/**
+    * NotificationFx options
+    */
+NotificationFx.prototype.options = {
+    // element to which the notification will be appended
+    // defaults to the document.body
+    wrapper : document.body,
+    // the message
+    message : 'Hello!',
+    // layout type: growl|attached|bar|other
+    layout : 'growl',
+    // effects for the specified layout:
+    // for growl layout: scale|slide|genie|jelly
+    effect : 'slide',
+    // notice, warning, error, success
+    // will add class ns-type-warning, ns-type-error or ns-type-success
+    type : 'error',
+    // if the user doesn´t close the notification then we remove it
+    // after the following time
+    ttl : 6000,
+    // callbacks
+    onClose : function() { return false; },
+    onOpen : function() { return false; }
+}
 ```
 
-> Remember, the wrapper of the notification can be changed.
-> This can be handy if the notification should only be in a certain element or part of the webpage.
+> Remember, the wrapper of the notification can be changed. This can be handy if the notification should only be in a certain element or part of the webpage.
 
 - Add a new function below the above function. This function is for initializing and caching variables created.
-The function will do the following:
-- - create a new `div` element in the HTML file
-- - add classes to the created element.
-This addition helps the notification inherit the properties and styles in the stylesheets.
-- - Add the message specified in the options set above inside the element
-- - Add a closing tag to the element created
-- - append the notification to the body or the element specified in `options.wrapper`
-- - check if the notification is still active or on. If so, dismiss the notification once the time in the `options.ttl` runs out.
 
-The above steps are shown in the Code below:
+The function will do the following:
+    - create a new `div` element in the HTML file
+    - add classes to the created element. This addition helps the notification inherit the properties and styles in the stylesheets.
+    - Add the message specified in the options set above inside the element
+    - Add a closing tag to the element created
+    - append the notification to the body or the element specified in `options.wrapper`
+    - check if the notification is still active or on. If so, dismiss the notification once the time in the `options.ttl` runs out.
+
 
 ```javascript
-	NotificationFx.prototype._init = function() {
-		// create HTML structure
-		this.ntf = document.createElement( 'div' );
-		this.ntf.className = 'ns-box ns-' + this.options.layout + ' ns-effect-' + this.options.effect + ' ns-type-' + this.options.type;
-		var strinner = '<div class="ns-box-inner">';
-		strinner += this.options.message;
-		strinner += '</div>';
-		strinner += '<span class="ns-close"></span></div>';
-		this.ntf.innerHTML = strinner;
+NotificationFx.prototype._init = function() {
+    // create HTML structure
+    this.ntf = document.createElement( 'div' );
+    this.ntf.className = 'ns-box ns-' + this.options.layout + ' ns-effect-' + this.options.effect + ' ns-type-' + this.options.type;
+    var strinner = '<div class="ns-box-inner">';
+    strinner += this.options.message;
+    strinner += '</div>';
+    strinner += '<span class="ns-close"></span></div>';
+    this.ntf.innerHTML = strinner;
 
-		// append to body or the element specified in options.wrapper
-		// This creates the notification before the first child in the HTML file.
-		this.options.wrapper.insertBefore( this.ntf, this.options.wrapper.firstChild );
+    // append to body or the element specified in options.wrapper
+    // This creates the notification before the first child in the HTML file.
+    this.options.wrapper.insertBefore( this.ntf, this.options.wrapper.firstChild );
 
-		// dismiss after [options.ttl]ms
-		var self = this;
+    // dismiss after [options.ttl]ms
+    var self = this;
 
-		if(this.options.ttl) { // checks to make sure ttl is not set to false in notification initialization
-			this.dismissttl = setTimeout( function() {
-				if( self.active ) {
-					self.dismiss();
-				}
-			}, this.options.ttl );
-		}
+    if(this.options.ttl) { // checks to make sure ttl is not set to false in notification initialization
+        this.dismissttl = setTimeout( function() {
+            if( self.active ) {
+                self.dismiss();
+            }
+        }, this.options.ttl );
+    }
 
-		// init events
-		this._initEvents();
-	}
+    // init events
+    this._initEvents();
+}
 ```
 
 - Create a function that dismisses the notification when one clicks the close button.
-The code should be after the code above:
 
 ```javascript
-	/**
-	 * init events
-	 */
-	NotificationFx.prototype._initEvents = function() {
-		var self = this;
-		// dismiss notification
-		this.ntf.querySelector( '.ns-close' ).addEventListener( 'click', function() { self.dismiss(); } );
-	}
+/**
+    * init events
+    */
+NotificationFx.prototype._initEvents = function() {
+    var self = this;
+    // dismiss notification
+    this.ntf.querySelector( '.ns-close' ).addEventListener( 'click', function() { self.dismiss(); } );
+}
 ```
 
 - Add a function that will display the notification.
 It will utilize the functions in the `classie.js` file to search for the class names and remove them from the element.
+
 The function will add another class to it. It then executes the on-open callback function. Check this out below:
 
 ```javascript
-	/**
-	 * show the notification
-	 */
-	NotificationFx.prototype.show = function() {
-		this.active = true;
-		classie.remove( this.ntf, 'ns-hide' );
-		classie.add( this.ntf, 'ns-show' );
-		if (typeof this.options.onOpen === 'function')
-			this.options.onOpen();
-	}
+/**
+* show the notification
+*/
+NotificationFx.prototype.show = function() {
+    this.active = true;
+    classie.remove( this.ntf, 'ns-hide' );
+    classie.add( this.ntf, 'ns-show' );
+    if (typeof this.options.onOpen === 'function')
+        this.options.onOpen();
+}
 ```
 
-- Add a function to dismiss the notification once the timeout runs out or the notification close button is clicked on.
-The timeout will be cleared. The `ns-show` class name will also be removed.
-The function then executes on-close callback functions if specified.
-The time to execute the callback function procedures is set to 25 ms.
+- Add a function to dismiss the notification once the timeout runs out or the notification close button is clicked on. The timeout will be cleared. The `ns-show` class name will also be removed.
+
+The function then executes on-close callback functions if specified. The time to execute the callback function procedures is set to 25 ms.
+
 The function removes the notification element once the notification ends. If it doesn't find the notification in the `target` inside the DOM element, then returns false.
 
 ```javascript
-	/**
-	 * dismiss the notification
-	 */
-	NotificationFx.prototype.dismiss = function() {
-		var self = this;
-		this.active = false;
-		clearTimeout( this.dismissttl );
-		classie.remove( this.ntf, 'ns-show' );
-		setTimeout( function() {
-			classie.add( self.ntf, 'ns-hide' );
+/**
+    * dismiss the notification
+    */
+NotificationFx.prototype.dismiss = function() {
+    var self = this;
+    this.active = false;
+    clearTimeout( this.dismissttl );
+    classie.remove( this.ntf, 'ns-show' );
+    setTimeout( function() {
+        classie.add( self.ntf, 'ns-hide' );
 
-			// callback
-			if (typeof self.options.onClose === 'function')
-				self.options.onClose();
-		}, 25 );
+        // callback
+        if (typeof self.options.onClose === 'function')
+            self.options.onClose();
+    }, 25 );
 
-		// after animation ends remove ntf from the DOM
-		var onEndAnimationFn = function( ev ) {
-			if( support.animations ) {
-				if( ev.target !== self.ntf ) return false;
-				this.removeEventListener( animEndEventName, onEndAnimationFn );
-			}
-			self.options.wrapper.removeChild( self.ntf );
-		};
+    // after animation ends remove ntf from the DOM
+    var onEndAnimationFn = function( ev ) {
+        if( support.animations ) {
+            if( ev.target !== self.ntf ) return false;
+            this.removeEventListener( animEndEventName, onEndAnimationFn );
+        }
+        self.options.wrapper.removeChild( self.ntf );
+    };
 
-		if( support.animations ) {
-			this.ntf.addEventListener( animEndEventName, onEndAnimationFn );
-		}
-		else {
-			onEndAnimationFn();
-		}
-	}
+    if( support.animations ) {
+        this.ntf.addEventListener( animEndEventName, onEndAnimationFn );
+    }
+    else {
+        onEndAnimationFn();
+    }
+}
 ```
 
 - Add the `NotificationFx` function to be a global function seen in all the window.
@@ -703,18 +667,14 @@ This step allows the function to be used in the HTML file quickly.
 See this in the code below:
 
 ```javascript
-	/**
-	 * add to the global namespace
-	 */
-	window.NotificationFx = NotificationFx;
+/**
+    * add to the global namespace
+    */
+window.NotificationFx = NotificationFx;
 ```
 
 ### Create functions to search for the classes in the HTML file
-
-Open the `classie.js` file.
-Inside the file do the following:
-
-- add a function to take in the window as an argument and invoke it.
+Open the `classie.js` file and add add a function to take in the window as an argument and invoke it.
 
 ```javascript
 ( function( window ) {
@@ -808,7 +768,6 @@ if ( typeof define === 'function' && define.amd ) {
 ```
 
 ### Modify the HTML file to add the notification
-
 Inside the `growl-effects-scale.html` file, just below the `<script src="js/notificationFx.js"></script>` line, add a script that does the following:
 
 - Create a function that invokes itself. It will hold the other functions:
@@ -832,51 +791,47 @@ Look at the button below for this:
 ```
 
 - Add a function that disables the button which is clicked.
-It then uses the `NotificationFx` function created before to quickly set the options of the notification.
-  It makes sure that the button is not disabled.
-  Disabling the button prevents double-clicking till when the notification disappears.
-As for the `growl` layout, it supports the following notification effects:
-- - scale (will be used in the `growl-effects-scale.html` file)
-- - jelly
-- - slide in
-- - genie
+It then uses the `NotificationFx` function created before to quickly set the options of the notification. making makes sure that the button is not disabled since disabling the button prevents double-clicking till when the notification disappears. As for the `growl` layout, it supports the following notification effects:
+    - scale (will be used in the `growl-effects-scale.html` file)
+    - jelly
+    - slide in
+    - genie
 
 ```javascript
-        bttn.addEventListener( 'click', function() {
-            
-            // simulate loading (for demo purposes only)
-            classie.add( bttn, 'active' );
-            setTimeout( function() {
+bttn.addEventListener( 'click', function() {
+    
+    // simulate loading (for demo purposes only)
+    classie.add( bttn, 'active' );
+    setTimeout( function() {
 
-                classie.remove( bttn, 'active' );
+        classie.remove( bttn, 'active' );
 
-                // create the notification
-                var notification = new NotificationFx({
+        // create the notification
+        var notification = new NotificationFx({
 
-                    // Added an apostrophe (') escape character in the message to avoid errors
-                    message : '<p>Hello there! I\'m a classic notification, but I have some elastic jelliness thanks to <a href="http://bouncejs.com/">bounce.js</a>. </p>',
-                    layout : 'growl',
-                    effect : 'scale',
-                    type : 'notice', // notice, warning, error or success
-                    ttl : 6000,
-                    // On close of the notification, enable the button
-                    onClose : function() {
-                        bttn.disabled = false;
-                    }
-                });
+            // Added an apostrophe (') escape character in the message to avoid errors
+            message : '<p>Hello there! I\'m a classic notification, but I have some elastic jelliness thanks to <a href="http://bouncejs.com/">bounce.js</a>. </p>',
+            layout : 'growl',
+            effect : 'scale',
+            type : 'notice', // notice, warning, error or success
+            ttl : 6000,
+            // On close of the notification, enable the button
+            onClose : function() {
+                bttn.disabled = false;
+            }
+        });
 
-                // show the notification
-                notification.show();
+        // show the notification
+        notification.show();
 
-            }, 1200 );
+    }, 1200 );
 
-            // disable the button (for demo purposes only)
-            this.disabled = true;
-        } );
+    // disable the button (for demo purposes only)
+    this.disabled = true;
+} );
 ```
 
 ### Use a minified modernizr file for animations
-
 Head over to this [link](https://github.com/prograte/Genie-Slide-in-Jelly-and-scale-Pop-up-Notification-effects/blob/main/js/modernizr.custom.js) to find the `modernizr.custom.js` file. Copy the content into the `modernizr.custom.js` file in the `js` folder. Do this by copy-pasting the code directly or viewing it as a _RAW_ file before copy-pasting it.
 
 > '**modernizr.custom.js**' has been generated and downloaded from this [Modernizr](http://modernizr.com/download/#-cssanimations-shiv-cssclasses-prefixed-testprop-testallprops-domprefixes-load) site.
@@ -890,10 +845,8 @@ It will look as follows:
 ![Add modernizr minified js file](add-modernizr.custom.js-file.png "Add modernizr minified js file")
 
 One notices that it hardly looks like a pop-up notification. The reason for this is that it has not been formatted yet.
-It has only been added to the HTML file.
 
 ### Format the notification
-
 Style the notification to look like a pop-up notification. In the `ns-default.css` file do the following:
 
 - Style the notification box in the webpage:
@@ -1510,14 +1463,9 @@ The code for this is shown below:
 }
 ```
 
-The effect looks as follows:
-
 ![genie effect gif](genie-effect-gif.gif "genie effect gif")
 
 ### Normalize the webpages
-
-These are just some final touches for the project.
-
 Copy and paste the content of `normalize.css` file from [here](https://github.com/prograte/Genie-Slide-in-Jelly-and-scale-Pop-up-Notification-effects/blob/main/css/normalize.css). Do this by copy-pasting the code directly or viewing it as a _RAW_ file before copy-pasting it.
 
 The code in the file styles the webpage elements to look well.
@@ -1525,26 +1473,13 @@ It is additional formatting to make the webpage look appealing to other browsers
 
 In case of any issues, find the code for the article in [this](https://github.com/prograte/Genie-Slide-in-Jelly-and-scale-Pop-up-Notification-effects) repository. Modify it to create desired outputs for projects.
 
-### Bonus
-
-Now, format the webpage and the notification colors using the templates made before.
-Head over to the `demo.css` file.
-In the body element, change the background color to the property in `color-11`. That is `#00a2d3`.
-In the `ns-style-growl.css`, modify the `background` in the `ns-effect-slide` to the value in `color-10`.
-That is `00cfbe`.
-
-Open the `growl-effects-slide-in.html` file via the `Slide in button`.
-It produces a beautiful design as shown below:
 
 ![changing color template](changing-color-template.png "changing color template")
 
-Use [coolors.co](https://coolors.co/) to generate color templates for more visually appealing sites.
-It is free and very interactive.
+>Use [coolors.co](https://coolors.co/) to generate color templates for more visually appealing sites. 
 
 ### Conclusion
-
-In the article, the following has been learned:
-
+In the article, the reader learned the folllowing:
 - Creating a web structure for a notification
 - Formatting the webpage
 - Adding a notification trigger event
@@ -1552,9 +1487,3 @@ In the article, the following has been learned:
 - Changing the type of notifications
 - Changing the colors of the site according to the templates created.
 
-
-****
-
-### References
-
-- N/A
