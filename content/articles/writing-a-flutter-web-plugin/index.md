@@ -6,7 +6,7 @@ url: /writing-a-flutter-web-plugin/
 title: Writing a Flutter Web Plugin
 description:  This article will walk the readers through writing their first web plugin in Flutter.
 author: faith-zawadi
-date: 2021-09-26T00:00:00-06:09
+date: 2021-09-26T00:00:00-11:15
 topics: []
 excerpt_separator: <!--more-->
 images:
