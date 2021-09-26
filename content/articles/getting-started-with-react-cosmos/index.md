@@ -64,9 +64,9 @@ npm start
 
 The React development server starts at `http://localhost:3000/`. The application in the browser should look like this:
 
-![cosmos landing page](/engineering-education/Getting-Started-with-react-cosmos/cosmos-app.png)
+![cosmos landing page](/engineering-education/getting-started-with-react-cosmos/cosmos-app.png)
 
-![cosmos cart page](/engineering-education/Getting-Started-with-react-cosmos/cosmos-app-cart.png)
+![cosmos cart page](/engineering-education/getting-started-with-react-cosmos/cosmos-app-cart.png)
 
 
 Let's install the React Cosmos package as a dev dependency. On your terminal, execute the command:
@@ -129,7 +129,7 @@ If you prefer yarn:
 
 When the server is up and running, navigate to `http://localhost/5000` in your favourite browser, and you should see something like this.
 
-![cosmos starter](/engineering-education/Getting-Started-with-react-cosmos/cosmos-starter.png)
+![cosmos starter](/engineering-education/getting-started-with-react-cosmos/cosmos-starter.png)
 
 ### Creating a Component using Fixtures
 
@@ -154,7 +154,7 @@ export default (
 
 In our Cosmos Explorer under **ALL FIXTURES**, we should see:
 
-![cosmos button](/engineering-education/Getting-Started-with-react-cosmos/cosmos-btn.png)
+![cosmos button](/engineering-education/getting-started-with-react-cosmos/cosmos-btn.png)
 
 
 On the right panel, we can edit any of the button component's properties. Let's add a secondary and primary Button variant to a variant prop.
@@ -210,7 +210,7 @@ Let's briefly dissect the above code:
 
 Let's run a demo in the sandbox:
 
-![cosmos variants](/engineering-education/Getting-Started-with-react-cosmos/cosmos-variants.gif)
+![cosmos variants](/engineering-education/getting-started-with-react-cosmos/cosmos-variants.gif)
 
 We can toggle between either of the two variant options. Try changing the variant prop to confirm that our background color changes accordingly.
 
