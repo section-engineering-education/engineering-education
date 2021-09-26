@@ -1,69 +1,196 @@
-For the last four years, security researchers have reported a tremendous increase of breaches.About 20-30,000 websites are hacked everyday.There are several ways websites get hacked,XXE being one of them.According to the OWASP Top 10 report of 2017 XXE attacks were ranked number four , this year (2021), XXE has been merged in Security misconfiguration which has been placed in the fifth position.The OWASP Top 10 is a report maintained by the Open Web Application Security Project , it contains a list of high ranking web application security concerns.
-In this article we will be looking at XXE attacks in depth.We will focus on what XML is, What are XML external entities , Impact of this attack and how to mitigate it.
-> **Disclaimer: ** - This article is meant to be used  for educational purposes only. 
-### Prequisites
- - Basic knowledge on incerpting traffic flow using Burpsuite, OWASP zap or any other tool.
+For the last four years, security researchers have reported a tremendous increase in breaches. About 20-30,000 websites get hacked every day. There are several ways websites get hacked, XXE being one of them. According to the OWASP Top 10 report of 2017, they ranked XXE attacks number four. This year (2021), XXE has been merged in security misconfiguration, which is placed in the fifth position. The OWASP Top 10 is a report maintained by the Open Web Application Security Project. It contains a list of high-ranking web application security concerns.
+
+In this article, we will look at XXE attacks in depth. We will focus on what XML is, what are XML external entities, the Impact of this attack, and how to mitigate it.
+
+> **Disclaimer: ** - This article is to be used for educational purposes only. 
+
+### Prerequisites
+
+ - Basic knowledge of intercepting traffic flow using Burpsuite, OWASP zap, or any other tool.
+
 ### What is XML ?
-Extensible Markup Language is a markup language ,just like HTML, that is human and machine-readble.XML was developed by the World Wide Web Consortium (W3C). Unlike HTML, Users can define their own tags.The most common use of this language is transporting and storing data.Apart from that , XML can also be used to offload and reload databases, merge with sytle sheets to create a desired output among other uses.
 
-Here is a sample  XML code:
+Extensible Markup Language is a markup language, just like HTML, that is human and machine-readable.The World Wide Web Consortium (W3C) developed XML. Unlike HTML, users can define their tags. The most common use of this language is transporting and storing data. Apart from that, XML can also offload and reload databases, merge with style sheets to create the desired output among other uses.
+
+Here is a sample XML code:
+
 ```xml
+
 <?xml version="1.0" encoding="UTF-8"?>
+
 <Greeting>
-    <From>Felix</From>
-    <To>Section readers</To>
-    <message>How are you today?</message>
+
+    <From>Felix</From>
+
+    <To>Section readers</To>
+
+    <message>How are you today? </message>
+
 </Greeting>
 
 ```
-Let's go through the code to understand its syntax :
+
+Let’s go through the code to understand its syntax :
+
 **Line 1:**
+
 ```xml
+
 <?xml version="1.0" encoding="UTF-8"?>
+
 ```
-This line declares the version of xml being used , it also states the encoding to be used . `UTF-8`is the default encoding for languages such as CSS ,Javascript,PHP and others.This line is commonly known as the prolong and is not mandatory in the xml code.If you decide to include the prolog it should be the first line of the document.
+
+This line declares the version of XML being used, it also states the encoding to be used. `UTF-8`is the default encoding for languages such as CSS, Javascript, PHP, and others. We commonly known this line as the prolong and is not mandatory in the XML code. If you decide to include the prolog, it should be the first line of the document.
+
 **Line 2:**
-```xml
+
+```XML
+
 <Greeting>
-     <!--Supporting content-->
+
+     <!--Supporting content-->
+
 </Greeting>
-``` 
-`<Greeting>` acts as the parent/root element for this piece of code.Each XML document must have a root element .XMl tags are case-sensitive , each tag must have a similar closing tag.All other tags in this document will be anchored to this tag.
+
+``` 
+
+`<Greeting>` acts as the parent/root element for this piece of code.Each XML document must have a root element. XMl tags are case-sensitive , each tag must have a similar closing tag. All other tags in this document will be anchored to this tag.
+
 **Line 3:**
+
 ```xml
-    <From>Felix</From>
-    <To>Section readers</To>
-    <message>How are you today?</message>
-    <!--this is a comment-->
+
+    <From>Felix</From>
+
+    <To>Section readers</To>
+
+    <message>How are you today?</message>
+
+    <!--this is a comment-->
+
 ```
-This section contains the child nodes of this XML document.This is where we input the rest of the content we would like in our  document.XML like any othe language has comments. To write comments in XML we use `<!--comment-->`,similar to how we write comments in HTML.
+
+This section contains the child nodes of this XML document. This is where we input the rest of the content we would like in our document.XML, like any other language, has comments. To write comments in XML, we use `<!--comment-->`,similar to how we write comments in HTML.
 
 **XML Entities**
-In other programming languages when we want to temporarily store data we use variables,In XML we use entites to hold our data.Whenever we need that data , we call the entities by appending `&`to the enitiy name such that we have something similar to this : `&Entityname`.Entities can also be used to access data that is not stored locally, in such a case they are reffered to as external entities.
+
+In other programming languages, when we want to store data temporarily, we use variables. In XML, we use entities to hold our data. Whenever we need that data, we call the entities by appending `&` to the entity name such that we have something similar to this: `&Entityname`.Entities can also access data that is not stored locally, in such a case we call them external entities.
+
 **Document Type Definition (DTD)**
-The DTD contains a defination of the structure and legal attributes and elements of an XMl document.DTD can be both within the document or loaded from an external source .When loading from an external source we use the keyword `SYSTEM`.The external source can either be a URL or a file.A sample XML document with both DTD and entities will look like this.
+
+The DTD contains a definition of the structure and legal attributes and elements of a XMl document.DTD can be both within the document or loaded from an external source. When loading from an external source, we use the keyword `SYSTEM`. The external source can either be a URL or a file.A sample XML document with both DTD and entities will look like this.
+
 ```xml
+
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mail [ <!ENTITY sender "felix"> ]>
+
+<!DOCTYPE mail [ <!ENTITY sender “felix”> ]>
+
 <Greeting>
-      <From>&sender;</From>
-      <To>Section reader</To>
-      <Message>Hello, How are you today?</Message>
+
+      <From>&sender;</From>
+
+      <To>Section reader</To>
+
+      <Message>Hello, How are you today?</Message>
+
 </Greeting>
-```
-When the above code is parsed , we get this :
-```
-From	:	felix
-To	:	Section reader
-Message	:	Hello, How are you today?
+
 ```
 
-Now that we have learnt how a basic XML document looks like , lets learn how the attack works.
+When the above code is parsed, we get this :
+
+```
+
+From: Felix
+
+To: Section reader
+
+Message: Hello, How are you today?
+
+```
+
+Now that we have learned how a basic XML document looks like, let’s learn how the attack works.
 
 ### How XXE attacks work
-XXE attacks arise when external entities are supported and parsed by a weak XML parser. An attacker intercepts the XML data when in transit and adds malicious code.When processed, the application may disclose infomattion that is meant to be private.Mostly these attacks enable the attackers to view the filesystem and in some cases they are able to interact with any back-end services that the application can access.
-There are several types of XXE attacks namely:
-- In-band XXE : In this type , the attacker is able to receive an immediate response for the XXE payload they have uploaded.
-- Out-of-band XXE (blind XXE):The attacker does not get an immediate reponse of their payload. To get a response they reflect the output to another file or their server.
 
-[Portswigger](www.portswigger.net/web-security/xxe) has several labs that can help you practice.For this article, i will use one of the labs to demonstrate how  XXE attacks can be used to retrieve files.
+XXE attacks arise when external entities are supported and parsed by a weak XML parser. An attacker intercepts the XML data when in transit and adds malicious code. When processed, the application may disclose information that is private. Mostly these attacks enable the attackers to view the filesystem and, sometimes, they can interact with any back-end services that the application can access.
+
+There are several types of XXE attacks, namely:
+
+- In-band XXE: In this type, the attacker can receive an immediate response for the XXE payload they have uploaded.
+
+- Out-of-band XXE (blind XXE): The attacker does not get an immediate response to their payload. To get a response, they reflect the output to another file or their server.
+
+[Portswigger](www.portswigger.net/web-security/xxe) has several labs that can help you practice. For this article, I will use one lab to show how XXE attacks can retrieve files.
+
+Using Burpsuite, we intercept the data and send it to the repeater.
+
+Since the current data does not have any entities, we will introduce our own and add malicious code. Using the entities we introduce, we will try to check whether we can retrieve the password file. 
+
+If we are successful, we should be able to see the file as shown below:
+
+Apart from retrieving files, we can use XXE attacks for :
+
+- Denial of Service attacks. Most common being the billion laugh attack 
+
+- Server-side request forgery attacks:- Using the external entities an attacker can make HTTP requests to URLs, then the server can access, including those meant to be for internal use only in an organization. The attacker just places the URL that they are targeting. When the target is parsed, the contents of the said domain are exposed. Here is a sample payload for such an attack.
+
+```xml
+
+<!DOCTYPE ssrf [ <!ENTITY xxe SYSTEM “http://target.exploited-website.url/“> ]>
+
+```
+
+### Impacts of XXE 
+
+- Unauthorized access to systems where system files, i.e. password files, were exposed.
+
+- Denial of service, which may cause economic loss, especially on high-traffic business websites.
+
+- Remote code execution.
+
+### Testing for XXE attacks
+
+We can do reliable testing for XXE using tools such as Burpsuite [web vulnerability scanner](https://portswigger.net/burp/vulnerability-scanner). We can also use [OWASP Zap](https://www.zaproxy.org/) to perform similar tests.
+
+  
+
+### How to prevent XXE attacks.
+
+- Disable External entities on your websites if using XML.
+
+- Developer training on safe coding practices.
+
+- Using automatic testing security tools to search for XXE vulnerabilities.
+
+- Whitelisting server-side input to prevent hostile data within documents, headers, or nodes.
+
+- Make use of Web Application Firewalls.
+
+- Encrypting data and authenticating all internal connections to prevent SSRF attacks.
+
+  
+
+### Conclusion
+
+XXE attacks are an enormous threat to web applications. If not detected or prevented, they can lead to huge economic and data loss. The major cause of XXE attacks is the external entities present in our XML documents.
+
+What we have looked at :
+
+- What is XML?
+
+- How XXE attacks take place.
+
+- Impacts of XXE attacks.
+
+- How to prevent XXE attacks.
+
+  
+
+Let’s keep our web applications secure. Happy learning!
+
+### Further reading 
+
+- [Preventing XXE attacks](https://cheatsheetseries.owasp.org/cheatsheets/XML_External_Entity_Prevention_Cheat_Sheet.html)
+
