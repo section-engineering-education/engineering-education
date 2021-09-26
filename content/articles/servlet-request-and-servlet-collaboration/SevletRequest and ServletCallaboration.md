@@ -18,7 +18,7 @@ You will need to install the following tools to go along with the article:
 
 Table of contents:
 
-- [ServletRequest](ServletRequest)	
+- [ServletRequest](#ServletRequest)	
 - [Methods of ServletRequest](#Methods-of-ServletRequest)	
 - [ServletRequest interface example](#ServletRequest-interface-example)	 
 - [RequestDispatcher](#RequestDispatcher)	
