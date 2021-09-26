@@ -460,3 +460,6 @@ You can find the full code [here](https://github.com/Curiouspaul1/spatial-databa
 - [Geoalchemy documentation](https://geoalchemy-2.readthedocs.io/en)
 - [Spatialite download guide](https://xl-optim.com/spatialite-and-python-in-2020/)
 - [Spatialite Documentation](http://www.gaia-gis.it/gaia-sins/spatialite-sql-latest.html)
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
