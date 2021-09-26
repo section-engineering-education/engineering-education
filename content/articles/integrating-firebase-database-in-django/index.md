@@ -31,7 +31,6 @@ To follow along with this tutorial, you will need the following:
 - Next, we are asked to give our project a name
 ![Project name](/engineering-education/integrating-firebase-database-in-django/project-name.png)
 
-
 - After typing in our project name, we click on the continue button, which takes us to the screen asking if we want google analytics in our project. We do not need analytics in our project, and you can click the toggle button or click continue.
 
 - Next, we need to select our account and click on create project. This takes a few seconds to create.
@@ -39,7 +38,6 @@ To follow along with this tutorial, you will need the following:
 
 - Now that our project has been created, we click on continue, which redirects us to our project's dashboard.
 ![Project name](/engineering-education/integrating-firebase-database-in-django/project-name.png)
-
 
 - On our dashboard, we have three icons, ios, android and web. Since we are working on a web project, we will be clicking on the web icon. This directs us to a form that asks us to name our web app. Type in a name and click `register app`.
 ![App name](/engineering-education/integrating-firebase-database-in-django/appname.png)
@@ -53,7 +51,6 @@ To follow along with this tutorial, you will need the following:
 From our dashboard, to create a database, we click on  `Realtime Database`, `Create Database`. Next, we need to set up the database. You can go with the default country and click `next`. For the security rules, we will be choosing the `Start in Test Mode` option. This is because it is still in the testing stage. The `Start in Locked Mode` should be selected once the app is ready for production.
 
 ![Database Setup](/engineering-education/integrating-firebase-database-in-django/test-mode.png)
-
 
 - Once we are done with that, we are presented with a page for input data into our database.
 ![Database](/engineering-education/integrating-firebase-database-in-django/setup.png)
@@ -172,7 +169,6 @@ Next, we add the following lines of code to the `index.html` file.
 
 <p>Hi, my name is {{name}} and i code {{stack}}.</p>
 <p>My favourite framework is {{framework}}</p>
-
 ```
 
 Next, we need to update the `DIRS` to the path of the templates folder in our `settings.py` file.
