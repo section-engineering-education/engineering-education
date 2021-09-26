@@ -1,6 +1,6 @@
-The React library has quickly established itself as a popular JavaScript UI library. As a component library, developers can build reusable UI components. However, reusing and implementing tests within the components is a convoluted task. React Cosmos is a React library that provides an environment to reuse, test, and develop UI components in isolation. Using the React Cosmos sandbox, we can make changes to components props interactively and get instant changes during development.
+The React library has quickly established itself as a popular JavaScript UI library. As a component library, developers can build reusable UI components. However, reusing and implementing tests within the components is a complex task. React Cosmos is a React library that provides an environment to reuse, test, and develop UI components in isolation. Using the React Cosmos sandbox, we can interactively change components props and get instant changes during development.
 
-In this tutorial, we will cover the basics of React Cosmos using a food odering React application. Let's get started!
+In this tutorial, we will cover the basics of React Cosmos using a food ordering React application. Let's get started!
 
 ### Prerequisites for React Cosmos
 
@@ -21,7 +21,7 @@ The key benefits of using React Cosmos include:
   
 - Debugging is much easier due to isolated components.
   
-- Using a component-based library like React is essential in design systems. Building your components using React Cosmos ensures reusability across multiple projects. This avoids duplication of effort in creating a uniform branding across your product suite.
+- Using a component-based library like React is essential in design systems. Building your components using React Cosmos ensures reusability across multiple projects. This avoids duplication of effort in creating consistent branding across your product suite.
 
 
 ### Project Setup
@@ -32,7 +32,7 @@ To get started with React Cosmos, we will clone an app from this repository. Thi
 git clone https://github.com/marienjus/React-Cosmos.git
 ```
 
-Once you've cloned the repo, install dependencies by running `yarn install` or `npm install` in your terminal and open the application in your favorite IDE. Below is the structure of our components in this application.
+Once you've cloned the repo, install dependencies by running `yarn install` or `npm install` in your terminal and open the application in your favourite IDE. Below is the structure of our components in this application.
 
 Our `src/components` folder has:
 
@@ -95,7 +95,7 @@ To make sure that React Cosmos works with create-react-app, add a `cosmos.config
 ```
 Here, `watchDirs` and `staticPath` properties tell React Cosmos to watch our `src` directory any static assets in the public folder. Finally, We then need to point our webpack config file and use `globalImports` to enable our CSS global files.
 
-Next, we should first install a `cross-env` package to resolve the issue with React Cosmos and hot reload. To install it, run the following command:mand:
+Next, we should first install a `cross-env` package to resolve React Cosmos and hot reload issues. To install it, run the following command:mand:
 
 ```bash 
 yarn add cross-env -D
@@ -127,7 +127,7 @@ If you prefer yarn:
 
 `yarn cosmos`
 
-When the server is up and running, navigate to `http://localhost/5000` in your favourite browser and you should see something like this.
+When the server is up and running, navigate to `http://localhost/5000` in your favourite browser, and you should see something like this.
 
 ![cosmos starter](/engineering-education/Getting-Started-with-react-cosmos/cosmos-starter.png)
 
@@ -180,7 +180,7 @@ export default function Button({ children, variant = "primary" }) => {
 }
 ```
 
-Next, import the fixture feaure from `react-cosmos` and the `Button` component.
+Next, import the fixture feature from `react-cosmos` and the `Button` component.
 
 ```jsx
 // import useSelect to use enable the selection feature
@@ -206,7 +206,7 @@ return (
 ```
 
 Let's briefly dissect the above code:
-- Our Button fixture includes a variant prop with a Control panel hook useSelect. We import the `useSelect` hook to enable us set options of the variant prop. Therefore, in our sandbox, we can manually select this rather than typing.
+- Our Button fixture includes a variant prop with a Control panel hook useSelect. We import the `useSelect` hook to enable us to set options for the variant prop. Therefore, in our sandbox, we can manually select this rather than typing.
 
 Let's run a demo in the sandbox:
 
@@ -245,7 +245,7 @@ export default (
 )
 ```
 
-Click on the left panel under **ALL FIXTURE** option. Here is where we perform any visual tests by passing different prop values to our `dummyData` object and playing around with it in the sandbox.
+Click on the left panel under **ALL FIXTURE** option. Here, we perform any visual tests by passing different prop values to our `dummyData` object and playing around with it in the sandbox.
 
 ### Cards Fixture
 For this fixture, create a `Cards.fixture.jsx` file within the `src` folder. Our Cards Fixture exports multiple fixtures as objects with React's `export default` keywords. 
@@ -302,7 +302,7 @@ export default {
   )
 }
 ```
-Our sandbox has a `Cards` fixture and within it, export `CartCard` and `FoodCard` as components. This makes everything much more organized, especially as the sandbox gets more fixtures.
+Our sandbox has a `Cards` fixture, and within it, export `CartCard` and `FoodCard` as components. This makes everything much more organized, especially as the sandbox gets more fixtures.
 
 ### Static Exports
 
