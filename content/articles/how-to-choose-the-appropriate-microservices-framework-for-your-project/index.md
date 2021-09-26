@@ -1,23 +1,23 @@
 ﻿### Introduction
 In the past years, applications used to be developed in [monolith architecture](https://whatis.techtarget.com/definition/monolithic-architecture). They were coded from top to bottom as a single unit. Most of the time, they had no structure and capabilities for future maintenance or upgrades, which posed several challenges. They were difficult to debug or even add new features.
 
-[Microservices architecture](https://microservices.io/) assists the developers in building multiple smaller applications instead of one large application. A huge application can be challenging to maintain, and also adding new features and functionalities is not easy.
+[Microservices architecture](https://microservices.io/) assists the developers in building multiple smaller applications instead of one large application. A large application can be challenging to maintain, and also adding new features and functionalities is not easy.
 
-With the use of microservices architecture, developers can create a small application for each feature. Whenever the business requires a new feature, a new smaller program is created. Each microservice can be created independently from the other using a different programming language and run on its own.
+With the use of microservices architecture, developers can create a small application for each feature. Whenever the business requires a new feature, a new smaller program is created. Each microservice can be developed independently using a different programming language and run on its own.
 
 Businesses and developers may face challenges when choosing the right microservices frameworks to build robust applications at minimal time and cost. The article will equip the learners with the aspects to consider when selecting a microservice framework for their projects and comparing the available frameworks.
 
 ### Pros and cons of the microservices architecture
 There are several advantages of using microservices architecture, as highlighted below:
-- They make the application **highly scalable** because all the features in the application are separated from each other. It is easy to maintain or update each feature independently.
-- They ensure **easy resource optimization and prioritization** since individual services have different demands. Therefore, the businesses can decide the scaling strategies to implement for their different services.
+- They make the application **highly scalable** because all the features in the application are separated from each other. Therefore, it is easy to maintain or update each feature independently.
+- They ensure **easy resource optimization and prioritization** since individual services have different demands. Therefore, the businesses can decide the scaling strategies to implement for their various services.
 - The users or developers can easily **read and understand** the application codebases.
 - They make the application **easy to maintain and upgrade**.
 - They **cut down on costs and efforts** required during the deployment of the application. This is because each microservices are deployed separately. Also, developers only deploy the modified microservice and not the entire application.
 - They make **application debugging easier** since one only deals with part of the application and not the whole application.
 - They make **fault isolation easy**.
-- They ensure that the **application has better fault torelance** because developers can build more resilient individual services.
-- They encourage **code reusability** since microservices are built and organized around business functionalities. There might be common business functionalities built in a different microservice that can be reused with minimal changes hence saving on development costs.
+- They ensure that the **application has better fault tolerance** because developers can build more resilient individual services.
+- They encourage **code reusability** since microservices are built and organized around business functionalities. For example, there might be common business functionalities built in a different microservice that can be reused with minimal changes hence saving on development costs.
 
 The challenges faced when using microservices architecture in the application are as below:
 - They may lead to **added complexity**, especially in scenarios where services cannot be separated from each other.
@@ -31,26 +31,26 @@ Below are the criteria for selecting the proper framework for migrating from a m
 
 #### Planning and organizing
 - **Requirement analysis**: Developers should note their application’s needs and determine whether they can be segmented into smaller functions with the required value. They should do it diligently to determine that their application can be sub-divided into individual services without changing its core features or operations.
-- **Team preparation**: Migration from a monolithic to a microservices architecture is a lengthy and tedious process. The stakeholders and users should know the time investment, cost, and technical specifications required for the infrastructural changes. All the teams experience considerate disruption during the process.
-- **Development team preparedness**: Development teams should work independently since every microservice works as a separate application. There should be separate teams for each microservice. The teams should possess the required skills set and tools for developing, deploying, and managing their specified service.
+- **Team preparation**: Migration from a monolithic to a microservices architecture is lengthy and tedious. The stakeholders and users should know the time investment, cost, and technical specifications required for the infrastructural changes. In addition, all the teams experience considerate disruption during the process.
+- **Development team preparedness**: Development teams should work independently since every microservice works as a separate application. Therefore, there should be different teams for each microservice. The teams should possess the required skills set and tools for developing, deploying, and managing their specified service.
 
 #### Designing the microservices
 - **Business functions and services definition**: Microservices should not be too large or small. If they are too large would mean that the organization would see the need to use microservices architecture. On the other hand, organizations may experience high operation costs that outweigh the benefits offered if it is too small.
-- **Microservices design**: Services should be designed to be loosely coupled with high cohesion and single bounded. A loosely coupled service does not entirely depend on other services. High cohesion means that the service should only perform one function and perform it perfectly. Note that single bounded implies that the service should be domain-specific with the domain's internal details and specific models. Single bounded context also ensures that microservice achieves a [Domain-Driven Design](https://www.ibm.com/garage/method/practices/code/domain-driven-design/) (DDD).
+- **Microservices design**: Services should be designed to be loosely coupled with high cohesion, and single bounded. A loosely coupled service does not entirely depend on other services. High cohesion means that the service should only perform one function and perform it perfectly. Note that single bounded implies that the service should be domain-specific with the domain's internal details and specific models. Single bounded context also ensures that microservice achieves a [Domain-Driven Design](https://www.ibm.com/garage/method/practices/code/domain-driven-design/) (DDD).
 - **Using APIs and events for communication**: Services ought not to communicate with others directly. Instead, an API gateway that allows authentication, request, responses, and throttling services should be designed. Traffic can then be redirected from the API gateway to the updated version of services.
 - **Security concerns**: Microservices are vulnerable to attacks due to their distributed nature and structure. This means that a different, more secure approach such as the [DevSecOps model](https://snyk.io/devsecops/) has to be adopted compared to monolith architecture.
 
 #### Development of the microservices
-- **Version control**: Each service should be kept in separate repository for ease of access and to ensure clean version control logs are kept. It is also vital when making changes that can affect other services.
-- **Consistent development environments**: The services development environments should be deployed as VMs to ensure developers familiarize with the framework easily.
-- **Implement backward compatibility**: The rigid contract tests to safeguard against the changes that can break the system should be implemented. It will ensure backward compatibility for the API calls that respond to each user query. This also ensures businesses develop the production-ready applications easily.
+- **Version control**: Each service should be kept in a separate repository for easy access and to ensure clean version control logs are kept. It is also vital when making changes that can affect other services.
+- **Consistent development environments**: The services development environments should be deployed as VMs to ensure developers quickly familiarize themselves with the framework.
+- **Implement backward compatibility**: The rigid contract tests to safeguard against the changes that can break the system should be implemented. It will ensure backward compatibility for the API calls that respond to each user query. This also ensures businesses develop production-ready applications quickly.
 
 #### Data storage and management of the microservices
 - **Implement different databases for each microservice**: The database that fulfils the service needs should be selected. Then the infrastructure and storage that matches the data it contains should be customized and used entirely for that microservice. A service mesh ensures that a robust microservice framework has been achieved. Each service is separately maintained while working together with other services.
 
-#### Deployment and hosting of the microservices
-- **Separate microservices deployment**: It helps to save time while coordinating different teams when performing regular maintenance or upgrades. It also assists in preventing a single service from using enormous resources while impacting other services just because of sharing resources. A dedicated infrastructure that hosts each microservice should be implemented. This ensures that each microservice's fault is isolated from other components, improving the fault torelance and avoid outages.
-- **Microservices containerization**: Microservices and containers work together efficiently. It is possible to deploy and manage individual services independently without interfering with other containerized services. Containers are platform-independent, the vital feature of microservice architecture.
+#### Deploying and hosting of the microservices
+- **Separate microservices deployment**: It helps to save time while coordinating different teams when performing regular maintenance or upgrades. It also assists in preventing a single service from using enormous resources while impacting other services just because of sharing resources. Therefore, a dedicated infrastructure that hosts each microservice should be implemented. This ensures that each microservice's fault is isolated from other components, improving the fault tolerance and avoid outages.
+- **Microservices containerization**: Microservices and containers work together efficiently. It is possible to deploy and manage individual services independently without interfering with other containerized services. In addition, containers are platform-independent, the vital feature of microservice architecture.
 - **Separate microservices build and deployment process automation**: Automation tools such as [Jenkins](https://www.jenkins.io/) automates [DevOps workflows](https://www.javatpoint.com/devops-workflow-and-principles) by ensuring [Continuous Integration and Delivery](https://www.infoworld.com/article/3271126/what-is-cicd-continuous-integration-and-continuous-delivery-explained.html) (CI/CD).
 
 #### Maintenance and operations of microservices
