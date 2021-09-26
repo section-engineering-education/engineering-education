@@ -212,7 +212,7 @@ python manage.py runserver
 ```
 
 
-![result](/engineering-education/integrating-chart-js-in-django/result.png)
+![result](/engineering-education/integrating-firebase-database-in-django/result.png)
 
 
 ### Conclusion
