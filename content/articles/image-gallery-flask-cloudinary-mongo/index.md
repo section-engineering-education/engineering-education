@@ -374,7 +374,7 @@ Update the `gallery.html` template file to render the gallery images from the pr
 
 Congratulations! You have successfully built a CDN image gallery with Flask, Cloudinary, and MongoDB. The images rendered on the gallery page should be fetched from Cloudinary CDN servers instead of your origin server, as shown in the image below:
 
-![cloudinary url path](/image-gallery-flask-cloudinary-mongo/skx3hl3c1x82jn0l_isj.png)
+![cloudinary path](/image-gallery-flask-cloudinary-mongo/skx3hl3c1x82jn0l_isj.png)
 
 ### Conclusion
 
