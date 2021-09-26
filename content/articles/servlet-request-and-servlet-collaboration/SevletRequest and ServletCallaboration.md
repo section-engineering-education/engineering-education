@@ -1,56 +1,56 @@
-### Servlet Request and Servlet Collaboration.
+### Introduction.
 
-The request delivered by your computer to a web server contains every kind of information that could be of interest. It is known as HTTP requests.
+The request delivered by your computer to a web server containing every kind of information that could be of interest is known as an HTTP request.
 In this case, the ServletRequest object forward client information from the request for a servlet, such as content type, names, and values of parameters, header information, attributes, etc.
 
-The RequestDispatcher interface allows the request to be forwarded or included to another resource, can be from servlet to another servlet or servlet to HTML file, or servlet to JSP file. Also can be used to add other resource content. It's one approach to work with the servlet Collaboration.
+The RequestDispatcher interface allows the request to be forwarded or included to another resource, can be from servlet to another servlet or servlet to HTML file, or servlet to JSP file. Also can be used to add other resource content. It's one approach to work with `Servlet Collaboration`.
 ### Prerequisites
 - Some basic knowledge of core Java is needed.
 - An introductory path of the servlet and its life cycle is needed.
 - Some basic knowledge of HTML is also required.
+- 
 You will need to install the following tools to go along with the article:
-- An open-source editor, such as Eclipse, or any other related Java editor.
-- Java JDK current version or any.
+- An open-source editor, such as Eclipse, or any other related Java editor. In my case, I will be using [Eclipse IDE for Java EE Developers 2021‑09 windows version](https://www.eclipse.org/downloads/download.php?file=/oomph/epp/2021-09/R/eclipse-inst-jre-win64.exe)
+- Java JDK current version or any. In my case, I will be using [Java SE Development Kit 17 for Windows 64 bit system](https://download.oracle.com/java/17/latest/jdk-17_windows-x64_bin.zip).
 - You need a web browser installed on your computer.
 - Server. In my case, I will be using TomCat version 10.1.0-m5
 
 
 Table of contents:
 
-- [ServletRequest](ServletRequest-Interface )	
-- [Methods of ServletRequest](#Methods-of-ServletRequest-interface)	
-- [ServletRequest interface example](#Example-of-ServletRequest-interface)	 
-- [RequestDispatcher](#RequestDispatcher-Interface)	
-- [RequestDispatcher Methods](#Methods-of-RequestDispatcher-interface)	
-- [RequestDispatcher example](#Example-of-RequestDispatcher)
+- [ServletRequest](ServletRequest)	
+- [Methods of ServletRequest](#Methods-of-ServletRequest)	
+- [ServletRequest interface example](#ServletRequest-interface-example)	 
+- [RequestDispatcher](#RequestDispatcher)	
+- [RequestDispatcher Methods](#RequestDispatcher-Methods)	
+- [RequestDispatcher example](#RequestDispatcher-example)
 - [Conclusion](#conclusion)
 ### ServletRequest.
 When we talk of websites, we do interact with,
- we keep asking web pages to do something for us, for example, client updating their profiles, etc. Whenever a client or user tries to update their profile. In this case. Java provides us with an object of the ServletRequest interface, which forwards requested information to a servlet. 
+ we keep asking web pages to do something for us, for example, client updating their profiles, etc. Whenever a client or user tries to update their profile. In this case, Java provides us with an object of the ServletRequest interface, which forwards requested information to a servlet. 
 The service container creates objects for `ServletRequest` and `ServletResponse` when a customer sends requests to a web server that pass through the service method as an argument. The request object provides access to query information, such as the header and information from the requested database.
 
 
 ### Methods of ServletRequest
 The `ServletRequest` interface provides us with many methods to work with client request information. Some explained as follows.
 
-- `getParameter(String parameterName)`: This method returns a client's requested parameter value. of the `String` type. 
+- `getParameter(String parameterName)`: This method returns a client's requested parameter value of the `String` type. 
 
 - `String[] getParameterValues(type parameterName)`: Majorly used to obtained all values of a given multi-valued parameter name. In this case, it would be useful to work with a list box that contains multiple values in a single parameter.
 
 - `getContentLength()`: The actual size of the type of data requested is returned.
 
-- `Public String getContentType()`: Returns the Media Type or, if unknown, null data requests. 
+- `Public String getContentType()`: Returns the media type or, if unknown, null data requests. 
 
 - `Enumeration getParameterNames()`: The name of the target parameter is used to return an enumeration
 
-- `String getCharacterEncoding()`: The name of the encoded character is returned by this method. If not If not.
-In the body of the application specified, null returns.
+- `String getCharacterEncoding()`: If the encoded character is specified, this method will return the name. It returns null in the request body if not specified.
 
 - `public int getServerPort()`: The port number received by this method is returned.
 
 - ``public abstract String getServerName()``:  It returns the server name which receives the request.
 
-- `ServletInputStream getInputStream(): throws IOException`: Returns the binary data input stream in the query body. 
+- `ServletInputStream getInputStream()`: Returns the binary data input stream in the query body. 
 
  - `String getCharacterQueryString()`: Returns the URL path of the request from the protocol name of a type `String.`
 
@@ -70,10 +70,9 @@ In the body of the application specified, null returns.
 We will create a user login project with a servlet in this example. In this context, we have been using `getParameter()` to return the value of the specified query parameter name.
 **Steps to create this project.**
 
-Step 1: Open eclipse IDE for Java EE developers.
-Step 2: Create a Dynamic web project by selecting files, new and Dynamic web project and press enter.
-Step 3: Provide a project name. Mine is called LogInDemo.
-Step 4: Create an `index.html` page as shown below.
+Step 1: Open Eclipse IDE for Java EE developers. Create a Dynamic web project by selecting files, new then Dynamic web projects, and press enter.
+Step 2: Provide a project name. Mine is called LogInDemo.
+Step 3: Create an `index.html` page as shown below.
 ```html
 <!DOCTYPE html>
 <html>
@@ -90,7 +89,7 @@ Step 4: Create an `index.html` page as shown below.
 </body>
 </html>
 ```
-Step 5: Create `login.java` servlet file.
+Step 4: Create `login.java` servlet file.
 ```java
 package com.lodoctor;
 
@@ -121,7 +120,7 @@ public class LoginAction extends HttpServlet {
 }
 
 ```
-Step 6: Lastly, create the `welcomePage.jsp` file.
+Step 5: Lastly, create the `welcomePage.jsp` file.
 ```jsp
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
@@ -136,7 +135,7 @@ Step 6: Lastly, create the `welcomePage.jsp` file.
 </body>
 </html>
 ```
-[Get project source code here](https://drive.google.com/drive/folders/1V2gDQ_sJWC0tEIXvdPhZbB400NJ56oCI?usp=sharing)
+[Get project source code here](https://github.com/Evanslodoctor/ServletRequest-sourse-code)
 
 ### RequestDispatcher
 RequestDispatcher interface allows us to send a client query to another resource.
@@ -266,7 +265,7 @@ public class Above18 extends HttpServlet {
 }
 
 ```
-[Get project source code here](https://drive.google.com/drive/folders/1S0S2SJKG1PIwRGX-zll25Y3mTrCOLy5D?usp=sharing)
+[Get project source code here](https://github.com/Evanslodoctor/ServletDispatcher-sourse-code)
 ### Conclusion
 In conclusion, we learned some of the `ServletRequest` methods and `ServletDispatcher` methods and how to implement them with the help of examples. We discussed both these interfaces (`ServletRequest` and `ServletDispatcher`) and what they comprise.
 
