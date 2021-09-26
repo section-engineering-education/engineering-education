@@ -7,7 +7,7 @@ Firebase manages data in realtime and can also be used in an application that is
 - Hosting
 - Multi-platform Authentication
 
-In this tutorial, we will be looking at how to use the firebase realtime database in Django by building a simple project.
+In this tutorial, we will be looking at how to use the Firebase realtime database in Django by building a simple project.
 
 ### Prerequisites
 To follow along with this tutorial, you will need the following: 
@@ -211,7 +211,7 @@ Let us test this out by starting the server with the following command:
 python manage.py runserver 
 ```
 
-![result](/engineering-education/integrating-chart-js-in-django/result.png)
+![result](result.png)
 
 
 ### Conclusion
