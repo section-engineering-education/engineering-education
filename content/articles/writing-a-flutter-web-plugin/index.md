@@ -6,7 +6,7 @@ url: /writing-a-flutter-web-plugin/
 title: Writing a Flutter Web Plugin
 description:  This article will walk the reader through writing their first web plugin in flutter.
 author: faith-zawadi
-date: 2021-09-23T00:00:00-06:09
+date: 2021-09-26T00:00:00-06:09
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -16,17 +16,17 @@ images:
 ---
 
 ### Introduction
-Flutter's `web support` enables a seamless online experience. For example, you can create apps for both iOS, Android, and web apps can be converted to run on the web. In addition to translating Dart to JavaScript, adding web functionality to Flutter requires creating Flutter's fundamental graphics layer on top of conventional browser APIs. I will take you through making the Flutter plugin web-enabled.
+Flutter's `web support` enables a seamless online experience. For example, you can create apps for iOS, Android, and web apps that can be converted to run on the web. In addition to translating Dart to JavaScript, adding web functionality to Flutter requires creating Flutter's fundamental graphics layer on top of conventional browser APIs. I will walk you through making the Flutter plugin web-enabled.
 
-When it comes to constructing Flutter plugins, the fundamental distinction between the old and new techniques is that platform-specific implementations are divided into different packages. `Federated plugins` are created in this manner. 
+When constructing Flutter plugins, the fundamental distinction between the old and new techniques is that platform-specific implementations are divided into different packages. `Federated plugins` are created in this manner. 
 
-By reorganizing your plugin as a federated plugin, anyone can add support for new platforms without you needing to do so yourself. A flutter plugin, on the other hand, contains just Dart code, while a package only contains Native code. Plugins can be used by a package if it so chooses. 
+By reorganizing your plugin as a federated plugin, anyone can add support for new platforms without needing to do so yourself. On the other hand, a flutter plugin contains just Dart code, while a package only contains Native code. A package can use plugins if it so chooses. 
 
 ### Platform interfacing
-Platform interfacing is the process of abstracting what plugin package is to be implemented via its platforms. Additionally, platform interfacing explains how the plugin package communicates with the platform implementation and its replacement of what the plugin package needs from the platform.
+Platform interfacing is the process of abstracting what plugin package is to be implemented via its platforms. Additionally, platform interfacing explains how the plugin package communicates with the platform implementation and replaces what the plugin package needs from the platform.
 
 ### Creating the platform interface package
-The plugin sits in a directory like packages/URL launcher in the flutter/plugins directory on GitHub repository. First, we will develop the platform interface package and restructure the code to use a federated plugin directory arrangement. 
+The plugin sits in a directory like packages/URL launcher in the flutter/plugins directory on the GitHub repository. First, we will develop the platform interface package and restructure the code to use a federated plugin directory arrangement. 
 
 We are creating a directory that contains the plugin package, the platform interface, and web packages. For example, the URL launcher plugin can be moved to a federated sub-folder in the packages/ directory. 
 
@@ -56,7 +56,7 @@ As a starting point, look at the README.md in the package:url_launcher_interface
 import 'dart:async';
 import 'package:plugin_interface_platform.dart';
 import 'method_channel_url_launcher.dart';
-//In order to avoid breaking changes, platform implementations should extend this class rather than implement it. Adding new methods to this interface will break platform implementations that 'implement' it, therefore extending this class assures that the subclass gets the default implementation.
+//In order to avoid breaking changes, platform implementations should extend this class rather than implement it. Adding new methods to this interface will break platform implementations that 'implement' it; therefore, extending this class assures that the subclass gets the default implementation.
   UrlLauncherPlatform() : super(token: _token);
   static final Object _token = Object();
   static UrlLauncherPlatform _instance = MethodChannelUrlLauncher();
@@ -74,7 +74,7 @@ import 'method_channel_url_launcher.dart';
 
 Implementations of url launchers must adhere to this interface. Platform implementations should extend the above class instead of implementing a URL launcher.
 
-By definition, new methods are not considered breaking changes. Extending the above class (with extends) assures that the subclass receives the default implementation, whereas the newly added interface will damage platform implementations of this interface.
+By definition, new methods are not considered breaking changes. Extending the above class (with extends) assures that the subclass receives the default implementation, whereas the newly added interface will damage the platform implementations of this interface.
 
 > The default implementation of all platform interface functions should throw a UnimplementedError.
 
@@ -144,23 +144,23 @@ class UrlLauncherPlugin extends UrlLauncherPlatform {
 
 Stating that this is the `UrlLauncherPlatform` default instance, rather than registering a `MethodChannel`, makes more sense. When `package:url` launcher calls `UrlLauncherPlatform.instance.launch()`, the `launch()` function defined here is called.
 
-All the essential code for creating a package is contained in this class. As a result, understanding Flutter's `MethodChannel` APIs is no longer required to design platform-specific plugin implementations. Web-based URL launcher When designing a platform interface package for a plugin, keep these considerations in mind.
+All the necessary code for creating a package is contained in this class. As a result, understanding Flutter's `MethodChannel` APIs is no longer required to design platform-specific plugin implementations. Web-based URL launcher When designing a platform interface package for a plugin, keep these considerations in mind.
 
-1. It is possible to create a platform interface method for each plugin area that uses `MethodChannel`. An upshot of this is that the plugin package can be more adaptable because it does not import abstractions from the platform interface package.
+1. Creating a platform interface method for each plugin area that uses `MethodChannel` is possible. An upshot of this is that the plugin package can be more adaptable because it does not import abstractions from the platform interface package.
 
 2. Make sure to use package:plugin_platform_interface to force your platform interface implementers to use extends instead of implements.
 
 ### How a Flutter Web Plugin works
-When it comes to creating web content, Flutter supports HTML/CSS/JavaScript standards-based web technologies. Using web support, you can compile existing Flutter code written in Dart and deploy it to any web server. You can utilize all of Flutter's capabilities without installing a plug-in. Web Flutter is presently under technical preview.
+When it comes to creating web content, Flutter supports HTML/CSS/JavaScript standards-based web technologies. As a result, you can compile existing Flutter code written in Dart and deploy it to any web server using web support. In addition, you can utilize all of Flutter's capabilities without installing a plugin. Web Flutter is presently under technical preview.
 
 To use this plugin:
 - Initiate a new launch demo project.
 - Create a dependency for content copy in pubspec.yaml by opening it and adding it to the list.
-- Run, flutter, and pub! Packages get in the terminal or IntelliJ or Android Studio's Packages get menu.
-- Try it out! (or stop and restart it, if it was already running before adding the plugin).
+- Run, Flutter, and pub! Packages get in the terminal, or IntelliJ or Android Studio's Packages get the menu.
+- Try it out! (or stop and restart it if it was already running before adding the plugin).
 
 ### Conclusion
-Thanks to the Flutter framework's versatility, you can now create iOS, Android, and the web apps using the same codebase. Programmers can convert Flutter code to operate on the web because the code is from the same framework besides the versatility. It is time to start writing your plugins!.
+Thanks to the Flutter framework's versatility, you can now create iOS, Android, and web apps using the same codebase. Programmers can convert Flutter code to operate on the web because the code is from the same framework besides the versatility. It is time to start writing your plugins!.
 
 ---
 Peer Review Contributions by: [Jerim Kaura](/engineering-education/authors/jerim-kaura/)
