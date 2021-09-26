@@ -1,0 +1,135 @@
+Data visualization is essential when it comes to data science. It is often the first step of any data analysis work. Visualizing data usually gives you an intuitive understanding of data before you get to work on it. Visualization often helps you see some patterns in data that you might not have been able to see.
+
+In this tutorial, we will use [Plotly](https://plotly.com/) in Python for data visualization. 
+
+### Prerequisites
+
+To understand this tutorial:
+
+- You need to have Python installed on your computer.
+- You need to use Jupyter Notebook or Google Colab. For this tutorial, we will be using Google Colab.
+
+### What is plotly?
+
+Plotly is an open-source framework for data visualization and graphing. It is a great tool to have if you're working on building any analytical presentation or trying to interpret results. 
+
+It is language-independent. Not only can you use it in Python, but also for other languages such as R, MATLAB, Perl, Julia, Arduino, and REST.
+
+We'll begin by making a comparison between Plotly and Matplotlib to establish how the two compare.
+
+### Is plotly better than matplotlib?
+
+Plotly and Matplotllib are tools used for data visualization. But, they do have their differences.
+
+- Plotly is more focused on the web browser and on building interactive charts, whereas matplotlib is more professional and scientific because it has countless customization options.
+
+- To create good-looking matplotlib charts, you need to take some time to write the code required to display the charts. With only a few lines of code, using Plotly makes visualizing data easy. You can accomplish the same results with matplotlib, but you'll have to write a lot more code as it is a much more complex process.
+
+So, which is better? It depends on your use case. Plotly is better as it runs on the web browser, it's interactive, and you can quickly visualize your data without writing complex code. If your goal is to create more professional and scientific visualizations, chose matplotlib.
+
+Using an example dataset, let's learn how you can use this library to visualize data.
+
+#### Creating the data visualization
+We need to first install plotly in our Google colab.
+
+```bash
+!pip install plotly==5.3.1 
+```
+
+```python
+import plotly.express as px #for visualization
+gapminder_df = px.data.gapminder()
+```
+Let's take a look at this data.
+
+```python
+gapminder_df
+```
+
+```bash
+    country     continent   year    lifeExp     pop     gdpPercap   iso_alpha   iso_num
+0   Afghanistan     Asia    1952    28.801  8425333     779.445314  AFG     4
+1   Afghanistan     Asia    1957    30.332  9240934     820.853030  AFG     4
+2   Afghanistan     Asia    1962    31.997  10267083    853.100710  AFG     4
+3   Afghanistan     Asia    1967    34.020  11537966    836.197138  AFG     4
+4   Afghanistan     Asia    1972    36.088  13079460    739.981106  AFG     4
+...     ...     ...     ...     ...     ...     ...     ...     ...
+1699    Zimbabwe    Africa  1987    62.351  9216418     706.157306  ZWE     716
+1700    Zimbabwe    Africa  1992    60.377  10704340    693.420786  ZWE     716
+1701    Zimbabwe    Africa  1997    46.809  11404948    792.449960  ZWE     716
+1702    Zimbabwe    Africa  2002    39.989  11926563    672.038623  ZWE     716
+1703    Zimbabwe    Africa  2007    43.487  12311143    469.709298  ZWE     716
+```
+
+By looking at these numbers, it isn't easy to see what this data is telling us. It's hard to comprehend. So now, let's create the data visualization using interactive animations to help us visualize this data to understand it better.
+
+```python
+px.scatter(data_frame=gapminder_df,
+            x = 'gdpPercap',
+            y = 'lifeExp',
+            size = 'pop',
+            color = 'continent',
+            title = 'Life Span and Wealth 1952 - 2007',
+            labels = { 'gdpPercap': 'Wealth',
+                        'lifeExp': 'Life Span'}, 
+            log_x = True,
+            range_y = [25,95],
+            hover_name = 'country',
+            animation_frame = 'year',
+            height = 600,
+            size_max = 100)
+```
+To summarize this code:
+
+-  `x = 'gdpPercap'` and  `y = 'lifeExp'` tells us what we want our x and y coordinates to be. The x-axis will represent the gdpPercap which has been assigned the label `Wealth`, while the y axis will represent the life expectancy assigned to the label `Life Span`.
+- `color = 'continent',` tells plotly that we want each continent to have a different color.
+- `title = 'Life Span and Wealth 1952 - 2007',` is the title of our visualization. You can change it to whichever title fits you best.
+- `log_x = True,` converts the scale on the x-axis to be a log scale the distribution as it is is quite wide.
+- `range_y = [25,95],` constrains the range on the y-axis to between 25 and 95 years
+- `hover_name = 'country',` tells us that when we hover our mouse on the circles, we want it to tell us which country it represents. 
+- `height = 600,` tells plotly to adjust the size of the plot to 600px and `size_max = 100` to adjust the size of each point to 100px.
+
+Now, let's take a look at our output when we run the code.
+
+![Output](/engineering-education/how-to-plot-data-in-python-using-plotly/plotly-output-52.png)
+
+The above image shows the distribution of wealth in the year 1952.
+
+![Output](/engineering-education/how-to-plot-data-in-python-using-plotly/plotly-output-07.png)
+
+The above image shows the distribution of wealth in the year 2007. You can zoom in and out using your mouse cursor to view individual points on the plot.
+
+In the images above, we used interactive animation to help us achieve our goal. There are many other ways you can visualize using plotly. This could be using line charts, bar charts, pie charts, interactive bubble charts, and chloropleth. Explore more techniques [here](https://www.kaggle.com/jhossain/explore-the-gapminder-dataset-with-plotly-express). 
+
+Using the same dataset, let's plot using chloropleth.
+
+```python
+px.choropleth(data_frame=gapminder_df,
+             locations='iso_alpha', 
+             color='gdpPercap', 
+             title = 'Life Span and Wealth (1952 - 2007) using cloropleth',
+             hover_name='country', 
+             animation_frame='year', 
+             height = 600,
+             color_continuous_scale=px.colors.sequential.Plasma, 
+             projection='natural earth')
+```
+![Plotting using chloropleth (1952)](/engineering-education/how-to-plot-data-in-python-using-plotly/chloropleth-output-52.png)
+
+The above image shows the distribution of wealth in the year 1952 using cloropleth projected on natural earth.
+
+![Plotting using chloropleth (2007)](/engineering-education/how-to-plot-data-in-python-using-plotly/chloropleth-output-52.png)
+
+The above image shows the distribution of wealth in the year 2007 using cloropleth projected on natural earth.
+
+Please find the complete code of this tutorial [here](https://colab.research.google.com/drive/1mz0GthxE2FektPON4ZnkSUvO8Otf1Ix1#scrollTo=X0vwv1kIXHBn). Run the code and see how the distribution of wealth compares by continent from the year 1952 to 2007.  
+
+### Wrapping up
+Using only a few lines of code, that's how easy it is to plot data in Python using plotly. Please go and find some datasets of your own and plot them using plotly. Have fun making them look really good while displaying the aspects of the data that you want to show.
+
+Happy coding!
+
+### References
+- [Plotly](https://plotly.com/)
+- [Complete code](https://colab.research.google.com/drive/1mz0GthxE2FektPON4ZnkSUvO8Otf1Ix1#scrollTo=X0vwv1kIXHBn)
+- [Explore the Gapminder Dataset with Plotly Express](https://www.kaggle.com/jhossain/explore-the-gapminder-dataset-with-plotly-express)
