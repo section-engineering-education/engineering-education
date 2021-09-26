@@ -18,7 +18,7 @@ Modern websites that require complex user interaction are built using dedicated 
 
 You can achieve the same reactive website with technologies like React without leaving your Django project or learning another language. It, therefore, is less complex, less code intensive and has a faster development time.
 
-There are several technologies out there that can achieve these functionalities like [Sockpuppet](https://sockpuppet.argpar.se/), [reactor](https://github.com/edelvalle/reactor/) and [Unicorn](https://www.django-unicorn.com/docs/). However, you would use Unicorn for this tutorial to achieve interactivity within our Django application without any custom JavaSript.
+There are several technologies out there that can achieve these functionalities like [Sockpuppet](https://sockpuppet.argpar.se/), [reactor](https://github.com/edelvalle/reactor/) and [Unicorn](https://www.django-unicorn.com/docs/). However, you would use Unicorn for this tutorial to achieve interactivity within our Django application without any custom JavaScript.
 
 > Note that there may be benefits of using a dedicated frontend; for instance, it can be helpful to have a dedicated team responsible for coding the frontend and backend of a piece of software.
 
@@ -105,14 +105,14 @@ Update your project `urls.py` file like so:
 path("", views.index), # new
 ```
 
-Update your books application `views.py` file like so:
+Update your books' application `views.py` file like so:
 
 ```py
 def index(request):
     return render(request, "index.html", {})
 ```
 
-Update your books template `index.html` file like so:
+Update your books' template `index.html` file like so:
 
 ```html
 {% load unicorn %}
@@ -149,7 +149,7 @@ Update your books template `index.html` file like so:
 2. Take note that you have to load `unicorn` at the top of the Django HTML template.
 3. You also added the `unicorn_scripts` into the Django HTML template and added the `crsf_token` in the template as well.
 
-> According to Unicorn, the library follows the best practices of Django and therefore, it requires a `CRSF` token to be set on any page that is a component. This guarantees that no nefarious AJAX POSTs can be done.
+> According to Unicorn, the library follows the best practices of Django and therefore, it requires a `CRSF` token to be set on any page that is a component. This guarantees that no nefarious AJAX Posts can be done.
 
 Additionally, according to Unicorn, it has the concept of component, to refer to a set of interactive functionality that can be put inside the template. So, for example, in the `index.html` file, you added a `book` component.
 
@@ -266,7 +266,7 @@ class BookView(UnicornView):
 
 ** What is Happening Here?**
 
-1. You are importing the `UnicornView`, which is a subclass of `TemplateView` under the hood. Therefore the process of switching from a standard class-based view should be straightforward.
+1. You are importing the `UnicornView`, which is a subclass of `TemplateView` under the hood. Therefore, the process of switching from a standard class-based view should be straightforward.
 2. The `hydrate` method is called when the component is instantiated to grab the latest books from the database so that the information is up-to-date.
 3. The `add_book` method will create a new book model from the title, save it in the database, and then clear the title.
 4. The `delete_book` method will delete a book that matches the id.
@@ -275,7 +275,7 @@ Once done, navigate to [http://127.0.0.1:8080/](http://127.0.0.1:8080/) to ensur
 
 ![Home Page 2](/engineering-education/full-stack-reactive-website-in-Django/homepage.png)
 
-Try adding and deleting some of your favourite Django books.
+Try adding and deleting some of your favorite Django books.
 
 ### Conclusion
 
