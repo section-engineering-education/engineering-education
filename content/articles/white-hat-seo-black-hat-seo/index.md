@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: white-hat-seo-black-hat-seo/hero.jpg
+  - url: /engineering-education/white-hat-seo-black-hat-seo/hero.jpg
     alt: seo example image
 ---
 [Search Engine Optimization (SEO)](https://en.wikipedia.org/wiki/Search_engine_optimization) is a kind of internet advertising method in which websites are optimized to enhance the quality and quantity of their search engine traffic. It is beneficial due to the fact that a website will capture extra traffic from a search engine by getting ranked better at the Search Engine Result Page (SERP).
