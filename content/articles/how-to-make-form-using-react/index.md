@@ -1,13 +1,13 @@
 ### Create a registration form using React.js ( Hooks )
 
-We will make a registration from using React.js from scratch using react hooks and bootstrap, In the end you will have form ready like this one below :
+We will make a registration form using React.js from scratch using react hooks and bootstrap, In the end, you will have the form ready
 
-// insert a pic
+![Final form](./finalRegistratoionForm.png)
 
-So now lets start with setting up our coding enviornment
+So now let's start with setting up our coding environment
 * node.js should be installed and any code editor you like to use.
-* Optionally you can also install Yarn package manager.
-* Now we have everyting ready, so open your terminal and run the below commands to create your react app
+* Optionally you can also install the Yarn package manager.
+* Now we have everything ready, so open your terminal and run the below commands to create your react app
 
 ```
 npx create-react-app loginforms
@@ -18,9 +18,9 @@ npm start
 
 If your setup is complete you will get to see the below screen:-
 
-//INSER IMG
+![starting](./start.png)
 
-This is a boilerplate code comes when we create a react app. Now open the loginforms folder and open index.html in `public` folder add bootstrap scripts there, here are the CDN links :-
+This is a boilerplate code that comes when we create a react app. Now open the login form folder and open index.html in the `public` folder add bootstrap scripts there, here are the CDN links:-
 
 ``` html
 <!DOCTYPE html>
@@ -57,11 +57,11 @@ This is a boilerplate code comes when we create a react app. Now open the loginf
 ```
 
 
-This is where are code start you can change the meta tags as per your requirements.
+This is where our code start you can change the meta tags as per your requirements.
 
-Now go inside the src folder there you will find `app.js` thats where we start are code. In react we write JSX for writting our HTML code.Create a new folder named components inside the src folder. Here we will make all of our components and then render them in App.js.
+Now go inside the src folder there you will find `app.js` that's where we start our code. In react we write JSX for writing our HTML code. Create a new folder named components inside the src folder. Here we will make all of our components and then render them in App.js.
 
-Now lets first create a navbar components for our header. The code of header component is as follows:-
+Now let's first create navbar components for our header. The code of the header component is as follows:-
 
 ``` javascript
 import React from 'react';
@@ -77,7 +77,7 @@ function Header() {
 export default Header;
 ```
 
-since our main code run from `app.js` we need to import are Header component in it. Modify your `app,js` as follows:
+since our main code runs from `app.js` we need to import our Header component in it. Modify your `app, js` as follows:
 
 ```javascript
 import logo from './logo.svg';
@@ -95,12 +95,12 @@ function App() {
 export default App;
 ```
 
-If you written above code correct the webpage will look like this:
+If you have written the above code correctly the webpage will look like this:
 
-///insert img
+![header](./registration.png);
 
-Next we have to add registration form for the users. Create a RegistrationForm folder inside the components folder and add the code to create the input elements.
-For styling make a `style.css` file inside the component folder here we will write all are styles and include in your registration form component.
+Next, we have to add a registration form for the users. Create a RegistrationForm folder inside the components folder and add the code to create the input elements.
+For styling make a `style.css` file inside the component folder here we will write all our styles and include them in your registration form component.
 
 ``` javascript
 import React, {useState} from 'react';
@@ -199,10 +199,10 @@ function App() {
 export default App;
 ```
 
-I recommend you to first go through react official documentation.Lets have a overview of hooks in react.js
-`useState` hook it used to maintain state of a variable which we can update dynamically using `setState` 
+I recommend you first go through react official documentation. Let's have an overview of hooks in react.js
+`useState` hook is used to maintain a state of a variable which we can update dynamically using `setState` 
 
-Now lets get to our form we need to maintain the state of every input in our form so that when user hit submit we can send the data to our backend api. If you remember in javascript we used to update this using `document.getElementById("demo").value` but in react we have state for every input and we will update it on every Onchange event. 
+Now let's get to our form we need to maintain the state of every input in our form so that when users hit submit we can send the data to our backend API. If you remember in javascript we used to update this using `document.getElementById("demo").value` but in react we have a state for every input and we will update it on every Onchange event. 
 
 import `useState` and `setState` hooks form react on top of your code.Now we make a state for all input element. 
 ```jsx
@@ -213,7 +213,120 @@ import `useState` and `setState` hooks form react on top of your code.Now we mak
     const [confirmPassword,setConfirmPassword] = useState(null);
 ```
 
-We have to update these value on onChange 
+We have to update these value on onChange of every input in the form ans value in the input tag now will be displayed using value tag inside input. So now input tags format will be like this 
+```javascript
+<input className="form__input" type="text" value={firstName} onChange = {(e) => handleInputChange(e)} id="firstName" placeholder="First Name"/> 
+<input  type="text" name="" id="lastName" value={lastName}  className="form__input" onChange = {(e) => handleInputChange(e)} placeholder="LastName"/>
+<input  type="email" id="email" className="form__input" value={email} onChange = {(e) => handleInputChange(e)} placeholder="Email"/>
+<input className="form__input" type="password"  id="password" value={password} onChange = {(e) => handleInputChange(e)} placeholder="Password"/>
+<input className="form__input" type="password" id="confirmPassword" value={confirmPassword} onChange = {(e) => handleInputChange(e)} placeholder="Confirm Password"/>
+```
+inside the onChange event we have called a function handleInputChange and passed event i.e e inside it here will handle state update of all the input change.So function will be this:-
+```javascript
+ const handleInputChange = (e) => {
+        const {id , value} = e.target;
+        if(id === "firstName"){
+            setFirstName(value);
+        }
+        if(id === "lastName"){
+            setLastName(value);
+        }
+        if(id === "email"){
+            setEmail(value);
+        }
+        if(id === "password"){
+            setPassword(value);
+        }
+        if(id === "confirmPassword"){
+            setConfirmPassword(value);
+        }
+
+    }
+```
+
+In this function, we get the id and the value entered inside the input box as soon as we type anything there we update the state of that particular field. This is how we maintain all the states so on submit button we can send all the required information to our backend APIs.
+
+I have made a handle submit function in which we are getting all the values that are filled in the form. We can use these values however you need to send to the backend or display something 
+
+here is your how final `registrationForm.js` will come as 
+```java script
+import React, {useState,setState} from 'react';
+import './style.css'
+function RegistrationForm() {
+    
+    const [firstName, setFirstName] = useState(null);
+    const [lastName, setLastName] = useState(null);
+    const [email, setEmail] = useState(null);
+    const [password,setPassword] = useState(null);
+    const [confirmPassword,setConfirmPassword] = useState(null);
+
+    const handleInputChange = (e) => {
+        const {id , value} = e.target;
+        if(id === "firstName"){
+            setFirstName(value);
+        }
+        if(id === "lastName"){
+            setLastName(value);
+        }
+        if(id === "email"){
+            setEmail(value);
+        }
+        if(id === "password"){
+            setPassword(value);
+        }
+        if(id === "confirmPassword"){
+            setConfirmPassword(value);
+        }
+
+    }
+
+    const handleSubmit  = () => {
+        console.log(firstName,lastName,email,password,confirmPassword);
+    }
+
+    return(
+        <div className="form">
+            <div className="form-body">
+                <div className="username">
+                    <label className="form__label" for="firstName">First Name </label>
+                    <input className="form__input" type="text" value={firstName} onChange = {(e) => handleInputChange(e)} id="firstName" placeholder="First Name"/>
+                </div>
+                <div className="lastname">
+                    <label className="form__label" for="lastName">Last Name </label>
+                    <input  type="text" name="" id="lastName" value={lastName}  className="form__input" onChange = {(e) => handleInputChange(e)} placeholder="LastName"/>
+                </div>
+                <div className="email">
+                    <label className="form__label" for="email">Email </label>
+                    <input  type="email" id="email" className="form__input" value={email} onChange = {(e) => handleInputChange(e)} placeholder="Email"/>
+                </div>
+                <div className="password">
+                    <label className="form__label" for="password">Password </label>
+                    <input className="form__input" type="password"  id="password" value={password} onChange = {(e) => handleInputChange(e)} placeholder="Password"/>
+                </div>
+                <div className="confirm-password">
+                    <label className="form__label" for="confirmPassword">Confirm Password </label>
+                    <input className="form__input" type="password" id="confirmPassword" value={confirmPassword} onChange = {(e) => handleInputChange(e)} placeholder="Confirm Password"/>
+                </div>
+            </div>
+            <div class="footer">
+                <button onClick={()=>handleSubmit()} type="submit" class="btn">Register</button>
+            </div>
+        </div>
+       
+    )       
+}
+
+export default RegistrationForm
+```
+
+Here is the link to find the full code of this registration form 
+[link](https://replit.com/@AnubhavBansal1/Registration-Form-1#README.md)
+
+
+
+
+
+
 
 
 
