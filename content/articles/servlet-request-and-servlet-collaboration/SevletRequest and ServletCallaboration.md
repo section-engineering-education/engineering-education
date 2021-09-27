@@ -152,7 +152,7 @@ Here are two methods provided by the `RequestDispatcher` interface, namely:
 
 **NOTE:** Both of these two methods throw IOExceptions.
 ### RequestDispatcher example
-This example shows how  RequestDispatcher  can forward a resource response or include it on a server. Here we use `htmlPage.html` to get a user response. In this case, `Controller.java` Servlet checks the entered response if a user has more than 18 years or less if the user select  (under18 ) as the reply,  `forward()` will be called to Under18Page Servlet and  Above18 servlet included if the user has entered (above18) otherwise the client browser will stay in `htmlPage.html` page.
+This example shows how  RequestDispatcher can forward a resource response or include it on a server. Here we use `htmlPage.html` to get a user response. In this case, `Controller.java` Servlet checks the entered response if a user has more than 18 years or less if the user select (under18 ) as the reply, `forward()` will be called to Under18Page Servlet. Above18 servlet is included if the user has entered (above18) otherwise. The client browser will stay on the `htmlPage.html` page.
 
 *htmlPage.html*
 ```html
