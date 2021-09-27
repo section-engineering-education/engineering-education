@@ -21,7 +21,7 @@ All runtime null-dereference problems will now be shown at compile-time, thanks 
 
 If you get a variable or something similar, the compiler can ensure it, but even if the variable is not null, type safety alone does not guarantee that it is. When an error occurs, the null value is returned.
 
-This article will cover how null Safety is implemented in Flutter, how it impacts the development process, the benefits it brings, and how to transition your flutter applications to Null Safety.
+This article will cover the implementation of null Safety in Flutter, how it impacts the development process, the benefits it brings, and how to transition your flutter applications to Null Safety.
 
 ### Prerequisites
 Before getting started, it is best for the reader should have:
@@ -57,7 +57,7 @@ If a variable is non-nullable, it must always be set to a non-null value.
 #### Nullable Types
 The following operators specify if a variable can be null:
 
-- Nullable type `'?'` 
+1. Nullable type `'?'` 
 ```
 String? houseLocationName;  // By default, it's set to null.
 int? number = 36;  // By default, it's set to non-null.
@@ -67,7 +67,7 @@ A nullable variable does not need to be initialized before being used.
 
 By default, it is null.
 
-- The Assertion Operator `'!'`
+2. The Assertion Operator `'!'`
 
 Consider using the null assertion operator '!' the ability to force Dart to regard a non-nullable expression as non-nullable if you know it is not null.
 
@@ -76,11 +76,11 @@ int? anyNumber = 50;
 int data = anyNumber!; // Because the value is not nullable, this is valid
 ```
 
-- Type Promotion 
+3. Type Promotion 
 
-**Flow Analysis** is an algorithm that determines how a program will be executed.
+**Flow Analysis** is an algorithm that determines the execution of a program.
 
-Dart's analyzer guarantees a nullable variable with a non-null value, which informs the programmer of compile-time problems and warnings. At runtime, Dart promotes types via Flow Analysis.
+Dart's analyzer guarantees a nullable variable with a non-null value, informing the programmer of compile-time problems and warnings. 
 
 ```dart
 int checkValue(int? anyNumber) {
@@ -117,14 +117,13 @@ These steps include:
 #### Step one: If your dependencies are ready, make sure they are:
 As a result, if any of your dependencies' APIs change during the migration process, you may have to do another relocation migration after making some headway transferring code. If some of your dependencies are not null safe, you may wish to contact the package developers. 
 
-Your application or package's readiness for migration can be determined with the dart pub outdated in null-safety mode. In the resolvable part of the model, this application is ready for migration. The application is ready for migrtaion only if it upgrades its dependencies to the prerelease versions of the path and process.
-#### Step two: Use the migration tool to migrate:
+Your application or package's readiness for migration can be determined with the dart pub outdated in null-safety mode. In the resolvable part of the model, this application is ready for migration. The application is ready for migration-only if it upgrades its dependencies to the prerelease versions of the path and process.
 
+#### Step two: Use the migration tool to migrate:
 Fortunately, the migration tool is clever, so you may check the nullability attributes that the apparatus has acquired for you. To change a device's conclusion, you can add nullability clues. Some of the migration cues included can have a significant impact on migration quality. The migration  guide provides further ideas on how to use the migrating tool most effectively.
 
 #### Step three: Analyze your migrated code statically:
-
- When using your IDE or the command line, you can update your packages by executing pub get. Your flutter and Dart code can then be evaluated statically respectively by using your IDE or the command line, as follows:
+When using your IDE or the command line, you can update your packages by executing pub get. Your flutter and Dart code can then be evaluated statically respectively by using your IDE or the command line, as follows:
  ```
 $ flutter pub get
 $ flutter analyze
@@ -145,3 +144,8 @@ Dart is a developer-centric language that is reaffirmed by this feature. Having 
 
 ### Conclusion
 As far as type safety is concerned, Dart is unbeatable. Compilers can assure that you obtain a variable or equivalent thing. However, even if the variable is not null, type safety alone does not guarantee that it is. When an error occurs, the null value is returned.
+
+Happy learning!
+
+---
+Peer Review Contributions by: [Briana Nzivu](/engineering-education/authors/briana-nzivu/)
