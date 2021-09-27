@@ -6,7 +6,7 @@ url: /searching-and-sorting-techniques/
 title: Searching and sorting techniques 
 description: In this article, we will learn about various sorting and searching techniques and their implementation in data structures and algorithms.
 author: jairus-onkundi
-date: 2021-09-21T00:00:00-13:35
+date: 2021-09-27T00:00:00-17:35
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
