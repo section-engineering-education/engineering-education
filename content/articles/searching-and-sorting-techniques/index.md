@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /searching-and-sorting-techniques /
+url: /searching-and-sorting-techniques/
 title: Searching and sorting techniques 
 description: In this article, we will learn about various sorting and searching techniques and their implementation in data structures and algorithms.
 author: jairus-onkundi
@@ -24,7 +24,7 @@ Sorting, for example, is required before using Binary Search, and it is also use
 ### Table of contents
 - [What is searching?](#what-is-searching)
 - [What is sorting?](#what-is-sorting)
-- [Techniques for searching and how they are implemented ](#techniques-for-searching-and-how-they-are-implemented )
+- [Techniques for searching and how they are implemented ](#techniques-for-searching-and-how-they-are-implemented)
   1. [Linear search](#1-linear-search)
   2. [Binary search](#2-binary-search)
   3. [Interpolation search](#3-interpolation-search)
@@ -38,19 +38,21 @@ Sorting, for example, is required before using Binary Search, and it is also use
    5. [Quick sort](#5-quick-sort)
    6. [Heap sort](#6-heap-sort)
    7. [Conclusion](#conclusion)
+
 ### What is searching?
 Searching in data structure refers to the act of locating needed information from a group of things stored as components in the computer memory.
 
 ### What is sorting?
 Sorting refers to the operation or technique of ordering and rearranging groups of data in a specified order.
+
 ### Techniques for searching and how they are implemented 
 These techniques are divided into categories depending on the search operation they undertake, for example:
 
 #### 1. Linear search
 The linear search method is a pretty simple search method. A sequential search is performed on all things one by one in this sort of search. Every item is verified, and if a match is discovered, that item is returned; if not, the search continues until the data collection is complete.
+
 ##### Algorithm
 step 1: Determine the size of the data set.
-
 
 step 2: Set the counter to zero.
 
@@ -85,11 +87,12 @@ Step 6 - If the element you're looking for isn't in the center, repeat steps 2, 
 #### 3. Interpolation search
 Depending on the value of the key being searched, interpolation search may go to various places. If the key's value is closer to the final element, for example, interpolation search is more likely to begin at the end.
 
- Interpolation search uses the formula below to get the place to be searched.
+Interpolation search uses the formula below to get the place to be searched.
 
 ```bash
  pos = i + [ (k-ar[i])*(z-i) / (ar[z]-ar[i]) ]
- ```
+```
+
 Let's look at the meaning of this formula:
 - ar[]: Array where elements need to be searched
 - k: Element to be searched
@@ -150,7 +153,7 @@ Step 6: Continue sorting the list until it is complete.
 
 An example of insertion sort is as shown below:
 
-![insertion](engineering-education/searching and sorting techniques/insertion sort.png)
+![insertion](/engineering-education/searching-and-sorting-techniques/insertion sort.png)
 
 #### 2) Bubble sort
 Bubble Sort is a basic sorting technique that t compares each adjacent element and swaps them when they're out of sequence.
@@ -168,7 +171,7 @@ step 3: Move on to the next element if the current element is less than the next
 
 An example bubble sort is as shown below:
 
-![bubble sort](engineering-education/searching and sorting techniques/bubble sort.png)
+![bubble sort](/engineering-education/searching-and-sorting-techniques/bubble sort.png)
 
 Step 4: Repeat step  1.
 
@@ -188,7 +191,7 @@ step 5: Continue sorting the array using the element in the succeeding place til
 
 An example selection sort is as shown below:
 
-![selection sort](engineering-education/searching and sorting techniques/selection sort.png)
+![selection sort](/engineering-education/searching-and-sorting-techniques/selection sort.png)
 
 #### 4) Merge sort
 One of the most efficient sorting algorithms is merge sort. It is based on the divide-and-conquer strategy. Merge sort reduces down a list into sub-lists until every sub-list only includes one element, after which it combines the sub-lists into a sorted list.
@@ -250,10 +253,10 @@ step 5: Repeat steps 2,3 and 4 as long as the heap is larger than one.
 
 An example of heap sort is as shown below:
 
-![heap sort-1](engineering-education/searching and sorting techniques/heap sort-1.png)
+![heap sort-1](/engineering-education/searching-and-sorting-techniques/heap sort-1.png)
 
-![heap sort-2](engineering-education/searching and sorting techniques/heap sort-2.png)
-![heap sort-3](engineering-education/searching and sorting techniques/heap sort-3.png)
+![heap sort-2](/engineering-education/searching-and-sorting-techniques/heap sort-2.png)
+![heap sort-3](/engineering-education/searching-and-sorting-techniques/heap sort-3.png)
 
 ### Conclusion
 Searching in data structures is finding a particular component in an array of ‘t’ components. To search, there are two kinds of searches: sequential and interval. Almost all search techniques may be classified into one of these two categories.  
