@@ -44,16 +44,13 @@ This line declares the version of XML being used, it also states the encoding to
 
 **Line 2:**
 
-```XML
-
+```xml
 <Greeting>
 
      <!--Supporting content-->
 
 </Greeting>
-
 ``` 
-
 `<Greeting>` acts as the parent/root element for this piece of code.Each XML document must have a root element. XMl tags are case-sensitive , each tag must have a similar closing tag. All other tags in this document will be anchored to this tag.
 
 **Line 3:**
@@ -125,11 +122,11 @@ There are several types of XXE attacks, namely:
 [Portswigger](www.portswigger.net/web-security/xxe) has several labs that can help you practice. For this article, I will use one lab to show how XXE attacks can retrieve files.
 
 Using Burpsuite, we intercept the data and send it to the repeater.
-
+![intercept](/engineering-education/understanding-xml-external-entity-attacks/intercept1.png)
 Since the current data does not have any entities, we will introduce our own and add malicious code. Using the entities we introduce, we will try to check whether we can retrieve the password file. 
-
+![payload](/engineering-education/understanding-xml-external-entity-attacks/payload.png)
 If we are successful, we should be able to see the file as shown below:
-
+![passwords](/engineering-education/understanding-xml-external-entity-attacks/intercept2.png)
 Apart from retrieving files, we can use XXE attacks for :
 
 - Denial of Service attacks. Most common being the billion laugh attack 
