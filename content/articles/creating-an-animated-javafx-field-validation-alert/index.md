@@ -166,9 +166,9 @@ Do the following in it:
 
 The AnchorPane will have the following:
 
-- Style
+- **Style**
 - - `-fx-text-fill`:  #8ecae6
-- Layout
+- **Layout**
 - - `Pref Width`: 400
 - - `Pref Height`: 600
 
@@ -178,12 +178,12 @@ The layout makes it fit perfectly with the scene initially created.
 
 The label will have the following:
 
-- Properties
+- **Properties**
 - - `Text`: LOGIN
 - - `Font`: System 25px Bold
-- Style
+- **Style**
 - - `-fx-text-fill`:  #219ebc
-- Layout
+- **Layout**
 - - `Pref Width`: 100
 - - `Pref Height`: 20
 - - `Layout X`: 150
@@ -214,15 +214,15 @@ When viewed using the '**Text**' view, the following code will be found to be au
 ```
 
 - Head over to this [link](https://github.com/justusmbuvi/Creating-an-Animated-JavaFX-field-Validation-alert/blob/main/src/main/resources/authentication/login/panda.png) and download the panda image. This will be placed to beautify the scene.
-Once downloaded, copy and paste it into the location of the FXML file.
-Drag and drop an ImageView control into the AnchorPane. The control will hold the image.
-Set the following to the ImageView control:
+- Once downloaded, copy and paste it into the location of the FXML file.
+- Drag and drop an ImageView control into the AnchorPane. The control will hold the image.
+- Set the following to the ImageView control:
 
 
-- Properties
+- **Properties**
 - - `Image`: panda.png
 - - `Font`: System 25px Bold
-- Layout
+- **Layout**
 - - `Fit Width`: 300
 - - `Fit Height`: 300
 - - `Layout X`: 90
@@ -244,14 +244,14 @@ The Scene Builder generates the code shown below:
 - Now, add a Rectangle from the Shapes category. It shall have the following:
 
 
-- Properties
+- **Properties**
 - - `Arc Width`: 5
 - - `Fill`: #b9eaf8
 - - `Stroke`: #a3a3a3
 - - `Stroke Width`: 2
 - - `Stroke Line Cap`: Round
 - - `Fill`: BEVEL
-- Layout
+- **Layout**
 - - `Width`: 370
 - - `Height`: 320
 - - `Layout X`: 15
@@ -267,11 +267,11 @@ The rectangles code is shown below:
 - Add a Label control with the following:
 
 
-- Properties
+- **Properties**
 - - `Text`: Enter your details below
 - - `Font`: System 14px Bold
 - - `Text Fill`: #023047
-- Layout
+- **Layout**
 - - `Layout X`: 120
 - - `Layout Y`: 290
 
@@ -289,15 +289,15 @@ Its code is shown below:
 - Add a TextField control to allow the input of the username and email. It has the following configurations:
 
 
-- Properties
+- **Properties**
 - - `Prompt Text`: Username / Email
 - - `Font`: System 15px
-- Layout
+- **Layout**
 - - `Pref Width`: 245
 - - `Pref Height`: 35
 - - `Layout X`: 80
 - - `Layout Y`: 345
-- Code
+- **Code**
 - - `fx:id`: usernameTextField
 
 The id is for identifying it as a unique element in the form.
@@ -315,14 +315,14 @@ The code is as follows:
 Add an ImageView control that will hold the image. It will have the following:
 
 
-- Properties
+- **Properties**
 - - `Image`: users.png
-- Layout
+- **Layout**
 - - `Fit Width`: 35
 - - `Fit Height`: 35
 - - `Layout X`: 80
 - - `Layout Y`: 345
-- Code
+- **Code**
 - - `fx:id`: usersIcon
 
 ```xml
@@ -336,15 +336,15 @@ Add an ImageView control that will hold the image. It will have the following:
 - Add a PasswordField control to capture the password. It has the following:
 
 
-- Properties
+- **Properties**
 - - `Prompt Text`: Password
 - - `Font`: System 15px
-- Layout
+- **Layout**
 - - `Pref Width`: 245
 - - `Pref Height`: 35
 - - `Layout X`: 80
 - - `Layout Y`: 400
-- Code
+- **Code**
 - - `fx:id`: userPassword
 
 Its code is as follows:
@@ -361,14 +361,14 @@ Its code is as follows:
 After downloading it, add an ImageView control to hold it. The control has the following:
 
 
-- Properties
+- **Properties**
 - - `Image`: lock.png
-- Layout
+- **Layout**
 - - `Fit Width`: 35
 - - `Fit Height`: 35
 - - `Layout X`: 40
 - - `Layout Y`: 400
-- Code
+- **Code**
 - - `fx:id`: passwordIcon
 
 The SceneBuilder generated code is as follows:
@@ -386,14 +386,14 @@ Add it by adding a Label control to the form. The label will not have any conten
 Rather it will have this content when the checks are done. The label will have the following:
 
 
-- Properties
+- **Properties**
 - - `Font`: System 12px
 - - `Text Fill`: RED
-- Layout
+- **Layout**
 - - `Pref Width`: 245
 - - `Layout X`: 80
 - - `Layout Y`: 445
-- Code
+- **Code**
 - - `fx:id`: invalidDetails
 
 ```xml
@@ -407,20 +407,20 @@ Buttons will be required to check if the inputs are entered as required or not, 
 Add a button from the controls. The button will have the following:
 
 
-- Properties
+- **Properties**
 - - `Text`: Cancel
 - - `Font`: System 14px
 - - `Text Fill`: #a3a3a3
-- Style
+- **Style**
 - - `-fx-background-color`:  transparent
 - - `-fx-border-width`:  2
 - - `-fx-border-color`:  #a5a5a5
-- Layout
+- **Layout**
 - - `Pref Width`: 90
 - - `Pref Height`: 30
 - - `Layout X`: 85
 - - `Layout Y`: 480
-- Code
+- **Code**
 - - `fx:id`: cancelButton
 - - `On Action`: onCancelButtonClick
 
@@ -429,19 +429,19 @@ The `On Action` property identifies the button to a function. The button is the 
 - Create a **login button** that has the following:
 
 
-- Properties
+- **Properties**
 - - `Text`: Login
 - - `Font`: System 15px
 - - `Text Fill`: #a3a3a3
-- Style
+- **Style**
 - - `-fx-background-color`: #0077b6
 - - `-fx-border-radius`:  5
-- Layout
+- **Layout**
 - - `Pref Width`: 90
 - - `Pref Height`: 30
 - - `Layout X`: 225
 - - `Layout Y`: 480
-- Code
+- **Code**
 - - `fx:id`: loginButton
 - - `On Action`: onLoginButtonClick
 
@@ -458,19 +458,19 @@ Its code is as shown below:
 - Add a **reset password button**. It has the following:
 
 
-- Properties
+- **Properties**
 - - `Text`: Login
 - - `Font`: System 12px
 - - `Text Fill`: #a3a3a3
-- Style
+- **Style**
 - - `-fx-background-color`: transparent
 - - `-fx-border-radius`:  5
-- Layout
+- **Layout**
 - - `Pref Width`: 140
 - - `Pref Height`: 25
 - - `Layout X`: 120
 - - `Layout Y`: 530
-- Code
+- **Code**
 - - `fx:id`: forgotButton
 
 Its code:
