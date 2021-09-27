@@ -14,16 +14,11 @@ images:
     - url: /engineering-education/searching-and-sorting-techniques/hero.jpg
       alt: Searching and sorting techniques 
 ---
-
-### Introduction
-
 Searching is determining the position of an item in a list. This is a crucial aspect of many data structure techniques, because we can only execute one action on an item if and only if we locate the item. To determine if an element is present in a collection of components, many methods have been devised, as we will discuss them in this article.
-
-
+<!--more-->
 Sorting is the putting information in a certain order in a data structure. Sorting data makes it easier to navigate through it quickly and efficiently.Sorting reduces the complexity of problems by a large amount, and sorting is a technique for reducing the complexity of searching. 
 
-
-<!--more-->
+### Introduction
 Sorting, for example, is required before using Binary Search, and it is also used in database methods. Sorted arrays and lists make it easier to locate items fast. In this article, we will learn about various sorting and searching techniques and their implementation in data structures and algorithms. 
 
 ### Table of contents
@@ -71,9 +66,9 @@ step 7: Send a message if all the objects have been searched, and no match has b
 
 #### 2. Binary search
 To search a sorted array, divide the search interval in half regularly. Begin by creating an interval that spans the whole array. If the search key's value is less than the item in the interval's midpoint, the interval should be narrowed to the bottom half. Otherwise, limit it to the upper half of the page. Check the value until it is discovered or the interval is empty.
+
 ##### Algorithm
 The procedures for implementing binary search are:
-
 
 Step 1: Ask the user for the search element.
 
@@ -100,6 +95,7 @@ Let's look at the meaning of this formula:
 - k: Element to be searched
 - i: Starting index in ar[]
 - z: Ending index in ar[]
+
 ##### Algorithm
 Step 1: Begin looking for information in the middle of the list.
 
@@ -114,10 +110,12 @@ Step 5: If the data is larger than the center, look for it in a higher sub-list.
 Step 6: If the data is less than the middle, look in the lowest sub-list.
 
 Step 7: Continue until you've found a match.
+
 #### 4. Jump search
 The Jump Search Approach is a new sorting method that locates a particular component in a sorted list. When compared to a linear search algorithm, the basic principle behind this searching strategy is to search a smaller amount of elements.
 
 In each iteration, this can be accomplished by skipping a fixed number of array elements or leaping ahead a fixed number of steps.
+
 ##### Algorithm
 Consider the x=3 block size.
 
@@ -128,19 +126,21 @@ The target element can be stored in the variable t.
 Now, the search begins with the first element and continues until the target element is found.
 
 Finally, if the target element is present in the sorted array, it can be found.
+
 ### sorting techniques and their implementation
 Elements in a data structure can be sorted using the sorting techniques as discussed below:
+
 #### 1) Insertion sort
 Insertion sort is a sorting method in which each item in a sorted list is added one at a moment. The list members are compared progressively before being placed in a specific order.
  
 In this sorting technique, an element is inserted at a certain location.
+
 ##### Algorithm
 Step 1: If it's the first element, it's already sorted.
 
 Step 2: Select the next item.
 
 Step 3: Compare the element to be sorted to all items in the sorted sub-list.
-
 
 step 4: All elements in the sorted sub-list with values higher than that of the sorted value must be moved.
 
@@ -149,14 +149,16 @@ Step 5: Fill in the missing value.
 Step 6: Continue sorting the list until it is complete.
 
 An example of insertion sort is as shown below:
+
 ![insertion](engineering-education/searching and sorting techniques/insertion sort.png)
+
 #### 2) Bubble sort
 Bubble Sort is a basic sorting technique that t compares each adjacent element and swaps them when they're out of sequence.
 
 Bubble sort works well with small sets of data.
+
 ##### Algorithm
 The stages involved in bubble sort (sorting an array in ascending order) are:
-
 
 step 1: Compare the current element to the next element of the array, starting with the first element (index = 0).
 
@@ -165,12 +167,16 @@ step 2: Swap the elements if the value of the current element is higher than the
 step 3: Move on to the next element if the current element is less than the next element. 
 
 An example bubble sort is as shown below:
+
 ![bubble sort](engineering-education/searching and sorting techniques/bubble sort.png)
+
 Step 4: Repeat step  1.
+
 #### 3) Selection sort
 The selection sort technique sorts an array by continually choosing the smallest item from the unsorted segment and placing it at the start in ascending order. As a result, that item is added to the sorted array.
 
 This procedure keeps moving the unsorted array border one item to the right.
+
 ##### Algorithm
 Step 1: pick the first item on an array.
 
@@ -181,13 +187,14 @@ Step 3: If any item is determined to be smaller than the picked item (in ascendi
 step 5: Continue sorting the array using the element in the succeeding place till the entire array is sorted.
 
 An example selection sort is as shown below:
+
 ![selection sort](engineering-education/searching and sorting techniques/selection sort.png)
+
 #### 4) Merge sort
 One of the most efficient sorting algorithms is merge sort. It is based on the divide-and-conquer strategy. Merge sort reduces down a list into sub-lists until every sub-list only includes one element, after which it combines the sub-lists into a sorted list.
 
 ##### Algorithm
 step 1: If there is just one entry in the list, return it because it has been sorted already.
-
 
 Step 2: Recursively partition the list into two halves until you can't partition it anymore.
 
@@ -196,6 +203,7 @@ Step 3: Sort the smaller lists and combine them to make a new list.
 An example of merge sort is as shown below:
 
 ![merge sort](engineering-education/searching and sorting techniques in data structures/merge sort.png)
+
 #### 5) Quick sort
 It is a similar split-and-conquer technique to merge sort. It selects a pivot element and partitions the specified array around that pivot.
 
@@ -208,7 +216,6 @@ Step 2: Use two parameters, one is on the upper left of the list middle value, a
 
 Step 3: To the left shows the low index.
 
-
 Step 4: The right arrow points to the highest point.
 
 Step 5: While the element on the left is lower than the pivot, go right.
@@ -220,17 +227,18 @@ Step 7: Swap left and right if both steps 5 and 6 don't match.
 Step 8: If they meet on the left or right, the place where they met becomes the new pivot.
 
 An example quick sort is as shown below:
+
 ![quick sort](engineering-education/searching and sorting techniques in data structures/quick sort.png)
+
 #### 6) Heap sort
 Heap sort is a sorting algorithm that compares objects using a Binary Heap dataset. It's comparable to selection sorting, in which we identify the smallest piece first and place it at the top. For the remaining values, the same procedure is repeated.
 
-
 A Binary Heap is a Complete Binary Tree in which elements are placed in such a way that the value of a parent node is higher (or lower) than the elements of its two offspring nodes.
+
 ##### Algorithm
 Sorting in ascending order with the Heap Sort Algorithm:
 
 step 1: Create a maximum heap using the data.
-
 
 step 2: The largest element is placed at the base of the root at this stage.
 
@@ -246,9 +254,9 @@ An example of heap sort is as shown below:
 
 ![heap sort-2](engineering-education/searching and sorting techniques/heap sort-2.png)
 ![heap sort-3](engineering-education/searching and sorting techniques/heap sort-3.png)
+
 ### Conclusion
 Searching in data structures is finding a particular component in an array of ‘t’ components. To search, there are two kinds of searches: sequential and interval. Almost all search techniques may be classified into one of these two categories.  
-
 
 Binary and linear searches are two quick and easy techniques, with binary working quicker than linear search techniques.
 
