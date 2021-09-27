@@ -1,7 +1,8 @@
 # Understanding Script Tag Attributes: Async and Defer
+
 ![hero](/script-tags-async-defer/hero.jpg)
 
-You may have come across one of [Hypertext Markup Language(HTML)](https://www.section.io/engineering-education/semantic-html-for-beginners/) tags as shown below, the `script` tag. 
+You may have come across one of [Hypertext Markup Language(HTML)](https://www.section.io/engineering-education/semantic-html-for-beginners/) tags as shown below, the `script` tag. 
 
 ```HTML
 
@@ -9,11 +10,11 @@ You may have come across one of [Hypertext Markup Language(HTML)](https://www.se
 
 ```
 
-The `<script src=’’></script>` tag is an HTML tag. It is used to refer to executable codes or data, such as Javascript code. 
+The `<script src=’’></script>` tag is an HTML tag. It is used to refer to executable codes or data, such as Javascript code. 
 
-The script tag has some attributes. 
+The script tag has some attributes. 
 
-In this article, you will learn about two of these attributes, **async** and **defer**. The **async** and **defer** attributes are essential because they improve web performance.
+In this article, you will learn about two of these attributes, **async** and **defer**. The **async** and **defer** attributes are essential because they improve web performance.
 
 ### Goal
 
@@ -21,11 +22,11 @@ In this article, you will learn:
 
 * How the browser parses HTML.
 
-* What are **async** and **defer**.
+* What are **async** and **defer**.
 
-* When to use **async** or **defer**.
+* When to use **async** or **defer**.
 
-* Differences and similarities between **async** and **await**.
+* Differences and similarities between **async** and **await**.
 
 ### Prerequisites
 
@@ -45,43 +46,43 @@ You must have been advised that the `script` tag should be placed before the clo
 
 <body>
 
- <H1>My Website</H1>
+ <H1>My Website</H1>
 
- <p>Welcome to my Portfolio</p> 
+ <p>Welcome to my Portfolio</p> 
 
- 
+ 
 
 <script src=’javascriptcode.js’></script><!-- script tag before the closing tag -->
 
-<body/> <!-- closing body tag -->
+</body> <!-- closing body tag -->
 
 ```
 
 Have you ever thought about why you are advised to place the `script` tag before the closing `body` tag? This is because of how the browser parses (loads) HTML. We will look at how the browser parses HTML soon.
 
-But you can actually place the `script` tag anyway within the HTML document. You can place it within the `header` tag or immediately after the opening `body` tag. Like we have in the HTML code below:
+But you can place the `script` tag anyway within the HTML document. You can place it within the `header` tag or immediately after the opening `body` tag. Like we have in the HTML code below:
 
 ```HTML
 
 <head>
 
- <script src=’javascriptcode.js’></script> <!-- script tag within the header tag -->
+ <script src=’javascriptcode.js’></script> <!-- script tag within the header tag -->
 
 </head>
 
 <body>
 
- <H1> MY Website</H1>
+ <H1> MY Website</H1>
 
- <p>Welcome to my Portfolio</p> 
+ <p>Welcome to my Portfolio</p> 
 
-</body> 
+</body> 
 
 ```
 
 ### How The Browser Parse HTML
 
-You need to understand how the browser parses HTML before we go into the details of **async** and **defer**.
+You need to understand how the browser parses HTML before we go into the details of **async** and **defer**.
 
 > Parse means analyzing and conversion of program files into a format that is easy for the runtime environment (browser) to work with. Here, a program file can be an HTML file or a Javascript file.
 
@@ -97,9 +98,21 @@ If you have an HTML file with multiple `script` tags within the `header` tag or 
 
 The parsing of the HTML file can then continue after the content of the `script` tag has been downloaded. Although, this delay may be avoided by placing the `script` tag before the closing `body` tag.
 
-In an HTML file with an enormous size, with a `script` tag placed before the closing body tag, there may be a noticeable delay in parsing the HTML file. Although this delay may be unnoticed by end-users having a fast internet connection. Most end-users have a slow internet connection and they may notice this delay. 
+The image below will give a better understanding of normal HTML parsing:
 
-The problems above can be solved by including **defer** or **async** in your `script` tag, as shown below:
+![Normal-script-execution](Normal-script-Execution.png)
+
+From the image above, in Normal HTML parsing:
+
+1. Once the browser parses HTML and comes across a script tag, the browser pauses HTML parsing.
+
+2. Then, the browser fetches(downloads) and executes the script. 
+
+3. After downloading and executing the script, then it continues HTML parsing.
+
+In an HTML file with enormous size, with a `script` tag placed before the closing body tag, there may be a noticeable delay in parsing the HTML file. Although this delay may be unnoticed by end-users having a fast internet connection. Most end-users have a slow internet connection and they may notice this delay. 
+
+The problems above can be solved by including **defer** or **async** in your `script` tag, as shown below:
 
 ```
 
@@ -119,7 +132,7 @@ What are async and defer? Async and defer are `script` tag boolean attributes th
 
 #### Defer
 
-In a layperson’s term, `defer` means postpone to a later time. 
+In a layperson’s term, `defer` means postpone to a later time. 
 
 Here is an example of defer used as a `script` tag attribute:
 
@@ -153,19 +166,29 @@ When the boolean attribute, defer is used in a `script` tag like the one above, 
 
 ```
 
-When the browser comes across two or more scripts, they are downloaded in parallel. This is to improve page performance. 
+When the browser comes across two or more scripts, they are downloaded in parallel. This is to improve page performance. 
 
-In the above example, `short-script.js` may be downloaded first probably because of its size, but because of the `defer` attribute in the script tag, the browser will not execute `short-script.js` until `long-script.js` is fully downloaded and executed. 
+In the above example, `short-script.js` may be downloaded first probably because of its size, but because of the `defer` attribute in the script tag, the browser will not execute `short-script.js` until `long-script.js` is fully downloaded and executed. 
 
 > defer attribute has no effect when the `script` tag has no src attribute.
 
-#### Async 
+The image below provides a visual understanding of the defer attribute:
 
-We got async from the word ‘asynchronous’, which means events not occurring at the same time. We got asynchronous from two Greek words ‘asyn’, which
+![defer-script-execution](Defer-script-Execution.png)
 
-means ‘not with’ and ‘chronos’, which means ‘time’.
+From the image above, in Defer:
 
-When you add the boolean script attribute, `async` to a `script` tag. it tells the browser to:
+1. Once the browser parses HTML and comes across a script tag. The browser fetches(downloads) and executes the script alongside the HTML parsing. 
+
+2. It does not pause HTML parsing.
+
+3. The script is then executed after HTML is parsed fully.
+
+#### Async 
+
+We got async from the word ‘asynchronous’, which means events not occurring at the same time. We got asynchronous from two Greek words ‘asyn’, which means ‘not with’ and ‘chronos’, which means ‘time’.
+
+When you add the boolean script attribute, `async` to a `script` tag. it tells the browser:
 
 * Not to block the HTML file from parsing when it comes in contact with the script. The browser continues to build the DOM, so contents after the `script` tag are visible.
 
@@ -177,11 +200,11 @@ When you add the boolean script attribute, `async` to a `script` tag. it tells t
 
 <script>
 
- document.addEventListener(‘DOMContentLoaded’, () => alert(“DOM is visible!”));
+ document.addEventListener(‘DOMContentLoaded’, () => alert(“DOM is visible!”));
 
 </script>
 
-<script async src="long-script.js"></script>
+<script async src=”long-script.js"></script>
 
 <script async src="short-script.js"></script>
 
@@ -195,16 +218,126 @@ In the example above:
 
 * Whichever one loads first between `long-script.js` and ‘short-script.js’ is executed first. Async scripts follow the “load-first” principle.
 
- Also, async scripts work with available DOM. Even when DOM is not fully parsed. Take for instance, if there are 2500 buttons in an HTML file, and during the process of parse, only 1000 buttons are loaded, async will trigger `DOMCOntentLoaded` on the loaded 1000 buttons. Async will not wait for the remaining 1500 buttons before triggering `DOMContentLoaded`.
+The image below provides a visual understanding of the async attribute.
+
+![async-script-execution](Async-script-Execution.png)
+
+From the image above, in Async:
+
+1. Once the browser parses HTML and comes across a script tag. The browser fetches(downloads) and executes the script alongside the HTML parsing. 
+
+2. HTML parsing is not paused.
+
+3. The script executes once the browser finishes fetching the script. Script execution doesn’t wait for HTML parsing.
+
+ Also, async scripts work with available DOM. Even when DOM is not fully parsed. Take for instance, if there are 25000 buttons in an HTML file, and during the process of parse, if only 1000 buttons are loaded, async will trigger `DOMCOntentLoaded` on the loaded 1000 buttons. Async will not wait for the remaining 24000 buttons before triggering `DOMContentLoaded`.
+
+ 
+
+ We can get a better understanding of what we have above by writing a few codes. Follow the instructions below:
+
+ 1. Create a folder named Buttons.
+
+ 2. In the Buttons folder, create an HTML file named **buttons.html**.
+
+ 3. Open your HTML file in your VS Code(IDE).
+
+ 4. Copy the code below into your HTML file.
+
+**Buttons/buttons.html**
+
+```HTML
+<head>
+
+  <script src="defer.js" defer></script>
+
+  <script src="async.js" async></script>
+
+</head>
+
+<body>
+
+  <div class="container">
+
+  <!-- 25000 buttons -->
+
+  </div>
+
+</body>
+```
+ 
+ 
+
+ In the HTML code above, we have two scripts. The first script with **defer** attribute. The Second script with **async** attribute.
+
+ To create the 25000 buttons, place this [emmet](https://code.visualstudio.com/docs/editor/emmet) code inside **buttons.html** below the 25000 buttons comment. Then press the **tab** key. 
+
+ ```HTML
+ button{click}*250000
+ ``` 
+
+ Let’s write some Javascript code to select all the buttons in the HTML code. follow these instructions:
+
+ 1. Create a JavaScript file in the **Button folder**. 
+
+ 2. Name the Javascript file **defer.js** 
+
+ 3. Copy the codes below into the file.
+
+ **Buttons/defer.js**
+```Javascript
+
+ // Defer script code
+
+let deferButton = document.querySelectorAll(‘button’);
+
+console.log(`Defer script button count: ${deferButton.length}`);
+```
+
+
+ In the code above, we selected all the buttons in the HTML file. We then logged the button’s length into the console.
+
+ Then, create an **async.js** file the same way you created **defer.js**. Copy the codes below inside **async.js** file.
+
+ **Buttons/async.js**
+
+```Javascript
+ // Async script code 
+
+let asyncButton = document.querySelectorAll(‘button’);
+
+console.log(`Async script button count: ${asyncButton.length}`);
+```
+ In the code above, we selected all the buttons in the HTML file. We then logged the button’s length into the console.
+
+ Now, open the code in your browser. Then follow the instructions below to open the browser’s console:
+
+ 
+
+ 1. Press **f12** to open developer tools.
+
+ 2. At the top of the developer tools, click on console.
+
+ In the console, you will see something similar to the image below:
+
+ ![image](async-await-result.png)
+
+From the image above:
+
+* Async didn’t wait for the DOM to load fully. Async script triggered DOMContentLoaded on buttons available at the time of its execution i.e 3957.
+
+* Defer waited for the DOM to load fully. Defer script selected all 25000 buttons after waiting for DOMContentLoaded. 
 
 ### Differences Between Async and Defer
 
 In this section, we will look at differences between async and defer in terms of order of execution and `DOMContentLoaded`.
 
-
 | | Defer| Async |
+
 |-----------|-----------|------|
+
 |Load(Execution) order |Order of appearance of script tag matters.|Order of appearance of script tags doesn’t matter.|
+
 |DOMContentLoaded| Execute after HTML file is fully loaded and parsed, right before DOMContentloaded.| May execute before or after DOMContentloaded.|
 
 ### When To Use Async or Defer
@@ -242,3 +375,4 @@ For further learning, visit the links below:
 * [The script element-MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script)
 
 * [Parse-MDN](https://developer.mozilla.org/en-US/docs/Glossary/Parse)
+
