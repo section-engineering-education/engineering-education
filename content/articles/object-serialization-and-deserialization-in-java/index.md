@@ -1,6 +1,21 @@
-### Introduction
+---
+layout: engineering-education
+status: publish
+published: true
+url: /object-serialization-and-deserialization-in-java/
+title: Serialization and deserialization in Java
+description: This article explains the concept of serialization and deserialization in the context of Java.
+author: grace-wanjiru
+date: 2021-09-27T00:00:00-14:30
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+ - url: /engineering-education/object-serialization-and-deserialization-in-java/hero.png
+   alt: Serialization and deserialization diagram
+---
 In this tutorial, I'll explain how serialization works and how we can implement it. I will also include examples of how we can serialize a data structure using various Java concepts in doing so.
+<!--more-->
 
 You can read a deserialized object from a file and reconstruct it in memory. This utilizes the entity's metadata and bytes that constitute its contents.
 
