@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /html-client-for-web-services-using-dhtml-behavior/
-title: HTML Client for Web Services Using DHTML Behavior
-description: In this tutorial, we will discuss how Web services allow software applications to communicate and exchange data. 
+title: HTML Client for Web Services using DHTML Behavior
+description: In this tutorial we will discuss how web services allow software applications to communicate and exchange data. 
 author: stephen-boro
-date: 2021-09-27T00:00:00-11:50
+date: 2021-09-27T00:00:00-16:50
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -14,17 +14,19 @@ images:
   - url: /engineering-education/html-client-for-web-services-using-dhtml-behavior/hero.jpg
     alt: HTML Client for Web Services Using DHTML Behavior Hero Image
 ---
-
-The Dynamic Hypertext Markup Language (DHTML) is the most efficient and widely used web development strategy in websites with non-trivial user-input capabilities. DHTML refers to tinkering with an HTML document's Document Object Model, tinkering with styling information's CSS declarations, and tying everything together with client-side JavaScript programming.
+The Dynamic Hypertext Markup Language (DHTML) is the most efficient and widely used web development strategy in websites with non-trivial user-input capabilities. 
 <!--more-->
+DHTML refers to tinkering with an HTML document's Document Object Model, tinkering with styling information's CSS declarations, and tying everything together with client-side JavaScript programming. 
+
 The coupling of CSS formatting and HTML component functionality is represented by DHTML behavior. Any element on an HTML page can be assigned to DHTML behaviors, allowing for amazing content presentation freedom.
 
 ### Prerequisites
 To follow through this article, you will need to have:
 - Background information on using Visual Studio.
-- A basic understanding the C# and Javascript programming languages.
+- A basic understanding the C# and Javascript [programming languages](/engineering-education/topic/languages/).
 - A [SoapUI](https://www.soapui.org/downloads/latest-release/) open source application for running our SOAP applications.
 - The [oracle-online-terminal](https://www.tutorialspoint.com/oracle_terminal_online.php) to execute the C# commands. 
+
 ### Table of contents
 - [Importance of using DHTML](#importance-of-using-dhtml)
 - [Distinction between HTML and DHTML](#distinction-between-html-and-dhtml)
@@ -47,10 +49,10 @@ Here are some of the advantages we can get when using DHTML:
 - It allows you to utilize the events, methods, and properties. Additionally, it allows reusability of code.
 - It also has a data binding feature in browsers.
 - Users can simply build dynamic fonts for their websites or web pages using DHTML.
-- Since DHTML uses a low-bandwidth impact, then the internet's performance is improved.
+- Since DHTML uses a low-bandwidth impact, the internet's performance is improved.
 
 ### Distinction between HTML and DHTML
-HTML and DHTML have some of their differences which are as follows:
+HTML and DHTML have some differences, which are as follows:
 1. DHTML language is a collection of different technologies, unlike HTML which is a markup language.
 2. DHTML language needs database connectivity while in HTML it does not need connectivity.
 3. We use DHTML to create dynamic web pages but HTML is employed to construct web pages that are not changing or static.
@@ -61,24 +63,24 @@ HTML and DHTML have some of their differences which are as follows:
 8. HTML can be used in user-side coding whereas DHTML is used for server-side coding.
 9. Files in HTML are saved with `.html` or `.htm` extensions while DHTML uses `.dhtml` extension.
 
-### How would we make the Web services?
-Web services are code snippets that may be reused to allow many applications to interact with one another. Web services are used with any type of application developed in any technology once it is produced and hosted on a server on the Internet.
+### How would we make the web services?
+Web services are code snippets that may be reused to allow applications to interact with one another. Web services are used with any type of application developed in any technology once it is produced and hosted on a server on the Internet.
 
 #### Step one
-Click on the `File` then go to `Website` finally click `ASP.NET empty website template` in Visual Studio, then you should give a name for the website. We will use _webservicesample_ as our example.
+In Visual Studio, click on the `File` then go to `Website` and click `ASP.NET empty website template`, then give a name for the website. We will use *webservicesample* as our example.
 
-![This shows a website template](engineering-education/html-client-for-web-services-using-dhtml-behavior./webservice.jpg)
+![This shows a website template](engineering-education/html-client-for-web-services-using-dhtml-behavior/webservice.jpg)
 
 #### Step two
 In the solution explorer, choose the icon in the solution, add a new item by clicking `add new item`.
-![This shows a airthmatic.cs](engineering-education/html-client-for-web-services-using-dhtml-behavior./addnew.jpg)
+
+![This shows a airthmatic.cs](engineering-education/html-client-for-web-services-using-dhtml-behavior/addnew.jpg)
 
 This will create two files as follows:
+- *Arithmetics.asmx* which is our service file.
+- *Arithmetic.cs* `Appcode` folder will be able to host the code file for the service.
 
-- _Arithmetics.asmx_ which is our service file.
-- _Arithmetic.cs_ `Appcode` folder will be able to host the code file for the service.
-
-![This shows the App code](engineering-education/html-client-for-web-services-using-dhtml-behavior./appcode.jpg)
+![This shows the App code](engineering-education/html-client-for-web-services-using-dhtml-behavior/appcode.jpg)
 
 The code below explains our file in arithmetic:
 
