@@ -14,9 +14,9 @@ images:
   - url: /engineering-education/java-native-interface/hero.jpg
     alt: Java Native Interface Cover image
 ---
-The Java Native Interface (JNI) standard is part of the Java platform since Java 1.1 allows Java code to communicate with code scripted in different languages. Although the JNI was developed primarily for natively compiled languages, C and C++ are two examples of programming languages. It does not restrict you from utilizing other languages as long as the proper calling conventions are implemented.
-
 ### Introduction
+The Java Native Interface (JNI) standard is part of the Java platform since Java 1.1 allows Java code to communicate with code scripted in different languages. Although the JNI was developed primarily for natively compiled languages, C and C++ are two examples of programming languages; it does not restrict you from utilizing other languages as long as there is proper implementation of calling conventions.
+
 As we all know, one of Java's key advantages is flexibility, which means that when we create a code compilation, the outcome is bytecode that is platform agnostic. Simply put, this is possible to execute every system or gadget that can run java programs on a computer. 
 
 However, there are situations when we have to use natively executable code for a particular infrastructure. We employ native code for a variety of reasons, including the following:
