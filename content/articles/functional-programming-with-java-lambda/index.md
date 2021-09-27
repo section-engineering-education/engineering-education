@@ -1,11 +1,11 @@
-# Introduction to functional Programming
+# # # Introduction to functional Programming
 Java has been an Object-Oriented-programming language which recommends encapsulation of all variable and method of the class, which mean all code block is with class and object, before java 8 the process of passing a behaviour to method takes extra work and load because we are passing a class with another attribute.  
 
 In java 8 Lambdas was introduced to represent the Functional interface of Java, which means lambdas expression is the expression of functional interface. The introduction of the Lambdas was to implement behaviour code to be easier by letting you create a function that performs a specific task that does not belong to a class and be treated as a value 
 
 At the end of the article, the reader will be able to understand java functional programming, assigning lambdas to an interface, working with lambdas expression with different number of parameters, The reader will also be able to convert object or class method to lambdas function with less code, The reader will also understand the importance of using function programming 
 
-# # Prerequisites 
+# # # Prerequisites 
 The reader should have: 
 At least a basic knowledge of Java. 
 Have Java installed on your computer 
@@ -66,15 +66,14 @@ public class LambdaAlgorithmTest {
 line 1 of the above code is an interface with the name Hello, which declare a method called called `sayHello`, the method takes one parameter of `greet` which is a type string and will return type string. line 3 create a new class called `LambdaAlgorithmTest` which contain the main method, the method declares a function `hello` with type `Hello` interface, and the method function has one parameter of `(message)` ith two-variable `str1` and `str2` which both are of type string, the first variable `str1` takes a value `Welcome` and the second variable `str2` concatenate `str1` and `message` and the function return `str2`.
 
 
-# # Working with different Lambda parameter 
+# # # Working with different Lambda parameter 
 
-# # # Lambda example that takes no parameter 
+# # # # Lambda example that takes no parameter 
 
 
 ```java
 @FunctionalInterface 
 interface MyFunctionalInterface { 
-
    //A method with no parameter 
    String sayHello(); 
 } 
@@ -87,8 +86,9 @@ public class Example {
    } 
 } 
 ```
+line 1 of the above code `@FunctionalInterface` is annotation with ensure funtional inerface does not have more tha one abstract method, line 2 is an interface with the name ` MyFunctionalInterface`, which declare a method called called `sayHello`, the method takes no parameter,  will return type string. line 3 create a new class called `Example` which contain the main method, the method declares a function `msg` with type `MyFunctionalInterface` interface, and the function result will print `Hello`.
 
-# # # Lambda example with a single parameter 
+# # # # Lambda example with a single parameter 
 ```java
 @FunctionalInterface 
 interface MyFunctionalInterface { 
@@ -106,7 +106,8 @@ public class LambdaSingleParam {
 } 
 ```
 
-# # # Lambda example with multiple parameters 
+
+# # # # Lambda example with multiple parameters 
 
 ```java
 interface StringConcat { 
@@ -123,13 +124,13 @@ public class LambdaMultipleParameter {
 } 
 ```
 
-# # Lambda Stream Pipeline 
+# # #  Lambda Stream Pipeline 
 
 Streams are objects of classes that implement interface Stream from or one of the specific streams interfaces for preparing collections of int, long or double values. Stream enables you to act on the collection of elements with lambda. 
 
 Lambda Stream pipeline is a sequence of processing steps from the data source(from collections), the pipeline performs two main operations which is an intermediate or terminal operation which formed a chain method calls. 
 
-# # # Intermediate and Terminal Operation 
+# # # # Intermediate and Terminal Operation 
 An intermediate operation is an activity that plays out a particular task on a stream element and the result of the task form a new stream. Intermediate operations are also called Lazy operations which implies that the operation isn't performed until a terminal operation is called. 
 
 |Operation |Description                                                    |
@@ -146,7 +147,7 @@ An intermediate operation is an activity that plays out a particular task on a s
 |sorted    | return elements of the stream in a given order                 |
 |----------|:-------------------------------------------------------------:|
 
-# # # The intermediate operation 
+# # # # The intermediate operation 
 
 A Terminal Operation starts processing of intermediate operation perform on stream and produce the result. Terminal operations are known as eager operations because they carry out the requested task when they are called.
 
