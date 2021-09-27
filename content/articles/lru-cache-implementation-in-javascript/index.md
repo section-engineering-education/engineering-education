@@ -10,7 +10,7 @@ date: 2021-08-17T00:00:00-16:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
- - url: /engineering-education/lru-cache-implementation-in-javascript/hero.png
+ - url: /engineering-education/lru-cache-implementation-in-javascript/hero.jpg
    alt: Cache LRU JavaScript Image
 ---
 The cache holds data in RAM. This makes the retrieval of data much faster than typical databases where data is stored on a disk.
