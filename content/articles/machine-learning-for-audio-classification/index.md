@@ -1,3 +1,22 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /machine-learning-for-audio-classification/
+title: Machine Learning for Audio Classification
+description: This tutorial will teach the reader how classify audio using machine learning.
+author: willies-ogola
+date: 2021-09-27T00:00:00-17:20
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/machine-learning-for-audio-classification/hero.png
+    alt: Audio Classification Example Image
+---
+Machine learning for audio can be used in pitch detection, to understand speech, understand musical instruments, and in audio and music generation. For our case, we shall use it for classification.
+<!--more-->
+
 Machine learning has shown exemplary results when understanding our environment using vision. But one area where machine learning hasn't been used much is in sound. This is because sound can give us a perspective that is not directional like in a camera. It does not depend on illumination, and you can hear the sound the same way no matter if it's day or night and from a much further distance. This creates additional challenges.
 
 But as it turns out, converting sound waves into audio then to spectrograms (visual representation of frequencies) can allow us to use machine learning on audio. Machine learning for audio can be used in pitch detection, to understand speech, understand musical instruments, and in audio and music generation. For our case, we'll use it for classification. An excellent example of an audio classification problem is telling a machine whether audio is speech or music.
