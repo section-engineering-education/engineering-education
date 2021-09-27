@@ -29,7 +29,7 @@ Our HTML form will consists of:
 - First Name / Last Name
 - Username or Email
 - Password / Confirm Password
-- Signup Button
+- Register Button
 
 Lets start learning!
 
@@ -63,17 +63,19 @@ There’s hardly any need to get too worked up over it. Unfortunately, no HTML e
 
 #### Creating a HTML File.
 
-Next, inform your text editor that you're going to generate a HTML file. To do this, create a new file and save it with the ".html" extension. For instance, "myform.html."
+Next, inform your text editor that you're going to generate a HTML file. To do this, create a new file and save it with the ".html" extension. For instance, "index.html."
 
 Once you are done , type in the following code:
 
 ```html
 <!DOCTYPE html>
-<html>
-  <head>
-    <title></title>
-  </head>
-  <body></body>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
 </html>
 ```
 
@@ -86,15 +88,22 @@ In this tutorial, we are adding a `<form>` element within the `<body>` element, 
 
 ```html
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
+<html lang="en">
+
+<head>
+    
+    <link rel="stylesheet" href="style.css">
     <title>Responsive HTML Register Form</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <form class="signupForm" action="/register" method="post"></form>
+
+</head>
+
+<body>
+
+    <form action="/register" class="form">
+    </form>
+
   </body>
+
 </html>
 ```
 
@@ -111,286 +120,221 @@ The method property specifies the HTTP method to be used by the browser when sub
 Once the `<form>` element is in place, we add three more `<div>` elements inside it to represent the `<form>` element's header, body, and footer, as seen in the code below:
 
 ```html
-form class="signupForm" action="/register" method="post">
+   <form action="/register" class="form">
 
-    <!-- form header -->
-    <div class="formHeader">
-    </div>
+        <!-- HEADER -->
+        <div class="header">
+         
+        </div>
 
-    <!-- form body -->
-    <div class="formBody">
-    </div>
+        <!-- Body -->
+        <div class="body">
 
-    <!-- form footer -->
-    <div class="formFooter">
-    </div>
+        </div>
 
-  </form>
+        <!-- Footer -->
+        <div class="footer">
+
+        </div>
+
+    </form>
 ```
 
 #### Creating a form Header
 
-Within the `.formHeader` element, insert an `<h1>` element:
+Within the `header` element, insert an `<h1>` element:
 
 ```html
-<!-- form header -->
-<div class="formHeader">
-  <h1>Create Account</h1>
-</div>
+
+<!-- HEADER -->
+        <div class="header">
+
+            <h1>Registration Form</h1>
+
+        </div>
 ```
 
-Now we are required to include some CSS code to our CSS file for `formHeader`, as shown below:
+Now we are required to include some CSS code to our CSS file for `header`, as shown below:
 
 ```css
-import url('https://fonts.googleapis.com/css?family=Roboto');
-
-body {
-  background:linear-gradient(to right, #78a7ba 0%, #385D6C 50%, #78a7ba 99%);
+body{
+    background: #8360c3; 
+    background: -webkit-linear-gradient(to right, #2ebf91, #8360c3);  
+    background: linear-gradient(to right, #2ebf91, #8360c3);
+    
 }
 
-.signupForm {
-  font-family: "Roboto", sans-serif;
-  width:650px;
-  margin:30px auto;
-  background:linear-gradient(to right, #ffffff 0%, #fafafa 50%, #ffffff 99%);
-  border-radius: 10px;
+.form{
+    background-color: white;
+    border-radius: 5px;
+    width: 600px;
+    margin: 20px auto;
+    padding: 20px;
 }
 
-.formHeader  {
-  background-color: #EFF0F1;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+.header{
+    text-align: center;
+    border-bottom: 2px solid black;
 }
 
-.formHeader h1 {
-  font-size: 30px;
-  text-align:center;
-  color:#666;
-  padding:20px 0;
-  border-bottom:1px solid #cccccc;
-}
 ```
 
-At the beginning of the CSS code, we have an import line stating that we are obtaining any preferred font from the Google font collection.
-
-You may change the font you're using by visiting [here](https://fonts.google.com/).
 
 The CSS code above is for the form's header and main form container. At this point, you would be able to view the header layout on the browser once you reload.
 
-Lets now add some HTML form components for `formBody`.
+Lets now add some HTML form components for `body`.
 
 #### Creating Form Body [ First name and Last name]
 
-We are constructing a `<div>` with the class `horizontalGroup` inside `formBody`. Then, inside `horizontalGroup`, we will create two more `<div>` elements with the same class name `formGroup`.
+We are constructing a `<div>` with the class `formElements` inside `body`. Then, we will create two `<div>` elements with the class name `user-first-name` and 'user-last-name'.
 
-The placement of the `formGroup` on the page is indicated by adding an additional left or right class. Inside `formGroups`, there are two more HTML elements: `<label>` and `<input>`, as shown below.
+Inside `formGroups`, there are two more HTML elements: `<label>` and `<input>`, as shown below.
 
 ```html
-<!-- form body -->
-<div class="formBody">
-  <!-- Firstname and Lastname -->
-  <div class="horizontalGroup">
-    <div class="formGroup left">
-      <label for="firstname" class="labelTitle">First name *</label>
-      <input
-        type="text"
-        id="firstname"
-        class="formInput"
-        placeholder="enter your first name"
-        required="required"
-      />
-    </div>
-    <div class="formGroup right">
-      <label for="lastname" class="labelTitle">Last name</label>
-      <input
-        type="text"
-        id="lastname"
-        class="formInput"
-        placeholder="enter your last name"
-      />
-    </div>
-  </div>
-  <div></div>
-</div>
+
+<!-- Body -->
+
+        <div class="body">
+
+            <!-- First-Name -->
+            <div class="formElements user-first-name">
+
+                <label for="firstName">First Name: </label>
+                <input class="form__input" type="text" id="firstName" placeholder="First Name"
+                >
+            </div>
+
+            <!-- last-Name -->
+            <div class="formElements user-last-name">
+
+                <label for="lastName">Last Name: </label>
+                <input class="form__input" type="text" name="" id="lastName" placeholder="LastName">
+
+            </div>
+
+        </div>
+        
 ```
 
-Afterwards we add the CSS styling for the First name and last name `horizontalGroup`.
+Afterwards we add the CSS styling for the First name and last name `formElements`.
 
 ```css
-/*---------------------------------------*/
-/* Form Body */
-/*--------------------------------------*/
-.formBody {
-  padding: 10px 40px;
-  color: #666;
+
+.body
+{
+    padding: 20px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-size: 20px;
 }
 
-.formGroup {
-  margin-bottom: 20px;
+
+.formElements
+{
+    padding: 20px 0;
+    font-weight: bold;
 }
 
-.formBody .labelTitle {
-  color: #1bba93;
-  font-size: 17px;
-  font-weight: bold;
+
+.form__input
+{
+    font-size: 20px;
+    font-family: inherit;
+    color: inherit;
+    padding: 10px 10px 0 10px;
+    border-radius: 2px;
+    width: 90%;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    border-bottom: 1px solid  black;
+    display: block;
 }
 
-.formBody .formInput {
-  font-size: 17px;
-  box-sizing: border-box;
-  width: 100%;
-  height: 34px;
-  padding-left: 10px;
-  padding-right: 10px;
-  color: #333333;
-  text-align: left;
-  border: 1px solid #d6d6d6;
-  border-radius: 4px;
-  background: white;
-  outline: none;
-}
-
-.horizontalGroup .left {
-  float: left;
-  width: 49%;
-}
-
-.horizontalGroup .right {
-  float: right;
-  width: 49%;
-}
-
-input[type="file"] {
-  outline: none;
-  cursor: pointer;
-  font-size: 17px;
-}
-
-#range-label {
-  width: 15%;
-  padding: 5px;
-  background-color: #1bba93;
-  color: white;
-  border-radius: 5px;
-  font-size: 17px;
-  position: relative;
-  top: -8px;
-}
-
-::-webkit-input-placeholder {
-  color: #d9d9d9;
-}
-
-/*---------------------------------------*/
-/* Form Footer */
-/*---------------------------------------*/
-
-.formFooter {
-  clear: both;
-}
 ```
 
 At this point, you should be able to see the styles applied to the page after reloading.
 
 #### Creating the form body [Email and Password]
 
-In HTML, the email address will be a distinct block, and the Password and Confirm Password will be the equivalent of the first name and last name. After the end tags of the first name and last name, insert the following code; `horizontalGroup` but contained within the `formBody` wrapper.
+In HTML, the email address will be a distinct block, and the Password and Confirm Password will be the equivalent of the first name and last name. After the end tags of the first name and last name, insert the following code; `formElements` but contained within the `body` wrapper.
 
 ```html
-<!-- Email -->
-<div class="formGroup">
-  <label for="email" class="labelTitle">Email*</label>
-  <input
-    type="email"
-    id="email"
-    class="formInput"
-    placeholder="enter your email"
-    required="required"
-  />
-</div>
 
-<!-- Password and confirm password -->
-<div class="horizontalGroup">
-  <div class="formgGroup left">
-    <label for="password" class="labelTitle">Password *</label>
-    <input
-      type="password"
-      id="password"
-      class="formInput"
-      placeholder="enter your password"
-      required="required"
-    />
-  </div>
-  <div class="formGroup right">
-    <label for="confirmPassword" class="labelTitle">Confirm Password *</label>
-    <input
-      type="password"
-      class="formInput"
-      id="confirm-password"
-      placeholder="enter your password again"
-      required="required"
-    />
-  </div>
-</div>
+         <div class="body"> 
+
+           <!-- Email -->
+            <div class="formElements email">
+
+                <label for="email">Email: </label>
+                <input class="form__input" type="email" id="email" placeholder="Email">
+
+            </div> 
+
+           <!-- Password -->
+            <div class="formElements password">
+
+                <label for="password">Password: </label>
+                <input class="form__input" type="password"  id="password" placeholder="Password">
+
+            </div>
+
+           <!-- Confirm-Password -->
+            <div class="formElements confirm-password">
+
+                <label for="confirmPassword">Confirm Password: </label>
+                <input class="form__input" type="password" id="confirmPassword" placeholder="Confirm Password">
+
+            </div>
+
+          </div>
 ```
 
 Here we don't need to add any additional style to the above code because we are using the same CSS classes.
 
 #### Creating the Form Footer
 
-In our form, the footer will consist of a submit button in `formFooter`.
+In our form, the footer will consist of a submit button in `footer`.
 
 ```html
-<!-- form-footer -->
-<div class="formFooter">
-  <button type="submit" class="btn">Create</button>
-</div>
+
+ <!-- Footer -->
+        <div class="footer">
+
+            <button type="submit" class="btn">Register</button>
+
+        </div>
 ```
 
-Now we will add  CSS styling for `FormFooter`.
+Now we will add  CSS styling for `footer`.
 
 ```css
-/*---------------------------------------*/
-/* Form Footer */
-/*---------------------------------------*/
-.signupForm .formFooter {
-  background-color: #eff0f1;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  padding: 10px 40px;
-  text-align: right;
-  border-top: 1px solid #cccccc;
-  clear: both;
+
+.footer
+{
+    display: flex;
+    justify-content: center;
 }
 
-.formFooter span {
-  float: left;
-  margin-top: 10px;
-  color: #999;
-  font-style: italic;
-  font-weight: thin;
+.btn
+{
+    cursor: pointer;
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 10px 22px;
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;    
 }
 
-.btn {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #1bba93;
-  font-size: 17px;
-  border: none;
-  border-radius: 5px;
-  color: #bcf5e7;
-  cursor: pointer;
-}
-
-.btn:hover {
-  background-color: #169c7b;
-  color: white;
-}
 ```
 
 With the blocks of code above, our form will now look like this one below:
 
-![Hurray we created the form!](/engineering-education/creating-a-responsive-html-registration-form/final-form.png)
+![Hurray we created the form!](/engineering-education/creating-a-responsive-html-registration-form/htmlform.png)
 
 Our next task is adding responsiveness to our form.
 
@@ -407,7 +351,7 @@ For making the form responsive we will use a media query. On the screens that ar
 ```css
 @media screen and (max-width: 680px)
 {
- .signupForm{
+ .form{
    width: 450px;
 }
 ```
