@@ -11,15 +11,17 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-    - url: /engineering-education/searching-and-sorting-techniques/hero.jpg
-      alt: Searching and sorting techniques 
+  - url: /engineering-education/searching-and-sorting-techniques/hero.jpg
+    alt: Searching and sorting techniques 
 ---
-Searching is determining the position of an item in a list. This is a crucial aspect of many data structure techniques, because we can only execute one action on an item if and only if we locate the item. To determine if an element is present in a collection of components, many methods have been devised, as we will discuss them in this article.
+Searching is determining the position of an item in a list. This is a crucial aspect of many data structure techniques, because we can only execute one action on an item if and only if we locate the item. To determine if an element is present in a collection of components, many methods have been devised, as we will discuss in this article.
 <!--more-->
-Sorting is the putting information in a certain order in a data structure. Sorting data makes it easier to navigate through it quickly and efficiently.Sorting reduces the complexity of problems by a large amount, and sorting is a technique for reducing the complexity of searching. 
+Sorting is putting information in a certain order in a data structure. Sorting data makes it easier to navigate through it quickly and efficiently. Sorting reduces the complexity of problems by a large amount, and sorting is a technique for reducing the complexity of searching. 
 
 ### Introduction
-Sorting, for example, is required before using Binary Search, and it is also used in database methods. Sorted arrays and lists make it easier to locate items fast. In this article, we will learn about various sorting and searching techniques and their implementation in data structures and algorithms. 
+Sorting, for example, is required before using Binary Search, and it is also used in database methods. Sorted arrays and lists make it easier to locate items fast. 
+
+In this article, we will learn about various sorting and searching techniques and their implementation in data structures and algorithms. 
 
 ### Table of contents
 - [What is searching?](#what-is-searching)
@@ -49,29 +51,32 @@ Sorting refers to the operation or technique of ordering and rearranging groups 
 These techniques are divided into categories depending on the search operation they undertake, for example:
 
 #### 1. Linear search
-The linear search method is a pretty simple search method. A sequential search is performed on all things one by one in this sort of search. Every item is verified, and if a match is discovered, that item is returned; if not, the search continues until the data collection is complete.
+The linear search method is a pretty simple search method. A sequential search is performed on all things one by one in this sort of search. 
+
+Every item is verified, and if a match is discovered, that item is returned; if not, the search continues until the data collection is complete.
 
 ##### Algorithm
-step 1: Determine the size of the data set.
+Step 1: Determine the size of the data set.
 
-step 2: Set the counter to zero.
+Step 2: Set the counter to zero.
 
-step 3: Examine the value in the counter position of the list.
+Step 3: Examine the value in the counter position of the list.
 
-step 4: Examine to see if the value at that place corresponds to the value you're searching for.
+Step 4: Examine to see if the value at that place corresponds to the value you're searching for.
 
-step 5: If it matches, the value has been discovered. Send a message to bring the search to a close.
+Step 5: If it matches, the value has been discovered. Send a message to bring the search to a close.
 
-step 6: If not, go return to step 3 and increase the counter by one until there are no more things to search for.
+Step 6: If not, go return to step 3 and increase the counter by one until there are no more things to search for.
 
-step 7: Send a message if all the objects have been searched, and no match has been found.
+Step 7: Send a message if all the objects have been searched, and no match has been found.
 
 #### 2. Binary search
-To search a sorted array, divide the search interval in half regularly. Begin by creating an interval that spans the whole array. If the search key's value is less than the item in the interval's midpoint, the interval should be narrowed to the bottom half. Otherwise, limit it to the upper half of the page. Check the value until it is discovered or the interval is empty.
+To search a sorted array, divide the search interval in half regularly. Begin by creating an interval that spans the whole array. 
+
+If the search key's value is less than the item in the interval's midpoint, the interval should be narrowed to the bottom half. Otherwise, limit it to the upper half of the page. Check the value until it is discovered or the interval is empty.
 
 ##### Algorithm
 The procedures for implementing binary search are:
-
 Step 1: Ask the user for the search element.
 
 Step 2: In the sorted list, locate the center element.
@@ -115,7 +120,7 @@ Step 6: If the data is less than the middle, look in the lowest sub-list.
 Step 7: Continue until you've found a match.
 
 #### 4. Jump search
-The Jump Search Approach is a new sorting method that locates a particular component in a sorted list. When compared to a linear search algorithm, the basic principle behind this searching strategy is to search a smaller amount of elements.
+The Jump Search approach is a new sorting method that locates a particular component in a sorted list. When compared to a linear search algorithm, the basic principle behind this searching strategy is to search a smaller amount of elements.
 
 In each iteration, this can be accomplished by skipping a fixed number of array elements or leaping ahead a fixed number of steps.
 
@@ -128,9 +133,9 @@ The target element can be stored in the variable t.
 
 Now, the search begins with the first element and continues until the target element is found.
 
-Finally, if the target element is present in the sorted array, it can be found.
+If the target element is present in the sorted array, it can be found.
 
-### sorting techniques and their implementation
+### Sorting techniques and their implementation
 Elements in a data structure can be sorted using the sorting techniques as discussed below:
 
 #### 1) Insertion sort
