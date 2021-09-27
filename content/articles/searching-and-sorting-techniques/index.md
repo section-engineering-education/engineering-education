@@ -39,7 +39,7 @@ In this article, we will learn about various sorting and searching techniques an
    4. [Merge sort](#4-merge-sort)
    5. [Quick sort](#5-quick-sort)
    6. [Heap sort](#6-heap-sort)
-   7. [Conclusion](#conclusion)
+- [Conclusion](#conclusion)
 
 ### What is searching?
 Searching in data structure refers to the act of locating needed information from a group of things stored as components in the computer memory.
