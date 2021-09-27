@@ -39,19 +39,9 @@ You need to have some domain knowledge in:
 - Intermediate Python programming
 
 ### Differences between sound and audio
-Sound is what you hear.
+Sound is what you hear. It's a vibration that propagates as an acoustic wave. Unique properties of sound include frequencies, speed, amplitude, and direction. When talking about the primary usage of machine learning in this domain, only frequency and amplitude are the essential features. Sound waves can often be simplified to sinusoidal waves. A sinusoidal wave shows us how the amplitude of a variable changes with time. To capture sound into its electronic representation, we use a microphone.
 
-A better definition of sound is that it's a vibration that propagates as an acoustic wave. Unique properties of sound include frequencies, speed, amplitude, and direction. When talking about the primary usage of machine learning in this domain, only frequency and amplitude are the essential features.
-
-Sound waves can often be simplified to sinusoidal waves. A sinusoidal wave shows us how the amplitude of a variable changes with time.
-
-To capture sound into its electronic representation, we use a microphone.
-
-Audio is the electronic representation of sound. The audio frequencies that humans can hear range from 20Hz to 20 kHz. Frequencies below 20Hz and above 20KHz are inaudible for humans because they are either low or high. These samples, over time, result in a waveform.
-
-But can we apply machine learning to these waveforms?
-
-No. At least not yet. This's where one last concept can help us.
+Audio is the electronic representation of sound. The audio frequencies that humans can hear range from 20Hz to 20 kHz. Frequencies below 20Hz and above 20KHz are inaudible for humans because they are either low or high. These samples, over time, result in a waveform. But can we apply machine learning to these waveforms? No. At least not yet.
 
 ### What is a spectrogram?
 
