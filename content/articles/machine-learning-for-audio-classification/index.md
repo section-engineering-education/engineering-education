@@ -404,7 +404,7 @@ array(['dog_bark'], dtype='<U16')
 The model has correctly predicted the dog bark.
 
 ### Wrapping up
-Audio signal processing is not easy to understand as you need to have at least some domain knowledge. But it isn't difficult either. Using Python and libraries such as librosa, which have done most of the hard work for you, becomes easy to understand. You don't have to use the librosa library for this task. Once you have the waveform, you could convert the waveform into a spectrogram and use a Convolution Neural Network (CNN) for classification instead.
+Audio signal processing is not easy to understand as some domain knowledge is required. However, using libraries such as librosa, it becomes easy to understand. You don't have to use the librosa library for this task. Once you have the waveform, you could convert it into a spectrogram and use a Convolution Neural Network (CNN) for classification instead.
 
 Happy coding!
 
