@@ -65,7 +65,7 @@ A [spectrogram](https://pnsn.org/spectrograms/what-is-a-spectrogram) is a visual
 
 We can convert a waveform to a spectrogram. Technically, this is equivalent to an image. Researchers have found that we can effectively apply computer vision techniques to the spectrogram. This means that we can classify sound with the same methods used to classify images. 
 
-With these, a machine learning model can extract the dominant audio per time frame in a waveform by finding patterns in the spectrogram. That's one way of finding patterns in audio data. However, in this tutorial, we won't be using a spectrogram to find patterns, we'll use a library known as librosa to help us achieve this task. 
+With this, a machine learning model can extract the dominant audio per time frame in a waveform by finding patterns in the spectrogram. That's one way of finding patterns in audio data. However, in this tutorial, we won't be using a spectrogram to find patterns, we'll use a library known as librosa to help us achieve this task.
 
 Now that you know a little more about audio and how machine learning can classify it, let's implement an audio classification task using TensorFlow. 
 
