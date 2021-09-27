@@ -6,7 +6,7 @@ url: /java-native-interface/
 title: Java Native Interface
 description: One of Java's key advantages is its portability. However, there are situations when we need to use natively compiled code for a specific architecture. This article will cover understanding Java Native Interface and how to implement it.
 author: mary-wanjiku
-date: 2021-09-15T00:00:00-15:10
+date: 2021-09-27T00:00:00-15:10
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
