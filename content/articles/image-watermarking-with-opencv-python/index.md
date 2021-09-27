@@ -15,7 +15,7 @@ images:
     alt: OpenCV Example image
 ---
 
-Watermarks play an important part in businesses and online content credit making. They provide the author of digital artifacts rights or credits, preventing the content from being stolen or duplicated without the owner's permission. They could be as a distinctive and one-of-a-kind logo, signature, or stamp. Making these watermarks using Photoshop or manually requires more effort and time. We made this easier than ever using OpenCV with Python to automate watermarking multiple images.     
+Watermarking plays an important role in todays businesses and online content credit making. The authors and compnay owners are provided with digital artifacts rights or credits, preventing their content from being stolen or duplicated without their consent. Watermarks can be as a distinctive and one-of-a-kind logo, signature, or stamps. Making these watermarks using Photoshop or manually requires more effort and time. We made this easier than ever using OpenCV with Python to automate watermarking multiple images.     
 <!--more-->
 We will cover as much as possible in this article to make the reader understand OpenCV, a python library used in the automation of image watermarking and in many other real-life scenarios.
 
@@ -61,12 +61,14 @@ Use homebrew with the command below to install OpenCV:
 ```bash
 brew install opencv
 ``` 
-After the installation, OpenCV can be used for multiple images watermarking as it is easier to use and more versatile. This scenario will have two folders: the `flowers` folder containing the images to be watermarked and the `watermarked_images` folder to hold the watermarked images after running the python scripts successfully.  The process is as shown below: 
+After the installation, OpenCV can be used for multiple images watermarking as it is easier to use and more versatile. This scenario will have two folders: the `flowers` folder containing the images to be watermarked and the `watermarked_images` folder to hold the watermarked images after running the python scripts successfully. The process is as shown below: 
+![Folders](/engineering-education/image-watermarking-with-opencv-python/folder.jpg)
 
 ### Image Watermarking
 Watermarking images is done using either text or images. For this tutorial, we are going  to show how we can apply an image watermark to multiple flower images. 
 The logo below will be added to the images automatically using the OpenCV python library;
-![Logo](/engineering-education/image-watermarking-with-opencv-python/logo.jpg).
+![Logo](/engineering-education/image-watermarking-with-opencv-python/logo.jpg)
+Source:[BrandCrowd](https://www.brandcrowd.com/maker/logo/55ae8aa4-3e99-42dc-a985-b5d8af51bc4c/draft/17ac39c8-615c-4121-9a40-661aed0b2cb8?code=REMIND15V4&utm_modal=nomodal&ctkn=94dfb3a9-06f8-471d-95ef-d5c46a4f8269&utm_medium=email&utm_source=template-braze&utm_campaign=delete-draft&utm_content=delete-7-days-standard-flow-discount-20210916-variation&utm_term=edit-logo-button).
 >NOTE: We use a white logo with black background, since OpenCV library takes black background as no background making the logo visible and well seen without hiding some section of the image.
 
 #### Import Libraries and Load Logo Image
@@ -83,10 +85,11 @@ from numpy._distributor_init import filename
 logo = cv2.imread("elite_logo.jpg") #loading logo image
 h_logo, w_logo, _ = logo.shape #getting height and width
 ```
-![Logo Loaded](/engineering-education/image-watermarking-with-opencv-python/logoloaded.jpg)
+![Logo Loaded](/engineering-education/image-watermarking-with-opencv-python/logo-loaded.jpg)
 #### Getting Images to Be Watermarked
-Once we have the logo we get the path of the images that are to be watermarked, this is done using the `glob library` that is already imported above. When the images are located a loop is created to load all the images getting their heights and widths. The images are located in the `flowers` directory as shown.
-![Image Folder](/engineering-education/image-watermarking-with-opencv-python/flowers.jpg).
+Once we have the logo we get the path of the images that are to be watermarked, this is done using the `glob library` that is already imported above. When the images are located a loop is created to load all the images getting their heights and widths. The images are located in the `flowers`  as shown.
+![Image Folder](/engineering-education/image-watermarking-with-opencv-python/flowers.jpg)
+Source:[Floranext](https://floranext.com/).
 
 ```python
 images_path = glob.glob("flowers/*.*") #flowers is the folder holding the flower images to be watermarked.
@@ -131,8 +134,7 @@ When the whole code is combined and run successfully it displays the output of t
 ![Output](/engineering-education/image-watermarking-with-opencv-python/output.jpg).
 
 This process will result in every image assigned with the name watermarked together with its original name.
-![Watermarked Folder Image](/engineering-education/image-watermarking-with-opencv-python/watermarkedflowers.jpg).
-
+![Watermarked Folder Image](/engineering-education/image-watermarking-with-opencv-python/watermarked.jpg).
 
 ### Conclusion
 
