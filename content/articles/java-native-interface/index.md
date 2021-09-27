@@ -140,9 +140,9 @@ Java Native Interface headers from the JDK installation are shown in the code be
 ```C++
 g++ -c -I%JAVA_HOME%\include -I%JAVA_HOME%\include\win64 example_java_HelloJavaJNI.cpp -o example_java_HelloJavaJNI.o
 ```
-We must include the code in a new shared library when compiled in our platform into the file example `java HelloJavaJNI.o`. The point of contention or argument supplied into our method is `system.loadLibrary` is whatever we will decide to call it. 
+When compiled in our platform, we must include the code in a new shared library into the file example `java HelloJavaJNI.o`. The point of contention or argument supplied into our method is `system.loadLibrary` is what we will call it.
 
-We named our argument as `java native`, so we will need to load it whenever we are running the java code.
+We named our argument java native, so we will need to load it whenever we run the java code.
 
 ```C++
 g++ -shared -o javanative.dll example_java_HelloJavaJNI.o -W0l,--insert-stdreturn-alias
@@ -193,8 +193,8 @@ JNIEXPORT pstring JNICALL Java_example_java_ParameterIllustrationJNI_remarkILove
 }
 
 ```
-**Explanation;** 
-In our above illustration, we have utilized these methods given through these JNI environment instances. Moreover, we use the pointer *environment of the type JNIEnvironment. In this scenario, JNIEnv allows us to feed strings of java on our C++ function and then back without having concerns about implementation.
+##### Explanation;
+In our above illustration, we have utilized these methods given through these JNI environment instances. Moreover, we use the pointer *environment of the type JNIEnvironment. In this scenario, JNIEnv allows us to feed java strings on our C++ function and then back without having concerns about implementation.
 
 ### Applying Java methods from Native Code and using objects
 Looking at this final illustration, we will explore how to incorporate Java objects within native source codes. Suppose we begin by making a new class and name it `UtilizeInformation`; we will store user information.
@@ -287,3 +287,5 @@ We have learned about Java native interfaces and how to utilize the technique. W
 
 Happy coding!
 
+---
+Peer Review Contributions by: [Briana Nzivu](/engineering-education/authors/briana-nzivu/)
