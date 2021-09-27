@@ -1,6 +1,6 @@
 ### Introduction
 
-In this tutorial, I'll explain how serialization works and how we can implement it. I will also include examples of how we can serialize a data structure and how we can use different java concepts to serialize.
+In this tutorial, I'll explain how serialization works and how we can implement it. I will also include examples of how we can serialize a data structure using various Java concepts in doing so.
 
 You can read a deserialized object from a file and reconstruct it in memory. This utilizes the entity's metadata and bytes that constitute its contents.
 
@@ -115,7 +115,7 @@ public static void serializeLink(Link inputsLink, String filetitle) {
 
 #### Description
 
- This function will serialize a `Link` object parameter submitted as a parameter.  The serialized bytes are then written to a file in which we will specify the name as the second parameter.  Handle Serialization via `out.writeOurObject(inputLink)`.  By calling `file.close()`, we terminate the file handle.
+This function will serialize a `Link` object submitted as a parameter. The serialized bytes are then written to a file in which we will specify the name as the second parameter.  Handle Serialization via `out.writeOurObject(inputLink)`.  By calling `file.close()`, we terminate the file handle.
 
 #### Deserialization example
 
@@ -142,7 +142,7 @@ The `deserializeLink()` method has two parameters. The first of which, putoutLin
 
 1. The file will open in input mode using this procedure.
 2. We perform Deserialization by in.readObject().
-3. After that, the outcome will be classiﬁed into Link (Link).
+3. After that, the outcome will be classiﬁed as a Link object.
 
 If the item is not present, the above procedure may throw an `IOException`. When the expected class is not found, we issue `ClassNotFoundException`.
 
@@ -326,7 +326,7 @@ In the illustration above, if a client wants to serialize the `SerialLink` objec
 
 ### Serialization with static data members
 
-Any static data members of a class will not be serialized because static is a class property, not an object property.
+Any static data members of a class will not be serialized because static denotes a class property, not an object property.
 
 ```java
 class Student implements Serializable
@@ -376,7 +376,7 @@ OurLink: "This includes our first comment" with 0 comments.
 
 #### Description
 
-After serialization, the numbers of our comments went from 5 to null which is a 0. This occurs since the comments will mark as temporary, thus their value is set to the int datatype's default value of 0.
+After serialization, the number of comments went from 5 to null which is a 0. This occurs since the comments are marked as temporary, thus their value is set to the int datatype's default value of 0.
 
 #### Case in Point
 
