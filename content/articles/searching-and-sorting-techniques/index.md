@@ -150,7 +150,7 @@ Step 2: Select the next item.
 
 Step 3: Compare the element to be sorted to all items in the sorted sub-list.
 
-step 4: All elements in the sorted sub-list with values higher than that of the sorted value must be moved.
+Step 4: All elements in the sorted sub-list with values higher than that of the sorted value must be moved.
 
 Step 5: Fill in the missing value.
 
@@ -158,7 +158,7 @@ Step 6: Continue sorting the list until it is complete.
 
 An example of insertion sort is as shown below:
 
-![insertion](/engineering-education/searching-and-sorting-techniques/insertion sort.png)
+![insertion](/engineering-education/searching-and-sorting-techniques/insertion-sort.png)
 
 #### 2) Bubble sort
 Bubble Sort is a basic sorting technique that t compares each adjacent element and swaps them when they're out of sequence.
@@ -196,7 +196,7 @@ step 5: Continue sorting the array using the element in the succeeding place til
 
 An example selection sort is as shown below:
 
-![selection sort](/engineering-education/searching-and-sorting-techniques/selection sort.png)
+![selection sort](/engineering-education/searching-and-sorting-techniques/selection-sort.png)
 
 #### 4) Merge sort
 One of the most efficient sorting algorithms is merge sort. It is based on the divide-and-conquer strategy. Merge sort reduces down a list into sub-lists until every sub-list only includes one element, after which it combines the sub-lists into a sorted list.
@@ -210,7 +210,7 @@ Step 3: Sort the smaller lists and combine them to make a new list.
 
 An example of merge sort is as shown below:
 
-![merge sort](engineering-education/searching and sorting techniques in data structures/merge sort.png)
+![merge sort](/engineering-education/searching-and-sorting-techniques/merge-sort.png)
 
 #### 5) Quick sort
 It is a similar split-and-conquer technique to merge sort. It selects a pivot element and partitions the specified array around that pivot.
@@ -246,22 +246,23 @@ A Binary Heap is a Complete Binary Tree in which elements are placed in such a w
 ##### Algorithm
 Sorting in ascending order with the Heap Sort Algorithm:
 
-step 1: Create a maximum heap using the data.
+Step 1: Create a maximum heap using the data.
 
-step 2: The largest element is placed at the base of the root at this stage.
+Step 2: The largest element is placed at the base of the root at this stage.
 
-step 3: Replace it with the heap's final item, then reduce the heap's size by one.
+Step 3: Replace it with the heap's final item, then reduce the heap's size by one.
  
-step 4: Finally, heapify the tree's root.
+Step 4: Finally, heapify the tree's root.
 
-step 5: Repeat steps 2,3 and 4 as long as the heap is larger than one.
+Step 5: Repeat steps 2,3 and 4 as long as the heap is larger than one.
 
 An example of heap sort is as shown below:
 
-![heap sort-1](/engineering-education/searching-and-sorting-techniques/heap sort-1.png)
+![heap sort-1](/engineering-education/searching-and-sorting-techniques/heap-sort-1.png)
 
-![heap sort-2](/engineering-education/searching-and-sorting-techniques/heap sort-2.png)
-![heap sort-3](/engineering-education/searching-and-sorting-techniques/heap sort-3.png)
+![heap sort-2](/engineering-education/searching-and-sorting-techniques/heap-sort-2.png)
+
+![heap sort-3](/engineering-education/searching-and-sorting-techniques/heap-sort-3.png)
 
 ### Conclusion
 Searching in data structures is finding a particular component in an array of ‘t’ components. To search, there are two kinds of searches: sequential and interval. Almost all search techniques may be classified into one of these two categories.  
