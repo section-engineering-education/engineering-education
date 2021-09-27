@@ -1,12 +1,6 @@
-Organizations always want to keep users' info in their systems.
-This info helps them follow up on users' feedback, follow-ups, statistics, and product advertisements.
-Users, on the other hand, sometimes find the sign-up and login form boring.
-This process deters some from the data-entry process.
-To deal with this issue, developers have added interactive features.
+Organizations always want to keep users' info in their systems. This info helps them follow up on users' feedback, follow-ups, statistics, and product advertisements. Users, on the other hand, sometimes find the sign-up and login form boring. This process deters some from the data-entry process. To deal with this issue, developers have added interactive features.
 
-Modern login and sign-up forms have continuously evolved from the ancient static types to more interactive types.
-They have included validations, style effects, animations, e.t.c. making the interaction with them exciting.
-These additions capture the user's attention till the data entry of personal information is over.
+Modern login and sign-up forms have continuously evolved from the ancient static types to more interactive types. They have included validations, style effects, animations, e.t.c. making the interaction with them exciting. These additions capture the user's attention till the data entry of personal information is over.
 
 In this article, you shall be able to do some input validations, effects, and animations based on the outcome on the form.
 
@@ -15,10 +9,10 @@ In this article, you shall be able to do some input validations, effects, and an
 - [Key takeaways](#key-takeaways)
 - [Pre-requisites](#pre-requisites)
 - [Create a new project](#create-a-new-project)
-  - [Folder Structure](#folder-structure)
+    - [Folder Structure](#folder-structure)
 - [Create the Login form](#create-the-login-form)
-  - [Modify the Scene](#modify-the-scene)
-  - [Design the view](#design-the-view)
+    - [Modify the Scene](#modify-the-scene)
+    - [Design the view](#design-the-view)
 - [Add some validations to the form](#add-some-validations-to-the-form)
 - [Add animations to the project](#add-animations-to-the-project)
 - [Further learning](#further-learning)
@@ -96,10 +90,8 @@ The newly created project has the following folder structure:
 ```
 
 - Open the `hello-view.fxml` file which contains the contents of the page to be displayed.
-  Near the status bar, there is a button adjacent to the Text button.
-  Click on it to see the FXML file visually using Scene Builder.
-
-  If it displays the `Failed to open the file in Scene Builder` error, click on `Download SceneBuilder`.
+-  Near the status bar, there is a button adjacent to the Text button.
+  Click on it to see the FXML file visually using Scene Builder. If it displays the `Failed to open the file in Scene Builder` error, click on `Download SceneBuilder`.
   Click also on the `Download JavaFX` if it also brings an additional Pop-up.
 
 This looks like seen below:
@@ -110,13 +102,13 @@ This looks like seen below:
 
 ![Project view in scene builder](/engineering-education/creating-an-animated-javafx-field-validation-alert/project-view-in-scene-builder.png "Project view in scene builder")
 
-Run the application. It opens a new Java window of the application.
+- Run the application. It opens a new Java window of the application.
 In it, there is a button that when clicked returns a new text in the window.
 The image below shows the output:
 
 ![Running the first project](/engineering-education/creating-an-animated-javafx-field-validation-alert/running-the-first-project.png "Running the first project")
 
-Close the application for the next steps.
+- Close the application for the next steps.
 
 ### Create the Login form
 
@@ -169,11 +161,8 @@ public class HelloApplication extends Application {
 Open up the `hello-view.fxml` file using the Scene Builder.
 Do the following in it:
 
-Delete the VBOX and the element in it.
-Do this by right-clicking on it and selecting delete in the left tab.
-
-Drag and drop an AnchorPane where the VBox was deleted.
-It loads a new AnchorPane that holds other controls in it.
+- Delete the VBOX and the element in it. Do this by right-clicking on it and selecting delete in the left tab.
+- Drag and drop an AnchorPane where the VBox was deleted. It loads a new AnchorPane that holds other controls in it.
 
 The AnchorPane will have the following:
 
@@ -185,7 +174,7 @@ The AnchorPane will have the following:
 
 The layout makes it fit perfectly with the scene initially created.
 
-Drag and drop a label from the controls tab into the AnchorPane in the center of the SceneBuilder.
+- Drag and drop a label from the controls tab into the AnchorPane in the center of the SceneBuilder.
 
 The label will have the following:
 
@@ -224,10 +213,11 @@ When viewed using the '**Text**' view, the following code will be found to be au
 </AnchorPane>
 ```
 
-Head over to this [link](https://github.com/justusmbuvi/Creating-an-Animated-JavaFX-field-Validation-alert/blob/main/src/main/resources/authentication/login/panda.png) and download the panda image. This will be placed to beautify the scene.
+- Head over to this [link](https://github.com/justusmbuvi/Creating-an-Animated-JavaFX-field-Validation-alert/blob/main/src/main/resources/authentication/login/panda.png) and download the panda image. This will be placed to beautify the scene.
 Once downloaded, copy and paste it into the location of the FXML file.
 Drag and drop an ImageView control into the AnchorPane. The control will hold the image.
 Set the following to the ImageView control:
+
 
 - Properties
 - - `Image`: panda.png
@@ -251,7 +241,8 @@ The Scene Builder generates the code shown below:
       </ImageView>
 ```
 
-Now, add a Rectangle from the Shapes category. It shall have the following:
+- Now, add a Rectangle from the Shapes category. It shall have the following:
+
 
 - Properties
 - - `Arc Width`: 5
@@ -273,7 +264,8 @@ The rectangles code is shown below:
 <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b9eaf8" height="320.0" layoutX="15.0" layoutY="260.0" stroke="#a3a3a3" strokeLineCap="ROUND" strokeLineJoin="BEVEL" strokeType="INSIDE" strokeWidth="2.0" width="370.0" />
 ```
 
-Add a Label control with the following:
+- Add a Label control with the following:
+
 
 - Properties
 - - `Text`: Enter your details below
@@ -294,7 +286,8 @@ Its code is shown below:
       </Label>
 ```
 
-A TextField control to allow the input of the username and email. It has the following configurations:
+- Add a TextField control to allow the input of the username and email. It has the following configurations:
+
 
 - Properties
 - - `Prompt Text`: Username / Email
@@ -318,8 +311,9 @@ The code is as follows:
          </font></TextField>
 ```
 
-The `users.png` icon for the username TextField can be downloaded [here](https://github.com/justusmbuvi/Creating-an-Animated-JavaFX-field-Validation-alert/blob/main/src/main/resources/authentication/login/users.png).
+- Add the `users.png` icon for the username TextField can be downloaded [here](https://github.com/justusmbuvi/Creating-an-Animated-JavaFX-field-Validation-alert/blob/main/src/main/resources/authentication/login/users.png).
 Add an ImageView control that will hold the image. It will have the following:
+
 
 - Properties
 - - `Image`: users.png
@@ -339,7 +333,8 @@ Add an ImageView control that will hold the image. It will have the following:
       </ImageView>
 ```
 
-A PasswordField control to capture the password. It has the following:
+- Add a PasswordField control to capture the password. It has the following:
+
 
 - Properties
 - - `Prompt Text`: Password
@@ -362,8 +357,9 @@ Its code is as follows:
       </PasswordField>
 ```
 
-The `lock.png` icon for the above PasswordField can be downloaded [here](https://github.com/justusmbuvi/Creating-an-Animated-JavaFX-field-Validation-alert/blob/main/src/main/resources/authentication/login/lock.png).
+- Add the `lock.png` icon for the above PasswordField can be downloaded [here](https://github.com/justusmbuvi/Creating-an-Animated-JavaFX-field-Validation-alert/blob/main/src/main/resources/authentication/login/lock.png).
 After downloading it, add an ImageView control to hold it. The control has the following:
+
 
 - Properties
 - - `Image`: lock.png
@@ -385,9 +381,10 @@ The SceneBuilder generated code is as follows:
       </ImageView>
 ```
 
-A Label control is required to display the errors generated or if successful.
+- Add a Label control is required to display the errors generated or if successful.
 Add it by adding a Label control to the form. The label will not have any content on it.
 Rather it will have this content when the checks are done. The label will have the following:
+
 
 - Properties
 - - `Font`: System 12px
@@ -406,8 +403,9 @@ Rather it will have this content when the checks are done. The label will have t
 
 Buttons will be required to check if the inputs are entered as required or not, close the form, and reset the password.
 
-Start by creating a **cancel button**. This closes the scene or window when clicked.
+- Start by creating a **cancel button**. This closes the scene or window when clicked.
 Add a button from the controls. The button will have the following:
+
 
 - Properties
 - - `Text`: Cancel
@@ -428,7 +426,8 @@ Add a button from the controls. The button will have the following:
 
 The `On Action` property identifies the button to a function. The button is the trigger.
 
-Create a **login button** that has the following:
+- Create a **login button** that has the following:
+
 
 - Properties
 - - `Text`: Login
@@ -456,7 +455,8 @@ Its code is as shown below:
       </Button>
 ```
 
-A **reset password button**. It has the following:
+- Add a **reset password button**. It has the following:
+
 
 - Properties
 - - `Text`: Login
@@ -479,17 +479,16 @@ Its code:
 <Button fx:id="forgotButton" layoutX="120.0" layoutY="533.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="141.0" style="-fx-background-color: transparent;" text="Forgot Password?" textFill="#a3a3a3" />
 ```
 
-Run the project.
+- Run the project.
 The outcome, when run, is as shown in the image below:
 
 ![The final design](/engineering-education/creating-an-animated-javafx-field-validation-alert/final-design.png "The final design")
 
 ### Add some validations to the form
 
-Head over to the `HelloController.java` file.
-This contains functions that have procedures performed on the form.
-Delete the available `onHelloButtonClick` function. This was of the deleted `Hello button` that was there during project generation.
-Delete the `welcomeText` label too.
+- Head over to the `HelloController.java` file. This contains functions that have procedures performed on the form.
+- Delete the available `onHelloButtonClick` function. This was of the deleted `Hello button` that was there during project generation.
+- Delete the `welcomeText` label too.
 The code remaining is as follows:
 
 ```java
@@ -505,7 +504,7 @@ public class HelloController {
 }
 ```
 
-First import the controls needed that are in the form.
+- First import the controls needed that are in the form.
 Do this by adding the following code to the file:
 
 ```java
@@ -525,7 +524,7 @@ Do this by adding the following code to the file:
     private ImageView usersIcon, passwordIcon;
 ```
 
-Add a function to close the form when the close button is clicked. This is by adding the following code:
+- Add a function to close the form when the close button is clicked. This is by adding the following code:
 
 ```java
     // Creation of methods that are activated on events in the forms
@@ -539,10 +538,10 @@ Add a function to close the form when the close button is clicked. This is by ad
 ```
 
 The cancel button invokes the `onCancelButtonClick` function. This is because the `On Action` property is set to `onCancelButtonClick`. This event closes the window immediately.
-Try it out by running the program and clicking on the Cancel button.
 
-Add some variables inside the `HelloController` function. These will hold styling that will be reused in the code instead of rewriting them over again.
-Just above the code for importing the controls into the controller, add the following code:
+- Try it out by running the program and clicking on the Cancel button.
+
+- Add some variables inside the `HelloController` function. These will hold styling that will be reused in the code instead of rewriting them over again. Just above the code for importing the controls into the controller, add the following code:
 
 ```java
     // Strings which hold css elements to easily re-use in the application
@@ -553,7 +552,7 @@ Just above the code for importing the controls into the controller, add the foll
     String successStyle = String.format("-fx-border-color: #A9A9A9; -fx-border-width: 2; -fx-border-radius: 5;");
 ```
 
-Now, add a function to be executed when the `Login` button is clicked on.
+- Now, add a function to be executed when the `Login` button is clicked on.
 Its code will look as follows:
 
 ```java
@@ -620,7 +619,7 @@ The code looks as follows:
             }
 ```
 
-Run the application.
+- Run the application.
 
 The outputs are as shown below:
 
@@ -671,20 +670,19 @@ AnimateFX animations for JavaFX controls include:
 
 Check out for additional animations [here](https://github.com/Typhon0/AnimateFX/tree/master/animatefx/src/main/java/animatefx/animation).
 
-Check the dependencies installed or used in the project by clicking on the `Dependencies` button near the status bar.
+- Check the dependencies installed or used in the project by clicking on the `Dependencies` button near the status bar.
 It opens up the Dependencies tab.
 Search for `AnimateFX` and add it to the project.
 When searched, it looks as shown below:
 
 ![AnimateFX dependency](/engineering-education/creating-an-animated-javafx-field-validation-alert/animateFX-dependency.png "animateFX-dependency")
 
-Wait for a few minutes for the download to complete.
+- Wait for a few minutes for the download to complete.
 Once done, reload the file or IDE by closing and re-opening it.
 Check if it has been installed in the same Dependencies tab.
 
-Once installed head over to the `HelloController.java` file.
-
-Inside the `onLoginButtonClick()` function, find the procedure checking if the username and password are blank. In it add the code below:
+- Once installed head over to the `HelloController.java` file.
+- Inside the `onLoginButtonClick()` function, find the procedure checking if the username and password are blank. In it add the code below:
 
 ```java
                 new animatefx.animation.Shake(usernameTextField).play();
@@ -693,10 +691,9 @@ Inside the `onLoginButtonClick()` function, find the procedure checking if the u
                 new animatefx.animation.Wobble(passwordIcon).play();
 ```
 
-This code will add a '**Shake**' animation to the inputs when there is an error.
-It also adds a '**Wobble**' animation to the images.
+This code will add a '**Shake**' animation to the inputs when there is an error. It also adds a '**Wobble**' animation to the images.
 
-In the procedure that checks if the username is blank, add the following code to it:
+- In the procedure that checks if the username is blank, add the following code to it:
 
 ```java
                     new animatefx.animation.Shake(usernameTextField).play();
@@ -705,26 +702,26 @@ In the procedure that checks if the username is blank, add the following code to
 
 The code adds the '**Pulse**' and '**Shake**' effect to the input and icon respectively.
 
-In the procedure that checks if the username is blank, add the following code:
+- In the procedure that checks if the username is blank, add the following code:
 
 ```java
-                        new animatefx.animation.Shake(userPassword).play();
-        new animatefx.animation.Wobble(passwordIcon).play();
+                    new animatefx.animation.Shake(userPassword).play();
+                    new animatefx.animation.Wobble(passwordIcon).play();
 ```
 
 The code also does as the previous one but now to the PasswordField and its icon.
 
-In the procedure that checks if the password is less than four characters, add a slightly gentle effect.
+- In the procedure that checks if the password is less than four characters, add a slightly gentle effect.
 Add the following code to it:
 
 ```java
                 new animatefx.animation.FadeIn(userPassword).play();
-        new animatefx.animation.Wobble(passwordIcon).play();
+                new animatefx.animation.Wobble(passwordIcon).play();
 ```
 
 It adds a '**FadeIn**' and a '**Wobble**' effect to the PasswordField and its icon respectively.
 
-Finally, in the final `else` statement, add a small `Tada` animation to the `invalidDetails` label.
+- Finally, in the final `else` statement, add a small `Tada` animation to the `invalidDetails` label.
 That animation shows that the process is successful. The code to add is shown below:
 
 ```java
