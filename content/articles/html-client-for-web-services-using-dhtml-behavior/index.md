@@ -3,27 +3,28 @@ layout: engineering-education
 status: publish
 published: true
 url: /html-client-for-web-services-using-dhtml-behavior/
-title: Html client for web services using dhtml behavior
-description: This article takes the reader through Html client for web services using dhtml behavior. The Dynamic Hypertext Markup Language (DHTML) is the most efficient and widely used web development strategy in websites with non-trivial user-input capabilities.
+title: HTML Client for Web Services Using DHTML Behavior
+description: In this tutorial, we will discuss how Web services allow software applications to communicate and exchange data. 
 author: stephen-boro
-date: 2021-09-14T00:00:00-17:50
+date: 2021-09-27T00:00:00-11:50
 topics: []
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/html-client-for-web-services-using-dhtml-behavior/hero.jpg
-    alt: Html client for web services using dhtml behavior Hero Image
+    alt: HTML Client for Web Services Using DHTML Behavior Hero Image
 ---
+
 The Dynamic Hypertext Markup Language (DHTML) is the most efficient and widely used web development strategy in websites with non-trivial user-input capabilities. DHTML refers to tinkering with an HTML document's Document Object Model, tinkering with styling information's CSS declarations, and tying everything together with client-side JavaScript programming.
 <!--more-->
-The coupling of cascading style sheets (CSS) formatting and HTML component functionality is represented by DHTML behavior. Any element on an HTML page can be assigned to DHTML behaviors, allowing for amazing content presentation freedom.
+The coupling of CSS formatting and HTML component functionality is represented by DHTML behavior. Any element on an HTML page can be assigned to DHTML behaviors, allowing for amazing content presentation freedom.
 
 ### Prerequisites
-- Have a piece of background information on using Visual Studio.
-- Have a piece of background information about C# and Javascript programming languages.
-- Have a SOAP UI Open source application or download it. [Download] (https://www.soapui.org/downloads/latest-release/) for running our SOAP applications.
-- To execute the C# commands, use the C# compiler. In my case. I used the [oracle-terminal-online] (https://www.tutorialspoint.com/oracle_terminal_online.php)
-
+To follow through this article, you will need to have:
+- Background information on using Visual Studio.
+- A basic understanding the C# and Javascript programming languages.
+- A [SoapUI](https://www.soapui.org/downloads/latest-release/) open source application for running our SOAP applications.
+- The [oracle-online-terminal](https://www.tutorialspoint.com/oracle_terminal_online.php) to execute the C# commands. 
 ### Table of contents
 - [Importance of using DHTML](#importance-of-using-dhtml)
 - [Distinction between HTML and DHTML](#distinction-between-html-and-dhtml)
@@ -35,9 +36,9 @@ The coupling of cascading style sheets (CSS) formatting and HTML component funct
 Here are some of the advantages we can get when using DHTML:
 1. We use it to create dynamic, animated website pages that update in real-time.
 2. DHTML has more features than just a static HTML page. DHTML can hold more content on a web page simultaneously.
-3. By sending fewer requests to the server, the user saves time. As we can utilize it to change and swap components after a page has been loaded, we do not require to construct separate web pages for updating styles save time when creating pages and reduce the number of queries sent to the server.
+3. By sending fewer requests to the server, the user saves time. As we can use it to change and swap components after a page has been loaded, we do not need to construct separate web pages for updating styles. This save time when creating pages and reduce the number of queries sent to the server.
 4. It allows page authors to add drop-down menus and rollover buttons to their web pages.
-5. Viewers do not require any additional plug-ins to browse through DHTML-based webpages, nor do they require any additional prerequisites or software to see them.
+5. Viewers do not need any extra plug-ins to browse through DHTML-based webpages. Also, they do need any extra prerequisites or software to see them.
 6. It is used to embed the ticker on other websites with material and information that needs to be updated frequently.
 
 #### Some major features of DHTML
@@ -55,8 +56,8 @@ HTML and DHTML have some of their differences which are as follows:
 3. We use DHTML to create dynamic web pages but HTML is employed to construct web pages that are not changing or static.
 4. DHTML does not need processing from the browsers but HTML requires it.
 5. We use DHTML to create animations. There are also dynamic menus, but no HTML is used.
-6. While using client-side technology, HTML is slower, DHTML sites, on the other hand, are substantially quicker.
-7. Because HTML employs just one language, web pages built with it are simplistic and lack styling, whereas DHTML uses HTML, CSS, and Javascript to build a far better and more attractive webpage.
+6. While using client-side technology, HTML is slower but DHTML sites are quicker.
+7. Because HTML employs only one language, web pages built with it are simplistic and lack styling. DHTML uses HTML, CSS, and Javascript to build a far better and more attractive webpage.
 8. HTML can be used in user-side coding whereas DHTML is used for server-side coding.
 9. Files in HTML are saved with `.html` or `.htm` extensions while DHTML uses `.dhtml` extension.
 
@@ -137,7 +138,7 @@ To check whether the service is able to run correctly, run the program by openin
 
 We will find all the method names as shown below:
 
-![Method names in the browser](engineering-education/html-client-for-web-services-using-dhtml-behavior./exploler.jpg)
+![Method names in the browser](engineering-education/html-client-for-web-services-using-dhtml-behavior./explorer.jpg)
 
 At this point, our service can be used.
 
@@ -212,35 +213,35 @@ Total:<input type="message" name='total'\">
 We now name the file `ourtest.html` and save it in the same folder as `webservice.htc`.
 
 ### Testing our Web services and HTML client
-Web services are a mechanism or a medium of communication that allows two applications or machines to exchange data regardless of their underpinning architecture or technology. A web service assessment is a sort of software testing that verifies the functionality of web services.
+Web services are a mechanism or a medium of communication that allows two applications or machines to exchange data regardless of their underpinning architecture or technology. A Web service assessment is a sort of software testing that verifies the functionality of web services.
 
 The fundamental goal of testing is to ensure that an API's functionality, security, and performance are all up to standard (Application Program Interface). In some ways, a web service assessment is the same as unit testing. 
 
-We can manually test a web service, write our automation code, or utilize off-the-shelf automation like Postman.
+We can manually test a Web service, write our automation code, or utilize off-the-shelf automation like Postman.
 
 #### Protocols used in Web services
-A web service can be used in a variety of ways, but the two most frequent implementations are as follows:
+A Web service can be used in a variety of ways, but the two most frequent implementations are as follows:
 1. Simple Object Acces Protocol (SOAP)
 2. Representation State Transfer Architecture (REST)
 3. Web Services Description Language (WSDL)
 
 - SOAP ;
 
-The World Wide Web has established SOAP where service requests are sent and received using a standard protocol. The information is platform-neutral because SOAP will implement the XML layout for requests to be delivered and received. 
+The World Wide Web has established SOAP where service requests are sent and received using a standard protocol. The information is platform-neutral because SOAP will put in place the XML layout for requests to be delivered and received. 
 
 SOAP messages are transferred between the provider and receiving apps within the SOAP envelopes. SOAP messages are not prevented by firewalls because they use the simple HTTP transport protocol.
 
 - REST ;
 
-REST means  (Representational State Transfer), and it's a web-based framework that, in most circumstances, uses HTTP. Client-service interactions are emphasized in the REST approach, which is assisted by the usage of a minimum variety of processes. 
+REST stands for Representational State Transfer. And, it's a web-based framework that, in most circumstances, uses HTTP. Client-service interactions are emphasized in the REST approach. Which is assisted by the usage of a least variety of processes.
 
 REST is a SOAP (Basic Object Access Protocol) substitute that uses simple URLs instead of XML in a few instances. RESTFUL programs, except SOAP, use HTTP built-in protocols to carry meta-data.
 
 - WSDL ;
 
-A web service's services are described using the Online Services Description Language (WSDL), an XML-based language.
+A web services functionality are described using the Web services Description Language (WSDL), an XML-based language.
 
-In XML format, WSDL highlights every actions that are capable for a web service to provide. In addition, it specifies how such services can be delivered that is, what source value are we required to provide and what format the return will take for each type of service.
+In XML format, WSDL highlights every action that is capable for a Web service to provide. In addition, it specifies how such services can be delivered that is, what source value are we required to provide, and what format the return will take for each type of service.
 
 #### How can we test Web service?
 In web service testing, we can opt several ways:
@@ -248,7 +249,7 @@ In web service testing, we can opt several ways:
 2. We can create our automation code
 3. Use of an off-the-shelf automation tool like SoapUI
 
-To demonstrate web service testing, we will utilize SoapUI. We shall explore how the REST API, which SoapUI supports, is utilized in web service testing.
+To show web service testing, we will use `SoapUI`. We will explore how the REST API, which SoapUI supports, is utilized in web service testing.
 
 #### Step one
 First, we will need to get the SoapUI application. Then, from the start menu, open the SoapUI program.
@@ -259,7 +260,7 @@ After you have opened the SoapUi tool, go to the `REST` icon and click it to ope
 #### Step three
 We have to use the post function to create a new employee. In the database, it will create a new employee.
 
-![Post method](engineering-education/html-client-for-web-services-using-dhtml-behavior./postmethode.jpg)
+![Post method](engineering-education/html-client-for-web-services-using-dhtml-behavior./postmethod.jpg)
 
 #### Step four
 Then we have to test the GetEmployee method, which is a HttpGet method that takes an id parameter.
@@ -272,26 +273,26 @@ The other step is to update the operation for EmployeeId which we created
 ![Update of the employeeid created](engineering-education/html-client-for-web-services-using-dhtml-behavior./employeeid.jpg)
 
 #### Step six
-The test Employees will return all of the employees that were stored in the database.
+The test employees will return all of the employees that were stored in the database.
 EmployeeId 2 will be deleted from the database if we test the DeleteEmployee operation from SoapUI.
 
 ![When we delete the employeeid created](engineering-education/html-client-for-web-services-using-dhtml-behavior./delete.jpg)
 
 #### Step seven
-Finally, if we put our validation for the required fields, first and last names, to the test. To generate this situation, we will try to leave firstName and LastName empty in my post-operation, as shown below, which would result in the message `The request is invalid` and our validation message for first and last name that we wrote in our model.
+Finally, we put our validation for the required fields, first and last names, to the test. To generate this situation, we will leave firstName and LastName empty in my post-operation, as shown below. Which would result in the message `The request is invalid` and our validation message for first and last name that we wrote in our model.
 
 ![Throw of validation message](engineering-education/html-client-for-web-services-using-dhtml-behavior./invalid.jpg)
 
-We have shown how SoapUI can be employed to put any kind of object to test any operation. It is simple to test web services or web AIPs using SoapUI, which includes capabilities like load testing, performance testing, regression testing, and function testing.
+We have shown how SoapUI can be employed to put any kind of object to test any operation. It is simple to test web services or web API's using SoapUI. Which includes capabilities like load testing, performance testing, regression testing, and function testing.
 
 The free version may be readily downloaded and used to test the Restful service.
 
 ### Conclusion
-In this tutorial, we have discussed about how WebServices allow software applications to communicate and exchange data with one another. To establish a WebService, two popular protocols are SOAP and REST.
+In this tutorial, we have discussed how Web services allow software applications to communicate and exchange data. To establish a Web service, two popular protocols are SOAP and REST.
 
-SOAP allows data to be exchanged using XML. For WebServices API Testing, REST supports XML or data interchange via a simple URL. WSDL is an XML language that is used for describing the services provided by a web service and SOAP is defined by WSDL.
+SOAP allows data to be exchanged using XML. For Web services API Testing, REST supports XML or data interchange via a simple URL. WSDL is an XML language that is used for describing the services provided by a web service and SOAP is defined by WSDL.
  
-We have also learnt how we can use WebService test automation solutions. Like, SoapUI to test Web Services Automation Testing efforts.
+We have also learnt how we can use Web service test automation solutions. Like, SoapUI to test Web Services Automation Testing efforts.
 
 ---
 Peer Review Contributions by: [Dawe-Daniel](/engineering-education/authors/dawe-daniel/)
