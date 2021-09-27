@@ -1,5 +1,21 @@
-As we build and projects get bigger, the tendency to tilt towards spaghetti code becomes inevitable.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /manipulating-object-states-in-django-using-finite-state-machine/
+title: Manipulating Object States using Finite State Machine in Django
+description: In this article, we will look at how to build manipulate the object states of FSM using Django.
+author: ayemobola-tolulope
+date: 2021-09-27T00:00:00-23:50
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+ - url: /engineering-education/manipulating-object-states-in-django-using-finite-state-machine/hero.jpg
+   alt: FSM Django Example Image
+---
+As we build and projects get bigger, the tendency to tilt towards spaghetti code becomes inevitable.
+<!--more-->
 One way to avoid these complications is to apply Finite State Machines (FSM) concept in handling state changes of objects.
 
 FSM helps you simplify code, avoid numerous if-else conditions by defining states and the connections between them.
