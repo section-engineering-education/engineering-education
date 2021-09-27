@@ -1,5 +1,7 @@
 ## How to upload an article for Section’s Engineering Education Program:
 
+Video [playlist](https://share.vidyard.com/watch/bLqdEB6egXk9SqXJYQY4VX) explaining the upload instructions. Please follow along with the guide below. 
+
 **Prerequisites:**
 - Github account
 - Text editor, such as [Visual Studio Code](https://code.visualstudio.com/), [Sublime Text](https://www.sublimetext.com/), [Atom](https://atom.io/)
