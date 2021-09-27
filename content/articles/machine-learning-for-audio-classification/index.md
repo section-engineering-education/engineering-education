@@ -136,7 +136,7 @@ audio_data
 array([-0.00270751, -0.00303302, -0.00159557, ..., -0.0012889 ,
        -0.00184731, -0.00210062], dtype=float32)
 ```
-In mono, there is only one signal. So, the results from our audio_data show that librosa has converted the audio into integers with only one 1-dimension. On the other hand, if it was stereo, we'd have two signals and would have been a 2-D array. Although we won't use stereo signals in our tutorial, it is important to know that stereo sound is usually preferred in audio as it gives us a sense of directionality, perspective, space. But, librosa simplifies these signals into mono for easier processing.
+In mono, there is only one signal. So, the results from our `audio_data` show that librosa has converted the audio into integers with only one dimension. On the other hand, if it was stereo, we'd have two signals and would have been a 2-D array. Although we won't use stereo signals in our tutorial, it is important to know that stereo sound is usually preferred in audio as it gives us a sense of directionality, perspective, and space. But, librosa simplifies these signals into mono for easier processing.
 
 ```python
 sampling_rate
