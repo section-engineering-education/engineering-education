@@ -166,43 +166,42 @@ Bubble Sort is a basic sorting technique that t compares each adjacent element
 Bubble sort works well with small sets of data.
 
 ##### Algorithm
-The stages involved in bubble sort (sorting an array in ascending order) are:
+The stages involved in bubble sort (sorting an array in ascending order) are as follows:
+Step 1: Compare the current element to the next element of the array, starting with the first element (index = 0).
 
-step 1: Compare the current element to the next element of the array, starting with the first element (index = 0).
+Step 2: Swap the elements if the value of the current element is higher than the value of the array's next element.
 
-step 2: Swap the elements if the value of the current element is higher than the value of the array's next element.
-
-step 3: Move on to the next element if the current element is less than the next element. 
+Step 3: Move on to the next element if the current element is less than the next element. 
 
 An example bubble sort is as shown below:
 
-![bubble sort](/engineering-education/searching-and-sorting-techniques/bubble sort.png)
+![bubble sort](/engineering-education/searching-and-sorting-techniques/bubble-sort.png)
 
-Step 4: Repeat step  1.
+Step 4: Repeat Step 1.
 
 #### 3) Selection sort
-The selection sort technique sorts an array by continually choosing the smallest item from the unsorted segment and placing it at the start in ascending order. As a result, that item is added to the sorted array.
+The Selection Sort technique sorts an array by continually choosing the smallest item from the unsorted segment and placing it at the start in ascending order. As a result, that item is added to the sorted array.
 
 This procedure keeps moving the unsorted array border one item to the right.
 
 ##### Algorithm
-Step 1: pick the first item on an array.
+Step 1: Pick the first item on an array.
 
 Step 2: Compare the picked item to the rest of an array's items.
 
 Step 3: If any item is determined to be smaller than the picked item (in ascending order), both elements are swapped.
 
-step 5: Continue sorting the array using the element in the succeeding place till the entire array is sorted.
+Step 4: Continue sorting the array using the element in the succeeding place until the entire array is sorted.
 
 An example selection sort is as shown below:
 
 ![selection sort](/engineering-education/searching-and-sorting-techniques/selection-sort.png)
 
 #### 4) Merge sort
-One of the most efficient sorting algorithms is merge sort. It is based on the divide-and-conquer strategy. Merge sort reduces down a list into sub-lists until every sub-list only includes one element, after which it combines the sub-lists into a sorted list.
+One of the most efficient sorting algorithms is Merge sort. It is based on the divide-and-conquer strategy. Merge sort reduces down a list into sub-lists until every sub-list only includes one element, after which it combines the sub-lists into a sorted list.
 
 ##### Algorithm
-step 1: If there is just one entry in the list, return it because it has been sorted already.
+Step 1: If there is just one entry in the list, return it because it has been sorted already.
 
 Step 2: Recursively partition the list into two halves until you can't partition it anymore.
 
@@ -228,15 +227,15 @@ Step 4: The right arrow points to the highest point.
 
 Step 5: While the element on the left is lower than the pivot, go right.
 
-Step 6: move left while the value at the right is bigger than the pivot.
+Step 6: Move left while the value at the right is bigger than the pivot.
 
-Step 7: Swap left and right if both steps 5 and 6 don't match.
+Step 7: Swap left and right if both Steps 5 and 6 don't match.
 
 Step 8: If they meet on the left or right, the place where they met becomes the new pivot.
 
 An example quick sort is as shown below:
 
-![quick sort](engineering-education/searching and sorting techniques in data structures/quick sort.png)
+![quick sort](/engineering-education/searching-and-sorting-techniques/quick-sort.png)
 
 #### 6) Heap sort
 Heap sort is a sorting algorithm that compares objects using a Binary Heap dataset. It's comparable to selection sorting, in which we identify the smallest piece first and place it at the top. For the remaining values, the same procedure is repeated.
@@ -245,7 +244,6 @@ A Binary Heap is a Complete Binary Tree in which elements are placed in such a w
 
 ##### Algorithm
 Sorting in ascending order with the Heap Sort Algorithm:
-
 Step 1: Create a maximum heap using the data.
 
 Step 2: The largest element is placed at the base of the root at this stage.
@@ -254,7 +252,7 @@ Step 3: Replace it with the heap's final item, then reduce the heap's size by on
  
 Step 4: Finally, heapify the tree's root.
 
-Step 5: Repeat steps 2,3 and 4 as long as the heap is larger than one.
+Step 5: Repeat Steps 2,3 and 4 as long as the heap is larger than one.
 
 An example of heap sort is as shown below:
 
@@ -265,11 +263,13 @@ An example of heap sort is as shown below:
 ![heap sort-3](/engineering-education/searching-and-sorting-techniques/heap-sort-3.png)
 
 ### Conclusion
-Searching in data structures is finding a particular component in an array of ‘t’ components. To search, there are two kinds of searches: sequential and interval. Almost all search techniques may be classified into one of these two categories.  
+Searching in data structures is finding a particular component in an array of ‘t’ components. To search, there are two kinds of searches: *sequential and interval*. Almost all search techniques may be classified into one of these two categories.  
 
 Binary and linear searches are two quick and easy techniques, with binary working quicker than linear search techniques.
 
 Binary search is quicker if the acquired data is sorted and the array size is large.
+
+Happy learning!
 
 ### Further reading
 1. [Difference between Searching and Sorting Algorithms](https://www.geeksforgeeks.org/difference-between-searching-and-sorting-algorithms/)
