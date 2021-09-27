@@ -65,7 +65,7 @@ A [spectrogram](https://pnsn.org/spectrograms/what-is-a-spectrogram) is a visual
 
 We can convert a waveform to a spectrogram. Technically, this is equivalent to an image. Researchers have found that we can effectively apply computer vision techniques to the spectrogram. This means that we can classify sound with the same methods used to classify images. 
 
-With these, a machine learning model can extract the dominant audio per time frame in a waveform by finding patterns in the spectrogram. That's one way of finding patterns in audio data. However, in this tutorial, we won't be using a spectogram to find patterns, we'll use a library known as librosa to help us achieve this task. 
+With these, a machine learning model can extract the dominant audio per time frame in a waveform by finding patterns in the spectrogram. That's one way of finding patterns in audio data. However, in this tutorial, we won't be using a spectrogram to find patterns, we'll use a library known as librosa to help us achieve this task. 
 
 Now that you know a little more about audio and how machine learning can classify it, let's implement an audio classification task using TensorFlow. 
 
@@ -136,7 +136,7 @@ audio_data
 array([-0.00270751, -0.00303302, -0.00159557, ..., -0.0012889 ,
        -0.00184731, -0.00210062], dtype=float32)
 ```
-In mono, there is only one signal. So, the results from our audio_data show that librosa has converted the audio into integers with only one 1-dimension. On the other hand, if it was stereo, we'd have two signals and would have been a 2-D array. Although we won't use stereo signal in our tutorial, it is important to know that stereo sound is usually preffered in audio as it gives us a sense of directionality, perspective, space. But, librosa simplifies these signals into mono for easier processing.
+In mono, there is only one signal. So, the results from our audio_data show that librosa has converted the audio into integers with only one 1-dimension. On the other hand, if it was stereo, we'd have two signals and would have been a 2-D array. Although we won't use stereo signals in our tutorial, it is important to know that stereo sound is usually preferred in audio as it gives us a sense of directionality, perspective, space. But, librosa simplifies these signals into mono for easier processing.
 
 ```python
 sampling_rate
@@ -245,7 +245,7 @@ for index_num,row in tqdm(metadata.iterrows()):
     extracted_features.append([data,final_class_labels])
 ```
 
-Let's convert the entire list into a data frame using the Pandas library. This converts the results into tables for more straightforward analysis.
+Let's convert the entire list into a data frame using the Pandas library. This converts the results into tables for a more straightforward analysis.
 
 ```python
 extracted_features_df=pd.DataFrame(extracted_features,columns=['feature','class'])
