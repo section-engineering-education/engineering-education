@@ -270,12 +270,27 @@ From the image above, in Async:
 
  In the HTML code above, we have two scripts. The first script with **defer** attribute. The Second script with **async** attribute.
 
- To create the 25000 buttons, place this [emmet](https://code.visualstudio.com/docs/editor/emmet) code inside **buttons.html** below the 25000 buttons comment. Then press the **tab** key. 
+ To create the 25000 buttons, place this [emmet](https://code.visualstudio.com/docs/editor/emmet) code inside `**buttons.html**` below the comment. Then press the **tab** key. 
 
- ```HTML
- button{click}*250000
- ``` 
+```HTML
+<head>
 
+  <script src="defer.js" defer></script>
+
+  <script src="async.js" async></script>
+
+</head>
+
+<body>
+
+  <div class="container">
+
+  <!-- 25000 buttons -->
+  button{click}*250000 //press tab after typing this
+  </div>
+
+</body>
+```
  Let’s write some Javascript code to select all the buttons in the HTML code. follow these instructions:
 
  1. Create a JavaScript file in the **Button folder**. 
@@ -333,11 +348,8 @@ From the image above:
 In this section, we will look at differences between async and defer in terms of order of execution and `DOMContentLoaded`.
 
 | | Defer| Async |
-
 |-----------|-----------|------|
-
 |Load(Execution) order |Order of appearance of script tag matters.|Order of appearance of script tags doesn’t matter.|
-
 |DOMContentLoaded| Execute after HTML file is fully loaded and parsed, right before DOMContentloaded.| May execute before or after DOMContentloaded.|
 
 ### When To Use Async or Defer
