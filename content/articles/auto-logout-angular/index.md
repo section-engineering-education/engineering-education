@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /auto-logout-angular/
-title: Implementing Auto Log-off in
+title: Implementing Auto Log-off in Angular 12
 description: This tutorial teaches readers everything they need to get started with Angular auto-log out feature.
 author: owino-wendy
 date: 2021-09-17T00:00:00-12:00
@@ -11,15 +11,12 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/auto-logout-angular/hero.jpg
+  - url: /engineering-education/auto-logout-angular/hero.png
     alt: auto logout angular
 ---
 
 Automatic sign out is a pervasive feature in web development or mobile applications, especially in banking systems. As a result, it plays a significant role in ensuring the safety and integrity of data.
 <!--more-->
-
-### Introduction
-Automatic sign out is a pervasive feature in web development or mobile applications, especially in banking systems. As a result, it plays a significant role in ensuring the safety and integrity of data.
 
 Auto log off comes hand in hand because an application user may forget to log off the system after use. This tutorial discusses how we can build a secure Angular application that can sign out idle screens.
 
