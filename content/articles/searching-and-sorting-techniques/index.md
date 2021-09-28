@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /searching-and-sorting-techniques/
 title: Searching and sorting techniques 
-description: In this article, we will learn about various sorting and searching techniques and their implementation in data structures and algorithms.
+description: This article will discuss the various sorting and searching techniques, as well as their implementation in data structures and algorithms.
 author: jairus-onkundi
-date: 2021-09-27T00:00:00-17:35
+date: 2021-09-27T00:00:00-23:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,8 +14,10 @@ images:
   - url: /engineering-education/searching-and-sorting-techniques/hero.jpg
     alt: Searching and sorting techniques 
 ---
-Searching is determining the position of an item in a list. This is a crucial aspect of many data structure techniques, because we can only execute one action on an item if and only if we locate the item. To determine if an element is present in a collection of components, many methods have been devised, as we will discuss in this article.
+Searching is determining the position of an item in a list. This is a crucial aspect of many data structure techniques, because we can only execute one action on an item if and only if we locate the item. 
 <!--more-->
+To determine if an element is present in a collection of components, many methods have been devised, as we will discuss in this article.
+
 Sorting is putting information in a certain order in a data structure. Sorting data makes it easier to navigate through it quickly and efficiently. Sorting reduces the complexity of problems by a large amount, and sorting is a technique for reducing the complexity of searching. 
 
 ### Introduction
