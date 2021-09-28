@@ -1,6 +1,23 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /getting-started-with-react-cosmos/
+title: Getting Started with React Cosmos 
+description: In this article, we use React Cosmos to develop reusable components in an ecommerce application
+author: mary-njeri
+date: 2021-09-28T00:00:00-16:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/getting-started-with-react-cosmos/hero.jpg
+    alt: React cosmos example image
+---
+
 The React library has quickly established itself as a popular JavaScript UI library. As a component library, developers can build reusable UI components. However, reusing and implementing tests within the components is a complex task. React Cosmos is a React library that provides an environment to reuse, test, and develop UI components in isolation. Using the React Cosmos sandbox, we can interactively change components props and get instant changes during development.
 
-In this tutorial, we will cover the basics of React Cosmos using a food ordering React application. Let's get started!
+In this tutorial, we will cover the basics of React Cosmos using a food ordering React application. Let us get started!
 
 ### Prerequisites for React Cosmos
 
@@ -21,7 +38,7 @@ The key benefits of using React Cosmos include:
   
 - Debugging is much easier due to isolated components.
   
-- Using a component-based library like React is essential in design systems. Building your components using React Cosmos ensures reusability across multiple projects. This avoids duplication of effort in creating consistent branding across your product suite.
+- Using a component-based library like React is essential in design systems. Building components using React Cosmos ensures reusability across multiple projects. This avoids duplication of effort in creating consistent branding across the product suite.
 
 
 ### Project Setup
