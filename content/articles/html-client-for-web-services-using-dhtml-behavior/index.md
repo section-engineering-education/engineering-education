@@ -67,7 +67,8 @@ HTML and DHTML have some differences, which are as follows:
 Web services are code snippets that may be reused to allow applications to interact with one another. Web services are used with any type of application developed in any technology once it is produced and hosted on a server on the Internet.
 
 #### Step one
-In Visual Studio, click on the `File` then go to `Website` and click `ASP.NET empty website template`, then give a name for the website. We will use *webservicesample* as our example.
+Go to Visual Studio and then select `File` -> `Website` -> `ASP.NET empty website template` from the drop-down menu.
+After that, submit the URL of the website, for example; we will use: (_webservicesample_). 
 
 ![This shows a website template](engineering-education/html-client-for-web-services-using-dhtml-behavior/webservice.jpg)
 
