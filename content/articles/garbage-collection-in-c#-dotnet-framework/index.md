@@ -21,7 +21,7 @@ The following are the circumstances:
 - Whenever a stack memory surpasses a certain threshold, garbage collection becomes useful and starts when the amount of Memory differs from each object.
 - It is only when `GarbageC.Collect` is initiated that garbage collection happens. Because the waste collection is typically automated, this method is only employed in exceptional instances.
 
-#### How garbage collection works;
+### How garbage collection works;
 The .Net framework must support implicit garbage collection. When an item is formed, it is assigned to Generation 0. Garbage collection employs an algorithm that examines the items in the generation; when the object's life period expires, it is removed from Memory.
 
 There are two types of things; Live Objects and Dead Objects. The Garbage Collection mechanism collects any unutilized objects in the generation that are dead instances.
