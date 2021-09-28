@@ -41,9 +41,9 @@ The `ServletRequest` interface provides us with many methods to work wi
 
 - `getContentLength()`: The actual size of the type of data requested is returned.
 
-- `Public String getContentType()`: Returns the media type or, if unknown, null data requests. 
+- `Public String getContentType()`: Returns the media type or null if unknown. 
 
-- `Enumeration getParameterNames()`: The name of the target parameter is used to return an enumeration
+- `Enumeration getParameterNames()`: The name of the target parameter is used to return an enumeration.
 
 - `String getCharacterEncoding()`: If the encoded character is specified, this method will return the name. It returns null in the request body if not specified.
 
@@ -68,12 +68,16 @@ The `ServletRequest` interface provides us with many methods to work wi
 - `removeAttribute(String name)`: Used when removing the attribute from the current request of a type `void.`
 
 ### ServletRequest interface example
-We will create a user login project with a servlet in this example. In this context, we have been using `getParameter()` to return the value of the specified query parameter name.
+We will create a user login project with a servlet in this example. In this context, we will be using `getParameter()` to return the value of the specified query parameter name.
+
 **Steps to create this project.**
 
 Step 1: Open Eclipse IDE for Java EE developers. Create a Dynamic web project by selecting files, new then Dynamic web projects, and press enter.
+
 Step 2: Provide a project name. Mine is called LogInDemo.
+
 Step 3: Create an `index.html` page as shown below.
+
 ```html
 <!DOCTYPE html>
 <html>
@@ -90,7 +94,9 @@ Step 3: Create an `index.html` page as shown below.
 </body>
 </html>
 ```
+
 Step 4: Create `login.java` servlet file.
+
 ```java
 package com.lodoctor;
 
@@ -151,8 +157,9 @@ Here are two methods provided by the `RequestDispatcher` interface, namely:
 - `public void include(ServletRequest request, ServletResponse response)`: From its name `include()`, It helps to include in the response the content of another resource.
 
 **NOTE:** Both of these two methods throw IOExceptions.
+
 ### RequestDispatcher example
-This example shows how  RequestDispatcher can forward a resource response or include it on a server. Here we use `htmlPage.html` to get a user response. In this case, `Controller.java` Servlet checks the entered response if a user has more than 18 years or less if the user select (under18 ) as the reply, `forward()` will be called to Under18Page Servlet. Above18 servlet is included if the user has entered (above18) otherwise. The client browser will stay on the `htmlPage.html` page.
+This example shows how  RequestDispatcher can forward a resource response or include it on a server. Here we use `htmlPage.html` to get a user response. In this case, `Controller.java` Servlet checks the entered response if a user has more than 18 years or less, if the user select (under18 ) as the reply, `forward()` will be called to Under18Page Servlet. Above18 servlet is included if the user has entered (above18) otherwise. The client browser will stay on the `htmlPage.html` page.
 
 *htmlPage.html*
 ```html
@@ -267,6 +274,7 @@ public class Above18 extends HttpServlet {
 
 ```
 [Get project source code here](https://github.com/Evanslodoctor/ServletDispatcher-sourse-code)
+
 ### Conclusion
 In conclusion, we learned some of the `ServletRequest` methods and `ServletDispatcher` methods and how to implement them with the help of examples. We discussed both these interfaces (`ServletRequest` and `ServletDispatcher`) and what they comprise.
 
