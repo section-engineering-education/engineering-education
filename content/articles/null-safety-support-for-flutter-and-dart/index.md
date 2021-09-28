@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /null-safety-support-for-flutter-and-dart/
-title: Null Safety support for Flutter and Dart
-description: Null Safety means that a variable cannot have a null value unless it starts with null. Null Safety helps you prevent a wide range of issues by catching null errors during development rather than at runtime. This article will cover all the null safety features and their benefits.
+title: Null Safety Support for Flutter and Dart
+description: This article will help you understand null safety features and their benefits in Dart.
 author: francisca-ngodu
-date: 2021-09-16T00:00:00-15:10
+date: 2021-09-28T00:00:00-04:50
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,73 +14,83 @@ images:
   - url: /engineering-education/null-safety-support-for-flutter-and-dart/hero.jpg
     alt: Null Safety support for Flutter and Dart Cover image
 ---
-### Introduction
-Null Safety means that a variable cannot have a null value unless it starts with null. If a variable begins with "null," it cannot end with "null." 
+Null safety means that a variable cannot have a null or void value. This feature improves user satisfaction by reducing errors and app crashes. 
+<!--more-->
+Null safety ensures that all runtime null-dereference problems are shown at compile-time. It helps you avoid many problems during development, rather than waiting until runtime to identify null errors. 
 
-All runtime null-dereference problems will now be shown at compile-time, thanks to null Safety. Null Safety helps you avoid many problems during development, rather than waiting until runtime to capture null errors. When it comes to type safety, Dart excels.
+When it comes to type safety, Dart excels.
 
-If you get a variable or something similar, the compiler can ensure it, but even if the variable is not null, type safety alone does not guarantee that it is. When an error occurs, the null value is returned.
+This article will cover the implementation of null Safety in Flutter. It will also discuss how this feature impacts the development process, as well as its benefits.
 
-This article will cover the implementation of null Safety in Flutter, how it impacts the development process, the benefits it brings, and how to transition your flutter applications to Null Safety.
+The article will also show you how to incorporate null safety in your Flutter application.
 
 ### Prerequisites
-Before getting started, it is best for the reader should have:
+Before getting started, the reader should have:
 - A basic understanding of Dart programming language.
-- Flutter SDK [version 2.0.0](https://flutter.dev/?gclid=Cj0KCQjwqKuKBhCxARIsACf4XuH2pWCON0HHGu4zHIR5p39xd-xE4l0Rwm5MlkFXeNhXbBgW17vn4iQaAmqSEALw_wcB&gclsrc=aw.ds) installed.
+- Flutter SDK [version 2.0.0](https://flutter.dev/docs/get-started/install) installed.
 - Dart SDK [version 2.12.0](https://dart.dev/get-dart) installed.
 - An IDE installed. Preferably [IntelliJ](https://www.jetbrains.com/idea/).
 
 ### Table of contents
-- [Principles of Null Safety](#principles-of-null-safety)
-- [What are Nullable and Non-nullable types?](#what-are-nullable-and-non-nullable-types)
-- [Sound and Unsound null safety](#sound-and-unsound-null-safety)
-- [How Null-safety migration works in Flutter](#how-null-safety-migration-works-in-flutter)
-- [Reasons for Null-safety migration in Flutter](#reasons-for-null-safety-migration-in-flutter)
+- [Principles of null safety](#principles-of-null-safety)
+- [What are nullable and non-nullable types?](#what-are-nullable-and-non-nullable-types)
+- [Sound and unsound null safety](#sound-and-unsound-null-safety)
+- [How null safety migration works in Flutter](#how-null-safety-migration-works-in-flutter)
+- [Reasons for null safety migration in Flutter](#reasons-for-null-safety-migration-in-flutter)
 
-### Principles of Null Safety
-- **Non-nullable**: Without explicit nullability declarations, variables in the Dart programming language cannot be null because non-null was by far the most popular option in API research.
-- **Incrementally Adoptable**: It is entirely up to you to make the switch to null safety. You can decide when and what to move to null safety. The same project can have null-safe and non-null-safe code stages.
-- **Fully Sound**: Compiler optimizations are feasible thanks to Dart's strong Null Safety. Something cannot be null if the type system concludes that it is not null. Other benefits of Null Safety include fewer bugs, smaller binaries, and faster execution.
+### Principles of null safety
+**Non-nullable**
 
-### What are Nullable and Non-nullable types?
-#### Non-Nullable Types
-When we employ Null Safety, all types are by default non-nullable. An int variable, for example, will have an integer value.
+Without explicit nullability declarations, variables in the Dart programming language cannot be null.
 
-```Dart
+**Adoptable**
+
+It is entirely up to you to make the switch to null safety. You can decide when and what to move to null safety. The same project can have null-safe and non-null-safe code stages.
+
+**Fully Sound**
+
+Compiler optimizations are feasible thanks to Dart's null safety feature. All variables that require values must be initialized appropriately. Other benefits of null Safety include fewer bugs, smaller binaries, and faster execution.
+
+### What are nullable and non-nullable types?
+#### Non-nullable types
+When we use null safety, all types are by default non-nullable. For example, an `int` variable must have an `integer` value.
+
+```dart
 void main() {
   int number;
-  number = null; 
+  number = 0; 
 }
 ```
 
 If a variable is non-nullable, it must always be set to a non-null value.
-#### Nullable Types
+
+#### Nullable types
 The following operators specify if a variable can be null:
 
-1. Nullable type `'?'` 
-```
+**Nullable type (?)**
+
+```dart
 String? houseLocationName;  // By default, it's set to null.
 int? number = 36;  // By default, it's set to non-null.
 number = null; // It's possible to reassign it to null.
 ```
-A nullable variable does not need to be initialized before being used. 
 
-By default, it is null.
+A nullable variable does not need to be initialized before being used.
 
-2. The Assertion Operator `'!'`
+**The assertion operator (!)**
 
-Consider using the null assertion operator '!' the ability to force Dart to regard a non-nullable expression as non-nullable if you know it is not null.
+Using the null assertion operator '!' allows Dart to regard a nullable expression that isn't null as non-nullable. However, you must be sure that there is no value assigned to it.
 
 ```dart
 int? anyNumber = 50;
 int data = anyNumber!; // Because the value is not nullable, this is valid
 ```
 
-3. Type Promotion 
+**Type promotion** 
 
-**Flow Analysis** is an algorithm that determines the execution of a program.
+`Flow Analysis` is an algorithm that determines the execution of a program.
 
-Dart's analyzer guarantees a nullable variable with a non-null value, informing the programmer of compile-time problems and warnings. 
+Dart's analyzer checks for nullable variables with non-null values and informs the developer of possible compile-time problems. 
 
 ```dart
 int checkValue(int? anyNumber) {
@@ -97,33 +107,48 @@ void main(){
 }
 ```
 
-Is it null or not? This is what this code determines. A non-nullable value cannot be nullified. So, `anyNumber.abs()` can be used instead of `anyNumber?.abs()` in a secure manner. The `.abs()` function produces a result that is not a decimal.
+This code determines whether a value is null or not. A non-nullable value cannot be nullified. 
 
-### Sound and Unsound null safety
-Using null-safe libraries and non-null-safe libraries is possible in a Dart application. While executing these mixed-version applications, Null Safety is compromised.
+So, `anyNumber.abs()` can be used instead of `anyNumber?.abs()`. The `abs()` function produces a result that is not a decimal.
 
-Null safety is ensured by a combination of static and runtime checks in the Dart programming language. A null safety check is performed on each Dart library that uses it, and the faults are more severe, even in a mixed-version program with null-unsafe libraries included. 
+### Sound and unsound null safety
+Using null-safe libraries and non-null-safe libraries is possible in Dart. However, while executing these mixed-versions, null safety can be compromised.
 
-When you begin converting a section of your code to null safety, you reap these benefits.
+Null safety is guaranteed through a combination of static and runtime checks in Dart. 
 
-A mixed-version software cannot have the runtime soundness that a null-safe application does. As long as null does not leak from the null-unsafe library into the null-safe code, it is okay because forestalling would wreak havoc with the un-migrated code's existing behavior.
+A null safety check is usually performed on each Dart library. Errors can arise even in a mixed-version program that has null-unsafe libraries. 
 
-### How Null-safety migration works in Flutter
-`Dart.dev's` migration guide outlines the five steps for migrating a package or vital application to null Safety.
-These steps include:
+A mixed-version software cannot have the runtime soundness that a null-safe application does. 
 
-These steps include:
+Note that introducing null variables in null-safe code could lead to errors.
 
-#### Step one: If your dependencies are ready, make sure they are:
-As a result, if any of your dependencies' APIs change during the migration process, you may have to do another relocation migration after making some headway transferring code. If some of your dependencies are not null safe, you may wish to contact the package developers. 
+### How null-safety migration works in Flutter
+There are [five major steps](https://dart.dev/null-safety/understanding-null-safety) for migrating a package or application to null Safety.
 
-Your application or package's readiness for migration can be determined with the dart pub outdated in null-safety mode. In the resolvable part of the model, this application is ready for migration. The application is ready for migration-only if it upgrades its dependencies to the prerelease versions of the path and process.
+These steps are discussed below:
 
-#### Step two: Use the migration tool to migrate:
-Fortunately, the migration tool is clever, so you may check the nullability attributes that the apparatus has acquired for you. To change a device's conclusion, you can add nullability clues. Some of the migration cues included can have a significant impact on migration quality. The migration  guide provides further ideas on how to use the migrating tool most effectively.
+**1. Ensure that all dependencies are ready for migration**
 
-#### Step three: Analyze your migrated code statically:
-When using your IDE or the command line, you can update your packages by executing pub get. Your flutter and Dart code can then be evaluated statically respectively by using your IDE or the command line, as follows:
+If any of your dependencies change during migration, you may have to do another relocation migration after transferring the appropriate code. 
+
+If some of your dependencies are not null safe, you may need to contact the package developers. 
+
+An application is ready for migration-only if it upgrades its dependencies to the prerelease versions of the path and process.
+
+**2. Use the migration tool to migrate**
+
+Fortunately, the migration tool helps you to check and confirm nullable attributes. 
+
+You can add nullability cues to change a device's attributes. However, some of the migration cues included can have a significant impact on migration quality. 
+
+The [migration guide](https://dart.dev/null-safety/migration-guide) provides further ideas on how to use the migrating tool effectively.
+
+**3. Analyze your migrated code statically**
+
+You can update your packages by executing the `pub get`command in your terminal. 
+
+Your Flutter and Dart code can then be evaluated statically using the commands below:
+
  ```
 $ flutter pub get
 $ flutter analyze
@@ -131,21 +156,29 @@ $ flutter analyze
 $ dart pub get
 $ dart analyze
  ```
-#### Step four: Verify that the tests are passing:
-Make sure that your tests pass. If you updated your package code to allow nulls no longer, you might need to re-run tests that expect null values.
+**4. Verify that the tests are passing**
 
-#### Step five: Packages that are null-safe should be published:
-Your prerelease can be published as soon as your migration is complete and all tests have passed. As a prerelease version, publish your package to a public repository (pub). dev.
+Make sure that all tests pass. If you updated your package code to accept only non-nullable variables, you may need to re-run tests.
+
+**5. Packages that are null-safe should be published**
+
+Your prerelease package can be published as soon as your migration is complete and all tests have passed. 
+
+As a prerelease version, you should publish the package to [pub.dev](https://pub.dev/) which is a public repository.
  
-### Reasons for Null-safety migration in Flutter
-When refactoring for null safety, you should be aware that you can entirely rely on the compiler. As a result, the cycle becomes quite simple; therefore, moving your code to null safety should be mandatory rather than optional. The time and effort you put into this will save you countless hours of labor in the future.
+### Reasons for null-safety migration in Flutter
+When checking for null safety, you can entirely rely on the compiler. This makes the process much simpler.
 
-Dart is a developer-centric language that is reaffirmed by this feature. Having this aspect in the Flutter SDK will make it much easier to create applications that run in a real sense wherever.
+Therefore, adopting null safety should be mandatory. The time and effort you put into this activity will save you from frustration in the future.
+
+Dart is a developer-centric language that is reaffirmed by this feature. The inclusion of null safety in the Flutter SDK makes it much easier to create applications.
 
 ### Conclusion
-As far as type safety is concerned, Dart is unbeatable. Compilers can assure that you obtain a variable or equivalent thing. However, even if the variable is not null, type safety alone does not guarantee that it is. When an error occurs, the null value is returned.
+As far as type safety is concerned, Dart is unbeatable. Null safety helps you avoid numerous errors in your program.
 
-Happy learning!
+You can, therefore, use the knowledge gained from this article to craft quality Flutter applications.
+
+Happy coding!
 
 ---
 Peer Review Contributions by: [Briana Nzivu](/engineering-education/authors/briana-nzivu/)
