@@ -1,11 +1,10 @@
 ### Introduction
 
-Automatic sign out is a very common feature in web development or even in mobile applications especially in banking systems. It plays a very important role in ensuring the safety and integrity of data is protected from unauthorised access.  
+Automatic sign out is a pervasive feature in web development or mobile applications, especially in banking systems. As a result, it plays a significant role in ensuring the safety and integrity of data.
 
-This comes hand in hand considering the fact that an application user may forget to log off the system after use. In this tutorial, we discuss how we can build a secure Angular application that has the ability to sign out idle screens.
+Auto log off comes hand in hand because an application user may forget to log off the system after use. This tutorial discusses how we can build a secure Angular application that can sign out idle screens.
 
 ### Table of contents
-
 - [Objectives](#objectives)
 - [Prerequisites](#prerequisites)
 - [Getting started with automatic log off](#getting-started-with-automatic-log-off)
@@ -15,33 +14,26 @@ This comes hand in hand considering the fact that an application user may forget
 - [Conclusion](#conclusion)
 
 ### Prerequisites
-
 - Basic knowledge of JavaScript or TypeScript
 - Basic Angular concepts
 - Understanding the concepts of Node Package Manager (NPM).
 
 ### Objectives
+This tutorial aims to teach you everything you need to get started with your Angular application security. We'll also build a sample authentication application that will automatically log off users.
 
-This tuturial aims to teach you everything you need to get started with your Angular application security. We'll also build a sample authentication application that will automatically log off users.
-
-### Getting started with automatic log off
-
+### Getting started with auto log off
 Automatic log off is a security feature that determines the amount of time a screen can stay idle. In simple terms, it's the amount of time a screen stays active without user actions such as click events.  
 
-This feature is very core in terms of resource management and security. In terms of resource management, it helps in stopping unnecessary APII calls while for security, it minimizes the vulnerability to attacks.  
+This feature is very core in terms of resource management and security. In terms of resource management, it helps stop unnecessary API calls and minimize the vulnerability to attacks.  
 
-### Setting up a sample automatic log off project
-
-In the previous section, we discussed the basic concepts of idle screen timeout. In this section, we build a sample application in Angular 12 implementing the automocatic log off.  
+### Setting up a sample auto-logout project
+In the previous section, we discussed the basic concepts of idle screen timeout. In this section, we build a sample application in Angular 12, implementing the automatic log off.  
 
 Let's begin by installing an Angular application as shown below:  
-
 ```bash
 ng new sample-auto-logout
 ```
-
 This command installs an Angular application `sample-auto-logout` with all the required dependencies.
-
 Next, `cd` into this project root and create the following components:
 
 ```bash
@@ -49,12 +41,10 @@ cd sample-auto-logout
 ng  g component auth/sign-in
 ng g component auth/create-account
 ```
-
 The commands above creates 2 components, `signInComponent` and `CreateAccountComponent` inside the `auth` directory.
+### Creating authentication forms
 
-### Creating authenticatiion forms
-
-Now that our application has the auth components, add the following contents in the `CreateAccountComponent` HTML page.
+Now that our application has the auth components add the following contents in the `CreateAccountComponent` HTML page.
 
 ```html
 <div class="citizen-registration">
@@ -118,17 +108,17 @@ Now that our application has the auth components, add the following contents in 
 
 ```
 
-The above markup is a sample registration form for an organisation where the company captures as much details as possible.
+The above markup is a sample registration form for an organization where the company captures as many details as possible.
 
-This HTML page use Angular material which is added by running the following commands:
+This HTML page uses Angular material, which is added by running the following commands:
 
 ```bash
 ng add @angular/material
 ```
 
-This command will prompt you to answer basic yes/no questions which helps in material customization.  
+This command will prompt you to answer basic yes/no questions, which helps in material customization.  
 
-For our template above to work, we need to import a few modules from the previous package we installed. The simplest way to achieve this is by creating a new module in the `src/app` directory.  
+We need to import a few modules from the previous package we installed for our template above to work. The simplest way to achieve this is by creating a new module in the `src/app` directory.  
 
 ```bash
 ng g module app-material
@@ -152,7 +142,7 @@ export class DemoMaterialModule {}
 
 ```
 
-Next, import this module into `app.module.ts` file as shown below:
+Next, import this module into the `app.module.ts` file as shown below:
 
 ```ts
 ...
@@ -177,7 +167,7 @@ export class AppModule { }
 
 ```
 
-In theabove module,we declare the components we created previously, and then proceed to import the material modules.
+In the above module, we declare the components we created previously and then import the material modules.
 
 Now, let's add a few styling to beautify our page:
 
@@ -261,12 +251,12 @@ Output:
 
 ### How to determine if a screen is idle
 
-Now that we've a fully furnished authentication form, let's procced and determine how whether user screen is idle.
+Now that we have a fully furnished authentication form, let's proceed and determine whether the user screen is idle.
 
-How this works is very simple, we keep track of user's action on the web application. It's important to note that these actions are equivalent to events.  
-When a user performs an action on the application, we record it as an action in the browser's `localstorage`.  
+How this works is very simple, we keep track of user's actions on the web application. It's important to note that these actions are equivalent to events.  
+When a user acts on the application, we record it as an action in the browser's local storage.  
 
-Whenever a user perform an action, we reset the clock on the localstorage and start the count again. This clock is then synced with the loca time to perform appropriate changes.  
+Whenever a user acts, we reset the clock on the local storage and start the count again. This clock is then synced with the local time to perform appropriate changes.  
 
 Let's create a service `AutoLogOffService` and add the following:
 
@@ -361,7 +351,7 @@ export class AutoLogoutService {
   }
 
   /**
-   *check if user is logged in
+   *check if a user is logged in
    */
   isUserLoggedIn():string{
     return environment.authKey;
@@ -370,8 +360,8 @@ export class AutoLogoutService {
 
 ```
 
-The above code has an interval and event listeners hence we can set the automatic logout time are required
+The above code has an interval and event listeners; hence we can set the automatic logout time are required.
 
 ### Conclusion
 
-In this tutorial, we've covered the concepts of automatic logoff in an Angular application. We've seen that we can keep track of the activities taking place on our applications using even listeners which in turn helps in determining the actions.
+In this tutorial, we've covered the concepts of automatic logoff in an Angular application. We've seen that we can keep track of the activities taking place on our applications using even listeners, which helps determine the actions.
