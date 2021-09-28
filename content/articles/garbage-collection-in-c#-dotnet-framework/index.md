@@ -3,15 +3,15 @@ Garbage collection in the C#.Net framework is used to manage Memory automaticall
 ### Introduction
 Garbage collection is a critical approach in the .Net framework for releasing unused handled code objects from Memory and allowing the process to run faster. In this tutorial, we will go over the fundamentals of garbage collection.
 
-### Table of Contents
+### Table of contents
 - [Overview on Garbage Collection](#overview-on-garbage-collection)
 - [Garbage Collections Different phases](#garbage-collections-different-phases)
 - [Garbage Collection Heap generation](#garbage-collection-heap-generation)
 - [Methods in Garbage Collection Class](#methods-in-garbage-collection-class)
 - [Stand out advantages of Garbage Collection](#stand-out-advantages-of-garbage-collection)
 
-### Overview on Garbage Collection
-In a .Net model, memory management is usually automated through the help of Garbage collection. A stack storage space is assigned only when a runtime class object is generated. Whenever the software completes all the activities that are connected with the thing, the Memory that is linked to it will not be helpful as it will not be utilized.
+### Overview on garbage collection
+In a .Net model, memory management is usually automated through the help of Garbage collection. A stack storage space is assigned only when a runtime class object is generated. Whenever the software completes all the activities connected with the thing, the Memory linked to it will not be helpful as it will not be utilized.
 
 Memory space that is not required is freed up with the help of garbage collection, which makes it worthwhile to use. Inbuilt scripting engine, the `Optimization Engine` found in the managed heap, is always used in garbage collection.
 When at least one of several conditions is met, garbage collection occurs. 
@@ -22,11 +22,15 @@ The following are the circumstances:
 - It is only when `GarbageC.Collect` is initiated that garbage collection happens. Because the waste collection is typically automated, this method is only employed in exceptional instances.
 
 #### How garbage collection works;
-The .Net framework must support implicit garbage collection. When an item is formed, it is assigned to Generation 0. Garbage collection employs an algorithm that examines the items in the generation; when the object's life period expires, it is removed from Memory. There are two types of things. The first is Live Objects, while the second is Dead Objects. The Garbage Collection mechanism collects any unutilized objects in the generation that are dead instances. If a living item has been running for a long time, it will be shifted to the next generation depending on how long it has been running.
+The .Net framework must support implicit garbage collection. When an item is formed, it is assigned to Generation 0. Garbage collection employs an algorithm that examines the items in the generation; when the object's life period expires, it is removed from Memory.
 
-The object cleanup in the generation will still not occur exactly after the life period of the specific objects has expired. Implementing the sweeping algorithm to clear the spaces for the procedure takes a bit of time.
+There are two types of things; Live Objects and Dead Objects. The Garbage Collection mechanism collects any unutilized objects in the generation that are dead instances.
 
-### Garbage Collections Different phases
+If a living item has been running for a long time, it will be shifted to the next generation, depending on how long it has been running.
+
+The object cleanup in the generation will still not occur after the life period of the specific objects has expired. Therefore, implementing the sweeping algorithm to clear the spaces for the procedure takes a bit of time.
+
+### Garbage collections different phases
 We have different phases of garbage collection. We will discuss the three steps.
 The illustration below shows how garbage collection occurs in a different hierarchy.
 
@@ -35,8 +39,8 @@ The illustration below shows how garbage collection occurs in a different hierar
 1. Marking phase: During marking, the records of all the items found are kept. By keeping track of all the references to the root objects, will ensure that marking is done. Heap memory deletes live entities that are not on the list.
 2. All connections to live items in the queue are updated during the relocating phase to refer to during the compaction step; the items will be transferred to a new location.
 
-### Garbage Collection Heap generation
-Garbage collections will use different generations to manage a variety of items with other lifetimes. The Common Language Runtime (CLR) will provide RAM to a generation based on the size of a project used. Using the `Optimization Engine`, the collection means the method will check where items will be placed. Either in generation one or two.
+### Garbage collection heap generation
+Garbage collections will use different generations to manage a variety of items with other lifetimes. The Common Language Runtime (CLR) will provide RAM to a generation based on the size of a project used. Then, using the `Optimization Engine`, the collection means the method will check where items will be placed. Either in generation one or two.
 
 ![Heap Generation in Garbage Collection](engineering-education/garbage-collection-in-c#-net-framework/heap.jpg)
 
@@ -44,17 +48,17 @@ Garbage collections will use different generations to manage a variety of items 
  Generation 0 refers to a newly generated item that has never been tagged for collection. All of the brief lifespan objects, like temporary attributes, are stored in the heap storage generation 0. Unless they are massive objects, all newly allocated entities are implicitly generation 0 objects. For the most part, garbage collection is only needed for generation 0.
 
 **2. Generation 1;**
- The first generation discovers a GC-survivor object tagged for collections but not destroyed due to heap space constraints. If particular generation 0 items are not released during a trash collection process, they are transferred to generation 1. This generation's objects serve as a buffer between generation 0's short-lived objects and generation 2's long-lived items.
+ The first generation discovers a GC-survivor object tagged for collections but not destroyed due to heap space constraints. If particular generation 0 items are not released during a trash collection process, they are transferred to generation 1. Thus, this generation's objects serve as a buffer between generation 0's short-lived and generation 2's long-lived items.
 
 **3. The Generation 2;** 
 Generation 2 identifies an item that has been swept by the GC more than once. If things in generation 1 here are not released, they will migrate to generation 2, where they can be published. The reason for this is because the items will exist primarily in heap memory for a long time. One illustration of this is the existence of static objects in generation 2.
 
 **Remember**
-To dispose of garbage properly, we need to think about it in terms of generations. When this occurs, all of the previous generations' components, as well as those from succeeding generations, can be employed freely. Since all the items in the heap memory are deleted, generation 2 is also referred as full garbage collection.
+To dispose of Garbage properly, we need to think about it in terms of generations. When this occurs, all of the previous generations' components and those from succeeding generations can be employed freely. Since all the items in the heap memory are deleted, generation 2 is also referred to as full garbage collection.
 
 Furthermore, Generation 2 will have more Memory than Generation 1, and Generation 1 will have more Memory than Generation 0.
 
-The following is a script that shows how many heap generations there are in garbage collection employing the GC. The GC class's MaxGeneration property.
+The following is a script that shows how many heap generations there are in garbage collection employing the GC—the GC class's MaxGeneration property.
 
 ```C#
 using System;
@@ -77,12 +81,12 @@ The generation number is: 1
 
 ```
 *Description ;*
-To determine the maximum number of the generations that a machine can withstand, which is 2, GarbageC.MaxGenertion attribute is used. This is shown in the above example. Note that the result will differ in different machines.
+To determine the maximum number of generations that a machine can withstand, the `GarbageC.MaxGenertion` attribute is used. This is shown in the above example. Note that the result will differ in different machines.
 
-### Methods in Garbage Collection Class
+### Methods in garbage collection Class
 The Garbage Collector class is in charge of the system's garbage collector. The methods of the Garbage Collector class are as follows:
 
-**Method Garbage Collector.GetGeneration()** : This function returns the target object's generation number. It just takes one parameter, this is the item for which a manufacturing number is required.
+**Method garbage Collector.GetGeneration()** : This function returns the target object's generation number. It just takes one parameter; this is the item for which a manufacturing number is required.
 
 Below is the demonstration of garbage collection `GarbageC.GetGeneration`.
 
@@ -111,7 +115,7 @@ Our object generation number: 0
 Only one parameter is accepted in the above program, which returns the generation number of the object on target.
 
 **GarbageCollection.GetTotalMemory function**
-The number of bytes assigned in the scheme is returned by this method. It only requires a single binary decision parameter, proper indicating that the process wants to wait for garbage collection to occur before returning, and false indicating the contrary.
+The number of bytes assigned in the scheme is returned by this method. It only requires a single binary decision parameter, indicating that the process wants to wait for garbage collection before returning, and false indicating the contrary.
 
 A program that shows how to use the GC. The following is the code for the GetTotalMemory() method:
 
@@ -142,13 +146,13 @@ Total Memory of the device:9984
 
 ```
 *Explanation* 
-It's important to remember that the output is always dependent on the system you are using, which means you might get a different result than we did.
-The number of bytes assigned in the system will be returned by the function above. It makes use of a boolean entity, where true indicates that the function will wait for garbage collection to begin before returning it, while false indicates the reverse.
+It is important to remember that the output is always dependent on the system you are using, which means you might get a different result than we did.
+The number of bytes assigned in the system will be returned by the function above. It uses a boolean entity, where true indicates that the function will wait for garbage collection to begin before returning it, while false indicates the reverse.
 
 **Garbage Collection.Collect function**
 The GC.Collect() function can be used to enforce garbage collection in the system. Only one variable is required for this method: the value of the oldest generation about which garbage collection is performed.
 
-To demonstrate how to make advantage of the GC.Collect() method, below is a sample script.
+To demonstrate how to take advantage of the GC.Collect() method, below is a sample script.
 
 ```C#
 using System;
@@ -173,10 +177,10 @@ Generation 0; our garbage collection equals: 1
 ```
 Garbage collection is enforced into the system utilizing the above approach in the code snippet above. A single argument, the oldest generation, will be required by the method.
 
-### Stand out advantages of Garbage Collection
-- When it is not necessary, garbage collection will dynamically release memory space, obviating the requirement for manual memory emptying.
-- With Garbage Collection, objects in primary Memory are made better by collecting garbage in successive generations.
-- To prevent objects from mistakenly using another entity's attributes, garbage collection guarantees memory allocation is done correctly.
+### Stand out advantages of garbage collection
+- When it is unnecessary, garbage collection will dynamically release memory space, obviating the requirement for manual memory emptying.
+- With Garbage Collection, objects in primary Memory are made better by collecting Garbage in successive generations.
+- To prevent objects from mistakenly using another entity's attributes, garbage collection guarantees that memory allocation is done correctly.
 - Garbage collection removes objects from Memory that have been released initially, removing the need for constructors of recently established objects to use the entire data field as a result of garbage collection.
 
 ### Conclusion
