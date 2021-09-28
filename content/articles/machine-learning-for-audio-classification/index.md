@@ -34,11 +34,11 @@ In this tutorial, you'll get an introduction to Machine Learning for audio class
 - [Librosa](https://librosa.org/doc/latest/index.html)
 
 ### Prerequisites
-You need to have some domain knowledge in:
-- Sound and audio.
-- Intermediate Python programming.
-- [TensorFlow](https://www.tensorflow.org/) and [Scikit-learn](https://scikit-learn.org/stable/).
-- A [Kaggle](https://www.kaggle.com/) account is needed for this project.
+You need to have:
+- Domain knowledge in sound and audio.
+- Intermediate Python programming skills.
+- An understanding of [TensorFlow](https://www.tensorflow.org/) and [Scikit-learn](https://scikit-learn.org/stable/).
+- A [Kaggle](https://www.kaggle.com/) account.
 
 ### Differences between sound and audio
 Sound is what you hear. It's a vibration that propagates as an acoustic wave. Unique properties of sound include frequencies, speed, amplitude, and direction. When talking about the primary usage of machine learning in this domain, only frequency and amplitude are the essential features. Sound waves can often be simplified to sinusoidal waves. A sinusoidal wave shows us how the amplitude of a variable change with time. To capture sound into its electronic representation, we use a microphone.
@@ -404,7 +404,7 @@ array(['dog_bark'], dtype='<U16')
 ```
 The model has correctly predicted the dog bark.
 
-You can find the complete code for this tutorial [here](https://colab.research.google.com/drive/1iLMmBnLazIhWBOpnsVfo7lVaQnB3WONv#scrollTo=GlWofJJVcrQT).
+All the code for this tutorial is available [here](https://colab.research.google.com/drive/1iLMmBnLazIhWBOpnsVfo7lVaQnB3WONv#scrollTo=GlWofJJVcrQT).
 
 ### Wrapping up
 Audio signal processing is not easy to understand as some domain knowledge is required. However, using libraries such as librosa, it becomes easy to understand. You don't have to use the librosa library for this task. Once you have the waveform, you could convert it into a spectrogram and use a Convolution Neural Network (CNN) for classification instead.
