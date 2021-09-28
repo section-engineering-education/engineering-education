@@ -19,9 +19,11 @@ Because of their inaccuracy, floating-point data types cannot be used in financi
 <!--more-->
 On double numbers, the BigDecimal class provides arithmetic, scale management, rounding, comparison, format conversion, and hashing functions. It compensates for the time complexity, however, by handling large and small floating-point integers with exceptional precision.
 
-These basic arithmetic operations can be performed on BigDecimal and between BigDecimal and primitive data types. This is what our article will cover. While both `BigInteger` and `BigDecimal` support arbitrary-precision integers, BigDecimal only supports arbitrary-precision fixed-point numbers. 
+These basic arithmetic operations can be performed on BigDecimal and between BigDecimal and primitive data types. This is what our article will cover. 
 
-BigDecimal/BigInteger is not advisable if you're constructing a low-latency application where every microsecond counts. Let us look at our first example of Adding, subtracting, and multiplying two large decimal integers with a Java program:
+While both `BigInteger` and `BigDecimal` support arbitrary-precision integers, BigDecimal only supports arbitrary-precision fixed-point numbers. BigDecimal/BigInteger is not advisable if you are constructing a low-latency application where every microsecond counts. 
+
+Let us look at our first example of adding, subtracting, and multiplying two large decimal integers with a Java program:
 
 ```Java
 import java.io.*;
@@ -30,18 +32,18 @@ class Example {
     public static void main(String[] args)
     {
 
-        // Declaration of the bigdecimal numbers
+        // Declaration of the BigDecimal numbers
         BigDecimal first1 = new BigDecimal("25.35557");
         BigDecimal sec2 = new BigDecimal("55.3767");
-         //actual arithmetic addition operation
+         // Actual arithmetic addition operation
         System.out.println("Adding first1 and sec2 = "
                            + (first1.add(sec2)));
 
-        // actual arithmetic subtraction operation
+        // Actual arithmetic subtraction operation
         System.out.println("Subtracting first1 and sec2 = "
                            + (first1.subtract(sec2)));
 
-        // actual arithmetic multiplication operation
+        // Actual arithmetic multiplication operation
         System.out.println(
             "Multiplying first1 and sec2 = "
             + (first1.multiply(sec2)));
@@ -57,11 +59,11 @@ Subtracting first1 and sec2 = -30.02113
 Multiplying first1 and sec2 = 1404.107793
 ```
 
-We have done three operations on our two declared BigDecimals. For example the subtraction, addition, and the addition operations. There is now a point to note here, we did not perform the division operation because of one reason that I will be giving.
+We have done three operations on our two declared BigDecimals. For example the subtraction, addition, and the multiplication operations. There is a point to note here, we did not perform the division operation because of one reason that i will give.
 
 Because the division of the two numbers is non-terminating, there is an error that will occur. And, we know that BigDecimal was established to provide the highest level of precision. As a result, it generates an error. 
 
-We'll fix it in the following code, where we'll divide the same integers, but this time the data type will be double. Thus, there should be no errors and some responses.
+We will fix it in the following code, where we will divide the same integers, but this time the data type will be double. Thus, there should be no errors and some responses.
 
 
 Let us have the second example below:
@@ -176,19 +178,19 @@ Multiplying first1 and sec2 = 300
 Dividing first1 and sec2 = 0.75
 ```
 
-> No null values are allowed in a database, application, or view and everything is initialized with new BigDecimal(0). Or,  you execute null checks on every use of nullable values.
+> No null values are allowed in a database, application, or view and everything is initialized with new BigDecimal(0). Or, you execute null checks on every use of nullable values.
 
 ### Need for BigDecimal
 There is a lot of fun to be had with floating-point numbers. A double type is commonly used for quantities unless the value is an integer, in which case an int type is usually acceptable. 
 
-Also, a float or a long can be used, depending on the size of a value's value type. It should be noted that these kinds are the very worst thing you can use when dealing with money. They do not provide the correct value, but rather one that can be stored in a binary format. 
+Also, a float or a long can be used, depending on the size of a value's `value` type. It should be noted that these kinds are the very worst thing you can use when dealing with money. They do not provide the correct value, but rather one that can be stored in a binary format. 
 
 ### About primitive data types
 They are the simplest types. It is possible to design your complicated kinds by using primitive types as a starting point for development. 
 
 Primitive types are easier to use in applications since they boost the performance by a large amount. Object-based implementation of primitive types would result in a considerable performance.
 
-As a result of their name, they can relate to a wide range of objects. The non-primitive data types in Java, but, are built by programmers. 
+As a result of their name, they can relate to a wide range of objects. The non-primitive data types in Java, however, are built by programmers. 
 
 For the same reason, primitive types are more efficient when compared with instances of wrapper classes.
 
@@ -199,13 +201,11 @@ Primal and non-primitive data types differ primarily in their underlying data ty
 - While a primitive type always has a value, other types can be null.
 
 ### Conclusion
-A BigDecimal is a means to represent numbers that is accurate. Having a Double gives you a certain level of precision in your game. 
+A BigDecimal is a means to represent numbers that is accurate. Having a `double` gives you a certain level of precision in your game. 
 
 When working with doubles of varying magnitudes, the smaller one could be dropped from the sum because the magnitude difference is so huge. This would not happen with BigDecimal.
 
-BigDecimal has the drawback of being slower and more difficult to write algorithms with.
-
-I hope this article was helpful, thank you.
+BigDecimal has the drawback of being slower and more difficult to write algorithms with. I hope this article was helpful, thank you.
 
 ---
 Peer Review Contributions by: [Dawe Daniel](/engineering-education/authors/dawe-daniel/)
