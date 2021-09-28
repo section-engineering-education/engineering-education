@@ -16,7 +16,7 @@ images:
 ---
 A wifi extender is important in cases where the network is not strong enough past certain ranges. This extender can be used in small areas such as an office or home.
 <!--more-->
-The Raspberry Pi Wi-Fi Extender is a low cost and high-power device that can help extend your Wi-Fi network range. It mainly establishes its network connection from a Wi-Fi adapter. A wifi extender is important in cases where the network is not strong enough past certain ranges. This extender can be used in small areas such as an office or home.
+The Raspberry Pi Wi-Fi Extender is a low-cost and high-power device that can help extend your Wi-Fi network range. It mainly establishes its network connection from a Wi-Fi adapter. A wifi extender is important in cases where the network is not strong enough past certain ranges. This extender can be used in small areas such as an office or home.
 
 ### Table of Contents
 - [Prerequisites](#prerequisites)
@@ -32,7 +32,7 @@ The Raspberry Pi Wi-Fi Extender is a low cost and high-power device that can hel
 
 ### Extending the Wi-Fi using Raspberry
 
-Creating the a Wifi Extender using Raspberry Pi, the dnsmasq package in linux is used. This package is important as it takes care of majority of the technical work for you by functioning as both your DNS and DHCP server, that are needed to form a connection. You'll also need to install the hostapd package that allows us to create the extender. It is essential to have a Wi-Fi router that is active for you to make a connection as well as an Ethernet device for bridging the connection.
+Creating a Wifi Extender using Raspberry Pi, the dnsmasq package in Linux is used. This package is important as it takes care of the majority of the technical work for you by functioning as both your DNS and DHCP server, that are needed to form a connection. You'll also need to install the hostapd package that allows us to create the extender. It is essential to have a Wi-Fi router that is active for you to make a connection as well as an Ethernet device for bridging the connection.
 
 #### Step One: Updating the Raspberry Pi  
 
@@ -58,7 +58,7 @@ Install the dnsmasq and hostapd packages using these commands:
  
 #### Step Three: Open the dhcpcd.conf
 
-This can be achieved using this commands:
+This can be achieved using this command:
 
 ```sudo nano /etc/dhcpcd.conf```
 
@@ -90,7 +90,7 @@ This can be achieved using this commands:
 
 ```sudo nano /etc/hostapd/hostapd.conf```
 
-2.Here we dictate how we can communicate and interact with the wlan device by changing the following lines:
+2. Here we dictate how we can communicate and interact with the WLAN device by changing the following lines:
 
  ssid= “ ” //here you enter the name of the Wi-Fi 
 
@@ -133,7 +133,7 @@ First, change the directory of the configuration using;
 
 #### Step Nine: Creation of a new dnsmasq.conf configuration file
 
-1. Create new conf file using: 
+1. Create a new conf file using: 
 
 ```sudo nano /etc/dnsmasq.conf```
 
@@ -170,11 +170,11 @@ Find and eliminate # sign at the beginning (Uncomment):
  
 #### Step Eleven: Activation of IP forwarding on the Pi
 
-Activate the raspberry Pi using command below;
+Activate the Raspberry Pi using the command below;
 
 ```sudo sh -c "echo 1 > /proc/sys/net/ipv4/ip_forward"```
 
-Note: You may reboot at this point in order to appy the settings:
+Note: You may reboot at this point in order to apply the settings:
 
 #### Step Twelve: NAT configuration
 
@@ -203,7 +203,7 @@ above ```exit 0```
 
 ![RC.LOCAL](/setting-up-a-wifi-extender-using-a-raspberry-pi/step12b.png)
  
-3. Restart the two service:
+3. Restart the two services:
 
 ```sudo service hostapd start```
 
@@ -224,5 +224,3 @@ To ensure that the Raspberry Pi Wi-Fi extender is operating successfully, use an
 - [DIY Raspberry Pi based WiFi extender and repeater](https://www.iottrends.tech/blog/diy-raspberry-pi-based-wifi-extender-and-repeater/)
 - [WiFi extender using raspberry Pi](https://iot4beginners.com/wifi-extender-using-raspberry-pi/)
 - [Turn a Raspberry Pi into a Wi-Fi access point or repeate](https://www.balena.io/blog/turn-a-raspberry-pi-into-a-wi-fi-access-point-or-repeater/)
-
-
