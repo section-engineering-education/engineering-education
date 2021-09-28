@@ -22,6 +22,12 @@ There are several technologies out there that can achieve these functionalities 
 
 > Note that there may be benefits of using a dedicated frontend; for instance, it can be helpful to have a dedicated team responsible for coding the frontend and backend of a piece of software.
 
+## Tutorial Requirements
+To follow along with this tutorial the following items would be needed:
+
+1. A basic understanding of the Django web framework
+1. A working knowledge of Docker
+
 ### Project setup and overview
 Here is a quick look at the app you will be building:
 ![Home Page](/engineering-education/full-stack-reactive-website-in-Django/homepage-2.png)
@@ -55,16 +61,13 @@ Take note of the `Book` model in _books/models.py_:
 
 ```python
 from django.db import models
-
 class Book(models.Model):
     title = models.CharField(max_length=200)
-
     def __str__(self):
         return self.title
 ```
 
 ### Working with Unicorn
-
 According to [Unicorn](https://www.django-unicorn.com/docs/), it is a component framework that progressively enhances a standard Django view. It dynamically updates the DOM with AJAX calls in the background. Add it to your installed application:
 
 ```py
@@ -75,10 +78,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
     # Third-party
     "django_unicorn", # new
-
 ]
 ```
 
@@ -86,7 +87,6 @@ Update your project `urls.py` file like so:
 
 ```py
 from django.urls import path, include
-
 path("unicorn/", include("django_unicorn.urls")), # new
 ```
 
@@ -150,7 +150,6 @@ Update your books' template `index.html` file like so:
 3. You also added the `unicorn_scripts` into the Django HTML template and added the `crsf_token` in the template as well.
 
 > According to Unicorn, the library follows the best practices of Django and therefore, it requires a `CRSF` token to be set on any page that is a component. This guarantees that no nefarious AJAX Posts can be done.
-
 Additionally, according to Unicorn, it has the concept of component, to refer to a set of interactive functionality that can be put inside the template. So, for example, in the `index.html` file, you added a `book` component.
 
 Furthermore, a component consists of:
@@ -221,12 +220,10 @@ Inside the `book.html`, add the following code:
 2. Note the input element; this is familiar except for the `Unicorn:model` attribute. This would specify what field in your backend component would be bound to this input. In this case, the field name would be `title`.
 
 > `unicorn:model` is the magic that ties the input to the backend component.
-
 3. Notice the `Add Books` button with an attribute `unicorn:click`, which tells `unicorn` to bind the `add_book` backend method to the click browser event.
 4. Likewise, the `Delete Book` button tells `unicorn` to bind the `delete_book` backend method. You also passed the book `id` to the `delete_book` function to uniquely identify each book.
 
 > To prevent updates from occurring on every input, you can add a lazy or defer modifier to the end of `unicorn:model`.
-
 Attributes used in component templates habitually start with `unicorn:` but the shortcut `u:` is also supported. Note that properties of the component can be of many types, including `str`, `int`, `list`, `dictionary`, `decimal`, `Django Model`, etc. 
 
 Finally, `Unicorn` requires one root element that envelopes the component template.
@@ -236,32 +233,24 @@ Finally, `Unicorn` requires one root element that envelopes the component templa
 Inside the `book.py`, add the following code:
 
 ```py
-
 from django_unicorn.components import UnicornView
 from books.models import Book
-
-
 class BookView(UnicornView):
     title: str = ""
     books = Book.objects.none()
-
     def hydrate(self):
         self.books = Book.objects.all()
-
     def add_book(self):
         if self.title != "":
             book = Book(title=self.title)
             book.save()
-
         self.title = ""
-
     def delete_book(self, id):
         try:
             book = Book.objects.get(id=id)
             book.delete()
         except:
             pass
-
 ```
 
 ** What is Happening Here?**
@@ -288,4 +277,3 @@ Happy coding!
 ### References
 
 - [Unicorn](https://www.django-unicorn.com/)
-
