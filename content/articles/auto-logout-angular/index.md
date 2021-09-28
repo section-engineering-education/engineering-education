@@ -1,5 +1,4 @@
 ### Introduction
-
 Automatic sign out is a pervasive feature in web development or mobile applications, especially in banking systems. As a result, it plays a significant role in ensuring the safety and integrity of data.
 
 Auto log off comes hand in hand because an application user may forget to log off the system after use. This tutorial discusses how we can build a secure Angular application that can sign out idle screens.
@@ -42,9 +41,9 @@ ng  g component auth/sign-in
 ng g component auth/create-account
 ```
 The commands above creates 2 components, `signInComponent` and `CreateAccountComponent` inside the `auth` directory.
-### Creating authentication forms
 
-Now that our application has the auth components add the following contents in the `CreateAccountComponent` HTML page.
+### Creating authentication forms
+Now that our application has the auth components add the following contents in the `CreateAccountComponent` template.
 
 ```html
 <div class="citizen-registration">
@@ -108,7 +107,7 @@ Now that our application has the auth components add the following contents in t
 
 ```
 
-The above markup is a sample registration form for an organization where the company captures as many details as possible.
+The above template is a sample registration form for an organization where the company captures user details.
 
 This HTML page uses Angular material, which is added by running the following commands:
 
@@ -116,7 +115,7 @@ This HTML page uses Angular material, which is added by running the following co
 ng add @angular/material
 ```
 
-This command will prompt you to answer basic yes/no questions, which helps in material customization.  
+This command prompts you to answer basic yes/no questions, which helps in material customization.  
 
 We need to import a few modules from the previous package we installed for our template above to work. The simplest way to achieve this is by creating a new module in the `src/app` directory.  
 
@@ -153,18 +152,15 @@ import {MaterialModule} from "./material-module";
     AppComponent,
     SignInComponent,
     CreateAccountComponent,
-
   ],
   imports: [
     ...
     AppRoutingModule,
-
   ],
   providers: [ ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-
 ```
 
 In the above module, we declare the components we created previously and then import the material modules.
@@ -250,7 +246,6 @@ Output:
 ![register](/engineering-education/autologoff/register.png)
 
 ### How to determine if a screen is idle
-
 Now that we have a fully furnished authentication form, let's proceed and determine whether the user screen is idle.
 
 How this works is very simple, we keep track of user's actions on the web application. It's important to note that these actions are equivalent to events.  
@@ -337,13 +332,10 @@ export class AutoLogoutService {
     //this.isLoggedIn.subscribe(event => this.isLogin = event);
     this.ngZone.run(() => {
       if (isTimeout && this.isLogin) {
-        localStorage.removeItem('drupp_token');
-        localStorage.removeItem('admin_name');
-        localStorage.removeItem('firebase:previous_websocket_failure');
-        localStorage.removeItem('admin_id');
+        localStorage.removeItem('user_id');
         localStorage.removeItem('lastAction');
         setTimeout(()=>{
-          this.snotifyService.error("Your Session Expired due to longer Inactivity, Login Again To Continue",'Logged Off');
+          console.log("Your Session Expired due to longer Inactivity, Login Again To Continue");
         },10000);
         this.router.navigate(['login']);
       }
