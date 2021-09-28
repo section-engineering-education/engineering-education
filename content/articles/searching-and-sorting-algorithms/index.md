@@ -7,12 +7,12 @@ title: Searching and sorting techniques
 description: This article will discuss the various sorting and searching techniques, as well as their implementation in data structures and algorithms.
 author: jairus-onkundi
 date: 2021-09-27T00:00:00-23:00
-topics: [Languages]
+topics: []
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/searching-and-sorting-algorithms/hero.jpg
-    alt: Searching and sorting techniques 
+    alt: Searching and sorting techniques Hero Image
 ---
 Searching is determining the position of an item in a list. This is a crucial aspect of many data structure techniques, because we can only execute one action on an item if and only if we locate the item. 
 <!--more-->
@@ -24,24 +24,6 @@ Sorting is putting information in a certain order in a data structure. Sorting d
 Sorting, for example, is required before using Binary Search, and it is also used in database methods. Sorted arrays and lists make it easier to locate items fast. 
 
 In this article, we will learn about various sorting and searching techniques and their implementation in data structures and algorithms. 
-
-### Table of contents
-- [What is searching?](#what-is-searching)
-- [What is sorting?](#what-is-sorting)
-- [Techniques for searching and how they are implemented ](#techniques-for-searching-and-how-they-are-implemented)
-  1. [Linear search](#1-linear-search)
-  2. [Binary search](#2-binary-search)
-  3. [Interpolation search](#3-interpolation-search)
-  4. [Jump search](#4-jump-search)
-
-- [Sorting techniques and their implementation](#sorting-techniques-and-their-implementation) 
-   1. [Insertion sort](#1-insertion-sort)
-   2. [Bubble sort](#2-bubble-sort)
-   3. [Selection sort](#3-selection-sort)
-   4. [Merge sort](#4-merge-sort)
-   5. [Quick sort](#5-quick-sort)
-   6. [Heap sort](#6-heap-sort)
-- [Conclusion](#conclusion)
 
 ### What is searching?
 Searching in data structure refers to the act of locating needed information from a group of things stored as components in the computer memory.
