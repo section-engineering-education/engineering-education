@@ -51,7 +51,7 @@ The diagram below shows a spectrogram.
 
 ![Spectrogram](/engineering-education/machine-learning-for-audio-classification/spectrogram.png)
 
-*[Image Source: PNSN](https://pnsn.org/spectrograms/what-is-a-spectrogram)*
+*[Image Source: ResearchGate](https://www.researchgate.net/figure/Spectrograms-and-Oscillograms-This-is-an-oscillogram-and-spectrogram-of-the-boatwhistle_fig2_267827408)*
 
 A [spectrogram](https://pnsn.org/spectrograms/what-is-a-spectrogram) is a visual representation of all frequencies over time. The Y-axis is the frequency in hertz, while the X-axis represents the time. The color represents the magnitude or amplitude. The color in a spectrogram is either brighter or higher and expressed in decibels (unit of measure).
 
