@@ -2,7 +2,7 @@ Websites need notifications to display urgent or additional information. Pop-ups
 
 In this article, you will learn how to apply some of these notification effects including the Genie, Slide-in, Jelly, and scale Pop-up notification effects. You will learn how to build eye-catching catching effects and appreciate that these effects are dependent on the type of information being displayed.
 
-### Table of Contents
+### Table of contents
 
 - [Key takeaways](#key-takeaways)
 - [Pre-requisites](#pre-requisites)
@@ -23,7 +23,6 @@ In this article, you will learn how to apply some of these notification effects 
 
 ### Key takeaways
 By the end of this article, you will learn how to apply the following notification effects to a webpage.
-
 - Slide-in effect
 - Genie effect
 - Scale growth effect
@@ -39,7 +38,7 @@ For you to flow easily with this article, you need to know the following:
 - Web development IDE. It should support webpage preview capabilities. These will be helpful during the development process.
   I recommend Visual Studio Code IDE. You can download it from [here](https://code.visualstudio.com/).
 
-### Create Folder structure
+### Project folder structure
 Create a root folder named `Notifications`. All the project code will lie here. The root folder structure will be as shown below:
 
 ```shell
@@ -124,14 +123,14 @@ This is shown below:
 - In the `growl-effects-genie.html`:
 
 ```html
-                <div>
-                    <a href="growl-effects-scale.html">Scale</a>
-                    <a href="growl-effects-jelly.html">Jelly</a>
-                    <a href="growl-effects-slide-in.html">Slide in</a>
-                    <!-- Show that it is currently active -->
-                    <!-- This is by adding the 'current-demo' class referenced in the CSS-->
-                    <a class="current-demo" href="growl-effects-genie.html">Genie</a>
-                </div>
+<div>
+    <a href="growl-effects-scale.html">Scale</a>
+    <a href="growl-effects-jelly.html">Jelly</a>
+    <a href="growl-effects-slide-in.html">Slide in</a>
+    <!-- Show that it is currently active -->
+    <!-- This is by adding the 'current-demo' class referenced in the CSS-->
+    <a class="current-demo" href="growl-effects-genie.html">Genie</a>
+</div>
 ```
 
 Repeat this for the other two files to get the Code below for:
@@ -139,27 +138,26 @@ Repeat this for the other two files to get the Code below for:
 - `growl-effects-jelly.html`:
 
 ```html
-                <div>
-                    <a href="growl-effects-scale.html">Scale</a>
-                    <a class="current-demo" href="growl-effects-jelly.html">Jelly</a>
-                    <a href="growl-effects-slide-in.html">Slide in</a>
-                    <a href="growl-effects-genie.html">Genie</a>
-                </div>
+<div>
+    <a href="growl-effects-scale.html">Scale</a>
+    <a class="current-demo" href="growl-effects-jelly.html">Jelly</a>
+    <a href="growl-effects-slide-in.html">Slide in</a>
+    <a href="growl-effects-genie.html">Genie</a>
+</div>
 ```
 
 - `growl-effects-slide-in.html`:
 
 ```html
-                <div>
-                    <a href="growl-effects-scale.html">Scale</a>
-                    <a href="growl-effects-jelly.html">Jelly</a>
-                    <a class="current-demo" href="growl-effects-slide-in.html">Slide in</a>
-                    <a href="growl-effects-genie.html">Genie</a>
-                </div>
+<div>
+    <a href="growl-effects-scale.html">Scale</a>
+    <a href="growl-effects-jelly.html">Jelly</a>
+    <a class="current-demo" href="growl-effects-slide-in.html">Slide in</a>
+    <a href="growl-effects-genie.html">Genie</a>
+</div>
 ```
 
-### Add styling
-
+### Add styling the webpage
 In the `demo.css` file,
 
 - Use `border-box` for all elements before and after. Set clearfix class styling both before and after.
@@ -450,12 +448,11 @@ a:hover, a:focus {
 
 ### Add a notification to the window
 In the Javascript folder, named `js`, open the 'notificationFX.js' file. In the file, you will do the following:
-
 - Create a function that will take in the window as the argument. The function will later invoke it.
   The function will hold all the other functions in it.
   This code is shown below:
 
-```javascript
+```js
 ( function( window ) {
 
     /** This enables you to avoid using undeclared variables */
@@ -465,13 +462,12 @@ In the Javascript folder, named `js`, open the 'notificationFX.js' file. In the 
 } )( window );
 ```
 
-- In the function, you will get the root element in the webpage. This code returns the HTML element. Add the end of event names which refer to the end of animations.
-  You will also create a function that checks if an object has a property that it holds.
-  If so, it will add the property to the former object.
+- In the function, you will get the root element in the webpage. This code returns the HTML element. Add the end of event names which refer to the end of animations.  You will also create a function that checks if an object has a property that it holds.  If so, it will add the property to the former object.
   The `extend` function will be used in the `NotificationFX` function. It will place a new property to the object that had been initially saved with another property.
-  This is shown in the code below:
+  
+ This is shown in the code below:
 
-```javascript
+```js
 /** Get the root element */
    var docElem = window.document.documentElement,
       support = { animations : Modernizr.cssanimations },
@@ -519,7 +515,7 @@ In the Javascript folder, named `js`, open the 'notificationFX.js' file. In the 
 
 These are well displayed below:
 
-```javascript
+```js
 /**
     * NotificationFx options
     */
@@ -559,7 +555,7 @@ The function will do the following:
 - check if the notification is still active or on. If so, dismiss the notification once the time in the `options.ttl` runs out.
 
 
-```javascript
+```js
 NotificationFx.prototype._init = function() {
     // create HTML structure
     this.ntf = document.createElement( 'div' );
@@ -592,7 +588,7 @@ NotificationFx.prototype._init = function() {
 
 - Create a function that dismisses the notification when one clicks the close button.
 
-```javascript
+```js
 /**
     * init events
     */
@@ -603,12 +599,9 @@ NotificationFx.prototype._initEvents = function() {
 }
 ```
 
-- Add a function that will display the notification.
-  It will utilize the functions in the `classie.js` file to search for the class names and remove them from the element.
+- Add a function that will display the notification. It will utilize the functions in the `classie.js` file to search for the class names and remove them from the element. The function will add another class to it. It then executes the on-open callback function. Check this out below:
 
-The function will add another class to it. It then executes the on-open callback function. Check this out below:
-
-```javascript
+```js
 /**
 * show the notification
 */
@@ -621,13 +614,11 @@ NotificationFx.prototype.show = function() {
 }
 ```
 
-- Add a function to dismiss the notification once the timeout runs out or the notification close button is clicked on. The timeout will be cleared. The `ns-show` class name will also be removed.
-
-The function then executes on-close callback functions if specified. The time to execute the callback function procedures is set to 25 ms.
+- Add a function to dismiss the notification once the timeout runs out or the notification close button is clicked on. The timeout will be cleared. The `ns-show` class name will also be removed. The function then executes on-close callback functions if specified. The time to execute the callback function procedures is set to 25 ms.
 
 The function removes the notification element once the notification ends. If it doesn't find the notification in the `target` inside the DOM element, then returns false.
 
-```javascript
+```js
 /**
     * dismiss the notification
     */
@@ -662,11 +653,10 @@ NotificationFx.prototype.dismiss = function() {
 }
 ```
 
-- Add the `NotificationFx` function to be a global function seen in all the window.
-  This step allows the function to be used in the HTML file quickly.
+- Add the `NotificationFx` function to be a global function seen in all the window. This step allows the function to be used in the HTML file quickly.
   See this in the code below:
 
-```javascript
+```js
 /**
     * add to the global namespace
     */
@@ -676,7 +666,7 @@ window.NotificationFx = NotificationFx;
 ### Create functions to search for the classes in the HTML file
 Open the `classie.js` file and add a function to take in the window as an argument and invoke it.
 
-```javascript
+```js
 ( function( window ) {
 
 'use strict';
@@ -687,7 +677,7 @@ Open the `classie.js` file and add a function to take in the window as an argume
 
 - Create a `RegEX` function that searches for the class name that is in between other words in the file.
 
-```javascript
+```js
 function classReg( className ) {
   return new RegExp("(^|\\s+)" + className + "(\\s+|$)");
 }
@@ -696,7 +686,7 @@ function classReg( className ) {
 - Create functions to check if an HTML file has a certain class in it, to add or remove the class in a certain element.
   These functions utilize the `RegEx` function created above.
 
-```javascript
+```js
 // classList support for class management
 
 var hasClass, addClass, removeClass;
@@ -727,8 +717,7 @@ else {
 }
 ```
 
-- Create a `toggleClass` function that uses the `hasClass` procedure to check if the file has the class in the element.
-  If it has, it removes it and adds another. This acts as a toggle function.
+- Create a `toggleClass` function that uses the `hasClass` procedure to check if the file has the class in the element. If it has, it removes it and adds another. This acts as a toggle function.
 
 ```javascript
 function toggleClass( elem, c ) {
@@ -739,7 +728,7 @@ function toggleClass( elem, c ) {
 
 - Shorten the names of the functions or procedures so that they can be easily used.
 
-```javascript
+```js
 var classie = {
   // full names
   hasClass: hasClass,
@@ -756,7 +745,7 @@ var classie = {
 
 - Make the `classie` function to be a global function in the workspace.
 
-```javascript
+```js
 // transport
 if ( typeof define === 'function' && define.amd ) {
   // AMD
@@ -780,24 +769,22 @@ Inside the `growl-effects-scale.html` file, just below the `<script src="js/noti
 </script>
 ```
 
-- Listens for a button click from the progress bar button. It enables the button for clicks.
-  Look at the button below for this:
+- Listens for a button click from the progress bar button. It enables the button for clicks.  Look at the button below for this:
 
-```javascript
+```js
         var bttn = document.getElementById( 'notification-trigger' );
 
         // make sure..
         bttn.disabled = false;
 ```
 
-- Add a function that disables the button which is clicked.
-  It then uses the `NotificationFx` function created before to quickly set the options of the notification. making makes sure that the button is not disabled since disabling the button prevents double-clicking till when the notification disappears. As for the `growl` layout, it supports the following notification effects:
+- Add a function that disables the button which is clicked. It then uses the `NotificationFx` function created before to quickly set the options of the notification. making makes sure that the button is not disabled since disabling the button prevents double-clicking till when the notification disappears. As for the `growl` layout, it supports the following notification effects:
   - scale (will be used in the `growl-effects-scale.html` file)
   - jelly
   - slide in
   - genie
 
-```javascript
+```js
 bttn.addEventListener( 'click', function() {
     
     // simulate loading (for demo purposes only)
@@ -834,14 +821,9 @@ bttn.addEventListener( 'click', function() {
 ### Use a minified modernizr file for animations
 Head over to this [link](https://github.com/prograte/Genie-Slide-in-Jelly-and-scale-Pop-up-Notification-effects/blob/main/js/modernizr.custom.js) to find the `modernizr.custom.js` file. Copy the content into the `modernizr.custom.js` file in the `js` folder. Do this by copy-pasting the code directly or viewing it as a _RAW_ file before copy-pasting it.
 
-> '**modernizr.custom.js**' has been generated and downloaded from this [Modernizr](http://modernizr.com/download/#-cssanimations-shiv-cssclasses-prefixed-testprop-testallprops-domprefixes-load) site.
->
-> [Modernizr.com](Modernizr.com) generates for one a minified JS file that detects the browser being used and features it supports.
-> This reduces the blacklisting of browsers in the HTML file. It rather allows developers to customize experiences based on the browser's capabilities.
+> '**modernizr.custom.js**' has been generated and downloaded from this [Modernizr](http://modernizr.com/download/#-cssanimations-shiv-cssclasses-prefixed-testprop-testallprops-domprefixes-load) site. [Modernizr.com](Modernizr.com) generates for one a minified JS file that detects the browser being used and features it supports. This reduces the blacklisting of browsers in the HTML file. It rather allows developers to customize experiences based on the browser's capabilities.
 
 The downloaded file will enable the webpage to display the notification on the webpage.
-It will look as follows:
-
 ![Add modernizr minified js file](add-modernizr.custom.js-file.png "Add modernizr minified js file")
 
 One notices that it hardly looks like a pop-up notification. The reason for this is that it has not been formatted yet.
@@ -962,18 +944,10 @@ The results for this styling is as shown in the image below:
 
 ![add default notification box styling](add-default-notification-box-styling.png "add default notification box styling")
 
-Notice that the notification now looks more like a pop-up notification.
-The only issue is that it doesn't close automatically, neither can it be closed.
-
-Solve these problems by adding some CSS styling in the `ns-style-growl.css` file.
+Notice that the notification now looks more like a pop-up notification. The only issue is that it doesn't close automatically, neither can it be closed. Solve these problems by adding some CSS styling in the `ns-style-growl.css` file.
 
 ### Add the growl effect to the notification
-
-In the `ns-style-growl.css` file, add growl effects.
-Find the code and some inline commentary of the growl effects CSS code [here](https://github.com/prograte/Genie-Slide-in-Jelly-and-scale-Pop-up-Notification-effects/blob/main/css/ns-style-growl.css).
-The styling for the notification is as shown below:
-The following is done in the code:
-
+In the `ns-style-growl.css` file, add growl effects. Find the code and some inline commentary of the growl effects CSS code [here](https://github.com/prograte/Genie-Slide-in-Jelly-and-scale-Pop-up-Notification-effects/blob/main/css/ns-style-growl.css). 
 - Added growl styling that will be shared with all the types of growl effects
 - Added individual effects for each of the growl effect sets. This starts with the scale effect.
   The _scale_ effect copies its name. It expands from a small size to a larger size.
@@ -983,39 +957,26 @@ The following is done in the code:
 
 - Added the _Jelly_ animation effect. Some part of it is generated from [bouncejs.com](http://bouncejs.com/).
 
-  > [Bouncejs.com](http://bouncejs.com/) is a site used to generate awesome CSS3 animations for a website.
-  > Click on the site to check out some presets available or create animations that are tailored for the site.
+  > [Bouncejs.com](http://bouncejs.com/) is a site used to generate awesome CSS3 animations for a website. Click on the site to check out some presets available or create animations that are tailored for the site.
 
-
-
-Head over to the `growl-effects-jelly.html` either by opening it in a browser or clicking the `Jelly` button on the webpage.
-Click on `SHOW NOTIFICATION` to see the animation. The animation looks like that in the GIF below:
+Head over to the `growl-effects-jelly.html` either by opening it in a browser or clicking the `Jelly` button on the webpage. Click on `SHOW NOTIFICATION` to see the animation. The animation looks like that in the GIF below:
 
 ![Jelly effect gif](jelly-effect-gif.gif "Jelly effect gif")
 
 - Added the slide-in animation to the project.
-  Open the `growl-effects-slide-in.html` by clicking on the `Slide in` button.
-  This file has the notification style set to slide hence it will implement the `slide in` effect.
-  The effect is displayed in the GIF shown below:
+  Open the `growl-effects-slide-in.html` by clicking on the `Slide in` button. This file has the notification style set to slide hence it will implement the `slide in` effect. The effect is displayed in the GIF shown below:
 
 ![Slide-in effect gif](slide-in-effect-gif.gif "Slide-in effect gif")
 
-- Finally, in the file, add the Fly Up effect.
-  This effect can be seen on the `growl-effects-genie.html` file accessed by clicking on the  `Genie` button.
+- Finally, in the file, add the Fly Up effect. This effect can be seen on the `growl-effects-genie.html` file accessed by clicking on the  `Genie` button.
   The code for this is shown below:
-
-
-
 ![genie effect gif](genie-effect-gif.gif "genie effect gif")
+
 
 ### Normalize the webpages
 Copy and paste the content of `normalize.css` file from [here](https://github.com/prograte/Genie-Slide-in-Jelly-and-scale-Pop-up-Notification-effects/blob/main/css/normalize.css). Do this by copy-pasting the code directly or viewing it as a _RAW_ file before copy-pasting it.
 
-The code in the file styles the webpage elements to look well.
-It is additional formatting to make the webpage look appealing to other browsers.
-
-In case of any issues, find the code for the article in [this](https://github.com/prograte/Genie-Slide-in-Jelly-and-scale-Pop-up-Notification-effects) repository. Modify it to create desired outputs for projects.
-
+The code in the file styles the webpage elements to look well.It is additional formatting to make the webpage look appealing to other browsers. In case of any issues, find the code for the article in [this](https://github.com/prograte/Genie-Slide-in-Jelly-and-scale-Pop-up-Notification-effects) repository. Modify it to create desired outputs for projects.
 
 ![changing color template](changing-color-template.png "changing color template")
 
