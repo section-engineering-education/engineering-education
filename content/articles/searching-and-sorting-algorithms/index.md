@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/searching-and-sorting-algorithms/hero.jpg
     alt: Searching and Sorting Techniques Hero Image
 ---
-Searching is determining the position of an item in a list. This is a crucial aspect of many data structure techniques, because we can only execute one action on an item if and only if we locate the item.
+Searching involves determining the position of an item in a list. This is a crucial aspect of many data structure techniques, because we can only execute one action on an item if and only if we locate the item.
 <!--more-->
 To determine if an element is present in a collection of components, many methods have been devised, as we will discuss in this article.
 
