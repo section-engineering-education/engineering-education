@@ -2,20 +2,20 @@
 
 
 
-In this tutorial, you will acquire the knowledge of how to set up your flutter application to be responsive and resolve well on all devices.
+This tutorial will teach us how to set up a flutter application to be responsive and resolve satisfactorily on all devices.
 
 
 
 
 ### Introduction
 
-When you create your application using flutter, you do not know the sizes of the user’s device will view your application on, nor can you guess the orientation of the device. 
+When we create our application using flutter, we do not know the sizes the user’s device will view our application on, nor can we guess the orientation of the device. 
 
-While it is possible to restrict your application to a specific orientation (either horizontal or vertical), writing different codes to display your widgets in different device sizes is highly inefficient and can be a nightmare. 
+While it is possible to restrict our application to a specific orientation (either horizontal or vertical), writing different codes to display our widgets in different device sizes is highly inefficient and can be a nightmare. 
 
-What will you do then if a new device screen size is released into the market?.
+What will we do then if a new device screen size is released into the market?.
 
-Why go through the trouble when you should be more focused on creating amazing functional applications. Luckily, Flutter has a way to ensure that your widgets are responsive and fit to a given screen size of the device they are viewed on. 
+Why should we go through this trouble when we should be more focused on creating amazing functional applications. Luckily, Flutter has a way to ensure that our widgets are responsive and fit to a given screen size of the device they are viewed on. 
 
 
 
@@ -31,7 +31,7 @@ In this tutorial, you’ll:
 
 ### Prerequisite
 
-- It is vital you have foreknowledge of flutter application setup and can set up a simple flutter application. If you are new to flutter check out this [flutter](https://flutter.dev/docs/get-started/install) doc to get you started with a basic flutter application.
+- It is vital we have foreknowledge of flutter application setup and can set up a simple flutter application. If we are new to flutter check out this [flutter](https://flutter.dev/docs/get-started/install) doc to get us started with a basic flutter application.
 
  
 
@@ -85,13 +85,13 @@ In this tutorial, you’ll:
 
 ### Responsive Apps
 
-A responsive app is one that is written in such a way that it fits the available screen size of the device it is viewed on. This is often achieved by the app re-rendering the app UI if the user resizes the screen or if the device orientation is changed. 
+A responsive app is one that is written in such a way that it fits the available screen size of the device it is viewed on. This is often achieved by the app re-rendering the UI if the user resizes the screen or if the device orientation is changed. 
 
 Responsive apps are a vital concept for apps that run on a watch, phone, tablet, desktop.
 
   
 
-Here are reasons why your app may need to change from its initial design:
+Here are reasons why our app may need to change from its initial design:
 
 - Different Device Types and Screen Sizes
 
@@ -101,15 +101,15 @@ Flutter is a multi-platform framework that enables anyone to build applications 
 
 - Orientation Change
 
-Users can rotate their devices. This can be disabled by locking your app in a portrait mode or a landscape mode but this will cost you a lot in terms of the experience the users of your app may have. MediaQuery class in flutter can help rebuild your layout. 
+Users can rotate their devices. This can be disabled by locking our application in a portrait mode or a landscape mode but this will cost us a lot in terms of the experience the users of our application may have. MediaQuery class in flutter can help rebuild our layout. 
 
-MaterialApp Layout Widget and WidgetsApp Layout Widgets make use of MediaQuery under the hood. Using them at the top of your widget tree while building your application ensures that your application automatically resizes to the given orientation. 
+MaterialApp Layout Widget and WidgetsApp Layout Widgets make use of MediaQuery under the hood. Using them at the top of our widget tree while building our application ensures that our application automatically resizes to the given orientation. 
 
  
 
 - Keyboard State Change
 
-Your app might have a need for keyboard input. The keyboard slides up when the user begins interacting with the fields. When that keyboard appears, so do issues related to spacing. 
+Our app might have a need for keyboard input. The keyboard slides up when the user begins interacting with the fields. When that keyboard appears, so do issues related to spacing. 
 
 Flutter uses the Scaffold class to handle state changes in the keyboard. Scaffold makes adjustments for bottom insets in order to enable the keyboard to pull up. You can disable this behavior, just set the resizeToAvoidBottomInset property to false.
 
@@ -168,7 +168,7 @@ The orientation can also be obtained using
 
 
 
-If you want to prevent the change and leave the display as only portrait irrespective of the device change, use
+If we want to prevent the change and leave the display as only portrait irrespective of the device change, use
 
 
 
@@ -536,7 +536,7 @@ if(width > 720) {
 
 
 
-By default using Scaffold means your app will scale automatically when the keyboard slides up. This can be disabled by setting the `resizeToAvoidBottomInset` property from the default true to false.
+By default using Scaffold means our app will scale automatically when the keyboard slides up. This can be disabled by setting the `resizeToAvoidBottomInset` property from the default true to false.
 
 
 ### AspectRatio
@@ -661,7 +661,7 @@ This sets the child widget within the parent widget (by default, centering) and,
 
 ### Conclusion
 
-In this tutorial, we stated what a responsive flutter application is and the importance of your application is responsive. When creating your application, these should be the first things you envision before proceeding to create your layout. Draft up how the application should be and have an idea of the set of devices your application will be likey displayed on. Nicely design apps that are responsive make users more engaged in your application and keeps them coming back.
+In this tutorial, we stated what a responsive flutter application is and the importance of our application being responsive. When creating our application, these should be the first things we envision before proceeding to create our layout. Draft up how the application should be and have an idea of the set of devices our application will be likey displayed on. Nicely design apps that are responsive make users more engaged in the application and keeps them coming back.
 
  
 
