@@ -223,12 +223,12 @@ To query the data, we will use the `get()` method of the `DocumentReference` cla
 #### Firestore query operators
 The following operators are available for data querying:
 
-- `<`: Less than
-- `>=`: Greater than or equal to
-- `==`: Equal to
-- `>`: Greater than
-- `<=`: Less than or equal to
-- `array-contains`: Checks if the value is present in the array.
+- (<) Less than
+- (>=) Greater than or equal to
+- (==) Equal to
+- (>) Greater than
+- (<=) Less than or equal to
+- (array-contains) Checks if the value is present in the array.
 
 The comparison operator is explicitly named in the method for Android-based database queries.
 
