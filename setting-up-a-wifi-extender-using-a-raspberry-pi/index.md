@@ -1,9 +1,25 @@
-### Introduction 
+---
+layout: engineering-education
+status: publish
+published: true
+url: /setting-up-a-wifi-extender-using-a-raspberry-pi/
+title: Setting Up a Wi-Fi Extender Using a Raspberry Pi
+description: This article will show the reader how to extend their Wi-Fi network range using a Raspberry Pi.
+author: eunice-wanjiku
+date: 2021-09-28T00:00:00-17:50
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/setting-up-a-wifi-extender-using-a-raspberry-pi/hero.jpg
+    alt: WiFi Extender Raspberry Pi Hero Image
+---
+A wifi extender is important in cases where the network is not strong enough past certain ranges. This extender can be used in small areas such as an office or home.
+<!--more-->
 The Raspberry Pi Wi-Fi Extender is a low cost and high-power device that can help extend your Wi-Fi network range. It mainly establishes its network connection from a Wi-Fi adapter. A wifi extender is important in cases where the network is not strong enough past certain ranges. This extender can be used in small areas such as an office or home.
 
 ### Table of Contents
-- [Introduction](#introduction)
-- [prerequisites](#prerequisites)
+- [Prerequisites](#prerequisites)
 - [Extending the Wi-Fi using Raspberry](#extending-the-wi-fi-using-raspberry)
 - [Conclusion](#conclusion)
 - [Relevant Sources](#relevant-sources)
