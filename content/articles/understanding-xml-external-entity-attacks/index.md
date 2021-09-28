@@ -15,19 +15,12 @@ Extensible Markup Language is a markup language, just like HTML, that is human a
 Here is a sample XML code:
 
 ```xml
-
 <?xml version="1.0" encoding="UTF-8"?>
-
 <Greeting>
-
     <From>Felix</From>
-
     <To>Section readers</To>
-
     <message>How are you today? </message>
-
 </Greeting>
-
 ```
 
 Let’s go through the code to understand its syntax :
@@ -35,9 +28,7 @@ Let’s go through the code to understand its syntax :
 **Line 1:**
 
 ```xml
-
 <?xml version="1.0" encoding="UTF-8"?>
-
 ```
 
 This line declares the version of XML being used, it also states the encoding to be used. `UTF-8`is the default encoding for languages such as CSS, Javascript, PHP, and others. We commonly known this line as the prolong and is not mandatory in the XML code. If you decide to include the prolog, it should be the first line of the document.
@@ -46,9 +37,7 @@ This line declares the version of XML being used, it also states the encoding to
 
 ```xml
 <Greeting>
-
      <!--Supporting content-->
-
 </Greeting>
 ``` 
 `<Greeting>` acts as the parent/root element for this piece of code.Each XML document must have a root element. XMl tags are case-sensitive , each tag must have a similar closing tag. All other tags in this document will be anchored to this tag.
@@ -56,15 +45,10 @@ This line declares the version of XML being used, it also states the encoding to
 **Line 3:**
 
 ```xml
-
     <From>Felix</From>
-
     <To>Section readers</To>
-
     <message>How are you today?</message>
-
     <!--this is a comment-->
-
 ```
 
 This section contains the child nodes of this XML document. This is where we input the rest of the content we would like in our document.XML, like any other language, has comments. To write comments in XML, we use `<!--comment-->`,similar to how we write comments in HTML.
@@ -78,21 +62,13 @@ In other programming languages, when we want to store data temporarily, we use v
 The DTD contains a definition of the structure and legal attributes and elements of a XMl document.DTD can be both within the document or loaded from an external source. When loading from an external source, we use the keyword `SYSTEM`. The external source can either be a URL or a file.A sample XML document with both DTD and entities will look like this.
 
 ```xml
-
 <?xml version="1.0" encoding="UTF-8"?>
-
 <!DOCTYPE mail [ <!ENTITY sender “felix”> ]>
-
 <Greeting>
-
       <From>&sender;</From>
-
       <To>Section reader</To>
-
       <Message>Hello, How are you today?</Message>
-
 </Greeting>
-
 ```
 
 When the above code is parsed, we get this :
@@ -113,7 +89,7 @@ Now that we have learned how a basic XML document looks like, let’s learn how 
 
 XXE attacks arise when external entities are supported and parsed by a weak XML parser. An attacker intercepts the XML data when in transit and adds malicious code. When processed, the application may disclose information that is private. Mostly these attacks enable the attackers to view the filesystem and, sometimes, they can interact with any back-end services that the application can access.
 
-There are several types of XXE attacks, namely:
+There are several types of XXE attacks, such as:
 
 - In-band XXE: In this type, the attacker can receive an immediate response for the XXE payload they have uploaded.
 
@@ -134,9 +110,7 @@ Apart from retrieving files, we can use XXE attacks for :
 - Server-side request forgery attacks:- Using the external entities an attacker can make HTTP requests to URLs, then the server can access, including those meant to be for internal use only in an organization. The attacker just places the URL that they are targeting. When the target is parsed, the contents of the said domain are exposed. Here is a sample payload for such an attack.
 
 ```xml
-
 <!DOCTYPE ssrf [ <!ENTITY xxe SYSTEM “http://target.exploited-website.url/“> ]>
-
 ```
 
 ### Impacts of XXE 
@@ -189,5 +163,5 @@ Let’s keep our web applications secure. Happy learning!
 
 ### Further reading 
 
-- [Preventing XXE attacks](https://cheatsheetseries.owasp.org/cheatsheets/XML_External_Entity_Prevention_Cheat_Sheet.html)
+- [Preventing XXE attacks -OWASP cheatsheetseries](https://cheatsheetseries.owasp.org/cheatsheets/XML_External_Entity_Prevention_Cheat_Sheet.html)
 
