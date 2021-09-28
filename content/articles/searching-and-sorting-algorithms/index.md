@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /searching-and-sorting-techniques/
+url: /searching-and-sorting-algorithms/
 title: Searching and sorting techniques 
 description: This article will discuss the various sorting and searching techniques, as well as their implementation in data structures and algorithms.
 author: jairus-onkundi
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/searching-and-sorting-techniques/hero.jpg
+  - url: /engineering-education/searching-and-sorting-algorithms/hero.jpg
     alt: Searching and sorting techniques 
 ---
 Searching is determining the position of an item in a list. This is a crucial aspect of many data structure techniques, because we can only execute one action on an item if and only if we locate the item. 
@@ -160,7 +160,7 @@ Step 6: Continue sorting the list until it is complete.
 
 An example of insertion sort is as shown below:
 
-![insertion](/engineering-education/searching-and-sorting-techniques/insertion-sort.png)
+![insertion](/engineering-education/searching-and-sorting-algorithms/insertion-sort.png)
 
 #### 2) Bubble sort
 Bubble Sort is a basic sorting technique that t compares each adjacent element and swaps them when they're out of sequence.
@@ -177,7 +177,7 @@ Step 3: Move on to the next element if the current element is less than the next
 
 An example bubble sort is as shown below:
 
-![bubble sort](/engineering-education/searching-and-sorting-techniques/bubble-sort.png)
+![bubble sort](/engineering-education/searching-and-sorting-algorithms/bubble-sort.png)
 
 Step 4: Repeat Step 1.
 
@@ -197,7 +197,7 @@ Step 4: Continue sorting the array using the element in the succeeding place unt
 
 An example selection sort is as shown below:
 
-![selection sort](/engineering-education/searching-and-sorting-techniques/selection-sort.png)
+![selection sort](/engineering-education/searching-and-sorting-algorithms/selection-sort.png)
 
 #### 4) Merge sort
 One of the most efficient sorting algorithms is Merge sort. It is based on the divide-and-conquer strategy. Merge sort reduces down a list into sub-lists until every sub-list only includes one element, after which it combines the sub-lists into a sorted list.
@@ -211,7 +211,7 @@ Step 3: Sort the smaller lists and combine them to make a new list.
 
 An example of merge sort is as shown below:
 
-![merge sort](/engineering-education/searching-and-sorting-techniques/merge-sort.png)
+![merge sort](/engineering-education/searching-and-sorting-algorithms/merge-sort.png)
 
 #### 5) Quick sort
 It is a similar split-and-conquer technique to merge sort. It selects a pivot element and partitions the specified array around that pivot.
@@ -237,7 +237,7 @@ Step 8: If they meet on the left or right, the place where they met becomes the 
 
 An example quick sort is as shown below:
 
-![quick sort](/engineering-education/searching-and-sorting-techniques/quick-sort.png)
+![quick sort](/engineering-education/searching-and-sorting-algorithms/quick-sort.png)
 
 #### 6) Heap sort
 Heap sort is a sorting algorithm that compares objects using a Binary Heap dataset. It's comparable to selection sorting, in which we identify the smallest piece first and place it at the top. For the remaining values, the same procedure is repeated.
@@ -258,11 +258,11 @@ Step 5: Repeat Steps 2,3 and 4 as long as the heap is larger than one.
 
 An example of heap sort is as shown below:
 
-![heap sort-1](/engineering-education/searching-and-sorting-techniques/heap-sort-1.png)
+![heap sort-1](/engineering-education/searching-and-sorting-algorithms/heap-sort-1.png)
 
-![heap sort-2](/engineering-education/searching-and-sorting-techniques/heap-sort-2.png)
+![heap sort-2](/engineering-education/searching-and-sorting-algorithms/heap-sort-2.png)
 
-![heap sort-3](/engineering-education/searching-and-sorting-techniques/heap-sort-3.png)
+![heap sort-3](/engineering-education/searching-and-sorting-algorithms/heap-sort-3.png)
 
 ### Conclusion
 Searching in data structures is finding a particular component in an array of ‘t’ components. To search, there are two kinds of searches: *sequential and interval*. Almost all search techniques may be classified into one of these two categories.  
