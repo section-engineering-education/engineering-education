@@ -35,11 +35,13 @@ In this tutorial, you'll get an introduction to Machine Learning for audio class
 
 ### Prerequisites
 You need to have some domain knowledge in:
-- Sound and audio
-- Intermediate Python programming
+- Sound and audio.
+- Intermediate Python programming.
+- [TensorFlow](https://www.tensorflow.org/) and [Scikit-learn](https://scikit-learn.org/stable/).
+- A [Kaggle](https://www.kaggle.com/) account is needed for this project.
 
 ### Differences between sound and audio
-Sound is what you hear. It's a vibration that propagates as an acoustic wave. Unique properties of sound include frequencies, speed, amplitude, and direction. When talking about the primary usage of machine learning in this domain, only frequency and amplitude are the essential features. Sound waves can often be simplified to sinusoidal waves. A sinusoidal wave shows us how the amplitude of a variable changes with time. To capture sound into its electronic representation, we use a microphone.
+Sound is what you hear. It's a vibration that propagates as an acoustic wave. Unique properties of sound include frequencies, speed, amplitude, and direction. When talking about the primary usage of machine learning in this domain, only frequency and amplitude are the essential features. Sound waves can often be simplified to sinusoidal waves. A sinusoidal wave shows us how the amplitude of a variable change with time. To capture sound into its electronic representation, we use a microphone.
 
 Audio is the electronic representation of sound. The audio frequencies that humans can hear range from 20Hz to 20 kHz. Frequencies below 20Hz and above 20KHz are inaudible for humans because they are either low or high. These samples, over time, result in a waveform. But can we apply machine learning to these waveforms? No. At least not yet.
 
@@ -62,7 +64,7 @@ Now that you know a little more about audio and how machine learning can classif
 ### Implementing audio classification using TensorFlow
 - We will use the [UrbanSound8K dataset](https://www.kaggle.com/chrisfilo/urbansound8k) available on Kaggle. This dataset contains 8732 labeled sound excerpts of urban sounds from 10 classes. These 10 classes includes `air_conditioner`, `car_horn`, `children_playing`, `dog_bark`, `drilling`, `enginge_idling`, `gun_shot`, `jackhammer`, `siren`, and `street_music`.
 
-- In this tutorial, [Librosa](https://librosa.org/doc/latest/index.html) will be our main library. Librosa is an open-source python package for music and audio analysis. The library can give us the data and the sampling rate. The sample rate is the number of samples per second of audio. By default, librosa mixes all audio to mono and resamples them to 22050 Hz at load time. This plays a vital role as in audio, different sounds have different sample rates.
+- In this tutorial, [Librosa](https://librosa.org/doc/latest/index.html) will be our main library. Librosa is an open-source python package for music and audio analysis. The library can give us the data and the sampling rate. The sample rate is the number of samples per second of audio. By default, librosa mixes all audio to mono and resamples them to 22050 Hz at load time. This plays a vital role in audio as different sounds have different sample rates.
 
 #### Exploratory data analysis (EDA)
 We begin by installing Librosa. 
@@ -70,7 +72,7 @@ We begin by installing Librosa.
 ```bash
 !pip install librosa
 ```
-The above command will install the Librosa library. Let's go ahead and install the other dependencies that we will need for our project.
+The above command will install the Librosa library. We go ahead and install the other dependencies that we will need for our project.
 
 ```python
 import pandas as pd
@@ -83,20 +85,20 @@ import matplotlib.pyplot as plt
 %matplotlib inline
 ```
 #### Loading dataset from kaggle
-Let's load our external data on Kaggle into Google Colab.
+We now need to load our external data on Kaggle into Google Colab.
 
-Step 1: Head over to your Kaggle account and download your `Kaggle API token`. You'll be able to find it in the API section. By clicking the “Create New API Token”, a kaggle.json file will be generated and downloaded to your computer.
+**Step 1:** Head over to your Kaggle account and download your `Kaggle API token`. You'll be able to find it in the API section. By clicking the “Create New API Token”, a kaggle.json file will be generated and downloaded to your computer.
 
-Step 2: Upload the downloaded kaggle.json to your Colab project.
+**Step 2:** Upload the downloaded kaggle.json to your Colab project.
 
-Step 3: Update the KAGGLE_CONFIG_DIR path to the current working directory as shown:
+**Step 3:** Update the KAGGLE_CONFIG_DIR path to the current working directory as shown:
 
 > You get your current working directory by typing `!pwd` on the terminal.
 
 ```bash
 os.environ['KAGGLE_CONFIG_DIR'] = "/content"
 ```
-Step 4: Finally, run the following Kaggle API to download datasets:
+**Step 4:** Finally, run the following Kaggle API to download datasets:
 
 ```bash
 !kaggle datasets download -d chrisfilo/urbansound8k
@@ -107,7 +109,7 @@ After downloading, run this command to unzip it.
 !unzip urbansound8k.zip
 ```
 #### Experimenting with one audio file
-We've picked one random audio file, of children playing, `100263-2-0-121.wav`, from our dataset folder for analysis. 
+We've picked one random audio file of children playing, `100263-2-0-121.wav`, from our dataset folder for analysis. 
 
 ```python
 file_name='fold5/100263-2-0-121.wav'
@@ -126,7 +128,7 @@ audio_data
 array([-0.00270751, -0.00303302, -0.00159557, ..., -0.0012889 ,
        -0.00184731, -0.00210062], dtype=float32)
 ```
-In mono, there is only one signal. So, the results from our `audio_data` show that librosa has converted the audio into integers with only one dimension. On the other hand, if it was stereo, we'd have two signals and would have been a 2-D array. Although we won't use stereo signals in our tutorial, it is important to know that stereo sound is usually preferred in audio as it gives us a sense of directionality, perspective, and space. But, librosa simplifies these signals into mono for easier processing.
+In mono, there is only one signal. So, our `audio_data` results show that librosa has converted the audio into integers with only one dimension. On the other hand, if it was stereo, we'd have two signals and would have been a 2-D array. Although we won't use stereo signals in our tutorial, it is important to know that stereo sound is usually preferred in audio. It gives us a sense of directionality, perspective, and space. But, librosa simplifies these signals into mono for easier processing.
 
 ```python
 sampling_rate
@@ -137,14 +139,14 @@ sampling_rate
 ```
 By default, Librosa gives us a sampling rate of 22050.
 
-Let's now use the Pandas library to read our csv file:
+We will now use the Pandas library to read our csv file:
 
 ```python
 audio_dataset_path='/content/'
 metadata=pd.read_csv('UrbanSound8K.csv')
 metadata.head()
 ```
-We load in the `UrbanSound8K.csv` file available in our downloaded dataset folder. We then store it in a variable known as `metadata`. Using the `head()` method, let's take a look at the first 20 files in our dataset.
+We load in the `UrbanSound8K.csv` file available in our downloaded dataset folder. We then store it in a variable known as `metadata`. Using the `head()` method, we look at the first 20 files in our dataset.
 
 ```bash
     slice_file_name     fsID    start   end     salience    fold    classID     class
@@ -169,9 +171,9 @@ We load in the `UrbanSound8K.csv` file available in our downloaded dataset folde
 18  100795-3-0-0.wav    100795  0.191790    4.191790    1   10  3   dog_bark
 19  100795-3-1-0.wav    100795  13.059155   17.059155   1   10  3   dog_bark
 ```
-We see that the audio files are all stored in `.wav` file format, for audio files. They are also organized in their respective file classes.
+We see that the audio files are all stored in `.wav` file format for audio files. They are also organized in their respective file classes.
 
-Let's check whether the dataset is imbalanced.
+Our dataset need not be imbalanced. We perform a quick check to make sure it isn't.
 
 ```python
 metadata['class'].value_counts()
@@ -195,7 +197,7 @@ The results show that most of the classes in the dataset are balanced. Thus, thi
 Now that we are done with EDA, we've figured that this data is in its raw format. We need to preprocess this data to extract meaningful features from it. We'll then use these extracted features for training instead of using the data in its raw form.
 
 #### Data preprocessing
-To extract the features, we will be using the [Mel-Frequency Cepstral Coefficients (MFCC)](http://practicalcryptography.com/miscellaneous/machine-learning/guide-mel-frequency-cepstral-coefficients-mfccs/) algorithm. This algorithm is widely used in automatic speech and speaker recognition since the 1980s when it was introduced by Davis and Mermelstein. It summarizes the frequency distribution across the window size. This enables the analysis of both the frequency and time characteristics of the sound. It will allow us to identify features for classification.
+To extract the features, we will be using the [Mel-Frequency Cepstral Coefficients (MFCC)](http://practicalcryptography.com/miscellaneous/machine-learning/guide-mel-frequency-cepstral-coefficients-mfccs/) algorithm. This algorithm has been widely used in automatic speech and speaker recognition since the 1980s, when Davis and Mermelstein introduced it. It summarizes the frequency distribution across the window size. This enables the analysis of both the frequency and time characteristics of the sound. It will allow us to identify features for classification.
 
 ```python
 mfccs = librosa.feature.mfcc(y=audio_data, sr=sampling_rate, n_mfcc=40)
@@ -224,7 +226,16 @@ array([[-4.6613168e+02, -4.6417816e+02, -4.7455182e+02, ...,
 ```
 These are patterns that have been extracted from one audio file based on the frequency and time characteristics.
 
-To extract the features from all the audio files in the dataset, we create a list to store all the extracted features.
+```python
+def features_extractor(file):
+    audio, sample_rate = librosa.load(file_name, res_type='kaiser_fast') 
+    mfccs_features = librosa.feature.mfcc(y=audio, sr=sample_rate, n_mfcc=40)
+    mfccs_scaled_features = np.mean(mfccs_features.T,axis=0)
+    
+    return mfccs_scaled_features
+```
+
+To extract the features from all the audio files in the dataset, we create a list to store all the extracted features. We iterate through every audio file and extract features using the Mel-Frequency Cepstral Coefficients.
 
 ```python
 extracted_features=[]
@@ -235,7 +246,7 @@ for index_num,row in tqdm(metadata.iterrows()):
     extracted_features.append([data,final_class_labels])
 ```
 
-Let's convert the entire list into a data frame using the Pandas library. This converts the results into tables for a more straightforward analysis.
+Let's convert the entire list into a data frame using the Pandas library. This converts the results into tables for more straightforward analysis.
 
 ```python
 extracted_features_df=pd.DataFrame(extracted_features,columns=['feature','class'])
@@ -283,7 +294,7 @@ Now that we are done with data preprocessing, we now need to create our model.
 #### Model creation
 We are now going to create a model using TensorFlow. Any TensorFlow version above 2.0.0 is okay to use. 
 
-Let's import it into our notebook.
+We import it into our notebook.
 
 ```python
 import tensorflow as tf
@@ -293,7 +304,7 @@ print(tf.__version__)
 2.6.0
 ```
 
-Using TensorFlow, let's import the following libraries:
+Using TensorFlow, we import the following libraries:
 
 ```python
 from tensorflow.keras.models import Sequential
@@ -327,7 +338,7 @@ model.add(Activation('softmax'))
 ```python
 model.compile(loss='categorical_crossentropy',metrics=['accuracy'],optimizer='adam')
 ```
-Let's now go ahead and train our model. The more the number of epochs, the more the accuracy increases. Try play around and see how it turns out. For our case, we only trained the model for 200 epochs.
+We now go ahead and train our model. The more the number of epochs, the more the accuracy increases. Try play around and see how it turns out. For our case, we only trained the model for 200 epochs.
 
 ```python
 from tensorflow.keras.callbacks import ModelCheckpoint
@@ -365,7 +376,7 @@ In this section, we will be performing three steps:
 - We will predict its class with the help of the model that we have created.
 - We will inverse transform the predicted label to get our class label.
 
-Let's choose a random audio file of a dog bark, `103076-3-0-0.wav`, from our dataset to use for testing. 
+We choose a random audio file of a dog bark, `103076-3-0-0.wav`, from our dataset to use for testing. 
 
 In the code below, we repeat the steps we used earlier to preprocess audio data. We then perform a prediction of the class it belongs to and finally uses the `inverse_transform` method from scikitlearn to give us the name of the predicted label. 
 
@@ -392,6 +403,8 @@ prediction_class
 array(['dog_bark'], dtype='<U16')
 ```
 The model has correctly predicted the dog bark.
+
+You can find the complete code for this tutorial [here](https://colab.research.google.com/drive/1iLMmBnLazIhWBOpnsVfo7lVaQnB3WONv#scrollTo=GlWofJJVcrQT).
 
 ### Wrapping up
 Audio signal processing is not easy to understand as some domain knowledge is required. However, using libraries such as librosa, it becomes easy to understand. You don't have to use the librosa library for this task. Once you have the waveform, you could convert it into a spectrogram and use a Convolution Neural Network (CNN) for classification instead.
