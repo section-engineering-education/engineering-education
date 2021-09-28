@@ -341,3 +341,6 @@ The export we perform excludes some available development features to reduce dep
 Failing to reuse your components is slowing your development. 
 React Cosmos improves the developer experience by making it possible to build UI components iteratively and in isolation. In addition, having features such as snapshot and visual regression testing tailored to our needs makes developers even more productive.
 As of the time of writing, React Cosmos only supports [Creact React App](https://reactjs.org/docs/create-a-new-react-app.html) and [Nextjs](https://nextjs.org/).
+
+---
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul)
