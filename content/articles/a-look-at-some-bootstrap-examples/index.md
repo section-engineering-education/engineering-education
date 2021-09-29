@@ -1,3 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /a-look-at-some-bootstrap-examples/
+title: Getting started with Bootstrap
+description: This article will cover Bootstrap, which is a popular web development front-end framework. It comes with ready-to-use components and design elements for formatting HTML content.
+author: erastus-muriithi
+date: 2021-09-29T00:00:00-04:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/a-look-at-some-bootstrap-examples/hero.png
+    alt: Getting started with Bootstrap cover image
+---
 ### Introduction
 Bootstrap is a front-end framework for developing responsive web projects. It includes a powerful grid system, a flexible media object, and a powerful color system.
 
