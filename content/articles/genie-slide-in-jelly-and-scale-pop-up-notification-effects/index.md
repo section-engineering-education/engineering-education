@@ -17,9 +17,7 @@ In this article, you will learn how to apply some of these notification effects 
 - [Format the notification](#format-the-notification)
 - [Add the growl effect to the notification](#add-the-growl-effect-to-the-notification)
 - [Normalize the webpages](#normalize-the-webpages)
-- [Bonus](#bonus)
 - [Conclusion](#conclusion)
-- [References](#references)
 
 ### Key takeaways
 By the end of this article, you will learn how to apply the following notification effects to a webpage.
@@ -70,25 +68,24 @@ In the `growl-effects-scale.html`, add the following snippet:
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Notification Styles | Growl-Style</title>
-    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
     <link rel="stylesheet" type="text/css" href="css/demo.css" />
-    <link rel="stylesheet" type="text/css" href="css/ns-default.css" />
+    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
     <link rel="stylesheet" type="text/css" href="css/ns-style-growl.css" />
-    <script src="js/modernizr.custom.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/ns-default.css" />
 
 </head>
 <body>
 <div class="container">
-    <!-- Top Navigation -->
+    <!-- Top Navigation Structure -->
 
     <header class="notifications-header">
         <h1>Notification Styles <span>Simple ideas &amp; effects for website notifications</span></h1>
     </header>
     <div class="main clearfix">
         <div class="column">
-            <p class="small">Click on the button to show the notification:</p>
+            <p class="small">Click on the button below to show the notification:-</p>
             <button id="notification-trigger" class="progress-button">
-                <span class="content">Show Notification</span>
+                <span class="content">Show the Notification</span>
                 <span class="progress"></span>
             </button>
         </div>
@@ -107,6 +104,7 @@ In the `growl-effects-scale.html`, add the following snippet:
 </div>
 <!-- /container -->
 <script src="js/classie.js"></script>
+<script src="js/modernizr.custom.js"></script>
 <script src="js/notificationFx.js"></script>
 
 </body>
@@ -163,7 +161,11 @@ In the `demo.css` file,
 - Use `border-box` for all elements before and after. Set clearfix class styling both before and after.
 
 ```css
-*, *:after, *:before { -webkit-box-sizing: border-box; box-sizing: border-box; }
+/* All */
+*, *:before, *:after { 
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
 .clearfix:before, .clearfix:after { content: ''; display: table; }
 .clearfix:after { clear: both; }
 ```
@@ -176,7 +178,7 @@ html, body {
 }
 
 body {
-   background: #6CC1EDFF;
+   background: #6cc2edFF;
    color: #f5f3ec;
    font-weight: 400;
    font-size: 1em;
@@ -211,14 +213,14 @@ a:hover, a:focus {
 
 ```css
 /* You can choose colors quickly from the color templates below*/
-.color-2 { background: #729DBF; }
-.color-3 { background: #72BF7B; }
-.color-4 { background: #484860; }
-.color-5 { background: #7772BF; }
-.color-6 { background: #B3BF72; }
-.color-7 { background: #72BFB9; }
-.color-8 { background: #BFA372; }
-.color-9 { background: #6cc1ed; }
+.color-2 { background: #739DBF; }
+.color-3 { background: #73BF7B; }
+.color-4 { background: #484861; }
+.color-5 { background: #7773BF; }
+.color-6 { background: #B4BF72; }
+.color-7 { background: #73BFB9; }
+.color-8 { background: #BFA371; }
+.color-9 { background: #6cc2ed; }
 .color-9 { color: rgba(0,0,0,0.6); }
 .color-10 { background: #00cfbe; }
 .color-11 { background: #00a2d3;}
@@ -241,11 +243,11 @@ a:hover, a:focus {
 }
 
 .notifications-header h1 span {
-   display: block;
    padding: 0.4em 0 0.6em 0.1em;
-   font-size: 46%;
-   font-weight: 300;
+   display: block;
    opacity: 0.7;
+   font-size: 45%;
+   font-weight: 300;
 }
 ```
 
@@ -464,24 +466,27 @@ In the Javascript folder, named `js`, open the 'notificationFX.js' file. In the 
 
 - In the function, you will get the root element in the webpage. This code returns the HTML element. Add the end of event names which refer to the end of animations.  You will also create a function that checks if an object has a property that it holds.  If so, it will add the property to the former object.
   The `extend` function will be used in the `NotificationFX` function. It will place a new property to the object that had been initially saved with another property.
-  
- This is shown in the code below:
+
+This is shown in the code below:
 
 ```js
 /** Get the root element */
    var docElem = window.document.documentElement,
-      support = { animations : Modernizr.cssanimations },
+        /** Use Modernizr css animations */
+      support = {
+       animations : Modernizr.cssanimations
+      },
       animEndEventNames = {
+         'animation' : 'animationend',
          'WebkitAnimation' : 'webkitAnimationEnd',
-         'OAnimation' : 'oAnimationEnd',
          'msAnimation' : 'MSAnimationEnd',
-         'animation' : 'animationend'
+         'OAnimation' : 'oAnimationEnd'
       },
       // animation end event name
       animEndEventName = animEndEventNames[ Modernizr.prefixed( 'animation' ) ];
 
    /**
-    * extend obj function
+    * extend the obj function
     */
    function extend( a, b ) {
       for( var key in b ) {
@@ -506,12 +511,12 @@ In the Javascript folder, named `js`, open the 'notificationFX.js' file. In the 
 - Create a `NotificationFX options` function that allows one to easily set the notification type and styles.
   The function allows one to set the following:
 
-  - wrapper of the notification
-  - message
-  - layout
-  - effect
-  - time taken to leave the scene once displayed (ttl). The time is in milliseconds(ms).
-  - on-open and on-close callback functions
+    - wrapper of the notification
+    - message
+    - layout
+    - effect
+    - time taken to leave the scene once displayed (ttl). The time is in milliseconds(ms).
+    - on-open and on-close callback functions
 
 These are well displayed below:
 
@@ -520,21 +525,21 @@ These are well displayed below:
     * NotificationFx options
     */
 NotificationFx.prototype.options = {
-    // element to which the notification will be appended
-    // defaults to the document.body
+    // element to which the notification will be appended to
+    // defaults to the document.body element
     wrapper : document.body,
-    // the message
-    message : 'Hello!',
-    // layout type: growl|attached|bar|other
+    // the message to be displayed
+    message : 'Hello!!!',
+    // layout types: growl|attached|bar|other
     layout : 'growl',
     // effects for the specified layout:
     // for growl layout: scale|slide|genie|jelly
     effect : 'slide',
-    // notice, warning, error, success
+    // notice, warning, error, success types
     // will add class ns-type-warning, ns-type-error or ns-type-success
     type : 'error',
     // if the user doesn´t close the notification then we remove it
-    // after the following time
+    // after the following time in ttl (ms)
     ttl : 6000,
     // callbacks
     onClose : function() { return false; },
@@ -557,12 +562,16 @@ The function will do the following:
 
 ```js
 NotificationFx.prototype._init = function() {
-    // create HTML structure
+    // create the HTML structure
     this.ntf = document.createElement( 'div' );
     this.ntf.className = 'ns-box ns-' + this.options.layout + ' ns-effect-' + this.options.effect + ' ns-type-' + this.options.type;
+    // Create a div element
     var strinner = '<div class="ns-box-inner">';
+    // Add the message
     strinner += this.options.message;
+    // Close the div tag
     strinner += '</div>';
+    // Add a span
     strinner += '<span class="ns-close"></span></div>';
     this.ntf.innerHTML = strinner;
 
@@ -570,18 +579,20 @@ NotificationFx.prototype._init = function() {
     // This creates the notification before the first child in the HTML file.
     this.options.wrapper.insertBefore( this.ntf, this.options.wrapper.firstChild );
 
-    // dismiss after [options.ttl]ms
+    // dismiss after this [options.ttl]ms
     var self = this;
 
-    if(this.options.ttl) { // checks to make sure ttl is not set to false in notification initialization
+    if(this.options.ttl) { 
+        // This checks to make sure ttl is not set to false in notification initialization
         this.dismissttl = setTimeout( function() {
             if( self.active ) {
                 self.dismiss();
             }
-        }, this.options.ttl );
+        }, 
+                this.options.ttl );
     }
 
-    // init events
+    // initialize the events
     this._initEvents();
 }
 ```
@@ -589,12 +600,12 @@ NotificationFx.prototype._init = function() {
 - Create a function that dismisses the notification when one clicks the close button.
 
 ```js
-/**
-    * init events
+    /**
+    * initialize the events
     */
 NotificationFx.prototype._initEvents = function() {
     var self = this;
-    // dismiss notification
+    // dismiss the notification
     this.ntf.querySelector( '.ns-close' ).addEventListener( 'click', function() { self.dismiss(); } );
 }
 ```
@@ -603,11 +614,13 @@ NotificationFx.prototype._initEvents = function() {
 
 ```js
 /**
-* show the notification
+* shows the notification
 */
 NotificationFx.prototype.show = function() {
     this.active = true;
+    // Removes the class name that hides it
     classie.remove( this.ntf, 'ns-hide' );
+    // Adds the class name so as it can be visible
     classie.add( this.ntf, 'ns-show' );
     if (typeof this.options.onOpen === 'function')
         this.options.onOpen();
@@ -619,26 +632,29 @@ NotificationFx.prototype.show = function() {
 The function removes the notification element once the notification ends. If it doesn't find the notification in the `target` inside the DOM element, then returns false.
 
 ```js
-/**
-    * dismiss the notification
+    /**
+    * dismisses the notification
     */
 NotificationFx.prototype.dismiss = function() {
     var self = this;
     this.active = false;
     clearTimeout( this.dismissttl );
+    // Removes the css class that makes it visible
     classie.remove( this.ntf, 'ns-show' );
     setTimeout( function() {
         classie.add( self.ntf, 'ns-hide' );
 
-        // callback
+        // callback function
         if (typeof self.options.onClose === 'function')
             self.options.onClose();
     }, 25 );
 
-    // after animation ends remove ntf from the DOM
+    // after animation ends, remove the notification from the DOM
     var onEndAnimationFn = function( ev ) {
         if( support.animations ) {
-            if( ev.target !== self.ntf ) return false;
+            if( ev.target !== self.ntf ) {
+              return false;
+            }
             this.removeEventListener( animEndEventName, onEndAnimationFn );
         }
         self.options.wrapper.removeChild( self.ntf );
@@ -657,8 +673,8 @@ NotificationFx.prototype.dismiss = function() {
   See this in the code below:
 
 ```js
-/**
-    * add to the global namespace
+    /**
+    * adds to the global namespace
     */
 window.NotificationFx = NotificationFx;
 ```
@@ -691,6 +707,7 @@ function classReg( className ) {
 
 var hasClass, addClass, removeClass;
 
+// Uses the hasClass, addClass, removeClass that were created
 if ( 'classList' in document.documentElement ) {
   hasClass = function( elem, c ) {
     return elem.classList.contains( c );
@@ -706,11 +723,15 @@ else {
   hasClass = function( elem, c ) {
     return classReg( c ).test( elem.className );
   };
+  
+  // Adds the class name
   addClass = function( elem, c ) {
     if ( !hasClass( elem, c ) ) {
       elem.className = elem.className + ' ' + c;
     }
   };
+
+  // Removes the class name
   removeClass = function( elem, c ) {
     elem.className = elem.className.replace( classReg( c ), ' ' );
   };
@@ -721,6 +742,7 @@ else {
 
 ```javascript
 function toggleClass( elem, c ) {
+    // Local variable
   var fn = hasClass( elem, c ) ? removeClass : addClass;
   fn( elem, c );
 }
@@ -735,7 +757,7 @@ var classie = {
   addClass: addClass,
   removeClass: removeClass,
   toggleClass: toggleClass,
-  // short names
+  // shortened names
   has: hasClass,
   add: addClass,
   remove: removeClass,
@@ -779,10 +801,10 @@ Inside the `growl-effects-scale.html` file, just below the `<script src="js/noti
 ```
 
 - Add a function that disables the button which is clicked. It then uses the `NotificationFx` function created before to quickly set the options of the notification. making makes sure that the button is not disabled since disabling the button prevents double-clicking till when the notification disappears. As for the `growl` layout, it supports the following notification effects:
-  - scale (will be used in the `growl-effects-scale.html` file)
-  - jelly
-  - slide in
-  - genie
+    - scale (will be used in the `growl-effects-scale.html` file)
+    - jelly
+    - slide in
+    - genie
 
 ```js
 bttn.addEventListener( 'click', function() {
@@ -834,18 +856,18 @@ Style the notification to look like a pop-up notification. In the `ns-default.cs
 - Style the notification box in the webpage:
 
 ```css
-/* Common, default styles for the notification box */
+/* Common, and default styles for the notification box */
 
 .ns-box {
    position: fixed;
+   color: rgba(250,251,255,0.95);
    background: rgba(42,45,50,0.85);
-   padding: 22px;
    line-height: 1.4;
+   padding: 22px;
    z-index: 1000;
    pointer-events: none;
-   color: rgba(250,251,255,0.95);
-   font-size: 90%;
    font-family: 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif;
+   font-size: 90%;
 }
 ```
 
@@ -863,13 +885,15 @@ Style the notification to look like a pop-up notification. In the `ns-default.cs
 ```css
 /* Notification link styling */
 .ns-box a {
+   font-weight: 700;
    color: inherit;
    opacity: 0.7;
-   font-weight: 700;
+   
 }
 
-.ns-box a:hover,
-.ns-box a:focus {
+.ns-box a:focus,
+.ns-box a:hover
+ {
    opacity: 1;
 }
 
@@ -895,16 +919,16 @@ Style the notification to look like a pop-up notification. In the `ns-default.cs
 ```css
 /* `on close` notification styling */
 .ns-close {
+   position: absolute;
    width: 20px;
    height: 20px;
-   position: absolute;
-   right: 4px;
    top: 4px;
+   right: 4px;
    overflow: hidden;
    text-indent: 100%;
    cursor: pointer;
-   -webkit-backface-visibility: hidden;
    backface-visibility: hidden;
+   -webkit-backface-visibility: hidden;
 }
 
 .ns-close:hover, 
@@ -915,13 +939,14 @@ Style the notification to look like a pop-up notification. In the `ns-default.cs
 /* Notification 'on close' before and after styling */
 .ns-close::before,
 .ns-close::after {
+  /* Set the content to none*/
    content: '';
-   position: absolute;
+   background: #6e6e6e;
    width: 3px;
    height: 60%;
+   position: absolute;
    top: 50%;
    left: 50%;
-   background: #6e6e6e;
 }
 
 .ns-close:hover::before,
@@ -930,12 +955,12 @@ Style the notification to look like a pop-up notification. In the `ns-default.cs
 }
 
 .ns-close::before {
-   -webkit-transform: translate(-50%,-50%) rotate(45deg);
-   transform: translate(-50%,-50%) rotate(45deg);
+   -webkit-transform: rotate(45deg) translate(-50%,-50%);
+   transform: rotate(45deg) translate(-50%,-50%);
 }
 
 .ns-close::after {
-   -webkit-transform: translate(-50%,-50%) rotate(-45deg);
+   -webkit-transform: rotate(45deg) translate(-50%,-50%);
    transform: translate(-50%,-50%) rotate(-45deg);
 }
 ```
@@ -947,7 +972,7 @@ The results for this styling is as shown in the image below:
 Notice that the notification now looks more like a pop-up notification. The only issue is that it doesn't close automatically, neither can it be closed. Solve these problems by adding some CSS styling in the `ns-style-growl.css` file.
 
 ### Add the growl effect to the notification
-In the `ns-style-growl.css` file, add growl effects. Find the code and some inline commentary of the growl effects CSS code [here](https://github.com/prograte/Genie-Slide-in-Jelly-and-scale-Pop-up-Notification-effects/blob/main/css/ns-style-growl.css). 
+In the `ns-style-growl.css` file, add growl effects. Find the code and some inline commentary of the growl effects CSS code [here](https://github.com/prograte/Genie-Slide-in-Jelly-and-scale-Pop-up-Notification-effects/blob/main/css/ns-style-growl.css).
 - Added growl styling that will be shared with all the types of growl effects
 - Added individual effects for each of the growl effect sets. This starts with the scale effect.
   The _scale_ effect copies its name. It expands from a small size to a larger size.
@@ -970,7 +995,7 @@ Head over to the `growl-effects-jelly.html` either by opening it in a browser or
 
 - Finally, in the file, add the Fly Up effect. This effect can be seen on the `growl-effects-genie.html` file accessed by clicking on the  `Genie` button.
   The code for this is shown below:
-![genie effect gif](genie-effect-gif.gif "genie effect gif")
+  ![genie effect gif](genie-effect-gif.gif "genie effect gif")
 
 
 ### Normalize the webpages
