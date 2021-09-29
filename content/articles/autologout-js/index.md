@@ -14,7 +14,6 @@ images:
   - url: /engineering-education/autologout-js/hero.jpg
     alt: Creating an auto-logout feature using JavaScript Hero Image
 ---
-
 When implementing security for our applications, we will at one point check if the user is still actively using the screen and decide whether to keep him/her logged in or not. This is particularly important if the application handles sensitive or private data to the user, for example, bank account details. 
 <!--more-->
 We will see how to do that using JavaScript basing on the input events such as keypresses, scrolls, etc.
@@ -27,9 +26,9 @@ We will see how to do that using JavaScript basing on the input events such as k
 You can use any technology/language for the backend login script.
 
 ### Brief overview
-We will look at an autologout implementation using JavaScript with the help of a simple login interface based on PHP as the backend. The display page will feature a counter that counts the number of seconds remaining before the user is logged out due to inactivity.
+We will look at an auto-logout feature implementation using JavaScript with the help of a simple login interface based on PHP as the backend. The display page will feature a counter that counts the number of seconds remaining before the user is logged out due to inactivity.
 
-The timer for auto logging out will be reset if any of the events is detected. The demo is found [here](https://sacco.terrence-aluda.com/sacco/eng-edtest.html).
+The timer for auto logging out will be reset if any of the events are detected. The demo is found [here](https://sacco.terrence-aluda.com/sacco/eng-edtest.html).
 
 ### Getting started
 We will first create user interface files in HTML and CSS for the login and display screens.
@@ -284,7 +283,7 @@ function resetTimer() {
 [];
 ```
 
-This one is pretty straightforward. It clears the timeout that matches the timeout ID. It is fired after any of the events is detected.
+This one is pretty straightforward. It clears the timeout that matches the timeout ID. It is fired after any of the events are detected.
 
 ```javascript
 function idleLogout() {
@@ -356,7 +355,7 @@ function startCountdown() {
 }
 ```
 
-Lastly, we have the `startCountdown()` method. This is fired when the body loads in the body's `onload` attribute in the display page.
+Lastly, we have the `startCountdown()` method. This is fired when the body loads in the body's `onload` attribute on the display page.
 
 When the events (`mousemove, mousedown, keypress, touchmove, onscroll, wheel`) contained in the `AddEventListener()` methods are detected, the `resetTimer()` method is called to reset the timer so that the user stays logged in.
 
@@ -450,5 +449,4 @@ The user's private data is very key. It's always important to let no one else se
 Thank you, reader. Have a great read.
 
 ---
-
 Peer Review Contributions by: [Dawe Daniel](/engineering-education/authors/dawe-daniel/)
