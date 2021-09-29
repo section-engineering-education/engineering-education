@@ -4,18 +4,18 @@ status: publish
 published: true
 url: /lru-cache-implementation-in-javascript/
 title: Implementing LRU Cache in JavaScript
-description: In this article, we will be looking at how to implement a LRU Cache in JavaScript. We will be using a doubly linked list to keep track of the most recently used items.
+description: This article will discuss how to implement LRU Cache in JavaScript. We will be using a doubly linked list to keep track of the most recently used items.
 author: erick-wekesa
-date: 2021-08-17T00:00:00-16:00
+date: 2021-09-29T00:00:00-05:50
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
  - url: /engineering-education/lru-cache-implementation-in-javascript/hero.jpg
    alt: Cache LRU JavaScript Image
 ---
-The cache holds data in RAM. This makes the retrieval of data much faster than typical databases where data is stored on a disk.
+The cache holds data in RAM. This makes the retrieval of data much faster than typical databases where information is stored on a disk.
 <!--more-->
-RAM has less space compared to the disk. This is why caching algorithms, such as least recently used (LRU) can help invalidate entries that have not been used recently in the RAM.
+RAM has less space compared to the disk. This is why caching algorithms such as LRU can help invalidate entries that have not been used recently in the RAM.
 
 The cache holds data in RAM. This makes the retrieval of data much faster than typical databases where data is stored on a disk. RAM has less space compared to the disk. This is why caching algorithms, such as least recently used (LRU) can help invalidate entries that have not been used recently in the RAM.
 
