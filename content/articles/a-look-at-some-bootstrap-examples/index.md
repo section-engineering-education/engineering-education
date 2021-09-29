@@ -25,6 +25,9 @@ Mark Otto and Jacob Thornton developed Bootstrap using [HTML5](https://developer
 - Bootstrap is responsive - It can be used on any device without crashing.
 - The grid system is easy to use - Bootstrap has a friendly grid system for developing responsive websites.
 
+### Prerequisites
+To follow along with this tutorial, you need to have some basic knowledge on `HTML` and `CSS`.
+
 ### Getting started!
 Bootstrap was developed to help speed up the development of responsive websites. Many companies and projects around the world use Bootstrap
 
