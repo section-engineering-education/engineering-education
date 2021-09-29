@@ -188,4 +188,4 @@ The full combined code can be found on [GitHub](https://github.com/dentonya/Imag
 Happy coding!
 
 ---
-
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
