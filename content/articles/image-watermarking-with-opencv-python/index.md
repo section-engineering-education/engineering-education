@@ -1,13 +1,13 @@
 ---
 layout: engineering-education
-status: draft
-published: false
+status: publish
+published: true
 url: /image-watermarking-with-opencv-python/
 title: Multiple Image Watermarking Using OpenCV with Python
 description: The objective of this tutorial is to help the reader understand the concept of how one can automate the process of image watermarking on multiple images with less effort and time.
 author: atonya-dennis
-date: 2021-09-22T00:00:00-10:16
-topics: [Languages]
+date: 2021-09-29T00:00:00-13:00
+topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
 
