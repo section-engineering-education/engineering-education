@@ -17,34 +17,33 @@ images:
 ### Introduction
 Bootstrap is a front-end framework for developing responsive web projects. It includes a powerful grid system, a flexible media object, and a powerful color system.
 
-Boostrap is built with [HTML5](https://developer.mozilla.org/en-US/docs/Glossary/HTML5), [Sass](https://en.wikipedia.org/wiki/Sass_(stylesheet_language)), and [CSS3](https://www.w3.org/TR/2001/WD-css3-roadmap-20010523/).
+Mark Otto and Jacob Thornton developed Bootstrap using [HTML5](https://developer.mozilla.org/en-US/docs/Glossary/HTML5), [Sass](https://en.wikipedia.org/wiki/Sass_(stylesheet_language)), and [CSS3](https://www.w3.org/TR/2001/WD-css3-roadmap-20010523/).
 
 ### Advantages of using bootstrap:
-1. It saves time and effort - With bootstrap, you can focus on writing your content, and the framework will take care of the rest, thus, saving you time and effort.
-2. Developers can customize the framework to their needs.
-3. Bootstrap is responsive - It can be used on any device without breaking.
-4. The grid system is easy to use - Bootstrap has a friendly grid system for developing responsive websites.
+- It saves time and effort - With Bootstrap, you can focus on writing your content, and the framework will take care of the rest, thus, saving you time and effort.
+- Developers can customize the framework to their needs.
+- Bootstrap is responsive - It can be used on any device without crashing.
+- The grid system is easy to use - Bootstrap has a friendly grid system for developing responsive websites.
 
 ### Getting started!
-Bootstrap was developed at [Twitter](https://en.wikipedia.org/wiki/Twitter) to help speed up the development of responsive websites. It is now used by many companies and projects around the world.
+Bootstrap was developed to help speed up the development of responsive websites. Many companies and projects around the world use Bootstrap
 
-### Downloading bootstrap
-To use bootstrap, you need to download its files and add them to your project. In this tutorial, we will install the bootstrap using the `package manager`. 
+#### Downloading Bootstrap
+To use Bootstrap, you need to download its files and add them to your project. In this tutorial, we will install Bootstrap using the `package manager`. 
 
-To do this, we need to first install [Node.js]((https://nodejs.org/en/)) as it has the `npm` package manager. Download the latest files based on your Operating System (OS) and install them. In my case, I am using Ubuntu.
+To do this, we need first to install [Node.js]((https://nodejs.org/en/)  as it has the `npm` package manager. Download the latest files based on your Operating System (OS) and install them. In my case, I am using Linux [Ubuntu](https://ubuntu.com/download/desktop).
 
 After installing, navigate to the folder where you have downloaded the files and run the following command in the terminal:
-
 ```bash
 npm install bootstrap
 ```
 
-A new folder will be created called `node_modules`. This folder contains the files required for bootstrap. These files are:
-- `/bootstrap` - Contains the `js` and `css` files. This tutorial will use these files.
-- `/.package-lock.json` - This file is used to keep track of the version of the bootstrap files.
+This command will create a new folder called `node_modules`. This folder contains the files required for Bootstrap. These files are:
+- `/bootstrap` - Contains the `JS` and `CSS files`. This tutorial will use these files.
+- `/.package-lock.json` - This file keeps track of the version of the bootstrap files.
 - `/@popperjs` - This folder contains the files required for the `popper.js` library.
 
-### How to use the bootstrap files in your project
+#### How to use the bootstrap files in your project
 In the folder containing the installed bootstrap files, create an `index.html` file and add the code snippet below:
 
 ```html
@@ -76,7 +75,7 @@ If you see the alert box, then you have successfully installed bootstrap. Congra
 
 > We will use the above `index.html` in all examples in this tutorial.
 
-### Container
+#### 1. Container
 In bootstrap, the `container` is the wrapper for the entire section of a page. It is a block element used to contain the page's content. Containers align the content within a device or a viewpoint.
 
 The syntax for containers is as follows:
@@ -88,7 +87,7 @@ The syntax for containers is as follows:
 </div>
 ```
 
-### Rows
+#### 2. Rows
 Rows are wrappers for the columns. They are used to align the content in the columns. They help structure the grid system, hence, keep everything in order.
 
 The syntax for rows is as follow:
@@ -97,14 +96,12 @@ The syntax for rows is as follow:
 <div class="row"></div>
 ```
 
-### Jumbotron
-Jumbotron is a special type of container that allows specific content to stand out. It is a block element and it is used to contain the page's content. 
+#### 3. Jumbotron
+Jumbotron is a particular type of container that allows specific content to stand out. It is a block element, which contains the page's content.
 
-To display Jumbotron, a grey box with rounded corners is used. The font size of the text inside the jumbotron is also enlarged. 
+Jumbotron is displayed using a grey box with rounded corners. The font size of the text inside the Jumbotron is also enlarged. You can place the Jumbotron inside or outside a container.
 
-You can place the Jumbotron inside or outside a container.
-
-#### Placing the Jumbotron inside the container
+##### Placing the Jumbotron inside the container
 If you add the bootstrap inside the container, it will not extend the edges of your screen.
 
 Assuming you want to add a Jumbotron to the `index.html` file above, then the syntax would be as follows:
@@ -121,7 +118,7 @@ Assuming you want to add a Jumbotron to the `index.html` file above, then the sy
 </div>
 ```
 
-#### Placing the Jumbotron outside the container
+##### Placing the Jumbotron outside the container
 This method will result in the Jumbotron extending the edges of the screen.
 
 To understand this better place the code snippet below in the `index.html` file and open it with a browser.
@@ -140,12 +137,10 @@ To understand this better place the code snippet below in the `index.html` file 
 
 Comparing the two code snippets, the second one will result in the Jumbotron extending the edges of the screen while the first one will not.
 
-### Bootstrap collapse
+#### 4. Bootstrap collapse
 The collapse is a component that allows you to hide and show content. It is a block element and is used to contain the content of the page. 
 
-It helps to give more importance or extra attention to the content.
-
-For instance, if you have a lot of content, the navbar might end up taking too much space on mobile devices. This is where the `collapse` comes in.
+It helps to give more importance or extra attention to the content. For instance, if you have a lot of content, the navbar might end up taking too much space on mobile devices. Hence, this is where the collapse comes in.
 
 To accomplish this, you need to add the following code to our `index.html` file:
 
@@ -181,7 +176,7 @@ To accomplish this, you need to add the following code to our `index.html` file:
 
 In the code snippet above, we have added the `collapse` to the page. When you press on the `Click On Me` button, the `collapse` having `About` and `Contact` will be shown.
 
-### Bootstrap modal plugin
+#### 5. Bootstrap modal plugin
 Bootstrap modal plugin is a dialog that pops up when you click on a button. It is displayed on top of a page.
 
 The following example shows how to use a modal plugin:
@@ -235,8 +230,8 @@ The following example shows how to use a modal plugin:
 </html>
 ```
 
-### Bootstrap progress bar
-The progress bar is a component that shows the progress of a task, eg the progress of installing software. The progress is normally represented in a percentage form. 
+#### 6. Bootstrap progress bar
+The progress bar is a component that shows the progress of a task, e.g., the installation of software. The progress is usually represented in a percentage form.
 
 In the `index.html` file replace, the existing snippet with the one below and open the file with a browser:
 
@@ -274,10 +269,8 @@ In the `index.html` file replace, the existing snippet with the one below and op
 </html>
 ```
 
-### Bootstrap Media Objects
-The media object is a component that is used to display a media object. It is used to display images, videos, and other media.
- 
-They are accompanied by a right-aligned or left-aligned image and text content.
+#### 7. Bootstrap Media Objects
+The media object is a component that displays a media object. It displays images, videos, and other media. They are accompanied by a `right-aligned` or `left-aligned` image and text content.
 
 Assume that you have an image `media.jpg` and you want to add some content describing the image on the right side of the image. You can accomplish that task using the snippet below:
 
@@ -300,8 +293,8 @@ Assume that you have an image `media.jpg` and you want to add some content descr
 </html>
 ```
 
-### Bootstrap star rating
-The star rating is a component that allows end-users to rate a product or service. The number of stars chosen by the user is indicated by the number of filled stars.
+#### 8. Bootstrap star rating
+The star rating is a component that allows end-users to rate a product or service. The number of filled stars indicates the number of stars chosen by the user.
 
 Assuming you are asking a user to rate your work and the user rates your work using only two stars. The snippet below shows the feedback you would get:
 
@@ -342,7 +335,8 @@ Assuming you are asking a user to rate your work and the user rates your work us
 ```
 
 In the above example, we have used the `star icon` to represent the star rating.
-### Bootstrap Flex Box
+
+#### 9. Bootstrap FlexBox
 The flexbox is a component that allows you to create a layout that can be easily resized and adjusted.
 
 To change the alignment of the flexbox, you can use the `justify-content property as shown in the snippet below:
@@ -400,8 +394,10 @@ To change the alignment of the flexbox, you can use the `justify-content propert
 </html>
 ```
 
-### Radio Buttons
-The radio buttons are a component that allows end-users to select one option from a set of options. Each radio button contains a label that represents the choice of each radio button. The difference between `radio button` and `checkbox` is that the radio button can only be selected once whereas the checkbox can be selected multiple times.
+#### 10. Radio Buttons
+The radio buttons are a component that allows end-users to select one option from a set of options. Each radio button contains a label that represents the choice of each radio button. 
+
+The difference between the `radio button` and the `checkbox` is that the radio button can only be selected once, whereas the checkbox can be selected multiple times.
 
 Below is an example of a radio button snippet:
 
@@ -435,6 +431,7 @@ Below is an example of a radio button snippet:
 ```
 
 Below is an example of a checkbox snippet: Here, you will notice that you can select more than one option unlike in radio button above.
+
 ```html
 <html>
   <head>
@@ -465,12 +462,12 @@ Below is an example of a checkbox snippet: Here, you will notice that you can se
 </html>
 ```
 
-### Grid System
+#### 11. Grid System
 The bootstrap grid system is a 12-column system that is used to layout content. It consists of `containers`, `rows`, and `columns`.
 
-. The `container` is the outermost element and is used to contain all other elements.
-. The `row` creates a horizontal group of columns.
-. The `column` is the innermost element and is used to contain content.
+- The `container` is the outermost element and is used to contain all other elements.
+- The `row` creates a horizontal group of columns.
+- The `column` is the innermost element and is used to contain content.
 
 Let's how the grid system works in a code snippet:
 
@@ -522,65 +519,65 @@ Let's how the grid system works in a code snippet:
 </html>
 ``` 
 
-### Lists
- A list is a series of items, grouped in a single container. The list can be ordered or unordered.
+#### 12. Lists
+A list is a series of items grouped in a single `container`. The list can be ordered or unordered.
 
- To create a list, use the `ul`/`ol` and `li` tags with `.list-group` and `.list-item-group` respectively.
+To create a list, use the `ul/ol` and `li` tags with `.list-group` and `.list-item-group`, respectively.
 
-  #### Ordered List
-  An ordered list is a list that has a numerical index on each item.
+##### Ordered List
+An ordered list is a list that has a numerical index on each item.
 
-  ```html
-  <html>
-  <head>
-    <title>List</title>
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" type="text/css"/>
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/js/bootstrap.js.map" type="text/css">
-  </head>
-  <body>
-    <div class="container">
-      <h6>ordered list item</h6>
-      <ol class="list-group">
-        <li>First list</li>
-        <li>Second list</li>
-        <li>Third list</li>
-      </ol>
-      </ul>
-    </div>  
-  </body>
-</html>
-  ```
-
-  #### Unordered List
-  An unordered list is a list that does not have a numerical index on each item. They are marked by bullet points in default.
-  
-  ```html
+```html
 <html>
-  <head>
-    <title>List</title>
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" type="text/css"/>
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/js/bootstrap.js.map" type="text/css">
-  </head>
-  <body>
-    <div class="container">
-      <h6>unordered list item</h6>
-      <ul class="list-group">
-        <li>First list</li>
-        <li>Second list</li>
-        <li>Third list</li>
-      </ul>
-      </ul>
-    </div>  
-  </body>
+<head>
+  <title>List</title>
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" type="text/css"/>
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/js/bootstrap.js.map" type="text/css">
+</head>
+<body>
+  <div class="container">
+    <h6>ordered list item</h6>
+    <ol class="list-group">
+      <li>First list</li>
+      <li>Second list</li>
+      <li>Third list</li>
+    </ol>
+    </ul>
+  </div>  
+</body>
+</html> 
+```
+
+##### Unordered List
+An unordered list is a list that does not have a numerical index on each item. They are marked by bullet points in default.
+  
+```html
+<html>
+<head>
+  <title>List</title>
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" type="text/css"/>
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/js/bootstrap.js.map" type="text/css">
+</head>
+<body>
+  <div class="container">
+    <h6>unordered list item</h6>
+    <ul class="list-group">
+      <li>First list</li>
+      <li>Second list</li>
+      <li>Third list</li>
+    </ul>
+    </ul>
+  </div>  
+</body>
 </html>
-  ```
+```
 
 In the snippets above, we have used the `ol` tag to create an ordered list and the `ul` tag to create an unordered list.
 
-#### List with links
-  A list can also contain `links` that connect to other pages.
+##### List with links
+A list can also contain `links` that connect to other pages.
 
-  ```html
+```html
   <html>
   <head>
     <title>List</title>
@@ -601,8 +598,9 @@ In the snippets above, we have used the `ol` tag to create an ordered list and t
 </html>
   ```
 
-### Bootsrap Forms
-This is a set of `elements` that allows users to input different data as required by the `form`. 
+#### 13. Bootstrap Forms
+A set of `elements` that allows users to input different data as required by the `form`. 
+
 A simple basic form may contain input fields like `name`, `email`, `password`, `text area`, and `checkbox`.
 
 The snippet below is an example of a bootstrap form:
@@ -644,8 +642,8 @@ The snippet below is an example of a bootstrap form:
 </html>
 ```
 
-### Bootstrap scrollspy
-This is a set of `elements` that allows users to scroll to a particular section of the page. It automatically updates the navigation bar to highlight the current section/link. 
+#### 14. Bootstrap scrollspy
+A set of elements that allow users to scroll to a particular section of the page. It automatically updates the navigation bar to highlight the current section/link. 
 
 The snippet below is an example of a bootsrap scrollspy:
 
@@ -742,4 +740,10 @@ Let's add some styles to the scroll spy:
 ```
 
 ### Conclusion
-Bootstrap can be used to create a better-looking website. It is a very popular framework and it is used by many companies including [Spotify](https://www.spotify.com/us/) and [Twitter](https://twitter.com/?laneng=).
+Bootstrap can be used to create a better-looking website. It is a popular framework, and many companies, including [Spotify](https://www.spotify.com/us/) and [Twitter](https://twitter.com/?laneng=), use it.
+
+
+Happy coding!
+
+---
+Peer Review Contributions by: [Briana Nzivu](/engineering-education/authors/briana-nzivu/)
