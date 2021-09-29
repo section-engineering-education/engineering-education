@@ -15,88 +15,53 @@ images:
     alt: Implementing a Collapsible View using a Card View in Android Cover Image 
 ---
 ### Introduction
-In this article, you will learn about the CardView and how to style and customize it. You will implement a collapsible view that can expand to reveal more information when you click an image on the card.
- 
- A CardView is useful for displaying data in similarly styled containers. It may contain content and actions about a single object.
- A CardView can display a moderate amount of data in a way that is easy to visualize. Cards are useful in presenting a large number of objects on the same page. The Card’s elevation gives a 3-dimensional look to your mobile app, thus enriching its look and feel.
+A CardView is useful for displaying data in similarly styled containers. It may contain content and actions about a single object. 
 
+A CardView can display a moderate amount of data in a way that is easy to visualize. Cards help present a large number of objects on the same page. The card's elevation gives a 3-dimensional look to your mobile app, thus enriching its look and feel.
 
-### Prerequisite
+In this article, you will learn about CardView and how to style and customize it. You will implement a collapsible view that can expand to reveal more information when you click an image on the card.
+
+### Prerequisites
 Before you begin, you should have:
-* Basic knowledge of android development with java.
-* A Laptop.
-* An Android IDE. I am using Android Studio
-* Migrate your project to use AndroidX libraries. If not, here is how you can migrate your project here.
-* Good spirits!
+- Basic knowledge of android development using Java programming language.
+- A Laptop.
+- An Android IDE. I am using [Android Studio](https://developer.android.com/studio).
+- Migrate your project to use AndroidX libraries. If not, [here](https://developer.android.com/jetpack/androidx/migrate) is how you can migrate your project.
+- Good spirits!
 
+#### Step One: Create a new Android Studio project
+Create a new project in Android Studio. Use an empty activity. Name the project **Collapsing Card View.** Select `Java` as the language and `API 21` as the minimum SDK and click *finish*.
 
-### Create the project and add the required dependencies
-**Step 1:** Create a new project in android studio. Use an empty activity. Name the project Collapsing Card View.
+#### Step Two: Adding the required dependencies
+To use the `CardView`, you must add the CardView dependency. To add the `CardView` dependency, you need to add Google’s Maven repository to your project.
 
-**Step 2:** Select Java as the language and API 21 as the minimum SDK and click finish.
-To use the CardView, you must add the CardView dependency. To add the CardView dependency, you need to add Google’s Maven repository to your project.
+Add the Google Maven repository. In your project-level `build.gradle` file, add Google's Maven Repository:
 
-**Step 3:** Add the Google Maven repository. In your top-level build.gradle file's repositories section, add Google's Maven Repository `google()`:
-
-```java
+```gradle
 buildscript {
    repositories {
        google()
-   
    }  
 }
 ```
 
-**Step 4:** To Add the material Cardview dependency, add the dependency below in your build.gradle file. To get there Navigate to Gradle Scripts then build.gradle(app):
+To Add the material Cardview dependency, add the dependency below in your app level `build.gradle` file:
 
-```java
+```gradle
 dependencies {
-
    implementation 'com.google.android.material:material:1.4.0'
-  
 }
 ```
 
-You can get the latest version of the material CardView library [here](https://maven.google.com/web/index.html#com.google.android.material:material)
+You can get the latest version of the material CardView library [here](https://maven.google.com/web/index.html#com.google.android.material:material).
 
-### Creating the Root Layout
-**Step 1:** In your activity_main.xml file, delete the default hello world TextView.
+#### Step Three: Creating the Root Layout
+Change your root layout to a `constraint` layout. Inside the constraint layout, add the `CardView`.
  
-**Step 2:** Change your root layout to a constraint layout. It should look like this:
+**Note: Constrain the card view to the parent's top and bottom and the parent's start and end.**
 
-```xml
-
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-   xmlns:android="http://schemas.android.com/apk/res/android"
-   xmlns:tools="http://schemas.android.com/tools"
-   xmlns:app="http://schemas.android.com/apk/res-auto"
-   android:layout_width="match_parent"
-   android:layout_height="match_parent"
-   tools:context=".MainActivity">
- 
-
- </androidx.constraintlayout.widget.ConstraintLayout>
-```
-
-### Adding The Card View
-**Step1:** Inside the constraint layout, add the CardView.
- 
-**Step 2:** Give the card view an Id of base_cardView.
- 
-**Step 3:** Constrain the card view to the top and bottom of the parent, and the start and end of the parent.
-
-
-### Styling The Card View
-**Step 1:** Make the card view to wrap its content height and width of 0dp. In constraint layout, this makes the view match its constraint size. In our case, The width of the CardView would be as large as the parent.
- 
-**Step 2:** Give the CardView a horizontal Margin of 16dp.
- 
-**Step 3:** Give the card view a corner radius of 5dp
- 
-**Step 4:** Give the card a stroke width of 2dp and a stroke color of `@color/teal_200`
- 
-The Card view should look this way in code:
+#### Step Four: Styling The Card View
+Make the card view to wrap its content height and width of 0dp. In constraint layout, this makes the view match its constraint size. In our case, The width of the `CardView` would be as large as the parent. Give the CardView a horizontal Margin of 16dp and, a corner radius of 5dp. Lastly, you will make the card view a parent layout to other views. To do this, give the card view a start and end tag.
 
 ```xml
 <com.google.android.material.card.MaterialCardView
@@ -108,38 +73,17 @@ The Card view should look this way in code:
    app:layout_constraintEnd_toEndOf="parent"
    app:layout_constraintStart_toStartOf="parent"
    app:layout_constraintTop_toTopOf="parent"
-app:strokeColor="@color/teal_200"
-android:layout_marginHorizontal="16dp"
-   app:strokeWidth="2dp" />
-
-```
-
-Great Work!
- 
-Next, you are going to make the card view a parent layout to other views, to do this, give the card view a start and end tag.
- 
-It should look this way:
-```xml
-<com.google.android.material.card.MaterialCardView
-   android:id="@+id/base_cardview"
-   android:layout_width="0dp"
-   android:layout_height="wrap_content"
-   app:cardCornerRadius="5dp"
-   app:layout_constraintBottom_toBottomOf="parent"
-   app:layout_constraintEnd_toEndOf="parent"
-   app:layout_constraintStart_toStartOf="parent"
-   app:layout_constraintTop_toTopOf="parent"
-app:strokeColor="@color/teal_200"
-android:layout_marginHorizontal="16dp"
+   app:strokeColor="@color/teal_200"
+   android:layout_marginHorizontal="16dp"
    app:strokeWidth="2dp" >
   
 </com.google.android.material.card.MaterialCardView>
+
 ```
-
-### Add Views To The Card View Layout
-**Step 1:** Within the CardView, add a constraint layout. Make its width to match its parent, and height to wrap content.
-
-You are going to add views inside this constraint layout. Your code should look like this:
+Great Work!
+ 
+#### Step Five: Add Views To The Card View Layout
+Within the `CardView`, add a constraint layout. Make its width to match its parent, and height to wrap content. You are going to add views inside this constraint layout. Your code should look like this:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -155,42 +99,37 @@ You are going to add views inside this constraint layout. Your code should look 
        android:id="@+id/base_cardview"
        android:layout_width="0dp"
        android:layout_height="wrap_content"
-android:layout_marginHorizontal="16dp"
+       android:layout_marginHorizontal="16dp"
        app:cardCornerRadius="5dp"
        app:layout_constraintBottom_toBottomOf="parent"
        app:layout_constraintEnd_toEndOf="parent"
        app:layout_constraintStart_toStartOf="parent"
        app:layout_constraintTop_toTopOf="parent"
-app:strokeColor="@color/teal_200"
+       app:strokeColor="@color/teal_200"
        app:strokeWidth="2dp">
 
        <androidx.constraintlayout.widget.ConstraintLayout
            android:layout_width="match_parent"
            android:layout_height="wrap_content">
-
-         
-
-
        </androidx.constraintlayout.widget.ConstraintLayout>
 
    </com.google.android.material.card.MaterialCardView>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
-Before you begin adding some more views here is a little tip:
+
+Before you begin adding some more views, here is a little tip:
+
+**To make use of the design mode easy, change all wrap content parent views to match parent. This way, you can see the exact positioning of an element. However, do not forget to change it back to wrap content😊.**
+
+Within the constraint layout, add guidelines to the four sides of the view. Make each of them 16dp away from the view.
  
-To make use of the design mode with ease. I usually change all my wrap content parent views to match parent. This way, I could see where exactly I am positioning my element. You could try the same. But don't forget to change it back to wrap content😊.
- 
-**Step 2:** Within the constraint layout, add guidelines to the four sides of the view. Make each of them 16dp away from the view.
- 
-***Guidelines*** are helpers used in designing layouts. It is most useful if you have the same margin values for a lot of items in the same layout. One feature I find quite interesting about guidelines is that they can be a percentage of the screen.
- 
-Here’s how you can create a guideline:
+**Guidelines** are helpers used in designing layouts. It is most helpful if you have the same margin values for many items in the same layout. One feature I find pretty interesting about guidelines is that they can be a percentage of the screen.
+
+Here is how you can create a guideline:
 
 [![How to create guidelines]({/engineering-education/implement-a-collapsible-view-using-a-cardview/create_guidelines.png})]({/engineering-education/implement-a-collapsible-view-using-a-cardview/create_guidelines.mp4} "Create Guidelines")
 
-This is what the guidelines should look like:
+This is how the guidelines code should look like:
 
 ```xml
 <androidx.constraintlayout.widget.ConstraintLayout
@@ -228,7 +167,8 @@ This is what the guidelines should look like:
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
-**Step 3:** Build the UI of the collapsed card. You are going to build the layout of the collapsed card.
+#### Step Six: Designing the UI of the collapsed card
+Build the UI of the collapsed card. You are going to build the layout of the collapsed card.
 
 ```xml
 <ImageView
@@ -270,7 +210,7 @@ This is what the guidelines should look like:
    app:tint="@color/teal_200" />
    ```
 
-   Notice how I constrain the views to the guidelines.
+ Notice how I constrain the views to the guidelines.
  
 When you click the imageView with id `show`, the card view will expand, revealing more details.
  
@@ -278,7 +218,7 @@ This is what the layout would look like:
 
 ![Collapsed card](/engineering-education/implement-a-collapsible-view-using-a-cardview/collapsed_card.png)
 
-**Step 4:** Build the UI for the expanded card view:
+#### Step Seven: Design the UI for the expanded card view
  
 Here’s what the code looks like:
 
@@ -368,8 +308,7 @@ Here’s what the code looks like:
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
                android:layout_marginTop="16dp"
-               android:text="It's no magic bullet, but the benefits of water are many.
-"
+               android:text="It's no magic bullet, but the benefits of water are many."
                android:textColor="#838383"
                android:textSize="12sp"
                app:layout_constraintStart_toStartOf="@+id/guideline1"
@@ -492,8 +431,7 @@ Here’s what the code looks like:
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
                android:visibility="visible"
-               app:constraint_referenced_ids="textView15,view3,imageView9,textView16,imageView10,textView17,imageView11,textView18,textView19,view4,imageView12,textView20" />
-
+             app:constraint_referenced_ids="textView15,view3,imageView9,textView16,imageView10,textView17,imageView11,textView18,textView19,view4,imageView12,textView20" />
 
        </androidx.constraintlayout.widget.ConstraintLayout>
 ```
@@ -502,9 +440,11 @@ Whew! The layout should look this way when you run the project:
 
 ![Expanded card](/engineering-education/implement-a-collapsible-view-using-a-cardview/expanded_card.png)
 
-Nice! This is what the expanded card would look like. When the card is collapsed, you would want to hide these views. Here is the qualm. Controlling the visibility of every one of these 12 views would be burdensome and repetitive. Now, this is where groups come in. With a Group, you can group all these views, and handle their visibility as though they were one view. You can set the visibility of all 12 views by just setting the visibility of the group.
+Nice! The expanded card should look like this. When the card is collapsed, you would want to hide these views. Here is the qualm. Controlling the visibility of every one of these 12 views would be burdensome and repetitive. 
+
+Now, this is where groups come in. With a Group, you can group all these views and handle their visibility as one view. You can set the visibility of all 12 views by just setting the visibility of the group.
  
-**Step 5:** Create a group for the hidden views
+#### Step Eight: Create a group for the hidden views
  
 Here is how to create groups:
 
@@ -765,10 +705,10 @@ Nice! You are all set. Your entire layout code should look like this:
 You are all set. Now time for some java.
 
 
-### Add OnClick Listener to the image view
-Here you would Set onClick listeners to the show imageView.
+#### Step nine: Add OnClick Listener to the ImageView
+In this step, we will set an `onClick` listeners to the show `imageView`.
  
-In your Main Activity.java file, write this code:
+In your `Main Activity.java` file, add the following lines of code:
 
 ```java
 public class MainActivity extends AppCompatActivity {
@@ -801,36 +741,28 @@ public class MainActivity extends AppCompatActivity {
 }
 ```
 
-Now here is what this code does:
+Let us debunk this code:
+
+First, we referenced the views performing actions. These views are the `base_cardView`, `show` ImageView, and the `card_group`. Remember that you do not need to reference all 12 views anymore. This is because you have grouped them into the `card_group`.
+
+Next, set an `onClickListener` on the `show` ImageView. When this image is clicked, you would want to either show or hide the `card_group`.
  
-Firstly, reference the views you would be performing actions on. These views are the `base_cardView`, `show` ImageView, and the `card_group`. Remember that you do not need to reference all 12 views anymore. This is because you have grouped them into the `card_group`.
+Inside the `onClickListerner`, pass the `CardView` as the root view to run the transition, which would make the collapsing and expanding of the card a lot nicer and give it an animation effect
  
-Next, set an onClickListener on the `show` ImageView. When this image is clicked, you would want to either show or hide the `card_group`.
- 
-Inside the onClickListerner, pass the CardView as the root view to run the transition on. This would make the collapsing and expanding of the card a lot nicer, and give it an animation effect.
- 
-Finally , check if the group’s visibility is visible. If it is, you set its visibility to gone and change the image resource of the ImageView to `arrow_down_float`. Which kind of looks like a show-more icon.
+Finally, check if the group’s visibility is visible. If it is, you set its visibility to gone and change the image resource of the ImageView to `arrow_down_float`. Which kind of looks like a show-more icon.
  
 Else, if the group is not visible, then you would want to show it. Thus change the visibility of the group to Visible. Set the image resource of the ImageView to `arrow_up_float`, which looks like a show-less icon.
  
 Nice work!
  
-You are all done. Running the code, our collapsable card view should look this way:
+Let us run our app. Our collapsable card view should look this way:
 
 [![Collapsing Card View]({engineering-education/implement-a-collapsible-view-using-a-cardview/expanded_card.png})]({/engineering-education/implement-a-collapsible-view-using-a-cardview/collapsable_cardview.mp4} "Collapsing Card View")
 
 Nice right?
   
 ### Conclusion
-The CardView enriches the look of your application's UI. The default implementation of the shadow and rounded corners is a big plus. Although the Cardview is designed to hold one child view within itself. You could add within the card view another layout to manage the child views, just like we did here.
-
+The CardView enriches the look of your application's UI. The default implementation of the shadow and rounded corners is a big plus. However, the Cardview is designed to hold one child view within itself. You could add within the card view another layout to manage the child views, just like we did here.
 
 Cheers!
-
-
-### Source
-
-
- [6 Reasons to Drink Water](https://www.webmd.com/diet/features/6-reasons-to-drink-water#3)
- 
 
