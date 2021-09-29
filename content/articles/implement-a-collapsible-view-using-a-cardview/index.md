@@ -1,3 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true 
+url: /implement-a-collapsible-view-using-a-cardview/
+title: Implementing a Collapsible View using a Card View in Android
+description: IThis article will cover the Card View and how to style and customize it. We will implement a collapsible view that expands to reveal more information and folds when an image in a card is clicked.
+author: love-otudor
+date: 2021-09-29T00:00:00-03:13
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/implement-a-collapsible-view-using-a-cardview/hero.png
+    alt: Implementing a Collapsible View using a Card View in Android Cover Image 
+---
 ### Introduction
 In this article, you will learn about the CardView and how to style and customize it. You will implement a collapsible view that can expand to reveal more information when you click an image on the card.
  
