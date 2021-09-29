@@ -22,7 +22,7 @@ To use the CardView, you must add the CardView dependency. To add the CardView d
 
 **Step 3:** Add the Google Maven repository. In your top-level build.gradle file's repositories section, add Google's Maven Repository `google()`:
 
-```kotlin
+```java
 buildscript {
    repositories {
        google()
@@ -33,7 +33,7 @@ buildscript {
 
 **Step 4:** To Add the material Cardview dependency, add the dependency below in your build.gradle file. To get there Navigate to Gradle Scripts then build.gradle(app):
 
-```kotlin
+```java
 dependencies {
 
    implementation 'com.google.android.material:material:1.4.0'
@@ -48,7 +48,7 @@ You can get the latest version of the material CardView library [here](https://m
  
 **Step 2:** Change your root layout to a constraint layout. It should look like this:
 
-```kotlin
+```xml
 
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
@@ -82,7 +82,7 @@ You can get the latest version of the material CardView library [here](https://m
  
 The Card view should look this way in code:
 
-```kotlin
+```xml
 <com.google.android.material.card.MaterialCardView
    android:id="@+id/base_cardview"
    android:layout_width="0dp"
@@ -103,7 +103,7 @@ Great Work!
 Next, you are going to make the card view a parent layout to other views, to do this, give the card view a start and end tag.
  
 It should look this way:
-```kotlin
+```xml
 <com.google.android.material.card.MaterialCardView
    android:id="@+id/base_cardview"
    android:layout_width="0dp"
@@ -125,7 +125,7 @@ android:layout_marginHorizontal="16dp"
 
 You are going to add views inside this constraint layout. Your code should look like this:
 
-```kotlin
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
    xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -176,7 +176,7 @@ Here’s how you can create a guideline:
 
 This is what the guidelines should look like:
 
-```kotlin
+```xml
 <androidx.constraintlayout.widget.ConstraintLayout
    android:layout_width="match_parent"
    android:layout_height="wrap_content">
@@ -214,7 +214,7 @@ This is what the guidelines should look like:
 ```
 **Step 3:** Build the UI of the collapsed card. You are going to build the layout of the collapsed card.
 
-```kotlin
+```xml
 <ImageView
    android:id="@+id/imageView2"
    android:layout_width="wrap_content"
@@ -266,7 +266,7 @@ This is what the layout would look like:
  
 Here’s what the code looks like:
 
-```kotlin
+```xml
 <androidx.constraintlayout.widget.ConstraintLayout
            android:layout_width="match_parent"
            android:layout_height="wrap_content">
@@ -807,7 +807,14 @@ Nice right?
   
 ### Conclusion
 The CardView enriches the look of your application's UI. The default implementation of the shadow and rounded corners is a big plus. Although the Cardview is designed to hold one child view within itself. You could add within the card view another layout to manage the child views, just like we did here.
- 
- 
+
+
 Cheers!
+
+
+### Source
+
+
+ [6 Reasons to Drink Water](https://www.webmd.com/diet/features/6-reasons-to-drink-water#3)
+ 
 
