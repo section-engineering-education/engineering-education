@@ -9,15 +9,14 @@ In this article, you shall be able to do some input validations, effects, and an
 - [Key takeaways](#key-takeaways)
 - [Pre-requisites](#pre-requisites)
 - [Create a new project](#create-a-new-project)
-    - [Folder Structure](#folder-structure)
+  - [Folder Structure](#folder-structure)
 - [Create the Login form](#create-the-login-form)
-    - [Modify the Scene](#modify-the-scene)
-    - [Design the view](#design-the-view)
+  - [Modify the Scene](#modify-the-scene)
+  - [Design the view](#design-the-view)
 - [Add some validations to the form](#add-some-validations-to-the-form)
 - [Add animations to the project](#add-animations-to-the-project)
 - [Further learning](#further-learning)
 - [Conclusion](#conclusion)
-- [References](#references)
 
 ### Key takeaways
 
@@ -35,10 +34,7 @@ The basics needed to follow up with the tutorial quickly include:
 
 - Must be familiar with Java language
 - Java SDK installed on the machine
-- A JavaFX IDE is installed on the machine.
-  I recommend using the latest IntelliJ IDEA Community version. It is free and enables developers to quickly create a JavaFX project.
-  Find it in this [link](https://www.jetbrains.com/idea/download).
-  The latest Ultimate version also supports JavaFX projects.
+- A JavaFX IDE is installed on the machine. I recommend using the latest IntelliJ IDEA Community version. It is free and enables developers to quickly create a JavaFX project. Find it in this [link](https://www.jetbrains.com/idea/download). The latest Ultimate version also supports JavaFX projects.
 - A good internet connection. This will be used in installing additional dependencies.
 
 Once all the above pre-requisites are met, follow the steps below to accomplish the goals:
@@ -59,10 +55,7 @@ These are well shown in the image below:
 
 ![new javafx project](/engineering-education/creating-an-animated-javafx-field-validation-alert/new-javafx-project.png "New-JavaFX project")
 
-- Click on the `Next` button. On the dependencies window, select the `BootstrapFX`, `ControlsFX`, and `FormsFX` checkboxes.
-  BootstrapFX helps in styling the form using JavaFX styling. The styling is somehow similar to CSS styling.
-  ControlsFX is for allowing controls to be available in the project.
-  These include TextFields, PasswordFields, Labels, DatePickers, and many others. FormFX allows one to easily design forms.
+- Click on the `Next` button. On the dependencies window, select the `BootstrapFX`, `ControlsFX`, and `FormsFX` checkboxes. BootstrapFX helps in styling the form using JavaFX styling. The styling is somehow similar to CSS styling. ControlsFX is for allowing controls to be available in the project. These include TextFields, PasswordFields, Labels, DatePickers, and many others. FormFX allows one to easily design forms.
 
 Look at the image below to see the above steps:
 
@@ -90,9 +83,9 @@ The newly created project has the following folder structure:
 ```
 
 - Open the `hello-view.fxml` file which contains the contents of the page to be displayed.
--  Near the status bar, there is a button adjacent to the Text button.
-  Click on it to see the FXML file visually using Scene Builder. If it displays the `Failed to open the file in Scene Builder` error, click on `Download SceneBuilder`.
-  Click also on the `Download JavaFX` if it also brings an additional Pop-up.
+- Near the status bar, there is a button adjacent to the Text button. Click on it to see the FXML file visually using Scene Builder.
+- If it displays the `Failed to open the file in Scene Builder` error, click on `Download SceneBuilder`.
+- Click also on the `Download JavaFX` if it also brings an additional Pop-up.
 
 This looks like seen below:
 
@@ -102,9 +95,7 @@ This looks like seen below:
 
 ![Project view in scene builder](/engineering-education/creating-an-animated-javafx-field-validation-alert/project-view-in-scene-builder.png "Project view in scene builder")
 
-- Run the application. It opens a new Java window of the application.
-In it, there is a button that when clicked returns a new text in the window.
-The image below shows the output:
+- Run the application. It opens a new Java window of the application. In it, there is a button that when clicked returns a new text in the window. The image below shows the output:
 
 ![Running the first project](/engineering-education/creating-an-animated-javafx-field-validation-alert/running-the-first-project.png "Running the first project")
 
@@ -231,14 +222,14 @@ When viewed using the '**Text**' view, the following code will be found to be au
 The Scene Builder generates the code shown below:
 
 ```xml
-      <ImageView fitHeight="300.0" fitWidth="300.0" layoutX="90.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@panda.png" />
-         </image>
-         <viewport>
-            <Rectangle2D />
-         </viewport>
-      </ImageView>
+<ImageView fitHeight="300.0" fitWidth="300.0" layoutX="90.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true">
+   <image>
+      <Image url="@panda.png" />
+   </image>
+   <viewport>
+      <Rectangle2D />
+   </viewport>
+</ImageView>
 ```
 
 - Now, add a Rectangle from the Shapes category. It shall have the following:
@@ -257,8 +248,7 @@ The Scene Builder generates the code shown below:
 - - `Layout X`: 15
 - - `Layout Y`: 260
 
-The rectangle will easily distinguish the input region from the whole form.
-The rectangles code is shown below:
+The rectangle will easily distinguish the input region from the whole form. The rectangles code is shown below:
 
 ```xml
 <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b9eaf8" height="320.0" layoutX="15.0" layoutY="260.0" stroke="#a3a3a3" strokeLineCap="ROUND" strokeLineJoin="BEVEL" strokeType="INSIDE" strokeWidth="2.0" width="370.0" />
@@ -278,12 +268,12 @@ The rectangles code is shown below:
 Its code is shown below:
 
 ```xml
-      <!-- A label to show the start of inputs -->
-      <Label layoutX="120.0" layoutY="290.0" text="Enter your details below" textFill="#023047">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Label>
+<!-- A label to show the start of inputs -->
+<Label layoutX="120.0" layoutY="290.0" text="Enter your details below" textFill="#023047">
+   <font>
+      <Font name="System Bold" size="14.0" />
+   </font>
+</Label>
 ```
 
 - Add a TextField control to allow the input of the username and email. It has the following configurations:
@@ -304,16 +294,15 @@ The id is for identifying it as a unique element in the form.
 The code is as follows:
 
 ```xml
-        <!-- Inputs and their icons -->
-      <TextField fx:id="usernameTextField" layoutX="80.0" layoutY="345.0" prefHeight="35.0" prefWidth="245.0" promptText="Username / Email">
-         <font>
-            <Font size="15.0" />
-         </font></TextField>
+<!-- Inputs and their icons -->
+<TextField fx:id="usernameTextField" layoutX="80.0" layoutY="345.0" prefHeight="35.0" prefWidth="245.0" promptText="Username / Email">
+   <font>
+      <Font size="15.0" />
+   </font>
+</TextField>
 ```
 
-- Add the `users.png` icon for the username TextField can be downloaded [here](https://github.com/justusmbuvi/Creating-an-Animated-JavaFX-field-Validation-alert/blob/main/src/main/resources/authentication/login/users.png).
-Add an ImageView control that will hold the image. It will have the following:
-
+- Add the `users.png` icon for the username TextField can be downloaded [here](https://github.com/justusmbuvi/Creating-an-Animated-JavaFX-field-Validation-alert/blob/main/src/main/resources/authentication/login/users.png). Add an ImageView control that will hold the image. It will have the following:
 
 - **Properties**
 - - `Image`: users.png
@@ -326,11 +315,11 @@ Add an ImageView control that will hold the image. It will have the following:
 - - `fx:id`: usersIcon
 
 ```xml
-      <ImageView fx:id="usersIcon" fitHeight="35.0" fitWidth="35.0" layoutX="40.0" layoutY="345.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@users.png" />
-         </image>
-      </ImageView>
+<ImageView fx:id="usersIcon" fitHeight="35.0" fitWidth="35.0" layoutX="40.0" layoutY="345.0" pickOnBounds="true" preserveRatio="true">
+   <image>
+      <Image url="@users.png" />
+   </image>
+</ImageView>
 ```
 
 - Add a PasswordField control to capture the password. It has the following:
@@ -350,15 +339,15 @@ Add an ImageView control that will hold the image. It will have the following:
 Its code is as follows:
 
 ```xml
-      <PasswordField fx:id="userPassword" layoutX="80.0" layoutY="400.0" prefHeight="35.0" prefWidth="245.0" promptText="Password">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </PasswordField>
+<PasswordField fx:id="userPassword" layoutX="80.0" layoutY="400.0" prefHeight="35.0" prefWidth="245.0" promptText="Password">
+   <font>
+      <Font size="15.0" />
+   </font>
+</PasswordField>
 ```
 
 - Add the `lock.png` icon for the above PasswordField can be downloaded [here](https://github.com/justusmbuvi/Creating-an-Animated-JavaFX-field-Validation-alert/blob/main/src/main/resources/authentication/login/lock.png).
-After downloading it, add an ImageView control to hold it. The control has the following:
+  After downloading it, add an ImageView control to hold it. The control has the following:
 
 
 - **Properties**
@@ -374,16 +363,14 @@ After downloading it, add an ImageView control to hold it. The control has the f
 The SceneBuilder generated code is as follows:
 
 ```xml
-      <ImageView fx:id="passwordIcon" fitHeight="35.0" fitWidth="35.0" layoutX="40.0" layoutY="400.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@lock.png" />
-         </image>
-      </ImageView>
+<ImageView fx:id="passwordIcon" fitHeight="35.0" fitWidth="35.0" layoutX="40.0" layoutY="400.0" pickOnBounds="true" preserveRatio="true">
+   <image>
+      <Image url="@lock.png" />
+   </image>
+</ImageView>
 ```
 
-- Add a Label control is required to display the errors generated or if successful.
-Add it by adding a Label control to the form. The label will not have any content on it.
-Rather it will have this content when the checks are done. The label will have the following:
+- Add a Label control is required to display the errors generated or if successful. Add it by adding a Label control to the form. The label will not have any content on it. Rather it will have this content when the checks are done. The label will have the following:
 
 
 - **Properties**
@@ -397,14 +384,13 @@ Rather it will have this content when the checks are done. The label will have t
 - - `fx:id`: invalidDetails
 
 ```xml
-      <!-- A label to display error and success messages -->
-      <Label fx:id="invalidDetails" layoutX="88.0" layoutY="446.0" prefWidth="245.0" textFill="RED" />
+<!-- A label to display error and success messages -->
+<Label fx:id="invalidDetails" layoutX="88.0" layoutY="446.0" prefWidth="245.0" textFill="RED" />
 ```
 
 Buttons will be required to check if the inputs are entered as required or not, close the form, and reset the password.
 
-- Start by creating a **cancel button**. This closes the scene or window when clicked.
-Add a button from the controls. The button will have the following:
+- Start by creating a **cancel button**. This closes the scene or window when clicked. Add a button from the controls. The button will have the following:
 
 
 - **Properties**
@@ -448,11 +434,11 @@ The `On Action` property identifies the button to a function. The button is the 
 Its code is as shown below:
 
 ```xml
-      <Button fx:id="loginButton" layoutX="225.0" layoutY="480.0" mnemonicParsing="false" onAction="#onLoginButtonClick" prefHeight="30.0" prefWidth="90.0" style="-fx-background-color: #0077b6; -fx-border-radius: 5;" text="Login" textFill="WHITE">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </Button>
+<Button fx:id="loginButton" layoutX="225.0" layoutY="480.0" mnemonicParsing="false" onAction="#onLoginButtonClick" prefHeight="30.0" prefWidth="90.0" style="-fx-background-color: #0077b6; -fx-border-radius: 5;" text="Login" textFill="WHITE">
+   <font>
+      <Font size="15.0" />
+   </font>
+</Button>
 ```
 
 - Add a **reset password button**. It has the following:
@@ -479,8 +465,7 @@ Its code:
 <Button fx:id="forgotButton" layoutX="120.0" layoutY="533.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="141.0" style="-fx-background-color: transparent;" text="Forgot Password?" textFill="#a3a3a3" />
 ```
 
-- Run the project.
-The outcome, when run, is as shown in the image below:
+- Run the project. The outcome, when run, is as shown in the image below:
 
 ![The final design](/engineering-education/creating-an-animated-javafx-field-validation-alert/final-design.png "The final design")
 
@@ -488,8 +473,7 @@ The outcome, when run, is as shown in the image below:
 
 - Head over to the `HelloController.java` file. This contains functions that have procedures performed on the form.
 - Delete the available `onHelloButtonClick` function. This was of the deleted `Hello button` that was there during project generation.
-- Delete the `welcomeText` label too.
-The code remaining is as follows:
+- Delete the `welcomeText` label too. The code remaining is as follows:
 
 ```java
 package authentication.login;
@@ -504,37 +488,36 @@ public class HelloController {
 }
 ```
 
-- First import the controls needed that are in the form.
-Do this by adding the following code to the file:
+- First import the controls needed that are in the form. Do this by adding the following code to the file:
 
 ```java
-    @FXML
-    private TextField usernameTextField;
+@FXML
+private TextField usernameTextField;
 
-    @FXML
-    private PasswordField userPassword;
+@FXML
+private PasswordField userPassword;
 
-    @FXML
-    private Label invalidDetails;
+@FXML
+private Label invalidDetails;
 
-    @FXML
-    private Button cancelButton, loginButton, forgotButton;
+@FXML
+private Button cancelButton, loginButton, forgotButton;
 
-    @FXML
-    private ImageView usersIcon, passwordIcon;
+@FXML
+private ImageView usersIcon, passwordIcon;
 ```
 
 - Add a function to close the form when the close button is clicked. This is by adding the following code:
 
 ```java
-    // Creation of methods that are activated on events in the forms
+// Creation of methods that are activated on events in the forms
 
-    // Close form
-    @FXML
-    protected void onCancelButtonClick() {
-        Stage stage = (Stage) cancelButton.getScene().getWindow();
-        stage.close();
-    }
+// Close form
+@FXML
+protected void onCancelButtonClick() {
+    Stage stage = (Stage) cancelButton.getScene().getWindow();
+    stage.close();
+}
 ```
 
 The cancel button invokes the `onCancelButtonClick` function. This is because the `On Action` property is set to `onCancelButtonClick`. This event closes the window immediately.
@@ -544,24 +527,23 @@ The cancel button invokes the `onCancelButtonClick` function. This is because th
 - Add some variables inside the `HelloController` function. These will hold styling that will be reused in the code instead of rewriting them over again. Just above the code for importing the controls into the controller, add the following code:
 
 ```java
-    // Strings which hold css elements to easily re-use in the application
-    protected
-    String successMessage = String.format("-fx-text-fill: GREEN;");
-    String errorMessage = String.format("-fx-text-fill: RED;");
-    String errorStyle = String.format("-fx-border-color: RED; -fx-border-width: 2; -fx-border-radius: 5;");
-    String successStyle = String.format("-fx-border-color: #A9A9A9; -fx-border-width: 2; -fx-border-radius: 5;");
+  // Strings which hold css elements to easily re-use in the application
+  protected
+  String successMessage = String.format("-fx-text-fill: GREEN;");
+  String errorMessage = String.format("-fx-text-fill: RED;");
+  String errorStyle = String.format("-fx-border-color: RED; -fx-border-width: 2; -fx-border-radius: 5;");
+  String successStyle = String.format("-fx-border-color: #A9A9A9; -fx-border-width: 2; -fx-border-radius: 5;");
 ```
 
-- Now, add a function to be executed when the `Login` button is clicked on.
-Its code will look as follows:
+- Now, add a function to be executed when the `Login` button is clicked on. Its code will look as follows:
 
 ```java
-// On login button click
-    @FXML
-    protected void onLoginButtonClick() throws InterruptedException {
-
-        
-    }
+  // On login button click
+  @FXML
+  protected void onLoginButtonClick() throws InterruptedException {
+  
+    
+  }
 ```
 
 In the function, do the following:
@@ -574,49 +556,49 @@ In the function, do the following:
 The code looks as follows:
 
 ```java
-        // In case the Username and Password fields are left blank then display the error message
-        if (usernameTextField.getText().isBlank() || userPassword.getText().isBlank()) {
-            invalidDetails.setStyle(errorMessage);
+// In case the Username and Password fields are left blank then display the error message
+if (usernameTextField.getText().isBlank() || userPassword.getText().isBlank()) {
+  invalidDetails.setStyle(errorMessage);
 
-            // When the username and password are blank
-            if (usernameTextField.getText().isBlank() && userPassword.getText().isBlank()) {
-                invalidDetails.setText("The Login fields are required!");
-                usernameTextField.setStyle(errorStyle);
-                userPassword.setStyle(errorStyle);
-                
+// When the username and password are blank
+if (usernameTextField.getText().isBlank() && userPassword.getText().isBlank()) {
+    invalidDetails.setText("The Login fields are required!");
+    usernameTextField.setStyle(errorStyle);
+    userPassword.setStyle(errorStyle);
+    
 
-            } else // When only the username is blank
-                if (usernameTextField.getText().isBlank()) {
-                    usernameTextField.setStyle(errorStyle);
-                    invalidDetails.setText("The Username or Email is required!");
-                    userPassword.setStyle(successStyle);
-                    
-                    
-                } else // When only the password is blank
-                    if (userPassword.getText().isBlank()) {
-                        userPassword.setStyle(errorStyle);
-                        invalidDetails.setText("The Password is required!");
-                        usernameTextField.setStyle(successStyle);
-                        
-                        
-                    }
-        } else // Check if password is less than four characters, if so display error message
-            if (userPassword.getText().length() < 4) {
-                invalidDetails.setText("The Password can't be less than 4 characters!");
-                invalidDetails.setStyle(errorMessage);
-                userPassword.setStyle(errorStyle);
-                
-                
-            }
-            // If all login details are entered as required then display success message
-            else {
-                invalidDetails.setText("Login Successful!");
-                invalidDetails.setStyle(successMessage);
-                usernameTextField.setStyle(successStyle);
-                userPassword.setStyle(successStyle);
-                
-                
-            }
+} else // When only the username is blank
+if (usernameTextField.getText().isBlank()) {
+    usernameTextField.setStyle(errorStyle);
+    invalidDetails.setText("The Username or Email is required!");
+    userPassword.setStyle(successStyle);
+    
+          
+} else // When only the password is blank
+    if (userPassword.getText().isBlank()) {
+        userPassword.setStyle(errorStyle);
+        invalidDetails.setText("The Password is required!");
+        usernameTextField.setStyle(successStyle);
+        
+        
+    }
+} else // Check if password is less than four characters, if so display error message
+  if (userPassword.getText().length() < 4) {
+      invalidDetails.setText("The Password can't be less than 4 characters!");
+      invalidDetails.setStyle(errorMessage);
+      userPassword.setStyle(errorStyle);
+      
+      
+  }
+// If all login details are entered as required then display success message
+else {
+    invalidDetails.setText("Login Successful!");
+    invalidDetails.setStyle(successMessage);
+    usernameTextField.setStyle(successStyle);
+    userPassword.setStyle(successStyle);
+    
+    
+}
 ```
 
 - Run the application.
@@ -670,25 +652,20 @@ AnimateFX animations for JavaFX controls include:
 
 Check out for additional animations [here](https://github.com/Typhon0/AnimateFX/tree/master/animatefx/src/main/java/animatefx/animation).
 
-- Check the dependencies installed or used in the project by clicking on the `Dependencies` button near the status bar.
-It opens up the Dependencies tab.
-Search for `AnimateFX` and add it to the project.
-When searched, it looks as shown below:
+- Check the dependencies installed or used in the project by clicking on the `Dependencies` button near the status bar. It opens up the Dependencies tab. Search for `AnimateFX` and add it to the project. When searched, it looks as shown below:
 
 ![AnimateFX dependency](/engineering-education/creating-an-animated-javafx-field-validation-alert/animateFX-dependency.png "animateFX-dependency")
 
-- Wait for a few minutes for the download to complete.
-Once done, reload the file or IDE by closing and re-opening it.
-Check if it has been installed in the same Dependencies tab.
+- Wait for a few minutes for the download to complete. Once done, reload the file or IDE by closing and re-opening it. Check if it has been installed in the same Dependencies tab.
 
 - Once installed head over to the `HelloController.java` file.
 - Inside the `onLoginButtonClick()` function, find the procedure checking if the username and password are blank. In it add the code below:
 
 ```java
-                new animatefx.animation.Shake(usernameTextField).play();
-                new animatefx.animation.Wobble(usersIcon).play();
-                new animatefx.animation.Shake(userPassword).play();
-                new animatefx.animation.Wobble(passwordIcon).play();
+new animatefx.animation.Shake(usernameTextField).play();
+new animatefx.animation.Wobble(usersIcon).play();
+new animatefx.animation.Shake(userPassword).play();
+new animatefx.animation.Wobble(passwordIcon).play();
 ```
 
 This code will add a '**Shake**' animation to the inputs when there is an error. It also adds a '**Wobble**' animation to the images.
@@ -696,8 +673,8 @@ This code will add a '**Shake**' animation to the inputs when there is an error.
 - In the procedure that checks if the username is blank, add the following code to it:
 
 ```java
-                    new animatefx.animation.Shake(usernameTextField).play();
-                    new animatefx.animation.Pulse(usersIcon).play();
+new animatefx.animation.Shake(usernameTextField).play();
+new animatefx.animation.Pulse(usersIcon).play();
 ```
 
 The code adds the '**Pulse**' and '**Shake**' effect to the input and icon respectively.
@@ -705,27 +682,25 @@ The code adds the '**Pulse**' and '**Shake**' effect to the input and icon respe
 - In the procedure that checks if the username is blank, add the following code:
 
 ```java
-                    new animatefx.animation.Shake(userPassword).play();
-                    new animatefx.animation.Wobble(passwordIcon).play();
+new animatefx.animation.Shake(userPassword).play();
+new animatefx.animation.Wobble(passwordIcon).play();
 ```
 
 The code also does as the previous one but now to the PasswordField and its icon.
 
-- In the procedure that checks if the password is less than four characters, add a slightly gentle effect.
-Add the following code to it:
+- In the procedure that checks if the password is less than four characters, add a slightly gentle effect. Add the following code to it:
 
 ```java
-                new animatefx.animation.FadeIn(userPassword).play();
-                new animatefx.animation.Wobble(passwordIcon).play();
+new animatefx.animation.FadeIn(userPassword).play();
+new animatefx.animation.Wobble(passwordIcon).play();
 ```
 
 It adds a '**FadeIn**' and a '**Wobble**' effect to the PasswordField and its icon respectively.
 
-- Finally, in the final `else` statement, add a small `Tada` animation to the `invalidDetails` label.
-That animation shows that the process is successful. The code to add is shown below:
+- Finally, in the final `else` statement, add a small `Tada` animation to the `invalidDetails` label. That animation shows that the process is successful. The code to add is shown below:
 
 ```java
-                new animatefx.animation.Tada(invalidDetails).play();
+new animatefx.animation.Tada(invalidDetails).play();
 ```
 
 The final product is as shown in the GIF below:
@@ -744,15 +719,9 @@ The code for this article can be found in [this](https://github.com/justusmbuvi/
 
 In the article, the following have been accomplished:
 
-- Create a JavaFX login form
-- Apply styling to the application
-- Create an input validation method
-- Add effects based on the outcomes of the validation
-- Add animations on the controls
-- Learnt more types of animations available for JavaFX projects
-
-****
-
-### References
-
-N/A
+- Create a JavaFX login form.
+- Apply styling to the application.
+- Create an input validation method.
+- Add effects based on the outcomes of the validation.
+- Add animations on the controls.
+- Learnt more types of animations available for JavaFX projects.
