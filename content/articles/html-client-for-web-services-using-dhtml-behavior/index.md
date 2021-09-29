@@ -6,7 +6,7 @@ url: /html-client-for-web-services-using-dhtml-behavior/
 title: HTML Client for Web Services using DHTML Behavior
 description: In this tutorial we will discuss how web services allow software applications to communicate and exchange data. 
 author: stephen-boro
-date: 2021-09-27T00:00:00-16:50
+date: 2021-09-29T00:00:00-05:40
 topics: []
 excerpt_separator: <!--more-->
 images:
