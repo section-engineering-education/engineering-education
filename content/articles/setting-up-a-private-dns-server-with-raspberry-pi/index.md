@@ -71,7 +71,7 @@ sudo nano /etc/dnsmasq.conf
 
 3.	Press ```CTRL+W``` to locate the line shown here and then delete it. 
 
-#server=/localnet/192.168.0.1
+```#server=/localnet/192.168.0.1```
  
 ![ Edit Server ](/engineering-education/setting-up-a-private-dns-server-with-raspberry-pi/edit-conf-file.png)
 
