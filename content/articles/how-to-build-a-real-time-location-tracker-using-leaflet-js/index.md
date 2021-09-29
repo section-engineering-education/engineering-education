@@ -432,7 +432,7 @@ If we run the above HTML code in our browser, we will have our tracker like the 
 ![Alt Text](/How-to-build-a-real-time-tracker-with-leaflet-js/sample.gif)
 
 ### Conclusion
-In conclusion, we looked at how to add tile layers, use the leaflet search plugin, use the HTML5 geolocation API and bring all these components together to have a real-time tracker using leaflet.js.
+In conclusion, we learnt how to add tile layers, use the leaflet search plugin, use the HTML5 geolocation API and bring all these components together to have a real-time tracker using leaflet.js.
 
 You can find the entire code [here](https://github.com/muyiwexy/Leafletmap)
 
