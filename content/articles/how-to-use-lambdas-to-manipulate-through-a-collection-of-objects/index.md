@@ -23,7 +23,7 @@ Using lambdas is an effective way of writing your codes as some programmers argu
 
 It abstracts all the pipe-line you have to create to find what you are looking for, let use our wallet object as a case study, you will have to create different wallets based on color first before you create another group based on the outcome of the first group with money greater than '#30,000' and this could be time-consuming and also leads to a high time-complexity.
 
-Let code>>>
+Let's code>>>
 First, we are going to create three(3)classes or objects.
 1. Card
 2. Wallet
@@ -390,6 +390,7 @@ Here we analyzed how to iterate through a collection of objects, manipulate it w
 - distinct for non-duplicate objects as it is even hard to remove duplicate values of the different object if you were to hard code it yourself,
 - then we grouped using map functional interface which takes two arguments Card and Long which are objects and then we got the number of counts of different members of each group. I hope we have learned something new today.
 #### Let's keep coding!
+
 
 ### Referrence
 - [TimeComplexity](https://www.mygreatlearning.com/blog/why-is-time-complexity-essential/)
