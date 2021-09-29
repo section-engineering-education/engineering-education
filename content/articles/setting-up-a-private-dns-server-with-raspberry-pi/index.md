@@ -1,5 +1,4 @@
-For computers to speak with one another over the web, all participants within the network must have an IP address: Through these addresses, computers recognize precisely which servers/devices they are communicating with. However, it can be difficult to remember IP addresses and hence the need for DNS servers. Domain Name Systems (DNS) changes domain names into IP addresses. A DNS is like a phone book of web addresses that makes access to pages faster. 
-
+For computers to speak with one another over the web, all participants within the network must have an IP address. Through these addresses, computers recognize precisely which servers/devices they are communicating with. However, it can be difficult to remember IP addresses and hence the need for Domain Name Systems (DNS) servers. DNS servers change domain names into IP addresses. A DNS is like a phone book of web addresses that makes access to pages faster.
 ### Table of contents
 - [Prerequisites](#prerequisites)
 - [How DNS servers work](#how-dns-servers-work)
