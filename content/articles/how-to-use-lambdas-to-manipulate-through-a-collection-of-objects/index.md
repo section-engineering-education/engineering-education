@@ -1,49 +1,47 @@
 
-### INTRODUCTION
+### Introduction
 Java is majorly an object-oriented programming language. The importance of lambdas as a programmer is to
-make your code appear shorter, efficient, and above all functional. Everything in java is an object. 
+make your code appear shorter, efficient, and above all functional. Everything in Java is an object. An object could be physical or imaginary, it just has to do with the way we see the thing about things in general. For example, a wallet is an object that has a method to store money, make money, add cards, get cards, etc.
 
-An object could be physical or imaginary, it just has to do with the way we see the thing about things in general. For example, a wallet is an object that has a method to store money, make money, add cards, get cards, etc.
-<!--more-->
-Example 2: a bucket is an object that has a method to store fluids either solid, liquid, or gas depending on what you want to store it with and get fluid.
-
-Now it gets interesting when you have a collection of wallets with different items in it and you want to access the one with the red card that has money more than #30,000 ('#' is naira in Nigeria currency), this is when lambdas come in because it hard you iterate through a collection without making mistakes and even if it works it's definitely not efficient.
+Example 2: a bucket is an object that has a method to store fluids either solid, liquid, or gas depending on what you want to store it with and get fluid. Now it gets interesting when you have a collection of wallets with different items in it and you want to access the one with the red card that has money more than #30,000 ('#' is naira in Nigeria currency), this is when lambdas come in because it hard you iterate through a collection without making mistakes and even if it works it's definitely not efficient.
 
 
 ### Prerequisite
-- A basic understanding of the Java OOP(Object Oriented Programming) concept
+- A basic understanding of the Java OOP (Object Oriented Programming) concept
 - Basic understanding of lambdas
 
 ### Objectives
 
-1. To enable individuals to understand how lambdas work
-1. To enable individuals to understand how to sort
-1. To enable individuals to understand how to calculate the value of the different object
-1. To enable individuals to understand how to Group a collection of object 
-1. To enable individuals to understand how to check for a distinct object
+1. To enable individuals to understand  how lambdas work
+2. To enable individuals to understand how to sort
+3. To enable individuals to understand how to calculate the value of the different object
+4. To enable individuals to understand how to Group a collection of object 
+5. To enable individuals to understand how to check for a distinct object
 
 ### Importance Of Lambdas
 Using lambdas is an effective way of writing your codes as some programmers argue that it might not be clear enough but the truth is, it is highly efficient and leaves room for no error in your code. 
 
-It abstracts all the pipe-line you have to create to find what you are looking for, let use our wallet object as a case study,  you will have to create different wallets based on color first before you create another group based on the outcome of the first group with money greater than '#30,000' and this could be time-consuming and also leads to a high time-complexity.
+It abstracts all the pipe-line you have to create to find what you are looking for, let use our wallet object as a case study, you will have to create different wallets based on color first before you create another group based on the outcome of the first group with money greater than '#30,000' and this could be time-consuming and also leads to a high time-complexity.
 
 Let code>>>
 First, we are going to create three(3)classes or objects.
 1. Card
-1. Wallet
-1. The Collection_Wallet as a driver class
-1. Input all of them inside into a folder call it Lambda_Collection
+2. Wallet
+3. The Collection_Wallet as a driver class
+4. Input all of them inside into a folder call it Lambda_Collection
 
 ```
+    ```
 package Lambda_Collection;
 
 public enum Card {
     Red,Black,Green,Blue
 }
+    ```
 ```
 
-
 ```
+    ```
     package Lambda_Collection;
 
     import java.util.LinkedList;
@@ -84,6 +82,7 @@ public enum Card {
         return  String.format("%s%.2f %s ",
                  "#",takeMoney(), getCards());
          }
+    ```
 ```
 
 First, you create a general folder or package for writing all your codes, firstly we created an object of card because java is an object-oriented language.
@@ -92,7 +91,9 @@ visible.
 
 
 Below is the code base of how the wallet is going to look like when we use lambdas to display, manipulate through.
+
 ```
+    ```
 package Lambda_Collection;
 
 import java.util.Arrays;
@@ -128,6 +129,7 @@ public class Collection_Wallet {
 
     }
 }
+    ```
 ```
 
 
@@ -153,6 +155,7 @@ Example1
 Selection Base on Card and Amount and then sorting
 
 ```
+    ```
 Predicate<Wallet> takeMoneyAndBlackCard=
                 e -> (e.takeMoney() >= 30000 && e.getCards().equals(Card.Black));
         System.out.printf("%n Display of your sorted list: %n");
@@ -160,6 +163,7 @@ Predicate<Wallet> takeMoneyAndBlackCard=
                 .filter(takeMoneyAndBlackCard)
                 .sorted(Comparator.comparing(Wallet::getCards))
                 .forEach(System.out::println);
+    ```
 ```
 The Comparator interface with its static method comparing, compares two objects of wallet base on its instance method and returns negative if the first is less than than the second, positive if the first is greater, and zero if they are equal, then the forEach terminates the entire pipeline.
 
@@ -173,6 +177,7 @@ Display of your sorted list by Card:
 
 Example2
 ```
+    ```
 Predicate<Wallet> takeMoneyAndBlackCard=
                 e -> (e.takeMoney() >= 30000 && e.getCards().equals(Card.Black));
         System.out.printf("%n Display of your sorted list: %n");
@@ -180,6 +185,7 @@ Predicate<Wallet> takeMoneyAndBlackCard=
                 .filter(takeMoneyAndBlackCard)
                 .sorted(Comparator.comparing(Wallet::takeMoney))
                 .forEach(System.out::println);
+    ```
 ```
 #### Result
 Display of your sorted list money: 
@@ -192,6 +198,7 @@ Display of your sorted list money:
 
 What if we want to find a wallet with money higher than '#30000'? We will use the find first intermediate method
 ```
+    ```
  Predicate<Wallet> takeMoneyAndBlackCard=
                 e -> (e.takeMoney() >= 30000 );
         System.out.printf("%n Display of your sorted list: %n");
@@ -199,6 +206,7 @@ What if we want to find a wallet with money higher than '#30000'? We will use th
                 .filter(takeMoneyAndBlackCard)
                 .findFirst())
                 .get();
+    ```
 ```
 
  Result
@@ -211,6 +219,7 @@ N/B if you are writing these codes make sure that every time you use a Predicate
 
 Function<T,R>
 ```
+    ```
         Function<Wallet, Double> byTakeMoney = Wallet::takeMoney;
         Function<Wallet, Card> byGetCard = Wallet::getCards;
 
@@ -222,6 +231,7 @@ Function<T,R>
                 .sorted(byMoneyThenByCard)
                 .forEach(System.out::println);
 
+    ```
 ```
 
 #### Result
@@ -243,11 +253,14 @@ Function<T,R>
 ```
 
 We will see how to reverse base on values in the collection using lambdas
-```System.out.println("Display by money then by card in reserve order)
+```
+    ```
+System.out.println("Display by money then by card in reserve order)
         list.stream()
                 .sorted(byMoneyThenByCard.reversed())
                 .forEach(System.out::println);`
 
+    ```
 ```
 #### Result
 #### Display by money then by card
@@ -264,10 +277,11 @@ We will see how to reverse base on values in the collection using lambdas
 #4000.00 Blue
  ```
 
-##Grouping
+### Grouping
 
 Mapping Wallet to unique Color of a card on display
 ```
+    ```
        System.out.println("Printing out distinctive amount in the wallet");
 list.stream()
         .map(Wallet::takeMoney)
@@ -282,6 +296,7 @@ list.stream()
                 .sorted()
                 .forEach(System.out::println);
 
+    ```
 ```
 #### Result
 
@@ -297,6 +312,7 @@ Printing out distinctive amounts in the wallet collection
 74000.0
 ```
 #Printing out distinctive cards in the wallet collection
+
 ```Red
 Black
 Green
@@ -311,6 +327,7 @@ The map takes in two arguments telling the JVM(java virtual machine) that
 then we print the outcome by calling the variable in a chain method call to the forEach terminal method that displays the outcome.
 
 ```
+    ```
    Map<Card, Long> walletCountByCard =
                 list.stream()
                         .collect(Collectors.groupingBy(Wallet::getCards,Collectors.counting()));
@@ -319,7 +336,9 @@ then we print the outcome by calling the variable in a chain method call to the 
                 "%s has %d wallet(s)%n", getCards, count));
 
     }
+    ```
 ```
+
 #### Result
 ```Blue has 2 wallet(s)
 Red has 2 wallet(s)
@@ -328,11 +347,15 @@ Black has 5 wallet(s)
 ```
  
 #### Calculation of the sum of all the amounts the all the wallet
-```System. out. print f(
+
+```
+    ```
+System. out. print f(
                  "%nSum of Wallet' salaries (via sum method): %.2f%n",
                  list.stream()
                 .mapToDouble(Wallet::takeMoney)
                 .sum());
+    ```
 ```
 
 #### Result
@@ -342,6 +365,7 @@ Average of Wallet' money (via average method): 39454.55
 ```
 #### Calculating for a specific color of cards
 ```
+    ```
  Predicate<Wallet> takeMoneyAndBlackCard1=
                 e -> (e.getCards().equals(Card.Black) );
         System.out.printf(
@@ -350,11 +374,13 @@ Average of Wallet' money (via average method): 39454.55
                         .filter(takeMoneyAndBlackCard1)
                         .mapToDouble(Wallet::takeMoney)
                         .sum());
+    ```                    
 ```
 #### Note that I used the Predicate interface and also embedded it inside the filter method
 
 #### Result
-``` Sum of Black Card wallet(via average method): 250000.00
+``` 
+Sum of Black Card wallet(via average method): 250000.00
 ```
 
 
@@ -363,7 +389,7 @@ Here we analyzed how to iterate through a collection of objects, manipulate it w
 - sorted for arranging items,
 - distinct for non-duplicate objects as it is even hard to remove duplicate values of the different object if you were to hard code it yourself,
 - then we grouped using map functional interface which takes two arguments Card and Long which are objects and then we got the number of counts of different members of each group. I hope we have learned something new today.
-#### Let keep coding!
+#### Let's keep coding!
 
 ### Referrence
 - [TimeComplexity](https://www.mygreatlearning.com/blog/why-is-time-complexity-essential/)
