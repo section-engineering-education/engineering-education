@@ -96,6 +96,8 @@ This can be achieved using this command:
 
 wpa_passphrase=” ” //here you enter the password of the Wi-Fi
 
+![HOSTAPD.CONF](/setting-up-a-wifi-extender-using-a-raspberry-pi/hostapd-config.png)
+
 #### Step Seven: Adjust the hostapd configuration files
 
 1. Open the following files:
