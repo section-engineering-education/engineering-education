@@ -1,29 +1,47 @@
-### Creating an auto-logout feature using JavaScript
+---
+layout: engineering-education
+status: publish
+published: true
+url: /autologout-js/
+title: Creating an auto-logout feature using JavaScript
+description: In this article, we will learn how to create an auto-logout feature using JavaScript. We will look at the implementation with the help of a simple login interface based on PHP as the backend.
+author: terrence-aluda
+date: 2021-09-29T00:00:00-11:05
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-#### Introduction
-When implementing security for our applications, we will at one point check if the user is still actively using the screen and decide whether to keep him/her logged in or not. This is particularly important if the application handles sensitive or private data to the user, for example, bank account details. We will see how to do that using JavaScript basing on the input events such as keypresses, scrolls, etc.
+  - url: /engineering-education/autologout-js/hero.jpg
+    alt: Creating an auto-logout feature using JavaScript Hero Image
+---
+When implementing security for our applications, we will at one point check the user's activeness in a tab. It is always a good practice to log the user out automatically based on his/her activeness. This is particularly important if the application handles the user's sensitive or private data. For example, bank account details. 
+<!--more-->
+We will see how to do that using JavaScript based on the input events such as keypresses, scrolls, etc.
 
-#### Pre-requisites
-1. A basic knowledge of JavaScript
+### Prerequisites
+To follow along with this tutorial, you should have:
+1. A basic knowledge of JavaScript.
+2. A basic knowledge of HTML and CSS.
+3. A basic knowledge of PHP (optional).
+1. A basic knowledge of JavaScript.
 2. A basic knowledge of HTML and CSS.
 3. A basic knowledge of PHP(though not that necessary).
 
 You can use any technology/language for the backend login script.
 
-#### Brief overview
-We will look at an autologout implementation using JavaScript with the help of a simple login interface based on PHP as the backend. The display page will feature a counter that counts the number of seconds remaining before the user is logged out due to inactivity. The timer for auto logging out will be reset if any of the events is detected.
-The demo is found [here](https://sacco.terrence-aluda.com/sacco/eng-edtest.html).
+### Brief overview
+We will look at an auto-logout feature implementation using JavaScript with the help of a simple login interface based on PHP as the backend. The display page will feature a counter that counts the number of seconds remaining before the user is logged out due to inactivity.
 
-#### Getting started
-We will first create User Interface files in HTML and CSS for the login and display screens.
+The timer for auto logging out will be reset if any of the events are detected. The demo is found [here](https://sacco.terrence-aluda.com/sacco/eng-edtest.html).
+
+### Getting started
+We will first create user interface files in HTML and CSS for the login and display screens.
 
 > I won't explain the UI snippets because that's sort of beyond the scope of this article and also not the main aim of this. You can create any of your own, it is not strictly limited to the ones I use.
 
 > The login credentials are Phone Number - `1234567890` and Password- `1111`.
 
-
 **Login page**
-
 The code is as follows:
 
 ```html
@@ -118,11 +136,12 @@ The code is as follows:
 
 ```
 
-This is the login page where the user enters the credentials to be allowed into the system.
+This is the login page where the user enters the credentials to be logged into the system.
 The style sheets are hosted, so you can click the link provided above to view if your browser doesn't render the UI properly due to CORS policy.
+
 Bootstrap 5 is used for styling.
 
-*Output*
+_Output_
 
 ![Login page](/engineering-education/autologout-js/screen-one.png)
 
@@ -189,10 +208,12 @@ Bootstrap 5 is used for styling.
 
 </html>
 ```
-This is the display page where the user will see the countdown before being logged out after a certain period of inactivity.
-Note that a method is fired in the body's `onload` attribute. We will talk about that in the JavaScript code.
 
-*Output*
+This is the display page where the user will see the countdown before being logged out after a certain period of inactivity.
+
+> Note that a method is fired in the body's `onload` attribute. We will talk about that in the JavaScript code.
+
+_Output_
 
 ![Display page](/engineering-education/autologout-js/screen-two.png)
 
@@ -204,7 +225,7 @@ Note that a method is fired in the body's `onload` attribute. We will talk about
 require_once "connection.php";
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
-  
+
     $password = trim($_POST["password"]);
     $phone = trim($_POST["PhoneNo"]);
     $sql = "SELECT * FROM customers WHERE PhoneNo = '$phone' AND password = '$password'";
@@ -217,127 +238,134 @@ $mysqli->close();
 ?>
 ```
 
-This is the backend script. Again, you can write yours in any language of your preference.
+This is the backend script. Again, you can write yours in any language of your preference. It uses a `POST` method for taking in the parameters, removes any trailing spaces then runs a simple `SELECT` query to check if the credentials are present. 
 
-It uses a POST method for taking in the parameters, removes any trailing spaces then runs a simple SELECT query to check if the credentials are present. If the credentials are OK, we redirect the user to the display page.
-
+If the credentials are OK, we redirect the user to the display page.
 
 #### Working of the three files
-The three files are connected in that, the user first accesses the login page, signs in, and then after the PHP script authenticates the user, he is allowed to access the display page. After a  set period of inactivity, the display page redirects to the login page.
+The three files are connected in that, the user first accesses the login page and signs in. After the PHP script authenticates the user, they are allowed to access the display page. After a set period of inactivity, the display page redirects to the login page.
 
 ```bash
 Login -> [Backend aunthentication] -> Display -> (If user is inactive) -> Login
- ```
+```
 
 #### JavaScript
 This is where the autologout feature is 'made'.
 
 ```javascript
-  let warningTimeout = 5000;
-  let warningTimerID;
-  let counterDisplay = document.getElementById('numCount');
-  let logoutUrl = "https://sacco.terrence-aluda.com/sacco/eng-edtest.html";
+let warningTimeout = 5000;
+let warningTimerID;
+let counterDisplay = document.getElementById("numCount");
+let logoutUrl = "https://sacco.terrence-aluda.com/sacco/eng-edtest.html";
 ```
 
-We first initialize the variable for storing the timeout duration, timer ID, the element where the counter number will be displayed, and the URL address where the script will redirect to after the logout.
+We first initialize the variables:
+1. `warningTimeout` - For storing the timeout duration.
+2. `warningTimerID` - For storing the timer ID. 
+3. `counterDisplay` - For storing the element where the counter number will be displayed. 
+4. `logoutUrl` - For storing the URL address where the script will redirect to after the logout.
 
 ```javascript
-  function startTimer() {
-    // window.setTimeout returns an ID that can be used to start and stop the timer
-    warningTimerID = window.setTimeout(idleLogout, warningTimeout);
-    animate(counterDisplay, 5, 0, warningTimeout);
-  }
+function startTimer() {
+  // window.setTimeout returns an ID that can be used to start and stop the timer
+  warningTimerID = window.setTimeout(idleLogout, warningTimeout);
+  animate(counterDisplay, 5, 0, warningTimeout);
+}
 ```
 
-This is the method for starting the timer. `window.setTimeout()` returns an ID that will be used to start and stop the timer. After the timeout is attained, the `idleLogout()` method is called which logs the user out. The counter is animated using the `animate()` method. We will talk about these methods in detail in the next parts.
+This is the method for starting the timer. `window.setTimeout()` returns an ID that will be used to start and stop the timer. After the timeout is attained, the `idleLogout()` method is called which logs the user out. 
 
-> The timer is set to 5 seconds to save our time during testing the system, but you can change the values appropriately eg 3 minutes, 200 seconds, etc.
+The counter is animated using the `animate()` method. We will talk about these methods in detail in the next parts.
+
+> The timer is set to 5 seconds to save our time during testing the system, but you can change the values appropriately e.g. 3 minutes, 200 seconds, etc.
 
 > We also set the animated counter to run for 5 seconds due to the timer duration. You will set it to match the timer value you use like 100 for 100 seconds, 30 for 30 seconds, etc.
 
 > Another point to note is that due to some User Experience(UX) issues, it is recommended to set two timers, one for waiting for the inactive session and another for warning the user. In this way, you can set the warning timer off after displaying a modal with the counter instead of the counter running the entire time of the program. For example, 10 minutes for waiting for the inactive state then 30 seconds for displaying the popup with the counter. You can have a look at [these](https://stackoverflow.com/questions/23023916/how-to-implement-auto-logout-in-javascript) suggestions connected to the same at StackOverflow.
 
 ```javascript
-  function resetTimer() {
-    window.clearTimeout(warningTimerID);
-    startTimer();
-  }[]
+function resetTimer() {
+  window.clearTimeout(warningTimerID);
+  startTimer();
+}
+[];
 ```
 
-This one is pretty straightforward. It clears the timeout that matches the timeout ID. It is fired after any of the events is detected.
+This one is pretty straightforward. It clears the timeout that matches the timeout ID. It is fired after any of the events are detected.
 
 ```javascript
-  function idleLogout() {
-    window.location = logoutUrl;
-  }
+function idleLogout() {
+  window.location = logoutUrl;
+}
 ```
 
 This function simply redirects to the login page after a period of inactivity.
 
 ```javascript
-      function animate(obj, initVal, lastVal, duration) {
+function animate(obj, initVal, lastVal, duration) {
+  let startTime = null;
 
-        let startTime = null;
+  //get the current timestamp and assign it to the currentTime variable
 
-        //get the current timestamp and assign it to the currentTime variable
+  let currentTime = Date.now();
 
-        let currentTime = Date.now();
+  //pass the current timestamp to the step function
 
-        //pass the current timestamp to the step function
+  const step = (currentTime) => {
+    //if the start time is null, assign the current time to startTime
 
-        const step = (currentTime ) => {
-
-        //if the start time is null, assign the current time to startTime
-
-            if (!startTime) {
-            startTime = currentTime ;
-            }
-
-        //calculate the value to be used in calculating the number to be displayed
-
-            const progress = Math.min((currentTime  - startTime) / duration, 1);
-
-        //calculate what is to be displayed using the value gotten above
-        
-            displayValue = Math.floor(progress * (lastVal - initVal) + initVal);
-            obj.innerHTML = displayValue;
-
-        //checking to make sure the counter does not exceed the last value(lastVal)
-
-            if (progress < 1) {
-                window.requestAnimationFrame(step);
-            }else{
-                window.cancelAnimationFrame(window.requestAnimationFrame(step));
-            }
-        };
-
-        //start animating
-        window.requestAnimationFrame(step);
+    if (!startTime) {
+      startTime = currentTime;
     }
+
+    //calculate the value to be used in calculating the number to be displayed
+
+    const progress = Math.min((currentTime - startTime) / duration, 1);
+
+    //calculate what is to be displayed using the value gotten above
+
+    displayValue = Math.floor(progress * (lastVal - initVal) + initVal);
+    obj.innerHTML = displayValue;
+
+    //checking to make sure the counter does not exceed the last value(lastVal)
+
+    if (progress < 1) {
+      window.requestAnimationFrame(step);
+    } else {
+      window.cancelAnimationFrame(window.requestAnimationFrame(step));
+    }
+  };
+
+  //start animating
+  window.requestAnimationFrame(step);
+}
 ```
 
 This is the `animate()` function. I clearly explained it in this [article](https://www.section.io/engineering-education/javascript-animation-counter/). Please check it out.
 
-In a summary, it gets the current timestamp and the timestamp the page loaded. It then calculates what is to be displayed using the difference between the two timestamps and displays it in element. In our case, it displays it in a h5 element in the display page:
+In summary, it gets the current timestamp and the timestamp the page loaded. It then calculates what is to be displayed using the difference between the two timestamps and displays it in element. 
+
+In our case, it displays it in a `h5` element in the display page:
 
 ```html
-<h5 style="color: #0af53a" id="numCount"><h5>
+<h5 style="color: #0af53a" id="numCount"><h5></h5></h5>
 ```
 
 ```javascript
-  function startCountdown() {
-    
-    document.addEventListener("mousemove", resetTimer);
-    document.addEventListener("mousedown", resetTimer);
-    document.addEventListener("keypress", resetTimer);
-    document.addEventListener("touchmove", resetTimer);
-    document.addEventListener("onscroll", resetTimer);
-    document.addEventListener("wheel", resetTimer);
-    startTimer();
-  }
+function startCountdown() {
+  document.addEventListener("mousemove", resetTimer);
+  document.addEventListener("mousedown", resetTimer);
+  document.addEventListener("keypress", resetTimer);
+  document.addEventListener("touchmove", resetTimer);
+  document.addEventListener("onscroll", resetTimer);
+  document.addEventListener("wheel", resetTimer);
+  startTimer();
+}
 ```
-Lastly, we have the `startCountdown()` method. This is fired when the body loads in the body's `onload` attribute in the display page.
-When the events(`mousemove, mousedown, keypress, touchmove, onscroll, wheel`) contained in the `AddEventListener()` methods are detected, the `resetTimer()` method is called to reset the timer so that the user stays logged in.
+
+Lastly, we have the `startCountdown()` method. This is fired when the body loads in the body's `onload` attribute on the display page.
+
+When the events (`mousemove, mousedown, keypress, touchmove, onscroll, wheel`) contained in the `AddEventListener()` methods are detected, the `resetTimer()` method is called to reset the timer so that the user stays logged in.
 
 Here is the full JavaScript code.
 
@@ -396,7 +424,7 @@ Here is the full JavaScript code.
             const progress = Math.min((currentTime  - startTime) / duration, 1);
 
         //calculate what is to be displayed using the value gotten above
-        
+
             displayValue = Math.floor(progress * (lastVal - initVal) + initVal);
             obj.innerHTML = displayValue;
 
@@ -416,14 +444,17 @@ Here is the full JavaScript code.
 ```
 
 ### Summary
-We looked at creating an autologout feature in pure javascript. We looked at the working of the files and the JavaScript code in detail.
+We looked at creating an auto-logout feature in pure JavaScript. We also looked at the working of the files and the JavaScript code in detail.
 
 ### Key research area
+The code does not keep track of the pages in different tabs. For example, if you had logged in to the same page in different tabs, the events only reset the time in the active tab. This means that the other tab will still log the user out. The goal is to reset the timer for all the tabs.
 
-The code does not keep track of the pages in different tabs. For example, if you had logged in to the same page in different tabs, the timer resets in the active tab does not affect the other tab in that the other tab will autologout. Having read this, you can delve into it and make that improvement.
-The GitHub repository for contributing to the code is found [here](https://github.com/Agusioma/autologout-javascript). 
+Having read this, you can delve into it and make that improvement. The GitHub repository for contributing to the code is found [here](https://github.com/Agusioma/autologout-javascript).
 
 ### Conclusion
-The user's private data is very key. It's always important to let no one else see another person's private information. The autologout is a good workaround around that.
+The user's private data is very key. It's always important to let no one else see another person's private information. The auto-logout feature is a good solution for that.
 
-Thank you, reader. Have a great read.
+Happy coding!
+
+---
+Peer Review Contributions by: [Dawe Daniel](/engineering-education/authors/dawe-daniel/)
