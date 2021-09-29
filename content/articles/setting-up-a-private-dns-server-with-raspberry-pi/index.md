@@ -14,14 +14,18 @@ For computers to speak with one another over the web, all participants within th
 
 ### How DNS servers work
 
-Devices question one or more DNS servers to get access to the correct domain name – IP address translation, a process that can be time-consuming. Therefore, it would be beneficial to shorten the time spent on this process by having a private and dedicated DNS server. A Raspberry Pi, which is small but can be used for various purposes, would be beneficial in such a scenario.
+Devices question one or more DNS servers to get access to the correct domain name – IP address translation, a process that can be time-consuming. Therefore, it would be beneficial to shorten the time spent on this process by having a private and dedicated DNS server. A [Raspberry Pi](https://www.watelectronics.com/know-all-about-raspberry-pi-board-technology/), which is small but can be used for various purposes, would be beneficial in such a scenario.
+The [DNS](https://www.techtarget.com/searchnetworking/definition/domain-name-system) offers a way of mapping domain names to IP’s.  It converts the names requests into IP addresses, which are used by servers and user devices. For instance, when a URL, web address, is keyed into a browser, the DNS servers provides the IP address of the webserver that is linked to that particular name.
+For example, a domain name such as ```www.google.com```. The DNS resolver is queried and responds with an IP address or an error. In this case, the DNS server would respond with ```172.217.170.174``` which is the IP address for google.
+
 
 ### Functions of a DNS
 
 Below are three significant benefits that a private Domain Name System would offer:
-**Speed** – a query to the web may sometimes have to pass through various servers and routers before the user can access a web page. This time is mostly in milliseconds. However, when a private DNS is set up, this query does not have to pass through the various server, and hence the delivery time will be shorter and more efficient.
-- *Privacy* – to gain access to the correct domain name, information from a device has to be sent to an external server which in turn creates a trail over the internet as opposed to when a private DNS is used, and information does not have to leave the internal network.
-- *Security* – hosting a private DNS server offers increased privacy because the owner gets complete control over entries. This, in turn, protects the server from malicious entries that hackers could facilitate. 
+
+- **Speed** – a query to the web may sometimes have to pass through various servers and routers before the user can access a web page. This time is mostly in milliseconds. However, when a private DNS is set up, this query does not have to pass through the various server, and hence the delivery time will be shorter and more efficient.
+- **Privacy** – to gain access to the correct domain name, information from a device has to be sent to an external server which in turn creates a trail over the internet as opposed to when a private DNS is used, and information does not have to leave the internal network.
+- **Security** – hosting a private DNS server offers increased privacy because the owner gets complete control over entries. This, in turn, protects the server from malicious entries that hackers could facilitate. 
 
 ### Setting up a DNS Server on Raspberry PI
 
@@ -29,16 +33,22 @@ Below are three significant benefits that a private Domain Name System would off
 
 The first step of the process is updating packages using the following commands:
 
-```sudo apt update```
+```bash
+sudo apt update
+```
 
-```sudo apt upgrade```
+```bash
+sudo apt upgrade
+```
 
 ![ Updating Packages](/engineering-education/setting-up-a-private-dns-server-with-raspberry-pi/update.png) 
 
 #### Step 2: DNSMasq package installation on the Raspberry 
-The next step is installing the `DNSMasq` utility, which is essential to set up this server.
+The next step is installing the `DNSMasq` utility, which is essential to set up this server. [DNSMasq](https://wiki.debian.org/dnsmasq) helps in easy configuration of the DNS forwarder. It resolves DNS queries for various devices available on the network or the devices it is running on. On the Raspberry Pi, it manages the limited resources used while setting up the DNS server. 
 
-```sudo apt install dnsmasq```
+```bash
+sudo apt install dnsmasq
+```
  
 ![ Install DNSMasq ](/engineering-education/setting-up-a-private-dns-server-with-raspberry-pi/install-dnsmasq.png)
 
@@ -47,7 +57,9 @@ The next step is installing the `DNSMasq` utility, which is essential to set up 
 This step is designed to ensure the best performance of the DNS server.
 1.	Edit `dnsmasq.conf` file using:
 
-```sudo nano /etc/dnsmasq.conf```
+```bash
+sudo nano /etc/dnsmasq.conf
+```
 
 2.	Use CTRL+W to search and remove the # sign in front of the following lines:
 
@@ -83,11 +95,15 @@ Changing the size of the cache to a more significant number helps reduce the res
 
 6. Restart the DNSMasq using the command below: 
 
-```sudo systemctl restart dnsmasq```
+```bash
+sudo systemctl restart dnsmasq
+```
 
 7. check the status of the DNS using the command below:
 
-```sudo systemctl standing dnsmasq```
+```bash
+sudo systemctl standing dnsmasq
+```
  
 ![ Restart and Checking Status ](/engineering-education/setting-up-a-private-dns-server-with-raspberry-pi/status.png)
 
@@ -95,11 +111,15 @@ Changing the size of the cache to a more significant number helps reduce the res
 
 1. The server is tested using the dig command.
 
-```dig <domain> @localhost```
+```bash
+dig <domain> @localhost
+```
 
 For instance:
 
-```dig section.io/kb @localhost```
+```bash
+dig section.io/kb @localhost
+```
  
 ![ DNS Testing ](/engineering-education/setting-up-a-private-dns-server-with-raspberry-pi/responsetime1.png)
 
