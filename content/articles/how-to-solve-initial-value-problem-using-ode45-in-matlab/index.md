@@ -15,6 +15,7 @@ images:
     alt: MATLAB solve Initial Value Problem example image
 ---
 Matlab uses the `ode45` function as the standard solver for ordinary differential equations of fifth-order (ode45). The `ode45` function applies Runge-Kutta formulae with the time step variable for easy computation. 
+<!--more-->
 ### Introduction
 `ode45` is used to solve equations of the form:
 
