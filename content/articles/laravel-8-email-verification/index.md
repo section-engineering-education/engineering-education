@@ -131,7 +131,7 @@ Laravel 8 distanced itself from its scaffolding for authentication and supports 
 
 Jetstream provides login, registration, 'email verification', two-factor authentication, session management, API via Laravel Sanctum, as well as optional features for team management. 
 
-You can learn more about the new Laravel features including authentication scaffolding from [here](/laravel-8-new-features/).
+You can learn more about the new Laravel features including authentication scaffolding from [here](/engineering-education/laravel-8-new-features/).
 
 This tutorial assumes you already have a Laravel project set up and running. If you do not have a project configuration for Laravel, you can do so before proceeding further.  
 

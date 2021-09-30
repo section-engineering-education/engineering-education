@@ -33,7 +33,7 @@ We will also cover working with the Test Python Package Index and GitHub Actions
 - Understanding of Git and GitHub.
 - Creating a GitHub repository.
 - Creating a Test PyPI account.
-- Understanding how to [build Python packages](/building-a-python-package-and-publishing-on-pypi/).
+- Understanding how to [build Python packages](/engineering-education/building-a-python-package-and-publishing-on-pypi/).
 
 ### What is CI/CD?
 CI/CD is a practice used by organizations to ship applications to customers faster and without common errors.
@@ -303,7 +303,7 @@ The source code for this repository can be found on [GitHub](https://github.com/
 Happy building!
 
 ### Further reading
-- [Introduction to GitHub Actions](/github-actions/)
+- [Introduction to GitHub Actions](/engineering-education/github-actions/)
 - [How to Build a Python Package?](https://edeediong.me/how-to-build-a-python-package)
 
 ---

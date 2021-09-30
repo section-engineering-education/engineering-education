@@ -17,7 +17,7 @@ images:
 Like C++, Java, Smalltalk, and many others, Python is an object-oriented language. Python, however, is multi-paradigmatic, meaning that you can choose the paradigm best suited for the task, but its central paradigm is object-oriented programming.
 <!--more-->
 
-The term *object* refers to a collection of data (attributes) with a set of methods for accessing and modifying that data.  We discussed global variables and functions in [Part 1](/abstraction-concepts/), but here we describe abstraction concepts relevant to objects.
+The term *object* refers to a collection of data (attributes) with a set of methods for accessing and modifying that data.  We discussed global variables and functions in [Part 1](/engineering-education/abstraction-concepts/), but here we describe abstraction concepts relevant to objects.
 
 ### Objects and Classes
 **Objects** consist of attributes and methods. **Attributes** are variables that are part of an object, and **methods** are somewhat like functions stored in an attribute.
@@ -26,7 +26,7 @@ Object-oriented design is useful when thinking of the relationships classes and 
 
 In order to plan out what classes and methods to use, it may be helpful to think of the description of the problem and relate nouns with possible classes, verbs with methods, and adjectives with attributes.
 
-**Classes** are a set of objects. Similar to the namespace definitions that we covered in [Part 1](/abstraction-concepts/), class namespaces refer to the special namespace that all the code in the `class` statement will execute.
+**Classes** are a set of objects. Similar to the namespace definitions that we covered in [Part 1](/engineering-education/abstraction-concepts/), class namespaces refer to the special namespace that all the code in the `class` statement will execute.
 
 ### Inheritance
 **Inheritance** involves creating specialized classes of objects from general ones. One class may be the **subclass** of one or even multiple classes (**multiple inheritance**). By using more than one superclass (a class from which subclasses can be created), you can create *orthogonal* pieces of functionality that are independent and distinct.
