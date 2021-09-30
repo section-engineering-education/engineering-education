@@ -13,13 +13,8 @@ images:
  - url: /engineering-education/lru-cache-implementation-in-javascript/hero.jpg
    alt: Cache LRU JavaScript Image
 ---
-The cache holds data in RAM. This makes the retrieval of data much faster than typical databases where information is stored on a disk.
 <!--more-->
-RAM has less space compared to the disk. This is why caching algorithms such as LRU can help invalidate entries that have not been used recently in the RAM.
-
 The cache holds data in RAM. This makes the retrieval of data much faster than typical databases where data is stored on a disk. RAM has less space compared to the disk. This is why caching algorithms, such as least recently used (LRU) can help invalidate entries that have not been used recently in the RAM.
-
-LRU can also be used to invalidate entries that have been frequently used.
 
 ### Key takeaways:
 
@@ -46,7 +41,7 @@ LRU stands for Least Recently Used. It is a cache eviction policy that allows on
 
 For example, let's say we have a cache of size 4 slots and we have 4 items: `[red, green, white, blue]` in the cache. We want to add another item: `black`. We will add `black` at the beginning of the cache. So now we have `[black, red, green, white, blue]`. What this shows, is the temporal order of access to items.
 
-The most recent item is `black`, followed by `red, green, white` and finally `blue`. When we want to add `black` to our cache, we find that our cache of size four does not have the space needed to add `black`, since the cache is already full.
+The most recent item is `black`, followed by `red, green, white` and finally `blue`. When we want to initially add `black` to our cache, we find that our cache of size four does not have the space needed to add `black`, since the cache is already full.
 
 Before adding `black` to the cache, we need to evict an item first. This is where our LRU eviction policy comes to play.
 
@@ -91,7 +86,7 @@ In our hash table, we will remove the value(address) that is associated with our
 
 The shifting, in this case, is done in 0(1) time complexity.
 
-Before adding `black`, we need to search first and see if it is available in the cache. To search for black, we go to the hash table. In the hash table, key `black` will not have a corresponding value attached to it. This means that it is not present in our cache. This allows us to find out whether an item is in the cache with just O(1) time complexity.
+Before adding `black`, we need to search first and see if it is available in the cache. To search for black in an optimal way, we go to the hash table. In the hash table, key `black` will not have a corresponding value attached to it. This means that it is not present in our cache. This allows us to find out whether an item is in the cache with just O(1) time complexity.
 
 ### Implementing LRU Cache in JavaScript.
 - Visit [LeetCode](https://leetcode.com/) and sign in to your account.
