@@ -1,18 +1,33 @@
-﻿### Introduction
+﻿---
+layout: engineering-education
+status: publish
+published: true
+url: /integrating-youtube-videos-into-a-django-app/
+title: Integrating Youtube Videos Into a Django App
+description: This article will discuss the simple steps required in adding youtube videos into a Django app. The reader will also learn how to adjust the youtube videos into required sizes.
+author: samuel-mwangi
+date: 2021-08-03T00:00:00-10:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+ - url: /engineering-education/integrating-youtube-videos-into-a-django-app/hero.png
+   alt: Integrating Youtube Videos Into a Django App Hero Image
+
+---
+### Introduction
 Modern Organisations, bloggers, companies, and brands are featuring both pictures and videos on their websites to strengthen their content and to also promote their YouTube channels.
+<!--more-->
 
 It is very convenient because using YouTube unlike directly uploading a video, saves you space, cost, and compatibility issues. Django being on the rise, it is important to know how this can be achieved using Django.
 
 We will create a simple blogging app and embed youtube videos in it so that when we write a blog, we can add a youtube video to it.
 
 ### Prerequisites
-
 1.  Install and set up a programming environment for python 3
 2.  Have some fundamental knowledge in python and the Django framework
 
 #### Step 1: Setting up the environment
-
 We will begin by creating a directory that will contain our project.
 Open the command line and type in the following:
 
@@ -27,29 +42,29 @@ cd projectX
 ```
 
 Then create and activate the virtual environment `.venv` which shall help us isolate our project and all its dependacies from other projects in our computer.
-Cteating (for windows):
+
+The creating process for windows will be as follows:
 
 ```bash
 py -m venv .venv
 ```
-Activating(for windows):
+
+For the activation:
+
 ```bash
 .venv\Scripts\activate.bat
 ```
 
-#### Step 2: downloading required packages
-
-Now we can install Django and Django-embed-video simultaneously:
-
- - Django : this is the Django framework package.
- - Django-embed-video : this is the Django app that makes the embeding of videos from Youtube, Vimeo and music from soundcloud easy.
+#### Step 2: Downloading required packages
+Now we can install Django and Django-embed-video simultaneously using the following command:
 
 ```bash
 pip install django django-embed-video
 ```
 
-#### Step 3: Creating the Django Project 
+> Django is the Django framework package while Django-embed-video is the Django app that makes the embeding of videos from Youtube, Vimeo and music from soundcloud easy.
 
+#### Step 3: Creating the Django Project 
 Create a Django project using the following command:
 
 ```bash
@@ -68,10 +83,9 @@ Create a Django app called `blog` inside the project folder:
 py manage.py startapp blog
 ```
 
-### Step 4: Setting up the backend
+#### Step 4: Setting up the backend
 
-#### 4.1: Register apps
-
+##### 4.1: Register apps
 In `settings.py` under `INSTALLED_APPS` add our new apps embed_video and blog:
 
 ```python
@@ -82,8 +96,7 @@ INSTALLED_APPS = [
 ]
 ```
 
-#### 4.2: Creating the models
-
+##### 4.2: Creating the models
 In `models.py` create the following model and remember to make the necessary import `EmbedVideoField` as shown below:
 
 ```python
@@ -100,8 +113,10 @@ class  tutorial(models.Model):
 	def  __str__(self):
 		return  str(self.tutorial_Title) if  self.tutorial_Title  else  " "
 ```
-The `tutorial` class is where we create our model, in `Meta` class we told Django the plural name of our model(if there is more than one object)  and the `__str__` function ensures that our objects are listed with their name properties in Django admin ie: the tutorials shall be listed according to their `tutorial_Title`.
 
+The `tutorial` class is where we create our model. In `Meta` class we told Django the plural name of our model(if there is more than one object).
+
+The `__str__` function ensures that our objects are listed with their name properties in Django admin ie: the tutorials shall be listed according to their `tutorial_Title`.
 
 Then run the following commands respectively to make migrations and migrate our model:
 
@@ -115,9 +130,9 @@ py manage.py migrate
 
 `makemigrations` tells Django to store the new changes made in our models and `migrate` tells Django to apply those changes to the database.
 
-#### 4.3: Registering the models
+##### 4.3: Registering the models
+In order to have access to our model using Django admin, we have to register our model in `admin.py`.
 
-In order to have access to our model using Django admin we have to register our model in `admin.py`.
 Import `AdminVideoMixin` and `tutorial` then register your model as shown below:
 
 ```python
@@ -131,12 +146,13 @@ class  tutorialAdmin(AdminVideoMixin, admin.ModelAdmin):
 admin.site.register(tutorial, tutorialAdmin)
 ```
 
-#### 4.4: Creating the views
-
+##### 4.4: Creating the views
 We will need two views namely `blog` and `blog_detail`. The blog will be responsible for fetching all the objects when `blog.html` is requested.
+
 Blog_detail will be responsible for fetching the contents of a specific object when `blogdetail.html` is requested.
 
 In `views.py`:
+
 ```python
 from .models  import  tutorial
 #Create your views here.
@@ -155,10 +171,10 @@ def  blog_detail(request,pk):
 	}
 	return  render(request, 'blogdetail.html', context)
 ```
-Tut in `blog()` fetches all objects, in that case all the tutorials created while Tut in `blog_detail()` fetches a specific tutorial that matches the requested id, in this case `pk` 
 
-#### 4.5: Configuring urls
+Tut in `blog()` fetches all objects, in this case all the tutorials created, while Tut in `blog_detail()` fetches a specific tutorial that matches the requested id, in this case `pk` 
 
+##### 4.5: Configuring URL's
 Inside `urls.py` in the `demo` directory we will point the root `URLconf` at the `blog.urls` module. 
 Remember to add an import for the `from django.urls import path, include`:
 
@@ -172,7 +188,7 @@ urlpatterns = [
 ```
 We used the `include()` to reference `blog.urls`
 
-Then create another `urls.py` file in your blog directory and then point the urls to their corresponding views:
+Then create another `urls.py` file in your blog directory and then point the urls to their corresponding views as shown below:
 
 ```python
 from  django.urls  import  path
@@ -184,22 +200,22 @@ path('<int:pk>/', views.blog_detail, name='blog_detail'),
 ]
 ```
 
-#### 4.6: Creating the superuser account
+##### 4.6: Creating the superuser account
+The superuser account will enable us to login into our site as an admin to post, update, or delete a blog. 
 
-The superuser account will enable us to login into our site as an admin and post our blogs, delete them, and update them. 
-Create the superuser account using the following commands which will prompt you to enter your username, email and password:
+To create a superuser account, use the following commands which will prompt you to enter your username, email and password:
 
 ```bash
 py manage.py createsuperuser
 ```
 
-### Step 5: Frontend
-
+#### Step 5: Frontend
 Create a new directory in the `blog` directory and name it `templates` then create three files named `base.html`, `blog.html`, and `blogdetail.html` inside it.
+
 In `base.html`, we will add the primary HTML code that is shared by both `blog.html` and `blogdetail.html`.
 
 In `base.html`:
-```HTML
+```html
 <!doctype  html>
 <html  lang="en">
 	<head>
@@ -277,20 +293,26 @@ In `blogdetail.html` we will display the title, body and video of the selected t
 {%endblock%}
 ```
 
-The tag `{% video Tut.tutorial_Video 'tiny' %}` is responsible for rendering our youTube video.
-The videos can be rendered in different sizes as follows: tiny (420x315), small (480x360), medium (640x480), large (960x720) and huge (1280x960) ie: {% video Tut.tutorial_Video 'huge' %} can be used for huge videos.
-We can also set custom dimensions for the video if the default ones don't fit our requirements ie:
-{% video Tut.tutorial_Video '600x400' %}
+The tag `{% video Tut.tutorial_Video 'tiny' %}` is responsible for rendering our YouTube video.
 
-### Step 6: Testing
+The videos can be rendered in different sizes as follows:
+- tiny (420x315),
+- small (480x360),
+- medium (640x480),
+- large (960x720) and huge (1280x960) 
 
+{% video Tut.tutorial_Video 'huge' %} can be used for huge videos.
+
+We can also set custom dimensions for the video if the default ones don't fit our requirements. For example, {% video Tut.tutorial_Video '600x400' %}.
+
+### Step 6: Testing our Application
 Now that we have set up everything, we can run our app, we can run the server:
 
 ```bash
 py manage.py runserver
 ```
 
-then login into your [admin site](http://127.0.0.1:8000/admin/) and add a few dummy tutorials to your site for testing purposes.
+then login into the [admin site](http://127.0.0.1:8000/admin/) and add a few dummy tutorials to our site for testing purposes.
 
 ![my admin site after adding a few tutorials](/engineering-education/Integrating-YouTube-videos-into-a-Django-app/admin.jpg)
 
@@ -303,15 +325,15 @@ Here is how my dummy tutorials look like.
 ![my dummy tutorial](/engineering-education/Integrating-YouTube-videos-into-a-Django-app/blogdetail.jpg)
 
 ### Futher reading
-
 For more, you can check out the [documentation](https://django-embed-video.readthedocs.io/en/latest/) for django embed video.
+
 ### Conclusion
+Through this article, we have created a Django application into which we have added a youtube video. We have gone through the simple steps of how to embed Youtube videos into projects using Django framework.
 
-In this tutorial you have done the following:
+I hope you find this tutorial beneficial.
 
-1.  Created a simple Django app that can render YouTube videos.
-2.  Created a frontend that supports embedded youtube videos.
-3.  Learned how to adjust the YouTube videos into various sizes.
-
-You can now use the knowledge on your projects.
 Happy coding!
+
+---
+
+Peer Review Contributions by: [Monica Masae](/engineering-education/authors/monica-masae/)
