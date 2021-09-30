@@ -6,7 +6,7 @@ url: /language-integrated-query-in-c-sharp/
 title: Getting started with LINQ in C#
 description: In this tutorial we will learn how to use language integrated queries to perform native queries in C#
 author: amos-njoroge
-date: 2021-09-23T00:00:00-00:00
+date: 2021-09-29T00:00:00-23:00
 topics: []
 excerpt_separator: <!--more-->
 images:
