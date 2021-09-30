@@ -700,7 +700,7 @@ Then modify the code in your `BlogPostController.php` in `show()` method to look
 
 public function show(BlogPost $blogPost)
 {
-    return view(‘blog.show’, [
+    return view('blog.show', [
         ‘post’ => $blogPost,
     ]); //returns the view with the post
 }
