@@ -105,15 +105,16 @@ Since the current data does not have any entities, we will introduce our own and
 ![payload](/engineering-education/understanding-xml-external-entity-attacks/payload.png)
 
 If we are successful, we should be able to see the file as shown below:
-
 ![passwords](/engineering-education/understanding-xml-external-entity-attacks/intercept2.png)
 
 Apart from retrieving files, we can use XXE attacks for :
+#### 1. Denial of Service (DoS)
+Most common being the billion laugh attack.
 
-- Denial of Service attacks. Most common being the billion laugh attack 
-- Server-side request forgery attacks: Using the external entities, an attacker can make HTTP requests to URLs, then the server can access them, including those meant to be for internal use only in an organization.
+#### 2. Server-side request forgery attacks
+Using the external entities, an attacker can make HTTP requests to URLs, then the server can access them, including those meant to be for internal use only in an organization.
 
-    The attacker just places the URL that they are targeting. When the target is parsed, the contents of the said domain are exposed.
+The attacker just places the URL that they are targeting. When the target is parsed, the contents of the said domain are exposed.
 
 Here is a sample payload for such an attack.
 
