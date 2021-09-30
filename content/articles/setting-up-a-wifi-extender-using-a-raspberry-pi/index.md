@@ -226,3 +226,6 @@ To ensure that the Raspberry Pi Wi-Fi extender is operating successfully, use an
 - [DIY Raspberry Pi based WiFi extender and repeater](https://www.iottrends.tech/blog/diy-raspberry-pi-based-wifi-extender-and-repeater/)
 - [WiFi extender using raspberry Pi](https://iot4beginners.com/wifi-extender-using-raspberry-pi/)
 - [Turn a Raspberry Pi into a Wi-Fi access point or repeate](https://www.balena.io/blog/turn-a-raspberry-pi-into-a-wi-fi-access-point-or-repeater/)
+
+---
+Peer Review Contributions by: [Collins Ayuya](https://www.section.io/engineering-education/authors/collins-ayuya/)
