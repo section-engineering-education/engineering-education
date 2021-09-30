@@ -17,7 +17,7 @@ images:
 In this tutorial, we will be building a server using Node.js and Express to implement additional operations of Agora Cloud Recording like querying the recording session, updating subscriber list and updating mixing layout.
 <!--more-->
 
-To follow along with this tutorial, you need to go through [my previous tutorial](/agora-cloud-recording/). 
+To follow along with this tutorial, you need to go through [my previous tutorial](/engineering-education/agora-cloud-recording/). 
 
 The previous tutorial covers:
 
@@ -37,13 +37,13 @@ By the end of this tutorial, you should know how to:
 - Update the layout of the recording.
 
 ### Prerequisites
-This tutorial (along with the [previous tutorial](/agora-cloud-recording/)) is for applications that use [Agora's](https://www.agora.io/) SDKs and want to implement cloud recording. If you are not using Agora's SDKs in your application, then this tutorial is not for you.
+This tutorial (along with the [previous tutorial](/engineering-education/agora-cloud-recording/)) is for applications that use [Agora's](https://www.agora.io/) SDKs and want to implement cloud recording. If you are not using Agora's SDKs in your application, then this tutorial is not for you.
 
 If you'd like to learn how to build some applications with React Native and Agora, refer to the articles below.
 
-- [Livestreaming](/react-native-agora-livestreaming-app/).
+- [Livestreaming](/engineering-education/react-native-agora-livestreaming-app/).
 
-- [Video Conferencing](/react-native-agora-video-conference-app/).
+- [Video Conferencing](/engineering-education/react-native-agora-video-conference-app/).
 
 The fundamentals of Node.js and Express will not be covered in this tutorial. If you are not comfortable with the fundamentals, this is a [helpful tutorial](https://medium.com/@jaeger.rob/introduction-to-nodes-express-js-db5617047150) that you can go through before beginning with this project.
 

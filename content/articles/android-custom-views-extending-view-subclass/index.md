@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/android-custom-views-extending-view-subclass/hero.jpg
     alt: Android custom views image example
 ---
-In a [previous article](/android-custom-views-extending-view/) we discuss the approach of extending a custom view in Android. Another approach to creating a custom View is by extending an existing widget. Extending an existing subclass is relatively easier when compared to extending the whole class.
+In a [previous article](/engineering-education/android-custom-views-extending-view/) we discuss the approach of extending a custom view in Android. Another approach to creating a custom View is by extending an existing widget. Extending an existing subclass is relatively easier when compared to extending the whole class.
 <!--more-->
 This approach gives the developer existing features and styles to customize. This article will go through creating a custom view using this approach.
 ### Introduction
@@ -214,7 +214,7 @@ That's it! Build and run the app. The results should resemble the one below.
 ### Conclusion
 In this article, we have gone through creating a custom view by extending a widget. We have also seen how we can change the view's appearance by drawing. Creating custom views through this approach is a bit easier.
 
-It gives the application a unique appearance with less work to do. Check this [article](/android-custom-views-extending-view/) for a guide on creating custom views by extending the `View` class. You can find the source code of the application on [GitHub](https://github.com/kayere/color-slider.git). Feel free to raise an issue or a PR if you notice any error.
+It gives the application a unique appearance with less work to do. Check this [article](/engineering-education/android-custom-views-extending-view/) for a guide on creating custom views by extending the `View` class. You can find the source code of the application on [GitHub](https://github.com/kayere/color-slider.git). Feel free to raise an issue or a PR if you notice any error.
 
 ---
 Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)

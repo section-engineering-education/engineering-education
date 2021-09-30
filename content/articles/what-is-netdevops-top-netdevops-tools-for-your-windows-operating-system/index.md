@@ -240,7 +240,7 @@ Other essential tools include:
 Happy learning!
 
 ### Further reading
-1. [What it Takes to be a DevOps Engineer](/what-it-takes-to-be-a-devops-engineer/)
+1. [What it Takes to be a DevOps Engineer](/engineering-education/what-it-takes-to-be-a-devops-engineer/)
 2. [An Introduction to CI/CD Tools](/engineering-education/an-introduction-to-cicd-tools/)
 3. [Automation Using Ansible](/engineering-education/it-automation-using-ansible/)
 4. [Understanding Docker Concepts](/engineering-education/docker-concepts/)

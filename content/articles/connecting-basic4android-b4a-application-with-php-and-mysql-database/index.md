@@ -24,11 +24,11 @@ With stored data, there is easier service delivery from organization to their cl
 ### Prerequisites
 Before we begin, it would be useful for the reader to have the following:
 - A basic knowledge in SQL, PHP, and B4A programming.
-- A B4A application installed on a Windows computer. Follow the instructions in this [article](/introduction-to-android-app-development-basic4android-b4a-part1/) on how to install and configure B4A.
+- A B4A application installed on a Windows computer. Follow the instructions in this [article](/engineering-education/introduction-to-android-app-development-basic4android-b4a-part1/) on how to install and configure B4A.
 - PHP and MySQL development environment: In this case, we will use Xampp.
 
 ### Installing B4A
-- Kindly follow this [tutorial](/introduction-to-android-app-development-basic4android-b4a-part1/).
+- Kindly follow this [tutorial](/engineering-education/introduction-to-android-app-development-basic4android-b4a-part1/).
 
 ### Installing Xampp
 - Download Xampp from the [official website](https://www.apachefriends.org/index.html).

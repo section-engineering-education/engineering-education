@@ -13,7 +13,7 @@ images:
   - url: /engineering-education/tips-and-tricks-for-deep-learning/hero.jpg
     alt: tips and tricks for deep learning image example
 ---
-This article assumes a basic understanding of Machine Learning (ML) and Deep Learning (DL). For an introduction to ML and DL, feel free to check out my previous [article](/differences-between-artificial-intelligence-machine-learning-and-deep-learning/).
+This article assumes a basic understanding of Machine Learning (ML) and Deep Learning (DL). For an introduction to ML and DL, feel free to check out my previous [article](/engineering-education/differences-between-artificial-intelligence-machine-learning-and-deep-learning/).
 <!--more-->
 
 ### Table of contents
@@ -32,7 +32,7 @@ This article assumes a basic understanding of Machine Learning (ML) and Deep Lea
 7. [References](#references)
 
 ### Prerequisites
-A comprehensive understanding of [Deep Learning (DL)](/introduction-to-deep-learning/) is essential before reading this article, as most of the concepts and techniques you'll encounter are advanced. If you're still new to neural networks and DL, please read my previous [article](https://www.section.io/engineering-education/differences-between-artificial-intelligence-machine-learning-and-deep-learning/). It will be a good place to start to understand the basics of DL. 
+A comprehensive understanding of [Deep Learning (DL)](/engineering-education/introduction-to-deep-learning/) is essential before reading this article, as most of the concepts and techniques you'll encounter are advanced. If you're still new to neural networks and DL, please read my previous [article](https://www.section.io/engineering-education/differences-between-artificial-intelligence-machine-learning-and-deep-learning/). It will be a good place to start to understand the basics of DL. 
 
 ### Introduction
 What's the use in tweaking our Deep Learning (DL) models?
@@ -97,7 +97,7 @@ Using such imbalanced data as inputs to our neural network can cause four major 
 
 To avoid the problems mentioned above, we normalize their ages and distance inputs to fit the same scale. From our example, we can scale down our two input data to a scale of between 0 to 1. Normalization reduces the wide ranges between the data points. However, normalization only solves part of the problem.
 
-In my previous [article](/basics-of-convolution-neural-networks/), I discussed how training is achieved by updating the weights of the neural network iteratively through a process known as backpropagation. But, there is a problem that occurs during training. 
+In my previous [article](/engineering-education/basics-of-convolution-neural-networks/), I discussed how training is achieved by updating the weights of the neural network iteratively through a process known as backpropagation. But, there is a problem that occurs during training. 
 
 As the distribution of each layer's input keeps changing, the previous layers' parameters also change simultaneously. The inputs to each hidden layer should have a minimal to no change as the neural network trains, but it keeps changing as training happens. 
 
@@ -134,7 +134,7 @@ There are two commonly used ways in which we could initialize the weights of our
 Let's discuss these two.
 
 ##### Transfer learning
-[Transfer learning](/basics-of-transfer-learning/) is a deep learning technique whereby a model is developed for one task but then re-used as a starting point for a separate task. This technique helps leverage the pre-trained weight of that model in our new model. Besides, transfer learning saves a lot of time as training a deep learning model from scratch requires a lot of training data and computing power. 
+[Transfer learning](/engineering-education/basics-of-transfer-learning/) is a deep learning technique whereby a model is developed for one task but then re-used as a starting point for a separate task. This technique helps leverage the pre-trained weight of that model in our new model. Besides, transfer learning saves a lot of time as training a deep learning model from scratch requires a lot of training data and computing power. 
 
 We can use this technique in various ways, depending on the amount of data one has. These include leveraging transfer learning with small, medium, and large training sizes. 
 

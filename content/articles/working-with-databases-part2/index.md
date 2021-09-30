@@ -16,10 +16,10 @@ images:
 ---
 You've created your first MongoDB database and now you want to use it on a website. How do you display its data on the web? How can users add, modify and delete data? The solution is to create a dynamic Node.js web app using the MongoDB node module.
 
-**Note:** First time developing a Node.js web app or don't already have a database? Get started with [Node.js](/static-site-dynamic-nodejs-web-app/) and [databases](/working-with-databases-part1/).
+**Note:** First time developing a Node.js web app or don't already have a database? Get started with [Node.js](/engineering-education/static-site-dynamic-nodejs-web-app/) and [databases](/engineering-education/working-with-databases-part1/).
 <!--more-->
 ### Connecting MongoDB Database to the Web App
-First, we need to install the MongoDB node module so we can connect the local database we created in [part 1](/working-with-databases-part1/) to our web app.
+First, we need to install the MongoDB node module so we can connect the local database we created in [part 1](/engineering-education/working-with-databases-part1/) to our web app.
 
 In the terminal, type:
 
@@ -93,7 +93,7 @@ app.get('/', function (req, res) {
 
 Since we already have a database with data in it, the first thing you'll learn is how to display the data on a webpage.
 
-Assuming you followed [Part 1](/working-with-databases-part1/), inside your `firstdb` database, there's a collection called `books` with several entries containing `name` and `genre`. We'll add this data into a table and even make it pretty using some CSS from [CSSTricks](https://css-tricks.com/complete-guide-table-element).
+Assuming you followed [Part 1](/engineering-education/working-with-databases-part1/), inside your `firstdb` database, there's a collection called `books` with several entries containing `name` and `genre`. We'll add this data into a table and even make it pretty using some CSS from [CSSTricks](https://css-tricks.com/complete-guide-table-element).
 
 The first step is to add a books route. The books route will contain the code to search our database collection, then create an EJS variable of the results, and finally render a new page with the variable.
 
@@ -421,4 +421,4 @@ app.post('/edit', function (req, res) {
 ```
 **Note:** the syntax for updating data is different than adding or deleting. `$set` tells MongoDB the query that should be updated and `updateOne` takes two variables rather the one: the old data to be updated and the new data that should replace it.
 
-Congratulations, you've developed your first data-driven web app using Node.js and MongoDB. Looking to develop your book database further, improve the design or check out example code? Check out the [Github Repo](https://github.com/louisefindlay23/bookdatabase). Want to show off your first data driven web app to users? Learn how to [deploy a Node.js web app using DigitalOcean](/deploying-nodejs-web-app).
+Congratulations, you've developed your first data-driven web app using Node.js and MongoDB. Looking to develop your book database further, improve the design or check out example code? Check out the [Github Repo](https://github.com/louisefindlay23/bookdatabase). Want to show off your first data driven web app to users? Learn how to [deploy a Node.js web app using DigitalOcean](/engineering-education/deploying-nodejs-web-app).
