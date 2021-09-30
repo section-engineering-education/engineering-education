@@ -5,7 +5,7 @@ published: true
 url: /how-to-solve-initial-value-problem-using-ode45-in-matlab/
 title: How to Solve Initial Value Problem (IVP) using ODE45 in Matlab
 description: This article will consider the Matlab algorithm `ode45` to solve the initial value problem. Matlab uses the ode45 function as the standard solver for ordinary differential equations of fifth-order (ode45)
-author: joseph_odhiambo
+author: joseph-odhiambo
 date: 2021-09-30T00:00:00-15:00
 topics: []
 excerpt_separator: <!--more-->
