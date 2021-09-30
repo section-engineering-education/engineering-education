@@ -35,7 +35,7 @@ Open the command line and type in the following:
 mkdir projectX
 ```
 
-Change your current directory to the newly created folder `projectX` which will contain our project folder:
+Change your current directory to projectX:
 
 ```bash
 cd projectX
@@ -58,7 +58,7 @@ For the activation:
 #### Step 2: Downloading required packages
 Now we can install Django and Django-embed-video simultaneously using the following command:
 
-```bash
+```
 pip install django django-embed-video
 ```
 
@@ -71,13 +71,13 @@ Create a Django project using the following command:
 django-admin startproject demo
 ```
 
-Change directory to demo where our project files are:
+Change directory to demo
 
 ```bash
 cd demo
 ```
 
-Create a Django app called `blog` inside the project folder:
+Create a Django app
 
 ```bash
 py manage.py startapp blog
@@ -108,7 +108,7 @@ class  tutorial(models.Model):
 	tutorial_Video = EmbedVideoField()
 
 	class  Meta:
-		verbose_name_plural = "Tutorials"
+		verbose_name_plural = "Tutorial"
 
 	def  __str__(self):
 		return  str(self.tutorial_Title) if  self.tutorial_Title  else  " "
@@ -118,7 +118,7 @@ The `tutorial` class is where we create our model. In `Meta` class we told Djang
 
 The `__str__` function ensures that our objects are listed with their name properties in Django admin ie: the tutorials shall be listed according to their `tutorial_Title`.
 
-Then run the following commands respectively to make migrations and migrate our model:
+Then run the following commands respectively to make migrations and migrate our model.
 
 ```bash
 py manage.py makemigrations
@@ -176,7 +176,7 @@ Tut in `blog()` fetches all objects, in this case all the tutorials created, whi
 
 ##### 4.5: Configuring URL's
 Inside `urls.py` in the `demo` directory we will point the root `URLconf` at the `blog.urls` module. 
-Remember to add an import for the `from django.urls import path, include`:
+Remember to add an import for the `from django.urls import path, include`
 
 ```python
 from  django.urls  import  path, include # new
@@ -213,7 +213,6 @@ py manage.py createsuperuser
 Create a new directory in the `blog` directory and name it `templates` then create three files named `base.html`, `blog.html`, and `blogdetail.html` inside it.
 
 In `base.html`, we will add the primary HTML code that is shared by both `blog.html` and `blogdetail.html`.
-
 In `base.html`:
 ```html
 <!doctype  html>
@@ -256,7 +255,7 @@ In `base.html`:
 </html>
 ```
 
-In `blog.html` we will display all the tutorials that will be added, but we will only display the titles and a small part of the tutorial body in a list fashion:
+In `blog.html` we will display all the tutorials that will be added, but we will only display the titles and a small part of the tutorial body in a list fashion.
 
 ```HTML
 {% extends 'base.html' %}
@@ -275,7 +274,7 @@ In `blog.html` we will display all the tutorials that will be added, but we will
 	{%endblock%}
 ```
 
-In `blogdetail.html` we will display the title, body and video of the selected tutorial:
+In `blogdetail.html` we will display the title, body and video of the selected tutorial.
 
 ```HTML
 {% extends 'base.html' %} {% load embed_video_tags %}
