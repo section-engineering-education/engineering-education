@@ -163,7 +163,7 @@ On the other hand, splits corresponding to the Sunny and Rainy are not pure. On 
 Now that we know the intuition behind the decision tree, it is time to go an extra step and implement it in Python. To construct our tree, we shall assume our splitting criterion to be the information gain criterion.
 
 #### Implementing a decision tree in Python
-To get started, let us download the dataset we are going to work with [here](load)
+To get started, let us download the dataset we are going to work with [here](https://github.com/Daniel695/datasets.git)
 Now that our data has is downloaded, let us import the necessary libraries.
 Below is the code that carries out this task.
 #### Importing libraries
@@ -402,4 +402,4 @@ Below is thee tree we implemented on our dataset.
 ![oor_data](/engineering-education/decision-tree-in-python/tree_structure.png)
 
 #### Conclusion
-In this article, we looked at the intuation behind the decision tree and criteria that help us to build a tree on the dataseyt. Finally we looked at how to impliment it using a software and in our case we used python. I hope, this article has helped you to understand decision tree and it's criteria.
+In this article, we looked at the intuition behind the decision tree and criteria that help us build a tree on the dataset. Finally, we looked at how to implement it using software, and in our case, we used python. I hope this article has helped you to understand the decision tree and its criteria.
