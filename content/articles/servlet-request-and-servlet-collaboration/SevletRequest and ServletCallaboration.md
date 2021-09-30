@@ -4,11 +4,12 @@ The request delivered by your computer to a web server containing every kind of 
 In this case, the ServletRequest object forward client information from the request for a servlet, such as content type, names, and values of parameters, header information, attributes, etc.
 
 The RequestDispatcher interface allows the request to be forwarded or included to another resource, can be from servlet to another servlet or servlet to HTML file, or servlet to JSP file. Also can be used to add other resource content. It's one approach to work with `Servlet Collaboration`.
+
 ### Prerequisites
 - Some basic knowledge of core Java is needed.
 - An introductory path of the servlet and its life cycle is needed.
 - Some basic knowledge of HTML is also required.
-- 
+
 You will need to install the following tools to go along with the article:
 - An open-source editor, such as Eclipse, or any other related Java editor. In my case, I will be using [Eclipse IDE for Java EE Developers 2021‑09 windows version](https://www.eclipse.org/downloads/download.php?file=/oomph/epp/2021-09/R/eclipse-inst-jre-win64.exe)
 - Java JDK current version or any. In my case, I will be using [Java SE Development Kit 17 for Windows 64 bit system](https://download.oracle.com/java/17/latest/jdk-17_windows-x64_bin.zip).
@@ -25,12 +26,11 @@ Table of contents:
 - [RequestDispatcher Methods](#RequestDispatcher-Methods)	
 - [RequestDispatcher example](#RequestDispatcher-example)
 - [Conclusion](#conclusion)
-- 
+
 ### ServletRequest
 When we talk of websites, we do interact with,
  we keep asking web pages to do something for us, for example, client updating their profiles, etc. Whenever a client or user tries to update their profile. In this case, Java provides us with an object of the ServletRequest interface, which forwards requested information to a servlet. 
 The service container creates objects for `ServletRequest` and `ServletResponse` when a customer sends requests to a web server that pass through the service method as an argument. The request object provides access to query information, such as the header and information from the requested database.
-
 
 ### Methods of ServletRequest
 The `ServletRequest` interface provides us with many methods to work with client request information. Some explained as follows.
@@ -72,11 +72,11 @@ We will create a user login project with a servlet in this example. In this cont
 
 **Steps to create this project.**
 
-Step 1: Open Eclipse IDE for Java EE developers. Create a Dynamic web project by selecting files, new then Dynamic web projects, and press enter.
+**Step 1:** Open Eclipse IDE for Java EE developers. Create a Dynamic web project by selecting files, new then Dynamic web projects, and press enter.
 
-Step 2: Provide a project name. Mine is called LogInDemo.
+**Step 2:** Provide a project name. Mine is called LogInDemo.
 
-Step 3: Create an `index.html` page as shown below.
+**Step 3:** Create an `Login.html` page as shown below.
 
 ```html
 <!DOCTYPE html>
@@ -95,7 +95,7 @@ Step 3: Create an `index.html` page as shown below.
 </html>
 ```
 
-Step 4: Create `login.java` servlet file.
+**Step 4:** Create `LoginAction.java` servlet file.
 
 ```java
 package com.lodoctor;
@@ -127,7 +127,7 @@ public class LoginAction extends HttpServlet {
 }
 
 ```
-Step 5: Lastly, create the `welcomePage.jsp` file.
+**Step 5:** Lastly, create the `welcomePage.jsp` file.
 ```jsp
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
@@ -142,6 +142,16 @@ Step 5: Lastly, create the `welcomePage.jsp` file.
 </body>
 </html>
 ```
+**Explanation:**
+
+From the example above, the `LoginAction.java` servlet, in the Post Request form, is called if a user supplies the correct credentials on the login page. A `doPost ()` will call a user parameter, and store it in a variable userName and password, as shown:
+
+```java
+      String userName=request.getParameter("name");
+      String password=request.getParameter("password");
+```
+If the user has provided the correct details with the help of the `equals()` method, the `welcomePage.jsp` will be executed; otherwise the client browser will remain on the `login.html` page. 
+
 [Get project source code here](https://github.com/Evanslodoctor/ServletRequest-sourse-code)
 
 ### RequestDispatcher
@@ -159,9 +169,19 @@ Here are two methods provided by the `RequestDispatcher` interface, namely:
 **NOTE:** Both of these two methods throw IOExceptions.
 
 ### RequestDispatcher example
+
+**How it works**
+
 This example shows how  RequestDispatcher can forward a resource response or include it on a server. Here we use `htmlPage.html` to get a user response. In this case, `Controller.java` Servlet checks the entered response if a user has more than 18 years or less, if the user select (under18 ) as the reply, `forward()` will be called to Under18Page Servlet. Above18 servlet is included if the user has entered (above18) otherwise. The client browser will stay on the `htmlPage.html` page.
 
-*htmlPage.html*
+**Steps to create this project.**
+
+**Step 1:** Open Eclipse IDE for Java EE developers. Create a web project by choosing files, then new web projects, then entering a dynamic project.
+
+**Step 2:** Provide a project name. Mine is called ServletDispatcherDemo.
+
+**Step 3:** Create an `htmlPage.html` page as shown below.
+
 ```html
 <!DOCTYPE html>
 <html>
@@ -181,7 +201,9 @@ This example shows how  RequestDispatcher can forward a resource response or inc
 </body>
 </html>
 ```
-*Controller.java servlet1 page*
+
+**Step 4:**  *Create `Controller.java` servlet1 page.*
+
 ```java
 package com.lodoctor;
 
@@ -226,7 +248,9 @@ public class Controller extends HttpServlet
 }
 
 ```
-*Under18page.java servlet2 page*
+
+**Step 5:**  *Create `Under18page.java` servlet2 page*
+
 ```java
 package com.lodoctor;
 
@@ -249,7 +273,8 @@ public class Under18Page extends HttpServlet {
 }
 
 ```
-*Above18.java servlet3 page*
+**Step 7:**  *Create `*Above18.java` servlet3 page*
+
 ```java
 package com.lodoctor;
 
