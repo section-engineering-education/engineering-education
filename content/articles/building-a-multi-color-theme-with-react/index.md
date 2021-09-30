@@ -238,6 +238,8 @@ export default ThemeToggler;
 
 We have successfully created a `ThemeToggler` with six colors visibly displaced on a color panel.
 
+![alt text](\engineering education\building-a-multi-color-theme-with-react\image1.JPG)
+
 #### The Navbar components:
 
 Most modern websites usually have a navbar and ours will not be an exception. The navigation bar provides a brief summary of the website to the user and also facilitates routing.
@@ -375,6 +377,9 @@ From the code snippet above, we imported a lot of elements from the `reactstrap`
 - Navbar Toggler. Etc.
   We also paced the various elements at appropriate positions on our `Navbar` awaiting styling. Feel free to customize them to your desired specifications. Finally, we created a `toggleCollapse` function to handle toggling the `Sidebar` on small and medium screen sizes.
 
+![alt text](\engineering education\building-a-multi-color-theme-with-react\image2.JPG)
+
+
 #### The Sidebar components:
 
 The sidebar, also an important piece of a website, plays an essential role in user interaction and in-app routing.
@@ -442,6 +447,8 @@ To simplify the job, we created a reusable `SidebarProps` component that accepts
 - Profile
   these icons provide the user with a clear view of the routes and component in our application.
   Finally, we wrapped our entire `Sidebar` component with the `ThemeColorContext` we created earlier to handle the theme-color of our sidebar.
+  
+  ![alt text](\engineering education\building-a-multi-color-theme-with-react\image3.JPG)
 
 #### The Feeds components:
 
@@ -534,6 +541,9 @@ From the snippet above, we created a page similar to a social media news feed. W
 - Image
 - Button
   If correctly implemented, you should have a raw `Feeds` component ready for styling and viewing.
+  
+  ![alt text](\engineering education\building-a-multi-color-theme-with-react\image4.JPG)
+
 
 #### Step 5: Styling the various components:
 
@@ -692,6 +702,8 @@ Or for yarn users:
 ```bash
 yarn start
 ```
+
+![alt text](\engineering education\building-a-multi-color-theme-with-react\image5.JPG)
 
 You should be able to view the App on your browser once the development server starts.
 
