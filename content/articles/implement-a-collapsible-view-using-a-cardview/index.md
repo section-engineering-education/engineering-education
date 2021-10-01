@@ -127,7 +127,7 @@ Within the constraint layout, add guidelines to the four sides of the view. Make
 
 Here is how you can create a guideline:
 
-[![How to create guidelines]({/engineering-education/implement-a-collapsible-view-using-a-cardview/create_guidelines.png})]({/engineering-education/implement-a-collapsible-view-using-a-cardview/create_guidelines.mp4} "Create Guidelines")
+[![How to create guidelines]({/engineering-education/implement-a-collapsible-view-using-a-cardview/create_guidelines.png})]({/engineering-education/implement-a-collapsible-view-using-a-cardview/create_guidelines.gif} "Create Guidelines")
 
 This is how the guidelines code should look like:
 
@@ -169,6 +169,8 @@ This is how the guidelines code should look like:
 ```
 #### Step Six: Designing the UI of the collapsed card
 Build the UI of the collapsed card. You are going to build the layout of the collapsed card.
+
+Add an ImageView to represent an info icon. Use a TextView for the label. Finally, a show-more icon, which would expand or collapse the card when clicked.
 
 ```xml
 <ImageView
@@ -220,7 +222,13 @@ This is what the layout would look like:
 
 #### Step Seven: Design the UI for the expanded card view
  
-Here’s what the code looks like:
+Now you will add more views to the card. This View would represent what the card looks like in its expanded state.
+
+Use a View element of height `1dp` and background `#CECECE` to achieve the straight line which divides the title text from the other collapsable views. Constrain its top to the bottom of the TextView and give it a top margin of 16dp. Horizontally constrain the View to the start and end guidelines and give it a width of `0dp` so it would be as wide as the card.
+
+Beneath this View, add a TextView and some bullet points. You could use ImageViews as the bullets. Feel free to add whatever you want.
+
+Here is what the code looks like:
 
 ```xml
 <androidx.constraintlayout.widget.ConstraintLayout
@@ -448,7 +456,7 @@ Now, this is where groups come in. With a Group, you can group all these views a
  
 Here is how to create groups:
 
-[![How to create groups]({/engineering-education/implement-a-collapsible-view-using-a-cardview/create_groups.png})]({/engineering-education/implement-a-collapsible-view-using-a-cardview/create_groups.mp4} "Create Groups")
+[![How to create groups]({/engineering-education/implement-a-collapsible-view-using-a-cardview/create_groups.png})]({/engineering-education/implement-a-collapsible-view-using-a-cardview/create_groups.gif} "Create Groups")
 
 
 Cool right?
@@ -757,9 +765,11 @@ Nice work!
  
 Let us run our app. Our collapsable card view should look this way:
 
-[![Collapsing Card View]({engineering-education/implement-a-collapsible-view-using-a-cardview/expanded_card.png})]({/engineering-education/implement-a-collapsible-view-using-a-cardview/collapsable_cardview.mp4} "Collapsing Card View")
+[![Collapsing Card View]({engineering-education/implement-a-collapsible-view-using-a-cardview/expanded_card.png})]({/engineering-education/implement-a-collapsible-view-using-a-cardview/collapsable_cardview.gif} "Collapsing Card View")
 
 Nice right?
+
+You can find this project on [github](https://github.com/Lamouresparus/CollapsingCardView) or download the APK [here](https://drive.google.com/file/d/1-2fMOcxtCaCs6xus0DWjvQN1kwOvJ4ZA/view?usp=sharing)
   
 ### Conclusion
 The CardView enriches the look of your application's UI. The default implementation of the shadow and rounded corners is a big plus. However, the Cardview is designed to hold one child view within itself. You could add within the card view another layout to manage the child views, just like we did here.
