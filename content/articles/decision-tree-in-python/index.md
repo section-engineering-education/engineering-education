@@ -449,4 +449,4 @@ Below is the tree we implemented on our dataset.
 ![oor_data](/engineering-education/decision-tree-in-python/tree_structure.png)
 
 ### Conclusion
-This article looked at the intuition behind the decision tree and criteria that help us build a tree on the dataset. Finally, we looked at how to implement it using software, and in our case, we used Python. I hope this article has helped you to understand the decision tree and its criteria.
+This article looked at the intuition behind the decision tree and criteria that help us build a tree on the dataset. Finally, we looked at how to implement it using Python and some other libraries. I hope this article has helped you to understand the decision tree and its criteria.
