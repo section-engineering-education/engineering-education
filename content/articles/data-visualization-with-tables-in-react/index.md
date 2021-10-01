@@ -1,5 +1,22 @@
-Working with tables in React has always been a burden for a long time since developers encounter issues related to the styling, responsiveness and the proper rendering of data on tables.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /data-visualization-with-tables-in-react/
+title: Data visualization with tables in React.
+description: This article will walk the reader through an approach to properly visualize data in tables with an npm package called react-table.
+author: caleb-olojo
+date: 2021-10-01T00:00:00-13:47
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/ata-visualization-with-tables-in-react/hero.jpg
+    alt: Data visualization with react tables image
+---
+
+Working with tables in React has always been a burden for a long time since developers encounter issues related to the styling, responsiveness and the proper rendering of data on tables.
+ <!--more-->
 This article will look at an approach that would enable us to properly visualize data in tables with an npm package called `react-table`. It is a library that focuses on the React Hooks pattern, therefore abstracting the need to create or hardcode HTML table elements.
 
 ### Prerequisites
