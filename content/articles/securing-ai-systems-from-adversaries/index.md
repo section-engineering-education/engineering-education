@@ -16,7 +16,7 @@ images:
 ---
 Artificial intelligence represents just how powerful and impactful technology has become. It is present in all aspects of our daily lives, from basic tasks to very critical implementations. However, AI systems may cause devastating damage if used by malicious actors.
 <!--more-->
-We often focus on how [AI can improve cybersecurity](/the-role-of-artificial-intelligence-for-smarter-cybersecurity/), but it's important to consider how to secure AI systems.
+We often focus on how [AI can improve cybersecurity](/engineering-education/the-role-of-artificial-intelligence-for-smarter-cybersecurity/), but it's important to consider how to secure AI systems.
 
 ### Table of contents
 1. Model Duplicating Techniques
@@ -26,7 +26,7 @@ We often focus on how [AI can improve cybersecurity](/the-role-of-artificial-int
 3. Poisoning Attacks
 
 ### Prerequisites
-An understanding of machine learning is crucial. For an introduction to ML, read this [article](/supervised-learning-algorithms/).
+An understanding of machine learning is crucial. For an introduction to ML, read this [article](/engineering-education/supervised-learning-algorithms/).
 
 ### Useful terms
 **Disjoint-set**–disjoint-set data structure is a collection of sets that are disjoint. This means that the sets are non-overlapping. We can find no item in more than a single set. This data structure keeps track of elements in a set that has been partitioned into many non-overlapping subsets.

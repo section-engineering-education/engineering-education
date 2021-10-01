@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/how-to-submit-your-first-article/hero.jpg
     alt: github image example
 ---
-One of the most fundamental parts of contributing to open-source projects is working as a group and handling a large number of files across every development stage. This article will walk you through how to submit your first article in [Section's Engineering Education (EngEd) Program](/) using GitHub Desktop and VS Code.
+One of the most fundamental parts of contributing to open-source projects is working as a group and handling a large number of files across every development stage. This article will walk you through how to submit your first article in [Section's Engineering Education (EngEd) Program](/engineering-education/) using GitHub Desktop and VS Code.
 <!--more-->
 
 I've always been a believer of learning things by actually doing them. The more I make mistakes, the more I get to learn. The idea of this blog post originated after I faced several difficulties in submitting my first article.
@@ -70,6 +70,6 @@ After clicking the **Create Pull Request** button, you'll be automatically direc
 ![Create PR GitHub Image](/engineering-education/how-to-submit-your-first-article/createPRfinalgithub.png)<br>
 
 ### Mission Completed!
-You have successfully submitted your article with your own unique PR number! Now, you need to wait for review and final approval by the Section team. Meanwhile, do checkout all of the other interesting articles from contributors on [Section's Engineering Education Library](/).
+You have successfully submitted your article with your own unique PR number! Now, you need to wait for review and final approval by the Section team. Meanwhile, do checkout all of the other interesting articles from contributors on [Section's Engineering Education Library](/engineering-education/).
 
 ![Done Image](/engineering-education/how-to-submit-your-first-article/done.png)

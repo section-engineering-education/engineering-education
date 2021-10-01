@@ -29,7 +29,7 @@ Before you start reading about the use of multimodal neurons in artificial neura
 ### Prerequisites
 These CNNs produce dream-like hallucinogenic appearances by overprocessing images. This concept is demonstrated in the link provide in the example images. The next concept that is important to understand in the multimodal neuron model is using the [CLIP](https://openai.com/blog/clip/) model by OpenAI, a model which connects texts and images. 
 
-The CLIP model learns using a Contrastive Learning approach between image-text pairs. The goal is to make the model efficiently learn visual concepts from natural language supervision. Learn more about the contrastive learning approach on this [article](/simclr-a-simple-framework-for-contrastive-learning-of-visual-representations/).
+The CLIP model learns using a Contrastive Learning approach between image-text pairs. The goal is to make the model efficiently learn visual concepts from natural language supervision. Learn more about the contrastive learning approach on this [article](/engineering-education/simclr-a-simple-framework-for-contrastive-learning-of-visual-representations/).
 
 ### Introduction
 The human brain contains multimodal neurons. This discovery was made fifteen years ago by a team of researchers and was discussed in this [paper](https://www.nature.com/articles/nature03687). These neurons respond to different sensory inputs' versatility, resulting in enhanced detection or identifying a unique stimulus.    

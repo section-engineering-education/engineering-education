@@ -29,9 +29,9 @@ Without further ado. Let's dive in!
 To follow through with this tutorial, you will need to:
   1. Have [Android Studio](https://developer.android.com/studio) installed.
   2. Have a basic knowledge of building Android applications.
-  3. Have a basic understanding of the [Kotlin](/kotlin-collections/) programming language,
+  3. Have a basic understanding of the [Kotlin](engineering-education/kotlin-collections/) programming language,
   [SQL](https://en.wikipedia.org/wiki/SQL),
-  [MVVM](/implementing-mvvm-architecture-in-android-using-kotlin) architecture and Kotlin [coroutines](https://kotlinlang.org/docs/reference/coroutines-overview.html).
+  [MVVM](/engineering-education/implementing-mvvm-architecture-in-android-using-kotlin) architecture and Kotlin [coroutines](https://kotlinlang.org/docs/reference/coroutines-overview.html).
 
 Let's get started!
 

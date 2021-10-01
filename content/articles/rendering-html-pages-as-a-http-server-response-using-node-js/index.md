@@ -23,7 +23,7 @@ There are various ways of hosting your HTML pages (website), for example:
 This guide explains how to render HTML elements and HTML pages on your server using Node.js.
 
 ### Prerequisites
-Basic knowledge of using [Node.js](https://www.youtube.com/watch?v=fBNz5xF-Kx4) and [Express.js](/express/) will be helpful to follow along.
+Basic knowledge of using [Node.js](https://www.youtube.com/watch?v=fBNz5xF-Kx4) and [Express.js](/engineering-education/express/) will be helpful to follow along.
 
 ### What we will cover
 - [Prerequisites](#prerequisites)
@@ -49,10 +49,10 @@ $ npm -v
 7.6.3 ## installed npm version
 ```
 
-Check this [guide](/beginner-guide-to-npm/) to learn more about using NPM.
+Check this [guide](/engineering-education/beginner-guide-to-npm/) to learn more about using NPM.
 
 - Create a Node.js project directory and initialize the project within this directory. Use `npm init -y` to automatically initialize this Node.js project.
-- Install the Express.js framework using `npm install express`. Check this [guide](/express/) to learn more about of Express.js.
+- Install the Express.js framework using `npm install express`. Check this [guide](/engineering-education/express/) to learn more about of Express.js.
 - We will create a server using Express.js. It is important to hook the server with Nodemon. Nodemon is an optional package (installed globally) which automatically restarts the server after saving server-side code changes. Go ahead and install Nodemon using `npm install -g nodemon`. Check this [guide](https://www.npmjs.com/package/nodemon) to learn more about Nodemon.
 
 ### Rendering inline HTML elements as HTTP responses

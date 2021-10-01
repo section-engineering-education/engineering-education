@@ -55,7 +55,7 @@ Winston, is one of the best logging middlewares, has about 4,000,000 weekly [dow
 - Log [profiling](https://github.com/winstonjs/winston#profiling). Winston helps you profile a block of code and measure the time the code takes to be successfully executed.
 
 ### Using Winston
-To get started, make sure you initialize a Node.js project using `npm init -y`. Here's a [guide](/beginner-guide-to-npm/) that will help you understand NPM in detail.
+To get started, make sure you initialize a Node.js project using `npm init -y`. Here's a [guide](/engineering-education/beginner-guide-to-npm/) that will help you understand NPM in detail.
 
 Install the Winston package using the command `npm install winston`.
 
@@ -218,7 +218,7 @@ info: Label🏷️: Nov-18-2020 08:10:44: Hello, Winston logger, some info!
 ### Configuring Winston with a server
 Let’s create a simple Express server that we can do some logging using Winston. This will be a small project to get you on your feet using Winston to record logs from server requests and responses.
 
-Go ahead and install the [Express](/express/) library with `npm install express`.
+Go ahead and install the [Express](/engineering-education/express/) library with `npm install express`.
 
 This is the structure of our small project:
 
@@ -318,7 +318,7 @@ Like we said earlier, Winston is well suited to configure different log destinat
 - Enter `use logs` to create database `logs`.
 - Enter `db.createCollection("server_logs")` to create a collection.
 
-If you are new to MongoDB, here's a [guide](/working-with-databases-part1/) that will help you get started.
+If you are new to MongoDB, here's a [guide](/engineering-education/working-with-databases-part1/) that will help you get started.
 
 Replicate the following code blocks into the `logger.js` file.
 
