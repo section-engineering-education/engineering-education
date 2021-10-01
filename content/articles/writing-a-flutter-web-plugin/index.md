@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /writing-a-flutter-web-plugin/
 title: Writing a Flutter Web Plugin
-description:  This article will walk the readers through writing their first web plugin in Flutter.
+description: This article will walk the readers through writing their first web plugin in Flutter.
 author: faith-zawadi
-date: 2021-09-26T00:00:00-11:15
+date: 2021-10-01T00:00:00-11:15
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -14,11 +14,13 @@ images:
   - url: /engineering-education/writing-a-flutter-web-plugin//hero.jpg
     alt: Flutter web plugin image
 ---
+Flutter's web support enables a seamless online experience. For example, you can create apps for iOS and Android that can then be converted to run on the web. 
+<!--more-->
+In addition to translating Dart to JavaScript, adding web functionality to Flutter requires the inclusion of fundamental graphics layer on top of conventional browser APIs. 
 
-### Introduction
-Flutter's `web support` enables a seamless online experience. For example, you can create apps for iOS and Android apps that can be converted to run on the web. In addition to translating Dart to JavaScript, adding web functionality to Flutter requires creating Flutter's fundamental graphics layer on top of conventional browser APIs. I will walk you through making the Flutter plugin web-enabled.
+This tutorial will show you how to create a web plugin using Flutter.
 
-When constructing Flutter plugins, the fundamental distinction between the old and new techniques is that platform-specific implementations are divided into different packages. `Federated plugins` are created in this manner. 
+When constructing Flutter plugins, the distinction between the old and new techniques is that platform-specific implementations are divided into different packages. `Federated plugins` are created in this manner. 
 
 By reorganizing your plugin as a federated plugin, anyone can add support for new platforms without needing to do so yourself. On the other hand, a flutter plugin contains just Dart code, while a package only contains Native code. A package can use plugins if it so chooses. 
 
