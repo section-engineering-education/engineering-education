@@ -3,52 +3,57 @@ layout: engineering-education
 status: publish
 published: true
 url: /auto-logout-angular/
-title: Implementing Auto Log-off in Angular 12
-description: This tutorial teaches readers everything they need to get started with Angular auto-log out feature.
+title: Implementing Auto Logout in Angular 12
+description: This tutorial teaches readers everything they need to get started with Angular auto logout feature.
 author: owino-wendy
 date: 2021-09-17T00:00:00-12:00
-topics: []
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/auto-logout-angular/hero.png
     alt: auto logout angular
 ---
-
 Automatic sign out is a pervasive feature in web development or mobile applications, especially in banking systems. As a result, it plays a significant role in ensuring the safety and integrity of data.
 <!--more-->
-Auto log off comes hand in hand because an application user may forget to log off the system after use. This tutorial discusses how we can build a secure Angular application that can sign out idle screens.
+Auto log off comes in handy because an application user may forget to log off the system after use.
+
+This tutorial discusses how we can build a secure Angular application that can sign out idle screens.
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
 - [Objectives](#objectives)
 - [Getting started with automatic log off](#getting-started-with-auto-log-off)
 - [Setting up a sample automatic log off project](#setting-up-a-sample-auto-logout-project)
-- [Creating authenticatiion forms](#creating-authentication-forms)
+- [Creating authentication forms](#creating-authentication-forms)
 - [How to determine if a screen is idle](#how-to-determine-if-a-screen-is-idle)
 - [Conclusion](#conclusion)
 
 ### Prerequisites
+To follow along, you need to have:
 - Basic knowledge of JavaScript or TypeScript
 - Basic Angular concepts
-- Understanding the concepts of Node Package Manager (NPM).
+- Understanding of the concepts of Node Package Manager (NPM).
 
 ### Objectives
-This tutorial aims to teach you everything you need to get started with your Angular application security. We'll also build a sample authentication application that will automatically log off users.
+This tutorial aims to teach you everything you need to get started with your Angular application security. We will build a sample authentication application that will automatically log off users.
 
 ### Getting started with auto log off
-Automatic log off is a security feature that determines the amount of time a screen can stay idle. In simple terms, it's the amount of time a screen stays active without user actions such as click events.  
+Automatic log off is a security feature that determines the amount of time a screen can stay idle. In simple terms, it's the amount of time a screen stays active without user actions such as click events.
 
-This feature is very core in terms of resource management and security. In terms of resource management, it helps stop unnecessary API calls and minimize the vulnerability to attacks.  
+This feature is very core in terms of resource management and security. In terms of resource management, it helps stop unnecessary API calls and minimize the vulnerability to attacks.
 
-### Setting up a sample auto-logout project
-In the previous section, we discussed the basic concepts of idle screen timeout. In this section, we build a sample application in Angular 12, implementing the automatic log off.  
+### Setting up a sample auto logout project
+Let's build a sample application in Angular 12, implementing the automatic log off.
 
-Let's begin by installing an Angular application as shown below:  
+Let's begin by installing an Angular application as shown below:
+
 ```bash
 ng new sample-auto-logout
 ```
+
 This command installs an Angular application `sample-auto-logout` with all the required dependencies.
+
 Next, `cd` into this project root and create the following components:
 
 ```bash
@@ -56,74 +61,125 @@ cd sample-auto-logout
 ng  g component auth/sign-in
 ng g component auth/create-account
 ```
+
 The commands above creates 2 components, `signInComponent` and `CreateAccountComponent` inside the `auth` directory.
 
 ### Creating authentication forms
-Now that our application has the auth components add the following contents in the `CreateAccountComponent` template.
+Now that our application has the auth components, add the following contents in the `CreateAccountComponent` template.
 
 ```html
 <div class="citizen-registration">
-  <div class="container">
-    <mat-card class="mt-5 mb-5">
-      <mat-card-title class="text-center">Register</mat-card-title>
-      <mat-card-content class="justify-content-center">
-        <form [formGroup]="citizenRegistrationForm" (ngSubmit)="onCitizenRegistration()" novalidate role="form">
-          <input type="hidden" formControlName="role" value="citizen">
-          <p>
-            <mat-form-field appearance="standard" color="primary">
-              <mat-label>Full Name</mat-label>
-              <input matInput placeholder="Ezekiel Alawode" required name="fullName" formControlName="fullName" autocomplete="fullName">
-              <mat-icon matSuffix>account_circle</mat-icon>
-            </mat-form-field>
-          </p>
-          <p>
-            <mat-form-field appearance="standard">
-              <mat-label>Town/City</mat-label>
-              <input matInput placeholder="Okene" required formControlName="city" name="city" autocomplete="city">
-            </mat-form-field>
-          </p>
-          <p>
-            <mat-form-field appearance="standard">
-              <mat-label>Phone</mat-label>
-              <input type="tel" matInput placeholder="08143651284" required name="phone" formControlName="phone" autocomplete="phone">
-            </mat-form-field>
-          </p>
+	<div class="container">
+		<mat-card class="mt-5 mb-5">
+			<mat-card-title class="text-center">Register</mat-card-title>
+			<mat-card-content class="justify-content-center">
+				<form
+					[formGroup]="citizenRegistrationForm"
+					(ngSubmit)="onCitizenRegistration()"
+					novalidate
+					role="form"
+				>
+					<input type="hidden" formControlName="role" value="citizen" />
+					<p>
+						<mat-form-field appearance="standard" color="primary">
+							<mat-label>Full Name</mat-label>
+							<input
+								matInput
+								placeholder="Ezekiel Alawode"
+								required
+								name="fullName"
+								formControlName="fullName"
+								autocomplete="fullName"
+							/>
+							<mat-icon matSuffix>account_circle</mat-icon>
+						</mat-form-field>
+					</p>
+					<p>
+						<mat-form-field appearance="standard">
+							<mat-label>Town/City</mat-label>
+							<input
+								matInput
+								placeholder="Okene"
+								required
+								formControlName="city"
+								name="city"
+								autocomplete="city"
+							/>
+						</mat-form-field>
+					</p>
+					<p>
+						<mat-form-field appearance="standard">
+							<mat-label>Phone</mat-label>
+							<input
+								type="tel"
+								matInput
+								placeholder="08143651284"
+								required
+								name="phone"
+								formControlName="phone"
+								autocomplete="phone"
+							/>
+						</mat-form-field>
+					</p>
 
-          <p>
-            <mat-form-field appearance="standard">
-              <mat-label>Email Address</mat-label>
-              <input type="tel" matInput placeholder="johndoe@example.com" required name="email" formControlName="email" autocomplete="email">
-            </mat-form-field>
-          </p>
+					<p>
+						<mat-form-field appearance="standard">
+							<mat-label>Email Address</mat-label>
+							<input
+								type="tel"
+								matInput
+								placeholder="johndoe@example.com"
+								required
+								name="email"
+								formControlName="email"
+								autocomplete="email"
+							/>
+						</mat-form-field>
+					</p>
 
-          <p>
-            <mat-form-field appearance="standard">
-              <mat-label>Password</mat-label>
-              <input type="password" matInput required name="password" formControlName="password" autocomplete="password">
-            </mat-form-field>
-          </p>
+					<p>
+						<mat-form-field appearance="standard">
+							<mat-label>Password</mat-label>
+							<input
+								type="password"
+								matInput
+								required
+								name="password"
+								formControlName="password"
+								autocomplete="password"
+							/>
+						</mat-form-field>
+					</p>
 
-          <p>
-            <mat-checkbox class="example-margin">I agree with the <a href="#">Terms and Conditions</a>, governing this site.</mat-checkbox>
-          </p>
-          <div class="row mt-5">
-            <div class="col-md-6">
-              <button *ngIf="!submitting" type="submit" class="register-button">Register</button>
-              <button *ngIf="submitting" type="submit" class="register-button">Processing...</button>
-            </div>
-            <div class="col-md-6">
-              <a class="login-button text-right" [routerLink]="['/auth/login']">Login Here</a>
-            </div>
-          </div>
-        </form>
-      </mat-card-content>
-    </mat-card>
-  </div>
+					<p>
+						<mat-checkbox class="example-margin"
+							>I agree with the <a href="#">Terms and Conditions</a>, governing
+							this site.</mat-checkbox
+						>
+					</p>
+					<div class="row mt-5">
+						<div class="col-md-6">
+							<button *ngIf="!submitting" type="submit" class="register-button">
+								Register
+							</button>
+							<button *ngIf="submitting" type="submit" class="register-button">
+								Processing...
+							</button>
+						</div>
+						<div class="col-md-6">
+							<a class="login-button text-right" [routerLink]="['/auth/login']"
+								>Login Here</a
+							>
+						</div>
+					</div>
+				</form>
+			</mat-card-content>
+		</mat-card>
+	</div>
 </div>
-
 ```
 
-The above template is a sample registration form for an organization where the company captures user details.
+The template above is a sample registration form for an organization where the company captures user details.
 
 This HTML page uses Angular material, which is added by running the following commands:
 
@@ -131,30 +187,28 @@ This HTML page uses Angular material, which is added by running the following co
 ng add @angular/material
 ```
 
-This command prompts you to answer basic yes/no questions, which helps in material customization.  
+This command prompts you to answer basic yes/no questions, which helps in material customization.
 
-We need to import a few modules from the previous package we installed for our template above to work. The simplest way to achieve this is by creating a new module in the `src/app` directory.  
+We need to import a few modules from the previous package we installed for our template above to work.
+
+The simplest way to achieve this is by creating a new module in the `src/app` directory:
 
 ```bash
 ng g module app-material
 ```
 
-Now proceed and update the contents of this module by adding the following contents:
+Now proceed to update the contents of this module by adding the following contents:
 
 ```ts
-import {NgModule} from '@angular/core';
+import { NgModule } from "@angular/core";
 
-import {MatCardModule} from '@angular/material/card';
-import {MatCheckboxModule} from '@angular/material/checkbox';
+import { MatCardModule } from "@angular/material/card";
+import { MatCheckboxModule } from "@angular/material/checkbox";
 
 @NgModule({
-  exports: [
-    MatCardModule,
-    MatCheckboxModule,
-  ]
+	exports: [MatCardModule, MatCheckboxModule],
 })
 export class DemoMaterialModule {}
-
 ```
 
 Next, import this module into the `app.module.ts` file as shown below:
@@ -179,82 +233,81 @@ import {MaterialModule} from "./material-module";
 export class AppModule { }
 ```
 
-In the above module, we declare the components we created previously and then import the material modules.
+In the module above, we declare the components we created previously and then import the material modules.
 
 Now, let's add a few styling to beautify our page:
 
 ```css
 mat-form-field.mat-form-field {
-  font-size: 16px;
+	font-size: 16px;
 }
-mat-card-title{
-  font-family: Poppins;
-  font-style: normal;
-  font-weight: bolder;
-  font-size: 40px;
-  line-height: 60px;
-  text-align: center;
+mat-card-title {
+	font-family: Poppins;
+	font-style: normal;
+	font-weight: bolder;
+	font-size: 40px;
+	line-height: 60px;
+	text-align: center;
 
-  color: #FFFFFF;
+	color: #ffffff;
 }
 mat-form-field {
-  width: 100%;
-  color: #FFFFFF;
+	width: 100%;
+	color: #ffffff;
 }
-mat-card{
-  width: 525px;
-  height: auto;
-  left: auto;
-  top: auto;
-  margin: 0 auto;
-  background: #C60C5A;
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.6);
-  border-radius: 5px;
+mat-card {
+	width: 525px;
+	height: auto;
+	left: auto;
+	top: auto;
+	margin: 0 auto;
+	background: #c60c5a;
+	box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.6);
+	border-radius: 5px;
 }
-mat-label{
-  font-family: Poppins;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 24px;
-  line-height: 36px;
-  color: #FFFFFF;
+mat-label {
+	font-family: Poppins;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 24px;
+	line-height: 36px;
+	color: #ffffff;
 }
-mat-form-field input{
-  padding: 5px;
-  color: #FFFFFF;
+mat-form-field input {
+	padding: 5px;
+	color: #ffffff;
 }
-mat-icon{
-  color:#FFFFFF;
+mat-icon {
+	color: #ffffff;
 }
-mat-checkbox{
-  color: #FFFFFF;
+mat-checkbox {
+	color: #ffffff;
 }
-.register-button{
-  width: 194px;
-  height: 45px;
-  background: #004598;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
-  border-radius: 3px;
-  font-family: 'Poppins',sans-serif;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 24px;
-  text-align: center;
+.register-button {
+	width: 194px;
+	height: 45px;
+	background: #004598;
+	box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+	border-radius: 3px;
+	font-family: "Poppins", sans-serif;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 24px;
+	text-align: center;
 
-  color: #FFFFFF;
+	color: #ffffff;
 }
-.login-button{
-  font-family: 'Poppins',sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 18px;
-  line-height: 27px;
-  text-align: right;
-  text-decoration-line: underline;
-  color: #FFFFFF;
+.login-button {
+	font-family: "Poppins", sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+	line-height: 27px;
+	text-align: right;
+	text-decoration-line: underline;
+	color: #ffffff;
 }
-
 ```
 
 Output:
@@ -262,14 +315,15 @@ Output:
 ![register](/engineering-education/autologoff/register.png)
 
 ### How to determine if a screen is idle
-Now that we have a fully furnished authentication form, let's proceed and determine whether the user screen is idle.
+Now that we have a fully furnished authentication form, let's proceed to determine whether the user's screen is idle.
 
-How this works is very simple, we keep track of user's actions on the web application. It's important to note that these actions are equivalent to events.  
-When a user acts on the application, we record it as an action in the browser's local storage.  
+How this works is very simple, we keep track of user's actions on the web application. It's important to note that these actions are equivalent to events.
 
-Whenever a user acts, we reset the clock on the local storage and start the count again. This clock is then synced with the local time to perform appropriate changes.  
+When a user acts on the application, we record it as an action in the browser's local storage.
 
-Let's create a service `AutoLogOffService` and add the following:
+Whenever a user acts, we reset the clock on the local storage and start the count again. This clock is then synced with the local time to perform appropriate changes.
+
+Let's create a service `AutoLogOffService` and add the following code:
 
 ```ts
 ...
@@ -365,15 +419,12 @@ export class AutoLogoutService {
     return environment.authKey;
   }
 }
-
 ```
 
-The above code has an interval and event listeners; hence we can set the automatic logout time are required.
+The code above has an interval and event listeners; hence we can set the automatic logout time as required.
 
 ### Conclusion
-
-In this tutorial, we've covered the concepts of automatic logoff in an Angular application. We've seen that we can keep track of the activities taking place on our applications using even listeners, which helps determine the actions.
+In this tutorial, we've covered the concepts of automatic logoff in an Angular application. We've seen that we can keep track of the activities taking place on our applications using event listeners, which helps determine the actions.
 
 ---
 Peer Review Contributions by: [Miller Juma](/engineering-education/authors/miller-juma/)
-
