@@ -1,8 +1,24 @@
-Organizations always want to keep users' info in their systems. This info helps them follow up on users' feedback, follow-ups, statistics, and product advertisements. Users, on the other hand, sometimes find the sign-up and login form boring. This process deters some from the data-entry process. To deal with this issue, developers have added interactive features.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /creating-an-animated-javafx-field-validation-alert/
+title: Creating an animated JavaFX field validatin alert.
+description: This article will show you how to animate form inputs during validation using effects to enhance user interaction with a system's UI in Java.
+author: justus-mbuvi
+date: 2021-10-01T00:00:00-13:24
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/creating-an-animated-javafx-field-validation-alert/hero.png
+    alt: Animated javafx field validation image
+
+Organizations always want to keep users' info in their systems. This info helps them follow up on users' feedback, follow-ups, statistics, and product advertisements. Users, on the other hand, sometimes find the sign-up and login form boring. This process deters some from the data-entry process. To deal with this issue, developers have added interactive features.
+ <!--more-->
 Modern login and sign-up forms have continuously evolved from the ancient static types to more interactive types. They have included validations, style effects, and animations. They are making the interaction with them exciting. These additions capture the user's attention till the data entry of personal information is over.
 
-In this article, you shall be able to do some input validations, effects, and animations based on the outcome on the form.
+In this article, you will be able to do input validations, effects, and animations based on the outcome on the form.
 
 ### Table of Content
 
@@ -581,12 +597,10 @@ Run the application. The outputs are as shown below. However, When there is no i
 ![When the login is successful](/engineering-education/creating-an-animated-javafx-field-validation-alert/on-success-message.png "When the login is successful")
 
 ### Animating the user interface
-To add animations in the JavaFX project, the `AnimateFX` dependency is required.
-
+The `AnimateFX` dependency is required to add animations in the JavaFX project.
 > `AnimateFX` is a JavaFX library that provides animations for a JavaFX project.
 
 AnimateFX animations for JavaFX controls include:
-
 - Bounce
 - BounceIn
 - FadeIn
