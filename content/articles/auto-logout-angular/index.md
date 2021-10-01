@@ -26,6 +26,7 @@ This tutorial discusses how we can build a secure Angular application that can s
 - [Objectives](#objectives)
 - [Getting started with auto log off](#getting-started-with-auto-log-off)
 - [Setting up a sample auto logout project](#setting-up-a-sample-auto-logout-project)
+- [Installing packages](#installing-packages)
 - [Creating authentication forms](#creating-authentication-forms)
 - [How to determine if a screen is idle](#how-to-determine-if-a-screen-is-idle)
 - [Issues with our implementations](#issues-with-our-implementations)
