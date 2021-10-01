@@ -17,15 +17,14 @@ images:
 
 Automatic sign out is a pervasive feature in web development or mobile applications, especially in banking systems. As a result, it plays a significant role in ensuring the safety and integrity of data.
 <!--more-->
-
 Auto log off comes hand in hand because an application user may forget to log off the system after use. This tutorial discusses how we can build a secure Angular application that can sign out idle screens.
 
 ### Table of contents
-- [Objectives](#objectives)
 - [Prerequisites](#prerequisites)
-- [Getting started with automatic log off](#getting-started-with-automatic-log-off)
-- [Setting up a sample automatic log off project](#setting-up-a-sample-automatic-log-off-project)
-- [Creating authenticatiion forms](#creating-authenticatiion-forms)
+- [Objectives](#objectives)
+- [Getting started with automatic log off](#getting-started-with-auto-log-off)
+- [Setting up a sample automatic log off project](#setting-up-a-sample-auto-logout-project)
+- [Creating authenticatiion forms](#creating-authentication-forms)
 - [How to determine if a screen is idle](#how-to-determine-if-a-screen-is-idle)
 - [Conclusion](#conclusion)
 
