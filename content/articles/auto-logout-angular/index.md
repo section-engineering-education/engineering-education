@@ -6,7 +6,7 @@ url: /auto-logout-angular/
 title: Implementing Auto Logout in Angular 12
 description: This tutorial teaches readers everything they need to get started with Angular auto logout feature. Automatic logout is a pervasive feature in web development and mobile applications, especially in banking systems. As a result, it plays a significant role in ensuring the safety and integrity of data.
 author: owino-wendy
-date: 2021-10-01T00:00:00-05:50
+date: 2021-10-01T00:00:00-06:10
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
