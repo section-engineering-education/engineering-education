@@ -1,5 +1,5 @@
 ### Introduction
-Design patterns are a set of coding conventions for resolving recurring issues in software development. The singleton pattern creates a single instance of a class, as the name implies. The restriction should be applied in numerous cases when only one of the instances of a class can exist. It is recommended only to have one instance of caches, thread pools, and registries. Singleton pattern was created to give a standard means of supplying a specific instance of an element all across the life of an application. Put it in another way; if the application isn't restarted, the model will remain the same.
+Design patterns are a set of coding conventions for resolving recurring issues in software development. As the name implies singleton pattern creates an individual instance of the class. The restriction should be applied in numerous cases when only one of the instances of a class can exist. It is recommended only to have one instance of caches, thread pools, and registries. Singleton pattern was created to give a standard means of supplying a specific instance of an element all across the life of an application. Put it in another way; if the application isn't restarted, the model will remain the same.
 
 ### Table of contents
 - [Overview of what is Csharp Singleton Design Pattern.](#overview-of-what-is-csharp-singleton-design-pattern)
@@ -68,13 +68,13 @@ public closed class OurSingleton01 {
 Whenever both threads determine that the testing (if instance == null) is true, the two construct instances could have been evaluated by both threads, which violates the singleton framework pattern.
 > There is no way to guarantee that a new instance variable will be observed by other threads even if the expression has already been run. This is due to how memory architecture works.
 
-#### 2. Singleton for Thread-Safety.
+#### 2. Using a singleton for Thread-Safety.
 
 ```C#
 public closed class OurSingleton01
 {
     private static OurSingleton01 instances = null;
-    private static readonly obj1 codelock = new obj1();
+    protected static readonly obj1 codelock = new obj1();
 
     OurSingleton01()
     {
@@ -107,8 +107,8 @@ Instead of locking on the type (Singleton), this method locks on the static valu
 ```C#
 public closed class OurSingleton01 
 {
-    private static OurSingleton01 instances = null;
-    private static readonly obj codelock = new obj();
+    protected static OurSingleton01 instances = null;
+    protected static readonly obj codelock = new obj();
 
     OurSingleton01()
     {
@@ -202,32 +202,32 @@ For the `LazySingleton,` the default thread-safety mode is `LazyThreadSafetyMode
 ```C#
 public closed class OurSingleton01
 {
-    private OurSingletons()
+    private OurSingleton01()
     {
      }
 
           public static OurSingleton01 Instances { get { return Nested.instances; }
           }
 
-             private class Nested
+             protected class Nested
             {
         
              static Nested()
            {
         }
 
-        internal static readonly OurSingleton011 instances = new OurSingleton01();
+        static readonly OurSingleton01 instances = new OurSingleton01();
     }
 }
 ```
 **Explanation**
-Instantiation can only be triggered by nested class, a static component found in an instance of the first occurrence. The original method of the version will have all the performance advantages and will be in lazy form. It is not necessarily true that although nested classes can access the secret members of their parent, they can still access them in the other way (reverse). A class that has been private is not a problem because the code is somewhat more complex to make the instantiation to be lazy.
+An instance of the very first incidence seems to be the only place where instantiation can be initiated by the nested object, a static element. The original concept of the version will be in a lazy manner and have all performance gains. It is not necessarily true that although nested classes can access the secret members of their parent, they can still access them in the other way (reverse). A class that has been private is not a problem because the code is somewhat more complex to make the instantiation to be lazy.
 
 ### Performance vs. laziness.  
-Unless your class setup is extremely time-consuming or has unforeseen consequences elsewhere, we probably won't need the explicit static constructor. By allowing the Just-in-time compiler to make a single request(for example, at the beginning of a method), we can certify that this category has been initialized. Employing a singleton instance in a tight loop can affect application performance significantly. It determines if lazy instantiation is necessary or not. 
+Unless your class setup is extremely time-consuming or has unforeseen consequences elsewhere, we probably won't need the explicit static constructor. By allowing the Just-in-time compiler to make a single request(for example, at the beginning of a method), we can certify that this category has been initialized. Creating an application using a singleton instance and a tight loop can have a substantial impact on performance. It determines if lazy instantiation is necessary or not. 
 
 ### Exceptions
 A singleton constructor must be used for tasks that can raise an exception but are not fatal to the application. There's a chance that the app can fix the issue, so you could want to give it another shot! At this point, using the category of initializers to build the singleton is troublesome. However, the intended action (running the type initializer afresh) is not always done by different runtimes, and when it is done, the code becomes wrong on other runtimes.
 
 ### Conclusion
-As evident in this tutorial, we have seen that a singleton pattern is a class that only permits the creation of a single instance of itself, which often provides straightforward access to that instance. We have also discussed how useful the Singleton Pattern is in the C# language and how to implement it differently.
+In this tutorial, we have seen that there has been no doubt that the singleton pattern refers to a class that only allows the development of a single instance and typically offers easy accessibility to that instance. We have also discussed how useful the Singleton Pattern is in the C sharp language and how to implement it differently.
