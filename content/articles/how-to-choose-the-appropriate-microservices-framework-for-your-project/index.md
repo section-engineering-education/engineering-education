@@ -1,9 +1,9 @@
-﻿### Introduction
+### Introduction
 In the past years, applications used to be developed in [monolith architecture](https://whatis.techtarget.com/definition/monolithic-architecture). They were coded from top to bottom as a single unit. Most of the time, they had no structure and capabilities for future maintenance or upgrades, which posed several challenges. They were difficult to debug or even add new features.
 
 [Microservices architecture](https://microservices.io/) assists the developers in building multiple smaller applications instead of one large application. A large application can be challenging to maintain, and also adding new features and functionalities is not easy.
 
-With the use of microservices architecture, developers can create a small application for each feature. Whenever the business requires a new feature, a new smaller program is created. Each microservice can be developed independently using a different programming language and run on its own.
+With the use of microservices architecture, developers can create a small application for each feature. Whenever the business requires a new feature, a new smaller program is created. Each microservice can be developed and run independently.
 
 Businesses and developers may face challenges when choosing the right microservices frameworks to build robust applications at minimal time and cost. The article will equip the learners with the aspects to consider when selecting a microservice framework for their projects and comparing the available frameworks.
 
