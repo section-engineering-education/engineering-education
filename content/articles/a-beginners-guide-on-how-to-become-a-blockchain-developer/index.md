@@ -143,7 +143,9 @@ The reputation of ICOs to investors has been dwindling recently due to the lack 
 
 Lastly, as a developer, it is key to understand the difference between a token and a coin when it comes to cryptocurrencies. We use tokens and coins interchangeably when talking about cryptocurrencies.
 
-A cryptocurrency coin is classified as a store or exchange of value. For example, Bitcoin is a coin and not a token. You can use it as a store or exchange of value, like a currency. A token is a digital representation of an asset that can be exchanged using the blockchain network. Ethereum falls under this category with its ERC-20 tokens. The difference between the two is a bit cloudy but the difference is still there. Read this [blog post](https://blog.liquid.com/coin-vs-token) to understand the differences in depth.
+A cryptocurrency coin is classified as a store or exchange of value. For example, Bitcoin is a coin and not a token. You can use it as a store or exchange of value, like a currency.
+
+A token is a digital representation of an asset that can be exchanged using the blockchain network. Ethereum falls under this category with its ERC-20 tokens. The difference between the two is a bit cloudy but the difference is still there. Read this [blog post](https://blog.liquid.com/coin-vs-token) to understand the differences in depth.
 
 As a blockchain developer, you need to think along those lines.
 
