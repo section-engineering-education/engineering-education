@@ -22,7 +22,7 @@ This tutorial will show you how to create a web plugin using Flutter.
 
 When constructing Flutter plugins, the distinction between the old and new techniques is that platform-specific implementations are divided into different packages. `Federated plugins` are created in this manner. 
 
-By reorganizing your plugin as a federated plugin, anyone can add support for new platforms without needing to do so yourself. On the other hand, a flutter plugin contains just Dart code, while a package only contains Native code. A package can use plugins if it so chooses. 
+By reorganizing your plugin as a federated plugin, anyone can add support for new platforms without needing to do so yourself. A flutter plugin contains just Dart code, while a package only contains Native code. On the other hand, a package can use plugins if it so chooses. 
 
 ### Platform interfacing
 Platform interfacing is the process of abstracting what plugin package is to be implemented via its platforms. Additionally, platform interfacing explains how the plugin package communicates with the platform implementation and replaces what the plugin package needs from the platform.
@@ -30,15 +30,15 @@ Platform interfacing is the process of abstracting what plugin package is to be 
 ### Creating the platform interface package
 The plugin sits in a directory like packages/URL launcher in the flutter/plugins directory on the GitHub repository. First, we will develop the platform interface package and restructure the code to use a federated plugin directory arrangement. 
 
-We are creating a directory that contains the plugin package, the platform interface, and web packages. For example, the URL launcher plugin can be moved to a federated sub-folder in the packages/ directory. 
+We will be creating a directory that contains the plugin package, the platform interface, and web packages. For example, the URL launcher plugin can be moved to a federated sub-folder in the packages/ directory. 
 
-Run the following code in the current directory you created earlier to create the platform interface package.
+Now run the following code in the current directory you created earlier to create the platform interface package.
 
 ```bash
 $ mkdir url_launcher_interface_platform
 ```
 
-The URL launcher interface platform folder needs a few files to be complete.
+For the URL launcher interface platform folder, needs a few files to be complete. These files are named below:
 
 1. License file
 
@@ -73,14 +73,13 @@ import 'method_channel_url_launcher.dart';
   }
 }
 ```
-
-Implementations of url launchers must adhere to this interface. Platform implementations should extend the above class instead of implementing a URL launcher.
+> Implementations of url launchers must adhere to this interface. Platform implementations should extend the above class instead of implementing a URL launcher.
 
 By definition, new methods are not considered breaking changes. Extending the above class (with extends) assures that the subclass receives the default implementation, whereas the newly added interface will damage the platform implementations of this interface.
 
-> The default implementation of all platform interface functions should throw a UnimplementedError.
+Note that the default implementation of all platform interface functions should throw a UnimplementedError.
 
- For example, to write `MethodChannelUrlLauncher`, now edit lib/method channel url launcher and paste the following:
+To write `MethodChannelUrlLauncher`, edit lib/method channel url launcher and paste the following code and upload the new package to `pub.dev` after committing:
 
 ```dart
 import 'dart:async';
@@ -102,12 +101,10 @@ class MethodChannelUrlLauncher extends UrlLauncherPlatform {
 }
 ```
 
-Upload the new package to `pub.dev` after committing the new code and submitting it to version control.
-
 ### Refactoring package:url_launcher
-We will now utilize package: URL launcher, which has been uploaded to the `pub.dev` as a platform interface package, and after that, add a dependency on url_launcher_interface_platform.
+We will now utilize package: URL launcher, which has been uploaded to the `pub.dev` as a platform interface package, and after that, we will add a dependency on url_launcher_interface_platform.
 
-Then we will now refactor all usages of `MethodChannel`.
+Let us now refactor all usages of `MethodChannel`:
 
 ```dart
 const MethodChannel _chan = MethodChan('plugins.flutter.io/url_launcher');
@@ -118,10 +115,10 @@ Future<bool> launch(String urlString) async {
 }
 ```
 
-Make sure you have written an item to the **CHANGELOG.MD** stating that package: URL launcher is being migrated to the platform interface.
+> Make sure you have written an item to the **CHANGELOG.MD** stating that package: URL launcher is being migrated to the platform interface.
 
 ### Using the platform interface to implement package:url_launcher_web
-Paste the following code in the lib/URL launcher `web.dart` file replace the platform interface with this plugin:
+Paste the following code in the lib/URLlauncher `web.dart` file to replace the platform interface with this plugin:
 
 ```Dart
 import 'dart:async';
@@ -144,7 +141,7 @@ class UrlLauncherPlugin extends UrlLauncherPlatform {
 }
 ```
 
-Stating that this is the `UrlLauncherPlatform` default instance, rather than registering a `MethodChannel`, makes more sense. When `package:url` launcher calls `UrlLauncherPlatform.instance.launch()`, the `launch()` function defined here is called.
+Stating that this is the `UrlLauncherPlatform` default instance, rather than registering a `MethodChannel`, makes more sense. When `package:url` launcher calls `UrlLauncherPlatform.instance.launch()`, the `launch()` function defined is called.
 
 All the necessary code for creating a package is contained in this class. As a result, understanding Flutter's `MethodChannel` APIs is no longer required to design platform-specific plugin implementations. Web-based URL launcher When designing a platform interface package for a plugin, keep these considerations in mind.
 
@@ -158,7 +155,7 @@ When it comes to creating web content, Flutter supports HTML/CSS/JavaScript stan
 To use this plugin:
 - Initiate a new launch demo project.
 - Create a dependency for content copy in pubspec.yaml by opening it and adding it to the list.
-- Run, Flutter, and pub! Packages get in the terminal, or IntelliJ or Android Studio's Packages get the menu.
+- Run Flutter in the terminal.
 - Try it out! (or stop and restart it if it was already running before adding the plugin).
 
 ### Conclusion
