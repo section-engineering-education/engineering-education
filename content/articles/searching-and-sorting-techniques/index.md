@@ -6,19 +6,21 @@ url: /searching-and-sorting-techniques/
 title: Searching and Sorting Techniques 
 description: This article will discuss the various sorting and searching techniques, as well as their implementation in data structures and algorithms.
 author: jairus-onkundi
-date: 2021-09-27T00:00:00-23:30
+date: 2021-10-01T00:00:00-00:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/searching-and-sorting-techniques/hero.jpg
-    alt: Searching and Sorting Techniques Hero Image
+    alt: Searching and sorting techniques 
 ---
-Searching is determining the position of an item in a list. This is a crucial aspect of many data structure techniques, because we can only execute one action on an item if and only if we locate the item.
+Searching is determining the position of an item in a list. This is a crucial aspect of many data structure techniques, because we can only execute one action on an item if and only if we locate the item. 
 <!--more-->
 To determine if an element is present in a collection of components, many methods have been devised, as we will discuss in this article.
 
-Sorting is putting information in a certain order in a data structure. Sorting data makes it easier to navigate through it quickly and efficiently. Sorting reduces the complexity of problems by a large amount, and sorting is a technique for reducing the complexity of searching. 
+Sorting is putting information in a certain order in a data structure. Sorting data makes it easier to navigate through it quickly and efficiently. 
+
+Sorting reduces the complexity of problems by a large amount, and sorting is a technique for reducing the complexity of searching. 
 
 ### Introduction
 Sorting, for example, is required before using Binary Search, and it is also used in database methods. Sorted arrays and lists make it easier to locate items fast. 
@@ -39,7 +41,8 @@ The linear search method is a pretty simple search method. A sequential search i
 
 Every item is verified, and if a match is discovered, that item is returned; if not, the search continues until the data collection is complete.
 
-##### Algorithm
+**Algorithm**
+
 Step 1: Determine the size of the data set.
 
 Step 2: Set the counter to zero.
@@ -59,7 +62,8 @@ To search a sorted array, divide the search interval in half regularly. Begin by
 
 If the search key's value is less than the item in the interval's midpoint, the interval should be narrowed to the bottom half. Otherwise, limit it to the upper half of the page. Check the value until it is discovered or the interval is empty.
 
-##### Algorithm
+**Algorithm**
+
 The procedures for implementing binary search are:
 Step 1: Ask the user for the search element.
 
@@ -88,7 +92,8 @@ Let's look at the meaning of this formula:
 - i: Starting index in ar[]
 - z: Ending index in ar[]
 
-##### Algorithm
+**Algorithm**
+
 Step 1: Begin looking for information in the middle of the list.
 
 Step 2: If there is a match, return the item's index and leave.
@@ -108,7 +113,8 @@ The Jump Search approach is a new sorting method that locates a particular compo
 
 In each iteration, this can be accomplished by skipping a fixed number of array elements or leaping ahead a fixed number of steps.
 
-##### Algorithm
+**Algorithm**
+
 Consider the x=3 block size.
 
 The first element is k and the second is m.
@@ -122,12 +128,13 @@ If the target element is present in the sorted array, it can be found.
 ### Sorting techniques and their implementation
 Elements in a data structure can be sorted using the sorting techniques as discussed below:
 
-#### 1) Insertion sort
+#### 1. Insertion sort
 Insertion sort is a sorting method in which each item in a sorted list is added one at a moment. The list members are compared progressively before being placed in a specific order.
  
 In this sorting technique, an element is inserted at a certain location.
 
-##### Algorithm
+**Algorithm**
+
 Step 1: If it's the first element, it's already sorted.
 
 Step 2: Select the next item.
@@ -144,12 +151,13 @@ An example of insertion sort is as shown below:
 
 ![insertion](/engineering-education/searching-and-sorting-techniques/insertion-sort.png)
 
-#### 2) Bubble sort
+#### 2. Bubble sort
 Bubble Sort is a basic sorting technique that t compares each adjacent element and swaps them when they're out of sequence.
 
 Bubble sort works well with small sets of data.
 
-##### Algorithm
+**Algorithm**
+
 The stages involved in bubble sort (sorting an array in ascending order) are as follows:
 Step 1: Compare the current element to the next element of the array, starting with the first element (index = 0).
 
@@ -163,12 +171,13 @@ An example bubble sort is as shown below:
 
 Step 4: Repeat Step 1.
 
-#### 3) Selection sort
+#### 3. Selection sort
 The Selection Sort technique sorts an array by continually choosing the smallest item from the unsorted segment and placing it at the start in ascending order. As a result, that item is added to the sorted array.
 
 This procedure keeps moving the unsorted array border one item to the right.
 
-##### Algorithm
+**Algorithm**
+
 Step 1: Pick the first item on an array.
 
 Step 2: Compare the picked item to the rest of an array's items.
@@ -181,10 +190,11 @@ An example selection sort is as shown below:
 
 ![selection sort](/engineering-education/searching-and-sorting-techniques/selection-sort.png)
 
-#### 4) Merge sort
+#### 4. Merge sort
 One of the most efficient sorting algorithms is Merge sort. It is based on the divide-and-conquer strategy. Merge sort reduces down a list into sub-lists until every sub-list only includes one element, after which it combines the sub-lists into a sorted list.
 
-##### Algorithm
+**Algorithm**
+
 Step 1: If there is just one entry in the list, return it because it has been sorted already.
 
 Step 2: Recursively partition the list into two halves until you can't partition it anymore.
@@ -195,12 +205,13 @@ An example of merge sort is as shown below:
 
 ![merge sort](/engineering-education/searching-and-sorting-techniques/merge-sort.png)
 
-#### 5) Quick sort
+#### 5. Quick sort
 It is a similar split-and-conquer technique to merge sort. It selects a pivot element and partitions the specified array around that pivot.
 
 A large list is partitioned into two sub-lists, the first of which includes elements lower than the element, referred to as pivots, and the other of which contains elements higher than the pivot element, on which divisions are constructed.
 
-##### Algorithm
+**Algorithm**
+
 Step 1: Decide which index value has the highest pivot.
 
 Step 2: Use two parameters, one is on the upper left of the list middle value, and the other on the upper right.
@@ -221,13 +232,14 @@ An example quick sort is as shown below:
 
 ![quick sort](/engineering-education/searching-and-sorting-techniques/quick-sort.png)
 
-#### 6) Heap sort
+#### 6. Heap sort
 Heap sort is a sorting algorithm that compares objects using a Binary Heap dataset. It's comparable to selection sorting, in which we identify the smallest piece first and place it at the top. For the remaining values, the same procedure is repeated.
 
 A Binary Heap is a Complete Binary Tree in which elements are placed in such a way that the value of a parent node is higher (or lower) than the elements of its two offspring nodes.
 
-##### Algorithm
+**Algorithm**
 Sorting in ascending order with the Heap Sort Algorithm:
+
 Step 1: Create a maximum heap using the data.
 
 Step 2: The largest element is placed at the base of the root at this stage.
