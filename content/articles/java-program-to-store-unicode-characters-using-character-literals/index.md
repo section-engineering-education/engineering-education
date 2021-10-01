@@ -45,7 +45,7 @@ class Example {
 }
 ```
 **OUTPUT**
-```
+```bash
 /
 ?
 1
@@ -81,7 +81,7 @@ class Example {
 }
 ```
 **OUTPUT**
-```
+```bash
 /
 ?
 1
@@ -114,7 +114,7 @@ class Example {
 }
 ```
 **OUTPUT**
-```
+```bash
 /
 1
 ~
