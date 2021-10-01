@@ -3,61 +3,56 @@ layout: engineering-education
 status: publish
 published: true
 url: /design-a-sign-up-and-login-gui-using-javafx/
-title: Design a sign up and login GUI using JavaFX
-description: In this tutorial, the reader will learn how to build a login and signup form with JavaFX
+title: Design a Signup and Login GUI Using JavaFX
+description: In this tutorial, the reader will learn how to build a login and signup form with JavaFX. JavaFX is an open-source Java framework that is used for creating, developing, and delivering portable hardware-accelerated user interfaces.
 author: roy-kibet
-date: 2021-09-21T00:00:00-16:00
-topics: [Frontend technologies, Java]
+date: 2021-10-01T00:00:00-07:00
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/design-a-sign-up-and-login-gui-using-javafx/hero.png
-    alt: javafx login and signup gui
+    alt: Javafx login and signup gui
 ---
-
-JavaFX is an open-source Java framework. It's for creating, developing, and delivering portable hardware-accelerated user interfaces. JavaFX creates GUIs for rich internet applications (RIA). It is for web, desktop, and embedded and mobile applications. For example, one would use for it would be for login and sign-up forms. These have a unique design that makes the site presentable and of a unique design.
+JavaFX is an open-source Java framework that is used for creating, developing, and delivering portable hardware-accelerated user interfaces. JavaFX creates GUIs for rich internet applications (RIA).
 <!--more-->
+It is for web, desktop, embedded, and mobile applications. For example, one use for it would be for login and sign-up forms. These have a unique design that makes the site presentable and of a unique design.
 
 In this article, you will learn how to build a JavaFX login and sign-up user interface (UI).
 
-### Table of Content
-
+### Table of contents
 - [Key takeaways](#key-takeaways)
 - [Pre-requisites](#pre-requisites)
 - [What is JavaFX](#what-is-javafx)
-- [JavaFX Libraries](#javafx-libraries)
-- [Set Up a JavaFX project](#set-up-a-javafx-project)
-    - [Simple JavaFX "Hello" application](#simple-javafx-hello-application)
-    - [Folder Structure](#folder-structure)
-    - [Set up a JavaFX Scene Builder](#set-up-a-javafx-scene-builder)
-- [Build the Login and Sign-Up form](#build-the-login-and-sign-up-form)
-    - [Change the stage appearance](#change-the-stage-appearance)
-    - [Customize the User Interface](#customize-the-user-interface)
-        - [Aside](#aside)
-        - [A Header](#a-header)
-        - [Login Section](#login-section)
-        - [Line break](#line-break)
-        - [Sign Up Section](#sign-up-section)
-        - [Footer](#footer)
-- [Run the Application](#run-the-application)
+- [JavaFX libraries](#javafx-libraries)
+- [Set up a JavaFX project](#set-up-a-javafx-project)
+  - [Simple JavaFX "Hello" application](#simple-javafx-hello-application)
+  - [Folder structure](#folder-structure)
+  - [Set up a JavaFX Scene Builder](#set-up-a-javafx-scene-builder)
+- [Build the login and sign-up form](#build-the-login-and-sign-up-form)
+  - [Change the stage appearance](#change-the-stage-appearance)
+  - [Customize the user interface](#customize-the-user-interface)
+    - [Aside](#aside)
+    - [A Header](#a-header)
+    - [Login section](#login-section)
+    - [Line break](#line-break)
+    - [Signup Section](#signup-section)
+    - [Footer](#footer)
+- [Run the application](#run-the-application)
 - [Conclusion](#conclusion)
 - [Further your understanding](#further-your-understanding)
 - [References](#references)
 
 ### Key takeaways
-
 At the end of this article, you will have gained the following knowledge:
-
 - What is JavaFX
 - JavaFX libraries
 - Setting up a JavaFX project
 - Designing the Login and Sign-up form
 - Running the application
 
-### Pre-requisites
-
+### Prerequisites
 The basics of the article include the following:
-
 - Knowledge and use of the Java language.
 - A Java IDE is set up in the machine. I recommend the latest version of IntelliJ IDEA Community Edition, which is free and very interactive. Download it [here](https://www.jetbrains.com/idea/download/). The latest ultimate version also supports JavaFX.
 - A stable internet connection.
@@ -65,34 +60,38 @@ The basics of the article include the following:
 > Screenshot images found in the article are of the Intellij Ultimate `2021.2.2` version.
 
 ### What is JavaFX
+As stated above, JavaFX is a framework for creating user interfaces for use in WIMP (Windows, Icons, Menus, and Pointers) based systems.
 
-As stated above, JavaFX is for creating user interfaces for use in WIMP (Windows, Icons, Menus, and Pointers) based systems. It is suitable for Java applications with user interfaces. It is easy to use, and it has several tools and aids used during the design process and testing.
+It is suitable for Java applications with user interfaces. It is easy to use, and it has several tools and aids used during the design process and testing.
 
-The UI is designed in Java or XML. **FXML** files are XML files used to design and build user interfaces separate from the main application logic. This separation enables one to distinguish between the user interface files and those of the main app. In the tutorial, you will interact with it to develop a visual interface for your application.
+The UI is designed in Java or XML.
 
-### JavaFX Libraries
+**FXML** files are XML files used to design and build user interfaces separate from the main application logic. This separation enables one to distinguish between the user interface files and those of the main app.
 
-Libraries in JavaFX provide one with the needed controls, menus, containers, and other elements. This provision is without the inclusion of unnecessary extra elements and attributes. The application's storage space is small since it has only what is needed.
+In the tutorial, you will interact with it to develop a visual interface for your application.
 
-Some of these libraries and their functionality include:
+### JavaFX libraries
+Libraries in JavaFX provide one with the needed controls, menus, containers, and other elements.
 
+This provision is without the inclusion of unnecessary extra elements and attributes.
+
+The application's storage space is small since it only has what is needed.
+
+Some of these libraries and their functionalities include:
 - **ControlsFX**: Provides the developer with controls such as buttons, checkboxes, radio buttons, labels, text, password fields, etc.
 - **BootstrapFX**: Provides the program with CSS styling, designed for a JavaFX application. It formats the controls and other elements put in the application.
 - **FormsFX**: It helps in the quick creation and design of forms. It contains features such as validation, predefined controls, and localization tools. These are to reduce the time taken to create methods to validate arguments in the form.
 - **Ikonli**: Has a list of icon packs for easy access in the application.
-  **TilesFX**: It enables the designer to use tiles to enhance the application's appearance, e.g. on dashboards.
+- **TilesFX**: It enables the designer to use tiles to enhance the application's appearance, e.g. on dashboards.
 - **ValidatorFX**: This makes forms made in the application super easy.
 - **FXGL**: This is for game developers. It has tools used to develop games.
 - **Charts**: This is recommended when one wants to create scientific charts. It has stunning chart templates for one's use through quick manipulation.
 
-### Set Up a JavaFX project
-
-#### Simple JavaFX "Hello" application
-
-Open the IDE and click on *create a new project*. Next, choose *JavaFX* on the left-hand side of the window opened.
+### Set up a JavaFX project
+#### Simple JavaFX Hello application
+Open the IDE and click on _create a new project_. Next, choose _JavaFX_ on the left-hand side of the window opened.
 
 In the text fields, fill them as follows:
-
 - `Name`: loginform
 - `Group`: login
 - `Artifact`: loginform
@@ -101,17 +100,18 @@ This step is shown in the image below:
 
 ![Create a new JavaFX project](/engineering-education/design-a-sign-up-and-login-gui-using-javafx/JavaFX-newProject.png)
 
-Click *Next* to go to the next window. In the dependencies window, choose BootstrapFX, ControlsFx, and FormsFX. This step is as shown in the image below:
+Click _Next_ to go to the next window. In the dependencies window, choose BootstrapFX, ControlsFx, and FormsFX.
+
+This step is as shown in the image below:
 
 ![JavaFX dependencies](/engineering-education/design-a-sign-up-and-login-gui-using-javafx/JavaFX-dependencies.png)
 
 Create a new project when done.
 
-#### Folder Structure
-
+#### Folder structure
 The project's folders will look as shown below:
 
-```shell
+```bash
 .
 ├── src
 │   └── main
@@ -126,31 +126,44 @@ The project's folders will look as shown below:
 └── pom.xml
 ```
 
-Open the `HelloApplication.java` file found inside *src/main/java/com/login/loginform/*. Run it using `Shift + F10`. This combination opens a new *Hello!* window where clicking the button displays text. It looks as follows:
+Open the `HelloApplication.java` file found inside _src/main/java/com/login/loginform/_. Run it using `Shift + F10`.
+
+This combination opens a new _Hello!_ window where clicking the button displays text.
+
+It looks as follows:
 
 ![Hello JavaFX Window](/engineering-education/design-a-sign-up-and-login-gui-using-javafx/hello-JavaFX.png)
 
 Modify it to fit the application of choice.
 
-#### Set up a JavaFX Scene Builder
+#### Set up a JavaFX Scene builder
+Close the window opened and head over to the _resources_ folder.
 
-Close the window opened and head over to the *resources* folder, and in the subsequent subfolder, open the `hello-view.fxml`. At the bottom of the window, choose *Scene Builder* to view the file using JavaFX ScreenBuilder.
+In the subsequent subfolder, open the `hello-view.fxml`.
 
-In case of errors due to missing the Scene Builder, click *Download Scene Builder*, as shown in the image below. Wait as it completes the process.
+At the bottom of the window, choose _Scene Builder_ to view the file using JavaFX ScreenBuilder.
+
+In case of errors due to missing the Scene Builder, click _Download Scene Builder_, as shown in the image below. Wait as it completes the process.
 
 ![Download Screen Builder](/engineering-education/design-a-sign-up-and-login-gui-using-javafx/download_screen_builder.png)
 
-After a few moments, it will open up the Scene Builder and view how the application will look when run. It looks as shown below:
+After a few moments, it will open up the Scene Builder and view how the application will look when run.
+
+It looks as shown below:
 
 ![Scene Builder](/engineering-education/design-a-sign-up-and-login-gui-using-javafx/Scene-Builder.png)
 
 > **NOTE**: Scene Builder can also be installed separately from the IntelliJ IDEA environment.
 
-### Build the Login and Sign-Up form
-
+### Build the login and signup form
 #### Change the stage appearance
+First, change the title of the window, then increase its size.
 
-First, change the title of the window, then increase its size. In the `HelloApplication.java` file, replace its title from *Hello!* to *Login or Sign-Up Form!*. Change the size to 1000 by 700, that is, the width and the height. It will look like shown below:
+In the `HelloApplication.java` file, replace its title from _Hello!_ to _Login or Sign-Up Form!_.
+
+Change the size to 1000 by 700, that is, the width and the height.
+
+It will look like shown below:
 
 ```java
 package com.login.loginform;
@@ -174,25 +187,35 @@ public class HelloApplication extends Application {
 }
 ```
 
-#### Customize the User Interface
-
-In the `hello-view.fxml` file, view it using the Scene Builder. On the left-hand side, delete the VBox that contains the label and button as seen in the application.
+#### Customize the user interface
+In the `hello-view.fxml` file, view it using the scene builder. On the left-hand side, delete the VBox that contains the label and button as seen in the application:
 
 ![Delete VBox](/engineering-education/design-a-sign-up-and-login-gui-using-javafx/Delete-VBox.png "Delete VBox")
 
 Add a border pane by dragging and dropping it from the containers section to the window where the VBox was. A border pane allows one to easily keep controls in the top, left, right, center, and bottom of the window. This step will aid in dividing the window.
 
-Now drag and drop an AnchorPane from the containers section into the left side of the border pane. On the right-hand side, on the properties window, in *Style*, enter the CSS style attribute. It will be `-fx-background-color` and place the value to be `#A9A9A9` next to it.
+Now drag and drop an AnchorPane from the containers section into the left side of the border pane.
 
-In the layout tab, set `Pref Width` and `Pref Height` to 400 and 700.
+On the right-hand side, on the properties window, in _Style_, enter the CSS style attribute. It will be `-fx-background-color` and place the value to be `#A9A9A9` next to it.
+
+In the layout tab, set `Pref Width` and `Pref Height` to 400 and 700 respectively.
 
 ##### Aside
+Head over to the _controls_ tab found on the left-hand side.
 
-Head over to the *controls* tab found on the left-hand side. Drag and drop an ImageView control into the AnchorPane. On the layout tab under the properties tab, set its `Fit Width` and `Fit Height` to 400 and 400. To move it to be at almost the center of the AnchorPane, set the `Layout X` and `Layout Y` values to 0 and 180. Download the logo and other images in the repository found in [this](https://github.com/RisoriTofa/A-JavaFX-Login-and-Sign-Up-Form) link. Copy the images into the resource folder to the location of the `hello-view.fxml` file. In the properties tab, set the image name to *logo.png*.
+Drag and drop an ImageView control into the AnchorPane.
 
-Now head over to the right side of the BorderPane and drag and drop another AnchorPane in it. Set its `Pref Width` and `Pref Height` to 600 and 700. This step makes the left and right BorderPane parts fit the initial height.
+On the layout tab under the properties tab, set its `Fit Width` and `Fit Height` to 400.
 
-The Code shall look as follows when viewed:
+To move it to be almost at the center of the AnchorPane, set the `Layout X` and `Layout Y` values to 0 and 180 respectively.
+
+Download the logo and other images in the repository found in [this](https://github.com/RisoriTofa/A-JavaFX-Login-and-Sign-Up-Form) link.
+
+Copy the images into the resource folder to the location of the `hello-view.fxml` file. In the properties tab, set the image name to _logo.png_.
+
+Now head over to the right side of the BorderPane and drag and drop another AnchorPane in it. Set its `Pref Width` and `Pref Height` to 600 and 700 respectively. This step makes the left and right BorderPane parts fit the initial height.
+
+The code shall look as shown when viewed:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -215,7 +238,7 @@ The Code shall look as follows when viewed:
         <!-- An AnchorPane in the Left BorderPane -->
         <AnchorPane prefHeight="700.0" prefWidth="400.0" style="-fx-background-color: #A9A9A9;" BorderPane.alignment="CENTER">
             <children>
-                
+
                 <!-- Logo -->
                 <ImageView fitHeight="400.0" fitWidth="400.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true">
                     <image>
@@ -230,7 +253,7 @@ The Code shall look as follows when viewed:
     <!-- Beginning of the right part of the Borderpane -->
     <right>
         <AnchorPane prefHeight="700.0" prefWidth="600.0" BorderPane.alignment="CENTER">
-            
+
         </AnchorPane>
     </right>
     <!-- Ending of the right part of the Borderpane -->
@@ -238,7 +261,7 @@ The Code shall look as follows when viewed:
     <!-- Beginning of the bottom part of the Borderpane -->
     <bottom>
 
-        
+
     </bottom>
     <!-- Ending of the bottom part of the Borderpane -->
 
@@ -251,7 +274,7 @@ Inside the AnchorPane, add the following:
 
 **ImageView**
 
-This control will carry in it a small cart logo.
+This control will carry in it a small cart logo:
 
 - **Properties:**
   - `Image`: cart.png
@@ -267,8 +290,8 @@ This control will carry in it a small cart logo.
   - `Text`: SHOP NOW
   - `Font`: SanSerif 25px
 - **Style:**
-  - `-fx-background-color`:  transparent
-  - `-fx-text-fill`:  #24a0ed
+  - `-fx-background-color`: transparent
+  - `-fx-text-fill`: #24a0ed
 
 > To add more styles, click on the addition button in the Style section.
 
@@ -284,17 +307,16 @@ This control will carry in it a small cart logo.
   - `Text`: Cancel
   - `Font`: SanSerif 15px
 - **Style:**
-  - `-fx-background-color`:  transparent
+  - `-fx-background-color`: transparent
   - `-fx-text-fill`: #A9A9A9
   - `-fx-border-width`: 2
-  - `-fx-border-color`:  #A9A9A9
+  - `-fx-border-color`: #A9A9A9
   - `-fx-border-radius`: 5
 - **Layouts:**
   - `Layout X`: 502
   - `Layout Y`: 13
 
-It results in the following Code:
-
+It results in the following code:
 
 ```xml
 <right>
@@ -328,7 +350,7 @@ It results in the following Code:
   - `Text`: Login
   - `Font`: SanSerif 30px
 - **Style:**
-  - `-fx-text-fill`:  #A9A9A9
+  - `-fx-text-fill`: #A9A9A9
 - **Layouts:**
   - `Pref Width`: 90
   - `Pref Height`: 30
@@ -352,7 +374,7 @@ It results in the following Code:
   - `Font`: SanSerif 14px
 - **Style:**
   - `-fx-border-width`: 2
-  - `-fx-border-color`:  #A9A9A9
+  - `-fx-border-color`: #A9A9A9
   - `-fx-border-radius`: 5
 - **Layouts:**
   - `Pref Width`: 300
@@ -367,7 +389,7 @@ It results in the following Code:
   - `Font`: SanSerif 14px
 - **Style:**
   - `-fx-border-width`: 2
-  - `-fx-border-color`:  #A9A9A9
+  - `-fx-border-color`: #A9A9A9
   - `-fx-border-radius`: 5
 - **Layouts:**
   - `Pref Width`: 300
@@ -391,7 +413,7 @@ It results in the following Code:
   - `Text`: Remember Me
   - `Font`: SanSerif 15px
 - **Style:**
-  - `-fx-text-fill`:  #A9A9A9
+  - `-fx-text-fill`: #A9A9A9
 - **Layouts:**
   - `Layout X`: 150
   - `Layout Y`: 195
@@ -402,12 +424,12 @@ It results in the following Code:
   - `Text`: Login
   - `Font`: SanSerif 15px
 - **Style:**
-  - `-fx-background-color`:  24a0ed
+  - `-fx-background-color`: 24a0ed
   - `-fx-text-fill`: White
   - `-fx-border-radius`: 5
   - `-fx-border-width`: 2
   - `-fx-border-radius`: 5
-  - `-fx-border-color`:  *#24a0ed*
+  - `-fx-border-color`: _#24a0ed_
 - **Layouts:**
   - `Layout X`: 335
   - `Layout Y`: 195
@@ -418,13 +440,13 @@ It results in the following Code:
   - `Text`: Forgot your Password?
   - `Font`: SanSerif 15px
 - **Style:**
-  - `-fx-background-color`:  transparent
+  - `-fx-background-color`: transparent
   - `-fx-text-fill`: #A9A9A9
 - **Layouts:**
   - `Layout X`: 190
   - `Layout Y`: 235
 
-The Scene Builder produces the following Code:
+The scene builder produces the following code:
 
 ```xml
 <!-- The Beginning of Login form -->
@@ -498,7 +520,7 @@ This element is from the shapes section
 This property is for a fade effect.
 
 - **Style:**
-  - `-fx-text-fill`:  #A9A9A9
+  - `-fx-text-fill`: #A9A9A9
 - **Layouts:**
   - `Layout X`: 0
   - `Layout Y`: -110
@@ -515,7 +537,7 @@ Its code produced is as shown:
 
 ```
 
-##### Sign Up Section
+##### Sign up section
 
 **Label**
 
@@ -523,8 +545,8 @@ Its code produced is as shown:
   - `Text`: Sign-Up
   - `Font`: SanSerif 30px
 - **Style:**
-  - `-fx-text-fill`:  #A9A9A9
-- **Layouts:** 
+  - `-fx-text-fill`: #A9A9A9
+- **Layouts:**
   - `Pref Width`: 130
   - `Pref Height`: 36
   - `Layout X`: 230
@@ -547,7 +569,7 @@ Its code produced is as shown:
   - `Font`: SanSerif 14px
 - **Style:**
   - `-fx-border-width`: 2
-  - `-fx-border-color`:  #A9A9A9
+  - `-fx-border-color`: #A9A9A9
   - `-fx-border-radius`: 5
 - **Layouts:**
   - `Pref Width`: 300
@@ -572,7 +594,7 @@ Its code produced is as shown:
   - `Font`: SanSerif 14px
 - **Style:**
   - `-fx-border-width`: 2
-  - `-fx-border-color`:  #A9A9A9
+  - `-fx-border-color`: #A9A9A9
   - `-fx-border-radius`: 5
 - **Layouts:**
   - `Pref Width`: 300
@@ -587,7 +609,7 @@ Its code produced is as shown:
   - `Font`: SanSerif 14px
 - **Style:**
   - `-fx-border-width`: 2
-  - `-fx-border-color`:  #A9A9A9
+  - `-fx-border-color`: #A9A9A9
   - `-fx-border-radius`: 5
 - **Layouts:**
   - `Pref Width`: 300
@@ -612,7 +634,7 @@ Its code produced is as shown:
   - `Font`: SanSerif 14px
 - **Style:**
   - `-fx-border-width`: 2
-  - `-fx-border-color`:  #A9A9A9
+  - `-fx-border-color`: #A9A9A9
   - `-fx-border-radius`: 5
 - **Layouts:**
   - `Pref Width`: 300
@@ -626,7 +648,7 @@ Its code produced is as shown:
   - `Text`: Date of Birth
   - `Font`: SanSerif 15px
 - **Style:**
-  - `-fx-text-fill`:  #A9A9A9
+  - `-fx-text-fill`: #A9A9A9
 - **Layouts:**
   - `Pref Width`: 105
   - `Pref Height`: 20
@@ -643,7 +665,7 @@ Its code produced is as shown:
 Enabling them allows one to enter data into the field without using the date picker. It also shows week numbers.
 
 - **Style:**
-  - `-fx-text-fill`:  #A9A9A9
+  - `-fx-text-fill`: #A9A9A9
 - **Layouts:**
   - `Layout X`: 250
   - `Layout Y`: 480
@@ -654,7 +676,7 @@ Enabling them allows one to enter data into the field without using the date pic
   - `Text`: Gender
   - `Font`: SanSerif 15px
 - **Style:**
-  - `-fx-text-fill`:  #A9A9A9
+  - `-fx-text-fill`: #A9A9A9
 - **Layouts:**
   - `Pref Width`: 90
   - `Pref Height`: 20
@@ -672,12 +694,13 @@ Enabling them allows one to enter data into the field without using the date pic
 This step will group the radio buttons of the same group; hence only one is selected per instance.
 
 - **Style:**
-  - `-fx-text-fill`:  #A9A9A9
+  - `-fx-text-fill`: #A9A9A9
 - **Layouts:**
   - `Layout X`: 300
   - `Layout Y`: 515
 
 **RadioButton**
+
 - **Properties:**
   - `Text`: Female
   - `Font`: SanSerif 14px
@@ -686,7 +709,7 @@ This step will group the radio buttons of the same group; hence only one is sele
 This step groups the radio buttons of the same group; hence only one can be selected per instance.
 
 - **Style:**
-  - `-fx-text-fill`:  #A9A9A9
+  - `-fx-text-fill`: #A9A9A9
 - **Layouts:**
   - `Layout X`: 390
   - `Layout Y`: 515
@@ -697,7 +720,7 @@ This step groups the radio buttons of the same group; hence only one can be sele
   - `Text`: I have read the Terms and Conditions
   - `Font`: SanSerif 15px
 - **Style:**
-  - `-fx-text-fill`:  #A9A9A9
+  - `-fx-text-fill`: #A9A9A9
 - **Layouts:**
   - `Layout X`: 160
   - `Layout Y`: 545
@@ -708,7 +731,7 @@ This step groups the radio buttons of the same group; hence only one can be sele
   - `Text`: Sign-Up
   - `Font`: SanSerif 15px
 - **Style:**
-  - `-fx-background-color`:  #24a0ed
+  - `-fx-background-color`: #24a0ed
   - `-fx-text-fill`: White
   - `-fx-border-radius`: 5
   - `-fx-border-width`: 2
@@ -725,12 +748,11 @@ This step groups the radio buttons of the same group; hence only one can be sele
   - `Text`: Terms and Conditions
   - `Font`: SanSerif 15px
 - **Style:**
-  - `-fx-background-color`:  transparent
+  - `-fx-background-color`: transparent
   - `-fx-text-fill`: #A9A9A9
 - **Layouts:**
   - `Layout X`: 230
   - `Layout Y`: 660
-
 
 Its code is shown below:
 
@@ -826,10 +848,13 @@ Its code is shown below:
 ```
 
 ##### Footer
-
 In the footer section, you will add your copyright. Drag and drop a label control into the bottom section of your main BorderPane.
 
-This label will have the following property attributes: `Text`: *Shop © 2021*. Set the following styles: `-fx-text-fill`:  *#B9a9a9*. It will have the following layouts: `Pref Width`: 107, `Pref Height`: 16.
+This label will have the following property attributes: `Text`: _Shop © 2021_.
+
+Set the following styles: `-fx-text-fill`: _#B9a9a9_.
+
+It will have the following layouts: `Pref Width`: 107, `Pref Height`: 16.
 
 The FXML Code will look as shown below:
 
@@ -845,8 +870,7 @@ The FXML Code will look as shown below:
 
 > **NOTE**: Paths may vary depending on your project name and machine. If controls and other elements have been added using code, make sure to import them into the project.
 
-### Run the Application
-
+### Run the application
 Run the application as before using the `Shift + F10` shortcut. The results are as shown below:
 
 ![Final Product](/engineering-education/design-a-sign-up-and-login-gui-using-javafx/Final-product.png)
@@ -854,9 +878,7 @@ Run the application as before using the `Shift + F10` shortcut. The results are 
 Find the source code and files in [this](https://github.com/RisoriTofa/A-JavaFX-Login-and-Sign-Up-Form) repository.
 
 ### Conclusion
-
 In this guide, you have learned:
-
 - What is JavaFX
 - JavaFX libraries
 - Setting up a simple JavaFX project
@@ -864,12 +886,10 @@ In this guide, you have learned:
 - Running the application
 
 ### Further your understanding
-
 - Explore the JavaFX community found [here](https://openjfx.io/). This site is for some of the latest JavaFX projects. These are interesting and promising due to their trends.
 - Try using some JavaFX libraries for other projects. Such include scientific calculators, modelers, and games.
 
 ### References
-
 - [JavaFX libraries](https://www.educba.com/javafx-libraries/)
 - [JavaFX website](https://openjfx.io/)
 
