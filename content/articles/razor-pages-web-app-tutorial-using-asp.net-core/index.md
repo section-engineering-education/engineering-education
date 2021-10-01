@@ -16,8 +16,6 @@ We shall have a step-by-step look at each of the following topics to enable you 
 
 6. Including validation
 
-   
-
 After going through this tutorial, the reader will be able to come up with a web application that can manage a database of any given object.
 
 #### Key takeaways
@@ -70,8 +68,6 @@ Now, in the `solution explorer tab`, there are files that are important to under
 - index. cshtml, which is the display template.
 
 - index.cshtml.cs, which is the page model.
-
-  
 
 Index.html includes the `@page` directive, which informs `ASP.NET Core` that it is a razor page, and the `@model` directive, which specifies the model for the display template, i.e., IndexModel.
 
@@ -175,16 +171,10 @@ The next thing to do is to add employees class, so right-click on the `model cla
 In this class, we need to include these five data types. i.e, 
 
 - ID
-
 - Name
-
 - Email
-
 - Department 
-
 - Photopath
-
-  
 
 To add the above data, we will have the following code;
 
@@ -232,7 +222,7 @@ In this topic, we shall be creating a search bar and making it work effectively.
 
 We shall be using bootstrap for styling.
 
-In the index razor page that displays the list of employees, we shall create a form element that we shall implement using a `get `request.
+In the index razor page that displays the list of employees, we shall create a form element that we shall implement using a `get`request.
 
 When we input the `html` code below, we will have a search bar created in the employees' field.
 
@@ -406,33 +396,23 @@ In your folder under the pages folder, there is an `Edit` razor page folder that
 
 For the second and third files above to be effective, since they are already loaded in the `partial view` file, they need to be rendered in the Edit file using the `Jquery` code below.
 
- ```JQUERY
+ ```JQUERY
+ @section Scripts{
+     <script>
+     $(document).ready(function(){
+         $(".custom-file-input").on("change", function(){
+             var fileName = $(this).val().split("\\").pop();
+             $(this).next(".custom-file-label").html(fileName);
+         });
+     });
 
- @section Scripts{
-
-     
-
-     $(document).ready(function(){
-
-         $(".custom-file-input").on("change", function(){
-
-             var fileName = $(this).val().split("\\").pop();
-
-             $(this).next(".custom-file-label").html(fileName);
-
-         });
-
-     });
-
-     
-
- }
-
- ```
+     </script>
+     <partial name = "_ValidationScriptsPartial" />
+    
+ }
+ ```
 
 `_ValidationScriptsPartial` is in the solution explorer in the `shared` folder.
-
-
 
  Now, when you fill a form, all the requirements will have to be fulfilled to be able to submit the form.
 
