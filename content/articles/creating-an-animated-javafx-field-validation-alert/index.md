@@ -138,7 +138,7 @@ public class HelloApplication extends Application {
 }
 ```
 
-#### Design the view
+### Design the view
 Open up the `hello-view.fxml` file using the Scene Builder. In the file,
 
 - Delete the VBOX and the element in it. Do this by right-clicking on it and selecting delete in the left tab.
