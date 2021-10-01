@@ -17,7 +17,7 @@ images:
 Apache Spark is a distributed cluster computing engine for handling big data. It provides a simple interface to program entire clusters with implicit data parallelism, splits the big data into multiple cores or systems and optimally utilizes these computing resources to process this data in a distributed manner. DAG (directed acyclic graph) manages workflows in Spark, which results in fast computation of big data.
 <!--more-->
 Spark does not require the users to have high end, expensive systems with great computing power. Therefore it is a great solution for processing big data quickly and without overheating the system.
-In the [previous article](/getting-started-with-pyspark-spark-part2/), we installed PySpark and explored Spark Core programming concepts.
+In the [previous article](/engineering-education/getting-started-with-pyspark-spark-part2/), we installed PySpark and explored Spark Core programming concepts.
 
 We used these concepts to gain useful insights from a large dataset containing 278,858 users providing 1,149,780 ratings for 271,379 books and found the book with the most number of ratings. In this article, we will delve into very useful Spark libraries namely SparkSQL and MLlib to build a book recommender using the same dataset.
 

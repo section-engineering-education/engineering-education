@@ -27,7 +27,7 @@ You just tell it the activity you want to open, which views you want to click on
 To follow through, you will need to:
   1. Have [Android Studio](https://developer.android.com/studio) installed.
   2. Have a basic knowledge of building Android applications.
-  3. Have a basic understanding of the [Kotlin](/kotlin-collections/) programming language.
+  3. Have a basic understanding of the [Kotlin](/engineering-education/kotlin-collections/) programming language.
 
 Let's get started!
 

@@ -18,7 +18,7 @@ images:
 Kubernetes, or K8s, is an open-source system that is used to automate deployment, scaling and management of containerized applications. It provides a framework to run distributed systems, taking care of scaling and failover for your applications.
 <!--more-->
 
-In a recent article, I explained [what Kubernetes is](/what-is-kubernetes/) and what it can be used for. In continuation, I will show how to install a single node Kubernetes cluster on an Ubuntu server, running Ubuntu 18.04.4. For this tutorial, I am assuming you will be installing K8s on a single node. You will need a separate computer (or a VM) with an Internet browser connected to the same network to access and use the dashboard.
+In a recent article, I explained [what Kubernetes is](/engineering-education/what-is-kubernetes/) and what it can be used for. In continuation, I will show how to install a single node Kubernetes cluster on an Ubuntu server, running Ubuntu 18.04.4. For this tutorial, I am assuming you will be installing K8s on a single node. You will need a separate computer (or a VM) with an Internet browser connected to the same network to access and use the dashboard.
 
 We will be using MicroK8s for this installation. MicroK8s is a CNCF certified upstream Kubernetes deployment that is designed
 to run entirely on a workstation or edge device. All K8s services are run natively.

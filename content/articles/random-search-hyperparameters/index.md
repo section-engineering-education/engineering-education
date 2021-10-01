@@ -15,7 +15,7 @@ images:
    alt: Random search hyperparameter optimization image
 
 ---
-There are many ways to optimize the hyperparameters of a model. We previously looked at [grid search](/grid-search/) and a basic example of its implementation. 
+There are many ways to optimize the hyperparameters of a model. We previously looked at [grid search](/engineering-education/grid-search/) and a basic example of its implementation. 
 <!--more-->
 This time, we will seek to understand another method of hyperparameter optimization known as random search. In this tutorial we shall introduce random search and go through a simple method of its implementation in Python.
 
@@ -33,7 +33,7 @@ This time, we will seek to understand another method of hyperparameter optimizat
 - [References and Further Reading](#references-and-further-reading)
 
 ### Prerequisites
-- A part of this [article](/meta-learning/) gives a brief introduction to the grid search method.
+- A part of this [article](/engineering-education/meta-learning/) gives a brief introduction to the grid search method.
 
 - [VSCode](https://code.visualstudio.com/) is my code editor of choice for this tutorial. The language we shall use is Python.
 
@@ -60,7 +60,7 @@ A key difference is that it does not test all parameters. Instead, the search is
 #### Random Forest
 Since we shall use a random forest regressor during our random search implementation, it is of value to introduce random forests. Random forests refer to an ensemble of untrained decision trees capable of both regression and classification tasks. 
 
-They involve the use of bagging, that combines many models to give a generalized result. Learn more about bagging and ensemble learning as a whole from this [article](/ensemble-learning/).
+They involve the use of bagging, that combines many models to give a generalized result. Learn more about bagging and ensemble learning as a whole from this [article](/engineering-education/ensemble-learning/).
 
 We have explained why a random forest is a “forest” but not why it is considered random. The random nature of a random forest can be attributed to a couple of concepts. 
 

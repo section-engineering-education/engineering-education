@@ -27,7 +27,7 @@ The article discusses the file structures, and the new features.
 - Authentication
 
 ### Requirements
-This tutorial assumes that you have basic skills in PHP and HTML. If you're starting to learn Laravel, you're in the right place. For a basic refresher on how to build an API in Laravel refer to [this article](/how-to-create-an-api-using-laravel/).
+This tutorial assumes that you have basic skills in PHP and HTML. If you're starting to learn Laravel, you're in the right place. For a basic refresher on how to build an API in Laravel refer to [this article](/engineering-education/how-to-create-an-api-using-laravel/).
 
 ### Installation
 To get started with Laravel, you have two options.

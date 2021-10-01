@@ -63,7 +63,7 @@ In fact, most companies that claim to use AI to solve a particular problem, use 
 #### Artificial General Intelligence (AGI)
 Artificial General Intelligence is also known as strong AI. They are machines capable of performing a wide range of tasks. AGI doesn't exist at the moment. Even so, AGI popularization has featured in science fiction movies for over a decade now. In The Matrix and The Terminator movies, intelligent machines eradicate and enslave humanity. This view has depicted AGI to be evil which hasn't been the case.
 
-[GPT-3](/introducing-gpt3/) is a language model developed by OpenAI. It has the ability to perform a diverse range of tasks without any specific training. GPT-3 tends to fall in the middle. Not an AGI, but still too advanced to be an ANI.
+[GPT-3](/engineering-education/introducing-gpt3/) is a language model developed by OpenAI. It has the ability to perform a diverse range of tasks without any specific training. GPT-3 tends to fall in the middle. Not an AGI, but still too advanced to be an ANI.
 
 Since no sort of AGI is even close to being created, it is still hard to tell whether these ideas would bear any similarities to real-world AGI.
 
@@ -87,7 +87,7 @@ In SL, all the input data is labeled. The algorithm then learns to predict an ou
 Examples of algorithms in this category include:
 Decision Trees, Naive Bayes, Support Vector Machines, K-Nearest Neighbors, and Logistic Regression.
 
-For a more detailed look at SL, you can read [this article](/supervised-learning-algorithms/).
+For a more detailed look at SL, you can read [this article](/engineering-education/supervised-learning-algorithms/).
 
 2. **Unsupervised Learning (UL)**
 

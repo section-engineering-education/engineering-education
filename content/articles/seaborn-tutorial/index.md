@@ -34,7 +34,7 @@ In this tutorial, we will be working with Seaborn, a Python Library.
 7. Conclusion
 
 ### Introduction
-Seaborn is an open-source Python library built on top of [matplotlib](/matplotlib-visualization-python/). It is used for data visualization and exploratory data analysis. Seaborn works easily with dataframes and the Pandas library. The graphs created can also be customized easily. Below are a few benefits of Data Visualization.
+Seaborn is an open-source Python library built on top of [matplotlib](/engineering-education/matplotlib-visualization-python/). It is used for data visualization and exploratory data analysis. Seaborn works easily with dataframes and the Pandas library. The graphs created can also be customized easily. Below are a few benefits of Data Visualization.
 
 Graphs can help us find data trends that are useful in any machine learning or forecasting project.
 
@@ -51,9 +51,9 @@ I will be writing all my code in a Google colab file. You can find it over [here
 
 - Some Experience working with the Pandas Library.
 
-- Some Experience working with the Matplotlib Library, you can check out the [following article](/matplotlib-visualization-python/).
+- Some Experience working with the Matplotlib Library, you can check out the [following article](/engineering-education/matplotlib-visualization-python/).
 
-- A basic understanding of Data Analysis, you can check out the [following article](/data-analytics-using-pandas/).
+- A basic understanding of Data Analysis, you can check out the [following article](/engineering-education/data-analytics-using-pandas/).
 
 ### Installing Seaborn
 If you are working on Google Colab, you can skip the installation step. However, if you are working on your local machine, you will need to install Seaborn. I highly recommend creating a virtual environment to better manage your packages.

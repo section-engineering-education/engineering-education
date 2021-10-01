@@ -135,7 +135,7 @@ The beauty of DataBinding is that it autogenerates these objects. We just need t
 #### Writing Kotlin code
 Inside the `MainActivity.kt` file is where we'll write the logic of our app. First, create a mutable variable of type `ActivityMainBinding` that will initially be `null` but be initialized in the `onCreate()` method. 
 
-To learn more about DataBinding please refer to [this article by Michael Barasa](/how-to-use-databinding-in-android-using-kotlin/) or [this Youtube tutorial](https://www.youtube.com/watch?v=MXZz438aCDM&t=6s).
+To learn more about DataBinding please refer to [this article by Michael Barasa](/engineering-education/how-to-use-databinding-in-android-using-kotlin/) or [this Youtube tutorial](https://www.youtube.com/watch?v=MXZz438aCDM&t=6s).
 
 When activities or fragments are destroyed, variables or objects can still be holding a reference to non-existing values. This is called a memory leak which of course can lead to unwanted behavior in our app. 
 
