@@ -1,11 +1,11 @@
-``---
+---
 layout: engineering-education
 status: publish
 published: true
 url: /a-beginners-guide-on-how-to-become-a-blockchain-developer/
 title: A Beginners Guide on How to Become a Blockchain Developer
 description: In this article, we will explore how to become a blockchain developer without prior coding experience.
-author: wilkister-mumbi
+author: adetu-ridwan
 date: 2021-06-30T00:00:00-15:00
 topics: [Blockchain]
 excerpt_separator: <!--more-->
@@ -40,12 +40,12 @@ Before reading this article, you need to be familiar with blockchain technology 
 ### Who is a blockchain developer?
 There are two types of blockchain developers:
 
-#### 1. Core blockchain developers
+### 1. Core blockchain developers
 These developers are mainly responsible for building the back-end (main engine) of Decentralized Applications (Dapps). Examples include the Ethereum, Bitcoin, and Cardano Blockchains.
 
 These developers typically write code using C++, Go, and Haskell.
 
-#### 2. Blockchain software developers
+### 2. Blockchain software developers
 These developers are mainly responsible for designing and building the front-end of Dapps. The web and mobile interfaces that users interact with. Most blockchain developers fall under this category.
 
 They mainly write code using Solidity and Javascript programming languages.
@@ -55,12 +55,13 @@ Let's use an example to explain the distinction between blockchain core develope
 Web developers build web applications on top of web browsers. But, they don't build web browsers. The "Mozillas" of this world build the web browsers (main engine). Similarly, core blockchain developers build the "browser" (main blockchain network) while blockchain software developers build apps on top of the blockchain.
 
 ### Which blockchain should I use?
-#### 1. Bitcoin blockchain
+
+### 1. Bitcoin blockchain
 This is the distributed ledger powering the Bitcoin cryptocurrency. This blockchain uses [Proof-of-Work (PoW)](https://en.wikipedia.org/wiki/Proof_of_work) as its consensus mechanism. Recently, this consensus mechanism has been a bone of contention as PoW uses a lot of energy. You can read more about it [here](https://www.cnet.com/personal-finance/heres-how-much-energy-it-really-takes-to-mine-bitcoin-and-why-people-are-concerned/).
 
 The Bitcoin blockchain doesn't have any other usage other than powering the cryptocurrency.
 
-#### 2. Ethereum blockchain
+### 2. Ethereum blockchain
 The Ethereum blockchain is a decentralized and open-source smart contracts platform. The smart contract functionality that enables Dapps to be built on it has made it the most actively used blockchain platform.
 
 It currently uses PoW as its consensus mechanism but aiming to replace it with [Proof-of-Stake (PoS)](https://en.wikipedia.org/wiki/Proof_of_stake) due to the high energy consumption of PoW.
@@ -69,7 +70,7 @@ It is also the blockchain technology that powers the popular cryptocurrency, Eth
 
 Learn more about it [here](https://ethereum.org/en/).
 
-#### 3. Cardano blockchain
+### 3. Cardano blockchain
 It is a decentralized and open-source blockchain platform that utilizes Proof-of-Stake (PoS) as its consensus mechanism. It is the blockchain platform that powers the popular cryptocurrency known as Ada.
 
 Unlike the Ethereum blockchain, Cardano is developed through evidence-based methods and peer-reviewed research. This means that proposed methods have to undergo academic-type research before being implemented.
@@ -120,12 +121,14 @@ These two languages are used by the blockchain core developers to build the back
 
 This is the programming language used by core blockchain developers in building the Cardano blockchain.
 
-#### Note
+### Note
 Solidity is still currently the most popular programming language of choice for many developers. This is due to its large developer community. Unless you have a specific use case or you're a blockchain core developer, I suggest you stick with Solidity.
 
 ### Use cases for blockchain
-#### 1. Finance
-##### Cryptocurrencies
+
+### 1. Finance
+
+### Cryptocurrencies
 Today, there are over 5,000 cryptocurrencies. This is according to [CoinMarketCap](https://coinmarketcap.com/), a company that tracks cryptocurrencies' market caps, rankings, prices, exchange volumes, and currency conversion. However, the most popular cryptocurrencies in this space include [Bitcoin](https://bitcoin.org/en/), [Ethereum](https://ethereum.org/en/), [Cardano](https://cardano.org/) and [Polkadot](https://polkadot.network/).
 
 People tend to think that cryptocurrencies are the only blockchain's use case. This is not the case. But, it is the biggest use case for blockchain.
@@ -144,7 +147,7 @@ A cryptocurrency coin is classified as a store or exchange of value. For example
 
 As a blockchain developer, you need to think along those lines.
 
-##### Decentralized Finance (DeFi)
+### Decentralized Finance (DeFi)
 Currently, the adoption of DeFi is trending in the blockchain world. DeFi aims to replace the existing traditional finance system. It essentially takes financial products and moves them onto the blockchain ecosystem. A few examples of these products include savings, loans, and trading.
 
 Taking a look at the 1-year chart on [DeFi Pulse](https://defipulse.com/), you will notice how the adoption of DeFi has skyrocketed over the last few months.
@@ -153,15 +156,15 @@ Currently, most of the DeFi runs on the Ethereum blockchain. Popular DeFi projec
 
 As a blockchain developer and a techie in general, you should be ambitious enough to build such platforms.
 
-#### 2. Supply Chain
+### 2. Supply Chain
 The supply chain system involves tracking the movement of goods or services from a source to an end-user. Big companies such as Walmart use it to increase supply chain transparency. Using blockchain technology helps ensure that distributors across the supply chain are honest and transparent.
 
-#### 3. Digital Identity
+### 3. Digital Identity
 Cardano has partnered with [Atala Prism](https://atalaprism.io/app) to enable the issuance of digital identities and credentials that users own, control, and share easily, both securely, and privately. Building it on Cardano's blockchain eliminates the need for having a third party offers verification services.
 
 They recently secured a deal with the Ethiopian government where they are planning to issue over 5 million students with digital identities. Learn more about the deal [here](https://www.forbes.com/sites/rachelwolfson/2019/04/30/cardano-founder-launches-enterprise-blockchain-framework-in-collaboration-with-ethiopian-government/?sh=50d7424e4e10). As a blockchain developer, you can build digital identity systems that secure digital IDs, degrees, certificates, transcripts, examinations, and badges, etc. on the blockchain.
 
-#### 4. Healthcare
+### 4. Healthcare
 In healthcare, blockchain can be used for record-keeping & medical history tracking, patient & drug identity validation, and to offer direct healthcare service payments.
 
 This [article](https://www.section.io/engineering-education/blockchain-as-a-revolution-in-healthcare/) explains clearly how blockchain technology is used to enable these services in healthcare. These are a few use cases for blockchain technology. It can also be used to secure title deeds in real estate and to secure voting systems from tamper in democratic countries.
@@ -177,4 +180,4 @@ Good luck!
 [Blockchain For Beginners: The Complete Step By Step Guide To Understanding Blockchain Technology](https://www.amazon.com/Blockchain-Beginners-Complete-Understanding-Technology/dp/1548766887)
 
 ---
-Peer Review Contributions by: [Collins Ayuya](https://www.section.io/engineering-education/authors/collins-ayuya/)
+Peer Review Contributions by: [Adrian Murage](/engineering-education/authors/adrian-murage/)
