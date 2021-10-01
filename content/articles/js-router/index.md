@@ -2,7 +2,7 @@
 
 A router is a JavaScript object that maps URLs to functions. The router calls a function based on the URL. It is also used for creating the URL based on the function.
 
-Before the rise of single page applications, a web application was a series of interconnected pages. This could be either static pages or dynamically generated in the server.
+Before the rise of single page applications, a web application was a series of interconnected pages. This could be either static pages or pages dynamically generated in the server.
 
 Single page applications was a new concept where a web application's life span evolves around a single html document. Transition between pages was replaced by use of different views. Links are no longer used to generate and navigate between pages, instead they are bound to views.
 
@@ -10,6 +10,10 @@ A view is a JavaScript object that contains the logic for a single page. The vie
 
 ### The concept
 A router watches for changes in the URL and calls the appropriate function. The function is responsible for rendering the view.
+
+Consider a router as one big function that handles all the routing logic. The router is responsible for calling some pre-defined function/s based on the URL. 
+
+For example, if the URL is `/about`, the router calls the `about` function. The called function will call other functions that deal with getting data from backend services or DOM manipulation. They tear down the previous view and render the new view.
 
 A view can be as simple as a function that creates a `div` element and appends it to the body.
 
@@ -95,8 +99,8 @@ function template (name, templateFunction) {
 ```
 
 The template function takes two arguments:
-    1. `name`: the name of the template.
-    2. `templateFunction`: the function that will create the DOM elements.
+   1. `name`: the name of the template.
+   2. `templateFunction`: the function that will create the DOM elements.
 
 Now you can map a template to a route.
 
@@ -109,6 +113,7 @@ template('about', function(){
     about();
 });
 ```
+We map the home template to the `/home` route and the `/about` template to the about route.
 
 Then define the route to template mapping.
 
@@ -129,7 +134,8 @@ function resolveRoute(route) {
         throw new Error(`Route ${route} not found`);
     };
 };
-```
+``` 
+The `resolveRoute` function returns the template function based on the route. If the route is not found, it throws an error.
 
 Create a `router` function that will get the route from the URL hash and call the template function.
 
@@ -155,5 +161,9 @@ At this point, the simple router is ready. Open the index.html file in your brow
 In this tutorial, you created a simple router in JavaScript. Being a simple router it only handles basic route mapping. It lacks many features that are available in a more complex router. For example, it does not offer support for nested routes.
 
 To add those features, you have to write more functions to handle the routing logic.
+
+Alternatively, you can use a library like [React Router](https://reacttraining.com/react-router/web/guides/quick-start). It is a more complex router that offers more features. There are more routing libraries available on npm.
+
+If you prefer working with a vanilla JavaScript, you can start with [Navigo](https://github.com/krasimir/navigo).
 
 Happy coding!
