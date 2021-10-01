@@ -6,21 +6,16 @@ To follow along with this article comfortably, you will require:
 - To have Python installed on your computer.
 - Be familiar with the scikit-learn library.
 
-We have two types of decision trees.
-Regression Decision  tree
-A regression Decision tree is a tree created on data whose target variable is continuous.
+### Understanding decision trees
+We have two types of decision trees; Regression Decision tree and Classification decision tree. A regression Decision tree is a tree created on data whose target variable is continuous, while a classification decision tree is implemented on data whose target variable is categorical.
 
-Classification decision tree
-A classification decision tree is a decision tree implemented on data whose target variable is categorical.
+Decision trees are composed of nodes and paths. Nodes in the decision tree are of two broad categories; **Decision node** and a **Leaf node**.
 
-Decision trees are composed of nodes and paths. Nodes in the decision tree are of two broad categories:
-  - **Decision node**
-  The decision node is where we pass a rule and split the data based on such a rule. All decision nodes have paths coming out of them. 
+The decision node is where we pass a rule and split the data based on such a rule. All decision nodes have paths coming out of them. On the other hand, a **Leaf node**is a node that only appears at the terminal of a decision tree. 
 
-  - **Leaf node**
-  A leaf node is a node that only appears at the terminal of a decision tree. Leaf nodes have no paths coming out of them and thus have no further splits. On this node, we list the values of the target variable. The leaf node is also known as **terminal node**.
+Leaf nodes have no paths coming out of them and thus have no further splits. On this node, we list the values of the target variable. The leaf node is also known as **terminal node**.
 
- The node at the top of a decision tree is called the `root node`. A feature that fits this node is determined using some splitting measures that we shall look at later in this article. 
+The node at the top of a decision tree is called the `root node`. A feature that fits this node is determined using some splitting measures that we shall look at later in this article. 
 
 The main property of a root node is that it has no incoming paths. Therefore, the majority of decision nodes appears between the root node and the leaf node. These nodes are called  **internal nodes** of a decision tree. 
 
@@ -28,28 +23,26 @@ An **internal node**,  also known as *sub-note*, has an incoming and outgoing ch
 
 The channels we have just mentioned and connecting the entire decision tree anatomy are called **paths**. Paths represent the best route we can take to attain optimal outcomes. 
 
-Splitting is terminology in Decision Tree, which mean dividing a decision node into at least two sub-nodes.
-  
+###Terminologies used in decision tress 
 Other terminologies you may encounter in the decision tree are:
- 1. **Pruning:** This means eliminating some of the internal nodes from our tree to overcome the problem of **overfitting**. Overfitting is a major threat faced with the decision tree.
- 2. **Parent Node:** This is the node on which we split other nodes.
- 3. **Child Node:** These are sub-nodes of a parent node.
- 4. **Best attribute** This refers to the feature that provides optimal value depending on splitting criteria used.
+1. **Pruning:** This means eliminating some of the internal nodes from our tree to overcome the problem of **overfitting**. Overfitting is a major threat faced with the decision tree.
+2. **Parent Node:** This is the node on which we split other nodes.
+3. **Child Node:** These are sub-nodes of a parent node.
+4. **Best attribute** This refers to the feature that provides optimal value depending on splitting criteria used.
+5. **Splitting** is terminology in Decision Tree, which mean dividing a decision node into at least two sub-nodes.
 
 As we mentioned earlier, the decision tree starts with the root node. Given the training dataset, we use a technique known as **Attribute Selection Measure**, usually abbreviated as **(ASM)**, to determine which features qualify to be used as the **best attribute** for splitting our tree.
  
- **Attribute Selection Measure** technique offers us two criteria with whose aid we can determine the best attribute on which we do our split. 
- These criteria are:
-   *1. Information Gain*
-   *2. Gini Index*
-   To get started, let us consider each of the above measures:
+**Attribute Selection Measure** technique offers us two criteria with whose aid we can determine the best attribute on which we do our split. 
+These criteria are:
+- Information Gain*
+- Gini Index*
+   
 
-   ### Information Gain
- Information Gain measures how the **Entropy** of a set S is reduced after splitting it into the feature classes, say A.
-
-Information gain determines how much information we obtain by choosing a particular attribute and splitting our tree on it. We get information gain by finding the difference between the *entropy* before and the *entropy* after the split, i.e.,
+### Information Gain
+Information Gain measures how the **Entropy** of a set S is reduced after splitting it into the feature classes, say A. Information gain determines how much information we obtain by choosing a particular attribute and splitting our tree on it. We get information gain by finding the difference between the *entropy* before and the *entropy* after the split, i.e.,
   
-  **I.G = Entropy(Before split) - [Weighted entropy(after split)]**
+**I.G = Entropy(Before split) - [Weighted entropy(after split)]**
 
 According to this criterion, the feature that provides more information from all features is the **best attribute**. Therefore, we split our tree on such an attribute.
   
@@ -61,9 +54,10 @@ If the target variable of a particular internal node is homogenous, the resultan
 
 We do not have to split our dataset until we get a fully classified subset in most cases. Therefore, it is advisable to stop at a point where the entropy before splitting is less than after splitting. By doing so, we can avoid *overfitting* our tree algorithm.
 
- To calculate entropy, we use the formula below:
+To calculate entropy, we use the formula below:
 
-   Entropy = - $ \sum _ { i = 1 } ^ { N } $ P<sub>*i*</sub> log <sub>*2*</sub>  (P<sub>*i*</sub>)
+Entropy = - $ \sum _ { i = 1 } ^ { N } $ P<sub>*i*</sub> log <sub>*2*</sub>  (P<sub>*i*</sub>)
+
 Where:
 - P<sub>*i*</sub> is the probability of the *i <sup>*th*</sup>* class in an attribute.
   
@@ -76,11 +70,12 @@ Gini impurity measures how random a category in a feature is. We weigh the Gini 
 
 Gini index is 0 if each feature category takes a homogenous class of the target variable and greater than 0 if elements are highly distributed randomly across various categories. A variable whose Gini index is zero implies that it is a pure variable.
 
-The Gini index criterion is highly applicable when a decision tree is on a large dataset. The reason is that the Gini index is easy to calculate compared to the Information gain. However, the information gain criterion could be the best alternative to create a tree on a small dataset. The reason is that it involves many calculations.
+The Gini index criterion is highly applicable when a decision tree is on a large dataset. The reason is that the Gini index is easy to calculate compared to the Information gain. However, the information gain criterion could be the best alternative to creating a small dataset tree. The reason is that it involves many calculations.
 
 To calculate the Gini index, we use the following formula.
 
 Gini Index = 1 -  $ \sum _ { i = 1 } ^ { N } $ P<sub>*i*</sub></sub> <sup>*2*</sup>
+
 Working with the Gini index, we split our tree on the feature with a minor Gini index.
 
 Using an example, let us understand how the Gini index works.
@@ -174,19 +169,26 @@ Gini impurity = 1 - [(2/6)^2 + (4/6)^2]
 Gini index for wind is given as follows.
 Gini index = 4/10(0.375) + 6/10(0.5556) = 0.48336
 
-Now that we have computed the Gini index for each attribute, we compare them, select the feature with the most negligible value, and do our initial split. From the Gini indices we have just computed, the Weather column has the minor index. Thus, we apply our initial break on the Weather column. Splitting our tree on the Weather column, we obtain three splits corresponding to each category of the Weather column, i.e. Sunny, Cloudy and Rainy. On each sub-node, we check if the node is fully classified, i.e. if the target variable of the sub-node is pure. If the split is fully classified, then it forms a leaf node. Splitting our tree, we notice that the split corresponding to the Cloudy category is entirely classified. Thus it creates a leaf node.
+Now that we have computed the Gini index for each attribute, we compare them, select the feature with the most negligible value, and do our initial split. 
 
-On the other hand, splits corresponding to the Sunny and Rainy are not pure. On those impure nodes, we repeat the process for computing the Gini index on each node independently. We again chose an attribute with the minor Gini index and further split our tree on it. We repeat the process until our data is optimally classified. Doing all splitting steps on our example, we should obtain the following tree diagram.
+From the Gini indices we have just computed, the Weather column has the minor index. Thus, we apply our initial break on the Weather column. Then, splitting our tree on the Weather column, we obtain three splits corresponding to each category of the Weather column, i.e. Sunny, Cloudy and Rainy.
+
+On each sub-node, we check if the node is fully classified, i.e. if the target variable of the sub-node is pure. If the split is fully classified, then it forms a leaf node. For example, we notice that the split corresponding to the Cloudy category is entirely classified by splitting our tree. Thus it creates a leaf node.
+
+On the other hand, splits corresponding to the Sunny and Rainy are not pure. Therefore, we repeat the process for computing the Gini index on each node independently on those impure nodes. 
+
+We again chose an attribute with the minor Gini index and further split our tree on it. We repeat the process until our data is optimally classified. Doing all splitting steps on our example, we should obtain the following tree diagram.
 
 ![decision_tree](/engineering-education/decision-tree-in-python/Weather.png)
 
 Now that we know the intuition behind the decision tree, it is time to go an extra step and implement it in Python. To construct our tree, we shall assume our splitting criterion to be the information gain criterion.
 
-#### Implementing a decision tree in Python
+### Implementing a decision tree in Python
 To get started, let us download the dataset we are going to work with [here](https://github.com/Daniel695/datasets.git)
 Now that our data has is downloaded, let us import the necessary libraries.
 Below is the code that carries out this task.
-#### Importing libraries
+
+### Importing libraries
 ```Python
 import numpy as np
 import pandas as pd
@@ -197,6 +199,7 @@ import seaborn as sns
 
 ### Importing dataset
 The dataset we have just downloaded is in `CSV ` format, and thus we import it to our working directory using the `read_csv` function in pandas.
+
 ```Python
 # copy paste the storage path of your data file
 our_data = pd.read_csv("/content/drive/MyDrive/data.csv")
@@ -204,11 +207,13 @@ our_data = pd.read_csv("/content/drive/MyDrive/data.csv")
 ```
 Now that our data is downloaded, let us look at the first few samples part of it.
 To do this, we use the `head()` function. This function prints the first five observations.
+
 ```python
 our_data.head()
 
 ```
 The above code yields:
+
 **Output**
 ![our_data](/engineering-education/decision-tree-in-python/our_data.png)
 
@@ -226,13 +231,14 @@ our_data.head()
 
 ```
 Upon executing we obtain:
-##### Output
+#### Output
 ![oor_data](/engineering-education/decision-tree-in-python/our_data.drop.png)
 The RowNumber, CustomerId, and Surname were eliminated from our dataset.
 
 Also, we need to notice that our dataset consists of object data types on the Geography and Gender columns. Therefore, we need to encode these columns into a numeric data type.
 
 To get these columns encoded, we run the code below.
+
 ```Python
 from sklearn.preprocessing import LabelEncoder
 
@@ -244,35 +250,41 @@ for name , type_ in new_data.items():
         our_data[name] = Le.fit_transform(our_data[name])
 
 ```
+
 Let us have a look at our dataset once more.
+
 ```python
 our_data.head()
-
 ```
-##### Output
+
+#### Output
 ![oor_data](/engineering-education/decision-tree-in-python/Encoded.png)
-From the above output we see that the Geography and Gender columns were sucessfully encoded.
+From the above output, we see that the Geography and Gender columns were successfully encoded.
+
 ```python
 remaining_columns = list(our_data.columns)
 remaining_columns.remove("Exited")
 
 ```
-#### Splitting our dataset
-To start with, let's split our data set ino the feature set and study set.
+### Splitting our dataset
+To start with, let us split our data set into the feature set and study set.
+
 ```python
 X = our_data[remaining_columns].values 
 Y = our_data['Exited'].values.astype(np.uint8)
-
 ```
+
 Next, we split the splits above into the training set and the test set. The code below facilitates this activity.
+
 ```Python
 from sklearn.model_selection import train_test_split
 # training set is 80% of the dataset
 Xtrain , Xtest , Ytrain , Ytest = train_test_split(X , Y , test_size = 0.2 , random_state = 4)
-
 ```
+
 Let us have a look at the size of our training set by executing the code below.
-```python
+
+```Python
 print(Xtrain.shape , Ytrain.shape)
 
 ```
@@ -288,10 +300,12 @@ from sklearn.tree import DecisionTreeClassifier
 
 model = DecisionTreeClassifier()
 model.fit(Xtrain , Ytrain)
-
 ```
+
 The above code outputs:
+
 #### output
+
 ```bash
 DecisionTreeClassifier(ccp_alpha=0.0, class_weight=None, criterion='gini',
                        max_depth=None, max_features=None, max_leaf_nodes=None,
@@ -301,23 +315,25 @@ DecisionTreeClassifier(ccp_alpha=0.0, class_weight=None, criterion='gini',
                        random_state=None, splitter='best')
 
 ```
+
 Next, we check the testing accuracy of our model.
+
 ```Python
 print("Testing Accuracy : " , model.score(Xtest , Ytest))
-
 ```
+
 #### Output
-```bash
-Testing Accuracy :  0.792
 
+```bash
+Testing Accuracy:  0.792
 ```
+
 Our model is 79.2% accurate in predicting target variables when offered new features. This accuracy is quite good. However, our dataset is highly imbalanced, and therefore we need to look at the confusion matrix.
 
 ```python
 predictions = model.predict(Xtest)
 
 ```
-
 
 ```Python
 # Importing confusion matrix model from sklearn
@@ -328,7 +344,7 @@ matrix
 
 ```
 
-##### Confusion Matrix
+### Confusion Matrix
 
 ```bash
 array([[1379,  225],
@@ -350,12 +366,15 @@ for key , value in value_counts.items():
 class_weights
 
 ```
-##### Output
+#### Output
+
 ```bash
 {0: 0.2037, 1: 0.7963}
-
 ```
-Another way to improve the accuracy of our model is to ensure that we take care of the problem of overfitting. To handle this problem, we need to restrict our tree from splitting up to arbitrary depths. To deal with this problem in our model, we set the maximum depth our tree should reach. Upon substituting values between six and fifteen, we found eight to give us a better outcome.
+Another way to improve the accuracy of our model is to ensure that we take care of the problem of overfitting. To handle this problem, we need to restrict our tree from splitting up to arbitrary depths. 
+
+To deal with this problem in our model, we set the maximum depth our tree should reach. Upon substituting values between six and fifteen, we found eight to give us a better outcome.
+
 Let us create a new object to the model and pass in our weights and the maximum depth of our tree.
 
 
@@ -377,20 +396,22 @@ DecisionTreeClassifier(ccp_alpha=0.0, class_weight={0: 0.2037, 1: 0.7963},
                        splitter='best')
 
 ```
-#### Checking the model accuracy
-```python
+
+### Checking the model accuracy
+
+```Python
 # cheking accuracy of our tree
 print("Testing Accuracy : " , model.score(Xtest , Ytest))
-
 ```
-##### Output
+#### Output
 
 ```bash
-Testing Accuracy :  0.7825
+Testing Accuracy:  0.7825
 
 ```
 
-##### New confusion matrix
+### New confusion matrix
+
 ```python
 predictions = model.predict(Xtest)
 ```
@@ -402,15 +423,14 @@ matrix = confusion_matrix(Ytest , predictions)
 matrix
 
 ```
-##### Output
+#### Output
 ```bash
-array([[1270,  334],
-       [ 101,  295]])
-
+array([[1270,  334],[ 101,  295]])
 ```
+
 From these new outputs, we notice that the testing accuracy decreased slightly, but also, there was a significant decrease in the false-negative in the confusion matrix. We can therefore conclude that this new model is better for prediction than the previous one.
 
-#### Visualizing our decision tree
+### Visualizing our decision tree
 
 ```Python
 #plot decision tree
@@ -428,5 +448,5 @@ Below is the tree we implemented on our dataset.
 
 ![oor_data](/engineering-education/decision-tree-in-python/tree_structure.png)
 
-#### Conclusion
+### Conclusion
 This article looked at the intuition behind the decision tree and criteria that help us build a tree on the dataset. Finally, we looked at how to implement it using software, and in our case, we used Python. I hope this article has helped you to understand the decision tree and its criteria.
