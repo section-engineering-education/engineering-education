@@ -1,4 +1,4 @@
-#### INTRODUCTION
+### INTRODUCTION
 
 Razor Pages are the default for building server-side web applications in ASP.NET Core.
 
@@ -14,23 +14,11 @@ We shall have a step-by-step look at each of the following topics to enable you 
 
 4. Including a search bar
 
-6. Including validation
+5. Including validation
 
 After going through this tutorial, the reader will be able to come up with a web application that can manage a database of any given object.
 
-#### Key takeaways
-
-After going through this tutorial, the reader is expected to:
-
-- be able to understand the concept of the razor pages web app.
-
-- be able to create a razor page web app, add search, add validation, and also add a model.
-
-- be able to add data to the created web app.
-
-- be able to update the razor web app in the database.
-
-#### PREREQUISITES
+### Prerequisites
 
 To better understand this tutorial, you need to have some basic knowledge of;
 
@@ -45,6 +33,7 @@ You also need to download [visual studio](https://visualstudio.microsoft.com/vs/
 After downloading and installing Visual Studio, launch it and follow the following steps.
 
 ### Creating a razor pages Web App
+
 To create a new project, click on `Create a new project`.
 
 ![New project](/engineering-education/razor-pages-web-app-tutorial/newproject.png)
@@ -59,11 +48,11 @@ Click create on the next page to finish setting up the application. After that, 
 
 ! [Interface for Web App Creation] (/engineering-education/razor-pages-web-app-tutorial/create.png)
 
-When you debug, your web app, it will appear like this. 
+When you debug, your web app, it will appear like this.
 
 ![appearance of the web app](/engineering-education/razor-pages-web-app-tutorial/appearnce.png)
 
-Now, in the `solution explorer tab`, there are files that are important to understand. Namely; 
+Now, in the `solution explorer tab`, there are files that are important to understand. Namely;
 
 - index. cshtml, which is the display template.
 
@@ -168,12 +157,12 @@ namespace Model
 
 The next thing to do is to add employees class, so right-click on the `model class` and select `Add` then select `Class`. We will name it `Employee`.
 
-In this class, we need to include these five data types. i.e, 
+In this class, we need to include these five data types. i.e,
 
 - ID
 - Name
 - Email
-- Department 
+- Department
 - Photopath
 
 To add the above data, we will have the following code;
@@ -336,7 +325,7 @@ namespace WebApp.Services
 
 ```
 
-And we'll add the following code to the mock employee repository class;
+And we'll add the following code to the `mock employee repository class`;
 
 ```C#
 
@@ -423,3 +412,15 @@ For the second and third files above to be effective, since they are already loa
 2. Verify that the validation libraries for the environment you're testing in are loaded.
 
 3. Ensure that client-side validation libraries are loaded in the order specified.
+
+### Conclusion
+
+After going through this tutorial, the reader should:
+
+- be able to understand the concept of the razor pages web app.
+
+- be able to create a razor page web app, add search, add validation, and also add a model.
+
+- be able to add data to the created web app.
+
+- be able to update the razor web app in the database.
