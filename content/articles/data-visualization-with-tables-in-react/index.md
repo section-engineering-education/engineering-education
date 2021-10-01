@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/ata-visualization-with-tables-in-react/hero.jpg
+  - url: /engineering-education/data-visualization-with-tables-in-react/hero.jpeg
     alt: Data visualization with react tables image
 ---
 
@@ -547,7 +547,7 @@ The `useMemo()` ensures that the data is not re-created at every render. If we d
 
 Here is the outcome of the project. I hope this article guided you well on how to visualize data on a table in React.
 
-![a demo of the react-table project](react-table.gif)
+![a demo of the react-table project](/engineering-education/data-visualization-with-tables-in-react/react-table.gif)
 
 ### Conclusion
 This article provided a headstart on working with data tables in React. We developed an application using react and implemented the `react-table` library to demonstrate the concept. Working on this project should be an insight into building responsive data tables in react.
