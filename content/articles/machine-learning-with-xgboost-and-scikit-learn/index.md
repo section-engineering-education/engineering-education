@@ -1,0 +1,402 @@
+XGBoost is an open-source Python library that provides an optimizing gradient boosting framework to produce a highly efficient, flexible, and portable model.
+
+In making predictions, XGBoost outperforms the other algorithms or machine learning frameworks due to increased accuracy and performance by combining several models into a single model to correct the errors made by existing models, at the end of the process we have a model with reduced errors.
+
+In this tutorial, we will use Scikit-learn to build our model, and then we improve the model accuracy and performance using XGBoost.
+
+### Table of contents
+
+- [Prerequisites](#prerequisites)
+- [Introduction](#introduction)
+- [Dataset](#dataset)
+- [Loading the dataset](#loading-the-dataset)
+- [Checking missing values](#checking-missing-values)
+- [getting started with categorical encoding](#getting-started-with-categorical-encoding)
+- [Installing XGBoost](#installing-xgboost)
+- [Dataset splitting](#dataset-splitting)
+- [Decision tree classifier](#decision-tree-classifier)
+- [Model building using decision tree classifier](#model-building-using-decision-tree-classifier)
+- [Testing model](#testing-model)
+- [XGBoost](#xgboost)
+- [Making predictions using XGBoost](#making-predictions-using-xgboost)
+- [Conclusion](#conclusion)
+- [References](#references)
+
+### Prerequisites
+
+A reader must have:
+
+1. A good understanding of [Python](/engineering-education/python-projects-for-beginners/).
+2. A good understanding of [machine learning modeling](/engineering-education/house-price-prediction/).
+3. A good understanding of [supervised learning algorithms](/engineering-education/supervised-learning-algorithms/)
+4. Have knowledge of [Pandas](https://numpy.org/) and [Numpy.](https://numpy.org/)
+   > NOTE: To follow along easily, use [Google Colab](https://research.google.com/) to build your model.
+
+### Introduction
+
+For XGBoost to achieve the best solution it uses a gradient boosting framework, gradient boosting is a machine learning technique for classification, regression, and clustering problems used to optimize the model when making predictions.
+
+In this technique, different base models are combined to perform the same task. These base models are known as the weak learners, they work on the principle that a weak learner makes poor predictions when alone but makes the best prediction when together.
+
+XGBoost creates a strong learner based on the weak learners, by adding models together sequentially, the errors of the weak models are corrected by the next models in the chain to achieve an optimized solution, this is known as the ensemble method.
+
+For a detailed understanding of ensemble methods technique read this [article](/engineering-education/ensemble-learning/)
+
+#### Reasons for using XGBoost
+
+- High execution speed
+- Improved model performance
+- Reduced model errors
+
+In this tutorial, we will build a classification model, it will be able to predict if bank customers will to subscribe the term deposit of the bank and help in bank marketing. A term deposit is a fixed investment plan of the bank, it involves the deposit of the amount of money into an account at a given financial institution. Term deposits plan investments carry short-term maturities ranging from few months to a few years and will have different required minimum deposits into the account.
+
+The dataset used contains information about customers, this dataset will be used to train and build our model.
+
+### Dataset
+
+The dataset contains important attributes that the model will use during training, it uses this knowledge to know if a person will subscribe to a term deposit or not. The dataset also contains additional information as shown below.
+
+![Bank dataset](/engineering-education/machine-learning-with-xgboost-and-scikit-learn/bank-details.jpg)
+
+We need to clean this dataset so that it would be easy for our model to understand and use during training and predictive analysis.
+
+To get this dataset click [here](https://drive.google.com/file/d/1Yc3-jZkCcPb9DvngH4S_S_fVlUN1pFqH/view?usp=sharing). After downloading the dataset, name it as `bank-additional-full.csv`.
+
+#### Loading data analysis (EDA) packages
+
+Let's load all the packages that we will use for data analysis and manipulation. We will use pandas to load our dataset so that we can clean it and Numpy will be used to perform mathematical and scientific computations in Python.
+
+```python
+import pandas as pd
+import numpy as np
+```
+
+### Loading the dataset
+
+We use pandas to load our dataset.
+
+```python
+df = pd.read_csv("bank-additional-full.csv",sep=";")
+```
+
+We specify the fields separator in the dataset as `sep=";"`, this is because the fields in our dataset are separated by `;` and not the default `,` separator.
+
+Let's see the structure of our dataset, the named columns in the dataset, and the available data points.
+
+```python
+df.head()
+```
+
+The output is shown below.
+![Dataset](/engineering-education/machine-learning-with-xgboost-and-scikit-learn/dataset-used.jpg)
+
+Let's see the available data points in our dataset.
+
+```python
+df.shape
+```
+
+The output is as shown.
+
+```bash
+(41188, 21)
+```
+
+The output shows that our dataset has a total of `41188` data points and `21` columns.
+
+Let's see these columns
+
+```python
+df.columns
+```
+
+The output is sown in the image below.
+
+![Dataset columns](/engineering-education/machine-learning-with-xgboost-and-scikit-learn/dataset-columns.jpg)
+
+These columns such as: `age`, `job`, `marital`, `education`, and `housing` will be used as the inputs for our model during training.
+
+In the above output, the `y` column is used as the target variable, this is what we are trying to predict. The `y` column is labeled either `yes` or `no`, `yes` shows that a customer will subscribe to the term deposit, and `no` shows the person will not.
+
+Let's start cleaning our dataset, we start by checking for missing values.
+
+### Check missing values
+
+Use this command to check for missing values.
+
+```python
+df.isnull().sum()
+```
+
+The output is as shown in the image below.
+
+![Missing values](/engineering-education/machine-learning-with-xgboost-and-scikit-learn/missing-values.jpg)
+
+The image shows that our dataset has no missing value.
+
+Dataset cleaning also involves checking for the data types of the columns as shown in the image below.
+
+![Datatypes](/engineering-education/machine-learning-with-xgboost-and-scikit-learn/datatypes.jpg)
+
+From the above image, we have different data types such as `int64`, `object`, and `float64`. The values in the `object` data types are in form of categories.
+
+For example, the `job` column which contains an `object` data type has various job categories such as `housemaid`, `services`, `blue-collar`, and `technician`. The `marital` column has various categories such as `single`, `married`, and `divorced`.
+
+Machine learning doe not work with these categorical data, we need to convert these categorical values into numeric values.
+
+We, therefore, convert all the data types into `int64`. `int64` are numeric, machine learning only works with numerical values. We do not need to convert the `float64` datatype because it's already in numeric value.
+
+The process of converting categorical values into a numeric values is called categorical encoding.
+
+### Getting started with categorical encoding
+
+Before we start, let's get all the columns with the `object` datatype.
+
+```python
+df.columns[df.dtypes == 'object']
+```
+
+The output is shown.
+
+```bash
+Index(['job', 'marital', 'education', 'default', 'housing', 'loan', 'contact',
+       'month', 'day_of_week', 'poutcome', 'y'],
+      dtype='object')
+```
+
+To convert all the columns into numeric values we use `get_dummies()` method.
+
+`get_dummies()` is a pandas method that is used to convert the categorical data into encoded numerical values which are in a machine-readable form.
+
+```python
+pd.get_dummies(df,df.columns[df.dtypes == 'object'])
+```
+
+This will output a new dataset with encoded numeric values as shown below.
+
+![Categorical encoding](/engineering-education/machine-learning-with-xgboost-and-scikit-learn/categorical-encoding.jpg)
+
+The output shows the first `17` columns with encoded numeric values.
+
+For a detailed understanding and practical guide on how `get_dummies()` works, read this [guide](https://pandas.pydata.org/docs/reference/api/pandas.get_dummies.html)
+
+Let's see if the columns datatypes have changed.
+
+```python
+df.dtypes
+```
+
+The output is as shown in the image below.
+
+![Converted data types](/engineering-education/machine-learning-with-xgboost-and-scikit-learn/new-data-types.jpg)
+
+This shows all the `object` columns were converted into `int`. We can now start building our model.
+
+In this section, we will build our model using a basic Scikit-learn algorithm. We then later improve the model performance using XGBoost.
+
+### Installing XGBoost
+
+Let`s install XGBoost, since we are using Google Colab, we install using the following command.
+
+```python
+!pip install xgboost
+```
+
+Let's import this package.
+
+```python
+import xgboost as xgb
+```
+
+Now that we have imported XGBoost, let's split our dataset into the testing set and training set.
+
+### Dataset splitting
+
+Let's import `train_test_split` which is used for data set splitting.
+
+```python
+from sklearn.model_selection import train_test_split
+```
+
+We then split our dataset into two sets: train set and test set. 80% of the dataset will be used as a train set and 20% will be used as a test set.
+
+```python
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 0)
+```
+
+To understand the power of XGBoost we need to compare it with another algorithm, we first use the decision tree classifier algorithm to build the model. After that, we then build the same model using XGBoost and compare the results to see if XGBoost has improved the model performance.
+
+We start with a decision tree classifier.
+
+### Decision tree classifier
+
+A decision tree classifier is a machine learning algorithm that is used to solve classification problems. It's imported from the Scikit-learn Python library.
+
+```python
+from sklearn.tree import DecisionTreeClassifier
+```
+
+Let's initialize the `DecisionTreeClassifier`.
+
+```python
+dTree_clf = DecisionTreeClassifier()
+```
+
+After initializing the `DecisionTreeClassifier`, we can now use it in building our model.
+
+### Model building using decision tree classifier
+
+We fit our model into the train set of the dataset. This enables the model to understand patterns and learn from them, this is important during predictive analysis.
+
+```python
+dTree_clf.fit(X_train,y_train)
+```
+
+After training this is the output.
+
+```bash
+DecisionTreeClassifier(class_weight=None, criterion='gini', max_depth=None,
+            max_features=None, max_leaf_nodes=None,
+            min_impurity_decrease=0.0, min_impurity_split=None,
+            min_samples_leaf=1, min_samples_split=2,
+            min_weight_fraction_leaf=0.0, presort=False, random_state=None,
+            splitter='best')
+```
+
+The output gives the best parameters used by the model to achieve the best solution during making a prediction.
+
+Let's test this model.
+
+### Testing model
+
+We test the model using the test set dataset. The test set is used to check the performance of the model after the training phase so that it can evaluate it. We test our to see if it can make an accurate prediction using the test set dataset as the model input.
+
+```python
+y_pred2 = dTree_clf.predict(X_test)
+```
+
+To see the prediction results use this command.
+
+```python
+y_pred2
+```
+
+The output is as shown.
+
+```bash
+array([1, 0, 0, ..., 1, 0, 0], dtype=int8)
+```
+
+For the first value in the array, the model has made a positive prediction, `1`, which shows that a person will subscribe to a term deposit in the bank.
+
+This output only shows the prediction of few data points in the data set.
+
+Let's calculate the accuracy score of these predictions.
+
+```python
+print("Accuracy of Model::",accuracy_score(y_test,y_pred2))
+```
+
+The output is as shown.
+
+```bash
+Accuracy of Model:: 0.8929351784413693
+
+```
+
+This shows that the model has an accuracy score of `89.29%` when making predictions.
+
+Let's see if XGBoost can improve the performance of this model and increase the accuracy score.
+
+### XGBoost
+
+Let's initialize XGBoost so that we can use it to give the best results.
+
+```python
+xgb_classifier = xgb.XGBClassifier()
+```
+
+After initializing it, let's use it to train our model.
+
+```python
+xgb_classifier.fit(X_train,y_train)
+```
+
+We use the train set to train our model. The model learns from this dataset, stores the knowledge gained in memory, and uses this knowledge when making predictions.
+
+```python
+xgb_classifier.fit(X_train,y_train)
+```
+
+The output is as shown.
+
+```bash
+
+xgb_classifier.fit(X_train,y_train)
+XGBClassifier(base_score=0.5, booster='gbtree', colsample_bylevel=1,
+       colsample_bynode=1, colsample_bytree=1, gamma=0, learning_rate=0.1,
+       max_delta_step=0, max_depth=3, min_child_weight=1, missing=None,
+       n_estimators=100, n_jobs=1, nthread=None,
+       objective='binary:logistic', random_state=0, reg_alpha=0,
+       reg_lambda=1, scale_pos_weight=1, seed=None, silent=None,
+       subsample=1, verbosity=1)
+```
+
+XGBoost adds more parameters to the model, the added parameters are used to remove errors during training and increase the model performance.
+
+Let's use this model to make a prediction using the same test set dataset used earlier. This will test our model so that we can know how well it learned during the training phase.
+
+### Making predictions using XGBoost
+
+```python
+predictions = xgb_classifier.predict(X_test)
+```
+
+To see the prediction results use this command.
+
+```python
+predictions
+```
+
+The output is as shown.
+
+```bash
+array([0, 0, 0, ..., 1, 0, 0], dtype=int8)
+
+```
+
+In this prediction, the first value in the array has been predicted as `0`. This is different from the prediction made by the decision tree classifier.
+
+This shows that XGBoost has corrected the prediction error and now it has made accurate predictions.
+
+Let's see if it has increased the accuracy score.
+
+```python
+print("Accuracy of Model::",accuracy_score(y_test,predictions))
+```
+
+The accuracy score is as shown.
+
+```bash
+Accuracy of Model:: 0.9225540179655256
+```
+
+This shows that the model has an accuracy score of `92.255%` when making predictions, this is an increased accuracy score compared to `89.29%` that was made by the decision tree classier. This concludes that XGBoost reduces model errors during predictions and improves the model performance.
+
+### Conclusion
+
+In this tutorial, we have learned how to make a machine learning model with XGBoost and Scikit-learn. We started by stating the benefits of XGBoost.
+
+To see how XGBoost is a great machine learning library, we compared it with another algorithm, we first used a decision tree classifier algorithm to build the model. After that, we then build the same model using XGBoost and compare the results.
+
+Finally, after comparing the results, we saw that XGBoost is better than the decision tree classifier, it had increased the accuracy score from `89.29%` to `92.255%`. Using this tutorial, a reader should be able to follow these steps and build a machine learning with XGBoost and Scikit-learn.
+
+To get the Google Colab code for this tutorial click [here](https://colab.research.google.com/drive/160MQWnygEHmSs2waDI8Bs9rpi7zOa4SN?usp=sharing)
+
+### References
+
+- [Code for this tuturial](https://colab.research.google.com/drive/160MQWnygEHmSs2waDI8Bs9rpi7zOa4SN?usp=sharing)
+- [Scikit-learn documentation](https://scikit-learn.org/stable/)
+- [XGBoost documentation](https://xgboost.readthedocs.io/en/latest/)
+- [Ensemble Learning Techniques to Improve Machine Learning](/engineering-education/ensemble-learning/)
+- [Boosting Algorithms in Python](https://www.section.io/engineering-education/boosting-algorithms-python/)
