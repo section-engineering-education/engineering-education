@@ -8,18 +8,18 @@ Content delivery networks (CDNs) work by hosting files (images, videos, HTML pag
 
 In this article, you will learn:
 
-* Benefits of using content delivery networks (CDNs).
-* How to build CRUD applications with Flask and MongoDB.
-* How to integrate Cloudinary services into a Python application.
+- Benefits of using content delivery networks (CDNs).
+- How to build CRUD applications with Flask and MongoDB.
+- How to integrate Cloudinary services into a Python application.
 
 ### Prerequisites
 
 To follow and fully understand this tutorial, you will need to have:
 
-* Working knowledge of Python and Flask.
-* Python 3.6 or newer installed on your machine.
-* A Python development environment (IDE, text editor).
-* MongoDB installed on your machine.
+- Working knowledge of Python and Flask.
+- Python 3.6 or newer installed on your machine.
+- A Python development environment (IDE, text editor).
+- MongoDB installed on your machine.
 
 ### Benefits of Content Delivery Networks (CDNs)
 
@@ -43,17 +43,17 @@ CDN assets are on multiple servers. This reduces the amount of data the origin s
 
 In this tutorial, you will build an image gallery with Flask and MongoDB that integrates a CDN with [Cloudinary](https://cloudinary.com/documentation/cloudinary_get_started). Create the backend with [Flask](https://flask.palletsprojects.com/en/1.1.x/), database with [Flask-PyMongo](https://flask-pymongo.readthedocs.io/en/latest/), and user interface with [Flask-Bootstrap](https://pypi.org/project/Flask-Bootstrap4/).
 
-You will build three (3) web pages for the image gallery. They are:
+You will build three webpages for the image gallery. They are:
 
-* Index/Landing Page
-* Upload Image Page
-* View Gallery Page
+1. Index/Landing Page
+2. Upload Image Page
+3. View Gallery Page
 
-> Flask is a Python web framework that allows you to build basic and complex applications quickly and easily.
+- Flask is a Python web framework that allows you to build basic and complex applications quickly and easily.
 
-> Flask-Bootstrap is a Flask extension that allows you to integrate [Bootstrap](https://getbootstrap.com/) into a web application effortlessly.
+- Flask-Bootstrap is a Flask extension that allows you to integrate [Bootstrap](https://getbootstrap.com/) into a web application effortlessly.
 
-> Flask-PyMongo is a Flask extension that bridges the gap between Flask and [PyMongo](https://pymongo.readthedocs.io/en/stable/), providing Flask applications with the functionalities to integrate MongoDB easily.
+- Flask-PyMongo is a Flask extension that bridges the gap between Flask and [PyMongo](https://pymongo.readthedocs.io/en/stable/), providing Flask applications with the functionalities to integrate MongoDB easily.
 
 #### Step 1: Installing the App Requirements
 
@@ -74,11 +74,9 @@ from flask_bootstrap import Bootstrap
 app = Flask(__name__)
 Bootstrap(app)
 
-
 @app.route("/")
 def index():
     return "Hello World!"
-
 
 if __name__ == "__main__":
     app.run(debug=True)
@@ -86,9 +84,9 @@ if __name__ == "__main__":
 
 When you run the `app.py` file and open your browser, you will get a response similar to the image below:
 
-![terminal view](/engineering-education/image-gallery-flask-cloudinary-mongo/tmckbhpmzbphhlanveru.png)
+![terminal view](/engineering-education/image-gallery-flask-cloudinary-mongo/terminal-view.png)
 
-![browser view](/engineering-education/image-gallery-flask-cloudinary-mongo/sp49rtwxmja3iask-dpw.png)
+![browser view](/engineering-education/image-gallery-flask-cloudinary-mongo/browser-view.png)
 
 #### Step 3: Design the Landing Page
 
@@ -96,7 +94,8 @@ The landing page is where your users see your application’s information with n
 
 First, create a folder named `templates` in the same folder as your `app.py`. Flask uses a `templates` folder to store the HTML files that the server renders in the application. Your project folder should resemble the image below:
 
-![project structure](/engineering-education/image-gallery-flask-cloudinary-mongo/5xfivevtp8xdfklr7fal.png)
+![project structure](/engineering-education/image-gallery-flask-cloudinary-mongo/
+project-structure.png)
 
 Create another file named `index.html` that will be stored in the `templates` folder and save the following code in it:
 
@@ -123,7 +122,7 @@ Create another file named `index.html` that will be stored in the `templates` fo
 {% endblock %}
 ```
 
-You need to update the `app.py` file to implement the `upload and `gallery` routes referenced on the landing page. Update the `app.py` file with the code below:
+You need to update the `app.py` file to implement the upload and gallery routes referenced on the landing page. Update the `app.py` file with the code below:
 
 ```python
 @app.route("/")
@@ -143,7 +142,7 @@ def upload():
 
 When you run the `app.py` file, you will get a response similar to the image below in your browser:
 
-![landing page](/engineering-education/image-gallery-flask-cloudinary-mongo/v_1nf2fbaxpcps10vcid.png)
+![landing page](/engineering-education/image-gallery-flask-cloudinary-mongo/landing-page.png)
 
 #### Step 4: Build the Image Upload Functionality
 
@@ -202,7 +201,7 @@ Create another file named `upload.html` that will be stored in the `templates` f
 
 When you run the `app.py` file, your upload page should resemble the image below:
 
-![upload page](/engineering-education/image-gallery-flask-cloudinary-mongo/a6fxdzm9ev9vzfq8cv5w.png)
+![upload page](/engineering-education/image-gallery-flask-cloudinary-mongo/upload-page.png)
 
 You need to import the necessary libraries required by the application. Update the `app.py` file imports with the code below:
 
@@ -253,7 +252,7 @@ def upload():
 
 Create a `static` directory in the same directory as the `app.py` file and another folder called `uploads` in the `static` directory.
 
-![successful upload page](/engineering-education/image-gallery-flask-cloudinary-mongo/sx8ne3tvggwzmi76s9hx.png)
+![successful upload page](/engineering-education/image-gallery-flask-cloudinary-mongo/successful-upload.png)
 
 #### Step 5: Build the Gallery Viewing Page
 
@@ -298,7 +297,7 @@ Create another file named `gallery.html` that will be stored in the `templates` 
 
 When you run the `app.py` file, your gallery page should resemble the image below:
 
-![gallery page](/engineering-education/image-gallery-flask-cloudinary-mongo/zhybtclqplvrbzrvfhu9.png)
+![gallery page](/engineering-education/image-gallery-flask-cloudinary-mongo/gallery-page.png)
 
 ### Integrating Cloudinary into a Flask Application
 
@@ -308,7 +307,7 @@ You need to generate your API keys from your Cloudinary dashboard. If you don’
 
 The dashboard will provide you with your CLOUD NAME, API KEY, and API SECRET. Store them somewhere secure and easily retrievable. The API keys allow any application to communicate with your Cloudinary account via the REST API.
 
-![cloudinary keys](/engineering-education/image-gallery-flask-cloudinary-mongo/2jn63ayziv4r9emcdopw.png)
+![cloudinary keys](/engineering-education/image-gallery-flask-cloudinary-mongo/cloudinary-keys.png)
 
 #### Integrating Cloudinary into Python
 
@@ -391,7 +390,7 @@ Update the `gallery.html` template file to render the gallery images from the pr
 
 Congratulations! You have successfully built a CDN image gallery with Flask, Cloudinary, and MongoDB. The images rendered on the gallery page should be fetched from Cloudinary CDN servers instead of your origin server, as shown in the image below:
 
-![cloudinary path](/engineering-education/image-gallery-flask-cloudinary-mongo/skx3hl3c1x82jn0l_isj.png)
+![cloudinary path](/engineering-education/image-gallery-flask-cloudinary-mongo/cloudinary-path.png)
 
 ### Conclusion
 
