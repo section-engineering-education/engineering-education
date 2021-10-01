@@ -1,12 +1,12 @@
 ---
 layout: engineering-education
 status: draft
-published: false
+published: true
 url: /full-stack-reactive-website-in-Django/
 title: Full-Stack Reactive Website in Django (no JavaScript)
 description: This tutorial will enable the reader to understand how to create a full-stack reactive web application in Django without any dedicated frontend.
 author: samuel-torimiro
-date:
+date: 2021-10-01T00:00:00-13:06
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -23,10 +23,9 @@ There are several technologies out there that can achieve these functionalities 
 > Note that there may be benefits of using a dedicated frontend; for instance, it can be helpful to have a dedicated team responsible for coding the frontend and backend of a piece of software.
 
 ## Tutorial Requirements
-To follow along with this tutorial the following items would be needed:
-
-1. A basic understanding of the Django web framework
-1. A working knowledge of Docker
+To follow along with this tutorial, the reader needs;
+- A basic understanding of the Django web framework
+- A working knowledge of Docker
 
 ### Project setup and overview
 Here is a quick look at the app you will be building:
@@ -41,9 +40,7 @@ $ git clone https://github.com/Samuel-2626/django-reactive --branch base --singl
 $ cd django-reactive
 ```
 
-You will use Docker to simplify setting up and running Django with the dependencies.
-
-From the project root, create the images and spin up the Docker containers:
+You will use Docker to simplify setting up and running Django with the dependencies. From the project root, create the images and spin up the Docker containers:
 
 ```bash
 $ docker-compose up -d --build
@@ -68,7 +65,7 @@ class Book(models.Model):
 ```
 
 ### Working with Unicorn
-According to [Unicorn](https://www.django-unicorn.com/docs/), it is a component framework that progressively enhances a standard Django view. It dynamically updates the DOM with AJAX calls in the background. Add it to your installed application:
+[Unicorn](https://www.django-unicorn.com/docs/) is a component framework that progressively enhances a standard Django view. It dynamically updates the DOM with AJAX calls in the background. Add it to your installed application:
 
 ```py
 INSTALLED_APPS = [
@@ -91,8 +88,7 @@ path("unicorn/", include("django_unicorn.urls")), # new
 ```
 
 **How it works?**
-
-1. Unicorn is an open-source library that progressively enhances a normal Django view; therefore, the initial render of the component is quick and great for SEO.
+1. Unicorn is an open-source library that progressively enhances a standard Django view; therefore, the initial render of the component is quick and great for SEO.
 2. Next, Unicorn binds to the elements stipulated and automatically performs AJAX calls when required.
 3. Finally, the DOM is updated dynamically by Unicorn
 
@@ -144,12 +140,12 @@ Update your books' template `index.html` file like so:
 ```
 
 ### Explaining the logic.
-
 1. You created a basic Django template for your project while linking the views and URLs together.
 2. Take note that you have to load `unicorn` at the top of the Django HTML template.
 3. You also added the `unicorn_scripts` into the Django HTML template and added the `crsf_token` in the template as well.
 
 > According to Unicorn, the library follows the best practices of Django and therefore, it requires a `CRSF` token to be set on any page that is a component. This guarantees that no nefarious AJAX Posts can be done.
+
 Additionally, according to Unicorn, it has the concept of component, to refer to a set of interactive functionality that can be put inside the template. So, for example, in the `index.html` file, you added a `book` component.
 
 Furthermore, a component consists of:
@@ -160,15 +156,12 @@ Furthermore, a component consists of:
 In this section, you will be implementing the functionality to add and delete books without refreshing your browser using `Unicorn`.
 
 #### Step 1
-
 From your project root, create a new folder called `unicorn`, create a new folder called `components`, and finally, create a new file called `book.py`.
 
 #### Step 2
-
 From the `unicorn` folder you created earlier on, create another folder called `templates`, inside this folder create a new folder called `unicorn` and finally, inside this folder, create a new file called `book.html`.
 
 #### Step 3
-
 Inside the `book.html`, add the following code:
 
 ```html
@@ -217,19 +210,18 @@ Inside the `book.html`, add the following code:
 ** What is Happening Here?**
 
 1. Inside the component, you have access to your normal Django syntax.
-2. Note the input element; this is familiar except for the `Unicorn:model` attribute. This would specify what field in your backend component would be bound to this input. In this case, the field name would be `title`.
+2. Note the input element; this is familiar except for the `Unicorn: model` attribute. This would specify what field in your backend component would be bound to this input. In this case, the field name would be `title`.
 
-> `unicorn:model` is the magic that ties the input to the backend component.
-3. Notice the `Add Books` button with an attribute `unicorn:click`, which tells `unicorn` to bind the `add_book` backend method to the click browser event.
+> `unicorn: model` is the magic that ties the input to the backend component.
+3. Notice the `Add Books` button with an attribute `unicorn: click`, which tells `unicorn` to bind the `add_book` backend method to the click browser event.
 4. Likewise, the `Delete Book` button tells `unicorn` to bind the `delete_book` backend method. You also passed the book `id` to the `delete_book` function to uniquely identify each book.
 
-> To prevent updates from occurring on every input, you can add a lazy or defer modifier to the end of `unicorn:model`.
-Attributes used in component templates habitually start with `unicorn:` but the shortcut `u:` is also supported. Note that properties of the component can be of many types, including `str`, `int`, `list`, `dictionary`, `decimal`, `Django Model`, etc. 
+> To prevent updates from occurring on every input, you can add a lazy or defer modifier to the end of `unicorn: model`.
+Attributes used in component templates habitually start with `unicorn:` but the shortcut `u:` is also supported. Note that properties of the component can be of many types, including `str`, `int`, `list`, `dictionary`, `decimal`, and `Django Model`. 
 
 Finally, `Unicorn` requires one root element that envelopes the component template.
 
 #### Step 4
-
 Inside the `book.py`, add the following code:
 
 ```py
@@ -253,9 +245,8 @@ class BookView(UnicornView):
             pass
 ```
 
-** What is Happening Here?**
-
-1. You are importing the `UnicornView`, which is a subclass of `TemplateView` under the hood. Therefore, the process of switching from a standard class-based view should be straightforward.
+### Explaining the code logic
+1. You are importing the `UnicornView`, a subclass of `TemplateView` under the hood. Therefore, the process of switching from a standard class-based view should be straightforward.
 2. The `hydrate` method is called when the component is instantiated to grab the latest books from the database so that the information is up-to-date.
 3. The `add_book` method will create a new book model from the title, save it in the database, and then clear the title.
 4. The `delete_book` method will delete a book that matches the id.
@@ -264,16 +255,14 @@ Once done, navigate to [http://127.0.0.1:8080/](http://127.0.0.1:8080/) to ensur
 
 ![Home Page 2](/engineering-education/full-stack-reactive-website-in-Django/homepage.png)
 
-Try adding and deleting some of your favorite Django books.
+Try adding and deleting some of your favourite Django books.
 
 ### Conclusion
-
-In this tutorial, you were introduced to building a full-stack reactive web application in Django without any JavaScript. You built a simple application with `unicorn` that can add and delete a book without refreshing the page, hence, **reactive**.
+This tutorial introduced you to building a full-stack reactive web application in Django without any JavaScript. You built a simple application with `unicorn` that can add and delete a book without refreshing the page, hence, **reactive**.
 
 You can download the complete code from [here](https://github.com/Samuel-2626/django-reactive).
 
 Happy coding!
 
 ### References
-
 - [Unicorn](https://www.django-unicorn.com/)
