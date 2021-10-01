@@ -551,3 +551,6 @@ Here is the outcome of the project. I hope this article guided you well on how t
 
 ### Conclusion
 This article provided a headstart on working with data tables in React. We developed an application using react and implemented the `react-table` library to demonstrate the concept. Working on this project should be an insight into building responsive data tables in react.
+
+---
+Peer Review Contributions by: [Jerim Kaura](/engineering-education/authors/jerim-kaura/)
