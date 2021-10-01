@@ -2,33 +2,41 @@
 The decision tree is a member of the supervised learning algorithm used for both Classification and Regression problems. More often, the decision tree is used for classification problems. The tree algorithm is so-called due to its tree-like structure in presenting decisions and decision making processes. It helps us make an optimal choice in a complex situation with various alternatives, and we are needed to take the best strategy to obtain an optimal outcome.
 
 ### Prerequisites
-To follow along this article comfortably, you’ll require:
-
+To follow along with this article comfortably, you will require:
 - To have Python installed on your computer.
-
-- Be amiliar with the scikit-learn library.
+- Be familiar with the scikit-learn library.
 
 We have two types of decision trees.
-1. **Regression Decision  tree**
+Regression Decision  tree
 A regression Decision tree is a tree created on data whose target variable is continuous.
-2. **Classification decision tree**
+
+Classification decision tree
 A classification decision tree is a decision tree implemented on data whose target variable is categorical.
 
-The decision tree composed of nodes and paths 
-Nodes in the decision tree are of two broad categories:
+Decision trees are composed of nodes and paths. Nodes in the decision tree are of two broad categories:
   - **Decision node**
   The decision node is where we pass a rule and split the data based on such a rule. All decision nodes have paths coming out of them. 
+
   - **Leaf node**
   A leaf node is a node that only appears at the terminal of a decision tree. Leaf nodes have no paths coming out of them and thus have no further splits. On this node, we list the values of the target variable. The leaf node is also known as **terminal node**.
 
-  The node at the top of a decision tree is called **root node**. A feature that fits this node is determined using some splitting measures that we shall look at later in this article. The main property of a root node is that it has no incoming channels. The majority of decision nodes appears between the root node and the leaf node. These nodes are called  **internal nodes** of a decision tree. An **internal node**,  also known as *sub-note*, has an incoming and outgoing channel(s). Together with the terminal nodes, internal nodes form the **branch** of a decision tree. The channels we have just mentioned and connecting the entire decision tree anatomy are called **paths**. Paths represent the best route we can take to attain optimal outcomes. Splitting is terminology in Decision Tree, which mean dividing a decision node into at least two sub-nodes.
+ The node at the top of a decision tree is called the `root node`. A feature that fits this node is determined using some splitting measures that we shall look at later in this article. 
+
+The main property of a root node is that it has no incoming paths. Therefore, the majority of decision nodes appears between the root node and the leaf node. These nodes are called  **internal nodes** of a decision tree. 
+
+An **internal node**,  also known as *sub-note*, has an incoming and outgoing channel(s). Together with the terminal nodes, internal nodes form the **branch** of a decision tree. 
+
+The channels we have just mentioned and connecting the entire decision tree anatomy are called **paths**. Paths represent the best route we can take to attain optimal outcomes. 
+
+Splitting is terminology in Decision Tree, which mean dividing a decision node into at least two sub-nodes.
   
 Other terminologies you may encounter in the decision tree are:
  1. **Pruning:** This means eliminating some of the internal nodes from our tree to overcome the problem of **overfitting**. Overfitting is a major threat faced with the decision tree.
  2. **Parent Node:** This is the node on which we split other nodes.
  3. **Child Node:** These are sub-nodes of a parent node.
  4. **Best attribute** This refers to the feature that provides optimal value depending on splitting criteria used.
- As we mentioned earlier, the decision tree starts with the root node. Given the training dataset, we use a technique known as **Attribute Selection Measure**, usually abbreviated as **(ASM)**, to determine which features qualify to be used as the **best attribute** for splitting our tree.
+
+As we mentioned earlier, the decision tree starts with the root node. Given the training dataset, we use a technique known as **Attribute Selection Measure**, usually abbreviated as **(ASM)**, to determine which features qualify to be used as the **best attribute** for splitting our tree.
  
  **Attribute Selection Measure** technique offers us two criteria with whose aid we can determine the best attribute on which we do our split. 
  These criteria are:
@@ -37,13 +45,21 @@ Other terminologies you may encounter in the decision tree are:
    To get started, let us consider each of the above measures:
 
    ### Information Gain
-  Information Gain measures how the **Entropy** of a set S is reduced after splitting it into the feature classes, say A. Information gain determines how much information we obtain by choosing a particular attribute and splitting our tree on it. We get information gain by finding the difference between the *entropy* before and the *entropy* after the split, i.e.,
+ Information Gain measures how the **Entropy** of a set S is reduced after splitting it into the feature classes, say A.
+
+Information gain determines how much information we obtain by choosing a particular attribute and splitting our tree on it. We get information gain by finding the difference between the *entropy* before and the *entropy* after the split, i.e.,
   
   **I.G = Entropy(Before split) - [Weighted entropy(after split)]**
 
-According to this criterion, the feature that provides more information from set of all features is the **best attribute**. Therefore, we split our tree on such an attribute.
+According to this criterion, the feature that provides more information from all features is the **best attribute**. Therefore, we split our tree on such an attribute.
   
-Now the task is to determine the *best attribute* from all attributes of a training set. To obtain our best attribute, it requires us to engage ourselves with some computations. With the aid of the metric we just mentioned above, *entropy*, we can go about it quickly. Entropy is a metric that measures how mixed up data is. The higher the entropy value an attribute has, the more information we can derive from such an attribute. If the target variable of a particular internal node is homogenous, the resultant entropy of such node is zero. The node can not split further, and thus hence it forms a leaf node. If the entropy of any split is not zero, it means we can still split our data subset further. We can split our dataset until we obtain fully classified nodes, i.e. leaf nodes. We do not have to split our dataset until we get a fully classified subset in most cases. Therefore, it is advisable to stop at a point where the entropy before splitting is less than after splitting. By doing so, we can avoid *overfitting* our tree algorithm.
+Now the task is to determine the *best attribute* from all attributes of a training set. To obtain our best attribute, it requires us to engage ourselves with some computations. 
+
+Entropy is a metric that measures how mixed up data is. The higher the entropy value an attribute has, the more information we can derive from such an attribute. 
+
+If the target variable of a particular internal node is homogenous, the resultant entropy of such node is zero. The node can not split further, and thus hence it forms a leaf node. If the entropy of any split is not zero, it means we can still split our data subset further. We can split our dataset until we obtain fully classified nodes, i.e. leaf nodes. 
+
+We do not have to split our dataset until we get a fully classified subset in most cases. Therefore, it is advisable to stop at a point where the entropy before splitting is less than after splitting. By doing so, we can avoid *overfitting* our tree algorithm.
 
  To calculate entropy, we use the formula below:
 
@@ -54,9 +70,13 @@ Where:
 For more information on determining the best attribute and developing the structure of a decision tree using entropy and information gain technique, visit check on this [article](https://www.section.io/engineering-education/entropy-information-gain-machine-learning/). I hope the article was helpful, and now we are familiar with the calculation of entropy, information gain, and developing the decision tree structure.
 
 ### Gini Index
-The Gini index is a criterion that measure of how impure a feature is. To calculate the Gini index, we first compute **Gini impurity**. Gini impurity measures how random a category in a feature is. We weigh the Gini impurity of all classes in a feature and sum them up to obtain the Gini index of corresponding such feature. Gini index ranges between 0 and 1. Gini index is 0 if each feature category takes a homogenous class of the target variable and greater than 0 if elements are highly distributed randomly across various categories. A variable whose Gini index is zero implies that it is a pure variable.
+The Gini index is a criterion that measures how impure a feature is. To calculate the Gini index, we first compute **Gini impurity**.
 
-The Gini index criterion is highly applicable when a decision tree is on a large dataset. The reason is that the Gini index is easy to calculate compared to the Information gain. However, creating a tree on a small dataset, the information gain criterion could be the best alternative. The reason is that it involves a lot of calculations.
+Gini impurity measures how random a category in a feature is. We weigh the Gini impurity of all classes in a feature and sum them up to obtain the Gini index of corresponding such feature. Gini index ranges between 0 and 1. 
+
+Gini index is 0 if each feature category takes a homogenous class of the target variable and greater than 0 if elements are highly distributed randomly across various categories. A variable whose Gini index is zero implies that it is a pure variable.
+
+The Gini index criterion is highly applicable when a decision tree is on a large dataset. The reason is that the Gini index is easy to calculate compared to the Information gain. However, the information gain criterion could be the best alternative to create a tree on a small dataset. The reason is that it involves many calculations.
 
 To calculate the Gini index, we use the following formula.
 
@@ -167,7 +187,7 @@ To get started, let us download the dataset we are going to work with [here](htt
 Now that our data has is downloaded, let us import the necessary libraries.
 Below is the code that carries out this task.
 #### Importing libraries
-```python
+```Python
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -176,8 +196,8 @@ import seaborn as sns
 ```
 
 ### Importing dataset
-The dataset we have just downloaded is in `csv ` format, and thus we import it to our working directory using the `read_csv` function in pandas.
-```python
+The dataset we have just downloaded is in `CSV ` format, and thus we import it to our working directory using the `read_csv` function in pandas.
+```Python
 # copy paste the storage path of your data file
 our_data = pd.read_csv("/content/drive/MyDrive/data.csv")
 
@@ -191,7 +211,14 @@ our_data.head()
 The above code yields:
 **Output**
 ![our_data](/engineering-education/decision-tree-in-python/our_data.png)
-Our dataset consists of customers data captured in the business on their transactions with the enterprise. Our goal is to use this data and predict whether a customer will stay or lose interest and exit the business. The *Exited* column is our target variable. It takes a value of 0 or 1. The value of 1 represents a customer's exit, and 0 illustrate a customer who is still in the business. From our dataset, we need to notice that some attributes do not contribute to our objective. For example, a column such as RowNumber, which shows positions in which customer information is recorded, does not determine whether they will remain in the business or leave. Other attributes that add no value to our goal are CustomerId and Surname. Thus we need to eliminate these columns from our data set. We use the `drop()` function as in the code below to get rid of them.
+
+Our dataset consists of customers data captured in the business on their transactions with the enterprise. Our goal is to use this data and predict whether a customer will stay or lose interest and exit the business. 
+
+The *Exited* column is our target variable. It takes a value of 0 or 1. The value of 1 represents a customer's exit, and 0 illustrate a customer who is still in the business. 
+
+From our dataset, we need to notice that some attributes do not contribute to our objective. For example, a column such as RowNumber, which shows positions in which customer information is recorded, does not determine whether they will remain in the business or leave. 
+
+Other attributes that add no value to our goal are CustomerId and Surname. Thus we need to eliminate these columns from our data set. We use the `drop()` function in the code below to get rid of them.
 
 ```python
 our_data = our_data.drop(["RowNumber" , "CustomerId" , "Surname"] , axis = 1)
@@ -206,7 +233,7 @@ The RowNumber, CustomerId, and Surname were eliminated from our dataset.
 Also, we need to notice that our dataset consists of object data types on the Geography and Gender columns. Therefore, we need to encode these columns into a numeric data type.
 
 To get these columns encoded, we run the code below.
-```python
+```Python
 from sklearn.preprocessing import LabelEncoder
 
 new_data = dict(our_data.dtypes)
@@ -238,7 +265,7 @@ Y = our_data['Exited'].values.astype(np.uint8)
 
 ```
 Next, we split the splits above into the training set and the test set. The code below facilitates this activity.
-```python
+```Python
 from sklearn.model_selection import train_test_split
 # training set is 80% of the dataset
 Xtrain , Xtest , Ytrain , Ytest = train_test_split(X , Y , test_size = 0.2 , random_state = 4)
@@ -256,7 +283,7 @@ print(Xtrain.shape , Ytrain.shape)
 ```
 Our training set consists of 8,000 observations with ten features and a study variable. At this point, we can now implement our decision tree. We first import the `DecisionTreeClassifier ` model from the class tree in the sk.learn library to implement our tree. We then create an object to the model and `fit()` it on the training subset. Below is the code for this activity.
 
-```python
+```Python
 from sklearn.tree import DecisionTreeClassifier 
 
 model = DecisionTreeClassifier()
@@ -275,7 +302,7 @@ DecisionTreeClassifier(ccp_alpha=0.0, class_weight=None, criterion='gini',
 
 ```
 Next, we check the testing accuracy of our model.
-```python
+```Python
 print("Testing Accuracy : " , model.score(Xtest , Ytest))
 
 ```
@@ -292,7 +319,7 @@ predictions = model.predict(Xtest)
 ```
 
 
-```python
+```Python
 # Importing confusion matrix model from sklearn
 from sklearn.metrics import confusion_matrix 
 
@@ -368,7 +395,7 @@ Testing Accuracy :  0.7825
 predictions = model.predict(Xtest)
 ```
 
-```python
+```Python
 from sklearn.metrics import confusion_matrix 
 
 matrix = confusion_matrix(Ytest , predictions)
@@ -385,7 +412,7 @@ From these new outputs, we notice that the testing accuracy decreased slightly, 
 
 #### Visualizing our decision tree
 
-```python
+```Python
 #plot decision tree
 from sklearn import tree
 
@@ -397,9 +424,9 @@ _ = tree.plot_tree(model,
                    filled=True)
 
 ```
-Below is thee tree we implemented on our dataset.
+Below is the tree we implemented on our dataset.
 
 ![oor_data](/engineering-education/decision-tree-in-python/tree_structure.png)
 
 #### Conclusion
-In this article, we looked at the intuition behind the decision tree and criteria that help us build a tree on the dataset. Finally, we looked at how to implement it using software, and in our case, we used python. I hope this article has helped you to understand the decision tree and its criteria.
+This article looked at the intuition behind the decision tree and criteria that help us build a tree on the dataset. Finally, we looked at how to implement it using software, and in our case, we used Python. I hope this article has helped you to understand the decision tree and its criteria.
