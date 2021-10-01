@@ -13,6 +13,7 @@ images:
 
   - url: /engineering-education/creating-an-animated-javafx-field-validation-alert/hero.png
     alt: Animated javafx field validation image
+---
 
 Organizations always want to keep users' info in their systems. This info helps them follow up on users' feedback, follow-ups, statistics, and product advertisements. Users, on the other hand, sometimes find the sign-up and login form boring. This process deters some from the data-entry process. To deal with this issue, developers have added interactive features.
  <!--more-->
@@ -690,3 +691,6 @@ In the article, the following have been accomplished:
 - Add effects based on the outcomes of the validation.
 - Add animations on the controls.
 - Learnt more types of animations available for JavaFX projects.
+
+---
+Peer Review Contributions by: [Mercy Meave](/engineering-education/authors/mercy-meave/)
