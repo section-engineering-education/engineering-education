@@ -98,13 +98,13 @@ In the text fields, fill them as follows:
 
 This step is shown in the image below:
 
-![Create a new JavaFX project](/engineering-education/design-a-sign-up-and-login-gui-using-javafx/JavaFX-newProject.png)
+![Create a new JavaFX project](/engineering-education/design-a-sign-up-and-login-gui-using-javafx/javafx-new-project.png)
 
 Click _Next_ to go to the next window. In the dependencies window, choose BootstrapFX, ControlsFx, and FormsFX.
 
 This step is as shown in the image below:
 
-![JavaFX dependencies](/engineering-education/design-a-sign-up-and-login-gui-using-javafx/JavaFX-dependencies.png)
+![JavaFX dependencies](/engineering-education/design-a-sign-up-and-login-gui-using-javafx/javafx-dependencies.png)
 
 Create a new project when done.
 
@@ -132,7 +132,7 @@ This combination opens a new _Hello!_ window where clicking the button displays 
 
 It looks as follows:
 
-![Hello JavaFX Window](/engineering-education/design-a-sign-up-and-login-gui-using-javafx/hello-JavaFX.png)
+![Hello JavaFX Window](/engineering-education/design-a-sign-up-and-login-gui-using-javafx/hello-javafx.png)
 
 Modify it to fit the application of choice.
 
@@ -151,7 +151,7 @@ After a few moments, it will open up the Scene Builder and view how the applicat
 
 It looks as shown below:
 
-![Scene Builder](/engineering-education/design-a-sign-up-and-login-gui-using-javafx/Scene-Builder.png)
+![Scene Builder](/engineering-education/design-a-sign-up-and-login-gui-using-javafx/scene-builder.png)
 
 > **NOTE**: Scene Builder can also be installed separately from the IntelliJ IDEA environment.
 
@@ -190,7 +190,7 @@ public class HelloApplication extends Application {
 #### Customize the user interface
 In the `hello-view.fxml` file, view it using the scene builder. On the left-hand side, delete the VBox that contains the label and button as seen in the application:
 
-![Delete VBox](/engineering-education/design-a-sign-up-and-login-gui-using-javafx/Delete-VBox.png "Delete VBox")
+![Delete VBox](/engineering-education/design-a-sign-up-and-login-gui-using-javafx/delete-vbox.png "Delete VBox")
 
 Add a border pane by dragging and dropping it from the containers section to the window where the VBox was. A border pane allows one to easily keep controls in the top, left, right, center, and bottom of the window. This step will aid in dividing the window.
 
@@ -873,7 +873,7 @@ The FXML Code will look as shown below:
 ### Run the application
 Run the application as before using the `Shift + F10` shortcut. The results are as shown below:
 
-![Final Product](/engineering-education/design-a-sign-up-and-login-gui-using-javafx/Final-product.png)
+![Final Product](/engineering-education/design-a-sign-up-and-login-gui-using-javafx/final-product.png)
 
 Find the source code and files in [this](https://github.com/RisoriTofa/A-JavaFX-Login-and-Sign-Up-Form) repository.
 
