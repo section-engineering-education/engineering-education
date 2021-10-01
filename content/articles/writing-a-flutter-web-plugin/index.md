@@ -38,7 +38,7 @@ Now run the following code in the current directory you created earlier to creat
 $ mkdir url_launcher_interface_platform
 ```
 
-For the URL launcher interface platform folder, needs a few files to be complete. These files are named below:
+For the URL launcher interface platform folder to be complete, needs a few files which are named below:
 
 1. License file
 
@@ -79,7 +79,7 @@ By definition, new methods are not considered breaking changes. Extending the ab
 
 Note that the default implementation of all platform interface functions should throw a UnimplementedError.
 
-To write `MethodChannelUrlLauncher`, edit lib/method channel url launcher and paste the following code and upload the new package to `pub.dev` after committing:
+To write `MethodChannelUrlLauncher`, edit lib/method channel url launcher file, paste the following code and upload the new package to `pub.dev` after committing:
 
 ```dart
 import 'dart:async';
@@ -141,7 +141,7 @@ class UrlLauncherPlugin extends UrlLauncherPlatform {
 }
 ```
 
-Stating that this is the `UrlLauncherPlatform` default instance, rather than registering a `MethodChannel`, makes more sense. When `package:url` launcher calls `UrlLauncherPlatform.instance.launch()`, the `launch()` function defined is called.
+Stating that this is the `UrlLauncherPlatform` default instance, rather than registering a `MethodChannel`, makes more sense. When `package:url` launcher calls `UrlLauncherPlatform.instance.launch()`, the `launch()` function defined is also called.
 
 All the necessary code for creating a package is contained in this class. As a result, understanding Flutter's `MethodChannel` APIs is no longer required to design platform-specific plugin implementations. Web-based URL launcher When designing a platform interface package for a plugin, keep these considerations in mind.
 
