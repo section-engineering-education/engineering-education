@@ -156,7 +156,7 @@ public static void deserializeLink(Link putoutLink, String filestitle) {
 The `deserializeLink()` method has two parameters. The first of which, putoutLink, is a blank `Link` object (which we can initialize earlier, but the original values we replace by this method). The second parameter, filename, is the location where we save the deserialized object.
 
 1. The file will open in input mode using this procedure.
-2. We perform Deserialization by in.readObject().
+2. We perform deserialization using `in.readObject()`.
 3. After that, the outcome will be classiﬁed as a Link object.
 
 If the item is not present, the above procedure may throw an `IOException`. When the expected class is not found, we issue `ClassNotFoundException`.
