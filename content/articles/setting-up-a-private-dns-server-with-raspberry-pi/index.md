@@ -169,3 +169,6 @@ The network speed can be highly utilized by using a raspberry PI by caching the 
 - [How to Use a Raspberry Pi as a DNS Server](https://www.deviceplus.com/raspberry-pi/how-to-use-a-raspberry-pi-as-a-dns-server/)
 - [How to use your Raspberry Pi as a DNS Server (And Speed Up Internet)](https://raspberrytips.com/raspberry-pi-dns-server/)
 - [Using my Raspberry PI as a Tiny DNS Server](https://samraza.medium.com/using-my-raspberry-pi-as-a-tiny-dns-server-83dc66fabc91)
+
+---
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
