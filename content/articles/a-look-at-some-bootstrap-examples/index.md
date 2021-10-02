@@ -26,7 +26,9 @@ Mark Otto and Jacob Thornton developed Bootstrap using [HTML5](https://developer
 - The grid system is easy to use - Bootstrap has a friendly grid system for developing responsive websites.
 
 ### Prerequisites
-To follow along with this tutorial, you need to have some basic knowledge on [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) and [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS).
+To follow along with this tutorial, you need to have the following:
+- Basic knowledge of [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) and [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS).
+- An IDE installed, preferably [Visual Stusio Code](https://code.visualstudio.com/). 
 
 ### Getting started!
 Bootstrap was developed to help speed up the development of responsive websites. Many companies and projects around the world use Bootstrap
@@ -37,6 +39,7 @@ To use Bootstrap, you need to download its files and add them to your project. I
 To do this, we need first to install [Node.js]((https://nodejs.org/en/)  as it has the `npm` package manager. Download the latest files based on your Operating System (OS) and install them. In my case, I am using Linux [Ubuntu](https://ubuntu.com/download/desktop).
 
 After installing, navigate to the folder where you have downloaded the files and run the following command in the terminal:
+
 ```bash
 npm install bootstrap
 ```
@@ -143,7 +146,7 @@ Comparing the two code snippets, the second one will result in the Jumbotron ext
 #### 4. Bootstrap collapse
 The collapse is a component that allows you to hide and show content. It is a block element and is used to contain the content of the page. 
 
-It helps to give more importance or extra attention to the content. For instance, if you have a lot of content, the navbar might end up taking too much space on mobile devices. Hence, this is where the collapse comes in.
+It helps to give more importance or extra attention to the content. For instance, if you have much content, the navbar might end up taking too much space on mobile devices. Hence, this is where the collapse comes in.
 
 To accomplish this, you need to add the following code to our `index.html` file:
 
@@ -744,7 +747,6 @@ Let's add some styles to the scroll spy:
 
 ### Conclusion
 Bootstrap can be used to create a better-looking website. It is a popular framework, and many companies, including [Spotify](https://www.spotify.com/us/) and [Twitter](https://twitter.com/?laneng=), use it.
-
 
 Happy coding!
 
