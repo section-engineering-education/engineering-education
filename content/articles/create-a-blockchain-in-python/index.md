@@ -447,13 +447,13 @@ There are two ways to test-run our blockchain code. The first way is to use the 
 #### Running Via The Web Browser
 Let’s run our app through the web browser. When we run the application on Pycharm, we get a local address to run our app from the terminal:
 
-![Terminal Image](/engineering-education/create-a-blockchain-in-python/block_terminal.png)
+![Terminal Image](/engineering-education/content/articles/create-a-blockchain-in-python/block_terminal.png)
 
 
 From my terminal, the URL address is 172.20.10.2:5000. Now, in our browser, we start by mining a block, and we do this by calling the `mine_block` route function we created:
 
 
-![Mine Block Image](/engineering-education/create-a-blockchain-in-python/mine_block.png)
+![Mine Block Image](/engineering-education/content/articles/create-a-blockchain-in-python/mine_block.png)
 
 
 To call the `mine_block` function, we add the function name after the forward-slash, and it runs the code instruction under the block.
@@ -463,7 +463,7 @@ From the result, we can see the index of the block, a message showing that the b
 Every time we refresh the page, it mines a new block. Now, let’s get the chain data by replacing `mine_block` with `get_chain` by doing this, you should have something similar to this below:
 
 
-![Blockchain Image](/engineering-education/create-a-blockchain-in-python/get_chain.png)
+![Blockchain Image](/engineering-education/content/articles/create-a-blockchain-in-python/get_chain.png)
 
 
  The above function call displays the blocks in the chain and their index as intended. Now, let’s repeat this process on the Postman desktop application.
@@ -474,12 +474,12 @@ To mine a block, we copy the `mine_block` URL, and paste it in the request URL b
 The image below has a number label for the step process as outlined above, and the result is as follows:
 
 
-![Postman Mine Block Image](/engineering-education/create-a-blockchain-in-python/postman_mine.png)
+![Postman Mine Block Image](/engineering-education/content/articles/create-a-blockchain-in-python/postman_mine.png)
 
 
 Next, let’s get the chain data:
 
-![Postman BlockChain Image](/engineering-education/create-a-blockchain-in-python/postman_chain.png)
+![Postman BlockChain Image](/engineering-education/content/articles/create-a-blockchain-in-python/postman_chain.png)
 
 
 ### Conclusion
