@@ -6,8 +6,11 @@ Generally, fuzzy logic is not a control system, but you can use it in any set of
 
 ### Prerequisites
 To follow along with this tutorial, you'll need:
+
 - [MATLAB](https://www.mathworks.com/products/get-matlab.html?s_tid=gn_getml) installed.
 - Proper understanding of [MATLAB](https://www.section.io/engineering-education/getting-started-with-matlab/) basics.
+- [Overview](https://www.section.io/engineering-education/an-overview-of-fuzzy-logic-system/) of fuzy logic
+- [Fuzzy logic operation](https://www.section.io/engineering-education/fuzzy-logic-operations/)
 
 ### Overview of the fuzzy logic
 Developing a fuzzy logic system does not require a model. It means it works well for a complex system whose underlying mechanisms are not fully known. As long as you have some experience and intuition about the system, you can create the rules and implement them.
@@ -18,7 +21,9 @@ A person will have no problem passing these statements and deciding to wait unti
 
 Fuzzy logic and, ultimately fuzzy inference systems give us a way to encode experience-based knowledge in a way that the computer can understand in the form of logical rules. To understand what we mean here, let us explore the decision process that a banker might make to assess the risk of a loan. A banker might use the existing knowledge and experience found in the rules to solve the problem.
 
-The values, for example, maybe, if a person has good credit, then the applicant has deemed the low risk, and if they have a neutral credit, then they have a medium risk and lastly if the credit is bad, then they have a high risk. In this way, you have developed the rules over time based on experience, and data encodes knowledge for predictions. Suppose you want to come up with a function that can access risk automatically. In that case, it will make sense to base it on the existing knowledge rather than developing a mathematical model of something complex as human finance. But, there is difficulty with this. It is because of encoding of our experience in a vague language. For example, what does it mean by a good credit card? You can define it as 750 and above, and anything below this is a medium credit. After this, we can set up an equation that compares the credit value to 750. for example
+The values, for example, maybe, if a person has good credit, then the applicant has deemed the low risk, and if they have a neutral credit, then they have a medium risk and lastly if the credit is bad, then they have a high risk. In this way, you have developed the rules over time based on experience, and data encodes knowledge for predictions. 
+
+Suppose you want to come up with a function that can access risk automatically. In that case, it will make sense to base it on the existing knowledge rather than developing a mathematical model of something complex as human finance. But, there is difficulty with this. It is because of encoding of our experience in a vague language. For example, what does it mean by a good credit card? You can define it as 750 and above, and anything below this is a medium credit. After this, we can set up an equation that compares the credit value to 750. for example
 ```matlab
 %This is not a real code but just to make you understand
 if credit >= 750
@@ -59,7 +64,7 @@ We will define all these in a fuzzy system and create a file for this. The first
 ![fuzzy toolbox](/engineering-education/implementation-of-fuzzy-logic-in-matlab/fuzzy_three.jpeg)
 *Figure3.0 This is the fuzzy toolbox*
 
-Here, we have three blocks, is, input, Mamdani and output. In the input, this is where we input our data and for the fuzzification process. The output section, which displays the output results, acts as a defuzzification. Finally, the Mamdani is for the rule-based block. What it means is that you define your rules in this box. Now double-click on the input to open it up. When you do so, a window shown below opens up.
+Here, we have three blocks, that is, input, Mamdani and output. These are matlab blocks that carries out various processes. In the input, this is where we input our data and for the fuzzification process. The output section, which displays the output results, acts as a defuzzification. The meaning of the fuzzification and defuzzification is still the same as that explained in the overview section. Finally, the Mamdani is for the rule-based block. What it means is that you define your rules in this box. Now double-click on the input to open it up. When you do so, a window shown below opens up.
 
 ![input window](/engineering-education/implementation-of-fuzzy-logic-in-matlab/fuzzy_four.jpeg)
 *figure4.0 This is the input section for inputing your variables*
@@ -67,10 +72,11 @@ Here, we have three blocks, is, input, Mamdani and output. In the input, this is
 Here, we have three inputs `mf1`, `mf2` and `mf3`. We should now change these names according to our inputs so that they can make sense. Note that you do the renaming independently. To do it, click on the box with the current name, delete it, replace it with the name you want it to be, and click `enter`. For example, changing our `mf1` to `slow`, and the output is below.
 
 ![renaming](/engineering-education/implementation-of-fuzzy-logic-in-matlab/fuzzy_five.jpeg)
-*figure5.0 Rename the variables to make sense*
+*figure5.0 Renaming the variables to make sense*
 
 Apply the same process for all the inputs. You just click on the curve and then rename it. Now back to our first input, `slow`. Let us now define our speed. It is done on the range box. Let's say that our speed ranges from 0 to 100, for example. So we will change the `[0 1]` vector to `[0 100]` as shown in `figure1.0`.
 We can have `n` number of rules for the `n` numbers of members of function, but for the case of simplicity, we will take these number of membership functions to be three. If we keep increasing the member's frequency of corresponding, the number of rules will keep increasing. 
+
 So let's say our slow ranges from 0 to 50. Click on that curve, and the `params` box, change the existing vector to `[0 0 50]`. The same applies to all other inputs. The second input rename to `right`, which means right speed. The range of the speed is between 50 and 100. So the vector will be `[0 50 100]`. The last input should be named `high` for high speed, and the range should be between 100 and above. The vector for this is `[50 100 100]`.
 
 Now, To make the changes on the output, click on the output and modify. You can rename the inputs to any name that make sense to you. Our output parameters are the voltages. Now for the range, we have `[0 5]` as the range. The `mf1` renamed as `down` range from 0 to 2.5 given as `[0 0 2.5]`, `mf2` renamed as `nochange` ranges from 2.5 to 5.0 given as `[0 2.5 5.0]` and lastly `mf3` renamed as `high` is 5volts and above given as `[2.5 5 5]`. It means that if the output voltage falls in `mf1`, the speed is low, and it should take action. And when the volts is within the `mf2` range, the speed is right, and no action is required, but if it falls in `mf3`, the speed is high, and action is required. Once you do this, click on the close. 
@@ -105,12 +111,9 @@ We can also see the variation of the voltage to speed. You do this using the `su
 ![variation of voltage](/engineering-education/implementation-of-fuzzy-logic-in-matlab/fuzzy_nine.jpeg)
 *figure9.0 Testing the functionality of our model*
 
-For more information about the fuzzy logic, you can check [here](https://www.mathworks.com/help/fuzzy/getting-started-with-fuzzy-logic-toolbox.html). You can also get to understand more about this topic in the links below
-
-https://www.section.io/engineering-education/an-overview-of-fuzzy-logic-system/
-https://www.section.io/engineering-education/fuzzy-logic-operations/
-
 ### Conclusion
 Fuzzy logic is basically for making models that can act like a human being. The good thing about fuzzy logic is that you don't need complex mathematics to create your model. You should base the rules on the existing ones. It makes it easy to use. As we have seen, the toolbox is not that complex cause you are just required to put your input and the expected corresponding output, and Matlab does the rest. The model can be used to evaluate more and more such problems, and that's an added advantage.
+
+For more information about the fuzzy logic, you can check [here](https://www.mathworks.com/help/fuzzy/getting-started-with-fuzzy-logic-toolbox.html). 
 
 Happy coding!
