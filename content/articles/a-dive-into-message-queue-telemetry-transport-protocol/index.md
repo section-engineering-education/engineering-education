@@ -12,17 +12,17 @@ This article intends to talk about wireless communication architecture based on
 - [Conclusion](#conclusion)
 
 ### An overview of MQTT
-The MQTT convention characterizes two sorts of organization elements: a message dealer and numerous buyers. An MQTT broker is a server that receives all client signals and routes them to the correct receivers. An MQTT client is any device that runs an MQTT library and connects to an MQTT broker via the internet. (anything from a microcontroller to a full-fledged server).
+The MQTT convention characterizes two sorts of organization elements: a message dealer and numerous buyers.All client signals are received by a MQTT broker, which then passes them to the appropriate receivers. If a device runs a MQTT library and connects to a broker via the internet, it is a MQTT client. (anything from a microcontroller to a full-fledged server).
 
-The data is organized into a subject hierarchy. Whenever a publisher has new data to release, it transmits a control signal along with the data to the linked broker. Following that, the information is relayed to any users registered to that topic through the broker. The publisher does not require information on the number of subscribers or their location, and subscribers do not require information on the publishers.
+The subject hierarchies have been used to arrange the data. The connected broker receives a control signal every time the publisher publishes fresh data. After that, the broker transmits the data to all users who have subscribed to that subject. Subscription numbers or locations are not required by the publisher, and publishers are not required to provide information on their subscribers.
 
-Unless the message's publisher has categorized it as a retained message, a broker discards a message on a subject with no current subscribers. An MQTT message with the retained flag set is referred to as a retained message. For the given subject, the broker saves the most recent retained message and the associated quality of service. After subscribing to a subject pattern that corresponds to the topic of the retained message, each client receives the message instantly. Only one communication is saved per subject by the broker. This enables new subscribers to a topic to get the most up-to-date information without waiting for the publisher's next update.
+A broker will delete a message on a topic that has no current subscribers unless the publisher has classified it as a retained message. A retained message is a MQTT message that has the retained flag set. The broker keeps track of the most recent communication and its related grade of service for each topic. A message is sent immediately to any client that has subscribed to a subject pattern that matches to the message's subject. Only one communication is saved per subject by the broker. This enables new subscribers to a topic to get the most up-to-date information without waiting for the publisher's next update.
 
 When the distributing customer interfaces with the specialist interestingly and the representative identifies that the distributing customer has out of nowhere disengaged, the distributing customer can set up a default message to communicate to endorsers. 
 
 Customers speak with an agent, regardless of whether a framework might comprise many representative workers trading information-dependent regarding the matters of their present supporters.
 
-Clients only communicate with a broker, even if a system may consist of many broker servers exchanging data based on the subjects of their current subscribers.
+Broker servers exchange data depending on the topics of their current subscribers, but clients only interact with one broker server.
 
 MQTT use the TCP protocol for data transmission. MQTT-SN, a variant, is used via various transports such as UDP or Bluetooth.
 
@@ -35,7 +35,7 @@ MQTT utilizes the title [`Topic`](#topic)  instead of the expected beneficiary's
 
 By distributing and buying in, every customer might deliver and get information, i.e., the gadgets can communicate sensor information while getting setup data or control orders (MQTT is a bi-directional correspondence convention). Data exchange, device management, and control are all aided by this.
 
-The broker can save the data as retained messages (requires database client subscription) so that new subscribers to the subject can get the most recent value right away. The broker keeps track of all the session information in "permanent sessions" when the devices turn on and off.
+To ensure that new subscribers to the topic receive the most up-to-date information, the broker may store the data as retained messages (which need a database client subscription). When devices are turned on and off, the broker maintains track of all session data in `permanent sessions.`
 
 The following are the key benefits of using an MQTT broker:
 
@@ -64,18 +64,19 @@ SSL/TLS may not generally be a choice or even wanted because of the MQTT convent
 
 The username and password can be seen as a part of a CONNECT/CONNACK packet sequence. Moreover, specific agents, especially open specialists that publicize on the web, energize mysterious customers. The username and secret phrase are both left clear when this occurs. 
 
-As its name recommends, MQTT is a lightweight convention since it just takes a little measure of code to handle each message. Each message includes the following information:
-- a two-byte fixed-height header
-- a changeable header that may or may not be used
-- limit on the size of the message payload of 256 megabytes
-- level of service quality
+MQTT is a lightweight protocol since it only requires a little amount of code to process each message. The following data is included in each message:
 
-A client can use the publish, subscribe, unsubscribe, and ping actions throughout the communication phase. The publish action delivers a binary data block (content) to the publisher-specified topic.
+- Two bytes of fixed header height
+- A heading that may be utilized or not used, depending on the situation
+- A 256 megabyte payload limit for messages
+- the quality of the services provided
 
-Message binary large objects (BLOBs) up to 256 MB in size are supported by MQTT. The material will be displayed in a format that is particular to the application.
+During the whole communication process, a customer may utilize the publish, subscribe, unsubscribe, and ping activities. The publish action delivers a binary data block (content) to the publisher-specified topic.
+
+MQTT supports BLOBs (message binary big objects) up to 256 MB in size.. The material will be displayed in a format that is particular to the application.
 
 ### Topic in MQTT
-In MQTT, a subject is a UTF-8 string the broker uses to filter messages for each connected client. Each topic is broken down into one or more tiers. Each subject level is separated by the forward-slash, also known as the topic level separator. The case of both the themes and the levels is essential.
+The UTF-8 string serves as the filter for each connected client's messages in MQTT. There are many levels to each subject. The forward slash, or topic level separator, is used to separate each subject level. The case of both the themes and the levels is essential.
 
 The wildcard is an MQTT feature that allows subjects and levels to be more flexible and user-friendly. There are two sorts of wildcards in MQTT Topics:
 
