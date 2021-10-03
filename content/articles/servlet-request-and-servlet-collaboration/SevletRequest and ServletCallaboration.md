@@ -14,7 +14,7 @@ You will need to install the following tools to go along with the article:
 - An open-source editor, such as Eclipse, or any other related Java editor. In my case, I will be using [Eclipse IDE for Java EE Developers 2021‑09 windows version](https://www.eclipse.org/downloads/download.php?file=/oomph/epp/2021-09/R/eclipse-inst-jre-win64.exe)
 - Java JDK current version or any. In my case, I will be using [Java SE Development Kit 17 for Windows 64 bit system](https://download.oracle.com/java/17/latest/jdk-17_windows-x64_bin.zip).
 - You need a web browser installed on your computer.
-- Server. In my case, I will be using TomCat version 10.1.0-m5
+- Server. In my case, I will be using [TomCat version 10.1.0-m5 for windows](https://dlcdn.apache.org/tomcat/tomcat-10/v10.0.11/bin/apache-tomcat-10.0.11.zip)
 
 
 Table of contents:
@@ -74,9 +74,9 @@ We will create a user login project with a servlet in this example. In this cont
 
 **Step 1:** Open Eclipse IDE for Java EE developers. Create a Dynamic web project by selecting files, new then Dynamic web projects, and press enter.
 
-**Step 2:** Provide a project name. Mine is called LogInDemo.
+**Step 2:** Provide a project name. Mine is called LogInDemo. Maintain all fields with default values and select Finish.
 
-**Step 3:** Create an `Login.html` page as shown below.
+**Step 3:** Create a new `Login.html` page, right-click on a LogInDemo project, and then select the HTML option. And paste the code below.
 
 ```html
 <!DOCTYPE html>
@@ -95,7 +95,7 @@ We will create a user login project with a servlet in this example. In this cont
 </html>
 ```
 
-**Step 4:** Create `LoginAction.java` servlet file.
+**Step 4:** Create a new `LoginAction.java` servlet file, right-click on a LogInDemo project, and then select the servlet option. And paste the code below.
 
 ```java
 package com.lodoctor;
@@ -127,7 +127,7 @@ public class LoginAction extends HttpServlet {
 }
 
 ```
-**Step 5:** Lastly, create the `welcomePage.jsp` file.
+**Step 5:** Lastly, create a new `welcomePage.jsp` file, right-click on a LogInDemo project, and then select the JSP option. And paste the code below.
 ```jsp
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
@@ -178,9 +178,9 @@ This example shows how  RequestDispatcher can forward a resource response or inc
 
 **Step 1:** Open Eclipse IDE for Java EE developers. Create a web project by choosing files, then new web projects, then entering a dynamic project.
 
-**Step 2:** Provide a project name. Mine is called ServletDispatcherDemo.
+**Step 2:** Provide a project name. Mine is called ServletDispatcherDemo and select Finish.
 
-**Step 3:** Create an `htmlPage.html` page as shown below.
+**Step 3:** Create a new `htmlPage.html` page, right-click on a LogInDemo project, and then select the HTML option. And paste the code below.
 
 ```html
 <!DOCTYPE html>
@@ -202,7 +202,7 @@ This example shows how  RequestDispatcher can forward a resource response or inc
 </html>
 ```
 
-**Step 4:**  *Create `Controller.java` servlet1 page.*
+**Step 4:**  *Create a new `Controller.java` servlet page, right-click on a LogInDemo project, and then select the servlet option. And paste the code below.
 
 ```java
 package com.lodoctor;
@@ -249,7 +249,7 @@ public class Controller extends HttpServlet
 
 ```
 
-**Step 5:**  *Create `Under18page.java` servlet2 page*
+**Step 5:**  *Create a new `Under18page.java` servlet page, right-click on a LogInDemo project, and then select the servlet option. And paste the code below.
 
 ```java
 package com.lodoctor;
@@ -273,7 +273,7 @@ public class Under18Page extends HttpServlet {
 }
 
 ```
-**Step 7:**  *Create `*Above18.java` servlet3 page*
+**Step 7:**  *Create a new `*Above18.java` servlet page, right-click on a LogInDemo project, and then select the servlet option. And paste the code below.
 
 ```java
 package com.lodoctor;
