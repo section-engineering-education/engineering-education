@@ -8,11 +8,11 @@
 
 -[Understanding Monte Carlo basics](#understanding-monte-carlo-basics)
 
--[Examples](#examples)
+-[Implementation of basic steps using Examples](#implementation-of-basic-steps-using-examples)
 
 -[Real Time Application](real-time-application)
 
--[How accurate](#how-accurate)
+-[The Accuracy](#the-accuracy)
 
 -[Why prefer Monte Carlo?](why-prefer-monte-carlo-?)
 
@@ -88,7 +88,9 @@ _Histogram_
 
 Statistics in a nutshell (mean, variance, and standard deviation)
 
-### Examples
+### Implementation of basic steps using Examples
+
+These examples show how you can implement monte carlo basic steps to come up with a predictive model.
 
 Now, let's have a look at several examples using python.
 
@@ -258,7 +260,7 @@ plt.hist(sim)
 
 ```
 
-### The accuracy
+### The Accuracy
 Mathematical theory states that the accuracy of a Monte Carlo estimation technique should increase proportionally to the square root of the number of trials made.
 
 ### Why prefer Monte Carlo
