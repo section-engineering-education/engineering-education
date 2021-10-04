@@ -1,9 +1,9 @@
 ### How to create a simple router in JavaScript using window event listeners
 A router is a JavaScript object that maps URLs to functions. The router calls a function based on the URL. It is also used for creating the URL based on a function.
 
-Before the rise of single page applications, a web application was a series of interconnected pages. This could be either static pages or pages dynamically generated in the server.
+Before the rise of single-page applications, a web application was a series of interconnected pages. This could be either static pages or pages dynamically generated in the server.
 
-Single page applications was a new concept where a web application's life span evolves around a single html document. Transition between pages was replaced by use of different views. Links are no longer used to generate and navigate between pages, instead they are bound to views.
+The single-page application was a new concept where a web application's life span evolves around a single Html document. The transition between pages was replaced by the use of different views. Links are no longer used to generate and navigate between pages, instead, they are bound to views.
 
 A view is a JavaScript object that contains the logic for a single page. The view handles page rendering and user input. All the views are controlled by the router.
 
@@ -22,7 +22,7 @@ Create two files:
 1. `index.html`
 2. `script.js`
 
-In your `index.html`, create a `div` with the id: "app". Also link the `script.js` file.
+In your `index.html`, create a `div` with the id: "app". Also, link the `script.js` file.
 
 ```html
 <div id="app"></div>
@@ -46,7 +46,7 @@ let app_div = document.getElementById('app');
 function home() {
     let div = document.createElement('div');
     let link = document.createElement('a');
-    link.href = '#about';
+    link.href = '#/about';
     link.innerText = 'About';
 
     div.innerHTML = '<h1>Home</h1>';
@@ -58,7 +58,7 @@ function home() {
 function about() {
     let div = document.createElement('div');
     let link = document.createElement('a');
-    link.href = '#home';
+    link.href = '#/';
     link.innerText = 'Home';
 
     div.innerHTML = '<h1>About</h1>';
@@ -113,7 +113,7 @@ template('about', function(){
 });
 ```
 
-We map the home template to the `/home` route and the `/about` template to the about route.
+We map the home template to the `/` route and the `/about` template to the about route.
 
 Then define the route to template mapping.
 
@@ -149,7 +149,7 @@ function router(evt) {
 };
 ```
 
-To switch between views, you need to listen for the load and hashchange events. When the pae is loaded, the load event is triggered. The hashchange event is triggered when the URL hash changes.
+To switch between views, you need to listen for the `load` and `hashchange` events. When the page is loaded, the load event is triggered. The `hashchange` event is triggered when the URL hash changes.
 
 ```javascript
 window.addEventListener('load', router);
@@ -165,6 +165,6 @@ To add those features, you have to write more functions to handle the routing lo
 
 Alternatively, you can use a library like [React Router](https://reacttraining.com/react-router/web/guides/quick-start). It is a more complex router that offers more features. There are more routing libraries available on npm.
 
-If you prefer working with a vanilla JavaScript, you can start with [Navigo](https://github.com/krasimir/navigo).
+If you prefer working with vanilla JavaScript, you can start with [Navigo](https://github.com/krasimir/navigo).
 
 Happy coding!
