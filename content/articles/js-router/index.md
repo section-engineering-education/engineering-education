@@ -1,6 +1,20 @@
-### How to create a simple router in JavaScript using window event listeners
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-build-a-simple-router-in-javascript/
+title: How to Build a Simple Router in JavaScript Using Window Event Listeners
+description: In this article, we will be looking at how to build a simple router in JavaScript using window event listeners. We will build a simple router that will allow us to navigate between pages in a simple JavaScript app. 
+author: nancy-maina
+date: 2021-10-04T00:00:00-16:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+ - url: /engineering-education/how-build-a-simple-router-in-javascript/hero.jpg
+   alt: JavaScript Window Event Listener Router Image hero
+---
 A router is a JavaScript object that maps URLs to functions. The router calls a function based on the URL. It is also used for creating the URL based on a function.
-
+<!--more-->
 Before the rise of single-page applications, a web application was a series of interconnected pages. This could be either static pages or pages dynamically generated in the server.
 
 The single-page application was a new concept where a web application's life span evolves around a single Html document. The transition between pages was replaced by the use of different views. Links are no longer used to generate and navigate between pages, instead, they are bound to views.
@@ -168,3 +182,6 @@ Alternatively, you can use a library like [React Router](https://reacttraining.c
 If you prefer working with vanilla JavaScript, you can start with [Navigo](https://github.com/krasimir/navigo).
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Geoffrey Mungai](/engineering-education/authors/geoffrey-mungai/)
