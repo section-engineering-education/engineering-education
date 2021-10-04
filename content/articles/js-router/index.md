@@ -38,7 +38,7 @@ let routes = {};
 let templates = {};
 ```
 
-Then create two functions to display the home page and the about page. You can use arrow functions to define these functions, but I'll use regular functions for simplicity.
+Then create two functions to display the home page and the about page. You can use [arrow functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) to define these functions, but I'll use regular functions for simplicity.
 
 ```javascript
 let app_div = document.getElementById('app');
@@ -113,7 +113,7 @@ template('about', function(){
 });
 ```
 
-We map the home template to the `/` route and the `/about` template to the about route.
+We map the home template to the `/home` route and the `/about` template to the about route.
 
 Then define the route to template mapping.
 
