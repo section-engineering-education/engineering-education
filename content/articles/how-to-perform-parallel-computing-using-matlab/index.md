@@ -1,0 +1,135 @@
+### How to perform parallel computing using Matlab
+### Introduction
+Parallel computing is a type of computing in which many calculations or execution processes are carried out simultaneously. If you have a huge and complex process, you can apply the parallel computing process. It involves dividing the task into completely independent sub-tasks. These subtexts are executed independently in the central processing unit(CPU). Once you execute all these sub-processes, you obtain the final results by summing the smaller tasks. This process reduces the execution time.
+
+What we mean by independently is that we can execute one portion of a code without knowing the output of the other portion. Thus, parallel computing with Matlab accelerates workflow with minimal to no code changes to your original code. It also scales computations to clusters and clouds.
+
+### Prerequisites
+To follow along with this tutorial, you'll need:
+- [MATLAB](https://www.mathworks.com/products/get-matlab.html?s_tid=gn_getml) installed.
+- Proper understanding of [MATLAB](https://www.section.io/engineering-education/getting-started-with-matlab/) basics.
+
+### Accelerating and parallelizing Matlab code
+You can use different procedures in your code to improve its performance without taking into account parallelization. These include;
+
+- preallocation and vectorization- This involves preallocating the space without locating it dynamically. Particularly when a code contains `for` and `while` loop.
+
+![Code analyzer](/engineering-education/how-to-parallel-computing-using-matlab/parallel_one.png)
+
+As you can see in the code analyzer, Matlab tells you how to make a little adjustment to accelerate the execution of the code.
+
+### Run Matlab on multicore machines
+There are two ways of running Matlab on multicore machines, these are;
+
+- Built-in-multithreading. 
+- parallel computing using explicit techniques.
+
+### Built-in-multithreading
+This method is used by everyone unknowingly. When you execute your code normally on a modern machine with multicores, Matlab automatically enables it. Some of the functions are optimized for this multi-threading and uses multicore to accelerate computations. This method is implicit, and you do not need to do anything to enable it. 
+
+### Parallel computing using explicit techniques
+It means that with this specific function, the user can specify the number of workers he would want to work on that specific task. The user then decides to use a specific function to parallelize the work to obtain the results. We will focus more on this for this article.
+
+This method uses `parfor` function. Here we need to have no dependency between the different tasks.
+example
+
+![matlab client](/how-to-parallel-computing-using-matlab/parallel_two.png)
+
+Here, we have a Matlab client, and the rectangle is the task that we are to perform. As you can see, if we perform sequentially, we take some time, but splitting the task into three workers reduces the execution time also, as you can see, the difference between the `for` and the `parfor` syntax is not so much. Therefore, the only thing that you should ensure is that the function `myFun` should be completely independent.
+
+### Mechanics of `parfor` loops
+```matlab
+a = zeros(10,1);
+parfor i = 1:10
+a(i) = i;
+end
+a;
+```
+
+Matlab allocates its work dynamically to its workers during computation. For example, in the code above, we have enabled the `parfor`, and when we run the program, we get the below output.
+```matlab
+Starting parallel pool (`parpool`) using the 'local' profile ...
+connected to 2 workers.
+```
+
+In this case, we have ten iterations. Let us say you distribute this work to 2 workers. Worker are the pc's core. At the starting point, Matlab divides iteration during execution into different groups based on the size, which for our case is 2. The iterations are then given to different groups based on the potential of the workers. Finally, it starts allocating iterations to the single worker.
+
+![allocation of the work](/how-to-parallel-computing-using-matlab/parallel_three.png)
+
+### Optimization of `for` loops
+Now we want to see the optimization of the `for` loop. Particularly, we will have the first one as the classic `for` loop with nothing optimized and the second as the optimized one using the `parfor` function. Let's look at the tool strip parallel. To locate this, we use the following steps;
+
+- In the home section, click on the parallel to see the currently active parallelization, which in our case is `local` in the default section.
+
+![locating the parallel](/how-to-parallel-computing-using-matlab/parallel_four.png)
+![active pool](/how-to-parallel-computing-using-matlab/parallel_five.png)
+
+To discover more, click on the discover cluster. Also, you can create or manage your cluster. For example, you can find the properties of the local cluster by clicking on the `manage cluster`, and the window below with properties opens up.
+
+![properties of the cluster](/how-to-parallel-computing-using-matlab/parallel_six.png)
+
+You can also validate your cluster by checking if your computer can do and perform this type of operation. It is done by clicking on the `validation` and then the `validate` at the top of that window.
+
+![validation](/how-to-parallel-computing-using-matlab/parallel_seven.png)
+
+Once this is done, we can see the number of workers we have for different stages. Also, you can monitor the job by clicking on `monitor jobs`. It gives you the current status of your parallel pool. 
+
+![monitor jobs](/how-to-parallel-computing-using-matlab/parallel_eight.png)
+Let's now see the comparison between the optimized and non-optimized for loops.
+```matlab
+%Non-optimized for loop
+n = 200;
+A = 500;
+a = zeros(1,n);
+tic                %save the time for execution
+
+for i = 1:n
+a(i) = max(abs(eig(rand(A))));
+end
+toc                 % saves time for execution
+```
+When we execute this code normally, we see that it takes 31.186221 seconds for complete execution. Let's now see how long it will take for the optimized one.
+```matlab
+%% Optimized code
+clear all;
+tic
+parpool             %initialization of the parallel pool
+toc
+n = 200;
+A = 500;
+a = zeros(1,n);
+tic
+parfor i = 1:n
+    a(i) = max(abs(eig(rand(A))));
+end
+toc 
+```
+`Parpool` is used to initialize the parallel pool. There are three ways of initializing the parallel pool. The first is the explicit way which tells pc and the code to starts its allies, then parallelization of the `parpool`. The second way is the implicit way. Here, you call the function `parpool` as shown in the code above. Finally, if you have to start the pool, the third is to go down in the left corner and click on the parallel pooling.
+
+![starting parallel pooloing](/how-to-parallel-computing-using-matlab/parallel_nine.png)
+When we run the code above, it takes 17.300710 seconds for complete execution using two workers as shown below;
+
+```matlab
+Starting parallel pool (parpool) using the 'local' profile ...
+connected to 2 workers.
+
+ans = 
+
+ Pool with properties: 
+
+            Connected: true
+           NumWorkers: 2
+              Cluster: local
+        AttachedFiles: {}
+    AutoAddClientPath: true
+          IdleTimeout: 30 minutes (30 minutes remaining)
+          SpmdEnabled: true
+
+Elapsed time is 17.300710 seconds.
+```
+If you want to run `parpool` on your pc, you have to consider that it is quite a hardware intensive. It means that you must have on your pc at least a multicore processor in which each core will become a worker. Also, you need some gigs of ram. Particularly, you need to get at least two gigs for each work if you are using Matlab operations. You need at least 4gigs for a worker if you are using a simulant paralyzation. Finally, you need some high performance to run the performance and see the benefits of parallelization. Also, keep in mind that if you split your work into different operations, you need some temporary files to save the execution of parts of the code from getting the information once you complete all the parts and stick together to give the output.
+
+### Conclusion
+Parallel computing is very important when running a huge program. It minimizes the execution time by distributing the work within the CPU. Thus, it helps make good and full use of the CPU. Also, conducting parallel computing in Matlab is very easy. It makes it even more important since it can be applied and used by even beginners. 
+
+Happy coding!
