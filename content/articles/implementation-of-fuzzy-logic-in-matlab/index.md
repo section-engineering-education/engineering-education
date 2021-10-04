@@ -1,5 +1,21 @@
-Fuzzy logic is a way to model logic reasoning where a statement's truth cannot be true or false, but a degree of truth ranges from zero to one, where zero is absolutely false, while one is true.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /implementation-of-fuzzy-logic-in-matlab/
+title: Implementing Fuzzy Logic in Matlab
+description: This tutorial will guide the reader on how to implement fuzzy logic using Matlab.
+author: collince-odhiambo 
+date: 2021-10-04T00:00:00-23:50
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/implementation-of-fuzzy-logic-in-matlab/hero.jpg
+    alt: Fuzzy logic in Matlab
+---
+Fuzzy logic is a way to model logic reasoning where a statement's truth cannot be true or false, but a degree of truth ranges from zero to one, where zero is absolutely false, while one is true.
+<!--more-->
 This fuzzy logic is for modelling the fuzzy inference system that maps the input to a set of outputs using human-interpretable rules more than extract mathematics.
 
 The primary use of these types of applications is in control systems where you feed in the references and the inputs, while producing actuating rule based signals on fuzzy logic.
