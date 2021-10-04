@@ -16,13 +16,13 @@ images:
 ---
 Fuzzy logic is a way to model logic reasoning where a statement's truth cannot be true or false, but a degree of truth ranges from zero to one, where zero is absolutely false, while one is true.
 <!--more-->
-This fuzzy logic is for modelling the fuzzy inference system that maps the input to a set of outputs using human-interpretable rules more than extract mathematics.
+This fuzzy logic is for modeling the fuzzy inference system that maps the input to a set of outputs using human-interpretable rules more than extract mathematics.
 
-The primary use of these types of applications is in control systems where you feed in the references and the inputs, while producing actuating rule based signals on fuzzy logic.
+The primary use of these types of applications is in control systems where you feed in the references and the inputs while producing actuating rule-based signals on fuzzy logic.
 
-Generally, fuzzy logic is not a control system, but you can use it in any set of applications that requires decision making.
+Generally, fuzzy logic is not a control system, but you can use it in any set of applications that requires decision-making.
 
-For example, in the banking system, the risk of lending a loan based on personal and financial information. Or it can be used to detect edges in images by calculating the degree of a pixel belonging to a region of uniform intensity versus edge region.
+For example, in the banking system, the risk of lending a loan is based on personal and financial information. Or it can be used to detect edges in images by calculating the degree of a pixel belonging to a region of uniform intensity versus edge region.
 
 This article will look at how to apply this in Matlab using the fuzzy logic toolbox in Matlab.
 
@@ -42,7 +42,7 @@ A fuzzy inference system is a form of artificial intelligence that allows a comp
 
 For example, a person might say "I am pretty hungry, but it is almost dinner time". In this statement, "pretty hungry" and "almost dinner time" are two vague concepts. What does it mean by "pretty hungry" and "almost dinner"? How long does he have to dinner?
 
-A person will not have a problem passing these statements and waiting for the dinner. It's all about the decision based on the experience with such statements.
+A person will not have a problem passing these statements and waiting for dinner. It's all about the decision based on the experience with such statements.
 
 On the other hand, it will be challenging to use the computer to determine whether the person should eat or wait for dinner based on the "pretty hungry" and "almost dinner time" statements.
 
@@ -76,7 +76,7 @@ The equation that we set up makes this problem easy to solve. But, the issue is 
 
 Making this language precise, we lose some intent.
 
-A score of `750` might be considered good, very good or neutral to different bankers. So, if we want to encode the knowledge to the banking industry, we need to consider the fuzziness, which is where the fuzzy logic comes in.
+A score of `750` might be considered good, very good, or neutral to different bankers. So, if we want to encode the knowledge to the banking industry, we need to consider the fuzziness, which is where the fuzzy logic comes in.
 
 ![fuzzy concept](/engineering-education/implementation-of-fuzzy-logic-in-matlab/fuzzy_one.png)
 *Figure1.0 Flow chart for the fuzzy logic*
@@ -88,9 +88,9 @@ You apply the fuzzy logic rules to the fuzzy variables to create a new fuzzy num
 ### Fuzzy logic approach
 Suppose we poll 100 bankers and ask them to assign the transition from bad to neutral credit and change from neutral to good.
 
-In this case, there are going to be a different value for this.
+In this case, there is going to be a different value for this.
 
-Let us assume that every banker thought `750` and above is good credit, but only half thought `700` was good, and none thought `650` was good. Opinion and thoughts differ!
+Let us assume that every banker thought `750` and above is good credit, but only half thought `700` was good, and none thought `650` was good. Opinions and thoughts differ!
 
 It all traces out the particular membership function for good credit. We can do the same for neutral credit and bad credit.
 
@@ -104,11 +104,11 @@ Now, we can see that the statement's truth does not belong to a single set, but 
 ### Implementing fuzzy logic in Matlab
 Let's consider a very simple example.
 
-We need to control the speed of a motor by changing the input voltage where a threshold (set point) is defined. If the motor runs fast for some reason, we need to slow it down by reducing the input voltage.
+We need to control the speed of a motor by changing the input voltage where a threshold (setpoint) is defined. If the motor runs fast for some reason, we need to slow it down by reducing the input voltage.
 
 Conversely, if the motor slows below the threshold (set point), the input voltage must be increased so that the motor reaches the set point.
 
-Below are the description for the inputs that defines the rules:
+Below is the description for the inputs that define the rules:
 - `Too slow` will be for the description of the first curve
 - `Just right` for the second curve, and
 - `Too fast` for the third input curve.
@@ -129,18 +129,18 @@ To do this, execute the `fuzzy` command to display a new window as shown:
 ![fuzzy toolbox](/engineering-education/implementation-of-fuzzy-logic-in-matlab/fuzzy_three.jpeg)
 *Figure3.0 This is the fuzzy toolbox*
 
-Here, we have three blocks - input, mamdani and output that carries out various processes.
+Here, we have three blocks - input, Mamdani, and output that carries out various processes.
 
 In the input, we accept data for the fuzzification process. The output section displays the output results, acts as a defuzzification.
 
-The meaning of the fuzzification and defuzzification is still the same as that explained in the overview section.
+The meaning of fuzzification and defuzzification is still the same as that explained in the overview section.
 
 Finally, the Mamdani is for the rule-based block that helps you define rules in this box. Now, double-click on the input to open up a window as shown below:
 
 ![input window](/engineering-education/implementation-of-fuzzy-logic-in-matlab/fuzzy_four.jpeg)
-*Figure4.0 This is the input section for inputing your variables*
+*Figure4.0 This is the input section for inputting your variables*
 
-Here, we have three inputs `mf1`, `mf2` and `mf3`.
+Here, we have three inputs `mf1`, `mf2`, and `mf3`.
 
 > NOTE: You can rename these variables by deleting the current name, and replacing it with the proper name, and click `enter`.
 
@@ -157,7 +157,7 @@ For example, let's say that our speed ranges from `0` to `100`. So, we will chan
 
 We can have `n` number of rules for the `n` members of function.
 
-For simplicity, we will take these number of membership functions to be `3`.
+For simplicity, we will take this number of membership functions to be `3`.
 
 > If we keep increasing the member's frequency, the number of rules will keep increasing. 
 
@@ -173,10 +173,10 @@ The last input should be named `high` for high speed, and the range should be be
 
 Having `[0 5]` as the range:
 - `mf1` renamed as `down` ranges from `0` to `2.5` given as `[0 0 2.5]`
-- `mf2` renamed as `nochange` ranges from `2.5` to `5.0` given as `[0 2.5 5.0]`
+- `mf2` renamed as `no change` ranges from `2.5` to `5.0` given as `[0 2.5 5.0]`
 - `mf3` renamed as `high` is `5` and above given as `[2.5 5 5]`.
 
-It means that if the output voltage falls in `mf1`, the speed is low, and it should be increased. And when the volts is within the `mf2` range, the speed is right, and no action is required, but if it falls in `mf3`, the speed is high, and must be slowed down.
+It means that if the output voltage falls in `mf1`, the speed is low, and it should be increased. And when the volts are within the `mf2` range, the speed is right, and no action is required, but if it falls in `mf3`, the speed is high and must be slowed down.
 
 Once again, select the input and rename it from `input1` to `speed` and `output1` to `voltage` to avoid any confusion.
 
@@ -198,7 +198,7 @@ To save, click on the file in the toolbar and select `save`. This file is saved 
 
 We want to call this file into Matlab to find the output voltage for any input speed.
 
-For example, `test` variable holds the value of the `readfis` function that read the data from the file. To do it, you execute the code shown below:
+For example, the `test` variable holds the value of the `readfis` function that read the data from the file. To do it, you execute the code shown below:
 
 ```matlab
 test = readfis('filename')
