@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/if-else-loops/hero.jpg
     alt: If Else Loops C++ image example
 ---
-Let us continue from where we left off in the previous article [*Introduction to C++*](/intro-to-c-part1/). We started by going over the importance of C++ as a programming language, and where it is being used today. Most importantly, we tried to go over the basic concepts of the C++ language that any developer would need to get started. If you haven't had a chance to read it already, make sure you do to get a better understanding as we move forward. 
+Let us continue from where we left off in the previous article [*Introduction to C++*](/engineering-education/intro-to-c-part1/). We started by going over the importance of C++ as a programming language, and where it is being used today. Most importantly, we tried to go over the basic concepts of the C++ language that any developer would need to get started. If you haven't had a chance to read it already, make sure you do to get a better understanding as we move forward. 
 <!--more-->
 The next most logical step is for us to go over the concepts of **If Else**.
 
@@ -125,6 +125,6 @@ The best way to practice loops is to actually do it. Here are some questions tha
 - Write a program to print a multiplication table of a given number.
 
 ### Takeaway
-In this article, we covered some basic and important topics such as **If Else** and **Loops**, that pave the foundation for [Competitive Programming](/how-to-start-competitive-programming/). The concept of If-Else and Loops are the bottom layer of Competitive Programming that anyone would need to master before moving forward. In upcoming articles, we will be covering other important topics such as Functions and File Handling. Stay tuned!
+In this article, we covered some basic and important topics such as **If Else** and **Loops**, that pave the foundation for [Competitive Programming](/engineering-education/how-to-start-competitive-programming/). The concept of If-Else and Loops are the bottom layer of Competitive Programming that anyone would need to master before moving forward. In upcoming articles, we will be covering other important topics such as Functions and File Handling. Stay tuned!
 
 Peer Review Contributions by: [Nadiv Gold Edelstein](/engineering-education/authors/nadiv-gold-edelstein/)

@@ -166,7 +166,7 @@ Let's make a sample Swing application that shows the above components. It is a s
 
 ![NetBeans jframe](/engineering-education/introduction-to-java-swing/netbeans-jframe.png)
 
-5. In the next step, name the class _sectionHomeWindow_. Chose the package created when creating the project, i.e. _sectionsampleswinggui_, then click finish.
+5. In the next step, name the class *sectionHomeWindow*. Choose the package created when creating the project, i.e. *sectionsampleswinggui*, then click finish.
 
 ![JFrame name](/engineering-education/introduction-to-java-swing/netbeans-jframename.png)
 

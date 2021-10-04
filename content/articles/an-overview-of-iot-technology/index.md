@@ -16,7 +16,7 @@ images:
 ---
 In this article, we will learn the design lifecycle for IoT solutions. As a tech enthusiast, I bet you have heard of buzzwords like IoT or Big Data spoken by many. But what is IoT and why is it considered the best evolution of the Internet that drives the 4th Industrial revolution.
 <!--more-->
-Before reading any further, as an introduction to the 4th industrial revolution, you can check out this [article](/industry-4.0-and-cybersecurity/) as a refresher.
+Before reading any further, as an introduction to the 4th industrial revolution, you can check out this [article](/engineering-education/industry-4.0-and-cybersecurity/) as a refresher.
 
 ### Overview
 This article will cover:

@@ -142,7 +142,7 @@ It shows the objects in the `matches` array in detail e.g the domain found backl
 #### Performing the search using a file image
 One can also search for the image by uploading it from a local machine or device. The procedure is the same only that we don't specify a URL.
 
-We feed the image path to the `readFileSync()` of the file system module. You can view this [article](/node-file-handling/) by [Lalith Narayan](/engineering-education/authors/lalithnarayan-c/) to get an overview of file handling in Node.js.
+We feed the image path to the `readFileSync()` of the file system module. You can view this [article](/engineering-education/node-file-handling/) by [Lalith Narayan](/engineering-education/authors/lalithnarayan-c/) to get an overview of file handling in Node.js.
 
 We then feed the image and the options to the API using the `searchData()` method.
 
