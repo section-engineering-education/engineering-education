@@ -212,3 +212,6 @@ As we have seen, the toolbox is not that complex cause you are just required to 
 You can read more about Fuzzy logic [here](https://www.mathworks.com/help/fuzzy/getting-started-with-fuzzy-logic-toolbox.html). 
 
 Happy coding.
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
