@@ -1,5 +1,5 @@
 ### Introduction
-In the past years, applications used to be developed in [monolith architecture](https://whatis.techtarget.com/definition/monolithic-architecture). They were coded from top to bottom as a single unit. Most of the time, they had no structure and capabilities for future maintenance or upgrades, which posed several challenges. They were difficult to debug or even add new features.
+In the past years, applications have always been developed following the [monolith architecture](https://whatis.techtarget.com/definition/monolithic-architecture). They were coded from top to bottom as a single unit. Most of the time, they had no structure and capabilities for future maintenance or upgrades, which posed several challenges. They were difficult to debug or even add new features.
 
 [Microservices architecture](https://microservices.io/) assists the developers in building multiple smaller applications instead of one large application. A large application can be challenging to maintain, and also adding new features and functionalities is not easy.
 
@@ -9,11 +9,11 @@ Businesses and developers may face challenges when choosing the right microservi
 
 ### Pros and cons of the microservices architecture
 There are several advantages of using microservices architecture, as highlighted below:
-- They make the application **highly scalable** because all the features in the application are separated from each other. Therefore, it is easy to maintain or update each feature independently.
+- They make the application **highly scalable** because all the features in the application are independent of each other. Therefore, it is easy to maintain or update each feature independently.
 - They ensure **easy resource optimization and prioritization** since individual services have different demands. Therefore, the businesses can decide the scaling strategies to implement for their various services.
 - The users or developers can easily **read and understand** the application codebases.
 - They make the application **easy to maintain and upgrade**.
-- They **cut down on costs and efforts** required during the deployment of the application. This is because each microservices are deployed separately. Also, developers only deploy the modified microservice and not the entire application.
+- They **cut down on costs and efforts** required during the deployment of the application. This is because each microservice is deployed independently. Also, developers only deploy the modified microservice and not the entire application.
 - They make **application debugging easier** since one only deals with part of the application and not the whole application.
 - They make **fault isolation easy**.
 - They ensure that the **application has better fault tolerance** because developers can build more resilient individual services.
