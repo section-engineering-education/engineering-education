@@ -6,7 +6,7 @@ url: /understanding-xml-external-entity-attacks/
 title: Understanding XML External Entitiy Attacks
 description: In this article, we will be looking at the different ways that XML External Entities can be used to attack a web application. We will also look at how to mitigate these attacks.
 author: felix-vaati
-date: 2021-09-04T00:00:00-16:00
+date: 2021-10-04T00:00:00-16:00
 topics: [Security]
 excerpt_separator: <!--more-->
 images:
