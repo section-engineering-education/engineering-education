@@ -38,17 +38,17 @@ This is an approach technique rather than an exact technique.
 It is frequently utilized in variety of industries, including engineering, finance, business, project planning, and many more.
 
 ### Unique attributes from other techniques
-**Simple, flexible and Scalable algorithms**
+1. **Simple, flexible and Scalable algorithms**
 
-They reduce a complex model to a collection of basic events and interactions when used.
+    They reduce a complex model to a collection of basic events and interactions when used.
 
-On a computer, opening the probability to encode model behavior through rules may be done quickly.
+    On a computer, opening the probability to encode model behavior through rules may be done quickly.
 
-It must **generate random samples** as a result of its output.
+2. It must **generate random samples** as a result of its output.
 
-The distribution of its inputs must be identified.
+3. The distribution of its inputs must be identified.
 
-Its **predictions** must be known when an experiment on data input is carried out.\*\*
+4. Its **predictions** must be known when an experiment on data input is carried out.\*\*
 
 ### Understanding Monte Carlo Basics
 
@@ -58,13 +58,13 @@ These are discussed below.
 
 #### Basic Steps
 
-I. **Define inputs probability**
+1. **Define inputs probability**
 
 Outline the domain of probable inputs.
 
 The emulated _reality_ should resemble the reality whose behavior we want to study and describe.
 
-II. **Generate random inputs**
+2. **Generate random inputs**
 
 Produce random inputs from a probability distribution.
 
@@ -72,13 +72,13 @@ The features of the inputs should be similar to those of the real cosmos we're a
 
 This means that, dependencies between the inputs should be represented.
 
-III. **Computate the inputs**
+3. **Computate the inputs**
 
 The computation should be deterministic.
 
 By deterministic, we mean that they should be able to give the same output each time they are computed.
 
-IV. **Combine the results**
+4. **Combine the results**
 
 Assemble the information to create the desired outcome.
 
