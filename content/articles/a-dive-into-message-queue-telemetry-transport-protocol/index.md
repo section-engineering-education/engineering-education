@@ -1,4 +1,4 @@
-### Inntroduction 
+### Introduction 
 Smart inverters act as the principal connection between distributed energy resources and the power bus in an environment with an increasing number of non-traditional power sources. In microgrids, where many DERs must be monitored and coordinated, this function is much more critical. Even under distributed control, the system must compensate for voltage and frequency fluctuations caused by local controllers. Therefore MGs must incorporate appropriate communication connections. A communications system is also necessary for efficient functioning.
 
 This article intends to talk about wireless communication architecture based on the MQTT protocol.
@@ -14,9 +14,9 @@ This article intends to talk about wireless communication architecture based on
 ### An overview of MQTT
 The MQTT convention characterizes two sorts of organization elements: a message dealer and numerous buyers. All client signals are received by an MQTT broker, which then passes them to the appropriate receivers. If a device runs an MQTT library and connects to a broker via the internet, it is an MQTT client. (anything from a microcontroller to a full-fledged server).
 
-The subject hierarchies have been used to arrange the data. The connected broker receives a control signal every time the publisher publishes fresh data. After that, the broker transmits the data to all users who have subscribed to that subject. Subscription numbers or locations are not required by the publisher, and publishers are not required to provide information on their subscribers.
+The subject hierarchies have been used to arrange the data. The connected broker receives a control signal every time the publisher publishes fresh data. Afterwards, the broker distributes the data to all those who have requested it through email or other means. Publishers are not obliged to disclose subscription numbers or locations, nor are they required to give information about their subscribers.
 
-A broker will delete a message on a topic that has no current subscribers unless the publisher has classified it as a retained message. A retained message is an MQTT message that has the retained flag set. The broker keeps track of the most recent communication and its related grade of service for each topic. A message is sent immediately to any client that has subscribed to a subject pattern that matches the message's subject. Only one communication is saved per subject by the broker. This enables new subscribers to a topic to get the most up-to-date information without waiting for the publisher's next update.
+Anything sent on a topic that has no current subscribers will be removed by brokers unless the publisher categorizes it as a `retained message.` A retained message is a MQTT message that has the retained flag set. The broker keeps track of the most recent communication and its related grade of service for each topic. A message is sent immediately to any client that has subscribed to a subject pattern that matches the message's subject. Only one communication is saved per subject by the broker. This enables new subscribers to a topic to get the most up-to-date information without waiting for the publisher's next update.
 
 When the distributing customer interfaces with the specialist interestingly and the representative identifies that the distributing customer has out of nowhere disengaged, the distributing customer can set up a default message to communicate to endorsers. 
 
@@ -35,7 +35,7 @@ MQTT utilizes the title [`Topic`](#topic)  instead of the expected beneficiary's
 
 By distributing and buying in, every customer might deliver and get information, i.e., the gadgets can communicate sensor information while getting setup data or control orders (MQTT is a bi-directional correspondence convention). Data exchange, device management, and control are all aided by this.
 
-To ensure that new subscribers to the topic receive the most up-to-date information, the broker may store the data as retained messages (which need a database client subscription). When devices are turned on and off, the broker maintains track of all session data in `permanent sessions.`
+New subscribers will be provided with the most up-to-date information by storing the data as retained messages for brokers (which need a database client subscription). All session data is kept in 'permanent sessions,' even when devices are switched on or off.
 
 The following are the key benefits of using an MQTT broker:
 
@@ -71,9 +71,9 @@ MQTT is a lightweight protocol since it only requires a little amount of code to
 - A 256-megabyte payload limit for messages
 - the quality of the services provided
 
-During the whole communication process, a customer may utilize the publish, subscribe, unsubscribe, and ping activities. The publish action delivers a binary data block (content) to the publisher-specified topic.
+Customers may use publish, subscribe, unsubscribe, and ping at any time throughout the communication process. The publish action delivers a binary data block (content) to the publisher-specified topic.
 
-MQTT supports BLOBs (message binary big objects) up to 256 MB in size. The material will be displayed in a format that is particular to the application.
+When using MQTT, you may send BLOBs as large as 256 MB. The material will be displayed in a format that is particular to the application.
 
 ### Topic in MQTT
 The UTF-8 string serves as the filter for each connected client's messages in MQTT. There are many levels to each subject. The forward slash, or topic level separator, is used to separate each subject level. The case of both the themes and the levels is essential.
