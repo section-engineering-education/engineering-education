@@ -17,19 +17,79 @@ In this guide, we will write a python script that will move files to a particula
 ### functions in python
 Don't Repeat Your self(DRY), is a very important principle in programming, the DRY principle helps in reducing the repetition of software patterns by referring back to a single source or "snippet" which is mostly achieved by using the concept of functions. 
 
-A Function is a group or a block of code that performs a particular task arranged in such a way that it is reusable. the code snippet below shows how to write a function.
+A Function is a group or a block of code that performs a particular task arranged in such a way that it is reusable. Methods are also refered to as functions in python but they are different, lets look at the difference.
+**Methods**: a method is a function in a class which can only be accessed with an object or instance of a class while a
+**Function**: is a function in itself that does not requires an instace or object to access it because it does not belong to a class.
+
+**Declaring a function**: a function can be define with parameters or without prameters(*parameters are values or properties in which a function acts upon*). The code snippet below shows how to write a function.
 ```python
+# without parameters
+def nameoffunction():
+    code
+    return statement
+
+# with parameters
 def nameoffunction(parameters):
     code
     return statement
-```
-from the above snippet, `def` or define is the keyword used to declare a function. `parameters` are the information the function code will act upon. `code` is the code that performs the task the function represents. `return statement` returns the output the function is giving.
 
-### Os Module
-The OS module is one of python's standard utility modules used to interact with the operating system. The OS module can be used to change a current working directory, create or delete a directory folder, get the contents in a directory e.t.c. 
+```
+from the above snippet, `def` or define is the keyword used to declare a function. `code` is the code that performs the task the function represents. `return statement` returns the output the function is giving.
+
+**Calling a function**: calling a function is also known as executing the function. We call a function with its name followed by a parenthesis which may or may not carry an argument(*an argument is the data which represents the parameters given when declaring the function*) pending on whether the function has parenthesis. The code snippet below shows how to call a function.
+```python
+#without arguments
+nameoffunction()
+
+# with arguments 
+nameoffunction(argument)
+```
+
+### os Module
+The OS module is one of python's standard utility modules used to interact with the operating system. The os module is made up of so many methods(functions) which can perform certain tasks including;
+- *Getting the working directory a user is* using the method as shown below
+```
+os.getcwd()
+``` 
+- *changing the current working directory* using the method as shown below
+```
+os.chdir()
+```
+- *listing folders and files* using the method as shown below
+```
+os.listdir()
+```
+- *Creating single and nested(a folder inside another folder) directories* using the method as shown below
+```
+# single directories
+os.mkdir()
+# nested directories
+os.makedirs()
+```
+- *Removing single and nested directories* using the method as shown below
+```
+# single directories
+os.rmdir()
+# nested directories
+os.removedirs()
+```
+and lots more [read more](https://docs.python.org/3/library/os.html)
+
+### os.path Module
+*os.path* is a module in python used to process and manipulate file path (filename and directories) in a system. the *os.path * module can be used to;
+- return the name of a path using` os.path.dirname(file path)` 
+- check the existence of any path in a system using `os.path.exists(file path)`
+- get the file size of a path in bytes using `os.path.getsize(file path)`
+- join path component using `os.path.join(path, *paths)` as we will see when moving multiple files from one directory to another.
+
+
 
 ### Shutil Module
-The shutil module is also one of python's standard utility modules used to interact with files and their collections. It can be used to copy files from a source directory to a destination directory. it can also be used to remove files and directories.
+The shutil module is also one of python's standard utility modules used to interact with files and their collections. The shutil module can be used for varieties of functionalities which include;
+- copying files from one directory to another using `shutil.copyfile(source dir, destination dir,)`
+- deleting entire directories using `shutil.rmtree(file path)`
+- moving directories from one path to another using `shutil.move(source dir, destination dir, )` and lots of other functionalities [read more](https://docs.python.org/3/library/shutil.html)
+
 
 ### Moving a file from one folder to another
 To move folders with python create a new project file and name it app.py then import the two modules mentioned above as shown below.
