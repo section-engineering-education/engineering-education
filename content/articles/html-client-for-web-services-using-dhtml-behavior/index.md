@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/html-client-for-web-services-using-dhtml-behavior/hero.jpg
     alt: HTML Client Web Services DHTML Behavior Hero Image
 ---
-The Dynamic Hypertext Markup Language (DHTML) is the most efficient and widely used web development strategy in websites with non-trivial user-input capabilities. 
+The Dynamic Hypertext Markup Language (DHTML) is a highly efficient and widely used web development strategy in websites with non-trivial user-input capabilities. 
 <!--more-->
 DHTML refers to tinkering with an HTML document's Document Object Model, tinkering with styling information's CSS declarations, and tying everything together with client-side JavaScript programming. 
 
@@ -70,18 +70,18 @@ Web services are code snippets that may be reused to allow applications to inter
 Go to Visual Studio and then select `File` -> `Website` -> `ASP.NET empty website template` from the drop-down menu.
 After that, enter the URL of the website, for example; we will use: (*webservicesample*). 
 
-![This shows a website template](engineering-education/html-client-for-web-services-using-dhtml-behavior/webservice.jpg)
+![This shows a website template](/engineering-education/html-client-for-web-services-using-dhtml-behavior/webservice.jpg)
 
 #### Step two
 In the solution explorer, choose the icon in the solution, add a new item by clicking `add new item`.
 
-![This shows a airthmatic.cs](engineering-education/html-client-for-web-services-using-dhtml-behavior/addnew.jpg)
+![This shows a airthmatic.cs](/engineering-education/html-client-for-web-services-using-dhtml-behavior/addnew.jpg)
 
 This will create the two files as follows:
 - *Arithmetics.asmx* which is our service file.
 - *Arithmetic.cs* `Appcode` folder which will host the code file for the service.
 
-![This shows the App code](engineering-education/html-client-for-web-services-using-dhtml-behavior/appcode.jpg)
+![This shows the App code](/engineering-education/html-client-for-web-services-using-dhtml-behavior/appcode.jpg)
 
 The code below explains our file in arithmetic:
 
@@ -141,7 +141,7 @@ To check whether the service is able to run correctly, run the program by openin
 
 We will find all the method names as shown below:
 
-![Method names in the browser](engineering-education/html-client-for-web-services-using-dhtml-behavior/explorer.jpg)
+![Method names in the browser](/engineering-education/html-client-for-web-services-using-dhtml-behavior/explorer.jpg)
 
 At this point, our service can be used.
 
@@ -247,7 +247,7 @@ A web services functionality are described using the Web Services Description La
 
 In XML format, WSDL highlights every action that is capable for a web service to provide. In addition, it specifies how such services can be delivered. It specifies what source value we are required to provide, and what format the return will take for each type of service.
 
-#### How can we test web service?
+#### How can we test a web service?
 In web service testing, we can use several ways:
 1. We can test it manually.
 2. We can create our automation code.
@@ -264,29 +264,29 @@ After you have opened the SoapUI tool, go to the `REST` icon and click it to ope
 #### Step three
 We have to use the post function to create a new employee. In the database, it will create a new employee.
 
-![Post method](engineering-education/html-client-for-web-services-using-dhtml-behavior/postmethod.jpg)
+![Post method](/engineering-education/html-client-for-web-services-using-dhtml-behavior/postmethod.jpg)
 
 #### Step four
 Then we have to test the GetEmployee method, which is a HttpGet method that takes an id parameter.
 
-![This is the HttpGet method](engineering-education/html-client-for-web-services-using-dhtml-behavior/http.jpg)
+![This is the HttpGet method](/engineering-education/html-client-for-web-services-using-dhtml-behavior/http.jpg)
 
 #### Step five
 The other step is to update the operation for EmployeeId which we created.
 
-![Update of the employeeid created](engineering-education/html-client-for-web-services-using-dhtml-behavior/employeeid.jpg)
+![Update of the employeeid created](/engineering-education/html-client-for-web-services-using-dhtml-behavior/employeeid.jpg)
 
 #### Step six
 The test employees will return all of the employees that were stored in the database. EmployeeId 2 will be deleted from the database if we test the DeleteEmployee operation from SoapUI.
 
-![When we delete the employeeid created](engineering-education/html-client-for-web-services-using-dhtml-behavior/delete.jpg)
+![When we delete the employeeid created](/engineering-education/html-client-for-web-services-using-dhtml-behavior/delete.jpg)
 
 #### Step seven
 Finally, we put our validation for the required fields, first and last names, to the test. To generate this situation, we will leave firstName and LastName empty in my post-operation, as shown below. 
 
 This results in the message `The request is invalid` and our validation message for first and last name that we wrote in our model.
 
-![Throw of validation message](engineering-education/html-client-for-web-services-using-dhtml-behavior/invalid.jpg)
+![Throw of validation message](/engineering-education/html-client-for-web-services-using-dhtml-behavior/invalid.jpg)
 
 We have shown how SoapUI can be employed to put any kind of object to test any operation. It is simple to test web services or web API's using SoapUI. This includes capabilities like load testing, performance testing, regression testing, and function testing.
 
