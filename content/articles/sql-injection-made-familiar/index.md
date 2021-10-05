@@ -14,10 +14,9 @@ images:
  - url: /engineering-education/sql-injection-made-familiar/hero.png
    alt: SQL Injection Made Familiar Hero Image
 ---
-
 Information is perhaps the most crucial part of a data system. Information base-controlled web applications are utilized by most associations to get information from clients, thus drawing in information security.
 <!--more-->
-SQL Injection is an assault that harms dynamic SQL articulations to remark out specific pieces of the assertion or affixing a condition that will consistently be valid. It exploits the plan imperfections in inadequately planned web applications to take advantage of SQL proclamations to execute vindictive SQL code.
+SQL injection is an assault that harms dynamic SQL articulations to remark out specific pieces of the assertion or affixing a condition that will consistently be valid. It exploits the plan imperfections in inadequately planned web applications to take advantage of SQL proclamations to execute vindictive SQL code.
 
 This article will take the reader through SQL infusions and will have an unmistakable illustration of how it is carried out and how to forestall SQL infusions.
 
@@ -36,8 +35,8 @@ The sorts of assaults that can be performed utilizing SQL infusion differ contin
 A powerful assertion is an explanation that is created at a run time utilizing boundaries secret phrases from a web structure or URI query string.
 
 Let's take a look at a simple login form with some basic styling:
-- [get the form](https://github.com/fabulousDesigns/sql-injection-login-page)
-- create 2 files: -
+- [Get the form](https://github.com/fabulousDesigns/sql-injection-login-page)
+- create 2 files:
   1.  `index.html`
   2.  `style.css`
 
@@ -83,7 +82,7 @@ We have derived this from the `remember-me` checkbox. It utilizes the post strat
 **Suppose user authentication is done using the following statement:**
 
 ```sql
-SELECT * FROM members WHERE userName = $_POST['uName'] AND password = md5($_POST['pass']);
+SELECT * FROM members WHERE username = $_POST['uName'] AND password = md5($_POST['pass']);
 ```
 
 The above assertion utilizes the upsides of the `$_POST[]` cluster straightforwardly without cleaning them. The secret key, password, is encoded utilizing the `MD5` calculation. 
@@ -103,7 +102,7 @@ CREATE TABLE `members` (
   PRIMARY KEY (`id`));
 
 
-insert into members (userName,password) values ('johnD',md5('doe'));
+insert into members (username,password) values ('johnD',md5('doe'));
 ```
 
 - Click the `build schema` button
@@ -118,27 +117,27 @@ insert into members (userName,password) values ('johnD',md5('doe'));
   ![sql-code](sqlcode.png)
 - Your output will be :
   ![result](result.png)
-- Let us say the user supplies `logan` as the userName and `5678` as the password.
+- Let us say the user supplies `logan` as the username and `5678` as the password.
 
 The SQL code to execute would probably be :
 
 ```sql
-SELECT * FROM members WHERE userName = 'logan` AND password = md5('5678');
+SELECT * FROM members WHERE username = 'logan` AND password = md5('5678');
 ```
 
-The above code can be taken advantage of by remarking out the secret key(password) part and affixing a condition that will consistently be valid. Let's say an assailant gives the following in the input fields:
-1. `userName = xyz.mnp' OR 1 = 1 LIMIT 1 — ']`
+The above code can be taken advantage of by remarking out the secret key (password) part and affixing a condition that will consistently be valid. Let's say an assailant gives the following in the input fields:
+1. `username = xyz.mnp' OR 1 = 1 LIMIT 1 — ']`
 2. `password = fff`
 
 - The statement to execute would be as follows: 
 
 ```sql
-SELECT * FROM members WHERE userName = 'xyz.mnp' OR 1 = 1 LIMIT 1 -- ‘ ] AND password = md5(‘5678’);
+SELECT * FROM members WHERE username = 'xyz.mnp' OR 1 = 1 LIMIT 1 -- ‘ ] AND password = md5(‘5678’);
 ```
 
 `Xyz.mnp` closes with a solitary statement that finishes the string quote.
 
-Or on the other hand `1 = 1 LIMIT 1` is a condition that will consistently be valid and limits the returned results to just one record.
+Or so `1 = 1 LIMIT 1` is a condition that will consistently be valid and limits the returned results to just one record.
 
 `-- 'AND … `is a SQL remark that takes out the secret key part.
 
@@ -147,7 +146,7 @@ Or on the other hand `1 = 1 LIMIT 1` is a condition that will consistently be va
 - The result is as shown below
   ![result2](result2.png)
 
-### Activity: Infuse a webPage
+### Activity: Infuse a webpage
 - I have created a log-in form that we will use to employ SQL injection exploits. you can get it [here](https://github.com/fabulousDesigns/sql-injection-login-page)
 - The form has some fundamental security, for example, sanitizing the username field.
 - This implies our above code can't be utilized to sidestep the login. To get around that, we can rather take advantage of the secret word field.
@@ -156,14 +155,14 @@ Or on the other hand `1 = 1 LIMIT 1` is a condition that will consistently be va
 #### Step 1
 Clone the source code in your local computer and run it with the `xammp` server.
 
-#### step 2
+#### Step 2
 Enter log-in info :
 - username = 'xyzxyz'
 - password = 'xyz') OR 1=1 -- ]
 ![hack-activity](app1.png)
 - click on submit
 
-#### step 3
+#### Step 3
 Access Granted -> redirected to Dashboard
 
 If a user provides the following:
@@ -182,12 +181,12 @@ SELECT * FROM members WHERE username = ‘xyzxyzx’ AND password = md5(‘xyz�
 ![generated-statements](stmt.png)
 
 ### Other SQL infusion assault types
-SQL Injections can accomplish more damage than just bypassing the login calculations. A portion of the assaults incorporate:
+SQL Injections can do more damage than just bypassing the login calculations. A part of the assaults incorporate:
 - Erasing information
 - Updating information
 - Embeddings information
 - Executing orders on the worker that can download and introduce malignant projects like Trojans
-- Sending out significant information, for example, Mastercard subtleties, email, and passwords to the assailant's far off worker.
+- Sending out significant information, for example, Mastercard subtleties, email, and passwords to the assailant's far-off worker.
 - Getting client login subtleties and so on.
 
 The above list isn't thorough; it simply gives you a thought of what SQL Injection is capable of.
@@ -209,9 +208,9 @@ An association can take on the accompanying strategy to ensure itself against SQ
 6. Blunder messages – these ought not to uncover touchy data and the precise area a mistake happened. Straightforward custom blunder messages, for example, "Heartbroken, we are encountering specialized mistakes. The specialized group has been reached. Kindly attempt again later" can be utilized rather than show the SQL explanations that caused the mistake.
 
 ### Conclusion
-SQL Injection is a sort of assault that benefits from terrible SQL articulations. SQL infusion can be utilized to sidestep login calculations, recover, addition, and refresh and erase information.
+SQL injection is a sort of assault that benefits from terrible SQL articulations. SQL infusion can be utilized to sidestep login calculations, recover, addition, and refresh and erase information.
 
-SQL infusion instruments incorporate SqlSus, SQLPing, and Sonarqube, and so on. A decent security strategy when composing SQL proclamation can assist with decreasing SQL infusion assaults.
+SQL infusion instruments incorporate `SqlSus`, `SQLPing`, and `Sonarqube`, and so on. A decent security strategy when composing SQL proclamation can assist with decreasing SQL infusion assaults.
 
 Happy coding!
 
