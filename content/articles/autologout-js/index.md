@@ -28,9 +28,6 @@ To follow along with this tutorial, you should have:
 1. A basic knowledge of JavaScript.
 2. A basic knowledge of HTML and CSS.
 3. A basic knowledge of PHP (optional).
-1. A basic knowledge of JavaScript.
-2. A basic knowledge of HTML and CSS.
-3. A basic knowledge of PHP(though not that necessary).
 
 You can use any technology/language for the backend login script.
 
