@@ -39,7 +39,7 @@ You need to have some basic knowledge of:
 
 ### The HttpSession and its Functions
 
-`HttpSession` is an interface used to bind objects together and manipulate information about the session, such as the session id, time created, and last seen.  
+`HttpSession` is an interface for binding items together and manipulating session information such as the session id, creation time, and last seen.  
 
 **Functions:**
 
@@ -49,13 +49,15 @@ You need to have some basic knowledge of:
 
 **How Does HttpSession Work**
 
+
 - When a client sends a message in the form of a request, a servlet `container` creates a unique session id (identifier) for that particular user and sends it back to the client in the form of a response. And a temporary session is created by the servlet `container`.
 
-- With each request, the client returns the session id (identifier), making it easy for the servlet `container` to determine the origin of this request.
+- The client returns the session id (identifier) with each request, making it simple for the servlet `container` to determine the request origin.
 
-- Finally, the servlet `container` uses an id (session identifier) obtained from a client machine to find the corresponding id (session identifier) and correlate it with the request.
+- Finally, the servlet `container` finds the corresponding id (session identifier) and correlates it with the request using an id (session identifier) retrieved from a client computer.
 
-**The benefits of using HttpSessions in servlet**
+
+**The advantages of HttpSessions in servlets**
 
 - Session information is secure and visible.
 
