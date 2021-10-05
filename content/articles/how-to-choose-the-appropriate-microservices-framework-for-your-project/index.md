@@ -101,3 +101,6 @@ It is a microservice architecture that utilizes Node.js and is popular among Jav
 As covered in the article, microservices assist in managing applications better. However, moving from monolith architecture to microservices can be complex. The microservices implementation approach may differ for different organizations depending on their needs. Nevertheless, organizations can utilize the above criteria and best practices when choosing the right microservices for their applications.
 
 As always, the primary goal for all microservices is to use a loosely coupled, distributed, and independent framework. In addition, microservices should follow the DevOps model that provides automation and efficiency.
+
+---
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul)
