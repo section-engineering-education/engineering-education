@@ -51,21 +51,21 @@ Below are the criteria for selecting the proper framework for migrating from a m
 - **Team preparation**: Migration from a monolithic to a microservices architecture is lengthy and tedious. The stakeholders and users should know the time investment, cost, and technical specifications required for the infrastructural changes. In addition, all the teams experience considerate disruption during the process.
 - **Development team preparedness**: Development teams should work independently since every microservice works as a separate application. Therefore, there should be different teams for each microservice. The teams should possess the required skills set and tools for developing, deploying, and managing their specified service.
 
-#### Designing the microservices
+#### Designing microservices
 - **Business functions and services definition**: Microservices should not be too large or small. If they are too large would mean that the organization would see the need to use microservices architecture. On the other hand, organizations may experience high operation costs that outweigh the benefits offered if it is too small.
 - **Microservices design**: Services should be designed to be loosely coupled with high cohesion, and single bounded. A loosely coupled service does not entirely depend on other services. High cohesion means that the service should only perform one function and perform it perfectly. Note that single bounded implies that the service should be domain-specific with the domain's internal details and specific models. Single bounded context also ensures that microservice achieves a [Domain-Driven Design](https://www.ibm.com/garage/method/practices/code/domain-driven-design/) (DDD).
 - **Using APIs and events for communication**: Services ought not to communicate with others directly. Instead, an API gateway that allows authentication, request, responses, and throttling services should be designed. Traffic can then be redirected from the API gateway to the updated version of services.
 - **Security concerns**: Microservices are vulnerable to attacks due to their distributed nature and structure. This means that a different, more secure approach such as the [DevSecOps model](https://snyk.io/devsecops/) has to be adopted compared to monolith architecture.
 
-#### Development of the microservices
+#### Developing microservice based applications
 - **Version control**: Each service should be kept in a separate repository for easy access and to ensure clean version control logs are kept. It is also vital when making changes that can affect other services.
 - **Consistent development environments**: The services development environments should be deployed as VMs to ensure developers quickly familiarize themselves with the framework.
 - **Implement backward compatibility**: The rigid contract tests to safeguard against the changes that can break the system should be implemented. It will ensure backward compatibility for the API calls that respond to each user query. This also ensures businesses develop production-ready applications quickly.
 
-#### Data storage and management of the microservices
+#### Data storage and management of microservices
 - **Implement different databases for each microservice**: The database that fulfils the service needs should be selected. Then the infrastructure and storage that matches the data it contains should be customized and used entirely for that microservice. A service mesh ensures that a robust microservice framework has been achieved. Each service is separately maintained while working together with other services.
 
-#### Deploying and hosting of the microservices
+#### Deploying and hosting of microservices
 - **Separate microservices deployment**: It helps to save time while coordinating different teams when performing regular maintenance or upgrades. It also assists in preventing a single service from using enormous resources while impacting other services just because of sharing resources. Therefore, a dedicated infrastructure that hosts each microservice should be implemented. This ensures that each microservice's fault is isolated from other components, improving the fault tolerance and avoid outages.
 - **Microservices containerization**: Microservices and containers work together efficiently. It is possible to deploy and manage individual services independently without interfering with other containerized services. In addition, containers are platform-independent, the vital feature of microservice architecture.
 - **Separate microservices build and deployment process automation**: Automation tools such as [Jenkins](https://www.jenkins.io/) automates [DevOps workflows](https://www.javatpoint.com/devops-workflow-and-principles) by ensuring [Continuous Integration and Delivery](https://www.infoworld.com/article/3271126/what-is-cicd-continuous-integration-and-continuous-delivery-explained.html) (CI/CD).
@@ -75,7 +75,7 @@ Below are the criteria for selecting the proper framework for migrating from a m
 
 ### Popular microservices frameworks
 #### Spring Boot
-It is a popular Java framework for developing microservices. It comes with various extension projects under [Spring Cloud](https://spring.io/projects/spring-cloud) that enable developers to build microservices. Spring Boot allows the building of large-scale systems by starting a simple architecture and combining several components. Software developers can also use spring Boot to develop small and large-scale systems. It is also easy to be integrated with other frameworks through the use of [Inversion of Control](https://www.baeldung.com/inversion-control-and-dependency-injection-in-spring).
+It is a popular Java framework for developing microservices. It comes with various extension projects under [Spring Cloud](https://spring.io/projects/spring-cloud) that enable developers to buil microservices. Spring Boot allows the building of large-scale systems by starting a simple architecture and combining several components. Software developers can also use spring Boot to develop small and large-scale systems. It is also easy to be integrated with other frameworks through the use of [Inversion of Control](https://www.baeldung.com/inversion-control-and-dependency-injection-in-spring).
 
 #### Eclipse Vert.X
 It is a popular microservices framework developed by the Eclipse foundation. It supports multiple languages such as [Java](https://www.oracle.com/java/) and [Kotlin](https://kotlinlang.org/), and [JavaScript](https://www.codecademy.com/learn/introduction-to-javascript) developers find it useful. [Vertx](https://vertx.io/) is a tool kit that assists in building reactive microservices that executes on the [Java Virtual Machine](https://www.infoworld.com/article/3272244/what-is-the-jvm-introducing-the-java-virtual-machine.html) (JVM).
