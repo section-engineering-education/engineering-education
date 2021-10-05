@@ -14,14 +14,9 @@ images:
   - url: /engineering-education/autologout-js/hero.jpg
     alt: Creating an auto-logout feature using JavaScript Hero Image
 ---
-When implementing security for our applications, we will at one point check if the user is still actively using the screen and decide whether to keep him/her logged in or not. This is particularly important if the application handles sensitive or private data to the user, for example, bank account details. 
+When implementing security for our applications, we will at one point check the user's activeness in a tab. It is always a good practice to log the user out automatically based on his/her activeness.
 <!--more-->
-We will see how to do that using JavaScript basing on the input events such as keypresses, scrolls, etc.
-
-### Prerequisites
-When implementing security for our applications, we will at one point check the user's activeness in a tab. It is always a good practice to log the user out automatically based on his/her activeness. This is particularly important if the application handles the user's sensitive or private data. For example, bank account details. 
-<!--more-->
-We will see how to do that using JavaScript based on the input events such as keypresses, scrolls, etc.
+This is particularly important if the application handles the user's sensitive or private data. For example, bank account details. We will see how to do that using JavaScript based on the input events such as keypresses, scrolls, etc.
 
 ### Prerequisites
 To follow along with this tutorial, you should have:
@@ -141,8 +136,7 @@ The code is as follows:
 
 ```
 
-This is the login page where the user enters the credentials to be logged into the system.
-The style sheets are hosted, so you can click the link provided above to view if your browser doesn't render the UI properly due to CORS policy.
+This is the login page where the user enters the credentials to be logged into the system. The style sheets are hosted, so you can click the link provided above to view if your browser doesn't render the UI properly due to CORS policy.
 
 Bootstrap 5 is used for styling.
 
@@ -248,8 +242,11 @@ This is the backend script. Again, you can write yours in any language of your p
 If the credentials are OK, we redirect the user to the display page.
 
 #### Working of the three files
-The three files are connected in that, the user first accesses the login page, signs in, and then after the PHP script authenticates the user, they are allowed to access the display page. After a set period of inactivity, the display page redirects to the login page.
-The three files are connected in that, the user first accesses the login page and signs in. After the PHP script authenticates the user, they are allowed to access the display page. After a set period of inactivity, the display page redirects to the login page.
+The three files are connected in that, the user first accesses the login page and signs in. After the PHP script authenticates the user, they are allowed to access the display page. 
+
+After a set period of inactivity, the display page redirects to the login page. The three files are connected in that, the user first accesses the login page and signs in. 
+
+After the PHP script authenticates the user, they are allowed to access the display page. After a set period of inactivity, the display page redirects to the login page.
 
 ```bash
 Login -> [Backend aunthentication] -> Display -> (If user is inactive) -> Login
@@ -459,7 +456,6 @@ Here is the full JavaScript code.
 We looked at creating an auto-logout feature in pure JavaScript. We also looked at the working of the files and the JavaScript code in detail.
 
 ### Key research area
-The code does not keep track of the pages in different tabs. For example, if you had logged in to the same page in different tabs, the timer resets in the active tab does not affect the other tab in that the other tab will autologout. 
 The code does not keep track of the pages in different tabs. For example, if you had logged in to the same page in different tabs, the events only reset the time in the active tab. This means that the other tab will still log the user out. The goal is to reset the timer for all the tabs.
 
 Having read this, you can delve into it and make that improvement. The GitHub repository for contributing to the code is found [here](https://github.com/Agusioma/autologout-javascript).
@@ -468,8 +464,6 @@ Having read this, you can delve into it and make that improvement. The GitHub re
 The user's private data is very key. It's always important to let no one else see another person's private information. The auto-logout feature is a good solution for that.
 
 Happy coding!
-
-Thank you, reader. Have a great read.
 
 ---
 Peer Review Contributions by: [Dawe Daniel](/engineering-education/authors/dawe-daniel/)
