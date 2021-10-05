@@ -69,7 +69,7 @@ http.createServer(function (request, response) {
 //print the message on console
 console.log('Server running at port 3000');
 ```
-Save your `http_test.js` and run it on your terminal. i.e. `node http_test.js` And there you go, you have just created the simplest server of your whole career. The server you have created can then be accessed on `http://localhost:3000` or `http://127.0.0.1:3000` from your browser. Check out more on [working with HTTP and Node.js.](/http-requests-nodejs/) to find out.
+Save your `http_test.js` and run it on your terminal. i.e. `node http_test.js` And there you go, you have just created the simplest server of your whole career. The server you have created can then be accessed on `http://localhost:3000` or `http://127.0.0.1:3000` from your browser. Check out more on [working with HTTP and Node.js.](/engineering-education/http-requests-nodejs/) to find out.
 
 ### 4. Embracing Asynchronous Node.js Functions
 Asynchronous is heavily used in Node.js to ensure non-blocking operations flow. It enables a system to handle thousands of concurrent requests and process gigabytes of data with a small amount of RAM. Asynchronous I/O permits other processing to continue even before the first transmission has finished. Asynchronous helps to avoid the so-called "Call-back Hell"
@@ -121,7 +121,7 @@ console.log("hello world");
 `Console.log` is provided by internet browsers such as Chrome DevTools, it has debug protocols ported into a Node.js module and can be used to debug Node apps. It requires you to `install node-inspector` (`npm install -g node-inspector`) then run `node-inspect myscript.js`. This will open up Chrome Developer Tools and you can start debugging your app.
 Alternatively, you can use Node.js' built-in debugger by running `node inspect app.js`.
 Another method is using `watchers` in `expressions` and `variables` while debugging your Node app. To start
-watching an `expression`, include `watch ('my expression');`. On each breakpoint, every expression will be evaluated in its current context and displayed before the breakpoint of the code listing. The command `watcher` will print active watchers. To remove a watcher you can use: `unwatch ('my expression');` Check out this article to find more efficient ways to deal with [bugs in your app](/debug-nodejs-vscode/).
+watching an `expression`, include `watch ('my expression');`. On each breakpoint, every expression will be evaluated in its current context and displayed before the breakpoint of the code listing. The command `watcher` will print active watchers. To remove a watcher you can use: `unwatch ('my expression');` Check out this article to find more efficient ways to deal with [bugs in your app](/engineering-education/debug-nodejs-vscode/).
 
 ### 7. Always Keep Your Code Simple and Light
 It is important to keep the Node.js codebase compact and shallow to reduce the latency and speed up the response time of the application. Some devices are slower and their latencies are higher thus you need to keep the code as small executions, well-arranged, and light. These same ideas should be applied to your server code as well. While writing your Node.js code ensure proper and appropriate naming of things for better referencing. This will serve as documentation for your application and make it easier to go back to your code when changes are required. Better code quality helps in easier code maintainability
@@ -148,7 +148,7 @@ Let's briefly look at how to deploy to Heroku. To get started, download Heroku C
 
 Use the `git status` command to check if git exists on your directory. If not, make a git directory (`git init`) then `git add` and Commit the files you have added to git by `git commit -m` "initial commit" command. Now you can create the Heroku application using the command `heroku create`.
 
-This will create a git remote that is connected to your git repository. Finally, you can now deploy your application to the Heroku server. Use `git push heroku master`. Then you can use `heroku open` to open your application on your browser. For more detailed instructions, read [Deploying Your First Node.js Web App](/deploying-nodejs-web-app/).
+This will create a git remote that is connected to your git repository. Finally, you can now deploy your application to the Heroku server. Use `git push heroku master`. Then you can use `heroku open` to open your application on your browser. For more detailed instructions, read [Deploying Your First Node.js Web App](/engineering-education/deploying-nodejs-web-app/).
 
 ### 10 Monitoring Your Node.js Application
 Monitoring helps to gain insight into your production application to ensure a fast, stable and reliable system. Insights are critical in helping to detect performance problems within your system.

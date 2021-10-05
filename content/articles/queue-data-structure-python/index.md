@@ -17,7 +17,7 @@ images:
 ---
 In Part 4 of this series, let us dive into Queues, a data structure that stores data in a **First In, First Out** (FIFO) manner. [Queue](https://www.tutorialspoint.com/data_structures_algorithms/dsa_queue.htm) is an abstract data structure, somewhat similar to Stacks. Unlike stacks, a queue is open at both of its ends. In this article, we'll be looking at how to implement and use the queue data structure in Python.
 
-*For more background on the different data structures in Python, check out my articles on the [List](/list-data-structure-python/) and [Stack](/stack-data-structure-python) data structures.*
+*For more background on the different data structures in Python, check out my articles on the [List](/engineering-education/list-data-structure-python/) and [Stack](/engineering-education/stack-data-structure-python) data structures.*
 
 <!--more-->
 

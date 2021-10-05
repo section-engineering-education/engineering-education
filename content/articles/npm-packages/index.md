@@ -17,7 +17,7 @@ images:
 Node.js is a popular server-side language that is used by millions of developers worldwide. While building Node.js projects, we use various packages that make development easier. All of these packages are managed by the Node Package Manager.
 <!--more-->
 
-To learn more about Node.js, check out [this](/history-of-nodejs/) amazing article about Node.js by [Section.io](https://section.io) contributor, [Jethro Magaji](/engineering-education/authors/jethro-magaji/).
+To learn more about Node.js, check out [this](/engineering-education/history-of-nodejs/) amazing article about Node.js by [Section.io](https://section.io) contributor, [Jethro Magaji](/engineering-education/authors/jethro-magaji/).
 
 ### Table of Contents
 - [Introduction](#introduction)
@@ -34,10 +34,10 @@ To install Node.js packages, we use the [NPM registry](https://www.npmjs.com/), 
 
 For more background on Node.js and various related technologies, check out some amazing [Section.io](/) articles below:
 
-- [Most Useful Node.js Packages](/most-useful-nodejs-packages/)
-- [Building a Node.js Application Using Docker](/building-a-nodejs-application-using-docker/)
-- [Linting in Node.js using ESLint](/node-eslint/)
-- [APIs in Node.js vs Python - A Comparison](/node-vs-python/)
+- [Most Useful Node.js Packages](/engineering-education/most-useful-nodejs-packages/)
+- [Building a Node.js Application Using Docker](/engineering-education/building-a-nodejs-application-using-docker/)
+- [Linting in Node.js using ESLint](/engineering-education/node-eslint/)
+- [APIs in Node.js vs Python - A Comparison](/engineering-education/node-vs-python/)
 
 ### Create an NPM Account
 To get started, let's create an NPM account.
