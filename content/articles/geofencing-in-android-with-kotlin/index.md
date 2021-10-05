@@ -1,6 +1,21 @@
-### Introduction
-Geofence is an imitated variable that describes a real geographical area of interest. Geo-Fencing API lets you define the outline or limit of a specific area and feature that surrounds a point of interest.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /geofencing-in-android-with-kotlin/
+title: Geofencing in Android with Kotlin
+description: This tutorial takes the reader through the process of implementing geofence in Android applications. Geo-Fencing API lets you define the outline or limit of a specific area and feature that surrounds a point of interest.
+author: brandy-odhiambo
+date: 2021-10-06T00:00:00-01:40
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/geofencing-in-android-with-kotlin/hero.png
+    alt: Geofencing in Android with Kotlin hero image
+---
+Geofence is an imitated variable that describes a real geographical area of interest. Geo-Fencing API lets you define the outline or limit of a specific area and feature that surrounds a point of interest.
+<!--more-->
 When users cross the Geofence, they are alerted by a notification. This gives a beneficial experience when users are in the facility. Geo-Fencing API employs the use of device sensors to detect user's location in a battery-efficient manner.
 
 #### Geofence comprises of three transition types:
@@ -380,3 +395,6 @@ You can check the full implementation on [this repository](https://github.com/br
 [Android Documentation](https://developer.android.com/training/location/geofencing)
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Eric Gacoki](/engineering-education/authors/eric-gacoki/)
