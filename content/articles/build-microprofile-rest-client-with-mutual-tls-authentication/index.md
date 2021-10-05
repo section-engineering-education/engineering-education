@@ -1,3 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /build-microprofile-rest-client-with-mutual-tls-authentication/
+title: Build a Microprofile Rest Client with Mutual TLS Authentication
+description: In this article, you will learn how to build a Microprofile Rest Client application with TLS authentication.
+author: francis-kaguongo
+date: 2021-08-09T00:00:00-15:30
+topics: []
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/build-microprofile-rest-client-with-mutual-tls-authentication/hero.png
+    alt: Microprofile Rest Client with Mutual TLS Authentication
+---
+
 In networking, layers are used to understand the complexity of networks.
 Some network models such as the OSI and TCP/IP have been key in modern-day networks.
 Security in systems is important considering that Security is not an afterthought of a system, rather an integral part.
@@ -441,8 +457,8 @@ In the 'ClientResources.java' file do the following:
     */
     public String callWithClientBuilder() throws KeyStoreException, CertificateException, NoSuchAlgorithmException, IOException {
 
-        
-        
+
+
 
     }
 ```
@@ -516,3 +532,7 @@ Increase understanding on TLS on topics such as: How TLS works, Certificate Auth
 ### References
 
 - [TLS basics](https://www.internetsociety.org/deploy360/tls/basics/)
+
+---
+
+Peer Review Contributions by: [Daniel Katungi](/engineering-education/authors/daniel-katungi/)
