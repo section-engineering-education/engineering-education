@@ -63,18 +63,18 @@ Index.html includes the `@page` directive, which informs `ASP.NET Core` that it 
 We need to change the welcome message to add the following code to `cs.cshtml.cs` file and accessing it in the index.cshtml file with the `@Model.Message` property.
 
 ```C#
+using System;
+
+using System.Linq;
+
 
 using Microsoft.AspNetCore.Mvc;
+
+using System.Collections.Generic;
 
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 using Microsoft.Extensions.Logging;
-
-using System;
-
-using System.Collections.Generic;
-
-using System.Linq;
 
 using System.Threading.Tasks;
 
@@ -234,6 +234,11 @@ When we input the `html` code below, we will have a search bar created in the st
 Now, the next thing is to include the search term property in the `page model class` using the code below;
 
 ```C#
+using System;
+
+using System.Linq;
+
+using System.Threading.Tasks;
 
 using Microsoft.AspNetCore.Mvc;
 
@@ -241,17 +246,11 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 using Microsoft.Extensions.Logging;
 
-using System;
-
 using System.Collections.Generic;
 
-using System.Linq;
-
-using System.Threading.Tasks;
+using StudentsCheckList.Services;
 
 using StudentsCheckList.Models;
-
-using StudentsCheckList.Services;
 
 namespace StudentsCheckList.Pages.Students
 
@@ -292,15 +291,13 @@ Now, we want a method that can search and filter Students. This is implemented i
 We shall have the code below in the `Students repository class`;
 
 ```C#
-
-using StudentsCheckList.Models;
-
 using System;
 
 using System.Collections.Generic;
 
-namespace StudentsCheckList.Services
+using StudentsCheckList.Models;
 
+namespace StudentsCheckList.Services;
 {
 
     public interface IStudentsRepository
