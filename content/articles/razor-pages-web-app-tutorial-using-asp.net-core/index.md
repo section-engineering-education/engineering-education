@@ -165,6 +165,7 @@ In this class, we need to include these five data types. i.e,
 - Name
 - Email
 - Department
+- Degree
   
 To add the above data, we will have the following code;
 
@@ -268,7 +269,7 @@ namespace StudentsCheckList.Pages.Students
 
             [BindProperty(supportsGet = true)]
 
-            public String SearchTerm { get; set; }
+            public String termToSearch { get; set; }
 
         }
 
@@ -276,7 +277,7 @@ namespace StudentsCheckList.Pages.Students
 
         {
 
-        Students = studentsRepository.search(searchTerm);
+        Students = studentsRepository.search(termToSearch);
 
         }
 
@@ -304,7 +305,7 @@ namespace StudentsCheckList.Services;
 
     {
 
-        IEnumerable<Students> Search(String searchTerm);
+        IEnumerable<Students> Search(String termToSearch);
 
         IEnumerable<Students> GetAllStudents();
 
@@ -328,7 +329,7 @@ return _studentsList.FirstOrDefault(e=> e.id == id);
 
 }
 
-public IEnumerable<Students> Search(string searchTerm)
+public IEnumerable<Students> Search(string termToSearch)
 
 {
 
@@ -336,9 +337,9 @@ public IEnumerable<Students> Search(string searchTerm)
 
 }
 
-public IEnumerable Search(string searchTerm)
+public IEnumerable Search(string termToSearch)
 
-    if(string.IsNullOrEmpty(searchTerm))
+    if(string.IsNullOrEmpty(termToSearch))
 
 {
 
@@ -348,11 +349,11 @@ public IEnumerable Search(string searchTerm)
 
 {
 
-    return _studentsList.Where(e => e.Name.Contains(searchTerm) ||
+    return _studentsList.Where(e => e.Name.Contains(termToSearch) ||
 
-                                    e.Email.Contains(searchTerm) ||
+                                    e.Email.Contains(termToSearch) ||
                                     
-                                    e.RegNo.Contains(searchTerm).toList();
+                                    e.RegNo.Contains(termToSearch).toList();
 
 };
 
