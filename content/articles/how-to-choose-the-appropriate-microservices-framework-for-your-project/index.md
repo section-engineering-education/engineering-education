@@ -1,3 +1,20 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-choose-the-appropriate-microservices-framework-for-your-project/
+title: How to choose appropriate microservice framework for a project
+description: This article will explain the importance of using microservice architecture and compare various microservice oriented frameworks 
+author: martha-ngugi
+date: 2021-10-05T00:00:00-09:00
+topics: [cloud computing]
+excerpt_separator: <!--more-->
+images:
+
+  - url:  /how-to-choose-the-appropriate-microservices-framework-for-your-project/hero.jpg
+    alt: Microservices Example Image
+---
+
 ### Introduction
 In the past years, applications have always been developed following the [monolith architecture](https://whatis.techtarget.com/definition/monolithic-architecture). They were coded from top to bottom as a single unit. Most of the time, they had no structure and capabilities for future maintenance or upgrades, which posed several challenges. They were difficult to debug or even add new features.
 
