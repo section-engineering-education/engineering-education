@@ -1,16 +1,16 @@
 ---
-title: Creating a Simple Chat App in React.js using the Chat Engine API
+title: Creating a Simple Chat App in React.js using the chat engine API
 ---
 
+This article will teach the React.js way of creating a chat application using the chat engine API. It aims at making it less cumbersome compared to when one opts the Node.js and socket.io way instead.
 
-Ever thought of coming up with a chat application, but going the Node.js and or the socket.io way seemed pretty cumbersome for someone solely equipped with front-end skills like React.js? 
-Well, this article fits you right. 
-The reader is brought to an understanding of the Chat engine API that we will be using, to come up with a precise yet functional Direct-Messaging application built in React.js. 
-Approximating to other APIs that deliver to the system, responses from users, and sends back responses of the system to the user, the Chat engine API does this also only with better functionalities.
+The learner will understand how the chat engine API works and how to use it to create a precise yet functional direct-messaging application.
 
-<!--more-->
-This tool saves you a lot of implementation time you would otherwise need on many lines of code.
-Chat Engine API can implement; 
+
+Approximating to other APIs that deliver user responses to the system, and sends back the system's responses to the user, this API works the same way, with better functionalities.
+
+This tool saves you a lot of implementation time otherwise needed on many lines of code.
+Chat engine API can implement; 
  - A group chat application.
  - Direct messages chat application that would work like Facebook messenger .
 
@@ -20,29 +20,28 @@ You will need to be equipped with what follows next before jumping right to it.
 2. Installed on your system Node.js, which you could access from [here](https://nodejs.org/en/download/). 
 3. [Node Package Manager (NPM)](https://docs.npmjs.com/cli/v6/commands/npm) know-how.
 
-### What Chat Engine API is?
-The above introduction gave us an overview of this API and we realized how the API could be consumed to build easily; chat services.
-It also allows the hosting of chats through the Rest API it lays out. The chat User Interface(UI), is created from the NPM components this tool comes with. See how the hustle is waved away for us already?
-Also, thanks to its server(s), the chat can be hosted from here(the server).
+### What chat engine API is?
+The chat engine is an API consumed to build chat services. It allows the hosting of these chats through the Rest API it lays out. The chat User Interface(UI), is created from the NPM components this tool comes with. See how the hustle is waved away for us already? 
+Furthermore, thanks to its server(s), the chat can as well be hosted from here(the server).
 
 
 ### Creating the Application
-This minute, let's begin.
-- Head to your windows terminal and navigate to a new directory named to your preference, and create a  new react app. You could opt to use the Vite tool instead whose step-by-step guide is taught in [this](https://www.section.io/engineering-education/creating-a-react-app-using-vite/) article. 
+This minute, let's begin creating the application.
+- On the terminal, cd to a new directory named to your preference and run the following commands. If you prefer using the Vite tool to create the React app, its step-by-step guide is taught in [this](https://www.section.io/engineering-education/creating-a-react-app-using-vite/) article. 
   Else, run the command below with the project name replaced with an application name of your choice. You may opt to use ***yarn create-react-app app-name***. 
  
 ```bash
 npx create-react-app project-name
 ```
 
-- In the created app folder, install the Chat Engine as a component using the command;
+- In the created app folder, install the chat engine as a component using the command;
 
 ```bash
 npm i react-chat-engine
 ```
 
-#### Setting up a Chat Engine Project 
-- We are required to have the API keys which we will get after registering(signing up or logging in) at [chatengine.io](https://chatengine.io/) for an account.
+#### Setting up a chat engine Project 
+- You are required to have the API keys which we will get after registering(signing up or logging in) at [chatengine.io](https://chatengine.io/) for an account.
 
 - You will be redirected to a page like below;
   ![Project Setup](/engineering-education/creating-a-simple-chat-app-in-react-the-using-chat-engine-api/NewProject.png) 
@@ -50,15 +49,15 @@ npm i react-chat-engine
 - Click the "New Project" button you see on the page and give your project a title.
   By now, your browser shows such a page.
   ![Project Keys](/engineering-education/creating-a-simple-chat-app-in-react-the-using-chat-engine-api/Keys.png) 
-  Save the Project ID and the secret keys somewhere safe. We will use them along the way.
+  Save the project ID and the secret keys somewhere safe. We will use them along the way.
 
 - Still, on this page, click the "new user" section at the top right corner and give a name to your new  user in a modal that pops up.
   ![New User](/engineering-education/creating-a-simple-chat-app-in-react-the-using-chat-engine-api/user.png)
 
 > You may need to create a users' list to select from, when starting a direct chat later.
 
-As a developer, you may want to always practise the separation of **sensitive** information like your userSecret, you obtained and the projectID from the rest of the code to avoid such information being exposed to **unauthorized users**, hence protecting your data. 
-Therefore, create a .env file at the root of your directory and have the ***userSecret*** and ***projectID*** saved as environment variables.
+As a developer, practise separating **sensitive** information like the user secret, you obtained and the project ID from the rest of the code. It prevents such information from being exposed to **unauthorized users**, hence protecting your data. 
+Therefore, create a "***.env***" file at the root of your directory and have the ***user secret*** and ***project ID*** saved as environment variables.
 Remember to add the **.env** file to the **.gitignore** file to avoid pushing such sensitive data to Github.
 
 ```bash
@@ -67,13 +66,13 @@ CHAT_APP_USER_SECRET = your secret key goes here
 
 ```
 
-> NOTE : **MAKE CERTAIN** you include the **SECRET** you used when creating a user, for the userSecret parameter, and **NOT** the **Private Key** provided with the ProjectID.
+> NOTE : **MAKE CERTAIN** you include the **SECRET** you used when creating a user, for the user secret parameter, and **NOT** the **private key** provided with the project ID.
 
 
 #### Adding the ChatEngine component
 In the created React app, delete every unnecessary file like ***logo.SVG, reportWebVital.js, setupTest.js, and App.test.js***. 
 Remember to delete the 'reportWebVital' import and its called function lines of code in the index.js file. 
-Setting up the Chat Engine in our application will be done like such.
+Setting up the chat engine in our application will be done like such.
 
 ```JSX
 import React from 'react'
@@ -85,7 +84,7 @@ const App = () => {
   return (
     <ChatEngine
       userName=''//Put your userName instead
-      projectID = ''// Your projectID goes here
+      projectID = ''// Your project id goes here
       userSecret=''// Replace with your secret key
 
     />
@@ -96,16 +95,16 @@ export default App
 ```
 
 Properties passed to the component are;
-1. **userName** -  that you created in your project at chatengine.io.
+1. **user Name** -  that you created in your project at chatengine.io.
 2. **project ID** 
-3. **Secret Key** we had secretly stored before and the userName we came up with for the new user.
+3. **secret key** we had secretly stored before and the userName we came up with for the new user.
 My username will be 'Muganga'.
 
-This component sets up the Chat Engine or in layman's terms backbone for any chat application, we may want to create either; the Group chat application or the Direct messages one. 
+This component sets up the chat engine or in layman's terms backbone for any chat application. We may want to create either; the Group chat application or the Direct messages one. 
 
 
 ### Implementing the Direct Messages app
-In a typical direct messaging application, a sender of messages needs to select the receiver using their contact or their username. Not any different from the Chat Engine implementation.
+In a typical direct messaging application, a sender of messages needs to select the receiver using their contact or their username. Not any different from the chat engine implementation.
 The **"getOrCreateChat"** function from the API that carries an object or "dictionary" if you are coming from a python background, is used. This object takes "usernames"(from created users) from which an existing chat may be searched for, or a new one is created.
 
 By now, you have the User Interface of the application created in your mind I guess. This UI will constitute a field for the username, a section of usernames to ***"Get"*** or ***"Create"*** a chat with, and of course, a button to hit send when a message in the text field is typed.
@@ -129,7 +128,7 @@ const DirectMessaging = () => {
     const[username, setUsername] = useState('')
 
     //Custom function that will implement the getOrCreateChat function that to select username to chat with
-    //only when the correct credentials(userSecret, projectID, username) are passed will the application be rendered
+    //only when the correct credentials(user  secret, project id, username) are passed will the application be rendered
     function implementingDirectChat(credentials){
         getOrCreateChat(
             credentials,
@@ -222,10 +221,11 @@ You can keep texting the other user however much you please. Observe, the left s
 Getting your hands dirty with code couldn't be more fun! Right?
 
 ### Wrap Up
-Creating a chat application with the Chat Engine API makes that similar Chat app project you have been longing to work on easier than ever. 
-Without a doubt, you can at this juncture use the API to come up with your own Direct messaging app and better even, a group chat application. 
+Creating any chat application using the chat engine API seems pretty easier now don't you think? 
+Without a doubt, you can at this juncture use the API to come up with your own direct messaging app and better even, a group chat application. 
 
 Enjoy Coding!
 
 ### References
-- [Chat Engine API official documentation](https://chatengine.io/docs/direct_messages)
+- [Chat engine API official documentation](https://chatengine.io/docs/direct_messages)
+- [The github link to the application's source code](https://github.com/Neema-2016/Direct-messaging-app/tree/app/chat-app)
