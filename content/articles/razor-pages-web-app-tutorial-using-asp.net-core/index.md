@@ -40,7 +40,7 @@ To create a new project, click on `Create a new project`.
 
 In the next window, click on `ASP.NET Core Web App` and click next.
 
-Next, enter the name of the Web Application you want to create, i.e. `WebApp` for this project, choose the location you want your application to be, and click next.
+Next, enter the name of the Web Application you want to create, i.e. `StudentsCheckList` for this project, choose the location you want your application to be, and click next.
 
 ![Name of the web app](/engineering-education/razor-pages-web-app-tutorial/name.png)
 
@@ -78,7 +78,7 @@ using System.Linq;
 
 using System.Threading.Tasks;
 
-namespace WebApp.Pages
+namespace StudentsCheckList.Pages
 
 {
 
@@ -115,7 +115,7 @@ In the `Index.cshtml` code, we remove the `welcome` message and add `@Model.Mess
 
 ### Integrating a model into a Razor Pages app
 
-To add a model to your Web Application, right-click on the `Solution 'WebApp'` in the solution explorer tab and navigate to `Add`, and select `New Project`.
+To add a model to your Web Application, right-click on the `Solution 'StudentsCheckList'` in the solution explorer tab and navigate to `Add`, and select `New Project`.
 
 In the new project selected, we are only interested in the `Class Library Project`, so in the search bar, type `Class Library` and select `Class Library(.NET Standard)` that uses the C# language`.
 
@@ -127,7 +127,7 @@ Click next and enter the name of the model you are adding. Click create on the n
 
 This application will be used to `create`, `read`, `update`, and `delete` operations.
 
-In this model, we want to create a list of employees of a given company, so we add `Name`, `IT`, `Payroll`, and `HR` in the public class to come up with the following sample code.
+In this model, we want to create a list of students of a given school, so we add `RegNo` `Name`, `Email`, `Department`, and `Degree` in the public class to come up with the following sample code.
 
 ```C#
 
@@ -143,11 +143,13 @@ namespace Model
 
         Name,
 
-        HR,
+        RegNo,
 
-        IT,
+        Email,
 
-        Payroll,
+        Department,
+
+        Degree
 
     }
 
@@ -155,16 +157,15 @@ namespace Model
 
 ```
 
-The next thing to do is to add employees class, so right-click on the `model class` and select `Add` then select `Class`. We will name it `Employee`.
+The next thing to do is to add employees class, so right-click on the `model class` and select `Add` then select `Class`. We will name it `Students`.
 
 In this class, we need to include these five data types. i.e,
 
-- ID
+- RegNo
 - Name
 - Email
 - Department
-- Photopath
-
+  
 To add the above data, we will have the following code;
 
 ```C#
@@ -177,27 +178,20 @@ using System.Text;
 
 namespace Model
 
-using System;
-
-using System.Collections.Generic;
-
-using System.Text;
-
-namespace Model
-
 {
 
-    public class Employee
+    public class Students
 
-    { public int Id { get; set; }
+    {
+     public int RegNo { get; set; }
 
       public String Name { get; set; }
 
       public String Email { get; set; }
 
-      public String Photopath { get; set; }
-
-      public Class1? Department { get; set; }
+      public String Department { get; set; }
+     
+      public String Degree { get; set; }
 
     }
 
@@ -211,13 +205,13 @@ In this topic, we shall be creating a search bar and making it work effectively.
 
 We shall be using bootstrap for styling.
 
-In the index razor page that displays the list of employees, we shall create a form element that we shall implement using a `get`request.
+In the index razor page that displays the list of students, we shall create a form element that we shall implement using a `get`request.
 
-When we input the `html` code below, we will have a search bar created in the employees' field.
+When we input the `html` code below, we will have a search bar created in the students' field.
 
 ```HTML
 @page
-@model WebApp.Pages.Employees.IndexModel
+@model StudentsCheckList.Pages.Students.IndexModel
 @{ViewData["Title"] ="Index";
   ViewData["ShowButtons"] = true;
 
@@ -255,11 +249,11 @@ using System.Linq;
 
 using System.Threading.Tasks;
 
-using WebApp.Models;
+using StudentsCheckList.Models;
 
-using WebApp.Services;
+using StudentsCheckList.Services;
 
-namespace WebApp.Pages.Employees
+namespace StudentsCheckList.Pages.Students
 
 {
 
@@ -267,9 +261,9 @@ namespace WebApp.Pages.Employees
 
     {
 
-        private readonly IEmployeeRepository employeeRepository;
+        private readonly IStudentsRepository studentsRepository;
 
-        public IEnumerable(IEnumerable Employees{ get; set; })
+        public IEnumerable(IEnumerable Students { get; set; })
 
         {
 
@@ -283,7 +277,7 @@ namespace WebApp.Pages.Employees
 
         {
 
-        Employees = employRepository.search(searchTerm);
+        Students = studentsRepository.search(searchTerm);
 
         }
 
@@ -293,31 +287,31 @@ namespace WebApp.Pages.Employees
 
 ```
 
-Now, we want a method that can search and filter employees. This is implemented in the `employee repository class` and the `mock employee class`.
+Now, we want a method that can search and filter Students. This is implemented in the `Students repository class` and the `mock Students class`.
 
-We shall have the code below in the `employee repository class`;
+We shall have the code below in the `Students repository class`;
 
 ```C#
 
-using WebApp.Models;
+using StudentsCheckList.Models;
 
 using System;
 
 using System.Collections.Generic;
 
-namespace WebApp.Services
+namespace StudentsCheckList.Services
 
 {
 
-    public interface IEmployeeRepository
+    public interface IStudentsRepository
 
     {
 
-        IEnumerable<Employee> Search(String searchTerm);
+        IEnumerable<Students> Search(String searchTerm);
 
-        IEnumerable<Employee> GetAllEmployees();
+        IEnumerable<Students> GetAllStudents();
 
-        Employee GetEmployee(int id);
+        Students GetStudents(int id);
 
     }
 
@@ -325,23 +319,23 @@ namespace WebApp.Services
 
 ```
 
-And we'll add the following code to the `mock employee repository class`;
+And we'll add the following code to the `mock Students repository class`;
 
 ```C#
 
-    public Employee GetEmployee(int id);
+    public Students GetStudents(int id);
 
 {
 
-return _employeeList.FirstOrDefault(e=> e.id == id);
+return _studentsList.FirstOrDefault(e=> e.id == id);
 
 }
 
-public IEnumerable<Employee> Search(string searchTerm)
+public IEnumerable<Students> Search(string searchTerm)
 
 {
 
-    return _employeeList;
+    return _studentsList;
 
 }
 
@@ -351,17 +345,19 @@ public IEnumerable Search(string searchTerm)
 
 {
 
-    return _employeeList;
+    return _studentsList;
 
 }
 
 {
 
-    return _employeeList.Where(e => e.Name.Contains(searchTerm) ||
+    return _studentsList.Where(e => e.Name.Contains(searchTerm) ||
 
-                                    e.Email.Contains(searchTerm)
+                                    e.Email.Contains(searchTerm) ||
+                                    
+                                    e.RegNo.Contains(searchTerm).toList();
 
-}
+};
 
 ```
 
@@ -381,7 +377,7 @@ To validate client-side validation, we just need to specify these three script f
 
 If you want client-side validation on several pages in your web application, then implement the scripts using the `Layout file` else implement them on the specified razor pages.
 
-In your folder under the pages folder, there is an `Edit` razor page folder that is used for adding and editing existing employees. Client-side validation is needed only on this page where all the script files will be loaded.
+In your folder under the pages folder, there is an `Edit` razor page folder that is used for adding and editing existing Students. Client-side validation is needed only on this page where all the script files will be loaded.
 
 For the second and third files above to be effective, since they are already loaded in the `partial view` file, they need to be rendered in the Edit file using the `Jquery` code below.
 
@@ -409,9 +405,9 @@ For the second and third files above to be effective, since they are already loa
 
 1. You have JavaScript enabled in your browser.
 
-2. Verify that the validation libraries for the environment you're testing in are loaded.
+2. Confirm that the libraries files are loaded in the environment you are testing.
 
-3. Ensure that client-side validation libraries are loaded in the order specified.
+3. Ensure that the three files are loaded in the correct order.
 
 ### Conclusion
 
