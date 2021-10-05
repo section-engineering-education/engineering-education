@@ -322,3 +322,5 @@ To summarize, we have learned:
 - What is a URL shortener?
 - How a URL shortener works.
 - How to build a URL shortener using JavaScript, PHP, and MySQL.
+
+Go through [how to build a URL shortener using Node.js, Express, and Mongo DB](https://www.section.io/engineering-education/nodejs-url-shortener/)
