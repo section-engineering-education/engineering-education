@@ -114,11 +114,12 @@ The following are some of the most important Servlet `HttpSession` methods:
 
 - `getSession()`: It returns a session that exists or creates a new session if it does not.
 
-- `getSession(boolean create)`: This method returns a new session for a `true` parameter, else it returns a pre-existing session if `false`.
+- `getSession(boolean I)`: This method creates a new session if `i` is `true`, and returns an existing session if `I` is `false`.
 
-- `getCreationTime()`: provides the time in milliseconds since the session began at midnight on `January 1, 1970, GMT`.
+- `getCreationTime()`: This method provides the time measured in milliseconds from the beginning of the session at midnight on `January 1, 1970`.
+`GMT`.
 
-- `getLastAccessedTime()`: The last time the client made a session-related request is returned.
+- `getLastAccessedTime()`: It is returned the last time the client submitted a session-related request.
 
 - `invalidate()`: used to destroy a session object.
 
@@ -126,7 +127,7 @@ The following are some of the most important Servlet `HttpSession` methods:
 
 - `setMaxInactiveInterval(int interval)`: The time in seconds after which the `servlet container` will expire is specified. And the return type is `void`.
 
-- `getMaxInactiveInterval()`: The maximum time interval, expressed in seconds, is returned.
+- `getMaxInactiveInterval()`: In this method, the maximum time interval per second is, returned.
  
 
 
@@ -181,7 +182,7 @@ response.sendRedirect("LoginPage.jsp");
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Login page</title>
 </head>
 <body>
 <form action="LoginAction" method="post">
