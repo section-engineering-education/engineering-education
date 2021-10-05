@@ -27,15 +27,15 @@ You need to have some basic knowledge of:
 
 ### Table of content.
 
-- [The HttpSession and its Functions](#The-HttpSession-and-its-Functions)
+- [The HttpSession and its Functions](#the-httpsession-and-its-functions)
 
-- [HttpSession object](#HttpSession-object)
+- [HttpSession object](#httpsession-object)
 
-- [HttpSession interface methods](#HttpSession-interface-methods)
+- [HttpSession interface methods](#httpsession-interface-methods)
 
-- [HttpSession Example](#HttpSession-Example)
-
-- [Conclusion](#Conclusion)
+- [HttpSession Example](#httpsession-example)
+ 
+- [Conclusion](#conclusion)
 
 ### The HttpSession and its Functions
 
