@@ -18,7 +18,7 @@ Meaningless data elements are called literals because they have fixed values. In
 <!--more-->
 It is possible to represent a wide variety of values with the help of literals. 
 
-Strings in Java are objects. If we specify the same string in many variables, only a single string object will be stored in memory by Java's virtual machine .
+Strings in Java are objects. If we specify the same string in many variables, only a single string object will be stored in memory by Java's virtual machine.
 
 There is an international standard for encoding characters. 
 
@@ -26,9 +26,9 @@ Characters can be represented in various forms such as text files. They can also
 
 The three types of character encoding are `UTF-8`, `UTF-16`, and `UTF-32`. Web content should only use `UTF-8`.
 
-To use character literals, we should put them in single quotation marks.
+To use literals, we should put them in single quotation marks.
 
-Single quotes can be used to specify any printable character other than a backslash `\` as the character itself. `a`, `A`, and `+` are examples of these literals.
+Single quotes can be used to specify any printable character other than a backslash `\` as the character itself. `a`, `A`, and `+` are examples of these literals.
 
 To represent characters that cannot be typed out in this manner, such as the backspace, escape sequences must be used instead. 
 
@@ -42,7 +42,7 @@ As with other character literals, the escape sequences should be wrapped in sing
 
 ### Encoding approaches
 #### 1. Using the char datatypes Unicode.
-In this approach, we use single quotes to store Unicode characters in a char variable, and then output the value.
+In this approach, we use single quotes to store Unicode characters in a char variable and then output the value.
 
 The implementation is shown below:
 
