@@ -28,9 +28,9 @@ This research aims to eliminate these convolutions and replace them with pure tr
 ### Prerequisites
 Before reading this article, a reader should have prior knowledge about Generative Adversarial Networks (GANs) and the Transformer architecture popularly used in Natural Language Processing (NLP). 
 
-These [articles](/introduction-to-generative-adversarial-networks/) on Section will help you get familiar with GANs.
+These [articles](/engineering-education/introduction-to-generative-adversarial-networks/) on Section will help you get familiar with GANs.
 
-Also, feel to read my previous [article](/vision-transformer-using-transformers-for-image-recognition/) on the Vision Transformer (ViT) model as it is essential to understanding this article.
+Also, feel to read my previous [article](/engineering-education/vision-transformer-using-transformers-for-image-recognition/) on the Vision Transformer (ViT) model as it is essential to understanding this article.
 
 ### Introduction
 Can we build a strong Generative Adversarial Network (GAN) free of convolutions?
@@ -67,7 +67,7 @@ This process helps achieve higher pixel densities (increasing resolution) in ima
 At each stage, the number of channels in the target dimensions is reduced to a quarter of the input while the resolution increases two-fold. These are then fed individually into a linear projection layer. It results in the generator producing (32 x 32) x 3-dimensional images fed into the discriminator model.  
 
 #### The discriminator
-The discriminator contains the same model mentioned in my previous [article](/vision-transformer-using-transformers-for-image-recognition/), the Vision Transformer (ViT) model which aims to treat images as sequences of 16 x 16 visual words. 
+The discriminator contains the same model mentioned in my previous [article](/engineering-education/vision-transformer-using-transformers-for-image-recognition/), the Vision Transformer (ViT) model which aims to treat images as sequences of 16 x 16 visual words. 
 
 The discriminator model receives its inputs from the generator model. It divides this 32 x 32 x 3 image into image patches fed into the transformer encoder. The transformer examines each image patch as a token embedding, as is the case in NLP.
 

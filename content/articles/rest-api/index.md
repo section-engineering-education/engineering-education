@@ -80,7 +80,7 @@ Output
 <Response [200]>
 ```
 
-Request returns а Response, a powerful object for inspecting the results of the request. Using Response, you can examine the headers and contents of the response, get a dictionary with data from JSON in the response, and also determine how successful our access to the server was by the response code from it. In our example, the response code was 200, which means that the request was successful. To read more About Response code you can visit [this article](/http-code-cheat-sheet/) to get a better idea.
+Request returns а Response, a powerful object for inspecting the results of the request. Using Response, you can examine the headers and contents of the response, get a dictionary with data from JSON in the response, and also determine how successful our access to the server was by the response code from it. In our example, the response code was 200, which means that the request was successful. To read more About Response code you can visit [this article](/engineering-education/http-code-cheat-sheet/) to get a better idea.
 
 
 One More Example

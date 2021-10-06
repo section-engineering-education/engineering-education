@@ -135,5 +135,5 @@ Leading to the depletion of all IPv4 addresses, IPv6 is slowly becoming the futu
 Blissful reading!
 
 ---
-Peer Review Contributions by: [Willies Ogola](/authors/willies-ogola/)
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
 

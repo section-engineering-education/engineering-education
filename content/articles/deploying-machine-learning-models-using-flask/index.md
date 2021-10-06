@@ -16,7 +16,7 @@ images:
 ---
 In this article, we will learn about deploying Machine Learning models using Flask. By the end of the article, you will have an overview of how Machine Learning models are built, how Flask servers interact with our Machine Learning model, and how to connect the model with a web application. You will also learn a step-by-step procedure for deploying the model locally.
 <!--more-->
-I highly recommend going over [this](/complete-guide-on-installing-flask-for-beginners/) article to better grasp those concepts regarding Flask. As a prerequisite, a little knowledge about [HTML](https://en.wikipedia.org/wiki/HTML) and [CSS](https://en.wikipedia.org/wiki/CSS) would help to follow this article along.
+I highly recommend going over [this](/engineering-education/complete-guide-on-installing-flask-for-beginners/) article to better grasp those concepts regarding Flask. As a prerequisite, a little knowledge about [HTML](https://en.wikipedia.org/wiki/HTML) and [CSS](https://en.wikipedia.org/wiki/CSS) would help to follow this article along.
 
 ### Table of contents
 - [Objective](#objective)
@@ -188,10 +188,10 @@ Each `input` tag has fixed styling property like:
 
 - `name` and `id` based on the respective fields
 
-All the `div` tags are enclosed within a `form` with `action="classify"` and `method="GET"`. Here, `GET` request helps us transport the data from the HTML form to the backend server. To learn more about such methods, [this](/rest-api/) article would help you understand better.
+All the `div` tags are enclosed within a `form` with `action="classify"` and `method="GET"`. Here, `GET` request helps us transport the data from the HTML form to the backend server. To learn more about such methods, [this](/engineering-education/rest-api/) article would help you understand better.
 
 #### Flask webserver
-In Python, we use the Flask framework to host local servers and when routing the webpages. Here, we will use it when deploy our Machine Learning model locally. If you are new to the Flask framework, it is highly recommended to go over [this](/complete-guide-on-installing-flask-for-beginners/) article before building.
+In Python, we use the Flask framework to host local servers and when routing the webpages. Here, we will use it when deploy our Machine Learning model locally. If you are new to the Flask framework, it is highly recommended to go over [this](/engineering-education/complete-guide-on-installing-flask-for-beginners/) article before building.
 
 To begin, let's start building by importing the necessary libraries.
 

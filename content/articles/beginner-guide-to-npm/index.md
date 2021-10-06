@@ -610,7 +610,7 @@ app.get("/", (req, res) =>{
 
 On your command line, run `node app.js`. This will give you ***Application started and Listening on port 3000***. If you visit `http://localhost:3000/` on your browser, a message ***hello world!*** will greet you, sent by your server.
 
-This a basic example of applying the installed express to a Node.js project. If you are interested in learning more about Express, we have a guide that will get you [started to express servers and routing](/express/).
+This a basic example of applying the installed express to a Node.js project. If you are interested in learning more about Express, we have a guide that will get you [started to express servers and routing](/engineering-education/express/).
 
 ### Conclusion
 This guide introduced you to NPM. I hope it gave you a good impression on how best to get started using this amazing tool. It bridges Node.js and NPM.
@@ -620,15 +620,15 @@ It provides you with packages repositories—as there are many various packages 
 Suppose you are interested in learning more; below are some links. Do have a look at them to learn more about Node.js and NPM.
 
 ### Related Topics and Additional Resources
-[The History of Node.js](/history-of-nodejs/)
+[The History of Node.js](/engineering-education/history-of-nodejs/)
 
-[Most Useful Node.js Packages](/most-useful-nodejs-packages/)
+[Most Useful Node.js Packages](/engineering-education/most-useful-nodejs-packages/)
 
-[Create and Deploy NPM Packages](/npm-packages/)
+[Create and Deploy NPM Packages](/engineering-education/npm-packages/)
 
-[Open-source packages & Code Security using NPM](/npm-registry-opensource-code-security-with-npm6/)
+[Open-source packages & Code Security using NPM](/engineering-education/npm-registry-opensource-code-security-with-npm6/)
 
-[10 Tips for Working with Node.js](/ten-tips-for-working-with-nodejs/)
+[10 Tips for Working with Node.js](/engineering-education/ten-tips-for-working-with-nodejs/)
 
 ---
 Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)
