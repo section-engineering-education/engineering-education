@@ -106,7 +106,7 @@ insert into members (username,password) values ('johnD',md5('doe'));
 ```
 
 - Click the `build schema` button
-  ![schema](schema.png)
+  ![schema](/engineering-education/sql-injection-made-familiar/schema.png)
 - On the right pane enter:
 
   ```sql
@@ -114,9 +114,9 @@ insert into members (username,password) values ('johnD',md5('doe'));
   ```
 
 - and run the code
-  ![sql-code](sqlcode.png)
+  ![sql-code](/engineering-education/sql-injection-made-familiar/sqlcode.png)
 - Your output will be :
-  ![result](result.png)
+  ![result](/engineering-education/sql-injection-made-familiar/result.png)
 - Let us say the user supplies `logan` as the username and `5678` as the password.
 
 The SQL code to execute would probably be :
@@ -142,9 +142,9 @@ Or so `1 = 1 LIMIT 1` is a condition that will consistently be valid and limits 
 `-- 'AND … `is a SQL remark that takes out the secret key part.
 
 - Run the above code in SQL FiddleRun SQL Text box as shown below
-  ![image](sql2.png)
+  ![image](/engineering-education/sql-injection-made-familiar/sql2.png)
 - The result is as shown below
-  ![result2](result2.png)
+  ![result2](/engineering-education/sql-injection-made-familiar/result2.png)
 
 ### Activity: Infuse a webpage
 - I have created a log-in form that we will use to employ SQL injection exploits. you can get it [here](https://github.com/fabulousDesigns/sql-injection-login-page)
@@ -159,7 +159,7 @@ Clone the source code in your local computer and run it with the `xammp` server.
 Enter log-in info :
 - username = 'xyzxyz'
 - password = 'xyz') OR 1=1 -- ]
-![hack-activity](app1.png)
+![hack-activity](/engineering-education/sql-injection-made-familiar/app1.png)
 - click on submit
 
 #### Step 3
@@ -178,7 +178,7 @@ The user will be redirected to the dashboard upon clicking submit button.
 SELECT * FROM members WHERE username = ‘xyzxyzx’ AND password = md5(‘xyz’) OR 1 = 1 — ]’);
 ```
 
-![generated-statements](stmt.png)
+![generated-statements](/engineering-education/sql-injection-made-familiar/stmt.png)
 
 ### Other SQL infusion assault types
 SQL Injections can do more damage than just bypassing the login calculations. A part of the assaults incorporate:
