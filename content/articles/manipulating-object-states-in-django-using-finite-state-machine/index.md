@@ -4,25 +4,23 @@ status: publish
 published: true
 url: /manipulating-object-states-in-django-using-finite-state-machine/
 title: Manipulating Object States using Finite State Machine in Django
-description: In this article, we will look at how to build manipulate the object states of FSM using Django.
+description: In this article, we will look at how to manipulate the object states of FSM using Django.
 author: ayemobola-tolulope
-date: 2021-09-27T00:00:00-23:50
-topics: []
+date: 2021-10-06T00:00:00-12:40
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
- - url: /engineering-education/manipulating-object-states-in-django-using-finite-state-machine/hero.jpg
-   alt: FSM Django Example Image
+  - url: /engineering-education/manipulating-object-states-in-django-using-finite-state-machine/hero.jpg
+    alt: FSM Django Example Image
 ---
-As we build and projects get bigger, the tendency to tilt towards spaghetti code becomes inevitable.
+As projects get bigger, the tendency to tilt towards spaghetti code becomes inevitable. One way to avoid these complications is to apply the Finite State Machines (FSM) concept in handling state changes of objects.
 <!--more-->
-One way to avoid these complications is to apply the Finite State Machines (FSM) concept in handling state changes of objects.
-
 FSM helps you simplify code, avoid numerous if-else conditions by defining states and the connections between them.
 
-In this article, we would learn how to manipulate and change an object's state at runtime.
+In this article, we will learn how to manipulate and change an object's state at runtime.
 
-To demonstrate how this works, we will be building a lightweight cylinder tracking system, with basic CRUD operations.
+To demonstrate how this works, we will be building a lightweight cylinder tracking system with basic CRUD operations.
 
 ### Table of contents
 The tutorial will cover:
@@ -34,10 +32,10 @@ The tutorial will cover:
 ### Prerequisites
 To make the most of this tutorial, it is required to have:
 - Basic understanding of Python.
-- Familiarity with the Django framework and Django Rest framework
+- Familiarity with the Django framework and Django Rest framework.
 - Familiarity with the Django rest framework browseable API interface.
 - PyCharm professional code editor installed.
-- A quick walkthrough through [Introduction to Theory of Computation](https://www.section.io/engineering-education/introduction-to-theory-of-computation/) and [Regular Expressions](https://www.section.io/engineering-education/regular-expressions-in-python/)
+- A quick walk-through on [Introduction to Theory of Computation](https://www.section.io/engineering-education/introduction-to-theory-of-computation/) and [Regular Expressions](https://www.section.io/engineering-education/regular-expressions-in-python/)
 
 ### What is Finite State Machine?
 A Finite State Machine (FSM) is a system that facilitates an object’s dynamism in object-oriented programming.
@@ -46,14 +44,14 @@ The idea is that objects can only assume one state per time. The most popular, m
 
 At any given point, regardless of the number of traffic lights on a junction, each board can only have one light at a time, or it leads to chaos.
 
-In this tutorial, we would be implementing transitions of objects states using the `CynTrack` application built in Django, to explain how FSM works.
+In this tutorial, we would be implementing transitions of objects states using the `CynTrack` application built in Django to explain how FSM works.
 
 ### How does the Finite State Machine work in Django?
-`CynTrack` is a simple application that tracks a cylinder, based on who is in possession at the time of checking.
+`CynTrack` is a simple application that tracks a cylinder based on who is in possession at the time of checking.
 
 As the cylinder moves around, the possessor changes on the fly, and the new possessor is always recorded against the cylinder object.
 
-![How-FSM-works-in-Django-image](/engineering-education/manipulating-object-states-in-django-using-finite-state-machine/image_one.JPG)
+![How FSM works in Django image](/engineering-education/manipulating-object-states-in-django-using-finite-state-machine/image-one.jpg)
 
 Let us dive into the implementation.
 
@@ -76,7 +74,9 @@ Before we create the object’s model class, we need to install the `django-fsm`
 
 You can use the following command to do this:
 
-`pip install django-fsm`
+```bash
+pip install django-fsm
+```
 
 This is what the cylinder object would look like after defining its states and creating the object:
 
@@ -102,10 +102,10 @@ class Cylinder(models.Model):
 
 From the code snippet above, we see a field name `assigned_to` that checks for the current location of a cylinder.
 
-It is named an `FSMField` with the following parameters:
+It is assigned an `FSMField` with the following parameters:
 - `choices` - the list of states that any cylinder can assume
 - `default` - the initial state that a cylinder object assumes upon creation
-- `protected` - initialized to `True`: meaning the state cannot be changed unless they are defined
+- `protected` - initialized to `True`; meaning the state cannot be changed unless they are defined
 
 Now, we can define the transitions between the different states for any given cylinder using the `@transition` decorator.
 
@@ -161,7 +161,6 @@ We would use this serializer to create a cylinder object with which we will work
 Below is our serializer:
 
 ```python
-
 from rest_framework import serializers
 from tracker.models import Cylinder
 
@@ -209,21 +208,23 @@ urlpatterns = [
 ]
 ```
 
-With the endpoints above, we can create a cylinder. Run the project’s server with the command.
+With the endpoints above, we can create a cylinder.
 
-![Django-runserver-outcome-image](/engineering-education/manipulating-object-states-in-django-using-finite-state-machine/runserver.JPG)
+Run the project’s server with the command:
 
-The default server port is `8000` for Django, except when specified with another value.
+![Django runserver outcome image](/engineering-education/manipulating-object-states-in-django-using-finite-state-machine/run-server.jpg)
+
+The default server port for Django is `8000`, except when specified with another value.
 
 Navigate to the endpoint: [http://127.0.0.1:9000/cylinder](http://127.0.0.1:9000/cylinder) and create a cylinder as shown:
 
-![Create-cylinder-object-image](/engineering-education/manipulating-object-states-in-django-using-finite-state-machine/NewOne.JPG)
+![Create cylinder object image](/engineering-education/manipulating-object-states-in-django-using-finite-state-machine/new-one.jpg)
 
 From the picture above, we see that the cylinder is resident with the retailer.
 
 Now, let us try to issue it by dispatching. A simple view will get this done.
 
-The view and URL respectively to do this are shown below:
+The view and URL to do this are shown below:
 
 ```python
 @api_view(['GET', 'PATCH'])
@@ -247,23 +248,24 @@ urlpatterns = [
     ]
 ```
 
-Now, we can visit the URL; [http://127.0.0.1:9000/retailer-to-dispatch/cylinderone/](http://127.0.0.1:9000/retailer-to-dispatch/cylinderone/) to see that the cylinder has been dispatched from the retailer
+Now, we can visit the URL; [http://127.0.0.1:9000/retailer-to-dispatch/cylinderone/](http://127.0.0.1:9000/retailer-to-dispatch/cylinderone/) to see that the cylinder has been dispatched from the retailer.
 
 Check the cylinder object by its database index ID, which is `1`, through the endpoint: [http://127.0.0.1:9000/retailer-to-dispatch/cylinder/1/](http://127.0.0.1:9000/retailer-to-dispatch/cylinder/1/)
 
-![Cylinder-object-image](/engineering-education/manipulating-object-states-in-django-using-finite-state-machine/NewThree.JPG)
+![Cylinder object image](/engineering-education/manipulating-object-states-in-django-using-finite-state-machine/new-three.jpg)
 
 To pass the same cylinder from the dispatch to the end-user, visit the endpoint: [http://127.0.0.1:8000/dispatch-to-user/cylinderone/](http://127.0.0.1:8000/dispatch-to-user/cylinderone/,)
 
-![Cylinder-object-image](/engineering-education/manipulating-object-states-in-django-using-finite-state-machine/NewFive.JPG)
+![Cylinder object image](/engineering-education/manipulating-object-states-in-django-using-finite-state-machine/new-five.jpg)
 
-And we can see that the location of the cylinder has changed from ‘with-dispatch’ to ‘with-user’.
+We can see that the location of the cylinder has changed from ‘with-dispatch’ to ‘with-user’.
 
-![Cylinder-object-image](/engineering-education/manipulating-object-states-in-django-using-finite-state-machine/NewSix.JPG)
+![Cylinder object image](/engineering-education/manipulating-object-states-in-django-using-finite-state-machine/new-six.jpg)
 
 The same approach can be used to pass the cylinder from the user to dispatch and from the dispatch to the retailer as shown below:
 
 [http://127.0.0.1:8000/user_to_dispatch/cylinderone/](http://127.0.0.1:8000/user_to_dispatch/cylinderone/)
+
 [http://127.0.0.1:8000/dispatch_to_retailer/cylinderone/](http://127.0.0.1:8000/dispatch_to_retailer/cylinderone/)
 
 ```python
@@ -300,21 +302,20 @@ urlpatterns = [
 ]
 ```
 
-The above code listing shows the endpoints for each of the views created:
-- `cylinder/` is used for creating a cylinder object and fetching all the created cylinders.
+The code listing above shows the endpoints for each of the views created:
+- `cylinder/` is used to create a cylinder object and fetch all the created cylinders.
 - `cylinder/pk` fetches a cylinder from the database indexed by the primary key (pk) appended in the URL.
 - `retailer_to_dispatch/<str:cylinder_name>/` controls the view that basically hands a cylinder from a retailer to a dispatch person.
 - `dispatch_to_user/<str:cylinder_name>/` controls the view that transfers a cylinder from a dispatch guy to an end user.
 - `user_to_dispatch/<str:cylinder_name>/` implements a cylinder return from an end user to a dispatch guy.
 - `dispatch_to_retailer/<str:cylinder_name>/` implements a cylinder return from a delivery guy back to the original custodian, the retailer.
 
-
-### Points to note when choosing an approach to changing a state from one value to another
+### Points to note
 For a moment, let's assume that we want to alter more than one field.
 
 For instance, in our cylinder tracker project, we might want to check the gas level of each cylinder – whether empty or filled – as it moves from one location to another.
 
-For this, we simply create another tuple of choices, like the location tuple, in the model. We then include a field in the model to refer to this new tuple and then write transitions for this gas volume states.
+For this, we simply create another tuple of choices, like the location tuple in the model. We then include a field in the model to refer to this new tuple and then write transitions for this gas volume states.
 
 Finally, we call the transition state for each gas volume state in the corresponding views file.
 
@@ -348,11 +349,11 @@ To conclude, using FSM offers us a wonderful way to deal with complex issues of 
 
 By adopting it, we can lower the total amount of errors that can arise as a result of a system’s inconsistency. Also, code structures would be better organized, cleaner to the eyes, easier to read, and easily scalable.
 
-You can clone the project, to follow along, from this [repository](https://github.com/teevyne/mini-tracker).
+You can clone the project from this [repository](https://github.com/teevyne/mini-tracker).
 
 I hope you were able to learn a few things by reading this tutorial.
 
-Happy coding.
+Happy coding!
 
 ---
 Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
