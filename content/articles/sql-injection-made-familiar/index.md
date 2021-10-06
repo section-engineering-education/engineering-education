@@ -196,7 +196,7 @@ In the above model, we utilized manual assault methods dependent on our huge inf
 
 These apparatuses incorporate:
 - **[Sonarqube](https://www.sonarqube.org/)**
-- `sqlsus` – http://sqlsus.sourceforge.net/
+- **[sqlsus](http://sqlsus.sourceforge.net/)**
 
 ### Forestall SQL infusion assaults
 An association can take on the accompanying strategy to ensure itself against SQL Injection assaults:
