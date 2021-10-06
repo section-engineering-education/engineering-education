@@ -164,7 +164,7 @@ Rerun the modules separately as done before using the set endpoints to make sure
 
 ### Add Server configurations
 
-In the Server, open the `application.properties` file.
+In the Server, open the `application.properties` file. This file is located under the `quarkus-server/src/main/resources` path.
 In the file, do the following:
 
 - Disable _http_ requests and enable using _https_ requests. Https allows for the application to use secure SSL. To disable http, use port number 0. Use SSL at port number 8443 as in the code below:
@@ -214,7 +214,7 @@ quarkus.http.ssl.certificate.trust-store-password=client_password
 
 ### Add Client configurations
 
-In the Client, open the `application.properties` file.
+In the Client, open the `application.properties` file. This file is located under the `quarkus-client/src/main/resources` path.
 In the file, do the following:
 
 - Use the `MicroProfile Rest Client (mp-rest)` for invocation of RESTful services over HTTP. The good thing is that it is a type-safe approach.
