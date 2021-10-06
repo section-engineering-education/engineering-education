@@ -50,11 +50,13 @@ It is frequently utilized in variety of industries, including engineering, finan
 
 ### Understanding Monte Carlo Basics
 
-For a Monte Carlo model, there are four main steps.
+For a Monte Carlo model, there are four main steps to come up with the desired result.
 
 These are discussed below:
 
-#### Basic Steps
+#### Monte Carlo Process (Basic steps to be followed)
+
+Follow these steps to come up with your intended model:
 
 1. **Define inputs probability**
 
