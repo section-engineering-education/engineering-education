@@ -30,7 +30,8 @@ A reader must have:
 2. A good understanding of [machine learning modeling](/engineering-education/house-price-prediction/).
 3. A good understanding of [supervised learning algorithms](/engineering-education/supervised-learning-algorithms/)
 4. Have knowledge of [Pandas](https://numpy.org/) and [Numpy.](https://numpy.org/)
-   > NOTE: To follow along easily, use [Google Colab](https://research.google.com/) to build your model.
+
+> NOTE: To follow along easily, use [Google Colab](https://research.google.com/) to build your model.
 
 ### Introduction
 
