@@ -192,7 +192,7 @@ SQL Injections can do more damage than just bypassing the login calculations. A 
 The above list isn't thorough; it simply gives you a thought of what SQL Injection is capable of.
 
 ### Automation devices for SQL infusion
-In the above model, we utilized manual assault methods dependent on our huge information on SQL. There are mechanized apparatuses that can assist you with playing out the assaults all the more proficiently and inside the briefest conceivable time. 
+In the above model, we utilized manual assault methods dependent on our huge information on SQL. There are mechanized apparatuses that can assist you with playing out the assaults all the more proficiently. And, inside the briefest conceivable time.
 
 These apparatuses incorporate:
 - **[Sonarqube](https://www.sonarqube.org/)**
