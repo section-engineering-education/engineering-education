@@ -13,7 +13,7 @@ So, despite putting a lot of effort into application deployments and server main
 - [Creating Azure function using Azure portal](#creating-azure-function-using-azure-portal)
 - [Using Visual Studio 2019 to create an Azure function](#using-visual-studio-2019-to-create-an-azure-function)
 		
-#### Features of Azure functions
+### Features of Azure functions
 1. You could write your function code in whatever language you choose. Azure functions may be deployed and run on any platform that supports the .NET Core programming language.
 2. *Scalability*- Azure functions uses a scalable compute-on-demand technique. When the number of requests for execution increases, new resources are automatically allocated to the service. When the number of requests decreases, all extra resources and application instances are automatically terminated.
 3. *Azure functions are small and don't require a server*- Azure functions app is designed to perform a specific task; it is lightweight by default. Azure functions are serverless, which means they may be deployed and run without using any Web servers or virtual machines.
@@ -26,7 +26,6 @@ So, despite putting a lot of effort into application deployments and server main
 10. It is easy to add Azure App Insight to your app to monitor and analyze performance. 
 11. Triggers and bindings let your serverless apps react to events and communicate with other services.
 		
-
 ### Advantages of using Azure Functions
 - The Azure functions app is small and uses very few resources to deploy and run.
 - The Azure Functions app is serverless, which means it doesn't require you to set up a Web server in the cloud.
@@ -37,6 +36,30 @@ So, despite putting a lot of effort into application deployments and server main
 - It's simple to create and deploy an Azure functions app.
 - It has a simplicity to update and support.
 - The Azure functions app is industry-standard, including industry-standard language and technologies for development and consumption.
+
+#### Examples of popular Azure Services
+1. **Active Directory in Azure**
+One of Microsoft Azure's top prominent cloud computing technology is Azure Active Directory (AD). In the Identity area, it's a platform for managing and protecting identities that may be used by anyone. Because of its strong security measures, it is deserved to be at the top of our list of the finest Azure services.
+2. **Azure CDN**
+In this context, Azure Content Delivery Network (CDN) needs special recognition for its crucial role in helping organizations grow and thrive. Its server is built such that it can accommodate a large amount of storage, web apps, and cloud services from Microsoft Azure. As a result, Azure CDN is utilized to safely transport material around the world.
+3. **Azure data factory**
+To automate data transmission and mobility in cloud computing, Azure Data Factory accepts data from many sources. A number of Azure services, such as Azure Machine Learning, Azure HDInsight Hadoop, and Azure Data Lake Analytics are used by Azure Data Factory for computation. Azure Data Lake may be seen as a massive repository for Big Data analytics that retains all of the data in its initial form.
+4. **Azure SQL**
+When it comes to database administration, Azure SQL is a service model (PaaS). This means it takes care of most of the back-end tasks like monitoring, patching, and updating itself. It's important to include Azure SQL because of how efficient it is without the need for any human involvement in the list of the best Azure services.
+5. **Azure Function**
+Azure Functions are used by developers to respond to events and attach to sources of data or messaging systems. When using Azure Function, you simply pay for the resources you use. This makes Azure Function a great value. Using Azure Functions, as one of the serverless computing solution, businesses can execute code in response to events without needing a corresponding infrastructure.
+
+Azure Function is very dependable, which is why it's often utilized in the enterprise. To accomplish decoupling, high throughput and shared resources, it may be implemented using this technique.
+
+#### Components of Azure
+1. **Compute.**It provides application development, hosting, and deployment services, as the name implies.
+2. **Storage.** When it concerns to cloud data storage, Azure storage is a major player. It offers a pay-as-you-go option so that users only pay for the resources they really utilize. Its storage capacity is almost infinite.
+3. **Database.** This component provides SQL and NoSQL capabilities for data administration. Relational databases like SQL Server, Azure Database for MySQL, and others are supported, while NoSQL databases like Cassandra may be utilized. The Cosmos DB (document DB) is another option because of its speed and improved performance.
+4. **Security And Authentication.** Authentication, authorisation, key encryption, and other security-related tasks are handled by this component. It also identifies and responds to security threats. Popular services include Azure Active Directory (AAD), Azure Key Vault, and others.
+5. **Networking.** This component allows you to create a virtual private network (VPN) and connect to it securely. Only services that have access to the VPN may use the virtual machines established inside the VPN. On-premise and Azure data center connections may be established using this. Traffic among data centers is also controlled by Azure traffic manager. To minimize traffic, the traffic management directs the process to use data from the closest datacenter.
+6. **Monitoring.** Azure monitoring services gather and analyze logs from cloud and on-premise applications to assist improve the performance of the applications they monitor. While looking at the statistics produced by the Azure Monitoring service, it is utilized to discover areas for performance improvement. Metrics and Logs are used to store all of the data gathered by apps.
+7. **Web Services.** Use of the Web Application Service allows you to deploy locally created web applications via the Internet. Java,.NET, PHP, NodeJS, and other programming languages may be used to create these apps. Scalability, high availability, and etch are just a few of the benefits it provides. It's compatible with both Windows and Linux computers, which is another plus. The user just has to worry about the development; Azure handles the implementation and upkeep. Web services are set to be public by default, making them accessible from anywhere in the Azure cloud.
+8. **Mobile Services.** This component serves as a backend for mobile apps. If your application gets a lot of daily traffic or has to store a lot of data, this is the way to go. In order to deliver alerts to phones, it offers a service called notification hubs. As an example of a provider, Notification Dash may connect to either Apple or Google. Connecting to the notifications hub requires SDKs. It may also be used to send a notice to a specific user, a group of users, or to notify everyone at once. As a result, it makes the job of the developer a lot simpler.
 		
 ### ARM templates concept
 Infrastructure-as-code may be delivered to an Azure environment in an easy and repeatable manner using 'Azure Resource Manager' (ARM) templates.
@@ -47,7 +70,6 @@ In a JSON file that the ARM API understands, we may provide the objects we want,
 		
 We declare the categories of resources, the names we intend to use for those resources, and the attributes of the resources in this file. The ARM API then assigns the indicated properties to those resources by creating new objects that match these details or changing an existing object if the resource name and type are the same.
 		
-
 However, the ARM API just adds resources to Azure; no code or apps are added to the resources as a result. If we use an ARM template to deploy a virtual machine, we can use SQL Server already installed; however we can't deploy or recover a database using an SSDT package.
 		
 ### Uses of azure functions
@@ -58,7 +80,7 @@ However, the ARM API just adds resources to Azure; no code or apps are added to 
 - Performing backup activities in the background
 - Calculations in the backend
 
->Azure functions use triggers, and when an event is triggered, the task is run in the background. Therefore not all applications are subjected to using azure functions apps.
+> Azure functions use triggers, and when an event is triggered, the task is run in the background. Therefore not all applications are subjected to using azure functions apps.
 		
 **Azure functions should be avoided if:**
 - Multitasking
@@ -68,19 +90,18 @@ However, the ARM API just adds resources to Azure; no code or apps are added to 
 		
 
 ### Azure functions vs Web jobs
-`WebJobs` is a component of the Azure App Service that one may use in automating the execution of a program or script. WebJobs are divided into two categories:
-		
-
-**Continuous**- For example, a continuous WebJob could be used to check for new images in a shared folder.
+It is possible to automate the execution of a program or script using Azure App Service's `WebJobs.` WebJobs may be broken down into two groups:
+**Continuous**- Use a WebJob to check a shared folder for new pictures using a continuous loop.
 **Triggered**- It's possible to run it on a schedule and also manually.
+		
+To test how WebJob responds in other languages, it may be run in those languages. If we use a Shell Script as an example, we may script the WebJob (Windows, PowerShell, Bash). In order to build an application, we may use the framework in conjunction with PHP, Python, Node.js, JavaScript, and.NET.
 
-WebJob may be executed in a number of languages to see how it reacts. As an illustration, we might script the WebJob using a Shell Script (Windows, PowerShell, Bash). PHP, Python, Node.js, JavaScript and.NET are just a few of the programming languages we may utilize with the framework to create an application.
+An Azure Function is similar to a web job in many ways, with the exception that you don't have to be concerned about the infrastructure while utilizing one.
 
-In many respects, an Azure Function is like a web job, except you don't have to worry about the infrastructure while using one.
+Azure's usage plan automatically scales your function depending on demand, so you only pay when your code is actually executed.
 
-With the usage plan, Azure will scale your function based on demand and you will only be charged for the time it takes to run your code.
-They can be triggered by a variety of factors, such as:
-- **HTTPTrigger**- In response to an HTTP request, this function is called.
+They may be brought on by a wide range of things, including:
+- **HTTPTrigger**- This function is invoked in response to an HTTP request.
 - **TimerTrigger**- Allows for the execution of tasks on a set timetable.
 - **BlobTrigger**- When you add a new blob to your Azure memory account.
 - **CosmosDBTrigger**- In a NoSQL database, as a result of new or modified documentation.
@@ -97,7 +118,6 @@ This section will go over how to use the Azure Portal to build an Azure function
 **Step 1a**:
 To begin, we must first log in to the Azure Portal. Then, from the Dashboard, select the Create a Resource option. Then, from the resource list, choose Function App options.
 		
-
 ![Step 1a](/engineering-education/creating_and_using_azure_function/step_1a.png)
 		
 **Step 2a**:
@@ -110,10 +130,8 @@ To construct a function app, we must now supply the following choices in the Cre
 		- Region - We must choose the region in which the data centre will be located.
 		After entering the values for the aforementioned fields, we must click the Create + Review Button. Then press the Create Button button.
 		
-
 ![Step 2a](/engineering-education/creating-and-using-azure-function/step-2a.png)
 		
-
 **Step 3a**:
 Once the Function App has been deployed, navigate to the function app, and it will appear as seen below.
 		
@@ -138,10 +156,8 @@ To create our first Azure Function, we'll need to follow the steps below.
 - Please provide the correct function name.
 - Select Add Button from the dropdown menu.
 		
-
 ![Step 2b](/engineering-education/creating-and-using-azure-function/step-2b.png)
 		
-
 **Step 3b**:
 After the function has been deployed, select the code + Test option. Within the Azure Portal, it will give us a test environment for the Azure Function. The default code template for the function, which is a C#-based function, is displayed first. That is something we can do if we wish to update the code.
 		
@@ -177,13 +193,12 @@ Now copy the highlighted URL and paste it into your browser to check the output.
 To pass the name parameter, make the following changes to the URL:
 `http://localhost:7071/api/Function1?name=Debasis%20Saha`
 		
-
 **Step 8c**:
 The output changes to the following after changing the above URL:
 		
 ![Output](/engineering-education/creating-and-using-azure-function/output.png)
 		
-
 ### Conclusion
 In this tutorial, I have discussed what is entailed in Azure Functions and compared the Azure function with WEB Jobs. As outlined in the tutorial, the step by step will enable you to handle Azure Function in Azure Portal and Visual Studio 2019.
+
 Happy learning!
