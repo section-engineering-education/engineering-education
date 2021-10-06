@@ -14,17 +14,17 @@ You will need to install the following tools to go along with the article:
 - An open-source editor, such as Eclipse, or any other related Java editor. In my case, I will be using [Eclipse IDE for Java EE Developers 2021‑09 windows version](https://www.eclipse.org/downloads/download.php?file=/oomph/epp/2021-09/R/eclipse-inst-jre-win64.exe)
 - Java JDK current version or any. In my case, I will be using [Java SE Development Kit 17 for Windows 64 bit system](https://download.oracle.com/java/17/latest/jdk-17_windows-x64_bin.zip).
 - You need a web browser installed on your computer.
-- Server. In my case, I will be using [TomCat version 10.1.0-m5 for windows](https://dlcdn.apache.org/tomcat/tomcat-10/v10.0.11/bin/apache-tomcat-10.0.11.zip)
+- Server. In my case, I will be using TomCat version 9.0.10 for windows. You can download it [here](https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.54/bin/apache-tomcat-9.0.54-windows-x86.zip).
 
 
 Table of contents:
 
-- [ServletRequest](#ServletRequest)	
-- [Methods of ServletRequest](#Methods-of-ServletRequest)	
-- [ServletRequest interface example](#ServletRequest-interface-example)	 
-- [RequestDispatcher](#RequestDispatcher)	
-- [RequestDispatcher Methods](#RequestDispatcher-Methods)	
-- [RequestDispatcher example](#RequestDispatcher-example)
+- [ServletRequest](#servletrequest)	
+- [Methods of ServletRequest](#methods-of-servletrequest)	
+- [ServletRequest interface example](#servletrequest-interface-example)	 
+- [RequestDispatcher](#requestdispatcher)	
+- [RequestDispatcher Methods](#requestdispatcher-methods)	
+- [RequestDispatcher example](#requestdispatcher-example)
 - [Conclusion](#conclusion)
 
 ### ServletRequest
@@ -72,11 +72,23 @@ We will create a user login project with a servlet in this example. In this cont
 
 **Steps to create this project.**
 
-**Step 1:** Open Eclipse IDE for Java EE developers. Create a Dynamic web project by selecting files, new then Dynamic web projects, and press enter.
+**Step 1:** [Download the Eclipse IDE for Java EE developers]((https://www.eclipse.org/downloads/download.php?file=/oomph/epp/2021-09/R/eclipse-inst-jre-win64.exe)) and install, as shown.
 
-**Step 2:** Provide a project name. Mine is called LogInDemo. Maintain all fields with default values and select Finish.
+![download eclipse](/engineering-education/servlet-request-and-servlet-collaboration/downloadeclipse.png)
 
-**Step 3:** Create a new `Login.html` page, right-click on a LogInDemo project, and then select the HTML option. And paste the code below.
+**Step 2:** Install TomCat current version. In my case, I will be using TomCat version 9.0.10 for windows. You can download it [here](https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.54/bin/apache-tomcat-9.0.54-windows-x86.zip).
+
+
+**Step 3:** Open Eclipse IDE for Java EE developers. Create a Dynamic web project by selecting files, new then Dynamic web projects, and press enter as shown.
+
+![new web project](/engineering-education/servlet-request-and-servlet-collaboration/new.png)
+
+**Step 4:** We will name our project `LogInDemo`, and leave the other fields with default values then select Finish.
+
+![Project name](/engineering-education/servlet-request-and-servlet-collaboration/projectname.png)
+
+**Step 5:** Right-click on the `LogInDemo` project, and then select the HTML file option and name it `Login.html` as shown. In Login.html paste the code below.
+
 
 ```html
 <!DOCTYPE html>
@@ -95,7 +107,13 @@ We will create a user login project with a servlet in this example. In this cont
 </html>
 ```
 
-**Step 4:** Create a new `LoginAction.java` servlet file, right-click on a LogInDemo project, and then select the servlet option. And paste the code below.
+**Step 6:** Create a new `LoginAction.java` servlet file, right-click on a LogInDemo project, and then select the servlet option as shown.
+
+![creating sevlate page](/engineering-education/servlet-request-and-servlet-collaboration/sevlatepage.png)
+
+Give your servlet class a name and select finish.
+
+![naming servlet class](/engineering-education/servlet-request-and-servlet-collaboration/servletclass.png)
 
 ```java
 package com.lodoctor;
@@ -128,6 +146,13 @@ public class LoginAction extends HttpServlet {
 
 ```
 **Step 5:** Lastly, create a new `welcomePage.jsp` file, right-click on a LogInDemo project, and then select the JSP option. And paste the code below.
+
+![new jsp file](/engineering-education/servlet-request-and-servlet-collaboration/newjsp.png)
+
+Give your jsp page a name and select finish.
+
+![naming jsp file](/engineering-education/servlet-request-and-servlet-collaboration/welcompagejsp.png)
+
 ```jsp
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
@@ -176,11 +201,11 @@ This example shows how  RequestDispatcher can forward a resource response or inc
 
 **Steps to create this project.**
 
-**Step 1:** Open Eclipse IDE for Java EE developers. Create a web project by choosing files, then new web projects, then entering a dynamic project.
+**Step 1:** Open Eclipse IDE for Java EE developers. Create a web project by selecting Files -> New -> Dynamic Web Project.
 
-**Step 2:** Provide a project name. Mine is called ServletDispatcherDemo and select Finish.
+**Step 2:** Provide a project name. We will name ours `ServletDispatcherDemo`, then select Finish.
 
-**Step 3:** Create a new `htmlPage.html` page, right-click on a LogInDemo project, and then select the HTML option. And paste the code below.
+**Step 3:** Right-click on the `ServletDispatcherDemo` project, and then select the HTML file option and name it `htmlPage.html`. In `htmlPage.html` paste the code below.
 
 ```html
 <!DOCTYPE html>
@@ -194,7 +219,7 @@ This example shows how  RequestDispatcher can forward a resource response or inc
  <select name="selectOption">
  <option value="select your category">select your category</option>
  <option value="Older">Older than 18</option>
- <option value="Bellow">Bellow 18 years</option>
+ <option value="Bellow">Below 18 years</option>
  </select><br>
  <input type="submit" value="submit">
 </form>
