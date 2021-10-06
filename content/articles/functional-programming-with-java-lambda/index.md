@@ -304,7 +304,7 @@ myList
 
 ### Conclusion
 
-In this article, we explain the concept of Functional programming in java. we also explain how use function can be used as a value. we able to explain how to create a functional program. And how to work with different parameters in lambda. Explaining the concept of a stream pipeline by given insight on the intermediate and terminal operation. the article also touches on the pros and cons of lambda functional programing.
+In this article, we explain the concept of Functional programming in java. we also explain how use function can be used as a value. we able to explain how to create a functional program. And how to work with different parameters in lambda. Explaining the concept of a stream pipeline by given insight on the intermediate and terminal operation. the article also touches on the benefit of lambda functional programing.
 
 Note: the stream pipeline explain in this article is the introduction part of it, to learn more above stream
 
