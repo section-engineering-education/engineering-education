@@ -18,7 +18,7 @@ Information is the most crucial part of a data system. Information-base controll
 <!--more-->
 SQL injection is an assault that harms dynamic SQL articulations to remark out specific pieces of the assertion or affixing a condition that will consistently be valid. It exploits the plan imperfections in inadequately planned web applications to take advantage of SQL proclamations to execute vindictive SQL code.
 
-This article will take the reader through SQL infusions and will have an unmistakable illustration of how it is carried out and how to forestall SQL infusions.
+This article will take the reader through SQL infusions.  And, it will have an unmistakable illustration of how it is carried out and how to forestall SQL infusions.
 
 ### Table of contents
 - [Introduction](#introduction)
