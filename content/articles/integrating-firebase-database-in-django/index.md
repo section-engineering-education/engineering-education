@@ -1,20 +1,20 @@
 Firebase is a  backend data storage platform provided by Google which provides a wide range of data storage services to help build applications seamlessly. It is an online NoSQL database, which stores data in JSON-like format.
 
-### Why Firebase
-Firebase manages data in realtime and can also be used in an application that is not managing large amounts of data. Some of the benefits of using Firebase are:
+### Why Firebase?
+Firebase manages data in real-time and can also be used in an application that is not managing large amounts of data. Some of the benefits of using Firebase are:
 - Easy Setup
 - Google Analytics
 - Hosting
 - Multi-platform Authentication
 
-In this tutorial, we will be looking at how to use the Firebase realtime database in Django by building a simple project.
+In this tutorial, we will be looking at how to use the Firebase real-time database in Django by building a simple project.
 
 ### Prerequisites
 To follow along with this tutorial, you will need the following: 
 - [Python3](https://www.python.org/downloads/) installed on your machine.
 - Little understanding of Django
 
-### Table of contents
+### Table of content
 - [Creating Firebase project](#creating-firebase-project)
 - [Creating Database](#creating-database)
 - [Setting Up a new Django Project](#setting-up-a-new-django-project)
@@ -33,7 +33,7 @@ To follow along with this tutorial, you will need the following:
 
 - After typing in our project name, we click on the continue button, which takes us to the screen asking if we want google analytics in our project. We do not need analytics in our project, and you can click the toggle button or click continue.
 
-- Next, we need to select our account and click on create project. This takes a few seconds to create.
+- Next, we need to select our account and click on the `create project` button. This takes a few seconds to create.
 ![Project created](/engineering-education/integrating-firebase-database-in-django/created.png)
 
 - Now that our project has been created, we click on continue, which redirects us to our project's dashboard.
@@ -113,7 +113,7 @@ INSTALLED_APPS = [
 ]
 ```
 
-To connect Firebase and Django, we need to install a python package named `pyrebase`
+To connect Firebase and Django, we need to install a python package named `pyrebase.`
 
 ```bash
 pip install pyrebase
@@ -211,9 +211,7 @@ Let us test this out by starting the server with the following command:
 python manage.py runserver 
 ```
 
-
 ![result](/engineering-education/integrating-firebase-database-in-django/result.png)
-
 
 ### Conclusion
 In conclusion, we have learned about Firebase and integrating the firebase database in a Django app.
