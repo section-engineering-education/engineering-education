@@ -204,7 +204,7 @@ An association can take on the accompanying strategy to ensure itself against SQ
 2. Put away methodology – these can exemplify the SQL explanations and treat all contributions as boundaries.
 3. Arranged explanations – arranged proclamations to work by making the SQL articulation first then, at that point regarding all submitted client information as boundaries. This has no impact on the linguistic structure of the SQL articulation.
 4. Customary articulations – these can be utilized to distinguish possible hurtful code and eliminate it before executing the SQL explanations.
-5. Information base association client access rights – just vital access rights ought to be given to accounts used to interface with the data set. This can assist with lessening what the SQL explanations can perform on the worker.
+5. Information base association client access rights – only vital access rights ought to be given to accounts used to interface with the data set. This can assist with lessening what the SQL explanations can perform on the worker.
 6. Blunder messages – these ought not to uncover touchy data and the precise area a mistake happened. Straightforward custom blunder messages, for example, "Heartbroken, we are encountering specialized mistakes. The specialized group has been reached. Kindly attempt again later" can be utilized rather than show the SQL explanations that caused the mistake.
 
 ### Conclusion
