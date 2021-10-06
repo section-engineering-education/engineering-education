@@ -1,6 +1,6 @@
 In this tutorial, we will learn how to create a geospatial server and database. The server will power the database and serve as the gateway between the users and the spatial database. 
 
-Spatial data is any data that contains the longitude and latitude of any location. Thus, they provide information about a physical location and are also referred to as Geographic Information System(GIS). 
+Spatial data is any data that contains the longitude and latitude of any location. Thus, they provide information about a physical location . Spatial data is also referred to as Geographic Information System(GIS). 
 
 Geoserver is a server that processes spatial data and also powers a geodatabase. It serves as the link between geodatabase and users by giving them access to spatial data.
 
@@ -20,10 +20,10 @@ The geodatabase is a database that stores spatial data. It allows users to creat
 -   PostGIS
 
 
-Before we start coding, we need to do some basic setup. Then, we will create and activate a new environment called env, [click here](https://www.section.io/engineering-education/introduction-to-virtual-environments-and-dependency-managers/) to learn how to create a new virtual environment.
+Before we start coding, we need to do basic setup. Then, we will create and activate a new environment called env. [Click here](https://www.section.io/engineering-education/introduction-to-virtual-environments-and-dependency-managers/) to learn how to create a new virtual environment.
 
 ### Building the database
-We begin database installation by installing Postgis. First, download and install the software from this [link](https://postgis.net/install). Next, we will create the database from our terminal and sign in as a `Postgres user` by running the command below. Ensure you enter your user password once the command executes.
+We begin database installation by installing `Postgis`. First, download and install the software from this [link](https://postgis.net/install). Next, we will create the database from our terminal and sign in as a `Postgres user` by running the command below. Ensure you enter your user password once the command executes.
 
 ```bash
 psql -U Postgres
@@ -69,10 +69,11 @@ We created a new Flask instance in the app variable, which we can use in our pro
 ```py
 app.config['SQLALCHEMY_DATABASE_URI']='postgresql://postgres:password@localhost/geodata'
 ```
-PostgreSQL tells sqlalchemy that we are using a PostgreSQL database management system
-Postgres: is our database user
-password: is the database user password
-geodata: is the database that we will use
+PostgreSQL tells sqlalchemy that we are using a PostgreSQL database management system.
+
+- Postgres: is our database user
+- password: is the database user password
+- geodata: is the database that we will use
 
 
 We will connect our database to the project using flask_sqlalchemy.
@@ -89,7 +90,7 @@ db = SQLAlchemy(app)
 
 We will use the `db` object to create our models and save data to our database. 
 
-It is time to create our table. Let us call it `AoiCordinate`, and it will have a geometry column called coordinate to will store all our coordinates:
+It is time to create our table. Let us call it `AoiCordinate`, and it will have a geometry column called `coordinate` to store all our coordinates:
 
 ```py
 class AoiCoordinate(db.Model):
@@ -107,7 +108,6 @@ exit()
 ```
 
 ## Saving the coordinates
-
 Users can submit their coordinates by filling up a form and uploading a `geojson` file or `shapefile`, so let us create the submission endpoint. However, first, let us add the snippet below to our `app.py` file.
 
 ```py
@@ -129,11 +129,13 @@ return render_template('index.html')
 
 The `@app.route('/', methods=['GET', 'POST'])` creates the endpoint that accepts GET and POST requests. We create a function called `index` and it renders the `index.html` page. 
 
-Inside the function, we check if the request is a POST request to process the form. 
+Inside the function, we check if the request is a POST request to process the form. The variable `aoi` stores the user area of interest, while the `file` stores the uploaded coordinate. 
 
-The variable `aoi` stores the user area of interest, while the `file` stores the uploaded coordinate. The file content was read using the `read()` method and converted to a JSON object using `json. loads()`. 
+The file content was read using the `read()` method and converted to a JSON object using `json. loads()`. 
 
-The `aoi_coordinate` variable selects the coordinates of the Polygon from `file_json`. The coordinate variable adds the `aoi` and `coordinate` as defined in our model. Finally, we added the coordinate to our database and committed the changes using the db object.
+The `aoi_coordinate` variable selects the coordinates of the Polygon from `file_json`. The coordinate variable adds the `aoi` and `coordinate` as defined in our model.
+
+Finally, we added the coordinate to our database and committed the changes using the db object.
 
 Flask uses the Jinja templating method to render HTML pages, and that Is what we will use in this tutorial. [Click here](https://hackersandslackers.com/flask-jinja-templates/)  to read more about Jinja templating.
 
@@ -217,7 +219,5 @@ This tutorial taught us how to create a geospatial server and database that save
 
 ### Further Reading
 - [Python Virtual Environment](https://www.section.io/engineering-education/introduction-to-virtual-environments-and-dependency-managers/) 
-
 - [Flask Jinja Templating](https://hackersandslackers.com/flask-jinja-templates/) 
-
 - [Github Repository](https://github.com/isaiaholadapo/geoserver-and-geodatabase)
