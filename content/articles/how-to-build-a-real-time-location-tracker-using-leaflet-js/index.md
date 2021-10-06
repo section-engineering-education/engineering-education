@@ -31,9 +31,9 @@ To understand this guide properly, the reader should have prior knowledge on:
 - Leaflet.js basics. [Here](https://www.section.io/engineering-education/building-simple-maps-using-leaflet-js/) is a guide on building simple maps using leaflet.js.
 
 ### Goal
-This tutorial teaches readers how to build a real-time location tracker. We will use the HTML5 geolocation API to do this and use leaflet to visualize the results. We will also guide the reader on how to add the location search plugin of leaflet.js.
+This tutorial teaches readers how to build a real-time location tracker. We will use the HTML5 geolocation API to do this and use leaflet to visualize the results. 
 
-Thus by the end, the reader should be able to:
+We will also guide the reader on how to add the location search plugin of leaflet.js. Thus by the end, the reader should be able to:
 - Create an `OSM` layer.
 - Make use of the HTML5 geolocation feature.
 - Use the leaflet.js search plugin.
@@ -331,9 +331,11 @@ function getPosition(position) {
 ```
 The callback method `getCurrentPosition` gives the current geographic location of users. To view this information, we will "`console.log`" the function's argument.
 
-The method `L.marker` embodies a marker object given a coordinate (longitude and latitude) while `L.circle` represents a circle object given a coordinate and an options object which contains the circle radius. `L.featureGroup` creates a Leaflet Feature Group that adds its child layers into a parent group when added to a map.
+The method `L.marker` embodies a marker object given a coordinate (longitude and latitude) while `L.circle` represents a circle object given a coordinate. And, an options object which contains the circle radius. 
 
-Lastly, we will need a `setInterval` method to call a function at specified intervals. The measurement is in milliseconds. The aim of using this method is to get the change in the user geographic location, thus, making a real-time tracker.
+`L.featureGroup` creates a Leaflet Feature Group that adds its child layers into a parent group when added to a map. Lastly, we will need a `setInterval` method to call a function at specified intervals. 
+
+The measurement is in milliseconds. The aim of using this method is to get the change in the user geographic location, thus, making a real-time tracker.
 
 ```js 
 if (!navigator.geolocation) {
