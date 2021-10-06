@@ -1,3 +1,21 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /making-predictions-using-monte-carlo-simulation/
+title: Making Predictions Using Monte Carlo Simulation
+description: This tutorial discusses the monte carlo simulation process. The reader will understand the steps used in this process in order to get accurate results. 
+author: victor-kamau
+date: 2021-09-02T00:00:00-06:30
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/making-predictions-using-monte-carlo-simulation/hero.jpg
+    alt:  Making Predictions Using Monte Carlo Simulation Hero Image
+
+---
+
 With the growing technology especially in the field of AI(Artificial Intelligence), the knowledge of different methods of training a model is essential to programmers.
 
 <!--more-->
@@ -49,14 +67,11 @@ It is frequently utilized in variety of industries, including engineering, finan
 4. Its **predictions** must be known when an experiment on data input is carried out.\*\*
 
 ### Understanding Monte Carlo Basics
+ #### Basic steps to be followed in the Monte Carlo process
 
-For a Monte Carlo model, there are four main steps to come up with the desired result.
+For a Monte Carlo model, there are four main steps to follow, in order to come up with the desired results.
 
-These are discussed below:
-
-#### Monte Carlo Process (Basic steps to be followed)
-
-Follow these steps to come up with your intended model:
+They are discussed below:
 
 1. **Define inputs probability**
 
@@ -122,7 +137,7 @@ The following Monte Carlo approach can be used to approximate the value of π:
 
 5. The grains counted divided by P and multiplied by 4 is an approximation.
 
-Using the four main steps, the pi can be estimated as follows:
+Using the four main steps, the `pi` can be estimated as follows:
 
 In this example, we have implemented the use of **Numpy library** in python.
 
@@ -144,11 +159,11 @@ y = numpy.random.uniform(-1, 1)
 
 ```
 
-##### **Computate the inputs**#####
+##### **Computate the inputs**
 
 Test whether a randomly generated point (x, y) is within points of the circle:
 
-To do that, write this code;
+To do that, write the following code:
 
 ```
 
@@ -213,7 +228,7 @@ print(4*inside/float(N))
 
 You can run the code on your computer to practice.
 
-### Real time Application
+### Real time Applications
 
 1. **Application in Uncertainty Analysis**
 
@@ -260,10 +275,10 @@ plt.hist(sim)
 
 ```
 
-### The Accuracy
+### The Accuracy of Monte Carlo
 Mathematical theory states that the accuracy of a Monte Carlo estimation technique should increase proportionally to the square root of the number of trials made.
 
-### Why prefer Monte Carlo
+### Why Monte Carlo?
 When you repeat an experiment several times, the law of big numbers comes into play.
 
 The average of the findings should be close to the expected value after numerous trials.
@@ -278,7 +293,7 @@ Despite the accuracy level that can be produced by the Monte Carlo method, peopl
 
 They opt for other techniques like the **forecast method**.
 
-Here are some reasons why one would prefer other method over Monte Carlo;
+Here are some reasons why one would prefer other method over Monte Carlo:
 
 1. **Unreliability** is the biggest issue with this method.
 
@@ -294,8 +309,14 @@ Businesses have been affected in situations where the projected losses hits deep
 
 Monte Carlo simulation technique has been widely used for predictions in different areas.
 
-Risk analysis being a major use, it's has been greatly adopted.
+Risk analysis being a major use, it has been greatly adopted.
 
-We probably can't judge it's efficiency or accuracy which largely depend on the past patterns/data.
+We probably cannot judge it's efficiency or accuracy which largely depends on the past patterns/data.
+
+I hope you find this article helpful.
 
 Happy coding!
+
+---
+
+Peer Review Contributions by: [Monica Masae](/engineering-education/authors/monica-masae/)
