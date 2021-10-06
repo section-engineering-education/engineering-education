@@ -214,9 +214,7 @@ python manage.py runserver
 ![result](/engineering-education/integrating-firebase-database-in-django/result.png)
 
 ### Conclusion
-In conclusion, we have learned about Firebase and integrating the firebase database in a Django app.
-
-We also learned how to use the `Realtime Database`. There are other firebase services you can try out, like authentication.
+In conclusion, we have learned about Firebase and integrating the firebase database in a Django app.We also learned how to use the `Realtime Database`. There are other firebase services you can try out, like authentication.
 
 Check out the [Firebase](https://firebase.google.com/docs) documentation to learn more about Firebase.
 
