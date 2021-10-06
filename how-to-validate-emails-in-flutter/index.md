@@ -60,47 +60,43 @@ flutter create my-project-name
 There is where all the code we need to run for the page has been coded. It contains the text field, button, labels amongst other widgets all to demonstrate the email validator functionality.
 ```dart
 //import for all the packages required
-import 'package:flutter/material.dart';//this imports the material dart package
+import 'package:flutter/material.dart';
 import 'package:email_validator/email_validator.dart';//imports the email validator package
 import 'second_screen.dart';//import for the second page after email validation
 import 'package:get/get.dart';//imports required components from get dart class
 
 void main() {
-  runApp(const MyApp());//starts the app
+  runApp(const RealApp());//starts the app
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class RealApp extends StatelessWidget {
+  const RealApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      debugShowCheckedModeBanner: false,//removes the debug banner
       title: 'Email Validator',
-      theme: ThemeData(
-        primarySwatch: Colors.lightblue,//color
-      ),
-      home: const MyHomePage(),
+      home: const FirstPage(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key}) : super(key: key);
+class FirstPage extends StatefulWidget {
+  const FirstPage({Key? key}) : super(key: key);
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  FirstPageState createState() => _FirstPageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _FirstPageState extends State<MyHomePage> {
   late String _email;
   @override
   Widget build(BuildContext context) {
     final _emailController = TextEditingController();//decalring email variable
-    final _formKey = GlobalKey<FormState>();//declaring the formkey valiable
+    final myformKey = GlobalKey<FormState>();//declaring the formkey valiable
     return Scaffold(//will hold the body and widgets in it
       body: Form(
-        key: _formKey,
+        key: myformKey,
         child: Align(
           alignment: Alignment.center,//places the element at the center
           child: Padding(
@@ -128,8 +124,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   height: 20,
                 ),
                 ElevatedButton(
-                  onPressed: () {
-                    _formKey.currentState?.validate();
+                  onTap: () {
+                    formKey.currentState?.validate();
                   },
                   child: const Padding(
                     padding: EdgeInsets.all(8.0),
@@ -152,10 +148,11 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 
 ```  
-### Step3. Create a new file called secondpage. dart
-In this page the user will land on it if the email entered is valid.
+### Step3. Create secondpage. dart 
+For this page Users will land on it if the email entered is valid.
 ```dart
-import 'package:flutter/material.dart';//imports the material dart package 
+//import are here
+import 'package:flutter/material.dart'; 
 
 class SecondScreen extends StatelessWidget {
   const SecondScreen({Key? key}) : super(key: key);
