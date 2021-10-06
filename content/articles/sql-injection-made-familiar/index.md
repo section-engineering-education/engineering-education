@@ -14,7 +14,7 @@ images:
  - url: /engineering-education/sql-injection-made-familiar/hero.png
    alt: SQL Injection Made Familiar Hero Image
 ---
-Information is perhaps the most crucial part of a data system. Information base-controlled web applications are utilized by most associations to get information from clients, thus drawing in information security.
+Information is the most crucial part of a data system. Information-base controlled web applications are utilized by most associations to get information from clients. Thus, drawing in information security.
 <!--more-->
 SQL injection is an assault that harms dynamic SQL articulations to remark out specific pieces of the assertion or affixing a condition that will consistently be valid. It exploits the plan imperfections in inadequately planned web applications to take advantage of SQL proclamations to execute vindictive SQL code.
 
