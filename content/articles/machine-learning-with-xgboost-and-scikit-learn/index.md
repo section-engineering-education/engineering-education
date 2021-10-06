@@ -236,6 +236,8 @@ When building a model the internal nodes of the tree are used to represent the u
 
 ![Decision tree classifier](/engineering-education/machine-learning-with-xgboost-and-scikit-learn/decision-tree-classifier.png)
 
+*[Image source: Javatpoint](https://static.javatpoint.com/tutorial/machine-learning/images/decision-tree-classification-algorithm.png)*
+
 ```python
 from sklearn.tree import DecisionTreeClassifier
 ```
