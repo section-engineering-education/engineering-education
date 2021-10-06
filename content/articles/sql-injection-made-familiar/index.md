@@ -34,7 +34,7 @@ The sorts of assaults that can be performed utilizing SQL infusion differ contin
 
 A powerful assertion is an explanation that is created at a run time utilizing boundaries secret phrases from a web structure or URI query string.
 
-Let's take a look at a simple login form with some basic styling:
+Let us take a look at a simple login form with some basic styling:
 - [Get the form](https://github.com/fabulousDesigns/sql-injection-login-page)
 - create 2 files:
   1.  `index.html`
@@ -75,9 +75,10 @@ Let's take a look at a simple login form with some basic styling:
 ```
 
 ![Form](/engineering-education/sql-injection-made-familiar/form.jpg)
+
 The above structure acknowledges the username, and password then, at that point submits them to a PHP record named `loginAuth.php`. It has an alternative of putting away the login session in a cookie. 
 
-We have derived this from the `remember-me` checkbox. It utilizes the post strategy to submit information. This implies the user credentials are not shown in the URL.
+We have derived this from the `remember-me` checkbox. It utilizes the post strategy to submit information. This implies that the user credentials are not shown in the URL.
 
 **Suppose user authentication is done using the following statement:**
 
@@ -91,7 +92,7 @@ We will represent SQL infusion assault utilizing `sqlfiddle`. Open the [SQL Fidd
 
 You will get the accompanying window:
 
-- The first thing you want to do in `sqlfiddle` is to create a schema
+- The first thing you want to do in `sqlfiddle` is to create a schema.
   so, on the left pane paste the SQL code below:
 
 ```sql
@@ -106,7 +107,9 @@ insert into members (username,password) values ('johnD',md5('doe'));
 ```
 
 - Click the `build schema` button
+
   ![schema](/engineering-education/sql-injection-made-familiar/schema.png)
+
 - On the right pane enter:
 
   ```sql
@@ -114,12 +117,16 @@ insert into members (username,password) values ('johnD',md5('doe'));
   ```
 
 - and run the code
+
   ![sql-code](/engineering-education/sql-injection-made-familiar/sqlcode.png)
-- Your output will be :
+
+- Your output will be:
+
   ![result](/engineering-education/sql-injection-made-familiar/result.png)
+
 - Let us say the user supplies `logan` as the username and `5678` as the password.
 
-The SQL code to execute would probably be :
+The SQL code to execute would probably be:
 
 ```sql
 SELECT * FROM members WHERE username = 'logan` AND password = md5('5678');
@@ -142,14 +149,17 @@ Or so `1 = 1 LIMIT 1` is a condition that will consistently be valid and limits 
 `-- 'AND … `is a SQL remark that takes out the secret key part.
 
 - Run the above code in SQL FiddleRun SQL Text box as shown below
+
   ![image](/engineering-education/sql-injection-made-familiar/sql2.png)
+
 - The result is as shown below
+
   ![result2](/engineering-education/sql-injection-made-familiar/result2.png)
 
 ### Activity: Infuse a webpage
 - I have created a log-in form that we will use to employ SQL injection exploits. you can get it [here](https://github.com/fabulousDesigns/sql-injection-login-page)
 - The form has some fundamental security, for example, sanitizing the username field.
-- This implies our above code can't be utilized to sidestep the login. To get around that, we can rather take advantage of the secret word field.
+- This implies our above code can't be utilized to sidestep the login. To get around that, we can take advantage of the secret word field.
 - The outline below shows the steps that you should follow.
 
 #### Step 1
@@ -159,7 +169,9 @@ Clone the source code in your local computer and run it with the `xammp` server.
 Enter log-in info :
 - username = 'xyzxyz'
 - password = 'xyz') OR 1=1 -- ]
+
 ![hack-activity](/engineering-education/sql-injection-made-familiar/app1.png)
+
 - click on submit
 
 #### Step 3
@@ -170,9 +182,9 @@ If a user provides the following:
 - username = `xyzxyz`
 - password = `xyz') OR 1 = 1 -- ]`
 
-The user will be redirected to the dashboard upon clicking submit button.
+The user will be redirected to the dashboard upon clicking the submit button.
 
-  **Let's take a closer look at the generated statements:**
+**Let's take a closer look at the generated statements:**
 
 ```sql
 SELECT * FROM members WHERE username = ‘xyzxyzx’ AND password = md5(‘xyz’) OR 1 = 1 — ]’);
