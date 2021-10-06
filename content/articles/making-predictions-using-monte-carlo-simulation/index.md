@@ -1,6 +1,12 @@
-### Table of Contents
+With the growing technology especially in the field of AI(Artificial Intelligence), the knowledge of different methods of training a model is essential to programmers.
 
--[Introduction](#introduction)
+<!--more-->
+
+These techniques help in automation of decision making process and help predict the probability of different outcomes when random variables are intercepted.
+
+This article will simplify monte carlo method operations and help programmers to clearly understand what this technique entail.
+
+### Table of Contents
 
 -[What is Monte Carlo Simulation?](#what-is-monte-carlo-simulation)
 
@@ -20,16 +26,10 @@
 
 -[Conclusion](conclusion)
 
-### Introduction
-
-With the growing technology especially in the field of AI(Artificial Intelligence), the knowledge of different methods of training a model is essential to programmers.
-
-These techniques help in automation of decision making process and help predict the probability of different outcomes when random variables are intercepted.
-
-This article will simplify monte carlo method operations and help programmers to clearly understand what this technique entail.
-
 ### What is Monte Carlo Simulation?
-It is simply a model that is used to outline the probability of various outcomes of decisions made. The simulations help to describe and assess the expected risk impact to eliminate uncertainity for better decisions.
+It is simply a model that is used to outline the probability of various outcomes of decisions made.
+
+The simulations help to describe and assess the expected risk impact to eliminate uncertainity for better decisions.
 
 This is an approach technique rather than an exact technique.
 
@@ -39,10 +39,8 @@ It is frequently utilized in variety of industries, including engineering, finan
 
 ### Unique attributes from other techniques
 1. **Simple, flexible and Scalable algorithms**
-
-    They reduce a complex model to a collection of basic events and interactions when used.
-
-    On a computer, opening the probability to encode model behavior through rules may be done quickly.
+  They reduce a complex model to a collection of basic events and interactions when used.
+  On a computer, opening the probability to encode model behavior through rules may be done quickly.
 
 2. It must **generate random samples** as a result of its output.
 
@@ -54,7 +52,7 @@ It is frequently utilized in variety of industries, including engineering, finan
 
 For a Monte Carlo model, there are four main steps.
 
-These are discussed below.
+These are discussed below:
 
 #### Basic Steps
 
