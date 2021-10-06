@@ -11,7 +11,7 @@ topics: [cloud computing]
 excerpt_separator: <!--more-->
 images:
 
-  - url:  /choosing-a-microservice-framework-for-your-project/hero.jpeg
+  - url:  /engineering-education/choosing-a-microservice-framework-for-your-project/hero.jpg
     alt: Microservices Framework Example Image
 ---
 In the past years, applications have always been developed following the monolith architecture. They were coded from top to bottom as a single unit. 
