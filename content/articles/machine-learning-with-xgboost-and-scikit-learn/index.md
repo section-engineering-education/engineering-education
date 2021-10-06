@@ -26,10 +26,10 @@ In this tutorial, we will use Scikit-learn to build our model, and then we impro
 
 A reader must have:
 
-1. A good understanding of [Python](/engineering-education/python-projects-for-beginners/).
-2. A good understanding of [machine learning modeling](/engineering-education/house-price-prediction/).
-3. A good understanding of [supervised learning algorithms](/engineering-education/supervised-learning-algorithms/)
-4. Have knowledge of [Pandas](https://numpy.org/) and [Numpy.](https://numpy.org/)
+- A good understanding of [Python](/engineering-education/python-projects-for-beginners/).
+- A good understanding of [machine learning modeling](/engineering-education/house-price-prediction/).
+- A good understanding of [supervised learning algorithms](/engineering-education/supervised-learning-algorithms/)
+- Have knowledge of [Pandas](https://numpy.org/) and [Numpy.](https://numpy.org/)
 
 > NOTE: To follow along easily, use [Google Colab](https://research.google.com/) to build your model.
 
