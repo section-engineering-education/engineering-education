@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /geofencing-in-android-with-kotlin/
-title: Geofencing in Android with Kotlin
-description: This tutorial takes the reader through the process of implementing geofence in Android applications. Geo-Fencing API lets you define the outline or limit of a specific area and feature that surrounds a point of interest.
+title: Implementing Geofencing in Android using Kotlin
+description: This tutorial takes the reader through the process of implementing geofencing in Android applications using Kotlin.
 author: brandy-odhiambo
-date: 2021-10-06T00:00:00-01:40
+date: 2021-10-06T00:00:00-02:40
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,9 +14,9 @@ images:
   - url: /engineering-education/geofencing-in-android-with-kotlin/hero.png
     alt: Geofencing in Android with Kotlin hero image
 ---
-Geofence is an imitated variable that describes a real geographical area of interest. Geo-Fencing API lets you define the outline or limit of a specific area and feature that surrounds a point of interest.
+Geofence is an imitated variable that describes a real geographical area of interest. Geofencing API allows you to define the outline or limit of a specific area. When users cross the Geofence, they are alerted by a notification.
 <!--more-->
-When users cross the Geofence, they are alerted by a notification. This gives a beneficial experience when users are in the facility. Geo-Fencing API employs the use of device sensors to detect user's location in a battery-efficient manner.
+Geofencing API employs the use of device sensors to detect a user's location in a battery-efficient manner.
 
 #### Geofence comprises of three transition types:
 - **Enter** – This demonstrates that the user has entered the geofence.
@@ -34,7 +34,7 @@ To follow along this tutorial, you should:
 #### Step 1 – Creating an Android project
 In this step, we'll create an Android Studio project with a Google Map activity.
 
-> Make sure you have selected Google Maps Activity template.
+> Make sure you have selected `Google Maps Activity` template.
 
 ![New Project](engineering-education/geofencing-in-android-with-kotlin/new_project.png)
 
@@ -47,9 +47,9 @@ implementation 'com.google.android.gms:play-services-location:18.0.0'
 ```
 
 #### Step 3 – Adding the required permissions
-To begin using Geofencing API, the user must first check and allow location permissions.
+To start using Geofencing API, the user must first allow location permissions.
 
-In the Android manifest file, add the following permissions:
+In the `Android manifest` file, add the following permissions:
 
 ```xml
 <uses-permission  android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -57,9 +57,9 @@ In the Android manifest file, add the following permissions:
 ```
 
 #### Check permissions
-Before declaring the function, ensure that the app has the permission to run in the foreground and background. It's useful to look into the Android API version of the device.
+Before declaring the function, ensure that the app has permission to run in the foreground and background. It's useful to look into the [Android API](https://source.android.com/setup/start/build-numbers) version of the device.
 
-Add the following code to your activity file:
+Add the following code in your `MainActivity` file:
 
 ```kotlin
 private val gadgetQ = android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.Q
@@ -86,7 +86,9 @@ private fun approveForegroundAndBackgroundLocation(): Boolean {
 }
 ```
 
-If the device is running Android Q (API 29), ensure that the permissions `ACCESS_BACKGROUND_LOCATION` and `ACCESS_FINE_LOCATION` are enabled. If the device is running an older version, you don't need permission to view the location in the background.
+If the device is running Android Q (API 29), ensure that the permissions `ACCESS_BACKGROUND_LOCATION` and `ACCESS_FINE_LOCATION` are enabled. 
+
+If the device is running an older Android version, you don't need permission to access the user's location in the background.
 
 ```kotlin
 private fun authorizedLocation(): Boolean {
@@ -107,9 +109,9 @@ private fun authorizedLocation(): Boolean {
 ```
 
 #### Request background and fine location permissions
-This is where you request permission from the user to access their location if not granted.
+This is where you request permission from the user to access their location if it was not granted.
 
-> Add the following variables in a global scope or in a companion object.
+> Add the following variables in a `global scope` or a `companion object`.
 
 ```kotlin
 private val REQUEST_FOREGROUND_AND_BACKGROUND_PERMISSION_RESULT_CODE = 3 // random unique value
@@ -137,7 +139,7 @@ private fun askLocationPermission() {
 }
 ```
 
-Once the user responds to the permissions request, you should process their response in the `onRequestPermissionsResult()` method as shown below.
+Once the user responds to the permissions request, you should process their response in the `onRequestPermissionsResult()` method, as shown below.
 
 ```kotlin
 override fun onRequestPermissionsResult(
@@ -198,7 +200,7 @@ private fun validateGadgetAreaInitiateGeofence(resolve: Boolean = true) {
 }
 ```
 
-Check if the user has accepted or rejected the request in the `onActivityResult()` method. If they haven't, re-inquire them.
+Check if the user has accepted or rejected the request in the `onActivityResult()` method. If they haven't, prompt them again.
 
 ```kotlin
 override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -207,12 +209,14 @@ override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) 
     }
 ```
 
-#### Step 5 – Adding and Removing Geofence
+#### Step 5 – Adding and removing a geofence
 
 **Adding Geofence**
-You'll need a method that `PendingIntent` provides to manage Geofence transitions.
+You'll need a method to inherit from the `PendingIntent` to manage Geofence transitions.
 
-A `PendingIntent` describes both an `intent` and the `action` that should be done in response to it. We'll define a pending intent for a BroadcastReceiver to control the Geofence transitions.
+A `PendingIntent` describes both an `intent` and the `action` that should be done in response to it. 
+
+We'll define a pending intent for a `BroadcastReceiver` to control the Geofence transitions.
 
 ```kotlin
  private val geofenceIntent: PendingIntent by lazy {
@@ -221,19 +225,23 @@ A `PendingIntent` describes both an `intent` and the `action` that should be do
     }
 ```
 
-A GeofencingClient is the most basic way to interact with the geofencing APIs. Create an instance of GeofencingClient. 
+A `GeofencingClient` is the most basic way to interact with the Geofencing APIs. 
+
+Therefore, create an instance of `GeofencingClient`: 
 
 ```kotlin
 private lateinit var geoClient: GeofencingClient
 ```
 
-In the `onCreate()` method, initialize the `geofencingClient`
+In the `onCreate()` method, initialize the `geofencingClient`:
 
 ```kotlin
 geoClient = LocationServices.getGeofencingClient(this)
 ```
 
-Also within the onCreate method, add a geofenceList that holds geofences. In this step, we will add one geofence but you can have many geofences. 
+Still, in the `onCreate` method, add a `geofenceList` that holds `geofences`. 
+
+In this step, we will add one geofence but you can have as many as you wish. 
 
 ```kotlin
 val latitude = 0.616016
@@ -248,7 +256,7 @@ geofenceList.add(Geofence.Builder()
             .build())
 ```
 
-Create function that specify the geofence to monitor and the initial trigger.
+Create a function that specifies the geofence, as highlighted below:
 
 ```kotlin
 private fun seekGeofencing(): GeofencingRequest {
@@ -259,7 +267,7 @@ private fun seekGeofencing(): GeofencingRequest {
 }
 ```
 
-To get a geofence associated with a `pendingIntent`, create a geofence function and include the following implementation within it.
+To associate a geofence with a `pendingIntent`, create a geofence function and include the following implementation within it:
 
 ```kotlin
 private fun addGeofence(){
@@ -280,9 +288,9 @@ private fun addGeofence(){
 }
 ```
 
-**Removing Geofence**
+**Removing a geofence**
 
-It is a good practice to remove any geofence associated with a `PendingIntent` when not in use.
+It is a good practice to remove any geofence associated with a `PendingIntent` when not in use. We do so, using the following method:
 
 ```kotlin
 private fun removeGeofence(){
@@ -297,7 +305,7 @@ private fun removeGeofence(){
 }
 ```
 
-Within the `onDestroy` method, call the `removeGeofence()` function.
+Within the `onDestroy` method, call the `removeGeofence()` function:
 
 ```kotlin
 override fun onDestroy() {
@@ -307,7 +315,11 @@ override fun onDestroy() {
 ```
 
 #### Step 6 – Creating a BroadcastReceiver class
-Other Android  applications, as well as the system itself, can send and receive broadcast messages on Android systems. BroadcastReceiver listens for Geofence transitions and provides a notification when a device enters a geofence area.
+Android applications can send and receive broadcast messages on devices.
+
+The `BroadcastReceiver` listens for Geofence transitions and provides a notification when a device enters a particular geofence area.
+
+The BroadcastReceiver is implemented as follows:
 
 ```kotlin
 class GeofenceBroadcastReceiver : BroadcastReceiver() {
@@ -336,7 +348,7 @@ class GeofenceBroadcastReceiver : BroadcastReceiver() {
 }
 ```
 
-In your manifest, add the following code:
+In your manifest, add the following code to register the BroadCastReceiver:
 
 ```xml
 <application>
@@ -345,9 +357,8 @@ In your manifest, add the following code:
 </application>
 ```
 
-This registers the BroadcastReceiver class with the system.
-
 #### Setting up a notification
+We set up a notification using the following code:
 
 ```kotlin
 private const val NOTIFICATION_ID = 33
@@ -387,14 +398,14 @@ fun NotificationManager.sendGeofenceEnteredNotification(context: Context) {
 ```
 
 ### Conclusion
-In this article, we have learned what geofencing is, how to add and remove a geofence, listening to geofence events using a broadcast receiver, and displaying a notification when someone enters a geofence. Keep exploring more on Google Maps geofencing.
+In this article, we have learned what geofencing is, how to add and remove a geofence, listening to geofence events using a broadcast receiver, and displaying a notification when someone enters a geofence. 
 
 You can check the full implementation on [this repository](https://github.com/brandy-kay/GeofencingDemo) on GitHub.
 
-### References
-[Android Documentation](https://developer.android.com/training/location/geofencing)
-
 Happy coding!
+
+### Further reading
+- [Android Documentation](https://developer.android.com/training/location/geofencing)
 
 ---
 Peer Review Contributions by: [Eric Gacoki](/engineering-education/authors/eric-gacoki/)
