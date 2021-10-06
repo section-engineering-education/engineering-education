@@ -186,7 +186,7 @@ SQL Injections can do more damage than just bypassing the login calculations. A 
 - Updating information
 - Embeddings information
 - Executing orders on the worker that can download and introduce malignant projects like Trojans
-- Sending out significant information, for example, Mastercard subtleties, email, and passwords to the assailant's far-off worker.
+- Sending out significant information. For example, Mastercard subtleties, email, and passwords to the assailant's far-off worker.
 - Getting client login subtleties and so on.
 
 The above list isn't thorough; it simply gives you a thought of what SQL Injection is capable of.
