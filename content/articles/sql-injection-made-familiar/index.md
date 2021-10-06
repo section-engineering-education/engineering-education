@@ -87,7 +87,7 @@ SELECT * FROM members WHERE username = $_POST['uName'] AND password = md5($_POST
 
 The above assertion utilizes the upsides of the `$_POST[]` cluster without cleaning them. The secret key, password, is encoded utilizing the `MD5` calculation. 
 
-We will represent SQL infusion assault utilizing `sqlfiddle`. Open the URL `http://sqlfiddle.com/` in your internet browser. 
+We will represent SQL infusion assault utilizing `sqlfiddle`. Open the [SQL Fiddle](http://sqlfiddle.com/) in your internet browser. 
 
 You will get the accompanying window:
 
