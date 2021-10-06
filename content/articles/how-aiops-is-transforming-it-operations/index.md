@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/how-aiops-is-transforming-it-operations/hero.jpg
     alt: example image
 ---
-The world of technology is in an era of digital transformation. Part of this transformation includes [DevOps](/what-it-takes-to-be-a-devops-engineer/) and the adoption of technologies such as containers and the cloud. 
+The world of technology is in an era of digital transformation. Part of this transformation includes [DevOps](/engineering-education/what-it-takes-to-be-a-devops-engineer/) and the adoption of technologies such as containers and the cloud. 
 <!--more-->
 There is also a shift from centralized IT towards a more developers and applications centric approach along with a heightened innovation and deployment rate. There is a higher influx of digital users such as machine agents, application program interfaces (API), and internet of things devices.
 
@@ -23,7 +23,7 @@ These new users and technologies are straining traditional service management st
 This article discusses the benefits and challenges of AIOps, how it works, and highlights the best AIOps software.
 
 ### What is AIOps?
-AIOps uses [machine learning (ML), artificial intelligence (AI)](/differences-between-artificial-intelligence-machine-learning-and-deep-learning/), and analytics techniques to train data to note and address potential problems in real-time automatically. Machine learning algorithms learn from data without necessarily depending on rule-based programming.
+AIOps uses [machine learning (ML), artificial intelligence (AI)](/engineering-education/differences-between-artificial-intelligence-machine-learning-and-deep-learning/), and analytics techniques to train data to note and address potential problems in real-time automatically. Machine learning algorithms learn from data without necessarily depending on rule-based programming.
 
 AIOps relies on the algorithmic analysis of IT data to help DevOps and IT operations teams to work faster and smarter. AIOps helps these teams detect and react to digital issues early enough to prevent an impact on customers and business operations.
 

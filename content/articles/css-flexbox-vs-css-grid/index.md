@@ -34,7 +34,7 @@ Here is a simple example that showcases HTML items inside an HTML container.
 
 In this example, the outermost `div` is a container element where other `divs` are the container items.
 
-This guide will discuss the differences and relationships that exist between Grid and Flexbox layouts. To follow along with this guide, prior knowledge of [CSS Flexbox](/css-flexbox/) and [CSS Grid](/css-grid/) would be helpful.
+This guide will discuss the differences and relationships that exist between Grid and Flexbox layouts. To follow along with this guide, prior knowledge of [CSS Flexbox](/engineering-education/css-flexbox/) and [CSS Grid](/engineering-education/css-grid/) would be helpful.
 
 ### What is CSS Flexbox
 Flexbox is a layout mode in CSS3. It's a more proficient approach to designing, aligning, and disseminating space between items in a container to control their arrangement. 

@@ -16,7 +16,7 @@ images:
 ---
 In this tutorial, we are going to build an AI neural network model to predict stock prices. Specifically, we will work with the **Tesla** stock, hoping that we can make Elon Musk happy along the way.
 <!--more-->
-If you are a beginner, it would be wise to check out [this article](/introduction-to-neural-networks/) about neural networks. 
+If you are a beginner, it would be wise to check out [this article](/engineering-education/introduction-to-neural-networks/) about neural networks. 
 
 To get the most out of this tutorial, it would be helpful to have the following prerequisites.
 

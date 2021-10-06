@@ -31,7 +31,7 @@ It uses the outcome of previous iterations to select the next potential hyperpar
 ### Prerequisites
 Before reading any further, I recommend some basic understanding of [Baye’s Theorem](https://betterexplained.com/articles/an-intuitive-and-short-explanation-of-bayes-theorem/). 
 
-I also encourage you to have read up on [grid](/grid-search/) and [random](/random-search-hyperparameters/) search. This will offer a more intuitive understanding of optimization as a whole.
+I also encourage you to have read up on [grid](/engineering-education/grid-search/) and [random](/engineering-education/random-search-hyperparameters/) search. This will offer a more intuitive understanding of optimization as a whole.
 
 ### Bayesian statistics
 

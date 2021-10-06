@@ -85,7 +85,7 @@ After creating the project, we will add `Timber's` dependency to our app-level b
 //Timber dependency
 implementation 'com.jakewharton.timber:timber:4.7.1'
 ```
-![adding dependency](/planting-timber-logs-the-right-way/add_dependency.png)
+![adding dependency](/engineering-education/planting-timber-logs-the-right-way/add_dependency.png)
 
 #### Step 3: XML layouts
 We will now create and design our layout.
@@ -161,7 +161,7 @@ We will now create and design our layout.
 ```
 #### Step 4: The Timber App Class
 After creating the layout, we will write the code for our `Application class of Timber`
-![creating a class in java](/planting-timber-logs-the-right-way/creating_a_class_java.png)
+![creating a class in java](/engineering-education/planting-timber-logs-the-right-way/creating_a_class_java.png)
 
 ```java
 import android.app.Application;
@@ -179,7 +179,7 @@ public class TimberDemoApp extends Application {
 }
 ```
 
-![creating a class in kotlin](/planting-timber-logs-the-right-way/creating_a_class_kotlin.png)
+![creating a class in kotlin](/engineering-education/planting-timber-logs-the-right-way/creating_a_class_kotlin.png)
 
 ```kotlin
 import android.app.Application
@@ -198,7 +198,7 @@ class TimberDemoApp : Application() {
 ```
 
 After creating the class, update your `Manifest file` with the name tag. Use your application class as the value as shown below:
-![updating the manifest](/planting-timber-logs-the-right-way/manifest.png)
+![updating the manifest](/engineering-education/planting-timber-logs-the-right-way/manifest.png)
 
 #### Step 5: The code. (Main Activity)
 In this step, we will write the code for the two-number-adder that we have designed above.
@@ -294,9 +294,9 @@ In the logcat, you will see such a line like this `D/MainActivity:` We did not s
 #### Demonstration screens
 Let's run the application on a device or emulator. The logcat output should be as shown below.
 
-![log output in java](/planting-timber-logs-the-right-way/timber_log_java.png)
+![log output in java](/engineering-education/planting-timber-logs-the-right-way/timber_log_java.png)
 
-![log output kotlin](/planting-timber-logs-the-right-way/timber_log_kotlin.png)
+![log output kotlin](/engineering-education/planting-timber-logs-the-right-way/timber_log_kotlin.png)
 
 
 Check out the entire `Java` project on [GitHub](https://github.com/Owallah/timber-demo). For Kotlin [Github](https://github.com/Owallah/timber-demo-with-kotlin)

@@ -19,7 +19,7 @@ YOLO is an algorithm that uses neural networks to provide real-time object detec
 This article introduces readers to the YOLO algorithm for object detection and explains how it works. It also highlights some of its real-life applications.
 
 ### Introduction to object detection
-Object detection is a phenomenon in [computer vision](/computer-vision-straight-lines/) that involves the detection of various objects in digital images or videos. Some of the objects detected include people, cars, chairs, stones, buildings, and animals.
+Object detection is a phenomenon in [computer vision](/engineering-education/computer-vision-straight-lines/) that involves the detection of various objects in digital images or videos. Some of the objects detected include people, cars, chairs, stones, buildings, and animals.
 
 This phenomenon seeks to answer two basic questions: 
 1. *What is the object?* This question seeks to identify the object in a specific image. 

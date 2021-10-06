@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/advanced-r-concepts/hero.jpg
     alt: r programming language example image
 ---
-In the first [article](/introduction-to-r/), we covered the R programming language basics. In this article, we will look at some of the advanced aspects of the R programming language. Going through this article will enhance a developer's ability to implement [Object-Oriented Programming (OOP)](https://en.wikipedia.org/wiki/Object-oriented_programming) concepts and write modular code. We will be covering the following topics in this article:
+In the first [article](/engineering-education/introduction-to-r/), we covered the R programming language basics. In this article, we will look at some of the advanced aspects of the R programming language. Going through this article will enhance a developer's ability to implement [Object-Oriented Programming (OOP)](https://en.wikipedia.org/wiki/Object-oriented_programming) concepts and write modular code. We will be covering the following topics in this article:
 <!--more-->
 
 - Data Frames
@@ -58,7 +58,7 @@ The output of the above code is as follows:
 
 It is important to create data frames out of vectors to perform preprocessing on the datasets. There are primarily two types of analysis: Continuous and Categorical.
 
-Continuous analysis deals with all continuous values (numbers) in the dataset, whereas categorical analysis deals with categories. We looked at the definitions of categorical and continuous features in the previous article under the factors section. For more information, check out the [previous article](/introduction-to-r/).
+Continuous analysis deals with all continuous values (numbers) in the dataset, whereas categorical analysis deals with categories. We looked at the definitions of categorical and continuous features in the previous article under the factors section. For more information, check out the [previous article](/engineering-education/introduction-to-r/).
 
 Examples for the two are:
 1. **Statistical values**: Prices of houses, oxygen levels in the blood, etc.
@@ -93,7 +93,7 @@ $ vector_4: num  2 4 6 8 10
 $ vector_5: logi  TRUE TRUE TRUE FALSE FALSE
 ```
 
-Observe that `vector_1` is assigned to a factor data type. To brush up on factor data type, revisit the previous [article](/introduction-to-r/).
+Observe that `vector_1` is assigned to a factor data type. To brush up on factor data type, revisit the previous [article](/engineering-education/introduction-to-r/).
 
 Data frames support indexing. The reasoning behind indexing is similar to that of the matrices. Let's consider a few examples:
 
@@ -112,7 +112,7 @@ new_data_frame[1:3,5] # select the (1,5), (2,5) and (3,5)
 
 The operations above output the following: The first output is the third column. The second part of the output is the first three rows. The last piece of the output denotes the three elements `(1,5)`, `(2,5)` and `(3,5)`.
 
-We discussed the slicing and indexing operations in the previous article in depth. The example uses indexing and slicing operation. For a quick refresher on slicing, refer to the `selection of elements` subsection under the `matrices` section in the previous [article](/introduction-to-r/).
+We discussed the slicing and indexing operations in the previous article in depth. The example uses indexing and slicing operation. For a quick refresher on slicing, refer to the `selection of elements` subsection under the `matrices` section in the previous [article](/engineering-education/introduction-to-r/).
 
 ```txt
     1 2 3 4 5
@@ -326,7 +326,7 @@ The output of the above is as follows. The code inside the loop executes until t
 When the variable `iter` equals three, the condition fails. Therefore, the print statement stops executing.
 
 ### Functions
-Functions are important aspects of all programming languages. They help modularize the code. Modularization refers to the concept of breaking down a problem into the smallest pieces. This helps make debugging easier and provides better readability of code. Functions help by implementing various programming paradigms such as Don't Repeat Yourself - [DRY](/dry-manifesto) and modularity.  
+Functions are important aspects of all programming languages. They help modularize the code. Modularization refers to the concept of breaking down a problem into the smallest pieces. This helps make debugging easier and provides better readability of code. Functions help by implementing various programming paradigms such as Don't Repeat Yourself - [DRY](/engineering-education/dry-manifesto) and modularity.  
 
 Let's look at the following function definition in R:
 

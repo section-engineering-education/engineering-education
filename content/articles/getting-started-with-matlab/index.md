@@ -216,7 +216,7 @@ ans =
 ```
 
 #### Plotting
-If you are familiar with the [Matplotlib plotting library](/matplotlib-visualization-python/) for Python programming language, it will be very easy for you to follow this section. However, we will explain it simply as possible.
+If you are familiar with the [Matplotlib plotting library](/engineering-education/matplotlib-visualization-python/) for Python programming language, it will be very easy for you to follow this section. However, we will explain it simply as possible.
 
 To plot any graph we need to define the range of *X* and *Y* values. Then to call the plot command which is `plot(X,Y)`.
 
@@ -265,7 +265,7 @@ That's all!
 ### Conclusion
 This is just the *tip of the iceberg* when it comes to MATLAB. Change the [amplitude](https://en.wikipedia.org/wiki/Amplitude), [frequency](https://en.wikipedia.org/wiki/Frequency), [phase](https://en.wikipedia.org/wiki/Phase_(waves)), and subplot numbers. 
 
-Try it out for yourself and see the results. For more articles and updates on MATLAB and SimuLink, follow the [languages](/topic/languages/) section. Have a nice day.
+Try it out for yourself and see the results. For more articles and updates on MATLAB and SimuLink, follow the [languages](/engineering-education/topic/languages/) section. Have a nice day.
 
 ---
 Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
