@@ -1,5 +1,32 @@
-### Getting Started with Generics Classes and Interfaces
+---
+layout: engineering-education
+status: publish
+published:
+url: /getting-started-with-generics-in-java/
+title: Getting Started With Generics In Java
+description: This article will describe how to get started on working with generics in the Java language, helping the reader understand what are generics and how they are used.
+author: emmah-lashly
+date: 2021-10-04T00:00:00-18:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/getting-started-with-generics-in-java/hero.png
+    alt: Java generics cover image 
+---
+<!--more-->
 This tutorial is essential for beginners in the Java programming language who want to learn Generics. In java, Generics has various advantages that make its usage significant. Generic classes execute faster than non-generic classes since they have reduced boilerplate (unnecessary code) codes. Just to mention, generic methods allow code reusability which saves the programmer from creating various methods. 
+
+### Table of contents
+This article will cover:
+- [Prerequisites](#prerequisites)
+- [Goals](#goals)
+- [What are Generics](#what-are-generics)
+- [Advantages of Using Generics in Java](#advantages-of-using-generics-in-java)
+- [How to Create Generic Classes](#how-to-create-generic-classes)
+- [How to Create Generic Methods](#how-to-create-generic-methods)
+- [Generic Interface](#generic-interface)
+- [Wildcards](#wildcards)
+- [Conclusion](#conclusion)
 
 ### Prerequisites
 To follow through this tutorial as a beginner, intermediate, or even an expert in Java, you will require:
@@ -11,12 +38,12 @@ To follow through this tutorial as a beginner, intermediate, or even an expert i
 
 ### Goals
 By the end of this tutorial, the learner should be conversant with:
--   Creating [Generic](https://docs.oracle.com/javase/tutorial/java/generics/types.html) class.
+-   Creating a [Generic](https://docs.oracle.com/javase/tutorial/java/generics/types.html) class.
 -   Implementing Generic interfaces.
 -   Implementing Generic methods
 -   Advantages of using Generics.
 
-### What is Generics
+### What are Generics
 Generics in java allow the use of parameterized types. A parameterized type is a generic type that is instantiated using actual type arguments. A reference type with one or more type parameters is known as a generic type. When the generic type is specified, these type parameters are substituted with type arguments.
 Generic classes and methods allow parameterized types which include the wrapper classes. With generics, it is possible to create classes that allow different data types. Wrapper classes include;` Integer`, `Double`, `Float`, `String`, and `Character`.
 
@@ -93,7 +120,8 @@ java.lang.Float = 20.0
 ### Generic Interface
 The generic interface is created the same way as generic classes but some conditions must be observed while implementing generic interfaces. The conditions include:
 
-### 1.  A class that implements a generic interface MUST be generic.
+**1. A class that implements a generic interface MUST be generic.**
+
 If implementing class of generic interface is not generic, there will be a compile-time error because the parameterized type is not known.
 Generic Interface:
 ```java
@@ -124,7 +152,7 @@ public class NameGenericClass <E> implements PersonGenericInterface <E>{
     }
 }
 ```
-### 2. A non-generic class can be used if a specific parameterized type is provided with the interface while implementing.
+**2. A non-generic class can be used if a specific parameterized type (`Integer`, `String`, `Double`, `Character`, `Float`) is provided with the interface while implementing.**
 
 ```java
 public class NameGenericClass implements PersonGenericInterface <String>{
@@ -147,7 +175,8 @@ public class NameGenericClass implements PersonGenericInterface <String>{
     }
 }
 ```
-### 3.  The generic class implementing a generic interface can have other parameterized type parameters.
+**3. The generic class implementing a generic interface can have other parameterized type parameters.**
+
 The generic class can have more than one parameterized type argument.
 ```java
 public class NameGenericClass <E, T> implements PersonGenericInterface <E>{
@@ -184,14 +213,14 @@ public class NameGenericClass <E, T> implements PersonGenericInterface <E>{
 ### Wildcards
 Wildcards allow reference to unknown types. It is denoted by a (‘?’) character. they can reference any object like generic classes.
 
-### Upper Bounded Wildcard
+#### Upper Bounded Wildcard
 The upper bounded wildcard is defined by the wildcard character `? ` then followed by an `extends` keyword and finally its `upper bound`. 
 ```java
 public static <T> void numbers(Set<? extends Number> set){
     // Your code here
 }
 ```
-### Lower Bounded Wildcard
+#### Lower Bounded Wildcard
 Lower bounded wildcard is defined by the wildcard character `?` followed by the `super` keyword and then its `lower bound`.
 ```java
 public static void additionOfNumbers(List<? super Integer> numbers){
@@ -201,7 +230,7 @@ public static void additionOfNumbers(List<? super Integer> numbers){
 }
 ```
 
-### Unbounded Wildcards
+#### Unbounded Wildcard
 It is only defined using the wildcard character `?`. It is useful when:
 -   Writing a method that can be used with the functionality provided in Object class.
 -   The code uses generic class methods that aren't dependent on the type parameter.
