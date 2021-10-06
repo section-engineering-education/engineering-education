@@ -1,6 +1,6 @@
 Vue is a Javascript frontend framework used to build website user interfaces. Vue is commonly used to build single page based application that runs on the client-side. Nevertheless, Vue can be used to build a full-stack web application with other backend technologies such as Node.js and Flask coming into play. This allows developers to make HTTP requests to a server and populate them in a Vue-based interface.
 
-Vue is great due to its well-outlined features. This includes the ability to use virtual DOM, easy to integrate with other technologies such as Node.js and Python, and high run time performance.
+Vue is great due to its well-outlined features. This includes the ability to use virtual DOM, easy integration with other technologies such as Node.js and Python, and high run time performance.
 
 On the other side, Flask is a micro web application-based framework written in Python to manipulate server-side-based data. Flask is designed to make getting started quick and easy with the ability to scale up to complex applications.
 
@@ -17,15 +17,14 @@ To follow along in this article, it is important to have the following:
 - Basic working knowledge with Flask.
 - [Node.js](https://nodejs.org/en/) installed on your computer.
 - Basic working knowledge with Vue js.
-- [Docker](https://docs.docker.com/get-docker/) installed on your computer.
+- [Docker](/engineering-education/docker-concepts/) installed on your computer.
 
 ### Overview
-- [Prerequisites](#prerequisites)
-- [Overview](#overview)
 - [Setting up the server-side environment using Flask](#setting-up-the-server-side-environment-using-flask)
   - [Installing the packages](#installing-the-packages)
   - [Setting up the server-side application Using Flask](#setting-up-the-server-side-application-using-flask)
   - [Setting up the database](#setting-up-the-database)
+  - [Initialize the schema](#initialize-the-schema)
   - [Setting up routes](#setting-up-routes)
 - [Setting up the client-side using Vue](#setting-up-the-client-side-using-vue)
   - [Installing packages](#installing-packages)
@@ -64,11 +63,11 @@ python -m pipenv shell
 #### Installing the packages
 We will use the following packages:
 
-- *Flask*: The framework providing the architectural setup for the application.
-- *Flask-sqlalchemy*: Provides useful defaults and extra helpers that make it easier to accomplish database tasks.
-- *Flask-marshmallow*: Thin integration layer for Flask useful when building APIs.
-- *Marshmallow-sqlalchemy*: Binder for sqlalchemy and marshmallow.
-- *Flask-cors*: For handling cross-origin resource access.
+- *[Flask](https://flask.palletsprojects.com/en/2.0.x/)*: The framework providing the architectural setup for the application.
+- *[Flask-sqlalchemy](https://flask-sqlalchemy.palletsprojects.com/en/2.x/)*: Provides useful defaults and extra helpers that make it easier to accomplish database tasks.
+- *[Flask-marshmallow](https://flask-marshmallow.readthedocs.io/en/latest/)*: Thin integration layer for Flask useful when building APIs.
+- *[Marshmallow-sqlalchemy](https://marshmallow-sqlalchemy.readthedocs.io/en/latest/)*: Binder for sqlalchemy and marshmallow.
+- *[Flask-cors](https://flask-cors.readthedocs.io/en/latest/)*: For handling cross-origin resource access.
 
 To install all the above packages run this command:
 
@@ -154,8 +153,7 @@ class TodoSchema(ma.Schema):
 
 From above, we define that for every todo, we will be interested in the id, title, and description.
 
-- Initialize the schema.
-
+#### Initialize the schema
 To initialize the schema, we have to do it differently for a single todo and for multiple todos. For this, we will add the following:
 
 ```python
@@ -398,13 +396,13 @@ From above, we are setting the dynamic classes for the navigation bar.
 
 ```css
 <style>
-#app {
-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
--webkit-font-smoothing: antialiased;
--moz-osx-font-smoothing: grayscale;
-text-align: center;
-color: #2c3e50;
-}
+    #app {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-align: center;
+        color: #2c3e50;
+    }
 </style>
 ```
 
@@ -518,31 +516,31 @@ From above, we export the todos fetched when the component is loaded, the functi
 
 ```css
 <style scoped>
-h3 {
-margin: 40px 0 0;
-}
+    h3 {
+        margin: 40px 0 0;
+    }
 
-ul {
-list-style-type: none;
-padding: 0;
-}
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
 
-li {
-display: inline-block;
-margin: 0 10px;
-}
+    li {
+        display: inline-block;
+    margin: 0 10px;
+    }   
 
-a {
-color: #42b983;
-}
+    a {
+    color: #42b983;
+    }   
 
-.card-body{
-text-align: left;
-}
+    .card-body{
+        text-align: left;
+    }
 
-.todos {
-margin-top: 10px;
-}
+    .todos {
+        margin-top: 10px;
+    }   
 
 </style>
 ```
@@ -643,7 +641,7 @@ methods:{
 </script>
 ```
 
-From the above script, we are exporting data from the component and a method that handles validation and data submission on submission of the form.
+From the above script, we are exporting data from the component and a method that handles validation and data submission on the submission of the form.
 
 - Create an *AddTodo.vue* file and add in the following.
 
