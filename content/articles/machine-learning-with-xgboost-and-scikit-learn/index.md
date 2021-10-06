@@ -24,20 +24,18 @@ In this tutorial, we will use Scikit-learn to build our model, and then we impro
 
 ### Prerequisites
 
-A reader must have:
-
-- A good understanding of [Python](/engineering-education/python-projects-for-beginners/).
-- A good understanding of [machine learning modeling](/engineering-education/house-price-prediction/).
-- A good understanding of [supervised learning algorithms](/engineering-education/supervised-learning-algorithms/)
-- Have knowledge of [Pandas](https://numpy.org/) and [Numpy.](https://numpy.org/)
-
-> NOTE: To follow along easily, use [Google Colab](https://research.google.com/) to build your model.
+- Install [Python](https://www.python.org/).
+- Have good knowledge of Python(/engineering-education/python-projects-for-beginners/).
+- Be familiar with [machine learning modeling](/engineering-education/house-price-prediction/).
+- Have a good understanding of [supervised learning algorithms](/engineering-education/supervised-learning-algorithms/)
+- Know how to use [Pandas](https://numpy.org/) and [Numpy.](https://numpy.org/)
+- Know how to use [Google Colab](https://research.google.com/) to build your model.
 
 ### Introduction
 
 For XGBoost to achieve the best solution it uses a gradient boosting framework, gradient boosting is a machine learning technique for classification, regression, and clustering problems used to optimize the model when making predictions.
 
-In this technique, different base models are combined to perform the same task. These base models are known as the weak learners, they work on the principle that a weak learner makes poor predictions when alone but makes the best prediction when together.
+In this technique, different models are grouped to perform the same task. These base models are known as the weak learners, they work on the principle that a weak learner makes poor predictions when alone but makes the best prediction when together.
 
 XGBoost creates a strong learner based on the weak learners, by adding models together sequentially, the errors of the weak models are corrected by the next models in the chain to achieve an optimized solution, this is known as the ensemble method.
 
@@ -49,7 +47,9 @@ For a detailed understanding of ensemble methods technique read this [article](/
 - Improved model performance
 - Reduced model errors
 
-In this tutorial, we will build a classification model, it will be able to predict if bank customers will to subscribe the term deposit of the bank and help in bank marketing. A term deposit is a fixed investment plan of the bank, it involves the deposit of the amount of money into an account at a given financial institution. Term deposits plan investments carry short-term maturities ranging from few months to a few years and will have different required minimum deposits into the account.
+In this tutorial, we will build a classification model, it will be able to predict if bank customers will to subscribe the term deposit of the bank and help in bank marketing. A term deposit is a fixed investment plan of the bank.
+
+A customer deposits an amount of money into an account of a given financial institution. Term deposits may have short-term maturity or may have long-term maturity.
 
 The dataset used contains information about customers, this dataset will be used to train and build our model.
 
@@ -61,9 +61,9 @@ The dataset contains important attributes that the model will use during trainin
 
 We need to clean this dataset so that it would be easy for our model to understand and use during training and predictive analysis.
 
-To get this dataset click [here](https://drive.google.com/file/d/1Yc3-jZkCcPb9DvngH4S_S_fVlUN1pFqH/view?usp=sharing). After downloading the dataset, name it as `bank-additional-full.csv`.
+To download the dataset click [here](https://drive.google.com/file/d/1Yc3-jZkCcPb9DvngH4S_S_fVlUN1pFqH/view?usp=sharing).
 
-#### Loading data analysis (EDA) packages
+#### Data analysis (EDA) packages
 
 Let's load all the packages that we will use for data analysis and manipulation. We will use pandas to load our dataset so that we can clean it and Numpy will be used to perform mathematical and scientific computations in Python.
 
@@ -74,7 +74,7 @@ import numpy as np
 
 ### Loading the dataset
 
-We use pandas to load our dataset.
+Let's load the dataset using Pandas.
 
 ```python
 df = pd.read_csv("bank-additional-full.csv",sep=";")
@@ -82,10 +82,11 @@ df = pd.read_csv("bank-additional-full.csv",sep=";")
 
 We specify the fields separator in the dataset as `sep=";"`, this is because the fields in our dataset are separated by `;` and not the default `,` separator.
 
-Let's see the structure of our dataset, the named columns in the dataset, and the available data points.
+To see the structure of our dataset, run this code.
 
 ```python
 df.head()
+
 ```
 
 The output is shown below.
@@ -159,13 +160,9 @@ df.columns[df.dtypes == 'object']
 
 The output is shown.
 
-```bash
-Index(['job', 'marital', 'education', 'default', 'housing', 'loan', 'contact',
-       'month', 'day_of_week', 'poutcome', 'y'],
-      dtype='object')
-```
+![Columns](/engineering-education/machine-learning-with-xgboost-and-scikit-learn/columns.jpg)
 
-To convert all the columns into numeric values we use `get_dummies()` method.
+To convert all the columns into numeric values we use the `get_dummies()` method.
 
 `get_dummies()` is a pandas method that is used to convert the categorical data into encoded numerical values which are in a machine-readable form.
 
@@ -181,7 +178,7 @@ The output shows the first `17` columns with encoded numeric values.
 
 For a detailed understanding and practical guide on how `get_dummies()` works, read this [guide](https://pandas.pydata.org/docs/reference/api/pandas.get_dummies.html)
 
-Let's see if the columns datatypes have changed.
+Let's see if the column's data types have changed.
 
 ```python
 df.dtypes
@@ -197,7 +194,7 @@ In this section, we will build our model using a basic Scikit-learn algorithm. W
 
 ### Installing XGBoost
 
-Let`s install XGBoost, since we are using Google Colab, we install using the following command.
+Let`s install XGBoost using the following command.
 
 ```python
 !pip install xgboost
@@ -216,10 +213,10 @@ Now that we have imported XGBoost, let's split our dataset into the testing set 
 Let's import `train_test_split` which is used for data set splitting.
 
 ```python
-from sklearn.model_selection import train_test_split
+import train_test_split from sklearn.model_selection
 ```
 
-We then split our dataset into two sets: train set and test set. 80% of the dataset will be used as a train set and 20% will be used as a test set.
+The dataset is split into two sets: a training set and a testing set. 80% of the dataset will be used as a train set and 20% will be used as a test set.
 
 ```python
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 0)
@@ -232,6 +229,12 @@ We start with a decision tree classifier.
 ### Decision tree classifier
 
 A decision tree classifier is a machine learning algorithm that is used to solve classification problems. It's imported from the Scikit-learn Python library.
+
+The decision tree is made up of branches, these branches are used for strategic analysis when formulating a decision rule. Decision trees create a model that will predict the labeled variable based on the input data.
+
+When building a model the internal nodes of the tree are used to represent the unique features of a given dataset, the tree branches represent the decision rules and each leaf node represents the prediction outcome. This is shown in the image below.
+
+![Decision tree classifier](/engineering-education/machine-learning-with-xgboost-and-scikit-learn/decision-tree-classifier.png)
 
 ```python
 from sklearn.tree import DecisionTreeClassifier
@@ -255,18 +258,38 @@ dTree_clf.fit(X_train,y_train)
 
 After training this is the output.
 
-```bash
-DecisionTreeClassifier(class_weight=None, criterion='gini', max_depth=None,
-            max_features=None, max_leaf_nodes=None,
-            min_impurity_decrease=0.0, min_impurity_split=None,
-            min_samples_leaf=1, min_samples_split=2,
-            min_weight_fraction_leaf=0.0, presort=False, random_state=None,
-            splitter='best')
-```
+![Decision tree classifier](/engineering-education/machine-learning-with-xgboost-and-scikit-learn/decision-tree-classifier.jpg)
 
 The output gives the best parameters used by the model to achieve the best solution during making a prediction.
 
-Let's test this model.
+These parameters are as follows.
+
+- class_weight
+  This assigns weights to the classes of the algorithm.
+- criterion
+  Is used to measure how the nodes were split.
+- max_depth
+  The maximum depth of the decision tree classifier.
+- max_features
+  The total number of unique characteristics in the dataset.
+- max_leaf_nodes
+  The total number of leaf nodes in the decision tree.
+- min_impurity_decrease
+  This reduces the impurities when splitting the nodes.
+- min_impurity_split
+  This ensures that the best criteria are met when splitting the nodes.
+- min_samples_leaf
+  The minimum samples were taken when creating a leaf node.
+- min_samples_split
+  The minimum samples are taken when splitting a node.
+- min_weight_fraction_leaf
+  Minimum weight of a leaf.
+- random_state
+  These numbers are used when performing each split.
+- splitter
+  This is the best strategy used to split each node.
+
+  Let's test this model.
 
 ### Testing model
 
@@ -313,6 +336,12 @@ Let's see if XGBoost can improve the performance of this model and increase the 
 
 Let's initialize XGBoost so that we can use it to give the best results.
 
+XGBoost creates the best model based on the previous weak models, by adding models together sequentially. The errors of the weak models are corrected by the next models in the chain to achieve an optimized solution, this is known as the ensemble method.
+
+When the different models are combined they speed up the process of correcting the model errors when making a prediction. Within a short period, the errors of the model are corrected and the best performing solution is produced.
+
+XGBoost will also increase the accuracy score of the model by using the best parameters when calculating the accuracy score This makes the model give the best prediction when exposed to new input data.
+
 ```python
 xgb_classifier = xgb.XGBClassifier()
 ```
@@ -331,21 +360,52 @@ xgb_classifier.fit(X_train,y_train)
 
 The output is as shown.
 
-```bash
-
-xgb_classifier.fit(X_train,y_train)
-XGBClassifier(base_score=0.5, booster='gbtree', colsample_bylevel=1,
-       colsample_bynode=1, colsample_bytree=1, gamma=0, learning_rate=0.1,
-       max_delta_step=0, max_depth=3, min_child_weight=1, missing=None,
-       n_estimators=100, n_jobs=1, nthread=None,
-       objective='binary:logistic', random_state=0, reg_alpha=0,
-       reg_lambda=1, scale_pos_weight=1, seed=None, silent=None,
-       subsample=1, verbosity=1)
-```
+![XGBoost classifier](/engineering-education/machine-learning-with-xgboost-and-scikit-learn/XGBoost-classifierr.jpg)
 
 XGBoost adds more parameters to the model, the added parameters are used to remove errors during training and increase the model performance.
 
-Let's use this model to make a prediction using the same test set dataset used earlier. This will test our model so that we can know how well it learned during the training phase.
+The model parameters are as follows.
+
+- base_score
+  This is the prediction for the initial models, it has set the score to 0.5
+- booster
+  This is the type of algorithm that is used to improve the model performance.
+- colsample_bylevel
+  This shows how the different branches levels are separated in the tree.
+- colsample_bynode
+  It shows how the different nodes are split.
+- colsample_bytree
+  It shows how the different trees in XGBoost are separated.
+- gamma
+  This is used to reduce the loss when correcting model errors.
+- learning_rate
+  The rate at which the XGBoost model learns during the training phase
+- max_delta_step
+  This is used to update the model class during training.
+- max_depth
+  This is the maximum depth of the XGBoost classifier.
+- min_child_weight
+  This is the minimum size we are allowed to partition the leaf node of the tree.
+- n_estimators
+  This is the total number of estimators added during model training.
+- n_jobs
+  This is the total number of jobs handled by the model.
+- objective
+  Specifies the type of algorithm used to build the model, in this case, it uses logistic regression.
+- random_state
+  This seeding number is used by the model.
+- reg_alpha
+  This is the parameter used to reduce the weights of the model.
+- reg_lambda
+  This is the parameter used to increase the weights of the model.
+- seed
+  The seed used by the model.
+- subsample
+  The ratios we use so sample the training phases of a model.
+- verbosity
+  Measure the verbosity of words in the dataset.
+
+  Let's test this model and make a prediction. This will test our model so that we can know how well it learned during the training phase, we use the test dataset.
 
 ### Making predictions using XGBoost
 
@@ -399,5 +459,5 @@ To get the Google Colab code for this tutorial click [here](https://colab.resear
 - [Code for this tuturial](https://colab.research.google.com/drive/160MQWnygEHmSs2waDI8Bs9rpi7zOa4SN?usp=sharing)
 - [Scikit-learn documentation](https://scikit-learn.org/stable/)
 - [XGBoost documentation](https://xgboost.readthedocs.io/en/latest/)
-- [Ensemble Learning Techniques to Improve Machine Learning](/engineering-education/ensemble-learning/)
-- [Boosting Algorithms in Python](https://www.section.io/engineering-education/boosting-algorithms-python/)
+- [Basics of ensamble learning](/engineering-education/ensemble-learning/)
+- [Boosting algorithms in Python](https://www.section.io/engineering-education/boosting-algorithms-python/)
