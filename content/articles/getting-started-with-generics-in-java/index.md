@@ -14,7 +14,7 @@ images:
     alt: Java generics cover image 
 ---
 <!--more-->
-This tutorial is essential for beginners in the Java programming language who want to learn Generics. In java, Generics has various advantages that make its usage significant. Generic classes execute faster than non-generic classes since they have reduced boilerplate (unnecessary code) codes. Just to mention, generic methods allow code reusability which saves the programmer from creating various methods. 
+This tutorial is essential for beginners in the Java programming language who want to learn Generics. In java, Generics have various advantages that make their usage significant. Generic classes execute faster than non-generic classes since they have reduced boilerplate (unnecessary code) codes. Just to mention, generic methods allow code reusability which saves the programmer from creating various methods.
 
 ### Table of contents
 This article will cover:
@@ -32,30 +32,30 @@ This article will cover:
 To follow through this tutorial as a beginner, intermediate, or even an expert in Java, you will require:
 -   A suitable Integrated Development Environment (IDE), either [IntelliJ IDEA](https://www.jetbrains.com/idea/download/#section=windows) or [NetBeans IDE](https://netbeans.apache.org/download/index.html).
 -   A basic understanding of creating classes in [Java](https://docs.oracle.com/en/java/).
--   A knowledge in implementing methods in Java.
+-   Knowledge in implementing methods in Java.
 -   A basic understanding of creating interfaces in Java.
--   A minimum of 1.8 [JDK](https://www.oracle.com/java/technologies/downloads/) (Java Development Kit) installed.
+-   A minimum of version 1.8 [JDK](https://www.oracle.com/java/technologies/downloads/) (Java Development Kit) installed.
 
 ### Goals
 By the end of this tutorial, the learner should be conversant with:
 -   Creating a [Generic](https://docs.oracle.com/javase/tutorial/java/generics/types.html) class.
 -   Implementing Generic interfaces.
--   Implementing Generic methods
+-   Implementing Generic methods.
 -   Advantages of using Generics.
 
 ### What are Generics
-Generics in java allow the use of parameterized types. A parameterized type is a generic type that is instantiated using actual type arguments. A reference type with one or more type parameters is known as a generic type. When the generic type is specified, these type parameters are substituted with type arguments.
+Generics in java allows the use of parameterized types. A parameterized type is instantiated using actual type arguments. A reference type with one or more type parameters is known as a generic type. When the generic type is specified, these type parameters are substituted with type arguments.
 Generic classes and methods allow parameterized types which include the wrapper classes. With generics, it is possible to create classes that allow different data types. Wrapper classes include;` Integer`, `Double`, `Float`, `String`, and `Character`.
 
 ### Advantages of Using Generics in Java
 Generics have various advantages in Java programming:
-1.  Generics ensures Type-Safety
-Generics allows the holding of only one type of object. This helps in detecting errors at compile time whenever an argument of a different type is passed.
+1.  Generics ensure type safety.
+Generics allow the holding of only one type of object. This helps in detecting errors at compile time whenever an argument of a different type is passed.
  
-2.  Generics allows code reuse
-For example, when you want to create a class that shows the class of parameterized typed either Integers, Doubles, Strings, or even Characters, you will be forced to create different classes while with generics there will be only one class. Let’s look at an example of how generics achieve this.
+2.  Generics allow code reuse.
+For example, when you want to create a class that shows the class of parameterized type either Integers, Doubles, Strings, or even Characters, you will be forced to create different classes while with generics there will be only one class. Let’s look at an example of how generics achieve this:
 
-3.  Generics doesn’t require individual type casting
+3.  Generics don’t require individual-type casting.
 When using generics, there is no need for type casting since generics provide the parameterized type which references an argument.
 4.  Helps in detecting errors at compile time rather than at the run time.
 It is a good programming practice to handle errors/problems at compile time rather than at the run time which might lead to uncertainties.
@@ -68,7 +68,8 @@ public class MyGenericClass <T> {
 }
 ```
 `T` is usually used to represent `type` which must be the parameterized type (`Integer`, `String`, `Float`, `Double`, `Character`). Primitive types like `int`, `char`, `float`, `double`, and `string` must not be used to represent `T`.
-To create an instance (object) of a generic, the following syntax is used.
+
+To create an instance (object) of a generic, the following syntax is used:
 ```java
 MyGenericClass <T> object = new MyGenericClass<>();
 ```
@@ -241,4 +242,6 @@ Bounded wildcards do not allow multiple bounds for a generic parameter. Hence on
 ### Conclusion
 In this tutorial we have learned how to use Generics, to perfect your skills with generics you should do more practice and try the sample codes provided as well. Using generics in java is a good practice as it provides less boilerplate code and increases the efficiency of the program. 
 
-Happy Coding!.
+Happy Coding!
+---
+Peer Review Contributions by: [Ruth Mare](/engineering-education/authors/ruth-mare/)
