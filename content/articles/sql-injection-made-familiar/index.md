@@ -74,7 +74,7 @@ Let's take a look at a simple login form with some basic styling:
 </html>
 ```
 
-![form](form.jpg)
+![Form](/engineering-education/sql-injection-made-familiar/form.jpg)
 The above structure acknowledges the username, and password then, at that point submits them to a PHP record named `loginAuth.php`. It has an alternative of putting away the login session in a cookie. 
 
 We have derived this from the `remember-me` checkbox. It utilizes the post strategy to submit information. This implies the user credentials are not shown in the URL.
