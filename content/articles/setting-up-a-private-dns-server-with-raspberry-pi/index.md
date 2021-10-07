@@ -133,6 +133,8 @@ sudo systemctl status dnsmasq
 
 1. The server is tested using the `dig` command.
 
+```dig``` is a linux command used to query DNS servers in order to get information about a name server, host address among others. It is basically used to gather information about DNS.
+
 ```bash
 dig <domain> @localhost
 ```
@@ -146,10 +148,20 @@ dig section.io/kb @localhost
 ![DNS Testing](/engineering-education/setting-up-a-private-dns-server-with-raspberry-pi/responsetime1.png)
 
 2. Check the response time taken by the query.
+In the image above, we are checking to see how long the querry took to execute. This can be seen in the last section of the image where it shows as follows:
+```bash Query Time: 1091 msec```
+
+``` SERVER: ::1#53(::1)```
+
+``` WHEN: Sun Sep 19 08:58:58 BST 2021```
+
+``` MSG SIZE rcvd: 55```
+
+Note that we are only interested with the time taken to get a response from the server, which is ``` 1091 msec```
 
 3. Rerun the command.
 
-Because the address is stored in the cache, the time taken to query is shorter.
+Because the address is stored in the cache, the time taken to query is shorter. This is clear in the picture below. Remember we are only interested with the Query Time.
  
 ![DNS Testing](/engineering-education/setting-up-a-private-dns-server-with-raspberry-pi/responsetime2.png)
 
@@ -159,7 +171,36 @@ Because the address is stored in the cache, the time taken to query is shorter.
  
 ![IFCONFIG](/engineering-education/setting-up-a-private-dns-server-with-raspberry-pi/ipaddress.png)
 
+The IP address is the ```inet addr``` and hence the IP of our server is  ```10.0.2.15```.
+
 2.	Set this IP address as the DNS server on devices.
+ In order to achieve this settings on windows:
+ - On your windows PC press ```windows key + R``` to open Run.
+ - Type ```control``` in the new window and click ```enter``` to open Control Panel.
+
+![RUN](/engineering-education/setting-up-a-private-dns-server-with-raspberry-pi/control.png)
+
+ - In control panel, select ```Network and Internet```.
+
+![NETWORK AND INTERNET](/engineering-education/setting-up-a-private-dns-server-with-raspberry-pi/network-and-internet.png)
+
+ - Then select ```View network status and tasks``` in the new window.
+
+![NETWORK STATUS](/engineering-education/setting-up-a-private-dns-server-with-raspberry-pi/network-status.png)
+
+ - On the left the new pane, select ```Change adapter settings```.
+
+![ADAPTER SETTINGS](/engineering-education/setting-up-a-private-dns-server-with-raspberry-pi/adpater-settings.png)
+
+ - Right Click on the network interface in use e.g Wi-Fi or ethernet and then select ```Properties```.
+
+![PROPERTIES](/engineering-education/setting-up-a-private-dns-server-with-raspberry-pi/properties-1.png)
+
+ - Click on ```Internet Protocol Version 4 (TCP/IPv4)``` the select ```Properties``` again.
+
+![PROPERTIES](/engineering-education/setting-up-a-private-dns-server-with-raspberry-pi/properties-2.png)
+
+ - On the new window, choose ```Use the following DNS server address``` .
  
 ![Setting DNS](/engineering-education/setting-up-a-private-dns-server-with-raspberry-pi/set-dns.png)
 
