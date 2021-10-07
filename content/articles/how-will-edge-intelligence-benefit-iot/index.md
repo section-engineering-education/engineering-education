@@ -18,7 +18,7 @@ With [edge artificial intelligence (AI)](/engineering-education/edge-artificial-
 <!--more-->
 For instance, if you install edge IoT devices in your production plant, you can monitor the operating conditions of the machinery. With this, you'll perform predictive maintenance and avoid complete system failure, associated damages, and costs.
 
-Smart cameras equipped with edge AI chips have uncovered new use cases beyond capturing video. Such camaras can identify human traffic, monitor divers' behavior, count foot traffic, classify and segment objects, etc.
+Smart cameras equipped with edge AI chips have uncovered new use cases beyond capturing video. Such cameras can identify human traffic, monitor divers' behavior, count foot traffic, classify and segment objects, etc.
 
 In this article, we will look at the benefits that edge intelligence has brought to IoT devices. You'll learn more about edge AI chips and edge AI cameras that are part of the driving force in the IoT market.
 
@@ -98,7 +98,7 @@ With consumers embracing IoT devices with improved latency and privacy, more pla
 
 [The Case for Edge Computing Beyond IoT](/blog/edge-computing-beyond-iot/)
 
-[Edge Computing is Paving the Way for 5G, IoT and AI](/blog/edge-computing-5g-iot-ai/)
+[Edge Computing is Paving the Way for 5G, IoT, and AI](/blog/edge-computing-5g-iot-ai/)
 
 ---
 Peer Review Contributions by: [Dawe Daniel](/engineering-education/authors/dawe-daniel/)
