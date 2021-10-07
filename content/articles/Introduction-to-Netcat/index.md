@@ -20,7 +20,7 @@ Let's now discuss some actions that can be executed via Netcat.
 For a start you might want to know the commands you will interact with within your Netcat journey.
 * Run the `nc -help` or `nc -h` command to list all the commands available in Netcat as shown below.
 
-![Help Command Output](/engineering-education/introduction-to-netcat/help.png)
+![Help Command Output](/engineering-education/Introduction-to-Netcat/help.png)
 
 2. **Connecting Server**
 
