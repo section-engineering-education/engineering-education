@@ -6,7 +6,7 @@ url: /setting-up-a-private-dns-server-with-raspberry-pi/
 title: Setting up a private DNS server with Raspberry Pi
 description: This article will guide us on how to setup a private dns server using Raspberry Pi. 
 author: ruphus-muita
-date: 2021-10-06T00:00:00-21:00
+date: 2021-10-07T00:00:00-21:00
 topics: [Networking]
 excerpt_separator: <!--more-->
 images:
@@ -22,7 +22,7 @@ But, it can be difficult to remember IP addresses, hence the need for Domain Nam
 - [Prerequisites](#prerequisites)
 - [How DNS servers work](#how-dns-servers-work)
 - [Functions of a DNS](#functions-of-a-dns)
-- [Setting up a DNS Server on Raspberry Pi](#setting-up-a-dns-server-on-raspberry-pi)
+- [Setting up a DNS server on Raspberry Pi](#setting-up-a-dns-server-on-raspberry-pi)
 - [Conclusion](#conclusion)
 
 ### Prerequisites
@@ -44,7 +44,7 @@ Below are three significant benefits that a private Domain Name System (DNS) wou
 - **Privacy** – to gain access to the correct domain name, information from a device has to be sent to an external server which in turn creates a trail over the internet as opposed to when a private DNS is used, and information does not have to leave the internal network.
 - **Security** – hosting a private DNS server offers increased privacy because the owner gets complete control over entries. This, in turn, protects the server from malicious entries that hackers could facilitate. 
 
-### Setting up a DNS Server on Raspberry Pi
+### Setting up a DNS server on Raspberry Pi
 
 #### Step 1:Updating Raspberry Pi packages 
 
@@ -69,7 +69,7 @@ sudo apt install dnsmasq
  
 ![Installing DNSMasq](/engineering-education/setting-up-a-private-dns-server-with-raspberry-pi/install-dnsmasq.png)
 
-#### Step 3: DNSMasq Configuration
+#### Step 3: DNSMasq configuration
 
 This step is designed to ensure the best performance of the DNS server.
 1.	Edit `dnsmasq.conf` file using:
@@ -129,11 +129,9 @@ sudo systemctl status dnsmasq
  
 ![Restart and checking Status](/engineering-education/setting-up-a-private-dns-server-with-raspberry-pi/status.png)
 
-#### Step 4: DNS Server testing
+#### Step 4: DNS server testing
 
-1. The server is tested using the `dig` command.
-
-```dig``` is a linux command used to query DNS servers in order to get information about a name server, host address among others. It is basically used to gather information about DNS.
+1. The server is tested using the `dig` command. `dig` is a Linux command used to query DNS servers to get information about a name server, host address, and others. It is used to gather information about DNS.
 
 ```bash
 dig <domain> @localhost
@@ -144,24 +142,21 @@ For instance:
 ```bash
 dig section.io/kb @localhost
 ```
- 
 ![DNS Testing](/engineering-education/setting-up-a-private-dns-server-with-raspberry-pi/responsetime1.png)
 
 2. Check the response time taken by the query.
-In the image above, we are checking to see how long the querry took to execute. This can be seen in the last section of the image where it shows as follows:
-```bash Query Time: 1091 msec```
 
-``` SERVER: ::1#53(::1)```
+In the image above, we are checking to see how long the query took to execute. This can be seen in the last section of the image, where it shows as follows:
 
-``` WHEN: Sun Sep 19 08:58:58 BST 2021```
+```bash 
+Query Time: 1091 msec
+```
 
-``` MSG SIZE rcvd: 55```
-
-Note that we are only interested with the time taken to get a response from the server, which is ``` 1091 msec```
+> Note that we are only interested in the time taken to get a response from the server, which is ` 1091 msec`.
 
 3. Rerun the command.
 
-Because the address is stored in the cache, the time taken to query is shorter. This is clear in the picture below. Remember we are only interested with the Query Time.
+Because the address is stored in the cache, the time taken to query is shorter. This is clear in the picture below. Remember, we are only interested in the Query Time.
  
 ![DNS Testing](/engineering-education/setting-up-a-private-dns-server-with-raspberry-pi/responsetime2.png)
 
@@ -169,38 +164,37 @@ Because the address is stored in the cache, the time taken to query is shorter. 
 
 1.	Find out the IP address of the raspberry PI by using the `ifconfig` command.
  
-![IFCONFIG](/engineering-education/setting-up-a-private-dns-server-with-raspberry-pi/ipaddress.png)
+![Ifconfig](/engineering-education/setting-up-a-private-dns-server-with-raspberry-pi/ipaddress.png)
 
-The IP address is the ```inet addr``` and hence the IP of our server is  ```10.0.2.15```.
+The IP address is the `inet addr`; hence, our server's IP is  `10.0.2.15`.
 
-2.	Set this IP address as the DNS server on devices.
- In order to achieve this settings on windows:
- - On your windows PC press ```windows key + R``` to open Run.
- - Type ```control``` in the new window and click ```enter``` to open Control Panel.
+2.	Set this IP address as the DNS server on devices. To achieve this setting on your Windows PC:
+ - Press the `windows key + R` to open Run.
+ - Type `control` in the new window and click `enter` to open the Control Panel.
 
-![RUN](/engineering-education/setting-up-a-private-dns-server-with-raspberry-pi/control.png)
+![Run](/engineering-education/setting-up-a-private-dns-server-with-raspberry-pi/control.png)
 
- - In control panel, select ```Network and Internet```.
+ - In the control panel, select `Network and Internet`.
 
-![NETWORK AND INTERNET](/engineering-education/setting-up-a-private-dns-server-with-raspberry-pi/network-and-internet.png)
+![Network and internet](/engineering-education/setting-up-a-private-dns-server-with-raspberry-pi/network-and-internet.png)
 
- - Then select ```View network status and tasks``` in the new window.
+ - Then select `View network status and tasks` in the new window.
 
-![NETWORK STATUS](/engineering-education/setting-up-a-private-dns-server-with-raspberry-pi/network-status.png)
+![Network status](/engineering-education/setting-up-a-private-dns-server-with-raspberry-pi/network-status.png)
 
- - On the left the new pane, select ```Change adapter settings```.
+ - On the left of the new pane, select `Change adapter settings`.
 
-![ADAPTER SETTINGS](/engineering-education/setting-up-a-private-dns-server-with-raspberry-pi/adpater-settings.png)
+![Adapter settings](/engineering-education/setting-up-a-private-dns-server-with-raspberry-pi/adpater-settings.png)
 
- - Right Click on the network interface in use e.g Wi-Fi or ethernet and then select ```Properties```.
+ - Right-click on the network interface in use, e.g., Wi-Fi or ethernet, and then select `Properties`.
 
-![PROPERTIES](/engineering-education/setting-up-a-private-dns-server-with-raspberry-pi/properties-1.png)
+![Properties](/engineering-education/setting-up-a-private-dns-server-with-raspberry-pi/properties-1.png)
 
- - Click on ```Internet Protocol Version 4 (TCP/IPv4)``` the select ```Properties``` again.
+ - Click on `Internet Protocol Version 4 (TCP/IPv4)` then select `Properties` again.
 
-![PROPERTIES](/engineering-education/setting-up-a-private-dns-server-with-raspberry-pi/properties-2.png)
+![Properties](/engineering-education/setting-up-a-private-dns-server-with-raspberry-pi/properties-2.png)
 
- - On the new window, choose ```Use the following DNS server address``` .
+ - On the new window, choose, `Use the following DNS server address`.
  
 ![Setting DNS](/engineering-education/setting-up-a-private-dns-server-with-raspberry-pi/set-dns.png)
 
@@ -214,3 +208,4 @@ The network speed can be highly utilized by using a raspberry PI by caching the 
 
 ---
 Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
+
