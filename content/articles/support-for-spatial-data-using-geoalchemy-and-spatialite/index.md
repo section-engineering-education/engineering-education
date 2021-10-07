@@ -1,13 +1,17 @@
 ---
 layout: engineering-education
-url: /how-to-add-support-for-spatial-data-in-your-database-using-geoalchemy-and-spatialite/
+status: publish
+published: true
+url: /support-for-spatial-data-using-geoalchemy-and-spatialite/
 title: How To Add Support For Spatial Data in your Database Using GeoAlchemy and Spatialite
 description: This tutorial will be a step-by-step guide on how to add support to store and query spatial data for their database in their development environment.
 author: paul-asalu
+date: 2020-09-25T00:00:00-10:00
 topics: []
 excerpt_separator: <!--more-->
 images:
-  - url: /how-to-add-support-for-spatial-data-in-your-database-using-geoalchemy-and-spatialite/hero.png
+
+  - url: /engineering-education/support-for-spatial-data-using-geoalchemy-and-spatialite/hero.png
     alt: Spatialite database example image
 ---
 When building certain kinds of applications, it is important to know what kind of data you'll be working with, so you can make adequate preparations to hold and process them. One such instance is when you need to work with "spatial data" (location data - in terms of longitude and latitude).
@@ -176,7 +180,7 @@ set FLASK_APP=myfilename.py
 
 Once you run this command, you should see the logs on the terminal indicate that the server is running, as shown below:
 
-![server-logs](/engineering-education/how-to-add-support-for-spatial-data-in-your-database-using-geoalchemy-and-spatialite/demo1.PNG)
+![server-logs](/engineering-education/support-for-spatial-data-using-geoalchemy-and-spatialite/demo1.PNG)
 
 ### Adding support for spatial data
 #### Prerequisite
@@ -234,7 +238,7 @@ To install `Spatialite`, visit [this](http://www.gaia-gis.it/gaia-sins/windows-b
 
 This should take you to a page like the one shown below:
 
-![spatialite-download-page](/engineering-education/how-to-add-support-for-spatial-data-in-your-database-using-geoalchemy-and-spatialite/demo2.PNG)
+![spatialite-download-page](/engineering-education/support-for-spatial-data-using-geoalchemy-and-spatialite/demo2.PNG)
 
 > _If you're on Linux, follow the instructions in this [link](https://xl-optim.com/spatialite-and-python-in-2020/) to get it installed on Linux._
 
@@ -244,7 +248,7 @@ Once downloaded, you can extract the folder using any file extractor tool like W
 
 The extracted folder should contain the following files:
 
-![spatialite-folder](/engineering-education/how-to-add-support-for-spatial-data-in-your-database-using-geoalchemy-and-spatialite/demo3.PNG)
+![spatialite-folder](/engineering-education/support-for-spatial-data-using-geoalchemy-and-spatialite/demo3.PNG)
 
 Next, copy the path to this folder and add it as an environment variable called `spat_path` from the terminal:
 
@@ -363,7 +367,7 @@ Once we run migrations, it creates a new version file on our behalf describing t
 
 Open the `migrations/versions/` folder in your project directory and open the first file there, it should look like the one below:
 
-![migrations-script-image](/engineering-education/how-to-add-support-for-spatial-data-in-your-database-using-geoalchemy-and-spatialite/demo4.PNG)
+![migrations-script-image](/engineering-education/support-for-spatial-data-using-geoalchemy-and-spatialite/demo4.PNG)
 
 This file describes what flask_migrate sees from the models as the changes to be applied to the database.
 
@@ -409,7 +413,7 @@ Let's populate the database with some user information.
 
 I have generated a random list of longitude and latitude values using [Epitools](https://epitools.ausvet.com.au/rgcs), the generated list of values is shown below:
 
-![example-spatial-data](/engineering-education/how-to-add-support-for-spatial-data-in-your-database-using-geoalchemy-and-spatialite/demo5.PNG)
+![example-spatial-data](/engineering-education/support-for-spatial-data-using-geoalchemy-and-spatialite/demo5.PNG)
 
 This site also allows you to download this as an excel spreadsheet.
 
