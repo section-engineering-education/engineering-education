@@ -1,17 +1,45 @@
-﻿
+﻿Programming is the process of developing computer programs using different languages and tools.
 
-### UNDERSTANDING FUNDAMENTAL PROGRAMMING PRINCIPLES
+Table of Contents
 
-Programming is the process of developing computer programs using different tools.
-They are divided into two main categories.
+1. Programming languages
+
+    low-level languages
+
+    high-level languages
+2. Program development
+
+    problem recognition
+
+    problem definition
+
+    program design
+
+    program coding
+
+    program testing & debugging 
+
+    program implementation
+
+    program review and maintenance
+
+
+3. Program documentation
+4. Common tools used in programming languages
+5. Conclusion
+6. Further reading
+
+
+
+Programming languages are divided into two main categories.
 
  - low-level languages 
  - high-level languages
 
 ### Low-level languages
-Low-level languages are understood by the machine and need little effort to translate into object code.
+Machines understand low-level languages and need little effort to translate them into object code.
 
-#### The two types of low-level languages
+### Classification of low-level languages
 #### Machine Language
 It uses binary logic since it is the only language that a microprocessor processes.
 Machine language is fast to execute since it is already in machine-understandable format.
@@ -41,28 +69,28 @@ They develop/add pictures to a web page.
 Web scripting languages do not have declaration parts neither do they have control structures.
 Examples of web scripting languages are JavaScript, XML, Perl, Python, Ruby, Groovy.
 
-#### Program Development
+### Program Development
 
 Process of creating software and it's broken down into the following stages
-#### 1. Problem Recognition
+### 1. Problem Recognition
 
 Here, the programmer should understand and interpret the problem
-#### 2. Problem Definition
+### 2. Problem Definition
 
 The programmer identifies the required input processing activities and output.
 The programmer also identifies ways of solving the same problem and picks the best.
 Written documentation is required for the design stage
 
-#### 3. Program Design
+### 3. Program Design
 
 At this stage, the programmer develops a problem-solving project called an algorithm, which is a limited number of logical steps that a program follows to solve a problem.
 At this stage tools such as pseudocodes, flowcharts, and decision tables are useful.
 
-#### 4. Program Coding
+### 4. Program Coding
 
 The algorithm gets translated into an equal programming language code.
 In program coding, the programmer may use different control structures.
-### Program control structures
+#### Program control structures
 
 #### Sequence control 
 
@@ -160,17 +188,17 @@ the statements get executed until the condition becomes true.
     end for
 These control structures have different formats in different programming languages. 
  
-#### 5. Program Testing and debugging
+### 5. Program Testing and debugging
 Testing ensures that the program runs as intended and performs the intended actions.
 Debugging is the process of checking, detecting, and correcting errors in computer programs.
 Errors that may occur in a program are syntax errors and logic errors, etc.
-#### 6. Program Implementations
+### 6. Program Implementations
 It is the actual delivery and installation of the new program and how well it works.
 
-#### 7. Program Review and Maintainance
+### 7. Program Review and Maintainance
 Review and maintenance are important because of the errors encountered after implementation. Proper training of users will reduce the chance of invalid input that can crash the program.
 
-#### Program Documentation
+### Program Documentation
 
  - It's written text explaining the program development process.
  It helps during future modification of the program.
@@ -181,7 +209,7 @@ External documentation is the reference materials such as user manuals printed a
 
 ### Common Tools Used for Programming Languages
 
- #### Front-end Development Tools
+ ### Front-end Development Tools
 
  Front-end technology helps to design the user interface of web applications and web pages
  Best tools for front-end web development
@@ -198,7 +226,7 @@ External documentation is the reference materials such as user manuals printed a
      10. Grunt
 
  
-#### Backend Development Tools
+### Backend Development Tools
 
 Backend technology helps to design the server-side operations of web applications and web pages.
 Best tools for backend web development
