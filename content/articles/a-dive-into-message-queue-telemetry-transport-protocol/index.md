@@ -5,9 +5,9 @@ published: true
 url: /a-dive-into-message-queue-telemetry-transport-protocol/
 title: Message Queue Telementary Transport Protocol
 description: This article intends to talk about wireless communication architecture based on the MQTT protocol.
-author: samuel-torimiro
-date: 2021-10-06T00:00:00-14:06
-topics: [Languages]
+author: Irene-njeri
+date: 2021-10-07T00:00:00-06:05
+topics: []
 excerpt_separator: <!--more-->
 images:
 
