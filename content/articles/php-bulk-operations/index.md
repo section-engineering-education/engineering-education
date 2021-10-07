@@ -10,7 +10,7 @@ These are two core concepts that every PHP developer needs to learn when dealing
 This article aims to take the reader through a stepwise process of understanding dealing with bulk insert and bulk export in PHP. Thus, the reader will understand the benefits of this functionality. Moreover, they will get a chance to build a working project with the complete implementation of the functionality.
 
 ### Project overview
-We will have a simple employee management system that, besides performing crude functionalities, will allow for bulk insert and bulk export. We will export the data into both Excel and PDF in real-time. The project will use MySQL database PHP and a bit of bootstrap 4 stylings.
+We will have a simple employee management system that, besides performing crude functionalities, will allow for bulk insert and bulk export. We will export the data into both Excel and PDF in real-time. The project will use MySQL database PHP and a bit of bootstrap four stylings.
 
 ### Prerequisites
 This project  is a web development project, so besides basic web development skills, the reader should have an idea about:
@@ -46,7 +46,7 @@ The table has two buttons in a form to export all records to Excel or PDF. The c
 </form>
 ```
 
-Below the form is a table showing the list of employees in the system with columns of their names, the department in which they work and age. 
+Below the form is a table showing the list of employees in the system with columns of their names, the department in which they work, and age. 
 
 ```php
 <thead>
@@ -118,7 +118,7 @@ class Database extends mysqli{
 #### The bulk import function
 The bulk import function works by reading data from one Excel file, converting it to an array, then running through the array and inserting every element into the database. 
 
-The first step of performing the bulk import is opening an Excel file in reading mode. While reading a single row, we separate the data read by a comma(,) using the `implode()` function. We, then, call the `SQL INSERT` query to insert the data into the respective fields of the database. 
+The first step of performing the bulk import is opening an Excel file in reading mode. While reading a single row, we separate the data read by a comma(,) using the `implode()` function. We then call the `SQL INSERT` query to insert the data into the respective fields of the database. 
 
 At any instance, if a query fails, the private variable `state` is set to `false`, and an error is thrown showing that the import procedure did not go through. Otherwise, a success alert is sent to the user.
 
