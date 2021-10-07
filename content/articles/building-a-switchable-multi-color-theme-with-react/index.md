@@ -3,32 +3,29 @@ layout: engineering-education
 status: publish
 published: true
 url: /building-a-switchable-multi-color-theme-with-react/
-title: Building a Switchable Multi-Color Theme Using React.
+title: Building a Switchable Multi-Color Theme Using React
 description: In this tutorial, we will discuss the simple steps required in building multiple themes for websites using React.js and CSS.
 author: vickky-cletus
-date: 2021-10-01T00:00:00-09:38
+date: 2021-10-07T00:00:00-14:38
 topics: []
 excerpt_separator: <!--more-->
 images:
+
   - url: /engineering-education/building-a-switchable-multi-color-theme-with-react/hero.jpg
     alt: Building a Multi-Color Theme with React.js Hero image.
 ---
+Front-end developers face the task of making a user-interface that enhances user experience and accommodates user preferences. React.js with CSS can primarily be used to create a multi-color switchable theme.
+<!--more-->
+The user is offered the privilege of toggling between theme colors to suit their preference at a given point in time.
 
 ### Introduction
-As front-end developers we are faced with the task of making available a user-interface that enhances user experience and accommodates user preferences.
-
-<!--more-->
-
-React.js with CSS can primarily be used to create a multi-color switchable theme. The user is offered the privilege of toggling between theme colors to suit their preference at a given point in time.
-
-In this article, we will discuss extensively the various steps and requirements to build a multi-color theme with React.js, CSS and other dependencies.
+In this article, we will discuss the various steps and requirements to build a multi-color theme with React.js, CSS, and other dependencies.
 
 ### Prerequisites
-The article was written bearing in mind that the reader has prior experience with React.js, CSS and any design library of their choice. If you are not comfortable with the afore mentioned, take a moment to understand the basics.
+The reader should have prior experience with React.js, CSS, and any design library of their choice. If you are not comfortable with the aforementioned languages or frameworks, take a moment to understand the basics before proceeding.
 
-### Components of a Theme Handler in React.js
+### Components of a theme handler in React.js
 To achieve the goal of building a switchable multi-color theme, your web-application must possess the following components:
-
 - Context Api for color State management
 - Color picker components
 - Navbar
@@ -36,10 +33,10 @@ To achieve the goal of building a switchable multi-color theme, your web-applica
 - Feeds
 - Design dependencies for page elements.
 
-### Getting Started with Theme Development with React.js
+### Getting started with theme development with React.js
 To maximize understanding, this tutorial will be structured in as a procedural format. The various steps required to complete the building of a switchable multi-color theme with `react` will be discussed as follows:
 
-#### Step 1: Creating the React Application
+#### Step 1: Creating the React application
 The first step in every `react` development is to create the `react` application. This step is easy to implement.
 
 To create your `react` application, in the command terminal, run the command shown below:
@@ -72,12 +69,15 @@ npm install
 ```
 
 #### Step 3: Creating the theme context
-State management is React can be done in two (2) ways, namely:
+State management in React can be done in two (2) ways, namely:
+1. React context API.
+2. React redux.
 
-1. React context api
-2. React redux
-   For simplicity we will use the former i.e. `react context` api. It will enable us have real time monitoring of our theme component.
-   To set up our theme context, we create a `ThemeContext.js` file. Secondly, we implement the code snippet below:
+For simplicity we will use the former i.e. `react context` API. It will enable us to have real time monitoring of our theme component.
+
+To set up our theme context, we create a `ThemeContext.js` file. 
+
+Then, we implement the code snippet below:
 
 ```JavaScript
 import React, {createContext, useState } from "react";
@@ -115,8 +115,9 @@ export default function ThemeColorWrapper(props) {
 
 ```
 
-We created a `ThemeWrapper` that will wrap all our components and provide the desired theme colors to the user. The code block also created a `react-context` that holds six (6) colors which are:
+We created a `ThemeWrapper` that will wrap all our components and provide the desired theme colors to the user. 
 
+The code block also created a `react-context` that holds six (6) colors which are:
 - Brown
 - Blue
 - Red
@@ -126,9 +127,8 @@ We created a `ThemeWrapper` that will wrap all our components and provide the de
 
 These colors will eventually become a part of our theme components.
 
-#### Step 4: Creating the Various Components
+#### Step 4: Creating the various components
 Our Applications will have four (4) components namely:
-
 1. Theme-toggler
 2. Navbar
 3. Sidebar
@@ -136,11 +136,12 @@ Our Applications will have four (4) components namely:
 
 We will now go ahead with the creation of our desired page components.
 
-##### The Theme-toggler component
-The Theme-toggler component will enable user to interact with the theme colors. An array of available colors will be displayed on a panel which the user will have to pick from and have the other components adapt to instantly.
+#### The theme-toggler component
+The theme-toggler component will enable users to interact with the theme colors. An array of available colors will be displayed on a panel which the user will have to pick from and have the other components adapt to instantly.
 
-To achieve this, we create a `ThemeToggler.js` file. Then we proceed to the code snippet below:
+To achieve this, we need to create a `ThemeToggler.js` file. 
 
+Then we proceed to the code snippet below:
 ```JavaScript
 import React from "react";
 // importing the required reactstrap components
@@ -229,14 +230,14 @@ export default ThemeToggler;
 
 We have successfully created a `ThemeToggler` with six colors visibly displaced on a color panel.
 
-![Theme-toggler](\engineering-education\building-a-multi-color-theme-with-react\image1.jpg)
+![Theme-toggler](/engineering-education/building-a-switchable-multi-color-theme-with-react/image1.jpg)
 
 ##### The Navbar components
 Most modern websites usually have a navbar and ours will not be an exception. The navigation bar provides a brief summary of the website to the user and also facilitates routing.
 
 Our `Navbar` component through the help of the `theme-context` will have color switching abilities which will be connected to the other components.
 
-To create a `Navbar` component, we first create a `Navbar.js` file in the `src` folder then we implement the code snippet below:
+To create a `Navbar` component, we first need to create a `Navbar.js` file in the `src` folder then we implement the code snippet below:
 
 ```JavaScript
 import React from "react";
@@ -357,22 +358,24 @@ function Navbar(props) {
 export default Navbar;
 ```
 
-From the code snippet above, we imported a lot of elements from the `reactstrap` dependency we installed in the beginning part of the article. Those elements include:
+From the code snippet above, we imported a lot of elements from the `reactstrap` dependency we installed in the beginning part of the article. 
 
+Those elements include:
 - Button
 - Drop-Down
 - Collapse
 - Container
 - Nav-Links
 - Navbar Toggler. Etc.
-  We also paced the various elements at appropriate positions on our `Navbar` awaiting styling. Feel free to customize them to your desired specifications. Finally, we created a `toggleCollapse` function to handle toggling the `Sidebar` on small and medium screen sizes.
 
-![Navbar-components](\engineering-education\building-a-multi-color-theme-with-react\image2.jpg)
+We also paced the various elements at appropriate positions on our `Navbar` awaiting styling. Feel free to customize them to your desired specifications. Then, we created a `toggleCollapse` function to handle toggling the `Sidebar` on small and medium screen sizes.
 
-##### The Sidebar components
-The sidebar, also an important piece of a website, plays an essential role in user interaction and in-app routing.
+![Navbar-components](/engineering-education/building-a-switchable-multi-color-theme-with-react/image2.jpg)
 
-Our sidebar will as usual be placed beside the `Feeds` component and will contain icons, texts, header and some links.
+#### The sidebar components
+The sidebar is also an important piece of a website, it plays an essential role in user interaction and in-app routing.
+
+Our sidebar will be placed beside the `Feeds` component and will contain icons, texts, header and some links.
 
 To create a `Sidebar` component, in your `src` folder, create a `Sidebar.js` file and which will accommodate the code snippet below:
 
@@ -425,26 +428,29 @@ const SidebarProps = ()=>{
 export default Sidebar;
 ```
 
-To simplify the job, we created a reusable `SidebarProps` component that accepts a sidebar icon and a text. The following `semantic-ui-react` icons were used:
+To simplify the job, we created a reusable `SidebarProps` component that accepts a sidebar icon and a text. 
 
+The following `semantic-ui-react` icons were used:
 - Home
 - Explore
 - Notifications
 - Message
 - Bookmark and
 - Profile
-  these icons provide the user with a clear view of the routes and component in our application.
-  Finally, we wrapped our entire `Sidebar` component with the `ThemeColorContext` we created earlier to handle the theme-color of our sidebar.
   
-![Sidebar-components](\engineering-education\building-a-multi-color-theme-with-react\image3.jpg)
+These icons provide the user with a clear view of the routes and component in our application.
 
-##### The Feeds components
+We then wrapped our entire `Sidebar` component with the `ThemeColorContext` we created earlier to handle the theme-color of our sidebar.
+  
+![Sidebar-components](/engineering-education/building-a-switchable-multi-color-theme-with-react/image3.jpg)
+
+#### The feeds components
 The feeds page in most cases is where web contents such as texts, images, icons, gifs, etc. can be found on the website.
 
 We will create a `Feeds` component that will be displayed to the right of the `Sidebar` already created.
 The `Feeds` will be kept simple with a few elements as it is not the focus of this article. Feel free to add and customize as many elements as you wish.
 
-As usual, in our `src` folder, we create a new file `Feeds.js`, thereafter we implement the code snippet below:
+In our `src` folder, we created a new file `Feeds.js`, thereafter we can implement the code snippet below:
 
 ```JavaScript
 import React, { useState } from "react";
@@ -520,21 +526,25 @@ export function Feeds() {
 }
 ```
 
-From the snippet above, we created a page similar to a social media news feed. We also imported the following elements from `semantic-ui-react`:
+From the snippet above, we created a page similar to a social media news feed. 
 
+We also imported the following elements from `semantic-ui-react`:
 - Avatar
 - Modal
 - Card
 - Image
 - Button
-  If correctly implemented, you should have a raw `Feeds` component ready for styling and viewing.
+
+If correctly implemented, you should have a raw `Feeds` component ready for styling and viewing.
   
-![Feed-components](\engineering-education\building-a-multi-color-theme-with-react\image4.jpg)
+![Feed-components](/engineering-education/building-a-switchable-multi-color-theme-with-react/image4.jpg)
 
 #### Step 5: Styling the various components
-In the previous step we created a `Navbar`, `Sidebar` and `Feeds` component. To improve the appearance and style of those components, we have to add the required styles.
+In the previous step we created a `Navbar`, `Sidebar`, and `Feeds` component. To improve the appearance and style of those components, we have to add the required styles.
 
-To style our components, we create a `styles.css` file which will be used to customize our component. The code snippet below should be implemented:
+To style our components, we create a `styles.css` file which will be used to customize our component. 
+
+The code snippet below should be implemented:
 
 ```CSS
 .navbar .navbar-wrapper {
@@ -646,7 +656,7 @@ In previous steps we created and styled the ThemeToggler, Navbar, Sidebar, and F
 
 We will move ahead with displaying our components in the `App` and then start our development server to view our `Multi-Color Theme` in our browser.
 
-To do that, in our `App.js` file, we import our components as shown below:
+To do that, in our `App.js` file, we need to import our components as shown below:
 
 ```JavaScript
 import React from "react";
@@ -676,7 +686,9 @@ function App() {
 export default App;
 ```
 
-Once the code snippet above is correctly implemented, the App component looks ready for viewing. To view our Application on a browser, open your `command terminal` and run the following command:
+Once the code snippet above is correctly implemented, the app component looks ready for viewing. 
+
+To view our application on a browser, open your `command terminal` and run the following command:
 
 Npm:
 
@@ -690,12 +702,12 @@ Or for yarn users:
 yarn start
 ```
 
-![App Testing](\engineering-education\building-a-multi-color-theme-with-react\image5.jpg)
+![App Testing](/engineering-education/building-a-switchable-multi-color-theme-with-react/image5.jpg)
 
-You should be able to view the App on your browser once the development server starts.
+You should be able to view the app on your browser once the development server starts.
 
 ### Conclusion
-In this article, we applied various concepts in creating a multi-color theme with react.js. We also looked at state management with `react-context-api`.
+In this article, we applied various concepts in creating a multi-color theme with React.js. We also looked at state management with `react-context-api`.
 
 The concepts covered in this article can be used in future projects involving color and theme management.
 
