@@ -4,7 +4,6 @@ Smart inverters act as the principal connection between distributed energy resou
 This article intends to talk about wireless communication architecture based on the MQTT protocol.
 
 ### Table of contents
-
 - [An overview of MQTT](#an-overview-of-mqtt)
 - [Communication between MQTT Client and Broker](#communication-between-mqtt-client-and-broker)
 - [Insights into the workings of MQTT](#insights-into-the-workings-of-mqtt)
@@ -12,17 +11,17 @@ This article intends to talk about wireless communication architecture based on
 - [Conclusion](#conclusion)
 
 ### An overview of MQTT
-The MQTT convention characterizes two sorts of organization elements: a message dealer and numerous buyers. All client signals are received by an MQTT broker, which then passes them to the appropriate receivers. If a device runs an MQTT library and connects to a broker via the internet, it is an MQTT client. (anything from a microcontroller to a full-fledged server).
+The MQTT convention characterizes two sorts of organization elements: a message dealer and numerous buyers. All client signals are received by an MQTT broker, which then passes them to the appropriate receivers. Thus, if a device runs an MQTT library and connects to a broker via the internet, it is an MQTT client. (anything from a microcontroller to a full-fledged server).
 
-The subject hierarchies have been used to arrange the data. The connected broker receives a control signal every time the publisher publishes fresh data. Afterwards, the broker distributes the data to all those who have requested it through email or other means. Publishers are not obliged to disclose subscription numbers or locations, nor are they required to give information about their subscribers.
+The subject hierarchies have been used to arrange the data. The connected broker receives a control signal every time the publisher publishes new data. Afterwards, the broker distributes the data to all those who have requested it through email or other means. Publishers are not obliged to disclose subscription numbers or locations, nor are they required to give information about their subscribers.
 
-Anything sent on a topic that has no current subscribers will be removed by brokers unless the publisher categorizes it as a `retained message.` A retained message is a MQTT message that has the retained flag set. The broker keeps track of the most recent communication and its related grade of service for each topic. A message is sent immediately to any client that has subscribed to a subject pattern that matches the message's subject. Only one communication is saved per subject by the broker. This enables new subscribers to a topic to get the most up-to-date information without waiting for the publisher's next update.
+Anything sent on a topic that has no current subscribers will be removed by brokers unless the publisher categorizes it as a `retained message.` A retained message is an MQTT message that has the retained flag set. The broker keeps track of the most recent communication and its related grade of service for each topic. A message is sent immediately to any client that has subscribed to a subject pattern that matches the message's subject. Only one communication is saved per subject by the broker. This enables new subscribers to a topic to get the most up-to-date information without waiting for the publisher's next update.
 
 When the distributing customer interfaces with the specialist interestingly and the representative identifies that the distributing customer has out of nowhere disengaged, the distributing customer can set up a default message to communicate to endorsers. 
 
 Customers speak with an agent, regardless of whether a framework might comprise many representative workers trading information-dependent regarding the matters of their present supporters.
 
-Broker servers exchange data depending on the topics of their current subscribers, but clients only interact with one broker server.
+Broker servers exchange data depending on their current subscribers' topics, but clients only interact with one broker server.
 
 MQTT uses the TCP protocol for data transmission. MQTT-SN, a variant, is used via various transports such as UDP or Bluetooth.
 
@@ -31,11 +30,11 @@ MQTT offers connection credentials in raw text format without any security or au
 ### Communication between MQTT Client and Broker
 The MQTT broker is a piece of software that runs on a computer (on-premises or in the cloud), and it can either be self-built or hosted by a third party. There are both open-source and proprietary options to choose from.
 
-MQTT utilizes the title [`Topic`](#topic)  instead of the expected beneficiary's location since the intermediary capacities as a mail center. Assuming you need a duplicate of the message, buy into that subject. A solitary agent can send messages to an enormous number of customers (one to numerous capacities). A solitary supporter might get data from various sources. 
+MQTT utilizes the title [`Topic`](#topic)  instead of the expected beneficiary's location since the intermediary capacities as a mail centre. Assuming you need a duplicate of the message, buy into that subject. A solitary agent can send messages to an enormous number of customers (one to numerous capacities). A solitary supporter might get data from various sources. 
 
 By distributing and buying in, every customer might deliver and get information, i.e., the gadgets can communicate sensor information while getting setup data or control orders (MQTT is a bi-directional correspondence convention). Data exchange, device management, and control are all aided by this.
 
-New subscribers will be provided with the most up-to-date information by storing the data as retained messages for brokers (which need a database client subscription). All session data is kept in 'permanent sessions,' even when devices are switched on or off.
+New subscribers will be provided with the most up-to-date information by storing the data as retained messages for brokers (which need a database client subscription). All session data is kept in 'permanent sessions,' even when switched on or off devices.
 
 The following are the key benefits of using an MQTT broker:
 
@@ -64,7 +63,7 @@ SSL/TLS may not generally be a choice or even wanted because of the MQTT convent
 
 The username and password can be seen as a part of a CONNECT/CONNACK packet sequence. Moreover, specific agents, especially open specialists that publicize on the web, energize mysterious customers. The username and secret phrase are both left clear when this occurs. 
 
-MQTT is a lightweight protocol since it only requires a little amount of code to process each message. The following data is included in each message:
+MQTT is a lightweight protocol since it only requires a little code to process each message. The following data is included in each message:
 
 - Two bytes of fixed header height
 - A heading that may be utilized or not used, depending on the situation
@@ -93,4 +92,4 @@ For example, if a client wants to know about all of the objects in the kitchen, 
 Consequently, any material provided on topics like kitchen products, bedroom things, and living room items will be available here. For this situation, information on an assortment of levels might be gotten.
 
 ### Conclusion
-From the article above, we have learned what message queue telemetry transport protocol is and an insight into its working condition. After reading this article, we hope you now have a better idea of the MQTT protocol, how it works, and what it is best for. 
+From the article above, we have learned what message queue telemetry transport protocol is and an insight into its working condition. After reading this article, we hope you now have a better idea of the MQTT protocol, how it works, and best. 
