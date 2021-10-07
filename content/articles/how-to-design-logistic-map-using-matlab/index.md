@@ -1,7 +1,8 @@
 ### How to design logistic map using Matlab
 ### Introduction
-One of the most challenging topics in science is the study of chaos. As an example of chaos, consider fluid flowing around an object. If the velocity of the fluid is not very large, the fluid flows in a smooth, steady way, called "laminar flow", which can be calculated for simple geometries. However, if the velocity increases, the flow becomes more complicated and depends on time and space in a non-trivial way that is essentially impossible to calculate. This "turbulent" behaviour is called "chaos".
-The logistics map is a classic example of the transition from stable to chaotic behaviour as a single parameter changes value. This script plots the semi-stable values of $X_{k+1}=\beta X_k(1-X_k)$ as $\beta$ is varied. Historically it has been one of the most important and classic systems during the early days of research on deterministic chaos. In this article, we will look at how to design a logistic map in Matlab.
+Let's say you want to model a population of rabbits if you have $X_k$ rabbits this year. How many rabbits will you have next year? The simplest model I can imagine is taking the population $X_k$ and multiplying it by the growth rate $\beta$. Let's say, for example, the growth rate is 2. It means that the population will double every year and the problem with that is the number of rabbits will grow exponentially forever. So here now, we add the term (1-x) to represent the constraints of the environment.
+
+From the statement above, the logistic map is represented by the equation $X_{k+1}=\beta X_k(1-X_k)$. This map shows the behaviour of change from stable to chaotic as the parameters changes. Historically it has been one of the most important and classic systems during the early days of research on deterministic chaos. In this article, we will look at how to design a logistic map in Matlab
 
 ### Prerequisites
 To follow along with this tutorial, you'll need:
@@ -11,7 +12,8 @@ To follow along with this tutorial, you'll need:
 $X_{k+1}=\beta X_k(1-X_k)$ is the equation for the logistic map. This equation means that the value of `x` keeps changing depending on the rate of `k`.
 
 ### Matlab code for the logistic map
-What we will do is to increase the value $\beta$ parameters. So we will go from 0 to 4. The first thing is to create a vector, `xvals`. What this does is store all the vectors values of the increasing size vector. It means that we will walk through the beta and simulate the dynamics and see where the points go. You should do this for all the increasing values of $\beta$. Next, create a script for this activity. It is done by clicking the `new` in the editor tab and selecting the new script. 
+What we will do is to increase the value $\beta$ parameters. So we will go from 0 to 4. The first thing is to create a vector, `xvals`. What this does is store all the vectors values of the increasing size vector. It means that we will walk through the beta and simulate the dynamics and see where the points go. You should do this for all the increasing values of $\beta$. Next, create a script for this activity. It is done by clicking the `new` in the editor tab and selecting the new script.
+
 When you create a new script, you use the `clear all` to clear all the stored values when running the script. We use `close all` to close all the editors and `clc` to clear the command window. We should include all these in the script.
 ```Matlab
 clear all
@@ -36,6 +38,7 @@ xold=xnew;
 end
 ```
 What happens here is every time we find `xnew`, it is saved to `xold`, and that becomes the initial `x`. Thus, the process iterates over and over again 2000times as indicated in our `for` loop.
+
 Since we don't want it to run through the 1000 iterations, we break it when it gets arbitrary close to itself. We then iterate the data to generate more data. 
 ```Matlab
 xss=xnew;
@@ -49,6 +52,7 @@ xvals(1,length(xvals)+1)=beta;
 xvals(2,length(xvals))=xnew;
 ```
 These two values form the matrix, with the $\beta$ values forming the first row while the `x` values form the second row. After having this matrix, we will create a scatter plot that will be the diagram of the logistic map. Since we don't want to have a boring solution that is just a fixed point and `xnew=xold`, we break it using the `if` statement.
+
 if(abs(xnew-xss)<.001)
 break
 end
@@ -71,7 +75,9 @@ xlabel('beta')
 ylabel('x')
 ```
 ![fixed point](map_two.png)
+
 Now, what we see is that as we increase `beta` from 0 to 1, there is a fixed point, and it is `x=0`. So what that means is that in our equation $X_{k+1}=\beta X_k(1-X_k)$, if `beta` is less than one, whatever your plugin for $x_k$ is going to go to zero. So it means that after that transient period, everything died out and went to zero, and we got that fixed point of 0.
+
 When you increase `beta` from 1 to 3, you get a single fixed point that iterates and eventually converges at a point in the beta parameters and stays there for every future iteration. So when the beta is above 3, we get two solutions. What happens is that our `x` will bounce back and forth between the two solutions, and this is called the periodic orbit, where the population is bouncing back and forth for every generation.
 
 ![increasing the beta values](map_three.png)
@@ -81,6 +87,7 @@ Now let us remove the transient section(comment out) and plot to see what happen
 ```Matlab
 xnew = xold;
 ```
+
 ![excluding the transient section](map_four.png)
 
 So we have this cool iteration. Essentially, after one iteration, `x` jumps to 0. Then, as beta increases, `x` jumps from 0 to each of the iterations.
