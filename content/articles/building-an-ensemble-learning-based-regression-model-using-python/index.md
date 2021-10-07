@@ -4,19 +4,21 @@
 ### Building an Ensemble Learning Based Regression Model Using Python
 
 Machine learning models are always evaluated based on their performance using specific metrics like; accuracy, precision, Mean Squared Error(MSE) etc. Each type of machine learning problem has its own evaluation metrics. 
-Building high performance models (low errors) therefore, depends on achieving the highest evaluation metric score.
+Building high performance models (models with low errors) therefore, depends on how good the evaluation metric score is.
 
 ### Introduction 
 
-In this tutorial, we shall be building a performance driven linear regression model using ensemble learning. **Linear regression** is a statistical method of modeling the relationship between independent variables (x) and dependent variables (y). It uses independent variables (features) to predict dependent variables (target).
+In this tutorial, we shall be building a performance driven linear regression model using ensemble learning.
+
+ **Linear regression** is a statistical method of modeling the relationship between independent variables (x) and dependent variables (y). It uses independent variables (features) to predict dependent variables (target).
 
 **Ensemble learning** is a machine learning technique that seeks to achieve better predictive performance of model by combining decisions from different models.
 
 For our model's evaluation, we shall be using RMSE (Root Mean Squared Error). 
 
-> **NB:** Regression problems cannot be measured using accuracy metric since the goal is to measure how close the predicted values is to the expected values and not to evaluate how correct the prediction is. Hence we use error to evaluate our models.
+> **NB:** Regression problems cannot be measured using accuracy metric since the goal is to measure how close the predicted values is to the expected values and not to evaluate how correct the prediction is. Hence we use errors to evaluate our models.
 
-### Prerequisite
+### Prerequisites
 
 To follow through the tutorial, you need to:
 1. Know the basics of Python
@@ -28,7 +30,7 @@ To follow through the tutorial, you need to:
 Before we start building our model, we shall first go to Kaggle and create a new **notebook** and rename it to **Create_Folds**.
 ![notebook](engineering-education/building-an-ensemble-learning-based-regression-model-using-python/notebook.jpg)
  
-After that, [download](https://www.kaggle.com/c/30-days-of-ml/data) the data from Kaggle and add it to your environment using the **Add Data** button and upload the downloaded data as **30daysml**.
+After that, [download](https://www.kaggle.com/c/30-days-of-ml/data) the data from Kaggle and add it to your environment using the **Add Data** button and upload the downloaded data as **Dataset**.
 
 >**HINT:**  To flawlessly upload your data to Kaggle, compress the datasets.
 
@@ -49,9 +51,9 @@ from sklearn import model_selection
 ```
 #### Read Data
 ```python
-train_data = pd.read_csv('/kaggle/input/30daysml/train.csv')
-test_data = pd.read_csv('/kaggle/input/30daysml/test.csv')
-submission = pd.read_csv('/kaggle/input/30daysml/sample_submission.csv')
+train_data = pd.read_csv('/kaggle/input/Dataset/train.csv')
+test_data = pd.read_csv('/kaggle/input/Dataset/test.csv')
+submission = pd.read_csv('/kaggle/input/Dataset/sample_submission.csv')
 ```
 #### Creating Folds
 Let's create a new column with the name *kfold* on the last column as shown below.
@@ -59,6 +61,7 @@ Let's create a new column with the name *kfold* on the last column as shown belo
 train_data['kfold'] = -1
 ```
 We shall then proceed to create 5 folds using the following code block:
+
 ```python
 kf  = model_selection.KFold(n_splits= 5,shuffle = True, random_state=42)
 
@@ -74,7 +77,7 @@ train_data.to_csv('train_kfolds.csv', index=False)
 
 After creating the kfolds, we shall proceed to download the `train_kfolds.csv` from the output data on our **Create_kFolds** notebook. 
 
-We'll then follow the same steps on [Setting up your environment](#setting-up-your-environment) to create a new notebook called **RegressionModel** and upload the **30daysml** and **`train_kfolds.csv`** data.
+We'll then follow the same steps on [Setting up your environment](#setting-up-your-environment) to create a new notebook called **RegressionModel** and upload the **Dataset** and **`train_kfolds.csv`** data.
 
 After we're done with the environment setup, we'll proceed to build our model.
 
@@ -91,26 +94,25 @@ from  sklearn.ensemble  import  RandomForestRegressor
 from  sklearn.metrics  import  mean_squared_error
 from  xgboost  import  XGBRegressor
 ```
-
-We shall then proceed to read our data.
+Once done, we shall then proceed to read our data.
 
 #### Read data
 
 ```python
 data = pd.read_csv('/kaggle/input/trainfolds/train_kfolds.csv')
-test_data = pd.read_csv('/kaggle/input/30daysml-data/test.csv')
-submission = pd.read_csv('/kaggle/input/30daysml-data/sample_submission.csv')
+test_data = pd.read_csv('/kaggle/input/Dataset2/test.csv')
+submission = pd.read_csv('/kaggle/input/Dataset2/sample_submission.csv')
 ```
 #### Feature Selection
 
-Here we shall select the useful features from our dataset and remove the not so useful/ impactful features.
-To do this, run the following block of code:
+Here we shall select the useful features from our dataset and remove the not so useful/ impactful features. In this dataset, the not so useful features would be; `id`, `target`, and `kfold`.
+
+To select the useful features, run the following block of code:
 ```python
 useful_features = [i for i in data.columns if i not in ("id", "target","kfold")]
 object_cols = [col for col in useful_features if "cat" in col]
 test_data = test_data[useful_features]
 ```
-We shall select all features as useful for modeling except `id`, `target`, and `kfold`.
 
 #### Modelling
 
@@ -159,7 +161,7 @@ To see how our model performed, we shall output the results of our model's predi
 submission.target =preds
 submission.to_csv("submission1.csv", index=False)
 ``` 
->**N/B:** You can submit a late submission to 30 days ML Kaggle challenge and see how your model peforms.
+>**Bonus:** You can submit a late submission to 30 days ML Kaggle challenge and see how your model peforms i.e If you had signed up for the challenge earlier.
 
 ### Hyperparameter optimization
 
@@ -168,4 +170,4 @@ A few common XGBoost parameters with a large effect on the model perfomance incl
  
 ### Conclusion
 
-Building a performance-driven model is not a very easy task. It involves refining our model again and again until we get the desired outcome. Either way mastering the art of modeling can be very rewarding. Whether it is in a project or a data science competition.
+Building a performance-driven model is not a very easy task. It involves refining our model again and again until we get the desired outcome. Either way mastering the art of modeling can be very rewarding. Whether it is in a machine learning or a data science project or a competition.
