@@ -28,7 +28,7 @@ However, an approach exists that leverages human abilities and expertise to guid
 4. Applications of machine teaching
 
 ### Prerequisites
-You're only required to be familiar with basic machine learning concepts. Here’s a link to an article that offers an introduction to [machine learning](/supervised-learning-algorithms/).
+You're only required to be familiar with basic machine learning concepts. Here’s a link to an article that offers an introduction to [machine learning](/engineering-education/supervised-learning-algorithms/).
 
 ### Machine teaching
 Research around the field of machine learning today takes a technocentric approach. Meaning it centers this approach on technology and promotes its importance. It addresses technical and functional goals, often at the expense of human values and ethics. As a result, this perspective may lead to some level of disconnection between the growth of artificial intelligence as a field and the users of the technology.

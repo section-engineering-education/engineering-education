@@ -210,7 +210,7 @@ As shown below.
 
 ![Physical device](/engineering-education/first-android-app/physical-device.png)
 
-![Input](/first-android-app/input-page.png)   ![Display](/engineering-education/first-android-app/display-page.png)
+![Input](/engineering-education/first-android-app/input-page.png)   ![Display](/engineering-education/first-android-app/display-page.png)
 
 ### Conclusion
 That is it! 

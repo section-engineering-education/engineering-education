@@ -18,7 +18,7 @@ JavaScript is similar to an interpreted language. JS compiles one line at a time
 <!--more-->
 
 ### Introduction
-I personally know many JavaScript (JS) developers who are missing out on some of the more basic concepts. I can't blame them; JS is a quirky language, and a lot education about it skips out on some of the higher-level JS principles, like [the event loop](/event-loop-explained/), even if they are crucial to writing good JavaScript code. In this article, we will explore *hoisting*, a JS fundamental that will impact every line of code you will ever write.
+I personally know many JavaScript (JS) developers who are missing out on some of the more basic concepts. I can't blame them; JS is a quirky language, and a lot education about it skips out on some of the higher-level JS principles, like [the event loop](/engineering-education/event-loop-explained/), even if they are crucial to writing good JavaScript code. In this article, we will explore *hoisting*, a JS fundamental that will impact every line of code you will ever write.
 
 ### Hoist the Mainsail
 In short, hoisting is when the JS compiler changes the placement of variables and function in your code. We will explore why this happens a little later, but for now, take a look at this code:

@@ -32,7 +32,7 @@ There is a growing need to understand how these systems make decisions. We will 
 5. Challenges to achieving explainable AI.
 
 #### Prerequisites
-To get the most from this article a basic understanding of artificial intelligence concepts will be useful. To better understand basic machine learning (ML) concepts check out this [article](/supervised-learning-algorithms/). Other concepts of machine learning and deep learning are also covered [here](/automated-fake-news-detection/).
+To get the most from this article a basic understanding of artificial intelligence concepts will be useful. To better understand basic machine learning (ML) concepts check out this [article](/engineering-education/supervised-learning-algorithms/). Other concepts of machine learning and deep learning are also covered [here](/engineering-education/automated-fake-news-detection/).
 
 #### Useful Terminology
 **Black box model** – a data mining and machine learning model whose internals are not interpretable to humans. The model internals is unknown to the observer. This could also be a proprietary model.
@@ -75,7 +75,7 @@ Another example case of bias involved a digital application for mortgages. This 
 
 If similar algorithms offered clear explanations on why the rates were decided upon, some of the consequences of bias would be contained before wreaking widespread harm. The bias would be easier to pick up. The algorithms would be fine-tuned to provide better and fairer experiences to all users.
 
-I recently wrote an article on bias in machine learning and how to handle it. To get a better understanding of bias, check it out [here](/handling-bias-in-machine-learning/).
+I recently wrote an article on bias in machine learning and how to handle it. To get a better understanding of bias, check it out [here](/engineering-education/handling-bias-in-machine-learning/).
 
 #### Models are More Complex and Unpredictable
 AI methods are usually either simple or complex. Simple methods are often rule-based and explainable. For example, a [decision tree](https://towardsdatascience.com/decision-trees-in-machine-learning-641b9c4e8052) model. This is a tree-like graph that splits a data set based on differing conditions. It is commonly used in classification problems, though it is also used for regression tasks. This type of model is very easy to understand and visualize for the user.

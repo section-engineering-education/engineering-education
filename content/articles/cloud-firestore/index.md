@@ -77,7 +77,7 @@ Within the code, you will find the following packages:
 
 - `random-words` - this will provide us with random words to save in the database.
 
-First we will start by initializing firebase in our application by using the config provided in the console. We will also need to create a firestore database from the console. To get more information on firebase click through to [this previous article](/node-firebase/).
+First we will start by initializing firebase in our application by using the config provided in the console. We will also need to create a firestore database from the console. To get more information on firebase click through to [this previous article](/engineering-education/node-firebase/).
 
 From the code, we have created a function to initialize firebase in the util file. Then we will import the required packages. We use the `firebase.firestore()` method to get an instance of Cloud Firestore database.
 

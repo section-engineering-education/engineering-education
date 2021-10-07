@@ -24,7 +24,7 @@ In this article, we will mathematically explore two types of regularization.
 3. Ridge Regression
 
 ### Prerequisites
-As a prerequisite, a basic understanding of Machine Learning is required. To learn more about Machine Learning, read this [article](/supervised-learning-algorithms/). The equations covered in this article are very simple and easy to follow.
+As a prerequisite, a basic understanding of Machine Learning is required. To learn more about Machine Learning, read this [article](/engineering-education/supervised-learning-algorithms/). The equations covered in this article are very simple and easy to follow.
 
 ### Regularization and overfitting
 Overfitting is an occurrence that impacts the performance of a model negatively. 
@@ -41,7 +41,7 @@ The image below shows the phenomena of overfitting, underfitting, and the correc
 
 [Source](https://analyticsindiamag.com/regularization-in-machine-learning-a-detailed-guide/)
 
-For a better understanding of overfitting, bias and variance, check out my previous [article](/ensemble-bias-var/).
+For a better understanding of overfitting, bias and variance, check out my previous [article](/engineering-education/ensemble-bias-var/).
 
 Overfitting occurs because a model fails to generalize the data that contains a lot of irrelevant data points. As mentioned in the previous paragraph, data points that do not reflect the properties of the data are considered to be irrelevant. An example is noise. Regularization is the answer to overfitting. 
 

@@ -49,7 +49,7 @@ As a prerequisite, the reader must have the following:
 ### Installation guide
 - To install Visual Studio and setup the work environment, you can check [this](https://www.geeksforgeeks.org/setting-environment-c-sharp/) article on how to set up the C# environment in Visual Studio.
 - To install SQL Server, you can download it from [here](https://www.microsoft.com/en-us/sql-server/sql-server-downloads).
-- If you are new to Windows forms, you can check [this](/getting-started-with-windows-forms-using-c-sharp/) tutorial which will help you understand the basic concepts.
+- If you are new to Windows forms, you can check [this](/engineering-education/getting-started-with-windows-forms-using-c-sharp/) tutorial which will help you understand the basic concepts.
 
 ### Creating the Pubs database
 **Pubs** is a database that is used by programmers as a learning tool to fetch data using queries. It contains a large amount of information about books, authors, publishers, and store sales.
