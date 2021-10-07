@@ -91,7 +91,7 @@ chart.add('', stars)
 chart.render_to_file('py_repos.svg')
 ```
 
-To begin, we `import pygal` as well as the `Pygal styles` we'll require for the chart. We'll keep printing the status of the API request return and the total amount of repositories detected to see if the API call was successful. 
+To begin, we `import pygal` as well as the `Pygal styles` that we'll require for the chart. We'll keep printing the status of the API request return and the total amount of repositories detected to see if the API call was successful. 
 
 First, we generate 2 blank lists to house the data that will be used in the chart. We’ll use the name, and the number of stars of each project to label and determine the height of the bars respectively. The name of each work, as well as the amount of stars it has, are added to these lists inside the loop.
 
