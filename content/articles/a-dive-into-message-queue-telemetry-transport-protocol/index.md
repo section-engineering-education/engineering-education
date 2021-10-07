@@ -1,5 +1,24 @@
+---
+layout: engineering-education
+status: draft
+published: true
+url: /a-dive-into-message-queue-telemetry-transport-protocol/
+title: Message Queue Telementary Transport Protocol
+description: This article intends to talk about wireless communication architecture based on the MQTT protocol.
+author: samuel-torimiro
+date: 2021-10-06T00:00:00-14:06
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/a-dive-into-message-queue-telemetry-transport-protocol/hero.jpg
+    alt: Message queue telementary transport protocol Hero Image
+---
+
 ### Introduction 
-Smart inverters act as the principal connection between distributed energy resources and the power bus in an environment with an increasing number of non-traditional power sources. In microgrids, where many DERs must be monitored and coordinated, this function is much more critical. Even under distributed control, the system must compensate for voltage and frequency fluctuations caused by local controllers. Therefore MGs must incorporate appropriate communication connections. A communications system is also necessary for efficient functioning.
+Smart inverters act as the principal connection between Distributed Energy Resources(DERs) and the power bus in an environment with an increasing number of non-traditional power sources. In Microgrids(Mgs), where many DERs must be monitored and coordinated, this function is much more critical.
+<!--more-->
+Even under distributed control, the system must compensate for voltage and frequency fluctuations caused by local controllers. Therefore MGs must incorporate appropriate communication connections. A communications system is also necessary for efficient functioning.
 
 This article intends to talk about wireless communication architecture based on the MQTT protocol.
 
@@ -19,13 +38,9 @@ Anything sent on a topic that has no current subscribers will be removed by brok
 
 When the distributing customer interfaces with the specialist interestingly and the representative identifies that the distributing customer has out of nowhere disengaged, the distributing customer can set up a default message to communicate to endorsers. 
 
-Customers speak with an agent, regardless of whether a framework might comprise many representative workers trading information-dependent regarding the matters of their present supporters.
+Customers speak with an agent, regardless of whether a framework might comprise many representative workers trading information-dependent regarding the matters of their present supporters.Broker servers exchange data depending on their current subscribers' topics, but clients only interact with one broker server.
 
-Broker servers exchange data depending on their current subscribers' topics, but clients only interact with one broker server.
-
-MQTT uses the TCP protocol for data transmission. MQTT-SN, a variant, is used via various transports such as UDP or Bluetooth.
-
-MQTT offers connection credentials in raw text format without any security or authentication mechanisms. This can be accomplished by encrypting and protecting the sent data against interception, modification, or forgery using TLS.
+MQTT uses the TCP protocol for data transmission. MQTT-SN, a variant, is used via various transports such as UDP or Bluetooth.It offers connection credentials in raw text format without any security or authentication mechanisms. This can be accomplished by encrypting and protecting the sent data against interception, modification, or forgery using TLS.
 
 ### Communication between MQTT Client and Broker
 The MQTT broker is a piece of software that runs on a computer (on-premises or in the cloud), and it can either be self-built or hosted by a third party. There are both open-source and proprietary options to choose from.
@@ -87,7 +102,6 @@ As a result, any published material about tables, inside kitchens, living rooms,
 - `#` is a multi-level indicator.- 
 The "#" sign represents a multi-level wildcard that can be used to substitute many levels in a topic.
 For example, if a client wants to know about all of the objects in the kitchen, living room, bedroom, or any other ground-floor room, they will subscribe to the topic:
-
 
 Consequently, any material provided on topics like kitchen products, bedroom things, and living room items will be available here. For this situation, information on an assortment of levels might be gotten.
 
