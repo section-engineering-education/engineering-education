@@ -14,7 +14,8 @@ images:
     alt: How to Store Your Python Functions Into Modules Hero Image
 ---
 
-Functions have a better advantage in the way in which the main program is separated from the blocks of code through the use of some descriptive names for the functions it simplifies to follow the main program. 
+In Python, you can save the definitions of functions in a file called a module. It is possible to import module definitions into your program file.
+
 <!--more-->
 
 Our python functions can be saved in their own file, which is a module then later the module is imported to the main program.
