@@ -107,3 +107,6 @@ Consequently, any material provided on topics like kitchen products, bedroom thi
 
 ### Conclusion
 From the article above, we have learned what message queue telemetry transport protocol is and an insight into its working condition. After reading this article, we hope you now have a better idea of the MQTT protocol, how it works, and best. 
+
+---
+Peer Review Contributions by: [Mercy Meave](/engineering-education/authors/mercy-meave/)
