@@ -7,7 +7,7 @@ To follow along with this article comfortably, you will require:
 - Be familiar with the scikit-learn library.
 
 ### Understanding decision trees
-We have two types of decision trees; Regression Decision tree and Classification decision tree. A regression Decision tree is a tree created on data whose target variable is continuous, while a classification decision tree is implemented on data whose target variable is categorical.
+We have two types of decision trees; Regression decision tree and Classification decision tree. A regression decision tree is a tree created on data whose target variable is continuous, while a classification decision tree is implemented on data whose target variable is categorical.
 
 Decision trees are composed of nodes and paths. Nodes in the decision tree are of two broad categories; **Decision node** and a **Leaf node**.
 
@@ -205,7 +205,7 @@ The dataset we have just downloaded is in `CSV ` format, and thus we import it t
 our_data = pd.read_csv("/content/drive/MyDrive/data.csv")
 
 ```
-Now that our data is downloaded, let us look at the first few samples part of it.
+Now that our data is downloaded let us look at the first few samples part of it.
 To do this, we use the `head()` function. This function prints the first five observations.
 
 ```python
@@ -293,7 +293,7 @@ print(Xtrain.shape , Ytrain.shape)
 (8000, 10) (8000,)
 
 ```
-Our training set consists of 8,000 observations with ten features and a study variable. At this point, we can now implement our decision tree. We first import the `DecisionTreeClassifier ` model from the class tree in the sk.learn library to implement our tree. We then create an object to the model and `fit()` it on the training subset. Below is the code for this activity.
+Our training set consists of 8,000 observations with ten features and a study variable. At this point, we can now implement our decision tree. We first import the `DecisionTreeClassifier ` model from the class tree in the `sk.learn` library to implement our tree. We then create an object to the model and `fit()` it on the training subset. Below is the code for this activity.
 
 ```Python
 from sklearn.tree import DecisionTreeClassifier 
