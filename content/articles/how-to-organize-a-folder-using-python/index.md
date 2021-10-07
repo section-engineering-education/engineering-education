@@ -1,10 +1,9 @@
-### How To Organize a Folder Using Python
 ### Introduction
-If you find yourself reading this article there is a high possibility that you've got files all over your desktop, or your download folder is unorganized since all downloaded files are stored there, this can be fixed using python.
+If you find yourself reading this article, there is a high possibility that you've got files all over your desktop, or your download folder is unorganized since all downloaded files are stored there. This can be fixed using python.
 Python is a high-level programming language designed to be easy to read and simple to implement. In this guide, we will see how to write a python script we can run anytime we want to organize any folder on our computer.
 
-### Prerequisite
-To understand this guide it's assumed that the reader has an understanding of basic python programming concepts such as;
+### Prerequisites
+To understand this guide, it's assumed that the reader has an understanding of basic python programming concepts such as;
 - Data types
 - Variables
 - strings
@@ -12,16 +11,16 @@ To understand this guide it's assumed that the reader has an understanding of ba
 - loops
 
 ### Goal
-In this guide, we will write a python script that will move files to a particular folder base on the [filename extension](). At the end of this guide, we will have a function that will move files to different folders by taking a source directory and a destination directory as parameters. 
+In this guide, we will write a python script that will move files to a particular folder based on the [filename extension](). At the end of this guide, we will have a function to move files to different folders by taking a source directory and a destination directory as parameters. 
 
 ### functions in python
-Don't Repeat Your self(DRY), is a very important principle in programming, the DRY principle helps in reducing the repetition of software patterns by referring back to a single source or "snippet" which is mostly achieved by using the concept of functions. 
+Don't Repeat Your self(DRY) is a fundamental principle in programming. The DRY principle helps in reducing the repetition of software patterns by referring back to a single source or "snippet" which is mainly achieved by using the concept of functions. 
 
-A Function is a group or a block of code that performs a particular task arranged in such a way that it is reusable. Methods are also refered to as functions in python but they are different, lets look at the difference.
-**Methods**: a method is a function in a class which can only be accessed with an object or instance of a class while a
-**Function**: is a function in itself that does not requires an instace or object to access it because it does not belong to a class.
+A Function is a group or a block of code that performs a particular task arranged so that it is reusable. Methods are also referred to as functions in python, but they are different. Let's look at the difference.
+**Methods**: a method is a function in a class that can only be accessed with an object or instance of a class.
+**Function**: is a function in itself that does not require an instance or object to access it because it does not belong to a class.
 
-**Declaring a function**: a function can be define with parameters or without prameters(*parameters are values or properties in which a function acts upon*). The code snippet below shows how to write a function.
+**Declaring a function**: a function can be defined with or without parameters(*parameters are values or properties in which a function acts upon*). The code snippet below shows how to write a function.
 ```python
 # without parameters
 def nameoffunction():
@@ -36,7 +35,7 @@ def nameoffunction(parameters):
 ```
 from the above snippet, `def` or define is the keyword used to declare a function. `code` is the code that performs the task the function represents. `return statement` returns the output the function is giving.
 
-**Calling a function**: calling a function is also known as executing the function. We call a function with its name followed by a parenthesis which may or may not carry an argument(*an argument is the data which represents the parameters given when declaring the function*) pending on whether the function has parenthesis. The code snippet below shows how to call a function.
+**Calling a function**: calling a function is also known as executing the function. We call a function with its name followed by a parenthesis that may or may not carry an argument(*an argument is the data representing the parameters given when declaring the function*) pending on whether the function has parenthesis. The code snippet below shows how to call a function.
 ```python
 #without arguments
 nameoffunction()
@@ -46,7 +45,7 @@ nameoffunction(argument)
 ```
 
 ### os Module
-The OS module is one of python's standard utility modules used to interact with the operating system. The os module is made up of so many methods(functions) which can perform certain tasks including;
+The OS module is one of python's standard utility modules used to interact with the operating system. The os module is made up of so many methods(functions) which can perform specific tasks, including;
 - *Getting the working directory a user is* using the method as shown below
 ```
 os.getcwd()
@@ -82,21 +81,19 @@ and lots more [read more](https://docs.python.org/3/library/os.html)
 - get the file size of a path in bytes using `os.path.getsize(file path)`
 - join path component using `os.path.join(path, *paths)` as we will see when moving multiple files from one directory to another.
 
-
-
 ### Shutil Module
-The shutil module is also one of python's standard utility modules used to interact with files and their collections. The shutil module can be used for varieties of functionalities which include;
+The `shutil` module is also one of python's standard utility modules used to interact with files and their collections. The shutil module can be used for varieties of functionalities which include;
 - copying files from one directory to another using `shutil.copyfile(source dir, destination dir,)`
 - deleting entire directories using `shutil.rmtree(file path)`
 - moving directories from one path to another using `shutil.move(source dir, destination dir, )` and lots of other functionalities [read more](https://docs.python.org/3/library/shutil.html)
 
 
 ### Moving a file from one folder to another
-To move folders with python create a new project file and name it app.py then import the two modules mentioned above as shown below.
+To move folders with python, create a new project file and name it app.py, then import the two modules mentioned above as shown below.
 ```python
 import os, shutil
 ```
-after importing the modules, create two folders or directories on your desktop with names ***file1*** and ***file2***. Create a file with the name *stt.txt* and save it into ***file2*** then update your code with the snippet below.
+After importing the modules, create two folders or directories on your desktop with names ***file1*** and ***file2***. Create a file with the name *stt.txt* and save it into ***file2***, then update your code with the snippet below.
 
 ```python
 source_dir = 'C:\\Users\\User\\Desktop\\file2'
@@ -107,17 +104,19 @@ files = os.listdir(source_dir)
 for f in files:
     shutil.move(os.path.join(source_dir, f), destination_dir)
 ```
-from the code snippet above we saved the path to ***file2*** where our *stt.txt* file is located in a variable named **source_dir** and saved the path to ***file1*** where we will be moving the *stt.txt* file to as **destination_dir**.
+From the code snippet above, we saved the path to ***file2*** where our *stt.txt* file is located in a variable named **source_dir** and saved the path to ***file1*** where we will be moving the *stt.txt* file to as **destination_dir**.
 > NOTE: in the file path `C:\\Users\\User\\Desktop\\file1`, *User*  is the name of your system user, Yours will be the name you set as your system user. A double backslash(`\\`) or single slash(`\`) will work depending on your operating system, use a forward slash(`/`) if the backslash does not work for you.
 
-The code `os.listdir(source_dir)` saved in the **files** variable is listing the files inside the source directory.
+The code `os.listdir(source_dir)` saved in the **files** variable lists the files inside the source directory.
 
-From the code snippet `shutil.move(os.path.join(source_dir, f)`, `os.path.join` is combining the **source** file path and the file which is from the for loop iterating through the **files** in the **source_dir**. `shutil.move` is moving the file from **source_dir** to the **destination_dir**. After updating your code run the below command to execute your code.
+From the code snippet `shutil.move(os.path.join(source_dir, f)`, `os.path.join` is combining the **source** file path and the file which is from the for loop iterating through the **files** in the **source_dir**. `shutil.move` is moving the file from **source_dir** to the **destination_dir**. After updating your code, run the below command to execute your code.
+
 ```
 python app.py
 ```
 ### Moving multiple files Using a Function
-Start with creating a new file or clearing the previous `app.py` file. And paste in the code snippet below 
+Start with creating a new file or clearing the previous `app.py` file. And paste in the code snippet below:
+
 ```python
 import shutil, os
 
@@ -157,21 +156,18 @@ def file_manager(file_source_dir, file_destination_dir):
 file_manager('C:\\Users\\User\\Downloads', 'C:\\Users\\User\\Downloads')
 
 ```
-In the code above we define a function with the name `file_manager` with a parameter *file_source_dir* which will take the source directory and *file_destination_dir* which will take the destination directory, **file_names** save the list of files in the source directory just like the previous code. 
+In the code above, we define a function with the name `file_manager` with a parameter *file_source_dir* which will take the source directory and *file_destination_dir*, which will take the destination directory, **file_names** save the list of files in the source directory just like the previous code. 
 
 The snippet `if os.path.join(source_dir, file_name).endswith('.mp3')`, is a conditional statement which checks if a file's name ends with `.mp3` file extension, the conditional statement helps move multiple files if they meet certain conditions. 
 
 From the snippet `shutil.move(os.path.join(source_dir, file_name), os.path.join(destination_dir, 'audios'))`, *os.path.join(source_dir, file_name)*, joins the **source_dir** and the **file_name** just like the previouse code. *os.path.join(destination_dir, 'audios')* is joining the destination folder with the specific folder to store a particular type of file base on thier file extension. 
 
-e.g the code above is checking for a file with the extension `.mp3`, which will move the file to a destination folder that contains another folder prepared for that type of file which is `audios` for mp3 files.
+e.g. the code above is checking for a file with the extension `.mp3`, which will move the file to a destination folder that contains another folder prepared for that type of file which is `audios` for mp3 files.
 
-The same process was repeated for the other file extensions. At the end of the function we returned a string `success!!!!` and called the function with arguments *'C:\\Users\\User\\Downloads'* for *source_dir* and *'C:\\Users\\User\\Downloads'* for the *distination_dir* using the snippet  `file_manager('C:\\Users\\User\\Downloads', 'C:\\Users\\User\\Downloads')`. When you execute the code, it will scan through the download folder and move the files that meet the condition to the various folders as shown in the demo below. 
+The same process was repeated for the other file extensions. At the end of the function we returned a string `success!!!!` and called the function with arguments *'C:\\Users\\User\\Downloads'* for *source_dir* and *'C:\\Users\\User\\Downloads'* for the *distination_dir* using the snippet  `file_manager('C:\\Users\\User\\Downloads', 'C:\\Users\\User\\Downloads')`. When you execute the code, it will scan through the download folder and move the files that meet the condition to the various folders, as shown in the demo below. 
 []()
 
 > Note: the destination_dir is the same as the source_dir because the destination folder is inside the source_dir. 
 
 ### Conclusion
 We were able to write a function that moves files from one folder to the other, which takes the directory that contains files we want to move and a directory we want to move files to as parameters. [Link to repo](https://github.com/wobin1/file-management-with-python)
-
- 
-
