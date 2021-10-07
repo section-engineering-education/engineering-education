@@ -70,7 +70,7 @@ The figure below shows a feature matrix where each row represents a song, and ea
 
 The user will also be represented in the same feature space. Some user-related features will be provided explicitly by the user, and other features will be implicit based on the characteristic information.
 
-![feature-matrix](/engineering-education/building-spotify-recommendation-engine/feature-matrix.jpg)
+![feature-matrix](/engineering-education/building-spotify-recommendation-engine/feature-matrix.JPG)
  
 Now, this model should recommend songs that users may find interesting. First of all, we will have to pick a similarity metric, like **cosine similarity**. Then the model must score each candidate according to this similarity metric, and then the model will recommend according to this score. 
 
@@ -91,7 +91,7 @@ The lesser the angle between vectors more the cosine similarity.
 #### Collaborative filtering
 Collaborative filtering systems use user-item interactions to generate recommendations. This means collaborative filtering uses similarities between users and items simultaneously to provide recommendations. Let us refer to the diagram below.
 
-![collaborative-filtering](/engineering-education/building-spotify-recommendation-engine/collaborative-filtering.jpg)
+![collaborative-filtering](/engineering-education/building-spotify-recommendation-engine/collaborative-filtering.JPG)
 
 As we can see in the diagram, there are two users, user A, and user B. Both users have similar tastes in music as both of them liked song-1 and song-2, but there is a song-3 which user A likes, but user B never listened to it. The system will recommend song-3 to user A based on these user-item interactions.
 
@@ -104,7 +104,7 @@ For this blog, we will implement a custom playlist recommender for which we will
 
 For this purpose, Spotify provides a web API to create a custom application and fetch Spotify data. The Spotify Web API endpoints return JSON metadata about music artists, albums, and tracks directly from the Spotify Data Catalogue based on simple REST principles.
 
-![api](/engineering-education/building-spotify-recommendation-engine/web-api.jpg)
+![api](/engineering-education/building-spotify-recommendation-engine/web-api.JPG)
 
 #### Simple steps to use Spotify Web API
 Open the Spotify Web API [dashboard](https://developer.spotify.com/dashboard/login). Log in using your Spotify account credentials. After logging in, your homepage will look something like this:
@@ -154,7 +154,7 @@ spotify_data = pd.read_csv('data\SpotifyFeatures.csv')
 spotify_data.head()
 ```
 
-![snapshot](/engineering-education/building-spotify-recommendation-engine/snapshot-1.jpg)
+![snapshot](/engineering-education/building-spotify-recommendation-engine/snapshot-1.JPG)
 
 #### Feature engineering
 In the dataset, we can observe that multiple columns represent the possible features for a song. Out of these, few features are categorical (columns having discrete values) like genre, key, popularity index, etc. 
@@ -220,7 +220,7 @@ spotify_features_df = spotify_features_df.join(key_OHE)
 spotify_features_df.head()
 ```
 
-![snapshot](/engineering-education/building-spotify-recommendation-engine/snapshot-4.jpg)
+![snapshot](/engineering-education/building-spotify-recommendation-engine/snapshot-4.JPG)
 
 #### Connecting to Spotify Web API
 In the next step, I will fetch my Spotify playlist data. To connect to the Spotify Web API, you will need a unique client id and a client secret key that I have already shown you how to generate.
@@ -253,7 +253,7 @@ for i in sp.current_user_playlists()['items']:
 print(playlist_dic)
 ```
 
-![snapshot](/engineering-education/building-spotify-recommendation-engine/snapshot-3.jpg)
+![snapshot](/engineering-education/building-spotify-recommendation-engine/snapshot-3.JPG)
 
 The cell below contains the method which creates a new dataframe for our playlist using the Spotify song features dataset that we have downloaded from Kaggle.
 
@@ -282,7 +282,7 @@ playlist_df = generate_playlist_df('MixedMood', playlist_dic, spotify_data)
 playlist_df.head()
 ```
 
-![snapshot](/engineering-education/building-spotify-recommendation-engine/snapshot-2.jpg)
+![snapshot](/engineering-education/building-spotify-recommendation-engine/snapshot-2.JPG)
 
 The cell below is used to visualize the cover-art of the song tracks with the help of the Matplotlib library.
 
@@ -358,7 +358,7 @@ print(playlist_vector.shape)
 print(nonplaylist_df.head())
 ```
 
-![snapshot](/engineering-education/building-spotify-recommendation-engine/snapshot-5.jpg)
+![snapshot](/engineering-education/building-spotify-recommendation-engine/snapshot-5.JPG)
 
 #### Generating recommendations
 Now comes the final part of our implementation, generating recommendations. As stated before, we are going to use cosine similarity as a similarity metric to determine the songs that are very much similar to our playlist. 
@@ -385,7 +385,7 @@ top15 = generate_recommendation(spotify_data, playlist_vector, nonplaylist_df)
 top15.head()
 ```
 
-![snapshot](/engineering-education/building-spotify-recommendation-engine/snapshot-6.jpg)
+![snapshot](/engineering-education/building-spotify-recommendation-engine/snapshot-6.JPG)
 
 ```python
 #Visulaizing the cover-art of the recommended playlist
