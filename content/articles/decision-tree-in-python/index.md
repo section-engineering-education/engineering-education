@@ -1,5 +1,22 @@
-### Getting started with decision tree in Python
-The decision tree is a member of the supervised learning algorithm used for both Classification and Regression problems. More often, the decision tree is used for classification problems. The tree algorithm is so-called due to its tree-like structure in presenting decisions and decision making processes. It helps us make an optimal choice in a complex situation with various alternatives, and we are needed to take the best strategy to obtain an optimal outcome.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /decision-tree-in-python/
+title: Decision Trees in Python
+description: This article will provide a detailed information on decision trees in python and how to use them in classifications and regression problems.
+author: stanley-juma
+date: 2021-10-07T00:00:00-16:00
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/decision-tree-in-python/hero.jpg
+    alt: Decision tress in python image
+---
+The decision tree is a member of the supervised learning algorithm used for both classification and regression problems. More often, the decision tree is used for classification problems. 
+ <!--more-->
+The tree algorithm is so-called due to its tree-like structure in presenting decisions and decision making processes. It helps us make an optimal choice in a complex situation with various alternatives, and we are needed to take the best strategy to obtain an optimal outcome.
 
 ### Prerequisites
 To follow along with this article comfortably, you will require:
@@ -7,7 +24,7 @@ To follow along with this article comfortably, you will require:
 - Be familiar with the scikit-learn library.
 
 ### Understanding decision trees
-We have two types of decision trees; Regression decision tree and Classification decision tree. A regression decision tree is a tree created on data whose target variable is continuous, while a classification decision tree is implemented on data whose target variable is categorical.
+We have two types of decision trees; **regression decision tree** and **classification decision tree**. A regression decision tree is a tree created on data whose target variable is continuous, while a classification decision tree is implemented on data whose target variable is categorical.
 
 Decision trees are composed of nodes and paths. Nodes in the decision tree are of two broad categories; **Decision node** and a **Leaf node**.
 
@@ -23,7 +40,7 @@ An **internal node**,  also known as *sub-note*, has an incoming and outgoing ch
 
 The channels we have just mentioned and connecting the entire decision tree anatomy are called **paths**. Paths represent the best route we can take to attain optimal outcomes. 
 
-###Terminologies used in decision tress 
+### Terminologies used in decision tress 
 Other terminologies you may encounter in the decision tree are:
 1. **Pruning:** This means eliminating some of the internal nodes from our tree to overcome the problem of **overfitting**. Overfitting is a major threat faced with the decision tree.
 2. **Parent Node:** This is the node on which we split other nodes.
