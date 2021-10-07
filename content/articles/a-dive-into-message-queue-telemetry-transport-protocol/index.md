@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/a-dive-into-message-queue-telemetry-transport-protocol/hero.jpg
+  - url: /engineering-education/a-dive-into-message-queue-telemetry-transport-protocol/hero.png
     alt: Message queue telementary transport protocol Hero Image
 ---
 
