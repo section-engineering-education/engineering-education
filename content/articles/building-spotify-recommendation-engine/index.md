@@ -3,11 +3,11 @@ layout: engineering-education
 status: publish
 published: true
 url: /building-spotify-recommendation-engine/
-title:
-description: . 
-author: 
-date: 2021-06-10T00:00:00-18:00
-topics: []
+title: Building a Music Recommendation Engine
+description: Ever wondered how Spotify predicts the new playlist to a user based on the user's current playlist or youtube predicts the following video users might want to watch next. Is this magic? Indeed not. In this article we discuss and build a recommendation engine from scratch using popular deep learning frameworks.
+author: tanmoy-ghosh
+date: 2021-10-07T00:00:00-18:00
+topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
 
@@ -15,7 +15,9 @@ images:
    alt:  example image
 ---
 
-Ever wondered how Spotify predicts the new playlist to a user based on the user's current playlist or youtube predicts the following video users might want to watch next. Is this magic? Indeed not; this happens because of machine learning-based recommendation systems. The recommendation system is a machine learning-based model that helps users discover new products or services based on users' past preferences. The recommender system has become an essential element in the digital world where users may confuse themselves due to an abundance of data. Thus, this feature can help users pick a product or service that perfectly fits their preference.
+Ever wondered how Spotify predicts the new playlist to a user based on the user's current playlist or youtube predicts the following video users might want to watch next. Is this magic? 
+<!--more-->
+Indeed not; this happens because of machine learning-based recommendation systems. The recommendation system is a machine learning-based model that helps users discover new products or services based on users' past preferences. The recommender system has become an essential element in the digital world where users may confuse themselves due to an abundance of data. Thus, this feature can help users pick a product or service that perfectly fits their preference.
 
 **Table of Contents**
 - [Prerequisites](#prerequisites)
@@ -102,7 +104,7 @@ Firstly open the Spotify Web API [dashboard](https://developer.spotify.com/dashb
 ![dashboard](/engineering-education/building-spotify-recommendation-engine/dashboard.png)
 
 Now click on create an application. This will generate a unique client id and password, which will be used further.
-And now open the application.
+Let us open the application.
 
 ![application-page](/engineering-education/building-spotify-recommendation-engine/spotify-api.png)
 
