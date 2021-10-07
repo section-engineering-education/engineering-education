@@ -1,4 +1,21 @@
-Ever wondered how Spotify predicts the new playlist to a user based on the user's current playlist or youtube predicts the following video users might want to watch next. Is this magic? Indeed not; this happens because of machine learning-based recommendation systems. The recommendation system is a machine learning-based model that helps users discover new products or services based on user's past preferences. The recommender system has become an essential element in the digital world where users may confuse themselves due to an abundance of data. Thus, this feature can help users pick a product or service that perfectly fits their preference.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /building-spotify-recommendation-engine/
+title:
+description: . 
+author: 
+date: 2021-06-10T00:00:00-18:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  -url: /engineering-education/building-spotify-recommendation-engine/hero.jpg
+   alt:  example image
+---
+
+Ever wondered how Spotify predicts the new playlist to a user based on the user's current playlist or youtube predicts the following video users might want to watch next. Is this magic? Indeed not; this happens because of machine learning-based recommendation systems. The recommendation system is a machine learning-based model that helps users discover new products or services based on users' past preferences. The recommender system has become an essential element in the digital world where users may confuse themselves due to an abundance of data. Thus, this feature can help users pick a product or service that perfectly fits their preference.
 
 **Table of Contents**
 - [Prerequisites](#prerequisites)
@@ -67,7 +84,7 @@ Collaborative filtering systems use user-item interactions to generate recommend
 
 ![collaborative-filtering](/engineering-education/building-spotify-recommendation-engine/collaborative-filtering.jpg)
 
-As we can see in the diagram, there are two users, user A, and user B. Both users have similar taste in music as both of them liked song-1 and song-2, but there is a song-3 which user A likes, but user B never listened to it. The system will recommend song-3 to user A based on these user-item interactions.
+As we can see in the diagram, there are two users, user A, and user B. Both users have similar tastes in music as both of them liked song-1 and song-2, but there is a song-3 which user A likes, but user B never listened to it. The system will recommend song-3 to user A based on these user-item interactions.
 
 As in this blog, the recommender system that we will implement is based on Content-Based Filtering. Therefore, we are going to limit our discussion of the Collaborative-Filtering system up to its definition. For further reference, you can refer to this informative [article](https://developers.google.com/machine-learning/recommendation/collaborative/basics) from Google.
 
@@ -127,7 +144,7 @@ spotify_data.head()
 
 #### Feature Engineering
 
-In the dataset, we can observe that multiple columns represent the possible features for a song. Out of these, few features are categorical (columns having discrete values) like genre, key, popularity index, etc. Therefore, the first step would be to convert these categorical features into one-hot encoding(OHD) so that our songs can be represented as vectors in a feature space.
+In the dataset, we can observe that multiple columns represent the possible features for a song. Out of these, few features are categorical (columns having discrete values) like genre, key, popularity index, etc. Therefore, the first step would be to convert these categorical features into one-hot encoding (OHD) so that our songs can be represented as vectors in a feature space.
 
 To keep it simple, for now, we are only taking two categorical features into our consideration.
 
@@ -160,7 +177,7 @@ scaled_features = MinMaxScaler().fit_transform([
 #Storing the transformed column vectors into our dataframe
 spotify_features_df[['acousticness','danceability','duration_ms','energy','instrumentalness','liveness','loudness','speechiness','tempo','valence']] = scaled_features.T
 ```
-We are now dropping the features that we will not consider here to determine the similarity and the categorical features that are already converted into OHE vectors.
+We drop the features that are not considered to determine the similarity and the categorical features that are already converted into OHE vectors.
 
 ```python
 #discarding the categorical and unnecessary features 
@@ -357,3 +374,6 @@ I have uploaded the notebook file for this implementation to my Github account. 
 ### Conclusion
 
 Using the concept of cosine similarity, we have seen that we were able to generate recommendations of songs that are similar to the songs in our playlist. Therefore, you can follow the steps above to develop your custom Spotify playlist recommender as well.
+
+---
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
