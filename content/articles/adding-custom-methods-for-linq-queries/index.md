@@ -156,6 +156,59 @@ Here's what it looks like when it runs:
  w
  
 */
+As a practical example, let us look at the example below.
+The example uses JSON to serialize some database. Then the JArray. Parse will store some data after which we will then apply JSON to LINQ query to read the data.
+```c#
+using System;
+using System.Linq;
+ 
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+ 
+namespace JSON_LINQ_TOJSON
+{
+class ProgramExample
+{
+    static void Main(string[] args)
+    {
+       
+        // Here you are going to get the data in JSON serialized form
+        
+        string WorkersData = JsonConvert.SerializeObject(new WorkersDatabase(),Formatting.Indented);
+        
+ 
+        
+        // This will convert the JSON string into an array
+        JArray workersArray = JArray.Parse(WorkersData);
+ 
+ 
+    
+       // The total number of workers is read
+ 
+        var resWorkers = (from w in workersArray
+                           select w["WorkersName"]).ToList();
+ 
+        Console.WriteLine("Only Workers Names");
+        foreach (var item in resWorkers)
+        {
+            Console.WriteLine(item.Value<string>().ToString());
+        }
+ 
+        // Then one will get the work or the Job details
+        Console.WriteLine();
+        var result = (from w in workersArray.Workers()["Job"]
+                      select w).ToList();
+ 
+        Console.WriteLine("Job Details");
+        foreach (var item in result.Wokers().ToList())
+        {
+            Console.WriteLine(item.ToObject<Job>().JobId + "\t" + item.ToObject<Job>().JobType);
+        }
+          Console.ReadLine();
+    }
+}
+}
 ```
+
 ### Conclusion
 In conclusion, we have looked at how one as a programmer can add custom methods for LINQ queries in c#.
