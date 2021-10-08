@@ -376,6 +376,8 @@ On running the app, this is what to expect:
 
 ![Screen One](/automatic-sms-verification-with-the-sms-retriever-api-in-android/screen-one.png)
 
+You can find the whole project on [GitHub](https://github.com/robert-muriithi/SmsRetriverApiDemo.git)
+
 ### Conclusions
 
 Automatic Retriever API is a library that helps in detecting and extracting OTP code. This code is usually sent back to the server for verification. This API performs the task without requiring the user to provide permissions for the app. This makes the user's onboarding experience is smooth and nice. 
