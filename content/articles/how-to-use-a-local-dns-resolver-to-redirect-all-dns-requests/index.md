@@ -1,3 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-use-a-local-dns-resolver-to-redirect-all-dns-requests/
+title: How to Use a Local DNS Resolver to Redirect all DNS Requests
+description: In this article, we will go over reasons that would require you to redirect DNS requests and how to redirect DNS requests.
+author: daniel-muriithi
+date: 2021-10-08T00:00:00-15:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/how-to-use-a-local-dns-resolver-to-redirect-all-dns-requests/hero.jpg
+    alt: DNS
+---
 ### Introduction
 A **DNS query** `also known as a DNS request` is a request for information from a user's computer to a DNS server (DNS client). To acquire the IP address associated with a domain name, a DNS request is frequently made. A DNS client requests DNS servers to retrieve the domain's IP address when visiting an environment.
 
@@ -91,3 +107,5 @@ Try visiting yahoo.com using your web browser if you're using Windows or prefer 
 ### Conclusion
 If you want to redirect rogue DNS requests to one of your configured DNS servers, you only need one simple rule. The default Unbound DNS server or something like Pi-hole is both options. Using an alias, it is even possible to randomly, or round-robin redirect DNS requests to several IP addresses, which is useful if you have many DNS servers (I recommend having two in case one goes down or you are performing updates your network does not go down). Using firewall groups, you can also configure numerous interfaces at the same time. For your home network configuration, I hope you found the many approaches to configure DNS requests usefully!
 
+---
+Peer Review Contributions by: [Adrian Murage](/engineering-education/authors/adrian-murage/)
