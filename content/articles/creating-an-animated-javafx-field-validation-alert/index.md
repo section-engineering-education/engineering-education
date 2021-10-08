@@ -666,9 +666,9 @@ Finally, add a small `Tada` animation to the `invalidDetails` label in the final
 new animatefx.animation.Tada(invalidDetails).play();
 ```
 
-The final product is as shown in the GIF below:
+The final product is as shown in the video below:
 
-![Validation Animations](/engineering-education/creating-an-animated-javafx-field-validation-alert/Animations.gif "Validation Animations")
+<iframe width="640" height="360" src="https://www.youtube.com/embed/ss0pM1wEMII" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 The code for this article can be found in [this](https://github.com/justusmbuvi/Creating-an-Animated-JavaFX-field-Validation-alert).
 
