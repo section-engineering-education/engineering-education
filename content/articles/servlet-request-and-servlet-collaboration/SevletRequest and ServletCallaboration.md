@@ -14,7 +14,7 @@ You will need to install the following tools to go along with the article:
 - An open-source editor, such as Eclipse, or any other related Java editor. In my case, I will be using [Eclipse IDE for Java EE Developers 2021‑09 windows version](https://www.eclipse.org/downloads/download.php?file=/oomph/epp/2021-09/R/eclipse-inst-jre-win64.exe)
 - Java JDK current version or any. In my case, I will be using [Java SE Development Kit 17 for Windows 64 bit system](https://download.oracle.com/java/17/latest/jdk-17_windows-x64_bin.zip).
 - You need a web browser installed on your computer.
-- Server. In my case, I will be using TomCat version 9.0.10 for windows. You can download it [here](https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.54/bin/apache-tomcat-9.0.54-windows-x86.zip).
+- Server. In my case, I will be using TomCat version 9.0.10 for windows. You can download it [here](https://dlcdn.apache.org/tomcat/tomcat-10/v10.1.0-M6/bin/apache-tomcat-10.1.0-M6.zip).
 
 
 Table of contents:
@@ -76,19 +76,23 @@ We will create a user login project with a servlet in this example. In this cont
 
 ![download eclipse](/engineering-education/servlet-request-and-servlet-collaboration/downloadeclipse.png)
 
-**Step 2:** Install TomCat current version. In my case, I will be using TomCat version 9.0.10 for windows. You can download it [here](https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.54/bin/apache-tomcat-9.0.54-windows-x86.zip).
+**Step 2:** Install TomCat current version. In my case, I will be using TomCat version 9.0.10 for windows. You can download it [here](https://dlcdn.apache.org/tomcat/tomcat-10/v10.1.0-M6/bin/apache-tomcat-10.1.0-M6.zip).
 
+![download Apache TomCat version 9](/engineering-education/servlet-request-and-servlet-collaboration/downloadpage.png)
+
+*Extract it to a new folder of your choice.*
+
+![Extracted TomCat files](/engineering-education/servlet-request-and-servlet-collaboration/extract.png)
 
 **Step 3:** Open Eclipse IDE for Java EE developers. Create a Dynamic web project by selecting files, new then Dynamic web projects, and press enter as shown.
 
-![new web project](/engineering-education/servlet-request-and-servlet-collaboration/new.png)
+![create new web project](/engineering-education/servlet-request-and-servlet-collaboration/new.png)
 
 **Step 4:** We will name our project `LogInDemo`, and leave the other fields with default values then select Finish.
 
 ![Project name](/engineering-education/servlet-request-and-servlet-collaboration/projectname.png)
 
-**Step 5:** Right-click on the `LogInDemo` project, and then select the HTML file option and name it `Login.html` as shown. In Login.html paste the code below.
-
+**Step 5:** Right-click on the `LogInDemo` project, and then select the HTML file option and name it `Login.html`. In Login.html paste the code below.
 
 ```html
 <!DOCTYPE html>
@@ -111,12 +115,13 @@ We will create a user login project with a servlet in this example. In this cont
 
 ![creating sevlate page](/engineering-education/servlet-request-and-servlet-collaboration/sevlatepage.png)
 
-Give your servlet class a name and select finish.
+Finish by giving your servlet class a name as shown.
 
-![naming servlet class](/engineering-education/servlet-request-and-servlet-collaboration/servletclass.png)
+![servlet class](/engineering-education/servlet-request-and-servlet-collaboration/servletclass.png)
+
+ Copy and paste the code below into your servlet page.
 
 ```java
-package com.lodoctor;
 
 import java.io.IOException;
 
@@ -125,13 +130,12 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 public class LoginAction extends HttpServlet {
-	
-	
+		
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{
 		String userName=request.getParameter("name");
         String password=request.getParameter("password");
-        if(userName.equals("Evans") && password.equals("lodoctor"))
+        if(userName.equals("India") && password.equals("1234"))
         {
         response.sendRedirect("welcomePage.jsp");
         }
@@ -145,13 +149,15 @@ public class LoginAction extends HttpServlet {
 }
 
 ```
-**Step 5:** Lastly, create a new `welcomePage.jsp` file, right-click on a LogInDemo project, and then select the JSP option. And paste the code below.
+**Step 5:** Create a new `welcomePage.jsp` file, right-click on a LogInDemo project, and then select the JSP option. And paste the code below.
 
 ![new jsp file](/engineering-education/servlet-request-and-servlet-collaboration/newjsp.png)
 
 Give your jsp page a name and select finish.
 
 ![naming jsp file](/engineering-education/servlet-request-and-servlet-collaboration/welcompagejsp.png)
+
+ Copy and paste the code below into your jsp page.
 
 ```jsp
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -167,6 +173,35 @@ Give your jsp page a name and select finish.
 </body>
 </html>
 ```
+
+**Step 6:** Setup Apache Tomcat Server in the Eclipse IDE and run the project as outlined in the steps below.
+
+- Select "No servers are available" from the Servers Tab as shown.
+
+ ![Servers Tab](/engineering-education/servlet-request-and-servlet-collaboration/addsever1.png)
+ 
+- Next, select Tomcat v9.0 Server. or any of your choice, but I recommend the current version.
+
+![Select the sort of server you want to make.](/engineering-education/servlet-request-and-servlet-collaboration/addserver2.png)
+
+- Add Apache installation Directory
+
+![Apache installation directory.](/engineering-education/servlet-request-and-servlet-collaboration/selectpath.png)
+
+ Click Finish after adding the Apache installation directory.
+ 
+ - Right-click on the `Login.html` page while your cursor is over it. The following screen will then appear. To run the project, select run on server and press enter.
+
+![Rus web project on server.](/engineering-education/servlet-request-and-servlet-collaboration/runus.png)
+
+- When tomCat server is selected as shown bellow. Select "Finish" and restat the server when the screen pops up.
+
+![Rus web project on server.](/engineering-education/servlet-request-and-servlet-collaboration/selectsever.png)
+ 
+- In the intanal browser, the following page will appear. Try logging in with the credentials we specified in LoginAction.java (user name `India`, password `1234`) and have some fun with the code.Happy coding!
+
+![Login page.](/engineering-education/servlet-request-and-servlet-collaboration/pageinbrowser.png)
+
 **Explanation:**
 
 From the example above, the `LoginAction.java` servlet, in the Post Request form, is called if a user supplies the correct credentials on the login page. A `doPost ()` will call a user parameter, and store it in a variable userName and password, as shown:
@@ -199,6 +234,8 @@ Here are two methods provided by the `RequestDispatcher` interface, namely:
 
 This example shows how  RequestDispatcher can forward a resource response or include it on a server. Here we use `htmlPage.html` to get a user response. In this case, `Controller.java` Servlet checks the entered response if a user has more than 18 years or less, if the user select (under18 ) as the reply, `forward()` will be called to Under18Page Servlet. Above18 servlet is included if the user has entered (above18) otherwise. The client browser will stay on the `htmlPage.html` page.
 
+Construct the `ServletDispatcherDemo` project as follows, assuming you know how to create and run a web project using the eclipse IDE and TomCat server as explained in the [ServletRequest interface example](#servletrequest-interface-example) above.
+
 **Steps to create this project.**
 
 **Step 1:** Open Eclipse IDE for Java EE developers. Create a web project by selecting Files -> New -> Dynamic Web Project.
@@ -230,7 +267,6 @@ This example shows how  RequestDispatcher can forward a resource response or inc
 **Step 4:**  *Create a new `Controller.java` servlet page, right-click on a LogInDemo project, and then select the servlet option. And paste the code below.
 
 ```java
-package com.lodoctor;
 
 import java.io.IOException;
 
@@ -277,7 +313,6 @@ public class Controller extends HttpServlet
 **Step 5:**  *Create a new `Under18page.java` servlet page, right-click on a LogInDemo project, and then select the servlet option. And paste the code below.
 
 ```java
-package com.lodoctor;
 
 import java.io.IOException;
 
@@ -301,7 +336,6 @@ public class Under18Page extends HttpServlet {
 **Step 7:**  *Create a new `*Above18.java` servlet page, right-click on a LogInDemo project, and then select the servlet option. And paste the code below.
 
 ```java
-package com.lodoctor;
 
 import java.io.IOException;
 
