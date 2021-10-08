@@ -1,7 +1,8 @@
+
 ### Automatic SMS Verification with the SMS Retriever API in Android
 
 The SMS Retriever API is usually used to perform user verification via text message in android applications. It does not need the user to input the codes  nor does it need any extra app permissions. This feature implemented on an android application gives a user a smooth experience and makes the app simple to use.
-In this tutorial, we will learn how to use it this in our android application.
+Let`s learn how to use this feature in our app!
 
 ### Prerequisites
 
@@ -19,11 +20,11 @@ By the end of this tutorial, the reader will have :
 ### Introduction
 
  This API allows you to verify users' SMS without forcing them to enter verification codes. You can get verification codes for your app without requesting full SMS reading permissions by utilizing this API.
- When a message is received on the user's device, Google play services check the app hash and sends the message text to your app over the SMS Retriever API. The app then reads and extracts the code in the SMS message. This code is usually sent back to the server for verification.
+ When the user device receives a message, Google play services check the app hash. It then sends the message text to your app over the SMS Retriever API. The app then reads and extracts the code in the SMS message. This code is usually sent back to the server for verification.
 
 ### SMS Verification process
 
-For mobile number verification, you need to implement both the client and server sides of the verification procedure. Usually, the user's phone number is sent to the server performing verification. The server then sends a one-time code to the phone number and uses the SMS Retriever API to start listening for an SMS containing OTP code. After receiving the code,  you will have to send the code back to your server to complete the process of verification.
+For mobile number verification, you need to implement both the client and server sides of the verification procedure. Usually, the user's phone number is sent to the server performing verification. The server then sends an OTP code to the phone number and uses the SMS Retriever API to start listening for an SMS containing OTP code. Upon receiving this code, send it back to your server to complete the process of verification.
 
 ### Why use Automatic SMS Retriever API
 - Google abolished all apps using `CALL_LOG` and `READ_SMS` permissions due to violation of user's privacy. All apps  using these permissions were removed from play store in January 19th, 2021 
@@ -38,7 +39,7 @@ For mobile number verification, you need to implement both the client and server
 We are going to use the following: 
 -Apache Commons - We are going to use this library to help us extract the code from the SMS message.
 - Google Play Services API - This library holds the SMS retrieval class
-- EventBus - To listen for received SMS from the SMS Retrieval API, we'll use a BroadcastReceiver. EventBus is a publisher/subscriber pattern library that will be used to make communication between our BroadcastReceiver and Activity classes easier.
+- EventBus - To listen for received SMS from the SMS Retrieval API, we'll use a BroadcastReceiver. EventBus is a publisher/subscriber pattern library that we will use to communicate between our BroadcastReceiver and Activity classes.
 
 Let's add these to the build.gradle file for our app:
  ```
@@ -50,7 +51,7 @@ implementation 'org.greenrobot:eventbus:3.2.0'
 
 ### Step 3: Setup the XML layout for our project
 
-We'll create an Edit Text in this section. The one-time code obtained from our message will be displayed in this edit text.
+We'll create an Edit Text in this section. This Edit text will display one-time code obtained from our SMS message.
 
 ### ActivityMain.xml file
 
@@ -78,11 +79,11 @@ We'll create an Edit Text in this section. The one-time code obtained from our m
 ```
 ### Sending the mobile number to your server
 
-In this step, you have to get the user's phone number from the `EditText` and send it to your verification server which will send you the one-time code. Because I don't have a verification server, I'm not going to use that method in this article. I'm going to manually send the SMS from another phone. The SMS I'll send will include a four-digit code, which will be extracted and displayed on the Edit text we made in activity main.xml.
+In this step, you have to get the user's phone number from the `EditText` and send it to your verification server which will send you the one-time code. Because I don't have a verification server, I'm not going to use that method in this article. I'm going to send the SMS from another phone. The SMS I'll send will include a four-digit code, which will be extracted and displayed on the Edit text we made in activity main.xml.
 We will tackle this later in the article.
 
-After you get the user's phone number, you then send it to your verification server in whatever way you choose.
-A verification message is generated by your server and sent to the phone number you entered through SMS. To perform SMS verification on a server, check out [SMS Verification on Server](https://developers.google.com/identity/sms-retriever/verify)
+After you get the user's phone number, send it to your verification server in whatever way you choose.
+Your server generates a verification code and sends to the phone number you entered. To perform SMS verification on a server, check out [SMS Verification on Server](https://developers.google.com/identity/sms-retriever/verify)
 
 ### Step 4: Getting an instance of the SmsRetriverClient object
 
@@ -103,20 +104,22 @@ The above function will then be called on the `onCreate()` method.
 
 ```
 class MainActivity : AppCompatActivity() {
-    private lateinit var smsRetrieverClient: SmsRetrieverClient
-    private lateinit var waiting: TextView
-
+    private lateinit var  binding: ActivityMainBinding
+    private lateinit var smsClient: SmsRetrieverClient
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        waiting = findViewById(R.id.otpTextView)
-        smsRetrieverClient = SmsRetriever.getClient(this)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        smsClient = SmsRetriever.getClient(this)
+        
         initSmsListener()
+
     }
 ...
 
 ```
-The Play Services library we deployed before will now broadcast a `SmsRetriever.SMS RETRIEVED ACTION` intent to our app in the event a device receives a message containing the code. This intent holds the SMS message text as well as the status of the background processing.
+The Play Services library we deployed before will now broadcast a `SmsRetriever.SMS RETRIEVED ACTION` intent to our app. This happens in the event a device receives a message containing the code. This intent holds the SMS message text as well as the status of the background processing.
 To deal with this, we'll make a BroadcastReceiver class:
 
 ```
@@ -156,21 +159,20 @@ class MessageBroadcastReceiver : BroadcastReceiver() {
 }
 
 ```
-We first check the `Status` of the `SMS Retrieval API's` background processing in the BroadcastReceiver's `onReceive()` method. We also construct an instance of the `SmsRetrievedEvent` class. This is the event class that `EventBus` will send to our `Subscriber`. The `SmsRetrievedEvent` class is a straightforward Kotlin data class. If you are completely new to [EventBus](https://greenrobot.org/eventbus/), please read on it. 
+On the `onReceive()` function, we first check the status of `SMS Retrieval API's` background processing. We also construct an instance of the `SmsRetrievedEvent` class. This is the event class that `EventBus` will send to our `Subscriber`. Finally, we will construct our `SmsRetrievedEvent` which will be a data class. If you are completely new to [EventBus](https://greenrobot.org/eventbus/), please read on it. 
 
 ### SmsRetrievedEvent
 
 ```
-package com.roberts.smsretrieverdemo
+package com.roberts.smsretriverapi
 
-data class SmsRetrievedEvent(
-    val isTimeout: Boolean,
-    val smsMessage: String?
-)
+data class RetrievalEvent (
+    val timedOut: Boolean,
+    val message: String
+    )
 
 ```
-
-We set the message property of the SmsRetrievedEvent class to the SMS message we've retrieved if the background processing was successful. If a timeout occurs, we set timeout to true otherwise. Finally, send the event to any listening subscriber.
+We set the property of the `SmsRetrievedEvent` class to the SMS message we've retrieved. We do this if the background processing was successful. If a timeout occurs, we set timeout to true otherwise. Then, send the event to the listening subscriber.
 
 **Note:** Timeouts occur if messages are not processed within 5 minutes. This happens when  during SMS Retrieval API's processing.
 
@@ -191,9 +193,8 @@ In your app's `AndroidManifest.xml` file, register `BroadcastReceiver` using int
 ```
 ### Implementing subscriber
 
-Next, in our `MainActivity class`, we'll register, unregister, and implement our subscribers. This function will be invoked when an event is posted and will be defined with the `@Subscribe` annotation.
-Registering receiver is done on the `onStart()` method and the unregistering receiver is done on the `onStop()` method.
-We'll also use the Apache Commons library's `substringAfterLast()` method to extract the four-digit verification code from the message and display it in our TextView.
+Next, in our `MainActivity class`, we'll register, unregister, and implement our subscribers. The `onReceiveSms()` method will be invoked when an event is posted and will be defined with the `@Subscribe` annotation.
+Registering receiver is done on the `onStart()` method and the unregistering receiver is done on the `onStop()` method. The `substringAfterLast()` function is used to extract the code sent through SMS. The code will the be display in our Edit Text.
 
 **Note**: Always remember to register and unregister members to avoid memory leaks
 
@@ -270,10 +271,10 @@ class MainActivity : AppCompatActivity() {
 The hash string is used by Google Play services to decide which verification messages should be sent to your app. This string is made up of the package name and public key certificate for your app. 
 To generate the hash string, you can use the following methods: 
 
-- Use [Play App Signing](https://support.google.com/googleplay/android-developer/answer/9842756?visit_id=637672247631770776-2285078183&rd=1)
-- Use `AppSignatureHelper class`. This class is from the SMS retriever sample app that helps you get your app's hash string. If you use the helper class, make sure to remove it after you've obtained the hash string. In your verification messages, don't use hash strings that are calculated on the client.
+- Use [Play App Signing]. (https://support.google.com/googleplay/android-developer/answer/9842756?visit_id=637672247631770776-2285078183&rd=1)
+- Use `AppSignatureHelper class`. This class will help to generate our app's hash string. If you use the helper class, make sure to remove it after you've obtained the hash string. In your verification messages, don't use hash strings that are calculated on the client.
 
-In our case, we are going to use the `AppSignatureHelper class` to generate our app`s hash string. The hash code will be displayed on our `logcat`. 
+In our case, we are going to use the `SignatureHelper class` to generate our app`s hash string. The hash code will be displayed on our `logcat`. 
 
 ```
 package com.roberts.smsretriverapi
@@ -290,7 +291,7 @@ import java.util.*
 
 private const val TAG = "AppSignatureHelper"
 
-class AppSignatureHelper(context: Context?) :
+class SignatureHelper(context: Context?) :
     ContextWrapper(context) {
     val appSignature: ArrayList<String>
         get() {
@@ -354,11 +355,12 @@ class AppSignatureHelper(context: Context?) :
 }
 
 
+
 ```
 Finally, remember that the format you should use on your message is as follows: 
 - Be no longer than 140 bytes
-- Contain a one-time code
-- End with an 11-character hash string that identifies your app
+- The message should have the OTP code
+- Your message should end with you app's 11-character hash string 
 
 The following is an example
 
@@ -374,8 +376,9 @@ On running the app, this is what to expect:
 
 ### Conclusions
 
-Automatic Retriever API is a powerful library that will help you detect and extract one-time codes sent from your server. The code is then be sent back to the server for verification. It performs this task without requiring the user to provide permissions for the app. This makes the user's onboarding experience is smooth and nice. 
+Automatic Retriever API is a powerful library that will help you detect and extract one-time codes sent from your server. This code is usually sent back to the server for verification. This API performs the task without requiring the user to provide permissions for the app. This makes the user's onboarding experience is smooth and nice. 
 
 
 Happy coding!
+
 
