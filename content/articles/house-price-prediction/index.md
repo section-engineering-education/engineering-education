@@ -7,7 +7,7 @@ title: House Price Prediction using Machine Learning
 description: In this tutorial we will be going over how to implement an entire machine learning pipeline and we will understand how we implement machine learning algorithms.
 author: lalithnarayan-c
 date: 2020-11-23T00:00:00-14:00
-topics: []
+topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
 

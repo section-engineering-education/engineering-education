@@ -76,7 +76,7 @@ queue.on("complete", (_) => {
 
 Now, if you were to test this out in your browser, you will see *finished loading* printed out in the console. Also, if you check the network tab in your dev tools you should see something like this:
 
-![successful asset loading](engineering-education/createjs-guide/successful-asset-loading.png)
+![successful asset loading](/engineering-education/createjs-guide/successful-asset-loading.png)
 
 Notice how we have two *GET* requests for `wind.m4a` and `cloud.png`. One of them has a status of 200 and the other 304. This means that we successfully loaded our assets. In case you don't know, you can open the dev tools by right-clicking and selecting *inspect* or *inspect element*.
 
@@ -221,7 +221,7 @@ function animateCloud(cloud) {
 ### Working with sprites
 As a fun way to end this guide, let's look at how to create animated sprites. For our guide, we will be animating a stick figure using this sprite sheet I made:
 
-![sprite sheet](engineering-education/createjs-guide/sprite-sheet.png)
+![sprite sheet](/engineering-education/createjs-guide/sprite-sheet.png)
 
 The first two frames we will use as a running animation while the last two will be an idle animation. Of course, before we start we need to load our sprite sheet as an asset. 
 
@@ -260,7 +260,7 @@ For example, the *idle* attribute defines an array representing our idle animati
 
 In our case, it would number our frames in the sprite sheet like so:
 
-![frame indexing example](engineering-education/createjs-guide/frame-indexing-example.png)
+![frame indexing example](/engineering-education/createjs-guide/frame-indexing-example.png)
 
 The start of frame (2) and the end frame (3) of our idle animation correspond to the last two frames in our sprite sheet. Likewise, the start frame (0) and the end frame (1) of the run animation are the first two frames. 
 

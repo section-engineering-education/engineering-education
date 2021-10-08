@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /minecraft-plugin-development-a-hands-on-crash-course/
 title: Minecraft Plugin Development - A Hands-On Crash Course
-description: This will be an interactive tutorial on the basics of coding our own Minecraft plugins.
+description: This will be an interactive tutorial on the basics of coding our own Minecraft plugins. A plugin is extra code you add to your Minecraft server to change the default behavior of the game.
 author: john-amiscaray
 date: 2020-12-06T00:00:00-11:00
 topics: [Languages]
@@ -406,7 +406,7 @@ First we check if the user gave the right amount of arguments. If they didn't, w
 
 Note, *the delays given are in Minecraft ticks*; these are around 0.05 seconds.
 
-As simple as that, we have created our command. You can try it by typing in the chat of your server: `/continuous-wither-spawn 0 100`.This should spawn a wither instantly, then spawn another every 5 seconds.
+As simple as that, we have created our command. You can try it by typing in the chat of your server: `/continuous-wither-spawn 0 100`. This should spawn a wither instantly, then spawn another every 5 seconds.
 
 ### Conclusion:
 In this tutorial, you have gained a foundational understanding on how of to code Minecraft plugins. I obviously could not cover everything in this tutorial and left some parts out. Some next steps are to research command permissions and to just play around. 
