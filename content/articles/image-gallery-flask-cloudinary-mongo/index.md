@@ -59,7 +59,7 @@ You will build three (3) web pages for the image gallery. They are:
 
 Install the libraries required to build the image gallery like Flask, PyMongo, and Flask-Bootstrap. In your terminal, type:
 
-```
+```sh
 pip install Flask Flask-PyMongo Flask-Bootstrap4
 ```
 
@@ -249,7 +249,9 @@ def upload():
     return render_template("upload.html")
 ```
 
-> NOTE: You need to create the directory you specified for the app `UPLOAD_FOLDER` in the project’s root. Create a `static` directory in the same directory as the `app.py` file and another folder called `uploads` in the `static` directory.
+> Note that you need to create the directory you specified for the app `UPLOAD_FOLDER` in the project’s root.
+
+Create a `static` directory in the same directory as the `app.py` file and another folder called `uploads` in the `static` directory.
 
 ![successful upload page](/image-gallery-flask-cloudinary-mongo/sx8ne3tvggwzmi76s9hx.png)
 
@@ -312,7 +314,7 @@ The dashboard will provide you with your CLOUD NAME, API KEY, and API SECRET. St
 
 Install the Cloudinary Python SDK required to communicate with Cloudinary APIs using Python. In your terminal, type:
 
-```
+```sh
 pip install cloudinary
 ```
 
