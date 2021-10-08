@@ -1,5 +1,21 @@
-In this article, you'll build a Grocery list application where you can add all your groceries before visiting the store. You'll be building the front-end of the application using [Next.js](https://nextjs.org/), a [React](https://reactjs.org/) framework. You will use [tailwindcss](https://tailwindcss.com/) to style our application. The database solution you will use is [Airtable](https://airtable.com/).
+---
+layout: engineering-education
+status: publish
+published: true
+url: /integrate-airtable-with-nextjs/
+title: Integrating Airtable with Nextjs
+description: In this article, we will build a grocery list application using Nextjs and Airtable. 
+author: giridhar-talla
+date: 2021-10-08T00:00:00-15:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/integrate-airtable-with-nextjs/hero.png
+    alt: Nextjs Airtable 
+---
+In this article, you'll build a Grocery list application where you can add all your groceries before visiting the store. You'll be building the front-end of the application using [Next.js](https://nextjs.org/), a [React](https://reactjs.org/) framework. You will use [tailwindcss](https://tailwindcss.com/) to style our application. The database solution you will use is [Airtable](https://airtable.com/).
+<!--more-->
 Over the past few years, browsers have evolved and became more powerful. They can work with full functionality even without a single web server. You can take advantage of browser capabilities for building flexible web applications. [JAMstack](https://jamstack.org) is the modern approach for building lightning-fast web applications. Database technologies became more user-friendly. In this tutorial, you'll learn how to integrate the Airtable API with a simple web application.
 
 ### What we're going to build?
@@ -580,3 +596,6 @@ Now that you have a complete JAMstack application, try extending its functionali
 - Use the API [best practices](https://stackoverflow.blog/2020/03/02/best-practices-for-rest-api-design/) for building a perfect API.
 - Try to add a filtering option. You should show all the brought and pending separately.
 - Try to add [Authentication](https://en.wikipedia.org/wiki/Authentication). If you add an item, everyone can see that one. You can use authenticate a user using third-party services like [Auth0](https://auth0.com/).
+
+---
+Peer Review Contributions by: [Adrian Murage](/engineering-education/authors/adrian-murage/)
