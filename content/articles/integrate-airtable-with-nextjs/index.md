@@ -1,14 +1,12 @@
-![Hero image](/hero.png)
+In this article, you'll build a Grocery list application where you can add all your groceries before visiting the store. You'll be building the front-end of the application using [Next.js](https://nextjs.org/), a [React](https://reactjs.org/) framework. You will use [tailwindcss](https://tailwindcss.com/) to style our application. The database solution you will use is [Airtable](https://airtable.com/).
 
 Over the past few years, browsers have evolved and became more powerful. They can work with full functionality even without a single web server. You can take advantage of browser capabilities for building flexible web applications. [JAMstack](https://jamstack.org) is the modern approach for building lightning-fast web applications. Database technologies became more user-friendly. In this tutorial, you'll learn how to integrate the Airtable API with a simple web application.
 
 ### What we're going to build?
-
+The final application will look like this:
 ![final-grocery-list](/final.png)
 
-[Final demo](https://replit.com/@giridhar7632/grocery-list) | [source code](https://grocery-list.giridhar7632.repl.co/)
-
-You'll build a Grocery list application where you can add all your groceries before visiting the store. You'll be building the front-end of the application using [Next.js](https://nextjs.org/), a [React](https://reactjs.org/) framework. You will use [tailwindcss](https://tailwindcss.com/) to style our application. The database solution you will use is [Airtable](https://airtable.com/).
+You can find the final demo on replit [Final demo](https://replit.com/@giridhar7632/grocery-list) | [source code](https://grocery-list.giridhar7632.repl.co/)
 
 Before diving into the tutorial, you should have intermediate knowledge of React. It would help if you were comfortable using [React Hooks](https://reactjs.org/docs/hooks-intro.html) and [Context API](https://reactjs.org/docs/context.html).
 
