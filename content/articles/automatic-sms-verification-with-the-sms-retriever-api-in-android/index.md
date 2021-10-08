@@ -32,7 +32,7 @@ For mobile number verification, you need to implement the client side first. Aft
 
 ### Step 1. Create a new Android studio project
 
-![Create Project](/automatic-sms-verification-with-the-sms-retriever-api-in-android/create_project.png)
+![Create Project](/automatic-sms-verification-with-the-sms-retriever-api-in-android/create-project.png)
 
 
 ### Step2: Put dependencies on build.gradle file
