@@ -20,6 +20,8 @@ To follow along in this article, it is important to have the following:
 - [Docker](/engineering-education/docker-concepts/) installed on your computer.
 
 ### Overview
+- [Prerequisites](#prerequisites)
+- [Overview](#overview)
 - [Setting up the server-side environment using Flask](#setting-up-the-server-side-environment-using-flask)
   - [Installing the packages](#installing-the-packages)
   - [Setting up the server-side application Using Flask](#setting-up-the-server-side-application-using-flask)
@@ -28,7 +30,7 @@ To follow along in this article, it is important to have the following:
   - [Setting up routes](#setting-up-routes)
 - [Setting up the client-side using Vue](#setting-up-the-client-side-using-vue)
   - [Installing packages](#installing-packages)
-  - [Setting up the Vie frontend application](#setting-up-the-vie-frontend-application)
+  - [Setting up the Vue frontend application](#setting-up-the-vue-frontend-application)
 - [Dockerizing the application](#dockerizing-the-application)
   - [Dockerize the Flask API](#dockerize-the-flask-api)
   - [Dockerize the Vue app](#dockerize-the-vue-app)
@@ -63,11 +65,11 @@ python -m pipenv shell
 #### Installing the packages
 We will use the following packages:
 
-- *[Flask](https://flask.palletsprojects.com/en/2.0.x/)*: The framework providing the architectural setup for the application.
-- *[Flask-sqlalchemy](https://flask-sqlalchemy.palletsprojects.com/en/2.x/)*: Provides useful defaults and extra helpers that make it easier to accomplish database tasks.
-- *[Flask-marshmallow](https://flask-marshmallow.readthedocs.io/en/latest/)*: Thin integration layer for Flask useful when building APIs.
-- *[Marshmallow-sqlalchemy](https://marshmallow-sqlalchemy.readthedocs.io/en/latest/)*: Binder for sqlalchemy and marshmallow.
-- *[Flask-cors](https://flask-cors.readthedocs.io/en/latest/)*: For handling cross-origin resource access.
+- [Flask](https://flask.palletsprojects.com/en/2.0.x/): The framework providing the architectural setup for the application.
+- [Flask-sqlalchemy](https://flask-sqlalchemy.palletsprojects.com/en/2.x/): Provides useful defaults and extra helpers that make it easier to accomplish database tasks.
+- [Flask-marshmallow](https://flask-marshmallow.readthedocs.io/en/latest/): Thin integration layer for Flask useful when building APIs.
+- [Marshmallow-sqlalchemy](https://marshmallow-sqlalchemy.readthedocs.io/en/latest/): Binder for sqlalchemy and marshmallow.
+- [Flask-cors](https://flask-cors.readthedocs.io/en/latest/): For handling cross-origin resource access.
 
 To install all the above packages run this command:
 
@@ -173,7 +175,7 @@ from flask import Flask,request, jsonify
 from flask_cors import CORS,cross_origin
 ```
 
-*request* will be used to get the payload (data sent), whereas *jsonify* will be used to return JSON data. *CORS* and *cross_origin* for setting up the access policy.
+`request` will be used to get the payload (data sent), whereas `jsonify` will be used to return JSON data. `CORS` and `cross_origin` for setting up the access policy.
 
 - Cors configuration for the entire app:
 
@@ -182,7 +184,7 @@ CORS(app,resources={r"/api": {"origins": "*"}})
 app.config['CORS_HEADERS'] = 'Content-Type'
 ```
 
-From above, we accept all origins hitting the */api* endpoint from which we will expose the API.
+From above, we accept all origins hitting the `/api` endpoint from which we will expose the API.
 
 - Creating a todo: the following route creates a todo:
 
@@ -322,15 +324,15 @@ For the questions that follow, feel free to go with the defaults or your own sel
 
 #### Installing packages
 - Install the following packages
-- *Axios*: For handling client/server-side requests.
-- *Vue-router*: For handling navigation
+- Axios: For handling client/server-side requests.
+- Vue-router: For handling navigation
 
 ```bash
 npm install axios vue-router
 ```
 
 #### Setting up the Vue frontend application
-After installing the packages we need to configure them in the *src/main.js* as follows:
+After installing the packages we need to configure them in the `src/main.js` as follows:
 
 ```js
 import axios from 'axios'
@@ -340,7 +342,7 @@ Vue.prototype.$http = axios;
 Vue.use(VueRouter);
 ```
 
-- In *src/App.vue*, edit the HTML as follows:
+- In `src/App.vue`, edit the HTML as follows:
 
 ```html
 <div id="app">
@@ -408,7 +410,7 @@ From above, we are setting the dynamic classes for the navigation bar.
 
 From above, we are adding custom styles to the app component.
 
-- In the *src/components* folder, create a `Todos.vue` file. In the file, add the following HTML:
+- In the `src/components` folder, create a `Todos.vue` file. In the file, add the following HTML:
 
 ```html
 <template>
@@ -547,7 +549,7 @@ From above, we export the todos fetched when the component is loaded, the functi
 
 Above are simple styles to add to our todo component.
 
-- Create an *AddTodo.vue* file and add in the following components.
+- Create an `AddTodo.vue` file and add in the following components.
 
 - The HTML
 
@@ -643,7 +645,7 @@ methods:{
 
 From the above script, we are exporting data from the component and a method that handles validation and data submission on the submission of the form.
 
-- Create an *AddTodo.vue* file and add in the following.
+- Create an `AddTodo.vue` file and add in the following.
 
 ```html
 <template>
@@ -677,7 +679,7 @@ From the above script, we are exporting data from the component and a method tha
 </template>
 ```
 
-Similar to the *add todo* form, we are outputting an *edit todo* form that is pre-populated with data from the JavaScript for the particular todo to be edited.
+Similar to the `add todo` form, we are outputting an `edit todo` form that is pre-populated with data from the JavaScript for the particular todo to be edited.
 
 - the JavaScript
 
@@ -763,7 +765,7 @@ export default {
 
 From above we are, exporting the todo data, getting the todo when the page is loaded, handling custom validation, and data submission of the edited todo.
 
-- After setting up the components, we need to handle the routing into various pages. To do this, we will add the following in the *src/main.js* file:
+- After setting up the components, we need to handle the routing into various pages. To do this, we will add the following in the `src/main.js` file:
 
 ```javascript
 // create a vuerouter instance
@@ -785,11 +787,11 @@ render: h => h(App),
 
 ```
 
-From above, we are creating a *VueRouter* instance passing in the *mode*, *base*, and *routes*. For the routes, we pass the *path*, *component*, and *name* for each.
+From above, we are creating a `VueRouter` instance passing in the `mode`, `base`, and `routes`. For the routes, we pass the `path`, `component`, and `name` for each.
 
-After creating the instance, we pass it to the *Vue object*.
+After creating the instance, we pass it to the Vue object.
 
-With that, we are ready to start the development server and test the functionalities we have implemented. 
+With that, we are ready to start the development server and test the functionalities we have implemented.
 
 To do that, run the following command:
 
@@ -797,7 +799,7 @@ To do that, run the following command:
 npm run serve
 ```
 
-The above command will spin up the development server on port *8080*. You can access your app from *http://localhost:8080*.
+The above command will spin up the development server on port `8080`. You can access your app from `http://localhost:8080`.
 
 Your application should resemble the following:
 
@@ -813,11 +815,11 @@ Your application should resemble the following:
 To dockerize the application we have built, we will follow the following steps:
 
 #### Dockerize the Flask API
-To dockerize the API, create a *Dockerfile*, and a *.dockerignore* file in the API folder.
+To dockerize the API, create a Dockerfile, and a `.dockerignore` file in the API folder.
 
-The *Dockerfile* will host the instructions for creating the image, whereas the *.dockerignore* file will host the files to be ignored when copying to the image.
+The Dockerfile will host the instructions for creating the image, whereas the `.dockerignore` file will host the files to be ignored when copying to the image.
 
-Add the following in the *Dockerfile*:
+Add the following in the Dockerfile:
 
 ```docker
 # Base python package
@@ -841,7 +843,7 @@ CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]
 
 From above, we are externally importing the python package, defining the working directory, copying the dependencies, installing the dependencies, copying the files, and setting the execution commands.
 
-Add the following to the *.dockerignore* file:
+Add the following to the `.dockerignore` file:
 
 ```docker
 __pycache__/
@@ -858,9 +860,9 @@ README.MD
 From above, we are adding all the files that should not be included in the docker image.
 
 #### Dockerize the Vue app
-To dockerize the Vue app, we will also create a *Dockerfile* in the project folder. Similarly, as in the previous instance, it will host the instructions for creating the docker image.
+To dockerize the Vue app, we will also create a Dockerfile in the project folder. Similarly, as in the previous instance, it will host the instructions for creating the docker image.
 
-In the *Dockerfile*, add the following:
+In the Dockerfile, add the following:
 
 ```docker
 #Base image
@@ -891,14 +893,14 @@ EXPOSE 5000
 CMD [ "serve", "-s", "dist" ]
 ```
 
-From above, we are importing the node image, setting the working directory, copying the contents of the *package.json*, and *package-lock.json*, Installing the project dependencies, copying the project files, building the project,  exposing a port, and setting the executables.
+From above, we are importing the node image, setting the working directory, copying the contents of the `package.json`, and `package-lock.json`, Installing the project dependencies, copying the project files, building the project,  exposing a port, and setting the executables.
 
 #### Set up an overall docker-compose file
-After setting a *Dockerfile* for each of the folders i.e *api-folder*, and *client-folder*, we will set up a *docker-compose.yml* file outside the two folders.
+After setting a Dockerfile for each of the folders i.e `api-folder`, and `client-folder`, we will set up a `docker-compose.yml` file outside the two folders.
 
-Start by creating a *docker-compose.yml* file outside the API and the client folder.
+Start by creating a `docker-compose.yml` file outside the API and the client folder.
 
-In the *docker-compose.yml* file, add the following:
+In the `docker-compose.yml` file, add the following:
 
 ```docker
 version: '3.8'
@@ -915,10 +917,10 @@ services:
             - 8080:5000
 ```
 
-From above, we define the version of *docker-compose* and set up the two services. For each service, we define the build (folder hosting the *Dockerfile*) and the ports (Where the project is to run on). So that the services do not collide on parallel ports, the *client-side* will run on port *8080*.
+From above, we define the version of `docker-compose` and set up the two services. For each service, we define the build (folder hosting the Dockerfile) and the ports (Where the project is to run on). So that the services do not collide on parallel ports, the `client-side` will run on port `8080`.
 
 #### Build the docker image
-To build the docker image, from the location of the *docker-compose.yml* file, run the following:
+To build the docker image, from the location of the `docker-compose.yml` file, run the following:
 
 ```bash
 docker-compose up -d --build
@@ -933,9 +935,9 @@ To start the docker container from the same location as in the previous step, ru
 docker-compose up
 ```
 
-The above command will start the two services. After the two services are started, proceed to *http://localhost:8080* to interact with the app.
+The above command will start the two services. After the two services are started, proceed to `http://localhost:8080` to interact with the app.
 
-After interacting with the app, You can stop the container by pressing *CRTL + C*. You can also share the docker image with friends to showcase what you have built.
+After interacting with the app, You can stop the container by pressing `CRTL + C`. You can also share the docker image with friends to showcase what you have built.
 
 ### Conclusion
 In this article, we have created a Vue JS app that consumes a restful Flask API. To widen your knowledge on the tools used throughout the article, the following resources are recommended:
