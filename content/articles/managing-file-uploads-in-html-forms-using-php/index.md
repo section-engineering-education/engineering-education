@@ -19,7 +19,7 @@ In today’s world, files are exchanged daily, especially over the internet.  We
 In this tutorial, we will look at how to use HTML forms and PHP to upload files to a website.
 
 ### Prerequisites
-Before starting this tutorial, make sure you have prior knowledge on how to create HTML forms and databases in MySQL. You can check out a simple guide on how to create forms in HTML [here](/working-with-forms-in-php/).
+Before starting this tutorial, make sure you have prior knowledge on how to create HTML forms and databases in MySQL. You can check out a simple guide on how to create forms in HTML [here](/engineering-education/working-with-forms-in-php/).
 
 Since we will be using PHP, make sure you have installed `Xampp` to help in running the PHP code. You can download it [here](https://www.apachefriends.org/download.html).
 
@@ -83,7 +83,7 @@ When saving files on a table record, we follow these steps.
 
 The admin button on the MySQL row should take you to your browser and display this.
 
-[Phpmyadmin dashboard](/managing-file-uploads-in-html-forms-using-php/Phpmyadmin.jpg)
+[Phpmyadmin dashboard](/engineering-education/managing-file-uploads-in-html-forms-using-php/Phpmyadmin.jpg)
 
 2.  **Connecting to a database** -> For this tutorial we will be using mysqli. In our `index.php` file , under the closing html tag lets add the following php script.
 
