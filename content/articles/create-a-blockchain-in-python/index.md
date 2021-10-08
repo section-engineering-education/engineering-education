@@ -43,7 +43,7 @@ Let’s proceed to build our first blockchain.
 
 We begin by launching our IDE and install Flask in our virtual environment.  After setting up our environment, we create a new file for our code, and name it `blockchain.py`.
 
-#### Initializing packages
+### Initializing packages
 In our `blockchain.py` file, we start by importing the following packages as they are required in building our blockchain:
 
 ```python
@@ -54,7 +54,7 @@ from flask import Flask, jsonify
 ```
 We use the `DateTime` library to attach a timestamp to each block that is created or mined. The `hahshlib` will be used to hash a block,  `JSON` will be used to encode the block before we hash them, and `jsonify` from the Flask library will be used to return messages to Postman.
 
-#### The Genesis Block
+### The Genesis Block
 To start building our blockchain, we create a `Blockchain` class, and the `__init__` method will consist of a variable called chain to store a list of all the blocks in the blockchain, and then a `create_blockchain()` method to create our Genesis block on instantiation of the class.
 
 The `create_blockchain()` method will take two default arguments which are `proof` with a value of one(1), and the `previous_hash` with a value of zero(0). This aspect of the code shows the importance of having a foundational background on how blockchain works.
@@ -68,7 +68,7 @@ class Blockchain:
        self.create_blockchain(proof=1, previous_hash='0')
 ```
 
-#### The Create Blokchain Function
+### The Create Blokchain Function
 Next, we define a `create_blockchain` method that extends the genesis block, but the only difference here is that we will pass in three parameters which are:
 - self
 - proof
@@ -96,7 +96,7 @@ def create_blockchain(self, proof, previous_hash):
    return block
 ```
 
-#### Get The Previous Block Function
+### Get The Previous Block Function
 This process is easy. All we have to do is create a method that gets the previous block in the chain.
 
 We create a new variable and name it `last_block` and pass in a value of the last block in the list of the `chain` variable, then we return the `last_block`.
@@ -108,7 +108,7 @@ def get_previous_block(self):
    return last_block
 ```
 
-#### The Proof of Work Function
+### The Proof of Work Function
 Recall that in the `create_blockchain()` function, we had a variable called proof. This variable represents the proof of work done to mine a block. As the programmer of the blockchain, we need to create an algorithm that the miners will solve to mine a block successfully.
 
 If you have no prior knowledge of the process required to mining a block, then read through my previous [article](https://www.section.io/engineering-education/an-introduction-to-blockchain-architecture/#mining-and-proof-of-work).
@@ -142,7 +142,7 @@ new_proof ** 2 - previous_proof ** 2
 ```
 The algorithm takes the new proof submitted by the user and raises it to the power of 2, then subtracts it from the exponent of the previous proof raised to the power of 2.
 
-#### Checking The Miner Solution To The Problem
+### Checking The Miner Solution To The Problem
 Next, we check the miner solution to the problem by checking the `hash_operation` first leading 4 characters, for our code, we check if the first 4 characters are equal to zeros.
 
 If the check returns True, then we’ve checked the proof and its valid, then we can assign it a value of true, else, we increment the new_proof by 1 which gives the miner another chance to try again and then we return the new proof.
@@ -167,7 +167,7 @@ def proof_of_work(self, previous_proof):
    return new_proof
 
 ```
-#### Why Four Leading Zeros For Hash Operation?
+### Why Four Leading Zeros For Hash Operation?
 Now, why four(4) leading zeros? why not five(5) or six()6 or more, well the more leading zeros we require the more difficult it will be to mine a block, so, for the sake of the tutorial we have it at 4 to ensure we can mine a block faster.
 
 Also, the `hash_operation` algorithm we pass in must be non-symmetrical such that if the order of operation were to be reversed it wouldn’t result in the same value, e.g. a + b is equal to b+a, but a-b is not equal to b-a.
@@ -176,7 +176,7 @@ Lastly, in our algorithm, we require both the new proof submitted and the previo
 
 This step is quite confusing but, if you read through the code and my comments, you will find it easy to grasp. Let’s proceed to the next step.
 
-#### Generating a Hash
+### Generating a Hash
 In this step, we generate a hash for the entire block itself, so we create a `hash()` method that takes two parameters which are:
 - self
 - block.
@@ -191,7 +191,7 @@ def hash(self, block):
    return hashlib.sha256(encoded_block).hexdigest()
 ```
 
-#### Checking The Validity of The Blockchain
+### Checking The Validity of The Blockchain
 In this step, we create a function that checks if the entire blockchain is valid. This step is crucial in maintaining the integrity of our blockchain to ensure that none of our block is corrupt because if the data in a block changes, the hash changes and the link between each block in the chain is broken. This process is well explained in my previous [article](https://www.section.io/engineering-education/an-introduction-to-blockchain-architecture/#mining-and-proof-of-work).
 
 Without further ado, let’s get to it. We start by creating a `is_chain_valid` method that takes two parameters which are:
@@ -281,7 +281,7 @@ blockchain = Blockchain()
 ```
 Now, we can proceed to mine a block.
 
-#### Mining A New Block
+### Mining A New Block
 We start by creating a Flask route of `mine_block` with a `GET` method, then we define the view
 
 ```python
@@ -323,7 +323,7 @@ return jsonify(response), 200
 ```
 Now, we have all the code to mine a block. Let’s go a step further to write the feature for getting all the blocks in the chain.
 
-#### Fetching The Chain
+### Fetching The Chain
 We start by creating a new `get_chain` route with a GET method, then we return a response that contains the length of the blockchain and the blockchain within the chain.
 ```python
 @app.route('/get_chain', methods=['GET'])
@@ -333,7 +333,7 @@ def get_chain():
    return jsonify(response), 200
 ```
 
-#### Setting The Application Port
+### Setting The Application Port
 Lastly, we need to run our app, so we add this line of code beneath our existing code.
 
 ```python
@@ -459,7 +459,7 @@ Next, we proceed to run our app.
 ### Running The Application
 There are two ways to test-run our blockchain code. The first way is to use the Postman desktop app, while the other method is via the web browser.
 
-#### Running Via The Web Browser
+### Running Via The Web Browser
 Let’s run our app through the web browser. When we run the application on Pycharm, we get a local address to run our app from the terminal:
 
 ![Terminal Image](/engineering-education/content/articles/create-a-blockchain-in-python/block_terminal.png)
@@ -483,7 +483,7 @@ Every time we refresh the page, it mines a new block. Now, let’s get the chain
 
  The above function call displays the blocks in the chain and their index as intended. Now, let’s repeat this process on the Postman desktop application.
 
-#### Running Via Postman Desktop Application
+### Running Via Postman Desktop Application
 To mine a block, we copy the `mine_block` URL, and paste it in the request URL bar, and make sure the request type is `GET`, then we send the request.
 
 The image below has a number label for the step process as outlined above, and the result is as follows:
