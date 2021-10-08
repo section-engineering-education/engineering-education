@@ -539,8 +539,9 @@ Now, add a function that will be invoked when the `Login` button is clicked on, 
 
 In the function, do the following:
 
-- Check if the username and password are blank
-- Check if the password has less than four characters
+- Check if the:
+  - username and password are blank
+  - password has less than four characters
 
 Here is the code:
 
