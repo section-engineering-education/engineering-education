@@ -2,32 +2,27 @@
 layout: engineering-education
 status: publish
 published: true
-url: /making-card-components-using-tailwind-css/
+url: /card-components-using-tailwind-css/
 title: Making Card Components Using Tailwind CSS
 description: In this article, the reader will understand how to create various cards that are mostly used in web pages. We will use Tailwind CSS classes to create and style them.
 author: ian-masae
-date: 2021-08-27T00:00:00-09:00
-topics: []
+date: 2021-10-08T00:00:00-07:40
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/card-components-using-tailwind-css/hero.jpg
     alt: Card Components Using Tailwind CSS Hero Image
 ---
-
-What is a card component? Card components are like containers used to group related pieces of information about items, products or functions.
+What is a card component? Card components are like containers used to group related pieces of information about items, products or functions. They usually show information in an appealing way.
 <!--more-->
+A card component can be a product advert, a blog post, or even a user profile.
 
-They usually show information in an appealing way. A card component can be a product advert, a blog post or even a user profile.
-
-By the end of this tutorial, the reader will understand how to create and style different types of cards using Tailwind CSS classes.
-
-### Prerequisites
-In order for one to follow through this tutorial, a clear understanding Tailwind CSS is required.
+By the end of this tutorial, you will understand how to create and style different types of cards using Tailwind CSS classes.
 
 Let’s jump into it!
 
-### Adding Tailwind into our project
+### Adding Tailwind into your project
 I will assume that you have the latest version of Tailwind added into your project. If not, I suggest you go through this [article](https://www.section.io/engineering-education/introduction-to-tailwind-css/) first.
 
 After the installation process, we will link our Tailwind CSS stylesheet to our project as shown below:
@@ -35,38 +30,36 @@ After the installation process, we will link our Tailwind CSS stylesheet to our 
 ```html
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./public/tailwind.css">
-</head>
+    <link rel="stylesheet" href="./public/tailwind.css" />
+  </head>
 </html>
 ```
 
 ### Setting up our page
+First, we will set the background for our web page. In this case, green.
 
-First, we will set the background for our web page. In this case, I chose green color.
-
-Next we will specify the height of our containment `<div>` into which the cards will be displayed as shown below:
+Next, we will specify the height of our containment `<div>` into which the cards will be displayed as shown below:
 
 ```html
 <body class="bg-green-400">
-    <div class="min-h-screen flex items-center justify-center space-x-5"></div>
+  <div class="min-h-screen flex items-center justify-center space-x-5"></div>
 </body>
 ```
 
 What do these classes do?
- - `min-h-screen` sets minimum height of the container to be equal to 100% of the screen height.
- - `flex` aligns the cards vertically.
- - `items-center` and `justify-center` align the cards in the center of the screen.
+- `min-h-screen` sets minimum height of the container to be equal to 100% of the screen height.
+- `flex` aligns the cards vertically.
+- `items-center` and `justify-center` align the cards to the center of the screen.
 
 ### Building our first two cards
-
 This is how our first two cards will look like:
 
-![Alert and Menu component](/engineering-education/card-components-with-tailwind-css/component1.png)
+![Alert and Menu component](/engineering-education/card-components-using-tailwind-css/component1.png)
 
 Our first card as shown above is an alert component. It is an example of a card that gives information to a user on a particular subject. It has buttons which require user interaction.
 
@@ -79,6 +72,7 @@ Let's begin by creating a container, `<div>`. This is where we will align our ca
 ```html
 <div class="w-1/4 grid grid-rows-2 gap-y-2"></div>
 ```
+
 Here are the functions of the classes we have added above:
 - `w-1/4` sets the width of the container to be equal to 25% of the screen width.
 - `grid` enables us to divide the items in the div into rows and columns
@@ -89,36 +83,44 @@ We will start creating the first card using a container, `<div>` as shown in the
 
 ```html
 <div class="rounded-lg shadow-xl bg-white">
-    <div class="p-5">
-        <!--Card Header-->
-            <header class="font-semibold text-lg pb-5">
-                Welcome to Tailwind CSS
-            </header>
-            <p class="text-gray-500 px-4">Lorem ipsum dolor sit amet, consectetur adip!</p>
-            <footer class="text-center space-x-5">
-                <button class="py-2 px-4 mt-5 border border-green-500 rounded-lg text-green-500 font-semibold hover:text-white hover:bg-green-600">CANCEL</button>
-                <button class="py-2 px-4 mt-5 bg-green-500 rounded-lg text-white font-semibold hover:bg-green-600">APPLY</button>
-            </footer>
-    </div>
+  <div class="p-5">
+    <!--Card Header-->
+    <header class="font-semibold text-lg pb-5">Welcome to Tailwind CSS</header>
+    <p class="text-gray-500 px-4">
+      Lorem ipsum dolor sit amet, consectetur adip!
+    </p>
+    <footer class="text-center space-x-5">
+      <button
+        class="py-2 px-4 mt-5 border border-green-500 rounded-lg text-green-500 font-semibold hover:text-white hover:bg-green-600"
+      >
+        CANCEL
+      </button>
+      <button
+        class="py-2 px-4 mt-5 bg-green-500 rounded-lg text-white font-semibold hover:bg-green-600"
+      >
+        APPLY
+      </button>
+    </footer>
+  </div>
 </div>
 ```
-From the code above, we have created the container into which the components of the card will be contained. 
+
+From the code above, we have created the container into which the components of the card will be contained.
 
 We have then added another container to enable us add space around the components that will be inside our card. We will do the same to the subsequent cards later on.
 
-We added the header using the `<header>` element. We have made the text to be semi-bold with `font-semibold`, increased the font size to 18px with `text-lg` and added space at the bottom of the header with `pb-5` as shown below:
+We added the header using the `<header>` element. We have made the text to be semi-bold with `font-semibold`, increased the font size to 18px with `text-lg`, and added space at the bottom of the header with `pb-5` as shown below:
 
-![First Card Components](/engineering-education/card-components-with-tailwind-css/component1.png)
+![First Card Components](/engineering-education/card-components-using-tailwind-css/component1.png)
 
 After the header, we have added some text with a `<p>` tag. We made the text color gray with `text-gray-500` and added space on the left and right side of the text using `px-4`.
 
-Now for the footer, we have used  element `<footer>`,then added two buttons for user interaction.
+For the footer, we have used element `<footer>`, then added two buttons for user interaction.
 
-To the footer we have made the class `text-center` to center the buttons and class `space-x-5` adds space between the two buttons.
+To the footer, we have made the class `text-center` to center the buttons, and class `space-x-5` adds space between the two buttons.
 
 This is what the classes we have added to the buttons do:
-
-- To increase the width and height of the buttons we have used `py-2` and `px-4`.
+- To increase the width and height of the buttons, we have used `py-2` and `px-4`.
 - We have added space on the top margin by using `mt-5`.
 - `rounded-lg` makes the edges of the button have a rounded look.
 - `hover:bg-green-500` adds a hover effect that changes the background color to green.
@@ -127,8 +129,7 @@ This is what the classes we have added to the buttons do:
 That is all for the first card. We have used most of the classes that I have explained above. I will only explain the classes that we have not used above in the subsequent cards.
 
 ### Building a menu component card
-
-As mentioned earlier, we have created a menu component in form of card. The card contains links(menu items) which the user can interact with. 
+As mentioned earlier, we have created a menu component in form of card. The card contains links (menu items) which the user can interact with.
 
 The code for the menu card is shown below:
 
@@ -156,7 +157,7 @@ The code for the menu card is shown below:
 </div>
 ```
 
-We have started with a containment `<div>` and we have given it a header, `Menu Items` using  <header> as shown above.
+We have started with a containment `<div>`. We have given it a header `Menu Items` using `<header>`, as shown above.
 
 `<a>` tags have been used to create the links for our menu items.
 
@@ -167,27 +168,37 @@ We have added a padding of `12px` all round to add space between the menu items 
 Lastly, we added a hover effect which changes the background color and the text to green.
 
 ### Building an advert card
-
 We will now create the third card. The card will be next to the first and second card. This is what we will be creating:
 
-![Advertisement Card](/engineering-education/card-components-with-tailwind-css/component2.png)
+![Advertisement Card](/engineering-education/card-components-using-tailwind-css/component2.png)
 
 We are creating an advertisement card for a product.
 
-We will add an image of the product at the top of the card and other information following below it as shown in the code below:
+We will add an image of the product at the top of the card, and other information following below it as shown below:
 
 ```html
 <div class="w-1/4 rounded-lg shadow-xl bg-white">
-    <img src="./img/pexels-antonio-dillard-4462781.jpg" alt="" class="rounded-t-lg h-60 w-full object-cover">
-    <!--Card Header-->
-    <header class=" text-xl font-extrabold p-4">Card Component</header>
-    <div class="px-5">
-        <p class="text-gray-500 px-4">Use card components to easily show blog posts, merchandise, functions, items and more.</p>
-    </div>
-    <!--Card Footer-->
-    <footer class="text-right py-3 px-8 text-gray-500">
-        <button class="py-2 px-4 mt-5 bg-green-500 rounded-lg text-white font-semibold hover:bg-green-600">GET STARTED</button>
-    </footer>
+  <img
+    src="./img/pexels-antonio-dillard-4462781.jpg"
+    alt=""
+    class="rounded-t-lg h-60 w-full object-cover"
+  />
+  <!--Card Header-->
+  <header class=" text-xl font-extrabold p-4">Card Component</header>
+  <div class="px-5">
+    <p class="text-gray-500 px-4">
+      Use card components to easily show blog posts, merchandise, functions,
+      items and more.
+    </p>
+  </div>
+  <!--Card Footer-->
+  <footer class="text-right py-3 px-8 text-gray-500">
+    <button
+      class="py-2 px-4 mt-5 bg-green-500 rounded-lg text-white font-semibold hover:bg-green-600"
+    >
+      GET STARTED
+    </button>
+  </footer>
 </div>
 ```
 
@@ -205,34 +216,43 @@ Then for the header, we made the text extrabold with class `font-extrabold` and 
 
 After the header, we added a paragraph text with a `<p>` tag as shown in the code above.
 
-Lastly, for the footer, we created a button, which is at the right side of the container. This is achieved by using class, `text-right`.
+Lastly, for the footer, we created a button; which is at the right side of the container. This is achieved by using class, `text-right`.
 
-For our button not to be too far on the right, we will add some space using padding classes, `py-3` and `px-8`. We have used the same classes that we had used earlier.
+For our button not to be too far to the right, we will add some space using padding classes, `py-3` and `px-8`. We have used the same classes that we had used earlier.
 
 ### Building a profile card
+Our last card is a profile card. It contains information about a user such as their name, profile picture, and skills. We will create a card that looks like this:
 
-Our last card is a profile card. It contains information about a user such as, their name, profile picture and skills. We will create a card that looks like this:
-
-![Profile card](/engineering-education/card-components-with-tailwind-css/component3.png)
+![Profile card](/engineering-education/card-components-using-tailwind-css/component3.png)
 
 The code for our profile card is shown below:
 
 ```html
 <div class="w-1/4 rounded-lg shadow-xl bg-white p-10">
-    <img src="./img/pexels-christina-morillo-1181690.jpg" alt="" class="rounded-full p-4 h-40 mx-auto">
-    <!--Card Header-->
-    <header class=" text-2xl font-extrabold py-4 px-4 text-center">Christina Morillo</header>
-    <div>
-        <ul class="text-gray-500 text-center font-semibold">
-            <li>Web Designer</li>
-            <li>UX/UI Designer</li>
-            <li>Database Administrator</li>
-        </ul>          
-    </div>
-    <!--Card Footer-->
-    <footer class="text-center py-3 px-8 text-gray-500">
-        <button class="py-2 px-4 mt-5 bg-green-500 rounded-lg text-white font-semibold hover:bg-green-600">FOLLOW</button>
-    </footer>
+  <img
+    src="./img/pexels-christina-morillo-1181690.jpg"
+    alt=""
+    class="rounded-full p-4 h-40 mx-auto"
+  />
+  <!--Card Header-->
+  <header class=" text-2xl font-extrabold py-4 px-4 text-center">
+    Christina Morillo
+  </header>
+  <div>
+    <ul class="text-gray-500 text-center font-semibold">
+      <li>Web Designer</li>
+      <li>UX/UI Designer</li>
+      <li>Database Administrator</li>
+    </ul>
+  </div>
+  <!--Card Footer-->
+  <footer class="text-center py-3 px-8 text-gray-500">
+    <button
+      class="py-2 px-4 mt-5 bg-green-500 rounded-lg text-white font-semibold hover:bg-green-600"
+    >
+      FOLLOW
+    </button>
+  </footer>
 </div>
 ```
 
@@ -240,14 +260,14 @@ First, we created a container and added an image file that will be our profile p
 
 `mx-auto` will center the image in the container.
 
-Then, for our header we added the profile name, we set the text to extrabold with a font size of 24px and centered it on the container using class `text-center`.
+For our header, we added the profile name, we set the text to extrabold with a font size of 24px and centered it on the container using class `text-center`.
 
-For the profile skills we used `<ul>` which we centered them using `text-center` too.
+For the profile skills, we used `<ul>` which we centered using `text-center`.
 
-Lastly, for the footer, added a `FOLLOW` button we used the same classes as previously and this time we centered it using class `text-center`.
+Lastly, for the footer, we added a `FOLLOW` button using the same classes as previously, and centered it using class `text-center`.
 
 ### Conclusion
-In this tutorial, we have gone through the steps of creating different card components which can be used in webpages to clearly show user profiles, adverts on products and even blog posts.
+In this tutorial, we have gone through the steps of creating different card components which can be used in webpages to clearly show user profiles, adverts of products, and even blog posts.
 
 It would be clever to implement card components to your webpages.
 
