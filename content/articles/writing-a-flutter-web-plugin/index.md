@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/writing-a-flutter-web-plugin//hero.png
+  - url: /engineering-education/writing-a-flutter-web-plugin/hero.png
     alt: Flutter web plugin image
 ---
 Flutters web support enables a seamless online experience. For example, you can create apps for iOS and Android that can then be converted to run on the web. 
