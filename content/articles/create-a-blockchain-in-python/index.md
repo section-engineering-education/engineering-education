@@ -1,6 +1,21 @@
-### Creating A Blockchain With Python
-In my previous [article](https://www.section.io/engineering-education/an-introduction-to-blockchain-architecture/), I wrote explicitly on understanding blockchain technology and its components. While we’ve understood the theoretical aspect of blockchain technology, I deem it fit that we should have a look into creating a blockchain to visualize the components of the blockchain in action.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /create-a-blockchain-in-python/
+title: A Beginners Guide on How to Become a Blockchain Developer
+description: In this article, we will explore how to become a blockchain developer without prior coding experience. 
+author: adetu-ridwan
+date: 2021-10-08T00:00:00-15:00
+topics: [Blockchain]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/create-a-blockchain-in-python/hero.jpg
+    alt: Blockchain Python
+---
+In my previous [article](https://www.section.io/engineering-education/an-introduction-to-blockchain-architecture/), I wrote explicitly on understanding blockchain technology and its components. While we’ve understood the theoretical aspect of blockchain technology, I deem it fit that we should have a look into creating a blockchain to visualize the components of the blockchain in action.
+<!--more-->
 ### Prerequisite
 The prerequisites for this article includes an understanding of the following concepts:
 - Knowledge of Object-Oriented Programming Language with Python
@@ -487,5 +502,5 @@ In this article, you’ve successfully built your first blockchain. You can mine
 
 The codebase for this article can be found [here](https://github.com/corpsgeek/blockchain/tree/main), and for practice purposes, your task is to build a new function to check if the blockchain is valid and return a response to the request.
 
-If you have any questions or require the solution to the new function task, drop a comment below.
-
+---
+Peer Review Contributions by: [Adrian Murage](/engineering-education/authors/adrian-murage/)
