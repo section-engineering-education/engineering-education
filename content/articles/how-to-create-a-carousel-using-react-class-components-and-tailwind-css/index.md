@@ -312,7 +312,7 @@ componentDidMount(){
     }
 ```
 
-In the above code, the `setInterval()` method is called when the component mounts. It only executes when the paused state is set to false. It uses a conditional statement to assign a value to the newSlide variable and then sets the currentSlide state to the value assigned to it. It helps determine which image to show.
+In the above code, the `setInterval()` method is called when the component mounts. It only executes when the paused state is set to false. It uses a conditional statement to assign a value to the newSlide variable and then sets the currentSlide state to the value assigned to it. It helps determine which image to show. The `setInterval()` method also takes another parameter, delay, which determines after how long the code should be executed. In this case, the delay is 3000ms which means that the function executes after every 3 seconds.  
 
 To implement pause on hover, we will use the [onMouseEnter](https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseenter_event) and [onMouseLeave](https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseleave_event) event listeners. Add the following event listeners to the img tag:
 
