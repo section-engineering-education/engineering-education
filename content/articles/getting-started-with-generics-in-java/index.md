@@ -4,14 +4,14 @@ status: publish
 published:
 url: /getting-started-with-generics-in-java/
 title: Getting Started With Generics In Java
-description: This article will describe how to get started on working with generics in the Java language, helping the reader understand what are generics and how they are used.
+description: This article will describe how to get started on working with generics in the Java language. A generic type is a generic class or interface that is parameterized over types. The idea is to allow type (Integer, String, … etc, and user-defined types) to be a parameter to methods, classes, and interfaces.
 author: emmah-lashly
-date: 2021-10-04T00:00:00-18:00
+date: 2021-10-08T00:00:00-19:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
   - url: /engineering-education/getting-started-with-generics-in-java/hero.png
-    alt: Java generics cover image 
+  alt: Getting started with generics in Java cover image 
 ---
 <!--more-->
 This tutorial is essential for beginners in the Java programming language who want to learn Generics. In java, Generics have various advantages that make their usage significant. Generic classes execute faster than non-generic classes since they have reduced boilerplate (unnecessary code) codes. Just to mention, generic methods allow code reusability which saves the programmer from creating various methods.
@@ -44,8 +44,10 @@ By the end of this tutorial, the learner should be conversant with:
 -   Advantages of using Generics.
 
 ### What are Generics
-Generics in java allow the use of parameterized types. A parameterized type is instantiated using actual type arguments. A reference type with one or more type parameters is known as a generic type. When the generic type is specified, these type parameters are substituted with type arguments.
-Generic classes and methods allow parameterized types which include the wrapper classes. With generics, it is possible to create classes that allow different data types. Wrapper classes include;` Integer`, `Double`, `Float`, `String`, and `Character`.
+Generics in java allow the use of parameterized types. A parameterized type is instantiated using actual type arguments. 
+A reference type with one or more type parameters is known as a generic type. When the generic type is specified, these type parameters are substituted with type arguments.
+Generic classes and methods allow parameterized types which include the wrapper classes. With generics, it is possible to create classes that allow different data types. 
+Wrapper classes include: ` Integer`, `Double`, `Float`, `String`, and `Character`.
 
 ### Advantages of Using Generics in Java
 Generics have various advantages in Java programming:
@@ -57,17 +59,20 @@ For example, when you want to create a class that shows the class of parameteriz
 
 3.  Generics don’t require individual-type casting.
 When using generics, there is no need for type casting since generics provide the parameterized type which references an argument.
-4.  Helps in detecting errors at compile time rather than at the run time.
+
+4.   Generics help in detecting errors at compile time rather than at the run time.
 It is a good programming practice to handle errors/problems at compile time rather than at the run time which might lead to uncertainties.
 
 ### How to Create Generic Classes
-A generic class is a class that can reference any type. With generics, one can refer to any parameterized type. In creating a generic class, a parameterized type is wrapped inside the `<>` (angular brackets).
+A generic class is a class that can reference any type. With generics, one can refer to any parameterized type. 
+In creating a generic class, a parameterized type is wrapped inside the `<>` (angular brackets).
 The parameterized type can have one or more parameters separated by commas.
+Consider the example below:
 ```java
 public class MyGenericClass <T> {
 }
 ```
-`T` is usually used to represent `type` which must be the parameterized type (`Integer`, `String`, `Float`, `Double`, `Character`). Primitive types like `int`, `char`, `float`, `double`, and `string` must not be used to represent `T`.
+`T` is usually used to represent `type` which must be the parameterized type `Integer`, `String`, `Float`, `Double`, or `Character`. Primitive types like `int`, `char`, `float`, `double`, and `string` must not be used to represent `T`.
 
 To create an instance (object) of a generic, the following syntax is used:
 ```java
@@ -94,7 +99,9 @@ public class MyGenericClass <T> {
 Parameterized `T` has been replaced with wrapper class `Integer` which allows only the values of type integer.
 
 ### How to Create Generic Methods
-Just like generic classes, generic method are methods that allows any type of argument by referencing the parameterized types. In generic methods, the scope of the argument is local to the method in which it is defined. Generics allows both static and non-static methods. 
+Just like generic classes, generic methods are methods that allow any type of argument by referencing the parameterized types. 
+In generic methods, the scope of the argument is local to the method in which it is defined. Generics allow both static and non-static methods.
+Below is a Java generic method:
 ```java
 public class GenericMethod {
     // Generic method to display the Parametrized types
@@ -120,12 +127,13 @@ java.lang.Float = 20.0
 ```
 
 ### Generic Interface
-The generic interface is created the same way as generic classes but some conditions must be observed while implementing generic interfaces. The conditions include:
+The generic interface is created the same way as generic classes but some conditions must be observed while implementing generic interfaces. 
+The conditions include:
 
 **1. A class that implements a generic interface MUST be generic.**
 
 If implementing class of generic interface is not generic, there will be a compile-time error because the parameterized type is not known.
-Generic Interface:
+Here's a sample generic Interface:
 ```java
 public interface PersonGenericInterface <E> {
     void setPersonName(E name);
@@ -155,6 +163,7 @@ public class NameGenericClass <E> implements PersonGenericInterface <E>{
 }
 ```
 **2. A non-generic class can be used if a specific parameterized type (`Integer`, `String`, `Double`, `Character`, `Float`) is provided with the interface while implementing.**
+See the example below:
 
 ```java
 public class NameGenericClass implements PersonGenericInterface <String>{
@@ -178,8 +187,8 @@ public class NameGenericClass implements PersonGenericInterface <String>{
 }
 ```
 **3. The generic class implementing a generic interface can have other parameterized type parameters.**
+The generic class can have more than one parameterized type argument as shown below:
 
-The generic class can have more than one parameterized type argument.
 ```java
 public class NameGenericClass <E, T> implements PersonGenericInterface <E>{
 
@@ -213,17 +222,19 @@ public class NameGenericClass <E, T> implements PersonGenericInterface <E>{
 }
 ```
 ### Wildcards
-Wildcards allow reference to unknown types. It is denoted by a `?` character and they can reference any object like generic classes.
+A wildcard allows reference to unknown types. It is denoted by a `?` character and it can reference any object like generic classes.
 
 #### Upper Bounded Wildcard
-The upper bounded wildcard is defined by the wildcard character `?` then followed by an `extends` keyword and finally its `upper bound`. 
+The upper bounded wildcard is defined by the wildcard character `?` then followed by an `extends` keyword and finally its `upper bound`.
+For example:
 ```java
 public static <T> void numbers(Set<? extends Number> set){
     // Your code here
 }
 ```
 #### Lower Bounded Wildcard
-Lower bounded wildcard is defined by the wildcard character `?` followed by the `super` keyword and then its `lower bound`.
+A lower bounded wildcard is defined by the wildcard character `?` followed by the `super` keyword and then its `lower bound`.
+For example:
 ```java
 public static void additionOfNumbers(List<? super Integer> numbers){
     for (int i = 1; i < 10; i++){
