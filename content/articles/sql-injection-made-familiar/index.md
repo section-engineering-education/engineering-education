@@ -6,7 +6,7 @@ url: /sql-injection-made-familiar/
 title: SQL Injection Made Familiar
 description: This article will take the reader through SQL infusions and will have an unmistakable illustration of how it is carried out and how to forestall SQL infusions.
 author: bernard-mburu
-date: 2021-10-08T00:00:00-05:00
+date: 2021-10-08T00:00:00-05:30
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
