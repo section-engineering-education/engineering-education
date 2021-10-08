@@ -12,6 +12,15 @@ In this article, you will learn:
 * How to build CRUD applications with Flask and MongoDB.
 * How to integrate Cloudinary services into a Python application.
 
+### Prerequisites
+
+To follow and fully understand this tutorial, you will need to have:
+
+* Working knowledge of Python and Flask.
+* Python 3.6 or newer installed on your machine.
+* A Python development environment (IDE, text editor).
+* MongoDB installed on your machine.
+
 ### Benefits of Content Delivery Networks (CDNs)
 
 #### Reduction in Website Loading Time
@@ -39,6 +48,12 @@ You will build three (3) web pages for the image gallery. They are:
 * Index/Landing Page
 * Upload Image Page
 * View Gallery Page
+
+> Flask is a Python web framework that allows you to build basic and complex applications quickly and easily.
+
+> Flask-Bootstrap is a Flask extension that allows you to integrate [Bootstrap](https://getbootstrap.com/) into a web application effortlessly.
+
+> Flask-PyMongo is a Flask extension that bridges the gap between Flask and [PyMongo](https://pymongo.readthedocs.io/en/stable/), providing Flask applications with the functionalities to integrate MongoDB easily.
 
 #### Step 1: Installing the App Requirements
 
