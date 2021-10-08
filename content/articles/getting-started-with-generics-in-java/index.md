@@ -44,7 +44,7 @@ By the end of this tutorial, the learner should be conversant with:
 -   Advantages of using Generics.
 
 ### What are Generics
-Generics in java allows the use of parameterized types. A parameterized type is instantiated using actual type arguments. A reference type with one or more type parameters is known as a generic type. When the generic type is specified, these type parameters are substituted with type arguments.
+Generics in java allow the use of parameterized types. A parameterized type is instantiated using actual type arguments. A reference type with one or more type parameters is known as a generic type. When the generic type is specified, these type parameters are substituted with type arguments.
 Generic classes and methods allow parameterized types which include the wrapper classes. With generics, it is possible to create classes that allow different data types. Wrapper classes include;` Integer`, `Double`, `Float`, `String`, and `Character`.
 
 ### Advantages of Using Generics in Java
@@ -53,7 +53,7 @@ Generics have various advantages in Java programming:
 Generics allow the holding of only one type of object. This helps in detecting errors at compile time whenever an argument of a different type is passed.
  
 2.  Generics allow code reuse.
-For example, when you want to create a class that shows the class of parameterized type either Integers, Doubles, Strings, or even Characters, you will be forced to create different classes while with generics there will be only one class. Let’s look at an example of how generics achieve this:
+For example, when you want to create a class that shows the class of parameterized type either Integers, Doubles, Strings, or even Characters, you will be forced to create different classes while with generics there will be only one class.
 
 3.  Generics don’t require individual-type casting.
 When using generics, there is no need for type casting since generics provide the parameterized type which references an argument.
@@ -61,7 +61,7 @@ When using generics, there is no need for type casting since generics provide th
 It is a good programming practice to handle errors/problems at compile time rather than at the run time which might lead to uncertainties.
 
 ### How to Create Generic Classes
-A generic class is a class that can reference any type. With generics, one can refer to any parameterized type. In creating a generic class, a parameterized type is wrapper inside the `<>` (angular brackets).
+A generic class is a class that can reference any type. With generics, one can refer to any parameterized type. In creating a generic class, a parameterized type is wrapped inside the `<>` (angular brackets).
 The parameterized type can have one or more parameters separated by commas.
 ```java
 public class MyGenericClass <T> {
@@ -97,6 +97,7 @@ Parameterized `T` has been replaced with wrapper class `Integer` which allows on
 Just like generic classes, generic method are methods that allows any type of argument by referencing the parameterized types. In generic methods, the scope of the argument is local to the method in which it is defined. Generics allows both static and non-static methods. 
 ```java
 public class GenericMethod {
+    // Generic method to display the Parametrized types
     public static <T> void displayParameterizedType(T type){
         System.out.println(type.getClass().getName()+ " = "+ type);
     }
@@ -212,10 +213,10 @@ public class NameGenericClass <E, T> implements PersonGenericInterface <E>{
 }
 ```
 ### Wildcards
-Wildcards allow reference to unknown types. It is denoted by a (‘?’) character. they can reference any object like generic classes.
+Wildcards allow reference to unknown types. It is denoted by a `?` character and they can reference any object like generic classes.
 
 #### Upper Bounded Wildcard
-The upper bounded wildcard is defined by the wildcard character `? ` then followed by an `extends` keyword and finally its `upper bound`. 
+The upper bounded wildcard is defined by the wildcard character `?` then followed by an `extends` keyword and finally its `upper bound`. 
 ```java
 public static <T> void numbers(Set<? extends Number> set){
     // Your code here
