@@ -11,19 +11,16 @@ You can find the final demo on replit [Final demo](https://replit.com/@giridhar7
 Before diving into the tutorial, you should have intermediate knowledge of React. It would help if you were comfortable using [React Hooks](https://reactjs.org/docs/hooks-intro.html) and [Context API](https://reactjs.org/docs/context.html).
 
 ### The **JAM**stack and Airtable
-
 The **JAM**stack combines [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript), [APIs](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Itemduction), and [Markup](https://developer.mozilla.org/en-US/docs/Glossary/markup) for developing fast and scalable web applications. The JAMstack website employs third-party APIs to get data.
 
 You will use serverless functions for communicating with Airtable. [Airtable](https://try.airtable.com/database) is a spreadsheet and database hybrid that you can easily integrate into your application using its excellent API. Airtable API has wonderful documentation. The example code contains all your API keys and base names. To use them in your application, you can copy and paste the code. You can find the Airtable API documentation here: [https://airtable.com/api](https://airtable.com/api).
 
 ### Getting started
-
 Open your favorite code editor and run the command `npx create-next-app -e with-tailwindcss`. It generates a Next.js application that has tailwindcss installed. Install Airtable using the command: `npm install airtable`. To verify that everything is working, try running the command: `npm run dev`. You're good to go if you see it render normally.
 
 Next.js supports server-side rendering without the use of any other frameworks. It includes a router that allows you to access any file in the `/pages` directory as a new route. Within the `/pages/api` directory, you can create API endpoints using serverless functions.
 
 ### Airtable JavaScript setup
-
 Head over to [airtable.com](https://airtable.com/) and sign up for a free account. After you sign in successfully, create a new `base` starting from scratch. The `base` is what airtable refers to as a database. You'll have a starter table created with some primary fields. You can personalize the entire base; start with the base's title and the table's name. You can see that the user interface is amicable, and you can work in the same way you would in a spreadsheet. By right-clicking on a field in the table, you can customize it. You need an `item` field for the grocery name and a `brought` checkbox field. Navigate to [Airtable API](https://www.airtable.com/api/) and select the base you'd like to integrate.
 
 Let's connect Airtable to our app, but first, let's define a few variables that you will need in the code:
@@ -43,7 +40,6 @@ AIRTABLE_TABLE_NAME=
 ```
 
 ### Connecting to Airtable
-
 Create a new `Airtable.js` file. I prefer to create it inside a new `utils` folder under the `root` directory; you can create it wherever you want. Add the following code:
 
 ```js
@@ -66,7 +62,6 @@ export { table }
 The above code establishes a connection with the Airtable base. It first authenticates you using your `API_KEY`. Then all you have to do is initialize a base and reference the table you need.
 
 ### Building an API using Next.js
-
 Next.js allows you to create your own API using [API routes](https://nextjs.org/docs/api-routes/itemduction). Next.js maps any file inside the `/pages/api` folder to `/api/*`, an API endpoint instead of a route. For example, the boiler-plate code comes with a simple API endpoint `/api/hello` ([see more on API routes](https://nextjs.org/docs/api-routes/itemduction)).
 
 You can handle any request that hits the endpoint using serverless functions ([what are serverless functions?](https://vercel.com/docs/serverless-functions/introduction)). It has read and write access to the request and response objects. You can handle different types of requests with a single function using a conditional block. But in this project, we are going to create a separate file for handling each request. However, it is not the best practice for developing an API (learn about API [best practices](https://stackoverflow.blog/2020/03/02/best-practices-for-rest-api-design/)).
@@ -74,7 +69,6 @@ You can handle any request that hits the endpoint using serverless functions ([w
 Now we are going to create an API to perform [CRUD operations](https://www.codecademy.com/articles/what-is-crud) with the Airtable database.
 
 ### Get the table records
-
 The Airtable server returns a maximum of 100 records on a page at a time. If you know your table has no more than `100` items, you can use the `firstPage` method. If you have (or expect) more than 100 records, you should paginate through them using the `eachPage` method ([learn how to do it](https://chinarajames.com/how-to-paginate-records-in-airtable-when-using-the-api/)).
 
 Create a new file `items.js` file in `/pages/api` folder. Add the following code:
@@ -163,7 +157,6 @@ export default async (_req, res) => {
 ```
 
 ### Create a new record
-
 To create new records, you can use the `create` method. It takes an array of up to 10 record objects. Each of the record objects should have `fields` key with the contents. It returns an array of record objects created if the call succeeded.
 
 Create a new file, `createItem.js` in the `/pages/api` folder, and add the following code.
@@ -186,7 +179,6 @@ export default async (req, res) => {
 You can use [Postman](https://www.postman.com/) or something similar to send a request and test the endpoint.
 
 ### Update a record
-
 To update records, you can use the `update` or `replace` method. If you want to update a single field of a record, use the `update` method, or if you're going to replace it with a new record, use `replace` method. The `update` method is very similar to `create` method. It takes an array of `id`s and `fields` up to `10` records and returns the array of updated records.
 
 Create a new file `updateItem.js` in the `/pages/api` folder and add the following code.
@@ -209,7 +201,6 @@ export default async (req, res) => {
 Here, you are retrieving the record corresponding to the id and update the fields with new values. You can test the endpoint by sending a request to the API using Postman.
 
 ### Delete a record
-
 You can delete a record using the `destroy` method. It takes an array of `id`s of the records you want to delete. You can also set the first parameter to a record ID to delete a single record. It returns the deleted record.
 
 Create a new file `deleteItem.js` in the `/pages/api` folder and add the following code.
@@ -230,7 +221,6 @@ export default async (req, res) => {
 ```
 
 ### Creating front-end
-
 Now we have our API ready for all our CRUD operations. Let's create the interface to display this data in our Next.js application. Head over to the `index.js` file in your `/pages` directory and get rid of all the code in it. Add the following code:
 
 ```jsx
@@ -289,7 +279,6 @@ export async function getServerSideProps(context) {
 The above function gets all the records from the Airtable and passes them to `initialItems`. For now, see if it's working by just console logging the data.
 
 ### React Context API to Integrate Airtable Data
-
 > Context provides a way to pass data through the component tree passing props down manually at every level - [React documentation](https://reactjs.org/docs/context.html).
 
 In large-scale projects, we have to use the data in many components. So it is a better idea to use React context instead of passing props. Create a new context folder and add a new `items.js` file. Here, we will perform all the operations on Airtable data and pass the data to the front-end.
@@ -424,7 +413,6 @@ export default function Home({ initialItems }) {
 ```
 
 ### Displaying Item
-
 Create a new `Item.js` in the `components` folder. It takes a prop `item` and displays it on the webpage.
 
 For adding update and delete functionality, you can import the required functions from `ItemsContext`. Here you can update the item as `brought` by checking the checkbox. You can delete the item if you don't need it by clicking the delete button.
@@ -509,7 +497,6 @@ export default function Home({ initialItems }) {
 ```
 
 ### Adding Items
-
 You can create a simple form to add items to the Airtable. Create a new file `ItemForm.js`. The `form` element in HTML is different from that in React ([learn more on React forms](https://reactjs.org/docs/forms.html)). When you submit the 
 
 ```jsx
@@ -585,11 +572,9 @@ export default function Home({ initialItems }) {
 Find the source code [here](https://replit.com/@giridhar7632/item-app).
 
 ### Deployment
-
 Let's deploy this application using [vercel](https://vercel.com). I recommend using Vercel for deployment. It does not require any configuration and is free of cost for your personal projects. It supports all the features of Next.js with the best performance. Go to [vercel.com](https://vercel.com) and create an account. Push your project to a Git repository. Then import it to the vercel for deployment ([learn more here](https://vercel.com/guides/deploying-nextjs-with-vercel###step-2:-deploying-your-next.js-project-with-vercel)). See my deployment [here](https://airtable-item-app.vercel.app/).
 
 ### Next steps
-
 Now that you have a complete JAMstack application, try extending its functionality:
 
 - Use the API [best practices](https://stackoverflow.blog/2020/03/02/best-practices-for-rest-api-design/) for building a perfect API.
