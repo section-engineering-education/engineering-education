@@ -1,4 +1,4 @@
-Vue is a Javascript frontend framework used to build website user interfaces. Vue is commonly used to build single page based application that runs on the client-side. Nevertheless, Vue can be used to build a full-stack web application with other backend technologies such as Node.js and Flask coming into play. This allows developers to make HTTP requests to a server and populate them in a Vue-based interface.
+Vue is a Javascript frontend framework used to build web user interfaces. Vue is commonly used to build single page based application that runs on the client-side. Nevertheless, Vue can be used to build a full-stack web application with other backend technologies such as Node.js and Flask coming into play. This allows developers to make HTTP requests to a server and populate them in a Vue-based interface.
 
 Vue is great due to its well-outlined features. This includes the ability to use virtual DOM, easy integration with other technologies such as Node.js and Python, and high run time performance.
 
@@ -16,7 +16,7 @@ To follow along in this article, it is important to have the following:
 - [Python](https://www.python.org/) installed on your computer.
 - Basic working knowledge with Flask.
 - [Node.js](https://nodejs.org/en/) installed on your computer.
-- Basic working knowledge with Vue js.
+- Some working knowledge with Vue.js.
 - [Docker](/engineering-education/docker-concepts/) installed on your computer.
 
 ### Overview
@@ -329,7 +329,7 @@ For the questions that follow, feel free to go with the defaults or your own sel
 npm install axios vue-router
 ```
 
-#### Setting up the Vie frontend application
+#### Setting up the Vue frontend application
 After installing the packages we need to configure them in the *src/main.js* as follows:
 
 ```js
@@ -452,11 +452,11 @@ From above, we are adding custom styles to the app component.
 </template>
 ```
 
-From above, we are checking if we have todos; if we don't, we output a message else we loop through them, outputting each of them.
+From above, we are checking if we have todos; if we don't, we output a message. Otherwise, we loop through them, outputting each of them.
 
 - Add the following JavaScript:
 
-```js
+```html
 <script>
 export default {
 
@@ -645,8 +645,6 @@ From the above script, we are exporting data from the component and a method tha
 
 - Create an *AddTodo.vue* file and add in the following.
 
-- The HTML
-
 ```html
 <template>
 <div class="container">
@@ -683,7 +681,7 @@ Similar to the *add todo* form, we are outputting an *edit todo* form that is pr
 
 - the JavaScript
 
-```js
+```javascript
 export default {
 
  data(){
@@ -767,8 +765,7 @@ From above we are, exporting the todo data, getting the todo when the page is lo
 
 - After setting up the components, we need to handle the routing into various pages. To do this, we will add the following in the *src/main.js* file:
 
-```js
-
+```javascript
 // create a vuerouter instance
 const router = new VueRouter({
 mode: 'history',
@@ -792,7 +789,9 @@ From above, we are creating a *VueRouter* instance passing in the *mode*, *base*
 
 After creating the instance, we pass it to the *Vue object*.
 
-With that, we are ready to start the development server and test the functionalities we have implemented. To do that, run the following command:
+With that, we are ready to start the development server and test the functionalities we have implemented. 
+
+To do that, run the following command:
 
 ```bash
 npm run serve
