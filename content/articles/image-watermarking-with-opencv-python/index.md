@@ -156,7 +156,7 @@ This is the original flower image.
 
 This is the watermarked image.
 
-![Watermarked Flower Image](/engineering-education/image-watermarking-with-opencv-python/watermarked_flowerB.jpg).
+![Watermarked Flower Image](/engineering-education/image-watermarking-with-opencv-python/watermarked-flowerB.jpg).
 
 ### Saving the watermarked images
 After the process of watermarking, we get the file names of the images and save the watermarked images on a different folder, `watermarked_images` folder, as shown:
