@@ -76,7 +76,7 @@ npx @11ty/eleventy
 
 This should result in a build of your website and output the result to the `_site` folder. Congratulations, you've just finished the first Eleventy build of your website.
 
-**Tip:** If you're using the version control software [Git](/beginner-guide-to-git/) to manage your code, then it would be a good idea to add the `_site` folder to your .gitignore file. This will stop you from committing your `_site` folder to Git, which prevents the constant uncommitted changes warning.
+**Tip:** If you're using the version control software [Git](/engineering-education/beginner-guide-to-git/) to manage your code, then it would be a good idea to add the `_site` folder to your .gitignore file. This will stop you from committing your `_site` folder to Git, which prevents the constant uncommitted changes warning.
 
 ### Creating Your First EJS Partial
 

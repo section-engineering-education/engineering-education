@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/securing-django-api/hero.jpg
     alt: Django API web based tokens example image
 ---
-In this tutorial, we will secure our TODO API endpoints that we previously created in this [article](/django-crud-api/). We will start by implementing Token-based authentication and then implement Javascript web tokens (JWT).
+In this tutorial, we will secure our TODO API endpoints that we previously created in this [article](/engineering-education/django-crud-api/). We will start by implementing Token-based authentication and then implement Javascript web tokens (JWT).
 <!--more-->
 
 ### Token-based authentication

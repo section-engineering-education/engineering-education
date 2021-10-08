@@ -28,7 +28,7 @@ In this tutorial, we will go through how to implement different types of plots a
 Before we dive right in, the reader would need to have the following:
 
 - A good understanding of the **Python** programming language.
-- A basic understanding of the **pandas** library and **data analysis**, you can start with our tutorial [here](/data-analytics-using-pandas/).
+- A basic understanding of the **pandas** library and **data analysis**, you can start with our tutorial [here](/engineering-education/data-analytics-using-pandas/).
 - Have **Jupyter notebook** installed, which you can download from [here](https://jupyter.org/install).
 
 ### Importing the Dataset
@@ -37,7 +37,7 @@ After unzipping the file you have to create the python file in the same folder o
 
 After importing and performing data analysis on the dataset, we will visualize that data. For more information on the data analysis, you can start [here](https://www.section.io/engineering-education/data-analytics-using-pandas/).
 
-If you don't want to go through our [first tutorial](/data-analytics-using-pandas/#prerequisites) and you feel you have a firm grasp on **data analysis** you can move forward with this tutorial.
+If you don't want to go through our [first tutorial](/engineering-education/data-analytics-using-pandas/#prerequisites) and you feel you have a firm grasp on **data analysis** you can move forward with this tutorial.
 
 ```python
 import pandas as pd

@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/introduction-to-koajs/hero.jpg
     alt: koa koa.js javascript Node.js framework
 ---
-In my previous article, we went over an introduction to [hapi.js framework](/introduction-to-hapi/), and I briefly mentioned [Koa.js](https://www.koajs.com), another major Node.js framework. This article will us give an introduction to the Koa.js framework, its features, and a tutorial on how to create a simple server using this framework.
+In my previous article, we went over an introduction to [hapi.js framework](/engineering-education/introduction-to-hapi/), and I briefly mentioned [Koa.js](https://www.koajs.com), another major Node.js framework. This article will us give an introduction to the Koa.js framework, its features, and a tutorial on how to create a simple server using this framework.
 <!--more-->
 
 ### What is Koa.js?
