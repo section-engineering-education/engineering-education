@@ -1,39 +1,32 @@
----
 title: Creating a Simple Chat App in React.js using the chat engine API
----
 
-This article will teach the React.js way of creating a chat application using the chat engine API. It aims at making it less cumbersome compared to when one opts the Node.js and socket.io way instead.
-
+This article will teach the React.js way of creating a chat application using the chat engine API. 
 The learner will understand how the chat engine API works and how to use it to create a precise yet functional direct-messaging application.
 
+### Prerequisites
+1. Primary React.js library mastery.  [The official documentation](https://reactjs.org/tutorial/tutorial.html) 
+2. [Node.js](https://nodejs.org/en/download/) installed. 
+3. [Node Package Manager (NPM)](https://docs.npmjs.com/cli/v6/commands/npm) know-how.
 
+### What chat engine API is?
+The chat engine is an API consumed to build chat services. 
 Approximating to other APIs that deliver user responses to the system, and sends back the system's responses to the user, this API works the same way, with better functionalities.
-
-This tool saves you a lot of implementation time otherwise needed on many lines of code.
+It allows the hosting of these chats through the Rest API it lays out. The chat User Interface(UI), is created from the NPM components this tool comes with. See how the hustle is waved away for us already? 
+Furthermore, thanks to its server(s), the chat can as well be hosted from here(the server).
+This tool also saves you a lot of implementation time otherwise needed on many lines of code.
 Chat engine API can implement; 
  - A group chat application.
  - Direct messages chat application that would work like Facebook messenger .
 
-### Prerequisites
-You will need to be equipped with what follows next before jumping right to it.
-1. Primary React.js library mastery. Head to [the official documentation](https://reactjs.org/tutorial/tutorial.html) if there's a need to familiarize yourself with React.js.
-2. Installed on your system Node.js, which you could access from [here](https://nodejs.org/en/download/). 
-3. [Node Package Manager (NPM)](https://docs.npmjs.com/cli/v6/commands/npm) know-how.
-
-### What chat engine API is?
-The chat engine is an API consumed to build chat services. It allows the hosting of these chats through the Rest API it lays out. The chat User Interface(UI), is created from the NPM components this tool comes with. See how the hustle is waved away for us already? 
-Furthermore, thanks to its server(s), the chat can as well be hosted from here(the server).
-
-
 ### Creating the Application
 This minute, let's begin creating the application.
-- On the terminal, cd to a new directory named to your preference and run the following commands. If you prefer using the Vite tool to create the React app, its step-by-step guide is taught in [this](https://www.section.io/engineering-education/creating-a-react-app-using-vite/) article. 
-  Else, run the command below with the project name replaced with an application name of your choice. You may opt to use ***yarn create-react-app app-name***. 
- 
+- On the terminal, cd to your project directory and run the following commands. 
+
 ```bash
 npx create-react-app project-name
 ```
 
+If you prefer using the Vite tool to create the React app, its step-by-step guide is taught in [this](https://www.section.io/engineering-education/creating-a-react-app-using-vite/) article. 
 - In the created app folder, install the chat engine as a component using the command;
 
 ```bash
@@ -42,15 +35,12 @@ npm i react-chat-engine
 
 #### Setting up a chat engine Project 
 - You are required to have the API keys which we will get after registering(signing up or logging in) at [chatengine.io](https://chatengine.io/) for an account.
-
 - You will be redirected to a page like below;
   ![Project Setup](/engineering-education/creating-a-simple-chat-app-in-react-the-using-chat-engine-api/NewProject.png) 
-
 - Click the "New Project" button you see on the page and give your project a title.
   By now, your browser shows such a page.
   ![Project Keys](/engineering-education/creating-a-simple-chat-app-in-react-the-using-chat-engine-api/Keys.png) 
   Save the project ID and the secret keys somewhere safe. We will use them along the way.
-
 - Still, on this page, click the "new user" section at the top right corner and give a name to your new  user in a modal that pops up.
   ![New User](/engineering-education/creating-a-simple-chat-app-in-react-the-using-chat-engine-api/user.png)
 
@@ -63,11 +53,9 @@ Remember to add the **.env** file to the **.gitignore** file to avoid pushing su
 ```bash
 CHAT_APP_PROJECT_ID = put your ID here
 CHAT_APP_USER_SECRET = your secret key goes here
-
 ```
 
 > NOTE : **MAKE CERTAIN** you include the **SECRET** you used when creating a user, for the user secret parameter, and **NOT** the **private key** provided with the project ID.
-
 
 #### Adding the ChatEngine component
 In the created React app, delete every unnecessary file like ***logo.SVG, reportWebVital.js, setupTest.js, and App.test.js***. 
@@ -78,7 +66,6 @@ Setting up the chat engine in our application will be done like such.
 import React from 'react'
 import {ChatEngine} from 'react-chat-engine';
 
-
 //Using arrow function component
 const App = () => {
   return (
@@ -86,11 +73,9 @@ const App = () => {
       userName=''//Put your userName instead
       projectID = ''// Your project id goes here
       userSecret=''// Replace with your secret key
-
     />
   )
 }
-
 export default App
 ```
 
@@ -102,11 +87,9 @@ My username will be 'Muganga'.
 
 This component sets up the chat engine or in layman's terms backbone for any chat application. We may want to create either; the Group chat application or the Direct messages one. 
 
-
 ### Implementing the Direct Messages app
 In a typical direct messaging application, a sender of messages needs to select the receiver using their contact or their username. Not any different from the chat engine implementation.
 The **"getOrCreateChat"** function from the API that carries an object or "dictionary" if you are coming from a python background, is used. This object takes "usernames"(from created users) from which an existing chat may be searched for, or a new one is created.
-
 By now, you have the User Interface of the application created in your mind I guess. This UI will constitute a field for the username, a section of usernames to ***"Get"*** or ***"Create"*** a chat with, and of course, a button to hit send when a message in the text field is typed.
 Create a component file named DirectMessaging.js where we will write the required few lines of code to bring to life our application.
 
@@ -115,18 +98,15 @@ Create a component file named DirectMessaging.js where we will write the require
 We will use:-
 - The imported ChatEngine component as implemented previously, with extra properties like width and height.
 - The [**"useState"**](https://reactjs.org/docs/hooks-state.html) hook.
-
 DirectMessaging.js file code;
 
 ```JSX
-
 import React, {useState} from 'react';
 import {ChatEngine, getOrCreateChat} from 'react-chat-engine'
 
 const DirectMessaging = () => {
     // The useState hook initially sets the username to an empty string
     const[username, setUsername] = useState('')
-
     //Custom function that will implement the getOrCreateChat function that to select username to chat with
     //only when the correct credentials(user  secret, project id, username) are passed will the application be rendered
     function implementingDirectChat(credentials){
@@ -168,11 +148,9 @@ const DirectMessaging = () => {
             displayNewChatInterface={(credentials) => displayChatInterface(credentials)}
             />
     )
-    
 }
 
 export default DirectMessaging
-
 ```
 
 > NOTE : Import the DirectMessaging.js component in the App.js component for rendering on the browser.
@@ -208,7 +186,6 @@ Let's make our app real-time!
 ![App](/engineering-education/creating-a-simple-chat-app-in-react-the-using-chat-engine-api/realapp.png)
 
 -Search for an app title you named from when the chat engine project was set up, by clicking the labeled ***"Add Chat"*** blue button at the top-left corner.  
-
 - The ***"people"*** dropdown at the top-right corner is where you search for existing users in your project. Select a username to initiate a chat with from the list that shows. 
 ![Selecting user](/engineering-education/creating-a-simple-chat-app-in-react-the-using-chat-engine-api/select.png)
 
