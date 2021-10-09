@@ -87,7 +87,7 @@ Waste management companies have traditionally maintained mounted cameras on garb
 ### Conclusion
 Edge intelligence is transforming the internet of things industry in a big way. It has made real-time data analysis easier, helped increase operational efficiency, and reduced data handling and storage-related costs. 
 
-The ability of IoT devices to process advanced data locally in real-time has helped uncover new use cases. These include edge AI cameras for driver behavior analysis, garbage management, and fleet management.
+The ability of IoT devices to process advanced data in real-time has helped uncover new use cases. These include edge AI cameras for driver behavior analysis, garbage management, and fleet management.
 
 With consumers embracing IoT devices with improved latency and privacy, more players will likely join the Edge AI industry. Already the Edge AI chips and Edge AI camera industries have attracted both long-established tech companies and startups.
 
