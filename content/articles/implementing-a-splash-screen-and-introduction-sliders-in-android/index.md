@@ -26,10 +26,10 @@ Splash screens are essential since it allows for the adequate time needed for da
 ### Useful terminology
 - Splash screen - This refers to an introduction screen in an application once it has been launched.
 - Introduction sliders - A 'slideshow' in Android applications that gives instructions or display features offered by an application.
-- View pager - A class in Android applications that permit a user to flip left or right to view data in an application.
+- View pager - A class in Android applications that permit a user to flip left or right to view data in an application. 
 - Pager Adapter - This refers to a base class providing the adapter to populate pages inside of a `ViewPager`.
 
-### Prerequisites
+### Prerequisites 
 - Make sure you have [Android](https://developer.android.com/studio) Studio installed.
 - The reader should have a basic level understanding of Java and XML.
 - The reader should have a basic understanding of building Android applications.
@@ -51,9 +51,9 @@ Open Android Studio and select an Empty Activity. We shall name our project **Sp
 ![Creating an Android Studio project](/engineering-education/implementing-a-splash-screen-and-introduction-sliders-in-android/new.jpg)
 
 ### Step 2 – Designing the Splash screen
-For this project, we will use an image as our splash screen. Alternatively, one can decide to import a [vector](https://blog.mindorks.com/using-svg-vector-drawables-in-android) asset or use [clipart](https://developer.android.com/studio/write/image-asset-studio).
+For this project, we will use an image as our splash screen. Alternatively, one can decide to import a [vector](https://blog.mindorks.com/using-svg-vector-drawables-in-android) asset or use [clipart](https://developer.android.com/studio/write/image-asset-studio). 
 
-First, create a layout resource file. Right-click the drawable folder under the res directory, click New - > Drawable Resource File.
+First, create a layout resource file. Right-click the drawable folder under the res directory, click New - > Drawable Resource File. 
 
 We shall name our file **splash_image.xml.**
 
@@ -159,7 +159,7 @@ Add the following code in the activity_main.xml file.
 ```
 Next, we will create layout resource files for our sliders. Right-click the layout folder under the res directory. Select new - > Layout Resource File, name the file **slider_1.xml** and select ok.
 
-For the UI layout of the slider, import a drawable, and set it as a background.
+For the UI layout of the slider, import a drawable, and set it as a background. 
 
 Repeat the same process till we get three sliders in total.
 
@@ -378,7 +378,7 @@ That is it! Let us run our app.
 ![Introduction sliders](/engineering-education/implementing-a-splash-screen-and-introduction-sliders-in-android/intro.gif)
 
 ### To wrap up
-We have learned about splash screens, we had an introduction to sliders, and how we implement them in an Android application. We have learned the uses and the importance of both. Read more and practice how to implement a splash screen and introduction sliders in mobile applications.
+We have learned about splash screens, we had an introduction to sliders, and how we implement them in an Android application. We have learned the uses and the importance of both. Read more and practice how to implement a splash screen and introduction sliders in mobile applications. 
 
 Remember, practice makes perfect.
 
