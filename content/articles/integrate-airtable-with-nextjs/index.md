@@ -297,7 +297,7 @@ The above function gets all the records from the Airtable and passes them to `in
 ### React Context API to Integrate Airtable Data
 > Context provides a way to pass data through the component tree passing props down manually at every level - [React documentation](https://reactjs.org/docs/context.html).
 
-In large-scale projects, we have to use the data in many components. So it is a better idea to use React context instead of passing props. Create a new context folder and add a new `items.js` file. Here, we will perform all the operations on Airtable data and pass the data to the front-end.
+In large-scale projects, we have to use the data in many components. So it is a better idea to use React context instead of passing props. Create a new `context` folder and add a new `items.js` file. Here, we will perform all the operations on Airtable data and pass the data to the front-end.
 
 ```js
 import { createContext, useState } from 'react'
