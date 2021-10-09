@@ -4,9 +4,9 @@ This article will teach the React.js way of creating a chat application using th
 The learner will understand how the chat engine API works and how to use it to create a precise yet functional direct-messaging application.
 
 ### Prerequisites
-1. Primary React.js library mastery.  [The official documentation](https://reactjs.org/tutorial/tutorial.html) 
-2. [Node.js](https://nodejs.org/en/download/) installed. 
-3. [Node Package Manager (NPM)](https://docs.npmjs.com/cli/v6/commands/npm) know-how.
+- Primary React.js library mastery.  [The official documentation](https://reactjs.org/tutorial/tutorial.html) 
+- [Node.js](https://nodejs.org/en/download/) installed. 
+- [Node Package Manager (NPM)](https://docs.npmjs.com/cli/v6/commands/npm) know-how.
 
 ### What chat engine API is?
 The chat engine is an API consumed to build chat services. 
