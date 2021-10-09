@@ -42,7 +42,7 @@ While translating different elements i.e from left, right, up, and down, we can 
 - `duration` in milliseconds - this is the time taken for an animation to happen.
 
 ### Transition Animation Graph
-[!Graph](engineering-education/custom-animation-and-transition-effects-between-fragment-with-android-jetpacks-navigation-component/axis.png)
+![Graph](/engineering-education/custom-animation-and-transition-effects-between-fragment-with-android-jetpacks-navigation-component/axis.png)
 
  From the above graph:
 #### Horizontal line is the X-axis
@@ -107,7 +107,7 @@ This Fragment will come from the right side, we'll create an anim called `from_r
 #### Adding Animations to Fragments
 To add the transition animations, in your `NavGraph`, click on an `Action` which you want to animate its transition, on your right side, you will see a pane that has a section for adding animations:
 
-[!Animation-Pane](engineering-education/custom-animation-and-transition-effects-between-fragment-with-android-jetpacks-navigation-component/animations.png)
+![Animation-Pane](/engineering-education/custom-animation-and-transition-effects-between-fragment-with-android-jetpacks-navigation-component/animations.png)
 
 For the home Fragment because that is our start Fragment we'll need to specify the `popEnterAnim` and `popExitAnim` to animate the `ActionBar`/`Toolbar` accordingly.
 
@@ -222,7 +222,7 @@ sharedElementEnterTransition = animation
 sharedElementReturnTransition = animation
 ```
 ### Demo
-[!Demo](section-engineering/custom-animation-and-transition-effects-between-fragment-with-android-jetpacks-navigation-component/demo.gif)
+![Demo](/engineering-education/custom-animation-and-transition-effects-between-fragment-with-android-jetpacks-navigation-component/demo.gif)
 
 ### Conclusion
 In this tutorial we learned what transition animations are, how to add animations to move back and forth through Destinations, we have also looked at how to animate a DialogFragment's transition and finally, we learned how to create a Shared Transition Element. Go ahead and enhance your awesome Android projects with these transitions to increase your app's interactivity. You can visit this repository for reference [FragmentsTransitionsDemo](https://github.com/FragmentsTransitionDemo).
