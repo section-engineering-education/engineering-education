@@ -162,9 +162,11 @@ Delete the `VBOX` and the element in it. Then drag and drop an AnchorPane where 
 The AnchorPane will have the following:
 
 **Style**
+
 `fx-text-fill`:  #8ecae6
 
 **Layout**
+
 `Pref Width`: 400
 `Pref Height`: 600
 
@@ -175,13 +177,16 @@ Drag and drop a label from the controls tab into the AnchorPane in the centre of
 The label will have the following:
 
 **Properties**
+
 `Text`: LOGIN
 `Font`: System 25px Bold
 
 **Style**
+
 `-fx-text-fill`:  #219ebc
 
 **Layout**
+
 `Pref Width`: 100
 `Pref Height`: 20
 `Layout X`: 150
@@ -220,10 +225,12 @@ Then, drag and drop an ImageView into the AnchorPane. This control will hold or 
 Add the following properties to the ImageView:
 
 **Properties**
+
 `Image`: panda.png
 `Font`: System 25px Bold
 
 **Layout**
+
 `Fit Width`: 300
 `Fit Height`: 300
 `Layout X`: 90
@@ -245,6 +252,7 @@ The `Scene Builder` generates the code shown below:
 Now, add a Rectangle from the Shapes category. It should have the following properties:
 
 **Properties**
+
 `Arc Width`: 5
 `Fill`: #b9eaf8
 `Stroke`: #a3a3a3
@@ -253,6 +261,7 @@ Now, add a Rectangle from the Shapes category. It should have the following prop
 `Fill`: BEVEL
 
 **Layout**
+
 `Width`: 370
 `Height`: 320
 `Layout X`: 15
@@ -278,10 +287,12 @@ Add a `Label` using the following properties:
 Add a `TextField` for the username and email. It has the following configurations:
 
 **Properties**
+
 `Prompt Text`: Username / Email
 `Font`: System 15px
 
 **Layout**
+
 `Pref Width`: 245
 `Pref Height`: 35
 `Layout X`: 80
@@ -304,9 +315,11 @@ We need to add an icon for the username TextField. It can be downloaded [here](h
 Add an ImageView that will hold the image. It will have the following:
 
 **Properties**
+
 `Image`: users.png
 
 **Layout**
+
 `Fit Width`: 35
 `Fit Height`: 35
 `Layout X`: 80
@@ -324,10 +337,12 @@ Add an ImageView that will hold the image. It will have the following:
 Add a PasswordField to capture the user password. It has the following properties:
 
 **Properties**
+
 `Prompt Text`: Password
 `Font`: System 15px
 
 **Layout**
+
 `Pref Width`: 245
 `Pref Height`: 35
 `Layout X`: 80
@@ -347,6 +362,7 @@ We need to add an icon for the above PasswordField. It can be downloaded from [h
 After downloading it, add an ImageView to hold it, as shown below:
 
 **Properties**
+
 `Image`: lock.png
 `Fit Width`: 35
 `Fit Height`: 35
@@ -367,10 +383,12 @@ The SceneBuilder generated code is as follows:
 Another Label is required to display the error or success messages. The label will not have any content on it.
 
 **Properties**
+
 `Font`: System 12px
 `Text Fill`: RED
 
 **Layout**
+
 `Pref Width`: 245
 `Layout X`: 80
 `Layout Y`: 445
@@ -388,16 +406,19 @@ We should first create a `cancel button` which will close the scene or window wh
 Go ahead and add a button from the `controls` section. The button will have the following properties:
 
 **Properties**
+
 `Text`: Cancel
 `Font`: System 14px
 `Text Fill`: #a3a3a3
 
 **Style**
+
 `fx-background-color`:  transparent
 `fx-border-width`:  2
 `fx-border-color`:  #a5a5a5
 
 **Layout**
+
 `Pref Width`: 90
 `Pref Height`: 30
 `Layout X`: 85
@@ -410,6 +431,7 @@ The `onAction` property bings the button to a function.
 Next, create a `login button` using the following attributes:
 
 **Properties**
+
 `Text`: Login
 `Font`: System 15px
 `Text Fill`: #a3a3a3
@@ -435,6 +457,7 @@ It's code is as shown below:
 Add a `reset password button`, as demonstrated below:
 
 **Properties**
+
 `Text`: Login
 `Font`: System 12px
 `Text Fill`: #a3a3a3
