@@ -106,6 +106,7 @@ This Fragment will come from the right side, we'll create an anim called `from_r
 
 #### Adding Animations to Fragments
 To add the transition animations, in your `NavGraph`, click on an `Action` which you want to animate its transition, on your right side, you will see a pane that has a section for adding animations:
+
 [!Animation-Pane](engineering-education/custom-animation-and-transition-effects-between-fragment-with-android-jetpacks-navigation-component/animations.png)
 
 For the home Fragment because that is our start Fragment we'll need to specify the `popEnterAnim` and `popExitAnim` to animate the `ActionBar`/`Toolbar` accordingly.
