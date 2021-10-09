@@ -91,7 +91,6 @@ Run the command below to create a Django app:
 python manage.py startapp gallery
 ```
 
-
 Let’s call the application “gallery” because it will display images to the user. The current structure should look like the tree below:  
 
 ```bash
@@ -169,7 +168,6 @@ urlpatterns = [
 
 ]  
 ```
-
 
 We’ll follow Django model-template-view (MTV) architecture when building our application. The framework is not that different from the conventional model-view-controller (MVC) framework, where the model handles the data and logic involving database operations. The view displays data to the user, and the controller takes care of input requests like GET and POST then passes them on to the user.
 
@@ -302,7 +300,6 @@ In our `gallery` directory inside the templates, we create a file, `posts.html`:
 
 </html>  
 ```
-
 
 We next import bootstrap links to help with web styling and title our page. In the posts page, which we’ll call Gallery Posts, we create a div container-fluid to pad the content inside the page and loop the posts, which are the images in the template. We then add bootstrap styling to make the images responsive.
 
