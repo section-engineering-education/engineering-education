@@ -284,6 +284,59 @@ public class LoginAction extends HttpServlet
 }
 
 ```
+#### How to create and run the above project. 
+
+**Step 1:** Download and install the Eclipse IDE for Java EE developers.
+
+1. First, check to see if you have Java installed on your computer using the following command.
+```
+$ java --version
+```
+If you don't have Java installed, you'll probably get the following message:
+```
+Command 'java' not found, but can be installed with:
+$ sudo apt install openjdk-11-jre-headless  # version 11.0.11+9-0ubuntu2, or
+$ sudo apt install default-jre              # version 2:1.11-72
+$ sudo apt install openjdk-15-jre-headless  # version 15.0.3+3-1
+$ sudo apt install openjdk-16-jre-headless  # version 16.0.1+9-1
+$ sudo apt install openjdk-17-jre-headless  # version 17~19-1ubuntu1
+$ sudo apt install openjdk-8-jre-headless   # version 8u292-b10-0ubuntu1
+```
+2. Using the command below, install OpenJDK 11.
+
+```
+$ sudo apt update
+$ sudo apt install openjdk-11-jre-headless
+```
+3. Visit https://www.eclipse.org/downloads/ to get the Eclipse Installer from the official website.
+4. Extract the.tar.gz archive, go to the extracted folder, go to the "eclipse-installer" folder, right-click on "eclipse-inst," and select "run.".
+6. When the installation is complete, open eclipse and select launch from the menu as indicated.
+![download eclipse](/engineering-education//.png)
+
+**Step 1:** To get Tomcat, follow the steps below.
+1. Make a System User account.
+
+It's not a good idea to run Tomcat as the root user. The Tomcat service will be run by a new system user and group with the home directory /opt/tomcat. Enter the following command to do so:
+
+```
+$ sudo useradd -m -U -d /opt/tomcat -s /bin/false tomcat
+```
+2. to install Tomcat Server
+
+- To begin, open a terminal and run the following command to obtain the most recent package information:
+
+```
+$ sudo apt update
+
+```
+- [Tomcat can be downloaded from their official website.](https://tomcat.apache.org/index.html)
+
+Extract the tar file to the /opt/tomcat directory once the download is complete:
+```
+$ sudo tar -xf /tmp/apache-tomcat-${VERSION}.tar.gz -C /opt/tomcat/
+```
+
+[Here](https://github.com/Chaun864/Login-Logout-web-Project-Using-session-servlet-and-jsp-.git) is where you can get the source code for the project.
 ### Conclusion
 
 We've seen how `HttpSession` works in our applications and how useful it is. In this article. We've looked at some of the most essential methods in `HttpSession`, as well as their capabilities. Using the example above will help you understand how `HttpSession` works.
