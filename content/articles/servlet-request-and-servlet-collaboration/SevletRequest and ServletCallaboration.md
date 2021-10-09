@@ -72,7 +72,7 @@ We will create a user login project with a servlet in this example. In this cont
 
 **Steps to create this project.**
 
-**Step 1:** [Download the Eclipse IDE for Java EE developers]((https://www.eclipse.org/downloads/download.php?file=/oomph/epp/2021-09/R/eclipse-inst-jre-win64.exe)) and install, as shown.
+**Step 1:** [Download the Eclipse IDE for Java EE developers](https://www.eclipse.org/downloads/download.php?file=/oomph/epp/2021-09/R/eclipse-inst-jre-win64.exe) and install, as shown.
 
 ![download eclipse](/engineering-education/servlet-request-and-servlet-collaboration/downloadeclipse.png)
 
