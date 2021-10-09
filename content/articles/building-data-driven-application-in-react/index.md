@@ -113,6 +113,14 @@ This results in four Header  components to mount like [so](https://codepen.io/1-
 - Quora - data in general is input.Quora but in a different way. While it still has statistics, the real value of the application isn’t so much in what is written but rather in what is read and output is not entirely driven by data because you can still google and reach an answer that wouldn’t show up in your digest (for example).
 - Login form -Here the data (username, password) is transferred from database of that particular website (vice-versa).
 
+#### Reference
+
+https://stackoverflow.com/questions/828207/what-is-your-attitude-towards-hard-coding
+
+https://github.com/fullstackreact/30-days-of-react/blob/master/day-05/post.md
+
+https://www.newline.co/fullstack-react/assets/media/sGEMe/MNzue/30-days-of-react-ebook-fullstackio.pdf
+
  #### Conclusion
  "Data-driven programming can probably have different meanings, but here is the one I use it for: it is a style of programming in which specialization is done through data structures and not boilerplate code."~Pierre Chapuis . I hope you have learned something from this article. Make sure to practice from the projects.
 
