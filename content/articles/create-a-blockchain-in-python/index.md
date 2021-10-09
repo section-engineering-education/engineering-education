@@ -192,7 +192,9 @@ def hash(self, block):
 ```
 
 ### Checking The Validity of The Blockchain
-In this step, we create a function that checks if the entire blockchain is valid. This step is crucial in maintaining the integrity of our blockchain to ensure that none of our block is corrupt because if the data in a block changes, the hash changes and the link between each block in the chain is broken. This process is well explained in my previous [article](https://www.section.io/engineering-education/an-introduction-to-blockchain-architecture/#mining-and-proof-of-work).
+In this step, we create a function that checks if the entire blockchain is valid.
+
+This step is crucial in maintaining the integrity of our blockchain to ensure that none of our blocks is corrupt because if the data in a block changes, the hash changes, and the link between each block in the chain is broken. This process is well explained in my previous [article](https://www.section.io/engineering-education/an-introduction-to-blockchain-architecture/#mining-and-proof-of-work).
 
 Without further ado, let’s get to it. We start by creating a `is_chain_valid` method that takes two parameters which are:
 - self
