@@ -23,7 +23,8 @@ Over the past few years, browsers have evolved and became more powerful. They ca
 ### What we're going to build?
 
 The final application will look like this:
-![final-grocery-list](/final.png)
+
+![final-grocery-list](./final.png)
 
 You can find the final demo on replit [Final demo](https://replit.com/@giridhar7632/grocery-list) | [source code](https://grocery-list.giridhar7632.repl.co/)
 
@@ -595,7 +596,7 @@ export default function Home({ initialItems }) {
 // ...
 ```
 
-Find the source code [here](https://replit.com/@giridhar7632/item-app).
+Find the source code [here](https://replit.com/@giridhar7632/grocery-list).
 
 ### Deployment
 
