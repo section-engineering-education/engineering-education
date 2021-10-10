@@ -13,14 +13,15 @@ To understand this guide, it's assumed that the reader has an understanding of b
 ### Goal
 In this guide, we will write a python script that will move files to a particular folder based on the [filename extension](). At the end of this guide, we will have a function to move files to different folders by taking a source directory and a destination directory as parameters. 
 
-### functions in python
+### Functions in python
 Don't Repeat Your self(DRY) is a fundamental principle in programming. The DRY principle helps in reducing the repetition of software patterns by referring back to a single source or "snippet" which is mainly achieved by using the concept of functions. 
 
-A Function is a group or a block of code that performs a particular task arranged so that it is reusable. Methods are also referred to as functions in python, but they are different. Let's look at the difference.
+A function is a group or a block of code that performs a particular task arranged so that it is reusable. Methods are also referred to as functions in python, but they are different. Let's look at the difference.
 **Methods**: a method is a function in a class that can only be accessed with an object or instance of a class.
 **Function**: is a function in itself that does not require an instance or object to access it because it does not belong to a class.
 
 **Declaring a function**: a function can be defined with or without parameters(*parameters are values or properties in which a function acts upon*). The code snippet below shows how to write a function.
+
 ```python
 # without parameters
 def nameoffunction():
@@ -44,9 +45,11 @@ nameoffunction()
 nameoffunction(argument)
 ```
 
-### os Module
-The OS module is one of python's standard utility modules used to interact with the operating system. The os module is made up of so many methods(functions) which can perform specific tasks, including;
-- *Getting the working directory a user is* using the method as shown below
+### OS module
+The OS module is one of python's standard utility modules used to interact with the operating system. The os module is made up of so many methods (functions) which can perform specific tasks, including:
+
+- *Getting the working directory a user is* using the method as shown below:
+
 ```
 os.getcwd()
 ``` 
@@ -74,22 +77,22 @@ os.removedirs()
 ```
 and lots more [read more](https://docs.python.org/3/library/os.html)
 
-### os.path Module
+### os.path module
 *os.path* is a module in python used to process and manipulate file path (filename and directories) in a system. the *os.path * module can be used to;
 - return the name of a path using` os.path.dirname(file path)` 
 - check the existence of any path in a system using `os.path.exists(file path)`
 - get the file size of a path in bytes using `os.path.getsize(file path)`
 - join path component using `os.path.join(path, *paths)` as we will see when moving multiple files from one directory to another.
 
-### Shutil Module
+### Shutil module
 The `shutil` module is also one of python's standard utility modules used to interact with files and their collections. The shutil module can be used for varieties of functionalities which include;
 - copying files from one directory to another using `shutil.copyfile(source dir, destination dir,)`
 - deleting entire directories using `shutil.rmtree(file path)`
 - moving directories from one path to another using `shutil.move(source dir, destination dir, )` and lots of other functionalities [read more](https://docs.python.org/3/library/shutil.html)
 
-
 ### Moving a file from one folder to another
 To move folders with python, create a new project file and name it app.py, then import the two modules mentioned above as shown below.
+
 ```python
 import os, shutil
 ```
@@ -114,7 +117,7 @@ From the code snippet `shutil.move(os.path.join(source_dir, f)`, `os.path.join` 
 ```
 python app.py
 ```
-### Moving multiple files Using a Function
+### Moving multiple files using a function
 Start with creating a new file or clearing the previous `app.py` file. And paste in the code snippet below:
 
 ```python
