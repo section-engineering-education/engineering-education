@@ -71,7 +71,7 @@ We use Header component by placing it in App component as shown above .
 
 ### Going data-driven
 
-Lets add some data in our Component . When we look at our [Header](https://codepen.io/1-creator/pen/qBXWVXd) as it is right now , the Header component only as profile as our title.
+Lets add some data in our Component . When we look at our [Header](https://codepen.io/1-creator/pen/qBXWVXd) as it is right now , the Header component only has profile as our title.
 
 This means we can not set the title to anything else .It would be nice for us to reuse it in other parts of our page, the title of Profile is not suitable for every use . Hence  lets tell react we want to be able to set the title to something like settings, chat e.t.c.
 
@@ -96,7 +96,7 @@ Don't forget to call react.Dom to place your app on the page
        ReactDOM.render(
         <App />, document.querySelector("#app"));
 
-This results in four Header  components to mount like [so](https://codepen.io/1-creator/full/XWarzzL):
+This results in three Header  components to mount like [so](https://codepen.io/1-creator/full/XWarzzL):
 
  Now we can reuse the Header component with a dynamic title property.
 
