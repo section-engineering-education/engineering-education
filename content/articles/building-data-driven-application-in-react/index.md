@@ -4,8 +4,8 @@ It is not very convenient to have to upgrade components every time we have a cha
 
 #### Prerequisites
 - A suitable IDE such as VS Code,IntelliJ,NetBeans e.t.c
-- A basic knowledge of React
-- A basic understanding of Relay framework
+- Basic knowledge of React
+- Basic understanding of Relay framework
 
 #### key takeaways
 - Get to know what is data driven applications
