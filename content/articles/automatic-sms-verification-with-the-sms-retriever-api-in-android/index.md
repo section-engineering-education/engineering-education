@@ -27,6 +27,7 @@ By the end of this tutorial, the reader will have :
 For mobile number verification, you need to implement the client side first. Afterwards, the server side, to complete the verification procedure. Usually, you send the user's phone number to the server performing verification. The server then sends an OTP code to the phone number. The SMS Retriever API starts listening for an SMS containing OTP code. Upon receiving this code, send it back to your server to complete the process of verification.
 
 ### Why use Automatic SMS Retriever API
+
 - Google abolished all apps using `CALL_LOG` and `READ_SMS` permissions. This is because they violated of users privacy. This led to removal of apps  using these permissions from play store in January 19th, 2021.
 - Users experience is smooth and almost effortless when using the app with this feature
 
@@ -36,8 +37,9 @@ For mobile number verification, you need to implement the client side first. Aft
 
 
 ### Step2: Put dependencies on build.gradle file
+
 We are going to use the following: 
--Apache Commons - We are going to use this library to help us extract the code from the SMS message.
+- Apache Commons - We are going to use this library to help us extract the code from the SMS message.
 - Google Play Services API - This library holds the SMS retrieval class
 - EventBus - To listen for received SMS from the SMS Retrieval API, we'll use a BroadcastReceiver. EventBus is a publisher/subscriber pattern library. We use it to communicate between our BroadcastReceiver and Activity classes.
 
@@ -90,7 +92,7 @@ Your server generates a verification code and sends to the phone number you ente
 We'll first create an instance of the SmsRetrieverClient object. Then invoke its initSmsRetriever instance function. We'll finally add `onSuccess` and `onFailure` Listeners to the Task. We wrap the code in a function for later use.
 ```
 private fun initSmsListener() {
-    smsRetrieverClient.startSmsRetriever()
+    smsClient.startSmsRetriever()
         .addOnSuccessListener {
             //You can perform your tasks here
         }.addOnFailureListener { failure ->
@@ -152,16 +154,16 @@ class MessageBroadcastReceiver : BroadcastReceiver() {
                     }
 
                 }
-                EventBus.getDefault().post(otpCode?.let { SmsRetrievedEvent(timedOut, it) })
+                EventBus.getDefault().post(RetrievalEvent(timedOut, otpCode.toString()))
             }
         }
     }
 }
 
 ```
-On the `onReceive()` method, first check the status of `SMS Retriev` background processing. We also construct an instance of the `SmsRetrievedEvent` class. This is the event class that `EventBus` will send to our `Subscriber`. Finally, we will construct our `SmsRetrievedEvent` which will be a data class. If you are completely new to [EventBus](https://greenrobot.org/eventbus/), please read on it. 
+On the `onReceive()` method, first check the status of `SMS Retriever` background processing. We also construct an instance of the `RetrievalEvent` class. This is the event class that `EventBus` will send to our `Subscriber`. The, class `RetrievalEvent` will be a data class. If you are completely new to [EventBus](https://greenrobot.org/eventbus/), please read on it. 
 
-### SmsRetrievedEvent
+### RetrievalEvent
 
 ```
 package com.roberts.smsretriverapi
@@ -172,9 +174,9 @@ data class RetrievalEvent (
     )
 
 ```
-We set the property of the `SmsRetrievedEvent` class to the SMS message we've retrieved. We do this if the background processing was successful. If a timeout occurs, we set timeout to true otherwise. Then, send the event to the listening subscriber.
+We set the property of the `RetrievalEvent` class to the SMS message we've retrieved. We do this if the background processing was successful. If a timeout occurs, we set timeout to true otherwise. Then, send the event to the listening subscriber.
 
-**Note:** Timeouts occur if messages are not processed within 5 minutes. This happens when  during SMS Retrieval API's processing.
+**Note:** Timeouts occur if messages are not processed within 5 minutes. This happens during SMS Retrieval API's processing.
 
 ### Step 5: Register the BroadcastReceiver on AndroidManifest file
 In your app's `AndroidManifest.xml` file, register `BroadcastReceiver`. Put the following code in your manifest intent filter.
