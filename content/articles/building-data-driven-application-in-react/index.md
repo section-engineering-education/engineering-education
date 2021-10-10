@@ -1,6 +1,6 @@
 ### Building data driven  application in react
 
-It is not very convenient to have to upgrade components every time we have a change in our application data  .It takes more than data to have a credible data-driven application that is compelling to a wide range of business users.In data-driven application , the application flow is governed by data processed by the application. The data-set  input may change your applications behavior .This means your decisions are influenced by data. Lets learn about data-driven applications in react.
+It is not very convenient to have to upgrade components every time we have a change in our application data  . more than data is needed to have a credible data-driven application that is camptivating to a wide range of business users.In data-driven application , the application flow is governed by data processed by the application. The data-set  input may change your applications behavior .This means your decisions are influenced by data. Lets learn about data-driven applications in react.
 
 #### Prerequisites
 - A suitable IDE such as VS Code , IntelliJ , NetBeans e.t.c
@@ -16,11 +16,11 @@ It is not very convenient to have to upgrade components every time we have a cha
 #### Some of React frameworks used to build Data-driven applications
 - Relay - Relay helps in management of data-fetching , it does not matter the number of components in your application.
 
-- React-admin - React-admin reserves the dataProvider object in a React context, this makes it available from anywhere in your application . The useDataProvider hook displays the Data Provider , this makes it possible for you to call it directly.
+- React-admin - React-admin is a react framework .used to build data-driven applications .React-admin component guesses the format to use based on the data fetched from the API .React-admin needs  Data provider function for it to translate data.
 
 - data-driven forms - Data Driven Forms is open source react library it allows you to store complex forms in the database so you can reuse them in numerous developer environments.
 
-### building data-driven React  components
+### Build data-driven components in react
 
 React allows us to send data to a component in the same syntax as HTML, using attributes or properties on a component.
 
@@ -71,17 +71,17 @@ We use Header component by placing it in App component as shown above .
 
 ### Going data-driven
 
-Lets add some data in our Component . Looking at our [Header](https://codepen.io/1-creator/pen/qBXWVXd) as it stands right now , the Header component only shows the title of the element as profile .
+Lets add some data in our Component . When we look at our [Header](https://codepen.io/1-creator/pen/qBXWVXd) as it is right now , the Header component only as profile as our title.
 
-It's a nice element and it would be nice to be able to reuse it in other parts of our page, Hence the title of Profile doesn't make sense for every use . So lets tell react we want to be able to set the title to something else.
+This means we can not set the title to anything else .It would be nice for us to reuse it in other parts of our page, the title of Profile is not suitable for every use . Hence  lets tell react we want to be able to set the title to something like settings, chat e.t.c.
 
-Now lets change our                                                 
+lets change our                                                 
                 
                 <span className="title">Profile</span> 
 by passing it  as a prop on the
 
        <Header />
- by updating the usage of the component setting the attribute called title to some string, like so: 
+ by updating the usage of the component setting the attribute called title to a string, like so: 
 
       <span className="title">{this.props.title}</span>
 
