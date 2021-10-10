@@ -147,3 +147,6 @@ The complete code for this tutorial is available [here](ttps://colab.research.go
 - [MediaPipe](https://mediapipe.dev/)
 - [Gradio](https://www.gradio.app/)
 - [Complete code](https://colab.research.google.com/drive/1kmtLZGFZWboHVTmYwSh4m-5DgHVyRQ9u)
+
+---
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
