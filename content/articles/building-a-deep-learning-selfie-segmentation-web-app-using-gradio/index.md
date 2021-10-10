@@ -1,3 +1,20 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /building-a-deep-learning-selfie-segmentation-web-app-using-gradio/
+title: Building a Deep Learning Web App using Python
+description: The objective of this tutorial is to help the reader learn how to build a deep learning selfie segmentation web app using gradio.
+author: lilian-cheptoo
+date: 2021-10-10T00:00:00-13:00
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/building-a-deep-learning-selfie-segmentation-web-app-using-gradio/hero.png
+    alt: Deep Learning Web App Example image
+---
+
 In this tutorial, we are going to build a selfie segmentation model using Mediapipe, Gradio and Python. The selfie segmentation model allows us to quickly and easily strip out the background from photos using a pre-built machine learning model.
 
 Finally, We’re going to take it one step further and integrate it to a Gradio app!
