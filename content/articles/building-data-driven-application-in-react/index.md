@@ -14,7 +14,7 @@ It is not very convenient to have to upgrade components every time we have a cha
 
 
 #### Some of React frameworks used to build Data-driven applications
-- Relay - Relay helps in management of data-fetching it does not matter the number of components in your application.
+- Relay - Relay helps in management of data-fetching , it does not matter the number of components in your application.
 
 - React-admin - React-admin reserves the dataProvider object in a React context, this makes it available from anywhere in your application . The useDataProvider hook displays the Data Provider , this makes it possible for you to call it directly.
 
