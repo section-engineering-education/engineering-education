@@ -14,20 +14,20 @@ To go along with the article, you'll need to install the following tools:
 
 - An open-source `Java` IDE, such as Eclipse, NetBeans, etc. In my case, I will be using [Eclipse IDE 2021-09 Linux x86_64](https://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/2021-09/R/eclipse-java-2021-09-R-linux-gtk-x86_64.tar.gz).
 - The Java Development Kit (JDK). In my case, I'll be running Linux with the default version of Java, JDK-11 installed.
-- Server. In my case, I will be using TomCat version 10.1.0-m5.
+- Server. In my case, I will be using TomCat version 9.0.53
 You need to have some basic knowledge of:
 - core Java.
 - An introduction to `servlets`, `JSP`, and basic `HTML` tags is also helpful here. 
 
 ### Table of content.
 
-- [The HttpSession and its Function](#the-httpsession-and-its-functions)
+- [The HttpSession and its Function](#the-httpsession-and-its-function)
 - [HttpSession object](#httpsession-object)
 - [HttpSession interface methods](#httpsession-interface-methods)
 - [HttpSession Example](#httpsession-example)
 - [Conclusion](#conclusion)
 
-### The HttpSession and its Function.
+### The HttpSession and its Function
 
 `HttpSession` is an interface for binding items together and manipulating session information such as the session id, creation time, and last seen.  
 
@@ -311,9 +311,10 @@ $ sudo apt install openjdk-11-jre-headless
 3. Visit https://www.eclipse.org/downloads/ to get the Eclipse Installer from the official website.
 4. Extract the.tar.gz archive, go to the extracted folder, go to the "eclipse-installer" folder, right-click on "eclipse-inst," and select "run.".
 6. When the installation is complete, open eclipse and select launch from the menu as indicated.
-![download eclipse](/engineering-education//.png)
 
-**Step 1:** To get Tomcat, follow the steps below.
+![Launch eclipse](/engineering-education/In-servlet-how-is-the session-concept-used/launch.png)
+
+**Step 2:** To get Tomcat, follow the steps below.
 1. Make a System User account.
 
 It's not a good idea to run Tomcat as the root user. The Tomcat service will be run by a new system user and group with the home directory /opt/tomcat. Enter the following command to do so:
@@ -329,16 +330,68 @@ $ sudo useradd -m -U -d /opt/tomcat -s /bin/false tomcat
 $ sudo apt update
 
 ```
-- [Tomcat can be downloaded from their official website.](https://tomcat.apache.org/index.html)
+- [Tomcat can be downloaded from their official website.](https://tomcat.apache.org/index.html) As shown.
+
+![Download tomcat current version](/engineering-education/In-servlet-how-is-the session-concept-used/tomcatdownload.png)
 
 Extract the tar file to the /opt/tomcat directory once the download is complete:
 ```
 $ sudo tar -xf /tmp/apache-tomcat-${VERSION}.tar.gz -C /opt/tomcat/
 ```
+**Step 3:** How to make jsp and servlet pages above.
+
+1. Use the following demonstration to create the servlet pages from the project above.
+
+  Right-click on the project name-> new and then select the servlet option as shown
+  
+![Creating sevlate page](/engineering-education/In-servlet-how-is-the session-concept-used/sevlatepage.png)
+
+ Finish by giving your servlet class a name as shown.
+
+![servlet class](/engineering-education/In-servlet-how-is-the session-concept-used/servletclass.png)
+
+ Using the code above, create the other servlet pages needed using the same procedure.
+ 
+ 1. Make the jsp pages in the project above, following the instructions below.
+ 
+  Right-click on the project name-> new and then select the jsp option as shown.
+
+![new jsp file](/engineering-education/In-servlet-how-is-the session-concept-used/newjsppage.png)
+
+Give your jsp page a name and select finish.
+
+![naming jsp file](/engineering-education/In-servlet-how-is-the session-concept-used/jspclassname.png)
+
+
+**Step 4:** Sepsts to configure Tomcat in Eclipse and run the above project.
+
+- From the Servers Tab, select "No servers are available," as indicated.
+
+ ![Select no server available](/engineering-education/In-servlet-how-is-the session-concept-used/noserver.png)
+ 
+- Next, select Tomcat v9.0 Server. or any of your choice, but I recommend the current version.
+
+![Select the sort of server you want to make.](/engineering-education/In-servlet-how-is-the session-concept-used/addserver2.png)
+
+- Add Apache installation Directory
+
+![Apache installation directory.](/engineering-education/In-servlet-how-is-the session-concept-used/selectpath.png)
+
+ Click Finish after adding the Apache installation directory.
+ 
+ - Right-click on the `LoginPage.jsp` page while your cursor is over it. The following screen will then appear. To run the project, select run on server and press enter.
+
+![Run web project on server.](/engineering-education/In-servlet-how-is-the session-concept-used/runus.png)
+
+- When tomCat server is selected. Select "Finish" and restat the server when the screen pops up.
+ 
+- The following page will appear in the intanal browser. Log in using the credentials we specified in LoginAction.java (user name ", password ") and play around with the code. Have fun coding!
+
+![Login page.](/engineering-education/In-servlet-how-is-the session-concept-used/loginpage.png)
 
 [Here](https://github.com/Chaun864/Login-Logout-web-Project-Using-session-servlet-and-jsp-.git) is where you can get the source code for the project.
-### Conclusion
 
+### Conclusion
 We've seen how `HttpSession` works in our applications and how useful it is. In this article. We've looked at some of the most essential methods in `HttpSession`, as well as their capabilities. Using the example above will help you understand how `HttpSession` works.
 
 This lesson will assist you in gaining a solid foundation in HttpSession, from which you may progress to the next level. I also recommend that you copy and play with the code above. If feasible, include a style page to make it look more appealing.
