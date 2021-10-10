@@ -102,7 +102,7 @@ This results in four Header  components to mount like [so](https://codepen.io/1-
 
  ### Some Examples of data-driven react github projects you can folk and practice
 
- - [Relay-starter-example](https://github.com/1-creator/relay-starter-example) fully documented .
+ - [Relay-starter-example](https://github.com/1-creator/relay-starter-example) fully documented .(If you are a beginner  you can begin practicing using this project due to its simplicity.It will help you get started with relay.It contains less boilerplate making the code easier to uderstand)
  - [React-data-menu](https://github.com/dkozar/react-data-menu)
  - [Data-driven-carousel](https://github.com/JasonShin/React-Carousel-Data-Driven)
  - [data-driven-motion](https://github.com/tkh44/data-driven-motion) 
@@ -111,6 +111,7 @@ This results in four Header  components to mount like [so](https://codepen.io/1-
 - survey monkey-you can make a questionnaire and have people answer. The output you see is driven by data. Data in this case is what has been input and its processing “drives” the result.
 - Quora - data in general is input.Quora is a data-driven application but in a different way.It has statistics but the value of the application is not particularly in what is written but rather in what is read .Hence the output is not entirely driven by data .
 - Login form -Here the data (username, password) is transferred from database of that particular website (vice-versa).
+- twitter-twitter is data-driven in a case that you input data in the app e.g by posting tweets.And the data you add allows you to create an account and login.Also twitter uses data-driven practices  for ads.
 
 
  #### Conclusion
