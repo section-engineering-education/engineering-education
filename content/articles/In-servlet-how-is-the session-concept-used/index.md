@@ -344,7 +344,7 @@ $ sudo tar -xf /tmp/apache-tomcat-${VERSION}.tar.gz -C /opt/tomcat/
 
   Right-click on the project name-> new and then select the servlet option as shown
   
-![Creating sevlate page](/engineering-education/In-servlet-how-is-the session-concept-used/sevlatepage.png)
+![creating sevlate page](/engineering-education/In-servlet-how-is-the session-concept-used/sevlatepage.png)
 
  Finish by giving your servlet class a name as shown.
 
