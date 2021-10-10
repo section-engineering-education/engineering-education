@@ -179,6 +179,7 @@ We set the property of the `RetrievalEvent` class to the SMS message we've retri
 **Note:** Timeouts occur if messages are not processed within 5 minutes. This happens during SMS Retrieval API's processing.
 
 ### Step 5: Register the BroadcastReceiver on AndroidManifest file
+
 In your app's `AndroidManifest.xml` file, register `BroadcastReceiver`. Put the following code in your manifest intent filter.
 
 ```xml
@@ -191,6 +192,7 @@ In your app's `AndroidManifest.xml` file, register `BroadcastReceiver`. Put the 
                 <action android:name="com.google.android.gms.auth.api.phone.SMS_RETRIEVED"/>
             </intent-filter>
         </receiver>
+        ...
  </application>
 ```
 ### Implementing subscriber
@@ -205,6 +207,7 @@ package com.roberts.smsretriverapi
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import com.google.android.gms.auth.api.phone.SmsRetriever
 import com.google.android.gms.auth.api.phone.SmsRetrieverClient
@@ -213,8 +216,10 @@ import org.apache.commons.lang3.StringUtils
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 
+private const val TAG = "MainActivity"
+
 class MainActivity : AppCompatActivity() {
-    private lateinit var  binding: ActivityMainBinding
+    private lateinit var binding: ActivityMainBinding
     private lateinit var smsClient: SmsRetrieverClient
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -223,13 +228,14 @@ class MainActivity : AppCompatActivity() {
 
         smsClient = SmsRetriever.getClient(this)
 
-
-        /*val appSignatureHelper = AppSignatureHelper(this)
+        //uncomment this to generate your app hash string. You can view the hash string on your log cat when you run the app
+        /*val appSignatureHelper = SignatureHelper(this)
         Log.d("SIGNATURE",appSignatureHelper.appSignature.toString())*/
 
         initSmsListener()
 
     }
+
     override fun onStart() {
         super.onStart()
         EventBus.getDefault().register(this)
@@ -239,27 +245,32 @@ class MainActivity : AppCompatActivity() {
         EventBus.getDefault().unregister(this)
         super.onStop()
     }
+
     private fun initSmsListener() {
         smsClient.startSmsRetriever()
             .addOnSuccessListener {
-                Toast.makeText(this, "Waiting for sms message",
-                    Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    this, "Waiting for sms message",
+                    Toast.LENGTH_SHORT
+                ).show()
             }.addOnFailureListener { failure ->
-                Toast.makeText(this, failure.localizedMessage,
-                    Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    this, failure.localizedMessage,
+                    Toast.LENGTH_SHORT
+                ).show()
             }
     }
 
     @Subscribe
-    fun onReceiveSms(smsRetrievedEvent: SmsRetrievedEvent){
-        val code: String = StringUtils.substringAfterLast(smsRetrievedEvent.message, "is").replace(":", "")
-            .trim().substring(0, 4)
+    fun onReceiveSms(retrievalEvent: RetrievalEvent) {
+        val code: String =
+            StringUtils.substringAfterLast(retrievalEvent.message, "is").replace(":", "")
+                .trim().substring(0, 4)
 
         runOnUiThread {
-            if(!smsRetrievedEvent.timedOut){
+            if (!retrievalEvent.timedOut) {
                 binding.editText.setText(code)
-            }
-            else{
+            } else {
                 Toast.makeText(this, "Failed", Toast.LENGTH_SHORT).show()
             }
         }
@@ -273,10 +284,10 @@ class MainActivity : AppCompatActivity() {
 Google Play services uses the hash string to decide which message should is meant for your app. This string is made up of the package name and public key certificate for your app. 
 To generate the hash string, you can use the following methods: 
 
-- Use [Play App Signing]. (https://support.google.com/googleplay/android-developer/answer/9842756?visit_id=637672247631770776-2285078183&rd=1)
+- Use [Play App Signing](https://support.google.com/googleplay/android-developer/answer/9842756?visit_id=637672247631770776-2285078183&rd=1)
 - Use `AppSignatureHelper class`. This class will help to generate our app's hash string. If you use the helper class, make sure to remove it after you've obtained the hash string. Avoid using hash strings calculated on client side for you verification messages.
 
-In our case, we are going to use the `SignatureHelper class` to generate our app`s hash string. The hash string generated will appear on the `logcat`. 
+In our case, we are going to use the `SignatureHelper class` to generate our app's hash string. The hash string generated will appear on the `logcat`. 
 
 ```
 package com.roberts.smsretriverapi
