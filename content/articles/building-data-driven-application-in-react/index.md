@@ -3,7 +3,7 @@
 It is not very convenient to have to upgrade components every time we have a change in our application data  .It takes more than data to have a credible data-driven application that is compelling to a wide range of business users.In data-driven application , the application flow is governed by data processed by the application. The data-set  input may change your applications behavior .This means your decisions are influenced by data. Lets learn about data-driven applications in react.
 
 #### Prerequisites
-- A suitable IDE such as VS Code,IntelliJ,NetBeans e.t.c
+- A suitable IDE such as VS Code , IntelliJ , NetBeans e.t.c
 - Basic knowledge of React
 - Basic understanding of Relay framework
 
