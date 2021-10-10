@@ -172,3 +172,6 @@ Please find the complete code for this tutorial [here](https://colab.research.go
 - [Gradio](https://www.gradio.app/)
 - [PyTorch](https://pytorch.org/)
 - [Complete code](https://colab.research.google.com/drive/1sTt1R69ajgYme6LNFfEw8RYSmKRkp5vq?usp=sharing)
+
+---
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
