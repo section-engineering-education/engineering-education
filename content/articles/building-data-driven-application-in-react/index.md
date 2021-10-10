@@ -16,9 +16,9 @@ It is not very convenient to have to upgrade components every time we have a cha
 #### Some of React frameworks used to build Data-driven applications
 - Relay - Relay helps in management of data-fetching it does not matter the number of components in your application.
 
-- React-admin - React-admin reserves the dataProvider object in a React context, this makes it available from anywhere in your application . The useDataProvider hook displays the Data Provider to let you call it directly.
+- React-admin - React-admin reserves the dataProvider object in a React context, this makes it available from anywhere in your application . The useDataProvider hook displays the Data Provider , this makes it possible for you to call it directly.
 
-- data-driven forms - Data Driven Forms is open source react library used for providing and managing forms with a lot of provided features based on https://final-form.org/react.
+- data-driven forms - Data Driven Forms is open source react library it allows you to store complex forms in the database so you can reuse them in numerous developer environments.
 
 ### building data-driven React  components
 
@@ -26,7 +26,7 @@ React allows us to send data to a component in the same syntax as HTML, using at
 
 #### Getting Started
 
-Lets build a react header  with 2 components
+Lets build a react header  with two components which are;
 
           <Header/>
 
@@ -71,7 +71,7 @@ We use Header component by placing it in App component as shown above .
 
 ### Going data-driven
 
-Lets add some data in our Component .Let's start with the  Header component . Looking at our [Header](https://codepen.io/1-creator/pen/qBXWVXd) as it stands right now , the Header component only shows the title of the element as profile .
+Lets add some data in our Component . Looking at our [Header](https://codepen.io/1-creator/pen/qBXWVXd) as it stands right now , the Header component only shows the title of the element as profile .
 
 It's a nice element and it would be nice to be able to reuse it in other parts of our page, Hence the title of Profile doesn't make sense for every use . So lets tell react we want to be able to set the title to something else.
 
@@ -109,7 +109,7 @@ This results in four Header  components to mount like [so](https://codepen.io/1-
 
 ### Some Examples of data-driven real-world applications
 - survey monkey-you can make a questionnaire and have people answer. The output you see is driven by data. Data in this case is what has been input and its processing “drives” the result.
-- Quora - data in general is input.Quora but in a different way. While it still has statistics, the real value of the application isn’t so much in what is written but rather in what is read and output is not entirely driven by data because you can still google and reach an answer that wouldn’t show up in your digest (for example).
+- Quora - data in general is input.Quora is a data-driven application but in a different way.It has statistics but the value of the application is not particularly in what is written but rather in what is read .Hence the output is not entirely driven by data .
 - Login form -Here the data (username, password) is transferred from database of that particular website (vice-versa).
 
 
