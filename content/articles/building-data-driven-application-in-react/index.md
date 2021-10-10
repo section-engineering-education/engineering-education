@@ -1,11 +1,11 @@
 ### Building data driven  application in react
 
-It is not very convenient to have to upgrade components every time we have a change in our application data  .It takes more than data to have a credible data-driven application that is compelling to a wide range of business users.In data-driven application , the apllication flow is governed by data processed by the application. The data-set  input may change your applications behaviour .This means your decisions are influenced by data. Lets learn about data-driven applications in react.
+It is not very convenient to have to upgrade components every time we have a change in our application data  .It takes more than data to have a credible data-driven application that is compelling to a wide range of business users.In data-driven application , the application flow is governed by data processed by the application. The data-set  input may change your applications behaviour .This means your decisions are influenced by data. Lets learn about data-driven applications in react.
 
 #### Prerequisites
 - A suitable IDE such as VS Code
 - A basic knowledge of React
-- A basic uderstanding of Relay framework
+- A basic understanding of Relay framework
 
 #### key takeaways
 - Get to know what is data driven applications
@@ -115,6 +115,6 @@ This results in four Header  components to mount like [so](https://codepen.io/1-
 
 
  #### Conclusion
- "Data-driven programming can probably have different meanings, but here is the one I use it for: it is a style of programming in which specialization is done through data structures and not boilerplate code."~Pierre Chapuis . Make sure to practice from the projects.
+ "Data-driven programming can probably have different meanings, but here is the one I use it for: it is a style of programming in which specialization is done through data structures and not boilerplate code."~Pierre Chapuis . Make sure to practice from the projects and aspire to learn something new.
 
  Happy Coding
