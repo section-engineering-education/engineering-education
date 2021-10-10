@@ -285,7 +285,7 @@ Google Play services uses the hash string to decide which message should is mean
 To generate the hash string, you can use the following methods: 
 
 - Use [Play App Signing](https://support.google.com/googleplay/android-developer/answer/9842756?visit_id=637672247631770776-2285078183&rd=1)
-- Use `AppSignatureHelper class`. This class will help to generate our app's hash string. If you use the helper class, make sure to remove it after you've obtained the hash string. Avoid using hash strings calculated on client side for you verification messages.
+- Use `SignatureHelper class`. This class will help to generate our app's hash string. If you use the helper class, make sure to remove it after you've obtained the hash string. Avoid using hash strings calculated on client side for you verification messages.
 
 In our case, we are going to use the `SignatureHelper class` to generate our app's hash string. The hash string generated will appear on the `logcat`. 
 
