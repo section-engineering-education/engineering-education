@@ -1,6 +1,6 @@
 ### Building data driven  application in react
 
-It is not very convenient to have to upgrade components every time we have a change in our application data  . more than data is needed to have a credible data-driven application that is camptivating to a wide range of business users.In data-driven application , the application flow is governed by data processed by the application. The data-set  input may change your applications behavior .This means your decisions are influenced by data. Lets learn about data-driven applications in react.
+It is not very convenient to have to upgrade components every time we have a change in our application data  . More than data is needed to have a credible data-driven application that is captivating to a wide range of business users.In data-driven application , the application flow is governed by data processed by the application. The data-set  input may change your applications behavior .This means your decisions are influenced by data. Lets learn about data-driven applications in react.
 
 #### Prerequisites
 - A suitable IDE such as VS Code , IntelliJ , NetBeans e.t.c
