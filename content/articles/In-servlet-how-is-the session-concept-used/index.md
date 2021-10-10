@@ -312,7 +312,7 @@ $ sudo apt install openjdk-11-jre-headless
 4. Extract the.tar.gz archive, go to the extracted folder, go to the "eclipse-installer" folder, right-click on "eclipse-inst," and select "run.".
 6. When the installation is complete, open eclipse and select launch from the menu as indicated.
 
-![Launch eclipse](/engineering-education/In-servlet-how-is-the session-concept-used/launch.png)
+![Launch eclipse](/engineering-education/in-servlet-how-is-the-session-concept-used/launch.png)
 
 **Step 2:** To get Tomcat, follow the steps below.
 1. Make a System User account.
@@ -332,7 +332,7 @@ $ sudo apt update
 ```
 - [Tomcat can be downloaded from their official website.](https://tomcat.apache.org/index.html) As shown.
 
-![Download tomcat current version](/engineering-education/In-servlet-how-is-the session-concept-used/tomcatdownload.png)
+![Download tomcat current version](/engineering-education/in-servlet-how-is-the-session-concept-used/tomcatdownload.png)
 
 Extract the tar file to the /opt/tomcat directory once the download is complete:
 ```
@@ -344,11 +344,11 @@ $ sudo tar -xf /tmp/apache-tomcat-${VERSION}.tar.gz -C /opt/tomcat/
 
   Right-click on the project name-> new and then select the servlet option as shown
   
-![creating sevlate page](/engineering-education/In-servlet-how-is-the session-concept-used/sevlatepage.png)
+![creating sevlate page](/engineering-education/in-servlet-how-is-the-session-concept-used/sevlatepage.png)
 
  Finish by giving your servlet class a name as shown.
 
-![servlet class](/engineering-education/In-servlet-how-is-the session-concept-used/servletclass.png)
+![servlet class](/engineering-education/in-servlet-how-is-the-session-concept-used/servletclass.png)
 
  Using the code above, create the other servlet pages needed using the same procedure.
  
@@ -356,38 +356,38 @@ $ sudo tar -xf /tmp/apache-tomcat-${VERSION}.tar.gz -C /opt/tomcat/
  
   Right-click on the project name-> new and then select the jsp option as shown.
 
-![new jsp file](/engineering-education/In-servlet-how-is-the session-concept-used/newjsppage.png)
+![new jsp file](/engineering-education/in-servlet-how-is-the-session-concept-used/newjsppage.png)
 
 Give your jsp page a name and select finish.
 
-![naming jsp file](/engineering-education/In-servlet-how-is-the session-concept-used/jspclassname.png)
+![naming jsp file](/engineering-education/in-servlet-how-is-the-session-concept-used/jspclassname.png)
 
 
 **Step 4:** Sepsts to configure Tomcat in Eclipse and run the above project.
 
 - From the Servers Tab, select "No servers are available," as indicated.
 
- ![Select no server available](/engineering-education/In-servlet-how-is-the session-concept-used/noserver.png)
+ ![Select no server available](/engineering-education/in-servlet-how-is-the-session-concept-used/noserver.png)
  
 - Next, select Tomcat v9.0 Server. or any of your choice, but I recommend the current version.
 
-![Select the sort of server you want to make.](/engineering-education/In-servlet-how-is-the session-concept-used/addserver2.png)
+![Select the sort of server you want to make.](/engineering-education/in-servlet-how-is-the-session-concept-used/addserver2.png)
 
 - Add Apache installation Directory
 
-![Apache installation directory.](/engineering-education/In-servlet-how-is-the session-concept-used/selectpath.png)
+![Apache installation directory.](/engineering-education/in-servlet-how-is-the-session-concept-used/selectpath.png)
 
  Click Finish after adding the Apache installation directory.
  
  - Right-click on the `LoginPage.jsp` page while your cursor is over it. The following screen will then appear. To run the project, select run on server and press enter.
 
-![Run web project on server.](/engineering-education/In-servlet-how-is-the session-concept-used/runus.png)
+![Run web project on server.](/engineering-education/in-servlet-how-is-the-session-concept-used/runus.png)
 
 - When tomCat server is selected. Select "Finish" and restat the server when the screen pops up.
  
 - The following page will appear in the intanal browser. Log in using the credentials we specified in LoginAction.java (user name ", password ") and play around with the code. Have fun coding!
 
-![Login page.](/engineering-education/In-servlet-how-is-the session-concept-used/loginpage.png)
+![Login page.](/engineering-education/in-servlet-how-is-the-session-concept-used/loginpage.png)
 
 [Here](https://github.com/Chaun864/Login-Logout-web-Project-Using-session-servlet-and-jsp-.git) is where you can get the source code for the project.
 
