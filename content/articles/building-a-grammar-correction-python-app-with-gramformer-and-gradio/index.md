@@ -1,3 +1,20 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /building-a-grammar-correction-python-app-with-gramformer-and-gradio/
+title: Building a Grammar Correction Python Application with Gramformer and Gradio
+description: The objective of this tutorial is to help the reader learn how to build a grammar correction python application using a library known as Gramformer and the gradio app.
+author: lilian-tonia
+date: 2021-10-10T00:00:00-13:00
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/building-a-grammar-correction-python-app-with-gramformer-and-gradio/hero.png
+    alt: Grammar Correction Python Application Example image
+---
+
 ### Outline
 - [Prerequisites](#prerequisites)
 - [Introduction](#introduction)
