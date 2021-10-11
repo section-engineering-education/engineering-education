@@ -65,7 +65,7 @@ Lets build a react header  with two components which are;
 We use Header component by placing it in App component as shown above .
 
 ### Going data-driven
-So lets begin by adding a search bar using the code below our header component
+So lets begin by adding a search bar in our header by adding the code below in our header component. 
 
                      <input type="text"
                 className="search"
