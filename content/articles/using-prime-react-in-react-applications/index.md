@@ -1,5 +1,5 @@
 ### How to create a responsive React navigation bar using PrimeReact
-React is all about components, these helps us to reuse our JavaScript code over and over. It also maintain and update the page.
+React is all about components, these helps us to reuse our JavaScript code over and over. It also maintains and update the page.
 React is used to build single page application and user interface.
  
 ### Introduction
@@ -9,7 +9,7 @@ But unlike CSS, PrimeReact has pre-defined style in each components, which we ca
 ### Table of contents
 - What is PrimeReact
 - Create React application
-- Installing PrimeReact dependencies
+- Adding PrimeReact dependencies
 - Modifying our React application
 - Creating a Nav component
 - Making our Navigation Bar responsive
@@ -29,21 +29,19 @@ Let's start coding.
 
 ### What is PrimeReact:
 PrimeReact is a UI components for React application.
-PrimeReact has different components for themes, styles and icons which we can import and use in our React appliction.
+PrimeReact has different components for themes, styles and icons which we can import and use in our React application.
 It is a free open source library.
 
 #### Step 1 - Create React application
-Navigate to the folder you want your React project to exist and create a React project by typing the following command in a terminal or cmd.
+When creating React application, we first go to the folder we want our application to exist.
+To create a React application type following command in a terminal or cmd.
+`npx create-react-app my-prime`
 
-```bash
-npm create-react-app my-prime
-```
+After installing, type `cd my-prime` to go into my-prime folder.
+Type `npm start` to start the development server. The React website can be seen on `http://localhost:3000/` in your system browser.
 
-Once the installation is complete, type `cd my-prime` to go into my-prime folder.
-Type `npm start` to start the development server. You can view the React application by navigating to `http://localhost:3000/` in your system browser.
-
-#### Step 2 - Installing PrimeReact dependencies
-To install PrimeReact dependencies, we first open the terminal of our visual studio code. Ensure that the terminal is accessing my-prime folder
+#### Step 2 - Adding PrimeReact dependencies
+In order to add PrimeReact dependencies into our project, we first open the terminal of our visual studio code. Ensure that the terminal is accessing my-prime folder
 
 Input `npm install primereact --save` and press "enter" to install prime react
 then `npm install primeicons --save` also press "enter" to install primeicons.
@@ -52,34 +50,28 @@ PrimeReact components need PrimeIcons library for icons and react-transition-gro
 
 Type  `npm install react-transition-group` and press "enter" to install react-transition-group.
 
-To confirm that the dependencies have been installed, we check the package.json file to see if our dependencies have been installed. This is shown below
+If the dependencies we installed are shown in the package.json file then our installation was successful. 
+As shown below
 
 ```JSON
 "dependencies": {
     "primeicons": "^4.1.0",
     "primereact": "^6.6.0",
-    "@testing-library/jest-dom": "^5.11.9",
-    "@testing-library/react": "^11.2.3",
-    "@testing-library/user-event": "^12.6.0",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-scripts": "4.0.1",
-    "react-transition-group": "^4.4.2",
-    "web-vitals": "^0.2.4"
+    "react-transition-group": "^4.4.2"
   },
 ```
 
 #### Step - 3 Modifying our React application
-When we create a react project, react has some pre-defined codes we need to modify.
-For instance, when you type `http://localhost:3000/` in your browser, you will see a react logo. Let's remove these elements first to avoid confusion. Go to your app.js file and delete all the code in the div tag and every import statement except `import './App.css'`. 
+When we create a react project, react has some pre-defined codes we need to modify. Go to `http://localhost:3000/` in your browser, A website showing React logo will be displayed. Let's modify the website codes. Open app.js file in your visual studio code editor, then remove all code within the div tag except `import './App.css'`. 
 
 ```javascript
-import './App.css';
+import React from 'react'; //for React
+import './App.css' // for CSS
 
 function App() {
   return (
-    <div className="App">
-      {/* code goes here */}
+    <div className = "App">
+      
     </div>
   );
 }
@@ -155,7 +147,7 @@ Within the div tag of our app.js file we add our Navigation element
 Css styles can be added to change the pre-defined styles.
 
 #### Step 5 - Making our Navigation Bar responsive 
-To use PrimeReact components, we first need to import them into our project. We will be using some prime react components such as Menubar, ProgressBar and Button components in this tutorial.
+To add PrimeReact components to our project, we first need to import them into our project. We will be using some prime react components such as Menubar, ProgressBar and Button components in this tutorial.
 
 To use Menubar component, we import it inside our Nav.js file inside our component folder, then add it within our nav tag HTML element to make it display within our Navigation 
 
@@ -165,15 +157,15 @@ import { Menubar } from 'primereact/menubar';
 import { InputText } from 'primereact/inputtext';s
 ```
 
-The above should be added at the top of our Nav.js file, within our Navigation function we then create a const variable called items that will store an array of label and icons.
+The above should be added at the top of our Nav.js file, within our Navigation function we then create a const variable called list that will store an array of label and icons.
 This is shown below 
  
  ```javascript
- const items = [
+ const list = [
         {label: 'Home', icon: 'pi pi-fw pi-home'},
-        {label: 'Calendar', icon: 'pi pi-fw pi-calendar'},
-        {label: 'Documentation', icon: 'pi pi-fw pi-file'},
-        {label: 'Settings', icon: 'pi pi-fw pi-cog'}
+        {label: 'About', icon: 'pi pi-fw pi-calendar'},
+        {label: 'Contact', icon: 'pi pi-fw pi-file'},
+        {label: 'Log In', icon: 'pi pi-fw pi-cog'}
     ]
 ```
 
@@ -188,11 +180,11 @@ import { InputText } from 'primereact/inputtext'
 import './Nav.css'
 
 const Navigation = () => {
-     const items = [
+     const list = [
         {label: 'Home', icon: 'pi pi-fw pi-home'},
-        {label: 'Calendar', icon: 'pi pi-fw pi-calendar'},
-        {label: 'Documentation', icon: 'pi pi-fw pi-file'},
-        {label: 'Settings', icon: 'pi pi-fw pi-cog'}
+        {label: 'About', icon: 'pi pi-fw pi-calendar'},
+        {label: 'Contact', icon: 'pi pi-fw pi-file'},
+        {label: 'Log In', icon: 'pi pi-fw pi-cog'}
     ];
     return(
         <div className='navigation'>
@@ -201,7 +193,7 @@ const Navigation = () => {
                  <nav>
                     <ul>
                         <li><Menubar
-                            model={items}
+                            model={list}
                             start={<InputText placeholder="Search" type="text"/>}
                             end={<Button label="PrimeReact" icon="pi "/>}
                         /></li>    
@@ -215,9 +207,9 @@ const Navigation = () => {
 }
 export default Navigation;
 ```
-The items variable will store what will be displayed on our Navigation bar. 
+The list variable will store what will be displayed on our Navigation bar. 
 
->You can read more about Menubar components from [here](https://primefaces.org/primereact/showcase/#/menubar)
+> To know more about Menubar components from [here](https://primefaces.org/primereact/showcase/#/menubar)
 
 The navigation classname is used to change the pre-defined CSS styles of our React project. 
 The above code makes our Navigation bar responsive on all device screen size.
@@ -288,9 +280,9 @@ Then we import it inside our div tag
 </div>.
 ```
 
-If you go to ypur browser you will see a button with the words "Click Me" this button will not be styled. We can add more styles to the button by adding an i tag within it. You can read more about PrimeReact Button components from [here](https://primefaces.org/primereact/showcase/#/button)
+If you go to your browser you will see a button with the words "Click Me" this button will not be styled. We can add more styles to the button by adding an i tag within it. You can read more about PrimeReact Button components from [here](https://primefaces.org/primereact/showcase/#/button)
 
-The PrimeReact button that we imported in the project is styled, as shown below.
+The Button element then becomes,
 
 ```javascript
  <Button label="Click Me" >
@@ -327,12 +319,12 @@ const App = () =>{
 export default App;
 ```
 
-> You can follow this example to incorporate other Prime React in your project. Other important components can be found [here](https://primefaces.org/primereact/showcase/#/setup)
+> From this tutorial, one should be able to use PrimeReact components. 
 
-#### Recap
-From the above tutorial, we have learned:
-* What PrimeReact is all  about.
-+ How to add PrimeReact dependencies in a React.js application.
-+ How to use PrimeReact components and icons.
-+ We have seen how easy it is to build websites by incorporating PrimeReact UI in React applications. You can,  use this information to build complex applications.
+#### Summary
+We learnt from this tutorial
+* PrimeReact and its uses.
++ How to create a responsive navigation bar.
++ PrimeReact components.
+
 
