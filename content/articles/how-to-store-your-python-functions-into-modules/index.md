@@ -42,12 +42,11 @@ We can import the modules through different ways such as:
 ### Prerequisites
 In order to follow through this article, a clear understanding of python modules is required.
 
-
 ### Importing an entire module
 The first step is creating a module, which is a file that has an ending `.py` and containing the program you want to import to your main program.
 
 Below is a module with the function `make-bread()`.
-This is the file `bread.py`.
+This is the file `bread.py`:
 
 ```Python
 def make_bread(height, *garnish);
@@ -69,7 +68,9 @@ bread.make_bread(14,'garlic flakes', 'oregano', 'rolled oat flakes')
 
 A command from the line `import bread` opens and copys all the functions from the program in the file `bread.py`.
 
-Abstraction of data from the user takes place such that one does not understand what happens in the background. All one needs to know is that any function that is defined in `bread.py` will be made available in the file`make_breads.py`.
+Abstraction of data from the user takes place such that one does not understand what happens in the background.
+
+All one needs to know is that any function that is defined in `bread.py` will be made available in the file`make_breads.py`.
 
 We call a function from an imported module by entering the module name imported and the function name separated by a dot.
 
@@ -116,6 +117,7 @@ make_bread(11,'basil')
 make_bread(14,'garlic flakes', 'oregano', 'rolled oat flakes')
 ```
 >Note:*Anytime we call the function using this syntax, we do not use the dot notation since the function was explicitly imported in the import declaration. We only call it by name any time we need to use the function*
+
 This is a better way when you do not require to import an entire module and all functions will not be put into use.
 
 ### Giving a function an alias using `as`
@@ -164,7 +166,7 @@ Giving an alias for a module does not change the function names, instead they re
 
 Using the alias name for the module is not only concise but also enables you to concentrate on the informative names of the function, thus, redirecting your attention from the name of the module.
 
-These function names will tell you what the function does to enable the readability of your code rather than using the full name of the module.
+These function names will tell you what the function does, to enable the readability of your code rather than using the full name of the module.
 
 ### Importing all functions in a module
 To import all the functions in a module we use the asterisk`(*)` in the import statement. The asterisk gives a command that all the function should be copied into the program file.
