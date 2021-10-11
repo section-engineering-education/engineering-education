@@ -24,7 +24,7 @@ Over the past few years, browsers have evolved and became more powerful. They ca
 
 The final application will look like this:
 
-![final-grocery-list](./final.png)
+![final-grocery-list](/engineering-education/integrate-airtable-with-nextjs/final.png)
 
 You can find the final demo on replit [Final demo](https://replit.com/@giridhar7632/grocery-list) | [source code](https://grocery-list.giridhar7632.repl.co/)
 
@@ -205,7 +205,7 @@ export default async (req, res) => {
 
 You can use [Postman](https://www.postman.com/) or something similar to send a request and test the endpoint.
 
-![Creating a new item in airtable by sending raw data to createItem endpoint](./create-req.png)
+![Creating a new item in airtable by sending raw data to createItem endpoint](/engineering-education/integrate-airtable-with-nextjs/create-req.png)
 
 ### Update a record
 
@@ -230,7 +230,7 @@ export default async (req, res) => {
 
 Here, you are retrieving the record corresponding to the id and update the fields with new values. You can test the endpoint by sending a request to the API using Postman.
 
-![Updating an item in airtable by sending data to updateItem endpoint](./update-req.png)
+![Updating an item in airtable by sending data to updateItem endpoint](/engineering-education/integrate-airtable-with-nextjs/update-req.png)
 
 ### Delete a record
 
@@ -253,7 +253,7 @@ export default async (req, res) => {
 };
 ```
 
-![Deleting an existing item in airtable by sending a delete request to deleteItem endpoint](./delete-req.png)
+![Deleting an existing item in airtable by sending a delete request to deleteItem endpoint](/engineering-education/integrate-airtable-with-nextjs/delete-req.png)
 
 ### Creating front-end
 
