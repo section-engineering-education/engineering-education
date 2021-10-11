@@ -16,7 +16,7 @@ It is not very convenient to have to upgrade components every time we have a cha
 #### Some of React frameworks used to build Data-driven applications
 - Relay - Relay helps in management of data-fetching , it does not matter the number of components in your application.
 
-- React-admin - React-admin is a react framework .used to build data-driven applications .React-admin component guesses the format to apply based totally on the records fetched from the API. React-admin needs  Data provider function for it to translate data.
+- React-admin - React-admin is a react framework used to build data-driven applications .React-admin component guesses the format to apply based totally on the records fetched from the API. React-admin needs  Data provider function for it to translate data.
 
 - data-driven forms - Data Driven Forms is open source react library it allows you to store complex forms in the database so you can reuse them in numerous developer environments.
 
