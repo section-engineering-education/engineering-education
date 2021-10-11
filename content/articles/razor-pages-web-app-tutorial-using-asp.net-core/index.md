@@ -1,26 +1,20 @@
-### Table of Contents
-
-[Introduction](#Introduction)
-
-[Prerequisites](#Prerequisites)
-
-[Creating a razor pages web application](#Creating-a-razor-pages-web-application)
-
-[Integrating a model into a razor pages app](#Integrating-a-model-into-a-razor-pages-app)
-
-[Updating/adding data to the razor pages web application](#Updating/adding-data-to-the-razor-pages-web-application)
-
-[Including a search bar](#Including-a-search-bar)
-
-[Including validation](#Including-validation)
-
-[Conclusion](#Conclusion)
-
 ### Introduction
 
 Razor Pages are a server-side, page-focused framework that allows for the creation of dynamic, data-driven web pages with clear separation of concerns in ASP.NET Core.
 
 If you have been looking for a better and simpler way to create a razor pages web app, using ASP.NET Core would be the best for you. This focuses on how one could come up with a working razor page web app.
+
+### Table of contents
+
+- [Introduction](#introduction)
+- [Table of contents](#table-of-contents)
+- [Prerequisites](#prerequisites)
+- [Creating a razor pages web application](#creating-a-razor-pages-web-application)
+- [Integrating a model into a Razor Pages app](#integrating-a-model-into-a-razor-pages-app)
+- [Updating/adding data to the razor pages web application](#updatingadding-data-to-the-razor-pages-web-application)
+- [Including a search bar](#including-a-search-bar)
+- [Including validation](#including-validation)
+- [Conclusion](#conclusion)
 
 After going through this tutorial, the reader will be able to come up with a web application that can manage a database of any given object.
 
@@ -50,7 +44,7 @@ Next, enter the name of the Web Application you want to create, i.e. `StudentsCh
 
 Click create on the next page to finish setting up the application. After that, the web application project is now created. We shall now modify the web app through the steps mentioned above.
 
-! [Interface for Web App Creation] (/engineering-education/razor-pages-web-app-tutorial/create.png)
+![Interface for Web App Creation](/engineering-education/razor-pages-web-app-tutorial/create.png)
 
 When you debug, your web app, it will appear like this.
 
