@@ -1,6 +1,6 @@
 ### Building data driven  application in react
 
-It is not very convenient to have to upgrade components every time we have a change in our application data  . More than statistics is wanted to have a credible data-driven application that is captivating to an extensive variety of business users.In data-driven application , the application flow is governed by data processed by the application. The data-set  input may change your applications behavior .This means your decisions are influenced by data. Lets learn about data-driven applications in react.
+It is not very suitable to have to reform our aplication  components every time we have a change in our app statistics  . More than statistics is wanted to have a credible data-driven application that is captivating to an extensive variety of business users.In data-driven application , the application flow is governed by data processed by the application. The data-set  input may change your applications behavior .This means your decisions are influenced by data. Lets learn about data-driven applications in react.
 
 #### Prerequisites
 - A suitable IDE such as VS Code , IntelliJ , NetBeans e.t.c
@@ -95,8 +95,7 @@ Don't forget to call react.Dom to place your app on the page
 
 This results in three Header  components to mount like [so](https://codepen.io/1-creator/full/XWarzzL):
 
- Now we can reuse the Header component with a dynamic title property.
-
+Now we are able to reuse the Header component with a dynamic title property.
  ### Some Examples of data-driven react github projects you can folk and practice
 
  - [Relay-starter-example](https://github.com/1-creator/relay-starter-example) fully documented .(If you are a beginner  you can begin practicing using this project due to its simplicity.It will help you get started with Relay framework.The project contains less boilerplate making the code easier to uderstand)
