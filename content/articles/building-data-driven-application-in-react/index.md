@@ -72,11 +72,11 @@ So lets begin by adding a search bar in our header by adding the code below in o
                 placeholder="Search ..."
               />
               
- add a search icon in our code below our search bar above our closing tags.
+ add a search icon in our code, below our search bar above our closing tags.
 
                 <div className="fa fa-search searchIcon"></div>
             </div>
-Lets add some data in our Component . When we look at our [Header](https://codepen.io/1-creator/pen/qBXWVXd) as it is right now , the Header component only has profile as our title and it is a little bit plain too.
+Lets add some data in our Component . When we look at our [Header](https://codepen.io/1-creator/pen/qBXWVXd) as it is right now , the Header component only has profile as our title. 
 
 This means we can not set the title to anything else . it would be satisfactory for us to reuse it in different elements/components of our page, the title of Profile isn't suitable for every use . subsequently we could tell react we want for you to set the title to something else like settings, chat e.t.c. we could exchange our    
                 
