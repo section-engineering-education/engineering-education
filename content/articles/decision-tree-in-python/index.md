@@ -6,7 +6,7 @@ url: /decision-tree-in-python/
 title: Decision Trees in Python
 description: This article will provide a detailed information on decision trees in python and how to use them in classifications and regression problems.
 author: stanley-juma
-date: 2021-10-07T00:00:00-16:00
+date: 2021-10-12T00:00:00-15:09
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -245,8 +245,8 @@ Other attributes that add no value to our goal are CustomerId and Surname. Thus 
 ```python
 our_data = our_data.drop(["RowNumber" , "CustomerId" , "Surname"] , axis = 1)
 our_data.head()
-
 ```
+
 Upon executing we obtain:
 #### Output
 ![oor_data](/engineering-education/decision-tree-in-python/our_data.drop.png)
