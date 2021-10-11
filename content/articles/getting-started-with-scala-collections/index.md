@@ -71,7 +71,7 @@ Let's take a closer look at it as follows:
 ### Understanding Mutable and Immutable Collections
 The Scala programming language gives only two types of collections, namely `Mutable` & `Immutable Collections.` There are systematic differences between Scala collections that are changeable and those that are immutable. 
 
-A changeable collection can be changed or expanded while still being used. As a result, you can change, add to, or delete items from, an anthology. Immutable collections, on the other hand, never change. The procedures that mimic additions, deletions, and updates will still be available but will return a new collection and leave the old one untouched.
+A changeable collection can be changed or expanded while still being used. As a result, you can change, add to, or delete items from, an anthology. Collections that are immutable never change. It will be possible to do operations that seem like additions, removals, and updates, but they will return a new collection, leaving the previous one unchanged.
 
 scala. collection contains all collection classes, whether they are mutable, immutable, or generic. Most client-side collection classes are found in the Scala.collection, scala.collection.immutable, and scala.collection.mutable packages. Package scala.collection contains the most often used collection classes. The degree of mutability varies across the variants.
 
@@ -82,18 +82,18 @@ The code below is an example of a mutable collection.
 ```scala
 object mutable {
 def main(args: Array[String]) {
-val ls = (1 to 10).toList
-println("Output is: " + ls);
+val ls = (10 to 14).toList
+println("Outcome is: " + ls);
 }
 }
 ```
 
-The output of the code is 
+The outcome of the code is 
 
 ```bash
-Output is: 1 2 3 4 5 6 7 8 9 10
+Outcome is: 10 11 12 13 14
 ```
-In the above code, a list memory is instantly allocated upon creation, and when we attempt to call the list, the list of items is found.
+As you can see from the code above, a list is immediately created and the list of items is discovered when you try to use it.
 
 > Appending and reassigning to mutable collections is not possible because mutable collections lack the += function.
 
@@ -104,17 +104,17 @@ The code below is an example of an immutable Collection.
 ```scala
 object Immutable {
 def main(args: Array[String]) {
-val ls = (0 to 9).toList
+val ls = (9 to 12).toList
 println(" "+ls);
 }
 }
 ```
 
 Output
-List(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
+List(9, 10, 11, 12)
 
 ### String & Lazy Collection in Scala
-When we apply data transformations to collections, such as filtering, mapping, min/maxing, reducing, folding, etc., we are essentially creating a new group. Specific supplies may permit Strict transformations that imply that when items are evaluated and a new collection is created, memory is immediately allocated for those elements. 
+When we apply data transformations to collections, such as filtering, mapping, min/maxing, reducing, folding, etc., we are essentially creating a new group. Depending on the resources available, this may be possible. A new collection is instantly formed when items are evaluated and memory is promptly allocated for those elements in strict transformations. 
 
 The transformations in a Lazy Collection don't generate another collection right away. When you say "memory-on-demand," you imply that memory won't be available right now. Creating a view on a collection transforms it into a Lazy Collection.
 
@@ -136,7 +136,7 @@ Output
 View: SeqView(...)
 ```
 
-> From the code above, as long as no other actions are being performed, such as foreach, min, or max, it does not allocate memory while creating a view on the existing list, as it just makes a view of the list. 
+> The code above does not allocate memory when establishing a view on the existing list since it just creates a view of the list. No additional operations, such as foreach, min, or max, are being done.
 
 To make the code to complete the complation process, we will add `.max` in the line `println("View: " + lsLazy)`. The full line of code will be `println("View: " + lsLazy.max)` to output `max 10`.
 
