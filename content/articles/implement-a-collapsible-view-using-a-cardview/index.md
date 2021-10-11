@@ -4,7 +4,7 @@ status: publish
 published: true 
 url: /implement-a-collapsible-view-using-a-cardview/
 title: Implementing a Collapsible View using a Card View in Android
-description: IThis article will cover the Card View and how to style and customize it. We will implement a collapsible view that expands to reveal more information and folds when an image in a card is clicked.
+description: This article will cover the Card View and how to style and customize it. We will implement a collapsible view that expands to reveal more information and folds when an image in a card is clicked.
 author: love-otudor
 date: 2021-09-29T00:00:00-03:13
 topics: [Languages]
@@ -23,14 +23,12 @@ In this article, you will learn about CardView and how to style and customize it
 
 ### Prerequisites
 Before you begin, you should have:
-- Basic knowledge of android development using Java programming language.
-- A Laptop.
+- Basic knowledge of Android development using Java programming language.
 - An Android IDE. I am using [Android Studio](https://developer.android.com/studio).
 - Migrate your project to use AndroidX libraries. If not, [here](https://developer.android.com/jetpack/androidx/migrate) is how you can migrate your project.
-- Good spirits!
 
 #### Step One: Create a new Android Studio project
-Create a new project in Android Studio. Use an empty activity. Name the project **Collapsing Card View.** Select `Java` as the language and `API 21` as the minimum SDK and click *finish*.
+Create a new Android Studio project using an Empty activity template. Name the project **Collapsing Card View**. Select *Java* as the language and *API 21* as the minimum SDK and click *finish*.
 
 #### Step Two: Adding the required dependencies
 To use the `CardView`, you must add the CardView dependency. To add the `CardView` dependency, you need to add Google’s Maven repository to your project.
@@ -61,7 +59,7 @@ Change your root layout to a `constraint` layout. Inside the constraint layout, 
 **Note: Constrain the card view to the parent's top and bottom and the parent's start and end.**
 
 #### Step Four: Styling The Card View
-Make the card view to wrap its content height and width of 0dp. In constraint layout, this makes the view match its constraint size. In our case, The width of the `CardView` would be as large as the parent. Give the CardView a horizontal Margin of 16dp and, a corner radius of 5dp. Lastly, you will make the card view a parent layout to other views. To do this, give the card view a start and end tag.
+Make the card view to wrap its content height and width of 0dp. In constraint layout, this makes the view match its constraint size. In our case, The width of the `CardView` would be as large as the parent. Give the CardView a horizontal Margin of 16dp and a corner radius of 5dp. Lastly, you will make the card view a parent layout to other views. To do this, give the card view a start and end tag.
 
 ```xml
 <com.google.android.material.card.MaterialCardView
@@ -168,7 +166,7 @@ This is how the guidelines code should look like:
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
 #### Step Six: Designing the UI of the collapsed card
-Build the UI of the collapsed card. You are going to build the layout of the collapsed card.
+Next, we will build the UI of the collapsed card. 
 
 Add an ImageView to represent an info icon. Use a TextView for the label. Finally, a show-more icon, which would expand or collapse the card when clicked.
 
@@ -221,13 +219,13 @@ This is what the layout would look like:
 ![Collapsed card](/engineering-education/implement-a-collapsible-view-using-a-cardview/collapsed_card.png)
 
 #### Step Seven: Design the UI for the expanded card view
- 
-Now you will add more views to the card. This View would represent what the card looks like in its expanded state.
+In this step, we will add more views to the card. This view would represent what the card looks like in its expanded state.4
 
-Use a View element of height `1dp` and background `#CECECE` to achieve the straight line which divides the title text from the other collapsable views. Constrain its top to the bottom of the TextView and give it a top margin of 16dp. Horizontally constrain the View to the start and end guidelines and give it a width of `0dp` so it would be as wide as the card.
+Use a View element of height `1dp`and background `#CECECE` (or any of your choice) to achieve the straight line which divides the title text from the other collapsable views. 
 
-Beneath this View, add a TextView and some bullet points. You could use ImageViews as the bullets. Feel free to add whatever you want.
+Constrain its top to the bottom of the TextView and give it a top margin of `16dp`. Horizontally constrain the view to the start and end guidelines and give it a width of `0dp` so it would be as wide as the card.
 
+Beneath this view, add a TextView and some bullet points. You could use ImageViews as the bullets. Feel free to add whatever you want.
 Here is what the code looks like:
 
 ```xml
@@ -714,7 +712,7 @@ You are all set. Now time for some java.
 
 
 #### Step nine: Add OnClick Listener to the ImageView
-In this step, we will set an `onClick` listeners to the show `imageView`.
+In this step, we will set an `onClick` listener to the show `imageView`.
  
 In your `Main Activity.java` file, add the following lines of code:
 
@@ -755,7 +753,7 @@ First, we referenced the views performing actions. These views are the `base_car
 
 Next, set an `onClickListener` on the `show` ImageView. When this image is clicked, you would want to either show or hide the `card_group`.
  
-Inside the `onClickListerner`, pass the `CardView` as the root view to run the transition, which would make the collapsing and expanding of the card a lot nicer and give it an animation effect
+Inside the `onClickListerner`, pass the `CardView` as the root view to run the transition, which would make the collapsing and expanding of the card a lot nicer and give it an animation effect.
  
 Finally, check if the group’s visibility is visible. If it is, you set its visibility to gone and change the image resource of the ImageView to `arrow_down_float`. Which kind of looks like a show-more icon.
  
@@ -769,7 +767,7 @@ Let us run our app. Our collapsable card view should look this way:
 
 Nice right?
 
-You can find this project on [github](https://github.com/Lamouresparus/CollapsingCardView) or download the APK [here](https://drive.google.com/file/d/1-2fMOcxtCaCs6xus0DWjvQN1kwOvJ4ZA/view?usp=sharing)
+You can find this project's code on [Github](https://github.com/Lamouresparus/CollapsingCardView) or download the APK [here](https://drive.google.com/file/d/1-2fMOcxtCaCs6xus0DWjvQN1kwOvJ4ZA/view?usp=sharing) .
   
 ### Conclusion
 The CardView enriches the look of your application's UI. The default implementation of the shadow and rounded corners is a big plus. However, the Cardview is designed to hold one child view within itself. You could add within the card view another layout to manage the child views, just like we did here.
