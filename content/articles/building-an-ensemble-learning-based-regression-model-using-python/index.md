@@ -214,3 +214,6 @@ Here's a Kaggle [notebook](https://www.kaggle.com/adhingafredrick/regressionmode
 ### Conclusion
 
 Building a performance-driven model is not a very easy task. It involves refining our model again and again until we get the desired outcome. Either way mastering the art of modeling can be very rewarding. Whether it is in a machine learning or a data science project or a competition.
+
+---
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
