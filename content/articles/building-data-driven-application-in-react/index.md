@@ -44,11 +44,7 @@ Lets build a react header  with two components which are;
 
              <span className="title">Profile</span>
 
-              <input
-                type="text"
-                className="search"
-                placeholder="Search ..."
-              />
+              
           );
         }
       }
@@ -68,9 +64,15 @@ Lets build a react header  with two components which are;
 
 We use Header component by placing it in App component as shown above .
 
-### Going data-driven 
+### Going data-driven
+So lets begin by adding a search bar using the code below our header component
 
-So lets start adding a search icon in our code below our header component above our closing tags.
+                     <input type="text"
+                className="search"
+                placeholder="Search ..."
+              />
+              
+ add a search icon in our code below our search bar above our closing tags.
 
                 <div className="fa fa-search searchIcon"></div>
             </div>
