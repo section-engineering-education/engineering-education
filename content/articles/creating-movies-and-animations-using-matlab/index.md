@@ -41,27 +41,27 @@ We will then, Go back and repeat steps 2 to 4 and keep going through building on
 5. Saving the movie.
 
 ### Matlab functions that can be important at each of the steps
-### 1. Run a simulation or generate a data
+#### 1. Run a simulation or generate a data
 Maybe you have a fancy flight simulator that will run a scenario, kick out all this data, and save it to a file. So all you need here is to load the data. 
 
 It means that You use the `load` function here. Also, if you are familiar with Simulink, you know that you can run a Simulink model from a Matlab script to generate data using the `sim` function.
 
-### 2. Drawing/ rendering the scenario at some point t_x
+#### 2. Drawing/ rendering the scenario at some point t_x
 This deals with plotting or drawing one single frame of the animation. It means that you will use the plot functions such as `plot`, `plot3`, `surf`. 
 
 A couple of things that can be helpful include the` hold on` function for complicated scenarios or animations. Also, it helps to draw many figures on the same plot.
 
 Because of jamming the `plot` function inside the `for` loop, you have to periodically wipe the slate clean after every time. In this, we use the `clf` function.
 
-### 3. Take a snapshot of the scenario
+#### 3. Take a snapshot of the scenario
 Once you have drawn one page of the flipbook, we want to grab that frame and save it into the large flipbook. Matlab has the function `get frame` for doing this.
 
-### 4. Advance time t*k to t*(k+1)
+#### 4. Advance time t*k to t*(k+1)
 Like we said before, If we put the process inside a `for` loop or a `while` loop, the step is automatically handled. If you have data that you are simulating that is very temporally timely spaced, you might have tons of data. 
 
 You may not want to plot every single point of your data since that will be a very dense movie. So we will implement the logic of skipping some data and using the `continue` function for this.
 
-### 5. Saving the movie
+#### 5. Saving the movie
 To save the movie, we will use `VideoWriter` and `WriteVideo` functions.
 
 ### Example
@@ -87,7 +87,7 @@ clear all
 
 Now let us work through the five steps. As we said earlier, the time is going to go through from 0 to `2*pi` and we will use 100 points for this. 
 
-### Step 1
+#### Step 1
 To generate 100 equally spaced points, we use the `linspace` function. We also define our `x`, `y`, and `z` positions.
 
 ```matlab
@@ -98,7 +98,7 @@ y = 2*sin(t);
 z = t;
 ```
 
-### Step 2
+#### Step 2
 We then start a new figure using `figure` functions and use a `for` loop to extract data at the current time.
 
 ```matlab
@@ -119,7 +119,7 @@ So that is the current location of the particle. Let us go ahead and plot this c
 %plot the current location of the particle
 plot3(x_k, y_k, z_k, 'go', 'LineWidth', 3, 'MarkerSize', 15)
 ```
-### Step 3
+#### Step 3
 
 To draw the entire trajectory, we execute the code below:
 
@@ -150,7 +150,7 @@ We noticed from the image above that Matlab plotted all the points because we ha
 
 Our expectation is not to plot all the points but to have a point moving on the spiral. Now let us wipe the slate clean so that every time we are plotting, it is on a blank figure. 
 
-### Step 4
+#### Step 4
 To do this, add the code below after the `k=length(t)` so that we have:
 
 ```matlab
@@ -200,7 +200,7 @@ end
 
 When we run this program, every time it hits a point, it will grab the current picture and jam it into the variable `movieVector`. Thus, you will see a vector `movieVector` in the workspace when the program has completed running.
 
-### Step 5
+#### Step 5
 The last step is saving the movie. We have a movie vector which is all our flipbook. We need to print it out as an actual `.mp4` file. 
 
 We use a `videoWriter` function that Matlab uses to do a lot of video writing operations. The argument for this function is the name of the movie and, in our case, `curve`.
