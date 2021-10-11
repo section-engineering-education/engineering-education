@@ -1,5 +1,22 @@
-Firebase is a  backend data storage platform provided by Google which provides a wide range of data storage services to help build applications seamlessly. It is an online NoSQL database, which stores data in JSON-like format.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /integrating-firebase-database-in-django/
+title: Integrating Firebase with Django
+description: In this tutorial, we will be looking at how to use the Firebase real-time database in Django by building a simple project.
+author: shuaib-oseni
+date: 2021-10-12T00:00:00-15:50
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/integrating-firebase-database-in-django/hero.png
+    alt: Integrating Firebase with Django Image
+---
+
+Firebase is a  backend data storage platform provided by Google which provides a wide range of data storage services to help build applications seamlessly. It is an online NoSQL database, which stores data in JSON-like format.
+<!--more-->
 ### Why Firebase?
 Firebase manages data in real-time and can also be used in an application that is not managing large amounts of data. Some of the benefits of using Firebase are:
 - Easy Setup
@@ -16,7 +33,7 @@ To follow along with this tutorial, you will need the following:
 
 ### Table of content
 - [Creating Firebase project](#creating-firebase-project)
-- [Creating Database](#creating-database)
+- [Creating the Database](#creating-the-database)
 - [Setting Up a new Django Project](#setting-up-a-new-django-project)
 - [Setting up a View in Django](#setting-up-a-view)
 - [Setting up Templates](#setting-up-templates)
