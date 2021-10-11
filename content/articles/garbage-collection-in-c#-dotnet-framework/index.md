@@ -38,7 +38,7 @@ The following are the circumstances:
 - Whenever a stack memory surpasses a certain threshold, garbage collection becomes useful and starts when the amount of Memory differs from each object.
 - It is only when `GarbageC.Collect` is initiated that garbage collection happens. Because the waste collection is typically automated, this method is only employed in exceptional instances.
 
-### How garbage collection works;
+### How garbage collection works
 The .Net framework must support implicit garbage collection. When an item is formed, it is assigned to Generation 0. Garbage collection employs an algorithm that examines the items in the generation; when the object's life period expires, it is removed from Memory.
 
 There are two types of things; Live Objects and Dead Objects. The Garbage Collection mechanism collects any unutilized objects in the generation that are dead instances.
@@ -71,7 +71,7 @@ Garbage collections will use different generations to manage a variety of items 
 Generation 2 identifies an item that has been swept by the GC more than once. If things in generation 1 here are not released, they will migrate to generation 2, where they can be published. The reason for this is because the items will exist primarily in heap memory for a long time. One illustration of this is the existence of static objects in generation 2.
 
 **Remember**
-To dispose of Garbage properly, we need to think about it in terms of generations. When this occurs, all of the previous generations' components and those from succeeding generations can be employed freely. Since all the items in the heap memory are deleted, generation 2 is also referred to as full garbage collection.
+To dispose of Garbage properly, we need to think about it in terms of generations. All of the previous generations' components and those from succeeding generations can be employed freely when this occurs. Since all the items in the heap memory are deleted, generation 2 is also referred to as full garbage collection.
 
 Furthermore, Generation 2 will have more Memory than Generation 1, and Generation 1 will have more Memory than Generation 0.
 
@@ -100,7 +100,7 @@ The generation number is: 1
 *Description ;*
 To determine the maximum number of generations that a machine can withstand, the `GarbageC.MaxGenertion` attribute is used. This is shown in the above example. Note that the result will differ in different machines.
 
-### Methods in garbage collection Class
+### Methods in garbage collection class
 The Garbage Collector class is in charge of the system's garbage collector. The methods of the Garbage Collector class are as follows:
 
 **Method garbage Collector.GetGeneration()** : This function returns the target object's generation number. It just takes one parameter; this is the item for which a manufacturing number is required.
@@ -202,3 +202,4 @@ Garbage collection is enforced into the system utilizing the above approach in t
 
 ### Conclusion
 We learned about the garbage collector (GC) in this tutorial, which is autonomous memory management. We have also looked at how the garbage collector manages an application's memory allocation and release. This means that you do not have to create code to handle memory management duties if you deal with managed programs.
+
