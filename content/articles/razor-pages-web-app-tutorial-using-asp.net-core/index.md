@@ -1,20 +1,26 @@
-### INTRODUCTION
+### Table of Contents
 
-Razor Pages are the default for building server-side web applications in ASP.NET Core.
+[Introduction](#Introduction)
+
+[Prerequisites](#Prerequisites)
+
+[Creating a razor pages web application](#Creating-a-razor-pages-web-application)
+
+[Integrating a model into a razor pages app](#Integrating-a-model-into-a-razor-pages-app)
+
+[Updating/adding data to the razor pages web application](#Updating/adding-data-to-the-razor-pages-web-application)
+
+[Including a search bar](#Including-a-search-bar)
+
+[Including validation](#Including-validation)
+
+[Conclusion](#Conclusion)
+
+### Introduction
+
+Razor Pages are a server-side, page-focused framework that allows for the creation of dynamic, data-driven web pages with clear separation of concerns in ASP.NET Core.
 
 If you have been looking for a better and simpler way to create a razor pages web app, using ASP.NET Core would be the best for you. This focuses on how one could come up with a working razor page web app.
-
-We shall have a step-by-step look at each of the following topics to enable you to be able to create a working web app.
-
-1. Creating a Razor Pages web application
-
-2. Integrating a model into a Razor Pages app.
-
-3. Updating/adding data to the Razor Pages Web Application
-
-4. Including a search bar
-
-5. Including validation
 
 After going through this tutorial, the reader will be able to come up with a web application that can manage a database of any given object.
 
@@ -22,17 +28,15 @@ After going through this tutorial, the reader will be able to come up with a web
 
 To better understand this tutorial, you need to have some basic knowledge of;
 
-- ASP.NET Core
-
-- C#
-
-- HTML AND CSS
+- [ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/?view=aspnetcore-5.0)
+- [C#](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/)
+- [HTML](https://devdocs.io/html/) AND [CSS](https://devdocs.io/css/)
 
 You also need to download [visual studio](https://visualstudio.microsoft.com/vs/) and [.NET Core 3.1](https://dotnet.microsoft.com/download/dotnet/3.1) in your computer.
 
 After downloading and installing Visual Studio, launch it and follow the following steps.
 
-### Creating a razor pages Web App
+### Creating a razor pages web application
 
 To create a new project, click on `Create a new project`.
 
@@ -55,7 +59,6 @@ When you debug, your web app, it will appear like this.
 Now, in the `solution explorer tab`, there are files that are important to understand. Namely;
 
 - index. cshtml, which is the display template.
-
 - index.cshtml.cs, which is the page model.
 
 Index.html includes the `@page` directive, which informs `ASP.NET Core` that it is a razor page, and the `@model` directive, which specifies the model for the display template, i.e., IndexModel.
@@ -108,7 +111,7 @@ In the new project selected, we are only interested in the `Class Library Projec
 
 Click next and enter the name of the model you are adding. Click create on the next screen.
 
-### Adding/updating data to razor pages
+### Updating/adding data to the razor pages web application
 
 This application will be used to `create`, `read`, `update`, and `delete` operations.
 
@@ -328,9 +331,7 @@ In validation, we shall look at the client-side validation of the razor pages.
 To validate client-side validation, we just need to specify these three script files in the order below;
 
 1. Jquery.js
-
 2. jquery.validate.js
-
 3. jquery.unobtrusive.validate.js
 
 If you want client-side validation on several pages in your web application, then implement the scripts using the `Layout file` else implement them on the specified razor pages.
@@ -362,19 +363,9 @@ For the second and third files above to be effective, since they are already loa
  If the client-side validation is not working on your computer, check the following;
 
 1. You have JavaScript enabled in your browser.
-
 2. Confirm that the libraries files are loaded in the environment you are testing.
-
 3. Ensure that the three files are loaded in the correct order.
 
 ### Conclusion
 
-After going through this tutorial, the reader should:
-
-- be able to understand the concept of the razor pages web app.
-
-- be able to create a razor page web app, add search, add validation, and also add a model.
-
-- be able to add data to the created web app.
-
-- be able to update the razor web app in the database.
+From this tutorial, it is clear that razor pages are the default and easy to use framework for building server-side, dynamic, and data-driven web pages with clear separation of concerns.
