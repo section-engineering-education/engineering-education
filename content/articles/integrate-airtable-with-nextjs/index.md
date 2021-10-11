@@ -30,9 +30,9 @@ You can find the final demo on replit [Final demo](https://replit.com/@giridhar7
 
 Before diving into the tutorial, you should have intermediate knowledge of React. It would help if you were comfortable using [React Hooks](https://reactjs.org/docs/hooks-intro.html) and [Context API](https://reactjs.org/docs/context.html).
 
-### The **JAM**stack and Airtable
+### The JAM stack and Airtable
 
-The **JAM**stack combines [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript), [APIs](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Itemduction), and [Markup](https://developer.mozilla.org/en-US/docs/Glossary/markup) for developing fast and scalable web applications. The JAMstack website employs third-party APIs to get data.
+The **JAMstack** combines [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript), [APIs](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Itemduction), and [Markup](https://developer.mozilla.org/en-US/docs/Glossary/markup) for developing fast and scalable web applications. The JAMstack website employs third-party APIs to get data.
 
 You will use serverless functions for communicating with Airtable. [Airtable](https://try.airtable.com/database) is a spreadsheet and database hybrid that you can easily integrate into your application using its excellent API. Airtable API has wonderful documentation. The example code contains all your API keys and base names. To use them in your application, you can copy and paste the code. You can find the Airtable API documentation here: [https://airtable.com/api](https://airtable.com/api).
 
