@@ -467,3 +467,6 @@ Below is the tree we implemented on our dataset.
 
 ### Conclusion
 This article looked at the intuition behind the decision tree and criteria that help us build a tree on the dataset. Finally, we looked at how to implement it using Python and some other libraries. I hope this article has helped you to understand the decision tree and its criteria.
+
+---
+Peer Review Contributions by: [Jerim Kaura](/engineering-education/authors/jerim-kaura/)
