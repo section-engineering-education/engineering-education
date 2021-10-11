@@ -563,6 +563,9 @@ Now that we have that filter, we need to update our security configuration to ap
 
     }
 ```
+
+> Please Note: AuthenticationManager requires the password encoder, and the SecurityConfig requires the AuthenticationManager. Because the SecurityConfig contains the PasswordEncoder bean, a circular dependency issue may arise. To fix this, you'll need to declare the PasswordEncoder bean in another class for this setup.
+
 ### Implementing OAuth
 Now let’s have a look at how we can use OAuth as our authentication strategy. As our authentication provider, we will be using GitHub. For simplicity let’s start from scratch with a new Spring Boot project. This project will use the Spring Security, OAuth2 client, and Spring web dependencies. So we have something to see as our homepage, we will add the following controller:
 
