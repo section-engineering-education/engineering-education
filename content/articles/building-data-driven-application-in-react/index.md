@@ -21,7 +21,7 @@ It is not very convenient to have to upgrade components every time we have a cha
 - data-driven forms - Data Driven Forms is open source react library it allows you to store complex forms in the database so you can reuse them in numerous developer environments.
 
 ### How to build data-driven components in react
-React permits us to send data to an element within the same syntax as HTML, using attributes on a factor.
+React permits us to send data to an element within the same syntax as HTML, using attributes or properties on a factor.
 
 #### Getting Started
 
@@ -99,7 +99,7 @@ This results in three Header  components to mount like [so](https://codepen.io/1
 
  ### Some Examples of data-driven react github projects you can folk and practice
 
- - [Relay-starter-example](https://github.com/1-creator/relay-starter-example) fully documented .(If you are a beginner  you can begin practicing using this project due to its simplicity.It will help you get started with relay.It contains less boilerplate making the code easier to uderstand)
+ - [Relay-starter-example](https://github.com/1-creator/relay-starter-example) fully documented .(If you are a beginner  you can begin practicing using this project due to its simplicity.It will help you get started with Relay framework.The project contains less boilerplate making the code easier to uderstand)
  - [React-data-menu](https://github.com/dkozar/react-data-menu)
  - [Data-driven-carousel](https://github.com/JasonShin/React-Carousel-Data-Driven)
  - [data-driven-motion](https://github.com/tkh44/data-driven-motion) 
