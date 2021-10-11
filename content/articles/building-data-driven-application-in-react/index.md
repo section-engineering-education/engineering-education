@@ -82,11 +82,13 @@ by passing it  as a prop on the
 
       <span className="title">{this.props.title}</span>
 
-Now call our Header component three times by addding the following code inside div in our App component.
-
+Now call our Header component three times by addding the following code inside div in our App component as shown below.
+  
+            <div>
             <Header  title="Profile" />
             <Header title="Settings" />
               <Header title="Chat" />
+              </div>
 
 Don't forget to call react.Dom to place your app on the page
 
