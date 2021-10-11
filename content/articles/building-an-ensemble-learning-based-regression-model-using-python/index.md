@@ -1,7 +1,23 @@
-﻿### Building an Ensemble Learning Based Regression Model Using Python
+﻿---
+layout: engineering-education
+status: publish
+published: true
+url: /building-an-ensemble-learning-based-regression-model-using-python/
+title: Building an Ensemble Learning Based Regression Model Using Python
+description: The objective of this tutorial is to help the reader build an ensemble learning based regression model using the python programming language.
+author: adhinga-fredrick
+date: 2021-10-11T00:00:00-13:00
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /building-an-ensemble-learning-based-regression-model-using-python/hero.jpg
+    alt: An Ensemble Learning Based Regression Model Example Image
+---
 
 Machine learning models are always evaluated based on their performance using specific metrics like; accuracy, precision, Mean Squared Error(MSE) etc. Each type of machine learning problem has its own evaluation metrics.
-Building high performance models (models with low errors) therefore, depends on how good the evaluation metric score is.
+<!--more-->
+Building high performance models (models with low errors) therefore, depends on how good the evaluation metric score is. In this tutorial, we will be building a performance driven linear regression model using ensemble learning.
 
 ### Prerequisites
 
@@ -12,8 +28,6 @@ To follow through the tutorial, you need to:
 3. Know basics of Machine Learning
 
 ### Introduction
-
-In this tutorial, we will be building a performance driven linear regression model using ensemble learning.
 
  **Linear regression** is a statistical method of modeling the relationship between independent variables (x) and dependent variables (y). It uses independent variables (features) to predict dependent variables (target).
 
