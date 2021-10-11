@@ -25,9 +25,9 @@ The geodatabase is a database that stores spatial data. It allows users to creat
 
 ### Table of content
 - [Prerequisites](#prerequisites)
-- [Database](#database)
-- [Saving Coordinates](#saving-coordinates)
-- [Displaying Coordinates](#displaying-coordinates)
+- [Building the database](#building-the-database)
+- [Saving the Coordinates](#saving-the-coordinates)
+- [Displaying Coordinates](#displaying-the-coordinates)
 - [Conclusion](#conclusion)
 - [Further Reading](#further-reading)
 
@@ -124,7 +124,7 @@ db.create_all()
 exit()
 ```
 
-## Saving the coordinates
+### Saving the coordinates
 Users can submit their coordinates by filling up a form and uploading a `geojson` file or `shapefile`, so let us create the submission endpoint. However, first, let us add the snippet below to our `app.py` file.
 
 ```py
@@ -173,7 +173,7 @@ HTML pages are stored in the templates folder, so let Us create a new folder cal
 </form>
 ```
 
-## Displaying the coordinates
+### Displaying the coordinates
 Create another route that will display all the saved coordinates. The coordinates are saved as binary, so we will use `geoalchemy2 to_shape` to convert it to readable coordinates. 
 
 We will import `to_shape` and use these snippets to retrieve all our coordinates.
