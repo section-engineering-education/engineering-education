@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/how-to-create-a-geoserver-and-geodatabase/hero.jpeg
+  - url: /engineering-education/how-to-create-a-geoserver-and-geodatabase/hero.jpg
     alt: Creating a Geoserver and a Geodatabase Image
 ---
 
