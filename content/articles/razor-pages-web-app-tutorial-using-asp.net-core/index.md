@@ -5,7 +5,6 @@ Razor Pages are a server-side, page-focused framework that allows for the creati
 If you have been looking for a better and simpler way to create a razor pages web app, using ASP.NET Core would be the best for you. This focuses on how one could come up with a working razor page web app.
 
 ### Table of contents
-
 - [Introduction](#introduction)
 - [Table of contents](#table-of-contents)
 - [Prerequisites](#prerequisites)
