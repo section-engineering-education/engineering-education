@@ -1,5 +1,22 @@
-In this tutorial, we will learn how to create a geospatial server and database. The server will power the database and serve as the gateway between the users and the spatial database. 
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-create-a-geoserver-and-geodatabase/
+title: Creating a Geoserver and a Geodatabase
+description: In this tutorial, we will learn how to create a geospatial server and database. The server will power the database and serve as the gateway between the users and the spatial database. 
+author: isaiah-olatunbosun
+date: 2021-10-12T00:00:00-15:36
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/how-to-create-a-geoserver-and-geodatabase/hero.jpeg
+    alt: Creating a Geoserver and a Geodatabase Image
+---
+
+In this tutorial, we will learn how to create a geospatial server and database. The server will power the database and serve as the gateway between the users and the spatial database. 
+<!--more-->
 Spatial data is any data that contains the longitude and latitude of any location. Thus, they provide information about a physical location . Spatial data is also referred to as Geographic Information System(GIS). 
 
 Geoserver is a server that processes spatial data and also powers a geodatabase. It serves as the link between geodatabase and users by giving them access to spatial data.
