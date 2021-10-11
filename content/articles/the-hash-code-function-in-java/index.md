@@ -41,12 +41,12 @@ To address this issue, Java incorporates a range of data structures. Hash tables
 Hash table collections use the hashCode() method to compute the hash value of a given key. Then they store the data using this value internally, making access operations significantly faster.
 
 ### Understanding How hashCode() Works
-The `hashCode()` just returns the hashing algorithm's resulting integer value. Objects with a similar hash code (according to equals()) must be equal. It isn't necessary to return separate hash codes for various items in a hash function.
+The `hashCode()` just returns the hashing algorithm's resulting integer value. Equals() indicates that objects with the very same hash code are equal. It isn't necessary to return separate hash codes for various items in a hash function.
 >The following is stated in the general hashCode() function.
-- As long as no data utilized in equals evaluations on the object is modified, hashCode() must return the same value each time it is called on the same object during the runtime of a Java application. In other words, this value does not have to be the same from one application execution to another.
+- During the runtime of a Java program, hashCode() shall return the same result each time it is invoked on the same object as long as no data is being used equals evaluations on the item has been changed by the call. In other words, this value does not have to be the same from one application execution to another.
 - Two objects that satisfy the equalsObject test have the same `hashCode` value if and only if they are equal in some other way.
 - If the equals `java.lang.Object` function determines that two objects are not equal, then invoking the hashCode technique on each of the two elements does not have to return distinct integer values. Integer results for different objects produce distinct hash tables, but developers ought to be aware of this.
-> Object's `hashCode()` method returns separate integers for different objects to the extent that it's practical. However, the `JavaTM` programming language does not require this implementation approach, which is more commonly used to transform an object's internal reference to an integer.
+> To the degree that it is feasible, the 'hashCode()' method of an object returns distinct numbers for each of the objects it contains. The 'JavaTM' programming language, on the other hand, does not need this implementation method, which is more frequently employed to convert an object's internal reference to an integer in other programming languages.
 
 ### A Naive hashCode() Implementation
 Creating a nave hashCode() implementation that complies with the contract outlined above is a simple task.
@@ -109,10 +109,10 @@ public int codeHash()
 
 ```
 **Explanation**
-Fundamentally, this hashing algorithm is superior to the previous one. As a result, the object's hash code is computed by simply multiplying the different hash codes of the userName, address, and phoneNo. fields, respectively. As long as we maintain consistency with the equals() method, this will be a good hashCode() implementation.
+Fundamentally, this hashing algorithm is superior to the previous one. By multiplying userName, address, and phoneNo. fields' hash codes, the object's hash code may be calculated. A decent hashCode() implementation is one that uses the equals() function consistently.
 
 #### Implementation of Standard hashCode()
-Upon utilizing better hashing methods, hash tables perform better when generating hash codes. 
+The performance of hash tables for creating hash codes may be improved by using more efficient hashing techniques. 
 
 To make computational hash codes more unique, let's look at an example of a standard approach that uses two prime numbers.
 
@@ -134,7 +134,7 @@ Objects.hash(userName, adress)
 ```
 This concept can be shown by utilizing different IDEs. We can opt to use the `IntelliJ IDE` or use `Eclipse IDE`.
 
-Using IntelliJ will produce the following outcome:
+With the help of `IntelliJ`, you will be able to achieve the following results:
 ```Java
 @Override
 public int codeHash() 
@@ -158,7 +158,7 @@ public int codeHash() {
     return outcome;
 }
 ```
-We may develop an efficient hashCode() implementation employing Lombok instead of the IDE-based mentioned methods above.
+The Lombok programming language may be used to create a more efficient hashCode() implementation, rather than the IDE-based techniques described above.
 > In this situation, `Lombok-maven` must be included in the `pom. xml`dependencies:
 
 Adding `@EqualsAndCodeHash` to the code class is all that is required from here on out.
@@ -170,7 +170,7 @@ public class Code
     //In this section, the concepts of fields and procedures will be examined.
   }
 ```
-The `commons-lang Maven dependency can be included in the pom file to request that `Apache Commons Lang` generate a hashCode() implementations for us.
+When the pom file is included with the `commons-lang Maven` dependency, we can request that the `Apache Commons Lang` generate a hashCode() implementation for us, and this will be done.
 
 ```XML
 <dependency>
