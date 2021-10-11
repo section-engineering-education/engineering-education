@@ -49,9 +49,6 @@ Lets build a react header  with two components which are;
                 className="search"
                 placeholder="Search ..."
               />
-
-              <div className="fa fa-search searchIcon"></div>
-            </div>
           );
         }
       }
@@ -71,9 +68,13 @@ Lets build a react header  with two components which are;
 
 We use Header component by placing it in App component as shown above .
 
-### Going data-driven
+### Going data-driven 
 
-Lets add some data in our Component . When we look at our [Header](https://codepen.io/1-creator/pen/qBXWVXd) as it is right now , the Header component only has profile as our title.
+So lets start adding a search icon in our code below our header component above our closing tags.
+
+                <div className="fa fa-search searchIcon"></div>
+            </div>
+Lets add some data in our Component . When we look at our [Header](https://codepen.io/1-creator/pen/qBXWVXd) as it is right now , the Header component only has profile as our title and it is a little bit plain too.
 
 This means we can not set the title to anything else . it would be satisfactory for us to reuse it in different elements/components of our page, the title of Profile isn't suitable for every use . subsequently we could tell react we want for you to set the title to something else like settings, chat e.t.c. we could exchange our    
                 
