@@ -238,3 +238,6 @@ This tutorial taught us how to create a geospatial server and database that save
 - [Python Virtual Environment](https://www.section.io/engineering-education/introduction-to-virtual-environments-and-dependency-managers/) 
 - [Flask Jinja Templating](https://hackersandslackers.com/flask-jinja-templates/) 
 - [Github Repository](https://github.com/isaiaholadapo/geoserver-and-geodatabase)
+
+---
+Peer Review Contributions by: [Jerim Kaura](/engineering-education/authors/jerim-kaura/)
