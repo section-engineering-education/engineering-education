@@ -36,9 +36,9 @@ Animation in Matlab follows a workflow like that of creating a flipbook. The ste
 3. Take a snapshot of the scenario.
 4. Advance time `t_k` to `t_(k+1)`.
 
-Then, you go back and repeat steps 2 to 4 and keep going through building one frame or one page in the flipbook one at a time and saving it to the large flipbook. This means that the last step is:
+We will then, Go back and repeat steps 2 to 4 and keep going through building one frame or one page in the flipbook one at a time and saving it to the large flipbook. This means that the last step is:
 
-6. Saving the movie.
+5. Saving the movie.
 
 ### Matlab functions that can be important at each of the steps
 ### 1. Run a simulation or generate a data
@@ -87,6 +87,7 @@ clear all
 
 Now let us work through the five steps. As we said earlier, the time is going to go through from 0 to `2*pi` and we will use 100 points for this. 
 
+### Step 1
 To generate 100 equally spaced points, we use the `linspace` function. We also define our `x`, `y`, and `z` positions.
 
 ```matlab
@@ -97,6 +98,7 @@ y = 2*sin(t);
 z = t;
 ```
 
+### Step 2
 We then start a new figure using `figure` functions and use a `for` loop to extract data at the current time.
 
 ```matlab
@@ -117,6 +119,7 @@ So that is the current location of the particle. Let us go ahead and plot this c
 %plot the current location of the particle
 plot3(x_k, y_k, z_k, 'go', 'LineWidth', 3, 'MarkerSize', 15)
 ```
+### Step 3
 
 To draw the entire trajectory, we execute the code below:
 
@@ -147,6 +150,7 @@ We noticed from the image above that Matlab plotted all the points because we ha
 
 Our expectation is not to plot all the points but to have a point moving on the spiral. Now let us wipe the slate clean so that every time we are plotting, it is on a blank figure. 
 
+### Step 4
 To do this, add the code below after the `k=length(t)` so that we have:
 
 ```matlab
@@ -181,7 +185,6 @@ Now it seems reasonable. Or, we can use the `pause` function. This function take
 ```matlab
 pause(0.2)     %It pauses for 0.2 seconds and continues
 ```
-
 What we are doing now is watching flipbooks occur one time on our screen. This isn't exactly what we would like to do here because we want to save the flipbook. 
 
 Let us call the `getframe` function to force the graphics to render and return a bitmap or matrix of the values of the current figure. This function works as the `drawnow` function. 
@@ -197,6 +200,7 @@ end
 
 When we run this program, every time it hits a point, it will grab the current picture and jam it into the variable `movieVector`. Thus, you will see a vector `movieVector` in the workspace when the program has completed running.
 
+### Step 5
 The last step is saving the movie. We have a movie vector which is all our flipbook. We need to print it out as an actual `.mp4` file. 
 
 We use a `videoWriter` function that Matlab uses to do a lot of video writing operations. The argument for this function is the name of the movie and, in our case, `curve`.
