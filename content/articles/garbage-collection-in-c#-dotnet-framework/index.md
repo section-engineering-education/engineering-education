@@ -6,8 +6,8 @@ url: /garbage-collection-in-c#-dotnet-framework/
 title: Garbage Collection in C#.NET Framework
 description: In this article, the reader will be walked through garbage collection in C# Dotnet framework.
 author: elijah-maina
-date: 2021-09-28T00:00:00-00:30
-topics: [Containers]
+date: 2021-10-12T00:00:00-15:26
+topics: []
 excerpt_separator: <!--more-->
 images:
 
@@ -203,3 +203,5 @@ Garbage collection is enforced into the system utilizing the above approach in t
 ### Conclusion
 We learned about the garbage collector (GC) in this tutorial, which is autonomous memory management. We have also looked at how the garbage collector manages an application's memory allocation and release. This means that you do not have to create code to handle memory management duties if you deal with managed programs.
 
+---
+Peer Review Contributions by: [Jerim Kaura](/engineering-education/authors/jerim-kaura/)
