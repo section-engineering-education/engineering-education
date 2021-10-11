@@ -33,26 +33,29 @@ Lets build a react header  with two components which are;
 
 #### Header component
     class Header extends React.Component {
-       render() {
-    return (
-      <div className="header">
-        <div className="menuIcon">
+        render() {
+          return (
+            <div className="header">
+      <div className="menukey">
           <div className="dashTop"></div>
           <div className="dashBottom"></div>
           <div className="circle"></div>
         </div>
-        <span className="title">Profile</span>
 
-         <input
-          type="text"
-          className="searchInput"
-          placeholder="Search ..." />
+             <span className="title">Profile</span>
 
-        <div className="fa fa-search searchIcon"></div>
-      </div>
-      )
-     }
-    }
+              <input
+                type="text"
+                className="search"
+                placeholder="Search ..."
+              />
+
+              <div className="fa fa-search searchIcon"></div>
+            </div>
+          );
+        }
+      }
+
 
 
 #### App Component 
