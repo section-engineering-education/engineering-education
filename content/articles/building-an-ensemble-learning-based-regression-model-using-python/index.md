@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /building-an-ensemble-learning-based-regression-model-using-python/
 title: Building an Ensemble Learning Based Regression Model Using Python
-description: The objective of this tutorial is to help the reader build an ensemble learning based regression model using the python programming language.
+description: This tutorial aims to help the reader build an ensemble learning-based regression model using the python programming language.
 author: adhinga-fredrick
 date: 2021-10-11T00:00:00-13:00
 topics: [Machine Learning]
@@ -15,31 +15,28 @@ images:
     alt: An Ensemble Learning Based Regression Model Example Image
 ---
 
-Machine learning models are always evaluated based on their performance using specific metrics like; accuracy, precision, Mean Squared Error(MSE) etc. Each type of machine learning problem has its own evaluation metrics.
+Machine learning models are always evaluated based on their performance using specific metrics like; accuracy, precision, Mean Squared Error(MSE), etc. Each type of machine learning problem has its evaluation metrics.
 <!--more-->
-Building high performance models (models with low errors) therefore, depends on how good the evaluation metric score is. In this tutorial, we will be building a performance driven linear regression model using ensemble learning.
+Building high-performance models (models with low errors), therefore, depends on how good the evaluation metric score is. In this tutorial, we will be building a performance-driven linear regression model using ensemble learning.
 
 ### Prerequisites
+To follow through the tutorial, you need:
 
-To follow through the tutorial, you need to:
-
-1. Know the basics of Python
-2. Have a [Kaggle](https://www.kaggle.com/) account
-3. Know basics of Machine Learning
+1. To know the basics of Python.
+2. To have a [Kaggle](https://www.kaggle.com/) account.
+3. To know the basics of Machine Learning.
 
 ### Introduction
-
  **Linear regression** is a statistical method of modeling the relationship between independent variables (x) and dependent variables (y). It uses independent variables (features) to predict dependent variables (target).
 
-**Ensemble learning** is a machine learning technique that seeks to achieve better predictive performance of model by combining decisions from different models.
+**Ensemble learning** is a machine learning technique that seeks to achieve a better predictive model performance by combining decisions from different models.
 
 For our model's evaluation, we will be using RMSE (Root Mean Squared Error).
 
-> **NB:** Regression problems cannot be measured using accuracy metric since the goal is to measure how close the predicted values is to the expected values and not to evaluate how correct the prediction is. Hence we use errors to evaluate our models.
+> **NB:** Regression problems cannot be measured using accuracy metric since the goal is to measure how close the predicted values are to the expected values and not to evaluate how correct the prediction is. Hence we use errors to evaluate our models.
 
 ### Setting up your environment
-
-Before we start building our model, we will first go to Kaggle and create a new **notebook** and rename it to **Create_Folds**.
+Before building our model, we will first go to Kaggle and create a new **notebook** and rename it to **Create_Folds**.
 ![notebook](engineering-education/building-an-ensemble-learning-based-regression-model-using-python/notebook.jpg)
 
 After that, [download](https://www.kaggle.com/c/30-days-of-ml/data) the data from Kaggle and add it to your environment using the **Add Data** button and upload the downloaded data as **Dataset**.
@@ -48,14 +45,12 @@ After that, [download](https://www.kaggle.com/c/30-days-of-ml/data) the data fro
 >**HINT:**  To flawlessly upload your data to Kaggle, compress the datasets.
 
 ### Creating k-folds
-
 Once done with setting up the environment, we will move on to creating k-folds for our dataset.
-Cross-validation is a validation technique used to evaluate machine learning models on a finite dataset.  It is quite popular as it is easier to understand and results to less biased predictions than other methods like train/test split.
+Cross-validation is a validation technique used to evaluate machine learning models on a finite dataset.  It is quite popular as it is easier to understand and results in less biased predictions than other methods like train/test split.
 
-It is also best that whenever you're starting with a machine learning problem, you create folds that you'll be using throughout the modeling process.
+It is also best that you create folds that you'll be using throughout the modeling process whenever you're starting with a machine learning problem.
 
 #### Importing the necessary libraries
-
 Before proceeding, we need to import the following necessary libraries.
 
 ```python
@@ -64,17 +59,15 @@ import pandas as pd
 from sklearn import model_selection
 ```
 
-#### Read data
-
+#### Reading the data
 ```python
 train_data = pd.read_csv('/kaggle/input/Dataset/train.csv')
 test_data = pd.read_csv('/kaggle/input/Dataset/test.csv')
 submission = pd.read_csv('/kaggle/input/Dataset/sample_submission.csv')
 ```
 
-#### Creating folds
-
-Let's create a new column with the name *kfold* on the last column as shown below.
+#### Creating the folds
+As shown below, let's create a new column with the name *kfold* on the last column.
 
 ```python
 train_data['kfold'] = -1
@@ -95,18 +88,16 @@ After running the cell above, we will output the *new* csv file (`train_kfolds.c
 train_data.to_csv('train_kfolds.csv', index=False)
 ```
 
-Here's a [Kaggle notebook](https://www.kaggle.com/adhingafredrick/create-kfolds) which you can copy and edit.
+Here's the [Kaggle notebook](https://www.kaggle.com/adhingafredrick/create-kfolds), which you can copy and edit.
 
 ### Building a regression model
-
-After creating the kfolds, we will proceed to download the `train_kfolds.csv` from the output data on our **Create_kFolds** notebook.
+After creating the kfolds, we will download the `train_kfolds.csv` from the output data on our **Create_kFolds** notebook.
 
 We'll then follow the same steps on [Setting up your environment](#setting-up-your-environment) to create a new notebook called **RegressionModel** and upload the **Dataset** and **`train_kfolds.csv`** data.
 
 After we're done with the environment setup, we'll proceed to build our model.
 
 #### Importing necessary libraries
-
 To build our regression model, we need to import the following libraries:
 
 ```python
@@ -121,8 +112,7 @@ from  xgboost  import  XGBRegressor
 
 Once done, we will then proceed to read our data.
 
-#### Read data
-
+#### Reading the data
 ```python
 data = pd.read_csv('/kaggle/input/trainfolds/train_kfolds.csv')
 test_data = pd.read_csv('/kaggle/input/Dataset2/test.csv')
@@ -130,8 +120,7 @@ submission = pd.read_csv('/kaggle/input/Dataset2/sample_submission.csv')
 ```
 
 #### Feature selection
-
-Here we will select the useful features from our dataset and remove the not so useful/ impactful features. In this dataset, the not so useful features would be; `id`, `target`, and `kfold`.
+We will select the useful features from our dataset and remove the not so useful/ impactful features. The not so useful features in this dataset would be; `id`, `target`, and `kfold`.
 
 To select the useful features, run the following block of code:
 
@@ -141,8 +130,7 @@ object_cols = [col for col in useful_features if "cat" in col]
 test_data = test_data[useful_features]
 ```
 
-#### Modelling
-
+#### Modeling
 To build our model, we will run the following block of code:
 
 ```python
@@ -174,13 +162,11 @@ for fold in range(5):
     print(fold, mean_squared_error(yvalid, preds_valid, squared=False))
 ```
 
-For each fold, we will encode the data and then train the model using XGBoost (extreme Gradient Boosting) which is an ensemble learning technique to boost the performance of our model.
-XGBoost is a regularized boosting technique that provides high predictive power and is faster compared to other boosting techniques.
-We will then evaluate each fold individually and print out the results of the model.
+For each fold, we will encode the data and then train the model using XGBoost (Extreme Gradient Boosting), an ensemble learning technique to boost the performance of our model.
+XGBoost is a regularized boosting technique that provides high predictive power and is faster than other boosting techniques. We will then evaluate each fold individually and print out the results of the model.
 
 #### Model evaluation
-  
- After individually evaluating each fold, we will now evaluate our model's performance by getting mean of the predictions on our test data. To do this, use the following code block:
+After individually evaluating each fold, we will now evaluate our model's performance by getting the mean predictions on our test data. To do this, use the following code block:
 
 ```python
 preds = np.mean(np.column_stack(final_predictions), axis=1)
@@ -193,11 +179,10 @@ submission.target =preds
 submission.to_csv("submission1.csv", index=False)
 ```
 
->**Bonus:** You can submit a late submission to 30 days ML Kaggle challenge and see how your model peforms i.e If you had signed up for the challenge earlier.
+>**Bonus:** You can submit a late submission to 30 days ML Kaggle challenge and see how your model performs, i.e., if you had signed up for the challenge earlier.
 
 ### Hyperparameter optimization
-
-In this process, we'll be fine-tuning and optimizing our model's algorithm paremeters until we achieve the desired result.
+In this process, we'll fine-tune and optimize our model's algorithm parameters until we achieve the desired result.
 A few common XGBoost parameters with a large effect on the model perfomance include; **n_jobs**, **max_depth**, **learning_rate**, **n_estimators**, **colsample_bytree**, and **subsample**.
 
 To fine-tune our model, add the following changes to the XGBoost regressor:
@@ -207,13 +192,12 @@ model = XGBRegressor(random_state = fold, n_jobs=5, learning_rate =0.1, subsampl
                          max_depth = 5, min_child_weight = 1, gamma = 0, scale_pos_weight = 1)
 ```
 
-Read more on this detailed [hyperparameter tuning article](https://www.analyticsvidhya.com/blog/2016/03/complete-guide-parameter-tuning-xgboost-with-codes-python/) that goes beyond the scope of this tutorial.
+Read more on this detailed [hyperparameter tuning](https://www.analyticsvidhya.com/blog/2016/03/complete-guide-parameter-tuning-xgboost-with-codes-python/) article that goes beyond the scope of this tutorial.
 
-Here's a Kaggle [notebook](https://www.kaggle.com/adhingafredrick/regressionmodel) for our regression model.
+Here's the Kaggle [notebook](https://www.kaggle.com/adhingafredrick/regressionmodel) for our regression model.
 
 ### Conclusion
-
-Building a performance-driven model is not a very easy task. It involves refining our model again and again until we get the desired outcome. Either way mastering the art of modeling can be very rewarding. Whether it is in a machine learning or a data science project or a competition.
+Building a performance-driven model is not a very easy task. It involves refining our model again and again until we get the desired outcome. Either way mastering the art of modeling can be very rewarding, whether it is in a machine learning or a data science project, or a competition.
 
 ---
 Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
