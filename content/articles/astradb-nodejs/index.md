@@ -1,6 +1,6 @@
 Apache cassandra is distributed No SQL database management system. To ensure reliablility at scale, Apache cassandra relies on replication and partitioning of its infrastructure. However, this form of cloud-native development is normaly complicated. 
 
-This article focuses on the basics of using Apache Cassandra and Astra DB. We will perform CRUD operations on a blog database using Node.js and Datastax's document API.
+This article focuses on the basics of using Apache Cassandra and Astra DB. We will perform CRUD operations on a blog database using Node.js and Datastax's document API. We will create tables, read database records, perform updates, and deletions.
 
 
 ### Prerequisites
@@ -32,11 +32,16 @@ Datastax's Astra DB is distributed on different regions. Before completing the d
 ![cassandra-demo](image4.png)
 
 
+### Insert data to the database
+
+Since we have no interface created, we will manually use curl command to insert data. When we create a Cassandra collection, it automatically exposes a REST or GraphQL API as an endpoint where we can interact with data from our database. We will utilize the document API gateway.
+  
+
 ### `Node.js` setup
 
-
+DataStax uses a Stargate API gateway to connect from Node.js application. 
 
 ### Conclusion
-Being open source, the Cassandra is a popular database due to its ability to maintain seamless scalability and consistency in a distributed infrastructure. Combining this technical features with DataStax stargate API gateway gives us the ability to develop a serverless database with zero configuration.
+Being open source, the Cassandra is a popular database due to its ability to maintain seamless scalability and consistency in a distributed cloud infrastructure. Combining this technical features with DataStax stargate API gateway gives us the ability to develop a serverless database with zero configuration. The database is serverless which has a great free tier and developer experience.
 
 I hope you enjoy this article.
