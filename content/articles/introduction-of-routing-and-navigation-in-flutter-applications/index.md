@@ -13,7 +13,7 @@ Navigating in flutter apps, all you have to do is use the default navigation tha
 - Navigator 2.0 is also referred to as the router.
 - DefaultTransitionDelegate helps navigator to decide the transition of the screens.  
 ### Definition of Navigator and Routes as used in Flutter
-- Navigator is a component that manages a stack made of routes. This feature allows the user to transit from one screen to another. Navigator performs these transitions of the screen either by declarative or Imperative Api or Navigator. pages. Navigator.push and Navigator.pop are the most common method used. Stack of routes means that once you navigate from one page to another you can always go back to the previous page.
+- Navigator is a component that manages a stack made of routes. This feature allows the user to transit from one screen to another. Navigator performs these transitions of the screen either by declarative Application Programming Interface, Imperative Application Programming Interface or Navigator. Navigator.push and Navigator.pop are the most common method used. Stack of routes means that once you navigate from one page to another you can always go back to the previous page.
 - Route -A route defines the navigation of the app. It tells which page the navigator takes the user to. Routes made of screens and pages.
 To navigate through apps screen,one can navigate using Navigator.push(),navigator.pop().
 ### Prerequisites
@@ -60,7 +60,7 @@ Take a case for an application used by users to stream songs or videos. When a u
 
 For our application, we will have 3 screens. Navigator.push used navigate to the next page, Navigator.pop used to return to the previous page.
 1. Create a new flutter application
-  Open your visual code. On the menu bar click on `view` then `command palette` then click on `new flutter project`. Specify the location where to create your project then specify the name of your project. You can also create using the vs code terminal by typing 
+  Open your visual code. On the menu bar click on `view` then `command palette` then click on `new flutter project`. Specify the location where to create your project then specify the name of your project. 
 ```cmd
 flutter create name_of_project 
 ```
@@ -93,7 +93,7 @@ class ThisApp extends StatelessWidget {
 
 ```
 3. Coding firstpage.
-  Create firstscreen.dart . This file represents the first page of our application. It contains a class that has an app bar, text, and button to navigate to the second screen. This case uses a navigator. push to navigate to the next page.
+  Create firstscreen.dart . This file represents the first page of our application. It contains a class that has an app bar, text, and button to navigate to the second screen. This case uses navigator. push to go to the next page.
 ```dart
 import 'allfiles.dart';
 class FirstScreen extends StatelessWidget {
@@ -126,7 +126,7 @@ class MyDetails extends StatelessWidget {
             onPressed: () {
  Navigator.pushNamed(context,Secondscreen.routeName);
             },
-            child: const Text('Go to Second Screen'),
+            child: const Text('Navigate Second Screen'),
           ),
         ],
       ),
@@ -149,7 +149,7 @@ class Secondscreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
- const Text('This is the Second Screen'),
+ const Text('This is Second Screen'),
  const SizedBox(
               height: 30,
             ),
