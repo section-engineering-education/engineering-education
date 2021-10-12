@@ -205,7 +205,9 @@ model = XGBRegressor(random_state = fold, n_jobs=5, learning_rate =0.1, subsampl
                          max_depth = 5, min_child_weight = 1, gamma = 0, scale_pos_weight = 1)
 ```
 
-Once you run the above code, you'll see our model's result change a little bit. You can continue changing the parameters until it meets the desired goal. For example you can target a value like `0.7100` to measure you models's success.
+Once you run the above code, you'll see our model's result improve slightly better than our first example. You can continue changing the parameters until it meets the desired goal. For example you can target a value like `0.7100` to measure you models's success.
+
+You can also look at scikit-learn's [GridSearchCV](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html) or [Optuna](https://optuna.org/#code_XGBoost) which makes it easier to fine-tune your model.
 
 Read more on this detailed [hyperparameter tuning](https://www.analyticsvidhya.com/blog/2016/03/complete-guide-parameter-tuning-xgboost-with-codes-python/) article that goes beyond the scope of this tutorial.
 
