@@ -1,17 +1,4 @@
 ### ORGANIZING EXECUTION OF PROGRAMS USING TIMER OBJECT IN MATLAB
-### Table of content
-- ### [Introduction](#introduction)
-- ### [Prerequisites](#prerequisites)
-- ### [Creating timer object](#Creating-timer-object)
-- ### [Dispaying message using timer object](#Dispaying-message-using-timer-object)
-- ### [Finding timer objects properties](#Finding-timer-objects-properties)
-- ### [Timer properties](#Timer-properties)
-- ### [Finding all visible timer object in the memory](#Finding-all-visible-timer-object-in-the-memory)
-- ### [Specifying timer object starting time](#Specifying-timer-object-starting-time)
-- ### [Deleting all existing timer objects in the memory](#Deleting-all-existing-timer-objects-in-the-memory)
-- ### [Conclusion](#conclusion)
-
-### Introduction
 A timer is an automated mechanism for activating a device or a process at a predetermined time or time intervals. Matlab provides timer objects that can be used to organize the execution of Matlab commands. 
 
 Timers enables control of an events' sequences at fixed intervals and program running time. In this article I will discuss how one can create a timer object, start the timmer running and specify the processes to be performed when the amount of time specified by the timmer object elapses, stopping and deleting the timer objects from the memory. 
@@ -19,12 +6,19 @@ Timers enables control of an events' sequences at fixed intervals and program ru
 Timer helps in keeping track of a program hence becomes handy when tracing for troubleshooting. Timers can be used in real_time execution of programs, making of reminder programs and areas where execution of programs according to priorities are required.
 
 ### prerequsites
-You'll need the following for this tutorial;
+For this tutorial, you'll need to have:
+- [Matlab](https://www.mathworks.com/login?uri=%2Fdownloads%2Fweb_downloads) installed.
+- [Basic](/engineering-education/getting-started-with-matlab/) understanding of Matlab.
 
-`1.` [Matlab](https://www.mathworks.com/login?uri=%2Fdownloads%2Fweb_downloads) installed.
-
-`2.` [Basic](engineering-education/getting-started-with-matlab/) understanding of Matlab.
-
+### Table of contents
+- [Creating timer object](#creating-timer-object)
+- [Displaying message using timer object](#displaying-message-using-timer-object)
+- [Finding timer objects properties](#finding-timer-objects-properties)
+- [Timer properties](#timer-properties)
+- [Finding all visible timer object in the memory](#finding-all-visible-timer-object-in-the-memory)
+- [Specifying timer object starting time](#specifying-timer-object-starting-time)
+- [Deleting all existing timer objects in the memory](#deleting-all-existing-timer-objects-in-the-memory)
+- [Conclusion](#conclusion)
 
 ### Creating timer object
 This is the process of making a timer object which will be used in executing the commands. Timer objects can support various properties and functions controlling their behavior. A timer is created using the function `timer`.
