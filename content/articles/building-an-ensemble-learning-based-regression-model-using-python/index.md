@@ -185,6 +185,13 @@ submission.target =preds
 submission.to_csv("submission1.csv", index=False)
 ```
 
+To see an output of our submission file, run the following code:
+
+```python
+sub = pd.read_csv('/kaggle/output/submission1.csv')
+sub
+```
+
 >**Bonus:** You can submit a late submission to 30 days ML Kaggle challenge and see how your model performs, i.e., if you had signed up for the challenge earlier.
 
 ### Hyperparameter optimization
@@ -197,6 +204,8 @@ To fine-tune our model, add the following changes to the XGBoost regressor:
 model = XGBRegressor(random_state = fold, n_jobs=5, learning_rate =0.1, subsample=0.8,
                          max_depth = 5, min_child_weight = 1, gamma = 0, scale_pos_weight = 1)
 ```
+
+Once you run the above code, you'll see our model's result change a little bit. You can continue changing the parameters until it meets the desired goal. For example you can target a value like `0.7100` to measure you models's success.
 
 Read more on this detailed [hyperparameter tuning](https://www.analyticsvidhya.com/blog/2016/03/complete-guide-parameter-tuning-xgboost-with-codes-python/) article that goes beyond the scope of this tutorial.
 
