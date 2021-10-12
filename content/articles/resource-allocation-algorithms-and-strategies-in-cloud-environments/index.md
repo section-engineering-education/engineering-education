@@ -4,6 +4,21 @@ But the cost of cloud resources has emerged as a common concern among these comp
 
 This article digs deeper into resource allocation strategies in cloud computing and discusses resource allocation limitations in the cloud.
 
+### Table of contents
+- [Prerequisites](#prerequisites)
+- [Resource allocation strategies in the cloud](#resource-allocation-strategies-in-the-cloud)
+- [Dynamic resource allocation](#dynamic-resource-allocation)
+- [Linear scheduling strategy](#linear-scheduling-strategy)
+- [Ant Colony Optimization (ACO) Algorithm](#ant-colony-optimization-aco-algorithm)
+- [Particle Swarm Optimization Algorithm](#particle-swarm-optimization-algorithm)
+- [Limitations of resource allocation in the cloud](#limitations-of-resource-allocation-in-the-cloud)
+- [Conclusion](#conlusion)
+- [Further reading](#further-reading)
+
+### Prerequisite
+To understand this article better, you need to have a basic understanding of cloud computing. Have a look at introduction to cloud computing [here](/engineering-education/introduction-to-cloud-computing/). 
+
+
 ### Resource allocation strategies in the cloud
 
 Cloud computing provides businesses, clients and projects a computing environment for leasing resources on-demand. Both cloud consumers and suppliers have a goal to allocate cloud resources effectively and achieve profit. But these resources are often scarce, and cloud providers must leverage and distribute the resources within the limits of the cloud environment and meet the needs of cloud applications s that they complete their intended tasks.
@@ -25,9 +40,9 @@ There are different strategies to strike a balance between resource allocation a
 In this article, we will discuss the following four resource allocation strategies:
 
 - Dynamic resource allocation
-- Topology aware resource allocation (TARA)
+- Linear scheduling strategy
 - Particle swarm optimization
-- Ant colony optimization (ACO)
+- Ant colony optimization (ACO) Algorithm
 
 #### Dynamic resource allocation
 
@@ -43,13 +58,13 @@ Linear strategy algorithms compile user requests and sort them in different queu
 
 Resource utilization in cloud environments is based on memory usage, CPU usage, and throughput. Thus, the scheduling algorithm uses a server node to determine the most applicable virtualization method and an IaaS cloud environment to allocate resources that maximize resource usage and throughput. Linear strategy improves response time and reduces waiting time as opposed to scheduling tasks and resources separately.
 
-#### Ant Colony Optimization (ACO) Algorithm for Resource Allocation
+#### Ant Colony Optimization (ACO) Algorithm 
 
 ACO is an optimization algorithm inspired by techniques used by some ant species. At each interaction of ACO, these ants deposit an artificial hormone (pheromone) on the ground that acts as a mark to the best possible path for other colony members to follow. This is a powerful scheduling method in cloud computing.
 
 There are several challenges associated with scheduling in Cloud computing infrastructure. Examples include load balancing, budget, and computation time issues. ACO is a significant approach to solving load balancing problems. This approach achieves better resource usage and higher throughput by balancing the load in the cloud infrastructure and minimizing the computational time or makespan. In cloud computing, makespan represents the completion time of the last task to leave the system. ACO manages the usage of virtual machines, memory, and the number of clouds.
 
-#### Particle Swarm Optimization Algorithms
+#### Particle Swarm Optimization Algorithm
 
 The Particle Swarm Optimization algorithm (PSO) is made up of a set of particles characterized by positions and velocities. The velocity in a PSO particle represents the movement in the search space, which adjusts dynamically based on previous behavior. Particles continuously move within the search space in search of better points. They change their velocity and position to arrive at the solution space.
 
