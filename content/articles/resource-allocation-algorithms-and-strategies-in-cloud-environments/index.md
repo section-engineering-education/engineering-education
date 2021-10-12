@@ -6,11 +6,23 @@ This article digs deeper into resource allocation strategies in cloud computing 
 
 ### Resource allocation strategies in the cloud
 
-One of the most critical cloud computing components is the allocation of resources. Its efficiency directly influences the performance of the whole cloud environment. Resource allocation strategies involve integrating cloud provider activities for allocating and utilizing scarce cloud resources and meeting cloud application's needs so that they complete their intended tasks.
+Cloud computing provides businesses, clients and projects a computing environment for leasing resources on-demand. Both cloud consumers and suppliers have a goal to allocate cloud resources effectively and achieve profit. But these resources are often scarce, and cloud providers must leverage and distribute the resources within the limits of the cloud environment and meet the needs of cloud applications s that they complete their intended tasks.
+
+One of the most critical cloud computing components is the allocation of resources. Its efficiency directly influences the performance of the whole cloud environment. 
+ 
+Resource allocation faces major challenges, including cost efficiency, response time, reallocation, computational performance, and scheduling tasks. Consumers of cloud computing services target to accomplish tasks with the lowest costs possible. Resource allocation involves the provision of services and storage space for particular tasks given by users. This is accomplished using different resource allocation strategies. 
+
+Resource allocation strategies involve integrating cloud provider activities for allocating and utilizing scarce cloud resources and meeting cloud application's needs so that they complete their intended tasks.
 
 Cloud users and cloud providers, the two players in a cloud computing environment, have different goals to pursue. Cloud providers promote high resource utilization to maximize profits while users pursue an opposite goal. They want to cut down on cloud computing expenses without compromising their performance requirements.
 
-There are different strategies to strike a balance between resource allocation and resource cost and avoid over-provisioning or under-provisioning cloud resources. In this article, we will discuss the following four resource allocation strategies:
+There are different strategies to strike a balance between resource allocation and resource cost. These strategies also help to avoid:
+- Over-provisioning – this occurs when the available cloud resources exceed the demanded resources. 
+- Under-provisioning – this happens when the allocated resources fall short of the demanded resources. 
+- Resource fragmentation – this issue exists when the resources in the system are inaccessible. The resources available are not capable of assigning themselves to the required users. 
+- Resource contention – this is a condition where two or more applications in the cloud system intend to use the same computing resources in the same instance. 
+
+In this article, we will discuss the following four resource allocation strategies:
 
 - Dynamic resource allocation
 - Topology aware resource allocation (TARA)
