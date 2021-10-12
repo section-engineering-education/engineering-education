@@ -729,6 +729,6 @@ Check out the materials listed below to learn more about the topics discussed.
 - [How to build a Nextjs application with MongoDB and deploy on Vercel](/engineering-education/build-nextjs-with-mongodb-and-deploy-on-vercel/)
 - [Node.js versus Next.js - A React Approach](/engineering-education/node-versus-next-react-approach/)
 
-You can also access all the code snippets explained here from this [GitHub repository]().
+You can also access all the code snippets explained here from this [GitHub repository](https://github.com/Rose-stack/full-stack-nextjs-with-typescript-and-firebase-database).
 
 Happy coding.
