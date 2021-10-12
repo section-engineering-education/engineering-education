@@ -1,13 +1,28 @@
-### Introduction to functional Programming
+---
+layout: engineering-education
+status: publish
+published: true
+url: /functional-programming-with-java-lambda/
+title: Functional Programming with Java Lambda
+description: In this article, we will look at the concept of Functional programming in Java. we will also explain how a function can be used as a value.
+author: popoola-tunde
+date: 2021-10-12T00:00:00-10:03
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
-Java has been an Object-Oriented-programming language. It recommends encapsulation of all variables and methods of the class. That is, code blocks before Java 8 are done with classes and objects. The process of passing a behaviour to methods takes extra work and load. This is because we are passing a class with another attribute.
+  - url: /engineering-education/functional-programming-with-java-lambda/hero.jpg
+    alt: Functional Programming with Java Lambda Hero Image
+---
+Java is an object-oriented-programming language. It recommends encapsulation of all variables and methods of the class. 
+<!--more-->
+That is, code blocks before Java 8 are done with classes and objects. The process of passing a behaviour to methods takes extra work and load. This is because we are passing a class with another attribute.
 
 In java 8, Lambda was introduced to represent the Functional interface of java. This means that lambdas expression is the expression of functional interface. Lambda was introduced to implement behaviour code. This code makes it easier through the creation of a function that performs a specific task. Also, this code does not belong to any existing class thus treated as a value.
 
 At the end of the article, the reader will be able to understand java functional programming. assigning lambdas to an interface. working with lambda expression with a different number of parameters. the reader will also be able to convert the object or class method to lambdas function with less code. The reader will also understand the importance of using function programming
 
 ### Prerequisites
-
 The reader should have:
 
 At least a basic knowledge of Java.
@@ -113,7 +128,6 @@ public class LambdaAlgorithmTest {
 From the first line of the above code is an interface with the name Hello. Which declare a method called `sayHello`, the method takes one parameter of `greet`. Which is of type string and will return type string. The fourth line creates a new class called `LambdaAlgorithmTest` which contain the main method. The method declares a function `hello` with the type `Hello` interface. And the method function has one parameter of `(message)`with two-variable `str1` and `str2` which both are of type string. The first variable `str1` takes a value `Welcome`. And the second variable `str2` concatenate `str1` and `message` together. And the function return `str2`.
 
 ### Working with different Lambda parameter
-
 #### Lambda example that takes no parameter
 
 ```java
@@ -203,13 +217,11 @@ public class LambdaMultipleParameter {
 ```
 
 ### Lambda Stream Pipeline
-
 Streams are objects of classes that implement interface Stream. the stream is either from or one of the specific streams interfaces for preparing collections of int, long or double values. Stream enables you to act on the collection of elements with lambda.
 
 Lambda Stream pipeline is a sequence of processing steps from the data source(from collections). The pipeline performs two main operations which is an intermediate or terminal operation. Which formed a chain method calls.
 
 #### Intermediate and Terminal Operation
-
 An intermediate operation is an activity that plays out a particular task on a stream element and the result of the task form a new stream. Intermediate operations are also called Lazy operations. Which implies that the operation isn't performed until a terminal operation is called.
 
 | Operation  |                           Description                           |
@@ -228,8 +240,7 @@ An intermediate operation is an activity that plays out a particular task on a s
 | sorted     |         return elements of the stream in a given order          |
 | ---------- | :-------------------------------------------------------------: |
 
-# # # # The intermediate operation
-
+#### The intermediate operation
 A Terminal Operation starts processing of intermediate operation perform on stream and produce the result. Terminal operations are known as eager operations because they carry out the requested task when they are called.
 
 | Operation  |                           Description                           |
@@ -286,8 +297,7 @@ myList
 
 ```
 
-# # # The benefit of lambda in java
-
+### The benefit of lambda in java
 1. The interface used is directly identified by looking at each function
 
 2. Lambda expressions are readable without interpretation
@@ -303,13 +313,11 @@ myList
 7. Lambda make Parallel processing possible
 
 ### Conclusion
-
 In this article, we explain the concept of Functional programming in java. we also explain how use function can be used as a value. we able to explain how to create a functional program. And how to work with different parameters in lambda. Explaining the concept of a stream pipeline by given insight on the intermediate and terminal operation. the article also touches on the benefit of lambda functional programing.
 
 Note: the stream pipeline explain in this article is the introduction part of it, to learn more above stream
 
-### Refrence
-
+### References
 [java version 16 documentation on stream](http://https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/util/stream/package-summary.html)
 
 [JRebel](https://www.jrebel.com/blog/pros-and-cons-of-lambdas-in-java-8)
@@ -325,3 +333,6 @@ Note: the stream pipeline explain in this article is the introduction part of it
 Java - How to Program 10th Ed - Early Objects Version by Pual Deitel and Harvey Deitel
 
 Introduction to Java Programming, Comprehensive Version by Y. Daniel Liang of Armstrong Atlantic State University
+
+---
+Peer Review Contributions by: [Dawe Daniel](/engineering-education/authors/dawe-daniel/)
