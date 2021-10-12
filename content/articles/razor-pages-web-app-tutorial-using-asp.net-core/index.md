@@ -374,3 +374,6 @@ For the second and third files above to be effective, since they are already loa
 ### Conclusion
 
 From this tutorial, it is clear that razor pages are the default and easy to use framework for building server-side, dynamic, and data-driven web pages with clear separation of concerns.
+
+---
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
