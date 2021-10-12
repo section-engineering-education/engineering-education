@@ -1,3 +1,20 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /springboot-antmatchers/
+title: Getting started with Spring Boot security antmatchers
+description: In this article, we will discuss how to restrict access to certain API endpoints depending on the user roles using Spring security antmatchers
+author: damilare-jolayemi
+date: 2021-10-12T00:00:00-00:00
+topics: [API]
+excerpt_separator: <!--more-->
+images:
+
+ - url: /engineering-education/springboot-antmatchers/hero.png
+   alt: Getting started with Spring Boot security antmatchers
+---
+
 ### How to set up permissions to URL using the Springboot Ant-Matcher
 As a backend developer, the API you build would typically be for consumption by other applications or services. The sensitivity of the data carried by an application varies from application to application. Hence, it is ideal that only authenticated users have access to these data based on their authorization level when building a backend service.
 
