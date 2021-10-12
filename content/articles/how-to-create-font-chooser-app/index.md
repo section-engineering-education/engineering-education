@@ -56,24 +56,24 @@ Let's begin by installing tkinter as well as fonts from the tkinter library.
 from tkinter import *
 from tkinter import font
 root = Tk()
-root.title('maji.com - Font Dialog Box')
+root.title('maji.com - Font Chooser App')
 root.iconbitmap('c:/gui/maji.ico')
-root.geometry("550x450")
+root.geometry("500x400")
 ```
 
-To start, first, we will create a root widget and this root widget is a window with a title bar. There can only be one root widget, and it must be created first before any other widgets.
+To start, first, we will create a root widget and this root widget is a window with a title bar. This widget has to be created first, and it is called the root widget, after creating the root widget, the programmer can then create other widgets.
 Then we give our font app a name (maji.com notice that you can use your own name if you want to customize the app.), and then we set the size of the application.
 
 ```python
-def font_chooser(e):
-our_font.config(
+def font_chooser(a):
+user_font.config(
  family=my_listbox.get(my_listbox.curselection()))
 ```
 
 Then we write the `font_chooser` function, which includes defining the font function and configuring the Listbox to retrieve the system's current font selection.
 
 ```python
-our_font = font.Font(family="Helvetica", size="30")
+user_font = font.Font(family="Helvetica", size="30")
 my_frame = Frame(root, width=490, height=285)
 my_frame.pack(pady=10)
 my_frame.grid_propagate(False)
@@ -84,15 +84,15 @@ Then we specify our font by setting our `font_variable` to a Helvetica typeface 
 
 ```python
 
-my_text = Text(my_frame, font=our_font)
-my_text.grid(row=0, column=0)
-my_text.grid_rowconfigure(0, weight=1)
-my_text.grid_columnconfigure(0, weight=1)
-my_listbox = Listbox(root, selectmode=SINGLE, width=90)
-my_listbox.pack()
+user_text = Text(my_frame, font=user_font)
+user_text.grid(row=1, column=1)
+user_text.grid_rowconfigure(0, weight=1)
+user_text.grid_columnconfigure(0, weight=1)
+user_listbox = Listbox(root, selectmode=SINGLE, width=90)
+user_listbox.pack()
  ```  
 
-By defining the `my_text` variable, we can add the textbox. We do this by putting the defined variable in a frame and utilising our font to make the font size dynamic.
+By defining the `user_text` variable, we can add the textbox. We do this by putting the defined variable in a frame and utilising our font to make the font size dynamic.
 We utilize the `.grid` function to prevent the font app from resizing abnormally, and we set the row and column weights to 1 to ensure that it evenly distributes any additional space in the row and column.
 We create a Listbox by setting the `my_listbox` variable to a listbox with a single-mode selection, which allows us to choose only one font at a time while still specifying the width size.
 
@@ -104,7 +104,7 @@ root.mainloop()
 ```
 
 We then use the `for` loop to iterate over the `font.families` sequence to add font families to the already formed Listbox, and then use the `.bind` function to bind the Listbox.
-`mainloop()` is the technique we'll utilize to run or execute our application. This technique will run indefinitely, waiting for user input until the user exits the program, either by closing the window or by using the Esc key.
+`mainloop()` is the method that we will use to run the font chooser application, it will allow the application to run continuously and indefinitely until the user decides to end the program by closing the window or using the Esc key on the keyboard.
 
 And the font chooser interface will look like this:
 ![fontapp image](/engineering-education/how-to-create-font-chooser-application/fontchooser.png)
