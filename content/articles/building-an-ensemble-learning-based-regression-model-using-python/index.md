@@ -52,6 +52,10 @@ from sklearn import model_selection
 
 #### Read data
 
+We will now proceed to load our dataset into our notebook. We will use Pandas library's `read_csv()` function to read the data as they constitute as `csv` files.
+
+The code is as shown below:
+
 ```python
 train_data = pd.read_csv('/kaggle/input/Dataset/train.csv')
 test_data = pd.read_csv('/kaggle/input/Dataset/test.csv')
@@ -108,6 +112,8 @@ from  xgboost  import  XGBRegressor
 Once done, we will then proceed to read our data.
 
 #### Read data
+
+We will read our newly uploaded data, `Dataset2` and `trainfolds` using the following code block below.
 
 ```python
 data = pd.read_csv('/kaggle/input/trainfolds/train_kfolds.csv')
