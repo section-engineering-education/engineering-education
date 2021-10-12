@@ -1,7 +1,7 @@
 ### Introduction
 Netcat is a network analysis tool developed for security specialists and hackers to analyze a network in traffic.
 
-It is considered a `swiss-army knife` in information technology as it 
+It is considered a `swiss-army knife` in information technology due to its limitless opportunities like the ability to create almost any kind of network connection.
 
 At its early stages, netcat was developed to open up UDP/TCP connections between two machines from any desired port.
 
@@ -16,6 +16,22 @@ In this tutorial, we will mainly focus on the following:
 - [Executing general Netcat commands](#executing-commands-on-netcat)
 - [Modes of running Netcat](#modes-of-running-netcat)
 - [Uses of Netcat](#uses-of-netcat)
+
+### Installing Netcat
+First before we start playing around with Netcat, lets make sure it is installed in your computer or working machine. It is usualy pre-installed in Kali Linux but if that is not the case in your machine, we are going to learn how to install Netcat.
+
+1. Open your bash terminal by simultaneously holding `ctrl`+`alt`+`T` buttons.
+2. Make sure you have an internet connection.
+3. Run the command below to install Netcat.
+  ```
+    yum update -y
+  ```
+  This command will install Netcat on your Kali Linux.
+  
+4. To confirm if the installation was succesful, we can scan google to see if we can reach it. For the case we have checked the version of Netcat and connection of googl on port 8080
+```
+  nc -vz google.com 8080
+```
 
 ### Executing commands on Netcat
 Netcat is only available in the command-line interface. You can access Netcat on the `command line` on Windows and `bash terminal` on Linux.
