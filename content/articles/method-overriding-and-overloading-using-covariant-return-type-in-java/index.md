@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/method-overriding-and-overloading-using-covariant-return-type-in-java/hero.jpg
     alt: Method Overriding and Overloading using Covariant Return Type in Java
 ---
-In an object-oriented programming language, `return type covariance` means that a method's return type can be replaced with a narrower one when overridden in a subclass or child class. It eliminates the need to cast or validate the return type when limiting the return type of a custom method. 
+In an object-oriented programming language, return type covariance means that a method's return type can be replaced with a narrower one when overridden in a subclass or child class. It eliminates the need to cast or validate the return type when limiting the return type of a custom method. 
 <!--more-->
 Only non-primitive return types can use a covariant return type. Subclass methods can override base class methods by altering the return type of the overriding method. The term 'method overloading' refers to changing a method's arguments, which the article will discuss further.
 
