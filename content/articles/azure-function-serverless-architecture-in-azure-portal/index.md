@@ -12,9 +12,9 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/azure-function-serverless-architecture-in-azure-portal/hero.png
-    alt: Azure Functions App image
+    alt: Azure Functions App Hero Image
 ---
-We may create a serverless solution using Azure Functions. It requires less code, infrastructure, and maintenance costs. 
+We can create a serverless solution using Azure Functions. It requires less code, infrastructure, and maintenance costs. 
 <!--more-->
 Cloud platforms such as Azure provide us with the latest resources that we need to keep our apps functioning.    
 
