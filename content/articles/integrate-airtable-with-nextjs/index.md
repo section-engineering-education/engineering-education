@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/integrate-airtable-with-nextjs/hero.png
     alt: Nextjs Airtable
 ---
-In this article, we will build a Grocery list application where we can add all our groceries before visiting the store. We will be building the front-end of the application using [Next.js](https://nextjs.org/), a [React](https://reactjs.org/) framework. We will use [tailwindcss](https://tailwindcss.com/) to style our application. The database solution we will use is [Airtable](https://airtable.com/).
+In this article, we will build a grocery list application where we can add all our groceries before visiting the store. We will be building the front-end of the application using [Next.js](https://nextjs.org/), a [React](https://reactjs.org/) framework. We will use [tailwindcss](https://tailwindcss.com/) to style our application. The database solution we will use is [Airtable](https://airtable.com/).
 
 <!--more-->
 Over the past few years, browsers have evolved and became more powerful. They can work with full functionality even without a single web server. Once can take advantage of browser capabilities when building flexible web applications. 
