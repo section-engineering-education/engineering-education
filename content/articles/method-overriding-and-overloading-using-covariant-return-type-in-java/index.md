@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /method-overriding-and-overloading-using-covariant-return-type-in-java/
 title: Method Overriding and Overloading using Covariant Return Type in Java
-description: Using covariant return type, we can override a method in Java. As a result, the programmer is relieved of the burden of typecasting. This article will cover how to use covariant return type and its advantages in this tutorial.
+description: This tutorial will cover how to use a overriding and overloading method using covariant return type in java and its advantages.
 author: mark-moki
-date: 2021-09-16T00:00:00-15:10
+date: 2021-10-12T00:00:00-17:10
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,10 +14,9 @@ images:
   - url: /engineering-education/method-overriding-and-overloading-using-covariant-return-type-in-java/hero.jpg
     alt: Method Overriding and Overloading using Covariant Return Type in Java
 ---
-
 In an object-oriented programming language, `return type covariance` means that a method's return type can be replaced with a narrower one when overridden in a subclass or child class. It eliminates the need to cast or validate the return type when limiting the return type of a custom method. 
 <!--more-->
-Only non-primitive return types can use a covariant return type.  Subclass methods can override base class methods by altering the return type of the overriding method. The term 'method overloading' refers to changing a method's arguments, which the article will discuss further.
+Only non-primitive return types can use a covariant return type. Subclass methods can override base class methods by altering the return type of the overriding method. The term 'method overloading' refers to changing a method's arguments, which the article will discuss further.
 
 ### Table of contents
 - [The Covariant Return type](#the-covariant-return-type)
@@ -27,16 +26,18 @@ Only non-primitive return types can use a covariant return type.  Subclass metho
 - [Method Overloading](#method-overloading)
 
 
-### The Covariant Return type
+### The covariant return type
 The return statement returns control to the method's caller. Every Java method must have a return type stated before being used. A primitive type like `int`, `float`, `reference`, or `void` type can be the return value. 
 
 As we said earlier, covariant return type means that a method's return type can be replaced with a narrower one when overridden in a subclass or child class. Here we will look deeper into how we can override methods using covariant return types.
 
 #### Rules regarding covariant return type
-For covariant return types, there are primarily three rules to keep in mind. Following is a list of them:
-- A subclass' overriding method should match its superclass or subclass' return type if the overriding method returns the same type.
-- Underlining methods in subclasses should not override methods in the parent class and vice versa.
-- A developer can only use the covariant return type for object types, not primitive ones.
+For covariant return types, there are primarily three rules to keep in mind. 
+
+Following is a list of them:
+1. A subclass' overriding method should match its superclass or subclass' return type if the overriding method returns the same type.
+2. Underlining methods in subclasses should not override methods in the parent class and vice versa.
+3. A developer can only use the covariant return type for object types, not primitive ones.
 
 To demonstrate covariant return type, let's look at how we can override a method by adjusting its return type.
 
@@ -66,7 +67,9 @@ The application above fails when the Base and Derived return types are swapped.
 ### @override annotation
 Method overriding is declaring a method in a subclass that is already existent in the parent class. Overriding is used to allow a child class to override a parent class's implementation of a method. 
 
-Overriding a method with an exception will require you to follow these three crucial guidelines while using Java. These are a few of them:
+Overriding a method with an exception will require you to follow these three crucial guidelines while using Java. 
+
+These are a few of them:
 - Overridden methods can't throw checked or compile-time exceptions or unchecked or runtime exceptions if the overriding method doesn't use the throws clause.
 - Overridden methods that throw unchecked or runtime exceptions can throw any uncontrolled runtime exception or the same exception as the overridden method.
 - Subclass methods can subclass exceptions thrown by superclass methods, but subclass methods cannot subclass superclass exceptions, and subclass methods can throw any unchecked or runtime exception.
@@ -79,7 +82,7 @@ It also has some advantages, which we will see below:
 - As a result, the return types are more explicit, reducing the need for typecasting.
 - This code prevents `ClassCastExceptions` from happening to avoid the ClassCastException, which indicates the attempt of an object being cast to subclasses of which it is not an instance.
 
-Let us now have an example based on @override annotations:
+Let us now have a look at an example based on @override annotations:
 
 ```java
 class Vehicle {
@@ -107,27 +110,29 @@ public class Main {
 
 ```
 
-##### OUTPUT
+#### Output
 
-```
+```bash
 Derived class method from Base class.
 ```
 
 Because classes are non-primitive return types, covariant types are only conceivable, and by so, you should note this.
 
-#### Advantages of Covariant Return Type
+#### Advantages of covariant return type
 - It makes the code more accessible, legible, and manageable.
 - As a result of the covariant return type, the method overriding might have more specific return types.
 - `ClassCastExceptions` on returns are preventable by using a covariant return type at runtime.
 
-### Method Overloading
-Method overloading refers to the process of changing the parameters of a method, as indicated earlier. The Java Virtual Machine (JVM) has always supported overloading based on the return type. Because the JVM looks up or resolves a method's full signature, this is acceptable in the JVM. Multiple methods of the same kind may exist in the same class. Covariant return types are supported and implemented by the java compiler (javac).
+### Method overloading
+Method overloading refers to the process of changing the parameters of a method, as indicated earlier. The Java Virtual Machine (JVM) has always supported overloading based on the return type. 
 
-On the other hand, you can use the Java class file disassembler Javap to verify the code. The covariant return type in Java is made possible thanks to javac's adoption of this method. To support covariant return types, the JVM does not require any changes.
+Because the JVM looks up or resolves a method's full signature, this is acceptable in the JVM. Multiple methods of the same kind may exist in the same class. Covariant return types are supported and implemented by the java compiler (javac).
 
-You can't change only the return type during method overloading. If we merely alter the return type, the compiler will have difficulty determining which function to use. As a result, changing the return type isn't an option.
+On the other hand, you can use the Java class file disassembler Javac to verify the code. The covariant return type in Java is made possible thanks to javac's adoption of this method. To support covariant return types, the JVM does not require any changes.
 
-The following are some advantages of method overloading
+You can't only change the return type during method overloading. If we merely alter the return type, the compiler will have difficulty determining which function to use. As a result, changing the return type isn't an option.
+
+The following are some advantages of method overloading:
 - Overloading in Java is the ability to construct numerous methods with the same name but different parameters.
 - The key benefit of this is that the code is more organized.
 - The use of method overloading improves the readability of the application.
