@@ -36,9 +36,9 @@ This article will simplify monte carlo method operations and help programmers to
 
 -[Real Time Application](real-time-application)
 
--[The Accuracy](#the-accuracy)
+-[The Accuracy of Monte Carlo](#the-accuracy-of-monte-carlo)
 
--[Why prefer Monte Carlo?](why-prefer-monte-carlo-?)
+-[Why Monte Carlo?](why-monte-carlo-?)
 
 -[Why financial advisors say NO to this technique](why-most-people-say-no-to-this-technique)
 
@@ -151,7 +151,7 @@ Here we take all the points uniformly distributed within the _[−1, 1]²_ unit 
 
 Use the unit square to generate one point (x, y). This code generates a point (x,y).
 
-```
+``` python
 
 x = numpy.random.uniform(-1, 1)
 
@@ -165,7 +165,7 @@ Test whether a randomly generated point (x, y) is within points of the circle:
 
 To do that, write the following code:
 
-```
+``` python
 
 if numpy.sqrt(x**2 + y**2) < 1:
 
@@ -177,7 +177,7 @@ print("The point is inside")
 
 Count the number of points that are within the circle's perimeter:
 
-```
+``` python
 
 N = 10_000
 
@@ -202,7 +202,7 @@ print("Proportion inside: {}".format(p))
 
 The whole code should appear as the one below to give the estimated value of pi as 3.142…:
 
-```
+``` python
 
 import numpy
 
@@ -246,7 +246,7 @@ You weigh 84 kg, according to your scale.
 
 Your height ranges between 181 and 182 cm tall:
 
-```
+``` python
 
 import numpy
 
