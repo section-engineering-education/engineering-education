@@ -14,13 +14,17 @@ images:
   - url: /engineering-education/functional-programming-with-java-lambda/hero.jpg
     alt: Functional Programming with Java Lambda Hero Image
 ---
-Java is an object-oriented-programming language. It recommends encapsulation of all variables and methods of the class. 
+Java is an object-oriented-programming language. It provides for encapsulation of all variables and methods of the class. 
 <!--more-->
-That is, code blocks before Java 8 are done with classes and objects. The process of passing a behaviour to methods takes extra work and load. This is because we are passing a class with another attribute.
+That is, code blocks before Java version 8 are done with classes and objects. The process of passing a behaviour to methods takes extra work and load. 
 
-In java 8, Lambda was introduced to represent the Functional interface of java. This means that lambdas expression is the expression of functional interface. Lambda was introduced to implement behaviour code. This code makes it easier through the creation of a function that performs a specific task. Also, this code does not belong to any existing class thus treated as a value.
+This is because we are passing a class with another attribute.
 
-At the end of the article, the reader will be able to understand java functional programming. assigning lambdas to an interface. working with lambda expression with a different number of parameters. the reader will also be able to convert the object or class method to lambdas function with less code. The reader will also understand the importance of using function programming
+In Java 8, Lambda was introduced to represent the functional interface of Java. This means that lambdas expression is the expression of functional interface. 
+
+Lambda was introduced to implement behaviour code. This code makes it easier through the creation of a function that performs a specific task. Also, this code does not belong to any existing class thus treated as a value.
+
+At the end of the article, the reader will be able to understand Java functional programming. assigning lambdas to an interface. working with lambda expression with a different number of parameters. the reader will also be able to convert the object or class method to lambdas function with less code. The reader will also understand the importance of using function programming
 
 ### Prerequisites
 The reader should have:
@@ -33,7 +37,7 @@ Have any IDE of your choice.
 
 Understanding class and static methods will also be of great help.
 
-##Function as value
+### Function as value
 
 Let assign value to a variable:
 
@@ -45,7 +49,9 @@ Let assign value to a variable:
 
 ```
 
-The variable "name" takes a single string value of “foo” and also variable "pi" take a single double value of 3.14. The question is, can a block of code be assigned as a value to a variable name without creating an instance of the class. This is not possible in Java as the only instance of an object can only be assigned to a variable. Let's imagine a block class method is assigned to a variable.
+The variable "name" takes a single string value of “foo” and also variable "pi" take a single double value of 3.14. The question is, can a block of code be assigned as a value to a variable name without creating an instance of the class. 
+
+This is not possible in Java as the only instance of an object can only be assigned to a variable. Let us imagine a block class method is assigned to a variable.
 
 ```java
 
@@ -57,7 +63,7 @@ myfunction ablockOfCode = public void perform(){
 
 ```
 
-But with Java functional programming assigning a block of code to a variable is possible. Let's consider the code above with lambdas expressions.
+But with Java functional programming assigning a block of code to a variable is possible. Let us consider the code above with lambdas expressions.
 
 To represent the code above in lambdas expression, a lot of elements in the block of code can be removed.
 
@@ -125,7 +131,7 @@ public class LambdaAlgorithmTest {
 
 ```
 
-From the first line of the above code is an interface with the name Hello. Which declare a method called `sayHello`, the method takes one parameter of `greet`. Which is of type string and will return type string. The fourth line creates a new class called `LambdaAlgorithmTest` which contain the main method. The method declares a function `hello` with the type `Hello` interface. And the method function has one parameter of `(message)`with two-variable `str1` and `str2` which both are of type string. The first variable `str1` takes a value `Welcome`. And the second variable `str2` concatenate `str1` and `message` together. And the function return `str2`.
+From the first line of the code above is an interface with the name Hello. Which declare a method called `sayHello`, the method takes one parameter of `greet`. Which is of type string and will return type string. The fourth line creates a new class called `LambdaAlgorithmTest` which contain the main method. The method declares a function `hello` with the type `Hello` interface. And the method function has one parameter of `(message)`with two-variable `str1` and `str2` which both are of type string. The first variable `str1` takes a value `Welcome`. And the second variable `str2` concatenate `str1` and `message` together. And the function return `str2`.
 
 ### Working with different Lambda parameter
 #### Lambda example that takes no parameter
