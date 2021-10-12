@@ -7,14 +7,6 @@ date: 2021-01-27T00:00:00-09:00
 topics: [React.js, Laravel, Redis]
 ---
 
-- What is real-time search and why is it important?
-- Setting up the React Single Page Application (SPA)
-- Setting up the Laravel API
-- Architectural overview of the React SPA with code examples
-- Architectural overview of the Laravel API with code example
-- How to implement caching to reduce API calls
-- Conclusion
-
 ### Introduction
 
 Modern data-driven applications usually contain terabytes of searchable data that is used by thousands of users. Users expect these applications to respond to search queries in miliseconds and give consise results. To build such functionality into applications, developers use technologies such as AJAX (Asynchronous Javascript and XML), Single-Page Applications (SPAs) and a Cache like Redis.
@@ -52,7 +44,7 @@ Laravel is a PHP framework that uses Composer for dependency management. To get 
 
 Redis is an in-memory key-value store used for quick data retrival and as a cache. Redis is used by applications where data is to be retrieved in miliseconds and applications where round trip to the disk is a significant factor. In this Movie Search application, Redis will work as a cache to reduce query time for queries that have been performed.
 
-Follow the [instructions here](https://redis.io/topics/quickstart#installing-redis) to install Redis on your machine.
+Follow the [instructions here](https://redis.io/topics/quickstart#installing-redis) to install Redis on your machine. For windows users, follow [these instructions](https://redis.com/ebook/appendix-a/a-3-installing-on-windows/a-3-2-installing-redis-on-window/) instead.
 
 ### Frontend Setup
 
@@ -132,23 +124,27 @@ If the backend server runs without crashing, you should be able to successfully 
 
 The frontend is a basic page component with an input box. Whenever a letter is typed in the box, an API call is made to the search endpoint.
 
+![Frontend Architecture](/engineering-education/how-to-build-real-time-search-with-react-and-laravel/frontend-architecture.png)
+
 ### Backend Architecture
 
 The backend follows a simple flow of running search queries on the database whenever a request is sent from the frontend.
 
 ![Sending database responses for every request](/engineering-education/how-to-build-real-time-search-with-react-and-laravel/no-cache-backend-flow.png)
 
+### Testing the Application
+
+With both the frontend and backend servers running, open the frontend URL in http://localhost:3000 and make a query for `dog` in the search box.
+
+![Initial Search Results](/engineering-education/how-to-build-real-time-search-with-react-and-laravel/initial-query-results.png)
+
+It should take a few seconds to complete the search. If you decide to paste the `dog` query directly, the search should take an average of 3 seconds to complete.
+
+![Pasted Search Results](/engineering-education/how-to-build-real-time-search-with-react-and-laravel/pasted-query-results.png)
+
 ### Improving Query Time with Redis
 
-The average query time of the movie search app is 3 seconds. Image tping 12 characters into the search box. It will take you close to a minute before you see results. You can limit requests made to the DB if queries typed in the input box are cached. As said earlier, Redis can serve as a cache in this application.
-
-#### Installing Redis
-
-If you are on a UNIX system (Linux, MacOS), follow the [instructions on the Redis website](https://redis.io/topics/quickstart) to install Redis. For windows users, follow [these instructions](https://redis.com/ebook/appendix-a/a-3-installing-on-windows/a-3-2-installing-redis-on-window/) instead.
-
-#### Setting Redis Environment Variables in Laravel
-
-The default Redis environment variable settings
+The average query time of the movie search app is 3 seconds. Imagine typing 12 characters into the search box. It will take you close to a minute before you see results. You can limit requests made to the DB if queries typed in the input box are cached. As said earlier, Redis can serve as a cache in this application.
 
 ### Conclusion
 
