@@ -1,3 +1,21 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-plot-data-in-python-using-plotly/
+title: How to Plot Data in Python using Plotly
+description: This tutorial will guide the reader on how to use Plotly for data visualization.
+author: wilkister-mumbi
+date: 2021-10-12T00:00:00-17:30
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/how-to-plot-data-in-python-using-plotly/hero.png
+    alt: Plotly Image
+---
+Plotly is an open-source framework for data visualization and graphing. It is a great tool to have when working on building any analytical presentation or trying to interpret results. 
+<!--more-->
 Data visualization is essential when it comes to data science. It is often the first step of any data analysis work. Visualizing data usually gives you an intuitive understanding of data before you get to work on it. Visualization often helps you see some patterns in data that you might not have been able to see.
 
 In this tutorial, we will use [Plotly](https://plotly.com/) in Python for data visualization. 
