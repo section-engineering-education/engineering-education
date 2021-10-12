@@ -1,7 +1,7 @@
 ### Introduction
 Redis is a key-value store that can be used as an in-memory database, cache provider or message broker.
 
-In this article, we will learn how to use Redis publisher/subscriber to communicate between the services asynchronously. We will create two services, publisher and subscriber services. The publisher service retrives puns from the pun API service and publishes the pun into the redis broker queue. The subscriber service listens for new puns in the Redis broker queue, retrives the new joke and logs it on the Spring Boot console.
+In this article, we will learn how to use Redis publisher/subscriber to communicate between the services asynchronously. We will create two services, publisher and subscriber services. The publisher service retrieves puns from the pun API service and publishes the pun into the Redis broker queue. The subscriber service listens for new puns in the Redis broker queue, retrieves the new joke and logs it on the Spring Boot console.
 
 ### Prerequisites
 1. Redis installed on your computer.
@@ -92,9 +92,9 @@ public class PublisherService {
 
 ```
 - ` @Value("${pun-queue}") ` annotation retrieves joke-queue value from the application.properties file and sets it to the jokeTopic variable.
-- `  @PostConstruct` annotation makes annotated `init()` remain unexecuted untill the Spring context is initialized.
+- ` @PostConstruct` annotation makes annotated `init()` remain unexecuted until the Spring context is initialized.
 - `@Scheduled(fixedRate = 1000)` annotation marks the `publish()` method to be executed every one second.
-- The `publish()` method retrieves a joke from the API, converts the joke Joke java object. The Joke pojo is then converted to a formated JSON that is then published to Redis broker queue.
+- The `publish()` method retrieves a joke from the API, converts the joke Joke java object. The Pun POJO is then converted to a formated JSON that is then published to the Redis broker queue.
   
 In the `PublisherApplication` class, add the code snippet below.
 ```java
@@ -205,7 +205,7 @@ pun-queue=pun-server # Sets the name of the redis queue
 SPRING_REDIS_HOST=6379 # Sets the Redis port on which the subscriber service listens for new jokes on the queue
 ```
 ### Testing
-The publisher services pulls data from the [jokes API](https://api.chucknorris.io/jokes/random) and displays the links to various jokes as shown below.
+The publisher services pull data from the [jokes API](https://api.chucknorris.io/jokes/random) and display the links to various jokes as shown below.
 
 ![Publisher](/engineering-education/spring-boot-redis/publisher.png)
 
