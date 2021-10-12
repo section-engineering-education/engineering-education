@@ -11,10 +11,10 @@ To understand this guide, it's assumed that the reader has an understanding of b
 - loops
 
 ### Goal
-In this guide, we will write a python script that will move files to a particular folder based on the [filename extension](). At the end of this guide, we will have a function to move files to different folders by taking a source directory and a destination directory as parameters. 
+In this guide, we will write a python script that will move files to a particular folder based on the [filename extension](https://en.wikipedia.org/wiki/Filename_extension). At the end of this guide, we will have a function to move files to different folders by taking a source directory and a destination directory as parameters. 
 
 ### Functions in python
-Don't Repeat Your self(DRY) is a fundamental principle in programming. The DRY principle helps in reducing the repetition of software patterns by referring back to a single source or "snippet" which is mainly achieved by using the concept of functions. 
+Don't Repeat Your self([DRY](https://dzone.com/articles/software-design-principles-dry-and-kiss)), is a fundamental principle in programming. The DRY principle helps in reducing the repetition of software patterns by referring back to a single source or "snippet" which is mainly achieved by using the concept of functions. 
 
 A function is a group or a block of code that performs a particular task arranged so that it is reusable. Methods are also referred to as functions in python, but they are different. Let's look at the difference.
 **Methods**: a method is a function in a class that can only be accessed with an object or instance of a class.
@@ -96,8 +96,12 @@ To move folders with python, create a new project file and name it app.py, then 
 ```python
 import os, shutil
 ```
-After importing the modules, create two folders or directories on your desktop with names ***file1*** and ***file2***. Create a file with the name *stt.txt* and save it into ***file2***, then update your code with the snippet below.
+After importing the modules, create two folders or directories on your desktop with names ***file1*** and ***file2***. Create a file with the name *stt.txt* and save it into ***file2***, 
+![folder 1](/engineering-education/how-to-handle-navigation-in-flutter/file1.png)
 
+![folder 1](/engineering-education/how-to-handle-navigation-in-flutter/file2.png)
+
+ Update your code with the snippet below. 
 ```python
 source_dir = 'C:\\Users\\User\\Desktop\\file2'
 destination_dir = 'C:\\Users\\User\\Desktop\\file1'
@@ -168,7 +172,7 @@ From the snippet `shutil.move(os.path.join(source_dir, file_name), os.path.join(
 e.g. the code above is checking for a file with the extension `.mp3`, which will move the file to a destination folder that contains another folder prepared for that type of file which is `audios` for mp3 files.
 
 The same process was repeated for the other file extensions. At the end of the function we returned a string `success!!!!` and called the function with arguments *'C:\\Users\\User\\Downloads'* for *source_dir* and *'C:\\Users\\User\\Downloads'* for the *distination_dir* using the snippet  `file_manager('C:\\Users\\User\\Downloads', 'C:\\Users\\User\\Downloads')`. When you execute the code, it will scan through the download folder and move the files that meet the condition to the various folders, as shown in the demo below. 
-[]()
+[demo](![Folder](/engineering-education/how-to-handle-navigation-in-flutter/demo.gif)
 
 > Note: the destination_dir is the same as the source_dir because the destination folder is inside the source_dir. 
 
