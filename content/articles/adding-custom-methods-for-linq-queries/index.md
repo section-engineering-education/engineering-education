@@ -233,3 +233,6 @@ class ProgramExample
 
 ### Conclusion
 We have seen how we can make use of LINQ queries in our C# applications. Develop an application that retrieves JSON data from an API, query the data using the LINQ queries.
+  
+---
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul)
