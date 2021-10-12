@@ -2,12 +2,13 @@
 ![hero image](/engineering-education/how-to-create-font-chooser-application/heroimage.jpg)
 ## How to create a font chooser app using python 
 
-Font picker is a simple application that allows you to browse through all of the fonts installed on your computer and filter down your options to find the ideal one for your project. The tkinter library will be used to construct a font chooser application in this tutorial.
+Font picker is a simple application that allows you to browse through all the fonts installed on your computer and filter down your options to find the ideal one for your project. The tkinter library will be used to construct a font chooser application in this tutorial.
 
 ### Table of content.
 
 - Prerequisite
 - Functions of tkinter
+- Graphical User Interface
 - Creating a font chooser app
 - Conclusion
 - Reference
@@ -45,6 +46,22 @@ You can install tkinter by using the `pip` command.
 ```python
 Pip install tk
 ```
+
+### Graphical User Interface
+
+The graphical user interface is the most common type of User Interface. One can interact with these interfaces by pointing and clicking on graphics or icons with a mouse, tack pad, or other peripheral.
+
+#### Advantages of Graphical User Interface
+
+- it is simple to use
+- there is no need to memorize the command lists as it is easy to visualize and remember.
+- Allows more than one application and program to run at the same time.
+- It provides many exceptional support services.
+- it is self-explanatory.
+
+#### Disadvantages of Graphical User Interface
+
+- It consumes a lot of computer memory.
 
 ### Creating a font chooser app
 
