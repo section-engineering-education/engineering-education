@@ -1,37 +1,20 @@
 ﻿Programming is the process of developing computer programs using different languages and tools.
 
+### Introduction
+This article deals with different steps of program development and which programming languages are used as they have a special sequence, order, and rules of writing characters.<br>
+Understanding fundamental programming principles, you familiarise yourself with these different programming languages and the stages of creating software.
+
+
 Table of Contents
-
-1. Programming languages
-
-    low-level languages
-
-    high-level languages
-2. Program development
-
-    problem recognition
-
-    problem definition
-
-    program design
-
-    program coding
-
-    program testing & debugging 
-
-    program implementation
-
-    program review and maintenance
+- [Programming languages](#programming-languages)
+- [Program development](#Program-development)
+- [program documentation](#program-documentation)
+- [Common tools used for programming languages](#common-tools-used-for-programming-languages)
+- [conclusion](#conclusion)
 
 
-3. Program documentation
-4. Common tools used in programming languages
-5. Conclusion
-6. Further reading
-
-
-
-Programming languages are divided into two main categories.
+### Programming languages
+They are divided into two main categories.
 
  - low-level languages 
  - high-level languages
@@ -187,6 +170,9 @@ the statements get executed until the condition becomes true.
      statement
     end for
 These control structures have different formats in different programming languages. 
+### Further reading
+  For more inquiries:
+ [ Control Structures in programming languages] (https://www.geeksforgeeks.org/control-structures-in-programming-languages/)
  
 ### 5. Program Testing and debugging
 Testing ensures that the program runs as intended and performs the intended actions.
@@ -207,7 +193,7 @@ Documentation can either be internal or external.
  - Internal documentation is the written comments in the source program that helps other programmers understand the code statements
 External documentation is the reference materials such as user manuals printed as booklets.
 
-### Common Tools Used for Programming Languages
+### Common tools used for programming languages
 
  ### Front-end Development Tools
 
@@ -270,9 +256,7 @@ Best tools for backend web development
  ### Conclusion
  Programming, in general, is not easy to learn but the more you keep on practicing the more you get skilled up.
  
-### Further reading
-  For more inquiries:
- [ Control Structures in programming languages] (https://www.geeksforgeeks.org/control-structures-in-programming-languages/)
+
 
 
 
