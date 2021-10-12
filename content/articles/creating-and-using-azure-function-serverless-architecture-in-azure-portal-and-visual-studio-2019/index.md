@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /creating-and-using-azure-function-serverless-architecture-in-azure-portal-and-visual-studio-2019/
-title: Implementing Auto Logout in Angular 12
+title: Creating and using Azure Function - Serverless Architecture in Azure portal and Visual Studio 2019
 description: This tutorial discusses what is entailed in Azure Functions and compares the Azure Function with web jobs.
 author: dickson-gitau
 date: 2021-10-11T00:00:00-06:10
