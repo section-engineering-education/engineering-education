@@ -4,11 +4,10 @@ A logistic map is a polynomial mapping of degree two. This equation is used to s
 $X_{k+1}=\beta X_k(1-X_k)$. 
 where;
 $X_{k+1}$ is the number of species in one year.
-$X_n$ is the number of species at a particular time.
+$X_k$ is the number of species at a particular time.
 $\beta$ is the carrying capacity.
 
-This equation means that the value of `x` keeps changing depending on the rate of `k`. Historically it has been one of the most important and classic systems during the early days of research on deterministic chaos. 
-This equation is intended to capture two effects, that is, reproduction and starvation. In reproduction, the growth rate increases proportionally to the initial population, and in this case, the population is small. On the starvation side, the population growth rate decreases proportionally to the carrying capacity of the environment. Carrying capacity is the total population that the resources in a given environment can support. In this article, we will look at how to design a logistic map in Matlab.
+This equation means that the value of `x` keeps changing depending on the rate of `k`. Historically it has been one of the most important and classic systems during the early days of research on deterministic chaos. This map, despite the simplicity, it exhibits some form of coplexity. In this article, we will look at how to design a logistic map in Matlab. What we basically do here is to see the effect of the population growth considering the carrying capacity of that given environmemt.
 
 ### Prerequisites
 To follow along with this tutorial, you'll need:
@@ -16,7 +15,7 @@ To follow along with this tutorial, you'll need:
 - Proper understanding of [MATLAB](https://www.section.io/engineering-education/getting-started-with-matlab/) basics.
 
 ### Matlab code for the logistic map
-The equation of logistic map as we mentioned earlier is $X_{k+1}=\beta X_k(1-X_k)$. What we do is here is to increase the value $\beta$ parameters. The first thing is to create a vector, `xvals`. What this does is store all the vectors values of the increasing size vector. It means that we will walk through the $\beta& and simulate the dynamics and see where the points go. Next, create a script for this activity. It is done by clicking the `new` in the editor tab and selecting the new script.
+The equation of logistic map as we mentioned earlier is $X_{k+1}=\beta X_k(1-X_k)$. This equation is intended to capture two effects, that is, reproduction and starvation. In reproduction, the growth rate increases proportionally to the initial population, and in this case, the population is small. On the starvation side, the population growth rate decreases proportionally to the carrying capacity of the environment. Carrying capacity is the total population that the resources in a given environment can support. What we do is here is to increase the value $\beta$ parameters. The first thing is to create a vector, `xvals`. What this does is store all the vectors values of the increasing size vector. It means that we will walk through the $\beta& and simulate the dynamics and see where the points go. Next, create a script for this activity. It is done by clicking the `new` in the editor tab and selecting the new script.
 
 When you create a new script, you use the `clear all` to clear all the stored values when running the script. Also, we use `close all` to close all the editors and `clc` to clear the command window. We should include all these in the script.
 ```Matlab
@@ -94,8 +93,11 @@ xnew = xold;
 
 ![excluding the transient section](/engineering-education/how-to-design-logistic-map-using-matlab/map_four.png)
 
-So we have this cool iteration. Essentially, after one iteration, `x` jumps to 0. Then, as beta increases, `x` jumps from 0 to each of the iterations.
-As we have seen, it is easy to simulate the iterations using the `for` loop. You can get rid of the transient to see the steady-state behaviour. One of the interesting things is that this is a crude model for the population dynamics, and you can derive this. The reason as to why this is a good model for population dynamics is that from $x_{k+1}=\beta x_k$ and this would be like an exponential growth at some rate beta. Now you realize that the earth doesn't have infinite resources, so there is some carrying capacity, and if `x` gets large enough, we have the $(1-x_k)$ since 1 is the highest population the environment can hold.
+So we have this cool iteration. As beta increases, `x` jumps from 0 to each of the iterations.
+
+As we have seen, it is easy to simulate the iterations using the `for` loop. You can get rid of the transient to see the steady-state behaviour. One of the interesting things is that this is a crude model for the population dynamics, and you can derive this. 
+
+The reason as to why this is a good model for population dynamics is that from $x_{k+1}=\beta x_k$ and this would be like an exponential growth at some rate beta. Now you realize that the earth doesn't have infinite resources, so there is some carrying capacity, and if `x` gets large enough, we have the $(1-x_k)$ since 1 is the highest population the environment can hold.
 
 ![demonstration](/engineering-education/how-to-design-logistic-map-using-matlab/map_five.png)
 
