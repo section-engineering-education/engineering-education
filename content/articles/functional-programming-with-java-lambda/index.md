@@ -39,7 +39,7 @@ Understanding class and static methods will also be of great help.
 
 ### Function as value
 
-Let assign value to a variable:
+Let us assign a value to a variable:
 
 ```java
 
