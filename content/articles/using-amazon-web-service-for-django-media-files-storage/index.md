@@ -1,5 +1,5 @@
 ### Using Amazon S3 for Django Media File Uploads and Storage
-![hero image](/using-amazon-web-service-for-django-media-files-storage/hero.jpg)
+![hero image](/engineering-education/using-amazon-web-service-for-django-media-files-storage/hero.jpg)
 
 ### Introduction
 Cloud storage services make application scalability easy. These services enable webpages to serve large files without causing heavy traffic and load to the application database, reducing the system load time and offering a good user experience.   
@@ -433,14 +433,14 @@ Amazon Web Services is a cloud service that allows users to store their object f
 
 We’ll use Amazon S3 to store images from the application we created earlier. To do so, we first head over to the Amazon S3 [website](https://aws.amazon.com/s3/) and create an account. After registering an account, we sign in with the root user, like in the screenshot below:
 
-![aws login](/using-amazon-web-service-for-django-media-files-storage/aws-landing-page.jpg)
+![aws login](/engineering-education/using-amazon-web-service-for-django-media-files-storage/aws-landing-page.jpg)
 
 Amazon Web Services might charge a small fee to register an account. At the time of writing, this fee was $1. In the next section, we’ll create an S3 bucket to start our configuration.
 
 ### Configuring AWS S3  
 The AWS management console offers a variety of services. In the search bar, search for S3, then click on it as it is the service we'll be using. Amazon will direct us to a page similar to the one in the screenshot below, and we then create a bucket with a unique name.
 
-![aws console](/using-amazon-web-service-for-django-media-files-storage/aws-console.jpg)
+![aws console](/engineering-education/using-amazon-web-service-for-django-media-files-storage/aws-console.jpg)
 
 
 An AWS bucket holds our files, and its name must be universally unique. For this tutorial, we use the name `djangotest-section`.
@@ -449,20 +449,20 @@ When creating a bucket, we just click through and accept all the defaults. We ca
 
 Once we create the bucket, we head over to the AWS management console. In the search tab, search for IAM, which stands for Identity and Access Management. IAM enables us to create a new user, as the screenshot below shows:  
 
-![aws user](/using-amazon-web-service-for-django-media-files-storage/aws-users.jpg)
+![aws user](/engineering-education/using-amazon-web-service-for-django-media-files-storage/aws-users.jpg)
 
 
 We create a username. Then, in  `AWS access type`, we click `Programmatic access`. It will enable us to access AWS with an access key ID and secret access key. However, we don’t need the AWS console for that user, so we just leave it unchecked, as the screenshot shows:
 
-![aws user](/using-amazon-web-service-for-django-media-files-storage/detailsone-aws.jpg)
+![aws user](/engineering-education/using-amazon-web-service-for-django-media-files-storage/detailsone-aws.jpg)
 
 Next, we set the permissions. In `Attach existing policies directly`, we search for the S3 policies and click `AmazonS3FullAccess`. Although it gives our users more access than they need, the access key ID and secret access key protect us. The page should resemble the screenshot below:
 
-![aws details](/using-amazon-web-service-for-django-media-files-storage/detailstwo.jpg)
+![aws details](/engineering-education/using-amazon-web-service-for-django-media-files-storage/detailstwo.jpg)
 
 For the next step, we leave the tags blank as we will not require them. We then review the user and the steps we completed then create a user. Our user should have an access key ID and secret access key, like in the screenshot below:  
 
-![aws keys](/using-amazon-web-service-for-django-media-files-storage/aws-keys.jpg)
+![aws keys](/engineering-education/using-amazon-web-service-for-django-media-files-storage/aws-keys.jpg)
 
 We need to set the access key ID and secret access key in an environment variable so anyone viewing our code cannot see them. In this article, we'll configure the credentials using environment variables. We could also place them in a `.env` file in our code and add it to our `.gitignore` file.   
 
@@ -563,7 +563,7 @@ python manage.py runserver
 
 Our site should resemble a page like this:  
 
-![gallery app](/using-amazon-web-service-for-django-media-files-storage/test-application.jpg)
+![gallery app](/engineering-education/using-amazon-web-service-for-django-media-files-storage/test-application.jpg)
 
 If we right-click on an image and open it in another tab, Amazon S3 should serve the picture. We can similarly check the image URL when we open it through the S3 bucket.
 
