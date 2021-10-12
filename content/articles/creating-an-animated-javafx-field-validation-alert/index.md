@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /creating-an-animated-javafx-field-validation-alert/
-title: Creating an Animated JavaFX Field Validation Alert.
+title: Creating an Animated JavaFX Field Validation Alert
 description: This article will show you how to animate form inputs during validation using effects to enhance user interaction with a system's UI in Java.
 author: justus-mbuvi
 date: 2021-10-12T00:00:00-14:36
