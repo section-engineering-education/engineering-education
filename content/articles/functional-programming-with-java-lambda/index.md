@@ -24,7 +24,7 @@ In Java 8, Lambda was introduced to represent the functional interface of Java. 
 
 Lambda was introduced to implement behaviour code. This code makes it easier through the creation of a function that performs a specific task. Also, this code does not belong to any existing class thus treated as a value.
 
-At the end of the article, the reader will be able to understand Java functional programming. assigning lambdas to an interface. working with lambda expression with a different number of parameters. the reader will also be able to convert the object or class method to lambdas function with less code. The reader will also understand the importance of using function programming
+In this article, the reader will be able to understand Java functional programming and learn how to assign lambdas to an interface. We will work with lambda expressions using a different number of parameters. The reader will also be able to convert the object or class method to lambdas function with less code. The reader will also understand the importance of using functional programming.
 
 ### Prerequisites
 To follow along with this tutorial, the reader should have:
