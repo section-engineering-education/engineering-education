@@ -97,6 +97,7 @@ To move folders with python, create a new project file and name it app.py, then 
 import os, shutil
 ```
 After importing the modules, create two folders or directories on your desktop with names ***file1*** and ***file2***. Create a file with the name *stt.txt* and save it into ***file2***, 
+
 ![folder 1](/engineering-education/how-to-handle-navigation-in-flutter/file1.png)
 
 ![folder 1](/engineering-education/how-to-handle-navigation-in-flutter/file2.png)
