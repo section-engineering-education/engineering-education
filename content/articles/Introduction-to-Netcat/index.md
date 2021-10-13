@@ -18,19 +18,20 @@ In this tutorial, we will mainly focus on the following:
 - [Uses of Netcat](#uses-of-netcat)
 
 ### Installing Netcat
-First before we start playing around with Netcat, lets make sure it is installed in your computer or working machine. It is usualy pre-installed in Kali Linux but if that is not the case in your machine, we are going to learn how to install Netcat.
+First, before we start playing around with Netcat, make sure it is installed on your working machine. It is usually pre-installed on Kali Linux but if that is not the case in your machine, follow the following steps to install it.
 
-1. Open your bash terminal by simultaneously holding `ctrl`+`alt`+`T` buttons.
+1. Open your bash terminal.
 2. Make sure you have an internet connection.
 3. Run the command below to install Netcat.
-  ```
-    yum update -y
-  ```
-  This command will install Netcat on your Kali Linux.
-  
-4. To confirm if the installation was succesful, we can scan google to see if we can reach it. For the case we have checked the version of Netcat and connection of googl on port 8080
+
+```bash
+yum update -y
 ```
-  nc -vz google.com 8080
+
+4. To check if the installation was successful, we can scan Google to see if we can reach it. In this case we have checked the version of Netcat and connection of Google on port 8080
+
+```bash
+nc -vz google.com 8080
 ```
 
 ### Executing commands on Netcat
