@@ -184,6 +184,7 @@ To generate the hash string, you can use the following methods:
 
 In our case, we are going to use the `SignatureHelper class` to generate our app's hash string. The hash string generated will appear on the `logcat`. 
 
+```
 class SignatureHelper(context: Context?) :
     ContextWrapper(context) {
     val appSignature: ArrayList<String>
@@ -246,8 +247,6 @@ class SignatureHelper(context: Context?) :
         }
     }
 }
-
-
 
 ```
 
