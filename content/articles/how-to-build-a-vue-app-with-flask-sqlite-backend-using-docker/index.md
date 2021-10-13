@@ -27,6 +27,7 @@ To follow along in this article, it is important to have the following:
   - [Setting up the server-side application Using Flask](#setting-up-the-server-side-application-using-flask)
   - [Setting up the database](#setting-up-the-database)
   - [Initialize the schema](#initialize-the-schema)
+  - [Set up the database and the tables](#set-up-the-database-and-the-tables)
   - [Setting up routes](#setting-up-routes)
 - [Setting up the client-side using Vue](#setting-up-the-client-side-using-vue)
   - [Installing packages](#installing-packages)
@@ -163,7 +164,28 @@ todo_schema = TodoSchema()
 todos_schema = TodoSchema(many=True)
 ```
 
-The first is for a single todo; the other is for multiple todos.
+The first is for a single todo and the other is for multiple todos.
+
+#### Set up the database and the tables
+Open the terminal from your code editor and run the following command to start an interactive python environment:
+
+```bash
+python -m pipenv run python
+```
+
+- Run the following commands from the shell:
+
+```python
+from app import db # import db
+
+db.create_all() # create database and tables
+```
+
+- Close the interactive shell:
+
+```bash
+exit()
+```
 
 #### Setting up routes
 To set up the routes,
