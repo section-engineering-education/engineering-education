@@ -6,7 +6,7 @@ url: /decision-tree-in-python/
 title: Decision Trees in Python
 description: This article will provide a detailed information on decision trees in python and how to use them in classifications and regression problems.
 author: stanley-juma
-date: 2021-10-12T00:00:00-15:09
+date: 2021-10-13T00:00:00-07:59
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -40,7 +40,7 @@ An **internal node**,  also known as *sub-note*, has an incoming and outgoing ch
 
 The channels we have just mentioned and connecting the entire decision tree anatomy are called **paths**. Paths represent the best route we can take to attain optimal outcomes. 
 
-### Terminologies used in decision tress 
+### Terminologies used in decision trees 
 Other terminologies you may encounter in the decision tree are:
 1. **Pruning:** This means eliminating some of the internal nodes from our tree to overcome the problem of **overfitting**. Overfitting is a major threat faced with the decision tree.
 2. **Parent Node:** This is the node on which we split other nodes.
@@ -190,7 +190,7 @@ Now that we have computed the Gini index for each attribute, we compare them, se
 
 From the Gini indices we have just computed, the Weather column has the minor index. Thus, we apply our initial break on the Weather column. Then, splitting our tree on the Weather column, we obtain three splits corresponding to each category of the Weather column, i.e. Sunny, Cloudy and Rainy.
 
-On each sub-node, we check if the node is fully classified, i.e. if the target variable of the sub-node is pure. If the split is fully classified, then it forms a leaf node. For example, we notice that the split corresponding to the Cloudy category is entirely classified by splitting our tree. Thus it creates a leaf node.
+On each sub-node, we check if the node is fully classified, i.e. if the target variable of the sub-node is pure. If the split is fully classified, then it forms a leaf node. For example, we notice that the split corresponding to the Cloudy category is classified by splitting our tree. Thus it creates a leaf node.
 
 On the other hand, splits corresponding to the Sunny and Rainy are not pure. Therefore, we repeat the process for computing the Gini index on each node independently on those impure nodes. 
 
@@ -222,7 +222,7 @@ The dataset we have just downloaded is in `CSV ` format, and thus we import it t
 our_data = pd.read_csv("/content/drive/MyDrive/data.csv")
 
 ```
-Now that our data is downloaded let us look at the first few samples part of it.
+Now that our data is downloaded, let us look at the first few samples part of it.
 To do this, we use the `head()` function. This function prints the first five observations.
 
 ```python
@@ -305,7 +305,7 @@ Let us have a look at the size of our training set by executing the code below.
 print(Xtrain.shape , Ytrain.shape)
 
 ```
-#### output
+#### Output
 ```bash
 (8000, 10) (8000,)
 
@@ -321,7 +321,7 @@ model.fit(Xtrain , Ytrain)
 
 The above code outputs:
 
-#### output
+#### Output
 
 ```bash
 DecisionTreeClassifier(ccp_alpha=0.0, class_weight=None, criterion='gini',
@@ -352,7 +352,7 @@ predictions = model.predict(Xtest)
 
 ```
 
-```Python
+```python
 # Importing confusion matrix model from sklearn
 from sklearn.metrics import confusion_matrix 
 
