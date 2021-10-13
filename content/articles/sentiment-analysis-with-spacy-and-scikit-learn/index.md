@@ -1,33 +1,36 @@
- ---
- layout: engineering-education
- status: publish
- published: true
- url: /sentiment-analysis-with-spacy-and-scikit-learn/
- title: Sentiment Analysis with Spacy and Scikit-Learn
- description: In this article we will discuss and build a sentiment analysis engine from scratch using Spacy and scikit-learn.
- author: francis-ndiritu
- date: 2021-10-12T00:00:00-18:00
- topics: [Machine Learning]
- excerpt_separator: <!--more-->
- images:
+---
+layout: engineering-education
+status: publish
+published: true
+url: /sentiment-analysis-with-spacy-and-scikit-learn/
+title: Sentiment Analysis with Spacy and Scikit-Learn
+description: This article show the reader how to create a sentiment analysis engine from scratch using Spacy and scikit-learn.
+author: francis-ndiritu
+date: 2021-10-13T00:00:00-13:30
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
 
-   - url: /engineering-education/sentiment-analysis-with-spacy-and-scikit-learn/hero.png
-     alt: Spacy scikit-learn sentiment analysis example image
- ---
- 
-Sentiment analysis is a subset of natural language processing and text analysis that detects positive or negative sentiments in a text. Sentiment analysis helps businesses understand how people gauge their business and their feelings towards the goods or services. This is done using the reviews on their sites and by monitoring online conversations.
-
+  - url: /engineering-education/sentiment-analysis-with-spacy-and-scikit-learn/hero.png
+    alt: Spacy scikit-learn sentiment analysis example image
+---
+Sentiment analysis is a subset of natural language processing and text analysis that detects positive or negative sentiments in a text. 
 <!--more-->
+Sentiment analysis helps businesses understand how people gauge their business and their feelings towards different goods or services. 
 
-Sentiment analysis is used to analyze customer feedback. It helps businesses to know if customers are happy or frustrated with their products. Businesses use this information to change their products and provide the best products to meet customers' needs.
+The evaluation is done using reviews on their sites, as well as monitoring online conversations.
 
-In this tutorial, we will use Spacy in building our sentiment analysis model. We will use three datasets from IMDB, Amazon, and Yelp.
-These datasets contain reviews that are either labelled positive or negative. In addition, the dataset contains movies reviews from the IMDB dataset, product reviews from the Amazon dataset, and local business and social networking site reviews from the Yelp dataset.
+Sentiment analysis is used to analyze customer feedback. It helps businesses to determine whether customers are happy or frustrated with their products. 
 
-These datasets will build a model that classifies a review as either positive or negative. This will help a business to know if customers are satisfied or disgruntled with their products or services. In addition, this helps businesses to make the necessary adjustments to improve the products or services being offered.
+Businesses use this information to change their products to meet customers' needs.
+
+In this tutorial, we will use Spacy to build our sentiment analysis model. We will use three datasets from `IMDB`, `Amazon`, and `Yelp`.
+
+These datasets contain reviews that are either labeled positive or negative. 
+
+In addition, the dataset contains movie reviews from the IMDB dataset, product reviews from the Amazon dataset, and local business and social networking site reviews from the Yelp dataset.
 
 ### Table of contents
-
 - [Prerequisites](#prerequisites)
 - [Introduction](#introduction)
 - [Dataset used](#dataset-used)
@@ -48,16 +51,14 @@ These datasets will build a model that classifies a review as either positive or
 - [References](#references)
 
 ### Prerequisites
-
 1. A good understanding of [Python](/engineering-education/python-projects-for-beginners/).
-2. A good working knowledge of [machine learning](/engineering-education/house-price-prediction/).
-3. Have some working knowledge of [natural language processing.](https://en.wikipedia.org/wiki/Natural_language_processing)
+2. Some knowledge of [machine learning](/engineering-education/house-price-prediction/).
+3. Have some working knowledge of [natural language processing](https://en.wikipedia.org/wiki/Natural_language_processing).
 
 > NOTE: To follow along easily, use [Google Colab](https://research.google.com/).
 
 ### Introduction
-
-There are different types of sentiment analysis depending on the goals of the model.
+There are different types of sentiment analysis depending on the model goals. 
 
 - Models that focus on the polarity of a given text: positive, neutral, and negative.
 - Model that focuses on feeling and emotions within a text.
@@ -72,7 +73,6 @@ Depending on these goals, they are further classified into the following groups.
 5. Intent Detection.
 
 #### Standard Sentiment Analysis
-
 It detects the polarity of a given text, either positive, negative, or neutral.
 
 For Example:
@@ -82,9 +82,7 @@ For Example:
 - "I am open to further assistance about your product": The polarity is `Neutral.`
 
 #### Fine-grained Sentiment Analysis
-
-It also focuses on the polarity of given text but also adds more options or categories such as:
-
+It focuses on the polarity of given text but adds more options or categories such as:
 - Very positive
 - Positive
 - Neutral
@@ -99,45 +97,45 @@ For Example.
 For a practical guide on fine-grained sentiment analysis, click [here](https://towardsdatascience.com/fine-grained-sentiment-analysis-in-python-part-1-2697bb111ed4)
 
 #### Emotion Detection
-
 This type detects emotions and feelings in a given text. For example, the emotions can be happiness or anger.
+
 For Example:
 
 - "This product makes my work easier": This shows `Happiness.`
 - "It has ruined my schedule and caused me pain": This shows `Anger.`
 
-For a practical guide on emotion detection click [here](https://towardsdatascience.com/emotion-detection-a-machine-learning-project-f7431f652b1f)
+For a practical guide on emotion detection, click [here](https://towardsdatascience.com/emotion-detection-a-machine-learning-project-f7431f652b1f)
 
 #### Aspect-based Sentiment Analysis
-
 Aspect-based sentiment analysis (ABSA) is a text analysis technique that categorizes data by aspect and identifies the sentiment attributed to each one.
+
 Aspect-based sentiment analysis can analyze customer feedback by associating specific sentiments with different aspects of a product or service.
 
-Aspects are the attributes or components of a product or service. For example: “The user experience of a new product”, “the response time for a query or complaint”, or “the ease of integration of new software”.
+Aspects are the attributes or components of a product or service. For example: "The user experience of a new product", "the response time for a query or complaint", or "the ease of integration of new software".
 
-Aspect sentiment analysis is important because it helps companies automatically sort and analyze customer data, automate processes like customer support tasks, and gain powerful insights from customer reviews.
+Aspect sentiment analysis is important because it helps companies to sort and analyze customer data, automate processes like customer support tasks, and gain powerful insights from customer reviews.
 
 For a practical guide on aspect-based sentiment analysis, click [here](https://www.analyticsvidhya.com/blog/2021/06/analyzing-customer-feedbacks-using-aspect-based-sentiment-analysis/)
 
 #### Intent Detection
-
 This focuses on the customer's goals and intention behind a given statement. This is applied in chatbot systems to provide better answers and assistance.
 
 For example.
 
 - "This app keeps on crashing. What should I do?": This shows "Need for assistance."
 
-For a practical guide on intent detection [click](https://rasa.com/blog/rasa-nlu-in-depth-part-1-intent-classification/)
+For a practical guide on intent detection, click [here](https://rasa.com/blog/rasa-nlu-in-depth-part-1-intent-classification/)
 
 In this tutorial, we will build a `standard sentiment analysis` model.
 
 ### Dataset used
+As stated, we are working with three datasets: IMDB dataset, Amazon dataset, and Yelp dataset. 
 
-We are working with three datasets: IMDB dataset, Amazon dataset, and Yelp dataset. The datasets contain reviews of different products or services. The reviews are labelled either `1` to show a `positive` review or `0` for a `negative` review.
+The datasets contain reviews of different products or services. The reviews are labeled either `1` to show a `positive` review or `0` for a `negative` review.
 
 Our dataset is in text format, which is easy to read and use by our model.
 
-A snip of the three datasets in text format is shown below.
+A snip of the three datasets in text format is shown below:
 
 ![Amazon dataset snip](/engineering-education/sentiment-analysis-with-spacy-and-scikit-learn/amazon-snip.jpg)
 
@@ -154,8 +152,7 @@ To download the Yelp dataset in a text format, click [here](https://drive.google
 After downloading all three datasets, let's load them into our machine.
 
 ### Loading dataset
-
-We use the `Pandas` package to load our dataset, which is used for data manipulation, analysis, and reading the dataset.
+We use the `Pandas` package to load our dataset. Pandas is used for data manipulation and analysis.
 
 ```python
 import pandas as pd
@@ -176,22 +173,23 @@ frames = [df_yelp,df_imdb,df_amz]
 ```
 
 ### Adding headers
+Our dataset has no headers. We need to separate our dataset into two columns and give them heading names. 
 
-Our dataset has no headers. We separate our dataset into two columns and give them heading names. It will have two columns. The first column, named `Message`, will contain the actual review text, while the other column is named `Target`, will contain the label of either `1` or `0`.
+It will have two columns. The first column, named `Message`, will contain the actual review text, while the other column is named `Target`, will contain the label of either `1` or `0`.
 
 ```python
 for colname in frames:
     colname.columns = ["Message","Target"]
 ```
 
-Let's print the column names as shown below.
+Let's print the column names, as shown below:
 
 ```python
 for colname in frames:
     print(colname.columns)
 ```
 
-The output is as shown below.
+The output is, as shown below:
 
 ```bash
 Index(['Message', 'Target'], dtype='object')
@@ -199,15 +197,16 @@ Index(['Message', 'Target'], dtype='object')
 Index(['Message', 'Target'], dtype='object')
 ```
 
-We need to assign keys to our dataset to know which dataset belongs since we have merged the three datasets. The dataset belongs into three groups `Yelp`, `IMDB`, and `Amazon`.
+We need to assign keys to our dataset to distinguish them since we have merged the three datasets. The dataset belongs into three groups `Yelp`, `IMDB`, and `Amazon`.
 
 ```python
 keys = ['Yelp','IMDB','Amazon']
 ```
 
 ### Merge or concatenate our datasets with the keys
+We have created three keys in the above section: `Yelp`, `IMDB`, and `Amazon`. Then, we add the list of keys to our dataset. 
 
-We have created three keys in the above section: `Yelp`, `IMDB`, and `Amazon`. Then, we add the list of keys into our dataset. This enables the model to know where each dataset belongs since we have merged the three datasets. This makes it easy for our model to understand and use the dataset during the training phase.
+The keys enable the model to know where each dataset belongs since we have merged the three datasets. This makes it easy for our model to understand and use the dataset during the training phase.
 
 ```python
 df = pd.concat(frames,keys=keys)
@@ -221,12 +220,11 @@ df.head()
 
 ![Output](/engineering-education/sentiment-analysis-with-spacy-and-scikit-learn/output.jpg)
 
-The output shows the keys added to our dataset to know which dataset we are dealing with. The output also shows the two added columns, `Message` and `Target`, labelled either `0` or `1`.
+The above output shows the keys added to our dataset. The output also shows the two additional columns, `Message` and `Target`, labeled either `0` or `1`.
 
 Now that we have prepared the dataset, we can now remove stop words from the dataset.
 
 ### Removing stop words
-
 Stop words are a set of commonly used words in a language. They have a lower classification power because they are not unique and make the model biased.
 
 We remove stop words using Spacy. Let's first install Spacy into our machine.
@@ -248,12 +246,10 @@ nlp = spacy.load('en')
 In the above code, we have imported the following.
 
 #### Spacy
-
 This is the library we will use for sentiment analysis
 
 #### Stopwords
-
-This is used to remove the stopwords in the dataset.
+This package is used to remove the stopwords in the dataset.
 
 We also specify the language used as English using `spacy.load('en')`.
 
@@ -273,7 +269,6 @@ for word in stopwords:
 The code snippet above removes the stopwords in the dataset. It also removes all the punctuations using `word.is_punct` after looping through the dataset.
 
 ### Loading machine learning packages
-
 Let's import all the packages used in building our model. We will use `Scikit-learn` in building the model.
 
 ```python
@@ -296,44 +291,39 @@ In the above code, we have imported the following.
 7. Pipeline
 
 #### CountVectorizer
+This package is used to transform the texts in our dataset into numeric values that are in vectors. These numeric values can be accessed by the model more quickly than text.
 
-This is used to transform the texts in our dataset into numeric values that are in vectors. These numeric values are easily readable by the model rather than text.
-
-For detailed understanding about `CountVectorizer` click [here](https://towardsdatascience.com/basics-of-countvectorizer-e26677900f9c)
+For detailed understanding about `CountVectorizer`, click [here](https://towardsdatascience.com/basics-of-countvectorizer-e26677900f9c)
 
 #### TfidfVectorizer
+TF-IDF(frequency-inverse document frequency) is a statistical measure that evaluates how relevant a word is in a collection of documents.
 
-TF-IDF(frequency-inverse document frequency) is a statistical measure that evaluates how relevant a word is to a document in a collection of documents.
+If a word is common in a given document and common in other documents, it indicates that it has less power when making a prediction. 
 
-If a word is common in a given document and common in other documents, it indicates that it has less power when making a prediction. Conversely, if a word is unique in a document, it shows it has more power in classification and predictive analysis.
+Conversely, if a word is unique in a document, it shows it has more power in classification and predictive analysis.
 
 For detailed understanding about `TfidfVectorizer` click [here](https://medium.com/@cmukesh8688/tf-idf-vectorizer-scikit-learn-dbc0244a911a)
 
 #### accuracy_score
-
-This is used to calculate the accuracy of our model when making a prediction.
+This package is used to calculate the model's accuracy when making a prediction.
 
 #### train_test_split
-
 This is used to split our dataset into a training set and testing set.
 
 #### TransformerMixin
-
-This is used to fit the model into the dataset during the training phase. This ensures that our model learns the patterns in the dataset.
+This is used to fit the model into the dataset during the training phase. It ensures that our model learns the patterns in the dataset.
 
 #### LinearSVC
-
-This is the support vector machine algorithm used in building the model. It uses the LinearSVC method to fit our model to the data and produce the best fit model.
+This is the support vector machine algorithm used in building the model. It uses the LinearSVC method to fit our model to the data and produce the best fit.
 
 #### Pipeline
+A pipeline is an important aspect of machine learning. It automates functions such as `CountVectorizer`, `TfidfVectorizer`, `TransformerMixin`, and `LinearSVC`.
 
-A pipeline is an important aspect of machine learning. It automates the above functions, which are `CountVectorizer`, `TfidfVectorizer`, `TransformerMixin`, and `LinearSVC`.
+This makes model building process faster and easier since all the stages are bundled together into one unit process.
 
-This makes model building process faster and easier by bundling all the stages above together into one unit process.
+Let's use these imported packages starting with `TransformerMixin`.
 
-Let's use these imported packages. We start with `TransformerMixin`.
-
-To implement the data transformer, we create a custom class.
+To implement the data transformer, we need to create a custom class.
 
 ### Custom transformer class
 
@@ -350,32 +340,28 @@ def text_cleaning(text):
     return clean_text.label().lower_case()
 ```
 
-Our above `transformers` class has the following functions.
+The above `transformers` class has the following functions.
 
 #### data_transform
-
-It checks the parameters in the dataset using `X_train` and `Y_train`.
-It then converts them into a structure that the model can understand.
+It checks the parameters in the dataset using `X_train` and `Y_train`. It then converts them into a structure that the model can understand.
 
 #### model_fit
-
 It fits the model into the dataset. This enables the model to learn by understanding patterns in the dataset.
 
 #### set_params
-
-This gets all the converted and optimized parameters to produce an optimized model.
+This method retrieves all the converted and optimized parameters to produce an optimized model.
 
 #### text_cleaning
-
 This function cleans our dataset and converts all the texts into lower case.
 
 Let's go to the next stages.
 
 ### Vectorization and classifier
-
 In vectorization, we use `CountVectorizer` that converts our text dataset into numeric vectors.
 
-The classifier is the algorithm used in building the model. In this case, we are using `LinearSVC`. This is the classification method used by the support vector machine algorithm.
+The classifier is the algorithm used in building the model. In this case, we are using `LinearSVC`. 
+
+This is the classification method used by the support vector machine algorithm.
 
 ```python
 vectorizer = CountVectorizer(tokenizer = spacy_tokenizer, ngram_range=(1,1))
@@ -383,7 +369,6 @@ classifier = LinearSVC()
 ```
 
 ### TfidfVectorizer method
-
 This is used to check the frequency in which a given word is used in our dataset.
 
 ```python
@@ -391,7 +376,6 @@ tfvectorizer = TfidfVectorizer(tokenizer = spacy_tokenizer)
 ```
 
 ### Features and labels
-
 Features are the independent variable in our dataset that are used as inputs when building our model. In our case, the `Message` column will be our feature.
 
 Labels are what we want to predict. In our case, we are trying to predict the sentiment of a given review. So the output can be either `1` for `positive` or `0` for `negative`.
@@ -404,8 +388,7 @@ ylabels = df['Target']
 ```
 
 ### Dataset splitting
-
-We split our dataset into train set and test set. This tutorial uses `75%` of our dataset as the train set and `25%` as the test set, as shown below.
+We split our dataset into train set and test set. This tutorial uses `75%` of our dataset as the train set and `25%` as the test set, as shown below:
 
 ```python
 X_train, X_test, y_train, y_test = train_test_split(X, ylabels, test_size=0.25, random_state=42)
@@ -414,7 +397,6 @@ X_train, X_test, y_train, y_test = train_test_split(X, ylabels, test_size=0.25, 
 Let's build our pipeline to automate all these processes.
 
 ### Creating the pipeline
-
 The pipeline will clean our dataset, vectorize our text into numeric values and finally classify our reviews as either `positive` or `negative`.
 
 ```python
@@ -449,17 +431,16 @@ Let's now calculate the accuracy score of our model.
 print("Accuracy: ",pipe.score(X_train,y_train))
 ```
 
-The output is as shown.
+The output is shown below:
 
 ```bash
 Accuracy:  0.9849726775956285
 ```
 
-This shows that our model has an accuracy of `98.497%` expressed as a percentage. This is a good accuracy score and shows that our model has a higher chance of making an accurate prediction.
+This shows that our model has an accuracy score of `98.497%`. This is a good score and shows that our model has a higher chance of making correct predictions.
 
 ### Making prediction
-
-We now use our model to see if we can classify a review to be either `positive` or `negative`.
+We now use our model to see if we can classify a review as either `positive` or `negative`.
 
 ```python
 pipe.predict(["I recommend this movie to watch, it's great"])
@@ -487,20 +468,26 @@ Let's see the prediction output.
 array([1, 0, 1])
 ```
 
-This shows that the first sentence in the array was a `positive` review, the second one was a `negative`, and the last one was a `positive` review. In this example, all these cases are true. This shows that our model can make accurate predictions.
+This shows that the first sentence in the array was a `positive` review, the second one was a `negative`, and the last one was a `positive` review. 
+
+In this example, all these cases are true. This shows that our model can make accurate predictions.
 
 ### Conclusion
+In this tutorial, we have learned about sentiment analysis with Spacy and Scikit-learn. We started by learning sentiment analysis and its importance to a business. 
 
-In the tutorial, we have learned about sentiment analysis with Spacy and Scikit-learn. We started by learning sentiment analysis and its importance to a business. We also learned about the different types of sentiment analysis. In this tutorial, we were focusing on the standard sentiment analysis.
+We also discussed the different types of sentiment analysis. In this tutorial, we were focusing on the standard sentiment analysis.
 
-We then moved to dataset cleaning and used the clean dataset to build our sentiment analysis model. Next, we performed all the steps required to build the model and finally used a pipeline approach to automate all the processes involved in model building, and we successfully built our model.
+We then moved to dataset cleaning and used the final dataset to build our sentiment analysis model. 
 
-Finally, we used our model to make predictions. For example, our model was able to classify a review as either `positive` or `negative`. Using these steps, a reader should be able to build a sentiment analysis model using Spacy and Scikit-learn.
+Next, we performed all the steps required to build the model and finally used a pipeline approach to automate all the processes involved in model building.
 
-To get the implementation for this tutorial in Google Colab, click [here](https://colab.research.google.com/drive/10TBCZrFNlGQSZmJwFCze_28QZhJb9eQh?usp=sharing)
+Finally, we used our model to make predictions. For example, our model was able to classify a review as either `positive` or `negative`. 
+
+Using the above steps, a reader should be able to build a sentiment analysis model using Spacy and Scikit-learn.
+
+To access the implementation for this tutorial in Google Colab, click [here](https://colab.research.google.com/drive/10TBCZrFNlGQSZmJwFCze_28QZhJb9eQh?usp=sharing)
 
 ### References
-
 - [Code implementation for this tutorial](https://colab.research.google.com/drive/10TBCZrFNlGQSZmJwFCze_28QZhJb9eQh?usp=sharing)
 - [Spacy documentation](https://spacy.io/)
 - [Scikit-learn documentation](https://scikit-learn.org/stable/)
