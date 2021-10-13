@@ -196,3 +196,6 @@ The same process was repeated for the other file extensions. At the end of the f
 
 ### Conclusion
 We were able to write a function that moves files from one folder to the other, which takes the directory that contains files we want to move and a directory we want to move files to as parameters. [Link to repo](https://github.com/wobin1/file-management-with-python)
+
+---
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
