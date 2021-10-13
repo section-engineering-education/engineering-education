@@ -21,6 +21,10 @@ When setting up a home network, one can only allow access to the Unbound DNS ser
 
 However, one can take a different approach. The local DNS server can be used to route all DNS requests to alternate `external servers`. That way, you can make that everything is working properly and limit or filter DNS requests. You can easily monitor DNS requests that would otherwise go undetected if a firewall rule had blocked them with the DNS redirection feature enabled on your computer.
 
+### prerequisite
+- Download the [OPNsense](https://opnsense.org/) software.
+> It is the software used in this tutorial.
+
 ### Table of contents
 - [Reason for redirecting DNS requests to local DNS resolver](#reason-for-redirecting-dns-requests-to-local-dns-resolver)
 - [Creating a DNS Redirection NAT Port Forward Rule](#creating-a-dns-redirection-nat-port-forward-rule)
@@ -32,7 +36,7 @@ However, one can take a different approach. The local DNS server can be used to 
 Even though some devices (such as Smart TVs) should be automatically configured to use the local DNS server provided by the DHCP service, some devices will attempt to use Google's DNS servers or other public DNS servers (possibly to circumvent ad blockers and to gather valuable data on DNS requests made by your device). The approach described above will not work for devices that only use alternative/hard-coded DNS servers if the machine refuses to use the preset DNS servers.
 
 ### Creating a DNS Redirection NAT Port Forward Rule
-Implementing a basic NAT port forward rule to reroute DNS requests from a certain network is possible. Port forwarding rules are often used to allow traffic from an outside network on the Internet to access various services housed on your network, but they can be used on internal network interfaces as well. This means that if you unintentionally write a rule that prevents access to the web interface, you won't lose access to the web interface, as you'll notice on the `Firewall: NAT: Port Forward` page.
+Implementing a basic NAT port forward rule to reroute DNS requests from a certain network is possible. Port forwarding rules are often used to allow traffic from an outside network on the Internet to access various services housed on your network, but they can be used on internal network interfaces as well. In fact on the `Firewall: NAT: Port Forward` page on our `OPNsense software` , you will see that the default anti-lockout rule is applied to the LAN interface so that you do not lose access to the web interface should you accidentally create a rule which blocks access.
 
 Click the `Add` button on the `Firewall > NAT > Port Forward` page. As illustrated in the screenshot below, you'll want to alter the following settings:
 
