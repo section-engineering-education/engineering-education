@@ -161,7 +161,7 @@ public class LoginAction1 extends HttpServlet {
 
 ![naming jsp file](/engineering-education/servlet-request-and-servlet-collaboration/welcompagejsp.png)
 
-- Replace the code in the servlet page you just created with the code below.
+- Replace the code in the JSP page you just created with the code below.
 
 ```jsp
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -208,7 +208,7 @@ public class LoginAction1 extends HttpServlet {
 
 **Explanation:**
 
-From the example above, the `LoginAction.java` servlet, in the Post Request form, is called if a user supplies the correct credentials on the login page. A `doPost ()` will call a user parameter, and store it in a variable userName and password, as shown:
+From the example above, the `LoginAction.java` servlet, in the Post Request form, is called if a user supplies the correct credentials on the login page. A `doPost ()` will set a user parameter, and store it in a variables userName and password, as shown:
 
 ```java
       String userName=request.getParameter("name");
@@ -335,7 +335,8 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-public class Under18Page extends HttpServlet {
+public class Under18Page extends HttpServlet 
+{
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
@@ -360,7 +361,8 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-public class Above18 extends HttpServlet {
+public class Above18 extends HttpServlet 
+{
 	private static final long serialVersionUID = 1L;
 
    
