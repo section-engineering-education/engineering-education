@@ -65,38 +65,39 @@ The idea of **serialization in Java** is a byte-stream representation of an enti
 
 ### How to serialize and deserialize with the help of examples
 
-To perform serialization, use the `ObjectOutputStream` class's `writeOurObject` method. For deserialization, use the `InputObjectStream` class's `readOurObject` method.
+To perform serialization, use the `ObjectOutputStream` class's `writeObject` method. For deserialization, use the `InputObjectStream` class's `readObject` method.
 > The (.ser) extension is usually used when serializing an entity to a directory in Java.
 
 Method syntax of (writeOurObject):
 
 ```java
-public final void writeOurObject(OurObject o) caste InputOutput Exception
+public final void writeOurObject(Object o) caste InputOutput Exception
 
 ```
 
 Method syntax (readOurObject):
 
 ```java
-public final Object readOurObject() caste InputOutputException, ExceptionClassNotDiscovered
+public final Object readObject() caste InputOutputException, ExceptionClassNotDiscovered
 
 ```
+
+> We are going to use sections of the full code which will follow later. Below are the sections of the full code. 
 
 #### A Serialization example
 
 Consider this, `Link` class, which contains two data members: `commons` and `favorites`. This is how we will define it:
 
 ```java
-class Link
+import java.io.*;
+class Link implements Serializable {
   {
     private String commons;
     protected int favorites;
-
     public Link(String commons, int favorites) {
         this.commons = commons;
         this.favorites = favorites;
     }
-
     public void printLink() {
         System.out.println("Link : " + this.commons);
     }
@@ -109,44 +110,41 @@ To serialize this class, we first need to implement the `java.io.Serializable` i
 class Link implements Serializable
 ```
 
-Then we create the method that follows:
+We then propose the following method:
 
-```java
+```Java
 
 public static void serializeLink(Link inputsLink, String filetitle) {
     try {
         FileOutputsStream file = new FileOutputsStream(filetitle);
         ObjectOutputsStream out = new ObjectOutputsStream(file);
-
-        out.writeObject(inputsLink);
-
+        out.writeObject(inputLink)
         out.close();
         file.close();
-    } catch (IOException excp) {
-        System.out.println("InputOutputException occures");
+    } catch (IOException ex) {
+        System.out.println("There was an IOException");
     }
 }
 ```
 
 #### Description
 
-This function will serialize a `Link` object submitted as a parameter. The serialized bytes are then written to a file in which we will specify the name as the second parameter.  Handle Serialization via `out.writeOurObject(inputLink)`.  By calling `file.close()`, we terminate the file handle.
+This function will serialize a `Link` object submitted as a parameter. The serialized bytes are then written to a file in which we will specify the name as the second parameter.  Handle Serialization via `out.writeObject(inputLink)`.  By calling `file.close()`, we terminate the file handle.
 
 #### Deserialization example
 
-We can now use the method below to deserialize the serialized object.
+The serialized object may now be deserialized by using the technique listed below.
 
 ```java
-public static void deserializeLink(Link putoutLink, String filestitle) {
+public static deserializeLink(String filestitle) {
     try {
-        FilesInputStream files = new FilesInputStream(filestitle);
-        ObjectsInputStream on = new ObjectsInputStream(files);
-
-        putoutlink = (Link) on .readObject();
-    } catch (IOException excp) {
+        FileInputStream file = new FileInputStream(filetitle);
+        ObjectInputStream on = new ObjectInputStream(file);
+        return (Link) on .readObject();
+    } catch (IOException ex) {
         System.out.print("Our IOException has Occured");
-    } catch (ClassNotFoundException excp) {
-        System.out.print("OurClassNotFound has Occured");
+    } catch (ClassNotFoundException ex) {
+        System.out.print("Our ClassNotFound has Occured");
     }
 }
 ```
@@ -162,86 +160,58 @@ The `deserializeLink()` method has two parameters. The first of which, putoutLin
 If the item is not present, the above procedure may throw an `IOException`. When the expected class is not found, we issue `ClassNotFoundException`.
 
 #### Object Serialization and Deserialization Example
+> This is the full code from the previous sections of serialization and deserialization.
+
+**Serialization.java**
 
 ```java
-
 import java.io.*;
-  
-class Stu implements Serialized {
-protected static final short serialformUID = 6376S;
-    transient int q;
-    static int w;
-    String title;
-    int period;
-  
-    
-public Emp(String title, int period, int q, int w)
-    {
-        this.title = title;
-        this.period = peroid;
-        this.q = q;
-        this.w = w;
+class Link implements Serializable {
+    private String commons;
+    private int favorites;
+    public Link(String commons, int favorites) {
+        this.commons = commons;
+        this.favorites = favorites;
     }
-  
+    public void printLink() {
+        System.out.println("Link : " + this.commons);
+    }
 }
-  
-public class SerialSample {
-public static void printdata(Stu object01)
-    {
-  
-        System.out.println("title = " + object01.title);
-        System.out.println("period = " + object01.period);
-        System.out.println("q = " + object01.q);
-        System.out.println("w = " + object01.w);
-    }
-  
-    public static void main(String[] args)
-    {
-        Stu obj = new Stu("qw", 10, 3, 1100);
-        String filetitle = "serialize text";
-  
+public class Serialization {
+    public static void serializeLink(Link inputLink, String filetitle) {
         try {
-            
-            FilePutoutStream file = new FilePutoutStream(filetitle);
-            ObjPutoutOutStream out = new ObjectPutoutStream(file);
-          
-            out.writeObject(object);
-  
+            FileOutputStream file = new FileOutputStream(filetitle);
+            ObjectOutputStream out = new ObjectOutputStream(file);
+
+            out.writeObject(inputLink);
+
             out.close();
             file.close();
-  
-            System.out.println("Serialization of the obeject has been done\n"
-                              + "Before Deserialization of the data.");
-            printdata(object);
-  
-            object.w = 1100;
-        } catch (InputOutputException excp) {
-            System.out.println("Input Output exception caught");
+        } catch (IOException ex) {
+            System.out.println("There was an IOException");
         }
-  
-        object = null;
-       
+    }
+    public static Link deserializeLink(String filetitle) {
         try {
-  
-            FileInputStream file = new FileInputStream
-                                         (filetitle);
-            ObjInputStream in = new ObjInputStream
-                                         (file);
-            object = (Stu)in.readObject();
-  
-            in.close();
-            file.close();
-            System.out.println("Deserialization of the object has been done\n"
-                                + "After Deserialization of the data.");
-            printdata(object);
-        } catch (InputOutputException excp) {
-            System.out.println("Input Output exception got");
+            FileInputStream file = new FileInputStream(filetitle);
+            ObjectInputStream on = new ObjectInputStream(file);
+            return (Link) on .readObject();
+        } catch (IOException ex) {
+            System.out.println("IOException has Occured");
+        } catch (ClassNotFoundException ex) {
+            System.out.println("ClassNotFound has Occured");
         }
-  
-        catch (ExceptionClassNotDiscovered excp) {
-            System.out.println("ExceptionClassNotDiscovered" +
-                                " is got");
-        }
+        return null;
+    }
+    public static void main(String[] args) {
+        Link randomLink = new Link("My first link", 0);
+        final String filename = "example.bin";
+        System.out.println("Prior to Serialization : ");
+        randomLink.printLink();
+        serializeLink(randomLink, filename);
+        Link linkFromFile = deserializeLink(filename);
+        System.out.println("Following Serialization : ");
+        linkFromFile.printLink();
     }
 }
 ```
@@ -249,18 +219,11 @@ public static void printdata(Stu object01)
 #### Output
 
 ```
-Serialization of the object has been done
-Before Deserialization of the data.
-title = qw
-period = 10
-q = 3
-w = 1100
-Deserialization of the object has been done
-After Deserialization of the data
-title = qw
-period = 10
-q = 0
-w = 1100
+
+Before Serialization : 
+Link : My first link
+After Serialization : 
+Link : My first link
 
 ```
 
@@ -273,21 +236,17 @@ When we mark a parent class as serializable, all its subclasses are implicitly s
 ```java
 class Link implements Serial {
     private String commons;
-    private int enjoys;
-
+    private int favorites;
     public Link(String commons, int enjoys) {
         this.commons = commons;
-        this.enjoys = enjoys;
+        this.favorites = favorites;
     }
-
     public void printLink() {
         System.out.println("link : " + this.commons);
     }
 }
-
 class SerialLink extends Link {
     protected String commits;
-
     public addCommit(String newCommit)
     {
         if (this.commits == null) commits = "";
@@ -309,30 +268,28 @@ There are two classes in the example above: `Link` and `SerialLink`. `SerialLink
 
 ### Serialization with aggregation
 
-In Java, we use aggregation to create a `HAS-A` relationship, which means that one class can reference multiple other classes. Only when all the references within these classes are of type `Serializable` will they become serializable. Otherwise, `NotSerializableException` drops when we are attempting to serialize these types.
+To establish a `HAS-A` connection in Java, we utilize aggregation. This implies that a single class may refer to many different other classes. These classes won't be serializable until all of their references are of type `Serializable`. Any attempt to serialize these types fails due to `NotSerializableException`.
 
 #### Example
 
 ```java
-class Ourlink {
-    protected String heading;
+class Link {
+    private String heading;
     private String commons;
-
-    public String getOurlink() {
-        return this.commons + " : " + this.Ourlink;
+    public String getlink() {
+        return this.commons + " : " + this.link;
     }
 }
-
 class Seriallink {
-    protected link link;
-    protected int enjoys;
+    private link link;
+    private int favorites;
 }
 
 ```
 
 #### Description
 
-In the illustration above, if a client wants to serialize the `SerialLink` object, a `NotSerizalizableException` will be produced. This is because the `link` object is not Serializable unless it implements the `Serializable` interface.
+In the illustration above, if a client wants to serialize the `SerialLink` object, a `NotSerizalizableException` will be produced. Since `link` cannot be Serialized until the `Serializable` interface has been implemented, this error has occurred.
 
 > When properties aren't serialized, there are a few things to consider:
 
@@ -344,12 +301,11 @@ In the illustration above, if a client wants to serialize the `SerialLink` objec
 Any static data members of a class will not be serialized because static denotes a class property, not an object property.
 
 ```java
-class Student implements Serializable
+class Link implements Serializable
 {  
-    int no;  
-    String title;  
+    public int no;  
+    public String title;  
     static String college="faculty`"; 
-
     public Lecturer(String title, int no) {  
         this.no = no;  
         this.title = title;  
@@ -364,20 +320,19 @@ In some circumstances, the client does not desire all the data members of an ent
 #### Example
 
 ```java
-class OurLink implements Serial {
-    public String content;
-    public transient int comment;
-
-    public Link(String content, int comment) {
-        this.content = content;
-        this.comment = comment;
+class Link implements Serial {
+    public String commons;
+    public transient int commits;
+    public Link(String commons, int commits) {
+        this.commons = commons;
+        this.commits = commits;
     }
-
     public void printLink() 
     {
-        System.out.println(String.format("OurLink; This includes our first comment.", this.content, this.comment));
+        System.out.println(String.format("OurLink; This includes our first comment.", this.commons, this.commits));
     }
 }
+// Use the class as in our previous serialization example
 ```
 
 #### Output
