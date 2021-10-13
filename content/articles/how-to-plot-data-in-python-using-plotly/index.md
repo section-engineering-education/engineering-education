@@ -29,11 +29,7 @@ To understand this tutorial:
 
 ### What is plotly?
 
-Plotly is an open-source framework for data visualization and graphing. It is a great tool to have if you're working on building any analytical presentation or trying to interpret results. 
-
-It is language-independent. Not only can you use it in Python, but also for other languages such as R, MATLAB, Perl, Julia, Arduino, and REST.
-
-We'll begin by making a comparison between Plotly and Matplotlib to establish how the two compare.
+Plotly is an open-source framework for data visualization and graphing. It is a great tool to have if you're working on building any analytical presentation or trying to interpret results. It is language-independent. Not only can you use it in Python, but also for other languages such as R, MATLAB, Perl, Julia, Arduino, and REST. We'll begin by making a comparison between Plotly and Matplotlib to establish how the two compare.
 
 ### Is plotly better than matplotlib?
 
@@ -43,9 +39,7 @@ Plotly and Matplotllib are tools used for data visualization. But, they do have 
 
 - To create good-looking matplotlib charts, you need to take some time to write the code required to display the charts. With only a few lines of code, using Plotly makes visualizing data easy. You can accomplish the same results with matplotlib, but you'll have to write a lot more code as it is a much more complex process.
 
-So, which is better? It depends on your use case. Plotly is better as it runs on the web browser, it's interactive, and you can quickly visualize your data without writing complex code. If your goal is to create more professional and scientific visualizations, chose matplotlib.
-
-Using an example dataset, let's learn how you can use this library to visualize data.
+So, which is better? It depends on your use case. Plotly is better as it runs on the web browser, it's interactive, and you can quickly visualize your data without writing complex code. If your goal is to create more professional and scientific visualizations, chose matplotlib. Using an example dataset, let's learn how you can use this library to visualize data.
 
 #### Creating the data visualization
 We need to first install plotly in our Google colab.
@@ -115,9 +109,7 @@ The above image shows the distribution of wealth in the year 1952.
 
 ![Output](/engineering-education/how-to-plot-data-in-python-using-plotly/plotly-output-07.png)
 
-The above image shows the distribution of wealth in the year 2007. You can zoom in and out using your mouse cursor to view individual points on the plot.
-
-In the images above, we used interactive animation to help us achieve our goal. There are many other ways you can visualize using plotly. This could be using line charts, bar charts, pie charts, interactive bubble charts, and chloropleth. Explore more techniques [here](https://www.kaggle.com/jhossain/explore-the-gapminder-dataset-with-plotly-express). 
+The above image shows the distribution of wealth in the year 2007. You can zoom in and out using your mouse cursor to view individual points on the plot. We used interactive animation to help us achieve our goal. There are many other ways you can visualize using plotly. This could be using line charts, bar charts, pie charts, interactive bubble charts, and chloropleth. Explore more techniques [here](https://www.kaggle.com/jhossain/explore-the-gapminder-dataset-with-plotly-express). 
 
 Using the same dataset, let's plot using chloropleth.
 
@@ -134,13 +126,13 @@ px.choropleth(data_frame=gapminder_df,
 ```
 ![Plotting using chloropleth (1952)](/engineering-education/how-to-plot-data-in-python-using-plotly/chloropleth-output-52.png)
 
-The above image shows the distribution of wealth in the year 1952 using cloropleth projected on natural earth.
+The image shows the distribution of wealth in the year 1952 using cloropleth projected on natural earth.
 
 ![Plotting using chloropleth (2007)](/engineering-education/how-to-plot-data-in-python-using-plotly/chloropleth-output-52.png)
 
-The above image shows the distribution of wealth in the year 2007 using cloropleth projected on natural earth.
+We see the distribution of wealth in the year 2007 using cloropleth projected on natural earth.
 
-Please find the complete code of this tutorial [here](https://colab.research.google.com/drive/1mz0GthxE2FektPON4ZnkSUvO8Otf1Ix1#scrollTo=X0vwv1kIXHBn). Run the code and see how the distribution of wealth compares by continent from the year 1952 to 2007.  
+Please find all the code for this tutorial [here](https://colab.research.google.com/drive/1mz0GthxE2FektPON4ZnkSUvO8Otf1Ix1#scrollTo=X0vwv1kIXHBn) and see how the distribution of wealth compares by continent from the year 1952 to 2007.
 
 ### Wrapping up
 Using only a few lines of code, that's how easy it is to plot data in Python using plotly. Please go and find some datasets of your own and plot them using plotly. Have fun making them look really good while displaying the aspects of the data that you want to show.
