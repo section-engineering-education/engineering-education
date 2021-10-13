@@ -376,7 +376,7 @@ public class Above18 extends HttpServlet
 }
 
 ```
-Right-click on the login.html page and choose "run As"-> "Launch on Server"-> "Save all changes and restart the server" to run the project. In the internal browser, a menu will appear, prompting you to select your age category.
+Right-click on the login.html page and choose "run As"-> "Run on Server"-> "Save all changes and restart the server" to run the project. In the internal browser, a menu will appear, prompting you to select your age category.
 
 In conclusion, this example will give you a solid foundation for working with the `ServletDispatcher` interface in your project. To improve your understanding and enhance your coding skills, I recommend that you start exploring for more examples.
 
