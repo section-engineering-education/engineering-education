@@ -6,7 +6,7 @@ url: /how-to-create-a-geoserver-and-geodatabase/
 title: Creating a Geoserver and a Geodatabase
 description: In this tutorial, we will learn how to create a geospatial server and database. The server will power the database and serve as the gateway between the users and the spatial database. 
 author: isaiah-olatunbosun
-date: 2021-10-12T00:00:00-15:36
+date: 2021-10-13T00:00:00-12:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -17,7 +17,7 @@ images:
 
 In this tutorial, we will learn how to create a geospatial server and database. The server will power the database and serve as the gateway between the users and the spatial database. 
 <!--more-->
-Spatial data is any data that contains the longitude and latitude of any location. Thus, they provide information about a physical location . Spatial data is also referred to as Geographic Information System(GIS). 
+Spatial data is any data that contains the longitude and latitude of any location. Thus, they provide information about a physical location . Spatial data is also referred to as Geographic Information System (GIS). 
 
 Geoserver is a server that processes spatial data and also powers a geodatabase. It serves as the link between geodatabase and users by giving them access to spatial data.
 
@@ -36,11 +36,12 @@ The geodatabase is a database that stores spatial data. It allows users to creat
 -   PostgreSQL
 -   PostGIS
 
-
 Before we start coding, we need to do basic setup. Then, we will create and activate a new environment called env. [Click here](https://www.section.io/engineering-education/introduction-to-virtual-environments-and-dependency-managers/) to learn how to create a new virtual environment.
 
 ### Building the database
-We begin database installation by installing `Postgis`. First, download and install the software from this [link](https://postgis.net/install). Next, we will create the database from our terminal and sign in as a `Postgres user` by running the command below. Ensure you enter your user password once the command executes.
+We begin database installation by installing `Postgis`. 
+
+First, download and install the software from this [link](https://postgis.net/install). Next, we will create the database from our terminal and sign in as a `Postgres user` by running the command below. Ensure you enter your user password once the command executes.
 
 ```bash
 psql -U Postgres
@@ -59,7 +60,7 @@ CREATE EXTENSION postgis;
 \q
 ```
 
-We connected to the database using `\c geodata;` while `CREATE EXTENSION postgis;` enabled the PostGIS extension, and we quit psql using `\q`.
+We connected to the database using `\c geodata;` while `CREATE EXTENSION postgis;` enables the PostGIS extension, and we quit psql using `\q`.
 
 The next step is to connect our database to the project so let us install Flask, geoalchemy2, flask_sqlalchemy and psycopg2.
 
@@ -67,7 +68,7 @@ The next step is to connect our database to the project so let us install Flask,
 pip install flask geoalchemy2 flask_sqlalchemy psycopg2
 ```
 
-Create a new file app.py and type the following code snippet:
+Create a new file `app.py` and type the following code snippet:
 
 ```py
 from flask import Flask
@@ -125,7 +126,9 @@ exit()
 ```
 
 ### Saving the coordinates
-Users can submit their coordinates by filling up a form and uploading a `geojson` file or `shapefile`, so let us create the submission endpoint. However, first, let us add the snippet below to our `app.py` file.
+Users can submit their coordinates by filling up a form and uploading a `geojson` file or `shapefile`, so let us create the submission endpoint. 
+
+Let us add the snippet below to our `app.py` file.
 
 ```py
 @app.route('/', methods=['GET', 'POST'])
@@ -159,17 +162,16 @@ Flask uses the Jinja templating method to render HTML pages, and that Is what we
 HTML pages are stored in the templates folder, so let Us create a new folder called `templates` in our root directory. Inside the templates folder, we will also create a new file called ``index.html. Finally, we will use bootstrap 5.1 to style our form.
 
 ```html
-    <form action="{{url_for('index')}}",  method="post">
-     <div class="mb-3">
-    <label for="exampleInputText" class="form-label">Location</label>
-    <input type="text" class="form-control" id="exampleInputText" >
-
-  </div>
-    <div class="mb-3">
-  <label for="formFile" class="form-label">Upload Coordinate</label>
-  <input class="form-control" name="coordinate" type="file" id="formFile">
-</div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+<form action="{{url_for('index')}}",  method="post">
+   <div class="mb-3">
+      <label for="exampleInputText" class="form-label">Location</label>
+      <input type="text" class="form-control" id="exampleInputText" >
+   </div>
+   <div class="mb-3">
+      <label for="formFile" class="form-label">Upload Coordinate</label>
+      <input class="form-control" name="coordinate" type="file" id="formFile">
+   </div>
+   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 ```
 
@@ -196,8 +198,8 @@ def all_coordinate():
         all_cord.append(location)
 
     return render_template('all.html', all_coordinates=all_cord)
-
 ```
+
 We queried the database and retrieved all the coordinates in the coordinates variable. Since they are stored as binary, we need to convert them back to coordinates by looping through them and appending them to the empty list `all_cord`. 
 
 While looping, each coordinate is saved in the `location_coordinate` variable.
