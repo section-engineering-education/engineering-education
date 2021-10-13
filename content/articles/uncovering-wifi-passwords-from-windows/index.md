@@ -1,6 +1,6 @@
-Wi-Fi is widely used to connect to multiple networks at various times and locations. Be it a coffee shop, a free Wi-Fi hotspot, an office wireless network, or a home network, Wi-Fi is used everywhere. Over time, it becomes difficult to remember passwords for all Wi-Fi networks you connected to and saved in the past. Instead of trying to retrieve passwords from sysadmins, experts, or using other methods, if you forget your Wi-Fi password, Windows offers more options to view stored Wi-Fi key contents.
+In this generation, Wi-Fi has become an important thing to many of us. Whenever you go to different places, whether in town, houses, or shops, you will find people using WiFi on their devices. It could be on a smartphone, a desktop computer, a tablet, or even a personal computer. These devices may be connected to different Wi-Fi networks, which may require a key code or password to connect to them. As time goes by, one may forget the WiFi password of a specific Wi-Fi network he or she is interested in. Well, don’t worry, the Windows operating system has got you covered. Windows has the ability to save/store all Wi-Fi network passwords that have previously been connected to your device.
 
-In windows, Wi-Fi passwords from saved Wi-Fi networks are hidden from the user. Unlike other operating systems like Android, Windows has terminals that can be used to acquire the Wi-Fi passwords from the saved Wi-Fi networks in the device. Windows has the ability to remember settings for many saved Wi-Fi networks, including network security keys.
+In windows, Wi-Fi passwords from saved Wi-Fi networks are hidden from the user. Unlike other operating systems like Android, Windows has terminals that can be used to acquire the Wi-Fi passwords from the saved Wi-Fi networks in the device. You will be required to write some simple commands on the terminals in your Windows OS device, in this article, I'll take you through how you will be able to unсоver Wi-Fi раsswоrds from the saved Wi-Fi networks in your device, and I'll also give you the commands to use them.
 
 With the use of PowerShell and cmd (also known as command prompt), we can be able to find the hidden Wi-Fi passwords by using simple cmd and PowerShell commands. This will enable users to view the passwords to connect other devices to the same Wi-Fi networks.
 
@@ -43,20 +43,19 @@ After we have known and understood alittle bit about cmd and PowerShell, we can 
 
 > *This is how the display of your pc's screen will be like*
 
-**Step 2:** To see a list of network names that we connect to, type `netsh wlan show profile` in the command prompt and then _run then command_. Make a note of the full name of the Wi-Fi network for which you're looking for the password.
-
+**Step 2:** You will need to type `netsh wlan show profile` in the command prompt console and then _run then command_. A list of names of all saved Wi-Fi networks that were ever connected to your Windows device in the past will be displayed in your output.
 
 ![netsh wlan show profile](/engineering-education/uncovering-WiFi-passwords-from-windows/profile.png)
 
 > *screenshot of Step 2*
 
-**Step 3:** Type `netsh wlan show profile name="Network name" key=clear`, substituting ‘Network name’ for the WiFi network name you just made a note of in the previous step. For example, if my WiFi network name is "ZeleFa" I'll type "netsh wlan show profile name "ZeleFa" key=clear" then Press Enter. 
+**Step 3:** you'll need to type `netsh wlan show profile name="Network name" key=clear`, substituting ‘Network name’ for the WiFi network that you want to get it's password. For example, if my WiFi network name is "ZeleFa" I'll type "netsh wlan show profile name "ZeleFa" key=clear" then Press Enter. 
 
 ![key=clear](/engineering-education/uncovering-WiFi-passwords-from-windows/keyclear.png)
 
 > *As you can see from the above photo the password is visible.*
 
-check on __"Security Settings"__ in the output, the field labeled "***Key content***" displays the WiFi password of the network.
+The Wi-Fi password will be displayed on a field labelled "***Key Content***" on the "___Security Settings___"
 
 With the above procedures you'll be able to acquire the WiFi passwords thanks to the simple CMD commands.
 
@@ -66,7 +65,7 @@ Here it will be very simple to get the WiFi password since we've already known t
 
 **Step 1**: First you will need to open PowerShell on pc, you can do that by right-clicking the Start Button and then click _Windows PowerShell_. Once it's open, type this command in your Windows PowerShell console.
 
-> `netsh wlan show profile`
+> _`netsh wlan show profile`_
 
 ![netsh wlan show profile](/engineering-education/uncovering-WiFi-passwords-from-windows/powershellprofile.png)
 
@@ -83,6 +82,10 @@ For example if your WiFi network name is "ZeleFa" you should type _`netsh wlan s
 > _After running the command, your output should resemble the above photo_
 
 check on "__Security Settings__" in the output, the field labeled "___Key content___" displays the WiFi password of the network.
+
+### ***Conclusion***
+With those few steps you'll be able to uncover your Wi-Fi password in your Windows OS device.
+
 
 
 
