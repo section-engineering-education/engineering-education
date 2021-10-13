@@ -275,3 +275,5 @@ At this point, we have reached the end of our python implementation.
 
 ### Conclusion
 In this article, we looked at the intuition behind logistic regression and lastly learned how to implement it in python. I hope we found this content helpful and we all enjoyed the learning process to this end. Happy learning.
+
+Find the complete source code [here](https://github.com/Madrinmarison/datasets/blob/main/Logistic_regression.ipynb)
