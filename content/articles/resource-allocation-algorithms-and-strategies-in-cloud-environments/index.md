@@ -1,5 +1,22 @@
-[Cloud computing](https://www.section.io/engineering-education/introduction-to-cloud-computing/) is becoming more popular among small, medium, and large enterprises. These enterprises benefit from increased efficiency, cost optimization, data security, unlimited storage capacity, and more.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /resource-allocation-algorithms-and-strategies-in-cloud-environments/
+title: Resource Allocation Algorithms and Strategies in Cloud Environments
+description: In this article, we will dig deeper into resource allocation strategies in cloud computing and discusses resource allocation limitations in the cloud.
+author: jayden-kiprotich
+date: 2021-10-13T00:00:00-13:00
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/resource-allocation-algorithms-and-strategies-in-cloud-environments/hero.jpg
+    alt: Resource Allocation Algorithms and Strategies in Cloud Environments Hero Image
+---
+
+[Cloud computing](https://www.section.io/engineering-education/introduction-to-cloud-computing/) is becoming more popular among small, medium, and large enterprises. These enterprises benefit from increased efficiency, cost optimization, data security, unlimited storage capacity, and more.
+<!--more-->
 But the cost of cloud resources has emerged as a common concern among these companies. This is why cloud resource optimization is a topic of discussion. Several methods optimize cloud computing resources to meet the actual demand and reduce cloud services costs.
 
 This article digs deeper into resource allocation strategies in cloud computing and discusses resource allocation limitations in the cloud.
@@ -15,12 +32,10 @@ This article digs deeper into resource allocation strategies in cloud computing 
 - [Conclusion](#conlusion)
 - [Further reading](#further-reading)
 
-### Prerequisite
-To understand this article better, you need to have a basic understanding of cloud computing. Have a look at introduction to cloud computing [here](/engineering-education/introduction-to-cloud-computing/). 
-
+### Prerequisites
+To understand this article better, you need to have a basic understanding of cloud computing. Please have a look at the introduction to cloud computing [here](/engineering-education/introduction-to-cloud-computing/). 
 
 ### Resource allocation strategies in the cloud
-
 Cloud computing provides businesses, clients and projects a computing environment for leasing resources on-demand. Both cloud consumers and suppliers have a goal to allocate cloud resources effectively and achieve profit. But these resources are often scarce, and cloud providers must leverage and distribute the resources within the limits of the cloud environment and meet the needs of cloud applications s that they complete their intended tasks.
 
 One of the most critical cloud computing components is the allocation of resources. Its efficiency directly influences the performance of the whole cloud environment. 
@@ -45,13 +60,11 @@ In this article, we will discuss the following four resource allocation strategi
 - Ant colony optimization (ACO) Algorithm
 
 #### Dynamic resource allocation
-
 Dynamic resource allocation is used for load balancing, and it is a significant optimization process in cloud computing. This strategy distributes loads among virtual machines (VMs) to achieve a cost-efficient usage of computing resources. It emphasizes on-demand services and resource scalability.
 
 Businesses scale their cloud resources dynamically based on their needs. While on-demand resource allocation may face challenges, VM technology is employed to provision resources. Using a virtualized environment reduces the average job response time and ensures tasks are executed according to resource availability. Utilizing cloud resources dynamically is the key to balancing the load and avoiding issues such as the slow running of systems.
 
 #### Linear scheduling strategy
-
 Resource allocation and resource consumption, when integrated, improve resource utilization. Linear Scheduling Strategy seeks to allocate cloud resources while maximizing the system throughput as well as resource use. This technique distributes resources among the requesting users to maximize the Quality of Service parameters such as throughput, response time, and service cost.
 
 Linear strategy algorithms compile user requests and sort them in different queues as per their threshold value. The scheduling algorithm maximizes resource utilization by considering the available virtual machines and tasks.
@@ -59,13 +72,11 @@ Linear strategy algorithms compile user requests and sort them in different queu
 Resource utilization in cloud environments is based on memory usage, CPU usage, and throughput. Thus, the scheduling algorithm uses a server node to determine the most applicable virtualization method and an IaaS cloud environment to allocate resources that maximize resource usage and throughput. Linear strategy improves response time and reduces waiting time as opposed to scheduling tasks and resources separately.
 
 #### Ant Colony Optimization (ACO) Algorithm 
-
 ACO is an optimization algorithm inspired by techniques used by some ant species. At each interaction of ACO, these ants deposit an artificial hormone (pheromone) on the ground that acts as a mark to the best possible path for other colony members to follow. This is a powerful scheduling method in cloud computing.
 
 There are several challenges associated with scheduling in Cloud computing infrastructure. Examples include load balancing, budget, and computation time issues. ACO is a significant approach to solving load balancing problems. This approach achieves better resource usage and higher throughput by balancing the load in the cloud infrastructure and minimizing the computational time or makespan. In cloud computing, makespan represents the completion time of the last task to leave the system. ACO manages the usage of virtual machines, memory, and the number of clouds.
 
 #### Particle Swarm Optimization Algorithm
-
 The Particle Swarm Optimization algorithm (PSO) is made up of a set of particles characterized by positions and velocities. The velocity in a PSO particle represents the movement in the search space, which adjusts dynamically based on previous behavior. Particles continuously move within the search space in search of better points. They change their velocity and position to arrive at the solution space.
 
 PSO method is used in complex, large-scale environments. Its performance in reducing computational time is unmatched with other [swarm intelligence](http://www.scholarpedia.org/article/Swarm_intelligence) algorithms, including genetic algorithms ([GA](https://www.whitman.edu/Documents/Academics/Mathematics/2014/carrjk.pdf)). PSO uses absolute values of numbers, unlike the GA algorithms that encode values to binary.
@@ -73,19 +84,15 @@ PSO method is used in complex, large-scale environments. Its performance in redu
 PSO provides effective optimization in cloud computing and other distributed environments. It is faster in computation time compared to ACO, GA, and other [meta-heuristic algorithms](https://en.wikipedia.org/wiki/Metaheuristic). Due to its simple processing and faster processing time, PSO is a reliable solution to the task scheduling problem.
 
 ### Limitations of resource allocation in the cloud
-
 - Cloud users rent resources from remote servers but do not have control over their resources. Thus, migration to other cloud providers searching for better data storage and other services alike is challenging.
 - Transfer of data from one provider to another may pose risks. Data stored in the public cloud is susceptible to phishing and hacking attacks. Malware can spread quickly because servers on the cloud are interconnected.
 - More profound knowledge is required to master resource allocation and management. This is so because the cloud service providers hold a lot of information about the working of the cloud.
 - You need to install software locally if you're targeting to use peripheral devices such as scanners and printers with the cloud. Networked peripherals work well with the cloud.
 
 ### Conclusion
-
 Enterprises continue to rely on cloud computing technology for many use cases, including increasing efficiency, optimizing cloud costs, ensuring data security, and storing unlimited data. Resource allocation knowledge is a growing need for cloud users who want to optimize their cloud usage costs. While there are many strategies for allocating resources in the cloud, the most effective method is the one that achieves cloud user satisfaction and maximizes the income for cloud service provers.
 
 ### Further reading
 - [How to Optimize Cloud Computing Costs with Cloud Bursting](/engineering-education/how-to-optimize-cloud-computing-costs-with-cloud-bursting/)
-
 - [Introduction To Cloud Computing](https://www.section.io/engineering-education/introduction-to-cloud-computing/)
-
 - [Containers vs. VMs vs. Serverless at the Edge](/blog/containers-vm-serverless-edge-computing/)
