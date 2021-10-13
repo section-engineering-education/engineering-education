@@ -6,7 +6,7 @@ This article helps the learners and developers understand several tools and libr
 ### Concept of parser and parsing
 Parsing involves breaking down and analyzing a block of code into smaller code components using some rules. These components are then interpreted, modified, or managed according to the developers’ needs to derive a more profound meaning or understanding.
 
-It requires a particular program to perform the actual parsing called a parser. A parser is divided into two parts known as a scanner or tokenizer and a parser itself. Lexer and parser perform tasks in an orderly manner. It means that the lexer will first scan the input data and generate a list of tokens, and then the parser scans the tokens generated and outputs the parsing results.
+It requires a particular program to perform the actual parsing called a parser. A parser is made up of two parts, the scanner (tokenizer/lexer) and the parser. Lexer and parser perform tasks in an orderly manner. It means that the lexer will first read the input data and generates a list of tokens. Then the parser reads the tokens generated and outputs the results.
 
 ### Rules and grammars
 Rules refer to the instructions that lexers or parsers follow when performing parsing, whereas the set of these rules forms a grammar. Grammar consist set of rules that defines how each line of code or construct is composed.
@@ -55,22 +55,21 @@ It is a popularly used context-free parser generator in Java. [ANTLR](https://ww
 ANTLR grammar contains two parts that are, the lexer and the parser rules. The two rules are implicitly defined since lexer rules refer to the rules that start with an uppercase letter, and the parser rules are the ones that start with a lowercase letter. Lexer and parser rules can also be explicitly defined.
 
 #### APG
-It is a recursive descent parser that uses [Augmented BNF](https://en.wikipedia.org/wiki/Augmented_Backus%E2%80%93Naur_form) variation. [APG](https://sabnf.com/) supports more operators such as [syntactic predicates](https://en.wikipedia.org/wiki/Syntactic_predicate) and user-defined matching functions. An APG grammar is easier to understand and clean. It can be used to write Java, C, C++, and JavaScript parsers.
+It is a recursive descent parser that uses [Augmented BNF](https://en.wikipedia.org/wiki/Augmented_Backus%E2%80%93Naur_form) variation. [APG](https://sabnf.com/) made up of more operators such as [syntactic predicates](https://en.wikipedia.org/wiki/Syntactic_predicate) and and custom-made matching functions. An APG grammar is simple, clean and easy to grasp to a new developer. It is popularly known in writing Java, JavaScript, C, and C++ parsers.
 
 #### Coco/R
-It uses [attribute grammar](http://melt.cs.umn.edu/silver/tutorial/4_attribute_grammars/) to generate a scanner and a parser that is [recursive-decent](https://www.geeksforgeeks.org/recursive-descent-parser/). In attribute grammar, the rules are defined in an [EBNF](https://tomassetti.me/ebnf/) variant and interpreted in various ways to change the methods of a generated parser.
+It uses [attribute grammar](http://melt.cs.umn.edu/silver/tutorial/4_attribute_grammars/) to generate a scanner and a parser that is [recursive-decent](https://www.geeksforgeeks.org/recursive-descent-parser/). In attribute grammar, the semantic rules are defined in an [EBNF](https://tomassetti.me/ebnf/) variant and then interpreted in order to modify the methods of a resulting parser.
 
-[Coco/R](https://csis.pace.edu/~bergin/compiler/coco/CocoJava.html) is well documented and comes with several examples of grammar available to ensure better understanding. It supports Java, C++, and C# languages.
+It is well documented and offers several grammar samples to provide good knowledge of the tool. It is well known in writing parsers for Java, C++, and C# languages.
 
 #### CUP
-It is an [LALR](https://www.geeksforgeeks.org/lalr-parser-with-examples/), which stands for Look-Ahead LR, a parser generator for Java. [CUP](http://www2.cs.tum.edu/projects/cup/) is well suited to be used by JFlex and generates the correct parts of the parser. It also offers an Eclipse plugin useful in writing grammar.
+It is a Look-Ahead LR ([LALR](https://www.geeksforgeeks.org/lalr-parser-with-examples/)) parser, popularly known in generating parsers for Java. [CUP](http://www2.cs.tum.edu/projects/cup/) can work well with JFlex to generate the right parts of the parser. It also offers an Eclipse plugin used by developers in writing grammar.
 
 #### JavaCC
-It is popularly known for parser generation in Java. It has the grammar that comes with all the actions and custom code necessary for writing parsers in Java. [JavaCC](https://cs.lmu.edu/~ray/notes/javacc/) grammar file is not as clean as that of ANTLR but contains some parts of Java source code.
+It generates parsers for Java and its grammar has all the actions and custom code necessary for writing parsers in Java. [JavaCC](https://cs.lmu.edu/~ray/notes/javacc/) grammar file is not as clean as that of ANTLR and most of its parts contain Java source code.
 
-It is well documented and has been used significantly in essential projects such as JavaParser. It does not have much grammar in its grammar repository.
+It is well documented and has been used significantly in essential projects such as JavaParser. It does not have much grammar although it comes with its grammar repository.
 
-### Libraries for parsing Java
 #### JavaParser
 It is a Java parser library that parses Java code. [JavaParser](https://javaparser.org/) offers lexical preservation and [pretty-printing](https://en.wikipedia.org/wiki/Prettyprint). This implies that Java code can be parsed, modified, and printed back with an original format or pretty printed.  It is possible to integrate it with [JavaSymbolSolver](https://github.com/javaparser/javasymbolsolver) and also support all Java versions.
 
