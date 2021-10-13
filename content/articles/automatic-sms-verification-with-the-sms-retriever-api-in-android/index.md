@@ -58,10 +58,39 @@ Your server generates a verification code and sends to the phone number you ente
 ### Step 4: Getting an instance of the SmsRetriverClient object
 
 We'll first create an instance of the SmsRetrieverClient object. Then invoke its initSmsRetriever instance function. We'll finally add `onSuccess` and `onFailure` Listeners to the Task. We wrap the code in a function for later use.
+```
+private fun initSmsListener() {
+    smsClient.startSmsRetriever()
+        .addOnSuccessListener {
+            //You can perform your tasks here
+        }.addOnFailureListener { failure ->
+            failure.printStackTrace()
+            Toast.makeText(this, failure.message, Toast.LENGTH_SHORT).show()
+        }
+}
+
+```
 
 The above function is invoked on the `onCreate()` method.
 
-The Play Services library we deployed before will broadcast a `SmsRetriever.SMS RETRIEVED ACTION` intent to the app. This happens in the event a device receives a message containing the code. This intent carries the SMS message text as well as the status of the background processing.
+```
+class MainActivity : AppCompatActivity() {
+    private lateinit var  binding: ActivityMainBinding
+    private lateinit var smsClient: SmsRetrieverClient
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        smsClient = SmsRetriever.getClient(this)
+        
+        initSmsListener()
+
+    }
+...
+
+```
+The code we deployed before will transmit a `SmsRetriever.SMS RETRIEVED ACTION` intent to the app. This happens in the event a device receives a message containing the code. This intent carries the SMS message text as well as the status of the background processing.
 To deal with this, we'll make a BroadcastReceiver class:
 
 On the `onReceive()` method, first check the status of `SMS Retriever` background processing. We also construct an instance of the `RetrievalEvent` class. This is the event class that `EventBus` will send to our `Subscriber`. The, class `RetrievalEvent` will be a data class. If you are completely new to [EventBus](https://greenrobot.org/eventbus/), please read on it. 
@@ -76,7 +105,6 @@ We set the property of the `RetrievalEvent` class to the SMS message we've retri
 
 In your app's `AndroidManifest.xml` file, register `BroadcastReceiver`.
 
-
 ### Implementing subscriber
 
 Next, in our `MainActivity class`, we'll register, unregister, and implement our subscribers. The `onReceiveSms()` method will be invoked when an event is posted. It is usually annotated with the `@Subscribe` annotation.
@@ -84,6 +112,69 @@ Registering and unregistering receiver is usually  done on `onStart()` and `onSt
 
 **Note**: Always remember to register and unregister members to avoid memory leaks
 
+```
+class MainActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityMainBinding
+    private lateinit var smsClient: SmsRetrieverClient
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        smsClient = SmsRetriever.getClient(this)
+
+        //uncomment this to generate your app hash string. You can view the hash string on your log cat when you run the app
+        /*val appSignatureHelper = SignatureHelper(this)
+        Log.d("SIGNATURE",appSignatureHelper.appSignature.toString())*/
+
+        initSmsListener()
+
+    }
+
+    override fun onStart() {
+        super.onStart()
+        EventBus.getDefault().register(this)
+    }
+
+    override fun onStop() {
+        EventBus.getDefault().unregister(this)
+        super.onStop()
+    }
+
+    private fun initSmsListener() {
+        smsClient.startSmsRetriever()
+            .addOnSuccessListener {
+                Toast.makeText(
+                    this, "Waiting for sms message",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }.addOnFailureListener { failure ->
+                Toast.makeText(
+                    this, failure.localizedMessage,
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+    }
+
+    @Subscribe
+    fun onReceiveSms(retrievalEvent: RetrievalEvent) {
+        val code: String =
+            StringUtils.substringAfterLast(retrievalEvent.message, "is").replace(":", "")
+                .trim().substring(0, 4)
+
+        runOnUiThread {
+            if (!retrievalEvent.timedOut) {
+                binding.editText.setText(code)
+            } else {
+                Toast.makeText(this, "Failed", Toast.LENGTH_SHORT).show()
+            }
+        }
+        initSmsListener()
+
+    }
+}
+
+```
 ### Computing your app's hash string
 
 To generate the hash string, you can use the following methods: 
@@ -92,6 +183,73 @@ To generate the hash string, you can use the following methods:
 - Use `SignatureHelper class`. This class will help to generate our app's hash string. If you use the helper class, make sure to remove it after you've obtained the hash string. Avoid using hash strings calculated on client side for you verification messages.
 
 In our case, we are going to use the `SignatureHelper class` to generate our app's hash string. The hash string generated will appear on the `logcat`. 
+
+class SignatureHelper(context: Context?) :
+    ContextWrapper(context) {
+    val appSignature: ArrayList<String>
+        get() {
+            val appCodes = ArrayList<String>()
+            try {
+                val myPackageName = packageName
+                val myPackageManager = packageManager
+                val signatures =
+                    myPackageManager.getPackageInfo(
+                        myPackageName,
+                        PackageManager.GET_SIGNATURES
+                    ).signatures
+
+                for (signature in signatures) {
+                    val hash =
+                        hash(myPackageName, signature.toCharsString())
+                    if (hash != null) {
+                        appCodes.add(String.format("%s", hash))
+                    }
+                }
+            } catch (e: PackageManager.NameNotFoundException) {
+                Log.d(
+                    TAG,
+                    "Package not found",
+                    e
+                )
+            }
+            return appCodes
+        }
+
+    companion object {
+        private const val HASH_TYPE = "SHA-256"
+        const val HASHED_BYTES = 9
+        const val BASE64_CHAR = 11
+        private fun hash(packageName: String, signature: String): String? {
+            val appInfo = "$packageName $signature"
+            try {
+                val messageDigest =
+                    MessageDigest.getInstance(HASH_TYPE)
+                messageDigest.update(appInfo.toByteArray(StandardCharsets.UTF_8))
+                var hashSignature = messageDigest.digest()
+                hashSignature = Arrays.copyOfRange(
+                    hashSignature,
+                    0,
+                    HASHED_BYTES
+                )
+                var base64Hash = Base64.encodeToString(
+                    hashSignature,
+                    Base64.NO_PADDING or Base64.NO_WRAP
+                )
+                base64Hash = base64Hash.substring(0, BASE64_CHAR)
+                Log.d(TAG, String.format("pkg: %s -- hash: %s", packageName, base64Hash)
+                )
+                return base64Hash
+            } catch (e: NoSuchAlgorithmException) {
+                Log.e(TAG, "Algorithm not Found", e)
+            }
+            return null
+        }
+    }
+}
+
+
+
+```
 
 Finally, remember that the format you should use on your message is as follows: 
 - The message should be less than 140 bytes.
