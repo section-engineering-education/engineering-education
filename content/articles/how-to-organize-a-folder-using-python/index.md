@@ -1,5 +1,22 @@
-### Introduction
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-organize-a-folder-using-python/
+title: How to Organize a Folder using Python
+description: This article will show a reader how to organize folders using a python script. It also explains how to move files to different folders by taking a source directory and a destination directory as parameters. 
+author: nathaniel-dauda-wobin
+date: 2021-10-13T00:00:00-19:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/how-to-organize-a-folder-using-python/hero.jpg
+    alt: How to Organize a Folder using Python Hero Image
+---
+
 If you find yourself reading this article, there is a high possibility that you've got files all over your desktop, or your download folder is unorganized since all downloaded files are stored there. This can be fixed using python.
+<!--more-->
 Python is a high-level programming language designed to be easy to read and simple to implement. In this guide, we will see how to write a python script we can run anytime we want to organize any folder on our computer.
 
 ### Prerequisites
