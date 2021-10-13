@@ -96,3 +96,6 @@ Enterprises continue to rely on cloud computing technology for many use cases, i
 - [How to Optimize Cloud Computing Costs with Cloud Bursting](/engineering-education/how-to-optimize-cloud-computing-costs-with-cloud-bursting/)
 - [Introduction To Cloud Computing](https://www.section.io/engineering-education/introduction-to-cloud-computing/)
 - [Containers vs. VMs vs. Serverless at the Edge](/blog/containers-vm-serverless-edge-computing/)
+
+---
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
