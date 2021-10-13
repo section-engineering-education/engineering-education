@@ -1,7 +1,23 @@
-﻿Programming is the process of developing computer programs using different languages and tools.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /understanding-fundamentals-programming-principles/
+title: Understanding fundamental programming principles
+description: This article will cover the fundamental programming principles followed during programming.
+author: christine-muthoni
+date: 2021-10-13T00:00:00-04:50
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/null-safety-support-for-flutter-and-dart/hero.jpg
+    alt: Null Safety support for Flutter and Dart Cover image
+---﻿
+Programming is the process of developing computer programs using different languages and tools.
 
 ### Introduction
-This article deals with different steps of program development and which programming languages are used as they have a special sequence, order, and rules of writing characters.<br>
+This article deals with different steps of program development and which programming languages are used as they have a special sequence, order, and rules of writing characters.
 Understanding fundamental programming principles, you familiarise yourself with these different programming languages and the stages of creating software.
 
 
