@@ -6,13 +6,13 @@ url: /building-an-ensemble-learning-based-regression-model-using-python/
 title: Building an Ensemble Learning Based Regression Model Using Python
 description: This tutorial aims to help the reader build an ensemble learning-based regression model using the python programming language.
 author: adhinga-fredrick
-date: 2021-10-11T00:00:00-13:00
+date: 2021-10-13T00:00:00-19:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
 
   - url: /building-an-ensemble-learning-based-regression-model-using-python/hero.jpg
-    alt: An Ensemble Learning Based Regression Model Example Image
+    alt: An Ensemble Learning Based Regression Model Hero Image
 ---
 
 Machine learning models are always evaluated based on their performance using specific metrics like; accuracy, precision, Mean Squared Error(MSE), etc. Each type of machine learning problem has its evaluation metrics.
@@ -37,21 +37,24 @@ For our model's evaluation, we will be using RMSE (Root Mean Squared Error).
 
 ### Setting up your environment
 Before building our model, we will first go to Kaggle and create a new **notebook** and rename it to **Create_Folds**.
-![notebook](engineering-education/building-an-ensemble-learning-based-regression-model-using-python/new_notebook.jpg)
+
+![Notebook](engineering-education/building-an-ensemble-learning-based-regression-model-using-python/new_notebook.jpg)
 
 After that, [download](https://www.kaggle.com/c/30-days-of-ml/data) the data from Kaggle and add it to your environment using the **Add Data** button and upload the downloaded data as **Dataset**.
+
 ![data](engineering-education/building-an-ensemble-learning-based-regression-model-using-python/data.jpg)
 
 >**HINT:**  To flawlessly upload your data to Kaggle, compress the datasets.
 
 ### Creating k-folds
 Once done with setting up the environment, we will move on to creating k-folds for our dataset.
+
 Cross-validation is a validation technique used to evaluate machine learning models on a finite dataset.  It is quite popular as it is easier to understand and results in less biased predictions than other methods like train/test split.
 
 It is also best that you create folds that you'll be using throughout the modeling process whenever you're starting with a machine learning problem.
 
 #### Importing the necessary libraries
-Before proceeding, we need to import the following necessary libraries.
+Before proceeding, we need to import the following necessary libraries:
 
 ```python
 import numpy as np 
@@ -60,7 +63,7 @@ from sklearn import model_selection
 ```
 
 #### Read data
-We will now proceed to load our dataset into our notebook. We will use Pandas library's `read_csv()` function to read the data as they constitute as `csv` files.
+We will now proceed to load our dataset into our notebook. We will use pandas library's `read_csv()` function to read the data as they constitute as `csv` files.
 
 The code is as shown below:
 
@@ -117,7 +120,7 @@ from  xgboost  import  XGBRegressor
 Once done, we will then proceed to read our data.
 
 #### Read data
-We will read our newly uploaded data, `Dataset2` and `trainfolds` using the following code block below.
+We will read our newly uploaded data, `Dataset2` and `trainfolds` using the following code block below:
 
 ```python
 data = pd.read_csv('/kaggle/input/trainfolds/train_kfolds.csv')
@@ -126,7 +129,7 @@ submission = pd.read_csv('/kaggle/input/Dataset2/sample_submission.csv')
 ```
 
 #### Feature selection
-We will select the useful features from our dataset and remove the not so useful/ impactful features. The not so useful features in this dataset would be; `id`, `target`, and `kfold`.
+We will select the useful features from our dataset and remove the not so useful/impactful features. The not so useful features in this dataset would be; `id`, `target`, and `kfold`.
 
 To select the useful features, run the following block of code:
 
@@ -196,6 +199,7 @@ sub
 
 ### Hyperparameter optimization
 In this process, we'll fine-tune and optimize our model's algorithm parameters until we achieve the desired result.
+
 A few common XGBoost parameters with a large effect on the model perfomance include; **n_jobs**, **max_depth**, **learning_rate**, **n_estimators**, **colsample_bytree**, and **subsample**.
 
 To fine-tune our model, add the following changes to the XGBoost regressor:
@@ -205,7 +209,7 @@ model = XGBRegressor(random_state = fold, n_jobs=5, learning_rate =0.1, subsampl
                          max_depth = 5, min_child_weight = 1, gamma = 0, scale_pos_weight = 1)
 ```
 
-Once you run the above code, you'll see our model's result improve slightly better than our first example. You can continue changing the parameters until it meets the desired goal. For example you can target a value like `0.7100` to measure you models's success.
+Once you run the above code, you'll see our model's result improve slightly better than our first example. You can continue changing the parameters until it meets the desired goal. For example, you can target a value like `0.7100` to measure your models' success.
 
 You can also look at scikit-learn's [GridSearchCV](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html) or [Optuna](https://optuna.org/#code_XGBoost) which makes it easier to fine-tune your model.
 
@@ -214,7 +218,7 @@ Read more on this detailed [hyperparameter tuning](https://www.analyticsvidhya.c
 Here's the Kaggle [notebook](https://www.kaggle.com/adhingafredrick/regressionmodel) for our regression model.
 
 ### Conclusion
-Building a performance-driven model is not a very easy task. It involves refining our model again and again until we get the desired outcome. Either way mastering the art of modeling can be very rewarding, whether it is in a machine learning or a data science project, or a competition.
+Building a performance-driven model is not a very easy task. It involves refining our model again and again until we get the desired outcome. Either way, mastering the art of modeling can be very rewarding, whether it is in a machine learning or a data science project, or a competition.
 
 ---
 Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
