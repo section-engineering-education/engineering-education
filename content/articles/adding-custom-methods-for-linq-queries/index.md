@@ -3,29 +3,29 @@ layout: engineering-education
 status: publish
 published: true
 url: /adding-custom-methods-for-linq-queries/
-title: Adding custom methods to LINQ queries in C#
-description: This article will will explain how to add custom methods to LINQ queries and how to customize LINQ queries
+title: Adding Custom Methods to LINQ Queries in C#
+description: This article will explain how to add custom methods to LINQ queries and how to customize LINQ queries. We will develop an application that retrieves JSON data from an API, query the data using the LINQ queries.
 author: joshua-wainaina
-date: 2021-10-12T00:00:00-10:00
+date: 2021-10-13T00:00:00-10:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/adding-custom-methods-for-linq-queries/hero.png
+  - url: /engineering-education/adding-custom-methods-for-linq-queries/hero.jpg
     alt: Adding custom methods to LINQ queries in C#
 ---
+By introducing extension methods to the IEnumerable interface, you may expand the set of methods available for LINQ queries. For example, you can convert any data sequence into one value by creating your custom aggregate method in SQL Server. 
+<!--more-->
+You can also build a method that returns a new series of values and acts as a custom filter or a specialized data transform for a sequence of variables. 
 
 ### Adding custom methods for LINQ queries (C#) 
 ### Introduction
-By introducing extension methods to the IEnumerable<T> interface, you may expand the set of methods available for LINQ queries. For example, you can convert any data sequence into one value by creating your custom aggregate method in SQL Server. 
-
-You can also build a method that returns a new series of values and acts as a custom filter or a specialized data transform for a sequence of variables. 
-
 A few examples include the Distinct and Skip techniques, as well as the Reverse technique.
 
-You may apply your methods to any enumerable collection when you extend the IEnumerable<T> interface. In this article, we shall look at various custom methods used in LINQ queries in C#.
+You may apply your methods to any enumerable collection when you extend the IEnumerable interface. In this article, we shall look at various custom methods used in LINQ queries in C#.
+
 ### Adding an aggregate method
-When a set of values is aggregated, a single value can be generated. Average, Min, and Max are just a few of the aggregate techniques available in LINQ. By introducing an extension method to the IEnumerable<T> interface, you can design your aggregate method.
+When a set of values is aggregated, a single value can be generated. Average, Min, and Max are just a few of the aggregate techniques available in LINQ. By introducing an extension method to the IEnumerable interface, you can design your aggregate method.
 
 Median is an extension method that computes the median of a sequence of double-valued numbers.
 ```c#
@@ -57,9 +57,11 @@ public static class LINQExtensionExample
     }
 }
 ```
-There is no difference between calling this extension method from the IEnumerable<T> interface and calling any other aggregate function.
 
-On a double array, the following code demonstrates using the Median method
+There is no difference between calling this extension method from the IEnumerable interface and calling any other aggregate function.
+
+On a double array, the following code demonstrates using the Median method:
+
 ```c#
 double[] numbers1 = { 0.9, 5, 2, 9.3, 2.6, 7, 3.3, 4 };
 
@@ -73,7 +75,7 @@ Console.WriteLine("double: Median = " + query1);
 */
 ```
   
-### An aggregate method is overloaded by accepting a variety of types.
+### An aggregate method is overloaded by accepting a variety of types
 To accept sequences of different types, you can overload your aggregate method. Overloading each type is the typical technique. However, it's also possible to use a delegate to build an overload for a generic type. Combining both approaches is also an option.
   
 ### To build a type overload
@@ -102,19 +104,25 @@ Console.WriteLine("int: Median = " + query3);
  The Integer part: Median = 13
 */
 ```
+
 ### Initiating a generic overflow
 A list of generic objects can also be used as an input to an overload if you want to do that. Delegate is supplied as a variable in this overload which converts the generic objects into a specific type using the delegate.
 
-An overload of Median's Func<T,TResult> delegate is shown in the following code. An object of generic type T is passed to this delegate, and it returns a double-type object as a result.
+An overload of Median's Func T, TResult delegate is shown in the following code. An object of generic type T is passed to this delegate, and it returns a double-type object as a result.
+
 ```c#
 // Let us take a look
 public static double Median<T>(this IEnumerable<T> numbersY,
                        Func<T, double> selector) =>
     (from num in numbersY select selector(num)).Median();
 ```
+
 When working with sequences of objects of any type, you may now use the Median technique. We must pass in a delegate parameter if the type does not have its overload of the procedure. Lambda expressions are available in C# for this purpose. Using Aggregate or Group By clauses instead of a method call is only true in Visual Basic.
 
-You can use the following code to call the Median method on a string array and an integer array. Using an array of strings, a median is derived for each string's lengths in the array. Use the Median method's delegate parameter for each scenario in the code. Use the Median method's delegate parameter for Func<T, TResult> for each scenario in which it's used.
+You can use the following code to call the Median method on a string array and an integer array. Using an array of strings, a median is derived for each string's lengths in the array. 
+
+Use the Median method's delegate parameter for each scenario in the code. Use the Median method's delegate parameter for FuncT, TResult for each scenario in which it's used.
+
 ```c#
 int[] numbers4 = { 14, 16, 15, 13, 11, 10, 9 };
 
@@ -140,10 +148,12 @@ Here's what it looks like when it runs:
  String: Median = 13
 */
 ```
+
 ### Adding a method that returns a sequence
-IENumerableT can be extended with custom query methods to return a sequence of values. A collection of IEnumerable<T> must be returned in this scenario. Filters or data transformations can be applied to a sequence of values using these methods.
+IENumerableT can be extended with custom query methods to return a sequence of values. A collection of IEnumerableT must be returned in this scenario. Filters or data transformations can be applied to a sequence of values using these methods.
 
 Using the AlternateElements Extension Method, every other element in a collection, starting with the first element, is returned.
+
 ```c#
 //The IEnumerableT> interface has an extension method.
 // Every other element in a sequence is returned by the method.
@@ -160,7 +170,9 @@ public static IEnumerable<T> AlternateElements<T>(this IEnumerable<T> source)
     }
 }
 ```
+
 This function can be used to extend any enumerable collection.
+
 ```c#
 string[] strings = { "u", "v", "w", "x" };
 
@@ -177,8 +189,9 @@ Here's what it looks like when it runs:
  
 */
 ```
-As a practical example, let us look at the example below.
-The example uses JSON to serialize some databases. Then the JArray. Parse will store some data, after which we will then apply JSON to LINQ query to read the data.
+
+As a practical example, let us look at the example below. The example uses JSON to serialize some databases. Then the JArray. Parse will store some data, after which we will then apply JSON to LINQ query to read the data.
+
 ```c#
 using System;
 using System.Linq;
@@ -233,6 +246,8 @@ class ProgramExample
 
 ### Conclusion
 We have seen how we can make use of LINQ queries in our C# applications. Develop an application that retrieves JSON data from an API, query the data using the LINQ queries.
+
+Happy coding!
   
 ---
 Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul)
