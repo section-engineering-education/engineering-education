@@ -11,7 +11,7 @@ The RequestDispatcher interface allows the request to be forwarded or included t
 - Some basic knowledge of HTML is also required.
 
 You will need to install the following tools to go along with the article:
-- An open-source editor, such as Eclipse, or any other related Java editor. In my case, I will be using [Eclipse IDE for Java EE Developers 2021‑09 windows version](https://www.eclipse.org/downloads/download.php?file=/oomph/epp/2021-09/R/eclipse-inst-jre-win64.exe)
+- An open-source editor, such as Eclipse, or any other related Java editor. In my case, I will be using [Eclipse IDE for Java EE Developers 2021‑06 windows version](https://www.eclipse.org/downloads/packages/release/2021-06/r)
 - Java JDK current version or any. In my case, I will be using [Java SE Development Kit 17 for Windows 64 bit system](https://download.oracle.com/java/17/latest/jdk-17_windows-x64_bin.zip).
 - You need a web browser installed on your computer.
 - Server. In my case, I will be using TomCat version 9.0.10 for windows. You can download it [here](https://dlcdn.apache.org/tomcat/tomcat-10/v10.1.0-M6/bin/apache-tomcat-10.1.0-M6.zip).
@@ -72,7 +72,7 @@ We will create a user login project with a servlet in this example. In this cont
 
 **Steps to create this project.**
 
-**Step 1:** [Download the Eclipse IDE for Java EE developers](https://www.eclipse.org/downloads/download.php?file=/oomph/epp/2021-09/R/eclipse-inst-jre-win64.exe) and install, as shown.
+**Step 1:** [Download the Eclipse IDE for Java EE developers](https://www.eclipse.org/downloads/packages/release/2021-06/r) and install, as shown.
 
 ![download eclipse](/engineering-education/servlet-request-and-servlet-collaboration/downloadeclipse.png)
 
@@ -92,7 +92,7 @@ We will create a user login project with a servlet in this example. In this cont
 
 ![Project name](/engineering-education/servlet-request-and-servlet-collaboration/projectname.png)
 
-**Step 5:** Right-click on the `LogInDemo` project, and then select the HTML file option and name it `Login.html`. In Login.html paste the code below.
+**Step 5:** Right-click on the `LogInDemo` project, select new -> HTML file option and name it `Login.html`. In the html page you created, replace the default code with the following code.
 
 ```html
 <!DOCTYPE html>
@@ -102,24 +102,26 @@ We will create a user login project with a servlet in this example. In this cont
 <title>login demo</title>
 </head>
 <body>
- <form action="LoginAction" method="post">
+ <form action="LoginAction1" method="post">
         <input type="text" name="name" placeholder="Enter username" required>
-         <input type="password" name="password" placeholder="Enter userName" required>
+         <input type="password" name="password" placeholder="Enter password" required>
          <input type="submit" value="submit">
          </form>
 </body>
 </html>
 ```
 
-**Step 6:** Create a new `LoginAction.java` servlet file, right-click on a LogInDemo project, and then select the servlet option as shown.
+**Step 6:** Create a new servlet file as follows:
+
+- Right-click on the `LogInDemo project` select new -> servlet as shown.
 
 ![creating sevlate page](/engineering-education/servlet-request-and-servlet-collaboration/sevlatepage.png)
 
-Finish by giving your servlet class a name as shown.
+- Finish by giving your servlet class a name. `LoginAction1` is the name I'll use.
 
 ![servlet class](/engineering-education/servlet-request-and-servlet-collaboration/servletclass.png)
 
- Copy and paste the code below into your servlet page.
+ - Substitute the code below for the code in the servlet page you just created.
 
 ```java
 
@@ -129,7 +131,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-public class LoginAction extends HttpServlet {
+public class LoginAction1 extends HttpServlet {
 		
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{
@@ -137,11 +139,11 @@ public class LoginAction extends HttpServlet {
         String password=request.getParameter("password");
         if(userName.equals("India") && password.equals("1234"))
         {
-        response.sendRedirect("welcomePage.jsp");
+        response.sendRedirect("welcomePage1.jsp");
         }
         else
         {
-        	response.sendRedirect("loginHtmlPage.html");
+        	response.sendRedirect("Login.html");
         }
 		
 	}
@@ -149,15 +151,17 @@ public class LoginAction extends HttpServlet {
 }
 
 ```
-**Step 5:** Create a new `welcomePage.jsp` file, right-click on a LogInDemo project, and then select the JSP option. And paste the code below.
+**Step 5:** Create a new JSP file as follows:
+
+- Right-click on the `LogInDemo project` select new -> JSP file as shown.
 
 ![new jsp file](/engineering-education/servlet-request-and-servlet-collaboration/newjsp.png)
 
-Give your jsp page a name and select finish.
+- Finish by giving your jsp page a class name. We'll call it `welcomePage1.jsp` in this case.
 
 ![naming jsp file](/engineering-education/servlet-request-and-servlet-collaboration/welcompagejsp.png)
 
- Copy and paste the code below into your jsp page.
+- Replace the code in the servlet page you just created with the code below.
 
 ```jsp
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -174,7 +178,7 @@ Give your jsp page a name and select finish.
 </html>
 ```
 
-**Step 6:** Setup Apache Tomcat Server in the Eclipse IDE and run the project as outlined in the steps below.
+#### Setup Apache Tomcat Server in the Eclipse IDE and run the project as outlined in the steps below.
 
 - Select "No servers are available" from the Servers Tab as shown.
 
@@ -182,7 +186,7 @@ Give your jsp page a name and select finish.
  
 - Next, select Tomcat v9.0 Server. or any of your choice, but I recommend the current version.
 
-![Select the sort of server you want to make.](/engineering-education/servlet-request-and-servlet-collaboration/addserver2.png)
+![Choose the server version that you want to use.](/engineering-education/servlet-request-and-servlet-collaboration/addserver2.png)
 
 - Add Apache installation Directory
 
@@ -192,11 +196,11 @@ Give your jsp page a name and select finish.
  
  - Right-click on the `Login.html` page while your cursor is over it. The following screen will then appear. To run the project, select run on server and press enter.
 
-![Rus web project on server.](/engineering-education/servlet-request-and-servlet-collaboration/runus.png)
+![Run web project on server.](/engineering-education/servlet-request-and-servlet-collaboration/runus.png)
 
 - When tomCat server is selected as shown bellow. Select "Finish" and restat the server when the screen pops up.
 
-![Rus web project on server.](/engineering-education/servlet-request-and-servlet-collaboration/selectsever.png)
+![Run web project on server.](/engineering-education/servlet-request-and-servlet-collaboration/selectsever.png)
  
 - In the intanal browser, the following page will appear. Try logging in with the credentials we specified in LoginAction.java (user name `India`, password `1234`) and have some fun with the code.Happy coding!
 
@@ -242,7 +246,9 @@ Construct the `ServletDispatcherDemo` project as follows, assuming you know how 
 
 **Step 2:** Provide a project name. We will name ours `ServletDispatcherDemo`, then select Finish.
 
-**Step 3:** Right-click on the `ServletDispatcherDemo` project, and then select the HTML file option and name it `htmlPage.html`. In `htmlPage.html` paste the code below.
+**Step 3:** Right-click on the `ServletDispatcherDemo` project, select new -> HTML file option.
+
+Give the page you just created a name. We'll call it `htmlPage.html` in this example. In the html page you created, delete and replace the default code with the following code.
 
 ```html
 <!DOCTYPE html>
@@ -256,7 +262,7 @@ Construct the `ServletDispatcherDemo` project as follows, assuming you know how 
  <select name="selectOption">
  <option value="select your category">select your category</option>
  <option value="Older">Older than 18</option>
- <option value="Bellow">Below 18 years</option>
+ <option value="Below">Below 18 years</option>
  </select><br>
  <input type="submit" value="submit">
 </form>
@@ -264,7 +270,11 @@ Construct the `ServletDispatcherDemo` project as follows, assuming you know how 
 </html>
 ```
 
-**Step 4:**  *Create a new `Controller.java` servlet page, right-click on a LogInDemo project, and then select the servlet option. And paste the code below.
+**Step 4:** Create a new servlet file as follows:
+
+- Right-click on the `ServletDispatcherDemo project` select new -> servlet and finish by giving your servlet class a name. We'll call it `Controller` in this case.
+
+- Replace the code in the servlet page you just created with the code below.
 
 ```java
 
@@ -286,10 +296,10 @@ public class Controller extends HttpServlet
 		response.setContentType("Text/html");
 		String select=request.getParameter("selectOption");
 		response.getWriter().append("<html><body style='background-color: red;'></body></html>");
-		if(select.equals("Bellow"))
+		if(select.equals("Below"))
 		{
 			RequestDispatcher rd=request.getRequestDispatcher("Under18Page");
-			rd.forward(request,response);
+			rd.include(request,response);
 		}
 		if(select.equals("Older"))
 		{
@@ -310,7 +320,11 @@ public class Controller extends HttpServlet
 
 ```
 
-**Step 5:**  *Create a new `Under18page.java` servlet page, right-click on a LogInDemo project, and then select the servlet option. And paste the code below.
+**Step 5:** Create a new servlet file as follows:
+
+- Right-click on the `ServletDispatcherDemo project` select new -> servlet and finish by giving your servlet class a name. We'll call it `Under18Page` in this case.
+
+- Replace the code in the servlet page you just created with the code below.
 
 ```java
 
@@ -333,7 +347,10 @@ public class Under18Page extends HttpServlet {
 }
 
 ```
-**Step 7:**  *Create a new `*Above18.java` servlet page, right-click on a LogInDemo project, and then select the servlet option. And paste the code below.
+**Step 7:** Lastly, create a new servlet file as follows:
+
+- Right-click on the `ServletDispatcherDemo project` select new -> servlet and finish by giving your servlet class a name. We'll call it `Above18` in this case.
+- Replace the code in the servlet page you just created with the code below.
 
 ```java
 
@@ -357,6 +374,14 @@ public class Above18 extends HttpServlet {
 }
 
 ```
+Right-click on the login.html page and choose "run As"-> "Launch on Server"-> "Save all changes and restart the server" to run the project. In the internal browser, a menu will appear, prompting you to select your age category.
+
+In conclusion, this example will give you a solid foundation for working with the `ServletDispatcher` interface in your project. To improve your understanding and enhance your coding skills, I recommend that you start exploring for more examples.
+
+We assumed you already knew how to use the eclipse IDE and configure the Tomcat server in this example. If not, look at the [ServletRequest example above.](servletRequest-interface-example)
+
+**Happy coding!**
+
 [Get project source code here](https://github.com/Evanslodoctor/ServletDispatcher-sourse-code)
 
 ### Conclusion
