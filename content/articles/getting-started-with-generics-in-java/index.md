@@ -1,9 +1,9 @@
 ---
 layout: engineering-education
 status: publish
-published:
+published: true
 url: /getting-started-with-generics-in-java/
-title: Getting Started With Generics In Java
+title: Getting Started with Generics In Java
 description: This article will describe how to get started on working with generics in the Java language. A generic type is a generic class or interface that is parameterized over types. The idea is to allow type (Integer, String, … etc, and user-defined types) to be a parameter to methods, classes, and interfaces.
 author: emmah-lashly
 date: 2021-10-13T00:00:00-09:00
@@ -13,9 +13,7 @@ images:
   - url: /engineering-education/getting-started-with-generics-in-java/hero.png
     alt: Getting started with generics in Java cover image
 ---
-
 This tutorial is essential for beginners in the Java programming language who want to learn Generics. In Java, Generics have various advantages that make their usage significant. Generic classes execute faster than non-generic classes since they have reduced boilerplate (unnecessary code) codes. Just to mention, generic methods allow code reusability which saves the programmer from creating various methods.
-
 <!--more-->
 
 ### Table of contents
@@ -33,7 +31,6 @@ This article will cover:
 - [Conclusion](#conclusion)
 
 ### Prerequisites
-
 To follow through this tutorial as a beginner, intermediate, or even an expert in Java, you will require:
 
 - A suitable Integrated Development Environment (IDE), either [IntelliJ IDEA](https://www.jetbrains.com/idea/download/#section=windows) or [NetBeans IDE](https://netbeans.apache.org/download/index.html).
@@ -43,7 +40,6 @@ To follow through this tutorial as a beginner, intermediate, or even an expert i
 - A minimum of version 1.8 [JDK](https://www.oracle.com/java/technologies/downloads/) (Java Development Kit) installed.
 
 ### Goals
-
 By the end of this tutorial, the learner should be conversant with:
 
 - Creating a [Generic](https://docs.oracle.com/javase/tutorial/java/generics/types.html) class.
@@ -52,14 +48,13 @@ By the end of this tutorial, the learner should be conversant with:
 - Advantages of using Generics.
 
 ### What are Generics
-
 Generics in Java allow the use of parameterized types. A parameterized type is instantiated using actual type arguments.
 
 A reference type with one or more type parameters is known as a generic type. When the generic type is specified, these type parameters are substituted with type arguments. Generic classes and methods allow parameterized types which include the wrapper classes.
 
 With generics, it is possible to create classes that allow different data types. Wrapper classes include: `Integer`, `Double`, `Float`, `String`, and `Character`.
 
-### Advantages of Using Generics in Java
+### Advantages of using generics in Java
 
 Generics have various advantages in Java programming:
 
@@ -79,8 +74,7 @@ When using generics, there is no need for type casting since generics provide th
 
 It is a good programming practice to handle errors/problems at compile time rather than at the run time which might lead to uncertainties.
 
-### How to Create Generic Classes
-
+### How to create generic classes
 A generic class is a class that can reference any type. With generics, one can refer to any parameterized type.
 
 In creating a generic class, a parameterized type is wrapped inside the `<>` (angular brackets). The parameterized type can have one or more parameters separated by commas.
@@ -122,8 +116,7 @@ public class MyGenericClass <T> {
 
 Parameterized `T` has been replaced with wrapper class `Integer` which allows only the values of type integer.
 
-### How to Create Generic Methods
-
+### How to create generic methods
 Just like generic classes, generic methods are methods that allow any type of argument by referencing the parameterized types. In generic methods, the scope of the argument is local to the method in which it is defined. Generics allow both static and non-static methods.
 
 Below is a Java generic method:
@@ -154,8 +147,7 @@ java.lang.Double = 10.0
 java.lang.Float = 20.0
 ```
 
-### Generic Interface
-
+### Generic interface
 The generic interface is created the same way as generic classes but some conditions must be observed while implementing generic interfaces.
 
 The conditions include:
@@ -261,11 +253,9 @@ public class NameGenericClass <E, T> implements PersonGenericInterface <E>{
 ```
 
 ### Wildcards
-
 A wildcard allows reference to unknown types. It is denoted by a `?` character and it can reference any object like generic classes.
 
-#### Upper Bounded Wildcard
-
+#### Upper bounded wildcard
 The upper bounded wildcard is defined by the wildcard character `?` then followed by an `extends` keyword and finally its `upper bound`.
 
 For example:
@@ -276,8 +266,7 @@ public static <T> void numbers(Set<? extends Number> set){
 }
 ```
 
-#### Lower Bounded Wildcard
-
+#### Lower bounded wildcard
 A lower bounded wildcard is defined by the wildcard character `?` followed by the `super` keyword and then its `lower bound`.
 
 For example:
@@ -290,8 +279,7 @@ public static void additionOfNumbers(List<? super Integer> numbers){
 }
 ```
 
-#### Unbounded Wildcard
-
+#### Unbounded wildcard
 It is only defined using the wildcard character `?`. It is useful when:
 
 - Writing a method that can be used with the functionality provided in Object class.
@@ -301,9 +289,8 @@ It is only defined using the wildcard character `?`. It is useful when:
 > Bounded wildcards do not allow multiple bounds for a generic parameter. Hence only one bound can be provided as an argument.
 
 ### Conclusion
-
 In this tutorial we have learned how to use Generics, to perfect your skills with generics you should do more practice and try the sample codes provided as well. Using generics in java is a good practice as it provides less boilerplate code and increases the efficiency of the program.
 
-## Happy Coding!
+Happy Coding!
 
 Peer Review Contributions by: [Ruth Mare](/engineering-education/authors/ruth-mare/)
