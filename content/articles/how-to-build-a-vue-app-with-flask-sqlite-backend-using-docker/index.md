@@ -42,9 +42,9 @@ To follow along in this article, it is important to have the following:
 ### Setting up the server-side environment using Flask
 For the server-side, we will build a REST API using Flask and SQLite (A lightweight SQL database). To achieve this, we will follow the following steps:
 
-To set up our Flask environment, we will use [pipenv](https://pipenv.pypa.io/en/latest/).
+First create a project folder that you will use to create a Flask REST API, name it, `flask-todos-rest-api`.
 
-To check if you have pipenv installed, run the following command:
+To set up our Flask environment, we will use [pipenv](https://pipenv.pypa.io/en/latest/). To check if you have `pipenv` installed, run the following command:
 
 ```bash
 python -m pipenv --version
@@ -56,7 +56,7 @@ If you don't have it installed, run the following command:
 pip install pipenv
 ```
 
-Iniatilize the environment by running:
+Initialize the environment by running:
 
 ```bash
 python -m pipenv shell
@@ -78,7 +78,7 @@ python -m pipenv install flask flask-sqlalchemy flask-marshmallow marshmallow-sq
 ```
 
 #### Setting up the server-side application Using Flask
-To setup, the server-side application, create an `app.py` file. In this file, set up a basic flask app by adding the following lines of code.
+To setup, the server-side application, create an `app.py` file inside your `flask-todos-rest-api` folder. In this file, set up a basic flask app by adding the following lines of code.
 
 ```python
 from flask import Flask
@@ -338,6 +338,7 @@ After installing the packages we need to configure them in the `src/main.js` as 
 import axios from 'axios'
 import VueRouter from 'vue-router'
 
+Vue.config.productionTip = false
 Vue.prototype.$http = axios;
 Vue.use(VueRouter);
 ```
@@ -374,7 +375,7 @@ Vue.use(VueRouter);
 </div>
 ```
 
-We are externally linking the bootstrap CSS to handle our styling, adding a simple navigation bar, and adding the dynamic content area while navigating in different pages.
+We are externally linking the bootstrap CSS to handle our styling, adding a simple navigation bar, and adding the dynamic content area while navigating different pages.
 
 - Edit the JavaScript as follows:
 
@@ -645,7 +646,7 @@ methods:{
 
 From the above script, we are exporting data from the component and a method that handles validation and data submission on the submission of the form.
 
-- Create an `AddTodo.vue` file and add in the following.
+- Create an `EditTodo.vue` file and add in the following.
 
 ```html
 <template>
@@ -768,6 +769,16 @@ From above we are, exporting the todo data, getting the todo when the page is lo
 
 - After setting up the components, we need to handle the routing into various pages. To do this, we will add the following in the `src/main.js` file:
 
+Firts import the `AddTodo`, `EditTodo` and `Todos` componets.
+
+```javascript
+import AddTodo from "./components/AddTodo"
+import EditTodo from "./components/EditTodo"
+import Todos from "./components/Todos"
+```
+
+Then create the various `VueRouter` instances to handle the above components.
+
 ```javascript
 // create a vuerouter instance
 const router = new VueRouter({
@@ -815,9 +826,17 @@ Your application should resemble the following:
 To dockerize the application we have built, we will follow the following steps:
 
 #### Dockerize the Flask API
-To dockerize the API, create a Dockerfile, and a `.dockerignore` file in the API folder.
+To dockerize the API, create a Dockerfile, and a `.dockerignore` file in the API folder. The Dockerfile will host the instructions for creating the image, whereas the `.dockerignore` file will host the files to be ignored when copying to the image.
 
-The Dockerfile will host the instructions for creating the image, whereas the `.dockerignore` file will host the files to be ignored when copying to the image.
+For the Flask application to work within Docker, we need to make sure all the packages we have used are available and accessible by the containerized REST API. To make these packages accessible by Docker, we will import them to a `requirements.txt` file. Docker will then run this file and install the packages within the container that will run the API.
+
+In your `flask-todos-rest-api` directory, run this command:
+
+```bash
+pip freeze > requirements.txt
+```
+
+This will create a `requirements.txt` and import all the packages we have used.
 
 Add the following in the Dockerfile:
 
@@ -829,7 +848,7 @@ FROM python:3.8-slim-buster
 WORKDIR /app
 
 # Copy the dependencies
-COPY requirements.txt requirements.txt
+COPY requirements.txt
 
 # Install the dependencies
 RUN pip3 install -r requirements.txt
@@ -869,7 +888,7 @@ In the Dockerfile, add the following:
 FROM node:lts-alpine
 
 #Install serve package
-npm i -g serve
+RUN npm i -g serve
 
 # Set the working directory
 WORKDIR /app
@@ -907,12 +926,12 @@ version: '3.8'
 
 services:        
     flask-todos-api:
-        build: ./name_of_your_api_folder
+        build: ./flask-todos-rest-api
         ports: 
             - 5000:5000
 
     vue-todos-app:
-        build: ./name_of_your_client_folder
+        build: ./todos-flask-app
         ports: 
             - 8080:5000
 ```
