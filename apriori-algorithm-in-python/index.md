@@ -21,7 +21,7 @@ Since we now understand the basics of the apriori algorithm, let's learn how to 
 
 
 ### Implementing the Apriori Algorithm
-Our implementation will use a customer's transactions dataset containing records of customers' transactions with a particular business within a specific week. Our objective is to learn the best association rule from this dataset and return this rule to the business owner. Using this rule, the business owner can now offer some deals to the customers, which will increase sales and profit. We can download this dataset [here](link.com) 
+Our implementation will use a customer's transactions dataset containing records of customers' transactions with a particular business within a specific week. Our objective is to learn the best association rule from this dataset and return this rule to the business owner. Using this rule, the business owner can now offer some deals to the customers, which will increase sales and profit. We can download this dataset [here](https://github.com/BejaminNaibei/dataset/blob/main/Market_Basket_Optimisation.csv)
 
 
 ### Step 1: Data preprocessing
