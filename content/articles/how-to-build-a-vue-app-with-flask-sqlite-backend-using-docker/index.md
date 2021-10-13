@@ -14,7 +14,7 @@ In this guide, we will build an application using Vue and Flask and run it using
 To follow along in this article, it is important to have the following:
 
 - [Python](https://www.python.org/) installed on your computer.
-- Basic working knowledge with Flask.
+- Some working knowledge with Flask.
 - [Node.js](https://nodejs.org/en/) installed on your computer.
 - Some working knowledge with Vue.js.
 - [Docker](/engineering-education/docker-concepts/) installed on your computer.
@@ -372,23 +372,22 @@ Vue.use(VueRouter);
     <router-view>
     </router-view>
 </div>
-</template>
 ```
 
 We are externally linking the bootstrap CSS to handle our styling, adding a simple navigation bar, and adding the dynamic content area while navigating in different pages.
 
 - Edit the JavaScript as follows:
 
-```js
+```html
 <script>
-    export default {
-    data(){
-        return {
-        home_class: this.$route.path === '/' ? 'active' : '',
-        add_todo_class:  this.$route.path === '/add-todo' ? 'active' : ''
-        }
-    }        
-    }
+export default {
+  data() {
+    return {
+      home_class: this.$route.path === "/" ? "active" : "",
+      add_todo_class: this.$route.path === "/add-todo" ? "active" : "",
+    };
+  },
+};
 </script>
 ```
 
@@ -396,15 +395,15 @@ From above, we are setting the dynamic classes for the navigation bar.
 
 - Edit the style as follows:
 
-```css
+```html
 <style>
-    #app {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        text-align: center;
-        color: #2c3e50;
-    }
+#app {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+}
 </style>
 ```
 
@@ -589,7 +588,8 @@ From above, we are showing a form with fields populated from JavaScript.
 
 - The JavaScript
 
-```js
+```html
+<script>
 export default {
 data(){
     return {
@@ -683,7 +683,8 @@ Similar to the `add todo` form, we are outputting an `edit todo` form that is pr
 
 - the JavaScript
 
-```javascript
+```html
+<script>
 export default {
 
  data(){
@@ -761,7 +762,7 @@ export default {
  },
  };
  </script>
- ```
+```
 
 From above we are, exporting the todo data, getting the todo when the page is loaded, handling custom validation, and data submission of the edited todo.
 
@@ -784,7 +785,6 @@ new Vue({
 router:router,
 render: h => h(App),
 }).$mount('#app');
-
 ```
 
 From above, we are creating a `VueRouter` instance passing in the `mode`, `base`, and `routes`. For the routes, we pass the `path`, `component`, and `name` for each.
@@ -821,7 +821,7 @@ The Dockerfile will host the instructions for creating the image, whereas the `.
 
 Add the following in the Dockerfile:
 
-```docker
+```dockerfile
 # Base python package
 FROM python:3.8-slim-buster
 
@@ -864,7 +864,7 @@ To dockerize the Vue app, we will also create a Dockerfile in the project folder
 
 In the Dockerfile, add the following:
 
-```docker
+```dockerfile
 #Base image
 FROM node:lts-alpine
 
@@ -902,7 +902,7 @@ Start by creating a `docker-compose.yml` file outside the API and the client fol
 
 In the `docker-compose.yml` file, add the following:
 
-```docker
+```yml
 version: '3.8'
 
 services:        
