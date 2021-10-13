@@ -37,7 +37,7 @@ For our model's evaluation, we will be using RMSE (Root Mean Squared Error).
 
 ### Setting up your environment
 Before building our model, we will first go to Kaggle and create a new **notebook** and rename it to **Create_Folds**.
-![notebook](engineering-education/building-an-ensemble-learning-based-regression-model-using-python/notebook.jpg)
+![notebook](engineering-education/building-an-ensemble-learning-based-regression-model-using-python/new_notebook.jpg)
 
 After that, [download](https://www.kaggle.com/c/30-days-of-ml/data) the data from Kaggle and add it to your environment using the **Add Data** button and upload the downloaded data as **Dataset**.
 ![data](engineering-education/building-an-ensemble-learning-based-regression-model-using-python/data.jpg)
