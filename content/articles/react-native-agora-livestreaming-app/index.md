@@ -381,7 +381,7 @@ Since `init` is an async function, we can add a `.then()` to it and join the cha
 
 To join the channel, the Agora engine instance has a `joinChannel` function on it. It takes 4 arguments, *Authentication Token, Channel ID, Optional Info, and Optional UID*. To learn more about `joinChannel`, refer [here](https://docs.agora.io/en/Video/API%20Reference/react_native/classes/rtcengine.html#joinchannel).
 
-Let's not worry about Authentication and Optional info now. We'll pass null for authentication and optional info. You can learn more about Authentication [here](/agora-express-token-server/).
+Let's not worry about Authentication and Optional info now. We'll pass null for authentication and optional info. You can learn more about Authentication [here](/engineering-education/agora-express-token-server/).
 
 For the Channel ID, we'll pass what we get from the route props.
 

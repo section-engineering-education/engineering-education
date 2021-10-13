@@ -41,6 +41,10 @@ Articles with (little to no extra revisions needed) payout will be $100.00 USD (
 
 For the full details on our [review, approval, & payment processes](https://github.com/section-io/engineering-education/blob/master/new_contributors/CONTRIBUTING.md#review-approval--payment-processes) check out the provided link.
 
+### What is the difference between a tutorial and an article?
+A tutorial is a walk-through implementation on a topic. For example: How to set up Ubuntu on Linux. Steps laid out, with screenshots, and accompanying snippets. 
+An article is a piece describing, explaining, or exploring a topic (with out any steps on HOW TO implement). For example - The Difference between Java and C++.
+
 ### What counts as a round of revision?
 Any extra (major) steps that take a reviewer away from the actual revision process (revising, editing, and proofreading) and causes a shift towards content creation.
 Any (major) incorrect code snippets (all code should be tested - contributors should take advantage of free tools such as repl.it).
@@ -69,6 +73,6 @@ We typically send article payouts once a week (usually of Fridays) but that may 
 We will look over the all articles that come in to ensure they are publish worthy - but our peer reviewer team is only looking to improve the content by making suggestions. 
 For revisions services we recommend using a few of the [services we have vetted](https://www.fiverr.com/johnbatsoniii/proofread-and-edit-your-writing-for-publication?context_referrer=user_page&ref_ctx_id=9caf75ed-ce79-4880-b2fc-5b09e92e23d6&pckg_id=1&pos=1) - both economical and professional.
 
-
-
+### Can we re-post our work elsewhere?  
+We ask that if you would like to repost your Section work elsewhere, that new work reference the original Section (EngEd) article. Adding a rel=canonical tag is the preferred path forward. This does **not** mean that published work on EngEd can be previosly published elsewhere - we still ask for original and unique work.
 

@@ -141,7 +141,7 @@ The first query will pull the FirstNames such as Avishek, Avinash, or Avik. This
 
 In the production database, analytical and database management queries should be executed when the concurrent users are at their lowest peak. Typically at night around 3 to 5 am.
 
-Check out this [MySQL query performance optimization](/mysql-query-performance-optimization-tips/) article. It has useful Mysql tips that will improve your query writing techniques.
+Check out this [MySQL query performance optimization](/engineering-education/mysql-query-performance-optimization-tips/) article. It has useful Mysql tips that will improve your query writing techniques.
 
 ### Caching
 A cache is a memory buffer where frequently accessed data is temporarily stored to be accessed quicker. Cached data is then retrieved without having to access the origin. Caching will improve your app response time and even reduce some costs such as bandwidth and data volumes.
@@ -356,7 +356,7 @@ Here are more details on how to [connect express with compression](https://githu
 ### Avoid Memory Leaks
 A [memory leak](https://en.wikipedia.org/wiki/Memory_leak) occurs when a computer program incorrectly manages memory allocations in a way that memory that is no longer needed is not released. With memory leaks, a loaded page will reserve more and more memory. These will slowly occupy your available space to a point where CPU usage is overstretched. Such scenarios will severely affect your application performance.
 
-You may choose to restart your application and these issues will magically disappear but this will not be a reliable solution. The problem will repeat itself and the memory will pile up periodically. Memory leaks can come from a [DOM](/document-object-model/) that has been removed from a page but some variables still have a reference to them. If you happen to remove [DOM](/document-object-model/) values, make sure to set them to null. When null, the garbage collector will eliminate them and help avoid memory leaks.
+You may choose to restart your application and these issues will magically disappear but this will not be a reliable solution. The problem will repeat itself and the memory will pile up periodically. Memory leaks can come from a [DOM](/engineering-education/document-object-model/) that has been removed from a page but some variables still have a reference to them. If you happen to remove [DOM](/engineering-education/document-object-model/) values, make sure to set them to null. When null, the garbage collector will eliminate them and help avoid memory leaks.
 
 Use [Chrome Dev Tools](https://developers.google.com/web/tools/chrome-devtools?utm_source=dcc&amp;utm_medium=redirect&amp;utm_campaign=2018Q2) to analyze if your web page has any memory leaks. Chrome Dev Tools will help you catch and debug memory leaks. [This article](https://marmelab.com/blog/2018/04/03/how-to-track-and-fix-memory-leak-with-nodejs.html) will help you understand more about how to detect and solve memory leaks using Chrome Dev Tools.
 

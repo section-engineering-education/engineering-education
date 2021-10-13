@@ -28,7 +28,7 @@ This article will discuss the role of consensus protocols in blockchain technolo
 ### Introduction
 Blockchain technology is a distributed ledger used to record any transactions that happen over the network. The concept of decentralization is deeply engraved into the design of blockchain technology. Decentralization means there is no major entity keeping track of the transactions, and instead, it is distributed across many nodes in the network. 
 
-The technology allows one to verify the transactions via [cryptographic hash functions](/understand-hashing-in-cryptography/). Hash functions are special functions that generate unique values for unique inputs. The underlying assumption is that the record present with the most nodes is likely to be the least fallible. 
+The technology allows one to verify the transactions via [cryptographic hash functions](/engineering-education/understand-hashing-in-cryptography/). Hash functions are special functions that generate unique values for unique inputs. The underlying assumption is that the record present with the most nodes is likely to be the least fallible. 
 
 Consensus protocols form the backbone of blockchain by helping all the nodes in the network verify the transactions. Bitcoin uses proof of work (PoW) as its consensus protocol, which is energy and time-intensive. The rate of verification of transactions in Bitcoin is relatively slow compared to Visa and MasterCard's likes. Therefore, alternate consensus protocols were proposed. 
 

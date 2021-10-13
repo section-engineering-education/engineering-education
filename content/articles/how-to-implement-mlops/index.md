@@ -25,7 +25,7 @@ The idea of MLOps was born out of the need to combine the long-established pract
 
 MLOps is modeled on the existing DevOps discipline, which involves developing and operating large-scale software systems. DevOps ensures the collaboration of software developers (the Devs) and operations teams (the Ops). The operations team configures and monitors networking, manages the hardware infrastructure, and enforces security, backup, change control, and compliance policies. Other roles of the operations team are assisting system monitoring, tracking assets, managing active directories, and performing other non-production application-related duties. 
 
-Read more about DevOps engineering [here](/what-it-takes-to-be-a-devops-engineer/).
+Read more about DevOps engineering [here](/engineering-education/what-it-takes-to-be-a-devops-engineer/).
 
 MLOps is a [compound](https://caiomsouza.medium.com/mlops-machine-learning-and-operations-and-ai-at-scale-ffcac7e50f62) of machine learning (ML) and operations (Ops). With this practice, operations professionals and data scientists collaborate and communicate better to manage [production machine learning](https://towardsdatascience.com/production-machine-learning-isnt-hard-anymore-932bd91e138f) or [machine learning life cycle](https://www.educba.com/machine-learning-life-cycle/#:~:text=Machine%20Learning%20Life%20Cycle%20is,are%20involved%20in%20various%20applications). 
 

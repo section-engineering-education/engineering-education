@@ -29,7 +29,7 @@ By the end of the tutorial, you’ll know:
 The fundamentals of React and React Native will not be covered in this tutorial. If you are not comfortable with the fundamentals, please refer to this [tutorial](https://reactnative.dev/docs/tutorial) before beginning with this project.
 
 ### Agora
-As I mentioned in my [previous article](/react-native-agora-livestreaming-app/), Agora was founded in 2014. It's a service provider used for real-time voice and video. Its core technology is real-time communication (RTC).
+As I mentioned in my [previous article](/engineering-education/react-native-agora-livestreaming-app/), Agora was founded in 2014. It's a service provider used for real-time voice and video. Its core technology is real-time communication (RTC).
 Agora provides SDKs to build apps that require real-time engagement like:
 
 - Audio/Video calls.
@@ -207,7 +207,7 @@ In `screens/Conference.js`, let's import the Agora UI Kit.
 import AgoraUIKit from "agora-rn-uikit";
 ```
 
-It accepts a prop named `rtcProps` through which we can pass the Agora app ID and the channel ID. We can also pass an optional UID and an optional authentication token for the user. You can learn more about Agora token authentication [here](/agora-express-token-server/).
+It accepts a prop named `rtcProps` through which we can pass the Agora app ID and the channel ID. We can also pass an optional UID and an optional authentication token for the user. You can learn more about Agora token authentication [here](/engineering-education/agora-express-token-server/).
 
 You can access the route prop like `props.route.params.propname`. In our case, it'll be `props.route.params.channel`.
 

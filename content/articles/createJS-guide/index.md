@@ -316,4 +316,4 @@ I encourage you to copy the code and play around with it yourself so you can int
 Happy coding!
 
 ---
-Peer Review Contributions by: [Peter Kayere](/authors/peter-kayere/)
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)

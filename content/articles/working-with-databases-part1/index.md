@@ -70,4 +70,4 @@ db.books.findOne( { "name" : "Harry Potter and the Chamber of Secrets" } )
 If you're looking to delete entries instead, use the `deleteOne()` and `deleteMany()` commands. For example, `db.books.deleteMany( { "genre": "Sci-Fi" } )` deletes entries in the books collection that have the Sci-Fi genre.
 
 ### Database Complete
-Congratulations, you've now created your first database and can add, delete, and find collections and entries in it. To learn how you can incorporate your newfound database knowledge on a website, check out [Getting to Grips with Databases Part 2: Develop Your First Data-Driven Website](/working-with-databases-part2/).
+Congratulations, you've now created your first database and can add, delete, and find collections and entries in it. To learn how you can incorporate your newfound database knowledge on a website, check out [Getting to Grips with Databases Part 2: Develop Your First Data-Driven Website](/engineering-education/working-with-databases-part2/).

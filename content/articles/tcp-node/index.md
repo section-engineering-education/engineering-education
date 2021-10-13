@@ -231,7 +231,7 @@ newProblem();
 Of course, the client can work in whatever way you want it to. If you wanted to create a GUI, you can, as long as the correct data is still being sent to the server.
 
 ### Why?
-There's already an article about [Socket.io](/understanding-socket/), so why do we need to know this?
+There's already an article about [Socket.io](/engineering-education/understanding-socket/), so why do we need to know this?
 
 Socket.io is really just an abstraction for what we've done here. The difference for us is that we had to create and parse our own protocol. It may be more efficient to use your own protocol than to use Socket.io's abstractions. Socket.io doesn't know what you plan to do, so it plans for anything. It sends an entire object in JSON, even if you only need one property.
 

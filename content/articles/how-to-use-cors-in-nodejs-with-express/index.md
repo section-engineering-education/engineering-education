@@ -29,14 +29,14 @@ Let's say accessing images, videos, iframes, or scripts from another server. Thi
 This guide will help you learn how to configure CORS with Express.
 
 ### Prerequisites
-To follow this article along, prior knowledge of [Node.js](https://www.youtube.com/watch?v=fBNz5xF-Kx4) and [Express](/express/) is essential.
+To follow this article along, prior knowledge of [Node.js](https://www.youtube.com/watch?v=fBNz5xF-Kx4) and [Express](/engineering-education/express/) is essential.
 
 ### What is CORS?
 CORS stands for `Cross-Origin Resource Sharing`. It allows us to relax the security applied to an API. This is done by bypassing the `Access-Control-Allow-Origin` headers, which specify which `origins` can access the API. 
 
 In other words, CORS is a browser security feature that restricts cross-origin HTTP requests with other servers and specifies which domains access your resources.
 
-Check this guide to learn more about the [CORS policy](/what-is-cors-policy/).
+Check this guide to learn more about the [CORS policy](/engineering-education/what-is-cors-policy/).
 
 ### How CORS works
 An API is a set procedure for two programs to communicate. This means that API resources are consumed by other clients and servers.
@@ -96,7 +96,7 @@ app.get('/ingredients', (req, res) =>{
 app.listen(6069);
 ```
 
-The code above depicts a simple HTTP server using Express. Check this [guide](/express/) and learn how to create one.
+The code above depicts a simple HTTP server using Express. Check this [guide](/engineering-education/express/) and learn how to create one.
 
 Run the server with `npm nodemon`. Navigate to `http://localhost:6069/ingredients` on your browser. You will be served with these ingredients text items.
 
@@ -197,7 +197,7 @@ app.get('/ingredients', cors(), (req, res, next) => {
 ### Use case
 Let's say you're using React to build a front-end application. Eventually, you'll be connecting it to a back-end API. The app might run into an issue if CORS is not set up. Simply because both the front end and the back end are from different origins from each other.
 
-CORS goes hand in hand with [APIs](https://www.youtube.com/watch?v=zoSJ3bNGPp0). A good use case scenario of CORS is when developing RESTful APIs. For example, creating a Node.js RESTful API, similar to this [RESTful Web API in Node.js using PostgresSQL and Express](/restful-web-API-using-nodejs-postgressql-and-express/).
+CORS goes hand in hand with [APIs](https://www.youtube.com/watch?v=zoSJ3bNGPp0). A good use case scenario of CORS is when developing RESTful APIs. For example, creating a Node.js RESTful API, similar to this [RESTful Web API in Node.js using PostgresSQL and Express](/engineering-education/restful-web-API-using-nodejs-postgressql-and-express/).
 
 ### Conclusion
 When you deploy an application on the server, you should not accept requests from every domain. Instead, you should specify which origin can make requests to your server. 

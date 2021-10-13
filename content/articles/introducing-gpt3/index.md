@@ -41,7 +41,7 @@ You will only need a basic understanding of machine learning and natural languag
 **GPU** - graphics processing unit.
 
 ### GPT-3
-There’s a good chance I could have used GPT-3 to generate this article and you as the reader would never realize it. Whether impressive or scary, this embodies the strides that language models have made. In a previous [article](/automated-fake-news-detection/), I mentioned how BERT had revolutionized the field of NLP. The base BERT model has about [110 million parameters]( https://yashuseth.blog/2019/06/12/bert-explained-faqs-understand-bert-working/#:~:text=BERT%20is%20a%20multi-layer%20bidirectional%20Transformer%20encoder.%20There,layers%2C%2016%20attention%20heads%20and%2C%20340%20million%20parameters.).
+There’s a good chance I could have used GPT-3 to generate this article and you as the reader would never realize it. Whether impressive or scary, this embodies the strides that language models have made. In a previous [article](/engineering-education/automated-fake-news-detection/), I mentioned how BERT had revolutionized the field of NLP. The base BERT model has about [110 million parameters]( https://yashuseth.blog/2019/06/12/bert-explained-faqs-understand-bert-working/#:~:text=BERT%20is%20a%20multi-layer%20bidirectional%20Transformer%20encoder.%20There,layers%2C%2016%20attention%20heads%20and%2C%20340%20million%20parameters.).
 
 The largest BERT architecture boasts of around 340 million parameters. Compared to GPT-3’s 175 billion parameters, the scale of this new language model becomes rather apparent. BERT is incredibly impressive in its NLP tasks. However, the difference in comparison with GPT-3 naturally brings about huge expectations on GPT-3.
 
@@ -171,7 +171,7 @@ We have mentioned how the greatest strength of GPT-3 is text generation. The mod
 
 The model has no moral stand or obligation to uphold. And since the generated text is often very well written, it becomes easy for people to believe the text to be fact. This is how fake news is generated and spread.
 
-GPT-2 sparked all sorts of controversy when it was released due to the ability to deceive. GPT-3, being much larger than its predecessor, is judged on a similar scale. I wrote an article about [fake news detection](/automated-fake-news-detection/) in case you would want to read more on the topic.
+GPT-2 sparked all sorts of controversy when it was released due to the ability to deceive. GPT-3, being much larger than its predecessor, is judged on a similar scale. I wrote an article about [fake news detection](/engineering-education/automated-fake-news-detection/) in case you would want to read more on the topic.
 
 ### It’s a Wrap
 GPT-3 is the most impressive stride in NLP in 2020. We have discussed its incredible potential and seen some mind-blowing examples of potential uses. It could revolutionize a number of professions. However, beyond the hype, it has a not-so-attractive side. It is plagued with bias, silly mistakes, mediocre performance, and an impressive yet dangerous ability to generate convincing text. The model needs a lot of improvements to live up to the hype it has generated. I do hope that someday it can be open sourced. But, as it stands, the model will continue to be commercialized for the foreseeable future.
