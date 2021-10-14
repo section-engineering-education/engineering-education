@@ -248,7 +248,7 @@ array(['setosa'], dtype=object)
 
 The prediction results are `setosa` which is true according to our test dataset.
 
-According to our model these are the prediction results, but should we trust these results blindly?, should we try to understand how this model reached at this conclusion.
+According to our model these are the prediction results, but should we trust these results blindly?. Or, should we try to understand how this model reached at this conclusion?
 
 That why we need to use model interpretation techniques to verify these results and increase our trust in the model. This ensures that we know how the model works and its level of reliability.
 
