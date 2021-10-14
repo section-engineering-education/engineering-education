@@ -198,7 +198,7 @@ This ensures that we evaluate the model quality and performance. It also ensures
 model_logreg.predict(X_test)
 ```
 
-The model is used to make prediction of the data points instances found in the testing set. The prediction output are shown below.
+The model is used to predict the data points instances found in the testing set. The prediction output is shown below:
 
 ![Testing output](/engineering-education/model-interpretation-using-lime/testing-output.jpg)
 
