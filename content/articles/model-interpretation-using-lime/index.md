@@ -16,7 +16,7 @@ images:
 ---
 Model interpretation finds out why a model makes certain decisions during the prediction phase. This ensures we have a fair, accountable, and transparent model. In model interpretation we try to answer the question; why should we trust the model? and why did the model make this conclusion?.
 <!--more-->
-Through model interpretation we should be able to explain what the model is doing and why its making a certain prediction. Regardless of what machine learing problem the model is trying to solve, model interpretation will always be the better solution because the involved stakeholders and end-users can understand what the model is actually doing and how to apply it in different scenarios.
+Through model interpretation, we should be able to explain what the model is doing and why it's making a certain prediction. Regardless of what machine learning problem the model is trying to solve, model interpretation will always be the better solution. This is because the involved stakeholders and end-users can understand what the model is doing and how to apply it in different scenarios.
 
 This makes users to have trust and confidence to use these models to solve mission critical real-world problems that have a great impact to society and business such as self-driving cars model and health system models which are matter of life or death situations.
 
