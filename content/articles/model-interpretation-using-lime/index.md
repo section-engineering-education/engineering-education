@@ -205,7 +205,7 @@ The model is used to predict the data points instances found in the testing set.
 To evaluate this prediction, we need to calculate the accuracy score of this model when making these test predictions.
 
 ### Calculating the accuracy score
-Accuracy score shows the number of correct predictions made by our model. This is usually expressed as a percentage, the higher the accuracy score the better the model is in making predictions.
+The accuracy score shows the number of correct predictions made by our model. This is usually expressed as a percentage, the higher the accuracy score the better the model is in making predictions.
 
 The accuracy score is calculated as follows:
 
