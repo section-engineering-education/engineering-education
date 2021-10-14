@@ -257,7 +257,7 @@ Let us start model interpretation with LIME
 ### Model interpretation with LIME
 LIME stands for Local Interpretable Model-Agnostic Explanations, it covers a local scope. Local scope is used in individual prediction and tries to explain why the model made a single prediction.
 
-LIME is an interpretation algorithm that can explain the single predictions of any classification or regression model in a simple and understandable way.
+LIME is an interpretation algorithm that can explain the single predictions of any classification or regression model simply and understandably.
 
 To use LIME, let us install it first. We install LIME usig the following command:
 
