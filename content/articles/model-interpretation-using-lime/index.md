@@ -14,7 +14,7 @@ images:
  - url: /engineering-education/model-interpretation-using-lime/hero.jpg
    alt: Model Interpretation using LIME Hero image
 ---
-Model interpretation finds out why a model makes a certain decision during the prediction phase, this ensures we have fair, accountable and a transparent model. In model interpretation we try to answer the question; why should we trust the model? and why did the model make this conclusion?. 
+Model interpretation finds out why a model makes certain decisions during the prediction phase. This ensures we have a fair, accountable, and transparent model. In model interpretation we try to answer the question; why should we trust the model? and why did the model make this conclusion?.
 <!--more-->
 Through model interpretation we should be able to explain what the model is doing and why its making a certain prediction. Regardless of what machine learing problem the model is trying to solve, model interpretation will always be the better solution because the involved stakeholders and end-users can understand what the model is actually doing and how to apply it in different scenarios.
 
