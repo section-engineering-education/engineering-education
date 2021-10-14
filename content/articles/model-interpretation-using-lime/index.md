@@ -192,7 +192,7 @@ During the training phase, the model also fine-tunes the model.  It outputs the 
 Let us test our model using the testing dataset.
 
 ### Model testing
-This ensures that we evalaute the model quality and perfomance. It also ensures we do not have a biased model.
+This ensures that we evaluate the model quality and performance. It also ensures we do not have a biased model.
 
 ```python
 model_logreg.predict(X_test)
