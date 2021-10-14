@@ -1,18 +1,20 @@
 title: Creating a Simple Chat App in React.js using the chat engine API
 
-This article will teach the React.js way of creating a chat application using the chat engine API. 
-The learner will understand how the chat engine API works and how to use it to create a precise yet functional direct-messaging application.
+This tutorial teaches you the React.js way of creating a chat application using the [chat engine](https://chatengine.io) API. 
+By the end, you will understand how the chat engine API works and how to use it to create a precise yet functional direct-messaging application.
 
 ### Prerequisites
-- Primary React.js library mastery.  [The official documentation](https://reactjs.org/tutorial/tutorial.html) 
-- [Node.js](https://nodejs.org/en/download/) installed. 
-- [Node Package Manager (NPM)](https://docs.npmjs.com/cli/v6/commands/npm) know-how.
+- Basic knowledge in [React.js](https://reactjs.org/tutorial/tutorial.html) library.
+- [Node.js](https://nodejs.org/en/download/) installed on your local development environment. 
+- You should be familiar with [Node Package Manager](https://docs.npmjs.com/cli/v6/commands/npm).
 
 ### What chat engine API is?
-The chat engine is an API consumed to build chat services. 
-Approximating to other APIs that deliver user responses to the system, and sends back the system's responses to the user, this API works the same way, with better functionalities.
-It allows the hosting of these chats through the Rest API it lays out. The chat User Interface(UI), is created from the NPM components this tool comes with. See how the hustle is waved away for us already? 
+The chat engine is an API consumed to build chat services. Approximating to other APIs that deliver user responses to the system, and sends back the system's responses to the user, this API works the same way, with better functionalities.
+
+It allows the hosting of these chats through the REST API it lays out. The chat User Interface(UI), is created from the NPM components this tool comes with. See how the hustle is waved away for us already? 
+
 Furthermore, thanks to its server(s), the chat can as well be hosted from here(the server).
+
 This tool also saves you a lot of implementation time otherwise needed on many lines of code.
 Chat engine API can implement; 
  - A group chat application.
@@ -20,13 +22,14 @@ Chat engine API can implement;
 
 ### Creating the Application
 This minute, let's begin creating the application.
-- On the terminal, cd to your project directory and run the following commands. 
+- On the terminal, `cd` to your project directory and run the following command. 
 
 ```bash
 npx create-react-app project-name
 ```
 
-If you prefer using the Vite tool to create the React app, its step-by-step guide is taught in [this](https://www.section.io/engineering-education/creating-a-react-app-using-vite/) article. 
+>If you prefer using the Vite tool to create the React app, its step-by-step guide is taught in [this](https://www.section.io/engineering-education/creating-a-react-app-using-vite/) article. 
+
 - In the created app folder, install the chat engine as a component using the command;
 
 ```bash
@@ -59,7 +62,7 @@ CHAT_APP_USER_SECRET = your secret key goes here
 
 #### Adding the ChatEngine component
 In the created React app, delete every unnecessary file like ***logo.SVG, reportWebVital.js, setupTest.js, and App.test.js***. 
-Remember to delete the 'reportWebVital' import and its called function lines of code in the index.js file. 
+Remember to delete the `reportWebVital` import and its called function lines of code in the `index.js` file. 
 Setting up the chat engine in our application will be done like such.
 
 ```JSX
