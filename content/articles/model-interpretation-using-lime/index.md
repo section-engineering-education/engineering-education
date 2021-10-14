@@ -40,9 +40,10 @@ In this tutorial, we build a simple machine learning model then use [LIME](https
 - [References](#References)
 
 ### Prerequisites
-- Ensure you have [Python](https://www.python.org/) installed.
-- You must know [Python programming.](/engineering-education/python-projects-for-beginners/)
-- Be familiar with [machine learning modelling.](engineering-education/house-price-prediction/)
+To follow through this article, the reader should:
+- Have [Python](https://www.python.org/) installed.
+- Have an understanding of [Python programming.](/engineering-education/python-projects-for-beginners/)
+- Be familiar with [machine learning modeling.](engineering-education/house-price-prediction/)
 - Be familiar with [Google colab notebooks.](https://colab.research.google.com)
 
 ### Introduction
