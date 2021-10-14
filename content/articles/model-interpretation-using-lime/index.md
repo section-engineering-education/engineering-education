@@ -68,7 +68,7 @@ This technique is specific to only certain models and may not be applied to othe
 #### Local or global scope method
 The local scope is used in individual prediction and tries to explain why a model made a certain single prediction. In global scope, it goes beyond the individual prediction and tries to explain the general behavior of the model.
 
-In this tutorial we will build a simple classification model using the iris dataset. The model classifies the flower species based on the user input. From there, we will use LIME to interpret this model.
+In this tutorial, we will build a simple classification model using the iris dataset. The model classifies the flower species based on user input. From there, we will use LIME to interpret this model.
 
 To dowload the dataset for this tutorial click [here.](https://drive.google.com/file/d/1Sk-ajxQ30vUHMHRffypb3l6fYApkU244/view?usp=sharing)
 
