@@ -1,27 +1,37 @@
 ### Building a multi-source video player with ReactJS
+
 ### introduction
 video playing capabilities are expected of modern websites such as blogs, social media, and educational websites. Building a video player that can render media from social media websites including YouTube, Facebook, Vimeo, etc., can be achieved with React.js.
 in this article, we will look into the various steps and dependencies required to build a multi-source video player with React.js
+
 ### Prerequisite
 To understand and utilize this article, it is expected that you have intermediate knowledge of React.js, CSS, and any additional design library. For beginners, take out time to enroll in a crash course before proceeding with this tutorial.
+
 ### Getting started with React Application
-Before we begin the tutorial, let's have a quick overview of React.js. React.js is a modern JavaScript library capable of handling multiple web-based applications including our multi-source video player. 
+Before we begin the tutorial, let's have a quick overview of React.js. React.js is a modern JavaScript library capable of handling multiple web-based applications including our multi-source video player.
 The first step in every `React` development is the creation of a `react application`. This step makes available a clean slate application with all the default app dependencies installed. To create the `react application`, open the `command terminal` on your local computer and run the command below:
+
 ```bash
 npx create-react-app Video-player
 ```
+
 Alternatively, for yarn users:
+
 ```bash
 yarn create-react-app Video player
 ```
+
 The command above will create a new `react app`, and also provide a boilerplate that will accommodate subsequent components and code snippets.
+
 ### Task overview
 To simplify the task of building a multi-source video player, we will breakdown the above into the following
+
 - Installing the required app dependencies
 - Creating the video player component
 - Creating and exporting the various URL handlers
 - Creating additional utilities and decoders.
 - Styling and customizing the video player.
+
 #### Step 1: Installing the required app dependencies
 In this step, we will outline and install the dependencies required to create our application. They include the following:
 
@@ -32,6 +42,7 @@ In this step, we will outline and install the dependencies required to create ou
 "prop-types": "^15.7.2",
 "react-fast-compare": "^3.0.1"
 ```
+
 To install the above-listed dependencies, we open up the `command terminal` and run the command below:
 
 ```bash
@@ -44,55 +55,47 @@ yarn install
 
 #### Step 2: Creating the Video player component
 The `Video-player component` is the main component of our application. We will provide the video player with utility functions that will enable it to render videos from multiple sources as required. To begin, in the `src` folder, we will create a `Player.js` file. Thereafter we set it up by implementing the code snippet below
+
 ```JavaScript
-import React, { Component } from 'react'
+import React from 'react'
 import isEqual from 'react-fast-compare'
-import { propTypes, defaultProps } from './props'
 
-export default class Player extends Component {
-static displayName = 'Player'
-static propTypes = propTypes
-static defaultProps = defaultProps
-mounted = false
-isReady = false
-isPlaying = false // Track playing state internally to prevent bugs
-isLoading = true // Use isLoading to prevent onPause when switching URL
-loadOnReady = null
-startOnPlay = true
-seekOnPlay = null
-onDurationCalled = false
+class Player extends React.Component {
+static viewName = 'Player'
+buffered = false
+playerReady = false
+videoPlaying = false // for bugs prevention
+loadon_Ready = null
+videoLoading = true // to ease loading and URL switching
+videoStart = true
+timeSeek = null
+callDuration = false
 
-componentDidMount () {
-this.mounted = true
+componentDidMount (props) {
+this.buffered = true // to load video when ready
 }
 componentDidUpdate (prevProps) {
 // if no player is available, the component will do nothing
 if (!this.player) {
-return
+return null
 }
-const { url, playing, volume, muted, playbackRate, pip, loop, activePlayer } = this.props
-if (!isEqual(prevProps.url, url)) {
-if (this.isLoading && !activePlayer.forceLoad) {
-console.warn(`ReactPlayer: the attempt to load ${url} is being deferred until the player has loaded`)
-this.loadOnReady = url
-return
+const { url, muted, playing, playbackRate,volume, pip, loop, activePlayer } = this.props
+this.callDuration = false
+this.videoStart = true
+this.videoLoading = true
+this.player.load(url, this.playerReady)
 }
-this.isLoading = true
-this.startOnPlay = true
-this.onDurationCalled = false
-this.player.load(url, this.isReady)
-}
-if (!prevProps.playing && playing && !this.isPlaying) {
+if (playing && !this.videoPlaying && !prevProps.playing  ) {
 this.player.play()
 }
-if (prevProps.playing && !playing && this.isPlaying) {
+if ( !playing && this.videoPlaying && prevProps.playing ) {
 this.player.pause()
 }
-if (prevProps.volume !== volume && volume !== null) {
+if ( volume !== null && prevProps.volume !== volume ) {
 this.player.setVolume(volume)
 }
 if (prevProps.muted !== muted) {
-if (muted) {
+if (muted == true) {
 this.player.mute()
 } else {
 this.player.unmute()
@@ -108,412 +111,432 @@ this.progress()
 }
 
 getDuration () {
-if (!this.isReady) return null
+if (!this.playerReady) return null
 return this.player.getDuration()
 }
-handleReady = () => {
-if (!this.mounted) return
-this.isReady = true
-this.isLoading = false
-const { onReady, playing, volume, muted } = this.props
-onReady()
-if (!muted && volume !== null) {
+readyHandler = () => {
+if (!this.buffered) return
+this.videoLoading = false
+this.playerReady = true
+const { playing,, muted, volume, on_Ready} = this.props
+on_Ready()
+if (  volume !== null && !muted) {
 this.player.setVolume(volume)
 }
-if (this.loadOnReady) {
-this.player.load(this.loadOnReady, true)
-this.loadOnReady = null
+if (this.loadon_Ready) {
+ this.loadon_Ready = null
+this.player.load(this.loadon_Ready, true)
 } else if (playing) {
 this.player.play()
 }
 this.handleDurationCheck()
 }
 
-handlePlay = () => {
-this.isPlaying = true
-this.isLoading = false
-const { onStart, onPlay, playbackRate } = this.props
-if (this.startOnPlay) {
-if (this.player.setPlaybackRate && playbackRate !== 1) {
+playHandler = () => {
+ this.videoLoading = false
+this.videoPlaying = true
+const { playbackRate, onStart, on_play  } = this.props
+if (this.videoStart) {
+if (playbackRate !== 1 && this.player.setPlaybackRate  ) {
 this.player.setPlaybackRate(playbackRate)
 }
 onStart()
-this.startOnPlay = false
+this.videoStart = false
 }
-onPlay()
-if (this.seekOnPlay) {
-this.seekTo(this.seekOnPlay)
-this.seekOnPlay = null
+on_play()
+if (this.timeSeek) {
+ this.timeSeek = null
+this.seek_to(this.timeSeek)
 }
 this.handleDurationCheck()
 }
 
-handlePause = (e) => {
-this.isPlaying = false
-if (!this.isLoading) {
-this.props.onPause(e)
+pauseHandler = (e) => {
+this.videoPlaying = false
+if (!this.videoLoading) {
+this.props.on_pause(e)
 }
 }
 
-handleEnded = () => {
-const { activePlayer, loop, onEnded } = this.props
-if (activePlayer.loopOnEnded && loop) {
-this.seekTo(0)
+playEnded = () => {
+const {  loop,on_ended, playerActive,  } = this.props
+if (loop && playerActive.loopon_ended  ) {
+this.seek_to(0) // restarts the video when play is completed
 }
 if (!loop) {
-this.isPlaying = false
-onEnded()
+this.videoPlaying = false
+on_ended()
 }
 }
 
-handleError = (...args) => {
-this.isLoading = false
-this.props.onError(...args)
+errorHandler = (...args) => {
+ this.props.on_error(...args)
+this.videoLoading = false
 }
 
 handleLoaded = () => {
-// this fuction prevents the player from getting stuck while loading
-this.isLoading = false
+// we set the videoLoading to false so the player doesnt get stuck
+this.videoLoading = false
 }
 
 render () {
-const Player = this.props.activePlayer
+const Player = this.props.playerActive
 if (!Player) {
 return null
 }
 return (
 <Player
 {...this.props}
-onMount={this.handlePlayerMount}
-onReady={this.handleReady}
-onPlay={this.handlePlay}
-onPause={this.handlePause}
-onEnded={this.handleEnded}
-onLoaded={this.handleLoaded}
-onError={this.handleError}
+on_Mount={this.handlePlayerMount}
+on_Ready={this.readyHandler}
+on_play={this.playHandler}
+on_pause={this.pauseHandler}
+on_ended={this.playEnded}
+on_Loaded={this.handleLoaded}
+on_error={this.errorHandler}
 />
 )
 }
 }
+export default Player
 ```
+
 The code snippet above looks complex, but not to worry I will explain what is going on there.
 From the snippet above, we created some basic functions that will handle the player behavior, and they include the following:
+
 - On play: this function handles the play operation, ie. When the user clicks the `play button`
 - On pause: this function handles the pause operation, ie when the user clicks the `pause button`
-- Get Duration: this function provides the video duration when the user hovers over the progress bar 
+- Get Duration: this function provides the video duration when the user hovers over the progress bar
 - Progress bar: this function shows a moving bar to show the elapsed and remaining time to the user.
-- On Ready: the `onReady` function handles the buffering of the video once loading is completed
+- On Ready: the `on_Ready` function handles the buffering of the video once loading is completed
 - On Mute: this function enables the user to mute and unmute sound while playing video
 - Handle Ended: when the video is completed, the `HandleEnded` function prevents the player from crashing
 - Handle Error: this function handles the errors that may occur during rendering or due to a broken URL.
-We also created a `timeout` function to handle incorrect video buffering from looping indefinitely. 
+  We also created a `timeout` function to handle incorrect video buffering from looping indefinitely.
 
 #### Step 3: Creating the URL Handlers
 In the previous step, we created a `Player` component. for our `Player` to have the ability to render videos from multiple URLs, we need to provide the required functions and logic. The URL handler components will handle videos from:
+
 - Facebook
 - YouTube
 - Twitch and
 - Vimeo
-To build our URL handler components, first, we create a `media` folder, thereafter we proceed to the various files shown below
+  To build our URL handler components, first, we create a `media` folder, thereafter we proceed to the various files shown below
+
 #### The Facebook URL handler (Facebook.js)
 This component will handle videos from Facebook URL, i.e. from facebook groups, pages and feeds. To achieve this, in our `media` folder, we create a `Facebook.js` file which will accommodate the code snippet below:
+
 ```JavaScript
-import React, { Component } from 'react'
-import { callPlayer, getSDK, } from '../utils'
-import { canPlay } from '../Decoder'
+import React from 'react'
+import { call_player, get_SDK, } from '../utils'
+import { can_play } from '../Decoder'
 
-const SDK_URL = 'https://connect.facebook.net/en_US/sdk.js'
-const SDK_GLOBAL = 'FB'
-const SDK_GLOBAL_READY = 'fbAsyncInit'
-const PLAYER_ID_PREFIX = 'facebook-player-'
+const URL_SDK = 'https://connect.facebook.net/en_US/sdk.js'
+const GLOBAL_SDK = 'FB'
+const GLOBAL_SDK_READY = 'fbAsyncInit'
+const PLAYER_ID_STR = 'facebook-player-'
 
-export default class Facebook extends Component {
-static displayName = 'Facebook'
-static canPlay = canPlay.facebook
-callPlayer = callPlayer
-playerID = this.props.config.playerId || `${PLAYER_ID_PREFIX}`
+export default class Facebook extends React.Component {
+ static can_play = can_play.facebook
+static viewName = 'Facebook'
+
 componentDidMount () {
-this.props.onMount && this.props.onMount(this)
+ this.props.on_Mount(this) && this.props.on_Mount
 }
 
-load (url, isReady) {
-if (isReady) {
-getSDK(SDK_URL, SDK_GLOBAL, SDK_GLOBAL_READY).then(FB => FB.XFBML.parse())
+call_player = call_player
+player_ID =  `${PLAYER_ID_STR}` || this.props.config.player_Id
+
+load ( playerReady, url,) {
+if (playerReady) {
+get_SDK(GLOBAL_SDK_READY, GLOBAL_SDK, URL_SDK).then(FB => FB.XFBML.parse())
 return
 }
-getSDK(SDK_URL, SDK_GLOBAL, SDK_GLOBAL_READY).then(FB => {
+get_SDK( GLOBAL_SDK_READY, GLOBAL_SDK,URL_SDK, ).then(FB => {
 FB.init({
-appId: this.props.config.appId,
+ version: this.props.config.version
 xfbml: true,
-version: this.props.config.version
+appId: this.props.config.appId,
 })
+// adding event subscription
 FB.Event.subscribe('xfbml.render', msg => {
-// Here we know the SDK has loaded, even if onReady/onPlay
-this.props.onLoaded()
+ // to get notified when the player is loaded and ready
+this.props.on_Loaded()
 })
 FB.Event.subscribe('xfbml.ready', msg => {
-if (msg.type === 'video' && msg.id === this.playerID) {
+if (msg.type === 'video' && msg.id === this.player_ID) {
 this.player = msg.instance
-this.player.subscribe('startedPlaying', this.props.onPlay)
-this.player.subscribe('paused', this.props.onPause)
-this.player.subscribe('finishedPlaying', this.props.onEnded)
-this.player.subscribe('startedBuffering', this.props.onBuffer)
-this.player.subscribe('finishedBuffering', this.props.onBufferEnd)
-this.player.subscribe('error', this.props.onError)
+this.player.subscribe('playingStarted', this.props.on_play)
+this.player.subscribe('videoPaused', this.props.on_pause)
+this.player.subscribe('playingFinished', this.props.on_ended)
+this.player.subscribe('bufferingStarted', this.props.on_buffer)
+this.player.subscribe('bufferingFinished', this.props.on_bufferEnd)
+this.player.subscribe('error', this.props.on_error)
 if (this.props.muted) {
-this.callPlayer('mute')
+ // for muting
+this.call_player('mute')
 } else {
-this.callPlayer('unmute')
+ // for unmuting
+this.call_player('unmute')
 }
-this.props.onReady()
-document.getElementById(this.playerID).querySelector('iframe').styl e.visibility = 'visible'
+this.props.on_Ready()
+document.getElementById(this.player_ID).querySelector('iframe').style.visibility = 'visible'
 }
 })
 })
 }
-
+// playing function
 play () {
-this.callPlayer('play')
+this.call_player('playVideo')
 }
+// pausing function
 pause () {
-this.callPlayer('pause')
+this.call_player('pauseVideo')
 }
 stop () {
 // does nothing
 }
-seekTo (seconds) {
-this.callPlayer('seek', seconds)
+seek_to (seconds) {
+this.call_player('seek', seconds)
 }
 mute = () => {
-this.callPlayer('mute')
+this.call_player('mute')
 }
 unmute = () => {
-this.callPlayer('unmute')
+this.call_player('unmute')
 }
 
 render () {
-const { attributes } = this.props.config
-const style = {
-width: '100%',
-height: '100%'
+let { attributes } = this.props.config
+let propStyle = {
+ height: '99%',
+width: '99%'
 }
 return (
 <div
-style={style}
-id={this.playerID}
 className='fb-video'
+style={propStyle}
+id={this.player_ID}
 data-href={this.props.url}
-data-autoplay={this.props.playing ? 'true' : 'false'}
 data-allowfullscreen='true'
-data-controls={this.props.controls ? 'true' : 'false'}
+data-controls={!this.props.controls ?  'false' : 'true'}
 {...attributes}
+data-auto_play={!this.props.playing ?'false' : 'true' }
 />
 )
 }
 }
-``` 
+```
+
 From the code snippet above, we created some functions to `get` and `load` the SDK from Facebook embed. Once the SDK is loaded, the video will be buffered and transferred to our `player` for rendering. Finally, we implemented the getDuration, play, pause, mute, stop and unmute handlers created in the `player` component.
 
 #### The YouTube URL handler (YouTube.js)
 YouTube is a video-based social networking website, and also an option in our video player. To provide our player access to videos from YouTube URLs, we need to create a handler for it. To do that, we create a `Youtube.js` file in the `media` folder already created. Then we go ahead with the code implementation below:
+
 ```JavaScript
-import React, { Component } from 'react'
-import { callPlayer, getSDK, parseStartTime, parseEndTime } from '../utils'
-import { canPlay, MATCH_URL_YOUTUBE } from '../Decoder'
+import React from 'react'
+import {parse_endTime, call_player, get_SDK, parse_StartTime, } from '../utils'
+import {YOUTUBE_URL_MATCH, can_play} from '../Decoder'
 
-const SDK_URL = 'https://www.youtube.com/iframe_api'
-const SDK_GLOBAL = 'YT'
-const SDK_GLOBAL_READY = 'onYouTubeIframeAPIReady'
+const URL_SDK = 'https://www.youtube.com/iframe_api'
+const GLOBAL_SDK = 'YT'
+const GLOBAL_SDK_READY = 'onYouTubeIframeAPIReady'
 
-export default class YouTube extends Component {
-static displayName = 'YouTube'
-static canPlay = canPlay.youtube
-callPlayer = callPlayer
+ class YouTube extends React.Component {
+static viewName = 'YouTube'
+static can_play = can_play.youtube
+call_player = call_player
 
 componentDidMount () {
-this.props.onMount && this.props.onMount(this)
+ this.props.on_Mount(this) && this.props.on_Mount
 }
-return url.match(MATCH_URL_YOUTUBE)[1]
+return url.match(YOUTUBE_URL_MATCH)[1]
 }
-load (url, isReady) {
-const { playing, muted, playsinline, controls, loop, config, onError } = this.props
-const { playerVars, embedOptions } = config
-const id = this.getID(url)
-if (isReady) {
+load ( playerReady, url) {
+const {  plays_inline, on_error, playing, controls, loop, muted, config, } = this.props
+const {embed_Options, playerValues,  } = config
+let id = this.getID(url)
+if (playerReady) {
 this.player.cueVideoById({
-videoId: id,
-startSeconds: parseStartTime(url) || playerVars.start,
-endSeconds: parseEndTime(url) || playerVars.end
+ startSeconds:playerValues.start || parse_StartTime(url) ,
+video_Id: id,
+endSeconds:playerValues.end ||  parse_endTime(url),
 })
 return
 }
-getSDK(SDK_URL, SDK_GLOBAL, SDK_GLOBAL_READY, YT => YT.loaded).then(YT => {
-if (!this.container) return
-this.player = new YT.Player(this.container, {
-width: '100%',
-height: '100%',
-videoId: id,
-playerVars: {
-autoplay: playing ? 1 : 0,
-mute: muted ? 1 : 0,
-controls: controls ? 1 : 0,
-start: parseStartTime(url),
-end: parseEndTime(url),
+get_SDK(GLOBAL_SDK_READY, URL_SDK, GLOBAL_SDK, YT => YT.loaded).then(YT => {
+if (!this.section) return
+this.player = new YT.Player(this.section, {
+ height: '99%',
+width: '99%',
+ video_Id: id,
+playerValues: {
+ mute: !muted ? 0 : 1,
+auto_play: !playing ? 0 : 1,
 origin: window.location.origin,
-playsinline: playsinline ? 1 : 0,
+start: parse_StartTime(url),
+controls: !controls ? 0 : 1,
+end: parse_endTime(url),
+plays_inline: !plays_inline ? 0 : 1,
+...playerValues
 ...this.parsePlaylist(url),
-...playerVars
 },
 events: {
-onReady: () => {
+on_Ready: () => {
 if (loop) {
-this.player.setLoop(true) // Enable playlist looping
+this.player.setLoop(true) // this is to loop the playlist
 }
-this.props.onReady()
+this.props.on_Ready()
 },
-onError: event => onError(event.data)
+on_error: e => on_error(e.data)
 },
 })
-}, onError)
+}, on_error)
 }
-onStateChange = (event) => {
-const { data } = event
-const { onPlay, onPause, onBuffer, onBufferEnd, onEnded, onReady, loop, config: { playerVars, onUnstarted } } = this.props
-const { UNSTARTED, PLAYING, PAUSED, BUFFERING, ENDED, CUED } = window[SDK_GLOBAL].PlayerState
-if (data === UNSTARTED) onUnstarted()
+on_StateChange = (e) => {
+let { data } = e
+const { on_play, loop, on_pause, on_buffer, on_ended, on_bufferEnd, on_Ready, config: {on_Unstarted, playerValues } } = this.props
+const {  PLAYING, BUFFERING, PAUSED, UNSTARTED, CUED,  ENDED,  } = window[GLOBAL_SDK].PlayerState
+if (data === UNSTARTED) on_Unstarted()
 if (data === PLAYING) {
-onPlay()
-onBufferEnd()
+on_play()
+on_bufferEnd()
 }
-if (data === PAUSED) onPause()
-if (data === BUFFERING) onBuffer()
+if (data === BUFFERING) on_buffer()
+if (data === PAUSED) on_pause()
 if (data === ENDED) {
 this.loop()
-onEnded()
+on_ended()
 }
-if (data === CUED) onReady()
+if (data === CUED) on_Ready()
 }
 
 play () {
-this.callPlayer('playVideo')
+this.call_player('playVideo')
 }
 
 pause () {
-this.callPlayer('pauseVideo')
+this.call_player('pauseVideo')
 }
 mute = () => {
-this.callPlayer('mute')
+this.call_player('mute')
 }
 
 unmute = () => {
-this.callPlayer('unMute')
+this.call_player('unMute')
 }
 getDuration () {
-return this.callPlayer('getDuration')
+return this.call_player('getDuration')
 }
 getCurrentTime () {
-return this.callPlayer('getCurrentTime')
+return this.call_player('getCurrentTime')
 }
-ref = container => {
-this.container = container
+ref = section => {
+this.section = section
 }
 
 render () {
-const { display } = this.props
-const style = {
-width: '100%',
-height: '100%',
-display
+let { display } = this.props
+const propStyle = {
+ display
+ height: '99%',
+width: '99%',
 }
 return (
-<div style={style}>
+ <React.Fragment>
+
+<div style={propStyle}>
 <div ref={this.ref} />
 </div>
+ </React.Fragment>
 )
 }
 }
+export default YouTube
 ```
-As shown in the snippet above, similar to the `Facebook` component setup, we created and exported a class-based component. We used the SDK function like iframe functions to embed external links to a web page. 
-For better understanding, consider what happens when a video is loaded to a player, the user expects some basic operations examples including getting current time, getting duration of the video, pause, play stop, mute, etc. and we made available functions to handle those operations. 
+
+As shown in the snippet above, similar to the `Facebook` component setup, we created and exported a class-based component. We used the SDK function like iframe functions to embed external links to a web page.
+For better understanding, consider what happens when a video is loaded to a player, the user expects some basic operations examples including getting current time, getting duration of the video, pause, play stop, mute, etc. and we made available functions to handle those operations.
+
 #### The Twitch URL handler (Twitch.js)
-We have completed the creation and setup of the `Facebook` and `YouTube` components, time to proceed with the `Twitch` component. Similar to what we did earlier, in the `media` folder, create another file `Twitch.js`. thereafter we will set up the component by shipping the code snippet below: 
+We have completed the creation and setup of the `Facebook` and `YouTube` components, time to proceed with the `Twitch` component. Similar to what we did earlier, in the `media` folder, create another file `Twitch.js`. thereafter we will set up the component by shipping the code snippet below:
+
 ```JavaScript
-import React, { Component } from 'react'
+import React from 'react'
 
-import { callPlayer, getSDK, parseStartTime } from '../utils'
-import { canPlay, MATCH_URL_TWITCH_CHANNEL, MATCH_URL_TWITCH_VIDEO } from '../Decoder'
+import { call_player, get_SDK, parse_StartTime } from '../utils'
+import { can_play, MATCH_TWITCH_CHANNEL_URL, MATCH_TWITCH_VIDEO_URL } from '../Decoder'
 
-const SDK_URL = 'https://player.twitch.tv/js/embed/v1.js'
-const SDK_GLOBAL = 'Twitch'
-const PLAYER_ID_PREFIX = 'twitch-player-'
+const URL_SDK = 'https://player.twitch.tv/js/embed/v1.js'
+const GLOBAL_SDK = 'Twitch'
+const PLAYER_ID_STR = 'twitch-player'
 
-export default class Twitch extends Component {
-static displayName = 'Twitch'
-static canPlay = canPlay.twitch
-static loopOnEnded = true
-callPlayer = callPlayer
-playerID = this.props.config.playerId || `${PLAYER_ID_PREFIX}`
+ class Twitch extends React.Component {
+static viewName = 'Twitch'
+static can_play = can_play.twitch
+static loopon_ended = true
+call_player = call_player
+player_ID = this.props.config.player_Id || `${PLAYER_ID_STR}`
 
 componentDidMount () {
-this.props.onMount && this.props.onMount(this)
+this.props.on_Mount && this.props.on_Mount(this)
 }
 
-load (url, isReady) {
-const { playsinline, onError, config, controls } = this.props
-const isChannel = MATCH_URL_TWITCH_CHANNEL.test(url)
-const id = isChannel ? url.match(MATCH_URL_TWITCH_CHANNEL)[1] : url.match(MATCH_URL_TWITCH_VIDEO)[1]
-if (isReady) {
-if (isChannel) {
+load (playerReady, url) {
+const { on_error, controls, config, plays_inline, } = this.props
+const fromChannel = MATCH_TWITCH_CHANNEL_URL.test(url)
+const id = fromChannel ? url.match(MATCH_TWITCH_CHANNEL_URL)[1] : url.match(MATCH_TWITCH_VIDEO_URL)[1]
+if (playerReady) {
+if (fromChannel) {
 this.player.setChannel(id)
 } else {
 this.player.setVideo('v' + id)
 }
-return
+return null
 }
-getSDK(SDK_URL, SDK_GLOBAL).then(Twitch => {
-this.player = new Twitch.Player(this.playerID, {
-video: isChannel ? '' : id,
-channel: isChannel ? id : '',
-height: '100%',
-width: '100%',
-playsinline: playsinline,
-autoplay: this.props.playing,
+
+get_SDK(URL_SDK, GLOBAL_SDK).then(Twitch => {
+this.player = new Twitch.Player(this.player_ID, {
+video: fromChannel ? '' : id,
+channel: fromChannel ? id : '',
+width: '99%',
+height: '99%',
+auto_play: this.props.playing,
+plays_inline: plays_inline,
+time: parse_StartTime(url),
 muted: this.props.muted,
-controls: isChannel ? true : controls,
-time: parseStartTime(url),
+controls: fromChannel ? true : controls,
 ...config.options
 })
 const { READY, PLAYING, PAUSE, ENDED, ONLINE, OFFLINE } = Twitch.Player
-this.player.addEventListener(READY, this.props.onReady)
-this.player.addEventListener(PLAYING, this.props.onPlay)
-this.player.addEventListener(PAUSE, this.props.onPause)
-this.player.addEventListener(ENDED, this.props.onEnded)
-
-// Prevent abnormal isLoading behaviour when streams are offline
-this.player.addEventListener(ONLINE, this.props.onLoaded)
-this.player.addEventListener(OFFLINE, this.props.onLoaded)
-}, onError)
+this.player.addEventListener(READY, this.props.on_Ready)
+this.player.addEventListener(PLAYING, this.props.on_play)
+this.player.addEventListener(PAUSE, this.props.on_pause)
+this.player.addEventListener(ENDED, this.props.on_ended)
+this.player.addEventListener(ONLINE, this.props.on_Loaded)
+this.player.addEventListener(OFFLINE, this.props.on_Loaded)
+}, on_error)
 }
 
-play () {
-this.callPlayer('play')
+onPlay () {
+this.call_player('play')
 }
 
-pause () {
-this.callPlayer('pause')
+onPause () {
+this.call_player('pause')
 }
 
-stop () {
-this.callPlayer('pause')
+onStop () {
+this.call_player('pause')
 }
 mute = () => {
-this.callPlayer('setMuted', true)
+this.call_player('setMuted', true)
 }
 unmute = () => {
-this.callPlayer('setMuted', false)
+this.call_player('setMuted', false)
 }
 getDuration () {
-return this.callPlayer('getDuration')
+return this.call_player('getDuration')
 }
 
 render () {
@@ -522,79 +545,81 @@ width: '100%',
 height: '100%'
 }
 return (
-<div style={style} id={this.playerID} />
+<div style={style} id={this.player_ID} />
 )
 }
 }
+export default Twitch
 ```
-The twitch setup is fairly easy to understand, the major difference from previous components setups is the offline playability. The twitch SDK provides offline playability once the video is already loaded, the process is called caching. Finally, we also handled looping and autoplay i.e. to restart the video automatically once the duration is exhausted and playing videos automatically after loading respectively. 
+
+The twitch setup is fairly easy to understand, the major difference from previous components setups is the offline playability. The twitch SDK provides offline playability once the video is already loaded, the process is called caching. Finally, we also handled looping and autoplay i.e. to restart the video automatically once the duration is exhausted and playing videos automatically after loading respectively.
+
 #### The Vimeo URL handler (Vimeo.js)
 Finally, we will equip our `Player` component with the required functions to render videos from Vimeo. Vimeo as we know it is a video hosting and sharing platform, so it should also be covered by our `video player`. First, we create a `Vimeo.js` file in our `media` folder. In the file, we create the required functions and logic by:
+
 ```JavaScript
-import React, { Component } from 'react'
-import { callPlayer, getSDK } from '../utils'
-import { canPlay } from '../Decoder
+import React from 'react'
+import { call_player, get_SDK } from '../utils'
+import { can_play } from '../Decoder
 
-const SDK_URL = 'https://player.vimeo.com/api/player.js'
-const SDK_GLOBAL = 'Vimeo'
+const URL_SDK = 'https://player.vimeo.com/api/player.js'
+const GLOBAL_SDK = 'Vimeo'
 
-export default class Vimeo extends Component {
-static displayName = 'Vimeo'
-static canPlay = canPlay.vimeo
-static forceLoad = true // Prevent checking isLoading when URL changes
-callPlayer = callPlayer
-duration = null
-currentTime = null
-secondsLoaded = null
+export default class Vimeo extends React.Component {
+static viewName = 'Vimeo'
+static can_play = can_play.vimeo
+static forceLoad = true
+call_player = call_player
+videoDuration = null
 
 componentDidMount () {
-this.props.onMount && this.props.onMount(this)
+this.props.on_Mount && this.props.on_Mount(this)
 }
 
 load (url) {
-this.duration = null
-getSDK(SDK_URL, SDK_GLOBAL).then(Vimeo => {
-if (!this.container) return
-this.player = new Vimeo.Player(this.container, {
+this.videoDuration = null
+get_SDK(URL_SDK, GLOBAL_SDK).then(Vimeo => {
+if (!this.section) return
+this.player = new Vimeo.Player(this.section, {
 url,
-autoplay: this.props.playing,
-muted: this.props.muted,
+auto_play: this.props.playing,
 loop: this.props.loop,
-playsinline: this.props.playsinline,
+plays_inline: this.props.plays_inline,
+muted: this.props.muted,
 controls: this.props.controls,
 ...this.props.config.playerOptions
 })
 this.player.ready().then(() => {
-const iframe = this.container.querySelector('iframe')
-iframe.style.width = '100%'
-iframe.style.height = '100%'
-}).catch(this.props.onError)
+const iframe = this.section.querySelector('iframe')
+iframe.style.height = '99%'
+iframe.style.width = '99%'
+}).catch(this.props.on_error)
 this.player.on('loaded', () => {
-this.props.onReady()
-this.refreshDuration()
+ this.refreshDuration()
+this.props.on_Ready()
 })
 this.player.on('play', () => {
-this.props.onPlay()
+this.props.on_play()
 this.refreshDuration()
 })
-this.player.on('pause', this.props.onPause)
-this.player.on('ended', this.props.onEnded)
-this.player.on('error', this.props.onError)
-this.player.on('bufferstart', this.props.onBuffer)
-this.player.on('bufferend', this.props.onBufferEnd)
-}, this.props.onError)
+this.player.on('pause', this.props.on_pause)
+this.player.on('ended', this.props.on_ended)
+this.player.on('error', this.props.on_error)
+this.player.on('bufferstart', this.props.on_buffer)
+this.player.on('bufferend', this.props.on_bufferEnd)
+}, this.props.on_error)
 }
 play () {
-const promise = this.callPlayer('play')
+const promise = this.call_player('play')
 if (promise) {
-promise.catch(this.props.onError)
+promise.catch(this.props.on_error)
 }
 }
 pause () {
-this.callPlayer('pause')
+this.call_player('pause')
 }
 stop () {
-this.callPlayer('unload')
+this.call_player('unload')
 }
 mute = () => {
 this.setVolume(0)
@@ -607,10 +632,10 @@ this.setVolume(this.props.volume)
 }
 
 getDuration () {
-return this.duration
+return this.videoDuration
 }
-ref = container => {
-this.container = container
+ref = section => {
+this.section = section
 }
 
 render () {
@@ -631,56 +656,60 @@ style={style}
 }
 }
 ```
-The snippet above needs no further explanations, we simply repeated the same procedures earlier implemented. 
-Note: it is expected that you encounter some errors because we have imported some utilities without creating them. We will go ahead and fix the errors in the next step. 
+
+The snippet above needs no further explanations, we simply repeated the same procedures earlier implemented.
+Note: it is expected that you encounter some errors because we have imported some utilities without creating them. We will go ahead and fix the errors in the next step.
+
 #### Exporting the Handlers (index.js)
 For the various URL handlers to be integrated into our application, we need to export them. To avoid duplicate imports, it is recommended to export all your components from a single index file. To achieve this, create an `index.js` file in the `media` folder and export them by shipping the codes below:
+
 ```JavaScript
 import { lazy } from 'react'
-import { canPlay } from '../Decoders'
+import { can_play } from '../Decoders'
 
 export default [
 {
 key: 'youtube',
 name: 'YouTube',
-canPlay: canPlay.youtube,
+can_play: can_play.youtube,
 lazyPlayer: lazy(() => import(/* webpackChunkName: 'reactPlayerYouTube' */'./YouTube'))
 },
 {
 key: 'vimeo',
 name: 'Vimeo',
-canPlay: canPlay.vimeo,
+can_play: can_play.vimeo,
 lazyPlayer: lazy(() => import(/* webpackChunkName: 'reactPlayerVimeo' */'./Vimeo'))
 },
 {
 key: 'facebook',
 name: 'Facebook',
-canPlay: canPlay.facebook,
+can_play: can_play.facebook,
 lazyPlayer: lazy(() => import(/* webpackChunkName: 'reactPlayerFacebook' */'./Facebook'))
 },
 {
 key: 'twitch',
 name: 'Twitch',
-canPlay: canPlay.twitch,
+can_play: can_play.twitch,
 lazyPlayer: lazy(() => import(/* webpackChunkName: 'reactPlayerTwitch' */'./Twitch'))
 },
 ]
 ```
 
 #### Step 4: Setting up the Utilities (Utils.js)
-As stated earlier, some `helpers functions` must be created for our application to perform the desired task of rendering videos from multiple URLs. to do that, we create a `Utils.js` file. thereafter we:
+As stated earlier, some `helpers functions` must be created for our application to perform the desired task of rendering videos from multiple URLs. to do that, we create a `Utils.js` file. then we proceed with the code block below:
+
 ```JavaScript
-const MATCH_START_STAMP = /(\d+)(h|m|s)/g
+const START_STAMP_MATCH = /(\d+)(h|m|s)/g
 const MATCH_NUMERIC = /^\d+$/
 
-function parseTimeParam (url, pattern) {
+function parseTimeParam (pattern, url ) {
 if (url instanceof Array) {
 return undefined
 }
 const match = url.match(pattern)
 if (match) {
 const stamp = match[1]
-if (stamp.match(MATCH_START_STAMP)) {
+if (stamp.match(START_STAMP_MATCH)) {
 return parseTimeString(stamp)
 }
 if (MATCH_NUMERIC.test(stamp)) {
@@ -691,16 +720,17 @@ return undefined
 }
 
 function parseTimeString (stamp) {
-let seconds = 0
-let array = MATCH_START_STAMP.exec(stamp)
+let sec = 0
+let array = START_STAMP_MATCH.exec(stamp)
 while (array !== null) {
-const [, count, period] = array
-if (period === 'h') seconds += parseInt(count, 10) * 60 * 60
-if (period === 'm') seconds += parseInt(count, 10) * 60
-if (period === 's') seconds += parseInt(count, 10)
-array = MATCH_START_STAMP.exec(stamp)
+const [time, count] = array
+if (time === 'h') sec += parseInt(count, 10) * 3600
+if (time === 'm') sec += parseInt(count, 10) * 60
+if (time === 's') sec += parseInt(count, 10)
+array = START_STAMP_MATCH.exec(stamp)
 }
-return seconds
+// returning the time format
+return sec
 }
 export function queryString (object) {
 return Object
@@ -709,62 +739,50 @@ return Object
 .join('&')
 }
 
-function getGlobal (key) {
+function get_Global (key) {
 if (window[key]) {
 return window[key]
+}
+
+if (window.module && window.module.exports && window.module.exports[key]) {
+return window.module.exports[key]
 }
 if (window.exports && window.exports[key]) {
 return window.exports[key]
 }
-if (window.module && window.module.exports && window.module.exports[key]) {
-return window.module.exports[key]
-}
 return null
 }
-const requests = {}
-export function getSDK (url, sdkGlobal, sdkReady = null, isLoaded = () => true, fetchScript) {
-const existingGlobal = getGlobal(sdkGlobal)
-if (existingGlobal && isLoaded(existingGlobal)) {
-return Promise.resolve(existingGlobal)
+const req = {}
+export function get_SDK (url, sdkGlobal, sdkReady = null, isLoaded = () => true, fetchScript) {
+const isGlobal = get_Global(sdkGlobal)
+if (isGlobal && isLoaded(isGlobal)) {
+return Promise.resolve(isGlobal)
 }
-return new Promise((resolve, reject) => {
-// If we are already loading the SDK, add the resolve and reject
-if (requests[url]) {
-requests[url].push({ resolve, reject })
-return
-}
-requests[url] = [{ resolve, reject }]
-const onLoaded = sdk => {
-// When loaded, resolve all pending request promises
-requests[url].forEach(request => request.resolve(sdk))
-}
-if (sdkReady) {
-const previousOnReady = window[sdkReady]
-window[sdkReady] = function () {
-if (previousOnReady) previousOnReady()
-onLoaded(getGlobal(sdkGlobal))
-}
+req[url] = [{ reject, resolve,  }]
+const on_Loaded = sdk => {
+// each request will be resolved after loading
+req[url].forEach(r => r.resolve(sdk))
 }
 fetchScript(url, err => {
 if (err) {
-requests[url].forEach(request => request.reject(err))
-requests[url] = null
+req[url].forEach(request => request.reject(err))
+req[url] = null
 } else if (!sdkReady) {
-onLoaded(getGlobal(sdkGlobal))
+on_Loaded(get_Global(sdkGlobal))
 }
 })
 })
 }
-export function callPlayer (method, ...args) {
-// Util method for calling a method on this.player
+export function call_player (method, ...args) {
+// we use this method to call the player
 if (!this.player || !this.player[method]) {
-let message = `ReactPlayer: ${this.constructor.displayName} player could not call %c${method}%c – `
+let message = `ReactPlayer: ${this.constructor.viewName} could not call player %c${method}%c – `
 if (!this.player) {
-message += 'The player was not available'
+message += ' player unavailable'
 } else if (!this.player[method]) {
-message += 'The method was not available'
+message += 'call method unavailable'
 }
-console.warn(message, 'font-weight: bold', '')
+console.warn(message, 'font-weight: bolder', '')
 return null
 }
 return this.player[method](...args)
@@ -778,114 +796,120 @@ url instanceof window.MediaStream
 )
 }
 ```
+
 The `utils` is very essential to our application as it provides multiple functions and helpers to ensure smooth running pf our video player. The various functions are discussed as follows:
+
 - Call player function: this guards against errors in case the player is not available or the player couldn't be called.
 - Query string function: receives an object, maps over, and extracts the key for querying.
-- Fetch script function: this rejects all requests if loading the SDK fails. It also resets the array of requests for this SDK
+- Fetch script function: this handles and rejects all requests if loading the SDK fails.
 - Get SDK: the function that loads an external SDK or returns the SDK if it is already loaded.
 - Parse time function: the function that displays the video duration and calculates the hours, minutes, and seconds.
 - Get Global function: this function handles window modules and exports.
 - isMediaStream function: prevents undefined URL for breaking the player.
 
 #### Step 5: Setting up the URL Decoder (Decoder.js)
-The `Decoder` will check the URL and assign it to the appropriate component. if the URL matches the corresponding parser i.e. Facebook, YouTube, etc. it will then be decoded and transferred for buffering. To achieve this, we create a `Decoder.js` file, thereafter proceed with the code snippet below: 
-```JavaScript
-import { isMediaStream, isBlobUrl } from './utils'
+The `Decoder` will check the URL and assign it to the appropriate component. if the URL matches the corresponding parser i.e. Facebook, YouTube, etc. it will then be decoded and transferred for buffering. To achieve this, we create a `Decoder.js` file, thereafter proceed with the code snippet below:
 
-export const MATCH_URL_YOUTUBE = /(?:youtu\.be\/|youtube(?:-nocookie)?\.com\/(?:embed\/|v\/|watch\/|watch\?v=|watch\?.+&v=))((\w|-){11})|youtube\.com\/playlist\?list=|youtube\.com\/user\//
+```JavaScript
+import { isMediaStream, BlobURL } from './utils'
+
+export const YOUTUBE_URL_MATCH = /(?:youtu\.be\/|youtube(?:-nocookie)?\.com\/(?:embed\/|v\/|watch\/|watch\?v=|watch\?.+&v=))((\w|-){11})|youtube\.com\/playlist\?list=|youtube\.com\/user\//
 export const MATCH_URL_VIMEO = /vimeo\.com\/.+/
 export const MATCH_URL_FACEBOOK = /^https?:\/\/(www\.)?facebook\.com.*\/(video(s)?|watch|story)(\.php?|\/).+$/
 export const MATCH_URL_FACEBOOK_WATCH = /^https?:\/\/fb\.watch\/.+$/
-export const MATCH_URL_TWITCH_VIDEO = /(?:www\.|go\.)?twitch\.tv\/videos\/(\d+)($|\?)/
-export const MATCH_URL_TWITCH_CHANNEL = /(?:www\.|go\.)?twitch\.tv\/([a-zA-Z0-9_]+)($|\?)/
+export const MATCH_TWITCH_VIDEO_URL = /(?:www\.|go\.)?twitch\.tv\/videos\/(\d+)($|\?)/
+export const MATCH_TWITCH_CHANNEL_URL = /(?:www\.|go\.)?twitch\.tv\/([a-zA-Z0-9_]+)($|\?)/
 export const VIDEO_EXTENSIONS = /\.(mp4|og[gv]|webm|mov|m4v)($|\?)/i
 
-const canPlayFile = url => {
+const can_playFile = url => {
 if (url instanceof Array) {
-for (const item of url) {
-if (typeof item === 'string' && canPlayFile(item)) {
+for (let entity of url) {
+if (typeof entity === 'string' && can_playFile(entity)) {
 return true
 }
-if (canPlayFile(item.src)) {
+if (can_playFile(entity.src)) {
 return true
 }
 }
 return false
 }
-if (isMediaStream(url) || isBlobUrl(url)) {
+if (isMediaStream(url) || BlobURL(url)) {
 return true
 }
 return (
-AUDIO_EXTENSIONS.test(url) ||
-VIDEO_EXTENSIONS.test(url) ||
-HLS_EXTENSIONS.test(url) ||
-DASH_EXTENSIONS.test(url) ||
-FLV_EXTENSIONS.test(url)
+AUDIO.test(url) ||
+VIDEO.test(url) ||
+HLS.test(url) ||
+DASH.test(url) ||
+FLV.test(url)
 )
 }
 
-export const canPlay = {
+export const can_play = {
 youtube: url => {
 if (url instanceof Array) {
-return url.every(item => MATCH_URL_YOUTUBE.test(item))
+return url.every(entity => YOUTUBE_URL_MATCH.test(entity))
 }
-return MATCH_URL_YOUTUBE.test(url)
+return YOUTUBE_URL_MATCH.test(url)
 },
 vimeo: url => MATCH_URL_VIMEO.test(url) && !VIDEO_EXTENSIONS.test(url) && !HLS_EXTENSIONS.test(url),
 facebook: url => MATCH_URL_FACEBOOK.test(url) || MATCH_URL_FACEBOOK_WATCH.test(url),
-twitch: url => MATCH_URL_TWITCH_VIDEO.test(url) || MATCH_URL_TWITCH_CHANNEL.test(url),
+twitch: url => MATCH_TWITCH_VIDEO_URL.test(url) || MATCH_TWITCH_CHANNEL_URL.test(url),
 }
 ```
-To understand what is going on under the hood, all we did was copy and paste the sources template URLs to compare and determine which component will handle the user's URL request. Once the URL is processed, the video stream is then forwarded to the player to be displayed. 
+
+To understand what is going on under the hood, all we did was copy and paste the sources template URLs to compare and determine which component will handle the user's URL request. Once the URL is processed, the video stream is then forwarded to the player to be displayed.
 
 #### Step 6: Modifying the App (App.js)
-to render the application in the `react-dom`, we must first setup the `App` component. to do that, We import all the necessary files and the `Player` component. finally, we modify the `App.js` file by implementing the code block below: 
+to render the application in the `react-dom`, we must first setup the `App` component. to do that, We import all the necessary files and the `Player` component. finally, we modify the `App.js` file by implementing the code block below:
+
 ```JavaScript
-import React, { Component } from 'react'
+import React from 'react'
 import './App.css'
 import Player from '../Player'
 import './media/index'
-class App extends Component {
+class App extends React.Component {
 state = {
 url: null,
 playing: true,
 controls: false,
-volume: 0.8,
+loop: false,
 muted: false,
-played: 0,
-loaded: 0,
-duration: 0,
 playbackRate: 1.0,
-loop: false
+played: 0,
+volume: 0.7,
+duration: 0,
+loaded: 0,
+
 }
 
 load = url => {
 this.setState({
 url,
-played: 0,
-loaded: 0,
 pip: false
-})
+loaded: 0,
+played: 0,
 }
-handleStop = () => {
+)}
+handleStop = (e) => {
 this.setState({ url: null, playing: false })
 }
-handleVolumeChange = e => {
-this.setState({ volume: parseFloat(e.target.value) })
+handleVolumeChange = event => {
+this.setState({ volume: parseFloat(event.target.value) })
 }
-handleToggleMuted = () => {
+handleToggleMuted = (e) => {
 this.setState({ muted: !this.state.muted })
 }
 handlePlay = () => {
-console.log('onPlay')
+console.log('on_play')
 this.setState({ playing: true })
 }
 handlePause = () => {
-console.log('onPause')
+console.log('on_pause')
 this.setState({ playing: false })
 }
 handleEnded = () => {
-console.log('onEnded')
+console.log('on_ended')
 this.setState({ playing: this.state.loop })
 }
 handleDuration = (duration) => {
@@ -905,45 +929,45 @@ const { url, playing, controls, light, volume, muted, loop, played, loaded, dura
 return (
 <div className='app'>
 <section className='section'>
-<h1>Player Demo</h1>
-<div className='player-wrapper'>
+<h2>Video Player</h2>
+<div
+className='player-container'>
 <Player
 ref={this.ref}
-className='react-player'
-width='100%'
-height='100%'
-url={url}
-playing={playing}
-controls={controls}
+className='video-player'
+height='99%'
+width='99%'
 volume={volume}
+url={url}
+controls={controls}
+playing={playing}
 muted={muted}
-onPlay={this.handlePlay}
-onPause={this.handlePause}
-onEnded={this.handleEnded}
-onError={e => console.log('onError', e)}
+on_play={this.handlePlay}
+on_pause={this.handlePause}
+on_ended={this.handleEnded}
+on_error={e => console.warn('error occured', e)}
 onProgress={this.handleProgress}
 onDuration={this.handleDuration}
-/>
-</div>
-
+/></div>
 <table>
 <tbody>
 <tr>
-<th>Controls</th>
+<th>Options</th>
 <td>
 <button onClick={this.handleStop}>Stop</button>
-<button onClick={this.handlePlayPause}>{playing ? 'Pause' : 'Play'}</button>
+<button onClick={this.handlePlayPause}>{!playing ? 'Play':'Pause'}</button>
 <button onClick={this.handleClickFullscreen}>Fullscreen</button>
 {light &&
 <button onClick={() => this.player.showPreview()}>Show preview</button>}
 {ReactPlayer.canEnablePIP(url) &&
 <button onClick={this.handleTogglePIP}>{pip ? 'Disable PiP' : 'Enable PiP'}</button>}
 </td>
+<br />
 </tr>
 <tr>
 <th>Volume</th>
 <td>
-<input type='range' min={0} max={1} step='any' value={volume} onChange={this.handleVolumeChange} />
+<input type='range' min={0} max={1} step='any' value={volume} onChange={this.handleVolumeChange}/>
 </td>
 </tr>
 <tr>
@@ -991,10 +1015,9 @@ onDuration={this.handleDuration}
 <table>
 <tbody>
 <tr>
-<th>YouTube</th>
+<th>YouTube Video</th>
 <td>
 {this.renderLoadButton('https://www.youtube.com/watch?v=oUFJJNQGwhk', 'Test A')}
-{this.renderLoadButton('https://www.youtube.com/watch?v=jNgP6d9HraI', 'Test B')}
 </td>
 </tr>
 <tr>
@@ -1004,24 +1027,16 @@ onDuration={this.handleDuration}
 </td>
 </tr>
 <tr>
-<th>Vimeo</th>
+<th>Vimeo Video</th>
 <td>
 {this.renderLoadButton('https://vimeo.com/90509568', 'Test A')}
 {this.renderLoadButton('https://vimeo.com/169599296', 'Test B')}
 </td>
 </tr>
 <tr>
-<th>Twitch</th>
+<th>Twitch Video</th>
 <td>
 {this.renderLoadButton('https://www.twitch.tv/videos/106400740', 'Test A')}
-{this.renderLoadButton('https://www.twitch.tv/videos/12783852', 'Test B')}
-</td>
-</tr>
-<tr>
-<th>Custom URL</th>
-<td>
-<input ref={input => { this.urlInput = input }} type='text' placeholder='Enter URL' />
-<button onClick={() => this.setState({ url: this.urlInput.value })}>Load</button>
 </td>
 </tr>
 </tbody>
@@ -1033,6 +1048,7 @@ onDuration={this.handleDuration}
 }
 export default App
 ```
+
 from the code block above, the complete multi-source video player is completed and ready for viewing.
 To view the application, we need to start the `development server`. to do that, open your `command terminal` and run the command below:
 
@@ -1040,11 +1056,14 @@ To view the application, we need to start the `development server`. to do that, 
 npm start
 ```
 alternatively
+
 ```bash
 yarn start
 ```
+
 #### Step 7: Styling the Video Player
 Styling isn't the main focus of this article, but we will go ahead and compliment the inline styles we added to our components with some more styles. We will add some margins, colors, and adjusts the font sizes. To do that, in the `App.css` file, we implement the styles below:
+
 ```CSS
 $column-width: 480px;
 $gutter-width: 20px;
@@ -1061,11 +1080,11 @@ margin: $gutter-width;
 text-align: left;
 vertical-align: top;
 }
-.player-wrapper {
+.player-container {
 width: 480px;
 height: 270px;
 }
-.react-player {
+.video-player {
 margin-bottom: 10px;
 background: rgba(0, 0, 0, .1);
 }
@@ -1076,9 +1095,11 @@ color: rgba(0, 0, 0, .5);
 margin: $gutter-width;
 }
 ```
+
 ### Conclusion
 We discussed extensively the various components and utilities required to set up a multi-source video player with React.js. the article covered in detail the various steps and dependencies to achieve the goal. Feel free to implement the code snippets in your video-based React.js project. And I hope you found this article useful.
 Cheers,
 Happy coding.
+
 ### References
 https://reactjs.org/docs/getting-started.html
