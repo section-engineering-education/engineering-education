@@ -246,7 +246,7 @@ The prediction results are as shown below.
 array(['setosa'], dtype=object)
 ```
 
-The prediction results is `setosa` which is true according to our test dataset.
+The prediction results are `setosa` which is true according to our test dataset.
 
 According to our model these are the prediction results, but should we trust these results blindly?, should we try to understand how this model reached at this conclusion.
 
