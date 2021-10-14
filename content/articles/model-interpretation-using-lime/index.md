@@ -160,7 +160,7 @@ Let us check the available data points in our training set.
 X_train.shape
 ```
 
-The output is shown.
+The output is as shown below:
 
 ```python
 (105, 4)
