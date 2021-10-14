@@ -293,7 +293,7 @@ explainer = lime.lime_tabular.LimeTabularExplainer(X_train.values, feature_names
 
 In the code above we have to specify which kind of LIME interpretation we are dealing with. In this case, we have specified it as `lime_tabular.LimeTabularExplainer`.
 
-We also need to pass the `X_train.values`, `feature_names` and `class_names` as parameters. This allows LIME to understand the patterns in the input dataset so that it can be able to verify the prediction results.
+We also need to pass the `X_train.values`, `feature_names`,  and `class_names` as parameters. This allows LIME to understand the patterns in the input dataset so that it can be able to verify the prediction results.
 
 ### Applying the LIME explainer
 Let us apply this explainer to the 8th row of the dataset.
