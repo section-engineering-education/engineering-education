@@ -20,7 +20,7 @@ Through model interpretation, we should be able to explain what the model is doi
 
 This makes users to have trust and confidence to use these models to solve mission critical real-world problems that have a great impact to society and business such as self-driving cars model and health system models which are matter of life or death situations.
 
-In this tutorial, we build a simple machine learning model then use [LIME](https://christophm.github.io/interpretable-ml-book/lime.html) to interpret our model.
+In this tutorial, we will build a simple machine learning model then use [LIME](https://christophm.github.io/interpretable-ml-book/lime.html) to interpret our model.
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
