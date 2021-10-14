@@ -270,7 +270,7 @@ LIME has different methods used for interpretation depending on the kind of data
 - Textual data interpretation technique
 - Image data interpretation technique
 
-In this tutorial we will be using tabular data. Tabular data is a type of data organized in rows and columns.
+In this tutorial, we will be using tabular data. Tabular data is a type of data organized in rows and columns.
 
 Let us import LIME and tabular data interpretation technique.
 
