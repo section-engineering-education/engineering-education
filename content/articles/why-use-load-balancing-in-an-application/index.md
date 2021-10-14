@@ -42,15 +42,16 @@ One can use load balancers on different layers of an application. It includes:
 
 1. Faster user experience. If a request is passed to a server that is down, it gets redirected immediately to an available server. Users won't have to wait for long for a response in such a case.
 
-2. As a system administrator, one experiences a few failed or stressed components. Load balancing helps a lot. The load balancer has several devices that perform a little bit of work instead of one device.
+2. Easy maintenance is achieved. This is because, with the software load balancer, no upgrade is needed. In case of a failure, another instance of the load balancer or server can be put up automatically to service. 
 
-3. Has an additional layer of security to an application.
+3. Has an additional layer of security to an application. The ability of a load balancer to distribute traffic across a cluster of servers can prevent attacks such as Distributed Denial of Service (DDoS). When one server is overloaded by a DDos, the load balancer will avoid that server. It will push traffic to the rest of the servers apart from the one that has been attacked. This way, the load balancer will eliminate a single point of application failure and reduce the chances of other servers being attacked. 
 
-4. Load balancers can encrypt incoming requests and decrypt outgoing responses so that the backend servers don't perform expensive operations.
+4. Load balancers can encrypt incoming requests and decrypt outgoing responses so that the backend servers don't perform expensive operations by doing the encryption and decryption on backend servers.
 
-5. Scalability is easier done with Load balancers. It is easy to keep the services up and running even when changing the server infrastructure.
+5. Scalability is easier done with Load balancers. It is easy to keep the services or application up and running even when changing the server infrastructure. When there is a need by an organization to change its infrastructure, applications that have load balancers will not be affected by such changes. They still will continue functioning as before. Scaling up and down depending on the processes performed on the servers is easily achievable. 
 
-6. At times, the application does not keep track of user sessions. A load balancer can come in and issue cookies. It enables the client requests to be routed to the correct instance.
+6. At times, the application does not keep track of user sessions. A load balancer can come in and issue cookies. The cookies enable the client requests to be routed to the correct server instance.
+
 
 ### Load Balancer Algorithms
 
