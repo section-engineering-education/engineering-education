@@ -47,7 +47,7 @@ To follow through this article, the reader should:
 - Be familiar with [Google colab notebooks.](https://colab.research.google.com)
 
 ### Introduction
-Model interpration has made a greater impact in todays machine learning building, through interpretation we can build more robust, accurate and most trust worthy model. These are reasons why model interpretation is important.
+Model interpretation has made a great impact in today's machine learning building. Through interpretation, we can build a more robust, accurate, and most trustworthy model. These are some of the reasons why model interpretation is important among others.
 
 #### Importance of model interpretation
 - Detect errors and bugs in the model.
