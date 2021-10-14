@@ -185,7 +185,7 @@ During the training phase, the model gains knowledge through learning. It stores
 model_logreg.fit(X_train, Y_train)
 ```
 
-During the training phase, the model also fine tunes the model and outputs the best parameters for the model which will give the optimal solution as shown in the image below.
+During the training phase, the model also fine-tunes the model.  It outputs the best parameters for the model which will give the optimal solution as shown in the image below.
 
 ![Model output](/engineering-education/model-interpretation-using-lime/flower-sizes.jpg)
 
