@@ -6,7 +6,7 @@ url: /integrating-firebase-database-in-django/
 title: Integrating Firebase with Django
 description: In this tutorial, we will be looking at how to use the Firebase real-time database in Django by building a simple project.
 author: shuaib-oseni
-date: 2021-10-12T00:00:00-15:50
+date: 2021-10-13T00:00:00-23:45
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -40,41 +40,47 @@ To follow along with this tutorial, you will need the following:
 - [Conclusion](#conclusion)
 
 ### Creating Firebase project
-- To create a Firebase project, we need to head over to the [Firebase console](https://console.firebase.google.com).
+To create a Firebase project, we need to head over to the [Firebase console](https://console.firebase.google.com). Next, we click Add project
 
-- Next, we click Add project
 ![Adding firebase project](/engineering-education/integrating-firebase-database-in-django/new-project.png)
 
-- Next, we are asked to give our project a name
+We are asked to give our project a name
+
 ![Project name](/engineering-education/integrating-firebase-database-in-django/project-name.png)
 
-- After typing in our project name, we click on the continue button, which takes us to the screen asking if we want google analytics in our project. We do not need analytics in our project, and you can click the toggle button or click continue.
+After typing in our project name, we click on the continue button, which takes us to the screen asking if we want google analytics in our project. We do not need analytics in our project, and you can click the toggle button or click continue.
 
-- Next, we need to select our account and click on the `create project` button. This takes a few seconds to create.
+Next, we need to select our account and click on the `create project` button. This takes a few seconds to create.
+
 ![Project created](/engineering-education/integrating-firebase-database-in-django/created.png)
 
-- Now that our project has been created, we click on continue, which redirects us to our project's dashboard.
-![Project name](/engineering-education/integrating-firebase-database-in-django/project-name.png)
+Now that our project has been created, we click on continue, which redirects us to our project's dashboard.
 
-- On our dashboard, we have three icons, ios, android and web. Since we are working on a web project, we will be clicking on the web icon. This directs us to a form that asks us to name our web app. Type in a name and click `register app`.
+On our dashboard, we have three icons, ios, android and web. Since we are working on a web project, we will be clicking on the web icon. This directs us to a form that asks us to name our web app. Type in a name and click `register app`.
+
 ![App name](/engineering-education/integrating-firebase-database-in-django/appname.png)
 
-- After clicking on the `register app` button, it gives us some code. Please copy the code somewhere; we will need it soon. Then we click on the `continue to console` button.
+After clicking on the `register app` button, it gives us some code. Please copy the code somewhere; we will need it soon. Then we click on the `continue to console` button.
 
-- Now, we are brought back to the dashboard. We need to refresh the page to view our newly created app.
+Now, we are brought back to the dashboard. We need to refresh the page to view our newly created app.
+
 ![Refresh Dashboard](/engineering-education/integrating-firebase-database-in-django/refresh.png)
 
 ### Creating the database
-From our dashboard, to create a database, we click on  `Realtime Database`, `Create Database`. Next, we need to set up the database. You can go with the default country and click `next`. For the security rules, we will be choosing the `Start in Test Mode` option. This is because it is still in the testing stage. The `Start in Locked Mode` should be selected once the app is ready for production.
+From our dashboard, to create a database, we click on  `Realtime Database`, `Create Database`. 
+
+Next, we need to set up the database. You can go with the default country and click `next`. For the security rules, we will be choosing the `Start in Test Mode` option. This is because it is still in the testing stage. The `Start in Locked Mode` should be selected once the app is ready for production.
 
 ![Database Setup](/engineering-education/integrating-firebase-database-in-django/test-mode.png)
 
-- Once we are done with that, we are presented with a page for input data into our database.
+Once we are done with that, we are presented with a page for input data into our database.
+
 ![Database](/engineering-education/integrating-firebase-database-in-django/setup.png)
 
-- Now, let us add some demo data. First, click on the `+` icon. Next, in the `Name` field, type in `Data`. We want our data in a dictionary form to leave the `value` field blank.
+Now, let us add some demo data. First, click on the `+` icon. Next, in the `Name` field, type in `Data`. We want our data in a dictionary form to leave the `value` field blank.
 
-- Next, click the `+` icon next to the value field to add another child. Fill in the `Name` and `Data` fields. To another child, click on the `+` icon next to `Data`. Add a few more data, then click on the `Add` button. We should have a result like this:
+Next, click the `+` icon next to the value field to add another child. Fill in the `Name` and `Data` fields. To another child, click on the `+` icon next to `Data`. Add a few more data, then click on the `Add` button. We should have a result like this:
+
 ![Data](/engineering-education/integrating-firebase-database-in-django/database.png)
 
 
@@ -95,7 +101,7 @@ On creation, we activate the virtual environment using the following command:
 source env/bin/activate
 ```
 
-Next, we install Django using the following command:
+We install Django using the following command:
 
 ```bash
 pip install Django
@@ -188,7 +194,7 @@ Next, we add the following lines of code to the `index.html` file.
 <p>My favourite framework is {{framework}}</p>
 ```
 
-Next, we need to update the `DIRS` to the path of the templates folder in our `settings.py` file.
+We need to update the `DIRS` to the path of the templates folder in our `settings.py` file.
 
 ```python
 TEMPLATES = [
