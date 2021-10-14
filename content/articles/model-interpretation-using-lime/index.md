@@ -63,7 +63,7 @@ When it comes to model interpretation we have different methods and techniques u
 The model interpretation techniques and methods are as follows.
 
 #### Model-specific method
-This technique is specific to only certain models and may not be applied to other machine learning models. It checks on the specific features and attributes within a model and their impact to the general functionalaties of the model.
+This technique is specific to only certain models and may not be applied to other machine learning models. It checks on the specific features and attributes within a model and their impact on the general functionalities of the model.
 
 #### Local or global scope method
 The local scope is used in individual prediction and tries to explain why a model made a certain single prediction. In global scope goes beyond the individual prediction and tries to explain the general behaviour of the model.
