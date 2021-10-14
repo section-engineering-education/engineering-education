@@ -66,7 +66,7 @@ The model interpretation techniques and methods are as follows.
 This technique is specific to only certain models and may not be applied to other machine learning models. It checks on the specific features and attributes within a model and their impact on the general functionalities of the model.
 
 #### Local or global scope method
-The local scope is used in individual prediction and tries to explain why a model made a certain single prediction. In global scope goes beyond the individual prediction and tries to explain the general behaviour of the model.
+The local scope is used in individual prediction and tries to explain why a model made a certain single prediction. In global scope, it goes beyond the individual prediction and tries to explain the general behavior of the model.
 
 In this tutorial we will build a simple classification model using the iris dataset. The model classifies the flower species based on the user input. From there, we will use LIME to interpret this model.
 
