@@ -1,11 +1,28 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-perform-parallel-computing-using-matlab/
+title: How to Perform Parallel Computing Using Matlab
+description: This article explains the parallel computing toolbox in Matlab and how one can use it to perform parallel computing. It also discusses how one can use the low level functions to perform parallel computing.
+author: florence-akinyi
+date: 2021-10-01T00:00:00-04:50
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/how-to-perform-parallel-computing-using-matlab/hero.jpg
+    alt: How to Perform Parallel Computing Using Matlab Hero Image
+---
 
 Parallel computing is a type of computing in which many calculations or execution processes are carried out simultaneously. If you have a huge and complex process, you can apply the parallel computing process.
 
-It involves dividing the task into completely independent sub-tasks. These sub-tasks are executed independently in the central processing unit(CPU).
+<!--more-->
+
+It involves dividing the task into completely independent sub-tasks. These sub-tasks are executed independently in the central processing unit (CPU).
+
+Sub-tasks being executed independently means that a block of code can be completed without knowing the output of another code.
 
 Once you execute all these sub-processes, you obtain the final results by summing up the smaller tasks. This process reduces the execution time.
-
-What we mean by independently is that we can execute one portion of a code without knowing the output of the other portion.
 
 Thus, parallel computing with Matlab accelerates workflow with minimal to no code changes to your original code. It also scales computations to clusters and clouds.
 
@@ -19,15 +36,16 @@ To follow along with this tutorial, you'll need:
 ### Accelerating and parallelizing Matlab code
 
 You can use different procedures in your code to improve its performance without taking into account parallelization.
+
 These include:
 
 - Pre-allocation and vectorization - This involves pre-allocating the space without locating it dynamically. Particularly when a code contains `for` and `while` loop.
 
 ![Code analyzer](/engineering-education/how-to-perform-parallel-computing-using-matlab/parallel_one.png)
 
-As you can see in the code analyzer, Matlab tells you how to make a little adjustment to accelerate the execution of the code.
+In the image above, Matlab tells you how to make a little adjustment to accelerate the execution of the code.
 
-### Run Matlab on multicore machines
+### Running Matlab on multicore machines
 
 There are two ways of running Matlab on multicore machines:
 
@@ -42,22 +60,25 @@ Some of the functions are optimized for this multi-threading and uses multicore 
 
 #### Parallel computing using explicit techniques
 
-It means that with this specific function, the user can specify the number of workers he would want to work on that specific task.
+It means that with this specific function, the user can specify the number of workers they want on that specific task.
 
-The user then decides to use a specific function to parallelize the work to obtain the results. We will focus more on this for this article.
+The user then decides to use a specific function to parallelize the work to obtain the results. This article will focus more on this.
 
-This method uses `parfor` function. Here we need to have no dependency between the different tasks.
+This method uses `parfor` function.
+
+Here we need not to have any dependency between the different tasks.
 
 For example:
+
 ![matlab client](/engineering-education/how-to-perform-parallel-computing-using-matlab/parallel_two.png)
 
-In the above example, we have a Matlab clien. The rectangle is the task that we are to perform.
+In the above example, we have a Matlab client. The rectangle is the task that we are to perform.
 
 We can see that if we perform sequentially, we take a longer time, while splitting the task into three workers reduces the execution time.
 
 It is also visible that the difference between the `for` and the `parfor` syntax is not so much.
 
-Therefore, the only thing that you should ensure is that the function `myFun` should be completely independent.
+Therefore, the only thing that you should ensure is that the function `myFun` is completely independent.
 
 ### Mechanics of `parfor` loops
 
@@ -69,12 +90,16 @@ end
 a;
 ```
 
-Matlab allocates its work dynamically to its workers during computation. For example, in the code above, we have enabled the `parfor`, and when we run the program, we get the following output:
+Matlab allocates its work dynamically to its workers during computation.
+
+For example, in the code above, we have enabled the `parfor`, and when we run the program, we get the following output:
 
 ```matlab
 Starting parallel pool (`parpool`) using the 'local' profile ...
 connected to 2 workers.
 ```
+
+**Explanation**
 
 In this case, we have ten iterations.
 
@@ -90,7 +115,9 @@ Then, it allocates iterations to a single worker.
 
 ### Optimization of `for` loops
 
-Now we want to see the optimization of the `for` loop. Particularly, we will have the first one as the classic `for` loop with nothing optimized and the second as the optimized one using the `parfor` function.
+Now we want to see the optimization of the `for` loop.
+
+Particularly, we will have the first one as the classic `for` loop with nothing optimized, and the second as the optimized one using the `parfor` function.
 
 Let's look at the tool strip parallel. To locate this, we use the following steps:
 
@@ -114,7 +141,7 @@ It is done by clicking on the `validation` and then the `validate` at the top of
 
 Once this is done, we can see the number of workers we have for different stages.
 
-You can also can monitor the job by clicking on `monitor jobs`. It gives you the current status of your parallel pool as seen below:
+You can also monitor the job by clicking on `monitor jobs`tab. It gives you the current status of your parallel pool as seen below:
 
 ![monitor jobs](/engineering-education/how-to-perform-parallel-computing-using-matlab/parallel_eight.png)
 
@@ -133,7 +160,7 @@ end
 toc                 % saves time for execution
 ```
 
-When we execute this code normally, we see that it takes **31.186221 seconds** for complete execution.
+When we execute this code normally, we see that it takes **31.186221 seconds** to complete execution.
 
 Let's now see how long it will take for the optimized one:
 
@@ -186,9 +213,13 @@ Elapsed time is 17.300710 seconds.
 
 If you want to run `parpool` on your PC, you have to consider that it is quite hardware intensive. This means that the PC in use must have at least a multicore processor so that each core could become a worker.
 
-The PC should also have some gigs of ram. Particularly, each worker requires at least two gigs, if you are using Matlab operations. You will need at least 4gigs for a worker if you are using simulant paralyzation.
+The PC should also have some gigs of ram. Particularly, each worker requires at least two gigs, if you are using Matlab operations.
 
-Lastly, you need some high performance to run the performance and see the benefits of parallelization. Keep in mind that if you split your work into different operations, you will need some temporary files to save the execution of some parts of the code from getting the information, once you complete all the parts and stick them together to give the output.
+You will therefore need atleast 4gigs for a worker if you are using simulant paralyzation.
+
+Lastly, you need some high performance to run the performance and see the benefits of parallelization.
+
+> If you split your work into different operations, you will need some temporary files to save the execution of some parts of the code from getting the information, once you complete all the parts and stick them together to give the output.
 
 ### Conclusion
 
@@ -199,3 +230,7 @@ Again, conducting parallel computing in Matlab is simple. It makes it even more 
 Hope you find this beneficial.
 
 Happy coding!
+
+---
+
+Peer Review Contributions by: [Monica Masae](/engineering-education/authors/monica-masae/)
