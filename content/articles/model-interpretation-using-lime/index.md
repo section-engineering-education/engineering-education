@@ -222,7 +222,7 @@ The output is as shown.
 When we convert into a percentage it becomes `88.89%`. This shows that our model has an `88.89%` chance of making accurate predictions.
 
 ### Making a single prediction
-Making single prediction involves using a single data point in the dataset to make a prediction.
+Making a single prediction involves using a single data point in the dataset to make a prediction.
 
 Let us use a single data point from the dataset.
 
