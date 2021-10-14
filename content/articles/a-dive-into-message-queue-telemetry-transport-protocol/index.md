@@ -1,12 +1,12 @@
 ---
 layout: engineering-education
-status: draft
+status: publish
 published: true
 url: /a-dive-into-message-queue-telemetry-transport-protocol/
 title: Message Queue Telementary Transport Protocol
-description: This article intends to talk about wireless communication architecture based on the MQTT protocol.
+description: This article will go through wireless communication architecture based on the MQTT protocol.
 author: Irene-njeri
-date: 2021-10-12T00:00:00-14:46
+date: 2021-10-14T00:00:00-03:15
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -15,8 +15,7 @@ images:
     alt: Message queue telementary transport protocol Hero Image
 ---
 
-### Introduction 
-Smart inverters act as the principal connection between Distributed Energy Resources(DERs) and the power bus in an environment with an increasing number of non-traditional power sources. In Microgrids(Mgs), where many DERs must be monitored and coordinated, this function is much more critical.
+Smart inverters act as the principal connection between Distributed Energy Resources (DERs) and the power bus in an environment with an increasing number of non-traditional power sources. In Microgrids (Mgs), where many DERs must be monitored and coordinated, this function is much more critical.
 <!--more-->
 Even under distributed control, the system must compensate for voltage and frequency fluctuations caused by local controllers. Therefore MGs must incorporate appropriate communication connections. A communications system is also necessary for efficient functioning.
 
@@ -34,18 +33,22 @@ The MQTT convention characterizes two sorts of organization elements: a message 
 
 The subject hierarchies have been used to arrange the data. The connected broker receives a control signal every time the publisher publishes new data. Afterwards, the broker distributes the data to all those who have requested it through email or other means. Publishers are not obliged to disclose subscription numbers or locations, nor are they required to give information about their subscribers.
 
-Anything sent on a topic that has no current subscribers will be removed by brokers unless the publisher categorizes it as a `retained message.` A retained message is an MQTT message that has the retained flag set. The broker keeps track of the most recent communication and its related grade of service for each topic. A message is sent immediately to any client that has subscribed to a subject pattern that matches the message's subject. Only one communication is saved per subject by the broker. This enables new subscribers to a topic to get the most up-to-date information without waiting for the publisher's next update.
+Anything sent on a topic that has no current subscribers will be removed by brokers unless the publisher categorizes it as a `retained message.` A retained message is an MQTT message that has the retained flag set. 
+
+The broker keeps track of the most recent communication and its related grade of service for each topic. A message is sent immediately to any client that has subscribed to a subject pattern that matches the message's subject. 
+
+Only one communication is saved per subject by the broker. This enables new subscribers to a topic to get the most up-to-date information without waiting for the publisher's next update.
 
 When the distributing customer interfaces with the specialist interestingly and the representative identifies that the distributing customer has out of nowhere disengaged, the distributing customer can set up a default message to communicate to endorsers. 
 
-Customers speak with an agent, regardless of whether a framework might comprise many representative workers trading information-dependent regarding the matters of their present supporters.Broker servers exchange data depending on their current subscribers' topics, but clients only interact with one broker server.
+Customers speak with an agent, regardless of whether a framework might comprise many representative workers trading information-dependent regarding the matters of their present supporters. Broker servers exchange data depending on their current subscribers' topics, but clients only interact with one broker server.
 
-MQTT uses the TCP protocol for data transmission. MQTT-SN, a variant, is used via various transports such as UDP or Bluetooth.It offers connection credentials in raw text format without any security or authentication mechanisms. This can be accomplished by encrypting and protecting the sent data against interception, modification, or forgery using TLS.
+MQTT uses the TCP protocol for data transmission. MQTT-SN, a variant, is used via various transports such as UDP or Bluetooth. It offers connection credentials in raw text format without any security or authentication mechanisms. This can be accomplished by encrypting and protecting the sent data against interception, modification, or forgery using TLS.
 
 ### Communication between MQTT Client and Broker
 The MQTT broker is a piece of software that runs on a computer (on-premises or in the cloud), and it can either be self-built or hosted by a third party. There are both open-source and proprietary options to choose from.
 
-MQTT utilizes the title [`Topic`](#topic)  instead of the expected beneficiary's location since the intermediary capacities as a mail centre. Assuming you need a duplicate of the message, buy into that subject. A solitary agent can send messages to an enormous number of customers (one to numerous capacities). A solitary supporter might get data from various sources. 
+MQTT utilizes the title [`Topic`](#topic-in-mqtt) instead of the expected beneficiary's location since the intermediary capacities as a mail centre. Assuming you need a duplicate of the message, buy into that subject. A solitary agent can send messages to an enormous number of customers (one to numerous capacities). A solitary supporter might get data from various sources. 
 
 By distributing and buying in, every customer might deliver and get information, i.e., the gadgets can communicate sensor information while getting setup data or control orders (MQTT is a bi-directional correspondence convention). Data exchange, device management, and control are all aided by this.
 
