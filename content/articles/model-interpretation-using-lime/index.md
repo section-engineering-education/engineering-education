@@ -168,7 +168,7 @@ The output is as shown below:
 
 This shows that there is a total of `105` flower species and `4` columns in the training set.
 
-Let us use Logistic regression to build and train our model.
+Next, let us use logistic regression to build and train our model.
 
 ### Model training using logistic regression
 We start by initializing the `LogisticRegression()` method which is used for training our model.
