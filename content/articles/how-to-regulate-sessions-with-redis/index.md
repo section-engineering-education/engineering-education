@@ -4,33 +4,37 @@
 
  In-memory means you don't need to have large data sets. You have small pieces of data, so tiny little pieces of data that allow us to keep it in memory that is the machine's memory and not disk.
 
- Redis is an open-source database that is often used to build high-performance scalable web applications. Redis is a key-value store and this key relationship is a little bit similar to how we handle objects in javascript. Several languages and frameworks works with Redis, they include Python, backend javascript frameworks like Node.js. In this tutorial we will be doing our session regulation using Redis with Node.js.   
+ Redis is an open-source database that is often used to build high-performance scalable web applications. Redis is a key-value store and this key relationship is a little bit similar to how we handle objects in javascript. Several languages and frameworks work with Redis, they include Python, backend javascript frameworks like Node.js. In this tutorial, we will be doing our session regulation using Redis with Node.js.   
 
 
 ### Prerequisites
 To understand this lesson you should be familiar with the following.
-* JavaScript.
-* Creating servers using Nodejs and their dependencies.
-* Database.
+- JavaScript.
+- Creating servers using Nodejs and their dependencies.
+- Database.
 
 ### Goal
 
 At the end of this tutorial you should be able to:
 
-* Understand What Redis Is
-* Fundamentals of Redis
-* Advantages of Redis
-* Install Redis
-* Redis-CLI
-* Data Types - Strings, Lists, Sets, Sorted Sets, Hashes
-* Regulate Sessions with Redis (Nodejs)
+- Understand What Redis Is
+- Fundamentals of Redis
+- Advantages of Redis
+- Install Redis
+- Redis-CLI
+- Data Types - Strings, Lists, Sets, Sorted Sets, Hashes
+- Regulate Sessions with Redis (Nodejs)
 
 ### Advantage of Redis
 It's really fast cause it's an in-memory database and you do not need large data sets.
-* It's very flexible in terms of storing data.
-* No schemas & column names are required.
-* Redis support rich data types such as List and Set.
-* It's also used for both a Caching system and a database that can persist data to the disk.
+- It's very flexible in terms of storing data.
+- No schemas & column names are required.
+- Redis supports rich data types such as List and Set.
+- It's also used for both a Caching system and a database that can persist data to the disk.
+
+### When to use Redis Caching
+Use Redis to cache data that is not frequently changing.
+
 ### Getting Started with Redis
 Now let install Redis onto our laptops or computers to use it and test some commands. Now keep in mind when it comes to databases most of the time you won't be running from your computer. In most cases, it's going to be on a server or another machine that is just dedicated to that database.
 ### Redis installation
@@ -57,11 +61,10 @@ https://stackoverflow.com/questions/8131008/issue-with-redis-install
 
 ### Redis CLI
 
-Redis-CLI is the Redis command-line interface, It's a program that allows sending commands to Redis, and read the replies sent by the server, using the terminal. Redis-CLI has basic line editing capabilities to provide a good typing experience. These are few Redis-CLI commands. 
+Redis-CLI is the command-line interface for Redis, It authorizes forwarding commands to Redis, also reads the replies sent by the server, using the terminal. These are few Redis-CLI commands. 
 
-
-* SET & GET:- SET value of a key. 
-#### Example
+- SET & GET:- SET value of a key. 
+#### Example 
 ```bash
  SET name "John Snow"
  ok
@@ -70,7 +73,7 @@ Redis-CLI is the Redis command-line interface, It's a program that allows sendin
  "100"
  
 ```
-* GET :- Get the value of key. nil will be returend if the key dose not eixt.
+- GET :- Get the value of key. nil will be returend if the key dose not eixt.
 #### Example
 ```bash
  redis 127.0.0.1:6379> GET nonexisting
@@ -82,27 +85,28 @@ redis 127.0.0.1:6379> GET mykey
 redis 127.0.0.1:6379>
  
 ```
-* ECHO :- Echo the given string
+- ECHO :- Echo the given string
 #### Example
 ```bash
 redis 127.0.0.1:6379> ECHO "Welcome to redis"
 redis 127.0.0.1:6379> "Welcome to redis"
 redis 127.0.0.1:6379> 
 ```
-* PING:- This test is to see if there is a connection alive and it's going to respond with PONG. It lets us know there's a connection with Redis.
+- PING:- This test is to see if there is a connection alive and it's going to respond with PONG. It lets us know there's a connection with Redis.
 #### Example
 ```bash
 redis 127.0.0.1:6379> PING 
 PONG 
  
 ```
-* QUIT:- To close connection
+- QUIT:- To close connection
 
 #### [Click for more Redis-CLIi commands](https://redis.io/commands)
  
 ### Data Types - Hashes, Lists, Strings, Sets, Sorted Sets 
-* ### Hashes
- Hashes are maps between string fields and string values. The best way to think about them is simply like objects in javascript.
+- ### Hashes
+
+ Hashes are a collection of filed valued pairs. The best way to think about them is simply like objects in javascript.
 #### Example
 ```bash
 redis> HMSET user id 45 name "John"
@@ -111,8 +115,8 @@ redis>
 ```
 Above I have just created a hash with a key user and this key has both id of 45 and the name John. 
 
-* ### List 
-List is implemented using something called linked lists rather than arrays. Lists are useful if you have really long lists and you need to add elements quickly to that lists. We can add to a list by using LPUSH or RPUSH. LPUSH inserts all the specified values at the begging of the list stored at the key. RPUSH will push it to the end.
+- ### List 
+List is implemented using something called linked lists rather than arrays. Lists are useful if you have really long lists and you need to add elements quickly to that lists. We can add to a list by using LPUSH or RPUSH. LPUSH means left push, which means from the left of where the head of the list is. RPUSH will push it to the end.
 #### Example
 ```bash
 redis 127.0.0.1:6379> LPUSH people "John"
@@ -128,8 +132,8 @@ redis 127.0.0.1:6379> LRANGE people 0 3
 ```
 The LRANGE command is used to output the list. 
 
-* ### Strings
-Strings in Redis are binary safe, meaning they have a known length not determined by any special terminating characters.
+- ### Strings
+Strings in Redis are binary-safe sequencing of bits, and they are just like any other string we use in our favorite programing language.
 #### Example
 
 ```bash
@@ -138,10 +142,10 @@ OK
 redis 127.0.0.1:6379>> GET name
  "Peter"
 ```
-The above example, SET and GET are REDIS-CLI name is the key used in Redis and Peter is the string value that is stored in Redis.
+The example above of SET and GET are Redis command, the name is the key used in Redis while Peter is the value stored in Redis.
 
-* ### Sets
-Redis Sets are an unordered collection of strings. With sets it's possible to  remove, add, and test for the existence of members in a group. With sets with don't have any duplicates inour items.
+- ### Sets
+Redis Sets collection of strings that are not chracterized. With sets it's possible to  remove, add, and test for the existence of members in a group. With sets with don't have any duplicates in our items.
 #### Example
 ```bash
 redis 127.0.0.1:6379> SADD countries "England" 
@@ -161,8 +165,9 @@ redis 127.0.0.1:6379> SMEMBER countries
 SADD adds the specified members to the set stored key.
 SMEMBER returns all the members of the set value stored at key.
 
-* ### Sorted Sets
-Redis sorted sets just like sets do the no repeating collection of stings that we've already already demostrated but the difference is that every member of a sorted sets is associated with a score and this score allows it to be ordered from smmalest to greatest.
+- ### Sorted Sets
+
+Redis sorted sets just like sets do the no repeating collection of strings that we've already demostrated but the difference is that every member of a sorted sets is associated with a score and this score allows it to be ordered from smallest to greatest.
 #### Example
 ```bash
 redis 127.0.0.1:6379> ZADD names 0 Paul 
@@ -184,89 +189,81 @@ There are plenty of other commands that you can learn with Redis and they are re
 
 ### Redis Caching (Node.js )
 
-Here we are going to make a request to a GitHub API to get the number of repos for users, and we are going to store that number in our Redis cache. So Redis is basically key-value peers, it allows us to make fewer requests so it will cache the data so we don't have to keep making requests and it will speed up our application. Here we are not going to build a real application am just going to show you how to implement it, but you are going to see the benefit of it and you are going to learn the foundation to use it in your node.js application.
+So like I mentioned Redis is a caching management system. So  Redis is used to cache the data. If there is a small amount of data we have to fetch every time from the server it takes too much time. So if the data is not dynamic if it is not changing every time we can install the data, cache the data, and return the data when requested. 
+So  I  am going to set up the server and am going to make a request to the  API then we store the data we get from the server to the local application system in Redis and we will fetch data from Redis.
 
 #### Open any code editor of your choice and run npm init-y in the terminal to create a quick package.json
 ```bash
 npm init-y
-
 ```
-We are going to install a couple of dependencies
-we are going to be making our request with the GitHub API using node-fet
-also, install nodemon
+### Packages to install
 ```bash
-npm i express node-fetch redis
-
+npm install express redis
 ```
-npm i -D nodemon
+```bash
+npm install --save cross-fetch
+```
+
+```bash
+npm install _D nodemon
+```
+### API
+I will be making a request with this  API [http://universities.hipolabs.com/search?country=] and it will generate all the list of the universities in the country. The API can be used for any country.
 
 ```bash
 const express = require('express');
-const fetch = require('node-fetch');
 const redis = require('redis');
+const fetch = require('cross-fetch');
 
-// enviroment variables 
-const PORT = process.env.PORT || 5000;
-const REDIS_PORT = process.env.REDIS_PORT || 6379;
-
-const client = redis.createClient(REDIS_PORT);
-
+// environment variables
 const app = express();
+const client = redis.createClient(6379);
 
-// Set response
-function setResponse(username, repos) {
-  return `<h2>${username} has ${repos} Github repos</h2>`;
+function forwardData(country, website) {
+    return `${country} =>> ${website}`;
 }
 
-// Make request to Github for data
-async function getRepos(req, res, next) {
-  try {
-    console.log('Fetching Data...');
-
-    const { username } = req.params;
-
-    const response = await fetch(`https://api.github.com/users/${username}`);
-
-    const data = await response.json();
-
-    const repos = data.public_repos;
-
-    // Set data to Redis
-    client.setex(username, 3600, repos);
-
-    res.send(setResponse(username, repos));
-  } catch (err) {
-    console.error(err);
-    res.status(500);
-  }
+//middleware to check if the country exist in redis database
+function checkForCache(req, res, next) {
+    const { country } = req.params;
+    client.get(country, (err, website) => {
+        if (err) throw err;
+        if (website != null) res.send(forwardData(country, website));
+        else next();
+    })
 }
 
-// Cache middleware
-function cache(req, res, next) {
-  const { username } = req.params;
-
-  client.get(username, (err, data) => {
-    if (err) throw err;
-
-    if (data !== null) {
-      res.send(setResponse(username, data));
-    } else {
-      next();
+// Dynamics url Path
+app.get('/:country', checkForCache, async (req, res) => {
+    try {
+        const { country } = req.params;
+        const resp = await fetch(`http://universities.hipolabs.com/search?country=${country}`);
+        const data = await resp.json();
+        const website = data[0].web_pages[0];
+        client.setex(country, 3600, website[0]);
+        res.send(forwardData(country, website));
+    } catch (err) {
+        console.log("Error:", err);
     }
-  });
-}
 
-app.get('/repos/:username', cache, getRepos);
+})
 
-app.listen(5000, () => {
-  console.log(`App listening on port ${PORT}`);
-});
 ```
+### Result
+ <img src="redis screenshot1 (1).jpg" alt="alt text" height="500" width="600"/>
+
+ Above is the result of all the universities in Mexico using the API after inputting the country at the top. And at the bottom of the image, we can see it took 8.71s just to do that which is quite slow. So to reduce the time, I will be installing this data into our Redis server so when the user makes a request it will check if the data already exists.
+In our Redis server if it already exists on our Redis database then it will fetch data from there. if not then it will make a request on the link. 
+
+
+<img src="redis screenshot2.jpg" alt="alt text" height="500" width="600"/>
+
+After installing the data into our Redis server and I searched for Mexico again it took just 850ms to load up the same data. We can see how fast it fetch the data which makes our application run faster.
 
 ### Conclusion
-In conclusion, we learned What Redis is, the fundamentals of Redis, Redis Caching in Node.js, the advantages of Redis, how to install Redis, Redis data Types,  and Redis-CLI.
+In conclusion, we learned What Redis is, the fundamentals of Redis, Redis Caching in Node.js, the advantages of Redis, how to install Redis, Redis data Types,  and Redis-CLI. Redis improve the response time of our application which make it super fast. 
 
-You can find the entire code [here](https://github.com/abimbolataofeek/Regulate-Sessions-with-Redis-Nodejs-)
+You can find the entire code [here](https://github.com/abimbolataofeek/redis-cachiing-tutorial)
 
 ### Further reading
 The Resdis Documentation `https://redis.io/`
