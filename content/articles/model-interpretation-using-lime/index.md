@@ -125,7 +125,7 @@ from sklearn.metrics import accuracy_score
 from sklearn.model_selection import train_test_split
 ```
 
-In the code above we import the following:
+**In the code above we import the following:**
 
 #### LogisticRegression
 This is a [Scikit-learn](https://scikit-learn.org/stable/) algorithm which is used to solve classification problems.
