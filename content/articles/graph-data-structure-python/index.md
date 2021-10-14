@@ -17,13 +17,13 @@ In this article, we will look into the basics of graphs, the different types of 
 <!--more-->
 Graphs are complex, non-linear data structures that are characterized by a group of vertices, connected by edges. For more information on the *different types of data structures in Python*, check out the following articles:
 
-- [Introduction to Data Structures](/data-structures-python-part-1/)
-- [List](/list-data-structure-python/)
-- [Stack](/stack-data-structure-python/)
-- [Queue](/queue-data-structure-python/)
-- [Linked Lists](/linked-list-data-structure-python/)
-- [Binary Trees](/binary-tree-data-structure-python/)
-- [Heaps](/heap-data-structure-python/)
+- [Introduction to Data Structures](/engineering-education/data-structures-python-part-1/)
+- [List](/engineering-education/list-data-structure-python/)
+- [Stack](/engineering-education/stack-data-structure-python/)
+- [Queue](/engineering-education/queue-data-structure-python/)
+- [Linked Lists](/engineering-education/linked-list-data-structure-python/)
+- [Binary Trees](/engineering-education/binary-tree-data-structure-python/)
+- [Heaps](/engineering-education/heap-data-structure-python/)
 
 ### Table of Contents
 - [Graphs: Introduction](#graphs:-introduction)

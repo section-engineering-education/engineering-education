@@ -23,7 +23,7 @@ One also needs to know what data should be used to train a model, among other fa
 3. Best practices to frame a problem.
 
 ### Prerequisites
-A basic understanding of machine learning concepts. Some introductory concepts of machine learning are covered in this [article](/supervised-learning-algorithms/) may prove helpful. This [article](/feature-engineering-in-machine-learning/) may also provide value.
+A basic understanding of machine learning concepts. Some introductory concepts of machine learning are covered in this [article](/engineering-education/supervised-learning-algorithms/) may prove helpful. This [article](/engineering-education/feature-engineering-in-machine-learning/) may also provide value.
 
 ### Machine learning workflow
 A basic machine learning project workflow has four stages:
@@ -83,14 +83,14 @@ A critical step in problem framing is first determining what would be considered
 
 A model with a high degree of accuracy may be interpreted as being successful. However, it is worth noting that high accuracy does not necessarily mean that a model performs well. 
 
-But that is beyond the scope of this article. For more on evaluation of a model’s performance, read this [article](/evaluating-ml-model-performance/).
+But that is beyond the scope of this article. For more on evaluation of a model’s performance, read this [article](/engineering-education/evaluating-ml-model-performance/).
 
 In a business context, we may take a step back from metrics like accuracy and define success in a more general way. A less technical point of view may be taken. For instance, a successful project may be one that can analyze and segment customers into various categories based on their purchasing habits.
 
 #### Setting observable and quantifiable performance metrics
 Once we understand what counts as a successful project, we may deliberate on which metrics would best reflect said success. Quantifiable metrics provide adequate information for evaluating real-world success. 
 
-A number of metrics are covered in this [article](/evaluating-ml-model-performance/). Important questions to ask at this stage include:
+A number of metrics are covered in this [article](/engineering-education/evaluating-ml-model-performance/). Important questions to ask at this stage include:
 - How will the metrics be measured? 
 - When can the metrics be measured? 
 - What period will it take to evaluate the success (or failure) of the model?
@@ -179,7 +179,7 @@ We should also assess the ability of a model to learn. It is essential to point 
 A few factors that might be responsible for such difficulty include:
 - The number of examples in a training set. If the number is low, the model's ability to learn will be impacted due to inadequate data.
 - Noise. The learning process will be impacted if the examples contain too much noise.
-- Performance on training data contrasts performance on unseen data. Performing poorly on unseen data means the model struggles to generalize to new data. A reason for such might be [overfitting](/regularization-to-prevent-overfitting/).
+- Performance on training data contrasts performance on unseen data. Performing poorly on unseen data means the model struggles to generalize to new data. A reason for such might be [overfitting](/engineering-education/regularization-to-prevent-overfitting/).
 
 ### Wrapping up
 Problem framing is a key step in the machine learning workflow. Since it’s arguably less technical than other stages in a machine learning workflow, it might be inaccurately perceived as an easy step. 

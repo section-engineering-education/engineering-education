@@ -124,7 +124,7 @@ The string library has other functions that allow us to manipulate strings. Some
 ### Additional Resources
 For a more exhaustive list of string functions available in 'C', see the [Linux Programmer's Manual](https://man7.org/linux/man-pages/man3/string.3.html).
 
-For more details on the history of the C programming language you can [read this article](/history-of-c-programming-language/).
+For more details on the history of the C programming language you can [read this article](/engineering-education/history-of-c-programming-language/).
 
 ---
 Peer Review Contributions by: [Nadiv Gold Edelstein](/engineering-education/authors/nadiv-gold-edelstein/)

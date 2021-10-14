@@ -206,7 +206,7 @@ GET /                          200 OK
 
 And there you have it. You managed to build a Node.js API server with Express, exposed it to the internet with Ngrok and tested it on Postman!
 
-To get some more information on Postman - and how to create a mock server with Postman - visit [this article](/guide-to-create-mock-server/).
+To get some more information on Postman - and how to create a mock server with Postman - visit [this article](/engineering-education/guide-to-create-mock-server/).
 
 Congratulations!!!
 

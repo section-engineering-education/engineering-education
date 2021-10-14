@@ -69,7 +69,7 @@ The application follows a basic `MVVM architecture` approach so go ahead and cre
 
 The code is in charge of generating random data for us.
 
-The Room database is also set up in the [db package](https://github.com/LinusMuema/kotlin/tree/workManager/app/src/main/java/com/moose/androidkt/db). You can read more about Room in [this article](/introduction-to-room-db).
+The Room database is also set up in the [db package](https://github.com/LinusMuema/kotlin/tree/workManager/app/src/main/java/com/moose/androidkt/db). You can read more about Room in [this article](/engineering-education/introduction-to-room-db).
 
 ### Step 2 - Defining our work
 Create a new package and name it `work`. In here we will place our jobs or work.
@@ -112,7 +112,7 @@ override fun onStopped() {
 }
 ```
 
-First, we initialize the Room Dao and pass in the context available during the work execution. Then we create a `CompositeDisposable` that holds the disposables created during our job execution. We dispose it in the `onStopped` method when the work is done. To read more about `RxJava` in Android, you can go through [this article](/android-rxjava/).
+First, we initialize the Room Dao and pass in the context available during the work execution. Then we create a `CompositeDisposable` that holds the disposables created during our job execution. We dispose it in the `onStopped` method when the work is done. To read more about `RxJava` in Android, you can go through [this article](/engineering-education/android-rxjava/).
 
 We then use a try-catch block to execute our job, namely, to get a user and save them to our Room database. If any error occurs, the catch block returns a `Result.failure()` otherwise, we return a `Result.success()`.
 

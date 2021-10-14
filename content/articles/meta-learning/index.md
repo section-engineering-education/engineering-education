@@ -24,7 +24,7 @@ Machine learning may be used to learn the most suitable parameters and algorithm
 3. Meta-Learning Approaches
 
 ### Prerequisites
-To fully appreciate this article, I recommend having a grasp on the basic concepts of [machine learning](/supervised-learning-algorithms/) and [deep learning](/introduction-to-deep-learning/).
+To fully appreciate this article, I recommend having a grasp on the basic concepts of [machine learning](/engineering-education/supervised-learning-algorithms/) and [deep learning](/engineering-education/introduction-to-deep-learning/).
 
 ### Meta-Learning
 Very simply defined, meta-learning means learning to learn. It is a learning process that applies to understand algorithms to metadata. Metadata is data that describes other data. Traditional machine learning has us use a sizeable dataset exclusive to a given task to train a model. 

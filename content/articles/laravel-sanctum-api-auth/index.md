@@ -122,7 +122,7 @@ Query OK, 1 row affected (0.06 sec)
 Let's now proceed to migrate our application as shown below:
 
 ```bash
-php artisan:migrate
+php artisan migrate
 ```
 
 Output:

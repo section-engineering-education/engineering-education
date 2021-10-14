@@ -22,8 +22,8 @@ Using the default coroutine builders will return the whole list at once. However
 ### Prerequisites
 To follow through with this tutorial, you will need to:
 1. Have IntelliJ IDEA installed.
-2. Have a basic understanding of [Kotlin](/kotlin-collections/) programming language.
-3. Have a basic understanding of coroutines. Check this [article](/introduction-to-kotlin-coroutines/) to get started.
+2. Have a basic understanding of [Kotlin](/engineering-education/kotlin-collections/) programming language.
+3. Have a basic understanding of coroutines. Check this [article](/engineering-education/introduction-to-kotlin-coroutines/) to get started.
 
 ### What is a flow
 A flow is a stream of multiple, asynchronously computed values. Flows emit values as soon as they are done computing them. A flow consists of a producer and a consumer. As the names suggest, a producer emits values while the consumer receives the values. 

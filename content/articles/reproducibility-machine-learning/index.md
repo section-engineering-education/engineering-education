@@ -28,7 +28,7 @@ It may even be impossible in some cases. We explore the essential concepts of re
 - Simple measures to attain reproducibility.
 
 ### Prerequisites
-One needs to understand the basics of [machine learning](/supervised-learning-algorithms/).
+One needs to understand the basics of [machine learning](/engineering-education/supervised-learning-algorithms/).
 
 ### Reproducible machine learning
 Reproducibility refers to the ability to be replicated or recreated. Machine learning refers to recreating a workflow and achieving the same results as the initial work. Consider an algorithm from new research. We may want to dissect it and ultimately implement it. 
@@ -61,7 +61,7 @@ Data is a key input to machine learning algorithms. These models are highly depe
 Researchers may use a training set that programmers/data scientists attempting to implement the model may not have access to in a research context. Furthermore, some research databases rewrite or regularly make updates to data. This means that the training set for a given algorithm may not be available after a given period.
 
 #### Concept drift
-One may struggle to deploy a model more than once. A key reason for this is concept drift. [Concept drift](/correcting-data-shift/) refers to the shift in the relationships between input and output variables in a given problem. 
+One may struggle to deploy a model more than once. A key reason for this is concept drift. [Concept drift](/engineering-education/correcting-data-shift/) refers to the shift in the relationships between input and output variables in a given problem. 
 
 Data power our models. Yet, if the distribution of this data keeps changing, it proves to be a challenge for reproducibility. For example, consumer habits may be reflected by data that we seek to use to train our model. However, consumer habits always change with time. If someone wanted to reproduce our model and get similar results using up-to-date data, it would be a tall order.
 
@@ -97,7 +97,7 @@ To aid in reproducibility, features that are implemented should not change after
 Such measures help in the reduction of dependencies, which in turn assists in achieving uniformity across environments. This, in turn, reduces the potential errors when duplicating a machine learning pipeline in contrasting environments.
 
 #### Model building
-Algorithms themselves pose a challenge to reproducibility. As we mentioned before, many models have an element of randomness in their machine learning process. This randomness has models using the same training data giving different outcomes. For example, [cross validation](/evaluating-ml-model-performance/) may be reliant on random partitioning of data for folds.
+Algorithms themselves pose a challenge to reproducibility. As we mentioned before, many models have an element of randomness in their machine learning process. This randomness has models using the same training data giving different outcomes. For example, [cross validation](/engineering-education/evaluating-ml-model-performance/) may be reliant on random partitioning of data for folds.
 
 The potential solution to this is a simple one; keenness to order. Engineers should be keen on the order in which they pass features, hyperparameters, and when to introduce [seed values](https://en.wikipedia.org/wiki/Initial_condition). 
 
