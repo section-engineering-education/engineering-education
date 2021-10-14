@@ -1,4 +1,4 @@
----
+﻿---
 layout: engineering-education
 status: publish
 published: true
@@ -249,4 +249,4 @@ Other tools are:
 - Jira
       
  ### Conclusion
- Programming, in general, is not easy to learn but the more you keep on practicing the more you get skilled up.
+In conclusion, Programming is common in our day-to-day lives as different languages are used in most technical aspects, and for one to venture into programming, you must have a passion for it. It's a step-by-step process that takes time to learn and to skill up.
