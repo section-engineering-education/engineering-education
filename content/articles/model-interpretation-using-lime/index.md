@@ -344,7 +344,7 @@ In this tutorial, we have learned about model interpretation using LIME. We star
 
 We also followed all the stages of machine learning and came up with a model that was able to predict the type of flower species.
 
-Finally, we used LIME to interpret and explain why this model made certain predictions. We were able to understand the model functionality and what criteria it used to arrive at this conclusion. This enables user's to trust these models when using them.
+Finally, we used LIME to interpret and explain why this model made certain predictions. We were able to understand the model functionality and what criteria are used to arrive at this conclusion. This enables the users to trust these models when using them.
 
 To get the Google colab notebook for this tutorial click [here](https://colab.research.google.com/drive/149GrO47OiHYDQfqlTB4NKMixWJXtp_-v?usp=sharing).
 
