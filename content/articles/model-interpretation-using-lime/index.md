@@ -154,7 +154,7 @@ The flower species are `virginica`, `setosa` and `versicolor`. Their length and 
 
 ![Flower sizes](/engineering-education/model-interpretation-using-lime/flower-sizes.jpg)
 
-Let us check the available datapoints in our training set.
+Let us check the available data points in our training set.
 
 ```python
 X_train.shape
