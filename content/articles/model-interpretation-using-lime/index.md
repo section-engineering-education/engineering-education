@@ -219,7 +219,7 @@ The output is as shown.
 0.8888888888888888
 ```
 
-When we convert into a percentage it becomes `88.89%`. This shows that our model has `88.89%` chance of making accurate predictions.
+When we convert into a percentage it becomes `88.89%`. This shows that our model has an `88.89%` chance of making accurate predictions.
 
 ### Making a single prediction
 Making single prediction involves using a single data point in the dataset to make a prediction.
