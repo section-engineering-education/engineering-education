@@ -50,9 +50,12 @@ To follow through this article, the reader should:
 Model interpretation has made a great impact in today's machine learning building. Through interpretation, we can build a more robust, accurate, and most trustworthy model. These are some of the reasons why model interpretation is important among others.
 
 #### Importance of model interpretation
-- Detect errors and bugs in the model.
-- To detect bias during model training.
+- It detects errors and bugs in the model.
+- It detects bias during model training.
 - To know model reliability.
+Could you expound more on the importances instead of just listing them. For example the third significance of model interpretation needs some explanation.
+
+Explain briefly the importances.
 To improve model performance and generalization.
 - To identify wrong classifications during predictions.
 
