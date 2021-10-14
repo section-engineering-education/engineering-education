@@ -121,7 +121,7 @@ class_names = Y.unique()
 ```
 
 ### Model building
-We import all the packages needed to build our machine learninng model.
+We will import all the packages needed to build our machine learning model as shown below.
 
 ```python
 from sklearn.linear_model import LogisticRegression
