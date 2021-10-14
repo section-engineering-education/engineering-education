@@ -232,7 +232,7 @@ ex_specie = np.array(X_test.iloc[8]).reshape(1,-1)
 
 We use the `X_test.iloc()` method to extract the 8th row in our data set. This 8th row is what our model will use to make a single prediction. 
 
-We then use the `reshape(1,-1)` function to ensure that have one column with the prediction result.
+We then use the `reshape(1,-1)` function to ensure that we have one column with the prediction result.
 
 Let us now use this column to make a prediction.
 
