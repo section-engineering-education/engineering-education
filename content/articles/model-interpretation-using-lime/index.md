@@ -53,7 +53,7 @@ Model interpretation has made a great impact in today's machine learning buildin
 - Detect errors and bugs in the model.
 - To detect bias during model training.
 - To know model reliability.
-- To improve model perfomance and generilization.
+To improve model performance and generalization.
 - To identify wrong classifications during predictions.
 
 When it comes to model interpretation we have different methods and techniques used depending on the type of algorithm used, the type of machine learning problem and the complexity of these problems.
