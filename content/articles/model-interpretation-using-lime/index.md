@@ -340,7 +340,7 @@ All these rules are achieved according to the right side of the image which give
 Using this visual representation, we can clearly see that our model made the right prediction and now we can trust this model.
 
 ### Conclusion
-In this tutorial we have learned about model interpretation using LIME. We started with building our simple model which we used to expain the concept of model interpretation.
+In this tutorial, we have learned about model interpretation using LIME. We started with building our simple model which we used to explain the concept of model interpretation.
 
 We also followed all the stages of machine learning and came up with a model that was able to predict the type of flower species.
 
