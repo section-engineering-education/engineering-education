@@ -179,7 +179,7 @@ model_logreg = LogisticRegression()
 
 After initializing our model, we now fit the model into the dataset. We fit our model using the training dataset. The model uses this dataset to recognize the pattern which is important during predictive analysis.
 
-During the training phase, the model gains knoweldge through learning, stores this knowledge and eventually uses this model when making predictions.
+During the training phase, the model gains knowledge through learning. It stores this knowledge and uses this model when making predictions.
 
 ```python
 model_logreg.fit(X_train, Y_train)
