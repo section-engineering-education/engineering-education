@@ -26,12 +26,13 @@ To follow along in this article, it is important to have the following:
   - [Installing the packages](#installing-the-packages)
   - [Setting up the server-side application Using Flask](#setting-up-the-server-side-application-using-flask)
   - [Setting up the database](#setting-up-the-database)
-  - [Initialize the schema](#initialize-the-schema)
-  - [Set up the database and the tables](#set-up-the-database-and-the-tables)
+  - [Set up the SQLite database and the tables](#set-up-the-sqlite-database-and-the-tables)
   - [Setting up routes](#setting-up-routes)
 - [Setting up the client-side using Vue](#setting-up-the-client-side-using-vue)
-  - [Installing packages](#installing-packages)
   - [Setting up the Vue frontend application](#setting-up-the-vue-frontend-application)
+  - [Todos list cards](#todos-list-cards)
+  - [Add a todo form](#add-a-todo-form)
+  - [Edita todo form](#edita-todo-form)
 - [Dockerizing the application](#dockerizing-the-application)
   - [Dockerize the Flask API](#dockerize-the-flask-api)
   - [Dockerize the Vue app](#dockerize-the-vue-app)
@@ -95,9 +96,7 @@ if __name__ == '__main__':
 From above, we are importing the Flask module, initializing it, and starting it.
 
 #### Setting up the database
-To set up the database, follow the following steps:
-
-- Import the following packages:
+To set up the SQLite database, start by import the following packages:
 
 ```python
 from flask_sqlalchemy import SQLAlchemy
@@ -105,32 +104,28 @@ from flask_marshmallow import Marshmallow
 import os
 ```
 
-- Set up the base directory for the application:
+Then Set up the base directory for the application:
 
 ```python
 basedir = os.path.abspath(os.path.dirname(__file__))
 ```
 
-- Set up the database application configuration
+Add the database application configuration.
 
 ```python
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir,'db.sqlite')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 ```
 
-- Initialize the database
+Since we are using the Flask-sqlalchemy and Flask-marshmallow, we can now set `SQLAlchemy` to initialize the database `Marshmallow` to initialize marshmallow as shown below.
 
 ```python
 db = SQLAlchemy(app)
-```
 
-- Initialize marshmallow
-
-```python
 ma = Marshmallow(app)
 ```
 
-- Set up the todo model. It will make up a sample todo stored in the database.
+The database configurations are now set, and we can start setting up the todo model. This will make up a sample todo list stored in the SQLite database.
 
 ```python
 class Todo(db.Model):
@@ -146,7 +141,7 @@ class Todo(db.Model):
 
 From above, we are defining that a Todo will have an id, title, and description.
 
-- Set up the todo schema. It will be called when querying the todos data.
+Since we are using an SQLite database, we need to set up a schema that will store our todo. The schema will be called when querying the todos data.
 
 ```python
 class TodoSchema(ma.Schema):
@@ -156,17 +151,16 @@ class TodoSchema(ma.Schema):
 
 From above, we define that for every todo, we will be interested in the id, title, and description.
 
-#### Initialize the schema
-To initialize the schema, we have to do it differently for a single todo and for multiple todos. For this, we will add the following:
+To initialize the above schema, we have to do it differently for a single todo and multiple todos. For this, we will add the following:
 
 ```python
 todo_schema = TodoSchema()
 todos_schema = TodoSchema(many=True)
 ```
 
-The first is for a single todo and the other is for multiple todos.
+The first is for a single todo, and the other is for multiple todos.
 
-#### Set up the database and the tables
+#### Set up the SQLite database and the tables
 Open the terminal from your code editor and run the following command to start an interactive python environment:
 
 ```bash
@@ -188,9 +182,7 @@ exit()
 ```
 
 #### Setting up routes
-To set up the routes,
-
-- Start by importing packages:
+To set up the routes, start by importing packages:
 
 ```python
 from flask import Flask,request, jsonify
@@ -199,7 +191,7 @@ from flask_cors import CORS,cross_origin
 
 `request` will be used to get the payload (data sent), whereas `jsonify` will be used to return JSON data. `CORS` and `cross_origin` for setting up the access policy.
 
-- Cors configuration for the entire app:
+Then add Cors configuration to handle cross_origins coming in to consume this API.
 
 ```python
 CORS(app,resources={r"/api": {"origins": "*"}})
@@ -208,6 +200,7 @@ app.config['CORS_HEADERS'] = 'Content-Type'
 
 From above, we accept all origins hitting the `/api` endpoint from which we will expose the API.
 
+Let's now add all the necessary routes to handle the CRUD operations.
 - Creating a todo: the following route creates a todo:
 
 ```python
@@ -311,15 +304,13 @@ def delete_todo(id):
 
 From above, we accept the todo's id to be deleted, accepting all origins, getting the todo, deleting it from the database, and returning the deleted todo.
 
-- After setting the routes, start your application by running the following command:
+After setting the routes, start your application by running the following command:
 
 ```bash
 python -m pipenv run python app.py
 ```
 
-Everything should work fine, and the development server should be started. In case you encounter an error, revisit the steps.
-
-Your console output should be similar to:
+Everything should work fine, and the development server should be started. In case you encounter an error, revisit the steps. Your console output should be similar to:
 
 ![flask-console-output](/engineering-education/how-to-build-a-vue-app-with-flask-sqlite-backend-using-docker/flask-console-output.png)
 
@@ -344,8 +335,8 @@ vue create todos-flask-app
 
 For the questions that follow, feel free to go with the defaults or your own selections.
 
-#### Installing packages
-- Install the following packages
+We will also add some additional packages to handle server-side routing. These are
+
 - Axios: For handling client/server-side requests.
 - Vue-router: For handling navigation
 
@@ -354,7 +345,7 @@ npm install axios vue-router
 ```
 
 #### Setting up the Vue frontend application
-After installing the packages we need to configure them in the `src/main.js` as follows:
+After installing the packages, we need to configure them in the `src/main.js` as follows:
 
 ```js
 import axios from 'axios'
@@ -365,7 +356,7 @@ Vue.prototype.$http = axios;
 Vue.use(VueRouter);
 ```
 
-- In `src/App.vue`, edit the HTML as follows:
+In `src/App.vue`, edit the HTML as follows:
 
 ```html
 <div id="app">
@@ -432,7 +423,8 @@ From above, we are setting the dynamic classes for the navigation bar.
 
 From above, we are adding custom styles to the app component.
 
-- In the `src/components` folder, create a `Todos.vue` file. In the file, add the following HTML:
+#### Todos list cards
+In the `src/components` folder, create a `Todos.vue` file. In the file, add the following HTML:
 
 ```html
 <template>
@@ -569,9 +561,10 @@ From above, we export the todos fetched when the component is loaded, the functi
 </style>
 ```
 
-Above are simple styles to add to our todo component.
+The above are simple styles to add to our todo component.
 
-- Create an `AddTodo.vue` file and add in the following components.
+#### Add a todo form
+Create an `AddTodo.vue` file and add in the following components.
 
 - The HTML
 
@@ -668,7 +661,8 @@ methods:{
 
 From the above script, we are exporting data from the component and a method that handles validation and data submission on the submission of the form.
 
-- Create an `EditTodo.vue` file and add in the following.
+#### Edita todo form
+Create an `EditTodo.vue` file and add the following.
 
 ```html
 <template>
@@ -704,7 +698,7 @@ From the above script, we are exporting data from the component and a method tha
 
 Similar to the `add todo` form, we are outputting an `edit todo` form that is pre-populated with data from the JavaScript for the particular todo to be edited.
 
-- the JavaScript
+- The JavaScript
 
 ```html
 <script>
@@ -789,9 +783,9 @@ export default {
 
 From above we are, exporting the todo data, getting the todo when the page is loaded, handling custom validation, and data submission of the edited todo.
 
-- After setting up the components, we need to handle the routing into various pages. To do this, we will add the following in the `src/main.js` file:
+After setting up the components, we need to handle the routing into various pages. To do this, we will add the following in the `src/main.js` file:
 
-Firts import the `AddTodo`, `EditTodo` and `Todos` componets.
+First import the `AddTodo`, `EditTodo` and `Todos` componets.
 
 ```javascript
 import AddTodo from "./components/AddTodo"
@@ -822,11 +816,7 @@ render: h => h(App),
 
 From above, we are creating a `VueRouter` instance passing in the `mode`, `base`, and `routes`. For the routes, we pass the `path`, `component`, and `name` for each.
 
-After creating the instance, we pass it to the Vue object.
-
-With that, we are ready to start the development server and test the functionalities we have implemented.
-
-To do that, run the following command:
+After creating the instance, we pass it to the Vue object. With that, we are ready to start the development server and test the functionalities we have implemented. To do that, run the following command:
 
 ```bash
 npm run serve
