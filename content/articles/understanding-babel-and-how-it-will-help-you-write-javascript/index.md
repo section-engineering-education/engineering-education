@@ -1,7 +1,7 @@
 ### Introduction
-Babel is a JavaScript transpiler that transforms edge JavaScript to mainstream `EcmaScript 5`JavaScript capable of running in any source code.
-All of the new features and enhancements in contemporary javascript are captured by Babel in `EcmaScript 6`.
-This post will introduce you to Babel and demonstrate how to use it to assist you in writing javascript.
+Babel is a JavaScript transpiler that changes over `EcmaScript 5` JavaScript from the forefront to standard JavaScript. 
+`EcmaScript 6` by Babel incorporates all of the most recent javascript elements and headways. 
+This post will give you a prologue to Babel and tell you the best way to utilize it to make javascript simpler to compose.
 ### Table of content
 - [Introduction](#introduction)
 - [Table of content](#table-of-content)
@@ -12,7 +12,7 @@ This post will introduce you to Babel and demonstrate how to use it to assist yo
 - [Fat Arrows](#fat-arrows)
 - [Fat bolts with a single boundary](#fat-bolts-with-a-single-boundary)
   - [Further practice](#further-practice)
-  - [Fat Arrows and This](#fat-arrows-and-this)
+  - [This keyword and the Babel Fat Arrows](#this-keyword-and-the-babel-fat-arrows)
 - [Conclusion](#conclusion)
   - [Further Reading](#further-reading)
 ### Implementation
@@ -22,24 +22,21 @@ $ npm install – D babel-cli
 ```
 There are modules for webpack, swallow, snort, Sublime, Webstorm, and so forth Whatever your improvement toolchain, Babel can most likely space into it.
 ### Classification
-JavaScript is devoid of style. Things descend from different articles, which means that any item may be the parent of another.
-Any limit is a constructor limit, and invoking it with the new expression returns something else.
-You may get more information about this in the JavaScript for Smart People course - Object Orientation section.
-This is all very nice and JavaScript, but it creates some restlessness in C# and Java designs. They are used to a degree of greater meticulousness, which is why ES6 introduces the class expression. This enables us to see the constraints that should be utilized as constructors.
-A class is a remarkable pattern object that can be used to describe a wide variety of things. This is a once-in-a-lifetime instance of archetypal legacy. We restrict ourselves to creating things from constraints that we have specifically chosen to be utilized as needed.
+JavaScript is without style. Things plunge from various articles, which implies that anything might be the parent of another. Any breaking point is a constructor limit, and summoning it with the new articulation brings something back else. You might get more data about this in the JavaScript for Smart People course - Object Orientation segment. This is all extremely decent and JavaScript, however, it makes some fretfulness in C# and Java plans. They are used to a level of more noteworthy carefulness, which is the reason ES6 presents the class articulation. This empowers us to see the imperatives that ought to be used as constructors. A class is an astounding example object that can be utilized to depict a wide assortment of things. This is a rare example of prototype inheritance. We confine ourselves to making things from limitations that we have explicitly decided to be used depending on the situation.
 #### Classes in Babel
-An ES6 class resembles this:
+This is what an EcmaScript 6 class looks like:
 ```javascript
-class User {}
+class User {
 
+}
 let userOne = new User
 ```
-If we run it through Babel we simply get a constructor work, notwithstanding a little embellishment:
+With a little elaboration, we get a constructor work if we run it though Babel:
 ```javascript
 "use strict";
 function _classCallCheck(instance, Constructor) {
   if (!(instance instanceof Constructor)) {
-    throw new TypeError("Canno call a class as a function");
+    throw new TypeError("Cannot call a class as a function");
   }
 }
 let userOne = function User() {
@@ -47,10 +44,10 @@ let userOne = function User() {
 };
 let userOne = new User();
 ```
-We have our `UserOne` project, which serves as a standard prototype constructor. Additionally, we get a smidgeon of safety checking through the `_classCallCheck` function.
+We have our `UserOne` project, which serves as a standard prototype constructor. The `_classCallCheck` method adds a touch of safety testing as well.
 Apart from if the `userOne` work is regarded as a constructor work, the `_classCallCheck` work is called inside the `userOne` constructor and will cause a mix-up.
 ### Numeric Strings
-ES6 additionally has a new, sweet method of characterizing strings. The backtick image allows you to make multiline strings. This is particularly useful when characterizing formats in JavaScript.
+As an added bonus, EcmaScript 6 introduces a brand-new way to characterize strings. Strings with many lines can be created using the backtick image. This is very helpful for describing JavaScript format types.
 - **Example**
 ```javascript
 let temp = `
@@ -116,19 +113,20 @@ Results to:
 });
 ```
 #### Further practice
-We should utilize one of these to yield every one of the components in the array.
+One of these should be used to produce all of the array's constituents.
 ```javascript
-[12, 23, 68].map(ind => alert(ind));
+let x = [12, 23, 68];
+x.map(ind => alert(ind));
 ```
 gives us:
 ```javascript
-[12, 23, 68].map(function (ind) {
-  return alert(ind);
+let x = [12, 23, 68]
+x.map((ind)=>{
+  return console.log(ind);
 });
 ```
-#### Fat Arrows and This 
- In JavaScript, the keyword `this` is set to be the article immediately before the speck when the capability is called. This is reasonable, but often vexing, since it sometimes wants `this` to be tucked away in that.
-Fat bolts circumvent this by safeguarding the current value of `this`. 
+#### This keyword and the Babel Fat Arrows
+ In JavaScript, the watchword `this` is set to be the article preceding the spot when the capacity is called. This is sensible, however frequently vexing, since it once in a while needs `this` to be concealed in that. Fat bolts bypass `this` by protecting the current worth of `this`.
 ```javascript
 a = {
   b:()=>{
@@ -141,19 +139,22 @@ a = {
 Results to:
 ```javascript
 a = {
- b: function b() {
-   var _this = this;
-    (function () {
+ b: let b = ()=> {
+   let _this = this;
+    ( ()=> {
       alert(_this);
     })();
  }
 };
 ```
- The worth of `this` has been put away in a variable inside the closure
+The value of this has been taken care of in a variable inside the conclusion 
 ### Conclusion
-ECMAScript 6 is primarily a sugar coating applied to the top of ECMAScript 5. JavaScript in the engine continues to function as the archetypal, list-preparation language that we are accustomed to. When we use ECMAScript 6, we get some nice punctuation that eventually translates to genuinely plain, ordinary JavaScript.
-A portion of this sugar is intended to benefit the Java/C# community, which upon first discovery frequently encounters prototype legacy befuddling.
-Some of it, such as fat bolts, allows us to have a more concise, more contemporary-looking language structure while also increasing the usefulness of JavaScript.
+ECMAScript 6 is basically a glossing over applied to the highest point of ECMAScript 5. JavaScript in the motor 
+keeps on working as the original, list-readiness language that we are familiar with. At the point when we use 
+ECMAScript 6, we get some pleasant accentuation that ultimately means truly plain, standard JavaScript. 
+A part of this sugar is expected to help the Java/C# people group, which upon first disclosure often 
+experiences model inheritance perplexing. Some of it, like fat bolts, permits us to have a more compact, more 
+contemporary-looking language structure while likewise expanding the helpfulness of JavaScript.
 #### Further Reading
 Additional elements of Babel and EcaScript 6 can be found [here](https://babeljs.io/docs/learn-es2015/)
 
