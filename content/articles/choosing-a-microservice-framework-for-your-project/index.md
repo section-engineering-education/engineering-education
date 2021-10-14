@@ -7,7 +7,7 @@ title: Choosing an Appropriate Microservice Framework
 description: This article will explain the importance of using microservices architecture and compare various microservice oriented frameworks 
 author: martha-ngugi
 date: 2021-10-06T00:00:00-02:30
-topics: [cloud computing]
+topics: []
 excerpt_separator: <!--more-->
 images:
 
