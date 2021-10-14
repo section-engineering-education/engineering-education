@@ -6,7 +6,7 @@ url: /how-to-organize-a-folder-using-python/
 title: How to Organize a Folder using Python
 description: This article will show a reader how to organize folders using a python script. It also explains how to move files to different folders by taking a source directory and a destination directory as parameters. 
 author: nathaniel-dauda-wobin
-date: 2021-10-13T00:00:00-19:00
+date: 2021-10-14T00:00:00-04:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -15,7 +15,7 @@ images:
     alt: How to Organize a Folder using Python Hero Image
 ---
 
-If you find yourself reading this article, there is a high possibility that you've got files all over your desktop, or your downloads folder is unorganized since all downloaded files are stored there. This can be fixed using python.
+If you find yourself reading this article, there is a high possibility that you have files all over your desktop, or your downloads folder is unorganized since all downloaded files are stored there. This can be fixed using python.
 <!--more-->
 Python is a high-level programming language designed to be easy to read and simple to implement. In this guide, we will see how to write a python script we can run anytime we want to organize folders on our computer.
 
@@ -102,7 +102,7 @@ os.removedirs()
 To learn more about other functions, refer to this [documentation](https://docs.python.org/3/library/os.html).
 
 ### os.path module
-*os.path* is a module in python used to process and manipulate file path (filename and directories) in a system. The *os.path * module can be used to:
+*os.path* is a module in python used to process and manipulate file path (filename and directories) in a system. The *os.path* module can be used to:
 - Return the name of a path using `os.path.dirname(file path)`. 
 - Check the existence of any path in a system using `os.path.exists(file path)`
 - Get the file size of a path in bytes using `os.path.getsize(file path)`
@@ -122,9 +122,9 @@ import os, shutil
 ```
 After importing the modules, create two folders or directories on your desktop with names **file1** and **file2**. Create a file with the name *stt.txt* and save it into **file2**, as shown:
 
-![File 1](/engineering-education/how-to-handle-navigation-in-flutter/file1.png)
+![File 1](/engineering-education/how-to-organize-a-folder-using-python/file1.png)
 
-![File 2](/engineering-education/how-to-handle-navigation-in-flutter/file2.png)
+![File 2](/engineering-education/how-to-organize-a-folder-using-python/file2.png)
 
 Update your code with the snippet below:
 
@@ -202,7 +202,7 @@ The same process is repeated for the other file extensions. At the end of the fu
 
 When you execute the code, it will scan through the download folder and move the files that meet the condition to the various folders, as shown in the video demo below:
 
-![Demo](/engineering-education/how-to-handle-navigation-in-flutter/demo.gif)
+![Demo](/engineering-education/how-to-organize-a-folder-using-python/demo.gif)
 
 > Note: The `destination_dir` is the same as the `source_dir` because the destination folder is inside the `source_dir`. 
 
