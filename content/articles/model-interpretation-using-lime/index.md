@@ -98,7 +98,7 @@ The output is shown below:
 
 ![Dataset structure](/engineering-education/model-interpretation-using-lime/dataset-structure.jpg)
 
-This shows that our model has columns such as: `sepal_width`, `petal_length`, `petal_width`, and `species` columns. These columns are used as inputs when making predictions.
+This shows that our model has columns such as `sepal_width`, `petal_length`, `petal_width`, and `species` columns. These columns are used as inputs when making predictions.
 
 ### Creating features
 Features are the key attributes in the dataset that are used as inputs during model training. These features are used by the model to enhance pattern recognition during model training.
