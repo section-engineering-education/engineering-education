@@ -32,7 +32,7 @@ To follow along in this article, it is important to have the following:
   - [Setting up the Vue frontend application](#setting-up-the-vue-frontend-application)
   - [Todos list cards](#todos-list-cards)
   - [Add a todo form](#add-a-todo-form)
-  - [Edita todo form](#edita-todo-form)
+  - [Edit a todo form](#edit-a-todo-form)
 - [Dockerizing the application](#dockerizing-the-application)
   - [Dockerize the Flask API](#dockerize-the-flask-api)
   - [Dockerize the Vue app](#dockerize-the-vue-app)
@@ -661,7 +661,7 @@ methods:{
 
 From the above script, we are exporting data from the component and a method that handles validation and data submission on the submission of the form.
 
-#### Edita todo form
+#### Edit a todo form
 Create an `EditTodo.vue` file and add the following.
 
 ```html
