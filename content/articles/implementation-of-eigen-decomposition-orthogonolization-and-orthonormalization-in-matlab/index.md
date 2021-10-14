@@ -22,7 +22,7 @@ $$
 \end{array}\right)
 $$ 
 
-![image one](matrix_one.jpeg)
+![image one](/engineering-education/implementation-of-eigen-decomposition-orthogonalization-and-orthonormalization-in-matlab/matrix_one.jpeg)
 
 In the graph above, we consider two cases; the first case is if `x` is;
 
@@ -30,14 +30,14 @@ $$\begin{vmatrix}1\\1\end{vmatrix}$$
 
 Note that `Ax` will also be a vector. I have plotted the graph for easy understanding and interpretation. Now, what is the graph telling you? Do you see that the resultant vector has been scaled and rotated compared to `x`?
 
-![image two](matrix_two.jpeg)
+![expressing eigenvalues and eigenvectors](/engineering-education/implementation-of-eigen-decomposition-orthogonalization-and-orthonormalization-in-matlab/matrix_two.jpeg)
 
 So you multiplied a matrix and a vector, and you got the result to be scaled and rotated compared to `x`.
 Let's now look at case 2. We now take `x` as 
 
 $$\begin{vmatrix}1\\2\end{vmatrix}$$
 
-![image three](matrix_three.jpeg)
+![expressing eigenvalues and eigenvectors](/engineering-education/implementation-of-eigen-decomposition-orthogonalization-and-orthonormalization-in-matlab/matrix_three.jpeg)
 
 Do you see the difference? In this case 2, the resultant is scaled but not rotated. The eigenvector is a vector that undergoes pure scaling without any rotation, while the scaling factor is the eigenvalue. The basic equation of eigenvalues and eigenvector is given by;
 
@@ -234,7 +234,7 @@ $$\begin{vmatrix}A\end{vmatrix}=\sqrt{A.A}=\sqrt{1+9+4}=\sqrt{14}$$
 
 Now we can divide the vectors A and B by the lengths as shown below.
 
-![image 1](matrix_four.jpeg)
+![orthogonormality](/engineering-education/implementation-of-eigen-decomposition-orthogonalization-and-orthonormalization-in-matlab/matrix_four.jpeg)
 
 Here, the word unit means that they have lengths that are equal to 1. This process of making a vector into a unit vector is often called normalization. By doing this, we have only changed the magnitude of the vectors, not the direction, and because of this, they are still orthogonal, as we verified before. Since these two vectors are orthogonal and have lengths equal to 1, that makes them orthonormal.
 
