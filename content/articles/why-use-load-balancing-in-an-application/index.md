@@ -14,7 +14,9 @@ At the end of the article the learner will be able to:
 
 ### What is Load Balancing.
 
-In distributed systems, we usually have several servers that receive and respond to incoming traffic. Load Balancing becomes very important to such systems. It usually distributes traffic to a cluster of servers. Load balancing improves the application's availability and performance. At times the server is down or has an error. TheLoad Balancer will not send traffic to that server. Because it tracks the availability of a server as it distributes requests.
+To understand the concept of load balancing, we will use a scenario of a website that gets quickly famous in a short time. Let's say we have a machine that hosts mywebsite.com. It is associated with a public-facing IP address of e.g. 1.2.3.4 to keep things simple. We have a user that wants to access the application through a domain name that is mapped to the IP address. The user makes a request and receives a response from the server. This works well for just a single user. Taking that single user and multiplying by let us say, 100,000 users. You will have 100,000 requests coming to the server. When these requests come in very fast over some time, the individual machine gets overworked and explodes. It won't be able to handle any more traffic. To solve this kind of problem, one may think of introducing a new machine. This machine will have a different public-facing IP address of let us say 5.6.7.8. Instead of users having to hit this first machine, others can be directed to the second machine. This too has a problem. How does one know which machine to hit? This is where load balancing comes to play. 
+
+A load balancer is a component that sits between application servers like the two servers described above and the request that comes from the users. Instead of the IP of the servers being public, we convert them to private so that they are not exposed to the public internet. We then give the load balancer a public IP address e.g. 6.7.8.9. When the user makes requests to the application, the DNS resolution is going to point to the load balancer IP address. When the request comes to the load balancer, it already knows which IP addresses of the application servers are available to receive requests. It, therefore, decides which server to route the traffic to.
 
 [](/loadbalancingzs.png/)
 
@@ -22,11 +24,11 @@ In distributed systems, we usually have several servers that receive and respond
 
 1. A user opens up a web page. Example section.io.
 
-2. A request is made by the user. A frontend server receives the request and figures out where to forward the request. We will be discussing the various methods that one can use to determine how the request gets forwarded to the server. There is a point when there is no backend server available. In this case, the frontend server returns a predefined error message to the user. An example is the famous 404 error.
+2. A request is made by the user. A frontend server receives the request and figures out where to forward the request. 
 
 3. The backend server processes the request and sends a response back to the frontend server. Meanwhile, the backend server does report its status to the load balancer.
 
-4. The frontend server returns the response to the user.
+4. Finally the frontend server returns the response to the user.
 
 One can use load balancers on different layers of an application. It includes:
 
@@ -56,6 +58,6 @@ One can use load balancers on different layers of an application. It includes:
 
 2. Weighted Round Robin:- This algorithm almost resembles the previous one. That is Round Robin. The difference between the two is, in Weighted round robin, when we have a server with more specs than the rest, then that is the server that will be assigned more requests. We tell the load balancer beforehand which server has a higher capacity than the rest. Each node is usually given weight during the setup of the load balancer. For example, we have two servers with the weight of 5 and 2 . We have six incoming requests. The first 5 requests will be directed to the first server. The last request gets directed to the second server.
 
-3. Least Connections:- You can find a situation where even though the servers have different weights, one server gets overloaded than the other. One reason could be that clients connected to server two stays longer than those connected to server one. It causes the total connections in server two to accumulate. The clients in server one are connecting and disconnecting almost at the same time. The weight remains the same. As a result, server two resources get depleted faster. In such circumstances, the least connection algorithm will be a great fit. The least connection considers the number of connections that are active for each server. When a request is made by a client the algorithm will determine which server has the least number of active connections and assign the new connection to that server.
+3. Least Connections:- You can find a situation where even though the servers have different weights, one server gets overloaded than the other. One reason could be that clients connected to server two stay longer than those connected to server one. It causes the total connections in server two to accumulate. The clients in server one are connecting and disconnecting almost at the same time. The weight remains the same. As a result, server two resources get depleted faster. In such circumstances, the least connection algorithm will be a great fit. The least connection considers the number of connections that are active for each server. When a request is made by a client the algorithm will determine which server has the least number of active connections and assign the new connection to that server.
 
-4. IP Hash:- In this method, the Ip address of the client is hashed, and then the request is redirected to the server. The hashing algorithm generates uniformly random hash code. We, therefore, expect the server to have uniformly random codes.
+4. IP Hash:- In this method, the Ip address of the client is hashed, and then the request is redirected to the server. The hashing algorithm generates uniformly random hash code. We, therefore, expect the server to have uniformly random codes. Therefore, the IP address of the user is used to determine which server we should direct our request to. 
