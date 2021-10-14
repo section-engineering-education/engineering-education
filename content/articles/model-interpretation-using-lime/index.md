@@ -4,27 +4,31 @@ status: publish
 published: true
 url: /model-interpretation-using-lime/
 title: Model Interpretation using LIME
-description: In this tutorial, we will build a simple machine learning model then use LIME  to interpret our model. 
+description: In this tutorial, we will build a simple machine learning model then use LIME  to interpret our model.
 author: willyngashu
 date: 2021-10-13T00:00:00-19:27
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
-
- - url: /engineering-education/model-interpretation-using-lime/hero.jpg
-   alt: Model Interpretation using LIME Hero image
+  - url: /engineering-education/model-interpretation-using-lime/hero.jpg
+    alt: Model Interpretation using LIME Hero image
 ---
+
 Model interpretation finds out why a model makes certain decisions during the prediction phase. This ensures we have a fair, accountable, and transparent model. In model interpretation we try to answer the question; why should we trust the model? and why did the model make this conclusion?.
+
 <!--more-->
-Through model interpretation, we should be able to explain what the model is doing and why it's making a certain prediction. Regardless of what machine learning problem the model is trying to solve, model interpretation will always be the better solution. This is because the involved stakeholders and end-users can understand what the model is doing and how to apply it in different scenarios.
 
-This makes users to have trust and confidence to use these models to solve mission critical real-world problems that have a great impact to society and business such as self-driving cars model and health system models which are matter of life or death situations.
+Through model interpretation, we should be able to explain what the model is doing and why it's making a certain prediction. Regardless of what machine learning problem the model is trying to solve, model interpretation will always be the better solution. This is because the involved stakeholders and end-users can understand what the model is doing.
 
-In this tutorial, we will build a simple machine learning model then use [LIME](https://christophm.github.io/interpretable-ml-book/lime.html) to interpret our model.
+This makes users have trust and confidence to use these models to solve mission-critical real-world problems. These problems have a great impact on society and business such as self-driving cars model and health system models, they are matter of life or death situations.
+
+In this tutorial, we will build a simple machine learning model, then use [LIME](https://christophm.github.io/interpretable-ml-book/lime.html) to interpret our model.
 
 ### Table of contents
+
 - [Prerequisites](#prerequisites)
 - [Introduction](#introduction)
+- [Model interpretation methods and techniques](#model-interpretation-methods-and-techniques)
 - [Creating features](#creating-features)
 - [Creating labels](#creating-labels)
 - [Model building](#model-building)
@@ -40,33 +44,44 @@ In this tutorial, we will build a simple machine learning model then use [LIME](
 - [References](#References)
 
 ### Prerequisites
+
 To follow through this article, the reader should:
+
 - Have [Python](https://www.python.org/) installed.
 - Have an understanding of [Python programming.](/engineering-education/python-projects-for-beginners/)
 - Be familiar with [machine learning modeling.](engineering-education/house-price-prediction/)
 - Be familiar with [Google colab notebooks.](https://colab.research.google.com)
 
 ### Introduction
+
 Model interpretation has made a great impact in today's machine learning building. Through interpretation, we can build a more robust, accurate, and most trustworthy model. These are some of the reasons why model interpretation is important among others.
 
 #### Importance of model interpretation
-- It detects errors and bugs in the model.
-- It detects bias during model training.
-- To know model reliability.
-Could you expound more on the importances instead of just listing them. For example the third significance of model interpretation needs some explanation.
 
-Explain briefly the importances.
-To improve model performance and generalization.
+- It detects errors and bugs in the model.
+  Models are prone to errors and bugs, these may be due to human errors or deprecated software dependencies. Model interpretation debugs these errors and resolves them.
+- It detects bias during model training.
+  Bias occurs when we have unbalanced data. This is when we did not split our dataset correctly. Model interpretation ensures that our dataset is well balanced to avoid bias.
+- To know model reliability.
+  A reliable model is a model that can give consistent results and should continue its operation without failure. Through model interpretation, we will be able to know if we can trust a model's prediction results.
+- To improve model performance and generalization.
+  Model interpretation increases the model's accuracy score and ensures that it has a higher chance of making correct predictions.
 - To identify wrong classifications during predictions.
+  Model interpretation analyzes the prediction results, during this process it uses different techniques to identify the wrong and right predictions. This ensures that only the right predictions are accepted.
 
 When it comes to model interpretation we have different methods and techniques used. They depend on the type of algorithm used, the type of machine learning problem, and the complexity of these problems.
-The model interpretation techniques and methods are as follows.
+
+### Model interpretation methods and techniques
+
+These model methods and techniques are as follows.
 
 #### Model-specific method
+
 This technique is specific to only certain models and may not be applied to other machine learning models. It checks on the specific features and attributes within a model and their impact on the general functionalities of the model.
 
 #### Local or global scope method
-The local scope is used in individual prediction and tries to explain why a model made a certain single prediction. In global scope, it goes beyond the individual prediction and tries to explain the general behavior of the model.
+
+The local scope is used in individual prediction and tries to explain why a model made a certain single prediction. In the global scope, it goes beyond the individual prediction and tries to explain the general behavior of the model.
 
 In this tutorial, we will build a simple classification model using the iris dataset. The model classifies the flower species based on user input. From there, we will use LIME to interpret this model.
 
@@ -75,6 +90,7 @@ To download the dataset for this tutorial click [here](https://drive.google.com/
 Let us start building our model.
 
 #### Importing exploratory data analysis packages
+
 These packages are used for data analysis and manipulation. We use Pandas to load our dataset and Numpy to conduct mathematical and scientific computations on our dataset.
 
 ```python
@@ -101,6 +117,7 @@ The output is shown below:
 This shows that our model has columns such as `sepal_width`, `petal_length`, `petal_width`, and `species` columns. These columns are used as inputs when making predictions.
 
 ### Creating features
+
 Features are the key attributes in the dataset that are used as inputs during model training. These features are used by the model to enhance pattern recognition during model training.
 
 ```python
@@ -108,7 +125,8 @@ X = df[['sepal_length', 'sepal_width', 'petal_length', 'petal_width']]
 ```
 
 ### Creating labels
-Labels are the target variable that the model is trying to predict. In this case, our label is the `species` column the model is trying to predict the species of a given flower.
+
+Labels are the target variable that the model is trying to predict. In this case, our label is the `species` column, the model is trying to predict the species of a given flower.
 
 ```python
 Y = df['species']
@@ -121,6 +139,7 @@ class_names = Y.unique()
 ```
 
 ### Model building
+
 We will import all the packages needed to build our machine learning model as shown below.
 
 ```python
@@ -132,12 +151,15 @@ from sklearn.model_selection import train_test_split
 **In the code above we import the following:**
 
 #### LogisticRegression
+
 This is a [Scikit-learn](https://scikit-learn.org/stable/) algorithm that is used to solve classification problems.
 
 #### accuracy_score
+
 This is used to calculate the accuracy score of our model during prediction making. The higher the accuracy score the better our model is at making predictions.
 
 #### train_test_split
+
 This method is used to split our dataset into two sets. The first set is used to train our model while the second set is used to test the model.
 
 Let us now split our dataset.
@@ -146,7 +168,7 @@ Let us now split our dataset.
 X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.30, random_state=7)
 ```
 
-In the code above we specify the splittind ratio as `0.30`. This implies that `70%` of the dataset will be used to train our model and `30%` to test the same model.
+In the code above we specify the splitting ratio as `0.30`. This implies that `70%` of the dataset will be used to train our model and `30%` to test the same model.
 
 Now, let us see the training values. The training values are the length and width of the flowers. These sizes are specific to the flower species.
 
@@ -162,7 +184,7 @@ X_train.shape
 
 The output is as shown below:
 
-```python
+```bash
 (105, 4)
 ```
 
@@ -171,6 +193,7 @@ This shows that there is a total of `105` flower species and `4` columns in the 
 Next, let us use logistic regression to build and train our model.
 
 ### Model training using logistic regression
+
 We start by initializing the `LogisticRegression()` method which is used for training our model.
 
 ```python
@@ -179,19 +202,22 @@ model_logreg = LogisticRegression()
 
 After initializing our model, we now fit the model into the dataset. We fit our model using the training dataset. The model uses this dataset to recognize the pattern which is important during predictive analysis.
 
-During the training phase, the model gains knowledge through learning. It stores this knowledge and uses this model when making predictions.
+During the training phase, the model gains knowledge through learning and stores it. It eventually uses this stored knowledge to make predictions.
 
 ```python
 model_logreg.fit(X_train, Y_train)
 ```
 
-During the training phase, the model also fine-tunes the model.  It outputs the best parameters for the model which will give the optimal solution as shown in the image below.
+During the training phase, the model fine-tunes its parameters and outputs the model with the best parameters.
+
+The fine-tuned model will be used to give the optimal solution, as shown in the image below.
 
 ![Model output](/engineering-education/model-interpretation-using-lime/flower-sizes.jpg)
 
 Let us test our model using the testing dataset.
 
 ### Model testing
+
 This ensures that we evaluate the model quality and performance. It also ensures we do not have a biased model.
 
 ```python
@@ -205,6 +231,7 @@ The model is used to predict the data points instances found in the testing set.
 To evaluate this prediction, we need to calculate the accuracy score of this model when making these test predictions.
 
 ### Calculating the accuracy score
+
 The accuracy score shows the number of correct predictions made by our model. This is usually expressed as a percentage, the higher the accuracy score the better the model is in making predictions.
 
 The accuracy score is calculated as follows:
@@ -222,6 +249,7 @@ The output is as shown.
 When we convert into a percentage it becomes `88.89%`. This shows that our model has an `88.89%` chance of making accurate predictions.
 
 ### Making a single prediction
+
 Making a single prediction involves using a single data point in the dataset to make a prediction.
 
 Let us use a single data point from the dataset.
@@ -230,7 +258,7 @@ Let us use a single data point from the dataset.
 ex_specie = np.array(X_test.iloc[8]).reshape(1,-1)
 ```
 
-We use the `X_test.iloc()` method to extract the 8th row in our data set. This 8th row is what our model will use to make a single prediction. 
+We use the `X_test.iloc()` method to extract the 8th row in our data set. This 8th row is what our model will use to make a single prediction.
 
 We then use the `reshape(1,-1)` function to ensure that we have one column with the prediction result.
 
@@ -248,13 +276,14 @@ array(['setosa'], dtype=object)
 
 The prediction results are `setosa` which is true according to our test dataset.
 
-According to our model these are the prediction results, but should we trust these results blindly?. Or, should we try to understand how this model reached at this conclusion?
+According to our model, these are the prediction results, but should we trust these results blindly?. Or, should we try to understand how this model reached this conclusion?
 
 That is why we need to use model interpretation techniques to verify these results and increase our trust in the model. This ensures that we know how the model works and it's level of reliability.
 
 Let us start model interpretation with LIME
 
 ### Model interpretation with LIME
+
 LIME stands for Local Interpretable Model-Agnostic Explanations, it covers a local scope. Local scope is used in individual prediction and tries to explain why the model made a single prediction.
 
 LIME is an interpretation algorithm that can explain the single predictions of any classification or regression model simply and understandably.
@@ -266,6 +295,7 @@ To use LIME, we first need to install it. We install LIME using the following co
 ```
 
 LIME has different methods used for interpretation depending on the kind of data that is used as input. They include:
+
 - Tabular data interpretation technique
 - Textual data interpretation technique
 - Image data interpretation technique
@@ -293,9 +323,10 @@ explainer = lime.lime_tabular.LimeTabularExplainer(X_train.values, feature_names
 
 In the code above we have to specify which kind of LIME interpretation we are dealing with. In this case, we have specified it as `lime_tabular.LimeTabularExplainer`.
 
-We also need to pass the `X_train.values`, `feature_names`,  and `class_names` as parameters. This allows LIME to understand the patterns in the input dataset so that it can be able to verify the prediction results.
+We also need to pass the `X_train.values`, `feature_names`, and `class_names` as parameters. This allows LIME to understand the patterns in the input dataset so that it can be able to verify the prediction results.
 
 ### Applying the LIME explainer
+
 Let us apply this explainer to the 8th row of the dataset.
 
 ```python
@@ -304,7 +335,7 @@ exp = explainer.explain_instance(X_test.iloc[8],model_logreg.predict_proba,num_f
 
 In the code above we have specified the row we want LIME to interpret its prediction as `X_test.iloc[8]`.
 
-We also pass `model_logreg` which is the logistic regression model so that LIME can be able to verify its prediction results using `predict_proba`.
+We also pass `model_logreg` which is the logistic regression model, LIME can verify its prediction results using `predict_proba`.
 
 `predict_proba` will provide the prediction probability of that instance.
 
@@ -313,6 +344,7 @@ We finally specify the features in our dataset as `num_features=4` and the label
 Let us now see the results of this explainer.
 
 #### Showing the explainer results
+
 To see the explainer results, run this command.
 
 ```python
@@ -324,6 +356,7 @@ This enables us to see the results in our notebook as shown in the image below.
 ![Explainer results](/engineering-education/model-interpretation-using-lime/explainer-resultst.jpg)
 
 From the image above we can see that LIME has given the prediction probability as follows:
+
 - setosa with a probability of 0.88
 - versicolor with a probability of 0.12
 - virginica with a probability of 0.0
@@ -331,15 +364,17 @@ From the image above we can see that LIME has given the prediction probability a
 This shows setosa with a higher probability of 0.88 this makes it the right prediction result.
 
 The middle of the image provides the rules that must be achieved so that the prediction is setosa. The rules are as follows:
+
 - petal_length >= 1.50
 - sepal_width > 3.30
 - sepal_length <= 5.10
 
 All these rules are achieved according to the right side of the image which gives the dimensions of our input features.
 
-Using this visual representation, we can clearly see that our model made the right prediction and now we can trust this model.
+Using this visual representation, we can see that our model made the right prediction and now we can trust this model.
 
 ### Conclusion
+
 In this tutorial, we have learned about model interpretation using LIME. We started with building our simple model which we used to explain the concept of model interpretation.
 
 We also followed all the stages of machine learning and came up with a model that was able to predict the type of flower species.
@@ -349,6 +384,7 @@ Finally, we used LIME to interpret and explain why this model made certain predi
 To get the Google colab notebook for this tutorial click [here](https://colab.research.google.com/drive/149GrO47OiHYDQfqlTB4NKMixWJXtp_-v?usp=sharing).
 
 ### References
+
 - [Google Colab notebook for this tutorial](https://colab.research.google.com/drive/149GrO47OiHYDQfqlTB4NKMixWJXtp_-v?usp=sharing)
 - [LIME documentation](https://christophm.github.io/interpretable-ml-book/lime.html)
 - [Basic model interpretation tools](https://neptune.ai/blog/ml-model-interpretation-tools)
@@ -356,4 +392,5 @@ To get the Google colab notebook for this tutorial click [here](https://colab.re
 - [Scikit-learn documentation](https://scikit-learn.org/stable/)
 
 ---
+
 Peer Review Contributions by: [Dawe Daniel](/engineering-education/authors/dawe-daniel/)
