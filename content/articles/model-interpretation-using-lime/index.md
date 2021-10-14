@@ -330,7 +330,7 @@ From the image above we can see that LIME has given the prediction probability a
 
 This shows setosa with a higher probability of 0.88 this makes it the right prediction result.
 
-The middle of the image provide the rules that must be achieved so that the prediction is `setosa`. The rules are as follows:
+The middle of the image provides the rules that must be achieved so that the prediction is setosa. The rules are as follows:
 - petal_length >= 1.50
 - sepal_width > 3.30
 - sepal_length <= 5.10
