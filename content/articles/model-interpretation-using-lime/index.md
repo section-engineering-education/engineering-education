@@ -59,7 +59,7 @@ Explain briefly the importances.
 To improve model performance and generalization.
 - To identify wrong classifications during predictions.
 
-When it comes to model interpretation we have different methods and techniques used depending on the type of algorithm used, the type of machine learning problem and the complexity of these problems.
+When it comes to model interpretation we have different methods and techniques used. They depend on the type of algorithm used, the type of machine learning problem, and the complexity of these problems.
 The model interpretation techniques and methods are as follows.
 
 #### Model-specific method
