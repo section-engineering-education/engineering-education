@@ -5,7 +5,7 @@
 This tutorial will teach us how to set up a flutter application to be responsive and resolve satisfactorily on all devices.
 
 
-
+![Hero Image for Responsive flutter design using MediaQuery Class](./engineering-education/hero.jpg)
 
 ### Introduction
 
