@@ -1,3 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /data-streams-in-quarkus-using-reactive-streams-operator/
+title: Getting Started With Quarkus
+description: In this tutorial, we will get started on Quarkus data streams and learn how to build a Quarkas application using recative stream operators
+author: chris-mutua
+date: 2021-10-15T00:00:00-11:50
+topics: []
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/data-streams-in-quarkus-using-reactive-streams-operator/hero.png
+    alt: Quarkus project image example
+---
+
 _Data Streams_ can be defined as continuous data sent or received from a data source to a destination. Data Streams are essential in applications.
 This importance is because some data types come in bits as time goes by.
 An example of such data is that from weather forecasting instruments or that from a live video stream.
