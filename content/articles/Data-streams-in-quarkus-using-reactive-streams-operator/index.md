@@ -619,3 +619,6 @@ In conclusion, one has been able to attain the following knowledge:
 
 - [Quarkus Documentation](https://quarkus.io/guides/)
 - Quarkus SmallRye Reactive Streams Operators [documentation](https://smallrye.io/smallrye-reactive-streams-operators/#_using_reactive_streams_operators_in_a_vert_x_application)
+
+---
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul)
