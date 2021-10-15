@@ -1,11 +1,10 @@
-Contentful is a headless CMS, this means that it is built as a content repository making content available via an API (RESTful or GraphQL) to be displayed on any device. In this article, we will set up simple blog posts on the CMS and then display them to the users using Next.js. We will query the data from the CMS using an API.
+Contentful is built as a content repository making Content available via an API (RESTful or GraphQL) to be displayed on any device. This article will set up simple blog posts on the CMS and then display them to the users using Next.js. Finally, we will query the data from the CMS using an API.
 
 ### Goal
-
-In this article, we will interact with Contentful as a headless CMS by creating a simple posts app with Next.js
+This article will interact with Contentful as a headless CMS by creating a simple posts app with Next.js.
 
 ### Pre-requisites
-To follow through this article, it is crucial to have the following:
+To follow along with this article, it is crucial to have the following:
 
 - [Node.js](https://nodejs.org/en/) installed on your computer.
 - [Git](https://git-scm.com/) installed on your computer.
@@ -33,26 +32,26 @@ To follow through this article, it is crucial to have the following:
 - [References](#references)
 
 ### Creating an account with Contentful
-To proceed with this article, you ought to have an account with Contentful. If you already have an account just [login](https://be.contentful.com/login) and continue to the next step, else if you don't follow the below steps:
+You need to have an account with Contentful. If you already have an account, just [login](https://be.contentful.com/login) and continue to the next step, else if you do not follow the below steps:
 
 - Visit the [signup](https://www.contentful.com/sign-up/) page.
-- You can signup manually or you can also use your Google or GitHub account. Feel free to do any.
+- You can signup manually, or you can also use your Google or GitHub account. Feel free to do any.
 - Answer through the questions that follow.
 - Then click **Start With Contentful**
 
 At this point, you are ready for the next step.
 
 ### Setting up the content model
-A content model refers to a Schema, which will allow the generation of similar structured pieces of content. For example, for every blog post we want to have a ***title***, an ***excerpt***, a ***description***, a ***cover-image***, and a ***date***. The composition of all these fields to a blog post makes up the schema.
+A content model refers to a Schema, which will allow the generation of similarly structured pieces of Content. For example, for every blog post we want to have a ***title***, an ***excerpt***, a ***description***, a ***cover-image***, and a ***date***. The composition of all these fields to a blog post makes up the schema.
 
 To set up the above Schema, follow the following steps:
 
-- On the top bar click on ***Content model***.
+- On the top bar, click on ***Content model***.
 - And then ***Design your content model***.
 - Then ***Create content type*** in the modal that pops up.
 - Give the ***content type*** a name of ***simple blog post***, the API identifier field is auto-populated, then give a brief description in the descriptions field like ***simple blog post content type***.
 
-After that, it's time to add the fields to make up the schema. We will add the fields we have discussed above one by one by following the following steps:
+After that, it is time to add the fields to make up the schema. We will add the fields we have discussed above one by one by following the following steps:
 
 - Hit the ***Add field*** button to add ***title***,  choose ***text***, give it a name of *title*, then click ***create***.
 
@@ -66,40 +65,40 @@ After that, it's time to add the fields to make up the schema. We will add the f
 
 - Hit the ***Save*** button to the top right section.
 
-At this point, we have defined our Schema by creating a content type and adding fields to that content type. We now move on to adding content to our content type in the next step.
+At this point, we have defined our Schema by creating a content type and adding fields to that content type. We now move on to adding Content to our content type in the next step.
 
 ### Adding posts to Contentful
 After adding the content type, it is now time to add the data that we want to see on our app. To do this, we will follow the following steps:
 
-- On the top navigation bar, click ***Content***.
+- On the top navigation bar, click *** Content ***.
 
 - Click the ***Add simple blog post*** button.
 
 - On the resulting form, key in a title, key in an excerpt, and key in a description. Also, you can choose to add dummy text or not.
 
-Let's now add the cover image. To do so, click on ***Add new media***, give it a title like ***simple cover image*** or something else, By hitting ***Open file selector***, you can upload an image from your computer, or you can upload from different sources listed there. On selecting a file, hit the ***Publish*** button which is to the right. From there use the back icon on the top left to navigate back to the initial form.
+Let us now add the cover image. To do so, click on ***Add new media***, give it a title like ***simple cover image*** or something else, By hitting ***Open file selector***, you can upload an image from your computer or upload from different sources listed there. On selecting a file, hit the ***Publish*** button, which is to the right. From there, use the back icon on the top left to navigate back to the initial form.
 
-Also, remember to add a date, choose the current date. Hit the ***Publish*** button to the right. You will see a notification message that your blog post was added successfully. From there, click on the back icon to the left to go to the content's page.
+Also, remember to add a date, choose the current date. Finally, hit the ***Publish*** button to the right. You will see a notification message that your blog post was added successfully. From there, click on the back icon to the left to go to the Content's page.
 
-On the content's page, you should be able to see your published blog post. You can repeat the process and add several posts so that you can have a number of posts to fetch.
+On the Content's page, you should be able to see your published blog post. You can repeat the process and add several posts to have several posts to fetch.
 
 After adding the posts, it is now time to set up our Next.js environment in the proceeding step.
 
 ### Setting up the Next.js app
-To set up the Next.js environment, we will use [create-next-app](https://nextjs.org/docs/api-reference/create-next-app). This is a one-time command that allows you to generate a Next.js template. It generates a ready structured project that allows you to scale up quickly and add more code as you go. To generate this Next.js template app, open a terminal (command line) and run the following command from the directory that you want the template to be saved.
+To set up the Next.js environment, we will use [create-next-app](https://nextjs.org/docs/api-reference/create-next-app). This is a one-time command that allows you to generate a Next.js template. It generates a ready structured project that allows you to scale up quickly and add more code as you go. To generate this Next.js template app, open a terminal (command line) and run the following command from the directory to save the template.
 
 ```bash
 npx create-next-app contentful-nextjs-app
 ```
 
-The above command will create the Next.js app inside the `contentful-nextjs-app` folder Now navigate to this project folder using the change directory command as shown below;
+The above command will create the Next.js app inside the `contentful-nextjs-app` folder. Now navigate to this project folder using the change directory command as shown below;
 
 ```bash
 cd contentful-nextjs-app
 ```
 
 ### Adding Contentful credentials to the Next.js app
-For Next.js to communicate with the Contentful API we will need to add some credentials that will validate and facilitate this. In your `contentful-nextjs-app` project folder create a `.env.local` file. It will host the environmental variables to connect to Contentful. Add the following to the file;
+For Next.js to communicate with the Contentful API, we will need to add credentials to validate and facilitate this. In your `contentful-nextjs-app` project folder create a `.env.local` file. It will host the environmental variables to connect to Contentful. Add the following to the file;
 
 ```bash
 CONTENTFUL_SPACE_ID=your_contentful_space_id
@@ -113,7 +112,7 @@ To get the above variables, we will follow the following steps:
 - From your Contentful dashboard page, click on ***Settings***.
 - And then under ***Space settings***, click on ***API keys***.
 
-If you have not added an ***API key*** yet, on the right hand, click on ***Add Api Key***.
+If you have not added an ***API key*** yet, click on ***Add Api Key*** on the right hand.
 
 - In the resulting form:
 
@@ -122,12 +121,12 @@ If you have not added an ***API key*** yet, on the right hand, click on ***Add A
 - Copy the *Preview access token* and paste it to the `CONTENTFUL_PREVIEW_ACCESS_TOKEN` field.
 - For the `CONTENTFUL_PREVIEW_SECRET`, key in any random string.
 
-Our app is now fully set up and we are ready for the proceeding step.
+Our app is now fully set up, and we are ready for the proceeding step.
 
 ### Querying the added posts
-At this point, we can now fetch the posts that we added earlier. To query the posts we added, we are going to first set up the API which we are going to call.:
+At this point, we can now fetch the posts that we added earlier. To query the posts we added, we will first set up the API, which we are going to call.:
 
-Start by creating a `lib` folder in the root of the project folder. Inside the `lib` folder, create an `api.js` file. In the `api.js` we will start by defining the fields to fetch as shown below.
+Start by creating a `lib` folder in the root of the project folder. Then, inside the `lib` folder, create an `api.js` file. In the `api.js`, we will define the fields to fetch, as shown below.
 
 ```js
 const POST_GRAPHQL_FIELDS = `
@@ -170,7 +169,7 @@ async function fetchGraphQL(query, preview = false) {
 }
 ```
 
-The above method will form the base for querying the posts. We will be sending a `POST` request to the ***Contentful API*** with the `URL`, `headers` set but the `body` being dynamic for every request.
+The above method will form the base for querying the posts. We will send a `POST` request to the ***Contentful API*** with the `URL` and `headers` set, but the `body` is dynamic for every request.
 
 Then create a method for extracting data from the posts by adding the following:
 
@@ -180,7 +179,7 @@ function extractPostEntries(fetchResponse) {
 }
 ```
 
-For each, and every response from the Contentful API query, the data will be returned with various metadata so we have to narrow it down to the data we want as above.
+For every response from the Contentful API query, the data will be returned with various metadata, so we have to narrow it down to the data we want as above.
 
 Now create a method to query the posts from the Contentful API side:
 
@@ -200,10 +199,10 @@ export async function getAllPostsForHome(preview) {
 }
 ```
 
-From above, we are using the custom method we defined above to get posts from the CMS. A point to note is that when we are querying more than one blog post we will use `simpleBlogPostCollection`. If we were querying one blog post, we would use `simpleBlogPost`.
+From above, we are using the custom method we defined above to get posts from the CMS. A point to note is that when we are querying more than one blog post, we will use `simpleBlogPostCollection`. If we were querying one blog post, we would use `simpleBlogPost`.
 
 ### Displaying the Posts
-We are now set to show the posts, to do this, in `pages/index.js` we will fetch the posts using [getStaticProps](https://nextjs.org/docs/basic-features/data-fetching#getstaticprops-static-generation). It will simply imply that data will be pre-rendered at build time. This helps Next.js to serve a user this data ahead of time. This makes the web app render the content very fast as if it was static.
+We are now set to show the posts. In `pages/index.js`, we will fetch the posts using [getStaticProps](https://nextjs.org/docs/basic-features/data-fetching#getstaticprops-static-generation). It will simply imply that data will be pre-rendered at build time. This helps Next.js to serve a user this data ahead of time. Furthermore, this makes the web app render the Content very fast, as if it was static.
 
 To implement this, import the `getAllPostsForHome` function from *lib/api.js* at the top of your in `pages/index.js`.
 
@@ -274,7 +273,7 @@ export default function Home({allPosts}) {
     }
 ```
 
-From above, we are checking if we have posts, if we have them we loop through displaying each of them, else if we do not have posts, we display a message. Modify the `styles/Home.module.css` as follows to cater for the changes we have made to the `Home` function:
+From above, we check if we have posted; if we have them, we loop through displaying each of them; ,otherwise, if we do not have posts, we display a message. Modify the `styles/Home.module.css` as follows to cater for the changes we have made to the `Home` function:
 
 ```css
 .container {
@@ -389,21 +388,21 @@ From above, we are checking if we have posts, if we have them we loop through di
 }
 ```
 
-After doing the changes we are now ready to view the posts.
+After doing the changes, we are now ready to view the posts.
 
 ### Testing simpleBlogPostCollection
-We are now ready to test if we can fetch all the posts that we added to the contentful API To do so, ensure that your development server is started by running the following command from the terminal at the root of the `contentful-nextjs-app` project root folder.
+We are now ready to test if we can fetch all the posts we added to the contentful API. To do so, ensure that your development server is started by running the following command from the terminal at the root of the `contentful-nextjs-app` project root folder.
 
 ```bash
 npm run dev
 ```
 
-Open your browser and go to `http://localhost:3000`, you should be able to view the posts now. In case of any error, kindly revisit the steps. Your page should be similar to:
+Open your browser and go to `http://localhost:3000`; you should be able to view the posts now. In case of any error, kindly revisit the steps. Your page should be similar to:
 
 ![home-page](/engineering-education/how-to-run-contentful-cms-as-headless-with-nextjs/home-page.png)
 
 ### Solving the single post 404 error
-When you click on any specific post, it gives you a `404` error because we have not worked on that yet. Let's get into it by following the following steps:
+When you click on any specific post, it gives you a `404` error because we have not worked on that yet. Let us get into it by following the following steps:
 
 ### Fetching a single post data
 In the `lib/api.js` file, we will add the method of extracting a single post as follows:
@@ -414,7 +413,7 @@ function extractPost(fetchResponse){
 }
 ```
 
-To avoid the metadata we will derive what we want using the above function.
+To avoid the metadata, we will derive what we want using the above function.
 
 In the `lib/api.js` file, we add another function to fetch the single post and other related posts as follows:
 
@@ -458,7 +457,7 @@ export async function getPostAndMorePosts(preview,postId){
 }
 ```
 
-In the above function, we are fetching a single post and the related posts by filtering the specific post.
+In the above function, we fetched a single post and the related posts by filtering the specific post.
 
 In the `pages` folder, create another folder and call it `posts`. In the `posts` folder, create a `[postId].js` file. The `[postId]` to signify that the `post id` will be dynamic. In the `[postId].js` file:
 
@@ -468,7 +467,7 @@ In the `pages` folder, create another folder and call it `posts`. In the `posts`
 import {getPostAndMorePosts} from "../../lib/api";
 ```
 
-- Fetch the post using `getStaticProps`, and `getStaticPaths` method as follows:
+- Fetch the post using `getStaticProps` and `getStaticPaths` method as follows:
 
 ```js
 // Fetch for a single post
@@ -505,7 +504,7 @@ export async function getStaticPaths() {
 
 The `getStaticProps()` function will receive the `postId` from the `params` of the `context` then fetch the data of that specific post.
 
-The `getStaticPaths` will create dynamic pages based on the posts from Contentful, so that the next time you are fetching a specific post, it will get the dynamic page created earlier.
+The `getStaticPaths` will create dynamic pages based on the posts from Contentful so that the next time you are fetching a specific post, you will get the dynamic page created earlier.
 
 ### Displaying a single post
 Create a `Post` function to display the post. Start by importing the necessary modules as shown below:
@@ -602,7 +601,7 @@ export function Post({posts, relatedPosts}){
 }
 ```
 
-From above, we are receiving the `post` and the related posts from the `getStaticProps` to our function. To cater for the build process, we are checking for the `isFallBack` from the router and displaying a loading text else we are displaying the `title`, `date`, `coverimage`, and the `related posts`.
+From above, we are receiving the `post` and the related posts from the `getStaticProps` to our function. To cater for the build process, we are checking for the `isFallBack` from the router and displaying a loading text; else, we are displaying the `title`, `date`, `coverimage`, and the `related posts`.
 
 We need to add the following styles to the `Home.module.css` file since we are referencing them:
 
@@ -629,17 +628,17 @@ We need to add the following styles to the `Home.module.css` file since we are r
 ```
 
 ### Testing simpleBlogPost
-At this point, if you click on any of the posts on the home page, you will be redirected successfully to a page of that simple post. To test this, first ensure your server is up and running. If not run the following command from the terminal at the root of the `contentful-nextjs-app` project root folder.
+At this point, if you click on any of the posts , you will be redirected to a single post page. To test this, first ensure your server is up and running. If not, run the following command from the terminal at the root of the `contentful-nextjs-app` project root folder.
 
 ```bash
 npm run dev
 ```
 
-Open your browser and go to `http://localhost:3000`, and click on any of the posts on the home page. This will road that posts to your screen.
+Open your browser, go to `http://localhost:3000`, and click on any of the posts on the home page. This will load that post to your screen.
 
 ![initial-post-page](/engineering-education/how-to-run-contentful-cms-as-headless-with-nextjs/initial-post-page.png)
 
-It seems pretty okay, but there is something we are missing, the description part. Let's handle that in the next step.
+It seems pretty okay, but there is something we are missing, the description part. So let us handle that in the next step.
 
 Since we added our description as rich-text, we will have to use a separate package to show it in the UI. The package is [@contentful/rich-text-react-renderer](https://www.npmjs.com/package/@contentful/rich-text-react-renderer). Open a separate tab in your terminal and install the package using:
 
@@ -661,7 +660,7 @@ After the `cover image` section, add the following:
 </div>
 ```
 
-From above we are now embedding the rich text data we added to a React component that is inside a `div`. In the `Home.module.css`, let' give this `div` some margin as follows:
+From above, we are now embedding the rich text data we added to a React component inside a `div`. In the `Home.module.css`, let' give this `div` some margin as follows:
 
 ```css
 .contentBody{
@@ -669,13 +668,13 @@ From above we are now embedding the rich text data we added to a React component
 }
 ```
 
-Now check if your server is still running. If not use:
+Now check if your server is still running. If not, use:
 
 ```bash
 npm run dev
 ```
 
-Refresh your page, you should now see the description as follows:
+Refresh your page; you should now see the description as follows:
 
 ![post-page-with-description](/engineering-education/how-to-run-contentful-cms-as-headless-with-nextjs/post-page-with-description.png)
 
@@ -704,7 +703,7 @@ Add its style to the `Home.module.css` as follows:
 
 ```
 
-On the post page, now you should have a visible home page link which you can click to go to the home page. Your page should be similar to the following:
+On the posts page, now you should have a visible home page link which you can click to go to the home page. Your page should be similar to the following:
 
 ![final-post-page](/engineering-education/how-to-run-contentful-cms-as-headless-with-nextjs/final-post-page.png)
 
@@ -719,20 +718,20 @@ To host the project to vercel, follow the following steps:
 - Create a Github repository and name it any name of your choice.
 - Push the code to your Github repository.
 - Log on to [vercel](https://vercel.com/).
-- If you don't have an account, simply sign up with any provider.
+- If you do not have an account, simply sign up with any provider.
 - From your dashboard, click on [new project](https://vercel.com/new).
 - Under the ***import Git repository*** section, select the repository you previously created and click ***import***.
-- Skip the create team section, on to the *Configure project* section.
-- Under the environmental variables tab, add all the variables from your project's `.env.local`, each with its name and value. simply copy-paste to avoid errors.
+- Skip the create team section onto the *Configure project* section.
+- Under the environmental variables tab, add all the variables from your project's `.env.local`, each with its name and value. Then, simply copy-paste to avoid errors.
 - After copy-pasting all of them, then click ***Deploy***.
 - Wait a few seconds for everything to be set up.
 - From your dashboard, you will be able to visit your project. You can also share with fields to showcase what you have built.
 
 ### References
-In this article, we have used various concepts revolving around Next.js and Contentful, To gain more knowledge and build on top of what you have learned, kindly consider the following resources:
+In this article, we have used various concepts revolving around Next.js and Contentful. To gain more knowledge and build on top of what you have learned, kindly consider the following resources:
 
 - [Data fetching in Next.js](https://nextjs.org/docs/basic-features/data-fetching)
 - [Css in Next.js](https://nextjs.org/docs/basic-features/built-in-css-support)
 - [Image component in Next.js](https://nextjs.org/docs/api-reference/next/image)
 - [Contentful and react.js intergration](https://www.contentful.com/developers/docs/javascript/tutorials/getting-started-with-react-and-contentful/)
-- [Git cheatsheet](https://www.atlassian.com/git/tutorials/atlassian-git-cheatsheet)
+- [Git cheat sheet](https://www.atlassian.com/git/tutorials/atlassian-git-cheatsheet)
