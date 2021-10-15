@@ -6,23 +6,22 @@ url: /understanding-xml-external-entity-attacks/
 title: Understanding XML External Entitiy Attacks
 description: In this article, we will be looking at the different ways that XML External Entities can be used to attack a web application. We will also look at how to mitigate these attacks.
 author: felix-vaati
-date: 2021-10-04T00:00:00-13:00
+date: 2021-10-15T00:00:00-13:00
 topics: [Security]
 excerpt_separator: <!--more-->
 images:
+
   - url: /engineering-education/understanding-xml-external-entity-attacks/hero.png
     alt: XML External Entity Attack XXE Image Hero
 ---
-
 For the last four years, security researchers have reported a tremendous increase in security breaches. About 20-30,000 websites get hacked every day. There are several ways websites get hacked, XML External Entity Attacks (XXE) being one of them.
-
 <!--more-->
 
-_(Source: [Patchstack, 2021](https://patchstack.com/website-hacking-statistics/))_
+*(Source: [Patchstack, 2021](https://patchstack.com/website-hacking-statistics/))*
 
 According to the OWASP Top 10 report of 2017, they ranked XXE attacks number four. This year (2021), XXE has been merged in security misconfiguration, which is placed in the fifth position.
 
-_(Source: [OWASP Org, 2021](https://owasp.org/Top10/))_
+*(Source: [OWASP Org, 2021](https://owasp.org/Top10/))*
 
 The OWASP Top 10 is a report maintained by the Open Web Application Security Project. It contains a list of high-ranking web application security concerns.
 
@@ -31,11 +30,9 @@ In this article, we will look at XXE attacks in depth. We will focus on what XML
 > **Disclaimer:** - This article is for educational purposes only.
 
 ### Prerequisites
-
 Basic knowledge of intercepting traffic flow using [Burpsuite](https://portswigger.net/burp/communitydownload), [OWASP zap](https://www.zaproxy.org/download/), or any other tool.
 
 ### What is XML?
-
 XML (Extensible Markup Language) is a markup language, just like HTML, that is human and machine-readable. The World Wide Web Consortium (W3C) developed XML. Unlike HTML, users can define their tags. The most common use of this language is transporting and storing data. Apart from that, XML can also offload and reload databases, merge with style sheets to create the desired output among other uses.
 
 Here is a sample XML code:
@@ -82,8 +79,7 @@ This section contains the child nodes of this XML document. This is where we inp
 
 XML, like any other language, has comments. To write comments in XML, we use `<!--comment-->`, similar to how we write comments in HTML.
 
-#### XML Entities
-
+#### XML entities
 In other programming languages, when we want to store data temporarily, we use variables. In XML, we use entities to hold our data. Whenever we need that data, we call the entities by appending `&` to the entity name such that we have something similar to this: `&Entityname`.Entities can also access data that is not stored locally, in such a case we call them external entities.
 
 #### Document Type Definition (DTD)
@@ -115,7 +111,6 @@ Message: Hello, How are you today?
 Now that we have learned how a basic XML document looks like, let’s learn how the attack works.
 
 ### How XXE attacks work
-
 XXE attacks arise when external entities are supported and parsed by a weak XML parser. An attacker intercepts the XML data when in transit and adds malicious code. When processed, the application may disclose private information. Mostly these attacks enable the attackers to view the filesystem and, sometimes, they can interact with any back-end services that the application can access.
 
 There are several types of XXE attacks, such as:
@@ -139,11 +134,9 @@ If we are successful, we should be able to see the file as shown below:
 Apart from retrieving files, we can use XXE attacks for:
 
 #### 1. Denial of Service (DoS)
-
 The most common being the billion laugh attack.
 
 #### 2. Server-side request forgery attacks
-
 Using the external entities, an attacker can make HTTP requests to URLs, then the server can access them, including those meant to be for internal use only in an organization.
 
 The attacker will replace the content of an entity with the URL that they are targeting. When the target URL is parsed, the contents of the said domain are exposed.
@@ -155,17 +148,14 @@ Here is a sample payload for such an attack.
 ```
 
 ### Impacts of XXE
-
 - Unauthorized access to systems where system files, i.e. password files, were exposed.
 - Denial of service, which may cause economic loss, especially on high-traffic business websites.
 - Remote code execution.
 
 ### Testing for XXE attacks
-
 We can do reliable testing for XXE using tools such as Burpsuite [web vulnerability scanner](https://portswigger.net/burp/vulnerability-scanner). We can also use [OWASP Zap](https://www.zaproxy.org/) to perform similar tests.
 
 ### How to prevent XXE attacks
-
 - Disable external entities on your websites if using XML.
 - Developer training on safe coding practices.
 - Using automatic testing security tools to search for XXE vulnerabilities.
@@ -174,7 +164,6 @@ We can do reliable testing for XXE using tools such as Burpsuite [web vulnerabil
 - Encrypting data and authenticating all internal connections to prevent SSRF attacks.
 
 ### Conclusion
-
 XXE attacks are an enormous threat to web applications. If not detected or prevented, they can lead to huge economic and data loss. The major cause of XXE attacks is the external entities present in our XML documents.
 
 What we have looked at:
@@ -187,7 +176,6 @@ What we have looked at:
 Let’s keep our web applications secure. Happy learning!
 
 ### Further reading
-
 - [Preventing XXE attacks - OWASP Cheat Sheet Series](https://cheatsheetseries.owasp.org/cheatsheets/XML_External_Entity_Prevention_Cheat_Sheet.html)
 
 ---
