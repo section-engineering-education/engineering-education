@@ -2,9 +2,9 @@
 Flyaway is a version control system that is used to maintain database migrations across all application instances. This article will create a student management system that will manage database migrations with the flyaway migration tool. 
 
 ### Prerequisites
-1. [Java Development Kit]() installed on your computer.
-2. [MySQL]() installed on your computer.
-3. Knowledge in [Spring Boot]().
+1. [Java Development Kit](https://www.oracle.com/java/technologies/downloads/) installed on your computer.
+2. [MySQL](https://www.mysql.com/) installed on your computer.
+3. Knowledge in [Spring Boot](https://spring.io/projects/spring-boot).
 4. Favorite IDE/Code editor installed.
    
 ### Project setup
@@ -67,22 +67,22 @@ public class StudentController {
     public StudentController(StudentRepository studentRepository) {
         this.studentRepository = studentRepository;
     }
-
+    //Inserts a student into the database
     @PostMapping
     public ResponseEntity<Student> saveStudent(@RequestBody Student student) {
         return new ResponseEntity<>(studentRepository.save(student), HttpStatus.CREATED);
     }
-
+    //Retrives all students from the database
     @GetMapping
     public ResponseEntity<List<Student>> getStudents() {
         return new ResponseEntity<>(studentRepository.findAll(), HttpStatus.OK);
     }
-
+    //Retrives a single student with the specified email from the database
     @GetMapping("/{email}")
     public ResponseEntity<Student> getStudentByEmail(@PathVariable("email") String email) {
         return new ResponseEntity<>(studentRepository.findStudentByEmail(email).orElseThrow(IllegalStateException::new), HttpStatus.OK);
     }
-
+    //Updates the student with the email passed as path variable
     @PutMapping("/{email}")
     public ResponseEntity<Student> updateStudent(@PathVariable("email") String email, @RequestBody Student student) {
         Student dbStudent = studentRepository.findStudentByEmail(email).orElseThrow(IllegalAccessError::new);
@@ -91,7 +91,7 @@ public class StudentController {
         dbStudent.setLastName(student.getLastName());
         return new ResponseEntity<>(studentRepository.save(dbStudent), HttpStatus.OK);
     }
-
+    //Deletes a student with the email passed as the path variable
     @DeleteMapping("/{email}")
     public ResponseEntity<String> deleteStudent(@PathVariable("email") String email) {
         studentRepository.deleteStudentByEmail(email);
@@ -122,15 +122,15 @@ spring.jpa.hibernate.ddl-auto = validate
 ```sql
 CREATE TABLE student
 (
-    id                  bigint(20) not null AUTO_INCREMENT,
-    first_name          varchar(100) not null,
-    last_name           varchar(100) not null,
-    email               varchar(100) not null,
-    course              varchar(100) not null,
+    student_id                  bigint(20) not null AUTO_INCREMENT,
+    first_name          varchar(50) not null,
+    last_name           varchar(50) not null,
+    email               varchar(50) not null,
+    course              varchar(50) not null,
     registration_number varchar(50)  not null,
-    primary key (id),
+    primary key (student_id),
     unique key UK_email(email)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+)
 ```
 The above code snippet creates the `student` table in the database when the application is run. 
 
@@ -147,39 +147,34 @@ Query OK, 1 row affected (0.01 sec)
 
 mysql> 
 ```
+Run the application by executing the command `./mvnw spring-boot:run`. Then, on the command line, execute the command `sudo mysql` to start MySQL CLI. 
+Next, execute the command `select * from flyway_schema_history` as shown below.
+//result two
+
+When we rerun the application and check the student's table if We inserted the data, we see the results below.
+
+#### Inserting data through flyway migrations
+In the `db` folder created above, create a new SQL file named `V2_data.sql` and add the SQL script below.
 
 ```sql
 insert into student(email, first_name, last_name, course, registration_number)
 values ("test@outlook.com", "test1", "tester1", "Computer science", "ABA1112");
-insert into student(email, first_name, last_name, course, registration_number)
+insert intbooto student(email, first_name, last_name, course, registration_number)
 values ("tester2@outlook.com", "test2", "tester2", "Computer science", "ABA7712");
 
 ```
+When we check the flyway migrations table, we see that the data was inserted and recorded.
 ### Testing
-```bash
-mysql> select * from student;
-+----+------------+-----------+---------------------+------------------+---------------------+
-| id | first_name | last_name | email               | course           | registration_number |
-+----+------------+-----------+---------------------+------------------+---------------------+
-|  1 | test1      | tester1   | test@outlook.com    | Computer science | ABA1112             |
-|  2 | test2      | tester2   | tester2@outlook.com | Computer science | ABA7712             |
-+----+------------+-----------+---------------------+------------------+---------------------+
-2 rows in set (0.00 sec)
-```
+//result
+When we check the flyway migrations table, we can see that the data was inserted and migration recorded.
+//devs
+Now that we have created a table and inserted data into the database, execute the command below if we want to roll back the last migration that we performed.
 
 ```bash
-mysql> select * from flyway_schema_history;
-+----------------+---------+-------------+------+---------------------+------------+--------------+---------------------+----------------+---------+
-| installed_rank | version | description | type | script              | checksum   | installed_by | installed_on        | execution_time | success |
-+----------------+---------+-------------+------+---------------------+------------+--------------+---------------------+----------------+---------+
-|              1 | 1       | init        | SQL  | V1__init.sql        |  571144569 | elvis        | 2021-10-09 21:45:31 |             25 |       1 |
-|              2 | 2       | initialdata | SQL  | V2__initialdata.sql | -686915055 | elvis        | 2021-10-09 22:02:12 |              5 |       1 |
-+----------------+---------+-------------+------+---------------------+------------+--------------+---------------------+----------------+---------+
-2 rows in set (0.00 sec)
-
-mysql> 
-
+$ ./flyway undo
 ```
+
+The command above rollbacks the last migration, In our case, it will remove the data inserted into the database from the second script.
 
 ### Conclusion
 Now that you have learnt how to manage Spring Boot database migrations with the flyway migration tool, try implementing an application, create at least three migrations and try rolling back to the previous migrations. You can download the complete source code [here]().
