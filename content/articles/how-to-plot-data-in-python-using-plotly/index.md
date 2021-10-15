@@ -109,7 +109,7 @@ The above image shows the distribution of wealth in the year 1952.
 
 ![Output](/engineering-education/how-to-plot-data-in-python-using-plotly/plotly-output-07.png)
 
-The above image shows the distribution of wealth in the year 2007. You can zoom in and out using your mouse cursor to view individual points on the plot. We used interactive animation to help us achieve our goal. There are many other ways you can visualize using plotly. This could be using line charts, bar charts, pie charts, interactive bubble charts, and chloropleth. Explore more techniques [here](https://www.kaggle.com/jhossain/explore-the-gapminder-dataset-with-plotly-express). 
+The above image shows the distribution of wealth in the year 2007. You can zoom in and out using your mouse cursor to view individual points on the plot. We used interactive animations to help us achieve our goal. There are many other ways you can visualize using plotly. This could be using line charts, bar charts, pie charts, interactive bubble charts, and chloropleth. Explore more techniques [here](https://www.kaggle.com/jhossain/explore-the-gapminder-dataset-with-plotly-express).
 
 Using the same dataset, let's plot using chloropleth.
 
