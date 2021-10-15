@@ -1,6 +1,7 @@
 Contentful is built as a content repository making Content available via an API (RESTful or GraphQL) to be displayed on any device. This article will set up simple blog posts on the CMS and then display them to the users using Next.js. Finally, we will query the data from the CMS using an API.
 
 ### Goal
+
 This article will interact with Contentful as a headless CMS by creating a simple posts app with Next.js.
 
 ### Pre-requisites
@@ -76,7 +77,7 @@ After adding the content type, it is now time to add the data that we want to se
 
 - On the resulting form, key in a title, key in an excerpt, and key in a description. Also, you can choose to add dummy text or not.
 
-Let us now add the cover image. To do so, click on ***Add new media***, give it a title like ***simple cover image*** or something else, By hitting ***Open file selector***, you can upload an image from your computer or upload from different sources listed there. On selecting a file, hit the ***Publish*** button, which is to the right. From there, use the back icon on the top left to navigate back to the initial form.
+Let us now add the cover image. To do so, click on ***Add new media***, give it a title like ***simple cover image*** or something else; by hitting ***Open file selector***, you can upload an image from your computer or upload from different sources listed there. On selecting a file, hit the ***Publish*** button, which is to the right. From there, use the back icon on the top left to navigate back to the initial form.
 
 Also, remember to add a date, choose the current date. Finally, hit the ***Publish*** button to the right. You will see a notification message that your blog post was added successfully. From there, click on the back icon to the left to go to the Content's page.
 
@@ -202,7 +203,7 @@ export async function getAllPostsForHome(preview) {
 From above, we are using the custom method we defined above to get posts from the CMS. A point to note is that when we are querying more than one blog post, we will use `simpleBlogPostCollection`. If we were querying one blog post, we would use `simpleBlogPost`.
 
 ### Displaying the Posts
-We are now set to show the posts. In `pages/index.js`, we will fetch the posts using [getStaticProps](https://nextjs.org/docs/basic-features/data-fetching#getstaticprops-static-generation). It will simply imply that data will be pre-rendered at build time. This helps Next.js to serve a user this data ahead of time. Furthermore, this makes the web app render the Content very fast, as if it was static.
+We are now set to show the posts. In `pages/index.js`, we will fetch the posts using [getStaticProps](https://nextjs.org/docs/basic-features/data-fetching#getstaticprops-static-generation). It will simply imply that data will be pre-rendered at build time. This helps Next.js to serve a user this data ahead of time. Furthermore, this makes the web app render the Content very fast as if it was static.
 
 To implement this, import the `getAllPostsForHome` function from *lib/api.js* at the top of your in `pages/index.js`.
 
@@ -273,7 +274,7 @@ export default function Home({allPosts}) {
     }
 ```
 
-From above, we check if we have posted; if we have them, we loop through displaying each of them; ,otherwise, if we do not have posts, we display a message. Modify the `styles/Home.module.css` as follows to cater for the changes we have made to the `Home` function:
+From above, we check if we have posted; if we have them, we loop through displaying each of them; otherwise, we display a message if we do not have posts. Modify the `styles/Home.module.css` as follows to cater for the changes we have made to the `Home` function:
 
 ```css
 .container {
@@ -628,7 +629,7 @@ We need to add the following styles to the `Home.module.css` file since we are r
 ```
 
 ### Testing simpleBlogPost
-At this point, if you click on any of the posts , you will be redirected to a single post page. To test this, first ensure your server is up and running. If not, run the following command from the terminal at the root of the `contentful-nextjs-app` project root folder.
+At this point, if you click on any of the posts, you will be redirected to a single post page. To test this, first ensure your server is up and running. If not, run the following command from the terminal at the root of the `contentful-nextjs-app` project root folder.
 
 ```bash
 npm run dev
