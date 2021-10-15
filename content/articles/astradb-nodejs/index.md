@@ -153,13 +153,6 @@ app.listen(process.env.APP_PORT, () => {
 ```
 
 
-### Retrieving data from Astra DB
-
-
-
-### Performing updates and deletions
-
-
 ### Conclusion
 Being open source, the Cassandra is a popular database due to its ability to maintain seamless scalability and consistency in a distributed cloud infrastructure. Combining this technical features with DataStax stargate API gateway gives us the ability to develop a serverless database with zero configuration. The database is serverless which has a great free tier and developer experience.
 
