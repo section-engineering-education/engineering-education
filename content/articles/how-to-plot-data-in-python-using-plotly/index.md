@@ -91,7 +91,7 @@ px.scatter(data_frame=gapminder_df,
             height = 600,
             size_max = 100)
 ```
-To summarize this code:
+Explaining this block of code:
 
 -  `x = 'gdpPercap'` and  `y = 'lifeExp'` tells us what we want our x and y coordinates to be. The x-axis will represent the gdpPercap which has been assigned the label `Wealth`, while the y axis will represent the life expectancy assigned to the label `Life Span`.
 - `color = 'continent',` tells plotly that we want each continent to have a different color.
