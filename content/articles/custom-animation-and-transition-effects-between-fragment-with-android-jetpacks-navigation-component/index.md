@@ -225,7 +225,7 @@ sharedElementReturnTransition = animation
 ![Demo](/engineering-education/custom-animation-and-transition-effects-between-fragment-with-android-jetpacks-navigation-component/demo.gif)
 
 ### Conclusion
-In this tutorial we learned what transition animations are, how to add animations to move back and forth through Destinations, we have also looked at how to animate a DialogFragment's transition and finally, we learned how to create a Shared Transition Element. Go ahead and enhance your awesome Android projects with these transitions to increase your app's interactivity. You can visit this repository for reference [FragmentsTransitionsDemo](https://github.com/FragmentsTransitionDemo).
+In this tutorial we learned what transition animations are, how to add animations to move back and forth through Destinations, we have also looked at how to animate a DialogFragment's transition and finally, we learned how to create a Shared Transition Element. Go ahead and enhance your awesome Android projects with these transitions to increase your app's interactivity. You can visit this repository for reference [FragmentsTransitionsDemo](https://github.com/sheecodes/FragmentsTransitionsDemo).
 
 Happy learning!
 
