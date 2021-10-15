@@ -1,3 +1,20 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-create-a-url-shortener-with-javascript/
+title:  How to create a URL shortener in Javascript
+description: This tutorial explains how URL shorteners function and how to create a URL shortener using PHP and MySQL
+author: judy-nduati
+date: 2021-10-15T00:00:00-03:22
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/how-to-create-a-url-shortener-with-javascript/hero.jpg
+    alt: How to create a URL shortener in Javascript
+---
+
 In this project, we're going to build a Uniform Resource Locator (URL) shortener service. I am pretty sure that most of you have heard of [bit.ly](https://bitly.com/), [goo.gl.](https://developers.googleblog.com/2018/03/transitioning-google-url-shortener.html), and other URL shorteners. With URL shorteners, you can shorten long URLs so that it is easy to share them.
 
 In this tutorial,  you will build a service that does this. We'll be building the API that shortens long links using JavaScript, PHP, and MySQL databases.
@@ -323,4 +340,4 @@ To summarize, we have learned:
 - How a URL shortener works.
 - How to build a URL shortener using JavaScript, PHP, and MySQL.
 
-Go through [how to build a URL shortener using Node.js, Express, and Mongo DB](https://www.section.io/engineering-education/nodejs-url-shortener/)
+You can also go through [how to build a URL shortener using Node.js, Express, and Mongo DB](https://www.section.io/engineering-education/nodejs-url-shortener/)
