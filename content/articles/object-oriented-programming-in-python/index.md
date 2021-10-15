@@ -14,17 +14,19 @@ images:
       alt: OOP Python example image
 ---
 
-Many modern languages like Java, C# is Object-Oriented Languages or have support for using the Object-Oriented Programming (OOP) paradigm, Python is not exempted. In this tutorial, you would learn how to use OOP with Python.
+Many modern languages like Java, C# are Object-Oriented or have support for using the Object-oriented programming (OOP) paradigms. Python is not exempted.
+
+In this tutorial, you would learn how to use OOP with Python.
 
 ### Prerequisites
+Python should be installed on your local machine. I recommend at least from version `3.7` or newer.
 
-Basic knowledge of Python is required. Also, python should be installed on your local machine, I recommend at least from version `3.7` upwards.
+Some knowledge of Python is also required.
 
 ### Project Overview
+For this tutorial, this would be the project we'll be using to explain most of the OOP principles found in the Python programming language.
 
-For this tutorial, this would be the project we'll be using to explain most of the OOP principles found in the Python Programming Language.
-
-```py
+```python
 class University():
 
     def __init__(self, location):
@@ -39,7 +41,6 @@ class University():
     def sayHello(self):
         print("Hello World")
 
-
 class College(University):
     def __init__(self, location, founded):
         self.founded = founded
@@ -50,10 +51,9 @@ class College(University):
 ```
 
 ### Class Definition
+A class can be referred to as the blueprint for an object. It serves as the underlying structure from which we can build an object. From the example above given in the project overview, we have a class with the name `University`. From this class, we can then create separate objects from it.
 
-A class can be referred to as the blueprint of an object. It serves as the underlying framework from which we can build an object. From the example above given in the project overview, we have a class with the name `University`. From this class, we can then create separate objects from it.
-
-```py
+```python
 class University():  # creating a class (class definition)
     pass
 
@@ -62,15 +62,14 @@ Harvard = University()
 MIT = University()
 ```
 
-Right now, the class is empty, however, the power of using techniques like this is when we start adding attributes and methods to our class, which we'll consider in the next section.
+Right now, the class is empty. However, the power of using techniques like this will be seen when we start adding attributes and methods to our class.
 
-### Attributes and Method
-
+### Attributes and Methods
 Attributes can serve as properties for a given class. For example, our `University` class can have several attributes that we can use to identify a University (name, founded, location).
 
 In addition, methods can serve as functions for a given class. And a function is used to perform a particular task repeatedly.
 
-```py
+```python
 class University():
 
     # Attributes
@@ -86,11 +85,11 @@ class University():
 1. We added three attributes to our `University` class (name, founded, and location).
 2. We also added a method called `sayHello` to the `University class`.
 
-> We can also pass attributes inside the method
+> We can also pass attributes inside the method.
 
 Let's create two objects from the class `University`.
 
-```py
+```python
 Harvard = University()
 Cambridge = University()
 
@@ -103,19 +102,18 @@ Harvard.sayHello()
 
 __Output:__
 
-```py
+```
 United Kingdom
 United Kingdom
 Hello World
 ```
 
-Notice that by printing the `location`, it prints out `United Kingdom` for both objects. This is quite limited, `Harvard` is not located in `United Kingdom`, it would be nice if we could uniquely give an attribute to each object of a class. This can be possible using the `__init__` method which we'll be considering in the next section. 
+Notice that by printing the `location`, it prints out `United Kingdom` for both objects. This is quite limited, `Harvard` is not located in `United Kingdom`. It would be nice if we could uniquely give an attribute to each object of a class. This can be possible using the `__init__` method which we'll be considering in the next section. 
 
-### The __init__() Method
-
+### The \__init__() Method
 The `__init__` method is used to instantiate an object with unique attributes, the first parameter inside this method must start with a `self` keyword. This method is called immediately a new object is created.
 
-```py
+```python
 class University():
 
     def __init__(self, location):
@@ -130,7 +128,7 @@ print(Cambridge.location)
 
 __Output:__
 
-```py
+```
 United States
 United Kingdom
 ```
@@ -138,10 +136,9 @@ United Kingdom
 Using the `__init__` method, each object we create has its own unique attribute. However, we have to pass this attribute inside the object while creating it, as seen above.
 
 ### Getters and setters
-
 The recommended way of accessing and modifying attributes or properties in an object is by using `getters` and `setters`. In this section, we'll be discussing them with examples.
 
-```py
+```python
 class University():
 
     def __init__(self, location):
@@ -163,7 +160,9 @@ class University():
 1. We created a method called `getName`. This method serves as a `getter` method in accessing the location attribute from an object.
 2. We created a method called `setName`. This method serves as a `setter` method in modifying the location attribute from an object.
 
-```py
+We can now create two objects from the class `University`.
+
+```python
 Harvard = University("United States")
 
 Harvard.getLocation()
@@ -179,12 +178,13 @@ Africa
 ```
 
 ### Inheritance
+Inheritance is a very fundamental concept that makes using the Object-oriented programming approach very powerful. The basic ideology about inheritance is that we have a **base** or **parent** class, and another class which we usually refer to as a **child** or **derived** class can thereby inherit some properties and methods from the base class.
 
-Inheritance is a very fundamental concept that makes using the Object-Oriented Programming approach very powerful. The basic ideology about inheritance is that we have a __base__ or __parent__ class, and another class which we usually refer to as a __child__ or __derived__ class can thereby inherit some properties and methods from the base class. 
+This is very useful if the child class shares some characteristics with the parent class.
 
-This is very useful if the child class shares some characteristics with the parent class. For instance:
+For instance:
 
-```py
+```python
 class University():
 
     def __init__(self, location):
@@ -201,17 +201,16 @@ class College(University):
     def __init__(self, location, founded):
         self.founded = founded
         super().__init__(location)
-```
 
-```py
+
 college_of_medicine = College('Africa', '1980')
 
 college_of_medicine.getLocation()
 ```
 
-__Output:__
+**Output:**
 
-```py
+```
 Africa
 ```
 
@@ -221,10 +220,9 @@ Africa
 2. Take note of the `super` method, this is very important when we want to have access to the attributes of the parent class from the child class.
 
 ### Method Overriding
-
 The child class in retrospect can also have things unique to it, therefore we can also override the parent method either to modify it or completely change it.
 
-```py
+```python
 class University():
 
     def __init__(self, location):
@@ -247,9 +245,8 @@ class College(University):
 
     def sayHello(self):
         print("Hello")
-```
 
-```py
+
 college_of_medicine = College('Africa', '1980')
 
 college_of_medicine.sayHello()
@@ -267,7 +264,7 @@ Hello
 
 ### Conclusion
 
-In this tutorial, you were introduced to the world of Object-Oriented Programming in Python. Concepts covered included `attributes`, `methods`, `inheritance`, `getters` and `setters` among others.
+In this tutorial, you were introduced to the world of Object-oriented programming in Python. The concepts covered included `attributes`, `methods`, `inheritance`, `getters` and `setters` among others.
 
 Happy coding!
 
