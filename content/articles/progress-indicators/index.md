@@ -49,7 +49,7 @@ Add the following snippet below the head tag of the `index.html` file.
 
 To cut on the article's length, I have uploaded the `CSS` file [here](https://gist.github.com/diannesandra/3e1bfb5dd1358d0eae20dbf598222f80). It describes all the components of the webpage, and here is how the page looks after applying the CSS styling.
 
-![CSS styling result](webpage-style.png)
+![CSS styling result](/engineering-education/progress-indicators/webpage-style.png)
 
 The webpage has a form that defines a file to be uploaded. When the area is clicked, the system allows the user to select the file to upload, and once the file is selected, the system uploads the file to local storage, indicating the level of completion as the progress bar is filled with a green colour.
 
@@ -94,7 +94,7 @@ fileToUpload.onchange = ({target})=>{
     }
 }
 ```
-![Selecting file](select-file.png)
+![Selecting file](/engineering-education/progress-indicators/select-file.png)
 
 #### The upload file function
 Here is where most of the work is done. First, since we already have our file to upload, we need to find a way of calculating the real-time uploaded size and translate that math to a progressive live update on the user interface. 
@@ -143,7 +143,7 @@ uploadedFilesArea.classList.add("onprogress");
 uploadProgressArea.innerHTML = progressHTML;
 ```
 
-![Uploading The file](upload-progress.png)
+![Uploading The file](/engineering-education/progress-indicators/upload-progress.png)
 
 When the entire file has been uploaded, we check and update the user webpage by showing a tick icon and setting the `ploadProgressArea` to empty. This tick tells the user that the upload process is complete, and he can proceed to the following action.
 
@@ -168,7 +168,7 @@ if(loaded == total){
     uploadedFilesArea.insertAdjacentHTML("afterbegin", uploadedHTML);
 }
 ```
-![progress finished check](progress-complete.png)
+![progress finished check](/engineering-education/progress-indicators/progress-complete.png)
 
 ### Applications of progress indicators
 Progress indicators have a wide range of applications in a webpage. 
