@@ -22,7 +22,7 @@ Like I said earlier, Knox solves some problems found with the built-in `TokenAut
 2. Knox provides an encrypted form of tokens before storing them in the database. This feature will not allow any hacker to have access even if the database was stolen.
 3. Expiration of tokens is also a key feature of Knox which was not built in DRF.
 
-If you are curious to know more about all these benefits, head on to `https://james1345.github.io/django-rest-knox/`.
+If you are curious to know more about all these benefits, head on to [Django-Knox](/https://james1345.github.io/django-rest-knox/).
 
 ### Designing Rest API With Class-Based Views
 
@@ -308,7 +308,7 @@ And also we are using the built-in `LogoutView` for logout of users if requested
 
 ### Postman Testing
 
-If you already have a postman, go ahead and test the API following the procedures below. But if you don't have it installed on your local machine, head on to ![Download Postman](/https://www.postman.com/downloads/).and download.
+If you already have a postman, go ahead and test the API following the procedures below. But if you don't have it installed on your local machine [Download Postman](/https://www.postman.com/downloads/).
 
 Remember that the server has to be running before you can make HTTP calls to the endpoints. For that reason, we will be starting the server with the command below.
 
@@ -338,6 +338,6 @@ The response will come with a token that will be used to authorize the user when
 
 #### Conclusion
 
-In this tutorial, I covered the detail about the Django-Knox. I was able to demonstrate the token wise of the framework by building the rest API endpoints that are based on user authentication and authorization. Seek more by checking out the documentation of the framework here![Django-Knox](/https://james1345.github.io/django-rest-knox/).
+In this tutorial, I covered the detail about the Django-Knox. I was able to demonstrate the token wise of the framework by building the rest API endpoints that are based on user authentication and authorization. Seek more by checking out the documentation of the framework here [Django-Knox](/https://james1345.github.io/django-rest-knox/).
 
 Happy Coding!!
