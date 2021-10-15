@@ -5,8 +5,8 @@ published: true
 url: /how-to-build-a-real-time-location-tracker-using-leaflet-js/
 title: How to build a real time location tracker using leaflet.js
 description: This tutorial guides readers on how to build a real-time location tracker using the HTML5 geolocation API and leaflet.js to visualize results.
-author: femi-ige-muyiwa
-date: 2021-09-29T00:00:00-12:50
+author: femi-ige-muyiwa-oladele
+date: 2021-10-15T00:00:00-12:30
 topics: []
 excerpt_separator: <!--more-->
 images:
