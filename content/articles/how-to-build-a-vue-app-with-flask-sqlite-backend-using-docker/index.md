@@ -1,10 +1,27 @@
-[Vue.js](https://v3.vuejs.org) is a Javascript frontend framework used to build web user interfaces. Vue is commonly used to build single page based application that runs on the client-side. Nevertheless, Vue can be used to build a full-stack web application with other backend technologies such as Node.js and Flask coming into play. This is done by making HTTP requests to a server and populating them in a Vue-based interface.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-build-a-vue-app-with-flask-sqlite-backend-using-docker/
+title: How to set up and Build a Vue app with a Flask backend using Docker
+description: In this article, we will be looking at how to build a Vue app with a Flask backend using Docker. We will build a simple Vue app that will get data from a Flask backend.
+author: moses-m
+date: 2021-10-15T00:00:00-16:00
+topics: [Containers, Languages]
+excerpt_separator: <!--more-->
+images:
+ - url: /engineering-education/how-to-build-a-vue-app-with-flask-sqlite-backend-using-docker/hero.png
+   alt: Docker Flask Notes Vue Image hero
+---
+[Vue.js](https://v3.vuejs.org) is a Javascript frontend framework used to build web user interfaces. Vue is commonly used to build single page based application that runs on the client-side.
+<!--more-->
+Nevertheless, Vue can be used to build a full-stack web application with other backend technologies such as Node.js and Flask coming into play. This is done by making HTTP requests to a server and populating them in a Vue-based interface.
 
 Vue is great due to its well-outlined features. This includes the ability to use virtual DOM, easy integration with other technologies such as Node.js and Python, and high run time performance.
 
 On the other side, Flask is a micro web application-based framework written in Python to manipulate server-side-based data. Flask is designed to make getting started quick and easy with the ability to scale up to complex applications.
 
-When building a full-stack application, Vue and Flask can be used and run as a single application. This gives you the ability to manipulate web page appearance, and to process server-based data using Flask. When running such different technologies together, it can be become extensive to always set local environments to run the full-stack application.
+When building a full-stack application, Vue and Flask can be used and run as a single application. This gives you the ability to manipulate the web page appearance, and to process server-based data using Flask. When running such different technologies together, it can be become extensive to always set local environments to run the full-stack application.
 
 As a result, Docker plays a very important role. It allows you to build such an application and run them virtually through containers. This means any local environment doesn't affect how your application runs. Docker will spin up Vue and Flask, containerize them and run them as one. All you have to do is set simple instructions that explain the different dependencies that the application needs to run. This includes the version of Python and the libraries you want to run Flask.
 
@@ -13,15 +30,13 @@ In this guide, we will build an application using Vue and Flask and run it using
 ### Prerequisites
 To follow along in this article, it is important to have the following:
 
-- [Python](https://www.python.org/) installed on your computer.
-- Some working knowledge with Flask.
-- [Node.js](https://nodejs.org/en/) installed on your computer.
-- Some working knowledge with Vue.js.
-- [Docker](/engineering-education/docker-concepts/) installed on your computer.
+1. [Python](https://www.python.org/) installed on your computer.
+2. Some working knowledge with Flask.
+3. [Node.js](https://nodejs.org/en/) installed on your computer.
+4. Some working knowledge with Vue.js.
+5. [Docker](/engineering-education/docker-concepts/) installed on your computer.
 
 ### Overview
-- [Prerequisites](#prerequisites)
-- [Overview](#overview)
 - [Setting up the server-side environment using Flask](#setting-up-the-server-side-environment-using-flask)
   - [Installing the packages](#installing-the-packages)
   - [Setting up the server-side application Using Flask](#setting-up-the-server-side-application-using-flask)
@@ -37,10 +52,7 @@ To follow along in this article, it is important to have the following:
   - [Setting up the Vue frontend application](#setting-up-the-vue-frontend-application)
   - [Todos list cards](#todos-list-cards)
   - [Add a todo form](#add-a-todo-form)
-  - [The Html](#the-html)
-  - [The JavaScript](#the-javascript)
   - [Add an edit todo form](#add-an-edit-todo-form)
-  - [The JavaScript](#the-javascript-1)
 - [Dockerizing the application](#dockerizing-the-application)
   - [Dockerize the Flask API](#dockerize-the-flask-api)
   - [Dockerize the Vue app](#dockerize-the-vue-app)
@@ -115,7 +127,7 @@ from flask_marshmallow import Marshmallow
 import os
 ```
 
-Then Set up the base directory for the application:
+Then set up the base directory for the application:
 
 ```python
 basedir = os.path.abspath(os.path.dirname(__file__))
@@ -377,11 +389,11 @@ In `src/App.vue` , edit the `<template>` as follows:
 
 ```html
 <div id="app">
-
     <head>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
         <title>Todos</title>
     </head>
+
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="/"> Todos app </a>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -395,6 +407,7 @@ In `src/App.vue` , edit the `<template>` as follows:
             </ul>
         </div>
     </nav>
+
     <router-view> </router-view>
 </div>
 ```
@@ -958,7 +971,7 @@ In the `docker-compose.yml` file, add the following:
 ```yml
 version: '3.8'
 
-services:        
+services:
     flask-todos-api:
         build: ./flask-todos-rest-api
         ports: 
@@ -1003,3 +1016,6 @@ In this article, we have created a Vue.js app that consumes a restful Flask API.
 - [How to Call a Vue Method on Page Load - Michael Thiessen](https://michaelnthiessen.com/call-method-on-page-load)
 - [Build your python image using docker - Docker docs](https://docs.docker.com/language/python/build-images/)
 - [Dockerizing a vue app - Vue.js Cookbook](https://vuejs.org/v2/cookbook/dockerize-vuejs-app.html)
+
+---
+Peer Review Contributions by: [Geoffrey Mungai](/engineering-education/authors/geoffrey-mungai/)
