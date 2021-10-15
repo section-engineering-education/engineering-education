@@ -1,8 +1,6 @@
 ![hero image](/hero-image.png)
  
-Title :
-
-Integrating Firebase Notifications in React Native
+Title : Integrating Firebase Notifications in React Native
 
 ### Introduction:
 
@@ -402,7 +400,7 @@ First time Author Details:
 
 ```
 
-title : Gautham Vijayan 
+title : Gautham
 type : authors
 Twitter :  https://twitter.com/GauthamVijay495
 Linkedin : https://www.linkedin.com/in/gautham-vijayan
