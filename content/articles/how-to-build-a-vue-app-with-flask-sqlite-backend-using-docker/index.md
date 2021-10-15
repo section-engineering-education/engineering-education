@@ -1,12 +1,12 @@
-Vue is a Javascript frontend framework used to build web user interfaces. Vue is commonly used to build single page based application that runs on the client-side. Nevertheless, Vue can be used to build a full-stack web application with other backend technologies such as Node.js and Flask coming into play. This allows developers to make HTTP requests to a server and populate them in a Vue-based interface.
+[Vue.js](https://v3.vuejs.org) is a Javascript frontend framework used to build web user interfaces. Vue is commonly used to build single page based application that runs on the client-side. Nevertheless, Vue can be used to build a full-stack web application with other backend technologies such as Node.js and Flask coming into play. This is done by making HTTP requests to a server and populating them in a Vue-based interface.
 
 Vue is great due to its well-outlined features. This includes the ability to use virtual DOM, easy integration with other technologies such as Node.js and Python, and high run time performance.
 
 On the other side, Flask is a micro web application-based framework written in Python to manipulate server-side-based data. Flask is designed to make getting started quick and easy with the ability to scale up to complex applications.
 
-When building a full-stack application, Vue and Flask can be used and run as a single application. This gives you the ability to manipulate web page appearance, and you process server-based data using Flask. When running such different technologies together, it can be become extensive to always set local environments to spin and run that single full-stack application.
+When building a full-stack application, Vue and Flask can be used and run as a single application. This gives you the ability to manipulate web page appearance, and to process server-based data using Flask. When running such different technologies together, it can be become extensive to always set local environments to run the full-stack application.
 
-As a result, Docker plays a very important role. It allows you to build such an application and run the virtually through containers. This means any local environment doesn't affect how your application runs. Docker will spin up Vue and Flask, containerize them and run them as one. All you have to do is set simple instructions that explain the different dependencies that the application needs to run. This includes the version of Python you want to run Flask and libraries and the technologies you want to use.
+As a result, Docker plays a very important role. It allows you to build such an application and run them virtually through containers. This means any local environment doesn't affect how your application runs. Docker will spin up Vue and Flask, containerize them and run them as one. All you have to do is set simple instructions that explain the different dependencies that the application needs to run. This includes the version of Python and the libraries you want to run Flask.
 
 In this guide, we will build an application using Vue and Flask and run it using Docker. We will use SQLite as the application database.
 
@@ -20,8 +20,6 @@ To follow along in this article, it is important to have the following:
 - [Docker](/engineering-education/docker-concepts/) installed on your computer.
 
 ### Overview
-- [Prerequisites](#prerequisites)
-- [Overview](#overview)
 - [Setting up the server-side environment using Flask](#setting-up-the-server-side-environment-using-flask)
   - [Installing the packages](#installing-the-packages)
   - [Setting up the server-side application Using Flask](#setting-up-the-server-side-application-using-flask)
@@ -80,7 +78,9 @@ python -m pipenv install flask flask-sqlalchemy flask-marshmallow marshmallow-sq
 ```
 
 #### Setting up the server-side application Using Flask
-To setup, the server-side application, create an `app.py` file inside your `flask-todos-rest-api` folder. In this file, set up a basic flask app by adding the following lines of code.
+To setup, the server-side application, create an `app.py` file inside your `flask-todos-rest-api` folder. 
+
+In this file, set up a basic flask app by adding the following lines of code.
 
 ```python
 from flask import Flask
@@ -117,7 +117,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir,'db.
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 ```
 
-Since we are using the Flask-sqlalchemy and Flask-marshmallow, we can now set `SQLAlchemy` to initialize the database `Marshmallow` to initialize marshmallow as shown below.
+Since we are using Flask-sqlalchemy and Flask-marshmallow, we can now set `SQLAlchemy` to initialize the database `Marshmallow` to initialize marshmallow as shown below.
 
 ```python
 db = SQLAlchemy(app)
@@ -191,7 +191,7 @@ from flask_cors import CORS,cross_origin
 
 `request` will be used to get the payload (data sent), whereas `jsonify` will be used to return JSON data. `CORS` and `cross_origin` for setting up the access policy.
 
-Then add Cors configuration to handle cross_origins coming in to consume this API.
+Then add CORS configuration to handle cross-origins coming in to consume this API.
 
 ```python
 CORS(app,resources={r"/api": {"origins": "*"}})
@@ -201,7 +201,8 @@ app.config['CORS_HEADERS'] = 'Content-Type'
 From above, we accept all origins hitting the `/api` endpoint from which we will expose the API.
 
 Let's now add all the necessary routes to handle the CRUD operations.
-- Creating a todo: the following route creates a todo:
+#### Creating a todo
+The following route creates a todo:
 
 ```python
 @app.route('/api/todo', methods=['POST'])
@@ -224,7 +225,8 @@ def add_todo():
 
 From the above route, we accept all origins, receive the todo's title and description from the payload, save it to the database, and return the saved todo.
 
-- Getting all todos: the following route gets all todos.
+#### Getting all todos
+The following route gets all todos.
 
 ```python
 # Get all todos
@@ -241,7 +243,8 @@ def get_todos():
 
 From above, we are accepting all origins, fetching all saved todos, and returning them.
 
-- Getting a single route: The following route fetches a single route.
+#### Getting a single route
+The following route fetches a single route.
 
 ```python
 # Get a single todo
@@ -256,7 +259,8 @@ def get_todo(id):
 
 From above, we accept the todo's id from the URL, accept all origins, get that specific todo, and return it.
 
-- Updating a todo route: The following route updates a todo.
+#### Updating a todo route
+The following route updates a todo.
 
 ```python
 # update a todo
@@ -282,7 +286,8 @@ def update_todo(id):
 
 From above, we accept the todo's id to be updated, accept all origins, get the specific todo and the data, set the new data, save to the database, and return the saved database.
 
-- Deleting a todo route: The following route deletes a todo.
+#### Deleting a todo route
+The following route deletes a todo.
 
 ```python
 # Delete a todo
@@ -347,7 +352,7 @@ npm install axios vue-router
 #### Setting up the Vue frontend application
 After installing the packages, we need to configure them in the `src/main.js` as follows:
 
-```js
+```javascript
 import axios from 'axios'
 import VueRouter from 'vue-router'
 
@@ -356,7 +361,7 @@ Vue.prototype.$http = axios;
 Vue.use(VueRouter);
 ```
 
-In `src/App.vue`, edit the HTML as follows:
+In `src/App.vue`, edit the `<template>` as follows:
 
 ```html
 <div id="app">
@@ -390,7 +395,7 @@ In `src/App.vue`, edit the HTML as follows:
 
 We are externally linking the bootstrap CSS to handle our styling, adding a simple navigation bar, and adding the dynamic content area while navigating different pages.
 
-- Edit the JavaScript as follows:
+Edit the JavaScript as follows:
 
 ```html
 <script>
@@ -407,7 +412,7 @@ export default {
 
 From above, we are setting the dynamic classes for the navigation bar.
 
-- Edit the style as follows:
+Edit the style as follows:
 
 ```html
 <style>
@@ -464,13 +469,12 @@ In the `src/components` folder, create a `Todos.vue` file. In the file, add the 
         </div>
     </div>
     </div>
-
 </template>
 ```
 
-From above, we are checking if we have todos; if we don't, we output a message. Otherwise, we loop through them, outputting each of them.
+From above, we are checking if we have todos; if we don't, we show a message. Otherwise, we loop through them, outputting each of them.
 
-- Add the following JavaScript:
+Add the following JavaScript:
 
 ```html
 <script>
@@ -528,7 +532,7 @@ created(){
 
 From above, we export the todos fetched when the component is loaded, the functionality of editing and deleting a todo.
 
-- Add the following styles
+Add the following styles:
 
 ```css
 <style scoped>
@@ -564,9 +568,9 @@ From above, we export the todos fetched when the component is loaded, the functi
 The above are simple styles to add to our todo component.
 
 #### Add a todo form
-Create an `AddTodo.vue` file and add in the following components.
+Create an `AddTodo.vue` file and add the following components.
 
-- The HTML
+#### The Html
 
 ```html
 <template>
@@ -602,7 +606,7 @@ Create an `AddTodo.vue` file and add in the following components.
 
 From above, we are showing a form with fields populated from JavaScript.
 
-- The JavaScript
+#### The JavaScript
 
 ```html
 <script>
@@ -698,7 +702,7 @@ Create an `EditTodo.vue` file and add the following.
 
 Similar to the `add todo` form, we are outputting an `edit todo` form that is pre-populated with data from the JavaScript for the particular todo to be edited.
 
-- The JavaScript
+#### The JavaScript
 
 ```html
 <script>
@@ -785,7 +789,7 @@ From above we are, exporting the todo data, getting the todo when the page is lo
 
 After setting up the components, we need to handle the routing into various pages. To do this, we will add the following in the `src/main.js` file:
 
-First import the `AddTodo`, `EditTodo` and `Todos` componets.
+First import the `AddTodo`, `EditTodo` and `Todos` components.
 
 ```javascript
 import AddTodo from "./components/AddTodo"
@@ -840,7 +844,9 @@ To dockerize the application we have built, we will follow the following steps:
 #### Dockerize the Flask API
 To dockerize the API, create a Dockerfile, and a `.dockerignore` file in the API folder. The Dockerfile will host the instructions for creating the image, whereas the `.dockerignore` file will host the files to be ignored when copying to the image.
 
-For the Flask application to work within Docker, we need to make sure all the packages we have used are available and accessible by the containerized REST API. To make these packages accessible by Docker, we will import them to a `requirements.txt` file. Docker will then run this file and install the packages within the container that will run the API.
+For the Flask application to work within Docker, we need to make sure all the packages we have used are available and accessible by the containerized REST API. 
+
+To make these packages accessible by Docker, we will import them to a `requirements.txt` file. Docker will then run this file and install the packages within the container that will run the API.
 
 In your `flask-todos-rest-api` directory, run this command:
 
@@ -950,7 +956,7 @@ services:
 
 From above, we define the version of `docker-compose` and set up the two services. For each service, we define the build (folder hosting the Dockerfile) and the ports (Where the project is to run on). So that the services do not collide on parallel ports, the `client-side` will run on port `8080`.
 
-#### Build the docker image
+#### Build the Docker image
 To build the docker image, from the location of the `docker-compose.yml` file, run the following:
 
 ```bash
@@ -959,25 +965,25 @@ docker-compose up -d --build
 
 The above command will build the docker image.
 
-#### Start the docker container
+#### Start the Docker container
 To start the docker container from the same location as in the previous step, run the following command:
 
 ```bash
 docker-compose up
 ```
 
-The above command will start the two services. After the two services are started, proceed to `http://localhost:8080` to interact with the app.
+The above command will start the two services. After the two services are started, proceed to <http://localhost:8080> to interact with the app.
 
 After interacting with the app, You can stop the container by pressing `CRTL + C`. You can also share the docker image with friends to showcase what you have built.
 
 ### Conclusion
-In this article, we have created a Vue JS app that consumes a restful Flask API. To widen your knowledge on the tools used throughout the article, the following resources are recommended:
+In this article, we have created a Vue.js app that consumes a restful Flask API. To widen your knowledge on the tools used throughout the article, the following resources are recommended:
 
-- [Flask-sqlalchemy](https://flask-sqlalchemy.palletsprojects.com/en/2.x/)
-- [Flask-marshmallow](https://flask-marshmallow.readthedocs.io/en/latest/)
-- [Marshmallow-sqlalchemy](https://marshmallow-sqlalchemy.readthedocs.io/en/latest/)
-- [Flask-cors](https://flask-cors.readthedocs.io/en/latest/)
-- [Vue-router](https://router.vuejs.org/installation.html)
-- [data fetching in vue](https://michaelnthiessen.com/call-method-on-page-load)
-- [Build your python image using docker](https://docs.docker.com/language/python/build-images/)
-- [Dockerizing a vue app](https://vuejs.org/v2/cookbook/dockerize-vuejs-app.html)
+- [Flask-sqlalchemy docs](https://flask-sqlalchemy.palletsprojects.com/en/2.x/)
+- [Flask-marshmallow docs](https://flask-marshmallow.readthedocs.io/en/latest/)
+- [Marshmallow-sqlalchemy docs](https://marshmallow-sqlalchemy.readthedocs.io/en/latest/)
+- [Flask-cors docs](https://flask-cors.readthedocs.io/en/latest/)
+- [Vue-router docs](https://router.vuejs.org/installation.html)
+- [How to Call a Vue Method on Page Load - Michael Thiessen](https://michaelnthiessen.com/call-method-on-page-load)
+- [Build your python image using docker - Docker docs](https://docs.docker.com/language/python/build-images/)
+- [Dockerizing a vue app - Vue.js Cookbook](https://vuejs.org/v2/cookbook/dockerize-vuejs-app.html)
