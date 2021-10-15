@@ -6,7 +6,7 @@ url: /springboot-antmatchers/
 title: Getting Started with Spring Boot Security Antmatchers
 description: In this article, we will discuss how to restrict access to certain API endpoints depending on the user roles using Spring security antmatchers
 author: damilare-jolayemi
-date: 2021-10-15T00:00:00-00:00
+date: 2021-10-15T00:00:00-10:00
 topics: [API]
 excerpt_separator: <!--more-->
 images:
