@@ -22,10 +22,10 @@ In this tutorial, we will use [Plotly](https://plotly.com/) in Python for data v
 
 ### Prerequisites
 
-To understand this tutorial:
-
-- You need to have Python installed on your computer.
-- You need to use Jupyter Notebook or Google Colab. For this tutorial, we will be using Google Colab.
+To understand this tutorial You need to:
+- Have Python installed on your computer.
+- Use Jupyter Notebook or Google Colab. For this tutorial, we will be using Google Colab.
+- ```
 
 ### What is plotly?
 
