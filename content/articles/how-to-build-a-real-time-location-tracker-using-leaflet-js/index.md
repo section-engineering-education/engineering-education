@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /how-to-build-a-real-time-location-tracker-using-leaflet-js/
 title: How to build a real time location tracker using leaflet.js
-description: This tutorial teaches readers how to build a real-time location tracker using the HTML5 geolocation API and use the leaflet to visualize results.
+description: This tutorial guides readers on how to build a real-time location tracker using the HTML5 geolocation API and leaflet.js to visualize results.
 author: femi-ige-muyiwa
 date: 2021-09-29T00:00:00-12:50
 topics: []
@@ -14,7 +14,8 @@ images:
   - url: /engineering-education/how-to-build-a-real-time-location-tracker-using-leaflet-js/hero.jpg
     alt: How to build a real time location tracker using leaflet.js Hero Image
 ---
-**Geolocation** refers to the ID of the geographic location of a client or computing device employing an assortment of data collection systems. Most geolocation administrations use network routing addresses. Or, inward GPS devices to decide this location.  
+
+**Geolocation** refers to the ID of the geographic location of a client or computing device employing an assortment of data collection systems. Most geolocation administrations use network routing addresses or inward GPS devices to decide this location.  
 <!--more-->
 Geolocation is a device explicit API. It implies that programs or devices would need to support geolocation to use it through web applications. 
 
@@ -39,7 +40,7 @@ We will also guide the reader on how to add the location search plugin of leafle
 - Use the leaflet.js search plugin.
 
 ### Getting started
-#### Creating an `OSM layer`
+#### Creating an OSM layer
 An OpenStreetMap [OSM] layer is a collection of a free editable geographic database of the world. The sources include surveys and personal knowledge, street-level image data, and government data.
 
 According to [wiki](https://wiki.openstreetmap.org/wiki/Featured_tile_layers), there are several `OSM` tile layers. Tile layers are a collection of web-accessible tiles that reside on a server. The tiles are accessible by a direct URL request from the server.
@@ -62,7 +63,7 @@ Let's walk you through the processes:
 </html>
 ```
 
-- Then, we would import the `leaflet.js` JavaScript and CSS file using its unique content delivery network (CDN).
+- Then, we import the `leaflet.js` JavaScript and CSS file using its unique content delivery network (CDN).
 
 ```html
 <html lang="en">
@@ -88,7 +89,7 @@ Let's walk you through the processes:
 </html>
 ```
 
-- Next, we would create a `div` element with an `id` name. The `id` name can be any of your choice, but for the sake of this tutorial, we will use "map" as the `id` name.
+- Next, we create a `div` element with an `id` name. The `id` name can be any of your choice, but for the sake of this tutorial, we will use "map" as the `id` name.
 
 ```html
 <html lang="en">
@@ -115,7 +116,7 @@ Let's walk you through the processes:
 </html>
 ```
 
-- After doing the above, we will have created a container for the `OSM` layer. We have to style the container to prevent the map layer not showing.
+- After doing the above, we'll have created a container for the `OSM` layer. We have to style the container to prevent the map layer not showing.
 
 Next, we will create a style tag within our current code.
 
@@ -199,7 +200,7 @@ BASE
 </html>
 ```
 
-The above is our base layer and a visualization tool for other components to be added. For a better understanding, we will refer you to previous documentation on [leaflet.js](https://www.section.io/engineering-education/building-simple-maps-using-leaflet-js/).
+The above is our base layer and a visualization tool for other components to be added.
 
 #### Location search plugin
 According to the [Google maps platform](https://developers.google.com/maps/documentation/geocoding/overview), Geocoding is the process of converting addresses (like "1600 Amphitheatre Parkway, Mountain View, CA") into geographic coordinates (like latitude 37.423021 and longitude -122.083739). Which, you can use to place markers on a map or position the map. 
@@ -329,7 +330,7 @@ function getPosition(position) {
   );
 }
 ```
-The callback method `getCurrentPosition` gives the current geographic location of users. To view this information, we will "`console.log`" the function's argument.
+The callback method `getCurrentPosition` gives the current geographic location of users. To view this information, we will log the function's argument.
 
 The method `L.marker` embodies a marker object given a coordinate (longitude and latitude) while `L.circle` represents a circle object given a coordinate. And, an options object which contains the circle radius. 
 
@@ -429,10 +430,10 @@ Finally, bringing all these components together, we will have our final code as:
 
 If we run the above HTML code in our browser, we will have our tracker like the `gif` shown below:
 
-![Alt Text](/How-to-build-a-real-time-tracker-with-leaflet-js/sample.gif)
+![Alt Text](/engineering-education/how-to-build-a-real-time-location-tracker-using-leaflet-js/sample.gif)
 
 ### Conclusion
-In conclusion, we learned how to add tile layers, use the leaflet search plugin and use the HTML5 geolocation API. We also looked at how to bring all these components together to have a real-time tracker using leaflet.js.
+We learned how to add tile layers, use the leaflet search plugin and use the HTML5 geolocation API. We also looked at how to bring all these components together to have a real-time tracker using leaflet.js.
 
 You can find the entire code [here](https://github.com/muyiwexy/Leafletmap)
 
