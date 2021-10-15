@@ -20,23 +20,33 @@ To follow along in this article, it is important to have the following:
 - [Docker](/engineering-education/docker-concepts/) installed on your computer.
 
 ### Overview
+- [Prerequisites](#prerequisites)
+- [Overview](#overview)
 - [Setting up the server-side environment using Flask](#setting-up-the-server-side-environment-using-flask)
   - [Installing the packages](#installing-the-packages)
   - [Setting up the server-side application Using Flask](#setting-up-the-server-side-application-using-flask)
   - [Setting up the database](#setting-up-the-database)
   - [Set up the SQLite database and the tables](#set-up-the-sqlite-database-and-the-tables)
   - [Setting up routes](#setting-up-routes)
+  - [Creating a todo](#creating-a-todo)
+  - [Getting all todos](#getting-all-todos)
+  - [Getting a single route](#getting-a-single-route)
+  - [Updating a todo route](#updating-a-todo-route)
+  - [Deleting a todo route](#deleting-a-todo-route)
 - [Setting up the client-side using Vue](#setting-up-the-client-side-using-vue)
   - [Setting up the Vue frontend application](#setting-up-the-vue-frontend-application)
   - [Todos list cards](#todos-list-cards)
   - [Add a todo form](#add-a-todo-form)
-  - [Edit a todo form](#edit-a-todo-form)
+  - [The Html](#the-html)
+  - [The JavaScript](#the-javascript)
+  - [Add an dit todo form](#add-an-dit-todo-form)
+  - [The JavaScript](#the-javascript-1)
 - [Dockerizing the application](#dockerizing-the-application)
   - [Dockerize the Flask API](#dockerize-the-flask-api)
   - [Dockerize the Vue app](#dockerize-the-vue-app)
   - [Set up an overall docker-compose file](#set-up-an-overall-docker-compose-file)
-  - [Build the docker image](#build-the-docker-image)
-  - [Start the docker container](#start-the-docker-container)
+  - [Build the Docker image](#build-the-docker-image)
+  - [Start the Docker container](#start-the-docker-container)
 - [Conclusion](#conclusion)
 
 ### Setting up the server-side environment using Flask
@@ -365,31 +375,29 @@ In `src/App.vue`, edit the `<template>` as follows:
 
 ```html
 <div id="app">
-    <head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
     <title>Todos</title>
-    </head>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="/" >
-    Todos app
-    </a>
+  </head>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/"> Todos app </a>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mx-auto">
+      <ul class="navbar-nav mx-auto">
         <li class="nav-item" :class="home_class">
-            <a class="nav-link" href="/">
-            Home
-            </a>
+          <a class="nav-link" href="/"> Home </a>
         </li>
         <li class="nav-item" :class="add_todo_class">
-            <a class="nav-link" href="/add-todo">
-            Add todo
-            </a>
+          <a class="nav-link" href="/add-todo"> Add todo </a>
         </li>
-        </ul>
+      </ul>
     </div>
-    </nav>
-    <router-view>
-    </router-view>
+  </nav>
+  <router-view> </router-view>
 </div>
 ```
 
@@ -399,14 +407,14 @@ Edit the JavaScript as follows:
 
 ```html
 <script>
-export default {
-  data() {
-    return {
-      home_class: this.$route.path === "/" ? "active" : "",
-      add_todo_class: this.$route.path === "/add-todo" ? "active" : "",
-    };
-  },
-};
+  export default {
+    data() {
+      return {
+        home_class: this.$route.path === "/" ? "active" : "",
+        add_todo_class: this.$route.path === "/add-todo" ? "active" : "",
+      };
+    },
+  };
 </script>
 ```
 
@@ -433,42 +441,52 @@ In the `src/components` folder, create a `Todos.vue` file. In the file, add the 
 
 ```html
 <template>
-<div class="todos">
+  <div class="todos">
     <div class="container">
-    <div class="row">
+      <div class="row">
         <div class="col-sm-6 offset-sm-3">
+          <!-- Showing the added todos -->
 
-        <!-- Showing the added todos -->
-
-            <div v-if="todos.length == 0">
+          <div v-if="todos.length == 0">
             <div class="card mt-2 mb-2">
-                <div class="card-body">
-                    <h4 class="card-title">You do not have any saved todo</h4>
-                    <div class="d-flex justify-content-between">
-                    <a class="btn btn-info text-white" href="/add-todo">Add todo</a>
-                    </div>
+              <div class="card-body">
+                <h4 class="card-title">You do not have any saved todo</h4>
+                <div class="d-flex justify-content-between">
+                  <a class="btn btn-info text-white" href="/add-todo"
+                    >Add todo</a
+                  >
                 </div>
-                </div>
+              </div>
             </div>
-        
-            <div v-else-if="todos.length > 0" v-for="todo in todos" v-bind:key="todo.id">
-    
-                <div class="card mt-2 mb-2">
-                <div class="card-body">
-                    <h4 class="card-title">{{todo.title}}</h4>
-                    <p class="card-text">{{todo.description}}</p>
-                    <div class="d-flex justify-content-between">
-                    <button class="btn btn-info text-white" @click="editTodo(todo.id)">Edit</button>
-                    <button class="btn btn-danger" @click="deleteTodo(todo.id)">Delete</button>
-                    </div>
-                </div>
-                </div>
-            </div>
-            </div>
+          </div>
 
+          <div
+            v-else-if="todos.length > 0"
+            v-for="todo in todos"
+            v-bind:key="todo.id"
+          >
+            <div class="card mt-2 mb-2">
+              <div class="card-body">
+                <h4 class="card-title">{{todo.title}}</h4>
+                <p class="card-text">{{todo.description}}</p>
+                <div class="d-flex justify-content-between">
+                  <button
+                    class="btn btn-info text-white"
+                    @click="editTodo(todo.id)"
+                  >
+                    Edit
+                  </button>
+                  <button class="btn btn-danger" @click="deleteTodo(todo.id)">
+                    Delete
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-    </div>
+  </div>
 </template>
 ```
 
@@ -478,55 +496,55 @@ Add the following JavaScript:
 
 ```html
 <script>
-export default {
-
-// component data 
-data(){
-return {
-    todos:[]
-}
-},
-methods: {
-    // fetching todos
-    async getData(){
-    try{
-        const response = await this.$http.get('http://localhost:5000/api/todo');
-        this.todos = response.data;
-    }catch(error){
-        console.log(error);
-    }
+  export default {
+    // component data
+    data() {
+      return {
+        todos: [],
+      };
     },
-    // editing a todo
-    async editTodo(todoId){
-    // Push to the edit todo page
-    this.$router.push({
-        path: `/edit-todo/${todoId}`
-    });
-    return;
+    methods: {
+      // fetching todos
+      async getData() {
+        try {
+          const response = await this.$http.get(
+            "http://localhost:5000/api/todo"
+          );
+          this.todos = response.data;
+        } catch (error) {
+          console.log(error);
+        }
+      },
+      // editing a todo
+      async editTodo(todoId) {
+        // Push to the edit todo page
+        this.$router.push({
+          path: `/edit-todo/${todoId}`,
+        });
+        return;
+      },
+      // deleting a todo
+      async deleteTodo(todoId) {
+        // confirm with the user
+        let confirmation = confirm("Do you want to delete this todo?");
+
+        if (confirmation) {
+          try {
+            await this.$http.delete(`http://localhost:5000/api/todo/${todoId}`);
+            // refresh the todos
+            this.getData();
+          } catch (error) {
+            console.log(error);
+          }
+        }
+      },
     },
-    // deleting a todo
-    async deleteTodo(todoId){
-    
-    // confirm with the user
-    let confirmation = confirm("Do you want to delete this todo?");
 
-    if(confirmation){
-        try{
-        await this.$http.delete(`http://localhost:5000/api/todo/${todoId}`);
-        // refresh the todos
-        this.getData();
-    }catch(error){
-        console.log(error)
-    }
-    }      
-    }
-},
-
-// Fetch the todos on load
-created(){
-    this.getData();
-}
-}
+    // Fetch the todos on load
+    created() {
+      this.getData();
+    },
+  };
 </script>
 ```
 
@@ -536,32 +554,31 @@ Add the following styles:
 
 ```css
 <style scoped>
-    h3 {
-        margin: 40px 0 0;
-    }
+  h3 {
+    margin: 40px 0 0;
+  }
 
-    ul {
-        list-style-type: none;
-        padding: 0;
-    }
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
 
-    li {
-        display: inline-block;
+  li {
+    display: inline-block;
     margin: 0 10px;
-    }   
+  }
 
-    a {
+  a {
     color: #42b983;
-    }   
+  }
 
-    .card-body{
-        text-align: left;
-    }
+  .card-body {
+    text-align: left;
+  }
 
-    .todos {
-        margin-top: 10px;
-    }   
-
+  .todos {
+    margin-top: 10px;
+  }
 </style>
 ```
 
@@ -574,33 +591,56 @@ Create an `AddTodo.vue` file and add the following components.
 
 ```html
 <template>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-6 offset-sm-3">
-                <form id="todo-form" method="post" @submit.prevent="checkForm" novalidate="true">
-                <div v-if="todo.error" class="form-group mt-1">
-                    <div class="alert alert-danger">{{todo.error}}</div>
-                </div>
-                <div v-if="todo.message" class="form-group mt-1">
-                    <div class="alert alert-success">{{todo.message}}</div>
-                </div>
-                <div class="form-group mt-3" style="text-align:left">
-                    <label for="title" >Title</label>
-                    <input v-model="todo.title" type="text" class="form-control" id="title"  placeholder="Enter todo's title">
-                    <small id="titleHelp" class="form-text text-muted">E.g taking a walk.</small>
-                </div>
-                <div class="form-group mt-3" style="text-align:left">
-                    <label for="description" >Description</label>
-                    <textarea v-model="todo.description" class="form-control" name="description" id="description" placeholder="Todo's description"></textarea>
-                    <small id="descriptionHelp" class="form-text text-muted">E.g A long walk around the estate.</small>
-                </div>
-                <div class="form-group mt-3">
-                <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
-                </div>
-                </form>
-            </div>
-        </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 offset-sm-3">
+        <form
+          id="todo-form"
+          method="post"
+          @submit.prevent="checkForm"
+          novalidate="true"
+        >
+          <div v-if="todo.error" class="form-group mt-1">
+            <div class="alert alert-danger">{{todo.error}}</div>
+          </div>
+          <div v-if="todo.message" class="form-group mt-1">
+            <div class="alert alert-success">{{todo.message}}</div>
+          </div>
+          <div class="form-group mt-3" style="text-align: left">
+            <label for="title">Title</label>
+            <input
+              v-model="todo.title"
+              type="text"
+              class="form-control"
+              id="title"
+              placeholder="Enter todo's title"
+            />
+            <small id="titleHelp" class="form-text text-muted"
+              >E.g taking a walk.</small
+            >
+          </div>
+          <div class="form-group mt-3" style="text-align: left">
+            <label for="description">Description</label>
+            <textarea
+              v-model="todo.description"
+              class="form-control"
+              name="description"
+              id="description"
+              placeholder="Todo's description"
+            ></textarea>
+            <small id="descriptionHelp" class="form-text text-muted"
+              >E.g A long walk around the estate.</small
+            >
+          </div>
+          <div class="form-group mt-3">
+            <button type="submit" class="btn btn-primary btn-lg btn-block">
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
+  </div>
 </template>
 ```
 
@@ -610,93 +650,113 @@ From above, we are showing a form with fields populated from JavaScript.
 
 ```html
 <script>
-export default {
-data(){
-    return {
-    todo:{
-    title:"",
-    description:"",
-    error:null,
-    message:null
-    }
-    }
-},
-methods:{
-    
-    checkForm:async function(e){
-    if(this.todo.title && this.todo.description){
-
-        try {
-        // send data to the server
-        await this.$http.post("http://localhost:5000/api/todo",{
-            "title":this.todo.title,
-            "description":this.todo.description
+  export default {
+    data() {
+      return {
+        todo: {
+          title: "",
+          description: "",
+          error: null,
+          message: null,
         },
-        );
+      };
+    },
+    methods: {
+      checkForm: async function (e) {
+        if (this.todo.title && this.todo.description) {
+          try {
+            // send data to the server
+            await this.$http.post("http://localhost:5000/api/todo", {
+              title: this.todo.title,
+              description: this.todo.description,
+            });
 
-        //reset the fields
-        this.todo.title = "";
-        this.todo.description = "";
-        
-        // set the message
-        this.todo.message = "Todo added successfully";
+            //reset the fields
+            this.todo.title = "";
+            this.todo.description = "";
 
-        return;
-        }catch(error){
+            // set the message
+            this.todo.message = "Todo added successfully";
+
+            return;
+          } catch (error) {
             this.todo.error = error;
-        return;
+            return;
+          }
         }
-    }
-    this.todo.error = null;
-    if(!this.todo.title){
-        this.todo.error = "Title is required";
-        return;
-    }
-    if(!this.todo.description){
-        this.todo.error = "Description is required";
-        return;
-    }
-    e.preventDefault();
-    }
-}
-};
+        this.todo.error = null;
+        if (!this.todo.title) {
+          this.todo.error = "Title is required";
+          return;
+        }
+        if (!this.todo.description) {
+          this.todo.error = "Description is required";
+          return;
+        }
+        e.preventDefault();
+      },
+    },
+  };
 </script>
 ```
 
 From the above script, we are exporting data from the component and a method that handles validation and data submission on the submission of the form.
 
-#### Edit a todo form
+#### Add an edit todo form
 Create an `EditTodo.vue` file and add the following.
 
 ```html
 <template>
-<div class="container">
+  <div class="container">
     <div class="row">
-        <div class="col-sm-6 offset-sm-3">
-            <form id="todo-form" method="post" @submit.prevent="checkForm" novalidate="true">
-            <div v-if="todo.error" class="form-group mt-1">
-                <div class="alert alert-danger">{{todo.error}}</div>
-            </div>
-            <div v-if="todo.message" class="form-group mt-1">
-                <div class="alert alert-success">{{todo.message}}</div>
-            </div>
-            <div class="form-group mt-3" style="text-align:left">
-                <label for="title" >Title</label>
-                <input v-model="todo.title" type="text" class="form-control" id="title"  placeholder="Enter todo's title">
-                <small id="titleHelp" class="form-text text-muted">E.g taking a walk.</small>
-            </div>
-            <div class="form-group mt-3" style="text-align:left">
-                <label for="description" >Description</label>
-                <textarea v-model="todo.description" class="form-control" name="description" id="description" placeholder="Todo's description"></textarea>
-                <small id="descriptionHelp" class="form-text text-muted">E.g A long walk around the estate.</small>
-            </div>
-            <div class="form-group mt-3">
-            <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
-            </div>
-            </form>
-        </div>
+      <div class="col-sm-6 offset-sm-3">
+        <form
+          id="todo-form"
+          method="post"
+          @submit.prevent="checkForm"
+          novalidate="true"
+          >
+          <div v-if="todo.error" class="form-group mt-1">
+            <div class="alert alert-danger">{{todo.error}}</div>
+          </div>
+          <div v-if="todo.message" class="form-group mt-1">
+            <div class="alert alert-success">{{todo.message}}</div>
+          </div>
+          <div class="form-group mt-3" style="text-align: left">
+            <label for="title">Title</label>
+            <input
+              v-model="todo.title"
+              type="text"
+              class="form-control"
+              id="title"
+              placeholder="Enter todo's title"
+            />
+            <small id="titleHelp" class="form-text text-muted"
+              >E.g taking a walk.</small
+            >
+          </div>
+          <div class="form-group mt-3" style="text-align: left">
+            <label for="description">Description</label>
+            <textarea
+              v-model="todo.description"
+              class="form-control"
+              name="description"
+              id="description"
+              placeholder="Todo's description"
+            ></textarea>
+            <small id="descriptionHelp" class="form-text text-muted"
+              >E.g A long walk around the estate.</small
+            >
+          </div>
+          <div class="form-group mt-3">
+            <button type="submit" class="btn btn-primary btn-lg btn-block">
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
-</div>
+  </div>
 </template>
 ```
 
@@ -706,83 +766,84 @@ Similar to the `add todo` form, we are outputting an `edit todo` form that is pr
 
 ```html
 <script>
-export default {
+  export default {
+    data() {
+      return {
+        todo: {
+          loading: false,
+          title: "",
+          description: "",
+          error: null,
+          message: null,
+          id: this.$route.params.id,
+        },
+      };
+    },
 
- data(){
-     return {
-     todo:{
-     loading:false,
-     title:"",
-     description:"",
-     error:null,
-     message:null,
-     id:this.$route.params.id
-     }
-     }
- },
- 
- methods:{   
-     getTodo:async function (){
-         // the current todo id
-         let todoId = this.todo.id;
-         // start loading
-         this.todo.loading = true;
-         // get the todo
-         try {
-         let response = await this.$http.get(`http://localhost:5000/api/todo/${todoId}`);
-         this.todo.title = response.data.title;
-         this.todo.description = response.data.description;
-         this.todo.loading = false;
-         return;
-         }catch(error){
-             this.todo.error = error;
-             return;
-         }
-     },
-     checkForm:async function(e){
-     // Custom validation
-     if(this.todo.title && this.todo.description){
+    methods: {
+      getTodo: async function () {
+        // the current todo id
+        let todoId = this.todo.id;
+        // start loading
+        this.todo.loading = true;
+        // get the todo
+        try {
+          let response = await this.$http.get(
+            `http://localhost:5000/api/todo/${todoId}`
+          );
+          this.todo.title = response.data.title;
+          this.todo.description = response.data.description;
+          this.todo.loading = false;
+          return;
+        } catch (error) {
+          this.todo.error = error;
+          return;
+        }
+      },
+      checkForm: async function (e) {
+        // Custom validation
+        if (this.todo.title && this.todo.description) {
+          try {
+            // send data to the server
+            await this.$http.put(
+              `http://localhost:5000/api/todo/${this.todo.id}`,
+              {
+                title: this.todo.title,
+                description: this.todo.description,
+              }
+            );
 
-         try {
-         // send data to the server
-         await this.$http.put(`http://localhost:5000/api/todo/${this.todo.id}`,{
-             "title":this.todo.title,
-             "description":this.todo.description
-         },
-         );
+            //reset the fields
+            this.todo.title = "";
+            this.todo.description = "";
 
-         //reset the fields
-         this.todo.title = "";
-         this.todo.description = "";
-         
-         // set the message
-         this.todo.message = "Todo edited successfully";
+            // set the message
+            this.todo.message = "Todo edited successfully";
 
-         return;
-         }catch(error){
-             this.todo.error = error;
-         return;
-         }
-     }
-     this.todo.error = null;
-     if(!this.todo.title){
-         this.todo.error = "Title is required";
-         return;
-     }
-     if(!this.todo.description){
-         this.todo.error = "Description is required";
-         return;
-     }
-     e.preventDefault();
-     },
-
- },
- created(){
-     // Called on load
-     this.getTodo()
- },
- };
- </script>
+            return;
+          } catch (error) {
+            this.todo.error = error;
+            return;
+          }
+        }
+        this.todo.error = null;
+        if (!this.todo.title) {
+          this.todo.error = "Title is required";
+          return;
+        }
+        if (!this.todo.description) {
+          this.todo.error = "Description is required";
+          return;
+        }
+        e.preventDefault();
+      },
+    },
+    created() {
+      // Called on load
+      this.getTodo();
+    },
+  };
+</script>
 ```
 
 From above we are, exporting the todo data, getting the todo when the page is loaded, handling custom validation, and data submission of the edited todo.
@@ -802,19 +863,19 @@ Then create the various `VueRouter` instances to handle the above components.
 ```javascript
 // create a vuerouter instance
 const router = new VueRouter({
-mode: 'history',
-base: __dirname,
-routes: [
-    { path: '/', component: Todos,name:'home' },
-    { path: '/add-todo', component: AddTodo,name:'add-todo' },
-    { path: '/edit-todo/:id', component: EditTodo,name:'edit-todo' },
-]
+    mode: 'history',
+    base: __dirname,
+    routes: [
+        { path: '/', component: Todos, name: 'home' },
+        { path: '/add-todo', component: AddTodo, name: 'add-todo' },
+        { path: '/edit-todo/:id', component: EditTodo, name: 'edit-todo' },
+    ]
 });
 
 // pass the router to the app config
 new Vue({
-router:router,
-render: h => h(App),
+    router: router,
+    render: h => h(App),
 }).$mount('#app');
 ```
 
