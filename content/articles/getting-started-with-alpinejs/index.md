@@ -99,7 +99,7 @@ Alpine.start()
 ```
 
 At this point, your application should look just like this:
-![App design](app-design.png)
+![App design](/getting-started-with-alpinejs/app-design.png)
 Based on the design, we have a list of Todos, but to make these dynamic, we have to be able to create and store some todos, that may be then be iterated over as list items.
 
 ### Event Handling In Alpine.js
@@ -337,7 +337,7 @@ Having learned this, we can display our todos by iterating over the stored todos
 ```
 
 This is supposed to loop over the todos array, but the array is currently empty. So go on, enter some things you'd like to do later, and watch them show up.
-![Dynamic Todos List](dynamic-list.png)
+![Dynamic Todos List](/getting-started-with-alpinejs/dynamic-list.png)
 
 To make things more interesting, and for illustration purposes, we can add some todos to the array, so the application always has some todos from the start. Add three todos, with the three available statuses. Update the `ul` element to have these new todos.
 ```html
@@ -357,7 +357,7 @@ To make things more interesting, and for illustration purposes, we can add some 
 ] }">
 ```
 
-![Starting With Todos](starter.png)
+![Starting With Todos](/getting-started-with-alpinejs/starter.png)
 
 At this point, we're very close to the initial design, but we've not been able to get these todos to look different based on their status.
 
@@ -389,7 +389,7 @@ Having learned this, we can modify our list to set each item's background based 
 ```
 
 This example uses ternary operators to determine the appropriate Bootstrap class to use. This should result in a good-looking list like this:
-![Colorful Todo List](colorful.png)
+![Colorful Todo List](/getting-started-with-alpinejs/colorful.png)
 
 To wrap up this tutorial, we should be able to filter these items by their status, as listed at the top.
 
@@ -429,7 +429,7 @@ Then, a new directive, `x-init` is introduced. This directive lets you run some 
 
 Finally, the display is toggled with some transition using the `x-show` directive.
 
-![Completed Todos](completed.png)
+![Completed Todos](/getting-started-with-alpinejs/completed.png)
 
 ### Conclusion
 In this tutorial we have learned what Alpine.js is, and how to take advantage of its many features and directives to build fast, and lightweight single-page web applications easily.
