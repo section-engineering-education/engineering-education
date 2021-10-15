@@ -135,9 +135,7 @@ We see the distribution of wealth in the year 2007 using cloropleth projected on
 Please find all the code for this tutorial [here](https://colab.research.google.com/drive/1mz0GthxE2FektPON4ZnkSUvO8Otf1Ix1#scrollTo=X0vwv1kIXHBn) and see how the distribution of wealth compares by continent from the year 1952 to 2007.
 
 ### Wrapping up
-Using only a few lines of code, that's how easy it is to plot data in Python using plotly. Please go and find some datasets of your own and plot them using plotly. Have fun making them look really good while displaying the aspects of the data that you want to show.
-
-Happy coding!
+With a few lines of code, you can plot data in Python using plotly. I challenge you to find some datasets to try this with. Enjoy visualizing your data in a fun and impactful way. Happy coding!
 
 ### References
 - [Plotly](https://plotly.com/)
