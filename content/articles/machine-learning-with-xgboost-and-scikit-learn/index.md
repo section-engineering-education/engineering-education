@@ -1,5 +1,21 @@
-XGBoost is an open-source Python library that provides an optimizing gradient boosting framework to produce a highly efficient, flexible, and portable model.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /machine-learning-with-xgboost-and-scikit-learn/
+title: Machine Learning with XGBoost and Scikit-learn
+description: In this article, we discuss the concepts involved in building a machine learning model using XGBoost and Scikit-learn
+author: bravin-wasike
+date: 2021-10-16T00:00:00-19:00
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
 
+ - url: /engineering-education/machine-learning-with-xgboost-and-scikit-learn/hero.png
+   alt: XGBoost and Sklearn example image
+---
+XGBoost is an open-source Python library that provides an optimizing gradient boosting framework to produce a highly efficient, flexible, and portable model.
+<!--more-->
 In making predictions, XGBoost outperforms the other algorithms or machine learning frameworks due to increased accuracy and performance by combining several models into a single model to correct the errors made by existing models, at the end of the process we have a model with reduced errors.
 
 In this tutorial, we will use Scikit-learn to build our model, and then we improve the model accuracy and performance using XGBoost.
