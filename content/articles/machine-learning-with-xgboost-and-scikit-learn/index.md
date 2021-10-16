@@ -384,7 +384,7 @@ xgb_classifier.fit(X_train,y_train)
 
 The output is as shown:
 
-![XGBoost classifier](/engineering-education/machine-learning-with-xgboost-and-scikit-learn/XGBoost-classifierr.jpg)
+![XGBoost classifier](/engineering-education/machine-learning-with-xgboost-and-scikit-learn/XGBoost-classifier.jpg)
 
 XGBoost adds more parameters to the model, the added parameters are used to remove errors during training and increase the model performance.
 
