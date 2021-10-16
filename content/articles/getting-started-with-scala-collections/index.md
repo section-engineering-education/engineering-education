@@ -1,5 +1,5 @@
 
-There is nothing special about Scala collections other than that they act as a container for storing and processing lists of data.
+Collections are containers for things that contain an arbitrary number of elements.
 
 Both mutable and immutable collections are included, and these, in turn, vary functionally with Val and Var.Scala collections additionally offer a wide variety of flexible built-in methods that may be used to execute different operations like transformations & actions directly on the data.
 
@@ -56,7 +56,7 @@ Here are a few of the explanations:
 
 - Web-based and desktop application development are supported by compiling JavaScript for web apps. The JVM bytecode is generated in the same way for desktop apps.
 
-- Big businesses like Apple, Twitter, Walmart, and Google migrate their codebases from other languages to Scala. Scala in backend operations since it's highly scalable.
+- Most well-known organizations, such as Apple, Twitter, Walmart, and Google, have migrated their majority of their code to Scala from other language. This is because Scala  is very scalable and would be used in backend processes, it is a good choice.
 
 > Scala is often misunderstood as a Java add-on. However, this is untrue. Scala works flawlessly with Java. The Java Byte Code is generated from Scala applications when successfully compiled and executed on the JVM (Java Virtual Machine).
 
