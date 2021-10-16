@@ -350,3 +350,6 @@ In this article, we've looked at some of the most essential methods in `HttpSess
 I also recommend that you copy and play with the code above. If feasible, include a style page to make it look more appealing.
 
 Happy coding.
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
