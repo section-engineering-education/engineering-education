@@ -14,7 +14,7 @@ You will need to install the following tools to go along with the article:
 - An open-source editor, such as Eclipse, or any other related Java editor. In my case, I will be using [Eclipse IDE for Java EE Developers 2021‑06 windows version](https://www.eclipse.org/downloads/packages/release/2021-06/r)
 - Java JDK current version or any. In my case, I will be using [Java SE Development Kit 17 for Windows 64 bit system](https://download.oracle.com/java/17/latest/jdk-17_windows-x64_bin.zip).
 - You need a web browser installed on your computer.
-- Server. In my case, I will be using TomCat version 9.0.10 for windows. You can download it [here](https://dlcdn.apache.org/tomcat/tomcat-10/v10.1.0-M6/bin/apache-tomcat-10.1.0-M6.zip).
+- Server. In my case, I will be using TomCat version 9.0.54 for windows. You can download it [here](https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.54/bin/apache-tomcat-9.0.54.zip).
 
 
 Table of contents:
@@ -88,11 +88,11 @@ We will create a user login project with a servlet in this example. In this cont
 
 ![create new web project](/engineering-education/servlet-request-and-servlet-collaboration/new.png)
 
-**Step 4:** We will name our project `LogInDemo`, and leave the other fields with default values then select Finish.
+**Step 4:** We will name our project `LogInDemo`, and leave the other fields with default values then select `Finish`.
 
 ![Project name](/engineering-education/servlet-request-and-servlet-collaboration/projectname.png)
 
-**Step 5:** Right-click on the `LogInDemo` project, select new -> HTML file option and name it `Login.html`. In the html page you created, replace the default code with the following code.
+**Step 5:** Right-click on the `LogInDemo` on the Project Explorer, select new -> HTML file option and name it `Login.html`. In the HTML page, you created, replace the default code with the following code.
 
 ```html
 <!DOCTYPE html>
@@ -113,7 +113,7 @@ We will create a user login project with a servlet in this example. In this cont
 
 **Step 6:** Create a new servlet file as follows:
 
-- Right-click on the `LogInDemo project` select new -> servlet as shown.
+- Right-click on `LogInDemo` on the Project Explorer, select new -> servlet as shown.
 
 ![creating sevlate page](/engineering-education/servlet-request-and-servlet-collaboration/sevlatepage.png)
 
@@ -153,7 +153,7 @@ public class LoginAction1 extends HttpServlet {
 ```
 **Step 5:** Create a new JSP file as follows:
 
-- Right-click on the `LogInDemo project` select new -> JSP file as shown.
+- Right-click on the `LogInDemo` on the Project Explorer, select new -> JSP file as shown.
 
 ![new jsp file](/engineering-education/servlet-request-and-servlet-collaboration/newjsp.png)
 
@@ -194,27 +194,27 @@ public class LoginAction1 extends HttpServlet {
 
  Click Finish after adding the Apache installation directory.
  
- - Right-click on the `Login.html` page while your cursor is over it. The following screen will then appear. To run the project, select run on server and press enter.
+ - Right-click on the `Login.html` page, select Run As then Run on Server.
 
 ![Run web project on server.](/engineering-education/servlet-request-and-servlet-collaboration/runus.png)
 
-- When tomCat server is selected as shown bellow. Select "Finish" and restat the server when the screen pops up.
+- When TomCat server is selected as shown below. Select `Finish` and restart the server when the screen pops up.
 
 ![Run web project on server.](/engineering-education/servlet-request-and-servlet-collaboration/selectsever.png)
  
-- In the intanal browser, the following page will appear. Try logging in with the credentials we specified in LoginAction.java (user name `India`, password `1234`) and have some fun with the code.Happy coding!
+- In the internal browser, the following page will appear. Try logging in with the credentials we specified in LoginAction1.java (user name `India`, password `1234`)
 
 ![Login page.](/engineering-education/servlet-request-and-servlet-collaboration/pageinbrowser.png)
 
 **Explanation:**
 
-From the example above, the `LoginAction.java` servlet, in the Post Request form, is called if a user supplies the correct credentials on the login page. A `doPost ()` will set a user parameter, and store it in a variables userName and password, as shown:
+From the example above, the `LoginAction1.java` servlet, in the Post Request form, is called if a user enters the correct credentials on the login page. A `doPost ()` will set the user parameters, and store them in variables userName and password, as shown:
 
 ```java
       String userName=request.getParameter("name");
       String password=request.getParameter("password");
 ```
-If the user has provided the correct details with the help of the `equals()` method, the `welcomePage.jsp` will be executed; otherwise the client browser will remain on the `login.html` page. 
+If the user has provided the correct details, with the help of the `equals()` method, the `welcomePage1.jsp` will be executed, otherwise, the client browser will remain on the `login.html` page. 
 
 [Get project source code here](https://github.com/Evanslodoctor/ServletRequest-sourse-code)
 
@@ -226,7 +226,7 @@ RequestDispatcher interface allows us to send a client query to another resource
 Here are two methods provided by the `RequestDispatcher` interface, namely: 
 
 `forward()` and `include()` method explained as follows.
-- `public void forward(ServletRequest request, ServletResponse response)`: This method offers an efficient way to forward customer requests. It can be to Html file, servlet or JSP file from servlet resource.
+- `public void forward(ServletRequest request, ServletResponse response)`: This method offers an efficient way to forward customer requests. It can be to Html file, Servlet or JSP file from servlet resource.
 
 - `public void include(ServletRequest request, ServletResponse response)`: From its name `include()`, It helps to include in the response the content of another resource.
 
@@ -236,9 +236,9 @@ Here are two methods provided by the `RequestDispatcher` interface, namely:
 
 **How it works**
 
-This example shows how  RequestDispatcher can forward a resource response or include it on a server. Here we use `htmlPage.html` to get a user response. In this case, `Controller.java` Servlet checks the entered response if a user has more than 18 years or less, if the user select (under18 ) as the reply, `forward()` will be called to Under18Page Servlet. Above18 servlet is included if the user has entered (above18) otherwise. The client browser will stay on the `htmlPage.html` page.
+This example shows how  RequestDispatcher can forward a resource response or include it on a server. Here we use `htmlPage.html` to get a user response. In this case, `Controller.java` Servlet checks the entered response if a user has more than 18 years or less, if the user select `under18` as the reply, `forward()` will be called to Under18Page Servlet. Above18 servlet is included if the user has entered `above18` otherwise. The client browser will stay on the `htmlPage.html` page.
 
-Construct the `ServletDispatcherDemo` project as follows, assuming you know how to create and run a web project using the eclipse IDE and TomCat server as explained in the [ServletRequest interface example](#servletrequest-interface-example) above.
+Construct the `ServletDispatcherDemo` project as follows, assuming you know how to create and run a web project using the Eclipse IDE and TomCat server as explained in the [ServletRequest interface example](#servletrequest-interface-example) above.
 
 **Steps to create this project.**
 
@@ -246,9 +246,9 @@ Construct the `ServletDispatcherDemo` project as follows, assuming you know how 
 
 **Step 2:** Provide a project name. We will name ours `ServletDispatcherDemo`, then select Finish.
 
-**Step 3:** Right-click on the `ServletDispatcherDemo` project, select new -> HTML file option.
+**Step 3:** Right-click on the `ServletDispatcherDemo` on the Project Explorer, select new -> HTML file option.
 
-Give the page you just created a name. We'll call it `htmlPage.html` in this example. In the html page you created, delete and replace the default code with the following code.
+Give the page you just created a name. We'll call it `htmlPage.html` in this example. Relpace the code in the HTML file with the code below:
 
 ```html
 <!DOCTYPE html>
@@ -272,9 +272,9 @@ Give the page you just created a name. We'll call it `htmlPage.html` in this exa
 
 **Step 4:** Create a new servlet file as follows:
 
-- Right-click on the `ServletDispatcherDemo project` select new -> servlet and finish by giving your servlet class a name. We'll call it `Controller` in this case.
+- Right-click on the `ServletDispatcherDemo` on the Project Explorer, select new -> servlet and finish by giving your servlet class a name. We'll call it `Controller` in this case.
 
-- Replace the code in the servlet page you just created with the code below.
+- Replace the code in the servlet page you just created with the code below:
 
 ```java
 
@@ -322,7 +322,7 @@ public class Controller extends HttpServlet
 
 **Step 5:** Create a new servlet file as follows:
 
-- Right-click on the `ServletDispatcherDemo project` select new -> servlet and finish by giving your servlet class a name. We'll call it `Under18Page` in this case.
+- Right-click on the `ServletDispatcherDemo`on the Project Explorer, select new -> servlet and finish by giving your servlet class a name. We'll call it `Under18Page` in this case.
 
 - Replace the code in the servlet page you just created with the code below.
 
@@ -350,7 +350,7 @@ public class Under18Page extends HttpServlet
 ```
 **Step 7:** Lastly, create a new servlet file as follows:
 
-- Right-click on the `ServletDispatcherDemo project` select new -> servlet and finish by giving your servlet class a name. We'll call it `Above18` in this case.
+- Right-click on the `ServletDispatcherDemo` on the Project Explorer, select new -> servlet and finish by giving your servlet class a name. We'll call it `Above18` in this case.
 - Replace the code in the servlet page you just created with the code below.
 
 ```java
@@ -376,21 +376,19 @@ public class Above18 extends HttpServlet
 }
 
 ```
-Right-click on the login.html page and choose "run As"-> "Run on Server"-> "Save all changes and restart the server" to run the project. In the internal browser, a menu will appear, prompting you to select your age category.
+Right-click on the `login.html` page and choose run As-> Run on Server -> Save all changes and restart the server to run the project. In the internal browser, a menu will appear, prompting you to select your age category.
 
-In conclusion, this example will give you a solid foundation for working with the `ServletDispatcher` interface in your project. To improve your understanding and enhance your coding skills, I recommend that you start exploring for more examples.
+This example will give you a solid foundation for working with the `ServletDispatcher` interface in your project. To improve your understanding and enhance your coding skills, I recommend that you start exploring more examples.
 
-We assumed you already knew how to use the eclipse IDE and configure the Tomcat server in this example. If not, look at the [ServletRequest example above.](servletRequest-interface-example)
+We assumed you already knew how to use the eclipse IDE and configure the Tomcat server in this example. If not, look at the [ServletRequest example above.](servletrequest-interface-example)
 
 **Happy coding!**
 
 [Get project source code here](https://github.com/Evanslodoctor/ServletDispatcher-sourse-code)
 
 ### Conclusion
-In conclusion, we learned some of the `ServletRequest` methods and `ServletDispatcher` methods and how to implement them with the help of examples. We discussed both these interfaces (`ServletRequest` and `ServletDispatcher`) and what they comprise.
+In conclusion, we learned some of the `ServletRequest` methods and `ServletDispatcher` methods and how to implement them with the help of examples. We discussed both these interfaces (`ServletRequest` and `ServletDispatcher`) and what they comprise of.
 
  This article will help you get started with servlet and understand how users send requests to a server. From here, you should be able to use servlet and JSP technology to build your dynamic website.
-
-I urge you to copy and play with the code.
 
 Happy coding!!
