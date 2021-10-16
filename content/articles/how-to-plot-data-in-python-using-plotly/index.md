@@ -72,7 +72,7 @@ gapminder_df
 1703    Zimbabwe    Africa  2007    43.487  12311143    469.709298  ZWE     716
 ```
 
-By looking at these numbers, it isn't easy to understand what the data is telling us. As such, let's create the data visualization using interactive animations to help us visualize this data to understand it better.
+By looking at these numbers, it isn't easy to understand what the data is telling us. You could interpret the data, but it would take you a lot of time. We would need to visualize this data so that someone can interpret and understand the data quickly. It is also aesthetically pleasing to the eye, and it looks nice. As such, let's create the data visualization using interactive animations to help us visualize this data to understand it better.
 
 ```python
 px.scatter(data_frame=gapminder_df,
@@ -108,7 +108,9 @@ The above image shows the distribution of wealth in the year 1952.
 
 ![Output](/engineering-education/how-to-plot-data-in-python-using-plotly/plotly-output-07.png)
 
-The above image shows the distribution of wealth in the year 2007. You can zoom in and out using your mouse cursor to view individual points on the plot. We used interactive animations to help us achieve our goal. There are many other ways you can visualize using plotly. This could be using line charts, bar charts, pie charts, interactive bubble charts, and choropleth. Explore more techniques [here](https://www.kaggle.com/jhossain/explore-the-gapminder-dataset-with-plotly-express).
+The above images shows the distribution of wealth from the year 1952 to 2007. From the scatterplot, we can see how wealth has been distributed over the years. Initially, Africa and Asia had a population with the least wealthy in the world. Gradually, more asian people gained wealth and left africans behind. The results also show that most of the wealth by 2007 was concentrated among the europeans, oceanians, and americans. You can zoom in and out using your mouse cursor to view individual points on the plot. Press the play button and see how the distribution shifts from 1952-2007. 
+
+We used interactive animations to help us achieve our goal. There are many other ways you can visualize using plotly. This could be using line charts, bar charts, pie charts, interactive bubble charts, and choropleth. Explore more techniques [here](https://www.kaggle.com/jhossain/explore-the-gapminder-dataset-with-plotly-express).
 
 Using the same dataset, let's plot using choropleth.
 
@@ -130,6 +132,8 @@ The image shows the distribution of wealth in the year 1952 using choropleth pro
 ![Plotting using choropleth (2007)](/engineering-education/how-to-plot-data-in-python-using-plotly/chloropleth-output-52.png)
 
 We see the distribution of wealth in the year 2007 using choropleth projected on natural earth.
+
+Choropleth maps are best suited for use when you're working with only one variable. For example, the difference between two variables (e.g. the change of the unemployment rate from last year to this year). But if you want to show the correlation between values with more than one variable, choropleth maps might not be your best choice. Consider using a scatterplot instead.
 
 Please find all the code for this tutorial [here](https://colab.research.google.com/drive/1mz0GthxE2FektPON4ZnkSUvO8Otf1Ix1#scrollTo=X0vwv1kIXHBn) and see how the distribution of wealth compares by continent from the year 1952 to 2007.
 
