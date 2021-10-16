@@ -1,5 +1,21 @@
-A session is a way of keeping track of a client's activity across multiple requests. It simply implies that each time a user queries the server at a specific time interval, the server interprets the client request as a new request.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /using-session-in-java-servlets/
+title: Using Session in Java Servlets
+description: This tutorial will be a step-by-step guide on how to implement session in Java servlets by building a login page.
+author: Chaun864
+date: 2021-10-16T00:00:00-19:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/using-session-in-java-servlets/hero.jpg
+    alt: Session in Java servlets image
+---
+A session is a way of keeping track of a client's activity across multiple requests. It simply implies that each time a user queries the server at a specific time interval, the server interprets the client request as a new request.
+<!--more-->
 As a result, we must keep track of a user's current status to recognize them.
 
 For session techniques, the `Servlet` application employs four distinct approaches: `HttpSession`, `Cookies`, `Hidden` form field, and `URL` rewriting.
