@@ -88,24 +88,24 @@ The following are some of the most important Servlet `HttpSession` methods:
 - `setMaxInactiveInterval(int interval)` - The time in seconds after which the `servlet container` will expire is specified. And the return type is `void`.
 - `getMaxInactiveInterval()` - the maximum time interval per second is returned.
 
-### HttpSession Example
+### HttpSession example
 We're going to demonstrate the use of `HttpSession` in this example.
 
-We will be using the login and logout pages to see how `HttpSession` prevents direct access to the secured pages. In this case, `index. jsp` is a secured page. A user is required to provide the correct credentials to access the content of the `index.jsp` page.
+We will be using the login and logout pages to see how `HttpSession` prevents direct access to the secured pages.
 
-I strongly advise you to copy and experiment with the following code. Provide a style page if possible to make it seem beautiful.
+In this case, `index. jsp` is a secured page.
+
+A user is required to provide the correct credentials to access the content of the `index.jsp` page.
+
+I strongly advise you to copy and experiment with the following code.
 
 #### Steps to create this project
+1. Create a new dynamic web project in the Eclipse IDE for Java EE developers, and give it a name. I'll call it `HttpSessionDemo` in my instance.
+2. Make a new JSP page with the name `index.jsp`. Copy and paste the code below into the `index.jsp` prepared:
 
-**Step 1:** Create a new dynamic web project in the Eclipse IDE for Java EE developers, and give it a name. I'll call it `HttpSessionDemo` in my instance.
-
-**Step 2:** Make a new JSP page with the name `index.jsp`. Copy and paste the code below into the `index.jsp` prepared.
-
-**index.jsp page**
+**index.jsp**
 
 ```jsp
-
-
 <!DOCTYPE html>
 <html>
 
@@ -114,29 +114,25 @@ I strongly advise you to copy and experiment with the following code. Provide a 
     <title>welcome page</title>
 </head>
 
-<body bgcolor="silver">
-
-    <h1>Welcome.</h1>
-
-    <form action="LogoutAction" method="post">
-        <input type="submit" value="logout">
-    </form>
-    <%
-     if(session.getAttribute("userName")==null)
-     { 
-       response.sendRedirect("LoginPage.jsp");
-     } %>
-</body>
-
+  <body bgcolor="silver">
+      <h1>Welcome.</h1>
+      <form action="LogoutAction" method="post">
+          <input type="submit" value="logout">
+      </form>
+      <%
+      if(session.getAttribute("userName")==null)
+      { 
+        response.sendRedirect("LoginPage.jsp");
+      } %>
+  </body>
 </html>
 ```
-**Step 3:** Make a new JSP page called `LoginPage.jsp` and save it, copy the code below and paste it into the `LoginAction.java` created.
 
+3. Make a new JSP page called `LoginPage.jsp` and save it. Copy the code below and paste it into the `LoginAction.java` created.
 
 **LoginPage.jsp**
 
 ```jsp
-
 <!DOCTYPE html>
 <html>
 
@@ -145,31 +141,27 @@ I strongly advise you to copy and experiment with the following code. Provide a 
     <title>Login page</title>
 </head>
 
-<body>
-    <form action="LoginAction" method="post">
-        <input type="text" name="userName" placeholder="Enter user name" required><br>
-        <input type="password" name="password" placeholder="Enter your password" required><br>
-        <input type="submit" value="login">
-    </form>
-
-    <% 
-      String msg=request.getParameter("msg");
-      if("invalid".equals(msg))
-       { %>
-        Wrong password or username.
-      <%} %>
-</body>
-
+  <body>
+      <form action="LoginAction" method="post">
+          <input type="text" name="userName" placeholder="Enter user name" required><br>
+          <input type="password" name="password" placeholder="Enter your password" required><br>
+          <input type="submit" value="login">
+      </form>
+      <% 
+        String msg=request.getParameter("msg");
+        if("invalid".equals(msg))
+        { %>
+          Wrong password or username.
+        <%} %>
+  </body>
 </html>
 ```
 
-**Step 4:**  Create a new servlet page and name it `LoginAction.java`. Copy the below code and paste it inside the `LoginAction.java` you created.
-
-**LoginAction.java page**
-
+4. Create a new servlet page and name it `LoginAction.java`.
+   
+**LoginAction.java**
 
 ```java
-
 import java.io.IOException;
 
 import jakarta.servlet.ServletException;
@@ -181,10 +173,7 @@ import jakarta.servlet.http.HttpSession;
 public class LoginAction extends HttpServlet
 {
 	
-    public LoginAction() 
-    {
-      
-    }
+    public LoginAction() {}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{
@@ -202,19 +191,15 @@ public class LoginAction extends HttpServlet
 		{
 			response.sendRedirect("LoginPage.jsp?msg=invalid");
 		}
-	
 	}
-
 }
-
 ```
 
-**Step 5:** Finally, make a new servlet page called `LogoutAction.java.` Copy and paste the code below into the `LogoutAction.java` file you generated.
+5. Finally, make a new servlet page called `LogoutAction.java.`
 
-**LogoutAction.java page.**
+**LogoutAction.java**
 
 ```java
-
 import java.io.IOException;
 
 import jakarta.servlet.ServletException;
@@ -225,11 +210,7 @@ import jakarta.servlet.http.HttpSession;
 
 public class LoginAction extends HttpServlet
 {
-	
-    public LoginAction() 
-    {
-      
-    }
+    public LoginAction() {}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{
@@ -246,99 +227,101 @@ public class LoginAction extends HttpServlet
 		else
 		{
 			response.sendRedirect("LoginPage.jsp?msg=invalid");
-		}
-		
+		}	
 	}
-
 }
-
 ```
-#### How to create and run the above project. 
 
-**Step 1:** Download and install the Eclipse IDE for Java EE developers.
-
+#### How to create and run the above project
+##### Download and install the Eclipse IDE for Java EE developers
 1. First, check to see if you have Java installed on your computer using the following command.
-```
-$ java --version
-```
-If you don't have Java installed, you'll probably get the following message:
-```
-Command 'java' not found, but can be installed with:
-$ sudo apt install openjdk-11-jre-headless  # version 11.0.11+9-0ubuntu2, or
-$ sudo apt install default-jre              # version 2:1.11-72
-$ sudo apt install openjdk-15-jre-headless  # version 15.0.3+3-1
-$ sudo apt install openjdk-16-jre-headless  # version 16.0.1+9-1
-$ sudo apt install openjdk-17-jre-headless  # version 17~19-1ubuntu1
-$ sudo apt install openjdk-8-jre-headless   # version 8u292-b10-0ubuntu1
-```
-2. Using the command below, install OpenJDK 11.
 
+```bash
+java --version
 ```
-$ sudo apt update
-$ sudo apt install openjdk-11-jre-headless
+
+If you don't have Java installed, you'll probably get the following message:
+
+```bash
+Command 'java' not found, but can be installed with:
+sudo apt install openjdk-11-jre-headless  # version 11.0.11+9-0ubuntu2, or
+sudo apt install default-jre              # version 2:1.11-72
+sudo apt install openjdk-15-jre-headless  # version 15.0.3+3-1
+sudo apt install openjdk-16-jre-headless  # version 16.0.1+9-1
+sudo apt install openjdk-17-jre-headless  # version 17~19-1ubuntu1
+sudo apt install openjdk-8-jre-headless   # version 8u292-b10-0ubuntu1
 ```
-3. Visit https://www.eclipse.org/downloads/ to get the Eclipse Installer from the official website.
-4. Extract the.tar.gz archive, go to the extracted folder, go to the "eclipse-installer" folder, right-click on "eclipse-inst," and select "run.".
-6. When the installation is complete, open eclipse and select launch from the menu as indicated.
+
+2. Using the command below, install `OpenJDK 11`.
+
+```bash
+sudo apt update
+sudo apt install openjdk-11-jre-headless
+```
+
+3. Visit [Eclipse](https://www.eclipse.org/downloads/) to get the Eclipse Installer from the official website.
+4. Extract the `tar.gz` archive, then go to the "eclipse-installer" folder, right-click on "eclipse-inst," and select "run".
+5. When the installation is complete, open eclipse and select launch from the menu as indicated.
 
 ![Launch eclipse](/engineering-education/using-session-in-java-servlets/launch.png)
 
-**Step 2:** To get Tomcat, follow the steps below.
+##### Installing Tomcat server
 1. Make a System User account.
 
-It's not a good idea to run Tomcat as the root user. The Tomcat service will be run by a new system user and group with the home directory /opt/tomcat. Enter the following command to do so:
+It's not a good idea to run Tomcat as the root user. The Tomcat service will be run by a new system user and group with the home directory `/opt/tomcat`.
+
+Enter the following command to do so:
+
+```bash
+sudo useradd -m -U -d /opt/tomcat -s /bin/false tomcat
+```
+
+2. To install Tomcat Server
+To begin with, open a terminal and run the following command to obtain the most recent package information:
 
 ```
-$ sudo useradd -m -U -d /opt/tomcat -s /bin/false tomcat
+sudo apt update
 ```
-2. to install Tomcat Server
 
-- To begin, open a terminal and run the following command to obtain the most recent package information:
-
-```
-$ sudo apt update
-
-```
-- [Tomcat can be downloaded from their official website.](https://tomcat.apache.org/index.html) As shown.
+[Tomcat can be downloaded from their official website.](https://tomcat.apache.org/index.html) as shown.
 
 ![Download tomcat current version](/engineering-education/using-session-in-java-servlets/tomcatdownload.png)
 
 Extract the tar file to the /opt/tomcat directory once the download is complete:
-```
-$ sudo tar -xf /tmp/apache-tomcat-${VERSION}.tar.gz -C /opt/tomcat/
-```
-**Step 3:** How to make jsp and servlet pages above.
 
+```bash
+sudo tar -xf /tmp/apache-tomcat-${VERSION}.tar.gz -C /opt/tomcat/
+```
+
+##### How to create JSP and servlet pages
 1. Use the following demonstration to create the servlet pages from the project above.
 
-  Right-click on the project name-> new and then select the servlet option as shown
+Right-click on the project name, click on `New` and then select the servlet option as shown:
   
 ![creating sevlate page](/engineering-education/using-session-in-java-servlets/sevlatepage.png)
 
- Finish by giving your servlet class a name as shown.
+Finish by giving your servlet class a name as shown:
 
 ![servlet class](/engineering-education/using-session-in-java-servlets/servletclass.png)
 
- Using the code above, create the other servlet pages needed using the same procedure.
- 
- 1. Make the jsp pages in the project above, following the instructions below.
- 
-  Right-click on the project name-> new and then select the jsp option as shown.
+Using the code above, create the other servlet pages needed using the same procedure.
+
+2. Make the JSP pages in the project above, following the instructions below.
+
+Right-click on the project name, then click on `New` and then select the JSP option as shown:
 
 ![new jsp file](/engineering-education/using-session-in-java-servlets/newjsppage.png)
 
-Give your jsp page a name and select finish.
+Name your JSP page and select `Finish`:
 
 ![naming jsp file](/engineering-education/using-session-in-java-servlets/jspclassname.png)
 
+##### Configuring Tomcat in Eclipse
+- From the `Servers` Tab, select "No servers are available," as indicated:
 
-**Step 4:** Sepsts to configure Tomcat in Eclipse and run the above project.
-
-- From the Servers Tab, select "No servers are available," as indicated.
-
- ![Select no server available](/engineering-education/using-session-in-java-servlets/noserver.png)
+![Select no server available](/engineering-education/using-session-in-java-servlets/noserver.png)
  
-- Next, select Tomcat v9.0 Server. or any of your choice, but I recommend the current version.
+- Next, select `Tomcat v9.0` Server.
 
 ![Select the sort of server you want to make.](/engineering-education/using-session-in-java-servlets/addserver2.png)
 
@@ -346,23 +329,25 @@ Give your jsp page a name and select finish.
 
 ![Apache installation directory.](/engineering-education/using-session-in-java-servlets/selectpath.png)
 
- Click Finish after adding the Apache installation directory.
+Click `Finish` after adding the Apache installation directory.
  
- - Right-click on the `LoginPage.jsp` page while your cursor is over it. The following screen will then appear. To run the project, select run on server and press enter.
+- Right-click on the `LoginPage.jsp` page while your cursor is over it. The following screen will then appear. To run the project, select `Run` on server and press enter.
 
 ![Run web project on server.](/engineering-education/using-session-in-java-servlets/runus.png)
 
-- When tomCat server is selected. Select "Finish" and restat the server when the screen pops up.
+- When TomCat server is selected. Select "Finish" and restat the server when the screen pops up.
  
-- The following page will appear in the intanal browser. Log in using the credentials we specified in LoginAction.java (user name ", password ") and play around with the code. Have fun coding!
+- The following page will appear in the intanal browser. Log in using the credentials we specified in `LoginAction.java` and play around with the code.
 
 ![Login page.](/engineering-education/using-session-in-java-servlets/loginpage.png)
 
-[Here](https://github.com/Chaun864/Login-Logout-web-Project-Using-session-servlet-and-jsp-.git) is where you can get the source code for the project.
+You can check out the full code [here](https://github.com/Chaun864/Login-Logout-web-Project-Using-session-servlet-and-jsp-.git).
 
 ### Conclusion
-We've seen how `HttpSession` works in our applications and how useful it is. In this article. We've looked at some of the most essential methods in `HttpSession`, as well as their capabilities. Using the example above will help you understand how `HttpSession` works.
+We've seen how `HttpSession` works in our applications and how useful it is.
 
-This lesson will assist you in gaining a solid foundation in HttpSession, from which you may progress to the next level. I also recommend that you copy and play with the code above. If feasible, include a style page to make it look more appealing.
+In this article, we've looked at some of the most essential methods in `HttpSession`, as well as their capabilities. The example above will help you understand how `HttpSession` works.
 
-Good luck with your coding!
+I also recommend that you copy and play with the code above. If feasible, include a style page to make it look more appealing.
+
+Happy coding.
