@@ -17,9 +17,12 @@ By now, as you have noticed that JavaFX is easy to work with. Challenges come wh
   - [Using Pre-saved variables](#using-pre-saved-variables)
   - [Using an External CSS file](#using-an-external-css-file)
     - [Setting up the project for External CSS styling](#setting-up-the-project-for-external-css-styling)
+      - [Adding via the Main class file](#adding-via-the-main-class-file)
+      - [Adding it via the SceneBuilder or Hardcoding it](#adding-it-via-the-scenebuilder-or-hardcoding-it)
     - [External styling format](#external-styling-format)
     - [External CSS for Multiple scenes instances](#external-css-for-multiple-scenes-instances)
 - [Conclusion](#conclusion)
+- [References](#references)
 
 ### Key takeaways
 
@@ -122,16 +125,16 @@ The above step deletes this code in the file:
 
 <VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
       fx:controller="com.example.demo.HelloController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
+  <padding>
+    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+  </padding>
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
+  <Label fx:id="welcomeText"/>
+  <Button text="Hello!" onAction="#onHelloButtonClick"/>
 </VBox>
 ```
 
-- Download the `login.png` image found in this link **************************************************.
+- Download the `login.png` image found in this [link](https://github.com/blacklihgt/Add-an-external-CSS--stylesheet-file-to-a-JavaFX-Application/blob/main/src/main/resources/com/login/javafxstyle/login.png).
 - Copy-paste the image into the location where the `hello-view.fxml` file is.
 - Copy the code below and paste it into the `hello-view.fxml` file just where the deleted code was.
 
@@ -141,27 +144,27 @@ The above step deletes this code in the file:
             prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2"
             xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="com.login.javafxstyle.HelloController">
-    <children>
-        <Label fx:id="loginTitleLabel" layoutX="430.0" layoutY="35.0" text="Login"/>
-        <ImageView fitHeight="400.0" fitWidth="325.0" pickOnBounds="true" preserveRatio="true">
-            <image>
-                <Image url="@login.png"/>
-            </image>
-        </ImageView>
-        <Label fx:id="enterDetailsLabel" layoutX="330.0" layoutY="120.0" text="Enter the login details below:"/>
-        <Label fx:id="usernameLabel" layoutX="333.0" layoutY="160.0" text="Username:"/>
-        <TextField fx:id="usernameTextField" layoutX="415.0" layoutY="157.0" promptText="john.doe@email.com"/>
-        <Label fx:id="passwordLabel" layoutX="333.0" layoutY="198.0" text="Password:"/>
-        <PasswordField fx:id="passwordPasswordField" layoutX="415.0" layoutY="195.0" promptText="********"/>
-        <CheckBox fx:id="rememberMeCheckBox" layoutX="375.0" layoutY="245.0" mnemonicParsing="false"
-                  text="Remember me?"/>
-        <Label fx:id="errorLabel" layoutX="387.0" layoutY="280.0" prefHeight="16.0" prefWidth="171.0"
-               text="Sign in error!"/>
-        <Button fx:id="cancelButton" layoutX="370.0" layoutY="310.0" mnemonicParsing="false" text="Cancel"/>
-        <Button fx:id="signInButton" layoutX="490.0" layoutY="310.0" mnemonicParsing="false" text="Sign in"/>
-        <Button fx:id="forgotPasswordButton" layoutX="400.0" layoutY="350.0" mnemonicParsing="false"
-                text="Forgot password?"/>
-    </children>
+  <children>
+    <Label fx:id="loginTitleLabel" layoutX="430.0" layoutY="35.0" text="Login"/>
+    <ImageView fitHeight="400.0" fitWidth="325.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@login.png"/>
+      </image>
+    </ImageView>
+    <Label fx:id="enterDetailsLabel" layoutX="330.0" layoutY="120.0" text="Enter the login details below:"/>
+    <Label fx:id="usernameLabel" layoutX="333.0" layoutY="160.0" text="Username:"/>
+    <TextField fx:id="usernameTextField" layoutX="415.0" layoutY="157.0" promptText="john.doe@email.com"/>
+    <Label fx:id="passwordLabel" layoutX="333.0" layoutY="198.0" text="Password:"/>
+    <PasswordField fx:id="passwordPasswordField" layoutX="415.0" layoutY="195.0" promptText="********"/>
+    <CheckBox fx:id="rememberMeCheckBox" layoutX="375.0" layoutY="245.0" mnemonicParsing="false"
+              text="Remember me?"/>
+    <Label fx:id="errorLabel" layoutX="387.0" layoutY="280.0" prefHeight="16.0" prefWidth="171.0"
+           text="Sign in error!"/>
+    <Button fx:id="cancelButton" layoutX="370.0" layoutY="310.0" mnemonicParsing="false" text="Cancel"/>
+    <Button fx:id="signInButton" layoutX="490.0" layoutY="310.0" mnemonicParsing="false" text="Sign in"/>
+    <Button fx:id="forgotPasswordButton" layoutX="400.0" layoutY="350.0" mnemonicParsing="false"
+            text="Forgot password?"/>
+  </children>
 </AnchorPane>
 ```
 
@@ -346,9 +349,9 @@ It produces the following output:
 
 ![Second Output](second-output.png "Second Output")
 
-As seen, there are more options provided by the SceneBuilder in the _Properties_, _Layout_ and _Code_ tabs.
+As seen, there are more options provided by the SceneBuilder in the _Properties_, _Layout_, and _Code_ tabs.
 
-Adding styling using this method is very simple and no need of much hustle since there is the provision of GUI.
+Adding styling using this method is very simple and no need for much hustle since there is the provision of GUI.
 
 #### Using Pre-saved variables
 
@@ -389,7 +392,16 @@ supports code readability.
 
 ##### Setting up the project for External CSS styling
 
-To add it, follow the following steps:
+There are two methods of adding an external stylesheet to the program. These are:
+
+- Adding it via the `HelloApplication.java` file.
+- Adding it via the SceneBuilder or Hardcoding it
+
+Let us look quickly at both:
+
+###### Adding via the Main class file
+
+To add it, follow the steps below:
 
 - Create a new CSS file in the location of the FXML file.
 - In the `HelloApplication.java` file, add the line of code below to it. Add it below
@@ -401,6 +413,28 @@ scene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm()
 
 This applies the styling in the `styles.css` file to the scene created.
 
+###### Adding it via the SceneBuilder or Hardcoding it
+
+The SceneBuilder adds a particular stylesheet styling to a specific Control in the application.
+This addition is different from using the scene styling mentioned above that adds styling to the whole scene.
+Hence, one will be required to repeat the step over and over again.
+
+- In the SceneBuilder view, click on the AnchorPane that was added first.
+- In the Properties tab, under the 'JavaFX CSS' section, click on the 'Stylesheets' option.
+- Select the CSS file, and that's it.
+
+> One can also apply a styling of a particular class to control the application by just linking them.
+> This linking can be achieved by adding the CSS class to the control in the SceneBuilder at the 'Styles Class' option in the 'JavaFX CSS' section.
+> The class can be different from the ones which are known by the application. It can be defined it the Stylesheet added to the control or the Scene. This is shown later on in the code found in this article.
+
+When the AnchorPane CSS class is set to 'unique', it produces the code shown below as seen in the Text View:
+
+```xml
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0"
+            styleClass="unique" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.login.javafxstyle.HelloController">
+```
+
 Before adding any styling, first, let us look how the styling format looks like:
 
 ##### External styling format
@@ -410,7 +444,7 @@ the styles. The format is shown below:
 
 ```css
 #titleLabel {
-    /* Styling for the Control with the fx:id of titleLabel */
+  /* Styling for the Control with the fx:id of titleLabel */
 
 }
 ```
@@ -430,12 +464,12 @@ A sample of the CSS format is as shown below:
 
 ```css
 .root {
-    /*This applies styling for the root node*/
+  /*This applies styling for the root node*/
 
 }
 
 .label {
-    /* Styling for all Control with the class of 'label' */
+  /* Styling for all Control with the class of 'label' */
 
 }
 ```
@@ -451,20 +485,25 @@ Controls or JavaFX item.
 
 ```css
 .root {
-    /*This applies styling for the root node*/
-    -fx-background-color: linear-gradient(from 0% 0% to 100% 200%, repeat, #fbeee6 0%, #cde0c9 50%);
-    -fx-font-family: "Lucida Console";
+  /*This applies styling for the root node*/
+  -fx-background-color: linear-gradient(from 0% 0% to 100% 200%, repeat, #fbeee6 0%, #cde0c9 50%);
+  -fx-font-family: "Lucida Console";
 }
 
 .label {
-    /* Styling for all Control with the class of 'label' */
-    -fx-padding: -2px;
-    -fx-start-margin: 2px;
-    -fx-end-margin: 2px;
+  /* Styling for all Control with the class of 'label' */
+  -fx-padding: -2px;
+  -fx-start-margin: 2px;
+  -fx-end-margin: 2px;
+}
+
+.guide-link {
+  /*Unique class customized by user*/
+
 }
 
 #loginTitleLabel, #errorLabel {
-    -fx-font-family: "Chilanka";
+  -fx-font-family: "Chilanka";
 }
 ```
 
@@ -476,16 +515,16 @@ following, copy and paste the code below to it:
 ```css
 /* Checkbox formatting */
 .check-box .mark {
-    -fx-shape: "M2,0L5,4L8,0L10,0L10,2L6,5L10,8L10,10L8,10L5,6L2,10L0,10L0,8L4,5L0,2L0,0Z";
+  -fx-shape: "M2,0L5,4L8,0L10,0L10,2L6,5L10,8L10,10L8,10L5,6L2,10L0,10L0,8L4,5L0,2L0,0Z";
 }
 
 .check-box:selected .mark {
-    -fx-background-color: #0181E2FF;
+  -fx-background-color: #0181E2FF;
 }
 
 /*Once the button is clicked, it will display the following effect when one hovers over it*/
 .button:hover {
-    -fx-background-color: linear-gradient(#2A5058, #61a2b1);
+  -fx-background-color: linear-gradient(#2A5058, #61a2b1);
 }
 ```
 
@@ -501,17 +540,17 @@ In case of multiple scenes, add the styling by using different codes of lines.
   Open the `HelloApplication.java` file and copy-paste the code below:
 
 ```java
-        /*Multiple scenes created*/
-        Scene scene= new Scene(fxmlLoader.load(),600,400);
+/*Multiple scenes created*/
+Scene scene= new Scene(fxmlLoader.load(),600,400);
         Scene scene1= new Scene(fxmlLoader.load(),800,400);
         Scene scene2= new Scene(fxmlLoader.load(),1000,400);
         Scene scene3= new Scene(fxmlLoader.load(),1200,400);
         Scene scene4= new Scene(fxmlLoader.load(),1200,600);
         Scene scene5= new Scene(fxmlLoader.load(),1200,1000);
-        
+
         /*Show the location of the CSS resource file*/
         String css = this.getClass().getResource("styles.css").toExternalForm();
-        
+
         /*Add the stylesheet quickly to the many scenes*/
         scene.getStylesheets().add(css);
         scene1.getStylesheets().add(css);
