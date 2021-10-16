@@ -37,18 +37,18 @@ You'll also need to install the `hostapd` package that allows us to create the e
 #### Step One: Updating the Raspberry Pi
 Before installing the packages, you should perform an update: `sudo apt-get update` and `sudo apt-get upgrade`.
 
-![Package Upgrade](/setting-up-a-wifi-extender-using-a-raspberry-pi/updating_packages.png)
+![Package Upgrade](/engineering-education/setting-up-a-wifi-extender-using-a-raspberry-pi/updating_packages.png)
 
 #### Step Two: Installation of the dnsmasq and hostapd packages
 Install the `dnsmasq` and `hostapd` packages using these commands:
 
 `sudo apt-get install dnsmasq`
 
-![DNS MASQ](/setting-up-a-wifi-extender-using-a-raspberry-pi/dnsmasq.png)
+![dnsmasq](/engineering-education/setting-up-a-wifi-extender-using-a-raspberry-pi/dnsmasq.png)
 
 `sudo apt-get install hostapd`
 
-![HOSTAPD](/setting-up-a-wifi-extender-using-a-raspberry-pi/hostapd.png)
+![hostapd](/engineering-education/setting-up-a-wifi-extender-using-a-raspberry-pi/hostapd.png)
 
 #### Step Three: Open the dhcpcd.conf
 This can be achieved using this command: `sudo nano /etc/dhcpcd.conf`
@@ -64,14 +64,14 @@ static routers=192.168.5.0
 
 2. Use `CTRL + X`, press `Y` then `Enter` to keep configurations.
 
-![Setting Up WLAN Connection](/setting-up-a-wifi-extender-using-a-raspberry-pi/step4.png)
+![Setting Up WLAN Connection](/engineering-education/setting-up-a-wifi-extender-using-a-raspberry-pi/step4.png)
 
 #### Step Five: Restarting dhcpcd service
 1. Restart your dhcpcd service to ensure all configuration changes are loaded.
 
 `sudo service dhcpcd restart`
 
-![DHCPCD RESTART](/setting-up-a-wifi-extender-using-a-raspberry-pi/step5.png)
+![dhcpcd Restart](/engineering-education/setting-up-a-wifi-extender-using-a-raspberry-pi/step5.png)
 
 #### Step Six: Modification of the hostapd configuration
 1. To modify the hostapd configuration;
@@ -86,7 +86,7 @@ ssid= " " //here you enter the name of the Wi-Fi
 wpa_passphrase=" " //here you enter the password of the Wi-Fi
 ```
 
-![hostapd.conf](/setting-up-a-wifi-extender-using-a-raspberry-pi/hostapd-config.png)
+![hostapd.conf](/engineering-education/setting-up-a-wifi-extender-using-a-raspberry-pi/hostapd-config.png)
 
 #### Step Seven: Adjust the hostapd configuration files
 1. Open the following files:
@@ -102,13 +102,13 @@ Using nano editor: `sudo nano /etc/default/hostapd`
 
 `DAEMON_CONF="/etc/hostapd/hostapd.conf"`
 
-![Modify Hostapd Config File Part 1](/setting-up-a-wifi-extender-using-a-raspberry-pi/step7a.png)
+![Modify Hostapd Config File Part 1](/engineering-education/setting-up-a-wifi-extender-using-a-raspberry-pi/step7a.png)
 
 3. Open the other configuration file in init.d using: `sudo nano /etc/init.d/hostapd`
 
 4. Look for `#DAEMON_CONF=` and replace using `DAEMON_CONF=/etc/hostapd/hostapd.conf`
 
-![Modify Hostapd Config File Part 2](/setting-up-a-wifi-extender-using-a-raspberry-pi/step7b.png)
+![Modify Hostapd Config File Part 2](/engineering-education/setting-up-a-wifi-extender-using-a-raspberry-pi/step7b.png)
 
 #### Step Eight: Change directory of the dnsmasq.conf
 
@@ -130,14 +130,14 @@ bogus-priv # Drop the non-routed address spaces
 dhcp-range=192.168.5.50,192.168.5.150,12h # IP range and lease time
 ```
 
-![Creating dnsmasq config file](/setting-up-a-wifi-extender-using-a-raspberry-pi/step9.png)
+![Creating dnsmasq config file](/engineering-education/setting-up-a-wifi-extender-using-a-raspberry-pi/step9.png)
 
 #### Step Ten: Traffic forwarding configuration
 Next, we configure the Raspberry Pi to forward the traffic so that it works like a router. This can be achieved using: `sudo nano /etc/sysctl.conf`.
 
 Find and eliminate # sign at the beginning (Uncomment): `#net.ipv4.ip_forward=1`
 
-![Enable Packet Forwarding](/setting-up-a-wifi-extender-using-a-raspberry-pi/step10.png)
+![Enable Packet Forwarding](/engineering-education/setting-up-a-wifi-extender-using-a-raspberry-pi/step10.png)
 
 #### Step Eleven: Activation of IP forwarding on the Pi
 Activate the Raspberry Pi using the command below: `sudo sh -c "echo 1 > /proc/sys/net/ipv4/ip_forward"`
@@ -155,11 +155,11 @@ sudo iptables -A FORWARD -i wlan1 -o wlan0 -j ACCEPT
 
 To save: `sudo sh -c "iptables-save > /etc/iptables.ipv4.nat"`
 
-![Saving Rules](/setting-up-a-wifi-extender-using-a-raspberry-pi/step12.png)
+![Saving Rules](/engineering-education/setting-up-a-wifi-extender-using-a-raspberry-pi/step12.png)
 
 Now we have to ensure that our configuration is be loaded locally every time the Raspberry Pi boots up First, open `rc.local` using: `sudo nano /etc/rc.local`. Then insert `iptables-restore < /etc/iptables.ipv4.nat` above `exit 0`
 
-![rc.local](/setting-up-a-wifi-extender-using-a-raspberry-pi/step12b.png)
+![rc.local](/engineering-education/setting-up-a-wifi-extender-using-a-raspberry-pi/step12b.png)
 
 3. Restart the two services:
 
@@ -168,7 +168,7 @@ sudo service hostapd start
 sudo service dnsmasq start
 ```
 
-![Restart Services](/setting-up-a-wifi-extender-using-a-raspberry-pi/restartservice.png)
+![Restart Services](/engineering-education/setting-up-a-wifi-extender-using-a-raspberry-pi/restartservice.png)
 
 #### Step Thirteen: Restart the Raspberry Pi
 Finally, run the following command: `sudo reboot` to restart the Raspberry Pi. To test it works, use any wireless devices to connect to it using the Wi-Fi network name and password you created.
