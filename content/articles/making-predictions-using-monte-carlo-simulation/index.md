@@ -18,7 +18,6 @@ images:
 
 With the growing technology especially in the field of AI (Artificial Intelligence), the knowledge of different methods of training a model is essential to programmers.
 These techniques help in automation of decision making process and help predict the probability of different outcomes when random variables are intercepted.
-
 This article will simplify monte carlo method operations and help programmers to clearly understand what this technique entail.
 
 ### Table of Contents
