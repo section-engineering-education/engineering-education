@@ -17,8 +17,8 @@ Font picker is a simple application that allows you to browse through all the fo
 
 To follow along with this tutorial as a programmer, you will need to have:
 
-- The latest version of [python3](https://www.python.org/downloads/) installed on your computer system.
-- A code editor, i use [pycharm](https://www.jetbrains.com/pycharm/download/) 
+- The latest version of [Python3](https://www.python.org/downloads/) installed on your computer system.
+- A code editor, i use [Pycharm](https://www.jetbrains.com/pycharm/download/) 
 
 ### Functions of tkinter
 
@@ -29,11 +29,11 @@ Data analysis is the systematic application of statistical tools to explain and 
 
 Tkinter provides geometric widget configuration, which organizes widgets in parent windows for data science. There are three geometry manager classes in all. These are:
 
-- pack() : It's used to organize widgets in blocks before they're placed in parent widgets.
+- `.pack()` : It's used to organize widgets in blocks before they're placed in parent widgets.
  
-- grid() : Before inserting widgets in the parent widget, grid() is used to organize them into a table-like layout.
+- `.grid()` : Before inserting widgets in the parent widget, grid() is used to organize them into a table-like layout.
 
-- place() :This function is used to organize widgets by placing them in precise positions as specified by the programmer.
+- `.place()` :This function is used to organize widgets by placing them in precise positions as specified by the programmer.
 
 Tkinter can be used to construct a variety of charts (pie charts, bar charts, and line charts), which are essential for data analysis.
 
@@ -53,16 +53,15 @@ The graphical user interface is the most common type of User Interface. One can 
 
 #### Advantages of Graphical User Interface
 
-- it is simple to use
-- there is no need to memorize the command lists as it is easy to visualize and remember.
+- It is simple to use
+- There is no need to memorize the command lists as it is easy to visualize and remember.
 - Allows more than one application and program to run at the same time.
 - It provides many exceptional support services.
-- it is self-explanatory.
+- It is self-explanatory.
 
 #### Disadvantages of Graphical User Interface
 
-- It consumes a lot of computer memory.
-
+- It consumes a lot of computer memory, elements like icon and fonts must be loaded. Additional system resources are required to load video, mouse, and other drivers, while a command line interface doesn't require so much memory to to run on a computer system.
 ### Creating a font chooser app
 
 In our code editor, we'll make a new file called `font.py`, where we'll write our code.
@@ -79,7 +78,7 @@ root.geometry("500x400")
 ```
 
 To start, first, we will create a root widget and this root widget is a window with a title bar. This widget has to be created first, and it is called the root widget, after creating the root widget, the programmer can then create other widgets.
-Then we give our font app a name (maji.com notice that you can use your own name if you want to customize the app.), and then we set the size of the application.
+Then we give our font app a name (maji.ico notice that you can use your own name if you want to customize the app.), and then we set the size of the application.
 
 ```python
 def font_chooser(a):
@@ -100,7 +99,6 @@ my_frame.columnconfigure(0, weight=10)
 Then we specify our font by setting our `font_variable` to a Helvetica typeface with a size of 30. Then a frame is created by defining the `my_frame` variable, which specifies the width and height. The `.grid` function is also used to freeze the frame and prevent the size of the Listbox from changing unnecessarily each time a new font is picked from the font chooser app.
 
 ```python
-
 user_text = Text(my_frame, font=user_font)
 user_text.grid(row=1, column=1)
 user_text.grid_rowconfigure(0, weight=1)
@@ -115,7 +113,7 @@ We create a Listbox by setting the `my_listbox` variable to a listbox with a sin
 
 ```python
 for f in font.families():
-my_listbox.insert('end', f)
+  my_listbox.insert('end', f)
 my_listbox.bind('<ButtonRelease-1>', font_chooser)
 root.mainloop()
 ```
