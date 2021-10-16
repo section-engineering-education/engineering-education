@@ -72,7 +72,7 @@ gapminder_df
 1703    Zimbabwe    Africa  2007    43.487  12311143    469.709298  ZWE     716
 ```
 
-By looking at these numbers, it isn't easy to see what this data is telling us. It's hard to comprehend. So now, let's create the data visualization using interactive animations to help us visualize this data to understand it better.
+By looking at these numbers, it isn't easy to understand what the data is telling us. As such, let's create the data visualization using interactive animations to help us visualize this data to understand it better.
 
 ```python
 px.scatter(data_frame=gapminder_df,
