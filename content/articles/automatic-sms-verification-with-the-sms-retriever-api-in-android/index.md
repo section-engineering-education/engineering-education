@@ -42,10 +42,37 @@ We are going to use the following:
 - Apache Commons - We are going to use this library to help us extract the code from the SMS message.
 - Google Play Services API - This library holds the SMS retrieval class
 - EventBus - To listen for received SMS from the SMS Retrieval API, we'll use a BroadcastReceiver. EventBus is a publisher/subscriber pattern library. We use it to communicate between our BroadcastReceiver and Activity classes.
+Let's add these to the build.gradle file for our app:
+```
+implementation 'com.google.android.gms:play-services-auth:19.2.0'
+implementation 'org.apache.commons:commons-lang3:3.11'
+implementation 'org.greenrobot:eventbus:3.2.0'
+```
 
 ### Step 3: Setup the XML layout for our project
 
 We'll create an Edit Text in this section. This Edit text will display one-time code obtained from our SMS message.
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+    
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:inputType="number"
+            android:layout_marginTop="80dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"/>
+</LinearLayout>
+```
 
 ### Sending the mobile number to your server
 
@@ -57,7 +84,7 @@ Once you obtain the user's mobile number from the Edit text, send it to the serv
 
 We'll first create an instance of the SmsRetrieverClient object. This is followed by invoking its initSmsRetriever instance function and adding `onSuccessListener` and `onFailureListener` to the task. We wrap all these code in a function for later use.
 
-```
+```kotlin
 private fun initSmsListener() {
     smsClient.startSmsRetriever()
         .addOnSuccessListener {
@@ -136,6 +163,19 @@ The properties of this data class is set to the retrieved SMS message.This is do
 ### Step 5: Register the BroadcastReceiver on AndroidManifest file
 
 In your app's `AndroidManifest.xml`, register `BroadcastReceiver`.
+```xml
+<application>
+        ...
+        <receiver
+            android:name=".SmsBroadcastReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.android.gms.auth.api.phone.SMS_RETRIEVED"/>
+            </intent-filter>
+        </receiver>
+        ...
+ </application>
+```
 
 ### Implementing subscriber
 
@@ -177,6 +217,16 @@ class MainActivity : AppCompatActivity() {
                 ).show()
             }
     }
+    
+     override fun onStart() {
+        super.onStart()
+        EventBus.getDefault().register(this)
+    }
+
+    override fun onStop() {
+        EventBus.getDefault().unregister(this)
+        super.onStop()
+    }
 
     @Subscribe
     fun onReceiveSms(retrievalEvent: RetrievalEvent) {
@@ -198,6 +248,7 @@ class MainActivity : AppCompatActivity() {
 
 ```
 ### Computing your app's hash string
+Google Play services uses the hash string to decide which message should is meant for your app. This string is made up of the package name and public key certificate for your app. 
 
 To generate the hash string, you can use the following methods: 
 
