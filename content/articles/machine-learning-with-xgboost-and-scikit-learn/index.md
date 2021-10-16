@@ -42,19 +42,19 @@ In this tutorial, we will use Scikit-learn to build our model, and then we impro
 - Have good knowledge of [Python](/engineering-education/python-projects-for-beginners/).
 - Be familiar with [machine learning modeling](/engineering-education/house-price-prediction/).
 - Have a good understanding of [supervised learning algorithms](/engineering-education/supervised-learning-algorithms/)
-- Know how to use [Pandas](https://numpy.org/) and [Numpy].(https://numpy.org/)
+- Know how to use [Pandas](https://numpy.org/) and [Numpy](https://numpy.org/).
 - Know how to use [Google Colab](https://research.google.com/) to build your model.
 
 To start with, you can read about Boost algorithms [here](/engineering-education/boosting-algorithms-python/).
 
 ### Introduction
-XGBoost is built over gradient boosting framework.
+XGBoost is built over a gradient boosting framework.
 
 Gradient boosting is a machine learning technique used for classification, regression, and clustering problems that optimizes the model when making predictions.
 
 In this technique, different models are grouped to perform the same task.
 
-These base models are known as the weak learners that works on the principle where a weak learner makes poor predictions when alone, but makes the best prediction when together.
+These base models are known as the weak learners that work on the principle where a weak learner makes poor predictions when alone, but makes the best prediction when together.
 
 XGBoost creates a strong learner based on the weak learners, by adding models together sequentially, the errors of the weak models are corrected by the next models in the chain to achieve an optimized solution. This is known as the ensembling.
 
@@ -80,7 +80,7 @@ It uses this knowledge to know if a person will subscribe to a term deposit or n
 
 ![Bank dataset](/engineering-education/machine-learning-with-xgboost-and-scikit-learn/bank-details.jpg)
 
-We need to clean this dataset to model and use during training and predictive analysis.
+We need to clean this dataset to model and use it during training and predictive analysis.
 
 To download the dataset click [here](https://drive.google.com/file/d/1Yc3-jZkCcPb9DvngH4S_S_fVlUN1pFqH/view?usp=sharing).
 
@@ -138,7 +138,7 @@ The output is shown in the image below:
 
 ![Dataset columns](/engineering-education/machine-learning-with-xgboost-and-scikit-learn/dataset-columns.jpg)
 
-These columns such as: `age`, `job`, `marital`, `education`, and `housing` will be used as the inputs for our model during training.
+These columns such as `age`, `job`, `marital`, `education`, and `housing` will be used as the inputs for our model during training.
 
 In the above output, the `y` column is used as the target variable, this is what we are trying to predict.
 
@@ -175,7 +175,7 @@ Machine learning doe not work with these categorical data, we need to convert th
 
 We, therefore, convert all the data types into `int64`. `int64` are numeric, machine learning only works with numerical values. We do not need to convert the `float64` datatype because it's already in numeric value.
 
-The process of converting categorical values into a numeric values is called categorical encoding.
+The process of converting categorical values into a numeric value is called categorical encoding.
 
 ### Getting started with categorical encoding
 Before we start, let's get all the columns with the `object` datatype.
@@ -463,10 +463,10 @@ Using this tutorial, a reader should be able to follow these steps and build a m
 To get the Google Colab code for this tutorial click [here](https://colab.research.google.com/drive/160MQWnygEHmSs2waDI8Bs9rpi7zOa4SN?usp=sharing)
 
 ### References
-- [Code for this tuturial](https://colab.research.google.com/drive/160MQWnygEHmSs2waDI8Bs9rpi7zOa4SN?usp=sharing)
+- [Code for this tutorial](https://colab.research.google.com/drive/160MQWnygEHmSs2waDI8Bs9rpi7zOa4SN?usp=sharing)
 - [Scikit-learn documentation](https://scikit-learn.org/stable/)
 - [XGBoost documentation](https://xgboost.readthedocs.io/en/latest/)
-- [Basics of ensamble learning](/engineering-education/ensemble-learning/)
+- [Basics of ensemble learning](/engineering-education/ensemble-learning/)
 - [Boosting algorithms in Python](https://www.section.io/engineering-education/boosting-algorithms-python/)
 
 ---
