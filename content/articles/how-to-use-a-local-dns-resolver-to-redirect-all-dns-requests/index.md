@@ -22,7 +22,8 @@ When setting up a home network, one can only allow access to the Unbound DNS ser
 However, one can take a different approach. The local DNS server can be used to route all DNS requests to alternate `external servers`. That way, you can make that everything is working properly and limit or filter DNS requests. You can easily monitor DNS requests that would otherwise go undetected if a firewall rule had blocked them with the DNS redirection feature enabled on your computer.
 
 ### prerequisite
-- Download the [OPNsense](https://opnsense.org/) software.
+- The [OPNsense](https://opnsense.org/) software.
+
 > It is the software used in this tutorial.
 
 ### Table of contents
