@@ -85,7 +85,8 @@ List<Employee> georgeWith90MarksAndAbove = employees
   .stream()
   .filter(q -> q.getMarks() > 90 && q.getIdentity().startsWith("George"))
   .collect(Collectors.toList());
-  
+  assertThis(georgeWith90MarksAndAbove).hasSize(01);
+  assertThis(georgeWith90MarksAndAbove).contains(george);
 ```
 **Explanation**
 We used multiple conditions with filter() such as marks and identity of the employees
@@ -102,7 +103,24 @@ Adding a profilePictureUrl to our Employee object will be the first thing we do.
 private String profilePictureUrl;
 ```
 Furthermore, we will create a simple hasValidProfilePicture() function to verify whether or not the profile picture is still valid:
-When the method hasValidProfilePicture() is called, an IOException is issued. Now, if we attempt to sort the clients based on this criterion. We will have the following.
+
+```Java
+public boolean hasValidProfilePicture() throws InpuOutputException 
+{
+    URL url = new URL(this.profilePictureUrl);
+    HttpsURLConnection connection = (HttpsURLConnection) url.openConnection();
+    returns connections.getsResponseCode() == HttpURLConnection.HTTP_OKAY;
+}
+```
+
+When the method `hasValidProfilePicture()` is called, an IOException is issued. Now, if we attempt to sort the clients based on this criterion. We will have the following.
+
+```Java
+List<Employee> employeesWithValidProfilePicture = employees
+  .stream()
+  .filter(Employee::hasValidProfilePicture)
+  .collect(Collectors.toList());
+```
 
 **Explanation**
 Filtering the employee with this method,hasValidProfile, will bring us an error.
@@ -133,7 +151,17 @@ We may also make use of the ThrowingFunction library as an alternative.
 
 Using ThrowingFunction, which is a free open-source package that can be downloaded, we can handle checked exceptions in Java functional interfaces with relative simplicity.
 
-The first step is to include a dependency on the throwing function in our pom. Exception handling in predicates is simplified with the ThrowingPredicate class, which also contains the unchecked() method for encapsulating checked exceptions.
+The first step is to include a dependency on the throwing function in our pom.xml file like as follows:
+
+```XML
+<dependency>
+    <groupId>pl.touk</groupId>
+    <artifactId>throwing-function</artifactId>
+    <version>1.3</version>
+</dependency>
+```
+
+Exception handling in predicates is simplified with the ThrowingPredicate class, which also contains the unchecked() method for encapsulating checked exceptions.
 
 This action is illustrated below in the following code:
 
@@ -146,3 +174,4 @@ List employeesWithValidProfilePicture = employee
 
 ### Conclusion
 The filter() method has been introduced to you in this lesson as a way to handle streams. Apart from that, we looked at different approaches to dealing with exceptions. To learn more about Java Stream Filter using Lambda Expression, this article is very valuable.
+Happy Coding!
