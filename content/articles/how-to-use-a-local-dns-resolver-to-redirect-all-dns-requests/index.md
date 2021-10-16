@@ -17,12 +17,12 @@ images:
 ### Introduction
 A **DNS query**, also known as a **DNS request**, is a request for information from a user's computer to a DNS server (DNS client). These requests are made to acquire the IP address associated with a domain name. A DNS client requests DNS servers to retrieve the domain's IP address when visiting an environment.
 
-When setting up a home network, one can only allow access to the Unbound DNS service on OPNsense and restrict all other DNS servers from being accessed. Any unauthorized access to external DNS servers will be prohibited by this method. Only the local DNS resolver is allowed (unless the DNS requests are encrypted).
+When configuring a home network, one can choose to enable just the Unbound DNS service on OPNsense to be accessible while banning access to all other DNS servers. This simple solution works well enough because any unauthorized access to external DNS servers is simply denied. Only the local network's DNS resolver is permitted (unless the DNS requests are encrypted).
 
 However, one can take a different approach. The local DNS server can be used to route all DNS requests to alternate `external servers`. That way, you can make that everything is working properly and limit or filter DNS requests. You can easily monitor DNS requests that would otherwise go undetected if a firewall rule had blocked them with the DNS redirection feature enabled on your computer.
 
 ### prerequisite
-- The [OPNsense](https://opnsense.org/) software.
+- The [OPNsense](https://opnsense.org/) software. [Click here](https://techexpert.tips/opnsense/opnsense-installation-step-by-step/#:~:text=Access%20the%20OPNsense%20Download%20Portal.%20On%20the%20OPNsense,our%20example%2C%20we%20downloaded%20the%20OPNsense-19.7-OpenSSL-dvd-amd64%20installation%20image.) to learn how to download the OPNsense software.
 
 
 ### Table of contents
