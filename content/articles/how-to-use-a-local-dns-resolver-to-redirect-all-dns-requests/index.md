@@ -24,7 +24,6 @@ However, one can take a different approach. The local DNS server can be used to 
 ### prerequisite
 - The [OPNsense](https://opnsense.org/) software.
 
-> It is the software used in this tutorial.
 
 ### Table of contents
 - [Reason for redirecting DNS requests to local DNS resolver](#reason-for-redirecting-dns-requests-to-local-dns-resolver)
