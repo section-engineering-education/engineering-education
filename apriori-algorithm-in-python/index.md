@@ -96,7 +96,7 @@ output_DataFrame
 
 ```
 **Output**
-![unsorted_output](/engineering-education/logistic-regression-in-python/unsorted_output.png)
+![unsorted_output](/engineering-education/apriori-algorithm-in-python /unsorted_output.png)
 ### Displaying the results sorted by descending order of Lift column
 ```python
 output_DataFrame.nlargest(n = 10, columns = 'Lift')
@@ -104,7 +104,7 @@ output_DataFrame.nlargest(n = 10, columns = 'Lift')
 ```
 **Output**
 
-![sorted_output](/engineering-education/logistic-regression-in-python/lift.png)
+![sorted_output](/engineering-education/apriori-algorithm-in-python /lift.png)
 
 
 ###Conclusion
