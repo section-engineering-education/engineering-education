@@ -15,7 +15,7 @@ images:
     alt: Garbage collection in c# dotnet framework image
 ---
 
-Garbage collection in the C#.Dotnet framework is used to manage memory automatically. In runtime, heap storage space can be allocated to an object class. If the software has completed all the activities related to the object, the memory location will be a waste since it will not be usable.
+Garbage collection in the C#. Dotnet framework is used to manage memory automatically. In runtime, heap storage space can be allocated to an object class. If the software has completed all the activities related to the object, the memory location will be a waste since it will not be usable.
  <!--more-->
 ### Introduction
 Garbage collection is a critical approach in the .Net framework for releasing unused handled code objects from Memory and allowing the process to run faster. In this tutorial, we will go over the fundamentals of garbage collection.
