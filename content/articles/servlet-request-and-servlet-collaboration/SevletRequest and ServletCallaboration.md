@@ -380,7 +380,7 @@ Right-click on the `login.html` page and choose run As-> Run on Server -> Save a
 
 This example will give you a solid foundation for working with the `ServletDispatcher` interface in your project. To improve your understanding and enhance your coding skills, I recommend that you start exploring more examples.
 
-We assumed you already knew how to use the eclipse IDE and configure the Tomcat server in this example. If not, look at the [ServletRequest example above.](servletrequest-interface-example)
+We assumed you already knew how to use the eclipse IDE and configure the Tomcat server in this example. If not, look at the [ServletRequest example above](#servletrequest-interface-example)
 
 **Happy coding!**
 
