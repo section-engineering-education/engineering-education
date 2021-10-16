@@ -16,10 +16,7 @@ images:
 
 ---
 
-With the growing technology especially in the field of AI(Artificial Intelligence), the knowledge of different methods of training a model is essential to programmers.
-
-<!--more-->
-
+With the growing technology especially in the field of AI (Artificial Intelligence), the knowledge of different methods of training a model is essential to programmers.
 These techniques help in automation of decision making process and help predict the probability of different outcomes when random variables are intercepted.
 
 This article will simplify monte carlo method operations and help programmers to clearly understand what this technique entail.
@@ -46,13 +43,10 @@ This article will simplify monte carlo method operations and help programmers to
 
 ### What is Monte Carlo Simulation?
 It is simply a model that is used to outline the probability of various outcomes of decisions made.
-
 The simulations help to describe and assess the expected risk impact to eliminate uncertainity for better decisions.
 
 This is an approach technique rather than an exact technique.
-
 **Pseudo-random number generators** are used when implementing using computers.
-
 It is frequently utilized in variety of industries, including engineering, finance, business, project planning, and many more.
 
 ### Unique attributes from other techniques
@@ -70,33 +64,27 @@ It is frequently utilized in variety of industries, including engineering, finan
  #### Basic steps to be followed in the Monte Carlo process
 
 For a Monte Carlo model, there are four main steps to follow, in order to come up with the desired results.
-
 They are discussed below:
 
 1. **Define inputs probability**
 
 Outline the domain of probable inputs.
-
 The emulated _reality_ should resemble the reality whose behavior we want to study and describe.
 
 2. **Generate random inputs**
 
 Produce random inputs from a probability distribution.
-
 The features of the inputs should be similar to those of the real cosmos we're aiming to replicate.
-
 This means that, dependencies between the inputs should be represented.
 
 3. **Computate the inputs**
 
 The computation should be deterministic.
-
 By deterministic, we mean that they should be able to give the same output each time they are computed.
 
 4. **Combine the results**
 
 Assemble the information to create the desired outcome.
-
 Typical outputs include:
 
 _Histogram_
@@ -107,11 +95,9 @@ Statistics in a nutshell (mean, variance, and standard deviation)
 
 These examples show how you can implement monte carlo basic steps to come up with a predictive model.
 
-Now, let's have a look at several examples using python.
-
-For beginners, you can use any text editor with python extensions.
-
-You can check this article [here](https://re.sajari.com/token/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdXJwb3NlIjoiY2xpY2siLCJkZXN0aW5hdGlvbiI6Imh0dHBzOi8vd3d3LnNlY3Rpb24uaW8vZW5naW5lZXJpbmctZWR1Y2F0aW9uL2EtYmVnaW5uZXJzLWd1aWRlLXRvLXB5dGhvbi8iLCJ2YWxzIjp7ImNvbGxlY3Rpb24iOlsic2VjdGlvbi1pbyJdLCJjb21wYW55IjpbIjE1NjgyMzQxMTYwNzg2MTQ4NjgiXSwiZmllbGQiOlsidXJsIl0sInByb2plY3QiOlsiMTU2ODIzNDExNjA3ODYxNDg2OCJdLCJxLmlkIjpbInQybGt6eHU0ZmV1ZGJmaXAiXSwicS5zbCI6WyI3Il0sInEudWlkIjpbInQybGt6eHU0ZmV1ZGJmaXAwIl0sInZhbHVlIjpbImh0dHBzOi8vd3d3LnNlY3Rpb24uaW8vZW5naW5lZXJpbmctZWR1Y2F0aW9uL2EtYmVnaW5uZXJzLWd1aWRlLXRvLXB5dGhvbi8iXX19.xc7CDwfGaO-RpZ6vlYGjoQLwxYJ2Fi_9oeA_f0owC0c) for more details on installations and some python basic functions.
+Now, let's have a look at several examples using Python.
+For beginners, you can use any text editor with Python extensions.
+You can check this article [here](https://re.sajari.com/token/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdXJwb3NlIjoiY2xpY2siLCJkZXN0aW5hdGlvbiI6Imh0dHBzOi8vd3d3LnNlY3Rpb24uaW8vZW5naW5lZXJpbmctZWR1Y2F0aW9uL2EtYmVnaW5uZXJzLWd1aWRlLXRvLXB5dGhvbi8iLCJ2YWxzIjp7ImNvbGxlY3Rpb24iOlsic2VjdGlvbi1pbyJdLCJjb21wYW55IjpbIjE1NjgyMzQxMTYwNzg2MTQ4NjgiXSwiZmllbGQiOlsidXJsIl0sInByb2plY3QiOlsiMTU2ODIzNDExNjA3ODYxNDg2OCJdLCJxLmlkIjpbInQybGt6eHU0ZmV1ZGJmaXAiXSwicS5zbCI6WyI3Il0sInEudWlkIjpbInQybGt6eHU0ZmV1ZGJmaXAwIl0sInZhbHVlIjpbImh0dHBzOi8vd3d3LnNlY3Rpb24uaW8vZW5naW5lZXJpbmctZWR1Y2F0aW9uL2EtYmVnaW5uZXJzLWd1aWRlLXRvLXB5dGhvbi8iXX19.xc7CDwfGaO-RpZ6vlYGjoQLwxYJ2Fi_9oeA_f0owC0c) for more details on installations and some Python basic functions.
 
 #### Example 1: Approximate the value of pi
 
@@ -139,9 +125,8 @@ The following Monte Carlo approach can be used to approximate the value of π:
 
 Using the four main steps, the `pi` can be estimated as follows:
 
-In this example, we have implemented the use of **Numpy library** in python.
-
-If are not familiar with python libraries, you can refer to this [article](https://re.sajari.com/token/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdXJwb3NlIjoiY2xpY2siLCJkZXN0aW5hdGlvbiI6Imh0dHBzOi8vd3d3LnNlY3Rpb24uaW8vZW5naW5lZXJpbmctZWR1Y2F0aW9uL2ludHJvZHVjdGlvbi10by1udW1weS8iLCJ2YWxzIjp7ImNvbGxlY3Rpb24iOlsic2VjdGlvbi1pbyJdLCJjb21wYW55IjpbIjE1NjgyMzQxMTYwNzg2MTQ4NjgiXSwiZmllbGQiOlsidXJsIl0sInByb2plY3QiOlsiMTU2ODIzNDExNjA3ODYxNDg2OCJdLCJxLmlkIjpbInZ0MHNzMGNnMHpiaTBjeG4iXSwicS5zbCI6WyIxIl0sInEudWlkIjpbInZ0MHNzMGNnMHpiaTBjeG4wIl0sInZhbHVlIjpbImh0dHBzOi8vd3d3LnNlY3Rpb24uaW8vZW5naW5lZXJpbmctZWR1Y2F0aW9uL2ludHJvZHVjdGlvbi10by1udW1weS8iXX19.1ya9PWvNq5r63W06KrKimy2-_BlOEOncpfNvLxpd648) for more understanding.
+In this example, we have implemented the use of **Numpy library** in Python.
+If you are not familiar with Python libraries, you can refer to this [article](https://re.sajari.com/token/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdXJwb3NlIjoiY2xpY2siLCJkZXN0aW5hdGlvbiI6Imh0dHBzOi8vd3d3LnNlY3Rpb24uaW8vZW5naW5lZXJpbmctZWR1Y2F0aW9uL2ludHJvZHVjdGlvbi10by1udW1weS8iLCJ2YWxzIjp7ImNvbGxlY3Rpb24iOlsic2VjdGlvbi1pbyJdLCJjb21wYW55IjpbIjE1NjgyMzQxMTYwNzg2MTQ4NjgiXSwiZmllbGQiOlsidXJsIl0sInByb2plY3QiOlsiMTU2ODIzNDExNjA3ODYxNDg2OCJdLCJxLmlkIjpbInZ0MHNzMGNnMHpiaTBjeG4iXSwicS5zbCI6WyIxIl0sInEudWlkIjpbInZ0MHNzMGNnMHpiaTBjeG4wIl0sInZhbHVlIjpbImh0dHBzOi8vd3d3LnNlY3Rpb24uaW8vZW5naW5lZXJpbmctZWR1Y2F0aW9uL2ludHJvZHVjdGlvbi10by1udW1weS8iXX19.1ya9PWvNq5r63W06KrKimy2-_BlOEOncpfNvLxpd648) for more understanding.
 
 ##### **Define possible inputs**
 
@@ -233,7 +218,6 @@ You can run the code on your computer to practice.
 1. **Application in Uncertainty Analysis**
 
 A good example of uncertainty propagation would be that of calculating the **BMI**(_Body Mass Index_).
-
 BMI is the ratio body mass/body height.
 
 Let's take a look at how this would work:
@@ -282,7 +266,6 @@ Mathematical theory states that the accuracy of a Monte Carlo estimation techniq
 When you repeat an experiment several times, the law of big numbers comes into play.
 
 The average of the findings should be close to the expected value after numerous trials.
-
 Therefore, **increasing the number of trials will increase accuracy level** as stated earlier.
 
 This indicates that we may learn properties of a random variable (mean, variance, standard deviation, and so on) simply by simulating it over a large number of trials using Monte Carlo simulation.
@@ -290,7 +273,6 @@ This indicates that we may learn properties of a random variable (mean, variance
 ### Why people say NO to Monte Carlo.
 
 Despite the accuracy level that can be produced by the Monte Carlo method, people still say no to this method especially in the financial section.
-
 They opt for other techniques like the **forecast method**.
 
 Here are some reasons why one would prefer other method over Monte Carlo:
@@ -302,15 +284,12 @@ Here are some reasons why one would prefer other method over Monte Carlo:
 3. The real world rather depend on the future patterns than the past occurences.
 
 Due to these reasons, financial advisors still stand against this technique that has grown popular in the stock market.
-
 Businesses have been affected in situations where the projected losses hits deeper than the predictions.
 
 ### Conclusion
 
 Monte Carlo simulation technique has been widely used for predictions in different areas.
-
 Risk analysis being a major use, it has been greatly adopted.
-
 We probably cannot judge it's efficiency or accuracy which largely depends on the past patterns/data.
 
 I hope you find this article helpful.
