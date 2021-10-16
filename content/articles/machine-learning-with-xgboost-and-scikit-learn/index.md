@@ -452,3 +452,6 @@ To get the Google Colab code for this tutorial click [here](https://colab.resear
 - [XGBoost documentation](https://xgboost.readthedocs.io/en/latest/)
 - [Basics of ensamble learning](/engineering-education/ensemble-learning/)
 - [Boosting algorithms in Python](https://www.section.io/engineering-education/boosting-algorithms-python/)
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
