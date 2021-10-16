@@ -69,7 +69,7 @@ Model interpretation has made a great impact in today's machine learning buildin
 - To identify wrong classifications during predictions.
   Model interpretation analyzes the prediction results, during this process it uses different techniques to identify the wrong and right predictions. This ensures that only the right predictions are accepted.
 
-When it comes to model interpretation we have different methods and techniques used. They depend on the type of algorithm used, the type of machine learning problem, and the complexity of these problems.
+In model interpretation, we have different methods and techniques used. They depend on the type of algorithm used, the type of machine learning problem, and the complexity of these problems.
 
 ### Model interpretation methods and techniques
 
@@ -77,11 +77,11 @@ These model methods and techniques are as follows.
 
 #### Model-specific method
 
-This technique is specific to only certain models and may not be applied to other machine learning models. It checks on the specific features and attributes within a model and their impact on the general functionalities of the model.
+This technique is specific to only certain models and may not be applied to other machine learning models. It checks on the specific features and attributes within a model, it also checks how they impact the general functionalities of the model.
 
 #### Local or global scope method
 
-The local scope is used in individual prediction and tries to explain why a model made a certain single prediction. In the global scope, it goes beyond the individual prediction and tries to explain the general behavior of the model.
+The local scope is used in individual prediction and explains why a model made a single prediction. The global scope goes beyond the individual prediction and explains the general behavior of the model.
 
 In this tutorial, we will build a simple classification model using the iris dataset. The model classifies the flower species based on user input. From there, we will use LIME to interpret this model.
 
@@ -118,7 +118,7 @@ This shows that our model has columns such as `sepal_width`, `petal_length`, `pe
 
 ### Creating features
 
-Features are the key attributes in the dataset that are used as inputs during model training. These features are used by the model to enhance pattern recognition during model training.
+Features are the key attributes in the dataset that are used as inputs during model training. Features are used by the model for pattern recognition during model training.
 
 ```python
 X = df[['sepal_length', 'sepal_width', 'petal_length', 'petal_width']]
@@ -232,7 +232,7 @@ To evaluate this prediction, we need to calculate the accuracy score of this mod
 
 ### Calculating the accuracy score
 
-The accuracy score shows the number of correct predictions made by our model. This is usually expressed as a percentage, the higher the accuracy score the better the model is in making predictions.
+The accuracy score shows the number of correct predictions made by our model. We express it as a percentage, the higher the accuracy score the better the model in making predictions.
 
 The accuracy score is calculated as follows:
 
@@ -246,7 +246,7 @@ The output is as shown.
 0.8888888888888888
 ```
 
-When we convert into a percentage it becomes `88.89%`. This shows that our model has an `88.89%` chance of making accurate predictions.
+When we convert the accuracy score into a percentage it becomes `88.89%`. This shows that our model has an `88.89%` chance of making accurate predictions.
 
 ### Making a single prediction
 
@@ -335,7 +335,7 @@ exp = explainer.explain_instance(X_test.iloc[8],model_logreg.predict_proba,num_f
 
 In the code above we have specified the row we want LIME to interpret its prediction as `X_test.iloc[8]`.
 
-We also pass `model_logreg` which is the logistic regression model, LIME can verify its prediction results using `predict_proba`.
+We also pass `model_logreg` which is the logistic regression model, LIME can then verify the prediction results using `predict_proba`.
 
 `predict_proba` will provide the prediction probability of that instance.
 
@@ -369,7 +369,8 @@ The middle of the image provides the rules that must be achieved so that the pre
 - sepal_width > 3.30
 - sepal_length <= 5.10
 
-All these rules are achieved according to the right side of the image which gives the dimensions of our input features.
+According to the right side of the image, all these rules are met.
+The right side of the image gives the dimensions of our input features.
 
 Using this visual representation, we can see that our model made the right prediction and now we can trust this model.
 
