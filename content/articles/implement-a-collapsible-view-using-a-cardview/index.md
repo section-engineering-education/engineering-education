@@ -53,12 +53,12 @@ dependencies {
 
 You can get the latest version of the material CardView library [here](https://maven.google.com/web/index.html#com.google.android.material:material).
 
-#### Step Three: Creating the Root Layout
+#### Step Three: Creating the root layout
 Change your root layout to a `constraint` layout. Inside the constraint layout, add the `CardView`.
  
 **Note: Constrain the card view to the parent's top and bottom and the parent's start and end.**
 
-#### Step Four: Styling The Card View
+#### Step Four: Styling the card view
 Make the card view to wrap its content height and width of 0dp. In constraint layout, this makes the view match its constraint size. In our case, The width of the `CardView` would be as large as the parent. Give the CardView a horizontal Margin of 16dp and a corner radius of 5dp. Lastly, you will make the card view a parent layout to other views. To do this, give the card view a start and end tag.
 
 ```xml
@@ -80,7 +80,7 @@ Make the card view to wrap its content height and width of 0dp. In constraint la
 ```
 Great Work!
  
-#### Step Five: Add Views To The Card View Layout
+#### Step Five: Add views to the card view layout
 Within the `CardView`, add a constraint layout. Make its width to match its parent, and height to wrap content. You are going to add views inside this constraint layout. Your code should look like this:
 
 ```xml
@@ -711,7 +711,7 @@ Nice! You are all set. Your entire layout code should look like this:
 You are all set. Now time for some java.
 
 
-#### Step nine: Add OnClick Listener to the ImageView
+#### Step nine: Add OnClick listener to the ImageView
 In this step, we will set an `onClick` listener to the show `imageView`.
  
 In your `Main Activity.java` file, add the following lines of code:
@@ -767,10 +767,12 @@ Let us run our app. Our collapsable card view should look this way:
 
 Nice right?
 
-You can find this project's code on [Github](https://github.com/Lamouresparus/CollapsingCardView) or download the APK [here](https://drive.google.com/file/d/1-2fMOcxtCaCs6xus0DWjvQN1kwOvJ4ZA/view?usp=sharing) .
+You can find this project's code on [Github](https://github.com/Lamouresparus/CollapsingCardView) or download the APK [here](https://drive.google.com/file/d/1-2fMOcxtCaCs6xus0DWjvQN1kwOvJ4ZA/view?usp=sharing).
   
 ### Conclusion
 The CardView enriches the look of your application's UI. The default implementation of the shadow and rounded corners is a big plus. However, the Cardview is designed to hold one child view within itself. You could add within the card view another layout to manage the child views, just like we did here.
 
 Cheers!
 
+---
+Peer Review Contributions by: [Briana Nzivu](/engineering-education/authors/briana-nzivu/)
