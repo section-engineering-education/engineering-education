@@ -167,7 +167,7 @@ chart.add('', plot_dictoinaries)
 chart.render_to_file('bar_desc.svg')
 ```
 
-We create a `plot_dictionaries` list with three dictionaries: one for the `public_apis` work, the other for  `system_design_primer` work, and the last one  for `Python`. There are two keys in every dictionary: `value` and `label`. Pygal calculates the height of each bar using the number linked with `value`, and it creates the **tooltip** for each bar using the string connected with `label`. The first dictionary, for instance, will generate a bar indicating a project with `144904` stars, with the tooltip `"Description of public-apis."`
+The list `plot_dictionaries` comprises of three dictionaries for `public_apis` work, `system_design_primer` work, and lastly for `python` work. There are two keys in every dictionary: `value` and `label`. Pygal calculates the height of each bar using the number linked with `value`, and it creates the **tooltip** for each bar using the string connected with `label`. The first dictionary, for instance, will generate a bar indicating a project with `144904` stars, with the tooltip `"Description of public-apis."`
 
 The `add()` function requires a string and a list. We pass the list of dictionaries containing the bars (plot dictionaries) to `add()`. Pygal has a default tooltip that contains the number of stars, besides the customized tooltip we gave it.
 
