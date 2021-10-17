@@ -1,4 +1,3 @@
-### How to validate emails in Flutter 
 ### Introduction
 #### Topics to handle:
 - What is an email validator?
@@ -6,12 +5,13 @@
 - Create a simple app to show email validator.
 - Understand the implementation of email validator.
 
-
 ### What is Email Validator? 
-Email validator is a  Flutter package that checks whether an email is valid or invalid. It is not based on regular expression but checks if the email entered is linked to a reliable domain. Domains that exist are Gmail, Yahoo, or Outlook among others.
+Email validator is a  Flutter package that checks whether an email is valid or invalid. It is not based on regular expression but checks if the email entered is linked to a reliable domain. Domains that exist are Gmail, Yahoo, or Outlook, among others.
 
 ### How does it works?
-Email validator runs a check on the emails through a process called `swift process`. This process detects typographical errors or deliberate mistakes. It helps to organize and clean all email addresses in the flutter application. Thus protecting the email sender score maximizing the efficiency of the flutter application. The key concepts from the use of this package are validity, risk, the invalidity of any email address.
+Email validator runs a check on the emails through a process called `swift process`. This process detects typographical errors or deliberate mistakes. Furthermore, it helps to organize and clean all email addresses in the flutter application. 
+
+Thus protecting the email sender score maximizing the efficiency of the flutter application. The key concepts from the use of this package are validity, risk, the invalidity of any email address.
 
 ### Importance of Email validator
 - Improving the deliverability of messages to emails by eliminating all invalid emails.
@@ -43,6 +43,7 @@ dependencies:
 >pub get
 ```
 - Step3. Importing the package
+
 ```dart
 import 'package:email_validator/email_validator.dart'
 ```
@@ -50,8 +51,7 @@ import 'package:email_validator/email_validator.dart'
 ### An Example in Flutter
 
 ### Brief explanation of what the project does
-When the user enters an input whether the email or the password. The email validator listens throughout if the data is valid with the help of the validator.
-
+When the user enters input, whether the email or the password, the email validator listens throughout if the data is valid with the help of the validator.
 
 - Step1. Create a new flutter project:
 open your terminal and type the following
@@ -64,6 +64,7 @@ flutter create my-project-name
 - Step2. Replace all the code in the main dart with this code:
 
 This is where all the code we need to run for the page is. This Page contains : text field, button, labels amongst other widgets.
+
 ```dart
 //import for all the packages required
 import 'package:flutter/material.dart';
@@ -152,10 +153,11 @@ class _FirstPageState extends State<MyHomePage> {
     );
   }
 }
-
 ```  
+
 - Step3. Create secondpage. dart 
-For this page Users will land on it if the email entered is valid.
+For this page, Users will land on it if the email entered is valid.
+
 ```dart
 //import are here
 import 'package:flutter/material.dart'; 
@@ -175,20 +177,24 @@ class SecondScreen extends StatelessWidget {
 }
 
 ```
+
 - Step4. Run the application to check the validation
 To run the code to confirm if the email validator works as the expected type
+
 ```cmd
 flutter run 'name-of-the-device'
 ```
+
 or you can run using a browser
+
 ```cmd
 flutter run -d
 ```
+
 Below are screenshots showing the expected results
 
 ![Trying login without filling in any detail](/engineering-education/how-to-validate-emails-in-flutter/missingemail.jpg)
 ![inValid email input](/engineering-education/how-to-validate-emails-in-flutter/invalidemail.jpg)
-
 
 ![Valid email input](/engineering-education/how-to-validate-emails-in-flutter/validemail.jpg)
 
@@ -198,9 +204,11 @@ Below are screenshots showing the expected results
 For more details on the project, feel free to Reachout @ [this GitHub repository](https://github.com/jonikano/).
 
 ### Conclusion
-Email validator is one of the best ways to confirm emails in  Flutter. It helps to reduce the invalid emails that users may use to sign up and also help one to easily maintain the available emails. I recommend any programmer to use this any flutter application due to its' compatibility with all levels of flutter application be it flutter web application, flutter mobile application, or any other application.  
+Email validator is one of the best ways to confirm emails in  Flutter. It helps to reduce the invalid emails that users may use to sign up and help one easily maintain the available emails. 
+
+I recommend any programmer to use any flutter application due to its' compatibility with all levels of flutter application, be it flutter web application, flutter mobile application, or any other application.  
 
 ### References:
 - https://pub.dev/documentation/email_validator/latest/
 - https://pub.dev/documentation/email_validator/latest/
-Enjoy Coding !!!
+Enjoy Coding.
