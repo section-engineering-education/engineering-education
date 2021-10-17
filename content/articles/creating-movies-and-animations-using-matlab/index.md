@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/creating-movies-and-animations-using-matlab/hero.jpg
+  - url: /engineering-education/creating-movies-and-animations-using-matlab/hero.png
     alt: Creating movies and animations using Matlab Hero image
 ---
 
