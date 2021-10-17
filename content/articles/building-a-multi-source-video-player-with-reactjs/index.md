@@ -1,30 +1,22 @@
-### Building a multi-source video player with ReactJS
+Video playing capabilities are expected of modern websites such as blogs, social media, and educational websites. Building a video player that can render media from social media websites including YouTube, Facebook, Vimeo, etc., can be achieved with React.js.
 
-### introduction
-video playing capabilities are expected of modern websites such as blogs, social media, and educational websites. Building a video player that can render media from social media websites including YouTube, Facebook, Vimeo, etc., can be achieved with React.js.
-in this article, we will look into the various steps and dependencies required to build a multi-source video player with React.js
+In this article, we'll look into the various steps and dependencies required to build a multi-source video player with React.js
 
-### Prerequisite
-To understand and utilize this article, it is expected that you have intermediate knowledge of React.js, CSS, and any additional design library. For beginners, take out time to enroll in a crash course before proceeding with this tutorial.
+### Prerequisites
+
+To understand and utilize this article, it's expected that you have an intermediate knowledge of React.js, CSS, and any additional design library. For beginners, take out time to enroll in a crash course before proceeding with this tutorial.
 
 ### Getting started with React Application
-Before we begin the tutorial, let's have a quick overview of React.js. React.js is a modern JavaScript library capable of handling multiple web-based applications including our multi-source video player.
-The first step in every `React` development is the creation of a `react application`. This step makes available a clean slate application with all the default app dependencies installed. To create the `react application`, open the `command terminal` on your local computer and run the command below:
+
+The first step is to create a React application. This step makes a clean slate application with all the default app dependencies installed. Run:
 
 ```bash
 npx create-react-app Video-player
 ```
 
-Alternatively, for yarn users:
-
-```bash
-yarn create-react-app Video player
-```
-
-The command above will create a new `react app`, and also provide a boilerplate that will accommodate subsequent components and code snippets.
-
 ### Task overview
-To simplify the task of building a multi-source video player, we will breakdown the above into the following
+
+To simplify the task of building a multi-source video player, we'll breakdown the process into:
 
 - Installing the required app dependencies
 - Creating the video player component
@@ -33,6 +25,7 @@ To simplify the task of building a multi-source video player, we will breakdown 
 - Styling and customizing the video player.
 
 #### Step 1: Installing the required app dependencies
+
 In this step, we will outline and install the dependencies required to create our application. They include the following:
 
 ```Json
@@ -43,18 +36,15 @@ In this step, we will outline and install the dependencies required to create ou
 "react-fast-compare": "^3.0.1"
 ```
 
-To install the above-listed dependencies, we open up the `command terminal` and run the command below:
+To install the above-listed dependencies, run the command:
 
 ```bash
 npm install
 ```
-Or
-```bash
-yarn install
-```
 
 #### Step 2: Creating the Video player component
-The `Video-player component` is the main component of our application. We will provide the video player with utility functions that will enable it to render videos from multiple sources as required. To begin, in the `src` folder, we will create a `Player.js` file. Thereafter we set it up by implementing the code snippet below
+
+The `Video-player component` is the main component of our application. We will provide the video player with utility functions that'll enable it to render videos from multiple sources as required. To begin, in the `src` folder, we will create a `Player.js` file:
 
 ```JavaScript
 import React from 'react'
@@ -201,8 +191,7 @@ on_error={this.errorHandler}
 export default Player
 ```
 
-The code snippet above looks complex, but not to worry I will explain what is going on there.
-From the snippet above, we created some basic functions that will handle the player behavior, and they include the following:
+From the snippet above, we created some basic functions that'll handle the player's behavior. They include the following:
 
 - On play: this function handles the play operation, ie. When the user clicks the `play button`
 - On pause: this function handles the pause operation, ie when the user clicks the `pause button`
@@ -221,10 +210,12 @@ In the previous step, we created a `Player` component. for our `Player` to have 
 - YouTube
 - Twitch and
 - Vimeo
-  To build our URL handler components, first, we create a `media` folder, thereafter we proceed to the various files shown below
+
+To build our URL handler components, Let's create a `media` folder.
 
 #### The Facebook URL handler (Facebook.js)
-This component will handle videos from Facebook URL, i.e. from facebook groups, pages and feeds. To achieve this, in our `media` folder, we create a `Facebook.js` file which will accommodate the code snippet below:
+
+This component will handle videos from Facebook URL, i.e. from facebook groups, pages and feeds. To achieve this, in our `media` folder, let's create a `Facebook.js` file which will accommodate the code snippet below:
 
 ```JavaScript
 import React from 'react'
@@ -331,6 +322,7 @@ data-auto_play={!this.props.playing ?'false' : 'true' }
 From the code snippet above, we created some functions to `get` and `load` the SDK from Facebook embed. Once the SDK is loaded, the video will be buffered and transferred to our `player` for rendering. Finally, we implemented the getDuration, play, pause, mute, stop and unmute handlers created in the `player` component.
 
 #### The YouTube URL handler (YouTube.js)
+
 YouTube is a video-based social networking website, and also an option in our video player. To provide our player access to videos from YouTube URLs, we need to create a handler for it. To do that, we create a `Youtube.js` file in the `media` folder already created. Then we go ahead with the code implementation below:
 
 ```JavaScript
@@ -456,10 +448,12 @@ export default YouTube
 ```
 
 As shown in the snippet above, similar to the `Facebook` component setup, we created and exported a class-based component. We used the SDK function like iframe functions to embed external links to a web page.
-For better understanding, consider what happens when a video is loaded to a player, the user expects some basic operations examples including getting current time, getting duration of the video, pause, play stop, mute, etc. and we made available functions to handle those operations.
+
+For better understanding, consider what happens when a video is loaded to a player, the user expects some basic operations examples including getting current time, getting duration of the video, pause, play stop, mute, etc. and we made functions to handle those operations.
 
 #### The Twitch URL handler (Twitch.js)
-We have completed the creation and setup of the `Facebook` and `YouTube` components, time to proceed with the `Twitch` component. Similar to what we did earlier, in the `media` folder, create another file `Twitch.js`. thereafter we will set up the component by shipping the code snippet below:
+
+We have completed the creation and setup of the `Facebook` and `YouTube` components, time to proceed with the `Twitch` component. Similar to what we did earlier, in the `media` folder, create another file `Twitch.js`.
 
 ```JavaScript
 import React from 'react'
@@ -555,6 +549,7 @@ export default Twitch
 The twitch setup is fairly easy to understand, the major difference from previous components setups is the offline playability. The twitch SDK provides offline playability once the video is already loaded, the process is called caching. Finally, we also handled looping and autoplay i.e. to restart the video automatically once the duration is exhausted and playing videos automatically after loading respectively.
 
 #### The Vimeo URL handler (Vimeo.js)
+
 Finally, we will equip our `Player` component with the required functions to render videos from Vimeo. Vimeo as we know it is a video hosting and sharing platform, so it should also be covered by our `video player`. First, we create a `Vimeo.js` file in our `media` folder. In the file, we create the required functions and logic by:
 
 ```JavaScript
