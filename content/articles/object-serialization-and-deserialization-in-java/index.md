@@ -71,14 +71,14 @@ To perform serialization, use the `ObjectOutputStream` class's `writeObject` met
 Method syntax of (writeOurObject):
 
 ```java
-public final void writeOurObject(Object o) caste InputOutput Exception
+public final void writeObject(Object o) throws IOException
 
 ```
 
 Method syntax (readOurObject):
 
 ```java
-public final Object readObject() caste InputOutputException, ExceptionClassNotDiscovered
+public final Object readObject() throws IOException, ClassNotFoundException
 
 ```
 
@@ -110,14 +110,14 @@ To serialize this class, we first need to implement the `java.io.Serializable` i
 class Link implements Serializable
 ```
 
-We then propose the following method:
+We then implement the following method:
 
 ```Java
 
-public static void serializeLink(Link inputsLink, String filetitle) {
+public static void serializeLink(Link inputsLink, String fileTitle) {
     try {
-        FileOutputsStream file = new FileOutputsStream(filetitle);
-        ObjectOutputsStream out = new ObjectOutputsStream(file);
+        FileOutputStream file = new FileOutputStream(fileTitle);
+        ObjectOutputStream out = new ObjectOutputStream(file);
         out.writeObject(inputLink)
         out.close();
         file.close();
@@ -136,15 +136,15 @@ This function will serialize a `Link` object submitted as a parameter. The seria
 The serialized object may now be deserialized by using the technique listed below.
 
 ```java
-public static deserializeLink(String filestitle) {
+public static Link deserializeLink(String filestitle) {
     try {
         FileInputStream file = new FileInputStream(filetitle);
         ObjectInputStream on = new ObjectInputStream(file);
-        return (Link) on .readObject();
+        return (Link) on.readObject();
     } catch (IOException ex) {
-        System.out.print("Our IOException has Occured");
+        System.out.print("IOException has Occured");
     } catch (ClassNotFoundException ex) {
-        System.out.print("Our ClassNotFound has Occured");
+        System.out.print("ClassNotFoundException has Occured");
     }
 }
 ```
@@ -195,7 +195,7 @@ public class Serialization {
         try {
             FileInputStream file = new FileInputStream(filetitle);
             ObjectInputStream on = new ObjectInputStream(file);
-            return (Link) on .readObject();
+            return (Link) on.readObject();
         } catch (IOException ex) {
             System.out.println("IOException has Occured");
         } catch (ClassNotFoundException ex) {
