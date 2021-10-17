@@ -49,7 +49,7 @@ The idea of **serialization in Java** is a byte-stream representation of an enti
 
 ### Benefits of serialization
 
-- It's involved in the process of mobilizing the state of an object on the network.
+- Allows the transfer of an object over a network.
 - The status of an entity becomes saved or persistent.
 - Independent of the JVM.
 - It's simple to comprehend and personalize.
