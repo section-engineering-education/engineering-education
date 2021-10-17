@@ -355,3 +355,6 @@ Some variables may have big values that are difficult to convey over a network. 
 ### Conclusion
 
 In this tutorial, we have gone over serialization and deserialization. We solidified this knowledge using examples where we can apply distinct Java principles. Along the way, we went through the OOP concept of inheritance and aggregation. Finally, we discussed the circumstances when properties are not serialized.
+
+---
+Peer Review Contributions by: [John Amiscaray](/engineering-education/authors/john-amiscaray/)
