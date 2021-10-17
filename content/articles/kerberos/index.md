@@ -17,9 +17,17 @@ Kerberos has mainly three parts:
 - Server
 - Key Distribution Center(KDC)
 
-### Breaking-down the Protocol
-
 The **client** is basically a user who initiates a service request. The **server** hosts the service requested by the client. **Key Distribution Center** has two parts: Authentication **Server(AS)** and **Ticket Granting Service(TGS).**
+
+**Role of KDC:** When the client wants to connect with the server, it submits KDC a request for connection. This request is encrypted using a key that is only known to the client and KDC. When the request is validated by KDC, it sends back an encrypted one-time session key to the client. Similarly, the server too receives the encrypted one-time session key. It should be noted that the session keys are encrypted using the secret keys shared with the client and the server respectively.
+ 
+**Role of AS:** When a client requests a service from a server, the server has no way of knowing if the request is from a real user or someone else. There is a possibility that the request is coming from someone impersonating the real user. To prevent this, the server must authenticate users before providing them access to resources. To do this, an authentication server (AS)  is used. All user IDs, credentials, and passwords are stored on this server. As a result, when an user logins with the password, AS receives the user ID, password, and the ID of the server to which the user desires to connect. Then the AS compares all the credentials stored in its database, thus validating the user.
+ 
+**Role of TGS:** It generates tickets for users who have already been authenticated by the AS. For any service, the TGS issues a ticket to the user. The client responds with an encrypted TGT comprising the user ID, server ID, and the requested service. The TGS decrypts the ticket using the shared key. Then it validates the user by verifying the ID and checking the ticket's lifetime. Then it issues a new ticket to permit the user to access the service. This final ticket (token) is sent to the server. Once the token has been validated, transmission between the user and the server can begin.
+
+The roles describe what each component performs on its own.  In contrast, the protocol is carried out by all of the components working together. The next section dives into the protocol's flow or the components' interdependence.
+
+### Breaking-down the Protocol
 
 The client submits a request for service to the AS. It is now up to the AS to validate the client. The authentication procedure is carried out by hashing a secret cryptographic key(private key) that no one else knows. The request is encrypted and transferred to the AS using a shared secret key (first secret key). The AS obtains it and decrypts it with the shared secret key. AS gives the Ticket Granting Ticket(TGT) hence confirming the user's credentials. This ticket serves as evidence that the client has been authenticated. The ticket is encrypted using another secret key(second secret key).
 
