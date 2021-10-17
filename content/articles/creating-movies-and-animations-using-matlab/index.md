@@ -4,10 +4,10 @@ status: publish
 published: true
 url: /creating-movies-and-animations-using-matlab/
 title: Creating movies and animations using Matlab
-description: In this article, we will look at how you can create an animation using Matlab. We will also look at the various steps involved and use the Matlab inbuilt functions to make the activity simpler.
+description: In this article, we will look at how you can create an animation using Matlab. We will also look at the various steps involved and use the Matlab in-built functions to make the activity simpler.
 author: florence-atieno
-date: 2021-10-09T00:00:00-11:30
-topics: []
+date: 2021-10-17T00:00:00-04:47
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
@@ -17,9 +17,11 @@ images:
 
 Animation is a series of still images one after another. If you show these images together in rapid succession, the brain interprets them as continuous fluid motion.
 <!--more-->
-The animation follows a similar workflow to that of creating a flip-flop book. A flip-flop book is a booklet with a series of images that gradually change from one page to the next. 
+The animation follows a similar workflow to that of creating a flip-flop book. A flip-flop book is a booklet with a series of images that gradually change from one page to the next.
 
-When you view the pages quickly, the images appear to animate by simulating motion or some other change. Animation has a wide advantage and is widely used in the science and engineering field. It helps to bring ideas into real-life or give the context of the idea. In this article, we will look at how you can create an animation using Matlab. We will also look at the various steps involved and use the Matlab inbuilt functions to make the activity simpler.
+When you view the pages quickly, the images appear to animate by simulating motion or some other change. Animation has a wide advantage and is widely used in the science and engineering field. It helps to bring ideas into real-life or give the context of the idea.
+
+In this article, we will look at how you can create an animation using Matlab. We will also look at the various steps involved and use the Matlab inbuilt functions to make the activity simpler.
 
 ### Prerequisites
 To follow along with this tutorial, you will need:
@@ -40,13 +42,13 @@ Note that you have to repeat steps 2 to 4 to keep going through building one fra
 Maybe you have a fancy flight simulator that will run a scenario, kick out all this data, and save it to a file. So all you need here is to load the data. It means that You use the `load` function here. Also, if you are familiar with Simulink, you know that you can run a Simulink model from a Matlab script to generate data using the `sim` function.
 
 #### 2. Drawing/ rendering the scenario at some point t_x
-This deals with plotting or drawing one single frame of the animation. It means that you will use the plot functions such as `plot`, `plot3`, `surf`. A couple of things that can be helpful include the` hold on` function for complicated scenarios or animations. Also, it helps to draw many figures on the same plot. Because of jamming the `plot` function inside the `for` loop, you have to periodically wipe the slate clean after every time. In this, we use the `clf` function.
+This deals with plotting or drawing one single frame of the animation. It means that you will use the plot functions such as `plot`, `plot3`, `surf`. A couple of things that can be helpful include the `hold on` function for complicated scenarios or animations. Also, it helps to draw many figures on the same plot. Because of jamming the `plot` function inside the `for` loop, you have to periodically wipe the slate clean after every time. In this, we use the `clf` function.
 
 #### 3. Take a snapshot of the scenario
 Once you have drawn one page of the flipbook, we want to grab that frame and save it into the large flipbook. Matlab has the function `get frame` for doing this.
 
 #### 4. Advance time t*k to t*(k+1)
-Like we said before, If we put the process inside a `for` loop or a `while` loop, the step is automatically handled. If you have data that you are simulating that is very temporally timely spaced, you might have tons of data. 
+Like we said before, If we put the process inside a `for` loop or a `while` loop, the step is automatically handled. If you have data that you are simulating that is very temporally timely spaced, you might have tons of data.
 
 You may not want to plot every single point of your data since that will be a very dense movie. So we will implement the logic of skipping some data and using the `continue` function for this.
 
@@ -72,7 +74,7 @@ clc
 clear all
 ```
 
-Now let us work through the five steps. As we said earlier, the time is going to go through from 0 to `2*pi` and we will use 100 points for this. 
+Now let us work through the five steps. As we said earlier, the time is going to go through from 0 to `2*pi` and we will use 100 points for this.
 
 #### Step 1
 To generate 100 equally spaced points, we use the `linspace` function. We also define our `x`, `y`, and `z` positions.
@@ -106,6 +108,7 @@ So that is the current location of the particle. Let us go ahead and plot this c
 %plot the current location of the particle
 plot3(x_k, y_k, z_k, 'go', 'LineWidth', 3, 'MarkerSize', 15)
 ```
+
 #### Step 3
 
 To draw the entire trajectory, we execute the code below:
@@ -131,9 +134,11 @@ view([30 35])
 
 Let us run the script and see what we have at this point.
 
-![the plot](/engineering-education/creating-video-and-movie-animations-using-matlab/animation_one.png)
+![the plot](/engineering-education/creating-movies-and-animations-using-matlab/animation_one.png)
 
-We noticed from the image above that Matlab plotted all the points because we had the `hold on` function that kept on plotting and plotting. One of the things that we need to do is to make a change. Our expectation is not to plot all the points but to have a point moving on the spiral. Now let us wipe the slate clean so that every time we are plotting, it is on a blank figure. 
+We noticed from the image above that Matlab plotted all the points because we had the `hold on` function that kept on plotting and plotting.
+
+One of the things that we need to do is to make a change. Our expectation is not to plot all the points but to have a point moving on the spiral. Now let us wipe the slate clean so that every time we are plotting, it is on a blank figure.
 
 #### Step 4
 To do this, add the code below after the `k=length(t)` so that we have:
@@ -146,11 +151,13 @@ clf
 
 If we run the code now, we will have:
 
-![the plot](/engineering-education/creating-video-and-movie-animations-using-matlab/animation_two.png)
+![the plot](/engineering-education/creating-movies-and-animations-using-matlab/animation_two.png)
 
-Surprisingly, this, too, didn't work. As we can see, it ended up drawing the very last image here, which is not what we expected. What we expect is a particle moving up a spiral. It did not happen because Matlab noticed that our plot command was inside a `for` loop. 
+Surprisingly, this, too, didn't work. As we can see, it ended up drawing the very last image here, which is not what we expected. What we expect is a particle moving up a spiral. It did not happen because Matlab noticed that our plot command was inside a `for` loop.
 
-Matlab is smart to realize that it will slow down if it draws every single image here in this loop. So it suppresses the plotting until you drop out of the loop and then render the very last seen. Since that is not the behavior we need here, we will force Matlab to draw the image. We do this by using the `drawnow` function. This function forces Matlab to flush the graphics to plot this as it goes.
+Matlab is smart to realize that it will slow down if it draws every single image here in this loop. So it suppresses the plotting until you drop out of the loop and then render the very last seen.
+
+Since that is not the behavior we need here, we will force Matlab to draw the image. We do this by using the `drawnow` function. This function forces Matlab to flush the graphics to plot this as it goes.
 
 ```matlab
 % Force Matlab to draw the image at this point
@@ -159,14 +166,17 @@ drawnow
 
 Let us now run the code:
 
-![the animated plot](/engineering-education/creating-video-and-movie-animations-using-matlab/animation_three.png)
+![the animated plot](/engineering-education/creating-movies-and-animations-using-matlab/animation_three.png)
 
 Now it seems reasonable. Or, we can use the `pause` function. This function takes the pause time as the argument.
 
 ```matlab
 pause(0.2)     %It pauses for 0.2 seconds and continues
 ```
-What we are doing now is watching flipbooks occur one time on our screen. This isn't exactly what we would like to do here because we want to save the flipbook. Let us call the `getframe` function to force the graphics to render and return a bitmap or matrix of the values of the current figure. This function works as the `drawnow` function. 
+
+What we are doing now is watching flipbooks occur one time on our screen. This isn't exactly what we would like to do here because we want to save the flipbook.
+
+Let us call the `getframe` function to force the graphics to render and return a bitmap or matrix of the values of the current figure. This function works as the `drawnow` function.
 
 Comment out the `drawnow` and have the code below:
 
@@ -208,7 +218,9 @@ myWriter = VideoWriter('curve', '');
 ```
 
 ### Conclusion
-Matlab provides a better environment for performing the animations because of the in-built functionthat  makes this process quicker. Also, Matlab is very smart and performs specific operations automatically. These operations are such as data generation. Movies and animations can be performed for more complex operations in the field of science. It helps to visualize the ideas in the field of science.
+Matlab provides a better environment for performing the animations because of the in-built functions that makes this process quicker. Also, Matlab is very smart and performs specific operations automatically.
+
+These operations are such as data generation. Movies and animations can be performed for more complex operations in the field of science. It helps to visualize the ideas in the field of science.
 
 I hope this tutorial helps you create movies and animations using Matlab. Happy coding.
 
