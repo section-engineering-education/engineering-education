@@ -97,17 +97,20 @@ We will create a user login project with a servlet in this example. In this cont
 ```html
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="ISO-8859-1">
-<title>login demo</title>
+    <meta charset="ISO-8859-1">
+    <title>login demo</title>
 </head>
+
 <body>
- <form action="LoginAction1" method="post">
+    <form action="LoginAction1" method="post">
         <input type="text" name="name" placeholder="Enter username" required>
-         <input type="password" name="password" placeholder="Enter password" required>
-         <input type="submit" value="submit">
-         </form>
+        <input type="password" name="password" placeholder="Enter password" required>
+        <input type="submit" value="submit">
+    </form>
 </body>
+
 </html>
 ```
 
@@ -125,14 +128,21 @@ We will create a user login project with a servlet in this example. In this cont
 
 ```java
 
-import java.io.IOException;
 
-import jakarta.servlet.ServletException;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-public class LoginAction1 extends HttpServlet {
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet({ "/LogInDemo", "/LoginAction1" })
+public class LoginAction1 extends HttpServlet 
+{
 		
+	private static final long serialVersionUID = 1L;
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{
 		String userName=request.getParameter("name");
@@ -149,6 +159,8 @@ public class LoginAction1 extends HttpServlet {
 	}
 
 }
+
+
 
 ```
 **Step 5:** Create a new JSP file as follows:
@@ -168,13 +180,16 @@ public class LoginAction1 extends HttpServlet {
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
+    <meta charset="ISO-8859-1">
+    <title>Insert title here</title>
 </head>
+
 <body>
- <h1>Hello World !</h1>
+    <h1>Hello World !</h1>
 </body>
+
 </html>
 ```
 
@@ -253,20 +268,23 @@ Give the page you just created a name. We'll call it `htmlPage.html` in this exa
 ```html
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="ISO-8859-1">
-<title>Welcome</title>
+    <meta charset="ISO-8859-1">
+    <title>Welcome</title>
 </head>
+
 <body>
-<form action="Controller">
- <select name="selectOption">
- <option value="select your category">select your category</option>
- <option value="Older">Older than 18</option>
- <option value="Below">Below 18 years</option>
- </select><br>
- <input type="submit" value="submit">
-</form>
+    <form action="Controller">
+        <select name="selectOption">
+            <option value="select your category">select your category</option>
+            <option value="Older">Older than 18</option>
+            <option value="Below">Below 18 years</option>
+        </select><br>
+        <input type="submit" value="submit">
+    </form>
 </body>
+
 </html>
 ```
 
@@ -277,20 +295,20 @@ Give the page you just created a name. We'll call it `htmlPage.html` in this exa
 - Replace the code in the servlet page you just created with the code below:
 
 ```java
-
 import java.io.IOException;
 
-import jakarta.servlet.RequestDispatcher;
-import jakarta.servlet.ServletException;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-
-
-
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+@WebServlet({ "/ServletDispatcherDemo", "/Controller" })
 public class Controller extends HttpServlet 
 {
 	
+	private static final long serialVersionUID = 1L;
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{
 		response.setContentType("Text/html");
@@ -318,6 +336,8 @@ public class Controller extends HttpServlet
 
 }
 
+
+
 ```
 
 **Step 5:** Create a new servlet file as follows:
@@ -329,23 +349,25 @@ public class Controller extends HttpServlet
 ```java
 
 import java.io.IOException;
-
-import jakarta.servlet.ServletException;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 public class Under18Page extends HttpServlet 
 {
 	
+	private static final long serialVersionUID = 1L;
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
 		response.setContentType("Text/html");
-		response.getWriter().append("<html><body style='background-color: red; color: white; text-align: center; padding :200px'><h1>you are under 18</h1></body></html>");
+		response.getWriter().append("<html><body style='background-color: black; color: white; text-align: center; padding :200px'><h1>you are under 18</h1></body></html>");
 	}
 
 
 }
+
 
 ```
 **Step 7:** Lastly, create a new servlet file as follows:
@@ -356,23 +378,18 @@ public class Under18Page extends HttpServlet
 ```java
 
 import java.io.IOException;
-
-import jakarta.servlet.ServletException;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 public class Above18 extends HttpServlet 
 {
-	private static final long serialVersionUID = 1L;
-
-   
+	private static final long serialVersionUID = 1L;  
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{
 		response.setContentType("Text/html");
 		response.getWriter().append("<html><body style='background-color: red; color: white; text-align: center; padding :200px'><h1>you are above 18</h1></body></html>");
 	}
-
-
 }
 
 ```
