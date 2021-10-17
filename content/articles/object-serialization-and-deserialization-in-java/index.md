@@ -329,7 +329,7 @@ class Link implements Serializable {
     }
     public void printLink() 
     {
-        System.out.println(String.format("OurLink; This includes our first comment.", this.commons, this.commits));
+        System.out.println(String.format("Link : \"%s\" with %d commits.", this.commons, this.commits));
     }
 }
 // Use the class as in our previous serialization example
@@ -340,9 +340,9 @@ class Link implements Serializable {
 
 ```
 Before Serialization : 
-OurLink: "This includes our first comment" with 05 comments.
+OurLink: "My first link" with 5 commons.
 After Serialization : 
-OurLink: "This includes our first comment" with 0 comments.
+OurLink: "My first link" with 0 commons.
 ```
 
 #### Description
