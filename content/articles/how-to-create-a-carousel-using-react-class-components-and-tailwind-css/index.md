@@ -1,8 +1,8 @@
-## How to Create a Swipeable Carousel Using React Class Components and Tailwind
+A Carousel is a slideshow that cycles through a series of content. This content could be images, text, or videos. Transitioning from one carousel slide to another is made possible by the use of previous and next controls. The transitioning can also be automated through the use of timers.
 
-A carousel is a slideshow that cycles through a series of content. This content may be images, text, or videos. Transitioning from one carousel slide to another is made possible by the use of previous and next controls. The transitioning can also be automated through the use of timers. Generally, a carousel helps to improve the user's experience.
+In this article, we'll create a carousel component using React class components and use Tailwind CSS for styling. React, which is a JavaScript library, is used to create user interfaces. To learn more about react, kindly go through the [React documentation](https://reactjs.org/docs/getting-started.html). 
 
-In this article, we will create a carousel component using React class components and use Tailwind CSS for styling. React, which is a JavaScript library, is used to create user interfaces. To learn more about react, kindly go through the [React documentation](https://reactjs.org/docs/getting-started.html). Tailwind CSS is a CSS framework that uses utility classes directly in the markup to style a webpage. The Tailwind CSS documentation can be found [here](https://tailwindcss.com/docs).
+Tailwind CSS is a CSS framework that uses utility classes directly in the markup to style a webpage. The Tailwind CSS documentation can be found [here](https://tailwindcss.com/docs).
 
 ### Goals
 
@@ -19,7 +19,7 @@ To be able to follow along in this tutorial, you will need:
 -   Intermediate CSS knowledge.
 -   A code editor, preferably VS Code.
 -   A browser, preferably Chrome.
--   To install Node.js on your machine.
+-   Node.js installed on your machine.
 
 ### Setting up our Project
 
@@ -49,25 +49,21 @@ Open the integrated terminal and type in the following command to open the proje
 npm run start
 ```
 
-The above command, by default, starts the project on localhost port 3000. Open the browser and type in the following address: http://192.168.0.101:3000. If you see the rotating react logo and some text below it, this means that the project is successfully set up.
+The above command, by default, starts the project on localhost port 3000. Open the browser and type in the following address: http://localhost:3000. If you see the rotating react logo and some text below it, this means that the project is successfully set up.
 
 The next step is to install Tailwind CSS in our project. The step-by-step guide to doing this can be found [here](https://tailwindcss.com/docs/guides/create-react-app).
 
 ### Installing Dependencies
 
-The following are the dependencies that we will use in our project.
+The following are the dependencies that we will use in our project:
 
 -   react-icons - We will use this package to get the next and previous icons.
 -   react-easy-swipe - We will use this package to implement the swipe functionality on mobile devices.
 
-Run the following commands to install them:
+Run the following command to install them:
 
 ```bash
-    npm install react-icons
-```
-
-```bash
-    npm i react-easy-swipe
+npm install react-icons react-easy-swipe
 ```
 
 ### Creating the Carousel
@@ -87,12 +83,12 @@ export default class App extends Component {
 The above code shows how we define a class component. This is the root component, and we will import the other components into this component to be rendered to the user.
 The div has two styles applied to it. The styles help to center the component horizontally across the webpage.
 
-Next, open the `src` folder and create a folder named **component**. This is where we will create all the individual components.
+Next, open the `src` folder and create a folder named **component/**. This is where we will create all the individual components.
 
 In the components folder, create two components:
 
--   CarouselData.js - This component will hold all the carousel's data. It will be an array that contains links to different images that we will show in the carousel.
-    Carousel.js - This component will contain all the carousel's interactive elements, including next and previous buttons, slide indicators, and all the functionalities of the carousel.
+-   CarouselData.js - This component will hold all the carousel's data. It will be an array that contains links to different images that we'll show in the carousel.
+-   Carousel.js - This component will contain all the carousel's interactive elements, including next and previous buttons, slide indicators, and all the functionalities of the carousel.
 
 ### Creating the CarouselData.js Component
 
@@ -118,7 +114,7 @@ export const CarouselData = [
 ];
 ```
 
-**Code explanation:** The above code is an array of objects that contain links to images that we will show in our carousel. The source of the images is [Unsplash](https://unsplash.com/).
+The above code is an array of objects that contain links to images that we will show in our carousel. The source of the images is [Unsplash](https://unsplash.com/).
 
 ### Creating the Carousel.js Component
 
@@ -165,19 +161,19 @@ class Carousel extends Component {
 export default Carousel;
 ```
 
-**Code Explanation**:
-
 We first start by importing the `CarouselData` component to have access to images to display in the carousel.
 
-We then import the left and right arrows from the `react-icons` package. Lastly, we import the ` Swipe` package, which will help us import the swipe functionality in mobile devices.
+We then import the left and right arrows from the `react-icons` package. Lastly, we import the `Swipe` package, which will help us add the swipe functionality in mobile devices.
 
 In the state section, we define the active state as 0. The state will be modified by a function that will increase or decrease it accordingly. This will help us dictate which slide to display.
 
-We give the container div a class of `mt-8` which translates to **margin-top: 2rem**. This moves our carousel away from the top margin.
+We give the container div a class of `mt-8` which translates to **margin-top: 2rem**. This moves our carousel away from the top margin. We then create another div that will contain the individual images. 
 
-We then create another div that will contain the individual images. To understand the classes assigned to the div element, kindly refer to the [Tailwind Documentation](https://tailwindcss.com/docs). Inside this div, we use the JavaScript array map() method. Click [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) to learn more about how it works. In this example, the map() method takes two arguments: slide - which refers to each individual element in the CarouselData array and index - which refers to the index of each individual element in the array. The method also takes a callback that returns the images with the `src` set to `slide.image`. We then give the image a class, and in the class, we use conditional rendering to determine which image we will display. This is made possible by the use of a [ternary operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator).
+To understand the classes assigned to the div element, kindly refer to the [Tailwind Documentation](https://tailwindcss.com/docs). Inside this div, we use the JavaScript array `map()` method. Click [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) to learn more about how it works. 
 
-The code `className={index===this.state.currentSlide ? 'block w-full h-auto object-cover' : 'hidden'}` simply translates to: If the index(which is a parameter in the map() method) is equal to the currentSlide state defined in the class, apply the classes `block w-full h-auto object-cover` to the image. Else, apply the `hidden` class to the image. This means that we can only be able to view one image at a time.
+In this example, the `map()` method takes two arguments: slide - which refers to each individual element in the CarouselData array and index - which refers to the index of each individual element in the array. The method also takes a callback that returns the images with the `src` set to `slide.image`. We then give the image a class, and in the class, we use conditional rendering to determine which image we will display. This is made possible by the use of a [ternary operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator).
+
+The code `className={index===this.state.currentSlide ? 'block w-full h-auto object-cover' : 'hidden'}` simply translates to: If the index(which is a parameter in the map() method) is equal to the `currentSlide` state defined in the class, apply the classes `block w-full h-auto object-cover` to the image. Else, apply the `hidden` class to the image. This means that we can only be able to view one image at a time.
 
 Update the `App.js` with the following code to import the **Carousel** component and render it to the browser.
 
@@ -208,8 +204,7 @@ To do this, in the **Carousel.js** component, add the following code inside the 
 <AiOutlineRight className='absolute right-0 text-3xl inset-y-1/2 text-white cursor-pointer' />
 ```
 
-**Code explanation**
-We insert two arrows and position them accordingly. This
+We insert two arrows and position them accordingly.
 
 To add the functionality to the arrows, add the `onClick` event listener, which will listen to a click event and navigate the appropriate slide.
 
@@ -219,8 +214,7 @@ To add the functionality to the arrows, add the `onClick` event listener, which 
 <AiOutlineRight onClick={this.nextSlide} className='absolute right-0 text-3xl inset-y-1/2 text-white cursor-pointer' />
 ```
 
-Now we have to create functions that will be called when we click on the buttons.
-Under the constructor method, add the following lines of code:
+Now we have to create functions that will be called when we click on the buttons. Under the constructor method, add the following lines of code:
 
 ```javascript
 nextSlide = () => {
@@ -239,8 +233,6 @@ prevSlide = () => {
     this.setState({ currentSlide: newSlide });
 };
 ```
-
-**Code explanation**
 
 The `nextSlide` function is called when the user clicks on the next button. In this function, we start by defining a variable named `newSlide`. We then conditionally assign a value to this variable. If the currentSlide state is equal to the length of the array containing the images, we set the value of `newSlide` to 0. Else, we increment the value of the currentSlide state. This helps to ensure that we can keep looping through the images. We then use the `setState` method to update the value of the currentSlide. More information about the `setState()` method can be found [here](https://reactjs.org/docs/state-and-lifecycle.html).
 
