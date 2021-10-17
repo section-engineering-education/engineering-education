@@ -1,10 +1,10 @@
 ### How to Regulate Sessions with Redis
 
-**Redis** is an Open source in-memory data structure store that can be used as a database and/or a cache and message broker. It is an in-memory database which makes it fast. Redis is used for short-lived data in our applications, it's often used with things like sessions or web page headcounts.
+**Redis** is an open-source database that is often used to build high-performance scalable web applications. It is an in-memory database which makes it fast. Redis is used for short-lived data in our applications, it's often used with things like sessions or web page headcounts.
 
  In-memory means you don't need to have large data sets. You have small pieces of data, so tiny little pieces of data that allow us to keep it in memory that is the machine's memory and not disk.
 
- Redis is an open-source database that is often used to build high-performance scalable web applications. Redis is a key-value store and this key relationship is a little bit similar to how we handle objects in javascript. Several languages and frameworks work with Redis, they include Python, backend javascript frameworks like Node.js. In this tutorial, we will be doing our session regulation using Redis with Node.js.   
+ Redis is a key-value store and this key relationship is a little bit similar to how we handle objects in javascript. Several languages and frameworks work with Redis, they include Python, backend javascript frameworks like Node.js. In this tutorial, we will be doing our session regulation using Redis with Node.js.   
 
 
 ### Prerequisites
