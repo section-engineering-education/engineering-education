@@ -103,25 +103,23 @@ First of all, install the PyTorch library if you are working on your local machi
 ```python
 #importing essential libraries
 import torch
-import torch.nn as nn
 import torch.optim as optim
+import torch.nn as nn
+from torch.utils import data
 import torchvision
-import torchvision.datasets as datasets
-from torch.utils.data import DataLoader
-import torchvision.transforms as transforms
 
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
 ```
 If you have GPU present in your machine, the device will automatically be selected as **Cuda**; otherwise, it will be **CPU**. Also, we are setting up the hyperparameters required for training in the cell below.
 
 ```python
-device = "cuda" if torch.cuda.is_available() else "cpu"
-lr = 3e-4
-z_dim = 64
-image_dim = 28 * 28 * 1  # 784
+#setting up the hyperparameters
+learning_rate = 2e-4
+noise_dim = 32
+image_dim = 28 * 28 * 1 
 batch_size = 32
-num_epochs = 50
+num_epochs = 25
 ```
 
 
@@ -131,17 +129,19 @@ In the cell below, we have defined our Generator class which inherits from **nn.
 
 ```python
 class Generator(nn.Module):
-    def __init__(self, z_dim, img_dim):
-        super().__init__()
-        self.gen = nn.Sequential(
-            nn.Linear(z_dim, 256),
-            nn.LeakyReLU(0.01),
-            nn.Linear(256, img_dim),
-            nn.Tanh(),  # normalize inputs to [-1, 1] so make outputs [-1, 1]
-        )
+    def __init__(self, noise_dim, image_dim):
+        super(Generator,self).__init__()
+        self.linear1 = nn.Linear(noise_dim, 128)
+        self.relu = nn.LeakyReLU(0.01)
+        self.linear2 = nn.Linear(128, image_dim)
+        self.tanh = nn.Tanh()
 
     def forward(self, x):
-        return self.gen(x)
+        out = self.linear1(x)
+        out = self.relu(out)
+        out = self.linear2(out)
+        out = self.tanh(out)
+        return out
 ```
 
 #### Discriminator Network
@@ -150,17 +150,19 @@ In the cell below, we are defining the Discriminator net as a class that inherit
 
 ```python
 class Discriminator(nn.Module):
-    def __init__(self, in_features):
-        super().__init__()
-        self.disc = nn.Sequential(
-            nn.Linear(in_features, 128),
-            nn.LeakyReLU(0.01),
-            nn.Linear(128, 1),
-            nn.Sigmoid(),
-        )
+    def __init__(self, in_image):
+        super(Discriminator,self).__init__()
+        self.linear1 = nn.Linear(in_image, 64)
+        self.relu = nn.LeakyReLU(0.01)
+        self.linear2 = nn.Linear(64, 1)
+        self.sigmoid = nn.Sigmoid()
 
     def forward(self, x):
-        return self.disc(x)
+        out = self.linear1(x)
+        out = self.relu(out)
+        out = self.linear2(out)
+        out = self.sigmoid(out)
+        return out
 ```
 
 #### Loading the Data
@@ -168,16 +170,16 @@ class Discriminator(nn.Module):
 We don't have to download the MNIST dataset explicitly, PyTorch library's **datasets** class will download and transform the MNIST dataset for us. In transformation, we need to normalize the images before feeding them to the neural network as well as convert it into a tensor. Finally, data will be loaded to feed to the neural net using **DataLoader** class.
 
 ```python
-disc = Discriminator(image_dim).to(device)
-gen = Generator(z_dim, image_dim).to(device)
-fixed_noise = torch.randn((batch_size, z_dim)).to(device)
+discriminator = Discriminator(image_dim)
+generator = Generator(noise_dim, image_dim)
+noise = torch.randn((batch_size, noise_dim))
 ```
 ```python
-transforms = transforms.Compose(
-    [transforms.ToTensor(), transforms.Normalize((0.5,), (0.5,)),]
+tf = torchvision.transforms.Compose(
+    [torchvision.transforms.ToTensor(),torchvision.transforms.Normalize((0.5,), (0.5,)),]
 )
-dataset = datasets.MNIST(root="dataset/", transform=transforms, download=True)
-loader = DataLoader(dataset, batch_size=batch_size, shuffle=True)
+ds = torchvision.datasets.MNIST(root="dataset/", transform=tf, download=True)
+loader = data.DataLoader(ds, batch_size=batch_size, shuffle=True)
 ```
 ```python
 #Visualizing real data
@@ -189,43 +191,45 @@ plt.axis('off')
 ```
 ![snapshot](/engineering-education/implementing-gan-from-scratch/snapshot-1.png)
 
+```python
+#setting up the optimizers
+opt_discriminator = optim.Adam(discriminator.parameters(), lr=learning_rate)
+opt_generator = optim.Adam(generator.parameters(), lr=learning_rate)
+criterion = nn.BCELoss()
+```
+
 #### Training Phase
 
 As we have discussed the [training of GANs](#training-a-gan) earlier, here, the same principle is implemented programmatically with the help of the PyTorch library. Notice we are backpropagating **lossD**, which is the average of **lossD_real** and **lossD_fake** to update the weights and biases of the Discriminator network.
 
 ```python
 for epoch in range(num_epochs):
-    for batch_idx, (real, _) in enumerate(loader):
-        real = real.view(-1, 784).to(device)
-        batch_size = real.shape[0]
+    for id, (training_sample, _) in enumerate(loader):
+        training_sample = training_sample.view(-1, 784)
+        batch_size = training_sample.shape[0]
 
-        ### Train Discriminator
-        noise = torch.randn(batch_size, z_dim).to(device)
-        fake = gen(noise)
-        disc_real = disc(real).view(-1)
-        lossD_real = criterion(disc_real, torch.ones_like(disc_real))
-        disc_fake = disc(fake).view(-1)
-        lossD_fake = criterion(disc_fake, torch.zeros_like(disc_fake)) 
-        lossD = (lossD_real + lossD_fake) / 2
-        disc.zero_grad()
+        ### Training the Discriminator
+        noise = torch.randn(batch_size, noise_dim)
+        fake_sample = generator(noise)
+        disc_realSample = discriminator(training_sample).view(-1)
+        lossD_realSample = criterion(disc_realSample, torch.ones_like(disc_realSample))
+        disc_fakeSample = discriminator(fake_sample).view(-1)
+        lossD_fakeSample = criterion(disc_fakeSample, torch.zeros_like(disc_fakeSample)) 
+        lossD = (lossD_realSample + lossD_fakeSample) / 2
+        discriminator.zero_grad()
         #we are trying to minimize the total classification error
         lossD.backward(retain_graph=True)
-        opt_disc.step()
+        opt_discriminator.step()
 
-        ### Train Generator
-        output = disc(fake).view(-1)
-        lossG = criterion(output, torch.ones_like(output))#we are trying to maximize the error of classification of fake image by the discriminator
-        gen.zero_grad()
+        ### Training the Generator
+        lossD_fakeSample = discriminator(fake_sample).view(-1)
+        lossG = criterion(lossD_fakeSample, torch.ones_like(lossD_fakeSample))#we are trying to maximize the error of classification of fake image by the discriminator
+        generator.zero_grad()
         lossG.backward()
-        opt_gen.step()
+        opt_generator.step()
 
-        if batch_idx == 0:
-            print(
-                f"Epoch [{epoch}/{num_epochs}]  \
-                      Loss D: {lossD:.4f}, loss G: {lossG:.4f}"
-            )
-            
-
+        if id == 0:
+            print( "Epoch: {epoch} \t Discriminator Loss: {lossD} Generator Loss: {lossG}".format( epoch=epoch, lossD=lossD, lossG=lossG))
 ```
 
 
