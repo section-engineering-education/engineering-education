@@ -1,4 +1,4 @@
-﻿---
+---
 layout: engineering-education
 status: publish
 published: true
@@ -25,7 +25,6 @@ By understanding fundamental programming principles, you familiarise yourself wi
 - [Program documentation](#program-documentation)
 - [Common tools used for programming languages](#common-tools-used-for-programming-languages)
 - [Conclusion](#conclusion)
-
 
 ### Programming languages
 They are two main categories of programming languages:
@@ -73,9 +72,9 @@ Examples of web scripting languages are JavaScript, XML, Perl, Python, Ruby, Gro
 
 ### Program development
 Program Development refers to the process of creating software, and it is categorized into the following stages:
-1. Problem recognition - Here, the programmer should understand and interpret the problem
-2. Problem definition - The programmer identifies the required input processing activities and output. The programmer also identifies ways of solving the same problem and picks the best. Written documentation is required for the design stage
-3. Program Design - At this stage, the programmer develops a problem-solving project called an algorithm, a limited number of logical steps that a program follows to solve a problem. At this stage, tools such as pseudocodes, flowcharts, and decision tables are helpful
+1. Problem recognition - Here, the programmer should understand and interpret the problem.
+2. Problem definition - The programmer identifies the required input processing activities and output. The programmer also identifies ways of solving the same problem and picks the best. Written documentation is required for the design stage.
+3. Program Design - At this stage, the programmer develops a problem-solving project called an algorithm, a limited number of logical steps that a program follows to solve a problem. At this stage, tools such as pseudocodes, flowcharts, and decision tables are helpful.
 4. Program Coding - The algorithm gets translated into an equal programming language code. In program coding, the programmer may use different control structures.
 
 #### Program control structures
@@ -183,7 +182,7 @@ end for
  
 **Note: These control structures have different formats in different programming languages.**
 
-For further reading you can check this [article](https://www.geeksforgeeks.org/control-structures-in-programming-languages/) out.
+For further reading, you can check this [article](https://www.geeksforgeeks.org/control-structures-in-programming-languages/) out.
  
 #### Program testing and debugging
 Testing ensures that the program runs as intended and performs the intended actions. Debugging is the process of checking, detecting, and correcting errors in computer programs. Errors that may occur in a program are syntax errors and logic errors.
@@ -191,10 +190,10 @@ Testing ensures that the program runs as intended and performs the intended acti
 #### Program implementations
 It is the actual delivery and installation of the new program and how well it works.
 
-#### Program review and maintainance
+#### Program review and maintenance
 Review and maintenance are essential because of the errors encountered after implementation. Proper training of users will reduce the chance of invalid input that can crash the program.
 
-### Program Documentation
+### Program documentation
 Program documentation is written text explaining the program development process. It helps during future modification of the program. Documentation can either be internal or external. 
 
 Internal documentation is the written comments in the source program that helps other programmers understand the code statements. External documentation is the reference materials such as user manuals printed as booklets.
@@ -232,7 +231,7 @@ Frameworks used are:
 - Ruby on Rails
 
 Databases used are:
-- MongoDb
+- MongoDB
 - Oracle
 - MySQL
 - Postgre SQL
@@ -248,5 +247,10 @@ Other tools are:
 - Postman
 - Jira
       
- ### Conclusion
-In conclusion, Programming is common in our day-to-day lives as different languages are used in most technical aspects, and for one to venture into programming, you must have a passion for it. It's a step-by-step process that takes time to learn and to skill up.
+### Conclusion
+To wrap up, we have discussed the fundamental principles of programming and the primary tools used in programming. Programming is common in our day-to-day lives as different languages are used in most technical aspects, and for one to venture into programming, one must have a passion for it. It is a step-by-step process that takes time to learn and to skill up.
+
+Happy learning!
+
+---
+Peer Review Contributions by: [Briana Nzivu](/engineering-education/authors/briana-nzivu/)
