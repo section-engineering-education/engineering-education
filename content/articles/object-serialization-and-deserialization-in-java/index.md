@@ -112,7 +112,7 @@ class Link implements Serializable
 
 We then implement the following method:
 
-```Java
+```java
 
 public static void serializeLink(Link inputsLink, String fileTitle) {
     try {
