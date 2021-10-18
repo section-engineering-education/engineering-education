@@ -1,6 +1,22 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /creating-a-simple-chat-app-in-react-using-the-chat-engine-api/
 title: Creating a Simple Chat App in React.js using the chat engine API
+description: This tutorial introduces readers to the concept of developing a realtime chat engine using React.js library.
+author: neema-muganga
+date: 2021-10-18T00:00:00-06:10
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
-In this article, I’ll show you the easiest way possible to create a chat application using React.js. It’ll be done entirely without server-side code, as we’ll let the [chat engine](https://chatengine.io) API handle the back-end. You will understand how the chat engine API works and how to use it to create a precise yet functional direct-messaging application.
+  - url: /engineering-education/creating-a-simple-chat-app-in-react-using-the-chat-engine-api/hero.png
+    alt: chat engine React api image
+---
+In this article, I’ll show you the easiest way possible to create a chat application using React.js. It’ll be done entirely without server-side code, as we’ll let the [chat engine](https://chatengine.io) API handle the back-end.
+<!--more-->
+You will understand how the chat engine API works and how to use it to create a precise yet functional direct-messaging application.
 
 If you follow along with this tutorial you’ll end up with your very own chat application at the end, which you then can build further upon if you’d like to.
 
@@ -209,3 +225,6 @@ Enjoy Coding!
 ### References
 - [Chat engine API official documentation](https://chatengine.io/docs/direct_messages)
 - [The github link to the application's source code](https://github.com/Neema-2016/Direct-messaging-app/tree/app/chat-app)
+
+---
+Peer Review Contributions by: [Miller Juma](/engineering-education/authors/miller-juma/)
