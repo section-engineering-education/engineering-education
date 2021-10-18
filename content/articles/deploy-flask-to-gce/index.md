@@ -36,7 +36,9 @@ As a Flask enthusiast, I like developing most applications with Flask because of
 In addition, Flask can easily use the wide range of extensions available for Python to make a very independent and reliable tech stack.
 
 ### Infrastructure as a service
-Infrastructure as a service is cloud-based computing, where developers get access to cloud-hosted hardware resources instead of acquiring them independently. Unfortunately, most computing hardware is expensive to acquire, so the need to provide them over the internet.
+Infrastructure as a service is cloud-based computing, where developers get access to cloud-hosted hardware resources instead of acquiring them independently. 
+
+Unfortunately, most computing hardware is expensive to acquire, so the need to provide them over the internet.
 
 There are several Infrastructures as a service(IaaS) providers, including Digital Ocean, Amazon Web Services, Azure, and Google Compute Engine, but we will explore Google's in this article. 
 
@@ -60,7 +62,7 @@ In the cloud shell terminal, run the command below to install Flask.
 pip install Flask
 ```
 
-In the following step, we need to create the application's main code and requirements files to contain the requirements needed to run the application.
+In the following step, we need to create the application's main code file and `requirements.txt` file to contain the requirements needed to run the application.
 
 Create a file named `app.py`, then add the following code snippet.
 
@@ -108,6 +110,7 @@ To set up the requirements that will be installed once we migrate our applicatio
 Flask
 gunicorn
 ```
+![Working on cloud shell](/engineering-education/deploy-flask-to-gce/cloud-shell.jpg)
 
 ### Firewall rule configuration
 Navigate to the networking group ⇾ VPC network ⇾ select firewall. This page lists all the firewall rules set for the current project. 
@@ -191,9 +194,9 @@ gcloud compute scp --recurse flask-app lab1: --zone us-central1-a
 ```
 
 ### Deploying the application
-Deployment is the final step that we need to execute for our application to run. So, again, we begin by login into the virtual machine and navigating to our applications folder.
+Deployment is the final step that we need to execute for our application to run. So, we begin by login into the virtual machine and navigating to our applications folder.
 
-In the application folder, we listed out the requirements needed in the requirement.txt file. Next, we will call Pip to install the dependencies in the file then try out the application in the local host of the virtual machine.
+In the application folder, we listed out the requirements needed in the requirement.txt file. We will call pip to install the dependencies in the file then try out the application in the localhost of the virtual machine.
 
 - Head over to the Google Cloud Shell, then `ssh` into the VM using the command:
 
@@ -219,6 +222,8 @@ In the application folder, we listed out the requirements needed in the requirem
     set FLASK_APP='app.py'
     flask run -p 5000
     ```
+After successfully following through the steps, you should expose the url and view the application via the browser. Further configurations could be done to map the URL to a custom domain.
+![Deployed application](/engineering-education/deploy-flask-to-gce/deployed.png)
 
 ### Conclusion
 Most developers are using Google Compute Engine to host their applications, betting on reliability and efficiency. Using this article, knowing to deploy a Flask application to this platform is an advantage any programmer can afford.
