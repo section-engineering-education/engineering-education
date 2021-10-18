@@ -5,7 +5,7 @@ published: true
 url: /how-to-build-a-vue-app-with-flask-sqlite-backend-using-docker/
 title: How to Set up and Build a Vue App with a Flask Backend using Docker
 description: In this article we will build a Vue app with a Flask backend using Docker. We will build a simple Vue app that will get data from a Flask backend.
-author: moses-m
+author: moses-maina
 date: 2021-10-18T00:00:00-16:00
 topics: [Containers, Languages]
 excerpt_separator: <!--more-->
