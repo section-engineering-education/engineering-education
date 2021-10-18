@@ -6,7 +6,7 @@ url: /building-a-grammar-correction-python-app-with-gramformer-and-gradio/
 title: Building a Grammar Correction Python Application with Gramformer and Gradio
 description: The objective of this tutorial is to help the reader learn how to build a grammar correction python application using a library known as Gramformer and the gradio app.
 author: lilian-tonia
-date: 2021-10-10T00:00:00-13:00
+date: 2021-10-18T00:00:00-15:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -14,10 +14,10 @@ images:
   - url: /engineering-education/building-a-grammar-correction-python-app-with-gramformer-and-gradio/hero.png
     alt: Grammar Correction Python Application Example image
 ---
-
-Writing in English without grammatical mistakes is a next to impossible, especially for those of us who aren't native english speakers. We tend to struggle a lot.
-When you think of grammar correction web applications, the [grammarly](https://app.grammarly.com/) app always comes to mind. Grammarly is a service that you can use on your web browser, or desktop application such as microsoft word. When you type something, it helps you correct the grammatical mistakes. In some instances, it suggests new sentences for you. The problem with services like this is that they are not open-source and do not offer free APIs. You need to pay a subscription fee to fix advanced grammatical mistakes.
-In this tutorial, we will build a service similar to grammarly using an open-source framework called Gramformer. This build will help us have an idea of how services such as grammarly work. We will give a sentence with grammatical mistakes to the model and the model will give back a corrected version of the sentence.
+It is impossible to write English sentences without making any grammatical mistakes, especially for those of us who aren't native English speakers. We tend to struggle a lot with writing the correct vocabularies and tenses.
+<!--more-->
+When you think of grammar correction web applications, the [grammarly](https://app.grammarly.com/) app always comes to mind. Grammarly is a service that you can use on your web browser or desktop application such as Microsoft Word. When you type something, it helps you correct grammatical mistakes. In some instances, it suggests new sentences for you. The problem with services like this is that they are not open-source and do not offer free APIs. You need to pay a subscription fee to fix advanced grammatical mistakes.
+In this tutorial, we will build a service similar to Grammarly using an open-source framework called Gramformer. This build will help us have an idea of how services such as Grammarly work. We will give a sentence with grammatical mistakes to the model and the model will give back a corrected version of the sentence.
 
 ### Outline
 - [Prerequisites](#prerequisites)
@@ -32,16 +32,14 @@ In this tutorial, we will build a service similar to grammarly using an open-sou
 To follow along with this tutorial, a reader needs to be familiar with:
 - The Python programming language.
 - [Google colab](https://research.google.com/colaboratory/) or [Jupyter Notebook](https://jupyter.org/). 
-> You can use either of the two, but to follow along with this tutorial, please use Google colab.
+> You can use either of the two, but to follow along with this tutorial, please use Google Colab.
 
 ### Introduction
-
 Gramformer is an open-source framework for detecting, highlighting, and correcting grammar mistakes on natural language text. It is a relatively new framework and is currently available on [GitHub](https://github.com/PrithivirajDamodaran/Gramformer). With this framework, you can pass in a sentence and it would improve the sentence for you. 
-The framework consists of three models; the error correction, error detection, and error highlighter model. At the time of writing this tutorial, only the error detector and highlighter models are available. The error detector model is yet to be released. The fine-tuning for these models are done on relatively smaller models with not-so-much of data due to compute budget constraints. So take the results from this tutorial with a pinch of salt and consider this as a proof-of-concept for novel method for generating grammar error correction.
+The framework consists of three models; error correction, error detection, and error highlighter model. At the time of writing this tutorial, only the error detector and highlighter models are available. The error detector model is yet to be released. The fine-tuning for these models are done on relatively smaller models with not-so-much data due to limited computing budgets. So take the results from this tutorial with a pinch of salt and consider this as a proof-of-concept for a novel method for generating grammar error correction.
 
 ### Installing Gramformer and importing dependencies
-
-There is one core dependency that you need to install prior to working with Gramformer. This is PyTorch.
+There is one core dependency that you need to install before working with Gramformer. This is PyTorch.
 
 Go ahead into PyTorch's [website](https://pytorch.org/) and click on the `Install` button. Depending on the OS you're using, PyTorch build, package, programming language, and compute platform, select your preferences and run the install command.  
 
@@ -51,7 +49,6 @@ For our case, we've chosen the `LTS (1.8.2)` PyTorch build, `Linux` OS, `Pip`pac
 !pip3 install torch==1.8.2+cu111 torchvision==0.9.2+cu111 torchaudio==0.8.2 -f https://download.pytorch.org/whl/lts/1.8/torch_lts.html
 ```
 
-```
 Once that is done, go ahead and install Gramformer using the command below:
 
 ```bash
@@ -71,7 +68,7 @@ from gramformer import Gramformer
 ```python
 gf = Gramformer(models=1, use_gpu=False) #1=corrector, 2=detector
 ```
-Currently, Gramformer has two model; the error detector and erro corrector model. The value `1` represents the corrector, while `2` represents the detector. 
+Currently, Gramformer has two models; the error detector and the error corrector model. The value `1` represents the corrector, while `2` represents the detector. 
 
 Here's the result obtained from running the command above:
 
@@ -81,7 +78,6 @@ Here's the result obtained from running the command above:
 It has successfully loaded the error correct/highlight model.
 
 #### Correcting sentences
-
 Let's start by accessing the `correct()` class from Gramformer.
 
 ```python
@@ -128,8 +124,7 @@ Here's our output:
 ```
 
 ### Deploying the model as an application using Gradio
-
-Let's now put it all together using the library called Gradio. Gradio is a light-weight library that allows you to build user interfaces for your machine learning apps.
+Let's now put it all together using the library called Gradio. Gradio is a lightweight library that allows you to build user interfaces for your machine learning apps.
 
 ```bash
 !pip install gradio
@@ -144,7 +139,7 @@ The above function encapsulates all of our Gramformer code into a single code.
 ```python
 app_inputs = gr.inputs.Textbox(lines=3, placeholder="Enter a grammatically incorrect sentence here...")
 ```
->Please note that there are different types of inputs for gradio. `Textbox` is just one of them. Refer to the Gradio's[documentation](https://www.gradio.app/) to learn more. 
+>Please note that there are different types of inputs for gradio. `Textbox` is just one of them. Refer to the Gradio's [documentation](https://www.gradio.app/) to learn more. 
 
 ```python
 interface = gr.Interface(fn=correct, 
@@ -173,8 +168,8 @@ Running on External URL: https://23225.gradio.app
 
 Please find the complete code for this tutorial [here](https://colab.research.google.com/drive/1sTt1R69ajgYme6LNFfEw8RYSmKRkp5vq?usp=sharing).
 
-### Conclusion
-In this tutorial, we have learned how to build an end-to-end grammar correction web application using Gramformer. Such a simple build is only suitable for experimental purposes, if you need to build one for production, a lot more work needs to be done. As this model is still new, you can refer to the gramformer [documentation](https://github.com/PrithivirajDamodaran/Gramformer) from time to time to see whether there are any new updates to the models.
+### Wrapping up
+In this tutorial, we have learned how to build an end-to-end grammar correction web application using Gramformer. Such a simple build is only suitable for experimental purposes, if you need to build one for production, a lot more work needs to be done. As this model is still new, you can refer to the Gramformer's [documentation](https://github.com/PrithivirajDamodaran/Gramformer) from time to time to see whether there are any new updates to the models.
 
 Happy coding!
 
