@@ -16,9 +16,9 @@ images:
 
 ### Introduction
 
-Most applications have a mechanism to verify the users. Developers tend to devise their methods of authenticating users into the system. It might seem to be a simple approach, but integrating the authentication with third parties like [Google](https://www.google.com/) and [Facebook](https://www.facebook.com/) can be tedious and overly complex at times.
+Most applications have a mechanism to verify the users. Developers tend to devise their own methods of authenticating users into the system. It may seem like a simple approach, but integrating the authentication with third parties like [Google](https://www.google.com/) and [Facebook](https://www.facebook.com/) can be tedious and overly complex at times.
 
-A good approach will be to implement a dedicated system that deals with authentication. A good example would be [Auth0](https://auth0.com/) that allows the developers not to worry about the user data as it handles the authentication. It consists of a team of dedicated security experts specialized in handling the privacy of the user data.
+A good approach would be to implement a dedicated system that deals with authentication. A good example is [Auth0](https://auth0.com/) that allows the developers not to worry about the user data as it handles the authentication. It consists of a team of dedicated security experts specialized in handling the privacy of the user data.
 
 This tutorial will use `Auth0` to authenticate the users into the system using `ASP.NET Core API` and `Nuxt.js`.
 
@@ -46,7 +46,7 @@ We will start by creating the Auth0 account by visiting [this link](https://auth
 
 ![create auth0 app](/engineering-education/handling-web-app-authentication-using-auth0-aspnet-core-and-nuxtjs/create-app-auth0.PNG)
 
-Then we go to the setting tab of our new application and note down the `Domain` and `Client ID` that we will use later in this tutorial.
+Next we will go to the setting tab of our new application and note down the `Domain` and `Client ID` that we will use later in this tutorial.
 
 ![auth0 domain](/engineering-education/handling-web-app-authentication-using-auth0-aspnet-core-and-nuxtjs/auth0-domain.PNG)
 
