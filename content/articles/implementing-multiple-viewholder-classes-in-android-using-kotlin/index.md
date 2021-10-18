@@ -4,13 +4,13 @@ In the imperative programming paradigm in Android, a RecyclerView is a widget us
 This is where multiple ViewHolders come in. They allow us to pass different data objects during the RecyclerView callbacks. This way we can create more interactive and scalable applications.
 
 ### Prerequisites
-
+To follow along with this tutorial, you need to:
 - Install [Android Studio IDE](https://developer.android.com/studio/index.html), preferably the latest version.
 - Be familiar with the Android RecyclerView.
 - Have a basic knowledge of Kotlin and ViewBinding.
 
 ### Goals
-
+By the end of this tutorial, you will be able to:
 - Understand why we need more than one ViewHolder class.
 - Implement two-typed ViewHolders in a single adapter.
 - Manage recyclerView callback methods and their interactions.
@@ -29,9 +29,12 @@ To begin with, create a layout file named **landmark_with_image.xml** and paste 
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout 
-
-    ...
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -96,9 +99,12 @@ Create a layout file named **landmark_without_image.xml** and paste the followin
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout 
-   
-   ...
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -152,9 +158,12 @@ In the **activity_main.xml** file, add the following code:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    
-    ...
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/landmarkRecyclerview"
