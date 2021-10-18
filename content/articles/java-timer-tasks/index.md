@@ -11,7 +11,6 @@ Timer Tasks are important since they enable a program to be scheduled for later 
 To understand this article better the reader needs to:
 
 - have a basic understanding of Java
-
 - have a code editor such as Intellij Idea, which can be downloaded from [this](https://www.jetbrains.com/idea/download/#section=windows) Jetbrains site.
 
 #### Java Task Timer Methods
