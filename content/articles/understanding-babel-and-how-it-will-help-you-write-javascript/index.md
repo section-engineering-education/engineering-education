@@ -40,7 +40,7 @@ class User {
 let userOne = new User
 ```
 
-With a little elaboration, we get a constructor work if we run it through Babel:
+With a bit of elaboration, we get a constructor work if we run it through Babel:
 
 ```javascript
 "use strict";
@@ -59,7 +59,7 @@ We have our `UserOne` project, which serves as a standard prototype constructor.
 Apart from if the `userOne` work is regarded as a constructor work, the `_classCallCheck` work is called inside the `userOne` constructor and will cause a mix-up.
 
 ### Numeric Strings
-As an added bonus, EcmaScript 6 introduces a brand-new way to characterize strings. Strings with many lines can be created using the backtick image. This is very helpful for describing JavaScript format types.
+As a bonus, EcmaScript 6 introduces a brand-new way to characterize strings. Strings with many lines can be created using the backtick image. This is very helpful for describing JavaScript format types.
 - **Example**
 
 ```javascript
@@ -81,7 +81,7 @@ let temp = "
 ```
 
 ### Fat Arrows
-Fat arrows offers a pleasant language structure for characterizing mysterious capacities.
+Fat arrows offer a pleasant language structure for characterizing mysterious capacities.
 
 - **Example**
 ```javascript
@@ -99,7 +99,7 @@ Results to:
 
 ```
 
-This capacity has not been called.We could call it as demonstrated below: 
+This capacity has not been called. We could call it as demonstrated below: 
 - **calling the function**
 
 ```javascript
@@ -161,7 +161,7 @@ x.map((ind)=>{
 ```
 
 ### This keyword and the Babel Fat Arrows
- In JavaScript, the watchword `this` is the article preceding the spot when the capacity is called. This is sensible, however frequently vexing, since it once in a while needs `this` to be concealed in that. Fat bolts bypass `this` by protecting the current worth of `this`.
+ The watchword `this` is the article preceding the spot when the capacity is called in JavaScript. This is sensible, however frequently vexing, since it once in a while needs `this` to be concealed in that. Fat bolts bypass `this` by protecting the current worth of `this`.
 
 ```javascript
 a = {
@@ -186,12 +186,12 @@ a = {
 };
 ```
 
-The value of this has been taken care of in a variable inside the conclusion 
+The value of this has been taken care of in a variable inside the conclusion. 
 
 ### Conclusion
-ECMAScript 6 is glossing over-applied to the highest point of ECMAScript 5. JavaScript in the motor keeps on working as the original, list-readiness language that we are familiar with. At the point when we use ECMAScript 6, we get some pleasant accentuation that ultimately means truly plain, standard JavaScript.
+ECMAScript 6 is glossing over-applied to the highest point of ECMAScript 5. JavaScript in the motor keeps on working as the original, list-readiness language that we are familiar with. When we use ECMAScript 6, we get some pleasant accentuation that ultimately means truly plain, standard JavaScript.
 
-A part of this sugar is expected to help the Java/C# people group, which often experiences model inheritance perplexing upon first disclosure. Some of it, like fat bolts, permits us to have a more compact, more contemporary-looking language structure while likewise expanding the helpfulness of JavaScript.
+This sugar is expected to help the Java/C# people group, which often experiences model inheritance perplexing upon first disclosure. Some of it, like fat bolts, permits us to have a more compact, more contemporary-looking language structure while likewise expanding the helpfulness of JavaScript.
 
 ### Further Reading
 Additional elements of Babel and EcaScript 6 can be found [here](https://babeljs.io/docs/learn-es2015/)
