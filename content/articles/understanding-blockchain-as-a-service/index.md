@@ -2,6 +2,11 @@
 
 ### Introduction
 The blockchain is the new buzzword in town and everyone seems to be talking about it. But how do businesses actually use the technology without having to build their own blockchains? Blockchain as a service (BaaS) enables companies to develop applications on various blockchains— such as Ethereum, Ripple or NEO —without having to code from scratch. Clients benefit from BaaS because it allows for faster application development, lower maintenance costs, and faster adoption of Blockchain technology.
+### Topic to handle
+- Defining Baas.
+- Why choose Baas.
+- What to check for while choosing Baas.
+- Providers of Baas.
 
 ### Prerequisites
 To understand this article one should have:
