@@ -1,13 +1,28 @@
-### How to design logistic map using Matlab
-### Introduction
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-design-logistic-map-using-matlab/
+title: How to design logistic map using Matlab
+description: This tutorial introduces reader to basic concepts of logistics maps design patterns using Matlab.
+author: owino-wendy
+date: 2021-10-01T00:00:00-06:10
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/how-to-design-logistic-map-using-matlab/hero.png
+    alt: Matlab logistics map image
+---
 A logistic map is a polynomial mapping of degree two. This equation is used to show the chaotic behaviour that can arise from a simple non-linear dynamical equation. From the statement above, the logistic map is represented by the equation;
+<!--more-->
 $X_{k+1}=\beta X_k(1-X_k)$. 
 where;
 $X_{k+1}$ is the number of species in one year.
 $X_k$ is the number of species at a particular time.
 $\beta$ is the carrying capacity.
 
-This equation means that the value of `x` keeps changing depending on the rate of `k`. Historically it has been one of the most important and classic systems during the early days of research on deterministic chaos. This map, despite the simplicity, it exhibits some form of coplexity. In this article, we will look at how to design a logistic map in Matlab. What we basically do here is to see the effect of the population growth considering the carrying capacity of that given environmemt.
+This equation means that the value of `x` keeps changing depending on the rate of `k`. Historically it has been one of the most important and classic systems during the early days of research on deterministic chaos. This map, despite the simplicity, it exhibits some form of complexity. In this article, we look at how to design a logistic map in Matlab. What we basically do here is to see the effect of the population growth considering the carrying capacity of that given environmemt.
 
 ### Prerequisites
 To follow along with this tutorial, you'll need:
@@ -58,6 +73,7 @@ xvals(2,length(xvals))=xnew;
 ```
 These two values form the matrix, with the $\beta$ values forming the first row while the `x` values form the second row. After having this matrix, we will create a scatter plot that will be the diagram of the logistic map. Since we don't want to have a boring solution that is just a fixed point and `xnew=xold`, we break it using the `if` statement.
 
+```matlab
 if(abs(xnew-xss)<.001)
 break
 end
@@ -65,6 +81,7 @@ end
 end
 ```
 Now we can make a cool plot of these values, setting the gca color and the gcf color. `gca` simple means get the current axis and `gcf` means get the current figure and thats their functions. 
+
 ```matlab
 plot(xvals(1,:), xvals(2,:), '.', 'LineWidth', .1, 'MarkerSize',1.2,...
 'Color',[1 1 1])                   %the 1 1 1 vector represents white color
@@ -87,7 +104,7 @@ When you increase `beta` from 1 to 3, you get a single fixed point that iterates
 
 ![increasing the beta values](/engineering-education/how-to-design-logistic-map-using-matlab/map_three.png)
 
-Now, as we increase the beta more and more, we see that the period doubles, and we have four solutions. This point is the quasi period. As you increase beta, even more, the system goes chaotic, and you get that interesting attractor where `x` is kinda spending a lot of time bouncing around the four regions.
+Now, as we increase the beta more and more, we see that the period doubles, and we have four solutions. This point is the quasi period. As you increase beta, even more, the system goes chaotic, and you get that interesting attractor where `x` is spending a lot of time bouncing around the four regions.
 Now let us remove the transient section(comment out) and plot to see what happens. Copy the `xold` and `xnew` below the section of iteration.
 ```Matlab
 xnew = xold;
@@ -106,7 +123,8 @@ The reason as to why this is a good model for population dynamics is that from $
 ### Conclusion
 A logistic map is for showing the chaotic behaviour of a given parameter within a given period. It makes it important to analyze the behaviour of a given parameter or population considering the carrying capacity of that environment. The advantage of this method is that it is easy to simulate and analyze. Also, Matlab makes the design of this map using the in-built functions. Thus, it helps to visualize this chaotic behaviour of that parameter of a period.
 
-
+---
+Peer Review Contributions by: [Miller Juma](/engineering-education/authors/miller-juma/)
 
 
 <!-- MathJax script -->
