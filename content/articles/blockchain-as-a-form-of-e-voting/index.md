@@ -4,6 +4,7 @@
 
 - Introduction
 - Blockchain
+    - Features of Blockchain
 - E-voting and Blockchain: Advantages and Disadvantages
 - A Real-Life Example: How Moscow Implemented a Blockchain Vote
 - Conclusion 
@@ -20,7 +21,13 @@ In the words of The Economist, the Blockchain is a way of *" creating and preser
 
 *If you already know the basics of how a Blockchain works, you can skip this section. Here I will make a brief introduction about the functioning and main features of Blockchain.*
 
-**I saw that this section of the text was quite long. So here's a TL;DR: Blockchain was designed to work in a *peer-to-peer* network. In this network, each user is called a *node*. Users can make *transactions* with each other. To do this, they need to specify the *public addresses* of their nodes and the *amount of assets* to be transferred from one node to the other. To confirm a transaction, the *sender* node presents its *private signature*. Transactions are stored as a group within so-called *blocks*. Each block has a *unique key that identifies it* and also stores *the key of its predecessor*, forming a *chain of sequential blocks*, hence the name. *Any* change to a block in the chain would change its key, which *would break the chain* from the block onwards. The blocks are forged by nodes called *miners* who need to solve a problem using a lot of computational power, to give *proof of work*. When a miner gives proof of work, it *receives some assets* as a reward and *all nodes* add the new forged block to their chains. The *valid* version of the Blockchain is the one that *has the most blocks*. As the Blockchain is public, each node can check if everything is as it should be. So, for someone to be able to change the chain, they would need to *monopolize 51% of the network's mining power* to always keep their version as the *longer version of the chain*, which is *very unlikely*.**
+#### Features of Blockchain
+
+**This section of the text got quite long. So here's a *TL;DR*: Blockchain was designed to work in a *peer-to-peer* network. In this network, each user is called a *node*. Users can make *transactions* with each other. To do this, they need to specify the *public addresses* of their nodes and the *amount of assets* to be transferred from one node to the other. To confirm a transaction, the *sender* node presents its *private signature*. Transactions are stored as a group within so-called *blocks*.**
+
+**Each block has a *unique key that identifies it* and also stores *the key of its predecessor*, forming a *chain of sequential blocks*, hence the name. *Any* change to a block in the chain would change its key, which *would break the chain* from the block onwards. The blocks are forged by nodes called *miners* who need to solve a problem using a lot of computational power, to give *proof of work*. When a miner gives proof of work, it *receives some assets* as a reward and *all nodes* add the new forged block to their chains.**
+
+**The *valid* version of the Blockchain is the one that *has the most blocks*. As the Blockchain is public, each node can check if everything is as it should be. So, for someone to be able to change the chain, they would need to *monopolize 51% of the network's mining power* to always keep their version as the *longer version of the chain*, which is *very unlikely*.**
 
 Blockchain was designed to work on a *peer-to-peer* network. Each user on that network is called a **node**. Each node has its **address**, a unique *public* key, and a **signature**, a unique *private* key. A key is a string, something like `93ce48570b55c42c2af816aeaba06cfee1224fae`, for example.
 
@@ -42,7 +49,7 @@ Since Blockchain records are public, *any node can check the chain* to see if ev
 
 In a democratic voting process, **security** and **reliability** are *essential*. To achieve this, it is necessary to guarantee a long list of requirements. A voter can only vote *once*; their *anonymity* and *voting secrecy* must be preserved; there must be *no way* to prove that someone voted (in countries where voting is not mandatory) and/or *for whom* they voted; voting must be *easy* and *accessible*; *no* voter or candidate can manage *to manipulate the results*; there needs to be *transparency* and *auditability* in the voting process, and the list goes on.
 
-One of the problems with e-voting is that it is almost *impossible* to satisfy *all* the requirements. *Understand e-voting here as any voting system that is maintained over some form of hardware and/or software.* We have several *amazing* and *ingenious* technologies to apply in these systems, but even so, they almost always *require a trade-off*: to guarantee one (or more) of the requirements, we need to *give up totally or partially* of others. I can already say that with Blockchain it won't be different. But despite this, it is still promising.
+One of the problems with e-voting is that it is almost *impossible* to satisfy *all* the requirements. *Understand e-voting here as any voting system that is maintained over some form of hardware and/or software.* We have several *amazing* and *ingenious* technologies to apply in these systems, but even so, they almost always *require a trade-off*: to guarantee one (or more) of the requirements, we need to *give up totally or partially* of others. Let's already say that with Blockchain it won't be different. But despite this, it is still promising.
 
 When *implemented correctly*, Blockchain fraud is *theoretically* impossible:  [the votes would be transferred as assets in the Blockchain, and changing or deleting votes would be unfeasible](https://www.mdpi.com/1424-8220/21/17/5874). The voting process *would not depend* on an organization, institution, or government, that is, central authorities. Votes would be *publicly stored* on the Blockchain and *distributed to all network nodes* rather than being stored on centralized servers. Thus, everyone could *check the votes and follow the progression of the voting*, whether voters or candidates, and they (probably) *could not know who voted for whom* because users *do not use usernames* or anything like that.
 
@@ -52,9 +59,7 @@ Now that we know some of the advantages and disadvantages of Blockchain, it woul
 
 ### A Real-Life Example: How Moscow Implemented a Blockchain Vote
 
-I have a habit of going into GitHub and going to the 'Explore' tab and then the 'Trending' tab. I always find very interesting projects and very useful repositories doing this. One day, I was looking at the 'Trending' tab and I saw a repository called *['blockchain-voting_2019' from Moscow Technologies](https://github.com/moscow-technologies/blockchain-voting_2019)*. It was this repository that made me research more on the subject, and now here I am writing this article.
-
-It turns out that in 2019, in 2020, and [apparently in 2021 as well](https://github.com/moscow-technologies/blockchain-voting_2021), the city of Moscow has been doing *e-voting experiments using Blockchain*. Or at least the idea behind it comes from Blockchain. Let's understand.
+In 2019, in 2020, and [apparently in 2021 as well](https://github.com/moscow-technologies/blockchain-voting_2021), the city of Moscow has been doing *e-voting experiments using Blockchain*. Or at least the idea behind it comes from Blockchain. Let's understand.
 
 [The Russian authorities decided to carry out an experimental and public electronic voting process in September 2019 to test the hypothesis of using a technology such as Blockchain](https://habr.com/ru/article/480152/). In the tests, some problems were identified, but in general, the tests were successful. In a test poll in which students participated, the responsible team identified an *attempted DDoS attack* by one of the students, but the system managed to stop it. In the open tests, a French cryptographer was able to *identify a serious vulnerability* despite *not having been able to fraud the system* within the time specified in the test (12 hours). After this vulnerability was found, the team made changes to improve security. In addition, several experts provided feedback that helped the team to continue making improvements to the system. One thing we can also notice is that *user authentication needs to go through a government domain and thus this is not a decentralized system* like the "original" Blockchain proposes.
 
