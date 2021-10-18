@@ -6,7 +6,7 @@ url: /understanding-fundamentals-programming-principles/
 title: Understanding Fundamental Programming Principles
 description: This article deals with different steps of program development, and various programming languages used as they have a unique sequence, order, and rules of writing characters.
 author: christine-muthoni
-date: 2021-10-13T00:00:00-04:50
+date: 2021-10-18T00:00:00-06:10
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -198,8 +198,8 @@ In this loop, statements get repeated a predetermined number of times.
 
 Its syntax in general form is:
 
-```
-For count= Initial value to
+```bash
+For count = Initial value to
 last value does
 statement
 end for
