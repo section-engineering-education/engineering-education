@@ -195,7 +195,7 @@ public class Serialization {
 
     }
     public static void main(String[] args) throws IOException, ClassNotFoundException {
-        Link randomLink = new Link("My first link", 0);
+        Link randomLink = new Link("My first link", 5);
         final String filename = "example.bin";
         System.out.println("Prior to Serialization : ");
         randomLink.printLink();
@@ -329,7 +329,7 @@ class Link implements Serializable {
     }
     public void printLink() 
     {
-        System.out.println(String.format("Link : \"%s\" with %d commits.", this.commons, this.commits));
+        System.out.printf("Link : \"%s\" with %d commits.%n", this.commons, this.commits);
     }
 }
 // Use the class as in our previous serialization example
