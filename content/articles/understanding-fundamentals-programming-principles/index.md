@@ -3,8 +3,8 @@ layout: engineering-education
 status: publish
 published: true
 url: /understanding-fundamentals-programming-principles/
-title: Understanding fundamental programming principles
-description: This article will cover the fundamental programming principles followed during programming.
+title: Understanding Fundamental Programming Principles
+description: This article deals with different steps of program development, and various programming languages used as they have a unique sequence, order, and rules of writing characters.
 author: christine-muthoni
 date: 2021-10-13T00:00:00-04:50
 topics: [Languages]
@@ -12,12 +12,11 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/understanding-fundamentals-programming-principles/hero.jpg
-    alt: Understanding fundamental programming principles
+    alt: Understanding Fundamental Programming Principles Hero Image
 ---
-Programming is the process of developing computer programs using different languages and tools.
+Programming is the process of developing computer programs using different languages and tools. This article deals with different steps of program development, and various programming languages used as they have a unique sequence, order, and rules of writing characters.
 <!--more-->
-This article deals with different steps of program development and various programming languages used as they have a unique sequence, order, and rules of writing characters.
-By understanding fundamental programming principles, you familiarise yourself with these different programming languages and the stages of creating software.
+By understanding fundamental programming principles, you familiarize yourself with these different programming languages and the stages of creating a software.
 
 ### Table of contents
 - [Programming languages](#programming-languages)
@@ -27,7 +26,7 @@ By understanding fundamental programming principles, you familiarise yourself wi
 - [Conclusion](#conclusion)
 
 ### Programming languages
-They are two main categories of programming languages:
+There are two main categories of programming languages:
 1. Low-level languages.
 2. High-level languages.
 
@@ -35,35 +34,35 @@ They are two main categories of programming languages:
 Machines understand low-level languages and need little effort to translate them into object code.
 
 #### Classification of low-level languages
-##### Machine Language
-Machine language uses binary logic since it is the only language that a microprocessor processes. Machine language is fast to execute since it is already in machine-understandable format.
+##### Machine language
+Machine language uses binary logic since it is the only language that a microprocessor understand. Machine language is fast to execute since it is already in machine-readable format.
 
-##### Assembly Language
-It uses symbolic representation known as mnemonics (memory aids), which are easy to understand than a machine language. Programs written in assembly language need an assembler to translate into machine-readable form.
+##### Assembly language
+It uses symbolic representation known as mnemonics (memory aids), which are easy to understand than a machine language. Programs written in assembly language need an assembler to translate to machine-readable form.
 
-### High-level languages 
+### High-level languages
 High-level languages are close to the human language and are understandable by people who are not experts in programming.
 
 #### Classification of high-level languages
 ##### Third-generation languages
-Their instructions get written in a sequence or in a specific order in which they get executed. It emphasizes the use of control structures. 
+Their instructions get written in a sequence or in a specific order in which they get executed. It emphasizes the use of control structures.
 
-Example of 3GL: Fortran, ALGOL, BASIC, C, COBOL, Java, Pascal.
+Examples of Third-generation languages are Fortran, ALGOL, BASIC, C, COBOL, Java, Pascal.
 
 ##### Fourth-generation languages
-They provide the user with more inbuilt programming tools like a graphical user input interface.
+They provide the user with more inbuilt programming tools like a graphical user interface.
 
-Examples of 4GL: SQL, Oracle, PHP.
+Examples of fourth-generation languages are SQL, Oracle, PHP.
 
 ##### Fifth-generation languages
 They are used in artificial intelligence to make computers that depict human-like intelligence.
 
-Example of 5GL: Mercury, Prolog, OPS5
+Examples of fifth-generation languages are Mercury, Prolog, OPS5
 
 ##### Object-oriented programming languages
-They make it easier to develop, debug, reuse and maintain software than other earlier languages.
+They make it easier to develop, debug, reuse, and maintain software compared to earlier languages.
 
-Example of OOP: C++, Java, Smalltalk, Visual Basic.
+Examples of OOP are C++, Java, Smalltalk, Visual Basic.
 
 ##### Web scripting languages
 They develop/add pictures to a web page. Web scripting languages do not have declaration parts neither do they have control structures.
@@ -73,20 +72,20 @@ Examples of web scripting languages are JavaScript, XML, Perl, Python, Ruby, Gro
 ### Program development
 Program Development refers to the process of creating software, and it is categorized into the following stages:
 1. Problem recognition - Here, the programmer should understand and interpret the problem.
-2. Problem definition - The programmer identifies the required input processing activities and output. The programmer also identifies ways of solving the same problem and picks the best. Written documentation is required for the design stage.
+2. Problem definition - The programmer identifies the required input, processing activities, and output. The programmer also identifies ways of solving the same problem and picks the best. Written documentation is required for the design stage.
 3. Program Design - At this stage, the programmer develops a problem-solving project called an algorithm, a limited number of logical steps that a program follows to solve a problem. At this stage, tools such as pseudocodes, flowcharts, and decision tables are helpful.
 4. Program Coding - The algorithm gets translated into an equal programming language code. In program coding, the programmer may use different control structures.
 
 #### Program control structures
-##### Sequence control 
-Here, the computer reads instructions from a program file from the first line to the last statement. 
+##### Sequence control
+Here, the computer reads instructions from a program file from the first statement to the last.
 
-Below is an example of Sequence control structures in pseudocode form:
+Below is an example of Sequence control structures in pseudo-code form:
 
-```
+```bash
 START
 x=1
-y=1           the output will be 2,4,5 
+y=1           the output will be 2,4,5
 y=y+1
 m=y^2
 x=x + m
@@ -96,7 +95,7 @@ STOP
 
 Its syntax is:
 
-```
+```bash
 START
 statement 1
 statement 2
@@ -105,36 +104,52 @@ statement 2
 .
 statement n
 STOP
- ```
-
-##### Selection Control Structures
-A statement is executed if the condition returns `true` or `false`. The condition must be a Boolean expression. There are different types of selection control structures. For example:
-
-##### 1. If 
-The statement if is used only one option is available, and when the condition is true, all other options get ignored. Its syntax in general form is: 
-
 ```
+
+##### Selection control structures
+A statement is executed if the condition returns `true` or `false`.
+
+The condition must be a Boolean expression.
+
+There are different types of selection control structures.
+
+For example:
+
+##### 1. If
+The statement if is used when only one option is available.
+
+When the condition is true, all other options get ignored.
+
+Its syntax in general form is:
+
+```bash
 if(condition)Then
 statement to be executed
 if the condition is true
 End If
- ```
- 
-##### 2. If Else
-It is suitable where there are two available options. For example, if a condition is `true`, the statement gets executed if it is `false`, an alternative statement gets executed. Its syntax in general form is:
-
 ```
+
+##### 2. If Else
+It is suitable when there are two available options.
+
+For example, if a condition is `true`, the statement gets executed, if it is `false`, an alternative statement gets executed.
+
+Its syntax in general form is:
+
+```bash
 if(condition) then
 statement if the condition is true
 else
 statements if the condition is false
 End if
- ```
- 
-##### 3. If Else If (Nested If)
-The if Else statement where there are more than two options to consider before making a selection. Its syntax in general form is: 
-
 ```
+
+##### 3. If Else If (Nested If)
+The If Else If statement is used when there are more than two options to consider before making a selection.
+
+Its syntax in general form is:
+
+```bash
 if (condition) then
 statement 1
 else if (condition 2) then
@@ -145,33 +160,43 @@ statement 2
 else if (condition n-1) then
 statement n
 end if
-end if 
+end if
 end if
 ```
 
 #### Looping control structures
-These control structures get designed to execute the same block of code repeatedly until a condition is met. There are different types of looping control structures. For example:
+These control structures get designed to execute the same block of code repeatedly until a condition is met.
 
-##### 1. The `while` loop
-The `while` loop is used if a condition is met before statements within the loop before getting executed. Its syntax in general form is:
+There are different types of looping control structures.
 
-```
+For example:
+
+##### 1. The while loop
+The `while` loop is used if a condition is met before statements within the loop get executed. Its syntax in general form is:
+
+```bash
 while(condition)Do
 statement to execute
 end while
 ```
 
-##### 2. Repeat-until 
-It allows statements to execute at least once, and when the condition gets tested and found to be false, the statements get executed until the condition becomes true. Its syntax in general form is:
+##### 2. Repeat-until
+It allows statements to execute at least once.
 
-```
+The statements get executed until the condition becomes true.
+
+Its syntax in general form is:
+
+```bash
 Repeat
 statements
 until(condition) is true
 ```
 
 ##### 3. For loop
-In this loop, statements get repeated a predetermined number of times. Its syntax in general form is:
+In this loop, statements get repeated a predetermined number of times.
+
+Its syntax in general form is:
 
 ```
 For count= Initial value to
@@ -179,50 +204,66 @@ last value does
 statement
 end for
 ```
- 
-**Note: These control structures have different formats in different programming languages.**
 
-For further reading, you can check this [article](https://www.geeksforgeeks.org/control-structures-in-programming-languages/) out.
- 
+> Note: These control structures have different formats in different programming languages.
+
+For further reading, you can check this [article](https://www.geeksforgeeks.org/control-structures-in-programming-languages/).
+
 #### Program testing and debugging
-Testing ensures that the program runs as intended and performs the intended actions. Debugging is the process of checking, detecting, and correcting errors in computer programs. Errors that may occur in a program are syntax errors and logic errors.
+Testing ensures that the program runs as intended and performs the intended actions.
+
+Debugging is the process of checking, detecting, and correcting errors in computer programs.
+
+Errors that may occur in a program are syntax errors and logic errors.
 
 #### Program implementations
 It is the actual delivery and installation of the new program and how well it works.
 
 #### Program review and maintenance
-Review and maintenance are essential because of the errors encountered after implementation. Proper training of users will reduce the chance of invalid input that can crash the program.
+Review and maintenance are essential because of the errors encountered after implementation.
+
+Proper training of users will reduce the chance of invalid input that can crash the program.
 
 ### Program documentation
-Program documentation is written text explaining the program development process. It helps during future modification of the program. Documentation can either be internal or external. 
+Program documentation is written text explaining the program development process.
 
-Internal documentation is the written comments in the source program that helps other programmers understand the code statements. External documentation is the reference materials such as user manuals printed as booklets.
+It helps during future modification of the program.
+
+Documentation can either be internal or external.
+
+Internal documentation is the written comments in the source program that helps other programmers understand the code.
+
+External documentation is the reference materials such as user manuals printed as booklets.
 
 ### Standard tools used for programming languages
 #### Front-end development tools
-Front-end technology helps to design the user interface of web applications and web pages. The best tools for front-end web development are:
+Front-end technology helps to design the user interface of web applications and web pages.
+
+The best tools for front-end web development are:
 - Chrome DevTools
-- HTML5 Boilerplate  
-- Sass  
-- AngularJs  
-- JQuery  
-- Visual Studio Code  
-- Git  
-- NPM (Node Package Manager)  
+- HTML5 Boilerplate
+- Sass
+- AngularJs
+- JQuery
+- Visual Studio Code
+- Git
+- NPM (Node Package Manager)
 - Grunt
 
 #### Backend development tools
-Backend technology helps to design the server-side operations of web applications and web pages. The best tools for backend web development are:
+Backend technology helps to design the server-side operations of web applications and web pages.
 
-Languages used are:
+The best tools for backend web development are:
+
+Languages:
 - Php
 - Python
 - JavaScript
-- Java 
+- Java
 - Go
 - Ruby
 
-Frameworks used are:
+Frameworks:
 - Laravel
 - Django
 - Angular
@@ -230,25 +271,31 @@ Frameworks used are:
 - Spring
 - Ruby on Rails
 
-Databases used are:
+Databases:
 - MongoDB
 - Oracle
 - MySQL
 - Postgre SQL
 
-WebServers used are:
+WebServers:
 - Apache
 - NGINX
 - Lighttpd
 - Microsoft IIS
 
-Other tools are:
+Other tools:
 - Docker
 - Postman
 - Jira
-      
+
 ### Conclusion
-To wrap up, we have discussed the fundamental principles of programming and the primary tools used in programming. Programming is common in our day-to-day lives as different languages are used in most technical aspects, and for one to venture into programming, one must have a passion for it. It is a step-by-step process that takes time to learn and to skill up.
+To wrap up, we have discussed the fundamental principles of programming, and the primary tools used in programming.
+
+Programming is common in our day-to-day lives as different languages are used in most technical aspects.
+
+For one to venture into programming, one must have a passion for it.
+
+It is a step-by-step process that takes time to learn and to skill up.
 
 Happy learning!
 
