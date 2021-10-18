@@ -2,21 +2,21 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/image-gallery-flask-cloudinary-mongo/
+url: /image-gallery-flask-cloudinary-mongo/
 title: Building a CDN Image Gallery with Flask, Cloudinary, and MongoDB
 description: A content delivery network (CDN) allows for the quick transfer and retrieval of web assets by distributing them to geographically distant servers that work together to provide required content to end-users.
 author: onojakpor-ochuko
-date: 2021-03-31T00:00:00-13:00
-topics: []
+date: 2021-10-18T00:00:00-09:36
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
   - url: /engineering-education/image-gallery-flask-cloudinary-mongo/hero.jpg
     alt: Building a CDN Image Gallery with Flask, Cloudinary, and MongoDB
 ---
 
-### Introduction
-
 A content delivery network (CDN) allows for the quick transfer and retrieval of web assets by distributing them to geographically distant servers that work together to provide required content to end-users.
+<!--more-->
+### Introduction
 
 Content delivery networks (CDNs) work by hosting files (images, videos, HTML pages, stylesheets, JavaScript files, etc.) in many servers spread across the globe. When a user requests the file, the CDN loads it from the server closest to the user location (among other optimizations), reducing latency in fetching the assets and improving content availability.
 
