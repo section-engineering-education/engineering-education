@@ -1,5 +1,5 @@
 ### Introduction
-Unit tests are used in the software development process to test specific sections of a program (usually methods) to ensure that the developer performs as intended. A unit test is a piece of code written by a developer to test small pieces of a larger program's functionality.  Unit testing is designed to be simple.
+Unit tests are used in the software testing process where specific sections of a program (usually methods,fuctions or classes) are tested to ensure that they performs as intended. A unit test is a piece of code written by a developer to test small pieces of a larger program's functionality.  Unit testing is designed to be simple.
 
 In most situations, the test cases are defined as methods that evaluate and assess if a returned result from a Unit Test is equal to the value you expected when you wrote the method.
 
@@ -36,30 +36,26 @@ In C#, we can follow different approaches where we can first create a simple cod
 For better understanding, let's create a simple console program for multiplying two numbers. We shall name our program *TestTutorial*.
 
 ```cs
- using System;
-
+using System;
 namespace TestTutorial
 {
     public class Multiplication
     {
-        public int multiply(int a, int b)
-        {
-            return a * b;
-        }
-    }
-    class Program
-    {
         public static void Main(string[] args)
         {
-            var mul = new Multiplication();
-            Console.WriteLine(mul.multiply(6, 2));
+            Multiplication mul = new Multiplication();
+            Console.WriteLine(mul.multiply(3,6));
+        }
+        public int multiply(int firstNumber, int secondNumber)
+        {
+            return firstNumber * secondNumber;
         }
     }
 }
 ```
 We have created a class that takes in two inputs and returns its product from the code above.
 
-### MS Unit tests
+### Microsoft Testing (MSTest)
 To test our code above, we will use the MSTest framework installed with Visual Studio. Follow the steps below to test our code:
 
 From our solution explorer, let's open a new project:
@@ -72,23 +68,8 @@ Select **Unit Test Project** from the list of possible templates and type the pr
 
 In our case, we shall call our unit test *TestTutorial.UnitTests*. We should add suffixes such as *test* or *unitTest* to the name of the unit test to differentiate it from our main program. 
 
-Visual Studio will automatically generate some C# code for you. Let's look at the code:
+Visual Studio will automatically generate some C# code for you.
 
-```cs
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-namespace ReplaceTutorial
-{
-    [TestClass]
-    public class UnitTest1
-    {
-        [TestMethod]
-        public void TestMethod1()
-        {
-        }
-    }
-}
-```
 ### The `TestClass` and  `TestMethod` attributes
 The class that contains test methods must be decorated with this attribute. Otherwise, the unit testing framework will not be able to discover the unit tests.
 
@@ -109,7 +90,7 @@ Let's rename our test class `UnitTest1` to `MultiplyTest` by pressing **Ctrl+R+R
 ```cs
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace TestTutorialTests
+namespace TestTutorial.UnitTests
 {
     [TestClass]
     public class MultiplyTest
@@ -131,7 +112,7 @@ Let's use the principle in our code:
 ```cs
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace TestTutorialTests
+namespace TestTutorial.UnitTests
 {
     [TestClass]
     public class MultiplyTest
