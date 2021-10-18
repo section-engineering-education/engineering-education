@@ -19,9 +19,9 @@ A number is a type definition in TypeScript. TypeScript is used with a lot of po
 
 ### Prerequisites & pre-reading material
 To follow this article along, the reader will need the following:
-- A basic understanding of [HTTP Requests](/http-requests-nodejs/) and [APIs](/rest-api/).
-- Fundamental concepts of [Node.js](/history-of-nodejs/).
-- [TypeScript basics](/a-friendly-beginner-guide-to-typescript/).
+- A basic understanding of [HTTP Requests](/engineering-education/http-requests-nodejs/) and [APIs](/engineering-education/rest-api/).
+- Fundamental concepts of [Node.js](/engineering-education/history-of-nodejs/).
+- [TypeScript basics](/engineering-education/a-friendly-beginner-guide-to-typescript/).
 
 ### Project setup
 To get started, let's create a working directory for our project:

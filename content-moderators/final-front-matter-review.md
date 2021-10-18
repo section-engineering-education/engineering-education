@@ -2,6 +2,19 @@
 
 #### Final Review Notes
 
+#### KEY Notes for the front matter
+The URL line is very important as it relates to SEO - here we should try to use descriptive words - cut out any fluff words like "and", "or", "but". 
+Same to note with the Title of the Article - this is important for SEO - and we should cut it down to be viewed better live.
+
+For example: 
+Title: How to containerize a MySQL based server and PHPMyAdmin/Adminer with docker and run SQL 
+
+We could cut that down to: How to containerize a MySQL based server and PHPMyAdmin
+
+url: /how-to-containerize-a-mysql-based-server-and-phpmyadmin-with-docker-and-run-sql-queries/
+
+Cut it down to: /containerizing-mysql-server-phpmyadmin-with-docker/
+
 1. The front matter should already be added by our peer review team - but sometimes they may forget (and most of the time we need to fix some minor things) we ALWAYS want to check the DATE/TIME - the EngEd site (entire Section site) is running on MST - so please be aware of this time difference and use a world clock or check Hector's Slack Profile's local time to see the appropriate time. This is to ensure your published article comes after the most recently published article.
 
 2. Another thing to watch out for are image previews. Images that show up on localhost may not show up on the production version and vice versa. Make sure to check the live version after publishing since the URL front-matter and image URL have a different structure. The file extenstion needs to match the image e.g. JPEG, jpg, PNG, png. Capitalized file extensions should be renamed to lowercase.

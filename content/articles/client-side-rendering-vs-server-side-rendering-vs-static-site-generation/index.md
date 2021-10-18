@@ -183,7 +183,7 @@ This means that the server makes no API calls to renders any HTML documents. The
 
 Common platforms that offer static site hosting services include [Section](/modules/nodejs-edge-hosting/), [GitHub](https://pages.github.com/), and [Netlify](https://www.netlify.com/). You don't need a database of your own. Thus, this makes it incredibly easier to use such hosting services and run statically generated pages with automated builds.
 
-Some of the popular Static-Site Generator tools include [Next.js](https://nextjs.org/), [Gatsby](/how-to-build-astatic-site-with-gatsbyjs/), [Jekyll](/build-a-jekyll-site/), and [Hugo](/documentation-website-hugo/), etc.
+Some of the popular Static-Site Generator tools include [Next.js](https://nextjs.org/), [Gatsby](/engineering-education/how-to-build-astatic-site-with-gatsbyjs/), [Jekyll](/engineering-education/build-a-jekyll-site/), and [Hugo](/engineering-education/documentation-website-hugo/), etc.
 
 One of the Static-Site Generator tools I would recommend checking out is Next.js. Next.js gives you the benefits of static site generation with server-side rendering flexibility. [Incremental Static Regeneration](https://nextjs.org/docs/basic-features/data-fetching) provides the benefits of Static Site Generation (SSG) and Server Side Rendering (SSR). 
 
