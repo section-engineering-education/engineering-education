@@ -1,16 +1,4 @@
 ### ORGANIZING EXECUTION OF PROGRAMS USING TIMER OBJECT IN MATLAB
-### Table of content
-- ### [Introduction](#introduction)
-- ### [Prerequisites](#prerequisites)
-- ### [Creating timer object](#Creating-timer-object)
-- ### [Dispaying message using timer object](#Dispaying-message-using-timer-object)
-- ### [Finding timer objects properties](#Finding-timer-objects-properties)
-- ### [Timer properties](#Timer-properties)
-- ### [Finding all visible timer object in the memory](#Finding-all-visible-timer-object-in-the-memory)
-- ### [Specifying timer object starting time](#Specifying-timer-object-starting-time)
-- ### [Deleting all existing timer objects in the memory](#Deleting-all-existing-timer-objects-in-the-memory)
-- ### [Conclusion](#conclusion)
-
 ### Introduction
 A timer is an automated mechanism for activating a device or a process at a predetermined time or time intervals. Matlab provides timer objects that can be used to organize the execution of Matlab commands. 
 
@@ -22,12 +10,19 @@ Timer helps in keeping track of a program hence becomes handy when tracing for t
 For this tutorial, you'll need to have:
 - [Matlab](https://www.mathworks.com/login?uri=%2Fdownloads%2Fweb_downloads) installed.
 - [Basic](/engineering-education/getting-started-with-matlab/) understanding of Matlab.
-### Objectives of the tutorial
-- To create timers in Matlab.
-- To elaborate on timer properties.
-- To demonstrate how to start and stop a timer.
-- To demonstrate how to delete timers in Matlab memory.
+### Table of content
+- ### [Objective](#Objective)
+- ### [Creating timer object](#Creating-timer-object)
+- ### [Dispaying message using timer object](#Dispaying-message-using-timer-object)
+- ### [Finding timer objects properties](#Finding-timer-objects-properties)
+- ### [Timer properties](#Timer-properties)
+- ### [Finding all visible timer object in the memory](#Finding-all-visible-timer-object-in-the-memory)
+- ### [Specifying timer object starting time](#Specifying-timer-object-starting-time)
+- ### [Deleting all existing timer objects in the memory](#Deleting-all-existing-timer-objects-in-the-memory)
+- ### [Conclusion](#Conclusion)
 
+### Objective
+In this tutorial, we are going to discuss timer objects and their functions in Matlab. The main theme of the tutorials will be based on creating timers, timer properties functions, staring and stoping timers, and deleting timer objects in Matlab memory.
 
 ### Creating timer object
 This is the process of making a timer object which will be used in executing the commands. Timer objects can support various properties and functions controlling their behavior. A timer is created using the function `timer`.
@@ -35,7 +30,7 @@ This is the process of making a timer object which will be used in executing the
 t = timer %creating timer
 ```
 
-![creating timer object](/engineering-education/organizing-execution-of-programs-using-timer-object-in-matlab/timer_one.PNG)
+![Creating timer object](/engineering-education/organizing-execution-of-programs-using-timer-object-in-matlab/timer_one.PNG)
 
 ### Displaying message using timer objects
 Timers can be used to display messages by first creating the timer tool then adding the message to be displayed in the timer properties. I will create a timer object to display the message "Hello everyone!" after a delay time of 5 seconds. the following codes are used in the program.
@@ -47,7 +42,7 @@ while(stat==true)
 end
 ```
 
-![displaying message after time delay](/engineering-education/organizing-execution-of-programs-using-timer-object-in-matlab/timer_two.PNG)
+![Displaying message after time delay](/engineering-education/organizing-execution-of-programs-using-timer-object-in-matlab/timer_two.PNG)
 
 The above code can also be used in creating a time delay before displaying the final intended message. For example, I will create a timer object to display the message "WARNING" 3 times at an interval of 1 second before displaying the final message "STOP!". The following are the codes for the program.
 ```matlab
@@ -60,7 +55,7 @@ pause(1) %delay interval period
 end
 ```
 
-![dispalaying multiple messages at time intervals](/engineering-education/organizing-execution-of-programs-using-timer-object-in-matlab/timer_three.PNG)
+![Dispalaying multiple messages at time intervals](/engineering-education/organizing-execution-of-programs-using-timer-object-in-matlab/timer_three.PNG)
 
 ### Finding timer object properties
 Timer object properties gives information on the states and control aspects of the timer functions. One can retrive the value of timer properties by using the `get` function; (this will give an ooutput list of all the timer object properties).
@@ -75,7 +70,7 @@ get(t) % finding timer properties
 delete(t) % deleting the timer object
 ```
 
-![timer properties](/engineering-education/organizing-execution-of-programs-using-timer-object-in-matlab/timer_four.PNG)
+![Timer properties](/engineering-education/organizing-execution-of-programs-using-timer-object-in-matlab/timer_four.PNG)
 
 It is advisable to always delete the timer objects after use. Deleting of timer object is done using the function `delete(t)`. When timer objects are not deleted, they can cause errors when executing other functions which are not related to the timer.
 
