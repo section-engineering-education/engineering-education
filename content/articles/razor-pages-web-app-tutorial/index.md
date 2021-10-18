@@ -2,11 +2,11 @@
 layout: engineering-education
 status: publish
 published: true
-url: /razor-pages-web-app-tutorial-using-asp.net-core/
+url: /razor-pages-web-app-tutorial/
 title: Razor Pages Web App Tutorial Using ASP.NET Core
 description: The goal of this tutorial is to help the reader build Razor Pages Web Application using ASP.NET Core.
 author: daniel-masika
-date: 2021-10-18T00:00:00-15:00
+date: 2021-10-18T00:00:00-09:47
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -34,7 +34,7 @@ To better understand this tutorial, you need to have some basic knowledge of;
 
 - [ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/?view=aspnetcore-5.0)
 - [C#](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/)
-- [HTML](https://devdocs.io/html/) AND [CSS](https://devdocs.io/css/)
+- [HTML](https://devdocs.io/html/) and [CSS](https://devdocs.io/css/)
 
 You also need to download [Visual Studio](https://visualstudio.microsoft.com/vs/) and [.NET Core 3.1](https://dotnet.microsoft.com/download/dotnet/3.1) in your computer.
 
@@ -159,8 +159,8 @@ When we input the `html` code below, we will have a search bar created in the `S
   ViewData["ShowButtons"] = true;
 }
 <style>
-    .btn{
-        width:75px;
+    .btn {
+        width: 75px;
     }
 </style>
 <form method="get">
@@ -245,7 +245,7 @@ In validation, we will look at the client-side validation of the razor pages.
 
 To validate client-side validation, we need to specify the three script files listed in the order below;
 
-1. Jquery.js
+1. jquery.js
 2. jquery.validate.js
 3. jquery.unobtrusive.validate.js
 
@@ -253,9 +253,9 @@ If you want client-side validation on several pages in your web application, the
 
 Under the pages folder, there is an `Edit` razor page folder that is used for adding and editing existing Students. Client-side validation is needed only on this page where all the script files will be loaded.
 
-For the second and third files above to be effective, and since they are already loaded in the `partial view` file, they need to be rendered in the `Edit` file using the `Jquery` code below.
+For the second and third files above to be effective, and since they are already loaded in the `partial view` file, they need to be rendered in the `Edit` file using the `jQuery` code below.
 
- ```jquery
+ ```js
  @section Scripts{
      <script>
      $(document).ready(function(){
