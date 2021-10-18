@@ -1,28 +1,26 @@
 ### Blockchain as a Service
 
 ### Introduction
-Blockchain-as-a-service (BaaS) is the establishment and management of cloud-based networks by a third party for companies that develop blockchain applications. BaaS is based on the software as a service (SaaS) model and allows clients to use cloud services to build, host services, work on apps, and other blockchain-related functions. Clients benefit from BaaS because it allows for faster application development, lower maintenance costs, and faster adoption of Blockchain technology.
+The blockchain is the new buzzword in town and everyone seems to be talking about it. But how do businesses actually use the technology without having to build their own blockchains? Blockchain as a service (BaaS) enables companies to develop applications on various blockchains— such as Ethereum, Ripple or NEO —without having to code from scratch. Clients benefit from BaaS because it allows for faster application development, lower maintenance costs, and faster adoption of Blockchain technology.
 
 ### Prerequisites
 To understand this article one should have:
-	1. Good knowledge and understanding of how blockchain works.
-	2. Good understanding of the basics of Blockchain.
-	3. Basic information about applications of Blockchain.
+1. Good knowledge and understanding of how blockchain works.
    
-### Definition of BaaS?
+### Definition of BaaS.
 Baas involves customers using cloud services to create, host, develop and run their blockchain applications, and smart contracts in the software and any other relevant operations that can run blockchain technology. The cloud services are offered and managed by the cloud services provider. They are also responsible for any other related task to keep the systems up and running.
 
-This is an introduction to BaaS, an important turning point in the blockchain ecosystem, with the potential to drive the widespread use of distributed ledger technologies industries. These are founded on and operates on principles that are alike to those used in SaaS. SaaS stands for Software as a Service.
+This is an introduction to BaaS, an important turning point in the blockchain ecosystem, with the potential to drive the widespread use of distributed ledger technologies industries. These are founded on and operates on principles that are alike to those used in SaaS. 
 
-### Reasons Companies choose BaaS?
+###Why choose BaaS?
 Blockchain technology is increasingly being investigated by IT organizations across a wide range of industries for its strategic benefits. There are some technical difficulties, absence of domain expertise, and operational expenses associated with establishing, managing, and maintaining the Blockchain, as well as maintaining the infrastructure, typically lead key decision-makers to take their time with adoption plans.
 
-   1. Businesses that use Blockchain as a Service acquire access to qualified Blockchain developers, procedure and management specialists, the whole infrastructure from the cloud service provider for developing, programming, and deploying, not worrying about budget costs for any other operation that would cost them more.
+1. Businesses that use Blockchain as a Service acquire access to qualified Blockchain developers, procedure and management specialists, the whole infrastructure from the cloud service provider for developing, programming, and deploying, not worrying about budget costs for any other operation that would cost them more.
 
-   2. In most situations, a reputable BaaS partner is a source of practical expertise and knowledge that can improve the security of the systems. It considerably reduces the dangerous cases that might otherwise be encountered if they were created in-house.
+2. In most situations, a reputable BaaS partner is a source of practical expertise and knowledge that can improve the security of the systems. It considerably reduces the dangerous cases that might otherwise be encountered if they were created in-house.
 
-### Understand BaaS
-BaaS is based on the software as a service architecture and performs similarly. It allows users to create, host, and administer their blockchain apps and related blockchain processes using cloud-based technology. The infrastructure is kept adaptive and operating by the cloud-based service provider.
+### Understanding BaaS
+BaaS allows users to create, host, and administer their blockchain apps and related blockchain processes using cloud-based technology. The infrastructure is kept adaptive and operating by the cloud-based service provider.
 BaaS is considered as an exploit of blockchain in the blockchain ecosystem that will help enterprises adopt blockchain technology.
 ### How it Works
 ![How it Works](/engineering-education/understanding-blockchain-as-a-service/howitworks.jpg)
@@ -37,9 +35,9 @@ BaaS is considered as an exploit of blockchain in the blockchain ecosystem that 
 
 - Clients using the BaaS model can put considerations to main operations and other strategies. Meanwhile, the BaaS partner is in charge of the Blockchain system as well as the performance. This enables running distributed-ledger workloads using systems that have a high level of any failing of tolerance.
 
-###  Considerations When Choosing a Blockchain as a Service Provider ?##
+###Consider these factors while considering blockchain as a service provider.
 Choosing a business vendor necessitates a great deal of thought and analysis, and in the case of BaaS, this will be even more challenging due to the lack of readily available standards and best practices in the market. While there are numerous things to consider when selecting a BaaS provider, there are a few general rules to follow.
-![Consideration](/engineering-education/understanding-blockchain-as-a-service/consideration.jpg)
+![Considerations](/engineering-education/understanding-blockchain-as-a-service/consideration.jpg)
 
 1. Prior experience/credentials in establishing blockchain infrastructure.
 Make sure your BaaS provider has a track record of creating and Blockchain technology deployment and in a similar environment to the one you propose. If at all possible, inquire about qualifications or references from former clients.
@@ -47,8 +45,8 @@ Make sure your BaaS provider has a track record of creating and Blockchain techn
 2. Commitment to Quality.
 Any enterprise application or software installation effort must prioritize quality. Blockchain is no exception. Inquire about the dedication to quality, process, and standards of the vendor.
 
-3. Affirmation of safety.
-Look for any security flaws in the proposed implementation strategy. It's critical because even minor flaws can have serious consequences. When it comes to distributed ledgers, it is critical to plan for the most dependable results.
+3. Assurance of safety.
+Examine the proposed implementation technique for any security issues. It's critical because even minor flaws can have serious consequences. When it comes to distributed ledgers, it is critical to plan for the most dependable results.
 4. Operation System Selection.
 Examine the previous installations of cloud-based services and the system they operate on that are similar to yours by the vendor. You must also guarantee that the new Blockchain installation works in tandem with your existing system.
  5. Usability.
@@ -82,6 +80,3 @@ BaaS acts as a back-end solution for a blockchain-based program or platform, sim
 
 Happy learning!
 
-### References:
-- Dhillon, V., Metcalf, D., & Hooper, M. (2021). Blockchain-as-a-Service. Blockchain-Enabled Applications, 325-334. doi:10.1007/978-1-4842-6534-5_14
-- Crepax, T., & Rao, S. P. (2020). Blockchain in the Cloud: A Primer on Data Security for Blockchain as a Service (BaaS). SSRN Electronic Journal. doi:10.2139/ssrn.3766900
