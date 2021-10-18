@@ -144,3 +144,6 @@ With a few lines of code, you can plot data in Python using plotly. I challenge 
 - [Plotly](https://pypi.org/project/plotly/)
 - [Complete code](https://colab.research.google.com/drive/1mz0GthxE2FektPON4ZnkSUvO8Otf1Ix1#scrollTo=X0vwv1kIXHBn)
 - [Explore the Gapminder Dataset with Plotly Express](https://www.kaggle.com/jhossain/explore-the-gapminder-dataset-with-plotly-express)
+
+---
+Peer Review Contributions by: [Collins Ayuya](https://www.section.io/engineering-education/authors/collins-ayuya/)
