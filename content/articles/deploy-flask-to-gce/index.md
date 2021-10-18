@@ -27,16 +27,16 @@ In the end, the reader should have mastered the steps of creating and deploying 
 - Google Cloud Account
 
 ### What is Flask?
-Flask is a Python based backend engine used to write server-side code in most web applications. Flask operates on the Jinja template engine, allowing programmers to write code similar to the conventional Python syntax. 
+Flask is a Python-based back-end engine used to write server-side code in most web applications. Flask operates on the Jinja template engine, allowing programmers to write code similar to the conventional Python syntax. 
 
 According to Wikipedia, Flask was established in April 2010, and since then, most developers have adopted and worked on projects using Flask.
 
-As a Flask enthusiast, I like developing most applications with Flask because of its lightweight and no special library and tools required for it to work. 
+As a Flask enthusiast, I like developing most applications with Flask because of its lightweight and unique library and tools required to work. 
 
 In addition, Flask can easily use the wide range of extensions available for Python to make a very independent and reliable tech stack.
 
 ### Infrastructure as a service
-Infrastructure as a service is cloud-based computing, where developers get access to cloud-hosted hardware resources instead of acquiring them on their own. Most computing hardware is expensive to acquire, so the need to provide them over the internet.
+Infrastructure as a service is cloud-based computing, where developers get access to cloud-hosted hardware resources instead of acquiring them independently. Unfortunately, most computing hardware is expensive to acquire, so the need to provide them over the internet.
 
 There are several Infrastructures as a service(IaaS) providers, including Digital Ocean, Amazon Web Services, Azure, and Google Compute Engine, but we will explore Google's in this article. 
 
@@ -60,7 +60,7 @@ In the cloud shell terminal, run the command below to install Flask.
 pip install Flask
 ```
 
-In the following step, we need to create the application's main code file and requirements file to contain the requirements needed to run the application.
+In the following step, we need to create the application's main code and requirements files to contain the requirements needed to run the application.
 
 Create a file named `app.py`, then add the following code snippet.
 
@@ -102,7 +102,7 @@ In the `templates` folder, create a new file and name it `home.html`. This file 
 </html>
 ```
 
-To set up the requirements that will be installed once we migrate our application to the virtual machine, create a new file called requirements.txt` then add the following code snippet.
+To set up the requirements that will be installed once we migrate our application to the virtual machine, create a new file called `requirements.txt`, then add the following code snippet.
 
 ```txt
 Flask
@@ -122,13 +122,17 @@ In this step, we will configure a new rule that will allow traffic through port 
 
 
 ### Creating a virtual machine
-The virtual machine is like a computer but hosted remotely. Like we usually run our application locally during development, the virtual machine will run the application over the internet.
+A virtual machine is an emulation of a computer system. Again, virtual machines provide a computer's functionality, but in this case, the user does not have to acquire the computer's hardware resources physically. 
+
+Like we usually run our application locally during development, the virtual machine will run the application over the internet.
+
+We need to set up a virtual machine to host our application and run it remotely from my endpoint. Google provide a wide range of configurations for virtual machines. We will use one of these configurations to set up a virtual machine for an application.
 
 To create a virtual machine, go to the Navigation menu ⇾ Compute Engine ⇾ VM instance ⇾ Create Instance.
 
 ![Creating a virtual machine](/engineering-education/deploy-flask-to-gce/create-instance.jpg)
 
-You can fill the fields below, and ensure you expand the networking tab to fill in the name of the tag specified while creating the firewall rule on the `Networking tags` field.
+You can fill the fields below and ensure you expand the networking tab to fill in the name of the tag specified while creating the firewall rule on the `Networking tags` field.
 
 ![Vm instance configuration](/engineering-education/deploy-flask-to-gce/instance-conf.jpg)
 
@@ -137,7 +141,13 @@ These configurations can vary from one project to another. Therefore, one can on
 ![Rinning instance](/engineering-education/deploy-flask-to-gce/running-instances.jpg)
 
 ### Setting up the VM for the deployment
-I prefer to log in from the Google Cloud shell because that will allow us to copy the application we created from the shell to the virtual machine with ease.
+Setting up the virtual machine involves installing all the applications dependencies in the VM. 
+
+For instance, we are running a flask application which means we need to have all the software and the frameworks required to set up and run a flask application, just like we would have done when using a physical computer.
+
+For our case, we will log in to the virtual machine, update the system, upgrade the available upgradeable dependencies, install python and the virtual environment, and fetch the latest versions of the updates.
+
+I prefer to log in from the Google Cloud shell because that will allow us to easily copy the application we created from the shell to the virtual machine.
 
 - Head over to the cloud shell to execute the command:
 
@@ -168,9 +178,11 @@ I prefer to log in from the Google Cloud shell because that will allow us to cop
 - Log out of the virtual machine to get to the Google cloud shell using CRTL+D
 
 ### Copying files to the virtual machine
-In this step, we are copying all the project files to the virtual machine for deployment.
+At the moment, our files are floating somewhere on the Google Cloud shell. So the most immediate thing we need to do is migrate the file from the Google Cloud shell to the newly created virtual machine.
 
-Like in local machines, the virtual machine needs to be set up and have all the files we created in the cloud shell to run the application.
+Luckily Google provides us with a single command that recursively copies all the files from the cloud shell to the virtual machine. Thus, we only need to specify the running instance design of deployment.
+
+In this step, we are copying all the project files to the virtual machine for deployment. Like in local machines, the virtual machine needs to be set up and have all the files we created in the cloud shell to run the application.
 
 Next, `CD` in the parent directory, then copy all the application's files to the virtual machine.
 
@@ -179,7 +191,9 @@ gcloud compute scp --recurse flask-app lab1: --zone us-central1-a
 ```
 
 ### Deploying the application
-To deploy the application, we have to be logged into the virtual machine. 
+Deployment is the final step that we need to execute for our application to run. So, again, we begin by login into the virtual machine and navigating to our applications folder.
+
+In the application folder, we listed out the requirements needed in the requirement.txt file. Next, we will call Pip to install the dependencies in the file then try out the application in the local host of the virtual machine.
 
 - Head over to the Google Cloud Shell, then `ssh` into the VM using the command:
 
@@ -206,11 +220,10 @@ To deploy the application, we have to be logged into the virtual machine.
     flask run -p 5000
     ```
 
-
 ### Conclusion
 Most developers are using Google Compute Engine to host their applications, betting on reliability and efficiency. Using this article, knowing to deploy a Flask application to this platform is an advantage any programmer can afford.
 
-The article discussed a stepwise process of deploying a Flask application to GCE. First, we developed an application using Flask framework and deployed it to compute engine. 
+The article discussed a stepwise process of deploying a Flask application to GCE. First, we developed an application using the Flask framework and deployed it to compute engine. 
 
 This process should give the reader an insight into Infrastructure as a service and change the thinking dynamics of hosting web applications.
 
