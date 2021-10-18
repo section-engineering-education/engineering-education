@@ -1,4 +1,18 @@
-### Building a CDN Image Gallery with Flask, Cloudinary, and MongoDB
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/image-gallery-flask-cloudinary-mongo/
+title: Building a CDN Image Gallery with Flask, Cloudinary, and MongoDB
+description: A content delivery network (CDN) allows for the quick transfer and retrieval of web assets by distributing them to geographically distant servers that work together to provide required content to end-users.
+author: onojakpor-ochuko
+date: 2021-03-31T00:00:00-13:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/image-gallery-flask-cloudinary-mongo/hero.jpg
+    alt: Building a CDN Image Gallery with Flask, Cloudinary, and MongoDB
+---
 
 ### Introduction
 
@@ -8,9 +22,9 @@ Content delivery networks (CDNs) work by hosting files (images, videos, HTML pag
 
 In this article, you will learn:
 
-* Benefits of using content delivery networks (CDNs).
-* How to build CRUD applications with Flask and MongoDB.
-* How to integrate Cloudinary services into a Python application.
+- Benefits of using content delivery networks (CDNs).
+- How to build CRUD applications with Flask and MongoDB.
+- How to integrate Cloudinary services into a Python application.
 
 ### Benefits of Content Delivery Networks (CDNs)
 
@@ -36,9 +50,9 @@ In this tutorial, you will build an image gallery with Flask and MongoDB that in
 
 You will build three (3) web pages for the image gallery. They are:
 
-* Index/Landing Page
-* Upload Image Page
-* View Gallery Page
+- Index/Landing Page
+- Upload Image Page
+- View Gallery Page
 
 #### Step 1: Installing the App Requirements
 
@@ -86,9 +100,7 @@ First, create a folder named `templates` in the same folder as your `app.py`. Fl
 Create another file named `index.html` that will be stored in the `templates` folder and save the following code in it:
 
 ```html
-{% extends "bootstrap/base.html" %}
-
-{% block content %}
+{% extends "bootstrap/base.html" %} {% block content %}
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-lg-12">
@@ -97,18 +109,25 @@ Create another file named `index.html` that will be stored in the `templates` fo
       </div>
     </div>
     <div class="col-lg-9 text-center">
-      <h5>This is a Python + Flask demo application to showcase Cloudinary's comprehensive APIs and administration capabilities.</h5>
+      <h5>
+        This is a Python + Flask demo application to showcase Cloudinary's
+        comprehensive APIs and administration capabilities.
+      </h5>
     </div>
     <div class="col-lg-7 text-center">
-      <a href="{{ url_for('upload') }}" class="btn btn-primary m-3">Upload Images</a>
-      <a href="{{ url_for('gallery') }}" class="btn btn-primary m-3">Image Gallery</a>
+      <a href="{{ url_for('upload') }}" class="btn btn-primary m-3"
+        >Upload Images</a
+      >
+      <a href="{{ url_for('gallery') }}" class="btn btn-primary m-3"
+        >Image Gallery</a
+      >
     </div>
   </div>
 </div>
 {% endblock %}
 ```
 
-You need to update the `app.py` file to implement the `upload and `gallery` routes referenced on the landing page. Update the `app.py` file with the code below:
+You need to update the `app.py` file to implement the `upload and `gallery`routes referenced on the landing page. Update the`app.py` file with the code below:
 
 ```python
 @app.route("/")
@@ -145,9 +164,7 @@ def upload():
 Create another file named `upload.html` that will be stored in the `templates` folder and save the following code in it:
 
 ```html
-{% extends "bootstrap/base.html" %}
-
-{% block content %}
+{% extends "bootstrap/base.html" %} {% block content %}
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-lg-12">
@@ -156,27 +173,39 @@ Create another file named `upload.html` that will be stored in the `templates` f
       </div>
     </div>
     <div class="col-lg-6 text-center">
-      {% with messages = get_flashed_messages(with_categories=true) %}
-      {% if messages %}
-      {% for category, message in messages %}
-      <div class="alert alert-{{ category }}" role="alert">
-        {{ message }}
-      </div>
-      {% endfor %}
-      {% endif %}
-      {% endwith %}
+      {% with messages = get_flashed_messages(with_categories=true) %} {% if
+      messages %} {% for category, message in messages %}
+      <div class="alert alert-{{ category }}" role="alert">{{ message }}</div>
+      {% endfor %} {% endif %} {% endwith %}
       <form method="POST" enctype="multipart/form-data">
         <div class="form-group">
           <label for="image">Choose Image</label>
-          <input type="file" class="form-control-file" id="image" name="image" accept="image/*" required>
+          <input
+            type="file"
+            class="form-control-file"
+            id="image"
+            name="image"
+            accept="image/*"
+            required
+          />
         </div>
         <div class="form-group">
           <label for="description">Image Description</label>
-          <textarea class="form-control" id="description" name="description" rows="4" required></textarea>
+          <textarea
+            class="form-control"
+            id="description"
+            name="description"
+            rows="4"
+            required
+          ></textarea>
         </div>
         <div class="text-center">
-          <button type="submit" class="btn btn-primary m-3">Upload Image</button>
-          <a href="{{ url_for('index') }}" class="btn btn-primary m-3">Go Home</a>
+          <button type="submit" class="btn btn-primary m-3">
+            Upload Image
+          </button>
+          <a href="{{ url_for('index') }}" class="btn btn-primary m-3"
+            >Go Home</a
+          >
         </div>
       </form>
     </div>
@@ -344,9 +373,7 @@ def upload():
 Update the `gallery.html` template file to render the gallery images from the provided Cloudinary URLs instead of the `UPLOAD_FOLDER`. Update the `gallery.html` file with the code below:
 
 ```html
-{% extends "bootstrap/base.html" %}
-
-{% block content %}
+{% extends "bootstrap/base.html" %} {% block content %}
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-lg-12 text-center">
@@ -358,7 +385,7 @@ Update the `gallery.html` template file to render the gallery images from the pr
     {% for i in gallery %}
     <div class="col-lg-4">
       <div class="card">
-        <img class="card-img-top" src="{{ i.url }}">
+        <img class="card-img-top" src="{{ i.url }}" />
         <div class="card-body">
           <p class="card-text">{{ i.description }}</p>
         </div>
@@ -383,3 +410,7 @@ This article introduced you to content delivery networks (CDN), discussed the be
 Looking to build the demo application further, check out example code, or improve its functionality? Visit the [GitHub Repo](https://github.com/LordGhostX/cloudinary-flask).
 
 Happy coding!
+
+---
+
+Peer Review Contributions by: [Daniel Katungi](/engineering-education/authors/daniel-katungi/)
