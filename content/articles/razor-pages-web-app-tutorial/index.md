@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/razor-pages-web-app-tutorial-using-asp.net-core/hero.png
+  - url: /engineering-education/razor-pages-web-app-tutorial/hero.png
     alt: Razor Pages Example Image
 ---
 Razor Pages is a server-side, page-focused framework that allows for the creation of dynamic, data-driven web pages with a clear separation of concerns in ASP.NET Core.
