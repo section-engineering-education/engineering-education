@@ -5,6 +5,10 @@
 - Introduction
 - Blockchain
     - Features of Blockchain
+    - *Peer-to-Peer* Network
+    - Transaction
+    - The Chain and the Blocks
+    - Mining and Proof of Work
 - E-voting and Blockchain: Advantages and Disadvantages
 - A Real-Life Example: How Moscow Implemented a Blockchain Vote
 - Conclusion 
@@ -29,15 +33,23 @@ In the words of The Economist, the Blockchain is a way of *" creating and preser
 
 **The *valid* version of the Blockchain is the one that *has the most blocks*. As the Blockchain is public, each node can check if everything is as it should be. So, for someone to be able to change the chain, they would need to *monopolize 51% of the network's mining power* to always keep their version as the *longer version of the chain*, which is *very unlikely*.**
 
+#### *Peer-to-Peer* Network
+
 Blockchain was designed to work on a *peer-to-peer* network. Each user on that network is called a **node**. Each node has its **address**, a unique *public* key, and a **signature**, a unique *private* key. A key is a string, something like `93ce48570b55c42c2af816aeaba06cfee1224fae`, for example.
+
+#### Transactions
 
 We can perform **transactions** between nodes by transferring assets between their addresses. That is, to make a transaction, we need a sender node, a receiver node, and the amount of assets to be transferred. Transactions are managed by a software called a **wallet**, which allows users to send, receive and exchange resources.
 
 However, *how can we know if a sender node has the amount of assets needed for a transaction*? Also, *how can we confirm that it is willing to do this transaction*? One solution would be to introduce a central authority as an intermediary for transactions. That authority would check these questions and authorize or not the transaction. However, this is a trust-based model, as we need to *blindly trust* the central authorities.
 
+#### The Chain and the Blocks
+
 Blockchain tries to get around this and its solution is to use a **chain** of *public transaction records* grouped in **blocks**. On each transaction, the *sender* will specify its public address and, *to confirm the transaction*, it must present its *private* signature. Each transaction block will be identified with a unique key and will store, in addition to its group of transactions, a *timestamp* and the *key of its predecessor block*.
 
 This structure of blocks in sequence forms a chain of blocks and hence the name. It causes changing a block at a certain point in the chain to *break* *the entire chain* from that block onwards. This happens because *any change* that happens in a block *causes its key to be modified*, invalidating the key data of the predecessor block that is stored in the next block and so on.
+
+#### Mining and Proof of Work
 
 There are a few more details that make it *even more difficult to change* the Blockchain. First, for a block to be added to the chain, it needs to be **mined**. The nodes that work to mine blocks are called **miners**. To mine a block, a miner needs *to solve a problem*. Solving this problem is called **Proof of Work**. Basically, to give Proof of Work a miner needs to find a number called *nonce* that validates some conditions. To find this number requires a lot of computational power and it can only be found through trial and error ([around $10^{20}$ tries to find it](https://arxiv.org/abs/1708.08749)). When a miner *succeeds* in giving a Proof of Work for a block with a list of transactions, that block is added to the Blockchain and the transactions in it are confirmed. In addition, the miner receives a reward: some assets are given to it as an incentive for having mined a block. Then all nodes receive the news: a new block has been added to the chain! Let's update our records!
 
