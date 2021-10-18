@@ -1,6 +1,6 @@
 # Blockchain as a form of e-voting
 
-### **Introduction**
+### Introduction
 
 Satoshi Nakamoto, in his famous paper, [Bitcoin: A Peer-to-Peer Electronic Cash System](https://bitcoin.org/bitcoin.pdf) begins by talking about how the Internet's commerce and transaction system suffers from a trust-based model. Furthermore, Nakamoto mentions this model's need for a central authority that acts as an intermediary for transactions, that is, all the transactions must go through this central authority. Think, for example, of a bank. Nakamoto's proposal in his paper is that of a decentralized and secure technology as an alternative to this current model: the Blockchain.
 
@@ -8,7 +8,7 @@ Drawing a parallel with a voting process, its integrity and effectiveness also s
 
 In the words of The Economist, the Blockchain is a way of *" creating and preserving truths"* ([The great chain of being sure about things](https://www.economist.com/briefing/2015/10/31/the-great-chain-of-being-sure-about-things)). In fact, the technology has [promising properties for an electronic voting system such as anonymity, decentralization, transparency, immutability, and encryption](https://www.mdpi.com/1424-8220/21/17/5874). In this article, we will see what Blockchain is, then we will see how this technology can be used in electronic voting, its advantages, and problems, and end by talking a little about Moscow's experience using Blockchain in real-life voting.
 
-### **Blockchain**
+### Blockchain
 
 *If you already know the basics of how a Blockchain works, you can skip this section. Here I will make a brief introduction about the functioning and main features of Blockchain.*
 
@@ -30,7 +30,7 @@ Since Blockchain records are public, *any node can check the chain* to see if ev
 
 *Phew!* There are so many details! At this point, you should already get some sense of why some people want to use Blockchain in electronic voting. *Let's talk about it now!*
 
-### **E-voting and Blockchain: Advantages and Disadvantages**
+### E-voting and Blockchain: Advantages and Disadvantages
 
 In a democratic voting process, **security** and **reliability** are *essential*. To achieve this, it is necessary to guarantee a long list of requirements. A voter can only vote *once*; their *anonymity* and *voting secrecy* must be preserved; there must be *no way* to prove that someone voted (in countries where voting is not mandatory) and/or *for whom* they voted; voting must be *easy* and *accessible*; *no* voter or candidate can manage *to manipulate the results*; there needs to be *transparency* and *auditability* in the voting process, and the list goes on.
 
@@ -42,7 +42,7 @@ You may have noticed the *"probably"* in parentheses in the sentence above. Well
 
 Now that we know some of the advantages and disadvantages of Blockchain, it would be nice if someone had already tried to do an e-voting with Blockchain so that we would know how it went and what happened. Fortunately, the city of Moscow has *experimented* with this idea recently and this experiment is what we are going to talk about!
 
-### **A Real-Life Example: How Moscow Implemented a Blockchain Vote**
+### A Real-Life Example: How Moscow Implemented a Blockchain Vote
 
 I have a habit of going into GitHub and going to the 'Explore' tab and then the 'Trending' tab. I always find very interesting projects and very useful repositories doing this. One day, I was looking at the 'Trending' tab and I saw a repository called *['blockchain-voting_2019' from Moscow Technologies](https://github.com/moscow-technologies/blockchain-voting_2019)*. It was this repository that made me research more on the subject, and now here I am writing this article.
 
@@ -58,7 +58,7 @@ To participate in electronic voting, users had to *authenticate themselves* with
 
 To guarantee the **anonymity** and **confidentiality** of the vote, the voting page *is not connected to any data or user identification* and, *before* a vote is sent to the Blockchain, *it is grouped with others* and goes through a **mixer** that *shuffles* the votes of several people, giving greater secrecy.
 
-### **Conclusion**
+### Conclusion
 
 Blockchain is a relatively new technology and has its pros and cons in the context of e-voting. We are already starting to see its use in the real world, through startups and even political initiatives. There is still plenty of room for improvement, but it has been gaining ground and being promising and is already being used in small and medium-sized applications in several different areas. Let's hope to see new improvements and ideas in the next years!
 
