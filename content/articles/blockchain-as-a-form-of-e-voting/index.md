@@ -1,5 +1,13 @@
 # Blockchain as a form of e-voting
 
+### Table of Contents
+
+- Introduction
+- Blockchain
+- E-voting and Blockchain: Advantages and Disadvantages
+- A Real-Life Example: How Moscow Implemented a Blockchain Vote
+- Conclusion 
+
 ### Introduction
 
 Satoshi Nakamoto, in his famous paper, [Bitcoin: A Peer-to-Peer Electronic Cash System](https://bitcoin.org/bitcoin.pdf) begins by talking about how the Internet's commerce and transaction system suffers from a trust-based model. Furthermore, Nakamoto mentions this model's need for a central authority that acts as an intermediary for transactions, that is, all the transactions must go through this central authority. Think, for example, of a bank. Nakamoto's proposal in his paper is that of a decentralized and secure technology as an alternative to this current model: the Blockchain.
