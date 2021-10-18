@@ -72,7 +72,7 @@ gapminder_df
 1703    Zimbabwe    Africa  2007    43.487  12311143    469.709298  ZWE     716
 ```
 
-By looking at these numbers, it isn't easy to understand what the data is telling us. You could interpret the data, but it would take you a lot of time. We would need to visualize this data so that someone can interpret and understand the data quickly. It is also aesthetically pleasing to the eye, and it looks nice. As such, let's create the data visualization using interactive animations to help us visualize this data to understand it better.
+Looking at these numbers, we would need to visualize this data so that someone can interpret and understand the data quickly. It is also aesthetically pleasing. As such, let's create the data visualization using interactive animations to help us visualize this data.
 
 ```python
 px.scatter(data_frame=gapminder_df,
@@ -108,7 +108,7 @@ The above image shows the distribution of wealth in the year 1952.
 
 ![Output](/engineering-education/how-to-plot-data-in-python-using-plotly/plotly-output-07.png)
 
-The above images shows the distribution of wealth from the year 1952 to 2007. From the scatterplot, we can see how wealth has been distributed over the years. Initially, Africa and Asia had a population with the least wealthy in the world. Gradually, more asian people gained wealth and left africans behind. The results also show that most of the wealth by 2007 was concentrated among the europeans, oceanians, and americans. You can zoom in and out using your mouse cursor to view individual points on the plot. Press the play button and see how the distribution shifts from 1952-2007. 
+The above images shows the distribution of wealth from the year 1952 to 2007. Initially, Africa and Asia had a population with the least wealth in the world. Gradually, more Asian people gained wealth and leapfrogged Africans. The results also show that most of the wealth by 2007 was concentrated among the Europeans, Oceanians, and Americans. You can zoom in and out using your mouse cursor to view individual points on the plot. Press the play button and see how the distribution shifts from 1952-2007. 
 
 We used interactive animations to help us achieve our goal. There are many other ways you can visualize using plotly. This could be using line charts, bar charts, pie charts, interactive bubble charts, and choropleth. Explore more techniques [here](https://www.kaggle.com/jhossain/explore-the-gapminder-dataset-with-plotly-express).
 
