@@ -10,6 +10,15 @@ Content can be found at [https://section.io/engineering-education](https://secti
 
 The Section team will monitor and manage the overall Program.
 
+### Program Requirements
+A requirement of the EngEd program is to have a valid (and active) PayPal account. 
+
+We have placed a tremendous amount of effort into researching other alternatives - and to date PayPal is the best option for the community.
+With that said - we can only send out payouts to the authors valid account. 
+
+If a participant (contributor/author) submits an article to publish - but does NOT have a valid PayPal account under their name - the payout will NOT be able to be issued.
+The article can still be published and added to the authors profile (to continue to build up a portfolio) but the payout will NOT be issued to any other PayPal email address.
+
 ### Program Resources
 - Be sure to sign up to the Section Community Slack Channel at [slack.section.io](https://sectionio-community.slack.com/). Once signed up, join the **#eng-ed** channel for ongoing program communications.
 
