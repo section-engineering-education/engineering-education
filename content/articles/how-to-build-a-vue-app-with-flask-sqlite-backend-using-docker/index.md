@@ -3,33 +3,37 @@ layout: engineering-education
 status: publish
 published: true
 url: /how-to-build-a-vue-app-with-flask-sqlite-backend-using-docker/
-title: How to set up and Build a Vue app with a Flask backend using Docker
-description: In this article, we will be looking at how to build a Vue app with a Flask backend using Docker. We will build a simple Vue app that will get data from a Flask backend.
+title: How to Set up and Build a Vue App with a Flask Backend using Docker
+description: In this article we will build a Vue app with a Flask backend using Docker. We will build a simple Vue app that will get data from a Flask backend.
 author: moses-m
-date: 2021-10-15T00:00:00-16:00
+date: 2021-10-18T00:00:00-16:00
 topics: [Containers, Languages]
 excerpt_separator: <!--more-->
 images:
+
  - url: /engineering-education/how-to-build-a-vue-app-with-flask-sqlite-backend-using-docker/hero.png
    alt: Docker Flask Notes Vue Image hero
 ---
-[Vue.js](https://v3.vuejs.org) is a Javascript frontend framework used to build web user interfaces. Vue is commonly used to build single page based application that runs on the client-side.
+[Vue.js](https://v3.vuejs.org) is a JavaScript frontend framework used to build web user interfaces. Vue is commonly used to build single page based applications that run on the client-side.
 <!--more-->
 Nevertheless, Vue can be used to build a full-stack web application with other backend technologies such as Node.js and Flask coming into play. This is done by making HTTP requests to a server and populating them in a Vue-based interface.
 
-Vue is great due to its well-outlined features. This includes the ability to use virtual DOM, easy integration with other technologies such as Node.js and Python, and high run time performance.
+Vue is great, due to its well-outlined features. This includes the ability to use virtual DOM, easy integration with other technologies such as Node.js and Python, and high run time performance.
 
 On the other side, Flask is a micro web application-based framework written in Python to manipulate server-side-based data. Flask is designed to make getting started quick and easy with the ability to scale up to complex applications.
 
-When building a full-stack application, Vue and Flask can be used and run as a single application. This gives you the ability to manipulate the web page appearance, and to process server-based data using Flask. When running such different technologies together, it can be become extensive to always set local environments to run the full-stack application.
+When building a full-stack application, Vue and Flask can be used and run as a single application. This gives you the ability to manipulate the web page appearance and to process server-based data using Flask. 
 
-As a result, Docker plays a very important role. It allows you to build such an application and run them virtually through containers. This means any local environment doesn't affect how your application runs. Docker will spin up Vue and Flask, containerize them and run them as one. All you have to do is set simple instructions that explain the different dependencies that the application needs to run. This includes the version of Python and the libraries you want to run Flask.
+When running such different technologies together, it can be become extensive to always set local environments to run the full-stack application.
+
+As a result, Docker plays a very important role. It allows you to build such an application and run them virtually through containers. This means any local environment doesn't affect how your application runs. 
+
+Docker will spin up Vue and Flask, containerize them and run them as one. All you have to do is set simple instructions that explain the different dependencies that the application needs to run. This includes the version of Python and the libraries you want to run Flask.
 
 In this guide, we will build an application using Vue and Flask and run it using Docker. We will use SQLite as the application database.
 
 ### Prerequisites
 To follow along in this article, it is important to have the following:
-
 1. [Python](https://www.python.org/) installed on your computer.
 2. Some working knowledge with Flask.
 3. [Node.js](https://nodejs.org/en/) installed on your computer.
@@ -62,11 +66,15 @@ To follow along in this article, it is important to have the following:
 - [Conclusion](#conclusion)
 
 ### Setting up the server-side environment using Flask
-For the server-side, we will build a REST API using Flask and SQLite (A lightweight SQL database). To achieve this, we will follow the following steps:
+For the server-side, we will build a REST API using Flask and SQLite (A lightweight SQL database). 
+
+To achieve this, we will follow the following steps:
 
 First create a project folder that you will use to create a Flask REST API, name it, `flask-todos-rest-api` .
 
-To set up our Flask environment, we will use [pipenv](https://pipenv.pypa.io/en/latest/). To check if you have `pipenv` installed, run the following command:
+To set up our Flask environment, we will use [pipenv](https://pipenv.pypa.io/en/latest/). 
+
+To check if you have `pipenv` installed, run the following command:
 
 ```bash
 python -m pipenv --version
@@ -86,7 +94,6 @@ python -m pipenv shell
 
 #### Installing the packages
 We will use the following packages:
-
 - [Flask](https://flask.palletsprojects.com/en/2.0.x/): The framework providing the architectural setup for the application.
 - [Flask-sqlalchemy](https://flask-sqlalchemy.palletsprojects.com/en/2.x/): Provides useful defaults and extra helpers that make it easier to accomplish database tasks.
 - [Flask-marshmallow](https://flask-marshmallow.readthedocs.io/en/latest/): Thin integration layer for Flask useful when building APIs.
@@ -99,7 +106,7 @@ To install all the above packages run this command:
 python -m pipenv install flask flask-sqlalchemy flask-marshmallow marshmallow-sqlalchemy flask-cors
 ```
 
-#### Setting up the server-side application Using Flask
+#### Setting up the server-side application using Flask
 To setup, the server-side application, create an `app.py` file inside your `flask-todos-rest-api` folder.
 
 In this file, set up a basic flask app by adding the following lines of code.
@@ -116,10 +123,10 @@ if __name__ == '__main__':
     app.run(debug=True)
 ```
 
-From above, we are importing the Flask module, initializing it, and starting it.
+With the command above we are importing the Flask module, initializing it, and starting it.
 
 #### Setting up the database
-To set up the SQLite database, start by import the following packages:
+To set up the SQLite database, start by importing the following packages:
 
 ```python
 from flask_sqlalchemy import SQLAlchemy
@@ -172,9 +179,11 @@ class TodoSchema(ma.Schema):
         fields = ('id','title','description')
 ```
 
-From above, we define that for every todo, we will be interested in the id, title, and description.
+Above, we define that for every todo, we will be interested in the id, title, and description.
 
-To initialize the above schema, we have to do it differently for a single todo and multiple todos. For this, we will add the following:
+To initialize the above schema, we have to do it differently for a single todo and multiple todos. 
+
+For this, we will add the following:
 
 ```python
 todo_schema = TodoSchema()
@@ -223,7 +232,7 @@ app.config['CORS_HEADERS'] = 'Content-Type'
 
 From above, we accept all origins hitting the `/api` endpoint from which we will expose the API.
 
-Let's now add all the necessary routes to handle the CRUD operations.
+Let us now add all the necessary routes to handle the CRUD operations.
 
 #### Creating a todo
 The following route creates a todo:
@@ -331,7 +340,7 @@ def delete_todo(id):
     return todo_schema.jsonify(todo)
 ```
 
-From above, we accept the todo's id to be deleted, accepting all origins, getting the todo, deleting it from the database, and returning the deleted todo.
+The routes above accept the todo's id to be deleted, accepting all origins, getting the todo, deleting it from the database, and returning the deleted todo.
 
 After setting the routes, start your application by running the following command:
 
@@ -339,12 +348,16 @@ After setting the routes, start your application by running the following comman
 python -m pipenv run python app.py
 ```
 
-Everything should work fine, and the development server should be started. In case you encounter an error, revisit the steps. Your console output should be similar to:
+Everything should work fine, and the development server should be started. In case you encounter an error, revisit the steps. 
 
-![flask-console-output](/engineering-education/how-to-build-a-vue-app-with-flask-sqlite-backend-using-docker/flask-console-output.png)
+Your console output should be similar to:
+
+![flask-console-output](/engineering-education/how-to-build-a-vue-app-with-flask-sqlite-backend-using-docker/flask-console-output.PNG)
 
 ### Setting up the client-side using Vue
-To set up the client-side, start by creating a skeleton app using Vue CLI. To check whether you have the CLI installed, use the following command:
+To set up the client-side, start by creating a skeleton app using Vue CLI. 
+
+To check whether you have the CLI installed, use the following command:
 
 ```bash
 vue --version
@@ -364,10 +377,11 @@ vue create todos-flask-app
 
 For the questions that follow, feel free to go with the defaults or your own selections.
 
-We will also add some additional packages to handle server-side routing. These are
+We will also add some additional packages to handle server-side routing. 
 
+These are:
 - Axios: For handling client/server-side requests.
-- Vue-router: For handling navigation
+- Vue-router: For handling navigation.
 
 ```bash
 npm install axios vue-router
@@ -429,7 +443,7 @@ Edit the JavaScript as follows:
 </script>
 ```
 
-From above, we are setting the dynamic classes for the navigation bar.
+In the snippet above, we are setting the dynamic classes for the navigation bar.
 
 Edit the style as follows:
 
@@ -445,10 +459,12 @@ Edit the style as follows:
 </style>
 ```
 
-From above, we are adding custom styles to the app component.
+Above we are adding custom styles to the app component.
 
 #### Todos list cards
-In the `src/components` folder, create a `Todos.vue` file. In the file, add the following HTML:
+In the `src/components` folder, create a `Todos.vue` file. 
+
+In the file, add the following HTML:
 
 ```html
 <template>
@@ -492,7 +508,7 @@ In the `src/components` folder, create a `Todos.vue` file. In the file, add the 
 </template>
 ```
 
-From above, we are checking if we have todos; if we don't, we show a message. Otherwise, we loop through them, outputting each of them.
+Here we are checking if we have todos; if we don't, we show a message. Otherwise, we loop through them, outputting each of them.
 
 Add the following JavaScript:
 
@@ -550,7 +566,7 @@ Add the following JavaScript:
 </script>
 ```
 
-From above, we export the todos fetched when the component is loaded, the functionality of editing and deleting a todo.
+Here we export the todos fetched when the component was loaded, the functionality of editing and deleting a todo.
 
 Add the following styles:
 
@@ -584,12 +600,12 @@ a {
 </style>
 ```
 
-The above are simple styles to add to our todo component.
+The code snippets above are simple styles to add to our todo component.
 
 #### Add a todo form
 Create an `AddTodo.vue` file and add the following components.
 
-#### The Html
+#### The HTML
 
 ```html
 <template>
@@ -625,7 +641,7 @@ Create an `AddTodo.vue` file and add the following components.
 </template>
 ```
 
-From above, we are showing a form with fields populated from JavaScript.
+Here we are showing a form with fields populated from JavaScript.
 
 #### The JavaScript
 ```html
@@ -803,11 +819,13 @@ Similar to the `add todo` form, we are outputting an `edit todo` form that is pr
 </script>
 ```
 
-From above we are, exporting the todo data, getting the todo when the page is loaded, handling custom validation, and data submission of the edited todo.
+Above we are exporting the todo data, getting the todo when the page is loaded, handling custom validation, and data submission of the edited todo.
 
-After setting up the components, we need to handle the routing into various pages. To do this, we will add the following in the `src/main.js` file:
+After setting up the components, we need to handle the routing into various pages. 
 
-First import the `AddTodo` , `EditTodo` and `Todos` components.
+To do this, we will add the following in the `src/main.js` file:
+
+Import the `AddTodo` , `EditTodo` and `Todos` components.
 
 ```javascript
 import AddTodo from "./components/AddTodo"
@@ -815,7 +833,7 @@ import EditTodo from "./components/EditTodo"
 import Todos from "./components/Todos"
 ```
 
-Then create the various `VueRouter` instances to handle the above components.
+Then create the various `VueRouter` instances to handle the components above.
 
 ```javascript
 // create a vuerouter instance
@@ -849,7 +867,9 @@ new Vue({
 
 From above, we are creating a `VueRouter` instance passing in the `mode` , `base` , and `routes` . For the routes, we pass the `path` , `component` , and `name` for each.
 
-After creating the instance, we pass it to the Vue object. With that, we are ready to start the development server and test the functionalities we have implemented. To do that, run the following command:
+After creating the instance, we pass it to the Vue object. With that, we are ready to start the development server and test the functionalities we have implemented. 
+
+To do that, run the following command:
 
 ```bash
 npm run serve
@@ -861,17 +881,17 @@ Your application should resemble the following:
 
 *Todos page*
 
-![todos-page](/engineering-education/how-to-build-a-vue-app-with-flask-sqlite-backend-using-docker/todos-page.png)
+![todos-page](/engineering-education/how-to-build-a-vue-app-with-flask-sqlite-backend-using-docker/todos-page.PNG)
 
 *Add todo page*
 
-![add-todo-page](/engineering-education/how-to-build-a-vue-app-with-flask-sqlite-backend-using-docker/add-todos-page.png)
+![add-todo-page](/engineering-education/how-to-build-a-vue-app-with-flask-sqlite-backend-using-docker/add-todos-page.PNG)
 
 ### Dockerizing the application
 To dockerize the application we have built, we will follow the following steps:
 
 #### Dockerize the Flask API
-To dockerize the API, create a Dockerfile, and a `.dockerignore` file in the API folder. The Dockerfile will host the instructions for creating the image, whereas the `.dockerignore` file will host the files to be ignored when copying to the image.
+To dockerize the API, create a Dockerfile, and a `.dockerignore` file in the API folder. The Dockerfile will host the instructions when creating the image, whereas the `.dockerignore` file will host the files to be ignored when copying to the image.
 
 For the Flask application to work within Docker, we need to make sure all the packages we have used are available and accessible by the containerized REST API.
 
@@ -907,7 +927,7 @@ COPY . .
 CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]
 ```
 
-From above, we are externally importing the python package, defining the working directory, copying the dependencies, installing the dependencies, copying the files, and setting the execution commands.
+Here we are externally importing the Python package, defining the working directory, copying the dependencies, installing the dependencies, copying the files, and setting the execution commands.
 
 Add the following to the `.dockerignore` file:
 
@@ -926,7 +946,7 @@ README.MD
 From above, we are adding all the files that should not be included in the docker image.
 
 #### Dockerize the Vue app
-To dockerize the Vue app, we will also create a Dockerfile in the project folder. Similarly, as in the previous instance, it will host the instructions for creating the docker image.
+To dockerize the Vue app, we will also create a Dockerfile in the project folder. Similar to the previous instance, it will host the instructions when creating the docker image.
 
 In the Dockerfile, add the following:
 
@@ -959,7 +979,7 @@ EXPOSE 5000
 CMD [ "serve", "-s", "dist" ]
 ```
 
-From above, we are importing the node image, setting the working directory, copying the contents of the `package.json` , and `package-lock.json` , Installing the project dependencies, copying the project files, building the project, exposing a port, and setting the executables.
+From above, we are importing the node image, setting the working directory, copying the contents of the `package.json` , and `package-lock.json` , installing the project dependencies, copying the project files, building the project, exposing a port, and setting the executables.
 
 #### Set up an overall docker-compose file
 After setting a Dockerfile for each of the folders i.e `api-folder` , and `client-folder` , we will set up a `docker-compose.yml` file outside the two folders.
@@ -983,10 +1003,10 @@ services:
             - 8080:5000
 ```
 
-From above, we define the version of `docker-compose` and set up the two services. For each service, we define the build (folder hosting the Dockerfile) and the ports (Where the project is to run on). So that the services do not collide on parallel ports, the `client-side` will run on port `8080` .
+Here we define the version of `docker-compose` and set up the two services. For each service, we define the build (folder hosting the Dockerfile) and the ports (where the project is to run on). So that the services do not collide on parallel ports, the `client-side` will run on port `8080` .
 
 #### Build the Docker image
-To build the docker image, from the location of the `docker-compose.yml` file, run the following:
+To build the Docker image, from the location of the `docker-compose.yml` file, run the following:
 
 ```bash
 docker-compose up -d --build
@@ -995,7 +1015,7 @@ docker-compose up -d --build
 The above command will build the docker image.
 
 #### Start the Docker container
-To start the docker container from the same location as in the previous step, run the following command:
+To start the Docker container from the same location as in the previous step, run the following command:
 
 ```bash
 docker-compose up
@@ -1003,7 +1023,7 @@ docker-compose up
 
 The above command will start the two services. After the two services are started, proceed to <http://localhost:8080> to interact with the app.
 
-After interacting with the app, You can stop the container by pressing `CRTL + C` . You can also share the docker image with friends to showcase what you have built.
+After interacting with the app, you can stop the container by pressing `CRTL + C` . You can also share the docker image with friends to showcase what you have built.
 
 ### Conclusion
 In this article, we have created a Vue.js app that consumes a restful Flask API. To widen your knowledge on the tools used throughout the article, the following resources are recommended:
@@ -1016,6 +1036,8 @@ In this article, we have created a Vue.js app that consumes a restful Flask API.
 - [How to Call a Vue Method on Page Load - Michael Thiessen](https://michaelnthiessen.com/call-method-on-page-load)
 - [Build your python image using docker - Docker docs](https://docs.docker.com/language/python/build-images/)
 - [Dockerizing a vue app - Vue.js Cookbook](https://vuejs.org/v2/cookbook/dockerize-vuejs-app.html)
+
+Happy coding!
 
 ---
 Peer Review Contributions by: [Geoffrey Mungai](/engineering-education/authors/geoffrey-mungai/)
