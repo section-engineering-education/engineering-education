@@ -19,9 +19,7 @@ To understand this article better the reader needs to:
 There are three Java Timer Task Methods. They include:
 
 - cancel() method
-
 - run() method
-
 - ScheduleExecutionTimer
 
 ##### Cancel() Method
@@ -54,9 +52,7 @@ package com.company;
 import java.util.Calendar;
 import java.util.Timer;
 import java.util.TimerTask;
-
 public class Main {
-
     public static void main(String[] args) {
         Timer T = new Timer();
         TimerTask Birthday = new TimerTask(){
@@ -67,9 +63,7 @@ public class Main {
         };
         Calendar date = Calendar.getInstance();
         date.set(2021, Calendar.OCTOBER, 31, 0, 0, 0);
-
         T.schedule(Birthday, date.getTime());
-
     }
 }
 ```
@@ -88,13 +82,10 @@ You can also include a timer in the above example so that our timer starts count
 
 ```JAVA
 package com.company;
-
 import java.util.Calendar;
 import java.util.Timer;
 import java.util.TimerTask;
-
 public class Main {
-
     public static void main(String[] args) {
         Timer T = new Timer();
         TimerTask Birthday = new TimerTask(){
@@ -113,9 +104,7 @@ public class Main {
         };
         Calendar date = Calendar.getInstance();
         date.set(2021, Calendar.OCTOBER, 30,23, 59, 54);
-
        T.scheduleAtFixedRate(Birthday, date.getTime(), 1000);
-
     }
 }
 ```
