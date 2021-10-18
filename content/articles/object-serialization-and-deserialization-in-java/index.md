@@ -58,7 +58,7 @@ The idea of **serialization in Java** is a byte-stream representation of an enti
 
 - There are no methods or data members in the serialization interface.
 - Only use the Serializable interface to serialize an object.
-- A class's fields must all be serializable; otherwise, use the temporary keyword.
+- A class's fields must all be serializable; otherwise, use the `transient` keyword.
 - The child class does not need to implement the `Serializable` interface if its parent class does.
 - During the serialization process, only preserve non-static data members; static and temporary data members are not.
 - The String and its wrapper classes have the `Serializable` interface implemented by default.
@@ -66,23 +66,21 @@ The idea of **serialization in Java** is a byte-stream representation of an enti
 ### How to serialize and deserialize with the help of examples
 
 To perform serialization, use the `ObjectOutputStream` class's `writeObject` method. For deserialization, use the `InputObjectStream` class's `readObject` method.
-> The (.ser) extension is usually used when serializing an entity to a directory in Java.
+> The `.ser` extension is usually used when serializing an entity to a directory in Java.
 
-Method syntax of (writeOurObject):
+Method syntax of writeObject:
 
 ```java
 public final void writeObject(Object o) throws IOException
-
 ```
 
-Method syntax (readOurObject):
+Method syntax readObject:
 
 ```java
 public final Object readObject() throws IOException, ClassNotFoundException
-
 ```
 
-> We are going to use sections of the full code which will follow later. Below are the sections of the full code. 
+> We are going to use sections of our full example code which will be shown later. Below are the sections of the full code. 
 
 #### A Serialization example
 
@@ -106,14 +104,12 @@ class Link implements Serializable {
     }
 
 }
-
 ```
 
 To serialize this class, we first need to implement the `java.io.Serializable` interface to mark it as serializable.
 
 ```java
 class Link implements Serializable
-
 ```
 
 We then implement the following method:
@@ -146,7 +142,6 @@ public static Link deserializeLink(String fileName) throws IOException, ClassNot
     return (Link) on.readObject();
 
 }
-
 ```
 
 #### Description
@@ -214,7 +209,6 @@ Before Serialization :
 Link : My first link
 After Serialization : 
 Link : My first link
-
 ```
 
 ### How to use inheritance to serialize an object in Java
@@ -258,7 +252,6 @@ class SerialLink extends Link {
         super(commons, favorites);
     }
 }
-
 ```
 
 #### Description
@@ -283,7 +276,6 @@ class Seriallink {
     private link link;
     private int favorites;
 }
-
 ```
 
 #### Description
@@ -310,7 +302,6 @@ class Lecturer implements Serializable
         this.title = title;  
     }  
 } 
-
 ```
 
 ### Transient members
@@ -333,7 +324,6 @@ class Link implements Serializable {
     }
 }
 // Use the class as in our previous serialization example
-
 ```
 
 #### Output
