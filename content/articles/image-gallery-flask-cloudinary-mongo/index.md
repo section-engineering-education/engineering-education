@@ -1,4 +1,18 @@
-### Building a CDN Image Gallery with Flask, Cloudinary, and MongoDB
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/image-gallery-flask-cloudinary-mongo/
+title: Building a CDN Image Gallery with Flask, Cloudinary, and MongoDB
+description: A content delivery network (CDN) allows for the quick transfer and retrieval of web assets by distributing them to geographically distant servers that work together to provide required content to end-users.
+author: onojakpor-ochuko
+date: 2021-03-31T00:00:00-13:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/image-gallery-flask-cloudinary-mongo/hero.jpg
+    alt: Building a CDN Image Gallery with Flask, Cloudinary, and MongoDB
+---
 
 ### Introduction
 
@@ -8,9 +22,18 @@ Content delivery networks (CDNs) work by hosting files (images, videos, HTML pag
 
 In this article, you will learn:
 
-* Benefits of using content delivery networks (CDNs).
-* How to build CRUD applications with Flask and MongoDB.
-* How to integrate Cloudinary services into a Python application.
+- Benefits of using content delivery networks (CDNs).
+- How to build CRUD applications with Flask and MongoDB.
+- How to integrate Cloudinary services into a Python application.
+
+### Prerequisites
+
+To follow and fully understand this tutorial, you will need to have:
+
+- Working knowledge of Python and Flask.
+- Python 3.6 or newer installed on your machine.
+- A Python development environment (IDE, text editor).
+- MongoDB installed on your machine.
 
 ### Benefits of Content Delivery Networks (CDNs)
 
@@ -24,7 +47,7 @@ CDNs share their files to multiple servers simultaneously, so you are sure serve
 
 #### Improved Website Security
 
-CDNs improve websites’ safety by providing [DDoS attack](https://www.section.io/engineering-education/denial-of-service/) mitigation, improving server security certificates, and other optimizations.
+CDNs improve websites’ safety by providing [DDoS attack](https://www.section.io/engineering-education/denial-of-service/) mitigation, improving server security certificates, and other optimizations.
 
 #### Reduction of Server Bandwidth
 
@@ -34,17 +57,23 @@ CDN assets are on multiple servers. This reduces the amount of data the origin s
 
 In this tutorial, you will build an image gallery with Flask and MongoDB that integrates a CDN with [Cloudinary](https://cloudinary.com/documentation/cloudinary_get_started). Create the backend with [Flask](https://flask.palletsprojects.com/en/1.1.x/), database with [Flask-PyMongo](https://flask-pymongo.readthedocs.io/en/latest/), and user interface with [Flask-Bootstrap](https://pypi.org/project/Flask-Bootstrap4/).
 
-You will build three (3) web pages for the image gallery. They are:
+You will build three webpages for the image gallery. They are:
 
-* Index/Landing Page
-* Upload Image Page
-* View Gallery Page
+1. Index/Landing Page
+2. Upload Image Page
+3. View Gallery Page
+
+- Flask is a Python web framework that allows you to build basic and complex applications quickly and easily.
+
+- Flask-Bootstrap is a Flask extension that allows you to integrate [Bootstrap](https://getbootstrap.com/) into a web application effortlessly.
+
+- Flask-PyMongo is a Flask extension that bridges the gap between Flask and [PyMongo](https://pymongo.readthedocs.io/en/stable/), providing Flask applications with the functionalities to integrate MongoDB easily.
 
 #### Step 1: Installing the App Requirements
 
 Install the libraries required to build the image gallery like Flask, PyMongo, and Flask-Bootstrap. In your terminal, type:
 
-```
+```sh
 pip install Flask Flask-PyMongo Flask-Bootstrap4
 ```
 
@@ -59,11 +88,9 @@ from flask_bootstrap import Bootstrap
 app = Flask(__name__)
 Bootstrap(app)
 
-
 @app.route("/")
 def index():
     return "Hello World!"
-
 
 if __name__ == "__main__":
     app.run(debug=True)
@@ -71,9 +98,9 @@ if __name__ == "__main__":
 
 When you run the `app.py` file and open your browser, you will get a response similar to the image below:
 
-![terminal view](/image-gallery-flask-cloudinary-mongo/tmckbhpmzbphhlanveru.png)
+![terminal view](/engineering-education/image-gallery-flask-cloudinary-mongo/terminal-view.png)
 
-![browser view](/image-gallery-flask-cloudinary-mongo/sp49rtwxmja3iask-dpw.png)
+![browser view](/engineering-education/image-gallery-flask-cloudinary-mongo/browser-view.png)
 
 #### Step 3: Design the Landing Page
 
@@ -81,14 +108,13 @@ The landing page is where your users see your application’s information with n
 
 First, create a folder named `templates` in the same folder as your `app.py`. Flask uses a `templates` folder to store the HTML files that the server renders in the application. Your project folder should resemble the image below:
 
-![project structure](/image-gallery-flask-cloudinary-mongo/5xfivevtp8xdfklr7fal.png)
+![project structure](/engineering-education/image-gallery-flask-cloudinary-mongo/
+project-structure.png)
 
 Create another file named `index.html` that will be stored in the `templates` folder and save the following code in it:
 
 ```html
-{% extends "bootstrap/base.html" %}
-
-{% block content %}
+{% extends "bootstrap/base.html" %} {% block content %}
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-lg-12">
@@ -97,18 +123,25 @@ Create another file named `index.html` that will be stored in the `templates` fo
       </div>
     </div>
     <div class="col-lg-9 text-center">
-      <h5>This is a Python + Flask demo application to showcase Cloudinary's comprehensive APIs and administration capabilities.</h5>
+      <h5>
+        This is a Python + Flask demo application to showcase Cloudinary's
+        comprehensive APIs and administration capabilities.
+      </h5>
     </div>
     <div class="col-lg-7 text-center">
-      <a href="{{ url_for('upload') }}" class="btn btn-primary m-3">Upload Images</a>
-      <a href="{{ url_for('gallery') }}" class="btn btn-primary m-3">Image Gallery</a>
+      <a href="{{ url_for('upload') }}" class="btn btn-primary m-3"
+        >Upload Images</a
+      >
+      <a href="{{ url_for('gallery') }}" class="btn btn-primary m-3"
+        >Image Gallery</a
+      >
     </div>
   </div>
 </div>
 {% endblock %}
 ```
 
-You need to update the `app.py` file to implement the `upload and `gallery` routes referenced on the landing page. Update the `app.py` file with the code below:
+You need to update the `app.py` file to implement the upload and gallery routes referenced on the landing page. Update the `app.py` file with the code below:
 
 ```python
 @app.route("/")
@@ -128,7 +161,7 @@ def upload():
 
 When you run the `app.py` file, you will get a response similar to the image below in your browser:
 
-![landing page](/image-gallery-flask-cloudinary-mongo/v_1nf2fbaxpcps10vcid.png)
+![landing page](/engineering-education/image-gallery-flask-cloudinary-mongo/landing-page.png)
 
 #### Step 4: Build the Image Upload Functionality
 
@@ -145,9 +178,7 @@ def upload():
 Create another file named `upload.html` that will be stored in the `templates` folder and save the following code in it:
 
 ```html
-{% extends "bootstrap/base.html" %}
-
-{% block content %}
+{% extends "bootstrap/base.html" %} {% block content %}
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-lg-12">
@@ -156,27 +187,39 @@ Create another file named `upload.html` that will be stored in the `templates` f
       </div>
     </div>
     <div class="col-lg-6 text-center">
-      {% with messages = get_flashed_messages(with_categories=true) %}
-      {% if messages %}
-      {% for category, message in messages %}
-      <div class="alert alert-{{ category }}" role="alert">
-        {{ message }}
-      </div>
-      {% endfor %}
-      {% endif %}
-      {% endwith %}
+      {% with messages = get_flashed_messages(with_categories=true) %} {% if
+      messages %} {% for category, message in messages %}
+      <div class="alert alert-{{ category }}" role="alert">{{ message }}</div>
+      {% endfor %} {% endif %} {% endwith %}
       <form method="POST" enctype="multipart/form-data">
         <div class="form-group">
           <label for="image">Choose Image</label>
-          <input type="file" class="form-control-file" id="image" name="image" accept="image/*" required>
+          <input
+            type="file"
+            class="form-control-file"
+            id="image"
+            name="image"
+            accept="image/*"
+            required
+          />
         </div>
         <div class="form-group">
           <label for="description">Image Description</label>
-          <textarea class="form-control" id="description" name="description" rows="4" required></textarea>
+          <textarea
+            class="form-control"
+            id="description"
+            name="description"
+            rows="4"
+            required
+          ></textarea>
         </div>
         <div class="text-center">
-          <button type="submit" class="btn btn-primary m-3">Upload Image</button>
-          <a href="{{ url_for('index') }}" class="btn btn-primary m-3">Go Home</a>
+          <button type="submit" class="btn btn-primary m-3">
+            Upload Image
+          </button>
+          <a href="{{ url_for('index') }}" class="btn btn-primary m-3"
+            >Go Home</a
+          >
         </div>
       </form>
     </div>
@@ -187,7 +230,7 @@ Create another file named `upload.html` that will be stored in the `templates` f
 
 When you run the `app.py` file, your upload page should resemble the image below:
 
-![upload page](/image-gallery-flask-cloudinary-mongo/a6fxdzm9ev9vzfq8cv5w.png)
+![upload page](/engineering-education/image-gallery-flask-cloudinary-mongo/upload-page.png)
 
 You need to import the necessary libraries required by the application. Update the `app.py` file imports with the code below:
 
@@ -234,9 +277,11 @@ def upload():
     return render_template("upload.html")
 ```
 
-> NOTE: You need to create the directory you specified for the app `UPLOAD_FOLDER` in the project’s root. Create a `static` directory in the same directory as the `app.py` file and another folder called `uploads` in the `static` directory.
+> Note that you need to create the directory you specified for the app `UPLOAD_FOLDER` in the project’s root.
 
-![successful upload page](/image-gallery-flask-cloudinary-mongo/sx8ne3tvggwzmi76s9hx.png)
+Create a `static` directory in the same directory as the `app.py` file and another folder called `uploads` in the `static` directory.
+
+![successful upload page](/engineering-education/image-gallery-flask-cloudinary-mongo/successful-upload.png)
 
 #### Step 5: Build the Gallery Viewing Page
 
@@ -281,7 +326,7 @@ Create another file named `gallery.html` that will be stored in the `templates` 
 
 When you run the `app.py` file, your gallery page should resemble the image below:
 
-![gallery page](/image-gallery-flask-cloudinary-mongo/zhybtclqplvrbzrvfhu9.png)
+![gallery page](/engineering-education/image-gallery-flask-cloudinary-mongo/gallery-page.png)
 
 ### Integrating Cloudinary into a Flask Application
 
@@ -289,15 +334,15 @@ When you run the `app.py` file, your gallery page should resemble the image belo
 
 You need to generate your API keys from your Cloudinary dashboard. If you don’t have a Cloudinary account before now, create one on [Cloudinary’s website](https://cloudinary.com/users/register/free).
 
-The dashboard will provide you with your CLOUD NAME, API KEY, and API SECRET. Store them somewhere secure and easily retrievable. The API keys allow any application to communicate with your Cloudinary account via the REST API.
+The dashboard will provide you with your CLOUD NAME, API KEY, and API SECRET. Store them somewhere secure and easily retrievable. The API keys allow any application to communicate with your Cloudinary account via the REST API.
 
-![cloudinary keys](/image-gallery-flask-cloudinary-mongo/2jn63ayziv4r9emcdopw.png)
+![cloudinary keys](/engineering-education/image-gallery-flask-cloudinary-mongo/cloudinary-keys.png)
 
 #### Integrating Cloudinary into Python
 
 Install the Cloudinary Python SDK required to communicate with Cloudinary APIs using Python. In your terminal, type:
 
-```
+```sh
 pip install cloudinary
 ```
 
@@ -344,9 +389,7 @@ def upload():
 Update the `gallery.html` template file to render the gallery images from the provided Cloudinary URLs instead of the `UPLOAD_FOLDER`. Update the `gallery.html` file with the code below:
 
 ```html
-{% extends "bootstrap/base.html" %}
-
-{% block content %}
+{% extends "bootstrap/base.html" %} {% block content %}
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-lg-12 text-center">
@@ -358,7 +401,7 @@ Update the `gallery.html` template file to render the gallery images from the pr
     {% for i in gallery %}
     <div class="col-lg-4">
       <div class="card">
-        <img class="card-img-top" src="{{ i.url }}">
+        <img class="card-img-top" src="{{ i.url }}" />
         <div class="card-body">
           <p class="card-text">{{ i.description }}</p>
         </div>
@@ -374,7 +417,7 @@ Update the `gallery.html` template file to render the gallery images from the pr
 
 Congratulations! You have successfully built a CDN image gallery with Flask, Cloudinary, and MongoDB. The images rendered on the gallery page should be fetched from Cloudinary CDN servers instead of your origin server, as shown in the image below:
 
-![cloudinary path](/image-gallery-flask-cloudinary-mongo/skx3hl3c1x82jn0l_isj.png)
+![cloudinary path](/engineering-education/image-gallery-flask-cloudinary-mongo/cloudinary-path.png)
 
 ### Conclusion
 
@@ -383,3 +426,7 @@ This article introduced you to content delivery networks (CDN), discussed the be
 Looking to build the demo application further, check out example code, or improve its functionality? Visit the [GitHub Repo](https://github.com/LordGhostX/cloudinary-flask).
 
 Happy coding!
+
+---
+
+Peer Review Contributions by: [Daniel Katungi](/engineering-education/authors/daniel-katungi/)
