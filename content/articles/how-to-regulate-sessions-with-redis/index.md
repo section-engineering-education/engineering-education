@@ -18,11 +18,11 @@ Redis is an open-source database that is often used to build high-performance sc
 <!--more-->
 Redis is used for short-lived data in our applications, where it's often used in sessions or web page headcounts.
 
-By using in-memory database, we don't need to have large data sets, instead we use small pieces of data that allow us to store the data in the machine's memory, and not disk's memory.
+By using an in-memory database, we don't need to have large data sets, instead, we use small pieces of data that allow us to store the data in the machine's memory, and not disk's memory.
 
-Redis is a key-value store that is similar to how we handle objects in JavaScript. Several languages and frameworks uses Redis including Python, and backend JavaScript frameworks like Node.js.
+Redis is a key-value store that is similar to how we handle objects in JavaScript. Several languages and frameworks use Redis including Python, and backend JavaScript frameworks like Node.js.
 
-In this tutorial, we will be regulating session using Redis with Node.js.   
+In this tutorial, we will be regulating sessions using Redis with Node.js.   
 
 ### Prerequisites
 To understand this lesson, you should be familiar with the following:
@@ -42,10 +42,10 @@ At the end of this tutorial you should be able to:
 - Regulate Sessions with Redis (Nodejs)
 
 ### Advantage of Redis
-- Redis database are fast, since it uses an in-memory database.
+- Redis database is fast since it uses an in-memory database.
 - It's very flexible in terms of storing data.
 - No schemas & column names are required.
-- Redis supports rich data types such as list and set.
+- Redis supports rich data types such as lists and set.
 - It's also used for both a caching system and a database that can persist data to the disk.
 
 ### When to use Redis caching
@@ -74,11 +74,11 @@ In case, you encounter any errors while installing, have a look at these Stackov
 - [Stackoverflow - Redis install issue](https://stackoverflow.com/questions/8131008/issue-with-redis-install)
 
 ### Redis CLI
-Redis-CLI is the command-line interface for Redis. It authorizes forwarding commands to Redis database, and also reads the replies sent from the server, through the terminal.
+Redis-CLI is the command-line interface for Redis. It authorizes forwarding commands to the Redis database and also reads the replies sent from the server, through the terminal.
 
 These are few Redis-CLI commands:
 
-- `SET` - sets value of a key. 
+- `SET` - sets the value of a key. 
 
 ```bash
 SET name "John Snow"
@@ -88,7 +88,7 @@ GET name
 "100" 
 ```
 
-- `GET` - Gets the value of key. `nil` will be returned, if the key does not exist.
+- `GET` - Gets the value of the key. `nil` will be returned if the key does not exist.
 
 ```bash
 redis 127.0.0.1:6379> GET nonexisting
@@ -121,7 +121,7 @@ You can find more such Redis-CLI commands [here](https://redis.io/commands)
  
 ### Data Types
 #### Hash
-Hashes are a collection of field valued pairs. The best way to think about them is, they are similar to objects in javascript.
+Hashes are a collection of field-value pairs. The best way to think about them is, they are similar to objects in javascript.
 
 ```bash
 redis> HMSET user id 45 name "John"
@@ -131,9 +131,9 @@ redis>
 Above, I've created a hash with a key user and this key has both id of `45` and the name `John`. 
 
 #### List 
-List is implemented using linked lists, rather than arrays.
+Lists are implemented using linked lists, rather than arrays.
 
-Lists are useful, if you have really long lists and you need to add elements quickly to that lists. We can add to a list by using `LPUSH` or `RPUSH`. `LPUSH` means left push from the left to the current head. And, `RPUSH` will push it to the end.
+Lists are useful if you have really long lists and you need to add elements quickly to that lists. We can add to a list by using `LPUSH` or `RPUSH`. `LPUSH` means left push from the left to the current head. And, `RPUSH` will push it to the end.
 
 ```bash
 redis 127.0.0.1:6379> LPUSH people "John"
@@ -214,7 +214,7 @@ As we saw earlier, Redis is a caching management system.
 
 If there is a small amount of data that we have to fetch every time from the server, it takes too much time. If we don't have the data dynamic, then we can cache the data, and return the same when requested.
 
-Now, we'll set up a server that makes a request to the API to store the data to the local application system in Redis. And, we fetch the data from Redis when required.
+Now, we'll set up a server that requests to the API to store the data to the local application system in Redis. And, we fetch the data from Redis when required.
 
 Open any code editor of your choice and run `npm init -y` in the terminal to create a `package.json`.
 
@@ -278,18 +278,18 @@ As we see, this is the result of all the universities in Mexico. At the bottom o
 
 To reduce the time, we will be storing this data into our Redis server. So, when the user makes a request it will check if the data already exists.
 
-If it already exists on the database, then it will fetch data from there. If not, then it will make a request on the link. 
+If it already exists on the database, then it will fetch data from there. If not, then it will request the link. 
 
 ![Image 2](/engineering-education/how-to-regulate-sessions-with-redis/redis_image2.jpg)
 
-After storing the data into our Redis server and making API request for Mexico again, it took just `850ms` to load up the same data.
+After storing the data into our Redis server and making an API request for Mexico again, it took just `850ms` to load up the same data.
 
-We can notice how fast it is to fetch the data from Redis database that makes our application run faster.
+We can notice how fast it is to fetch the data from the Redis database that makes our application run faster.
 
 ### Conclusion
 In conclusion, we learned What Redis is, the fundamentals of Redis, Redis Caching in Node.js, the advantages of Redis, how to install Redis, Redis data Types, and Redis-CLI.
 
-Redis improves the response time of our application that makes it super fast. 
+Redis improves the response time of our application that making it super fast. 
 
 You can find the entire code [here](https://github.com/abimbolataofeek/redis-cachiing-tutorial).
 
