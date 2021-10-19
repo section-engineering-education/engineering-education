@@ -1,14 +1,21 @@
 ### Table of contents
-- Introduction
-- Blockchain
-    - Features of Blockchain
-    - Peer-to-Peer network
-    - Transaction
-    - The Chain and the Blocks
-    - Mining and Proof of Work
-- E-voting and Blockchain: Advantages and Disadvantages
-- A Real-Life Example: How Moscow Implemented a Blockchain Vote
-- Conclusion 
+- [Prerequisites](#prerequisites)
+- [Introduction](#introduction)
+- [Blockchain](#blockchain)
+    - [Features of Blockchain](#features-of-blockchain)
+    - [Peer-to-Peer network](#peer-to-peer-network)
+    - [Transactions](#transactions)
+    - [The Chain and the Blocks](#the-chain-and-the-blocks)
+    - [Mining and Proof of Work](#mining-and-proof-of-work)
+- [E-voting and Blockchain: Advantages and Disadvantages](#e-voting-and-blockchain-advantages-and-disadvantages)
+- [A Real-Life Example: How Moscow Implemented a Blockchain Vote](#a-real-life-example-how-moscow-implemented-a-blockchain-vote)
+- [Conclusion](#conclusion) 
+- [References](#references)
+
+### Prerequisites
+- Basic knowledge of computing and programming;
+- Basic knowledge of how elections and voting work.
+> Please note that these are not mandatory, but can make you understand more deeply the concepts, its pros and cons, and why they are like they are.
 
 ### Introduction
 Satoshi Nakamoto, in his famous paper, [Bitcoin: A Peer-to-Peer Electronic Cash System](https://bitcoin.org/bitcoin.pdf) begins by talking about how the Internet's commerce and transaction system suffers from a trust-based model. Furthermore, Nakamoto mentions this model's need for a central authority that acts as an intermediary for transactions, that is, all the transactions must go through this central authority. Think, for example, of a bank. Nakamoto's proposal in his paper is that of a decentralized and secure technology as an alternative to this current model: the Blockchain.
