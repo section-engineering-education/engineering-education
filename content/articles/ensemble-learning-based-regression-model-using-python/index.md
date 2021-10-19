@@ -1,4 +1,4 @@
-﻿---
+---
 layout: engineering-education
 status: publish
 published: true
@@ -11,7 +11,7 @@ topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /ensemble-learning-based-regression-model-using-python/hero.jpg
+  - url: /engineering-education/ensemble-learning-based-regression-model-using-python/hero.jpg
     alt: An Ensemble Learning Based Regression Model Hero Image
 ---
 Machine learning models are always evaluated based on their performance using specific metrics like; accuracy, precision, Mean Squared Error (MSE), etc. Each type of machine learning problem has its evaluation metrics.
