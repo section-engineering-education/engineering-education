@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /building-an-ensemble-learning-based-regression-model-using-python/
+url: /ensemble-learning-based-regression-model-using-python/
 title: Building an Ensemble Learning Based Regression Model Using Python
 description: This tutorial aims to help the reader build an ensemble learning-based regression model using the python programming language.
 author: adhinga-fredrick
@@ -11,7 +11,7 @@ topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /building-an-ensemble-learning-based-regression-model-using-python/hero.jpg
+  - url: /ensemble-learning-based-regression-model-using-python/hero.jpg
     alt: An Ensemble Learning Based Regression Model Hero Image
 ---
 
@@ -38,11 +38,11 @@ For our model's evaluation, we will be using RMSE (Root Mean Squared Error).
 ### Setting up your environment
 Before building our model, we will first go to Kaggle and create a new **notebook** and rename it to **Create_Folds**.
 
-![Notebook](engineering-education/building-an-ensemble-learning-based-regression-model-using-python/new_notebook.jpg)
+![Notebook](engineering-education/ensemble-learning-based-regression-model-using-python/new_notebook.jpg)
 
 After that, [download](https://www.kaggle.com/c/30-days-of-ml/data) the data from Kaggle and add it to your environment using the **Add Data** button and upload the downloaded data as **Dataset**.
 
-![data](engineering-education/building-an-ensemble-learning-based-regression-model-using-python/data.jpg)
+![data](engineering-education/ensemble-learning-based-regression-model-using-python/data.jpg)
 
 >**HINT:**  To flawlessly upload your data to Kaggle, compress the datasets.
 
