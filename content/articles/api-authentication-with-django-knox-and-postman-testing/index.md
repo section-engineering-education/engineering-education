@@ -239,7 +239,7 @@ from rest_framework.response import Response
 from knox.models import AuthToken
 from .serializers import UserSerializer, RegisterSerializer, LoginSerializer
 
-class RegisterAPI(generics.GenericAPIView):
+class SignUpAPI(generics.GenericAPIView):
     serializer_class = RegisterSerializer
 
     def post(self, request, *args, **kwargs):
@@ -253,7 +253,7 @@ class RegisterAPI(generics.GenericAPIView):
         })
 
 
-class LoginAPI(generics.GenericAPIView):
+class SignInAPI(generics.GenericAPIView):
     serializer_class = LoginSerializer
 
     def post(self, request):
@@ -266,7 +266,7 @@ class LoginAPI(generics.GenericAPIView):
         })
 
 
-class UserAPI(generics.RetrieveAPIView):
+class MainUser(generics.RetrieveAPIView):
   permission_classes = [
       permissions.IsAuthenticated
   ]
@@ -290,14 +290,14 @@ We will be importing the APIViews made in `api.py` as the views for the routes. 
 
 ```python
 from django.urls import path, include
-from .api import RegisterAPI, LoginAPI, UserAPI
+from .api import SignUpAPI, SignInAPI, MainUser
 from knox import views as knox_views
 
 urlpatterns = [
     path('api/auth/', include('knox.urls')),
-    path('api/auth/register', RegisterAPI.as_view()),
-    path('api/auth/login', LoginAPI.as_view()),
-    path('api/auth/user', UserAPI.as_view()),
+    path('api/auth/register', SignUpAPI.as_view()),
+    path('api/auth/login', SignInAPI.as_view()),
+    path('api/auth/user', MainUser.as_view()),
     path('api/auth/logout',knox_views.LogoutView.as_view(), name="knox-logout"),
 ]
 ```
@@ -338,6 +338,6 @@ The response will come with a token that will be used to authorize the user when
 
 #### Conclusion
 
-In this tutorial, I covered the detail about the Django-Knox. I was able to demonstrate the token wise of the framework by building the rest API endpoints that are based on user authentication and authorization. Seek more by checking out the documentation of the framework here [Django-Knox](/https://james1345.github.io/django-rest-knox/).
+In this tutorial, we covered the implementation of Django-Knox, and we were able to demonstrate the token wise of the framework by building the rest API endpoints that are based on user authentication and authorization.
 
 Happy Coding!!
