@@ -1,5 +1,22 @@
-### Introduction
-If you want to take pictures in your Android app, there are generally two paths to follow:
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-implement-camerax-api-in-android/
+title: How to implement CameraX API in Android using Kotlin
+description: This article will guide the reader on how to implement CameraX API in Android. 
+author: raphael-ndonga
+date: 2021-10-19T00:00:00-14:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/how-to-implement-camerax-api-in-android/hero.jpg
+    alt: How to implement CameraX API in Android hero image
+---
+The camera is one of the most important components of a mobile device. It is responsible for capturing optical images of the surrounding environment. 
+<!--more-->
+When you want to take pictures in your Android app, there are generally two paths to follow:
 
 - Invoke an implicit intent `Intent(MediaStore.ACTION_IMAGE_CAPTURE)` that redirects to the normal camera application.
 - Use a `Camera API` to capture images.
@@ -26,14 +43,14 @@ In this tutorial, we will develop a basic camera application. The app will have 
 To follow along with this tutorial, you will need a basic understanding of Android app development with Kotlin.
 
 ### Table of contents
-- Project Setup
-- The Camera Preview
-- Image Capture and Storage
-- Switch Cameras
-- Local Gallery
-- Conclusion
+- [Project Setup](#project-setup)
+- [The Camera Preview](#the-camera-preview)
+- [Image Capture and Storage](#image-capturing-and-storage)
+- [Switch Cameras](#switch-camera)
+- [Local Gallery](#local-gallery)
+- [Conclusion](#conclusion)
 
-### 1. Project Setup
+### Project Setup
 Create a new empty activity project in Android Studio and add the following dependencies in the `build.gradle(app)` file:
 
 ```gradle
@@ -64,7 +81,7 @@ You will also need to declare the following permissions in the `AndroidManifest.
 <uses-permission android:name="android.permission.CAMERA"/>
 ```
 
-### 2. The Camera Preview
+### The Camera Preview
 This is the screen that displays what the camera views.
 
 Replace the `TextView` with a `PreviewView` in `activity_main.xml`:
@@ -189,7 +206,7 @@ cameraProviderResult.launch(android.Manifest.permission.CAMERA)
 
 The app should now prompt you to allow the camera permission after which the camera is activated.
 
-### 3. Image Capturing and Storage
+### Image Capturing and Storage
 In `activity_main.xml`, create a button that will be used to take photos when clicked.
 
 ```xml
@@ -305,7 +322,7 @@ binding.imgCaptureBtn.setOnClickListener{
 
 Run your app and take a photo then open the logCat and search `MainActivity`. You will see the location whereby the image has been saved. 
 
-### 4. Switch Camera
+### Switch Camera
 To switch the camera, either from front to back or from back to front, do the following:
 
 Create a switch button in `activity_main.xml`:
@@ -329,7 +346,7 @@ binding.switchBtn.setOnClickListener {
     //change the cameraSelector
     cameraSelector = if(cameraSelector == CameraSelector.DEFAULT_BACK_CAMERA){
         CameraSelector.DEFAULT_FRONT_CAMERA
-    }else{
+    }else {
         CameraSelector.DEFAULT_BACK_CAMERA
     }
     // restart the camera
@@ -339,7 +356,7 @@ binding.switchBtn.setOnClickListener {
 
 Run your app and click the `Switch` button to Switch the cameras.
 
-### 5. Local Gallery
+### Local Gallery
 To view the photos, you need to create a scrollable screen to display the images. This can be achieved using a RecyclerView adapter attached to a `ViewPager`.
 
 Add the following dependency to build.gradle(app):
@@ -462,3 +479,6 @@ In this article, we have learned how to use CameraX API to take photos and view 
 You can find the source code in this [Github repository](https://github.com/RaphaelNdonga/CameraXTutorial).
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Eric Gacoki](/engineering-education/authors/eric-gacoki/)
