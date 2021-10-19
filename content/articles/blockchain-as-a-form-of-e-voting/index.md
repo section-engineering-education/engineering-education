@@ -105,3 +105,6 @@ Blockchain is a relatively new technology and has its pros and cons in the conte
 - [How Moscow organized voting on a Blockchain in 2020. ICT Moscow.](https://ict.moscow/en/news/how-moscow-organized-voting-on-blockchain-in-2020/)
 - [Blockchain: a graph primer.](https://arxiv.org/abs/1708.08749) 
 - [Cybernetic election v1.0: how the Blockchain voting system was created in Moscow](https://habr.com/ru/article/480152/)
+
+---
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
