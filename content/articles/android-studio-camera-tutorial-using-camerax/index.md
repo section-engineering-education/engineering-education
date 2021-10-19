@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /how-to-implement-camerax-api-in-android/
 title: How to implement CameraX API in Android using Kotlin
-description: This article will guide the reader on how to implement CameraX API in Android. 
+description: This article will guide the reader on how to implement CameraX API in Android. CameraX is a Jetpack support library, built to help you make camera app development easier.
 author: raphael-ndonga
 date: 2021-10-19T00:00:00-14:00
 topics: [Languages]
