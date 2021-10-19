@@ -196,7 +196,7 @@ gcloud compute scp --recurse flask-app lab1: --zone us-central1-a
 ### Deploying the application
 Deployment is the final step that we need to execute for our application to run. So, we begin by login into the virtual machine and navigating to our applications folder.
 
-In the application folder, we listed out the requirements needed in the requirement.txt file. We will call pip to install the dependencies in the file then try out the application in the localhost of the virtual machine.
+In the application folder, we listed out the requirements needed in the requirement.txt file. Next, we will call pip to install the dependencies in the file then try out the application in the localhost of the virtual machine.
 
 - Head over to the Google Cloud Shell, then `ssh` into the VM using the command:
 
