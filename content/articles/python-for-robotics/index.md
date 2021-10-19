@@ -1,10 +1,27 @@
-### Python for robotics  
+---
+layout: engineering-education
+status: publish
+published: true
+url: /python-for-robotics/
+title: Python for Robotics
+description: In this article we will discuss FHRP in detail and how it is used to achieve redundancy in networks. First Hop redundancy Protocol (FHRP) which presents a virtual default gateway to the organization's network to provide a near 100 percent network uptime. 
+author: jose-yusuf
+date: 2021-10-19T00:00:00-18:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  -url: /engineering-education/python-for-robotics/hero.jpg
+   alt: Python for Robotics example image
+---
+
 ### Table of Content  
 -  [Introduction](#introduction)
 -   [Control of robot arm using python](#Control-of-robot-arm-using-python)
 -  [working principles of robots](#working-principles-of-robots)
 
 -  [Conclusion](#Conclusion)
+
 ### Prerequisite
 
 To follow this tutorial, you should have a basic understanding of the following concepts:
@@ -107,3 +124,6 @@ When the robot arm is turned on, it should shoot straight up. Now, рlау with 
 
 ### Conclusion 
 In conclusion, one needs to study python language to write a program to control some parts of robots e.g Arm. Besides, be able to understand the working principles of robots.
+
+---
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
