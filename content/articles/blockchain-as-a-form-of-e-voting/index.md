@@ -1,3 +1,20 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: //blockchain-as-a-form-of-e-voting/
+title: Blockchain as a form of e-voting
+description: The objective of this tutorial is to help the reader learn how blockchain technology can be used in electronic voting, its advantages, and problems, and end by talking a little about Moscow's experience using Blockchain in real-life voting.
+author: samuel-santos
+date: 2021-10-19T00:00:00-19:00
+topics: [Blockchain]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/blockchain-as-a-form-of-e-voting/hero.jpg
+    alt: Blockchain as a form of e-voting Hero image
+---
+
 ### Table of contents
 - [Prerequisites](#prerequisites)
 - [Introduction](#introduction)
