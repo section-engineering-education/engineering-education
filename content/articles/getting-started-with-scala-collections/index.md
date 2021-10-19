@@ -1,7 +1,24 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /getting-started-with-scala-collections/
+title: Getting Started with Scala Collections
+description: This tutorial will cover Scala programming language. We will discuss points about Scala programming language and also about the scala collection frameworks.
+author: kelvin-munene
+date: 2021-09-08T00:00:00-11:30
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
-Collections are containers for things that contain an arbitrary number of elements.
+  - url: /engineering-education/getting-started-with-scala-collections/hero.png
+    alt: Getting Started with Scala Collections Hero Image
+---
 
-Both mutable and immutable collections are included, and these, in turn, vary functionally with Val and Var.Scala collections additionally offer a wide variety of flexible built-in methods that may be used to execute different operations like transformations & actions directly on the data.
+Collections are containers for things that contain an arbitrary number of elements. Both mutable and immutable collections are included, and these, in turn, vary functionally with Val and Var.
+<!--more-->
+
+Scala collections additionally offer a wide variety of flexible built-in methods that may be used to execute different operations like transformations & actions directly on the data.
 
 ### Prerequisites 
 - Run Scala programs [here](https://scalafiddle.io/).
@@ -51,12 +68,11 @@ Here are a few of the explanations:
 
 - **Useful, scalable, and productive**: Scala includes the most exemplary characteristics of other languages such as the C and C++ programming languages and the Java programming language.
 
-- Scala is tightly integrated with Java, thanks to innovative source code architecture that allows   the Scala compiler to understand Java classes.
-  In addition, the compiler may make use of frameworks, Java Libraries, and other additional tools and resources, etc. Applications written in Scala may run on the JVM after compilation.
+- Scala is tightly integrated with Java, thanks to innovative source code architecture that allows the Scala compiler to understand Java classes. In addition, the compiler may make use of frameworks, Java Libraries, and other additional tools and resources, etc. Applications written in Scala may run on the JVM after compilation.
 
 - Web-based and desktop application development are supported by compiling JavaScript for web apps. The JVM bytecode is generated in the same way for desktop apps.
 
-- Most well-known organizations, such as Apple, Twitter, Walmart, and Google, have migrated their majority of their code to Scala from other language. This is because Scala  is very scalable and would be used in backend processes, it is a good choice.
+- Most well-known organizations, such as Apple, Twitter, Walmart, and Google, have migrated their majority of their code to Scala from other language. This is because Scala  is scalable and would be used in backend processes, it is a good choice.
 
 > Scala is often misunderstood as a Java add-on. However, this is untrue. Scala works flawlessly with Java. The Java Byte Code is generated from Scala applications when successfully compiled and executed on the JVM (Java Virtual Machine).
 
@@ -79,10 +95,8 @@ Let's take a closer look at it as follows:
 
 > It is impossible to traverse a collection more than once using an iterator since each element is consumed in the iteration.
 
-### Understanding Mutable and Immutable Collections
-The Scala programming language gives only two types of collections, namely `Mutable` & `Immutable Collections.`
-
-There are systematic differences between Scala collections that are changeable and those that are immutable. 
+### Understanding mutable and immutable collections
+The Scala programming language gives only two types of collections, namely `mutable` & `immutable collections.` There are systematic differences between Scala collections that are changeable and those that are immutable. 
 
 A changeable collection can be changed or expanded while still being used. As a result, you can change, add to, or delete items from, an anthology.
 
@@ -90,13 +104,13 @@ Collections that are immutable never change. It will be possible to do operation
 
 Scala collection contains all collection classes, whether they are mutable, immutable, or generic.
 
-Most client-side collection classes are found in the `Scala.collection`, `scala.collection.immutable`, and `scala.collection.mutable packages`.
+Most client-side collection classes are found in the `Scala.collection`, `scala.collection.immutable`, and `scala.collection.mutable` packages.
 
-`Package scala.collection` contains the most often used collection classes. The degree of mutability varies across the variants.
+Package `scala.collection` contains the most often used collection classes. The degree of mutability varies across the variants.
 
-**Mutable Collections**- It is possible to update this kind of Collection, but it appends new elements to the existing ones.
+**Mutable collections**- It is possible to update this kind of collection, but it appends new elements to the existing ones.
 
-The items of the changeable Collection may be added, updated, or removed. Examples of mutable collections include: AnyRefMap, ArrayBuffer, ArrayStack, BitSet, ArrayBuilder, ArraySeq, HashSet, LinkedHashMap, LinkedHashSet, LinkedList, DoubleLinkedList, HashMap etc.
+The items of the changeable collection may be added, updated, or removed. Examples of mutable collections include: AnyRefMap, ArrayBuffer, ArrayStack, BitSet, ArrayBuilder, ArraySeq, HashSet, LinkedHashMap, LinkedHashSet, LinkedList, DoubleLinkedList, HashMap etc.
 
 The code below is an example of a mutable collection:
 
@@ -118,7 +132,7 @@ As you can see from the code above, a list is immediately created and the list o
 
 > Appending and reassigning to mutable collections is not possible because mutable collections lack the `+=` function.
 
-**Immutable Collections**- It is impossible to alter a collection of this kind. The methods for adding, updating, and deleting items from the Collection are still visible.
+**Immutable collections**- It is impossible to alter a collection of this kind. The methods for adding, updating, and deleting items from the collection are still visible.
 
 Internally, however, a new group is created; the previous Collection is not affected.
 
@@ -138,14 +152,14 @@ println(" "+ls);
 Output
 List(9, 10, 11, 12)
 
-### String & Lazy Collection in Scala
+### String & lazy collection in Scala
 When we apply data transformations to collections, such as filtering, mapping, min/maxing, reducing, folding, etc., we are essentially creating a new group.
 
 Depending on the resources available, this may be possible.
 
 A new collection is instantly formed when items are evaluated and memory is promptly allocated for those elements in strict transformations. 
 
-The transformations in a Lazy Collection do not generate another collection right away. When you say "memory-on-demand," you imply that memory won't be available right now.
+The transformations in a lazy collection do not generate another collection right away. When you say "memory-on-demand," you imply that memory won't be available right now.
 
 Creating a view on a collection transforms it into a Lazy Collection.
 
@@ -172,6 +186,12 @@ View: SeqView(...)
 To make the code to complete the complation process, we will add `.max` in the line `println("View: " + lsLazy)`. The full line of code will be `println("View: " + lsLazy.max)` to output `max 10`.
 
 ### Conclusion 
-From the above information, we have learned an introduction to Scalable language and also its collections. I urge the reader to use the information to gather more knowledge on this rarely used programming language.
+From the above information, we have learned an introduction to Scalable language. We have also looked at the collections - mutable and immutable collections and how they are different.
+
+I hope you find this helpful.
 
 Happy coding!
+
+---
+
+Peer Review Contributions by: [Monica Masae](/engineering-education/authors/monica-masae/)
