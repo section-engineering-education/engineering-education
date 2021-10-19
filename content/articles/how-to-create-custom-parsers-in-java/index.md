@@ -3,10 +3,31 @@ Parsers form an essential part of any programming language. Java programming lan
 
 This article helps the learners and developers understand several tools and libraries used when building custom parsers in Java.
 
+### Table of contents
+- [Introduction](#introduction)
+- [Prerequisites](#prerequisites)
+- [Concept of parser and parsing](#concept-of-parser-and-parsing)
+- [Rules and grammars](#rules-and-grammars)
+- [Parsing in Java](#parsing-in-java)
+- [Popular tools and libraries for generating parsers in Java](#popular-tools-and-libraries-for-generating-parsers-in-Java)
+- [Pros and cons of parsing tools and libraries](#pros-and-cons-of-parsing-tools-and-libraries)
+- [Wrapping up](#wrapping-up)
+- [Further reading](#further-reading)
+
+### Prerequisites
+To better understand and follow along the article below the learner should possess:
+- Basic understanding of [how parser works](https://www.sciencedirect.com/topics/computer-science/parsing-process)
+- Good knowledge in application development in [Java programming language](https://www.javatpoint.com/java-tutorial)
+- Good understanding of [regular languages}(https://ecomputernotes.com/compiler-design/regular-expression) and [context free grammars](https://brilliant.org/wiki/context-free-grammars/)
+
 ### Concept of parser and parsing
 Parsing involves breaking down and analyzing a block of code into smaller code components using some rules. These components are then interpreted, modified, or managed according to the developers’ needs to derive a more profound meaning or understanding.
 
 It requires a particular program to perform the actual parsing called a parser. A parser is made up of two parts, the scanner (tokenizer/lexer) and the parser. Lexer and parser perform tasks in an orderly manner. It means that the lexer will first read the input data and generates a list of tokens. Then the parser reads the tokens generated and outputs the results.
+
+In parsing, the lexer reads input characters from a given alphabet and converts them into a sequence of tokens. Regular languages easily recognize tokens.
+Lexer recognizes plain characters or words in a given alphabet, and regular expressions engines can easily implement lexers.
+On the other hand, Parser recognizes the structure of the language, making it complex for regular expressions to recognize.
 
 ### Rules and grammars
 Rules refer to the instructions that lexers or parsers follow when performing parsing, whereas the set of these rules forms a grammar. Grammar consist set of rules that defines how each line of code or construct is composed.
@@ -82,3 +103,14 @@ However, most of these tools do not have proper documentation and user guides, a
 Parsers development in Java is a complex topic compared to Java application development. Developers have a huge task when building parsers for Java. Due to this, tools should be utilized to make the development process easier when building custom parsers.
 
 It is advisable for developers first to research the tools they intend to use and carefully inspect their documentation.
+
+### Further reading
+Below are the resources to learn more about creating custom parsers for Java:
+- [A guide to parsing algorithms](https://www.javacodegeeks.com/2017/09/guide-parsing-algorithms-terminology.html)
+- [Understanding JFlex](https://jflex.de/manual.html)
+- [Java with ANTLR](https://www.baeldung.com/java-antlr)
+- [Learn APG](https://sabnf.com/documentation-2/)
+- [The Compiler Generator COCO/R](https://ssw.jku.at/Research/Projects/Coco/)
+- [Overview of CUP](http://monash.edu/science-education/2015/resources/conceptual-understanding-procedure/)
+- [Introduction to JavaCC](https://web.cs.wpi.edu/~kal/courses/compilers/JAVACC/JavaccPaser.htm)
+- [Parsing with JavaParser](https://www.tabnine.com/code/java/methods/japa.parser.JavaParser/parse)
