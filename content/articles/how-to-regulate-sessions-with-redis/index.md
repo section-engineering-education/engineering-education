@@ -1,6 +1,21 @@
-### How to Regulate Sessions with Redis
-Redis is an open-source database that is often used to build high-performance scalable web applications. It uses an in-memory database which makes it faster than any other database.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-regulate-sessions-with-redis/
+title: How to Regulate Session with Redis
+description: In this article, we discuss the concepts involved in building session with Redis. We'll understand what Redis is, and how is it better than others.
+author: abimbola-taofeek
+date: 2021-10-19T00:00:00-19:30
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+ - url: /engineering-education/how-to-regulate-sessions-with-redis/hero.png
+   alt: Regulating session with Redis image
+---
+Redis is an open-source database that is often used to build high-performance scalable web applications. It uses an in-memory database which makes it faster than any other database.
+<!--more-->
 Redis is used for short-lived data in our applications, where it's often used in sessions or web page headcounts.
 
 By using in-memory database, we don't need to have large data sets, instead we use small pieces of data that allow us to store the data in the machine's memory, and not disk's memory.
