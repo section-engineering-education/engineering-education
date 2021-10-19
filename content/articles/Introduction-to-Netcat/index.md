@@ -1,6 +1,21 @@
-### Introduction
-Netcat is a network analysis tool developed for security specialists and hackers to analyze a network in traffic.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /introduction-to-netcat/
+title: Introduction to NetCat
+description: NetCat is a command line utility that allows you to send and receive TCP packets over the network. In this article, we will learn how to install and run NetCat.
+author: meshack-kimosop
+date: 2021-10-19T00:00:00-11:30
+topics: [Security]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/introduction-to-netcat/hero.jpg
+    alt: Introduction to NetCat hero image
+---
+Netcat is a command line utility that allows you to send and receive data over the network. It is mostly used by security specialists and hackers to analyze a network in traffic.
+<!--more-->
 It is considered a `swiss-army knife` in information technology due to its limitless opportunities like the ability to create almost any kind of network connection.
 
 At its early stages, netcat was developed to open up UDP/TCP connections between two machines from any desired port.
@@ -18,7 +33,7 @@ In this tutorial, we will mainly focus on the following:
 - [Uses of Netcat](#uses-of-netcat)
 
 ### Installing Netcat
-First, before we start playing around with Netcat, make sure it is installed on your working machine. It is usually pre-installed on Kali Linux but if that is not the case in your machine, follow the following steps to install it.
+First, before we start using Netcat, make sure it is installed on your working machine. It is usually pre-installed on Kali Linux but if that is not the case in your machine, follow the following steps to install it.
 
 1. Open your bash terminal.
 2. Make sure you have an internet connection.
@@ -180,3 +195,6 @@ echo test.exe
 
 ### Conclusion
 From what we have learned, we can agree that Netcat is a must-have tool for a penetration tester. It is easy to learn and allows execution of a wide range of actions as mentioned in this tutorial. Netcat is therefore recommended for penetration testing.
+
+---
+Peer Review Contributions by: [Eric Gacoki](/engineering-education/authors/eric-gacoki/)
