@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /ensemble-learning-based-regression-model-using-python/
-title: Building an Ensemble Learning Based Regression Model Using Python
+title: Building an Ensemble Learning Based Regression Model using Python
 description: This tutorial aims to help the reader build an ensemble learning-based regression model using the python programming language.
 author: adhinga-fredrick
-date: 2021-10-13T00:00:00-19:00
+date: 2021-10-19T00:00:00-14:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -14,20 +14,18 @@ images:
   - url: /ensemble-learning-based-regression-model-using-python/hero.jpg
     alt: An Ensemble Learning Based Regression Model Hero Image
 ---
-
-Machine learning models are always evaluated based on their performance using specific metrics like; accuracy, precision, Mean Squared Error(MSE), etc. Each type of machine learning problem has its evaluation metrics.
+Machine learning models are always evaluated based on their performance using specific metrics like; accuracy, precision, Mean Squared Error (MSE), etc. Each type of machine learning problem has its evaluation metrics.
 <!--more-->
-Building high-performance models (models with low errors), therefore, depends on how good the evaluation metric score is. In this tutorial, we will be building a performance-driven linear regression model using ensemble learning.
+Building high-performance models (models with low errors), therefore, depends on how well the evaluation metric score is. In this tutorial, we will build a performance-driven linear regression model using ensemble learning.
 
 ### Prerequisites
-To follow through the tutorial, you need:
-
+To follow through the tutorial, you'll need:
 1. To know the basics of Python.
 2. To have a [Kaggle](https://www.kaggle.com/) account.
 3. To know the basics of Machine Learning.
 
 ### Introduction
- **Linear regression** is a statistical method of modeling the relationship between independent variables (x) and dependent variables (y). It uses independent variables (features) to predict dependent variables (target).
+**Linear regression** is a statistical method of modeling the relationship between independent variables (x) and dependent variables (y). It uses independent variables (features) to predict dependent variables (target).
 
 **Ensemble learning** is a machine learning technique that seeks to achieve a better predictive model performance by combining decisions from different models.
 
@@ -38,11 +36,11 @@ For our model's evaluation, we will be using RMSE (Root Mean Squared Error).
 ### Setting up your environment
 Before building our model, we will first go to Kaggle and create a new **notebook** and rename it to **Create_Folds**.
 
-![Notebook](engineering-education/ensemble-learning-based-regression-model-using-python/new_notebook.jpg)
+![Notebook](/engineering-education/ensemble-learning-based-regression-model-using-python/new-notebook.jpg)
 
 After that, [download](https://www.kaggle.com/c/30-days-of-ml/data) the data from Kaggle and add it to your environment using the **Add Data** button and upload the downloaded data as **Dataset**.
 
-![data](engineering-education/ensemble-learning-based-regression-model-using-python/data.jpg)
+![data](/engineering-education/ensemble-learning-based-regression-model-using-python/data.jpg)
 
 >**HINT:**  To flawlessly upload your data to Kaggle, compress the datasets.
 
@@ -100,7 +98,7 @@ Here's the [Kaggle notebook](https://www.kaggle.com/adhingafredrick/create-kfold
 ### Building a regression model
 After creating the kfolds, we will download the `train_kfolds.csv` from the output data on our **Create_kFolds** notebook.
 
-We'll then follow the same steps on [Setting up your environment](#setting-up-your-environment) to create a new notebook called **RegressionModel** and upload the **Dataset** and **`train_kfolds.csv`** data.
+We'll then follow the same steps on [setting up your environment](#setting-up-your-environment) to create a new notebook called **RegressionModel** and upload the **Dataset** and **`train_kfolds.csv`** data.
 
 After we're done with the environment setup, we'll proceed to build our model.
 
@@ -172,10 +170,13 @@ for fold in range(5):
 ```
 
 For each fold, we will encode the data and then train the model using XGBoost (Extreme Gradient Boosting), an ensemble learning technique to boost the performance of our model.
+
 XGBoost is a regularized boosting technique that provides high predictive power and is faster than other boosting techniques. We will then evaluate each fold individually and print out the results of the model.
 
 #### Model evaluation
-After individually evaluating each fold, we will now evaluate our model's performance by getting the mean predictions on our test data. To do this, use the following code block:
+After individually evaluating each fold, we will now evaluate our model's performance by getting the mean predictions on our test data. 
+
+To do this, use the following code block:
 
 ```python
 preds = np.mean(np.column_stack(final_predictions), axis=1)
@@ -218,7 +219,11 @@ Read more on this detailed [hyperparameter tuning](https://www.analyticsvidhya.c
 Here's the Kaggle [notebook](https://www.kaggle.com/adhingafredrick/regressionmodel) for our regression model.
 
 ### Conclusion
-Building a performance-driven model is not a very easy task. It involves refining our model again and again until we get the desired outcome. Either way, mastering the art of modeling can be very rewarding, whether it is in a machine learning or a data science project, or a competition.
+Building a performance-driven model is not a very easy task. It involves refining our model again and again until we get the desired outcome. 
+
+Either way, mastering the art of modeling can be very rewarding, whether it is in a machine learning or a data science project, or a competition.
+
+Happy coding!
 
 ---
 Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
