@@ -1,11 +1,9 @@
 ### How to Regulate Sessions with Redis
+Redis is an open-source database that is often used to build high-performance scalable web applications. It is an in-memory database which makes it fast. Redis is used for short-lived data in our applications, it's often used with things like sessions or web page headcounts.
 
-**Redis** is an open-source database that is often used to build high-performance scalable web applications. It is an in-memory database which makes it fast. Redis is used for short-lived data in our applications, it's often used with things like sessions or web page headcounts.
+In-memory means you don't need to have large data sets. You have small pieces of data, so tiny little pieces of data that allow us to keep it in memory that is the machine's memory and not disk.
 
- In-memory means you don't need to have large data sets. You have small pieces of data, so tiny little pieces of data that allow us to keep it in memory that is the machine's memory and not disk.
-
- Redis is a key-value store and this key relationship is a little bit similar to how we handle objects in javascript. Several languages and frameworks work with Redis, they include Python, backend javascript frameworks like Node.js. In this tutorial, we will be doing our session regulation using Redis with Node.js.   
-
+Redis is a key-value store and this key relationship is a little bit similar to how we handle objects in javascript. Several languages and frameworks work with Redis, they include Python, backend javascript frameworks like Node.js. In this tutorial, we will be doing our session regulation using Redis with Node.js.   
 
 ### Prerequisites
 To understand this lesson you should be familiar with the following.
@@ -14,7 +12,6 @@ To understand this lesson you should be familiar with the following.
 - Database.
 
 ### Goal
-
 At the end of this tutorial you should be able to:
 
 - Understand What Redis Is
@@ -36,88 +33,87 @@ It's really fast cause it's an in-memory database and you do not need large data
 Use Redis to cache data that is not frequently changing.
 
 ### Getting Started with Redis
-Now let install Redis onto our laptops or computers to use it and test some commands. Now keep in mind when it comes to databases most of the time you won't be running from your computer. In most cases, it's going to be on a server or another machine that is just dedicated to that database.
+Now let install Redis onto our laptops or computers to use it and test some commands.
+
+Now keep in mind when it comes to databases most of the time you won't be running from your computer.
+
+In most cases, it's going to be on a server or another machine that is just dedicated to that database.
+
 ### Redis installation
 Open your terminal and run the commands (On mac make sure you have brew installed)
 1. `wget https://download.redis.io/releases/redis-6.2.6.tar.gz` (Note: So these first command is to get Redis installed on your computer)
-
 2. `tar xzf redis-6.2.6.tar.gz` (Note: We have to open it up with the tar command)
 3. `cd redis-6.2.6` (Note: This is the current version)
 4. `make` (Note: The final command is to execute something called the Makefile)
 5. `src/redis-server` (Note: This is to run the server)
 6. `src/redis-cli` (Note: open another window for your terminal. With this we are going to run the CLI {With this we can run some Redis command in the next section})
 
-#### Go ahead and install Redis onto your computer so you can follow along with the lesson.
-Visit https://redis.io/topics/quickstart to get you instructions on installing Redis.
-### For Window Users 
-Visit: https://github.com/dmajkic/redis/download`
+Visit [this link](https://redis.io/topics/quickstart) for more instructions on installing Redis.
 
-#### In case you encounter any errors while installing.
-Click any of the links below. 
+For Window users, use [this](https://github.com/dmajkic/redis/download) link.
 
-https://stackoverflow.com/questions/37103054/redis-installation-fails-when-running-make-command
-
-https://stackoverflow.com/questions/8131008/issue-with-redis-install
+In case, you encounter any errors while installing, have a look at these links:
+- [Stackoverflow - Redis installation failing on running make command](https://stackoverflow.com/questions/37103054/redis-installation-fails-when-running-make-command)
+- [Stackoverflow - Redis install issue](https://stackoverflow.com/questions/8131008/issue-with-redis-install)
 
 ### Redis CLI
-
 Redis-CLI is the command-line interface for Redis, It authorizes forwarding commands to Redis, also reads the replies sent by the server, using the terminal. These are few Redis-CLI commands. 
 
-- SET & GET:- SET value of a key. 
-#### Example 
-```bash
- SET name "John Snow"
- ok
+- `SET` - SET value of a key. 
 
- GET name
- "100"
- 
-```
-- GET :- Get the value of key. nil will be returend if the key dose not eixt.
-#### Example
 ```bash
- redis 127.0.0.1:6379> GET nonexisting
+SET name "John Snow"
+ok
+
+GET name
+"100" 
+```
+
+- `GET` - Get the value of key. nil will be returend if the key dose not eixt.
+
+```bash
+redis 127.0.0.1:6379> GET nonexisting
 (nil)
 redis 127.0.0.1:6379> SET key "secret"
 "OK"
 redis 127.0.0.1:6379> GET mykey
 "secret"
-redis 127.0.0.1:6379>
- 
+redis 127.0.0.1:6379> 
 ```
-- ECHO :- Echo the given string
-#### Example
+
+- `ECHO` :- Echo the given string
+
 ```bash
 redis 127.0.0.1:6379> ECHO "Welcome to redis"
 redis 127.0.0.1:6379> "Welcome to redis"
 redis 127.0.0.1:6379> 
 ```
-- PING:- This test is to see if there is a connection alive and it's going to respond with PONG. It lets us know there's a connection with Redis.
-#### Example
+
+- `PING`:- This test is to see if there is a connection alive and it's going to respond with PONG. It lets us know there's a connection with Redis.
+
 ```bash
 redis 127.0.0.1:6379> PING 
-PONG 
- 
+PONG  
 ```
-- QUIT:- To close connection
 
-#### [Click for more Redis-CLIi commands](https://redis.io/commands)
+- `QUIT`:- To close connection
+
+You can find more such Redis-CLIcommands [here](https://redis.io/commands)
  
-### Data Types - Hashes, Lists, Strings, Sets, Sorted Sets 
-- ### Hashes
+### Data Types
+#### Hashes
+Hashes are a collection of filed valued pairs. The best way to think about them is simply like objects in javascript.
 
- Hashes are a collection of filed valued pairs. The best way to think about them is simply like objects in javascript.
-#### Example
 ```bash
 redis> HMSET user id 45 name "John"
-redis> 
- 
+redis>  
 ```
+
 Above I have just created a hash with a key user and this key has both id of 45 and the name John. 
 
-- ### List 
+#### List 
 List is implemented using something called linked lists rather than arrays. Lists are useful if you have really long lists and you need to add elements quickly to that lists. We can add to a list by using LPUSH or RPUSH. LPUSH means left push, which means from the left of where the head of the list is. RPUSH will push it to the end.
-#### Example
+
 ```bash
 redis 127.0.0.1:6379> LPUSH people "John"
 (integer) 1
@@ -132,9 +128,8 @@ redis 127.0.0.1:6379> LRANGE people 0 3
 ```
 The LRANGE command is used to output the list. 
 
-- ### Strings
+#### Strings
 Strings in Redis are binary-safe sequencing of bits, and they are just like any other string we use in our favorite programing language.
-#### Example
 
 ```bash
 redis 127.0.0.1:6379> SET name "Peter"
@@ -144,9 +139,9 @@ redis 127.0.0.1:6379>> GET name
 ```
 The example above of SET and GET are Redis command, the name is the key used in Redis while Peter is the value stored in Redis.
 
-- ### Sets
+#### Sets
 Redis Sets collection of strings that are not chracterized. With sets it's possible to  remove, add, and test for the existence of members in a group. With sets with don't have any duplicates in our items.
-#### Example
+
 ```bash
 redis 127.0.0.1:6379> SADD countries "England" 
 (integer) 1 
@@ -162,13 +157,13 @@ redis 127.0.0.1:6379> SMEMBER countries
 2) "Poland" 
 3) "England"
 ```
+
 SADD adds the specified members to the set stored key.
 SMEMBER returns all the members of the set value stored at key.
 
-- ### Sorted Sets
-
+#### Sorted Sets
 Redis sorted sets just like sets do the no repeating collection of strings that we've already demostrated but the difference is that every member of a sorted sets is associated with a score and this score allows it to be ordered from smallest to greatest.
-#### Example
+
 ```bash
 redis 127.0.0.1:6379> ZADD names 0 Paul 
 (integer) 1 
@@ -185,28 +180,28 @@ redis 127.0.0.1:6379> ZRANGEBYSCORE names 0 1000
 3) "Angel"
 ```
 
-There are plenty of other commands that you can learn with Redis and they are really easy to follow just with your documentation. Visit https://redis.io/topics/data-types-intro
+There are plenty of other commands that you can learn with Redis and they are really easy to follow just with your documentation. 
 
-### Redis Caching (Node.js )
+Visit `https://redis.io/topics/data-types-intro`
 
-So like I mentioned Redis is a caching management system. So  Redis is used to cache the data. If there is a small amount of data we have to fetch every time from the server it takes too much time. So if the data is not dynamic if it is not changing every time we can install the data, cache the data, and return the data when requested. 
-So  I  am going to set up the server and am going to make a request to the  API then we store the data we get from the server to the local application system in Redis and we will fetch data from Redis.
+### Redis Caching (Node.js)
+So like I mentioned Redis is a caching management system. So  Redis is used to cache the data. If there is a small amount of data we have to fetch every time from the server it takes too much time. So if the data is not dynamic if it is not changing every time we can install the data, cache the data, and return the data when requested.
 
-#### Open any code editor of your choice and run npm init-y in the terminal to create a quick package.json
+So I am going to set up the server and am going to make a request to the  API then we store the data we get from the server to the local application system in Redis and we will fetch data from Redis.
+
+Open any code editor of your choice and run `npm init-y` in the terminal to create a `package.json` using the command:
 ```bash
 npm init-y
 ```
-### Packages to install
-```bash
-npm install express redis
-```
-```bash
-npm install --save cross-fetch
-```
+
+Then, install other packages as shown below:
 
 ```bash
+npm install express redis
+npm install --save cross-fetch
 npm install _D nodemon
 ```
+
 ### API
 I will be making a request with this  API [http://universities.hipolabs.com/search?country=] and it will generate all the list of the universities in the country. The API can be used for any country.
 
@@ -250,9 +245,11 @@ app.get('/:country', checkForCache, async (req, res) => {
 
 ```
 ### Result
- ![Image 1](/engineering-education/how-to-regulate-sessions-with-redis/redis_image1.jpg)
+![Image 1](/engineering-education/how-to-regulate-sessions-with-redis/redis_image1.jpg)
 
- Above is the result of all the universities in Mexico using the API after inputting the country at the top. And at the bottom of the image, we can see it took 8.71s just to do that which is quite slow. So to reduce the time, I will be installing this data into our Redis server so when the user makes a request it will check if the data already exists.
+Above is the result of all the universities in Mexico using the API after inputting the country at the top. And at the bottom of the image, we can see it took 8.71s just to do that which is quite slow.
+
+So to reduce the time, I will be installing this data into our Redis server so when the user makes a request it will check if the data already exists.
 In our Redis server if it already exists on our Redis database then it will fetch data from there. if not then it will make a request on the link. 
 
 
