@@ -250,13 +250,13 @@ app.get('/:country', checkForCache, async (req, res) => {
 
 ```
 ### Result
- <img src="redis screenshot1 (1).jpg" alt="alt text" height="500" width="600"/>
+ ![Image 1](/engineering-education/how-to-regulate-sessions-with-redis/redis_image1.jpg)
 
  Above is the result of all the universities in Mexico using the API after inputting the country at the top. And at the bottom of the image, we can see it took 8.71s just to do that which is quite slow. So to reduce the time, I will be installing this data into our Redis server so when the user makes a request it will check if the data already exists.
 In our Redis server if it already exists on our Redis database then it will fetch data from there. if not then it will make a request on the link. 
 
 
-<img src="redis screenshot2.jpg" alt="alt text" height="500" width="600"/>
+![Image 2](/engineering-education/how-to-regulate-sessions-with-redis/redis_image2.jpg)
 
 After installing the data into our Redis server and I searched for Mexico again it took just 850ms to load up the same data. We can see how fast it fetch the data which makes our application run faster.
 
