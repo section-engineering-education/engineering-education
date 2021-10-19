@@ -1,10 +1,22 @@
-# Configuring EIGRP on a Router. 
+---
+layout: engineering-education
+status: publish
+published: true
+url: /configuring-eigrp/
+title: Configuring EIGRP on a Router
+description: In this article, we will look at  Enhanced Interior Gateway Routing Protocol (EIGRP), how to configure it on a Cisco router, and verify it on a Cisco router. 
+author: rabo-james-bature
+date: 2021-10-19T00:00:00-10:46
+topics: [Networking]
+excerpt_separator: <!--more-->
+images:
 
-### Introduction 
+  - url: /engineering-education/configuring-eigrp/hero.jpg
+    alt: Configuring EIGRP on a Router Hero Image
+---
 Routers exchange routing information using static or dynamic routing protocols. Configuring a static route on a network requires a great administrative overhead and it is error-prone. Because of these, dynamic routing protocols are used to reduce these overheads and errors.
 
- In this article, we will look at  Enhanced Interior Gateway Routing Protocol (EIGRP)  and how to  configure it on a Cisco router, and at the end  of the article, the reader should have learned: 
-
+In this article, we will look at  Enhanced Interior Gateway Routing Protocol (EIGRP)  and how to  configure it on a Cisco router, and at the end  of the article, the reader should have learned: 
 - What EIGRP is 
 - How to configure EIGRP  for Internet Protocol version 4 (IPv4) on a Cisco router
 - How to verify EIGRP on a Cisco router. 
@@ -20,16 +32,14 @@ For a better understanding of this tutorial, the reader is expected to have a ba
 [Steps to configuring EIGRP for IPv4](Steps-to-configuring-eigrp-for-ipv4)
 [Configuring EIGRP for IPv4](configuring-eigrp-for-ipv4)
 
-
- ### Enhanced Interior Gateway Routing Protocol (EIGRP) 
-
+### Enhanced Interior Gateway Routing Protocol (EIGRP) 
 Routing is the process in which algorithms are used to facilitate the exchange of information for path selection along which data can be transferred from a source to destination by a routing device known as a Router. 
 
 These algorithms use routing metrics and costs to determine the best path to be used in the forwarding of traffic. Dynamic routing protocols use a  set of algorithms and messages for the exchange of routes and routing information which includes remote routes, best paths, and up-to-date routing information. 
 
 Enhance Interior Gateway Routing Protocol (EIGRP), is a Cisco proprietary dynamic routing protocol that was initially released in 1992, however, in 2013, Cisco released a basic functionality of EIGRP, hence allowing other vendors to implement EIGRP on their routers. 
 
-### EIGRP Features 
+### EIGRP features 
 EIGRP combines both links state and distance vector protocols features for its operations, as such, it is considered to be an advanced distance routing protocol. Some of these features include:
 - Diffusing Update Algorithm (DUAL) 
 - Reliable Transport Protocol 
@@ -37,7 +47,7 @@ EIGRP combines both links state and distance vector protocols features for its o
 - Authentication 
 - Autonomous System (AS)  number 
 
-#### Diffusing Update Algorithm (DUAL) 
+#### Diffusing update algorithm (DUAL) 
 Diffusing Update Algorithm (DUAL)  is an algorithm used by EIGRP to choose and maintain the best routes for packet delivery from one router to another within a local or remote network. This algorithm is at the heart of EIGRP operation, as it guarantees loop-free paths and backup routes if the primary route fails. It is also used to perform the following:
 Support Variable Length (VLS) Subnetting. 
 Send out queries for alternates routes
@@ -51,8 +61,7 @@ Different static and dynamic routing protocols use either **Transport Control Pr
 - Query: Query packets are sent by EIGRP routers when they lose path to a particular network and require a backup route. 
 - Reply packets: Whenever a query is sent by a router requesting an alternate route, the router that receives his request sends a reply packet containing the information about the alternate route. 
 
-
-### Equal and Unequal load balancing
+### Equal and unequal load balancing
 EIGRP supports both equal and unequal load balancing, unlike other routing protocols.
 Equal load balancing allows routers to distribute traffic between two or more routes having equal metrics. For unequal load balancing, the paths to the destination network do not need to have equal metrics or cost to provide load balancing. 
 Unlike other routing protocols that support only equal load balancing, EIGRP support both equal and unequal load balancing.
@@ -60,19 +69,15 @@ Unlike other routing protocols that support only equal load balancing, EIGRP sup
 ### Authentication 
 Routes information is distributed over networks, which makes them susceptible to attacks. EIGRP, just like other routing protocols, supports authentication to ensure that only authentic routing information is transmitted. 
 
-
-### Autonomous System (AS)  number
+### Autonomous system (AS)  number
 EIGRP uses AS numbers to enable the EIGRP process on a router. This number is only significant to the EIGRP domain as it functions as an EIGRP process ID to keep track of each EIGRP process. This is because more than one EIGRP instance can be configured on a router. 
 
 This number is not the same as the AS number assigned by the Internet Assigned Numbers Authority (IANA). The IANA AS number is assigned to a collection of networks under the administrative control of a single organization representing a common routing policy on the internet. 
 
 ### Configuring EIGRP 
- EIGRP has two implementations, one for Internet Protocol Version 4 (IPv4) and another for Internet Protocol version 6 (IPv4). In this section, we will look at the IPv4 implementation.
+EIGRP has two implementations, one for Internet Protocol Version 4 (IPv4) and another for Internet Protocol version 6 (IPv4). In this section, we will look at the IPv4 implementation.
 
- 
-
-
-### Steps to configuring EIGRP for IPv4
+### Steps to configure EIGRP for IPv4
 To configure EIGRP the router global configuration command   ```Router eigrp autonomous-system number``` is used to enable the EIGRP process. This AS-number is a 16-bit value between 1 and 65,535. The value chosen must be the same for all routers within a given EIGRP routing domain. 
 
 After configuring the AS  number, the following steps should be used to implement EIGRP on a Cisco router. 
@@ -89,7 +94,7 @@ Configure passive interfaces using the ```passive-interface interface-id``  comm
 source : author
 
 The fig above is the topology used for this tutorial. 
- For better understanding, the Packet tracer activity file used for this tutorial can be downloaded from this [Activity fie](https://github.com/raboba2re/config/blob/main/EIGRP.pkz) for practice by the reader to configure EIGRP on routers 1 and 2 because only router 3 will be configured in this tutorial.
+For better understanding, the Packet tracer activity file used for this tutorial can be downloaded from this [Activity fie](https://github.com/raboba2re/config/blob/main/EIGRP.pkz) for practice by the reader to configure EIGRP on routers 1 and 2 because only router 3 will be configured in this tutorial.
 
 ### Configuring EIGRP for IPv4 
 Configure the EIGRP process using the ``` router eigrp 2```. This will enable EIGRP process on the router and it should be the same for all routers within this EIGRP domain
@@ -110,11 +115,8 @@ To verify that eigrp has been successfully configured the following commands can
 ``` show ip route```: This command is used to verify all internet protocol routes configured n a router. 
 ```show running-config``: This command is used to view all running configurations in the router including eigrp configurations. 
 
-
-
 ### Conclusion 
- EIGRP is one of the most used dynamic routing protocols in existence, this is because it offers more functionalities than other dynamic routing protocols. The choice of the routing protocol to be used depends on the organization and the network administrator’s choice, having a good understanding of various protocols will give the administrator multiple options. 
+EIGRP is one of the most used dynamic routing protocols in existence, this is because it offers more functionalities than other dynamic routing protocols. The choice of the routing protocol to be used depends on the organization and the network administrator’s choice, having a good understanding of various protocols will give the administrator multiple options. 
 
-
-
-
+---
+Peer Review Contributions by: [Dawe Daniel](/engineering-education/authors/dawe-daniel/)
