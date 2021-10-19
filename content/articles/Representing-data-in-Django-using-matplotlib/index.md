@@ -438,11 +438,11 @@ Let's also edit `navbar.html` to be able to access the different  views. Edit it
 ```
 When you visit `http://127.0.0.1:8000` you should have something a page with our search form  similar to this:
 
-![Sales Page](/engineering-education/content/articles/Representing data in Django using matplotlib/Sales_Page.png)
+![Sales Page](/engineering-education/content/articles/Representing-data-in-Django-using-matplotlib/Sales_Page.png)
 
 When you click on the `Sales` link, you should have the sales listed in transaction_ids as follows:
 
-![SalesList Page](/engineering-education/content/articles/Representing data in Django using matplotlib/SalesList_Page.png)
+![SalesList Page](/engineering-education/content/articles/Representing-data-in-Django-using-matplotlib/SalesList_Page.png)
 
 ### Creating the graphical representations.
 We are now going to get our graphical representations on our web page. First, we are going to need to install the `pandas` library to create dataframes of our sales.
@@ -621,15 +621,15 @@ more readable in our page. The part `data:image/png;base64` is responsible for h
 When you fill the form you should have something like this when you select bar chart.
 
 `http://127.0.0.1:8000/`
-![Bar Graph](/engineering-education/content/articles/Representing data in Django using matplotlib/Bar_chart.png)
+![Bar Graph](/engineering-education/content/articles/Representing-data-in-Django-using-matplotlib/Bar_chart.png)
 
 When you select pie chart:
 
-![Pie Chart](/engineering-education/content/articles/Representing data in Django using matplotlib/Pie_graph.png)
+![Pie Chart](/engineering-education/content/articles/Representing-data-in-Django-using-matplotlib/Pie_graph.png)
 
 When you select line graph:
 
-![Line Graph](/engineering-education/content/articles/Representing data in Django using matplotlib/Line_chart.png)
+![Line Graph](/engineering-education/content/articles/Representing-data-in-Django-using-matplotlib/Line_chart.png)
 
 ### Conclusion
 You have now successfully created a Django application that uses matplotlib to represent data. You can create similar applications
