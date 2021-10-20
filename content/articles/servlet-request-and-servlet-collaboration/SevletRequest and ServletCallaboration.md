@@ -251,7 +251,7 @@ Here are two methods provided by the `RequestDispatcher` interface, namely:
 
 **How it works**
 
-This example shows how  RequestDispatcher can forward a resource response or include it on a server. Here we use `htmlPage.html` to get a user response. In this case, `Controller.java` Servlet checks the entered response if a user has more than 18 years or less, if the user select `under18` as the reply, `forward()` will be called to Under18Page Servlet. Above18 servlet is included if the user has entered `above18` otherwise. The client browser will stay on the `htmlPage.html` page.
+This example shows how `RequestDispatcher` can forward a resource response or include it on a server. Here we use `index. jsp` to get a user response. In this case, `Controller` Servlet checks the entered response if a user has more than 18 years or less. If the user selects `Above18` as the reply, the  `Above18` servlet page will be executed with the help of the `forward()` method. Otherwise, the client browser will remain on the index.JSP page and a denial message will appear, indicating that the user is under the age of 18.
 
 Construct the `ServletDispatcherDemo` project as follows, assuming you know how to create and run a web project using the Eclipse IDE and TomCat server as explained in the [ServletRequest interface example](#servletrequest-interface-example) above.
 
@@ -261,31 +261,40 @@ Construct the `ServletDispatcherDemo` project as follows, assuming you know how 
 
 **Step 2:** Provide a project name. We will name ours `ServletDispatcherDemo`, then select Finish.
 
-**Step 3:** Right-click on the `ServletDispatcherDemo` on the Project Explorer, select new -> HTML file option.
+**Step 3:** Right-click on the `ServletDispatcherDemo` on the Project Explorer, select new -> JSP file option.
 
-Give the page you just created a name. We'll call it `htmlPage.html` in this example. Relpace the code in the HTML file with the code below:
+Give the page you just created a name. We'll call it `index.jsp` in this example. Relpace the code in the HTML file with the code below:
 
-```html
+```jsp
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
-
 <head>
-    <meta charset="ISO-8859-1">
-    <title>Welcome</title>
+<meta charset="ISO-8859-1">
+<title>page verification</title>
 </head>
-
 <body>
-    <form action="Controller">
-        <select name="selectOption">
-            <option value="select your category">select your category</option>
-            <option value="Older">Older than 18</option>
-            <option value="Below">Below 18 years</option>
-        </select><br>
-        <input type="submit" value="submit">
-    </form>
-</body>
+<body>
+<form action="Controller" method="post">
+ <select name="selectOption" required>
+  <option value="Select you option">Select you option</option>
+  <option value="Above18">Above18</option>
+  <option value="below18">below18</option>
+ </select>
+ <input type="submit" value="Submit">				    
+</form>
 
+  <%
+  String msg=request.getParameter("msg");
+  if("below18".equals(msg))
+  {
+  %>
+ <h1> Access denied! You are below 18 years!<h1>
+  <%} %>
+</body>
 </html>
+
 ```
 
 **Step 4:** Create a new servlet file as follows:
@@ -295,6 +304,7 @@ Give the page you just created a name. We'll call it `htmlPage.html` in this exa
 - Replace the code in the servlet page you just created with the code below:
 
 ```java
+
 import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
@@ -303,74 +313,45 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 @WebServlet({ "/ServletDispatcherDemo", "/Controller" })
 public class Controller extends HttpServlet 
 {
 	
+	/**
+	 * 
+	 */
 	private static final long serialVersionUID = 1L;
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{
 		response.setContentType("Text/html");
 		String select=request.getParameter("selectOption");
-		response.getWriter().append("<html><body style='background-color: red;'></body></html>");
-		if(select.equals("Below"))
+		HttpSession session=request.getSession();
+		session.setAttribute("userName", select);
+		
+		response.getWriter().append("<html><body'></body></html>");
+		if(select.equals("Above18"))
 		{
-			RequestDispatcher rd=request.getRequestDispatcher("Under18Page");
-			rd.include(request,response);
-		}
-		if(select.equals("Older"))
-		{
-			RequestDispatcher rd=request.getRequestDispatcher("Above18");
-			rd.include(request,response);
-		}
+			RequestDispatcher rd=request.getRequestDispatcher("Above18");  
+	        rd.forward(request, response); 
+	    }	 
 		else
 		{
-			RequestDispatcher rd=request.getRequestDispatcher("htmlPage.html");
-			rd.forward(request,response);
+			RequestDispatcher rd=request.getRequestDispatcher("index.jsp?msg=below18");
+			rd.include(request,response);
 		}
 		
 	}
 
+
 	
 
 }
 
-
-
 ```
 
-**Step 5:** Create a new servlet file as follows:
-
-- Right-click on the `ServletDispatcherDemo`on the Project Explorer, select new -> servlet and finish by giving your servlet class a name. We'll call it `Under18Page` in this case.
-
-- Replace the code in the servlet page you just created with the code below.
-
-```java
-
-import java.io.IOException;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
-public class Under18Page extends HttpServlet 
-{
-	
-	private static final long serialVersionUID = 1L;
-
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
-	{
-		response.setContentType("Text/html");
-		response.getWriter().append("<html><body style='background-color: black; color: white; text-align: center; padding :200px'><h1>you are under 18</h1></body></html>");
-	}
-
-
-}
-
-
-```
-**Step 7:** Lastly, create a new servlet file as follows:
+**Step 5:** Lastly, create a new servlet file as follows:
 
 - Right-click on the `ServletDispatcherDemo` on the Project Explorer, select new -> servlet and finish by giving your servlet class a name. We'll call it `Above18` in this case.
 - Replace the code in the servlet page you just created with the code below.
@@ -378,22 +359,32 @@ public class Under18Page extends HttpServlet
 ```java
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+@WebServlet({ "/Above18" })
 public class Above18 extends HttpServlet 
 {
-	private static final long serialVersionUID = 1L;  
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{
-		response.setContentType("Text/html");
-		response.getWriter().append("<html><body style='background-color: red; color: white; text-align: center; padding :200px'><h1>you are above 18</h1></body></html>");
+		PrintWriter out = response.getWriter();  
+       
+	    out.print("Welcome to the adult page."); 
 	}
 }
 
+
+
 ```
-Right-click on the `login.html` page and choose run As-> Run on Server -> Save all changes and restart the server to run the project. In the internal browser, a menu will appear, prompting you to select your age category.
+Right-click on the `index.jsp` page and choose run As-> Run on Server -> Save all changes and restart the server to run the project. In the internal browser, a menu will appear, prompting you to select your age category.
 
 This example will give you a solid foundation for working with the `ServletDispatcher` interface in your project. To improve your understanding and enhance your coding skills, I recommend that you start exploring more examples.
 
