@@ -16,12 +16,9 @@ images:
 ---
 In this tutorial, I'll explain how serialization works and how we can implement it. I will also include examples of how we can serialize a data structure using various Java concepts in doing so.
 <!--more-->
-
-You can read a deserialized object from a file and reconstruct it in memory. This utilizes the entity's metadata and bytes that constitute its contents.
+`Serialization` in Java is a byte-stream representation of an entity's state. All the entity's data is inside the stream of bits. `Deserialization` is the reversal of serialization, in which a byte data type stream is turned back to a memory object. The best thing about both techniques is that they're both JVM-agnostic, which means you can serialize on one JVM and de-serialize on another.
 
 ### Table of contents
-
-- [The concept of Serialization and Deserialization](#the-concept-of-serialization-and-deserialization)
 - [Characteristics of serialization](#characteristics-of-serialization)
 - [Benefits of serialization](#benefits-of-serialization)
 - [How to serialize and deserialize with the help of examples](#how-to-serialize-and-deserialize-with-the-help-of-examples)
@@ -29,12 +26,6 @@ You can read a deserialized object from a file and reconstruct it in memory. Thi
 - [Serialization with aggregation](#serialization-with-aggregation)
 - [Serialization with static data members](#serialization-with-static-data-members)
 - [Transient members](#transient-members)
-
-### The concept of serialization and deserialization
-
-The idea of **serialization in Java** is a byte-stream representation of an entity's state. All the entity's data is inside the stream of bits.
-
-**Deserialization** is the reversal of serialization, in which a byte data type stream is turned back to a memory object. The best thing about both techniques is that they're both JVM-agnostic, which means you can serialize on one JVM and de-serialize on another.
 
 ### Characteristics of serialization
 
@@ -146,13 +137,13 @@ public static Link deserializeLink(String fileName) throws IOException, ClassNot
 
 #### Description
 
-The `deserializeLink()` method has two parameters. The first of which, putoutLink, is a blank `Link` object (which we can initialize earlier, but the original values we replace by this method). The second parameter, filename, is the location where we save the deserialized object.
+The `deserializeLink()` method has one parameters. The parameter name is `filename,` which is the location where we save the deserialized object.
 
 1. The file will open in input mode using this procedure.
 2. We perform deserialization using `in.readObject()`.
 3. After that, the outcome will be classiﬁed as a Link object.
 
-If the item is not present, the above procedure may throw an `IOException`. When the expected class is not found, we issue a `ClassNotFoundException`.
+If the item is not present, the above procedure may throw an `IOException.` When the expected class is not found, we issue a `ClassNotFoundException.`
 
 #### Object Serialization and Deserialization Example
 > This is the full code from the previous sections of serialization and deserialization.
