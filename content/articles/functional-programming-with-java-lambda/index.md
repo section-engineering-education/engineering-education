@@ -18,7 +18,7 @@ Java is an object-oriented programming language. It provides for the encapsulati
 <!--more-->
 That is, code blocks before Java version 8 are done with classes and objects. The process of passing a behavior to methods takes extra work and load. This is because we are passing a class with another attribute.
 
-In Java 8, Lambda was introduced to represent the functional interface of Java. This means that lambdas expression is the expression of functional interface. 
+In Java 8, Lambda was introduced to represent the functional interface of Java. This means that the Lambda expression is the expression of a functional interface. 
 
 Lambda was introduced to implement behavior code. This code makes it easier through the creation of a function that performs a specific task. Also, this code does not belong to any existing class thus treated as a value.
 
