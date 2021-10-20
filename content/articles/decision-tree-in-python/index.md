@@ -52,8 +52,8 @@ As we mentioned earlier, the decision tree starts with the root node. Given the 
  
 **Attribute Selection Measure** technique offers us two criteria with whose aid we can determine the best attribute on which we do our split. 
 These criteria are:
-- Information Gain*
-- Gini Index*
+- Information Gain
+- Gini Index
    
 
 ### Information Gain
@@ -97,7 +97,7 @@ Working with the Gini index, we split our tree on the feature with a minor Gini 
 
 Using an example, let us understand how the Gini index works.
 
-![data_image](/engineering-education/decision-tree-in-python/data_image.png)
+![data image](/engineering-education/decision-tree-in-python/data-image.png)
 Using the above dataset, let us calculate the Gini index for each feature.
 
 
@@ -196,7 +196,7 @@ On the other hand, splits corresponding to the Sunny and Rainy are not pure. The
 
 We again chose an attribute with the minor Gini index and further split our tree on it. We repeat the process until our data is optimally classified. Doing all splitting steps on our example, we should obtain the following tree diagram.
 
-![decision_tree](/engineering-education/decision-tree-in-python/Weather.png)
+![decision_tree](/engineering-education/decision-tree-in-python/weather.png)
 
 Now that we know the intuition behind the decision tree, it is time to go an extra step and implement it in Python. To construct our tree, we shall assume our splitting criterion to be the information gain criterion.
 
@@ -232,7 +232,7 @@ our_data.head()
 The above code yields:
 
 **Output**
-![our_data](/engineering-education/decision-tree-in-python/our_data.png)
+![our-data](/engineering-education/decision-tree-in-python/our-data.png)
 
 Our dataset consists of customers data captured in the business on their transactions with the enterprise. Our goal is to use this data and predict whether a customer will stay or lose interest and exit the business. 
 
@@ -249,7 +249,7 @@ our_data.head()
 
 Upon executing we obtain:
 #### Output
-![oor_data](/engineering-education/decision-tree-in-python/our_data.drop.png)
+![our-data](/engineering-education/decision-tree-in-python/our-data.drop.png)
 The RowNumber, CustomerId, and Surname were eliminated from our dataset.
 
 Also, we need to notice that our dataset consists of object data types on the Geography and Gender columns. Therefore, we need to encode these columns into a numeric data type.
@@ -275,7 +275,7 @@ our_data.head()
 ```
 
 #### Output
-![oor_data](/engineering-education/decision-tree-in-python/Encoded.png)
+![our-data](/engineering-education/decision-tree-in-python/encoded.png)
 From the above output, we see that the Geography and Gender columns were successfully encoded.
 
 ```python
@@ -463,7 +463,7 @@ _ = tree.plot_tree(model,
 ```
 Below is the tree we implemented on our dataset.
 
-![oor_data](/engineering-education/decision-tree-in-python/tree_structure.png)
+![decision tree](/engineering-education/decision-tree-in-python/tree-structure.png)
 
 ### Conclusion
 This article looked at the intuition behind the decision tree and criteria that help us build a tree on the dataset. Finally, we looked at how to implement it using Python and some other libraries. I hope this article has helped you to understand the decision tree and its criteria.
