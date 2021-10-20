@@ -76,14 +76,14 @@ In the `growl-effects-scale.html`, add the following snippet:
 <head>
 
   <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
   <title>Notification Styles | Growl-Style</title>
-  <link rel="stylesheet" type="text/css" href="css/normalization.css"/>
-  <link rel="stylesheet" type="text/css" href="css/default_notification.css"/>
+  <link href="css/normalization.css" rel="stylesheet" type="text/css"/>
+  <link href="css/default_notification.css" rel="stylesheet" type="text/css"/>
   <script src="js/modernizr.custom.js"></script>
-  <link rel="stylesheet" type="text/css" href="css/growl-notification-style.css"/>
-  <link rel="stylesheet" type="text/css" href="css/demonstration.css"/>
+  <link href="css/growl-notification-style.css" rel="stylesheet" type="text/css"/>
+  <link href="css/demonstration.css" rel="stylesheet" type="text/css"/>
 
 </head>
 
@@ -96,12 +96,15 @@ In the `growl-effects-scale.html`, add the following snippet:
       <span>Simple, easy and effective ideas &amp; animation effects for website notifications</span>
     </h1>
   </header>
-  <div class="main clear-fix">
+  <div class="main clear-fixes">
     <div class="column">
-      <p class="small">Click on the button to show the notification:</p>
-      <button id="notification-trigger" class="progress-button">
-        <span class="content">Show Notification</span>
-        <span class="progress"></span>
+      <p class="small-text">Click this button to show a notification:</p>
+      <button class="progress-button" id="notification-trigger">
+        <span class="content">Show a Notification</span>
+        <!--Addition of an empty span-->
+        <span class="progress">
+                    <!--No content-->
+                </span>
       </button>
     </div>
     <div class="column">
@@ -120,6 +123,7 @@ In the `growl-effects-scale.html`, add the following snippet:
 <!-- /main-container -->
 <script src="js/classEditor.js"></script>
 <script src="js/notificationFunction.js"></script>
+
 
 
 </body>
@@ -214,22 +218,23 @@ In the `demonstration.css` file,
 - Use `border-box` for all elements before and after. Set clear_fix class styling both before and after.
 
 ```css
-/* All */
-
-*,
-*:after,
+/*All*/
+*, /*All elements after*/
+*:after, /*All elements before*/
 *:before {
+  /*These two set how the overall width and height is calculated*/
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
 }
 
-.clear-fix:after,
-.clear-fix:before {
+.clear-fixes:after,
+.clear-fixes:before {
+  /*No content*/
   content: '';
   display: table;
 }
 
-.clear-fix:after {
+.clear-fixes:after {
   clear: both;
 }
 ```
@@ -237,31 +242,35 @@ In the `demonstration.css` file,
 - Format the `html` and `body` elements:
 
 ```css
-html, body {
-  height: 100%;
+html,
+body {
+  height: 100vh;
+  width: 100vw;
 }
 
 body {
+  /*body formatting*/
   background: var(--bright-blue);
   font-weight: 400;
   font-size: 1em;
   font-family: 'Raleway', Calibri, Arial, sans-serif;
   line-height: 1.25;
+  z-index: 1;
   color: #f5f3ec;
   position: relative;
-  z-index: 1;
 }
 ```
 
 - Style the links, buttons, and container elements:
 
 ```css
-a,
-button {
+button, a {
+  /*No outline*/
   outline: none;
 }
 
 a {
+  /*No text-decoration*/
   text-decoration: none;
   color: #0000007F;
 }
@@ -271,7 +280,7 @@ a:focus, a:hover {
 }
 
 .main-container {
-  min-height: 100%;
+  min-height: 100vh;
 }
 ```
 
@@ -283,21 +292,22 @@ a:focus, a:hover {
 .notifications-header {
   padding: 0 2em 0;
   margin: 0 auto;
+  /*Align the text to the center*/
   text-align: center;
 }
 
 .notifications-header h1 {
-  margin: 0;
   line-height: 1.3;
+  margin: 0;
   font-size: 3.5em;
 }
 
 .notifications-header h1 span {
-  display: block;
-  padding: 0.4em 0 0.6em 0.1em;
-  font-size: 46%;
   font-weight: 300;
+  display: block;
+  font-size: 46%;
   opacity: 0.7;
+  padding: 0.4em 0 0.6em 0.1em;
 }
 ```
 
@@ -379,21 +389,21 @@ a:focus, a:hover {
   box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1);
 }
 
-/* Paragraph in the column */
+/* Paragraph found in the column */
 
 .column p {
-  margin: 0;
   font-size: 1.8em;
+  margin: 0;
   font-weight: 300;
   line-height: 1.5;
   padding: 0 0 0.5em;
 }
 
-/* Small text in the column */
+/* small-text found in the column */
 
-.column p.small {
-  padding: 0.75em 0 1em;
+.column p.small-text {
   line-height: 1.2;
+  padding: 0.75em 0 1em;
   font-weight: 700;
   font-size: 1em;
 }
@@ -450,7 +460,7 @@ a:focus, a:hover {
   -webkit-transition: width 0s 0.3s, opacity 0.3s;
 }
 
-/* Active button on progress styling */
+/* Active button on the progress styling */
 
 .progress-button.active .progress {
   width: 100%;
@@ -557,31 +567,34 @@ function NotificationFunction(options) {
 These are well displayed below:
 
 ```js
+
+
 /**
  * NotificationFunction options
  */
 NotificationFunction.prototype.options = {
-  // element to which the notification will be appended
-  // defaults to the document.body
+  // The element to which the notification will be appended to in the application
+  // The defaults are to the 'document.body' element
   notificationWrapper: document.body,
   // the notificationMessage
-  notificationMessage: 'Hello!!!',
-  // notification Layout type: growl|attached|bar|other
+  notificationMessage: 'Hello!!! Developer!',
   notificationLayout: 'growl',
-  // effects for the specified notification Layout:
-  // for growl notification Layout: scale|slide|genie|jelly
+  // The effects to be set for the specified notification Layout:
+  // for growl notification Layout: { genie || scale || jelly || slide } effects
   notificationEffect: 'slide',
-  // notice, warning, error, success
-  // will add class notification-type-warning, notification-type-error or notification-type-success
+  // error,warning, success, notice
+  // This step will add class notification-type-warning, notification-type-error or notification-type-success
   notificationType: 'error',
-  // if the user does not close the notification then we remove it
-  // after the following time
-  totalTimeToLeave: 6000,
-  // callbacks
+  // if the current user does not close the notification then it gets removed
+  // This is automatically after the following time
+  totalTimeToLeave: 5000,
+  // Some of the callback functions
   onClose: function () {
+    /*return the output of false*/
     return false;
   },
   onOpen: function () {
+    /*return the output of false*/
     return false;
   }
 };
@@ -603,14 +616,14 @@ The function will do the following:
 
 ```js
  /**
- * init function
- * initialize and cache some vars
+ * initialization function
+ * initialize and cache some variables for the application
  */
 NotificationFunction.prototype._init = function () {
   // create HTML structure
   this.ntf = document.createElement('div');
-  this.ntf.className = 'ns-box ns-' + this.options.notificationLayout + ' ns-effect-' + this.options.notificationEffect + ' ns-type-' + this.options.notificationType;
-  let innerString = '<div class="ns-box-inner">';
+  this.ntf.className = 'ns-boxes ns-' + this.options.notificationLayout + ' ns-effect-' + this.options.notificationEffect + ' ns-type-' + this.options.notificationType;
+  let innerString = '<div class="ns-boxes-inner">';
   innerString += this.options.notificationMessage;
   innerString += '</div>';
   innerString += '<span class="ns-close"></span></div>';
@@ -701,10 +714,16 @@ NotificationFunction.prototype.dismiss = function () {
     notification_self.options.notificationWrapper.removeChild(notification_self.ntf);
   };
 
-  if (support.animations) {
+  if (
+          /*Found in Modernizr file*/
+          support.animations
+  ) {
+    /*An event listener*/
     this.ntf.addEventListener(animEndEventName, onEndAnimationFn);
   } else {
+    /*Returns this function*/
     onEndAnimationFn();
+    /*End*/
   }
 };
 ```
@@ -723,12 +742,12 @@ window.NotificationFunction = NotificationFunction;
 Open the `classEditor.js` file and add a function to take in the window as an argument and invoke it.
 
 ```js
-/*!
+/*
  * classEditor - It contains class helper functions
  *
  * These functions include:-
  *
- * classEditor.has( element, 'my-current-class' ) -> true/false
+ * classEditor.has( element, 'my-current-class' ) -->>> true or false
  * classEditor.add( element, 'my-new-class' )
  * classEditor.remove( element, 'my-unwanted-class' )
  * classEditor.toggle( element, 'my-class' )
@@ -749,14 +768,14 @@ Open the `classEditor.js` file and add a function to take in the window as an ar
 - Create a `RegEX` function that searches for the class name that is in between other words in the file.
 
 ```js
-// class helper functions
+// class helper functions for the application
 
 function class_Regex(class_name) {
   return new RegExp("(^|\\s+)" + class_name + "(\\s+|$)");
 }
 
-// classList support for class management
-// To be fair, the api won't accept at once multiple classes
+// classList support for the management of classes
+// The API accepts only one change at once instead of multiple classes
 let hasThisClass, addsClass, removesClass;
 
 if ('classList' in document.documentElement) {
@@ -769,7 +788,8 @@ if ('classList' in document.documentElement) {
   removesClass = function (element, Class) {
     element.classList.remove(Class);
   };
-} else {
+} /*If not execute this*/
+else {
   hasThisClass = function (element, Class) {
     return class_Regex(Class).test(element.className);
   };
@@ -797,16 +817,17 @@ function togglesClass(element, Class) {
 
 ```js
 let classEditor = {
-  // full names
-  hasClass: hasThisClass,
-  addClass: addsClass,
+  // The function full names
   removeClass: removesClass,
   toggleClass: togglesClass,
-  // short names
-  has: hasThisClass,
-  add: addsClass,
+  addClass: addsClass,
+  hasClass: hasThisClass,
+
+  // short names for the functions above
   remove: removesClass,
-  toggle: togglesClass
+  add: addsClass,
+  toggle: togglesClass,
+  has: hasThisClass
 };
 ```
 
@@ -817,7 +838,9 @@ let classEditor = {
 if (typeof define === 'function') {
   define(classEditor);
 } else {
-  // browser global
+
+  // It is found in the browser at a global scope
+
   window.classEditor = classEditor;
 }
 ```
@@ -871,20 +894,20 @@ notificationButton.addEventListener('click', function () {
       notificationMessage: '<p>Hello there!!! I\'m a classic notification pop-up, but I have some Jelly elasticity thanks to <a href="http://bouncejs.com/">bounce.js</a>. </p>',
       notificationLayout: 'growl',
       notificationEffect: 'scale',
-      notificationType: 'notice', // notice, warning, error or success
-      totalTimeToLeave: 6000,
+      notificationType: 'notice',
+      totalTimeToLeave: 5000,
       // On close of the notification, enable the button
       onClose: function () {
         notificationButton.disabled = false;
       }
     });
 
-    // Display the notification
+    // This function Displays the notification
     notification.show();
 
   }, 1200);
 
-  // disable the button (for demo purposes only)
+  // disable the button (This is meant for demonstration purposes only)
   this.disabled = true;
 });
 ```
@@ -914,7 +937,7 @@ Style the notification to look like a pop-up notification. In the `default_notif
 ```css
 /* Common, default styles for the notification box */
 
-.ns-box {
+.ns-boxes {
   position: fixed;
   font-size: 90%;
   font-family: 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif;
@@ -931,7 +954,8 @@ Style the notification to look like a pop-up notification. In the `default_notif
 
 ```css
 /* Notification 'on show' styling */
-.ns-box.ns-show {
+.ns-boxes.ns-show {
+  /*Set the pointer-events to auto*/
   pointer-events: auto;
 }
 ```
@@ -940,18 +964,19 @@ Style the notification to look like a pop-up notification. In the `default_notif
 
 ```css
 /* Notification link styling */
-.ns-box a {
-  color: inherit;
-  opacity: 0.7;
+.ns-boxes a {
+  opacity: 0.6;
   font-weight: 700;
+  /* The current color can be used indirectly for other color attributes e.g border color */
+  color: inherit;
 }
 
-.ns-box a:hover, .ns-box a:focus {
+.ns-boxes a:hover, .ns-boxes a:focus {
   opacity: 1;
 }
 
 /* Notification paragraph styling */
-.ns-box p {
+.ns-boxes p {
   margin: 0;
 }
 ```
@@ -960,7 +985,8 @@ Style the notification to look like a pop-up notification. In the `default_notif
 
 ```css
 /* Visible notification styling */
-.ns-box.ns-show, .ns-box.ns-visible {
+.ns-boxes.ns-show, .ns-boxes.ns-visible {
+  /*Set the pointer-events to auto*/
   pointer-events: auto;
 }
 ```
