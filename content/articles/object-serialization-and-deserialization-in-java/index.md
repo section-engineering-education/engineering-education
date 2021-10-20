@@ -47,12 +47,12 @@ In this tutorial, I'll explain how serialization works and how we can implement 
 
 #### When utilizing serialization in Java, please remember the following:
 
-- There are no methods or data members in the serialization interface.
+- There are no methods or data members in the `Serializable` interface.
 - Only use the Serializable interface to serialize an object.
 - A class's fields must all be serializable; otherwise, use the `transient` keyword.
-- The child class does not need to implement the `Serializable` interface if its parent class does.
-- During the serialization process, only preserve non-static data members; static and temporary data members are not.
-- The String and its wrapper classes have the `Serializable` interface implemented by default.
+- The child class does not need to implement the Serializable interface if its parent class does.
+- During the serialization process, only preserve non-static data members; static and transient data members are not.
+- The String and its wrapper classes have the Serializable interface implemented by default.
 
 ### How to serialize and deserialize with the help of examples
 
@@ -137,16 +137,17 @@ public static Link deserializeLink(String fileName) throws IOException, ClassNot
 
 #### Description
 
-The `deserializeLink()` method has one parameters. The parameter name is `filename,` which is the location where we save the deserialized object.
+The `deserializeLink()` method has one parameter. The parameter name is `filename`, which is the location where we save the deserialized object.
 
 1. The file will open in input mode using this procedure.
 2. We perform deserialization using `in.readObject()`.
 3. After that, the outcome will be classiﬁed as a Link object.
 
-If the item is not present, the above procedure may throw an `IOException.` When the expected class is not found, we issue a `ClassNotFoundException.`
+If the item is not present, the above procedure may throw an `IOException`. When the expected class is not found, we issue a `ClassNotFoundException`.
 
 #### Object Serialization and Deserialization Example
-> This is the full code from the previous sections of serialization and deserialization.
+
+Here is the full code from the previous sections of serialization and deserialization.
 
 **Serialization.java**
 
@@ -251,7 +252,7 @@ There are two classes in the example above: `Link` and `SerialLink`. `SerialLink
 
 ### Serialization with aggregation
 
-To establish a `HAS-A` connection in Java, we utilize aggregation. This implies that a single class may refer to many different other classes. These classes won't be serializable until all of their references are of type `Serializable`. Any attempt to serialize these types fails due to `NotSerializableException`.
+To establish a *HAS-A* connection in Java, we utilize aggregation. This implies that a single class may refer to many different other classes. These classes won't be serializable until all of their references are of type `Serializable`. Any attempt to serialize these types fails due to `NotSerializableException`.
 
 #### Example
 
@@ -273,7 +274,7 @@ class Seriallink {
 
 In the illustration above, if a client wants to serialize the `SerialLink` object, a `NotSerizalizableException` will be produced. Since `link` cannot be serialized until the `Serializable` interface has been implemented, this error will occur.
 
-> When properties aren't serialized, there are a few things to consider:
+When properties aren't serialized, there are a couple of things to consider:
 
 1. Static members
 2. Transient members
