@@ -323,7 +323,7 @@ In this article, we looked at the concept of functional programming in Java. We 
 
 [Winterbe](https://winterbe.com/posts/2014/07/31/java8-stream-tutorial-examples/)
 
-[java i6 documentation on function api](https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/util/function/package-summary.html)
+[Java i6 documentation on function api](https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/util/function/package-summary.html)
 
 Java - How to Program 10th Ed - Early Objects Version by Pual Deitel and Harvey Deitel
 
