@@ -21,9 +21,7 @@
 
 ### Introduction
 Trading online has become one of the moat popular investment in the current world today. 
-
 The likes of cryptocurrency and forex being the leading area.
-
 Due to this popularity, programmers have emerged trying to come with
 in which the trading process can be automated for more profits.
 
@@ -34,7 +32,6 @@ in programming a trading bot.
 
 As stated in the introduction, a trading bot is simply a robot 
 in form of a software that automates the trading process.
-
 It uses past data to give out expected outcomes that look down to the 
 past data patterns.
 From these past patterns, it generates patterns expected in future.
@@ -51,11 +48,8 @@ its own editor.
 ### Coding and Development
 
 With your prerequisites and requirements ready, you can now code along for
-
 a practical understanding.
-
 Go to https//: www.quantconnect.com and sign up to setup your coding environment. 
-
 You can also use an offline editor and upload the code later for testing.
 
 
@@ -142,14 +136,12 @@ The code is as follows;
 
 ```
 The first variable determines *how close our stop loss will be to the security price* meaning that it will allow a 2% loss before it gets hit.
-
 The second variable indicates how close our trading stop will follow the assets' price.
 This means that it will trail the price for 10% which is quite big but it gives more room for price flexibility.
 
 4. #### **Define a Method to Plot the Data**
 
 We will define the onData method to create a plot of the price of the securities.
-
 This gives a benchmark to compare our algorithm performance.
 
 ```python
@@ -159,13 +151,13 @@ def OnData(self, data):
 
 
 ```
+
 This will also determine the closing price.
 
 5. #### **Create the Trading method**
 
 The next step will be to create the method that will do all the trading for us which will be called after every market open.
-
-We will call it **EveryMarketOpen** for simplicity.
+We will call it "**EveryMarketOpen**" for simplicity.
 
 ```python
 def EveryMarketOpen(self):
@@ -194,18 +186,16 @@ self.Schedule.On(self.DateRules.EveryDay(self.symbol), \
 6. #### **Implement the EveryMarketOpen method**
 
 First, we will determine the lookback length for our breakout.
-
 Within a utility of 30 days we will compare the current value today with the same value yesterday.
-
 This will help determine the length of the lookback window.
 
 - Call the History function to get data for the last 31 days or you prefered number of days.
 
-- This is where we use the numpy library to calculate the standard deviation for the two days.
+  - This is where we use the numpy library to calculate the standard deviation for the two days.
 
 - We will list all the highest and lowest prices within a specified range, for this case, 30days
 
-The following code falls under this *EveryMarketOpen* method to perform all the comparisons required to give a result;
+The following code falls under this *EveryMarketOpen* method to perform all the comparisons required to give a desired result;
 
 ```python
 
@@ -249,14 +239,13 @@ The following code falls under this *EveryMarketOpen* method to perform all the 
                     self.stopMarketTicket.Update(updateFields)
 
 ```
+
 7. #### **Plot the stop price**
 
 Lastly, print the new stock price to the console, to check the new order price every time they get updated.
-
 We cannot use the normal *print* function but instead use the *self.Debug* fuction which is *quant equivalent* to print.
 
 Finalize by plotting the stop price of our position onto the data chart we created earlier.
-
 This allows us to view where our stop price is compared to the securities trading price.
 
 ```python
@@ -350,13 +339,12 @@ class GeekyBlueSeahorse(QCAlgorithm):
 For more explanations or inconviniences, you can refer to this [video](https://www.youtube.com/watch?v=s8uyLscRl-Q) for more understanding.
 
 
-7. #### Perform a Backtest
+8. #### Perform a Backtest
 
 A back test is performed to evaluate the performance of the algorithm.
-
 It integrates the code with your brokerage site to get results as if it was an actual trading practice.
 
-You can see the picture below;
+You can see the picture below as an example of a backtest result;
 
 ![](backtest.png)
 
@@ -392,12 +380,10 @@ This is the one **Main** reason;
 **Systemic Risk**
 
 Sometimes, there occur linkages between financial markets.
-
 As a result, algorithms operating under those markets transmit rapid shocks from one market to another thus triggering a systematic risk.
+These systematic risks bring about **huge losses**, which is considered a great risk.
 
-These systematic risks bring about **huge losses**, which is consider a great risk.
-
-Due to such risk, people prefer to trade on their own rather than depending on the software.
+Due to such risk, people prefer to trade on their own rather than depend on the software.
 
 ### Conclusion
 
