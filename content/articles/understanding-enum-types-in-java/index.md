@@ -1,3 +1,20 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /understanding-enum-types-in-java/
+title: Understanding enum types in Java
+description: 
+author: ehis-edemakhiota
+date: 2021-10-20T00:00:00-06:10
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/understanding-enum-types-in-java/hero.png
+    alt: Understanding enum types in Java Hero Image
+---
+
 #[Java] Understanding Enum Types in Java: Building A Card Dealing and Shuffling App that  determines the ranking category of a player’s hand in a poker game
 
 Enums types are powerful tools in Java. Enums could be used to define a class of named constants and offer the advantage of type safety. They could also be used as keys in a switch statement or expression.
