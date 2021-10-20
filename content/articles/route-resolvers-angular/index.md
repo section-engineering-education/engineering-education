@@ -1,7 +1,21 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /route-resolvers-angular/
+title: Getting Started with Angular Route Resolvers
+description: This tutorial introduces reader to basic concepts of Angular route resolvers while making API requests
+author: odiwuor-amos
+date: 2021-10-20T00:00:00-11:10
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
-### Introduction
+  - url: /engineering-education/route-resolvers-angular/hero.jpg
+    alt: Angular Routes  image
+---
 Building Angular applications can be tricky sometimes. This could be due to delayed server responses after making API calls or bugs that subsequently affect the user interface.
-
+<!--more-->
 In this tutorial, we discuss the importance of Angular Route Resolvers in building Angular components. We also create a sample application that fetches some data from an API and only render the component upon data retrieval.
 
 ### Table of contents
@@ -207,3 +221,6 @@ In the `MinistryComponent` component, we have imported the `ActivatedRoute` that
 
 ### Conclusion
 In this tutorial, we've seen how Angular route resolvers are implemented. We've seen its advantages and why we tend to avoid accessing API calls directly from the component.
+
+---
+Peer Review Contributions by: [Miller Juma](/engineering-education/authors/miller-juma/)
