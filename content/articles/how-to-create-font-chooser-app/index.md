@@ -18,7 +18,7 @@ To follow along with this tutorial, you will need to have:
 - [Python3](https://www.python.org/downloads/) installed on your computer system.
 - A code editor, i use [Pycharm](https://www.jetbrains.com/pycharm/download/).
 
-### Functions of Tkinter
+### Tkinter
 Python's standard GUI library is Tkinter. When Python and Tkinter are integrated, creating graphical user interfaces becomes much faster and easier. 
 
 Tkinter provides geometric widget configuration, which organizes widgets in parent windows for grahical user interface.
