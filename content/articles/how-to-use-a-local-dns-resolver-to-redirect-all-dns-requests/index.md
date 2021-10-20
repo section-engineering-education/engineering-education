@@ -66,15 +66,15 @@ Go to the `Firewall > Groups` page to create a rule group. Then select "Add" fro
 
 Assign the firewall group a `Name` before selecting the interfaces/networks to which you want the DNS requests redirected. `commands` is a descriptive name for the group in my example. For some interfaces, you may not require or want redirection; therefore, you can uncheck the box. You may, for example, have a network that is completely disconnected from the Internet. There may be networks where you would rather prohibit external DNS requests than reroute them. For the group to be created, click on `Save`.
 
-![Save](/engineering-education/how-to-use-a-local-dns-resolver-to-redirect-all-dns-requests/image-04)
+![Save](/engineering-education/how-to-use-a-local-dns-resolver-to-redirect-all-dns-requests/image-04.png)
 
 Just as before, you can create a redirection by selecting the firewall group instead of an interface. Click the `Add` button on the "Firewall > NAT > Port Forward" page. Please enter the following values:
 
-![Value entry](/engineering-education/how-to-use-a-local-dns-resolver-to-redirect-all-dns-requests/image-05)
+![Value entry](/engineering-education/how-to-use-a-local-dns-resolver-to-redirect-all-dns-requests/image-05.png)
 
 The redirection from the NAT port forward should have been immediately added to the rule list on the `Firewall > Rules > CommonDNS` page.
 
-![Page view](/engineering-education/how-to-use-a-local-dns-resolver-to-redirect-all-dns-requests/image-06)
+![Page view](/engineering-education/how-to-use-a-local-dns-resolver-to-redirect-all-dns-requests/image-06.png)
 
 ### Testing the redirection
 How do you check to see if the redirection is working properly? After all, if everything is properly configured, you may not notice any difference. One straightforward method is to provide a DNS override. A DNS override can be used to assign a different IP address to a specific domain, including publicly accessible domain names on the Internet. In a corporate setting, this can be handy if you wish to have an Intranet gateway that is distinct from the public Internet website. It can be used to test DNS redirection for our needs.
@@ -84,11 +84,11 @@ Click the `+` button.
 Enter a well-known domain name that you do not use for anything else on your network (to avoid any potential service disruptions), such as yahoo.com.
 Choose a random local IP address from your network, for example, `192.168.20.200`
 
-![IP address entry](/engineering-education/how-to-use-a-local-dns-resolver-to-redirect-all-dns-requests/image-07)
+![IP address entry](/engineering-education/how-to-use-a-local-dns-resolver-to-redirect-all-dns-requests/image-07.png)
 
 When you save the override, it will appear in the list. To make the changes take effect, click the `Apply` button.
 
-![Applying the changes](/engineering-education/how-to-use-a-local-dns-resolver-to-redirect-all-dns-requests/image-08)
+![Applying the changes](/engineering-education/how-to-use-a-local-dns-resolver-to-redirect-all-dns-requests/image-08.png)
 
 A DNS lookup for an IP address in Linux can be done with the host command. It is not necessary to use your default DNS server when using the host command. I'm making an external DNS request using Google's DNS server. Rather than returning the public IP address, the local IP address is returned:
 
