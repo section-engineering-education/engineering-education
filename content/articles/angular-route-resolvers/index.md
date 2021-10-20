@@ -1,34 +1,28 @@
 ### Introduction
-
 Building Angular applications can be tricky sometimes. This could be due to delayed server responses after making API calls or bugs that subsequently affect the user interface.
 
 In this tutorial, we discuss the importance of Angular Route Resolvers in building Angular components. We also create a sample application that fetches some data from an API and only render the component upon data retrieval.
 
 ### Table of contents
-
 - [Objectives](#objectives)
 - [Prerequisites](#prerequisites)
 - [Angular API calls recap](#angular-api-calls-recap)
-- [Getting started with Angular route resolvers](#getting-started-with-angular-route-resolvers)
+- [What's Angular route resolvers?](#what-is-angular-route-resolvers)
 - [Using Angular route resolvers](#using-angular-route-resolvers)
 - [Conclusion](#conclusion)
 
 ### Objectives
-
 This tutorial covers the basics to advanced features of Angular Route Resolvers. In the end, you should be able to make API calls and only resolve the route only and only if the data response has been received.
 
 ### Prerequisites
-
 To follow this tutorial along, you should be familiar with:
-
-- Basics of JavaScript or TypeScript
+- Basics of JavaScript or TypeScript.
 - Basics of Angular2+ routing concepts.
-- Knowledge of dependency injection
+- Knowledge of dependency injection.
 
 ### Angular API calls recap
-
 Before we dive into the actual topic, let's refreshen our minds on Angular API calls.
-Usually, when an asynchronous API call from an application is made, it takes some time to respond.
+Usually, when an asynchronous API call from an application is made, it takes some time to respond. This maybe due to poor network or server downtime.In either case, the users will be redirected to a component that has no data from the API. This will always happen whether you have a strong internet connection or not.
 
 For example,
 
@@ -50,24 +44,24 @@ export class ApiService {
     return this.httpClient.get<Ministry>(`${environment.apiURL}ministries`);
   }
 ```
+Let's assume that the above service gets list of all ministries from a country's state government. We have injected the `HttpClient` to help us send this API request to the server.We also have an observable that listens to our response. The `GET` method retrieves the list of all ministries from the server and pass the list to `Ministry` object.
 
-We've got a method in the service above that gets the list of ministries from a server somewhere.
+Now the catch is that we don't have any idea of how long this will take. Whether it takes a second or half an hour is entirely dependent on the server we're making request to.
+
+Let's see how we can handle this response no matter how long it takes, as long as we've the response, it will handle as shown in the following component: 
 
 ```ts
 .......
 import {ApiService} from "../../core/services/api.service";
-import {Router} from "@angular/router";
-
 ...
 export class MinistriesComponent implements OnInit {
-
   ministries:Ministry[];
+  //inject the api service we previously created.
   constructor(private apiService:ApiService,private router:Router) { }
-
   ngOnInit(): void {
+    // list for ministries will be listed whenever this component is initialized
     this.getListOfMinistries();
   }
-
   /**
    * list of ministries
    */
@@ -75,31 +69,36 @@ export class MinistriesComponent implements OnInit {
     this.apiService.ListOfMinistries()
       .subscribe((res)=>{
         this.ministries=res.data;
-        this.loading=false;
       },error => {
+      //error logs goes here...
       })
   }
 }
-
 ```
+At the beginning of this component, we import the API service we previously created. It's important to note that this is dependency injection concept which is worth looking at if you're quite not familiar with.
 
-In the component, we use the `ListOfMinistries()` method to subscribe to the list of ministries. So we can say that we receive ministries as long as we keep subscribing to them.  
+We had initially stated that it's the `apiService` that is used to communicate with external server to get the list of all ministries.Now what happens is that, we inject this service into our component, and use it to get the list of ministries as we would wish, in our case, when the `MinistriesComponent` component is initialized.   
 
-We would expect to get this data immediately and display it on the template. However, this is not the case, the server might take a long time to respond, or it may suffer from bugs that may happen more often.
+In order to have a well organized component, we've created a method `getListOfMinistries()` that we're using to get the list of ministries from the `apiService`.
+> Remember that in dependency injection, we can inject the method of a service anywhere else in the application.
+Therefore, we call the `apiservice.ListOfMinistries()` method to subscribe to list of ministries from the API.
 
-So what happens to our table of ministries on the template? As you might have guessed, this breaks the UI.
+Given other factors remain constant, this should return our list of ministries on component initialization, however, this is not always the case. There maybe other factors that come into play such as server bugs and poor internet connections
 
-You may now be thinking about loaders on the screen, but are they effective as far as UI design is concerned?  
+So what happens to our table of ministries on the template? It's important for us to note that whenever a component is invoked, its template should be rendered. However in this case, it's rendered without the list of ministries from the API which may be delayed as we've seen previously. As far as user interface is concerned,this breaks the entire page where the list is supposed to be displayed.
 
-In the next section, we explore Angular resolvers and how we can solve the above delays.
+How is this suppose to be prevented? One such solution would be to implement loaders on the site, which will be loaded as the component waits for the response form the API. The other solution is the use of the Angular route resolvers.  
 
-### Getting started with Angular route resolvers
-In simpler terms, Angular resolvers refer to `middleware that is executed first before a component is fully loaded.  
+In the next section, the concept of Angular resolvers is covered in-depth. We'll see how this functionality maybe used to overcome the above problem
 
-Now, let's look at a standard way of rendering the list of ministries we listed above.
+### What's Angular route resolvers?
+In simpler terms, Angular resolvers refer to [middleware](https://laravel.com/docs/8.x/middleware) that is executed first before a component is fully loaded.  
+Angular route resolver, acts like a filter where before a component is rendered, it must ensure that it has the required data for that template. This of course ensure that the Single Page Application (SPA) is achieved in Angular.   
+
+Now, the following template renders the list of ministries without loaders or route resolver.
 
 ```html
-<div class='table-responsive' *ngIf="miistries">
+<div class='table-responsive'>
     <table class="table">
         <thead>
             <tr>
@@ -122,39 +121,39 @@ Now, let's look at a standard way of rendering the list of ministries we listed 
 
 ```
 
-On the template above, you realise that we've got a condition `*ngIf=" ministries"`, which ensures that the table is only displayed when the API responds with some data.  
+On the above template, we've a table of government ministries. The table should display the name of ministry, it's description and minister. 
+Normally, when you try to loop this table, you'll realise the table has empty list at the beginning, but later on, is filled up with data (we assume the API returns some list of ministries).
+> Before you proceed, test the above functionality to understand the 'delayed' response we're discussing.
 
-This is not what we want to do; we want our template displayed when the API has responded with data. Otherwise, we don't show this component. This is where the Angular resolvers come in hand.  
+If you successfully tested the above feature, you may have taken a note of the broken user interface. This is UI issue that, companies take seriously, and you as the developer must be in a position to fix. One way, as you have already known is the use of Angular route resolvers.
+
+Now we want our component to be displayed(rendered) only when there is response from the API.In the section, let's implement the route resolvers.
 
 ### Using Angular route resolvers 
+Previously, we;ve seen how incorrectly handled API responses may break our user interface, in this section, we want to implement the same ministries' table using Angular route resolvers and take note of the key differences.  
 
 Let's start by creating a class that implements the `Resolver class`.
 
 ```ts
 //ministries resolver
 ...
-import { Injectable } from '@angular/core';
+import {ApiService} from "../../core/services/api.service";
 import { Resolve } from '@angular/router';
-
-@Injectable()
+...
 export class RouteResolver implements Resolve<any> {
-
+  //inject the api service we initially implemented
    constructor(public apiService: ApiService) { }
 
+  //resolve our list of ministries api service
    resolve() {
       return this.apiService.ListOfMinistries()
    }
-
 }
 ```
-The above class has a simple task: only return resolved data from the `ListOfMinistries()` method.  
-
-Proceed and edit your `src/app/app-routing.module.ts` as follows:
+In the above class, we import the api service we had designed. It had a method to get list of all government ministries.We call this method in the `resolve()` method. Proceed and edit your `src/app/app-routing.module.ts` as follows:
 
 ```ts
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-
+.....
 // Components
 ...
 // Route resolver array
@@ -174,39 +173,34 @@ const routes: Routes = [
   ...
   providers: [RouteResolver]
 })
-
-export class AppRoutingModule { }
+....
 ```
+In the above routing module, we import the route resolver we previously created to resolve our list of ministries.We then create a route constant of type `Routes`. This constant takes an array of route paths, in our case we've a single route `ministries` which uses the `MinistryComponent` component and being resolved by the `RouteResolver`.  
 
-Now that we've configured our `ministry` route to only return resolved data let's see how we can access it on our component.
+Now that we've configured our `ministries` route to only return resolved data let's see how we can access it on our component.
 
+Update the `MinistryComponent` component as shown below:  
 ```ts
 ...
 import { ActivatedRoute } from '@angular/router';
-
-@Component({
-  ...
-})
+...
 
 export class MinistryComponent implements OnInit {
-
-  Ministries: Ministry = [];
-
+  ministries:Ministry[];
   constructor(
-    private activatedRoute: ActivatedRoute
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit() {
     
-    this.activatedRoute.data.subscribe(data => {
-      console.log('Check route resolver data')
-      console.log(data)
+    this.route.data.subscribe(data => {
+      this.ministries=data;
+      //log your api response here...
     })
   }
 }
 ```
-
-We now get our list of ministries from the activated route instead of the API service directly from the component. That's it.
+In the `MinistryComponent` component, we have imported the `ActivatedRoute` that is used to resolve the activated routes only.We subscribe to this resolved route and only display the template when we have the ministries' data.
 
 ### Conclusion
 
