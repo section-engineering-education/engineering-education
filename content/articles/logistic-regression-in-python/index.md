@@ -1,4 +1,17 @@
-###Getting started with Logistic Regression in python
+### Tables 
+- [Tables](#tables)
+- [Getting started with Logistic Regression in python](#getting-started-with-logistic-regression-in-python)
+  - [Logistic regression hypothesis representation](#logistic-regression-hypothesis-representation)
+  - [Understanding the output of the logistic hypothesis](#understanding-the-output-of-the-logistic-hypothesis)
+  - [Decision Boundary  in Logistic regression](#decision-boundary--in-logistic-regression)
+- [Logistic cost function](#logistic-cost-function)
+- [Python Implementation of Logistic regression](#python-implementation-of-logistic-regression)
+- [Step 1: Data Preprocessing](#step-1-data-preprocessing)
+- [Step 2: Training a logistic regression model](#step-2-training-a-logistic-regression-model)
+- [Step 3: Predicting the test set](#step-3-predicting-the-test-set)
+- [Evaluating the performance](#evaluating-the-performance)
+- [Conclusion](#conclusion)
+### Getting started with Logistic Regression in python
 Logistic regression is a popular algorithm in machine learning that is widely used in classification problems. Some of the classification problems where the logistic regression offers a good solution are:
 - Classifying whether an email is a spam or not spam.
 - Predicting whether a customer continues to be a plying client to a business or they exit(Customer churn).
@@ -26,6 +39,7 @@ $h_\theta$($\it x$) $<$ 0.5 we predict y = 0.
 Using linear regression, it turns out that some data points may end up misclassified. Also, it is possible for the linear hypothesis to output values that are greater than one or less than 0. This possibility does not align with the possible values of our target variable, i.e., y $\in$ {0,1}. Thus, it indicates that using linear regression for classification problems is not a good idea.
 
 To ensure all our predicted values fall between 0 and 1, we use the **Logistic regression**.
+
 
 #### Logistic regression hypothesis representation
 As we mentioned above, the logistic regression ensures all the hypothesis outputs are between 0 and 1. This property makes it suitable for predicting y(target variable). In other words, it predicts the probability of a specific feature to be in a particular class. To obtain the logistic regression hypothesis, we apply some transformations to the linear regression. Initially, we saw that our linear hypothesis representation was of the form:
@@ -140,7 +154,7 @@ Cost($h_\theta$($\it x^{(i)}$), y$^{(i)}$) = $-$log(1$-$$h_\theta$($\it x^{(i)}$
 
 Let us examine how this cost function behaves with the aid of a graph.
 
-![Logistic cost function](/engineering-education/logistic-regression-in-python/logistic_cost_function.png)
+![Logistic cost function](/engineering-education/logistic-regression-in-python/cost-function.png)
 
 - For **Cost($h_\theta$($\it x$), y) = $-$ log($h_\theta$($\it x$))**, we obtain a graph of the form: 
 From the plot above, our cost function has one desireable property. When the predicted value, $h_\theta$($\it x^{}) = $ 1 and it turns out that the actual value y = 1, then the cost our algorithm faces is 0. Also,
@@ -276,4 +290,4 @@ At this point, we have reached the end of our python implementation.
 ### Conclusion
 In this article, we looked at the intuition behind logistic regression and lastly learned how to implement it in python. I hope we found this content helpful and we all enjoyed the learning process to this end. Happy learning.
 
-Find the complete source code [here](https://github.com/Madrinmarison/datasets/blob/main/Logistic_regression.ipynb)
+Find the complete source code [here](https://github.com/Madrinmarison/datasets/blob/main/Logistic_regression.ipynb).
