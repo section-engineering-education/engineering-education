@@ -1,12 +1,13 @@
 
 ### Introduction.
-When an application is pre-and post-processed, the object being invoked is filtered. Filters are configured and used when filtering activities are performed. The filter interface is found in the `javax.servlet` package and to create a `Filter` class, we have to `import javax.servlet` and implement the `Filter` interface. several filters can be created to perform different tasks according to the user and developer specifications. 
+When an application is pre-and post-processed, the invoked object is filtered. Filters are configured and used when filtering activities are performed. The filter interface is found in the `javax.servlet` package and to create a `Filter` class, we have to `import javax.servlet` and implement the `Filter` interface. several filters can be created to perform different tasks according to the user and developer specifications. 
 
 ### Prerequisites
-- An open-source Java editor, such as Eclipse.Get it [here](https://www.eclipse.org/downloads/packages/release/2021-06/r).
-- a web browser installed.
-- Server. In my case, I will be using TomCat version 9. Download it from their official [website](https://tomcat.apache.org/)
-- basic knowledge of Java is needed.
+You will need the following items to go along with this article:
+- Open-source Java editor installed in your machine, such as Eclipse. You can get it [here](https://www.eclipse.org/downloads/packages/release/2021-06/r).
+- A web browser installed.
+- Server. In my case, I will be using TomCat version 9. Download it from their official [website](https://tomcat.apache.org/).
+- Basic knowledge of core Java is needed.
 - Introduction to a servlet is needed.
 
 ### Table of contents:
@@ -37,7 +38,7 @@ When an application is pre-and post-processed, the object being invoked is filte
 **Explanation:**
 - When a request enters the Web Container, it is checked to see whether any filters have URL patterns that match the incoming URL.
 - The Web `Container` sends requests to the first `Filter` with a matching URL pattern to execute its function.
-- First `Filter` then checks if there is a second Filter is available with marching URL, and the code of that `Filter` is run. This will continue until no more filters with URL patterns that match are found..
+- First `Filter` then checks if there is a second Filter is available with marching URL, and the code of that `Filter` is run. This will continue until no more filters with URL patterns that match are found.
 - If there are no errors, the request is forwarded to the destination Servlet as a result, we know that the request will only be delivered to the destination servlet if all of the relevant Filters have been completed successfully.
 - The servlet returns the response to the caller, and then the response is delivered to the Web Container, who then passes it on to the client.
 
@@ -57,7 +58,7 @@ We can come with the following usage of the filter based on the application area
 5. Used in the validation of input.
 6. Conversion etc.
 #### Advantages.
-- Filters can be changed or replaced with a different ones. In this case, the filter is pluggable.
+- Filters can be changed or replaced with a different Filter. In this case, the filter is pluggable.
 - There is no dependent on another resource for one of the filters.
 - Filters require less upkeep.
 
@@ -85,7 +86,7 @@ public void init(FilterConfig parameterName) throws ServletException
 - ServletResponse obj
 - FilterChain obj, implemented as follows.
 ```java
- Public void doFilters(ServletRequest request,ServletResponse response,FileterChain chain)throws ServletException,IOException
+ Public void doFilters(ServletRequest request, ServletResponse response,FileterChain chain)throws ServletException,IOException
 ```
 
 - `void destroy()`: This method denotes that the filter has completed its duty or has been removed from service. Users can override this method to write finishing logic, such as releasing resources, objects, and so on.
@@ -100,7 +101,7 @@ public void doFilter(HttpServletRequest request, HttpServletResponse response);
 ```
 ### FilterConfig interface
 
-The web container generates a `FilterConfig` object which is used to retrieves configuration information from the web.xml file.
+The web container generates a `FilterConfig` object which is used to retrieve configuration information from the web.xml file.
 
 #### FilterConfig interface methods
 In the FilterConfig interface, there are four methods:
@@ -118,11 +119,13 @@ If the user name and password provided by the user are both correct, the second 
 #### Steps to create Authentication Example
 We assumed you already knew how to use the eclipse IDE and configure the Tomcat server in this example.
 
-**Step 1:** Open Eclipse IDE for Java EE developers. Create a web project by selecting Files -> New -> Dynamic Web Project and provide a project name. We will name ours `Authentication Example`, -> select `Finish`.
+#### Step 1:
+Open Eclipse IDE for Java EE developers. Create a web project by selecting Files -> New -> Dynamic Web Project and provide a project name. We will name it `Authentication Example`, -> select `Finish`.
 ![CheckPassword Filter](/engineering-education/Servlet-Filter-API/projectname.png)
 
 
-**Step 2:** Right-click on the `Authentication Example` on the Project Explorer, select new -> HTML file option -> `finish` by giving your HTML page a name. We'll call it `login.html` in this case as depicted below.
+#### Step 2: 
+Right-click on the `Authentication Example` on the Project Explorer, select new -> HTML file option -> `finish` by giving your HTML page a name. We'll call it `login.html` in this case as depicted below.
 
 ![login page](/engineering-education/Servlet-Filter-API/loginhtml.png)
 ```html
@@ -145,9 +148,9 @@ We assumed you already knew how to use the eclipse IDE and configure the Tomcat 
 </html>
 ```
 
-**Step 3:** Filter 1 and `com.demo` package:
+#### Step 3: Filter 1 and `com.demo` package:
 
-Create a package by right-clicking `Authentication Example`, select a new -> package, and finish by providing a package name of your choice. In this case, we'll call it `com.demo`
+Create a package by right-clicking `Authentication Example`, selecting a new -> package, and finish by providing a package name of your choice. In this case, we'll call it `com.demo`
 
 To navigate into the package you have created above, expand `src/main/Java`.
 
@@ -203,7 +206,7 @@ public class CheckPassword implements Filter
 }
 ```
 
-**Step 4:** Filter 2:
+#### Step 4: Filter 2:
 
 Right-click on the `com.demo` package on the `Authentication Example` Project, select new -> Filter, and finish by giving your Filter class a name. We'll call it `CheckCredentials` in this case.
 
@@ -254,7 +257,7 @@ public class CheckCredentials implements Filter
 }
 ```
 
-**Step 5:** Servlet page:
+#### Step 5: Servlet page:
 
 Right-click on the `com.demo` package on the `Authentication Example` Project, select new -> servlet, and finish by giving your servlet class a name. We'll call it `AuthenticationDemo` in this case.
 
