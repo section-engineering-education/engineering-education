@@ -33,7 +33,7 @@ To follow along with this tutorial, the reader should have:
 - Any Java IDE of their choice.
 - An understanding of class's and static methods.
 
-### Function as a value
+### Function as value
 Let us assign a value to a variable:
 
 ```java
@@ -128,8 +128,8 @@ public class LambdaAlgorithmTest {
 
 From the first line of the code above is an interface with the name Hello. Which declare a method called `sayHello`, the method takes one parameter of `greet`. Which is of type string and will return type string. The fourth line creates a new class called `LambdaAlgorithmTest` which contains the main method. The method declares a function `hello` with the type `Hello` interface. And the method function has one parameter of `(message)`with two-variable `str1` and `str2` which both are of type string. The first variable `str1` takes a value `Welcome`. And the second variable `str2` concatenates `str1` and `message` together. And the function return `str2`.
 
-### Working with different Lambda parameters
-#### Lambda example that takes no parameters
+### Working with different Lambda parameter
+#### Lambda example that takes no parameter
 
 ```java
 
