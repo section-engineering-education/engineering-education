@@ -1,6 +1,21 @@
-### Introduction
-Metadata refers to binary information saved in memory or a language runtime portable executable file.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /working-with-metadata-in-csharp/
+title: Working with metadata in Csharp
+description: In this article, we are going to learn how to work with metadata in Csharp. Metadata refers to binary information saved in memory or a language runtime portable executable file.
+author: john-njoka
+date: 2021-10-20T00:00:00-13:13
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/working-with-metadata-in-csharp/hero.png
+    alt: Working with metadata in Csharp hero image
+---
+Metadata refers to binary information saved in memory or a language runtime portable executable file.
+<!--more-->
 When you compile code from a portable executable file, data is added to another file section. The code is converted to `MSIL` (Microsoft Intermediate Language) before moving to another file partition.
 
 All of the data types and members defined and referenced in the assembly are contained in the metadata.
@@ -23,7 +38,7 @@ This entails the process of pattern discovery in large data combinations using m
 
 2. Dataload function - The `Load function` creates and loads a database from an input data file. It can load a database for the first time or as part of a database restructuring process.
 
-3. Metadata as a tool for data extraction. Metadata helps retrieve and collect disparate data from a pool of unstructured or poorly organized sources.
+3. Metadata as a tool for data extraction. It helps retrieve and collect disparate data from a pool of unstructured or poorly organized sources.
 
 4. Metadata as online analytical processing (OLAP) tool in data warehousing. It helps the support system find data warehouse contents and assists in data mapping during data transformation to the data warehouse environment from the operational environment.
 
@@ -82,7 +97,7 @@ public class AreOfRectangle
 }
 ```
 
-Output
+Output:
 
 ```bash
 The rectangle area is 56:
@@ -118,11 +133,11 @@ Type information is extensively utilized in inter-program communication. A list 
 ### Metadata-described types
 The following types are described using metadata in Csharp.NET:
 
-- Enumerations 
-- Interfaces 
-- Delegates 
-- Classes 
-- Structures 
+- Enumerations
+- Interfaces
+- Delegates
+- Classes
+- Structures
 
 #### The following are used to obtain type information in C#:
 The `ildasm.exe`, which is a command-line utility, reads type metadata to access assembly items via reflection. `Ideas` is a C# utility that parses any .NET framework DLL and displays assembly information in a human-readable format.
@@ -151,3 +166,6 @@ public System.Type GetType()
 
 ### Conclusion
 Metadata in C# is used to learn more about the data. This is all encrypted into `binary format,` which is incomprehensible to humans, so we convert binary code into regular code and analyze the logic.
+
+---
+Peer Review Contributions by: [Eric Gacoki](/engineering-education/authors/eric-gacoki/)
