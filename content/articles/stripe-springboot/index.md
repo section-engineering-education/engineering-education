@@ -244,6 +244,7 @@ var stripe = Stripe(stripePublicKey);
 
 // The items the customer wants to buy
 var purchase = {
+    email:email
     amount: amount,
     featureRequest: featureRequest
 };
@@ -381,16 +382,28 @@ Create a file named `index.html` under the resources section and we will use thi
 
 <body>
 <!-- Display a payment form -->
-<form id="payment-form" th:action="@{/}" th:object="${checkoutForm}" method="post">
-  <p><b>Welcome to the transparent stripe integration</b></p>
-  <p>Email: <input type="text" th:field="*{email}" placeholder="Email address" required /></p>
-  <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}" style="color: red;"></p>
-  <p>Amount: <input type="text" th:field="*{amount}" placeholder="Amount" required /></p>
-  <p th:if="${#fields.hasErrors('amount')}" th:errors="*{amount}" style="color: red;"></p>
-  <p>Feature Request: <input type="text" th:field="*{featureRequest}" placeholder="Feature Request" required /></p>
-  <p th:if="${#fields.hasErrors('featureRequest')}" th:errors="*{featureRequest}" style="color: red;"></p>
-  <p><input type="submit"></p>
-</form>
+<div class="container">
+  <div class="form-card">
+    <form id="payment-form" th:action="@{/}" th:object="${checkoutForm}" method="post">
+      <p><b>Payment details for a product</b></p>
+      <div class="form-control">
+        <input type="text" th:field="*{email}" placeholder="Email address" required />
+        <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}" style="color: red;"></p>
+      </div>
+      <div class="form-control">
+        <input type="text" th:field="*{amount}" placeholder="Amount" required />
+        <p th:if="${#fields.hasErrors('amount')}" th:errors="*{amount}" style="color: red;"></p>
+      </div>
+      <div class="form-control">
+        <input type="text" th:field="*{featureRequest}" placeholder="Feature Request" required />
+        <p th:if="${#fields.hasErrors('featureRequest')}" th:errors="*{featureRequest}" style="color: red;"></p>
+      </div>
+      <p><input type="submit" class="btn btn-primary"></p>
+    </form>
+
+  </div>
+
+</div>
 </body>
 </html>
 ```
@@ -426,21 +439,27 @@ Create a file named `checkout.html` under the resources section which we will us
 </head>
 
 <body>
-<!-- Display a checkout form -->
-<form id="payment-form">
-  <p><b>Welcome To The Transparent Software Developer</b></p>
-  <p>If you hit the pay button, you will be billed <span th:text="${amount}"></span>USD.</p>
-  <div id="card-element"><!--Stripe.js injects the Card Element--></div>
-  <button id="submit">
-    <div class="spinner hidden" id="spinner"></div>
-    <span id="button-text">Pay now</span>
-  </button>
-  <p id="card-error" role="alert"></p>
-  <p class="result-message hidden">
-    Payment succeeded, see the result in your
-    <a href="" target="_blank">Stripe dashboard.</a> Refresh the page to pay again.
-  </p>
-</form>
+<!-- Display a payment form -->
+<div class="container">
+  <div class="form-card">
+    <form id="payment-form">
+      <p><b>Credit card details to complete payment</b></p>
+      <p>Press the pay now button to complete your payment of <span th:text="${amount}"></span>USD.</p>
+          <div id="card-element" class="form-control"><!--Stripe.js injects the Card Element--></div>
+      <button id="submit" class="btn btn-primary">
+        <div class="spinner hidden" id="spinner"></div>
+        <span id="button-text">Pay now</span>
+      </button>
+      <p id="card-error" role="alert"></p>
+      <p class="result-message hidden">
+        Payment succeeded, see the result in your
+        <a href="" target="_blank">Stripe dashboard.</a> Refresh the page to pay again.
+      </p>
+    </form>
+
+  </div>
+
+</div>
 </body>
 </html>
 ```
@@ -449,176 +468,51 @@ Create a file named `global.css` that we will use to color our payment and check
 
 ```css
 /* Variables */
-* {
-    box-sizing: border-box;
+:root{
+    --primary-color: #047aed;
 }
-
-body {
-    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-    font-size: 16px;
-    -webkit-font-smoothing: antialiased;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    height: 100vh;
-    width: 100vw;
+.container{
+    max-width: 1100px;
+    margin: 0 auto;
+    overflow: auto;
+    padding: 0 40px;
 }
-
-form {
-    width: 30vw;
-    min-width: 500px;
-    align-self: center;
-    box-shadow: 0px 0px 0px 0.5px rgba(50, 50, 93, 0.1),
-    0px 2px 5px 0px rgba(50, 50, 93, 0.1), 0px 1px 1.5px 0px rgba(0, 0, 0, 0.07);
-    border-radius: 7px;
-    padding: 40px;
+.form-card{
+    background-color: #fff;
+    color: #333;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    padding: 20px;
+    margin: 10px;
 }
-
-input {
-    border-radius: 6px;
-    margin-bottom: 6px;
-    padding: 12px;
-    border: 1px solid rgba(50, 50, 93, 0.1);
-    height: 44px;
-    font-size: 16px;
-    width: 100%;
-    background: white;
-}
-
-.result-message {
-    line-height: 22px;
-    font-size: 16px;
-}
-
-.result-message a {
-    color: rgb(89, 111, 214);
-    font-weight: 600;
-    text-decoration: none;
-}
-
-.hidden {
-    display: none;
-}
-
-#card-error {
-    color: rgb(105, 115, 134);
-    text-align: left;
-    font-size: 13px;
-    line-height: 17px;
-    margin-top: 12px;
-}
-
-#card-element {
-    border-radius: 4px 4px 0 0 ;
-    padding: 12px;
-    border: 1px solid rgba(50, 50, 93, 0.1);
-    height: 44px;
-    width: 100%;
-    background: white;
-}
-
-#payment-request-button {
-    margin-bottom: 32px;
-}
-
-/* Buttons and links */
-button {
-    background: #5469d4;
-    color: #ffffff;
-    font-family: Arial, sans-serif;
-    border-radius: 0 0 4px 4px;
-    border: 0;
-    padding: 12px 16px;
-    font-size: 16px;
-    font-weight: 600;
+.btn{
+    display: inline-block;
+    padding: 10px 30px;
     cursor: pointer;
-    display: block;
-    transition: all 0.2s ease;
-    box-shadow: 0px 4px 5.5px 0px rgba(0, 0, 0, 0.07);
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+.btn-primary{
+    background-color: var(--primary-color);
+    color: #fff;
+}
+.form-control{
+    margin: 30px 0;
+}
+.form-card input[type='text']{
+    border: 0;
+    border-bottom: 1px solid #b4becb;
     width: 100%;
+    padding: 3px;
+    font-size: 16px;
 }
-button:hover {
-    filter: contrast(115%);
+.form-card input:focus{
+    outline: none;
 }
-button:disabled {
-    opacity: 0.5;
-    cursor: default;
-}
-
-/* spinner/processing state, errors */
-.spinner,
-.spinner:before,
-.spinner:after {
-    border-radius: 50%;
-}
-.spinner {
-    color: #ffffff;
-    font-size: 22px;
-    text-indent: -99999px;
-    margin: 0px auto;
-    position: relative;
-    width: 20px;
-    height: 20px;
-    box-shadow: inset 0 0 0 2px;
-    -webkit-transform: translateZ(0);
-    -ms-transform: translateZ(0);
-    transform: translateZ(0);
-}
-.spinner:before,
-.spinner:after {
-    position: absolute;
-    content: "";
-}
-.spinner:before {
-    width: 10.4px;
-    height: 20.4px;
-    background: #5469d4;
-    border-radius: 20.4px 0 0 20.4px;
-    top: -0.2px;
-    left: -0.2px;
-    -webkit-transform-origin: 10.4px 10.2px;
-    transform-origin: 10.4px 10.2px;
-    -webkit-animation: loading 2s infinite ease 1.5s;
-    animation: loading 2s infinite ease 1.5s;
-}
-.spinner:after {
-    width: 10.4px;
-    height: 10.2px;
-    background: #5469d4;
-    border-radius: 0 10.2px 10.2px 0;
-    top: -0.1px;
-    left: 10.2px;
-    -webkit-transform-origin: 0px 10.2px;
-    transform-origin: 0px 10.2px;
-    -webkit-animation: loading 2s infinite ease;
-    animation: loading 2s infinite ease;
-}
-
-@-webkit-keyframes loading {
-    0% {
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg);
-    }
-    100% {
-        -webkit-transform: rotate(360deg);
-        transform: rotate(360deg);
-    }
-}
-@keyframes loading {
-    0% {
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg);
-    }
-    100% {
-        -webkit-transform: rotate(360deg);
-        transform: rotate(360deg);
-    }
-}
-
-@media only screen and (max-width: 600px) {
-    form {
-        width: 80vw;
-    }
+.hidden{
+    display: none;
 }
 ```
 
