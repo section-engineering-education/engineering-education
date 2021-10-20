@@ -214,7 +214,7 @@ Click Finish after adding the Apache installation directory.
  
 - Right-click on the `Login.html` page, select Run As then Run on Server.
 
-![Run web project on server](/engineering-education/servlet-request-and-servlet-collaboration/runus.PNG)
+![Run web project on server](/engineering-education/servlet-request-and-servlet-collaboration/runus.jpg)
 
 - When TomCat server is selected as shown below. Select `Finish` and restart the server when the screen pops up.
 
