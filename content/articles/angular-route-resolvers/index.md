@@ -175,11 +175,13 @@ const routes: Routes = [
 })
 ....
 ```
+
 In the above routing module, we import the route resolver we previously created to resolve our list of ministries.We then create a route constant of type `Routes`. This constant takes an array of route paths, in our case we've a single route `ministries` which uses the `MinistryComponent` component and being resolved by the `RouteResolver`.  
 
 Now that we've configured our `ministries` route to only return resolved data let's see how we can access it on our component.
 
 Update the `MinistryComponent` component as shown below:  
+
 ```ts
 ...
 import { ActivatedRoute } from '@angular/router';
@@ -203,5 +205,4 @@ export class MinistryComponent implements OnInit {
 In the `MinistryComponent` component, we have imported the `ActivatedRoute` that is used to resolve the activated routes only.We subscribe to this resolved route and only display the template when we have the ministries' data.
 
 ### Conclusion
-
 In this tutorial, we've seen how Angular route resolvers are implemented. We've seen its advantages and why we tend to avoid accessing API calls directly from the component.
