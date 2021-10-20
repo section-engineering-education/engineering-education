@@ -15,7 +15,7 @@ To understand this article better the reader needs to:
 
 #### Java Task Timer Methods
 
-There are three Java Timer Task Methods. They include:
+There are three Java Timer Task Methods. They include;
 
 - cancel() method
 - run() method
@@ -23,23 +23,21 @@ There are three Java Timer Task Methods. They include:
 
 ##### Cancel() Method
 
-This is a boolean data type.
-
-This method cancels a scheduled task in Java. This method means that no task will be executed if it was called before the task was executed, or that no other task will run if the task was to be executed repeatedly.
+This is a boolean data type. The method cancels a scheduled task in Java. This method means that no task will be executed if it was called before the task was executed, or that no other task will run if the task was to be executed repeatedly.
 
 ##### Run() Method
 
-The `run() method` renders the task being executed active.
+The `run() method` renders the task to be executed active.
 
 ##### ScheduleExecutionTime() Method
 
 This method returns the scheduled execution time for the latest actual execution of the task in memory.
 
-Once you have finished downloading Intellij Idea, run it as administrator and then follow the steps on the screen to finish setting it up. After installing the IDE, launch it and click on `New Project`.
+Now, when you have finished downloading Intellij Idea, run it as administrator and then follow the steps on the screen to finish setting it up. After installing the IDE, launch it and click on `New Project`.
 
-Select `java`  then under Java select `Groovy` and click next.
+Select `java`  then under Java, select `Groovy` and click `Next`.
 
-Check the `Create project from template` and click next.
+Check the `Create project from template` and click  `Next`.
 
 On the next screen, enter the name of the project that is `JavaTimerTask` and click `Finish`. Now, the next screen is where you will be able to write your code.
 
@@ -47,7 +45,6 @@ Now you will have an example that schedules a task and alerts the message `Happy
 
 ```JAVA
 package com.company;
-
 import java.util.Calendar;
 import java.util.Timer;
 import java.util.TimerTask;
