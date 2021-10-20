@@ -1,5 +1,22 @@
-### Introduction
-In the imperative programming paradigm in Android, a RecyclerView is a widget used to display numerous items. Normally, developers use a single type of item to populate data in the RecyclerView. Have you ever asked yourself how you can employ different types of data items in the same RecyclerView while maintaining a seamless experience?
+---
+layout: engineering-education
+status: publish
+published: true
+url: /implementing-multiple-viewholders-in-android-using-kotlin/
+title: Implementing multiple ViewHolders in Android using Kotlin
+description: This tutorial takes the reader through the process of implementing multiple ViewHolders in Android using Kotlin. Multiple ViewHolders allows us to display different types of items in the same RecyclerView.
+author: maurine-muthoki
+date: 2021-10-20T00:00:00-14:14
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/implementing-multiple-viewholders-in-android-using-kotlin/hero.png
+    alt: Implementing multiple ViewHolders in Android hero image
+---
+In the imperative programming paradigm in Android, a RecyclerView is a widget used to display scrollable items. Normally, developers use a single type of item to populate data in the RecyclerView.
+<!--more-->
+Have you ever asked yourself how you can employ different types of data items in the same RecyclerView while maintaining a seamless experience?
 
 This is where multiple ViewHolders come in. They allow us to pass different data objects during the RecyclerView callbacks. This way we can create more interactive and scalable applications.
 
@@ -13,16 +30,16 @@ To follow along with this tutorial, you need to:
 By the end of this tutorial, you will be able to:
 - Understand why we need more than one ViewHolder class.
 - Implement two-typed ViewHolders in a single adapter.
-- Manage recyclerView callback methods and their interactions.
+- Manage RecyclerView callback methods and their interactions.
 
 ### Case description
-To demonstrate how we can use multiple ViewHolder classes, we will create a simple application that shows a list of landmarks in a random manner. The landmark item can contain an image or not. 
+To demonstrate how we can use multiple ViewHolder classes, we will create a simple application that displays a list of landmarks. The landmark item can contain an image or not. 
 
-### Creating an Android project
-Build an empty project in Android Studio and give it a name of your choice.
+### Getting started
+Create an empty project in Android Studio and give it a name of your choice.
 
 ### Creating the row items
-"Row" items are the layout files that form a unit item in the recyclerView. Usually, we would use a single row item for each recyclerView. Nevertheless, we can use more than one row item for the same recyclerView. This is the main goal of using multiple viewHolders each corresponding to a single layout.
+"Row" items are the layout files that form a unit item in the RecyclerView. Usually, we would use a single row item for each RecyclerView. Nevertheless, we can use more than one row item for the same RecyclerView. This is the main goal of using multiple viewHolders where each corresponds to a single layout.
 
 #### Layout for item with image
 To begin with, create a layout file named **landmark_with_image.xml** and paste the following code:
@@ -92,7 +109,7 @@ The code above generates a cardView with an image and two textViews, one for the
 
 preview:
 
-![Item with image](item-with-image.png)
+![Item with image](/engineering-education/implementing-multiple-viewholders-in-android-using-kotlin/item-with-image.png)
 
 #### Layout for an item without image
 Create a layout file named **landmark_without_image.xml** and paste the following code:
@@ -149,7 +166,7 @@ Unlike the previous layout, the one above does not contain an image.
 
 preview:
 
-![Item without image](item-without-image.png)
+![Item without image](/engineering-education/implementing-multiple-viewholders-in-android-using-kotlin/item-without-image.png)
 
 > Note: You can create as many layouts as you wish, based on the use case. The more the layouts, the more the viewHolders required.
 
@@ -176,10 +193,10 @@ In the **activity_main.xml** file, add the following code:
 
 preview:
 
-![RecyclerView preview](recyclerview-preview.png)
+![RecyclerView preview](/engineering-education/implementing-multiple-viewholders-in-android-using-kotlin/recyclerview-preview.png)
 
 ### Categorizing the items
-As mentioned earlier, a landmark item can take either of the above layouts depending on whether it has an image or not.
+As mentioned earlier, a landmark item can take either of the layouts above depending on whether it has an image or not.
 
 ```kotlin
 enum class HasImage {
@@ -187,7 +204,7 @@ enum class HasImage {
 }
 ```
 
-The above is an enum class used to determine the category of the landmark. Generally, this will tell the adapter what kind of item to bind in the recyclerView at a given position.
+The above is an enum class used to determine the category of the landmark. Ideally, this will tell the adapter what kind of item to bind in the RecyclerView at a given position.
 
 ### Landmark data model
 Each item should have a generic structure/model defined by a data class.
@@ -202,7 +219,7 @@ data class Landmark(
 ```
 
 ### Setting up RecyclerView Adapter
-An adapter class is responsible for populating the recyclerView accordingly with the data provided.
+An adapter class is responsible for populating the RecyclerView accordingly with the data provided.
 
 ```kotlin
 class LandmarkAdapter(private var landmarks: ArrayList<Landmark>) :
@@ -217,7 +234,7 @@ class LandmarkAdapter(private var landmarks: ArrayList<Landmark>) :
 override fun getItemCount(): Int = landmarks.size
 ```
 
-The above method generates as many items as the number of landmark objects passed in the `landmarks` parameter.
+This method notifies the adapter of how many items to generate, usually the size of the data collection.
 
 Moving on, we'll create two viewHolder classes for the two layout files we created earlier.
 
@@ -246,7 +263,7 @@ inner class LandmarkWithoutImageViewHolder(private val landmarkWithoutImage: Lan
 }
 ```
 
-The above viewHolders hold items of their respective type. They are called in other methods discussed later.
+The above viewHolders hold items of their respective type. They are called in other methods discussed below.
 
 #### Determine the type of item
 The following method is used to determine the type of item in a particular position.
@@ -257,7 +274,7 @@ override fun getItemViewType(position: Int): Int {
 }
 ```
 
-The constants (return values) used above, are defined in an object as shown below:
+These constants (return values) are defined in an object as shown below:
 
 ```kotlin
 private object Const{
@@ -325,7 +342,7 @@ class LandmarkModel {
 The images referenced above, are generated by default when starting a project. You can use your images of choice as well.
 
 ### populating the RecyclerView
-The final step is to show this data to the user.
+The final step is to populate the RecyclerView with the data.
 
 In the **MainActivity.kt** file, paste the following code:
 
@@ -350,9 +367,12 @@ class MainActivity : AppCompatActivity() {
 ### Testing the App
 upon running the app, you should expect to see something similar to this.
 
-![Test App](test-app.png)
+![Test App](/engineering-education/implementing-multiple-viewholders-in-android-using-kotlin/test-app.png)
 
 ### Conclusion
-In this tutorial, we have learned the fundamental concepts of displaying different types of items in a single recyclerView with the use of multiple viewHolders. The knowledge gained in this tutorial can be applied to other more sophisticated use cases with the same goal.
+In this tutorial, we have learned the fundamental concepts of displaying different types of items in a single RecyclerView with the use of multiple viewHolders. The knowledge gained in this tutorial can be applied to other more sophisticated use cases with the same goal.
 
-You can get the full code implementation in this [github repository](https://github.com/MaurineM/multiple-view-holders).
+You can find the full code implementation in this [github repository](https://github.com/MaurineM/multiple-view-holders).
+
+---
+Peer Review Contributions by: [Eric Gacoki](/engineering-education/authors/eric-gacoki/)
