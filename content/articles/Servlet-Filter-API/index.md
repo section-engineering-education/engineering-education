@@ -1,14 +1,24 @@
 
 ### Introduction.
 When an application is pre-and post-processed, the invoked object is filtered. Filters are configured and used when filtering activities are performed. The filter interface is found in the `javax.servlet` package and to create a `Filter` class, we have to `import javax.servlet` and implement the `Filter` interface. several filters can be created to perform different tasks according to the user and developer specifications. 
+### Goals and objectives
+A learner should be able to understand the following after reading this article:
+1. A servlet Filter's definition
+2. The advantages of using filters.
+3. The interfaces of the Filter, such as the `Filter` interface, the `FilterConfing` interface, and so on.
+4. Methods associated with the above interfaces and their functionalities.
+5. Using examples, learn how to use filters in a computer program.
 
 ### Prerequisites
-You will need the following items to go along with this article:
+You will need the following tools to go along with this article:
 - Open-source Java editor installed in your machine, such as Eclipse. You can get it [here](https://www.eclipse.org/downloads/packages/release/2021-06/r).
 - A web browser installed.
 - Server. In my case, I will be using TomCat version 9. Download it from their official [website](https://tomcat.apache.org/).
-- Basic knowledge of core Java is needed.
-- Introduction to a servlet is needed.
+To go along with this article, a learner should have the basics of knowledge of the following:
+1st: 
+- A basic understanding of Java programming
+- An introduction to a servlet is needed.
+- Solid knowledge of how to build and run Java code using any Java IDE and Tomcat or another similar server.
 
 ### Table of contents:
 
