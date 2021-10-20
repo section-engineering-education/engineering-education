@@ -251,7 +251,7 @@ Here are two methods provided by the `RequestDispatcher` interface, namely:
 
 **How it works**
 
-This example shows how `RequestDispatcher` can forward a resource response or include it on a server. Here we use `index. jsp` to get a user response. In this case, `Controller` Servlet checks the entered response if a user has more than 18 years or less. If the user selects `Above18` as the reply, the  `Above18` servlet page will be executed with the help of the `forward()` method. Otherwise, the client browser will remain on the index.JSP page and a denial message will appear, indicating that the user is under the age of 18.
+This example shows how `RequestDispatcher` can forward a resource response or include it on a server. Here we use `index.jsp` to get a user response. In this case, `Controller` Servlet checks the entered response if a user has more than 18 years old or below. If the user selects `Above18`, the  `Above18` servlet page will be executed with the help of the `forward()` method. Otherwise, the client browser will remain on the `index.jsp` page and a denial message will appear, indicating that the user is under the age of 18.
 
 Construct the `ServletDispatcherDemo` project as follows, assuming you know how to create and run a web project using the Eclipse IDE and TomCat server as explained in the [ServletRequest interface example](#servletrequest-interface-example) above.
 
@@ -395,7 +395,7 @@ We assumed you already knew how to use the eclipse IDE and configure the Tomcat 
 [Get project source code here](https://github.com/Evanslodoctor/ServletDispatcher-sourse-code)
 
 ### Conclusion
-In conclusion, we learned some of the `ServletRequest` methods and `ServletDispatcher` methods and how to implement them with the help of examples. We discussed both these interfaces (`ServletRequest` and `ServletDispatcher`) and what they comprise of.
+In conclusion, we learned some of the `ServletRequest` methods and `ServletDispatcher` methods and how to implement them with the help of examples. We discussed both these interfaces (`ServletRequest` and `ServletDispatcher`) and what they comprise.
 
  This article will help you get started with servlet and understand how users send requests to a server. From here, you should be able to use servlet and JSP technology to build your dynamic website.
 
