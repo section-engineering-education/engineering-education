@@ -1,5 +1,5 @@
 ---
-title: mbuthiajn
+title: John Njoka
 type: authors
 github: https://github.com/mbuthiajn/
 ---
