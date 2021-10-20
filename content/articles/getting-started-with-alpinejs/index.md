@@ -1,3 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /getting-started-with-alpinejs/
+title: Getting Started With Alpine.js
+description: This article deals with Alpine.js which is a new, lightweight, JavaScript framework used in web development.
+author: zubair-idris-aweda
+date: 2021-10-20T00:00:00-06:10
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/getting-started-with-alpinejs/hero.png
+    alt: Getting Started With Alpine.js Hero Image
+---
 ### Getting Started With Alpine.js
 ### Introduction
 Alpine.js is a rugged, minimal tool for composing behavior directly in your markup. Think of it like jQuery for the modern web. It is very reactive like Vue and it is very lightweight. Alpine.js is very simple to use and setup as it doesn't require any installation with NPM, just the CDN version works magic.
