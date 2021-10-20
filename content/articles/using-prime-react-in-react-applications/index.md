@@ -13,13 +13,12 @@ But unlike CSS, PrimeReact has pre-defined style in each components, which we ca
 - Modifying our React application
 - Creating a Nav component
 - Making our Navigation Bar responsive
-- Adding PrimeReact components to our project
 
 ### Prerequisites
 For this tutorial:
 - Basic knowledge of React.js
 - Little knowledge on npm
-- Have visual studio code and npm installed 
+- Have visual studio code and npm installed, click [here](https://code.visualstudio.com/) to download visual studio code
 
 ### Goal
 To create a responsive navigation bar using Prime React components in a React.js application.
@@ -211,120 +210,37 @@ The list variable will store what will be displayed on our Navigation bar.
 
 > To know more about Menubar components from [here](https://primefaces.org/primereact/showcase/#/menubar)
 
-The navigation classname is used to change the pre-defined CSS styles of our React project. 
+In the div tag we added a className and gave it the value navigation (we can call the value anything we want). The className value will serve as a link to our external css style sheet, we must create a css file called Nav.css to store our external css styles then import Nav.css in our component so as to make the styles work in our application.   
 The above code makes our Navigation bar responsive on all device screen size.
 We can change the style or theme of our PrimeReact components if it's not styled . You can read more about Prime React theme from [here](https://primefaces.org/primereact/showcase/#/theming)
 
-#### Step 6 - Adding Prime React components to our project
-We can also import and use a ProgressBar component in our project.
-First we import it from primereact 
-
-```javascript
-import { ProgressBar } from 'primereact/progressbar';"
-```
-
-The above code must be placed within the app.js file, then we add the ProgressBar element inside our div tag.
-
-```javascript
-<div classname="App"> 
- <Navigation /> 
- <br /> 
- <ProgressBar value={value} /> 
-</div>. 
-```
-
-This will display our progressbar below our navigation.
-
-ProgressBar has two modes; `determinate` (default) and `indeterminate`. In determinate mode, a value between 0 and 100 is needed to display the progress. 
-
-We can also import and use a InputText component in our project, as highlighted below
-
-```javascript
-import { InputText } from 'primereact/inputtext';"
-```
-
-Like our ProgressBar we also import our InputText inside app.js file, then add it inside our div tag.
- 
- ```javascript
-<div classname="App"> 
- <Navigation /> 
- <br /> 
- <ProgressBar value={value} /> 
- <br />
- <InputText/>
-
-</div>. 
-```
-
-When you refresh your browser, you will see an empty input text under the progressbar.
-
-We can also import and use a Button component in our project.
-We first import in inside our app.js then add it to our div tag
-
-```javascript
-import { Button } from 'primereact/button';". 
-```
-
-Then we import it inside our div tag
-
- ```javascript
- <div classname="App"> 
- <Navigation /> 
- <br /> 
- <ProgressBar value={value} /> 
- <br />
- <InputText/>
- <br />
- <Button label="Click Me" />
-
-</div>.
-```
-
-If you go to your browser you will see a button with the words "Click Me" this button will not be styled. We can add more styles to the button by adding an i tag within it. You can read more about PrimeReact Button components from [here](https://primefaces.org/primereact/showcase/#/button)
-
-The Button element then becomes,
-
-```javascript
- <Button label="Click Me" >
- <i className="pi pi-spin pi-spinner" style={{'fontSize': '4px'}}></i>
- </Button> 
- ```
-
-In summary, our entire code in app.js file is displayed below\
+Our App.js file should look like this below
 
 ```javascript
 import './App.css';
-import 'primereact/resources/themes/vela-blue/theme.css'
-import 'primereact/resources/primereact.min.css'
-import 'primeicons/primeicons.css';
+import "primereact/resources/themes/vela-blue/theme.css";
+import "primereact/resources/primereact.min.css";
+import "primeicons/primeicons.css";
 import Navigation from './component/Nav';
-import { InputText } from 'primereact/inputtext'
-import { Button } from 'primereact/button';
-import { ProgressBar } from 'primereact/progressbar';
 
-const App = () =>{    
-  return(
+function App() {
+  return (
     <div className="App">
-      <Navigation />
-      <br/>
-      <ProgressBar mode="indeterminate" /> 
-      <br/>
-      <InputText/>
-      <Button label="Click" >
-        <i className="pi pi-spin pi-spinner" style={{'fontSize': '4px'}}></i>
-      </Button>  
+      < Navigation />
     </div>
-  )
+  );
 }
+
 export default App;
 ```
 
-> From this tutorial, one should be able to use PrimeReact components. 
+> From this tutorial, one should be able to use PrimeReact to  make responsive navigation bar. 
 
 #### Summary
 We learnt from this tutorial
 * PrimeReact and its uses.
++ How to add PrimeReact components in our applicaton.
 + How to create a responsive navigation bar.
-+ PrimeReact components.
+
 
 
