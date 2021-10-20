@@ -6,7 +6,7 @@ The Tkinter Python library will be used to construct a font chooser application 
 
 ### Table of content.
 - Prerequisite
-- Functions of tkinter
+- Tkinter
 - Graphical User Interface
 - Creating a font chooser app
 - Conclusion
@@ -15,15 +15,13 @@ The Tkinter Python library will be used to construct a font chooser application 
 ### Prerequisite
 To follow along with this tutorial, you will need to have:
 
-- The latest version of [Python3](https://www.python.org/downloads/) installed on your computer system.
+- [Python3](https://www.python.org/downloads/) installed on your computer system.
 - A code editor, i use [Pycharm](https://www.jetbrains.com/pycharm/download/).
 
 ### Functions of Tkinter
 Python's standard GUI library is Tkinter. When Python and Tkinter are integrated, creating graphical user interfaces becomes much faster and easier. 
 
-Tkinter is a useful data analysis tool. Data analysis is the systematic application of statistical tools to explain, show, condense and appraise data.
-
-Tkinter provides geometric widget configuration, which organizes widgets in parent windows for data science.
+Tkinter provides geometric widget configuration, which organizes widgets in parent windows for grahical user interface.
 
 There are three geometry manager classes in Tkinter. These are:
 
@@ -31,12 +29,8 @@ There are three geometry manager classes in Tkinter. These are:
 - `.grid()` : Before inserting widgets in the parent widget, grid() is used to organize them into a table-like layout.
 - `.place()` : This function is used to organize widgets by placing them in precise positions as specified by the programmer.
 
-Tkinter can be used to construct a variety of charts (pie charts, bar charts, and line charts), which are essential for data analysis.
+Tkinter is a fantastic tool for creating graphical user interfaces and applications in python and we will be using it to build the font chooser application.
 
-Tkinter's Combobox can be used to plot data points in charts. You might use `matplotlib` to create dynamic values that change the diagram depending on the values selected in the Combobox.
-
-Tkinter is used in creating GUI applications.
- 
 You can install Tkinter by using the `pip` command.
 
 ```python
@@ -47,11 +41,10 @@ pip install tk
 The graphical user interface is the most common type of user interfaces. One can interact with these interfaces by pointing and clicking on graphics or icons with a mouse, trackpad, or other peripherals.
 
 #### Advantages of the graphical user interface
-- It is simple to use.
+- It is simpler to use compared to Command Line Interface.
 - There is no need to memorize the command lists as it is easy to visualize and remember.
-- It allows more than one application and program to run at the same time.
+- It allows multitasking of more than applications and programs to run simultaneously. 
 - It provides many exceptional support services.
-- It is self-explanatory.
 
 #### Disadvantages of the graphical user interface
 It consumes a lot of computer memory, elements like icon and fonts must be loaded.
@@ -80,8 +73,7 @@ Then we give our font app a name (I used `maji.ico`. You can use your own name i
 
 ```python
 def font_chooser(a):
-user_font.config(
- family=my_listbox.get(my_listbox.curselection()))
+        user_font.config(family=my_listbox.get(my_listbox.curselection()))
 ```
 
 Then we write the `font_chooser` function, which includes defining the font function and configuring the `Listbox` to retrieve the system's current font selection.
@@ -117,9 +109,7 @@ We create a `Listbox` by setting the `my_listbox` variable to a listbox with a s
 
 ```python
 for f in font.families():
-  my_listbox.insert('end', f)
-
-
+        my_listbox.insert('end', f)
 my_listbox.bind('<ButtonRelease-1>', font_chooser)
 root.mainloop()
 ```
@@ -135,5 +125,5 @@ And the font chooser interface will look like this:
 In this tutorial, we reviewed the role of Tkinter in data science and built a font chooser application.
 
 ### Reference
-[Python GUI programming with Tkinter](https://www.perlego.com/book/721869/python-gui-programming-with-tkinter-pdf)
+[Python GUI programming with Tkinter](https://www.perlego.com/book/721869/python-gui-programming-with-tkinter-pdf) by Alan D Moore
 
