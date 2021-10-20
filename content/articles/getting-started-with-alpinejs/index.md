@@ -22,6 +22,14 @@ Alpine.js is not a replacement for full-fledged frameworks like Vue, React or An
 
 Alpine.js offers very great flexibility such that you get to keep your markup as it is and sprinkle behavior where ever you want, at no cost.
 
+### Table Of Contents
+- [Introduction to Alpine.js](#introduction)
+- [Alpine.js installation and project design](#alpinejs-installation)
+- [Event handling in Alpine.js](#event-handling-in-alpinejs)
+- [State management in Alpine.js](#state-management-in-alpinejs)
+- [Templating in Alpine.js](#templating-in-alpinejs)
+- [Conclusion](#conclusion)
+
 ### Prerequisites
 To follow along with this tutorial, you'll need:
 - A good browser, [Chrome](https://www.google.com/chrome/) is advised.
