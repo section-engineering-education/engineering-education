@@ -10,10 +10,9 @@ these effects are dependent on the type of information being displayed.
 
 - [Key takeaways](#key-takeaways)
 - [Pre-requisites](#pre-requisites)
-- [Brief overview](#brief-overview)
-- [Create Folder structure](#create-folder-structure)
-- [Overall Webpage Structure](#overall-webpage-structure)
-- [Add styling](#add-styling)
+- [Project folder structure](#project-folder-structure)
+- [Overall webpage structure](#overall-webpage-structure)
+- [Add styling the webpage](#add-styling-the-webpage)
 - [Add a notification to the window](#add-a-notification-to-the-window)
 - [Create functions to search for the classes in the HTML file](#create-functions-to-search-for-the-classes-in-the-html-file)
 - [Modify the HTML file to add the notification](#modify-the-html-file-to-add-the-notification)
