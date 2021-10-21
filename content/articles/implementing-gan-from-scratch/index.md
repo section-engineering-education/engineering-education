@@ -83,6 +83,8 @@ Imagine a scenario where a thief wants to steal a painting from a museum and rep
 
 ![architecture](/engineering-education/implementing-gan-from-scratch/architecture.JPG)
 
+[Image source](https://livebook.manning.com/book/gans-in-action/chapter-3/v-3/10)
+
 The architecture of GAN consists of the following components:
 1. **Training Dataset$(x)$**: The real data sample we train our Discriminator network to distinguish between real and fake data. The type of data you want to generate depends on your training dataset. 
 2. **Random Noise$(z)$**: It acts as a starting point (raw input) to our Generator network. This noise gets transformed into fake data with the help of the Generator.
