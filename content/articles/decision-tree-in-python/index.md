@@ -6,7 +6,7 @@ url: /decision-tree-in-python/
 title: Decision Trees in Python
 description: This article will provide a detailed information on decision trees in python and how to use them in classifications and regression problems.
 author: stanley-juma
-date: 2021-10-13T00:00:00-07:59
+date: 2021-10-21T00:00:00-06:32
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -55,9 +55,8 @@ These criteria are:
 - Information Gain
 - Gini Index
    
-
 ### Information Gain
-Information Gain measures how the **Entropy** of a set S is reduced after splitting it into the feature classes, say A. Information gain determines how much information we obtain by choosing a particular attribute and splitting our tree on it. We get information gain by finding the difference between the *entropy* before and the *entropy* after the split, i.e.,
+Information Gain measures how the **Entropy** of a set S is reduced after splitting it into the feature classes, say A. Information gain determines how much information we obtain by choosing a particular attribute and splitting our tree on it. We get `information gain` by finding the difference between the *entropy* before and the *entropy* after the split, i.e.,
   
 **I.G = Entropy(Before split) - [Weighted entropy(after split)]**
 
@@ -93,12 +92,9 @@ To calculate the Gini index, we use the following formula.
 
 Gini Index = 1 -  $ \sum _ { i = 1 } ^ { N } $ P<sub>*i*</sub></sub> <sup>*2*</sup>
 
-Working with the Gini index, we split our tree on the feature with a minor Gini index.
-
-Using an example, let us understand how the Gini index works.
+Working with the Gini index, we split our tree on the feature with a minor Gini index. Using an example, let us understand how the Gini index works. We will use the above dataset to calculate the Gini index for each feature.
 
 ![data image](/engineering-education/decision-tree-in-python/data-image.png)
-Using the above dataset, let us calculate the Gini index for each feature.
 
 
 We shall start by calculating the Gini index for the Weather column:
@@ -202,7 +198,8 @@ Now that we know the intuition behind the decision tree, it is time to go an ext
 
 ### Implementing a decision tree in Python
 To get started, let us download the dataset we are going to work with [here](https://github.com/Daniel695/datasets.git)
-Now that our data has is downloaded, let us import the necessary libraries.
+
+Now that our data has been downloaded let us import the necessary libraries.
 Below is the code that carries out this task.
 
 ### Importing libraries
@@ -222,8 +219,7 @@ The dataset we have just downloaded is in `CSV ` format, and thus we import it t
 our_data = pd.read_csv("/content/drive/MyDrive/data.csv")
 
 ```
-Now that our data is downloaded, let us look at the first few samples part of it.
-To do this, we use the `head()` function. This function prints the first five observations.
+Now that our data is downloaded let us look at the first few samples part of it. To do this, we use the `head()` function. This function prints the first five observations.
 
 ```python
 our_data.head()
@@ -252,9 +248,7 @@ Upon executing we obtain:
 ![our-data](/engineering-education/decision-tree-in-python/our-data.drop.png)
 The RowNumber, CustomerId, and Surname were eliminated from our dataset.
 
-Also, we need to notice that our dataset consists of object data types on the Geography and Gender columns. Therefore, we need to encode these columns into a numeric data type.
-
-To get these columns encoded, we run the code below.
+Also, we need to notice that our dataset consists of object data types on the Geography and Gender columns. Therefore, we need to encode these columns into a numeric data type. To get these columns encoded, we run the code below.
 
 ```Python
 from sklearn.preprocessing import LabelEncoder
