@@ -44,7 +44,7 @@ Let us assign a value to a variable:
 
 ```
 
-The variable "name" takes a single string value of “foo” and also variable "pi" takes a single double value of 3.14. The question is, can a block of code be assigned as a value to a variable name without creating an instance of the class. 
+The variable "name" takes a single string value of “foo” and a variable "pi" takes a single double value of 3.14. The question is, can a block of code be assigned as a value to a variable name without creating an instance of the class? 
 
 This is not possible in Java as the only instance of an object can only be assigned to a variable. Let us imagine a block class method is assigned to a variable.
 
