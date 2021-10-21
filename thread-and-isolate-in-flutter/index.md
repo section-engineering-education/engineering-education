@@ -3,7 +3,7 @@
 Threads and isolates are two of the essential abstractions you will need to know when developing apps in Flutter. They allow developers to utilize multicore processors, improve user experience by reducing UI stuttering, and reduce battery consumption on mobile devices. 
 
 ### Topics to handle
-This article describes how to use the Dart Thread and Isolate classes in your Flutter application. The goal is to give you a deeper understanding of what they are and when appropriate to use them.
+This article describes how to use the Dart Thread and Isolate classes in your Flutter application. The goal is to give you a deeper understanding of and when appropriate to use them.
 
 ### Prerequisites
 - Visual Studio or any code editor installed.
@@ -14,7 +14,7 @@ This article describes how to use the Dart Thread and Isolate classes in your Fl
 ### Isolates in Flutter: 
 You can use isolates together with threads to improve the performance of your application and reduce battery consumption on mobile devices. Isolates are similar to other programming languages' threading concepts, but they have a few key differences.
 
-You can use the Isolate API to spawn new isolates, you can pass messages between an isolate and its parent thread(s), you are not able to directly access shared mutable state from within an isolate.
+You can use the Isolate API to spawn new isolates; you can pass messages between an isolate and its parent thread(s), you are not directly access shared mutable state from within an isolate.
 
 To demonstrate their usage, we will build a simple counter-demo: An application that starts with an initial value at 0 and allows the user to increment or decrement that value.
 
@@ -203,11 +203,11 @@ Here is an example of how you can call this from Swift:
 ```
 
 ### Conclusion
-The reality is that you can use threads in Flutter to help you with the performance of your application. Since you are using Dart, you cannot do it directly inside a widget; instead, you need to create an isolate. 
+The reality is that you can use threads in Flutter to help you with the performance of your application. However, since you are using Dart, you cannot do it directly inside a widget; instead, you need to create an isolate. 
 
-You also have different options available if you do not want any threading at all or if you want some threading, you can use the Isolate. The idea is that you will create a new thread that will run in parallel with your main application code.
+You also have different options available if you do not want any threading or if you want some threading, you can use the Isolate. The idea is that you will create a new thread that will run in parallel with your main application code.
 
-It would be best if you kept in mind that you cannot share any state between both threads but instead, you have to communicate by messaging or passing data through channels.
+It would be best to keep in mind that you cannot share any state between both threads but instead, you have to communicate by messaging or passing data through channels.
 
 
 
