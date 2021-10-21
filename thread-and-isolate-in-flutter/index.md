@@ -68,10 +68,7 @@ static MyIsolate _isolate ;
   ```
 
 
-  - Here,
-  We show how to pass a parameter from the main thread to the Isolate thread. Notice that this argument must be serializable. It is not possible to send Future s or Stream s across an Isolate boundary. If you do want to pass a
-  Future along,
-  see the next section.
+  - Here, We show how to pass a parameter from the main thread to the Isolate thread. Notice that this argument must be serializable. It is not possible to send Future s or Stream s across an Isolate boundary. If you do want to pass a Future along, see the next section.
 
   ```dart
   void incrementCounter(int delta, bool start) { 
@@ -94,10 +91,8 @@ static MyIsolate _isolate ;
   // [END isolate] }
   ```
 
-
   - The Isolate can also pass messages through to the main thread. These messages must be Serializable. If you want an event
   back from the isolated class, see Responding To Messages And Events.
-
 
   ```dart
   void incrementCounter() { 
@@ -142,9 +137,7 @@ static MyIsolate _isolate ;
 
   We also provide a special type of function called a ProviderFunction.A ProviderFunction can be called from the main
   thread, and it returns a non - Serializable value to the main thread. This is useful for cases where you want to
-  return an object or data which is not serialized by
-  default (
-  for example, a std::shared_ptr).
+  return an object or data which is not serialized by  default (for example, a std::shared_ptr).
 
   Here is an example:
   ```dart
@@ -175,15 +168,15 @@ static MyIsolate _isolate ;
   _counter += newValue return
   IncrementCounterProviderFunction ( callback : this . onUpdate , messageType : 0 , dataType : 1 ) ; }
   ```
+  
   This makes it easier to encapsulate and group common callback functions, as opposed to having one
   function
   for each different combination of parameters.
 
-  Note:
-  The IncrementCounterProviderFunction(or ProviderFunction) is a utility  the function provided by NGMessageComposeViewController, not the Isolate. To simplify the code, however, we provide this
-  convenience method as it allows the developer to write less boilerplate code.
+  Note:  The IncrementCounterProviderFunction(or ProviderFunction) is a utility  the function provided by NGMessageComposeViewController, not the Isolate. To simplify the code, however, we provide this  convenience method as it allows the developer to write less boilerplate code.
 
   Here is an example of how you might call this from Objective - C:
+  
 ```dart
   @interface ViewController: UIViewController < UITableViewDataSource, UITableViewDelegate> @property(strong, nonatomic)
     NSMutableArray * idsToUpdate;
@@ -193,6 +186,7 @@ static MyIsolate _isolate ;
     _isolate . send (UITableViewDelegate,  NGMessageComposeViewControllerDelegate> { @public id<IncrementCounterProviderFunction> _incrementCounterCallback; id
       <IncrementCounterCallback> _incrementCounterCallbackWithMessageTypeAndDataTypes; } @end
 ```
+
 Here is an example of how you can call this from Swift:
 ```swift
         /// Sends a message to update the value. func incrementValue () -> IncrementValueProvider { return
