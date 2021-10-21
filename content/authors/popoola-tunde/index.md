@@ -2,5 +2,4 @@
 title: Popoola Tunde Malik
 type: authors
 ---
-
-Popoola Tunde malik Software Engineer & Technical writer, with focus in solving real life problem with Technology by creating AI powered web-based System.
+Popoola Tunde malik is a software engineer & technical writer whose focus is on solving real-life problems using technology by creating AI-powered web-based systems.
