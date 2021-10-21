@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/local-dns-resolver-to-redirect-all-dns-requests/hero.png
     alt: DNS Resolver Requests example image
 ---
-A **DNS query**, also known as a **DNS request**, is a request for information from a user's computer to a DNS server (DNS client). These requests are made to acquire the IP address associated with a domain name. A DNS client requests DNS servers to retrieve the domains IP address when visiting an environment.
+A **DNS query**, also known as a **DNS request**, is a request for information from a users computer to a DNS server (DNS client). These requests are made to acquire the IP address associated with a domain name. A DNS client requests DNS servers to retrieve the domains IP address when visiting an environment.
 <!--more-->
 When configuring a home network, one can choose to enable just the Unbound DNS service on OPNsense to be accessible while banning access to all other DNS servers. 
 
