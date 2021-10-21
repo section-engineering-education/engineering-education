@@ -81,7 +81,7 @@ Imagine a scenario where a thief wants to steal a painting from a museum and rep
 
 #### GAN architecture
 
-![architecture](/engineering-education/implementing-gan-from-scratch/architecture.jpg)
+![architecture](/engineering-education/implementing-gan-from-scratch/architecture.JPG)
 
 The architecture of GAN consists of the following components:
 1. **Training Dataset$(x)$**: The real data sample we train our Discriminator network to distinguish between real and fake data. The type of data you want to generate depends on your training dataset. 
