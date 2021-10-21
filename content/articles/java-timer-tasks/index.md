@@ -129,9 +129,9 @@ public class Main {
 The output of the code now is as below;
 
 ```
-54
 55
 56
+57
 58
 59
 Happy Birthday John Doe
