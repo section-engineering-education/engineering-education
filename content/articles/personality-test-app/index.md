@@ -8,19 +8,19 @@ There are several indices for testing people's identities, but we focus our test
 - Sensing or Intuitive
 - Judging or Perceiving
 - Thinking or Feeling
-At the end of each of the four sections, we pick the highest value from each of the sections above to compute a personality identity type. The identity types are divided into 16. You can learn more about the types here. 
+At the end of each of the four sections, we pick the highest value from each of the sections above to compute a personality identity type. The identity types are divided into 16. You can learn more about the types here.
 
 ### Prerequisite
 - Python 3.0 and above
 - A text editor
-- [Personality test questions from Myers Briggs](https://pdfcoffee.com/the-myers-test-pdf-free.html) 
+- [Personality test questions from Myers Briggs](https://pdfcoffee.com/the-myers-test-pdf-free.html)
 
 ### Building the App
 #### Create a Python file
 The First Step towards building the test app is to create a python file. I will call mine personality.py
 
 #### Import the python module sys
-In this module, we would use the exit() function to terminate the first interactive option we want to give our users. 
+In this module, we would use the exit() function to terminate the first interactive option we want to give our users.
 
 ```python
 import sys
@@ -147,43 +147,44 @@ b.latitude, freedom
 Within the same function, we set variables to keep track of user’s options, which helps us compute the personality identities as they enter them. The variables are meant to count the occurrence of question numbers,  A’s and B’s and then use that to compute the identity accordingly.
 
 ```python
-count_of_a: int = 0
-count_of_b: int = 0
-personality_dichotomy: str = ''
-count = 0
+    count_of_a: int = 0
+    count_of_b: int = 0
+    personality_dichotomy: str = ''
+    count = 0
 ```
 
 #### Set counters to zero if not letter A or B
-This code snippet below is meant to keep the counters unchanged when wrong input is entered. 
+This code snippet below is meant to keep the counters unchanged when wrong input is entered.
 
 ```python
-for question in questions:
-       answer = ''
-       while not (answer == 'A' or answer == 'B'):
-              count_of_a = 0
-              count_of_b = 0
+    for question in questions:
+        answer = ''
+        while not (answer == 'A' or answer == 'B'):
+            count_of_a = 0
+            count_of_b = 0
 ```
 
 #### Exception handling
 This code snippet in the function handles the problem of incorrect input from the user. We only want the user to enter A or B. If our expected letter is entered, we count its occurrence.
+
 ```python
-              try:
+            try:
                      answer = input(question).upper()
                      if not (answer == 'A' or answer == 'B'):
                      raise ValueError("Invalid input")
-              except ValueError as error:
+            except ValueError as error:
                      print(error)
-              else:
-                     if answer == 'A':
-                            count_of_a = count_of_a + 1
+            else:
+                if answer == 'A':
+                    count_of_a = count_of_a + 1
                      if answer == 'B':
                             count_of_b = count_of_b + 1
                      count = count + 1
-```              
+```
 
 #### Compute the identities with if statement
 We use our variable counters and if statements to compute the personality identity.
-The sectioning of the questions is in four parts and five questions each, making a total of 20 questions. We compute the dominant personality identity at every section of the test.  
+The sectioning of the questions is in four parts and five questions each, making a total of 20 questions. We compute the dominant personality identity at every section of the test.
 
 ```python
 
@@ -193,13 +194,13 @@ The sectioning of the questions is in four parts and five questions each, making
                      else:
                             personality_dichotomy = personality_dichotomy + 'I '
               else:
-                     if count == 10:
-                            if count_of_a > count_of_b:
-                                   personality_dichotomy = personality_dichotomy + 'S '
-                             else:
+                    if count == 10:
+                        if count_of_a > count_of_b:
+                            personality_dichotomy = personality_dichotomy + 'S '
+                            else:
                                    personality_dichotomy = personality_dichotomy + 'N '
               else:
-                     if count == 15:
+                    if count == 15:
                             if count_of_a > count_of_b:
                                    personality_dichotomy = personality_dichotomy + 'T '
                             else:
@@ -213,10 +214,10 @@ The sectioning of the questions is in four parts and five questions each, making
 
  ```
 
-#### Call the display function. 
+#### Call the display function.
 
- ```python 
-       display (personality_type)        
+ ```python
+       display (personality_type)
 ```
 
 #### Function for Exiting the Application
