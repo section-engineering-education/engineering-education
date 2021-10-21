@@ -79,7 +79,7 @@ GANs are the class of ML techniques that consist of two simultaneously trained n
 
 Imagine a scenario where a thief wants to steal a painting from a museum and replace it with a fake one, and there is a curator who has a job to detect whether the painting is real or fake. There will be a competition between the thief and curator, both of them will have an adversarial relationship. The thief is **Generator**, and the curator is **Discriminator** in our case.
 
-#### GAN Architecture
+#### GAN architecture
 
 ![architecture](/engineering-education/implementing-gan-from-scratch/architecture.jpg)
 
