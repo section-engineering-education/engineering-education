@@ -47,7 +47,6 @@ static MyIsolate _isolate ;
 
   - In the following example, we demonstrate how to pass a message from the main thread through an Isolate and back. The purpose of this is to allow updates to isolated data without breaking the Isolate's encapsulation.
 
-
   ```dart
   void incrementCounter(MyMessage msg) { // [START isolate] 
   _isolate . send ( new IncrementCounter ( currentCounter :
@@ -136,10 +135,13 @@ static MyIsolate _isolate ;
 
 
   We also provide a special type of function called a ProviderFunction.A ProviderFunction can be called from the main
-  thread, and it returns a non - Serializable value to the main thread. This is useful for cases where you want to
+  thread, and it returns a non - Serializable value to the main thread. 
+  
+  This is useful for cases where you want to
   return an object or data which is not serialized by  default (for example, a std::shared_ptr).
 
   Here is an example:
+  
   ```dart
   /// Sends a message to update the counter with a value of newValue and /// with isStarting set to true if start
   the parameter is non-null.
@@ -170,29 +172,28 @@ static MyIsolate _isolate ;
   ```
   
   This makes it easier to encapsulate and group common callback functions, as opposed to having one
-  function
-  for each different combination of parameters.
+  function for each different combination of parameters.
 
   Note:  The IncrementCounterProviderFunction(or ProviderFunction) is a utility  the function provided by NGMessageComposeViewController, not the Isolate. To simplify the code, however, we provide this  convenience method as it allows the developer to write less boilerplate code.
 
   Here is an example of how you might call this from Objective - C:
   
 ```dart
-  @interface ViewController: UIViewController < UITableViewDataSource, UITableViewDelegate> @property(strong, nonatomic)
-    NSMutableArray * idsToUpdate;
-    @end /// Sends a message to update the counter. 
-    -( void ) sendUpdateCounter : ( int ) count callback : (
-    IncrementCounterCallback ) callback { // [START isolate] 
-    _isolate . send (UITableViewDelegate,  NGMessageComposeViewControllerDelegate> { @public id<IncrementCounterProviderFunction> _incrementCounterCallback; id
-      <IncrementCounterCallback> _incrementCounterCallbackWithMessageTypeAndDataTypes; } @end
+@interface ViewController: UIViewController < UITableViewDataSource, UITableViewDelegate> @property(strong, nonatomic)
+NSMutableArray * idsToUpdate;
+@end /// Sends a message to update the counter. 
+-( void ) sendUpdateCounter : ( int ) count callback : (
+IncrementCounterCallback ) callback { // [START isolate] 
+_isolate . send (UITableViewDelegate,  NGMessageComposeViewControllerDelegate> { @public id<IncrementCounterProviderFunction> _incrementCounterCallback; id
+<IncrementCounterCallback> _incrementCounterCallbackWithMessageTypeAndDataTypes; } @end
 ```
 
 Here is an example of how you can call this from Swift:
 ```swift
-        /// Sends a message to update the value. func incrementValue () -> IncrementValueProvider { return
-        IncrementValueProvider( callback : self.onIncrementValue, messageType: 0, dataType: 1 ) } /// Increments the
-        value by a given amount. func incrementBy (amount: Int) { // [START isolate] let provider =
-        IncrementValueProvider( callback: self.onUpdate, messageType: 0,Thread and Isolate in flutter.
+/// Sends a message to update the value. func incrementValue () -> IncrementValueProvider { return
+IncrementValueProvider( callback : self.onIncrementValue, messageType: 0, dataType: 1 ) } /// Increments the
+value by a given amount. func incrementBy (amount: Int) { // [START isolate] let provider =
+IncrementValueProvider( callback: self.onUpdate, messageType: 0,Thread and Isolate in flutter.
 
 ```
 
