@@ -8,8 +8,6 @@ Timer Tasks are important since they enable a program to be scheduled for later 
 
 ### Table of contents
 
-- [INTRODUCTION](#introduction)
-- [Table of contents](#table-of-contents)
 - [Prerequisites](#prerequisites)
 - [Java timer task methods](#java-timer-task-methods)
     - [Cancel() Method](#cancel-method)
