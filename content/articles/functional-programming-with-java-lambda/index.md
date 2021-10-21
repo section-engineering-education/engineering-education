@@ -58,7 +58,7 @@ myfunction ablockOfCode = public void perform(){
 
 ```
 
-But with Java functional programming assigning a block of code to a variable is possible. Let us consider the code above with lambdas expressions.
+With Java functional programming, assigning a block of code to a variable is possible. Let us consider the code above with lambdas expressions.
 
 To represent the code above in lambdas expression, a lot of elements in the block of code can be removed.
 
