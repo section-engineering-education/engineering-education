@@ -1,5 +1,5 @@
 ### Introduction
-#### Topics to handle:
+#### Key take aways.
 - What is an email validator?
 - Explaining how an email validator works.
 - Create a simple app to show email validator.
@@ -48,22 +48,17 @@ dependencies:
 import 'package:email_validator/email_validator.dart'
 ```
 
-### An Example in Flutter
+### Project overview
+The project will have a submision form integrated with the `email validator` package that listens to user input. When the user enters the inputs an email or the password, the email validator listens throughout if the data is valid with the help of the validator package.
 
-### Brief explanation of what the project does
-When the user enters input, whether the email or the password, the email validator listens throughout if the data is valid with the help of the validator.
-
-- Step1. Create a new flutter project:
-open your terminal and type the following
-The code below creates a new flutter project.
+- Step1. Create a new flutter project.
+open your terminal and execute the following command to create a new flutter project.
 
 ```cmd
 flutter create my-project-name
 ```
 
-- Step2. Replace all the code in the main dart with this code:
-
-This is where all the code we need to run for the page is. This Page contains : text field, button, labels amongst other widgets.
+- Step2. Replace all the code in the main dart with the snippet below:
 
 ```dart
 //import for all the packages required
@@ -155,8 +150,10 @@ class _FirstPageState extends State<MyHomePage> {
 }
 ```  
 
-- Step3. Create secondpage. dart 
-For this page, Users will land on it if the email entered is valid.
+This is where all the code we need to run for the page is. This Page contains : `text field`, `button`, `labels` amongst other widgets.
+
+- Step3. Create a second page to navigate to after the validation.
+Create a new file in the lib folder and call it `secondpage.dart`. In the same file, add the snippets below.
 
 ```dart
 //import are here
@@ -179,7 +176,7 @@ class SecondScreen extends StatelessWidget {
 ```
 
 - Step4. Run the application to check the validation
-To run the code to confirm if the email validator works as the expected type
+At this point, we need to confim if the application works perfectly and our validaor works as desired. You need to ensure you have an emulator setup or a mobile device setup to run the application. Execute the command below to run the application.
 
 ```cmd
 flutter run 'name-of-the-device'
@@ -193,12 +190,12 @@ flutter run -d
 
 Below are screenshots showing the expected results
 
-![Trying login without filling in any detail](/engineering-education/how-to-validate-emails-in-flutter/missingemail.jpg)
-![inValid email input](/engineering-education/how-to-validate-emails-in-flutter/invalidemail.jpg)
+![Trying login without filling in any detail](missingemail.jpg)
+![inValid email input](invalidemail.jpg)
 
-![Valid email input](/engineering-education/how-to-validate-emails-in-flutter/validemail.jpg)
+![Valid email input](validemail.jpg)
 
-![After running and valid email](/engineering-education/how-to-validate-emails-in-flutter/validatedemail.jpg)
+![After running and valid email](validatedemail.jpg)
 
 
 For more details on the project, feel free to Reachout @ [this GitHub repository](https://github.com/jonikano/).
