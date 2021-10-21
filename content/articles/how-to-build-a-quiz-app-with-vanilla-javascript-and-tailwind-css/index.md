@@ -1,4 +1,3 @@
-
 This tutorial will show you how to build a quiz app with HTML, CSS, JavaScript, and Tailwind CSS without using any JS frameworks. I will also style the app with CSS3 and Tailwind CSS.
 
 ### Prerequisites
@@ -38,11 +37,11 @@ module.exports = {
 }
 ```
 
-Then, you run the command below to create the tailwind configuration file:
+Then, run the command below to create the tailwind configuration file:
 
 `npx tailwindcss init`
 
-Next, you have to create some folders. You can create a `tailwind.css` file in your `src/css` folder. Copy and paste the tailwind base packages below inside this file.
+Next, you have to create some folders. You can create a `tailwind.css` file in your `src/css` folder. Copy and paste the tailwind base packages below inside this file:
 
 ```css
 @tailwind base;
@@ -79,20 +78,22 @@ Your `package.json` file will now look like this:
 }
 ```
 
-Lastly, you need to run the command below in your terminal, and then Tailwind CSS will be set up in your application.
+Lastly, run the command below in your terminal, and then Tailwind CSS will be set up in your application.
 
 `npm run tw:build`
 
-You can create your `index.html` in your `public/css` folder. Your `style.css` will be in your `src/css` folder. Your app directories may look like this:
+You can create your `index.html` in your `public/css` folder. Your `style.css` will be in your `src/css` folder. The app directories may look like this:
 
 
 
-Now, you are ready to build your quiz app.
+At this point, you are ready to start building your quiz app.
 
 ### Designing the Quiz App
-Our quiz app will have a start button that will direct you to the questions along with four options. The correct answer tab will turn green when chosen/clicked, as the other wrong answer tab turn red when choosing an alternative to style several app components.
+Our quiz app will have a start button that will direct you to the questions along with four options. The correct answer tab will turn green when chosen/clicked, as the other wrong answer tab turns red when choosing an alternative to style several app components.
 
-A `next` button will also pop up, which will direct the user to the next question and options page. You can link Tailwind CSS to your HTML with the code below:
+A `next` button will also pop up, which will direct the user to the next question and options page. 
+
+You can link Tailwind CSS to your HTML with the code below:
 
 ```html
 `<link rel="stylesheet" href="./css/tailwind.css">`
@@ -295,9 +296,10 @@ const setNextQuestion = () => {
 }
 ```
 
-You also need to create an event listener for the next button so that when the user clicks it, the next question will display.
+You also need to create an event listener for the `next` button so that when the user clicks it, the next question will display.
 
-We will do this by incrementing the `currentQuestionIndex` and calling the `setNextQuestion` function. Here is the code below:
+We will do this by incrementing the `currentQuestionIndex` and calling the `setNextQuestion` function:
+
 ```js
 nextButton.addEventListener('click', () => {
     currentQuestionIndex++
@@ -306,11 +308,11 @@ nextButton.addEventListener('click', () => {
 ```
 
 #### The `displayQuestion` function
-Now, we have to create a `displayQuestion` function to display the questions and answer options. You will replace that dummy text in the question and answers container with actual data from the questions array we created earlier.
+Now, we create a `displayQuestion` function to display the questions and answer options. You will replace that dummy text in the question and answers container with actual data from the questions array we created earlier.
 
 We will create a button for the answer options with `document.createElement(‘button’)`. This function will contain a conditional statement that will check if the answer is correct. If so, then it should call the `correct` class.
 
-You also have to create an event listener for the button and call the `chooseAnswer` function that we will create later. Here is the code for the `displayQuestion` function below:
+You also have to create an event listener for the button and call the `chooseAnswer` function that we will create later:
 
 ```js
 const displayQuestion = (question) => {
@@ -330,7 +332,7 @@ const displayQuestion = (question) => {
 ```
 
 #### The `resetState` function
-This function will reset everything related to your form, questions and body back to their default state everytime the user sets a new question. Here is the code for this function below:
+This function will reset everything related to your form, questions and body back to their default state everytime the user sets a new question. Here is the code for this function:
 
 ```js
 const resetState = () => {
@@ -346,7 +348,13 @@ In the function above, we ensured a `next` button appears as soon as the user cl
 We need to create the function to select an answer when one of the option buttons is clicked.
 
 #### The `chooseAnswer` function
-First, you have to target the answer button the user clicks on by creating a variable like this: `const selectedButton = e.target`. Then, you can just get a variable `correct` which will be equal `selectedButton.dataset.correct`. Next, you need to loop through the other buttons and set the class for them. You are going to create an array from the `answerButtonsElement.children`. The `answerButtonsElement.children` is returning a live collection, and it updates on its own, so you have to convert it to an array to make it easier to loop through each button with the `forEach` function. You then call the `setStatusClass` function, which we will create in a bit and pass in `button.dataset.correct`, determining if the answer picked is the right one. You can also use a conditional statement to convert the next button to a restart button if the user gets to the last question. The test then restarts once the restart button is clicked.  Here is the code for the `chooseAnswer` function below:
+First, you have to target the answer button the user clicks on by creating a variable like this: `const selectedButton = e.target`.Then, you can just get a variable `correct` which will be equal `selectedButton.dataset.correct`.
+
+Next, you need to loop through the other buttons and set the class for them. You are going to create an array from the `answerButtonsElement.children`. The `answerButtonsElement.children` is returning a live collection, and it updates on its own, so you have to convert it to an array to make it easier to loop through each button with the `forEach` function.
+
+You then call the `setStatusClass` function, which we will create in a bit and pass in `button.dataset.correct`, determining if the answer picked is the right one.
+
+You can also use a conditional statement to convert the `next` button to a `restart` button if the user gets to the last question. The test then restarts once the `restart` button is clicked.  Here is the code for the `chooseAnswer` function:
 
 ```js
 const chooseAnswer = (e) => {
@@ -365,8 +373,10 @@ const chooseAnswer = (e) => {
 
 ```
 
-The `setStatusClass` function
-First thing you need to do is to call the `ClearStatusClass` function which we will create after this and pass in `element`. Then you use a conditional statement to actually check if the answer picked is correct. If it is, just add the `correct` class else, add the `wrong` class. Here is the code below:
+#### The `setStatusClass` function
+First thing you need to do is to call the `ClearStatusClass` function which we will create after this and pass in `element`. Then you use a conditional statement to actually check if the answer picked is correct. If it is, add the `correct` class, else, add the `wrong` class.
+
+Below is the code:
 
 ```js
 const setStatusClass = (element, correct) => {
@@ -379,7 +389,7 @@ const setStatusClass = (element, correct) => {
 }
 
 ```
-Here is the code for the `clearStatusClass` function:
+`clearStatusClass` function code is as shown below:
 
 ```js
 const clearStatusClass = (element) => {
