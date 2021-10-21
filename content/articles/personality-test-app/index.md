@@ -30,6 +30,7 @@ import sys
 We will use the function declared here to display our user's personality identity after the test.
 
 ```python
+
 def display(personality_type):
     print(f"Your personality type is -> {personality_type}")
 ```
@@ -38,6 +39,7 @@ def display(personality_type):
 This function will implement all our logic. So we have to store our test questions into a list.
 
 ```python
+
 def run():
     questions: list = [
         """
@@ -141,97 +143,140 @@ a.control, govern or
 b.latitude, freedom
 """
     ]
-```
 
-#### Keep track of the user's input.
-Within the same function, we set variables to keep track of user’s options, which helps us compute the personality identities as they enter them. The variables are meant to count the occurrence of question numbers,  A’s and B’s and then use that to compute the identity accordingly.
-
-```python
     count_of_a: int = 0
     count_of_b: int = 0
     personality_dichotomy: str = ''
     count = 0
-```
 
-#### Set counters to zero if not letter A or B
-This code snippet below is meant to keep the counters unchanged when wrong input is entered.
-
-```python
     for question in questions:
         answer = ''
         while not (answer == 'A' or answer == 'B'):
             count_of_a = 0
             count_of_b = 0
-```
-
-#### Exception handling
-This code snippet in the function handles the problem of incorrect input from the user. We only want the user to enter A or B. If our expected letter is entered, we count its occurrence.
-
-```python
             try:
-                     answer = input(question).upper()
-                     if not (answer == 'A' or answer == 'B'):
-                     raise ValueError("Invalid input")
+                answer = input(question).upper()
+                if not (answer == 'A' or answer == 'B'):
+                    raise ValueError("Invalid input")
             except ValueError as error:
-                     print(error)
+                print(error)
             else:
                 if answer == 'A':
                     count_of_a = count_of_a + 1
-                     if answer == 'B':
-                            count_of_b = count_of_b + 1
-                     count = count + 1
+                if answer == 'B':
+                    count_of_b = count_of_b + 1
+                count = count + 1
+
+        if count == 5:
+            if count_of_a > count_of_b:
+                personality_dichotomy = personality_dichotomy + 'E '
+            else:
+                personality_dichotomy = personality_dichotomy + 'I '
+        else:
+            if count == 10:
+                if count_of_a > count_of_b:
+                    personality_dichotomy = personality_dichotomy + 'S '
+                else:
+                    personality_dichotomy = personality_dichotomy + 'N '
+            else:
+                if count == 15:
+                    if count_of_a > count_of_b:
+                        personality_dichotomy = personality_dichotomy + 'T '
+                    else:
+                        personality_dichotomy = personality_dichotomy + 'F '
+                else:
+                    if count == 20:
+                        if count_of_a > count_of_b:
+                            personality_dichotomy = personality_dichotomy + 'J '
+                        else:
+                            personality_dichotomy = personality_dichotomy + 'P '
+
+    display(personality_dichotomy)
+
+```
+### The overview of the functions
+
+#### The run function
+Within the run function, we set variables to keep track of user’s options, which helps us compute the personality identities as they enter them. The variables are meant to count the occurrence of question numbers,  A’s and B’s and then use that to compute the identity accordingly.
+
+```python
+count_of_a: int = 0
+count_of_b: int = 0
+personality_dichotomy: str = ''
+count = 0
 ```
 
-#### Compute the identities with if statement
-We use our variable counters and if statements to compute the personality identity.
+- Set counters to zero if not letter A or B.
+This code snippet below is meant to keep the counters unchanged when wrong input is entered.
+
+```python
+for question in questions:
+    answer = ''
+    while not (answer == 'A' or answer == 'B'):
+        count_of_a = 0
+        count_of_b = 0
+```
+
+- Exception handling.
+The code snippet below handles the problem of incorrect input from the user. We only want the user to enter A or B. If our expected letter is entered, we count its occurrence.
+
+```python
+try:
+    answer = input(question).upper()
+    if not (answer == 'A' or answer == 'B'):
+        raise ValueError("Invalid input")
+    except ValueError as error:
+        print(error)
+    else:
+        if answer == 'A':
+            count_of_a = count_of_a + 1
+        if answer == 'B':
+            count_of_b = count_of_b + 1
+        count = count + 1
+```
+
+- Compute the identities with if statement.
+We use our variable counters and if statements to compute the personality identity. The count keeps track of the questions ranging from 1 to 20 and a total of four sections.
 The sectioning of the questions is in four parts and five questions each, making a total of 20 questions. We compute the dominant personality identity at every section of the test.
 
 ```python
-
-              if count == 5:
-                     if count_of_a > count_of_b:
-                            personality_dichotomy = personality_dichotomy + 'E '
-                     else:
-                            personality_dichotomy = personality_dichotomy + 'I '
-              else:
-                    if count == 10:
-                        if count_of_a > count_of_b:
-                            personality_dichotomy = personality_dichotomy + 'S '
-                            else:
-                                   personality_dichotomy = personality_dichotomy + 'N '
-              else:
-                    if count == 15:
-                            if count_of_a > count_of_b:
-                                   personality_dichotomy = personality_dichotomy + 'T '
-                            else:
-                                   personality_dichotomy = personality_dichotomy + 'F '
-                else:
-                     if count == 20:
-                            if count_of_a > count_of_b:
-                                   personality_dichotomy = personality_dichotomy + 'J '
-                            else:
-                                   personality_dichotomy = personality_dichotomy + 'P '
-
+if count == 5:
+    if count_of_a > count_of_b:
+        personality_dichotomy = personality_dichotomy + 'E'
+    else:
+        personality_dichotomy = personality_dichotomy + 'I'
+else:
+    if count == 10:
+        if count_of_a > count_of_b:
+            personality_dichotomy = personality_dichotomy + 'S'
+        else:
+            personality_dichotomy = personality_dichotomy + 'N'
+else:
+    if count == 15:
+        if count_of_a > count_of_b:
+            personality_dichotomy = personality_dichotomy + 'T'
+        else:
+            personality_dichotomy = personality_dichotomy + 'F'
+else:
+    if count == 20:
+        if count_of_a > count_of_b:
+            personality_dichotomy = personality_dichotomy + 'J'
+        else:
+            personality_dichotomy = personality_dichotomy + 'P'
  ```
 
-#### Call the display function.
-
- ```python
-       display (personality_type)
-```
-
-#### Function for Exiting the Application
+#### Quit the app with exit function
 This is a separate function that checks the decision of the user.
 The sys module here enables us to exit from the terminal if the user decides not to take the test.
 
 ```python
 def exit_application():
-       print("Exiting application...")
-       sys.exit(0)
+    print("Exiting application...")
+    sys.exit(0)
 ```
 
 #### Homepage function
-This function is designed to mimic a landing page on the web. We only accept two options (1 or 2). We also check for wrong inputs using python exception handling.
+This function is designed to mimic a landing page on the web. We only accept two options (1 or 2). We also checked for wrong inputs using python exception handling.
 
 ```python
 
