@@ -69,23 +69,23 @@ One can use load balancers on different layers of an application. It includes:
 
 1. Round Robin:- It is the most used load balancing algorithm. It is easy to implement and easy to understand. How does it work? 
 
-An example would be having two servers waiting for requests from a load balancer. When the first request comes, the load balancer will send that request to the first server.
+    An example would be having two servers waiting for requests from a load balancer. When the first request comes, the load balancer will send that request to the first server.
 
- A second request comes assuming from a different client. That request gets sent to the second server. At this point, we do not have more servers. The second server is the last on the list of servers. 
+    A second request comes assuming from a different client. That request gets sent to the second server. At this point, we do not have more servers. The second server is the       last on the list of servers. 
 
-As soon as the third request comes in, it gets redirected to the first server. The next request will be redirected to the second server and so on in a cyclic fashion. 
+    As soon as the third request comes in, it gets redirected to the first server. The next request will be redirected to the second server and so on in a cyclic fashion. 
 
-This algorithm is ideal for servers with similar specs. In the event where the server specs are not identical, one of the servers will become overloaded. It leads to failure or downtime of the overloaded server.
+    This algorithm is ideal for servers with similar specs. In the event where the server specs are not identical, one of the servers will become overloaded. It leads to failure     or downtime of the overloaded server.
 
-2. Weighted Round Robin:- This algorithm almost resembles the previous one. That is Round Robin. Sometimes, we do have servers with different specs. With the Weighted Round robin, it looks at the server that has more specs than the rest. That is the server that requests will be routed to. 
+2. Weighted Round Robin:- This algorithm almost resembles the previous one. That is Round Robin. Sometimes, we do have servers with different specs. With the Weighted Round          robin, it looks at the server that has more specs than the rest. That is the server that requests will be routed to. 
 
-We tell the load balancer beforehand which server has a higher capacity than the rest. Each node is usually given weights during the setup of the load balancer. For example, we have two servers with the weight of 5 and 2 . We have six incoming requests. The first 5 requests will be directed to the first server. The last request gets directed to the second server.
+     We tell the load balancer beforehand which server has a higher capacity than the rest. Each node is usually given weights during the setup of the load balancer. For              example, we have two servers with the weight of 5 and 2 . We have six incoming requests. The first 5 requests will be directed to the first server. The last request gets        directed to the second server.
 
-3.  Least Connections:-  Servers with different weights do get overloaded as well.  One reason could be that clients connected to server two stay longer than those connected to server one. It causes the total connections in server two to accumulate. The clients in server one are connecting and disconnecting almost at the same time. Thus, the weight remains the same. As a result, server two resources get depleted faster. In such circumstances, the least connection algorithm will be a great fit.
+3. Least Connections:-  Servers with different weights do get overloaded as well.  One reason could be that clients connected to server two stay longer than those connected to        server one. It causes the total connections in server two to accumulate. The clients in server one are connecting and disconnecting almost at the same time. Thus, the            weight remains the same. As a result, server two resources get depleted faster. In such circumstances, the least connection algorithm will be a great fit.
 
- It considers the number of connections that are active for each server. A request is made by a client. The algorithm will determine which server has the least number of active connections and assign the new connection to that server.
+     It considers the number of connections that are active for each server. A request is made by a client. The algorithm will determine which server has the least number of          active connections and assign the new connection to that server.
 
-4. IP Hash:- In this method, the Ip address of the client is hashed, and then the request is redirected to the server. The hashing algorithm generates uniformly random hash code. We, therefore, expect the server to have uniformly random codes. Therefore, the IP address of the user is used to determine which server we should direct our request to. 
+4. IP Hash:- In this method, the Ip address of the client is hashed, and then the request is redirected to the server. The hashing algorithm generates uniformly random hash          code. We, therefore, expect the server to have uniformly random codes. Therefore, the IP address of the user is used to determine which server we should direct our request      to. 
 
 ### Conclusion
 
