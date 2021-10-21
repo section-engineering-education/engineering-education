@@ -1,6 +1,3 @@
-### Using Amazon S3 for Django Media File Uploads and Storage
-![hero image](/engineering-education/using-amazon-web-service-for-django-media-files-storage/hero.jpg)
-
 ### Introduction
 Cloud storage services make application scalability easy. These services enable webpages to serve large files without causing heavy traffic and load to the application database, reducing the system load time and offering a good user experience.   
 
@@ -16,16 +13,25 @@ This article will show you how to use Amazon Web Services (AWS) to store media f
 6. [Conclusion](#conclusion)
 
 ### Prerequisites
-To follow along and get the most out of this article, you should have elementary knowledge of web applications. In addition, it is helpful to have a more advanced comprehension of the Python language and its frameworks. Optionally, you can familiarize yourself with Django.
+To follow along and get the most out of this article, you should have elementary knowledge of web applications. 
+
+In addition, However, it is helpful to have a more advanced comprehension of the Python language and its frameworks. Optionally, you can familiarize yourself with Django.
 
 Install Python 3 or above on your local machine before starting this project.
 
 ### Setting up the Django Application  
-Django is a Python-based web framework to build scalable website applications with ease. This software has been around for quite some time, and a strong community of users keep improving it to suit developers’ needs. We will use Django as our backend logic and SQLite as our development database.   
+Django is a Python-based web framework to build scalable website applications with ease. 
 
-We need a virtual environment to install and run a Django application. A virtual environment separates a particular Python project’s dependencies, libraries, and packages from other projects. You can also install it globally to save time recreating the environment for a new project.
+This software has been around for quite some time, and a strong community of users keep improving it to suit developers’ needs. 
+
+We will use Django as our backend logic and SQLite as our development database.   
+
+We need a virtual environment to install and run a Django application. A virtual environment separates a particular Python project’s dependencies, libraries, and packages from other projects. 
+
+You can also install it globally to save time recreating the environment for a new project.
 
 There are various ways to create a virtual environment, depending on your local machine’s operating system.  
+
 Before you create a virtual environment, open your terminal and create a folder called django_sample by running this script on the terminal:
 
 ```bash
@@ -42,7 +48,7 @@ After activating the environment, install Django by executing:
 pipenv install django
 ```
 
-With Django installed, it’s time to start building our application. We’ll start by creating a Django project. Run this command:  
+With Django installed, it is time to start building our application. We will start by creating a Django project. Run this command:  
 
 ```bash
 django-admin startproject django_project   
@@ -54,7 +60,7 @@ The project is called `django_project`. To move into the project, run:
 cd django_project
 ```
 
-Your application, at this point, should resemble this tree:  
+At this point, your application should resemble this tree:  
 
 ```bash
 .  
@@ -83,15 +89,16 @@ python manage.py runserver
 Ignore the migrations for now. Then, when you open the link on the browser, you should see a congratulation text.  
 
 ### Setting up Gallery App  
-The Django project cannot act without a Django application. The Django application contains the models, views, and templates for processing our application. In addition, the project has external settings to make this possible. Think of the Django application as our web program’s car engine and the project as its exterior and wheels to put this into perspective.  
+The Django project cannot act without a Django application. The Django application contains the models, views, and templates for processing our application. 
+
+In addition, the project has external settings to make this possible. Think of the Django application as our web program’s car engine and the project as its exterior and wheels to put this into perspective.  
 
 Run the command below to create a Django app:
 
 ```bash
 python manage.py startapp gallery
 ```
-
-Let’s call the application “gallery” because it will display images to the user. The current structure should look like the tree below:  
+Let us call the application “gallery” because it will display images to the user. The current structure should look like the tree below:  
 
 ```bash
 .  
@@ -129,7 +136,9 @@ Let’s call the application “gallery” because it will display images to the
 └── manage.py  
 ```
 
-Before running the application again, we need to configure a couple of things. First, we need to place our app in the `INSTALLED_APPS` section in the `settings.py` file. Then, in the `settings.py` file inside the `INSTALLED_APPS` array, we add `gallery.apps.GalleryConfig`. The new array should look like this:  
+Before running the application again, we need to configure a couple of things. First, we need to place our app in the `INSTALLED_APPS` section in the `settings.py` file. 
+
+Then, in the `settings.py` file inside the `INSTALLED_APPS` array, we add `gallery.apps.GalleryConfig`. The new array should look like this:  
 
 ```python
 INSTALLED_APPS = [  
@@ -153,8 +162,9 @@ INSTALLED_APPS = [
 
 We placed the app in `INSTALLED_APPS` because that is where Django checks for models, management commands, and other utilities.
 
-In the project directory, `django_project`, we need to include the app in  `urls.py`  because the Django project directory serves the application. In the file, import `include()` from the `django.urls` module. Then, add a path and include `gallery.urls`, which will fetch the routes from the app directory when the application runs. Our file should resemble this:  
+In the project directory, `django_project`, we need to include the app in  `urls.py`  because the Django project directory serves the application. 
 
+In the file, import `include()` from the `django.urls` module. Then, add a path and include `gallery.urls`, which will fetch the routes from the app directory when the application runs. Our file should resemble this:  
 
 ```python
 from django.contrib import admin  
@@ -169,10 +179,12 @@ urlpatterns = [
 ]  
 ```
 
-We’ll follow Django model-template-view (MTV) architecture when building our application. The framework is not different from the conventional model-view-controller (MVC) framework, where the model handles the data and logic involving database operations. The view displays data to the user, and the controller takes care of input requests like GET and POST then passes them on to the user.
+We will follow Django model-template-view (MTV) architecture when building our application. The framework is not different from the conventional model-view-controller (MVC) framework, where the model handles the data and logic involving database operations. 
+
+The view displays data to the user, and the controller takes care of input requests like GET and POST then passes them on to the user.
 
 #### Importing the Model
-With that context in mind, let’s go ahead and create our model. In the gallery folder, we open the `models.py` file and generate the model demonstrated in the snippet below:
+With that context in mind, let us go ahead and create our model. In the gallery folder, we open the `models.py` file and generate the model demonstrated in the snippet below:
 
 ```python
 from django.db import models  
@@ -192,18 +204,24 @@ class Post(models.Model):
        return self.title
 ```
 
-First, we import the models from `django.db.models.Models` that enable us to map the properties of our model in the database table. Then, we import the Image module from Pillow library `PIL`. To install this, we type:`pipenv install Pillow`.
+First, we import the models from `django.db.models.Models` that enable us to map the properties of our model in the database table. 
 
-We then create a `Post` model by passing it `models.Model` as a parameter. We use docstrings, not conventional comments, to describe what the class does. Finally, we describe two fields in the model, title and image, and specify their fields.
+Then, we import the Image module from Pillow library `PIL`. To install this, we type:`pipenv install Pillow`.
 
-Since the name is a string, we use the `CharField` model field and `ImageField` for the image attribute. We then specify where the images will upload. In this case, our application uploads the photos to the images directory in the media parent folder, as we’ll see later in this article.
+We then create a `Post` model by passing it `models.Model` as a parameter. We use docstrings, not conventional comments, to describe what the class does. 
+
+Finally, we describe two fields in the model, title and image, and specify their fields.
+
+Since the name is a string, we use the `CharField` model field and `ImageField` for the image attribute. We then specify where the images will upload. 
+
+In this case, our application uploads the photos to the images directory in the media parent folder, as we will see later in this article.
 
 Pass the maximum number of character lengths to the `CharField` field, which in our case is 100.  
 
 To view the name of our posts instead of the default Python name, we define a magic string` __str__()`. It takes itself as an argument and uses it to return the title of our posts.
 
 #### Creating our View
-Let’s create our view now. Python’s view functions take web requests and return a response, which the application can call in the controllers and display in the browser.
+Let us create our view now. Python’s view functions take web requests and return a response, which the application can call in the controllers and display in the browser.
 
 Our view function will be simple since it is not the main focus of this article. The snippet below shows the view function in `views.py` in the gallery directory:  
 
@@ -226,7 +244,7 @@ Django already imports the `render()` from `django.shortcuts` package. `render()
 
 We import the `Post` model we created earlier from the `models.py` file. We place a period before the models to show the path to the `models.py` file.
 
-Then, we pass a request as an argument in our posts view as an `HttpRequest` object. As we’ll see later, this enables us to call the view function in our routes.
+Then, we pass a request as an argument in our posts view as an `HttpRequest` object. As we will see later, this enables us to call the view function in our routes.
 
 We also pass in a context that contains the objects in our models in dictionary format. The dictionary value, `Post.objects.all()`, retrieves all the `Post` objects. As of now, our `Post` model is empty as we have not added any posts yet.
 
@@ -301,7 +319,7 @@ In our `gallery` directory inside the templates, we create a file, `posts.html`:
 </html>  
 ```
 
-We next import bootstrap links to help with web styling and title our page. In the posts page, which we’ll call Gallery Posts, we create a div container-fluid to pad the content inside the page and loop the posts, which are the images in the template. We then add bootstrap styling to make the images responsive.
+Next , we import bootstrap links to help with web styling and title our page. In the posts page, which we will call Gallery Posts, we create a div container-fluid to pad the content inside the page and loop the posts, which are the images in the template. We then add bootstrap styling to make the images responsive.
 
 The key-value `posts` from the context passed when rendering the template in our view. Next, in the `img src` attribute, we give the URL of the image the browser will render. From the bootstrap class, we then define how we want the picture to appear on the page. Finally, we close the loop with an `endfor` in Django.  
 
@@ -329,7 +347,9 @@ urlpatterns = [
 
 We import the path function from the `django.urls` module and views from the parent directory, gallery. `urlpatterns` is an array to route our views.
 
-We leave the route blank using the `path()` as it will be the home page when running the application. However, it can take any route, and it is not a convention for homepages to take the default route. For instance, if we have many pages and want users to route to the about page, we can configure it as `about/` instead of blank. For this case, your landing page will take a blank route.
+We leave the route blank using the `path()` as it will be the home page when running the application. However, it can take any route, and it is not a convention for homepages to take the default route. 
+
+For instance, if we have many pages and want users to route to the about page, we can configure it as `about/` instead of blank. For this case, your landing page will take a blank route.
 
 We created the views.posts function in the view earlier. The name calls the route in other files within the application.  
 
@@ -424,7 +444,9 @@ We can now run the application by typing this command:
 python manage.py runserver  
 ```
 
-As of now, the page is empty. To add some posts, we head over to `http://127.0.0.1:8000/admin/` and enter the username and password we specified while creating the superuser. We click on `Posts` in the admin panel to add posts, return to the page and view the uploaded images.   
+As of now, the page is empty. To add some posts, we head over to `http://127.0.0.1:8000/admin/` and enter the username and password we specified while creating the superuser. 
+
+We click on `Posts` in the admin panel to add posts, return to the page and view the uploaded images.   
 
 In the next section, we’ll explore how to serve the site’s images from a cloud service, AWS.  
 
@@ -435,10 +457,12 @@ We’ll use Amazon S3 to store images from the application we created earlier. T
 
 ![aws login](/engineering-education/using-amazon-web-service-for-django-media-files-storage/aws-landing-page.jpg)
 
-Amazon Web Services might charge a small fee to register an account. At the time of writing, this fee was $1. In the next section, we’ll create an S3 bucket to start our configuration.
+Amazon Web Services might charge a small fee to register an account. At the time of writing, this fee was $1. In the next section, we will create an S3 bucket to start our configuration.
 
 ### Configuring AWS S3  
-The AWS management console offers a variety of services. In the search bar, search for S3, then click on it as it is the service we'll be using. Amazon will direct us to a page similar to the one in the screenshot below, and we then create a bucket with a unique name.
+The AWS management console offers a variety of services. In the search bar, search for S3, then click on it as it is the service we will be using. 
+
+Amazon will direct us to a page similar to the one in the screenshot below, and we then create a bucket with a unique name.
 
 ![aws console](/engineering-education/using-amazon-web-service-for-django-media-files-storage/aws-console.jpg)
 
@@ -452,7 +476,9 @@ Once we create the bucket, we head over to the AWS management console. In the se
 ![aws user](/engineering-education/using-amazon-web-service-for-django-media-files-storage/aws-users.jpg)
 
 
-We create a username. Then, in  `AWS access type`, we click `Programmatic access`. It will enable us to access AWS with an access key ID and secret access key. However, we don’t need the AWS console for that user, so we just leave it unchecked, as the screenshot shows:
+We create a username. Then, in  `AWS access type`, we click `Programmatic access`. It will enable us to access AWS with an access key ID and secret access key. 
+
+However, we do not need the AWS console for that user, so we just leave it unchecked, as the screenshot shows:
 
 ![aws user](/engineering-education/using-amazon-web-service-for-django-media-files-storage/detailsone-aws.jpg)
 
@@ -540,7 +566,9 @@ AWS_DEFAULT_ACL = None
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'   
 ```
 
-`AWS_S3_FILE_OVERWRITE` prevents the system from overwriting files in case two users upload the same file name. Finally, the `DEFAULT_FILE_STORAGE` setting enables us to upload our media files to AWS S3. For more on how to use `django-storages` in Amazon S3, read their [documentation](https://django-storages.readthedocs.io/en/latest/backends/amazon-S3.html).   
+`AWS_S3_FILE_OVERWRITE` prevents the system from overwriting files in case two users upload the same file name. Finally, the `DEFAULT_FILE_STORAGE` setting enables us to upload our media files to AWS S3. 
+
+For more on how to use `django-storages` in Amazon S3, read their [documentation](https://django-storages.readthedocs.io/en/latest/backends/amazon-S3.html).   
 
 Lastly, we need to configure the region we specified earlier in S3 while creating a bucket. We add the region like this:  
 
@@ -550,7 +578,9 @@ AWS_S3_REGION_NAME = "us-east-2"
 AWS_S3_ADDRESSING_STYLE = "virtual"
 ```
 
-Our media directory has an image folder containing images we uploaded through the admin panel. We need to upload this folder to the S3 bucket. To do this, we head over to the bucket we created earlier. We upload the whole images folder within our bucket. We can also choose to drag and drop it in our bucket.
+Our media directory has an image folder containing images we uploaded through the admin panel. We need to upload this folder to the S3 bucket. To do this, we head over to the bucket we created earlier. 
+
+We upload the whole images folder within our bucket. We can also choose to drag and drop it in our bucket.
 
 Once that is done, we go ahead and test our application.
 
@@ -568,7 +598,9 @@ Our site should resemble a page like this:
 If we right-click on an image and open it in another tab, Amazon S3 should serve the picture. We can similarly check the image URL when we open it through the S3 bucket.
 
 ### Conclusion
-This tutorial created a simple gallery application that displays images using a Python macro framework, Django. In addition, we used AWS cloud storage to store the photos to scale the site quickly and for an efficient way to render media files when deploying to any platform a user chooses.
+This tutorial created a simple gallery application that displays images using a Python macro framework, Django. 
+
+In addition, we used AWS cloud storage to store the photos to scale the site quickly and for an efficient way to render media files when deploying to any platform a user chooses.
 
 Using these same techniques, you can create your own Django application and set up cloud image hosting to scale along with your user base.
 
