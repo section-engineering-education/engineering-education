@@ -18,7 +18,7 @@ Timer Tasks are important since they enable a program to be scheduled for later 
 
 ### Prerequisites
 
-To understand this article better the you will need to:
+To understand this article better you will need to:
 
 - have a basic understanding of [Java](https://www.w3schools.com/Java/default.asp)
 - have a code editor such as Intellij Idea, which can be downloaded from [this](https://www.jetbrains.com/idea/download/#section=windows) Jetbrains site.
@@ -145,4 +145,4 @@ The cancel() method is used to cancel the execution of the task to prevent it fr
 
 ### Conclusion
 
-This tutorial has taken the you through the concept of Timer Tasks in Java, and therefore, the you should be able to get a better understanding of Timer Tasks and create your timer that alerts or displays a given message when time is up.
+This tutorial has taken you through the concept of Timer Tasks in Java, and therefore, you should be able to get a better understanding of Timer Tasks and create your timer that alerts or displays a given message when time is up.
