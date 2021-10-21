@@ -1,25 +1,27 @@
-#How to build a Quiz App with Vanilla JavaScript and Tailwind CSS
 
 This tutorial will show you how to build a quiz app with HTML, CSS, JavaScript, and Tailwind CSS without using any JS frameworks. I will also style the app with CSS3 and Tailwind CSS.
 
+### Prerequisites
+- A good text editor.
+- A clear understanding of HTML, CSS, and JavaScript.
+- Node.js installed
 
-###Prerequisites for this article
-A good text editor.
-Good knowledge of HTML, CSS, and JavaScript.
-Node.js installed
 
+### Getting Started with Tailwind CSS
+Tailwind CSS is a utility-based CSS framework that helps in building a unique and responsive UI. Tailwind CSS provides its users with utilities that they can use for designing unique UI for their applications, unlike the other CSS frameworks like Bootstrap, Material UI, or Materialize that are component-based.
 
-###Getting Started with Tailwind CSS
-Tailwind CSS is a utility-based CSS framework that helps in building a unique and responsive UI. Tailwind CSS provides utilities that you can use for designing unique UI for your applications, unlike the other CSS frameworks like Bootstrap, Material UI, or Materialize that are component-based.
+### Adding Tailwind CSS into your project
+First, you have to set it up on the app directory. Open an empty folder in your text editor and name it `tailwindcss`, then create a `package.json` folder by running the command below in your terminal.
 
-###How to Setup Tailwind CSS in your Application
-First, you have to set it up on the app’s directory. Open an empty folder in your text editor and name it `tailwindcss`, then create a `package.json` folder by running the command below in your terminal.
-
+```bash
 `npm init -y`
+```
 
 Next, you have to install the required dependencies for the project by running the command below in your terminal:
 
+```bash
 `npm install -D tailwindcss@latest postcss@latest autoprefixer@latest`
+```
 
 After that, create a new folder in the directory and name it `postcss.config.js`. In there, copy and paste the code below:
 
@@ -36,7 +38,7 @@ module.exports = {
 }
 ```
 
-Then, you run the command below to create the tailwind configuration file.
+Then, you run the command below to create the tailwind configuration file:
 
 `npx tailwindcss init`
 
@@ -87,12 +89,16 @@ You can create your `index.html` in your `public/css` folder. Your `style.css` w
 
 Now, you are ready to build your quiz app.
 
-###Designing the Quiz App
-The app will have a start button that will direct you to the questions along with four options. The correct answer button will turn green as the other wrong answer buttons turn red when choosing an alternative to style several app components. A next button will also pop up, which will direct the user to the next question and options page. You can call Tailwind CSS to your HTML with the code below:
+### Designing the Quiz App
+Our quiz app will have a start button that will direct you to the questions along with four options. The correct answer tab will turn green when chosen/clicked, as the other wrong answer tab turn red when choosing an alternative to style several app components.
 
+A `next` button will also pop up, which will direct the user to the next question and options page. You can link Tailwind CSS to your HTML with the code below:
+
+```html
 `<link rel="stylesheet" href="./css/tailwind.css">`
+```
 
- Here the HTML code for the application below:
+The HTML code for the application is as shown below:
 
 ```html
 <!DOCTYPE html>
@@ -129,7 +135,9 @@ The app will have a start button that will direct you to the questions along wit
 </html>
 ```
 
-In the code above, we imported several utilities from the [Tailwind CSS official website](https://tailwindcss.com/docs)  that we used in styling several components of our app. Also, the question and answer containers contain dummy code that we will later update with JavaScript. Copy and paste this CSS this code in your `style.css` file.
+In the code above, we imported several utilities from the [Tailwind CSS official website](https://tailwindcss.com/docs)  that we used in styling several components of our app. Also, the question and answer containers contain dummy code that we will later update with JavaScript.
+
+Copy and paste this CSS this code in your `style.css` file.
 
 ```css
 *, *::before, *::after {
@@ -183,13 +191,16 @@ In the code above, we imported several utilities from the [Tailwind CSS official
     display: none;
   }
 ```
-The code above represents the styling for the answer buttons and their responsiveness to clicking when the user chooses an answer. Note that we also set a `hide` class to `display: none`, which we will use in JavaScript.
 
-Here is what the root page of the app looks like at this point:
+The code above represents the styling for the answer buttons and their responsiveness to clicking when the user chooses an answer.
+
+Note that we also set a `hide` class to `display: none`, which we will use in JavaScript.
+
+This is how the root page of the app looks like at this point:
 
 ![quiz-app]/engineering-education/how-to-build-a-quiz-app-with-vanilla-javascript-and-tailwind-css/quiz-app.jpg)
 
-###Now the JavaScript
+### Now the JavaScript
 
 First, create a `script.js` file in your app directory. In there, you have to call the HTML elements you will work on into your JavaScript with the code below:
 ```js
@@ -199,7 +210,9 @@ const questionContainerElement = document.querySelector('#question-container')
 const questionElement = document.querySelector('#question')
 const answerButtonsElement = document.querySelector('#answer-buttons')
 ```
-Then, you have to create an array that will contain your quiz questions and their corresponding answer options. Here is the code below:
+Then, you have to create an array that will contain your quiz questions and their corresponding answer options.
+
+The code is as shown below:
 
 ```js
 const questions = [
@@ -244,8 +257,12 @@ const questions = [
 
 ```
 
-### The `startQuiz` function
-This function runs when you click the start button to begin your game. You will call the `hide` class on the start button to disappear immediately the user clicks on it so that the questions and options can now appear. You will use the `Math.Random()` in a `sort()` function to randomly display the questions from the questions array. Here is the code for the `startQuiz` function:
+#### The `startQuiz` function
+This function runs when you click the start button to begin your game. You will call the `hide` class on the start button to disappear immediately the user clicks on it so that the questions and options can appear.
+
+You will use the `Math.Random()` in a `sort()` function to randomly display the questions from the questions array.
+
+This is how the `startQuiz` function will be:
 
 ```js
 let shuffledQuestions, currentQuestionIndex
@@ -260,15 +277,15 @@ const startQuiz = () => {
 }
 ```
 
-Now, you have to create an event listener on the start button, which will run the `startQuiz` function when users click the button. Here is the code below:
+Now, you have to create an event listener on the start button, which will run the `startQuiz` function when users click the button:
 
 ```js
 startButton.addEventListener('click', startQuiz);
 
 ```
 
-###The `setNextQuestion` function
-This function will simply display the questions randomly by calling the `shuffledQuestions` function and passing the `currentQuestionIndex` in it. Here is the code below:
+#### The `setNextQuestion` function
+This function will simply display the questions randomly by calling the `shuffledQuestions` function and passing the `currentQuestionIndex` in it:
 
 ```js
 const setNextQuestion = () => {
@@ -276,19 +293,24 @@ const setNextQuestion = () => {
     displayQuestion(shuffledQuestions[currentQuestionIndex])
 
 }
-
 ```
-You also need to create an event listener for the next button so that when the user clicks it, the next question will display. We will do this by incrementing the `currentQuestionIndex` and calling the `setNextQuestion` function. Here is the code below:
+
+You also need to create an event listener for the next button so that when the user clicks it, the next question will display.
+
+We will do this by incrementing the `currentQuestionIndex` and calling the `setNextQuestion` function. Here is the code below:
 ```js
 nextButton.addEventListener('click', () => {
     currentQuestionIndex++
     setNextQuestion()
 })
-
 ```
 
-###The `displayQuestion` function
-Now, we have to create a `displayQuestion` function to display the questions and answer options. You will replace that dummy text in the question and answers container with actual data from the questions array we created earlier. We will create a button for the answer options with `document.createElement(‘button’)`. This function will contain a conditional statement that will check if the answer is correct. If so, then it should call the `correct` class. You also have to create an event listener for the button and call the `chooseAnswer` function that we will create later. Here is the code for the `displayQuestion` function below:
+#### The `displayQuestion` function
+Now, we have to create a `displayQuestion` function to display the questions and answer options. You will replace that dummy text in the question and answers container with actual data from the questions array we created earlier.
+
+We will create a button for the answer options with `document.createElement(‘button’)`. This function will contain a conditional statement that will check if the answer is correct. If so, then it should call the `correct` class.
+
+You also have to create an event listener for the button and call the `chooseAnswer` function that we will create later. Here is the code for the `displayQuestion` function below:
 
 ```js
 const displayQuestion = (question) => {
@@ -305,10 +327,9 @@ const displayQuestion = (question) => {
     })
 
 }
-
 ```
 
-###The `resetState` function
+#### The `resetState` function
 This function will reset everything related to your form, questions and body back to their default state everytime the user sets a new question. Here is the code for this function below:
 
 ```js
@@ -319,13 +340,12 @@ const resetState = () => {
         answerButtonsElement.removeChild(answerButtonsElement.firstChild)
     }
 }
-
 ```
-In the function above, we ensured the next button appears as soon as the user clicks an answer button and immediately disappears when clicked as a new question surfaces.
+In the function above, we ensured a `next` button appears as soon as the user clicks on an answer and immediately disappears when clicked as a new question surfaces.
 
-We need to create the function to select an answer when one of the option buttons receives a click event.
+We need to create the function to select an answer when one of the option buttons is clicked.
 
-###The `chooseAnswer` function
+#### The `chooseAnswer` function
 First, you have to target the answer button the user clicks on by creating a variable like this: `const selectedButton = e.target`. Then, you can just get a variable `correct` which will be equal `selectedButton.dataset.correct`. Next, you need to loop through the other buttons and set the class for them. You are going to create an array from the `answerButtonsElement.children`. The `answerButtonsElement.children` is returning a live collection, and it updates on its own, so you have to convert it to an array to make it easier to loop through each button with the `forEach` function. You then call the `setStatusClass` function, which we will create in a bit and pass in `button.dataset.correct`, determining if the answer picked is the right one. You can also use a conditional statement to convert the next button to a restart button if the user gets to the last question. The test then restarts once the restart button is clicked.  Here is the code for the `chooseAnswer` function below:
 
 ```js
@@ -359,7 +379,7 @@ const setStatusClass = (element, correct) => {
 }
 
 ```
-Here is the code for the `clearStatusClass` function below:
+Here is the code for the `clearStatusClass` function:
 
 ```js
 const clearStatusClass = (element) => {
@@ -373,7 +393,7 @@ Below is a video of our quiz application in action:
 <iframe width="727" height="409" src="https://www.youtube.com/embed/ENdP7aFVFpY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
-##Conclusion
+### Conclusion
 While building the quiz application, we used ES6 classes to organize our code. We used CSS3 and some [Tailwind CSS](https://tailwindcss.com/docs) utilities in styling the application. We also made use of Vanilla JavaScript.
 
 With that, you have a fully functional quiz application. You can get the source code from my [Github](https://github.com/Nomzy-kush/Quiz-App-with-JavaScript-and-Tailwind-CSS) repo.
