@@ -76,24 +76,20 @@ Spring Boot uses Jackson by default which is a JSON marshaller and there are edg
 Make sure to exclude Jackson from the classpath using the following configuration in your POM.xml file.
 
 ```xml
-        <dependency>
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-web</artifactId>
+    <exclusions>
+        <exclusion>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.springframework.boot</groupId>
-                    <artifactId>spring-boot-starter-json</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
+            <artifactId>spring-boot-starter-json</artifactId>
+        </exclusion>
+    </exclusions>
+</dependency>
 ```
 
 ### Create a request DTO
-This is a DTO that the browser will send to our server.
-
-Create a `CreatePayment` class inside a package named `dto` with fields `amount` and `featureRequest`.
-
-Generate getter and setter methods for the two fields.
+This is a DTO that the browser will send to our server. Create a `CreatePayment` class inside a package named `dto` with fields `amount` and `featureRequest`. Generate getter and setter methods for the two fields.
 
 ```java
 import javax.validation.constraints.Min;
@@ -142,9 +138,7 @@ The following image shows how a `PaymentIntent` is created and how it tracks the
 
 ![Payment intent image](accept-a-payment.png)
 
-Create a `PaymentController` class inside a package named `controller` and add a post mapping method that has a `/create-payment-intent` endpoint.
-
-The browser calls `/create-payment-intent` endpoint and this endpoint has to call stripe to create the payment intent.
+Create a `PaymentController` class inside a package named `controller` and add a post mapping method that has a `/create-payment-intent` endpoint. The browser calls `/create-payment-intent` endpoint and this endpoint has to call stripe to create the payment intent.
 
 The `PaymentIntentCreateParams` tells stripe the currency to be used, what the product the user wants to buy and how much the product costs using `setCurrency()` and `setAmount()` methods.
 
