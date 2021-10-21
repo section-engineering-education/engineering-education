@@ -3,19 +3,23 @@
 
 ### Introduction
 Navigating in flutter apps, all you have to do is use the default navigation that comes with Flutter. For complex flutter application consider the addition of  dynamic links, authorizations, and authentication . GetX does a good job of helping you with this by using middleware and bindings, child routes.
+
 ### Topics to handle
 - learn the usage of navigator, routes in Flutter.
 - Passing between one page to another.
 - Learn how to put in place navigator and routes API.
 - Create a flutter application to show the usage of navigators and routes. 
+
 ### Disclaimers
 - By default, the MaterialApp widget has a routes property. 
 - Navigator 2.0 is also referred to as the router.
 - DefaultTransitionDelegate helps navigator to decide the transition of the screens.  
+
 ### Definition of Navigator and Routes as used in Flutter
 - Navigator is a component that manages a stack made of routes. This feature allows the user to transit from one screen to another. Navigator performs these transitions of the screen either by declarative, Imperative, Navigator. pages. Navigator. push or Navigator. pop are the most common method used. Stack of routes means that once you navigate from one page to another you can always go back to the previous page.
 - Route -A route defines the navigation of the app. It tells which page the navigator takes the user to. Routes made of screens and pages.
 To navigate through apps screen,one can navigate using Navigator.push(),navigator.pop().
+
 ### Prerequisites
 - Have Visual Studio Code or android studio installed.
 - Understand how to code flutter widgets.
@@ -27,6 +31,7 @@ To navigate through apps screen,one can navigate using Navigator.push(),navigato
 One of the best ways to manage many routes is using references. One can refer to a route either by Name, convention, or path.
 To map navigator route one uses builder functions. Material app uses this style to create value for callback methods.
 Illustration using code to show route names
+
 ```dart
 void main() {
  runApp(MaterialApp(
@@ -60,17 +65,17 @@ Create a route of new page using this method :
 ### Example to understand this better
 Take a case for an application used by users to stream songs or videos. When a user taps on a song from a list of many songs, the new screen that pops up contains more details about the tapped one.
 
-
-
 ### Simple application that uses navigators and routes
-
 For our application, we will have 3 screens. Navigator.push used navigate to the next page, Navigator.pop used to return to the previous page.
 1. Create a new flutter application
   Open your visual code. On the menu bar click on `view` then `command palette` then click on `new flutter project`. Specify the location where to create your project then specify the name of your project.
+
 ```cmd
 flutter create name_of_project 
 ```
+
 2. Open main. dart file, erase its code and replace using this.This case it uses named routes for all the three screen. It contains named routes of all the pages we have in our application.
+
 ```dart
 //start by importing packages and pages
 
@@ -110,6 +115,7 @@ class ThisApp extends StatelessWidget
 ```
 3. Coding firstpage.
 Create firstscreen.dart . This file represents the first page of our application. It contains a class that has an app bar, text, and button to navigate to the second screen. This case uses a navigator. push to navigate to the next page.
+
 ```dart //used to write dartcode in markdown
 import 'allfiles.dart'; //imports all files in our app
 class FirstScreen extends StatelessWidget//new class for the first screen
@@ -157,7 +163,8 @@ class MyDetails extends StatelessWidget {//definition of our details class
 }
 
 ```
-4. Let's create the Secondscreen. dart. This is the second screen of our application. It contains text and two buttons to navigate to the first and third screens. The first button uses the ` push(context)` function to the third screen while the second button uses the `navigator. pop(context)` to navigate back to the previous page.   
+4. Let's create the Secondscreen. dart. This is the second screen of our application. It contains text and two buttons to navigate to the first and third screens. The first button uses the ` push(context)` function to the third screen while the second button uses the `navigator. pop(context)` to navigate back to the previous page.  
+
 ```dart
 import 'allfiles.dart'; //imports all files in our app
 class Secondscreen extends StatelessWidget
@@ -279,8 +286,8 @@ Below are screenshots showing the expected results
 For any query Reachout @ [this GitHub repository](https://github.com/karehnikita/).
 
 ### Conclusion
-
 The navigators and routing in flutter applications are key to flutter application development. I recommend all flutter developers to use navigator developing mobile and web applications. 
+
 ### References:
 - https://api.flutter.dev/flutter/widgets/Navigator-class.html
 - https://medium.com/flutter-community/flutter-routes-and-navigation-69f128a9ea8f
