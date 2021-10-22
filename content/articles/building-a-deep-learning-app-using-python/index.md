@@ -2,22 +2,22 @@
 layout: engineering-education
 status: publish
 published: true
-url: /building-a-deep-learning-selfie-segmentation-web-app-using-gradio/
-title: Building a Deep Learning Web App using Python
-description: The objective of this tutorial is to help the reader learn how to build a deep learning selfie segmentation web app using gradio.
+url: /building-a-deep-learning-app-using-python/
+title: Building a Deep Learning Application using Python
+description: This tutorial aims to help the reader learn how to build a deep learning selfie segmentation web app using gradio.
 author: lilian-cheptoo
-date: 2021-10-22T00:00:00-15:00
+date: 2021-10-22T00:00:00-19:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/building-a-deep-learning-selfie-segmentation-web-app-using-gradio/hero.png
-    alt: Deep Learning Web App Hero image
+  - url: /engineering-education/building-a-deep-learning-app-using-python/hero.png
+    alt: Deep Learning App Hero image
 ---
 
-In this tutorial, we are going to build a selfie segmentation model using Mediapipe, Gradio and Python. The selfie segmentation model allows us to quickly and easily strip out the background from photos using a pre-built machine learning model.
+In this tutorial, we will build a selfie segmentation model using Mediapipe, Gradio and Python. Using a pre-built machine learning model, the selfie segmentation model allows us to quickly and easily strip out the background from photos.
 <!--more-->
-Finally, We’re going to take it one step further and integrate it to a Gradio app!
+Finally, we are going to take it one step further and integrate it into a Gradio app!
 
 ### Outline
 - [Prerequisites](#prerequisites)
@@ -38,14 +38,12 @@ To fully understand this tutorial, you need to be familiar with:
 > You need to use either Jupyter Notebook or Google Colab. To follow along, please use Google Colab.
 
 ### Introduction
-
 The [selfie segmentation model](https://google.github.io/mediapipe/solutions/selfie_segmentation) allows us to quickly and easily strip out the background from photos using a pre-built machine learning model. It is based on a modified [MobileNetV3](https://ai.googleblog.com/2019/11/introducing-next-generation-on-device.html). MobileNetV3 is a state-of-the-art model for mobile computer vision networks with speeds twice as fast as the [MobileNetV2](https://ai.googleblog.com/2018/04/mobilenetv2-next-generation-of-on.html) model. 
 
-The model segments out your body from an image/video which allows you to replace backgrounds or apply effects to your video or image. The model can run in real-time on both smartphones and laptops, and its intended use cases include selfie effects and video conferencing.
+The model segments your body from an image/video, allowing you to replace backgrounds or apply effects to your video or image. The model can run in real-time on both smartphones and laptops, and its intended use cases include selfie effects and video conferencing.
 
 ### Installing mediapipe, gradio, opencv, and matplotlib
-
-`Mediapipe` is a free and open-source machine learning (ML) pipeline that provides pre-built ML solutions in Python and other languages. It provide ML solutions such as face detection, hair segmentation, object detection, and selfie segementation. These ML solution provided by mediapipe work across Android, iOS, desktop/cloud, web and IoT devices. We will use it to grab the selfie segmentation model.
+`Mediapipe` is a free and open-source machine learning (ML) pipeline that provides pre-built ML solutions in Python and other languages. It provides ML solutions such as face detection, hair segmentation, object detection, and selfie segmentation. These ML solutions provided by media pipe work across Android, iOS, desktop/cloud, web and IoT devices. We will use it to grab the selfie segmentation model.
 
 `Gradio` is a library that allows us to build stand-alone applications inside of a Jupyter Notebook/Google Colab. In this tutorial, we will integrate our selfie model into the gradio app. 
 
@@ -62,7 +60,7 @@ If you're using Jupyter notebook, make sure to include an exclamation `!` before
 !pip install gradio mediapipe opencv-python matplotlib
 ```
 
-Now that we've installed them, we need to import them into our colab.
+Now that we've installed them, we need to import them into our Colab.
 
 ```python
 import mediapipe as mp
@@ -70,7 +68,7 @@ import cv2
 import numpy as np
 ```
 
-Since the video feed will be in real-time, we use opencv to access our computers webcam to relay the feed.
+Since the video feed will be real-time, we use OpenCV to access our computers webcam to relay the feed.
 
 ```python
 cap = cv2.VideoCapture(0)
@@ -87,10 +85,9 @@ cv2.destroyAllWindows()
 
 This is a standard way of getting a video feed using OpenCV. The `VideoCapture()` method is used to create a video capture object. The number `0` indicates that we are going to use a web camera. If it's not picking your webcam or getting an error, try changing this number to either a `1` or `2`. 
 
-Once we've captured our video device, we use `while` to loop continously from our webcam feed. These captured feeds are then unpacked and stored in two variables, the `ret` and `frame` variable. OpenCV's `imshow()` method then renders them on the screen with the name `Webcam feed`. You can give yours a different name if you so wish. 
+Once we've captured our video device, we use `while` to loop continuously from our webcam feed. These captured feeds are then unpacked and stored in the `ret` and `frame` variables. OpenCV's `imshow()` method then renders them on the screen with `Webcam feed`. You can give yours a different name if you so wish. 
 
 ### Applying selfie segmentation using OpenCV
-
 ```python
 mp_selfie = mp.solutions.selfie_segmentation
 ```
@@ -123,7 +120,7 @@ This code `mp_selfie.SelfieSegmentation(model_selection=0) as model` allows us t
 By default, OpenCV saves frames in `blue-green-red` (BGR) format. Don't be surprised if your image or video feed appears to show your face in blue. We convert this into the `red-green-blue` (RGB) standard format using the command, `cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)` to pass it to our model. We save this result in a variable called `frame`.
 We then pass this `frame` into our model and save the result in the `res` variable.
 
-> Please note that this isn't going to be rendered. Atleast not yet. We will only be able to see the results from the variable `res`.
+> Please note that this isn't going to be rendered. At least not yet. We will only be able to see the results from the variable `res`.
 
 To check the results, use the following command:
 
@@ -147,10 +144,9 @@ array([[6.5710924e-28, 5.9139829e-28, 3.2855462e-28, ..., 0.0000000e+00,
        [3.3079694e-16, 2.9771723e-16, 1.6539847e-16, ..., 2.4894664e-18,
         4.9789340e-19, 2.3804025e-34]], dtype=float32)
 ```
-These results are the probabilities of us being in that particular frame. You can try and check the probabilities the feed from your webcam feed will give. We can now go ahead and process these results.
+These results are the probabilities of a person being in a webcam frame. You can try and check the probabilities the feed from your webcam feed will give. We can now go ahead and process these results.
 
 ### Processing the results
-
 We begin by installing `pyplot` and `gridspec`. `pyplot` help us in the main plotting while `gridspec` enables us use grids in our layout. `Gridspec` makes it easy to set up subplots.
 
 ```python
@@ -189,7 +185,6 @@ Rather than having a segmentation mask with a single channel, we'll multiply it 
 Let's now go ahead and wrap this up using the gradio app.
 
 ### Integrating the selfie model into the Gradio app
-
 To wrap it up, we will integrate the selfie model into the [gradio](https://www.gradio.app/) application. This will enable the model be accessible on a web user interface.
 
 ```python
@@ -208,8 +203,8 @@ webapp = gr.interface.Interface(fn=segment, inputs=webcam, outputs="image")
 webapp.launch()
 ```
 
-Here, we first imported gradio. We set up the function, `segment` that we want gradio to run on. We then created a function, `segment` that we want the gradio app to go ahead and run. The function returns three values, the `mask`, input image, `image`, and our background, `background`. Please note that the background need not be a black background. You could use a background image or you could apply a blur on the background. To blur, replace the argument, `background` with `cv2.blur()` method.
-We then specify the webcam as our input to our gradio app, and finally, using the `launch()` method, the gradio app is launched. 
+Here, we first imported gradio. We set up the function, `segment` that we want gradio to run on. The function returns three values, the `mask`, input image, `image`, and our background, `background`. Please note that the background need not be a black background. You could use a background image or you could apply a blur on the background. To blur, replace the argument, `background` with `cv2.blur()` method.
+We then specify the webcam as our input to our gradio app, and finally, using the `launch()` method, we launch the gradio app. 
 
 The complete code for this tutorial is available [here](https://colab.research.google.com/drive/1kmtLZGFZWboHVTmYwSh4m-5DgHVyRQ9u).
 
