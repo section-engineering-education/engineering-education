@@ -74,7 +74,7 @@ import numpy as np
 - `cv2` will allow us to leverage the OpenCV library for computer vision. In this tutorial, it will help us with using the webcam and running videos.
 - `tensorflow_hub` will allow us to use the pre-trained Multi-Person Movenet model.
 
-If you're using a GPU, it is vital to limit the memory growth of your GPU to avoid being thrown the out-of-memory errors. It will restrict TensorFlow from using all your V-RAM on your machine. This is optional if you're using a GPU.
+If you're using a GPU, consider limiting the memory growth of your GPU to avoid receiving _out-of-memory_ errors. This restricts TensorFlow from using all the V-RAM on your machine.
 
 ```python
 gpus = tf.config.experimental.list_physical_devices('GPU')
