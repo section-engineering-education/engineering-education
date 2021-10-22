@@ -6,7 +6,7 @@ url: /object-serialization-and-deserialization-in-java/
 title: Serialization and deserialization in Java
 description: This article explains the concept of serialization and deserialization in the context of Java.
 author: grace-wanjiru
-date: 2021-09-27T00:00:00-14:30
+date: 2021-10-22T00:00:00-09:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
