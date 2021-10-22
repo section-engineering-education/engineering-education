@@ -1,7 +1,10 @@
 ### Introduction
 Redis is a key-value store that can be used as an in-memory database, cache provider or message broker.
 
-In this article, we will learn how to use Redis publisher/subscriber to communicate between the services asynchronously. We will create two services, publisher and subscriber services. The publisher service retrieves puns from the pun API service and publishes the pun into the Redis broker queue. The subscriber service listens for new puns in the Redis broker queue, retrieves the new joke and logs it on the Spring Boot console.
+In this article, we will learn how to use Redis publisher/subscriber to communicate between the services asynchronously. 
+We will create two services: 
+- **publisher service** - retrieves puns from the pun API service and publishes the pun into the Redis broker queue.
+- **subscriber service** - listens for new puns in the Redis broker queue, retrieves the new joke and logs it on the Spring Boot console.
 
 ### Prerequisites
 1. Redis installed on your computer.
@@ -216,4 +219,4 @@ The subscriber service receives the jokes from the Redis message queue and logs 
 ![Subscriber](/engineering-education/spring-boot-redis/subscriber.png)
 
 ### Conclusion
-Now that you have learnt how to send messages between two services try implementing a two service application where one service accepts HTTP requests while the second service handles database operations. Then, send messages between the two services using Redis.
+Now that you have learnt how to send messages between two services, try implementing a two service application where one service accepts HTTP requests while the second service handles database operations. Then, send messages between the two services using Redis.
