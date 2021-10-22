@@ -1,5 +1,5 @@
 ---
-title: Victor Kamau
+title: Kennedy Ndutha
 type: authors
 github : https://github.com/taves-hub
 ---
