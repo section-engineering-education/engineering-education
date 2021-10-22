@@ -1,3 +1,21 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /multi-person-pose-estimator-with-python/
+title: Multi-Person Pose Estimation with Python
+description: This tutorial will help readers understand how carry out multi-person pose estimation with Python.
+author: willies-ogola
+date: 2021-10-22T00:00:00-13:00
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/multi-person-pose-estimator-with-python/hero.png
+    alt: Multiperson Pose Example Image
+---
+The Multi-Person Pose Estimation is a model designed for sports and exercise-based applications. The model can detect six people in an image or video simultaneously, and 17 keypoint joints per person.
+<!--more-->
 This tutorial will use a technique known as Multi-Person Pose Estimation to predict human joint locations of people in an image frame. One of the most popular use cases is in [kinematics](https://en.wikipedia.org/wiki/Kinematics), which analyzes the body and all the different angles and joints within a body.
 
 ### Table of contents
