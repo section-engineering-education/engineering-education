@@ -57,7 +57,7 @@ In this tutorial, I'll explain how serialization works and how we can implement 
 ### How to serialize and deserialize with the help of examples
 
 To perform serialization, use the `ObjectOutputStream` class's `writeObject` method. For deserialization, use the `InputObjectStream` class's `readObject` method.
-The `.ser` extension is usually used when serializing an entity to a directory in Java.
+The `.ser` extension is usually used when serializing an entity to a file in Java.
 
 Method syntax of writeObject:
 
@@ -71,7 +71,7 @@ Method syntax readObject:
 public final Object readObject() throws IOException, ClassNotFoundException
 ```
 
-We are going to use sections of our full example code which will be shown later. Below are the sections of the full code. 
+> We are going to use sections of our full example code which will be shown later. Below are the sections of the full code. 
 
 #### A Serialization example
 
@@ -281,7 +281,7 @@ When properties aren't serialized, there are a couple of things to consider:
 
 ### Serialization with static data members
 
-Static members/variables are class members/variables. Instead of instance/object variables, statics are termed "class members." Importantly, serialization only preserves the state of an object, not the value of a static component of a class.
+Static members/variables belong to a class unlike instance members/variables which belong to an object. Importantly, serialization only preserves the state of an object, not the value of a static component of a class.
 
 As the static member belongs to its class and isn't a part of the object of its class, the values of the static member aren't stored when an object is serialized.
 
