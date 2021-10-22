@@ -36,6 +36,8 @@ To understand this tutorial, you need to be familiar with:
 - Jupyter Notebook or Google Colab. To follow through, please use Google Colab.
 - TensorFlow and [TensorFlow Hub](https://www.tensorflow.org/hub). TensorFlow Hub is a repository consisting of trained machine learning models which you can download and use in any of your projects.
 
+> You need to download the `footballers.mp4` video file from this [Google drive](https://drive.google.com/file/d/1AMrHeQ-wmZEg1xe5bG47t-JA4HABTzid/view?usp=sharing) account and upload it into your Google Colab. I uploaded it on my Google Colab for this tutorial but it get's deleted after runtime. So, you'll need to download it and upload it yourself to avoid errors.  
+
 ### Introduction
 [Multi-Person Pose Estimation](https://tfhub.dev/google/movenet/multipose/lightning/1) is one of Google's latest models built on top of their lightning model. It is an improvement from the [MoveNet.SinglePose](https://blog.tensorflow.org/2021/05/next-generation-pose-detection-with-movenet-and-tensorflowjs.html) model, which could only detect single poses. The model comprises three models. The backbone network is built using the [MobileNetV2](https://arxiv.org/pdf/1801.04381.pdf) network, the feature extraction layer is comprised of [Feature Pyramid Networks](https://arxiv.org/pdf/1612.03144.pdf), and the layer that outputs the key points is comprised of the [CenterNet](https://arxiv.org/pdf/1904.07850.pdf) model. 
 
