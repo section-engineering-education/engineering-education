@@ -16,11 +16,11 @@ Check the article [Introduction to C++](https://www.section.io/engineering-educa
 - [Utilize struct attributes](#utilize-struct-attributes)
 - [Display the digital clock](#display-the-digital-clock)
 - [How to increment the Time](#how-to-increment-the-time)
-- [An example digital clock](#an-example-digital-clock)
+- [A complete demo of our project](#a-complete-demo-of-our-project)
 - [Conclusion](#conclusion)
 
 ### An overview of our project
-To create our digital watch, we will look at a c++ program that makes a digital clock in the language.  It will help us learn and practice `conditional statements` and `loops`, two crucial c++ programming concepts. Our digital clock application will use the Time () method to get the current local time. Initializing our variables will use the "tm" structure, which contains data and time characteristics. An excellent c++ digital clock application will be built using an endless while loop.
+To build our digital watch, we will use a c++ software that creates a digital clock. Conditions and loops are two important c++ programming concepts that we will practice here. We'll utilize the Time () function to obtain the current local time. Initializing our variables will use the "tm" structure, which contains data and time characteristics. An excellent c++ digital clock application will be built using an endless while loop.
 
 Let's break down the digital clock software into more miniature stages to make it easier to understand and complete. These are the actions that must be taken.
 - Use the Time () method to find out what Time it is right now on your machine.
@@ -59,8 +59,6 @@ time_t t = time(NULL);
 - Use the tm hour property to set the hours variable to zero.
 
 - Declare an AM/PM timestr variable.
-
-- Set the Time to hrs
 
 The code below stores the local Time in the variables using the pointers, and the if condition is used to change the local Time to twelve hours clock format
 
@@ -107,7 +105,7 @@ Follow the procedure below to increment the Time in our digital watch.
 
 - In the same way, when the min reaches 60, increment hours by one and set the min variable to 0.
 
-- Set the hours to 00 when it reaches 24. This is because the standard Time in twelve hours system ranges from one to twelve repeatedly.
+- Set the hours to 00 when it reaches 24. This is because the standard Time in twenty four hours system ranges from one to twenty four repeatedly.
 
 Use the code below to accomplish the time increment.
 
@@ -177,7 +175,7 @@ while (true)
 
 ```
 
-### An example digital clock
+### A complete demo of our project
 
 ```c++
 #include <iostream>
@@ -188,41 +186,42 @@ using namespace std;
 int main()
 {
     time_t t = time(NULL);
-    tm *timePtr = localtime(&t);
+    tm *timePtr = localtime(&t); // stores the local time of the computer.
     
     int seconds = (timePtr->tm_sec);
     int minutes = (timePtr->tm_min);
     int hrs = (timePtr->tm_hour);
     
 
-    while (true)
+while (true)
     {
         system("cls");
         
-        cout << "The digital time is:";
+        cout << "The digital time is :";
+        // This output the message "The digital time is :"
         
-        cout << "      |" << hrs << " : " << minutes << " : " << seconds << " hrs" << endl;
-        
+        cout << "      |" << hrs << " : " << minutes << " : " << seconds << " " << endl;
+        //increment sec min and hours   
         seconds++;
         if (seconds >= 60)
         {
             seconds = 1;
             minutes++;
         }
-
+        // This increases the minutes
         if (minutes >= 60)
         {
-            minutes = 1;
+            minutes = 0;
             hrs++;
         }
-
-        if (hrs >= 24)
+        // This increases the hours
+        if (hrs > 24)
         {
             hrs = 00;
         }
-
+    
         Sleep(1000);
-    }
+    }    
 
     return 0;
 }
