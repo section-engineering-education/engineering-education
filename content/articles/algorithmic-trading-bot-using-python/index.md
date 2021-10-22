@@ -186,10 +186,10 @@ self.Schedule.On(self.DateRules.EveryDay(self.symbol), \
 6. #### **Implement the EveryMarketOpen method**
 
 First, we will determine the lookback length for our breakout.
-Within a utility of 30 days we will compare the current value today with the same value yesterday.
+Within a utility of 60 days we will compare the current value today with the same value yesterday.
 This will help determine the length of the lookback window.
 
-- Call the History function to get data for the last 31 days or you prefered number of days.
+- Call the History function to get data for the last 61 days(two months) or you prefered number of days.
 
   - This is where we use the numpy library to calculate the standard deviation for the two days.
 
@@ -201,33 +201,34 @@ The following code falls under this *EveryMarketOpen* method to perform all the 
 
 
     def EveryMarketOpen(self):
-        close = self.History(self.symbol, 31, Resolution.Daily)["close"]
-        todayvol = np.std(close[1:31])
-        yesterdayvol = np.std(close[0:30])
-        deltavol = (todayvol - yesterdayvol) / (todayvol)
+        close = self.History(self.Symbol, 61, Resolution.Monthly)["close"]
+        todayvol = np.std(close[1:61])
+        yesterdayvol = np.std(close[0:60]) // standard deviation
+        initialvol = (currentvol - yestervol) / (currentvol)
 
-        self.lookback = round(self.lookback * (1 + deltavol))
+        self.lookback = round(self.lookback * (1 + initialvol))
 
-        if self.lookback > self.ceiling:
-            self.lookback = self.ceiling
-        elif self.lookback < self.floor:
-            self.lookback = self.floor
+        if self.lookback > self.highest:
+            self.lookback = self.highest
+        elif 
+          self.lookback < self.lowest:
+            self.lookback = self.lowest
 
-        self.high = self.History(self.symbol, self.lookback, Resolution.Minute)["high"]
+        self.high = self.History(self.Symbol, self.lookback, Resolution.Minute)["high"]
 
         if not self.Securities(self.Symbol).Invested and \
-                self.Securities(self.symbol).Close >= max(self.high[:-1]):
+                self.Securities(self.Symbol).Close >= max(self.high[:-1]):
 
-                self.SetHoldings(self.symbol, 1)
-                self.breakoutlvl = max(selt.high[:-1])
-                self.highestPrice = self.breakoutlvl
+                self.SetHoldings(self.Symbol, 1)
+                self.breakoutlevel = max(selt.high[:-1])
+                self.highestPrice = self.breakoutlevel
 
         if self.Securities(self.Symbol).Invested:
 
             if not self.Transactions.GetOpenOrders(self.symbol):
-                self.StopMarketTicket = self.StopMarketOrder(self.symbol, \
+                self.EndMarketTicket = self.EndMarketOrder(self.symbol, \
                                         -self.Portfolio[self.symbol].Quantity, \
-                                        self.initialStopRisk * self.breakoutlvl)
+                                        self.initialStopRisk * self.breakoutlevel)
 
 
             if not self.Securities(self.Symbol).Close > self.highestPrice and \
@@ -235,8 +236,8 @@ The following code falls under this *EveryMarketOpen* method to perform all the 
 
                     self.highestPrice = self.Securities[self.symbol].Close
                     updateFields = UpdateOrderFields()
-                    updateFields.stopPrice = self.Securities[self.symbol] * self.trailingStopRisk
-                    self.stopMarketTicket.Update(updateFields)
+                    updateFields.stopPrice = self.Securities[self.Symbol] * self.trailingStopRisk
+                    self.EndMarketTicket.Update(updateFields)
 
 ```
 
@@ -288,34 +289,35 @@ class GeekyBlueSeahorse(QCAlgorithm):
 
         self.Plot("Data Chart", self.symbol, self.Securities[self.symbol].Close)
 
-    def EveryMarketOpen(self):
-        close = self.History(self.symbol, 31, Resolution.Daily)["close"]
-        todayvol = np.std(close[1:31])
-        yesterdayvol = np.std(close[0:30])
-        deltavol = (todayvol - yesterdayvol) / (todayvol)
+ def EveryMarketOpen(self):
+        close = self.History(self.Symbol, 61, Resolution.Monthly)["close"]
+        todayvol = np.std(close[1:61])
+        yesterdayvol = np.std(close[0:60]) // standard deviation
+        initialvol = (currentvol - yestervol) / (currentvol)
 
-        self.lookback = round(self.lookback * (1 + deltavol))
+        self.lookback = round(self.lookback * (1 + initialvol))
 
-        if self.lookback > self.ceiling:
-            self.lookback = self.ceiling
-        elif self.lookback < self.floor:
-            self.lookback = self.floor
+        if self.lookback > self.highest:
+            self.lookback = self.highest
+        elif 
+          self.lookback < self.lowest:
+            self.lookback = self.lowest
 
-        self.high = self.History(self.symbol, self.lookback, Resolution.Minute)["high"]
+        self.high = self.History(self.Symbol, self.lookback, Resolution.Minute)["high"]
 
         if not self.Securities(self.Symbol).Invested and \
-                self.Securities(self.symbol).Close >= max(self.high[:-1]):
+                self.Securities(self.Symbol).Close >= max(self.high[:-1]):
 
-                self.SetHoldings(self.symbol, 1)
-                self.breakoutlvl = max(selt.high[:-1])
-                self.highestPrice = self.breakoutlvl
+                self.SetHoldings(self.Symbol, 1)
+                self.breakoutlevel = max(selt.high[:-1])
+                self.highestPrice = self.breakoutlevel
 
         if self.Securities(self.Symbol).Invested:
 
             if not self.Transactions.GetOpenOrders(self.symbol):
-                self.StopMarketTicket = self.StopMarketOrder(self.symbol, \
+                self.endMarketTicket = self.endMarketOrder(self.symbol, \
                                         -self.Portfolio[self.symbol].Quantity, \
-                                        self.initialStopRisk * self.breakoutlvl)
+                                        self.initialStopRisk * self.breakoutlevel)
 
 
             if not self.Securities(self.Symbol).Close > self.highestPrice and \
@@ -323,13 +325,14 @@ class GeekyBlueSeahorse(QCAlgorithm):
 
                     self.highestPrice = self.Securities[self.symbol].Close
                     updateFields = UpdateOrderFields()
-                    updateFields.stopPrice = self.Securities[self.symbol] * self.trailingStopRisk
-                    self.stopMarketTicket.Update(updateFields)
+                    updateFields.stopPrice = self.Securities[self.Symbol] * self.trailingStopRisk
+                    self.endMarketTicket.Update(updateFields)
+
 
 
                     self.Debug(updateFields.stopPrice)
 
-                    self.Plot("Data Chart", "Stop Price", self.stopMarketTicket.Get(OrderField.StopPrice))
+                    self.Plot("Data Chart", "Stop Price", self.endMarketTicket.Get(OrderField.StopPrice))
 
 
 ```
