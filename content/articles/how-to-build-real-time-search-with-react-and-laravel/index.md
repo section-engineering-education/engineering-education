@@ -2,7 +2,9 @@
 
 ![Hero Image](/engineering-education/how-to-build-real-time-search-with-react-and-laravel/hero-image.png)
 
-Modern data-driven applications usually contain terabytes of searchable data. Users expect search queries to produce results in milliseconds and give concise results. Developers build such functionality using technologies such as [AJAX](https://developer.mozilla.org/en-US/docs/Web/Guide/AJAX/Getting_Started), Single-Page Applications and Caches.
+Modern data-driven applications usually contain terabytes of searchable data. Users expect search queries to produce concise results in milliseconds. 
+
+Developers build such functionality using technologies such as [AJAX](https://developer.mozilla.org/en-US/docs/Web/Guide/AJAX/Getting_Started), Single-Page Applications and Caches.
 
 In this tutorial, you will build a real-time movie search application using React and Laravel. You will also learn about query optimization and how to reduce the search query time of the app using Redis.
 
