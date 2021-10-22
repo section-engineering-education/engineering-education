@@ -88,7 +88,7 @@ for gpu in gpus:
 model = hub.load('https://tfhub.dev/google/movenet/multipose/lightning/1')
 movenet = model.signatures['serving_default']
 ```
-If you've read the model's [documentation](https://tfhub.dev/google/movenet/multipose/lightning/1), you'll realize that these two lines of code have been fetched directly from it. Please read through it in detail to understand it.
+If you've read the model's [documentation](https://tfhub.dev/google/movenet/multipose/lightning/1), you'll realize that these two lines of code have been fetched directly from it.
 
 The first variable, `model` is downloading the model, while the second variable, `movement` is setting up a new variable to go ahead and use that model.
 
