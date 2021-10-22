@@ -1,10 +1,15 @@
-In machine learning, the goal is to predict the target variable as close to the ground truth possible. Thus, the model we adopt for prediction should have reasonable accuracy. As the input values are fixed, to improve the quality of the model, all we can do is to tune its parameters such that the deviation of the predicted value from the actual value is highly minimized.  The variation of the expected value from the actual value on a single training example is called the **loss function**. We denote this function as $L(ŷ,y)$. Summing up the **loss functions** of the entire training set and averaging them over the total number of all the training examples in that set, we obtain a function known as the **cost function**. The *cost function* measures how well we are doing in the entire training dataset. This function is denoted as $J(\Theta)$. This article will look at how we minimize this cost function using the gradient descent algorithm to obtain optimal parameters of a machine learning model.
+In machine learning, the goal is to predict the target variable as close to the ground truth possible. Thus, the model we adopt for prediction should have reasonable accuracy. As the input values are fixed, to improve the quality of the model, all we can do is to tune its parameters such that the deviation of the predicted value from the actual value is highly minimized.  
+
+The variation of the expected value from the actual value on a single training example is called the **loss function**. We denote this function as $L(ŷ,y)$. Summing up the **loss functions** of the entire training set and averaging them over the total number of all the training examples in that set, we obtain a function known as the **cost function**. The *cost function* measures how well we are doing in the entire training dataset. 
+
+This function is denoted as $J(\Theta)$. This article will look at how we minimize this cost function using the gradient descent algorithm to obtain optimal parameters of a machine learning model.
 
 ## Prerequisites
 For a clear understanding of this content, the learner is required:
 - To be familiar with logistic representations such as the logistic hypothesis representation, loss function and cost function.
 - To be familiar with python programming.
-- Willingness to learn
+- Willingness to 
+
 ### Introduction to gradient descent 
 Gradient descent is a crucial algorithm in machine learning and deep learning that makes learning the model's parameters possible. For example, this algorithm helps find the optimal weights of a learning model for which the cost function is highly minimized.
 
@@ -16,7 +21,7 @@ There are three categories of gradient descent:
 - Mini-batch gradient descent:
  To update parameters, the mini-bitch  gradient descent uses a specific subset of the observations in a training dataset from which the gradient descent is run to obtain an optimal set of parameters.
 
-#### Recall:
+#### Recall
 We had defined the following function:
 - $L(\hat{y}^{(i)}, y^{(i)})$ is loss function on a single trainig exaple. 
 - $J(\theta)$ is a cost function of the entire training set and is obtain by averaging the sum of the loss function $L(\hat{y}^{(i)}, y^{(i)})$.
@@ -38,9 +43,13 @@ Now, to find the $\theta$ values corresponding to minimum value of our cost func
 We start by initializing $\theta_0$ and $\theta_1$ to some random values on the $J(\theta_0, \theta_1)$, i.e.;
 $\theta_0 = 0$
 $\theta_1 = 0$
+
 We then determine the derivative of the cost function $J(\theta_0, \theta_1)$ at these initial points with respect to $\theta_o$ and $\theta_1$. We thus obtain two partial derivatives. These derivatives tell us the direction of the cost function we should take to minimize the error. We usually take 
 
-Using these gradients and our cost function, we take a step towards the direction in which the cost function gradually decreases with a high value. As a result, we end up landing in a new position on the cost curve. In the process, the values of $\theta_0$ and $\theta_1$ are updated. The process repeats itself until the algorithm reaches or approches close to the global minimum. Below is a mathematical representation of the gradient descent algorithm.
+Using these gradients and our cost function, we take a step towards the direction in which the cost function gradually decreases with a high value. As a result, we end up landing in a new position on the cost curve. In the process, the values of $\theta_0$ and $\theta_1$ are updated. 
+
+The process repeats itself until the algorithm reaches or approches close to the global minimum. Below is a mathematical representation of the gradient descent algorithm.
+
 ## The gradient descent algorithm
 
  Reapt until convergence:{
@@ -75,6 +84,8 @@ print(theta,J)
 ```
 ### Output
 ![output](/engineering-education/gradient-descent-algorithm-in-python/output.png)
+
+
 ### Visualizing the cost function
 ```python
 # Finding the value of x that minimizes J
