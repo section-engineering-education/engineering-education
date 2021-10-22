@@ -218,7 +218,7 @@ EDGES = {
 
 The above values tell us how to connect the joints. Remember we mentioned the order in which the 17 joints are read. So, for example, the first value, `(0, 1): 'm',` tells us how the nose connects to the left eye, and the last value, `(14, 16): 'c'` tells us how the right knee connects to the right ankle. 
 
-Please find the complete code for this tutorial [here](https://colab.research.google.com/drive/1LO9e9jdvIE7bNCXd0fWduZeuDG37z83X?usp=sharing).
+Please find all the code for this tutorial [here](https://colab.research.google.com/drive/1LO9e9jdvIE7bNCXd0fWduZeuDG37z83X?usp=sharing).
 
 ### Wrapping up
 To recap, we installed and imported our dependencies, loaded the model, made detections using either the webcam or videos and finally drew the keypoints and edges. If you're not getting accurately drawn keypoints and edges, or it's drawing on objects that shouldn't, you can try tuning the and confidence score and scale value to obtain the correct aspect ratio. The larger the image that you pass through, the slower the detections are going to be. The vice versa is also true.
