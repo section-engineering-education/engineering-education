@@ -193,7 +193,7 @@ This will help determine the length of the lookback window.
 
   - This is where we use the numpy library to calculate the standard deviation for the two days.
 
-- We will list all the highest and lowest prices within a specified range, for this case, 30days
+- We will list all the highest and lowest prices within a specified range, for this case, 60days
 
 The following code falls under this *EveryMarketOpen* method to perform all the comparisons required to give a desired result;
 
@@ -226,18 +226,18 @@ The following code falls under this *EveryMarketOpen* method to perform all the 
         if self.Securities(self.Symbol).Invested:
 
             if not self.Transactions.GetOpenOrders(self.symbol):
-                self.EndMarketTicket = self.EndMarketOrder(self.symbol, \
+                self.endMarketTicket = self.endMarketOrder(self.symbol, \
                                         -self.Portfolio[self.symbol].Quantity, \
                                         self.initialStopRisk * self.breakoutlevel)
 
 
             if not self.Securities(self.Symbol).Close > self.highestPrice and \
-                    self.initialStopRisk * self.breakoutlvl < self.Securities[self.symbol].Close * self.trailingStopRisk:
+                    self.initialStopRisk * self.breakoutlevel < self.Securities[self.symbol].Close * self.trailingStopRisk:
 
                     self.highestPrice = self.Securities[self.symbol].Close
                     updateFields = UpdateOrderFields()
                     updateFields.stopPrice = self.Securities[self.Symbol] * self.trailingStopRisk
-                    self.EndMarketTicket.Update(updateFields)
+                    self.endMarketTicket.Update(updateFields)
 
 ```
 
@@ -343,6 +343,7 @@ For more explanations or inconviniences, you can refer to this [video](https://w
 
 
 8. #### Perform a Backtest
+
 
 A back test is performed to evaluate the performance of the algorithm.
 It integrates the code with your brokerage site to get results as if it was an actual trading practice.
