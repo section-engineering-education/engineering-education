@@ -1,7 +1,7 @@
 ### Introduction
 Java is majorly an object-oriented programming language. The importance of lambdas as a programmer is to
-make your code appear shorter, efficient, and above all functional. Everything in Java is an object. An object could be physical or imaginary, it just has to do with the way we see the thing about things in general. For example, a wallet is an object that has a method to store money, make money, add cards, get cards, etc.
-Example 2: a bucket is an object that has a method to store fluids either solid, liquid, or gas depending on what you want to store it with and get fluid. Now it gets interesting when you have a collection of wallets with different items in it and you want to access the one with the red card that has money more than #30,000 ('#' is naira in Nigeria currency), this is when lambdas come in because it hard you iterate through a collection without making mistakes and even if it works it's definitely not efficient.
+make your code appear shorter, efficient, and above all functional. Everything in Java is an object. An object could be physical or imaginary, it just has to do with the way we see things in general. For example, a wallet is an object that has a method to store money, make money, add cards, get cards, etc.
+Example 2: a bucket is an object that has a method to store solid, liquid, or gas depending on what you want to store. Now it gets interesting when you have a collection of wallets with different items and you want to access the one with the red card that has money more than #30,000 ('#' is naira in Nigeria currency), this is when lambdas come in because it hard you iterate through a collection without making mistakes and even if it works it's not efficient.
 ### Prerequisite
 - A basic understanding of the Java OOP (Object Oriented Programming) concept
 - Basic understanding of lambdas
@@ -111,11 +111,11 @@ public class Collection_Wallet {
 ```
 N/B that list. stream() creates a stream of Wallet just as we said early you spread your wallets all over the table and then you want to look for a specific thing.
 #### Filtering Wallets
-When you are searching for a card that is green we place them in an array i.e have a collection of wallets and then we iterate through
+When you are searching for a green card we place them in an array i.e have a collection of wallets and then we iterate through
  Two major interfaces that will help you to manipulate your collections using lambdas are the Functions<T, R> and the Predicate<T>.
 The Predicate takes in an argument and returns true or false, this is used to check whether a particular  parameter meets the condition while Function takes
 in parameter and also return required datatype
-Customers<T> takes in argument and return void such as the forEach
+Customers<T> take in argument and return void such as the forEach
 Supplier<T>etc takes in no argument and returns a value of T.
 Firstly we use the Predicate interface to check if the pipeline meets a certain condition, Predicate<T> this takes an argument and then returns true or false which validates, it is then used with the filter which is an intermediate method that takes in a predicate method
 N/B please write these codes in your Collection_Wallet class;
@@ -130,7 +130,7 @@ Predicate<Wallet> takeMoneyAndBlackCard=
                 .sorted(Comparator.comparing(Wallet::getCards))
                 .forEach(System.out::println);
 ```
-The Comparator interface with its static method comparing, compares two objects of wallet base on its instance method and returns negative if the first is less than than the second, positive if the first is greater, and zero if they are equal, then the forEach terminates the entire pipeline.
+The Comparator interface with its static method comparing, compares two objects of wallet based on its instance method and returns negative if the first is less than than the second, positive if the first is greater, and zero if they are equal, then the forEach terminates the entire pipeline.
 ```
 Result
 Display of your sorted list by Card: 
@@ -201,7 +201,7 @@ Function<T,R>
 #64000.00 Black 
 #74000.00 Black 
 ```
-We will see how to reverse base on values in the collection using lambdas
+We will see how to reverse based on values in the collection using lambdas
 ```java
 System.out.println("Display by money then by card in reserve order)
         list.stream()
@@ -279,7 +279,6 @@ Red has 2 wallet(s)
 Green has 2 wallet(s)
 Black has 5 wallet(s)
 ```
- 
 #### Calculation of the sum of all the amounts the all the wallet
 
 ```java
@@ -316,7 +315,7 @@ Here we analyzed how to iterate through a collection of objects, manipulate it w
 - distinct for non-duplicate objects as it is even hard to remove duplicate values of the different object if you were to hard code it yourself,
 - then we grouped using map functional interface which takes two arguments Card and Long which are objects and then we got the number of counts of different members of each group. I hope we have learned something new today.
 #### Let's keep coding!
-### Referrence
+### Reference
 - [TimeComplexity](https://www.mygreatlearning.com/blog/why-is-time-complexity-essential/)
 - Java How to Program, Early Objects (Deitel: How to Program) 11th Edition'
 - [Java Documentation](https://docs.oracle.com/javase/8/docs/api/)
