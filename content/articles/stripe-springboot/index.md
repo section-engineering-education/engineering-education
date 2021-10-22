@@ -4,18 +4,17 @@ Stripe is an online payment system that is almost similar to [Paypal](https://ww
 In this tutorial, the reader will learn how to integrate stripe into their application by creating a simple web application that collects card details and submits a payment to stripe.
 
 ### Table of Contents
-- [Prerequisites]()
-- [Create a stripe account]()
-- [Project set up]()
-- [Set up Stripe]()
-- [Create a request DTO]()
-- [Create a PaymentIntent]()
-- [Create a CheckoutForm model]()
-- [Create a model for the product]()
-- [Create payment and checkout pages]()
-- [Create a controller for the payment]()
-- [Test the application]()
-- [Conclusion]()
+- [Prerequisites](#prerequisites)
+- [Create a stripe account](#create-a-stripe-account)
+- [Project set up](#project-set-up)
+- [Set up Stripe](#set-up-stripe)
+- [Create a request DTO](#create-a-request-dto)
+- [Create a PaymentIntent](#create-a-paymentintent)
+- [Create a model for the product](#create-a-model-for-the-product)
+- [Create payment and checkout pages](#create-payment-and-checkout-pages)
+- [Create a controller for the payment](#create-a-controller-for-the-payment)
+- [Test the application](#test-the-application)
+- [Conclusion](#conclusion)
 
 ### Prerequisites
 - Knowledge in [Spring Boot.](https://spring.io/guides/gs/spring-boot/)
@@ -559,7 +558,7 @@ public class WebController {
     }
 }
 ```
-### Test the integration
+### Test the application
 Stripe provides several test numbers that we can use to test the payment and in this tutorial, we will make use of `4242 4242 4242 4242` which is a Visa card number.
 
 Provide any `3` digits for the CVC and any future date for the date field.
