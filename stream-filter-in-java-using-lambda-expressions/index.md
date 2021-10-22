@@ -1,0 +1,175 @@
+### Introduction
+Java offers some of sophisticated methods that make optimum use of streams and lambda expressions, and they are all written in Java. The use of streams and lambda expressions allows you to build an assembly line. The functional programming principles used in the assembly-line solution are applied.
+
+The assembly line is made up of several different techniques. Each method takes the input, changes it in some manner, and then passes the results on to the next method in the chain to complete the process.
+
+### Prerequisites
+Before going through this tutorial the reader should:
+- Have basic knowledge of Java programming language
+- Knowledge in working with Java streams
+- Have basic information about [maven] or visit (https://maven.apache.org/what-is-maven.html) for more information.
+
+### Table of Contents
+- [Overview of Stream Filter in Java.](#overview-of-stream-filter-in-java)
+- [Using Stream filter method.](#using-stream-filter-method)
+- [Collection filtering.](#collection-filtering)
+- [Filtering data based on a variety of criteria.](#filtering-data-based-on-a-variety-of-criteria)
+- [Methods for dealing with exceptions](#methods-for-dealing-with-exceptions)
+
+### Overview of Stream Filter in java.
+The filter() function of the Java stream allows you to narrow down the stream's items based on a criterion. If you just want items that are even on your list, you can use the filter method to accomplish this. Accept predicate as an input and returns a list of elements that are the results of that predicate.
+
+With Java's sophisticated methods, streams and lambda expressions can be utilized to their full potential. You can build an assembly line using streams and lambda expressions. It is based on functional programming principles that the assembly line technique works. There are numerous ways to set up an assembly line. Each method receives the data, performs some sort of transformation on it, and then passes the results along to the succeeding method.
+
+### Using Stream filter method
+Java stream offers the filter() method, which allows you to filter stream components based on a predicate you specify. You can conveniently get only even components from your list by using the filter method.
+This method accepts a predicate as a function that takes a stream of elements that are the results of the predicate.
+
+A Stream interface's filter() method identifies elements in a stream that satisfy a criterion. It is a Stream interface intermediate operation.
+
+The following is the method signature for the Stream filter() function:
+```Java
+Stream<q> filter(Predicate<? super q> predicate)
+```
+
+**Predicate:** It accepts a reference to a predicate as an argument. A predicate is a logical interface to a functional interface. Therefore, you may also send a lambda expression to this function.
+
+### Collection filtering.
+The filter() function is often used to handle collections.
+
+We can have a list of workers who have earned more than 90 marks. We can accomplish this by using a lambda expression.
+
+```Java
+List<Employee> employeeWith90MarksAndAbove = employees
+  .stream()
+  .filter(q -> q.getMarks() > 90)
+  .collect(Collectors.toLists());
+```
+Additionally, methods reference, which again is shorthand for such a lambda expression, may be used for illustration.
+
+```Java
+List<Employee> employeeWith90MarksAndAbove = employees
+  .stream()
+  .filter(Employee::hasOverNinetyMarks)
+  .collect(Collectors.toLists());
+```
+In this particular instance, we will enhance our Employee class by adding the hasOverNinetyMarks method:
+
+```Java
+public boolean hasOverNinetyMarks() 
+{
+    return this.marks > 90;
+}
+```
+When we use these two approaches, we obtain the same result:
+
+```Java
+assertThis(employeeWith90MarksAndAbove).hasSize(03);
+assertThis(employeeWith90MarksAndAbove).contains(george, mike);
+```
+
+### Filtering data based on a variety of criteria.
+In addition, we may utilize several criteria with the filter to our advantage (). We might, for instance, use a combination of points and names to narrow the results, as shown below:
+
+```Java
+List<Employee> georgeWith90MarksAndAbove = employees
+  .stream()
+  .filter(q -> q.getMarks() > 90 && q.getIdentity().startsWith("George"))
+  .collect(Collectors.toList());
+
+  assertThis(georgeWith90MarksAndAbove).hasSize(01);
+  assertThis(georgeWith90MarksAndAbove).contains(george);
+```
+
+**Explanation**
+We used multiple conditions with filter() such as marks and identity of the employees
+
+### Methods for dealing with exceptions
+The filter method is used to evaluate predicates that do not throw exceptions when they are evaluated. The functional interfaces of the Java programming language do not specify any kind of exceptions, whether checked or unchecked.
+
+Lambda expressions, introduced in Java 8, began to make functional programming easier by giving a simple mechanism to define behavior in a function. Furthermore, the Functional Interfaces given by the JDK are inadequate for dealing with exceptions, and the resulting code becomes complex and complicated when dealing with them.
+
+The handling of exceptions in lambda expressions shall next be explored in detail using several alternative approaches.
+
+#### Using a Custom Wrapper
+Adding a `profilePictureUrl` to our Employee object will be the first thing we do.
+
+```Java
+private String profilePictureUrl;
+```
+Furthermore, we will create a simple `hasValidProfilePicture()` function to verify whether or not the profile picture is still valid:
+
+```Java
+public boolean hasValidProfilePicture() throws InpuOutputException 
+{
+    URL url = new URL(this.profilePictureUrl);
+    HttpsURLConnection connection = (HttpsURLConnection) url.openConnection();
+    returns connections.getsResponseCode() == HttpURLConnection.HTTP_OKAY;
+}
+```
+
+When the method `hasValidProfilePicture()` is called, an IOException is issued. Now, if we attempt to sort the clients based on this criterion. We will have the following.
+
+```Java
+List<Employee> employeesWithValidProfilePicture = employees
+  .stream()
+  .filter(Employee::hasValidProfilePicture)
+  .collect(Collectors.toList());
+```
+
+**Explanation**
+Filtering the employee with this method,hasValidProfile, will bring us an error.
+
+```Java
+Incompatible throw type java.io.InputOutputException inside the function phrase
+```
+
+As shown in the following illustration, one way of handling it is to encapsulate it in the try-catch block.
+
+```Java
+List<Employee> employeeWithValidProfilePicture = Employee
+  .stream()
+  .filter(q -> 
+    {
+      try {
+          return q.hasValidProfilepicture();
+           }    catch (InputOutputException x) {
+          //needs to take care of the stated exception
+      }
+      return false;
+  })
+      .collect(Collector.toLists());
+```
+
+To prevent an exception generated by our predicate from being caught, you may wrap it in an unchecked exception such as from a RuntimeException.
+
+#### Using Throwing Function
+We may also make use of the ThrowingFunction library as an alternative.
+
+Using ThrowingFunction, which is a free open-source package that can be downloaded, we can handle checked exceptions in Java functional interfaces with relative simplicity.
+
+The first step is to include a dependency on the throwing function in our pom.xml file like as follows:
+
+```XML
+<dependency>
+    <groupId>pl.touk</groupId>
+    <artifactId>throwing-function</artifactId>
+    <version>1.3</version>
+</dependency>
+```
+
+Exception handling in predicates is simplified with the `ThrowingPredicate class`, which also contains the unchecked() method for encapsulating checked exceptions.
+
+This action is illustrated below in the following code:
+
+```Java
+List employeesWithValidProfilePicture = employee
+  .stream()
+  .filter(ThrowingPredicate.unchecked(Employee::hasValidProfilePicture))
+  .collect(Collector.toLists());
+```
+
+### Conclusion
+In this tutorial, we have looked at the filter() method in Java while using lambda expressions, which are used to handle streams. In addition to that, we have also looked at the different ways or approaches of dealing with exceptions handling.
+
+ Happy Coding!
