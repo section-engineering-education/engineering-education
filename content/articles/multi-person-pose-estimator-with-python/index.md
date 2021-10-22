@@ -147,7 +147,7 @@ On the documentation, to run the model inference on an input image, it is recomm
 
 That is what that additional code does. We then make our detections using the `movenet` model and finally renders the keypoints.
 
-The output is a float32 tensor of shape [1, 6, 56]. `1` represents the batch dimension, `6` represents the maximum number of people the model can detect, and `56` represents the predicted bounding box/keypoint locations and scores. The first 51 elements (17*3) are the keypoint locations and scores. The last five elements represent the region of the bounding box and the confidence score of the instance.
+The output is a float32 tensor of shape `[1, 6, 56]`. `1` represents the batch dimension, `6` represents the maximum number of people the model can detect, and `56` represents the predicted bounding box/keypoint locations and scores. The first 51 elements (17*3) are the keypoint locations and scores. The last five elements represent the region of the bounding box and the confidence score of the instance.
 
 We've used NumPy `[:,:,:51]` to grab all batch dimensions, all of the maximum number of people, and only the 51 keypoint locations and scores because that's all we need to render our image. `reshape((6,17,3)` tells us that we're reshaping the keypoint to have `6` people, each person with `17` joints, each person having `3` values; the x,y, and confidence score.
 
