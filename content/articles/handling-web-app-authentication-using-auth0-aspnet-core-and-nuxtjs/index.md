@@ -150,7 +150,7 @@ In this section, we will create the `Nuxt` client application. We will start by 
 yarn create nuxt-app <the-application-name>
 ```
 
-Next, we will select the default options.
+The command will prompt for options to select, to make things simple we will leave them as they are.
 
 Then, we will install several dependencies and modules that our client `Nuxt` application requires. First, we will browse to the Nuxt project root directory and execute the below command:
 
@@ -170,7 +170,7 @@ CONFIG_AUTH_AUDIENCE=My_Identifier
 
 We note that the values `My_Domain`, `My_ClientID`, and `My_Identifier` will come from `Auth` application we earlier created in the `Auth0` account.
 
-Next, we will edit the `nuxt.config.js` file as we configure `Nuxt`. First, we will configure `Nuxt` to use the modules we previously installed by adding the below lines:
+We need to modify the contents of the file `nuxt.config.js` as below for Nuxt application to make use of previously installed modules:
 
 ```js
 modules: [
@@ -179,10 +179,10 @@ modules: [
 ],
 buildModules: [
   '@nuxtjs/dotenv'
-],
+]
 ```
 
-Then, we will configure `Axios` to connect with our API. Note that the `base URL` of the `ASP.NET Core Web` will be, by default, the <https://localhost:5001>. Also, note that it may be different depending on your project configuration.
+Next, `Axios` need to be setup in order to connect to our backend. Note that the `base URL` of the `ASP.NET Core Web` will be, by default, the <https://localhost:5001>. Also, note that it may be different depending on your project configuration.
 
 ```js
 axios: {
@@ -190,7 +190,7 @@ axios: {
 },
 ```
 
-Next, we need to configure the router to utilize the `Auth` module to act as our middleware. It implies that the user must be authenticated by `Auth` middleware to access our secure pages in the application. If not, the user is redirected to the login page. The below configuration ensures all the routes in our client application are protected:
+Then, we will setup the Nuxt router in such a way if the application user is not authenticated by `Auth` middleware he/she cannot access secure pages in the application and instead will be redirected to the sign-in page. The below configuration ensures all the routes in our client application are protected:
 
 ```js
 router: {
@@ -212,15 +212,15 @@ auth: {
 }
 ```
 
-Our configuration for the `nuxt.config.js` file is now complete. In the final part of the configuration, we will create an empty `index.js` file in the `store` directory. The reason is that `Auth` middleware utilizes the `Nuxt` store to save authentication details. Also, it is essential to note that the store file has to be there in Nuxt, even if empty for activating the store.
+Our configuration for the `nuxt.config.js` file is now complete. Next, in the `store` folder we will add an empty file `index.js`. The reason is that `Auth` middleware utilizes the Nuxt store to save authentication details. The file also assists in store activation.
 
 Finally, we will create some more pages. First, we will build an `index.vue` page in the new directory named `pages` that fetches data from our backend API and renders it in our client application. The user has to be authenticated before accessing the page, and if not, the user will be redirected to the sign-in page.
 
-As discussed earlier in this guide, the API is also secured, meaning unauthenticated users who may access the index page will not get any data since the API will not allow it.
+As discussed earlier, we have also secured our backend, meaning any unauthorized users who may visit our frontend will not get any data since the backend will not allow it.
 
 Note that this is an essential principle in web application development, whereby you protect the front end of the application and its backend.
 
-The below code is for the `index.vue` file:
+First we will create the file `index.vue` as below:
 
 ```typescript
 <script>
@@ -236,7 +236,6 @@ The below code is for the `index.vue` file:
     }
   }
 </script>
-
 <template>
   <td>
     <h2>Index Page</h2>
@@ -245,16 +244,12 @@ The below code is for the `index.vue` file:
 </template>
 ```
 
-The sign-in page will display a sign-in button that when clicked the user is redirected to the `Auth0` sign in page. The `loginWith(‘auth0’)` method will send the sign in request according to the initial configuration in the `Auth` module. The code for `login.vue` file inside the `pages` directory is as below:
+The sign-in page will display a sign-in button that when clicked it loads the default sign-in with `Auth0` page.
+The login method will send the sign in request according to our earlier setup we did in the `Auth` module.
+
+We will create the file `login.vue` inside the `pages` folder is as below:
 
 ```typescript
-<template>
-  <td>
-    <h2>Sign-In Page</h2>
-    <button @click="btn">Auth0 Sign-In</button>
-  </td>
-</template>
-
 <script>
 export default {
   methods: {
@@ -265,6 +260,12 @@ export default {
   }
 }
 </script>
+<template>
+  <td>
+    <h2>Sign-In Page</h2>
+    <button @click="btn">Auth0 Sign-In</button>
+  </td>
+</template>
 ```
 
 We will run both the API and the Nuxt client projects. To run our API, browse to the API project root directory and execute the below commands:
@@ -289,15 +290,15 @@ Then, we will click the login button, which will redirect us to the `Auth0` sign
 
 ![auth0 login](/engineering-education/handling-web-app-authentication-using-auth0-aspnet-core-and-nuxtjs/auth-login.PNG)
 
-Then we will sign in with the method we specified in `Auth0`, and on successful authentication, we will be redirected to the index page of our client application. Since we have been authenticated, our `Nuxt` client application can request the weather forecast from the backend API, which will respond to the request for the Auth0 Bearer token. The API then verifies if the token is valid against `Auth0`, and on successful verification, it returns the weather forecast object as shown below:
+Then we will sign in with the method we specified in `Auth0`, and on successful authentication, we will be redirected to the index page of our client application. It is now possible for our frontend to send request for the data from the backend, and also requests for a bearer token from `Auth0`. The API then verifies if the token is valid against `Auth0`, and on successful verification, it returns the weather forecast object as shown below:
 
 ![weather-forecast](/engineering-education/handling-web-app-authentication-using-auth0-aspnet-core-and-nuxtjs/weather-forecast.PNG)
 
 ### Wrapping up
 
-In the above tutorial, we have seen it is possible to restrict access to a `Nuxt` client application and a backend `ASP.NET Core API` using a third-party yet secure authentication platform, `Auth0`. Developers should embrace the use of `Auth0` to authenticate their applications’ users. This will help them avoid the hassle and complexity of developing their authentication system.
+As we have seen it is possible to restrict access to a `Nuxt` frontend application and a backend API using a third-party yet secure authentication platform, `Auth0`. Developers should embrace the use of `Auth0` to authenticate their applications’ users. This will help them avoid the hassle and complexity of developing their authentication system.
 
-In addition, `Auth0` is a secure, easy-to-use, and fastest way of authentication and managing the users in a given system.
+In addition, third-party authentication platforms such as `Auth0` provide a secure, fastest and easy way of authenticating and managing the users in a system.
 The code used in this tutorial can be found at my [GitHub Repo](https://github.com/ogoti-lilian/my-projects/tree/main/aspnetcorewebapinuxtapp).
 
 ---
