@@ -232,3 +232,6 @@ Happy coding!
 - [Objects as Points](https://arxiv.org/pdf/1904.07850.pdf)
 - [OpenCV](https://opencv.org/)
 - [Mixkit](https://mixkit.co/free-stock-video/young-duo-playing-soccer-at-night-2920/)
+
+---
+Peer Review Contributions by: [Collins Ayuya](https://www.section.io/engineering-education/authors/collins-ayuya/)
