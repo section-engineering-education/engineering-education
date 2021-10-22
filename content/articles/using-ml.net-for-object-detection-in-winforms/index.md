@@ -218,6 +218,5 @@ Now, there are four classes in your `Models` folder that you created. The code i
 There is one thing remaining in the code, creating where we shall put the information you have been writing in the form of code above. To do this, go to the `Toolbox` and select `PictureBox`, drag it to the form layout, give it the name `imagePrediction`, and implement it with the code function after the `for loop` i.e, `imagePrediction.Image = image;`
 
 When you debug your project, it should be able to detect and put labels on the objects in the images that you are detecting.
-
 #### Conclusion
 From a better understanding and following of this tutorial, it is clear that object detection is not only implemented in python. It is also implemented in C# using the ML.NET framework provided the required nuggets packages are downloaded in the Microsoft Visual Studio.
