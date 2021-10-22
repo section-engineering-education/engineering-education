@@ -4,10 +4,10 @@ In contemporary development environments, it is known by convention that a good 
 
 One of the best ways to ensure a user has a good UI/UX is using progress indicators. Progress indicators show a user their progress in the system, for instance, when logging in, uploading a file or downloading a file. 
 
-This article provides an understanding of the benefits of a progress indicator by developing a web project to demonstrate the concept.
+This article explains the benefits of a progress indicator by developing a web project to demonstrate the concept.
 
 ### Contributions of progress indicators to the UI/UX
-User interface & interaction defines how easy a given webpage is easy and friendly to use to achieve the intended purpose. On the same note, conventionally, a system user understands what is going on in the system and the results of their actions to have a friendly UI/UX. 
+User interface & interaction define how easy a given webpage is easy and friendly to use to achieve the intended purpose. On the same note, conventionally, a system user understands what is going on in the system and the results of their actions to have a friendly UI/UX. 
 
 ### Types of progress indicators
 There are several classifications of progress indicators, but the most relevant one classifies them as either determinant or non-determinant.
@@ -25,7 +25,7 @@ This project is simple for beginners and senior developers too. We will use Java
 
 ### Building the webpage
 To get started, create your project folder, then add three files in the same folder.
-- The first file should be named `index.html`. This file contains all the HTML tags requires for the webpage and its components.
+- The first file should be named `index.html`. This file contains all the HTML tags required for the webpage and its components.
 - The second file, `style.css`, is responsible for containing the CSS definition that styles the HTML components of the website.
 - The last file is `script.js`, which contains the functions that ensure the progress indicator works as intended.
 
@@ -47,7 +47,7 @@ Add the following snippet below the head tag of the `index.html` file.
 </body>
 ```
 
-To cut on the article's length, I have uploaded the `CSS` file [here](https://gist.github.com/diannesandra/3e1bfb5dd1358d0eae20dbf598222f80). It describes all the components of the webpage, and here is how the page looks after applying the CSS styling.
+I have uploaded the `CSS` file [here](https://gist.github.com/diannesandra/3e1bfb5dd1358d0eae20dbf598222f80). It describes all the components of the webpage, and here is how the page looks after applying the CSS styling.
 
 ![CSS styling result](/engineering-education/progress-indicators/webpage-style.png)
 
