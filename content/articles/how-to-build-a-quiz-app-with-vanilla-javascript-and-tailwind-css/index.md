@@ -83,6 +83,8 @@ Lastly, you need to run the command below in your terminal, and then Tailwind CS
 
 You can create your `index.html` in your `public/css` folder. Your `style.css` will be in your `src/css` folder. Your app directories may look like this:
 
+![app-directory](/engineering-education/how-to-build-a-quiz-app-with-vanilla-javascript-and-tailwind-css/app-directory.jpg)
+
 
 
 Now, you are ready to build your quiz app.
@@ -129,7 +131,7 @@ The app will have a start button that will direct you to the questions along wit
 </html>
 ```
 
-In the code above, we imported several utilities from the [Tailwind CSS official website](https://tailwindcss.com/docs)  that we used in styling several components of our app. Also, the question and answer containers contain dummy code that we will later update with JavaScript. Copy and paste this CSS this code in your `style.css` file.
+In the code above, we imported several utilities from the [Tailwind CSS official website](https://tailwindcss.com/docs)  that we used to style several app components. Also, the question and answer containers contain dummy code that we will later update with JavaScript. Copy and paste this CSS this code in your `style.css` file.
 
 ```css
 *, *::before, *::after {
@@ -187,9 +189,9 @@ The code above represents the styling for the answer buttons and their responsiv
 
 Here is what the root page of the app looks like at this point:
 
-![quiz-app]/engineering-education/how-to-build-a-quiz-app-with-vanilla-javascript-and-tailwind-css/quiz-app.jpg)
+![quiz-app](/engineering-education/how-to-build-a-quiz-app-with-vanilla-javascript-and-tailwind-css/quiz-app.jpg)
 
-###Now the JavaScript
+###JavaScript
 
 First, create a `script.js` file in your app directory. In there, you have to call the HTML elements you will work on into your JavaScript with the code below:
 ```js
@@ -199,7 +201,7 @@ const questionContainerElement = document.querySelector('#question-container')
 const questionElement = document.querySelector('#question')
 const answerButtonsElement = document.querySelector('#answer-buttons')
 ```
-Then, you have to create an array that will contain your quiz questions and their corresponding answer options. Here is the code below:
+Then, you create an array that will contain your quiz questions and their corresponding answer options. Here is the code below:
 
 ```js
 const questions = [
@@ -370,10 +372,14 @@ const clearStatusClass = (element) => {
 
 Below is a video of our quiz application in action:
 
-<iframe width="727" height="409" src="https://www.youtube.com/embed/ENdP7aFVFpY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+![app-video](/engineering-education/how-to-build-a-music-player-with-vanilla-javascript/app-video.gif)
+
+
 
 
 ##Conclusion
 While building the quiz application, we used ES6 classes to organize our code. We used CSS3 and some [Tailwind CSS](https://tailwindcss.com/docs) utilities in styling the application. We also made use of Vanilla JavaScript.
 
 With that, you have a fully functional quiz application. You can get the source code from my [Github](https://github.com/Nomzy-kush/Quiz-App-with-JavaScript-and-Tailwind-CSS) repo.
+
+
