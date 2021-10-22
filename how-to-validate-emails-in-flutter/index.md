@@ -9,16 +9,40 @@
 Email validator is a  Flutter package that checks whether an email is valid or invalid. It is not based on regular expression but checks if the email entered is linked to a reliable domain. Domains that exist are Gmail, Yahoo, or Outlook, among others.
 
 ### How does it works?
-Email validator runs a check on the emails through a process called `swift process`. This process detects typographical errors or deliberate mistakes. Furthermore, it helps to organize and clean all email addresses in the flutter application. 
+Email validator runs a check on the emails through a process called `swift process`. This process detects typographical errors or deliberate mistakes. Furthermore, it helps to organize and clean all email addresses in the flutter application.Thus protecting the email sender score maximizing the efficiency of the flutter application. The key concepts from the use of this package are validity, risk, the invalidity of any email address.
+The email validator package consists of a class and a function. It takes an input string and checks whether it is a valid email address or not, which can be either in the local-part@domain.com format or just in domain.com format.
+The constructor for this class is pretty simple: Create a new instance of this class and set the validator type to either 1 or 2 (defaults to 1). The constructor should pass a string and an array of strings for validation.
+The first argument is pretty self explanatory, it's just a boolean that specifies whether we're using the local-part@domain.com format or domain.com as our string to validate.
+The second argument allows you to pass an array of strings that are valid domains for the email. This is only necessary if the string passed in as our first argument is in domain.com format, otherwise it can be omitted entirely.
+The EmailValidation() constructor requires two arguments to function correctly: a boolean saying whether or not we should validate a local-part@domain.com address, and an array of valid domains for the email.
+The function accepts these two arguments in that order, followed by our string to validate as the last argument. If either of the first two arguments contains an error (a boolean with no value or if is not true/false and an empty array), then false should be returned. Otherwise true should be returned and our string should be validated.
+The first two arguments simply specify whether we're trying to validate a local-part@domain.com or domain.com format email address, and the third argument is the string to validate as an email address. The function returns false if either of the first two arguments is an empty array or not a boolean, if so, it returns true and validates the passed string.
+The function accepts three arguments: whether we should validate using the domain.com format, the string to validate as an email address, and finally the email address itself. The function returns false if either of the first two arguments is an empty array or not a boolean, if so it returns true and validates the passed string.
 
-Thus protecting the email sender score maximizing the efficiency of the flutter application. The key concepts from the use of this package are validity, risk, the invalidity of any email address.
 
-### Importance of Email validator
-- Improving the deliverability of messages to emails by eliminating all invalid emails.
-- Improve application performance by not sending mails to 
-  
-This tutorial brings us to the understanding usage of this API for serverless flutter applications.
+### These are the benefits of using email validator in flutter apps:
 
+1. Makes sure user enters a correctly formatted email address while signing up.
+2. Ensures emails are not in the blacklist and also ensure you don't send emails to blacklisted email addresses or domains.
+3. Alerts if username is available on website during registration process.
+4. Validate email on both Android and iOS.
+5. Allows you to add your own custom email validator for extra business requirement.
+6. You can add it as a pre-requisite while submitting the app in app store and google play store for review purpose.
+7. Validate email address on input focus and on submit button click event of any flutter or dart app.
+
+Another great benefit is that the email validator plugin can be used in both Android and iOS apps. As of now, there are no email validation plugins available for flutter developers except this one. If you want to validate an email before sending it or if you want to make sure your user entered a correctly formatted email address while signing up, this is one of the best plugins.
+The email validator plugin has implemented this functionality with an easy to use API. You can make sure that your users are not sending emails to blacklisted email addresses or domains by adding custom blacklist validation check on your own. Apart from checking user entered email address, you can also check if username is available on website during registration process or implement SSO validation, which is very important for your application.
+### Areas of application of email validator.
+- Address CaptureSingle-line Address Verification Software.
+- Address VerifyAddress Enhancement.
+- Data CleanseBatch Data Cleanse & Maintenance.
+- Bank VerificationBank Account, Sort Code & IBAN Validation.
+- GeocodeLongitude & Latitude Data.
+- Email ValidationCheck and Verify Email Addresses. 
+- This example brings us to the understanding usage of this API for serverless flutter applications.
+### Why Email Validator?
+Email validator work better in that it is a more accurate validation tool. In addition to validating email addresses, it also checks that domains are not likely to exist soon.
+Domain Validation Tool is a free service which allows you to search up to 500 domains from your list for availability and immediate results. It's the most powerful domain availability checker available on the internet today. You can easily check up to 500 domains from your list for availability and receive immediate results.
 ### Prerequisites
 - [Android Studio](https://developer.android.com/studio) or [Visual Code](https://code.visualstudio.com/) installed on your computer.
 - Understand how to create and run flutter applications.
