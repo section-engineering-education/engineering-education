@@ -38,7 +38,7 @@ We will use [Spring Initialzr](https://start.spring.io/) to generate a Spring Bo
 - Spring Boot Dev Tools
 - Validation
 
-![Project set up](project-setup.png)
+![Project set up](/engineering-education/stripe-springboot/project-setup.png)
 
 To ensure the public and private keys are available to the application we add the key contents in the `application.properties` file and then we can inject the values using `@Value` annotation.
 
@@ -135,7 +135,7 @@ A `PaymentIntent` is an object that is used by stripe to record customers' infor
 
 The following image shows how a `PaymentIntent` is created and how it tracks the payment from providing card details, attempting payment, and finalizing the payment.
 
-![Payment intent image](accept-a-payment.png)
+![Payment intent image](/engineering-education/stripe-springboot/accept-a-payment.png)
 
 Create a `PaymentController` class inside a package named `controller` and add a post mapping method that has a `/create-payment-intent` endpoint. The browser calls `/create-payment-intent` endpoint and this endpoint has to call stripe to create the payment intent.
 
@@ -565,19 +565,19 @@ Provide any `3` digits for the CVC and any future date for the date field.
 
 When we run the application and navigate to `localhost:8080`, the following payment page is displayed to the browser.
 
-![payment form](payment-form.png)
+![payment form](/engineering-education/stripe-springboot/payment-form.png)
 
 When we enter all the input fields and press the submit button we will be redirected to the checkout page where we enter the payment details.
 
 Enter `4242 4242 4242 4242` as the test card number, any three CVC numbers, and any future date, and press the submit button.
 
-![checkout form](checkout-form.png)
+![checkout form](/engineering-education/stripe-springboot/checkout-form.png)
 
 When you press the pay now button the payment will be processed successfully and a link to our stripe dashboard will be added to the form.
 
 The Stripe dashboard displays the amount of money that was paid, the date, customer, and the payment method as shown in the following image.
 
-![stripe dashboard](stripe-dashboard.png)
+![stripe dashboard](/engineering-education/stripe-springboot/stripe-dashboard.png)
 
 ### Conclusion
 In this tutorial, we have learned how to integrate stripe in a Spring Boot application by leveraging stripe payment intent that ensures at least one payment is made for each transaction.
