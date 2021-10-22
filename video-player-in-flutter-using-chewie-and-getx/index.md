@@ -1,10 +1,10 @@
  
 
-### Video player in flutter using chewie and getx
+### Video player in Flutter using Chewie and Getx
 
 ### Introduction
 
-The default flutter video_player limits the user when he/she wants to perform an action to a video. Chewie is an Application Programming Interface that adds more functionality to the default flutter video player. Some of these functions include are like the addition of play controls to the video player.
+The default flutter video_player limits the user when they want to perform an action to a video. Chewie is an Application Programming Interface that adds more functionality to the default flutter video player. Some of these functions include are like the addition of play controls to the video player.
 
 In this article, we're going to build a video player using Dart and Flutter.
 
@@ -74,7 +74,7 @@ Widget build(BuildContext context) {
 
 ```
 
-As you see, we have a very simple screen with an `appbar `, which will have the title of our player, and a `Scaffold`. The scaffold will contain the background image of our video player and two rows: one with the "Play" button on top, and another one for showing the title and URL of the selected resource.
+As you see, we have a very simple screen with an `appbar `, which will have the title of our player, and a `Scaffold`. The Scaffold will contain the background image of our video player and two rows: one with the "Play" button on top, and another one for showing the title and URL of the selected resource.
 
 The first row is an Align widget:
 
@@ -166,7 +166,7 @@ Container build(BuildContext context) {
 
 ```
 
-The `Row` contains two buttons: one for playing and another one for stepping backward in the video (this is to skip intros and similar stuff).
+The Row contains two buttons: one for playing and another one for stepping backward in the video (this is to skip intros and similar stuff).
 
 We use two Expanded widgets. The first one lets us add a border-radius to our container with a circular shape, and the second one lets us add more padding on the top and on the bottom of our video player.
 
