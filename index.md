@@ -3,6 +3,7 @@
 
 ### Introduction
 Navigating in flutter apps, all you have to do is use the default navigation that comes with Flutter. For complex flutter application consider the addition of  dynamic links, authorizations, and authentication . GetX does a good job of helping you with this by using middleware and bindings, child routes.
+In this article we will see about navigator and routing in flutter. Actually what is a navigator is the answer of so many question. A Navigator helps us to change views while navigating, it manages the lifecycle events for each view while navigating between them.
 ### Topics to handle
 - learn the usage of navigator, routes in Flutter.
 - Passing between one page to another.
@@ -31,9 +32,7 @@ Illustration using code to show route names
 void main() {
  runApp(MaterialApp(
     home: MyFirstApp(),
-     routes: //example of routes we mentioned
-     <String, //string definition for widgetbuilder
-     WidgetBuilder> {
+     routes:<String,WidgetBuilder> {
  '/firstpage': ( BuildContext context ) => My_page(//give a name to first page
  title: 
  'firstPage'),
@@ -65,12 +64,12 @@ Take a case for an application used by users to stream songs or videos. When a u
 ### Simple application that uses navigators and routes
 
 For our application, we will have 3 screens. Navigator.push used navigate to the next page, Navigator.pop used to return to the previous page.
-1. Create a new flutter application
+### Step one - Create a new flutter application
   Open your visual code. On the menu bar click on `view` then `command palette` then click on `new flutter project`. Specify the location where to create your project then specify the name of your project.
 ```cmd
 flutter create name_of_project 
 ```
-2. Open main. dart file, erase its code and replace using this.This case it uses named routes for all the three screen. It contains named routes of all the pages we have in our application.
+### Step two - Open main. dart file, erase its code and replace using this.This case it uses named routes for all the three screen. It contains named routes of all the pages we have in our application.
 ```dart
 //start by importing packages and pages
 
@@ -84,17 +83,13 @@ void main()//method
 class ThisApp extends StatelessWidget
 //creation of a new class
 {
- const ThisApp({//comes by default in flutter
- Key? key //leave the key by default 
- }) : //superkey starts here
- super(key: key);//end of the superkey
+ const ThisApp({Key? key}) : 
+ super(key: key);
 
  @override//overides call 
- Widget build //builds any widget present
- (BuildContext context) //build function needed to navigate
+ Widget build(BuildContext context)
  {
- return //return function
- MaterialApp(
+ return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'First Screen',
       home: const FirstScreen(),
@@ -108,30 +103,27 @@ class ThisApp extends StatelessWidget
 }
 
 ```
-3. Coding firstpage.
+### Step three - Coding firstpage.
 Create firstscreen.dart . This file represents the first page of our application. It contains a class that has an app bar, text, and button to navigate to the second screen. This case uses a navigator. push to navigate to the next page.
 ```dart //used to write dartcode in markdown
 import 'allfiles.dart'; //imports all files in our app
 class FirstScreen extends StatelessWidget//new class for the first screen
 {
  static const routeName = '/FirstScreen';
- const FirstScreen({
- Key? key}) :
+ const FirstScreen({Key? key}) :
  super(key: key);
 //start of another overide
  @override
  //build function below
  Widget build(BuildContext context) {
- return //to return a scaffold containing elements 
- const Scaffold(
+ return const Scaffold(
       body: MyDetails(),
     );
   }
 }
 
-class MyDetails extends StatelessWidget {//definition of our details class
- const MyDetails({Key? key}) //leave the key by default
- : super(key: key);
+class MyDetails extends StatelessWidget {
+ const MyDetails({Key? key}): super(key: key);
 //start of the overide
  @override //overide call 
  Widget build(BuildContext context){//buld any content inside the return
@@ -157,21 +149,18 @@ class MyDetails extends StatelessWidget {//definition of our details class
 }
 
 ```
-4. Let's create the Secondscreen. dart. This is the second screen of our application. It contains text and two buttons to navigate to the first and third screens. The first button uses the ` push(context)` function to the third screen while the second button uses the `navigator. pop(context)` to navigate back to the previous page.   
+### Step four - Let's create the Secondscreen. dart. This is the second screen of our application. It contains text and two buttons to navigate to the first and third screens. The first button uses the ` push(context)` function to the third screen while the second button uses the `navigator. pop(context)` to navigate back to the previous page.   
 ```dart
 import 'allfiles.dart'; //imports all files in our app
 class Secondscreen extends StatelessWidget
 //new stateless widget
 {
  static const routeName = '/Secondscreen';
- const Secondscreen({
- Key? key}) : //leave key as default 
- super(key: key);//end of keys
+ const Secondscreen({Key? key}):super(key: key);
 
  @override// overide is called
  Widget build(BuildContext context) {
- return //returns output for the secondscreen
- Scaffold( //start of the scaffold 
+ return Scaffold( //start of the scaffold 
       body: Center(
         child: Column( //column to hold all text and buttons
           children: [
@@ -202,22 +191,19 @@ class Secondscreen extends StatelessWidget
 }
 
 ```
-6. Let's create the third screen. dart. This is the last page of our flutter mobile application. It also contains text and two buttons to navigate to the first and second screens. The first button uses `. push(context)` to the first screen while second button uses the `navigator. pop(context)` to navigate back to the previous page.   
+### Step five -  Let's create the third screen. dart. This is the last page of our flutter mobile application. It also contains text and two buttons to navigate to the first and second screens. The first button uses `. push(context)` to the first screen while second button uses the `navigator. pop(context)` to navigate back to the previous page.   
 ```dart
-import 'allfiles.dart' ;//contains imports of all files
+import 'allfiles.dart';
 
 class Thirdscreen extends StatelessWidget 
 //third screen class created
 {
  static const routeName = '/Thirdscreen';
- const Thirdscreen({
- Key? key
- }) : super(key: key);//leave key to its default
+ const Thirdscreen({Key? key}) : super(key: key);//leave key to its default
 
   @override //overide call
  Widget build(BuildContext context) { //build function 
- return //return the output
- Scaffold(//contains elements of third screen
+ return Scaffold(//contains elements of third screen
       body: Center(
         child: Column(//contains the text and buttons
           mainAxisAlignment: MainAxisAlignment.center,
@@ -251,14 +237,14 @@ class Thirdscreen extends StatelessWidget
 }
 
 ```
-7. Create allfiles.dart.It contains all the exports of all other files.It will be used as one import to reduce repitition of imports.
+### Step six - Create allfiles.dart.It contains all the exports of all other files.It will be used as one import to reduce repitition of imports.
 ```dart
 export 'package:flutter/material.dart';
 export 'firstscreen.dart';
 export 'Secondscreen.dart';
 export 'Thirdscreen.dart';
 ```
-1. To run the flutter app use the following commands:
+- To run the flutter app use the following commands:
 ```cmd
 flutter run -d chrome //runs the flutter app in chrome browser
 ```
@@ -280,7 +266,7 @@ For any query Reachout @ [this GitHub repository](https://github.com/karehnikita
 
 ### Conclusion
 
-The navigators and routing in flutter applications are key to flutter application development. I recommend all flutter developers to use navigator developing mobile and web applications. 
+The navigators and routing in flutter applications are key to flutter application development. I recommend all flutter developers to use navigator developing mobile and web applications.I hope this post helps you build your next flutter app.
 ### References:
 - https://api.flutter.dev/flutter/widgets/Navigator-class.html
 - https://medium.com/flutter-community/flutter-routes-and-navigation-69f128a9ea8f
