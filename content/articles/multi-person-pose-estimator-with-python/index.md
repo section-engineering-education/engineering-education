@@ -43,11 +43,11 @@ The Multi-Person Pose Estimation is a model designed for sports and exercise-bas
 
 >The model can only detect six people in an image/video simultaneously, and 17 keypoint joints per person, i.e., nose, left eye, right eye, right ear, left ear, etc.
 
-Some of the use cases for this model would be:
-- If you have a yoga class, this model would tell you whether the poses for members are correct.
-- If you have swimming lessons, this model would establish which swimmers have the best swimming strokes and those who need improvements.
-- If you are supervising a tennis lesson, the model would help you analyze the people with correct and incorrect stroke positions.
-- We can use it in medical to identify abnormal poses in patients.
+Some of the use cases for this model are:
+- To determine the correctness of poses of yoga class members during a  yoga class.
+- To establish which swimmers have the best swimming strokes and those who need improvements during swimming lessons.
+- During supervision of a tennis lesson. The model would help you analyze the people with correct and incorrect stroke positions.
+- In medical contexts to identify abnormal poses in patients.
 
 To use the Multi-Person Pose Estimation model, we will need to perform three processes:
 1. Install TensorFlow and TensorFlow Hub.
