@@ -1,4 +1,3 @@
-### Introduction
 #### Key takeaways.
 - What is an email validator?
 - Explaining how an email validator works.
@@ -27,9 +26,7 @@ The function accepts these two arguments in that order, followed by our string t
 
 The first two arguments specify whether we are trying to validate a local-part@domain.com or domain.com format email address, and the third argument is the string to validate as an email address. The function returns false if either of the first two arguments is an empty array or not a boolean. If so, it returns true and validates the passed string.
 
-The function accepts three arguments: whether we should validate using the domain.com format, the string to validate as an email address, and finally, the email address itself. 
-
-The function returns false if either of the first two arguments is an empty array or not a boolean. If so, it returns true and validates the passed string.
+The function accepts three arguments: whether we should validate using the domain.com format, the string to validate as an email address, and finally, the email address itself. The function returns false if either of the first two arguments is an empty array or not a boolean. If so, it returns true and validates the passed string.
 
 
 ### These are the benefits of using email validator in flutter apps:
@@ -65,9 +62,9 @@ Domain Validation Tool is a free service that allows you to search up to 500 dom
 
 ### Prerequisites
 - [Android Studio](https://developer.android.com/studio) or [Visual Code](https://code.visualstudio.com/) installed on your computer.
-- Understand how to create and run flutter applications.
-- Understand the basics of flutter like Widgets and making calls.
-- Basic knowledge of [dart](https://dart.dev/)Programming Language.
+- Understand how to create and run Flutter applications.
+- Understand the basics of flutter like widgets and making calls.
+- Basic knowledge of [Dart](https://dart.dev/) programming language.
 
 ### Core Concepts
 - Validity - This is the existence of an email address and has no errors.  
