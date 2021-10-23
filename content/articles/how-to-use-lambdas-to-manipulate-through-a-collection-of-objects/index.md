@@ -6,11 +6,9 @@ Everything in Java is an object. An object could be physical or imaginary, it ju
 Example 2: a bucket is an object that has a method to store solid, liquid, or gas depending on what you want to store.
 
 Now it gets interesting when you have a collection of wallets with different items and you want to access the one with the red card that has money more than #30,000 ('#' is naira in Nigeria currency), this is when lambdas come in because it hard you iterate through a collection without making mistakes and even if it works it's not efficient.
-
 ### Prerequisite
 - A basic understanding of the Java OOP (Object Oriented Programming) concept
 - Basic understanding of lambdas
-
 ### Objectives
 1. To enable individuals to understand  how lambdas work
 2. To enable individuals to understand how to sort
@@ -18,7 +16,6 @@ Now it gets interesting when you have a collection of wallets with different ite
 4. To enable individuals to understand how to Group a collection of object 
 5. To enable individuals to understand how to check for a distinct object
 ### Importance Of Lambdas
-
 Using lambdas is an effective way of writing your codes as some programmers argue that it might not be clear enough but the truth is, it is highly efficient and leaves room for no error in your code.
 
 It abstracts all the pipe-line you have to create to find what you are looking for, let use our wallet object as a case study, 
@@ -35,7 +32,7 @@ First, we are going to create three(3)classes or objects.
 package Lambda_Collection;
 
 public enum Card {
-    Red,Black,Green,Blue
+    Red, Black, Green, Blue
 }
 ```
 ```Java
@@ -123,7 +120,6 @@ public class Collection_Wallet {
     }
 }
 ```
-
 N/B that list. stream() creates a stream of Wallet just as we said early you spread your wallets all over the table and then you want to look for a specific thing.
 
 #### Filtering Wallets
@@ -148,9 +144,9 @@ Predicate<Wallet> takeMoneyAndBlackCard=
                 .sorted(Comparator.comparing(Wallet::getCards))
                 .forEach(System.out::println);
 ```
+The Comparator interface with its static method comparing, compares two objects of wallet based on its instance method and returns negative if the first is less than than the second,
 
-The Comparator interface with its static method comparing, compares two objects of wallet based on its instance method and returns negative if the first is less than than the second, positive if the first is greater, and zero if they are equal, then the forEach terminates the entire pipeline.
-
+ positive if the first is greater, and zero if they are equal, then the forEach terminates the entire pipeline.
 ```
 Result
 Display of your sorted list by Card: 
@@ -160,7 +156,6 @@ Display of your sorted list by Card:
 #64000.00 Black'
 ```
 Example2
-
 ```java
 Predicate<Wallet> takeMoneyAndBlackCard=
                 e -> (e.takeMoney() >= 30000 && e.getCards().equals(Card.Black));
@@ -172,7 +167,6 @@ Predicate<Wallet> takeMoneyAndBlackCard=
 ```
 #### Result
 Display of your sorted list money: 
-
 ```
 #44000.00 Black 
 #54000.00 Black 
@@ -180,7 +174,6 @@ Display of your sorted list money:
 #74000.00 Black 
 ```
 What if we want to find a wallet with money higher than '#30000'? We will use the find first intermediate method.
-
 ```Java
  Predicate<Wallet> takeMoneyAndBlackCard=
                 e -> (e.takeMoney() >= 30000 );
@@ -196,8 +189,6 @@ What if we want to find a wallet with money higher than '#30000'? We will use th
 #34000.00 Red`
 ```
 N/B if you are writing these codes make sure that every time you use a Predicate interface always uses a different variable.
-
-Function<T,R>
 ```java
         Function<Wallet, Double> byTakeMoney = Wallet::takeMoney;
         Function<Wallet, Card> byGetCard = Wallet::getCards;
@@ -225,7 +216,6 @@ Function<T,R>
 #74000.00 Black 
 ```
 We will see how to reverse based on values in the collection using lambdas
-
 ```java
 System.out.println("Display by money then by card in reserve order)
         list.stream()
@@ -364,3 +354,4 @@ I hope we have learned something new today.
 - Java How to Program, Early Objects (Deitel: How to Program) 11th Edition
 
 - [Java Documentation](https://docs.oracle.com/javase/8/docs/api/)
+
