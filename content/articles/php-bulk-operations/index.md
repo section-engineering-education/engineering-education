@@ -1,5 +1,23 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /php-bulk-operations/
+title: PHP Bulk Operations with XAMPP and FPDF Library
+description: This article aims to take the reader through a stepwise process of understanding dealing with bulk insert and bulk export in PHP. Thus, the reader will understand the benefits of this functionality.
+author: samuel-zabastian
+date: 2021-10-23T00:00:00-17:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+- url: /engineering-education/php-bulk-operations/hero.png
+  alt: Php bulk operations image
+---
 ### Introduction
-Bulk insert and bulk export are some of the most valuable functionalities when dealing with dynamic database records. For instance, a company conducted a study and recorded data in Excel sheets or CSV, but now the records need to be inserted into the database for further analysis. In such a case, a bulk insert comes into place.
+Bulk insert and bulk export are some of the most valuable functionalities when dealing with dynamic database records. For instance, a company conducted a study and recorded data in Excel sheets or CSV, but now the records need to be inserted into the database for further analysis.
+<!--more-->
+In such a case, a bulk insert comes into place.
 
 ### Benefits of bulk operations
 Bulk export works when database records need to be read from a separate document apart from the system. For instance, accompany may generate its reports of sales, employees, profit per product, and assets in stock. This case means that all the database records are organized in a particular way, formatted, then printed in a readable format.
