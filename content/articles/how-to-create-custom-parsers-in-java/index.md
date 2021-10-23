@@ -35,9 +35,9 @@ This article helps the learners and developers understand several tools and libr
 
 ### Prerequisites
 To better understand and follow along the article below the learner should possess:
-- Basic understanding of [how parser works](https://www.sciencedirect.com/topics/computer-science/parsing-process).
-- Good knowledge in application development in [Java programming language](https://www.javatpoint.com/java-tutorial).
-- Good understanding of [regular languages](https://ecomputernotes.com/compiler-design/regular-expression) and [context free grammars](https://brilliant.org/wiki/context-free-grammars/).
+- Basic understanding of [how the parser works](https://www.sciencedirect.com/topics/computer-science/parsing-process).
+- Good knowledge of application development in [Java programming language](https://www.javatpoint.com/java-tutorial).
+- Good understanding of [regular languages](https://ecomputernotes.com/compiler-design/regular-expression) and [context-free grammars](https://brilliant.org/wiki/context-free-grammars/).
 - [An overview of Compiler Design](/engineering-education/an-overview-of-compiler-design/).
 
 ### Concept of parser and parsing
@@ -49,7 +49,7 @@ It requires a particular program to perform the actual parsing called a parser.
 
 A parser is made up of two parts, the scanner (tokenizer/lexer) and the parser.
 
-Lexer and parser perform tasks in an orderly manner. It means that the lexer will first read the input data and generates a list of tokens. Then, the parser reads the tokens generated and outputs the results.
+Lexer and parser perform tasks in an orderly manner. It means that the lexer will first read the input data and generate a list of tokens. Then, the parser reads the tokens generated and outputs the results.
 
 Lexer recognizes plain characters or words in a given alphabet, and regular expressions engines can easily implement lexers.
 
@@ -110,7 +110,7 @@ The input is matched according to the defined grammar called "specs" and execute
 [JFlex](https://jflex.de/) can be used as a stand-alone tool or combined with other parser generators such as `CUP` or `ANTLR` since JFlex is also a lexer generator.
 
 The grammar or the 'spec' contains the following parts and is usually separated with a symbol `%%`:
-- The usercode that is usually included in the generated class
+- The user code that is usually included in the generated class
 - The macros/options
 - The lexer rules
 
@@ -126,19 +126,19 @@ Lexer and parser rules can also be explicitly defined.
 #### APG
 It is a [recursive descent parser](https://en.wikipedia.org/wiki/Recursive_descent_parser) that uses [Augmented BNF](https://en.wikipedia.org/wiki/Augmented_Backus%E2%80%93Naur_form) variation.
 
-[APG](https://sabnf.com/) made up of more operators such as [syntactic predicates](https://en.wikipedia.org/wiki/Syntactic_predicate) and and custom-made matching functions.
+[APG](https://sabnf.com/) is made up of more operators such as [syntactic predicates](https://en.wikipedia.org/wiki/Syntactic_predicate) and custom-made matching functions.
 
-An APG grammar is simple, clean and easy to grasp to a new developer. It is popularly known in writing Java, JavaScript, C, and C++ parsers.
+An APG grammar is simple, clean, and easy to grasp to a new developer. It is popularly known for writing Java, JavaScript, C, and C++ parsers.
 
 #### Coco/R
 It uses [attribute grammar](http://melt.cs.umn.edu/silver/tutorial/4_attribute_grammars/) to generate a scanner and a parser that is [recursive-decent](https://www.geeksforgeeks.org/recursive-descent-parser/).
 
 In attribute grammar, the semantic rules are defined in an [EBNF](https://tomassetti.me/ebnf/) variant and then interpreted in order to modify the methods of a resulting parser.
 
-It is well documented and offers several grammar samples to provide good knowledge of the tool. It is well known in writing parsers for Java, C++, and C# languages.
+It is well documented and offers several grammar samples to provide good knowledge of the tool. It is well known for writing parsers for Java, C++, and C# languages.
 
 #### CUP
-It is a Look-Ahead LR ([LALR](https://www.geeksforgeeks.org/lalr-parser-with-examples/)) parser, popularly known in generating parsers for Java.
+It is a Look-Ahead LR ([LALR](https://www.geeksforgeeks.org/lalr-parser-with-examples/)) parser, popularly known for generating parsers for Java.
 
 [CUP](http://www2.cs.tum.edu/projects/cup/) can work well with JFlex to generate the right parts of the parser. It also offers an Eclipse plugin used by developers in writing grammar.
 
@@ -152,7 +152,7 @@ It is well documented and has been used significantly in essential projects such
 #### JavaParser
 It is a Java parser library that parses Java code.
 
-[JavaParser](https://javaparser.org/) offers lexical preservation and [pretty-printing](https://en.wikipedia.org/wiki/Prettyprint). This implies that Java code can be parsed, modified, and printed back with an original format or pretty printed.
+[JavaParser](https://javaparser.org/) offers lexical preservation and [pretty printing](https://en.wikipedia.org/wiki/Prettyprint). This implies that Java code can be parsed, modified, and printed back with an original format or pretty printed.
 
 It is possible to integrate it with [JavaSymbolSolver](https://github.com/javaparser/javasymbolsolver) and also support all Java versions.
 
