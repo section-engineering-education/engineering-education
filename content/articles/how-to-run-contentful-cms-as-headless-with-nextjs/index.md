@@ -1,12 +1,27 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-run-contentful-cms-as-headless-with-nextjs/
+title: How to run Contentful CMS as headless with Nextjs
+description: In this guide we will learn how we can use Next.js to run WordPress as a headless CMS. Next.js uses generators that render a static spage.
+author: catherine-macharia
+date: 2021-09-20T00:00:00-14:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/how-to-run-contentful-cms-as-headless-with-nextjs//hero.jpg 
+    alt: How to run Contentful CMS as headless with Nextjs Image
+---
+
 Contentful is built as a content repository making Content available via an API (RESTful or GraphQL) to be displayed on any device. This article will set up simple blog posts on the CMS and then display them to the users using Next.js. Finally, we will query the data from the CMS using an API.
-
+<!--more-->
 ### Goal
-
 This article will interact with Contentful as a headless CMS by creating a simple posts app with Next.js.
 
 ### Pre-requisites
 To follow along with this article, it is crucial to have the following:
-
 - [Node.js](https://nodejs.org/en/) installed on your computer.
 - [Git](https://git-scm.com/) installed on your computer.
 - Have some working knowledge with JavaScript and Next.js.
@@ -70,20 +85,15 @@ At this point, we have defined our Schema by creating a content type and adding 
 
 ### Adding posts to Contentful
 After adding the content type, it is now time to add the data that we want to see on our app. To do this, we will follow the following steps:
-
 - On the top navigation bar, click *** Content ***.
-
 - Click the ***Add simple blog post*** button.
-
 - On the resulting form, key in a title, key in an excerpt, and key in a description. Also, you can choose to add dummy text or not.
 
 Let us now add the cover image. To do so, click on ***Add new media***, give it a title like ***simple cover image*** or something else; by hitting ***Open file selector***, you can upload an image from your computer or upload from different sources listed there. On selecting a file, hit the ***Publish*** button, which is to the right. From there, use the back icon on the top left to navigate back to the initial form.
 
 Also, remember to add a date, choose the current date. Finally, hit the ***Publish*** button to the right. You will see a notification message that your blog post was added successfully. From there, click on the back icon to the left to go to the Content's page.
 
-On the Content's page, you should be able to see your published blog post. You can repeat the process and add several posts to have several posts to fetch.
-
-After adding the posts, it is now time to set up our Next.js environment in the proceeding step.
+On the Content's page, you should be able to see your published blog post. You can repeat the process and add several posts to have several posts to fetch.After adding the posts, it is now time to set up our Next.js environment in the proceeding step.
 
 ### Setting up the Next.js app
 To set up the Next.js environment, we will use [create-next-app](https://nextjs.org/docs/api-reference/create-next-app). This is a one-time command that allows you to generate a Next.js template. It generates a ready structured project that allows you to scale up quickly and add more code as you go. To generate this Next.js template app, open a terminal (command line) and run the following command from the directory to save the template.
@@ -116,7 +126,6 @@ To get the above variables, we will follow the following steps:
 If you have not added an ***API key*** yet, click on ***Add Api Key*** on the right hand.
 
 - In the resulting form:
-
 - Copy the ***Space ID*** and paste it to the `CONTENTFUL_SPACE_ID` field.
 - Copy the *Access token* and paste it to the `CONTENTFUL_ACCESS_TOKEN` field.
 - Copy the *Preview access token* and paste it to the `CONTENTFUL_PREVIEW_ACCESS_TOKEN` field.
@@ -639,9 +648,7 @@ Open your browser, go to `http://localhost:3000`, and click on any of the posts 
 
 ![initial-post-page](/engineering-education/how-to-run-contentful-cms-as-headless-with-nextjs/initial-post-page.png)
 
-It seems pretty okay, but there is something we are missing, the description part. So let us handle that in the next step.
-
-Since we added our description as rich-text, we will have to use a separate package to show it in the UI. The package is [@contentful/rich-text-react-renderer](https://www.npmjs.com/package/@contentful/rich-text-react-renderer). Open a separate tab in your terminal and install the package using:
+It seems pretty okay, but there is something we are missing, the description part. So let us handle that in the next step. Since we added our description as rich-text, we will have to use a separate package to show it in the UI. The package is [@contentful/rich-text-react-renderer](https://www.npmjs.com/package/@contentful/rich-text-react-renderer). Open a separate tab in your terminal and install the package using:
 
 ```bash
 npm install @contentful/rich-text-react-renderer
