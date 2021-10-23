@@ -121,7 +121,7 @@ Deep Learning and machine learning are both types (or subsets) of AI that classi
 
 - Be it ML or DL; we need to label all data for classification type tasks. Classification tasks require labeled data.
 
-To get a more detailed understanding of the differences between ML, DL, and AI, take a look at [this article](/differences-between-artificial-intelligence-machine-learning-and-deep-learning/).
+To get a more detailed understanding of the differences between ML, DL, and AI, take a look at [this article](/engineering-education/differences-between-artificial-intelligence-machine-learning-and-deep-learning/).
 
 ### Conclusion
 Deep Learning is an extensible and a complex field. It functions with the help of Neural Networks to mimic human behavior. DL solves complex data problems. Problems that present themselves in pattern recognition, image recognition, speech recognition, and NLP.

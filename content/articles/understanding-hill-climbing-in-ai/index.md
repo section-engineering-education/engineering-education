@@ -28,7 +28,7 @@ A hill-climbing algorithm's objective is to attain an optimal state that is an u
 ### Features of a hill climbing algorithm
 A hill-climbing algorithm has four main features:
 
-1. It employs a **greedy approach:** This means that it moves in a direction in which the cost function is optimized. The [greedy approach](/greedy-algorithms/) enables the algorithm to establish local maxima or minima. 
+1. It employs a **greedy approach:** This means that it moves in a direction in which the cost function is optimized. The [greedy approach](/engineering-education/greedy-algorithms/) enables the algorithm to establish local maxima or minima. 
 2. **No Backtracking:** A hill-climbing algorithm only works on the current state and succeeding states (future). It does not look at the previous states. 
 3. **Feedback mechanism:** The algorithm has a feedback mechanism that helps it decide on the direction of movement (whether up or down the hill). The feedback mechanism is enhanced through the [generate-and-test technique](http://intelligence.worldofcomputing.net/ai-search/generate-and-test-search.html#:~:text=%20Algorithm%3A%20Generate-And-Test%20%201%201.Generate%20a%20possible,quit%20else%20go%20to%20step%201.%20More%20). 
 4. **Incremental change:** The algorithm improves the current solution by incremental changes. 
