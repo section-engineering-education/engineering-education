@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-- url: /engineering-education/php-bulk-operations/hero.png
+- url: /engineering-education/php-bulk-operations/hero.jpg
   alt: Php bulk operations image
 ---
 ### Introduction
