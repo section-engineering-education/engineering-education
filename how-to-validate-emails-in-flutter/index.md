@@ -245,7 +245,7 @@ Below are screenshots showing the expected results
 ![After running and valid email](/engineering-education/how-to-validate-emails-in-flutter/validatedemail.jpg)
 
 
-For more details on the project, feel accessible to Reachout @ [this GitHub repository](https://github.com/jonikano/).
+For more details on the project, feel accessible to Reachout @ [this GitHub repository](https://github.com/joni-kano).
 
 ### Conclusion
 Email validator is one of the best ways to confirm emails in  Flutter. It helps to reduce the invalid emails that users may use to sign up and help one easily maintain the available emails. 
