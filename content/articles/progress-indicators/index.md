@@ -1,7 +1,22 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /progress-indicators/
+title: Web Application Progress Indicator Project.
+description: This article explains the benefits of a progress indicator by developing a web project to demonstrate the concept.
+author: dianne-sandra
+date: 2021-10-23T00:00:00-11:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
-### Introduction
+  - url: /engineering-education/python-strings/hero.png
+    alt: web application project progress indicator image
+---
+
 In contemporary development environments, it is known by convention that a good web design must follow some preset guidelines to have an intuitive user interface. 
-
+<!--more-->
 One of the best ways to ensure a user has a good UI/UX is using progress indicators. Progress indicators show a user their progress in the system, for instance, when logging in, uploading a file or downloading a file. 
 
 This article explains the benefits of a progress indicator by developing a web project to demonstrate the concept.
