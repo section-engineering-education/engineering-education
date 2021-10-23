@@ -17,7 +17,7 @@ This project  is a web development project, so besides basic web development ski
 - Working with MySQL database.
 - Basics of PHP programming language.
 - Working with Bootstrap 4.
-- XAMPP installed in the reader's machine.
+- XAMPP was installed in the reader's machine.
 
 ### Project setup
 Create a project folder with a name of your choice. In the folder, create the following files and folders:
@@ -153,7 +153,7 @@ public function importFile($fileToImport){
 #### Getting the database records
 When working with the user interface, we called the method `$database->getRecords();` from the front end. In this step, we will write the function executed when the method is called.
 
-First, we use the query that select everything from the employees' table and orders it in descending manner so that the newest records are displays fast. Then for every row of the result fetched by the query, we extract the column element and assign it to a variable corresponding to the column name on the table them displayed accordingly.
+First, we use the query that selects everything from the employees' table and orders it in a descending manner so that the newest records are displayed quickly. Then for every row of the result fetched by the query, we extract the column element and assign it to a variable corresponding to the column name on the table them displayed accordingly.
 
 ```php
 public function getRecords(){
@@ -247,7 +247,7 @@ Most of the library's configurations can be found in the [official documentation
 
 To export using this library, we first select the records to export and assign every row element to the respective cell that it should appear. 
 
-We also specify the document's name and format of view, whether we need the file to be downloaded or show in a browser. In my case, I called my file `records.pdf` and displayed it in a browser so the user would choose whether to download it or not.
+We also specify the document's name and format of view, whether we need the file to be downloaded or shown in a browser. In my case, I called my file `records.pdf` and displayed it in a browser so the user would choose whether to download it or not.
 
 ```php
 public function exportToPdf(){
@@ -292,8 +292,8 @@ Open `phpmyadmin` then create a new database called `bulk_up`. This name is the 
 - age. 
 
 Migrate the project folder into the `htdocs` folder found in the `XAMPP` installation directory. Start MySQL and Apache servers, then navigate to the localhost to view your project.
-![App-user-interface](interface.png)
-![Data exported to PDF](pdf-export.png)
+![App-user-interface](/engineering-education/php-bulk-operations/interface.png)
+![Data exported to PDF](/engineering-education/php-bulk-operations/pdf-export.png)
 
 ### Conclusion
 This article guided readers on how to perform bulk operations in PHP using MySQL database. Bulk operations are helpful when dealing with large amounts of data. 
