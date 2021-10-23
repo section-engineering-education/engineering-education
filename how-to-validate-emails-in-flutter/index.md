@@ -68,7 +68,7 @@ Domain Validation Tool is a free service that allows you to search up to 500 dom
 
 ### Core Concepts
 - Validity - This is the existence of an email address and has no errors.  
-- Risk
+- Risk- This is use of invalid emails.
 - Invalid - check if an email contains typos errors.
 
 ### Installation of the package
