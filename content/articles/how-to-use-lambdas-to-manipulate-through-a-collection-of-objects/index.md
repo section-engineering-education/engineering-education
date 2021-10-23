@@ -159,7 +159,8 @@ Display of your sorted list by Card:
 #74000.00 Black 
 #64000.00 Black'
 ```
-Example2<br/>
+Example2
+
 ```java
 Predicate<Wallet> takeMoneyAndBlackCard=
                 e -> (e.takeMoney() >= 30000 && e.getCards().equals(Card.Black));
@@ -350,7 +351,9 @@ Here we analyzed how to iterate through a collection of objects, manipulate it w
 
 - distinct for non-duplicate objects as it is even hard to remove duplicate values of the different object if you were to hard code it yourself,
 
-- then we grouped using map functional interface which takes two arguments Card and Long which are objects and then <br/>we got the number of counts of different members of each group. I hope we have learned something new today.
+- then we grouped using map functional interface which takes two arguments Card and Long which are objects and then we got the number of counts of different members of each group. 
+
+I hope we have learned something new today.
 
 #### Let's keep coding!
 
