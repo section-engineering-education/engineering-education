@@ -16,7 +16,7 @@ The first step is opening the visual studio and following the steps below.
 The form designer should look at the one shown in the figure below.
 ![Design](/engineering-education/using-ml.net-for-object-detection-in-winforms/appearance.jpg)
 
-You will be required to download some nugget packages for the object detection to be effective. These packages are `Microsoft.ML`, `Microsoft.ML.OnnxRuntime`, and because you are dealing with object detection you will also download `Microsoft.ML.Image.Analytics`. You will also download `Microsoft.ML.OnnxTransformer` because you are using the Microsoft object detection model.
+You will be required to download some NuGet packages for the object detection to be effective. These packages are `Microsoft.ML`, `Microsoft.ML.OnnxRuntime`, and because you are dealing with object detection you will also download `Microsoft.ML.Image.Analytics`. You will also download `Microsoft.ML.OnnxTransformer` because you are using the Microsoft object detection model.
 
 You will encounter an error when you build the project, this is because `ML.NET` supports only a 64-bit processor and the settings is 32-bit processor. To solve this error you have to right-click on the project name and navigate to properties, then go to build and select `x64` under `platform target`
 
@@ -32,6 +32,7 @@ In your `MLModels` folder, you will add `labels.txt` file that contains `red`, `
 You will create four classes in your `Models` folder i.e, `ImageSettings`, `ImageInputs`, `ImagePredictions`, and `BoundingBox`.
 
 Now, double click on the button you created to open `form1.cs` that you shall add the following code to enable the click event.
+
 ```C#
 namespace ObjectDetection
 {
