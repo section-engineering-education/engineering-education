@@ -6,15 +6,22 @@ Everything in Java is an object. An object could be physical or imaginary, it ju
 Example 2: a bucket is an object that has a method to store solid, liquid, or gas depending on what you want to store.
 
 Now it gets interesting when you have a collection of wallets with different items and you want to access the one with the red card that has money more than #30,000 ('#' is naira in Nigeria currency), this is when lambdas come in because it hard you iterate through a collection without making mistakes and even if it works it's not efficient.
+
 ### Prerequisite
 - A basic understanding of the Java OOP (Object Oriented Programming) concept
 - Basic understanding of lambdas
+
 ### Objectives
-1. To enable individuals to understand  how lambdas work
-2. To enable individuals to understand how to sort
-3. To enable individuals to understand how to calculate the value of the different object
-4. To enable individuals to understand how to Group a collection of object 
-5. To enable individuals to understand how to check for a distinct object
+1. To enable individuals to understand  how lambdas work.
+
+2. To enable individuals to understand how to sort.
+
+3. To enable individuals to understand how to calculate the value of the different object.
+
+4. To enable individuals to understand how to Group a collection of object. 
+
+5. To enable individuals to understand how to check for a distinct object.
+
 ### Importance Of Lambdas
 Using lambdas is an effective way of writing your codes as some programmers argue that it might not be clear enough but the truth is, it is highly efficient and leaves room for no error in your code.
 
@@ -24,10 +31,15 @@ you will have to create different wallets based on color first before you create
 Let's code>>>
 
 First, we are going to create three(3)classes or objects.
+
 1. Card
+
 2. Wallet
+
 3. The Collection_Wallet as a driver class
+
 4. Input all of them inside into a folder call it Lambda_Collection
+
 ```Java
 package Lambda_Collection;
 
@@ -77,6 +89,7 @@ public enum Card {
                  "#",takeMoney(), getCards());
          }
   ```
+
 First, you create a general folder or package for writing all your codes, firstly we created an object of card because java is an object-oriented language.  
 
 Now we have seen how a wallet looks like on code, you can set the money and that is you adding money to your wallet. The toString method is to make your object visible.
@@ -120,6 +133,7 @@ public class Collection_Wallet {
     }
 }
 ```
+
 N/B that list. stream() creates a stream of Wallet just as we said early you spread your wallets all over the table and then you want to look for a specific thing.
 
 #### Filtering Wallets
@@ -147,13 +161,14 @@ Predicate<Wallet> takeMoneyAndBlackCard=
 The Comparator interface with its static method comparing, compares two objects of wallet based on its instance method and returns negative if the first is less than than the second,
 
  positive if the first is greater, and zero if they are equal, then the forEach terminates the entire pipeline.
+
 ```
 Result
 Display of your sorted list by Card: 
-'#44000.00 Black 
+#44000.00 Black 
 #54000.00 Black 
 #74000.00 Black 
-#64000.00 Black'
+#64000.00 Black
 ```
 Example2
 ```java
@@ -173,7 +188,9 @@ Display of your sorted list money:
 #64000.00 Black 
 #74000.00 Black 
 ```
+
 What if we want to find a wallet with money higher than '#30000'? We will use the find first intermediate method.
+
 ```Java
  Predicate<Wallet> takeMoneyAndBlackCard=
                 e -> (e.takeMoney() >= 30000 );
@@ -183,10 +200,10 @@ What if we want to find a wallet with money higher than '#30000'? We will use th
                 .findFirst())
                 .get();
 ```
- Result
 
 ```
-#34000.00 Red`
+Result
+#34000.00 Red
 ```
 N/B if you are writing these codes make sure that every time you use a Predicate interface always uses a different variable.
 ```java
@@ -198,6 +215,7 @@ N/B if you are writing these codes make sure that every time you use a Predicate
                 .sorted(byMoneyThenByCard)
                 .forEach(System.out::println);
 ```
+
 #### Result
  Display of your sorted list:
 
@@ -215,15 +233,20 @@ N/B if you are writing these codes make sure that every time you use a Predicate
 #64000.00 Black 
 #74000.00 Black 
 ```
+
 We will see how to reverse based on values in the collection using lambdas
+
 ```java
 System.out.println("Display by money then by card in reserve order)
         list.stream()
                 .sorted(byMoneyThenByCard.reversed())
                 .forEach(System.out::println);`
 ```
+
 #### Result
+
 #### Display by money then by card
+
 ```#74000.00 Black 
 #64000.00 Black 
 #54000.00 Black 
@@ -236,7 +259,9 @@ System.out.println("Display by money then by card in reserve order)
 #14000.00 Black 
 #4000.00 Blue
  ```
+
 ### Grouping
+
 Mapping Wallet to unique Color of a card on display.
 
 ```java
@@ -254,7 +279,9 @@ list.stream()
                 .sorted()
                 .forEach(System.out::println);
 ```
+
 #### Result
+
 Printing out distinctive amounts in the wallet collection
 
 ```
@@ -267,7 +294,7 @@ Printing out distinctive amounts in the wallet collection
 64000.0
 74000.0
 ```
-#Printing out distinctive cards in the wallet collection
+#### Printing out distinctive cards in the wallet collection
 
 ```
 Red
@@ -275,6 +302,7 @@ Black
 Green
 Blue
 ```
+
 Grouping Of Object based on the given instance methods and how they vary in categorizing, you will use lambda static methods collect, the collect argument is a collector that specifies how to summarize the data in a meaningful manner.
 
 The map takes in two arguments telling the JVM(java virtual machine) that "I want to map a card object to a long object, the counting() static method of the collectors returns long(Long is an object or a type wrapper of long), then we print the outcome by calling the variable in a chain method call to the forEach terminal method that displays the outcome.
@@ -328,6 +356,7 @@ Average of Wallet' money (via average method): 39454.55
 ```
 
 #### Note that I used the Predicate interface and also embedded it inside the filter method
+
 #### Result
 
 ```
