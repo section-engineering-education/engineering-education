@@ -67,9 +67,8 @@ Domain Validation Tool is a free service that allows you to search up to 500 dom
 - Basic knowledge of [Dart](https://dart.dev/) programming language.
 
 ### Core Concepts
-- Validity - This is the existence of an email address and has no errors.  
-- Risk- This is use of invalid emails.
-- Invalid - check if an email contains typos errors.
+- Testing the validity of email addresses to ensure a supplied email address exists and has minimum to no errors.  
+- Reducing the risk of flogging the database with invalid emails.
 
 ### Installation of the package
 - Step1. Adding the dependency
