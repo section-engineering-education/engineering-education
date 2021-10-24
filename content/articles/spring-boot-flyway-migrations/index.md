@@ -1,5 +1,5 @@
 ### Introduction
-Flyaway is a version control system that is used to maintain database migrations across all application instances. This article will create a student management system that will manage database migrations with the flyaway migration tool. 
+Flyway is a version control system that is used to maintain database migrations across all application instances. This article will create a student management system that manages database migrations with the Flyway migration tool. 
 
 ### Prerequisites
 1. [Java Development Kit](https://www.oracle.com/java/technologies/downloads/) installed on your computer.
@@ -163,10 +163,10 @@ insert intbooto student(email, first_name, last_name, course, registration_numbe
 values ("tester2@outlook.com", "test2", "tester2", "Computer science", "ABA7712");
 
 ```
-When we check the flyway migrations table, we see that the data was inserted and recorded.
+When we check the Flyway migrations table, we see that the data was inserted and recorded.
 ### Testing
 //result
-When we check the flyway migrations table, we can see that the data was inserted and migration recorded.
+When we check the Flyway migrations table, we can see that the data was inserted and migration recorded.
 //devs
 Now that we have created a table and inserted data into the database, execute the command below if we want to roll back the last migration that we performed.
 
