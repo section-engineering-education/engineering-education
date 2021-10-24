@@ -115,7 +115,7 @@ We use a `for` loop to iterate over the `font.families` sequence to add font fam
 `mainloop()` is the method that we will use to run the font chooser application. It will allow the application to run continuously and indefinitely until the user decides to end the program by closing the window or using the Escape key on the keyboard.
 
 And the font chooser interface will look like this:
-![fontapp image](/engineering-education/how-to-create-font-chooser-application/fontchooserapp.png)
+![fontapp image](how-to-create-font-chooser-app/fontchooserapp.png)
 
 ### Conclusion
 In this tutorial, we reviewed the role of Tkinter in data science and built a font chooser application.
