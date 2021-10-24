@@ -61,7 +61,7 @@ You must have been advised that the `script` tag should be placed before the clo
 
 Have you ever asked yourself why you are advised to place the `script` tag before the closing `body` tag? This is because of how the browser parses (loads) HTML. We will look at how the browser parses HTML soon.
 
-But you can place the `script` tag anyway within the HTML document. You can place it within the `header` tag or immediately after the opening `body` tag. Like we have in the HTML code below:
+But you can place the `script` tag anywhere within the HTML document. You can place it within the `header` tag or immediately after the opening `body` tag. Like we have in the HTML code below:
 
 ```HTML
 
@@ -169,7 +169,7 @@ When the boolean attribute, defer is used in a `script` tag like the one above, 
 
 In the above example, `short-script.js` may be downloaded first probably because of its size, but because of the `defer` attribute in the script tag, the browser will not execute `short-script.js` until `long-script.js` is fully downloaded and executed. 
 
-> defer attribute has no effect when the `script` tag has no src attribute.
+> Defer attribute has no effect when the `script` tag has no src attribute.
 
 The image below provides a visual understanding of the defer attribute:
 
