@@ -4,9 +4,9 @@ status: publish
 published: true
 url: //blockchain-as-a-form-of-e-voting/
 title: Blockchain as a form of e-voting
-description: The objective of this tutorial is to help the reader learn how blockchain technology can be used in electronic voting, its advantages, and problems, and end by talking a little about Moscow's experience using Blockchain in real-life voting.
+description: The objective of this tutorial is to help the reader learn how blockchain technology is used in electronic voting, its advantages, and problems, and end by talking a little about Moscow's experience using Blockchain in real-life voting.
 author: samuel-santos
-date: 2021-10-19T00:00:00-19:00
+date: 2021-10-24T00:00:00-19:00
 topics: [Blockchain]
 excerpt_separator: <!--more-->
 images:
@@ -14,6 +14,8 @@ images:
   - url: /engineering-education/blockchain-as-a-form-of-e-voting/hero.jpg
     alt: Blockchain as a form of e-voting Hero image
 ---
+This article will explain Blockchain, how we can use this technology in electronic voting, its advantages, and its problems. We will end by talking a little about Moscow's experience using Blockchain in real-life voting.
+<!--more-->
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
@@ -32,30 +34,30 @@ images:
 ### Prerequisites
 - Basic knowledge of computing and programming;
 - Basic knowledge of how elections and voting work.
-> Please note that these are not mandatory but can make you understand more deeply the concepts, their pros, and cons, and why they are like they are.
+> Please note that these are not mandatory but can make you understand more deeply the concepts, their pros and cons, and why they are like they are.
 
 ### Introduction
 In his famous paper, [Bitcoin: A Peer-to-Peer Electronic Cash System](https://bitcoin.org/bitcoin.pdf), Satoshi Nakamoto begins by talking about how the internet's commerce and transaction system suffers from a trust-based model. Furthermore, Nakamoto mentions this model's need for a central authority that acts as an intermediary for transactions; that is, all the transactions must go through this central authority. Think, for example, of a bank. Nakamoto's proposal in his paper is that of a decentralized and secure technology as an alternative to this current model. He refers to this technology as the `Blockchain`.
 
 Drawing a parallel with a voting process, its integrity and effectiveness still depend on voters' trust and the authorities that organized it. Electronic voting can improve some aspects of manual voting, such as the process's speed, simplicity, and flexibility. On the other hand, they bring red flags that deserve attention and care, such as issues of secrecy, privacy, transparency, and security.  Some places around the world have used some form of electronic voting or experimented with this voting model. In Brazil, electronic voting machines have been used for elections since the 1990s, for example. In Moscow, an e-voting experiment was recently carried out using Blockchain as a backend.
 
-In the words of [The Economist](https://www.economist.com/briefing/2015/10/31/the-great-chain-of-being-sure-about-things), the Blockchain is a way of *creating and preserving truths*. The technology has promising properties for an electronic voting system such as [anonymity, decentralization, transparency, immutability, and encryption](https://www.mdpi.com/1424-8220/21/17/5874). In this article, we will see what Blockchain is, how this technology can be used in electronic voting, its advantages, and problems, and end by talking a little about Moscow's experience using Blockchain in real-life voting.
+In the words of [The Economist](https://www.economist.com/briefing/2015/10/31/the-great-chain-of-being-sure-about-things), the Blockchain is a way of *creating and preserving truths*. The technology has promising properties for an electronic voting system such as [anonymity, decentralization, transparency, immutability, and encryption](https://www.mdpi.com/1424-8220/21/17/5874). This article will explain Blockchain, how we can use this technology in electronic voting, its advantages, and its problems. We will end by talking a little about Moscow's experience using Blockchain in real-life voting.
 
 ### Blockchain
 If you already know the basics of how a Blockchain works, you can skip this section. Here, we will make a brief introduction about the functioning and main features of Blockchain.
 
 #### Features of Blockchain
-Blockchain was designed to work in a *peer-to-peer* network. In this network, each user is called a *node*. Users can make *transactions* with each other. To do this, they need to specify their nodes' *public addresses* and the *amount of assets* to be transferred from one node to the other. To confirm a transaction, the *sender* node presents its *private signature*. Transactions are stored as a group within so-called *blocks*.
+Blockchain is designed to work in a *peer-to-peer* network. In this network, each user is called a *node*. Users can make *transactions* with each other. To do this, they need to specify their nodes' *public addresses* and the *amount of assets* to be transferred from one node to the other. To confirm a transaction, the *sender* node presents its *private signature*. Transactions are stored as a group within so-called *blocks*.
 
-Each block has a unique key that identifies it and stores the key of its predecessor, forming a *chain of sequential blocks*, hence the name. Any change to a block in the chain would change its key, which *would break the chain* from the block onwards. The blocks are forged by nodes called *miners*. These miners need to solve a problem using a lot of computational power to give *proof of work*. When a miner gives proof of work, they *receives some assets* as a reward, and all nodes add the new forged block to their chains.
+Each block has a unique key that identifies it and stores its predecessor's key, forming a *chain of sequential blocks*, hence the name. Any change to a block in the chain would change its key, which *would break the chain* from the block onwards. The blocks are forged by nodes called *miners*. These miners need to solve a problem using a lot of computational power to give *proof of work*. When miners give proof of work, they * receive some assets* as a reward, and all nodes add the new forged block to their chains.
 
 The *valid* version of the Blockchain is the one that has the most blocks. As the Blockchain is public, each node can check if everything is as it should be. So, for someone to change the chain, they would need to monopolize 51% of the network's mining power to always keep their version as the *longer version of the chain*, which is very unlikely.
 
 #### Peer-to-Peer network
-Blockchain was designed to work on a *peer-to-peer* network. Each user on that network is called a **node**. Each node has its **address**, a unique *public* key, and a **signature**, a unique *private* key. A key is a string, something like `93ce48570b55c42c2af816aeaba06cfee1224fae`, for example.
+Blockchain is designed to work on a *peer-to-peer* network. Each user on that network is called a **node**. Each node has its **address**, a unique *public* key, and a **signature**, a unique *private* key. A key is a string, something like `93ce48570b55c42c2af816aeaba06cfee1224fae`, for example.
 
 #### Transactions
-We can perform **transactions** between nodes by transferring assets between their addresses. To make a transaction, we need a sender node, a receiver node, and the amount of assets to be transferred. A software manages transactions called a **wallet**, which allows users to send, receive, and exchange resources.
+We can perform **transactions** between nodes by transferring assets between their addresses. To make a transaction, we need a sender node, a receiver node, and the amount of assets to be transferred. A software manages transactions called a **wallet**, allowing users to send, receive, and exchange resources.
 
 However, *how can we know if a sender node has the amount of assets needed for a transaction*? Also, *how can we confirm that it is willing to do this transaction*? One solution would be to introduce a central authority as an intermediary for transactions. That authority would check these questions and authorize or not the transaction. However, this is a trust-based model, as we need to *blindly trust* the central authorities.
 
@@ -76,7 +78,7 @@ In a democratic voting process, **security** and **reliability** are *essential*
 
 One of the problems with e-voting is that it is almost *impossible* to satisfy *all* the requirements. *Understand e-voting here as any voting system maintained over some form of hardware or software.* We have several *amazing* and *ingenious* technologies to apply in these systems, but even so, they almost always *require a trade-off*: to guarantee one (or more) of the requirements, we need to give up totally * or partially* of others. Let's already say that with Blockchain, it won't be different. But despite this, it is still promising.
 
-When implemented correctly, Blockchain fraud is *theoretically* impossible:  [the votes would be transferred as assets in the Blockchain, and changing or deleting votes would be unfeasible](https://www.mdpi.com/1424-8220/21/17/5874). The voting process *would not depend* on an organization, institution, or government, that is, central authorities. Votes would be *publicly stored* on the Blockchain and *distributed to all network nodes* rather than stored on centralized servers. Thus, everyone could *check the votes and follow the progression of the voting*, whether voters or candidates, and they (probably) *could not know who voted for whom* because users *do not use usernames* or anything like that.
+Blockchain fraud is *theoretically* impossible when implemented correctly:  [the votes would be transferred as assets in the Blockchain, and changing or deleting votes would be unfeasible](https://www.mdpi.com/1424-8220/21/17/5874). The voting process *would not depend* on an organization, institution, or government, that is, central authorities. Votes would be *publicly stored* on the Blockchain and *distributed to all network nodes* rather than stored on centralized servers. Thus, everyone could *check the votes and follow the progression of the voting*, whether voters or candidates and they (probably) *could not know who voted for whom* because users *do not use usernames* or anything like that.
 
 You may have noticed the *"probably"* in parentheses in the sentence above. Well, it's because it would be possible to know who voted for whom by somehow *"stalking" or spying* on the person to find out the address of their node. Also, you have to be *very careful about Blockchain scalability issues*. Due to its nature that *requires computational power* and therefore *requires* *time*, **the Blockchain is slow**. The process of forging new blocks *is time-consuming*. This means that on large polls, a Blockchain-based e-voting system *would have problems*. Not to mention the *amount of energy* that it would consume.
 
@@ -85,7 +87,7 @@ Now that we know some of the advantages and disadvantages of Blockchain, it woul
 ### A Real-Life Example: How Moscow implemented a Blockchain vote
 In 2019, in 2020, and [apparently in 2021 as well](https://github.com/moscow-technologies/blockchain-voting_2021), the city of Moscow has been doing *e-voting experiments using Blockchain*. Or at least the idea behind it comes from Blockchain. Let's understand.
 
-The Russian authorities decided to conduct an [experiment](https://habr.com/ru/article/480152/) on the public electronic voting process in September 2019 to test the hypothesis of using a technology such as Blockchain. In the tests, some problems were identified, but in general, the tests were successful. In a test poll in which students participated, the responsible team identified an *attempted DDoS attack* by one of the students, but the system managed to stop it. In the open tests, a French cryptographer was able to *identify a serious vulnerability* despite *not being able to fraud the system* within the time specified in the test (12 hours). After this vulnerability was found, the team made changes to improve security. In addition, several experts provided feedback that helped the team to continue making improvements to the system. We can also notice that *user authentication needs to go through a government domain, and thus, this is not a decentralized system* like the "original" Blockchain proposes.
+The Russian authorities decided to conduct an [experiment](https://habr.com/ru/article/480152/) on the public electronic voting process in September 2019 to test the hypothesis of using a technology such as Blockchain. In the tests, they identified some problems, but in general, the tests were successful. In a test poll in which students participated, the responsible team identified an *attempted DDoS attack* by one of the students, but the system managed to stop it. In the open tests, a French cryptographer was able to *identify a serious vulnerability* despite *not being able to fraud the system* within the time specified in the test (12 hours). After this vulnerability was found, the team made changes to improve security. In addition, several experts provided feedback that helped the team to continue making improvements to the system. We can also notice that *user authentication needs to go through a government domain, and thus, this is not a decentralized system* like the "original" Blockchain proposes.
 
 Users who wanted to vote electronically *needed to apply and be approved to participate in e-voting*. Upon entering the system, a voting ballot was displayed, and the user could fill it in and press the "vote" button. Users who wanted to could go to vote on computers distributed around the city. This option was usually chosen by people less digitally literate or specialist people who wanted to see the system working. On the Blockchain, there was *the voter registry* and *the ballot registry* that was *thought of analogously to their physical counterparts*: the voter registry was used to check the number of voters able to e-vote and the number of voters who participated in e-voting, and the ballot register *stored the ballots encrypted until the end of the vote*.
 
@@ -96,7 +98,7 @@ To participate in electronic voting, users had to *authenticate themselves* with
 To guarantee the **anonymity** and **confidentiality** of the vote, the voting page *is not connected to any data or user identification* and, *before* a vote is sent to the Blockchain, *it is grouped with others* and goes through a **mixer** that *shuffles* the votes of several people, giving greater secrecy.
 
 ### Conclusion
-Blockchain is a relatively new technology and has its pros and cons in the context of e-voting. We already see its use in the real world, through startups and even political initiatives. There is still plenty of room for improvement, but it has been gaining ground and being promising and is already being used in small and medium-sized applications in several different areas. Let's hope to see new improvements and ideas in the next years!
+Blockchain is a relatively new technology and has its pros and cons in the context of e-voting. We already see its use in the real world, through startups and even political initiatives. There is still plenty of room for improvement. Still, it has been gaining ground and is a promising technology already being used in small and medium-sized applications in several different areas. Let's hope to see new improvements and ideas in the coming years!
 
 ### References
 - [Bitcoin: A Peer-to-Peer Electronic Cash System. Satoshi Nakamoto.](https://bitcoin.org/bitcoin.pdf)
