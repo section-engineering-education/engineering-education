@@ -21,9 +21,9 @@ To ensure that human beings communicate with computers in their natural language
 ### Understanding Natural Language Processing
 The 21st century is characterized by the automation of systems and gadgets. Moreover, the use of computation is moving to elevated levels. The automation of things that we use daily is meant to make our lives easier and better. Examples of automation products include self-driving cars, google assistants, and artificial intelligence within software systems.
 
-Each of these technologies has [deep learning](/introduction-to-deep-learning/), machine learning, or artificial intelligence technologies. Today people embrace gadgets that rely on machine learning or artificial intelligence, due to their popularity, and their prolific use within data science, cloud computing, natural language processing, data engineering, computer vision, and more.
+Each of these technologies has [deep learning](/engineering-education/introduction-to-deep-learning/), machine learning, or artificial intelligence technologies. Today people embrace gadgets that rely on machine learning or artificial intelligence, due to their popularity, and their prolific use within data science, cloud computing, natural language processing, data engineering, computer vision, and more.
 
-For a more in depth look at deep learning, machine learning, and artificial intelligence refer to [this article](/differences-between-artificial-intelligence-machine-learning-and-deep-learning/).
+For a more in depth look at deep learning, machine learning, and artificial intelligence refer to [this article](/engineering-education/differences-between-artificial-intelligence-machine-learning-and-deep-learning/).
 
 Natural Language Processing (NLP) is a type of AI that seeks to enable computers to process or understand human language. Ideally, NLP does this by programming computers to analyze and process large quantities of natural language data. It can manipulate speech and text through computational power enabled by various software.
 
@@ -78,7 +78,7 @@ In the current world of globalization, businesses and individuals are taking adv
 ![Language Translation using DeepL Translate](/engineering-education/five-real-life-use-cases-of-natural-language-processing-nlp/language-translation-using-deepl-translate.png)
 
 #### Analytics
-Business decisions are difficult to make, and the best decisions are a product of [data-driven insights](/tableau-vs-power-bi/). However, businesses generate large amounts of data, and extracting meaningful insights may take a lot of time. To make quick and effective solutions, business people need to be provided with comprehensive information.
+Business decisions are difficult to make, and the best decisions are a product of [data-driven insights](/engineering-education/tableau-vs-power-bi/). However, businesses generate large amounts of data, and extracting meaningful insights may take a lot of time. To make quick and effective solutions, business people need to be provided with comprehensive information.
 
 Data generated from insights can be interpreted using natural language generation (NLG) powered tools. Leaders can always consult analytical dashboards that are powered by NLG for the most recent information to help them make the best business decisions.
 

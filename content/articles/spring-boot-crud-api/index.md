@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /spring-boot-crud-api/
 title: How to create CRUD API using Spring Boot
-description: This tutorial will be an introduction .
+description: This tutorial will be an introduction to CRUD API using Spring Boot. We will build a Spring Boot Rest CRUD API with Gradle as our build tool. By the end we will create a Restful web service in Spring Boot.
 author: odhiambo-paul
 date: 2021-01-12T00:00:00-18:00
 topics: []
@@ -23,7 +23,7 @@ In this tutorial, we are going to build a Spring Boot Rest CRUD API with Gradle 
 - [Postman](https://www.postman.com/downloads/) installed on your computer.
 - Your favorite Java IDE installed. I use [Intellij](https://www.jetbrains.com/idea/download/#section=windows)
 
-To verify if Java and Java compiler are installed and configured correctly on your system, Open the terminal and type in the command `java --version` to see the version of Java installed and `javac --version` to see the version of Java compiler installed.
+To verify if Java and Java compiler are installed and configured correctly on your system, open the terminal and type in the command `java --version` to see the version of Java installed and `javac --version` to see the version of Java compiler installed.
 
 ```bash
 $ java --version
