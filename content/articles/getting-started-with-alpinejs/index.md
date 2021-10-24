@@ -14,13 +14,12 @@ images:
   - url: /engineering-education/getting-started-with-alpinejs/hero.png
     alt: Getting Started With Alpine.js Hero Image
 ---
-### Getting Started With Alpine.js
-### Introduction
+
 Alpine.js is a rugged, minimal tool for composing behavior in your markup. Think of it like jQuery for the modern web. It is very reactive like Vue and it is very lightweight. Alpine.js is very simple to use and set up. It doesn't need any installation with NPM, the CDN version works enough magic.
+<!--more-->
+Alpine.js is not a replacement for full-fledged frameworks like Vue, React, or Angular. It is rather a lighter framework for the most simple needsthat is used in applications that need minimal JavaScript, usually server-side rendered web applications. 
 
-Alpine.js is not a replacement for full-fledged frameworks like Vue, React, or Angular. It is rather a lighter framework for the most simple needs. Used in applications that need minimal JavaScript, usually server-side rendered web applications. Alpine.js shines when you need simple components like dropdowns, search inputs, and a few elements in the view that you want to toggle.
-
-Alpine.js offers very great flexibility. You get to keep your markup simple, as it is, and sprinkle behavior where ever you want, at no cost.
+Alpine.js shines when you need simple components like dropdowns, search inputs, and a few elements in the view that you want to toggle. It also offers very great flexibility. You get to keep your markup simple, as it is, and sprinkle behavior where ever you want, at no cost.
 
 ### Table Of Contents
 - [Introduction to Alpine.js](#introduction)
@@ -31,11 +30,10 @@ Alpine.js offers very great flexibility. You get to keep your markup simple, as 
 - [Conclusion](#conclusion)
 
 ### Prerequisites
-To follow along with this tutorial, you'll need:
-- A good browser, [Chrome](https://www.google.com/chrome/) is very good.
-- A basic text editor, [VSCode](https://code.visualstudio.com/) works well.
-- Basic HTML, CSS, and [Bootstrap](https://getbootstrap.com/) knowledge.
-- Basic JavaScript knowledge.
+To follow along with this tutorial, you will need:
+- A good browser, preferably [Chrome](https://www.google.com/chrome/).
+- A text editor, you can use [VSCode](https://code.visualstudio.com/).
+- Basic HTML, CSS, [Bootstrap](https://getbootstrap.com/) and Javascript knowledge.
 
 ### Goals
 By the end of this tutorial, you should be conversant with:
@@ -45,10 +43,11 @@ By the end of this tutorial, you should be conversant with:
 - [State management](https://alpinejs.dev/essentials/state) in Alpine.js.
 - [Templating](https://alpinejs.dev/essentials/templating) in Alpine.js.
 
-To help you achieve these, this article will show how to build a basic application to store TODOs.
+This article will show how to build a primary application to store TODOs, illustrating some of the features in Alpine.Js.
 
 ### Alpine.js Installation
 To get started with the application, we have to first install all the required dependencies, Alpine.js and Bootstrap CSS. To install Bootstrap, get the starter template from the [official website](https://getbootstrap.com/docs/5.1/getting-started/introduction/#starter-template). Edit this template with this to have the correct title and a basic card and list (of Todos).
+
 ```html
 <!doctype html>
 <html lang="en">
@@ -101,14 +100,16 @@ To get started with the application, we have to first install all the required d
 </html>
 ```
 
-This code is pure HTML, CSS, and Bootstrap to design our application. No JavaScript yet.
+Having the design all set, let us install Alpine.js. 
 
-Having the design all set, Alpine.js can be installed now. Alpine.js can be installed using more than one way. This is a similarity with other client-side JavaScript libraries or frameworks. To keep it simple, this article uses the CDN installation. This can be achieved by adding the script tag found in the [official documentation](https://alpinejs.dev/essentials/installation#from-a-script-tag).
+Alpine.js can be installed in more than one way, which is similar to other client-side JavaScript libraries or frameworks. This article uses the CDN installation which can be achieved by adding the script tag found in the  [official documentation](https://alpinejs.dev/essentials/installation#from-a-script-tag).
+
 ```html
 <script defer src="https://unpkg.com/alpinejs@3.4.2/dist/cdn.min.js"></script>
 ```
 
 Or, in your other projects, you may install Alpine.js using NPM. Run the `npm install` command.
+
 ```shell
 npm install alpinejs
 ```
@@ -123,9 +124,9 @@ Alpine.start()
 ```
 
 At this point, your application should look like this:
-![App design](/getting-started-with-alpinejs/app-design.png)
+![App design](/engineering-education/getting-started-with-alpinejs/app-design.png)
 
-Based on this design, we have a list of Todos. To make these dynamic, we have to be able to create and store some todos, that may be then be iterated over as list items.
+Based on this design, we have a list of Todos. To make these dynamic, we have to create and store some todos, which may be then be iterated over as list items.
 
 ### Event Handling In Alpine.js
 To get user input and give a good user experience, users should be able to type in a todo item and press the 'Enter' key to save their todo. To do this, we have to be able to listen to the `keyup` event on the input, to know when the user presses the 'Enter' key. Alpine makes it simple to listen for browser events and react to them as you wish. Alpine.js provides us with the x-on directive to do this. This directive lets us listen to events, like how we would, using vanilla JavaScript.
