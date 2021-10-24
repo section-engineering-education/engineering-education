@@ -105,27 +105,16 @@ To use Lambda expressions, you can create your own functional interface or use j
 ```java
 
 interface Hello {
-
 String sayHello(String greet);
-
 }
-
 public class LambdaAlgorithmTest {
-
  public static void main(String[] args) {
-
  Hello hello = (message) -> {
-
  String str1 = "Welcome ";
-
  String str2 = str1 + message;
-
  return str2;
-
  };
-
  System.out.println(hello.sayHello("Lambda Tutorial"));
-
  }
 
 }
@@ -145,23 +134,14 @@ The first variable `str1` takes a value `Welcome`, the second variable `str2` co
 ```java
 
 @FunctionalInterface
-
 interface MyFunctionalInterface {
-
  //A method with no parameter
-
  String sayHello();
-
 }
-
 public class Example {
-
  public static void main(String args[]) {
-
  // lambda expression
-
  MyFunctionalInterface msg = () -> "Hello";
-
  System.out.println(msg.sayHello());
 
  }
@@ -181,25 +161,16 @@ The third line creates a new class called `Example` which contains the main meth
 @FunctionalInterface
 
 interface MyFunctionalInterface {
-
  //A method with a single parameter
-
  int incrementByFive(int a);
-
 }
-
 public class LambdaSingleParam {
-
  public static void main(String args[]) {
-
  // lambda expression with single parameter num
-
  MyFunctionalInterface foo = (num) -> num+5;
-
  System.out.println(f.incrementByFive(22));
 
  }
-
 }
 
 ```
