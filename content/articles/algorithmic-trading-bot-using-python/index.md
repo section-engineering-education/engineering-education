@@ -20,29 +20,26 @@
 
 
 ### Introduction
-Trading online has become one of the moat popular investment in the current world today. 
-The likes of cryptocurrency and forex being the leading area.
-Due to this popularity, programmers have emerged trying to come with
-in which the trading process can be automated for more profits.
+Trading online has become one of the most popular investment in the current world. 
+The likes of cryptocurrency and forex being the leading areas.
+Due to this popularity, programmers have emerged trying to come with a way in which the trading process can be 
+automated for more profits.
 
-In this tutorial, we are to look at how one can start off his/her journey
-in programming a trading bot.
+In this tutorial, we are to look at how one can start off his/her journey in programming a trading bot.
 
 ### What is a Trading Bot?
 
-As stated in the introduction, a trading bot is simply a robot 
-in form of a software that automates the trading process.
-It uses past data to give out expected outcomes that look down to the 
-past data patterns.
-From these past patterns, it generates patterns expected in future.
+As stated in the introduction, a trading bot is simply a robot in form of a software that automates the trading process.
+It uses past data to give out expected outcomes that look down to the past data patterns.From these past patterns, 
+it generates predictions to immitate past data.
 
 ### Prerequisites/ Requirements
 
-The main prerequisite for this tutorial is the basic knowledge of python
-and its algorithms. For the matter of testing, we will use **QUANTCONNECT** which uses lean engine to integrate your code with the trading site.
+The main prerequisite for this tutorial is the basic knowledge of python and its algorithms. 
+For the matter of testing, we will use **QUANTCONNECT** which uses lean engine to integrate your code with the trading site.
 
-That means you don't actually require an offline editor since the site provides
-its own editor.
+That means that you don't actually require an offline editor since the site provides
+its own coding environment.
 
 
 ### Coding and Development
@@ -63,7 +60,7 @@ We are going the develop it stepwise. Follow the steps below;
 
 1. **Create a new Algorithm**
 
-From the options on the left side of the page, click *Create new Algorithm* as shown in the photo below, you will be taken to the editor with with a class generated automatically.
+From the options on the left side of the page, click *Create new Algorithm* as shown in the photo below. You will be taken to the editor with with a class generated automatically.
  ![](new.png)
 
 For my case, here is the class generated
@@ -164,8 +161,9 @@ def EveryMarketOpen(self):
 
 ```
 
-For this, we will have to initialize one more function in the initialize method.
-This the Schedule.On function which takes three parameters
+After this, we will have to initialize one more function in the *initialize* method.
+This the **Schedule.On** function which takes three parameters;
+
 - The first specifies on which day the method is called.
 
 - The second specifies at which time the method is called
