@@ -14,13 +14,13 @@ images:
   - url: /engineering-education/organizing-execution-of-programs-using-timer-object-in-matlab/hero.jpg
     alt: Organizing Execution of Programs using Timer Objects in Matlab Image
 ---
-A timer is an automated mechanism for activating a device or a process at a predetermined time or time intervals. Matlab provides timer objects that can be used to organize the execution of Matlab commands.
+A timer is an automated mechanism for activating a device or a process at predetermined time or time intervals. Matlab provides timer objects that can be used to organize the execution of Matlab commands.
 <!--more-->
-Timers enables control of an event sequences at fixed intervals and program running time.
+Timers enable control of an event sequence at fixed intervals and program running time.
 
-In this article, we will discuss how one can create a timer object, start the timmer running, and specify the processes to be performed until the the timer object elapses, stopping and deleting the timer objects from the memory. 
+In this article, we will discuss how one can create a timer object, start the timer running, and specify the processes to be performed until the timer object elapses, stopping and deleting the timer objects from the memory. 
 
-Timer helps in keeping track of a program hence becomes handy when tracing for troubleshooting. Timers can be used in real-time execution of programs, building reminders, and areas where execution of programs according to priorities are required.
+Timer helps in keeping track of a program hence becomes handy when tracing for troubleshooting. Timers can be used in real-time execution of programs, building reminders, and areas where execution of programs according to priorities is required.
 
 ### Prerequisites
 For this tutorial, you'll need to have:
@@ -30,10 +30,10 @@ For this tutorial, you'll need to have:
 ### Table of contents
 - [Objective](#objective)
 - [Creating timer object](#creating-timer-object)
-- [Dispaying message using timer object](#displaying-message-using-timer-object)
+- [Displaying message using a timer object](#displaying-message-using-timer-object)
 - [Finding timer objects properties](#finding-timer-objects-properties)
 - [Timer properties](#timer-properties)
-- [Finding all visible timer object in the memory](#finding-all-visible-timer-object-in-the-memory)
+- [Finding all visible timer objects in the memory](#finding-all-visible-timer-object-in-the-memory)
 - [Specifying timer object starting time](#specifying-timer-object-starting-time)
 - [Deleting all existing timer objects in the memory](#deleting-all-existing-timer-objects-in-the-memory)
 - [Conclusion](#conclusion)
@@ -49,7 +49,7 @@ This is the process of making a timer object which will be used in executing the
 Timer objects can support various properties and functions controlling their behavior. A timer is created using the function `timer`.
 
 ```matlab
-t = timer %creating timer
+t = timer %creating timer object
 ```
 
 ![Creating timer object](/engineering-education/organizing-execution-of-programs-using-timer-object-in-matlab/timer_one.PNG)
@@ -124,7 +124,7 @@ set(t) %for viewing list of settable timer properties
 Timer object properties are classified into four major groups namely:
 - Callback function properties.
 - Timing properties.
-- Labelling properties.
+- Labeling properties.
 - Read-only properties.
 
 #### Callback function properties
@@ -140,10 +140,10 @@ The following are callback function properties:
 #### Timing properties
 Timing properties are mostly defined by a numeric scalar. They include the following functions:
 
-- `Period` - This is the specified delay time between execution of programs. The delay time is usually in seconds.
+- `Period` - This is the specified delay time between the execution of programs. The delay time is usually in seconds.
 - `StartDelay` - This is the delay period between the start of the timer and the execution of the first program.
 - `TaskToExecute` - This function specifies the number of times a program is executed, the function is usually set in whole numeric numbers.
-- `BusyMode` - This function is used to specify the actions timer is supposed to execute before completion of the previous timer function. When the timer object is running, the `BusyMode` becomes read-only meaning it can not be edited.
+- `BusyMode` - This function is used to specify the actions the timer is supposed to execute before completion of the previous timer function. When the timer object is running, the `BusyMode` becomes read-only meaning it can not be edited.
 
 The following example shows callback function properties and timing properties codes in the same program. The syntax for using timer properties are illustrated in the codes below:
 
@@ -164,9 +164,9 @@ These properties label the timer by giving it defined characters. They include:
 
 - `Name` - Provides a name for the timer as either a character vector or a string scalar. For example, `t = timer('Name','MyfirstTimer')` 
 - `Tag` - written as a character vector or a string scalar. For example, `t1 = timer('Tag','TimerTafunction')`
-- `Objectvisibility` - This function is used to specify the visibility of timer object as either `on` or `off`.
-- `Timerfind` function does not provide information on timer objects whose visibilty is turned off but such objects are still valid. For example, `t = timer('ObjectVisibility','off')`.
-- `UserData` - This function povides a field for user data and it supports any valid Matlab data.
+- `Object visibility` - This function is used to specify the visibility of the timer object as either `on` or `off`.
+- `Timerfind` function does not provide information on timer objects whose visibility is turned off but such objects are still valid. For example, `t = timer('ObjectVisibility','off')`.
+- `UserData` - This function provides a field for user data and it supports any valid Matlab data.
 
 #### Read-only properties
 These are properties that can not be edited. These values depend on the timing and callback function properties value. They include:
@@ -177,16 +177,16 @@ These are properties that can not be edited. These values depend on the timing a
 - `TaskExecuted` - This is the number of times the timer object has been executed. Is given as a numerical number.
 - `Type` - indicates the object type, denoted by a character vector.
 
-From the last program we can view timer properties using `get(t)` and `set(t)` functions.
+From the last program, we can view timer properties using `get(t)` and `set(t)` functions.
 
 ![Get funtion properties](/engineering-education/organizing-execution-of-programs-using-timer-object-in-matlab/timer_seven.PNG)
 
 ![Set function properties](/engineering-education/organizing-execution-of-programs-using-timer-object-in-matlab/timer_eight.PNG)
 
-### Finding all visible timer object in the memory
+### Finding all visible timer objects in the memory
 All visible timer object present in the memory can be found using the function `timerfind` or `timerfindall`.
 
-This can be demonstrated by creating three diferent timer objects namely `a,b, and c` then find the using the `timerfindall` function:
+This can be demonstrated by creating three different timer objects namely `a,b, and c` then find it using the `timerfindall` function:
 
 ```matlab
 a = timer;
