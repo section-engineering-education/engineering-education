@@ -6,7 +6,7 @@ In this article, we will discuss how one can create a timer object, start the ti
 
 Timer helps in keeping track of a program hence becomes handy when tracing for troubleshooting. Timers can be used in real-time execution of programs, building reminders, and areas where execution of programs according to priorities are required.
 
-### Prerequsites
+### Prerequisites
 For this tutorial, you'll need to have:
 - [Matlab](https://www.mathworks.com/login?uri=%2Fdownloads%2Fweb_downloads) installed.
 - Basic understanding of [Matlab](/engineering-education/getting-started-with-matlab/).
@@ -218,3 +218,6 @@ The following are areas of application of organizing program execution using tim
 - Timely displaying of messages.
 - Program execution according to priority.
 - Real-time execution of programs.
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
