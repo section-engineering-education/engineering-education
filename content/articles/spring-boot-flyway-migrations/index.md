@@ -149,7 +149,8 @@ mysql>
 ```
 Run the application by executing the command `./mvnw spring-boot:run`. Then, on the command line, execute the command `sudo mysql` to start MySQL CLI. 
 Next, execute the command `select * from flyway_schema_history` as shown below.
-//result two
+
+![first migration](/engineering-education/spring-boot-flyway-migrations/result-two.png)
 
 When we rerun the application and check the student's table if We inserted the data, we see the results below.
 
@@ -164,10 +165,15 @@ values ("tester2@outlook.com", "test2", "tester2", "Computer science", "ABA7712"
 
 ```
 When we check the Flyway migrations table, we see that the data was inserted and recorded.
+
 ### Testing
-//result
+
+![Second migration](/engineering-education/spring-boot-flyway-migrations/result.png)
+
 When we check the Flyway migrations table, we can see that the data was inserted and migration recorded.
-//devs
+
+![Result](/engineering-education/spring-boot-flyway-migrations/data.png)
+
 Now that we have created a table and inserted data into the database, execute the command below if we want to roll back the last migration that we performed.
 
 ```bash
