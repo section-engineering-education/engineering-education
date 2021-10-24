@@ -6,7 +6,7 @@ When building applications  using Django, you may find that you need to represen
 that you can use to achieve this goal. In this article, we are going to create a simple Django application that uses matplotlib to represent data.
 
 ### Prerequisites
-For you to follow along, it is important that:
+These requirements are needed to follow along:
 
 1. You have `Django` installed and you are familiar with creating a simple Django application.
 2. You have installed `matplotlib`  which we are going to use during representation of data in our application.
@@ -15,9 +15,9 @@ For you to follow along, it is important that:
 ### Takeaways
 1. Learn how to create a Django application.
 2. Learn how to use `matplotlib` to represent data in your Django application.
-3. Improve your python skills.
 
-### Getting started
+
+### Get Started
 We are going to create a simple sales application that holds information on customers, products, salesperson and the sales. To create the project, cd into your preferred folder and run 
 `bash
 django-admin startproject SALES
@@ -46,17 +46,12 @@ This will create the project with the starting files and your folder structure s
 
 ```
 We will then create an app called `sales` that we will be working on. Run `python3 manage.py startapp sales`. We will need to edit our `settings.py` file in order to register our app
-and configure static files in order to have some styling for our application. Edit the file as follows:
+and configure static files in order to have some styling for our application. Edit the file and add these lines in `INSTALLED_APPS` as follows:
 
 `SALES/settings.py`
 ```python
 INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
+  
     'sales',
     'crispy_forms'
 ]
@@ -101,15 +96,6 @@ from django.utils import timezone
 from sales.utils import generate_code
 
 
-class Product(models.Model):
-    name = models.CharField(max_length=120)
-    image = models.ImageField(upload_to='products')
-    price = models.FloatField(help_text='in Kenyan Shillings')
-    created = models.DateTimeField(auto_now_add=True)
-    updated = models.DateTimeField(auto_now=True)
-
-    def __str__(self):
-        return f"{self.name} - {self.created.strftime('%d/%m/%Y')}"
 class Customer(models.Model):
     name = models.CharField(max_length=120)
     logo = models.ImageField(upload_to='customers')
@@ -163,11 +149,10 @@ Let's register our models to the admin site. In your `admin.py` file, add these 
 `sales/admin.py`
 ```python
 from django.contrib import admin
-from .models import *
+from .models import Customer, Sale, SalesPerson
 
 # Register your models here.
 admin.site.register(Customer)
-admin.site.register(Product)
 admin.site.register(Sale)
 admin.site.register(SalesPerson)
 ```
@@ -184,9 +169,9 @@ by filtering the dates, transaction, customer id and total price. Let's create a
 from django import forms
 
 CHART_CHOICES = (
-    ('#1', 'Bar Chart'),
+    ('#1', 'Bar Graph'),
     ('#2', 'Pie Chart'),
-    ('#3', 'Line Chart')
+    ('#3', 'Line Graph')
 )
 RESULTS_CHOICES = (
     ('#1', 'Transaction'),
@@ -205,9 +190,8 @@ class SalesSearchForm(forms.Form):
 
 ```
 The form will allow the user to choose a date and select chart type and results according to `CHART_CHOICES` and `RESULTS_CHOICES`
-given in the file. We are going to create some views to render data to a web page.
-
-Views are python functions that handle web requests and return web responses. There are different ways to create the views, we will use function-based views.In our `views.py` file, let's edit it as follows:
+given in the file. We need to create some view to get data to our web page.
+In our `views.py` file, let's edit it as follows:
 
 `sales/views.py`
 ```python
@@ -262,40 +246,12 @@ Create a folder called `templates` in the same level as `manage.py` e.t.c and cr
 ```buildoutcfg
 └── templates
     ├── base.html
-    ├── navbar.html
     ├── sales.html
     └── saleslist.html
 
 ```
-Edit `navbar.html` to look like this:
-
-`templates/navbar.html`
-```jinja
-{% load static %}
 
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-        <a href="#" class="navbar-brand"><img style="height:100px;width:100px;" src="{% static 'book.jpg' %}" alt=""
-                                              class="logo-sm"></a>
-        <div id="navbarNav" class="collapse navbar-collapse">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" >Sales</a>
-                </li>
-
-
-            </ul>
-        </div>
-
-    </div>
-</nav>
-```
-This file will be used to set up links across our application. We will have two links `Home` and `Sales`
-to navigate between our data representation page and sales list page. We will configure routing a little bit later.
 
 Edit the `base.html` as follows:
 
@@ -316,7 +272,29 @@ Edit the `base.html` as follows:
     <title>Report App | {% block title %} {% endblock title %}</title>
 </head>
 <body>
-{% include 'navbar.html' %}
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a href="#" class="navbar-brand"><img style="height:100px;width:100px;" src="{% static 'book.jpg' %}" alt=""
+                                              class="logo-sm"></a>
+        <div id="navbarNav" class="collapse navbar-collapse">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a href="#" class=" active  nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" >Sales</a>
+                </li>
+
+
+            </ul>
+        </div>
+
+    </div>
+</nav>
+
 <div class="container mb-3 mt-3">
     {% block content %}
     {% endblock content %}
@@ -328,6 +306,9 @@ Edit the `base.html` as follows:
 This is the basic html file that is used by other files. All common styling are defined here. The file is used to avoid 
 rewriting the same lines of code across many files. Any other file that needs it will only need to have
 `{% extends 'base.html' %}` in order to borrow its styling.
+
+This file will also has links across our application. We will have two links `Home` and `Sales`
+to navigate between our data representation page and sales list page. We will configure routing a little bit later.
 
 The `sales.html` file should be similar to this:
 
@@ -408,11 +389,26 @@ urlpatterns = [
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 ```
-Let's also edit `navbar.html` to be able to access the different  views. Edit it as follows:
+Let's also edit `base.html` to be able to access the different  views. Edit it as follows:
 
-`navbar.html`
+`base.html`
 ```jinja
+<!DOCTYPE html>
 {% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'bootstrap-5.0.0-beta1-dist/css/bootstrap.css' %}">
+
+
+
+
+
+    <title>Report App | {% block title %} {% endblock title %}</title>
+</head>
+<body>
+
 {% url 'sales' as sales_home %}
 {% url 'saleslist' as sales_list %}
 
@@ -435,6 +431,14 @@ Let's also edit `navbar.html` to be able to access the different  views. Edit it
 
     </div>
 </nav>
+<div class="container mb-3 mt-3">
+    {% block content %}
+    {% endblock content %}
+</div>
+
+</body>
+</html>
+
 ```
 When you visit `http://127.0.0.1:8000` you should have something a page with our search form  similar to this:
 
@@ -447,15 +451,14 @@ When you click on the `Sales` link, you should have the sales listed in transact
 ### Creating the graphical representations.
 We are now going to get our graphical representations on our web page. First, we are going to need to install the `pandas` library to create dataframes of our sales.
 The resulting dataframe is what we will use during plotting with `matplotlib`. Just run `pip install pandas` to install it.
-We are going to handle the plotting in our `utils.py` file. The functionality will be used in our `views.py` file. Edit the `views.py` file to the 
-following.
+We are going to handle the plotting in our `utils.py` file. The functionality will be used in our `views.py` file. Make the `views.py` to resemble this:
 
 `sales/views.py`
 ```python
 import pandas
 from django.shortcuts import render
 from django.views.generic import ListView
-
+from django.contrib import messages
 from .forms import SalesSearchForm
 from .models import *
 # Create your views here.
@@ -490,13 +493,13 @@ def sales(request):
             sales_df = sales_df.to_html()
 
         else:
-            no_data = "Apparently...no data available"
+            messages.warning(request, "Apparently no data available...")
 
     context = {
         'search_form': search_form,
         'sales_df': sales_df,
         'chart': chart,
-        'no_data': no_data
+       
     }
     return render(request, 'sales.html',  context)
 def sales_list(request):
@@ -589,11 +592,11 @@ Home
 {% endblock title %}
 {% block content %}
 
-{% if no_data %}
+{% for message in messages %}
 <div role="alert" class="alert alert-warning">
-    {{no_data}}
+    {{message}}
 </div>
-{% endif %}
+{% endfor %}
 <form action="" method="post">
     {% csrf_token %}
     {{search_form|crispy}}
@@ -632,8 +635,7 @@ When you select line graph:
 ![Line Graph](/engineering-education/content/articles/Representing-data-in-Django-using-matplotlib/Line_chart.png)
 
 ### Conclusion
-You have now successfully created a Django application that uses matplotlib to represent data. You can create similar applications
-to suit your needs. The following links will be helpful incase you want to learn more:
+You have now successfully created a Django application that uses matplotlib to represent data.  The following links will be helpful incase you want to learn more:
 
 1. [Matplotlib Documentation](https://matplotlib.org/)
 2. [Python's io documetation](https://docs.python.org/3/library/io.html#io.BytesIO)
