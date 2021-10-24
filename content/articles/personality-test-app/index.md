@@ -206,8 +206,8 @@ personality_dichotomy: str = ''
 count = 0
 ```
 
-- Set counters to zero if not letter A or B.
-This code snippet below is meant to keep the counters unchanged when wrong input is entered.
+Set counters to zero if not letter A or B.
+The code snippet below is meant to keep the counters unchanged when wrong input is entered.
 
 ```python
 for question in questions:
@@ -217,7 +217,7 @@ for question in questions:
         count_of_b = 0
 ```
 
-- Exception handling.
+Exception handling.
 The code snippet below handles the problem of incorrect input from the user. We only want the user to enter A or B. If our expected letter is entered, we count its occurrence.
 
 ```python
@@ -235,7 +235,7 @@ try:
         count = count + 1
 ```
 
-- Compute the identities with if statement.
+Compute the identities with if statement.
 We use our variable counters and if statements to compute the personality identity. The count keeps track of the questions ranging from 1 to 20 and a total of four sections.
 The sectioning of the questions is in four parts and five questions each, making a total of 20 questions. We compute the dominant personality identity at every section of the test.
 
