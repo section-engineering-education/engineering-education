@@ -64,7 +64,7 @@ Most importantly we look for authors who have demonstrated great technical acume
 The position is a compensated position - 50 USD per successful article review.
 
 ### Are the positions voluntary or are Peer Reviewers compensated?
-We always encourage friendly reviews among the community to help each other out before article submission. Verifired Peer Reviewers are paid $50.00 USD per successful article revision.
+We always encourage friendly reviews among the community to help each other out before article submission. Verified Peer Reviewers are paid $50.00 USD per successful article revision.
 
 ### How often are article payouts?
 We typically send article payouts once a week (usually of Fridays) but that may vary depending on holidays, sick, or OOO (out-of-office) days.
