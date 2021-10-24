@@ -1,4 +1,6 @@
-Validating all of your API’s inputs will prevent it from a variety of vulnerabilities. It could be time-consuming to write your validation logic. Many API frameworks have type validation out of the box, whereas lightweight programming frameworks like Flask do not. Type validation can be made more accessible with frameworks like Pydantic. In this post, we’ll look at various Pydantic features and examples of how to use them.
+Type validation is the process of making sure what you get is what you are expecting. For example, if an endpoint is supposed to get an integer, you use type validation to ensure the input is an integer and not a string. It could be time-consuming to write your validation logic. Many API frameworks have type validation out of the box, whereas lightweight programming frameworks like Flask do not. Type validation can be made more accessible with frameworks like Pydantic.
+
+In this post, we'll look at various Pydantic features and examples of how to use them.
 
 ### Prerequisites
 
@@ -7,14 +9,14 @@ Validating all of your API’s inputs will prevent it from a variety of vulnerab
 - Install Pydantic with:
 
 ```bash
-pip install pydantic[email]
+pip install pydantic
 ```
 
 ### Data Models
 
 Objects in Pydantic are defined using models. A model class inherits from the `BaseModel` class. All of the fields and custom validation logic sit in the data model class. A simple example is a model that defines a user profile and the fields it contains.
 
-```python
+```Python
 from pydantic import BaseModel
 
 class Profile(BaseModel):
@@ -24,7 +26,7 @@ class Profile(BaseModel):
     bio: str
 ```
 
-The name of the data model is `Profile.` It inherits Pydantic’s `BaseModle` class; it also defines some fields in a profile like first name, last name, and their types. They are all expected to be strings in this case.
+The name of the data model is `Profile.` It inherits Pydantic's `BaseModel` class; it also defines some fields in a profile like `firstname`, `lastname`, and their types. They are all expected to be strings in this case.
 
 ```python
 new_profile = {
@@ -44,35 +46,32 @@ If you run the code snippet above, you will get this error:
 
 ```
 pydantic.error_wrappers.ValidationError: 2 validation errors for Profile
-
 location
-
  field required (type=value_error.missing)
-
 bio
-
  field required (type=value_error.missing)
-
 ```
 
-Missing fields in the `new_profile` dictionary caused this error. Pydantic makes all the fields defined in the data model required by default. You can use `Optional` defined by the `typing` module in Python’s standard library to make a field optional.
+Missing fields in the `new_profile` dictionary caused this error. Pydantic makes all the fields defined in the data model required by default. You can use `Optional` defined by the `typing` module in Python's standard library to make a field optional.
 
-```python
+```Python
 from typing import Optional
 from pydantic import BaseModel
 
+# create a pydantic data model
 class Profile(BaseModel):
     firstname: str
     lastname: str
     location: Optional[str]
     bio: Optional[str]
 
-
+# create a new profile with some fields
 new_profile = {
     "firstname": "Tomi",
     "lastname": "Bamimore",
 }
 
+# validate the new_profile with the Profile data model
 profile = Profile(**new_profile)
 print(profile.json())
 ```
@@ -83,7 +82,7 @@ Output:
 {"firstname": "Tomi", "lastname": "Bamimore", "location": null, "bio": null}
 ```
 
-This time, the output is JSON. A JSON output is useful when working with APIs. The output can also be accessed like attributes of an object in Python.
+This time, the output is JSON. A JSON output is useful when working with APIs. You can access like attributes of an object in Python.
 
 ```python
 new_profile = {
@@ -102,9 +101,11 @@ Jane Doe
 
 ### Recursive Models
 
-A data model can be declared as a type in another data model. In the example below, `Bio` is defined as a data model. It is also a type in the `Profile` model.
+When dealing with nested fields, using a data model as a data type in another model arises. A data model can be declared as a type in another data model. You need recursive models when a field in one model has other child fields related to it. This is the concept of recursive models. 
 
-```python
+In the example below, `Bio` is defined as a data model. `Bio` is also a type in the `Profile` model.
+
+```Python
 from typing import Optional
 
 from pydantic import BaseModel
@@ -120,6 +121,7 @@ class Profile(BaseModel):
     firstname: str
     lastname: str
     location: Optional[str]
+    # Model Bio is now the type of a field in the Profile model
     bio: Bio
 
 
@@ -134,7 +136,7 @@ print(profile.dict())
 
 Output:
 
-```python
+```Python
 {
     "firstname": "Jane",
     "lastname": "Doe",
@@ -145,18 +147,19 @@ Output:
 
 ### Pydantic Field Types
 
-Pydantic supports an extensive range of field types from Python’s standard library. The list is limitless and can’t be exhausted in this article. Pydantic also has custom types like `PaymentCardNumber`. See how it works in the snippet below.
+Pydantic supports an extensive range of field types from Python's standard library. The list is limitless and can't be exhausted in this article. Pydantic also has custom types like `PaymentCardNumber`. See how it works in the snippet below.
 
-```python
+```Python
 from pydantic import BaseModel
 
 from pydantic.types import PaymentCardNumber, ConstrainedInt
 
-
+# Define the Payment model
 class Payment(BaseModel):
+    # card_number is defined as a field with PaymentCardNumber type
     card_number: PaymentCardNumber
 
-
+# A valid credit card number
 new_card = 4238721116652766
 new_payment = Payment(card_number=new_card)
 print(new_payment)
@@ -170,7 +173,7 @@ card_number='4238721116652766'
 
 Credit Card numbers are validated using the [Luhn algorithm](https://en.wikipedia.org/wiki/Luhn_algorithm). Pydantic runs the validation under the hood to validate any input to the `card_number` field. If the input is invalid:
 
-```python
+```Python
 from pydantic import BaseModel, conint
 
 from pydantic.types import PaymentCardNumber
@@ -191,9 +194,7 @@ Output:
 
 ```bash
 pydantic.error_wrappers.ValidationError: 1 validation error for Payment
-
 card_number
-
  card number is not luhn valid (type=value_error.payment_card_number.luhn_check)
 ```
 
@@ -201,13 +202,13 @@ card_number
 
 Pydantic also allows writing custom validation methods. It is useful when working with generic data types that need custom validation. In the example below, we will validate an employee ID. It is a string with four integers, a hyphen and two alphabets (2345-HG).
 
-```python
+```Python
 from pydantic import BaseModel, validator
 
 
 class Employee(BaseModel):
     employee_id: str
-
+    # validator decorator is used to wrap custom validation fuction for a field
     @validator("employee_id")
     def employee_id_validator(cls, value):
         splitted = value.split("-")
@@ -219,7 +220,7 @@ class Employee(BaseModel):
             raise ValueError("Invalid id")
         return value
 
-
+# validate a new employee id
 new_employee = Employee(employee_id="234-HG")
 print(new_employee)
 ```
@@ -228,9 +229,7 @@ Output:
 
 ```bash
 pydantic.error_wrappers.ValidationError: 1 validation error for Employee
-
 employee_id
-
  Invalid id (type=value_error)
 ```
 
@@ -261,9 +260,9 @@ except:
 
 ### Generating JSON Schemas
 
-Pydantic models can generate JSON schema complaints with the OpenAPI specifications. You can use the `Field` object to populate the schema with information. Schemas help define the structure of a JSON document. Schemas are also used for generating API documentation.
+Pydantic models can generate JSON schema complaints with the OpenAPI specifications. You can use the `Field` object to populate the schema with information. Schemas help define the structure of a JSON document. Schemas are needed for generating API documentation.
 
-```python
+```Python
 from typing import Optional
 
 from pydantic import BaseModel, Field
@@ -283,9 +282,10 @@ class Profile(BaseModel):
     )
     bio: Optional[Bio] = Field(None, title="Bio", description="Short bio of user")
 
-
+# create a new profile
 new_profile = {"firstname": "Tomi", "lastname": "Bamimore"}
 profile = Profile(**new_profile)
+# generate json schema
 print(profile.schema_json())
 ```
 
@@ -334,8 +334,8 @@ Output:
 }
 ```
 
-The first argument to the `Field` object is the default value of the field. You should set it to `None` if you don’t want any default value. 
+The first argument to the `Field` object is the default value of the field. You should set it to `None` if you don't want any default value. The other keyword arguments in the `Field` are for optional properties in the schema.
 
 ### Conclusion
 
-Pydantic is built in a way that allows room for flexibility. You can use Pydantic with any development framework, and it works just fine. Frameworks like FastAPI supports Pydantic out of the box. Other loosely coupled frameworks like Flask does not come bundled with Pydantic but allows room for integration. From examples in the article, Pydantic enables you to control input types custom validation. Input validation is a significant step towards securing your application.
+Pydantic is built in a way that allows room for flexibility. You can use Pydantic with any development framework, and it works just fine. Frameworks like FastAPI supports Pydantic out of the box. Other loosely coupled frameworks like Flask does not come bundled with Pydantic but allow room for integration. From examples in the article, Pydantic enables you to control input types custom validation. Input validation is a significant step towards securing your application.
