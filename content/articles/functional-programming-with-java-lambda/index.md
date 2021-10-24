@@ -214,19 +214,12 @@ The third line creates a new class called `LambdaSingleParam`. The class contain
 ```java
 
 interface StringConcat {
-
  String strConcat(String a, String b);
-
 }
-
 public class LambdaMultipleParameter {
-
  public static void main(String args[]) {
-
  // lambda expression with many arguments
-
  StringConcat str = (str1, str2) -> str1 + str2;
-
  System.out.println("Result: "+ str.strConcat("Hello ", "World"));
 
  }
