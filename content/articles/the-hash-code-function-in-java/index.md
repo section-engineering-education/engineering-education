@@ -229,14 +229,13 @@ public class Example
 ```
 
 **Explanation**
-In general, when implementing hashCode, there is no one-size-fits-all solution (). It should be noted that all these implementations make use of the number 21 in some way.
+As a general rule, whenever it comes to implementing hashCode, there's not a single universal formula use for implementation. It should be noted that all these implementations make use of the number 21 in some way.
 
 This is because number 21 has a great property. A bitwise shift can be used in place of multiplication, which is faster than the usual multiplication method.
 
 ```
 21 * j == (j << 7) - j
 ```
-
 ### Handling hash collisions
 The inherent nature of hash tables reveals an important element among these data structures: they are fast. Even with a highly efficient hashing method, two or more items can have a similar hash code, even if they are unequal in some way. 
 
@@ -251,8 +250,9 @@ The HashMap implementation in Java V8 received an intriguing upgrade with the re
 `O(logn)` lookup can be achieved rather than `pessimistic O(n)` in this way (n).
 
 ###  Creating a trivial application
-Now we can check out the standard `hashCode` to see how well it works. `SLF4J` *A Java logging framework like Log4j 2 or Logback has an abstraction layer called SLF4J, or Basic Logging Facade for Java. This makes it possible to deploy alternative logging frameworks without having to update any code.* May be used to record a message to the console whenever a method in our Java app is executed. The app will insert certain user entities into the HashMap using SLF4J.
+We will now put a conventional hashCode() implementation through its paces to see how well it works. We will write a basic Java application that adds several enduser objects to a HashMap and uses SLF4J which (provides a general API, so the logging isn't tied to a specific implementation anymore. This permits the coexistence of several logging schemes,) to report a message to the console each time the method is invoked to demonstrate the concept.
 
+The following is the entry point for the example application:
 ```Java
 import java.util.HashMap;
 import java.util.Map;
@@ -307,8 +307,7 @@ In the collection, we found an end-user
 ```
 **Explanation**
 When an entity is saved inside the hash map and tested using the containsKey() function, the hashCode() method is called and the evaluated hash code is displayed to the console. ​
-
->A few mathematical notions (such as prime and arbitrary integers), as well as logical and fundamental mathematical operations, are often needed to produce effective hashCode() implementations.
+> A few mathematical notions (such as prime and arbitrary integers), as well as logical and fundamental mathematical operations, are often needed to produce effective hashCode() implementations.
 
 Without using these strategies, we can still build the hashCode() properly. Everything else is a matter of checking to see if and how the hashing method treats unequal objects differently. ​
 
