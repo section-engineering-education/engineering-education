@@ -1,6 +1,7 @@
 ### Implementation of eigenvalues, eigenvectors, eigendecomposition, orthogonalization and orthonormalization in Matlab
 ### Introduction
 Matrix is the rectangular arrangement of numbers. We represent them in the form of `m x n`, where `m` is the rows while the `n` is the number of columns. Eigen decomposition is the process of representing vectors or a matrix by its eigenvalues and eigenvectors. The eigenvalue is like a scalar, but we will understand more about it in the article.
+
 Orthogonalization is the process of making vectors orthogonal. Orthogonal vectors are vectors that are perpendicular to each other; that is, the angle between them is 90 degrees. Orthonormalization is the process of normalizing the vectors. Normalization is the process of changing the vectors into unit vectors.
 
 All these processes form the basics of the matrix. However, engineers and data analysts use more of these processes in their daily activities in daily life and daily activity. Since Matlab is a matrix laboratory, then it means that it has tools that make working these processes easier. This article will look at how we can get these values in Matlab.
@@ -122,7 +123,7 @@ D =
          0   -3.1646         0
          0         0    1.8170
 ```
-`V` is the eigenvector, while the main diagonal of `D` is the eigenvalues. To extract these values, We use the `diag` function and get the output as shown below;
+`V` is the eigenvector, while the main diagonal of `D` is the eigenvalues. To extract these values, we use the `diag` function and get the output as shown below;
 ```Matlab
 diag(D)
 ans =
@@ -152,7 +153,7 @@ Orthogonal vectors can be referred to as perpendicular vectors. Let's expand on 
 
 $$A.B=\begin{vmatrix}A*Bcos\theta\end{vmatrix}$$
 
-Cosine of 90degrees is zero; then the product will be zero. 
+Cosine of 90 degrees is zero; then the product will be zero. 
 
 Let's consider the vector of A=$$\begin{vmatrix}4\\2\\-1\end{vmatrix}$$ and B=$$\begin{vmatrix}1\\-3\\-2\end{vmatrix}$$
 
