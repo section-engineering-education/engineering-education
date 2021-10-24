@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /the-hash-code-function-in-java/
 title: The hashCode() function in Java
-description: This article will take a look at the Java hashCode() function. We will also learn how it operates, how it fits into collections, and how to effectively implement it.
+description: This article will take a look at the Java hashCode() function. We will also learn how it operates, how it fits into collections, and how to implement it.
 author: dennis-mwangi
 date: 2021-10-16T00:00:00-04:45
 topics: []
@@ -16,11 +16,9 @@ images:
 ---
 Using a hash function, you can change the value of a given key to something else. A mathematical procedure generates a new value using a hash function. 
 <!--more-->
-A hash value, or simply a hash, is the outcome of a hash function. In Java, one of the most basic computer science concepts is "hashing". 
+A hash value, or simply a hash, is the outcome of a hash function. In Java, one of the most basic computer science concepts is "hashing". Java's `hashCode()` function does the hashing for us. 
 
-Java's `hashCode()` function does the hashing for us. By employing hashing techniques, it is possible to map data to a representational integer value. 
-
-A hash code in Java is an integer number associated with every object. Hashing is implemented in HashTables and HashMaps, two common data structures.
+By employing hashing techniques, it is possible to map data to a representational integer value. A hash code in Java is an integer number associated with every object. Hashing is implemented in HashTables and HashMaps, two common data structures.
 
 ### Prerequisites
 To follow through this article, the reader should:
@@ -45,9 +43,9 @@ It is not necessarily true, yet, to say the opposite. There will be a huge diffe
 The hashCode function returns the input value's hashed integer value when called on an instance of the HashCode class.
 
 > Here are some important ideas to keep in mind:
-- When a program executes, many calls to hashCode will return the very same type of integer value, unless the Object passed into the equals function changes. Within the next implementation, the integer value will not have to be the same.
+- When a program executes, many calls to hashCode will return the very same type of integer value. Unless, the object passed into the equals function changes. Within the next implementation, the integer value will not have to be the same.
 - If the equals method determines that two or more entities are equal, then their associated hashes must be as well.
-- As long as the equals method does not agree on the equality of two or more objects, the hashes of those items will be uneven.
+- As long as the `equals` method does not agree on the equality of two or more objects, the hashes of those items will be uneven.
 > To override the `equals` method, we must also override the hash method. This is vital to keep in mind.
 
 ### Using hashCode() in data structures
@@ -63,15 +61,15 @@ if (content.contains("hashcode"))
 
 To address this issue, Java incorporates a range of data structures. Hash tables, for example, are used by many Map interface implementations.
 
-Hash table collections use the hashCode() method to compute the hash value of a given key. Then, they store the data using this value internally, making access operations faster.
+Hash table collections use the `hashCode()` method to compute the hash value of a given key. Then, they store the data using this value internally, making access operations faster.
 
 ### Understanding how hashCode() works
-The `hashCode()` returns the hashing algorithm's resulting integer value. `Equals()` indicate that objects with the very same hash code are equal. 
+The `hashCode()` returns the hashing algorithm's resulting integer value. `Equals()` state that objects with the very same hash code are equal. 
 
 It isn't necessary to return separate hash codes for various items in a hash function.
 
 >The following is stated in the general hashCode() function.
-- During the runtime of a Java program, hashCode() shall return the same result each time it is invoked on the same object as long as no data is being used equals evaluations on the item that has been changed by the call. In other words, this value does not have to be the same from one application execution to another.
+- During the runtime of a Java program, hashCode() will return the same result each time it is invoked on the same object. This is as long as no data that is being used equals to the evaluations on the item has been changed by the call. In other words, this value does not have to be the same from one application execution to another.
 - Two objects that meet the equalsObject test have the same `hashCode` value if and only if they are equal in some other way.
 - If the equals `java.lang.Object` function determines that two objects are not equal, then invoking the hashCode technique on each of the two elements does not have to return distinct integer values. Integer results for different objects produce distinct hash tables, but developers ought to be aware of this.
 > To the degree that it is workable, the 'hashCode()' method of an object returns distinct numbers for each of the objects it contains. The 'JavaTM' programming language, but, does not need this implementation method, which is more employed to convert an object's internal reference to an integer in other programming languages.
@@ -118,11 +116,11 @@ public class code
 }
 
 ``` 
-The equals() and hashCode() methods in the User class have special implementations that strictly follow the contracts. Furthermore, submitting any fixed value using hashCode() is legal.
+The `equals()` and `hashCode()` methods in the user class have special implementations that strictly follow the contracts. Furthermore, submitting any fixed value using `hashCode()` is legal.
 
 Because all objects would be kept in the same bucket in this approach, the effectiveness of hash tables would be reduced to almost nothing.
 
-A hash table search is executed linearly in this situation and does not provide any actual benefit. (Handling Hash Collisions) follows where we'll delve more into this concept.
+A hash table search is executed linearly in this situation and does not provide any actual benefit. (Handling Hash collisions) follows where we will delve more into this concept.
 
 ###  Improving the hashCode() implementation
 We will make an effort to make the present hashCode() implementation better by incorporating all fields from the User class.
@@ -136,7 +134,7 @@ public int codeHash()
 
 ```
 **Explanation**
-Fundamentally, this hashing algorithm is superior to the previous one. By multiplying userName, address, and phoneNo. fields' hash codes, the object's hash code may be calculated. 
+Fundamentally, this hashing algorithm is superior to the previous one. By multiplying userName, address, and phone number fields' hash codes, the object's hash code may be calculated. 
 
 A decent hashCode() implementation is one that uses the equals() function consistently.
 
@@ -155,9 +153,9 @@ public int codeHash() {
 ```
 
 **Explanation**
-It's not necessary to put in place the hashCode() and equals() functions every time; understanding their duties is enough. This is because the majority of IDEs are capable of generating their hashCode() and equals() implementations.
+It is not necessary to put in place the `hashCode()` and `equals()` functions every time; understanding their duties is enough. This is because the majority of IDEs are capable of generating their `hashCode()` and `equals()` implementations.
 
-Since Java 7, the Objects. hash() utility method was deployed to make it easy to perform hashing.
+Since Java 7, the `Objects. hash()` utility method was deployed to make it easy to perform hashing.
 
 ```Java
 Objects.hash(userName, adress)
@@ -242,13 +240,13 @@ This is because number 21 has a great property. A bitwise shift can be used in p
 ### Handling hash collisions
 The inherent nature of hash tables reveals an important element among these data structures: they are fast. Even with a highly efficient hashing method, two or more items can have a similar hash code, even if they are unequal in some way. 
 
-The result of this is that the hash table keys for both situations will all result in a similar bucket, even though their hash codes were indeed different. The term for this type of collision is a hash collision, and we have several approaches dealing with it, each with pros and cons. 
+The result of this is that the hash table keys for both situations will all result in a similar bucket, even though their hash codes were different. The term for this type of collision is a hash collision, and we have several approaches of dealing with it, each with pros and cons. 
 
 When it comes to handling collisions, Java's HashMap uses a special approach.
 
 > A link is automatically created between objects that are saved in the same bucket. After that, the linked list in the bucket index is utilized to store hashes of each object. An alternative would be to store the objects in a linked list that can be retrieved linearly.
 
-The HashMap implementation in Java 8 received an intriguing upgrade with the release of Java 8. Linked lists are replaced by treemaps when the bucket size exceeds a particular threshold. 
+The HashMap implementation in Java V8 received an intriguing upgrade with the release of Java V8. Linked lists are replaced by treemaps when the bucket size exceeds a particular threshold. 
 
 `O(logn)` lookup can be achieved rather than `pessimistic O(n)` in this way (n).
 
