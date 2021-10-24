@@ -1,5 +1,21 @@
-A timer is an automated mechanism for activating a device or a process at a predetermined time or time intervals. Matlab provides timer objects that can be used to organize the execution of Matlab commands.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /organizing-execution-of-programs-using-timer-object-in-matlab/
+title: Organizing Execution of Programs using Timer Objects in Matlab
+description: In this article, we are going to discuss the basics of time objects in Matlab. We'll also be learning about different properties, and how useful it is to programs.
+author: vitalis-odhiambo
+date: 2021-10-24T00:00:00-19:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/organizing-execution-of-programs-using-timer-object-in-matlab/hero.jpg
+    alt: Organizing Execution of Programs using Timer Objects in Matlab Image
+---
+A timer is an automated mechanism for activating a device or a process at a predetermined time or time intervals. Matlab provides timer objects that can be used to organize the execution of Matlab commands.
+<!--more-->
 Timers enables control of an event sequences at fixed intervals and program running time.
 
 In this article, we will discuss how one can create a timer object, start the timmer running, and specify the processes to be performed until the the timer object elapses, stopping and deleting the timer objects from the memory. 
