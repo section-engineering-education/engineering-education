@@ -2,7 +2,7 @@
 	
 In this tutorial, we will learn to appreciate some advanced concepts of programming using Dart a language that can be both robust and rigid to use.
 
-![advanced-concepts](./advanced-concepts.jpg)
+![Hero](./engineering-education/testing-angular-app-with-protractor-and-jasmine/hero.jpg)
 
 ### Introduction
 Programming is a way of writing syntaxes that instructs a computer to perform certain tasks the way we want it to achieve a specific task. For one to achieve programming, certain concepts like Function declaration and usage, conditional situation handling, variable declaration - assignment - and reassignment, looping e.t.c. provide a way to achieve programming. These concepts listed can be classified as basic programming concepts and are essential knowledge needed for other advanced concepts that exist within programming. We will be discussing some of those advanced concepts that make programming a whole lot better and more fun to use.  
