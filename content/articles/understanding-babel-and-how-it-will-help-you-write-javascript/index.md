@@ -1,47 +1,40 @@
 ### Introduction
-Babel is a JavaScript transpiler that changes over `EcmaScript 5` JavaScript from the forefront to standard JavaScript. `EcmaScript 6` by Babel incorporates all of the most recent javascript elements and headways. This article will give you a prologue to Babel and tell you the best way to utilize it to make javascript simpler to work with.
-
+When you use Babel, you can convert edge JavaScript into plain old ES5 JavaScript that can be run in any browser, no matter where you are (even the old ones).
+Classes, fat arrows, and multiline strings are among the syntactical sugar that has been added to JavaScript as a result of the introduction of the new ES6 specification.
+In this instructional exercise we will take a look of how Babel can be useful in writing javaScript code.
 ### Table of content
 - [Introduction](#introduction)
 - [Table of content](#table-of-content)
 - [Implementation](#implementation)
-- [Classification](#classification)
+- [Classes](#classes)
   - [Classes in Babel](#classes-in-babel)
-- [Numeric Strings](#numeric-strings)
+- [Multiline Strings](#multiline-strings)
 - [Fat Arrows](#fat-arrows)
-- [Fat bolts with a single boundary](#fat-bolts-with-a-single-boundary)
-  - [Further practice](#further-practice)
-  - [This keyword and the Babel Fat Arrows](#this-keyword-and-the-babel-fat-arrows)
+- [Fat arrows with an exactly single parameter](#fat-arrows-with-an-exactly-single-parameter)
+- [Fat Arrows with exactly one line of code](#fat-arrows-with-exactly-one-line-of-code)
+  - [Fat arrows in practice](#fat-arrows-in-practice)
+  - [Fat Arrows and This(Lexical Scoping)](#fat-arrows-and-thislexical-scoping)
 - [Conclusion](#conclusion)
   - [Further Reading](#further-reading)
-  - 
 ### Implementation
-Babel comes bundled as a module  through npm: 
-
+Babel is distributed as a Node.js node module. Installation, as you might expect, is via npm:
 ```
 $ npm install – D babel-cli 
 ```
-
-There are modules for webpack, swallow, snort, Sublime and Webstorm. So whatever your improvement toolchain is, Babel can be used with it.
-
-### Classification
-According to various articles, JavaScript is without style and this furter implies that anything might be the parent of another. 
-
-You might get more information about this in the JavaScript for Smart People course - Object Orientation segment.
-
-A class is an  example object that can be utilized to depict a wide characteristsc of things. 
-
+There are plugins for webpack, gulp, grunt, Sublime, Webstorm, and a variety of other technologies. Babel is likely to be able to integrate with any development toolchain you may be using.
+### Classes
+JavaScript does not have any classes. The fact that objects inherit directly from one another means that any object can be the parent (superclass) of any other object in the system.
+Any function can be a constructor function, and calling it with the new keyword will result in the creation of a new object.
+You may learn more about object orientation in the JavaScript for Smart People course - Object Orientation portion, which is available here.
+This is all amazing and JavaScript, but it makes C# and Java devs a little nervous, which is understandable. Because they are accustomed to a higher level of rigor, ES6 introduces the class keyword. This allows us to define functions that can only be used as constructors and nothing else.
+The term `class` refers to a specific cookie cutter item that can only be used to define other objects, as we are all aware. This is an exception to the rule of prototypical inheritance. As a result, we restrict ourselves to only constructing objects from functions that we have specifically determined should be used in this manner.
 #### Classes in Babel
-This is what an EcmaScript 6 class looks like:
+An ES6 class resembles this:
 ```javascript
-class User {
-
-}
-let userOne = new User
+class Person {}
+var dave = new Person
 ```
-
-With a bit of elaboration, we get a constructor to work if we run it through Babel:
-
+When we run it through Babel, we receive nothing more than a constructor function and a little extra decoration:
 ```javascript
 "use strict";
 function _classCallCheck(instance, Constructor) {
@@ -49,153 +42,116 @@ function _classCallCheck(instance, Constructor) {
     throw new TypeError("Cannot call a class as a function");
   }
 }
-let userOne = function User() {
-  _classCallCheck(this, userOne);
+var Person = function Person() {
+  _classCallCheck(this, Person);
 };
-let userOne = new User();
+var dave = new Person();
 ```
-
-We have our `UserOne` project, which serves as a standard prototype constructor. The `_classCallCheck` method adds a touch of safety testing as well.
-
-Apart from if the `userOne` work is regarded as a constructor work, the `_classCallCheck` work is called inside the `userOne` constructor and will cause a mix-up.
-
-### Numeric Strings
-As a bonus, EcmaScript 6 introduces a new way to characterize strings. Strings with many lines can be created using the backtick image. This is very helpful for describing JavaScript format types.
+The Person function, which may be used as a standard prototype constructor, is already available. With the `_classCallCheck` function, we can perform a small amount of safety checking as well.
+This method is called within the Person constructor, and it will throw an error unless the Person function is treated as a constructor function, in which case it will return true.
+### Multiline Strings
+In addition, ES6 introduces a new, more succinct manner of defining strings. You can construct multiline strings by using the backtick symbol. Using this method is extremely beneficial when creating templates in JavaScript. Here's an example of a straightforward Angular template:
 - **Example**
-
 ```javascript
-let temp = `
-<p>
-  <h4> Hi {{name}}</h4>
-</p>
+var template = `
+<div>
+  <h1>hello {{name}}</h1>
+</div>
 `
 ```
-
 The following is compiled:
-
 ```javascript
-let temp = "
-  <p>
-    <h4>Hi {{name}}</h4>
-  </p>
+var template = "
+  <div>
+    <h1>hello {{name}}</h1>
+  </div>
   ";
-```
-
+  ```
 ### Fat Arrows
-Fat arrows offer a pleasant language structure for characterizing mysterious capacities.
-
+The use of fat arrows allows us to define anonymous functions in a readable manner.
+ we can write like this:
 - **Example**
 ```javascript
- function (a, b) {
-  return a + b
-  };
+ (x, y) => {return x + y};
 ```
-
 Results to:
-
 ```javascript
-((a, b)=> {
-  return a + b;
+(function (x, y) {
+  return x + y;
 });
-```
 
-This capacity has not been called. We could call it as demonstrated below: 
+```
+ It should be noted that this function has not been invoked. If I wanted to, I could store it to a variable or provide it as an argument to a callback or a promise.
+ If I wanted to invoke the function, I could do something like this: 
 - **calling the function**
-
 ```javascript
-let x = (a, b) => {return a + b} (4,5);
+(x, y) => {return x + y} (1,2);
 ```
-
 Gives the following:
-
 ```javascript
-let x = (function (a, b) {
-  return a + b;
-})(4, 5);
+(function (x, y) {
+  return x + y;
+})(1, 2);
 ```
-
-### Fat bolts with a single boundary 
-If we have a single border, then we can be allowed to prohibit the supports for moving ahead of the bolt:
-
+### Fat arrows with an exactly single parameter
+When we have exactly one parameter we are allowed to omit the braces preceding the arrow:
 ```javascript
-a => {return a + 3};
+x => {return x + 1};
 ```
-
 we get:
-
 ```javascript
-(function (a) {
-  return a + 3;
+(function (x) {
+  return x + 1;
 });
 ```
-
-If our capacity contains precisely one line of code, we can exclude the wavy supports inside and out:
-
+### Fat Arrows with exactly one line of code
+ There is, even more, we can do than this. If our function contains exactly one line of code (assuming a line ends with a semi-colon) we can omit the curly braces altogether:
 ```javascript
-a => a + 1
+x => x + 1;
 ```
-
 Results to:
-
 ```javascript
-(function (a) {
-  return a + 1;
+(function (x) {
+  return x + 1;
 });
 ```
-
-### Further practice
-One of these should be used to produce all of the array's constituents.
-
+#### Fat arrows in practice
+Let's use one of these to output all the elements in an array.
 ```javascript
-let x = [12, 23, 68];
-x.map(ind => alert(ind));
+[1, 2, 99].map(num => console.log(num));
 ```
-
 gives us:
-
 ```javascript
-let x = [12, 23, 68]
-x.map((ind)=>{
-  return console.log(ind);
+[1, 2, 99].map(function (num) {
+  return console.log(num);
 });
+
 ```
-
-### This keyword and the Babel Fat Arrows
- The watchword `this` is the article preceding the spot when the capacity is called in JavaScript. 
-
-This is sensible, however frequently annoying, since it once in a while needs `this` to be hidden in that. Fat bolts bypass `this` by protecting the current worth of `this`.
-
+#### Fat Arrows and This(Lexical Scoping) 
+ When a function is invoked, the `this` keyword in JavaScript is configured to return the object that is immediately preceding the dot. This is sensible, but it might be inconvenient at times because it necessitates the storage of `this` in that.
+A way around `this` is to use a fat arrow, which keeps the current value of `this`. This is referred to as `lexical scoping`.
 ```javascript
-a = {
-  b:()=>{
-    () => {
-      alert(this)
-      }();
+x = {
+  y: function() {
+    () => {console.log(this)}();
   }
 }
 ```
-
 Results to:
-
 ```javascript
-a = {
- b: let b = ()=> {
-   let _this = this;
-    ( ()=> {
-      alert(_this);
+x = {
+  y: function y() {
+    var _this = this;
+    (function () {
+      console.log(_this);
     })();
- }
+  }
 };
 ```
-
-The value of this has been taken care of in a variable inside the conclusion. 
-
+- We can see that the value of this has been stored in a variable inside the closure.
 ### Conclusion
-ECMAScript 6 is over-applied to the highest point of ECMAScript 5. JavaScript in the motor keeps on working as the original, list-readiness language that we are familiar with. When using ECMAScript 6, we get some pleasant accentuation that ultimately means truly plain, standard JavaScript.
-
-This is expected to help the Java/C# people group, which often experiences model inheritance perplexing upon first disclosure. Some of it, like fat bolts, permits us to have a more compact, more contemporary-looking language structure while likewise expanding the helpfulness of JavaScript.
-
-### Further Reading
-Additional elements of Babel and EcaScript 6 can be found [here](https://babeljs.io/docs/learn-es2015/)
+A sugary layer on top of `ES5` makes up the majority of `ES6`, according to the formula. Inside, the JavaScript programming language retains its status as the prototype list processing language that we are all too familiar with. Aside from some excellent syntax, ES6 provides a transpiler that converts to a rather plain, regular JavaScript in the end. One reason for some of this sugar is to make it easier for Java/C# developers who, at first, may find prototypical inheritance difficult to understand. Fat arrows, for example, help us to write more concise and modern-looking code while also improving the functionality of JavaScript.
+#### Further Reading
+For more features of Babel and ES6, see [here](https://babeljs.io/docs/learn-es2015/)
 
 Happy Coding!
