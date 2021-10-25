@@ -338,12 +338,9 @@ class GeekyBlueSeahorse(QCAlgorithm):
 For more explanations or inconveniences, you can refer to this [video](https://www.youtube.com/watch?v=s8uyLscRl-Q) for more understanding.
 
 
-7. #### Perform a Backtest
+8. #### Perform a Backtest
 
-A backtest is performed to evaluate the performance of the algorithm.
-
-It integrates the code with your brokerage site to get results as if it was an actual trading practice.
-
+A backtest is performed to evaluate the performance of the algorithm. It integrates the code with your brokerage site to get results as if it was an actual trading practice.
 You can see the picture below;
 
 ![](backtest.png)
@@ -357,33 +354,22 @@ According to the values you entered, you should get your results in a similar in
 
 Here are some of the key merits of this algorithmic trading;
 
-1. **Saves on time** since a trader does not need to sit there all day doing the trade.
+1. **Saves on time** since a trader does not need to sit there all day doing the trade. This allows one to work on other            things while earning at the same time.
 
-This allows one to work on other things while earning at the same time.
+2. **Higher accuracy** expected since the bot compares and considers a large volume of data before coming up with a                prediction. This is a bonus since a trader cannot go through data of up to or maybe more than a year.
 
-2. **Higher accuracy** expected since the bot compares and considers a large volume of data before coming up with a prediction.
-
-This is a bonus since a trader cannot go through data of up to or maybe more than a year.
-
-3. **Increased trading time** - Most probably, the bot can trade for 24hrs in a day without getting tired.
-
-This means that if its accuracy is higher enough, then the profits made are higher than human-guided trading.
+3. **Increased trading time** - Most probably, the bot can trade for 24hrs in a day without getting tired. This means that if      its accuracy is higher enough, then the profits made are higher than human-guided trading.
 
 
 
 ### Why are people still against Algorithmic Trading?
 
 Besides giving better results, some people are still against this type of trading.
-
 This is the one **Main** reason;
 
 **Systemic Risk**
 
-Sometimes, there occur linkages between financial markets.
-
-As a result, algorithms operating under those markets transmit rapid shocks from one market to another thus triggering a systematic risk.
-
-These systematic risks bring about **huge losses**, which is considered a great risk.
+Sometimes, there occur linkages between financial markets. As a result, algorithms operating under those markets transmit rapid shocks from one market to another thus triggering a systematic risk. These systematic risks bring about **huge losses**, which is considered a great risk.
 
 Due to such risk, people prefer to trade on their own rather than depending on the software.
 
