@@ -1,14 +1,31 @@
-With the digitalization globalization, data has evolved from limited, expensive, difficult to find, gather and collect to abundant and cheap. People are spending more time in the digital world watching the news or on social media or buying and selling products and services, which is a kind of new normal in this digital world.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /getting-started-with-data-visualization-using-p5.js/
+title: Getting Started with Data Visualization Using P5.js
+description: The tutorial will focus on data visualization, where collected data will be represented on a graph. We will use the P5.js Javascript library which contains functions useful in drawing canvases for data representation.
+author: julius-gikonyo
+date: 2021-08-08T00:00:00-05:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/getting-started-with-data-visualization-using-p5.js/hero.png
+    alt: Getting Started with Data Visualization Using P5.js Hero Image
+---
+With digitalization globalization, data has evolved from limited, expensive, difficult to find, gather and collect to abundant and cheap. People are spending more time in the digital world watching the news or on social media, buying and selling products and services, which is kind of a new normal in this digital world.
+<!--more-->
 
 Data may be simply acquired from many important consumers in the present digitalization. However, this creates bulky and extensive information across different channels. With such a massive volume of data, it becomes troublesome to store, process, analyze, and comprehend each piece of information. This modest quantity of data is so large that traditional software cannot gather, store, comprehend, or analyze it. As a result, the notion of big data arose.
 
-With such easier accessibility data, there is a terabyte of data sitting around us and in the data centers, which is unused and is sitting as a burden. These resources are only as excellent as what we can produce out of it as individuals and corporations. The concept of big data processes terabytes of raw data into meaningful value that can be used by businesses and individuals, such as predictive analytics. This way, data doesn't sit in a data center unused. Instead, it is turned into digital gold.
+With such easier accessibile data, there is a terabyte of data sitting around us and in the data centers, which is unused and is sitting as a burden. These resources are only as excellent as what we can produce out of it as individuals and corporations. The concept of big data processes terabytes of raw data into meaningful value that can be used by businesses and individuals, such as predictive analytics. This way, data doesn't sit in a data center unused. Instead, it is turned into digital gold.
 
-Data visualization represents raw data and transforms it into graphs, charts, and pictures that show how the raw data is represented. Processing such data ensures that the data is clean and accurate. This enables us to acquire insights, identify new patterns, and identify trends. The original raw data is given meaning and purpose by a visual depiction of it. As a consequence, patterns and trends emerge, and actionable insights can be generated.
+Data visualization represents raw data and transforms it into graphs, charts, and pictures that show how the raw data is represented. Processing such data ensures that the data is clean and accurate. This enables us to acquire insights, identify new patterns and trends. The original raw data is given meaning and purpose by a visual depiction of it. As a consequence, patterns and trends emerge, and actionable insights can be generated.
 
 When we talk about visualization, it's all about using our eyes to visualize things around us. Then visualize the information so that we can make an informed decision. So we can see the trends and patterns in the data and connect with it.
 
-In this tutorial, we will learn about data visualization and how to use JavaScript to represent data in graphs and charts. This lesson will use P5.js. P5.js is an open-source JavaScript library that makes data visualization accessible to a webpage.
+In this tutorial, we will learn about data visualization and how to use JavaScript to represent data in graphs and charts using P5.js. P5.js is an open-source JavaScript library that makes data visualization accessible to a webpage.
 
 ### Why we use Data Visualization
 
@@ -16,7 +33,7 @@ Data Visualization brings in visual interpretation. This is much faster to under
 
 ### Setting up P5.js
 
-P5.js is an open-source creative coding JavaScript library. It is used to sketch and draw using the HTML5 canvas element. To start using this library, you can choose the following installation methods:
+P5.js is an open-source creative coding JavaScript library. It is used to sketch and draw using the HTML5 canvas element. It can be installed using the following installation methods:
 
 - Using NPM
 
@@ -34,7 +51,7 @@ CDN stands for Content Delivery Network. CDN is a system of geographically distr
 
 When you use CDN for content distribution, many copies are created and served to end-users from different locations based on the best route possible. As a result, users get your content at the best speed and performance.
 
-To run P5.js with CDN, you include a CDN linking to the P5.js resources in an HTML file, as shown below.
+To install P5.js with CDN, you include a CDN linking to the P5.js resources in an HTML file, as shown below:
 
 ```js
 <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/p5.min.js"></script>
@@ -42,7 +59,9 @@ To run P5.js with CDN, you include a CDN linking to the P5.js resources in an HT
 
 ### Getting started with P5.js
 
-Let's now dive in and start using this amazing library. To start with, create a project directory where we save the code file. In this guide, we will use CDN to access the P5.js resources. So inside your project folder, go ahead and create an `index.js` file. We will add the CDN script here and load the P5.js JavaScript code to the browser. In your `index.html` file, add the following CDN scripts.
+Let's now dive in and start using this amazing library! 
+
+First, create a project directory where we will save the code file. In this guide, we will use CDN to access the P5.js resources. So inside your project folder, create an `index.js` file. We will add the CDN script here and load the P5.js JavaScript code to the browser. In your `index.html` file, add the following CDN scripts.
 
 ```html
 <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/p5.min.js"></script>
@@ -50,10 +69,10 @@ Let's now dive in and start using this amazing library. To start with, create a 
 
 Also, remember to create `app.css` and `app.js` files that we have imported in the above HTML code block.
 
-To start with, P5.js uses some functions that defines how your sketch will look like. These include:
+P5.js uses some functions that defines how your sketch will look like. These include:
 
-- A `setup()` function - used for creating the canvas and setting the background for that canvas.
-- A `draw()` function - this function is called continuously in different time frames. It is used to draw sketches. It executes each line of code in the draw function once, then it restarts it, draws it again and again until the whole check is completely loaded.
+- A **`setup()`** function that is used for creating the canvas and setting the background for that canvas.
+- A **`draw()` function** - this function is called continuously in different time frames. It is used to draw sketches. It executes each line of code in the draw function once, then it restarts it, draws it again and again until the whole check is completely loaded.
 
 The following is a basic setup of a P5.js sketch that draws a rectangle on a web page:
 
@@ -76,7 +95,7 @@ function draw() {
 }
 ```
 
-This is how the setup looks when you run the above code:
+This is how the setup looks when you run the code above:
 
 ![a-rectangular-sketch](/engineering-education/getting-started-with-data-visualization-using-p5js/a-rectangular-sketch.png)
 
@@ -86,7 +105,7 @@ From the above code block, we have added the `setup()` and `draw()` function. `s
 
 As you can see, it is easy to go along with these packages. Let's now advance to making our codebase more complex. Let's try to draw a graph that represents some data. We will create and plot simple exponential lines as a graph.
 
-We will start by setting up a Canvas and a canvas background using the `setup()` function, as shown below:
+We will start by setting up a canvas and a canvas background using the `setup()` function, as shown below:
 
 ```js
 function setup() {
@@ -124,7 +143,13 @@ To drive in the aspect of data visualization, you first need to collect data, an
 
 We will use a simple project case of saved data then analyze that data and represent it using P5.js. We will use data stored in an array then plot it on a graph.
 
-Before you begin, make sure you have CDN set within your HTML file `head` tags, i.e. `<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/p5.js" type="text/javascript"></script>`. Also, ensure your `index.js` and `app.css` files are added to your HTML file. Below is the code that we will add in the `app.css` file:
+Before you begin, make sure you have CDN set within your HTML file `head` tags, i.e.
+
+```html
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/p5.js" type="text/javascript"></script>
+```
+
+Also, ensure your `index.js` and `app.css` files are added to your HTML file. Below is the code that we will add in the `app.css` file:
 
 ```css
 html, body {
@@ -154,7 +179,7 @@ We have added the data that we want to represent, as shown in the above array. A
 
 #### Adding the `setup()` function
 
-Let’s add the `setup()` function
+Let’s add the `setup()` function:
 
 ```js
 function setup() {
@@ -172,7 +197,7 @@ This will initialize all array values. Also, avoid initializing such arrays with
 
 #### Adding the `draw()` function
 
-Let's now set the `draw()` function responsible for plotting our graph:
+The `draw()` function is responsible for plotting our graph:
 
 ```js
 function draw() {
@@ -201,7 +226,7 @@ setInterval(function(){
 },100);
 ```
 
-This is mainly used when querying data from an API continuously while a program is running, and the program is animating something for the data representation. This helps to continue loading smoothly but updated whenever new data comes in. Fro the code above, we have set `setInterval()` and pass in a callback of `100 milliseconds`.
+This is mainly used when querying data from an API continuously while a program is running, and the program is animating something for the data representation. This helps to continue loading smoothly but updated whenever new data comes in. In the code above, we have set `setInterval()` and pass in a callback of `100 milliseconds`.
 
 #### Adding a `windowResized()` function
 
@@ -284,7 +309,7 @@ function setup() {
 }
 ```
 
-In the above code, we are setting the canvas that we want to lay down or graph. We are also loading the names of the columns and the value of each column. As a note, we can use `setup()` to load frames that can be called in different time frames. This reduces redundancy calls that occur whenever `draw()` is called with the sketch frames.
+In the above code, we are setting the canvas that we want to lay down or graph. We are also loading the names of the columns and the value of each column. As a note, we can use `setup()` to load frames that can be called in different time frames. This reduces redundant calls that occur whenever `draw()` is called with the sketch frames.
 
 We have two main columns, `Component` and `Mass (Tt)`. `Component` will load the text label (the column name) associated with each value. `Mass (Tt)` will load all the values that each column represents. We will use the values to draw different frames based on the mass that each component occupies.
 
@@ -317,7 +342,7 @@ This is where the real sketch is implemented. So, now we need to iterate through
 
 For easier undesirability, we are also adding the names of the components as a label to each presented value.
 
-The sketch is now complete, and we can test if everything is in order. To run this app, you need to use a live server. If you open this HTML file directly in a browser this code won't execute. We are running an eternal file that is hosted locally on your computer. This needs to run as a server.
+The sketch is now complete, and we can test if everything is in order. To run this app, you need to use a live server. If you open this HTML file directly in a browser this code won't execute. We are running an external file that is hosted locally on your computer. This needs to run as a server.
 
 To serve it to our application, we will utilize the live sever provided by the [Visual Studio Code](https://code.visualstudio.com/) and [Atom](https://atom.io/) editors.
 
