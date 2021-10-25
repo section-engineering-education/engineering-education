@@ -43,13 +43,13 @@ To add style to a web page or document, different fonts are used. That is, they 
 Computer font file data formats are divided into three categories:
 
 - Bitmap font: The glyph in each face, weight, width and size is represented by a matrix of dots.
-![fontapp image](/engineering-education/how-to-create-font-chooser-app/bitmapfont.jpg)
+![bitmapfont image](/engineering-education/how-to-create-font-chooser-app/bitmapfont.jpg)
 
 - Vector font: It is also known as the outline font, here each glyph is described by drawing specifications and mathematical method, allowing the character outlines to be scaled to any size.
-![fontapp image](/engineering-education/how-to-create-font-chooser-app/vectorfont.png)
+![vectorfont image](/engineering-education/how-to-create-font-chooser-app/vectorfont.png)
 
 - Stroke font: It defines the size and shape of the line in a specific typeface using a series of specified lines and additional data, which together decide the appearance of the glyph.
-![fontapp image](/engineering-education/how-to-create-font-chooser-app/strokefont.jpg)
+![strokefont image](/engineering-education/how-to-create-font-chooser-app/strokefont.jpg)
 
 In our code editor, we'll make a new file called `font.py`, where we'll write our code.
 
