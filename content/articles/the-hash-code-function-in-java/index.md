@@ -306,7 +306,8 @@ In the collection, we found an end-user
 
 ```
 **Explanation**
-When an entity is saved inside the hash map and tested using the containsKey() function, the hashCode() method is called and the evaluated hash code is displayed to the console. ​
+When an entity is saved inside the hash map and tested using the containsKey() function, the hashCode() method is called and the evaluated hash code is displayed to the console. 
+​
 > A few mathematical notions (such as prime and arbitrary integers), as well as logical and fundamental mathematical operations, are often needed to produce effective hashCode() implementations.
 
 Without using these strategies, we can still build the hashCode() properly. Everything else is a matter of checking to see if and how the hashing method treats unequal objects differently. ​
