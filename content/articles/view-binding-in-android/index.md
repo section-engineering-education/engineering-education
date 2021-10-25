@@ -1,11 +1,28 @@
-### Introduction
-View binding allows a developer to incorporate significant interaction in an application. It seeks to eliminate the `findViewById` keyword. Removing this boilerplate code allows developers to be more productive.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /view-binding-in-android/
+title: How to Use View Binding in Android 
+description: This article will provide a step-by-step guide on how to implement view binding in Android using Kotlin.
+author: lorna-moraa
+date: 2021-10-25T00:00:00-03:30
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/view-binding-in-android/hero.jpg
+    alt: View Binding Hero Image
+---
+View binding allows a developer to incorporate significant interaction in an application. This concept seeks to eliminate the findViewById keyword. 
+<!--more-->
+Removing such boilerplate code allows developers to be more productive.
 
 A binding class is usually generated for each layout file when using view binding. The binding class stores all the references to particular views.
 
 The generated binding class has a nearly similar name as the `layout.xml` file. For instance, the binding class name for `detail_main.xml` is `DetailMainBinding`. This naming technique helps avoid confusion and mistakes.
 
-View binding is null safe and fast. It allows developers to avoid common errors during programming.
+View binding is null-safe and fast. It allows developers to avoid common errors during programming.
 
 ### Goal
 This tutorial will help to understand the concept of view binding in Android using Kotlin.
@@ -39,7 +56,7 @@ buildFeatures{
 Then click on the `sync now` button to update the project.
 
 ### Step 3 - Preparing the UI
-Let's declare several buttons and text views in the `activity_main.xml` file, as demonstrated below:
+Let's declare several buttons and `TextViews` in the `activity_main.xml` file, as demonstrated below:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -98,13 +115,14 @@ class MainActivity : AppCompatActivity() {
 }
 ```
 
-In the above code, we can refer to the TextView using `binding.welcome` instead of `findViewById`. The `.text` aspect allows us to change the TextView's contents.
+In the above code, we can refer to the `TextView` using `binding.welcome` instead of `findViewById`. The `.text` aspect allows us to change the TextView's contents.
 
 To access the `send_data` button that we defined earlier, we use the code below:
 
 ```kt
 binding.send_Data.setOnClickListener{
     //perform an operation
+    //send_Data is the button's id
 }
 ```
 
@@ -138,7 +156,7 @@ Let's add the following UI components to the fragment.
     android:orientation="vertical"
     tools:context=".ui.main.MainFragment">
 
-    <!-- The fragments has the below TextViews -->
+    <!-- The fragments have the following TextViews -->
 
     <TextView
         android:id="@+id/message"
@@ -235,3 +253,6 @@ class MainFragment : Fragment() {
 In this tutorial, we have learned how to use view binding in activities and fragment. The huge advantage of the view binding feature is that it saves a significant amount of time, as well as eliminates boilerplate code.
 
 You can, therefore, use the knowledge gained from this course to craft beautiful and quality applications.
+
+---
+Peer Review Contributions by: [Wanja Mike](/engineering-education/authors/michael-barasa/)
