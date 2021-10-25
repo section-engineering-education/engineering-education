@@ -1,4 +1,4 @@
-In this generation, Wi-Fi has become an important thing to many of us. Whenever you go to different places, whether in town, houses, or shops, you will find people using WiFi on their devices. It could be on a smartphone, a desktop computer, a tablet, etc. These devices may be connected to different Wi-Fi networks, which may require a password to connect to them. As time goes by, one may forget the WiFi password of a specific Wi-Fi network that they are interested in. Well, don’t worry, the Windows operating system has got you covered. Windows can save/store all Wi-Fi network passwords that have previously been connected to your device.
+In this generation, [Wi-Fi](https://www.cisco.com/c/en/us/products/wireless/what-is-wifi.html) has become an important thing to many of us. Whenever you go to different places, whether in town, houses, or shops, you will find people using WiFi on their devices. It could be on a smartphone, a desktop computer, a tablet, etc. These devices may be connected to different Wi-Fi networks, which may require a password to connect to them. As time goes by, one may forget the WiFi password of a specific Wi-Fi network that they are interested in. Well, don’t worry, the Windows operating system has got you covered. Windows can save/store all Wi-Fi network passwords that have previously been connected to your device.
 
 In windows, Wi-Fi passwords from saved Wi-Fi networks are hidden from the user. Unlike mobile operating systems like Android, Windows has terminals that can be used to acquire the Wi-Fi passwords that are saved in the device. You'll be required to write some simple commands on the terminal to recover these saved passwords. In this article, I'll take you through the steps to reсоver Wi-Fi раsswоrds that are saved in your device, and I'll also give you the commands to use them.
 
@@ -20,11 +20,15 @@ Windows OS has a command-line translation tool called CMD which is used to creat
 
 Windows Command Processor is the official name of Command Prompt, but also known as command shell, cmd prompt, or its file name, cmd.exe.
 
+To know more about **CMD** [click here](https://en.wikipedia.org/wiki/Cmd.exe).
+
 #### What's PowerShell?
 
 A shell is a user interface that provides access to a variety of application services. The shell can be based on the command line, or it can include a graphical interface (GUI).
 
 ***Windows PowerShell*** is a shell originally developed by Microsoft for user use and suspension management. PowerShell is now an open-source project and can be installed on Windows, macOS, and Linux Operating Systems. This Shell is based on the .NET framework and incorporates a command-line shell and writing language.
+
+For more about PowerShell [Click here](https://en.wikipedia.org/wiki/PowerShell)
 
 ### Which windows versions have PowerShell installed?
 
@@ -65,7 +69,11 @@ Other operating systems such as Mac and Linux have various ways of uncovering Wi
 
 In Mac OS, we can find WiFi passwords for saved WiFi networks by using the ***terminal***. You'll have to open the terminal then type and run this command; `security find-generic-password -wa "wifiname"` substituting "wifiname" with the name of your WiFi network. You'll then be required to fill in your admin credentials and thereafter your password will be displayed in your terminal console.
 
+[Click here](https://en.wikipedia.org/wiki/MacOS) to know more about **MacOS** 
+
 In Linux OS, WiFi passwords of saved networks can be acquired by running this command in the command line `$ sudo grep psk= /etc/NetworkManager/system-connections/*` this will show you the list of the WiFi networks and their passwords.
+
+[Click here](https://www.linux.com/what-is-linux/) to for more information about **Linux**
 
 ### ***Conclusion***
 People can be forgetful, but from now on, you don't have to worry about remembering your Wi-Fi passwords. You'll be able to recover your Wi-Fi password in your password from any Windows/Mac/Linux operating system.
