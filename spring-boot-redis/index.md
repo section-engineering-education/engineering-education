@@ -1,5 +1,3 @@
-
-@@ -0,0 +1,271 @@
 ---
 layout: engineering-education
 status: publish
@@ -48,14 +46,15 @@ We will create two services:
 
    ```
 ### Publisher service
-Extract the `publisher.zip` file that was downloaded in the previous step, open the project in your favourite code editor.
+Extract the `publisher.zip` file downloaded in the previous step and open the project in your favourite code editor.
+
 #### Model 
 1. Create a new Java class named `Pun` that implements `Serializable` interface.
 2. Add the code block below into the `Pun` Java file created above.
 ```java
 @Getter // Creates getters for all the fields in the class
 @Setter // Creates setter methods for all the fields in the class
-@AllArgsConstructor // Creates a constructor will all arguements in the class
+@AllArgsConstructor  // Creates a constructor that will all arguments in the class
 @NoArgsConstructor // Creates a constructor with no argument
 public class Pun implements Serializable {
 
@@ -182,7 +181,7 @@ public class SubscriberService {
 ```java
 @Getter // Creates getters for all the fields in the class
 @Setter // Creates setter methods for all the fields in the class
-@AllArgsConstructor // Creates a constructor will all arguements in the class
+@AllArgsConstructor  // Creates a constructor that will all arguments in the class
 @NoArgsConstructor // Creates a constructor with no argument
 public class Pun implements Serializable {
 
@@ -223,7 +222,7 @@ public class SubscriberApplication {
 In the `resource` directory, add the code snippet below to `application.properties` file.
 ```yaml
 server.port=8084 # Sets the port on which the server will run on 
-pun-queue=pun-server # Sets the name of the redis queue
+pun-queue=pun-server # Sets the name of the Redis queue
 SPRING_REDIS_HOST=6379 # Sets the Redis port on which the subscriber service listens for new jokes on the queue
 ```
 ### Testing
@@ -239,3 +238,8 @@ The subscriber service receives the jokes from the Redis message queue and logs 
 
 ### Conclusion
 Now that you have learnt how to send messages between two services, try implementing a two service application where one service accepts HTTP requests while the second service handles database operations. Then, send messages between the two services using Redis.
+
+
+---
+
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
