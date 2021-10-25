@@ -14,22 +14,22 @@ This article explains the fundamentals of Apache Cassandra and Astra DB. We will
 
 First, you'll need to log in to DataStax. I use my GitHub account. However, you connect your Google account or even use your email and password.
 
-![datastax-sign in](image1.png)
+![datastax-sign in](/engineering-education/astradb-nodejs/image1.png)
 
 
 A successful login will take you to your AstraDB dashboard. On the left panel of the dashboard, click `create database`. 
 
-![dashboard](image2.png)
+![dashboard](/engineering-education/astradb-nodejs/image2.png)
 
 To create a serverless database, choose a name and a keyspace. Apache Cassandra will use keyspaces to group data together. In my case, I will name the database `cassandra-demo` and `blog` as the keyspace.
 
-![database creation](image3.png)
+![database creation](/engineering-education/astradb-nodejs/image3.png)
 
 >>> Documentation refers to keyspace as a bucket that will hold your tables. You can create different keyspaces for groups of tables”. 
 
 Datastax's Astra DB is distributed in different regions. Before completing the database setup, pick a provider from the options. In my case, I will choose GCP and the region as us-east1.
 
-![cassandra-demo](image4.png)
+![cassandra-demo](/engineering-education/astradb-nodejs/image4.png)
 
 
 ### Insert data into the database
@@ -37,7 +37,7 @@ Since Apache Cassandra is a NoSQL, it organizes data in collections. When we cre
 
 First, we need to create a new token for access to DataStax's database in our application. Head over to the DataStax Astra DB dashboard. On the panel, click connect. This shows various ways in which we can access our application including REST and GraphQL APIs. We will use the Document API hence head over under the prerequisites and click the link to create a new Application token.
 
-![application token](./image5.png)
+![application token](/engineering-education/astradb-nodejs/image5.png)
 
 In this project, we will use the `Administrator role` to access every privilege in the database security. Finally, copy the generated `Client ID`, `Token`, and `Client Secret` and store them on your `env` file.
 
@@ -127,7 +127,7 @@ Finally, add `nodemon` script in your `package.json` to restart our server:
 
 If everything is okay, head over to your browser on `localhost:5000`. 
 
-![image7](image7.png)
+![image7](/engineering-education/astradb-nodejs/image7.png)
 
 Congratulations, the server setup is up and running! In the next sections, we will be manipulating our DataStax Astra database using the Document API and `@astrajs/collections` in Node.js
 
@@ -190,9 +190,9 @@ app.get('/blogs', async (req, res) => {
 
 Under the `GET` endpoint, we simply return a json response with blogs. To test our API responses, I will use  [thunder client VS Code extension](https://marketplace.visualstudio.com/items?itemName=rangav.vscode-thunder-client). Feel free to use any other REST API Client such as [postman](https://www.postman.com/) or [insomnia](https://insomnia.rest/). If we make a `GET` request, AstraDB sends back the data with the document ID as the key:
 
-![image8](image8.png)
+![image8](/engineering-education/astradb-nodejs/image8.png)
 
-![image9](image9.png)
+![image9](/engineering-education/astradb-nodejs/image9.png)
 
 ### Creating documents in AstraDB
 
@@ -210,7 +210,7 @@ app.post('/new', async(req, res) => {
   return res.json({data: newUser, msg: 'user created successfully'})
 })
 ```
-![creat route](image10.png)
+![creat route](/engineering-education/astradb-nodejs/image10.png)
 
 ### Updating documents in AstraDB
 
@@ -227,7 +227,7 @@ const updatedUser = await collection.update("1b4a845d-7460-4971-a8a7-0ef371771d8
   return res.json({data: updatedUser, msg: 'user updated successfully'})
 })
 ```
-![updates](image11.png)
+![updates](/engineering-education/astradb-nodejs/image11.png)
 
 ### Deleting documents in AstraDB
 
@@ -242,7 +242,7 @@ app.delete('/delete', async(req,res)=>{
   return res.json({msg: 'user deleted successfuly'})
 })
 ```
-![delete record](image12.png)
+![delete record](/engineering-education/astradb-nodejs/image12.png)
 
 ### Conclusion
 Being open-source, the Apache Cassandra is a popular database due to its ability to maintain seamless scalability and consistency in a distributed cloud infrastructure. Combining these technical features with the DataStax stargate API gateway gives us the ability to develop a serverless database with zero configuration. The database is serverless which has a great free tier and developer experience.
