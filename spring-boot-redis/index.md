@@ -1,4 +1,5 @@
 ---
+
 layout: engineering-education
 status: publish
 published: true
@@ -13,6 +14,7 @@ images:
 
   - url: /engineering-education/spring-boot-redis/hero.jpg
     alt: Getting Started with Spring Boot Redis Messaging
+    
 ---
 
 ### Introduction
