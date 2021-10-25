@@ -1,71 +1,46 @@
 ---
-
 layout: engineering-education
-
 status: publish
-
 published: true
-
 url: /sentiment-analysis-with-naive-bayes-algorithms/
-
 title: Sentiment Analysis With Naive Bayes Algorithms
-
 description: This tutorial is a comprehensive explanation and implementation of sentiment analysis using naive Bayes algorithms.
-
 author: qoyum-olatunde-yusuf
-
 date: 2021-10-13T00:00:00-15:00
-
 topics: []
-
 excerpt_separator: <!--more-->
-
 images:
-
 - url: /engineering-education/sentiment-analysis-with-naive-bayes-algorithms/hero.PNG
 
 alt: sentiment analysis with naive bayes algorithms cover image
 
 ---
-Sentiment analysis has been defined by a lot of scholars, hardly is there a new definition for the term that has not been heard of before. On that note, I will say sentiment analysis is the systematic method of extracting emotions with the aid of machine learning. This tutorial will show how to implement sentiment analysis using naive Bayes algorithms.
+Many scholars have defined sentiment analysis; hardly there exists a new definition for the term that has not been heard of before. On that note, I will say sentiment analysis is the systematic method of extracting emotions with machine learning. This tutorial will show how to implement sentiment analysis using naive Bayes algorithms.
 
 <!--more-->
 
-Sentiment analysis has been useful in a lot of fields, in discovering hate speech, in analyzing public opinion about a product or brand, in building chatbots, etc.
-
+Sentiment analysis has been helpful in many fields, in discovering hate speech, analyzing public opinion about a product or brand, building chatbots, etc.
 
 
 ### Table of contents
 
 1. [Prerequisites](#prerequisites)
-
 2. [Goal](#goal)
-
 3. [Why Naive Bayes Models?.](#why-naive-bayes-models)
-
 4. [IMDB movie review dataset](#imdb-movie-review-dataset)
-
 5. [Installing necessary libraries](#installing-necessary-libraries)
-
 6. [Function to process the IMDB datasets](#function-to-process-the-imdb-datasets)
-
 7. [Preparing the notebook for BernoulliNB](#preparing-the-notebook-for-bernoullinb)
-
 8. [Preparing the notebook for CategoricalNB](#preparing-the-notebook-for-categoricalnb)
-
 9. [Preparing the notebook for ComplementNB](#preparing-the-notebook-for-complementnb)
-
 10. [Preparing the notebook for GaussianNB](#preparing-the-notebook-for-gaussiannb)
-
 11. [Preparing the notebook for MultinomialNB](#preparing-the-notebook-for-multinomialnb)
-
-9. [Conclusion](#conclusion)
-
-10. [Additional resources](#additional-resources)
+12. [Conclusion](#conclusion)
+13. [Additional resources](#additional-resources)
 
 ### Prerequisites
 
-First and foremost, we want to build a sentiment analysis project using `Bayesian models` and discover which of its algorithms is best. Also, it is not a work of which algorithm is best for sentiment analysis, but rather, which of the `naive Bayes algorithms` is best for this project. I strongly believe my readers are machine learning students which are expected to be versed in basic Python programming and must be good at performing data analysis with [Pandas](https://pandas.pydata.org/) and [Numpy](https://numpy.org/).
+First and foremost, we want to build a sentiment analysis project using `Bayesian models` and discover which of its algorithms is best. Also, it is not a work of which algorithm is best for sentiment analysis, but rather, which of the `naive Bayes algorithms` is best for this project. I firmly believe my readers are machine learning students who are expected to be versed in basic Python programming and must be good at performing data analysis with [Pandas](https://pandas.pydata.org/) and [Numpy](https://numpy.org/).
 
 ### Goal
 
@@ -86,18 +61,18 @@ At the end of this tutorial, readers should be able to:
 
 ### Why Naive Bayes Models?.
 
-Bayesian theorem is the core principle behind naive bayes algorithms, it assumes that all features are independent of one another. We can as well say, the classifier believes that one particular attribute in a class does not in any way influence the presence of another. 
-We can take for example a cucumber, it is green, it is long, it has a straight shape. The classifier assumes that being green or long or straight in shape are independent attributes and all together contribute to the existence of a cucumber.
+The Bayesian theorem is the core principle behind Naive Bayes algorithms. It assumes that all features are independent of one another. Thus, we can as well say that the classifier believes that one particular attribute in a class does not influence the presence of another. 
+We can take, for example, a cucumber. It is green, long, and has a straight shape. The classifier assumes that being green or long or straight in shape are independent attributes and contribute to the existence of a cucumber.
 
-Talking about algorithms that are efficient for text classification task, we can always call on the `Naive Bayes classifiers`. They are simple and very fast classifiers yet powerful. There is a huge probability that if you use some other classification algorithms on sentiment analysis, you will arrive at better results than any result we might have gotten here, but for this project, we are sticking to the naive bayes algorithms.
+Talking about efficient algorithms for text classification tasks, we can always call on the `Naive Bayes classifiers`. They are simple and very fast classifiers yet powerful. But, of course, there is a huge probability that if you use some other classification algorithms on sentiment analysis, you will arrive at better results than any result we might have gotten here. Still, for this project, we are sticking to the Naive Bayes algorithms.
 
 ### IMDB movie review dataset
 
-For this tutorial, an IMDB movie review dataset which has 25000 training data and 25000 testing data is used. It was downloaded from the Stanford archive, and its data is somewhat complicated because it is in a compressed format. To know more about this dataset and to download it, kindly visit [IMDB Movie Review Dataset](http://ai.stanford.edu/~amaas/data/sentiment/aclImdb_v1.tar.gz). Therefore, a function was written to be able to read it into our notebooks. 
+An IMDB movie review dataset with 25000 training data and 25000 testing data is used for this tutorial. It was downloaded from the Stanford archive, and its data is somewhat complicated because it is compressed. To know more about this dataset and download it, kindly visit [IMDB Movie Review Dataset](http://ai.stanford.edu/~amaas/data/sentiment/aclImdb_v1.tar.gz). Therefore, a function was written to be able to read it into our notebooks. 
 
 ### Installing necessary libraries
 
-Most importantly, we need to import every library need for this project, any library used in the notebook has been `pip install` by me. There are thousands of libraries except for the standard `Numpy` and `Pandas`. For a start, there is a need to at least install `sklearn` and `nltk` which are very important libraries for text classifications amidst many others. 
+Most importantly, we need to import every library needed for this project. Any library used in the notebook has been `pip install` by me. There are thousands of libraries except for the standard `Numpy` and `Pandas`. For a start, there is a need to at least install `sklearn` and `nltk`, which are very important libraries for text classifications amidst many others. 
 
 ```python
 pip install numpy
@@ -110,7 +85,7 @@ pip install nltk
 ### Function to process the IMDB datasets
 
 As mentioned earlier, due to the complexity of the dataset, we have to write a function that reads it into our notebook. 
-With the function below, the dataset will be uncompressed and cleaned for use with the function `clean_text` which will replace all characters with capital letters to small letters, remove all the punctuations and lemmatize the words, lemmatization is the process of stemming or categorizing words into their root forms, e.g words like `wake, woke, woken, waking` will all be categorized with `wake`, which is the root word.
+With the function below, the dataset will be uncompressed and cleaned for use with the function `clean_text`, which will replace all characters with capital letters to small letters, remove all the punctuations and lemmatize the words. Lemmatization is the process of stemming or categorizing words into their root forms, e.g. words like `wake, woke, woken, waking` will all be categorized with `wake`, which is the root word.
 
 Create a `utils.py` file and put the following inside.
 
@@ -235,7 +210,7 @@ def load_imdb_sentiment_analysis_dataset(imdb_data_path, seed=123):
             (np.array(test_texts), np.array(test_labels)))
 ```
 
-Categorical and Gaussian naive Bayes models keep flagging errors because they can't take the samples of data provided all at once for some reason which might be due to memory allocation, therefore, a separate function was written for the two to take in samples of data in a particular size per batch.
+Categorical and Gaussian naive Bayes models keep flagging errors because they can't take the samples of data provided all at once for some reason which might be due to memory allocation. Therefore, a separate function was written for the two to take in data samples in a particular size per batch.
 
 ```python
 class CategoricalBatchNB(TransformerMixin):
@@ -355,7 +330,7 @@ from sklearn.metrics import (
     f1_score as calculate_f1_score, accuracy_score as calculate_accuracy_score
 )
 ```
-Importing the necessary functions from `utils.py`.
+We are importing the necessary functions from `utils.py`.
 
 ```python
 from utils import CleanTextTransformer,load_imdb_sentiment_analysis_dataset
@@ -396,7 +371,7 @@ plt.show()
 
 #### What is vectorization?
 
-Vectorization is an essential part of feature engineering as it’s a way of converting a collection of text documents to a vector of term/token counts. It ensures text data are ​pre-processed before generating the vector representations. The two key vectorizers we used and compare are CountVectorizer and TfIdf (term frequency, inverse document frequency)
+Vectorization is an essential part of feature engineering as it’s a way of converting a collection of text documents to a vector of term/token counts. It ensures text data are ​pre-processed before generating the vector representations. The two key vectorizers we used and compared are CountVectorizer and TfIdf (term frequency, inverse document frequency)
 
 #### Using Countvectorizer in our pipeline
 
@@ -419,7 +394,7 @@ Question: “What’s the essence of evaluating a model?”
 
 Answer: “It’s like asking why test a student after a year of study, how do you judge his performance, Understanding, and Assimilation?”
 
-If you get a job as a Machine Learning Engineer in a company where you have to build varieties of models, and you feel like evaluation is not necessary because you are so sure of your model, prepare to wake up jobless one day. No model is perfect models can misbehave. However, some metrics have been put in place to help us understand our models better. 
+If you get a job as a Machine Learning Engineer in a company where you have to build varieties of models, and you feel like evaluation is unnecessary because you are so sure of your model, prepare to wake up jobless one day. No model is perfect models can misbehave. However, some metrics have been put in place to help us understand our models better. 
 - Precision
 - Recall
 - F1-Score
@@ -441,11 +416,11 @@ Evaluation should answer these questions for you.
 - Will introducing more data improve its performance?
 - Do I introduce more features?
 
-On predicting with our models, we printed out the classification report, let’s briefly explain what each metric stands for: 
+On predicting with our models, we printed out the classification report. Let’s briefly explain what each metric stands for: 
 
-`Precision` is how straight to point your model is. For the negative sentiments, precision will be something like - out of all predictions, how many are negatives? - That’s 78% for the model in the picture. For the positive sentiments, out of all predictions, how many are positives, that’s 87%.
+`Precision` is how straight to point your model is. For the negative sentiments, precision will be something like - out of all predictions, how many are negatives? - That’s 78% for the model in the picture. For the positive sentiments, out of all predictions, how many are positives? That’s 87%.
 
-`Recall` is how much you trust the precision. For the negative sentiments, the recall will be, - out of all actual negatives, how many did the model predict correctly as negative.- Which according to the model in our picture is 89% and the positive is 75%.
+`Recall` is how much you trust the precision. For the negative sentiments, the recall will be - out of all actual negatives, how many the model predicted correctly as negative. According to the model in our picture, it is 89%, and the positive is 75%.
 
 F1-Score can be stated as the harmonic mean of precision and recall. Simple
 ![f1score](/engineering-education/sentiment-analysis-with-naive-bayes-algorithms/f1score.PNG)
@@ -464,12 +439,12 @@ print(confusion_matrix(y_test, y_pred))
 
 #### Confusion matrix
 
-The confusion matrix, which can also be called an error matrix, is a table layout that allows the visualization of the performance of an algorithm, it consists of:
+The confusion matrix, which can also be called an error matrix, is a table layout that allows the visualization of the performance of an algorithm. It consists of:
 
-- True positives: Predicting an observation belongs to a class and it actually does belong to that class.
-- True negatives: Predicting an observation does not belong to a class and it actually does not belong to that class.
-- False positives: Predicting an observation belongs to a class but it actually does not.
-- False negatives: Predicting an observation does not belong to a class but it actually does.
+- True positives: Predicting an observation belongs to a class, and it does belong to that class.
+- True negatives: Predicting an observation does not belong to a class, and it does not belong to that class.
+- False positives: Predicting an observation belongs to a class, but it does not.
+- False negatives: Predicting an observation does not belong to a class, but it does.
 
 #### Performing cross-validation
 
@@ -501,7 +476,7 @@ print(f'{"Mean":5s} | {accuracy.mean():^10.2f} | {f1_score.mean():^10.2f}')
 ```
 ![cross validation](/engineering-education/sentiment-analysis-with-naive-bayes-algorithms/bernoulli_cv.PNG)
 
-There are different libraries for cross-validation and we've employed `StratifiedKFold` for this tutorial. The essence is to be sure our model is fit and not biased. What cross-validation does is switch between the train and test data, it takes in the whole fresh dataset, does its splitting according to the number specified, and shuffles the train and test dataset one at a time, like the form of
+There are different libraries for cross-validation, and we've employed `StratifiedKFold` for this tutorial. The essence is to be sure our model is fit and not biased. What cross-validation does is switch between the train and test data. It takes in the whole fresh dataset, does its splitting according to the number specified, and shuffles the train and test dataset one at a time, like the form of
 Train 1-9, test 10
 Train 1-10(exclude 9),  test 9 
 Train 2-10, test 1
@@ -704,7 +679,7 @@ print(f'{"Mean":5s} | {accuracy.mean():^10.2f} | {f1_score.mean():^10.2f}')
 
 ### Preparing the notebook for ComplementNB
 
-After importing all libraries as shown in the previous notebooks. Get the utilities and load the dataset.
+After importing all libraries as shown in the previous notebooks, get the utilities and load the dataset.
 
 ```python
 from utils import CleanTextTransformer, load_imdb_sentiment_analysis_dataset
@@ -1034,13 +1009,13 @@ print(f'{"Mean":5s} | {accuracy.mean():^10.2f} | {f1_score.mean():^10.2f}')
 
 ### Conclusion
 
-Even though complement and multinomial seem to have a tie in their scores, I will stil stick to the fact that complement is the best naive Bayes algorithm for text classification, the reason for choosing the complement model is that it has been used on numerous datasets before this, the complement model has been doing well across the board.
+Even though complement and multinomial seem to have a tie in their scores, I will stick to the fact that complement is the best naive Bayes algorithm for text classification. The reason for choosing the complement model is that it has been used on numerous datasets before this, the complement model has been doing well across the board.
 
 Therefore, we can all agree that complementNB is the best naive Bayes algorithm for sentiment analysis. 
 
 To get the best grip of everything, check out [my Github repo:](https://github.com/wizardcalidad/sentiment-analsis-imdb)
 
-On a final note, machine learning is not all about building models for predictions and classification, it is about figuring out how machines can learn from experience to solve major problems. Building a system to help billions of people solve everyday problems gives you an unimaginable feeling of satisfaction. Go out there, come up with an idea, train it, test it thoroughly, and make the world a better place.
+On a final note, machine learning is not all about building models for predictions and classification. It is about figuring out how machines can learn from experience to solve significant problems. Building a system to help billions of people solve everyday problems gives you an incredible feeling of satisfaction. So go out there, develop an idea, train it, test it thoroughly, and make the world a better place.
 
 ### Additional resources
 
@@ -1055,3 +1030,6 @@ On a final note, machine learning is not all about building models for predictio
 5. [Sentiment Analysis](https://medium.com/better-programming/twitter-sentiment-analysis-15d8892c0082)
 
 6. [Working with IMDB Movie Review](https://developers.google.cn/machine-learning/guides/text-classification/step-2?hl=da)
+
+---
+ Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
