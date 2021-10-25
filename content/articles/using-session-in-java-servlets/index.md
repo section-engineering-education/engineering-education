@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /using-session-in-java-servlets/
-title: Using Session in Java Servlets
-description: This tutorial will be a step-by-step guide on how to implement session in Java servlets by building a login page.
+title: How to Use Session in Java Servlets
+description: This tutorial will provide a step-by-step guide on how to implement session in Java servlets.
 author: Chaun864
-date: 2021-10-16T00:00:00-19:00
+date: 2021-10-25T00:00:00-07:50
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -14,53 +14,53 @@ images:
   - url: /engineering-education/using-session-in-java-servlets/hero.jpg
     alt: Session in Java servlets image
 ---
-A session is a way of keeping track of a client's activity across multiple requests. It simply implies that each time a user queries the server at a specific time interval, the server interprets the client request as a new request.
+A session is a way of keeping track of different activities across multiple requests. It simply implies that each time a user queries the server, it interprets the interaction as a new request.
 <!--more-->
-As a result, we must keep track of a user's current status to recognize them.
+We must, therefore, keep track of a user's current status to recognize them.
 
-For session techniques, the `Servlet` application employs four distinct approaches: `HttpSession`, `Cookies`, `Hidden` form field, and `URL` rewriting.
+The `Servlet` application employs four distinct session approaches. These are `HttpSession`, `Cookies`, `Hidden` Form Field, and `URL` rewriting.
 
-In this article, we will only discuss [HttpSession](https://docs.oracle.com/javaee/7/api/javax/servlet/http/HttpSession.html).
+In this article, we will focus on [HttpSession](https://docs.oracle.com/javaee/7/api/javax/servlet/http/HttpSession.html).
 
 ### Prerequisites
-To go along with the article, you'll need to install the following tools:
+To follow along, you'll need to install the following tools:
 - An open-source Java IDE, such as Eclipse, NetBeans, etc. In my case, I will be using [Eclipse IDE 2021-09 Linux x86_64](https://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/2021-09/R/eclipse-java-2021-09-R-linux-gtk-x86_64.tar.gz).
-- The Java Development Kit (JDK). In my case, I'll be running Linux with the default version of Java, `JDK-11` installed.
-- A server. In my case, I will be using TomCat version `9.0.53`.
-- You need to have some basic knowledge of core Java, servlets, JSP, and basic HTML tags. 
+- The Java Development Kit (JDK). In my case, I'll be running Linux with the default version of Java (JDK-11).
+- A server. In my case, I will be using the `TomCat server - version 9.0.53`.
+- You also need some basic knowledge of core Java, Servlets, JSP, and basic HTML tags. 
 
 ### Table of contents
-- [The HttpSession and its Function](#the-httpsession-and-its-function)
+- [The HttpSession and its function](#the-httpsession-and-its-function)
 - [HttpSession object](#httpsession-object)
 - [HttpSession interface methods](#httpsession-interface-methods)
-- [HttpSession Example](#httpsession-example)
+- [HttpSession example](#httpsession-example)
 - [Conclusion](#conclusion)
 
 ### The HttpSession and its function
-[HttpSession](https://docs.oracle.com/javaee/7/api/javax/servlet/http/HttpSession.html) is an interface for binding items together and manipulating session information such as the session ID, creation time, and last seen.  
+[HttpSession](https://docs.oracle.com/javaee/7/api/javax/servlet/http/HttpSession.html) is an interface for binding items together and manipulating session information such as `session ID`, `creation time`, and `last seen`.  
 
 #### Function
-It's used to connect objects and manipulate information about the session, such as the session id, time created, and last seen.  
+It's used to connect objects and manipulate information about the session. It also includes elements such as `session id`, `time created`, and `last seen`.  
 
 #### How does HttpSession work?
-- When a client sends a message in the form of a request, a servlet `container` creates a unique session ID (identifier) for that particular user and sends it back to the client in the form of a response. And, a temporary session is created by the servlet `container`.
-- The client returns the session ID (identifier) with each request, making it simple for the servlet `container` to determine the request origin.
-- Finally, the servlet `container` finds the corresponding ID (session identifier) that correlates it with the request using an ID (session identifier) retrieved from a client computer.
+- When a client sends a message or request, a servlet `container` creates a unique session ID (identifier) for that particular user and sends it back to the client in the form of a response. A temporary session is created by the servlet `container`.
+- The client returns the session ID (identifier) with each request. This makes it simple for the servlet `container` to determine the request origin.
+- Finally, the servlet `container` finds the ID (session identifier) that correlates with the request using an ID (session identifier) retrieved from a client computer.
 
-#### The advantages of HttpSessions in servlets
+#### Advantages of HttpSessions in servlets
 - Session information is secure and visible.
-- The client's browser has no bearing on session usage. Compared to cookies, which are browser-dependent.
-- A session can store items of any type, such as text, databases, and datasets.
+- The client's browser has no bearing on session usage as compared to cookies, which are browser-dependent.
+- A session can store different items including texts, databases, and datasets.
 
 #### HttpSession drawbacks
-- There is a performance overhead since the session object is on the server side. 
-- Overhead incurred as a result of data serialization and de-serialization.
+- There is a performance overhead since the session object is stored on the server-side. 
+- Data serialization and de-serialization are also a challenge.
 
 ### HttpSession object
-`HttpSession` object helps to keep track of a client's session. From the `HttpSession` object, we can save, get, or delete attributes.
+`HttpSession` object helps to keep track of a client's session. From the `HttpSession` object, we can `save`, `get`, or `delete` attributes.
 
 #### How to create HttpSession object?
-We can create `HttpSession` object using `HttpServletRequest` or by using `getSession()` method.
+We can create `HttpSession` object using `HttpServletRequest` or the `getSession()` method.
 
 ##### Using `getSession()` method
 In this case, a non parameterized `getSession()` method returns a session, if it already exists or creates a new session if it does not.
@@ -71,7 +71,9 @@ HttpSession session = request.getSession();
 
 Using the parameterized `getSession(boolean)` method, it returns a new session if we pass the `true` parameter.
 
-##### Creating new session
+##### Creating a new session
+We create a new session using the code below:
+
 ```java
 HttpSession session = request.getSession(true);
 ```
@@ -93,20 +95,20 @@ session.invalidate();
 ### HttpSession interface methods
 The following are some of the most important Servlet `HttpSession` methods:
 
-- `String getId()` - an unique session identifier (id) is returned with a type `String`.
-- `getSession()` - returns a session that exists or creates a new session if not.
-- `getSession(boolean I)` - creates a new session if `i` is `true`, and returns an existing session if `I` is `false`.
-- `getCreationTime()` - provides the time measured in milliseconds from the beginning of the session at midnight on `January 1, 1970`.
-- `getLastAccessedTime()` - returns the last time the client submitted a session-related request.
-- `invalidate()` - destroys a session object.
+- `String getId()` - A unique session identifier (id) is returned with a type `String`.
+- `getSession()` - It returns a session that exists or creates a new session if not.
+- `getSession(boolean I)` - It creates a new session if `i` is `true`, and returns an existing session if `I` is `false`.
+- `getCreationTime()` - It provides the time measured in milliseconds from the beginning of the session at midnight on `January 1, 1970`.
+- `getLastAccessedTime()` - It returns the last time the client submitted a session-related request.
+- `invalidate()` - This method destroys a session object.
 - `isNew()` - If the session is new, `true` is returned, else `false`.
-- `setMaxInactiveInterval(int interval)` - The time in seconds after which the `servlet container` will expire is specified. And the return type is `void`.
-- `getMaxInactiveInterval()` - the maximum time interval per second is returned.
+- `setMaxInactiveInterval(int interval)` - The time in seconds after which the `servlet container` will expire is specified. 
+- `getMaxInactiveInterval()` - The maximum time interval per second is returned.
 
 ### HttpSession example
-We're going to demonstrate the use of `HttpSession` in this example.
+In this example. We will demonstrate the use of `HttpSession`.
 
-We will be using the login and logout pages to see how `HttpSession` prevents direct access to the secured pages.
+We will be using login and logout pages to see how `HttpSession` prevents direct access to the secured pages.
 
 In this case, `index.jsp` is a secured page.
 
@@ -115,12 +117,11 @@ A user is required to provide the correct credentials to access the content of t
 I strongly advise you to copy and experiment with the following code.
 
 #### Steps to create the project
-1. Create a new dynamic web project in the Eclipse IDE for Java EE developers, and give it a name. I'll call it `HttpSessionDemo` in my instance.
-2. Make a new JSP page with the name `index.jsp`. Copy and paste the code below into the `index.jsp` prepared:
+1. Create a new dynamic web project in the Eclipse IDE for Java EE developers, and give it a name. In my case, I'll call it `HttpSessionDemo`.
 
-**index.jsp**
+2. Make a new JSP page with the name `index.jsp`. Copy and paste the code below into the `index.jsp`:
 
-```jsp
+```html
 <!DOCTYPE html>
 <html>
 
@@ -143,11 +144,9 @@ I strongly advise you to copy and experiment with the following code.
 </html>
 ```
 
-3. Make a new JSP page called `LoginPage.jsp` and save it. Copy the code below and paste it into the `LoginAction.java` created.
+3. Make a new JSP page called `LoginPage.jsp` and save it. Copy the code below and paste it into the `LoginPage.jsp` file.
 
-**LoginPage.jsp**
-
-```jsp
+```html
 <!DOCTYPE html>
 <html>
 
@@ -173,12 +172,9 @@ I strongly advise you to copy and experiment with the following code.
 ```
 
 4. Create a new servlet page and name it `LoginAction.java`.
-   
-**LoginAction.java**
 
 ```java
 import java.io.IOException;
-
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -187,33 +183,31 @@ import jakarta.servlet.http.HttpSession;
 
 public class LoginAction extends HttpServlet
 {
-	
+    
   public LoginAction() {}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
-	{
-		String userName=request.getParameter("userName");
-		String password=request.getParameter("password");
-		
-		HttpSession session=request.getSession();
-		session.setAttribute("userName", userName);
-		
-		if(userName.equals("Chaun")&& password.equals("1234"))
-		{
-			response.sendRedirect("index.jsp");
-		}
-		else
-		{
-			response.sendRedirect("LoginPage.jsp?msg=invalid");
-		}
-	}
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
+    {
+        String userName=request.getParameter("userName");
+        String password=request.getParameter("password");
+        
+        HttpSession session=request.getSession();
+        session.setAttribute("userName", userName);
+        
+        if(userName.equals("Chaun")&& password.equals("1234"))
+        {
+            response.sendRedirect("index.jsp");
+        }
+        else
+        {
+            response.sendRedirect("LoginPage.jsp?msg=invalid");
+        }
+    }
 }
 ```
 
 5. Finally, make a new servlet page called `LogoutAction.java`.
 
-**LogoutAction.java**
-
 ```java
 import java.io.IOException;
 
@@ -227,23 +221,23 @@ public class LoginAction extends HttpServlet
 {
   public LoginAction() {}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
-	{
-		String userName=request.getParameter("userName");
-		String password=request.getParameter("password");
-		
-		HttpSession session=request.getSession();
-		session.setAttribute("userName", userName);
-		
-		if(userName.equals("Chaun")&& password.equals("1234"))
-		{
-			response.sendRedirect("index.jsp");
-		}
-		else
-		{
-			response.sendRedirect("LoginPage.jsp?msg=invalid");
-		}	
-	}
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
+    {
+        String userName=request.getParameter("userName");
+        String password=request.getParameter("password");
+        
+        HttpSession session=request.getSession();
+        session.setAttribute("userName", userName);
+        
+        if(userName.equals("Chaun")&& password.equals("1234"))
+        {
+            response.sendRedirect("index.jsp");
+        }
+        else
+        {
+            response.sendRedirect("LoginPage.jsp?msg=invalid");
+        }   
+    }
 }
 ```
 
@@ -274,96 +268,94 @@ sudo apt update
 sudo apt install openjdk-11-jre-headless
 ```
 
-3. Visit [Eclipse](https://www.eclipse.org/downloads/) to get the Eclipse Installer from the official website.
-4. Extract the `tar.gz` archive, then go to the "eclipse-installer" folder, right-click on "eclipse-inst," and select "run".
-5. When the installation is complete, open eclipse and select launch from the menu as indicated.
+3. Visit [Eclipse](https://www.eclipse.org/downloads/) to get the Installer.
 
-![Launch eclipse](/engineering-education/using-session-in-java-servlets/launch.PNG)
+4. Extract the `tar.gz` archive, then go to the "eclipse-installer" folder, right-click on `eclipse-inst`, and select `run`.
+
+5. When the installation is complete, open eclipse and select launch from the menu as shown below:
+
+![Launch eclipse](/engineering-education/using-session-in-java-servlets/launch.png)
 
 ##### Installing Tomcat server
-1. Make a System User account.
+1. Make a `System User` account.
 
-It's not a good idea to run Tomcat as the root user. The Tomcat service will be run by a new system user and group with the home directory `/opt/tomcat`.
+It's not a good idea to run Tomcat as the root user. Therefore, the Tomcat service will be run by a new system user in the home directory `/opt/tomcat`.
 
-Enter the following command to do so:
+Enter the following command to add a new user:
 
 ```bash
 sudo useradd -m -U -d /opt/tomcat -s /bin/false tomcat
 ```
 
-2. To install Tomcat Server
-To begin with, open a terminal and run the following command to obtain the most recent package information:
+2. To install Tomcat Server, open a terminal and run the following command to obtain the most recent package information:
 
-```
+```bash
 sudo apt update
 ```
-
 [Tomcat can be downloaded from their official website.](https://tomcat.apache.org/index.html) as shown.
 
-![Download tomcat current version](/engineering-education/using-session-in-java-servlets/new.PNG)
+![Download tomcat current version](/engineering-education/using-session-in-java-servlets/new.png)
 
-Extract the tar file to the /opt/tomcat directory once the download is complete:
+Once the download is complete, extract the `tar` file in the `/opt/tomcat` directory:
 
 ```bash
 sudo tar -xf /tmp/apache-tomcat-${VERSION}.tar.gz -C /opt/tomcat/
 ```
 
-##### How to create JSP and servlet pages
+##### How to create JSP and Servlet pages
 1. Use the following demonstration to create the servlet pages from the project above.
 
-Right-click on the project name, click on `New` and then select the servlet option as shown:
+Right-click on the project name, click on `New`, and then select the servlet option as shown:
   
-![creating sevlate page](/engineering-education/using-session-in-java-servlets/sevlatepage.PNG)
+![creating sevlate page](/engineering-education/using-session-in-java-servlets/sevlatepage.png)
 
-Finish by giving your servlet class a name as shown:
+Name your servlet class, as highlighted below:
 
-![servlet class](/engineering-education/using-session-in-java-servlets/servletclass.PNG)
+![servlet class](/engineering-education/using-session-in-java-servlets/servletclass.png)
 
-Using the code above, create the other servlet pages needed using the same procedure.
+You can use the above code to create other servlet pages.
 
-2. Make the JSP pages in the project above, following the instructions below.
+2. Follow the instructions below to create JSP pages.
 
-Right-click on the project name, then click on `New` and then select the JSP option as shown:
+Right-click on the `project name`, then click on `New` and then select the `JSP` option as shown:
 
-![new jsp file](/engineering-education/using-session-in-java-servlets/newjsppage.PNG)
+![new jsp file](/engineering-education/using-session-in-java-servlets/newjsppage.png)
 
 Name your JSP page and select `Finish`:
 
-![naming jsp file](/engineering-education/using-session-in-java-servlets/jspclassname.PNG)
+![naming jsp file](/engineering-education/using-session-in-java-servlets/jspclassname.png)
 
-##### Configuring Tomcat in Eclipse
-- From the `Servers` Tab, select "No servers are available," as indicated:
+#### Configuring Tomcat in Eclipse
+From the `Servers` Tab, select `No servers are available`:
 
-![Select no server available](/engineering-education/using-session-in-java-servlets/noserver.PNG)
+![Select no server available](/engineering-education/using-session-in-java-servlets/noserver.png)
  
-- Next, select `Tomcat v9.0` Server.
+Next, select `Tomcat v9.0` Server.
 
-![Select the sort of server you want to make.](/engineering-education/using-session-in-java-servlets/addserver2.PNG)
+![Select the sort of server you want to make.](/engineering-education/using-session-in-java-servlets/addserver2.png)
 
-- Add Apache installation Directory
+Then add the Apache installation Directory:
 
-![Apache installation directory.](/engineering-education/using-session-in-java-servlets/selectsever.PNG)
+![Apache installation directory.](/engineering-education/using-session-in-java-servlets/selectsever.png)
 
 Click `Finish` after adding the Apache installation directory.
  
-- Right-click on the `LoginPage.jsp` page while your cursor is over it. The following screen will then appear. To run the project, select `Run` on the server and press enter.
+When you right-click on the `LoginPage.jsp` page, you should see the screen below. 
 
-![Run web project on server.](/engineering-education/using-session-in-java-servlets/runproject.PNG)
+To run the project, select `Run` on the server and press `enter`.
 
-- When the TomCat server is selected. Select "Finish" and restart the server when the screen pops up.
+![Run web project on server.](/engineering-education/using-session-in-java-servlets/runproject.png)
  
-- The following page will appear in the initial browser. Log in using the credentials we specified in `LoginAction.java` and play around with the code.
+The following page will appear in the initial browser. Log in using the credentials we specified in `LoginAction.java`;
 
-![Login page.](/engineering-education/using-session-in-java-servlets/loginpage.PNG)
+![Login page.](/engineering-education/using-session-in-java-servlets/loginpage.png)
 
 You can check out the full code [here](https://github.com/Chaun864/Login-Logout-web-Project-Using-session-servlet-and-jsp-.git).
 
 ### Conclusion
-We've seen how `HttpSession` works in our applications and how useful it is.
+In this tutorial, we've seen how `HttpSession` works in our applications and its benefits.
 
-In this article, we've looked at some of the most essential methods in `HttpSession`, as well as their capabilities. The example above will help you understand how `HttpSession` works.
-
-I also recommend that you copy and play with the code above. If feasible, include a style page to make it look more appealing.
+We have also looked at some of the most essential methods in `HttpSession`. You can, therefore, use this knowledge to craft high-quality applications.
 
 Happy coding.
 
