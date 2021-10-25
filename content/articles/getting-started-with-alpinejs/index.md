@@ -45,7 +45,7 @@ By the end of this tutorial, you should be conversant with:
 
 This article will show how to build a primary application to store TODOs, illustrating some of the features in Alpine.Js.
 
-### Alpine.js Installation
+### Alpine.js installation
 To get started with the application, we have to first install all the required dependencies, Alpine.js and Bootstrap CSS. To install Bootstrap, get the starter template from the [official website](https://getbootstrap.com/docs/5.1/getting-started/introduction/#starter-template). Edit this template with this to have the correct title and a basic card and list (of Todos).
 
 ```html
@@ -126,45 +126,64 @@ Alpine.start()
 At this point, your application should look like this:
 ![App design](/engineering-education/getting-started-with-alpinejs/app-design.png)
 
-Based on this design, we have a list of Todos. To make these dynamic, we have to create and store some todos, which may be then be iterated over as list items.
+Based on this design, we have a list of Todos. To make these dynamic, we have to create and store some todos, which may be iterated over as list items.
 
-### Event Handling In Alpine.js
-To get user input and give a good user experience, users should be able to type in a todo item and press the 'Enter' key to save their todo. To do this, we have to be able to listen to the `keyup` event on the input, to know when the user presses the 'Enter' key. Alpine makes it simple to listen for browser events and react to them as you wish. Alpine.js provides us with the x-on directive to do this. This directive lets us listen to events, like how we would, using vanilla JavaScript.
+### Event handling in Alpine.js
+Using our Todo app, we would like to get user input. Users should type in a todo item and press the 'Enter' key to save their todo. We have to listen to the keyup event on the input to know when the user presses the 'Enter' key. 
+
+Alpine makes it simple to listen for browser events and react to them as you wish,and provides us with the x-on directive to do this. This directive lets us listen to events, like how we would, using vanilla JavaScript.
 
 To see how this directive works, we add a click listener to the first list item that alerts "Hi" every time it is clicked.
+
 ```html
 <li class="list-group-item list-group-item-success" x-data x-on:click="alert('Hi')">First Item</li>
 ```
-Do not worry about the `x-data` directive yet, it'd be explained well under [state management](#state-management-in-alpinejs).
 
-See how easy that is, other events like `change`, `blur`, and `focus` can also be listened to easily. Alpine.js further simplifies event handling by providing a shortcut for the `x-on` directive. This shortcut lets you call the event directly, just by adding `@` before it. The previous example can be rewritten as:
+Do not worry about the `x-data` directive yet. It will be explained well under[state management](#state-management-in-alpinejs).
+
+See how easy that is. 
+
+Other events like change, blur, and focus can also be listened to easily. Alpine.js further simplifies event handling by providing a shortcut for the x-on directive. 
+
+This shortcut lets you call the event directly, just by adding @ before it. The previous example can be rewritten as:
+
 ```html
 <li class="list-group-item list-group-item-success" x-data @click="alert('Hi')">First Item</li>
 ```
+
 Other events will then be called using `@change`, `@blur`, and `@focus`.
 
-Alpine.js doesn't limit you to its own directive. It gives access to JavaScript's in-built event object as a magic property, `$event`. This would be used later in the application.
+Alpine.js does not limit you to its directive. It gives access to JavaScript's in-built event object as a magic property, $event, which would be used later in the application.
 
-#### Keyboard Events
-Alpine.js further simplifies event handling by giving modifiers that can be attached to the keyup event. These modifiers help us respond to events when certain keys are pressed. These modifiers help respond to events, even as a combination, like `shift + enter`. To alert the value entered into the input field in our HTML when 'Enter' is clicked, we can use the `@keyup` directive and the magic `$event` property together, as follows:
+#### Keyboard events
+Alpine.js further simplifies event handling by giving modifiers that can be attached to the keyup event. These modifiers help us respond to events, even as a combination, like `shift + enter`. To alert the value entered into the input field in our HTML when 'Enter' is clicked, we can use the `@keyup` directive and the magic `$event` property together, as follows:
+
 ```html
 <input type="text" placeholder="Enter New Todo" class="form-control" x-data @keyup.enter="alert($event.target.value)">
 ```
 
 To find more modifiers, check the [official documentation](https://alpinejs.dev/directives/on#keyboard-events).
 
-Now, you know how to handle events, this knowledge can be used to get the user input when the 'Enter' button is pressed. But, the user's input is currently useless as we have no place to store it, no way to track its state. To solve this, Alpine.js lets you declare data (state) right in your markup.
+NNow, you know how to handle events. You can use this knowledge to get the user input when pressing the 'Enter' button. However, the user's input is currently useless as we have no place to store it, no way to track its state. 
 
-### State Management In Alpine.js
-Data is at the center of modern web applications, and Alpine.js as a progressive framework has it as its core too. Data can be made available to a single HTML element, a chunk of HTML, or globally in Alpine.js.
+To solve this, Alpine.js lets you declare data (state) right in your markup.
+
+### State management in Alpine.js
+Data is at the center of modern web applications, and Alpine.js as a progressive framework has its core. Data can be made available to a single HTML element, a chunk of HTML, or globally in Alpine.js.
 
 #### `x-data`
 This directive lets you declare data right in your markup. For example, to store the visible state of some element, you can declare its state like this:
+
 ```html
 <div x-data="{ show: false }"></div>
 ```
 
-This directive can also be nested (present in the parent and child elements). When nested, the parent data can be accessed from within the child element. This is especially useful if you have many components (HTML blocks) that depend on a variable. Each block could have its own data and still depend on the main data, in the parent element. If the parent element has a data property with the same name as a data property in the child element, the child's data property is given precedence when accessed from within it. An example of data nesting:
+This directive can also be nested (present in the parent and child elements). When nested, the parent data can be accessed from within the child element and is especially useful if you have many components (HTML blocks) that depend on a variable. 
+
+Each block could have its data and still depend on the primary data in the parent element. Suppose the parent element has a data property with the same name as a data property in the child element. 
+
+In that case, its data property is given precedence when accessed from within it. An example of data nesting:
+
 ```html
 <div x-data="{ show: false }">
     <div x-data="{ items: ['Apple', 'Ball'] }">
@@ -173,10 +192,13 @@ This directive can also be nested (present in the parent and child elements). Wh
 </div>
 ```
 
-Often, you don't want to store any data, but still want to access Alpine.js's superpowers. This has been illustrated in the examples above. Adding the `x-data` attribute lets you have these functionalities.
+Often, you do not want to store any data but still want to access Alpine.js's superpowers, illustrated in the examples above. Adding the x-data attribute lets you have these functionalities.
 
-#### Global State
-Data in Alpine.js applications don't have to be limited to single components, or children components. They can be stored on a larger scale, to be reusable and accessible to every component on the page. `Alpine.data()` lets you declare data that you can reuse in components in your application. `Alpine.store()` helps make some data available to every component on your page. This data can be accessed using the `$store` magic property. The difference between both methods can be examined in this example.
+#### Global state
+Data in Alpine.js applications do not have to be limited to single components or children components. They can be stored on a larger scale to be reusable and accessible to every component on the page. Alpine.data() lets you declare data that you can reuse in components in your application. 
+
+Alpine.store() helps make some data available to every component on your page. This data can be accessed using the $store magic property. The difference between both methods is examinable in this example:
+
 ```js
 Alpine.data('dropdown', () => ({
     open: false,
@@ -210,12 +232,11 @@ Alpine.store('tabs', {
   <button @click="$store.tabs.current = 'third'">Third Tab</button>
 </div>
 ```
+In this example, a `dropdown` data object was created to be reusable, and a `tabs` data object was created to be globally available. Components using the `dropdown` had to state it by passing it in their `x-data` property. Components using tabs referenced it using its magic property.
 
-In this example, a `dropdown` data object was created to be reusable, a `tabs` data object was created to be globally available. Components using the `dropdown` had to state it by passing it in their `x-data` property. Components using `tabs` referenced it using its magic property.
+At this point, you have learned event management in Alpine.js. You know how to get users' input when the 'Enter' button is pressed. You have also learned how to store and access this data. Let us put these together to get user input and store it.
 
-At this point, you have learned event management in Alpine.js. You know how to get users' input when the 'Enter' button is pressed. You've also learned how to store and access this data. Let's put these together to get user input and store it.
-
-### Store User Input
+### Store user input
 Add the `x-data` attribute to the `ul` element, to store all the todos created in it.
 ```html
 <ul class="list-group mt-3" x-data="{ todos: [] }">
@@ -260,8 +281,9 @@ You should see the updated todo list on the console every time you hit 'Enter'. 
 
 Now, we can get users' input, store it as an object in an array. We can display these todos as list items now.
 
-### Templating In Alpine.js
-Another wonderful feature of Alpine.js is the ease with which it lets you manipulate the DOM on a web page. To output some text in Alpine.js, use the `x-text` directive. This directive can be used to output a normal string, some stored data, or even a result of some JavaScript operation.
+### Templating in Alpine.js
+Another remarkable feature of Alpine.js is the ease of manipulating the DOM on a web page. To output, some text in Alpine.js, use the x-text directive. This directive can be used to output a regular string, some stored data, or even a result of some JavaScript operation.
+
 ```html
 <div x-data="{ greeting: 'Hello World' }">
     <h1 x-text="'Hello world'"></h1> <!-- Outputs Hello World -->
@@ -271,17 +293,19 @@ Another wonderful feature of Alpine.js is the ease with which it lets you manipu
     <h1 x-text="3 + 2"></h1> <!-- Outputs Hello World -->
 </div>
 ```
-This example shows the behavior of the `x-text` directive. It displaces the text between the tag it is passed to. it parses the response of the arithmetic operation to string to be printed.
+This example shows the behavior of the `x-text` directive. It displaces the text between the tag it is passed and parses the response of the arithmetic operation to string to be printed.
 
 Like the `x-text`, but for outputting HTML, `x-html` lets you display rich text right in your markup.
+
 ```html
 <div x-data="{ title: '<h1>Start Here</h1>' }">
     <div x-html="title"></div>
 </div>
 ```
 
-#### Conditionally Rendering Templates
-Alpine.js lets you render elements based on your set conditions. These conditions can be toggled to render hidden elements or hide rendered elements. `x-if` and `x-show` let you render some piece of markup if a condition is true. Here's an example, where my name is displayed and hidden by clicking on a button.
+#### Conditionally rendering templates
+Alpine.js lets you render elements based on your set conditions. These conditions are togglable to render hidden elements or hide rendered elements. `x-if` and `x-show` let you render some piece of markup if a condition is true. Here is an example where my name is displayed and hidden by clicking on a button.
+
 ```html
 <div x-data="{ showName: false }">
     <button @click="showName = !showName">Toggle Name</button>
@@ -291,6 +315,7 @@ Alpine.js lets you render elements based on your set conditions. These condition
 ```
 
 This same functionality can be achieved using `x-if` like this:
+
 ```html
 <div x-data="{ showName: false }">
     <button @click="showName = !showName">Toggle Name</button>
@@ -304,6 +329,7 @@ This same functionality can be achieved using `x-if` like this:
 Notice that the `x-if` examples has an additional `template` tag, this is because `x-if` leverages [`template` browser behavior](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template). It can remove the paragraph from the page when `showName` returns false, or add it to the page when it returns true.
 
 Another difference between the `x-if` and `x-show` directives is that you can add a transition to the hiding and showing of the element when using `x-show`. This transition can be customized as you like. Read more on transitions [here](https://alpinejs.dev/essentials/templating#toggling-with-transitions).
+
 ```html
 <div x-data="{ showName: false }">
     <button @click="showName = !showName">Toggle Name</button>
@@ -313,6 +339,7 @@ Another difference between the `x-if` and `x-show` directives is that you can ad
 ```
 
 We can take a moment to add another fix to our application. Currently, the 'Hit Enter To Save' text sits there. How about we set it to show only when the input field is focused on. Update the list item containing input field to match this:
+
 ```html
 <li class="list-group-item" x-data="{ showHint: false }">
     <input
@@ -332,8 +359,9 @@ We can take a moment to add another fix to our application. Currently, the 'Hit 
 
 This example listens to the `focus` and `blur` events to update the state of the hint text. At this point, you must have seen the reactive nature of Alpine.js.
 
-#### Looping Elements
+#### Looping elements
 Apart from being able to render elements if some condition is true. Alpine.js lets you repeat a block of code many times, or display a list of data. It creates DOM elements based on data from a list. The `x-for` directive, like the `x-if` directive, must be used with a `template` tag. For example, you may print 1 to 10 to your screen using:
+
 ```html
 <ul x-data>
     <template x-for="i in 10">
@@ -343,6 +371,7 @@ Apart from being able to render elements if some condition is true. Alpine.js le
 ```
 
 You may also loop through a simple array like this:
+
 ```html
 <ul x-data="{ colors: ['Red', 'Orange', 'Yellow'] }">
     <template x-for="color in colors">
@@ -352,6 +381,7 @@ You may also loop through a simple array like this:
 ```
 
 Having learned this, we can display our todos by iterating over the stored todos array. Replace all the static list items on the page with this:
+
 ```html
 <template x-for="todo in todos" x-data>
     <li
@@ -362,10 +392,12 @@ Having learned this, we can display our todos by iterating over the stored todos
 </template>
 ```
 
-This is supposed to loop over the todos array, but the array is currently empty. So go on, enter some things you'd like to do later, and watch them show up.
-![Dynamic Todos List](/getting-started-with-alpinejs/dynamic-list.png)
+This is supposed to loop over the todos array, but the array is currently empty. So go on, enter some things you would like to do later, and watch them show up.
 
-To make things more interesting, and for illustration purposes, we can add some todos to the array. Now, the application always has some todos from the start. Add three todos, with the three available statuses. Update the `ul` element to have these new todos.
+![Dynamic Todos List](/engineering-education/getting-started-with-alpinejs/dynamic-list.png)
+
+To make things more interesting, and for illustration purposes, we can add some todos to the array. Now, the application always has some todos from the start. Add three todos with the three available statuses. Update the `ul` element to have these new todos.
+
 ```html
 <ul class="list-group mt-3" x-data="{ todos: [
     {
@@ -383,11 +415,11 @@ To make things more interesting, and for illustration purposes, we can add some 
 ] }">
 ```
 
-![Starting With Todos](/getting-started-with-alpinejs/starter.png)
+![Starting With Todos](/engineering-education/getting-started-with-alpinejs/starter.png)
 
-At this point, we're very close to the initial design. But, we've not been able to get these todos to look different based on their status.
+At this point, we are very close to the initial design. However, we have not been able to get these todos to look different based on their status.
 
-#### Manipulating HTML Attributes
+#### Manipulating HTML attributes
 To manipulate the styling of each list-item, we can use Alpine.js `x-bind` directive. This directive lets us set HTML attributes as the result of JavaScript expressions. For example, to set the `src` attribute of an image:
 ```html
 <div x-data="{ image_src: 'hero.jepg' }">
@@ -414,20 +446,23 @@ Having learned this, we can update our list to set each item's background based 
 </template>
 ```
 
-This example uses ternary operators to determine the appropriate Bootstrap class to use. This should result in a good-looking list like this:
-![Colorful Todo List](/getting-started-with-alpinejs/colorful.png)
+This example uses ternary operators to determine the appropriate Bootstrap class to use. This should result in a good-looking list like this: 
+
+![Colorful Todo List](/engineering-education/getting-started-with-alpinejs/colorful.png)
 
 To wrap up this tutorial, we should be able to filter these items by their status, as listed at the top.
 
-### Filter By Status
+### Filter by status
 Filtering todo items by status involves a few steps.
 
-First, clicking on the pills at the top should update some state. This state will tell what category is being viewed currently. To do this, add event listeners to the pills, and a data property to a parent div, maybe the `body`.
+First, clicking on the pills at the top should update some states. This state will tell what category is being viewed currently. To do this, add event listeners to the pills, and a data property to a parent div, maybe the `body`.
+
 ```html
 <body class="container bg-pink" x-data="{ viewing: 'all' }"></body>
 ```
 
 Adds a viewing state, to know which state is being viewed currently.
+
 ```html
 <div>
     <span class="badge bg-primary rounded-pill" @click="viewing = 'all'">All</span>
@@ -449,15 +484,15 @@ Now, the `viewing` state changes when any one of these is clicked. To respond to
     :class="todo.status === 'completed' ? list_class + ' list-group-item-success' : todo.status === 'cancelled' ? list_class + ' list-group-item-danger' : list_class"
 ></li>
 ```
-In this example, first, we declare a `will_show` state that determines the display status of the list item. We want every item to be displayed when 'all' is clicked, so it is initialized based on this value.
+In this example, first, we declare a `will_show` state that determines the display status of the list item. We want every item displayed when 'all' is clicked, so it is initialized based on this value.
 
-Then, a new directive, `x-init` is introduced. This directive lets you run some code when a template is created in the DOM. In this example, we watch for changes in the `viewing` state. Then, we respond to these by updating the `will_show` state if the item's status is the same as the selected category.
+Then, a new directive, `x-init`, is introduced. This directive lets you run some code when a template is created in the DOM. In this example, we watch for changes in the `viewing` state. Then, we respond to these by updating the will_show state if the item's status is the same as the selected category.
 
 Finally, the display is toggled with some transition using the `x-show` directive.
 
-![Completed Todos](/getting-started-with-alpinejs/completed.png)
+![Completed Todos](/engineering-education/getting-started-with-alpinejs/completed.png)
 
 ### Conclusion
-In this tutorial we have learned what Alpine.js is. We also learned how to take advantage of its many features and directives to build fast, and lightweight single-page web applications easily.
+In this tutorial, we have learned what Alpine.js is. We also learned how to efficiently use its many features and directives to build fast and lightweight single-page web applications.
 
 ## Happy Coding!
