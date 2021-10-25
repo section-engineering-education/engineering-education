@@ -97,11 +97,11 @@ function draw() {
 
 This is how the setup looks when you run the code above:
 
-![a-rectangular-sketch](/engineering-education/getting-started-with-data-visualization-using-p5js/a-rectangular-sketch.png)
+![a-rectangular-sketch](/engineering-education/getting-started-with-data-visualization-using-p5.js/a-rectangular-sketch.png)
 
 From the above code block, we have added the `setup()` and `draw()` function. `setup()` is introducing and creating a canvas while `draw()` sketches a rectangle with an outside border (`stroke`). The rectangle is then set to the center using the `rectMode()` function. In this case, the background is being filled in every frame then it changes the full color to blue, and a rectangle is drawn using the set dimensions.
 
-![a-rectangular-sketch-explained](/engineering-education/getting-started-with-data-visualization-using-p5js/a-rectangular-sketch-explained.png)
+![a-rectangular-sketch-explained](/engineering-education/getting-started-with-data-visualization-using-p5.js/a-rectangular-sketch-explained.png)
 
 As you can see, it is easy to go along with these packages. Let's now advance to making our codebase more complex. Let's try to draw a graph that represents some data. We will create and plot simple exponential lines as a graph.
 
@@ -119,7 +119,7 @@ The canvas is set, and that is where we will plot our exponential line.
 
 Let's now set up a `draw()` function responsible for sketching and drawing an object within the canvas set above:
 
-![create-canvas-background](/engineering-education/getting-started-with-data-visualization-using-p5js/create-canvas-background.png)
+![create-canvas-background](/engineering-education/getting-started-with-data-visualization-using-p5.js/create-canvas-background.png)
 
 ```js
 function draw() {
@@ -133,7 +133,7 @@ function draw() {
 }
 ```
 
-![a-line-graph](/engineering-education/getting-started-with-data-visualization-using-p5js/a-line-graph.png)
+![a-line-graph](/engineering-education/getting-started-with-data-visualization-using-p5.js/a-line-graph.png)
 
 The above graph is straightforward, just a simple line lying on a canvas. It's two-dimensional. It has an `x-axis` and a `y-axis`. This graph is just a sketch, and it doesn't have any meaningful data representation.
 
@@ -240,7 +240,7 @@ function windowResized() {
 
 And here is our final graph.
 
-![array-data-graph](/engineering-education/getting-started-with-data-visualization-using-p5js/array-data-graph.png)
+![array-data-graph](/engineering-education/getting-started-with-data-visualization-using-p5.js/array-data-graph.png)
 
 The data is now represented based on the size of each index used in this array. As you can see, it is simple to plot that data.
 
@@ -250,7 +250,7 @@ Let's try another use case.
 
 Data comes saved in different formats. Let's use a simple use case and see how we can make use of data saved in a CSV file. Below is a sample CSV data that we will use. You can get this data from the files of this project hosted on GitHub:
 
-![csv-previewed-data](/engineering-education/getting-started-with-data-visualization-using-p5js/csv-previewed-data.png)
+![csv-previewed-data](/engineering-education/getting-started-with-data-visualization-using-p5.js/csv-previewed-data.png)
 
 This CSV represents the size of a country. It is then divided based on the mass of every component, such as the urban areas, forest cover, and road area. Each component will represent the mass that is occupied within the represented geographical borders.
 
@@ -357,7 +357,7 @@ When you run your live server, you will get a graph similar to this one:
 
 P5.js is an ultimate sketch framework. It can be used with a variety of use cases such as creating illusion diagrams, designs simple games, data visualization, screen movements, etc. For example, [this pong game](https://margual56.github.io/pong/) was wholly designed using P5.js.
 
-![pong-game](/engineering-education/getting-started-with-data-visualization-using-p5js/pong-game.png)
+![pong-game](/engineering-education/getting-started-with-data-visualization-using-p5.js/pong-game.png)
 
 [Image Source](https://margual56.github.io/pong/)
 
