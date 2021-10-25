@@ -1,29 +1,27 @@
-![hero image](/engineering-education/how-to-create-font-chooser-app/hero image.jpg)
-
 ### How to create a font chooser app using python 
 A font picker is a simple application that allows you to browse through all the fonts installed on your computer, and filter down your options to find the ideal one for your project or work.
 
-The Tkinter Python library will be used to construct a font chooser application in this tutorial.
+In this tutorial, the Tkinter Python library will be used to construct a font chooser application.
 
 ### Table of content.
-- Prerequisite
+- Prerequisites
 - What is Tkinter?
 - Creating a font chooser app
 - Conclusion
 - Reference
 
-### Prerequisite
+### Prerequisites
 To follow along with this tutorial, you will need to have:
 
 - [Python3](https://www.python.org/downloads/) installed on your computer system.
-- A code editor, i use [Pycharm](https://www.jetbrains.com/pycharm/download/).
+- A code editor. I use [Pycharm](https://www.jetbrains.com/pycharm/download/).
 
 ### What is Tkinter?
 Python's standard GUI library is Tkinter. When Python and Tkinter are integrated, creating graphical user interfaces becomes much faster and easier. 
 
 Tkinter provides geometric widget configuration, which organizes widgets in parent windows for grahical user interface.
 
-Tkinter is a fantastic tool for creating graphical user interfaces and applications in python and we will be using it to build the font chooser application.
+Tkinter is a fantastic tool for creating graphical user interfaces and applications in python. We will be using it to build the font chooser application.
 
 You can install Tkinter by using the `pip` command.
 
@@ -32,24 +30,27 @@ pip install tk
 ```
 
 ### Creating a font chooser app
-A font is a digital data file that contains a collection of graphically related glyphs. A font chooser application is used to design and create a computer font.
+A font is a digital data file that contains a collection of graphically related glyphs. A font maker application is used to design and create a computer font.
 
-Fonts are also known as typefaces, and they come in a variety of weights, shapes, sizes, colour, design and  widths.
+Fonts are also known as typefaces, and they come in a variety of weights, shapes, sizes, colour, design and widths.
 
-According to estimates, there are over half a million fonts in use worldwide; a font chooser application will assist a computer user in filtering down the total number of fonts installed in a computer system and selecting the font he wants to use.
+According to estimates, there are over half a million fonts in use worldwide. A font chooser application will assist computer users in filtering down the total number of fonts installed in a computer system and selecting the font he wants to use.
 
 To add style to a web page or document, different fonts are used. That is, they can be used to set or match the text's "tone" depending on the content. Additionally, depending on the medium, certain fonts have an impact on readability.
 
 Computer font file data formats are divided into three categories:
 
 - Bitmap font: The glyph in each face, weight, width and size is represented by a matrix of dots.
-![bitmapfont image](/engineering-education/how-to-create-font-chooser-app/bitmapfont.jpg)
 
-- Vector font: It is also known as the outline font, here each glyph is described by drawing specifications and mathematical method, allowing the character outlines to be scaled to any size.
-![vectorfont image](/engineering-education/how-to-create-font-chooser-app/vectorfont.png)
+![bitmap font image](/engineering-education/how-to-create-font-chooser-app/bitmapfont.jpg)
+
+- Vector font: It is also known as the outline font. Here each glyph is described by drawing specifications and mathematical methods, allowing the character outlines to be scaled to any size.
+
+![vector font image](/engineering-education/how-to-create-font-chooser-app/vectorfont.png)
 
 - Stroke font: It defines the size and shape of the line in a specific typeface using a series of specified lines and additional data, which together decide the appearance of the glyph.
-![strokefont image](/engineering-education/how-to-create-font-chooser-app/strokefont.jpg)
+
+![stroke font image](/engineering-education/how-to-create-font-chooser-app/strokefont.jpg)
 
 In our code editor, we'll make a new file called `font.py`, where we'll write our code.
 
@@ -66,13 +67,15 @@ root.iconbitmap('c:/gui/maji.ico')
 root.geometry("500x400")
 ```
 
-To start, first, we will create a root widget and this root widget is a window with a title bar. This widget has to be created first, and it is called the root widget, after creating the root widget, the programmer can then create other widgets.
+First, we create a root widget. This is a window with a title bar. After creating the root widget, the programmer can then create other widgets.
 
-Then we give our font app a name (I used `maji.ico`. You can use your own name if you want to customize the app.). Then we set the size of the application.
+Then we give our font app a name (I used `maji.ico`. You can use your own name if you want to customize the app). 
+
+Then we set the size of the application.
 
 ```python
 def font_chooser(a):
-        user_font.config(family=my_listbox.get(my_listbox.curselection()))
+    user_font.config(family=my_listbox.get(my_listbox.curselection()))
 ```
 
 Then we write the `font_chooser` function, which includes defining the font function and configuring the `Listbox` to retrieve the system's current font selection.
@@ -86,7 +89,7 @@ my_frame.grid_propagate(False)
 my_frame.columnconfigure(0, weight=10)
 ```
 
-Then we specify our font by setting our `font_variable` to a Helvetica typeface with a size of 30. Then a frame is created by defining the `my_frame` variable, which specifies the width and height.
+Then we specify our font by setting our `font_variable` to a Helvetica typeface with a size of 30. Then a frame is created by defining `my_frame` variable, which specifies the width and height.
 
 The `.grid` function is also used to freeze the frame and prevent the size of the `Listbox` from changing unnecessarily each time a new font is picked from the font chooser app.
 
@@ -102,22 +105,24 @@ user_listbox.pack()
 
 By defining the `user_text` variable, we can add the textbox. We do this by putting the defined variable in a frame and utilising our font to make the font size dynamic.
 
-We utilize the `.grid` function to prevent the font app from resizing abnormally, and we set the row and column weights to 1 to ensure that it evenly distributes any additional space in the row and column.
+We utilize the `.grid` function to prevent the font app from resizing abnormally. We set the row and column weights to 1 to ensure that additional space in the row and column is evenly distributes.
 
 We create a `Listbox` by setting the `my_listbox` variable to a listbox with a single-mode selection, which allows us to choose only one font at a time while still specifying the width size.
 
 ```python
 for f in font.families():
-        my_listbox.insert('end', f)
+    my_listbox.insert('end', f)
+
 my_listbox.bind('<ButtonRelease-1>', font_chooser)
 root.mainloop()
 ```
 
-We use a `for` loop to iterate over the `font.families` sequence to add font families to the already formed `Listbox`, and then use the `.bind` function to bind the `Listbox`.
+We use a `for` loop to iterate over the `font.families` sequence adding the font families to the already formed `Listbox`. We then use the `.bind` function to bind the `Listbox`.
 
 `mainloop()` is the method that we will use to run the font chooser application. It will allow the application to run continuously and indefinitely until the user decides to end the program by closing the window or using the Escape key on the keyboard.
 
 And the font chooser interface will look like this:
+
 ![fontapp image](/engineering-education/how-to-create-font-chooser-app/fontchooserapp.png)
 
 ### Conclusion
