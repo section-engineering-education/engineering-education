@@ -59,7 +59,7 @@ To install P5.js with CDN, you include a CDN linking to the P5.js resources in a
 
 ### Getting started with P5.js
 
-Let's now dive in and start using this amazing library! 
+Let's now dive in and start using this amazing library!
 
 First, create a project directory where we will save the code file. In this guide, we will use CDN to access the P5.js resources. So inside your project folder, create an `index.js` file. We will add the CDN script here and load the P5.js JavaScript code to the browser. In your `index.html` file, add the following CDN scripts.
 
@@ -67,7 +67,7 @@ First, create a project directory where we will save the code file. In this guid
 <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/p5.min.js"></script>
 ```
 
-Also, remember to create `app.css` and `app.js` files that we have imported in the above HTML code block.
+Also, remember to create `app.css` and `index.js` files that we have imported in the above HTML code block.
 
 P5.js uses some functions that defines how your sketch will look like. These include:
 
@@ -248,7 +248,7 @@ Let's try another use case.
 
 ### Visualizing data saved in a CSV file
 
-Data comes saved in different formats. Let's use a simple use case and see how we can make use of data saved in a CSV file. Below is a sample CSV data that we will use. You can get this data from the files of this project hosted on GitHub:
+Data comes saved in different formats. Let's use a simple use case and see how we can make use of data saved in a CSV file. Below is a sample CSV data that we will use. You can get this data from the files of this project hosted on [GitHub](https://github.com/JuliusGikonyoNyambura/Visualizing-CSV-using-P5.js):
 
 ![csv-previewed-data](/engineering-education/getting-started-with-data-visualization-using-p5.js/csv-previewed-data.png)
 
@@ -286,7 +286,7 @@ Here we are adding some variables to load data, data values, data labels(names),
 
 #### Adding the `preload()` function
 
-To load any external data, use the `preload()` function. This specifies that we will load a CSV file with the header before we start using P5.js to visualize the data on a web page. Remember to download this `data.csv` file from GitHub files of this project.
+To load any external data, use the `preload()` function. This specifies that we will load a CSV file with the header before we start using P5.js to visualize the data on a web page. Remember to download this `data.csv` file from [GitHub files](https://github.com/JuliusGikonyoNyambura/Visualizing-CSV-using-P5.js) of this project.
 
 ```js
 function preload() {
