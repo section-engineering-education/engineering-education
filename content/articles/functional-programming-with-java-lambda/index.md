@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /functional-programming-with-java-lambda/
 title: Functional Programming with Java Lambda
-description: In this article, we will look at the concept of Functional programming in Java. we will also explain how a function can be used as a value.
+description: In this article, we will look at the concept of functional programming in Java. we will also explain how a function can be used as a value.
 author: popoola-tunde
 date: 2021-10-12T00:00:00-10:03
 topics: [Languages]
@@ -14,13 +14,13 @@ images:
   - url: /engineering-education/functional-programming-with-java-lambda/hero.jpg
     alt: Functional Programming with Java Lambda Hero Image
 ---
-Java is an object-oriented programming language. It recommends encapsulation of all variables and methods of the class.
+Java is an object-oriented programming language. It promotes the encapsulation of all variables and methods of the class.
 <!--more-->
-That is, code blocks before Java version 8 are written by binding classes with variables, methods and objects. The process of passing a behaviour to methods takes extra work and load. This is because we are passing a class with another attribute.
+That is, code blocks before Java version 8 are written by binding classes with variables, methods, and objects. The process of passing a behavior to methods takes extra work and load. This is because we are passing a class with another attribute.
 
 In Java 8, Lambda was introduced to represent the functional interface of Java. This means that the Lambda expression is the expression of a functional interface.
 
-The introduction of functional programming was to implement behaviour code. This code makes it easier to create a function that performs a specific task. Also, this code does not belong to any class thus treated as a value.
+The introduction of functional programming was to implement behavior code. This code makes it easier to create a function that performs a specific task. Also, this code does not belong to any class thus treated as a value.
 
 In this article, the reader will be able to understand Java's functional programming and learn how to assign lambdas to an interface. We will work with lambda expressions using a different number of parameters.
 
@@ -28,7 +28,7 @@ The reader will be able to convert the object or a class's method to lambdas fun
 
 ### Prerequisites
 To follow along with this tutorial, the reader should have:
-- A basic knowledge of Java.
+- Basic knowledge of Java.
 - [Java](https://www.oracle.com/java/technologies/downloads/) installed.
 - Any Java IDE of their choice.
 - An understanding of class's and static methods.
@@ -46,7 +46,7 @@ Let us assign a value to our variable:
 
 The variable `name` takes a single string value of `foo` and a variable `pi` takes a single double value of `3.14`. The question is, can a block of code be assigned as a value to a variable name without creating an instance of the class?
 
-This is not possible in Java, as only an instance of an object can only be assigned to a variable. Let us imagine a block code is assigned to a variable.
+This is not possible in Java, as only an instance of an object can be assigned to a variable. Let us imagine a block code is assigned to a variable.
 
 ```java
 
@@ -68,9 +68,9 @@ myfunction ablockOfCode = () -> System.out.print(“Hello world”);
 
 ```
 
-From our code above, we can see that access modifiers and return types are removed. Because they are not required in the expression.
+From our code above, we can see that the access modifier and return type are removed. This is because they are not required in the expression.
 
-The lambda expression has a very simple, unique and flexible syntax. This syntax also follows the normal syntax of the assignment of a value to a variable in java. That is, assigning a variable with a data type and the expression as a value.
+The lambda expression has a very simple, unique, and flexible syntax. This syntax also follows the normal syntax of the assignment of a value to a variable in java. That is, assigning a variable with a data type and the expression as a value.
 
 Java is a strongly typed programming language because every variable must be declared with a data type. The method of assigning a variable name to a lambda expression must also have a data type of the class's interface.
 
@@ -83,8 +83,7 @@ Java is a strongly typed programming language because every variable must be dec
 The syntax of the value which is the expression consists of three parts which are:
 1. Expression body - This can either be a single expression or a block of code. If the body of the function contains a single expression, the braces are not required which means it is optional.
 2. Parameter - These are functional methods that match with the signature of a function declared in the interface. Defining the information kind of parameter is discretionary but the number of parameters must coordinate with the signature declared in the interface.
-
-The Lambda operator `->` - This separates the input parameters on the left side from the lambda body on the right side.
+3. The Lambda operator `->` - This separates the input parameters on the left side from the lambda body on the right side.
 
 ```java
 
@@ -92,7 +91,7 @@ The Lambda operator `->` - This separates the input parameters on the left side 
 
 ```
 
-To use Lambda expressions, you can create your own functional interface or use java already defined interface. The interface use must match the signature of the function you want to use. An interface with a single abstract method is called a `@FunctionalInterface`.
+To use Lambda expressions, you can create your functional interface or use Java's already defined interface. The interface used must match the signature of the function you want to use. An interface with a single abstract method is called a `@FunctionalInterface`.
 
 ```java
 
@@ -113,11 +112,11 @@ public class LambdaAlgorithmTest {
 
 ```
 
-The first line of the code above is an interface with the name `Hello`. The interface declares an abstract method called `sayHello`. The method takes one parameter called `greet` which is of the data type `string` and thus return its return type will be a string.
+The first line of the code above is an interface with the name `Hello`. The interface declares an abstract method called `sayHello`. The method takes one parameter called `greet` which is of the data type `string` and thus its return type will be a string.
 
-The fourth line creates a new class called `LambdaAlgorithmTest` which contains the main method. The method declares a function called `hello` with the type `Hello` interface. We also have another method that takes one parameter called `message` with two variables `str1` and `str2` which are both of the type `string`.
+The fourth line creates a new class called `LambdaAlgorithmTest` which contains the main method. The method declares a function called `hello` with the type `Hello` interface. 
 
-The first variable `str1` takes a value `Welcome`, the second variable `str2` concatenates `str1` and the parameter `message`. The function returns the variable `str2`.
+We also have another method that takes one parameter called `message` with two variables `str1` and `str2` which are both of the type `string`. The first variable `str1` takes a value `Welcome`, the second variable `str2` concatenates `str1`, and the parameter `message`. The function returns the variable `str2`.
 
 ### Working with different Lambda parameter
 #### Lambda example that takes no parameter
@@ -141,7 +140,9 @@ public class Example {
 
 ```
 
-The first line of the above code, `@FunctionalInterface` is an annotation that ensures the functional interface does not have more than one abstract method. The second line declares an interface with the name `MyFunctionalInterface`. The interface declares a method called `sayHello`, which takes no parameters. The method will return the typed string.
+The first line of the above code, `@FunctionalInterface` is an annotation that ensures the functional interface does not have more than one abstract method. The second line declares an interface with the name `MyFunctionalInterface`. 
+
+The interface declares a method called `sayHello`, which takes no parameters. The method will return the typed string.
 
 The third line creates a new class called `Example` which contains the main method. The method declares a function `msg` with type `MyFunctionalInterface` interface. The result of the function will print `Hello`.
 
@@ -166,9 +167,9 @@ public class LambdaSingleParam {
 
 ```
 
-The first line of the above code, `@FunctionalInterface` is a java annotation that ensures the functional interface does not have more than one abstract method. The second line is an interface with the name `MyFunctionalInterface`. The interface declares an abstract method called `increaseByFive`, which takes one parameter. The method will return the type int.
+The first line of the above code, `@FunctionalInterface` is a Java annotation that ensures the functional interface does not have more than one abstract method. The second line is an interface with the name `MyFunctionalInterface`. The interface declares an abstract method called `increaseByFive`, which takes one parameter. The method will return the type int.
 
-The third line creates a new class called `LambdaSingleParam`. The class contains the main method. The main method declares a function `foo` with type `MyFunctionalInterface` interface. The result of the function will print `27`.
+The third line creates a new class called `LambdaSingleParam`. The class contains the main method. The main method declares a function `foo` with the type `MyFunctionalInterface` interface. The result of the function will print `27`.
 
 #### Lambda example with many parameters
 
@@ -189,19 +190,19 @@ public class LambdaMultipleParameter {
 
 ```
 
-The first line of the above code, `interface StringConcat` declare a new interface `StringConcat`. The interface declares an abstract method called `strConcat`. The method takes two-parameter. The method will return the typed string.
+The first line of the above code, `interface StringConcat` declares a new interface `StringConcat`. The interface declares an abstract method called `strConcat`. The method takes two-parameter. The method will return the typed string.
 
-The third line creates a new class called `LambdaMultipleParameter`. The class contains the main method which serves as the entry point of the code. The method declares a function `str` with type `StringConcat`interface.
+The third line creates a new class called `LambdaMultipleParameter`. The class contains the main method which serves as the entry point of the code. The method declares function `str` with type `StringConcat`interface.
 
 The last line of code print concatenation of string `Result` with the result of the method call `str.strConcat("Hello ", "World")`. The result of the function will print `Result: Hello World`.
 
 ### Lambda stream pipeline
 Streams are objects of classes that implement the interface `stream`. The stream is either from one of the specific stream interfaces for preparing collections of primitive data values. Stream enables you to act on the collection of elements with lambda.
 
-Lambda Stream pipeline is a sequence of processing steps from the data source (from collections). The pipeline performs two main operations which is an intermediate or terminal operation. The operations formed a chain method called.
+Lambda Stream pipeline is a sequence of processing steps from the data source (from collections). The pipeline performs two main operations which is an intermediate or terminal operation. The operations form a chain method.
 
 #### Intermediate and terminal operation
-An intermediate operation is an activity that plays out a particular task on a stream element and the result of the task forms a new stream. Intermediate operations are also called `Lazy` operations. Which implies that the operation isn't performed until a terminal operation is called.
+An intermediate operation is an activity that plays out a particular task on a stream element and the result of the task forms a new stream. Intermediate operations are also called `Lazy` operations which implies that the operation is not performed until a terminal operation is called.
 
 | Operation | Description                                                                             |
 | --------- | --------------------------------------------------------------------------------------- |
@@ -220,13 +221,13 @@ A terminal operation starts the processing of intermediate operations performed 
 | count     | Returns the total number of elements that operations are performed on.      |
 | average   | Returns the average of element numerical elements of the stream.            |
 | min       | Returns the smallest element of numbers in the stream.                      |
-| max       | Returns the largest element of number in the streams.                       |
+| max       | Returns the largest element of numbers in the stream.                       |
 | forEach   | Loops through the stream to operate on each element.                        |
 | collect   | Creates a new container for the operation on an immediate stream operation. |
 | findAny   | Returns any elements of the stream based on the intermediate operation.     |
 | findFirst | Returns the first element of the streams that match the predicate.          |
 | anyMatch  | Checks if any stream matches the predicate.                                 |
-| reduce    | Returns a single value of all the elements in the stream using accumulator. |
+| reduce    | Returns a single value of all the elements in the stream using an accumulator. |
 | allMatch  | Checks if all the elements match a specified predicate.                     |
 
 #### Example of stream operation
@@ -244,23 +245,27 @@ public static void main(String[] args) {
 
 ```
 
-The first line of the code declares the main method. The main method serves as the entry point of the code to the java interpreter.
-The second line of the code declares an ArrayList `myList` that takes an array of as value. `Arrays.asList()` convert the array to a list.`myList.stream()` converts the list to a stream. `filter(s -> s.startsWith("c"))` filter the element of the list that start with `c`. `map(String::toUpperCase)` convert the element that meet the filter condition to capital letter. The `sorted()` method returns sorted elements in ascending order by default.
-The `forEach(System.out::println)` loop through all the elements in the stream and print the element that meets all requirements specified in the pipeline.
+The first line of the code above declares the main method. The main method serves as the entry point of the code to the java interpreter. The second line of the code declares an ArrayList `myList` that takes an array value. 
+- `Arrays.asList()` converts the array to a list. 
+- `myList.stream()` converts the list to a stream. 
+- `filter(s -> s.startsWith("c"))` filters the element of the list that start with `c`. 
+- `map(String::toUpperCase)` converts the elements that meet the filter condition to capital letters. 
+- The `sorted()` method returns sorted elements in ascending order by default.
+- The `forEach(System.out::println)` loops through all the elements in the stream and prints the elements that meet all requirements specified in the pipeline.
 
 ### The benefits of lambda in Java
 - Lambda expressions improve code readability and do not require interpretation.
-- Lambda's allow you to write concise code.
+- Lambdas allow you to write concise code.
 - It encourages the use of functional programming.
 - It simplifies variable scope and encourages code reusability.
-- Lambda's allow you to use parallel processing.
+- Lambdas allow you to use parallel processing.
 
 ### Conclusion
 In this article, we looked at the concept of functional programming in Java. We explained how a function can be used as a value. We also looked at how to create a functional program and how to work with different parameters in lambda. 
 
 Lastly, we explained the concept of a stream pipeline by giving insight into the intermediate and terminal operations. The article also touches on the benefit of lambda functional programming.
 
-> The stream pipeline concept explained in this article is the introduction part of it, to learn more above stream visit [Java version 16 documentation on stream](http://https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/util/stream/package-summary.html).
+> The stream pipeline concept explained in this article is an introduction. To learn more about stream, check out [Java version 16 documentation on stream](http://https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/util/stream/package-summary.html).
 
 ### References
 - [Java version 16 documentation on stream](http://https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/util/stream/package-summary.html)
@@ -273,7 +278,7 @@ Lastly, we explained the concept of a stream pipeline by giving insight into the
 
 - [Winterbe](https://winterbe.com/posts/2014/07/31/java8-stream-tutorial-examples/)
 
-- [Java 16 documentation on function api](https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/util/function/package-summary.html)
+- [Java 16 documentation on function API](https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/util/function/package-summary.html)
 
 Java - How to Program 10th Ed - Early Objects Version by Pual Deitel and Harvey Deitel
 
