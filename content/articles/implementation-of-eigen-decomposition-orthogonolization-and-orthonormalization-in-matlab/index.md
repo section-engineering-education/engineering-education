@@ -12,7 +12,7 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/implementation-of-eigen-decomposition-orthogonolization-and-orthonormalization-in-matlab/hero.jpeg
-    alt: Matlab logistics map image
+    alt: eigendecomposition orthogonalization eigendecomposition image
 ---
 Matrix is the rectangular arrangement of numbers. We represent them in the form of `m x n`, where `m` is the rows while the `n` is the number of columns. Eigen decomposition is the process of representing vectors or a matrix by its eigenvalues and eigenvectors. The eigenvalue is like a scalar, but we will understand more about it in the article.
 <!--more-->
