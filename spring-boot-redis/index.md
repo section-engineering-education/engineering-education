@@ -1,3 +1,22 @@
+
+@@ -0,0 +1,271 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /spring-boot-redis/
+title: Getting Started with Spring Boot Redis Messaging
+description: This article will go over a step-by-step tutorial on how to communicate between two services using Redis publisher/subscriber messaging
+author: okelo-violet
+date: 2021-10-25T00:00:00-14:30
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/spring-boot-redis/hero.jpg
+    alt: Getting Started with Spring Boot Redis Messaging
+---
+
 ### Introduction
 Redis is a key-value store that can be used as an in-memory database, cache provider or message broker.
 
