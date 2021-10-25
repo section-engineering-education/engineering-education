@@ -1,0 +1,1 @@
+John Kanoi is a computer science who is focused on blockchain technology development and implementation.He is also a front end developer who is focused on mainly web and desktop appliactions development. 
