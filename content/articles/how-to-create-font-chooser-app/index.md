@@ -126,7 +126,7 @@ And the font chooser interface will look like this:
 ![fontapp image](/engineering-education/how-to-create-font-chooser-app/fontchooserapp.png)
 
 ### Conclusion
-In this tutorial, we reviewed the role of Tkinter in data science and built a font chooser application.
+In this tutorial, we looked at the different types of computer font formats and how to make a font chooser application.
 
 ### Reference
 [Python GUI programming with Tkinter](https://www.perlego.com/book/721869/python-gui-programming-with-tkinter-pdf) by Alan D Moore
