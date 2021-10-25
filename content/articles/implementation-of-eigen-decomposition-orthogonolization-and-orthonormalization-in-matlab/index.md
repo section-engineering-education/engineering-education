@@ -1,7 +1,21 @@
-### Implementation of eigenvalues, eigenvectors, eigendecomposition, orthogonalization and orthonormalization in Matlab
-### Introduction
-Matrix is the rectangular arrangement of numbers. We represent them in the form of `m x n`, where `m` is the rows while the `n` is the number of columns. Eigen decomposition is the process of representing vectors or a matrix by its eigenvalues and eigenvectors. The eigenvalue is like a scalar, but we will understand more about it in the article.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /implementation-of-eigen-decomposition-orthogonolization-and-orthonormalization-in-matlab/
+title: Implementation of eigenvalues, eigenvectors, eigendecomposition, orthogonalization and orthonormalization in Matlab
+description: This article walks the reader through the implementation of eigenvalues, eigenvectors, eigendecomposition, orthogonalization and orthonormalization in Matlab
+author: paul-juma
+date: 2021-10-25T00:00:00-11:10
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/implementation-of-eigen-decomposition-orthogonolization-and-orthonormalization-in-matlab/hero.jpg
+    alt: Matlab logistics map image
+---
+Matrix is the rectangular arrangement of numbers. We represent them in the form of `m x n`, where `m` is the rows while the `n` is the number of columns. Eigen decomposition is the process of representing vectors or a matrix by its eigenvalues and eigenvectors. The eigenvalue is like a scalar, but we will understand more about it in the article.
+<!--more-->
 Orthogonalization is the process of making vectors orthogonal. Orthogonal vectors are vectors that are perpendicular to each other; that is, the angle between them is 90 degrees. Orthonormalization is the process of normalizing the vectors. Normalization is the process of changing the vectors into unit vectors.
 
 All these processes form the basics of the matrix. However, engineers and data analysts use more of these processes in their daily activities in daily life and daily activity. Since Matlab is a matrix laboratory, then it means that it has tools that make working these processes easier. This article will look at how we can get these values in Matlab.
@@ -291,6 +305,9 @@ E =
 Matlab is a matrix laboratory. It means that Matlab easily evaluates matrix and vector problems. As we can see, all you do is use the in-built functions. Also, the codes used for these problems are not complex, and anybody can understand what is going on.
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Miller Juma](/engineering-education/authors/miller-juma/)
 
 
 <!-- MathJax script -->
