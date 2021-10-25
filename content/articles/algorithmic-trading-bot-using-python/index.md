@@ -22,21 +22,21 @@
 ### Introduction
 Trading online has become one of the most popular investment in the current world. 
 The likes of cryptocurrency and forex being the leading areas.
-Due to this popularity, programmers have emerged trying to come with a way in which the trading process can be 
+Due to this popularity, programmers have emerged trying to come up with a way in which the trading process can be 
 automated for more profits.
 
 In this tutorial, we are to look at how one can start off his/her journey in programming a trading bot.
 
 ### What is a Trading Bot?
 
-As stated in the introduction, a trading bot is simply a robot in form of a software that automates the trading process.
+As stated in the introduction, a trading bot is simply a robot in form of software that automates the trading process.
 It uses past data to give out expected outcomes that look down to the past data patterns.From these past patterns, 
 it generates predictions to immitate past data.
 
 ### Prerequisites/ Requirements
 
 The main prerequisite for this tutorial is the basic knowledge of python and its algorithms. 
-For the matter of testing, we will use **QUANTCONNECT** which uses lean engine to integrate your code with the trading site.
+For the matter of testing, we will use **QUANTCONNECT** which uses the lean engine to integrate your code with the trading site.
 
 That means that you don't actually require an offline editor since the site provides
 its own coding environment.
@@ -44,13 +44,10 @@ its own coding environment.
 
 ### Coding and Development
 
-With your prerequisites and requirements ready, you can now code along for
-a practical understanding.
-Go to https//: www.quantconnect.com and sign up to setup your coding environment. 
+
+With your prerequisites and requirements ready, you can now code along for a practical understanding.
+Go to www.quantconnect.com and sign up to set up your coding environment. 
 You can also use an offline editor and upload the code later for testing.
-
-
-
 
 Let's get started...
 
@@ -78,13 +75,13 @@ class GeekyBlueSeahorse(QCAlgorithm):
 
 2.  **Import required Libraries**
 
-In this case, we will only require one library i.e. *numpy*.
+In this case, we will only require one library i.e. *NumPy*.
 
 Import at the top as follows;
 
 ```python
 
-import numpy as np
+import NumPy as np
 
 
 ```
@@ -94,6 +91,7 @@ import numpy as np
 Under the initialize method, we will initialize several parameters;
 - Initialize cash for the purpose of the backtest(we call it the strategy cash) which would be  used on a real account.
 - Set the start and end date for the backtest.
+
 The code is as follows;
 
 ```python
@@ -183,17 +181,17 @@ self.Schedule.On(self.DateRules.EveryDay(self.symbol), \
 
 6. #### **Implement the EveryMarketOpen method**
 
-First, we will determine the lookback length for our breakout.
-Within a utility of 60 days we will compare the current value today with the same value yesterday.
+First, we will determine the lookback length for our breakout.Within a utility of 60 days, 
+we will compare the current value today with the same value yesterday.
 This will help determine the length of the lookback window.
 
-- Call the History function to get data for the last 61 days(two months) or you prefered number of days.
+- Call the History function to get data for the last 61 days or your preferred number of days.
 
-  - This is where we use the numpy library to calculate the standard deviation for the two days.
+- This is where we use the NumPy library to calculate the standard deviation for the two days.
 
 - We will list all the highest and lowest prices within a specified range, for this case, 60days
 
-The following code falls under this *EveryMarketOpen* method to perform all the comparisons required to give a desired result;
+The following code falls under this *EveryMarketOpen* method to perform all the comparisons required to give a result;
 
 ```python
 
@@ -241,11 +239,11 @@ The following code falls under this *EveryMarketOpen* method to perform all the 
 
 7. #### **Plot the stop price**
 
-Lastly, print the new stock price to the console, to check the new order price every time they get updated.
-We cannot use the normal *print* function but instead use the *self.Debug* fuction which is *quant equivalent* to print.
+Lastly, print the new stock price to the console, to check the new order price every time they get updated.We cannot 
+use the normal *print* function but instead use the *self.Debug* function which is *quant equivalent* to print.
+Finalize by plotting the stop price of our position onto the data chart we created earlier.This allows us to 
+view where our stop price is compared to the securities trading price.
 
-Finalize by plotting the stop price of our position onto the data chart we created earlier.
-This allows us to view where our stop price is compared to the securities trading price.
 
 ```python
 
@@ -337,20 +335,20 @@ class GeekyBlueSeahorse(QCAlgorithm):
 
 
 
-For more explanations or inconviniences, you can refer to this [video](https://www.youtube.com/watch?v=s8uyLscRl-Q) for more understanding.
+For more explanations or inconveniences, you can refer to this [video](https://www.youtube.com/watch?v=s8uyLscRl-Q) for more understanding.
 
 
-8. #### Perform a Backtest
+7. #### Perform a Backtest
 
+A backtest is performed to evaluate the performance of the algorithm.
 
-A back test is performed to evaluate the performance of the algorithm.
 It integrates the code with your brokerage site to get results as if it was an actual trading practice.
 
-You can see the picture below as an example of a backtest result;
+You can see the picture below;
 
 ![](backtest.png)
 
-According to the values you entered, you should get your results in a similar interface like the one shown in the photo below.
+According to the values you entered, you should get your results in a similar interface to the one shown in the photo below.
 
 ![](result.png)
 
@@ -363,13 +361,13 @@ Here are some of the key merits of this algorithmic trading;
 
 This allows one to work on other things while earning at the same time.
 
-2. **Higher accuracy** expected since the bot compares and consider a large volume of data before coming up with a prediction.
+2. **Higher accuracy** expected since the bot compares and considers a large volume of data before coming up with a prediction.
 
-This is an added bonus since a trader cannot go through a data of upto or maybe more than a year.
+This is a bonus since a trader cannot go through data of up to or maybe more than a year.
 
 3. **Increased trading time** - Most probably, the bot can trade for 24hrs in a day without getting tired.
 
-This means that if it's accuracy is higher enough, then the profits made are higher that human guided trading.
+This means that if its accuracy is higher enough, then the profits made are higher than human-guided trading.
 
 
 
@@ -382,17 +380,17 @@ This is the one **Main** reason;
 **Systemic Risk**
 
 Sometimes, there occur linkages between financial markets.
-As a result, algorithms operating under those markets transmit rapid shocks from one market to another thus triggering a systematic risk. These systematic risks bring about **huge losses**, which is considered a great risk.
 
-Due to such risk, people prefer to trade on their own rather than depend on the software.
+As a result, algorithms operating under those markets transmit rapid shocks from one market to another thus triggering a systematic risk.
+
+These systematic risks bring about **huge losses**, which is considered a great risk.
+
+Due to such risk, people prefer to trade on their own rather than depending on the software.
 
 ### Conclusion
 
 With the growing E-economy, e-trading has become one of the biggest contributors.
-Giving a verdict on whether to use an automated software(Trading bot) or not is always a personal decision.
+Giving a verdict on whether to use automated software(Trading bot) or not is always a personal decision.
+This article sets a journey for those who are interested in developing their algorithm for trading rather than using the ready-made. 
 
-This article sets a journey for those who are interested in developing their own algorithm for trading rather than using the ready-made. 
-
-
-
-
+Happy coding...
