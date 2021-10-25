@@ -24,7 +24,7 @@ At the end  of the article, the reader should have learned:
 3. How to verify EIGRP on a Cisco router. 
 
 ### Prerequisites
-For a better understanding of this tutorial, the reader is expected to have a basic knowledge of the Cisco Command Line Interface (CLI), Network subnetting, and Cisco Packet tracer which can be download [here](https://www.netacad.com/portal/resources/packet-tracer).
+For a better understanding of this tutorial, the reader is expected to have a basic knowledge of the Cisco Command Line Interface (CLI), Network subnetting, and Cisco Packet tracer which can be downloaded [here](https://www.netacad.com/portal/resources/packet-tracer).
 
 ### Table of contents
 [Introduction](#introduction)
@@ -45,9 +45,9 @@ Enhanced Interior Gateway Routing Protocol (EIGRP), is a Cisco proprietary dynam
 EIGRP combines both links state and distance vector protocols features for its operations. As such, it is considered to be an advanced distance routing protocol. 
 
 Some of these features include:
-- Diffusing Update Algorithm (DUAL) .
+- Diffusing Update Algorithm (DUAL).
 - Reliable Transport Protocol.
-- Equal and unequal load ballancing.
+- Equal and unequal load balancing.
 - Authentication.
 - Autonomous System (AS)  number. 
 
@@ -56,7 +56,7 @@ Diffusing Update Algorithm (DUAL) is an algorithm used by EIGRP to choose and ma
 
 It is also used to perform the following:
 1. Support Variable Length (VLS) Subnetting. 
-2. Send out queries for alternates routes.
+2. Send out queries for alternate routes.
 3. Perform dynamic route discoveries.  
 
 #### Reliable transport protocol 
