@@ -19,7 +19,7 @@ With digitalization globalization, data has evolved from limited, expensive, dif
 
 Data may be simply acquired from many important consumers in the present digitalization. However, this creates bulky and extensive information across different channels. With such a massive volume of data, it becomes troublesome to store, process, analyze, and comprehend each piece of information. This modest quantity of data is so large that traditional software cannot gather, store, comprehend, or analyze it. As a result, the notion of big data arose.
 
-With such easier accessibile data, there is a terabyte of data sitting around us and in the data centers, which is unused and is sitting as a burden. These resources are only as excellent as what we can produce out of it as individuals and corporations. The concept of big data processes terabytes of raw data into meaningful value that can be used by businesses and individuals, such as predictive analytics. This way, data doesn't sit in a data center unused. Instead, it is turned into digital gold.
+With such easier accessible data, there is a terabyte of data sitting around us and in the data centers, which is unused and is sitting as a burden. These resources are only as excellent as what we can produce out of it as individuals and corporations. The concept of big data processes terabytes of raw data into meaningful value that can be used by businesses and individuals, such as predictive analytics. This way, data doesn't sit in a data center unused. Instead, it is turned into digital gold.
 
 Data visualization represents raw data and transforms it into graphs, charts, and pictures that show how the raw data is represented. Processing such data ensures that the data is clean and accurate. This enables us to acquire insights, identify new patterns and trends. The original raw data is given meaning and purpose by a visual depiction of it. As a consequence, patterns and trends emerge, and actionable insights can be generated.
 
@@ -355,7 +355,7 @@ When you run your live server, you will get a graph similar to this one:
 
 ### Conclusion
 
-P5.js is an ultimate sketch framework. It can be used with a variety of use cases such as creating illusion diagrams, designs simple games, data visualization, screen movements, etc. For example, [this pong game](https://margual56.github.io/pong/) was wholly designed using P5.js.
+P5.js is an ultimate sketch framework. It can be used with a variety of use cases such as creating illusion diagrams, designing simple games, data visualization, screen movements, etc. For example, [this pong game](https://margual56.github.io/pong/) was wholly designed using P5.js.
 
 ![pong-game](/engineering-education/getting-started-with-data-visualization-using-p5.js/pong-game.png)
 
