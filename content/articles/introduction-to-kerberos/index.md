@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /introdution-to-kerberos/
+url: /introduction-to-kerberos/
 title: Getting Started With Kerberos
 description: This article will discuss how Kerberos authentication protocol helps in promoting secure communication between the client and server.
 author: francis-ndiritu
@@ -10,7 +10,7 @@ date: 2021-10-25T00:00:00-10:40
 topics: [Networking]
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/introdution-to-kerberos/hero.jpg
+  - url: /engineering-education/introduction-to-kerberos/hero.jpg
     alt: Kerberos example image
 ---
 In this digital age, utilizing computers to share information and interact with one another is quite popular. However, precautions should be made to avoid leaking sensitive information during these interactions. Communication networks must be protected at all costs.
