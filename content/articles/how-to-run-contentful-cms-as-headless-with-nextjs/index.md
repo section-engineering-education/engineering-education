@@ -14,9 +14,18 @@ images:
   - url: /engineering-education/how-to-run-contentful-cms-as-headless-with-nextjs//hero.jpg 
     alt: How to run Contentful CMS as headless with Nextjs Image
 ---
-
-Contentful is built as a content repository making Content available via an API (RESTful or GraphQL) to be displayed on any device. This article will set up simple blog posts on the CMS and then display them to the users using Next.js. Finally, we will query the data from the CMS using an API.
+Contentful is a headless CMS. This means that it's built as a content repository making content available via an API (RESTful or GraphQL) to be displayed on any device. This article will set up simple blog posts on the CMS and then display them to the users using Next.js. We will query the data from the CMS using an API. We will use the content model. A content model refers to a Schema, which will allow the generation of similarly structured pieces of content. For example, for every blog post, we want to have a title, an excerpt, a description, a cover image, and a date. The composition of all these fields to a blog post makes up the Schema.
 <!--more-->
+### What is a headless CMS
+A content-oriented CMS consists of the backend and the frontend. This way, they both run as a monolithic system. It combines the various modules and features and runs as one. So when you run a CMS as a headless system, both the content and the presentation are decoupled. AS a headless system, the content presentation layer is now flexible. And the backed can now be driven with raw data using APIs (application programming interface).
+
+This way, you still have the CMS for content creation and management. Its API is used to deliver raw content. This means that you can create a website, a mobile app, or any application that uses the raw CMS content. Then represent it in the way that you want your users to see this data.
+
+### Reasons for running WordPress as a headless CMS
+- This allows you to modify the content delivery channels that you present to users. It lets you change the way content is presented without re-authorizing it.
+- Since the data is delivered as raw data, you can use any technology that fits your needs. API-driven data promotes omni-channel architecture.
+- It simplifies the work of developers by separating the frontend and backend components. This means you can create a faster efficient, and scalable application.
+
 ### Goal
 This article will interact with Contentful as a headless CMS by creating a simple posts app with Next.js.
 
@@ -28,6 +37,8 @@ To follow along with this article, it is crucial to have the following:
 - Have some working knowledge with Git.
 
 ### Table of contents
+- [What is a headless CMS](#what-is-a-headless-cms)
+- [Reasons for running WordPress as a headless CMS](#reasons-for-running-wordpress-as-a-headless-cms)
 - [Goal](#goal)
 - [Pre-requisites](#pre-requisites)
 - [Table of contents](#table-of-contents)
@@ -44,7 +55,7 @@ To follow along with this article, it is crucial to have the following:
 - [Displaying a single post](#displaying-a-single-post)
 - [Testing simpleBlogPost](#testing-simpleblogpost)
 - [Preview mode](#preview-mode)
-- [Hosting to vercel](#hosting-to-vercel)
+- [Hosting to Vercel](#hosting-to-vercel)
 - [References](#references)
 
 ### Creating an account with Contentful
@@ -58,7 +69,7 @@ You need to have an account with Contentful. If you already have an account, jus
 At this point, you are ready for the next step.
 
 ### Setting up the content model
-A content model refers to a Schema, which will allow the generation of similarly structured pieces of Content. For example, for every blog post we want to have a ***title***, an ***excerpt***, a ***description***, a ***cover-image***, and a ***date***. The composition of all these fields to a blog post makes up the schema.
+A content model refers to a Schema, which will allow the generation of similarly structured pieces of content. For example, for every blog post we want to have a ***title***, an ***excerpt***, a ***description***, a ***cover-image***, and a ***date***. The composition of all these fields to a blog post makes up the Schema.
 
 To set up the above Schema, follow the following steps:
 
@@ -67,7 +78,7 @@ To set up the above Schema, follow the following steps:
 - Then ***Create content type*** in the modal that pops up.
 - Give the ***content type*** a name of ***simple blog post***, the API identifier field is auto-populated, then give a brief description in the descriptions field like ***simple blog post content type***.
 
-After that, it is time to add the fields to make up the schema. We will add the fields we have discussed above one by one by following the following steps:
+After that, it is time to add the fields to make up the Schema. We will add the fields we have discussed above one by one by following the following steps:
 
 - Hit the ***Add field*** button to add ***title***,  choose ***text***, give it a name of *title*, then click ***create***.
 
@@ -93,7 +104,7 @@ Let us now add the cover image. To do so, click on ***Add new media***, give it 
 
 Also, remember to add a date, choose the current date. Finally, hit the ***Publish*** button to the right. You will see a notification message that your blog post was added successfully. From there, click on the back icon to the left to go to the Content's page.
 
-On the Content's page, you should be able to see your published blog post. You can repeat the process and add several posts to have several posts to fetch.After adding the posts, it is now time to set up our Next.js environment in the proceeding step.
+On the Content's page, you should be able to see your published blog post. You can repeat the process and add several posts to have several posts to fetch. After adding the posts, it is now time to set up our Next.js environment in the proceeding step.
 
 ### Setting up the Next.js app
 To set up the Next.js environment, we will use [create-next-app](https://nextjs.org/docs/api-reference/create-next-app). This is a one-time command that allows you to generate a Next.js template. It generates a ready structured project that allows you to scale up quickly and add more code as you go. To generate this Next.js template app, open a terminal (command line) and run the following command from the directory to save the template.
@@ -155,7 +166,7 @@ const POST_GRAPHQL_FIELDS = `
 `
 ```
 
-From above, we are defining the fields we want for every specific blog post following the schema we created.
+From above, we are defining the fields we want for every specific blog post following the Schema we created.
 
 Still in the `api.js`, create a custom method for establishing contact with the Contentful API:
 
@@ -212,7 +223,7 @@ export async function getAllPostsForHome(preview) {
 From above, we are using the custom method we defined above to get posts from the CMS. A point to note is that when we are querying more than one blog post, we will use `simpleBlogPostCollection`. If we were querying one blog post, we would use `simpleBlogPost`.
 
 ### Displaying the Posts
-We are now set to show the posts. In `pages/index.js`, we will fetch the posts using [getStaticProps](https://nextjs.org/docs/basic-features/data-fetching#getstaticprops-static-generation). It will simply imply that data will be pre-rendered at build time. This helps Next.js to serve a user this data ahead of time. Furthermore, this makes the web app render the Content very fast as if it was static.
+We are now set to show the posts. In `pages/index.js`, we will fetch the posts using [getStaticProps](https://nextjs.org/docs/basic-features/data-fetching#getstaticprops-static-generation). It will simply imply that data will be pre-rendered at build time. This helps Next.js to serve a user this data ahead of time. Furthermore, this makes the web app render the Content very fast, as if it was static.
 
 To implement this, import the `getAllPostsForHome` function from *lib/api.js* at the top of your in `pages/index.js`.
 
@@ -686,7 +697,7 @@ Refresh your page; you should now see the description as follows:
 
 ![post-page-with-description](/engineering-education/how-to-run-contentful-cms-as-headless-with-nextjs/post-page-with-description.png)
 
-Now, only one step is remaining, we need to be able to transition to the home page easily. For this, we will add a home link inside the main component, but before the content, as follows:
+Now, only one step is remaining. We need to be able to transition to the home page easily. For this, we will add a home link inside the main component, but before the content, as follows:
 
 ```js
 <div className={styles.homeLink}>
@@ -720,12 +731,12 @@ At this point now, the posts are now visible to the user as composition and inde
 ### Preview mode
 When you want to view the changes made to your blog posts that are not yet published, you need to use the preview mode. To do this, you will just need to pass the preview option to *true* whenever you are making the API call.
 
-### Hosting to vercel
-To host the project to vercel, follow the following steps:
+### Hosting to Vercel
+To host the project to Vercel, follow the following steps:
 
-- Create a Github repository and name it any name of your choice.
-- Push the code to your Github repository.
-- Log on to [vercel](https://vercel.com/).
+- Create a GitHub repository and name it any name of your choice.
+- Push the code to your GitHub repository.
+- Log on to [Vercel](https://vercel.com/).
 - If you do not have an account, simply sign up with any provider.
 - From your dashboard, click on [new project](https://vercel.com/new).
 - Under the ***import Git repository*** section, select the repository you previously created and click ***import***.
@@ -743,3 +754,5 @@ In this article, we have used various concepts revolving around Next.js and Cont
 - [Image component in Next.js](https://nextjs.org/docs/api-reference/next/image)
 - [Contentful and react.js intergration](https://www.contentful.com/developers/docs/javascript/tutorials/getting-started-with-react-and-contentful/)
 - [Git cheat sheet](https://www.atlassian.com/git/tutorials/atlassian-git-cheatsheet)
+
+All the source files and code used in this project are hosted on [GitHub](https://github.com/Catemacharia/How-to-run-Contentful-CMS-as-Headless-with-Next.js).
