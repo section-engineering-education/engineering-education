@@ -1,5 +1,22 @@
-### Introduction
-Flyway is a version control system that is used to maintain database migrations across all application instances. This article will create a student management system that manages database migrations with the Flyway migration tool. 
+---
+layout: engineering-education
+status: publish
+published: true
+url: /spring-boot-flyway-migrations/
+title: Managing Spring Boot database migrations using Flyway database migration tool
+description: This article introduces readers to the basic concepts of Flyway, a version control system
+author: sumba-elvis
+date: 2021-10-25T00:00:00-07:40
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/spring-boot-flyway-migrations/hero.png
+    alt: Flyway migrations image
+---
+Flyway is a version control system that is used to maintain database migrations across all application instances.
+<!--more-->
+This article will create a student management system that manages database migrations with the Flyway migration tool. 
 
 ### Prerequisites
 1. [Java Development Kit](https://www.oracle.com/java/technologies/downloads/) installed on your computer.
@@ -184,3 +201,6 @@ The command above rollbacks the last migration, In our case, it will remove the 
 
 ### Conclusion
 Now that you have learnt how to manage Spring Boot database migrations with the flyway migration tool, try implementing an application, create at least three migrations and try rolling back to the previous migrations. You can download the complete source code [here]().
+
+---
+Peer Review Contributions by: [Miller Juma](/engineering-education/authors/miller-juma/)
