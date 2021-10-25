@@ -2,7 +2,6 @@ One of the popular distributed, NoSQL database management systems is without a d
 
 This article explains the fundamentals of Apache Cassandra and Astra DB. We will perform CRUD operations on a blog database using Node.js and Datastax's document API. We will create tables, read database records, perform updates, and deletions.
 
-
 ### Prerequisites
 1. You'll need an [Astra DB](https://www.datastax.com/products/datastax-astra) account for the database.
 
@@ -195,6 +194,7 @@ Under the `GET` endpoint, we simply return a json response with blogs. To test o
 ![image9](/engineering-education/astradb-nodejs/image9.png)
 
 ### Creating documents in AstraDB
+To create a document in a collection, simply use the `POST` HTTP verb with an endpoint such as `/new`. The `create` method from the `collection` instance will create a new document. To test this, head to the thunder client and add a body that includes a `title`, `description`, and `author`.
 
 ```js
 // post route
@@ -205,21 +205,24 @@ app.post('/new', async(req, res) => {
     description: description,
     author: author
   })
-
-  console.log(req.body)
+    // return a success msg with the new doc 
   return res.json({data: newUser, msg: 'user created successfully'})
 })
 ```
+
+In the above code, using destructuring syntax, we pass the values to `collection.create()`. Our response returns a success message and the newly created document.
+
 ![creat route](/engineering-education/astradb-nodejs/image10.png)
 
 ### Updating documents in AstraDB
+For this operation, add one more `/update` endpoint. In REST, update operations use the `PUT` HTTP verb. The Astra Document API exposes the `collection.update( )` method to update any document based on its ID under a collection.
 
 ```js
 // updating docs
 app.put('/update', async(req, res)=>{
   const {title, description, author} = req.body
 const updatedUser = await collection.update("1b4a845d-7460-4971-a8a7-0ef371771d85", {
-  title: title,
+    title: title,
     description: description,
     author: author
   })
@@ -227,9 +230,12 @@ const updatedUser = await collection.update("1b4a845d-7460-4971-a8a7-0ef371771d8
   return res.json({data: updatedUser, msg: 'user updated successfully'})
 })
 ```
-![updates](/engineering-education/astradb-nodejs/image11.png)
+
+![update endpoint](/engineering-education/astradb-nodejs/image11.png)
 
 ### Deleting documents in AstraDB
+
+To delete records, add a `DELETE` with the `/delete` REST endpoint. In this case, we perform delete operations based on document ID. If the document does not exist, we return a 404 error message. On success, our API returns a JSON response as `user deleted successfully.
 
 ```js
 app.delete('/delete', async(req,res)=>{
@@ -242,7 +248,8 @@ app.delete('/delete', async(req,res)=>{
   return res.json({msg: 'user deleted successfuly'})
 })
 ```
-![delete record](/engineering-education/astradb-nodejs/image12.png)
+
+![delete endpoint](/engineering-education/astradb-nodejs/image12.png)
 
 ### Conclusion
 Being open-source, the Apache Cassandra is a popular database due to its ability to maintain seamless scalability and consistency in a distributed cloud infrastructure. Combining these technical features with the DataStax stargate API gateway gives us the ability to develop a serverless database with zero configuration. The database is serverless which has a great free tier and developer experience.
