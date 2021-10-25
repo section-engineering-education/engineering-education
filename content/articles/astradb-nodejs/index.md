@@ -1,6 +1,6 @@
-Apache cassandra is distributed No SQL database management system. To ensure reliablility at scale, Apache cassandra relies on replication and partitioning of its infrastructure. However, this form of cloud-native development is normaly complicated. 
+One of the popular distributed, NoSQL database management systems is without a doubt, Apache Cassandra. It guarantees scalability and reliability at scale across its infrastructure via partitioning and replication. However, this form of cloud-native development is normally slow and complex. Astra DB is a zero-config serverless database that abstracts the Apache Cassandra cloud-native services seamlessly for database and streaming operations.
 
-This article focuses on the basics of using Apache Cassandra and Astra DB. We will perform CRUD operations on a blog database using Node.js and Datastax's document API. We will create tables, read database records, perform updates, and deletions.
+This article explains the fundamentals of Apache Cassandra and Astra DB. We will perform CRUD operations on a blog database using Node.js and Datastax's document API. We will create tables, read database records, perform updates, and deletions.
 
 
 ### Prerequisites
@@ -8,11 +8,11 @@ This article focuses on the basics of using Apache Cassandra and Astra DB. We wi
 
 2. Have [Node.js] (https://nodejs.org/en/) runtime installed on your development system
 
-3. An IDE, I recommend [VS Code](https://code.visualstudio.com/) for developement. 
+3. An IDE, I recommend [VS Code](https://code.visualstudio.com/) for development. 
 
 ### Database Setup
 
-First, you'll need to login to DataStax. I use my GitHub account.However, you connect your Google account or even use email and password.
+First, you'll need to log in to DataStax. I use my GitHub account. However, you connect your Google account or even use your email and password.
 
 ![datastax-sign in](image1.png)
 
@@ -21,28 +21,28 @@ A successful login will take you to your AstraDB dashboard. On the left panel of
 
 ![dashboard](image2.png)
 
-To create a serverless database, choose a name and a keyspace. Apache Cassandra will use keyspaces to group data together. In my case, I will use `cassandra-demo` as the database name and `blog` as the keyspace.
+To create a serverless database, choose a name and a keyspace. Apache Cassandra will use keyspaces to group data together. In my case, I will name the database `cassandra-demo` and `blog` as the keyspace.
 
 ![database creation](image3.png)
 
->>> Documetation refers to keyspace as a bucket that will hold your tables. You can create different keyspaces for groups of tables”. 
+>>> Documentation refers to keyspace as a bucket that will hold your tables. You can create different keyspaces for groups of tables”. 
 
-Datastax's Astra DB is distributed on different regions. Before completing the database setup, pick a provider from the options. In my case, I will chose GCP and the region as us-east1.
+Datastax's Astra DB is distributed in different regions. Before completing the database setup, pick a provider from the options. In my case, I will choose GCP and the region as us-east1.
 
 ![cassandra-demo](image4.png)
 
 
-### Insert data to the database
-The Apache Cassandra is a NoSQLand therefore it organizes data in collections. When we create a Cassandra collection, it automatically exposes a REST or GraphQL API as an endpoint where we can interact with data from our database. We will utilize the document API gateway from our Node.js application.
+### Insert data into the database
+Since Apache Cassandra is a NoSQL, it organizes data in collections. When we create a Cassandra collection, it automatically exposes a REST or GraphQL API as an endpoint where we can interact with data from our database. We will utilize the document API gateway from our Node.js application.
 
-First, we need to create a new token for access to DataStax's database in our application. Head over to the DataStax Astra DB dashboard. On the panel, click connect. This shows various ways in cwhich we can access our application including REST and GraphQL APIs. We will use the Document API hence head over under the prerequisites and click the link to create a new Application token.
+First, we need to create a new token for access to DataStax's database in our application. Head over to the DataStax Astra DB dashboard. On the panel, click connect. This shows various ways in which we can access our application including REST and GraphQL APIs. We will use the Document API hence head over under the prerequisites and click the link to create a new Application token.
 
 ![application token](./image5.png)
 
 In this project, we will use the `Administrator role` to access every privilege in the database security. Finally, copy the generated `Client ID`, `Token`, and `Client Secret` and store them on your `env` file.
 
-Since we have no interface created, we will use [curl](https://curl.se/) command line to insert data. 
-The curl command to make POST request will be similar to the following:
+Since we have no interface created, we will use the [curl](https://curl.se/) command line to insert data. 
+The curl command to make a POST request will be similar to the following:
 
  ```bash
  curl --request POST \
@@ -55,7 +55,7 @@ The curl command to make POST request will be similar to the following:
 "author": "john doe"
 }'
 ```
-To insert more data, rerun this command with different title and other to insert more data. However, don't forget to change the `title`, `description` and `author` from the json body. 
+To insert more data, rerun this command with a different title and other to insert more data. However, don't forget to change the `title`, `description`, and `author` from the json body. 
 
 ### Project setup 
 
@@ -73,11 +73,11 @@ cd astra-app-demo && code .
 To bootstrap this project, initialize using the command `npm init -y` to create a `package.json` file. Let's now install the following dependencies:
 
 Our Node.js application will need the following packages from npm:
-- Express : `express` is a low overhead Node.js web application framework that relies on middlewares in request/response cycle.
+- Express: `express` is a low overhead Node.js web application framework that relies on middlewares in the request and response cycle.
 
-- @strajs/collections: This is the module that acts as driver to our document [stargate API]() in AstraDB. DataStax uses a Stargate API gateway to connect from Node.js application. 
+- @strajs/collections: This is the module that acts as a driver to our document [stargate API](https://stargate.io/) in AstraDB. DataStax uses a Stargate API gateway to connect from our Node.js application. 
   
-- Dotenv: Since we are using a serverless database, we need a way to store API keys. It injects environment varuables from a `.env` file in our application therefore avoiding hardcoding any sensitive data. Make sure to add a .env in your `.gitignore` file so that this is not pushed to a GitHub repository.
+- Dotenv: Since we are using a serverless database, we need a way to store API keys. It injects environment variables from a `.env` file in our application, therefore, avoiding hardcoding any sensitive data. Make sure to add a .env in your `.gitignore` file so that this is not pushed to a GitHub repository.
   
 - Nodemon: `nodemon` module monitors changes in our application and restarts our application server.
 
@@ -87,7 +87,7 @@ On your terminal, install the packages using the command below:
   npm i express @astrajs/collections dotenv nodemon
 ```
 
-If you are using the current version of Node.js, it has support for ES modules. To enable this, head to your package.json and add:
+Node.js 14 and latest has support for ES modules. To start using this feature, head to your package.json and add:
 
 ```json
   "type": "module",
@@ -134,15 +134,15 @@ Congratulations, the server setup is up and running! In the next sections, we wi
 
 ### Connecting and Retrieving data
 
-The initially generated credentials can now be added to the `.env` file. Under the `,gitignore`, make sure to exclude its commit to github public repository. The file should look like the following:
+The initially generated credentials can now be added to the `.env` file. Under the `.gitignore`, make sure to exclude its commit to GitHub public repository. The file should look like the following:
 
 ```bash
-ASTRA_DB_REGION=us-east1
-ASTRA_DB_KEYSPACE=stackr
-ASTRA_DB_APPLICATION_TOKEN=AstraCS:cfytbTtziwRAJZLPrCREbwGr:ca95e6a3af67c4b9491980cb6806473f7705efe9bc7cc29b89d3d49324922873
+ASTRA_DB_REGION = us-east1
+ASTRA_DB_KEYSPACE = stackr
+ASTRA_DB_APPLICATION_TOKEN= YOUR_DB_APPLICATION_CLIENT_TOKEN
 
-ASTRA_DB_CLIENT_ID=cfytbTtziwRAJZLPrCREbwGr
-ASTRA_DB_CLIENT_SECRET=4ZeNCi8J3fTtb6ZUvKUMqMRHh,eN+E4v-a.5X55WcGPR9NNCf++kNQTJH6rPHnHcA9WvHfkS.GvW5_4,ysCB+hpgiJP-r3+TA.3Mr-dUaC5_dhvjIHZwy,CgPyDUp12H
+ASTRA_DB_CLIENT_ID= YOUR_CLIENT_ID
+ASTRA_DB_CLIENT_SECRET= YOUR_CLIENT_SECRET
 ```
  
 At the top of our `index.js` file, let's import `createClient` from `@astrajs/collections` with:
@@ -151,7 +151,7 @@ At the top of our `index.js` file, let's import `createClient` from `@astrajs/co
 import { createClient } from "@astrajs/collections"`
 ```
 
-Since we are interacting with an API, we use express middlewares to to parse json and url encoded data with the following:
+Since we are interacting with an API, express uses middlewares to parse the json and url encoded data as follows:
 
 ```js
 // enable json and url encoded data
@@ -159,7 +159,7 @@ app.use(express.json())
 app.use(express.urlencoded({extended: false}))
 ```
 
-Finally, we need to create an instance of the collection client, `createClient`. Invoke the function passing the environment varibales set earlier as object arguments.
+Finally, we need to create an instance of the collection client, `createClient`. Invoke the function passing the environment variables set earlier as object arguments.
 
 ```js
 // create an Astra DB client
@@ -176,9 +176,9 @@ To simplify the database collection, we will create for the collection that we w
 const collection = astraClient.namespace("stackr").collection("testcollection")
 ```
 
-The collection needs a namespace which is the keyspace, and a name. I've used `testcollection`.
+The collection needs a namespace which is the keyspace and a collection name. We name them `stackr` and `testcollection` respectively.
 
-Let' head over to list all blogs in our collection. Create a `GET` route that will list all collections. The `find` method provided by our `collection` instance while passing an empty query to display everything. This is an asynchrnous task hence we utilize the `async/ await` syntax.
+Let' head over to list all blogs in our collection. Create a `GET` route to list all collections. The `find` method from the `collection` instance is the method that returns all records in the collection:
 
 ```js
 // get all documents
@@ -188,7 +188,7 @@ app.get('/blogs', async (req, res) => {
 }
 ```
 
-Under the `GET` endpoint, we simply return a json response with blogs. I will use the thunder client as the API client, however, you can use [postman]() as well. AstraDB sends back the data with the document ID as the key.
+Under the `GET` endpoint, we simply return a json response with blogs. To test our API responses, I will use  [thunder client VS Code extension](https://marketplace.visualstudio.com/items?itemName=rangav.vscode-thunder-client). Feel free to use any other REST API Client such as [postman](https://www.postman.com/) or [insomnia](https://insomnia.rest/). If we make a `GET` request, AstraDB sends back the data with the document ID as the key:
 
 ![image8](image8.png)
 
@@ -245,8 +245,8 @@ app.delete('/delete', async(req,res)=>{
 ![delete record](image12.png)
 
 ### Conclusion
-Being open source, the Cassandra is a popular database due to its ability to maintain seamless scalability and consistency in a distributed cloud infrastructure. Combining this technical features with DataStax stargate API gateway gives us the ability to develop a serverless database with zero configuration. The database is serverless which has a great free tier and developer experience.
+Being open-source, the Apache Cassandra is a popular database due to its ability to maintain seamless scalability and consistency in a distributed cloud infrastructure. Combining these technical features with the DataStax stargate API gateway gives us the ability to develop a serverless database with zero configuration. The database is serverless which has a great free tier and developer experience.
 
-DataStax's free account includes a generous free tier of upto 25 USD of usage credit. Past this, the payment scales with a pay-as-you-go plan. To read more, check the `astrajs` docs [here](https://docs.datastax.com/en/astra/docs/astra-collection-client.html).
+To read more, check the `astrajs` docs [here](https://docs.datastax.com/en/astra/docs/astra-collection-client.html).
 
 I hope you enjoy this article.
