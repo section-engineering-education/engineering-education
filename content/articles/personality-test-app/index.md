@@ -199,7 +199,7 @@ b.latitude, freedom
 ```
 ### The overview of the functions
 
-#### The run function
+### The run function
 In the run function, we set variables to keep track of users’ options, which helps us compute the personality identities as they enter them. The variables are meant to count the occurrence of A’s and B’s as answers, and then use that to compute the identity accordingly.
 
 ```python
