@@ -6,7 +6,7 @@ This article will show you how to use Amazon Web Services (AWS) to store media f
 ### Table of Contents
 1. [Prerequisites](#prerequisites)
 2. [Setting up the Django Application](#setting-up-the-django-application)
-3. [Setting up Gallery](#setting-up-gallery)
+3. [Setting up Gallery](#setting-up-gallery-app)
 4. [Introduction to AWS S3](#introduction-to-aws-s3)
 4. [Configuring AWS S3](#configuring-aws-s3)
 5. [Testing Our Application](#testing-our-application)
@@ -267,55 +267,30 @@ In our `gallery` directory inside the templates, we create a file, `posts.html`:
 
 ```html
 <!DOCTYPE html>  
-
 <html lang="en" dir="ltr">  
-
- <head>  
-
-   <meta charset="utf-8">  
-
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">  
-
-   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>  
-
-   <title>Amazon Cloud With Django</title>  
-
- </head>  
-
- <body>  
-
-   <div class="header">  
-
-     <h2 class="text-center">Gallery Posts</h2>  
-
-   </div>  
-
-   <br>  
-
-   <div class="container-fluid">  
-
-     <div class="row">  
-
-       {% for post in posts %}  
-
-       <div class="col-md-4 col-sm-12">  
-
-         <div class="card" style='width: 100%; float: left; margin-bottom:10px;'>  
-
-           <img src="{{ post.image.url }}" class="img-responsive-resize" style="width: 100%; height: 400px; object-fit: cover; float: left; margin-right: 10px;" alt="">  
-
-         </div>  
-
-       </div>  
-
-       {% endfor %}  
-
-     </div>  
-
-   </div>  
-
- </body>  
-
+    <head>  
+        <meta charset="utf-8">  
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">  
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>  
+        <title>Amazon Cloud With Django</title>  
+    </head>  
+    <body>  
+        <div class="header">  
+            <h2 class="text-center">Gallery Posts</h2>  
+        </div>  
+        <br>  
+        <div class="container-fluid">  
+            <div class="row">  
+            {% for post in posts %}  
+            <div class="col-md-4 col-sm-12">  
+                <div class="card" style='width: 100%; float: left; margin-bottom:10px;'>  
+                <img src="{{ post.image.url }}" class="img-responsive-resize" style="width: 100%; height: 400px; object-fit: cover; float: left; margin-right: 10px;" alt="">  
+                </div>  
+            </div>  
+            {% endfor %}  
+            </div>  
+        </div>  
+    </body>  
 </html>  
 ```
 
@@ -455,7 +430,7 @@ Amazon Web Services is a cloud service that allows users to store their object f
 
 We’ll use Amazon S3 to store images from the application we created earlier. To do so, we first head over to the Amazon S3 [website](https://aws.amazon.com/s3/) and create an account. After registering an account, we sign in with the root user, like in the screenshot below:
 
-![aws login](/engineering-education/using-amazon-web-service-for-django-media-files-storage/aws-landing-page.jpg)
+![aws login](/engineering-education/using-amazon-web-service-for-django-media-files-storage/aws-landingpage.jpg)
 
 Amazon Web Services might charge a small fee to register an account. At the time of writing, this fee was $1. In the next section, we will create an S3 bucket to start our configuration.
 
@@ -484,7 +459,7 @@ However, we do not need the AWS console for that user, so we just leave it unche
 
 Next, we set the permissions. In `Attach existing policies directly`, we search for the S3 policies and click `AmazonS3FullAccess`. Although it gives our users more access than they need, the access key ID and secret access key protect us. The page should resemble the screenshot below:
 
-![aws details](/engineering-education/using-amazon-web-service-for-django-media-files-storage/detailstwo.jpg)
+![aws details](/engineering-education/using-amazon-web-service-for-django-media-files-storage/detailstwo-aws.jpg)
 
 For the next step, we leave the tags blank as we will not require them. We then review the user and the steps we completed then create a user. Our user should have an access key ID and secret access key, like in the screenshot below:  
 
