@@ -1,5 +1,21 @@
-The blockchain is the new buzzword in town and everyone seems to be talking about it. But, how do businesses actually use the technology without having to build it from scratch?
+---
+layout: engineering-education
+status: publish
+published: true
+url: /introduction-to-blockchain-as-a-service/
+title: How to Create Customer Parsers in Java?
+description: This article will be an introduction to understanding concepts of Blockchain as a Service (BaaS). We'll explore more on how it works, why adoption rate of BaaS is rising, and many more concepts on BaaS.
+author: john-kanoi
+date: 2021-10-26T00:00:00-22:00
+topics: [Blockchain]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/introduction-to-blockchain-as-a-service/hero.png
+    alt: Intro to BaaS image
+---
+The blockchain is the new buzzword in town and everyone seems to be talking about it. But, how do businesses actually use the technology without having to build it from scratch?
+<!--more-->
 Blockchain as a service (BaaS) enables companies to develop applications on various blockchains - such as Ethereum, Ripple or NEO - without having to code from scratch.
 
 Clients benefit from BaaS since it allows faster application development, lower maintenance costs, and faster adoption of blockchain technology.
