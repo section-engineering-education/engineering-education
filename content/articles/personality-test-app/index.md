@@ -38,7 +38,7 @@ def display(personality_type):
     print(f"Your personality type is -> {personality_type}")
 ```
 
-#### A function that computes the personality test
+### A function that computes the personality test
 This function will implement all our logic. So we have to store our test questions into a list.
 
 ```python
