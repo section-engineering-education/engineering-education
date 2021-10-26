@@ -280,7 +280,7 @@ def exit_application():
     sys.exit(0)
 ```
 
-#### Homepage function
+### Homepage function
 This function is designed to mimic a landing page on the web. We only accept two options (1 or 2). We also checked for wrong inputs using python exception handling.
 
 ```python
