@@ -1,11 +1,11 @@
 ### Introduction
 Java is an object-oriented programming language. The importance of the use of lambdas as a programmer is to make your code appear shorter, efficient, and above all functional. 
 
-An object could be physical or imaginary, it just has to do with the way we see things in general. For example, a wallet is an object that has a method to store money, make money, add cards, get cards, this is physical while an account can also store money, get balance and this is imaginary etc.
+An object could be physical or imaginary, it just has to do with the way we see things in general. For example, a wallet is an object that has a method to store money, make money, add cards, get cards, this is physical while an account can also store money, get balance and this is imaginary, etc.
 
 Example 2: a bucket is an object that also has a method to store fluids either solid, liquid, or gas depending on what you want to store it with and get fluid.
 
-Now it gets interesting when you have a collection of wallets with different items in it and you want to access the one with the red card that has money more than #30,000 (the symbol '#' is naira in Nigeria currency), this is when lambdas come in because it's hard to iterate through a collection without making mistakes and even if it works it's definitely not efficient.
+Now it gets interesting when you have a collection of wallets with different items in it and you want to access the one with the red card that has money more than #30,000 (the symbol '#' is naira in Nigeria currency), this is when lambdas come in because it's hard to iterate through a collection without making mistakes and even if it works it's not efficient.
 ### Prerequisite
 - A basic understanding of the Java OOP (Object Oriented Programming) concept.
 - Basic understanding of lambdas
@@ -34,7 +34,7 @@ Input all of them inside into a folder call it Lambda_Collection, this will serv
 ```Java
 package Lambda_Collection;
 public enum Card {
-    Red,Black,Green,Blue
+    Red, Black, Green, Blue
 }
 ```
 ```Java
@@ -83,7 +83,7 @@ Now we have seen how a wallet looks like on code, you can set the money and that
 
 The toString method is to make your object visible.
 
-Below is the code base of how the wallet collection is going to look like before we use lambdas to display and manipulate through.
+Below is the code base of how the wallet collection is going to look before we use lambdas to display and manipulate through.
 ```Java
 package Lambda_Collection;
 
@@ -122,7 +122,7 @@ When you want to get specific fields we use the filter method, this method takes
  Two major interfaces that will help you to manipulate your collections using lambdas are the Functions<T, R> and the Predicate<T>.
  
 The Predicate takes in an argument and returns true or false, this is used to check whether a particular  parameter meets the condition while Function takes in parameter and also return required datatype
-Customers<T> takes in argument and return void such as the forEach
+Customers<T> take in argument and return void such as the forEach
 Supplier<T>etc takes in no argument and returns a value of T.
 
 We use the Predicate interface to check if the pipeline meets a certain condition, Predicate<T> this takes an argument and then returns true or false which validates, it is then used with the filter which is an intermediate method that takes in a predicate method.
@@ -184,7 +184,7 @@ Result
 ```
 #34000.00 Red`
 ```
-N/B if you are writing these codes make sure that every time you use a Predicate interface always use a different variable.
+N/B if you are writing these codes make sure that every time you use a Predicate interface always uses a different variable.
 
 Function<T,R>
 ```java
