@@ -1,8 +1,8 @@
 ### Building a Personality Test App with Python
 ### Introduction
-In this article, we will take a cursory look into how we can effectively use python lists and functions to design a console app that makes use of Python's data structures in a clear and understandable manner. 
+In this article, we will take a cursory look into how we can effectively use python lists and functions to design a console app that makes use of Python's data structures in a clear and understandable manner.
 
-We are going to design a personality test app that makes use of test questions from [Myers Briggs website](https://pdfcoffee.com/the-myers-test-pdf-free.html).
+We are going to design a personality test app that makes use of test questions from [Myers Briggs questionnaires](https://pdfcoffee.com/the-myers-test-pdf-free.html).
 
 ### How the Myers Briggs Personality Test Works
 There are several indices for testing people's identities, but we focus our test on  questions from Myers Briggs parameters which are;
@@ -29,7 +29,7 @@ In this module, we would use the exit() function to terminate the first interact
 import sys
 ```
 
-#### A function that displays the personality identity.
+### A function that displays the personality identity.
 We will use the function declared here to display our user's personality identity after the test.
 
 ```python
@@ -311,9 +311,9 @@ if __name__ == "__main__":
 ### Conclusion
 At the end of this article, we should be able to implement the use of python lists together with functions and exception handling to build a console app that computes a personality identity.
 
-The link to this project can be found in [my GitHub](https://github.com/CaptainBKola/funTimeWithPython/blob/main/projects/myersbriggs.py)
+The link to this project can be found in [my GitHub repo](https://github.com/CaptainBKola/funTimeWithPython/blob/main/projects/myersbriggs.py)
 
 ### References
-[Myers briggs personality](https://www.verywellmind.com/the-myers-briggs-type-indicator-2795583)
+[Myers briggs personality type indicators](https://www.verywellmind.com/the-myers-briggs-type-indicator-2795583)
 
 [introduction to computer and python](https://deitel.com/wp-content/uploads/2019/11/intro-to-python-for-computer-science-and-data-science-table-of-contents.pdf)
