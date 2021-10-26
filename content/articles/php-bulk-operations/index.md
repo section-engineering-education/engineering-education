@@ -319,3 +319,6 @@ This article guided readers on how to perform bulk operations in PHP using MySQL
 We build a project that lists employees' information to import more records from an Excel file, export to excel, and event PDF formats. 
 
 Additionally, we discussed setting up the `fpdf library` for exporting data into PDF formats. The reader should find more about this library and how to use it better with company-specific customizations.
+
+---
+Peer Review Contributions by: [Jerim Kaura](/engineering-education/authors/jerim-kaura/)
