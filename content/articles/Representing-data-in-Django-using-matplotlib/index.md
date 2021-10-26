@@ -211,12 +211,10 @@ def sales(request):
         'search_form': search_form,
     }
     return render(request, 'sales.html',  context)
-def sales_list(request):
-    object_list = Sale.objects.all()
-    return render(request, 'saleslist.html', {'object_list':object_list})
+
 
 ```
-The `sales` function will render the search form to the html file while the `sales_list` function will render all our sales to the html file defined above
+The `sales` function will render the search form to the html file. 
 
 ### Creating our templates
 We need to create our html files first. Let's begin by changing our settings on template configuration. Edit the `settings.py` to the following:
@@ -247,7 +245,6 @@ Create a folder called `templates` in the same level as `manage.py` e.t.c and cr
 └── templates
     ├── base.html
     ├── sales.html
-    └── saleslist.html
 
 ```
 
@@ -264,36 +261,24 @@ Edit the `base.html` as follows:
     <meta charset="UTF-8">
     <link rel="stylesheet" href="{% static 'style.css' %}">
     <link rel="stylesheet" href="{% static 'bootstrap-5.0.0-beta1-dist/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.js"></script>
 
 
 
-    {% block scripts %}
-    {% endblock scripts %}
+
+
     <title>Report App | {% block title %} {% endblock title %}</title>
 </head>
 <body>
 
-
-
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-        <a href="#" class="navbar-brand"><img style="height:100px;width:100px;" src="{% static 'book.jpg' %}" alt=""
-                                              class="logo-sm"></a>
-        <div id="navbarNav" class="collapse navbar-collapse">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a href="#" class=" active  nav-link">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" >Sales</a>
-                </li>
-
-
-            </ul>
-        </div>
-
-    </div>
-</nav>
+<div class="ui secondary  menu">
+    <a class="item"><img style="height:100px;width:100px;" src="{% static 'book.jpg' %}" alt=""></a>
+  <a href="#" class="  active item">
+    Home
+  </a>
+</div>
 
 <div class="container mb-3 mt-3">
     {% block content %}
@@ -307,8 +292,8 @@ This is the basic html file that is used by other files. All common styling are 
 rewriting the same lines of code across many files. Any other file that needs it will only need to have
 `{% extends 'base.html' %}` in order to borrow its styling.
 
-This file will also has links across our application. We will have two links `Home` and `Sales`
-to navigate between our data representation page and sales list page. We will configure routing a little bit later.
+This file will also has links across our application. We will have a link `Home` 
+to navigate to our data representation page. We will configure routing a little bit later.
 
 The `sales.html` file should be similar to this:
 
@@ -340,27 +325,10 @@ Home
 This file allows us to display our search form in the file. The user can fill the form and submit using the 
 `Search` button.Later we will add our data representations here.
 
-Finally the `saleslist.html` file should look as follows:
 
-`templates/saleslist.html`
-```jinja
-{% extends 'base.html' %}
-
-{% block title %}
-Sales List
-{% endblock title %}
-{% block content %}
-{% for obj in object_list %}
-<div class="card mb-3">
-    <a  class="card-body"> {{obj.transaction_id}}</a>
-</div>
-{% endfor %}
-{% endblock content %}
-```
-This file will list our sales in a card-body using transaction_id. You should be able to see all transaction_ids when you visit the page.
 
 ### Routing views
-In order to see our views in action, we will need to configure routing. Let's create a `urls.py` file that will handle routing to our function and class.The mappings above imply that the requests will first be handled by this file and then routed to a corresponding view function and class.
+In order to see our view in action, we will need to configure routing. Let's create a `urls.py` file that will handle routing to our function and class.The mappings above imply that the requests will first be handled by this file and then routed to a corresponding view function and class.
 Add the following lines of code to it:
 
 `sales/urls.py`
@@ -370,17 +338,13 @@ from . import views
 
 urlpatterns = [
     path('', views.sales, name='sales'),
-    path('saleslist', views.SalesListView.as_view(), name='saleslist')
+
 ]
 ```
 Let's handle routing for our `sales` app. In `SALES/urls.py` edit it to look  like this:
 
-```python
 
-from django.conf import settings
-from django.conf.urls.static import static
-from django.contrib import admin
-from django.urls import path, include
+```python
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -389,7 +353,7 @@ urlpatterns = [
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 ```
-Let's also edit `base.html` to be able to access the different  views. Edit it as follows:
+Let's also edit `base.html` to be able to access the  view. Edit it as follows:
 
 `base.html`
 ```jinja
@@ -400,6 +364,9 @@ Let's also edit `base.html` to be able to access the different  views. Edit it a
     <meta charset="UTF-8">
     <link rel="stylesheet" href="{% static 'style.css' %}">
     <link rel="stylesheet" href="{% static 'bootstrap-5.0.0-beta1-dist/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.js"></script>
 
 
 
@@ -410,27 +377,17 @@ Let's also edit `base.html` to be able to access the different  views. Edit it a
 <body>
 
 {% url 'sales' as sales_home %}
-{% url 'saleslist' as sales_list %}
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-        <a href="#" class="navbar-brand"><img style="height:100px;width:100px;" src="{% static 'book.jpg' %}" alt=""
-                                              class="logo-sm"></a>
-        <div id="navbarNav" class="collapse navbar-collapse">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a href="{{sales_home}}" class=" {% if request.path == sales_home %} active {% endif %} nav-link">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{sales_list}}" class="{% if request.path == sales_list %} active {% endif %} nav-link">Sales</a>
-                </li>
+<div class="ui secondary  menu">
+    <a class="item"><img style="height:100px;width:100px;" src="{% static 'book.jpg' %}" alt=""></a>
+  <a href="{{sales_home}}" class=" active item">
+    Home
+  </a>
+  
 
 
-            </ul>
-        </div>
+</div>
 
-    </div>
-</nav>
 <div class="container mb-3 mt-3">
     {% block content %}
     {% endblock content %}
@@ -444,9 +401,6 @@ When you visit `http://127.0.0.1:8000` you should have something a page with our
 
 ![Sales Page](/engineering-education/content/articles/Representing-data-in-Django-using-matplotlib/Sales_Page.png)
 
-When you click on the `Sales` link, you should have the sales listed in transaction_ids as follows:
-
-![SalesList Page](/engineering-education/content/articles/Representing-data-in-Django-using-matplotlib/SalesList_Page.png)
 
 ### Creating the graphical representations.
 We are now going to get our graphical representations on our web page. First, we are going to need to install the `pandas` library to create dataframes of our sales.
@@ -502,9 +456,7 @@ def sales(request):
        
     }
     return render(request, 'sales.html',  context)
-def sales_list(request):
-    object_list = Sale.objects.all()
-    return render(request, 'saleslist.html', {'object_list':object_list})
+
 
 ```
 The function first checks if there is a POST request to our application.If there is, we initialize variables to get the date from, 
@@ -624,6 +576,7 @@ more readable in our page. The part `data:image/png;base64` is responsible for h
 When you fill the form you should have something like this when you select bar chart.
 
 `http://127.0.0.1:8000/`
+
 ![Bar Graph](/engineering-education/content/articles/Representing-data-in-Django-using-matplotlib/Bar_chart.png)
 
 When you select pie chart:
