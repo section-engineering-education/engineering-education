@@ -690,4 +690,4 @@ Golang is a cool language to work with. You can create almost any application th
 
 The code that we have used to build the todo application can be found on [GitHub for further reference](https://github.com/Joakim-gakure/Go-todo-app-using-Go-Fiber-and-Gorm/tree/main).
 
-I hope you found this tutorial helpful in understanding Go Fiber and how to use it to run a handle Go application.
+I hope you found this tutorial helpful in understanding Go Fiber and how to use it to run and handle Go application.
