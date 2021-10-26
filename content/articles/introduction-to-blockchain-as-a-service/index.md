@@ -14,9 +14,9 @@ images:
   - url: /engineering-education/introduction-to-blockchain-as-a-service/hero.png
     alt: Intro to BaaS image
 ---
-The blockchain is the new buzzword in town and everyone seems to be talking about it. But, how do businesses actually use the technology without having to build it from scratch?
+The blockchain is the new buzzword in town and everyone seems to be talking about it. But, how do businesses use the technology without having to build it from scratch?
 <!--more-->
-Blockchain as a service (BaaS) enables companies to develop applications on various blockchains - such as Ethereum, Ripple or NEO - without having to code from scratch.
+Blockchain as a service (BaaS) enables companies to develop applications on various blockchains - such as Ethereum, Ripple, or NEO - without having to code from scratch.
 
 Clients benefit from BaaS since it allows faster application development, lower maintenance costs, and faster adoption of blockchain technology.
 
@@ -30,13 +30,13 @@ Clients benefit from BaaS since it allows faster application development, lower 
 To understand this article, one should have good knowledge and understanding of how blockchain works.
 
 ### Blockchain as a Service
-Cloud applications provide a variety of on-demand services such as compute engine, storage, security and pre-configured APIs.
+Cloud applications provide a variety of on-demand services such as compute engine, storage, security, and pre-configured APIs.
 
-In the same way, Blockchain as a Service (BaaS) provides access to back-end infrastructure for companies that wants to use blockchain technology, but don't have the skills or resources to build their own software.
+In the same way, Blockchain as a Service (BaaS) provides access to back-end infrastructure for companies that want to use blockchain technology, but don't have the skills or resources to build their own software.
 
 Blockchain as a service (BaaS) offers an alternative way to implement blockchain technology. It allows companies to focus on their business problems without having to worry about the underlying [distributed ledger](https://en.wikipedia.org/wiki/Distributed_ledger) system.
 
-The actual definition of BaaS is much broader than one specific option for application development. Different types of BaaS provide different sets of functionalities that can grouped based on functionalities.
+The actual definition of BaaS is much broader than one specific option for application development. Different types of BaaS provide different sets of functionalities that can be grouped based on functionalities.
 
 ### How is the adoption of blockchain aided by BaaS?
 BaaS provides a platform that accelerates the development lifecycles through rapid deployment, minimal upfront costs, and quick time to market.
@@ -45,40 +45,40 @@ It also reduces the cost of integration, testing, security, migration, and opera
 
 ### Why choose BaaS? 
 #### What is the benefit of rapid deployment?
-Applications can be up and running much faster when compared to traditional development environments. Meaning - the companies can actually start making money faster by deploying Blockchain apps faster.
+Applications can be up and running much faster when compared to traditional development environments. Meaning - the companies can start making money faster by deploying Blockchain apps faster.
 
-BaaS allows development blockchain apps (BApps) with nearly zero capital investment into software engineering. The cost is almost negligible.
+BaaS allows the development of blockchain apps (BApps) with nearly zero capital investment into software engineering. The cost is almost negligible.
 
 Thanks to the availability of pre-packaged Blockchain APIs.
 
 #### How are the costs reduced?
-There are no upfront capital expenditures exclusively for the blockchain infrastructure, since BaaS services runs on existing cloud infrastructure. So, there's no need to purchase expensive hardware or hire specialized labor.
+There are no upfront capital expenditures exclusively for the blockchain infrastructure since BaaS services run on existing cloud infrastructure. So, there's no need to purchase expensive hardware or hire specialized labor.
 
 There are almost no resources to be wasted on devising separate strategies for implementing security, scaling, or managing data.
 
 #### What are the benefits of quick time for the go-to-market (GTM)?
-Typically, there would be a lot of back and forth between development and IT to make sure that apps works with company's existing infrastructure.
+Typically, there would be a lot of back and forth between development and IT to make sure that apps work with the company's existing infrastructure.
 
-We need worry about these, since BaaS provides rapid prototyping and deployment of Blockchain Apps.
+We need not worry about these since BaaS provides rapid prototyping and deployment of Blockchain Apps.
 
 BaaS also helps in reducing maintenance costs, improving system reliability, and providing better scalability.
 
 #### What are the benefits of minimal upfront costs?
 BaaS reduces the costs of building new applications, integrating with pre-existing systems, migrating existing data, testing, and running them in production.
 
-Companies need not spend time or money to setup their own sandbox environment with nodes to start developing BApp.
+Companies need not spend time or money to set up their sandbox environment with nodes to start developing BApp.
 
 ### Understanding BaaS
 BaaS allows users to create, host, and administer their blockchain apps and  processes using cloud-based technology. The infrastructure is kept adaptive and operating by the cloud-based service provider.
 
 BaaS is considered as an exploit of blockchain in the blockchain ecosystem that helps enterprises adopt this technology.
 
-### How it works?
+### How does it work?
 When a company (customer) signs a BaaS contract with an IT partner, the company effectively agrees that the BaaS partner would build all that's required in terms of Blockchain system or software for the clients in exchange for the cost of the service fee that's stated in agreement.
 
 On behalf of customers, the BaaS providing the service deploys all requirements of the system and also leverages the necessary technologies and equipment to create as well as manage Blockchain-connected nodes.
 
-BaaS providers may use any distributed ledger available like Bitcoin or Ethereum, based on customer's business requirements to set up a blockchain network.
+BaaS providers may use any distributed ledger available like Bitcoin or Ethereum, based on customers' business requirements to set up a blockchain network.
 
 Furthermore, the BaaS provider is responsible for maintaining all the important Blockchain-related artifacts as well as managing the infrastructure.
 
@@ -96,7 +96,7 @@ In the case of BaaS, this will be even more challenging due to the lack of readi
 While there are numerous things to consider when selecting a BaaS provider, there are a few general rules to follow: 
 
 #### Prior experience/credentials in establishing blockchain infrastructure
-Make sure your BaaS provider has a track record of creating blockchain technology based deployment or in a similar environment to the one that you propose.
+Make sure your BaaS provider has a track record of creating blockchain technology-based deployment or in a similar environment to the one that you propose.
 
 If at all possible, inquire about qualifications or references from former clients.
 
@@ -112,17 +112,17 @@ It's critical because even minor flaws can lead to serious consequences. When it
 Examine the previous installations of cloud-based services and the system they operate on. You must also guarantee that the new Blockchain installation works in tandem with your existing system.
 
 #### Usability
-Ensure blockchain enabled systems and processes you're proposing are simple to use and implement.
+Ensure blockchain-enabled systems and processes you're proposing are simple to use and implement.
 
 After all, you don't want a system that's difficult to use or navigate for your staff, since this could lower the adoption rates and hurt your bottom line.
 
 #### Prices and Supporters
 Every customer desires to pay the cost of that which a BaaS provider provides.
 
-Examine alternatives of pricing, as well as the deploying support and modalities. Paying for that, adds the biggest value to your company.
+Examine alternatives of pricing, as well as the deploying support and modalities. Paying for that adds the biggest value to your company.
 
 ### Can we control bandwidth or resource allocation or hosting even for public blockchain?
-Most of the open source blockchain implementations are controlled by one or few individual entity. That will not scale well for globe spanning decentralized apps.
+Most of the open-source blockchain implementations are controlled by one or a few individual entities. That will not scale well for globe-spanning decentralized apps.
 
 We need an abstraction layer where one can easily provision and de-provision any number of public instances (over TCP/IP) hosting a blockchain; we call this Blockchain as a service (BaaS).
 
@@ -137,11 +137,11 @@ An example of a company using BaaS is Microsoft's Azure.
 
 On the Azure website, developers can find a platform to develop and test blockchain applications (Azure).
 
-It is believed that this will allow financial institutions and banks to work more closely with each other on what are called [smart contracts](https://www.investopedia.com/terms/s/smart-contracts.asp).
+It is believed that this will allow financial institutions and banks to work more closely with each other on what is called [smart contracts](https://www.investopedia.com/terms/s/smart-contracts.asp).
 
-Without going too much into the details, smart contracts are basically data based scripts that self-execute when specific conditions are met.
+Without going too much into the details, smart contracts are data-based scripts that self-execute when specific conditions are met.
 
-There is also a [blog post](https://azure.microsoft.com/en-in/blog/author/markruss/) written by the CTO of Microsoft's Azure, Mark Russinovich and even an entire site dedicated to BaaS development called [BlockApps](https://azure.microsoft.com/en-in/blog/blockapps-strato-smd-upgrade/).
+There is also a [blog post](https://azure.microsoft.com/en-in/blog/author/markruss/) written by the CTO of Microsoft's Azure, Mark Russinovich, and even an entire site dedicated to BaaS development called [BlockApps](https://azure.microsoft.com/en-in/blog/blockapps-strato-smd-upgrade/).
 
 BlockApps website provides developers with guidelines and tutorials on how they can build their own private blockchain implementation (Blockapps). Using its tools and modules, developers can build, test and deploy their own blockchain applications that use smart contracts.
 
