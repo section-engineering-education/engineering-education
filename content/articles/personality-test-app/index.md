@@ -266,7 +266,7 @@ else:
  ```
 
 #### Quit the app with exit function
-This is a separate function that checks the decision of the user.
+This is a separate function that allows the user to exit the application.
 The sys module here enables us to exit from the terminal if the user decides not to take the test.
 
 ```python
