@@ -8,6 +8,7 @@ There are several indices for testing people's identities, but we focus our test
 - Sensing or Intuitive
 - Judging or Perceiving
 - Thinking or Feeling
+
 At the end of each of the four sections, we pick the highest value from each of the sections above to compute a personality identity type. The identity types are divided into 16. You can learn more about the types here.
 
 ### Prerequisite
