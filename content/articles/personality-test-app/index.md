@@ -304,7 +304,9 @@ if __name__ == "__main__":
 ```
 
 ### Conclusion
-At the end of this article, we are able to implement the use of python list together with functions and exception handling to build a console app that computes a personality identity. The link to this project can be found in my github [here](https://github.com/CaptainBKola/funTimeWithPython/blob/main/projects/myersbriggs.py)
+At the end of this article, we should be able to implement the use of python lists together with functions and exception handling to build a console app that computes a personality identity.
+
+The link to this project can be found in [my GitHub](https://github.com/CaptainBKola/funTimeWithPython/blob/main/projects/myersbriggs.py)
 
 ### References
 [Myers briggs personality](https://www.verywellmind.com/the-myers-briggs-type-indicator-2795583)
