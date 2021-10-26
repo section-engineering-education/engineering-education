@@ -1,6 +1,8 @@
 ### Building a Personality Test App with Python
 ### Introduction
-In this article, we will take a cursory look into how we can effectively use python list and functions to design a console app that makes use of python data structure in a more clearer and understandable manner. We are going to design a personality test app that makes use of test questions from [Myers Briggs website](https://pdfcoffee.com/the-myers-test-pdf-free.html).
+In this article, we will take a cursory look into how we can effectively use python lists and functions to design a console app that makes use of Python's data structures in a clear and understandable manner. 
+
+We are going to design a personality test app that makes use of test questions from [Myers Briggs website](https://pdfcoffee.com/the-myers-test-pdf-free.html).
 
 ### How the Myers Briggs Personality Test Works
 There are several indices for testing people's identities, but we focus our test on  questions from Myers Briggs parameters which are;
