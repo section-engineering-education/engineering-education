@@ -1,5 +1,21 @@
-Production systems are important in artificial intelligence (AI) because they enhance the creation of AI-based programs and the automation of machines. They also enhance the fast and accurate resolution of conflicts in automated processes through the use of IF-THEN conditions. 
+---
+layout: engineering-education
+status: publish
+published: true
+url: /breaking-down-the-production-system-in-ai/
+title: Breaking Down the Production System in AI
+description: In this article, we will learn about the production system in artificial intelligence. We will look at the features, components, classification and the real-life applications of production systems. 
+author: grace-karimi
+date: 2021-10-26T00:00:00-13:30
+topics: [Artificial Intelligence]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/breaking-down-the-production-system-in-ai/hero.jpg
+    alt: Production System Image
+---
+Production systems are important in artificial intelligence (AI) because they enhance the creation of AI-based programs and the automation of machines. They also enhance the fast and accurate resolution of conflicts in automated processes through the use of IF-THEN conditions. 
+<!--more-->
 This article provides a breakdown of the production system in AI. It will look at the features, components, types, and applications of production systems in AI. 
 
 ### What is Production system in AI?
@@ -81,10 +97,15 @@ A good example is when a car or an automated machine is not working properly. Th
 2. **IF** the engine is not turning **AND** the battery is working, **THEN** ask the driver to test the starter motor. 
    
 ### Conclusion
-This article aimed at providing an overview of production systems in Artificial Intelligence. The following is a summary of what we have learned.
+This article aimed at providing an overview of production systems in artificial intelligence. The following is a summary of what we have learned.
 1. A production system supports artificial intelligence through a set of rules and mechanisms for executing them. 
 2. The main features of production systems include simplicity, modularity, modifiability, knowledge-intensive, and adaptability. 
 3. Production systems consist of three components: a global database, production rules, and a control system.
 4. These systems can be categorized into monotonic, partially commutative, non-monotonic, and commutative systems. 
 5. They are used to execute commands in automated machines such as washing machines, airplanes, and autonomous cars. 
 6. They are also used in automated processes to recommend the best course of action in case of conflicts. 
+
+Happy learning!
+
+---
+Peer Review Contributions by: [Onesmus Mbaabu](/engineering-education/authors/onesmus-mbaabu/)
