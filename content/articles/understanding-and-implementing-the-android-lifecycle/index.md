@@ -303,15 +303,15 @@ The intent above will assist us in executing and navigating to Activity2. To exe
 
 This is how the application should look like on your Android device:
 
-![mainactivity-screen)](/engineering-education/understanding-and-implementing-the-android-lifecycle/mainactivity-screen.png)
+![MainActivity screen)](/engineering-education/understanding-and-implementing-the-android-lifecycle/mainactivity-screen.png)
 
 Before running this application, make sure you open the Logcat window in Android Studio:
 
-![logcat](/engineering-education/understanding-and-implementing-the-android-lifecycle/logcat.png)
+![Logcat](/engineering-education/understanding-and-implementing-the-android-lifecycle/logcat.png)
 
 Immediately after the app is launched, the following methods are executed sequentially:
 
-![first-methods](/engineering-education/understanding-and-implementing-the-android-lifecycle/first-methods.png)
+![First methods](/engineering-education/understanding-and-implementing-the-android-lifecycle/first-methods.png)
 
 The app begins by executing the `onCreate()` function. At this stage, the application's components are not yet visible.
 
@@ -321,23 +321,23 @@ Let's now navigate to `activity2` by clicking the `go-to Activity2` Button.
 
 At this moment, `Activity2` is blocking the `MainActivity`. This means that the `MainActivity` will be paused using the `onPause()` callback. This is highlighted below:
 
-![onpause-main-activity](/engineering-education/understanding-and-implementing-the-android-lifecycle/onpause-main-activity.png)
+![OnPause main activity](/engineering-education/understanding-and-implementing-the-android-lifecycle/onpause-main-activity.png)
 
 It shows that when the user switched to `Activity2`, `MainActivity` was paused. At this point, `MainActivity` will be saved in a back stack.
 
 When `Activity2` is brought to the foreground, `onStop()` will also be called on `Mainctivity`. This is because the Android system is releasing any resources that `MainActivity` is not using.
 
-![switching-activities-logs](/engineering-education/understanding-and-implementing-the-android-lifecycle/switching-activities-logs.png)
+![Switching activities logs](/engineering-education/understanding-and-implementing-the-android-lifecycle/switching-activities-logs.png)
 
 Note that MainActivity is not destroyed. This means that its states are saved in the memory, and we can retrieve them. To do so, navigate back to the previous activity and watch the Logcat messages.
 
-![onrestart-main-activity](/engineering-education/understanding-and-implementing-the-android-lifecycle/onrestart-main-activity.png)
+![OnRestart main activity](/engineering-education/understanding-and-implementing-the-android-lifecycle/onrestart-main-activity.png)
 
 As you can see, three methods are executed here: `onRestart()`, `onStart()`, and `onResume()`.
 
 When you `back press`, it means you are exiting the activity, and the callbacks will execute as shown below:
 
-![ondestroy-main-activity](/engineering-education/understanding-and-implementing-the-android-lifecycle/ondestroy-main-activity.png)
+![OnDestroy main activity](/engineering-education/understanding-and-implementing-the-android-lifecycle/ondestroy-main-activity.png)
 
 As you can see, when exiting the application, `onDestroy()` is not called first. The activity still follows its lifecycle.
 
