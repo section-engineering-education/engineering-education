@@ -317,10 +317,3 @@ The link to this project can be found in [my GitHub](https://github.com/CaptainB
 [Myers briggs personality](https://www.verywellmind.com/the-myers-briggs-type-indicator-2795583)
 
 [introduction to computer and python](https://deitel.com/wp-content/uploads/2019/11/intro-to-python-for-computer-science-and-data-science-table-of-contents.pdf)
-
-
-
-
-
-
-
