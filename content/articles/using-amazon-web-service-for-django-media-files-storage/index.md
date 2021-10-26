@@ -566,3 +566,6 @@ In addition, we used AWS cloud storage to store the photos to scale the site qui
 Using these same techniques, you can create your own Django application and set up cloud image hosting to scale along with your user base.
 
 For a detailed discussion of AWS and getting started, check their [documentation](https://docs.aws.amazon.com/s3/index.html). To get started with the Django Framework, explore their [documentation](https://docs.djangoproject.com/en/3.2/intro/).
+
+---
+Peer Review Contributions by: [Jerim Kaura](/engineering-education/authors/jerim-kaura/)
