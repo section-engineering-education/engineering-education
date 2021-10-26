@@ -19,7 +19,7 @@ At the end of each of the four sections, we pick the highest value from each of 
 - [Personality test questions from Myers Briggs](https://pdfcoffee.com/the-myers-test-pdf-free.html)
 
 ### Building the App
-#### Create a Python file
+### Create a Python file
 The first step towards building the test app is to create a python file, we can call it personality.py
 
 #### Import the python module sys
