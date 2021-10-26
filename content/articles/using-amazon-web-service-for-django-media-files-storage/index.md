@@ -5,8 +5,7 @@ published: true
 url: /using-amazon-web-service-for-django-media-files-storage/
 title: Using Amazon Web Services for Django media file storage.
 description: This article will provide a detailed information on decision trees in python and how to use them in classifications and regression problems
-author: stanley-juma
-
+author: oruko-pius
 date: 2021-10-26T00:00:00-07:08
 topics: []
 excerpt_separator: <!--more-->
