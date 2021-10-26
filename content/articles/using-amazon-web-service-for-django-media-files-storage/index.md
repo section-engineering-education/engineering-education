@@ -1,6 +1,23 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /using-amazon-web-service-for-django-media-files-storage/
+title: Using Amazon Web Services for Django media file storage.
+description:This article will show you how to use Amazon Web Services (AWS) to store media files, which will run on a Django backend server. 
+author: oruko-pius
+date: 2021-10-26T00:00:00-07:08
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/using-amazon-web-service-for-django-media-files-storage/hero.jpg
+    alt:  Using Amazon Web Services for Django media file storage Image.
+---
+
 ### Introduction
 Cloud storage services make application scalability easy. These services enable webpages to serve large files without causing heavy traffic and load to the application database, reducing the system load time and offering a good user experience.   
-
+ <!--more-->
 This article will show you how to use Amazon Web Services (AWS) to store media files, which will run on a Django backend server. First, we will introduce how to get started with Django, then later move on to setting up a cloud service, in this case, Amazon Simple Storage Service (S3). Finally, our application will retrieve images from S3 and display them to users.
 
 ### Table of Contents
@@ -13,33 +30,22 @@ This article will show you how to use Amazon Web Services (AWS) to store media f
 6. [Conclusion](#conclusion)
 
 ### Prerequisites
-To follow along and get the most out of this article, you should have elementary knowledge of web applications. 
-
-In addition, However, it is helpful to have a more advanced comprehension of the Python language and its frameworks. Optionally, you can familiarize yourself with Django.
+To follow along and get the most out of this article, you should have elementary knowledge of web applications. In addition, it is helpful to have a more advanced comprehension of the Python language and its frameworks. Optionally, you can familiarize yourself with Django.
 
 Install Python 3 or above on your local machine before starting this project.
 
 ### Setting up the Django Application  
-Django is a Python-based web framework to build scalable website applications with ease. 
-
-This software has been around for quite some time, and a strong community of users keep improving it to suit developers’ needs. 
-
-We will use Django as our backend logic and SQLite as our development database.   
+Django is a Python-based web framework to build scalable website applications with ease. This software has been around for quite some time, and a strong community of users keep improving it to suit developers’ needs. We will use Django as our backend logic and SQLite as our development database.   
 
 We need a virtual environment to install and run a Django application. A virtual environment separates a particular Python project’s dependencies, libraries, and packages from other projects. 
 
-You can also install it globally to save time recreating the environment for a new project.
-
-There are various ways to create a virtual environment, depending on your local machine’s operating system.  
-
-Before you create a virtual environment, open your terminal and create a folder called django_sample by running this script on the terminal:
+You can also install it globally to save time recreating the environment for a new project. There are various ways to create a virtual environment, depending on your local machine’s operating system.  Before you create a virtual environment, open your terminal and create a folder called django_sample by running this script on the terminal:
 
 ```bash
 mkdir django_sample
 ```
 
-To get to the directory, run `cd django_sample` in the terminal. `mkdir` and `cd` are terminal commands to make a directory and change a directory, respectively.  
-
+To get to the directory, run `cd django_sample` in the terminal. `mkdir` and `cd` are terminal commands to make a directory and change a directory, respectively. 
 A more straightforward way of creating a virtual environment in Linux is by running `pip install pipenv` in the terminal and activating it by running `pipenv shell`.
 
 After activating the environment, install Django by executing:
@@ -160,9 +166,7 @@ INSTALLED_APPS = [
 ]  
 ```
 
-We placed the app in `INSTALLED_APPS` because that is where Django checks for models, management commands, and other utilities.
-
-In the project directory, `django_project`, we need to include the app in  `urls.py`  because the Django project directory serves the application. 
+We placed the app in `INSTALLED_APPS` because that is where Django checks for models, management commands, and other utilities.In the project directory, `django_project`, we need to include the app in  `urls.py`  because the Django project directory serves the application. 
 
 In the file, import `include()` from the `django.urls` module. Then, add a path and include `gallery.urls`, which will fetch the routes from the app directory when the application runs. Our file should resemble this:  
 
@@ -204,26 +208,16 @@ class Post(models.Model):
        return self.title
 ```
 
-First, we import the models from `django.db.models.Models` that enable us to map the properties of our model in the database table. 
+First, we import the models from `django.db.models.Models` that enable us to map the properties of our model in the database table. Then, we import the Image module from Pillow library `PIL`. To install this, we type:`pipenv install Pillow`.
 
-Then, we import the Image module from Pillow library `PIL`. To install this, we type:`pipenv install Pillow`.
+We then create a `Post` model by passing it `models.Model` as a parameter. We use docstrings, not conventional comments, to describe what the class does. Finally, we describe two fields in the model, title and image, and specify their fields.
 
-We then create a `Post` model by passing it `models.Model` as a parameter. We use docstrings, not conventional comments, to describe what the class does. 
-
-Finally, we describe two fields in the model, title and image, and specify their fields.
-
-Since the name is a string, we use the `CharField` model field and `ImageField` for the image attribute. We then specify where the images will upload. 
-
-In this case, our application uploads the photos to the images directory in the media parent folder, as we will see later in this article.
-
-Pass the maximum number of character lengths to the `CharField` field, which in our case is 100.  
+Since the name is a string, we use the `CharField` model field and `ImageField` for the image attribute. We then specify where the images will upload. In this case, our application uploads the photos to the images directory in the media parent folder, as we will see later in this article. Pass the maximum number of character lengths to the `CharField` field, which in our case is 100.  
 
 To view the name of our posts instead of the default Python name, we define a magic string` __str__()`. It takes itself as an argument and uses it to return the title of our posts.
 
 #### Creating our View
-Let us create our view now. Python’s view functions take web requests and return a response, which the application can call in the controllers and display in the browser.
-
-Our view function will be simple since it is not the main focus of this article. The snippet below shows the view function in `views.py` in the gallery directory:  
+Let us create our view now. Python’s view functions take web requests and return a response, which the application can call in the controllers and display in the browser. Our view function will be simple since it is not the main focus of this article. The snippet below shows the view function in `views.py` in the gallery directory:  
 
 ```python
 from django.shortcuts import render  
@@ -240,15 +234,9 @@ def posts(request):
    return render(request, 'gallery/posts.html', context)  
 ```
 
-Django already imports the `render()` from `django.shortcuts` package. `render()` enables us to return the contents of a template.
+Django already imports the `render()` from `django.shortcuts` package. `render()` enables us to return the contents of a template.We import the `Post` model we created earlier from the `models.py` file. We place a period before the models to show the path to the `models.py` file.Then, we pass a request as an argument in our posts view as an `HttpRequest` object. As we will see later, this enables us to call the view function in our routes.
 
-We import the `Post` model we created earlier from the `models.py` file. We place a period before the models to show the path to the `models.py` file.
-
-Then, we pass a request as an argument in our posts view as an `HttpRequest` object. As we will see later, this enables us to call the view function in our routes.
-
-We also pass in a context that contains the objects in our models in dictionary format. The dictionary value, `Post.objects.all()`, retrieves all the `Post` objects. As of now, our `Post` model is empty as we have not added any posts yet.
-
-We then render the yet-to-be-created template, `posts.html`. Finally, we pass in the request and context which the code will call before rendering our template.  
+We also pass in a context that contains the objects in our models in dictionary format. The dictionary value, `Post.objects.all()`, retrieves all the `Post` objects. As of now, our `Post` model is empty as we have not added any posts yet. We then render the yet-to-be-created template, `posts.html`. Finally, we pass in the request and context which the code will call before rendering our template.  
 
 #### Setting up Templates  
 In the gallery directory, create a sub-directory called `templates`. Then, create another directory similar to our app name, `gallery` in the templates directory. These are Django conventions:
@@ -320,9 +308,7 @@ urlpatterns = [
 ]  
 ```
 
-We import the path function from the `django.urls` module and views from the parent directory, gallery. `urlpatterns` is an array to route our views.
-
-We leave the route blank using the `path()` as it will be the home page when running the application. However, it can take any route, and it is not a convention for homepages to take the default route. 
+We import the path function from the `django.urls` module and views from the parent directory, gallery. `urlpatterns` is an array to route our views.We leave the route blank using the `path()` as it will be the home page when running the application. However, it can take any route, and it is not a convention for homepages to take the default route. 
 
 For instance, if we have many pages and want users to route to the about page, we can configure it as `about/` instead of blank. For this case, your landing page will take a blank route.
 
