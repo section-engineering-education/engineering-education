@@ -43,7 +43,7 @@ We will develop the bot by following the steps below:
 
 From the options on the left side of the page, click on `Create new Algorithm`. You will be directed to the editor with a class generated automatically.
 
- ![](new.png)
+![new](engineering-education/algorithmic-trading-bot-using-python/new.png)
 
 For my case, here is the class generated:
 
