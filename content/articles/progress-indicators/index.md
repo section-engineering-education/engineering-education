@@ -198,3 +198,6 @@ We built a web project and added a progress indicator to demonstrate our discuss
 
 ### Further reading
 Since there are many progress indicators, you can style yours differently into a circular or using a GIF, but the JavaScript implementation remains similar. The reader can play with the CSS to give it a more stunning look.
+
+---
+Peer Review Contributions by: [Mercy Meave](/engineering-education/authors/mercy-meave/)
