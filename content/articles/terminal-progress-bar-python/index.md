@@ -17,7 +17,7 @@ images:
 
 ### Introduction
 
-Maybe your application involves a file upload or downloads at some point through the terminal/console. You will, at one point, want to show the progress in the said interface. Terminal progress bars are a great way to visualize to the user the progress of an underlying task. We will look at how to do that using file downloads.
+Maybe your application involves file uploads or downloads at some point through the terminal/console. You will, at one point, want to show the progress in the said interface. Terminal progress bars are a great way to visualize to the user the progress of an underlying task. We will look at how to do that using file downloads.
 
 There are various libraries to do that in Python, including tqdm, Progress, Alive Progress, etc.
 
@@ -69,35 +69,20 @@ def Download_File():
 Download_File()
 
 ```
-
-```python
-def Download_File():
-        #the url where the file is found
-        download_url = 'https://sacco.terrence-aluda.com/sacco/images/ab1.jpg'
-        #opening the file
-        site = urllib.request.urlopen(download_url)
-        #getting the meta data
-        meta = site.info()
-        print("File size in bytes", meta.get("Content-Length"))
-        print("Downloaded data: Remaining size: Downloaded percentage: Total size")
-        #where the file will be saved
-        save_location = 'thispic.png'
-        #downloading the file
-        urllib.request.urlretrieve(download_url,save_location, Handle_Progress)
-```
-
 The `Download_File()` function first gets the size of the file in bytes from the file's meta response header information, *Content-Length*. That is done after getting the file's contents using the imported module's `urlopen()` method.
 
-After that, it starts downloading the file using the `urlretrieve()` method. This method takes in three parameters which I'll explain their usage below.
+After that, it starts downloading the file using the `urlretrieve()` method. This method takes in three parameters as explained below.
 1. `download_url` - The URL where the file to be downloaded is located.
 2. `save_location` - The location where the downloaded file will be stored.
 3. `Handle_Progress` - The function for processing the download progress is passed as a callback. We'll look at this function in the next part.
+
+> Callbacks in Python, or any other language, are functions that are executed after a certain code is executed. They are usually passed in as arguments to other functions. A common use case is displaying some text after a file has finished being loaded/read from the machine's storage. Read more about callbacks in Python [here](https://pythonexamples.org/python-callback-function/).
 
 ```python
 def Handle_Progress(block_num, block_size, total_size):
         read_data= 0
         # calculating the progress
-        # storing a temporary value  to store downloaded bytesso that we can add it later to the overall downloaded data
+        # storing a temporary value  to store downloaded bytes so that we can add it later to the overall downloaded data
         temp = block_num * block_size
         read_data = temp + read_data
         #calculating the remaining size
