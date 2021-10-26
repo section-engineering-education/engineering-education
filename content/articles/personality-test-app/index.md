@@ -1,7 +1,22 @@
-### Building a Personality Test App with Python
+---
+layout: engineering-education
+status: publish
+published: true
+url: /personality-test-app/
+title: Building a Personality Test App with Python
+description: The goal of this tutorial is to make convincing concepts clearer and understandable enough for beginners and show the implementation of arrays in Python.
+author: badmus-kola
+date: 2021-10-27T00:00:00-16:35
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+ - url: /engineering-education/personality-test-app/hero.jpeg
+   alt: Personality test python
+---
 ### Introduction
 In this article, we will take a cursory look into how we can effectively use python lists and functions to design a console app that makes use of Python's data structures in a clear and understandable manner.
-
+<!--more-->
 We are going to design a personality test app that makes use of test questions from [Myers Briggs questionnaires](https://pdfcoffee.com/the-myers-test-pdf-free.html).
 
 ### How the Myers Briggs Personality Test Works
@@ -317,3 +332,6 @@ The link to this project can be found in [my GitHub repo](https://github.com/Cap
 [Myers briggs personality type indicators](https://www.verywellmind.com/the-myers-briggs-type-indicator-2795583)
 
 [introduction to computer and python](https://deitel.com/wp-content/uploads/2019/11/intro-to-python-for-computer-science-and-data-science-table-of-contents.pdf)
+
+---
+Peer Review Contributions by: [Adrian Murage](/engineering-education/authors/adrian-murage/)
