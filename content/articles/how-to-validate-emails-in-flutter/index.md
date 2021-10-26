@@ -265,3 +265,6 @@ I recommend any programmer to use any flutter application due to its' compatibil
 
 ### References:
 - https://pub.dev/documentation/email_validator/latest/
+
+---
+Peer Review Contributions by: [Jerim Kaura](/engineering-education/authors/jerim-kaura/)
