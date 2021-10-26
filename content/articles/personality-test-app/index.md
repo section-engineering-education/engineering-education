@@ -29,7 +29,7 @@ In this module, we would use the exit() function to terminate the first interact
 import sys
 ```
 
-#### A function that displays the personality identity.
+### A function that displays the personality identity.
 We will use the function declared here to display our user's personality identity after the test.
 
 ```python
