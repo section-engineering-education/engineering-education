@@ -207,9 +207,7 @@ class _FirstPageState extends State<MyHomePage> {
 ```  
 
 This is where all the code we need to run for the page is. This page contains: 
-text field
-button 
-labels amongst other widgets.
+text field,button labels,  amongst other widgets.
 
 - Step3. Create a second page to navigate to after the validation.
 Create a new file in the lib folder and call it `secondpage.dart`. Then, in the same file, add the snippets below.
@@ -257,7 +255,7 @@ Trying login without filling in any detail          |  inValid email input
 
 Valid email input           |  After running and valid email
 :-------------------------:|:-------------------------:
-![Valid email input](/engineering-education/how-to-validate-emails-in-flutter/validemail.jpg)  |  ![After running and valid email](/engineering-education/how-to-validate-emails-in-flutter/validatedemail.jpg)
+![Valid Email Input](/engineering-education/how-to-validate-emails-in-flutter/validemail.jpg)  |  ![After running and valid email](/engineering-education/how-to-validate-emails-in-flutter/validatedemail.jpg)
 
 
 ### Conclusion
