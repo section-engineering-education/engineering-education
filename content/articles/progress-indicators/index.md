@@ -6,7 +6,7 @@ url: /progress-indicators/
 title: Web Application Progress Indicator Project.
 description: This article explains the benefits of a progress indicator by developing a web project to demonstrate the concept.
 author: dianne-sandra
-date: 2021-10-23T00:00:00-11:00
+date: 2021-10-26T00:00:00-12:18
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
