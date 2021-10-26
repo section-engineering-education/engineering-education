@@ -14,8 +14,12 @@ images:
   - url: /engineering-education/how-to-run-contentful-cms-as-headless-with-nextjs//hero.jpg 
     alt: How to run Contentful CMS as headless with Nextjs Image
 ---
-Contentful is a headless CMS. This means that it's built as a content repository making content available via an API (RESTful or GraphQL) to be displayed on any device. This article will set up simple blog posts on the CMS and then display them to the users using Next.js. We will query the data from the CMS using an API. We will use the content model. A content model refers to a Schema, which will allow the generation of similarly structured pieces of content. For example, for every blog post, we want to have a title, an excerpt, a description, a cover image, and a date. The composition of all these fields to a blog post makes up the Schema.
+Contentful is a headless CMS. This means that it's built as a content repository making content available via an API (RESTful or GraphQL) to be displayed on any device. 
 <!--more-->
+This article will set up simple blog posts on the CMS and then display them to the users using Next.js. We will query the data from the CMS using an API. We will use the content model. 
+
+A content model refers to a Schema, which will allow the generation of similarly structured pieces of content. For example, for every blog post, we want to have a title, an excerpt, a description, a cover image, and a date. The composition of all these fields to a blog post makes up the Schema.
+
 ### What is a headless CMS
 A content-oriented CMS consists of the backend and the frontend. This way, they both run as a monolithic system. It combines the various modules and features and runs as one. So when you run a CMS as a headless system, both the content and the presentation are decoupled. AS a headless system, the content presentation layer is now flexible. And the backed can now be driven with raw data using APIs (application programming interface).
 
