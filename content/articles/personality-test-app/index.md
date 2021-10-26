@@ -11,7 +11,7 @@ There are several indices for testing people's identities, but we focus our test
 - Judging or Perceiving
 - Thinking or Feeling
 
-At the end of each of the four sections, we pick the highest value from each of the sections above to compute a personality identity type. The identity types are divided into 16. You can learn more about the types on the specified [website](https://www.verywellmind.com/the-myers-briggs-type-indicator-2795583).
+At the end of each of the four sections, we pick the highest value from each of the sections above to compute a personality identity type. The identity types are divided into 16. You can learn more about the types on the [specified resource](https://www.verywellmind.com/the-myers-briggs-type-indicator-2795583) website.
 
 ### Prerequisite
 - Python 3.0 and above
