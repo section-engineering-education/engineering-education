@@ -16,7 +16,7 @@ where $$I$$ is a particular item in a items dataset.
 - Confidence: The confidence measures how the consumer is likely to consume $$I_2$$ given they have consumed $$I_1$$. 
   It's calculated using the formular
   $$Confidence(I_1\rightarrow I_2) = \frac{transaction cointaing(I_1and I_2)}{transactions containing(I_1)}$$
-- Lift: A lift is a metric that determines the strength of association between the best rules. It is obtained by taking confidence and dive it with support. Its mathematical formula is as follows:
+- Lift: A lift is a metric that determines the strength of association between the best rules. It is obtained by taking confidence and diving it with support. Its mathematical formula is as follows:
   $$Lift(I_1\rightarrow I_2) = \frac{Confidence(I_1\rightarrow I_2)}{Support(I_2)}$$
 
 Since we now understand the basics of the apriori algorithm, let us learn how to develop this model in python to use it and obtain the best association rule from a dataset.
@@ -83,7 +83,9 @@ rule = apriori(transactions = transacts, min_support = 0.003, min_confidence = 0
 ```
 
 ## Step 3: Visualising the results
-If we call the list output of the above code, we obtain a non-tabular result, which might be challenging to interpret. Therefore, to make things easier, we shall transform the outputs into a pandas data frame. The code below carries out this task.
+If we call the list output of the above code, we obtain a non-tabular result, challenging to interpret. 
+
+Therefore, to make things easier, we shall transform the outputs into a pandas data frame. The code below carries out this task.
 
 ```python
 output = list(rule) # retuns  a non-tabular output
@@ -115,4 +117,6 @@ output_DataFrame.nlargest(n = 10, columns = 'Lift')
 ![sorted_output](/engineering-education/apriori-algorithm-in-python /lift.png)
 
 ### Conclusion
-This article looked at the general intuition behind the apriori algorithm and showed how we could implement this algorithm in python using a transactional dataset. I hope this session was helpful, and we can now implement this algorithm in other datasets comfortably. Enjoy learning.
+This article looked at the general intuition behind the apriori algorithm and showed how we could implement this algorithm in python using a transactional dataset.
+
+I hope this session was helpful, and we can now implement this algorithm in other datasets comfortably. Enjoy learning.
