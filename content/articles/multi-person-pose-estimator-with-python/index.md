@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /multi-person-pose-estimator-with-python/
 title: Multi-Person Pose Estimation with Python
-description: This tutorial will help readers understand how carry out multi-person pose estimation with Python.
+description: This tutorial will help readers understand how to carry out multi-person pose estimation with Python. We will use a technique known as Multi-Person Pose Estimation to predict human joint locations of people in an image frame.
 author: willies-ogola
-date: 2021-10-22T00:00:00-13:00
+date: 2021-10-26T00:00:00-13:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -14,9 +14,11 @@ images:
   - url: /engineering-education/multi-person-pose-estimator-with-python/hero.png
     alt: Multiperson Pose Example Image
 ---
-The Multi-Person Pose Estimation is a model designed for sports and exercise-based applications. The model can detect six people in an image or video simultaneously, and 17 keypoint joints per person.
+The Multi-Person Pose Estimation is a model designed for sports and exercise-based applications. The model can detect six people in an image or video simultaneously, and 17 key-point joints per person.
 <!--more-->
-This tutorial will use a technique known as Multi-Person Pose Estimation to predict human joint locations of people in an image frame. One of the most popular use cases is in [kinematics](https://en.wikipedia.org/wiki/Kinematics), which analyzes the body and all the different angles and joints within a body.
+This tutorial will use a technique known as Multi-Person Pose Estimation to predict human joint locations of people in an image frame. 
+
+One of the most popular use cases is in [kinematics](https://en.wikipedia.org/wiki/Kinematics), which analyzes the body and all the different angles and joints within a body.
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
@@ -29,17 +31,19 @@ This tutorial will use a technique known as Multi-Person Pose Estimation to pred
 - [Further reading](#further-reading)
 
 ### Prerequisites
-To understand this tutorial, you need to be familiar with:
-- Machine learning.
+To understand this tutorial, you'll need to be familiar with:
+- [Machine learning](/engineering-education/topic/machine-learning/).
 - OpenCV library.
 - Python programming language.
 - Jupyter Notebook or Google Colab. To follow through, please use Google Colab.
 - TensorFlow and [TensorFlow Hub](https://www.tensorflow.org/hub). TensorFlow Hub is a repository consisting of trained machine learning models which you can download and use in any of your projects.
 
-> You need to download the `footballers.mp4` video file from this [Google drive](https://drive.google.com/file/d/1AMrHeQ-wmZEg1xe5bG47t-JA4HABTzid/view?usp=sharing) account and upload it into your Google Colab. I uploaded it on my Google Colab for this tutorial but it get's deleted after runtime. So, you'll need to download it and upload it yourself to avoid errors.  
+> You'll need to download the `footballers.mp4` video file from this [Google drive](https://drive.google.com/file/d/1AMrHeQ-wmZEg1xe5bG47t-JA4HABTzid/view?usp=sharing) account and upload it into your Google Colab. I uploaded it on my Google Colab for this tutorial but it get's deleted after runtime. So, you'll need to download it and upload it yourself to avoid errors.  
 
 ### Introduction
-[Multi-Person Pose Estimation](https://tfhub.dev/google/movenet/multipose/lightning/1) is one of Google's latest models built on top of their lightning model. It is an improvement from the [MoveNet.SinglePose](https://blog.tensorflow.org/2021/05/next-generation-pose-detection-with-movenet-and-tensorflowjs.html) model, which could only detect single poses. The model comprises three models. The backbone network is built using the [MobileNetV2](https://arxiv.org/pdf/1801.04381.pdf) network, the feature extraction layer is comprised of [Feature Pyramid Networks](https://arxiv.org/pdf/1612.03144.pdf), and the layer that outputs the key points is comprised of the [CenterNet](https://arxiv.org/pdf/1904.07850.pdf) model. 
+[Multi-Person Pose Estimation](https://tfhub.dev/google/movenet/multipose/lightning/1) is one of Google's latest models built on top of their lightning model. It is an improvement from the [MoveNet.SinglePose](https://blog.tensorflow.org/2021/05/next-generation-pose-detection-with-movenet-and-tensorflowjs.html) model, which could only detect single poses. The model comprises three models. 
+
+The backbone network is built using the [MobileNetV2](https://arxiv.org/pdf/1801.04381.pdf) network, the feature extraction layer is comprised of [Feature Pyramid Networks](https://arxiv.org/pdf/1612.03144.pdf), and the layer that outputs the key points is comprised of the [CenterNet](https://arxiv.org/pdf/1904.07850.pdf) model. 
 
 The Multi-Person Pose Estimation is a model designed for sports and exercise-based applications. It is intended to be used between three to six feet from your camera or webcam. If you are working with distances more than six feet, this model might not be the most appropriate for you.
 
@@ -48,7 +52,7 @@ The Multi-Person Pose Estimation is a model designed for sports and exercise-bas
 Some of the use cases for this model are:
 - To determine the correctness of poses of yoga class members during a  yoga class.
 - To establish which swimmers have the best swimming strokes and those who need improvements during swimming lessons.
-- During supervision of a tennis lesson. The model would help you analyze the people with correct and incorrect stroke positions.
+- During supervision of a tennis lesson. The model would help analyze the people with correct and incorrect stroke positions.
 - In medical contexts to identify abnormal poses in patients.
 
 To use the Multi-Person Pose Estimation model, we will need to perform three processes:
@@ -73,10 +77,10 @@ import numpy as np
 ```
 
 - `numpy` will be used to help draw the keypoints and edges
-- `cv2` will allow us to leverage the OpenCV library for computer vision. In this tutorial, it will help us with using the webcam and running videos.
+- `cv2` will allow us to leverage the OpenCV library for computer vision. In this tutorial, it will help us when using the webcam and running videos.
 - `tensorflow_hub` will allow us to use the pre-trained Multi-Person Movenet model.
 
-If you're using a GPU, consider limiting the memory growth of your GPU to avoid receiving _out-of-memory_ errors. This restricts TensorFlow from using all the V-RAM on your machine.
+If you're using a GPU, consider limiting the memory growth of your GPU to avoid receiving *out-of-memory* errors. This restricts TensorFlow from using all the V-RAM on your machine.
 
 ```python
 gpus = tf.config.experimental.list_physical_devices('GPU')
@@ -90,6 +94,7 @@ for gpu in gpus:
 model = hub.load('https://tfhub.dev/google/movenet/multipose/lightning/1')
 movenet = model.signatures['serving_default']
 ```
+
 If you've read the model's [documentation](https://tfhub.dev/google/movenet/multipose/lightning/1), you'll realize that these two lines of code have been fetched directly from it.
 
 The first variable, `model` is downloading the model, while the second variable, `movement` is setting up a new variable to go ahead and use that model.
@@ -109,11 +114,15 @@ cap.release()
 cv2.destroyAllWindows()
 ```
 
-The above code is a standard OpenCV code that we've used in previous OpenCV tutorials. If you're not familiar with it, you can read this [documentation](https://opencv.org/). The code establishes a connection to our webcam, reads the frames in our images/videos, and renders the frames on our screen. The last piece of code shows us how to exit our application when done.
+The code above is a standard OpenCV code that we've used in previous OpenCV tutorials. If you're not familiar with it, you can read this [documentation](https://opencv.org/). 
+
+The code establishes a connection to our webcam, reads the frames in our images/videos, and renders the frames on our screen. The last piece of code shows us how to exit our application when done.
 
 >Note that the value `0` in `VideoCapture(0)` may change depending on the number of video devices you have. If `0` is not working, you can try and change this number.
 
-We will pass our `frame` captured to the model to use the frames with our model. This is done as follows:
+We will pass our `frame` captured to the model to use the frames with our model. 
+
+This is done as follows:
 
 ```python
 from google.colab.patches import cv2_imshow
@@ -144,12 +153,14 @@ cv2.destroyAllWindows()
 
 On the documentation, to run the model inference on an input image, it is recommended to resize and pad your image (adding 0s if the size is odd) so that:
 - The height/width are both multiples of 32.
-- The height to width ratio to be close enough to cover the original image's aspect ratio.
+- The height to width ratio should be close enough to cover the original image's aspect ratio.
 - The larger side should be made to be 256px. For example, a 720p image (i.e. 720x1280 (HxW)) should be resized and padded to 160x256 image.
 
-That is what that additional code does. We then make our detections using the `movenet` model and finally renders the keypoints.
+This is what that additional code does. We then make our detections using the `movenet` model and finally render the keypoints.
 
-The output is a float32 tensor of shape `[1, 6, 56]`. `1` represents the batch dimension, `6` represents the maximum number of people the model can detect, and `56` represents the predicted bounding box/keypoint locations and scores. The first 51 elements (17*3) are the keypoint locations and scores. The last five elements represent the region of the bounding box and the confidence score of the instance.
+The output is a float32 tensor of shape `[1, 6, 56]`. `1` represents the batch dimension, `6` represents the maximum number of people the model can detect, and `56` represents the predicted bounding box/keypoint locations and scores. 
+
+The first 51 elements (17*3) are the keypoint locations and scores. The last five elements represent the region of the bounding box and the confidence score of the instance.
 
 We've used NumPy `[:,:,:51]` to grab all batch dimensions, all of the maximum number of people, and only the 51 keypoint locations and scores because that's all we need to render our image. `reshape((6,17,3)` tells us that we're reshaping the keypoint to have `6` people, each person with `17` joints, each person having `3` values; the x,y, and confidence score.
 
@@ -218,12 +229,16 @@ EDGES = {
 }
 ```
 
-The above values tell us how to connect the joints. Remember we mentioned the order in which the 17 joints are read. So, for example, the first value, `(0, 1): 'm',` tells us how the nose connects to the left eye, and the last value, `(14, 16): 'c'` tells us how the right knee connects to the right ankle. 
+The values above tell us how to connect the joints. Remember we mentioned the order in which the 17 joints are read. So, for example, the first value, `(0, 1): 'm',` tells us how the nose connects to the left eye, and the last value, `(14, 16): 'c'` tells us how the right knee connects to the right ankle. 
 
 Please find all the code for this tutorial [here](https://colab.research.google.com/drive/1LO9e9jdvIE7bNCXd0fWduZeuDG37z83X?usp=sharing).
 
 ### Wrapping up
-To recap, we installed and imported our dependencies, loaded the model, made detections using either the webcam or videos and finally drew the keypoints and edges. If you're not getting accurately drawn keypoints and edges, or it's drawing on objects that shouldn't, you can try tuning the and confidence score and scale value to obtain the correct aspect ratio. The larger the image that you pass through, the slower the detections are going to be. The vice versa is also true.
+To recap, we installed and imported our dependencies, loaded the model, made detections using either the webcam or videos and finally drew the keypoints and edges. 
+
+If you're not getting accurately drawn keypoints and edges, or it's drawing on objects that it shouldn't, you can try tuning the and confidence score and scale value to obtain the correct aspect ratio. 
+
+The larger the image that you pass through, the slower the detections are going to be. The opposite is also true.
 
 Happy coding!
 
