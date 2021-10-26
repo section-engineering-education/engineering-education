@@ -1,35 +1,36 @@
 ### Introduction
-Java is majorly an object-oriented programming language.
+Java is an object-oriented programming language. The importance of the use of lambdas as a programmer is to make your code appear shorter, efficient, and above all functional. 
 
-The importance of lambdas as a programmer is to make your code appear shorter, efficient, and above all functional. Everything in Java is an object. 
+An object could be physical or imaginary, it just has to do with the way we see things in general. For example, a wallet is an object that has a method to store money, make money, add cards, get cards, this is physical while an account can also store money ,get balance and this is imaginary etc.
 
-An object could be physical or imaginary, it just has to do with the way we see the thing about things in general. For example, a wallet is an object that has a method to store money, make money, add cards, get cards, etc.
+Example 2: a bucket is an object that also has a method to store fluids either solid, liquid, or gas depending on what you want to store it with and get fluid.
 
-Example 2: a bucket is an object that has a method to store fluids either solid, liquid, or gas depending on what you want to store it with and get fluid.
-
-Now it gets interesting when you have a collection of wallets with different items in it and you want to access the one with the red card that has money more than #30,000 ('#' is naira in Nigeria currency), this is when lambdas come in because it hard you iterate through a collection without making mistakes and even if it works it's definitely not efficient.
+Now it gets interesting when you have a collection of wallets with different items in it and you want to access the one with the red card that has money more than #30,000 (the symbol '#' is naira in Nigeria currency), this is when lambdas come in because it's hard to iterate through a collection without making mistakes and even if it works it's definitely not efficient.
 ### Prerequisite
 - A basic understanding of the Java OOP (Object Oriented Programming) concept.
 - Basic understanding of lambdas
 ### Objectives
-1. To enable individuals to understand  how lambdas work
-2. To enable individuals to understand how to sort
-3. To enable individuals to understand how to calculate the value of the different object
-4. To enable individuals to understand how to Group a collection of object 
-5. To enable individuals to understand how to check for a distinct object
+1. To enable individuals understand  how lambdas work
+2. To enable individuals understand how to sort using lambdas
+3. To enable individuals understand how to calculate the value of the different object
+4. To enable individuals understand how to Group a collection of object 
+5. To enable individuals understand how to check for a distinct object
 ### Importance Of Lambdas
-Using lambdas is an effective way of writing your codes as some programmers argue that it might not be clear enough but the truth is, it is highly efficient and leaves room for no error in your code. 
+Using lambdas is an effective way of writing your codes as some programmers argue that it might not be clear enough but the truth is, it is highly efficient and leaves room for less or no error in your code. 
 
-It abstracts all the pipe-line you have to create to find what you are looking for, let use our wallet object as a case study, you will have to create different wallets based on color first before you create another group based on the outcome of the first group with money greater than '#30,000' and this could be time-consuming and also leads to a high time-complexity.
+It abstracts all the pipe-line you have to create to find what you are looking for.
+
+Let us use our wallet object as a case study, you will have to create different wallets based on color and based on money then you manipulate through using either color or money and this could be time-consuming and also leads to a high time-complexity.
 
 Let's code>>>
 
 First, we are going to create three(3)classes or objects.
 
-1. Card
+1. Card (AtM card)
 2. Wallet
 3. The Collection_Wallet as a driver class
-4. Input all of them inside into a folder call it Lambda_Collection
+
+Input all of them inside into a folder call it Lambda_Collection,this will serve as the package for the three(3) class.
 ```Java
 package Lambda_Collection;
 public enum Card {
@@ -76,13 +77,13 @@ public enum Card {
                  "#",takeMoney(), getCards());
          }
   ```  
-First, you create a general folder or package for writing all your codes, firstly we created an object of card because java is an object-oriented language.
+First, you create a general folder or package for writing all your codes, then we created an object of card, wallet and then an Enum class that contains the color of the individual class which we later compose into wallet.
 
 Now we have seen how a wallet looks like on code, you can set the money and that is you adding money to your wallet.
 
 The toString method is to make your object visible.
 
-Below is the code base of how the wallet is going to look like when we use lambdas to display, manipulate through.
+Below is the code base of how the wallet collection is going to look like before we use lambdas to display and manipulate through.
 ```Java
 package Lambda_Collection;
 
@@ -113,19 +114,18 @@ public class Collection_Wallet {
     }
 }
 ```
-N/B that list. stream() creates a stream of Wallet just as we said early you spread your wallets all over the table and then you want to look for a specific thing.
+N/B that list.stream() creates a stream of Wallet just as we said early you spread your wallets all over the table and then you want to look for a specific thing.
 
 #### Filtering Wallets
-When you are searching for a card that is green we place them in an array i.e have a collection of wallets and then we iterate through.
+When you want to get specific fields we use the filter method, this method take in a predicate expression and returns boolean value.
 
  Two major interfaces that will help you to manipulate your collections using lambdas are the Functions<T, R> and the Predicate<T>.
  
-The Predicate takes in an argument and returns true or false, this is used to check whether a particular  parameter meets the condition while Function takes
-in parameter and also return required datatype
+The Predicate takes in an argument and returns true or false, this is used to check whether a particular  parameter meets the condition while Function takes in parameter and also return required datatype
 Customers<T> takes in argument and return void such as the forEach
 Supplier<T>etc takes in no argument and returns a value of T.
 
-Firstly we use the Predicate interface to check if the pipeline meets a certain condition, Predicate<T> this takes an argument and then returns true or false which validates, it is then used with the filter which is an intermediate method that takes in a predicate method.
+We use the Predicate interface to check if the pipeline meets a certain condition, Predicate<T> this takes an argument and then returns true or false which validates, it is then used with the filter which is an intermediate method that takes in a predicate method.
 
 N/B please write these codes in your Collection_Wallet class;
 
@@ -170,7 +170,7 @@ Display of your sorted list money:
 #64000.00 Black 
 #74000.00 Black 
 ```
-What if we want to find a wallet with money higher than '#30000'? We will use the find first intermediate method.
+What if we want to find a single wallet with money higher than '#30000'? we will use the find first intermediate method.
 ```Java
  Predicate<Wallet> takeMoneyAndBlackCard=
                 e -> (e.takeMoney() >= 30000 );
@@ -184,8 +184,6 @@ Result
 ```
 #34000.00 Red`
 ```
-
-
 N/B if you are writing these codes make sure that every time you use a Predicate interface always use a different variable.
 
 Function<T,R>
@@ -198,9 +196,7 @@ Function<T,R>
                 .sorted(byMoneyThenByCard)
                 .forEach(System.out::println);
 ```
-#### Result
- Display of your sorted list: 
- 
+#### Result 
 `#34000.00 Red `
 
 #### Display by money then by card
@@ -328,7 +324,7 @@ Sum of Black Card wallet via average method: 250000.00
 ### Conclusion
 Here we analyzed how to iterate through a collection of objects, manipulate it with functional interfaces such as Functions<T, R> Predicate<T>, etc with other intermediate static methods from the Stream pipeline stream, sorted for arranging items.
 
-Distinct for non-duplicate objects as it is even hard to remove duplicate values of the different object if you were to hard code it yourself.
+We also show to display distinct objects.
 
 Then we grouped using map functional interface which takes two arguments Card and Long which are objects and then we got the number of counts of different members of each group.
 
