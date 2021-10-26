@@ -1,7 +1,7 @@
 ### Introduction
 Java is an object-oriented programming language. The importance of the use of lambdas as a programmer is to make your code appear shorter, efficient, and above all functional. 
 
-An object could be physical or imaginary, it just has to do with the way we see things in general. For example, a wallet is an object that has a method to store money, make money, add cards, get cards, this is physical while an account can also store money ,get balance and this is imaginary etc.
+An object could be physical or imaginary, it just has to do with the way we see things in general. For example, a wallet is an object that has a method to store money, make money, add cards, get cards, this is physical while an account can also store money, get balance and this is imaginary etc.
 
 Example 2: a bucket is an object that also has a method to store fluids either solid, liquid, or gas depending on what you want to store it with and get fluid.
 
@@ -10,17 +10,17 @@ Now it gets interesting when you have a collection of wallets with different ite
 - A basic understanding of the Java OOP (Object Oriented Programming) concept.
 - Basic understanding of lambdas
 ### Objectives
-1. To enable individuals understand  how lambdas work
-2. To enable individuals understand how to sort using lambdas
-3. To enable individuals understand how to calculate the value of the different object
-4. To enable individuals understand how to Group a collection of object 
-5. To enable individuals understand how to check for a distinct object
+1. To enable individuals to understand  how lambdas work
+2. To enable individuals to understand how to sort using lambdas
+3. To enable individuals to understand how to calculate the value of the different object
+4. To enable individuals to understand how to Group a collection of object 
+5. To enable individuals to understand how to check for a distinct object
 ### Importance Of Lambdas
 Using lambdas is an effective way of writing your codes as some programmers argue that it might not be clear enough but the truth is, it is highly efficient and leaves room for less or no error in your code. 
 
-It abstracts all the pipe-line you have to create to find what you are looking for.
+It abstracts all the pipelines you have to create to find what you are looking for.
 
-Let us use our wallet object as a case study, you will have to create different wallets based on color and based on money then you manipulate through using either color or money and this could be time-consuming and also leads to a high time-complexity.
+Let us use our wallet object as a case study, you will have to create different wallets based on color and based on money then you manipulate through using either color or money and this could be time-consuming and also lead to a high time-complexity.
 
 Let's code>>>
 
@@ -30,7 +30,7 @@ First, we are going to create three(3)classes or objects.
 2. Wallet
 3. The Collection_Wallet as a driver class
 
-Input all of them inside into a folder call it Lambda_Collection,this will serve as the package for the three(3) class.
+Input all of them inside into a folder call it Lambda_Collection, this will serve as the package for the three(3) classes.
 ```Java
 package Lambda_Collection;
 public enum Card {
@@ -77,7 +77,7 @@ public enum Card {
                  "#",takeMoney(), getCards());
          }
   ```  
-First, you create a general folder or package for writing all your codes, then we created an object of card, wallet and then an Enum class that contains the color of the individual class which we later compose into wallet.
+First, you create a general folder or package for writing all your codes, then we created an object of card, wallet, and then an Enum class that contains the color of the individual class which we later compose into the wallet.
 
 Now we have seen how a wallet looks like on code, you can set the money and that is you adding money to your wallet.
 
@@ -114,10 +114,10 @@ public class Collection_Wallet {
     }
 }
 ```
-N/B that list.stream() creates a stream of Wallet just as we said early you spread your wallets all over the table and then you want to look for a specific thing.
+N/B that list. stream() creates a stream of Wallet just as we said early you spread your wallets all over the table and then you want to look for a specific thing.
 
 #### Filtering Wallets
-When you want to get specific fields we use the filter method, this method take in a predicate expression and returns boolean value.
+When you want to get specific fields we use the filter method, this method takes in a predicate expression and returns a boolean value.
 
  Two major interfaces that will help you to manipulate your collections using lambdas are the Functions<T, R> and the Predicate<T>.
  
@@ -141,7 +141,7 @@ Predicate<Wallet> takeMoneyAndBlackCard=
                 .sorted(Comparator.comparing(Wallet::getCards))
                 .forEach(System.out::println);
 ```
-The Comparator interface with its static method comparing, compares two objects of wallet base on its instance method and returns negative if the first is less than than the second, positive if the first is greater, and zero if they are equal, then the forEach terminates the entire pipeline.
+The Comparator interface with its static method comparing, compares two objects of wallet based on its instance method and returns negative if the first is less than than the second, positive if the first is greater, and zero if they are equal, then the forEach terminates the entire pipeline.
 ```
 Result
 Display of your sorted list by Card: 
@@ -212,7 +212,7 @@ Function<T,R>
 #64000.00 Black 
 #74000.00 Black 
 ```
-We will see how to reverse base on values in the collection using lambdas.
+We will see how to reverse based on values in the collection using lambdas.
 ```java
 System.out.println("Display by money then by card in reserve order)
         list.stream()
