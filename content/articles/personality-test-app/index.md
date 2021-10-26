@@ -22,7 +22,7 @@ At the end of each of the four sections, we pick the highest value from each of 
 ### Create a Python file
 The first step towards building the test app is to create a python file, we can call it personality.py
 
-#### Import the python module sys
+### Import the python module sys
 In this module, we would use the exit() function to terminate the first interactive option we want to give our users.
 
 ```python
