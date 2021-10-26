@@ -2,17 +2,17 @@
 layout: engineering-education
 status: publish
 published: true
-url: /algorithimic-trading-bot-using-python/
-title: Algorithimic Trading Bot Using Python
+url: /algorithmic-trading-bot-using-python/
+title: Algorithmic Trading Bot Using Python
 description: This tutorial gives a step by step guide on how you can use python to create your own trading bot. It also discusses the benefits and drawbacks of using software trading.
-author: victor-kamau
+author: kamau-victor
 date: 2021-07-22T00:00:00-18:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/algorithimic-trading-bot-using-python/hero.png
-    alt: Algorithimic Trading Bot Using Python Hero Image
+  - url: /engineering-education/algorithmic-trading-bot-using-python/hero.png
+    alt: Algorithmic Trading Bot Using Python Hero Image
 ---
 Trading online has become one of the most popular investment in the current world. The likes of cryptocurrency and forex being the leading areas. Due to this popularity, programmers have emerged trying to come up with a way in which the trading process can be automated for more profits.
 
@@ -24,7 +24,7 @@ In this tutorial, we will look at how one can start off his/her journey in progr
 
 - [What is a Trading Bot](#what-is-a-trading-bot)
 
-- [Prerequisites/Requirements](#prerequisites-requirements)
+- [Prerequisites](#prerequisites)
 
 - [Coding and Development](#coding-and-development)
 
@@ -65,7 +65,6 @@ For my case, here is the class generated:
 
 ```python
 class GeekyBlueSeahorse(QCAlgorithm):
-
     def Initialize(self):
     def OnData(self, data):
 ```
@@ -91,9 +90,7 @@ The code is as follows:
 
 ```python
         self.SetStartDate(2015, 3, 26)  # Set Start Date
-
         self.SetEndDate(2021, 9, 25) # Set End Date
-
         self.SetCash(100000)  # Set Strategy Cash
 
 ```
@@ -106,11 +103,8 @@ Still under the initialize method, we will;
 In this case, we will use a daily resolution:
 
 ```python
-
     self.symbol = self.AddEquity("SPY", Resolution.Daily).Symbol
-
     self.lookback = 20
-
     self.ceiling, self.floor = 30, 10
 
 ```
@@ -118,9 +112,7 @@ The last thing to initialize is the stop loss extent:
 
 ```python
     self.initialStopRisk = 0.98
-
     self.trailingStopRisk = 0.9
-
 ```
 
 The first variable determines how close our stop loss will be to the security price. Meaning that it will allow a 2% loss before it gets hit.
@@ -133,8 +125,7 @@ We will define the `onData` method to create a plot of the price of the securiti
 
 ```python
 def OnData(self, data):
-
-        self.Plot("Data Chart", self.symbol, self.Securities[self.symbol].Close)
+       self.Plot("Data Chart", self.symbol, self.Securities[self.symbol].Close)
 
 ```
 
@@ -161,11 +152,8 @@ Add the following code to the initialize method:
 
 ```python
 self.Schedule.On(self.DateRules.EveryDay(self.symbol), \
-
                 self.TimeRules.AfterMarketOpen(self.symbol, 20), \
-
                 Action(self.EveryMarketOpen))
-
 ```
 
 #### Step 6: **Implement the EveryMarketOpen method**
@@ -194,7 +182,6 @@ The following code falls under this `EveryMarketOpen` method to perform all the 
         elif 
           self.lookback < self.lowest:
             self.lookback = self.lowest
-
         self.high = self.History(self.Symbol, self.lookback, Resolution.Minute)["high"]
 
         if not self.Securities(self.Symbol).Invested and \
@@ -231,7 +218,6 @@ Finalize by plotting the stop price of our position onto the data chart we creat
 ```python
 
 self.Debug(updateFields.stopPrice)
-
         self.Plot("Data Chart", "Stop Price", self.stopMarketTicket.Get(OrderField.StopPrice))
 
 ```
@@ -239,32 +225,22 @@ self.Debug(updateFields.stopPrice)
 Below is how the complete code looks like.
 
 ```python
-
 import numpy as np
-
 class GeekyBlueSeahorse(QCAlgorithm):
-
     def Initialize(self):
         self.SetStartDate(2015, 3, 26)  # Set Start Date
         self.SetEndDate(2021, 9, 25)
         self.SetCash(100000)  # Set Strategy Cash
         self.symbol = self.AddEquity("SPY", Resolution.Daily).Symbol
-
         self.lookback = 20
-
         self.ceiling, self.floor = 30, 10
-
         self.initialStopRisk = 0.98
-
         self.trailingStopRisk = 0.9
 
         self.Schedule.On(self.DateRules.EveryDay(self.symbol), \
                          self.TimeRules.AfterMarketOpen(self.symbol, 20), \
                           Action(self.EveryMarketOpen))
-
-
     def OnData(self, data):
-
         self.Plot("Data Chart", self.symbol, self.Securities[self.symbol].Close)
 
  def EveryMarketOpen(self):
@@ -280,37 +256,26 @@ class GeekyBlueSeahorse(QCAlgorithm):
         elif 
           self.lookback < self.lowest:
             self.lookback = self.lowest
-
         self.high = self.History(self.Symbol, self.lookback, Resolution.Minute)["high"]
 
         if not self.Securities(self.Symbol).Invested and \
                 self.Securities(self.Symbol).Close >= max(self.high[:-1]):
-
                 self.SetHoldings(self.Symbol, 1)
                 self.breakoutlevel = max(selt.high[:-1])
                 self.highestPrice = self.breakoutlevel
-
         if self.Securities(self.Symbol).Invested:
-
             if not self.Transactions.GetOpenOrders(self.symbol):
                 self.endMarketTicket = self.endMarketOrder(self.symbol, \
                                         -self.Portfolio[self.symbol].Quantity, \
                                         self.initialStopRisk * self.breakoutlevel)
-
-
-            if not self.Securities(self.Symbol).Close > self.highestPrice and \
+        if not self.Securities(self.Symbol).Close > self.highestPrice and \
                     self.initialStopRisk * self.breakoutlvl < self.Securities[self.symbol].Close * self.trailingStopRisk:
-
                     self.highestPrice = self.Securities[self.symbol].Close
                     updateFields = UpdateOrderFields()
                     updateFields.stopPrice = self.Securities[self.Symbol] * self.trailingStopRisk
                     self.endMarketTicket.Update(updateFields)
-
-
                     self.Debug(updateFields.stopPrice)
-
                     self.Plot("Data Chart", "Stop Price", self.endMarketTicket.Get(OrderField.StopPrice))
-
 ```
 
 For more explanations or inconveniences, you can refer to this [video](https://www.youtube.com/watch?v=s8uyLscRl-Q) for more understanding.
@@ -321,11 +286,11 @@ For more explanations or inconveniences, you can refer to this [video](https://w
 A backtest is performed to evaluate the performance of the algorithm. It integrates the code with your brokerage site to get results as if it was an actual trading practice.
 You can see the image below:
 
-![](backtest.png)
+![backtest](engineering-education/algorithmic-trading-bot-using-python/backtest.png)
 
 According to the values you entered, you should get your results in a similar interface to the one shown in the image below:
 
-![](result.png)
+![result](engineering-education/algorithmic-trading-bot-using-python/result.png)
 
 
 ### Why Algorithmic Trading Bot
