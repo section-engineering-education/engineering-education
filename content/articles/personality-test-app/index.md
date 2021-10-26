@@ -235,9 +235,11 @@ try:
         count = count + 1
 ```
 
-Compute the identities with if statement.
+We then compute the identities with if statements.
+
 We use our variable counters and if statements to compute the personality identity. The count keeps track of the questions ranging from 1 to 20 and a total of four sections.
-The sectioning of the questions is in four parts and five questions each, making a total of 20 questions. We compute the dominant personality identity at every section of the test.
+
+The sectioning of the questions is in four parts with five questions each, making a total of 20 questions. We compute the dominant personality identity at every section of the test.
 
 ```python
 if count == 5:
