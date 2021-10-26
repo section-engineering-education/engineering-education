@@ -11,6 +11,7 @@
 - [Sequelize model associations](#sequelize-model-associations)
 - [App testing](#app-testing)
 - [Conclusion](#conclusion)
+- [Objectives](#objectives)
 
 ### Prerequisites
 For easier follow up on this article, you may require the following:
