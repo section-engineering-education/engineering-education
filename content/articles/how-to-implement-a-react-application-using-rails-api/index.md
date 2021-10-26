@@ -1,5 +1,21 @@
-﻿### Introduction
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-implement-a-react-application-using-rails-api/
+title: How to Implement a React Application Using Rails API 
+description: This tutorial discusses about the Ruby on Rails framework and its API-only mode feature that helps in the development of backend for most applications. We will create a to-do list app using React then build backend for it using Ruby API.
+author: lilian-kerubo
+date: 2021-07-22T00:00:00-18:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/how-to-implement-a-react-application-using-rails-api/hero.jpg
+    alt: How to Implement a React Application Using Rails API Hero Image
+---
 Ruby on Rails is a popular web framework for developing server-side applications. Most of the applications found worldwide are built with Ruby on Rails. Developers find it useful since it provides various tools needed to develop and maintain modern web applications. It is supported by experienced programmers and an active online community that keeps on improving it.
+<!--more-->
 
 On the other hand, React is a frontend JavaScript library used to build client-side user interfaces. With React, the frontend development is made easy, organized, and efficient since it supports state management, component architecture, and virtual Document Object Model (DOM).
 
@@ -39,7 +55,7 @@ group :development, :test do
 end
 ```
 
-If the need arises, we can then proceed to add `pg` gem to the production group section for production purposes in order to utilize `Postgresql` as below:
+If the need arises, we can then proceed to add `pg` gem to the production group section for production purposes in order to utilize `Postgresql` as shown below:
 
 ```gem
 group :production do
@@ -66,7 +82,7 @@ Finally, the below command will generate a table that contains data in the `SQLi
 $ rails db:migrate
 ```
 
-Our backend is now set. Next, we will start by editing the file `config/routes.rb`. Here, we will specify the new routes for our backend API as below:
+Our backend is now set. Next, we will start by editing the file `config/routes.rb`. Here, we will specify the new routes for our backend API as seen below:
 
 Rails.application.routes.draw do
 
@@ -80,7 +96,7 @@ end
 
 We have used `resources` to utilize `POST`, `PUT`, `GET`, and `DELETE` actions in our backend.
 
-As of now, we are dealing with the controller. Next, we are going to utilize the above actions we have defined in the below code. We will navigate to the file `app/controller/tdslist_controller.rb` and paste the following code:
+As of now, we are dealing with the controller. Next, we are going to utilize the above actions we have defined in the code below. We will navigate to the file `app/controller/tdslist_controller.rb` and paste the following code:
 
 ```rb
 class TdslistController < ApplicationController
@@ -119,7 +135,7 @@ Next, we will start our server by running the below command in the terminal:
 $ rails server
 ```
 
-Then, we navigate to the link <http://localhost:3000/api/version1/tdlists>. A blank page will be displayed since there have no data so far.
+Then, we navigate to the link <http://localhost:3000/api/version1/tdlists>. A blank page will be displayed since there is no data so far.
 
 We will proceed and edit file `db/seeds.rb` to populate some to-do items and check if our API works as expected:
 
@@ -139,7 +155,7 @@ We can then proceed and refresh our page, and the following JSON data will be di
 
 ![json](/engineering-education/how-to-implement-a-react-application-using-rails-api/json-capture.PNG)
 
-Our backend is now complete.  We will configure our frontend to run on port 4000 and the backend to run on port 3000. Then will run our application in a local development environment using `Heroku CLI`.  To achieve this, we will proceed and create a file named `Procfile.windows` in the project root directory and paste the below lines of commands:
+Our backend is now complete.  We will configure our frontend to run on `port 4000` and the backend to run on `port 3000`. Then will run our application in a local development environment using `Heroku CLI`.  To achieve this, we will proceed and create a file named `Procfile.windows` in the project root directory and paste the below lines of commands:
 
 ```dev
 api: bundle exec rails server –p 3000
@@ -149,7 +165,7 @@ web: yarn --cwd tdlist-app start
 The above commands execute both React application and the Rails server on Heroku.
 
 ### Creating the frontend – React Application
-We will start by creating the React application globally by running the below commands:
+We will begin by creating the React application globally by running the below commands:
 
 ```bash
 $ npm install -g create-react-app
@@ -166,13 +182,13 @@ The below default React page will be displayed after running the above command:
 
 ![React app default page](/engineering-education/how-to-implement-a-react-application-using-rails-api/reactapp-default-page.PNG)
 
-Next, we will specify the React application on which port our Rails server is running on in development mode. To achieve this, we will edit the file `tdlist-app/package.json` by adding the below line of command:
+Next, we will specify the React application on which port our Rails server is running on in development mode. To achieve this, we will edit the file `tdlist-app/package.json` by adding the line of command below:
 
 "proxy": "http://localhost:3000"
 
-The above line instructs the React application to communicate through a proxy in development mode to the backend using port 3000. To call our backend API running on the link <http://localhost:3000/api/version1/tdlists>  from the application, we will only need to call `/api/version1/tdlists` instead of the whole link**.**
+The above line instructs the React application to communicate through a proxy in development mode to the backend using port 3000. To call our backend API running on the link <http://localhost:3000/api/version1/tdlists>  from the application, we will only need to call `/api/version1/tdlists` instead of the whole link.
 
-We will also need to update our `package.json` with the following lines to ensure that our React application runs on port 4000 instead of default port 3000:
+We will also need to update our `package.json` with the following lines to ensure that our React application runs on `port 4000` instead of default `port 3000`:
 
 ```json
 "start": "set PORT=4000 && react-scripts start"
@@ -216,7 +232,7 @@ class TdlistsContainer extends Component {
 export default TdlistsContainer
 ```
 
-Then we will edit the file `App.js` to import our new component as below:
+Then we will edit the file `App.js` to import our new component as shown:
 
 ```typescript
 import React, { Component } from 'react';
@@ -239,7 +255,7 @@ class App extends Component {
 export default App;
 ```
 
-Then edit `App.css` as below:
+Then edit `App.css`:
 
 ```css
 .mainContainer {
@@ -353,12 +369,12 @@ input[placeholder] {
 }
 ```
 
-Next, we will refresh the frontend link: <http://localhost:4000>. The below page will be displayed:
+Next, we will refresh the frontend link: <http://localhost:4000>, and the following page will be displayed:
 
 ![to-do list](/engineering-education/how-to-implement-a-react-application-using-rails-api/todo-list.PNG)
 
 ### Calling the API
-In this section, we will fetch the data from our backend. We will use `Axios` to fetch or store data. First, we will install `Axios` by running the below command and then import it into our component as below:
+In this section, we will fetch the data from our backend. We will use `Axios` to fetch or store data. First, we will install `Axios` by running the following command and then import it into our component:
 
 ```bash
 $ cd tdlist-app
@@ -366,7 +382,7 @@ $ npm install axios --save
 ```
 
 #### Getting to-do list items
-We will edit our component to initialize the state and the component’s behavior. We will then add the `componentDidMount` function to load the to-do item lists as below:
+We will edit our component to initialize the state and the component’s behavior. We will then add the `componentDidMount` function to load the to-do item lists as shown:
 
 ```typescript
 import React, { Component } from 'react'
@@ -421,11 +437,11 @@ class TdlistsContainer extends Component {
 export default TdlistsContainer
 ```
 
-Then we need to restart our `Heroku local` and refresh the page, and the below results will be displayed:
+Now, we need to restart our `Heroku local` and refresh the page, and the below results will be displayed:
 
 ![to-do list updated](/engineering-education/how-to-implement-a-react-application-using-rails-api/todo-list-updated.PNG)
 
-#### Adding new to-do list item
+#### Adding a new to-do list item
 To add a new to-do list item, we will call `POST/api/version1/tdlists`. We need a new function that will enable us to add new to-do list items, and then we proceed to update the state. We will utilize the [immutability-helper](https://www.npmjs.com/package/immutability-helper) to update the state. We will run the below commands to install the package, and then we import it into our component:
 
 ```bash
@@ -466,9 +482,9 @@ newTdlist = (e) => {
 }
 ```
 
-In the above code snippet, we added a new to-do list item at the top of the `tdlists` array through the use `$splice` function. We can then proceed and add a new to-do list item to test the application.
+In the above code snippet, we added a new to-do list item at the top of the `tdlists` array through the use of `$splice` function. We can then proceed and add a new to-do list item to test the application.
 
-We can note that after adding a new to-do list item, the value of textbox remains the same. To clear the text box we add the below code:
+We can note that after adding a new to-do list item, the value of textbox remains the same. To clear the text box we add the following code:
 
 ```typescript
 this.state = {
@@ -477,7 +493,7 @@ this.state = {
 }
 ```
 
-To update the state with new parameter we defined in the above code snippet we paste the below code:
+To update the state with new parameter we defined in the above code snippet we paste the code below:
 
 ```typescript
 this.setState({
@@ -529,7 +545,7 @@ modifyTdlist = (e, id) => {
 ```
 
 #### Deleting to-do list items
-To delete a to-do list item, we will update span element as below:
+To delete a to-do list item, we will update the `span` element as seen below:
 
 ```typescript
 <span className="removeItemButton"
@@ -562,4 +578,12 @@ The application is now ready for testing.
 We have successfully implemented a React application and created the component, `TdlistsContainer`. We have handled the behavior of our application using the React state.
 
 On the other hand, with Rails, we have built our backend that handles the JSON data as we deal with our frontend. We used the main container to render the User Interface instead of using components to make things simple. This gave us more time to focus on other significant concepts and data flow.
+
 The code used in this tutorial can be found at my [GitHub Repo](https://github.com/kerubo-tech/my-projects).
+
+Hope you find this tutorial helpful.
+
+Happy coding!
+
+---
+Peer Review Contributions by: [Monica Masae](/engineering-education/authors/monica-masae/)
