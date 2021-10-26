@@ -85,7 +85,7 @@ X_test = stndS.transform(X_test)
 
 ```
 ### Step 2: Applying *PCA* to the dataset
-#(To apply the PCA to our dataset, we shall do so separately on the training and test sets. The following syntax carries out this task.)
+To apply the PCA to our dataset, we shall do so separately on the training and test sets. The following syntax carries out this task.
 
 ```python
 # Importing the PCA class from the decomposition module in sklearn
