@@ -1,5 +1,22 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /algorithimic-trading-bot-using-python/
+title: Algorithimic Trading Bot Using Python
+description: This tutorial gives a step by step guide on how you can use python to create your own trading bot. It also discusses the benefits and drawbacks of using software trading.
+author: victor-kerubo
+date: 2021-07-22T00:00:00-18:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/algorithimic-trading-bot-using-python/hero.png
+    alt: Algorithimic Trading Bot Using Python Hero Image
+---
 Trading online has become one of the most popular investment in the current world. The likes of cryptocurrency and forex being the leading areas. Due to this popularity, programmers have emerged trying to come up with a way in which the trading process can be automated for more profits.
+
+<!--more-->
 
 In this tutorial, we will look at how one can start off his/her journey in programming a trading bot.
 
@@ -30,7 +47,6 @@ The main prerequisite for this tutorial is the basic knowledge of python and its
 
 That means that you don't actually require an offline editor since the site provides its own coding environment.
 
-
 ### Coding and Development
 
 With your requirements ready, you can now code along for a practical understanding. Go to www.quantconnect.com and sign up to set up your coding environment. You can also use an offline editor and upload the code later for testing.
@@ -51,8 +67,6 @@ For my case, here is the class generated:
 class GeekyBlueSeahorse(QCAlgorithm):
 
     def Initialize(self):
-
-
     def OnData(self, data):
 ```
 
@@ -343,3 +357,6 @@ This article sets a journey for those who are interested in developing their alg
 I hope you find this tutorial helpful.
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Monica Masae](/engineering-education/authors/monica-masae/)
