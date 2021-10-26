@@ -297,3 +297,4 @@ On click, the application reads the XML files, gets the connection strings and t
 
 ### Conclusion
 JavaFX is a set of graphics and media packages that enable designers, developers, and testers to design, create, debug, and deploy client applications on diverse operating system platforms. Through interaction with the desktop application user interface, data can be saved in a database (MySQL) for processing or any other manipulation. In this article, we have learned how JavaFX scene builder can design a desktop application that can connect to the database.
+The code snippets used in this guide can be accessed at my [GitHub Repo](https://github.com/JosephAyoma/JavaFX-scenebuilder-for-mysql-connection).
