@@ -1,4 +1,4 @@
-If you have worked with Node.js, you must have used Express. In one or two projects. Express is the most popular Node.js web server framework. If you're building a back end using JavaScript, then chances are you're going to be using Express. Express is the industry standard for creating servers in Node.js. This helps you control and execute the code from a server. Thus facilitating an easier way to manipulate server-side data such as a database.
+If you have worked with Node.js, you must have used [Express](/engineering-education/express/). In one or two projects. Express is the most popular Node.js web server framework. If you're building a back end using JavaScript, then chances are you're going to be using Express. Express is the industry standard for creating servers in Node.js. This helps you control and execute the code from a server. Thus facilitating an easier way to manipulate server-side data such as a database.
 
 On the other side Go, popularly known as Golang, is a compiled language. It is compiled down into machine-level code that computers understand. This means it doesn't need to be interpreted one line at a time, and that's one of the reasons it's so fast compared to interpreted languages like python.
 
@@ -13,8 +13,8 @@ In this tutorial, we will learn more about Go Fiber. We will use Go Fiber with G
 To follow along with this tutorial, ensure you have a basic knowledge of Golang. This include
 
 - Have the Go installed on your computer, run the `go version` command to verify that Go was successfully installed.
-- being able to set up basic Golang application,
-- run and create Golang application as well as understand how to write Golang code.
+- Being able to set up basic Golang application,
+- Run and create Golang application as well as understand how to write Golang code.
 
 ### Set up a Go project
 
@@ -30,7 +30,7 @@ To initialize these files, run the following command at the root of your project
 go mod init go-fiber-app
 ```
 
-A ``go.mod` will be created with the following;
+A `go.mod` will be created with the following;
 
 ```go
 module go-fiber-app
@@ -44,7 +44,7 @@ In this case, `go-fiber-app` will be our direct module and a module declaration 
 
 Let's jump in and build our first HTTP Server in Go and get the most basic concept of Go Fiber. Just like Express, it is straightforward to start your first Go sever server using the Fiber framework.
 
-As we said, Fiber is an Express inspire framework. Les take one step behind and see how we create a simple Node.js server with Express. Below is a basic server that utilizes the Express framework.
+As we said, Fiber is an Express inspire framework. Les take one step behind and see how we create [a simple Node.js server with Express](/engineering-education/express/). Below is a basic server that utilizes the Express framework.
 
 ```js
 // add Express library
@@ -134,7 +134,7 @@ And there you have it. Your simplest Go Fiber HTTP server is up and running. Nav
 
 ### Setting up a Fiber todos application
 
-The above is a simple HTTP server. Let’s now dive into a more profound use case and explore more of the Go Fiber framework. We will use a todo application use case with an SQLite database to build a todos application. This will help you understand the concept of Go Fiber in detail.
+The above is a simple HTTP server. Let’s now dive into a more profound use case and explore more of the Go Fiber framework. We will use a todo application use case with an SQLite database to build a todos application. This will help you understand the concept of Go Fiber in detail. So create a project directory and initialize Go with `go mod init go-fiber-todos`
 
 First, we will install the following packages.
 
@@ -158,7 +158,7 @@ go get github.com/google/uuid
 
 - Air
 
-Do you remember the Nodemon for the Node.js server? [Air](https://github.com/cosmtrek/air) works pretty much the same as Nodemon. When you are building a server, you probably need to watch over your files. This way, you only start your server once. When you make changes to your file, the server is automatically restarted again.
+Do you remember the [Nodemon](https://www.npmjs.com/package/nodemon) for the Node.js server? [Air](https://github.com/cosmtrek/air) works pretty much the same as Nodemon. When you are building a server, you probably need to watch over your files. This way, you only start your server once. When you make changes to your file, the server is automatically restarted again.
 
 [Air](https://reposhub.com/go/miscellaneous/cosmtrek-air.html) is in the development package for Go. It live reloads your Go server whenever you modify your code. You set it up and focus on your code.
 
@@ -635,7 +635,7 @@ let’s start by adding a list of todos to our database. Below is a sample todo 
 
 ![add-a-new-todo](/engineering-education/how-to-use-go-fiber-and-gorm-frameworks-to-run-a-golang-application/add-a-new-todo.png)
 
-If the todo was successfully added, the newly todo would be shown in your Postman's console.
+If the todo was successfully added, the new todo would be shown in your Postman's console.
 
 ![the-newly-added-todo](/engineering-education/how-to-use-go-fiber-and-gorm-frameworks-to-run-a-golang-application/the-newly-added-todo.png)
 
@@ -677,4 +677,17 @@ If you try to send a GET request to the deleted todo, you should get an error th
 
 ![deleted-todo-not-found](/engineering-education/how-to-use-go-fiber-and-gorm-frameworks-to-run-a-golang-application/deleted-todo-not-found.png)
 
-Happy coding!
+### Conclusion
+Golang is a cool language to work with. You can create almost any application that you can when using other languages. Go has the ability to handle extensive applications. Thus, it can build applications of all levels while ensuring minimalism due to its ability to utilize multi-core processing.
+
+### Further readings
+- [Golang - Programming Basics](/engineering-education/golang-part-2-programming-basics/)
+- [Introduction to Golang](/engineering-education/golang-part-1-introduction/)
+- [Advanced Programming Concepts with Go](/engineering-education/golang-advanced-programming-concepts/)
+- [Concurrency in Go](/engineering-education/concurrency-in-go/)
+- [Building RESTful Services in Go with an Idiomatic Approach](/engineering-education/build-restful-services-in-go-with-an-idiomatic-approach/)
+- [How to build a REST-API using Golang and PostreSQL](/engineering-education/build-a-rest-api-application-using-golang-and-postgresql-database/)
+
+The code that we have used to build the todo application can be found on [GitHub for further reference](https://github.com/Joakim-gakure/Go-todo-app-using-Go-Fiber-and-Gorm/tree/main).
+
+I hope you found this tutorial helpful in understanding Go Fiber and how to use it to run a handle Go application.
