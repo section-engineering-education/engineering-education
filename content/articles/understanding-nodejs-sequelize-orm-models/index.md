@@ -1,12 +1,5 @@
 ### Introduction
-[Sequelize](https://sequelize.org/) is an Object Relational Mapper for Node.js. Sequelize lets us connect to a database and perform operations without writing raw SQL queries. It abstracts SQL queries and makes it easier to interact with database models as objects. This article will help you understand Sequelize models, from model definition to model usage. At the end of this tutorial, you should be able to:
-- Understand different data types and use them in the model definition
-- Validate models
-- Define model associations
-- Define models in Sequelize
-- Generate database schema from Sequelize models
-
-Sequelize works with all the SQL-based databases. In this tutorial, I will use MySQL. However, you can use any SQL-based database of your choice.
+[Sequelize](https://sequelize.org/) is an Object Relational Mapper for Node.js. Sequelize lets us connect to a database and perform operations without writing raw SQL queries. It abstracts SQL queries and makes it easier to interact with database models as objects. This article will help you understand Sequelize models, from model definition to model usage. Sequelize works with all the SQL-based databases. In this tutorial, I will use MySQL. However, you can use any SQL-based database of your choice.
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
@@ -21,11 +14,19 @@ Sequelize works with all the SQL-based databases. In this tutorial, I will use M
 
 ### Prerequisites
 For easier follow up on this article, you may require the following:
-- Basic understanding of [Node.js](https://www.w3schools.com/nodejs/)
-- Node.js installation on your computer
-- Knowledge in [relational database management systems (RDBMS)](https://www.codecademy.com/articles/what-is-rdbms-sql)
-- An SQL-based DBMS installed on your computer
+- Basic understanding of [Node.js](https://www.w3schools.com/nodejs/).
+- Node.js installation on your computer.
+- Knowledge in [relational database management systems (RDBMS)](https://www.codecademy.com/articles/what-is-rdbms-sql).
+- An SQL-based DBMS installed on your computer.
 - Basic knowledge in Sequelize installation and set-up. Luckily, this has already been covered in the article, [Introduction to Sequelize ORM for Node.js](https://www.section.io/engineering-education/introduction-to-sequalize-orm-for-nodejs/).
+
+### Objectives
+At the end of this tutorial, you should be able to:
+- Understand different data types and use them in the model definition
+- Validate models
+- Define model associations
+- Define models in Sequelize
+- Generate database schema from Sequelize models.
 
 ### Sequelize set up
 This tutorial assumes that you have already installed [Node.js](https://nodejs.org/en/), an SQL-based DBMS, and a code editor.
@@ -106,7 +107,6 @@ DataTypes.DATE      // Date
 DataTypes.DATEONLY  // Date without time
 ```
 For more supported data types, refer to the [Sequelize documentation](https://sequelize.org/master/manual/model-basics.html#data-types).
-
 
 ### Creating database model
 In this tutorial, we will use Sequelize-CLI to create models. Run the commands below on the command line in the project folder to create user and post models. Replace `ModelName`, `attribute1`, `attribute2`, `attribute3`, and `datatype` with your values.
@@ -215,7 +215,6 @@ In this section, we are going to implement associations in Sequelize. You may wa
 - One-to-Many
 - Many-to-Many
 
-
 In the model we created earlier, we have a One-to-Many association. This results in two Sequelize relationships:
 - `User.hasMany(Post);`
 - `Post.BelongsTo(User);`
@@ -287,7 +286,7 @@ On Postman, create a `POST` request with the endpoint location as `http://localh
 
 Click send to run the request. Check the response. The expected response is as shown in the screenshot below. 
 
-![Postman create user request](postman-create-user.png)
+![Postman create user request](/engineering-education/understanding-nodejs-sequelize-orm-models/postman-create-user.png)
 
 #### Get users
 We will create an endpoint that will return users from the `users` table. Add the code below in `app.js` and run the app.
@@ -306,7 +305,7 @@ app.get("/users", async(req,res) =>{
 
 On Postman, create a `GET` request with the endpoint location as `http://localhost:5005/users/`. You will get a JSON response with all the users in the database.
 
-![](postman-get-users.png)
+![](/engineering-education/understanding-nodejs-sequelize-orm-models/postman-get-users.png)
 
 #### Edit user
 We will create an endpoint that will update the user details. The endpoint takes in data in JSON format. Add the code below in `app.js` and run the app.
@@ -345,7 +344,7 @@ On Postman, create a `PUT` request with the endpoint location as `http://localho
 
 Click send to run the request. Check the response. The expected response is as shown in the screenshot below. 
 
-![Postman edit user](postman-edit-user.png)
+![Postman edit user](/engineering-education/understanding-nodejs-sequelize-orm-models/postman-edit-user.png)
 
 #### Create post
 We will create an endpoint that will insert new posts into the database. The endpoint takes in data in JSON format. Add the code below in `app.js` and run the app.
@@ -377,7 +376,7 @@ On Postman, create a `POST` request with the endpoint location as `http://localh
 
 Click send to run the request. Check the response. The expected response is as shown in the screenshot below.
 
-![Postman create post](postman-create-post.png)
+![Postman create post](/engineering-education/understanding-nodejs-sequelize-orm-models/postman-create-post.png)
 
 #### Get posts
 We will create an endpoint that will return posts from the posts table. Add the code below in `app.js` and run the app.
@@ -396,7 +395,7 @@ app.get("/posts", async(req,res) =>{
 
 On Postman, create a `GET` request with the endpoint location as `http://localhost:5005/posts/`. You will get a JSON response with all the posts in the database.
 
-![Postman get posts](postman-get-posts.png)
+![Postman get posts](/engineering-education/understanding-nodejs-sequelize-orm-models/postman-get-posts.png)
 
 #### Delete user
 We will create an endpoint that will delete records from the `users` table. Add the code below in `app.js` and run the app.
@@ -419,11 +418,9 @@ app.delete("/users/:id", async(req,res) =>{
 
 On Postman, create a `DELETE` request with the endpoint location as `http://localhost:5005/users/5`. The number at the end of the URL represents the primary key to the record to be deleted.
 
-![Postman delete user](postman-delete-user.png)
+![Postman delete user](/engineering-education/understanding-nodejs-sequelize-orm-models/postman-delete-user.png)
 
 The final source code for `app.js` is available on [Github](https://github.com/Tsanguu/Node.js-Sequelize-Tutorial-1).
-
-
 
 ### Conclusion
 We have learned how Sequelize models work. Learn more on how to move your project to production using [Sequelize migrations](https://sequelize.org/master/manual/migrations.html) and [seeders](https://sequelize.org/master/manual/migrations.html#creating-the-first-seed). Seeders Allow the creation of dummy data on the database. The source code for the project is available on [Github](https://github.com/Tsanguu/Node.js-Sequelize-Tutorial-1). Happy coding.
