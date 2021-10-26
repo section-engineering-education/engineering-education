@@ -206,7 +206,7 @@ personality_dichotomy: str = ''
 count = 0
 ```
 
-Set counters to zero if not letter A or B.
+We then set counters to zero.
 The code snippet below is meant to keep the counters unchanged when wrong input is entered.
 
 ```python
