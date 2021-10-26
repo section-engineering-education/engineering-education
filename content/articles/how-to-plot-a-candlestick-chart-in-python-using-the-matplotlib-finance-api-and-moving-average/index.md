@@ -1,4 +1,23 @@
-In this tutorial, we'll use the matplotlib finance api, `mplfinance` to plot a candlestick chart in Python. In addition to using the `mpllfinance api`, we will implement the [moving average](https://www.investopedia.com/terms/m/movingaverage.asp) function, which is commonly used to analyze cryptocurrencies. Many tutorials have used candlestick to plot in Python, but few have used candlestick charts in Python with Moving Average. We'll also show how this can be applied to some cryptocurrencies using data from [CoinAPI](https://www.coinapi.io/).
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-plot-a-candlestick-chart-in-python-using-the-matplotlib-finance-api-and-moving-average/
+title: How to Plot a Candlestick Chart in Python using the Matplotlib Finance API
+description: In this tutorial, we will use the matplotlib finance API to plot a candlestick chart in Python
+author: sharon-kinyan
+date: 2021-10-26T00:00:00-20:00
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/how-to-plot-a-candlestick-chart-in-python-using-the-matplotlib-finance-api-and-moving-average/hero.png
+    alt: candlestick chart example image 
+---
+
+Candlestick charts are financial charts that are composed of candlesticks. These candlesticks give you information about the open, close, high, and low values in a stock.<!--more-->
+
+In this tutorial, we'll use the matplotlib finance API, `mplfinance` to plot a candlestick chart in Python. In addition to using the `mpllfinance api`, we will implement the [moving average](https://www.investopedia.com/terms/m/movingaverage.asp) function, which is commonly used to analyze cryptocurrencies. Many tutorials have used candlestick to plot in Python, but few have used candlestick charts in Python with Moving Average. We'll also show how this can be applied to some cryptocurrencies using data from [CoinAPI](https://www.coinapi.io/).
 
 This tutorial is necessary for anyone looking to start plotting share prices using Python.
 
@@ -19,7 +38,7 @@ To understand this tutorial, you need to be familiar with:
 > To follow along easily, please use Google Colab.
 
 ### Introduction
-Candlestick charts are financial charts that are composed of candlesticks. Those candlesticks give you information about the open, close, high, and low values in a stock. The open value is the value a stock opens with, for example, $100. At the end of the day, when trading stops, that value that is recorded is the `closing` value. Let's say $105. If we have a spike in the stock price at any point during the day and it shoots to $110, and that's the highest value recorded throughout the day, that's our `high`. Finally, if the vice versa happens, and we record a low of $97 that's our `low`.
+Candlestick charts are financial charts that are composed of candlesticks. These candlesticks give you information about the open, close, high, and low values in a stock. The open value is the value a stock opens with, for example, $100. At the end of the day, when trading stops, that value that is recorded is the `closing` value. Let's say $105. If we have a spike in the stock price at any point during the day and it shoots to $110, and that's the highest value recorded throughout the day, that's our `high`. Finally, if the vice versa happens, and we record a low of $97 that's our `low`.
 These four values are what a candlestick chart uses to visualize.
 
 The matplotlib finance API is a package built on top of the matplotlib library to visualize financial data. It integrates easily with Pandas dataframes.
