@@ -6,23 +6,23 @@ The assembly line is made up of several different techniques. Each method takes 
 ### Prerequisites
 Before going through this tutorial the reader should:
 - Have basic knowledge of Java programming language
-- Knowledge in working with Java streams
-- Have basic information about [maven] or visit (https://maven.apache.org/what-is-maven.html) for more information.
+- Have some experience working with Java streams
+- Know the basics of [maven](https://maven.apache.org/what-is-maven.html)
 
 ### Table of Contents
-- [Overview of Stream Filter in Java.](#overview-of-stream-filter-in-java)
-- [Using Stream filter method.](#using-stream-filter-method)
-- [Collection filtering.](#collection-filtering)
-- [Filtering data based on a variety of criteria.](#filtering-data-based-on-a-variety-of-criteria)
-- [Methods for dealing with exceptions](#methods-for-dealing-with-exceptions)
+- [Overview of the Stream Filter Method in Java](#overview-of-the-stream-filter-method-in-java)
+- [Using the Stream Filter Method](#using-the-stream-filter-method)
+- [Collection Filtering](#collection-filtering)
+- [Filtering Data Based on a Variety of Criteria](#filtering-data-based-on-a-variety-of-criteria)
+- [Methods for Dealing with Exceptions](#methods-for-dealing-with-exceptions)
 
-### Overview of Stream Filter in java.
-The filter() function of the Java stream allows you to narrow down the stream's items based on a criterion. If you just want items that are even on your list, you can use the filter method to accomplish this. Accept predicate as an input and returns a list of elements that are the results of that predicate.
+### Overview of the Stream Filter Method in java.
+The filter() function of the Java stream allows you to narrow down the stream's items based on a criterion. If you only want items that are even on your list, you can use the filter method to do this. This method accepts a predicate as an input and returns a list of elements that are the results of that predicate.
 
 With Java's sophisticated methods, streams and lambda expressions can be utilized to their full potential. You can build an assembly line using streams and lambda expressions. It is based on functional programming principles that the assembly line technique works. There are numerous ways to set up an assembly line. Each method receives the data, performs some sort of transformation on it, and then passes the results along to the succeeding method.
 
-### Using Stream filter method
-Java stream offers the filter() method, which allows you to filter stream components based on a predicate you specify. You can conveniently get only even components from your list by using the filter method.
+### Using the Stream filter method
+Java stream offers the filter() method, which allows you to filter stream elements based on a predicate you specify. You can conveniently get only even elements from your list by using the filter method.
 This method accepts a predicate as a function that takes a stream of elements that are the results of the predicate.
 
 A Stream interface's filter() method identifies elements in a stream that satisfy a criterion. It is a Stream interface intermediate operation.
@@ -32,12 +32,10 @@ The following is the method signature for the Stream filter() function:
 Stream<q> filter(Predicate<? super q> predicate)
 ```
 
-**Predicate:** It accepts a reference to a predicate as an argument. A predicate is a logical interface to a functional interface. Therefore, you may also send a lambda expression to this function.
+Notice how it accepts a Predicate object as a parameter. A predicate is a logical interface to a functional interface. Therefore, you may also send a lambda expression to this function.
 
-### Collection filtering.
-The filter() function is often used to handle collections.
-
-We can have a list of workers who have earned more than 90 marks. We can accomplish this by using a lambda expression.
+### Collection filtering
+The filter() function is often used to handle collections. We can use it to create a list of workers who have earned more than 90 marks, specifying the predicate as a lambda.
 
 ```Java
 List<Employee> employeeWith90MarksAndAbove = employees
@@ -45,7 +43,7 @@ List<Employee> employeeWith90MarksAndAbove = employees
   .filter(q -> q.getMarks() > 90)
   .collect(Collectors.toLists());
 ```
-Additionally, methods reference, which again is shorthand for such a lambda expression, may be used for illustration.
+Additionally, methods reference, which again is shorthand for such a lambda expression, may also be used.
 
 ```Java
 List<Employee> employeeWith90MarksAndAbove = employees
@@ -68,8 +66,8 @@ assertThis(employeeWith90MarksAndAbove).hasSize(03);
 assertThis(employeeWith90MarksAndAbove).contains(george, mike);
 ```
 
-### Filtering data based on a variety of criteria.
-In addition, we may utilize several criteria with the filter to our advantage (). We might, for instance, use a combination of points and names to narrow the results, as shown below:
+### Filtering data based on a variety of criteria
+In addition, we may utilize several criteria with the filter to our advantage. We might, for instance, use a combination of points and names to narrow the results, as shown below:
 
 ```Java
 List<Employee> georgeWith90MarksAndAbove = employees
@@ -87,7 +85,7 @@ We used multiple conditions with filter() such as marks and identity of the empl
 ### Methods for dealing with exceptions
 The filter method is used to evaluate predicates that do not throw exceptions when they are evaluated. The functional interfaces of the Java programming language do not specify any kind of exceptions, whether checked or unchecked.
 
-Lambda expressions, introduced in Java 8, began to make functional programming easier by giving a simple mechanism to define behavior in a function. Furthermore, the Functional Interfaces given by the JDK are inadequate for dealing with exceptions, and the resulting code becomes complex and complicated when dealing with them.
+Lambda expressions, introduced in Java 8, began to make functional programming easier by giving a simple mechanism to define behavior in a function. Furthermore, the Functional Interfaces given by the JDK are inadequate for dealing with exceptions. The resulting code becomes complex and complicated when dealing with them.
 
 The handling of exceptions in lambda expressions shall next be explored in detail using several alternative approaches.
 
@@ -146,9 +144,9 @@ To prevent an exception generated by our predicate from being caught, you may wr
 #### Using Throwing Function
 We may also make use of the ThrowingFunction library as an alternative.
 
-Using ThrowingFunction, which is a free open-source package that can be downloaded, we can handle checked exceptions in Java functional interfaces with relative simplicity.
+Using ThrowingFunction, a free open-source package that can be downloaded, we can handle checked exceptions in Java functional interfaces with relative simplicity.
 
-The first step is to include a dependency on the throwing function in our pom.xml file like as follows:
+The first step is to include the throwing function dependency in our pom.xml file:
 
 ```XML
 <dependency>
@@ -158,7 +156,7 @@ The first step is to include a dependency on the throwing function in our pom.xm
 </dependency>
 ```
 
-Exception handling in predicates is simplified with the `ThrowingPredicate class`, which also contains the unchecked() method for encapsulating checked exceptions.
+Exception handling in predicates is simplified with the `ThrowingPredicate` class, which also contains the unchecked() method for encapsulating checked exceptions.
 
 This action is illustrated below in the following code:
 
@@ -172,4 +170,4 @@ List employeesWithValidProfilePicture = employee
 ### Conclusion
 In this tutorial, we have looked at the filter() method in Java while using lambda expressions, which are used to handle streams. In addition to that, we have also looked at the different ways or approaches of dealing with exceptions handling.
 
- Happy Coding!
+Happy Coding!
