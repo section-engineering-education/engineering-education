@@ -6,7 +6,7 @@ url: /php-bulk-operations/
 title: PHP Bulk Operations with XAMPP and FPDF Library
 description: This article aims to take the reader through a stepwise process of understanding dealing with bulk insert and bulk export in PHP. Thus, the reader will understand the benefits of this functionality.
 author: samuel-zabastian
-date: 2021-10-23T00:00:00-17:00
+date: 2021-10-26T00:00:00-06:42
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
