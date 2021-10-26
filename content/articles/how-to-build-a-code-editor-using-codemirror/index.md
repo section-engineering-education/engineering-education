@@ -238,5 +238,6 @@ If properly implemented, we should have the following results;
 
 ### Conclusion
 In conclusion, we learned how to create an HTML, CSS and javascript compatible editor, add an HTML code format feature, auto-completion feature, adjustable split-screen using split.js. We brought all these components together to have a responsive code editor using codemirror.
+[here](https://github.com/ayodele96/code-editor/blob/main/code-editor.html) is the full code.
 ### Further Reading
 - [The codemirror documentation](https://codemirror.net/)
