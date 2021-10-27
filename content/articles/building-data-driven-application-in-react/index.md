@@ -38,7 +38,7 @@ Begin by adding html ,head,meta tag,body and title
     <title>Hello</title>
  ```
  
-Then we will add react library cdnjs using the code below and lastly we will add babel
+Then we will add react library cdnjs using the code below followed by babel
  <!-- Script tags including React -->
  ```js
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react.min.js"></script>
@@ -46,17 +46,13 @@ Then we will add react library cdnjs using the code below and lastly we will add
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
   ```
  
-Lets now add font and icon toolkit (Font Awesome) ,link our css to our code and then add head closing tag
+Lets now add font and icon toolkit (Font Awesome) ,link our css to our code and then add head closing tag and body which will contain class demo,
+class notificationsFrame , id app and then add script tag text/babel variable scope followed by the rest of the code.
 ```html
    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
    rel="stylesheet"type="text/css" />
     </head>
-```
-
-We will now add the body which will contain class demo,notificationsFrame , id app and then add script tag text/babel variable scope
-followed by the rest of the code.
-```html
-<body>
+    <body>
     <div class="demo">
       <div class="notificationsFrame">
         <div id="app"></div>
@@ -101,7 +97,7 @@ We use Header component by placing it in App component as shown below .
 
 ### Going data-driven
 
-So lets begin by adding a some features in our app header by adding the code below in our header component below className header:
+So lets begin to add some features in our app header by adding the code below in our header component below className header:
 
 ```html
       <div className="menukey"></div>
