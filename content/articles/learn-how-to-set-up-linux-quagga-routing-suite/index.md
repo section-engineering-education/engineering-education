@@ -16,7 +16,7 @@ images:
 ---
 In the Linux working framework, Quagga is a basic open-source project utilized to give steering administrations. It is one of the most generally utilized open-source projects accessible. 
 <!--more-->
-Various powerful conventions are upheld by this framework, including Open Shortest Path First, Routing Information Protocol, Border Gateway Protocol, Intermediate System to Intermediate System, and Multiprotocol Label Switching. CISCO/virtual JUNIPER's terminal or order line interface for setting conventions is upheld, albeit just partially by this variant of the product.
+Various powerful conventions are upheld by this framework, including Open Shortest Path First, Routing Information Protocol, Border Gateway Protocol, Intermediate System to Intermediate System, and Multiprotocol Label Switching. CISCO/virtual JUNIPER's terminal or order line interface for setting conventions is upheld, albeit partially by this variant of the product.
 
 Here we will exhibit how to introduce the Quagga steering suite on a Ubuntu working framework through an order line interface.
 
@@ -33,7 +33,7 @@ Here we will exhibit how to introduce the Quagga steering suite on a Ubuntu work
 
 ### Installation
 Quagga can be introduced from source code; Here, it will be presented in deb/paired bundle.
-In your Ubuntu Operating system terminal, run the beneath code check conditions of the Quagga bundle.
+In your Ubuntu Operating system terminal, run the code below to check the conditions of the Quagga bundle.
 
 ```
 #apt-cache depends on Quagga
@@ -205,7 +205,7 @@ $telnet localhost ripd
 ![ripd](ripd.png)
 
 ### Conclusion
-Quagga steering suite is generally utilized on the Linux stage to perform dynamic directing. In this article, we learned the establishment, design, and utilization of the Quagga steering suite. It upholds various ways of arranging running conventions like Open Short Path First and Routing Information Protocol. Can utilize Quagga-based steering gadgets for little and medium endeavors.
+Quagga steering suite is generally utilized on the Linux stage to perform dynamic directing. In this article, we learned the establishment, design, and utilization of the Quagga steering suite. It upholds various ways of arranging running conventions like Open Short Path First and Routing Information Protocol. We can utilize Quagga-based steering gadgets for little and medium endeavors.
 
 #### Further reading
 [How to set up Squirrelmail on a Linux computer](https://squirrelmail.org/docs/admin/admin-3.html)
