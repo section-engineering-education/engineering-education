@@ -465,4 +465,4 @@ Happy coding!
 - [Some Out-of-the-box solutions by AI and EA](https://arxiv.org/pdf/1803.03453.pdf)
 
 ---
-Peer Review Contributions by: [Willies Ogola](/authors/willies-ogola/)
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)

@@ -21,7 +21,7 @@ images:
 2. Get Python package manager, [pip](https://pypi.org/project/pip/) installed on your computer.
 3. You will need [Docker](https://docs.docker.com/docker-for-windows/install/) installed on your computer.
 
-For Docker installation, setup, and a quick start, visit [Getting started with Docker](/getting-started-with-docker/).
+For Docker installation, setup, and a quick start, visit [Getting started with Docker](/engineering-education/getting-started-with-docker/).
 
 ### Project setup
 We will be creating a Docker image for the Todo application that we created in [this](/django-crud-api/) tutorial. The `Todo` application that allows us to `create`, `read`, `update`, and `delete` Todo items via a REST API.
