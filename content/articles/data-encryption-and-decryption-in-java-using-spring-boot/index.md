@@ -9,7 +9,6 @@ In this article, we will learn data encryption and decryption in Spring Boot by 
 ### Table of Contents
 
 This tutorial will touch:
-
 - Encryption and Decryption Algorithms – Symmetric vs Asymmetric
 - Gateway vs In-Method
 - Advantages of using a gateway
@@ -60,7 +59,7 @@ private String firstName;
 }
 ```
 
-...and the controller
+The controller
 
 ```java
 import org.springframework.http.HttpStatus;
@@ -82,12 +81,12 @@ return new ResponseEntity<>("The child is eligible for a license", HttpStatus.OK
   }
 }
 ```
-...and the application.properties file to indicate the port we want this target service to run on
+The application.properties file to indicate the port we want this target service to run on
 ```java
 server.port=8009
 ```
 
-...and run the application using postman with the endpoint in the controller, as displayed in the image below:
+Run the application using postman with the endpoint in the controller, as displayed in the image below:
 ![Target Service running in Postman] Look for the image on Linux and add here
 
 ### EncryptDecrypt Helper
@@ -415,3 +414,8 @@ Gateways are crucial for data security. In this tutorial, we built a lightweight
 
 I hope you found this useful. Keep coding; change the world!
 Thank you
+
+### Further reading
+- https://www.trentonsystems.com/blog/symmetric-vs-asymmetric-encryption
+- https://www.baeldung.com/java-aes-encryption-decryption
+- https://www.baeldung.com/java-rsa
