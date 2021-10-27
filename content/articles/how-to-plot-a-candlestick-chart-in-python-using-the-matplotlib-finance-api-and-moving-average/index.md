@@ -159,3 +159,6 @@ Please find the complete code for this tutorial [here](https://colab.research.go
 - [CoinAPI](https://www.coinapi.io/)
 - [Matplotlib Finance API](https://github.com/matplotlib/mplfinance#newapi)
 - [Moving average function](https://www.investopedia.com/terms/m/movingaverage.asp)
+
+---
+Peer Review Contributions by: [Collins Ayuya](https://www.section.io/engineering-education/authors/collins-ayuya/)
