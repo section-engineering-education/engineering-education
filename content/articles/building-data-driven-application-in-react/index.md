@@ -150,9 +150,10 @@ Don't forget to call `react.Dom` to place your app on the page:
   <App />, document.querySelector("#app"));
 ```
 Lastly add the closing tags
-      </script>
-    </body>
-   </html>
+
+       </script>
+       </body>
+      </html>
    
 This results in three Header components to mount like [so](https://codepen.io/1-creator/full/XWarzzL):
 
