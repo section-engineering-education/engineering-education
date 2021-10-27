@@ -1,3 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /logistic-regression-in-python/
+title: Getting Started with Logistic Regression in Python
+description: This tutorial aims to help the reader get started with logistic regression in Python.
+author: daniel-mwanthi
+date: 2021-10-27T00:00:00-15:00
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/logistic-regression-in-python/hero.jpg
+    alt: Logistic Regression in Python Hero Image
+---
 ### Table of contents
 - [Getting started with Logistic Regression in python](#getting-started-with-logistic-regression-in-python)
   - [Logistic regression hypothesis representation](#logistic-regression-hypothesis-representation)
