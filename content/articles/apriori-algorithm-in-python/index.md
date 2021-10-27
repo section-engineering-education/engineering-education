@@ -15,14 +15,14 @@ $$Support(I) = \frac{transaction containing(I)}{total.transactions}$$
 where $$I$$ is a particular item in a items dataset.
 
 - Confidence: The confidence measures how the consumer is likely to consume $$I_2$$ given they have consumed $$I_1$$. 
-  It's calculated using the formular
+  It's calculated using the formular:
+  
   $$Confidence(I_1\rightarrow I_2) = \frac{transaction cointaing(I_1and I_2)}{transactions containing(I_1)}$$
   
 - Lift: A lift is a metric that determines the strength of association between the best rules. It is obtained by taking confidence and diving it with support. Its mathematical formula is as follows:
   $$Lift(I_1\rightarrow I_2) = \frac{Confidence(I_1\rightarrow I_2)}{Support(I_2)}$$
 
 Since we now understand the basics of the apriori algorithm, let us learn how to develop this model in python to use it and obtain the best association rule from a dataset.
-
 
 ### Implementing the Apriori Algorithm
 Our implementation will use a customer's transactions dataset containing records of customers' transactions with a particular business within a specific week. Our objective is to learn the best association rule from this dataset and return this rule to the business owner. 
