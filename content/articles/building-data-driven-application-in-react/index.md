@@ -1,4 +1,4 @@
-It is unsuitable to have to reform our aplication components every time we have a change in our application data . More than data/statistics is needed to have a credible data-driven application that is captivating to an extensive variety of business users.
+It is unsuitable to have to reform our application components every time we have a change in our application data . More than data/statistics is needed to have a credible data-driven application that is captivating to an extensive variety of business users.
 
 In data-driven application , the application flow is governed by data processed by the application. The data-set input may change your applications behavior. This means your decisions are influenced by data.
 
