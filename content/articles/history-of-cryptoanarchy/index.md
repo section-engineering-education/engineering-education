@@ -20,6 +20,7 @@ As we have moved from the Industrial Age to the Information Age, questions arise
 This tension between the struggle for privacy and liberty has always been pitted against rigid government surveillance and control. Cryptoanarchy emerged in the 1980s and evolved to enable the [sovereign individual](https://medium.com/@RhysLindmark/the-sovereign-individual-book-review-takeaways-quotes-and-critique-ad9da55852b1) to use encryption themselves and create their own uncensorable and programmable digital tools and network.
 
 ![Cryptoanarchy Logo](https://pbs.twimg.com/profile_images/1171592365766774784/dyFZLr7Q_400x400.jpg)<br/>
+
 *Image source: [cryptoanarchy](https://pbs.twimg.com/profile_images/1171592365766774784/dyFZLr7Q_400x400.jpg)*
 
 ### Philosophy
@@ -44,7 +45,6 @@ On November 22nd, 1992, Timothy May, then a senior scientist at Intel and crypto
 May foresaw both an economic and social revolution, an anarchist dream of self-governance where “cryptologic methods fundamentally alter the nature of corporations and of government interference in economic transactions”. He presciently anticipated the misuse of such a technology, which he called CryptoNet, including tampering by the State to try to regulate or eliminate its spread under the guise of national security concerns and its use by drug dealers, tax evaders, and various criminals. Nonetheless, he insisted “this will not halt the spread of crypto anarchy.”
 
 ### Notable Cyberphunks
-
 ![Richard Stallman with Julian Assange, who is holding an Edward Snowden Card](/engineering-educationhttps://miro.medium.com/max/500/0*eT5LwH4rOihgpThm.jpeg)<br/>
 *Richard Stallman with Julian Assange, who is holding an Edward Snowden Card. (Image source: [The Ecuadorian Library](https://miro.medium.com/max/500/0*eT5LwH4rOihgpThm.jpeg))*
 
@@ -57,11 +57,9 @@ May foresaw both an economic and social revolution, an anarchist dream of self-g
 - **Edward Snowden**: the whistleblower who leaked highly classified information from the National Security Agency (NSA) in 2013 when he was with the Central Intelligence Agency (CIA).
 
 ### 90s Precursors to Cryptocurrencies
-
 **Cyberphunks** are activists advocating the use of encryption and cryptographic tools for freedom. They are committed anarchists who aspire to improve society through code. Prior to [Bitcoin](https://bitcoin.org/), an open-source, decentralized, peer-to-peer technology resting on Austrian economic principles and libertarian ideals, several concepts paved the way for [Satoshi Nakamoto's White Paper](https://bitcoin.org/en/bitcoin-paper).
 
 ### Bitcoin's Ideological Precursors:
-
 - David Chaum's [DigiCash](https://en.wikipedia.org/wiki/DigiCash), invented in the 80s, was a token currency which could be transferred between individuals both safely and privately, along with technologies like Flooz, Beenz, Limetorrent.
 - Phil Zimmerman's [PGP](https://en.wikipedia.org/wiki/Pretty_Good_Privacy), invented in 1991, which stands for “pretty good privacy” enabled anonymity over email.
 - Adam Back's Hashcash, invented in 1997, is a [proof-of-work system used by Bitcoin](https://bitcoinmagazine.com/articles/back-future-adam-back-remembers-cypherpunk-revolution-origins-bitcoin-1441741053) and other cryptocurrencies as part of the mining algorithm.
@@ -77,6 +75,7 @@ May foresaw both an economic and social revolution, an anarchist dream of self-g
 - Stefan Brands' [electronic cash system](https://cryptome.org/jya/brands-dc.htm): designed core cryptographic protocols
 
 ![Bitcoin](/engineering-educationhttps://kryptomoney.com/wp-content/uploads/2018/07/KryptoMoney.com-BitMEX-Cryptocurrency-Exchange-I-billion-bitcoin-trading-volume-400x250.jpg)<br/>
+
 *Image source: [kryptomoney](https://kryptomoney.com/wp-content/uploads/2018/07/KryptoMoney.com-BitMEX-Cryptocurrency-Exchange-I-billion-bitcoin-trading-volume-400x250.jpg)*
 
 ### Modern Cryptoanarchy
