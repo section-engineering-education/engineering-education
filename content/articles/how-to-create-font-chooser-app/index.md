@@ -1,9 +1,9 @@
 ### How to create a font chooser app using python 
-A font picker is a simple application that allows you to browse through all the fonts installed on your computer, and filter down your options to find the ideal one for your project or work.
+A font picker is a simple application that allows you to browse through all the fonts installed on your computer, filtering down your options to find the ideal one for your project.
 
 In this tutorial, the Tkinter Python library will be used to construct a font chooser application.
 
-### Table of content.
+### Table of contents
 - Prerequisites
 - What is Tkinter?
 - Creating a font chooser app
@@ -17,7 +17,7 @@ To follow along with this tutorial, you will need to have:
 - A code editor. I use [Pycharm](https://www.jetbrains.com/pycharm/download/).
 
 ### What is Tkinter?
-Python's standard GUI library is Tkinter. When Python and Tkinter are integrated, creating graphical user interfaces becomes much faster and easier. 
+Tkinter is Python's standard GUI library. When Python and Tkinter are integrated, creating graphical user interfaces becomes much faster and easier.
 
 Tkinter provides geometric widget configuration, which organizes widgets in parent windows for grahical user interface.
 
@@ -29,32 +29,36 @@ You can install Tkinter by using the `pip` command.
 pip install tk
 ```
 
-### Creating a font chooser app
+### A little background about fonts
 A font is a digital data file that contains a collection of graphically related glyphs. A font maker application is used to design and create a computer font.
 
 Fonts are also known as typefaces, and they come in a variety of weights, shapes, sizes, colour, design and widths.
 
-According to estimates, there are over half a million fonts in use worldwide. A font chooser application will assist computer users in filtering down the total number of fonts installed in a computer system and selecting the font he wants to use.
+According to estimates, there are over half a million fonts in use worldwide. A font chooser application will assist computer users in filtering down the total number of fonts installed in a computer system and selecting the font they wants to use.
 
 To add style to a web page or document, different fonts are used. That is, they can be used to set or match the text's "tone" depending on the content. Additionally, depending on the medium, certain fonts have an impact on readability.
 
 Computer font file data formats are divided into three categories:
 
-- Bitmap font: The glyph in each face, weight, width and size is represented by a matrix of dots.
+#### 1. Bitmap font
+The glyph in each face, weight, width and size is represented by a matrix of dots.
 
 ![bitmap font image](/engineering-education/how-to-create-font-chooser-app/bitmapfont.jpg)
 
-- Vector font: It is also known as the outline font. Here each glyph is described by drawing specifications and mathematical methods, allowing the character outlines to be scaled to any size.
+#### 2. Vector font
+It is also known as the outline font. Here each glyph is described by drawing specifications and mathematical methods, allowing the character outlines to be scaled to any size.
 
 ![vector font image](/engineering-education/how-to-create-font-chooser-app/vectorfont.png)
 
-- Stroke font: It defines the size and shape of the line in a specific typeface using a series of specified lines and additional data, which together decide the appearance of the glyph.
+#### 3. Stroke font
+The size and shape of the line in a specific typeface is defined using a series of specified lines and additional data, which together decide the appearance of the glyph.
 
 ![stroke font image](/engineering-education/how-to-create-font-chooser-app/strokefont.jpg)
 
+### Creating the font chooser app
 In our code editor, we'll make a new file called `font.py`, where we'll write our code.
 
-Let's begin by importing Tkinter as well as fonts from the tkinter library.
+Let's begin by importing Tkinter as well as fonts from the Tkinter library.
 
 ```python
 from tkinter import *
@@ -69,7 +73,7 @@ root.geometry("500x400")
 
 First, we create a root widget. This is a window with a title bar. After creating the root widget, the programmer can then create other widgets.
 
-Then we give our font app a name (I used `maji.ico`. You can use your own name if you want to customize the app). 
+Then we give our font app a name (I used `maji.com`. You can use your own name if you want to customize the app).
 
 Then we set the size of the application.
 
@@ -107,7 +111,7 @@ By defining the `user_text` variable, we can add the textbox. We do this by putt
 
 We utilize the `.grid` function to prevent the font app from resizing abnormally. We set the row and column weights to 1 to ensure that additional space in the row and column is evenly distributes.
 
-We create a `Listbox` by setting the `my_listbox` variable to a listbox with a single-mode selection, which allows us to choose only one font at a time while still specifying the width size.
+We create a `Listbox` by setting the `my_listbox` variable to a `Listbox` with a single-mode selection, which allows us to choose only one font at a time while still specifying the width size.
 
 ```python
 for f in font.families():
