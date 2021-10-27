@@ -79,7 +79,8 @@ Then we set the size of the application.
 
 ```python
 def font_chooser(a):
-    user_font.config(family=my_listbox.get(my_listbox.curselection()))
+    user_font.config(
+        family=user_listbox.get(user_listbox.curselection()))
 ```
 
 Then we write the `font_chooser` function, which includes defining the font function and configuring the `Listbox` to retrieve the system's current font selection.
@@ -111,13 +112,13 @@ By defining the `user_text` variable, we can add the textbox. We do this by putt
 
 We utilize the `.grid` function to prevent the font app from resizing abnormally. We set the row and column weights to 1 to ensure that additional space in the row and column is evenly distributes.
 
-We create a `Listbox` by setting the `my_listbox` variable to a `Listbox` with a single-mode selection, which allows us to choose only one font at a time while still specifying the width size.
+We create a `Listbox` by setting the `user_listbox` variable to a `Listbox` with a single-mode selection, which allows us to choose only one font at a time while still specifying the width size.
 
 ```python
 for f in font.families():
-    my_listbox.insert('end', f)
+    user_listbox.insert('end', f)
 
-my_listbox.bind('<ButtonRelease-1>', font_chooser)
+user_listbox.bind('<ButtonRelease-1>', font_chooser)
 root.mainloop()
 ```
 
