@@ -8,6 +8,7 @@ In this article, we shall learn the intuition behind the apriori algorithm and l
 ### How apriori algorithm work?
 The Apriori algorithm uses three matrices to find the best association rules from a dataset, making its approach on datasets successful.
 These matrices include:
+
 - Support: Support measures the number of times a particular item or combination of items occur in a dataset.
 The mathematical formula for support is;
 $$Support(I) = \frac{transaction containing(I)}{total.transactions}$$
@@ -16,6 +17,7 @@ where $$I$$ is a particular item in a items dataset.
 - Confidence: The confidence measures how the consumer is likely to consume $$I_2$$ given they have consumed $$I_1$$. 
   It's calculated using the formular
   $$Confidence(I_1\rightarrow I_2) = \frac{transaction cointaing(I_1and I_2)}{transactions containing(I_1)}$$
+  
 - Lift: A lift is a metric that determines the strength of association between the best rules. It is obtained by taking confidence and diving it with support. Its mathematical formula is as follows:
   $$Lift(I_1\rightarrow I_2) = \frac{Confidence(I_1\rightarrow I_2)}{Support(I_2)}$$
 
@@ -25,7 +27,7 @@ Since we now understand the basics of the apriori algorithm, let us learn how to
 ### Implementing the Apriori Algorithm
 Our implementation will use a customer's transactions dataset containing records of customers' transactions with a particular business within a specific week. Our objective is to learn the best association rule from this dataset and return this rule to the business owner. 
 
-Using this rule, the business owner can now offer some deals to the customers, which will increase sales and profit. We can download this dataset [here](https://github.com/BejaminNaibei/dataset/blob/main/Market_Basket_Optimisation.csv)
+Using this rule, the business owner can now offer some deals to the customers, which will increase sales and profit. We can download this dataset [here.](https://github.com/BejaminNaibei/dataset/blob/main/Market_Basket_Optimisation.csv)
 
 
 ### Step 1: Data preprocessing
@@ -62,7 +64,9 @@ Since we shall be training an apriori model, which takes inputs in a list format
 
 To achieve this, we shall use a for-loop function that will iterate over the different observations of our pandas dataset and populate our empty list with the elements of such observations. We shall then take the `append` function from our created list, which will add different elements from our dataset into our list one by one. 
 
-However, to succeed in this step, we shall use two for-loop, one, say I, to iterate over all the 7501 different transactions and the second one, say j, to iterate over all the 20 columns so that the `append` function adds each element to the list independently. The following code transforms our dataset into a list of transactions.
+However, to succeed in this step, we shall use two for-loop, one,  to iterate over all the 7501 different transactions and the second one, over all the 20 columns so that the `append` function adds each element to the list independently. 
+
+The following code transforms our dataset into a list of transactions.
 
 ```python
 # Intializing the list
@@ -119,4 +123,3 @@ output_DataFrame.nlargest(n = 10, columns = 'Lift')
 ### Conclusion
 This article looked at the general intuition behind the apriori algorithm and showed how we could implement this algorithm in python using a transactional dataset.
 
-I hope this session was helpful, and we can now implement this algorithm in other datasets comfortably. Enjoy learning.
