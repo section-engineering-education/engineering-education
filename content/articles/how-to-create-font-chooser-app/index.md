@@ -1,6 +1,21 @@
-### How to create a font chooser app using python 
-A font picker is a simple application that allows you to browse through all the fonts installed on your computer, filtering down your options to find the ideal one for your project.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-create-font-chooser-app/
+title: How to Create a Font Chooser App Using Python
+description: This article will show you how to create a font chooser app using Python.
+author: majiyebo-ezra-shewuri
+date: 2021-10-27T00:00:00-11:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/how-to-create-font-chooser-app/hero.jpg
+    alt: Font Chooser Tkinter
+---
+A font picker is a simple application that allows you to browse through all the fonts installed on your computer, filtering down your options to find the ideal one for your project.
+<!--more-->
 In this tutorial, the Tkinter Python library will be used to construct a font chooser application.
 
 ### Table of contents
@@ -136,3 +151,5 @@ In this tutorial, we looked at the different types of computer font formats and 
 ### Reference
 [Python GUI programming with Tkinter](https://www.perlego.com/book/721869/python-gui-programming-with-tkinter-pdf) by Alan D Moore
 
+---
+Peer Review Contributions by: [Geoffrey Mungai](/engineering-education/authors/geoffrey-mungai/)
