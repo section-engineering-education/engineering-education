@@ -130,7 +130,7 @@ Configure serial interface 0/0/0 using the ``` passive-interface s0/0/0 ``` - Th
 
 This is because this interface is connected to an **Internet service provider (ISP)** which is not under the administrative control of the organization. This is necessary to increase security controls.
 
-![configuration commands on a Cisco router]()
+![configuration commands on a Cisco router](/engineering-education/configuring-eigrp/config.jpg)
 
 ### Verifying configurations
 To verify that eigrp has been successfully configured, the following commands can be used:
