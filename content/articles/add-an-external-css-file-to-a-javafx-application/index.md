@@ -23,6 +23,7 @@ Challenges come when one decides to style the JavaFX application. It is a cumber
 In the FXML file, it also is hard to follow up with the styling in the code since it is not continuous. You may also have noticed that the keywords used during styling are different from those of an HTML file. Well, there is a solution to this problem.
 
 ### Table of contents
+
 - [Key takeaways](#key-takeaways)
 - [Prerequisites](#prerequisites)
 - [Ways of styling a JavaFX application](#ways-of-styling-a-javafx-application)
@@ -76,11 +77,11 @@ In this article, all the above will be demonstrated in a JavaFX application. To 
 ### Create a new JavaFX file
 - Head over to the IDE. Open it and click on the create new project button. Check this out in the image below:
 
-![new Javafx application](new-javafx-style.png "new Javafx application")
+![new Javafx application](/engineering-education/add-an-external-css-file-to-a-javafx-application/new-javafx-style.png "new Javafx application")
 
 - Select _BootstrapFX_, _ControlsFX_, and _FormsFX_ as the project's dependencies. These are shown in the image below:
 
-![App dependencies](new-javafx-app-dependencies.png "App dependencies")
+![App dependencies](/engineering-education/add-an-external-css-file-to-a-javafx-application/new-javafx-app-dependencies.png "App dependencies")
 
 ### Folder structure
 The application folder structure looks as shown below:
@@ -119,7 +120,7 @@ protected void onHelloButtonClick(){
 This will remove the functionality of the 'Hello button' in the application.
 - Delete the `V-Box` that contains the `Hello button` and the Label in the `hello-view.fxml` file using the SceneBuilder as shown below:
 
-![Delete the VBox](delete-VBox.png "Delete the VBox")
+![Delete the VBox](/engineering-education/add-an-external-css-file-to-a-javafx-application/delete-vbox.png "Delete the VBox")
 
 If SceneBuilder isn't installed, check out how to install it and configure it in IntelliJ [here](https://www.section.io/engineering-education/design-a-sign-up-and-login-gui-using-javafx/). 
 
@@ -182,7 +183,7 @@ The step produces the following output when viewed using the SceneBuilder:
 - **CheckBox**: _Remember Me_.
 - **Buttons**: _Cancel_, _Sign in_, _Forgot password_.
 
-![Login page output](login-page-output.png "Login page output")
+![Login page output](/engineering-education/add-an-external-css-file-to-a-javafx-application/login-page-output.png "Login page output")
 
 - Head over to the `HelloApplication.java` file and make sure to set the Scene dimensions to 600 by 400. This step can be done by copy-pasting the code below in the Scene section:
 
@@ -314,11 +315,11 @@ protected void onSignInButtonClick(){
 
 - Run the application via the `HelloApplication.java` file as shown in the image below:
 
-![Run the application](Run-application.png "Run the application")
+![Run the application](/engineering-education/add-an-external-css-file-to-a-javafx-application/run-application.png "Run the application")
 
 The output looks as shown below:
 
-![Final output](output.png "Final output")
+![Final output](/engineering-education/add-an-external-css-file-to-a-javafx-application/output.png "Final output")
 
 As we have seen, the application runs as expected.
 
@@ -334,14 +335,14 @@ As we have seen, the application runs as expected.
 
 The SceneBuilder styling section in the properties tab will look as follows:
 
-![loginTitle SceneBuilder styling](loginTitle-SceneBuilder-styling.png "loginTitle SceneBuilder styling")
+![loginTitle SceneBuilder styling](/engineering-education/add-an-external-css-file-to-a-javafx-application/logintitle-scenebuilder-styling.png "loginTitle SceneBuilder styling")
 
 - Click on the `Remember me` checkbox and select the `Selected` option.
 - Run the application.
 
 It produces the following output:
 
-![Second Output](second-output.png "Second Output")
+![Second Output](/engineering-education/add-an-external-css-file-to-a-javafx-application/second-output.png "Second Output")
 
 As seen, there are more options provided by the SceneBuilder in the _Properties_, _Layout_, and _Code_ tabs. Adding styling using this method is very simple and no need for much hustle since there is the provision of GUI.
 
@@ -367,7 +368,7 @@ Now use the variables to style different components of the page again and again.
 
 - Run the application. The output is as shown below when the `Sign-In button` is clicked:
 
-![Third output](variable-styling.png "Third output")
+![Third output](/engineering-education/add-an-external-css-file-to-a-javafx-application/variable-styling.png "Third output")
 
 As seen from the above steps, the styling can be quickly re-used in the project for efficient code. It makes it easy for the developer especially in large projects with many styling presets for different elements.
 
@@ -505,7 +506,7 @@ Also, more styling can be added to it. These include the after-effects on checkb
 
 This produces the output below:
 
-![External CSS](final-external-styling.png "External CSS")
+![External CSS](/engineering-education/add-an-external-css-file-to-a-javafx-application/final-external-styling.png "External CSS")
 
 ##### External CSS for multiple scenes instances
 In the case of many scenes, add the styling by using different codes of lines.
