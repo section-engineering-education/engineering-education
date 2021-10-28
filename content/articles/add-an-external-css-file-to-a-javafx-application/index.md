@@ -23,7 +23,6 @@ Challenges come when one decides to style the JavaFX application. It is a cumber
 In the FXML file, it also is hard to follow up with the styling in the code since it is not continuous. You may also have noticed that the keywords used during styling are different from those of an HTML file. Well, there is a solution to this problem.
 
 ### Table of contents
-
 - [Key takeaways](#key-takeaways)
 - [Prerequisites](#prerequisites)
 - [Ways of styling a JavaFX application](#ways-of-styling-a-javafx-application)
