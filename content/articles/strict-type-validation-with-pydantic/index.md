@@ -7,7 +7,7 @@ title: Strict Type Validation With Pydantic
 description: This tutorial will guide the reader on how to type validate the inputs using Pydantic. We'll also learn about create custom validators.
 author: oluwatomisin-bamimore
 date: 2021-10-28T00:00:00-18:20
-topics: []
+topics: [API]
 excerpt_separator: <!--more-->
 images:
 
