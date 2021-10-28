@@ -151,7 +151,7 @@ Output:
 
 We successfully plotted a candlestick chart in Python using the matplotlib finance API and moving average.
 
-Please find the complete code for this tutorial [here](https://colab.research.google.com/drive/1Tl_kqWI3IvavcY2m7Xd-PMSx_t2b3vff?usp=sharing).
+Please find all the code for this tutorial [here](https://colab.research.google.com/drive/1Tl_kqWI3IvavcY2m7Xd-PMSx_t2b3vff?usp=sharing).
 
 ### References
 - [CoinAPI](https://www.coinapi.io/)
