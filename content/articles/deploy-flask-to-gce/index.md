@@ -15,8 +15,11 @@ images:
     alt: Deploying a Flask application to GCE Hero Image
 ---
 
+This article focuses on building a Flask application and deploying it to one of the most reliable IaaS infrastructures; the Google Compute Engine. 
+<!--more-->
+We will set up a virtual machine in the Google cloud console and deploy the Flask application to the setup machine. Besides, we will specify the number of instances that run our application to minimize downtime.In the end, the reader should have mastered the steps of creating and deploying a Flask application to a remote virtual machine.
+
 ### Table of content
-- [Article overview](#article-overview)
 - [Prerequisites](#prerequisites)
 - [What is Flask?](#what-is-flask?)
 - [Infrastructure as a service](#infrastructure-as-a-service)
@@ -29,13 +32,6 @@ images:
 - [Deploying the application](#deploying-the-application)
 - [Conclusion](#conclusion)
 - [Further reading](#further-reading)
-
-### Article overview
-This article focuses on building a Flask application and deploying it to one of the most reliable IaaS infrastructures; the Google Compute Engine. 
-
-We will set up a virtual machine in the Google cloud console and deploy the Flask application to the setup machine. Besides, we will specify the number of instances that run our application to minimize downtime.
-
-In the end, the reader should have mastered the steps of creating and deploying a Flask application to a remote virtual machine.
 
 ### Prerequisites
 - Basic skills in working with Flask
