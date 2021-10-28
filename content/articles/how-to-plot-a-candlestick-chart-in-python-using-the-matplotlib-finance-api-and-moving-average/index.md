@@ -38,9 +38,7 @@ To understand this tutorial, you need to be familiar with:
 
 ### Introduction
 Candlestick charts are financial charts that are composed of candlesticks. These candlesticks give you information about the open, close, high, and low values in stock. The `open` value is the value a stock opens with, for example, $100. At the end of the day, when trading stops, that value that is recorded is the `closing` value. Let's say $105. If we have a spike in the stock price at any point during the day and it shoots to $110, and that's the highest value recorded throughout the day, that's our `high`. However, if the reverse happens, and we record a low of $97 that's our `low`.
-These four values are what a candlestick chart uses to visualize.
-
-The matplotlib finance API is a package built on top of the matplotlib library to visualize financial data. It integrates easily with Pandas dataframes.
+These four values are what a candlestick chart uses to visualize. The matplotlib finance API is a package built on top of the matplotlib library to visualize financial data. It integrates easily with Pandas dataframes.
 
 The moving average is a technical indicator that tracks stock prices over time and plots it on a line. It helps smooth out price fluctuations giving an investor a general idea of where a trend is heading. It could determine an uptrend, downtrend, or sideways trend in prices. This enables an investor to know when to buy or sell, or hold stocks/cryptocurrencies. Today, it is popularly used to analyze trends in cryptocurrencies. 
 
