@@ -22,12 +22,12 @@ Email validator is a Flutter package that checks whether an email is valid or no
 - Create a simple app to show email validator.
 - Understand the implementation of email validator.
 
-### How it works?
+### How it email validator works?
 Email validator runs a check on the emails through a process called `swift process`. This process detects typographical errors or deliberate mistakes. Furthermore, it helps to organize and clean all email addresses in a flutter application.
 
 For this reason, it protects the email sender score while maximizing the efficiency of the flutter application. The key concepts from the use of this package are validity, risk, and the invalidity of any email address.
 
-This package consists of a class and a function. It takes an input string and checks whether it is a valid email address or not, which can be either in the `local-part@domain.com` format or just in `domain.com` format.
+This package consists of a class and a function. It takes an input string and checks whether it is a valid email address or not.
 
 The constructor for this class is pretty simple: Create a new instance of this class and set the validator type to either 1 or 2 (defaults to 1). The constructor should pass a string and an array of strings for validation.
 
@@ -39,13 +39,9 @@ The `EmailValidation()` constructor requires two arguments to function correctly
 
 The function accepts these two arguments in that order, followed by our string to validate as the last argument.
 
-If either of the first two arguments contains an error (a boolean with no value or not true/false and an empty array), then false should be returned. Otherwise, true should be returned, and our string should be validated.
+If either of the first two arguments contains an error, then false should be returned. Otherwise, true should be returned, and our string should be validated.
 
-The first two arguments specify whether we are trying to validate a `local-part@domain.com` or `domain.com` format email address, and the third argument is the string to validate as an email address.
 
-The function returns false if either of the first two arguments is an empty array or not a boolean. If so, it returns true and validates the passed string.
-
-The function accepts three arguments: whether we should validate using the domain.com format, the string to validate as an email address, and finally, the email address itself. The function returns false if either of the first two arguments is an empty array or not a boolean. If so, it returns true and validates the passed string.
 
 ### Benefits of Email validator
 1. Makes sure the user enters a correctly formatted email address while signing up.
