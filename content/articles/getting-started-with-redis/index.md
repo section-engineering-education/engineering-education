@@ -6,7 +6,7 @@ url: /getting-started-with-redis/
 title: Getting Started With Redis
 description: Redis is an open-source database that is often used to build high-performance scalable web applications. It uses an in-memory database which makes it faster than any other database.
 author: abimbola-taofeek
-date: 2021-10-27T00:00:00-10:10
+date: 2021-10-28T00:00:00-11:20
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
