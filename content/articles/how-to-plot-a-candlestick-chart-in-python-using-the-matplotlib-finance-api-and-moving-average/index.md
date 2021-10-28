@@ -78,7 +78,7 @@ url = f'https://rest.coinapi.io/v1/exchangerate/{coin}/USD/history?period_id={fr
 headers = {'X-CoinAPI-Key' : 'Paste your api key here'}
 response = requests.get(url, headers=headers)
 ```
-To get your free CoinAPI for testing or hobby projects, please visit their official website via this [link](https://www.coinapi.io/pricing?apikey). Once you're there, you'll notice there are five packages available. Select the first package to get a free api key. This api key will be sent to your email. Copy the key and paste is above in the section named, 'Paste your api key here'. The CoinAPI will provide you with fast, reliable and unified data APIs to cryptocurrency markets. In our example, we'll use it to fetch Bitcoin `BTC` data.
+To get your free CoinAPI for testing or hobby projects, please visit their official website via this [link](https://www.coinapi.io/pricing?apikey). Once you're there, you'll notice there are five packages available. Select the first package to get a free api key. This api key will be sent to your email. Copy the key and paste it above in the section written, 'Paste your api key here'. The CoinAPI will provide you with fast, reliable and unified data APIs to cryptocurrency markets. In our example, we'll use it to fetch Bitcoin `BTC` data.
 
 ### Data preprocessing
 
