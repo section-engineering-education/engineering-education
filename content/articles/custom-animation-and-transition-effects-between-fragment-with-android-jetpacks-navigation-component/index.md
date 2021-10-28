@@ -1,6 +1,21 @@
-### Introduction
-The Navigation component is part of the Android Jetpack Library and allows you to implement navigation, from simple button clicks to more complicated patterns. This makes it easier for a user to navigate from one destination to another. 
+---
+layout: engineering-education
+status: publish
+published: true
+url: /custom-animations-and-transition-effects-between-fragments-in-android/
+title: Custom Animations and Transition effects between Fragments in Android
+description: This tutorial takes the reader through the process of adding custom animations between destinations using the Navigation Components library in Android.
+author: joyce-wanjiru
+date: 2021-10-28T00:00:00-19:45
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/custom-animations-and-transition-effects-between-fragments-in-android/hero.png
+    alt: Custom Animations and Transition effects Hero Image
+---
+The Navigation component is part of the Android Jetpack Library and allows you to implement navigation, from simple button clicks to more complicated patterns. This makes it easier for a user to navigate from one destination to another.
+<!--more-->
 Navigating back and forth between Fragments can sometimes be confusing. With custom transition animations, if a user is heading to a new destination, we can add the respective and descriptive transition animation. Also, when navigating back to the previous Fragment, we can add animate the action.
 
 We can add custom transitions to animate the appearance and dismissal of dialog Fragments. Also, we can include shared transition elements in our app to open an image in a new destination.
@@ -45,7 +60,7 @@ While translating different elements i.e from left, right, up, and down, we can 
 - `duration` in milliseconds - this is the time taken for an animation to happen.
 
 ### Transition Animation Graph
-![Navigation Graph](/engineering-education/custom-animation-and-transition-effects-between-fragment-with-android-jetpacks-navigation-component/axis.png)
+![Navigation Graph](/engineering-education/custom-animations-and-transition-effects-between-fragments-in-android/axis.png)
 
 From the above graph:
 
@@ -110,7 +125,7 @@ Bringing back the initial Fragment on NavHostFragment. This Fragment will come f
 #### Adding Animations to Fragments
 To add the transition animations, in your `NavGraph`, click on an `Action` which you want to animate its transition. On your right, you will see a pane that has a section for adding animations:
 
-![Animation Pane](/engineering-education/custom-animation-and-transition-effects-between-fragment-with-android-jetpacks-navigation-component/animations.png)
+![Animation Pane](/engineering-education/custom-animations-and-transition-effects-between-fragments-in-android/animations.png)
 
 For the home Fragment, we'll need to specify the `popEnterAnim` and `popExitAnim` to animate the `ActionBar`/`Toolbar` accordingly.
 
@@ -233,7 +248,7 @@ sharedElementReturnTransition = animation
 ```
 
 ### Demo
-![Demo](/engineering-education/custom-animation-and-transition-effects-between-fragment-with-android-jetpacks-navigation-component/demo.gif)
+![Demo](/engineering-education/custom-animations-and-transition-effects-between-fragments-in-android/demo.gif)
 
 ### Conclusion
 In this tutorial, we have learned what transition animations are, and how to add animations when navigating through destinations. We have also looked at how to animate a DialogFragment's transition and finally, how to create a shared transition element.
@@ -241,3 +256,6 @@ In this tutorial, we have learned what transition animations are, and how to add
 Go ahead and enhance your Android projects with these transitions to increase your app's interactivity. You can visit this repository for reference [FragmentsTransitionsDemo](https://github.com/sheecodes/FragmentsTransitionsDemo).
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Eric Gacoki](/engineering-education/authors/eric-gacoki/)
