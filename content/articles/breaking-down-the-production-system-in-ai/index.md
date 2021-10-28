@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/breaking-down-the-production-system-in-ai/hero.jpg
     alt: Production System Image
 ---
-Production systems are important in artificial intelligence (AI) because they enhance the creation of AI-based programs and the automation of machines. They also enhance the fast and accurate resolution of conflicts in automated processes through the use of IF-THEN conditions. 
+Production systems are important in artificial intelligence (AI) because they enhance the creation of AI-based programs and the automation of machines. They also enhance the fast and accurate resolution of conflicts in automated processes through the use of **IF-THEN** conditions. 
 <!--more-->
 This article provides a breakdown of the production system in AI. It will look at the features, components, types, and applications of production systems in AI. 
 
