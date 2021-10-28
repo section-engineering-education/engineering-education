@@ -1,5 +1,22 @@
-### Introduction
-SVMs are a type of vector machine which supports vectors. Support vector machines, popularly called support vector classifications and support vector regression, are methods for dealing with classification and regression problems (SVR). The time required to evaluate a big dataset using this technique makes it unfeasible even for smaller datasets. 
+---
+layout: engineering-education
+status: publish
+published: true
+url: /using-a-hard-margin-vs-soft-margin-in-support-vector-machines/
+title: Using a Hard Margin vs Soft Margin in Support Vector Machines
+description: This tutorial aims to help the reader understand the concept of a hard margin and a soft margin SVM, along with how to use each one of them.
+author: dorcas-wambui
+date: 2021-10-28T00:00:00-19:00
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/using-a-hard-margin-vs-soft-margin-in-support-vector-machines/hero.jpg
+    alt: Hard Margin vs Soft Margin in Support Vector Machines Hero image
+---
+SVMs are a type of vector machine which supports vectors. Support vector machines, popularly called support vector classifications and support vector regression, are methods for dealing with classification and regression problems (SVR). 
+<!--more-->
+The time required to evaluate a big dataset using this technique makes it unfeasible even for smaller datasets. 
 
 ### Table of Contents
 - [Overview on Support Vector Machines](#overview-on-support-vector-machines)
