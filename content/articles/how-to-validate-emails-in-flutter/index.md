@@ -22,12 +22,12 @@ Email validator is a Flutter package that checks whether an email is valid or no
 - Create a simple app to show email validator.
 - Understand the implementation of email validator.
 
-### How does email validator work?
+### How it works?
 Email validator runs a check on the emails through a process called `swift process`. This process detects typographical errors or deliberate mistakes. Furthermore, it helps to organize and clean all email addresses in a flutter application.
 
-For this reason, email validator protects the email sender score while maximizing the efficiency of the flutter application. The key concepts from the use of this package are validity, risk, and the invalidity of any email address.
+For this reason, it protects the email sender score while maximizing the efficiency of the flutter application. The key concepts from the use of this package are validity, risk, and the invalidity of any email address.
 
-The email validator package consists of a class and a function. It takes an input string and checks whether it is a valid email address or not, which can be either in the `local-part@domain.com` format or just in `domain.com` format.
+This package consists of a class and a function. It takes an input string and checks whether it is a valid email address or not, which can be either in the `local-part@domain.com` format or just in `domain.com` format.
 
 The constructor for this class is pretty simple: Create a new instance of this class and set the validator type to either 1 or 2 (defaults to 1). The constructor should pass a string and an array of strings for validation.
 
@@ -64,7 +64,7 @@ The email validator plugin has implemented this functionality with an easy to us
 
 Apart from checking user-entered email addresses, you can check if a username is available on the website during the registration process or implement SSO validation, which is very important for your application.
 
-### Areas of application of email validator
+### Areas of application 
 - Address CaptureSingle-line Address Verification Software.
 - Address VerifyAddress Enhancement.
 - Data CleanseBatch Data Cleanse & Maintenance.
