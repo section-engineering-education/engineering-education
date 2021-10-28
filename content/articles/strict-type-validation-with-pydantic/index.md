@@ -1,5 +1,21 @@
-Type validation is the process of making sure what you get is what you are expecting.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /strict-type-validation-with-pydantic/
+title: Strict Type Validation With Pydantic
+description: This tutorial will guide the reader on how to type validate the inputs using Pydantic. We'll also learn about create custom validators.
+author: oluwatomisin-bamimore
+date: 2021-10-28T00:00:00-18:20
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/strict-type-validation-with-pydantic/hero.png
+    alt: Strict Type Validation With Pydantic Image
+---
+Type validation is the process of making sure what you get is what you are expecting.
+<!--more-->
 If an endpoint is supposed to get an integer, you use type validation to ensure the input is an integer and not a string. It could be time-consuming to write your validation logic.
 
 Many API frameworks have type validation out of the box, whereas lightweight programming frameworks like Flask do not. Type validation can be made more accessible with frameworks like Pydantic.
