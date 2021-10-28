@@ -3,37 +3,33 @@ layout: engineering-education
 status: publish
 published: true
 url: /how-to-implement-camerax-api-in-android/
-title: How to implement CameraX API in Android using Kotlin
+title: How to Implement CameraX API in Android Using Kotlin
 description: This article will guide the reader on how to implement CameraX API in Android. CameraX is a Jetpack support library, built to help you make camera app development easier.
 author: raphael-ndonga
-date: 2021-10-19T00:00:00-14:00
+date: 2021-10-28T00:00:00-09:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/how-to-implement-camerax-api-in-android/hero.jpg
-    alt: How to implement CameraX API in Android hero image
+    alt: How to Implement CameraX API in Android Hero Image
 ---
-The camera is one of the most important components of a mobile device. It is responsible for capturing optical images of the surrounding environment. 
+The camera is one of the most important components of a mobile device. It is responsible for capturing optical images of the surrounding environment.
 <!--more-->
 When you want to take pictures in your Android app, there are generally two paths to follow:
-
 - Invoke an implicit intent `Intent(MediaStore.ACTION_IMAGE_CAPTURE)` that redirects to the normal camera application.
 - Use a `Camera API` to capture images.
 
 In this tutorial, we will be tackling the 2nd path. Camera APIs are better because:
-
 - They give more control over how the images are taken and processed.
 - They produce higher quality images.
 
 We will use the CameraX API. This is currently the recommended Android API to use for taking pictures, because:
-
 - It has been thoroughly tested by the Android team to ensure consistency across devices.
-- It is much easier to use  compared to other APIs.
+- It is much easier to use compared to other APIs.
 
 ### Goal
 In this tutorial, we will develop a basic camera application. The app will have the following functionalities:
-
 - Hold a camera preview on it (that is, the screen that sees through the camera).
 - Switch between the back and front camera.
 - Take pictures and save them in a localized storage location.
@@ -53,7 +49,7 @@ To follow along with this tutorial, you will need a basic understanding of Andro
 ### Project Setup
 Create a new empty activity project in Android Studio and add the following dependencies in the `build.gradle(app)` file:
 
-```gradle
+```bash
 buildFeatures{
     //enable view binding
     viewBinding true
@@ -61,14 +57,14 @@ buildFeatures{
 dependencies{
 ...
     //Check for the latest versions
-    def camerax_version = "1.0.1" 
+    def camerax_version = "1.0.1"
 
     // CameraX core library using camera2 implementation
     implementation "androidx.camera:camera-camera2:$camerax_version"
 
     // CameraX Lifecycle Library
     implementation "androidx.camera:camera-lifecycle:$camerax_version"
-    
+
     // CameraX View class
     implementation "androidx.camera:camera-view:1.0.0-alpha27"
 }
@@ -81,7 +77,7 @@ You will also need to declare the following permissions in the `AndroidManifest.
 <uses-permission android:name="android.permission.CAMERA"/>
 ```
 
-### The Camera Preview
+### The camera preview
 This is the screen that displays what the camera views.
 
 Replace the `TextView` with a `PreviewView` in `activity_main.xml`:
@@ -140,7 +136,7 @@ This function will listen for the data from the camera.
 
 We will then connect the `Preview` use case to the preview in the `xml` file we created.
 
-> **NOTE** : A *use case* is a way developers can access camera features.
+> **NOTE** : A _use case_ is a way developers can access camera features.
 
 After that, reinitialize the camera provider, before attaching the use case.
 
@@ -162,14 +158,14 @@ private fun startCamera(){
         } catch (e: Exception) {
                 Log.d(TAG, "Use case binding failed")
         }
-        
+
     },ContextCompat.getMainExecutor(this))
 }
 ```
 
 `ContextCompat.getMainExecutor(this)` is used to run the asynchronous operation that is being listened by the `cameraProviderFuture`. Its context is within the application.
 
-In the `onCreate` method, call the above function:
+In the `onCreate` method, call the function above:
 
 ```kotlin
 override fun onCreate(savedInstanceState: Bundle?) {
@@ -179,7 +175,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
 }
 ```
 
-Upon running your app, it looks like you have a blocked camera. Why? Well, this is because the camera permissions have not been granted.
+Upon running your app, it looks like you have a blocked camera. Why? Well, this is because the camera permission has not been granted.
 
 Ask the user for permission to use the camera by adding the following attribute above `onCreate` method:
 
@@ -198,7 +194,7 @@ private val cameraProviderResult = registerForActivityResult(ActivityResultContr
 
 For more on ActivityResult APIs, refer to the documentation: [Getting a Result from an Activity](https://developer.android.com/training/basics/intents/result)
 
-In `onCreate` execute the contract:
+In `onCreate` ,execute the contract:
 
 ```kotlin
 cameraProviderResult.launch(android.Manifest.permission.CAMERA)
@@ -206,7 +202,7 @@ cameraProviderResult.launch(android.Manifest.permission.CAMERA)
 
 The app should now prompt you to allow the camera permission after which the camera is activated.
 
-### Image Capturing and Storage
+### Image capturing and storage
 In `activity_main.xml`, create a button that will be used to take photos when clicked.
 
 ```xml
@@ -320,9 +316,9 @@ binding.imgCaptureBtn.setOnClickListener{
 }
 ```
 
-Run your app and take a photo then open the logCat and search `MainActivity`. You will see the location whereby the image has been saved. 
+Run your app and take a photo, then open the logCat and search `MainActivity`. You will see the location where the image has been saved.
 
-### Switch Camera
+### Switch camera
 To switch the camera, either from front to back or from back to front, do the following:
 
 Create a switch button in `activity_main.xml`:
@@ -339,7 +335,7 @@ Create a switch button in `activity_main.xml`:
     app:layout_constraintStart_toStartOf="parent" />
 ```
 
-In `MainActivity.kt`'s `onCreate` method, setup the button's onClickListener:
+In MainActivity's `onCreate` method, setup the button's onClickListener:
 
 ```kotlin
 binding.switchBtn.setOnClickListener {
@@ -354,12 +350,12 @@ binding.switchBtn.setOnClickListener {
 }
 ```
 
-Run your app and click the `Switch` button to Switch the cameras.
+Run your app and click the `Switch` button to switch the cameras.
 
-### Local Gallery
+### Local gallery
 To view the photos, you need to create a scrollable screen to display the images. This can be achieved using a RecyclerView adapter attached to a `ViewPager`.
 
-Add the following dependency to build.gradle(app):
+Add the following dependency to `build.gradle(app)`:
 
 ```gradle
 // Glide library for image management and loading.
@@ -380,7 +376,7 @@ Add another button in the `activity_main.xml` file for navigating to a new activ
     app:layout_constraintStart_toEndOf="@id/img_capture_btn" />
 ```
 
-Next, go to `File` -> `New` -> `Activity` -> `EmptyActivity` and create a `GalleryActivity`
+Next, go to `File -> New -> Activity -> EmptyActivity` and create a `GalleryActivity`.
 
 Go back to `MainActivity.kt` and set the click listener for the gallery button:
 
@@ -471,9 +467,9 @@ val adapter = GalleryAdapter(files.reversedArray())
 binding.viewPager.adapter = adapter
 ```
 
-You can now run the app, take photos and view them. Voila!
+You can now run the app, take photos, and view them. Voila!
 
-### Conclusion 
+### Conclusion
 In this article, we have learned how to use CameraX API to take photos and view them in a gallery. CameraX makes it easy to integrate powerful camera features within the applications.
 
 You can find the source code in this [Github repository](https://github.com/RaphaelNdonga/CameraXTutorial).
