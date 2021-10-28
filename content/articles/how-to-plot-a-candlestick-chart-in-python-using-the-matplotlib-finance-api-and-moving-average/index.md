@@ -144,14 +144,20 @@ mpl.plot(
     style="yahoo"
     )
 ```
+There are different types of charts one can use to plot these share prices i.e., bar charts, candlestick chart, renko chart, line chart, figure charts etc. In our example we've used the candlestick chart. These type of charts have a simple, easy-to-analyze appearance, and, provide more detailed information about the market at a glance than bar or line charts.
+We've applied a moving average line using `mav` to our plot. A 3, 6, and 9 day moving average. You can change these values to any value. Popular moving averages on stock prices websites includes a 10, 20, and 30 day moving average.
+We chose the `yahoo` style as it replicates the way you watch stock prices on the Yahoo website. However, there are other built in styles in mplfinance library you could try out. They include `binance`, `blueskies`, `brasil`, `charles`, `checkers`, `classic`, `default`, `mike`, `nightclouds`, `sas`, and `starsandstripes`.
 
 Output:
 
 ![BTC candlestick chart](/engineering-education/how-to-plot-a-candlestick-chart-in-python-using-the-matplotlib-finance-api-and-moving-average/btc.png)
 
-We successfully plotted a candlestick chart in Python using the matplotlib finance API and moving average.
+We have successfully plotted a candlestick chart in Python using the matplotlib finance API and moving average. 
 
 Please find all the code for this tutorial [here](https://colab.research.google.com/drive/1Tl_kqWI3IvavcY2m7Xd-PMSx_t2b3vff?usp=sharing).
+
+### Wrapping up
+The mplfinance library allows us to visualize data pretty easily. This tutorial just scratches the surface on what you can actually do with this library. You can read more about the mplfinance API documentation to learn ways you can improve on this tutorial.
 
 ### References
 - [CoinAPI](https://www.coinapi.io/)
