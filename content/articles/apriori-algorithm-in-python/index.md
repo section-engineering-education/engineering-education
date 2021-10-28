@@ -1,6 +1,22 @@
-### Getting started with Apriori algorithm in python
-Apriori algorithm is a machine learning model used in Association Rule Learning to identify frequent itemsets from a dataset. This model has been highly applied on transactions datasets by large retailers to determine items that customers frequently buy together with high probability. 
+---
+layout: engineering-education
+status: publish
+published: true
+url: /apriori-algorithm-in-python/
+title: Getting started with Apriori algorithm in python
+description: In this article, we shall learn the intuition behind the apriori algorithm and later implement it in python.
+author: 
+date: 2021-09-21T00:00:00-00:30
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url:  /engineering-education/dapriori-algorithm-in-python/hero.jpg
+    alt:  Apriori algorithm in python Imgae
+---
+
+Apriori algorithm is a machine learning model used in Association Rule Learning to identify frequent itemsets from a dataset. This model has been highly applied on transactions datasets by large retailers to determine items that customers frequently buy together with high probability. 
+<!--more-->
 Using its knowledge, retailers can structure deals on their products, such as offering a discount on best rules or attaching a free item depending on the quantity of best-associated rules customers buy together. Whichever the case, customers end up spending extra more to benefit from these deals. As a result, the business experience not only high sales but also a high profit.
 
 In this article, we shall learn the intuition behind the apriori algorithm and later implement it in python.
