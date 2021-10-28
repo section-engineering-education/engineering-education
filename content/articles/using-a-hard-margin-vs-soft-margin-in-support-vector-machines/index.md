@@ -137,3 +137,6 @@ Hard margins are more exact than soft margins in SVMs because the data is more s
 In this tutorial, we have looked at the concept of a hard margin and a soft margin SVM, along with how to use each one of them. Support vector machines margin requirements were also discussed.
 
 Happy Learning!
+
+---
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
