@@ -67,7 +67,7 @@ model = BlenderbotForConditionalGeneration.from_pretrained("facebook/blenderbot-
 ```
 It is quite a large model, and it might take some time to download. We've downloaded the pre-trained model, `facebook/blenderbot-400M-distill` with 400 million parameters. You can download different models here as well. For example, you could load the model with 90 million or 2 billion parameters. 
 
-#### Testing the blendebot model
+#### Testing the blenderbot model
 This last step involves passing some natural language to the model, converting it into tokens as we would typically do in natural language processing, and getting responses back from the chatbot.
 Whenever you're working with chatbots, they refer to input text as an `utterance`. Let's create a new variable called `utterance` and input our string.
 
@@ -99,13 +99,13 @@ Running the above command, an output is generated:
 tensor([[   1, 3490,  287, 2273,  304,   19, 4798, 3087,   21,  714,  361,  304,
           538,  287,  361,  517,  304, 5055,  470,   38,    2]])
 ```
-This is our response from the model. To humans, this is just a bunch of numbers. Let's decode this result into natural language so that we can understand it.
+This is the response from the model. To humans, this is just a bunch of numbers. Let's decode this result into natural language so that we can understand it.
 
 ```python
 tokenizer.decode(results[0])
 ```
-The reason we've used `[0]` is because in our results above, you'll notice that the output is stored inside two arrays.
-We need to extract it so that we have it in a single set of array.
+The reason we've used `[0]` is because, in our results above, you'll notice that the output is stored inside two arrays.
+We need to extract it so that we have it in a single set of arrays.
 
 Here's our output:
 
