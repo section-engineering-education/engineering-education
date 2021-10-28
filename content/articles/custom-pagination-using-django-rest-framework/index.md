@@ -63,7 +63,7 @@ Create the Django project
 django-admin startproject blogsite
 ```
 
-In the same directory create the blog app using the command below:
+Create the `blog` app in the same directory.
 
 ```bash
 python manage.py startapp blog
@@ -250,12 +250,6 @@ Open the `settings.py` and add the blog app and the REST framework under install
 
 ```python
 INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
     'rest_framework',
     'blog.apps.BlogConfig',
 ]
@@ -324,12 +318,8 @@ urlpatterns = [
     path('',include(router.urls))
 ]
 ```
-For the REST API add the code to `serializers.py` that specifies all the fields to be obtained from the database.
+For the REST API Import `serializers` from REST Framework and the `Post ` model then add code to `serializers.py` that specifies all the fields to be obtained from the database.
 ```python
-from rest_framework import serializers
-from .models import Post
-
-
 class PostSerializer(serializers.ModelSerializer):
     class Meta:
         model = Post
