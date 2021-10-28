@@ -355,3 +355,6 @@ From examples in the article, Pydantic enables you to control input types custom
 - [Validators](https://pydantic-docs.helpmanual.io/usage/validators/)
 - [Data quality](https://towardsdatascience.com/8-reasons-to-start-using-pydantic-to-improve-data-parsing-and-validation-4f437eae7678)
 - [Schemas](https://pydantic-docs.helpmanual.io/usage/schema/)
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
