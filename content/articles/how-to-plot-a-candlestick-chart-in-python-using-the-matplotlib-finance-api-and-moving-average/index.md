@@ -157,12 +157,12 @@ We have successfully plotted a candlestick chart in Python using the matplotlib 
 Please find all the code for this tutorial [here](https://colab.research.google.com/drive/1Tl_kqWI3IvavcY2m7Xd-PMSx_t2b3vff?usp=sharing).
 
 ### Wrapping up
-The mplfinance library allows us to visualize data pretty easily. This tutorial just scratches the surface on what you can actually do with this library. You can read more about the mplfinance API documentation to learn ways you can improve on this tutorial.
+The mplfinance library allows us to visualize data pretty easily. This tutorial scratches the surface on what you can actually do with this library. You can read more about the mplfinance API documentation to learn ways you can improve on this tutorial.
 
 ### References
-- [CoinAPI](https://www.coinapi.io/)
-- [Matplotlib Finance API](https://github.com/matplotlib/mplfinance#newapi)
-- [Moving average function](https://www.investopedia.com/terms/m/movingaverage.asp)
+1. [CoinAPI](https://www.coinapi.io/)
+2. [Matplotlib Finance API](https://github.com/matplotlib/mplfinance#newapi)
+3. [Moving average function](https://www.investopedia.com/terms/m/movingaverage.asp)
 
 ---
 Peer Review Contributions by: [Collins Ayuya](https://www.section.io/engineering-education/authors/collins-ayuya/)
