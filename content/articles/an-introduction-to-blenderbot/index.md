@@ -1,3 +1,22 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /an-introduction-to-blenderbot/
+title: An Introduction to Blenderbot
+description: In this tutorial, we will create a chatbot using PyTorch and the Blenderbot model.
+author: lisbon-cheop
+date: 2021-10-28T00:00:00-18:00
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/an-introduction-to-blenderbot/hero.png
+    alt: blenderbot example image 
+---
+The Blenderbot model is available through the Hugging Face transformers library. Hugging Face is an open-source library available in Python that allows you to leverage some of the state-of-the-art Natural Language Processing models.
+<!--more-->
+
 ### Table of contents
 - [Prerequisites](#prerequisites)
 - [The Blenderbpt model](#the-blenderbot-model)
