@@ -1,7 +1,24 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /understanding-babel-and-how-it-will-help-you-write-javascript/
+title: Babel in writing Javascript
+description: In this tutorial we will take a look of how Babel can be useful in writing javaScript code.
+author: robert-wanjau
+date: 2021-10-28T00:00:00-11:40
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/understanding-babel-and-how-it-will-help-you-write-javascript/hero.png
+    alt:  Babel in writing Javascript Image
+---
+
 ### Introduction
 When you use Babel, you can convert edge JavaScript into plain old ES5 JavaScript that can be run in any browser, no matter where you are (even the old ones).
 Classes, fat arrows, and multiline strings are among the syntactical sugar that has been added to JavaScript as a result of the introduction of the new ES6 specification.
-
+<!--more-->
 In this tutorial we will take a look of how Babel can be useful in writing javaScript code.
 
 ### Table of content
