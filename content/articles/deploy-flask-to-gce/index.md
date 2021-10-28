@@ -1,3 +1,20 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /deploy-flask-to-gce/
+title: Deploying a Flask Application to Google Compute Engine
+description: This article will show the reader how to deploy a Flask web application to Google Compute Engine(GCE). IT will take the reader througH developing an application in the Google cloud shell, setting up firewall configurations and finally pushing the developed Flask application to a virtual machine in Google Compute Engine.
+author: paul-romans
+date: 2021-09-16T00:00:00-04:20
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/deploy-flask-to-gce/hero.png
+    alt: Deploying a Flask application to GCE Hero Image
+---
+
 ### Table of content
 - [Article overview](#article-overview)
 - [Prerequisites](#prerequisites)
@@ -222,7 +239,7 @@ In the application folder, we listed out the requirements needed in the requirem
     set FLASK_APP='app.py'
     flask run -p 5000
     ```
-After successfully following through the steps, you should expose the url and view the application via the browser. Further configurations could be done to map the URL to a custom domain.
+After successfully following the steps, you should expose the url and view the application via the browser. Further configurations could be done to map the URL to a custom domain.
 ![Deployed application](/engineering-education/deploy-flask-to-gce/deployed.png)
 
 ### Conclusion
