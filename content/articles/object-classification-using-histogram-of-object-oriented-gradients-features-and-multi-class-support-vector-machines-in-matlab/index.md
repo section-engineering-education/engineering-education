@@ -1,9 +1,10 @@
 ### Object Classification using Histogram of Oriented Gradients(HOG) features and Error-correcting output codes(ECOC) Multi-Class Support Vector Machine(SVM) in Matlab
 
 ### Introduction
-The Histogram of Oriented Gradients(HOG) is a feature descriptor used in computer visions and image processing for object detection. The technique counts the occurrence of the gradient orientations in the localized portion of an image. Support vector machine(SVM) is a supervised machine learning algorithm that helps in classification. It aims to find an optional boundary between the possible outputs.
-SVM tries to find a line that maximizes the separation between a two-class data set of 2-dimensional space points. The objective is to find a hyperplane that maximizes the separation of the data points to their potential classes in a given dimensional space. The data points with the minimum distance to the hyperplane (closest points) are called Support Vectors.
-In this tutorial, We will look at the multi-class object classification with the help of HOG features. For classification, we use the ECOC based multi-class SVM.
+The Histogram of Oriented Gradients(HOG) is a method used in computer vision and image processing to describe the features of a given data. It considers the number of times the gradient orientation in a localized part of an image occurs. 
+Support vector machine(SVM) is also known as the discriminative method. The hyperplane defines this method. What this hyperplane does is separate the given data into parts according to the defined distinguishing features.
+
+SVM model separates a given data into two using a hyperplane. A hyperplane is the point of separation of the provided data. A point to note is that SVM does not create one hyperplane. Instead, it creates two more hyperplanes that are parallel to each other. These two hyperplanes are the points closest to each part. A hyperplane gives the caution to accurately and efficiently classify your data. In this tutorial, We will look at the multi-class object classification with the help of HOG features. For classification, we use the ECOC based multi-class SVM.
 
 ### Prerequisites
 To follow along with this tutorial, you'll need:
@@ -28,7 +29,7 @@ From the 16000 images, we are using only 4800 images for our training and testin
 ### Error-correcting output codes(ECOC) based multi-class SVM
 In machine learning, many algorithms, such as linear regression, SVM, e.t.c, can deal with binary classification problems. A binary classification problem is one where only there are only two target classes, for example, yes or no, black or white, e.t.c. It means you can only classify two input objects into the two classes.
 
-In practice, many classification problems belong to multi-class classification problems; therefore, binary SVM cannot handle our objective of classifying four different shapes. However, there are modified SVM also for multi-class problems such as `one vs rest` and `one vs one`. These can classify by dividing the multi-class problem into a fixed number of binary classification problems.
+In practice, many classification problems belong to multi-class classification problems; therefore, binary SVM cannot handle our objective of classifying four different shapes. However, there are modified SVM also for multi-class problems such as `one vs rest` and `one vs one`. These methods classify by dividing a given multi-class problem into a fixed number of binary problems.
 
 Unlike `one vs rest` and `one vs one`, the ECOC technique allows each class to be encoded at an arbitrary number of classification problems. Furthermore, using an overdetermined presentation allows the extra models to act as `error correction` predictions, resulting in better predictive performance.
 
