@@ -363,7 +363,7 @@ The first argument to the `Field` object is the default value of the field. You 
 ### Conclusion
 Pydantic is built in a way that allows room for flexibility. You can use Pydantic with any development framework, and it works just fine.
 
-Frameworks like FastAPI supports Pydantic out of the box. Other loosely coupled frameworks like Flask does not come bundled with Pydantic but allow room for integration.
+Frameworks like FastAPI support Pydantic out of the box. Other loosely coupled frameworks like Flask do not come bundled with Pydantic but allow room for integration.
 
 From examples in the article, Pydantic enables you to control input types custom validation, because input validation is a significant step towards securing your application.
 
