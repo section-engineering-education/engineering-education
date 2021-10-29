@@ -6,7 +6,7 @@ url: /terminal-progress-bar-python/
 title: Terminal Progress Bar in Python
 description: In this article we will discuss building a progress bar using several libraries in Python.
 author: sandra-moringa
-date: 2021-10-25T00:00:00-18:00
+date: 2021-10-29T00:00:00-18:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -69,14 +69,14 @@ def Download_File():
 Download_File()
 
 ```
-The `Download_File()` function first gets the size of the file in bytes from the file's meta response header information, *Content-Length*. That is done after getting the file's contents using the imported module's `urlopen()` method.
+The `Download_File()` function first gets the size of the file in bytes from the file's meta response header information, *Content-Length*. After getting the file's contents, that is done using the imported module's `urlopen()` method.
 
-After that, it starts downloading the file using the `urlretrieve()` method. This method takes in three parameters as explained below.
+After that, it starts downloading the file using the `urlretrieve()` method. This method takes in three parameters, as explained below.
 1. `download_url` - The URL where the file to be downloaded is located.
 2. `save_location` - The location where the downloaded file will be stored.
 3. `Handle_Progress` - The function for processing the download progress is passed as a callback. We'll look at this function in the next part.
 
-> Callbacks in Python, or any other language, are functions that are executed after a certain code is executed. They are usually passed in as arguments to other functions. A common use case is displaying some text after a file has finished being loaded/read from the machine's storage. Read more about callbacks in Python [here](https://pythonexamples.org/python-callback-function/).
+> Callbacks in Python, or any other language, are functions that are executed after a certain code is executed. They are usually passed in as arguments to other functions. For example, an everyday use case displays some text after a file has finished being loaded/read from the machine's storage. Read more about callbacks in Python [here](https://pythonexamples.org/python-callback-function/).
 
 ```python
 def Handle_Progress(block_num, block_size, total_size):
@@ -99,7 +99,7 @@ def Handle_Progress(block_num, block_size, total_size):
 This function takes three parameters:
 1. `block_num` - The block number. The method gets the file in blocks.
 2. `block_size` - The size in bytes of the block.
-3. `total_size` - The total size in bites of the file.
+3. `total_size` - The total size in bytes of the file.
 
 Using these three parameters, it calculates the downloaded size(`read_data`), remaining size(`remaining_size`), and downloaded percentage(`downloaded_percentage`).
  > It gets the downloaded size by calculating the block number multiplied by the block size, then repeatedly adds it until the file finishes downloading.
@@ -160,7 +160,7 @@ We then get, as we did before, the file size. After that, we check for the prese
 
 In the `for` loop, we iterate the HTTP response in block sizes of 8192, although the block size doesn't matter. You can place any number there apart from 0 or a negative number. 
 
-The logic is more similar to the previous code snippet, but here, we write a statement for calculating the number of characters to be displayed in the bar.
+The logic is more similar to the previous code snippet, but we write a statement for calculating the number of characters to be displayed in the bar.
 We want to display 50 # symbols, each representing 2% of the downloaded file. If we wanted 10 symbols, we could write there 10, each representing 10%, and so on.
 ```python
 portion = int(50 * downloaded_data / total_size)
