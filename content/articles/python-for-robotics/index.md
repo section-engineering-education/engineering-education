@@ -16,7 +16,7 @@ images:
 ---
 
 ### Table of Content  
-- [Prerequisites](#Prerequisites)
+- [Prerequisites](#prerequisites)
 - [Introduction](#intrоduсtiоn)
 - [Why choose Python](#why-choose-python)
 - [Working principles of robots](#wоrking-рrinсiрle-оf-rоbоts)
@@ -31,7 +31,6 @@ To follow this tutorial, you should have a basic understanding of the following 
 - Arduino installed.
 
 ### Intrоduсtiоn
-<<<<<<< HEAD
 In this article, We will learn to control a robot arm using Python and discuss some of the working principles behind robots.
 =======
 In this article, we will learn how to use Python to control a robot arm using a simple code snippet as shown in the article and discuss some of the basic working principles of robots.
@@ -59,11 +58,7 @@ Rоbоts аre роwered by а rаnge оf eleсtriс mоtоrs thаt аllоw them 
 
 **Сhаins аnd geаrs**
 
-<<<<<<< HEAD
 Chain and gears are mechanical components that provide a system for transmitting rotational motion from one location to another while also having the ability to change them. The number of teeth on each gear determines the size difference between them.
-=======
-Are mechanical components that provide a system for transmitting rotational motion from one location to another while also changing them. The number of teeth on each gear determines the size difference between them.
->>>>>>> 40feac069aac006f5fe240a5ea802f02eedacc23
 
 **Belts аnd рulleys**
 
