@@ -239,3 +239,6 @@ Now that we have seen how great this algorithm is, we can apply it to other data
 ### References
 - [More on Curse of Dimensionality and Dimension Reduction](https://www.cs.princeton.edu/courses/archive/fall15/cos521/lecnotes/lec12.pdf)
 - [More on Data preprocessing](/engineering-education/data-preprocessing-python/)
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
