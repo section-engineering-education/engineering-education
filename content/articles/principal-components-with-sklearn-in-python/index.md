@@ -1,5 +1,21 @@
-In the modern world, datasets generated from real-world sources such as social media, IoT are highly rich in information. This information captured by considering many contributing features leads the data to a high dimensional space.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /principal-component-analysis-with-sklearn-in-python/
+title: Implementing Principal Component Analysis (PCA) using Scikit learn in Python
+description: This tutorial will be an introduction to understanding dimensional reduction using PCA. We'll also implement PCA algorithm using Scikit learn in Python.
+author: nelson-ruto
+date: 2021-10-29T00:00:00-19:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/principal-component-analysis-with-sklearn-in-python/hero.png
+    alt: title: Implementing Principal Component Analysis (PCA) using Scikit learn in Python Image
+---
+In the modern world, datasets generated from real-world sources such as social media, IoT are highly rich in information. This information captured by considering many contributing features leads the data to a high dimensional space.
+<!--more-->
 Usually, some of these features are correlated, and therefore, not all of them are important to the data. As a result, it poses a challenge to figure out which feature is relevant and irrelevant in the data.
 
 To succeed in such a task requires us to do some dimensional data analysis. This brings in the idea of **dimensionality reduction**.
