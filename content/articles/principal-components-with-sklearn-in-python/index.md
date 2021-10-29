@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/principal-component-analysis-with-sklearn-in-python/hero.png
     alt: title: Implementing Principal Component Analysis (PCA) using Scikit learn in Python Image
 ---
-In the modern world, datasets generated from real-world sources such as social media, IoT are highly rich in information. This information captured by considering many contributing features leads the data to a high dimensional space.
+In the modern world, datasets generated from real-world sources such as social media, IoT are highly rich in information. This information captured by considering many contributing features leads the data to a high-dimensional space.
 <!--more-->
 Usually, some of these features are correlated, and therefore, not all of them are important to the data. As a result, it poses a challenge to figure out which feature is relevant and irrelevant in the data.
 
@@ -38,26 +38,26 @@ To succeed in such a task requires us to do some dimensional data analysis. This
 ### Dimensionality reduction
 Usually, machine learning models are prone to the [curse of dimensionality](https://analyticsindiamag.com/curse-of-dimensionality-and-what-beginners-should-do-to-overcome-it/).
 
-However, with the aid of the *dimensionality reduction*, it's possible to find an effective solution to this problem.
+However, with the aid of *dimensionality reduction*, it's possible to find an effective solution to this problem.
 
 In machine learning and statistics, *dimensionality* means the number of features in a dataset.
 
 We can define *dimensionality reduction* as a technique for reducing the number of unwanted features in a dataset, i.e., to make a high-dimensional space into a low-dimensional space.
 
-According to the *dimensionality reduction*, we need to analyze our features space and choose a subset of relevant features from such dataset. This subset is then used in future modelling.
+According to the *dimensionality reduction*, we need to analyze our features space and choose a subset of relevant features from such dataset. This subset is then used in future modeling.
 
 The *dimensionality reduction* can be done in several ways, a few includes:
 - Principal Component Analysis
 - [Linear Discriminant Analysis (LDA)](/engineering-education/linear-discriminant-analysis/)
-- [Kernal PCA](en.wikipedia.org/wiki/Kernel_principal_component_analysis)
+- [Kernel PCA](en.wikipedia.org/wiki/Kernel_principal_component_analysis)
 - [Canonical Correlation Analysis (CCA)](https://en.wikipedia.org/wiki/Canonical_correlation)
 
-When detailing with linearly separable high dimensional data, *PCA* is the most used technique for *dimensionality reduction*.
+When detailing linearly separable high dimensional data, *PCA* is the most used technique for *dimensionality reduction*.
 
 Since, we now have an idea of what *dimensionality reduction* is, let's turn to our topic of interest to PCA.
 
 ### Principle Component Analysis (PCA)
-The *PCA* algorithm, a *dimensionality reduction* technique, reduces the dimension of a dataset by projecting a `d`-dimensional features space onto `k`-dimensional subspace, where `k` is less than `d`.
+The *PCA* algorithm, a *dimensionality reduction* technique, reduces the dimension of a dataset by projecting a `d`-dimensional features space onto a `k`-dimensional subspace, where `k` is less than `d`.
 
 The *PCA* creates new features from the existing ones by projecting all dependent features onto a new feature constructed in such a way that the projection error is minimized.
 
@@ -65,7 +65,7 @@ This technique can guarantee credible results only if the data is linearly separ
 
 *PCA* algorithm can be used in feature extraction, stock market prediction, Gene analysis, and many more.
 
-PCA involve the following steps:
+PCA involves the following steps:
 1. Standardizing the data.
 2. Determining the [eigenvalues](mathworld.wolfram.com/Eigenvalue.html) and the [eigenvectors](mathworld.wolfram.com/Eigenvector.html) from the [covariance](en.wikipedia.org/wiki/Covariance_matrix) or [correlation matrix](corporatefinanceinstitute.com/resources/excel/study/correlation-matrix).
 3. Sort the eigenvalues in descending order.
@@ -85,7 +85,7 @@ Now, let's learn how to implement the *PCA algorithm* using the sklearn library 
 ### Implementing the *PCA*
 In our implementation, we will use a dataset that consists of features of different types of wine with a categorical study variable to which a wine belongs.
 
-Our task is to apply *PCA* on this dataset to reduce its complexity by reducing the dimension of its features.
+Our task is to apply *PCA* to this dataset to reduce its complexity by reducing the dimension of its features.
 
 You download the dataset [here](https://github.com/nelsonnrl/data/blob/main/Wine.csv).
 
@@ -101,7 +101,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 # importing the dataset.
 dataset = pd.read_csv('/content/drive/MyDrive/Wine.csv')
-# Have a look on the dataset first five records
+# Have a look at the dataset first five records
 dataset.head()
 ```
 
@@ -142,14 +142,14 @@ To apply the PCA to our dataset, we shall do so separately on the training and t
 # Importing the PCA class from the decomposition module in sklearn
 from sklearn.decomposition import PCA
 # create a PCA object
-pca = PCA(n_components = 2)# extracted features we want to end up with in our new dataset(2).
+pca = PCA(n_components = 2)# extracted features we want to end up within our new dataset(2).
 # Apply the above object to our training dataset using the fit method.
 X_train = pca.fit_transform(X_train)
 # Apply the PCA object to the test set only to transform this set
 X_test = pca.transform(X_test)
 ```
 
-Here, we specify the number of prinicipal components to `2`, and transform the training and test dataset. So, a `N` dimensional dataset is reduced to a `2` dimensional dataset.
+Here, we specify the number of principal components to `2` and transform the training and test dataset. So, an `N`-dimensional dataset is reduced to a `2`-dimensional dataset.
 
 #### Step 3: Training the logistic model on the new training dataset
 Here, we shall build a [logistic regression](https://towardsdatascience.com/logistic-regression-detailed-overview-46c4da4303bc) on the new training set.
@@ -193,7 +193,7 @@ Since the PCA can simplify a model and still preserve its performance simultaneo
 
 With its aid, datasets in high dimensions can be reduced to low dimensions such that it is possible to carry out visualization on them.
 
-For instance, it could be impossible to visualize our dataset in thirteen dimensionality. However, upon reducing it to two dimensionality, it's possible to have visualization as follows.
+For instance, it could be impossible to visualize our dataset in thirteen dimensionalities. However, upon reducing it to two dimensionalities, it's possible to have visualization as follows.
 
 #### Step 5: Visualizing the training set result
 ```python
