@@ -1,10 +1,14 @@
-In the modern world, datasets generated from real-world sources such as social media, IoT, and many other sources, are highly rich in information. This information is captured by considering many contributing features, which leads the data to high dimensional space. Usually, some of these features are correlated, and therefore, not all of them are important to the data. As a result, it poses a challenge to figure out which feature is relevant and irrelevant in the data. To succeed in such a task requires us to do some dimensional data analysis. This brings in the idea of **dimensionality reduction**.
+In the modern world, datasets generated from real-world sources such as social media, IoT, and many other sources, are highly rich in information. This information is captured by considering many contributing features, which leads the data to high dimensional space.
+
+Usually, some of these features are correlated, and therefore, not all of them are important to the data. As a result, it poses a challenge to figure out which feature is relevant and irrelevant in the data.
+
+To succeed in such a task requires us to do some dimensional data analysis. This brings in the idea of **dimensionality reduction**.
 
 ### Table of contents
 - [Introduction](#introduction)
 - [Dimensionality reduction](#dimensionality-reduction)
 - [Principle Component Analysis (PCA)](#principle-component-analysis-pca)
-- [Prerequisites:](#prerequisites)
+- [Prerequisites](#prerequisites)
 - [Implementing the *PCA*](#implementing-the-pca)
   - [Step 1: Data preprocessing](#step-1-data-preprocessing)
   - [Step 2: Applying *PCA* to the dataset](#step-2-applying-pca-to-the-dataset)
@@ -16,14 +20,26 @@ In the modern world, datasets generated from real-world sources such as social m
 - [References](#references)
 
 ### Dimensionality reduction
-Usually, machine learning models are prone to the [curse of dimensionality](https://analyticsindiamag.com/curse-of-dimensionality-and-what-beginners-should-do-to-overcome-it/). However, with the aid of the *dimensionality reduction*, it's possible to find an effective solution to this problem. In machine learning and statistics, *dimensionality* means the number of features in a dataset. With this explanation, we can define *dimensionality reduction* as a technique of reducing the number of features in a dataset, i.e., from high-dimensional space to a low-dimensional space. According to the *dimensionality reduction*, we need to analyze our features space and choose a subset of relevant features from such dataset. This subset is then used in future modelling.
+Usually, machine learning models are prone to the [curse of dimensionality](https://analyticsindiamag.com/curse-of-dimensionality-and-what-beginners-should-do-to-overcome-it/).
 
-The *dimensionality reduction* task involves a batch of techniques. This include *PCA, Linear Discriminant Analysis(LDA), Kernal PCA, Conical Correlation Analysis (CCA),* etc. When high dimensional data is linearly separable in machine learning, the *PCA* is the most used technique in handling the *dimensionality reduction* task.
+However, with the aid of the *dimensionality reduction*, it's possible to find an effective solution to this problem.
+
+In machine learning and statistics, *dimensionality* means the number of features in a dataset. With this explanation, we can define *dimensionality reduction* as a technique of reducing the number of features in a dataset, i.e., from high-dimensional space to a low-dimensional space.
+
+According to the *dimensionality reduction*, we need to analyze our features space and choose a subset of relevant features from such dataset. This subset is then used in future modelling.
+
+The *dimensionality reduction* task involves a batch of techniques. This include *PCA, Linear Discriminant Analysis(LDA), Kernal PCA, Conical Correlation Analysis (CCA),* etc.
+
+When high dimensional data is linearly separable in machine learning, the *PCA* is the most used technique in handling the *dimensionality reduction* task.
 
 Since we now understand how the *dimensionality reduction* technique works, let's turn to our topic of interest.
 
 ### Principle Component Analysis (PCA)
-The *PCA* algorithm, a *dimensionality reduction* technique, reduces the dimension of a dataset by projecting a d-dimensional features space onto k- dimensional subspace, where k is less than d. The *PCA* creates new features from the existing ones by projecting all dependent features onto a new feature constructed in such a way that the projection error is minimized. This technique can guarantee credible results only if the data is linearly separable. The *PCA* algorithm is used in *feature extraction, stock market prediction, Gene analysis*, etc.
+The *PCA* algorithm, a *dimensionality reduction* technique, reduces the dimension of a dataset by projecting a d-dimensional features space onto k-dimensional subspace, where k is less than d.
+
+The *PCA* creates new features from the existing ones by projecting all dependent features onto a new feature constructed in such a way that the projection error is minimized.
+
+This technique can guarantee credible results only if the data is linearly separable. The *PCA* algorithm is used in *feature extraction, stock market prediction, Gene analysis*, etc.
 
 PCA involve the following steps:
 - Standardizing the data
