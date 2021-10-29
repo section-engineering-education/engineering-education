@@ -40,7 +40,7 @@ We will begin by adding the following html code:
     <title>Hello</title>
  ```
  
-Then we will add react library `cdn.js` using the code below followed by babel
+Then we will add react library `cdn.js` using the code below followed by babel:
 
  <!-- Script tags including React -->
  
@@ -116,7 +116,7 @@ Lets add data in our component. When we look at our [Header](https://codepen.io/
 
 This means we can not set the title to anything else . It would be satisfactory for us to reuse it in different elements/components of our page, the title of profile isn't suitable for every use. Subsequently we could tell react what we want for you to set the title to something else like settings, chat e.t.c.
 
-We could change our `<span className="title">Profile</span>` by passing it as a prop using the code below;
+We could change our `<span className="title">Profile</span>` by passing it as a prop using the code below:
 
 ```js
       <span className="title">{this.props.title}</span>
@@ -133,7 +133,7 @@ Lets now add a search bar and search icon in our app header to make it more inte
       </div>
 ```
 
-Now call our `<Header/>` component three times by addding the following code inside the `div` in our `<App/>` component as shown below:
+Now call our `Header` component three times by addding the following code inside the `div` in our `App` component as shown below:
 
 ```js
     <div>
@@ -159,7 +159,7 @@ Now we are able to reuse the Header component with a dynamic title property.
 
 ### Some Examples of data-driven react github projects you can folk and practice
 
-- [Relay-starter-example](https://github.com/1-creator/relay-starter-example) fully documented .(If you are a beginner you can begin practicing using this project due to its simplicity.It will help you get started with Relay framework.The project contains less boilerplate making the code easier to uderstand)
+- [Relay-starter-example](https://github.com/1-creator/relay-starter-example) fully documented(If you are a beginner you can begin practicing using this project due to its simplicity.It will help you get started with Relay framework.The project contains less boilerplate making the code easier to uderstand)
 - [React-data-menu](https://github.com/dkozar/react-data-menu)
 - [Data-driven-carousel](https://github.com/JasonShin/React-Carousel-Data-Driven)
 - [data-driven-motion](https://github.com/tkh44/data-driven-motion)
