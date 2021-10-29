@@ -17,11 +17,10 @@ Before going through this tutorial the reader should:
 ### Overview of the Stream Filter Method in java.
 The filter() function of the Java stream allows you to narrow down the stream's items based on a criterion. If you only want items that are even on your list, you can use the filter method to do this. This method accepts a predicate as an input and returns a list of elements that are the results of that predicate.
 
-It is possible to get a stream of items from this stream that meet a particular predicate with Stream filter(Predicate predication). This is a step-between process. Performing an intermediate action like filter() does not really filter anything, but instead generates a new stream that, when browsed, includes the items of the first stream that satisfy the provided predicate. These operations are always lazy.
+It is possible to get a stream of items from this stream that meet a particular predicate with the filter() method. This is a step-between process. Performing an intermediate action like filter() does not really filter anything, but instead generates a new stream that, when browsed, includes the items of the first stream that satisfy the provided predicate. These operations are always lazy.
 
 ### Using the Stream filter method
-Java stream offers the filter() method, which allows you to filter stream elements based on a predicate you specify. You can conveniently get only even elements from your list by using the filter method.
-This method accepts a predicate as a function that takes a stream of elements that are the results of the predicate.
+Java stream offers the filter() method, which allows you to filter stream elements based on a predicate you specify. You can conveniently get only even elements from your list by using the filter method. This method accepts a predicate as a parameter and returns a stream of elements that are the results of the predicate.
 
 A Stream interface's filter() method identifies elements in a stream that satisfy a criterion. It is a Stream interface intermediate operation.
 
@@ -114,7 +113,7 @@ List<Employee> employeesWithValidProfilePicture = employees
 **Explanation**
 Filtering the employee with this method,hasValidProfile, will bring us an error.
 
-```Java
+```
 Incompatible throw type java.io.InputOutputException inside the function phrase
 ```
 
