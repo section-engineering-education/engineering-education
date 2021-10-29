@@ -143,13 +143,12 @@ Now call our `<Header/>` component three times by addding the following code ins
     </div>
 ```
 
-Don't forget to call `react.Dom` to place your app on the page:
+Don't forget to add the closing tags and call `react.Dom` to place your app on the page:
 
 ```js
-   ReactDOM.render(
-  <App />, document.querySelector("#app"));
-  
-   </script>
+   ReactDOM.render(<App />,
+   document.querySelector("#app"));
+    </script>
    </body>
    </html>
    
