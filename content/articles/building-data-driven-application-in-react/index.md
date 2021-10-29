@@ -1,4 +1,4 @@
-It is unsuitable to have to reform our application components every time we have a change in our application data . More data/statistics is needed to have a credible data-driven application that is captivating to an extensive variety of business users.
+It is unsuitable to have to reform our application components every time we have a change in our application data . More than  data is needed to have a credible data-driven application that is captivating to an extensive variety of business users.
 
 In data-driven application , the application flow is governed by data processed by the application. The data-set input may change your applications behavior. This means your decisions are influenced by data.
 
@@ -116,32 +116,19 @@ Lets add data in our component. When we look at our [Header](https://codepen.io/
 
 This means we can not set the title to anything else . It would be satisfactory for us to reuse it in different elements/components of our page, the title of profile isn't suitable for every use. Subsequently we could tell react what we want for you to set the title to something else like settings, chat e.t.c.
 
-We could change our
-```html
-       <span className="title">Profile</span>
-```
+We could change our `<span className="title">Profile</span>` by passing it as a prop using the code below;
 
-by passing it as a prop on the:
-```html
-       <Header/>
-```
-
-by updating the usage of the component setting the attribute called title to a string, like so:
-
-```html
+```js
       <span className="title">{this.props.title}</span>
- ```     
-Lets now add a search bar in our app header to make it more interactive:
+ ```   
+This allows us to pass in our `title` as an attribute on the `<Header/>`.The attribute calls  title to a string, like so `<Header title="Profile" />` this makes it possible for us to call our header component as many times as we desire.Hence this will allow the user  to choose the header of his/her preference according to the task he/she wants to carry out.
+
+Lets now add a search bar and search icon in our app header to make it more interactive:
 
 ```js
       <input type="text"
         className="search"
-       placeholder="Search ..."
-       />
-```
-
-below is our search icon in our code below our search bar above our closing tags.
-```js
+       placeholder="Search .../>
       <div className="fa fa-search searchIcon"></div>
       </div>
 ```
@@ -162,9 +149,9 @@ Don't forget to call `react.Dom` to place your app on the page:
    ReactDOM.render(
   <App />, document.querySelector("#app"));
   
-  </script>
-       </body>
-      </html>
+   </script>
+   </body>
+   </html>
    
 ```
 This results in three Header components to mount like [so](https://codepen.io/1-creator/full/XWarzzL):
