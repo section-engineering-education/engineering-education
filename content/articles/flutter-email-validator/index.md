@@ -27,15 +27,13 @@ Email validator runs a check on the emails through a process called `swift proce
 
 For this reason, it protects the email sender score while maximizing the efficiency of the flutter application. The key concepts from the use of this package are validity, risk, and the invalidity of any email address.
 
-This package consists of a class and a function. It takes an input string and checks whether it is a valid email address or not.
+This package consists of a class and a function. 
 
-The constructor for this class is pretty simple: Create a new instance of this class and set the validator type to either 1 or 2 (defaults to 1). The constructor should pass a string and an array of strings for validation.
+The constructor for this class is pretty simple: Create a new instance of this class and set the validator type to either 1 or 2 (defaults to 1). The constructor should pass a string and an array of strings for validation.The arguments are also key factors.
 
 The first argument is self-explanatory. It is just a boolean that specifies whether we are using the `local-part@domain.com` format or `domain.com` as our string to validate.
 
 The second argument allows you to pass an array of strings that are valid domains for the email. This argument is only necessary if the string passed in as our first argument is in `domain.com` format; otherwise, it can be omitted.
-
-The constructor accepts these two arguments in that order, followed by a string to validate as the last argument.
 
 If either of the first two arguments contains an error, then false should be returned. Otherwise, true should be returned, and our string should be validated.
 
@@ -48,13 +46,6 @@ If either of the first two arguments contains an error, then false should be ret
 6. You can add it as a pre-requisite while submitting the app to the app store and google play store for review purposes.
 7. Validate email address on input focus and/or submit button click event of any flutter or dart app.
 
-Another great benefit is that the email validator plugin can be used in both Android and iOS apps. Unfortunately, there are no email validation plugins available for flutter developers except this one.
-
-If you want to validate an email before sending it or if you want to make sure your user entered a correctly formatted email address while signing up, this is one of the best plugins.
-
-The email validator plugin has implemented this functionality with an easy to use API. In addition, you can make sure that your users are not sending emails to blocked email addresses or domains by adding a custom blacklist validation check on your own.
-
-Apart from checking user-entered email addresses, you can check if a username is available on the website during the registration process or implement SSO validation, which is very important for your application.
 
 ### Areas of application
 - Address CaptureSingle-line Address Verification Software.
@@ -64,22 +55,20 @@ Apart from checking user-entered email addresses, you can check if a username is
 - GeocodeLongitude & Latitude Data.
 - Email ValidationCheck and Verify Email Addresses.
 - This example brings us to the understanding usage of this API for serverless flutter applications.
--
 
 ### Why Email Validator?
 Email validator works better in that it is a more accurate validation tool. In addition to validating email addresses, it also checks that domains are not likely to exist soon.
 
 Domain Validation Tool is a free service that allows you to search up to 500 domains from your list for availability and immediate results. It's the most potent domain availability checker available on the internet today. You can quickly check up to 500 domains from your list for availability and receive immediate results.
-
+###Implementation in the App
 ### Prerequisites
 - [Android Studio](https://developer.android.com/studio) or [Visual Code](https://code.visualstudio.com/) installed on your computer.
 - Understand how to create and run Flutter applications.
 - Understand the basics of flutter like widgets and making calls.
 - Basic knowledge of [Dart](https://dart.dev/) programming language.
 
-### Core concepts
-- Testing the validity of email addresses to ensure a supplied email address exists and has minimum to no errors.
-- Reducing the risk of flogging the database with invalid emails.
+### Core concepts in the example.
+- Testing the validity of email addresses.
 
 ### Installation of the package
 - Step 1 - Adding the dependency
