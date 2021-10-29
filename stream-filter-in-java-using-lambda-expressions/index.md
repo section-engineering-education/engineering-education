@@ -1,5 +1,5 @@
 ### Introduction
-Java offers some of sophisticated methods that make optimum use of streams and lambda expressions, and they are all written in Java. The use of streams and lambda expressions allows you to build an assembly line. The functional programming principles used in the assembly-line solution are applied. The filter() function is an intermediate operation that receives data from a stream and produces a new stream after changing the data in accordance with the condition passed to it. 
+Java offers some sophisticated methods that make optimum use of streams and lambda expressions. These allow you to build an assembly line using functional programming principles. One of these methods, filter(), is an intermediate operation that receives data from a stream and produces a new stream after changing the data based on a condition. In this guide, we will have a look at how we can use this method to its fullest extent. 
 
 ### Prerequisites
 Before going through this tutorial the reader should:
