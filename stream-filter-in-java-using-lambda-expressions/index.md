@@ -1,7 +1,5 @@
 ### Introduction
-Java offers some of sophisticated methods that make optimum use of streams and lambda expressions, and they are all written in Java. The use of streams and lambda expressions allows you to build an assembly line. The functional programming principles used in the assembly-line solution are applied.
-
-The assembly line is made up of several different techniques. Each method takes the input, changes it in some manner, and then passes the results on to the next method in the chain to complete the process.
+Java offers some of sophisticated methods that make optimum use of streams and lambda expressions, and they are all written in Java. The use of streams and lambda expressions allows you to build an assembly line. The functional programming principles used in the assembly-line solution are applied. The filter() function is an intermediate operation that receives data from a stream and produces a new stream after changing the data in accordance with the condition passed to it. 
 
 ### Prerequisites
 Before going through this tutorial the reader should:
@@ -19,7 +17,7 @@ Before going through this tutorial the reader should:
 ### Overview of the Stream Filter Method in java.
 The filter() function of the Java stream allows you to narrow down the stream's items based on a criterion. If you only want items that are even on your list, you can use the filter method to do this. This method accepts a predicate as an input and returns a list of elements that are the results of that predicate.
 
-With Java's sophisticated methods, streams and lambda expressions can be utilized to their full potential. You can build an assembly line using streams and lambda expressions. It is based on functional programming principles that the assembly line technique works. There are numerous ways to set up an assembly line. Each method receives the data, performs some sort of transformation on it, and then passes the results along to the succeeding method.
+It is possible to get a stream of items from this stream that meet a particular predicate with Stream filter(Predicate predication). This is a step-between process. Performing an intermediate action like filter() does not really filter anything, but instead generates a new stream that, when browsed, includes the items of the first stream that satisfy the provided predicate. These operations are always lazy.
 
 ### Using the Stream filter method
 Java stream offers the filter() method, which allows you to filter stream elements based on a predicate you specify. You can conveniently get only even elements from your list by using the filter method.
@@ -83,9 +81,7 @@ List<Employee> georgeWith90MarksAndAbove = employees
 We used multiple conditions with filter() such as marks and identity of the employees
 
 ### Methods for dealing with exceptions
-The filter method is used to evaluate predicates that do not throw exceptions when they are evaluated. The functional interfaces of the Java programming language do not specify any kind of exceptions, whether checked or unchecked.
-
-Lambda expressions, introduced in Java 8, began to make functional programming easier by giving a simple mechanism to define behavior in a function. Furthermore, the Functional Interfaces given by the JDK are inadequate for dealing with exceptions. The resulting code becomes complex and complicated when dealing with them.
+The filter method is used to evaluate predicates that do not throw exceptions when they are evaluated. The functional interfaces of the Java programming language do not specify any kind of exceptions, whether checked or unchecked. Functional Interfaces given by the JDK are inadequate for dealing with exceptions. The resulting code becomes complex and complicated when dealing with them.
 
 The handling of exceptions in lambda expressions shall next be explored in detail using several alternative approaches.
 
