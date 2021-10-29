@@ -46,7 +46,6 @@ If either of the first two arguments contains an error, then false should be ret
 6. You can add it as a pre-requisite while submitting the app to the app store and google play store for review purposes.
 7. Validate email address on input focus and/or submit button click event of any flutter or dart app.
 
-
 ### Areas of application
 - Address CaptureSingle-line Address Verification Software.
 - Address VerifyAddress Enhancement.
@@ -60,7 +59,8 @@ If either of the first two arguments contains an error, then false should be ret
 Email validator works better in that it is a more accurate validation tool. In addition to validating email addresses, it also checks that domains are not likely to exist soon.
 
 Domain Validation Tool is a free service that allows you to search up to 500 domains from your list for availability and immediate results. It's the most potent domain availability checker available on the internet today. You can quickly check up to 500 domains from your list for availability and receive immediate results.
-###Implementation in the App
+
+### Implementation in the App
 ### Prerequisites
 - [Android Studio](https://developer.android.com/studio) or [Visual Code](https://code.visualstudio.com/) installed on your computer.
 - Understand how to create and run Flutter applications.
