@@ -1,4 +1,4 @@
-It is unsuitable to have to reform our application components every time we have a change in our application data . More than data/statistics is needed to have a credible data-driven application that is captivating to an extensive variety of business users.
+It is unsuitable to have to reform our application components every time we have a change in our application data . More data/statistics is needed to have a credible data-driven application that is captivating to an extensive variety of business users.
 
 In data-driven application , the application flow is governed by data processed by the application. The data-set input may change your applications behavior. This means your decisions are influenced by data.
 
@@ -22,7 +22,7 @@ This article will focus on data-driven applications in react.
 
 2. React-admin - This a react framework used to build data-driven applications. React-admin component guesses the format to apply based totally on the records fetched from the API. React-admin needs Data provider function for it to translate data.
 
-3. Data-driven forms - Data Driven Forms is open source react library that allows you to store complex forms in the database so you can reuse them in numerous developer environments.
+3. Data-driven forms - Data driven forms is an open source react library that allows you to store complex forms in the database so you can reuse them in numerous developer environments.
 
 ### How to build data-driven components in react
 I will showcase how to build data-driven app header.
@@ -30,7 +30,9 @@ I will showcase how to build data-driven app header.
 React permits us to send data to an element within the same syntax as HTML, using attributes or properties on a factor.
 
 When building our components we will be using static JSX templates. We will be adding our React code within our HTML code .
-Begin by adding html ,head,meta tag,body and title
+
+We will begin by adding following:
+
 ```html
    <html>
   <head>
@@ -38,16 +40,19 @@ Begin by adding html ,head,meta tag,body and title
     <title>Hello</title>
  ```
  
-Then we will add react library cdnjs using the code below followed by babel
+Then we will add react library `cdn.js` using the code below followed by babel
+
  <!-- Script tags including React -->
- ```js
+ 
+ ```html
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react-dom.min.js"></script>
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
   ```
  
-Lets now add font and icon toolkit (Font Awesome) ,link our css to our code and then add head closing tag and body which will contain class demo,
-class notificationsFrame , id app and then add script tag text/babel variable scope followed by the rest of the code.
+Lets now add a font and icon toolkit by linking font awesome, to our code and then adding a `<body>` which will contain class `demo`,
+class `notificationsFrame` and an id-`app`. Then add a `<script>` as shown below:
+
 ```html
    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
    rel="stylesheet"type="text/css" />
@@ -61,12 +66,14 @@ class notificationsFrame , id app and then add script tag text/babel variable sc
     <script type="text/babel">
   ```
 
-Lets now build our app header using  two components:
+Lets now build our app header using the two components:
 - Header component
 - App component
     
   
 #### The Header component
+To create the component, add the following code:
+
 ```js
    class Header extends React.Component {
         render() {
@@ -79,9 +86,8 @@ Lets now build our app header using  two components:
       }
 ```
 
-
 #### App Component
-We use Header component by placing it in App component as shown below .
+We will use the `Header` component by placing it in `App` component as shown below:
 
 ```js
       class App extends React.Component {
@@ -106,21 +112,26 @@ So lets begin to add some features in our app header by adding the code below in
       <div className="circle"></div>
 ```
 
-Lets add some data in our Component . When we look at our [Header](https://codepen.io/1-creator/pen/qBXWVXd) as it is right now , the header component only has profile as our title.
+Lets add data in our component. When we look at our [Header](https://codepen.io/1-creator/pen/qBXWVXd) as it is right now , the header component only has profile as our title.
 
-This means we can not set the title to anything else . It would be satisfactory for us to reuse it in different elements/components of our page, the title of Profile isn't suitable for every use . Subsequently we could tell react what we want for you to set the title to something else like settings, chat e.t.c. we could exchange our
+This means we can not set the title to anything else . It would be satisfactory for us to reuse it in different elements/components of our page, the title of profile isn't suitable for every use. Subsequently we could tell react what we want for you to set the title to something else like settings, chat e.t.c.
 
+We could change our
+```html
        <span className="title">Profile</span>
+```
 
-by passing it as a prop on the
-
-       <Header />
+by passing it as a prop on the:
+```html
+       <Header/>
+```
 
 by updating the usage of the component setting the attribute called title to a string, like so:
 
+```html
       <span className="title">{this.props.title}</span>
-      
-Lets now add a search bar in our app header to make it more interactive.
+ ```     
+Lets now add a search bar in our app header to make it more interactive:
 
 ```js
       <input type="text"
@@ -136,6 +147,7 @@ below is our search icon in our code below our search bar above our closing tags
 ```
 
 Now call our Header component three times by addding the following code inside the `div` in our App component as shown below:
+
 ```js
     <div>
     <Header  title="Profile" />
@@ -145,16 +157,16 @@ Now call our Header component three times by addding the following code inside t
 ```
 
 Don't forget to call `react.Dom` to place your app on the page:
+
 ```js
    ReactDOM.render(
   <App />, document.querySelector("#app"));
-```
-Lastly add the closing tags
-
-       </script>
+  
+  </script>
        </body>
       </html>
    
+```
 This results in three Header components to mount like [so](https://codepen.io/1-creator/full/XWarzzL):
 
 Now we are able to reuse the Header component with a dynamic title property.
