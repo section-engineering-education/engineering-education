@@ -16,8 +16,7 @@ images:
 ---
 
 ### Introduction
-When you use Babel, you can convert edge JavaScript into plain old ES5 JavaScript that can be run in any browser, no matter where you are (even the old ones).
-Classes, fat arrows, and multiline strings are among the syntactical sugar that has been added to JavaScript as a result of the introduction of the new ES6 specification.
+When you use Babel, you can convert edge JavaScript into plain old ES5 JavaScript that can be run in any browser.(even the old ones). Classes, fat arrows, and multiline strings are among the syntactical sugar that has been added to JavaScript as a result of the introduction of the new ES6 specification.
 <!--more-->
 In this tutorial we will take a look of how Babel can be useful in writing javaScript code.
 
@@ -44,19 +43,19 @@ Babel is distributed as a Node.js node module. Installation of Babel is done via
 $ npm install – D babel-cli 
 ```
 
-There are plugins for webpack, gulp, grunt, Sublime, Webstorm, and a variety of other technologies. Babel is likely to be able to integrate with any development toolchain you may be using.
+There are plugins for Webpack, Gulp, Grunt, Sublime, Webstorm, and a variety of other technologies. Babel is likely to be able to integrate with any development toolchain you may be using.
 
 ### Classes
 JavaScript does not have any classes. The fact that objects inherit directly from one another means that any object can be the parent (superclass) of any other object in the system.
 
-Any function can be a constructor function, and calling it with the new keyword will result in the creation of a new object.You may learn more about object orientation in the JavaScript for Smart People course - Object Orientation portion, which is available here.
+Any function can be a constructor function, and calling it with the `new` keyword will result in the creation of a new object. You may learn more about object orientation in the JavaScript for Smart People course - Object Orientation portion, which is available here.
 
-This is all amazing and JavaScript, but it makes C# and Java devs a little nervous, which is understandable. Because they are accustomed to a higher level of rigor, ES6 introduces the class keyword. This allows us to define functions that can only be used as constructors and nothing else.
+This is all amazing in JavaScript, but it makes C# and Java devs a nervous, which is understandable. ES6 introduces the class keyword. This allows us to define functions that can only be used as constructors and nothing else.
 
-The term `class` refers to a specific cookie cutter item that can only be used to define other objects, as we are all aware. This is an exception to the rule of prototypical inheritance. As a result, we restrict ourselves to only constructing objects from functions that we have specifically determined should be used in this manner.
+The term `class` refers to a specific template that can be used to define other objects, as we are all aware. This is an exception to the rule of prototypical inheritance. As a result, we restrict ourselves to only constructing objects from functions that we have specifically determined should be used in this manner.
 
 #### Classes in Babel
-An ES6 class resembles this.
+This snipet resembles an ES6 class:
 
 ```javascript
 class Person {}
@@ -78,12 +77,12 @@ var Person = function Person() {
 var dave = new Person();
 ```
 
-The Person function, which may be used as a standard prototype constructor, is already available. With the `_classCallCheck` function, we can perform a small amount of safety checking as well.
+The Person function, which may be used as a standard prototype constructor, is already available. With the `_classCallCheck` function, we can perform safety checking as well.
 
-This method is called within the Person constructor, and it will throw an error unless the Person function is treated as a constructor function, in which case it will return true.
+This method is called within the `Person constructor`, and it will throw an error unless the `Person function` is treated as a constructor function, in which case it will return `true`.
 
 ### Multiline Strings
-In addition, ES6 introduces a new, more succinct manner of defining strings. You can construct multiline strings by using the backtick symbol. Using this method is extremely beneficial when creating templates in JavaScript. Here's an example of a straightforward Angular template.
+In addition, ES6 introduces a new, more concise manner of defining strings. You can construct multiline strings by using the backtick symbol. Using this method is extremely beneficial when creating templates in JavaScript. Here's an example of a straightforward Angular template.
 
 - **Example**
 
@@ -106,8 +105,7 @@ var template = "
   
   ```
 ### Fat Arrows
-The use of fat arrows allows us to define anonymous functions in a readable manner.
- we can write like this.
+The use of `Fat arrows` allows us to define anonymous functions in a readable manner. For instance, we can write  a function like below:
  
 - **Example**
  
@@ -124,7 +122,7 @@ The use of fat arrows allows us to define anonymous functions in a readable mann
 
 ```
 
-It should be noted that this function has not been invoked. If I wanted to, I could store it to a variable or provide it as an argument to a callback or a promise.  If I wanted to invoke the function, I could do something like this:
+It should be noted that this function has not been invoked. If I wanted to invoke it, I could store it to a variable or provide it as an argument to a callback or a promise. 
 
 - **Calling the function**
 
@@ -156,7 +154,7 @@ x => {return x + 1};
 ```
 
 ### Fat Arrows with exactly one line of code
-There is, even more, we can do than this. If our function contains exactly one line of code (assuming a line ends with a semi-colon) we can omit the curly braces altogether.
+If our function contains exactly one line of code (assuming a line ends with a semi-colon) we can omit the curly braces altogether.
 
 ```javascript
 x => x + 1;
@@ -171,7 +169,7 @@ x => x + 1;
 ```
 
 #### Fat arrows in practice
-Let's use one of these to output all the elements in an array.
+Let us use one of these to output all the elements in an array.
 
 ```javascript
 [1, 2, 99].map(num => console.log(num));
