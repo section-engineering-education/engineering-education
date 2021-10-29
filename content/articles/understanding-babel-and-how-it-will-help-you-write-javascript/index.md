@@ -105,6 +105,7 @@ var template = "
   
   ```
 ### Fat Arrows
+`Fat Arrows`, also known as `arrow Functions`, are a relatively new way to write concise JavaScript functions. The ECMAScript 6 specifications introduced them, and they've since become the most widely used ES6 feature. The fat arrow => operator allows us to quickly define JavaScript functions with or without parameters using arrow functions.
 The use of `Fat arrows` allows us to define anonymous functions in a readable manner. For instance, we can write  a function like below:
  
 - **Example**
