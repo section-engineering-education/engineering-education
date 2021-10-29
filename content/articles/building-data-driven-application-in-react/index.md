@@ -31,7 +31,7 @@ React permits us to send data to an element within the same syntax as HTML, usin
 
 When building our components we will be using static JSX templates. We will be adding our React code within our HTML code .
 
-We will begin by adding following:
+We will begin by adding the following html code:
 
 ```html
    <html>
@@ -133,7 +133,7 @@ Lets now add a search bar and search icon in our app header to make it more inte
       </div>
 ```
 
-Now call our Header component three times by addding the following code inside the `div` in our App component as shown below:
+Now call our `<Header/>` component three times by addding the following code inside the `div` in our `<App/>` component as shown below:
 
 ```js
     <div>
