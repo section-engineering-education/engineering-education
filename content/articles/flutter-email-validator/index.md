@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /how-to-validate-emails-in-flutter/
+url: /flutter-email-validator/
 title: Flutter Email Validator
 description: This article will provide a guide on how to use Email Validator package in flutter to validate emails during user input.
 author: joni-kano
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/how-to-validate-emails-in-flutter/hero.png
+  - url: /engineering-education/flutter-email-validator/hero.png
     alt: Flutter Email Validator Hero Image
 ---
 Email validator is a Flutter package that checks whether an email is valid or not. It is not based on regular expression, but rather checks if the email entered is linked to a reliable domain. Domains that exist are Gmail, Yahoo, Outlook, among others.
@@ -22,7 +22,7 @@ Email validator is a Flutter package that checks whether an email is valid or no
 - Create a simple app to show email validator.
 - Understand the implementation of email validator.
 
-### How it email validator works?
+### How email validator works
 Email validator runs a check on the emails through a process called `swift process`. This process detects typographical errors or deliberate mistakes. Furthermore, it helps to organize and clean all email addresses in a flutter application.
 
 For this reason, it protects the email sender score while maximizing the efficiency of the flutter application. The key concepts from the use of this package are validity, risk, and the invalidity of any email address.
@@ -31,26 +31,22 @@ This package consists of a class and a function. It takes an input string and ch
 
 The constructor for this class is pretty simple: Create a new instance of this class and set the validator type to either 1 or 2 (defaults to 1). The constructor should pass a string and an array of strings for validation.
 
-The first argument is pretty self-explanatory. It is just a boolean that specifies whether we are using the `local-part@domain.com` format or `domain.com` as our string to validate.
+The first argument is self-explanatory. It is just a boolean that specifies whether we are using the `local-part@domain.com` format or `domain.com` as our string to validate.
 
 The second argument allows you to pass an array of strings that are valid domains for the email. This argument is only necessary if the string passed in as our first argument is in `domain.com` format; otherwise, it can be omitted.
 
-The `EmailValidation()` constructor requires two arguments to function correctly: a boolean saying whether or not we should validate a local-part@domain.com address and an array of valid domains for the email.
-
-The function accepts these two arguments in that order, followed by our string to validate as the last argument.
+The constructor accepts these two arguments in that order, followed by a string to validate as the last argument.
 
 If either of the first two arguments contains an error, then false should be returned. Otherwise, true should be returned, and our string should be validated.
 
-
-
-### Benefits of Email validator
+### Benefits of email validator
 1. Makes sure the user enters a correctly formatted email address while signing up.
 2. Ensures emails are not on the blocklist and are not sent to blacklisted email addresses or domains.
 3. Alerts if the username is available on the website during the registration process.
 4. Validate email on both Android and iOS.
 5. Allows you to add your custom email validator for additional business requirements.
 6. You can add it as a pre-requisite while submitting the app to the app store and google play store for review purposes.
-7. Validate email address on input focus and submit button click event of any flutter or dart app.
+7. Validate email address on input focus and/or submit button click event of any flutter or dart app.
 
 Another great benefit is that the email validator plugin can be used in both Android and iOS apps. Unfortunately, there are no email validation plugins available for flutter developers except this one.
 
@@ -60,7 +56,7 @@ The email validator plugin has implemented this functionality with an easy to us
 
 Apart from checking user-entered email addresses, you can check if a username is available on the website during the registration process or implement SSO validation, which is very important for your application.
 
-### Areas of application 
+### Areas of application
 - Address CaptureSingle-line Address Verification Software.
 - Address VerifyAddress Enhancement.
 - Data CleanseBatch Data Cleanse & Maintenance.
@@ -81,7 +77,7 @@ Domain Validation Tool is a free service that allows you to search up to 500 dom
 - Understand the basics of flutter like widgets and making calls.
 - Basic knowledge of [Dart](https://dart.dev/) programming language.
 
-### Core Concepts
+### Core concepts
 - Testing the validity of email addresses to ensure a supplied email address exists and has minimum to no errors.
 - Reducing the risk of flogging the database with invalid emails.
 
@@ -251,19 +247,19 @@ Below are screenshots showing the expected results.
 
 |                                        Trying login without filling in any detail                                        |                                        inValid email input                                        |
 | :----------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------: |
-| ![Trying login without filling in any detail](/engineering-education/how-to-validate-emails-in-flutter/missingemail.jpg) | ![inValid email input](/engineering-education/how-to-validate-emails-in-flutter/invalidemail.jpg) |
+| ![Trying login without filling in any detail](/engineering-education/flutter-email-validator/missingemail.jpg) | ![inValid email input](/engineering-education/flutter-email-validator/invalidemail.jpg) |
 
 |                                       Valid email input                                       |                                         After running and valid email                                         |
 | :-------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: |
-| ![Valid Email Input](/engineering-education/how-to-validate-emails-in-flutter/validemail.jpg) | ![After running and valid email](/engineering-education/how-to-validate-emails-in-flutter/validatedemail.jpg) |
+| ![Valid Email Input](/engineering-education/flutter-email-validator/validemail.jpg) | ![After running and valid email](/engineering-education/flutter-email-validator/validatedemail.jpg) |
 
 ### Conclusion
 Email validator is one of the best ways to confirm emails in Flutter. It helps to reduce the invalid emails that users may use to sign up and help one easily maintain the available emails.
 
 I recommend any programmer to use any flutter application due to its' compatibility with all levels of flutter application, be it flutter web application, flutter mobile application, or any other application.
 
-### References:
-- https://pub.dev/documentation/email_validator/latest/
+### References
+- [https://pub.dev/documentation/email_validator/latest/](https://pub.dev/documentation/email_validator/latest/)
 
 ---
 Peer Review Contributions by: [Jerim Kaura](/engineering-education/authors/jerim-kaura/)
