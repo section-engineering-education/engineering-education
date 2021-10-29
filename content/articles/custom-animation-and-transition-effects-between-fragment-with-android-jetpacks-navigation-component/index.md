@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /custom-animations-and-transition-effects-between-fragments-in-android/
-title: Custom Animations and Transition effects between Fragments in Android
+title: Custom Animations and Transition Effects Between Fragments in Android
 description: This tutorial takes the reader through the process of adding custom animations between destinations using the Navigation Components library in Android.
 author: joyce-wanjiru
-date: 2021-10-28T00:00:00-19:45
+date: 2021-10-29T00:00:00-04:50
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -16,11 +16,11 @@ images:
 ---
 The Navigation component is part of the Android Jetpack Library and allows you to implement navigation, from simple button clicks to more complicated patterns. This makes it easier for a user to navigate from one destination to another.
 <!--more-->
-Navigating back and forth between Fragments can sometimes be confusing. With custom transition animations, if a user is heading to a new destination, we can add the respective and descriptive transition animation. Also, when navigating back to the previous Fragment, we can add animate the action.
+Navigating back and forth between Fragments can sometimes be confusing. With custom transition animations, if a user is heading to a new destination, we can add the respective and descriptive transition animation. Also, when navigating back to the previous Fragment, we can animate the action.
 
 We can add custom transitions to animate the appearance and dismissal of dialog Fragments. Also, we can include shared transition elements in our app to open an image in a new destination.
 
-Transition animations generally improve the app's user experience(UX) which helps to retain users.
+Transition animations generally improve the app's user experience (UX) which helps to retain users.
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
@@ -33,15 +33,13 @@ Transition animations generally improve the app's user experience(UX) which help
 - [Conclusion](#conclusion)
 
 ### Prerequisites
-To follow through with this tutorial, you should have:
+To follow through this tutorial, you should have:
 - [Android Studio](https://developer.android.com/studio/index.html) installed on your machine.
 - Good knowledge of creating and running Android applications.
 - Basic information of the [Kotlin](https://kotlinlang.org/) programming language.
 - Basics of setting up and using Navigation Components, you can learn how to use navigation components in [this tutorial](https://www.section.io/engineering-education/android-navigation-components/).
 
-> This tutorial assumes that you are conversant with integrating Jetpack Navigation Components into your project. You can use this article [Navigation Components](https://www.section.io/engineering-education/android-navigation-components/) to get started.
-
-### Transition Animations
+### Transition animations
 Transition animations can be of 4 types:
 - **Enter** - bringing a new Fragment to NavHostFragment.
 - **Exit** - removing the currently displayed Fragment from NavHostFragment.
@@ -53,38 +51,36 @@ We can also define shared element transition which animates the movement from a 
 With dialogs, we can animate their movement when they are being displayed and when dismissing. We can define `slide-up` and `slide-down` transition animations.
 
 While translating different elements i.e from left, right, up, and down, we can use the following attributes in our animation resource files:
-- `fromXDelta` - indicates from what X-axis value we are transitioning from. 
+- `fromXDelta` - indicates from what X-axis value we are transitioning from.
 - `toXDelta` - indicates to what position in the X-axis.
-- `fromYDelta` - indicates from what value of the Y-axis. 
+- `fromYDelta` - indicates from what value of the Y-axis.
 - `toYDelta` - indicates to what value of Y-axis we are transitioning to.
 - `duration` in milliseconds - this is the time taken for an animation to happen.
 
-### Transition Animation Graph
+### Transition animation graph
 ![Navigation Graph](/engineering-education/custom-animations-and-transition-effects-between-fragments-in-android/axis.png)
 
-From the above graph:
+From the graph above:
 
-#### Horizontal Transitions(X-axis)
-At `0%`, we can move to the right which is `100%` or we can move to the left which is `-100%`
-
-- Moving from `-100%` to `0%`, means that our fragment impends from the left. We will use this to enter our Fragment.
-- Moving from `0%` to `100%`, means that our Fragment is moving to the right side. You can use this to exit our Fragment.
-- Moving from `0%` to `-100%`, means that our Fragment is moving to the left side. We will use this to remove the current Fragment from NavHostFragment. 
+#### Horizontal Transitions (X-axis)
+At `0%`, we can move to the right which is `100%`, or we can move to the left which is `-100%`:
+- Moving from `-100%` to `0%` means that our fragment impends from the left. We will use this to enter our Fragment.
+- Moving from `0%` to `100%` means that our Fragment is moving to the right side. You can use this to exit our Fragment.
+- Moving from `0%` to `-100%` means that our Fragment is moving to the left side. We will use this to remove the current Fragment from NavHostFragment.
 - Moving from `100%` to `0%` means that our fragment will come from the right side. This will be used to bring back the initial Fragment.
 
-#### Vertical Transitions(Y-axis)
-At `0%` percent, we can move to the top which is `100%` or we can move downwards to `-100%`.
-
-- Moving from `100%` to `0%`, our DialogFragment will enter from the bottom. We can use this to create a slide in animation.
-- Moving from `0%` to `100%`, our DialogFragment will move from the center to the bottom. We can use this to create a slide-down animation. 
-- Moving from `-100%` to `0%`, our DialogFragment will appear from the top.
+#### Vertical Transitions (Y-axis)
+At `0%` percent, we can move to the top which is `100%`, or we can move downwards to `-100%`:
+- Moving from `100%` to `0%` means that our DialogFragment will enter from the bottom. We can use this to create a slide in animation.
+- Moving from `0%` to `100%` means that our DialogFragment will move from the center to the bottom. We can use this to create a slide-down animation.
+- Moving from `-100%` to `0%` means that our DialogFragment will appear from the top.
 
 ### Step 1 - Creating an animation directory
-First, create a new resource directory and name it `anim` this will hold our transition animations.
+First, create a new resource directory and name it `anim`, this will hold our transition animations.
 
-### Step 2 - Creating Transitions
+### Step 2 - Creating transitions
 #### Entering a Fragment
-This involves bringing a new Fragment into view. This new Fragment will animate from the left side. We, therefore, need to create an anim called `from_left`. To do so, right-click the anim directory and select new >> animation layout file.
+This involves bringing a new Fragment into view. This new Fragment will enter from the left side. We therefore need to create an anim called `from_left`. To do so, right-click the anim directory and select `new >> animation layout file`.
 
 ```xml
 <set xmlns:android="http://schemas.android.com/apk/res/android">
@@ -92,7 +88,7 @@ This involves bringing a new Fragment into view. This new Fragment will animate 
 </set>
 ```
 
-Removing the current Fragment from NavHostFragment so that the new Fragment can be visible. The Fragment will exit towards the right side, we'll create an anim called `to_right`.
+We remove the current Fragment from NavHostFragment so that the new Fragment can be visible. The Fragment will exit towards the right side, we'll create an anim called `to_right`.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -101,7 +97,7 @@ Removing the current Fragment from NavHostFragment so that the new Fragment can 
 </set>
 ```
 
-#### Navigating Back to the Previous Fragment
+#### Navigating back to the previous Fragment
 First, we'll need to remove the Fragment that is currently being displayed. We'll create an anim called `to_left` that will remove the Fragment towards the left side.
 
 ```xml
@@ -120,9 +116,9 @@ Bringing back the initial Fragment on NavHostFragment. This Fragment will come f
 </set>
 ```
 
-> Navigating back to the previous Fragment is helpful as the top back button is also animated.
+Navigating back to the previous Fragment is helpful as the top back button is also animated.
 
-#### Adding Animations to Fragments
+#### Adding animations to Fragments
 To add the transition animations, in your `NavGraph`, click on an `Action` which you want to animate its transition. On your right, you will see a pane that has a section for adding animations:
 
 ![Animation Pane](/engineering-education/custom-animations-and-transition-effects-between-fragments-in-android/animations.png)
@@ -134,15 +130,17 @@ For the home Fragment, we'll need to specify the `popEnterAnim` and `popExitAnim
 - In `popEnterAnim` pass `from_right` anim.
 - In `popExitAnim` pass `to_left` anim.
 
-> For other Fragments whose actions are not navigating to new destinations, a back button is called explicitly. In the animation panel, you will include:
+For other Fragments whose actions are not navigating to new destinations, a back button is called explicitly.
+
+In the animation panel, you will include:
 
 - In `popEnterAnim` pass `from_right` anim.
 - In `popExitAnim` pass `to_left` anim.
 
-### Step 3 - Creating Dialog Animations
+### Step 3 - Creating dialog animations
 In this step, we will look at how to animate DialogFragments.
 
-#### Showing the Dialog
+#### Showing the dialog
 We'll create an anim called `slide_up` to animate our dialog from the bottom to the center of the screen.
 
 ```xml
@@ -152,7 +150,7 @@ We'll create an anim called `slide_up` to animate our dialog from the bottom to 
 </set>
 ```
 
-#### Dismissing the Dialog
+#### Dismissing the dialog
 We'll create an anim called `slide_down` to animate our Dialog as it dismisses by moving from the center to the bottom of the screen.
 
 ```xml
@@ -162,10 +160,10 @@ We'll create an anim called `slide_down` to animate our Dialog as it dismisses b
 </set>
 ```
 
-#### Adding the Animations to a Dialog
+#### Adding the animations to a dialog
 Adding the animations to a DialogFragment is a little bit different from that of normal Fragments.
 
-First navigate to your `res` >> `values`. In your `theme` define the following style:
+First navigate to your `res` >> `values`. In your `theme`, define the following style:
 
 ```xml
 <style name="DialogFragmentAnimation">
@@ -183,7 +181,7 @@ override fun onActivityCreated(savedInstanceState: Bundle?) {
     }
 ```
 
-### Step 4 - Creating Shared Element Transition
+### Step 4 - Creating shared element transition
 Here, we will navigate to another Fragment once an image is clicked. The image will expand to a larger image in the other Fragment.
 
 In our first Fragment layout, add an `ImageView`.
@@ -206,7 +204,7 @@ We must give the ImageView a `transitionName` - when using the shared transition
 
 In our second Fragment layout, we'll also include an ImageView - an expansion of the image in the previous Fragment.
 
-We will also give it a different transition name i.e `large image` and give it different dimensions so that it can cover 3/4 of the screen.
+We will also give it a different transition name i.e. `large image` and give it different dimensions so that it can cover 3/4 of the screen.
 
 ```xml
 <ImageView
@@ -222,8 +220,8 @@ We will also give it a different transition name i.e `large image` and give it d
     app:layout_constraintTop_toTopOf="parent" />
 ```
 
-#### Logic for the First Fragment
-In the First Fragment, we will set an `onClickListener` to the ImageView and add the following code to initiate the transition.
+#### Logic for the first Fragment
+In the first Fragment, we will set an `onClickListener` to the ImageView and add the following code to initiate the transition.
 
 ```kotlin
 binding.image.setOnClickListener {
@@ -233,12 +231,12 @@ binding.image.setOnClickListener {
     }
 ```
 
-We create extras of the type `FragmentNavigatorExtras` where we pass the `id` of the ImageView that is clicked and then pass the name of transition that we need to transit to. Finally, we perform the navigation and pass the extras.
+We create extras of the type `FragmentNavigatorExtras` where we pass the `id` of the ImageView that is clicked, and then pass the name of transition that we need to transition to. Finally, we perform the navigation and pass the extras.
 
-> Make sure you have created an action in your NavGraph that links the first Fragment to the one we're navigating to.
+Make sure you have created an action in your NavGraph that links the first Fragment to the one we're navigating to.
 
-#### Logic for the Second Fragment
-In the other Fragment, we need to indicate when our animation enters or leaves. Inside the `onCreateView` include the following lines of code.
+#### Logic for the second Fragment
+In the other Fragment, we need to indicate when our animation enters or leaves. Inside the `onCreateView`, include the following lines of code.
 
 ```kotlin
 val animation = TransitionInflater.from(requireContext()).inflateTransition(android.R.transition.move)
@@ -251,7 +249,7 @@ sharedElementReturnTransition = animation
 ![Demo](/engineering-education/custom-animations-and-transition-effects-between-fragments-in-android/demo.gif)
 
 ### Conclusion
-In this tutorial, we have learned what transition animations are, and how to add animations when navigating through destinations. We have also looked at how to animate a DialogFragment's transition and finally, how to create a shared transition element.
+In this tutorial, we have learned what transition animations are, and how to add animations when navigating through destinations. We have also looked at how to animate a DialogFragment's transition, and finally, how to create a shared element transition.
 
 Go ahead and enhance your Android projects with these transitions to increase your app's interactivity. You can visit this repository for reference [FragmentsTransitionsDemo](https://github.com/sheecodes/FragmentsTransitionsDemo).
 
