@@ -222,6 +222,6 @@ Aside from some excellent syntax, ES6 provides a transpiler that converts to a r
 Fat arrows, for example, help us to write more concise and modern-looking code while also improving the functionality of JavaScript.
 
 #### Further Reading
-For more features of Babel and ES6, see [here](https://babeljs.io/docs/learn-es2015/)
+For more features of Babel and ES6, check out [this link](https://babeljs.io/docs/learn-es2015/)
 
 Happy Coding!
