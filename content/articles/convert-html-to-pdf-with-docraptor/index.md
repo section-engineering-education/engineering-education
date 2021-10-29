@@ -117,19 +117,26 @@ exit;
 
 The complete code:
     ```PHP
-
     <?php
         //docraptor.hp
         require_once('/path/to/docraptor-php/autoload.php');
+        //free account
         $configuration = DocRaptor\configuration::getDefaultonfiguration();
         $configuration -> setUsername('KEY_YOUR_API_HERE');
+        
+        //adding HTML archive that needs to be converted
         $docraptor = newDocRaptor\DocApi();
         $doc = new DocRaptor\doc();
         $doc = setDocumentContent("<html><title> convert HTML to PDF </title><body> HTML to PDF made easier </body></html");
-        //$doc = setDocumentUrl("http: //DocRaptor.com/returns/sales.html");
-        $doc->setDocumentType("pdf");
-        $doc->setTest(true);
+        //online archive
+        //$doc = setDocumentUrl("http: //DocRaptor.com/returns/sales.html"); 
+        //specification of archive type
+        $doc->setDocumentType("pdf"); 
+        //creataing a test archive
+        $doc->setTest(true);  
         //$doc->setJavaScript('true');
+        
+        //error handling
         try{
             $creat-response=$DocRaptor->creatDoc($doc);
         } catch (DocRaptor\ApiException $Error){
@@ -138,9 +145,12 @@ The complete code:
             echo $error->getCode() ."\n";
             echo $error->getResponseBody() ."\n";
         }
+        //saving to the server
         $fie = fopen("/tmp/DocRaptor-php.pdf" , "wb");
         $fwrite($file , $create_response);
         $fclose($file);
+        
+       //let the user download it
         //$header('Content-Description: file Transfer');
         //$header('Content-Type: Application/pdf');
         //$header('Content-Deposition: attachment; filename=sales.pdf');
