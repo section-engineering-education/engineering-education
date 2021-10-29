@@ -16,7 +16,7 @@ images:
 
 Many modern languages like Java, C# are object-oriented or have support for using the object-oriented programming (OOP) paradigms. Python is not exempted.
 
-In this tutorial, you will learn how to use OOP concepts with Python. OOP is a technique of structuring one's code, other techniques what looking into is __functional programming__.
+In this tutorial, you'll learn how to use object-oriented programming concepts with Python. OOP is a technique that can be used for structuring your code. Its philosophy is that it creates reusable objects from a class that shares some similarities. These objects can also have some peculiarities about them or share similarities with other objects. In addition, they can also inherit additional properties from another class. The power of using this paradigm is when you're working on a medium to a large project. This technique's clearer when an example is considered which will be shown below.
 
 OOP became popular because of its way of reusing code, therefore, avoiding duplicated business logic.
 
