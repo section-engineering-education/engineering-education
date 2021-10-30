@@ -48,7 +48,7 @@ List<Employee> employeeWith90MarksAndAbove = employees
   .filter(Employee::hasOverNinetyMarks)
   .collect(Collectors.toLists());
 ```
-In this particular instance, we will enhance our Employee class by adding the hasOverNinetyMarks method:
+In this particular instance, we enhance our Employee class by adding the hasOverNinetyMarks method:
 
 ```Java
 public boolean hasOverNinetyMarks() 
@@ -64,7 +64,7 @@ assertThis(employeeWith90MarksAndAbove).contains(george, mike);
 ```
 
 ### Filtering data based on a variety of criteria
-In addition, we may utilize several criteria with the filter to our advantage. We might, for instance, use a combination of points and names to narrow the results, as shown below:
+In addition, we may utilize several criteria with the filter to our advantage. We might, for instance, use a combination of points and names to narrow the results:
 
 ```Java
 List<Employee> georgeWith90MarksAndAbove = employees
@@ -77,10 +77,10 @@ List<Employee> georgeWith90MarksAndAbove = employees
 ```
 
 **Explanation**
-We used multiple conditions with filter() such as marks and identity of the employees
+We used multiple conditions with filter() such as marks and the identity of the employees
 
 ### Methods for dealing with exceptions
-The filter method is used to evaluate predicates that do not throw exceptions when they are evaluated. The functional interfaces of the Java programming language do not specify any kind of exceptions, whether checked or unchecked. Functional Interfaces given by the JDK are inadequate for dealing with exceptions. The resulting code becomes complex and complicated when dealing with them.
+The filter method is used to evaluate predicates that do not throw exceptions when they are evaluated. The functional interfaces of the Java programming language do not specify any kind of exceptions, whether checked or unchecked. Functional Interfaces given by the JDK are inadequate for dealing with exceptions; the resulting code becomes complex and complicated when dealing with them.
 
 The handling of exceptions in lambda expressions shall next be explored in detail using several alternative approaches.
 
@@ -93,7 +93,7 @@ private String profilePictureUrl;
 Furthermore, we will create a simple `hasValidProfilePicture()` function to verify whether or not the profile picture is still valid:
 
 ```Java
-public boolean hasValidProfilePicture() throws InpuOutputException 
+public boolean hasValidProfilePicture() throws IOException 
 {
     URL url = new URL(this.profilePictureUrl);
     HttpsURLConnection connection = (HttpsURLConnection) url.openConnection();
@@ -111,7 +111,7 @@ List<Employee> employeesWithValidProfilePicture = employees
 ```
 
 **Explanation**
-Filtering the employee with this method,hasValidProfile, will bring us an error.
+Filtering the employee with this method, hasValidProfile, will bring us an error:
 
 ```
 Incompatible throw type java.io.InputOutputException inside the function phrase
@@ -163,6 +163,6 @@ List employeesWithValidProfilePicture = employee
 ```
 
 ### Conclusion
-In this tutorial, we have looked at the filter() method in Java while using lambda expressions, which are used to handle streams. In addition to that, we have also looked at the different ways or approaches of dealing with exceptions handling.
+In this tutorial, we have looked at how to use the filter() method in Java to filter out specific items from streams. In the process, we made use of lambda expressions to specify the predicate to filter with. In addition to that, we have also looked at the different approaches for dealing with exceptions handling.
 
 Happy Coding!
