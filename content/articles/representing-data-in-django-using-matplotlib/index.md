@@ -399,7 +399,7 @@ Let's also edit `base.html` to be able to access the  view. Edit it as follows:
 ```
 When you visit `http://127.0.0.1:8000` you should have something a page with our search form  similar to this:
 
-![Sales Page](/engineering-education/content/articles/Representing-data-in-Django-using-matplotlib/SalesPage.png)
+![Sales Page](/engineering-education/content/articles/representing-data-in-django-using-matplotlib/SalesPage.png)
 
 
 ### Creating the graphical representations.
@@ -577,15 +577,15 @@ When you fill the form you should have something like this when you select bar c
 
 `http://127.0.0.1:8000/`
 
-![Bar Graph](/engineering-education/content/articles/Representing-data-in-Django-using-matplotlib/BarGraph.png)
+![Bar Graph](/engineering-education/content/articles/representing-data-in-django-using-matplotlib/BarGraph.png)
 
 When you select pie chart:
 
-![Pie Chart](/engineering-education/content/articles/Representing-data-in-Django-using-matplotlib/PieChart.png)
+![Pie Chart](/engineering-education/content/articles/representing-data-in-django-using-matplotlib/PieChart.png)
 
 When you select line graph:
 
-![Line Graph](/engineering-education/content/articles/Representing-data-in-Django-using-matplotlib/LineGraph.png)
+![Line Graph](/engineering-education/content/articles/representing-data-in-django-using-matplotlib/LineGraph.png)
 
 ### Conclusion
 You have now successfully created a Django application that uses matplotlib to represent data.  The following links will be helpful incase you want to learn more:
