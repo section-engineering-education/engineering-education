@@ -1,13 +1,9 @@
-### Title
-Nesting Navigators and Routing with React Navigation in React Native
 ### Introduction
 Changing between displays is a requirement in nearly all mobile applications. React Native's `react-navigation` library is stunning and simple to use. It's a well-known library for React Native application routing and navigation. When you nest navigators, the screens of one navigator are rendered inside the screens of another. If there is a stack, switching to a different screen will cause a new screen to be displayed.
 
 Navigators are in charge of making the switch between different screens. There are numerous navigation types supported by React Navigation, including Stack, Drawer, and Tab Navigators. In addition to navigating between screens, it can be used to transfer information between them.
 
 Table of content:
-- [Prerequisites](#prerequisites)
-- [Goals of the Tutorial](#goals-of-the-tutorial)
 - [First Step- Application development and module installation](#first-step--application-development-and-module-installation)
 - [Second Step- Creating a HomeScreen and NewworkerScreen](#second-step--creating-a-homescreen-and-newworkerscreen)
 - [Third Step- Navigating React Pages using StackNavigator](#third-step--navigating-react-pages-using-stacknavigator)
@@ -18,10 +14,6 @@ You'll require the following supplies to complete this tutorial:
 
 1.An on-disk Node.js development environment. Make a Local Development Environment with Node.js and the [Installation Guide.](https://www.digitalocean.com/community/tutorial_series/how-to-install-node-js-and-create-a-local-development-environment)  
 2. An advantage for this project is familiarity with the iOS or Android simulators and setting up a new React Native environment in your development environment.
-### Goals of the Tutorial
-1. This post will teach you how to make a multi-screen React Native app.
-2. React Navigation will teach you how to navigate from one screen to the next if you're working with the library.
-3. Using React Context, you'll build a mechanism for passing data between screens.
 
 There will be several steps that we will walk through to achieve our goal in this tutorial.
 ### First Step- Application development and module installation
