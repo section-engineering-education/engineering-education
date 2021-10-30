@@ -1,13 +1,29 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /genie-slide-in-jelly-and-scale-pop-up-notification-effects/
+title: Genie Slide-in Jelly and Scale Pop-up Notificaiton Effects
+description: In this article we will go over how to implement genie, slide-in, jelly and scale pop-up notification effects.
+author: prosper-grateful-juma
+date: 2021-10-21T00:00:00-15:13
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/genie-slide-in-jelly-and-scale-pop-up-notification-effects/hero.png
+    alt: Genie Slide-in Scal Pop-up Notifications
+---
+
 Websites need notifications to display urgent or additional information. Pop-ups, used to pass notifications, are
 efficient if used effectively and at the right time. Notification effects depending on the main website theme bring a
 website's unique taste and signature look.
-
+<!--more-->
 In this article, you will learn how to apply some of these notification effects including the Genie, Slide-in, Jelly,
 and scale Pop-up notification effects. You will learn how to build eye-catching catching effects and appreciate that
 these effects are dependent on the type of information being displayed.
 
 ### Table of contents
-
 - [Key takeaways](#key-takeaways)
 - [Pre-requisites](#pre-requisites)
 - [Project folder structure](#project-folder-structure)
@@ -23,7 +39,6 @@ these effects are dependent on the type of information being displayed.
 - [Conclusion](#conclusion)
 
 ### Key takeaways
-
 By the end of this article, you will learn how to apply the following notification effects to a webpage.
 
 - Slide-in effect
@@ -34,7 +49,6 @@ By the end of this article, you will learn how to apply the following notificati
 You will also get to know some notification effects which we can use on your webpage and when to use them.
 
 ### Pre-requisites
-
 For you to flow easily with this article, you need to know the following:
 
 - Basics of HTML. Know-how on creating web pages and linking other files to them.
@@ -43,7 +57,6 @@ For you to flow easily with this article, you need to know the following:
 - Web development IDE. It should support webpage preview capabilities. These will be helpful during the development process. I recommend Visual Studio Code IDE. You can download it from [here](https://code.visualstudio.com/).
 
 ### Project folder structure
-
 Create a root folder named `Notifications`. All the project code will lie here. The root folder structure will be as
 shown below:
 
@@ -65,7 +78,6 @@ shown below:
 ```
 
 ### Overall webpage structure
-
 In the `growl-effects-scale.html`, add the following snippet:
 
 ```html
@@ -179,7 +191,6 @@ Repeat this for the other two files to get the Code below for:
 ```
 
 ### Add styling the webpage
-
 In the `demonstration.css` file,
 
 - Create color templates to easily choose from for the page:
@@ -499,7 +510,6 @@ a:focus, a:hover {
 ![Style the pages](engineering-education/genie-slide-in-jelly-and-scale-pop-up-notification-effects/style-the-pages.png "Style the pages")
 
 ### Add a notification to the window
-
 In the Javascript folder, named `js`, open the 'notificationFunction.js' file. In the file, you will do the following:
 
 - Create a function that will take in the window as the argument. The function will later invoke it. The function will hold all the other functions in it. This code is shown below:
@@ -737,7 +747,6 @@ window.NotificationFunction = NotificationFunction;
 ```
 
 ### Create functions to search for the classes in the HTML file
-
 Open the `classEditor.js` file and add a function to take in the window as an argument and invoke it.
 
 ```js
@@ -845,7 +854,6 @@ if (typeof define === 'function') {
 ```
 
 ### Modify the HTML file to add the notification
-
 Inside the `growl-effects-scale.html` file, just below the `<script src="js/notificationFunction.js"></script>` line,
 add a script that does the following:
 
@@ -912,7 +920,6 @@ notificationButton.addEventListener('click', function () {
 ```
 
 ### Use a minified modernizr file for animations
-
 Head over to this [link](https://github.com/prograte/Genie-Slide-in-Jelly-and-scale-Pop-up-Notification-effects/blob/main/js/modernizr.custom.js)
 to find the `modernizr.custom.js` file. Copy the content into the `modernizr.custom.js` file in the `js` folder. Do this
 by copy-pasting the code directly or viewing it as a _RAW_ file before copy-pasting it.
@@ -1046,7 +1053,6 @@ automatically, neither can it be closed. Solve these problems by adding some CSS
 the `growl-notification-style.css` file.
 
 ### Add the growl effect to the notification
-
 In the `growl-notification-style.css` file, add growl effects. Find the code and some inline commentary of the growl effects CSS code [here](https://github.com/prograte/Genie-Slide-in-Jelly-and-scale-Pop-up-Notification-effects/blob/main/css/growl-notification-style.css).
 
 - Added growl styling that will be shared with all the types of growl effects
@@ -1074,7 +1080,6 @@ webpage. Click on `SHOW NOTIFICATION` to see the animation. The animation looks 
   ![genie effect gif](engineering-education/genie-slide-in-jelly-and-scale-pop-up-notification-effects/genie-effect-gif.gif "genie effect gif")
 
 ### Normalize the webpages
-
 Copy and paste the content of the `normalization.css` file
 from [here](https://github.com/prograte/Genie-Slide-in-Jelly-and-scale-Pop-up-Notification-effects/blob/main/css/normalization.css)
 . Do this by copy-pasting the code directly or viewing it as a _RAW_ file before copy-pasting it.
@@ -1089,7 +1094,6 @@ Modify it to create desired outputs for projects.
 > Use [Coolors.co](https://coolors.co/) to generate color templates for more visually appealing sites.
 
 ### Conclusion
-
 In the article, the reader learned the following:
 
 - Creating a web structure for a notification
@@ -1098,3 +1102,6 @@ In the article, the reader learned the following:
 - Adding a notification to the webpage
 - Changing the type of notifications
 - Changing the colors of the site according to the templates created.
+
+---
+Peer Review Contributions by: [Adrian Murage](/engineering-education/authors/adrian-murage/)
