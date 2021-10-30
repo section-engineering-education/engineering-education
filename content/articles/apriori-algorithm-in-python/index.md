@@ -78,9 +78,11 @@ Data = pd.read_csv('/content/drive/MyDrive/Market_Basket_Optimisation.csv', head
 
 Since we shall be training an apriori model, which takes inputs in a list format, we need to transform our pandas' data frame into a list of transactions. To create this list, we start by initialising an empty list. We then populate this with different transactions in our pandas' data frame. 
 
-To achieve this, we shall use a for-loop function that will iterate over the different observations of our pandas dataset and populate our empty list with the elements of such observations. We shall then take the `append` function from our created list, which will add different elements from our dataset into our list one by one. 
+To achieve this, we shall use a for-loop function that will iterate over the different observations of our pandas dataset and populate our empty list with the elements of such observations. 
 
-However, to succeed in this step, we shall use two for-loop, one,  to iterate over all the 7501 different transactions and the second one, over all the 20 columns so that the `append` function adds each element to the list independently. 
+We then take the `append` function from our created list, which will add different elements from our dataset into our list one by one. 
+
+However, to succeed in this step, we shall use two for-loop, one to iterate over all the 7501 different transactions and the second one overall the 20 columns, so that the `append` function adds each element to the list independently. 
 
 The following code transforms our dataset into a list of transactions.
 
