@@ -16,7 +16,7 @@ images:
 ---
 Organizations across all industries have appreciated and benefited from the significance that data plays in their decision making and business development. They are now running more data workloads and analytics than ever before.
 <!--more-->
-Yet an overload of these activities may cause a system crash, workload freeze, and ultimately downtime. This happens mainly when an organization's [cloud computing](/introduction-to-cloud-computing/) resources such as its storage, memory, and CPU exceed the available system capacity.
+Yet an overload of these activities may cause a system crash, workload freeze, and ultimately downtime. This happens mainly when an organization's [cloud computing](/engineering-education/introduction-to-cloud-computing/) resources such as its storage, memory, and CPU exceed the available system capacity.
 
 Many organizations have resulted to cloud bursting to address this issue of system overload while saving on costs. With cloud bursting, organizations offload private cloud and on-premises traffic into the public cloud, which helps in meeting peak demand.
 

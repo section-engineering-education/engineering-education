@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/activation-functions/hero.jpg
     alt: activation function with Python example image
 ---
-In an earlier article on [perceptron](/perceptron-algorithm/) algorithms, we looked at the concepts of weighted sums and thresholding. The output was passed through a threshold function, that blocked all the negative values from passing. 
+In an earlier article on [perceptron](/engineering-education/perceptron-algorithm/) algorithms, we looked at the concepts of weighted sums and thresholding. The output was passed through a threshold function, that blocked all the negative values from passing. 
 <!--more-->
 
 ### Activation functions
@@ -48,7 +48,7 @@ The step activation function, as discussed in the perceptron algorithm, is shown
 
 [*Image Source*](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.intmath.com%2Flaplace-transformation%2F1a-unit-step-functions-definition.php&psig=AOvVaw1XjHjFjI93-cSbYQYy1jYq&ust=1606899070976000&source=images&cd=vfe&ved=0CA0QjhxqFwoTCMCuo-G0rO0CFQAAAAAdAAAAABAD)
 
-For a more in-depth discussion on the step function, refer to this previous article on [perceptrons](/perceptron-algorithm/).
+For a more in-depth discussion on the step function, refer to this previous article on [perceptrons](/engineering-education/perceptron-algorithm/).
 
 #### Sigmoid activation function
 Step functions are not as informative as we would like them to be due to the discontinuity present at 0. During the training and optimizing of the networks, the step function gathers minimal information from the training data and therefore is of no use. The sigmoid function represents the same range and is a continuous variant of the step function. 

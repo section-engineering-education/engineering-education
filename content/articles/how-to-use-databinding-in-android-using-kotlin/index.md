@@ -68,7 +68,7 @@ buildTypes {
 
 In the same `build.gradle` file, add the `lifecycle` library to your `dependencies`. This library helps connect the `UI` to a `ViewModel` and `LiveData`.
 
-Read more about `MVVM` architecture [here](/implementing-mvvm-architecture-in-android-using-kotlin/).
+Read more about `MVVM` architecture [here](/engineering-education/implementing-mvvm-architecture-in-android-using-kotlin/).
 
 ```bash
 dependencies {

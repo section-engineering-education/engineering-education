@@ -7,7 +7,7 @@ title: Why Healthcare Organizations should Adopt Cloud Computing
 description: This article will explain why healthcare organizations should adopt cloud computing. It will also explain the risks involved in embracing cloud computing and possible solutions. 
 author: martha-ngugi
 date: 2021-08-23T00:00:00-09:00
-topics: [cloud computing]
+topics: []
 excerpt_separator: <!--more-->
 images:
 
