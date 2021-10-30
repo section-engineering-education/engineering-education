@@ -5,7 +5,7 @@ published: true
 url: /what-is-aws-and-why-is-aws-so-popular/
 title: Understanding AWS and its Popularity
 description: This article will help the reader understand Amazon Web Services (AWS) and why it is popular. This subsidiary was founded in 2002 by Amazon to offer different cloud services to clients.
-author: moses-m
+author: moses-maina
 date: 2021-06-24T00:00:00-10:31
 topics: []
 excerpt_separator: <!--more-->
