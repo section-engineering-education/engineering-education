@@ -166,3 +166,6 @@ List employeesWithValidProfilePicture = employee
 In this tutorial, we have looked at how to use the filter() method in Java to filter out specific items from streams. In the process, we made use of lambda expressions to specify the predicate to filter with. In addition to that, we have also looked at the different approaches for dealing with exceptions handling.
 
 Happy Coding!
+
+---
+Peer Review Contributions by: [John Amiscaray](/engineering-education/authors/john-amiscaray/)
