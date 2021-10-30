@@ -392,10 +392,7 @@ When we bring all this individual features together, we should have:
 </html>
 ```
 The result of this is below:
-<iframe
-  src="marker.mp4"
-  style="width:100%; height:300px;"
-></iframe>
+![gif](marker.gif)
 
 #### Conclusion
 In conclusion, we learned how to add multiple markers using geojson, through file upload and with the use of a simple front-end modal, all with Vanilla javascript, jquery, bootstrap and leaflet.js.
