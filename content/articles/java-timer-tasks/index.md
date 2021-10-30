@@ -1,5 +1,4 @@
 ### INTRODUCTION
-
 The Java programming language provides a class utility known as `Timer Task`. This class enables task scheduling, a task to be executed after a given period or at a specified date and time.
 
 A timer in Java is a facility that enables threads to schedule tasks for later execution. Timer tasks, therefore, are tasks that can be scheduled for later execution, either once or repeatedly.
@@ -7,7 +6,6 @@ A timer in Java is a facility that enables threads to schedule tasks for later e
 Timer Tasks are important since they enable a program to be scheduled for later execution in the event where the processor is held and busy executing some other tasks. This is done by keeping the process to be executed in the queue such that when the time of execution comes, the processor may be able to suspend other processes and execute the task in the queue.
 
 ### Table of contents
-
 - [Prerequisites](#prerequisites)
 - [Java timer task methods](#java-timer-task-methods)
     - [Cancel() Method](#cancel-method)
@@ -17,13 +15,7 @@ Timer Tasks are important since they enable a program to be scheduled for later 
 - [Conclusion](#conclusion)
 
 ### Prerequisites
-<<<<<<< HEAD
 To understand this article better you will need to:
-=======
-
-To understand this article better you will need to:
-
->>>>>>> c01134164a342ad6d946e3206e617e82af363fca
 - have a basic understanding of [Java](https://www.w3schools.com/Java/default.asp)
 - have a code editor such as Intellij Idea, which can be downloaded from [this](https://www.jetbrains.com/idea/download/#section=windows) Jetbrains site.
 
@@ -147,8 +139,4 @@ The variable `i` is initialized to `5` which implies that when the value of `i` 
 The cancel() method is used to cancel the execution of the task to prevent it from being executed again once the task is completed.
 
 ### Conclusion
-<<<<<<< HEAD
-=======
-
->>>>>>> c01134164a342ad6d946e3206e617e82af363fca
 This tutorial has taken you through the concept of Timer Tasks in Java, and therefore, you should be able to get a better understanding of Timer Tasks and create your timer that alerts or displays a given message when time is up.
