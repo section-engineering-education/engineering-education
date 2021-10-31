@@ -2,7 +2,7 @@
 Serialization transforms a data structure or object state into a format that can be saved in a file, memory or sent over a computer network and then reconstructed. This is a benefit of Serialization in terms of transmitting the converted data.
 
 ### Preliquisites
-- Have visual studio 2019 software installed. It is the compiler used to run Csharp programs.
+- Have [visual studio 2019](https://visualstudio.microsoft.com/vs/) software installed. It is the compiler used to run Csharp programs.
 - Have some prior knowledge in .NET programming and xml files.
 
 ### Table of contents
@@ -119,6 +119,7 @@ Serializable tells the.NET runtime that this class's instances can be serialized
 Example program
 
 ```c#
+// For soap serialization to occur, one must reference the soap serialization using ``using System.Runtime.Serialization.Formatters.Soap;``
 using system;
 using System.Text;
 using System.IO;
@@ -135,9 +136,10 @@ namespace soapSerializationSample
         static void Main(string[]args)
         {
             Sample sample = new Sample();
-            sample.Name = "erick nyaga";
+            sample.Name = "erick Kiragu"; //Instance of our sample class
             sample.Value =34;
-            FileStream filestream =new Filestream(@"d:\sem\serialisation.dat", FileMode.Create);
+            FileStream filestream =new Filestream //This code is used to accept our output
+            (@"d:\sem\serialisation.dat", FileMode.Create);// Serialization of the created object
             SoapFormatter formatter =new  SoapFormatter();
             formatter.Serializa(fileStream, sample);
         }
