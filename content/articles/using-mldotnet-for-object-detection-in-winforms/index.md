@@ -12,7 +12,7 @@ The first step is opening the visual studio and following the steps below.
 1. Click on `Create new project`.
 2. On the next screen search for `Windows Forms` and select `Windows Forms App(.NET Framework)` and select the one that is using `C#`. and click `Next`
 3. Enter the name of the project you want to create i.e, `Win_Forms_ObjectDetection`, and click `create`.
-4. 
+
 ![Project name](/engineering-education/using-ml.net-for-object-detection-in-winforms/projectname.jpg)
 
 The form designer should look at the one shown in the figure below.
