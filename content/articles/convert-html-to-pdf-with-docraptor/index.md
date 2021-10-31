@@ -129,12 +129,12 @@ The complete code:
         $doc = new DocRaptor\doc();
         $doc = setDocumentContent("<html><title> convert HTML to PDF </title><body> HTML to PDF made easier </body></html");
         //online archive
-        //$doc = setDocumentUrl("http: //DocRaptor.com/returns/sales.html"); 
+        $doc = setDocumentUrl("http: //DocRaptor.com/returns/sales.html"); 
         //specification of archive type
-        $doc->setDocumentType("pdf"); 
+        $doc->setDocumentType("pdf"); //DocRaptor also makes other archives
         //creataing a test archive
         $doc->setTest(true);  
-        //$doc->setJavaScript('true');
+        $doc->setJavaScript('true');
         
         //error handling
         try{
@@ -151,18 +151,18 @@ The complete code:
         $fclose($file);
         
        //let the user download it
-        //$header('Content-Description: file Transfer');
-        //$header('Content-Type: Application/pdf');
-        //$header('Content-Deposition: attachment; filename=sales.pdf');
-        //$header('Content-Transfer-Encoding: binary');
-        //$header('Expires: 0');
-        //$header('Content-Description: file Transfer');
-        //$header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
-        //$header('Pragma: public');
-        //$header('Content-Length: ' .strlen($creat-response));
-        //ob_clean();
-        //flush();
-        //echo($creat_response);
+        $header('Content-Description: file Transfer');
+        $header('Content-Type: Application/pdf');
+        $header('Content-Deposition: attachment; filename=sales.pdf');
+        $header('Content-Transfer-Encoding: binary');
+        $header('Expires: 0');
+        $header('Content-Description: file Transfer');
+        $header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
+        $header('Pragma: public');
+        $header('Content-Length: ' .strlen($creat-response));
+        ob_clean();
+        flush();
+        echo($creat_response);
         exit;
         ```
         
