@@ -12,8 +12,11 @@ The first step is opening the visual studio and following the steps below.
 1. Click on `Create new project`.
 2. On the next screen search for `Windows Forms` and select `Windows Forms App(.NET Framework)` and select the one that is using `C#`. and click `Next`
 3. Enter the name of the project you want to create i.e, `Win_Forms_ObjectDetection`, and click `create`.
+4. 
 ![Project name](/engineering-education/using-ml.net-for-object-detection-in-winforms/projectname.jpg)
+
 The form designer should look at the one shown in the figure below.
+
 ![Design](/engineering-education/using-ml.net-for-object-detection-in-winforms/appearance.jpg)
 
 You will be required to download some nugget packages for the object detection to be effective. These packages are `Microsoft.ML`, `Microsoft.ML.OnnxRuntime`, and because you are dealing with object detection you will also download `Microsoft.ML.Image.Analytics`. You will also download `Microsoft.ML.OnnxTransformer` because you are using the Microsoft object detection model.
@@ -66,7 +69,7 @@ namespace ObjectDetection
                 var initialHeight = img.Height;
                 if (bndBoxes.Count > 1)
                 {
-                    var maximum = boundingBoxes.Max(b => b.Confidence);
+                    var maximum = bndBoxes.Max(b => b.Confidence);
                     var highBndBox = bndBoxes.FirstOrDefault(b => b.Confidence == maximum);
                     bndBoxes.Clear();
                     bndBoxes.Add(highBndBox);
@@ -94,10 +97,10 @@ namespace ObjectDetection
                         graphics.DrawString(boundingBox.Description, new Font(FontFamily.Families[0], 30f), Brushes.Red, x + 5, y + 5);
                     }
                 }
-                imagePrediction.Image = img;
-                imagePrediction.SizeMode = PictureBoxSizeMode.AutoSize;
-                imagePrediction.Visible = true;
-                btnSelectImage.Visible = false;
+                imageResult.Image = img;
+                imageResult.SizeMode = PictureBoxSizeMode.AutoSize;
+                imageResult.Visible = true;
+                imgSelectBtn.Visible = false;
                 btnNewPrediction.Visible = true;
             }
         }
