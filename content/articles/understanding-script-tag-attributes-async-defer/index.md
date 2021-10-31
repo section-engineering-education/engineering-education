@@ -69,13 +69,13 @@ Although, placing the `script` tag before the closing `body` tag also prevents t
 
 The image below gives a better understanding of normal HTML parsing:
 
-![Normal-script-execution](Normal-script-Execution.png)
+![Normal-script-execution](Normal-Execution.png)
 
 From the image above, in Normal HTML parsing:
 
 1. Once the browser parses HTML and comes across a script tag, the browser pauses HTML parsing.
 2. Then, the browser fetches(downloads) and executes the script.
-3. After downloading and executing the script, then it continues HTML parsing.
+3. After downloading and executing  the script, then it continues HTML parsing.
 
 In an HTML file with enormous size and a `script` tag placed before the closing body tag. This may lead to a noticeable delay in parsing the HTML file.
 Although this delay is sometimes unnoticed by end-users having a fast internet connection. Most end-users have a slow internet connection and may notice this delay.
@@ -119,7 +119,7 @@ In the above example, `short-script.js` may download first because of its size. 
 
 The image below provides a visual understanding of the defer attribute:
 
-![defer-script-execution](Defer-script-Execution.png)
+![defer-script-execution](Defer-Execution.png)
 
 From the image above, in Defer:
 
@@ -155,7 +155,7 @@ In the example above:
 * Whichever one loads first between `long-script.js` and ‘short-script.js’ executes first. Async scripts follow the “load-first” principle.
 The image below provides a visual understanding of the async attribute.
 
-![async-script-execution](Async-script-Execution.png)
+![Async-Execution](Async-Execution.png)
 
 From the image above, in Async:
 
