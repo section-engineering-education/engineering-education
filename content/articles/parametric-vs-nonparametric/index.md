@@ -24,7 +24,7 @@ To tune the behavior of models for a given task, these models are parameterized.
 4. Parametric vs. Non-parametric models
 
 ### Prerequisites
-I would recommend this article on [supervised learning algorithms](/supervised-learning-algorithms/). It introduces several concepts that we will refer to later in this article.
+I would recommend this article on [supervised learning algorithms](/engineering-education/supervised-learning-algorithms/). It introduces several concepts that we will refer to later in this article.
 
 ### Parameters
 A parameter can be described as a configuration variable that is intrinsic to the model. Model parameters are usually not set manually. Parameters are often mistaken for hyperparameters. Hyperparameters are configuration variables that are external to the model. Unlike parameters, hyperparameters are manually set.

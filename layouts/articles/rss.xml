@@ -21,6 +21,10 @@
     {{ range $pages }}
     <item>
       <title>{{ .Title }}</title>
+      <author>{{ .Params.author }}</author>
+      {{ range .Params.images }}
+      <image>https://www.section.io{{ .url }}</image>
+      {{ end }}
       <link>{{ .Permalink }}</link>
       <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
       <guid>{{ .Permalink }}</guid>

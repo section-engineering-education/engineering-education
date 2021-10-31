@@ -31,7 +31,7 @@ Let's dive in!
 To follow through with this tutorial, you will need to:
   1. Have [Android Studio](https://developer.android.com/studio) installed.
   2. Have a basic knowledge of building Android applications.
-  3. Have a basic understanding of [Kotlin](/kotlin-collections/) programming language.
+  3. Have a basic understanding of [Kotlin](/engineering-education/kotlin-collections/) programming language.
 
 Let's get started!
 
@@ -135,7 +135,7 @@ override fun getItemCount(): Int {
 }
 ```
 
-Read [this article](/android-recyclerviews/) for a deeper explanation of the methods.
+Read [this article](/engineering-education/android-recyclerviews/) for a deeper explanation of the methods.
 
 Add the implementation to the methods as shown below.
 

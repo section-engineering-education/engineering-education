@@ -4,6 +4,8 @@ When looking to approve topics for the EngEd library, we are really looking for 
 
 We are referring to a topic that is NOT already readily available through the official documentation or through other blogs. If it’s a popular topic, there should be a unique twist that makes it different from similar comparison, how to, intro or tutorial articles.
 
+It is always best to look up the Topic/Title or Subject submitted via search engine before approving to see if it oversaturated - if so we can consider closing it.
+
 Currently, we are approving ONE topic/PR per student at a time - this was to help the overflowing of PRs in the queue. [Helps prevent multiple articles from the same author with multiple edits - as only polished - ready to publish articles should be coming in].
 
 This means we need to check if the student has more than one TOPIC or PR submitted (we can do this by clicking on the name of the student via GitHub - in the issues section) and it pulls up every topic they’ve submitted. 
