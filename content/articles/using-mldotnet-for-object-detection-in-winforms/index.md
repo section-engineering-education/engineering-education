@@ -29,7 +29,7 @@ You shall also create some folders i.e, `MLmodels` and `Models` for different cl
 
 In your `MLModels` folder, you will add `labels.txt` file that contains `red`, `blue`, `white`, and `green` colors which give the different labels that we are using and the `model.onnx` file from the custom vision.
 
-You will create four classes in your `Models` folder i.e, `ImageSettings`, `ImageInputs`, `ImagePredictions`, and `BoundingBox`.
+You will create four classes in your `Models` folder i.e, `ImageSettings`, `ImageInputs`, `ImageResults`, and `BndBox`.
 
 Now, double click on the button you created to open `form1.cs` that you shall add the following code to enable the click event.
 ```C#
@@ -40,7 +40,7 @@ namespace ObjectDetection
         public const int lineCount = 12, pileCount = 12;
         public const int ftsPerBx = 6;
         private static readonly (float x_axis, float y_axis)[] bxAnchors = { (0.564f, 0.688f), (1.80f, 2.00f), (3.44f, 5.67f), (7.68f, 3.55f), (9.88f, 9.20f) };
-        private PredictionEngine<ImageInput, ImagePredictions> _predictionEngine;
+        private PredictionEngine<ImageInput, ImageResults> _predictionEngine;
         public Form1()
         {
             InitializeComponent();
@@ -52,7 +52,7 @@ namespace ObjectDetection
                             .Append(context.Transforms.ExtractPixels(outputColumnName: "Statistics"))
                             .Append(context.Transforms.ApplyOnnxModel(modelFile: "./MLModel/model.onnx", outputColumnName: "model_outputs", inputColumnName: "Statistics"));
             var mdl = pyplne.Fit(Statistics);
-            _predictionEngine = context.Model.CreatePredictionEngine<ImageInput, ImagePredictions>(mdl);
+            _predictionEngine = context.Model.CreatePredictionEngine<ImageInput, ImageResults>(mdl);
         }
         private void imgSelectBtn_Click(object sender, EventArgs e)
         {
@@ -73,7 +73,7 @@ namespace ObjectDetection
                 }
                 else
                 {
-                    MessageBox.Show("No results for the image");
+                    MsgBox.Show("No results for the image");
                     return;
                 }
                 foreach (var bndBox in bndBoxes)
@@ -141,8 +141,8 @@ namespace ObjectDetection
                 Breadth = (float)Math.Exp(bxMeasurements.Breadth) * unitBreadth * bxAnchors[bx].x_axis,
                 Heit = (float)Math.Exp(bxMeasurements.Heit) * unitHeit * bxAnchors[bx].y_axix,
             };
-            // The x,y coordinates from the (mapped) bounding box prediction represent the center
-            // of the bounding box. We adjust them here to represent the top left corner.
+            // The x_axis, y_axis coordinates from the (mapped) bndbox prediction represent the center
+            // of the bndox. We adjust them here to represent the top left corner.
             mpdBox.X_axis -= mpdBox.Breadth / 2;
             mpdBox.Y_axis -= mpdBox.Heit / 2;
 
@@ -215,7 +215,7 @@ The code also has `BndBoxes`. This code includes the X_axis and Y_axis values, t
 
 Now, there are four classes in your `Models` folder that you created. The code in this class files are not to be changed since they are auto-generated, but you can edit the code in the `ImageSettings` file and use the type of width and height that you wish to use.
 
-There is one thing remaining in the code, creating where we shall put the information you have been writing in the form of code above. To do this, go to the `Toolbox` and select `PictureBox`, drag it to the form layout, give it the name `imagePrediction`, and implement it with the code function after the `for loop` i.e, `imagePrediction.Image = image;`
+There is one thing remaining in the code, creating where we shall put the information you have been writing in the form of code above. To do this, go to the `Toolbox` and select `PictureBox`, drag it to the form layout, give it the name `imgResult`, and implement it with the code function after the `for loop` i.e, `imagePrediction.Image = image;`
 
 When you debug your project, it should be able to detect and put labels on the objects in the images that you are detecting.
 #### Conclusion
