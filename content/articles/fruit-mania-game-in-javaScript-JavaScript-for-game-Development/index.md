@@ -430,7 +430,7 @@ document.addEventListener('DOMContentLoaded', () => {
 ```
 > output
 
-![fruit-mania-game](fruit-mania-game-in-javaScript-JavaScript-for-game-Development/engineering-education/fruit-mania-game.png)
+![fruit-mania-game](/engineering-education/creating-fruit-mania-game-using-javascript/fruit-mania-game.png)
 ### Conclusion
  With the provided knowledge, you now understand how to set the attributes of an HTML element, how to create an HTML element, how to work with timers, and most significantly, how to use javascript for game development. There are other ways of creating the game discussed in this post, and this was simply a straightforward method of doing so. You can experiment with different approaches to make it more fascinating. For more practice, you can develop a Tetris game still using javascript
 
