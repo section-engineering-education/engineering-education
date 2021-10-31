@@ -23,14 +23,13 @@ You will be required to download some nugget packages for the object detection t
 
 You will encounter an error when you build the project, this is because `ML.NET` supports only a 64-bit processor and the settings is 32-bit processor. To solve this error you have to right-click on the project name and navigate to properties, then go to build and select `x64` under `platform target`
 
-
 Now on the toolbox sidebar, drag a `Button` and drop at the bottom of the form designer tab. Go to the properties side and rename it from `button1` to `Select Image`.
-On the same properties sidebar, scroll down to `Name` and change the name to give it the name `btnSelectImage`.
+On the same properties sidebar, scroll down to `Name` and change the name to give it the name `imgSelectBtn`.
 
 To make the `btnSelectImage` functional you shall use the `fileSystemWatcher` and the `openFileDialog` which goes at the bottom of the window that you shall rename to `fileWatcher` and `fileDialog` respectively. A `fileSystemWatcher` watches for different changes in the and the file directory `openFileDialog` asks the user to open a file and select a file from it.
 You shall also create some folders i.e, `MLmodels` and `Models` for different classes that you shall be using.
 
-In your `MLModels` folder, you will add `labels.txt` file that contains `red`, `blue`, `white`, and `green` colors which give the different labels that we are using and the `model.onnx` file from the custom vision.
+In your `MLModels` folder, you will add `lbls.txt` file that contains `red`, `blue`, `white`, and `green` colors which give the different labels that we are using and the `model.onnx` file from the custom vision.
 
 You will create four classes in your `Models` folder i.e, `ImageSettings`, `ImageInputs`, `ImageResults`, and `BndBox`.
 
