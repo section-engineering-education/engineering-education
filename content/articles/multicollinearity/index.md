@@ -28,7 +28,7 @@ The interpretability of machine learning models helps us understand the predicti
 5. Addressing multicollinearity
 
 ### Prerequisites
-In order to follow it article along, a basic understanding of not only machine learning but also regression models is needed. Here’s a helpful [article](/supervised-learning-algorithms/) on supervised learning algorithms.
+In order to follow it article along, a basic understanding of not only machine learning but also regression models is needed. Here’s a helpful [article](/engineering-education/supervised-learning-algorithms/) on supervised learning algorithms.
 
 ### Multicollinearity and variables
 A dependent variable is a variable that holds the occurrence being studied. It is one that varies as a result of the independent variable. An independent variable is one that is controlled to test the dependent variable. 
