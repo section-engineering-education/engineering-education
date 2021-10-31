@@ -5,9 +5,13 @@ A random set of values will be used throughout training to maintain fairness. As
 
 The quick convergence of Adaptive Optimization Algorithms, on the other hand, is causing them to gain popularity. For better convergence resilience, these methods diverge from the traditional Gradient Descent algorithm.
 ### Optimization techniques
-For a brief while, we'll consider various optimization methods frequently employed in Deep Learning. In other words, if you came to this article hoping to learn the equation and mathematical explanation, don't bother. This page also includes a quick overview of the many approaches that are accessible, including those provided by the Keras package.
+For a brief while, we'll consider various optimization methods frequently employed in Deep Learning. In other words, if you came to this article hoping to learn the equation and mathematical explanation, don't bother. 
+
+This page also includes a quick overview of the many approaches that are accessible, including those provided by the Keras package.
 ### Momentum-based Optimization
-Utilize an Adaptive Optimization Algorithm (AOA) that uses exponentially-weighted averaging of gradients from prior rounds to keep convergence from deviating. The vast majority of real-world applications, such as deep neural networks, rely on noisy input to train. There must be a systematic approach to feeding the data in order to minimize the impact of noise during Optimization. To resolve this issue, exponentially weighted averages might be used.
+Utilize an Adaptive Optimization Algorithm (AOA) that uses exponentially-weighted averaging of gradients from prior rounds to keep convergence from deviating. The vast majority of real-world applications, such as deep neural networks, rely on noisy input to train. 
+
+There must be a systematic approach to feeding the data in order to minimize the impact of noise during Optimization. To resolve this issue, exponentially weighted averages might be used.
 
 Using an iterative process, we can approximate the trends in a P-dimensional noisy dataset by calculating the parameters as we go through the data:
 ```
@@ -28,7 +32,9 @@ By using Stochastic Graduated Descent instead of Classic Gradient Descent, sever
 ### Adaptive Optimization Algorithm techniques.
 In the next section, we'll take a look at a few approaches used in A.O.A.s.
 ### Adaptive Moment Estimation (Adam)
-RMSProp and Momentum combine to create this effect. Use this method to figure out how fast your brain is adapting to new information. Like Momentum, it saves the declining arithmetic mean of the squared gradients as well as an average of the past gradients, which is a similar feature. On a smooth surface, it's considerably easier for Adam to make a mistake because of his high coefficient of friction. This strategy's pseudocode appears like this:
+RMSProp and Momentum combine to create this effect. Use this method to figure out how fast your brain is adapting to new information. Like Momentum, it saves the declining arithmetic mean of the squared gradients as well as an average of the past gradients, which is a similar feature.
+
+On a smooth surface, it's considerably easier for Adam to make a mistake because of his high coefficient of friction. This strategy's pseudocode appears like this:
 ```
 D = 0
 K = 0
@@ -41,8 +47,9 @@ for each iteration p
     W = W - α V⁄√S + ε
 ```
 ### RMSProp
-Improve AdaGrad by applying the adaptive learning rate method based on the Root Mean Square. The exponential moving average is used rather than the cumulative sum of squared gradients used by AdaGrad There is only one step that differs between AdaGrad and RMSProp: the first one. That's all RMSProp does: it takes the learning rate and smooths it down by an average.
-This strategy's pseudocode appears like this:
+Improve AdaGrad by applying the adaptive learning rate method based on the Root Mean Square. The exponential moving average is used rather than the cumulative sum of squared gradients used by AdaGrad There is only one step that differs between AdaGrad and RMSProp: the first one. 
+
+That's all RMSProp does: it takes the learning rate and smooths it down by an average. This strategy's pseudocode appears like this:
 ```
 K = 0
 for each iteration i
@@ -51,13 +58,17 @@ for each iteration i
     W = W -α dW⁄√S + ε
 ```
 ###  AdaDelta
-There are extensions for AdaGrad that can be used to slow down the monotonically decreasing pace of learning. When utilizing AdaDelta, only a subset of prior gradients can be aggregated, not all of them (w). The only thing left to figure out is the current iteration's average after subtracting the previous iteration's average and the current gradient.
+There are extensions for AdaGrad that can be used to slow down the monotonically decreasing pace of learning. When utilizing AdaDelta, only a subset of prior gradients can be aggregated, not all of them (w). 
+
+The only thing left to figure out is the current iteration's average after subtracting the previous iteration's average and the current gradient.
 ### AdaGrad
 When employing an Adaptive Gradient, you'll have to adjust the learning rate for parameters at each iteration based on where they're found. This means you'll learn more slowly in frequent areas while learning more quickly in less frequent ones.
 
 Using mathematical formulas, the learning rate is equal to gamma squared times the square root of that number. This method works.
 
-According to earlier AdaGrad computations in the update rule for all parameters, AdaGrad changes the general learning rate N. Cons: The denominator rises in a quadratic fashion, which makes it difficult to work with Since the addition of each additional word raises the total value, the value grows with time. As a result, learning becomes sluggish and eventually comes to a halt. The size of the master step has less of an impact on this technique, and it also converges faster.
+According to earlier AdaGrad computations in the update rule for all parameters, AdaGrad changes the general learning rate N. Cons: The denominator rises in a quadratic fashion, which makes it difficult to work with Since the addition of each additional word raises the total value, the value grows with time. As a result, learning becomes sluggish and eventually comes to a halt. 
+
+The size of the master step has less of an impact on this technique, and it also converges faster.
 ### Mini Batch — Stochastic Gradient Descent
 A number of improvements have been made to the SGD algorithm in recent years. SGD is time-consuming since it computes derivatives for every point in the dataset individually.
 > After a few iterations, the MB-SGD loss function's derivative resembles the GD loss function. There are far more iterations required to reach a minimum in the MB-SGD case than in the GD case, making it computationally costly. Because the derivative does not always point towards minima, the weights update has a greater impact.
