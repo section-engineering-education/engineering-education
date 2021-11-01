@@ -21,6 +21,9 @@ Be sure to visit our [Resources Page](https://github.com/section-engineering-edu
 
 **We tend to stray away or tend not to publish reviews/comparisons of commercial product offerings.**
 
+### Writing sample(s): 
+Include any links or writing samples - to help our team better gauge your writing quality.
+
 ### Proposal Submission
 
 #### Proposed title of article
