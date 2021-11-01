@@ -419,8 +419,7 @@ Format the content in the main content and the columns:
 }
 ```
 
-- Format the progress bar. The bar acts as a trigger example for an event that leads to a notification pop-up. The
-  styling is as shown below:
+Format the progress bar. The bar acts as a trigger example for an event that leads to a notification pop-up. The styling is as shown below:
 
 ```css
 /* Notification progress bar */
