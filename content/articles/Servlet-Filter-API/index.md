@@ -11,9 +11,9 @@ A learner should be able to understand the following after reading this article:
 
 ### Prerequisites
 You will need the following tools to go along with this article:
-- Open-source Java editor installed in your machine, such as Eclipse. You can get it [here](https://www.eclipse.org/downloads/packages/release/2021-06/r).
+- [Eclipse or another open-source Java editor should be installed on your machine.](https://www.eclipse.org/downloads/packages/release/2021-06/r).
 - A web browser installed.
-- Server. In my case, I will be using TomCat version 9. Download it from their official [website](https://tomcat.apache.org/).
+- Install the TomCat server or any other server. In this case, TomCat version 9 will be used. [It's available for download on their official website.](https://tomcat.apache.org/).
 To go along with this article, a learner should have the basics of knowledge of the following:
 1st: 
 - A basic understanding of Java programming
@@ -22,28 +22,28 @@ To go along with this article, a learner should have the basics of knowledge of 
 
 ### Table of contents:
 
-- [What are Servlet Filters and How Do They Work?](#what-are-servlet-filters-and-how-do-they-work?)
+- [What are Servlet Filters and How Do They Work](#what-are-servlet-filters-and-how-do-they-work)
   - [servlet filter definition](#servlet-filter-definition)	
-  - [How Servlet Filters Works](#how-servlet-filters-works.)
+  - [How Servlet Filters Works](#how-servlet-filters-works)
 - [Filter usage and its advantages](#filter-usage-and-its-advantages)
 
   - [Filter usage](#filter-usage)
 
   - [Advantages](#advantages)	
 
-- [Filter interface](#filter-interface)	
-- [FilterChain interface](#filterchain-interface)
-- [FilterConfig interface](#filterconfig-interface)
+- [Filter](#filter)	
+- [FilterChain](#filterchain)
+- [FilterConfig](#filterconfig)
 - [Authentication Example using filter](#authentication-example-using-filter)
 - [Conclusion](#conclusion)
-### What are Servlet Filters and How Do They Work?
+### What are Servlet Filters and How Do They Work
 #### servlet filter definition
 **Filters** are Java classes that can be used to perform and customize filtering operations. This is accomplished by:
 
 1. intercepting client requests before they get to a back-end resource
 
 2. To alter server responses before sending them back to the client.
-#### How Servlet Filters Works.
+#### How Servlet Filters Works
 ![CheckPassword Filter](/engineering-education/Servlet-Filter-API/serletfilterprocess.png)
 **Explanation:**
 - When a request enters the Web Container, it is checked to see whether any filters have URL patterns that match the incoming URL.
@@ -72,20 +72,18 @@ We can come with the following usage of the filter based on the application area
 - There is no dependent on another resource for one of the filters.
 - Filters require less upkeep.
 
-### Filter interface
+### Filter
 
 The following are the steps to follow when creating a Filter program:
 
-1. Write a Java class that implements the `Filter` interface.
+1. Create a Java class that implements the interface `Filter`.
 2. Set up the filter parameters.
 3. Finally, do a filter mapping.
 
-To create a filter, we must implement the Servlet `Filter` Interface, which is part of the `javax.servlet` package.
+We must implement the Servlet 'Filter' Interface, which is part of the `javax.servlet`  package, to create a filter, and the life cycle methods for the 'Filter' interface are as follows:
 
- The `Filter` interface has three life cycle methods, which are as follows:
-
- - `void init()`: Here we use the `init()` method to initialize Filter parameters. It will tell the web container that a filter is about to be activated. 
-One  parameter is required i.e.
+ - `void init()`: The 'init()' method is used to initialize Filter parameters; it informs the web container that a filter needs to be activated. 
+Only one parameter is required, namely,
 
 ```java
 public void init(FilterConfig parameterName) throws ServletException
@@ -101,27 +99,26 @@ public void init(FilterConfig parameterName) throws ServletException
 
 - `void destroy()`: This method denotes that the filter has completed its duty or has been removed from service. Users can override this method to write finishing logic, such as releasing resources, objects, and so on.
 
-### FilterChain interface
-FilterChain's object is used while invoking the next filter or resource in the chain and supplied to the Filter interfaces. 
+### FilterChain
+FilterChain's object is passed to the Filter interfaces when executing the next filter or resource in the chain.
 #### Method.
-There is only one method in the FilterChain interface:
-- `void doFilter()`: This method is used to call the next filter and pass all resources which are needed.
+
+- `void doFilter()`: This method is only available in the `FilterChain` interface and used when calling the next `Filter` and passing all resources that are required:
 ```java
 public void doFilter(HttpServletRequest request, HttpServletResponse response);
 ```
-### FilterConfig interface
+### FilterConfig
 
 The web container generates a `FilterConfig` object which is used to retrieve configuration information from the web.xml file.
 
 #### FilterConfig interface methods
 In the FilterConfig interface, there are four methods:
 1. `void init()`: This method is only called once and is used to set up the filter.
-2. `String getInitParameter`: Here, the parameter value for the provided parameter name is returned.
-3. `getInitParameterNames()`: This method returns a list of all parameter names of a type enumeration.
-4. `getServletContext()`: The ServletContext object is returned by this method.
+2. `String getInitParameter`: The parameter value for the parameter name provided is returned by this method.
+3. `getInitParameterNames()`: This method returns a list of all type enumeration parameter names.
+4. `getServletContext()`: This method returns the `ServletContext` object.
 
-### Authentication Example using Filters
-
+### Authentication Example using filter
 In this example, we're demonstrating how a `Filter` is used to achieve authentication. We're using two filters here: one to verify if a password is greater than seven characters, and the other to check both the user name and password supplied by the user.
 Filter 1 will forward the request to a second Filter if the password length is correct. Otherwise, an error notice will appear.
 
@@ -135,7 +132,7 @@ Open Eclipse IDE for Java EE developers. Create a web project by selecting Files
 
 
 #### Step 2: 
-Right-click on the `Authentication Example` on the Project Explorer, select new -> HTML file option -> `finish` by giving your HTML page a name. We'll call it `login.html` in this case as depicted below.
+By right-clicking on the `Authentication Example` in the Project Explorer, select new -> HTML file option -> finish by giving your HTML page a name. We'll call it `login.html`, in this case. 
 
 ![login page](/engineering-education/Servlet-Filter-API/loginhtml.png)
 ```html
@@ -269,7 +266,7 @@ public class CheckCredentials implements Filter
 
 #### Step 5: Servlet page:
 
-Right-click on the `com.demo` package on the `Authentication Example` Project, select new -> servlet, and finish by giving your servlet class a name. We'll call it `AuthenticationDemo` in this case.
+Right-click the `com.demo` package in the `Authentication Example` Project, choose to create -> Servlet and name your servlet class. We'll call it `AuthenticationDemo`, In this case.
 
 ```java
 package com.demo;
@@ -297,7 +294,7 @@ public class AuthenticationDemo extends HttpServlet
 
 }
 ```
-Right-click on the `login.html` page and choose Run As-> Run on Server -> Save all changes and restart the server to run the project. In the internal browser, a menu will appear, prompting you to enter the user name and password we specified on the `CheckCredentials` page, as shown.
+Right-click on the `login.html` page. Choose Run As-> Run on Server -> Login.html from the context menu of the `login.html` page. To launch the project, save all modifications and restart the server. In the internal browser, a menu will open, inviting you to input the user name and password we specified on the `CheckCredentials` page, as shown.
 ```java
 String uPassword=request.getParameter("uPassword");
 		if("Africa".equals(userName)&& "12345678".equals(uPassword))
