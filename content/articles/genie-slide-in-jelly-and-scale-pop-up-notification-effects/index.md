@@ -937,10 +937,9 @@ Head over to this [link](https://github.com/prograte/Genie-Slide-in-Jelly-and-sc
 
 Copy its contents into the `modernizr.custom.js` file in the `js` folder. Do this by copy-pasting the code directly or viewing it as a _RAW_ file before copy-pasting it.
 
-> '**modernizr.custom.js**' has been generated and downloaded from this [Modernizr](http://modernizr.com/download/#-cssanimations-shiv-cssclasses-prefixed-testprop-testallprops-domprefixes-load) site.
-> [Modernizr.com](Modernizr.com) generates for one a minified JS file that detects the browser being used and features it supports.
-> This reduces the blacklisting of browsers in the HTML file.
-> It rather allows developers to customize experiences based on the browser's capabilities.
+ '**modernizr.custom.js**' has been generated and downloaded from this [Modernizr](http://modernizr.com/download/#-cssanimations-shiv-cssclasses-prefixed-testprop-testallprops-domprefixes-load) site.
+
+[Modernizr.com](Modernizr.com) generates for one a minified JS file that detects the browser being used and features it supports. This reduces the blacklisting of browsers in the HTML file and allows developers to customize experiences based on the browser's capabilities.
 
 The downloaded file will enable the webpage to display the notification on the webpage.
 ![Add modernizr minified js file](engineering-education/genie-slide-in-jelly-and-scale-pop-up-notification-effects/add-modernizr.custom.js-file.png "Add modernizr minified js file")
