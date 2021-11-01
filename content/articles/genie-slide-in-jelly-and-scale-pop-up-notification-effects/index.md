@@ -511,7 +511,7 @@ Create screen responsiveness for different display sizes:
 ### Add a notification to the window
 In the Javascript folder, named `js`, open the 'notificationFunction.js' file. In the file, you will do the following:
 
-- Create a function that will take in the window as the argument. The function will later invoke it. The function will hold all the other functions in it. This code is shown below:
+Create a function that will take in the window as the argument. The function will later invoke it. The function will hold all the other functions in it. This code is shown below:
 
 ```js
 (function (window, document) {
