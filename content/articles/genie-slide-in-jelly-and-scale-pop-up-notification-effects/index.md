@@ -567,12 +567,12 @@ function NotificationFunction(options) {
 
 Create a `notificationFunction options` function that allows one to easily set the notification type and styles. The  function allows one to set the following:
 
-  - wrapper of the notification
-  - message
-  - layout
-  - effect
-  - time taken to leave the scene once displayed (totalTimeToLeave). The time is in milliseconds(ms).
-  - on-open and on-close callback functions
+- wrapper of the notification
+- message
+- layout
+- effect
+- time taken to leave the scene once displayed (totalTimeToLeave). The time is in milliseconds(ms).
+- on-open and on-close callback functions
 
 These are well displayed below:
 
