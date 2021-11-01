@@ -848,7 +848,7 @@ let classEditor = {
 };
 ```
 
-- Make the `classEditor` function to be a global function in the workspace.
+Make the `classEditor` function to be a global function in the workspace.
 
 ```js
 // transport
