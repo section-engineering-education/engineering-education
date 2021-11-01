@@ -1,19 +1,21 @@
 ---
 layout: engineering-education
-status: unpublish
-published: false
+status: publish
+published: true
 url: /object-oriented-programming-in-python/
 title: Object Oriented Programming in Python
-description: This tutorial would guide the reader about object-oriented programming principles using the python programming language.
+description: This article covers the basics of the object oriented concepts in the Python programming language. We will create a simple class to demonstrate these concepts.
 author: joseph-abiola
-date:
+date: 2021-11-01T00:00:00-13:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
-    - url: /engineering-education/object-oriented-programming-in-python/hero.jpg
-      alt: OOP Python example image
+  - url: /engineering-education/object-oriented-programming-in-python/hero.jpg
+    alt: Object Oriented Programming Python Image Hero
 ---
 
+For the last four years, security researchers have reported a tremendous increase in security breaches. About 20-30,000 websites get hacked every day. There are several ways websites get hacked, XML External Entity Attacks (XXE) being one of them.
+<!--more-->
 Many modern languages like Java, C# are object-oriented or have support for using the object-oriented programming (OOP) paradigms. Python is not exempted.
 
 In this tutorial, you'll learn how to use object-oriented programming concepts with Python. OOP is a technique that can be used for structuring your code. Its philosophy is that it creates reusable objects from a class that shares some similarities. These objects can also have some peculiarities about them or share similarities with other objects. In addition, they can also inherit additional properties from another class. The power of using this paradigm is when you're working on a medium to a large project. This technique's clearer when an example is considered which will be shown below.
@@ -21,15 +23,15 @@ In this tutorial, you'll learn how to use object-oriented programming concepts w
 OOP became popular because of its way of reusing code, therefore, avoiding duplicated business logic.
 
 ### Table of contents
-- [Prerequisites](#prerequisites).
-- [Project Overview](#project-overview).
-- [Class Definition](#class-definition).
-- [Attributes and Methods](#attributes-and-method).
-- [The \__init__() Method](#the-init-method).
-- [Getters and setters](#getters-and-setters).
-- [Inheritance](#inheritance).
-- [Method Overriding](#method-overriding).
-- [Conclusion](#conclusion).
+- [Prerequisites](#prerequisites)
+- [Project Overview](#project-overview)
+- [Class Definition](#class-definition)
+- [Attributes and Methods](#attributes-and-methods)
+- [The \__init__() Method](#the-init-method)
+- [Getters and setters](#getters-and-setters)
+- [Inheritance](#inheritance)
+- [Method Overriding](#method-overriding)
+- [Conclusion](#conclusion)
 
 ### Prerequisites
 Python should be installed on your local machine. I recommend at least from version `3.7` or newer.
@@ -68,7 +70,7 @@ class College(University):
         print("Hello")
 ```
 
-Other concepts covered in this guide are `inheritance`, `getters`, `setters` and `method overiding`. However, let's take a look at what a class definition is.
+Other concepts covered in this guide are inheritance, getters, setters and method overiding. However, let's first take a look at class definition.
 
 ### Class definition
 A class can be referred to as the blueprint for an object. It serves as the underlying structure from which we can build an object.
@@ -158,7 +160,9 @@ United Kingdom
 
 Using the `__init__` method, each of the object we create has its own unique attribute.
 
-However, we have to pass this attribute inside the object while creating it, as seen above. Also, the `__init__` method are referred to as __magic methods__, other magic methods include `__str__`, `__len__` among others.
+However, we have to pass this attribute inside the object while creating it, as seen above.
+
+Methods like `__init__` are referred to as __magic methods__, other magic methods include `__str__`, `__len__` among others.
 
 ### Getters and setters
 The recommended way of accessing and modifying attributes or properties in an object is by using `getters` and `setters`. In this section, we'll be discussing them with examples.
@@ -297,4 +301,4 @@ The concepts covered included `attributes`, `methods`, `inheritance`, `getters` 
 Happy coding!
 
 ---
-Peer Review Contributions by:
+Peer Review Contributions by: [Geoffrey Mungai](/engineering-education/authors/geoffrey-mungai/)
