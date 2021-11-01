@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /how-to-run-contentful-cms-as-headless-with-nextjs/
 title: How to Run Contentful CMS as Headless with Nextjs
-description: In this guide we will learn how we can use Next.js to run WordPress as a headless CMS. Next.js uses generators that render static pages.
+description: In this guide we will learn how we can use Next.js to run a website as a headless CMS. Next.js uses generators that render static pages.
 author: catherine-macharia
 date: 2021-11-01T00:00:00-05:034
 topics: [Languages]
