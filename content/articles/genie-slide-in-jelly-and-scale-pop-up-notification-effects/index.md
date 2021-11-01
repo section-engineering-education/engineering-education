@@ -1080,9 +1080,9 @@ webpage. Click on `SHOW NOTIFICATION` to see the animation. The animation looks 
   ![genie effect gif](engineering-education/genie-slide-in-jelly-and-scale-pop-up-notification-effects/genie-effect-gif.gif "genie effect gif")
 
 ### Normalize the webpages
-Copy and paste the content of the `normalization.css` file
-from [here](https://github.com/prograte/Genie-Slide-in-Jelly-and-scale-Pop-up-Notification-effects/blob/main/css/normalization.css)
-. Do this by copy-pasting the code directly or viewing it as a _RAW_ file before copy-pasting it.
+Copy and paste the content of the `normalization.css` file from [here](https://github.com/prograte/Genie-Slide-in-Jelly-and-scale-Pop-up-Notification-effects/blob/main/css/normalization.css)
+
+Do this by copy-pasting the code directly or viewing it as a _RAW_ file before copy-pasting it.
 
 The code in the file styles the webpage elements to look well. It is additional formatting to make the webpage look
 appealing to other browsers.
