@@ -195,3 +195,6 @@ Now we are able to reuse the header component with a dynamic title property.
 I hope you find this helpful.
 
 Happy Coding!
+
+---
+Peer Review Contributions by: [Monica Masae](/engineering-education/authors/monica-masae/)
