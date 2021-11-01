@@ -271,7 +271,7 @@ body {
 }
 ```
 
-- Style the links, buttons, and container elements:
+Style the links, buttons, and container elements:
 
 ```css
 button, a {
