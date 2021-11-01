@@ -7,7 +7,6 @@ This knowledge helps one to modify Javascript UI component properties as the var
 
 ### Table of Contents
 
-- [Table of Contents](#table-of-contents)
 - [Key takeaways](#key-takeaways)
 - [Pre-requisites](#pre-requisites)
 - [Create a new React app](#create-a-new-react-app)
