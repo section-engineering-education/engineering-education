@@ -887,8 +887,11 @@ let notificationButton = document.getElementById('notification-trigger');
 notificationButton.disabled = false;
 ```
 
-- Add a function that disables the button which is clicked. It then uses the `notificationFunction` function created before to quickly set the options of the notification. It makes sure that the button is not disabled since disabling the button prevents double-clicking till when the notification disappears. As for the `growl` layout, it supports the
-  following notification effects:
+Add a function that disables the button which is clicked.
+
+It then uses the `notificationFunction` function created before to quickly set the options of the notification. It makes sure that the button is not disabled since disabling the button prevents double-clicking untill when the notification disappears.
+
+As for the `growl` layout, it supports the following notification effects:
 
   - scale (will be used in the `growl-effects-scale.html` file)
   - jelly
