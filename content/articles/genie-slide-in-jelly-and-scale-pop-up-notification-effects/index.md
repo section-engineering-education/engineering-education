@@ -369,7 +369,7 @@ Format the buttons which enable you to access the other web pages:
 }
 ```
 
-- Format the content in the main content and the columns:
+Format the content in the main content and the columns:
 
 ```css
 /* Main content */
