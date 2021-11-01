@@ -1,13 +1,13 @@
 ﻿### Introduction
 JavaFX is suitable for desktop application development and other applications. It is a set of graphics and media packages that make it easier to design, create, debug, test, and deploy applications that can run steadily on almost any platform, from Windows to Android to the Mac operating system. Through interaction with the desktop application user interface, data can be saved in a database (MySQL) for processing or any other manipulation. i.e., future retrieval.
 
-In this article, we will learn how JavaFX scene builder can be used to design a desktop application that can connect to the MySQL database. I will demonstrate how to design and create a simple graphical user interface using the JavaFX scene builder. The user will input database connection strings, save the connection strings in an XML file, retrieve them from the file, and connect to the database. In this case, it will not be necessary to change the connection string from the code section but the UI. It makes the deployment of applications that use the MySQL database tool as a storage resource easier.
+In this article, we will study how JavaFX scene builder can be used to design and develop an application that can connect to the MySQL database. I will describe how to design and create a simple GUI using the JavaFX scene builder. The user will input database connection strings, save the connection strings in an XML file, retrieve them from the file, and connect to the database. In this case, it will not be necessary to change the connection string from the code section but the UI. It makes the deployment of applications that use the MySQL database tool as a storage resource easier.
 
 ### Table of Contents
 1. [Introduction](#introduction)
 2. [Prerequisites](#prerequisites)
 3. [JavaFX Overview](#javafx-overview)
-4. [JavaFX Scene builder overview](#javafx-scene-builder-overview)
+4. [Introduction to JavaFX Scene builder](#javafx-scene-builder-overview)
 5. [FXML](#fxml)
 6. [Overview of the MySQL Java Connection](#overview-of-the-mysql-java-connection)
 7. [User Interface Design using JavaFX scene builder](#user-interface-design-using-javafx-scene-builder)
@@ -29,17 +29,17 @@ In this article, we will learn how JavaFX scene builder can be used to design a 
 ### JavaFX Overview
 JavaFX is defined as a set of graphics and media packages that enable designers, developers, and testers to design, create, debug, and deploy client applications on diverse operating system platforms.
 
-Because the JavaFX library is purely written as a Java API, JavaFX applications can reference any API from the Java library. That is, applications done in JavaFX can use any of the Java API libraries to access native system capabilities.
+Because the JavaFX library is purely written as a Java API, JavaFX applications can reference any application programming interface from the Java library. That is, any application done in JavaFX can use any of the Java API libraries to access and communicate with native system capabilities.
 
-The JavaFX application's look and feel can be customized using a cascading style sheet. Designers can easily change the appearance of the application through the use of CSS. This makes it possible to separate the user interface from the back-end logic of the application. Designers can do UIs in the FXML scripting language and use Java code for the business application logic.
+The JavaFX application's appearance and behavior can be customized using a cascading style sheet. Designers can easily change the look and feel of the application through the use of cascading style sheet. This makes it possible to separate the UI design from the back-end logic of the application. Designers can do UIs in the FXML language and use Java code  for the main actions and events in the business application logic.
 
 The JavaFX APIs are readily available as a fully integrated JRE and JDK. It does not require separate installation but activation in the IDE to get started developing JavaFX applications.
 
-### JavaFX Scene builder overview
-It is a tool that allows designers to design JavaFX applications' user interfaces without hard coding the application's user interface. It allows drag and drop of the user interface components to the working area to modify their properties and apply style sheets to the components. The UI design with the scene builder will automatically create an FXML code file for the design. The JavaFX scene builder is handy since it helps developers and designers separate the UI design from the application's business logic. The JavaFX scene builder can easily be integrated with the Java IDE because it is a stand-alone development tool. You can read more about the JavaFX scene builder [here.](https://docs.oracle.com/javase/8/scene-builder-2/get-started-tutorial/overview.htm#JSBGS164)
+### Introduction JavaFX Scene builder
+Scene builder is a designers’ application tool that allows designers to plan, prototype, and design JavaFX applications' UIs without hard coding the application's user interface. It allows drag and drop of the user interface components to the working area to modify their properties and apply style sheets to the components. When the designer drags and drops the components to the working area, the scene builder will automatically create a separate FXML code for the design. This helps the designers and developers separate the designing of the user interface from the system business logic of the application’s actions and events. The JavaFX scene builder can easily be integrated with the Java IDE because it is a stand-alone development tool. You can read more about the JavaFX scene builder [here.](https://docs.oracle.com/javase/8/scene-builder-2/get-started-tutorial/overview.htm#JSBGS164)
 
 ### FXML
-It is an XML-based language that is designed to help build UI for mainly JavaFX-based applications. It can be used to build an entire JavaFX scene or just part of it. FXML is very important for designers and developers since it helps to separate the application's UI logic from the application's business logic. The JavaFX scene is a hierarchical structure of Java objects and elements. FXML helps to build this graphical representation of the scene. The resultant file is an FXML file, an XML file format representing the JavaFX UI when using the scene builder.
+FXML as the name suggests is an XML-based scripting language designed to help build applications’ user interfaces for JavaFX-based applications. It can be used to build an entire JavaFX scene or just part of it. FXML file is created automatically in scene builder when the components are dragged and dropped in the working area, this makes FXML essential for designers’ since it eliminates the hard coding of the design, it also helps separate the UI design from the main action and event coding of the application, this makes the entire process easier. FXML helps to build a JavaFX graphical representation of the UI which is called scene. The resultant ﬁle is an FXML ﬁle, an XML ﬁle format representing the JavaFX UI when using the scene builder.
 
 ### Overview of the MySQL Java Connection 
 MySQL provides a connection to Java applications through the MySQL connector, i.e., a driver implementing the Java database connectivity API. Several framework methods can be applied to connect to the MySQL database. These include Hibernate, spring's JDBC templates, and MyBatis SQL Maps.
@@ -48,7 +48,7 @@ The MySQL JDBC interface allows connection to the MySQL Database and performs SQ
 
 This article will design and develop a UI that will help connect to the MySQL database. To connect to the database, we need to provide a connection string provided in the code. This makes it challenging to deploy the application since it will need to match the database credentials with the ones in the code. The interface will allow entry of these credentials and save them in a file format that the application can otherwise access and use for a connection to avoid the above.
 
-### User Interface Design using JavaFX scene builder
+### UI Design using JavaFX Scene Builder
 We will create a new application using NetBeans IDE.
 
 Open NetBeans IDE.  From the file menu, choose a new project and select JavaFX. On the projects pane, select JavaFX FXML Application as shown in figure below;
@@ -85,23 +85,23 @@ Right-click on our main application in the NetBeans IDE, choose other, and on th
 The following is our CSS code
 
 ```css
-.background {
+ .background {
     -fx-background-color: #ffffff;
 }
 
 .label{
-    -fx-margin-bottom: 0;
+    -fx-margin-bottom: 2pt;
     -fx-font-size: inherit;
-    -fx-line-height: 1.5;
-    -fx-font-size: 11pt;
-    -fx-font-family: "Segoe UI Semibold";
+    -fx-line-height: 1.5pt;
+    -fx-font-size: 12pt;
+    -fx-font-family: "Segoe UI Black";
     -fx-text-fill: black;
     -fx-opacity: 1;
 }
 .label-bright {
-    -fx-font-size: 11pt;
-    -fx-font-family: "Segoe UI Semibold";
-    -fx-text-fill: blueviolet;
+    -fx-font-size: 12pt;
+    -fx-font-family: "Segoe UI Black";
+    -fx-text-fill: #9999ff;
     -fx-opacity: 1;
 }
  .textfield {
@@ -117,22 +117,22 @@ The following is our CSS code
 }
  .button {
      
-    -fx-outline: 1pt;
-    -fx-outline: 5pt;
-    -fx-margin: 0;
+    -fx-outline: 1.5pt;
+    -fx-outline: 6pt;
+    -fx-margin: 1pt;
     -fx-font-family: inherit;
     -fx-font-size: inherit;
     -fx-line-height: inherit;
 }
 
 .button:hover {
-    /*-fx-background-color: #3a3a3a;*/
+
     -fx-background-color: #9fcdff;
 }
 
 .button:pressed, .button:default:hover:pressed {
   -fx-background-color: white;
-  -fx-text-fill: #1d1d1d;
+  -fx-text-fill: #9fcdff;
 }
 
 .button:focused {
@@ -141,18 +141,17 @@ The following is our CSS code
 }
 
 .button:disabled, .button:default:disabled {
-    -fx-opacity: 0.4;
-    -fx-background-color: #1d1d1d;
-    -fx-text-fill: white;
+    -fx-opacity: 0.5;
+    -fx-background-color: #9fcdff;
+    -fx-text-fill: #ffffff;
 }
 
 .button:default {
     -fx-background-color: -fx-focus-color;
     -fx-text-fill: #ffffff;
 }
-
 .button:default:hover {
-    -fx-background-color: derive(-fx-focus-color,30%);
+    -fx-background-color: derive(-fx-focus-color,32%);
 }
 ```
 ### Binding CSS file
@@ -184,7 +183,7 @@ The main fields for our design include the following;
 
 ### Event handler code
 #### Creating connection string code XML File
-
+The code creates XML file which stores the MySQL connection credentials
 ```java
  public void createDbConnectionXmlFile(Document doc, String user, String database, String password, String serverName) throws Exception {
         Element root = doc.createElement("dbConnectionFile");
@@ -208,16 +207,17 @@ The main fields for our design include the following;
         root.appendChild(dbServer);
         Text text4 = doc.createTextNode(serverName);
         dbServer.appendChild(text4);
-
-        TransformerFactory factory = TransformerFactory.newInstance();
-        Transformer transformer = factory.newTransformer();
-        transformer.setOutputProperty(OutputKeys.INDENT, "yes");
-
-        StringWriter sw = new StringWriter();
-        StreamResult result = new StreamResult(sw);
-        DOMSource source = new DOMSource(doc);
-        transformer.transform(source, result);
-        String xmlString = sw.toString();
+         //Creating transformer object to perform our document file transformation
+        TransformerFactory Tfactory = TransformerFactory.newInstance();
+        Transformer Tformer = Tfactory.newTransformer();
+        Tformer.setOutputProperty(OutputKeys.INDENT, "yes");
+        //Contructing string outputs to the file
+        StringWriter StringW = new StringWriter();
+        StreamResult result = new StreamResult(StringW);
+        
+        DOMSource Dsource = new DOMSource(doc);
+        Tformer.transform(Dsource, result);
+        String xmlString = StringW.toString();
 
         try (
                 BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file, true)))) {
@@ -234,11 +234,11 @@ The main fields for our design include the following;
 public void readDbConnectionFile() {
         try {
 
-            dbFactory = DocumentBuilderFactory.newInstance();
-            dBuilder = dbFactory.newDocumentBuilder();
-            doc = dBuilder.parse(file);
-            doc.getDocumentElement().normalize();
-            NodeList nList = doc.getElementsByTagName("dbConnectionFile");
+            dbuilder_Factory = DocumentBuilderFactory.newInstance();
+            document_Builder = dbuilder_Factory.newDocumentBuilder();
+            document = document_Builder.parse(file);
+            document.getDocumentElement().normalize();
+            NodeList nList = document.getElementsByTagName("dbConnectionFile");
             
             for (int temp = 0; temp < nList.getLength(); temp++) {
                 Node nNode = nList.item(temp);
@@ -297,4 +297,4 @@ On click, the application reads the XML files, gets the connection strings and t
 
 ### Conclusion
 JavaFX is a set of graphics and media packages that enable designers, developers, and testers to design, create, debug, and deploy client applications on diverse operating system platforms. Through interaction with the desktop application user interface, data can be saved in a database (MySQL) for processing or any other manipulation. In this article, we have learned how JavaFX scene builder can design a desktop application that can connect to the database.
-The code snippets used in this guide can be accessed at my [GitHub Repo](https://github.com/JosephAyoma/JavaFX-scenebuilder-for-mysql-connection).
+The code parts used in this article can be found at my [GitHub Repo](https://github.com/JosephAyoma/JavaFX-scenebuilder-for-mysql-connection).
