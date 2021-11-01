@@ -158,7 +158,7 @@ This action is illustrated below in the following code:
 List employeesWithValidProfilePicture = employee
   .stream()
   .filter(ThrowingPredicate.unchecked(Employee::hasValidProfilePicture))
-  .collect(Collector.toList());
+  .collect(Collectors.toList());
 ```
 
 ### Conclusion
