@@ -193,7 +193,7 @@ Repeat this for the other two files to get the Code below for:
 ### Add styling the webpage
 In the `demonstration.css` file,
 
-- Create color templates to easily choose from for the page:
+Create color templates to easily choose from for the page:
 
 ```css
 /* You can choose colors quickly from the color templates below*/
