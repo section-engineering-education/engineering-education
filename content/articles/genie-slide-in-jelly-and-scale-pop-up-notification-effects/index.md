@@ -966,7 +966,7 @@ Style the notification to look like a pop-up notification. In the `default_notif
 }
 ```
 
-- Style the notification box when the notification is shown:
+Style the notification box when the notification is shown:
 
 ```css
 /* Notification 'on show' styling */
