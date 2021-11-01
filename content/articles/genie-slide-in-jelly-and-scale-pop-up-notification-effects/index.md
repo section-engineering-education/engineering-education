@@ -893,10 +893,11 @@ It then uses the `notificationFunction` function created before to quickly set t
 
 As for the `growl` layout, it supports the following notification effects:
 
-  - scale (will be used in the `growl-effects-scale.html` file)
-  - jelly
-  - slide in
-  - genie
+- scale (will be used in the `growl-effects-scale.html` file)
+- jelly
+- slide in
+- genie
+
 
 ```js
 notificationButton.addEventListener('click', function () {
