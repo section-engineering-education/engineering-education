@@ -813,7 +813,7 @@ else {
 }
 ```
 
-- Create a `togglesClass` function that uses the `hasThisClass` procedure to check if the file has the class in the element. If it has, it removes it and adds another. This acts as a toggle function.
+Create a `togglesClass` function that uses the `hasThisClass` procedure to check if the file has the class in the element. If it has, it removes it and adds another. This acts as a toggle function.
 
 ```javascript
 function togglesClass(element, Class) {
