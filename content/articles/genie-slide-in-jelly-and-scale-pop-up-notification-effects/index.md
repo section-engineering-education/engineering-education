@@ -150,7 +150,7 @@ and `growl-effects-slide-in.html` files.
 Modify the class of the current page in the above files so that it will show that it is on that page. This is shown
 below:
 
-- In the `growl-effects-genie.html`:
+In the `growl-effects-genie.html`:
 
 ```html
 
