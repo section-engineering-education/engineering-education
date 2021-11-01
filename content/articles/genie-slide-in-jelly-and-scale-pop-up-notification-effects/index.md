@@ -820,7 +820,7 @@ function togglesClass(element, Class) {
 }
 ```
 
-- Shorten the names of the functions or procedures so that they can be easily used.
+Shorten the names of the functions or procedures so that they can be easily used.
 
 ```js
 let classEditor = {
