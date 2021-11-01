@@ -16,7 +16,7 @@ images:
 ---
 
 Websites need notifications to display urgent or additional information. Pop-ups, used to pass notifications, are
-efficient if used effectively and at the right time. Notification effects depending on the main website theme bring a
+efficient if used effectively and at the right time. Notification effects, depending on the main website theme, bring a
 website's unique taste and signature look.
 <!--more-->
 In this article, you will learn how to apply some of these notification effects including the Genie, Slide-in, Jelly,
