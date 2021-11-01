@@ -1,12 +1,29 @@
-Snorkel is a Python library that is used for data labeling. It programmatically manages and builds training datasets without manual labeling. In machine learning, labels are the target or the output variable in a dataset. This is what the model is attempting to predict.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /snorkel-python-for-labeling-datasets-programmatically/
+title: Snorkel Python for Labelling Datasets Programmatically
+description: 
+author: 
+date: 2021-10-19T00:00:00-18:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
-Instead of humans labeling large datasets manually, Snorkel assigns labels to the large training data automatically. This is done using a set of user rules, labeling functions, and other in-built techniques.
+  -url: /engineering-education/snorkel-python-for-labeling-datasets-programmatically/hero.jpg
+   alt: Snorkel python for labelling datasets example image
+---
 
-Snorkel requires users to come up with functions that contain explicit rules. These rules will be used to label the unlabeled data.
+Snorkel is a Python library that is used for data labelling. It programmatically manages and builds training datasets without manual labelling. In machine learning, labels are the target or the output variable in a dataset. This is what the model is attempting to predict.
 
-In this tutorial, we will have an unlabeled dataset that contains a list of sentences. The list of sentences is made up of questions while others are general statements.
+Instead of humans labelling large datasets manually, Snorkel assigns labels to the extensive training data automatically. This is done using a set of user rules, labelling functions, and other in-built techniques.
 
-This tutorial aims to be able to label a sentence as either a question or not a question. If a sentence is a question it is labeled `1` and a non-question sentence(general statement) is labeled `-1`. All this will be done programmatically using Snorkel.
+Snorkel requires users to come up with functions that contain explicit rules. We will use these rules to label the unlabeled data.
+
+In this tutorial, we will have an unlabeled dataset that contains a list of sentences. The list of sentences is made up of questions, while others are general statements.
+
+This tutorial aims to be able to label a sentence as either a question or not a question. If a sentence is a question, it is labelled `1`, and a non-question sentence(general statement) is labelled `-1`. All this will be done programmatically using Snorkel.
 
 ### Table of contents
 
@@ -32,7 +49,7 @@ This tutorial aims to be able to label a sentence as either a question or not a 
 To follow along easily, the reader should:
 
 - Be familiar with [Python programming.](/engineering-education/python-projects-for-beginners/)
-- Know about [machine learning modeling.](engineering-education/house-price-prediction/)
+- Know about [machine learning modelling.](engineering-education/house-price-prediction/)
 - Know how to use [Google colab notebooks.](https://colab.research.google.com)
 - Have some knowledge of [Pandas.](https://pandas.pydata.org/)
 - Be familiar with [Scikit-learn](https://scikit-learn.org/stable/)
@@ -86,7 +103,7 @@ The output is shown below.
 
 ![Loaded dataset](/engineering-education/snorkel-python-for-labeling-datasets-programmatically/loaded-dataset.jpg)
 
-Let's shuffle our dataset. Shuffling our dataset ensures that our dataset is properly reorganized and formatted. This reduce bias.
+Let's shuffle our dataset. Shuffling our dataset ensures that our dataset is properly reorganized and formatted. This reduces bias.
 
 To shuffle our dataset, we use a Python package called `random`.
 
@@ -108,15 +125,15 @@ To see the output after the dataset is shuffled, run this command.
 data
 ```
 
-The output below shows a dataset that is properly organized and formatted.
+The output below shows a dataset that is adequately organized and formatted.
 
 ![Loaded dataset](/engineering-education/snorkel-python-for-labeling-datasets-programmatically/shuffled-dataset.jpg)
 
 ### Convert to a data frame
 
-A data frame is the representation of data in rows and columns. When data is represented in this form, it makes it easy for the model to understand and use.
+A data frame is the representation of data in rows and columns. When data is represented in this form, it is easy for the model to understand and use.
 
-Our dataset will have one column. It will have a `sentences` column which contains all the unlabeled sentences.
+Our dataset will have one column. It will have a `sentences` column, which contains all the unlabeled sentences.
 
 Let's create this column.
 
@@ -138,7 +155,7 @@ Let's now split our dataset.
 
 ### Dataset splitting
 
-We split our dataset into two sets, train set, and test set. The train set is used during the training phase so that model can learn from it.
+We split our dataset into two sets, train set and test set. The train set is used during the training phase so that model can learn from it.
 
 The test set is used to evaluate the general performance of the model.
 It also checks if the model can make accurate predictions.
@@ -155,7 +172,7 @@ from sklearn.model_selection import train_test_split
 df_train,df_test = train_test_split(df,train_size=0.5)
 ```
 
-In the code above we have specified the `train_size=0.5`. This implies that `50%` of the dataset will be used for training and the remaining `50%` will be used for testing.
+In the code above, we have specified the `train_size=0.5`. This implies that `50%` of the dataset will be used for training, and the remaining `50%` will be used for testing.
 
 Let's check the total number of sentences in our test set.
 
@@ -173,21 +190,21 @@ This shows we have a total of `44` sentences in our test set and `1` column.
 
 ### Define our labeling functions
 
-Labeling functions define rules that are used by the labeling model. These rules are used to predict the label of unlabeled data.
+Labelling functions define the rules that the labelling model uses. These rules are used to predict the label of unlabeled data.
 
-Let's import the method that will allow us to come up with labeling functions.
+Let's import the method that will allow us to come up with labelling functions.
 
 ```python
 from snorkel.labeling import labeling_function
 ```
 
-So that we can up with an accurate labeling model, we need to come up with at least three labeling functions.
+So that we can come up with an accurate labelling model, we need to come up with at least three labelling functions.
 
 The imported `labeling_function` method allows us to create three labeling functions.
 
-To come up with the best labeling functions, we need to know how we can label the dataset.
+To come up with the best labeling functions, we need to know how to label the dataset.
 
-In this case, we want to label our dataset with two labels as follows. A sentence can be labeled as either a question or a general statement. If the sentence is a question it is labeled `1` and a general statement is labeled `-1`.
+In this case, we want to label our dataset with two labels as follows. A sentence can be labelled as either a question or a general statement. If the sentence is a question, it is labelled `1`, and a general statement is labelled `-1`.
 
 The following are rules for a statement to qualify to be a question.
 
@@ -200,7 +217,7 @@ We then need to assign constants for our labels.
 
 #### Constants for our labels
 
-This will be used to label the sentences. `QUESTION` is used to label sentences that qualify as questions.
+We will use this to label the sentences. For example, `QUESTION` is used to label sentences that qualify as questions.
 `ABSTAIN` will be used to label the other sentences.
 
 ```python
@@ -208,14 +225,14 @@ QUESTION = 1
 ABSTAIN = -1
 ```
 
-Using the rules above, we can now come up with the labeling functions.
+Using the rules above, we can now come up with the labelling functions.
 
 ### Keyword lookup function
 
 This function is used to check for phrases at the beginning of sentences.
 These phrases are as follows: `why`, `what`, `when`, `who`, `where`, and `how`.
 
-If this rule is met the sentence is labeled as `QUESTION = 1`, if it's not met the sentence is labeled `ABSTAIN = -1`.
+If this rule is met, the sentence is labelled as `QUESTION = 1`. If it's not met, the sentence is labelled `ABSTAIN = -1`.
 
 ```python
 @labeling_function()
@@ -226,7 +243,7 @@ def lf_keyword_lookup(x):
 
 We have defined our function as `def lf_keyword_lookup(x)` with the help of the `@labeling_function()` method.
 
-We then pass our rule, finally, we loop through our `sentences` in the dataset to see if the condition is met.
+We then pass our rule. Finally, we loop through our `sentences` in the dataset to see if the condition is met.
 
 Let's go to the second labeling function.
 
@@ -240,7 +257,7 @@ To find `?` in a sentence, we use Python [regular expression](https://docs.pytho
 
 It searches through the sentence patterns until it finds a `?`.
 
-For further reading on Python regular expression read this [documentation](https://docs.python.org/3/library/re.html).
+For further reading on Python regular expression, read this [documentation](https://docs.python.org/3/library/re.html).
 
 ```python
 import re
@@ -249,15 +266,15 @@ def lf_regex_contains_what(x):r
  return QUESTION if re.search(r"what.*?",x.sentences,flags=re.I) else ABSTAIN
 ```
 
-First, we have import `re`, which represents the regular expression. We use `re.search()` method, to search through the sentences to find instances of the phrase `what` and the `?`.
+First, we have import `re`, which represents the regular expression. Then, we use the `re.search()` method to search through the sentences to find instances of the phrase `what` and the `?`.
 
 If the condtion is met the sentence is labeled `QUESTION = 1` and if not met it's labeled `ABSTAIN = -1`.
 
-Let's look at the last labeling. Which will also use a pattern lookup function.
+Let's look at the last labelling, which will also use a pattern lookup function.
 
 ### A second pattern lookup function
 
-This function will also use Python regular expression. It only searches for question marks, `?` in the sentences.
+This function will also use Python regular expression. However, it only searches for question marks, `?` in the sentences.
 
 ```python
 import re
@@ -266,29 +283,29 @@ def lf_regex_contains_question_mark(x):
  return QUESTION if re.search(r".*?",x.sentences,flags=re.I) else ABSTAIN
 ```
 
-We now need to apply all these labeling functions to our train set data set.
+We now need to apply all these labelling functions to our train set data set.
 
 ### Combining the labeling functions
 
-First, we need to combine all these labeling functions and save them into a single variable, `lfs`. When they are combined they build an optimal labeling model.
+First, we need to combine all these labelling functions and save them into a single variable, `lfs`. When they are combined, they build an optimal labelling model.
 
 ```python
 lfs = [lf_keyword_lookup,lf_regex_contains_what,lf_regex_contains_question_mark]
 ```
 
-We then import the `PandasLFApplier` method. This is a `Pandas` method that is used to apply more than one labeling function to the dataset.
+We then import the `PandasLFApplier` method. This is a `Pandas` method used to apply more than one labelling function to the dataset.
 
 ```python
 from snorkel.labeling import PandasLFApplier
 ```
 
-Let's pass our combined labeling function, `lfs` into the `PandasLFApplier` method.
+Let's pass our combined labelling function, `lfs` into the `PandasLFApplier` method.
 
 ```python
 applier = PandasLFApplier(lfs=lfs)
 ```
 
-We then apply all the combined labeling functions to the training dataset. The training dataset is saved in a variable called `df_train`.
+We then apply all the combined labelling functions to the training dataset. Finally, the training dataset is saved in a variable called `df_train`.
 
 The labeling functions learn patterns in the dataset. This process is known as pattern recognition.
 
@@ -296,11 +313,11 @@ The labeling functions learn patterns in the dataset. This process is known as p
 L_train = applier.apply(df=df_train)
 ```
 
-Now that we have applied all the three labeling functions in our `df_train`, it's time now to build our dataset.
+Now that we have applied all the three labelling functions in our `df_train`, it's time to build our dataset.
 
 ### Building the labeling model
 
-We need to import the method that will be used to build our model.
+We need to import the method that we will use to build our model.
 
 ```python
 from snorkel.labeling.model import LabelModel
@@ -325,8 +342,8 @@ We also use the following parameters.
 
 - `cardinality=2`- This shows the possible labels outputs. In our case, we have `1` and `-1`.
 - `verbose=True` - This allows us to use regular expressions when searching for `?`.
-- `log_freq=100` - It checks the frequency in which certain phrases are distributed in the dataset.
-- `seed=123` - Random numbers that will be used by our model during model training.
+- `log_freq=100` - It checks the frequency in which specific phrases are distributed in the dataset.
+- `seed=123` - Random numbers that our model will use during model training.
 
 After 500 epochs, we would have successfully trained our model.
 
@@ -348,19 +365,19 @@ Let's see the prediction results.
 
 ![Prediction results](/engineering-education/snorkel-python-for-labeling-datasets-programmatically/prediction-results.jpg)
 
-From the image above, we can see that the sentence `What's your favorite ice cream topping?` was labeled as `1`. This represents `QUESTION`.
+The image above shows that the sentence `What's your favorite ice cream topping?` was labelled as `1`. Therefore, this represents `QUESTION`.
 
-Another sentence is, `There is no Ctrl-Z in life.` This was labeled `-1`, which is a general statement.
+Another sentence is, `There is no Ctrl-Z in life.` This was labelled `-1`, which is a general statement.
 
-Using the two examples above we can see that our model was able to make the right predictions. This shows that our model can successfully assign labels to the unlabeled dataset.
+Using the two examples above, we can see that our model could make the correct predictions. Furthermore, this shows that our model can successfully assign labels to the unlabeled dataset.
 
 ### Conclusion
 
-In this tutorial, we have learned how to label a dataset programmatically using Snorkel. We started with data pre-processing. This involves cleaning the dataset and adding columns to our dataset.
+In this tutorial, we have learned how to label a dataset programmatically using Snorkel. First, we started with data pre-processing. This involves cleaning the dataset and adding columns to our dataset.
 
-From there we split our dataset into two sets so that one set can be used for training and the other one for testing. We then created a labeling function that contains important rules to be used by the model.
+From there, we split our dataset into two sets so that one set can be used for training and the other one for testing. We then created a labelling function that contains essential rules to be used by the model.
 
-After successfully applying all the labeling functions to our dataset, we started to build our model. In the end, we had a model that was able to classify various sentences into questions or general statements.
+After successfully applying all the labelling functions to our dataset, we started to build our model. In the end, we had a model that could classify various sentences into questions or general statements.
 
 Using this tutorial, a reader should be able to label a dataset programmatically using Snorkel.
 
@@ -373,3 +390,6 @@ To get the notebook for this tutorial, click [here](https://colab.research.googl
 - [Scikit-learn documentation](https://scikit-learn.org/stable/)
 - [Intoduction to labeling functions](https://www.snorkel.org/use-cases/01-spam-tutorial)
 - [Python regular expressions](https://docs.python.org/3/library/re.html)
+
+---
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
