@@ -225,7 +225,7 @@ Create color templates to easily choose from for the page:
 }
 ```
 
-- Use `border-box` for all elements before and after. Set clear_fix class styling both before and after.
+Use `border-box` for all elements before and after. Set clear_fix class styling both before and after.
 
 ```css
 /*All*/
