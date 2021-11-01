@@ -997,7 +997,7 @@ Format the links and paragraphs in the notification box. This styling is shown b
 }
 ```
 
-- Add auto pointer-events when the notification is visible:
+Add auto pointer-events when the notification is visible:
 
 ```css
 /* Visible notification styling */
