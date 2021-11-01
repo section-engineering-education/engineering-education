@@ -676,7 +676,11 @@ NotificationFunction.prototype._initEvents = function () {
 };
 ```
 
-- Add a function that will display the notification. It will utilize the functions in the `classEditor.js` file to search for the class names and remove them from the element. The function will add another class to it. It then executes the on-open callback function. Check this out below:
+Add a function that will display the notification. It will utilize the functions in the `classEditor.js` file to search for the class names and remove them from the element. 
+
+The function will add another class to it. It then executes the on-open callback function. 
+
+Check this out below:
 
 ```js
 /**
