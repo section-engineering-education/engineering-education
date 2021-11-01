@@ -249,7 +249,7 @@ Use `border-box` for all elements before and after. Set clear_fix class styling 
 }
 ```
 
-- Format the `html` and `body` elements:
+Format the `html` and `body` elements:
 
 ```css
 html,
