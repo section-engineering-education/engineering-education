@@ -1068,9 +1068,12 @@ the `growl-notification-style.css` file.
 ### Add the growl effect to the notification
 In the `growl-notification-style.css` file, add growl effects. Find the code and some inline commentary of the growl effects CSS code [here](https://github.com/prograte/Genie-Slide-in-Jelly-and-scale-Pop-up-Notification-effects/blob/main/css/growl-notification-style.css).
 
-- Added growl styling that will be shared with all the types of growl effects
-- Added individual effects for each of the growl effect sets. This starts with the scale effect. The _scale_ effect copies its name. It expands from a small size to a larger size. It produces a notification with the animation shown in
-  the GIF below:
+
+The code: 
+
+Added growl styling that will be shared with all the types of growl effects
+
+Added individual effects for each of the growl effect sets. This starts with the scale effect. The _scale_ effect copies its name. It expands from a small size to a larger size. It produces a notification with the animation shown in the GIF below:
 
 ![Scale effect gif](engineering-education/genie-slide-in-jelly-and-scale-pop-up-notification-effects/scale-effect-gif.gif "Scale effect gif")
 
