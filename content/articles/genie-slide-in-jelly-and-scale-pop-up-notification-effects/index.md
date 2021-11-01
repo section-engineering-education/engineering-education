@@ -659,7 +659,7 @@ NotificationFunction.prototype._init = function () {
 };
 ```
 
-- Create a function that dismisses the notification when one clicks the close button.
+Create a function that dismisses the notification when one clicks the close button.
 
 ```js
 /**
