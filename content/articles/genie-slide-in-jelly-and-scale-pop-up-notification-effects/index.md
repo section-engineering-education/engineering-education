@@ -479,7 +479,7 @@ Format the progress bar. The bar acts as a trigger example for an event that lea
 }
 ```
 
-- Create screen responsiveness for different display sizes:
+Create screen responsiveness for different display sizes:
 
 ```css
 /* Allow the screen to be responsive */
