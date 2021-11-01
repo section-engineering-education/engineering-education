@@ -612,7 +612,7 @@ NotificationFunction.prototype.options = {
 
 > Remember, the wrapper of the notification can be changed. This can be handy if the notification should only be in a certain element or part of the webpage.
 
-- Add a new function below the above function. This function is for initializing and caching variables created.
+Add a new function below the above function. This function is for initializing and caching variables created.
 
 The function will do the following:
 
