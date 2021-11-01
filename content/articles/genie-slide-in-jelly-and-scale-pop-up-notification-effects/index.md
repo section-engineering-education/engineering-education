@@ -780,7 +780,7 @@ Open the `classEditor.js` file and add a function to take in the window as an ar
 })(window, document);
 ```
 
-- Create a `RegEX` function that searches for the class name that is in between other words in the file.
+Create a `RegEX` function that searches for the class name that is in between other words in the file.
 
 ```js
 // class helper functions for the application
