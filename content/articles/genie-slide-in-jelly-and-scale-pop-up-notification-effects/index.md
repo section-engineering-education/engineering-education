@@ -948,10 +948,7 @@ The downloaded file will enable the webpage to display the notification on the w
 One notices that it hardly looks like a pop-up notification. The reason for this is that it has not been formatted yet.
 
 ### Format the notification
-
 Style the notification to look like a pop-up notification. In the `default_notification.css` file do the following:
-
-- Style the notification box in the webpage:
 
 ```css
 /* Common, default styles for the notification box */
