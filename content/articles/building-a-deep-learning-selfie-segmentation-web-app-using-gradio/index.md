@@ -21,7 +21,7 @@ Using a pre-built machine learning model, the selfie segmentation model allows u
 ### Outline
 - [Prerequisites](#prerequisites)
 - [Introduction](#introduction)
-- [Installing mediapipe, gradio, opencv, and matplotlib](#installing-mediapipe-gradio-opencv-and-matplotlib)
+- [Installing Mediapipe, Gradio, OpenCV, and Matplotlib](#installing-mediapipe-gradio-opencv-and-matplotlib)
 - [Applying selfie segmentation using OpenCV](#applying-selfie-segmentation-using-opencv)
 - [Integrating the selfie model into the Gradio app](#integrating-the-selfie-model-into-the-gradio-app)
 - [Wrapping up](#wrapping-up)
