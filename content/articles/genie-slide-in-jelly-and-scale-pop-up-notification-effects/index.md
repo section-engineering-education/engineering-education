@@ -321,7 +321,7 @@ Format the header and the header span:
 }
 ```
 
-- Format the buttons which enable you to access the other web pages:
+Format the buttons which enable you to access the other web pages:
 
 ```css
 /* To Navigation Style */
