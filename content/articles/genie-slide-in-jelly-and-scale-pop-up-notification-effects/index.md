@@ -695,9 +695,11 @@ NotificationFunction.prototype.show = function () {
 };
 ```
 
-- Add a function to dismiss the notification once the timeout runs out or the notification close button is clicked on.
-  The timeout will be cleared. The `ns-show` class name will also be removed. The function then executes on-close
-  callback functions if specified. The time to execute the callback function procedures is set to 25 ms.
+Add a function to dismiss the notification once the timeout runs out or the notification close button is clicked on.
+
+The timeout will be cleared. The `ns-show` class name will also be removed. The function then executes on-close callback functions if specified.
+
+The time to execute the callback function procedures is set to 25 ms.
 
 The function removes the notification element once the notification ends. If it doesn't find the notification in
 the `target` inside the DOM element, then returns false.
