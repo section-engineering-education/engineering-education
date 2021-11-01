@@ -1074,8 +1074,9 @@ Added the slide-in animation to the project. Open the `growl-effects-slide-in.ht
 
 ![Slide-in effect gif](engineering-education/genie-slide-in-jelly-and-scale-pop-up-notification-effects/slide-in-effect-gif.gif "Slide-in effect gif")
 
-- Finally, in the file, add the Fly Up effect. This effect can be seen on the `growl-effects-genie.html` file accessed by clicking on the  `Genie` button. The code for this is shown below:
-  ![genie effect gif](engineering-education/genie-slide-in-jelly-and-scale-pop-up-notification-effects/genie-effect-gif.gif "genie effect gif")
+Finally, in the file, add the Fly Up effect. This effect can be seen on the `growl-effects-genie.html` file accessed by clicking on the  `Genie` button. The code for this is shown below:
+
+![genie effect gif](engineering-education/genie-slide-in-jelly-and-scale-pop-up-notification-effects/genie-effect-gif.gif "genie effect gif")
 
 ### Normalize the webpages
 Copy and paste the content of the `normalization.css` file from [here](https://github.com/prograte/Genie-Slide-in-Jelly-and-scale-Pop-up-Notification-effects/blob/main/css/normalization.css)
