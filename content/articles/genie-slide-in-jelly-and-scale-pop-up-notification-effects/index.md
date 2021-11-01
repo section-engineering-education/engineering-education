@@ -39,7 +39,7 @@ these effects are dependent on the type of information being displayed.
 - [Conclusion](#conclusion)
 
 ### Key takeaways
-By the end of this article, you will learn how to apply the following notification effects to a webpage.
+By the end of this article, you will learn how to apply the following notification effects to a webpage:
 
 - Slide-in effect
 - Genie effect
