@@ -523,9 +523,11 @@ Create a function that will take in the window as the argument. The function wil
 })(window, document);
 ```
 
-- In the function, you will get the root element in the webpage. This code returns the HTML element. Add the end of event names which refer to the end of animations. You will also create a function that checks if an object has a
-  property that it holds. If so, it will add the property to the former object. The `extend` function will be used in
-  the `notificationFunction` function. It will place a new property to the object that had been initially saved with another property.
+In the function, you will get the root element in the webpage. 
+
+This code returns the HTML element. Add the end of event names which refer to the end of animations. You will also create a function that checks if an object has a property that it holds. If so, it will add the property to the former object.
+
+The `extend` function will be used in the `notificationFunction` function. It will place a new property to the object that had been initially saved with another property.
 
 This is shown in the code below:
 
