@@ -565,7 +565,7 @@ function NotificationFunction(options) {
 }
 ```
 
-- Create a `notificationFunction options` function that allows one to easily set the notification type and styles. The  function allows one to set the following:
+Create a `notificationFunction options` function that allows one to easily set the notification type and styles. The  function allows one to set the following:
 
   - wrapper of the notification
   - message
