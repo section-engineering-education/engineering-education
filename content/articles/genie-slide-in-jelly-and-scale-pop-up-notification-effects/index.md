@@ -1084,10 +1084,9 @@ Copy and paste the content of the `normalization.css` file from [here](https://g
 
 Do this by copy-pasting the code directly or viewing it as a _RAW_ file before copy-pasting it.
 
-The code in the file styles the webpage elements to look well. It is additional formatting to make the webpage look
-appealing to other browsers.
-In case of any issues, find the code for the article in [this](https://github.com/prograte/Genie-Slide-in-Jelly-and-scale-Pop-up-Notification-effects) repository.
-Modify it to create desired outputs for projects.
+The code in the file styles the webpage elements to look well. It is additional formatting to make the webpage look appealing to other browsers.
+
+In case of any issues, find the code for the article in [this repository](https://github.com/prograte/Genie-Slide-in-Jelly-and-scale-Pop-up-Notification-effects). Modify it to create desired outputs for projects.
 
 ![changing color template](engineering-education/genie-slide-in-jelly-and-scale-pop-up-notification-effects/changing-color-template.png "changing color template")
 
