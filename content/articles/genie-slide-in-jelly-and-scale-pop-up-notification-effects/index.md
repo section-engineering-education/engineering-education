@@ -877,7 +877,7 @@ Create a function that invokes itself. It will hold the other functions:
 </script>
 ```
 
-- Listens for a button click from the progress bar button. It enables the button for clicks. Look at the button below
+Listens for a button click from the progress bar button. It enables the button for clicks. Look at the button below
   for this:
 
 ```js
