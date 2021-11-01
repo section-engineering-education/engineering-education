@@ -1061,7 +1061,7 @@ In the `growl-notification-style.css` file, add growl effects. Find the code and
 
 ![Scale effect gif](engineering-education/genie-slide-in-jelly-and-scale-pop-up-notification-effects/scale-effect-gif.gif "Scale effect gif")
 
-- Added the _Jelly_ animation effect. Some part of it is generated from [Bouncejs.com](http://bouncejs.com/).
+Added the _Jelly_ animation effect. Some part of it is generated from [Bouncejs.com](http://bouncejs.com/).
 
   > [Bouncejs.com](http://bouncejs.com/) is a site used to generate awesome CSS3 animations for a website. Click on the site to check out some presets available or create animations that are tailored for the site.
 
