@@ -49,7 +49,7 @@ By the end of this article, you will learn how to apply the following notificati
 You will also get to know some notification effects which we can use on your webpage and when to use them.
 
 ### Pre-requisites
-For you to flow easily with this article, you need to know the following:
+For you to flow easily with this article, you need to know/have the following:
 
 - Basics of HTML. Know-how on creating web pages and linking other files to them.
 - Good use of CSS.
