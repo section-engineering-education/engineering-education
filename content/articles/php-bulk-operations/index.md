@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /php-bulk-operations/
 title: PHP Bulk Operations with XAMPP and FPDF Library
-description: This article aims to take the reader through a stepwise process of understanding dealing with bulk insert and bulk export in PHP. Thus, the reader will understand the benefits of this functionality.
+description: This article will help the reader understand bulk insert and bulk export concepts in PHP. 
 author: samuel-zabastian
-date: 2021-10-26T00:00:00-06:42
+date: 2021-11-01T00:00:00-00:56
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,37 +14,48 @@ images:
 - url: /engineering-education/php-bulk-operations/hero.jpg
   alt: Php bulk operations image
 ---
-### Introduction
-Bulk insert and bulk export are some of the most valuable functionalities when dealing with dynamic database records. For instance, a company conducted a study and recorded data in Excel sheets or CSV, but now the records need to be inserted into the database for further analysis.
+Bulk insert and bulk export are some of the most valuable functionalities when dealing with dynamic database records. 
 <!--more-->
-In such a case, a bulk insert comes into place.
+A bulk insert is appropriate when data recorded in Excel Sheets or CSV needs to be added into a database.
 
 ### Benefits of bulk operations
-Bulk export works when database records need to be read from a separate document apart from the system. For instance, accompany may generate its reports of sales, employees, profit per product, and assets in stock. This case means that all the database records are organized in a particular way, formatted, then printed in a readable format.
+Bulk export works well when database records need to be retrieved from a separate document. 
 
-These are two core concepts that every PHP developer needs to learn when dealing with dynamic databases. In addition, a developer needs to know how to import and export data out of a system. Apart from the mentioned advantage, these two methods are helpful when performing system overhaul or when migrating from one system to another. It will make the process seamless instead of transferring a single record at a time.
+For instance, a company may generate its sales, employees, profit per product, and assets in stock reports. 
 
-### Article goal
-This article aims to take the reader through a stepwise process of understanding dealing with bulk insert and bulk export in PHP. Thus, the reader will understand the benefits of this functionality. Moreover, they will get a chance to build a working project with the complete implementation of the functionality.
+This case means that all the database records are organized in a particular way, formatted, then printed in a readable format.
+
+PHP developers should be aware of bulk export and import concepts when dealing with dynamic databases. 
+
+These two methods are helpful when performing system overhaul or when migrating from one system to another. 
+
+### Goal
+This article will help readers understand how to implement bulk insert and bulk export in PHP. 
+
+We will build a unique project that uses these two functionalities.
 
 ### Project overview
-We will have a simple employee management system that, besides performing crude functionalities, will allow for bulk insert and bulk export. We will export the data into both Excel and PDF in real-time. The project will use MySQL database PHP and a bit of bootstrap four stylings.
+We will have a simple employee management system that supports bulk insert and bulk export. 
+
+We will export the data into Excel and PDF. Note that this project will use a MySQL database, PHP and Bootstrap.
 
 ### Prerequisites
-This project  is a web development project, so besides basic web development skills, the reader should have an idea about:
+Besides having basic web development skills, the reader should have an idea about:
 - Working with MySQL database.
 - Basics of PHP programming language.
 - Working with Bootstrap 4.
-- XAMPP was installed in the reader's machine.
+- [XAMPP](https://www.apachefriends.org/index.html).
 
 ### Project setup
-Create a project folder with a name of your choice. In the folder, create the following files and folders:
-- `files` folder to contain the imported files from the system.
-- `Database.php` where we will write our class to perform the desired operations.
-- `index.php` is the file that displays the information on the webpage and presents the users with buttons to perform bulk operations.
+Create a project folder with a name of your choice. In this folder, add the following components:
+- A folder named `files` to store the imported files from the system.
+- A `Database.php` file. It will contain the login for our desired operations.
+- An `index.php` will present information or UI to the user.
 
 ### The user interface
-We will not be doing much on the user interface because it is basic bootstrap styling of tables and buttons to import and export data in different formats. However, we will have a navigation bar, and below it have a container that encapsulates our form for selecting the file to import into the database. 
+We will use basic bootstrap styling to customize our tables and buttons.
+
+The web application will have a navigation bar and container. It will also have a form for selecting the type of file to import into the database. 
 
 ```html
    <form method= "post"  enctype = "multipart/form-data" class="form-inline my-2 my-lg-0">
@@ -55,7 +66,7 @@ We will not be doing much on the user interface because it is basic bootstrap st
     </form>
 ```
 
-The table has two buttons in a form to export all records to Excel or PDF. The code snippet for the user interface can be found in this [link]. I intentionally omitted them to make the article brief.
+The table has two buttons in a form to export all records to Excel or PDF, as shown below:
 
 ```html
 <form method= "post" class="form-inline my-2 my-lg-0">
@@ -64,12 +75,12 @@ The table has two buttons in a form to export all records to Excel or PDF. The c
 </form>
 ```
 
-Below the form is a table showing the list of employees in the system with columns of their names, the department in which they work, and age. 
+We also have a table showing the list of employees' names, departments, and age:
 
 ```php
 <thead>
     <tr>
-    <th scope="col">#</th>
+    <th scope="col"></th>
     <th scope="col">FIRST NAME</th>
     <th scope="col">LAST NAME</th>
     <th scope="col">DEPARTMENT</th>
@@ -81,7 +92,9 @@ Below the form is a table showing the list of employees in the system with colum
 </tbody>
 ```
 
-Notice that the snippets for the user interface are written in the `index.php file`. Copy the code and paste it into the `index.php` file. On top of the file, we need to include the `Database.php` file and instantiate the `Database` class.
+Note that the above code for the user interface is written in the `index.php` file. 
+
+In the `index.php` file, we need to `include` the `Database.php` file and instantiate the `Database` class.
 
 ```php
 <?php
@@ -90,9 +103,11 @@ $database = new Database();
 ```
 
 ### Working on the Database class
-The Database class contains the driver code for the application. In addition, it has a constructor for the database class and highlights the various functions that we need to perform on the system. 
+The Database class contains the application's driver code. 
 
-Before starting this class, add these snippets just below where you instantiated the database class. 
+It also has a constructor for the database class and highlights the various functions that we need to perform on the system. 
+
+Before starting this section, add these snippets below the instantiated database class. 
 
 ```php
 if(isset($_POST['submit'])){
@@ -108,12 +123,14 @@ if(isset($_POST['pdf'])){
 }
 ```
 
-These snippets listen to check which button is pressed and invoke the respective method in the database class. Finally, they import CSV files, export the records to excel and to PDF in that order.
+The above code allows us to determine which button is pressed and then invokes the respective method in the database class. 
+
+The app will then import CSV files, export the records to excel or PDF as specified by the user.
 
 #### Connection to the database
-The `Database` class extends the `mysqli` class to make working with my SQL database easy. In the class constructor, we specify the server, the username, the password, and the database to connect to. 
+The `Database` class extends `mysqli`. In the class constructor, we specify the `server`, `username`, `password`, and `type of database`. 
 
-Doing this ensures that a connection to the database is called at any moment of the database class instantiation.
+Doing this ensures that a connection to the database is called whenever the database class is instantiated.
 
 ```php
 class Database extends mysqli{
@@ -134,11 +151,13 @@ class Database extends mysqli{
 ```
 
 #### The bulk import function
-The bulk import function works by reading data from one Excel file, converting it to an array, then running through the array and inserting every element into the database. 
+The bulk import function works by reading data from an Excel file, converting it to an array, then running through the array and inserting every element into the database. 
 
-The first step of performing the bulk import is opening an Excel file in reading mode. While reading a single row, we separate the data read by a comma(,) using the `implode()` function. We then call the `SQL INSERT` query to insert the data into the respective fields of the database. 
+The first step of performing the bulk import is opening an Excel file in reading mode. While reading a single row, we separate the data entries by a comma(`,`) using the `implode()` function. 
 
-At any instance, if a query fails, the private variable `state` is set to `false`, and an error is thrown showing that the import procedure did not go through. Otherwise, a success alert is sent to the user.
+We then call the `SQL INSERT` query to add the data into the respective database fields. 
+
+If a query fails, the private variable `state` is set to `false`, and an error is thrown showing that the import procedure was not successful. Otherwise, a success alert is sent to the user.
 
 ```php
 public function importFile($fileToImport){
@@ -168,10 +187,14 @@ public function importFile($fileToImport){
 }
 ```
 
-#### Getting the database records
-When working with the user interface, we called the method `$database->getRecords();` from the front end. In this step, we will write the function executed when the method is called.
+#### Retrieving database records
+When working with the user interface, we called the method `$database->getRecords()`. 
 
-First, we use the query that selects everything from the employees' table and orders it in a descending manner so that the newest records are displayed quickly. Then for every row of the result fetched by the query, we extract the column element and assign it to a variable corresponding to the column name on the table them displayed accordingly.
+In this step, we will write the code that will be executed when this function is invoked.
+
+First, we use a MySql query to select everything from the employees' table and order it in a descending manner. 
+
+Then, for every row of the result, we extract the column element and assign it to a variable corresponding to the column name on the table.
 
 ```php
 public function getRecords(){
@@ -199,11 +222,13 @@ public function getRecords(){
 ```
 
 #### Bulk export to Excel
-The export to Excel function works in the exact opposite way as the import function does. In this case, we select the values that we want to export. 
+In the export to Excel function, we select the values that we wish to export. 
 
-Next, we open a file in reading mode, then write to the file row by row as fetched from the employees' table. Lastly, we close the file. 
+Next, we open a file in reading mode, then write to the file row by row as fetched from the employees' table.
 
-Notice that we also create a unique name for every file that we export to differentiate them. However, every file will be prefixed with `"records"` and must have a CSV extension at the end.
+Note that we also create a unique name for every file that we export to differentiate them.
+
+Each file will be prefixed with `records` and a `CSV` extension at the end.
 
 ```php
 public function exportToExcel(){
@@ -251,21 +276,25 @@ public function exportToExcel(){
 ```
 
 ### Bulk export to PDF
-PDF stands for portable document format. It is one of the standard formats for presenting documents to avoid editing. 
+PDF stands for portable document format. It is one of the popular formats for presenting documents and minimizing edits. 
 
-To export our database records to PDF, we need to use a small library called [fpdf](http://www.fpdf.org/). Download and extract the [library](http://www.fpdf.org/en/dl.php?v=184&f=zip) in a folder named 'fpdf` in your project. 
+To export our database records to PDF, we need to use a small library called [fpdf](http://www.fpdf.org/). 
 
-On top of the `Database.php` file,  require the `fpdf.php` file using the line below.
+Download and extract the [library](http://www.fpdf.org/en/dl.php?v=184&f=zip) in a new `folder` named `fpdf` in your project. 
+
+On top of the `Database.php` file,  add the following code:
 
 ```php
 require('fpdf/fpdf.php');
 ```
 
-Most of the library's configurations can be found in the [official documentation](http://www.fpdf.org/en/tutorial/index.php). However, you can copy my configuration and edit it to suit your desire. 
+Most of the library's configurations can be found in the [official documentation](http://www.fpdf.org/en/tutorial/index.php). However, you can copy my configuration and edit it to suit your needs. 
 
-To export using this library, we first select the records to export and assign every row element to the respective cell that it should appear. 
+To export data using this library, we first select the records and assign every row element to the respective cell that should appear. 
 
-We also specify the document's name and format of view, whether we need the file to be downloaded or shown in a browser. In my case, I called my file `records.pdf` and displayed it in a browser so the user would choose whether to download it or not.
+We also specify the document's name and format of view. We can state whether we need the file to be downloaded or shown in a browser. 
+
+In my case, I called my file `records.pdf` and displayed it in a browser.
 
 ```php
 public function exportToPdf(){
@@ -302,23 +331,29 @@ public function exportToPdf(){
 ```
 
 ### Creating a database and running the application
-Open `phpmyadmin` then create a new database called `bulk_up`. This name is the same name we specified while writing the constructor that connects the project to the database in the `Database.php` file. In the database, create a table called `team member` with the following properties;
+Open `phpmyadmin` then create a new database called `bulk_up`. This is the same name we specified while writing the constructor in the `Database.php` file. 
+
+In the `bulk_up` database, create a table called `teammember` with the following properties:
 - id
 - fname
 - lname
-- department and
-- age. 
+- department
+- age
 
-Migrate the project folder into the `htdocs` folder found in the `XAMPP` installation directory. Start MySQL and Apache servers, then navigate to the localhost to view your project.
-![App-user-interface](/engineering-education/php-bulk-operations/interface.png)
+Migrate the project folder into the `htdocs` folder found in the `XAMPP` installation directory. 
+
+Next, start MySQL and Apache servers, then navigate to your browser to view the project.
+
+![App user interface](/engineering-education/php-bulk-operations/interface.png)
+
 ![Data exported to PDF](/engineering-education/php-bulk-operations/pdf-export.png)
 
 ### Conclusion
 This article guided readers on how to perform bulk operations in PHP using MySQL database. Bulk operations are helpful when dealing with large amounts of data. 
 
-We build a project that lists employees' information to import more records from an Excel file, export to excel, and event PDF formats. 
+We have built a project that lists employees' information. It also allows one to import and export records to Excel and PDF. 
 
-Additionally, we discussed setting up the `fpdf library` for exporting data into PDF formats. The reader should find more about this library and how to use it better with company-specific customizations.
+We have also discussed how to set up the `fpdf library` and use it to export data into PDF formats. 
 
 ---
 Peer Review Contributions by: [Jerim Kaura](/engineering-education/authors/jerim-kaura/)
