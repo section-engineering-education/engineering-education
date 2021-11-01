@@ -933,9 +933,9 @@ notificationButton.addEventListener('click', function () {
 ```
 
 ### Use a minified modernizr file for animations
-Head over to this [link](https://github.com/prograte/Genie-Slide-in-Jelly-and-scale-Pop-up-Notification-effects/blob/main/js/modernizr.custom.js)
-to find the `modernizr.custom.js` file. Copy the content into the `modernizr.custom.js` file in the `js` folder. Do this
-by copy-pasting the code directly or viewing it as a _RAW_ file before copy-pasting it.
+Head over to this [link](https://github.com/prograte/Genie-Slide-in-Jelly-and-scale-Pop-up-Notification-effects/blob/main/js/modernizr.custom.js) to find the `modernizr.custom.js` file. 
+
+Copy its contents into the `modernizr.custom.js` file in the `js` folder. Do this by copy-pasting the code directly or viewing it as a _RAW_ file before copy-pasting it.
 
 > '**modernizr.custom.js**' has been generated and downloaded from this [Modernizr](http://modernizr.com/download/#-cssanimations-shiv-cssclasses-prefixed-testprop-testallprops-domprefixes-load) site.
 > [Modernizr.com](Modernizr.com) generates for one a minified JS file that detects the browser being used and features it supports.
