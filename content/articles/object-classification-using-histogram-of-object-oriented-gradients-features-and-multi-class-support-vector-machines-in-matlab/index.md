@@ -1,17 +1,39 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-solve-initial-value-problem-using-ode45-in-matlab/
+title: How to Solve Initial Value Problem (IVP) using ODE45 in Matlab
+description: This tutorial will discuss the multi-class object classification with the help of HOG features. Also, it provides a step by step guide of how one can use the technique using Matlab. 
+author: joseph-odhiambo
+date: 2021-09-30T00:00:00-15:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/object-classification-using-histogram-of-oriented-gradients-features-and-multi-class-support-vector-machine-in-matlab/hero.jpg
+    alt: Object Classification Using Histogram of Object Oriented Gradients Features Hero Image
+---
 
 The Histogram of Oriented Gradients(HOG) is a method used in computer vision and image processing to describe the features of a given piece of data. It considers the number of times the gradient orientation in a localized part of an image occurs. 
 
+<!--more-->
+
 Support vector machine(SVM) is also known as the discriminative method. The hyperplane defines this method. The hyperplane separates the given data into parts according to the defined distinguishing features.
 
-SVM model separates a given data into two using a hyperplane. A hyperplane is the point of separation of the provided data. A point to note is that SVM does not create one hyperplane. Instead, it creates two more hyperplanes that are parallel to each other. These two hyperplanes are the points closest to each part. A hyperplane gives the caution to accurately and efficiently classify your data. In this tutorial, We will look at the multi-class object classification with the help of HOG features. For classification, we use the ECOC based multi-class SVM.
+SVM model separates a given data into two using a hyperplane. A hyperplane is the point of separation of the provided data. A point to note is that SVM does not create one hyperplane. Instead, it creates two more hyperplanes that are parallel to each other.
+
+These two hyperplanes are the points closest to each part. A hyperplane gives the caution to accurately and efficiently classify your data.
+
+In this tutorial, we will look at the multi-class object classification with the help of HOG features. For classification, we use the ECOC based multi-class SVM.
 
 ### Prerequisites
 To follow along with this tutorial, you'll need:
 - [MATLAB](https://www.mathworks.com/products/get-matlab.html?s_tid=gn_getml) installed.
 - Proper understanding of [MATLAB](https://www.section.io/engineering-education/getting-started-with-matlab/) basics.
 
-### Overall scheme
-![image of the scheme](/engineering-education/object-classification-using-histogram-of-oriented-gradients-features-and-multi-class-support-vector-machine-in-matlab/classification_one.png)
+### The overall scheme
+![image of the scheme](/engineering-education/object-classification-using-histogram-of-oriented-gradients-features-and-multi-class-support-vector-machine-in-matlab/classification-one.png)
 
 In the training image database, we have all the training images in the training database folder. You first convert all these images to their corresponding HOG features. These HOG features are then stored in the feature database and used to train the ECOC based multi-class SVM classifiers. So once the training is complete, we get a trained classifier. The trained classifier is ready to classify the input images. 
 
@@ -25,7 +47,7 @@ From the 16000 images, we are using only 4800 images for our training and testin
 ![folder structure](/engineering-education/object-classification-using-histogram-of-oriented-gradients-features-and-multi-class-support-vector-machine-in-matlab/classification_two.png)
 
 ### Error-correcting output codes(ECOC) based multi-class SVM
-In machine learning, many algorithms, such as linear regression, SVM, e.t.c, can deal with binary classification problems. A binary classification problem is one where only there are only two target classes, for example, yes or no, black or white, e.t.c. It means you can only classify two input objects into the two classes.
+In machine learning, many algorithms, such as linear regression, SVM, e.t.c, can deal with binary classification problems. A binary classification problem is one where there are only two target classes, for example, yes or no, black or white, e.t.c. It means that you can only classify two input objects into the two classes.
 
 In practice, many classification problems belong to multi-class classification problems; therefore, binary SVM cannot handle our objective of classifying four different shapes. However, there are modified SVM also for multi-class problems such as `one vs rest` and `one vs one`. These methods classify by dividing a given multi-class problem into a fixed number of binary problems.
 
@@ -33,11 +55,12 @@ Unlike `one vs rest` and `one vs one`, the ECOC technique allows each class to b
 
 ### Implementation of ECOC classifiers for multi-class SVM in Matlab
 Matlab has in-built function `fitcecoc` for this, and the syntax is:
+
 ```Matlab
 fitcecoc(x, y, name, value)
 ```
 where:
-`x`represents Predictors(sets of the feature vector of all images).
+`x`represents predictors(sets of the feature vector of all images).
 `y`represents the class labels.
 `name, value` represents Name value pair arguments. It has many options, but here we are using two, that is, `coding` and `learners`. The default option for coding is `onevsone`, and `learners` is `SVM`.
 
@@ -72,7 +95,7 @@ Now, find the HOG feature of the first image:
 [hogfv, hogvis] = extractHOGFeatures(img, 'CellSize', CS);
 ```
 
-All the HOG features are stored in the `hogfv` variable. We then find the length of our `hogfv` variable, which is the hog feature variable. Then, read the total number of images in the `traindb` folder.
+All the HOG features are stored in the `hogfv` variable. We then find the length of our `hogfv` variable, which is the hog feature variable. Then, read the total number of images in the `traindb` folder:
 
 ```Matlab
 hogfeaturesize = length(hogfv);
@@ -184,6 +207,7 @@ figure
 imshow(imgt)
 title(['Shape recognized is' char(predictedLabels)])
 ```
+
 Now let us run the program for the discrete testing. When you run it, Matlab asks the user to input the shape, and once this is complete, the shape is recognized, as shown below:
 
 ![image recognition](/engineering-education/object-classification-using-histogram-of-oriented-gradients-features-and-multi-class-support-vector-machine-in-matlab/classification_four.png)
