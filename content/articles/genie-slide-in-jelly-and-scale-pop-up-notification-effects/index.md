@@ -294,7 +294,7 @@ a:focus, a:hover {
 }
 ```
 
-- Format the header and the header span:
+Format the header and the header span:
 
 ```css
 /* Header */
