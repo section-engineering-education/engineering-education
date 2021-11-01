@@ -50,7 +50,7 @@ After this completing it, now label the vehicle with the bounding box. To label 
 ![vehicles labelled](engineering-education/how-to-ground-truth-label-your-datasets-for-creating-autonomous-driving-systems-using-matlab-ground-truth-app
 /ground6.png)
 
-Let's label the sub-labels. Sub-labels are parts that are associated with a parent label. For example, we can have vehicle number plates or even wheels as the sub-labels. Let's, for example, name our vehicles `tarlight`. To label, the sub-labels, click on the `sub-labels right next to the `label` button and then label them on your input using bounding boxes. You can have as many bounding boxes as you want. If you click on `sublabel` button, a new window similar to that of labelling prompts the user to input the name of the sub-labels. 
+Let's label the sub-labels. Sub-labels are parts that are associated with a parent label. For example, we can have vehicle number plates or even wheels as the sub-labels. Let's, for example, name our vehicles `tarlight`. To label, the sub-labels, click on the `sub-labels` right next to the `label` button and then label them on your input using bounding boxes. You can have as many bounding boxes as you want. If you click on `sublabel` button, a new window similar to that of labelling prompts the user to input the name of the sub-labels. 
 
 To make the labels on the input image, you have to select the bounding box of the parent label, and then you make your label inside the bounding box of this main bounding box. If you don't select the parent label first, you won't be able to make your sub-labels. From the definition, sub-labels are parts of the parent data or ROI.
 
