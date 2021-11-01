@@ -1,5 +1,5 @@
 ### Introduction
-Object detection is the ability of a program to be able to detect objects in an image. ML lets the .NET developers implement this feature by using the ML.NET framework that they can use to create custom ML models using C# or F# without having to leave the .NET ecosystem.
+Object detection is the ability of a program to be able to detect objects in an image. ML lets the .NET developers implement this feature by using the ML.NET framework that they can use to create bespoke machine learning models in C# or F# without leaving the `dotnet` framework.
 
 In this article, we shall be looking at how we can implement the same ML.NET framework in a windows forms app to create a C# project that can detect objects in an image.
 
