@@ -1007,7 +1007,7 @@ Style the notification to look like a pop-up notification. In the `default_notif
 }
 ```
 
-- Style the notification when the notification is closed both before and after. Check this out below:
+Style the notification when the notification is closed both before and after. Check this out below:
 
 ```css
 /* `on close` notification styling */
