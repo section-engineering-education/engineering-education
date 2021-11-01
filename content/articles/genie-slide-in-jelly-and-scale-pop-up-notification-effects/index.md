@@ -1070,9 +1070,7 @@ webpage. Click on `SHOW NOTIFICATION` to see the animation. The animation looks 
 
 ![Jelly effect gif](engineering-education/genie-slide-in-jelly-and-scale-pop-up-notification-effects/jelly-effect-gif.gif "Jelly effect gif")
 
-- Added the slide-in animation to the project. Open the `growl-effects-slide-in.html` by clicking on the `Slide in`
-  button. This file has the notification style set to slide hence it will implement the `slide in` effect. The effect is
-  displayed in the GIF shown below:
+Added the slide-in animation to the project. Open the `growl-effects-slide-in.html` by clicking on the `Slide in` button. This file has the notification style set to slide hence it will implement the `slide in` effect. The effect is displayed in the GIF shown below:
 
 ![Slide-in effect gif](engineering-education/genie-slide-in-jelly-and-scale-pop-up-notification-effects/slide-in-effect-gif.gif "Slide-in effect gif")
 
