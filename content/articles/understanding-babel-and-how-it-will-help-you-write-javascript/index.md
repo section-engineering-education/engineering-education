@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /understanding-babel-and-how-it-will-help-you-write-javascript/
 title: Babel in writing Javascript
-description: In this tutorial we will take a look of how Babel can be useful in writing javaScript code.
+description: This tutorial provides a look into Babel and how useful it can be in writing JavaScript code.
 author: robert-wanjau
 date: 2021-10-28T00:00:00-11:40
 topics: [Languages]
@@ -16,9 +16,10 @@ images:
 ---
 
 ### Introduction
-When you use Babel, you can convert edge JavaScript into plain old ES5 JavaScript that can be run in any browser.(even the old ones). Classes, fat arrows, and multiline strings are among the syntactical sugar that has been added to JavaScript as a result of the introduction of the new ES6 specification.
+Babel enables a programmer to convert edge JavaScript into plain old ES5 JavaScript that can be run in any browser including the old ones. Among the most common syntactical sugars added to Javascript due to the introduction of the new ES6 are Classes, fat arrows, and multiline strings.
 <!--more-->
-In this tutorial we will take a look of how Babel can be useful in writing javaScript code.
+
+This tutorial provides a look into Babel and how useful it can be in writing JavaScript code.
 
 ### Table of content
 - [Introduction](#introduction)
@@ -37,7 +38,7 @@ In this tutorial we will take a look of how Babel can be useful in writing javaS
 
 
 ### Implementation
-Babel is distributed as a Node.js node module. Installation of Babel is done via npm.
+Babel is distributed as a Node.js node module whose installation is done via npm. To install Babel, you need to run the command below in your terminal.
 
 ```
 $ npm install – D babel-cli 
@@ -77,7 +78,7 @@ var Person = function Person() {
 var dave = new Person();
 ```
 
-The Person function, which may be used as a standard prototype constructor, is already available. With the `_classCallCheck` function, we can perform safety checking as well.
+The `Person function`, which may be used as a standard prototype constructor, is already available. With the `_classCallCheck` function, we can perform safety checking as well.
 
 This method is called within the `Person constructor`, and it will throw an error unless the `Person function` is treated as a constructor function, in which case it will return `true`.
 
@@ -105,8 +106,9 @@ var template = "
   
   ```
 ### Fat Arrows
-`Fat Arrows`, also known as `arrow Functions`, are a relatively new way to write concise JavaScript functions. The ECMAScript 6 specifications introduced them, and they've since become the most widely used ES6 feature. The fat arrow => operator allows us to quickly define JavaScript functions with or without parameters using arrow functions.
-The use of `Fat arrows` allows us to define anonymous functions in a readable manner. For instance, we can write  a function like below:
+`Fat Arrows`are also known as `arrow Functions`. They are a relatively new way to write concise JavaScript functions. The ECMAScript 6 specifications introduced them, and they havve since become a widely used ES6 feature. 
+
+The fat arrow `=>` operator allows us to quickly define JavaScript functions with or without parameters using arrow functions. The use of `Fat arrows` allows us to define anonymous functions in a readable manner. For instance, we can write  a function like below:
  
 - **Example**
  
@@ -123,7 +125,7 @@ The use of `Fat arrows` allows us to define anonymous functions in a readable ma
 
 ```
 
-It should be noted that this function has not been invoked. If I wanted to invoke it, I could store it to a variable or provide it as an argument to a callback or a promise. 
+It should be noted that this function has not been invoked. If we want to invoke it, we store it to a variable or provide it as an argument to a callback or a promise. 
 
 - **Calling the function**
 
@@ -185,7 +187,7 @@ Let us use one of these to output all the elements in an array.
 ```
 
 #### Fat Arrows and This(Lexical Scoping) 
-When a function is invoked, the `this` keyword in JavaScript is configured to return the object that is immediately preceding the dot. This is sensible, but it might be inconvenient at times because it necessitates the storage of `this` in that.
+When a function is invoked, the `this` keyword in JavaScript is configured to return the object that immediately preceeds the dot. This is sensible, but it might be inconvenient at times because it necessitates the storage of `this` in such a context.
 
 A way around `this` is to use a fat arrow, which keeps the current value of `this`. This is referred to as `lexical scoping`.
 
@@ -214,11 +216,7 @@ x = {
 
 
 ### Conclusion
-A sugary layer on top of `ES5` makes up the majority of `ES6`. Inside, the JavaScript programming language retains its status as the prototype list processing language that we are all too familiar with. 
-
-Aside from some excellent syntax, ES6 provides a transpiler that converts to a rather plain, regular JavaScript in the end. One reason for some of this sugar is to make it easier for Java/C# developers who, at first, may find prototypical inheritance difficult to understand. 
-
-Fat arrows, for example, help us to write more concise and modern-looking code while also improving the functionality of JavaScript.
+A sugary layer on top of `ES5` makes up the majority of `ES6`. The JavaScript programming language retains its status as the prototype [list processing language](https://www.tutorialspoint.com/lisp/index.htm.) Apart from some excellent syntax, ES6 provides a transpiler that converts to a rather plain, regular JavaScript in the end. One reason for some of this sugar is to make it easier for Java/C# developers who, at first, may find prototypical inheritance difficult to understand. Fat arrows, for example, help us to write more concise and modern-looking code while also improving the functionality of JavaScript.
 
 #### Further Reading
 For more features of Babel and ES6, check out [this link](https://babeljs.io/docs/learn-es2015/)
