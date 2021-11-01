@@ -866,7 +866,7 @@ if (typeof define === 'function') {
 Inside the `growl-effects-scale.html` file, just below the `<script src="js/notificationFunction.js"></script>` line,
 add a script that does the following:
 
-- Create a function that invokes itself. It will hold the other functions:
+Create a function that invokes itself. It will hold the other functions:
 
 ```html
 
