@@ -15,9 +15,9 @@ images:
     alt: Getting Started With Alpine.js Hero Image
 ---
 
-Alpine.js is a rugged, minimal tool for composing behavior in your markup. Think of it like jQuery for the modern web. It is very reactive like Vue and it is very lightweight. Alpine.js is very simple to use and set up. It doesn't need any installation with NPM, the CDN version works enough magic.
+Alpine.js is a rugged, minimal tool for composing behavior in your markup. Think of it like jQuery for the modern web. It is very reactive like Vue and it is very lightweight. Alpine.js is very simple to use and set up. It does not need any installation with NPM, the CDN version works enough magic.
 <!--more-->
-Alpine.js is not a replacement for full-fledged frameworks like Vue, React, or Angular. It is rather a lighter framework for the most simple needsthat is used in applications that need minimal JavaScript, usually server-side rendered web applications. 
+Alpine.js is not a replacement for full-fledged frameworks like Vue, React, or Angular. Instead, it is a lighter framework for the most simple needs used in applications that need minimal JavaScript, usually server-side rendered web applications.
 
 Alpine.js shines when you need simple components like dropdowns, search inputs, and a few elements in the view that you want to toggle. It also offers very great flexibility. You get to keep your markup simple, as it is, and sprinkle behavior where ever you want, at no cost.
 
@@ -33,7 +33,7 @@ Alpine.js shines when you need simple components like dropdowns, search inputs, 
 To follow along with this tutorial, you will need:
 - A good browser, preferably [Chrome](https://www.google.com/chrome/).
 - A text editor, you can use [VSCode](https://code.visualstudio.com/).
-- Basic HTML, CSS, [Bootstrap](https://getbootstrap.com/) and Javascript knowledge.
+- Basic HTML, CSS, [Bootstrap](https://getbootstrap.com/), and Javascript knowledge.
 
 ### Goals
 By the end of this tutorial, you should be conversant with:
@@ -126,12 +126,12 @@ Alpine.start()
 At this point, your application should look like this:
 ![App design](/engineering-education/getting-started-with-alpinejs/app-design.png)
 
-Based on this design, we have a list of Todos. To make these dynamic, we have to create and store some todos, which may be iterated over as list items.
+Based on this design, we have a list of Todos. We have to create and store some todos, which may be iterated over as list items to make these dynamic.
 
 ### Event handling in Alpine.js
 Using our Todo app, we would like to get user input. Users should type in a todo item and press the 'Enter' key to save their todo. We have to listen to the keyup event on the input to know when the user presses the 'Enter' key. 
 
-Alpine makes it simple to listen for browser events and react to them as you wish,and provides us with the x-on directive to do this. This directive lets us listen to events, like how we would, using vanilla JavaScript.
+Alpine makes it simple to listen for browser events and react to them as you wish and provides us with the x-on directive to do this. This directive lets us listen to events, like how we would, using vanilla JavaScript.
 
 To see how this directive works, we add a click listener to the first list item that alerts "Hi" every time it is clicked.
 
@@ -143,7 +143,7 @@ Do not worry about the `x-data` directive yet. It will be explained well under[s
 
 See how easy that is. 
 
-Other events like change, blur, and focus can also be listened to easily. Alpine.js further simplifies event handling by providing a shortcut for the x-on directive. 
+Other events like change, blur, and focus can also be listened to quickly. Alpine.js further simplifies event handling by providing a shortcut for the x-on directive. 
 
 This shortcut lets you call the event directly, just by adding @ before it. The previous example can be rewritten as:
 
@@ -164,14 +164,14 @@ Alpine.js further simplifies event handling by giving modifiers that can be atta
 
 To find more modifiers, check the [official documentation](https://alpinejs.dev/directives/on#keyboard-events).
 
-NNow, you know how to handle events. You can use this knowledge to get the user input when pressing the 'Enter' button. However, the user's input is currently useless as we have no place to store it, no way to track its state. 
+Now, you know how to handle events. You can use this knowledge to get the user input when pressing the 'Enter' button. However, the user's input is currently useless as we have no place to store it, no way to track its state. 
 
 To solve this, Alpine.js lets you declare data (state) right in your markup.
 
 ### State management in Alpine.js
 Data is at the center of modern web applications, and Alpine.js as a progressive framework has its core. Data can be made available to a single HTML element, a chunk of HTML, or globally in Alpine.js.
 
-#### `x-data`
+#### x-data
 This directive lets you declare data right in your markup. For example, to store the visible state of some element, you can declare its state like this:
 
 ```html
@@ -192,7 +192,7 @@ In that case, its data property is given precedence when accessed from within it
 </div>
 ```
 
-Often, you do not want to store any data but still want to access Alpine.js's superpowers, illustrated in the examples above. Adding the x-data attribute lets you have these functionalities.
+You often do not want to store any data but still want to access Alpine.js's superpowers, as illustrated in the examples above. Adding the x-data attribute lets you have these functionalities.
 
 #### Global state
 Data in Alpine.js applications do not have to be limited to single components or children components. They can be stored on a larger scale to be reusable and accessible to every component on the page. Alpine.data() lets you declare data that you can reuse in components in your application. 
@@ -450,7 +450,7 @@ This example uses ternary operators to determine the appropriate Bootstrap class
 
 ![Colorful Todo List](/engineering-education/getting-started-with-alpinejs/colorful.png)
 
-To wrap up this tutorial, we should be able to filter these items by their status, as listed at the top.
+To wrap up this tutorial, we should be filter these items by their status, as listed at the top.
 
 ### Filter by status
 Filtering todo items by status involves a few steps.
@@ -484,7 +484,7 @@ Now, the `viewing` state changes when any one of these is clicked. To respond to
     :class="todo.status === 'completed' ? list_class + ' list-group-item-success' : todo.status === 'cancelled' ? list_class + ' list-group-item-danger' : list_class"
 ></li>
 ```
-In this example, first, we declare a `will_show` state that determines the display status of the list item. We want every item displayed when 'all' is clicked, so it is initialized based on this value.
+In this example, first, we declare a `will_show` state that determines the display status of the list item. WWe want every item displayed when 'all' is clicked, initializing it based on this value.
 
 Then, a new directive, `x-init`, is introduced. This directive lets you run some code when a template is created in the DOM. In this example, we watch for changes in the `viewing` state. Then, we respond to these by updating the will_show state if the item's status is the same as the selected category.
 
@@ -496,3 +496,6 @@ Finally, the display is toggled with some transition using the `x-show` directiv
 In this tutorial, we have learned what Alpine.js is. We also learned how to efficiently use its many features and directives to build fast and lightweight single-page web applications.
 
 ## Happy Coding!
+
+---
+Peer Review Contributions by: [Briana Nzivu](/engineering-education/authors/briana-nzivu/)
