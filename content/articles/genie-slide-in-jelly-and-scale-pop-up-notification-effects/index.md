@@ -976,7 +976,7 @@ Style the notification box when the notification is shown:
 }
 ```
 
-- Format the links and paragraphs in the notification box. This styling is shown below:
+Format the links and paragraphs in the notification box. This styling is shown below:
 
 ```css
 /* Notification link styling */
