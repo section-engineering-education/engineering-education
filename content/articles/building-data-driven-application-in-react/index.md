@@ -15,7 +15,7 @@ images:
     alt: Building Data Driven Application in React Hero Image
 ---
 
-It is unsuitable to have to reform our application components every time we have a change in our application data. More than  data is needed to have a credible data-driven application that is captivating to an extensive variety of business users.
+It is unsuitable to have to reform our application components every time we have a change in our application data. More data is needed to have a credible data-driven application that is captivating to an extensive variety of business users.
 
 <!--more-->
 
