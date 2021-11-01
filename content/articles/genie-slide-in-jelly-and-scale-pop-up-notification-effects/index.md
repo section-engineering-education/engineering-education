@@ -742,7 +742,9 @@ NotificationFunction.prototype.dismiss = function () {
 };
 ```
 
-- Add the `notificationFunction` function to be a global function seen in all the windows. This step allows the function to be used in the HTML file quickly. See this in the code below:
+Add the `notificationFunction` function to be a global function seen in all the windows. This step allows the function to be used in the HTML file quickly. 
+
+See this in the code below:
 
 ```js
 /**
