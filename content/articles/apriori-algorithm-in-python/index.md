@@ -5,9 +5,9 @@ published: true
 url: /apriori-algorithm-in-python/
 title: Getting started with Apriori algorithm in python
 description: In this article, we shall learn the intuition behind the apriori algorithm and later implement it in python.
-author: 
+author: bejamin-naibei
 date: 2021-11-02T00:00:00-14:35
-topics: []
+topics: [languages]
 excerpt_separator: <!--more-->
 images:
 
