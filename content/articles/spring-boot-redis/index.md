@@ -1,58 +1,58 @@
 ---
-
 layout: engineering-education
 status: publish
 published: true
 url: /spring-boot-redis/
 title: Getting Started with Spring Boot Redis Messaging
-description: This article will go over a step-by-step tutorial on how to communicate between two services using Redis publisher/subscriber messaging
+description: This article will go over a step-by-step tutorial on how to communicate between two services using Redis publisher or subscriber messaging.
 author: okelo-violet
-date: 2021-10-25T00:00:00-14:30
+date: 2021-11-02T00:00:00-14:30
 topics: []
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/spring-boot-redis/hero.jpg
-    alt: Getting Started with Spring Boot Redis Messaging
-    
+    alt: Getting Started with Spring Boot Redis Messaging 
 ---
+Redis is a key-value store that can be used as an in-memory database, cache provider, or message broker. In this article, we will learn how to use Redis publisher/subscriber to communicate between the services asynchronously. 
 
 ### Introduction
-Redis is a key-value store that can be used as an in-memory database, cache provider or message broker.
-
-In this article, we will learn how to use Redis publisher/subscriber to communicate between the services asynchronously. 
 We will create two services: 
-- **publisher service** - retrieves puns from the pun API service and publishes the pun into the Redis broker queue.
-- **subscriber service** - listens for new puns in the Redis broker queue, retrieves the new joke and logs it on the Spring Boot console.
+- A **publisher service** - that will retrieve puns (jokes) from the pun API service and publish the pun into the Redis broker queue.
+- A **subscriber service** - that will listen for new puns in the Redis broker queue, retriev a new joke, and logs it on the Spring Boot console.
 
 ### Prerequisites
-1. Redis installed on your computer.
-2. JDK installed on your computer.
-3. Your favourite code editor installed.
-4. Knowledge in Spring Boot.
+To follow along the reader will need the following:
+- Redis installed on your computer.
+- JDK installed on your computer.
+- Your favourite code editor installed.
+- Knowledge in Spring Boot.
    
 ### Project setup
-1. On your browser, navigate to [https://start.spring.io/](https://start.spring.io).
-2. Select `maven project`, language to `Java` and Spring Boot version leave to default.
-3. Set the project group name to `io.section` and artifact to `publisher`.
-4. Add `Lombok`, `Spring Reactive Web` and `Spring Data Reactive Redis` as dependencies.
-5. Click on generate button to create and download the boilerplate code for the publisher application.
-6. Repeat the above steps and change artifact name to `subscriber`.
+- On your browser, navigate to [https://start.spring.io/](https://start.spring.io).
+- Select `maven project`, language to `Java` and Spring Boot version leave to default.
+- Set the project group name to `io.section` and artifact to `publisher`.
+- Add `Lombok`, `Spring Reactive Web` and `Spring Data Reactive Redis` as dependencies.
+- Click on generate button to create and download the boilerplate code for the publisher application.
+- Repeat the above steps and change the artifact name to `subscriber`.
 
 ### Setting up Redis
 1. On your browser, navigate to [https://redis.io/](https://redis.io/) and download a Redis application for your operation.
-2. Execute the command below to verify that Redis is successfully installed on your computer and works as expected.
-   ```bash
-   $ redis-server -v
-   Redis server v=5.0.7 sha=00000000:0 malloc=jemalloc-5.2.1 bits=64 build=636cde3b5c7a3923
+2. Execute the command below to verify that Redis has been successfully installed on your computer and works as expected.
 
-   ```
+```bash
+$ redis-server -v
+Redis server v=5.0.7 sha=00000000:0 malloc=jemalloc-5.2.1 bits=64 build=636cde3b5c7a3923
+
+```
+
 ### Publisher service
 Extract the `publisher.zip` file downloaded in the previous step and open the project in your favourite code editor.
 
 #### Model 
-1. Create a new Java class named `Pun` that implements `Serializable` interface.
-2. Add the code block below into the `Pun` Java file created above.
+- Create a new Java class named `Pun` that implements `Serializable` interface.
+- Add the code block below into the `Pun` Java file created above.
+
 ```java
 @Getter // Creates getters for all the fields in the class
 @Setter // Creates setter methods for all the fields in the class
@@ -74,7 +74,7 @@ public class Pun implements Serializable {
 ```
 
 #### Service
-1. Create a new Java file named `PublishService` and add the block of code below.
+- Create a new Java file named `PublishService` and add the block of code below.
 ```java
 @Service
 public class PublisherService {
@@ -114,10 +114,11 @@ public class PublisherService {
 }
 
 ```
-- ` @Value("${pun-queue}") ` annotation retrieves joke-queue value from the application.properties file and sets it to the jokeTopic variable.
-- ` @PostConstruct` annotation makes annotated `init()` remain unexecuted until the Spring context is initialized.
+
+- ` @Value("${pun-queue}") ` annotation retrieves the joke-queue value from the application.properties file and sets it to the jokeTopic variable.
+- ` @PostConstruct` annotation makes the annotated `init()` remain unexecuted until the Spring context is initialized.
 - `@Scheduled(fixedRate = 1000)` annotation marks the `publish()` method to be executed every one second.
-- The `publish()` method retrieves a joke from the API, converts the joke Joke java object. The Pun POJO is then converted to a formated JSON that is then published to the Redis broker queue.
+- The `publish()` method retrieves a joke from the API, converts the Joke java object. The Pun POJO is then converted to a formated JSON that is then published to the Redis broker queue.
   
 In the `PublisherApplication` class, add the code snippet below.
 ```java
@@ -143,6 +144,7 @@ public class PublisherApplication {
 
 }
 ```
+
 In the resources directory, add the configuration code below in the `application.properties` file.
 ```yaml
 server.port=8085 #sets the ports that the application runs on
@@ -150,10 +152,12 @@ pun-queue = pun-server # sets the Redis queue name where data will be published
 SPRING_REDIS_HOST=6379 # sets the port on which Redis is running on
 
 ```
+
 ### Subscriber service
 Extract the `subscriber.zip` file that was downloaded in the previous step.
+
 #### Service
-1. Create a Java class named `Subscriber` service and add the code snippet below.
+- Create a Java class named `Subscriber` service and add the code snippet below.
    
 ```java
 @Service
@@ -177,9 +181,11 @@ public class SubscriberService {
 
 }
 ```
+
 #### Model
-1. Create a new Java class named `Pun` and implement the `Serializable` interface.
-2. Update the `Pun` class with the code snippet below.
+- Create a new Java class named `Pun` and implement the `Serializable` interface.
+- Update the `Pun` class with the code snippet below.
+
 ```java
 @Getter // Creates getters for all the fields in the class
 @Setter // Creates setter methods for all the fields in the class
@@ -220,13 +226,16 @@ public class SubscriberApplication {
 }
 
 ```
+
 #### Configuration
 In the `resource` directory, add the code snippet below to `application.properties` file.
+
 ```yaml
 server.port=8084 # Sets the port on which the server will run on 
 pun-queue=pun-server # Sets the name of the Redis queue
 SPRING_REDIS_HOST=6379 # Sets the Redis port on which the subscriber service listens for new jokes on the queue
 ```
+
 ### Testing
 The publisher services pull data from the [jokes API](https://api.chucknorris.io/jokes/random) and display the links to various jokes as shown below.
 
@@ -239,8 +248,9 @@ The subscriber service receives the jokes from the Redis message queue and logs 
 ![Subscriber](/engineering-education/spring-boot-redis/subscriber.png)
 
 ### Conclusion
-Now that you have learnt how to send messages between two services, try implementing a two service application where one service accepts HTTP requests while the second service handles database operations. Then, send messages between the two services using Redis.
+Now that you have learned how to send messages between two services, try implementing a two service application where one service accepts HTTP requests while the second service handles database operations. Then, send messages between the two services using Redis.
 
+Happy coding!
 
 ---
 
