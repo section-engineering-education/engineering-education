@@ -14,7 +14,7 @@ This article describes how to use the Dart Thread and Isolate classes in your Fl
 ### Isolates in Flutter: 
 You can use Isolate together with threads to improve the performance of your application and reduce battery consumption on mobile devices. Isolates are similar to other programming languages' threading concepts, but they have a few key differences.
 
-You can use the Isolate API to spawn new isolates; you can pass messages between an isolate and its parent thread(s). You are not directly accessing shared mutable states from within an isolate.
+You can use the Isolate API to spawn new isolates; you can pass messages between an isolate and its parent thread(s). However, you are not directly accessing shared mutable states from within an isolate.
 
 To demonstrate their usage, we will build a simple counter-demo: An application that starts with an initial value at 0 and allows the user to increment or decrement that value.
 
@@ -90,8 +90,7 @@ static MyIsolate _isolate ;
   // [END isolate] }
   ```
 
-  - The Isolate can also pass messages through to the main thread. These messages must be Serializable. If you want an event
-  back from the isolated class, see Responding To Messages And Events.
+  - The Isolate can also pass messages through to the main thread. These messages must be Serializable. If you want an event back from the isolated class, see Responding To Messages And Events.
 
   ```dart
   void incrementCounter() { 
@@ -134,11 +133,9 @@ static MyIsolate _isolate ;
   ```
 
 
-  We also provide a special type of function called a ProviderFunction.A ProviderFunction can be called from the main
-  thread, and it returns a non - Serializable value to the main thread. 
+  We also provide a special type of function called a ProviderFunction.A ProviderFunction can be called from the main  thread, and it returns a non - Serializable value to the main thread. 
   
-  This is useful for cases where you want to
-  return an object or data which is not serialized by default (for example, a std::shared_ptr).
+  This is useful for cases where you want to return an object or data which is not serialized by default (for example, a std::shared_ptr).
 
   Here is an example:
   
@@ -172,7 +169,7 @@ static MyIsolate _isolate ;
   ```
   
   This makes it easier to encapsulate and group common callback functions instead of having one function for each different combination of parameters. 
-  > Note:  The IncrementCounterProviderFunction(or ProviderFunction) is a utility  the function provided by NGMessageComposeViewController, not the Isolate. However, to simplify the code, we provide this convenience method as it allows the developer to write less boilerplate code.
+  > Note:  The IncrementCounterProviderFunction(or ProviderFunction) is a utility  the function provided by NGMessageComposeViewController, not the Isolate. However, to simplify the code, we provide this convenience method to allow the developer to write less boilerplate code.
 
   Here is an example of how you might call this from Objective - C:
   
