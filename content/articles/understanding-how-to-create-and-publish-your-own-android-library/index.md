@@ -1,7 +1,7 @@
 ### Introduction
 Every Android developer considers how they can reuse their code rather than rewriting it from scratch. By developing a library, developers also contribute to the open-source ecosystem by having their code used by other developers.
 
-No developer can evade working without libraries because they are such an important component of the development process. They allow you to speed up your development by leveraging a pre-built solution rather than creating all of the code yourself.
+No developer can evade working without libraries because they are such important components of the development process. They allow you to speed up your development by leveraging a pre-built solution rather than creating all of the code yourself.
 
 ### Prerequisites
 To follow along make sure you have the following:
@@ -34,86 +34,66 @@ When creating a library, you can either choose `Android Library` or `Java or Kot
 
 After creating our module, a gradle file for our module is created.
 
-In that gradle file, we can remove the auto added dependencies because we don't need them for now. In other cases, your library may be dependent on some libraries, so you need to include them in the module's gradle file.
+In that gradle file, we can remove the auto added dependencies because we don't need them for now. In other cases, your library may depend on some libraries, so you need to include them in the module's gradle file.
 
-### Step 3 - Create a Class or file containing your library logic
+### Step 3 - Create a Class or file containing your Library logic
 In this step, create a class or a file that contains the code that you want to share as a library.
 
 In other cases, your library may be adding more features to the default Android classes, creating a custom view or adding functions with useful code that you want to share.
 
 In our case, inside the newly created module, we'll create a class that contains some functions to list `Kenyan counties`. 
 
-> I have truncated some functions, otherwise, the article would be very long.
-
 ```kotlin
 class Kenya {
     companion object {
+        private val counties: HashMap<String, String> = hashMapOf(
+            "Mombasa" to "001",
+            "Kwale" to "002",
+            "Kilifi" to "003",
+            "Tana River" to "004",
+            "Lamu" to "005",
+            "Taita Taveta" to "006"
+        )
 
-        private val counties = arrayListOf("Mombasa", "Kwale", "Kilifi", "Tana River", "Lamu", "Taita Taveta", "Garissa",...)
-
-        private val countyCodes = arrayListOf("001","002","003","004","005", "006", "007",...)
-
-        fun counties(): List<String> {
+        fun getCounties(): HashMap<String, String> {
             return counties
         }
 
-        fun countyCodes(): List<String> {
-            return countyCodes
-        }
-
-        fun getCountyCode(county: String): String {
-            return when (county) {
-                counties[0] -> {
-                    return countyCodes[0]
+        fun getCountyName(code: String): String {
+            var county: String? = null
+            counties.forEach {
+                if (it.value == code) {
+                    county = it.key
                 }
-                counties[1] -> {
-                    return countyCodes[1]
-                }
-                counties[2] -> {
-                    return countyCodes[2]
-                }
-
-                ...
             }
+            return county ?: "not found"
         }
 
-        fun getCountyName(countyCode: String): String {
-            return when (countyCode) {
-                countyCodes[0] -> {
-                    return counties[0]
+        fun getCountyCode(name: String): String {
+            var code: String? = null
+            counties.forEach {
+                if ((it.key).lowercase() == name.lowercase()) {
+                    code = it.value
                 }
-                countyCodes[1] -> {
-                    return counties[1]
-                }
-                countyCodes[2] -> {
-                    return counties[2]
-                }
-
-                ...
             }
+            return code ?: "not found"
         }
+    }
+}  
+```
 
-        fun countiesWithCodes(): List<County> {
-        return arrayListOf(
-            County(counties[0], countyCodes[0]),
-            County(counties[1], countyCodes[1]),
-            County(counties[2], countyCodes[2]),
-            
-            ...
-        )
-        }
- ```
-
-### Step 3 - Using the Library Locally
+### Step 3 - Using the Library locally
 If you want to use the library locally in your project (where you have created the library), include this in your app-level `build.gradle`:
 
-`implementation project(':MODULE_NAME')`
+```gradle
+implementation project(':MODULE_NAME')
+```
 
 You should replace the name in the parenthesis with the name of the module that you created and it should be prepended with a colon.
 
 After a successful sync, try using the library on your project Activities or Fragments, it should work as expected.
 
-### Step 4 - Publishing the Library
+### Step 4 - Publishing the library
 For now, the library can only be used locally in our project. If we want to share the library so that other developers can use it on their projects, we have to publish it to a remote repository.
 
 You can publish libraries to either:
@@ -122,7 +102,7 @@ You can publish libraries to either:
 
 For this tutorial, we will publish our library to Jitpack which requires us to push our code to Github. There is an amazing plugin that can  make it easier to push our library on Github.
 
-Add this plugin to your library module gradle file. 
+Add this plugin to your library module gradle file:
 
 ```gradle
 plugins {
@@ -171,17 +151,19 @@ In this step, commit your work using git, then `Share` the Project to Github.
 
 ![Push Github](engineering-education/understanding-how-to-create-and-publish-your-own-android-library/share_project_github.png)
 
-> Make sure the project is public and note that the name that you'll pass there while sharing the project will be used in the library dependency link.
+> Make sure the project is public and note that the name that you'll pass while sharing the project will be used in the library dependency link.
 
 #### Creating a release
-To make our library functional, we need to create a release on Github. Go to your newly created repository and on your right side, click on `create a new release`. Releases will determine the version of our library.
+To make our library functional, we need to create a release on Github. Go to your newly created repository and on your right side, click on `create a new release`. 
 
-Click on `Choose a tag` and enter your initial version of the library and click Enter. Also, enter the title of your release and a description of the library. Finally, click on `Publish release` to publish.
+Releases will determine the version of our library.
+
+Click on `Choose a tag` and enter your initial version of the library and click `Enter`. Also, enter the title of your release and a description of the library. Finally, click on `Publish release` to publish.
 
 ![Release](engineering-education/understanding-how-to-create-and-publish-your-own-android-library/release.png)
 
 #### Finalizing with Jitpack.io
-First of all, copy the URL of your repository - for this case, my URL is `https://github.com/JoelKanyi/KenyanCounties`
+First of all, copy the URL of your repository - for this case, my URL is `https://github.com/JoelKanyi/KenyanCounties`.
 
 Go to [Jitpack](https://search.maven.org/) and search for your `repository` URL.
 
