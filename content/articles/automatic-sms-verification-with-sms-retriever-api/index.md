@@ -31,7 +31,7 @@ For mobile number verification, you need to implement the client side first. Aft
 - Users experience is smooth and almost effortless when using the app with this feature
 ### Step 1. Create a new Android studio project
 
-![Create Project](/automatic-sms-verification-with-the-sms-retriever-api-in-android/create-project.png)
+![Create Project](/automatic-sms-verification-with-the-sms-retriever-api/create-project.png)
 
 
 ### Step2: Put dependencies on build.gradle file
@@ -235,7 +235,7 @@ u0tUcRo4UQ7
 
 On running the app, this is what to expect:
 
-![Screen One](/automatic-sms-verification-with-the-sms-retriever-api-in-android/screen-one.png)
+![Screen One](/automatic-sms-verification-with-the-sms-retriever-api/screen-one.png)
 
 You can find the whole project on [GitHub](https://github.com/robert-muriithi/SmsRetriverApiDemo.git)
 
