@@ -15,7 +15,7 @@ images:
     alt: Learn how to set up Linux's Quagga Routing Suite Hero Image
 ---
 Quagga is a free and open-source project that gives directed assistance to Linux clients. 
-It's presently one of the most generally utilized open-source drives. For instance, this specialized gathering has created Open Shortest Path First and Routing Information Protocol just as Border Gateway Protocol, Intermediate System to Intermediate System, and Multiprotocol Label Switching. 
+It's presently one of the most generally utilized open-source drives. For instance, this specialized gathering has created some crucial routing protocals that we will have a look at later in this article. 
 Virtual JUNIPER terminal or solicitation line interface is utilized to mastermind shows in this variant of the program. 
 Utilizing a solicitation line interface, we'll tell you the best way to add 'Quagga' to the Ubuntu working system.
 
@@ -31,11 +31,7 @@ Utilizing a solicitation line interface, we'll tell you the best way to add 'Qua
   - [Further reading](#further-reading)
 ### Installation 
 You might get everything rolling with Quagga by beginning from the source code; notwithstanding, it will be conveyed to you as a `deb/matched` pack here. 
-Before we install Quagga in your linux machine we have to check its status first and that is achieved by running the code below.
-```
-# apt-cache depends quagga
-```
-- The accompanying picture shows the aftereffects of running the recently referenced command.
+Before we install Quagga in your linux machine we have to check its status first and that is achieved by running a simple code like demonstrated in the image.
   ![installation](/engineering-education/learn-how-to-set-up-linux-quagga-routing-suite/installation.png "installation")
 To Istall Quagga run the below code in your terminal. 
 ```
@@ -89,20 +85,10 @@ The going with picture shows the daemons' record's default settings. The default
 The following is an illustration of an arrangement record that has OSPF and RIP empowered.
 ![daemonsFile2](/engineering-education/learn-how-to-set-up-linux-quagga-routing-suite/dF2.png)
 The Quagga suite's daemons will use the TCP show and tune in on ports 2600 to 2800.
-```
-root@debian:/etc/quagga $cat /etc/services | grep zebra
-
-ripd              2602/tcp    # ripd vty 
-ospfd             2604/tcp    # ospfd vty
-bgpd              2605/tcp    # bgpd vty 
-isisd             2608/tcp    # isisd vty 
-zebra             2601/tcp    # zebra vty
-```
+- Refer to the below image to view the changes.
 ![services](/engineering-education/learn-how-to-set-up-linux-quagga-routing-suite/services.png)
-Utilize the accompanying order to dispatch the Quagga steering suite.
-```
-$sudo /etc/init.d/quagga restart
-```
+Utilize the accompanying image inorder to dispatch the Quagga steering suite.
+
 ![quaggaStarting](/engineering-education/learn-how-to-set-up-linux-quagga-routing-suite/quaggaStarting.png)
 We may make sure that daemons are working viably by using the netstat tool.
 ```
