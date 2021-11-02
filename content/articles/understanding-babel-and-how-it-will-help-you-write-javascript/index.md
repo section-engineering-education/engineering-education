@@ -49,7 +49,7 @@ There are plugins for Webpack, Gulp, Grunt, Sublime, Webstorm, and a variety of 
 ### Classes
 JavaScript does not have any classes. The fact that objects inherit directly from one another means that any object can be the parent (superclass) of any other object in the system.
 
-Any function can be a constructor function, and calling it with the `new` keyword will result in the creation of a new object. You may learn more about object orientation in the in the official documentation - Object Orientation portion, which is available [here](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object-oriented_JS).
+Any function can be a constructor function, and calling it with the `new` keyword will result in the creation of a new object. You may learn more about object orientation in the official documentation - Object Orientation portion, which is available [here](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object-oriented_JS).
 
 This is all amazing in JavaScript, but it makes C# and Java devs a nervous, which is understandable. ES6 introduces the class keyword. This allows us to define functions that can only be used as constructors and nothing else.
 
