@@ -6,7 +6,7 @@ url: /apriori-algorithm-in-python/
 title: Getting started with Apriori algorithm in python
 description: In this article, we shall learn the intuition behind the apriori algorithm and later implement it in python.
 author: 
-date: 2021-09-21T00:00:00-00:30
+date: 2021-11-02T00:00:00-14:35
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -141,3 +141,6 @@ output_DataFrame.nlargest(n = 10, columns = 'Lift')
 ### Conclusion
 This article looked at the general intuition behind the apriori algorithm and showed how we could implement this algorithm in python using a transactional dataset.
 
+
+---
+Peer Review Contributions by: [Jerim Kaura](/engineering-education/authors/jerim-kaura/)
