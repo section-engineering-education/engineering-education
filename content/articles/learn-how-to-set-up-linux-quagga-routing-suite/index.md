@@ -14,37 +14,41 @@ images:
   - url: /engineering-education/learn-how-to-set-up-linux-quagga-routing-suite/hero.png
     alt: Learn how to set up Linux's Quagga Routing Suite Hero Image
 ---
-Quagga is a free and open-source project that gives directed assistance to Linux clients. 
-It's presently one of the most generally utilized open-source drives. For instance, this specialized gathering has created some crucial routing protocals that we will have a look at later in this article. 
-Virtual JUNIPER terminal or solicitation line interface is utilized to mastermind shows in this variant of the program. 
-Utilizing a solicitation line interface, we'll tell you the best way to add 'Quagga' to the Ubuntu working system.
+Quagga is a popular open source project for providing routing services on the Linux platform. It is made up of several components for various dynamic protocols such as Open Shortest Path First (OSPF), Routing Information Protocol (RIP), Border Gateway Protocol (BGP), Intermediate System to Intermediate System (IS-IS), and Multiprotocol Label Switching (MPLS). It partially uses the same virtual terminal or CLI (vty/vtysh) for protocol configuration as CISCO/JUNIPER.
+We will install Quagga routing suite on Ubuntu in this article.
 
-### Table of content
 - [Introduction](#introduction)
-- [Table of content](#table-of-content)
 - [Installation](#installation)
 - [Configuration](#configuration)
   - [Zebra daemon](#zebra-daemon)
-- [Ospfd daemon](#ospfd-daemon)
+  - [Ospfd daemon](#ospfd-daemon)
   - [Ripd daemon](#ripd-daemon)
 - [Conclusion](#conclusion)
   - [Further reading](#further-reading)
 ### Installation 
-You might get everything rolling with Quagga by beginning from the source code; notwithstanding, it will be conveyed to you as a `deb/matched` pack here. 
-Before we install Quagga in your linux machine we have to check its status first and that is achieved by running a simple code like demonstrated in the image.
+Quagga can be installed from source code, but we'll use the `deb/binary` package in this article. To check the Qugaaga package's dependencies, run the command below.
+```
+#apt-cache depends quagga
+```
+- Output of the above command is shown below.
   ![installation](/engineering-education/learn-how-to-set-up-linux-quagga-routing-suite/installation.png "installation")
-To Istall Quagga run the below code in your terminal. 
+- Run following command to install Qugaaga routing software. 
 ```
-# apt-get install quagga quagga-doc
+#apt-get install quagga
 ```
-The accompanying picture shows the Quagga bundle establishment measure.
+Quagga package installation is shown in following figure.
 
 ![installation2](/engineering-education/learn-how-to-set-up-linux-quagga-routing-suite/installation2.png)
 ### Configuration
-Except if a couple of bit choices are empowered, linux-based gadgets won't uphold parcel sending in their default design. 
-Utilizing the guidelines showed in the image, empower parcel sending for IPv4. The changed worth will stay in the '/and so forth/sysctl.conf' record for the remainder of time.
+Unless a few kernel settings are enabled, linux-based devices do not support packet forwarding by default.
+Using the commands indicated in the figure, enable packet forwarding for IPv4. Setting will be permanently saved in `/etc/sysctl.conf` file.
+```
+$echo "net.ipv4.conf.all.forwarding=1" | sudo tee -a /etc/sysctl.conf 
+$echo "net.ipv4.conf.default.forwarding=1" | sudo tee -a /etc/sysctl.conf 
+$sudo sysctl -p
+```
 ![configuration](/engineering-education/learn-how-to-set-up-linux-quagga-routing-suite/configuration.png)
-To utilize Quagga directing programming on Linux, we should initially empower parcel sending. Quagga daemon must be arranged as it continues to work on Ubuntu.
+We'll now configure Quagga routing software to run on Linux after enabling packet forward. To run the Quagga daemon on Ubuntu, you'll need to do the following.
 ```
 ripngd.conf
 ospfd.conf
@@ -55,11 +59,11 @@ vytsh.conf
 isis.conf
 babelid.conf
 ```
-This is a rundown of arrangement documents that the client might make or replicate from the model's catalog to the quagga setup records registry on the client's framework.
+User can create these configuration files or copy these sample files from `/usr/share/doc/quagga/examples/` path to `/etc/quagga/*.conf` path.
 ![config2](/engineering-education/learn-how-to-set-up-linux-quagga-routing-suite/config2.png)
-The accompanying picture tells the best way to duplicate records inside the `/etc/quagga/` registry.
+Copying sample files under `/etc/quagga/` path is shown in following figure.
 ![duplicateRecords](/engineering-education/learn-how-to-set-up-linux-quagga-routing-suite/duplicateRecords.png)
-After putting the examples in the `/etc/quagga/` index, rename the documents in the envelope.
+Rename samples files after copying in `/etc/quagga` directory.
 ```
 root@debian:/etc/quagga$sudo mv ripngd.conf.sample ripngd
 root@debian:/etc/quagga$sudo mv ospfd.conf.sample ospfd.conf
@@ -71,44 +75,57 @@ root@debian:/etc/quagga$sudo mv isisd.conf.sample isisd.conf
 root@debian:/etc/quagga$sudo mv babeld.conf.sample babeld.conf
 ```
 ![rename](/engineering-education/learn-how-to-set-up-linux-quagga-routing-suite/rename.png)
-Daemons running as quagga approach documents as Quagga, which permits them to adjust record possession and consents. Ubuntu makes the client quagga when putting in new bundles.
+Because the Quagga daemon runs as quagga, it changes the ownership and permissions of configuration files. During package installation, Ubuntu creates the user quagga.
 ![daemons](/engineering-education/learn-how-to-set-up-linux-quagga-routing-suite/daemons.png)
-To change the proprietor and authorizations, run the accompanying orders in the/and so on/quagga envelope.
+Run following commands under `/etc/quagga` folder to change owner ship and permission.
 ```
-sudo chown quagga:quagga/var/log/quagga
+$sudo chown quagga:quagga *
 ```
 ![user-group](/engineering-education/learn-how-to-set-up-linux-quagga-routing-suite/user-group.png)
-The records as of now have the consent "640" set. 
-Finally, we should start or stop explicit Quagga daemons. The Zebra daemon is a fundamental piece of the controlling suite, and in light of everything, it ought to be engaged in the, etc/quagga/daemons arrangement record. There could be no other show daemons assigned in the record for this article. 
-The going with picture shows the daemons' record's default settings. The default game plan report cripples every coordinating daemon.
+The permission "640" has already been assigned to the files.
+Finally, we must enable or disable Quagga's many daemons. Because the Zebra daemon is an essential component of the routing suite, it must be enabled in the /etc/quagga/daemons file. Only OSPF and RIP dynamic protocol daemons are enabled in the file in this post.
+The following snapshot depicts the default setting of the daemons file. The default configuration file disables all routing daemons.
 ![daemonsFile](/engineering-education/learn-how-to-set-up-linux-quagga-routing-suite/daemonsFile.png)
-The following is an illustration of an arrangement record that has OSPF and RIP empowered.
+Configuration file with OSPF and RIP enabled is shown below.
 ![daemonsFile2](/engineering-education/learn-how-to-set-up-linux-quagga-routing-suite/dF2.png)
-The Quagga suite's daemons will use the TCP show and tune in on ports 2600 to 2800.
-- Refer to the below image to view the changes.
-![services](/engineering-education/learn-how-to-set-up-linux-quagga-routing-suite/services.png)
-Utilize the accompanying image inorder to dispatch the Quagga steering suite.
-
-![quaggaStarting](/engineering-education/learn-how-to-set-up-linux-quagga-routing-suite/quaggaStarting.png)
-We may make sure that daemons are working viably by using the netstat tool.
+Different daemons of Quagga suite will run on TCP protocol and listening ports will be from 2600-2800.
 ```
-netstat -nlptu | grep 260
+@root-debian:/etc/quagga$ cat /etc/services | grep zebra
+
+zebrasrv       2600/tcp      # zebra service
+zebra          2601/tcp      # zebra vty
+ripd           2602/tcp      # ripd vty (zebra)
+ripngd         2603/tcp      # ripngd vty (zebra)
+ospfd          2604/tcp      # ospfd vty (zebra)
+bgpd           2605/tcp      # bgpd vty (zebra)
+ospf6d         2606/tcp      # ospf6d vty (zebra)
+isisd          2608/tcp      # ISISd vty (zebra)
+```
+![services](/engineering-education/learn-how-to-set-up-linux-quagga-routing-suite/services.png)
+Start Quagga routing suite using following command.
+```
+$sudo /etc/init.d/quagga restart
+```
+![quaggaStarting](/engineering-education/learn-how-to-set-up-linux-quagga-routing-suite/quaggaStarting.png)
+Using netstat command, we can confirm successful running of daemons.
+```
+$sudo netstat -antp | grep 260
 ```
 ![netstat](/engineering-education/learn-how-to-set-up-linux-quagga-routing-suite/netstat.png)
-The accompanying strategies are accessible for arranging Quagga directing.
+Quagga routing can be configured using following ways.
 ```
 vtysh
 
 telnet (telnet 127.0.0.1 ospfd/ripd/bgpd/zebra)
 ```
-In order to manage all of your daemons at once, use `vtysh`. The accompanying order will dispatch a virtual shell for arranging Quagga.
+vtysh provides a central location for all daemon configuration. To start a virtual shell (vtysh) for Quagga configuration, type the following command in a terminal.
 ```
 $ sudo vtysh
 ```
 ![vtysh](/engineering-education/learn-how-to-set-up-linux-quagga-routing-suite/vtysh.png)
-There are many ways to organise files using vtysh.
+Zebra, ospfd and ripd can be configured using vtysh.
 ![available-Daemons](/engineering-education/learn-how-to-set-up-linux-quagga-routing-suite/available-daemons-in-vtysh.png)
-The subsequent illustrations explain where to organize daemons using the telnet protocol.
+Daemons configuration using telnet command is shown in following figures.
 #### Zebra daemon
 ```
 #telnet localhost 2601
@@ -126,12 +143,13 @@ The subsequent illustrations explain where to organize daemons using the telnet 
 ![ripd](/engineering-education/learn-how-to-set-up-linux-quagga-routing-suite/ripd.png)
 
 ### Conclusion
-Quagga steering suite is generally utilized on the Linux stage to perform dynamic directing. In this article, we learned the establishment, design, and utilization of the Quagga steering suite. It upholds various ways of arranging running conventions like Open Short Path First and Routing Information Protocol. Can utilize Quagga-based steering gadgets for little and medium endeavors.
+The Quagga routing suite is primarily used to execute dynamic routing on the Linux platform. We learnt how to install, configure, and use the Quagga routing suite in this tutorial. It allows you to configure routing protocols like OSPF and RIP in a variety of ways. Small and medium businesses can benefit from Quagga-based routing devices (SME).
 
 #### Further reading
 [How to set up Squirrelmail on a Linux computer](https://squirrelmail.org/docs/admin/admin-3.html)
 
 Happy Coding!
+
 
 ---
 Peer Review Contributions by: [Dawe Daniel](/engineering-education/authors/dawe-daniel/)
