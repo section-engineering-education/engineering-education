@@ -1,0 +1,1 @@
+Ann is a data scientist. She is passionate about data collection, sorting, and analysis. She has a passion in using data to address real world issues.
