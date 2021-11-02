@@ -1,4 +1,4 @@
-In machine learning, the goal is to predict the target variable as close to the ground truth possible. Thus, the model we adopt for prediction should have reasonable accuracy. As the input values are fixed, to improve the quality of the model, all we can do is to tune its parameters such that the deviation of the predicted value from the actual value is highly minimized.  
+In machine learning, the goal is to predict the target variable as close to the ground truth as possible. Thus, the model we adopt for prediction should have reasonable accuracy. As the input values are fixed, to improve the quality of the model, all we can do is to tune its parameters such that the deviation of the predicted value from the actual value is highly minimized.  
 
 The variation of the expected value from the actual value on a single training example is called the **loss function**. We denote this function as $L(ŷ,y)$. Summing up the **loss functions** of the entire training set and averaging them over the total number of all the training examples in that set, we obtain a function known as the **cost function**. The *cost function* measures how well we are doing in the entire training dataset. 
 
@@ -31,13 +31,13 @@ $L(\hat{y}^{(i)}, y^{(i)})= (h_\theta(x^{(i)})-y^{(i)})^{2}$
 
 $J(\theta) = \frac{1}{m} \sum_{i=1}^{m} L(\hat{y}^{(i)}, y^{(i)})$
 
-Now, our goal is to find a set of $\theta$ values for which the cost function $J(\theta)$ is minimized. To find such a set using the gradient descent algorithm, we start by initializing $\theta$ to some random values on our cost function. We then use the gradient to gradually move towards the local minimum of our cost function $J(\theta)$. Finally, the cost function is minimized at the local optimum, and the $\theta$ values at that point of the cost function are the optimal value for the $\theta$.
+Our goal is to find a set of $\theta$ values for which the cost function $J(\theta)$ is minimized. To find such a set using the gradient descent algorithm, we initialize $\theta$ to some random values on our cost function. We then use the gradient to gradually move towards the local minimum of our cost function $J(\theta)$. Finally, the cost function is minimized at the local optimum, and the $\theta$ values at that point of the cost function are the optimal value for the $\theta$.
 
-Let's try to understand the above discussion using a plot of cost function $J(\theta)$. Assuming simple linear regression, we want to learn the best two $\theta$ values,i.e., $\theta_0$ and $theta_1$, such that the cost function is minimized. In this case our cost function will be denoted as, $J(\theta_0, \theta_1)$. The plot of this function is as in the figure below.
+Let us understand the above discussion using a cost function $J(\theta)$ plot. Assuming simple linear regression, we want to learn the best two $\theta$ values,i.e., $\theta_0$ and $theta_1$, minimizing the cost function. In this case our cost function will be denoted as, $J(\theta_0, \theta_1)$. The plot of this function is as in the figure below.
 
 ![plot](/engineering-education/gradient-descent-algorithm-in-python/cost-function-plot.png)
 
-In the above three dimensional plot, we have all $\theta$'s on the horizontal axis and $J(\theta_0, \theta_1)$, the cost function we want to minimize, on the verticle axis. On one of the two horizontal axes, we have the possible values for $\theta_0$, and on the other, we have the possible values for $\theta_1$.
+In the above three dimensional plot, we have all $\ theta$s on the horizontal axis and $J(\theta_0, \theta_1)$, the cost function we want to minimize, on the verticle axis. Thus, on one of the two horizontal axes, we have the possible values for $\theta_0$, and on the other, we have the possible values for $\theta_1$.
 
 Now, to find the $\theta$ values corresponding to minimum value of our cost function $J(\theta_0, \theta_1)$.
 We start by initializing $\theta_0$ and $\theta_1$ to some random values on the $J(\theta_0, \theta_1)$, i.e.;
@@ -48,7 +48,7 @@ We then determine the derivative of the cost function $J(\theta_0, \theta_1)$ at
 
 Using these gradients and our cost function, we take a step towards the direction in which the cost function gradually decreases with a high value. As a result, we end up landing in a new position on the cost curve. In the process, the values of $\theta_0$ and $\theta_1$ are updated. 
 
-The process repeats itself until the algorithm reaches or approches close to the global minimum. Below is a mathematical representation of the gradient descent algorithm.
+The process repeats itself until the algorithm reaches or approaches close to the global minimum. Below is a mathematical representation of the gradient descent algorithm.
 
 ## The gradient descent algorithm
 
@@ -66,27 +66,28 @@ The learning rate determines the step size we take down the slope. Choosing a sm
 
 
 ## Implementing the gradient descent
-In this session, we shall assume we are given a cost function of the form:
-$J(\theta) = (\theta - 5)^2$ and $\theta$ takes values in the range 10.
-Let's start by importing libraries we shall work with
+In this session, we shall assume we are given a cost function of the form: $J(\theta) = (\theta - 5)^2$ and $\theta$ takes values in the range 10. Let us start by importing libraries we shall work with
+
 ```python
 import numpy as np
 import matplotlib.pyplot as plt
-
 ```
+
 ## Generate some random data points.
+
 ```python
 theta = np.arange(12)
 #cost function
 J = (theta - 5)**2
 print(theta,J)
-
 ```
+
 ### Output
 ![output](/engineering-education/gradient-descent-algorithm-in-python/output.png)
 
 
 ### Visualizing the cost function
+
 ```python
 # Finding the value of x that minimizes J
 plt.style.use("seaborn")
@@ -96,13 +97,14 @@ plt.ylabel('J (θ) ')
 plt.xlabel("θ")
 # printing the plot
 plt.show()
-
 ```
+
 ### Output
 ![cost curve](/engineering-education/gradient-descent-algorithm-in-python/cost_function.png)
-Our cost function is convex, and we can see its minimum is at $\theta=5$. So now we shall run gradient descent, which should return a value equals to or very close to 5.
+Our cost function is convex, and we can see its minimum is at $\theta=5$. So now we shall run gradient descent, which should return a value equal to or very close to 5.
 
 ### Obtaining the optimal $\theta$ using gradient descent
+
 ```python
 error=[]
 # initializing beta to initial value
@@ -115,10 +117,10 @@ for i in range (50):
   J = (beta -5 )**2
   error.append(J)
   print(beta)
-
-
 ```
-Running the code above, we obtain our optimal $\theta$ as $\theta=4.999928637615365$. This value is very close to the real value, and therefore the gradient descent did great work. 
+
+Running the code above, we obtain our optimal $\theta$ as $\theta=4.999928637615365$. This value is very close to the real value, and therefore the gradient descent did excellent work. 
+
 ### Viewing the error plot
 
 ```python
@@ -127,7 +129,7 @@ plt.plot(error)
 ```
 
 ![gradient descent](/engineering-education/gradient-descent-algorithm-in-python/error.png)
-From this plot, we notice that the error was initially high, but with each run of gradient descent, it decreases until it's at its minimum value where it can change anymore.
+From this plot, we notice that the error was initially high, but with each run of gradient descent, it decreases until it is at its minimum value where it can change anymore.
 
 ### Conclusion
 This article looked at the theory behind the gradient descent algorithm and explained how this algorithm works. We then learned how to use python to obtain the optimal value of the learning parameter; for our case, we assume a simple linear regression of a model given cost function. To this fur, we reach the end of our learning journey.
