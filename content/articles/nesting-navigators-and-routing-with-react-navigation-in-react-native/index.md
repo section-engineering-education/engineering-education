@@ -60,7 +60,7 @@ Now we need to open the `app.js` and then replace its content. The content that 
 nano App.js
 ```
 
-The following code must be copied into the app.js file that is now open in order to be used, as previously mentioned:
+The following code must be copied into the app.js file that is now open to be used, as previously mentioned:
 
 ```js
 import 'react-native-gesture-handler';
@@ -111,7 +111,7 @@ export default App;
 
 It will be necessary for your app starting with the HomeScreen. To see how many workers are already connected to your network, go to the HomeScreen.
 
-Then, in the HomeScreen.js you will have to create as a new file , paste the App.js code and open:
+Then, in the HomeScreen.js you will have to create a new file, paste the App.js code and open:
 
 ```
 nano HomeScreen.js
@@ -204,7 +204,7 @@ export const NewWorkerContex = React.createContext();
 
 The `NavigationContainer` is wrapped in a `Context.Provider` component so that any child in the component tree can listen for modifications to the context, and `NewWorkerContext` is created as a new Context object.
 
-After adding `NewWorkerContext` to app we can also use it in our `HomeScreen` and` NewWorkerScreen`. If the currentWorkers or possibleWorkers list changes, the HomeScreen and NewWorkerContex will be able to refer to the new list.
+After adding `NewWorkerContext` to the app we can also use it in our `HomeScreen` and` NewWorkerScreen`. If the currentWorkers or possibleWorkers list changes, the HomeScreen and NewWorkerContex will be able to refer to the new list.
 
 ```js
 import 'react-native-gesture-handler';
@@ -257,7 +257,7 @@ Now, in NewWorkerScreen.js, build a button for adding workers:
   onPress={() => this.props.navigation.navigate('Home')}
 />
 ```
-Now thats it, you can now navigate from one screen to another as well as adding data.
+Now that's it, you can now navigate from one screen to another as well as add data.
 
 ### Conclusion
 
