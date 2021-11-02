@@ -66,7 +66,7 @@ import './App.css' // for CSS
 
 function App() {
   return (
-    <div className = "App">
+    <div className="App">
       
     </div>
   );
@@ -74,6 +74,7 @@ function App() {
 
 export default App;
 ```
+
 We then import our prime react themes and icons
 
 ```javascript
@@ -118,7 +119,7 @@ const Navigation = () => {
            <header>
               <nav>
                 <h1>Prime React</h1>
-                 <ul></ul>
+                <ul></ul>
               </nav>
            </header>
         </div>
@@ -146,7 +147,7 @@ Within the div tag of our `app.js` file, we add our Navigation element:
 
 CSS styles can be added to change the pre-defined styles.
 
-#### Step 5 - Making our Navigation Bar responsive 
+#### Step 5 - Making use of PrimeReact Components
 To add PrimeReact components to our project, we first need to import them into our project. We will be using some prime react components such as Menubar, ProgressBar, and Button components in this tutorial.
 
 To use the Menubar component, we import it inside our `Nav.js` file inside our component folder, then add it within our nav tag HTML element to make it display within our Navigation 
@@ -198,7 +199,7 @@ const Navigation = () => {
                           <Menubar
                               model={list}
                               start={<InputText placeholder="Search" type="text"/>}
-                              end={<Button label="PrimeReact" icon="pi "/>}
+                              end={<Button label="PrimeReact" icon="pi"/>}
                           />
                         </li>    
                     </ul>
