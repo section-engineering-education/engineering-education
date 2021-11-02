@@ -1,4 +1,22 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /using-prime-react-in-react-applications/
+title: How to use PrimeReact in React Applications
+description: In this article, we will create a Responsive Navbar in a React Application using a Library called Prime React. PrimeReact is a open source library which has styled components.
+author: gerald-ezenagu
+date: 2021-11-02T00:00:00-08:03
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/using-prime-react-in-react-applications/hero.jpg
+    alt: How to use PrimeReact in React Applications Hero Image
+---
+
 React is all about components, these help us to reuse our JavaScript code over and over. It also maintains and updates the page. React is used to build single-page applications and user interfaces.
+<!--more-->
 
 PrimeReact is like CSS, which is used in styling the user interface of our application. But unlike CSS, PrimeReact has a pre-defined style in each component, which we can use in our React application.
 
@@ -251,3 +269,6 @@ We learned from this tutorial:
 - How to create a responsive navigation bar.
 
 Happy Coding!
+
+---
+Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)
