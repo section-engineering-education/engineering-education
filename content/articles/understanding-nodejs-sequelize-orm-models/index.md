@@ -1,8 +1,9 @@
 ### Introduction
-[Sequelize](https://sequelize.org/) is an Object Relational Mapper for Node.js. Sequelize lets us connect to a database and perform operations without writing raw SQL queries. It abstracts SQL queries and makes it easier to interact with database models as objects. This article will help you understand Sequelize models, from model definition to model usage. Sequelize works with all the SQL-based databases. In this tutorial, I will use MySQL. However, you can use any SQL-based database of your choice.
+[Sequelize](https://sequelize.org/) is an Object Relational Mapper for Node.js. Sequelize let's us connect to a database and perform operations without writing raw SQL queries. It abstracts SQL queries and makes it easier to interact with database models as objects. This article will help you understand Sequelize models, from model definition to model usage. Sequelize works with all the SQL-based databases. In this tutorial, I will use MySQL. However, you can use any SQL-based database of your choice.
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
+- [Objectives](#objectives)
 - [Sequelize set up](#sequelize-set-up)
 - [Introduction to models in Sequelize](#introduction-to-models-in-sequelize)
 - [Sequelize data types](#sequelize-data-types)
@@ -11,7 +12,6 @@
 - [Sequelize model associations](#sequelize-model-associations)
 - [App testing](#app-testing)
 - [Conclusion](#conclusion)
-- [Objectives](#objectives)
 
 ### Prerequisites
 For easier follow up on this article, you may require the following:
@@ -23,10 +23,10 @@ For easier follow up on this article, you may require the following:
 
 ### Objectives
 At the end of this tutorial, you should be able to:
-- Understand different data types and use them in the model definition
-- Validate models
-- Define model associations
-- Define models in Sequelize
+- Understand different data types and use them in the model definition.
+- Validate models.
+- Define model associations.
+- Define models in Sequelize.
 - Generate database schema from Sequelize models.
 
 ### Sequelize set up
@@ -89,7 +89,7 @@ sequelize db:create
 ```
 
 ### Introduction to models in Sequelize
-Models are the backbone of any ORM. Therefore, you must understand how to work with models extensively to realize the full benefits of ORM. Models are database-independent. A model is an abstraction that reflects an entity or a table in the database. A model in Sequelize defines the entity's name in the database, the entity attributes, and their data types.
+Models are the backbone of any Object-Relational Mapping (ORM). Therefore, you must understand how to work with models extensively to realize the full benefits of ORM. Models are database-independent. A model is an abstraction that reflects an entity or a table in the database. A model in Sequelize defines the entity's name in the database, the entity attributes, and their data types.
 
 In this tutorial, let's consider a database that stores users and blog posts. We need two tables to store users and posts. There will be a one-to-many relationship between the entity `User` and the entity `Post`. For this tutorial, we will keep it simple.
 
@@ -176,7 +176,7 @@ The app automatically connects to the database and synchronizes the models with 
 Synchronization in production can be destructive and is not recommended. Use synchronization at the development level only. In production, implement synchronization with [Migrations](https://sequelize.org/master/manual/migrations.html).
 
 ### Sequelize model constraints and validations
-Constraints are data rules defined at the SQL level. If the SQL query does not meet the constraint rules, the database throws an error. Sequalize forwards the error to Javascript. Open `user.js` and add constraints to the `email` attribute, as shown below.
+Constraints are data rules defined at the SQL level. If the SQL query does not meet the constraint rules, the database throws an error. Sequalize forwards the error to JavaScript. Open `user.js` and add constraints to the `email` attribute, as shown below.
 
 ```js
 email:{
@@ -188,7 +188,7 @@ email:{
 
 A database error will be thrown if the email is null or not unique in the above example.
 
-Validation is done at the Javascript level by Sequelize. Sequelize provides built-in validator functions. You can also create your custom validation functions. SQL queries will execute if only the validation passes. Below are some of the commonly used Sequelize built-in validators. For more Sequelize validators, check the [documentation](https://sequelize.org/master/manual/validations-and-constraints.html#per-attribute-validations).
+Validation is done at the JavaScript level by Sequelize. Sequelize provides built-in validator functions. You can also create your custom validation functions. SQL queries will execute if only the validation passes. Below are some of the commonly used Sequelize built-in validators. For more Sequelize validators, check the [documentation](https://sequelize.org/master/manual/validations-and-constraints.html#per-attribute-validations).
 
 ```js
 isAlphanumeric: true, // checks for alphanumeric characters only
@@ -306,7 +306,7 @@ app.get("/users", async(req,res) =>{
 
 On Postman, create a `GET` request with the endpoint location as `http://localhost:5005/users/`. You will get a JSON response with all the users in the database.
 
-![](/engineering-education/understanding-nodejs-sequelize-orm-models/postman-get-users.png)
+![users](/engineering-education/understanding-nodejs-sequelize-orm-models/postman-get-users.png)
 
 #### Edit user
 We will create an endpoint that will update the user details. The endpoint takes in data in JSON format. Add the code below in `app.js` and run the app.
@@ -333,7 +333,7 @@ app.put("/users/:id", async(req,res) =>{
 });
 ```
 
-On Postman, create a `PUT` request with the endpoint location as `http://localhost:5005/users/1`. The number at the end of the URL represents the primary key to the record to be updated. In the Body section, select `raw JSON` and insert the JSON data with the changes you want to make to the record.
+On Postman, create a `PUT` request with the endpoint location as `http://localhost:5005/users/1`. The number at the end of the URL represents the primary key to the record to be updated. In the body section, select `raw JSON` and insert the JSON data with the changes you want to make to the record.
 
 ```json
    {
@@ -366,7 +366,7 @@ app.post("/posts", async(req,res) =>{
 });
 ```
 
-On Postman, create a `POST` request with the endpoint location as `http://localhost:5005/posts/`. In the Body section, select `raw JSON` and insert the JSON data below.
+On Postman, create a `POST` request with the endpoint location as `http://localhost:5005/posts/`. In the body section, select `raw JSON` and insert the JSON data below.
 
 ```json
    {
@@ -424,4 +424,6 @@ On Postman, create a `DELETE` request with the endpoint location as `http://loca
 The final source code for `app.js` is available on [Github](https://github.com/Tsanguu/Node.js-Sequelize-Tutorial-1).
 
 ### Conclusion
-We have learned how Sequelize models work. Learn more on how to move your project to production using [Sequelize migrations](https://sequelize.org/master/manual/migrations.html) and [seeders](https://sequelize.org/master/manual/migrations.html#creating-the-first-seed). Seeders Allow the creation of dummy data on the database. The source code for the project is available on [Github](https://github.com/Tsanguu/Node.js-Sequelize-Tutorial-1). Happy coding.
+We have learned how Sequelize models work. Learn more on how to move your project to production using [Sequelize migrations](https://sequelize.org/master/manual/migrations.html) and [seeders](https://sequelize.org/master/manual/migrations.html#creating-the-first-seed). Seeders Allow the creation of dummy data on the database. The source code for the project is available on [Github](https://github.com/Tsanguu/Node.js-Sequelize-Tutorial-1).
+
+Happy coding.
