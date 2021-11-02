@@ -38,8 +38,8 @@ To follow through this tutorial, the reader should:
 For this article will use the Pycharm IDE, use this [page](https://www.jetbrains.com/pycharm/download/#section=windows) to download and install it on your machine.
 
 ### Pagination
-This is the process of splitting the content of a website or web application into discrete pages to make it more efficient to use and read when working with huge lists of data. Python Django comes with a pre-built class, **Paginator** for creating the paginations and managing the paginated data using the default styles. The process can be done either with **Class-Based Views** or **Function-Based Views** as will be discussed in the tutorial.
-Sometimes, one may want to customize and modified the pagination format, this is made possible using **Django REST Framework** which includes support for customized pagination styles. This pagination API may handle links that are embedded in the response's text or URLs that are contained in response headers like `Content-Range `or `Link`.
+This is the process of splitting the content of a website or web application into discrete pages to make it more efficient to use and read when working with huge lists of data. Python Django comes with a pre-built class, **Paginator** for creating the paginations and managing the paginated data using the default styles. This process can be done either with **Class-Based Views** or **Function-Based Views** or sometimes one may use the **Django REST Framework** to customize and modify the pagination format, as will be discussed in this tutorial.
+
 This splitting of web data has its own advantages:
 - Increases content readability by making websites and web apps that are not overcrowded with content making it easier for visitors to focus on small content at a time.
 - Reduces server load as it is easier to get a small amount of data from the database than retrieving all the information at once which may slow page loading.
@@ -115,7 +115,8 @@ class PostList(generic.ListView):
     template_name = 'index.html'
     paginate_by = 3
 ```
-To display the pagination on the screen, we will use the templates `index.html` file contained in the templates folder and add the code below.
+To display the paginated content on the screen, we will use the templates `index.html` file in the templates folder and add the code below.
+
 ```html
 {% extends "base.html" %}
 {% block content %}
@@ -169,6 +170,10 @@ To display the pagination on the screen, we will use the templates `index.html` 
 </div>
 {%endblock%}
 ```
+The code code is used to display what is in the database to the user using the template tags with inline CSS styling. The `{% extends% }` tag is used to instruct Django to inherit from the base.html file, we inject our content to other HTML files using the `{% block content %}` tag. Learn more about template tags from [here](https://docs.djangoproject.com/en/3.2/ref/templates/builtins/).
+
+A `for` loop is used to loop through the various fields from our `post` model, these fields are then fetched from the database using the model name and the field name i.e. `post.author`: fetches the name of the author of the article and displays it on the screen.
+
 Re-running the project the output below will be produced for class-based view pagination.
 ![Class Based Views](/engineering-education/custom-pagination-using-django-rest-framework/class_based.jpg)
 
@@ -422,6 +427,8 @@ Now, to display the post content on the homepage will use Vue js to render the s
     </body>
 </html>
 ```
+From the above code, we fetch the database fields using the `post` model followed by the field name and used vue to render the content depending on current page or the next/previous pages. More on how to use vue and Django REST Framework can be found [here](https://www.udemy.com/course/the-complete-guide-to-django-rest-framework-and-vue-js/?utm_source=adwords&utm_medium=udemyads&utm_campaign=LongTail_la.EN_cc.ROW&utm_content=deal4584&utm_term=_._ag_77879424134_._ad_535397245863_._kw__._de_c_._dm__._pl__._ti_dsa-1007766171312_._li_9073682_._pd__._&matchtype=b&gclid=Cj0KCQjww4OMBhCUARIsAILndv4-9Q4w804CQ1DfpSJK_IoVMnHWgLy5AA8oC7HXI6nEwIKk8jUZhbkaAk2zEALw_wcB).
+
 Re-running the program the following output should be displayed containing the next and previous buttons.
 ![Custom Pagination](/engineering-education/custom-pagination-using-django-rest-framework/custom_pagination.jpg)
 
