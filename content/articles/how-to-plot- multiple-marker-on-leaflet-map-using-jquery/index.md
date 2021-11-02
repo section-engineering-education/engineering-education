@@ -12,28 +12,24 @@ Don't want to feel left out? The reader should have prior knowledge about the fo
 - [CSS](https://developer.mozilla.org/en-US/docs/Web/css). 
 - [Bootstrap](https://getbootstrap.com/docs/5.0/getting-started/introduction/). 
 - [Leaflet Basics](https://www.section.io/engineering-education/building-simple-maps-using-leaflet-js/). 
-- Code editors like [_visual studio code_](https://code.visualstudio.com/download), [_sublime text_](https://www.sublimetext.com/3). 
+- [_visual studio code_](https://code.visualstudio.com/download), [_sublime text_](https://www.sublimetext.com/3). 
 
 ### Goal
 In this guide, we will show readers three ways to plot multiple markers on a leaflet map. At the end of the tutorial, the reader should be able to:
-- Create an OSM layer.
+- Add a tile layer.
 - Plot markers in their code with geojson using leaflet.
 - Upload geojson marker file to the map on the front end.
 - Plot markers as an input on the front end using jquery.
 ### Getting started
-#### Creating OSM layer
+#### Adding a tile layer
 To get running, we will initialise our HTML5 boilerplate and import leaflet.js JavaScript and CSS files using a content delivery network (CDN). [Here](https://leafletjs.com/download.html) is a link to downloading leaflet's JavaScript and CSS file. The reader needs to go through this [doc](https://www.section.io/engineering-education/building-simple-maps-using-leaflet-js/) for a better understanding.
 
 #### Example
 ```html
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Multiple Markers</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
         integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
         crossorigin="" />
@@ -66,16 +62,17 @@ body {
 ```
 ```javascript
 var map = L.map('map').setView([9.0820, 8.6753], 7)
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+L.tileLayer('https://{s}.tile-cyclosm.openstreetmap.fr/cyclosm/{z}/{x}/{y}.png', {
+	maxZoom: 20,
+	attribution: '<a href="https://github.com/cyclosm/cyclosm-cartocss-style/releases" title="CyclOSM - Open Bicycle render">CyclOSM</a> | Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 ```
 All this brought together and we should have our baselayer (OSM layer) ready as below;
 ![image](base-layer.jpg)
  #### Plotting markers with geojson using leaflet
- According to Wikipedia, "GeoJSON is an open standard format designed for representing simple geographical features, along with their non-spatial attributes. It is based on the JSON format". Websites like [geojson.io](https://geojson.io/#map=2/20.0/0.0) have simplified getting your desired format of geographic JSON data. Leaflet has made it easy to render this data on a map using a small line of code. 
+According to Wikipedia, "GeoJSON is an open standard format designed for representing simple geographical features, along with their non-spatial attributes. It is based on the JSON format". Websites like [geojson.io](https://geojson.io/#map=2/20.0/0.0) have simplified getting your desired format of geographic JSON data. Leaflet has made it easy to render this data on a map using a small line of code. 
  
- First, we'll have to import the JSON file. Importing a JSON file into javascript is done in various ways but for this section, we'll have to copy out its content and paste it within a given JavaScript variable. We have taken the liberty of getting a geojson with marker features to be used in the example below;
+First, we'll have to import the JSON file. Importing a JSON file into javascript is done in various ways but for this section, we'll have to copy out its content and paste it within a given JavaScript variable. We have taken the liberty of getting a geojson with marker features to be used in the example below;
  ```javascript
 var sample_json = {
     "type": "FeatureCollection",
@@ -179,11 +176,10 @@ Next, we'll create a modal embedded in a button. This modal will have the latitu
             <div class="modal-body">
                 <div class="container">
                     <br />
-                    <form name="" action="" method="POST">
-                        <input type="button" value="Add Row" onclick="addRow('dataTable')"
-                            class="btn btn-success btn-sm" />
-                        <input type="button" value="Delete Row" onclick="deleteRow('dataTable')"
-                            class="btn btn-danger btn-sm" />
+                    <form>
+                        <button type="button" onclick="addRow('dataTable')" class="btn btn-success btn-sm"> Add row </button>
+                        <button type="button" onclick="deleteRow('dataTable')" class="btn btn-danger btn-sm">
+                            Delete Row</button>
                         <br /><br />
                         <table>
                             <tr>
@@ -212,7 +208,7 @@ Next, we'll create a modal embedded in a button. This modal will have the latitu
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
+                <button type="button" class="btn btn-primary" data-dismiss="modal"
                     onclick="getInputValue();">Visualise</button>
             </div>
         </div>
@@ -295,14 +291,9 @@ function getInputValue() {
 ```
 When we bring all this individual features together, we should have:
 ```html
-<!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Multiple Marker</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
         integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
         crossorigin="" />
@@ -332,11 +323,10 @@ When we bring all this individual features together, we should have:
                                 <div class="modal-body">
                                     <div class="container">
                                         <br />
-                                        <form name="" action="" method="POST">
-                                            <input type="button" value="Add Row" onclick="addRow('dataTable')"
-                                                class="btn btn-success btn-sm" />
-                                            <input type="button" value="Delete Row" onclick="deleteRow('dataTable')"
-                                                class="btn btn-danger btn-sm" />
+                                        <form>
+                                            <button type="button" onclick="addRow('dataTable')" class="btn btn-success btn-sm"> Add row </button>
+                                            <button type="button" onclick="deleteRow('dataTable')" class="btn btn-danger btn-sm">
+                                                Delete Row</button>
                                             <br /><br />
                                             <table>
                                                 <tr>
@@ -395,6 +385,4 @@ The result of this is below:
 ![gif](marker.gif)
 
 #### Conclusion
-In conclusion, we learned how to add multiple markers using geojson, through file upload and with the use of a simple front-end modal, all with Vanilla javascript, jquery, bootstrap and leaflet.js.
-
-You can find the entire code [here](https://github.com/muyiwexy/plot-multiple-markers).
+In conclusion, we learned how to add multiple markers using geojson, through file upload and with the use of a simple front-end modal, all with Vanilla javascript, jquery, bootstrap and leaflet.js. [Here](https://github.com/muyiwexy/plot-multiple-markers) is a link to the entire code and source files.
