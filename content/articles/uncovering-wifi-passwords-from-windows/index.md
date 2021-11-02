@@ -1,4 +1,22 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /recovering-wifi-passwords-from-windows-macos-and-linux/
+title: 
+description: This article will help the reader to recover the Wi-Fi passwords of all the networks that the computer has connected to in the past on Windows, MacOS and Linux.
+author: lenox-majiwa
+date: 2021-11-01T00:00:00-11:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/recovering-wifi-passwords-from-windows-macos-and-linux/hero.jpg
+    alt: Recovering Wi-Fi Passwords from Windows, MacOS and Linux Image
+---
+
 In this generation, [Wi-Fi](https://www.cisco.com/c/en/us/products/wireless/what-is-wifi.html) has become an important thing to many of us. Whenever you go to different places, whether in town, houses, or shops, you will find people using WiFi on their devices. It could be on a smartphone, a desktop computer, a tablet, etc. These devices may be connected to different Wi-Fi networks, which may require a password to connect to them. As time goes by, one may forget the WiFi password of a specific Wi-Fi network that they are interested in. Well, don’t worry, the Windows operating system has got you covered. Windows can save/store all Wi-Fi network passwords that have previously been connected to your device.
+<!--more-->
 
 In windows, Wi-Fi passwords from saved Wi-Fi networks are hidden from the user. Unlike mobile operating systems like Android, Windows has terminals that can be used to acquire the Wi-Fi passwords that are saved in the device. You'll be required to write some simple commands on the terminal to recover these saved passwords. In this article, I'll take you through the steps to reсоver Wi-Fi раsswоrds that are saved in your device, and I'll also give you the commands to use them.
 
@@ -79,3 +97,6 @@ In Linux OS, WiFi passwords of saved networks can be acquired by running this co
 People can be forgetful, but from now on, you don't have to worry about remembering your Wi-Fi passwords. You'll be able to recover your Wi-Fi password in your password from any Windows/Mac/Linux operating system.
 
 Happy Connecting!
+
+---
+Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)
