@@ -1,6 +1,21 @@
-### Introduction
-Every Android developer considers how they can reuse their code rather than rewriting it from scratch. By developing a library, developers also contribute to the open-source ecosystem by having their code used by other developers.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-create-and-publish-your-own-android-library/
+title: How to Create and Publish your own Android Library
+description: This tutorial will take the reader through the process of creating and publishing an Android Library. A library is a collection of classes that can be used by Android applications as dependencies.
+author: joel-kanyi
+date: 2021-11-02T00:00:00-10:42
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/how-to-create-and-publish-your-own-android-library/hero.png
+    alt: How to Create and Publish your own Android Library hero image
+---
+Every Android developer considers how they can reuse their code rather than rewriting it from scratch. By developing a library, developers also contribute to the open-source ecosystem by having their code used by other developers.
+<!--more-->
 No developer can evade working without libraries because they are such important components of the development process. They allow you to speed up your development by leveraging a pre-built solution rather than creating all of the code yourself.
 
 ### Prerequisites
@@ -10,18 +25,20 @@ To follow along make sure you have the following:
 - A basic understanding of the [Kotlin](https://kotlinlang.org/) programming language. 
 
 ### What is an Android Library?
+A library is a collection of classes that can be used by Android applications as dependencies. Libraries are often used to provide common functionality that can be reused by other applications.
+
 The structure of an Android library is the same as that of an Android app module. Among other things, the library can include source code, resource files, and an Android manifest. Instead of an APK that runs on a device, it compiles into an Android Archive (AAR) file that can be used as a dependency for an Android app module.
 
 ### Step 1 - Creating a project
 Create an empty Android Studio project as illustrated below: 
 
-![New Project](engineering-education/understanding-how-to-create-and-publish-your-own-android-library/create_project.png)
+![New Project](/engineering-education/how-to-create-and-publish-your-own-android-library/create_project.png)
 
 ### Step 2 - Create Library Module
 - In this step, in your Android Studio:
 Switch to `project` and right-click on your project name to create a new module: 
 
-![Switch Module](engineering-education/understanding-how-to-create-and-publish-your-own-android-library/switch_module.png)
+![Switch Module](/engineering-education/how-to-create-and-publish-your-own-android-library/switch_module.png)
 
 A module creates independence, whereby we can specify our dependencies for our library and any other resources which are all independent of the app module.
 
@@ -30,7 +47,7 @@ When creating a library, you can either choose `Android Library` or `Java or Kot
 - Android Library - can contain Android dependencies.
 - Java or Kotlin Library - A library that only needs Kotlin or Java code, it does not need any dependency.
 
-![New Module](engineering-education/understanding-how-to-create-and-publish-your-own-android-library/new_module.png)
+![New Module](/engineering-education/how-to-create-and-publish-your-own-android-library/new_module.png)
 
 After creating our module, a gradle file for our module is created.
 
@@ -135,7 +152,7 @@ afterEvaluate {
 #### Adding a configuration file for Jitpack
 Switch from Android to Project mode and, in your root folder, create a file called `jitpack.yml`.
 
-![Jitpack File](engineering-education/understanding-how-to-create-and-publish-your-own-android-library/jitpack_file.png)
+![Jitpack File](/engineering-education/how-to-create-and-publish-your-own-android-library/jitpack_file.png)
 
 This file specifies that Jitpack should use `openjdk11` to build our library.
 
@@ -149,7 +166,7 @@ before_install:
 ### Pushing our code to Github
 In this step, commit your work using git, then `Share` the Project to Github.
 
-![Push Github](engineering-education/understanding-how-to-create-and-publish-your-own-android-library/share_project_github.png)
+![Push Github](/engineering-education/how-to-create-and-publish-your-own-android-library/share_project_github.png)
 
 > Make sure the project is public and note that the name that you'll pass while sharing the project will be used in the library dependency link.
 
@@ -160,7 +177,7 @@ Releases will determine the version of our library.
 
 Click on `Choose a tag` and enter your initial version of the library and click `Enter`. Also, enter the title of your release and a description of the library. Finally, click on `Publish release` to publish.
 
-![Release](engineering-education/understanding-how-to-create-and-publish-your-own-android-library/release.png)
+![Release](/engineering-education/how-to-create-and-publish-your-own-android-library/release.png)
 
 #### Finalizing with Jitpack.io
 First of all, copy the URL of your repository - for this case, my URL is `https://github.com/JoelKanyi/KenyanCounties`.
@@ -173,7 +190,7 @@ If all goes well and the logs display a blue file icon, congratulations, the lib
 
 If you scroll down the page for Jitpack, you will see some information on how we can include the library in other projects.
 
-![Share Library](engineering-education/understanding-how-to-create-and-publish-your-own-android-library/share.png)
+![Share Library](/engineering-education/how-to-create-and-publish-your-own-android-library/share.png)
 
 That is it, you can go ahead and test the library in your project.
 
@@ -181,3 +198,6 @@ That is it, you can go ahead and test the library in your project.
 In this tutorial, we have learned what a library is, the steps followed in creating a library, and finally, we have seen how to publish a library to [Jitpack](https://search.maven.org/). Keep exploring and creating amazing Android libraries. You can check out the whole project here [Kenyan Counties](https://github.com/JoelKanyi/KenyanCounties).
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Eric Gacoki](/engineering-education/authors/eric-gacoki/)
