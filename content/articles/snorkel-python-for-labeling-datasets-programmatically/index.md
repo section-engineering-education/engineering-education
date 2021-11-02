@@ -5,7 +5,7 @@ published: true
 url: /snorkel-python-for-labeling-datasets-programmatically/
 title: Snorkel Python for Labelling Datasets Programmatically
 description: 
-author: 
+author: charles-kariuki
 date: 2021-10-19T00:00:00-18:00
 topics: [Languages]
 excerpt_separator: <!--more-->
@@ -23,7 +23,7 @@ Snorkel requires users to come up with functions that contain explicit rules. We
 
 In this tutorial, we will have an unlabeled dataset that contains a list of sentences. The list of sentences is made up of questions, while others are general statements.
 
-This tutorial aims to be able to label a sentence as either a question or not a question. If a sentence is a question, it is labelled `1`, and a non-question sentence(general statement) is labelled `-1`. All this will be done programmatically using Snorkel.
+This tutorial aims to label a sentence as either a question or not a question. If a sentence is a question, it is labelled `1`, and a non-question sentence(general statement) is labelled `-1`. All this will be done programmatically using Snorkel.
 
 ### Table of contents
 
@@ -50,7 +50,7 @@ To follow along easily, the reader should:
 
 - Be familiar with [Python programming.](/engineering-education/python-projects-for-beginners/)
 - Know about [machine learning modelling.](engineering-education/house-price-prediction/)
-- Know how to use [Google colab notebooks.](https://colab.research.google.com)
+- Know how to use [Google Colab notebooks.](https://colab.research.google.com)
 - Have some knowledge of [Pandas.](https://pandas.pydata.org/)
 - Be familiar with [Scikit-learn](https://scikit-learn.org/stable/)
 
@@ -238,10 +238,10 @@ If this rule is met, the sentence is labelled as `QUESTION = 1`. If it's not met
 @labeling_function()
 def lf_keyword_lookup(x):
   keywords = ["why","what","when","who","where","how"]
- return QUESTION if any(word in x.sentences.lower() for word in keywords) else ABSTAIN
+  return QUESTION if any(word in x.sentences.lower() for word in keywords) else ABSTAIN
 ```
 
-We have defined our function as `def lf_keyword_lookup(x)` with the help of the `@labeling_function()` method.
+We have defined our function as `lf_keyword_lookup(x)` with the help of the `@labeling_function()` decorator.
 
 We then pass our rule. Finally, we loop through our `sentences` in the dataset to see if the condition is met.
 
@@ -262,8 +262,8 @@ For further reading on Python regular expression, read this [documentation](http
 ```python
 import re
 @labeling_function()
-def lf_regex_contains_what(x):r
- return QUESTION if re.search(r"what.*?",x.sentences,flags=re.I) else ABSTAIN
+def lf_regex_contains_what(x):
+  return QUESTION if re.search(r"what.*?",x.sentences,flags=re.I) else ABSTAIN
 ```
 
 First, we have import `re`, which represents the regular expression. Then, we use the `re.search()` method to search through the sentences to find instances of the phrase `what` and the `?`.
@@ -280,7 +280,7 @@ This function will also use Python regular expression. However, it only searches
 import re
 @labeling_function()
 def lf_regex_contains_question_mark(x):
- return QUESTION if re.search(r".*?",x.sentences,flags=re.I) else ABSTAIN
+  return QUESTION if re.search(r".*?",x.sentences,flags=re.I) else ABSTAIN
 ```
 
 We now need to apply all these labelling functions to our train set data set.
@@ -385,7 +385,7 @@ To get the notebook for this tutorial, click [here](https://colab.research.googl
 
 ### References
 
-- [Google colab link](https://colab.research.google.com/drive/1fY85B0_JDogI4_d2isWBEJAbfQyoyfsl?usp=sharing)
+- [Google Colab link](https://colab.research.google.com/drive/1fY85B0_JDogI4_d2isWBEJAbfQyoyfsl?usp=sharing)
 - [Snorkel documentation](https://www.snorkel.org/blog/hello-world-v-0-9)
 - [Scikit-learn documentation](https://scikit-learn.org/stable/)
 - [Intoduction to labeling functions](https://www.snorkel.org/use-cases/01-spam-tutorial)
