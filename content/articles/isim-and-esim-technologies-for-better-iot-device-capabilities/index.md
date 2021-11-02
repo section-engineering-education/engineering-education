@@ -7,7 +7,7 @@ title: How iSIM and eSIM Technologies Increase IoT Capabilities
 description: This article will discuss eSIM and iSIM technologies. It will focus on their benefits over traditional SIMs, as well as their use in the IoT sector.
 author: nelly-atieno
 date: 2021-10-26T00:00:00-07:22
-topics: [Neworking]
+topics: [Networking]
 excerpt_separator: <!--more-->
 images:
 
