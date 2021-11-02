@@ -42,6 +42,7 @@ Navigation symbols
 We will employ the above symbols to maneuver over the menu. With a click, each of them will help to scroll over the menu to and fro.
 ### hypertext markup language code to show menu
 This html code includes right and left way route symbols to assist clients in accessing the information base diverse menu items. The menu items are taken from the table information in our menu2 database.
+- you can check out the full source code [here](https://github.com/Njengab/how-to-create-horizontal-scrolling-menu-using-jQuery-and-Php)
 ``` html
 <!-- linking connection.php file with index.php file-->
 <?php include "connection.php"?>
