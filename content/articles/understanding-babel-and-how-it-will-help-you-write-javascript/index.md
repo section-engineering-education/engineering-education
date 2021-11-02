@@ -49,7 +49,7 @@ There are plugins for Webpack, Gulp, Grunt, Sublime, Webstorm, and a variety of 
 ### Classes
 JavaScript does not have any classes. The fact that objects inherit directly from one another means that any object can be the parent (superclass) of any other object in the system.
 
-Any function can be a constructor function, and calling it with the `new` keyword will result in the creation of a new object. You may learn more about object orientation in the JavaScript for Smart People course - Object Orientation portion, which is available here.
+Any function can be a constructor function, and calling it with the `new` keyword will result in the creation of a new object. You may learn more about object orientation in the in the official documentation - Object Orientation portion, which is available [here](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object-oriented_JS).
 
 This is all amazing in JavaScript, but it makes C# and Java devs a nervous, which is understandable. ES6 introduces the class keyword. This allows us to define functions that can only be used as constructors and nothing else.
 
@@ -106,7 +106,7 @@ var template = "
   
   ```
 ### Fat Arrows
-`Fat Arrows`are also known as `arrow Functions`. They are a relatively new way to write concise JavaScript functions. The ECMAScript 6 specifications introduced them, and they havve since become a widely used ES6 feature. 
+`Fat Arrows`are also known as `arrow Functions`. They are a relatively new way to write concise JavaScript functions. The ECMAScript 6 specifications introduced them, and they have since become a widely used ES6 feature. 
 
 The fat arrow `=>` operator allows us to quickly define JavaScript functions with or without parameters using arrow functions. The use of `Fat arrows` allows us to define anonymous functions in a readable manner. For instance, we can write  a function like below:
  
