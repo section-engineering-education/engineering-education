@@ -1,5 +1,22 @@
-In machine learning, the goal is to predict the target variable as close to the ground truth as possible. Thus, the model we adopt for prediction should have reasonable accuracy. As the input values are fixed, to improve the quality of the model, all we can do is to tune its parameters such that the deviation of the predicted value from the actual value is highly minimized.  
+---
+layout: engineering-education
+status: publish
+published: true
+url: /gradient-descent-algorithm-in-python/
+title: Getting started with Gradient Descent Algorithm in Python
+description: This article will look at how we minimize this cost function using the gradient descent algorithm to obtain optimal parameters of a machine learning model
+author: 
+date: 2021-11-02T00:00:00-05:34
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/gradient-descent-algorithm-in-python//hero.png 
+    alt: Gradient Descent Algorithm in Python Image
+---
+
+In machine learning, the goal is to predict the target variable as close to the ground truth as possible. Thus, the model we adopt for prediction should have reasonable accuracy. As the input values are fixed, to improve the quality of the model, all we can do is to tune its parameters such that the deviation of the predicted value from the actual value is highly minimized.  
+<!--more-->
 The variation of the expected value from the actual value on a single training example is called the **loss function**. We denote this function as $L(ŷ,y)$. Summing up the **loss functions** of the entire training set and averaging them over the total number of all the training examples in that set, we obtain a function known as the **cost function**. The *cost function* measures how well we are doing in the entire training dataset. 
 
 This function is denoted as $J(\Theta)$. This article will look at how we minimize this cost function using the gradient descent algorithm to obtain optimal parameters of a machine learning model.
