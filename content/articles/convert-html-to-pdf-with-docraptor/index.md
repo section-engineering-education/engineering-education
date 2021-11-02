@@ -13,22 +13,22 @@ DocRaptor is an HTML-to-PDF API that greatly enhances the current situation in a
   - [Further activity reading](#further-activity-reading)
   
 ### Installation
-Download the most recent version of DocRaptor to your computer and unzip it into your hard drive. You have two options for for doing this:
-
-- using author 
+Download the most recent version of DocRaptor to your computer and unzip it into your hard drive. You have two options for for doing this the first is using an author and the second is when working alone.
 
 If you are collaborating with an author, you will need to mention their name in the purchase line of your order confirmation.
+
 ```javascript
 composer require docraptor/docraptor
 ```
-- If you are not working with an arranger, you should download the most recent version and unzip it into your work area instead. Then, create a new record with the name `docraptor.php` and include the file `autoload.php` in it.
+
+- If you are not working with an author, you should download the most recent version and unzip it into your work area instead. Then, create a new record with the name `docraptor.php` and include the file `autoload.php` in it.
 
 ```javascript
 require_once('./path/to/docraptor-php/autoload.php');
 ```
 
 ### Authentication
-You can use the key `KEY YOUR API HERE`, which will not require you to have a record, but this will only work with watermarked archives and will not work with unwatermarked archives. In any case, you will need to have a track record that's up to date.
+You can use the API key `KEY YOUR API HERE`, which will not require you to have a record, but this will only work with watermarked archives and will not work with unwatermarked archives. In any case, you will need to have a track record that is up to date.
 
 ```javascript
 $configuration=DocRaptor\configuration::getDefaultconfiguration();
@@ -52,7 +52,7 @@ $doc = newDocRaptor\doc();
 $doc = setDocumentUrl("http: //DocRaptor.com/returns/sales.html");
 ```
 
-Whether you use HTML or URLs in your report, all of the resources you reference should be accessible via the internet since DocRaptor will need to access them.
+Whether you use HTML or URLs in your report, all of the resources you reference should be accessible via the internet for DocRaptor to work.
 
 ### API options
 Given that DocRaptor may also convert reports into various records, such as HTML to Excel, we must create the right archive for each report.
