@@ -1,11 +1,9 @@
 ### Introduction
-It is easy for anyone to deliver PDFs because it is a standard part of programming. Everything is given as a PDF now, including requests, receipts, and appropriation reports. However, the planned duration of PDF can be inconvenient if you need to create a large number of PDFs quickly.
+It is easy for anyone to deliver PDFs because it is a standard forat for document presentation. Everything is given as a PDF now, including requests, receipts, and appropriation reports. However, the planned duration of PDF can be inconvenient if you need to create a large number of PDFs quickly.
 
-DocRaptor is an HTML-to-PDF API that greatly enhances the current situation in addition to having a PHP framework for simple joining. During this instructive exercise, students will want to walk around and illustrate how DocRaptor converts HTML into a PDF.
+DocRaptor is an HTML-to-PDF API that greatly enhances the current situation in addition to having a PHP framework for simple joining. This article will guide the reader on how to use DocRaptor to converts HTML into a PDF.
 
 ### Table of content
-- [Introduction](#introduction)
-- [Table of content](#table-of-content)
 - [Installation](#installation)
 - [Authentication](#authentication)
 - [Add HTML or a URL](#add-html-or-a-url)
@@ -15,7 +13,7 @@ DocRaptor is an HTML-to-PDF API that greatly enhances the current situation in a
   - [Further activity reading](#further-activity-reading)
   
 ### Installation
-Download the most recent provided document to your computer and unzip it into your hard drive. You have two options for introducing it:
+Download the most recent version of DocRaptor to your computer and unzip it into your hard drive. You have two options for for doing this:
 
 - using author 
 
@@ -23,11 +21,12 @@ If you are collaborating with an author, you will need to mention their name in 
 ```javascript
 composer require docraptor/docraptor
 ```
-- If you are not working with an arranger, you should download the most recent document and unzip it into your work area instead. Then, create a new record with the name `docraptor.php` and include the file `autoload.php` in it.
+- If you are not working with an arranger, you should download the most recent version and unzip it into your work area instead. Then, create a new record with the name `docraptor.php` and include the file `autoload.php` in it.
 
 ```javascript
 require_once('./path/to/docraptor-php/autoload.php');
 ```
+
 ### Authentication
 You can use the key `KEY YOUR API HERE`, which will not require you to have a record, but this will only work with watermarked archives and will not work with unwatermarked archives. In any case, you will need to have a track record that's up to date.
 
