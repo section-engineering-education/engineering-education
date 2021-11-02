@@ -6,31 +6,28 @@ url: /terminal-progress-bar-python/
 title: Terminal Progress Bar in Python
 description: In this article we will discuss building a progress bar using several libraries in Python.
 author: sandra-moringa
-date: 2021-10-29T00:00:00-18:00
+date: 2021-11-02T00:00:00-08:45
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  -url: /engineering-education/terminal-progress-bar-python/hero.jpg
-   alt: Python for Robotics example image
+ - url: /engineering-education/terminal-progress-bar-python/hero.jpg
+   alt: Terminal Progress Bar in Python Example Image
 ---
-
-### Introduction
-
 Maybe your application involves file uploads or downloads at some point through the terminal/console. You will, at one point, want to show the progress in the said interface. Terminal progress bars are a great way to visualize to the user the progress of an underlying task. We will look at how to do that using file downloads.
 
 There are various libraries to do that in Python, including tqdm, Progress, Alive Progress, etc.
 
+### Prerequisites
 
-#### Prerequisites
-
-An understanding of Python
+To follow along with this tutorial, you need to have: 
+- A good understanding of Python.
 
 There will be a few deep concepts in Python, so a good understanding is needed.
 
 > Since what we will work is linked to the terminal, we will not be using any notebook-based technology.
 
-#### A primer on file downloads in Python
+### A primer on file downloads in Python
 Before we get into the topic, we will first look at a basic download script in Python. Then, we will download an image.
 
 ```python
@@ -107,7 +104,7 @@ Using these three parameters, it calculates the downloaded size(`read_data`), re
 The `if` function checks for the remaining size. If it is less than 0, then it means the file is fully downloaded. Therefore, the downloaded percentage is 100%, and the remaining size is 0.
 
 On running the file, you should see this output. Of course, it's not so pretty, but it just gives you an idea of the progress.
-```
+```bash
 File size in bytes 10905
 Downloaded data: Remaining size: Downloaded percentage: Total size
 0  :  10905  :  0  :  10905
@@ -118,7 +115,7 @@ Downloaded data: Remaining size: Downloaded percentage: Total size
 It outputs several times since the `urllib.request.urlretrieve()` method runs several times before the file is completed.
 
 ### Progress bars
-As we have seen, the progress we produced doesn't look that intuitive. For that reason, we have to seek the help of progress bars. The good news is that, in Python, we have several libraries on the same. For our case, we will not use any of the libraries, but we will build our simple bar. We will do that using the `requests` library since it easily iterates an HTTP response.
+As we have seen, the progress we produced doesn't look that intuitive. For that reason, we have to seek the help of progress bars. The good news is that, in Python, we have several libraries we can use to perform the task. For our case, we will not use any of the libraries, but we will build our simple bar. We will do that using the `requests` library since it easily iterates an HTTP response.
 
 > The code is a bit simpler and does not use functions like the previous one, but the concepts are still the same. So you can modify it later to fit your situation.
 
@@ -165,17 +162,17 @@ We want to display 50 # symbols, each representing 2% of the downloaded file. If
 ```python
 portion = int(50 * downloaded_data / total_size)
 ```
-*Percentage represented = Total number of #s * (Downloaded data/Total file size)*
+*Percentage represented = Total number of #s * (Downloaded data/Total file size)*.
 
 In the print statement, we multiply the # with the number we set in the statement we've just discussed, i.e. 50 times.
 
-We will see such an output.
-```
+We will see such an output:
+```bash
 Downloading ab1.jpg
 [##################################################]
 ```
 ### Further reading
-You can have a look at the libraries for doing the same quickly with a few lines of code and more animated features using these links:
+You can have a look at the libraries to do the same task quickly with a few lines of code and more animated features using these links:
 1. [Progress](https://pypi.org/project/progress/1.5/)
 2. [tqdm](https://github.com/tqdm/tqdm)
 3. [Alive Progress](https://pypi.org/project/alive-progress/)
