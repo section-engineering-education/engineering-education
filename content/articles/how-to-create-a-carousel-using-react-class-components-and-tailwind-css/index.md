@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /how-to-create-a-carousel-using-react-class-components-and-tailwind-css/
-title: How to Create a Carousel Using React Class Components and Tailwind CSS
+title: How to Create a Carousel using React Class Components and Tailwind CSS
 description: In this article, we will create a carousel using React class components and use Tailwind CSS for styling. React is a JavaScript library that is used to create user interfaces.
 author: kevin-murimi
-date: 2021-11-02T00:00:00-06:10
+date: 2021-11-02T00:00:00-08:03
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -30,9 +30,9 @@ Tailwind CSS is a CSS framework that uses utility classes to style a webpage. Th
 To follow along with this tutorial, you will need:
 - Basic knowledge of React.
 - Intermediate CSS knowledge.
-- A code editor, preferably VS Code.
+- A code editor, preferably [VS Code](https://code.visualstudio.com/).
 - A browser, preferably Chrome.
-- Node.js installed on your machine.
+- [Node.js](https://nodejs.org/) installed on your machine.
 
 ### Setting up our project
 In a Windows operating system, open **Command Prompt**, and navigate to the location where you want to create your project. Then run the following command:
@@ -77,7 +77,7 @@ npm install react-icons react-easy-swipe
 ```
 
 ### Creating the carousel
-As all the components are, by default, functional components, open the `App.js` component and clear everything. Then paste the following code:
+As all the components are, by default, functional components. Open the `App.js` component and clear everything. Then paste the following code:
 
 ```javascript
 import React, { Component } from "react";
@@ -127,7 +127,9 @@ export const CarouselData = [
 ];
 ```
 
-The code above is an array of objects that contain links to images that we will show in our carousel. The source of the images is [Unsplash](https://unsplash.com/).
+The code above is an array of objects that contain links to images that we will show in our carousel.
+
+The source of the images is [Unsplash](https://unsplash.com/).
 
 ### Creating the Carousel.js component
 Open the Carousel.js component and paste the following code:
@@ -187,7 +189,7 @@ To understand the classes assigned to the div element, kindly refer to the [Tail
 
 Inside this div, we use the JavaScript array `map()` method. Click [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) to learn more about how it works.
 
-In this example, the `map()` method takes two arguments: slide - which refers to each individual element in the CarouselData array, and index - which refers to the index of each individual element in the array. The method also takes a callback that returns the images with the `src` set to `slide.image`.
+In this example, the `map()` method takes two arguments: slide - which refers to each individual element in the CarouselData array and index - which refers to the index of each individual element in the array. The method also takes a callback that returns the images with the `src` set to `slide.image`.
 
 We then give the image a class, and in the class, we use conditional rendering to determine which image we will display. This is made possible by the use of a [ternary operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator).
 
@@ -197,7 +199,7 @@ The code:
 className={index===this.state.currentSlide ? 'block w-full h-auto object-cover' : 'hidden'}
 ```
 
-Translates to: If the index (which is a parameter in the map() method) is equal to the `currentSlide` state defined in the class, apply the classes `block w-full h-auto object-cover` to the image. Else, apply the `hidden` class to the image. This means that we can only view one image at a time.
+Translates to: if the index (which is a parameter in the map() method) is equal to the `currentSlide` state defined in the class, apply the classes `block w-full h-auto object-cover` to the image. Else, apply the `hidden` class to the image. This means that we can only view one image at a time.
 
 Update the `App.js` with the following code to import the **Carousel** component and render it to the browser:
 
@@ -292,7 +294,7 @@ To implement the dots, copy the following code in the div that contains the imag
 </div>
 ```
 
-The code loops through the array and returns a div for each element. Each div has an `onClick` event listener that calls a `setCurrentSlide` function when clicked, and passes the index of the clicked div as an argument.
+The code loops through the array and returns a div for each element. Each div has an `onClick` event listener that calls a `setCurrentSlide` function when clicked and passes the index of the clicked div as an argument.
 
 We assign the classes conditionally to make sure that the active slide's dot is different from the others.
 
