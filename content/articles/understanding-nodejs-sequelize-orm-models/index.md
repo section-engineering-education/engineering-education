@@ -1,5 +1,22 @@
-### Introduction
-[Sequelize](https://sequelize.org/) is an Object Relational Mapper for Node.js. Sequelize let's us connect to a database and perform operations without writing raw SQL queries. It abstracts SQL queries and makes it easier to interact with database models as objects. This article will help you understand Sequelize models, from model definition to model usage. Sequelize works with all the SQL-based databases. In this tutorial, I will use MySQL. However, you can use any SQL-based database of your choice.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /understanding-nodejs-sequelize-orm-models/
+title:Understanding Node.js Sequelize ORM Models
+description:This article will help you understand Sequelize models, from model definition to model usage. Sequelize works with all the SQL-based databases
+author:  benson-kariuki
+date: 2021-11-02T00:00:00-07:40
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/understanding-nodejs-sequelize-orm-models/hero.jpg
+    alt: Node Models image
+---
+[Sequelize](https://sequelize.org/) is an Object Relational Mapper for Node.js. Sequelize let's us connect to a database and perform operations without writing raw SQL queries. It abstracts SQL queries and makes it easier to interact with database models as objects. 
+<!--more-->
+This article will help you understand Sequelize models, from model definition to model usage. Sequelize works with all the SQL-based databases. In this tutorial, I will use MySQL. However, you can use any SQL-based database of your choice.
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
@@ -427,3 +444,6 @@ The final source code for `app.js` is available on [Github](https://github.com/T
 We have learned how Sequelize models work. Learn more on how to move your project to production using [Sequelize migrations](https://sequelize.org/master/manual/migrations.html) and [seeders](https://sequelize.org/master/manual/migrations.html#creating-the-first-seed). Seeders Allow the creation of dummy data on the database. The source code for the project is available on [Github](https://github.com/Tsanguu/Node.js-Sequelize-Tutorial-1).
 
 Happy coding.
+
+---
+Peer Review Contributions by: [Miller Juma](/engineering-education/authors/miller-juma/)
