@@ -8,7 +8,7 @@
 
 To followup this tutorial, you will need to have a basic idea of the following :
 
-- [JavaScript.](https://www.geeksforgeeks.org/introduction-to-javascript/#:~:text=JavaScript%20is%20a%20lightweight%2C%20cross,well%20as%20Server%2Dside%20developments.)
+- [JavaScript.](https://www.geeksforgeeks.org/introduction-to-javascript/.)
 - [HTML.](https://www.w3schools.com/html/default.asp)
 - [Skeleton CSS.](http://getskeleton.com/#intro)
 - Code editors (Preferably [visual studio code](https://code.visualstudio.com/)).
@@ -70,7 +70,7 @@ This tutorial aims to create a webpage that gets random jokes from the [Chuck No
 
 - Create an unordered list (ul) for the jokes to render below the form
 - Create a JavaScript file and save it with index.js
-- Include the index.js
+- Include the `index.js`
 
 - Your html file should look like this 👇:
 
