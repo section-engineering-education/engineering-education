@@ -31,9 +31,13 @@ The Blenderbot model is available through the Hugging Face transformers library.
 - You need to be familiar with machine learning modeling.
 
 ### The Blenderbot model
-The Blender chatbot model was first proposed in the paper, [Recipes for building an open-domain chatbot](https://arxiv.org/pdf/2004.13637.pdf) on 30th April 2020. This is a deep learning model that has been trained to interact and respond like a conversational agent.
+The Blender chatbot model (BlenderBot 1.0) was first proposed in the paper, [Recipes for building an open-domain chatbot](https://arxiv.org/pdf/2004.13637.pdf) on 30th April 2020. This is a deep learning model that has been trained to interact and respond like a conversational agent. The latest release is the BlenderBot 2.0. 
 The model uses a standard seq2seq model transformer-based architecture to generate responses. This architecture uses `Transformers` as its base, initially proposed in this [paper](https://arxiv.org/pdf/1706.03762.pdf) by Google's research team.
 There are various use cases for this model. We can use it to build chatbots, virtual agents, and assistive agents. Chatbots and agents can be used in business to interact with customers.  
+
+Why should I use Blenderbot as opposed to any other conversational AI model?
+
+Conversational agents suffer from short term memory and are limited to only what they have been trained on. The BlenderBot model can build long term memory for continuous access. Moreover, it can do so while simultaneously searching the internet for up-to-date information and holding conversations on nearly any topic.
 
 ### Building the chatbot using the blenderbot model
 The Blenderbot model is available through the Hugging Face transformers library. Hugging Face is an open-source library available in Python that allows you to leverage some of the state-of-the-art Natural Language Processing models. When you have a look at blenderbot's [documentation](https://huggingface.co/transformers/model_doc/blenderbot.html), you'll notice that the model has three variants; 90M, 2.7B, and 9.4B parameter models. However, there is one model that has 400 million parameters. That's the one we'll be leveraging in this tutorial.
@@ -118,7 +122,9 @@ This is the Blenderbot model working in real-time. All we did was pass our utter
 
 The model may output somewhat incorrect responses and might lose context sometimes. But remember, this model has only been trained on 400M parameters. As with machine learning models, we know that the more you train, your results are more accurate. You could try the model with `2.7B` or `9B` parameters and see what you get. Just one caveat, make sure your machine has enough computing power for those models with large parameters.
 
-In addition, the main research [paper]((https://arxiv.org/pdf/2004.13637.pdf)) also demonstrates that as much as increasing the number of parameters is important to improve accuracy in the model, the blenderbot model displays knowledge, empathy, and personality appropriately while still maintaining a consistent persona. That's a point you could analyze while exploring your output results.  
+As is the case with most conversational agents, they tend to exhibit bias and toxicity. They tend to amplify the race, religion, and gender biases on data which they are trained on. However, these issues are being addressed. As with BlenderBot 2.0, "safety recipes" have been implemented to reduce some of these offensive responses. Read more about it [here](https://venturebeat.com/2021/07/16/facebooks-blenderbot-2-0-bot-surfs-the-web-for-knowledge/).
+
+In addition, the main research [paper](https://arxiv.org/pdf/2004.13637.pdf) also demonstrates that as much as increasing the number of parameters is important to improve accuracy in the model, the blenderbot model displays knowledge, empathy, and personality appropriately while still maintaining a consistent persona. That's a point you could analyze while exploring your output results.  
 
 Please find the complete code for this tutorial [here](https://colab.research.google.com/drive/1pyIhbbobNpQ-QC3Dm3n5IU2Un3RdsSaY?usp=sharing). 
 
