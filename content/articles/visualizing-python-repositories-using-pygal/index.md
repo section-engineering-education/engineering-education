@@ -14,7 +14,7 @@ images:
  - url: /engineering-education/visualizing-repositories-using-pygal/hero.jpg
    alt: Visualizing repositories using Pygal hero image
 ---
-Pygal allows us to create a range of graphs and charts. In this article, you will learn how to construct a visualization that shows the comparative Python's prominent works on GitHub.
+Pygal allows us to create a range of graphs and charts. In this article, you will learn how to construct a visualization that shows the comparative Pythons prominent works on GitHub.
 <!--more-->
 
 ### Introduction
