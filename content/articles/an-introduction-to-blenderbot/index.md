@@ -35,7 +35,7 @@ The Blender chatbot model (BlenderBot 1.0) was first proposed in the paper, [Rec
 The model uses a standard seq2seq model transformer-based architecture to generate responses. This architecture uses `Transformers` as its base, initially proposed in this [paper](https://arxiv.org/pdf/1706.03762.pdf) by Google's research team.
 There are various use cases for this model. We can use it to build chatbots, virtual agents, and assistive agents. Chatbots and agents can be used in business to interact with customers.  
 
-Why should I use Blenderbot as opposed to any other conversational AI model?
+Why should you use Blenderbot as opposed to any other conversational AI model?
 
 Conversational agents suffer from short term memory and are limited to only what they have been trained on. The BlenderBot model can build long term memory for continuous access. Moreover, it can do so while simultaneously searching the internet for up-to-date information and holding conversations on nearly any topic.
 
