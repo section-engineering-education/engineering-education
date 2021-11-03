@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /visualizing-repositories-using-pygal/
-title: Visualizing repositories using Pygal
+title: Visualizing Repositories using Pygal
 description: In this article the reader will learn how to construct a visualization that shows the comparative popularity of Python works on GitHub using Pygal.
 author: duncan-ndegwa
 date: 2021-11-03T00:00:00-12:35
