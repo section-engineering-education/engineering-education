@@ -6,20 +6,18 @@ url: /using-amazon-web-service-for-django-media-files-storage/
 title: Using Amazon Web Services for Django media file storage.
 description: This article will show you how to use Amazon Web Services (AWS) to store media files, which will run on a Django backend server. First, we will introduce how to get started with Django, then later move on to setting up a cloud service, in this case, Amazon Simple Storage Service (S3). 
 author: oruko-pius
-date: 2021-10-26T00:00:00-07:08
-topics: []
+date: 2021-11-03T00:00:00-03:08
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
   - url: /engineering-education/using-amazon-web-service-for-django-media-files-storage/hero.jpg
-    alt:  Using Amazon Web Services for Django media file storage Image.
+    alt:  Using Amazon Web Services for Django media file storage Image
 ---
-
-### Introduction
 Cloud storage services make application scalability easy. These services enable webpages to serve large files without causing heavy traffic and load to the application database, reducing the system load time and offering a good user experience.   
  <!--more-->
 This article will show you how to use Amazon Web Services (AWS) to store media files, which will run on a Django backend server. First, we will introduce how to get started with Django, then later move on to setting up a cloud service, in this case, Amazon Simple Storage Service (S3). Finally, our application will retrieve images from S3 and display them to users.
 
-### Table of Contents
+### Table of contents
 1. [Prerequisites](#prerequisites)
 2. [Setting up the Django Application](#setting-up-the-django-application)
 3. [Setting up Gallery](#setting-up-gallery-app)
@@ -29,12 +27,12 @@ This article will show you how to use Amazon Web Services (AWS) to store media f
 6. [Conclusion](#conclusion)
 
 ### Prerequisites
-To follow along and get the most out of this article, you should have elementary knowledge of web applications. In addition, it is helpful to have a more advanced comprehension of the Python language and its frameworks. Optionally, you can familiarize yourself with Django.
+To follow along and get the most out of this article, you should have an elementary knowledge of web applications. In addition, it is helpful to have a more advanced comprehension of the Python language and its frameworks. Optionally, you can familiarize yourself with Django.
 
 Install Python 3 or above on your local machine before starting this project.
 
-### Setting up the Django Application  
-Django is a Python-based web framework to build scalable website applications with ease. This software has been around for quite some time, and a strong community of users keep improving it to suit developers’ needs. We will use Django as our backend logic and SQLite as our development database.   
+### Setting up the Django application  
+Django is a Python-based web framework for building scalable website applications with ease. This software has been around for quite some time, and a strong community of users keeps improving it to suit developers’ needs. We will use Django as our backend logic and SQLite as our development database.   
 
 We need a virtual environment to install and run a Django application. A virtual environment separates a particular Python project’s dependencies, libraries, and packages from other projects. 
 
@@ -93,7 +91,7 @@ python manage.py runserver
 
 Ignore the migrations for now. Then, when you open the link on the browser, you should see a congratulation text.  
 
-### Setting up Gallery App  
+### Setting up Gallery app  
 The Django project cannot act without a Django application. The Django application contains the models, views, and templates for processing our application. 
 
 In addition, the project has external settings to make this possible. Think of the Django application as our web program’s car engine and the project as its exterior and wheels to put this into perspective.  
@@ -165,7 +163,7 @@ INSTALLED_APPS = [
 ]  
 ```
 
-We placed the app in `INSTALLED_APPS` because that is where Django checks for models, management commands, and other utilities.In the project directory, `django_project`, we need to include the app in  `urls.py`  because the Django project directory serves the application. 
+We placed the app in `INSTALLED_APPS` because that is where Django checks for models, management commands, and other utilities. In the project directory, `django_project`, we need to include the app in  `urls.py`  because the Django project directory serves the application. 
 
 In the file, import `include()` from the `django.urls` module. Then, add a path and include `gallery.urls`, which will fetch the routes from the app directory when the application runs. Our file should resemble this:  
 
@@ -176,7 +174,6 @@ from django.urls import path, include
 urlpatterns = [  
 
    path('admin/', admin.site.urls),  
-
    path('', include('gallery.urls')),
 
 ]  
@@ -198,12 +195,10 @@ class Post(models.Model):
    """docstring for Post."""  
 
    title = models.CharField(max_length=100)  
-
    image = models.ImageField(upload_to='images/')  
 
 
    def __str__(self):  
-
        return self.title
 ```
 
@@ -225,15 +220,13 @@ from .models import Post
 def posts(request):  
 
    context = {  
-
    'posts':Post.objects.all()  
-
    }  
 
    return render(request, 'gallery/posts.html', context)  
 ```
 
-Django already imports the `render()` from `django.shortcuts` package. `render()` enables us to return the contents of a template.We import the `Post` model we created earlier from the `models.py` file. We place a period before the models to show the path to the `models.py` file.Then, we pass a request as an argument in our posts view as an `HttpRequest` object. As we will see later, this enables us to call the view function in our routes.
+Django already imports the `render()` from `django.shortcuts` package. `render()` enables us to return the contents of a template. We import the `Post` model we created earlier from the `models.py` file. We place a period before the models to show the path to the `models.py` file. Then, we pass a request as an argument in our posts view as an `HttpRequest` object. As we will see later, this enables us to call the view function in our routes.
 
 We also pass in a context that contains the objects in our models in dictionary format. The dictionary value, `Post.objects.all()`, retrieves all the `Post` objects. As of now, our `Post` model is empty as we have not added any posts yet. We then render the yet-to-be-created template, `posts.html`. Finally, we pass in the request and context which the code will call before rendering our template.  
 
@@ -281,7 +274,7 @@ In our `gallery` directory inside the templates, we create a file, `posts.html`:
 </html>  
 ```
 
-Next , we import bootstrap links to help with web styling and title our page. In the posts page, which we will call Gallery Posts, we create a div container-fluid to pad the content inside the page and loop the posts, which are the images in the template. We then add bootstrap styling to make the images responsive.
+Next, we import bootstrap links to help with web styling and title our page. In the posts page, which we will call Gallery Posts, we create a div container-fluid to pad the content inside the page and loop the posts, which are the images in the template. We then add bootstrap styling to make the images responsive.
 
 The key-value `posts` from the context passed when rendering the template in our view. Next, in the `img src` attribute, we give the URL of the image the browser will render. From the bootstrap class, we then define how we want the picture to appear on the page. Finally, we close the loop with an `endfor` in Django.  
 
@@ -297,29 +290,24 @@ In the `urls.py` file, add the following snippet:
 
 ```python
 from django.urls import path  
-
 from .import views  
 
 urlpatterns = [  
-
    path('', views.posts, name='posts')  
-
 ]  
 ```
 
-We import the path function from the `django.urls` module and views from the parent directory, gallery. `urlpatterns` is an array to route our views.We leave the route blank using the `path()` as it will be the home page when running the application. However, it can take any route, and it is not a convention for homepages to take the default route. 
+We import the path function from the `django.urls` module and views from the parent directory gallery. `urlpatterns` is an array to route our views. We leave the route blank using the `path()` as it will be the home page when running the application. However, it can take any route, and it is not a convention for homepages to take the default route. 
 
 For instance, if we have many pages and want users to route to the about page, we can configure it as `about/` instead of blank. For this case, your landing page will take a blank route.
 
-We created the views.posts function in the view earlier. The name calls the route in other files within the application.  
+We created the views. posts function in the view earlier. The name calls the route in other files within the application.  
 
 In `admin.py`, we have not registered our model, `Post`, yet we will add images through the admin panel. In a`dmin.py`, we import the `Post` from the models.py file. To register the file, we add `admin.site.register(Post)`. The file should look like this:  
 
 ```python
 from django.contrib import admin  
-
 from gallery.models import Post  
-
 
 admin.site.register(Post)  
 ```
@@ -335,7 +323,6 @@ Then, add a URL to serve media files and a folder to store media files, like thi
 ```python
 MEDIA_URL = '/media/'  
 
-
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')  
 ```
 
@@ -345,9 +332,7 @@ Below the file, we then add:
 
 ```python
 if settings.DEBUG:  
-
     urlpatterns += static(settings.MEDIA_URL,  
-
                           document_root=settings.MEDIA_ROOT)  
 ```
 
@@ -355,28 +340,18 @@ The file’s final snippet should look like this:
 
 ```python
 from django.contrib import admin   
-
 from django.conf import settings #added
-
 from django.conf.urls.static import static #added
-
 from django.urls import path, include  
 
-
-
 urlpatterns = [  
-
    path('', include('gallery.urls')),  
-
    path('admin/', admin.site.urls),  
 
 ]  
 
-
 if settings.DEBUG:  
-
     urlpatterns += static(settings.MEDIA_URL,  
-
                           document_root=settings.MEDIA_ROOT)  
 ```
 
@@ -386,7 +361,6 @@ To perform migrations, run the following SQL commands in the terminal:
 
 ```bash
 python manage.py makemigrations  
-
 python manage.py migrate  
 ```
 
