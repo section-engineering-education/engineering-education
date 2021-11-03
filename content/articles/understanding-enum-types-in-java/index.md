@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /understanding-enum-types-in-java/
 title: Understanding enum types in Java
-description: 
+description: This article explains the basic structure of an enum class and then takes it a step higher by exploring the relationship between enums and classes.
 author: ehis-edemakhiota
 date: 2021-10-20T00:00:00-06:10
 topics: [Languages]
@@ -14,41 +14,34 @@ images:
   - url: /engineering-education/understanding-enum-types-in-java/hero.png
     alt: Understanding enum types in Java Hero Image
 ---
+Enums types are potent tools in Java. Enums can define a class of named constants and offer type safety and keys in a switch statement or expression.
+<!--more-->
+This article explains the basic structure of an enum class in Java and then takes it a step higher by exploring the relationship between enums and classes(enums implementing interfaces, enum having instance variables, methods, and constructors), exploring how to set custom enum properties. 
 
-#[Java] Understanding Enum Types in Java: Building A Card Dealing and Shuffling App that  determines the ranking category of a player’s hand in a poker game
+We will be demonstrating the application of enums in building a poker card game controller. This app determines the ranking category of a player's hand in a poker game.
 
-###Introduction
-Enums types are powerful tools in Java. Enums could be used to define a class of named constants and offer the advantage of type safety. They could also be used as keys in a switch statement or expression.
+### Goal
+At the end of the tutorial, the reader should understand the following:
 
-This article explains the basic structure of an enum class in Java and then takes it a step higher by exploring the
-relationship between enums and classes(enums implementing interfaces, enum having instance variables, methods and
-constructors), exploring how to set custom enum properties. Finally, the article concludes by demonstrating the
-application of enums in building a poker card game controller- an app that determines the ranking category of a
-player’s hand in a poker game.
+- The basic structure of an enum type.
+- The relationship between enums and classes:
+  * Defining constructors, instance, and methods variables in enum classes.
+  * Enums implementing interfaces.
+- Defining custom properties for enum types and accessing ordinal values for enum constants.
+- The applications of enums.
 
-###Key takeaways
-
-At the end of the tutorial, the reader should understand the following
-
-* The basic structure of an enum type
-* The relationship between enums and classes:
-  * Defining constructors, instance and methods variables in enum classes
-  * Enums implementing interfaces
-* Defining custom properties for enum types and accessing ordinal values for enum constants.
-* The application of enums in building a poker card game controller -a card shuffling and dealing application that
-  determines the ranking category of a player’s hand in a poker game.
-* Some Java Stream operations
-* Some Java Lambda functions
-
-###Prerequisites
+### Prerequisites
 
 To fully understand this tutorial, you are required to have the following in place:
+- A basic understanding of Java programming language.
+- Java Development Kit (JDK) [installed](https://www.oracle.com/java/technologies/downloads/) on your computer.
+- IntelliJ code editor [installed](https://www.jetbrains.com/idea/download/).
 
-* A basic understanding of programming in Java
-* Java Development Kit (JDK) installed on your computer or click on [this](https://www.oracle.com/java/technologies/downloads/) link to install
-* IntelliJ code editor installed or click on [this](https://www.jetbrains.com/idea/download/) link to install
+#### Basic structure of a Java Enum type
+The declaration of a Java Enum starts with the keyword- **enum**, followed by the type name specified in `camelCase` (as is the naming convention for all Java classes). Following the type name is a pair of curly braces that form the enum class's context or scope. Within these curly braces are a set of unique identifiers which represent the enum constants. 
+**Note: No two enum constants can use the same identifier.**
 
-###Basic Structure of a Java Enum type
+**It is also an excellent practice to capitalize enum constants, which is in line with the naming convention for Java constants and is done to make them stand out.**
 
 ```java
 enum Suit{
@@ -59,14 +52,13 @@ enum Suit{
 }
 ```
 
-The declaration of a Java Enum starts with the keyword- **enum**, followed by the type name specified in CamelCase (as is the naming convention for all Java classes). Following the type name, are a pair of curly braces which form the context or scope of the enum class. Within these curly braces, are a set of unique identifiers which represent the enum constants. No two enum constants can use the same identifier. It is a good practice to capitalize enum constants. This is in line with the naming convention for Java constants and is done to make them stand out.
-
-At this point, it is important to note that:
-1. Enum constants are implicitly static and final.
-2. An attempt to create an object of an enum class with the new keyword results in a compilation error.
-3. Since enum constants are static and final, an object of an enum class can be created by referencing the enum constant on the enum class name as in the following example: ```Suit suit = Suit.HEART```
+At this point, it is essential to note that:
+- Enum constants are implicitly static and final.
+- An attempt to create an object of an enum class with the new keyword results in a compilation error.
+- Since enum constants are static and final, an object of an enum class can be created by referencing the enum constant on the enum class name as in the following example: ```Suit suit = Suit.HEART```.
 
 > Enum declarations can come within a class as follows:
+
 ```java
 public class SuitTest {
 
@@ -82,7 +74,7 @@ public class SuitTest {
   }
 }
 ```
-The gives the output - ```HEART```
+This code gives the output - `HEART`.
 
 > Enums can also be defined within the same Java file as follows:
 
@@ -107,7 +99,7 @@ enum CardSuit{
 
 When enum classes are defined outside a class but within the same file, the JVM creates separate .class files (.class files are produced after the compiler as compiled written code) for the enum and the class. **An enum cannot bear the same name as a class within the same package**. Enums cannot be created within methods.
 
-###Using Enum Types in Switch Expressions
+#### Using enum types in switch expressions
 
 Enum types represent a set of unique constants, this means they can be used in a switch statement or the newer switch expression.
 Consider the following example:
@@ -122,11 +114,14 @@ public void printCardSuit(Suit suit){
     }
 }
 ```
-We have called ```printCardSuit()``` that takes in an enum of type Suit which we defined earlier in our tutorial, and then passes the value of that enum to an enclosed switch expression. This means that a call to the method as follows ```printCardSuit(Suit.HEARTS) ``` will produce the output: ```Its hearts!``` and the call ```printCardSuit(Suit.SPADES)``` will produce the output: ```Its spades!```
 
-Enums types in Java extend from the class ```java.lang.Enum``` and this means that when we define an enum type additional methods are added to our definition implicitly. One of these methods is the _valueOf()_ which allows us to create an enum constant using the toString representation of the enum constant as follows:
-```Suit cardSuit = Suit.valueOf(“HEARTS”)```
-The ```toString()``` representation of a java object is a representation of the object as a string.
+We have called `printCardSuit(`) that takes in an enum of type Suit which we defined earlier in our tutorial, and then passes the value of that enum to an enclosed switch expression meaning that a call to the method as follows `printCardSuit(Suit.HEARTS)` will produce the output: Its hearts! and the call `printCardSuit(Suit.SPADES)` will produce the output: Its spades!
+
+Enums types in Java extend from the class `java.lang.Enum` means that when we define an enum type, additional methods are added to our definition implicitly. One of these methods is the valueOf() which allows us to create an enum constant using the toString representation of the enum constant as follows:
+
+`Suit cardSuit = Suit.valueOf(“HEARTS”)`
+
+The `toString()` representation of a java object is a representation of the object as a string.
 
 > An attempt to do the following:
 ```Suit cardSuit = Suit.valueOf(“Hearts”)``` results in a ```java.lang.IllegalArgumentException``` because there is no constant named _“Hearts”_ in the enum definition.
@@ -142,9 +137,9 @@ In switch expression, if more than one constant maps to the same action we can d
     }
 }
 ```
-###Relationship between Enums and Classes
+#### Relationship between Enums and Classes
+As earlier mentioned, enums are special classes. The JVM converts an enum definition into a class definition under the hood. Hence, the enum definition:
 
-As earlier mentioned, enums are special classes. As a matter of fact, the JVM converts an enum definition into a class definition under the hood. Hence, the enum definition:
 ```java
 enum Suit{
     HEARTS,
@@ -153,6 +148,7 @@ enum Suit{
     SPADES,
 }
 ```
+
 is represented by the JVM as:
 
 ```java
@@ -163,21 +159,26 @@ class Suit{
     public static final Suit SPADES = new Suit();
 }
 ```
-Hence, every enum constant is a representation of an object of the enum class. Enums are closely related to classes in Java but not so related. One of the major differences is that an enum cannot extend another class. This is because an enum implicitly extends from the ```java.lang.Enum``` and since a method cannot inherit from more than the method in Java, the Enum class cannot inherit from another class. Extending from the ```java.lang.Enum ``` makes the following methods available implicitly in the enum class:
+
+Hence, every enum constant is a representation of an object of the enum class. Enums are closely related to classes in JavaJava but not so related. One of the significant differences is that an enum cannot extend another class because an enum implicitly extends from the Java.lang.
+
+Enum, and since a method cannot inherit from more than the method in JavaJava, the Enum class cannot inherit from another class. Extending from the Java.lang.Enum makes the following methods available implicitly in the enum class:
+
 1. **The values() method**: This returns an array of all the constants defined in the enum class.
    For example:
    ```Suit.values()``` returns the following array:
    [HEARTS, DIAMONDS, CLUBS, SPADES]
-2. **The ordinal() method**: Each enum constant can be identified by its position in the enum definition. This position corresponds to an array index. For example in the Suit enum,
+   
+2. **The ordinal() method**: Each enum constant can be identified by its position in the enum definition. This position corresponds to an array index. For example, in the Suit enum:
+- HEARTS has an ordinal of 0
+- DIAMOND has an ordinal of 1
+- CLUBS has an ordinal of 2
+- SPADES has an ordinal of 3
 
-  * HEARTS has an ordinal of 0
-  * DIAMOND has an ordinal of 1
-  * CLUBS has an ordinal of 2
-  * SPADES has an ordinal of 3
+3. **The valueOf method**: As seen above, this method returns the `toString` representation of the specified constant if it exists in the enum definition.
 
-3. **The valueOf method**: As seen above this method returns the ```toString``` representation of the specified constant if it exists in the enum definition.
+Enum classes can also implement multiple interfaces like normal classes. Enum classes can also have constructors, instances variables and methods like normal Java classes.
 
-Enum classes can also implement multiple interfaces like normal classes. Enum classes can also have constructors, instances variables and methods like normal Java classes
 ```java
 public enum Suit {
     HEARTS("Hearts"),
@@ -197,12 +198,13 @@ public enum Suit {
 }
 ```
 
-As seen in the above example, the enum class Suit has a constructor that defines a string as a parameter which it uses to initialize its instance variable, ```suitName```. The enum also has an instance method ```getSuitName()``` that returns the appropriate  ```suitName``` for the object that invokes the instance method.
+As seen in the above example, the enum class Suit has a constructor that defines a string as a parameter it uses to initialize its instance variable, `suitName`. The enum also has an instance method `getSuitName()` that returns the appropriate `suitName` for the object.
 
-###Defining custom properties for Enum types
+#### Defining custom properties for enum types
 As mentioned above the ```ordinal()``` method returns the ordinal of an enum constant. We cannot set the ordinal method, the closest that we can do is to define a custom integer property for the enum class.
 
-Consider our Suit enum example above, suppose we want each card suit constant to be represented by an integer property, (let’s say 1 representing HEARTS, 2 representing DIAMONDS, 3 representing CLUBS and 4 representing spades) we can define a custom integer property that maps each the integer to the appropriate card suit as follows:
+Consider our suit enum example above. Suppose we want each card suit constant to be represented by an integer property. Let us say one representing hearts, two representing diamonds, three representing clubs, and four representing spades we can define a custom integer property that maps each integer to the appropriate card suit as follows:
+
 ```java
 public enum CardSuit {
     HEARTS(1),
@@ -222,20 +224,24 @@ public enum CardSuit {
 }
 ```
 
-Hence, when we define an enum constant as follows: ```Suit suit = Suit.HEARTS```
+Hence, when we define an enum constant as follows: `Suit suit = Suit.HEARTS`
 
-We can say ```suit.getValue()``` and this returns ```1```.
+We can say `suit.getValue()` and this returns `1`.
 
-> Notice the structure of the enum definition, the constants are defined first followed by the instance variable declaration and then the constructor definition.
+Notice the structure of the enum definition. The constants are defined first, followed by the instance variable declaration, and then the constructor definition.
 
-### Building the poker card game controller- A Card Dealing and Shuffling App that  determines the hand ranking category of a player’s hand in a poker game
+#### Building the poker card game controller.
 
-To solidify what we have learnt so far, let’s build a card dealing and shuffling application that determines the ranking of a player’s hand in a poker game. This exercise was extracted from the [Java How to program, 10th Edition By Paul and Harvey Dietel](https://www.amazon.com/Java-Program-Early-Objects-10th/dp/0133807800). To build our application we need the following:
-* **A Card object** - a card has a Face and belongs to a Suit. The card face and suit are represented as enums.
-* **A Player Class**
-* **A Deck of Cards**- A deck is simulated as an aggregation of 52 cards
-* **Simulations of a card shuffling algorithm**(the Fisher-Yates Shuffling Algorithm) and card dealing.
-* **A game controller** that determines:
+This is a Card Dealing and shuffling App that determines the hand ranking category of a player’s hand in a poker game.
+
+To solidify what we have learned so far, let us build a card dealing and shuffling application that determines the ranking of a player's hand in a poker game. This exercise was extracted from the [Java How to program, 10th Edition By Paul and Harvey Dietel](https://www.amazon.com/Java-Program-Early-Objects-10th/dp/0133807800).
+
+To build our application we need the following:
+- A Card object - a card has a Face and belongs to a Suit. The card face and suit are represented as enums.
+- A Player Class.
+- A Deck of Cards - A deck is simulated as an aggregation of 52 cards.
+- Simulations of a card shuffling algorithm (the Fisher-Yates Shuffling Algorithm) and card dealing.
+- A game controller that determines:
   * a pair
   * two pairs
   * three of a kind (e.g., three jacks)
@@ -246,11 +252,11 @@ To solidify what we have learnt so far, let’s build a card dealing and shuffli
 
 Information about the different poker hands can be found [here]( https://en.wikipedia.org/wiki/List_of_poker_hands.):
 
-Here is the class diagram:
-![Game Controller Class Diagram](/understanding-enum-types-in-java/class_diagram.png)
+Here is the class diagram: 
 
+![Game Controller Class Diagram](/engineering-education/understanding-enum-types-in-java/class_diagram.png)
 
-First, let’s define the Player Class. A player has a name and a ```playerHand``` which is an array of 5 Cards
+First, let us define the Player Class. A player has a name and a `playerHand`, which is an array of 5 Cards.
 
 ```java
 public class Player {
@@ -270,7 +276,7 @@ public class Player {
 }
 ```
 
-Next, let’s define the Suit and Face enums:
+Next, let us define the Suit and Face enums:
 
 ```java
 public enum Suit {
@@ -309,7 +315,7 @@ public enum Face {
 }
 ```
 
-As defined above, each card face has an integer ```faceValue``` which we define as a custom property. The card face ACE has a ```faceValue``` of 1, DEUCE has a ```faceValue``` of 2 and so on.
+As defined above, each card face has an integer `faceValue` which we define as a custom property. The card face ACE has a `faceValue` of 1. DEUCE has a `faceValue` of 2 and many more.
 
 We define the Card class as follows:
 
@@ -333,7 +339,7 @@ public class Card {
 }
 ```
 
-We see here a Card has a Face and belongs to a Suit. We have also defined generic methods for getting the card face and suit. The next thing to do is to define the DeckOfCards class. A ```DeckOfCards``` is an aggregation of 52 Cards
+We see here that a Card has a Face and belongs to a Suit. We have also defined generic methods for getting the card face and suit. The next thing to do is to define the DeckOfCards class. A `DeckOfCards` is an aggregation of 52 Cards
 
 ```java
 public class DeckOfCards {
@@ -352,9 +358,9 @@ public class DeckOfCards {
     }
 }
 ```
-We see the ```values()``` methods in action. This method returns an array of enum constants. Our constructor contains nested for loops that populate an array of Cards defined earlier.
+We see the `values()` methods in action. This method returns an array of enum constants. Our constructor contains nested for loops that populate an array of Cards defined earlier.
 
-Next, we define the shuffle method according to the **Fisher-Yates shuffling algorithm**. The following is the description of the Fisher-Yates algorithm.
+Next, we define the shuffle method according to the **Fisher-Yates shuffling algorithm**. The following is the description of the Fisher-Yates algorithm:
 1. Write down the numbers from 1 through N.
 2. Pick a random number k between one and the number of unstruck numbers remaining (inclusive).
 3. Counting from the low end, strike out the kth number not yet struck out, and write it down at the end of a separate list.
@@ -382,7 +388,8 @@ public void shuffle(){
 }
 ```
 
-Next, we define the deal method. The``` deal()``` method takes as parameters an array of Players and the number of cards to deal.
+Next, we define the deal method. The `deal()` method takes as parameters an array of Players and the number of cards to deal.
+
 In the deal method, we first shuffle the deck of cards with the shuffle method defined earlier. For each player, we assign the number of cards passed in as a parameter to the deal method.
 
 ```java
@@ -396,7 +403,7 @@ public void deal(Player[] players, int numberOfCardsToDeal){
 }
 ```
 
-Our ```DeckOfCards``` class finally culminates to:
+Our `DeckOfCards` class finally culminates to:
 
 ```java
 public class DeckOfCards {
@@ -441,14 +448,19 @@ public void deal(Player[] players, int numberOfCardsToDeal){
 }
 ```
 
-Finally, let’s define the ```**GameController**```. The ```**GameController**``` Class contains methods that determine the rank of a player’s hand. To do this, we would use the Java Streams and Lambda functions. Java 8 introduced the concept of streams and lambdas. Streams pass elements through a sequence of processing steps. These processing steps could be intermediate operations such as:
-``map```, ```filter```, ```distinct```, ```limit``` and ```sorted``` or they could be terminal operations like ```forEach```, ```collect```, ```min```, ```max```, ```findFirst```, and ```reduce```. These Stream operations take functional interfaces commonly known as lambdas as parameters.
+Finally, let us define the **GameController**. The GameController class contains methods that determine the rank of a player's hand. To do this, we would use the Java Streams and Lambda functions. 
 
-Let’s now define the methods that determine the rank of a player’s hands:
-```containsAPair()``` - is a hand that contains two cards with the same Rank(Face) and three cards of three other ranks. To determine if a player’s hand contains a pair of cards of the same rank and three other cards of other ranks. To determine if a player's hand is a pair, we do the following:
-* First, we generate a stream of cards using the ```Arrays.stream()``` method.
-* Next we pass the generated stream through the map operation. The map operation generates a new stream in which each Card in the original stream is mapped to its face by calling the ```getFace()``` method on the card.
-* Finally, we terminate the stream operation by collecting the stream into a set using the ```collect(Collectors.toSet()``` methods. We collect a set so that we can eliminate duplicates. Thus, if there are a pair of cards with the same ```faceValue``` we should have only 4 elements in our set instead of 5. We check if the set contains only four elements, and we return the boolean result to the caller;
+Java 8 introduced the concept of streams and lambdas. Streams pass elements through a sequence of processing steps. These processing steps could be intermediate operations such as: `map`, `filter` , `distinct` , `limit` and `sorted` or they could be terminal operations like `forEach` , `collect` , `min` , `max` , `findFirst` , and `reduce`.
+
+These Stream operations take functional interfaces commonly known as lambdas as parameters.
+
+Let us now define the methods that determine the rank of a player's hands:
+
+##### containsAPair() 
+This is a hand containing two cards with the same Rank(Face) and three cards of three other ranks. To determine if a player's hand contains a pair of cards of the same rank and three other cards of other ranks, we do the following:
+- First, we generate a stream of cards using the `Arrays.stream()` method.
+- Next, we pass the generated stream through the map operation. The map operation generates a new stream in which each card in the original stream is mapped to its face by calling the `getFace()` method on the card.
+- Finally, we terminate the stream operation by collecting the stream into a set using the `collect(Collectors.toSet()` methods. We collect a set so that we can eliminate duplicates. Thus, if there are two cards with the same `faceValue`, we should have only four elements in our set instead of 5. We check if the set contains only four elements, and we return the boolean result to the caller.
 
 ```java
 public static boolean containsAPair(Card[] playerHand){
@@ -458,11 +470,11 @@ return cardFaces.size() == 4;
 
 The ```Card::getFace ``` called a method reference it is the short form of the lambda expression: ```card -> card.getFace()```
 
-* **containsTwoPairs()**: to determine if a player’s hand contains two pairs (two groups of cards with the same face value and one card with a different face). To do this, we:
-  * First create a stream of Cards
-  * then pass the stream through ```collect()``` terminal operation which collects the cards into a map grouping them by their face using the:
-    ```collect(Collectors.groupingBy(Card::getFace));```
-  *  Next, we check the number of groups on the map to see if the number of groups with only 2 cards is equal to 2.
+##### containsTwoPairs(): 
+To determine if a player’s hand contains two pairs (two groups of cards with the same face value and one card with a different face). To do this, we:
+- First, create a stream of Cards.
+- Then pass the stream through `collect()` terminal operation which collects the cards into a map grouping them by their face using the: `collect(Collectors.groupingBy(Card::getFace))` .
+- Next, we check the number of groups on the map to see if the number of groups with only two cards equals 2.
 
 ```java
 public static boolean containsTwoPairs(Card[] playerHand) {
@@ -478,10 +490,12 @@ public static boolean containsTwoPairs(Card[] playerHand) {
 }
 ```
 
-* **containsThreeOfAKind()**: To determine if a player’s hand contains three of a kind (three cards with the same face value and two other cards with different face values). To do this:
-  * First, we create a stream of cards.
-  * Next, we collect the resulting stream into a set.
-  * Finally, we check the size of the resulting set, if it is equal to 3 then the player’s hand contains three of a kind
+##### containsThreeOfAKind(): 
+To determine if a player's hand contains three of a kind (three cards with the same face value and two other cards with different face values). To do this:
+- First, we create a stream of cards.
+- Next, we collect the resulting stream into a set.
+- Finally, we check the size of the resulting set. If it is equal to 3, then the player's hand contains three of a kind.
+
 ```java
 public static boolean containsThreeOfAKind(Card[] playerHand) {
    Set<Face> cardSet = Arrays.stream(playerHand).map(Card::getFace).collect(Collectors.toSet());
@@ -489,10 +503,11 @@ public static boolean containsThreeOfAKind(Card[] playerHand) {
 }
 ```
 
-* **containsFourOfAKind()**: To determine if a player’s hand contains three of a kind (four cards with the same face value and then one card with a different face value). To do this,
-  * First, we generate a stream of cards as in the earlier defined methods.
-  * Next, we collect the generated stream into a set.
-  * Finally, we check if the size of the set is equal to 2.
+##### containsFourOfAKind(): 
+To determine if a player’s hand contains three of a kind (four cards with the same face value and then one card with a different face value). To do this,
+- First, we generate a stream of cards as in the earlier defined methods.
+- Next, we collect the generated stream into a set.
+- Finally, we check if the size of the set is equal to 2.
 
 ```java
 public static boolean containsFourOfAKind(Card[] playerHand) {
@@ -501,11 +516,11 @@ public static boolean containsFourOfAKind(Card[] playerHand) {
 }
 ```
 
-* **containsAFlush()**:
-  To determine if a player’s hand contains a flush (all five cards in the player’s hand are all the same suit). To do this:
-  * First, we generate a stream of cards
-  * Next, we collect the generated stream into a set.
-  * Finally, we check if the size of the set is equal to 1.
+##### containsAFlush():
+To determine if a player’s hand contains a flush (all five cards in the player’s hand are all the same suit). To do this:
+- First, we generate a stream of cards.
+- Next, we collect the generated stream into a set.
+- Finally, we check if the size of the set is equal to 1.
 
 ```java
 public static boolean isAFlush(Card[] playerHand) {
@@ -514,13 +529,16 @@ public static boolean isAFlush(Card[] playerHand) {
   return cardSuits.size() == 1;
 }
 ```
-* **isAStraight()**: To determine if a player’s hand is straight (contains 5 cards of sequential rank, not of the same suit). To do this:
-  * First, we generate a stream of cards.
-  * Next we map each card to its ```faceValue``` - an integer using the``` map``` operation.
-  * We then pass the stream resulting from the ```map``` operation into the distinct operation (another stream intermediate operation). The distinct operation removes any duplicates from the stream.
-  * Next we sort the resulting stream from the distinct operation by passing it through the ```sorted``` intermediate operation, which sort the ```faceValues``` in the stream according to natural order ( in ascending order).
-  * We finally terminate the stream pipeline using the ```collect``` operation which collects the stream elements into a list using ```collect(Collectors.toList())```
-  * To check the player’s hand we subtract the smallest card faceValue in the player hand with the largest, if the difference is 4 and the number of distinct cards in the player’s hand is 5 then the player’s hand is a straight.
+
+##### isAStraight(): 
+To determine if a player’s hand is straight (contains 5 cards of sequential rank, not of the same suit). To do this:
+- First, we generate a stream of cards.
+- Next, we map each card to its `faceValue` - an integer using the `map` operation.
+- We then pass the stream resulting from the `map` operation into the distinct operation (another intermediate stream operation). The distinct operation removes any duplicates from the stream.
+- Next, we sort the resulting stream from the distinct operation by passing it through the `sorted` intermediate operation, which sorts the `faceValues` in the stream according to natural order ( in ascending order).
+- We finally terminate the stream pipeline using the `collect` operation, which collects the stream elements into a list using `collect(Collectors.toList())`.
+- To check the player's hand, we subtract the smallest card faceValue in the player's hand with the largest. If the difference is four and the number of different cards in the player's hand is five, then the player's hand is straight.
+  
 ```java
 public static boolean isAStraight(Card[] playerHand) {
   List<Integer> faceValues=
@@ -529,12 +547,13 @@ public static boolean isAStraight(Card[] playerHand) {
   return (faceValues.get(faceValues.size() - 1) - faceValues.get(0) == 4)&&(faceValues.size()==5);
   }
 ```
-* **isAFullHouse()**:
-  To determine if a player’s hand is a full house (contains three kinds of a particular rank and then two cards of another rank). To determine this:
-  * First we create a stream of cards.
-  * Next, we map each card to its card face by passing the stream through the ```map``` operation.
-  * We collect the resulting stream into a set by passing the stream through the ```collect``` operation.
-  * Finally, we check if the resulting set has a size that is equal to 2.
+
+##### isAFullHouse():
+To determine if a player’s hand is a full house (contains three kinds of a particular rank and then two cards of another rank). To determine this:
+- First, we create a stream of cards.
+- Next, we map each card to its card face by passing the stream through the map operation.
+- We collect the resulting stream into a set by passing the stream through the collect operation.
+- Finally, we check if the resulting set has a size that is equal to 2.
 
 ```java
 public static boolean isAFullHouse(Card[] playerHand) {
@@ -543,20 +562,11 @@ public static boolean isAFullHouse(Card[] playerHand) {
   }
 ```
 
-###Conclusion
-We have successfully learnt about Enum types in java and applied our knowledge to implement a card poker game controller that determines the ranking of a player’s hand.
+### Conclusion
+We have successfully learned about Enum types in Java and applied our knowledge to implement a card poker game controller that determines the ranking of a player's hand.
 
-In the process, we have also learnt how to implement the Fisher-Yates Shuffling algorithm, how to use Lambdas and Streams in java and also about relevant stream operations that enable us to carry out complex operations by declarative programming and without stress.
+In the process, we have also learned how to implement the Fisher-Yates Shuffling algorithm, using Lambdas and Streams in Java and relevant stream operations that enable us to carry out complex operations by declarative programming and without a hustle.
 
 You can clone the project [from this repository](https://github.com/ehizman/cardPokerGameController.git).
 
-**Happy coding!**
-
-
-
-
-
-
-
-
-
+Happy coding!
