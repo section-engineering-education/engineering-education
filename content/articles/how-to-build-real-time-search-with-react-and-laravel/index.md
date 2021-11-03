@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /how-to-build-real-time-search-with-react-and-laravel/
-title: Implementing Realtime Search using React and Laravel
+title: Implementing Realtime Search using React and Laravel 
 description: This article will provide a step-by-step guide on how to implement realtime search using React and Laravel.
 author: osinachi-chukwujama
-date: 2021-11-03T00:00:00-03:40
+date: 2021-11-03T00:00:00-12:06
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -33,9 +33,9 @@ Ensure that you are running Node.js version 12 or higher. If you have a lower ve
 #### Backend requirements: PHP, Composer and MySQL
 Laravel, a PHP framework, powers the backend of the application. It uses [Composer](https://getcomposer.org/) for dependency management. To set up the backend, ensure that you have:
 
-1. PHP version 7.4 and greater. Install the latest version [here](https://www.php.net/manual/en/install.php)
-2. Composer version 2.1 and greater. Install the latest version [here](https://getcomposer.org/download/)
-3. MySQL version 5.7 and greater. Install the latest version [here](https://www.mysql.com/downloads/)
+1. PHP version 7.4 and greater. Install the latest version [here](https://www.php.net/manual/en/install.php).
+2. Composer version 2.1 and greater. Install the latest version [here](https://getcomposer.org/download/).
+3. MySQL version 5.7 and greater. Install the latest version [here](https://www.mysql.com/downloads/).
 
 If you are on windows, consider installing [XAMPP](https://www.mysql.com/downloads/). It contains PHP and MYSQL in one package.
 
@@ -66,37 +66,37 @@ npm run dev
 ### Backend setup
 The backend code is available on [this Github repo](https://github.com/vicradon/movie-search-backend). To set it up, follow these steps:
 
-1. Clone the repo
+1. Clone the repo:
 
 ```bash
 git clone https://github.com/vicradon/movie-search-backend.git
 ```
 
-2. Change directory into the repo
+2. Change directory into the repo:
 
 ```bash
 cd movie-search-backend
 ```
 
-3. Install dependencies
+3. Install dependencies:
 
 ```bash
 composer install
 ```
 
-4. Set up the application key
+4. Set up the application key:
 
 ```bash
 php artisan key:generate
 ```
 
-5. Create a `.env` file
+5. Create a `.env` file:
 
 ```bash
 cp .env.example .env
 ```
 
-6. Create the database in the MySQL shell
+6. Create the database in the MySQL shell:
 
 ```bash
 CREATE DATABASE movies_search_app;
@@ -104,7 +104,7 @@ CREATE DATABASE movies_search_app;
 
 Ensure that the database configuration in the `.env` file corresponds to your local database settings.
 
-7. Run the migrations.
+7. Run the migrations:
 
 ```bash
 php artisan migrate --seed
@@ -112,7 +112,7 @@ php artisan migrate --seed
 
 The migrations create a `film` table that contains fictional movies. The original source of the data is the sakila MySQL sample database.
 
-8. Start the application
+8. Start the application:
 
 ```bash
 php artisan serve
@@ -230,7 +230,7 @@ The backend follows a simple flow of running search queries on the database. Whe
 The two most important files in the backend are:
 
 1. `app/Http/Controllers/MoviesController.php` contains the query logic.
-2. `routes/api.php` contains the API routes
+2. `routes/api.php` contains the API routes.
 
 The API endpoint for fetching movies calls the `index` method in the `movies` controller:
 
