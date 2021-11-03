@@ -1,6 +1,6 @@
-One of the popular distributed, NoSQL database management systems is without a doubt, Apache Cassandra. It guarantees scalability and reliability at scale across its infrastructure via partitioning and replication. However, this form of cloud-native development is normally slow and complex. Astra DB is a zero-config serverless database that abstracts the Apache Cassandra cloud-native services seamlessly for database and streaming operations.
+One of the popular distributed NoSQL database management systems is, without a doubt, Apache Cassandra. It guarantees scalability and reliability at scale across its infrastructure via partitioning and replication. However, this form of cloud-native development usually is slow and complex. Astra DB is a zero-config serverless database that seamlessly abstracts the Apache Cassandra cloud-native services for database and streaming operations.
 
-This article explains the fundamentals of Apache Cassandra and Astra DB. We will perform CRUD operations on a blog database using Node.js and Datastax's document API. We will create tables, read database records, perform updates, and deletions.
+This article explains the fundamentals of Apache Cassandra and Astra DB. Then, we will perform CRUD operations on a blog database using Node.js and Datastax's document API. We will create tables, read database records, perform updates and deletions.
 
 ### Prerequisites
 1. You'll need an [Astra DB](https://www.datastax.com/products/datastax-astra) account for the database.
@@ -11,12 +11,12 @@ This article explains the fundamentals of Apache Cassandra and Astra DB. We will
 
 ### Database Setup
 
-First, you'll need to log in to DataStax. I use my GitHub account. However, you connect your Google account or even use your email and password.
+First, you'll need to log in to DataStax. I use my GitHub account. First, however, you connect your Google account or even use your email and password.
 
 ![datastax-sign in](/engineering-education/astradb-nodejs/image1.png)
 
 
-A successful login will take you to your AstraDB dashboard. On the left panel of the dashboard, click `create database`. 
+A successful login will take you to your AstraDB dashboard. Then, on the left panel of the dashboard, click `create database`. 
 
 ![dashboard](/engineering-education/astradb-nodejs/image2.png)
 
@@ -26,7 +26,7 @@ To create a serverless database, choose a name and a keyspace. Apache Cassandra 
 
 >>> Documentation refers to keyspace as a bucket that will hold your tables. You can create different keyspaces for groups of tables”. 
 
-Datastax's Astra DB is distributed in different regions. Before completing the database setup, pick a provider from the options. In my case, I will choose GCP and the region as us-east1.
+Datastax's Astra DB is distributed in different regions. Therefore, before completing the database setup, pick a provider from the options. In my case, I will choose GCP and the region as us-east1.
 
 ![cassandra-demo](/engineering-education/astradb-nodejs/image4.png)
 
@@ -34,7 +34,7 @@ Datastax's Astra DB is distributed in different regions. Before completing the d
 ### Insert data into the database
 Since Apache Cassandra is a NoSQL, it organizes data in collections. When we create a Cassandra collection, it automatically exposes a REST or GraphQL API as an endpoint where we can interact with data from our database. We will utilize the document API gateway from our Node.js application.
 
-First, we need to create a new token for access to DataStax's database in our application. Head over to the DataStax Astra DB dashboard. On the panel, click connect. This shows various ways in which we can access our application including REST and GraphQL APIs. We will use the Document API hence head over under the prerequisites and click the link to create a new Application token.
+First, we need to create a new token for access to DataStax's database in our application. Head over to the DataStax Astra DB dashboard. On the panel, click connect. This shows various ways in which we can access our application, including REST and GraphQL APIs. We will use the Document API; hence head over under the prerequisites and click the link to create a new Application token.
 
 ![application token](/engineering-education/astradb-nodejs/image5.png)
 
@@ -76,7 +76,7 @@ Our Node.js application will need the following packages from npm:
 
 - @strajs/collections: This is the module that acts as a driver to our document [stargate API](https://stargate.io/) in AstraDB. DataStax uses a Stargate API gateway to connect from our Node.js application. 
   
-- Dotenv: Since we are using a serverless database, we need a way to store API keys. It injects environment variables from a `.env` file in our application, therefore, avoiding hardcoding any sensitive data. Make sure to add a .env in your `.gitignore` file so that this is not pushed to a GitHub repository.
+- Dotenv: Since we are using a serverless database, we need a way to store API keys. It injects environment variables from a `.env` file in our application, avoiding hardcoding any sensitive data. Ensure to add a .env in your `.gitignore` file not to push this to a GitHub repository.
   
 - Nodemon: `nodemon` module monitors changes in our application and restarts our application server.
 
@@ -133,7 +133,7 @@ Congratulations, the server setup is up and running! In the next sections, we wi
 
 ### Connecting and Retrieving data
 
-The initially generated credentials can now be added to the `.env` file. Under the `.gitignore`, make sure to exclude its commit to GitHub public repository. The file should look like the following:
+We can now add the initially generated credentials to the `.env` file. Under the `.gitignore`, make sure to exclude its commit to GitHub public repository. The file should look like the following:
 
 ```bash
 ASTRA_DB_REGION = us-east1
@@ -158,7 +158,7 @@ app.use(express.json())
 app.use(express.urlencoded({extended: false}))
 ```
 
-Finally, we need to create an instance of the collection client, `createClient`. Invoke the function passing the environment variables set earlier as object arguments.
+Finally, we need to create an instance of the collection client, `createClient`. Then, invoke the function passing the environment variables set earlier as object arguments.
 
 ```js
 // create an Astra DB client
@@ -175,7 +175,7 @@ To simplify the database collection, we will create for the collection that we w
 const collection = astraClient.namespace("stackr").collection("testcollection")
 ```
 
-The collection needs a namespace which is the keyspace and a collection name. We name them `stackr` and `testcollection` respectively.
+The collection needs a namespace which is the keyspace, and a collection name. We name them `stackr` and `testcollection`, respectively.
 
 Let' head over to list all blogs in our collection. Create a `GET` route to list all collections. The `find` method from the `collection` instance is the method that returns all records in the collection:
 
@@ -187,15 +187,14 @@ app.get('/blogs', async (req, res) => {
 }
 ```
 
-Under the `GET` endpoint, we simply return a json response with blogs. To test our API responses, I will use  [thunder client VS Code extension](https://marketplace.visualstudio.com/items?itemName=rangav.vscode-thunder-client). Feel free to use any other REST API Client such as [postman](https://www.postman.com/) or [insomnia](https://insomnia.rest/). If we make a `GET` request, AstraDB sends back the data with the document ID as the key:
+Under the `GET` endpoint, we return a json response with blogs. I will use  [thunder client VS Code extension](https://marketplace.visualstudio.com/items?itemName=rangav.vscode-thunder-client). Feel free to use any other REST API Client such as [postman](https://www.postman.com/) or [insomnia](https://insomnia.rest/). If we make a `GET` request, AstraDB sends back the data with the document ID as the key:
 
 ![image8](/engineering-education/astradb-nodejs/image8.png)
 
 ![image9](/engineering-education/astradb-nodejs/image9.png)
 
 ### Creating documents in AstraDB
-To create a document in a collection, simply use the `POST` HTTP verb with an endpoint such as `/new`. The `create` method from the `collection` instance will create a new document. To test this, head to the thunder client and add a body that includes a `title`, `description`, and `author`.
-
+To create a document in a collection, use the `POST` HTTP verb with an endpoint such as `/new`. The `create` method from the `collection` instance will create a new document. To test this, head to the thunder client and add a body that includes a `title`, `description`, and `author`.
 ```js
 // post route
 app.post('/new', async(req, res) => {
