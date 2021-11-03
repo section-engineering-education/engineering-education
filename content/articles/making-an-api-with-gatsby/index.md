@@ -14,26 +14,26 @@ Front-end developers like me can increase the breadth of what's possible using t
 - [An overview on building a static API](#an-overview-on-building-a-static-api)
 - [The structure of static API](#the-structure-of-static-api)
 - [Creating a Static API and Hosting It](#creating-a-static-api-and-hosting-it)
-- [The project](#the project)
--[Conclusion](#conclusion)
+- [The project](#the-project)
+- [Conclusion](#conclusion)
 
 ### An overview on building a static API
-For a static API, you should simply provide a progression of JSON documents to the mentioning customer. Static APIs might be made by composing JSON documents the hard way, arranging them into organizers, and conveying them to a CDN or other record centered facilitating administration. 
+For a static API, you should simply provide a progression of JSON documents to the mentioning customer. Static APIs might be made by composing JSON documents the hard way, arranging them into organizers, and conveying them to a CDN or other record-centered facilitating administration. 
 
-Nonetheless, that is something nobody needs to do. I can barely comprehend how horrendous it is do. 
+Nonetheless, that is something nobody needs to do. I can barely comprehend how horrendous it is. 
 
-It's all the more impressive to utilize static APIs when they can progressively and naturally accumulate information from some various sources and afterward assemble JSON records from it. Static site generators make this cycle a breeze. With a static site generator, you might use outer (or inside) APIs to recover information, then, at that point, convert the information and produce JSON pages utilizing that changeable information. 
+It's all the more impressive to utilize static APIs when they can progressively and naturally accumulate information from various sources and afterward assemble JSON records from it. Static site generators make this cycle a breeze. With a static site generator, you might use outer (or inside) APIs to recover information, then, at that point, convert the information and produce JSON pages utilizing that changeable information. 
 
 That is generally how you progressively build a static API. Before we get to the computerized viewpoint, we should talk about the design of the framework.
 
 ### The structure of static API
-Static APIs ought to follow a similar plan standards as dynamic APIs. 
+Static APIs ought to follow a similar plan standard as dynamic APIs. 
 
-How about we guess I needed to make an API to monitor the melodies that play on repeat in my head when I awaken. A rundown of cerebrum worms would be accessible, possibly at/brainworm.json, and I would have the option to get to subtleties on a specific brainworm by utilizing some unique key, like an id. Pages with the example/brainworm/[ID].json may be offered, with [ID] being the earworm's id esteem.
+How about we guess I needed to make an API to monitor the melodies that play on repeat in my head when I awaken. A rundown of brainworms would be accessible, possibly at/brainworm.json, and I would have the option to get to subtleties on a specific brainworm by utilizing some unique key, like an id. Pages with the example/brainworm/[ID].json may be offered, with [ID] being the earworm's id esteem.
 
 Let's check an example JSON file for a better understanding
 
-```json
+```JSON
 {
   "results": [
     {// This file contains Despacitos song
@@ -59,20 +59,20 @@ Let's check an example JSON file for a better understanding
     }
   ],
   "meta": {
-    "count": 3 // The count value is three because the files in this Json file are three
+    "count": 3 // The count value is three because the files in this JSON file are three
   }
 }
 ```
 > I deliver an object with a nested results array, not simply an array of results. So we can add top-level (meta) data in the future without changing the response format. 
 
 ### Creating a Static API and Hosting It
-Static site generators are solid since they incorporate development instruments. That is the means by which they can offer unique information statically. Since most have a dev server that tunes in for changes and remakes, you can grow quickly. 
+Static site generators are solid since they incorporate development instruments. That is how they can offer unique information statically. Since most have a dev server that tunes in for changes and remakes, you can grow quickly. 
 
-We wish to have these static JSON records on a CDN, or content conveyance organization. A CDN's benefit is speed and overall dispersal. Since everything we're doing is allowing the client to download a record, we don't need a convoluted web server.
+We wish to have these static JSON records on a CDN or `content delivery network`. A CDN's benefit is speed and overall dispersal. Since everything we're doing is allowing the client to download a record, we don't need a convoluted web server.
 
-On the whole, you'll need to build the project to get the JSON information to transfer. Once more, you might make locally and transfer to CDN physically. Then there's the issue of setting up DNS for your CDN or invalidating caches when updating.
+On the whole, you'll need to build the project to get the JSON information to transfer. Once more, you might make it locally and transfer it to CDN physically. Then there's the issue of setting up DNS for your CDN or invalidating caches when updating.
 
-Consider Netlify or Vercel as alternatives. These tools will make and transfer to a CDN previously settled for you. What's more, webhooks make it simple! Convey snares are Netlify's expression for assemble snares.
+Consider Netlify or Vercel as alternatives. These tools will make and transfer to a CDN previously settled for you. What's more, webhooks make it simple! Convey snares are Netlify's expression for assembling snares.
 
 
 ### The project
@@ -136,7 +136,7 @@ Data can be accessed using GraphQL. Run the below command
 ```bash
 $ npm install --save-dev gatsby-transformer-yaml
 ```
-After accessiing the files, we then congfig the plugin
+After accessing the files, we then config the plugin
 
 ```js
 module.exports = {
@@ -155,9 +155,9 @@ module.exports = {
   ]
 }
 ```
-For this situation, we're advising Gatsby to source information documents in information/earworms. Data quering is enabled by the integration of the two modules.
+For this situation, we're advising Gatsby to source information documents in information/earworms. Data querying is enabled by the integration of the two modules.
  
-Stop the server and afterwards restart it. Then, visit GraphiQL at http://localhost:8000/__graphiql with this request:
+Stop the server and afterward restart it. Then, visit GraphiQL at http://localhost:8000/__graphiql with this request:
 
 ```bash
 {
@@ -270,7 +270,7 @@ Build the project using the command listed below
 ```bash
 npm run build
 ```
-After running build command run the serve using the code below.
+After running the build command run the server using the code below.
 This serves the public directory `public/earworms.json`.
 
 ```bash
@@ -279,7 +279,7 @@ $ npm run serve
 
  Open that up in the program and you should see the data. 
 
-> The local host port is 9000 when serving.
+> The localhost port is 9000 when serving.
 
 ```bash
 {
