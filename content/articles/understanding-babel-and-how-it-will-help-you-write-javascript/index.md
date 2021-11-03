@@ -78,7 +78,7 @@ var dave = new Person();
 
 The `Person function`, which may be used as a standard prototype constructor, is already available. With the `_classCallCheck` function, we can perform safety checking as well.
 
-This method is called within the `Person constructor, and it will throw an error unless the `Person function` is treated as a constructor function, in which case it will return `true`.
+This method is called within the `Person constructor`, and it will throw an error unless the `Person function` is treated as a constructor function, in which case it will return `true`.
 
 ### Multiline strings
 In addition, ES6 introduces a new, more concise manner of defining strings. You can construct multiline strings by using the backtick symbol. 
