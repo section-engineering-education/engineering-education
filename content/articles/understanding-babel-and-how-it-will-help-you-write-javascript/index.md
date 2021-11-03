@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /understanding-babel-and-how-it-will-help-you-write-javascript/
 title: Understanding Babel and How it will Help you Write JavaScript
-description: This tutorial provides a look into Babel and how useful it can be when writing JavaScript code.
+description: This tutorial provides a look into Babel and how useful it can be when writing JavaScript code. ES6 provides a transpiler that converts to a rather plain, regular JavaScript in the end.
 author: robert-wanjau
 date: 2021-11-03T00:00:00-16:24
 topics: [Languages]
