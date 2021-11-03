@@ -6,7 +6,13 @@ labels: topic suggestion
 assignees: ''
 
 ---
+
+NOTE: All **1st-time contributors** should know Topic approval and PR submission does NOT guarantee your Topic/Article will be published. We will review all PRs that come in to make sure they adhere to the standard of quality we expect from the EngEd community. As a rule of thumb - please only submit articles (pull requests) with a complete and fully polished article - ready to be published. 
+
+All revisions and edits should be completed on your own forked repo (as to not take up room in the queue). Any PR that is submitted (incomplete - meaning Error Free) will be closed. A PR being closed does NOT mean the article can not be published (or fixed) it simply means that the edits, revisions, and fixes will happen outside of the queue.
+
 ### Topic Suggestion
+Enter topic suggestion here...
 
 #### Pre-submission advice
 By following all our pre-submission advice and reviewing our Resources folder, you will maximise your chances of your topic being approved.
