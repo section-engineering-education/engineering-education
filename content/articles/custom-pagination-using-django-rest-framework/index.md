@@ -14,7 +14,7 @@ images:
     alt: Custom Pagination Example image
 ---
 
-On most modern web applications and websites, one will need to split the app content mostly when displaying huge lists of content sliced in multiple pages for better user experience and readability. It made this easier with Python Django as it comes with a pre-built class, Paginator, to create and manage paginated data of applications.
+On most modern web applications, one will need to split the app content mostly when displaying huge lists of content sliced in multiple pages for better user experience and readability. This has been made this easier with Django as it comes with a pre-built class, Paginator, to create and manage paginated data of applications.
 <!--more-->
 This article will cover how we can use the Django REST Framework with Vue to customize and modify pagination styles and help the reader understand the various ways of data pagination and its importance in web development.
 
@@ -31,19 +31,19 @@ This article will cover how we can use the Django REST Framework with Vue to cus
 
 ### Prerequisites
 To follow through this tutorial, the reader should:
-- Have prior knowledge of Python and Python Django concepts.
-- Have a good understanding of Python Django REST Framework and Vue.
-- Have a suitable IDE installed such as Pycharm, VS Code, etc.
+- Have prior knowledge of Python and Django concepts.
+- Have a good understanding of Django REST Framework and Vue.
+- Have a suitable IDE installed such as Pycharm, Visual Studio Code, etc.
 
 For this article will use the Pycharm IDE, use this [page](https://www.jetbrains.com/pycharm/download/#section=windows) to download and install it on your machine.
 
 ### Pagination
-This is the process of splitting the content of a website or web application into discrete pages to make it more efficient to use and read when working with huge lists of data. Python Django comes with a pre-built class, **Paginator** for creating the paginations and managing the paginated data using the default styles. This process can be done either with **Class-Based Views** or **Function-Based Views** or sometimes one may use the **Django REST Framework** to customize and modify the pagination format, as will be discussed in this tutorial.
+This is the process of splitting the content of a web page into discrete pages to make it more efficient to use and read when working with huge lists of data. Django comes with a pre-built class, **Paginator** for creating the paginations and managing the paginated data using the default styles. This process can be done either with **Class-Based Views** or **Function-Based Views** or sometimes one may use the **Django REST Framework** to customize and modify the pagination format, as will be discussed in this tutorial.
 
 This splitting of web data has its own advantages:
-- Increases content readability by making websites and web apps that are not overcrowded with content making it easier for visitors to focus on small content at a time.
+- Increases content readability by making  web pages that are not overcrowded with content making it easier for visitors to focus on small content at a time.
 - Reduces server load as it is easier to get a small amount of data from the database than retrieving all the information at once which may slow page loading.
-- Increases the number of page views per user and total pageviews of the website maximizing the number of impressions they can serve and the number of advertising units websites can sell.
+- Increases the number of page views per user and total page views of the website maximizing the number of impressions they can serve and the number of advertising units websites can sell.
 
 ### Ways of Pagination
 Pagination can be accomplished with the Django `ListView` class, which is controlled by the `GET` parameter, which specifies which page to display. This will create a simple Django project for posting blogs and implementing the pagination styles.
@@ -51,7 +51,7 @@ Pagination can be accomplished with the Django `ListView` class, which is contro
 #### Project Structure.
 We are going to use a [blog application](https://djangocentral.com/building-a-blog-application-with-django/) — [Github repo](https://github.com/dentonya/Blog_Post_Site/tree/master/blogsite) – for the sake of this tutorial on class and function-Based Views. Make sure to have cloned the project to follow along.
 
-Check the Python Django version and install it if it isn't already installed:
+Check the Django version and install it if it isn't already installed:
 
 ``` bash
 pip install django
@@ -170,7 +170,7 @@ To display the paginated content on the screen, we will use the templates `index
 </div>
 {%endblock%}
 ```
-The code code is used to display what is in the database to the user using the template tags with inline CSS styling. The `{% extends% }` tag is used to instruct Django to inherit from the base.html file, we inject our content to other HTML files using the `{% block content %}` tag. Learn more about template tags from [here](https://docs.djangoproject.com/en/3.2/ref/templates/builtins/).
+The code above is used to display what is in the database to the user using the template tags with inline CSS styling. The `{% extends% }` tag is used to instruct Django to inherit from the base.html file, we inject our content to other HTML files using the `{% block content %}` tag. Learn more about template tags from [here](https://docs.djangoproject.com/en/3.2/ref/templates/builtins/).
 
 A `for` loop is used to loop through the various fields from our `post` model, these fields are then fetched from the database using the model name and the field name i.e. `post.author`: fetches the name of the author of the article and displays it on the screen.
 
