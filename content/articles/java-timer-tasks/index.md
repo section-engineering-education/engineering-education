@@ -1,9 +1,26 @@
-### INTRODUCTION
-The Java programming language provides a class utility known as `Timer Task`. This class enables task scheduling, a task to be executed after a given period or at a specified date and time.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /java-timer-tasks/
+title: Implementing Timer Tasks in Java
+description: This article will guide the reader on how to implement Timer Tasks in Java. This class allows one to schedule the execution of different processes.
+author: joseph-ongoma
+date: 2021-11-03T00:00:00-11:40
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
-A timer in Java is a facility that enables threads to schedule tasks for later execution. Timer tasks, therefore, are tasks that can be scheduled for later execution, either once or repeatedly.
+  - url: /engineering-education/java-timer-tasks/hero.jpg
+    alt: Java Timer Tasks Hero Image
+---
+Java programming language provides a class utility known as Timer Task. It allows one to schedule different tasks.
+<!--more-->
+In other words, a task can be executed after a given period or at a specified date and time.
 
-Timer Tasks are important since they enable a program to be scheduled for later execution in the event where the processor is held and busy executing some other tasks. This is done by keeping the process to be executed in the queue such that when the time of execution comes, the processor may be able to suspend other processes and execute the task in the queue.
+A `Timer` in Java is a process that enables threads to schedule tasks for later execution.
+
+Scheduling is done by keeping a specific process in the queue such that when the execution time comes, the processor can suspend other processes and run the task.
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
@@ -16,44 +33,46 @@ Timer Tasks are important since they enable a program to be scheduled for later 
 
 ### Prerequisites
 To understand this article better you will need to:
-- have a basic understanding of [Java](https://www.w3schools.com/Java/default.asp)
-- have a code editor such as Intellij Idea, which can be downloaded from [this](https://www.jetbrains.com/idea/download/#section=windows) Jetbrains site.
+- Have a basic understanding of [Java](https://www.w3schools.com/Java/default.asp)
+- Have a code editor such as [Intellij Idea](https://www.jetbrains.com/idea/download/#section=windows).
 
-### Java timer task methods
-There are three Java Timer Task Methods. They include;
-- cancel() method
-- run() method
-- ScheduleExecutionTimer
+### Java Timer task methods
+There are three Java Timer Task Methods:
+- `cancel()` method
+- `run()` method
+- `ScheduleExecutionTimer`
 
-##### Cancel() Method
-This is a boolean data type. The method cancels a scheduled task in Java. This method means that no task will be executed if it is called before the task is executed, or that no other task will run if the task is to be executed repeatedly.
+##### Cancel() method
+This method cancels a scheduled task in Java. It means that no task will be executed in a particular period.
 
-##### Run() Method
-The `run() method renders the task to be executed active.
+##### Run() method
+The `run()` method is responsible for running the scheduled task.
 
 ##### ScheduleExecutionTime() Method
-This method returns the scheduled execution time for the latest actual execution of the task in memory.
+This method returns the scheduled execution time for the latest task in memory.
 
 ### Code example
-Now, when you have finished downloading Intellij Idea, run it as administrator and then follow the steps on the screen to finish setting it up. After installing the IDE, launch it and click on `New Project` as in the figure below.
+When you have finished downloading IntelliJ IDEA, run it as administrator and then follow the prompts on the screen to finish setting it up. 
+
+After installing the IDE, launch it and click on `New Project`, as shown in the figure below:
 
 ![New](/engineering-education/java-timer-tasks/new.jpg)
 
-Select `java`  then under Java, and click `Next` as in the figure below.
+Select `java` then click `Next`:
 
 ![Java](/engineering-education/java-timer-tasks/java.jpg)
 
-Check the `Create project from template` and click  `Next` as in the figure below.
+Check the `Create project from template` and click  `Next`:
 
-![Project template](/engineering-education/java-timer-tasks/comandline.jpg)
+![Project template](/engineering-education/java-timer-tasks/commandline.jpg)
 
-On the next screen, enter the name of the project that is `TimerTask` and click `Finish`. Now, the next screen is where you will be able to write your code. The environment should look like this.
+On the next screen, enter the project name as `TimerTask` and click `Finish`. We will be able to write our code on the next screen. The environment should look like this:
 
 ![Enviroment](/engineering-education/java-timer-tasks/environ.jpg)
 
-Now you will have an example that schedules a task and alerts the message `Happy Birthday John Doe` when the date is `October 30th, 2021 at midnight.
+Let's create an example that schedules a task and displays the message `Happy Birthday John Doe` when the date is `October 30th, 2021 at midnight`.
 
-```Java
+```java
 package com.company;
 import java.util.Calendar;
 import java.util.Timer;
@@ -74,25 +93,27 @@ public class Main {
 }
 ```
 
-The ouput of the code above when time is up will be;
+The output of the above code will be:
 
-```
+```bash
 Happy Birthday John Doe
 ```
 
-From the code above, you are importing the `Calendar`, `Timer`, and the `TimerTask` utilities.
+In the above code, we are importing the `Calendar`, `Timer`, and `TimerTask` utilities.
 
-The line `Timer T = new Timer()` is the instance of a timer that keeps track of the time and the term `Birthday` is the task to be executed by the TimerTask.
+`Timer T = new Timer()` is the instance of a timer that keeps track of time. `Birthday` is the task to be executed by the TimerTask.
 
-When time is up, the `run` function of the `TimerTask` instance is executed.
+When the time is up, the `run` function of the `TimerTask` instance is executed.
 
-The `schedule` function links the task to the timer. This function has a function `task` which is the task to be executed, i.e. `Birthday` and `time` which specifies the time the task is to be executed.
+The `schedule` function links the task to the timer. This method references the task that will be executed.
 
-In this example, you will create an instance of Calendar Date and set the `YEAR`, `MONTH`, `DAY`, `HOUR`, `MINUTE`, and `SECOND` the task is to be executed.
+In the following example, we will create an instance of `Calendar Date` and set the `YEAR`, `MONTH`, `DAY`, `HOUR`, `MINUTE`, and `SECOND` that the task will be executed.
 
-You can also include a count-down timer in the above example so that our timer starts counting before the task executes. This can be done by including "if statements` and `decrement` operators as shown below.
+We can also include a count-down timer in the project so that our timer starts counting before the task executes. 
 
-```Java
+This can be achieved using `if` statements and `decrement` operators as shown below:
+
+```java
 package com.company;
 import java.util.Calendar;
 import java.util.Timer;
@@ -121,9 +142,9 @@ public class Main {
 }
 ```
 
-The output of the code now is as below;
+The output of the code now is shown below:
 
-```
+```bash
 55
 56
 57
@@ -132,11 +153,18 @@ The output of the code now is as below;
 Happy Birthday John Doe
 ```
 
-To enable the counter to count at a rate of 1 second, you are using the line `T.scheduleAtFixedRate (Birthday, date.getTime(), 1000);` instead of `T.schedule(Birthday, date.getTime());` by adding `1000 milliseconds`, which represents the count period.
+To enable the counter to count at a rate of 1 second, we are using `T.scheduleAtFixedRate (Birthday, date.getTime(), 1000);` instead of `T.schedule(Birthday, date.getTime());`. `1000 milliseconds` represents the count period.
 
-The variable `i` is initialized to `5` which implies that when the value of `i` counts for five seconds before the task is executed. The time `OCTOBER, 30,23, 59, 54` indicates that the counter will begin counting on October 30<sup>th</sup>, at 23:59 hours, and at the 54<sup>th</sup> second.
+The variable `i` is initialized to `5`. This implies that the task will be executed after five seconds. 
 
-The cancel() method is used to cancel the execution of the task to prevent it from being executed again once the task is completed.
+The time `OCTOBER, 30,23, 59, 54` indicates that the counter will begin on October 30<sup>th</sup>, at 23:59 hours, and at the 54<sup>th</sup> second.
+
+The `cancel()` method is used to cancel the execution of the task to prevent it from being executed again once the task is completed.
 
 ### Conclusion
-This tutorial has taken you through the concept of Timer Tasks in Java, and therefore, you should be able to get a better understanding of Timer Tasks and create your timer that alerts or displays a given message when time is up.
+This tutorial has taken you through the concept of Timer Tasks in Java.
+
+You should, therefore, have a better understanding of Timer Tasks and can incorporate them into your projects.
+
+---
+Peer Review Contributions by: [Jethro Magaji](/engineering-education/authors/jethro-magaji/)
