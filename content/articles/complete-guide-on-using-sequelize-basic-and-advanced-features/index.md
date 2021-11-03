@@ -27,8 +27,7 @@ Before we continue it is recommended to have the following.
 - A basic knowledge of postman, which we will use to test our endpoints.
 - Text Editor - I will be using VS Code.
 
-In this article, I will show you most of the features you will need when using sequelize, and I will be using a project-based approach.
-You must follow along and practice the concepts.
+In this article, we will go through features you will need when using sequelize, and we will be using a project-based approach.
 
 Let's get started!
 
@@ -83,7 +82,7 @@ sequelize-project
 
 The next step is to start adding the necessary code to our files, we will start with `.env`
 
-.env
+`.env`
 
 We will add the PORT
 
@@ -177,12 +176,12 @@ We added script to be able to successfully run our node js server.
 
 Using `npm start` will start the project but will stop running after it hits an error
 
-Using `npm dev` will start the project and keep running after it hits an error
+Using `npm run dev` will start the project and keep running after it hits an error
 
 ### Running the App
 
 ```bash
-npm dev
+npm run dev
 ```
 
 ### Installing Sequqlize
@@ -258,16 +257,16 @@ We will continue with PostgreSQL for this tutorial, but you can decide to use an
 
 I have created a database on Postgresql
 
-Details
+#### Details
 
 Database name - Sequelize
 Database user - josh
 password - \***\*\*\*\*\***
 host - localhost i.e this can be a server
 
-We need to go into our `.env` file and add our database details to it, the essence of the .env file is to have access to all details inside it using process.env
+We need to go into our `.env` file and add our database details to it, the essence of the `.env` file is to have access to all details inside it using process.env
 
-We also need to create a new file `.gitignore`, every file or folder specified inside the .gitigore file will not be pushed to the repo when we decide to push it, common files we put inside the .gitigore are node_modules and .env, we don't want people to see all database details so it is wise not to push our .env file.
+We also need to create a new file `.gitignore`, every file or folder specified inside the `.gitignore` file will not be pushed to the repo when we decide to push it, common files we put inside the `.gitigore` are `node_modules` and `.env`, we don't want people to see our database details so it is wise not to push our `.env` file.
 
 Our project file structure should look like this at this point.
 
@@ -283,7 +282,7 @@ sequelize-project
 └── package.json
 ```
 
-Content of the .env file
+Content of the `.env` file
 
 ```bash
 PORT=5000
@@ -310,15 +309,17 @@ MARIADB - 'mariadb'
 POSTGRESQL - 'postgres'
 SQLITE - 'sqlite'
 
-Content of the .gitignore file
+Content of the `.gitignore` file
 
 ```js
 node_modules.env;
 ```
 
-The next step is to add our database credential to the config.json file which is inside the config folder
+The next step is to add our database credential to the `config.json` file which is inside the config folder
 
-The config.json file will not allow us to use our .env file, we will rename it as config.js, and add the code below.
+The `config.json` file will not allow us to use our `.env` file, we will rename it as `config.js`, and add the code below.
+
+`config.js`
 
 ```js
 const dotenv = require("dotenv");
@@ -340,7 +341,9 @@ module.exports = {
 };
 ```
 
-The next step is to update the index.js inside the model folder. Replace the code inside the file with the code below.
+The next step is to update the `index.js` inside the model folder. Replace the code inside the file with the code below.
+
+`index.js`
 
 ```js
 "use strict";
@@ -410,7 +413,10 @@ success
 ```
 
 We should get the result above if we followed the steps above well.
-We have been setting up a project-based environment so that we can be able to start building projects with this knowledge immediately after this tutorial.
+
+We have been setting up a project-based environment so that we can be able to start building projects with this knowledge immediately
+after this tutorial.
+
 It's time to get into Sequelize properly now.
 
 #### Creating Models
@@ -464,7 +470,7 @@ sequelize db:migrate
 == 20210727120010-create-user: migrated (0.350s)
 ```
 
-After running the command above, our user table has been created in the database we specified in the .env file.
+After running the command above, our user table has been created in the database we specified in the `.env` file.
 
 So far we have learned the following
 
@@ -473,7 +479,7 @@ So far we have learned the following
 - Connecting to the database and testing the connection.
 - How to use Sequelize CLI. (Ongoing)
 
-The next step is to create a Services folder for our node server API, we will be experimenting with sequelize inside our services, since we have a user model already, we would create a user-service.js file inside our services folder.
+The next step is to create a `services` folder for our node server API, we will be experimenting with sequelize inside our services, since we have a user model already, we would create a `user-service.js` file inside our `services` folder.
 
 Our project file structure should look like this at this point.
 
@@ -494,7 +500,7 @@ sequelize-project
 └── package.json
 ```
 
-Add the code below to the user-service.js
+Add the code below to the `user-service.js`
 
 ```bash
 const User = require("../models/index")['User'];
