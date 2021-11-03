@@ -36,21 +36,21 @@ Let's check an example JSON file for a better understanding
 ```JSON
 {
   "results": [
-    {// This file contains Despacitos song
+    { 
       "file_unique_identifier": "1",
       "file_date": "10-29-2021",
       "title_of_the_song": "Despacito",
       "artist_name": "Luis Fonsi",
       "youtube_url": "https://www.youtube.com/watch?v=kJQP7kiw5Fk"
     },
-    {// File two with Maroons song
+    {
       "file_unique_identifier": "2",
       "file_date": "10-30-2021",
       "title_of_the_song": "Girls Like You",
       "artist_name": "Maroon 5",
       "youtube_url": "https://www.youtube.com/watch?v=cBVGlBWQzuc"
     },
-    {// This file contains Post Malone song
+    { 
       "file_unique_identifier": "3",
       "file_date": "10-31-2021",
       "title_of_the_song": "Congratulations",
@@ -59,7 +59,7 @@ Let's check an example JSON file for a better understanding
     }
   ],
   "meta": {
-    "count": 3 // The count value is three because the files in this JSON file are three
+    "count": 3  // The count value is three because the files in this JSON file are three
   }
 }
 ```
