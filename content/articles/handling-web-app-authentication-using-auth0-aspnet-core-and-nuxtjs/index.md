@@ -34,7 +34,6 @@ This guide will use the `Auth0` platform to authenticate and verify the users in
 - [Wrapping up](#wrapping-up)
 - [Further reading](#further-reading)
 
-
 ### Prerequisites
 
 - Latest [Visual Studio](https://visualstudio.microsoft.com/vs/) installed
@@ -51,7 +50,7 @@ This guide will use the `Auth0` platform to authenticate and verify the users in
 
 The user will login from the client-side application using their correct username and password or social media platforms. Next, the sign-in request is then forwarded to the `Auth0` platform, and upon successful authentication, it responds with an access token.
 
-Then the client application can request data from the backend, which it sends along with the previous access token. On receipt of the request, the backend API will first verify the token with `Auth0` to confirm that it is valid, and upon successful verification, it responds with the requested data.
+The client application can then request data from the backend, which it sends along with the previous access token. On receipt of the request, the backend API will first verify the token with `Auth0` to confirm that it is valid, and upon successful verification, it responds with the requested data.
 
 ### Setting up Auth0
 
@@ -95,9 +94,9 @@ Since we will have to verify access tokens using `Auth0`, our `ASP.NET API` must
 We will browse to the ASP.NET Core project directory and execute the below commands in the terminal:
 
 ```bash
-$ dotnet user-secrets init
-$ dotnet user-secrets set "Config:Auth:Audience" "<The Auth0 API Unique Identifier>"
-$ dotnet user-secrets set " Config:Auth:Authority" "<The Auth0 API Domain>"
+dotnet user-secrets init
+dotnet user-secrets set "Config:Auth:Audience" "<The Auth0 API Unique Identifier>"
+dotnet user-secrets set " Config:Auth:Authority" "<The Auth0 API Domain>"
 ```
 
 Note that `Domain` and `Identifier` values should be substituted with the Domain and Identifier we earlier got from the API we created in `Auth0`.
@@ -160,7 +159,7 @@ Finally, we will protect one of the controllers in our application. In this case
 In this section, we will create the `Nuxt` client application. We will start by running the below command in the terminal:
 
 ```bash
-$ yarn create nuxt-app <the-application-name>
+yarn create nuxt-app <the-application-name>
 ```
 
 The command will prompt for options to select, and we will leave them as they are to things simple.
@@ -168,12 +167,12 @@ The command will prompt for options to select, and we will leave them as they ar
 Then, we will install several dependencies and modules that our client `Nuxt` application requires. First, we will browse to the Nuxt project root folder and execute the below commands:
 
 ```bash
-$ yarn add @nuxtjs/auth @nuxtjs/dotenv @nuxtjs/axios
+yarn add @nuxtjs/auth @nuxtjs/dotenv @nuxtjs/axios
 ```
 
-The above command fetches the [Axios](https://www.npmjs.com/package/axios) package, which assists in making the requests to our backend API. The `Auth` module handles authentication on the Nuxt client application. The `Dotenv` module saves the secret `Auth0` values in environmental variables stored inside a `.env` file.
+The above command fetches the [Axios](https://www.npmjs.com/package/axios) package, which assists in making the requests to our backend API. The `Auth` module handles authentication on the Nuxt client application. The `Dotenv` module saves the secret `Auth0` values in environment variables stored inside a `.env` file.
 
-Then, we will declare the environmental variables and store them in a `.env` file in the Nuxt project directory as below:
+Then, we will declare the environment variables and store them in a `.env` file in the Nuxt project directory as below:
 
 ```
 CONFIG_AUTH_DOMAIN=My_Domain
@@ -194,7 +193,7 @@ buildModules: [
 ]
 ```
 
-Next, `Axios` need to be set up in order to connect to our backend. Note that the `base URL` of the `ASP.NET Core Web` will be, by default, the <https://localhost:5001>. Also, note that it can be different depending on the developer’s project configuration.
+Next, `Axios` needs to be set up in order to connect to our backend. Note that the `base URL` of the `ASP.NET Core Web` will be, by default, the <https://localhost:5001>. Also, note that it can be different depending on the developer’s project configuration.
 
 ```js
 axios: {
@@ -214,7 +213,7 @@ router: {
 },
 ```
 
-Finally, we will make the `Auth` middleware to fetch the `Auth0` values from environmental variables stored in the `.env` file we earlier created and store them in a strategy with the name `auth0` as below:
+Finally, we will make the `Auth` middleware to fetch the `Auth0` values from environment variables stored in the `.env` file we earlier created and store them in a strategy with the name `auth0` as below:
 
 ```js
 auth: {
@@ -282,20 +281,21 @@ export default {
   </td>
 </template>
 ```
+
 In the above code snippet, the login method will send the sign-in request according to the earlier set-up in the `Auth` module
 
 We will then proceed to run both the API and the Nuxt client projects. To run our API, we browse to the API project root directory and execute the below commands:
 
 ```bash
-$ dotnet build
-$ dotnet run
+dotnet build
+dotnet run
 ```
 
 To execute the Nuxt client project, we will browse to the Nuxt project root directory and run the below commands in the terminal:
 
 ```bash
-$ yarn build
-$ yarn start
+yarn build
+yarn start
 ```
 
 Then we will browse to the `base URL` of our Nuxt application: <http://locahost:3000>, and a login page will be displayed as below:
