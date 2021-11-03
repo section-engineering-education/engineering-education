@@ -5,7 +5,7 @@ published: true
 url: /Servlet-Filter-API/
 title: Servlet Filter API
 description: This article deals with Servlet: Filter API.
-author: Bnsonsapan
+author: Bensonsapan
 date: 2021-11-03T00:00:00-06:10
 topics: [Languages]
 excerpt_separator: <!--more-->
@@ -14,83 +14,81 @@ images:
   - url: /engineering-education/Servlet-Filter-API/hero.jpg
     alt: Servlet: Filter API Hero Image
 ---
-### Introduction.
-When an application is pre-and post-processed, the invoked object is filtered. Filters are configured and used when filtering activities are performed. The filter interface is found in the `javax.servlet` package and to create a `Filter` class, we have to `import javax.servlet` and implement the `Filter` interface. several filters can be created to perform different tasks according to the user and developer specifications. 
-### Goals and objectives
+When an application is pre-and post-processed, the invoked object is filtered. Filters are configured and used when filtering activities are performed. The filter interface is found in the `javax.servlet package`. 
+<!--more-->
+To create a Filter class, we have to import `javax.servlet` and implement the Filter interface. Several filters can be created to perform different tasks according to the user and developer specifications.
+
+### Goal
 A learner should be able to understand the following after reading this article:
-1. A servlet Filter's definition
+1. A servlet Filter's definition.
 2. The advantages of using filters.
-3. The interfaces of the Filter, such as the `Filter` interface, the `FilterConfing` interface, and so on.
+3. The Filter interfaces, such as the `Filter` interface, the `FilterConfing` interface, and others.
 4. Methods associated with the above interfaces and their functionalities.
 5. Using examples, learn how to use filters in a computer program.
 
 ### Prerequisites
 You will need the following tools to go along with this article:
-- [Eclipse or another open-source Java editor should be installed on your machine.](https://www.eclipse.org/downloads/packages/release/2021-06/r).
+- [Eclipse](https://www.eclipse.org/downloads/packages/release/2021-06/r) or another open-source Java editor should be installed on your machine.
 - A web browser installed.
-- Install the TomCat server or any other server. In this case, TomCat version 9 will be used. [It's available for download on their official website.](https://tomcat.apache.org/).
-To go along with this article, a learner should have the basics of knowledge of the following:
-1st: 
-- A basic understanding of Java programming
-- An introduction to a servlet is needed.
-- Solid knowledge of how to build and run Java code using any Java IDE and Tomcat or another similar server.
+- Install the [TomCat](https://tomcat.apache.org/) server or any other server. In this case, TomCat version 9 will be used.
+- A basic understanding of Java programming language.
+- A basic understanding of a servlet is needed.
+- Solid knowledge of building and running Java code using any Java IDE and Tomcat or another similar server.
 
 ### Table of contents:
-
 - [What are Servlet Filters and How Do They Work](#what-are-servlet-filters-and-how-do-they-work)
   - [servlet filter definition](#servlet-filter-definition)	
   - [How Servlet Filters Works](#how-servlet-filters-works)
 - [Filter usage and its advantages](#filter-usage-and-its-advantages)
-
   - [Filter usage](#filter-usage)
-
   - [Advantages](#advantages)	
-
 - [Filter](#filter)	
 - [FilterChain](#filterchain)
 - [FilterConfig](#filterconfig)
 - [Authentication Example using filter](#authentication-example-using-filter)
 - [Conclusion](#conclusion)
-### What are Servlet Filters and How Do They Work
-#### servlet filter definition
-**Filters** are Java classes that can be used to perform and customize filtering operations. This is accomplished by:
 
-1. intercepting client requests before they get to a back-end resource
+### What are servlet filters and how do they work
+#### Servlet filter definition
+**Filters** are Java classes that perform and customize filtering operations and is accomplished by:
+- Intercepting client requests before they get to a back-end resource
+- To alter server responses before sending them back to the client.
 
-2. To alter server responses before sending them back to the client.
 #### How Servlet Filters Works
+
 ![CheckPassword Filter](/engineering-education/Servlet-Filter-API/serletfilterprocess.png)
-**Explanation:**
+
+#### Explanation:
 - When a request enters the Web Container, it is checked to see whether any filters have URL patterns that match the incoming URL.
-- The Web `Container` sends requests to the first `Filter` with a matching URL pattern to execute its function.
-- First `Filter` then checks if there is a second Filter is available with marching URL, and the code of that `Filter` is run. This will continue until no more filters with URL patterns that match are found.
-- If there are no errors, the request is forwarded to the destination Servlet as a result, we know that the request will only be delivered to the destination servlet if all of the relevant Filters have been completed successfully.
-- The servlet returns the response to the caller, and then the response is delivered to the Web Container, who then passes it on to the client.
+- The Web `Container` sends requests to the first filter with a matching URL pattern to execute its function.
+First Filter then checks if a second `Filter` is available with marching URL, and the code of that filter is run, which will continue until no more filters with URL patterns match are found.
+If there are no errors, the request is forwarded to the destination Servlet. As a result, we know that the request will only be delivered to the destination servlet if all relevant Filters have been completed successfully.
+The servlet returns the response to the caller, and then the response is delivered to the Web Container, who then passes it on to the client.
 
 ### Filter usage and its advantages.
- Filters are applied in the following fields:
+Filters are used in the following fields:
 1. Verification. 
 2. Image Conversion. 
 3. Compression of data. 
 4. Encryption. 
 5. Auditing and logging, to name a few.
+
 #### Filter usage
 We can come with the following usage of the filter based on the application areas mentioned above:
 1. Compression of data.
-2. Keeping track of all inbound requests
-3. Assist in the activation of resource access events.
-4. used in encryption and decryption of data.
+2. Keeping track of all inbound requests.
+3. Assists in the activation of resource access events.
+4. Used in encryption and decryption of data.
 5. Used in the validation of input.
-6. Conversion etc.
+6. Conversion.
+
 #### Advantages.
 - Filters can be changed or replaced with a different Filter. In this case, the filter is pluggable.
 - There is no dependent on another resource for one of the filters.
 - Filters require less upkeep.
 
-### Filter
-
+### Creating a Filter
 The following are the steps to follow when creating a Filter program:
-
 1. Create a Java class that implements the interface `Filter`.
 2. Set up the filter parameters.
 3. Finally, do a filter mapping.
@@ -104,7 +102,7 @@ Only one parameter is required, namely,
 public void init(FilterConfig parameterName) throws ServletException
 
 ```
- - `void doFilters()`:  This method is the most significant in the Filter interface and is used to call the next filter. It requires three parameters: 
+ - `void doFilters()`:  This method is the most significant in the Filter interface and calls the next filter. It requires three parameters: 
 - ServletRequest obj
 - ServletResponse obj
 - FilterChain obj, implemented as follows.
@@ -329,4 +327,4 @@ We used two filters in our example, one to check the password length and another
 
 Lastly, this article will give you a solid foundation of Filters. To improve your understanding and enhance your coding skills, start exploring more.
 
-Thank you!
+Happy Learning!
