@@ -9,6 +9,8 @@ This article will discuss why Application Release Orchestration (ARO) matters, w
 
 Application Release Orchestration coordinates complex releases across environments. It promotes better collaboration between operations and development. Release orchestration simplifies and automates manual, repetitive tasks, contributing to lower costs, reducing time-to-market, and greater transparency in the software development and delivery cycle.
 
+Such an architecture allows developers to configure their pipeline and reporting to create a consistent and regular schedule for releases. ARO provides a single coherent interface instead of loose API integrations. The resultant interface is coherent and cuts through the different tracking methods and formats to get things done. Whatever the pipeline, release orchestration helps scale and deliver better quality software faster.
+
 ### Why ARO matters
 
 Every organization wants its software and application packages delivered to the customers on time. Application release orchestration provides delivery efficiency. It combines the quick integration, testing, security, and software deployment stages to ensure that the application release process occurs smoothly and fast.
@@ -63,11 +65,11 @@ GitHub
 
 #### CloudBees CD
 
-[CloudBees CD](https://docs.cloudbees.com/docs/cloudbees-cd/10.1/) is an ARO tool and a DevOps platform that makes the software release process less cumbersome. It provides deployment automation, release orchestration and lets you track and modify your software delivery pipeline. It is easy to install and comes at no cost. However, its user interface is less user-friendly.
+[CloudBees CD] is an ARO tool and a DevOps platform that makes the software release process less cumbersome. It provides deployment automation, release orchestration and lets you track and modify your software delivery pipeline. It is easy to install and comes at no cost. However, its user interface is less user-friendly.
 
 #### Azure Pipelines
 
-[Azure pipelines](https://azure.microsoft.com/en-us/services/devops/pipelines/automate deployment with data pipelines so that less time is spent creating software features and more in incorporating innovation. It has a simple layout that makes it easy to navigate. But it lacks a streamlined setup of continuous integration and continuous delivery.
+[Azure pipelines](https://azure.microsoft.com/en-us/services/devops/pipelines/) deployment with data pipelines so that less time is spent creating software features and more in incorporating innovation. It has a simple layout that makes it easy to navigate. But it lacks a streamlined setup of continuous integration and continuous delivery.
 
 #### Red Hat Ansible Automation Platform
 
@@ -84,6 +86,8 @@ GitHub
 ### Conclusion
 
 DevOps enhances a faster creation of software and apps, while Application Release Orchestration promotes the release and delivery of these products to the market. Combining DevOps and AROs is necessary to increase automation, transparency, and better communication in your product's life cycle.
+
+Release orchestration ensures delivery pipelines are implemented based on templates. That gives an assurance that of a consistent, repeatable, and foolproof process for running releases. Furthermore, it allows the modeling of application development and release processes as a customized sequence of steps and phases based on an organization’s needs.
 
 ### Further reading 
 - [DevOps and Continuous Delivery at the Edge](/blog/devops-continuous-delivery-edge-compute/)
