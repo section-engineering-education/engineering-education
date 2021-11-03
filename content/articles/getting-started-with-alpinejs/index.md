@@ -14,7 +14,6 @@ images:
   - url: /engineering-education/getting-started-with-alpinejs/hero.png
     alt: Getting Started With Alpine.js Hero Image
 ---
-
 Alpine.js is a rugged, minimal tool for composing behavior in your markup. Think of it like jQuery for the modern web. It is very reactive like Vue and it is very lightweight. Alpine.js is very simple to use and set up. It does not need any installation with NPM, the CDN version works enough magic.
 <!--more-->
 Alpine.js is not a replacement for full-fledged frameworks like Vue, React, or Angular. Instead, it is a lighter framework for the most simple needs used in applications that need minimal JavaScript, usually server-side rendered web applications.
