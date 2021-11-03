@@ -36,7 +36,7 @@ The model uses a standard seq2seq model transformer-based architecture to genera
 There are various use cases for this model. We can use it to build chatbots, virtual agents, and assistive agents. Chatbots and agents can be used in business to interact with customers.  
 
 ### Building the chatbot using the blenderbot model
-The Blenderbot model is available through the Hugging Face transformers library. Hugging Face is an open-source library available in Python that allows you to leverage some of the state-of-the-art Natural Language Processing models. When you have a look at blenderbot's [documentation](https://huggingface.co/transformers/model_doc/blenderbot.html), you'll notice that the model has three variants; 90M, 2.7B, and 9.4B parameter models. There is one model that has 400 million parameters. That's the one we'll be leveraging in this tutorial.
+The Blenderbot model is available through the Hugging Face transformers library. Hugging Face is an open-source library available in Python that allows you to leverage some of the state-of-the-art Natural Language Processing models. When you have a look at blenderbot's [documentation](https://huggingface.co/transformers/model_doc/blenderbot.html), you'll notice that the model has three variants; 90M, 2.7B, and 9.4B parameter models. However, there is one model that has 400 million parameters. That's the one we'll be leveraging in this tutorial.
 
 #### Installing and importing dependencies
 
