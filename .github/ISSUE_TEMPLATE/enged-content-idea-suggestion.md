@@ -7,7 +7,9 @@ assignees: ''
 
 ---
 
-*NOTE*: All **1st-time contributors** should know Topic approval and PR submission does NOT guarantee your Topic/Article will be published. Our team of Peer Reviewers and Content Moderators will review all PRs that come in to make sure they adhere to the standard of quality we expect from the EngEd community. We expect all community memebers to go through provided examples, resources, and previously published material before submitting content. As a rule of thumb, please only submit articles (pull requests) that are complete, formatted correctly, and include a fully polished article (ready to be published and error free). 
+*NOTE*: All **1st-time contributors** should know Topic approval and PR submission does NOT guarantee your Topic/Article will be published. Our team of Peer Reviewers and Content Moderators will review all PRs that come in to make sure they adhere to the standard of quality we expect from the EngEd community. 
+
+We expect all community memebers to go through provided examples, resources, and previously published material before submitting content. As a rule of thumb, please only submit articles (pull requests) that are complete, formatted correctly, and include a fully polished article (ready to be published and error free). 
 
 All revisions and edits should be *completed on your own forked repo (as to not take up room in the queue)*. **Any PR that is submitted incomplete (meaning not ready to be published as is) will be closed.** A PR being closed does NOT mean the article can not be published (or fixed) it simply means that the edits, revisions, and fixes will happen outside of the queue.
 
