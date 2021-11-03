@@ -1,4 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /Servlet-Filter-API/
+title: Servlet Filter API
+description: This article deals with Servlet: Filter API.
+author: Bnsonsapan
+date: 2021-11-03T00:00:00-06:10
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/Servlet-Filter-API/hero.jpg
+    alt: Servlet: Filter API Hero Image
+---
 ### Introduction.
 When an application is pre-and post-processed, the invoked object is filtered. Filters are configured and used when filtering activities are performed. The filter interface is found in the `javax.servlet` package and to create a `Filter` class, we have to `import javax.servlet` and implement the `Filter` interface. several filters can be created to perform different tasks according to the user and developer specifications. 
 ### Goals and objectives
