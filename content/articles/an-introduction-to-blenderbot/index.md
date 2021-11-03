@@ -116,7 +116,7 @@ The model generated a response. And not just a response. It's a response that ma
 
 This is the Blenderbot model working in real-time. All we did was pass our utterances and tokenize them. The model then takes these inputs and outputs a sequence back. We then decode this output so that it's human-readable. You could try passing in any input you like and see what output you'll get.
 
-The model will output not-so-correct responses and might lose context sometimes. But remember, this model has only been trained on 400M parameters. As with machine learning models, we know that the more you train, your results are more accurate. You could try the model with `2.7B` or `9B` parameters and see what you get. Just one caveat, make sure your machine has enough computing power for those models with large parameters.
+The model may output somewhat incorrect responses and might lose context sometimes. But remember, this model has only been trained on 400M parameters. As with machine learning models, we know that the more you train, your results are more accurate. You could try the model with `2.7B` or `9B` parameters and see what you get. Just one caveat, make sure your machine has enough computing power for those models with large parameters.
 
 In addition, the main research [paper]((https://arxiv.org/pdf/2004.13637.pdf)) also demonstrates that as much as increasing the number of parameters is important to improve accuracy in the model, the blenderbot model displays knowledge, empathy, and personality appropriately while still maintaining a consistent persona. That's a point you could analyze while exploring your output results.  
 
