@@ -59,9 +59,17 @@ public boolean hasOverNinetyMarks()
 When we use these two approaches, we obtain the same result:
 
 ```Java
-assertThis(employeeWith90MarksAndAbove).hasSize(3);
+List<Employee> georgeWith90MarksAndAbove = employees
+List<Employee> mikeWith90MarksAndAbove = employees
+  .stream()
+  .filter(q -> q.getMarks() > 90 && q.getIdentity().startsWith("George"))
+  .collect(Collectors.toList());
+
+assertThis(employeeWith90MarksAndAbove).hasSize(2);
 assertThis(employeeWith90MarksAndAbove).contains(george, mike);
 ```
+
+The assert method guarantees the accuracy of any assumptions made in the program, when we execute an assertion, it is presumed to be true. If the assertion is untrue, the JVM will raise an Assertion error.
 
 ### Filtering data based on a variety of criteria
 In addition, we may utilize several criteria with the filter to our advantage. We might, for instance, use a combination of points and names to narrow the results:
