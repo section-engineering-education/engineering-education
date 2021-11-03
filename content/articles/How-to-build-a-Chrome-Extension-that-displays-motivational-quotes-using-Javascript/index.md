@@ -39,8 +39,16 @@ cd Random-Quote-Extension
 code .
 ```
 The first line creates a new folder in our machine, the second line helps navigate into the folder we just created, and the last line opens up the just created folder in Visual studio code.
-Next, we will create a `manifest.json` file and add the following codes to make it look so:
-![manifest](/engineering-education/How-to-build-a-Chrome-Extension-that-displays-motivational-quotes-using-Javascript/images/manifest.PNG)
+Next, we will create a `manifest.json` file and add the following codes to make it look like so:
+```
+{
+
+"name": "Random Quote Extension for Chrome",
+"description": "A Chrome Extension that shows random quotes as notification",
+"version": "1.0.0",
+"manifest_version": 3
+    }
+```
 
 The manifest.json file contains important information about the extension. 
 - The `name` field contains information about the title of the extension we are building - Random Quote Extension.
@@ -61,10 +69,30 @@ Alright! you should see an image like the one below:
 Yikes! we now have the extension listed amongst our previously installed extensions. Although, you'll notice yours does not have a custom icon. Let's fix that right away.
 
 #### Adding icons
-To attach customized icons to the toolbar, we create the action field to house the default icon field which contains our desired images. Also, to display these icons on the extension management page that shows favicon, we attach a new field called icons. its elements are the same images the default icon uses. You can access these images on my [Github repo](https://github.com/deverten/RandomQuoteExtension/tree/main/images) 
+To attach customized icons to the toolbar, we create the action field to house the default icon field which contains our desired images. Also, to display these icons on the extension management page that shows favicon, we attach a new field called icons. Its elements are the same images the default icon uses. You can access these images on my [Github repo](https://github.com/deverten/RandomQuoteExtension/tree/main/images) 
 Go ahead and update the manifest.json file to look like this:
 
-![icons](/engineering-education/How-to-build-a-Chrome-Extension-that-displays-motivational-quotes-using-Javascript/images/icons.PNG)
+```
+{
+
+"name": "Random Quote Extension for Chrome",
+"description": "A Chrome Extension that shows random quotes as notification",
+"version": "1.0.0",
+"manifest_version": 3,
+"action": {
+  "default_icon": {
+      "16": "/images/favicon-16x16.png",
+      "48": "/images/android-chrome-512x512.png",
+      "128": "/images/android-chrome-192x192.png"
+      }
+    },
+  "icons": {
+      "16": "/images/favicon-16x16.png",
+      "48": "/images/android-chrome-512x512.png",
+      "128": "/images/android-chrome-192x192.png"
+    }
+}
+```
 
 You would have noticed the fields "16", "48", and "128". They are the pixel sizes for each image (ignore my naming conventions for the images). If you are making a custom icon you will need to resize your images to meet the standards - (16px by 16px, 48px by 48px, 128px by 128px).
 Reload the extension and watch the icons take effect in the toolbar and extension management page. 
@@ -85,7 +113,30 @@ Let's dive right into creating our `background script` and registering it in our
 Create a new file and call it `background.js`, next let us register it in our manifest file. If you're wondering why we must do this, think of the manifest as a register where all components are referenced. They also show the expected behavior of the files. 
 The manifest.json file should look somewhat identical to this now:
 
-![background-manifest](/engineering-education/How-to-build-a-Chrome-Extension-that-displays-motivational-quotes-using-Javascript/images/manifest1.PNG)
+```
+{
+
+"name": "Random Quote Extension for Chrome",
+"description": "A Chrome Extension that shows random quotes as notification",
+"version": "1.0.0",
+"manifest_version": 3,
+"background": {
+        "service_worker": "background.js"
+    },
+"action": {
+  "default_icon": {
+      "16": "/images/favicon-16x16.png",
+      "48": "/images/android-chrome-512x512.png",
+      "128": "/images/android-chrome-192x192.png"
+      }
+    },
+  "icons": {
+      "16": "/images/favicon-16x16.png",
+      "48": "/images/android-chrome-512x512.png",
+      "128": "/images/android-chrome-192x192.png"
+    }
+}
+```
 
 The extension now looks out for the `service worker`: `background.js` 
 When we reload the extension, Chrome will search the background script for important instructions and events and execute them.
@@ -94,23 +145,99 @@ When we reload the extension, Chrome will search the background script for impor
 
 We want the extension to listen for events when first installed, hence we  include  a listening event and `background.js` should look like so: 
 
-![oninstalled](/engineering-education/How-to-build-a-Chrome-Extension-that-displays-motivational-quotes-using-Javascript/images/oninstalled.PNG)
+```
+
+chrome.runtime.onInstalled.addListener(() => {
+  console.log('onInstalled...');
+})
+
+```
     
 #### Adding permissions
 Chrome provides API's for specific purposes such as storage, bookmarks, cookies, alarm, notifications, etc. To access them we must get permissions, and we do this by registering them under the permissions field in the   manifest.json file. We will be needing the chrome.alarms, chrome.notifications, and chrome.storage APIs for our project. Edit the manifest file to look like this:
 
-![permissions](/engineering-education/How-to-build-a-Chrome-Extension-that-displays-motivational-quotes-using-Javascript/images/permissions.PNG)
+```
+
+{
+    "name": "Random Quote Extension for Chrome",
+    "description": "A Chrome Extension that shows random quotes as notification",
+    "version": "1.0.0",
+    "manifest_version": 3,
+    "background": {
+        "service_worker": "background.js"
+    },
+    "permissions": ["storage","alarms", "notifications"],
+    "action": {
+        "default_icon": {
+            "16": "/images/favicon-16x16.png",
+            "48": "/images/android-chrome-512x512.png",
+            "128": "/images/android-chrome-192x192.png"
+
+        }
+    },
+    "icons": {
+        "16": "/images/favicon-16x16.png",
+        "48": "/images/android-chrome-512x512.png",
+        "128": "/images/android-chrome-192x192.png"
+   
+    }
+}
+```
 
 #### Fetching random quotes from the API 
 Moving onto the major functionality of the Chrome extension, we will be fetching data from a random quotes API. Extracting the data using promise returns a random quote accompanied by the original author of the quote. We can log this to the console to verify that it displays correctly.
 We did set up the background script to fire when the extension is installed, hence we want the motivational quotes to be fetched when the browser is active, the code snippet below shows how we can exactly implement this:
 
-![fetch-quote](/engineering-education/How-to-build-a-Chrome-Extension-that-displays-motivational-quotes-using-Javascript/images/quote-fetch.PNG)
+```
+
+chrome.runtime.onInstalled.addListener(() => {
+  console.log('onInstalled...');
+
+async function startRequest() {
+  
+  const response = await fetch('https://api.quotable.io/random');
+  const newData = await response.json();
+  const data = `${newData.content} —${newData.author}`
+  console.log(data)
+}
+});
+
+```
 
 #### Calling the quotes at intervals
 I would consider this part the more interesting to implement as I went with the wrong approach at first. Trying to use Javascripts’ `setInterval()` and `setTimeout()` functions to call the quotes at scheduled intervals. Somehow, the scheduling of events in browser extensions has not really been explored judging from the limited support I could get from resources online. The Holy grail lies embedded in the [Chrome extension documentation](https://developer.chrome.com/docs/extensions/reference/) - You may want to glance through the available list of  APIs chrome provides to extensions, to get ideas for your next chrome extension 😜 (pretty fun huh!)
 Edit the background.js file to look like this:
-![chrome-alarms](/engineering-education/How-to-build-a-Chrome-Extension-that-displays-motivational-quotes-using-Javascript/images/chrome-alarms.PNG)
+
+```
+chrome.runtime.onInstalled.addListener(() => {
+  console.log('onInstalled...');
+
+
+  // create alarm after extension is installed / upgraded
+  chrome.alarms.create('startRequest', { periodInMinutes: 4 });
+  startRequest();
+ 
+    
+    
+  });
+  
+
+  chrome.alarms.onAlarm.addListener(alarm=>{
+    startRequest();
+  });
+
+
+
+
+async function startRequest() {
+  
+  const response = await fetch('https://api.quotable.io/random');
+  const newData = await response.json();
+  const data = `${newData.content} —${newData.author}`
+  console.log(data);
+ 
+}
+```
 
 The `chrome.alarms.create` creates an alarm, in this case, it is the event of the API call. It takes the name of the alarm (startRequest) and periodInMinutes as parameters. We make the API call `startRequest()` when the alarm is created. 
 We then create a listener and call the `startRequest` function. That should pretty much be all for now. We will go ahead and display the output in our notifications box.
@@ -121,7 +248,44 @@ We create an object containing details of the notification. These include the ti
 Next, we use `chrome.notifications.create` to create the notifications and call the object `options` as a parameter.
 Adding this to the background.js file we get:
 
-![notifications](/engineering-education/How-to-build-a-Chrome-Extension-that-displays-motivational-quotes-using-Javascript/images/notifications.PNG)
+```
+
+chrome.runtime.onInstalled.addListener(() => {
+  console.log('onInstalled...');
+
+
+  // create alarm after extension is installed / upgraded
+  chrome.alarms.create('startRequest', { periodInMinutes: 4 });
+  startRequest();
+ 
+  });
+  
+
+  chrome.alarms.onAlarm.addListener(alarm=>{
+    startRequest();
+  });
+
+async function startRequest() {
+  
+  const response = await fetch('https://api.quotable.io/random');
+  const newData = await response.json();
+  const data = `${newData.content} —${newData.author}`
+  console.log(data);
+  // chrome.storage.sync.set({data});
+
+  
+  var options = {
+    title: 'Random Quotes',
+    message: data,
+    iconUrl: '/images/favicon-16x16.png',
+    type: 'basic',
+    // requireInteraction: true
+  }
+  chrome.notifications.create('', options);
+ 
+}
+
+```
 
 The motivational quotes are displayed in the notifications box like so:
 
