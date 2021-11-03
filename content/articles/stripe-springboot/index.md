@@ -25,9 +25,7 @@ In this tutorial, the reader will learn how to integrate stripe into their appli
 ### Create a stripe account
 Creating a [stripe account](https://dashboard.stripe.com/register) is required to have access to public and private keys that we will use later to test our application.
 
-When we log in to our stripe account, we will be redirected to the dashboard, and this is where we will verify that the payment was successful.
-
-The [API keys](https://dashboard.stripe.com/test/apikeys) section contains our private and public keys, and we can differentiate a live key from a test key by checking which characters are prefixed on the keys.
+When we log in to our stripe account, we will be redirected to the dashboard, and this is where we will verify that the payment was successful. The [API keys](https://dashboard.stripe.com/test/apikeys) section contains our private and public keys, and we can differentiate a live key from a test key by checking which characters are prefixed on the keys.
 
 A test key is prefixed with `pk_test_` denoting private key or `sk_test_` denoting secret key, and a live key is prefixed with `pk_live_` denoting private key or `sk_live_` denoting secret key.
 
@@ -40,9 +38,7 @@ We will use [Spring Initialzr](https://start.spring.io/) to generate a Spring Bo
 
 ![Project set up](/engineering-education/stripe-springboot/project-setup.png)
 
-To ensure the public and private keys are available to the application, we add the essential contents in the `application.properties` file, and then we can inject the values using `@Value` annotation.
-
-The `@Value` annotation is used for expression-driven or property-driven dependency injection.
+To ensure the public and private keys are available to the application, we add the essential contents in the `application.properties` file, and then we can inject the values using `@Value` annotation. The `@Value` annotation is used for expression-driven or property-driven dependency injection.
 
 ```properties
 stripe.api.key=sk_test_
@@ -51,9 +47,7 @@ stripe.public.key=pk_test_
 ```
 
 ### Set up stripe
-Setting up stripe requires adding a dependency for the stripe API in the POM.xml file for Maven users, and the dependency can be obtained from [maven central repository](https://mvnrepository.com/repos/central).
-
-Maven will download the provided stripe API version and add it to the classpath to ensure it is available during development.
+Setting up stripe requires adding a dependency for the stripe API in the POM.xml file for Maven users, and the dependency can be obtained from [maven central repository](https://mvnrepository.com/repos/central). Maven will download the provided stripe API version and add it to the classpath to ensure it is available during development.
 
 Stripe has a runtime dependency `gson`, a JSON library that we will add to maven to ensure no dependency errors occur when we run the application.
 
@@ -70,9 +64,7 @@ Stripe has a runtime dependency `gson`, a JSON library that we will add to maven
         </dependency>
 
 ```
-Spring Boot uses Jackson by default, a JSON marshaller, and there are edge cases when you have both of them on the classpath.
-
-Make sure to exclude Jackson from the classpath using the following configuration in your POM.xml file.
+Spring Boot uses Jackson by default, a JSON marshaller, and there are edge cases when you have both of them on the classpath. Make sure to exclude Jackson from the classpath using the following configuration in your POM.xml file.
 
 ```xml
 <dependency>
@@ -124,16 +116,11 @@ public class CreatePayment {
 ```
 
 `@NotNull` - indicates that the field is required and can not be empty.
-
 `@Min()` - Used to restrict the value provided to a specific minimum value.
-
 `@Size` - provide the range of strings that the field can support by specifying the minimum and maximum values.
 
 ### Create a `PaymentIntent`.
-
-A `PaymentIntent` is an object used by stripe to record customers' information, track charge attempts, and change the state of payment from one stage to another.
-
-The following image shows how a `PaymentIntent` is created and tracks the payment from providing card details, attempting payment, and finalizing the payment.
+A `PaymentIntent` is an object used by stripe to record customers' information, track charge attempts, and change the state of payment from one stage to another. The following image shows how a `PaymentIntent` is created and tracks the payment from providing card details, attempting payment, and finalizing the payment.
 
 ![Payment intent image](/engineering-education/stripe-springboot/accept-a-payment.png)
 
@@ -171,11 +158,7 @@ public class PaymentController {
 ```
 
 ### Create a model for the product.
-Create a `CheckoutForm` class inside a `model` package with the fields `amount`, `featureRequest`, and `email`.
-
-Generate getter and setter methods for the fields.
-
-This class represents customer details for a particular payment and will be provided during the checkout process.
+Create a `CheckoutForm` class inside a `model` package with the fields `amount`, `featureRequest`, and `email`.Next, generate getter and setter methods for the fields. This class represents customer details for a particular payment and will be provided during the checkout process.
 
 ```java
 import javax.validation.constraints.*;
@@ -222,10 +205,7 @@ public class CheckoutForm {
 `@Email` - indicates that this field should only accept a string with an email structure.
 
 ### Create payment and checkout pages
-
-First, create a file named `client.js` that we will use to process the request from the customer to the server and response from the server to the browser.
-
-When the user goes to the page, a payment intent is created, the payment intent calls stripe, informs the customer wants to pay and returns a secret key.
+First, create a file named `client.js` that we will use to process the request from the customer to the server and response from the server to the browser.When the user goes to the page, a payment intent is created, the payment intent calls stripe, informs the customer wants to pay and returns a secret key.
 
 Stripe has a javascript library called the javascript elements, and when you call `elements.create()` on a specific `div`, then stripe will insert the component into the div.
 
@@ -401,7 +381,7 @@ Create a file named `index.html` under the resources section, and we will use th
 </html>
 ```
 
-Once a customer has filled in all the details and pressed the submit button, they will be redirected to a checkout page to enter their credit card details and complete payment.
+Once a customer has filled in all the details and pressed the submit button, they will be redirected to a checkout page to enter their credit card details and complete payment. 
 
 Create a file named `checkout.html` under the resources section, in which we will display a checkout form to the customer.
 
@@ -509,13 +489,10 @@ Create a file named `global.css` that we will use to colour our payment and chec
 }
 ```
 
-### Create a controller for the payment
-
-Create a `WebController` class inside the `controller` package and inject the stripe public key using `@Value` annotation.
-
-Add a method that returns the payment form when the customer issues a request to the `/` endpoint.
-
-Create another method to return the checkout page after entering the payment details and hitting the submit button.
+### Creating a controller for the payment
+- Create a `WebController` class inside the `controller` package and inject the stripe public key using `@Value` annotation.
+- Add a method that returns the payment form when the customer issues a request to the `/` endpoint.
+- Create another method to return the checkout page after entering the payment details and hitting the submit button.
 
 ```java
 import com.example.StripeWithSpringBoot.model.CheckoutForm;
@@ -558,24 +535,16 @@ public class WebController {
     }
 }
 ```
-### Test the application
-Stripe provides several test numbers that we can use to test the payment, and in this tutorial, we will make use of `4242 4242 4242 4242`, which is a Visa card number.
-
-Provide any `3` digits for the CVC and any future date for the date field.
-
-When we run the application and navigate to `localhost:8080`, the following payment page is displayed to the browser.
+### Testing the application
+Stripe provides several test numbers that we can use to test the payment, and in this tutorial, we will make use of `4242 4242 4242 4242`, which is a Visa card number.Provide any `3` digits for the CVC and any future date for the date field such that when we run the application and navigate to `localhost:8080`, the following payment page is displayed to the browser.
 
 ![payment form](/engineering-education/stripe-springboot/payment-form.png)
 
-When we enter all the input fields and press the submit button, we will be redirected to the checkout page to enter the payment details.
-
-Enter `4242 4242 4242 4242` as the test card number, any three CVC numbers, and any future date, and press the submit button.
+When we enter all the input fields and press the submit button, we will be redirected to the checkout page to enter the payment details so enter `4242 4242 4242 4242` as the test card number, any three CVC numbers, and any future date, and press the submit button.
 
 ![checkout form](/engineering-education/stripe-springboot/checkout-form.png)
 
-When you press the pay now button, the payment will be processed successfully, and a link to our stripe dashboard will be added to the form.
-
-The Stripe dashboard displays the amount of money paid, the date, the customer, and the payment method, as shown in the following image.
+When you press the pay now button, the payment will be processed successfully, and a link to our stripe dashboard will be added to the form. The Stripe dashboard displays the amount of money paid, the date, the customer, and the payment method, as shown in the following image.
 
 ![stripe dashboard](/engineering-education/stripe-springboot/stripe-dashboard.png)
 
