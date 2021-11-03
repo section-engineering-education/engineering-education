@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /building-data-driven-application-in-react/
-title: Building Data Driven Application in React 
+title: Building Data Driven Applications in React 
 description: This article will explain data-driven applications and where they can be used. We will also discuss how we can build one using React.
 author: valentine-gatwiri
 date: 2021-11-03T00:00:00-13:00
