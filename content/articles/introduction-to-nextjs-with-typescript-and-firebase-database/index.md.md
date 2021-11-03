@@ -1,22 +1,34 @@
-[Next.js](https://nextjs.org/) is a [React](https://reactjs.org/) Framework that enables developers to create production-ready React apps with ease. It features a variety of predefined functionalities that allow you to easily build React applications. This abstracts redundant functionalities and allows you to focus on the application implementation.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /introduction-to-nextjs-with-typescript-and-firebase-database/
+title: Introduction to Next.js, TypeScript, and Firebase Database
+description: This article will provide a step-by-step guide on how to create a web application using Next.js, TypeScript, and the Firebase database.
+author: 
+date: 2021-10-26T00:00:00-03:40
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
-Next.js is a hybrid framework that can be used for both Client-Side and Server-Side Rendering. It can be used for both projects and it can also be used for static site generation. to produce blazingly fast pages. With Next.js all of our pages will be pre-rendered which is generally better for performance your user isn't having to wait around while you're while your application loads.
+  - url: /engineering-education/introduction-to-nextjs-with-typescript-and-firebase-database/hero.png
+    alt: Introduction Next.js and Firebase Hero Image
+---
+Next.js is a React-based framework that enables developers to create production-ready web applications with ease. 
+<!--more-->
+Next.js features a variety of predefined functionalities that allow developers to easily build React applications. 
 
-By default, Next.js pre-renders every page meaning Next.js generates HTML and the data files for each page in advance instead of having it done client-side JavaScript.
+Next.js is a hybrid framework that can be used for both client-side and server-side Rendering. It can also be utilized in static site generation which produces fast web pages. 
 
-Next.js has two levels of pre-rendering, static generation and server-side rendering. static generation generates the HTML at build time. server-side rendering generates the HTML on each request. So before a page is served to the visitor's browser, it's handled on the request and then serve it.
+Some of the key features of Next.js include:
 
-All these pre-renderings allow you to handles the data fetching and process a lot of the heavy data lifting from the server. when we deploy our site. This saves our visitors the time to wait for the code to fetch some external data before they can get the content.
-
-So Next.js is a cool technology and it has a torn of great features such as
-
-- Good SEO support. It is generally better for SEO sites, so your pages get in front of more users.
-- Next.js provides out on box zero-configuration setups. For example, to create the Next js app you run a one-time command that generated a well-structured Next.js app that you can start building on. With the support of TypeScript, Next.js has in-build TypeScript support. This means you don't have to manually configure TypeScript to run typescript code with Next.js. You just run one command and TypeScript is set within your project.
-
-So this is a very cool framework worth learning and building applications with. Check this [Next.js get started documentation](https://nextjs.org/) and learn why Next.js.
+- Good SEO support. Its generally better for SEO sites. This means that your site will appear at the top of search results.
+- Next.js provides preconfigured setups. For example, to create a Next.js app, you run a one-time command that generates a well-structured project. 
 
 ### Introduction to Firebase
-Firebase is a cloud-hosted NoSQL database. That means we don't store data here in tables and we don't use the structured query language to perform database operations. One of the advantages of using the firebase database is that it is real-time. The data is synced in real-time. This means any changes you perform on your database are reflected in all the devices in real-time. This database can be implemented across multiple devices and different platforms.
+Firebase is a cloud-hosted NoSQL database. That means we don't store data here in tables and we don't use the structured query language to perform database operations. 
+
+One of the advantages of using the firebase database is that it is real-time. The data is synced in real-time. This means any changes you perform on your database are reflected in all the devices in real-time. This database can be implemented across multiple devices and different platforms.
 
 When using the firebase database, you don't need to configure a server. This means the application you build is completely serverless. You don't have to configure a server, worry about security issues, or build APIs to communicate with the server.
 
@@ -28,7 +40,9 @@ For example, here is how data is represented in an SQL database.
 
 [Image Source](https://youtu.be/kXYalWgc_rU?t=242)
 
-As you can see, there are two tables for storing Authors and Stories. Each author has a unique ID that will be associated with every story. This shows the relation between the author and the stories that belong to that specific author. However, the case is different when using a NoSQL database such as the firebase realtime database. This data is represented in JSON and the relation is shown in JSON nodes. For example, here is how the above SQL tables can be represented in a firebase real-time database.
+As you can see, there are two tables for storing Authors and Stories. Each author has a unique ID that will be associated with every story. This shows the relation between the author and the stories that belong to that specific author. 
+
+However, the case is different when using a NoSQL database such as the firebase realtime database. This data is represented in JSON and the relation is shown in JSON nodes. For example, here is how the above SQL tables can be represented in a firebase real-time database.
 
 ![nosql-json-trees](/engineering-education/a-beginner-guide-to-full-stack-nextjs-with-typescript-and-firebase-database/nosql-json-trees.png)
 
