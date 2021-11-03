@@ -53,9 +53,19 @@ An expensive patch may be required if a problem is found late in the development
 
 ### Creating a project
 1. When creating a new project, we will use Visual Studio and create a new project from the start menu.
+
+![create a new project](/engineering-education/how-to-create-and-run-a-dotnet-unit-testing-project/image1.png)
+
 2. Once we've done that, we'll need to locate our.NET Core's C# console app project template and click the icon that appears there.
-3. Decide on a name for your endeavor and then get to operate. Either the.NET Core 3.1 or.NET 5 target framework will have to be selected.
+
+![create a console project](/engineering-education/how-to-create-and-run-a-dotnet-unit-testing-project/image2.png)
+
+3. Decide on a name for your endeavor and then get to operate. For this project i called it `Collegefinance`. Either the.NET Core 3.1 or.NET 5 target framework will have to be selected.
 As you work on the School project, the Program.cs file will be open in the code editor.
+
+
+![Naming the project](/engineering-education/how-to-create-and-run-a-dotnet-unit-testing-project/image2.png)
+
 > If you can't open the Program.cs file directly; you may do so in Solution Explorer by double-clicking it.
 4. To use the `CollegeFinance` class, add the following C# code to `Program.cs`:
 
@@ -134,12 +144,24 @@ We have a project that we can now be put to the test.
 
 ### How to create a unit-testing project
 1. Add a new project simply from File Menu.
+
+![create a new project](/engineering-education/how-to-create-and-run-a-dotnet-unit-testing-project/image1.png)
+
 2. You have to choose the language of choice, which in our case is C#, then proceed after you have selected the unit test project for the .NET Core template.
+
+![Unit Test Project](/engineering-education/how-to-create-and-run-a-dotnet-unit-testing-project/image4.png)
+
 3. Rename such as `CollegeTests` then proceed by clicking next.
-4. Create a new CollegeTests project with the desired architecture (.NET Core 3.1 or.NET 5) selected. We've integrated `CollegeTests` into the School solution.
+
+![Project naming](/engineering-education/how-to-create-and-run-a-dotnet-unit-testing-project/image5.png)
+
+4. Create a new CollegeTests project with the desired architecture (.NET Core 3.1 or.NET 5) selected. We've integrated `CollegeTests` into the `Collegefinance`.
 5. Make sure the CollegeTests project contains a mention of the College project.
-In Solution Explorer, go to `CollegeTests` and add a dependency by clicking Dependencies under `CollegeTests`.
-6. Expand Projects, choose Solution, and then College from the Reference Manager drop-down menu in the Reference Manager dialog box. To proceed, click OK.
+In the project created click to View in the menu bar, click Solution Explorer from the list, click dependencies and then add dependencies by right clicking the reference option.
+
+6. Expand Projects, then Solution, and finally Collegefinance in the Reference Manager dialog box.
+
+![Reference](/engineering-education/how-to-create-and-run-a-dotnet-unit-testing-project/image6.png)
 
 ### Make a test class
 In this phase, we will rename the file as `CollegeFinanceTests.cs` which is more informative rather than reusing the template as per the project for testing the `CollegeFinance` class.
@@ -153,7 +175,7 @@ namespace collegeTests
 public class CollegeFinanceTests
 {
 [TestMethod]
-public void TestsMethod01()
+public void TestsMethod1()
 {
 }
 }
@@ -205,6 +227,9 @@ A test method must satisfy the following conditions:
 
 ### Create the test and execute it
 1. Choose Build Solution from the Build drop-down menu.
+
+![Build](/engineering-education/how-to-create-and-run-a-dotnet-unit-testing-project/image7.png)
+
 2. If Test Explorer isn't already open, go to test> Windows, then select Test Explorer from the main menu.
 3. Run the test from the Run All section.
 While running the test, a progress bar appears and changes color.
