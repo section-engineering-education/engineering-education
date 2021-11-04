@@ -53,12 +53,11 @@ $ npm run android
 
 ### Second Step- Creating a HomeScreen and NewWorkerScreen
 
-It will be necessary for your app starting with the HomeScreen. To see how many workers are already connected to your network, go to the HomeScreen.
-
-Then, in the HomeScreen.js you will have to create a new file, paste the App.js code and open:
+It will be necessary for your app starting with the HomeScreen and another screen that we will name new wrokers screen. These two screen will be essential for us to navigate through. In this section we will be creating the two screens. In the HomeScreen.js you will have to create a new file, paste the App.js code and open:
 
 ```
 nano HomeScreen.js
+nano app.js
 ```
 
 Instead of using App, let's use `HomeScreen.js` instead and change its content:
