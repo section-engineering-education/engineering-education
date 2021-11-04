@@ -46,7 +46,7 @@ As we can note from the above, the polynomial function $y(x, \bold w)$ is a non-
 
 Now the task is to determine the value of $\bold w$ and $M$.
 
-### Obtaining the $\bold w$
+#### Obtaining the $\bold w$
 
 To determine the values of the coefﬁcients, we first ﬁt a polynomial to the training dataset. After that, we find the error function, i.e., $E(\bold w)$, which measures the misﬁt between the fitted curve $y(x, \bold w)$ and the data points of the training set. One of the most used error functions in machine learning is the sum of squares of the errors between the predictions $y(x_n, \bold w)$  and the corresponding target values for each point $x_n$ $y_n$ fin the data. This error function is of the form:
 
@@ -71,7 +71,7 @@ The dataset that we shall use in this tutorial can be obtained from [here](https
 
 To get started, we import the required libraries for this session and load the dataset.
 
-#### Step 1: Importing the libraries
+### Step 1: Importing the libraries
 ```python
 import numpy as np # linear algebra
 import matplotlib.pyplot as plt # for plotting
@@ -79,7 +79,7 @@ import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)
 
 ```
 
-#### Step 2: Importing the dataset
+### Step 2: Importing the dataset
 In this step, we import the dataset and create a dataframe.
 ```python
 dataset = pd.read_csv('/content/drive/MyDrive/Position_Salaries.csv') # read the dataset
@@ -103,7 +103,7 @@ y = dataset.iloc[:, -1].values # extracts the labels from the dataset
 
 ```
 
-#### Step 3: Training the Linear Regression model on the whole dataset
+### Step 3: Training the Linear Regression model on the whole dataset
 In this step, we train the linear regression model on the entire dataset. The code below explains how this is done.
 
 ```python
@@ -120,7 +120,7 @@ lin_reg.fit(X, y) # fitting the model to the training set
  ```
 The output indicates the linear regression model has been trained on the whole dataset.
 
-#### Step 4: Training the Polynomial Regression model on the whole dataset
+### Step 4: Training the Polynomial Regression model on the whole dataset
 In this step, we train the polynomial regression model on the whole dataset. The code below explains how this is done.
 ```python
 from sklearn.preprocessing import PolynomialFeatures # importing a class for Polynomial Regression
@@ -137,7 +137,7 @@ LinearRegression(copy_X=True, fit_intercept=True, n_jobs=None, normalize=False)
  ```
  The output indicates the polynomial regression model has been trained on the whole dataset.
 
-#### Step 5: Visualising the Linear Regression results
+### Step 5: Visualising the Linear Regression results
 In this step, we plot the Linear Regression results. To visualize the results of this model, let's execute the following code.
 
 ```python
@@ -155,7 +155,7 @@ The code above plots the data and fit a linear regression model on it, as shown 
 
 As seen from the plot above, the linear regression model does not fit the data well.
 
-#### Step 6: Visualising the Polynomial Regression results
+### Step 6: Visualising the Polynomial Regression results
 
 To visualize the polynomial regression results, let's execute the code below.
 
@@ -173,7 +173,7 @@ The code above plots the data and fit a polynomial regression model on it, as sh
 
 ![graph](/engineering-education/polynomial-regression-in-python/polynomial-2.png)
 
-#### Step 7: Visualising the Polynomial Regression results (for higher resolution and smoother curve)
+### Step 7: Visualising the Polynomial Regression results (for higher resolution and smoother curve)
 In this step, we plot the Polynomial Regression results on a higher resolution (100 points per axis) to get a smoother curve. To visualize the results of this model, let's execute the following code.
 
 ```python
@@ -191,7 +191,7 @@ The code above yields the plot below.
 
 ![graph](/engineering-education/polynomial-regression-in-python/polynomial-3.png)
 
-#### Step 8: Predicting a new result with Linear Regression
+### Step 8: Predicting a new result with Linear Regression
 Here, we predict a new output with the Linear Regression model. Let's execute the code below and see the output.
 
 ```python
@@ -207,7 +207,7 @@ Upon executing the code above, the output is:
  ```
 The variable $X=6.5$ is exact between $X=6 and X=7$. Thus we expect the model to predict a salary value between 150000 and 200000. With linear regression, this is not the case. It overshoots the expected salary actually by almost two times. This indicates that linear regression is not suitable for this problem.
 
-#### Step 9: Predicting a new result with Polynomial Regression
+### Step 9: Predicting a new result with Polynomial Regression
 
 Here, we predict a new output with the Polynomial Regression model. Let's execute the code below and see the output.
 ```python
