@@ -43,7 +43,7 @@ The session object acts as a conduit between the data in the database and the ap
 the JDBC connection and is a small object. It is a Transaction, Query, and Criteria factory. It has a compulsory first-level cache of data.
 
 #### Transaction Object
-The atomic unit of work is specified by the transaction object and methods for
+The atomic unit of work specified by the transaction object and methods for
 transaction management is provided via the user interface for transactions.
 
 #### ConnectionProvider
@@ -133,7 +133,7 @@ time-consuming than beneficial.
 For batch processing, it's best to stick with plain JDBC because Hibernate's performance 
 is not great.
 
-#### 5.Alot of effort to learn API 
+#### 5.A lot of effort to learn API 
 Learning Hibernate takes a lot of time and effort. As a result, learning Hibernate is not a simple task.
 
 #### Hibernate Example
@@ -326,7 +326,7 @@ public class ManageStudent {
          student.setAge( age );
 		 session.update(student); 
          x.commit();
-      } catch (HibernateException e) {
+      } catch(HibernateException e) {
          if (x!=null) x.rollback();
          e.printStackTrace(); 
       } finally {
@@ -344,7 +344,7 @@ public class ManageStudent {
          Student student = (Student)session.get(Student.class, StudentID); 
          session.delete(student); 
          x.commit();
-      } catch (HibernateException e) {
+      } catch(HibernateException e) {
          if (x!=null) x.rollback();
          e.printStackTrace(); 
       } finally {
