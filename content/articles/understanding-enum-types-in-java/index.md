@@ -22,7 +22,6 @@ We will be demonstrating the application of enums in building a poker card game 
 
 ### Goal
 At the end of the tutorial, the reader should understand the following:
-
 - The basic structure of an enum type.
 - The relationship between enums and classes:
   * Defining constructors, instance, and methods variables in enum classes.
@@ -31,17 +30,17 @@ At the end of the tutorial, the reader should understand the following:
 - The applications of enums.
 
 ### Prerequisites
-
 To fully understand this tutorial, you are required to have the following in place:
 - A basic understanding of Java programming language.
 - Java Development Kit (JDK) [installed](https://www.oracle.com/java/technologies/downloads/) on your computer.
 - IntelliJ code editor [installed](https://www.jetbrains.com/idea/download/).
 
-#### Basic structure of a Java Enum type
+#### The basic structure of a Java Enum type
 The declaration of a Java Enum starts with the keyword- **enum**, followed by the type name specified in `camelCase` (as is the naming convention for all Java classes). Following the type name is a pair of curly braces that form the enum class's context or scope. Within these curly braces are a set of unique identifiers which represent the enum constants. 
+
 **Note: No two enum constants can use the same identifier.**
 
-**It is also an excellent practice to capitalize enum constants, which is in line with the naming convention for Java constants and is done to make them stand out.**
+**It is also an excellent practice to capitalize enum constants, which aligns with the naming convention for Java constants and makes them stand out.**
 
 ```java
 enum Suit{
@@ -95,7 +94,7 @@ enum CardSuit{
 }
 ```
 
-> Enums can also be defined in a separate Java file
+> Enums can also be defined in a separate Java file.
 
 When enum classes are defined outside a class but within the same file, the JVM creates separate .class files (.class files are produced after the compiler as compiled written code) for the enum and the class. **An enum cannot bear the same name as a class within the same package**. Enums cannot be created within methods.
 
@@ -201,9 +200,9 @@ public enum Suit {
 As seen in the above example, the enum class Suit has a constructor that defines a string as a parameter it uses to initialize its instance variable, `suitName`. The enum also has an instance method `getSuitName()` that returns the appropriate `suitName` for the object.
 
 #### Defining custom properties for enum types
-As mentioned above the ```ordinal()``` method returns the ordinal of an enum constant. We cannot set the ordinal method, the closest that we can do is to define a custom integer property for the enum class.
+As mentioned above, the `ordinal()` method returns the ordinal of an enum constant. We cannot set the ordinal method. The closest that we can do is to define a custom integer property for the enum class.
 
-Consider our suit enum example above. Suppose we want each card suit constant to be represented by an integer property. Let us say one representing hearts, two representing diamonds, three representing clubs, and four representing spades we can define a custom integer property that maps each integer to the appropriate card suit as follows:
+Consider our suit enum example above. Suppose we want each card suit constant to be represented by an integer property. Let us say one represents hearts, two represent diamonds, three represent clubs, and four represent spades. We can define a custom integer property that maps each integer to the appropriate card suit as follows:
 
 ```java
 public enum CardSuit {
@@ -231,12 +230,11 @@ We can say `suit.getValue()` and this returns `1`.
 Notice the structure of the enum definition. The constants are defined first, followed by the instance variable declaration, and then the constructor definition.
 
 #### Building the poker card game controller.
-
-This is a Card Dealing and shuffling App that determines the hand ranking category of a player’s hand in a poker game.
+This card dealing and shuffling app determines the hand ranking category of a player's hand in a poker game.
 
 To solidify what we have learned so far, let us build a card dealing and shuffling application that determines the ranking of a player's hand in a poker game. This exercise was extracted from the [Java How to program, 10th Edition By Paul and Harvey Dietel](https://www.amazon.com/Java-Program-Early-Objects-10th/dp/0133807800).
 
-To build our application we need the following:
+To build our application, we need the following:
 - A Card object - a card has a Face and belongs to a Suit. The card face and suit are represented as enums.
 - A Player Class.
 - A Deck of Cards - A deck is simulated as an aggregation of 52 cards.
@@ -388,7 +386,7 @@ public void shuffle(){
 }
 ```
 
-Next, we define the deal method. The `deal()` method takes as parameters an array of Players and the number of cards to deal.
+Next, we define the deal method. The `deal()` method takes an array of Players and the number of cards to deal as parameters.
 
 In the deal method, we first shuffle the deck of cards with the shuffle method defined earlier. For each player, we assign the number of cards passed in as a parameter to the deal method.
 
@@ -450,7 +448,7 @@ public void deal(Player[] players, int numberOfCardsToDeal){
 
 Finally, let us define the **GameController**. The GameController class contains methods that determine the rank of a player's hand. To do this, we would use the Java Streams and Lambda functions. 
 
-Java 8 introduced the concept of streams and lambdas. Streams pass elements through a sequence of processing steps. These processing steps could be intermediate operations such as: `map`, `filter` , `distinct` , `limit` and `sorted` or they could be terminal operations like `forEach` , `collect` , `min` , `max` , `findFirst` , and `reduce`.
+Java 8 introduced the concept of streams and lambdas. Streams pass elements through a sequence of processing steps. These processing steps could be intermediate operations such as `map`, `filter`, `distinct`, `limit`, and `sorted`, or terminal operations like `forEach`, `collect`, `min`, `max`, `findFirst`, and `reduce`.
 
 These Stream operations take functional interfaces commonly known as lambdas as parameters.
 
@@ -460,7 +458,7 @@ Let us now define the methods that determine the rank of a player's hands:
 This is a hand containing two cards with the same Rank(Face) and three cards of three other ranks. To determine if a player's hand contains a pair of cards of the same rank and three other cards of other ranks, we do the following:
 - First, we generate a stream of cards using the `Arrays.stream()` method.
 - Next, we pass the generated stream through the map operation. The map operation generates a new stream in which each card in the original stream is mapped to its face by calling the `getFace()` method on the card.
-- Finally, we terminate the stream operation by collecting the stream into a set using the `collect(Collectors.toSet()` methods. We collect a set so that we can eliminate duplicates. Thus, if there are two cards with the same `faceValue`, we should have only four elements in our set instead of 5. We check if the set contains only four elements, and we return the boolean result to the caller.
+- Finally, we terminate the stream operation by collecting the stream into a set using the `collect(Collectors.toSet()` methods. We collect a set so that we can eliminate duplicates. Thus, if there are two cards with the same `faceValue`, we should have only four elements in our set instead of 5. We check if the set contains only four elements, returning the boolean result to the caller.
 
 ```java
 public static boolean containsAPair(Card[] playerHand){
@@ -471,7 +469,7 @@ return cardFaces.size() == 4;
 The ```Card::getFace ``` called a method reference it is the short form of the lambda expression: ```card -> card.getFace()```
 
 ##### containsTwoPairs(): 
-To determine if a player’s hand contains two pairs (two groups of cards with the same face value and one card with a different face). To do this, we:
+To determine if a player’s hand contains two pairs (two cards with the same face value and one card with a different face). To do this, we:
 - First, create a stream of Cards.
 - Then pass the stream through `collect()` terminal operation which collects the cards into a map grouping them by their face using the: `collect(Collectors.groupingBy(Card::getFace))` .
 - Next, we check the number of groups on the map to see if the number of groups with only two cards equals 2.
@@ -504,7 +502,7 @@ public static boolean containsThreeOfAKind(Card[] playerHand) {
 ```
 
 ##### containsFourOfAKind(): 
-To determine if a player’s hand contains three of a kind (four cards with the same face value and then one card with a different face value). To do this,
+To determine if a player’s hand contains three of a kind (four cards with the same face value and one card with a different face value). To do this,
 - First, we generate a stream of cards as in the earlier defined methods.
 - Next, we collect the generated stream into a set.
 - Finally, we check if the size of the set is equal to 2.
@@ -531,7 +529,7 @@ public static boolean isAFlush(Card[] playerHand) {
 ```
 
 ##### isAStraight(): 
-To determine if a player’s hand is straight (contains 5 cards of sequential rank, not of the same suit). To do this:
+To determine if a player’s hand is straight (contains five cards of sequential rank, not the same suit). To do this:
 - First, we generate a stream of cards.
 - Next, we map each card to its `faceValue` - an integer using the `map` operation.
 - We then pass the stream resulting from the `map` operation into the distinct operation (another intermediate stream operation). The distinct operation removes any duplicates from the stream.
@@ -569,4 +567,8 @@ In the process, we have also learned how to implement the Fisher-Yates Shuffling
 
 You can clone the project [from this repository](https://github.com/ehizman/cardPokerGameController.git).
 
-Happy coding!
+Happy Coding!
+
+---
+Peer Review Contributions by: [Briana Nzivu](/engineering-education/authors/briana-nzivu/)
+
