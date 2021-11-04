@@ -15,7 +15,7 @@ images:
 ---
 In this article, we will learn about building XML webpages using eXtensible Stylesheet Language Transformations (XSLT). By the end of the article, you will have an overview how HTML webpages are built by transforming XML codes. You will also learn a step-by-step procedure on how to build a simple webpage.
 <!--more-->
-In my previous articles about the [Validation of XML using DTD](/validating-xml-using-dtd/) and [Validation of XML using XSD](/validating-xml-using-xsd/), we learned about the basics of XML and implemented validations using [DTD](https://en.wikipedia.org/wiki/Document_type_definition) and [XSD](https://en.wikipedia.org/wiki/XML_Schema_(W3C)).
+In my previous articles about the [Validation of XML using DTD](/engineering-education/validating-xml-using-dtd/) and [Validation of XML using XSD](/engineering-education/validating-xml-using-xsd/), we learned about the basics of XML and implemented validations using [DTD](https://en.wikipedia.org/wiki/Document_type_definition) and [XSD](https://en.wikipedia.org/wiki/XML_Schema_(W3C)).
 
 I highly recommend going over the previous articles to better grasp those concepts. As a prerequisite, a little knowledge about [HTML](https://en.wikipedia.org/wiki/HTML) and [CSS](https://en.wikipedia.org/wiki/CSS) would help to follow this article along.
 
