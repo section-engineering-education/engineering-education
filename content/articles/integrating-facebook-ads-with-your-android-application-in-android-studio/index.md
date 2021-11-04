@@ -26,38 +26,47 @@ With Facebook Audience Network, developers are allowed to monetize their android
 
 ### Requirements analysis
 
-The key requirements for a successful integration include;
-    Facebook Audience Network sdk
-    Android studio
-    Facebook business account
+The key requirements for a successfull integration include;
+- Facebook Audience Network sdk
 
-### Initial integration steps
+- A properly set up Android Studio.
 
-Before beginning the integration process, you have to first setup your Facebook Business Manager account for the ads.
-The steps below will guide you on setting up your account.
+- A facebook account
 
-#### Step 1 **Set up a FAN (Facebook Audience Network) account**
+- Your application project.
 
-To create a FAN account, go to https://business.facebook.com/overview to first create a Facebook manager account as shown in the picture below.
-![create](create.png)
+With the above requirements ready, you can proceed to the initial steps in the integration steps.
 
-#### Step 2 **Build application properties for your account**
+### Initial integration steps   
 
-Once you have created your FAN account, click on the extension/dropdown button at the top and select the monetisation manager.
-Cick on integration>properties, key in your application name and select your plaform, either Android or iOS.
+These steps include setting up your facebook account into a business account and configure it to be compatible with the Android studio.
 
-#### Step 3 **Select the type of Ads**
+Open your facebook page and follow the following steps.
 
-The final initial step is to select and create the ad type.
-Once done, you are ready for the integration process in the Android studio.
+#### Step 1 : **Create an Audience Network (FAN)**
+First, create a new FBM(Facebook Business Account) account or log into an existing one.
+1. Click [here](https://business.facebook.com/overview), you will be directed to the page shown below where you can create your account.
+
+![](create.png)
+
+![create](/integrating-facebook-ads-with-your-android-application-in-android-studio/create.png)
+
+After successfully creating your account and confirming your email address, you should be redirected to a screen similar to the one below, showing your name and your business name as entered.
+
+![](logged.png)
+
+![logged](engineering-education/integrating-facebook-ads-with-your-android-application-in-android-studio/logged.png)
+
+#### Step 2: **Add an App property to your account**
+
+The next step is to add an app property. Do this by clicking on the extension button at the top then select monetisaton manager.
+
+Click on Integrations> Properties then create an app property. You will be required to key in the name of your app to create a property.
+Finally chose your platform (Android) for this case.
+
+
 
 ### Requirements Installation
-
-Assuming you have your Android studio up and running, the only thing you have to install is the FAN sdk.
-To install, you can download your sdk manually from [here](https://developers.facebook.com/resources/audience-network-sdk-6.8.0.zip) (Not recommended) or follow the steps below to install it the right way.
-
- **FAN sdk installation**
-
 
 
 
