@@ -39,7 +39,7 @@ To follow this tutorial, the reader should have the following:
     - [Classes & Objects](#classes--objects)
     - [Instantiating an Object](#instantiating-an-object)
     - [Constructors](#constructors)
-    - [Static classes vs Instance variables](#static-classes-vs-instance-variables)
+    - [Static classes vs. Instance variables](#static-classes-vs-instance-variables)
     - [Inheritance](#inheritance)
     - [Encapsulation](#encapsulation)
     - [Abstraction](#abstraction)
@@ -48,9 +48,9 @@ To follow this tutorial, the reader should have the following:
     - [Further Reading](#further-reading)
 
 ### Dart programming language
-Dart is an optimized client-sided multi-platform programming language used to develop fast apps developed by Google with the goal of a flexible runtime execution platform. Dart language is type-safe, so we must specify the type of data to be stored in memory whenever we declare variables or modifiers, referred to as good typing. 
+Dart is an optimized client-sided multi-platform programming language used to develop fast apps developed by Google to a flexible runtime execution platform. Dart language is type-safe, so we must specify the datab type to be stored in memory whenever we declare variables or modifiers, referred to as good typing. 
 
-While types are essential, in Dart, type stipulations are optional due to type inference. This provides us with a flexible way to define our variables. This can be very useful because we may be unsure about the data type we are expecting. 
+While types are essential, in Dart, type stipulations are optional due to type inference. This provides us with a flexible way to define our variables, and can be very useful because we may be unsure about the data type we are expecting. 
 
 Using the keyword “dynamic” alongside type comparison during runtime, we can accommodate the unknown type whenever it comes.
  
@@ -87,7 +87,7 @@ These both make sense because if we look at things holistically when we create a
 
 Objects to be of the same type are defined using a standard class. An object created from a class is called an instance of a class. It possesses its own unique identity, data fields, and functions that, as a reaffirmation, are different from other objects instantiated from the same class. Every object is instantiated from a class. All classes descend from the object except for NULL in the dart programming language.
  
-So from the Class Person example above, if we instantiate an object or multiple objects from this class, each of them will have unique properties (name, age) and unique behaviors ( speak, sayAge).
+So from the Class Person example above, if we instantiate an object or multiple objects from this class, each will have unique properties (name, age) and unique behaviors ( speak, sayAge).
  
 #### Instantiating an object
 In other programming languages like java, we use a unique keyword called "new" to instantiate an object from a class. However, in the dart, its desire to accommodate programmers coming from a tightly typed language such as java and programmers from a loosely typed one such as javaScript, we can instantiate an object without using the "new" keyword as of version 2 of the Dart programming language. Hence, we can create objects from the Person class using any of the following means.
@@ -200,7 +200,7 @@ s1.password returns an error because we are trying to access a private data fiel
  
  
 ### Static classes vs. Instance variables
-All the examples we have worked on so far have all been scenarios that dealt with instance variables. Instance variables are variables that hold an object; they are created with or without the new keyword in dart and with the new keyword in java. Properties and functions called on instance variables are all instance variable properties and instance variable functions.
+All the examples we have worked on so far have all been scenarios that dealt with instance variables. Instance variables are that hold an object; they are created with or without the new keyword in dart and with the new keyword in java. Properties and functions called on instance variables are all instance variable properties and instance variable functions.
  
 ```dart
     var P1 = Person();
@@ -209,9 +209,9 @@ All the examples we have worked on so far have all been scenarios that dealt wit
 ```
 `P1.name` and `P1.age` are both instance properties of the P1 variable.
  
-Static classes are classes that have properties and functions that are specified statically. When a data field or function is specified static we instruct that the particular property or function belongs to the class itself and not to any instance object. It can be accessed without creating an object. The static keyword allows properties and functions of a class to persist values across all instances of the class. 
- 
+Static classes are classes that have properties and functions that are specified statically. When a data field or function is specified static, we instruct that the particular property or function belongs to the class itself and not to any instance object. It is accessible without creating an object. The static keyword allows properties and functions of a class to persist values across all class instances.
 staff.dart
+
 ```dart
 class Staff {
   static var staffDept;
@@ -233,16 +233,15 @@ void main() {
   Staff.displayDetails(); 
 }
 ```
- 
- 
-There is no need to instantiate an object to access a static data field or call a static method: to call a static member of a class simply attach the name of the class before the static data field or function name to use them. As seen in the example above 
 
-`Staff.displayDetails()`
+There is no need to instantiate an object to access a static data field or call a static method: to call a static member of a class, attach the name of the class before the static data field or function name to use them. 
 
-is called a static variable of the staff class.
+As seen in the example above, `Staff.displayDetails()` is called a static variable of the staff class.
  
 ### Inheritance
-Inheritance just like in real-life representation is a way classes can obtain properties and methods defined in another class. This enables the creation of a new class from an already existing class. The class inherited from is known as the superclass, while the class inheriting is called the sub-class. Inheritance is simulated in Dart by the @override metatag and is achieved using an extended keyword.
+Inheritance, like in real-life representation, is a way classes can obtain properties and methods defined in another class, enabling the creation of a new class from an already existing class. The class inherited from is known as the superclass, while the class inheriting is called the sub-class. 
+
+Inheritance is simulated in dart by the @override metatag and is achieved using an extended keyword.
 
 ```dart
 class Animal{
@@ -276,16 +275,15 @@ void main() {
 }
 ```
 
-Here because classes Dog, Bird, and Fish all extend from class Animal they all have access to properties and methods defined in their parent. Hence classes Dog, Bird, and Fish can call the movement method in the Animal class without any error. The idea behind inheritance is that classes that have common functionalities and properties can have them declared and implemented in a single location/class and have them used in any other file of choice.
+Here because classes Dog, Bird, and Fish all extend from class `Animal`, they all have access to properties and methods defined in their parent. Hence classes Dog, Bird, and Fish can call the movement method in the Animal class without any error. The idea behind inheritance is that classes with standard functionalities and properties can be declared and implemented in a single location/class and used in any other file of choice.
 
 ### Encapsulation
-Encapsulation is a paradigm of OOP that enables us to hide the values of data fields of a class, by preventing direct access to them by external operations in such a way that could expose hidden implementation details.
-In a nutshell, Encapsulation allows the programmer to hide and restrict access to data. 
-To achieve encapsulation:
-Declare the data fields using the private access modifier. In the case of Dart, the underscore prefix modifier(“_”).
-Create public getters and setters that allow indirect access to those variables.
+Encapsulation is a paradigm of OOP that enables us to hide the values of data fields of a class by preventing direct access to them by external operations in such a way that could expose hidden implementation details. In a nutshell, encapsulation allows the programmer to hide and restrict access to data. 
 
-Using the same example as in the Access Modifier section
+To achieve encapsulation: Declare the data fields using the private access modifier. In the case of dart, the underscore prefix modifier("_"). Create public getters and setters that allow indirect access to those variables.
+
+Using the same example as in the Access Modifier section:
+
 ```dart
 // student.dart
 class Student{
@@ -302,24 +300,23 @@ class Student{
 	}
 }
 ```
-_password of the Student class cannot be edited or modified outside of the class Student. This ensures that the data is protected
+_password of the Student class cannot be edited or modified outside of the class Student, which ensures that the data is protected.
 
-
-	
 ### Abstraction	
-Class abstraction is the separation of class implementation from the use of a class. The internal implementation is encapsulated and hidden from us. A typical example of this is Dart’s internally created methods which are offered to us for usage. e.g `toUpperCase()` of a String type or `.map()`of Dart’s array methods. 
+Class abstraction is the separation of class implementation from the use of a class. The internal implementation is encapsulated and hidden from us. A typical example of this is dart's internally created methods which are offered to us for usage. e.g `toUpperCase()` of a String type or `.map()` of Dart’s array methods.
 
-`String name = “Tems Vibes”;`
+```dart
+String name = “Tems Vibes”;
+name.toUpperCase();
+```
 
-`name.toUpperCase();`
-
-The implementations of these methods are unknown to us. The data fields used and the way it executes its functionalities are hidden and we need not concern ourselves with it. We only need to know how the function works, what it needs as a parameter, and what it returns.
+The implementations of these methods are unknown to us. The data fields used and how it executes its functionalities are hidden, and we need not concern ourselves with it. We only need to know how the function works, what it needs as a parameter, and what it returns.
 				
-
 ### Polymorphism
-This is the ability of an object to exist in more than one form. The most prominent use of polymorphism in Dart is when a subclass instance object is instantiated using a superclass reference type.
+Polymorphism is the ability of an object to exist in more than one form. The most prominent use of polymorphism in dart is when a subclass instance object is instantiated using a superclass reference type.
 
-From our example above
+From our example above:
+
 ```dart
 class Animal{
 void movement(String moveMode){
@@ -352,27 +349,27 @@ void main() {
 }
 ```
 
+Due to polymorphism, because classes Bird, Dog, and Fish extend from Animal class, objects of any child classes can be created using the parent class as a reference type.
 
-Due to polymorphism, because classes Bird, Dog, and Fish are all extending from Animal class, objects of any of the child classes can be created using the parent class as a reference type.
-
-`Animal animal4 = Bird(“Flying with wings”);`
-
-`Animal animal5 = new Dog(“Running on Four legs”);`
-
-`Animal animal6 = Fish(“Swimming with Fins”);`
+```dart
+Animal animal4 = Bird(“Flying with wings”);
+Animal animal5 = new Dog(“Running on Four legs”);
+Animal animal6 = Fish(“Swimming with Fins”);
+```
 
 All these will create an instance object of the individual child classes.
 
-
-
 ### Conclusion
-This tutorial gives an in-depth description of the concepts of programming. All these concepts are crucial knowledgeable concepts we will need going into interviews and developing software in our everyday lives as software developers. Whatever the programming language used the ideas are the same. Mastery of these concepts can qualify us to be real advanced-level software developers.
+This tutorial gives an in-depth description of the concepts of programming. All these concepts are crucial knowledgeable concepts we will need going into interviews and developing software in our everyday lives. 
+
+Whatever the programming language used, the ideas are the same. Mastery of these concepts can qualify us to be real advanced-level software developers.
  
-### Further Reading
-For further reading check out the following references
+### Further reading
+For further reading, check out the following references:
  - [Dart language tour - classes](https://dart.dev/guides/language/language-tour#classes)
  - [GeeksForGeeks Dart](https://www.geeksforgeeks.org/dart-tutorial/)
  - [GeeksForGeeks Static Keyword](https://www.geeksforgeeks.org/dart-static-keyword/)
  - Introduction to Java Programming By Y. Daniel Liang pdf
 
 
+Happy learning!
