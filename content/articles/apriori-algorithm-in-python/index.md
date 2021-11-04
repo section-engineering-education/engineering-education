@@ -49,7 +49,7 @@ Using this rule, the business owner can now offer some deals to the customers, w
 
 
 #### Step 1: Data preprocessing
-This step involves importing the libraries and later transforming our data into a suitable format for training our apriori model. Therefore, the first thing we shall do in this package installs an apyori package containing all the apriori model algorithms.
+This step involves importing the libraries and later transforming our data into a suitable format for training our apriori model. Therefore, the first thing we shall do in this package is to install an apyori package containing all the apriori model algorithms.
 
 - **Installing the required package**
 
