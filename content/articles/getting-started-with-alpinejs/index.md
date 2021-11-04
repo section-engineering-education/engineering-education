@@ -494,7 +494,7 @@ Finally, the display is toggled with some transition using the `x-show` directiv
 ### Conclusion
 In this tutorial, we have learned what Alpine.js is. We also learned how to efficiently use its many features and directives to build fast and lightweight single-page web applications.
 
-## Happy Coding!
+Happy Coding!
 
 ---
 Peer Review Contributions by: [Briana Nzivu](/engineering-education/authors/briana-nzivu/)
