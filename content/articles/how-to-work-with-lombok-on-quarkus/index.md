@@ -82,7 +82,7 @@ The Lombok plugin will be required for the IDE to easily work with Quarkus in a 
 - The plugin can be installed by heading over to the Settings/plugins option.
 - Search for '**Lombok**'. It will look as shown below:
 
-![Lombok IntelliJ plugin](Lombok-intellij-pliugin.png "Lombok IntelliJ plugin")
+![Lombok IntelliJ plugin](/engineering-education/how-to-work-with-lombok-on-quarkus/Lombok-intellij-pliugin.png "Lombok IntelliJ plugin")
 
 - Install it. Restart the IDE.
 
@@ -90,11 +90,11 @@ The Lombok plugin will be required for the IDE to easily work with Quarkus in a 
 
 - As for VS code, make sure that it has the Quarkus tools installed as an extension. The extension is shown below:
 
-![VS Code Quarkus tools](quarkus-tools-vs-code.png "VS Code Quarkus tools")
+![VS Code Quarkus tools](/engineering-education/how-to-work-with-lombok-on-quarkus/quarkus-tools-vs-code.png "VS Code Quarkus tools")
 
 - Search for '**Lombok**' and install the Lombok annotations for VS Code. Check out its appearance in the image below:
 
-![Lombok VS Code support](lombok-annotations-vs-code.png "Lombok VS Code support")
+![Lombok VS Code support](/engineering-education/how-to-work-with-lombok-on-quarkus/lombok-annotations-vs-code.png "Lombok VS Code support")
 
 - Restart it to make sure all is well installed.
 
@@ -116,7 +116,7 @@ Create a new project of the following structure:
 - **Group**: org.gs
 - **Artifact**: lombok-tutorial
 
-![New Quarkus project in IntelliJ](new-quarkus-lombok-intellij.png "New Quarkus project in IntelliJ")
+![New Quarkus project in IntelliJ](/engineering-education/how-to-work-with-lombok-on-quarkus/new-quarkus-lombok-intellij.png "New Quarkus project in IntelliJ")
 
 - In the next window, don't add any dependencies
 
@@ -128,7 +128,7 @@ After the installation of the extensions, do the following:
 - Search Quarkus
 - Select on the 'Generate a Quarkus project' option
 
-![New Quarkus project in VS Code](new-quarkus-lombok-vs-code.png "New Quarkus project in VS Code")
+![New Quarkus project in VS Code](/engineering-education/how-to-work-with-lombok-on-quarkus/new-quarkus-lombok-vs-code.png "New Quarkus project in VS Code")
 
 - Set the following:
   - **Build tool**: Maven
@@ -146,7 +146,7 @@ After the installation of the extensions, do the following:
 
 Check it out below:
 
-![New Quarkus Lombok project using Quarkus.io starter](new-quarkus-lombok-intellij.png "New Quarkus Lombok project using Quarkus.io starter")
+![New Quarkus Lombok project using Quarkus.io starter](/engineering-education/how-to-work-with-lombok-on-quarkus/new-quarkus-lombok-intellij.png "New Quarkus Lombok project using Quarkus.io starter")
 
 - Download the zip code generated, extract it and open it up with the IDE or code editor.
 
@@ -434,7 +434,7 @@ class MovieTest {
 
 The outcome will look as follows:
 
-![Running the tests](running-tests.png "Running the tests")
+![Running the tests](/engineering-education/how-to-work-with-lombok-on-quarkus/running-tests.png "Running the tests")
 
 #### Add Lombok dependencies
 
@@ -579,7 +579,7 @@ import lombok.Getter;
 
 In this case, the following error will be popped-up:
 
-![Runtime error](set-id-error.png "Runtime error")
+![Runtime error](/engineering-education/how-to-work-with-lombok-on-quarkus/set-id-error.png "Runtime error")
 
 This is because the variable is inaccessible by Project Lombok due to its access level.
 The easiest solution to such kinds of errors is to remove the access level or change its access level type to '**none**'.
@@ -706,7 +706,7 @@ For example:
 
 It produces the error as shown below:
 
-![Can't find setId Error](can't-find-setId.png "Can't find setId Error")
+![Can't find setId Error](/engineering-education/how-to-work-with-lombok-on-quarkus/can't-find-setId.png "Can't find setId Error")
 
 - Head over to the **Movie.class** found in the target folder. Notice that the prefix of '**Set**' and '**Get**' before the field _id_ are no longer there.
   It just remains to be 'id'. This utilizes **Java's function overloading** capability.
@@ -917,7 +917,7 @@ void getMinutesPlusX() {
 
 It looks as shown below:
 
-![Log of type 'info' generated](log-info.png "Log of type 'info' generated")
+![Log of type 'info' generated](/engineering-education/how-to-work-with-lombok-on-quarkus/log-info.png "Log of type 'info' generated")
 
 In addition, it generates the following in the **Movie.class** file:
 
@@ -960,7 +960,7 @@ public int getMinutesPlusX(@NotNull int x){
     }
 ```
 
-![Custom logging using Java Logger](custom-logs.png "Custom logging using Java Logger")
+![Custom logging using Java Logger](/engineering-education/how-to-work-with-lombok-on-quarkus/custom-logs.png "Custom logging using Java Logger")
 
 ### Conclusion
 
