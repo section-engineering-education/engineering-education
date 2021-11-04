@@ -22,5 +22,3 @@
 <meta property="twitter:title" content="{{ if .Title }}{{ .Title }} | {{ end }}{{ .Site.Title }}">
 <meta property="twitter:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
 <meta property="twitter:image" content='{{ if .Params.images }}{{ replaceRE "/$" "" .Site.BaseURL}}{{ (index .Params.images 0).url }}{{ else }}{{.Site.BaseURL}}images/social-share.jpg{{ end }}'>
-
-<!-- {{ template "_internal/twitter_cards.html" . }} -->
