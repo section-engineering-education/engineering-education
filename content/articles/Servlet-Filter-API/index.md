@@ -145,12 +145,12 @@ If the user name and password are correct, the second filter will route the requ
 #### Steps to create authentication example
 We assumed you already knew how to use the eclipse IDE and configure the Tomcat server in this example.
 
-#### Step 1: Authentication Example: Dynamic Web Project.
+#### Step one: Authentication example: dynamic web project
 Open Eclipse IDE for Java EE developers. Create a web project by selecting Files -> New -> Dynamic Web Project and provide a project name. We will name it `Authentication Example`, -> select `Finish`.
 ![CheckPassword Filter](/engineering-education/Servlet-Filter-API/projectname.png)
 
 
-#### Step 2: login HTML page
+#### Step two: Creating a login HTML page
 By right-clicking on the `Authentication Example` in the Project Explorer, select new -> HTML file option -> finish by giving your HTML page a name. We'll call it `login.html`, in this case. 
 
 ![login page](/engineering-education/Servlet-Filter-API/loginhtml.png)
@@ -175,7 +175,7 @@ By right-clicking on the `Authentication Example` in the Project Explorer, selec
 </html>
 ```
 
-#### Step 3: Filter 1 and `com.demo` package:
+#### Step three: Creating filter 1 and `com.demo` package
 
 Create a package by right-clicking `Authentication Example`, selecting a new -> package, and finish by providing a package name of your choice. In this case, we will call it `com.demo`.
 
@@ -233,7 +233,7 @@ public class CheckPassword implements Filter
 }
 ```
 
-#### Step 4: Filter 2:
+#### Step four: Creating filter 2
 
 Right-click on the `com.demo` package on the `Authentication Example` Project, select new -> Filter, and finish by giving your Filter class a name. We will call it `CheckCredentials` in this case.
 
@@ -284,7 +284,7 @@ public class CheckCredentials implements Filter
 }
 ```
 
-#### Step 5: Servlet page:
+#### Step five: Creating the Servlet page
 
 Right-click the `com.demo` package in the `Authentication Example` Project, choose to create -> Servlet and name your servlet class. We'll call it `AuthenticationDemo`, In this case.
 
@@ -335,3 +335,6 @@ We used two filters in our example, one to check the password length and another
 Lastly, this article will give you a solid foundation of Filters. To improve your understanding and enhance your coding skills, start exploring more.
 
 Happy Learning!
+
+---
+Peer Review Contributions by: [Briana Nzivu](/engineering-education/authors/briana-nzivu/)
