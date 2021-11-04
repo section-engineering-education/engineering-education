@@ -22,7 +22,7 @@ These concepts listed can be classified as basic programming concepts and are es
 By the end of this tutorial, the reader should be able to:
 - Write codes of situations that will help us understand advanced concepts of programming.
 - Learn about advanced concepts of programming such as classes, objects, abstraction, polymorphism, encapsulation, inheritance, Access modifiers, static classes,
-- Learn the concepts using Dart as the language of choice. However, the concepts are the same for any programming language we can think of, only that they are represented using different syntaxes.
+- Learn the concepts using dart as the language of choice. However, the concepts are the same for any programming language we can think of, only that they are represented using different syntaxes.
 
 ### Prerequisites
 To follow this tutorial, the reader should have the following:
@@ -48,11 +48,11 @@ To follow this tutorial, the reader should have the following:
     - [Further Reading](#further-reading)
 
 ### Dart programming language
-Dart is an optimized client-sided multi-platform programming language used to develop fast apps developed by Google to a flexible runtime execution platform. Dart language is type-safe, so we must specify the datab type to be stored in memory whenever we declare variables or modifiers, referred to as good typing. 
+Dart is an optimized client-sided multi-platform programming language used to develop fast apps developed by Google to a flexible runtime execution platform. Dart language is type-safe, so we must specify the data type to be stored in memory whenever we declare variables or modifiers, referred to as good typing.
 
-While types are essential, in Dart, type stipulations are optional due to type inference. This provides us with a flexible way to define our variables, and can be very useful because we may be unsure about the data type we are expecting. 
+While types are essential, in dart, type stipulations are optional due to type inference. This provides us with a flexible way to define our variables and can be very useful because we may be unsure about the data type we are expecting.
 
-Using the keyword “dynamic” alongside type comparison during runtime, we can accommodate the unknown type whenever it comes.
+Using the keyword `dynamic` alongside type comparison during runtime, we can accommodate the unknown type whenever it comes.
  
 ### Classes & Objects
 Object-oriented programming (OOP) enables us to develop large-scale software, and a principal concept of OOP is Classes. A class is a programmable concept that defines Objects' properties and behaviors and can be represented in coding syntax. 
@@ -143,8 +143,7 @@ As stated, every class has a hidden default method called the constructor functi
         Person (this.name, this.age);
     }
 ```
-
-In the example above we have three constructor functions all of which are our own custom constructors.
+In the example above, we have three constructor functions: our custom constructors.
  
 The first Person constructor overwrites the default constructor anytime the Person class is used to create an object. So any object created using the Person class will have a name property of “ANDREW” and an age of “26”.
 	
@@ -170,7 +169,7 @@ The third Person constructor specifies that we can create a Person object with t
 	P3.age;    -  result = 28
 ```
 				
-### Access Modifiers
+### Access modifiers
 Access/Visibility modifiers can be used to specify the visibility of a class and its member. In a programming language like java, public, protected, and private keywords can be utilized to specify the visibility scope for data fields or methods of a class. 
 
 However, there is no specific keyword in dart that describes data fields and methods to be public, private, or protected. Dart instead provides us with a way to handle this. All data fields are public by default but can be restricted to private modifiers by adding an underscore "_" before the specified modifier.
@@ -200,7 +199,7 @@ s1.password returns an error because we are trying to access a private data fiel
  
  
 ### Static classes vs. Instance variables
-All the examples we have worked on so far have all been scenarios that dealt with instance variables. Instance variables are that hold an object; they are created with or without the new keyword in dart and with the new keyword in java. Properties and functions called on instance variables are all instance variable properties and instance variable functions.
+All the examples we have worked on so far have all been scenarios that dealt with instance variables. Instance variables hold an object; they are created with or without the new keyword in dart and with the new keyword in java. Properties and functions called on instance variables are all instance variable properties and instance variable functions.
  
 ```dart
     var P1 = Person();
@@ -310,7 +309,7 @@ String name = “Tems Vibes”;
 name.toUpperCase();
 ```
 
-The implementations of these methods are unknown to us. The data fields used and how it executes its functionalities are hidden, and we need not concern ourselves with it. We only need to know how the function works, what it needs as a parameter, and what it returns.
+The implementations of these methods are unknown to us. The data fields used and how it executes its functionalities are hidden, and we need not concern ourselves with them. We only need to know how the function works, what it needs as a parameter, and what it returns.
 				
 ### Polymorphism
 Polymorphism is the ability of an object to exist in more than one form. The most prominent use of polymorphism in dart is when a subclass instance object is instantiated using a superclass reference type.
@@ -373,3 +372,6 @@ For further reading, check out the following references:
 
 
 Happy learning!
+
+---
+Peer Review Contributions by: [Briana Nzivu](/engineering-education/authors/briana-nzivu/)
