@@ -1,4 +1,4 @@
-### Getting Started with PyAutoGUI Automation of the Keyboard and Mouse
+ ### Getting Started with PyAutoGUI Automation of the Keyboard and Mouse
 Doing the same repetitive tasks daily can be a bit boring. Automating those tasks can save us much time and help us be productive in other areas. We can achieve the automation process with a Python library known as PyAutoGUI. To learn more about PyAutoGUI, click [here](https://pyautogui.readthedocs.io/en/latest/).
 
 In this article, we are going to take a look at a simple automation task that involves opening Google Chrome, clicking on the address search bar, typing the URL to YouTube, searching for a video(in this case, a snap), clicking on it to play and finally minimizing the Google Chrome window. 
@@ -50,7 +50,7 @@ pyautogui.mouseInfo()
 
 - `pyautogui.mouseInfo()` - We use this command to get the x,y coordinates of a point on the screen.
 
-Run the above code. It will display a dialog box that displays the point's x and y coordinates where the cursor is positioned. If you want to get the coordinates of another point on the screen, move the cursor to that point, and it will give you the coordinates.
+Run the above code. It will display a dialog box that displays the point's x and y coordinates where the cursor is positioned. If you want to get the coordinates of another point on the screen, move the cursor to that point, and it will give you the coordinates. As you move the cursor from one point to another on the screen, you will notice that coordinates increase as you move away from the top-left corner. The pixel at the top-left corner is at co-ordinates (0,0) which makes it the origin.
 
 It is important to know how x,y coordinates represent moving vertically and moving horizontally, respectively. The coordinates are measured in pixels.
 
@@ -131,9 +131,9 @@ It is important to know automation, but we should not forget that we might encou
 
 To recover from this, you can do the following:
 
- Use the PYAUTOGUI fail-safe feature.PYAUTOGUI has a 10th of a second delay after execution, so you slide the cursor to one of the four corners of the screen. This makes PYAUTOGUI raise a Pyautogui fail-safe exception.
+- Use the PYAUTOGUI fail-safe feature. PYAUTOGUI has a 10<sup>th</sup> of a second delay after execution, so you slide the cursor to one of the four corners of the screen. This makes PYAUTOGUI raise a Pyautogui fail-safe exception.
 
-In the worst-case scenario, you have to log out. You can log out by pressing a combination of keys, CTRL+ALT+DEL, for Unix and Microsoft users.
+- In the worst-case scenario, you have to log out. You can log out by pressing a combination of keys, CTRL+ALT+DEL, for Unix and Microsoft users.
 
 
 #### Conclusion
