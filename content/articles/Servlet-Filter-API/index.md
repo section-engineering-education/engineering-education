@@ -145,12 +145,12 @@ If the user name and password are correct, the second filter will route the requ
 #### Steps to create authentication example
 We assumed you already knew how to use the eclipse IDE and configure the Tomcat server in this example.
 
-#### Step 1:
+#### Step 1: Authentication Example: Dynamic Web Project.
 Open Eclipse IDE for Java EE developers. Create a web project by selecting Files -> New -> Dynamic Web Project and provide a project name. We will name it `Authentication Example`, -> select `Finish`.
 ![CheckPassword Filter](/engineering-education/Servlet-Filter-API/projectname.png)
 
 
-#### Step 2: 
+#### Step 2: login HTML page
 By right-clicking on the `Authentication Example` in the Project Explorer, select new -> HTML file option -> finish by giving your HTML page a name. We'll call it `login.html`, in this case. 
 
 ![login page](/engineering-education/Servlet-Filter-API/loginhtml.png)
