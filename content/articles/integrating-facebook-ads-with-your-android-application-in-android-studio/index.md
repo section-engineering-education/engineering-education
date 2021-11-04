@@ -11,12 +11,12 @@
 
 - [Requirements Installation](#requirements-installation)
 
-- [Integration Process](#integration-process)
- - [Main steps](#main-steps)
+- [Integration in Android Studio](#integration-in-android-studio)
+ 
 
 - [Why Integrate?](#why-integrate)
 
-- [Demerits of integrating into some Applications](#demerits-of-integrating-into-some-Applications)
+- [Demerits of integrating into some Applications](#demerits-of-integrating-into-some-applications)
 
 - [Conclusion](#conclusion)
 
