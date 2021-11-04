@@ -1,9 +1,26 @@
-﻿### Introduction
-JavaFX is suitable for desktop application development and other applications. It is a set of graphics and media packages that make it easier to design, create, debug, test, and deploy applications that can run steadily on almost any platform, from Windows to Android to the Mac operating system. Through interaction with the desktop application user interface, data can be saved in a database (MySQL) for processing or any other manipulation. i.e., future retrieval.
+﻿---
+layout: engineering-education
+status: publish
+published: true
+url: /mysql-connection-graphical-user-interface-design-using-javafx-and-scene-builder/
+title: MySQL Connection Graphical User Interface design Using JavaFX and Scene builder
+description: In this article, we will study how JavaFX scene builder can be used to design and develop an application that can connect to the MySQL database. We will look at how to design and create a simple GUI using the JavaFX scene builder.
+author: ayoma-joseph
+date: 2021-11-04T00:00:00-12:15
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/mysql-connection-graphical-user-interface-design-using-javafx-and-scene-builder/hero.png
+    alt: MySQL Connection Graphical User Interface design Using JavaFX and Scene builder Hero Image
+---
+JavaFX is suitable for desktop application development and other applications. It is a set of graphics and media packages that make it easier to design, create, debug, test, and deploy applications. 
+<!--more-->
+These applications can run steadily on almost any platform, from Windows to Android to the Mac operating system. Through interaction with the desktop application user interface, data can be saved in a database (MySQL) for processing or any other manipulation. i.e., future retrieval.
 
 In this article, we will study how JavaFX scene builder can be used to design and develop an application that can connect to the MySQL database. I will describe how to design and create a simple GUI using the JavaFX scene builder. The user will input database connection strings, save the connection strings in an XML file, retrieve them from the file, and connect to the database. In this case, it will not be necessary to change the connection string from the code section but the UI. It makes the deployment of applications that use the MySQL database tool as a storage resource easier.
 
-### Table of Contents
+### Table of contents
 1. [Introduction](#introduction)
 2. [Prerequisites](#prerequisites)
 3. [JavaFX Overview](#javafx-overview)
@@ -26,7 +43,7 @@ In this article, we will study how JavaFX scene builder can be used to design an
 4. Java coding basics
 5. [MySQL](https://www.mysql.com/downloads/) installed
 
-### JavaFX Overview
+### JavaFX overview
 JavaFX is defined as a set of graphics and media packages that enable designers, developers, and testers to design, create, debug, and deploy client applications on diverse operating system platforms.
 
 Because the JavaFX library is purely written as a Java API, JavaFX applications can reference any application programming interface from the Java library. That is, any application done in JavaFX can use any of the Java API libraries to access and communicate with native system capabilities.
@@ -298,3 +315,6 @@ On click, the application reads the XML files, gets the connection strings and t
 ### Conclusion
 JavaFX is a set of graphics and media packages that enable designers, developers, and testers to design, create, debug, and deploy client applications on diverse operating system platforms. Through interaction with the desktop application user interface, data can be saved in a database (MySQL) for processing or any other manipulation. In this article, we have learned how JavaFX scene builder can design a desktop application that can connect to the database.
 The code parts used in this article can be found at my [GitHub Repo](https://github.com/JosephAyoma/JavaFX-scenebuilder-for-mysql-connection).
+
+---
+Peer Review Contributions by: [Dawe Daniel](/engineering-education/authors/dawe-daniel/)
