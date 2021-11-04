@@ -61,9 +61,16 @@ public class Student {
 }
 
 ```
+- `@Entity` annotation shows that the class is a persistent Java class.
+- `@Id` annotation shows that the annotated field is the primary key.
+- `@GeneratedValue` annotation is used to specify the generation strategy used for the primary key.
+- `@Column` annotation defines the column in the database that maps the annotated field.
+- `@Getter` annotation generates getters for all the fields in the Student class.
+- `@Setter` annotation generates the setters for all the fields in the Student class.
+- `@Table(name = "student")` indicates that the Student entity will be mapped to a table named `student` in the database.
 
 #### Repository
-Create Java interface named `StudentRepository` anddd the following code to the interface created above;
+Create Java interface named `StudentRepository` and the following code to the interface created above.
 
 ```java
 @Repository // Marks the interface as a JPA repository
@@ -74,6 +81,9 @@ public interface StudentRepository extends JpaRepository<Student, Integer> {
 }
 
 ```
+The `JpaRepository` interface takes in the model and the type of the ID, in our case the model is Student and the ID type is Long. We are now able to use all the JpaRepository methods `save()`, `findOne()`, `findById()`, `findAll()`, `count()`, `delete()`, `deleteById()` without providing implementation.
+
+- `@Repository` annotation marks this interface as a Spring Data JPA repository.
 
 #### Controller
 ```java
@@ -118,6 +128,13 @@ public class StudentController {
 }
 
 ```
+- `@RestController` annotation marks this class as a controller that can process the incoming HTTP requests.
+- `@RequestMapping("/api/v1/students")` annotation sets the base path to the resource endpoints in the controller as /api/v1/students.
+- `@GetMapping` annotation indicates that the function processes a GET request.
+- `@PostMapping` annotation indicates that a function processes a POST request.
+- `@PutMapping` annotation indicates that a function processes a PUT request.
+- `@DeleteMapping` annotation indicates that a function processes a DELETE request.
+
 #### Configuration
 On the resources folder, add the code snippet below to the `application.properties` file:
 
@@ -153,7 +170,7 @@ CREATE TABLE student
 ```
 The above code snippet creates the `student` table in the database when the application is run. 
 
-> You should not use automated database table creation tool because it does not produce optimized SQL code.
+> You should not use an automated database table creation tool because it does not produce optimized SQL code.
 
 ### Database Setup
 Create a database named `fly_migrations` through the terminal as shown below or through the PHPMyAdmin web interface:
@@ -193,7 +210,7 @@ When we check the Flyway migrations table, we can see that the data was inserted
 
 ![Result](/engineering-education/spring-boot-flyway-migrations/data.png)
 
-Now that we have created a table and inserted data into the database, execute the command below if we want to roll back the last migration that we performed.
+Now that we have created a table and inserted data into the database, execute the command below to roll back the last migration that we performed.
 
 ```bash
 $ ./flyway undo
@@ -202,7 +219,7 @@ $ ./flyway undo
 The command above rollbacks the last migration, In our case, it will remove the data inserted into the database from the second script.
 
 ### Conclusion
-Now that you have learnt how to manage Spring Boot database migrations with the flyway migration tool, try implementing an application, create at least three migrations and try rolling back to the previous migrations. You can download the complete source code [here]().
+Now that you have learned how to manage Spring Boot database migrations with the flyway migration tool try implementing an application, creating at least three migrations, and rolling back to the previous migrations.
 
 ---
 Peer Review Contributions by: [Miller Juma](/engineering-education/authors/miller-juma/)
