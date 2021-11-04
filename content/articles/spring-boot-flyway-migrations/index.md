@@ -3,39 +3,40 @@ layout: engineering-education
 status: publish
 published: true
 url: /spring-boot-flyway-migrations/
-title: Managing Spring Boot database migrations using Flyway database migration tool
-description: This article introduces readers to the basic concepts of Flyway, a version control system
+title: Managing Spring Boot Database Migrations using Flyway
+description: This article introduces readers to the Flyway version control system. This tool helps in performing and maintaining database migrations.
 author: sumba-elvis
-date: 2021-10-25T00:00:00-07:40
+date: 2021-11-04T00:00:00-07:40
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/spring-boot-flyway-migrations/hero.png
+  - url: /engineering-education/spring-boot-flyway-migrations/hero.jpg
     alt: Flyway migrations image
 ---
 Flyway is a version control system that is used to maintain database migrations across all application instances.
 <!--more-->
-This article will create a student management system that manages database migrations with the Flyway migration tool. 
+This article will create a student management system that manages database migrations using Flyway. 
 
 ### Prerequisites
 1. [Java Development Kit](https://www.oracle.com/java/technologies/downloads/) installed on your computer.
 2. [MySQL](https://www.mysql.com/) installed on your computer.
 3. Knowledge in [Spring Boot](https://spring.io/projects/spring-boot).
-4. Favorite IDE/Code editor installed.
+4. An IDE such as Eclipse or Netbeans installed.
    
 ### Project setup
 1. On your browser, open [spring initializr](https://start.spring.io/).
-2. Input the project name as `migration`, group name as `com.migrations`.
+2. Input the `project name` as `migration` and `group name` as `com.migrations`.
 3. Add `Spring Web`, `Spring Data JPA`, `Flyway migration` and `MySQL Driver` as dependencies.
-4. Click generate to download the boilerplate project code as a compressed file.
+4. Click `generate` to download the boilerplate project code as a compressed file.
 5. Uncompress the downloaded file and open the project in your favourite code editor.
    
 #### Domain
-1. Create a Student pojo and add the code below.
+1. Create a `Student` class and add the code below.
+
 ```java
-@Entity // Indicated that the class is a database model
-@Table(name = "student") // sets the name of the table that the model with mapped to
+@Entity // Indicates that a class is a database model
+@Table(name = "student") // sets the name of the table that the model will be mapped to
 @Getter // Creates getters for all the variables in the class
 @Setter // Creates setters for all the variables in the class
 public class Student {
@@ -62,8 +63,8 @@ public class Student {
 ```
 
 #### Repository
-1. Create Java interface named `StudentRepository`.
-2. Add the code snippet below to the interface created above.
+Create Java interface named `StudentRepository` anddd the following code to the interface created above;
+
 ```java
 @Repository // Marks the interface as a JPA repository
 public interface StudentRepository extends JpaRepository<Student, Integer> {
@@ -118,7 +119,8 @@ public class StudentController {
 
 ```
 #### Configuration
-On the resources folder, add the code snippet below to the `application.properties` file. 
+On the resources folder, add the code snippet below to the `application.properties` file:
+
 ```yaml
 #  Sets the database URL
 spring.datasource.url = jdbc:mysql://localhost:3306/flyway_migrations?useSSL=false
@@ -132,9 +134,9 @@ spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQL5InnoDBDial
 spring.jpa.hibernate.ddl-auto = validate
 
 ```
-1. In the resource folder, create a new folder, `db`.
-2. Create another folder named `migrations` in the `db` folder created above.
-3. Create a SQL filename `V1__init.sql` and add the code snippet below.
+In the resource folder, create a new folder, `db`. Then generate another folder named `migrations` in the `db` directory.
+
+Next, create a SQL filename `V1__init.sql` and add the code snippet below:
    
 ```sql
 CREATE TABLE student
@@ -151,10 +153,10 @@ CREATE TABLE student
 ```
 The above code snippet creates the `student` table in the database when the application is run. 
 
-> Although Hibernate can create the database tables automatically without the SQL statements, Hibernate developers discourage using the automated database table creation tool since it does not produce an optimized SQL code
+> You should not use automated database table creation tool because it does not produce optimized SQL code.
 
 ### Database Setup
-Create a database named `fly_migrations` through the terminal as shown below or through the PHPMyAdmin web interface.
+Create a database named `fly_migrations` through the terminal as shown below or through the PHPMyAdmin web interface:
 
 ```bash
 elvis@elvis:~$ sudo mysql
