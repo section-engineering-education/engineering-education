@@ -136,3 +136,6 @@ This is a relatively straightforward tutorial. The code is simple and easy to un
 - [A state-of-the-art open source chatbot](https://ai.facebook.com/blog/state-of-the-art-open-source-chatbot/)
 - [Blenderbot](https://huggingface.co/transformers/model_doc/blenderbot.html)
 - [Attention Is All You Need](https://arxiv.org/pdf/1706.03762.pdf)
+
+---
+Peer Review Contributions by: [Collins Ayuya](https://www.section.io/engineering-education/authors/collins-ayuya/)
