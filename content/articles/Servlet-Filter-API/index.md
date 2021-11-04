@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/Servlet-Filter-API/hero.jpg
     alt: Servlet: Filter API Hero Image
 ---
-When an application is pre-and post-processed, the invoked object is filtered. Filters are configured and used when filtering activities are performed. The filter interface is found in the `javax.servlet package`. 
+When an application is pre-and post-processed, the invoked object is filtered.  Filters are configured and used when performing filtering activities. The filter interface is found in the `javax.servlet package`. 
 <!--more-->
 To create a Filter class, we have to import `javax.servlet` and implement the Filter interface. Several filters can be created to perform different tasks according to the user and developer specifications.
 
@@ -30,7 +30,7 @@ A learner should be able to understand the following after reading this article:
 You will need the following tools to go along with this article:
 - [Eclipse](https://www.eclipse.org/downloads/packages/release/2021-06/r) or another open-source Java editor should be installed on your machine.
 - A web browser installed.
-- Install the [TomCat](https://tomcat.apache.org/) server or any other server. In this case, TomCat version 9 will be used.
+- Install the [TomCat](https://tomcat.apache.org/) server or any other server. In this case, we will use TomCat version 9.
 - A basic understanding of Java programming language.
 - A basic understanding of a servlet is needed.
 - Solid knowledge of building and running Java code using any Java IDE and Tomcat or another similar server.
@@ -48,7 +48,7 @@ You will need the following tools to go along with this article:
 - [Authentication Example using filter](#authentication-example-using-filter)
 - [Conclusion](#conclusion)
 
-### What are servlet filters and how do they work
+### What are servlet filters, and how do they work
 #### Servlet filter definition
 **Filters** are Java classes that perform and customize filtering operations and is accomplished by:
 - Intercepting client requests before they get to a back-end resource
@@ -62,7 +62,8 @@ You will need the following tools to go along with this article:
 - When a request enters the Web Container, it is checked to see whether any filters have URL patterns that match the incoming URL.
 - The Web `Container` sends requests to the first filter with a matching URL pattern to execute its function.
 First Filter then checks if a second `Filter` is available with marching URL, and the code of that filter is run, which will continue until no more filters with URL patterns match are found.
-If there are no errors, the request is forwarded to the destination Servlet. As a result, we know that the request will only be delivered to the destination servlet if all relevant Filters have been completed successfully.
+
+If there are no errors, the request is forwarded to the destination Servlet. As a result, we know that the request will only be delivered to the destination servlet after completing all relevant Filters successfully. 
 The servlet returns the response to the caller, and then the response is delivered to the Web Container, who then passes it on to the client.
 
 ### Filter usage and its advantages.
@@ -87,7 +88,7 @@ We can come with the following usage of the filter based on the application area
 - There is no dependent on another resource for one of the filters.
 - Filters require less upkeep.
 
-### Creating a Filter
+### Creating a filter
 The following are the steps to follow when creating a Filter program:
 1. Create a Java class that implements the interface `Filter`.
 2. Set up the filter parameters.
@@ -95,31 +96,33 @@ The following are the steps to follow when creating a Filter program:
 
 We must implement the Servlet 'Filter' Interface, which is part of the `javax.servlet`  package, to create a filter, and the life cycle methods for the 'Filter' interface are as follows:
 
- - `void init()`: The 'init()' method is used to initialize Filter parameters; it informs the web container that a filter needs to be activated. 
-Only one parameter is required, namely,
+ - `void init()`: The `init()` method initializes Filter parameters; it informs the web container that a filter needs to be activated. Only one parameter is required, namely,
 
 ```java
 public void init(FilterConfig parameterName) throws ServletException
-
 ```
- - `void doFilters()`:  This method is the most significant in the Filter interface and calls the next filter. It requires three parameters: 
-- ServletRequest obj
-- ServletResponse obj
-- FilterChain obj, implemented as follows.
+
+- `void doFilters()`:  This method is the most significant in the Filter interface and calls the next filter. It requires three parameters: 
+* ServletRequest obj
+* ServletResponse obj
+* FilterChain obj, implemented as follows:
+
 ```java
  Public void doFilters(ServletRequest request, ServletResponse response,FileterChain chain)throws ServletException,IOException
 ```
 
-- `void destroy()`: This method denotes that the filter has completed its duty or has been removed from service. Users can override this method to write finishing logic, such as releasing resources, objects, and so on.
+- `void destroy()`: This method denotes that the filter has completed its duty or been removed from service. Users can override this method to write finishing logic, such as releasing resources, objects, and many more.
 
 ### FilterChain
 FilterChain's object is passed to the Filter interfaces when executing the next filter or resource in the chain.
-#### Method.
 
-- `void doFilter()`: This method is only available in the `FilterChain` interface and used when calling the next `Filter` and passing all resources that are required:
+#### Method.
+- `void doFilter()`: This method is only available in the `FilterChain` interface and used when calling the following `Filter` and passing all resources that are required: 
+
 ```java
 public void doFilter(HttpServletRequest request, HttpServletResponse response);
 ```
+
 ### FilterConfig
 
 The web container generates a `FilterConfig` object which is used to retrieve configuration information from the web.xml file.
@@ -131,12 +134,15 @@ In the FilterConfig interface, there are four methods:
 3. `getInitParameterNames()`: This method returns a list of all type enumeration parameter names.
 4. `getServletContext()`: This method returns the `ServletContext` object.
 
-### Authentication Example using filter
-In this example, we're demonstrating how a `Filter` is used to achieve authentication. We're using two filters here: one to verify if a password is greater than seven characters, and the other to check both the user name and password supplied by the user.
+### Authentication example using filter
+In this example, we are demonstrating how a `Filter` is used to achieve authentication. We are using two filters here: one to verify if a password is more significant than seven characters, and the other to check the user name and password supplied by the user. 
+
+
 Filter 1 will forward the request to a second Filter if the password length is correct. Otherwise, an error notice will appear.
 
-If the user name and password provided by the user are both correct, the second Filter will route the request to the Servlet page; otherwise, an error message will be displayed.
-#### Steps to create Authentication Example
+If the user name and password are correct, the second filter will route the request to the Servlet page; otherwise, an error message will be displayed.
+
+#### Steps to create authentication example
 We assumed you already knew how to use the eclipse IDE and configure the Tomcat server in this example.
 
 #### Step 1:
@@ -148,6 +154,7 @@ Open Eclipse IDE for Java EE developers. Create a web project by selecting Files
 By right-clicking on the `Authentication Example` in the Project Explorer, select new -> HTML file option -> finish by giving your HTML page a name. We'll call it `login.html`, in this case. 
 
 ![login page](/engineering-education/Servlet-Filter-API/loginhtml.png)
+
 ```html
 <!DOCTYPE html>
 <html>
@@ -170,11 +177,11 @@ By right-clicking on the `Authentication Example` in the Project Explorer, selec
 
 #### Step 3: Filter 1 and `com.demo` package:
 
-Create a package by right-clicking `Authentication Example`, selecting a new -> package, and finish by providing a package name of your choice. In this case, we'll call it `com.demo`
+Create a package by right-clicking `Authentication Example`, selecting a new -> package, and finish by providing a package name of your choice. In this case, we will call it `com.demo`.
 
 To navigate into the package you have created above, expand `src/main/Java`.
 
-Right-click on the `com.demo` package on the `Authentication Example` Project, select new -> Filter, and finish by giving your Filter class a name. We'll call it `CheckPassword` in this case.
+Right-click on the `com.demo` package on the `Authentication Example` Project, select new -> Filter, and finish by giving your Filter class a name. We will call it `CheckPassword` in this case.
 
 ![CheckPassword Filter](/engineering-education/Servlet-Filter-API/checkpasswordlenght.png)
 
@@ -228,7 +235,7 @@ public class CheckPassword implements Filter
 
 #### Step 4: Filter 2:
 
-Right-click on the `com.demo` package on the `Authentication Example` Project, select new -> Filter, and finish by giving your Filter class a name. We'll call it `CheckCredentials` in this case.
+Right-click on the `com.demo` package on the `Authentication Example` Project, select new -> Filter, and finish by giving your Filter class a name. We will call it `CheckCredentials` in this case.
 
 ```java
 package com.demo;
@@ -317,7 +324,7 @@ String uPassword=request.getParameter("uPassword");
 ```
 
 ### Conclusion
-In conclusion, we've seen how Filters work, their functions, the benefits of using them, and the three interfaces that are available on Filters, namely:
+In conclusion, we have seen how Filters work, their functions, the benefits of using them, and the three interfaces that are available on Filters, namely:
 - Filter
 - FilterConfig and
 - FilterChain interface.
