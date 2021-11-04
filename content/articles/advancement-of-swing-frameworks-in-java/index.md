@@ -1,12 +1,13 @@
 ﻿### Advancement of Swing Frameworks in Java
-         
- Swing Framework was included as part of the Java Foundation Classes (JFC). Swing Framework was originally available to be utilized with Java 1.1 as a distinct library. However, originally in Java 1.2, Swing became fully integrated into Java language.
-**Framework** can raise concerns because frameworks can be large and complicated. When we consider small applications, a spring framework can bring about more difficulty than the original system it supposedly improves. However, the Swing  Framework has goals that reduce any troublesome effects that a larger framework could cause.
+ Java Foundation Class took swing Framework to be  part of it. Java version 1.1 initially contained Swing Framework as a well-defined library. Later on, it got integrated into Java language.
+
+**Framework** can enhance issues due to the fact frameworks may be large and complex. When we recall small programs, a spring framework can bring about greater difficulty than the unique gadget it supposedly improves. Since the Swing Framework has dreams that lessen any tough results that a larger framework ought to do.
+
  
-The framework has a basic objective  to provide the kernel of a  Swing application model, assisting programmers to get started swiftly and to acquire optimum practices for just a few elements related to every Swing Framework.
+The primary objective of the framework is to provide the kernel of a  Swing application, assisting programmers to get started swiftly and to gain optimum practices from just a few elements similar to every Swing Framework.
 ### Table of contents
 -  [Prerequisites](#prerequisites)
--  [Swing Supports a Pluggable Look and Feel](#swing-supports-a-pluggable-look-and-feel)
+-  [Pluggable Feel and Look Provided by Swing](#pluggable-feel-and-look-provided-by-swing)
 - [The MVC Connection](#the-mvc-connection)
 - [Event Handling](#event-handling)
 - [Performing  Swing Painting ](#performing-swing-painting)
@@ -20,32 +21,35 @@ To follow along, you must:
 1.  Be familiar with java programming language.
 2.  Be familiar with introduction to java swing. Refer to this article to  [introduction to java swing](https://www.section.io/engineering-education/introduction-to-java-swing/)
 
-### Swing Supports a Pluggable Look and Feel
+### Pluggable Feel and Look Provided by Swing
   
-Swing supports a pluggable look and feel (PLAF). Since each Swing component is considered by Java code. The look creates an aesthetic feeling and a component is under the control of Swing. This fact means that you can separate the look and feel of a component from the logic of the component  since this is what Swing does. It is possible to “plug in” an unused look and feel for any given component with failure to create any side effects in the code that uses that component. Pluggable look-and-feel provide numerous important benefits. It is practical to explain a look and feel that is consistent across all platforms. That is, suppose an application will be running  in a MacOS environment only, it is possible to specify the MacOS look and feel. It is also possible to model the convention look and feel. To summarize, the look and feel can be changed dynamically at run time.
+Pluggable Feel and Look Provided by Swing makes it  considered by Java code. Control of Swing makes it  create an aesthetic feeling. Meaning that  the look and feel of a component can be separated from the logic of the component because that is what Swing does. It is possible to “plug in” an unused look and feel for any given component with failure to create any side effects in the code that uses that component. Pluggable feel-and-look has important benefits all through. It is practical to explain a feel and look that is uniform across all platforms. That is, suppose an application will be running  in a MacOS environment only, it is achievable to define the MacOS feel and look. It is also possible to model the convention feel and look. To sum up, the feel and look can be changed dynamically at run time.
 
 ### The MVC Connection
-Although the MVC design and ideas that underpin the **Swing Framework** are ideal, the high level of separation between the view and the controller is problematic for Swing components. Swing, on the other hand, employs a modified form of MVC that combines view and controller binding into a single logical object known as the UI delegate. The Separable Model architecture or the Model-Delegate architecture are the two approaches used by Swing. Although the component architecture of Swing's Framework is based on MVC, it does not employ a traditional implementation. Model-Delegate architecture shapes and realizes Swing's pluggable look and feel.
+ The **Swing Framework** is ideal since it is underpinned by the ideas and its design refering to the link created by the MVC, problems arise from Swing components due to a high level of differences caused by the separation of the controller and view. Swing deploys a modified version of MVC, on the other hand, that combines view and controller binding into an exclusive logical object referred to as the UI delegate. The Separable Model blueprint or the Model-Delegate blueprint are the two techniques used by Swing. Although the component blueprint of Swing's Framework is based on MVC, the traditional implementation is not deployed. The blueprint of the Model-Delegate resizes and realizes Swing's pluggable feel and look.
 
 ### Event Handling
-**Swing Framework** components respond to user input as well as events generated by the interactions to be handled. When a timer goes off, for example, an event is triggered. In any case, event handling is an important part of any Swing-based application. In most cases, Swing uses the same events as AWT, and the deployment of these events is packaged in *java.awt.event*. The *java.swing.event* stores only Swing-specific events. The event generated by a Swing Framework push button is managed by the program below, illustrated by code.
+Since we are already learnt a little about swing frameworks we can proceed to how events are handled in the preceding section.
+**Swing Framework** generates the interactions to be handled by the components responding to user input as well as events. When a set timer goes off, that is, triggers an event. The most important part of all Swing-based applications is event handling. In most instances, Events in AWT are also used in swings, and the execution of these events are all contained in *java.awt.event*. The *java.swing.event* allows for packaging only Swing-specific events. Illustrated by code below is an event-generated swing button **PUSH**.
 ```java
-// Event handler in a Swing program.
+// Illustration on handling events in Swing program.
 package eventdemo;
-import java.awt.*;
+//  Is used to provide  classes and interfaces for  events triggered by components of the AWT.
 import java.awt.event.*;
+// Allows for use of input methods  at runtime
 import javax.swing.*;
+// Creation of class called  EventDemo
 class EventDemo {
- JLabel jlab;
+ JLabel lbJ;
   // We will be forming a JFrame repository.
  EventDemo() {
-JFrame jfrm = new JFrame("EVENT HANDLER ILLUSTRATOR");
- // We will be specifying the  FlowLayout for the layout manager.
- jfrm.setLayout(new FlowLayout());
+JFrame frJ = new JFrame("EVENT HANDLER ILLUSTRATOR");
+ // We will be performing layout specification
+ frJ.setLayout(new FlowLayout());
  // At this point we have to assign our frame a primary size.
- jfrm.setSize(400, 400);
+ frJ.setSize(400, 400);
  // When the user closes the application, the program should stop.
- jfrm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+ frJ.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
  // You can create as many buttons but here we are going create only two.
  JButton jbtnEvent1 = new JButton("Event1");
  JButton jbtnEvent2 = new JButton("Event2");
@@ -53,32 +57,35 @@ JFrame jfrm = new JFrame("EVENT HANDLER ILLUSTRATOR");
  jbtnEvent1.addActionListener(new ActionListener() {
  // Declaring ActionPerformed to be visible to all classes.
  public void actionPerformed(ActionEvent ae) {
- jlab.setText("EVENT1 HAS BEEN HANDLED." + "\n");
+ lbJ.setText("EVENT1 HAS BEEN HANDLED." + "\n");
  }
  });
- // Add action listener for Event2.
- jbtnEvent2.addActionListener(new ActionListener() {
- public void actionPerformed(ActionEvent ae) {
- jlab.setText("EVENT2 HAS BEEN HANDLED." + "\n");
+ // include listener for Event2.
+ jbtnEvent2.addActionListener(new ActionListener(){
+  // we display the line below.
+ lbJ.setText("EVENT2 HAS BEEN HANDLED." + "\n");
  }
- });
- // Put the buttons to the content pane.
- jfrm.add(jbtnEvent1);
- jfrm.add(jbtnEvent2);
+ );
+ //  The buttons are to be included in the content pane.
+ frJ.add(jbtnEvent1);
+ frJ.add(jbtnEvent2);
  // text-based label will have to be created.
- jlab = new JLabel("Press any button.");
+ lbJ = new JLabel("Press any button.");
  // Putting labels.
- jfrm.add(jlab);
+ frJ.add(lbJ);
  //Putting the frame on display.
- jfrm.setVisible(true);
+ frJ.setVisible(true);
  }
+ // Declaration of the main method
  public static void main(String args[]) {
 //This metod uses Swing for its user interface.
- SwingUtilities.invokeLater(new Runnable() {
+ SwingUtilities.invokeLater(new Runnable() //declaration of utility methods.
+  {
  public void run() {
+     //Recall method (function) EventDemo
  new EventDemo();
  }
- });
+ });//Closing the method called using braces
  }
 }
 ```
@@ -92,17 +99,21 @@ When you click the second button  you get the output display as shown below:
 ![Event2](/engineering-education/advancement-of-swing-frameworks-in-Java/event2.png)
 
 ### Performing Swing Painting 
-**Swing Framework** is very powerful, you are not restricted to using it since Swing Framework also enables users to write directly into the display area of the frame, panel, or other components of swing, such as JLabel. However,  numerous uses of Swing will not require direct drawing  to the component's surface , it is availability depends on those applications that require this functionality. To  directly write in the given output to the surface of a component, you will have to use the drawing procedures defined in the AWT library, such as drawRect( ) or the drawLine( ) method.
+In order for painting to be achieved, we need to understand the following.
+**Swing Framework**  is powerful as it happens that it does not limit to using Swing Framework since it has functions allowing users to  input directly into the output area of the frame, panel, or other components of swing, such as JLabel. 
+Moreover,  in a number of cases usage of Swing will not need the direct drawing to the display of the component, this functionality is dependant on those applications. To input directly in the given output of the display included in a component, you will be required to use the drawing approaches and procedures included in the AWT library, like drawRect( ) method or  even  drawLine( ) method.
 
 ```java
-// Painting to the panel lines.
+// We will painting  the panel lines.
 package paintdemo;
 import java.awt.*;
+// Allows for use of input methods on swing at runtime
 import javax.swing.*;
+// allows for importing of java class or packages
 import java.util.*;
 //  In the panel lines are plotted.
 class PaintPanel extends JPanel {
- Insets ins; // Insets acts as the panel holder
+ Insets set; // The panel holder is Insets
  Random rand; // Generation of random numbers
  // Construction of the panel.
  PaintPanel() {
@@ -116,43 +127,48 @@ class PaintPanel extends JPanel {
  // PaintComponent() function needs to be overriden.
  @Override
  protected void paintComponent(Graphics j) {
- // You will have to call the superclass method first.
+ // Superclass method calling  first has to be done.
  super.paintComponent(j);
+ // Declaring of variables
  int a, b, a2, b2;
- // Get the Dimensions of the component.
- int height = getHeight();
- int width = getWidth();
+ // We are getting the dimensions.
+ int hgt = getHeight();
+ // Declaring Method for getting height and width. 
+ int wdt = getWidth();
  // Getting the insets.
  ins = getInsets();
- // Draw nine lines whose endpoints are generated randomly .
+ // Randomly produced endpoints of nine lines are drawn.
  for(int i=0; i < 9; i++) {
  // At this point we will be acquiring random coordinates.
- a = rand.nextInt(width-ins.left);
- b = rand.nextInt(height-ins.bottom);
- a2 = rand.nextInt(width-ins.left);
- b2 = rand.nextInt(height-ins.bottom);
+ a = rand.nextInt(wdt-ins.left);
+ b = rand.nextInt(hgt-ins.bottom);
+ a2 = rand.nextInt(wdt-ins.left);
+ b2 = rand.nextInt(hgt-ins.bottom);
  // Drawing of the lines.
  j.drawLine(a, b, a2, b2);
  }
  }
 }
-// illustrating how painting is right away carried out onto the panel.
+// Description of painting onto the plane.
  public class PaintDemo {
- JLabel jlab;
+ // Creation of an object for JLabel.    
+ JLabel lbJ;
+ // Creation of class PaintPanel.
  PaintPanel jj;
  PaintDemo() {
- // Formation of a new JFrame repository.
- JFrame jfrm = new JFrame("Paint Demo");
- // The frame require's an initial size.
- jfrm.setSize(400, 400);
- // End the program if the user happens to close the swing application.
- jfrm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+ // JFrame repository is created.
+ JFrame frJ = new JFrame("Paint Demo");
+ // Defining the area to be displayed at execution.
+ frJ.setSize(400, 400);
+ // End the program on closing of the swing application.
+ frJ.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
  // Creation of the panel that will need painting.
  jj = new PaintPanel();
- jfrm.add(jj);
+ frJ.add(jj);
  // Showing the display .
- jfrm.setVisible(true);
+ frJ.setVisible(true);
  }
+ // Declaring the main method.
  public static void main(String args[]) {
  // Thread event execution are created in relation to the frame.
  SwingUtilities.invokeLater(() -> {
@@ -163,16 +179,16 @@ class PaintPanel extends JPanel {
 ```
 ![Painting](/engineering-education/advancement-of-swing-frameworks-in-Java/painting.png)
 
-In order to manage painting, PaintPanel overrides the paintComponent( ) function. This enables PaintPanel to directly  write to the surface of the component while painting occurs. The size of the panel is not defined as the program uses the default border format and the panel is added towards the middle. This output in the panel is sized to fill the middle.
+  The paintComponent( ) method is overridden by the PaintPanel, in order to manage painting. Enabling the PaintPanel to   write directly onto the output display of the component while painting is being carried out. The program has a default border format that it uses making the area not to be declared and adding the panel towards the middle. The display in the panel is sized to fill the middle.
 
 ### Conclusion
 
-In this article, you have gained insights for using swing frameworks to:
+In this article, we will be  using Swing Frameworks to:
 ##### 1. Handle events.
 #####  2. Painting in the panel.
 ##### 3. Understanding how swing Supports a Pluggable Look and Feel.
 ##### 4. Understanding the concept of MVC.
- Moreover, you are also equipped with the necessary information to handle swing frameworks entirely.
-You are now a swing expert, untroubled coding!
+From the insights gained. Moreover, you are also equipped with the necessary information to handle swing frameworks entirely.
+You are now a swing geek. Happy designing of Swing Framesworks!
 
 
