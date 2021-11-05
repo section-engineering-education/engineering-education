@@ -113,7 +113,7 @@ We initialize the column name as follows.
 names = ["Num_of_Preg","Glucose_Conc","BP","Skin_Thickness","TwoHour_Insulin","BMI","DM_Pedigree","Age","Class"]
 ```
 
-The names shown above are the information collected from patients. The information is used to determine if a is person diabetic or non-diabetic.
+The names shown above are the information collected from patients. The information is used to determine if a person is diabetic or non-diabetic.
 
 Let's add these names to our dataset.
 
