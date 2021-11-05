@@ -84,7 +84,7 @@ assert employeeWith90MarksAndAbove.contains(george) && employeeWith90MarksAndAbo
 assert employeeWith90MarksAndAbove.size() == 2;
 ```
 
-The assert keyword guarantees the accuracy of any assumptions made in the program; when we execute an assertion, it is presumed to be true. If the assertion is untrue, the JVM will raise an assertion error.
+The assert keyword guarantees the accuracy of any assumptions made in the program; when we execute an assertion, it is presumed to be true. If the assertion is untrue, the JVM will raise an assertion error. Be sure to set the `-ea` option (enable assertions) for your VM to be able to use assertions.
 
 ### Filtering data based on a variety of criteria
 In addition, we may utilize several criteria with the filter to our advantage. We might, for instance, use a combination of points and names to narrow the results:
