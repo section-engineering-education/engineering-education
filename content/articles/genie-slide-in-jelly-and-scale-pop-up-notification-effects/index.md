@@ -4,28 +4,28 @@ status: publish
 published: true
 url: /genie-slide-in-jelly-and-scale-pop-up-notification-effects/
 title: Genie Slide-in Jelly and Scale Pop-up Notificaiton Effects
-description: In this article we will go over how to implement genie, slide-in, jelly and scale pop-up notification effects.
+description: In this article we will go over how to implement genie, slide-in, jelly and scale pop-up notification effects for a website. We will build effects that are dependent on the type of information being displayed.
 author: prosper-grateful-juma
-date: 2021-10-21T00:00:00-15:13
+date: 2021-11-05T00:00:00-11:13
 topics: []
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/genie-slide-in-jelly-and-scale-pop-up-notification-effects/hero.png
-    alt: Genie Slide-in Scal Pop-up Notifications
+    alt: Genie Slide-in Scale Pop-up Notifications
 ---
-
-Websites need notifications to display urgent or additional information. Pop-ups, used to pass notifications, are
+Websites need notifications to display urgent or additional information. Pop-ups are used to pass notifications, they are
 efficient if used effectively and at the right time. Notification effects, depending on the main website theme, bring a
 website's unique taste and signature look.
 <!--more-->
-In this article, you will learn how to apply some of these notification effects including the Genie, Slide-in, Jelly,
-and scale Pop-up notification effects. You will learn how to build eye-catching catching effects and appreciate that
-these effects are dependent on the type of information being displayed.
+In this article, you will learn how to apply some of these notification effects, including the Genie, Slide-in, Jelly,
+and scale Pop-up notification effects. 
+
+You will learn how to build eye-catching effects and appreciate that these effects are dependent on the type of information being displayed.
 
 ### Table of contents
 - [Key takeaways](#key-takeaways)
-- [Pre-requisites](#pre-requisites)
+- [Prerequisites](#prerequisites)
 - [Project folder structure](#project-folder-structure)
 - [Overall webpage structure](#overall-webpage-structure)
 - [Add styling the webpage](#add-styling-the-webpage)
@@ -40,7 +40,6 @@ these effects are dependent on the type of information being displayed.
 
 ### Key takeaways
 By the end of this article, you will learn how to apply the following notification effects to a webpage:
-
 - Slide-in effect
 - Genie effect
 - Scale growth effect
@@ -48,19 +47,19 @@ By the end of this article, you will learn how to apply the following notificati
 
 You will also get to know some notification effects which we can use on your webpage and when to use them.
 
-### Pre-requisites
-For you to flow easily with this article, you need to know/have the following:
-
-- Basics of HTML. Know-how on creating web pages and linking other files to them.
+### Prerequisites
+For you to follow along with this article, you'll need to know/have the following:
+- Understanding of the basics of HTML. Know-how on creating web pages and linking other files to them.
 - Good use of CSS.
 - Interactions with JavaScript.
 - Web development IDE. It should support webpage preview capabilities. These will be helpful during the development process. I recommend Visual Studio Code IDE. You can download it from [here](https://code.visualstudio.com/).
 
 ### Project folder structure
-Create a root folder named `Notifications`. All the project code will lie here. The root folder structure will be as
-shown below:
+Create a root folder named `Notifications`. All the project code will lie here. 
 
-```shell
+The root folder structure will be as shown below:
+
+```bash
 .
 ├── css (folder)
 │   ├── demonstration.css (file)
@@ -142,13 +141,14 @@ In the `growl-effects-scale.html`, add the following snippet:
 </html>
 ```
 
-![Webpage Framework](engineering-education/genie-slide-in-jelly-and-scale-pop-up-notification-effects/Webpage-framework.png "Webpage Framework")
+![Webpage Framework](engineering-education/genie-slide-in-jelly-and-scale-pop-up-notification-effects/webpage-framework.png)
 
-Copy-paste the above code in the `growl-effects-genie.html` file. Repeat the step in `growl-effects-jelly.html`
+Copy-paste the code above in the `growl-effects-genie.html` file. Repeat the step in `growl-effects-jelly.html`
 and `growl-effects-slide-in.html` files.
 
-Modify the class of the current page in the above files so that it will show that it is on that page. This is shown
-below:
+Modify the class of the current page in the above files so that it will show that it is on that page. 
+
+This is shown below:
 
 In the `growl-effects-genie.html`:
 
@@ -164,7 +164,7 @@ In the `growl-effects-genie.html`:
 </div>
 ```
 
-Repeat this for the other two files to get the Code below for:
+Repeat this for the other two files to get the code below for:
 
 - `growl-effects-jelly.html`:
 
@@ -419,7 +419,9 @@ Format the content in the main content and the columns:
 }
 ```
 
-Format the progress bar. The bar acts as a trigger example for an event that leads to a notification pop-up. The styling is as shown below:
+Format the progress bar. The bar acts as a trigger example for an event that leads to a notification pop-up. 
+
+The styling is as shown below:
 
 ```css
 /* Notification progress bar */
@@ -506,12 +508,16 @@ Create screen responsiveness for different display sizes:
 }
 ```
 
-![Style the pages](engineering-education/genie-slide-in-jelly-and-scale-pop-up-notification-effects/style-the-pages.png "Style the pages")
+![Style the pages](engineering-education/genie-slide-in-jelly-and-scale-pop-up-notification-effects/style-the-pages.png)
 
 ### Add a notification to the window
-In the Javascript folder, named `js`, open the 'notificationFunction.js' file. In the file, you will do the following:
+In the JavaScript folder, named `js`, open the 'notificationFunction.js' file. 
 
-Create a function that will take in the window as the argument. The function will later invoke it. The function will hold all the other functions in it. This code is shown below:
+In the file, you will do the following:
+
+Create a function that will take in the window as the argument. The function will later invoke it. The function will hold all the other functions in it. 
+
+This code is shown below:
 
 ```js
 (function (window, document) {
@@ -565,8 +571,9 @@ function NotificationFunction(options) {
 }
 ```
 
-Create a `notificationFunction options` function that allows one to easily set the notification type and styles. The  function allows one to set the following:
+Create a `notificationFunction options` function that allows one to easily set the notification type and styles. 
 
+The function allows one to set the following:
 - wrapper of the notification
 - message
 - layout
@@ -615,14 +622,12 @@ NotificationFunction.prototype.options = {
 Add a new function below the above function. This function is for initializing and caching variables created.
 
 The function will do the following:
-
-- create a new `div` element in the HTML file
+- create a new `div` element in the HTML file.
 - add classes to the created element. This addition helps the notification inherit the properties and styles in the stylesheets.
-- Add the message specified in the options set above inside the element
-- Add a closing tag to the element created
-- append the notification to the body or the element specified in `options.notificationWrapper`
-- check if the notification is still active or on. If so, dismiss the notification once the time in the `options.totalTimeToLeave`
-  runs out.
+- add the message specified in the options set above inside the element.
+- add a closing tag to the element created.
+- append the notification to the body or the element specified in `options.notificationWrapper`.
+- check if the notification is still active or on. If so, dismiss the notification once the time in the `options.totalTimeToLeave` runs out.
 
 ```js
  /**
@@ -702,7 +707,7 @@ The timeout will be cleared. The `ns-show` class name will also be removed. The 
 The time to execute the callback function procedures is set to 25 ms.
 
 The function removes the notification element once the notification ends. If it doesn't find the notification in
-the `target` inside the DOM element, then returns false.
+the `target` inside the DOM element, then it returns false.
 
 ```js
 /**
@@ -866,7 +871,9 @@ if (typeof define === 'function') {
 Inside the `growl-effects-scale.html` file, just below the `<script src="js/notificationFunction.js"></script>` line,
 add a script that does the following:
 
-Create a function that invokes itself. It will hold the other functions:
+Create a function that invokes itself. 
+
+It will hold the other functions:
 
 ```html
 
@@ -877,8 +884,9 @@ Create a function that invokes itself. It will hold the other functions:
 </script>
 ```
 
-Listens for a button click from the progress bar button. It enables the button for clicks. Look at the button below
-  for this:
+Listens for a button click from the progress bar button. It enables the button for clicks. 
+
+Look at the button below for this:
 
 ```js
 let notificationButton = document.getElementById('notification-trigger');
@@ -889,10 +897,9 @@ notificationButton.disabled = false;
 
 Add a function that disables the button which is clicked.
 
-It then uses the `notificationFunction` function created before to quickly set the options of the notification. It makes sure that the button is not disabled since disabling the button prevents double-clicking untill when the notification disappears.
+It then uses the `notificationFunction` function created before to quickly set the options of the notification. It makes sure that the button is not disabled since disabling the button prevents double-clicking until the notification disappears.
 
 As for the `growl` layout, it supports the following notification effects:
-
 - scale (will be used in the `growl-effects-scale.html` file)
 - jelly
 - slide in
@@ -935,20 +942,22 @@ notificationButton.addEventListener('click', function () {
 ### Use a minified modernizr file for animations
 Head over to this [link](https://github.com/prograte/Genie-Slide-in-Jelly-and-scale-Pop-up-Notification-effects/blob/main/js/modernizr.custom.js) to find the `modernizr.custom.js` file. 
 
-Copy its contents into the `modernizr.custom.js` file in the `js` folder. Do this by copy-pasting the code directly or viewing it as a _RAW_ file before copy-pasting it.
+Copy its contents into the `modernizr.custom.js` file in the `js` folder. Do this by copy-pasting the code directly or viewing it as a *RAW* file before copy-pasting it.
 
- '**modernizr.custom.js**' has been generated and downloaded from this [Modernizr](http://modernizr.com/download/#-cssanimations-shiv-cssclasses-prefixed-testprop-testallprops-domprefixes-load) site.
+'**modernizr.custom.js**' has been generated and downloaded from this [Modernizr](http://modernizr.com/download/#-cssanimations-shiv-cssclasses-prefixed-testprop-testallprops-domprefixes-load) site.
 
 [Modernizr.com](Modernizr.com) generates for one a minified JS file that detects the browser being used and features it supports. This reduces the blacklisting of browsers in the HTML file and allows developers to customize experiences based on the browser's capabilities.
 
 The downloaded file will enable the webpage to display the notification on the webpage.
 
-![Add modernizr minified js file](engineering-education/genie-slide-in-jelly-and-scale-pop-up-notification-effects/add-modernizr.custom.js-file.png "Add modernizr minified js file")
+![Add modernizr minified js file](engineering-education/genie-slide-in-jelly-and-scale-pop-up-notification-effects/add-modernizr.custom.js-file.png)
 
 One notices that it hardly looks like a pop-up notification. The reason for this is that it has not been formatted yet.
 
 ### Format the notification
-Style the notification to look like a pop-up notification. In the `default_notification.css` file do the following:
+Style the notification to look like a pop-up notification. 
+
+In the `default_notification.css` file do the following:
 
 ```css
 /* Common, default styles for the notification box */
@@ -976,7 +985,9 @@ Style the notification box when the notification is shown:
 }
 ```
 
-Format the links and paragraphs in the notification box. This styling is shown below:
+Format the links and paragraphs in the notification box. 
+
+This styling is shown below:
 
 ```css
 /* Notification link styling */
@@ -1007,7 +1018,9 @@ Add auto pointer-events when the notification is visible:
 }
 ```
 
-Style the notification when the notification is closed both before and after. Check this out below:
+Style the notification when the notification is closed both before and after. 
+
+Check this out below:
 
 ```css
 /* `on close` notification styling */
@@ -1056,7 +1069,7 @@ Style the notification when the notification is closed both before and after. Ch
 
 The results for this styling is as shown in the image below:
 
-![add default notification box styling](engineering-education/genie-slide-in-jelly-and-scale-pop-up-notification-effects/add-default-notification-box-styling.png "add default notification box styling")
+![add default notification box styling](engineering-education/genie-slide-in-jelly-and-scale-pop-up-notification-effects/add-default-notification-box-styling.png)
 
 Notice that the notification now looks more like a pop-up notification. The only issue is that it doesn't close
 automatically, neither can it be closed. Solve these problems by adding some CSS styling in
@@ -1068,51 +1081,60 @@ In the `growl-notification-style.css` file, add growl effects. Find the code and
 
 The code: 
 
-Added growl styling that will be shared with all the types of growl effects
+Add growl styling that will be shared with all the types of growl effects.
 
-Added individual effects for each of the growl effect sets. This starts with the scale effect. The _scale_ effect copies its name. It expands from a small size to a larger size. It produces a notification with the animation shown in the GIF below:
+Add individual effects for each of the growl effect sets. This starts with the scale effect. The *scale* effect copies its name. It expands from a small size to a larger size. 
 
-![Scale effect gif](engineering-education/genie-slide-in-jelly-and-scale-pop-up-notification-effects/scale-effect-gif.gif "Scale effect gif")
+It produces a notification with the animation shown in the GIF below:
 
-Added the _Jelly_ animation effect. Some part of it is generated from [Bouncejs.com](http://bouncejs.com/).
+![Scale effect gif](engineering-education/genie-slide-in-jelly-and-scale-pop-up-notification-effects/scale-effect-gif.gif)
 
-  > [Bouncejs.com](http://bouncejs.com/) is a site used to generate awesome CSS3 animations for a website. Click on the site to check out some presets available or create animations that are tailored for the site.
+Added the *Jelly* animation effect. Some part of it is generated from [Bouncejs.com](http://bouncejs.com/).
+
+> [Bouncejs.com](http://bouncejs.com/) is a site used to generate awesome CSS3 animations for a website. Click on the site to check out some presets available or create animations that are tailored for the site.
 
 Head over to the `growl-effects-jelly.html` either by opening it in a browser or clicking the `Jelly` button on the
-webpage. Click on `SHOW NOTIFICATION` to see the animation. The animation looks like that in the GIF below:
+webpage. Click on `SHOW NOTIFICATION` to see the animation. 
 
-![Jelly effect gif](engineering-education/genie-slide-in-jelly-and-scale-pop-up-notification-effects/jelly-effect-gif.gif "Jelly effect gif")
+The animation looks like that in the GIF below:
 
-Added the slide-in animation to the project. Open the `growl-effects-slide-in.html` by clicking on the `Slide in` button. This file has the notification style set to slide hence it will implement the `slide in` effect. The effect is displayed in the GIF shown below:
+![Jelly effect gif](engineering-education/genie-slide-in-jelly-and-scale-pop-up-notification-effects/jelly-effect-gif.gif)
 
-![Slide-in effect gif](engineering-education/genie-slide-in-jelly-and-scale-pop-up-notification-effects/slide-in-effect-gif.gif "Slide-in effect gif")
+Added the slide-in animation to the project. Open the `growl-effects-slide-in.html` by clicking on the `Slide in` button. This file has the notification style set to slide hence it will implement the `slide in` effect. 
 
-Finally, in the file, add the Fly Up effect. This effect can be seen on the `growl-effects-genie.html` file accessed by clicking on the  `Genie` button. The code for this is shown below:
+The effect is displayed in the GIF shown below:
 
-![genie effect gif](engineering-education/genie-slide-in-jelly-and-scale-pop-up-notification-effects/genie-effect-gif.gif "genie effect gif")
+![Slide-in effect gif](engineering-education/genie-slide-in-jelly-and-scale-pop-up-notification-effects/slide-in-effect-gif.gif)
+
+Finally, in the file, add the Fly Up effect. This effect can be seen on the `growl-effects-genie.html` file accessed by clicking on the  `Genie` button. 
+
+The code for this is shown below:
+
+![genie effect gif](engineering-education/genie-slide-in-jelly-and-scale-pop-up-notification-effects/genie-effect-gif.gif)
 
 ### Normalize the webpages
 Copy and paste the content of the `normalization.css` file from [here](https://github.com/prograte/Genie-Slide-in-Jelly-and-scale-Pop-up-Notification-effects/blob/main/css/normalization.css)
 
-Do this by copy-pasting the code directly or viewing it as a _RAW_ file before copy-pasting it.
+Do this by copy-pasting the code directly or viewing it as a *RAW* file before copy-pasting it.
 
 The code in the file styles the webpage elements to look well. It is additional formatting to make the webpage look appealing to other browsers.
 
 In case of any issues, find the code for the article in [this repository](https://github.com/prograte/Genie-Slide-in-Jelly-and-scale-Pop-up-Notification-effects). Modify it to create desired outputs for projects.
 
-![changing color template](engineering-education/genie-slide-in-jelly-and-scale-pop-up-notification-effects/changing-color-template.png "changing color template")
+![changing color template](engineering-education/genie-slide-in-jelly-and-scale-pop-up-notification-effects/changing-color-template.png)
 
 > Use [Coolors.co](https://coolors.co/) to generate color templates for more visually appealing sites.
 
 ### Conclusion
-In the article, the reader learned the following:
-
-- Creating a web structure for a notification
-- Formatting the webpage
-- Adding a notification trigger event
-- Adding a notification to the webpage
-- Changing the type of notifications
+In the article, we learned the following:
+- Creating a web structure for a notification.
+- Formatting the webpage.
+- Adding a notification trigger event.
+- Adding a notification to the webpage.
+- Changing the type of notifications.
 - Changing the colors of the site according to the templates created.
+
+Happy coding!
 
 ---
 Peer Review Contributions by: [Adrian Murage](/engineering-education/authors/adrian-murage/)
