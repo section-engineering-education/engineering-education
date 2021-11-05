@@ -144,10 +144,10 @@ List<Employee> employeesWithValidProfilePicture = employees
 ```
 
 **Explanation**
-Filtering the employee with this method, hasValidProfile, will bring us an error:
+Filtering the employee with this method, hasValidProfile, will bring us a compilation error:
 
 ```
-Incompatible throw type java.io.IOException inside the function phrase
+java: incompatible thrown types java.io.IOException in functional expression
 ```
 
 As shown in the following illustration, one way of handling it is to encapsulate it in the try-catch block.
@@ -188,10 +188,10 @@ Exception handling in predicates is simplified with the `ThrowingPredicate` clas
 This action is illustrated below in the following code:
 
 ```Java
-List employeesWithValidProfilePicture = employee
-  .stream()
-  .filter(ThrowingPredicate.unchecked(Employee::hasValidProfilePicture))
-  .collect(Collectors.toList());
+List<Employee> employeesWithValidProfilePicture = employees
+        .stream()
+        .filter(ThrowingPredicate.unchecked(Employee::hasValidProfilePicture))
+        .collect(Collectors.toList());
 ```
 
 ### Conclusion
