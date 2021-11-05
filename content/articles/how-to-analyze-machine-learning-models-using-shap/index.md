@@ -549,9 +549,9 @@ To get the Google Colab link for this tutorial, click [here](https://colab.resea
 
 ### Conclusion
 
-In this tutorial, we have how to analyze machine learning models using SHAP. We started by learning the importance of analyzing machine learning prediction results. This helps humans to have trust and confidence when using models.
+In this tutorial, we have learned how to analyze machine learning models using SHAP. We started by learning the importance of analyzing machine learning prediction results. This helps humans to have trust and confidence when using models.
 
-We then move to dataset pre-processing. This involved cleaning our data to ensure that there is no missing values. It also involves scaling the dataset to ensure it fits. After this, we were able to build a machine learning model. The model was able to predict if a patient is diabetic or not.
+We then moved to dataset pre-processing. This involved cleaning our data to ensure that there is no missing values. It also involves scaling the dataset to ensure it fits. After this, we were able to build a machine learning model. The model was able to predict if a patient is diabetic or not.
 
 Finally, we used SHAP to explain the prediction results of our model. After the analysis, we concluded that our model made the right prediction. This is because the output value was higher than the base value.
 
