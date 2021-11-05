@@ -429,7 +429,7 @@ In the code above we have passed the `X_train`. This enables the `KernelExplaine
 
 From here, we now create Shapley values. Shapley values will assign weights to the features available in the data set.
 
-#### Creating shapley values
+#### Creating Shapley values
 
 This code will create the Shapley values of the `Xfeatures` available in the input sample. We are using our input sample from the previous section. We will explain the prediction made at this instance.
 
