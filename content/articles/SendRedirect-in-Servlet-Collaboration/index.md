@@ -23,10 +23,10 @@ At the end of this article, a learner should know the following:
 - Your machine should have Tomcat Server installed. It's available for download on their official [website](https://tomcat.apache.org/). We'll use TomCat version 10 in this case.
 
 ### Table of content
-[SendRedirect method and its significance](#sendredirect-method-and-its-significance)
-[Difference between SendRedirect method and RequestDispatcher forward method](difference-between-sendredirect-method-and-requestdispatcher-forward-method)
-[An example of how to use the SendRedirect method](an-example-of-how-to-use-the-sendredirect-method)
-[Conclusion](conclusion)
+- [SendRedirect method and its significance](#sendredirect-method-and-its-significance)
+- [Difference between SendRedirect method and RequestDispatcher forward method](#difference-between-sendredirect-method-and-requestdispatcher-forward-method)
+- [An example of how to use the SendRedirect method](#an-example-of-how-to-use-the-sendredirect-method)
+- [Conclusion](#conclusion)
 
 ### SendRedirect method and its significance
 One of the `HttpServletResponse` interface's methods is `SendRedirect()`. It's another way to use Servlet Collaboration to route client requests in the form of responses from one page to the next.
@@ -143,3 +143,5 @@ public class SevletPage extends HttpServlet
 In conclusion, we learned about the `SendRedirect()` method and how to use it. We also understand the difference between the Java Servlet's `SendRedirect()` and `forward()` methods. In this case, a learner should know how to implement the `SendRedirect()` method to create interactive web pages.
 
 ### References
+- [SendRedirect in servlet Javatpoint](https://www.javatpoint.com/sendRedirect()-method)
+- [SendRedirect in servlet W3C](https://www.w3adda.com/servlet-tutorial/servlet-sendredirect)
