@@ -64,7 +64,7 @@ However, the case is different when using a NoSQL database such as the Firebase 
 
 Data is saved in JSON form with two main nodes, the authors and stories. Then each story will have an author id to identify the other of the story.
 
-On the other side, there is a difference between the Firebase real-time database and the Firebase cloud Firestore and how they store data. Unlike a real-time database that stores data in the JSON object, cloud Firestore stores data in horizontally scaling Documents. Data is stored in a tree-like hierarchical structure. A cloud Firestore database is made up of Documents and collections.
+On the other side, there is a difference between the Firebase real-time database and the Firebase cloud Firestore and how they store data. Unlike a real-time database that stores data in the JSON object, cloud Firestore stores data in horizontally scaling Documents. Data is stored in a tree-like hierarchical structure. A cloud Firestore database is made up of Documents and Collections.
 
 To learn more about the Firebase cloud Firestore, we will use it as a use-case in this guide and implement it with Next.js and TypeScript.
 
@@ -97,20 +97,20 @@ In the next step, we will set up a Firestore.
 ### Setting up Firestore
 To set up Firestore, follow the following steps:
 
-- On the Created Firebase App navigate to the left menu, under build, and click *Firestore Database* then *Create database*.
+- On the Created Firebase App, navigate to the left menu, under build, and click *Firestore Database* then *Create database*.
 - Since we are not building a production application, select the *start in test mode* and move to the *Next* step.
 - Choose the cloud Firestore location from the list of options available and then click *Enable* to set the selected location. Give it time to set up and *Provision Cloud Firestore*.
 
-In the resulting page, we will start by creating a collection to be populated from our Next.js application. To do this:
+In the resulting page, we will start by creating a Collection to be populated from our Next.js application. To do this:
 
-- Click *Start collection* and add the collection id as *todos* and move to the *Next* step.
+- Click *Start Collection* and add the Collection id as *todos* and move to the *Next* step.
 - Auto-populate the Document id field by clicking *Auto-ID* Add a *title* field as a string, and give it a value of *Cooking*.
 - Click *Add field*, add a *description* field as a string, and give it a value of *Cook a delicious dinner*.
 - Add a new field *done*, which is a Boolean, and give it a value of *false*. Your form should be similar to:
 
 ![initial-collection-setup-form](/engineering-education/a-beginner-guide-to-full-stack-nextjs-with-typescript-and-firebase-database/initial-collection-setup-form.png)
 
-Save the above-created Document. The Document should now be reflected in the collection as shown below:
+Save the above-created Document. The Document should now be reflected in the Collection as shown below:
 
 ![initial-collection](/engineering-education/a-beginner-guide-to-full-stack-nextjs-with-typescript-and-firebase-database/initial-collection.png)
 
@@ -162,9 +162,9 @@ To initialize it, we will follow the following steps:
 
 First, create an `env.local` file in your project root folder. This will host the environmental variables or, rather, the Firebase database credentials that Next.js needs to establish a communication between the two.
 
-Then, from your Firebase project dashboard, click on the gear icon on the left menu of your Firebase application, and head *project settings*.
+Then, from your Firebase project dashboard, click on the gear icon on the left menu of your Firebase application and head *project settings*.
 
-Finally, scroll down to *your apps* section and then to the *SDK setup and configuration*. In the code provided, we have a `firebaseConfig` object. Extract its contents to the `.env.local` file as below:
+Finally, scroll down to *your apps* section and then to the *SDK setup and configuration*. In the provided application settings, we will take `firebaseConfig` object. Extract its contents to the `.env.local` file as below:
 
 ```js
 NEXT_PUBLIC_FIREBASE_API_KEY = "your_api_key"
@@ -178,7 +178,7 @@ NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID = "your_measurement_id"
 
 Replace every environment with the credentials listed on the `firebaseConfig` object of your Firebase application.
 
-Now create a folder `firebase` in the project root folder. Inside the `firebase` folder, create a file `clientApp.ts`. In the `clientApp.ts` file:
+Now create a folder `firebase` inside the project root folder. Inside the `firebase` folder, create a file `clientApp.ts`. Below is how we will configure the Firebase instance. So follow these steps and add the necessary code to your `clientApp.ts` file.
 
 - Start by importing `initializeApp` from the Firebase package.
 
@@ -218,12 +218,12 @@ const firestore = getFirestore();
 export {firestore};
 ```
 
-Since we have environmental variables, we will have to restart the development server. Press `ctrl + c` to close it, and then `npm run dev` to start it.
+Since we have environmental variables, we will have to restart the development server if your server is up and running. Press `ctrl + c` to close it, and then `npm run dev` to start it.
 
 In the next step, we will query the Documents from the Firestore.
 
 #### Querying Documents from Firestore
-To query the Documents from Firestore, we will work on the `pages/index.tsx` file. So start by editing the default boilerplate code as such.
+To query the Documents from Firestore, we will work on the `pages/index.tsx` file. Navigate to this file and start by editing the default boilerplate code as such.
 
 ```ts
 import type { NextPage } from 'next'
@@ -256,9 +256,9 @@ return (
 export default Home
 ```
 
-The above is the skeleton of where we will start working on this todos app.
+The above is just a skeleton of where we will start working on this todos app.
 
-Edit `styles/Home.module.css` file. We have changed the `pages/index.tsx`, which means the existing linked CSS code won't work on the newly added code. The following CSS code will format the newly added code and update its appearance where necessary.
+We have changed the `pages/index.tsx`, which means the existing linked CSS code won't work on the newly added code. The following CSS code will format the newly added code and update its appearance where necessary. Edit `styles/Home.module.css` file as follows:
 
 ```css
 .container {
@@ -387,32 +387,22 @@ Edit `styles/Home.module.css` file. We have changed the `pages/index.tsx`, which
 }
 ```
 
-Feel free to edit the styles to match your look and feel, but the above configuration is okay to work with.
+Feel free to edit these styles to your preferred agreeance.
 
-In `pages/index.tsx`, start by importing the Firestore:
+In `pages/index.tsx`, import the Firestore from the `clientApp.ts` file and create a pointer to the todos Collection. Then use `useState` to host the state of our todos and loading as shown below:
 
 ```ts
 import { firestore } from '../firebase/clientApp';
-```
 
-Create a pointer to todos collection:
-
-```ts
 import {collection,QueryDocumentSnapshot,DocumentData,query,where,limit,getDocs} from "@firebase/firestore";
 const todosCollection = collection(firestore,'todos');
-```
 
-Use `useState` to host the state of our todos and loading:
-
-```ts
 import { useState } from 'react';
 const [todos,setTodos] = useState<QueryDocumentSnapshot<DocumentData>[]>([]);
 const [loading,setLoading] = useState<boolean>(true);
 ```
 
-A todo will have a type of `QueryDocumentSnapshot<DocumentData>`. We are also initializing loading to `true` so that to avoid accessing `todos` when they have not been fully loaded.
-
-Create a function to get todos:
+A todo will have a type of `QueryDocumentSnapshot<DocumentData>`. We are also initializing loading to `true` to avoid accessing `todos` when they are not fully loaded. So now create a function to get these todos and construct a `useEffect` hook and call the method `getTodos`:
 
 ```ts
 const getTodos = async () => {
@@ -429,11 +419,7 @@ const getTodos = async () => {
    // set it to state
    setTodos(result);
 };
-```
 
-Construct a `useEffect` hook and call the method `getTodos` from there:
-
-```ts
 useEffect( () => {
    // get the todos
    getTodos();
@@ -444,9 +430,9 @@ useEffect( () => {
 },[]);
 ```
 
-From above, we are getting the todos and resetting the todos after two seconds.
+From above, we are getting the todos and resetting the todos after every two seconds.
 
-In this view, we will show the fetched todos. After the title, add the following:
+We need show these todos in a browser. Let's create a Next.js view to show the fetched todos. Add the following code just below the `index.tsx` `title`, i.e., `<h1className={styles.title}> Todos app</h1>` Check this on [GitHub](https://github.com/Rose-stack/full-stack-nextjs-with-typescript-and-firebase-database/blob/main/pages/index.tsx) if you get stuck
 
 ```ts
 <div className={styles.grid}>
@@ -479,17 +465,19 @@ In this view, we will show the fetched todos. After the title, add the following
 </div> 
 ```
 
-From above, we are displaying a `loading` text, if it's loading, and checking whether we have todos or not. If we don't have, we are displaying a message. Else we are mapping the todos to show them in the UI.
-You should now be able to see your todos from the homepage. Your homepage should resemble:
+From above, we are displaying a `loading` text that checks whether we have todos or not. If we don't have, we are displaying a message; otherwise, existing todos will be mapped and shown through the set UI.
+
+In this case, since we added a todo when setting up the Firestore database, you should now be able to see your todos from the homepage. In this case, ensure your server is running, and if not, run `npm run dev` and open `http://localhost:3000` in your browser. Your homepage should resemble:
 
 ![querying-todos](/engineering-education/a-beginner-guide-to-full-stack-nextjs-with-typescript-and-firebase-database/querying-todos.png)
 
-Since we only added one todo from the previous process.
-In the next step, we will work on a form for creating a todo.
+Since we only added one todo, in the next step, we will work on a form for creating a todo to add more todos to our database.
 
 ### Adding a Document to Firestore
-To add a Document to Firestore we will need to create a form to gain the user input. To do this, we will follow the following steps:
-In the `pages` folder, create a file `add-todo.tsx`. In the `add-todo.tsx`, add the following basic form setup:
+To add a Document to Firestore, we need to create a form to input a new todo `title`, and `description`. To do this, we will follow the following steps:
+
+In the `pages` folder, create a file `add-todo.tsx` setup and the following basic form:
+
 ```ts
 import type { NextPage } from 'next'
 import Head from "next/head";
@@ -559,22 +547,21 @@ const AddTodo:NextPage = () => {
 export default AddTodo;
 ```
 
-We are setting a basic form with `title` and `description` fields from above. We also have a `handleSubmit` function that gets called when the form is submitted. For now, it just checks for null values.
-Handle the functionality of sending data to our collection. Start by importing the necessities:
+We are setting a basic form with `title` and `description` fields. We also have a `handleSubmit` function that gets called when the form is submitted. For now, it just checks for null values. Let's now add functionality to handle the sending data to our Collection. Start by importing the necessities:
 
 ```ts
 import { doc } from '@firebase/firestore'; // for creating a pointer to our Document
-import { setDoc } from 'firebase/firestore'; // for adding the Document to collection
+import { setDoc } from 'firebase/firestore'; // for adding the Document to Collection
 import { firestore } from '../firebase/clientApp'; // firestore instance
 ```
 
-Create a function to handle the functionality:
+Create a `addTodo()` function to add a new Document to the todos Collection:
 
 ```ts
 const addTodo = async () => {
    // get the current timestamp
    const timestamp: string = Date.now().toString();
-   // create a pointer to our document
+   // create a pointer to our Document
    const _todo = doc(firestore, `todos/${timestamp}`);
    // structure the todo data
    const todoData = {
@@ -583,7 +570,7 @@ const addTodo = async () => {
      done: false
    };
    try {
-     //add the document
+     //add the Document
      await setDoc(_todo, todoData);
      //show a success message
      setMessage("Todo added successfully");
@@ -597,7 +584,7 @@ const addTodo = async () => {
 };
 ```
 
-From the above code sample, we are obtaining a timestamp as the Document id. We are saving the data to the collection. If there is an error, we are catching it. Else we are setting the message and resetting the fields. From your browser, open `http://localhost:3000/add-todo`. Your page should be similar to:
+From the above code sample, we are obtaining a timestamp as the Document id. We are saving the data to the Collection. If there is an error, we are catching it. Otherwise, we are setting the message and resetting the fields. From your browser, open `http://localhost:3000/add-todo`. Your page should be similar to:
 
 ![add-todo-form](/engineering-education/a-beginner-guide-to-full-stack-nextjs-with-typescript-and-firebase-database/add-todo-form.png)
 
@@ -608,15 +595,11 @@ Fill in the form fields and hit `submit`. When the form is successfully submitte
 In the next step, we will work on updating a Document.
 
 ### Updating a Document in Firestore
-In our scenario, updating a Document will involve setting a todo as done. To do this, in `pages/index.tsx`, start by importing `updateDoc`:
+In our scenario, updating a Document will involve setting a todo as done. To do this, navigate `pages/index.tsx` and import `updateDoc`, then create a `updateTodo()` function to handle the `updateTodo()` functionality, as shown below:
 
 ```ts
 import {updateDoc} from "@firebase/firestore";
-```
 
-Create a function to handle the functionality:
-
-```ts
 const updateTodo = async (documentId: string) => {   
    // create a pointer to the Document id
    const _todo = doc(firestore,`todos/${documentId}`);
@@ -629,27 +612,24 @@ const updateTodo = async (documentId: string) => {
 }
 ```
 
-While mapping a todo, in todo card, add an `onClick` function to the `Mark as done` button and call the function as follows:
+While mapping a todo, add an `onClick` function to the `Mark as done` button and call the function as follows:
 
 ```ts
 <button type="button" onClick={() => updateTodo(todo.data().id)}>Mark as done</button>
 ```
 
-For any todo, click the `Mark as done` button. You will observe that the todo will disappear because it will be updated, and then todos that are not done will be fetched based on the query on `getTodos()`.
+If you get lost, check the above boilerplates code on [GitHub](https://github.com/Rose-stack/full-stack-nextjs-with-typescript-and-firebase-database/blob/main/pages/index.tsx).
+
+For any fetched todo, click the `Mark as done` button. That the todo will disappear because it will be updated as a done todo, and then todos that are not done will be fetched based on the query set on `getTodos()`.
+
 In the next step, we will work on deleting a todo.
 
 ### Deleting a Document in Firestore
-To be able to delete a Document, we will follow the following steps:
-
-In `pages/index.tsx`, start by importing the `deleteDoc` function as shown below.
+To delete a Document, navigate to `pages/index.tsx`, import the `deleteDoc` function, and create a function that will handle the delete (`deleteDoc`) functionality, as shown below.
 
 ```ts
 import {deleteDoc} from "@firebase/firestore";
-```
 
-Create a function that will then handle the delete (`deleteDoc`) functionality.
-
-```ts
 const deleteTodo = async (documentId:string) => {
    // create a pointer to the Document id
    const _todo = doc(firestore,`todos/${documentId}`);
@@ -660,21 +640,21 @@ const deleteTodo = async (documentId:string) => {
 }
 ```
 
-Connect a todo card delete button with the above function using the `onClick` event:
+Add a delete button with the above function using the `onClick` event:
 
 ```ts
 <button type="button" onClick={() => deleteTodo(todo.id)}>Delete</button>
 ```
 
-When you click the `delete` button for any todo, it will be deleted from the collection.
+When you click the `delete` button for any fetched todo, that todo will be deleted from the Collection.
 
-Up to this point, we have been able to handle all the CRUD operations revolving around our simple todos app. This is done with the help of the Firebase database that allows us to handle the necessary basic backend requests.
+Up to this point, we have been able to handle all the CRUD operations with our simple todos app. This is done with the help of the Firebase database that allows us to handle the necessary basic backend requests.
 
 ### Further readings
 Check out the materials listed below to learn more about the topics discussed.
 - [Next.js Firebase full course](https://fireship.io/courses/react-next-firebase/)
 - [How to Create Responsive Layouts with Material UI and Next.js](/engineering-education/creating-responsive-layouts-with-materialui-in-reactjs/)
-- [How to build a Next.js application with MongoDB and deploy on Vercel](/engineering-education/build-nextjs-with-mongodb-and-deploy-on-vercel/)
+- [How to build a Next.js application with MongoDB and deploy it on Vercel](/engineering-education/build-nextjs-with-mongodb-and-deploy-on-vercel/)
 - [Node.js versus Next.js - A React Approach](/engineering-education/node-versus-next-react-approach/)
 
 You can also access all the code snippets explained here from this [GitHub repository](https://github.com/Rose-stack/full-stack-nextjs-with-typescript-and-firebase-database).
