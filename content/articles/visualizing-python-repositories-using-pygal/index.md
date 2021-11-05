@@ -244,4 +244,4 @@ You can learn more about other concepts by [visiting this page.](https://www.plu
 Happy coding!
 
 ---
-Peer Review Contributions by: [Elly Omondi](/engineering-education/authors/elly-omondi)
+Peer Review Contributions by: [Elly Omondi](/engineering-education/authors/elly-omondi/)
