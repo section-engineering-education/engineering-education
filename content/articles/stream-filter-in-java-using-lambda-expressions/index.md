@@ -80,12 +80,11 @@ public boolean hasOverNinetyMarks()
 When we use these two approaches, we obtain the same result:
 
 ```Java
-// The assert keyword throws an exception if the given condition is false. These should not throw exceptions.
 assert employeeWith90MarksAndAbove.contains(george) && employeeWith90MarksAndAbove.contains(mike);
 assert employeeWith90MarksAndAbove.size() == 2;
 ```
 
-The assert method guarantees the accuracy of any assumptions made in the program, when we execute an assertion, it is presumed to be true. If the assertion is untrue, the JVM will raise an Assertion error.
+The assert keyword guarantees the accuracy of any assumptions made in the program; when we execute an assertion, it is presumed to be true. If the assertion is untrue, the JVM will raise an assertion error.
 
 ### Filtering data based on a variety of criteria
 In addition, we may utilize several criteria with the filter to our advantage. We might, for instance, use a combination of points and names to narrow the results:
