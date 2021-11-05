@@ -1,9 +1,10 @@
 ### Introduction
 It is easy for anyone to deliver PDFs because it is a standard forat for document presentation. Everything is given as a PDF now, including requests, receipts, and appropriation reports. However, the planned duration of PDF can be inconvenient if you need to create a large number of PDFs quickly.
-
 DocRaptor is an HTML-to-PDF API that greatly enhances the current situation in addition to having a PHP framework for simple joining. This article will guide the reader on how to use DocRaptor to converts HTML into a PDF.
 
 ### Table of content
+- [Introduction](#introduction)
+- [Table of content](#table-of-content)
 - [Installation](#installation)
 - [Authentication](#authentication)
 - [Add HTML or a URL](#add-html-or-a-url)
@@ -11,86 +12,93 @@ DocRaptor is an HTML-to-PDF API that greatly enhances the current situation in a
 - [Get documentation](#get-documentation)
 - [Conclusion](#conclusion)
   - [Further activity reading](#further-activity-reading)
-  
+ 
 ### Installation
-Download the most recent version of DocRaptor to your computer and unzip it into your hard drive. You have two options for for doing this the first is using an author and the second is when working alone.
+Download the latest released file and unzip it into your pc. You can install it by either:
 
-If you are collaborating with an author, you will need to mention their name in the purchase line of your order confirmation.
+- using composer but in case you have not installed composer you can download it [here](https://getcomposer.org/download/) after which you are required to run the command below in your command line to install docraptor in your workspace.
 
-```javascript
+
+```php
 composer require docraptor/docraptor
 ```
 
-- If you are not working with an author, you should download the most recent version and unzip it into your work area instead. Then, create a new record with the name `docraptor.php` and include the file `autoload.php` in it.
+- or download the recent docraptor version [here](https://docraptor.com/documentation) and unzip it into your workspace instead. Create a new file and name it "docraptor.php" and include "autoload.php" in it
 
-```javascript
+```php
+//docraptor.php
 require_once('./path/to/docraptor-php/autoload.php');
 ```
 
 ### Authentication
-You can use the API key `KEY YOUR API HERE`, which will not require you to have a record, but this will only work with watermarked archives and will not work with unwatermarked archives. In any case, you will need to have a track record that is up to date.
+You may use the key "KEY YOUR API HERE" which you get after sending an HTTP request. It will not require you to have an account but this only applies to watermarked documents (archive). In any case, you will need to have a track record that's up to date.
 
-```javascript
-$configuration=DocRaptor\configuration::getDefaultconfiguration();
-$configuration->setUsername('KEY_YOUR_API_HERE');
+
+```php
+$configuration=DocRaptor\configuration::getDefaultconfiguration();  //requests for API key 
+$configuration->setUsername('KEY_YOUR_API_HERE');   //works for test document 
 ```
 
 ### Add HTML or a URL
-Any HTML that will need to be converted to PDF may be included in your document.
+Any HTML that will need to be converted to PDF may be included in your document
 
-```javascript
+```php
 $docraptor = newDocRaptor\DocAPI();
-$doc = newDocRaptor\doc();
-$doc = setDocumentContent("<html><title> convert HTML to PDF </title><body> HTML to PDF made easier </body></html");
+$doc = new DocRaptor\doc(); //identifies the type of file required
+$doc = setDocumentContent("<html><title> convert HTML to PDF </title><body>HTML to PDF made easier</body></html");    //supply content directly 
 ```
 
-In the case of an online archive, you may want to refer to the URL rather than the substance of the records themselves.
+incase of online document you may want to refer to theRL rather than the substance ot the records themselves.
 
-```javascript
+```php
 $docraptor = newDocRaptor\DocApi();
 $doc = newDocRaptor\doc();
-$doc = setDocumentUrl("http: //DocRaptor.com/returns/sales.html");
+$doc = setDocumentUrl("http: //DocRaptor.com/returns/sales.html");  //or use a url
 ```
 
 Whether you use HTML or URLs in your report, all of the resources you reference should be accessible via the internet for DocRaptor to work.
 
 ### API options
-Given that DocRaptor may also convert reports into various records, such as HTML to Excel, we must create the right archive for each report.
+Given DocRaptor may also converts documents into other files for instance HTML to Excel, we must create the right document. Hence set the document type as PDF.
 
-```javascript
-$doc->setDocumentType("pdf");
-```
-Additionally, because we are using a free API key, we should create a test archive:
-
-```javascript
-$doc->setTest(true);
+```php
+$doc->setDocumentType("pdf");   //pdf or xls or xlsx    //help you find the document later
 ```
 
-Of course, JavaScript is on its way to becoming more efficient during record production, but you can use it on the web.
+Additionally, because we are using a free API key, we should create a test document but when the test is set to true there are a few things to note
+- generated pdf will be watermarked
+- `hosted document` will be limited to 5 downloads
+- `hosted document` will expire after 5 days
 
-```javascript
-$doc->setJavaScript('true');
+```php
+$doc->setTest(true);    //test document are free but watermarked
 ```
 
-More information about documentation may be found at [docraptor's API documentation](https://docraptor.com/documentation/api)
+by default, JavaScript is off but you need to enable it to enhance speed during document creation
+
+```php
+$doc->setJavaScript('true');    //enable javascript processing 
+```
+
+More information about documentation may be found at [docraptor's API documentation](https://github.com/DocRaptor/docraptor-php)
 
 ### Get documentation
-Following the configuration of your API decisions, run this code to generate your file. It moreover consolidates blunders in managing the structure if something goes wrong.
+Following the configuration of your API decisions, run this code to generate your file. Document creation is a one-line code.  It also includes an error handling mechanism which consolidates blunders in managing the structure if something goes wrong.
 
-```javascript
+```php
 try{
-    $creat-response=$DocRaptor->creatDoc($doc);
+    $creat-response=$DocRaptor->creatDoc($doc); //generate the document
 } catch (DocRaptor\ApiException $Error){
-    echo $error ."\n";
-    echo $error->getMessage() ."\n";
-    echo $error->getCode() ."\n";
+    echo $error ."\n";  //shows the error
+    echo $error->getMessage() ."\n";    //returns the error message
+    echo $error->getCode() ."\n";       //shows the line of code with the error
     echo $error->getResponseBody() ."\n";
 }
 ```
+You may save it to the server using the following snippet:
 
-You might save it to your server using the following snippet:
-
-```javascript
+```php
+//saving to server
 $fie = fopen("/tmp/DocRaptor-php.pdf" , "wb");
 $fwrite($file , $create_response);
 $fclose($file);
@@ -98,7 +106,8 @@ $fclose($file);
 
 else the client can download it by
 
-```javascript
+```php
+//instructs php to return a file download 
 $header('Content-Description: file Transfer');
 $header('Content-Type: Application/pdf');
 $header('Content-Deposition: attachment; filename=sales.pdf');
@@ -114,61 +123,53 @@ echo($creat_response);
 exit;
 ```
 
-The complete code:
-    ```PHP
+The complete code can be found [here](https://github.com/taves-hub/convert-html-to-pdf-with-docraptor):
+    
+```php
     <?php
         //docraptor.hp
         require_once('/path/to/docraptor-php/autoload.php');
-        //free account
-        $configuration = DocRaptor\configuration::getDefaultonfiguration();
-        $configuration -> setUsername('KEY_YOUR_API_HERE');
-        
-        //adding HTML archive that needs to be converted
+        $configuration = DocRaptor\configuration::getDefaultonfiguration(); //requests for API key
+        $configuration -> setUsername('KEY_YOUR_API_HERE'); //works for test document 
         $docraptor = newDocRaptor\DocApi();
-        $doc = new DocRaptor\doc();
-        $doc = setDocumentContent("<html><title> convert HTML to PDF </title><body> HTML to PDF made easier </body></html");
-        //online archive
-        $doc = setDocumentUrl("http: //DocRaptor.com/returns/sales.html"); 
-        //specification of archive type
-        $doc->setDocumentType("pdf"); //DocRaptor also makes other archives
-        //creataing a test archive
-        $doc->setTest(true);  
-        $doc->setJavaScript('true');
-        
-        //error handling
+        $doc = new DocRaptor\doc();     //identifies the type of file required
+        $doc = setDocumentContent("<html><title> convert HTML to PDF </title><body> HTML to PDF made easier </body></html");    //supply content directly
+        //$doc = setDocumentUrl("http: //DocRaptor.com/returns/sales.html");    //or use a url
+        $doc->setDocumentType("pdf");   //help you find the document later
+        $doc->setTest(true);        //test document are free but watermarked
+        //$doc->setJavaScript('true');  //enable javascript processing 
         try{
-            $creat-response=$DocRaptor->creatDoc($doc);
-        } catch (DocRaptor\ApiException $Error){
-            echo $error ."\n";
-            echo $error->getMessage() ."\n";
-            echo $error->getCode() ."\n";
-            echo $error->getResponseBody() ."\n";
-        }
-        //saving to the server
+            $creat-response=$DocRaptor->creatDoc($doc); //generate the document
+       
         $fie = fopen("/tmp/DocRaptor-php.pdf" , "wb");
         $fwrite($file , $create_response);
         $fclose($file);
+
+        //instructs php to return a file download 
         
-       //let the user download it
-        $header('Content-Description: file Transfer');
-        $header('Content-Type: Application/pdf');
-        $header('Content-Deposition: attachment; filename=sales.pdf');
-        $header('Content-Transfer-Encoding: binary');
-        $header('Expires: 0');
-        $header('Content-Description: file Transfer');
-        $header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
-        $header('Pragma: public');
-        $header('Content-Length: ' .strlen($creat-response));
-        ob_clean();
-        flush();
-        echo($creat_response);
-        exit;
-        ```
-        
+        //$header('Content-Description: file Transfer');
+        //$header('Content-Type: Application/pdf');
+        //$header('Content-Deposition: attachment; filename=sales.pdf');
+        //$header('Content-Transfer-Encoding: binary');
+        //$header('Expires: 0');
+        //$header('Content-Description: file Transfer');
+        //$header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
+        //$header('Pragma: public');
+        //$header('Content-Length: ' .strlen($creat-response));
+        //ob_clean();
+        //flush();
+        //echo($create_response);
+        //exit;
+         } catch (DocRaptor\ApiException $Error){
+            echo $error ."\n";  //shows the error
+            echo $error->getMessage() ."\n";     //returns the error message
+            echo $error->getCode() ."\n";   //shows the line of code with the error
+            echo $error->getResponseBody() ."\n";
+        }
+```        
 ### Conclusion
 DocRapor has been working on the method for converting HTML to PDF format. Its strategy differs from other strategies in that it is more detailed. It has been considered if multiple reports should have been converted to PDF format. From the establishment to the documentation and links provided, the means are given if other cases are investigated.
 This will be beneficial because diverse techniques are organized with proper documentation. In addition, the code snippets are easy to understand and experiment with.
-
 #### Further activity reading
 [PHP CSV](https://www.phptutorial.net/php-tutorial/php-csv/)
 
