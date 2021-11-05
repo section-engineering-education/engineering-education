@@ -383,7 +383,7 @@ Let's get started with SHAP.
 
 ### Getting started with SHAP
 
-Shapley Additive Explanations(SHAP) is game-theoritic technique that is used to analyze results. It explains the prediction results of the individual machine learning model. It uses Shapley values.
+Shapley Additive Explanations(SHAP) is a game-theoretic technique that is used to analyze results. It explains the prediction results of the individual machine learning model. It uses Shapley values.
 
 Shapley values are weights assigned to the model features. It shows how each feature contributed to the prediction results. It determines the impact of features on the prediction results.
 
