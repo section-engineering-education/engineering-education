@@ -2,7 +2,7 @@
 Serialization transforms a data structure or object state into a format that can be saved in a file, memory or sent over a computer network and then reconstructed. This is a benefit of Serialization in terms of transmitting the converted data.
 
 ### Preliquisites
-- Have [visual studio 2019](https://visualstudio.microsoft.com/vs/) software installed. It is the compiler used to run Csharp programs.
+- Have [visual studio 2019](https://visualstudio.microsoft.com/vs/) software installed. It is the IDE used to run Csharp programs.
 - Have some prior knowledge in .NET programming and xml files.
 
 ### Table of contents
@@ -15,21 +15,20 @@ Serialization transforms a data structure or object state into a format that can
 ### Serialization applications
 Serialization allows developers to save an object's state and restore it later if needed. Serialization allows the following operations.
 
-- The item is delivered to the remote application through HTTP.
+- Delivering an item to the remote application through HTTP.
 - Domain to domain transfer - A JSON or XML data string can be used to transport an item over a firewall.
 - Keeping user-specific or security-related data between apps.
 
 ### Making a serializable object
 You'll need the following to serialize binary or XML data:
 - The serializable object
-- A stream will hold the serialized object.
-- It's a system.
-- Instance of Runtime.Serialization.Formatter
-
+- A stream to contain the serialized object
+- A System.Runtime.Serialization.Formatter instance
+- 
 Create instances of the stream and the format to use, then use the Serialize function on the format. This call receives two strings as parameters: the stream and the object to serialize.
 
 ### C# Serialization in action
-With apps, we must store data on durable or non-durable media for later retrieval. Serialization may help. Seriation is the process of storing an object instance as a byte stream in memory or a database. Serialization is needed to transmit an object over a network. Serializing in C# The app needs a serialization namespace. This is called serialization. In C#, utilize the [ Serializable ] property.
+With apps, we must store data on durable or non-durable media for later retrieval. Serialization may help. Serialization is needed to transmit an object over a network. Serializing in C# The app needs a serialization namespace. This is called serialization. In C#, utilize the [ Serializable ] property.
 
 Consider the following example:
 
@@ -55,7 +54,9 @@ public string identity;
 ### Types of Serialization in C#
 
 1. **Binary Serialization**
-The System.Runtime.Serialization is a namespace that includes binary serialization classes. In computing, a namespace is a collection of symbols used to identify and refer to various things. A namespace ensures that all objects in a set have unique, easy-to-recognize names. Binary encoding provides a concise serialization for storage and socket-based network streams. With Binary Serialization, even read-only members are serialized, improving speed. This is the method for converting.NET objects into byte streams. During binary Serialization, all public, private, and read-only members are processed. Binary Serialization is used to quickly convert items to bytes. It utilizes System. Runtime. Serialization.Formatters.Binary reference.
+The System.Runtime.Serialization is a namespace that includes binary serialization classes. In computing, a namespace is a collection of symbols used to identify and refer to various things. A namespace ensures that all objects in a set have unique, easy-to-recognize names. Binary encoding provides a concise serialization for storage and socket-based network streams. 
+
+With Binary Serialization, even read-only members are serialized, improving speed. This is the method for converting.NET objects into byte streams. During binary Serialization, all public, private, and read-only members are processed. Binary Serialization is used to quickly convert items to bytes. It utilizes System. Runtime. Serialization.Formatters.Binary reference.
 
 Below is a biliary Serialization example.
 
@@ -149,7 +150,7 @@ namespace soapSerializationSample
 
 ```
 
-From the above code, we created an instance of our sample class and called it erick nyaga, and then we serialized it using the value 34. After that we create a file stream to accept our output using the code `FileStream filestream =new Filestream(@"d:\sem\serialisation.dat", FileMode.Create);`. The line of the code after creating a file stream is used to serialize the object created. The final line of code serializes the objects to .data file format. The lines `using System.Runtime.Serialization;` and `using System.Runtime.Serialization.Formatters.Soap;` are the references for the code to do soap serialization.
+From the above code, we created an instance of our sample class and called it erick nyaga, and then we serialized it using the value 34. After that we create a file stream to accept our output using the code `FileStream filestream =new Filestream(@"d:\sem\serialisation.dat", FileMode.Create);`.  The line `SoapFormatter formatter =new  SoapFormatter();` is used to serialize the object created.   The line `formatter.Serializa(fileStream, sample);` serializes the objects to .data file format. The lines `using System.Runtime.Serialization;` and `using System.Runtime.Serialization.Formatters.Soap;` are the references for the code to do soap serialization.
 
 4. **Custom Serialization**
 Custom serialization allows for event serialization and deserialization. Using an ISerializable interface may help. Custom serialization allows you to control which items are serialized and how. SerializableAttribute and ISerializable interface are required.
