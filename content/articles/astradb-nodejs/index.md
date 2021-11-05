@@ -1,3 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/astradb-nodejs/
+title: Building Backend Applications using Astra DB and Datastax's API
+description: In this tutorial, we will build a blog application using Apache Cassandra ,Node.js and Datastax's document API.
+author: wilson-gichuhi
+date: 2021-11-05T00:00:00-17:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/astradb-nodejs/hero.jpg
+    alt: Building Backend Applications using Astra DB
+---
+
 One of the popular distributed NoSQL database management systems is, without a doubt, Apache Cassandra. It guarantees scalability and reliability at scale across its infrastructure via partitioning and replication. However, this form of cloud-native development usually is slow and complex. Astra DB is a zero-config serverless database that seamlessly abstracts the Apache Cassandra cloud-native services for database and streaming operations.
 
 This article explains the fundamentals of Apache Cassandra and Astra DB. Then, we will perform CRUD operations on a blog database using Node.js and Datastax's document API. We will create tables, read database records, perform updates and deletions.
@@ -5,7 +21,7 @@ This article explains the fundamentals of Apache Cassandra and Astra DB. Then, w
 ### Prerequisites
 1. You'll need an [Astra DB](https://www.datastax.com/products/datastax-astra) account for the database.
 
-2. Have [Node.js] (https://nodejs.org/en/) runtime installed on your development system
+2. Have [Node.js](https://nodejs.org/en/) runtime installed on your development system
 
 3. An IDE, I recommend [VS Code](https://code.visualstudio.com/) for development. 
 
@@ -74,7 +90,7 @@ To bootstrap this project, initialize using the command `npm init -y` to create 
 Our Node.js application will need the following packages from npm:
 - Express: `express` is a low overhead Node.js web application framework that relies on middlewares in the request and response cycle.
 
-- @strajs/collections: This is the module that acts as a driver to our document [stargate API](https://stargate.io/) in AstraDB. DataStax uses a Stargate API gateway to connect from our Node.js application. 
+- `@strajs/collections`: This is the module that acts as a driver to our document [stargate API](https://stargate.io/) in AstraDB. DataStax uses a Stargate API gateway to connect from our Node.js application. 
   
 - Dotenv: Since we are using a serverless database, we need a way to store API keys. It injects environment variables from a `.env` file in our application, avoiding hardcoding any sensitive data. Ensure to add a .env in your `.gitignore` file not to push this to a GitHub repository.
   
@@ -255,4 +271,7 @@ Being open-source, the Apache Cassandra is a popular database due to its ability
 
 To read more, check the `astrajs` docs [here](https://docs.datastax.com/en/astra/docs/astra-collection-client.html).
 
-I hope you enjoy this article.
+
+---
+
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
