@@ -34,7 +34,7 @@ We will then link our Tailwind stylesheet to our project using <link> tag as sho
 
 ### Setting up the HTML
 
-First, we will set the background of our web page as green on the <body> tag. You can choose any other color that is appealing to you. Next, we will specify the height of our containment `<div>`. We will now create another container inside the first container. This container will contain the elements which we will be laying out in rows and columns.
+First, we will set green as our background color on the <body> tag. You can choose any other color that is appealing to you. Next, we will set the height of our containment `<div>` using class, `min-h-screen` which means that the minimum height of the container is equal to 100 of the viewport. We will now create another container inside the first container. This container will contain the elements which we will be laying out in rows and columns.
 ```html
 <body class="bg-green-400">
     <div class="min-h-screen flex items-center justify-center">
@@ -54,10 +54,9 @@ First, we will set the background of our web page as green on the <body> tag. Yo
 </body>
 ```
 
-We have added the following styling classes to our elements:
- - `min-h-screen` sets minimum height of the container to be equal to 100% of the screen height.
- - `flex` aligns the elements vertically.
- - `items-center` and `justify-center` align the cards in the center of the screen.
+Here are other classes that we have used: 
+ - `flex` aligns the elements side by side
+ - `items-center` and `justify-center` makes the elements appear at the center of the screen.
  - `rounded-lg` makes the edges of the elements have a rounded look.
  - `bg-green-100` classes gives the elements a green background color around.
 
@@ -101,21 +100,20 @@ For example, if we want a cell to span two rows, then we use `row-span-2`, and i
 
 ### Grid gap classes
 The gap classes are used to add space between rows and columns. The gap classes include: `gap-{size}`, `gap-x-{size}` and `gap-y-{size}`. 
-As for our case, we have used `gap-4`. This class adds space evenly between rows and columns. If you wanted a different spacing between rows and columns, then you can use `gap-x-{size}` for space between columns and `gap-y-{size}` for space between rows. 
+As for our case, we have used `gap-4`. This class adds space evenly between rows and columns. To use different rows and columns spacing, we use `gap-x-{size}` for column spacing and `gap-y-{size}` for row spacing. 
 
-#### Usage
+#### How it is used
 ```html
-<div class="grid grid-cols-2 gap-x-4 gap-y-2">
-  <div>1</div>
-  <div>2</div>
-  <div>3</div>
-  <div>4</div>
+<div class="grid grid-cols-2 gap-x-5 gap-y-3">
+  <div class="bg-green-100 text-green-500 text-lg font-bold text-center p-14 rounded-lg">1</div>
+  <div class="bg-green-100 text-green-500 text-lg font-bold text-center p-14 rounded-lg">2</div>
+  <div class="bg-green-100 text-green-500 text-lg font-bold text-center p-14 rounded-lg">3</div>
+  <div class="bg-green-100 text-green-500 text-lg font-bold text-center p-14 rounded-lg">4</div>
 </div>
 ```
 
-### Gap responsiveness
-In Tailwind, we can control the gap at specific screen sizes, add a `{screen}:` prefix to any existing gap class. For example, use `md:gap-4` to apply the `gap-4` utility at only medium screen sizes and `lg:gap-6` for large screen sizes only. As shown below:
-
+#### Gap responsiveness
+We can control gaps at specific screen sizes in Tailwind by adding a `{screen}:` prefix to any existing gap class. For example, use `md:gap-4` to apply a gap of 16px, that is, `gap-4` class at only medium screen sizes and `lg:gap-6` for  only large screen sizes. As shown below:
 #### Usage
 ```html
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-4 lg:gap-6 p-5">
