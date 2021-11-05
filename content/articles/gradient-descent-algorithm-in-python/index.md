@@ -5,8 +5,8 @@ published: true
 url: /gradient-descent-algorithm-in-python/
 title: Getting started with Gradient Descent Algorithm in Python
 description: This article will look at how we minimize this cost function using the gradient descent algorithm to obtain optimal parameters of a machine learning model
-author: 
-date: 2021-11-02T00:00:00-05:34
+author: jackson-munyai
+date: 2021-11-05T00:00:00-05:34
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -150,3 +150,6 @@ From this plot, we notice that the error was initially high, but with each run o
 
 ### Conclusion
 This article looked at the theory behind the gradient descent algorithm and explained how this algorithm works. We then learned how to use python to obtain the optimal value of the learning parameter; for our case, we assume a simple linear regression of a model given cost function. To this fur, we reach the end of our learning journey.
+
+---
+Peer Review Contributions by: [Mercy Meave](/engineering-education/authors/mercy-meave/)
