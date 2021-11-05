@@ -472,11 +472,12 @@ The sample input is the 1st data point of the test set. Its represented by the `
 SHAP will explain why this input sample was predicted as a non-diabetic person.
 
 - shap_values[0]
+
   We specify the shapely values as `0`. This selects the shapely values that contribute to non-diabetic prediction.
 
 - X_test.iloc[0:]
 
-The `iloc` method selects the 1st data point of the `X_test` array.
+  The `iloc` method selects the 1st data point of the `X_test` array.
 
 The force plot output is as shown below.
 
