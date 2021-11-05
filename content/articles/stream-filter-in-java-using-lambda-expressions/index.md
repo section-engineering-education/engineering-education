@@ -35,6 +35,17 @@ Notice how it accepts a Predicate object as a parameter. A predicate is a logica
 The filter() function is often used to handle collections. We can use it to create a list of workers who have earned more than 90 marks, specifying the predicate as a lambda.
 
 ```Java
+// Assume Employee to be a POJO (plain old java object) with the employee's identity and marks
+Employee george = new Employee("George", 91);
+Employee mike = new Employee("Mike", 95);
+
+List<Employee> employees = List.of(
+        george,
+        mike,
+        new Employee("Debra", 80),
+        new Employee("Robbert", 50)
+);
+
 List<Employee> employeeWith90MarksAndAbove = employees
   .stream()
   .filter(q -> q.getMarks() > 90)
@@ -43,6 +54,16 @@ List<Employee> employeeWith90MarksAndAbove = employees
 Additionally, methods reference, which again is shorthand for such a lambda expression, may also be used.
 
 ```Java
+Employee george = new Employee("George", 91);
+Employee mike = new Employee("Mike", 95);
+
+List<Employee> employees = List.of(
+        george,
+        mike,
+        new Employee("Debra", 80),
+        new Employee("Robbert", 50)
+);
+
 List<Employee> employeeWith90MarksAndAbove = employees
   .stream()
   .filter(Employee::hasOverNinetyMarks)
@@ -59,20 +80,9 @@ public boolean hasOverNinetyMarks()
 When we use these two approaches, we obtain the same result:
 
 ```Java
-Dim employee0 As New Employee
-With employee
-    .First = "George"
-    .Last = "Mike"
-End With
-
-List<Employee> georgeWith90MarksAndAbove = employees
-List<Employee> mikeWith90MarksAndAbove = employees
-  .stream()
-  .filter(q -> q.getMarks() > 90 && q.getIdentity().startsWith("George"))
-  .collect(Collectors.toList());
-
-assertTrue(employeeWith90MarksAndAbove).hasSize(2);
-assertTrue(employeeWith90MarksAndAbove).contains(george, mike);
+// The assert keyword throws an exception if the given condition is false. These should not throw exceptions.
+assert employeeWith90MarksAndAbove.contains(george) && employeeWith90MarksAndAbove.contains(mike);
+assert employeeWith90MarksAndAbove.size() == 2;
 ```
 
 The assert method guarantees the accuracy of any assumptions made in the program, when we execute an assertion, it is presumed to be true. If the assertion is untrue, the JVM will raise an Assertion error.
@@ -81,13 +91,23 @@ The assert method guarantees the accuracy of any assumptions made in the program
 In addition, we may utilize several criteria with the filter to our advantage. We might, for instance, use a combination of points and names to narrow the results:
 
 ```Java
+Employee george = new Employee("George", 91);
+Employee mike = new Employee("Mike", 95);
+
+List<Employee> employees = List.of(
+        george,
+        mike,
+        new Employee("Debra", 80),
+        new Employee("Robbert", 50)
+);
+
 List<Employee> georgeWith90MarksAndAbove = employees
   .stream()
   .filter(q -> q.getMarks() > 90 && q.getIdentity().startsWith("George"))
   .collect(Collectors.toList());
 
-  assertTrue(georgeWith90MarksAndAbove).hasSize(1);
-  assertTrue(georgeWith90MarksAndAbove).contains(george);
+assert georgeWith90MarksAndAbove.size() == 1;
+assert georgeWith90MarksAndAbove.contains(george)
 ```
 
 **Explanation**
