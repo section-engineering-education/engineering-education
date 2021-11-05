@@ -6,7 +6,7 @@ url: /spring-boot-flyway-migrations/
 title: Managing Spring Boot Database Migrations using Flyway
 description: This article introduces readers to the Flyway version control system. This tool helps in performing and maintaining database migrations.
 author: sumba-elvis
-date: 2021-11-04T00:00:00-07:40
+date: 2021-11-05T00:00:00-07:40
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -16,7 +16,7 @@ images:
 ---
 Flyway is a version control system that is used to maintain database migrations across all application instances.
 <!--more-->
-This article will create a student management system that manages database migrations using Flyway. 
+In this article, we will create a student management system that monitors database migrations using Flyway. 
 
 ### Prerequisites
 1. [Java Development Kit](https://www.oracle.com/java/technologies/downloads/) installed on your computer.
@@ -27,9 +27,9 @@ This article will create a student management system that manages database migra
 ### Project setup
 1. On your browser, open [spring initializr](https://start.spring.io/).
 2. Input the `project name` as `migration` and `group name` as `com.migrations`.
-3. Add `Spring Web`, `Spring Data JPA`, `Flyway migration` and `MySQL Driver` as dependencies.
+3. Add `Spring Web`, `Spring Data JPA`, `Flyway migration`, and `MySQL Driver` as dependencies.
 4. Click `generate` to download the boilerplate project code as a compressed file.
-5. Uncompress the downloaded file and open the project in your favourite code editor.
+5. Uncompress the downloaded file and open the project in your favorite code editor.
    
 #### Domain
 1. Create a `Student` class and add the code below.
@@ -61,16 +61,17 @@ public class Student {
 }
 
 ```
+
 - `@Entity` annotation shows that the class is a persistent Java class.
 - `@Id` annotation shows that the annotated field is the primary key.
 - `@GeneratedValue` annotation is used to specify the generation strategy used for the primary key.
 - `@Column` annotation defines the column in the database that maps the annotated field.
-- `@Getter` annotation generates getters for all the fields in the Student class.
-- `@Setter` annotation generates the setters for all the fields in the Student class.
-- `@Table(name = "student")` indicates that the Student entity will be mapped to a table named `student` in the database.
+- `@Getter` annotation generates getters for all the fields in the `Student` class.
+- `@Setter` annotation generates the setters for all the fields in the `Student` class.
+- `@Table(name = "student")` indicates that the `Student` entity will be mapped to a table named `student` in the database.
 
 #### Repository
-Create Java interface named `StudentRepository` and the following code to the interface created above.
+Create an interface named `StudentRepository` and add the following code to the interface:
 
 ```java
 @Repository // Marks the interface as a JPA repository
@@ -79,13 +80,16 @@ public interface StudentRepository extends JpaRepository<Student, Integer> {
 
     void deleteStudentByEmail(String email); //Custom method to eneble deletion of a student by email address
 }
-
 ```
-The `JpaRepository` interface takes in the model and the type of the ID, in our case the model is Student and the ID type is Long. We are now able to use all the JpaRepository methods `save()`, `findOne()`, `findById()`, `findAll()`, `count()`, `delete()`, `deleteById()` without providing implementation.
+
+The `JpaRepository` interface takes in the model and the type of the ID, in our case the model is Student and the ID type is Long. 
+
+We are now able to use all the JpaRepository methods including `save()`, `findOne()`, `findById()`, `findAll()`, `count()`, `delete()`, `deleteById()` without providing implementation.
 
 - `@Repository` annotation marks this interface as a Spring Data JPA repository.
 
 #### Controller
+
 ```java
 @RestController
 @RequestMapping("/api/v1/students")
@@ -128,6 +132,7 @@ public class StudentController {
 }
 
 ```
+
 - `@RestController` annotation marks this class as a controller that can process the incoming HTTP requests.
 - `@RequestMapping("/api/v1/students")` annotation sets the base path to the resource endpoints in the controller as /api/v1/students.
 - `@GetMapping` annotation indicates that the function processes a GET request.
@@ -151,7 +156,7 @@ spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQL5InnoDBDial
 spring.jpa.hibernate.ddl-auto = validate
 
 ```
-In the resource folder, create a new folder, `db`. Then generate another folder named `migrations` in the `db` directory.
+In the resource folder, create a new folder named `db`. Then generate another folder named `migrations` in the `db` directory.
 
 Next, create a SQL filename `V1__init.sql` and add the code snippet below:
    
@@ -168,7 +173,8 @@ CREATE TABLE student
     unique key UK_email(email)
 )
 ```
-The above code snippet creates the `student` table in the database when the application is run. 
+
+The above code creates the `student` table in the database. 
 
 > You should not use an automated database table creation tool because it does not produce optimized SQL code.
 
@@ -183,15 +189,16 @@ Query OK, 1 row affected (0.01 sec)
 
 mysql> 
 ```
-Run the application by executing the command `./mvnw spring-boot:run`. Then, on the command line, execute the command `sudo mysql` to start MySQL CLI. 
-Next, execute the command `select * from flyway_schema_history` as shown below.
+Run the application by executing the command `./mvnw spring-boot:run`. Then, on the command line, input `sudo mysql` to start MySQL CLI. 
 
-![first migration](/engineering-education/spring-boot-flyway-migrations/result-two.png)
+Next, execute the command `select * from flyway_schema_history` as shown below:
 
-When we rerun the application and check the student's table if We inserted the data, we see the results below.
+![first migration](/engineering-education/spring-boot-flyway-migrations/result_two.png)
 
-#### Inserting data through flyway migrations
-In the `db` folder created above, create a new SQL file named `V2_data.sql` and add the SQL script below.
+When we rerun the application and check the student's table, we should see the following results:
+
+#### Inserting data through Flyway migrations
+In the `db` folder created above, create a new SQL file named `V2_data.sql` and add the SQL script below:
 
 ```sql
 insert into student(email, first_name, last_name, course, registration_number)
@@ -200,26 +207,28 @@ insert intbooto student(email, first_name, last_name, course, registration_numbe
 values ("tester2@outlook.com", "test2", "tester2", "Computer science", "ABA7712");
 
 ```
-When we check the Flyway migrations table, we see that the data was inserted and recorded.
+When we check the Flyway migrations table, we see that the data was inserted successfully.
 
 ### Testing
 
 ![Second migration](/engineering-education/spring-boot-flyway-migrations/result.png)
 
-When we check the Flyway migrations table, we can see that the data was inserted and migration recorded.
+The data was inserted in the table, as shown below:
 
 ![Result](/engineering-education/spring-boot-flyway-migrations/data.png)
 
-Now that we have created a table and inserted data into the database, execute the command below to roll back the last migration that we performed.
+Now that we have created a table and inserted data into the database, let's execute the following command to roll back our last migration.
 
 ```bash
 $ ./flyway undo
 ```
 
-The command above rollbacks the last migration, In our case, it will remove the data inserted into the database from the second script.
+The command above will remove data inserted into the database from the second script.
 
 ### Conclusion
-Now that you have learned how to manage Spring Boot database migrations with the flyway migration tool try implementing an application, creating at least three migrations, and rolling back to the previous migrations.
+In this tutorial, we have learned how to manage Spring Boot database migrations with the Flyway migration tool.
+
+You can, therefore, use this knowledge to craft more quality applications.
 
 ---
 Peer Review Contributions by: [Miller Juma](/engineering-education/authors/miller-juma/)
