@@ -444,6 +444,7 @@ X_test.iloc[0,:]
 ```
 
 The generated Shapley values are as shown below.
+
 ![Shapley Values](/engineering-education/how-to-analyze-machine-learning-models-using-shap/shapley-values.jpg)
 
 We now use these generated values to plot a force plot diagram.
