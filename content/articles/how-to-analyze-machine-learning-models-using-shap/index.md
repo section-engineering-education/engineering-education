@@ -1,3 +1,22 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-analyze-machine-learning-models-using-shap/
+title: How to Analyze Machine Learning Models Using SHAP
+description: In this tutorial, we will use SHAP to analyze and explain a diabetes prediction model.
+author: james-omina
+date: 2021-11-05T00:00:00-18:00
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/how-to-analyze-machine-learning-models-using-shap/hero.png
+    alt: SHAP example image 
+---
+Explainable AI describes the general structure of the machine learning model. It analyzes how the model features and attributes impact the model results.
+<!--more-->
+
 Model analyzing determines the logical reasoning of the model when making a prediction.
 It explains the decisions made by the model. It also checks the criteria used to arrive at the results.  
 The concept of analyzing these prediction results is known as explainable AI.
