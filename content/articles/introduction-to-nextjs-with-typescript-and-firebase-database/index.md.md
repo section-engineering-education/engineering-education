@@ -387,7 +387,7 @@ We have changed the `pages/index.tsx`, which means the existing linked CSS code 
 }
 ```
 
-Feel free to edit these styles to your preferred agreeance.
+Feel free to edit these styles to your preferred appearance.
 
 In `pages/index.tsx`, import the Firestore from the `clientApp.ts` file and create a pointer to the todos Collection. Then use `useState` to host the state of our todos and loading as shown below:
 
