@@ -1,0 +1,162 @@
+Pytorch lightning is a high-level framework built on top of Pytorch. As we know, Pytorch is already great. Pytorch lighning is in a lot of ways even greater. It is very similar as is Keras to TensorFlow. The framework is built to make training neural networks easier and to reduce the training code that is needed. The framework let's you spend less time on engineering and more time on research.
+
+This tutorial will introduce this framework and implement an example to demonstrate how the framework can be used.
+
+### Table of contents
+- [PyTorch](#pytorch)
+- [PyTorch Lightning](#pytorch-lightning)
+- [Advantages of PyTorch Lightning](#advantages-of-pytorch-lightning)
+- [Who is PyTorch Lightning for](#who-is-pytorch-lightning-for)
+- [Demonstration on how PyTorch Lightning is used](#demonstration-on-how-pytorch-lightning-is-used)
+- [Further reading](#further-reading)
+
+### PyTorch Lightning
+PyTorch Lightning is a open-source, lightweight Python wrapper for Machine Learning researchers that is built on top of PyTorch. With this framework, you don't have to remember all the tiny details of the PyTorch framework because PyTorch Lightning takes care of all that. It lessens the load and lets you focus more on research rather than on the engineering.
+
+A noteworthy feature of the framework is that it prints out warnings and gives a developer machine learning tips if the developer happens to make mistakes in the code. 
+
+Many machine learning developers are skeptical about frameworks that tend to hide the underlying engineering. That's why many developers preferred PyTorch to TensorFlow in the first place, right? But on the other hand, PyTorch Lightning really makes things easier. With that said, it would be advisable to learn the underlying basics of PyTorch first before getting started with PyTorch Lightning. Please refer to this [article](/engineering-education/tensorflow-vs-pytorch/) to understand the basics of PyTorch.
+
+### Advantages of PyTorch Lightning 
+- It is easy to install. Installing this frawork is a simple and quick `pip` install.
+- Its code tend to be simple, clean and easy to reproduce. This is because the engineering code is eliminated from the main code.
+- It supports 16-bit precision. This helps in speeding up model training.
+- It can run distributed training.It enables training on multiple machines at the same time.
+- It supports model checkpointing. Checkpointing is a way to save the current state of your experiment so that you can pick up from where you left off. This helps recover previous states incase something happens i.e., power outages. 
+- It integrates easily with other popular machine learning tools. For example, it integrates easily with Google's [Tensorboard](https://www.tensorflow.org/tensorboard). 
+- Compared to PyTorch, it has a minimum running speed overhead of about 300ms which makes it pretty fast. 
+- Its models are hardware agnostic. It can run on any CPU, GPU, or TPU machine.
+
+### Who is PyTorch Lightning for
+PyTorch Lightning was built by William Falcon while undertaking his Ph.D. AI studies research at the Computational Intelligence, Learning, Vision, and Robotics (CILVR) lab at the New York University. He built the framework for use by professional and academic researchers (PhD students) working in the AI industry.
+
+### Demonstration on how PyTorch Lightning is used
+
+#### Installing and importing dependencies
+As I mentioned earlier, Pytorch lightning is built on top of Pytorch. So, we still need to import the vanilla Pytorch before installing PyTorch Lightning. The PyTorch installation has been covered in a lot of tutorials, please refer to this [tutorial](/engineering-education/building-a-grammar-correction-python-app-with-gramformer-and-gradio/) to install PyTorch. 
+
+```python
+!pip install pytorch-lightning
+```
+If you are performing an Anaconda install, use the following command:
+
+```python
+conda install pytorch-lightning -c conda-forge
+```
+After installation, we need to import the necessary dependencies into the code.
+
+```python
+import torch
+import torch.nn as nn
+import torchvision
+import torchvision.transforms as transforms
+import torch.nn.functional as F
+import matplotlib.pyplot as plt
+import pytorch_lightning as pl
+from pytorch_lightning import Trainer
+```
+Let's define some hyperparameters so that we can use thenm later in our code.
+
+```python
+input_size = 784
+hidden_size = 500
+num_classes = 10
+num_epochs = 3
+batch_size = 100
+learning_rate = 0.001
+```
+We've set the number of epochs to only 3 as we are not training on a GPU machine and it would take a long time to train ifwe increased the number of epochs.
+
+```python
+class LitNeuralNet(pl.LightningModule):
+    def __init__(self, input_size, hidden_size, num_classes):
+        super(LitNeuralNet, self).__init__()
+        self.input_size = input_size
+        self.l1 = nn.Linear(input_size, hidden_size)
+        self.relu = nn.ReLU()
+        self.l2 = nn.Linear(hidden_size, num_classes)
+
+    def forward(self, x):
+        out = self.l1(x)
+        out = self.relu(out)
+        out = self.l2(out)
+        # no activation and no softmax at the end
+        return out
+
+    def training_step(self, batch, batch_idx):
+        images, labels = batch
+        images = images.reshape(-1, 28 * 28)
+
+        # Forward pass
+        outputs = self(images)
+        loss = F.cross_entropy(outputs, labels)
+        
+        tensorboard_logs = {'train_loss': loss}
+        # use key 'log'
+        return {"loss": loss, 'log': tensorboard_logs}
+```
+
+In PyTorch lightning, `forward` defines the prediction/inference actions. The `training_step` defines the train loop. It is independent of forward.
+
+### Training
+```python
+   def train_dataloader(self):
+        # MNIST dataset
+        train_dataset = torchvision.datasets.MNIST(
+            root="./data", train=True, transform=transforms.ToTensor(), download=True
+        )
+        # Data loader
+        train_loader = torch.utils.data.DataLoader(
+            dataset=train_dataset, batch_size=batch_size, num_workers=4, shuffle=False
+        )
+        return train_loader
+
+    def val_dataloader(self):
+        test_dataset = torchvision.datasets.MNIST(
+            root="./data", train=False, transform=transforms.ToTensor()
+        )
+
+        test_loader = torch.utils.data.DataLoader(
+            dataset=test_dataset, batch_size=batch_size, num_workers=4, shuffle=False
+        )
+        return test_loader
+    
+    def validation_step(self, batch, batch_idx):
+        images, labels = batch
+        images = images.reshape(-1, 28 * 28)
+
+        # Forward pass
+        outputs = self(images)
+                        
+        loss = F.cross_entropy(outputs, labels)
+        return {"val_loss": loss}
+    
+    def validation_epoch_end(self, outputs):
+        # outputs = list of dictionaries
+        avg_loss = torch.stack([x['val_loss'] for x in outputs]).mean()
+        tensorboard_logs = {'avg_val_loss': avg_loss}
+        # use key 'log'
+        return {'val_loss': avg_loss, 'log': tensorboard_logs}
+    
+    
+    def configure_optimizers(self):
+        return torch.optim.Adam(self.parameters(), lr=learning_rate)
+
+if __name__ == '__main__':
+    model = LitNeuralNet(input_size, hidden_size, num_classes)
+    
+    trainer = Trainer(max_epochs=num_epochs)
+    trainer.fit(model)
+
+```
+
+We use the `random_split` method to split our dataset into a training dataset and a validation dataset. The validation dataset is there to give us an unbiased evaluation of the model performance.
+
+Please find the full code [here](https://colab.research.google.com/drive/1tYa4uaxqCQDuFmwaNQ_90C2HVzOcI-kq?usp=sharing).
+
+### Wrapping up
+This tutorial has introduced PyTorch Lightning
+
+### Further reading
+- [PyTorch Lightning](https://www.pytorchlightning.ai/)
+- [PyTorch Lightning GitHub Repo](https://github.com/PyTorchLightning/pytorch-lightning)
