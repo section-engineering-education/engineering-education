@@ -1,5 +1,23 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /stream-filter-in-java-using-lambda-expressions/
+title: Stream Filter in Java using Lambda Expressions
+description: This article introduces the reader to the filter method in Java to filter items in a stream. Additionally, they are shown ways to handle exceptions in the process.
+author: caroline-wanjiku
+date: 2021-11-05T00:00:00-12:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/stream-filter-in-java-using-lambda-expressions/hero.jpg
+    alt: Java Stream Filter Hero Image
+---
+
 ### Introduction
+
 Java offers some sophisticated methods that make optimum use of streams and lambda expressions. These allow you to build an assembly line using functional programming principles. One of these methods, filter(), is an intermediate operation that receives data from a stream and produces a new stream after changing the data based on a condition. In this guide, we will have a look at how we can use this method to its fullest extent. 
+<!--more--> 
 
 ### Prerequisites
 Before going through this tutorial the reader should:
