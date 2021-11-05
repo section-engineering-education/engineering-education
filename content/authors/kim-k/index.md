@@ -1,0 +1,1 @@
+Kim K is an undergraduate student studying Business Information technology. He is also a freelancer equipped with skills in several programming languages. He loves watching and develops websites for fun. He is also a great fan of Red Reddington.
