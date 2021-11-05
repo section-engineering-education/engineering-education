@@ -6,58 +6,55 @@ url: /personality-test-app/
 title: Building a Personality Test App with Python
 description: The goal of this tutorial is to make convincing concepts clearer and understandable enough for beginners and show the implementation of arrays in Python.
 author: badmus-kola
-date: 2021-10-27T00:00:00-16:35
-topics: []
+date: 2021-11-05T00:00:00-02:16
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
- - url: /engineering-education/personality-test-app/hero.jpeg
-   alt: Personality test python
+ - url: /engineering-education/personality-test-app/avatar.jpg
+   alt: Personality Test App with Python Example Image
 ---
-### Introduction
 In this article, we will take a cursory look into how we can effectively use python lists and functions to design a console app that makes use of Python's data structures in a clear and understandable manner.
 <!--more-->
 We are going to design a personality test app that makes use of test questions from [Myers Briggs questionnaires](https://pdfcoffee.com/the-myers-test-pdf-free.html).
 
-### How the Myers Briggs Personality Test Works
-There are several indices for testing people's identities, but we focus our test on  questions from Myers Briggs parameters which are;
-- Introvert or Extrovert
-- Sensing or Intuitive
-- Judging or Perceiving
-- Thinking or Feeling
+### How does the Myers Briggs personality test work
+There are several indices for testing people's identities, but we focus our test on questions from Myers Briggs parameters which are;
+- Introvert or Extrovert.
+- Sensing or Intuitive.
+- Judging or Perceiving.
+- Thinking or Feeling.
 
 At the end of each of the four sections, we pick the highest value from each of the sections above to compute a personality identity type. The identity types are divided into 16. You can learn more about the types on the [specified resource](https://www.verywellmind.com/the-myers-briggs-type-indicator-2795583) website.
 
 ### Prerequisite
-- Python 3.0 and above
-- A text editor
-- [Personality test questions from Myers Briggs](https://pdfcoffee.com/the-myers-test-pdf-free.html)
+- Python 3.0 and above.
+- A text editor.
+- [Personality test questions from Myers Briggs](https://pdfcoffee.com/the-myers-test-pdf-free.html).
 
-### Building the App
-### Create a Python file
-The first step towards building the test app is to create a python file, we can call it personality.py
+### Building the app
+#### Create a Python file
+The first step towards building the test app is to create a python file, we can call it `personality.py`.
 
-### Import the python module sys
+#### Import the python module sys
 In this module, we would use the exit() function to terminate the first interactive option we want to give our users.
 
 ```python
 import sys
 ```
 
-### A function that displays the personality identity.
+#### A function that displays the personality identity
 We will use the function declared here to display our user's personality identity after the test.
 
 ```python
-
 def display(personality_type):
     print(f"Your personality type is -> {personality_type}")
 ```
 
-### A function that computes the personality test
+#### A function that computes the personality test
 This function will implement all our logic. So we have to store our test questions into a list.
 
 ```python
-
 def run():
     questions: list = [
         """
@@ -214,7 +211,7 @@ b.latitude, freedom
 ```
 ### The overview of the functions
 
-### The run function
+#### The run function
 In the run function, we set variables to keep track of users’ options, which helps us compute the personality identities as they enter them. The variables are meant to count the occurrence of A’s and B’s as answers, and then use that to compute the identity accordingly.
 
 ```python
@@ -235,7 +232,7 @@ for question in questions:
         count_of_b = 0
 ```
 
-Exception handling.
+#### Exception handling
 The code snippet below handles the problem of incorrect input from the user. We only want the user to enter A or B. If our expected letter is entered, we count its occurrence.
 
 ```python
@@ -285,7 +282,7 @@ else:
             personality_dichotomy = personality_dichotomy + 'P'
  ```
 
-### Quit the app with exit function
+#### Quit the app with exit function
 This is a separate function that allows the user to exit the application.
 The sys module here enables us to exit from the terminal if the user decides not to take the test.
 
@@ -295,11 +292,10 @@ def exit_application():
     sys.exit(0)
 ```
 
-### Homepage function
+#### Homepage function
 This function is designed to mimic a landing page on the web. We only accept two options (1 or 2). We also checked for wrong inputs using python exception handling.
 
 ```python
-
 def main():
        user_input = input("""
        Welcome to the Meyers Briggs Personality Test
@@ -326,12 +322,12 @@ if __name__ == "__main__":
 ### Conclusion
 At the end of this article, we should be able to implement the use of python lists together with functions and exception handling to build a console app that computes a personality identity.
 
-The link to this project can be found in [my GitHub repo](https://github.com/CaptainBKola/funTimeWithPython/blob/main/projects/myersbriggs.py)
+You can find the entire project [here](https://github.com/CaptainBKola/funTimeWithPython/blob/main/projects/myersbriggs.py).
 
 ### References
-[Myers briggs personality type indicators](https://www.verywellmind.com/the-myers-briggs-type-indicator-2795583)
+- [Myers Briggs personality type indicators](https://www.verywellmind.com/the-myers-briggs-type-indicator-2795583)
 
-[introduction to computer and python](https://deitel.com/wp-content/uploads/2019/11/intro-to-python-for-computer-science-and-data-science-table-of-contents.pdf)
+- [Introduction to computers and python](https://deitel.com/wp-content/uploads/2019/11/intro-to-python-for-computer-science-and-data-science-table-of-contents.pdf)
 
 ---
 Peer Review Contributions by: [Adrian Murage](/engineering-education/authors/adrian-murage/)
