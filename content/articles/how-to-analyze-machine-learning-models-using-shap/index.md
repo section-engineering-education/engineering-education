@@ -209,6 +209,7 @@ df.iloc[:,0:8]
 We use `iloc` to select from the `0` index of our dataset to the `8` index.
 
 The output is as shown below.
+
 ![Features](/engineering-education/how-to-analyze-machine-learning-models-using-shap/features.jpg)
 
 The image above shows all the `8` features added to our dataset. We now save the features into a variable called `Xfeatures`.
