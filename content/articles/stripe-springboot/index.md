@@ -1,3 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /stripe-springboot/
+title: Getting Started with Stripe in Spring Boot
+description: In this tutorial, the reader will learn how to integrate stripe into their application by creating a simple web application that collects card details and submits a payment to stripe.
+author: david-mbochi
+date: 2021-11-05T00:00:00-00:00
+topics: [API]
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/stripe-springboot/hero.jpg
+    alt: Getting Started with Stripe in Spring Boot Image
+---
+
 ### Getting Started with Stripe in Spring Boot
 Stripe is an online payment system almost similar to [Paypal](https://www.paypal.com/), and it enables transactions to be processed by leveraging credit cards provided by the customers when buying products online.
 
@@ -8,7 +24,7 @@ In this tutorial, the reader will learn how to integrate stripe into their appli
 - [Create a stripe account](#create-a-stripe-account)
 - [Project set up](#project-set-up)
 - [Set up Stripe](#set-up-stripe)
-- [Create a request DTO](#create-a-request-dto)
+- [Create a request DTO](#create-a-request-data-transfer-object)
 - [Create a PaymentIntent](#create-a-paymentintent)
 - [Create a model for the product](#create-a-model-for-the-product)
 - [Create payment and checkout pages](#create-payment-and-checkout-pages)
@@ -79,7 +95,7 @@ Spring Boot uses Jackson by default, a JSON marshaller, and there are edge cases
 </dependency>
 ```
 
-### Create a request DTO
+### Create a request Data Transfer Object
 This is a DTO that the browser will send to our server. Create a `CreatePayment` class inside a package named `dto` with fields `amount` and `featureRequest`. Generate getter and setter methods for the two fields.
 
 ```java
@@ -119,7 +135,7 @@ public class CreatePayment {
 `@Min()` - Used to restrict the value provided to a specific minimum value.
 `@Size` - provide the range of strings that the field can support by specifying the minimum and maximum values.
 
-### Create a `PaymentIntent`.
+### Create a `PaymentIntent`
 A `PaymentIntent` is an object used by stripe to record customers' information, track charge attempts, and change the state of payment from one stage to another. The following image shows how a `PaymentIntent` is created and tracks the payment from providing card details, attempting payment, and finalizing the payment.
 
 ![Payment intent image](/engineering-education/stripe-springboot/accept-a-payment.png)
@@ -157,7 +173,7 @@ public class PaymentController {
 }
 ```
 
-### Create a model for the product.
+### Create a model for the product
 Create a `CheckoutForm` class inside a `model` package with the fields `amount`, `featureRequest`, and `email`.Next, generate getter and setter methods for the fields. This class represents customer details for a particular payment and will be provided during the checkout process.
 
 ```java
@@ -204,7 +220,7 @@ public class CheckoutForm {
 
 `@Email` - indicates that this field should only accept a string with an email structure.
 
-### Create payment and checkout pages
+### Create Payment and Checkout pages
 First, create a file named `client.js` that we will use to process the request from the customer to the server and response from the server to the browser.When the user goes to the page, a payment intent is created, the payment intent calls stripe, informs the customer wants to pay and returns a secret key.
 
 Stripe has a javascript library called the javascript elements, and when you call `elements.create()` on a specific `div`, then stripe will insert the component into the div.
@@ -489,7 +505,7 @@ Create a file named `global.css` that we will use to colour our payment and chec
 }
 ```
 
-### Creating a controller for the payment
+### Creating a Controller for the Payment
 - Create a `WebController` class inside the `controller` package and inject the stripe public key using `@Value` annotation.
 - Add a method that returns the payment form when the customer issues a request to the `/` endpoint.
 - Create another method to return the checkout page after entering the payment details and hitting the submit button.
@@ -535,7 +551,7 @@ public class WebController {
     }
 }
 ```
-### Testing the application
+### Testing the Application
 Stripe provides several test numbers that we can use to test the payment, and in this tutorial, we will make use of `4242 4242 4242 4242`, which is a Visa card number.Provide any `3` digits for the CVC and any future date for the date field such that when we run the application and navigate to `localhost:8080`, the following payment page is displayed to the browser.
 
 ![payment form](/engineering-education/stripe-springboot/payment-form.png)
