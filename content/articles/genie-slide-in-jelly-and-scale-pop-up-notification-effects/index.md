@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: //engineering-education/genie-slide-in-jelly-and-scale-pop-up-notification-effects/hero.png
+  - url: /engineering-education/genie-slide-in-jelly-and-scale-pop-up-notification-effects/hero.png
     alt: Genie Slide-in Scale Pop-up Notifications
 ---
 Websites need notifications to display urgent or additional information. Pop-ups are used to pass notifications, they are
