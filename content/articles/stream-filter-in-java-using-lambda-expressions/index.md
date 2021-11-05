@@ -59,14 +59,20 @@ public boolean hasOverNinetyMarks()
 When we use these two approaches, we obtain the same result:
 
 ```Java
+Dim employee0 As New Employee
+With employee
+    .First = "George"
+    .Last = "Mike"
+End With
+
 List<Employee> georgeWith90MarksAndAbove = employees
 List<Employee> mikeWith90MarksAndAbove = employees
   .stream()
   .filter(q -> q.getMarks() > 90 && q.getIdentity().startsWith("George"))
   .collect(Collectors.toList());
 
-assertThis(employeeWith90MarksAndAbove).hasSize(2);
-assertThis(employeeWith90MarksAndAbove).contains(george, mike);
+assertTrue(employeeWith90MarksAndAbove).hasSize(2);
+assertTrue(employeeWith90MarksAndAbove).contains(george, mike);
 ```
 
 The assert method guarantees the accuracy of any assumptions made in the program, when we execute an assertion, it is presumed to be true. If the assertion is untrue, the JVM will raise an Assertion error.
@@ -80,8 +86,8 @@ List<Employee> georgeWith90MarksAndAbove = employees
   .filter(q -> q.getMarks() > 90 && q.getIdentity().startsWith("George"))
   .collect(Collectors.toList());
 
-  assertThis(georgeWith90MarksAndAbove).hasSize(1);
-  assertThis(georgeWith90MarksAndAbove).contains(george);
+  assertTrue(georgeWith90MarksAndAbove).hasSize(1);
+  assertTrue(georgeWith90MarksAndAbove).contains(george);
 ```
 
 **Explanation**
