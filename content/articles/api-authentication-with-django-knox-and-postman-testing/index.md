@@ -1,8 +1,22 @@
-![hero](/engineering-education/api-authentication-with-django-knox-and-postman-testing/hero.png)
-
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/api-authentication-with-django-knox-and-postman-testing/
+title: API Authentication with Django Knox and Postman Testing
+description: This tutorial will guide you on how to set up and integrate API authentication with Django Knox.
+author: arafat-olayiwola
+date: 2021-11-05T00:00:00-11:00
+topics: [API]
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/api-authentication-with-django-knox-and-postman-testing/hero.png
+    alt: API Authentication with Django Knox and Postman Testing
+---
 #### Introduction
 
 Django-Knox is a framework that makes the authentication of the API endpoints built with the Django Rest Framework easier. However, Knox is also a token-based authentication like JSON Web Token (JWT) auth. Django-Knox comes with well-detailed documentation for easy implementation.
+
 #### Keys Take Away
 
 In this tutorial,  the following are the subjects to be covered:
