@@ -51,7 +51,7 @@ The tutorial assumes you have substantial knowledge of the following areas in An
 
 - Understand how to [create an android application](https://www.youtube.com/watch?v=4NDwINudmDk&list=PLgCYzUzKIBE8TUoCyjomGFqzTFcJ05OaC) using Android Studio.
 - Be fluent with Android HTTP parsing libraries such as [Retrofit](https://square.github.io/retrofit/) and [Volley](https://developer.android.com/training/volley/index.html). We will use the Volley dependency to make Internet calls from remote data. 
-- Here is a [guide](/making-API-requests-using-volley-android/) that will help you understand Volley in detail.
+- Here is a [guide](/engineering-education/making-API-requests-using-volley-android/) that will help you understand Volley in detail.
 - Understand how to implement and use Android [RecyclerView](https://developer.android.com/guide/topics/ui/layout/recyclerview) layout.
 
 If you are not familiar, you can follow the links provided to learn more.
@@ -73,7 +73,7 @@ implementation 'com.facebook.shimmer:shimmer:0.5.0'
 implementation 'com.android.volley:volley:1.1.0'
 ```
 
-- Note that the data will contain image URLs. To load them into the RecyclerView, you need a library to parse the images' remote URL paths. In this case, I chose to use the [Picasso image-loading library](/using-Picasso-in-android/). It is a powerful library for loading and caching remote images.
+- Note that the data will contain image URLs. To load them into the RecyclerView, you need a library to parse the images' remote URL paths. In this case, I chose to use the [Picasso image-loading library](/engineering-education/using-Picasso-in-android/). It is a powerful library for loading and caching remote images.
 
 ```java
 implementation 'com.squareup.picasso:picasso:2.71828'

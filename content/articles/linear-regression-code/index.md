@@ -16,11 +16,11 @@ images:
 ---
 In the previous article, we looked at the theory behind linear regression. In this article, we will implement the linear regression algorithm from scratch and understand the various steps involved. 
 <!--more-->
-In my earlier [article](/linear-regression-introduction/), I used the in-built function in scikit-learn to predict the houses' prices. Towards the end of the article, we will compare the two approaches and reason for the outputs.
+In my earlier [article](/engineering-education/linear-regression-introduction/), I used the in-built function in scikit-learn to predict the houses' prices. Towards the end of the article, we will compare the two approaches and reason for the outputs.
 
 ### Prerequisites
-- [Introduction to Machine Learning ](/supervised-learning-algorithms/)
-- [Feature Engineering in Machine Learning](/feature-engineering-in-machine-learning/)
+- [Introduction to Machine Learning ](/engineering-education/supervised-learning-algorithms/)
+- [Feature Engineering in Machine Learning](/engineering-education/feature-engineering-in-machine-learning/)
 
 ### Introduction
 Linear regression is a type of supervised learning algorithm. It is used in many applications, such as in the financial industry. First, let's understand the various functions needed to implement a linear regression class, to begin with the coding aspect. 
@@ -151,7 +151,7 @@ Test Score:  0.6504432415059116
 ```
 
 ### Comparison with scikit learn
-The training and test accuracy obtained using the [library](/house-price-prediction/) stand at 93% and 79.29%, respectively. We conclude that the data requires some non-linearity to be introduced, and polynomial regression would probably work much better than linear regression. 
+The training and test accuracy obtained using the [library](/engineering-education/house-price-prediction/) stand at 93% and 79.29%, respectively. We conclude that the data requires some non-linearity to be introduced, and polynomial regression would probably work much better than linear regression. 
 
 ### Conclusion
 In this article, we implemented the linear regression from scratch using numpy. This should give you an idea about converting mathematical equations into Pythonic code. Implementing machine learning algorithms from scratch enhances one's understanding of the subject. 
