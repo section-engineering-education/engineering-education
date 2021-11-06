@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /snorkel-python-for-labeling-datasets-programmatically/
 title: Snorkel Python for Labelling Datasets Programmatically
-description: 
+description: Snorkel is a Python library that is used for data labelling. In this article, we will build an application that labels sentences as a question or not a question using Snorkel.
 author: charles-kariuki
 date: 2021-10-19T00:00:00-18:00
 topics: [Languages]
