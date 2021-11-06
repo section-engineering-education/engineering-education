@@ -306,14 +306,14 @@ In the *main.yml* file you just created, paste the code below
 ```yaml
 name: test_project  
 on:
-  # Triggers the workflow on when there is a push or pull request on the main branch
+  # activates the workflow when there is a push or pull request on the main branch
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
 jobs:  
   test_project: 
-# The type of runner that the job will run on
+# the operating system your job will run on
      runs-on: ubuntu-latest  
      steps:  
        - uses: actions/checkout@v2  
