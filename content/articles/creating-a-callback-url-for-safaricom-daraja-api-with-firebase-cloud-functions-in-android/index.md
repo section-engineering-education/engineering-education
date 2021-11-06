@@ -21,16 +21,15 @@ As an Android developer, having a callback URL means that you need to have a RES
 - [References](#references)
 
 ### Prerequisites
-To complete this lesson, you must have the following software installed on your computer: 
+To complete this tutorial, you must have the following software installed on your computer: 
 - [Android Studio](https://developer.android.com/studio/index.html).
 - Solid understanding of how to create and run Android apps.
 - The [Kotlin](https://kotlinlang.org/) programming language's fundamentals.
+- Basic knowledge of Kotlin Coroutines.
 - Understanding of Cloud Functions: In this post, [Creating A Serverless Function](https://www.section.io/engineering-education/serverless-api-firebase/), you may learn how to develop a serverless function. 
 
 ### Daraja API Callback URL
 A callback is an asynchronous API request that comes from the API server and is sent to the client in response to one of the client's previous requests. When using Daraja API, Safaricom requires you to pass a URL that they will return information of the processed transactions from your App.
-
-Less talk, let's get our hands dirty
 
 ### Step 1 - Create a project on Firebase Console
 First, create a project on Firebase and link it to your Android app. After a successful linking, make sure your project is in the `Blaze` Plan so that we can use Cloud Functions.
@@ -83,7 +82,50 @@ In your Android Studio, Switch to project View and open the `functions` folder i
 
 `npm install express body-parser -S`
 
-Once you've installed the body-parser, you're ready to go. In 'index.js,' we need to write the Cloud Function code, then erase everything and paste the following code: 
+Once you've installed the body-parser, you're ready to go. In 'index.js,' we need to write the Cloud Function code, erase everything and paste the following code:
+
+```Javascript
+let functions = require('firebase-functions');
+let admin = require('firebase-admin');
+
+admin.initializeApp(functions.config().firebase);
+const express = require('express');
+const body_parser = require('body-parser');
+
+const app = express();
+app.use(body_parser.json());
+app.disable('x-powered-by');
+
+
+app.post('/CallbackUrl', (request, result) => {
+    let response = { "ResultCode": 0, "ResultDesc": "Success" }
+
+    result.status(200).json(response);
+
+    let requestBody = request.body;
+    let myPayload = JSON.stringify(requestBody)
+
+    // Logs successfull function calls
+    console.log(myPayload)
+
+    let topicId =  body.Body.stkCallback.CheckoutRequestID
+
+      const sentPayload = {
+          data: {
+            myPayload,
+            },
+            topicId : id
+        };
+
+         return admin.messaging().send(sentPayload).catch(error=>{
+         
+            // Logs Failed function calls    
+         console.error(error)
+         })
+})
+
+exports.api = functions.https.onRequest(app);
+```
 
 It's time to deploy the function to Firebase after writing the code.
 To deploy, use the instructions below.
@@ -94,7 +136,7 @@ Once the deployment is complete, you should see something like this:
 
 [!Deployed](section-engineering/creating-a-callback-url-for-safaricom-daraja-api-with-firebase-cloud-functions-in-android/deployed.png)
 
-If you go to your Firebase Console, you will see the deployed function.
+When you open your Firebase Console, you will be able to see the deployed function.
 
 ### Step 4 - Creating an App in the Safaricom Developers Portal
 In this step, you'll link your app with Safaricom Daraja API - Lipa Na Mpesa
@@ -199,8 +241,7 @@ data class Transaction(
 ```
 
 ### Step 7 - Creating M-Pesa Interface
-In this step, we'll define an interface that will contain two methods that will be called when a transaction happens,
-The first method will be called when a transaction is successful, while the second one will be called when a transaction fails due to different reasons such as insufficient balance.
+In this step, we'll define an interface with two methods. The first method will be called when a transaction is successful, while the second one will be called when a transaction fails due to different reasons such as insufficient balance.
 
 ```Kotlin
 interface MpesaListener {
@@ -212,6 +253,70 @@ interface MpesaListener {
 
 ### Step 8 - Firebase Messaging Service
 In this step, we will create a Firebase Messaging Service class that will do most of the app logic of receiving the response of the API.
+```Kotlin
+class MessagingService : FirebaseMessagingService() {
+
+    override fun onNewToken(p0: String) {
+        super.onNewToken(p0)
+    }
+
+    override fun onMessageReceived(remoteMessage: RemoteMessage) {
+        super.onMessageReceived(remoteMessage)
+
+        if (remoteMessage.data.isNotEmpty()) {
+            val myPayload = remoteMessage.data["payload"]
+            val gson = Gson()
+
+            val mpesaResponse: Transaction = gson.fromJson(myPayload, Transaction::class.java)
+
+            val topicID = mpesaResponse.body.stkCallback.checkoutRequestID
+
+            if (mpesaResponse.body.stkCallback.resultCode != 0) {
+                val cause = mpesaResponse.body.stkCallback.resultDesc
+                MainActivity.mpesaListener.sendingFailed(cause)
+
+            } else {
+                val infoList: List<Body.StkCallback.CallbackMetadata.Item> =
+                    mpesaResponse.body.stkCallback.callbackMetadata.item
+
+                var dateOfTransaction = ""
+                var amountTransacted = ""
+                var receiptNo = ""
+                var phoneNumber = ""
+
+                infoList.forEach { transaction ->
+                    if (transaction.name == "MpesaReceiptNumber") {
+                        receiptNo = transaction.value
+                    }
+                    if (transaction.name == "TransactionDate") {
+                        dateOfTransaction = transaction.value
+                    }
+                    if (transaction.name == "PhoneNumber") {
+                        phoneNumber = transaction.value
+                    }
+                    if (transaction.name == "Amount") {
+                        amountTransacted = transaction.value
+                    }
+                }
+                MainActivity.mpesaListener.sendingSuccessful(
+                    amountTransacted,
+                    phoneNumber,
+                    extractDate(dateOfTransaction),
+                    receiptNo
+                )
+            }
+
+            FirebaseMessaging.getInstance().unsubscribeFromTopic(topicID)
+        }
+    }
+
+    private fun extractDate(date: String): String {
+        return "${date.subSequence(6, 8)}${date.subSequence(4, 6)} ${
+            date.subSequence(0, 4)
+        } at ${date.subSequence(8, 10)}:${date.subSequence(10, 12)}:${date.subSequence(12, 14)}"
+    }
+}
+```
 
 In your manifest, make sure you have included the service that we have created, go to your manifest and paste the following lines of code.
 
@@ -230,7 +335,7 @@ In your manifest, make sure you have included the service that we have created, 
 ```
 
 ### Step 9 - Write MainActivity Code
-In this step, we will write codes that will make use of the [android-mpesa-api](https://github.com/jumaallan/android-mpesa-api) to integrate payment into our app.
+In this step, we will write code that will make use of the [android-mpesa-api](https://github.com/jumaallan/android-mpesa-api) to integrate payment into our app.
 
 #### Initializing the Daraja API
 Here, replace the SECRET_KEY and the CONSUMER_SECRET_KEY with the ones that you were given when you created an App in the Safaricom Developers portal.
@@ -284,7 +389,7 @@ Append the word `/CallbackUrl` to the end of the URL, so that the end URL will b
 
 This will be our callback URL so that Safaricom can send us the Response to Transactions that have been initiated. Go and replace where we had written 'MY_CALLBACK_URL' with this URL.
 
-### Attaching the FirebaseMessaging service when the transaction request is successful.
+### Attaching FirebaseMessaging service
 In this step,  inside the `onResult` method, we instantiate the `FirebaseMessaging` and subscribe to topics with the `CheckoutRequestID` of the transaction that has been initiated.
 
 ```Kotlin
