@@ -6,7 +6,7 @@ url: /stripe-springboot/
 title: Getting Started with Stripe in Spring Boot
 description: In this tutorial, the reader will learn how to integrate stripe into their application by creating a simple web application that collects card details and submits a payment to stripe.
 author: david-mbochi
-date: 2021-11-05T00:00:00-00:00
+date: 2021-11-06T00:00:00-00:00
 topics: [API]
 excerpt_separator: <!--more-->
 images:
@@ -565,6 +565,7 @@ When you press the pay now button, the payment will be processed successfully, a
 ![stripe dashboard](/engineering-education/stripe-springboot/stripe-dashboard.png)
 
 ### Conclusion
-In this tutorial, we have learned how to integrate stripe in a Spring Boot application by leveraging stripe payment intent that ensures at least one payment is made for each transaction.
+In this tutorial, we have learned how to integrate stripe in a Spring Boot application by leveraging stripe payment intent that ensures at least one payment is made for each transaction. The following tutorial will help the reader learn how to store the details returned by stripe to our database by creating a webhook containing the details.
 
-The following tutorial will help the reader learn how to store the details returned by stripe to our database by creating a webhook containing the details.
+---
+Peer Review Contributions by: [Jerim Kaura](/engineering-education/authors/jerim-kaura/)
