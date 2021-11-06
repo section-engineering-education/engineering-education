@@ -16,12 +16,10 @@ images:
 ---
 Next.js is a React-based framework that enables developers to create production-ready web applications with ease. It features a variety of predefined functionalities that allow developers to quickly scale applications.
 <!--more-->
-Next.js is a hybrid framework. This means it can be used for both client-side and server-side Rendering. 
-
-It can also be utilized in Static Generation functions that you can you use to fetch data and pre-render at build time. This produces fast web pages.
+Next.js is a hybrid framework. This means it can be used for both client-side and server-side rendering. It can also be utilized in Static Generation functions that you can you use to fetch data and pre-render at build time. This produces fast web pages.
 
 ### Prerequisites
-To follow along with this article, you need:
+To follow along with this article, you'll need:
 - [Node.js](https://nodejs.org/en/) installed on your computer.
 - Some basic knowledge of HTML, CSS, and JavaScript fundamentals.
 - Some prior knowledge of working with [React](https://reactjs.org/), [Next.js](https://nextjs.org/), and [TypeScript](https://www.typescriptlang.org/).
@@ -31,7 +29,7 @@ We will build this application using TypeScript. Next.js is bundled with TypeScr
 
 TypeScript comes with additional features that make your code minimalistic. These features include static typing, type notation, types checking, etc. Check this guide to [compare and contrast TypeScript and JavaScript](/engineering-education/javascript-vs-typescript/).
 
-To use TypeScript, you need to install the TypeScript JavaScript library. This will make TypeScript accessible to our project. 
+To use TypeScript, you'll need to install the TypeScript JavaScript library. This will make TypeScript accessible to our project. 
 
 With Next.js, you just need to add a `--ts` flag to the `create-next-app` command. For example, running `npx create-next-app@latest --ts next-js-firebase-app` will automatically set the default TypeScript environment. 
 
@@ -46,10 +44,10 @@ First, go to the [Firebase console](https://console.firebase.google.com/) and *A
 
 Then `Configure Google Analytics` and click continue.
 
-Finally, *Create a project* and give it some time to complete the process. When the project is ready, click *Continue*.
+*Create a project* and give it some time to complete the process. When the project is ready, click *Continue*.
 
 ### Adding a Firebase app
-The next step is to create a Firebase app. We implement this functionality using the code below:
+The next step is to create a Firebase app. We can implement this functionality using the code below:
 
 On the newly created project page, click the web icon (`</>`).
 
@@ -74,7 +72,9 @@ Auto-populate the document id field by clicking *Auto-ID* and add a *title* fiel
 
 Click *Add field*, add a *description* field as a string, and give it a value of *Cook a delicious dinner*.
 
-Add a new field *done*, which is a Boolean, and give it a value of *false*. Your form should be similar to:
+Add a new field *done*, which is a Boolean, and give it a value of *false*. 
+
+Your form should be similar to:
 
 ![initial-collection-setup-form](/engineering-education/introduction-to-nextjs-with-typescript-and-firebase-database/initial-collection-setup-form.png)
 
@@ -89,7 +89,7 @@ To set up our Next.js application, we will use [create-next-app](https://nextjs.
 
 To set it up, we will follow these steps:
 
-First, create a folder where you want the project to reside.
+Create a folder where you want the project to reside.
 
 ```bash
 cd ./your-project-folder-path
@@ -138,7 +138,7 @@ This simply involves collecting the Firebase credentials that are specific to ou
 
 To initialize it, we will use the following steps:
 
-First, create an `env.local` file in your project root folder. This will host the environmental variables.
+Create an `env.local` file in your project root folder. This will host the environmental variables.
 
 In your Firebase dashboard, navigate to the *project settings*. Scroll down to *your apps* section and then to the *SDK setup and configuration*. 
 
@@ -456,13 +456,13 @@ Add the following code just below the `index.tsx` `title`, i.e., `<h1className={
 </div> 
 ```
 
-From above, we are displaying a `loading` text that checks whether we have todos or not. If we don't have, we will display a message; otherwise, existing todos will be mapped and displayed.
+Above we are displaying a `loading` text that checks whether we have todos or not. If we don't have any, we will display a message; otherwise, existing todos will be mapped and displayed.
 
 In this case, since we added a todo when setting up the Firestore database, you should now be able to see it from the homepage. 
 
-![querying-todos](/engineering-education/a-beginner-guide-to-full-stack-nextjs-with-typescript-and-firebase-database/querying-todos.png)
+![querying-todos](/engineering-education/introduction-to-nextjs-with-typescript-and-firebase-database/querying-todos.png)
 
-### Adding a Document to Firestore
+### Adding a document to Firestore
 To add a document to Firestore, we need to create a form to input a new todo `title`, and `description`. 
 
 In the `pages` folder, create a file `add-todo.tsx` setup and add the following code:
@@ -538,7 +538,9 @@ export default AddTodo;
 
 We are setting a basic form with `title` and `description` fields. We also have a `handleSubmit` function that gets called when the form is submitted. 
 
-For now, it just checks for `null` values. Let's now handle data to our `Collection`. Start by importing the necessities:
+For now, it just checks for `null` values. Let's now handle data to our `Collection`. 
+
+Start by importing the necessities:
 
 ```ts
 import { doc } from '@firebase/firestore'; // for creating a pointer to our Document
@@ -575,24 +577,28 @@ const addTodo = async () => {
 };
 ```
 
-In the above code sample, we are obtaining a timestamp as the `Document id`. We are saving the data to the Collection. 
+In the code sample above, we are obtaining a timestamp as the `Document id`. We are saving the data to the Collection. 
 
-If there is an error, we will catch it. Otherwise, we are setting the message. From your browser, open `http://localhost:3000/add-todo`. Your page should be similar to:
+If there is an error, we will catch it. Otherwise, we are setting the message. From your browser, open `http://localhost:3000/add-todo`. 
+
+Your page should be similar to:
 
 ![add-todo-form](/engineering-education/introduction-to-nextjs-with-typescript-and-firebase-database/add-todo-form.png)
 
 Fill in the form fields and `submit`. When the form is successfully submitted, you will get a success message with a link to the home page, as shown below:
 
-If you get an error, revisit the above steps and see what you may have missed:
+If you get an error, revisit the steps above and see what you may have missed:
 
 ![successful-add-todo-form](/engineering-education/introduction-to-nextjs-with-typescript-and-firebase-database/successful-add-todo-form.png)
 
 In the next step, we will work on updating a `document`.
 
-### Updating a Document in Firestore
+### Updating a document in Firestore
 In our scenario, updating a document will involve setting a `todo` object. 
 
-To do this, navigate to `pages/index.tsx` and import `updateDoc`. Next, create a `updateTodo()` function, as shown below:
+To do this, navigate to `pages/index.tsx` and import `updateDoc`. 
+
+Next, create a `updateTodo()` function, as shown below:
 
 ```ts
 import {updateDoc} from "@firebase/firestore";
@@ -651,6 +657,8 @@ In this tutorial, we have learned how to handle CRUD operations in a Next.js app
 This functionality is implemented using a Firebase database which allows us to handle basic backend requests.
 
 You can access all this project's code in this [GitHub repository](https://github.com/Rose-stack/full-stack-nextjs-with-typescript-and-firebase-database).
+
+Happy coding!
 
 ### Further readings
 - [Next.js Firebase full course](https://fireship.io/courses/react-next-firebase/)
