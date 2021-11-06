@@ -6,7 +6,7 @@ url: /introduction-to-nextjs-with-typescript-and-firebase-database/
 title: Introduction to Next.js, TypeScript, and Firebase Database
 description: This article will provide a step-by-step guide on how to create a web application using Next.js, TypeScript, and the Firebase database.
 author: rose-waitherero 
-date: 2021-11-06T00:00:00-08:40
+date: 2021-11-06T00:00:00-15:40
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,10 +14,8 @@ images:
   - url: /engineering-education/introduction-to-nextjs-with-typescript-and-firebase-database/hero.png
     alt: Introduction Next.js and Firebase Hero Image
 ---
-Next.js is a React-based framework that enables developers to create production-ready web applications with ease. 
+Next.js is a React-based framework that enables developers to create production-ready web applications with ease. It features a variety of predefined functionalities that allow developers to quickly scale applications.
 <!--more-->
-It features a variety of predefined functionalities that allow developers to quickly scale applications.
-
 Next.js is a hybrid framework. This means it can be used for both client-side and server-side Rendering. 
 
 It can also be utilized in Static Generation functions that you can you use to fetch data and pre-render at build time. This produces fast web pages.
