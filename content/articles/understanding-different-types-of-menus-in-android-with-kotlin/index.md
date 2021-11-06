@@ -1,5 +1,5 @@
 ### [Android] Understanding Different Types of Menus in Android with Kotlin.
-#### What is a menu as used in android
+#### Introduction
 Menus are fundamental user interface elements that are frequently used to store actions that would otherwise be buried.
 These hidden commands could be accessible by:
 - Click a button.
@@ -11,7 +11,7 @@ These hidden commands could be accessible by:
 #### Prerequisites
 - Have android studio installed
 - Have basic knowledge of kotlin programming language.
-- Have a basic knowledge of android.
+- Have a basic knowledge of Android.
 
 #### Types of Menus Used in Android
 Based on the different contexts and content of the application, Different menu types are explained which are used to provide the best user experience. Here are the types of menus.
@@ -30,6 +30,34 @@ The following are some examples of choices menus:
 
 #### Creating options menu
 On the resource, the folder creates a menu directory and within the directory create an options menu file the includes the following implementation to build your menu items.
+```XML
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <item
+            android:id="@+id/settings"
+            android:icon="@drawable/ic_baseline_settings_24"
+            android:title="Settings"
+            app:showAsAction="always" />
+        <item
+            android:id="@+id/share"
+            android:title="Share"
+            />
+        <item
+            android:id="@+id/history"
+            android:title="History"
+            />
+        <item
+            android:id="@+id/help"
+            android:title="Help"
+            />
+        <item
+            android:id="@+id/logout"
+            android:title="logout"
+            />
+
+    </menu>
+```
 
 what is the meaning of the following
 
@@ -39,13 +67,48 @@ what is the meaning of the following
 
 - `<group>` Group provides the capability to categorize menu items that are said to be sharing the same properties example active state and visibility.
 
+
 #### Keeping track of what happens when a user selects an option from a menu.
 
 To handle the user's actions on the selected menus there are some methods used to make it a success.
 The below code is used to create the options menu and link it with the resource file created earlier.
-
+```kotlin
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.options_menus, menu)
+        return true
+    }
+```
 So the below code now handles each element within the menu and the operations to be performed when user clicks on the menu item.
-
+```kotlin
+   //handling click events in an options menu items clicks
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.settings -> {
+                Toast.makeText(this, "This is settings", Toast.LENGTH_SHORT).show()
+                return true
+            }
+            R.id.share -> {
+                Toast.makeText(this, "This is share", Toast.LENGTH_SHORT).show()
+                return true
+            }
+            R.id.history -> {
+                Toast.makeText(this, "This is history", Toast.LENGTH_SHORT).show()
+                return true
+            }
+            R.id.help -> {
+                Toast.makeText(this, "This is is help", Toast.LENGTH_SHORT).show()
+                return true
+            }
+            R.id.logout -> {
+                Toast.makeText(this, "logged out", Toast.LENGTH_SHORT).show()
+                return true
+            }
+            else -> {
+                return super.onOptionsItemSelected(item)
+            }
+        }
+    }
+```
 2. Contextual Menus
 
 Contextual menus are always utilized when actions connected to a certain item or context frame are presented on the current screen.
@@ -58,6 +121,18 @@ When one long press (press and hold) on an item on the current screen, this menu
 
 #### Taking care of the click listener for floating contextual menus
 Just as options menus floating contextual menus click listeners also needs to be handled to provide a relevant and appropriate action required by the user this click listener is always handled in the following method after the creation of the menu within the below method
+```kotlin
+ //Float contextual menu
+    override fun onCreateContextMenu(
+        menu: ContextMenu?,
+        v: View?,
+        menuInfo: ContextMenu.ContextMenuInfo?
+    ) {
+        super.onCreateContextMenu(menu, v, menuInfo)
+        menuInflater.inflate(R.menu.float_contextual_menu, menu)
+    }
+
+```
 
  A method which handles the floating contextual menu click listener
 ```kotlin
@@ -89,16 +164,44 @@ This is a type of contextual menu that is majorly used to display the operations
  Several methods are often used to manipulate the contextual action mode menu. The methods are explained below.
 
  The first method is used to create the contextual action mode menu.That is the below implementation
- 
+ ```kotlin
+ private val mActionCallback = object : ActionMode.Callback {
+        override fun onCreateActionMode(mode: ActionMode, menu: Menu): Boolean {
+            menuInflater.inflate(R.menu.actionmode_contextual_menu, menu)
+            return true
+        }
+ ```
 To prepare the contextual action mode menu the below method is always appropriate to be used to perform that action.
-
+```kotlin
+  override fun onPrepareActionMode(mode: ActionMode, menu: Menu): Boolean {
+            return false
+        }
+```
 There is also a method that is used to update the action mode menu and even update the operations when required.
 ```kotlin
  override fun onDestroyActionMode(mode: ActionMode) {
             //perform any update you will require
         }
 ```
-To handle the click listener of the action mode and implentent the required operation on each menu item the below code explains how it is implemented.
+To handle the click listener of the action mode and implement the required operation on each menu item the below code explains how it is implemented.
+```kotlin
+override fun onActionItemClicked(mode: ActionMode, item: MenuItem): Boolean {
+            return when (item.itemId) {
+                R.id.name -> {
+                    Toast.makeText(this@MainActivity, "Name selected", Toast.LENGTH_SHORT).show()
+                    mode.finish()
+                    return true
+                }
+                R.id.description -> {
+                    Toast.makeText(this@MainActivity, "This is description", Toast.LENGTH_SHORT)
+                        .show()
+                    mode.finish()
+                    return true
+                }
+                else -> false
+            }
+        }
+```
 
 #### Difference between contextual action mode menu and floating contextual menu
 - Contextual action mode shows the action and operation bar at the top of the screen that affects the selected item.
@@ -252,10 +355,21 @@ This is accomplished on the choices menu by placing an icon on the menu item to 
             android:title="Settings"
             app:showAsAction="always" />
 ```
+### The types of menus explained above
+
+#### Options menu
+![demo](/engineering-education/understanding-different-types-of-menus-in-android-with-kotlin/options menu.png)
+#### popup menu
+![demo](/engineering-education/understanding-different-types-of-menus-in-android-with-kotlin/popup menu.png)
+#### Action mode menu
+![demo](/engineering-education/understanding-different-types-of-menus-in-android-with-kotlin/action mode.png)
+#### Checkable menu
+![demo](/engineering-education/understanding-different-types-of-menus-in-android-with-kotlin/checkable.png)
+#### Floating contextual menus
+![demo](/engineering-education/understanding-different-types-of-menus-in-android-with-kotlin/floating contextual.png)
+
 ### Conclusion
 To wrap up the entire content covered in this article, we have learned what is menus as used in android, The different types of menus, the difference between menu types and design guidelines together with the best practices when handling menus, and get the full implementation on [github](https://github.com/benta-odek/MenusDemo.git).
-
-Let's all move from HELLO WORLD to CHANGING THE WORLD!!
 
 ### Reference
 Don't lock the potential to explore more on [menus](https://developer.android.com/guide/topics/ui/menus).
