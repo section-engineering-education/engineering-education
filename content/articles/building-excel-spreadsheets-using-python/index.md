@@ -167,7 +167,7 @@ your_workbook2.save(filename='Test.xlsx')
 
 Conditional formatting differs from cell formatting because it allows you to highlight specific cells based on a condition. This draws your attention to certain cells and makes getting insights easy.
 
-I'll import the ColorScaleRule to start the color scale in Excel.
+I'll import the `ColorScaleRule()` to start the color scale in Excel.
 
 Color scales are visual guides that help in understanding data distribution. The darker and lighter shade of the color represents values at the extreme end. 
 
