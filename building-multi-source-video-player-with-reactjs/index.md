@@ -12,13 +12,13 @@ Before we begin the tutorial, let's have a quick overview of React.js. React.js 
 The first step in every `React` development is the creation of a `react application`. This step makes available a clean slate application with all the default app dependencies installed. To create the `react application`, open the `command terminal` on your local computer and run the command below:
 
 ```bash
-npx create-react-app Video-player
+  npx create-react-app Video-player
 ```
 
 Alternatively, for yarn users:
 
 ```bash
-yarn create-react-app Video player
+  yarn create-react-app Video player
 ```
 
 The command above will create a new `react app`, and also provide a boilerplate that will accommodate subsequent components and code snippets.
@@ -36,21 +36,21 @@ To simplify the task of building a multi-source video player, we will breakdown 
 In this step, we will outline and install the dependencies required to create our application. They include the following:
 
 ```Json
-"deepmerge": "^4.0.0",
-"load-script": "^1.0.0",
-"memoize-one": "^5.1.1",
-"prop-types": "^15.7.2",
-"react-fast-compare": "^3.0.1"
+  "deepmerge": "^4.0.0",
+  "load-script": "^1.0.0",
+  "memoize-one": "^5.1.1",
+  "prop-types": "^15.7.2",
+  "react-fast-compare": "^3.0.1"
 ```
 
 To install the above-listed dependencies, we open up the `command terminal` and run the command below:
 
 ```bash
-npm install
+  npm install
 ```
 Or
 ```bash
-yarn install
+  yarn install
 ```
 
 #### Step 2: Creating the Video player component
@@ -62,124 +62,124 @@ import React from 'react'
 
 class Player extends React.Component {
 static viewName = 'Player'
-buffered = false
-playerReady = false
-videoPlaying = false // for bugs prevention
-loadon_Ready = null
-videoLoading = true // to ease loading and URL switching
-videoStart = true
-timeSeek = null
-callDuration = false
+  buffered = false
+  playerReady = false
+  videoPlaying = false // for bugs prevention
+  loadon_Ready = null
+  videoLoading = true // to ease loading and URL switching
+  videoStart = true
+  timeSeek = null
+  callDuration = false
 
 componentDidMount (props) {
-this.buffered = true // to load video when ready
+  this.buffered = true // to load video when ready
 }
 componentDidUpdate (prevProps) {
 // if no player is available, the component will do nothing
-if (!this.player) {
-return null
+  if (!this.player) {
+    return null
 }
 const { url, muted, playing, playbackRate,volume, pip, loop, activePlayer } = this.props
-this.callDuration = false
-this.videoStart = true
-this.videoLoading = true
-this.player.load(url, this.playerReady)
+  this.callDuration = false
+  this.videoStart = true
+  this.videoLoading = true
+  this.player.load(url, this.playerReady)
 },
 }
 if ( playing && !this.videoPlaying && !prevProps.playing  ) {
-this.player.play()
+  this.player.play()
 }
 if ( !playing && this.videoPlaying && prevProps.playing ) {
-this.player.pause()
+  this.player.pause()
 }
 if ( volume !== null && prevProps.volume !== volume ) {
-this.player.setVolume(volume)
+  this.player.setVolume(volume)
 }
 if (prevProps.muted !== muted) {
-if (muted == true) {
-this.player.mute()
-} else {
-this.player.unmute()
-if (volume !== null) {
-setTimeout(() => this.player.setVolume(volume))
+  if (muted == true) {
+    this.player.mute()
+    } else {
+    this.player.unmute()
+  if (volume !== null) {
+    setTimeout(() => this.player.setVolume(volume))
 }
 }
 }
 handlePlayerMount = player => {
-this.player = player
-this.player.load(this.props.url)
-this.progress()
+  this.player = player
+  this.player.load(this.props.url)
+  this.progress()
 }
 getDuration () {
-if (!this.playerReady) return null
-return this.player.getDuration()
+  if (!this.playerReady) return null
+    return this.player.getDuration()
 }
 readyHandler = () => {
-if (!this.buffered) return
-this.videoLoading = false
-this.playerReady = true
+  if (!this.buffered) return
+    this.videoLoading = false
+    this.playerReady = true
 const { playing, muted, volume, on_Ready} = this.props
-on_Ready()
-if (  volume !== null && !muted) {
-this.player.setVolume(volume)
+  on_Ready()
+  if (  volume !== null && !muted) {
+    this.player.setVolume(volume)
 }
 if (this.loadon_Ready) {
- this.loadon_Ready = null
-this.player.load(this.loadon_Ready, true)
+  this.loadon_Ready = null
+  this.player.load(this.loadon_Ready, true)
 } else if (playing) {
-this.player.play()
+  this.player.play()
 }
 this.handleDurationCheck()
 }
 playHandler = () => {
- this.videoLoading = false
-this.videoPlaying = true
+  this.videoLoading = false
+  this.videoPlaying = true
 const { playbackRate, onStart, on_play  } = this.props
 if (this.videoStart) {
-if (playbackRate !== 1 && this.player.setPlaybackRate  ) {
-this.player.setPlaybackRate(playbackRate)
+  if (playbackRate !== 1 && this.player.setPlaybackRate  ) {
+    this.player.setPlaybackRate(playbackRate)
 }
 onStart()
-this.videoStart = false
+  this.videoStart = false
 }
 on_play()
-if (this.timeSeek) {
- this.timeSeek = null
-this.seek_to(this.timeSeek)
+  if (this.timeSeek) {
+  this.timeSeek = null
+  this.seek_to(this.timeSeek)
 }
 this.handleDurationCheck()
 }
 
 pauseHandler = (e) => {
-this.videoPlaying = false
-if (!this.videoLoading) {
-this.props.on_pause(e)
+  this.videoPlaying = false
+  if (!this.videoLoading) {
+    this.props.on_pause(e)
 }
 }
 
 playEnded = () => {
-const {  loop,on_ended, playerActive,  } = this.props
-if (loop && playerActive.loopon_ended  ) {
-this.seek_to(0) // restarts the video when play is completed
+  const {  loop,on_ended, playerActive,  } = this.props
+  if (loop && playerActive.loopon_ended  ) {
+    this.seek_to(0) // restarts the video when play is completed
 }
 if (!loop) {
-this.videoPlaying = false
-on_ended()
+  this.videoPlaying = false
+  on_ended()
 }
 }
 errorHandler = (...args) => {
- this.props.on_error(...args)
-this.videoLoading = false
+  this.props.on_error(...args)
+  this.videoLoading = false
 }
 handleLoaded = () => {
 // we set the videoLoading to false so the player doesnt get stuck
-this.videoLoading = false
+  this.videoLoading = false
 }
 
 render () {
 const Player = this.props.playerActive
 if (!Player) {
-return null
+  return null
 }
 return (
 <Player
@@ -236,64 +236,64 @@ export default class Facebook extends React.Component {
 static viewName = 'Facebook'
 
 componentDidMount () {
- this.props.on_Mount(this) && this.props.on_Mount
+  this.props.on_Mount(this) && this.props.on_Mount
 }
 
 call_player = call_player
 player_ID =  `${PLAYER_ID_STR}` || this.props.config.player_Id
 
 load ( playerReady, url,) {
-if (playerReady) {
-get_SDK(GLOBAL_SDK_READY, GLOBAL_SDK, URL_SDK).then(FB => FB.XFBML.parse())
-return
+  if (playerReady) {
+    get_SDK(GLOBAL_SDK_READY, GLOBAL_SDK, URL_SDK).then(FB => FB.XFBML.parse())
+    return
 }
 get_SDK( GLOBAL_SDK_READY, GLOBAL_SDK,URL_SDK, ).then(FB => {
-FB.init({
- version: this.props.config.version
-xfbml: true,
-appId: this.props.config.appId,
+  FB.init({
+  version: this.props.config.version
+  xfbml: true,
+  appId: this.props.config.appId,
 })
 // adding event subscription
 FB.Event.subscribe('xfbml.render', msg => {
  // to get notified when the player is loaded and ready
-this.props.on_Loaded()
+  this.props.on_Loaded()
 })
 FB.Event.subscribe('xfbml.ready', msg => {
-if (msg.type === 'video' && msg.id === this.player_ID) {
-this.player = msg.instance
-this.player.subscribe('playingStarted', this.props.on_play)
-this.player.subscribe('videoPaused', this.props.on_pause)
-this.player.subscribe('playingFinished', this.props.on_ended)
-this.player.subscribe('bufferingStarted', this.props.on_buffer)
-this.player.subscribe('bufferingFinished', this.props.on_bufferEnd)
-this.player.subscribe('error', this.props.on_error)
+  if (msg.type === 'video' && msg.id === this.player_ID) {
+  this.player = msg.instance
+  this.player.subscribe('playingStarted', this.props.on_play)
+  this.player.subscribe('videoPaused', this.props.on_pause)
+  this.player.subscribe('playingFinished', this.props.on_ended)
+  this.player.subscribe('bufferingStarted', this.props.on_buffer)
+  this.player.subscribe('bufferingFinished', this.props.on_bufferEnd)
+  this.player.subscribe('error', this.props.on_error)
 if (this.props.muted) {
  // for muting
-this.call_player('mute')
+  this.call_player('mute')
 } else {
  // for unmuting
-this.call_player('unmute')
+  this.call_player('unmute')
 }
 this.props.on_Ready()
-document.getElementById(this.player_ID).querySelector('iframe').style.visibility = 'visible'
+  document.getElementById(this.player_ID).querySelector('iframe').style.visibility = 'visible'
 }})
 })}
 // playing function
 play () {
-this.call_player('playVideo')
+  this.call_player('playVideo')
 }
 // pausing function
 pause () {
-this.call_player('pauseVideo')
+  this.call_player('pauseVideo')
 }
 seek_to (seconds) {
-this.call_player('seek', seconds)
+  this.call_player('seek', seconds)
 }
 render () {
-let { attributes } = this.props.config
-let propStyle = {
- height: '99%',
-width: '99%'
+  let { attributes } = this.props.config
+  let propStyle = {
+    height: '99%',
+    width: '99%'
 }
 return (
 <div
@@ -329,7 +329,7 @@ static can_play = can_play.youtube
 call_player = call_player
 
 componentDidMount () {
- this.props.on_Mount(this) && this.props.on_Mount
+  this.props.on_Mount(this) && this.props.on_Mount
 }
 return url.match(YOUTUBE_URL_MATCH)[1]
 }
@@ -338,36 +338,36 @@ const {  plays_inline, on_error, playing, controls, loop, muted, config, } = thi
 const {embed_Options, playerValues,  } = config
 let id = this.getID(url)
 if (playerReady) {
-this.player.cueVideoById({
- startSeconds:playerValues.start || parse_StartTime(url) ,
-video_Id: id,
-endSeconds:playerValues.end ||  parse_endTime(url),
+  this.player.cueVideoById({
+  startSeconds:playerValues.start || parse_StartTime(url) ,
+  video_Id: id,
+  endSeconds:playerValues.end ||  parse_endTime(url),
 })
 return
 }
 get_SDK(GLOBAL_SDK_READY, URL_SDK, GLOBAL_SDK, YT => YT.loaded).then(YT => {
 if (!this.section) return
-this.player = new YT.Player(this.section, {
- height: '99%',
-width: '99%',
- video_Id: id,
-playerValues: {
- mute: !muted ? 0 : 1,
-auto_play: !playing ? 0 : 1,
-origin: window.location.origin,
-start: parse_StartTime(url),
-controls: !controls ? 0 : 1,
-end: parse_endTime(url),
-plays_inline: !plays_inline ? 0 : 1,
+  this.player = new YT.Player(this.section, {
+    height: '99%',
+    width: '99%',
+    video_Id: id,
+    playerValues: {
+    mute: !muted ? 0 : 1,
+    auto_play: !playing ? 0 : 1,
+    origin: window.location.origin,
+    start: parse_StartTime(url),
+    controls: !controls ? 0 : 1,
+    end: parse_endTime(url),
+    plays_inline: !plays_inline ? 0 : 1,
 ...playerValues
 ...this.parsePlaylist(url),
 },
 events: {
 on_Ready: () => {
 if (loop) {
-this.player.setLoop(true) // this is to loop the playlist
+  this.player.setLoop(true) // this is to loop the playlist
 }
-this.props.on_Ready()
+  this.props.on_Ready()
 },
 on_error: e => on_error(e.data)
 },
@@ -379,49 +379,49 @@ let { data } = e
 const { on_play, loop, on_pause, on_buffer, on_ended, on_bufferEnd, on_Ready, config: {on_Unstarted, playerValues } } = this.props
 const {  PLAYING, BUFFERING, PAUSED, UNSTARTED, CUED,  ENDED,  } = window[GLOBAL_SDK].PlayerState
 if (data === UNSTARTED) on_Unstarted()
-if (data === PLAYING) {
-on_play()
-on_bufferEnd()
+  if (data === PLAYING) {
+    on_play()
+    on_bufferEnd()
 }
 if (data === BUFFERING) on_buffer()
-if (data === PAUSED) on_pause()
-if (data === ENDED) {
-this.loop()
-on_ended()
+  if (data === PAUSED) on_pause()
+  if (data === ENDED) {
+    this.loop()
+  on_ended()
 }
 if (data === CUED) on_Ready()
 }
 
 play () {
-this.call_player('playVideo')
+  this.call_player('playVideo')
 }
 
 pause () {
-this.call_player('pauseVideo')
+  this.call_player('pauseVideo')
 }
 mute = () => {
-this.call_player('mute')
+  this.call_player('mute')
 }
 
 unmute = () => {
-this.call_player('unMute')
+  this.call_player('unMute')
 }
 getDuration () {
-return this.call_player('getDuration')
+  return this.call_player('getDuration')
 }
 getCurrentTime () {
-return this.call_player('getCurrentTime')
+  return this.call_player('getCurrentTime')
 }
 ref = section => {
-this.section = section
+  this.section = section
 }
 
 render () {
 let { display } = this.props
 const propStyle = {
  display
- height: '99%',
-width: '99%',
+  height: '99%',
+  width: '99%',
 }
 return (
  <React.Fragment>
@@ -468,58 +468,58 @@ const { on_error, controls, config, plays_inline, } = this.props
 const fromChannel = MATCH_TWITCH_CHANNEL_URL.test(url)
 const id = fromChannel ? url.match(MATCH_TWITCH_CHANNEL_URL)[1] : url.match(MATCH_TWITCH_VIDEO_URL)[1]
 if (playerReady) {
-if (fromChannel) {
-this.player.setChannel(id)
+  if (fromChannel) {
+    this.player.setChannel(id)
 } else {
-this.player.setVideo('v' + id)
+  this.player.setVideo('v' + id)
 }
 return null
 }
 
 get_SDK(URL_SDK, GLOBAL_SDK).then(Twitch => {
 this.player = new Twitch.Player(this.player_ID, {
-video: fromChannel ? '' : id,
-channel: fromChannel ? id : '',
-width: '99%',
-height: '99%',
-auto_play: this.props.playing,
-plays_inline: plays_inline,
-time: parse_StartTime(url),
-muted: this.props.muted,
-controls: fromChannel ? true : controls,
+  video: fromChannel ? '' : id,
+  channel: fromChannel ? id : '',
+  width: '99%',
+  height: '99%',
+  auto_play: this.props.playing,
+  plays_inline: plays_inline,
+  time: parse_StartTime(url),
+  muted: this.props.muted,
+  controls: fromChannel ? true : controls,
 ...config.options
 })
 const { READY, PLAYING, PAUSE, ENDED, ONLINE, OFFLINE } = Twitch.Player
-this.player.addEventListener(READY, this.props.on_Ready)
-this.player.addEventListener(PLAYING, this.props.on_play)
-this.player.addEventListener(PAUSE, this.props.on_pause)
-this.player.addEventListener(ENDED, this.props.on_ended)
-this.player.addEventListener(ONLINE, this.props.on_Loaded)
-this.player.addEventListener(OFFLINE, this.props.on_Loaded)
+  this.player.addEventListener(READY, this.props.on_Ready)
+  this.player.addEventListener(PLAYING, this.props.on_play)
+  this.player.addEventListener(PAUSE, this.props.on_pause)
+  this.player.addEventListener(ENDED, this.props.on_ended)
+  this.player.addEventListener(ONLINE, this.props.on_Loaded)
+  this.player.addEventListener(OFFLINE, this.props.on_Loaded)
 }, on_error)
 }
 
 onPlay () {
-this.call_player('play')
+  this.call_player('play')
 }
 
 onPause () {
-this.call_player('pause')
+  this.call_player('pause')
 }
 
 onStop () {
-this.call_player('pause')
+  this.call_player('pause')
 }
 mute = () => {
-this.call_player('setMuted', true)
+  this.call_player('setMuted', true)
 }
 unmute = () => {
-this.call_player('setMuted', false)
+  this.call_player('setMuted', false)
 }
 render () {
-const style = {
-width: '100%',
-height: '100%'
+  const style = {
+    width: '100%',
+    height: '100%'
 }
 return (
 <div style={style} id={this.player_ID} />
@@ -540,19 +540,19 @@ import { can_play } from '../Decoders'
 
 export default [
 {
-key: 'youtube',
-name: 'YouTube',
-lazyPlayer: lazy(() => import(/* webpackChunkName: 'reactPlayerYouTube' */'./YouTube'))
+  key: 'youtube',
+  name: 'YouTube',
+  lazyPlayer: lazy(() => import(/* webpackChunkName: 'reactPlayerYouTube' */'./YouTube'))
 },
 {
-key: 'facebook',
-name: 'Facebook',
-lazyPlayer: lazy(() => import(/* webpackChunkName: 'reactPlayerFacebook' */'./Facebook'))
+  key: 'facebook',
+  name: 'Facebook',
+  lazyPlayer: lazy(() => import(/* webpackChunkName: 'reactPlayerFacebook' */'./Facebook'))
 },
 {
-key: 'twitch',
-name: 'Twitch',
-lazyPlayer: lazy(() => import(/* webpackChunkName: 'reactPlayerTwitch' */'./Twitch'))
+  key: 'twitch',
+  name: 'Twitch',
+  lazyPlayer: lazy(() => import(/* webpackChunkName: 'reactPlayerTwitch' */'./Twitch'))
 },
 ]
 ```
@@ -566,12 +566,12 @@ const MATCH_NUMERIC = /^\d+$/
 
 const match = url.match(pattern)
 if (match) {
-const stamp = match[1]
+  const stamp = match[1]
 if (stamp.match(START_STAMP_MATCH)) {
-return parseTimeString(stamp)
+  return parseTimeString(stamp)
 }
 if (MATCH_NUMERIC.test(stamp)) {
-return parseInt(stamp)
+  return parseInt(stamp)
 }
 }
 return undefined
@@ -582,28 +582,28 @@ let sec = 0
 let array = START_STAMP_MATCH.exec(stamp)
 while (array !== null) {
 const [time, count] = array
-if (time === 'h') sec += parseInt(count, 10) * 3600
-if (time === 'm') sec += parseInt(count, 10) * 60
-if (time === 's') sec += parseInt(count, 10)
-array = START_STAMP_MATCH.exec(stamp)
+  if (time === 'h') sec += parseInt(count, 10) * 3600
+  if (time === 'm') sec += parseInt(count, 10) * 60
+  if (time === 's') sec += parseInt(count, 10)
+    array = START_STAMP_MATCH.exec(stamp)
 }
 // returning the time format
 return sec
 }
 export function queryString (object) {
-return Object
-.keys(object)
-.map(key => `${key}=${object[key]}`)
-.join('&')
+  return Object
+  .keys(object)
+  .map(key => `${key}=${object[key]}`)
+  .join('&')
 }
 
 function get_Global (key) {
 if (window[key]) {
-return window[key]
+  return window[key]
 }
 
 if (window.module && window.module.exports && window.module.exports[key]) {
-return window.module.exports[key]
+  return window.module.exports[key]
 }
 return null
 }
@@ -611,19 +611,19 @@ const req = {}
 export function get_SDK (url, sdkGlobal, sdkReady = null, isLoaded = () => true, fetchScript) {
 const isGlobal = get_Global(sdkGlobal)
 if (isGlobal && isLoaded(isGlobal)) {
-return Promise.resolve(isGlobal)
+  return Promise.resolve(isGlobal)
 }
 req[url] = [{ reject, resolve,  }]
-const on_Loaded = sdk => {
+  const on_Loaded = sdk => {
 // each request will be resolved after loading
-req[url].forEach(r => r.resolve(sdk))
+  req[url].forEach(r => r.resolve(sdk))
 }
 fetchScript(url, err => {
 if (err) {
-req[url].forEach(request => request.reject(err))
-req[url] = null
+  req[url].forEach(request => request.reject(err))
+  req[url] = null
 } else if (!sdkReady) {
-on_Loaded(get_Global(sdkGlobal))
+  on_Loaded(get_Global(sdkGlobal))
 }
 })
 })
@@ -631,14 +631,14 @@ on_Loaded(get_Global(sdkGlobal))
 export function call_player (method, ...args) {
 // we use this method to call the player
 if (!this.player || !this.player[method]) {
-let message = `ReactPlayer: ${this.constructor.viewName} could not call player %c${method}%c – `
+  let message = `ReactPlayer: ${this.constructor.viewName} could not call player %c${method}%c – `
 if (!this.player) {
-message += ' player unavailable'
+  message += ' player unavailable'
 } else if (!this.player[method]) {
-message += 'call method unavailable'
+  message += 'call method unavailable'
 }
 console.warn(message, 'font-weight: bolder', '')
-return null
+  return null
 }
 return this.player[method](...args)
 }
@@ -674,28 +674,28 @@ export const MATCH_TWITCH_VIDEO_URL = /(?:www\.|go\.)?twitch\.tv\/videos\/(\d+)(
 
 const can_playFile = url => {
 if (url instanceof Array) {
-for (let entity of url) {
-if (typeof entity === 'string' && can_playFile(entity)) {
-return true
+  for (let entity of url) {
+  if (typeof entity === 'string' && can_playFile(entity)) {
+    return true
 }
 if (can_playFile(entity.src)) {
-return true
+  return true
 }
 }
 return false
 }
 if (isMediaStream(url) || BlobURL(url)) {
-return true
+  return true
 }
 return (
-VIDEO.test(url)
+  VIDEO.test(url)
 )
 }
 
 export const can_play = {
 youtube: url => {
 if (url instanceof Array) {
-return url.every(entity => YOUTUBE_URL_MATCH.test(entity))
+  return url.every(entity => YOUTUBE_URL_MATCH.test(entity))
 }
 return true
 
@@ -713,48 +713,48 @@ import Player from '../Player'
 import './media/index'
 class App extends React.Component {
 state = {
-url: null,
-playing: true,
-controls: false,
-loop: false,
-muted: false,
-playbackRate: 1.0,
-played: 0,
-volume: 0.7,
-duration: 0,
-loaded: 0,
+  url: null,
+  playing: true,
+  controls: false,
+  loop: false,
+  muted: false,
+  playbackRate: 1.0,
+  played: 0,
+  volume: 0.7,
+  duration: 0,
+  loaded: 0,
 
 }
 
 load = url => {
-this.setState({
-url,
-pip: false
-loaded: 0,
-played: 0,
+  this.setState({
+    url,
+    pip: false
+    loaded: 0,
+    played: 0,
 }
 )}
 handleStop = (e) => {
-this.setState({ url: null, playing: false })
+  this.setState({ url: null, playing: false })
 }
 handlePlay = () => {
-console.log('on_play')
-this.setState({ playing: true })
+  console.log('on_play')
+  this.setState({ playing: true })
 }
 handlePause = () => {
-console.log('on_pause')
-this.setState({ playing: false })
+  console.log('on_pause')
+  this.setState({ playing: false })
 }
 handleEnded = () => {
-console.log('on_ended')
-this.setState({ playing: this.state.loop })
+  console.log('on_ended')
+  this.setState({ playing: this.state.loop })
 }
 handleDuration = (duration) => {
-console.log('onDuration', duration)
-this.setState({ duration })
+  console.log('onDuration', duration)
+  this.setState({ duration })
 }
 handleClickFullscreen = () => {
-screenfull.request(findDOMNode(this.player))
+  screenfull.request(findDOMNode(this.player))
 }
 
 ref = player => {
@@ -765,33 +765,33 @@ render () {
 const { url, playing, controls, light, volume, muted, loop, played, loaded, duration, pip } = this.state
 return (
 <div className='app'>
-<section className='section'>
-<h2>Video Player</h2>
+  <section className='section'>
+  <h2>Video Player</h2>
 <div
 className='player-container'>
 <Player
-ref={this.ref}
-className='video-player'
-volume={volume}
-url={url}
-controls={controls}
-playing={playing}
-muted={muted}
-on_play={this.handlePlay}
-on_pause={this.handlePause}
-on_ended={this.handleEnded}
-on_error={e => console.warn('error occured', e)}
+  ref={this.ref}
+  className='video-player'
+  volume={volume}
+  url={url}
+  controls={controls}
+  playing={playing}
+  muted={muted}
+  on_play={this.handlePlay}
+  on_pause={this.handlePause}
+  on_ended={this.handleEnded}
+  on_error={e => console.warn('error occured', e)}
 /></div>
 <table>
-<tbody>
-<tr>
-<th>Options</th>
-<td>
-<button onClick={this.handleStop}>Stop</button>
-<button onClick={this.handlePlayPause}>{!playing ? 'Play':'Pause'}</button>
-<button onClick={this.handleClickFullscreen}>Fullscreen</button>
-</td>
-</tbody>
+  <tbody>
+    <tr>
+      <th>Options</th>
+      <td>
+      <button onClick={this.handleStop}>Stop</button>
+      <button onClick={this.handlePlayPause}>{!playing ? 'Play':'Pause'}</button>
+      <button onClick={this.handleClickFullscreen}>Fullscreen</button>
+     </td>
+  </tbody>
 </table>
 </section>
 </div>
@@ -820,31 +820,31 @@ Styling isn't the main focus of this article, but we will go ahead and complimen
 $column-width: 480px;
 $gutter-width: 20px;
 .app {
-margin: auto;
-font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-font-weight: 300;
-text-align: center;
+  margin: auto;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  text-align: center;
 }
 .section {
-display: inline-block;
-max-width: $column-width;
-margin: $gutter-width;
-text-align: left;
-vertical-align: top;
+  display: inline-block;
+  max-width: $column-width;
+  margin: $gutter-width;
+  text-align: left;
+  vertical-align: top;
 }
 .player-container {
-width: 480px;
-height: 270px;
+  width: 480px;
+  height: 270px;
 }
 .video-player {
-margin-bottom: 10px;
-background: rgba(0, 0, 0, .1);
+  margin-bottom: 10px;
+  background: rgba(0, 0, 0, .1);
 }
 .faded {
-color: rgba(0, 0, 0, .5);
+  color: rgba(0, 0, 0, .5);
 }
 .footer {
-margin: $gutter-width;
+  margin: $gutter-width;
 }
 ```
 
