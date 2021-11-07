@@ -1,5 +1,21 @@
-When building applications using Django, you may find that you need to present data visualizations using graphs and charts. Matplotlib is one of the popular python libraries that lets you achieve it.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /representing-data-in-django-using-matplotlib/
+title: Representing Data in Django Using Matplotlib
+description: In this article, we are going to learn how to create a Django application that visualizes and represents data using Matplotlib.
+author: john-kiguru
+date: 2021-11-07T00:00:00-18:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/representing-data-in-django-using-matplotlib/hero.jpg
+    alt: Representing Data in Django Using Matplotlib hero image
+---
+When building applications using Django, you may find that you need to present data visualizations using graphs and charts. Matplotlib is one of the popular python libraries that lets you achieve it.
+<!--more-->
 In this article, we are going to create a simple Django application that uses matplotlib to visualize data.
 
 ### Prerequisites
@@ -565,3 +581,6 @@ You can find the full code [here](https://github.com/JohnKiguru/Working-with-mat
 - [Matplotlib documentation](https://matplotlib.org/)
 - [Python IO documentation](https://docs.python.org/3/library/io.html#io.BytesIO)
 - [Pandas documentation](https://pandas.pydata.org/)
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
