@@ -66,7 +66,7 @@ It's valid for multiple sessions and, unlike non-persistent cookies, it's not de
 ### Cookie class and the methods required for cookies
 
 #### Cookie class
- A `Cookie`, is a class that contains several cookie-related methods that allow you to use cookies.
+A `Cookie` class contains several cookie-related methods that allow you to use cookies.
 #### Methods of Cookie class
 - `void setMaxAge()`: For example, this method can be used to set Cookie's maximum age. The cookie lifetime can be specified when max-age is set in web applications.
 - `void setValue()`: When a new value is assigned to the cookie, this method is used.
