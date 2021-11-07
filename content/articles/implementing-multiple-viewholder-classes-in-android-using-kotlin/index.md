@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /implementing-multiple-viewholders-in-android-using-kotlin/
-title: Implementing M   ultiple ViewHolders in Android using Kotlin
+title: Implementing Multiple ViewHolders in Android using Kotlin
 description: This tutorial takes the reader through the process of implementing multiple ViewHolders in Android using Kotlin. Multiple ViewHolders allows us to display different types of items in the same RecyclerView.
 author: maurine-muthoki
 date: 2021-11-06T00:00:00-02:27
