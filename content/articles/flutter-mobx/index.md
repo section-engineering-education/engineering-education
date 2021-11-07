@@ -4,9 +4,9 @@ Managing application state in a clean and optimized way is very important when d
 
 ### Prerequisites
 
-1. [Flutter SDK]() installed.
+1. [Flutter SDK](https://flutter.dev/docs/get-started/install) installed.
 2. Preferred IDE or code editor installed.
-3. Knowledge in [Flutter]().
+3. Knowledge in [Flutter](https://flutter.dev/docs).
 
 ### Table of contents
 
@@ -28,7 +28,7 @@ Before proceeding, run the command below to verify that you have installed Flutt
 ```bash
 $ flutter doctor
 ```
-![Command window](command.png)
+![Command window](/engineering-education/flutter-mobx/command.png)
 Now that you have verified that everything is set up correctly, execute the command below to create a new flutter project.
 
 ```bash
@@ -335,7 +335,7 @@ class Application extends StatelessWidget {
 
 ### Testing
 
-![News List](news.png)
+![News List](/engineering-education/flutter-mobx/news.png)
 
 ### Conclusion
 
