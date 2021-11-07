@@ -16,13 +16,13 @@ images:
 ---
 When building applications using Django, you may find that you need to present data visualizations using graphs and charts. Matplotlib is one of the popular python libraries that lets you achieve it.
 <!--more-->
-In this article, we are going to create a simple Django application that uses matplotlib to visualize data.
+In this article, we are going to create a sample Django application that uses matplotlib to visualize data.
 
 ### Prerequisites
 As a prerequisite:
 - You have `Django` installed and you are familiar with creating a simple Django application.
 - You have installed `matplotlib`. To install use `pip install matplotlib`.
-- Basic knowledge of python is a very important.
+- Basic knowledge of python is very important.
 
 ### Key takeaways
 In this article, we are going to:
@@ -30,7 +30,7 @@ In this article, we are going to:
 2. Learn how to use `matplotlib` to visualize data in your Django application.
 
 ### Getting started
-We are going to create a simple web application to keep track of sales and inventory. This application holds information about customers, products, salesperson, and the sales.
+We are going to create a simple web application to keep track of sales and inventory. This application holds information about customers, products, salespeople, and sales.
 
 To create the project, move to your preferred folder and run:
 
@@ -163,7 +163,7 @@ def generate_code():
 
 `generate_code()` returns a random code consisting of 12 alphanumeric characters in uppercase.
 
-Let's register the models to the admin site by adding the following code to `admin.py` file as shown:
+Let's register the models to the admin site by adding the following code to the `admin.py` file as shown:
 
 `sales/admin.py`
 ```python
@@ -214,7 +214,7 @@ class SalesSearchForm(forms.Form):
 
 The form will allow the user to choose a date, select chart type that results according to `CHART_CHOICES` and `RESULTS_CHOICES` as given in the file above.
 
-We need to create some view to get data to our web page. In our `views.py` file, let's edit it as follows:
+We need to create some views to get data to our web page. In our `views.py` file, let's edit it as follows:
 
 `sales/views.py`
 ```python
@@ -234,7 +234,7 @@ def sales(request):
 The `sales()` function will render the search form to the HTML file. 
 
 ### Creating templates
-We need to create a HTML file that holds these visualizations.
+We need to create an HTML file that holds these visualizations.
 
 Let's begin by modifying the settings on the template configuration by editing `settings.py` as shown:
 
@@ -335,7 +335,7 @@ To see our views in action, we will need to configure the routes.
 
 Let's create a `urls.py` file that will handle routing to our function and class.
 
-The mappings above implies that the requests will be handled by this file and then routed to a corresponding view function and class.
+The mappings above imply that the requests will be handled by this file and then routed to a corresponding view function and class.
 
 Add the following lines of code to it:
 
@@ -360,7 +360,7 @@ urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 Let's also edit `base.html` to be able to access the view. Edit it as follows:
 
-`base.html`
+`templates/base.html`
 ```jinja
 <!DOCTYPE html>
 {% load static %}
@@ -395,13 +395,13 @@ When you visit `http://127.0.0.1:8000` you should get a page  something to this:
 ### Creating the graphical representations.
 Now, we are going to start building the graphical representations part of our web page.
 
-Firstly, we will have to install the `pandas` library to create dataframes for the sales data.
+Firstly, we will have to install the `pandas` library to create data frames for the sales data.
 
-The resulting dataframe will be used for plotting with `matplotlib`.
+The resulting data frame will be used for plotting with `matplotlib`.
 
 Now, run `pip install pandas` to install it.
 
-We are going to handle the plotting in `utils.py` file, and it will be used in the `views.py` file as shown:
+We are going to handle the plotting in the `utils.py` file, and it will be used in the `views.py` file as shown:
 
 `sales/views.py`
 ```python
@@ -450,14 +450,14 @@ def sales(request):
     return render(request, 'sales.html',  context)
 ```
 
-- Firstly, the function checks if we have received a `POST` request. If so, then we have initialize variables to get the `date_from`, `date_to`, `chart_type` and the `results_by`.
+- Firstly, the function checks if we have received a `POST` request. If so, then we have to initialize variables to get the `date_from`, `date_to`, `chart_type`, and the `results_by`.
 - The value of chart type and result type will be `#1`, `#2` depending on the choice of the user.
 - If a user chooses a pie chart, then the `chart_type` variable will be `#2`, as we had declared in our `forms.py` file.
-- We then filter all sales that are in the range between `date_from` and `date_to`. If there are any sales, we create a dataframe using the sales queryset values.
+- We then filter all sales that are in the range between `date_from` and `date_to`. If there are any sales, we create a data frame using the sales queryset values.
 - We also reset the created year value to the format `d/m/Y`.
-- We rename `customer_id` to `customer`, `salesman_id` to `salesman` and `id` to `sales_id`.
-- Then, we initialize the variable `chart` with the function `get_chart()` as defined in `utils.py`, that takes in the chart type, the sales dataframe and te results by values.
-- Finally, we convert the sales dataframe to HTML format, so that we will be able to display it on the web page by passing the dataframe and the chart to the HTML page.
+- We rename `customer_id` to `customer`, `salesman_id` to `salesman`, and `id` to `sales_id`.
+- Then, we initialize the variable `chart` with the function `get_chart()` as defined in `utils.py`, which takes in the chart type, the sales data frame, and the results by values.
+- Finally, we convert the sales data frame to HTML format, so that we will be able to display it on the web page by passing the data frame and the chart to the HTML page.
 
 Let's now work with the `utils.py` file as shown:
 
@@ -514,7 +514,7 @@ When the function `get_chart()` is called the following takes place:
 1. The `pyplot.switch_backend('AGG')` prevents plotting on the screen. We want to pass our charts as images.
 2. The `fig` variable defines the dimensions of the plotted chart.
 3. The statement `key = get_key(results_by)` sets a key variable according to what a user chose. This corresponds to what was defined in `RESULTS CHOICES` in `forms.py`.
-4. The fourth statement groups our dataframe by the key using the sum of the total price.
+4. The fourth statement groups our data frame by the key using the sum of the total price.
 5. The charts are then plotted according to the user's choice.
 6. The statement ` pyplot.tight_layout()`adjusts the size of the chart to the size of `fig`
 7. We lastly initialize a chart variable with `get_graph()` function and return it. The function begins by creating a buffer variable as a file object.
@@ -554,7 +554,7 @@ Home
 {% endblock content %}
 ```
 
-If we have a sales dataframe, we display it after the form. We use the `safe` filter to make the dataframe more readable in our page.
+If we have a sales data frame, we display it after the form. We use the `safe` filter to make the data frame more readable in our page.
 
 The part `data:image/png;base64` is responsible for handling displaying the image of our chart. Without this, we cannot see the image.
 
@@ -564,7 +564,7 @@ When you fill the form you should have something like this when you select bar c
 
 ![Bar Graph](/engineering-education/representing-data-in-django-using-matplotlib/BarGraph.png)
 
-When you select pie chart:
+When you select the pie chart:
 
 ![Pie Chart](/engineering-education/representing-data-in-django-using-matplotlib/PieChart.png)
 
@@ -573,7 +573,7 @@ When you select line graph:
 ![Line Graph](/engineering-education/representing-data-in-django-using-matplotlib/LineGraph.png)
 
 ### Conclusion
-You have now successfully created a django application that uses matplotlib to represent data.
+You have now successfully created a Django application that uses matplotlib to represent data.
 
 You can find the full code [here](https://github.com/JohnKiguru/Working-with-matplotlib-and-Django).
 
