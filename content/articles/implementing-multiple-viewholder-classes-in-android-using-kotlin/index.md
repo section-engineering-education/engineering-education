@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /implementing-multiple-viewholders-in-android-using-kotlin/
-title: Implementing multiple ViewHolders in Android using Kotlin
+title: Implementing M   ultiple ViewHolders in Android using Kotlin
 description: This tutorial takes the reader through the process of implementing multiple ViewHolders in Android using Kotlin. Multiple ViewHolders allows us to display different types of items in the same RecyclerView.
 author: maurine-muthoki
-date: 2021-10-20T00:00:00-14:14
+date: 2021-11-06T00:00:00-02:27
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -218,7 +218,7 @@ data class Landmark(
 )
 ```
 
-### Setting up RecyclerView Adapter
+### Setting up RecyclerView adapter
 An adapter class is responsible for populating the RecyclerView accordingly with the data provided.
 
 ```kotlin
@@ -228,7 +228,7 @@ class LandmarkAdapter(private var landmarks: ArrayList<Landmark>) :
 }
 ```
 
-> Note: The above viewHolder argument is not confined to a custom type. Instead, we have used the viewHolder from the inbuilt RecyclerView class. This allows us to apply many viewHolders is our adapter.
+> Note: The above viewHolder argument is not confined to a custom type. Instead, we have used the viewHolder from the inbuilt RecyclerView class. This allows us to apply many viewHolders in our adapter.
 
 ```kotlin
 override fun getItemCount(): Int = landmarks.size
