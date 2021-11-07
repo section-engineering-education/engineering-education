@@ -1,0 +1,3 @@
+baseURL = "http://localhost:8000"
+[params]
+  env = "local"

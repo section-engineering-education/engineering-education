@@ -1,0 +1,178 @@
+//
+// Base Styles
+// --------------------------------------------------
+
+// Resets
+// -------------------------
+
+// Meyer Style Resets on Elements that
+// bring a lot of styling
+
+/* stylelint-disable */
+
+pre,
+code,
+sub,
+sup,
+fieldset,
+form,
+label,
+legend,
+details,
+embed,
+menu,
+summary,
+table,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+// Remove base padding, margin, and font style
+// from elements who bring their own
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+figure,
+ol,
+ul,
+caption,
+dl,
+dt,
+dd,
+ol,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+
+// Normalize Patches
+// -------------------------
+
+// remove quotes from blockquote
+
+blockquote,
+q {
+  quotes: none;
+
+  &:before,
+  &:after {
+    content: "";
+    content: none;
+  }
+}
+
+// everything border box
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+// Responsive Images
+
+img {  max-width: 100%; height: auto; }
+
+
+// no border on iframes
+
+iframe { border: 0; }
+
+
+// Ensure we only define type using our default classes.
+
+small {
+  font-size: $base-font-size;
+}
+
+sub,
+sup {
+  font-size: $base-font-size;
+}
+
+
+// Switching from ems to rems for consistency and our own sanity.
+
+sup {
+  top: (-$space-1);
+}
+
+sub {
+  bottom: -0.25rem;
+}
+
+
+code,
+kbd,
+pre,
+samp {
+  font-size: $base-font-size;
+}
+
+
+// We should define fieldset with classes if we're going to define it.
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+
+// Making sure that bold is 600, since we use semibold instead.
+
+optgroup {
+  font-weight: $bold;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+// Overriding default iOS input style
+
+input {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+.post-edit-link {
+  position: fixed;
+  bottom: pxem(10);
+  left: pxem(10);
+  border: 4px solid #eee;
+  padding: pxem(8) pxem(12);
+  background:#fff;
+}
+
+/* stylelint-enable */

@@ -1,0 +1,147 @@
+{{ define "main" }}
+
+<article>
+  <section class="hero-blocks xs-pt-50 xs-pb-50 sm-pt-100 sm-pb-100 -blue-blocks">
+    <div class="hero-blocks-mobile">
+      <div class="hero-blocks-mobile-left">
+        <div class="hero-blocks-mobile-left-large"></div>
+      </div>
+
+      <div class="hero-blocks-mobile-right">
+        <div class="hero-blocks-mobile-right-small"></div>
+        <div class="hero-blocks-mobile-right-large"></div>
+        <div class="hero-blocks-mobile-right-stripes"></div>
+      </div>
+    </div>
+
+    <div class="section-container relative">
+      <div class="hero-blocks-left-blocks">
+        <div class="hero-blocks-left-blocks-large"></div>
+        <div class="hero-blocks-left-blocks-stripes"></div>
+      </div>
+
+      <div class="hero-blocks-inner relative prl-5">
+        <div class="hero-blocks-middle">
+          <span class="text-14 text-blue">ENGED PROGRAM CONTRIBUTOR</span><br>
+          <h1 class="title-2">{{ .Title }}</h1>
+        </div>
+      </div>
+
+      <div class="hero-blocks-right-blocks">
+        <div class="hero-blocks-right-blocks-small"></div>
+        <div class="hero-blocks-right-blocks-large"></div>
+        <div class="hero-blocks-right-blocks-stripes"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-rich-text blog-styling xs-pb-30">
+    <div class="section-container">
+      <div class="section-rich-text-inner prl-5">
+        <div class="section-rich-text-leading">
+          {{ range .Resources }}
+          <img class="avatar" src="{{ (.Resize "400x").Permalink }}" />
+          {{ end }}
+
+          {{ .Content }}
+        </div>
+
+        <div class="section-rich-text-leading bio">
+          <ul class="social">
+            {{ with .Params.twitter }}
+            <li>
+              <i class="twitter"></i>
+              <a href="{{ . }}" target="_blank">Follow @{{ index (last 1 (split . "/")) 0 }}</a>
+            </li>
+            {{ end }}
+            {{ with .Params.linkedin }}
+            <li>
+              <i class="linkedin"></i>
+              <a href="{{ . }}" target="_blank">Connect on LinkedIn</a>
+            </li>
+            {{ end }}
+            {{ with .Params.github }}
+            <li>
+              <i class="github"></i>
+              <a href="{{ . }}" target="_blank">Follow @{{ index (last 1 (split . "/")) 0 }} on GitHub</a>
+            </li>
+            {{ end }}
+            {{ with .Params.website }}
+            <li>
+              <i class="website"></i>
+              <a href="{{ . }}" target="_blank">Visit website</a>
+            </li>
+            {{ end }}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</article>
+
+<section class="blog-listing-posts">
+  <div class="section-container blog-listing-posts-container">
+    <div class="blog-listing-posts-content">
+      <h1 class="title-3 text-blue xs-pb-20">Contributed articles</h1>
+   
+      <ul class="list-unstyled xs-mb-80">
+
+        {{ $author := path.Base .Permalink}}
+
+        {{ range (where (where .Site.Pages "Params.layout" "engineering-education") ".Params.author" $author) }}
+        
+        <li class="blog-listing-posts-item mix {{ with .Params.tags }}{{ range . }}{{ lower . }} {{ end }}{{ end }}">
+          <a class="decoration-none xs-pb-40 xs-pt-40 prl-25 flex flex-wrap" href="{{.Permalink}}">
+
+            <div class="blog-listing-posts-item-image">
+              {{ if isset .Params "images" }}
+                {{ if (gt (len .Params.images) 0) }}
+                  {{ if (index .Params.images 0).url }}
+                  {{ if hugo.Environment | eq "development" }}
+                    <img src="{{ replace (index .Params.images 0).url "/engineering-education/" "/" }}" {{ if (index .Params.images 0).alt}} alt="{{ (index .Params.images 0).alt }}"{{ end }}>
+                    {{ else }}
+                    <img src="{{ (index .Params.images 0).url }}" {{ if (index .Params.images 0).alt}} alt="{{ (index .Params.images 0).alt }}"{{ end }}>
+                  {{ end }}
+                  {{ end }}
+                {{ end }}
+              {{ end }}
+            </div>
+
+            <div class="blog-listing-posts-item-content">
+              <h3 class="title-3 text-link xs-mb-10">{{.Title}}</h3>
+              <p class="text-blockquote xs-mb-20">{{ .Date.Format "Jan 2, 2006" }}</p>
+
+              <p class="text-18-regular text-color">{{ .Summary | plainify | truncate 210 "..." }}</p>
+
+            </div>
+
+          </a>
+        </li>
+
+
+       {{ end }}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section-rich-text xs-pb-80 xs-pt-80">
+  <div class="section-container">
+    <div class="section-rich-text-inner prl-5">
+      <a class="decoration-none" href="{{ .Site.Data.globals.enged_cta.url }}">
+        <div class="cta-block-box -green-blocks relative xs-mt-40 xs-mb-80">
+          <div class="cta-block-box-left-block absolute"></div>
+          <div class="cta-block-box-left-stripes absolute"></div>
+          <div class="cta-block-box-inner pa-5 cta-shadow">
+            <h3 class="title-3 xs-mb-20">{{ .Site.Data.globals.enged_cta.title }}</h3>
+            <p class="xs-mb-20">{{ .Site.Data.globals.enged_cta.copy }}</p>
+            <span class="link-with-arrow-green text-green text-18-medium">{{ .Site.Data.globals.enged_cta.text }}</span>
+          </div>
+          <div class="cta-block-box-right-block absolute"></div>
+          <div class="cta-block-box-right-stripes absolute"></div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+{{ end }}

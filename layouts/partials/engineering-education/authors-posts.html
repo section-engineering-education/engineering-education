@@ -1,0 +1,20 @@
+<section >
+  <div class="author-blocks section-container relative -blue-blocks">
+    <div class="author-blocks-inner flex flex-wrap">
+      {{ range where .Pages "Params.title" "!=" "Ada Lovelace"}}
+      <a class="author-blocks-item link-basic" href="{{.Permalink}}">
+        <div class="author-blocks-item-wrap fill-white flex cta-shadow flex-column">
+          {{ range .Resources }}
+          <img class="avatar" src="{{ (.Resize "400x").Permalink }}" />
+          {{ end }}
+          <div class="author-blocks-item-content flex flex-column align-center">
+            <div class="author-blocks-item-content-inner prl-5 xs-pt-20 xs-pb-10 flex flex-column fill-white">
+              <h3 class="title-5 xs-mb-20">{{.Title}}</h3>
+            </div>
+          </div>
+        </div>
+      </a>
+      {{ end }}
+    </div>
+  </div>
+</section>

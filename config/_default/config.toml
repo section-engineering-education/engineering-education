@@ -1,0 +1,54 @@
+languageCode = "en-us"
+title = "Engineering Education (EngEd) Program | Section"
+copyright = ""
+defaultContentLanguage = "en"
+enableRobotsTXT = true
+enableEmoji = true
+paginate = 5
+disableKinds = [ "taxonomyTerm" ]
+pygmentsCodeFences = true
+pygmentsStyle = "monokai"
+[taxonomies]
+   tag = "tags"
+   category = "categories"
+   topic = "topics"
+   author = "authors"
+[permalinks]
+   engineering-education = "/:slug/"
+   articles = "/:slug/"
+   topics = "/topic/:slug/"
+   authors = "/authors/:slug/"
+[author]
+  name = "Hector Kambow"
+  email = "enged@section.io"
+[params]
+  dateformat = "January 2, 2006"
+  description = "Section's Edge as a Service simplifies edge computing for next-gen applications."
+[markup.goldmark.renderer]
+  unsafe = true
+[social]
+email = "enged@section.io"
+slack = "https://t.co/OANAJYol8Y"
+twitter = "https://twitter.com/sectionio"
+github = "https://github.com/section-io/"
+[blackfriday]
+  plainIDAnchors = true
+[related]
+threshold = 80
+includeNewer = true
+toLower = false
+[[related.indices]]
+name = "keywords"
+weight = 100
+[[related.indices]]
+name  = "tags"
+weight = 80
+[[related.indices]]
+name  = "categories"
+weight = 80
+[[related.indices]]
+name  = "topics"
+weight = 80
+[[related.indices]]
+name  = "date"
+weight = 10
