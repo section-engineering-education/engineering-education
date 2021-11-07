@@ -7,7 +7,7 @@ Below are what may be termed as some of the benefits of coding conventions.
 
 3. They give the code a unified design so readers may concentrate on the content rather than the layout.
 
-4. They show how to use C# in the best possible way.
+4. They tell the best way to utilize C# in the most ideal manner.
 
 There are therefore several coding conventions that are used in c-Sharp programming language
 1. Naming conventions
@@ -15,9 +15,9 @@ There are therefore several coding conventions that are used in c-Sharp programm
 3. Commenting conventions
 4. Naming conventions
 
-When writing C# code, there are a few naming standards to keep in mind.
+There are a few naming conventions that should be followed while writing C# code.
 
-In the following scenarios, all of the information about public elements applies equally well to protected and protected internal elements, which are all meant to be visible to external callers.
+All information about public elements applies as well to protected and protected internal elements in the following scenarios, which are all supposed to be visible to external callers.
 
 **Pascal's Case**
 
@@ -27,33 +27,32 @@ You can use the Pascal case for identifiers with three or more characters.
 
 When naming a class, record, or struct, use pascal casing ("PascalCasing"). Take a look at the example below
 ```
-PublicSchool
+PublicSchool1
 ```
 ```c#
-public class PascalCase
+public class PascalCase1
 {
-
 }
-public record PublicIntitution(
+public record PublicIntitution1(
     string Country,
     string County,
     string Village,
     );
-public struct ValueCoordinate
+public struct ValueCoordinate1
 {
 }
 ```
-In addition to prefixing the name with an I, utilize pascal casing when naming an interface. This makes it evident to customers that it's a user interface.
+In addition to prefixing the name with an I, When naming an interface, use pascal casing. Customers can tell it's a user interface because of this.
 ```c#
 public interface IPublicInstitution
 {
 }
 ```
-Pascal Case may also be used in naming public members of types eg events, methods, local functions, and also properties.
+In addition to what we already have, public members of types can be named using pascal case.
 ```c#
-public class PracticeExample
+public class PracticeExample1
 {
-    // This is a public field that should be used with caution
+    // public field
     public bool IsValid;
 
     // An init-only property is a property that allows you to do something only once.
@@ -71,7 +70,7 @@ public class PracticeExample
     }
 }
 ```
-Because parameters are public properties of the record, utilize pascal casing when writing positional records.
+Since parameters are public properties of the record, use pascal casing when putting down positional accounts.
 ```c#
 public record PublicIntitution
 (
@@ -86,7 +85,7 @@ The camelCasing convention, which is solely used for parameter names, capitalize
 ```
 voidMain
 ```
-Camel casing is also utilized when naming internal or private fields.
+Another implementation of camel case is when naming private or internal fields
 ```
 camelCasing
 ```
@@ -96,7 +95,7 @@ public class DataService
     private IWorkerQueue _workerQueue;
 }
 ```
-Use the s_ prefix for private or internal static fields, and the t_ prefix for thread static fields.
+It is also highly advisable that when dealing with thread and internal fields it is good to use the s_prefix and the t_prefix for the static fields respectively.
 ```c#
 public class DataService
 {
@@ -106,7 +105,7 @@ public class DataService
     private static TimeSpan t_timeSpan;
 }
 ```
-In implementing method parameters, camel casing is used.
+Camel casing is additionally utilized while executing most of the method parameters.
 ```c#
 public T SomeMethod<T>(int someNumber, bool isValid)
 {
@@ -124,67 +123,68 @@ Do not utilize acronyms that aren't generally recognized, and even if they are, 
 
 **Layout Conventions**
 
-In a decent layout, formatting is utilized to emphasize the structure of your code and make it easier to read. 
+For a clear understanding of the code and it's structure, formatting is exercised as a coding convention.
 
-Below conventions apply to Microsoft examples and samples:
+Some of the layout coding conventions are:
 
-- Use the Code Editor's default settings that is smart indenting, four-character indents, tabs that are saved as spaces 
-- Each line should take hold of just one statement.
-- Each line should only contain one declaration.
-- Indent continuation lines one tab stop if they are not indented automatically (four spaces).
+- Use the Code Editor's default settings that uses smart indenting, four-character indents and tabs that are saved as spaces. 
+- Each line should take should accomodate just one statement.
+- Each line should only accomodate just one declaration.
+- In the event that the continuation lines are not indented consequently, indent them one tab stop.
 - At least a single blank line is supposed to be added in between the property definitions and the method.
 
-As illustrated in the code below, utilize parenthesis to make clauses in an expression visible.
+Use enclosure or parenthesis to make provisions in an articulation clear, as displayed in the code beneath.
 ```c#
-if ((valk > valm) && (valk > valx))
+if ((valxyz > valxyz) && (valabc > valabc))
 {
-    // Take appropriate action.
+    // Here is what you will do.
 }
 ```
-**Conventions for commenting**
+**Coding conventions for commenting**
 
-Instead of being placed at the end of a line of code, the comment should be on its line.
-Start your remark with an uppercase letter.
+It is advisable to wrire a comment on its own separate line for better understandability.
+Start your comment with an uppercase letter.
 A period should be used to end the remark text.
-You are supposed to place a single space between the comment delimiter (//) and the comment content, as displayed below.
+It is also advisable to place a single space between the comment delimiter (//) and the comment content, as displayed in the example below.
 ```c#
 // This is a comment used in C-Sharp programming language.
 // This is a single line comment.
 ```
-- Do not use formatted blocks of asterisks to surround comments.
-- Ascertain that all public members have the relevant XML comments in place to describe their actions.
+- It is not advisable to use formatted blocks of asterisks to surround comments.
+- Unearth that all public members are using the appropriate XML comments to describe their actions.
 ### A look at some language guidelines
 **String data types**
 
-To concatenate small strings, use string interpolation, as seen in the code below.
+To join small strings end to end, string interpolation is used as explained in the example below.
 ```c#
-string displayDetails = $"{detailsList[n].FullName}, {detailsList[n].JobId}";
+string displayDetails2 = $"{detailsList2[n].FullName}, {detailsList2[n].JobId}";
 ```
-You can therefore use a StringBuilder object to attach strings in loops when dealing with a large volume of text.
+When working with a huge volume of text, you can utilize a StringBuilder object to attach strings in loops.
 ```c#
-var phrase = "Goaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaal";
+var phrase = "programmmmmmmmmmmmming";
 var manyPhrases = new StringBuilder();
-for (var k = 0; k < 1000; k++)
+for (var j = 0; j < 1000; j++)
 {
     manyPhrases.Append(phrase);
 }
 ```
 **Event Handlers with Relaxed Delegates**
 
-Event handler arguments (Object and EventArgs) should not be qualified explicitly. Use relaxed delegates instead of event arguments if you're not utilizing event parameters (for example, sender as Object, e As EventArgs).
+Event handler arguments (Object and EventArgs) should not be qualified explicitly. Use relaxed delegates instead of event arguments if you're not utilizing the event parameters Take the following as an example
+(sender as Object, e As EventArgs).
 
-**Unsigned data types**
+**The Unsigned data type**
 
 Use int instead of unsigned types in general. In C#, int is widely utilized, making communication with other libraries easy.
 **Arrays**
 
 When initializing arrays on the declaration line, use the succinct syntax. Let's use string[] in the following example.
 ```c#
-string[] alphabets1 = { "a", "b", "c", "d", "e", "f" };
+string[] alphabets1 = { "u", "v", "w", "x", "y", "z" };
 You can use var if you utilize explicit instantiation.
-var aplphabets2 = new string[] { "a", "b", "c", "d", "e", "f" };
+var aplphabets2 = new string[] { "u", "v", "w", "x", "y", "z" };
 ```
-You must initialize the elements one by one if you give an array size.
+If you specify an array size, you must initialize the elements one by one.
 ```c#
 var alphabet3 = new string[5];
 alphabet3[0] = "a";
@@ -192,10 +192,10 @@ alphabet3[1] = "b";
 // And the process continues.
 ```
 ### Conclusion
-You may benefit from the following if you utilize the same coding conventions.
-1. Users will be able to focus on the content rather than the layout because your code will have a consistent appearance.
-2. Readers learn your code more quickly because they can make assumptions based on prior experience.
-3. The code is easier to copy, update, and maintain.
+What gain do a programmer get for using the coding conventions?
+1. Users will put their focus on the content rather than the layout because your code will have a consistent appearance.
+2. Based on earlier experience, readers may understand your code more easily
+3. The code becomes easier to copy, update, and maintain.
 4. You contribute to ensuring that your code follows Visual Basic's "best practices.
 
 **Follow the conventions and become a perfect programmer**
