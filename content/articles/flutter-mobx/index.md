@@ -1,3 +1,20 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /flutter-mobx/
+title: Flutter state management with Mobx
+description: In this tutorial, we will build a news application that will use Mobx to manage the state of the application 
+author: faith-siaji
+date: 2021-11-07T00:00:00-10:00
+topics: [Android]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/flutter-mobx/hero.jpg
+    alt: Flutter state management with Mobx
+---
+
 ### Introduction
 
 Managing application state in a clean and optimized way is very important when dealing with large Flutter applications. State management is the handling of application data between different screens and components. This article will discuss how to retrieve data from an API and pass it to a service class to the UI. The UI will listen for data from the API. When the data is available, the application will display a list of items. When it is in a loading state, The application will show a progress indicator.
@@ -61,7 +78,7 @@ dev_dependencies:
 
 ### Domain
 
-In the project's lib folder we created, create a new dart file named `article.dart` and add the code snippet below.
+In the project's lib folder, create a new dart file named `article.dart` and add the code snippet below..
 
 ```dart
 class Articles {
@@ -132,6 +149,8 @@ class Articles {
 
 ```
 
+The `Article` class above represents a news item. Article class will map to the JSON object returned by the API.
+
 ### Service
 
 Create a new dart file named `service.dart` and add the code snippet below in the lib folder.
@@ -167,7 +186,7 @@ class NetworkService {
 
 ```
 
-* `getData(String url)` method takes in the URL and retrieves a list of news items from the API URL provided.
+- `getData(String url)` method takes in the URL and retrieves a list of news items from the API URL provided.
   
 
 ### State Manager
@@ -209,8 +228,8 @@ abstract class _NewsStore with Store {
 }
 ```
 
-* `@observable` annotation indicates that the application can listen for any changes in the variable marked. For example, our application will listen for changes in the list of articles. When the articles are retrieved from the API and added to the articles list, the articles will be displayed on the UI rather than a progress indicator.
-* `@action` annotation marks the `fetchArticle()` as actionable, meaning it performs certain operations and changes the data state in the variable marked with `@observable` annotation.
+- `@observable` annotation indicates that the application can listen for any changes in the variable marked. For example, our application will listen for changes in the list of articles. When the articles are retrieved from the API and added to the articles list, the articles will be displayed on the UI rather than a progress indicator.
+- `@action` annotation marks the `fetchArticle()` as actionable, meaning it performs certain operations and changes the data state in the variable marked with `@observable` annotation.
  
 
 ### UI
@@ -308,6 +327,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 }
 ```
+The code snippet above represents the user interface of the application. Next, we retrieve and render the news items on the ArticleContainer widget.
 
 In the `main.dart` file, add the code snippet below.
 
@@ -339,4 +359,8 @@ class Application extends StatelessWidget {
 
 ### Conclusion
 
-With all the content covered in this article, you can now try building a production-grade Flutter application, managing the application state using Mobx, and following the recommended patterns, i.e. model view, ViewModel(MVVM) pattern. You can download the complete source code [here]().
+With all the content covered in this article, you can now try building a production-grade Flutter application, managing the application state using Mobx, and following the recommended patterns, i.e. model view, ViewModel(MVVM) pattern.
+
+---
+
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
