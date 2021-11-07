@@ -35,10 +35,10 @@ Learners should be able to answer the following questions by the end of this art
 
 ### API for Cookies
 
-The `Cookie` class in the Servlet API is used to create cookies. Cookies are created using the Servlet API's 'Cookie' class. This class employs a variety of approaches to give various cookie activities. The `addCookie()` method, for example, is used to add cookies to the response object. It sends cookie data from a client to a server or from a server to a client using the `HTTP` response. The `getCookies()` method, on the other hand, is used to access the cookies that have been added to the response object.
+The `Cookie` class in the Servlet API is used to create cookies. Cookies are created using the Servlet API's 'Cookie' class. This class employs a variety of approaches to give various cookie activities. The `addCookie()` method, for example, is used to add cookies to the response object. Then, it sends cookie data from a client to a server or server to a client using the HTTP response. The `getCookies()` method, on the other hand, is used to access the cookies that have been added to the response object.
 
 ### How does Cookie work
-When a client makes a new request to a Web Server, the web server assigns a unique ID as a `cookie`, which is then sent back with the response to the client and saved in the client's browser.
+When a client makes a new request to a Web Server, the webserver assigns a unique ID as a `cookie`, which is then sent back with the response to the client and saved in the client's browser.
 
 This `cookie` value is likewise provided to the server when the client sends another request, and the server uses this value to identify the user.
 
@@ -76,7 +76,7 @@ It's valid for multiple sessions and, unlike non-persistent cookies, it's not de
 - `void setVersion()`: Cookie's version number is set in this method.
 - ` int getMaxAge()`: This method is used to determine a cookie's maximum age.
 - `String getPath()`: The path from the cookie is obtained using this method.
-- `void setPath()`: This method is used to specify a cookie path. In a web application, for example, it is possible to specify a specific path for the cookies to be saved.
+- `void setPath()`: This method is used to specify a cookie path. For example, in a web application, it is possible to specify a specific path for the cookies to be saved.
 - `String getDomain()`: This method can be used to extract the domain name from a cookie.
  
 ### How to create, delete, and get cookies
@@ -147,7 +147,7 @@ By right-clicking on `Example to demonstrate cookies in servlet` and selecting N
 ```
 
 #### Step 3: Creating a ProcessOneServlet Servlet page
-By right-clicking on the`Example to demonstrate cookies in servlet` project selecting New Servlet, you can code a Servlet page as shown below. Provide your Servlet class name. I will call it `ProcessOneServlet`.
+You can code a Servlet page as shown below by right-clicking on the `Example to demonstrate cookies in servlet` project selecting New Servlet. First, provide your Servlet class name. I will call it `ProcessOneServlet`.
 
 ```java
 
@@ -184,8 +184,8 @@ public class ProcessOneServlet extends HttpServlet
 
 }
 ```
-#### Step 3: Creating a ReadingValuesFromCookies Servlet page
-By right-clicking on the`Example to demonstrate cookies in servlet` project selecting New Servlet, you can code a Servlet page as shown below. Provide your Servlet class name. I will call it `ReadingValuesFromCookies`.
+#### Step 4: Creating a ReadingValuesFromCookies Servlet page
+You can code a Servlet page as shown below by right-clicking on the `Example to demonstrate cookies in servlet` project selecting New Servlet. Provide your Servlet class name. I will call it `ReadingValuesFromCookies`.
 ```java 
 
 
