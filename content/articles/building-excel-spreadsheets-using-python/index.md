@@ -1,5 +1,21 @@
-One of the most intuitive and user-friendly ways to manipulate large datasets is using spreadsheets. There are a lot of spreadsheet packages available today.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /building-excel-spreadsheets-using-python/
+title: Building Excel Spreadsheets Using Python
+description: This tutorial will guide the reader on how to create and work with Excel spreadsheets using Python. We will explore more about Python libraries OpenPyxl and XlsxWriter.
+author: benedict-ifeanyi-iheagwara
+date: 2021-11-07T00:00:00-19:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/building-excel-spreadsheets-using-python/hero.png
+    alt: Building Excel Spreadsheets Using Python Hero Image
+---
+One of the most intuitive and user-friendly ways to manipulate large datasets is using spreadsheets. There are a lot of spreadsheet packages available today.
+<!--more-->
 However, when it comes to analyzing datasets, Microsoft Excel takes the lead as the most preferred spreadsheet package. 
 
 In the article, you'll learn how to write and visualize your Excel spreadsheets with Python's libraries `OpenPyxl` and `XlsxWriter`.
@@ -388,3 +404,6 @@ Happy coding.
 - [Writing Excel sheet using Python.](https://www.geeksforgeeks.org/writing-excel-sheet-using-python/)
 - [Build Smarter Spreadsheet with Python](https://omarrrz-lounge.hashnode.dev/build-smarter-spreadsheets-with-python)
 - [Data visualization using pandas](/getting-started-with-data-visualization-using-pandas/)
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
