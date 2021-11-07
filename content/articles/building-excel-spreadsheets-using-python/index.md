@@ -77,7 +77,7 @@ sheet["C2"] = "Two"
 your_workbook.save(filename="hello_world_openpyxl.xlsx") #saving the file with the 'xlsx' excel extension
 ```
 
-![Creating a File with Openpyxl](/write-excel-using-python/Imageone.png)
+![Creating a File with Openpyxl](/engineering-education/building-excel-spreadsheets-using-python/Imageone.PNG)
 
 OpenPyxl allows you to load pre-existing workbooks. To follow along you can download the dataset we would use [here](https://github.com/Bennykillua/Project/blob/main/Write%20Excel%20using%20Python/Test.xlsx). I would use the `load_workbook function` to load this dataset.
 
@@ -146,7 +146,7 @@ To save the spreadsheet, use `.save()` function:
 your_workbook2.save(filename='Test.xlsx') 
 ```
 
-![Cell formatting With Openpyxl](/write-excel-using-python/Imagetwo.png)
+![Cell formatting With Openpyxl](/engineering-education/building-excel-spreadsheets-using-python/Imagetwo.PNG)
 *Screenshot by author*
 
 Conditional formatting differs from cell formatting because it allows you to highlight specific cells based on a condition. This draws your attention to certain cells and makes getting insights easy.
@@ -165,7 +165,7 @@ Wb.conditional_formatting.add('A2:A11', Condition_style)
 your_workbook2.save(filename='Test.xlsx')
 ```
 
-![Conditional formatting with Openpyxl](/write-excel-using-python/Imagethree.png)
+![Conditional formatting with Openpyxl](/engineering-education/building-excel-spreadsheets-using-python/Imagethree.PNG)
 *Screenshot by author*
 
 Finally, let's add up the numbers in the first column. To achieve this, we would simply enter the sum formula into a cell.
@@ -176,7 +176,7 @@ Wb['B13'] = '=SUM(A2:A11)'
 your_workbook2.save(filename='Test.xlsx') 
 ```
 
-![Sum with Openpyxl](/write-excel-using-python/Imagefour.png)
+![Sum with Openpyxl](/engineering-education/building-excel-spreadsheets-using-python/Imagefour.PNG)
 *Screenshot by author*
 
 ### How to visualize the dataset with OpenPyxl
@@ -207,7 +207,7 @@ sheet.add_chart(chart, "D2")  #D2 represent where we want the chart to start fro
 your_workbook2.save(filename='Test.xlsx') 
 ```
 
-![Bar chart with Openpyxl](/write-excel-using-python/Imagefive.png)
+![Bar chart with Openpyxl](/engineering-education/building-excel-spreadsheets-using-python/Imagefive.PNG)
 *Screenshot by author*
 
 We've created a bar chart using `BarChart()`. You can also create pie charts, line charts and scatter charts using `PieChart()`, `LineChart()`, and `ScatterChart()`.
@@ -238,7 +238,7 @@ sheet1.write('C2' , 'Two')
 your_workbook.close() #once done, you close using .close
 ```
 
-![Creating a  file with Xlsxwriter](/write-excel-using-python/Imagesix.png)
+![Creating a  file with Xlsxwriter](/engineering-education/building-excel-spreadsheets-using-python/Imagesix.PNG)
 *Screenshot by author*
 
 You could also write the code above by specifying the row and column.
@@ -279,7 +279,7 @@ sheet1.write('D7', '=SUM(D1:D5)')
 your_workbook.close()
 ```
 
-![Sum with Xlsxwriter.](/write-excel-using-python/Imageseven.png)
+![Sum with Xlsxwriter.](/engineering-education/building-excel-spreadsheets-using-python/Imageseven.PNG)
 *Screenshot by author*
 
 Let's do some formatting.
@@ -317,7 +317,7 @@ currency_format = your_workbook.add_format({'num_format': '$'})
 sheet1.write('A8', 1234.56, currency_format)
 ```
 
-![Formatting with Xlsxwriter](/write-excel-using-python/Imageeight.png)
+![Formatting with Xlsxwriter](/engineering-education/building-excel-spreadsheets-using-python/Imageeight.PNG)
 *Screenshot by author*
 
 One thing to keep in mind is that, Python has a function called `help`. This can be called using:
@@ -373,10 +373,10 @@ worksheet.insert_chart('C2', chart1, {'x_offset':25, 'y_offset':10}) #insert cha
 workbook.close()
 ```
 
-![Visualization with Xlsxwriter](/write-excel-using-python/Imagenine.png)
+![Visualization with Xlsxwriter](/engineering-education/building-excel-spreadsheets-using-python/Imagenine.PNG)
 *Screenshot by author*
 
-###  Conclusion
+### Conclusion
 Although this tutorial covers some of the fundamentals of manipulating and visualization using this library. You can learn more about how these libraries work by visiting their official documentation.
 
 Feel free to explore this [notebook](https://github.com/Bennykillua/Project/blob/main/Write%20Excel%20using%20Python/Write%20Excel%20using%20Python.ipynb) that I created as you follow the tutorial.
