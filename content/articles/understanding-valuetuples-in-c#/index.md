@@ -115,7 +115,7 @@ Now that you have assigned new names let us access the members. You will use the
     Course: Computer Technology
 
 ### Returning ValueTuple from a method.
-You can return multiple values from a method. In the example below you are not going to use the ref or out parameters.
+You can return multiple values from a method. In the example below, you are not going to use the ref or out parameters.
 
 ```C#
 class Returntype
@@ -244,11 +244,11 @@ This method creates a new value tuple which has eight components where <T8,> is 
 
 ### Conclusion.
 In summary, we have learned; 
-- How to create and initialize value tuple.
-- How to access value tuple named and unnamed members.
-- How to return value tuple from a method.
+- How to create and initialize ValueTuple.
+- How to access ValueTuple named and unnamed members.
+- How to return ValueTuple from a method.
 - ValueTuple deconstruction.
 - ValueTuple structure.
 
-We have also learned that value tuples have a simplified syntax and perform better than Tuples. They also can alter data members and give them meaningful names. Therefore we can say that it is best to use value tuples.
+We have also learned that ValueTuples have a simplified syntax and perform better than Tuples. They also can alter data members and give them meaningful names. Therefore we can say that it is best to use value tuples.
 
