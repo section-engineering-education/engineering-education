@@ -26,7 +26,7 @@ The time required to evaluate a big dataset using this technique makes it unfeas
 - [Hard Margin and Soft Margin comparisons.](#hard-margin-and-soft-margin-comparisons)
 
 ### Overview on support vector machines
-It is possible to utilize Vector Machines for both classification and regression. Vector Machines are a powerful machine learning method. Because it has such a significant impact, the kind of margin we employ to solve a problem must be carefully considered. When doing SVM calculations, this section of the course will discuss the distinctions between the use of a hard margin and the use of a soft margin.
+It is possible to utilize vector machines for both classification and regression. Vector Machines are a powerful machine learning method. Because it has such a significant impact, the kind of margin we employ to solve a problem must be carefully considered. When performing SVM calculations, this section of the course will discuss the distinctions between the use of a hard margin and the use of a soft margin.
 
 These are the benefits of using this technique:
 - SVM works effectively whenever we have a clear difference between classes.
