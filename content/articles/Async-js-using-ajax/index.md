@@ -5,18 +5,18 @@ Ajax allows you to make requests asynchronously without having to reload the pag
 
 In this tutorial. To show how Ajax works, we’ll create a JavaScript program that fetches data from an external API, format it, and return random Chuck Norris’ jokes.
 
-It’s pretty simple, Ajax goes out, gets the joke, returns them, and then displays them to the user.
+It’s pretty simple, Ajax goes out, gets the jokes, returns them, and then displays them to the user.
 
 ### Prerequisites
 To follow along with this tutorial, you will need to have some knowledge of the following:
 
-- [JavaScript](https://www.geeksforgeeks.org/introduction-to-javascript/.)
-- [HTML](https://www.w3schools.com/html/default.asp)
-- [Skeleton CSS](http://getskeleton.com/#intro)
+- [JavaScript](https://www.geeksforgeeks.org/introduction-to-javascript/).
+- [HTML](https://www.w3schools.com/html/default.asp).
+- [Skeleton CSS](http://getskeleton.com/#intro).
 - Code editors (Preferably [Visual Studio Code](https://code.visualstudio.com/)).
-- [How APIs work](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Introduction)
+- [How APIs work](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Introduction).
 
-### Goals of the Tutorial
+### Goals of the tutorial
 This tutorial aims to create a webpage that gets random jokes from the [Chuck Norris Jokes API](http://api.icndb.com/random) and displays them to the user.
 
 At the end of this tutorial, the reader should be able to make a call to an external API, get data and display the result on the webpage.
@@ -144,9 +144,9 @@ function generateNewJokes(e) {
 
 > "**_XMLHttpRequest (XHR)_** objects are used to interact with servers. You can retrieve data from a URL without having to do a full page refresh. This enables a Web page to update just part of a page without disrupting what the user is doing" - [MDN](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest).
 
-- Create the object, `newXHRRequest.open()` takes three parameters:
+- Inside the `generateNewJokes` function, create the object, `newXHRRequest.open()` that takes three parameters:
 
-  1. The newXHRRequest, which is [GET method](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods)
+  1. The `newXHRRequest`, which is [GET method](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods)
   2. The link and append the number variable to get the numbers entered by the user and pass it to the.
   3. Set the last variable to true to make it asynchronous
 
@@ -168,15 +168,17 @@ newXHRRequest.onload = function () {};
 - Check if [XHR STATUS](https://www.w3schools.com/xml/ajax_xmlhttprequest_response.asp) returns a 200.
 - Parse the response text in a JSON format to a variable.
 - Initialize a variable and set it to nothing (we will use it to concatenate the response).
-- Check to see if the Response Type returns success.
-- If the response type returns "success", create a [forEach](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach) loop to loop through the values of the response to get the jokes and append the joke inside a li tag (using [template literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) for flexible formatting).
+- Check to see if the response type returns success.
+- If the response type returns "success", create a [forEach](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach) loop to loop through the values of the response to get the jokes and append the joke inside a list tag (using [template literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) for flexible formatting).
 - If the response type is not success, append an error response to the list item.
 - Set the `innerHTML` of the `ol` with the class of jokes to the output.
 
 ```javascript
 if (this.status === 200) {
   const myJokes = JSON.parse(this.responseText);
+
   let output = "";
+
   if (myJokes.type === "success") {
     myJokes.value.forEach(function (joke) {
       output += `<li>${joke.joke}</li>`;
@@ -249,4 +251,4 @@ The final application will look like this:
 ### Conclusion
 Using the **ICNDB API** is an easy way to show how getting data from an external API using AJAX works. Ajax uses the GET method to pull jokes from the Internet Chuck Norris Jokes Database.
 
-A point to also note is that all APIs do not work the same way nor do they do not handle requests and respond the same way. It is very important to check the documentation of the API one intends to work with.
+A point to also note is that all APIs do not work the same way nor do they handle requests and respond the same way. It is very important to check the documentation of the API one intends to work with.
