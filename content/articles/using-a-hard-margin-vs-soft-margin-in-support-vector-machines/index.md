@@ -181,8 +181,7 @@ As a result, we can express our goal mathematically as;
 As long as all points are correctly classified, we can find the vector `w` and `b` whereby the hyperplane given by `w` and `b` maximizes the margin length while minimizing the loss term.
 
 > The soft margin method is the name given to this kind of formulation.
-
-Hard margins are more exact than soft margins in SVMs because the data is more separable. When our dataset can also be split linearly, we strive for a small margin of error. As a result, unless certain criteria are met, it will just be impossible to carry out the necessary activity. Obtaining a linear classifier is difficult in this instance because of the many variables at play. SVMs with slender margins perform well in this situation.
+Hard margins are more exact than soft margins in SVMs because the data is more separable. When our dataset is split linearly, we strive for a small margin of error. 
 
 > Because the error margin is so small in certain instances, overfitting or excessive sensitivity to outliers is a possibility. We may also employ a softer margin SVM with a larger margin to improve the generalization of the model.
 
