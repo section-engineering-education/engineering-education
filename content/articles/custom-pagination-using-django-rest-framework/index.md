@@ -4,8 +4,9 @@ status: publish
 published: true
 url: /custom-pagination-using-django-rest-framework/
 title: Custom Pagination Using Django REST Framework with Vue
-description: The objective of this tutorial is to help the reader understand how to paginate web applications for better user experience and readability and how one can customize and modify the default pagination styles using Django REST Ramework with Vue.
-date: 2021-08-19T00:00:00-11:45
+description: This tutorial aims to help the reader understand how to paginate web applications for better user experience and readability and how one can customize and modify the default pagination styles using Django REST Framework with Vue.
+author: atonya-dennis
+date: 2021-11-8T00:00:00-11:45
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,9 +15,11 @@ images:
     alt: Custom Pagination Example image
 ---
 
-On most modern web applications, one will need to split the app content mostly when displaying huge lists of content sliced in multiple pages for better user experience and readability. This has been made this easier with Django as it comes with a pre-built class, Paginator, to create and manage paginated data of applications.
+One will need to split the app content mainly when displaying large items on the web page.  We can achieve this with Django as it comes with a pre-built class, Paginator, to create and manage paginated data of applications.
 <!--more-->
-This article will cover how we can use the Django REST Framework with Vue to customize and modify pagination styles and help the reader understand the various ways of data pagination and its importance in web development.
+This article will cover how we can use the Django REST Framework with Vue to customize and modify pagination styles. 
+
+In the end, the reader will understand the various ways of data pagination and its importance in web development.
 
 ### Table of contents
 - [Table of contents](#table-of-contents)
@@ -30,46 +33,54 @@ This article will cover how we can use the Django REST Framework with Vue to cus
 - [Conclusion](#conclusion)
 
 ### Prerequisites
-To follow through this tutorial, the reader should:
-- Have prior knowledge of Python and Django concepts.
-- Have a good understanding of Django REST Framework and Vue.
-- Have a suitable IDE installed such as Pycharm, Visual Studio Code, etc.
+To get the most out of this tutorial, you should already understand the following.
+- Knowledge of Python and Django concepts.
+- A solid understanding of Django REST Framework and Vue.
+- A suitable IDE installed such as Pycharm, Visual Studio Code, etc.
 
-For this article will use the Pycharm IDE, use this [page](https://www.jetbrains.com/pycharm/download/#section=windows) to download and install it on your machine.
+This article will use the Pycharm IDE; use this [page](https://www.jetbrains.com/pycharm/download/#section=windows) to download and install it on your machine.
 
 ### Pagination
-This is the process of splitting the content of a web page into discrete pages to make it more efficient to use and read when working with huge lists of data. Django comes with a pre-built class, **Paginator** for creating the paginations and managing the paginated data using the default styles. This process can be done either with **Class-Based Views** or **Function-Based Views** or sometimes one may use the **Django REST Framework** to customize and modify the pagination format, as will be discussed in this tutorial.
+Pagination is the process of splitting the content of a web page into discrete pages to make it more efficient to use and read when working with large lists of items. 
 
-This splitting of web data has its own advantages:
-- Increases content readability by making  web pages that are not overcrowded with content making it easier for visitors to focus on small content at a time.
-- Reduces server load as it is easier to get a small amount of data from the database than retrieving all the information at once which may slow page loading.
-- Increases the number of page views per user and total page views of the website maximizing the number of impressions they can serve and the number of advertising units websites can sell.
+Django comes with a pre-built class, `Paginator`, for creating the paginations and managing the paginated items using the default styles.
+
+Paginations can be done either with `Class-Based Views` or `Function-Based Views`. Sometimes, one may use the `Django REST Framework` to customize and modify the pagination format, as discussed in this tutorial.
+
+Splitting of web page data has its advantages:
+- Increases content readability as they are less crowded.
+- Reduces server load as it is easier to get a portion of data from the server.
+- Increases the number of page views per user and total page views of the website, maximizing the number of impressions they can serve and the number of advertising units websites can sell.
 
 ### Ways of Pagination
-Pagination can be accomplished with the Django `ListView` class, which is controlled by the `GET` parameter, which specifies which page to display. This will create a simple Django project for posting blogs and implementing the pagination styles.
+A generic `ListView` is a class-based view in Django instead of using something else, such as a function-based view.
+
+So in this article, we take the approach of showing you how to create a list view from a generic class-based `ListView`.
 
 #### Project Structure.
-We are going to use a [blog application](https://djangocentral.com/building-a-blog-application-with-django/) — [Github repo](https://github.com/dentonya/Blog_Post_Site/tree/master/blogsite) – for the sake of this tutorial on class and function-Based Views. Make sure to have cloned the project to follow along.
+Now, let's structure our project and build a blog site for posting items which we'll then paginate.
 
-Check the Django version and install it if it isn't already installed:
+>We'll be using use a [blog application](https://djangocentral.com/building-a-blog-application-with-django/) and [this](https://github.com/dentonya/Blog_Post_Site/tree/master/blogsite) source code for the sake of this tutorial on class and function-Based Views. So make sure to have cloned the project to follow along.
+
+Check the Django version and install if not already installed:
 
 ``` bash
 pip install django
 ```
 
-Create the Django project
+Next,create the Django project by running the following command:
 
 ```bash
 django-admin startproject blogsite
 ```
 
-Create the `blog` app in the same directory.
+Proceed and create the `blog` app in the same directory as shown below:
 
 ```bash
 python manage.py startapp blog
 ```
 
-Below is the project structure.
+Below is the project structure:
 ```bash
 └── blogsite         # < project root package
     ├── blog             # < blog app
@@ -86,15 +97,18 @@ Below is the project structure.
         ├── urls.py
         └── wsgi.py
 ```
-After successfully creating the Django project, go to the terminal and change the working directory to the project directory and run the Django development server using the following command:
+After successfully creating the Django project,on the terminal and `cd` to the working directory and start the Django development server by running the following command:
 ```bash
 python manage.py runserver
 ```
-The output below should be displayed on the screen.
+
+Output:
 ![Django Output](/engineering-education/custom-pagination-using-django-rest-framework/django.jpg)
 
 #### Class-Based Views
-To create this view, enter the blog app's `views.py` file, add the following to the file.
+We can  write our API views using class-based views, rather than function based views. As we'll see, this is a powerful pattern that allows us to reuse common functionality on our application, and helps us keep our code `DRY`.
+
+To create this view, add the following to the `views.py` file.
 ```python
 from django.shortcuts import render
 from django.views import generic
@@ -108,14 +122,17 @@ class PostDetail(generic.DetailView):
     model = Post
     template_name = 'post_detail.html'
 ```
+
 We will then introduce a new attribute `paginate_by` under the `PostList` view to specify the number of blog items to be displayed per page.
+
 ```python
 class PostList(generic.ListView):
     queryset = Post.objects.filter(status=1).order_by('-created_on')
     template_name = 'index.html'
     paginate_by = 3
 ```
-To display the paginated content on the screen, we will use the templates `index.html` file in the templates folder and add the code below.
+
+To display the paginated content on the screen, we will use the `index.html` file in the templates folder. The file content as follows:
 
 ```html
 {% extends "base.html" %}
@@ -170,15 +187,22 @@ To display the paginated content on the screen, we will use the templates `index
 </div>
 {%endblock%}
 ```
-The code above is used to display what is in the database to the user using the template tags with inline CSS styling. The `{% extends% }` tag is used to instruct Django to inherit from the base.html file, we inject our content to other HTML files using the `{% block content %}` tag. Learn more about template tags from [here](https://docs.djangoproject.com/en/3.2/ref/templates/builtins/).
 
-A `for` loop is used to loop through the various fields from our `post` model, these fields are then fetched from the database using the model name and the field name i.e. `post.author`: fetches the name of the author of the article and displays it on the screen.
+The above code snippet displays the database row content to the user using the template tags with inline CSS styling.
+The `{% extends% }` tag instructs Django to inherit from the `base.html` file. We then inject our content to other HTML files using the `{% block content %}` tag.
 
-Re-running the project the output below will be produced for class-based view pagination.
+Learn more about template tags from [here](https://docs.djangoproject.com/en/3.2/ref/templates/builtins/).
+
+A `for loop`  iterates through the various fields from our `post` model. These fields are then fetched from the database using the model and field name. For example, `post.author`, fetches the author's name of the article and displays it on the screen.
+
+Now, proceed and restart your server. You should be able to see the following on the view:
 ![Class Based Views](/engineering-education/custom-pagination-using-django-rest-framework/class_based.jpg)
 
 #### Function-Based Views
-For the function-based views open the `views.py` and add the code below.
+Function-based views are views in Django that are defined by functions.
+Using functions, we can create views using certain functions in Django such as `HttpResponse()` (to hardcode HTML into a view) or `render()` to render a template file into a view.
+
+Now proceed and open the `views.py` and add the following code snippets.
 
 ```python
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
@@ -201,9 +225,13 @@ def PostList(request):
                   {'page': page,
                    'post_list': post_list})
 ```
-As a result, in the view, we instantiate the `Paginator` class with the number of objects to be displayed on each page, which is 3. The `request.GET.get('page')`argument returns the current page number.To get the items from the appropriate page number, use the `page()` function. Below that are two exception statements for `PageNotAnInteger` and `EmptyPage`, both of which are subclasses of InvalidPage, and finally the HTML content is rendered.
-Then in the templates `index.html` paste the following code below the snippets.
+In the above view, we've instantiated the `Paginator` class with the number of objects(three) to be displayed on each page. 
 
+The `request.GET.get('page')`argument returns the current page number. We have used the `page()` method to get the items from the appropriate page number. 
+
+We then have two exception statements for `PageNotAnInteger` and `EmptyPage`, both subclasses of `InvalidPage`,then, finally rendering the HTML content.
+
+In your  `index.html`, paste the following code below the snippets.
 ```python
 {% if post_list.has_other_pages %}
   <nav aria-label="Page navigation conatiner"></nav>
@@ -219,20 +247,17 @@ Then in the templates `index.html` paste the following code below the snippets.
 </div>
 {% endif %}
 ```
-Upon re-reloading the server, u will see the next or previous button below the posts.
+Now proceed and restart your server; you should be able to see the following content displayed.
 ![Function Based Views](/engineering-education/custom-pagination-using-django-rest-framework/function_based.jpg)
 
 ### Custom Pagination Using Django Rest Framework
-For custom pagination will install the Django REST Framework and Vue with the following commands:
-
+For custom pagination asn we had discussed previosuly, let's install the Django REST Framework and Vue with the following commands:
 ```bash
 pip install djangorestframework
-```
-
-```bash
 npm install vue
 ```
-Then create a Django `pagination` project using the same method above and add the `blog` app. The project structure is as shown below:
+
+Then proceed to create a Django `pagination` project following the previous procedure. The project structure is as shown below:
 
 ```bash
 └── pagination         # < project root package
@@ -251,7 +276,7 @@ Then create a Django `pagination` project using the same method above and add th
         ├── urls.py
         └── wsgi.py
 ```
-Open the `settings.py` and add the blog app and the REST framework under installed apps.
+Open the `settings.py` and add the following content:
 
 ```python
 INSTALLED_APPS = [
@@ -259,8 +284,7 @@ INSTALLED_APPS = [
     'blog.apps.BlogConfig',
 ]
 ```
-Create the post models under the `models.py` by adding code below, create the views in the `views.py` and create new files in the blog app, `urls.py` and for the Django REST Framework, use  `serializers.py.`
-
+Now, proceed and create the `Post` model in the `models.py` file by adding the following code snippets;
 ```python
 from django.db import models
 from django.contrib.auth.models import User
@@ -286,15 +310,13 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 ```
-Inside the `views.py` specify the number of posts to be displayed per age using the `page_size` variable and the pagination class.
+In the `views.py`, specify the number of posts displayed per page using the `page_size` variable and the pagination class.
 ```python
 from django.shortcuts import render
 from rest_framework import viewsets
 from rest_framework.pagination import PageNumberPagination
 from .models import Post
 from .serializers import PostSerializer
-
-
 # Create your views here.
 def index(request):
     return render(request, 'blog/index.html')
@@ -323,7 +345,7 @@ urlpatterns = [
     path('',include(router.urls))
 ]
 ```
-For the REST API Import `serializers` from REST Framework and the `Post ` model then add code to `serializers.py` that specifies all the fields to be obtained from the database.
+For the REST API, import the`serializers`  and the `Post ` model, then add the following code to `serializers.py` that specifies all the fields to be obtained from the database.
 ```python
 class PostSerializer(serializers.ModelSerializer):
     class Meta:
@@ -338,16 +360,16 @@ python manage.py makemigrations
 python manage.py migrate.
 ```
 
-After successful updating, the database, run the app using the command below and the output displayed is as shown below displaying the post list.
-![Post List](/engineering-education/custom-pagination-using-django-rest-framework/post_rest.jpg)
-
+After successfully migrating the database, run the app using the command below. 
 ```python
 python manage.py runserver
 ```
-Now, to display the post content on the homepage will use Vue js to render the static files. Under the created `templates` folder inside the blog app and add the code below to the `index.html` file.
+Output:
+![Post List](/engineering-education/custom-pagination-using-django-rest-framework/post_rest.jpg)
+
+To display the post content on the homepage, we will use Vue.js to render the static files. Under the created `templates` folder inside the blog app, add the code below to the `index.html` file.
 ```python
 <!DOCTYPE html>
-
 <html>
     <body>
         <div id="blog">
@@ -427,28 +449,20 @@ Now, to display the post content on the homepage will use Vue js to render the s
     </body>
 </html>
 ```
-From the above code, we fetch the database fields using the `post` model followed by the field name and used vue to render the content depending on current page or the next/previous pages. More on how to use vue and Django REST Framework can be found [here](https://www.udemy.com/course/the-complete-guide-to-django-rest-framework-and-vue-js/?utm_source=adwords&utm_medium=udemyads&utm_campaign=LongTail_la.EN_cc.ROW&utm_content=deal4584&utm_term=_._ag_77879424134_._ad_535397245863_._kw__._de_c_._dm__._pl__._ti_dsa-1007766171312_._li_9073682_._pd__._&matchtype=b&gclid=Cj0KCQjww4OMBhCUARIsAILndv4-9Q4w804CQ1DfpSJK_IoVMnHWgLy5AA8oC7HXI6nEwIKk8jUZhbkaAk2zEALw_wcB).
+We fetch the database fields using the `post` model we had previously created from the above code. We then use Vue.js to render the content depending on the current page or the next/previous pages. 
 
-Re-running the program the following output should be displayed containing the next and previous buttons.
+More on using Vue and Django REST Framework can be found [here](https://www.udemy.com/course/the-complete-guide-to-django-rest-framework-and-vue-js/?utm_source=adwords&utm_medium=udemyads&utm_campaign=LongTail_la.EN_cc.ROW&utm_content=deal4584&utm_term=_._ag_77879424134_._ad_535397245863_._kw__._de_c_._dm__._pl__._ti_dsa-1007766171312_._li_9073682_._pd__._&matchtype=b&gclid=Cj0KCQjww4OMBhCUARIsAILndv4-9Q4w804CQ1DfpSJK_IoVMnHWgLy5AA8oC7HXI6nEwIKk8jUZhbkaAk2zEALw_wcB).
+
+Now proceed and restart your server. The expected output is as shown below:
+
 ![Custom Pagination](/engineering-education/custom-pagination-using-django-rest-framework/custom_pagination.jpg)
 
 
-The full combined code can be found on [GitHub.](https://github.com/dentonya/Custom_Pagination_With_Django_REST_Framework)
+You can get the code for this application on [GitHub.](https://github.com/dentonya/Custom_Pagination_With_Django_REST_Framework)
 
 ### Conclusion
-As we have seen that it is easier for one to display a huge list of content sliced on multiple pages by splitting the web content for easier readability and usage by web visitors using the Django paginator class. The tutorial has also equipped the reader with knowledge of how to customize the pagination styles using Django rest framework using `pagination-class` and the `page_size `variable.
+This tutorial has taken you through the basic concepts of paginations using the Django framework and Vue.js. We have seen how this feature helps in rendering a well-structured output on web pages.
 
-
-To summarize, we have:
-
-- Learned what is Pagination and its uses in web development.
-- Explored some of the ways of paginations together with sample code examples.
-- Learned how to customize Default pagination styles using Django REST Framework with Vue.
-- Worked on the blog project as an illustration for custom pagination.
-
-You can find more information about custom pagination with Django REST Framework [here](https://www.django-rest-framework.org/api-guide/pagination/).
-
-Happy coding!
-
+Happy coding
 ---
-Peer Review Contributions by: 
+Peer Review Contributions by: [Miller Juma](/engineering-education/authors/miller-juma/)
