@@ -87,8 +87,6 @@ We need to access the internet connection properties, so we have to add permissi
 
 Finally, create a new Kotlin class that we will use to handle the LiveData and the Connectivity Manager.
 
-![livedata-internet-connections-class](/engineering-education/how-to-handle-internet-connection-and-capabilities-using-livedata-in-android/livedata-internet-connections-class.png)
-
 Name this class `LiveDataInternetConnections`
 
 ### Set up LiveData and ConnectivityManager
