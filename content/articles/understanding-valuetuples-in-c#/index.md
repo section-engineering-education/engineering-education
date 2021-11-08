@@ -179,27 +179,68 @@ To create a discrete variable for each element in the tuple, we can use the pare
 
 
 ### ValueTuple structure.
-When a tuple contains no elements, it is represented by the ValueTuple structure. Value tuples can be instantiated using its helper methods instead of having to provide the type of each component individually. Its static methods allow you to generate and compare value tuple kinds, which is why it's so useful.   You can build value tuples with 0 to 8 components by invoking its static Create methods. You must use the ValueTupleT1,T2,T3,T4,T5,T6,T7,TRest> constructor for value tuples with more than eight components.
+Value tuple structure has static methods that enable you to create value tuple types with upto 8 components. Value tuple structure has helper methods that allow you to create value tuples without defining the type of each component. 
  
 Methods
  
-Create(); this method creates a new value tuple that has zero components.
+- CompareTo()
 
-Create<T1>(T1); this method creates a new value tuple that has one component.
+This method is used to compare a value tuple instances. Since value tuple instances do not have elements when two instances are compared, they are considered to be equal.
 
-Create<T1, T2>(T1, T2); this method creates a new value tuple that has two components.
+- Equals()
 
-Create<T1, T2, T3>(T1, T2, T3); this method creates a new value tuple that has three components.
+In the Equals() there is Equals(ValueTuple) and Equals (object). This methods apply to several products like .NET and .NET Framework
 
-To create a new value tuple with four components, use Create<T1, T2, T3, T4>(T1, T2, T3, T4);
+1.Equals(ValueTuple) is used to find out wheteher two value tuple instances are equivalent.
 
-To create a new value tuple with five components, use the Create<T1, T2, T3, T4, T5>(T1, T2, T3, T4, T5); 
+2.Equals(object) is used to determine whether the value tuple instance currently in use is equivalent to a certain object. If it finds that the object is equivalent to the value tuple instance it returns True and if not it returns False
 
-To create a new value tuple with six components, use Create<T1, T2, T3, T4, T5, T6>(T1, T2, T3, T4, T5, T6); 
+- GetHashCode()
 
-To create a new value tuple with seven components, use Create<T1, T2, T3, T4, T5, T6, T7>(T1, T2, T3, T4, T5, T6, T7); 
+This method is used to return the harsh code( is a value used in identifying an object during equivalence testing) of a valuetuple instance.This methods returns a zero
 
-To create a new value tuple with eight components, use Create<T1, T2, T3, T4, T5, T6, T7, T8>(T1, T2, T3, T4, T5, T6, T7, T8); 
+- ToString ()
+
+This method is used to return the representation of a string of a value tuple instance. This method applies to .NET, .NET Core, .NET Framework and lastly .NET Standard
+
+- Create() 
+
+This method is used to create a new value tuple that has zero components.
+
+
+Create<T1,>(T1);
+This method creates a new value tuple that has one component where <T1> is the type of the first value tuple and (T1) is the value of the first value tuple component.
+
+Create<T1, T2>(T1, T2);
+
+ This method creates a new value tuple that has two components where <T2,> is the type of the second value tuple and (T2) is the value of the second value tuple component.
+
+Create<T1, T2, T3>(T1, T2, T3); 
+
+This method creates a new value tuple that has three components  where <T3,> is the type of the third value tuple and (T3) is the value of the third value tuple component.
+
+Create<T1, T2, T3, T4>(T1, T2, T3, T4);
+
+This method creates a new value tuple that has four components  where <T4,> is the type of the forth value tuple and (T4) is the value of the forth value tuple component.
+
+Create<T1, T2, T3, T4, T5>(T1, T2, T3, T4, T5); 
+
+This method creates a new value tuple that has five components  where <T5,> is the type of the fifth value tuple and (T2) is the value of the fifth value tuple component. 
+
+Create<T1, T2, T3, T4, T5, T6>(T1, T2, T3, T4, T5, T6);
+
+This method creates a new value tuple that has six components where <T6,> is the type of the sixth value tuple and (T6) is the value of the sixth value tuple component. 
+
+Create<T1, T2, T3, T4, T5, T6, T7>(T1, T2, T3, T4, T5, T6, T7);
+
+This method creates a new value tuple that has seven components  where <T7,> is the type of the seventh value tuple and (T7) is the value of the seventh value tuple component. 
+
+Create<T1, T2, T3, T4, T5, T6, T7, T8>(T1, T2, T3, T4, T5, T6, T7, T8); 
+
+This method creates a new value tuple which has eight components where <T8,> is the type of the eighth value tuple and (T8) is the value of the eighth value tuple component.
+
+    NB
+    You use the value tuple<T1, T2, T3, T4, T5, T6, T7, TRest>, constructor, when you want to create a value tuples that have more than 8 components.
 
 ### Conclusion.
 In summary, we have learned; 
