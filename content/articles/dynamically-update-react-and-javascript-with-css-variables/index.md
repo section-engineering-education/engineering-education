@@ -45,7 +45,7 @@ In this article, we will learn how to use CSS Custom properties that dynamically
 ### Prerequisites
 The following are the article pre-requisites:
 - Previous hands-on React.js experience
-- Previous experience on webpage design
+- Previous experience in webpage design
 - React.js environment already set up on the machine in use
 - A good JavaScript IDE or editor
 - A stable internet connection
@@ -170,7 +170,7 @@ To change the variable's scope, refer to the element into which it is bound. The
 ```
 
 - Refresh the browser. The logo doesn't change. This step proves that all is well.
-- In-case of fallbacks, which may occur when the variable is not set yet or can't be found, use the following code syntax to specify another option:
+- In case of fallbacks, which may occur when the variable is not set yet or can't be found, use the following code syntax to specify another option:
 
 ```css
 .App-logo g {
@@ -193,7 +193,7 @@ This allows the app to run client-side code outside the scope of the React rende
 
 Inside the `App()` function, add the _useEffect_ hook, grab the variable, and run it for the first time by using `[]`.
 
-- Since no behavior is added in the block quotes, it prevents re-firing of the application in each render.
+- Since no behavior is added in the block quotes, it prevents the re-firing of the application in each render.
 
 That is due to lack of values passed to it:
 
@@ -274,7 +274,7 @@ Do this as follows:
 </p>
 ```
 
-- Create a function that handles the change of the value of the input of type `range`. It will then set the value of the current position of the range input dynamically per each change. It will also return the current value in the browser console. Create it under the `setColor()` method:
+- Create a function that handles the change of the value of the input of the type `range`. It will then set the value of the current position of the range input dynamically per each change. It will also return the current value in the browser console. Create it under the `setColor()` method:
 
 ```js
     function handleOSizeChange(event) {
@@ -353,7 +353,7 @@ In the above function, the variables have been dynamically fetched and updated p
 
 All the above things, such as changing the color, size, and speed of rotation in the application, are examples of how CSS variables can be dynamically updated to create excellent effects.
 
-This gives us an idea on how to implement it in the application in a very intuitive way to meet needs in a React or JavaScript application.
+This gives us an idea of how to implement it in the application in a very intuitive way to meet needs in a React or JavaScript application.
 
 ### Conclusion
 By reaching here, this means that one has learned the following:
