@@ -1,0 +1,1 @@
+Jacob is an undergraduate student interested in app and web development. Writing codes and learning something new is his passion. Above all, he likes playing around with codes as a hobby.
