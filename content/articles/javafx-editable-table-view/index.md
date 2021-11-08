@@ -31,8 +31,7 @@ At the article's tip, the reader will be able to do the following:
 
 ### Pre-requisites
 
-This is an intermediate-level Java user article. For one to easily follow up with the article, the following are the
-needed skills and tools:
+This article is an intermediate-level Java user article. If new to JavaFX, start with a simple hands-on project in this [article](https://www.section.io/engineering-education/design-a-sign-up-and-login-gui-using-javafx/). To easily follow up with the article's content, the following are the needed skills and tools:
 
 - A good Java IDE. The recommendation is the use of the latest IntelliJ Ultimate version.
 - A good internet connection
@@ -60,18 +59,18 @@ To set up a new JavaFX project, do the following:
 - Open the IDE and click on the '**New Project**' button
 - Select JavaFX as the Framework
 - Set the following in the window:
-    - **Name**: editable-tableview
-    - **Group**: com.table
-    - **Artifact**: editabletableview
+  - **Name**: editable-tableview
+  - **Group**: com.table
+  - **Artifact**: editabletableview
 
 This is shown below:
 
-![New JavaFX editable tableview project](new-javafx-editable-tableview-project.png "New JavaFX editable tableview project")
+![New JavaFX editable tableview project](engineering-education/javafx-editable-table-view/new-javafx-editable-tableview-project.png "New JavaFX editable tableview project")
 
 - Click '**Next**'. In the **Dependencies** section, set the dependencies shown below and click on the '**Finish**'
   button:
 
-![Project dependencies](new-javafx-editable-tableview-project-dependencies.png "Project dependencies")
+![Project dependencies](engineering-education/javafx-editable-table-view/new-javafx-editable-tableview-project-dependencies.png "Project dependencies")
 
 #### Initial Project Structure
 
@@ -140,12 +139,12 @@ To achieve this, do the following:
 
 <VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
       fx:controller="com.table.editabletableview.HelloController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
+  <padding>
+    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+  </padding>
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
+  <Label fx:id="welcomeText"/>
+  <Button text="Hello!" onAction="#onHelloButtonClick"/>
 </VBox>
 ```
 
@@ -158,7 +157,7 @@ private Label welcomeText;
 @FXML
 protected void onHelloButtonClick(){
         welcomeText.setText("Welcome to JavaFX Application!");
-        }
+}
 ```
 
 - In the `HelloApplication.java` file, change the width and height of the Scene created to 800 by 600 as shown in the
@@ -175,13 +174,13 @@ as follows:
   center of the design page.
 - On the Layout section under the right-side panel set the following for the BorderPane so that it can fit with the
   Scene created:
-    - `Pref Width`: 800
-    - `Pref Height`: 600
+  - `Pref Width`: 800
+  - `Pref Height`: 600
 
 - Drag-and-drop a TableView control from the left-side panel into the 'center' section of the BorderPane. The results
   look as follows:
 
-![New TableView](new-tableview.png "New TableView")
+![New TableView](engineering-education/javafx-editable-table-view/new-tableview.png "New TableView")
 
 - Double-click on the `C1` header and change it to `id`. do the same for the `C2` header and make it read `name`.
 - To add other columns, head over to the 'Controls' section and select the 'TableColumn' option. Drag-and-drop it next to the other columns and size it appropriately. Its name will be `email`.
@@ -194,17 +193,17 @@ The SceneBuilder will generate the following code:
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0"
             prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="com.table.editabletableview.controller.HelloController">
-    <center>
-        <TableView fx:id="table_info" prefHeight="600.0" prefWidth="800.0" BorderPane.alignment="CENTER">
-            <columns>
-                <TableColumn fx:id="col_id" prefWidth="75.0" text="id"/>
-                <TableColumn fx:id="col_name" prefWidth="132.0" text="name"/>
-                <TableColumn fx:id="col_email" prefWidth="167.0" text="email"/>
-                <TableColumn fx:id="col_notes" prefWidth="249.0" text="notes"/>
-                <TableColumn fx:id="col_update" prefWidth="176.0" text="edit"/>
-            </columns>
-        </TableView>
-    </center>
+  <center>
+    <TableView fx:id="table_info" prefHeight="600.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+      <columns>
+        <TableColumn fx:id="col_id" prefWidth="75.0" text="id"/>
+        <TableColumn fx:id="col_name" prefWidth="132.0" text="name"/>
+        <TableColumn fx:id="col_email" prefWidth="167.0" text="email"/>
+        <TableColumn fx:id="col_notes" prefWidth="249.0" text="notes"/>
+        <TableColumn fx:id="col_update" prefWidth="176.0" text="edit"/>
+      </columns>
+    </TableView>
+  </center>
 </BorderPane>
 ```
 
@@ -212,7 +211,7 @@ The SceneBuilder will generate the following code:
 
 The results are as follows:
 
-![Created a table layout](created-a-table-layout.png "Created a table layout")
+![Created a table layout](engineering-education/javafx-editable-table-view/created-a-table-layout.png "Created a table layout")
 
 ### Add data items on the TableView
 
@@ -234,33 +233,39 @@ String id,name,email,notes;
 ```java
 /* Constructors */
 public User(String id,String name,String email,String notes,Button update){
-        this.id=id;
-        this.name=name;
-        this.email=email;
-        this.notes=notes;
-        this.update=update;
+    this.id=id;
+    this.name=name;
+    this.email=email;
+    this.notes=notes;
+    this.update=update;
 
 
-        }
+}
 ```
 
 - Inside the constructor, create a function that makes the '**update**' button. The button will display the results of the row when clicked. This allows one to see the results, hence, determine if the results are as expected.
 
+  On **update** button click:
+
+  - Get id by calling on `getId()`
+  - Get name by calling on `getName()`
+  - Get email by calling on `getEmail()`
+  - Get notes by calling on `getNotes()`
+
 ```java
 update.setOnAction(e->{
-        /* Print the values of the row selected */
-        ObservableList<User> users=HelloController.table_info_app.getSelectionModel().getSelectedItems();
+    /* Print the values of the row selected */
+    ObservableList<User> users=HelloController.table_info_app.getSelectionModel().getSelectedItems();
 
-        /* It outputs the value in the terminal */
-        for(User user:users){
+    /* It outputs the value in the terminal */
+    for(User user:users){
         if(user.getUpdate()==update){
-        System.out.println("id: "+user.getId());
-        System.out.println("name: "+user.getName());
-        System.out.println("email: "+user.getEmail());
-        System.out.println("notes: "+user.getNotes());
-        }
-        }
-        });
+            System.out.println("id: "+user.getId());
+            System.out.println("name: "+user.getName());
+            System.out.println("email: "+user.getEmail());
+            System.out.println("notes: "+user.getNotes());
+    }}
+});
 ```
 
 - Set getters and setters outside the constructor as shown below:
@@ -304,6 +309,13 @@ public Button getUpdate(){
         }
 ```
 
+This code sets up getters and setters for:
+- Id
+- Name
+- Email
+- Notes
+- Update button
+
 #### Setup the controller
 
 For the '**HelloController.java**' file, do the following:
@@ -312,10 +324,13 @@ For the '**HelloController.java**' file, do the following:
 
 ```java
 public class HelloController implements Initializable {
-    /* Line of code */
+  /* Line of code */
 
 }
 ```
+
+> **Initializable**, is a JavaFX interface that enables use of the **initialize** method.
+This method is useful in resolving root element relative paths.
 
 - Import the controls that will be used in the application. Look at it in the code below:
 
@@ -330,17 +345,22 @@ private TableColumn<User, String> column_id,column_name,column_email,column_note
 private TableColumn<User, Button> col_update;
 ```
 
-- Under the imported controls, use the code below to do initialization of a controller after the controller's root element has been processed completely. It will also execute two functions that will be defined later on. These are
-  the `initializeCols()` and the `loadData()` functions.
+The code above imports:
+  - TableView: table_info
+  - Table Columns: column_id,column_name,column_email,column_notes
+  - Button: col_update
+
+
+- Under the imported controls, use the code below to do initialization of a controller after the controller's root element has been processed completely. It will also execute two functions that will be defined later on. These are the `initializeCols()` and the `loadData()` functions.
 
 ```java
 @Override
 public void initialize(URL url,ResourceBundle resourceBundle){
-        table_info_app=table_info;
+    table_info_app=table_info;
 
-        initializeCols();
-        loadData();
-        }
+    initializeCols();
+    loadData();
+}
 ```
 
 > **NOTE**: The `location` parameter is used in the resolving of the relative paths for the root objects if it is known while the `resources` does localization for the root object.
@@ -349,39 +369,49 @@ public void initialize(URL url,ResourceBundle resourceBundle){
   in the _column_id_ section are for all IDs.
 
 ```java
-    private void initializeCols(){
-        // User.java ==>> id, name, email, notes;
+private void initializeCols(){
+    // User.java ==>> id, name, email, notes;
 
-        column_id.setCellValueFactory(new PropertyValueFactory<>("id"));
-        column_name.setCellValueFactory(new PropertyValueFactory<>("name"));
-        column_email.setCellValueFactory(new PropertyValueFactory<>("email"));
-        column_notes.setCellValueFactory(new PropertyValueFactory<>("notes"));
-        col_update.setCellValueFactory(new PropertyValueFactory<>("update"));
+    column_id.setCellValueFactory(new PropertyValueFactory<>("id"));
+    column_name.setCellValueFactory(new PropertyValueFactory<>("name"));
+    column_email.setCellValueFactory(new PropertyValueFactory<>("email"));
+    column_notes.setCellValueFactory(new PropertyValueFactory<>("notes"));
+    col_update.setCellValueFactory(new PropertyValueFactory<>("update"));
 
 
-        }
+}
 ```
+
+The code above,as previously stated, associates each column in the table with a datatype e.g.:
+  - column_id to carry IDs(id)
+  - column_name for names(name)
+  - column_email for email
+  - column_notes for notes
+  - column_update for update button(button)
+
 
 - Create another function named `loadData()` that creates dummy data for the application through iteration. Copy-paste
   the following code into the file.
 
 ```java
-    private void loadData(){
-        data_table=FXCollections.observableArrayList();
+private void loadData(){
+    data_table=FXCollections.observableArrayList();
 
-        for(int x=1;x< 12;x++){
+    for(int x=1;x< 12;x++){
 
-        /* Generates the data items in the table */
-        data_table.add(new User(String.valueOf(x),"name "+x,"email "+x,"notes "+x,new Button("update")));
-        }
+    /* Generates the data items in the table */
+    data_table.add(new User(String.valueOf(x),"name "+x,"email "+x,"notes "+x,new Button("update")));
+    }
 
-        table_info.setItems(data_table);
-        }
+    table_info.setItems(data_table);
+}
 ```
+
+This code above produces the outcome as records stored in the system.
 
 - Run the application through the 'Main' class. The output looks like this:
 
-![Uneditable TableView](uneditable-tableview.png "Uneditable TableView")
+![Uneditable TableView](engineering-education/javafx-editable-table-view/uneditable-tableview.png "Uneditable TableView")
 
 - Try to double-click on a cell and see if the contents can be modified.
 
@@ -394,36 +424,47 @@ Now in the Controller, do the following:
 - Add a function, that is the `editableCols()` method to make the cell have a 'Text Field's' property that not only allows displaying the message but also editing properties. It also changes the value of the cell once a commit is done. A commit is done when the value is changed and the Enter button is pressed.
 
 ```java
-    private void editableCols(){
-        column_id.setCellFactory(TextFieldTableCell.forTableColumn());
-        column_id.setOnEditCommit(e->e.getTableView().getItems().get(e.getTablePosition().getRow()).setId(e.getNewValue()));
+private void editableCols(){
+    column_id.setCellFactory(TextFieldTableCell.forTableColumn());
+    column_id.setOnEditCommit(e->e.getTableView().getItems().get(e.getTablePosition().getRow()).setId(e.getNewValue()));
 
-        column_name.setCellFactory(TextFieldTableCell.forTableColumn());
-        column_name.setOnEditCommit(e->e.getTableView().getItems().get(e.getTablePosition().getRow()).setName(e.getNewValue()));
+    column_name.setCellFactory(TextFieldTableCell.forTableColumn());
+    column_name.setOnEditCommit(e->e.getTableView().getItems().get(e.getTablePosition().getRow()).setName(e.getNewValue()));
 
-        column_email.setCellFactory(TextFieldTableCell.forTableColumn());
-        column_email.setOnEditCommit(e->e.getTableView().getItems().get(e.getTablePosition().getRow()).setEmail(e.getNewValue()));
+    column_email.setCellFactory(TextFieldTableCell.forTableColumn());
+    column_email.setOnEditCommit(e->e.getTableView().getItems().get(e.getTablePosition().getRow()).setEmail(e.getNewValue()));
 
-        column_notes.setCellFactory(TextFieldTableCell.forTableColumn());
-        column_notes.setOnEditCommit(e->e.getTableView().getItems().get(e.getTablePosition().getRow()).setNotes(e.getNewValue()));
+    column_notes.setCellFactory(TextFieldTableCell.forTableColumn());
+    column_notes.setOnEditCommit(e->e.getTableView().getItems().get(e.getTablePosition().getRow()).setNotes(e.getNewValue()));
 
-        /* Allow for the values in each cell to be changable */
-        table_info.setEditable(true);
+    /* Allow for the values in each cell to be changable */
+    table_info.setEditable(true);
+    
+    
+    
+}
 ```
 
+The above code does the following:
+  - Makes the TableView and all in it (e.g. cells) to be editable
+  - Get the specific cell whether on the IDs, names, email, and notes column when doubled clicked on
+
+  
 - To use the above function, call it inside the `initializeCols()` function, under the `col_update` line using the line below:
 
 ```java
+/*Call 'editableCols()' function*/
 editableCols();
 ```
 
 - Re-run the application and try again. Notice that now the updates happen when the changes are done and the Enter key is pressed to commit the changes.
-On pressing the Update button, the outputs are sent to the terminal as configured before.
+  On pressing the Update button, the outputs are sent to the terminal as configured before.
 
-![Final Result](final-output.png "Final Result")
+![Final Result](engineering-education/javafx-editable-table-view/final-output.png "Final Result")
 
 The content updates can be fetched for updating the content in the database.
 
+Find the code [here](https://github.com/prograte/JavaFX-editable-table-view).
 ****
 
 ### Conclusion
