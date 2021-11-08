@@ -1,5 +1,21 @@
-While one might be familiar with using CSS variables with something like [SASS](https://sass-lang.com), custom properties are native CSS implementation of using the variables right inside the browser.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /dynamically-update-react-and-javascript-with-css-variables/
+title: Dynamically Update React and JavaScript with CSS Variables
+description: In this article, you will learn how to dynamically update React.js and other JavaScript applications with custom CSS properties.
+author: francis-kaguongo
+date: 2021-11-08T00:00:00-22:30
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/dynamically-update-react-and-javascript-with-css-variables/hero.png
+    alt: Dynamically Update React and JavaScript with CSS Variables Hero Image
+---
+While one might be familiar with using CSS variables with something like [SASS](https://sass-lang.com), custom properties are native CSS implementation of using the variables right inside the browser.
+<!--more-->
 As already known, there are three main methods applied to use these custom variables. These include defining the double hyphen(`--`) prefixes on them, stating the variable's name, and prefixing it with the **var** keyword, representing it on an element or on a selector (this will make it be cascaded only within the scope).
 
 The custom CSS variables are used in JavaScript and JavaScript frameworks.
