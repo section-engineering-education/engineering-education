@@ -1,13 +1,28 @@
-### Introduction
-When developing an Android application, you are probably going to consume data from remote servers. This will require a user to have an internet connection. Take a comparative example of a user login system. You need to authenticate that user.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-handle-internet-connection-and-capabilities-using-livedata-in-android/
+title: How to Handle Internet Connection and Capabilities using LiveData in Android
+description: This tutorial will guide the reader through the process of handling internet connection and capabilities using LiveData in Android. Livedata allows you to observe changes in the connectivity status of the device and update the UI accordingly.
+author: joseph-chege
+date: 2021-11-09T00:00:00-00:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
-Thus this process has to hit the internet back and forth to ensure the credential submitted are valid to that specific user. The user will need to have wifi connectivity of mobile data to process all these server requests and responses.
+  - url: /engineering-education/how-to-handle-internet-connection-and-capabilities-using-livedata-in-android/hero.jpg
+    alt: Internet Connection and Capabilities using LiveData in Android hero image
+---
+When developing an Android application, you are probably going to consume data from remote servers. This will require a user to have an internet connection.
+<!--more-->
+Take a comparative example of a user login system. You need to authenticate that user.  Thus this process has to hit the internet back and forth to ensure the credential submitted are valid to that specific user. The user will need to have wifi connectivity or mobile data to process all these server requests and responses.
 
 The user may not be aware that their phone has no internet connection. As a developer, you need to suit your application in such a scenario. The app should alert users that internet is required for them to have access to application's information.
 
 However, as a developer, the ways you use to handle this case must prove its importance to the user. For example, you need to detect and monitor network connectivity. Then decide what to tell the user.
 
-In this case, developing an application that just detects the internet connection might deceive a user. Your application will still work and show the user when connected to the internet.
+In this case, developing an application that just detects the internet connection might deceive a user. Your application will still work and indicate when connected to the internet.
 
 However, you can not just rely on the detection of network connectivity. A user might be connected to the wifi, but the wifi has no active internet to connect and access data from a server. This means you have first to detect if the user has connected to the internet then monitor the user's network to know the internet capabilities. If this connection is active, does it have capabilities to access an online server/data?
 
@@ -40,14 +55,16 @@ Now you might be wondering where the concept of LiveData comes in in relation to
 
 Here is a simple scenario that will help you understand the concept of LiveData and what it does to the UI components. Let’s use the YouTube app as an example. When you open your YouTube app, and suddenly the internet connection gets lost, the application immediately updates the UI components and shows that you don’t have internet connection.
 
-![youtube-offline](/engineering-education/handle-and-implement-no-internet-connections-and-capabilities-using-livedata/youtube-offline.jpg)
+![youtube-offline](/engineering-education/how-to-handle-internet-connection-and-capabilities-using-livedata-in-android/youtube-offline.jpg)
 
 And when your internet connection is restored, the UI is immediately updated with new state that show the connection is now active.
 
-![youtube-online](/engineering-education/handle-and-implement-no-internet-connections-and-capabilities-using-livedata/youtube-online.jpg)
+![youtube-online](/engineering-education/how-to-handle-internet-connection-and-capabilities-using-livedata-in-android/youtube-online.jpg)
 
 #### The Connectivity Manager
-`ConnectivityManager()` is used to initially register a specific network request. It is an Android class that provides a list of all the current questions about the state of wireless connectivity. It does so by informing them when the network connection state gets changed. It does the following:
+`ConnectivityManager()` is used to initially register a specific network request. It is an Android class that provides a list of all the current questions about the state of wireless connectivity. It does so by informing them when the network connection state gets changed.
+
+It does the following:
 
 - Gets information about the networks you're connected to.
 - Monitors the type of network connections such as WiFi, Cellular data, etc.
@@ -60,7 +77,7 @@ We're going to create a class that can output a LiveData object. This class will
 ### Set up an Android project
 Head over to your Android Studio and create a new empty activity project. While doing this, remember we are using Kotlin. So make sure it is selected.
 
-![create-a-kotlin-app](/engineering-education/handle-and-implement-no-internet-connections-and-capabilities-using-livedata/create-a-kotlin-app.png)
+![create-a-kotlin-app](/engineering-education/how-to-handle-internet-connection-and-capabilities-using-livedata-in-android/create-a-kotlin-app.png)
 
 We need to access the internet connection properties, so we have to add permission to access the network states. Head over to your app's Manifest file and add the following:
 
@@ -70,7 +87,7 @@ We need to access the internet connection properties, so we have to add permissi
 
 Finally, create a new Kotlin class that we will use to handle the LiveData and the Connectivity Manager.
 
-![livedata-internet-connections-class](/engineering-education/handle-and-implement-no-internet-connections-and-capabilities-using-livedata/livedata-internet-connections-class.png)
+![livedata-internet-connections-class](/engineering-education/how-to-handle-internet-connection-and-capabilities-using-livedata-in-android/livedata-internet-connections-class.png)
 
 Name this class `LiveDataInternetConnections`
 
@@ -164,36 +181,36 @@ Add the following code in your `activity_main.xml` file. We are adding two invis
    tools:context=".MainActivity">
 
    <TextView
-     android:id="@+id/connected"
-     android:layout_width="match_parent"
-     android:layout_height="wrap_content"
-     android:background="#0B0A0A"
-     android:gravity="center"
-     android:text="Connected"
-     android:textColor="#ff669900"
-     android:textSize="30dp"
-     android:textStyle="bold"
-     app:layout_constraintBottom_toBottomOf="parent"
-     android:visibility="gone"
-     tools:ignore="MissingConstraints"
-     tools:layout_editor_absoluteX="0dp"
-     tools:layout_editor_absoluteY="699dp" />
+      android:id="@+id/connected"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:background="#0B0A0A"
+      android:gravity="center"
+      android:text="Connected"
+      android:textColor="#ff669900"
+      android:textSize="30dp"
+      android:textStyle="bold"
+      app:layout_constraintBottom_toBottomOf="parent"
+      android:visibility="gone"
+      tools:ignore="MissingConstraints"
+      tools:layout_editor_absoluteX="0dp"
+      tools:layout_editor_absoluteY="699dp" />
 
    <TextView
-     android:id="@+id/not_connected"
-     android:layout_width="match_parent"
-     android:layout_height="wrap_content"
-     android:background="#0B0A0A"
-     android:gravity="center"
-     android:text="No Connection"
-     android:textColor="#ffcc0000"
-     android:textSize="30dp"
-     app:layout_constraintBottom_toBottomOf="parent"
-     android:textStyle="bold"
-     android:visibility="gone"
-     tools:ignore="MissingConstraints"
-     tools:layout_editor_absoluteX="0dp"
-     tools:layout_editor_absoluteY="699dp" />
+      android:id="@+id/not_connected"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:background="#0B0A0A"
+      android:gravity="center"
+      android:text="No Connection"
+      android:textColor="#ffcc0000"
+      android:textSize="30dp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      android:textStyle="bold"
+      android:visibility="gone"
+      tools:ignore="MissingConstraints"
+      tools:layout_editor_absoluteX="0dp"
+      tools:layout_editor_absoluteY="699dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
 
@@ -236,11 +253,11 @@ We are then watching the value of `isConnected`. When `true`, `TextView1` should
 ### Testing the App
 This application is now ready for teasing. You can run it on a real device or an emulator.
 
-![connected](/engineering-education/handle-and-implement-no-internet-connections-and-capabilities-using-livedata/connected.jpg)
+![connected](/engineering-education/how-to-handle-internet-connection-and-capabilities-using-livedata-in-android/connected.jpg)
 
 As soon as you switch off your wifi of cellular data, the application gets updated, and a "not-connected" TextView becomes visible.
 
-![no-connections](/engineering-education/handle-and-implement-no-internet-connections-and-capabilities-using-livedata/no-connections.jpg)
+![no-connections](/engineering-education/how-to-handle-internet-connection-and-capabilities-using-livedata-in-android/no-connections.jpg)
 
 However, if your cellular data or wifi is active but has no active network connection, this will still show that you are connected to a network.
 
@@ -295,17 +312,17 @@ override fun onActive() {
 ### Testing network capabilities
 We will use LogCat to test these features. Run your application and if possible, try using a real device. Once you run the application, open your LogCat, select the running application and filter the debug logs.
 
-![logcat](/engineering-education/handle-and-implement-no-internet-connections-and-capabilities-using-livedata/logcat.png)
+![logcat](/engineering-education/how-to-handle-internet-connection-and-capabilities-using-livedata-in-android/logcat.png)
 
 Open your application and watch the logCat messages.
 
-![network-with-capabilities](/engineering-education/handle-and-implement-no-internet-connections-and-capabilities-using-livedata/network-with-capabilities.png)
+![network-with-capabilities](/engineering-education/how-to-handle-internet-connection-and-capabilities-using-livedata-in-android/network-with-capabilities.png)
 
 If you open your application while connected to an active wifi, The `onAvailable()` method will be called. The `networkCapabilities()` is checked. Based on the above logCat messages, we can see that this wifi has the capability to connect.
 
 Next, try to connect to wifi/cellular that you know has no internet connection.
 
-![network-with-no-capabilities](/engineering-education/handle-and-implement-no-internet-connections-and-capabilities-using-livedata/network-with-no-capabilities.png)
+![network-with-no-capabilities](/engineering-education/how-to-handle-internet-connection-and-capabilities-using-livedata-in-android/network-with-no-capabilities.png)
 
 Since we are connected to a network, `onAvailable()` method will successfully be executed, followed by `networkCapabilities()`, which shows we are connected to a wifi network.
 
@@ -313,7 +330,7 @@ However, this connection is not valid, and it has `No Connection Capability`. Th
 
 Finally, if you switch off the wifi completely, `onLost()` method will be called.
 
-![lost-connection](/engineering-education/handle-and-implement-no-internet-connections-and-capabilities-using-livedata/lost-connection.png)
+![lost-connection](/engineering-education/how-to-handle-internet-connection-and-capabilities-using-livedata-in-android/lost-connection.png)
 
 Since we have no available connection, we have no `networkCapabilities()` checks. And the current LiveData value will be saved as `false`, updating the UI elements accordingly.
 
@@ -324,4 +341,9 @@ The concept of `ConnectivityManager()` is a bit wide, and there are more methods
 
 This article has covered the fundamentals of `ConnectivityManager()`. Be sure to [check on the documentation](https://developer.android.com/reference/android/net/ConnectivityManager) to see what fits your application.
 
-For further reference, check this project's code on [GitHub](https://github.com/kimkimani/Internet-Connections-and-Capabilities-Checks-using-LiveData).
+For further reference, check this project on [GitHub](https://github.com/kimkimani/Internet-Connections-and-Capabilities-Checks-using-LiveData).
+
+Happy coding!
+
+---
+Peer Review Contributions by: [Eric Gacoki](/engineering-education/authors/eric-gacoki/)
