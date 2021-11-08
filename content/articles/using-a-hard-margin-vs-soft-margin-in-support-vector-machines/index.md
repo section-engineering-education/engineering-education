@@ -59,7 +59,7 @@ We must utilize our available area to realize this potential. We can look at `al
 
 **Explanation** The above equation is used to minimize the margin without the loss of generality.
 
-This optimization has several drawbacks. Suppose our classes are -1 and +1 for argument's sake. `wx+b>=1`, while `wx=b=-1` classifies the data as positive. These two requirements may be linked to a single one. As a solution, our optimization issue would be as shown below:
+This optimization has several drawbacks. Suppose our classes are `-1` and `+1` for argument's sake. `wx+b>=1`, while `wx=b=-1` classifies the data as positive. These two requirements may be linked to a single one. As a solution, our optimization issue would be as shown below:
 
 ![Optimization problem](/engineering-education/using-a-hard-margin-vs-soft-margin-in-support-vector-machines/formula.jpg)
 
@@ -73,15 +73,15 @@ This kind of optimization problem is a primal problem since it always results in
 
 *[Image Source: Baeldung](https://www.baeldung.com/wp-content/ql-cache/quicklatex.com-51d090cd83bcdfc3945920d9d8b83c09_l3.svg)*
 
-**Explanation** The above equation solves the problem by introducing Lagrange multipliers and converting it to the due problem.
+**Explanation** The above equation solves the problem by introducing Lagrange multipliers and converting it to the dual problem.
 
-`Lagrangian function` is the name used to describe this kind of function, which is distinct in terms of (omega) and b and which is generated from the SVM's Lagrangian function.
+The `Lagrangian function` is the name used to describe this kind of function, which is distinct in terms of (omega) and `b` which is generated from the SVM's Lagrangian function.
 
 ![Lagrangian function](/engineering-education/using-a-hard-margin-vs-soft-margin-in-support-vector-machines/function.jpg)
 
 *[Image Source: Baeldung](https://www.baeldung.com/wp-content/ql-cache/quicklatex.com-51d090cd83bcdfc3945920d9d8b83c09_l3.svg)*
 
-**Explanation** Substituting the above equation in the second term of the lagrangian function, we would get the dual problem of the SMV.
+**Explanation** Substituting the above equation in the second term of the lagrangian function, we would get the dual problem of the SVM.
 
 We will have the SVM dual-issue if we substitute them into the second term of the Lagrangian function.
 
@@ -106,7 +106,7 @@ Slack variables, or misclassified features, are lost when using hard margin SVM.
 
 *[Image Source: Baeldung](https://www.baeldung.com/wp-content/ql-cache/quicklatex.com-be1276a088f9cf7beae6797ba1559071_l3.svg)*
 
-**Explanation** Above equation is utilized to control the trade-off between maximizing the margin and minimizing the loss.
+**Explanation** The above equation is utilized to control the trade-off between maximizing the margin and minimizing the loss.
 
 We may use the regularization parameter `C`  to control the trade-off between margin expansion and loss reduction. As shown in the image, loose factors have been added to both the fundamental and hard margin problems. Because it contains slack variables, the model is more lenient when misclassifications occur. This is illustrated below:
 
@@ -138,7 +138,7 @@ Each hyperplane's equations may well be summarized as follows:
 
 *[Image Source: Towards data science](https://miro.medium.com/max/239/1*PrLTv8_JR0jdP7iljVQSow.png)*
 
-**Explanation** As shown above, the equation determines that the product of the actual output and the hyperplane equation is 1, meaning that the point is correctly classified in the positive domain.
+**Explanation** As shown above, the equation determines that the product of the actual output and the hyperplane equation is `1`, meaning that the point is correctly classified in the positive domain.
 
 > For point X3 is shown below:
 
@@ -149,12 +149,12 @@ Each hyperplane's equations may well be summarized as follows:
 **Explanation**
 X3 is beyond the hyperplane's domain when it is further away from it. This indicates the point is positive.
 
-As stated above, if `Yi(WT*Xi +b) > 1`, then Xi is properly categorized; otherwise, Xi is wrongly classified.
+As stated above, if `Yi(WT*Xi +b) > 1`, then `Xi` is properly categorized; otherwise, `Xi` is wrongly classified.
 
-If we add an outlier, our hyperplane becomes worthless since it cannot differentiate linearly separable points. As a result, we must use `hard margin SVMs` to classify each piece of data.
+If we add an outlier, our hyperplane becomes worthless since it cannot differentiate linearly separable points. As a result, we must use `hard margin` SVMs to classify each piece of data.
 
 #### Soft margin
-We presume data can be split linearly, although this might not be the case. This technique eliminates outliers, enabling us to categorize locations almost linearly. Thus, the Slack variable  `ξ` Xi is generated. If we add  `ξ` to our previous equation, we get:
+We presume data can be split linearly, although this might not be the case. This technique eliminates outliers, enabling us to categorize locations almost linearly. Thus, the slack variable `Xi` is generated. If we add  `ξ` to our previous equation, we get:
 
 ![Introducing ξ](/engineering-education/using-a-hard-margin-vs-soft-margin-in-support-vector-machines/xi.jpg)
 
@@ -162,7 +162,7 @@ We presume data can be split linearly, although this might not be the case. This
 
 **Explanation** This equation above updates the function to skip a few outliers and be able to classify almost linearly separable points.
 
-*If `ξi= 0`, then the points are properly classified. If that's not the case, we receive`ξi> 0`, which is miscategorized.*
+If `ξi= 0`, then the points are properly classified. If that's not the case, we receive`ξi> 0`, which is miscategorized.
 
 If `ξi> 0`, then the variables will be in the wrong dimension (variable). How to compute the error of  standard deviation is shown below:
 
@@ -170,7 +170,7 @@ If `ξi> 0`, then the variables will be in the wrong dimension (variable). How t
 
 *[Image Source: Towards data science](https://miro.medium.com/max/245/1*xnM6vrvKPdcC0Ttex-5heQ.png)*
 
-**Explanation** The above equation calculates the average error of the variable in the incorrect dimension associated with the variable Xi.
+**Explanation** The above equation calculates the average error of the variable in the incorrect dimension associated with the variable `Xi`.
 
 As a result, we can express our goal mathematically as;
 
