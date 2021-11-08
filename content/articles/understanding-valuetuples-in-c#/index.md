@@ -147,7 +147,7 @@ class Returntype
 ### ValueTuple deconstruction.
 Individual members can be obtained by deconstructing a ValueTuple. A deconstruction declaration syntax deconstructs a ValueTuple and assigns each component to a new variable. 
 
-In C#, there are numerous ways to deconstruct the ValueTuple object's elements and assign them to local variables. 
+In C#, there are numerous ways to deconstruct ValueTuple elements and assign them to local variables. 
 
 To create a discrete variable for each element in the tuple, we can use the parenthesis () to specify the type of each element.
 
