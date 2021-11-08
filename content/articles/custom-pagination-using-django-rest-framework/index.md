@@ -464,5 +464,6 @@ You can get the code for this application on [GitHub.](https://github.com/denton
 This tutorial has taken you through the basic concepts of paginations using the Django framework and Vue.js. We have seen how this feature helps in rendering a well-structured output on web pages.
 
 Happy coding
+
 ---
 Peer Review Contributions by: [Miller Juma](/engineering-education/authors/miller-juma/)
