@@ -18,7 +18,7 @@ images:
  
 Doing the same repetitive tasks daily can be a bit boring. Automating those tasks can save us much time and help us be productive in other areas. We can achieve the automation process with a Python library known as PyAutoGUI. To learn more about PyAutoGUI, click [here](https://pyautogui.readthedocs.io/en/latest/).
 
-In this article, we are going to take a look at a simple automation task that involves opening Google Chrome, clicking on the address search bar, typing the URL to YouTube, searching for a video(in this case, a snap), clicking on it to play and finally minimizing the Google Chrome window. 
+In this article, we are going to take a look at a simple automation task. It involves opening Google Chrome, clicking on the address search bar, typing the URL to YouTube, searching for a video (in this case, a snap), clicking on it to play and finally minimizing the Google Chrome window. 
 
 
 ### Prerequisites
@@ -50,10 +50,9 @@ py -m pip install pyautogui
 
 The above command is used to install PyAutoGUI on windows. To install for a different OS, click [here](https://pyautogui.readthedocs.io/en/latest/install.html) and find the instructions.
 
-> **Disclaimer:** In this article, I have used coordinates that correspond to my screen size and the positions of the specific points where items I want to perform the automation operations are located. To follow along with this article, you need to use the MouseInfo Python library to get the correct coordinates that
-correspond to the position that you want to perform any of these automation operations. 
+> **Disclaimer:** In this article, I have used coordinates that correspond to my screen size and the positions of the specific points where items I want to perform the automation operations are located. To follow along with this article, you need to use the MouseInfo Python library to get the correct coordinates that correspond to the position that you want to perform any of these automation operations. 
 
-> Adjust the duration of the time it takes to perform an action that suits your internet speed. Using short duration when on a slow internet connection may lead to clicking an unintended point as the page will not have fully loaded.
+> Adjust the duration of the time it takes to perform an action that suits your internet speed. Using short duration when on a slow internet connection may click an unintended point as the page will not have fully loaded.
 
 ### Getting the Coordinates
 PyAutoGUI uses the screen coordinates to get the exact position to perform various actions like clicking, typing, scrolling, pressing, and dragging.
@@ -105,7 +104,7 @@ pyautogui.click(1253,27,duration=3)
 On the first line of this code, `import pyautogui`, we import PyAutoGUI to automate python scripts.
 This helps us use our keyboard and mouse without physically being in contact with those devices.
 
-The next line of code, `import time` is used to import the time module into our project. We will use it to work with time-related functions like setting the delays and the duration an operation should take before it executes.
+The next line of code, `import time`, is used to import the time module into our project. We will use it to work with time-related functions like setting the delays and the duration an operation should take before it executes.
 
 `time.sleep(2)` this line of code sets the delay time to 2 seconds. This gives us enough time to move from VS Code to our search bar to search for Chrome.
 
@@ -133,13 +132,13 @@ We then automate the keyboard press functionality to press on the Enter key to s
 
 After youtube loads, we move the cursor to its search bar using this line of code, `pyautogui.moveTo(458,135,duration=2)`.
 
-Then we need to click on that particular search bar for us to be able to perform a write operation.Type in this code to enable this, `pyautogui.click(458,135,duration=2)`.
+Then we need to click on that particular search bar for us to be able to perform a write operation. Type in this code to enable this, `pyautogui.click(458,135,duration=2)`.
 
- Use this code to type `pyautogui.write('perfect strangers')` into the YouTube search bar.This will search for 'perfect strangers' from youtube.
+ Use this code to type `pyautogui.write('perfect strangers')` into the YouTube search bar. This will search for 'perfect strangers' from youtube.
 
 For the search to happen, you have to click enter. For example, the following line of code does this for us.`pyautogui.press('Enter')`.
 
-Clicking enter prompts youtube to search for us. After searching and finding what we were searching for, we need to move the cursor to click on the search result we want.The move operation is made possible by this code, `pyautogui.moveTo(763,222,duration=3)`.
+Clicking enter prompts youtube to search for us. After searching and finding what we were searching for, we need to move the cursor to click on the search result we want. The move operation is made possible by this code, `pyautogui.moveTo(763,222,duration=3)`.
 
 Next, we click on it for the song to play. Type the following code to achieve this,`pyautogui.click(763,222,duration=3)`.
 
@@ -147,7 +146,7 @@ The final step of this automation is to minimize the YouTube window. Again, you 
 
 Lastly, perform the minimize operation by clicking the minimize button using this code, `pyautogui.click(1253,27,duration=3)`.
 
-It is important to know automation, but we should not forget that we might encounter errors that arise from this automation. Such as:
+It is essential to know automation, but we should not forget that we might encounter errors that arise from this automation. Such as:
 - The mouse moving everywhere at a terrific speed.
 - The keyboard virtually strikes keys at multiple impulses uncontrollably.
 
