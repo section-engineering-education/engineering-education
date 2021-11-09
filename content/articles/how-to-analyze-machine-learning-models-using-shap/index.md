@@ -564,3 +564,6 @@ Finally, we used SHAP to explain the prediction results of our model. After the 
 - [How to create Shapely values](https://neptune.ai/blog/ml-model-interpretation-tools)
 - [Force plot basics](https://www.stardat.net/post/force-plot)
 - [Summary plot basics](https://christophm.github.io/interpretable-ml-book/shap.html)
+
+---
+Peer Review Contributions by: [Collins Ayuya](https://www.section.io/engineering-education/authors/collins-ayuya/)
