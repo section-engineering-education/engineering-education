@@ -1,7 +1,7 @@
 ## Consuming REST API in Flutter: Building a weather App that makes a network call to a backend server
 
 ### Goals
-This article teaches how to consume a REST API in a flutter application using the Dio package. We will be building a weather app that provides real-time weather information by making a network call to a weather API. The app requests for the user's location and returns weather information about the user's current location. Flutter GetX package will be used for state management, however, emphasis is on Dio and network calls.
+This article teaches how to consume a REST API in a flutter application using the Dio package. We will be building a weather app that provides real-time weather information by making a network call to a weather API. The app requests for the user's location and returns weather information about the user's current location. Flutter GetX package will be used for state management; however, emphasis is on Dio and network calls.
 
 ### Key takeaways
 - How to use the Dio package for network calls.
@@ -19,14 +19,18 @@ To follow along, you should have:
 ### Creating a Flutter application in Android Studio
 This project uses Android Studio as its Integrated Development Environment(IDE).
 
-Launch Android Studio and create a new Flutter project. Ensure that you set the type as Flutter application and select the path where your Flutter SDK is located then click next. Next, fill in the project details as shown in the image below and click finish.
+Launch Android Studio and create a new Flutter project. Ensure that you set the type as Flutter application and select the path where your Flutter SDK is located, then click next. Next, fill in the project details as shown in the image below and click finish.
 
 ![creating a new Flutter project](new-project.png)
 
 ### Integrating the Dio package and other packages into our application
 ![adding dio to the project](dio.png)
 
-To add the Dio package as a dependency into the application. go to the [Dio Documentation](https://pub.dev/packages/dio), copy ``dio: ^4.0.0``, and add it to the project ``pubspec.yaml`` file, under the dependencies section and run the command ``pub get`` to sync the dependency in the project. Also add [Getx](https://pub.dev/packages/get) and [Get Storage](https://pub.dev/packages/get_storage) for state management and local storage respectively. If you don't know how to use the GetX package for state management in flutter read my article on [Getx](https://www.section.io/engineering-education/flutter-getx-ecosystem-for-state-management/). In addition, add the [geolocator](https://pub.dev/packages/geolocator) dependency ``geolocator: ^7.7.0`` and [flutter spinkit](https://pub.dev/packages/flutter_spinkit) dependency ``flutter_spinkit: ^5.1.0`` The geolocator allow us to easily access platform-specific location, while the flutter Spinkit gives us a collection of loading indicators. The dependencies section of your ``pubspec.yaml`` file should look like this.
+To add the Dio package as a dependency into the application, go to the [Dio Documentation](https://pub.dev/packages/dio), copy ``dio: ^4.0.0``, and add it to the project ``pubspec.yaml`` file, under the dependencies section and run the command ``pub get`` to sync the dependency in the project.
+
+ Also add [Getx](https://pub.dev/packages/get) and [Get Storage](https://pub.dev/packages/get_storage) for state management and local storage respectively. If you don't know how to use the GetX package for state management in flutter read my article on [Getx](https://www.section.io/engineering-education/flutter-getx-ecosystem-for-state-management/). In addition, add the [geolocator](https://pub.dev/packages/geolocator) dependency ``geolocator: ^7.7.0`` and [flutter spinkit](https://pub.dev/packages/flutter_spinkit) dependency ``flutter_spinkit: ^5.1.0`` 
+
+The geolocator allows us to easily access platform-specific locations, while the flutter Spinkit gives us a collection of loading indicators. The dependencies section of your ``pubspec.yaml`` file should look like this.
 
 ![pubspec](pubspec.png)
 
@@ -343,7 +347,7 @@ class LoggingInterceptor extends Interceptor {
 ```
 
 - By extending the ``Interceptor`` class, we have access to its methods and override them as already seen. 
-- The ``onRequest`` method in the Interceptor class which we have overridden will be executed before any request is initiated.
+- The ``onRequest`` method in the Interceptor class, which we have overridden, will be executed before any request is initiated.
 - The ``onResponse`` method will be executed on the success of our network call.
 - By overriding the onError method, we have access to the error message that may occur in the process of the network call. It is executed when there is an error.
 
@@ -406,7 +410,7 @@ handleError(DioError error) {
 
 ```
 
-- First, we created an instance of Dio named  ``_dio``, The underscore makes it private. We have passed in the headers, where we have defines the content type we want to receive, in this case, a [json](https://en.wikipedia.org/wiki/JSON#:~:text=JSON%20(JavaScript%20Object%20Notation%2C%20pronounced,(or%20other%20serializable%20values),  set the connection Time out, receive Time out and an interceptor(which is basically the LoggingInterceptor class we created above)
+- First, we created an instance of Dio named  ``_dio``. The underscore makes it private. We have passed in the headers, where we have defined the content type we want to receive, in this case, a [json](https://en.wikipedia.org/wiki/JSON#:~:text=JSON%20(JavaScript%20Object%20Notation%2C%20pronounced,(or%20other%20serializable%20values),  set the connection Time out, receive Time out and an interceptor(which is basically the LoggingInterceptor class we created above)
 
 - Next, we create a method called ``request`` used the instance of the Dio(``_dio``) to call the Dio request method which allows us to make HTTP calls with options. It takes a URL which is the URL path(endpoint), data which is the request data, and options that contain the HTTP method and the headers.
 
