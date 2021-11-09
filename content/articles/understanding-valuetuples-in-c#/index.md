@@ -6,7 +6,7 @@ url: /understanding-valuetuples-in-c#/
 title: Understanding ValueTuples in C#
 description: This article will help the reader understand how to implement ValueTuples in C#. These components allow one to group unrelated data values.
 author: michelle-ngei
-date: 2021-11-09T00:00:00-12:06
+date: 2021-11-09T00:00:00-07:06
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -26,7 +26,7 @@ You can create ValueTuples using the following ways:
 The following code allows one to create a ValueTuple using a constructor. We will use this component to generate two elements.
 
 ```C#
-  class constructorExample
+  class ConstructorExample
 {
     static public void Main()
     {
@@ -221,72 +221,44 @@ It also has helper methods that allow one to create elements without defining th
  
 - `CompareTo()`
 
-This method is used to compare ValueTuples' instances. Since these instances do not have elements when they are compared, they are considered to be equal.
+This method is used to compare ValueTuples' instances. Since these instances do not have elements, they are considered to be equal.
 
 - `Equals()`
 
-The important Equals(ValueTuple) and Equals (object). This methods apply to several products like .NET and .NET Framework
+The commonly applied functions are `Equals(ValueTuple)` and `Equals(object)`. These methods apply to several products like `.NET` Framework
 
-1.Equals(ValueTuple) is used to find out wheteher two value tuple instances are equivalent.
+1. `Equals(ValueTuple)` is used to determine whether two ValueTuple instances are equivalent.
 
-2.Equals(object) is used to determine whether the value tuple instance currently in use is equivalent to a certain object. If it finds that the object is equivalent to the value tuple instance it returns True and if not it returns False
+2. `Equals(object)` is used to determine whether the ValueTuple instance currently in use is equivalent to a specific object. 
 
 - GetHashCode()
 
-This method is used to return the harsh code( is a value used in identifying an object during equivalence testing) of a valuetuple instance.This methods returns a zero
+This method is used to return the hash code of a ValueTuple instance. 
 
 - ToString ()
 
-This method is used to return the representation of a string of a value tuple instance. This method applies to .NET, .NET Core, .NET Framework and lastly .NET Standard
+This function returns a string representation of a ValueTuple instance. It applies to .`NET`, `.NET Core`, `.NET` Framework.
 
 - Create() 
 
-This method is used to create a new value tuple that has zero components.
+This function is used to create a ValueTuple that has zero components.
 
+- Create<T1,>(T1);
+This method creates a ValueTuple that has one component where <T1> is the type of the first ValueTuple.
 
-Create<T1,>(T1);
-This method creates a new value tuple that has one component where <T1> is the type of the first value tuple and (T1) is the value of the first value tuple component.
+- Create<T1, T2>(T1, T2);
 
-Create<T1, T2>(T1, T2);
-
- This method creates a new value tuple that has two components where <T2,> is the type of the second value tuple and (T2) is the value of the second value tuple component.
-
-Create<T1, T2, T3>(T1, T2, T3); 
-
-This method creates a new value tuple that has three components  where <T3,> is the type of the third value tuple and (T3) is the value of the third value tuple component.
-
-Create<T1, T2, T3, T4>(T1, T2, T3, T4);
-
-This method creates a new value tuple that has four components  where <T4,> is the type of the forth value tuple and (T4) is the value of the forth value tuple component.
-
-Create<T1, T2, T3, T4, T5>(T1, T2, T3, T4, T5); 
-
-This method creates a new value tuple that has five components  where <T5,> is the type of the fifth value tuple and (T2) is the value of the fifth value tuple component. 
-
-Create<T1, T2, T3, T4, T5, T6>(T1, T2, T3, T4, T5, T6);
-
-This method creates a new value tuple that has six components where <T6,> is the type of the sixth value tuple and (T6) is the value of the sixth value tuple component. 
-
-Create<T1, T2, T3, T4, T5, T6, T7>(T1, T2, T3, T4, T5, T6, T7);
-
-This method creates a new value tuple that has seven components  where <T7,> is the type of the seventh value tuple and (T7) is the value of the seventh value tuple component. 
-
-Create<T1, T2, T3, T4, T5, T6, T7, T8>(T1, T2, T3, T4, T5, T6, T7, T8); 
-
-This method creates a new value tuple which has eight components where <T8,> is the type of the eighth value tuple and (T8) is the value of the eighth value tuple component.
-
-    NB
-    You use the value tuple<T1, T2, T3, T4, T5, T6, T7, TRest>, constructor, when you want to create a value tuples that have more than 8 components.
+ This function creates a new ValueTuple that has two components where <T2> is the type of the second ValueTuple.
 
 ### Conclusion.
-In summary, we have learned; 
-- How to create and initialize ValueTuple.
+In this tutorial, we have learned:
+- How to create and initialize ValueTuples.
 - How to access ValueTuple named and unnamed members.
 - How to return ValueTuple from a method.
-- ValueTuple deconstruction.
-- ValueTuple structure.
 
-We have also learned that ValueTuples have a simplified syntax and perform better than Tuples. They also can alter data members and give them meaningful names. Therefore we can say that it is best to use value tuples.
+You can, therefore, use this knowledge to build other quality applications.
+
+Happy coding!
 
 ---
 Peer Review Contributions by: [Wanja Mike](/engineering-education/authors/michael-barasa/)
