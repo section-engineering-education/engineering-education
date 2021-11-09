@@ -1,51 +1,27 @@
 ### Composition in Java
-Like most OOP languages, Java does not allow multiple inheritances. This problem limits the programmer from enjoying the property of code re-use with two objects or more objects with a strong relationship or similar properties.
+Like most OOP languages, Java does not allow multiple inheritances. This problem limits the programmer from applying code re-use with two or more objects with strong relationships or similar properties.
 
- To solve for that, we have the property called `Composition`. 
- Composition in Java exists when two or more objects relate to each other. One object, in that case, exists due to the existence of another object.
- 
- ***Example of Composition***
- 
- Let us take a look at some examples of how composition comes to effect.
- - A class car is a composition of class Engine and class wheels.
- - A class body is a composition of the class Heart, class Stomach, etc.
+ To solve this problme, there is a  property called `Composition`. Composition in Java exists when two or more objects relate to each other. One object, in that case, exists due to the existence of another. It also occurs when a class references one or more objects of other classes in a single instance. For example,a `Class Car` is a composition of class Engine and class wheels and a `Class Body` is a composition of the class Heart, class Stomach, etc.
  
  The examples above show that neither the class Engine nor the class Wheels can exist without the class Car. Likewise, the class Heart and Class stomach both depend on the class Body to exist.
  
  ### Introduction
  
-As we have learned from the example above, there are two categories of classes. First, the `parent class` is usually independent.
+As we have learned from the example above, there are two categories of classes. First, the `Parent class` is usually independent. For instance, the Class Car and the  Class Body are both parent classes.
 
-- From the example we used, the Class car and the  Class body are both parent classes.
-
-Moreover, there is the dependent class that cannot exist without the presence of the parent class. This class is known as the `child class`.
-
-- By now, you know that the child class will be the Class Engine, Class Wheels from the parent class Car and Class Heart, and the Class Stomach child classes of the parent class Body.
+However, there is the dependent class that cannot exist without the presence of the parent class. This class is known as the `child class`. `Class Engine`, `Class Wheels` from the parent `Class Car`, and `Class Heart`, and the `Class Stomach` are child classes of the parent `class Body`.
 
 ### Features of Composition
 Below are some of the common features available when interacting with composition.
 
-1. Provides for a `has-a` relationship between objects - Let us use the example of the car and the Engine to understand this.
+1. Provides for a `has-a` relationship between objects - Let us use the example of the car and the Engine to understand this. Both the car and the Engine are objects, but the Engine is contained in the car, meaning every car has an engine. Relatively in composition, one object must have the other hence the has-a relationship.
 
- Both the car and the Engine are objects, but the Engine is contained, meaning every car has an engine. Relatively in composition, one object must have the other hence the has-a relationship.
-
-2. `Code Re-use` - This can use a code once written on multiple occasions. From the above example, the class engine is once written, can be re-used on another object car since it will still contain the Engine and will require the engine class. 
-
-This saves the programmer having to code the engine class for every car even though the attributes of the cars may be different.
-
-
+2. Code Re-use - This feature ensures code re-use. From the above example, the class engine is once written, can be re-used on another object car since it will still contain the Engine and will require the engine class. This saves the programmer having to code the engine class for every car even though the attributes of the cars may be different.
 
 ### Implementation on Java
+Now, we are going to learn how composition is applied in problem-solving. We will be using the `Intellij` IDE with Java language. If you do not have [Intellij](https://www.jetbrains.com/idea/download/#section=windows), you can download it from the Jetbrains official Webpage.
 
-Now, we are going to learn how composition is applied in problem-solving. We will be using the `Intellij` IDE with Java language.
-
-If you do not have [Intellij](https://www.jetbrains.com/idea/download/#section=windows), you can download it from the Jetbrains official Webpage.
-
-
-**Preview**
-
-We will create three classes—the Main Class, the Parent class, and the child class.
-We will be running the programs at the Main class and creating the methods and attributes at the parent and child classes. Therefore, ensure that all your classes are in the same package to ensure your code runs swiftly.
+We will create three classes—the Main Class, the Parent class, and the child class.We will be running the programs at the Main class and creating the methods and attributes at the parent and child classes. Therefore, ensure that all your classes are in the same package for swift code execution.
 
 ```
 package org.kimcode.composition;
@@ -166,9 +142,7 @@ public class Vehicle {
 }
 
 ```
-As you can see from the above class Vehicle, we have treated the child class Engine as an attribute though not. So we have initialized it, created a constructor for it, and created a getter and setter for it, just like any other attribute.
-
-Let us now create the Main class where we will be running and implementing the code. 
+As you can see from the above class Vehicle, we have treated the child class Engine as an attribute though it is not. So we have initialized it, created a constructor for it, and created a getter and setter for it, just like any other attribute. Let us now create the Main class where we will be running and implementing the code. 
 
 ```
 package org.kimcode.composition;
@@ -184,18 +158,14 @@ public class Main {
     }
 }
 ```
-The Main class java enables you to run all the code in the package specified.
-You first create an object, the vehicle; for our case, we have a **Benz**. We also have created an Engine.
-
-A preview of the full code as in the Intellij is as shown below:
+The Main class java enables you to run all the code in the package specified. You first create an object, the vehicle; for our case, we have a **Benz**. We also have created an Engine. A preview of the full code as in the Intellij is as shown below:
 
 ![Main Page](/engineering-education/composition-in-java/Main.png)
 
 The output of the code is derived through composition.
 
 ### Difference between Composition and Inheritance
-`Inheritance` is a property where an object acquires all the attributes and behaviour with similar properties, commonly known as `parent object`. 
-We are now going to take a look at how composition differs from Inheritance.
+`Inheritance` is a property where an object acquires all the attributes and behaviour with similar properties, commonly known as `parent object`. Composition differs from inheritance in the following ways:
 
 1. Composition is based on a `has-a` relationship, while Inheritance is based on an `is-a` relationship.
 2. With Inheritance, you can extend your code to only one interface, but with composition, you can re-use your code multiple times.
@@ -229,12 +199,8 @@ public class College {
 ```
 
 ### Conclusion
-We have learned that composition can be pretty helpful when coding. By utilizing code, re-use you can have a clean and organized code with maximum use of characters.
-The composition also helps locate a bug on your code since the neat arrangement enables straightforward interpretation of code.
-
-#### Summary
-From the tutorial above, we have been able to learn the following:
-1. Introduced and understood what composition is in Java.
-2. Seen some features available in composition.
+This artice taught th readers how composition can be pretty helpful when coding. By utilizing code, re-use you can have a clean and organized code with maximum use of characters. The composition also helps locate a bug on your code since the neat arrangement enables straightforward interpretation of code. Besides, these are the key concept brought out in the tutorial:
+1. Introduction to composition in Java.
+2. Features available in composition.
 3. Implementation of Composition using an example.
-4. Differentiated Composition and Inheritance.
+4. Difference betrween Composition and Inheritance.
