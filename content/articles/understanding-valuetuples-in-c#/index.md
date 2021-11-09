@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /understanding-valuetuples-in-c#/
-title: Understanding ValuTuples in C#
+title: Understanding ValueTuples in C#
 description: This article will help the reader understand how to implement ValueTuples in C#. These components allow one to group unrelated data values.
 author: michelle-ngei
 date: 2021-11-09T00:00:00-12:06
@@ -14,16 +14,16 @@ images:
   - url: /engineering-education/understanding-valuetuples-in-c#/hero.jpg
     alt: ValueTuples in C# Hero Image
 ---
-ValueTuples are to return several values from a method. Since these components are mutable, you can assign new values to them after they've been declared.
+ValueTuples are used to return several values from a method. Since these components are mutable, you can assign new values to them after they have been declared.
 <!--more-->
-ValueTuple is available only in C# version `7.0` (.NET Framework 4.7). If in your project you don't see ValueTuple, it means that you have to install the ValueTuple package.
+ValueTuples are available only in C# version `7.0` (.NET Framework 4.7). If you don't see ValueTuple in your project, it means that you have to install the `ValueTuple` package.
 
-### Creating and initializing ValueTuple.
-You can create value tuples using the followig ways:
+### Creating and initializing ValueTuples.
+You can create ValueTuples using the following ways:
  
 1. Using a constructor.
 
-The following code allows one to create a ValueTuple using a constructor. We will use the constructor to generate two elements.
+The following code allows one to create a ValueTuple using a constructor. We will use this component to generate two elements.
 
 ```C#
   class constructorExample
@@ -35,6 +35,7 @@ The following code allows one to create a ValueTuple using a constructor. We wil
     }
 } 
 ```
+
 2. Using the `create` method.
 
 This method can generate a ValueTuple with up to `8` elements using the `create` method.
@@ -56,7 +57,8 @@ class Create{
         var valueTuple3 = ValueTuple.Create(12, 30, 40,);
     }
 }
-```        
+``` 
+
 3. Using parenthesis.
   
 The use of parenthesis is the simplest way of creating and initializing a ValueTuple.This is because you will specify values within the parenthesis. 
@@ -64,7 +66,7 @@ The use of parenthesis is the simplest way of creating and initializing a ValueT
 Example of using parenthesis with named members:
 
 ```c#
-class Paranthesis {
+class Parenthesis {
     static public void Main()
     {  //  named members
         (int age, string Name, string Lang) student = (23, "Sonia", "C#");
@@ -85,9 +87,10 @@ class Parenthesis {
 ```
 
 ### Accessing ValueTuple named and unnamed members.
-Unnamed ValueTuple members are members that are named with the default item property names. You can access these members using their default names.
+Unnamed ValueTuple members have default item property names. In other words, you can access these members using their default names.
 
-Example.
+Example:
+
 ```C#
     class Unnamed
     {
@@ -100,17 +103,25 @@ Example.
         }
     }
 ```
-    OUTPUT
-    Year:2020
-    Patient: Michael Williams
-    Country: Tanzania
 
-We will first assign names to the value tuple properties. Then we will access the valuable named members. Below is a snippet of a code showing how to assign the name
-```C#
+```bash
+OUTPUT
+Year:2020
+Patient: Michael Williams
+Country: Tanzania
+```
+
+We will first assign names to the ValueTuple properties. Then we will access the named members. The following code shows how to assign names:
+
+```c#
  var student = (Student_id : 4567, Student_name : "Mary Kims",Course: "Computer Science");
 ```
-Now that you have assigned new names let us access the members. You will use the new names that you have assigned to the members instead of using the default name. As shown in the code snippet below
-```C#
+
+Now that we have assigned new names, let's access the members. 
+
+We will use the new names that we assigned to the members instead of the default name, as shown below:
+
+```c#
  class Program {
   
     static public void Main()
@@ -123,16 +134,20 @@ Now that you have assigned new names let us access the members. You will use the
         Console.WriteLine("Course: {0}", student.Course);
     }
 }
+
 ```
-    OUTPUT
-    Student id:4567
-    Student Name: Mary Kims
-    Course: Computer Technology
+
+```bash
+OUTPUT
+Student id:4567
+Student Name: Mary Kims
+Course: Computer Technology
+```
 
 ### Returning ValueTuple from a method.
-You can return multiple values from a method. In the example below, you are not going to use the ref or out parameters.
+We can return multiple values from a method. In the example below, we will not use the `ref` or `out` parameters.
 
-```C#
+```c#
 class Returntype
     {
         public static void Main()
@@ -152,19 +167,21 @@ class Returntype
         }
     }
 ```
-    OUTPUT
-    Student Information
-    Id:55
-    Name:Robert
-    Age:25
-    Course:Computer Science
+```bash
+OUTPUT
+Student Information
+Id:55
+Name:Robert
+Age:25
+Course:Computer Science
+```
 
 ### ValueTuple deconstruction.
-Individual members can be obtained by deconstructing a ValueTuple. A deconstruction declaration syntax deconstructs a ValueTuple and assigns each component to a new variable. 
+Individual members can be obtained by deconstructing a ValueTuple. A deconstruction declaration syntax assigns each component to a new variable. 
 
-In C#, there are numerous ways to deconstruct the ValueTuple object's elements and assign them to local variables. 
+In C#, there are numerous ways to deconstruct a ValueTuple's elements and assign them to local variables. 
 
-To create a discrete variable for each element in the tuple, we can use the parenthesis () to specify the type of each element.
+To create a discrete variable for each element, we can use the `parenthesis()` method to specify each element's type.
 
 ```C#
  class deconstruction
@@ -186,25 +203,29 @@ To create a discrete variable for each element in the tuple, we can use the pare
     }
 }
 ``` 
-        OUTPUT 
-        Personal Information
-        Id:2795
-        Name:Michelle Williams
-        Age:35    
 
+```bash
+OUTPUT 
+Personal Information
+Id:2795
+Name:Michelle Williams
+Age:35  
+```  
 
 ### ValueTuple structure.
-Value tuple structure has static methods that enable you to create value tuple types with upto 8 components. Value tuple structure has helper methods that allow you to create value tuples without defining the type of each component. 
+A ValueTuple structure has static methods that enable you to create values with up to `8` components. 
+
+It also has helper methods that allow one to create elements without defining the type of each component. 
  
-Methods
+**Methods:**
  
-- CompareTo()
+- `CompareTo()`
 
-This method is used to compare a value tuple instances. Since value tuple instances do not have elements when two instances are compared, they are considered to be equal.
+This method is used to compare ValueTuples' instances. Since these instances do not have elements when they are compared, they are considered to be equal.
 
-- Equals()
+- `Equals()`
 
-In the Equals() there is Equals(ValueTuple) and Equals (object). This methods apply to several products like .NET and .NET Framework
+The important Equals(ValueTuple) and Equals (object). This methods apply to several products like .NET and .NET Framework
 
 1.Equals(ValueTuple) is used to find out wheteher two value tuple instances are equivalent.
 
