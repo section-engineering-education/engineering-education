@@ -1,6 +1,6 @@
 ---
-title: Newton Osage
+tittle: Newton Osage
 type: authors
-github: https://github.com/Newton-cyber
 ---
-Newton Osage a software engineer equipped with extensive experience in software development, AI and python programming. He potrays excellent skills and demonstrated ability to improve knowledge advancement in technology.
+
+Newton Osage is a software engineer with interests in Python for Web development, Machine Learning, and Data Science. When away from profession, he loves video editing and  creating animations
