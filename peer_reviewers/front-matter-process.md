@@ -1,4 +1,4 @@
-### The Front Matter Review Process: Start by copying the front matter from the most recently published article of the *same author* if it is a repeat contributor to have the author information and other field semi-filled out. There are a few sections that are not seen in the breakdown, but can be seen in the image referenced below. 
+### The Front Matter Review Process: Start by copying the front matter from the most recently published article of the *same author* if it is a repeat contributor to have the author information and other field semi-filled out. There are a few sections that are not seen in the breakdown, but can be seen in the image referenced below.
 
 DOES NOT HAVE TO BE IN BULLET FORMAT - that was for organization in this file.
  ---

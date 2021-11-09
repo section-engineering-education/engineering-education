@@ -244,5 +244,5 @@ You can also get more information about Node.js timers [here](https://nodejs.org
 Happy coding!!
 
 ---
-Peer Review Contributions by: [Srishilesh P S](/authors/srishilesh-p-s/) and [Saiharsha Balasubramaniam](/authors/saiharsha-balasubramaniam/)
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/) and [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)
 

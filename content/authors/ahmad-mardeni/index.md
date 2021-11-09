@@ -2,6 +2,6 @@
 title: Ahmad Mardeni
 type: authors
 linkedin: https://www.linkedin.com/in/ahmad-mardeni-369b3019b/
-facebook: https://www.facebook.com/profile.php?id=100004114573038/
+github: https://github.com/ahmadmardeni1
 ---
-Ahmad is a passionate software developer, an avid researcher, and a business man. He began his journey to be a cybersecurity expert two years ago. Also he participated in a lot of hackathons and programming competitions. As he says "Knowledge is power" so he wants to deliver good content by being a technical writer.
+Ahmad is a passionate software developer, specializes in Machine Learning and Data Science. He won multiple Hackathons and programming competitions globally. He believes the Web3 underpins the internet of value, so he is working with Web3 protocols to build the bases for a decentralized future.

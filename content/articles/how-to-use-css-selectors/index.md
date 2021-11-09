@@ -432,8 +432,9 @@ The first line in the above sentence will have a red color.
 ### Wrap up!
 Congratulations! 🥳. You can now apply the knowledge of CSS selectors to style your web pages in different ways depending on your taste.
 
-For further reading, please visit the links below:
 
+### Resources
+- [How to Use CSS Selectors to Style Your Web Page by Peter Lynch](https://www.freecodecamp.org/news/use-css-selectors-to-style-webpage/)
 - [Advanced CSS course](https://www.udemy.com/course/advanced-css-and-sass/).
 - [CSS Selectors official docs](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors).
 

@@ -4,7 +4,7 @@ A how-to guide is an article that's in-between a software review and tutorial. I
 Think Getting Start with a Technology providing an brief overview of why and how you'd use it in a software application.
 
 ## Example Article
-Here's an example of a [how-to guide](https://www.section.io/engineering-education/getting-started-with-data-visualization-using-pandas) written by one of our Eng-Ed Contributors so you can see the level of detail you should aspire to.
+Here's an example of a [how-to guide](https://www.section.io/engineering-education/getting-started-with-data-visualization-using-pandas/) written by one of our Eng-Ed Contributors so you can see the level of detail you should aspire to.
 
 ### Table of Contents
 Provide the audience a run down on what the article will be covering. When creating a How To Guide we must consider the audience. Ensure that the guide can be used by a developer of any level. Let's assume the audience is smart, but has no prior experience on the subject at hand.
