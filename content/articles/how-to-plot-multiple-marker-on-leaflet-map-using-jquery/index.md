@@ -1,5 +1,5 @@
 ### Introduction
-Markers are geospatial tools used to point or show the location of the desired object, given a geographic coordinate system (GCS). A geographic coordinate system(GCS) is a coordinate system associated with positions on earth. The latitude and longitude are types of geographic coordinates systems. Easting and northing are grid systems which are types of geographic coordinate systems. 
+Markers are geospatial tools used to point or show the location of the desired object, given a geographic coordinate system (GCS). A geographic coordinate system (GCS) is a coordinate system associated with positions on earth. The latitude and longitude are types of geographic coordinates systems. Easting and northing are grid systems which are types of geographic coordinate systems. 
 
 Leaflet.js has made it easy to plot markers on specific locations using a simple line of code. With jquery and a simple front-end modal, we can take it a step higher. We will show you how to build an input box to fill in these coordinates and render them on a map. Having geojson instead?, we will guide you on the process of uploading JSON files to your map.
 
@@ -7,7 +7,7 @@ Let's get on with it then!
 
 ### Prerequisite
 Don't want to feel left out? The reader should have prior knowledge about the following:
- - [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript).
+ -[JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript).
 - [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML). 
 - [CSS](https://developer.mozilla.org/en-US/docs/Web/css). 
 - [Bootstrap](https://getbootstrap.com/docs/5.0/getting-started/introduction/). 
@@ -20,6 +20,7 @@ In this guide, we will show readers three ways to plot multiple markers on a lea
 - Plot markers in their code with geojson using leaflet.
 - Upload geojson marker file to the map on the front end.
 - Plot markers as an input on the front end using jquery.
+
 ### Getting started
 #### Adding a tile layer
 To get running, we will initialise our HTML5 boilerplate and import leaflet.js JavaScript and CSS files using a content delivery network (CDN). [Here](https://leafletjs.com/download.html) is a link to downloading leaflet's JavaScript and CSS file. The reader needs to go through this [doc](https://www.section.io/engineering-education/building-simple-maps-using-leaflet-js/) for a better understanding.
@@ -70,7 +71,8 @@ L.tileLayer('https://{s}.tile-cyclosm.openstreetmap.fr/cyclosm/{z}/{x}/{y}.png',
 All this brought together and we should have our baselayer (OSM layer) ready as below;
 
 ![Baselayer](/engineering-education/content/articles/how-to-plot-multiple-marker-on-leaflet-map-using-jquery/base-layer.jpg)
- #### Plotting markers with geojson using leaflet
+
+#### Plotting markers with geojson using leaflet
 According to Wikipedia, "GeoJSON is an open standard format designed for representing simple geographical features, along with their non-spatial attributes. It is based on the JSON format". Websites like [geojson.io](https://geojson.io/#map=2/20.0/0.0) have simplified getting your desired format of geographic JSON data. Leaflet has made it easy to render this data on a map using a small line of code. 
  
 First, we'll have to import the JSON file. Importing a JSON file into javascript is done in various ways but for this section, we'll have to copy out its content and paste it within a given JavaScript variable. We have taken the liberty of getting a geojson with marker features to be used in the example below;
@@ -110,6 +112,7 @@ L.geoJSON(sample_json).addTo(map);
 Adding all these features together, we should have the following:
 
 ![geojson leaflet](/engineering-education/content/articles/how-to-plot-multiple-marker-on-leaflet-map-using-jquery/geo-json-leaflet.jpg)
+
 #### Plotting markers with geojson using file upload and leaflet
 There is some similarity between this section and the last. The difference is while we added JSON as a javascript variable in the last, it will be uploaded as a file on the front-end here. With the `json.parse()` method, we will parse a json string as a javascript object. 
 
@@ -160,6 +163,7 @@ function logFile(event) {
 Our result should be as follows:
 
 ![geojson file upload ](/engineering-education/content/articles/how-to-plot-multiple-marker-on-leaflet-map-using-jquery/geo-json-file-upload.jpg)
+
 #### Plot markers as an input using jquery
 To get started, we'll import jquery's javascript file using a content delivery network.
 ```javascript
@@ -395,5 +399,10 @@ The result of this is below:
 
 ![marker](/engineering-education/content/articles/how-to-plot-multiple-marker-on-leaflet-map-using-jquery/marker.gif)
 
+[Here](https://github.com/muyiwexy/plot-multiple-markers) is a link to the entire code and source files.
+
 #### Conclusion
-In conclusion, we learned how to add multiple markers using geojson, through file upload and with the use of a simple front-end modal, all with Vanilla javascript, jquery, bootstrap and leaflet.js. [Here](https://github.com/muyiwexy/plot-multiple-markers) is a link to the entire code and source files.
+In conclusion, we learned how to add multiple markers using geojson, through file upload and with the use of a simple front-end modal, all with vanilla javascript, jquery, bootstrap and leaflet.js. 
+
+---
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
