@@ -16,19 +16,20 @@ To better understand and build along with this tutorial you should have:
 - Your desktops notification turned on - this is where our motivational quotes will be displayed
     
 ### Table of Contents
-  - [Introduction](#Introduction)
-  - [Prerequisites](#Prerequisites)
-  - [Getting started](#Getting-started)
-  - [Adding icons](#Adding-icons)
-  - [Functionality](#Functionality)
-  - [Creating the background script](#Creating-the-background-script)
-  - [background.js](#background.js)
-  - [Adding Permissions](#Adding-permissions)
-  - [Fetching random quotes from the API](#Fetching-random-quotes-from-the-API)
-  - [Calling the quotes at intervals](#Calling-the-quotes-at-intervals)
-  - [Creating notifications](#Creating-notifications)
-  - [Conclusion](#Conclusion)
-  - [References](#Reference)
+- [How to build a Chrome Extension that displays motivational quotes using Javascript](#how-to-build-a-chrome-extension-that-displays-motivational-quotes-using-javascript)
+    - [Introduction](#introduction)
+    - [Prerequisites](#prerequisites)
+    - [Table of Contents](#table-of-contents)
+    - [Getting started](#getting-started)
+    - [Adding icons](#adding-icons)
+    - [Functionality](#functionality)
+    - [Creating the background script](#creating-the-background-script)
+    - [Adding permissions](#adding-permissions)
+    - [Fetching random quotes from the API](#fetching-random-quotes-from-the-api)
+    - [Calling the quotes at intervals](#calling-the-quotes-at-intervals)
+    - [creating notifications](#creating-notifications)
+    - [Conclusion](#conclusion)
+    - [References](#references)
   
     
 ### Getting started
@@ -59,12 +60,12 @@ The manifest.json file contains important information about the extension.
 Now that we have our manifest file setup, let us add the directory as an extension in developer mode in our Chrome browser. 
 Navigate to the Extensions management page by clicking on the extensions menu button at the top right of the browser, and selecting manage extensions at the bottom of the menu.
 You should see a page like this:
-![developer](/engineering-education/How-to-build-a-Chrome-Extension-that-displays-motivational-quotes-using-Javascript/images/developer-mode.PNG)
+![developer](/engineering-education/how-to-build-a-chrome-extension-that-displays-motivational-quotes/images/developer.png)
 
 Toggle on the Developer mode and click on the load unpacked button. This opens your local machine directories and prompts you to choose the directory you would like to load as an extension.
 Alright! you should see an image like the one below:
 
-![load-unpacked](/engineering-education/How-to-build-a-Chrome-Extension-that-displays-motivational-quotes-using-Javascript/images/load-unpacked.PNG)
+![unpacked](/engineering-education/how-to-build-a-chrome-extension-that-displays-motivational-quotes/images/unpacked.png)
 
 Yikes! we now have the extension listed amongst our previously installed extensions. Although, you'll notice yours does not have a custom icon. Let's fix that right away.
 
@@ -140,10 +141,7 @@ The manifest.json file should look somewhat identical to this now:
 
 The extension now looks out for the `service worker`: `background.js` 
 When we reload the extension, Chrome will search the background script for important instructions and events and execute them.
-
-### background.js
-
-We want the extension to listen for events when first installed, hence we  include  a listening event and `background.js` should look like so: 
+Next, We want the extension to listen for events when first installed, hence we  include  a listening event and `background.js` should look like so: 
 
 ```javascript
 
@@ -283,7 +281,7 @@ async function startRequest() {
 
 Finally, our motivational quotes are displayed in the notifications box like so:
 
-![working-extension](/engineering-education/How-to-build-a-Chrome-Extension-that-displays-motivational-quotes-using-Javascript/images/completed-notification.PNG)
+![extension](/engineering-education/how-to-build-a-chrome-extension-that-displays-motivational-quotes/images/completed.png)
 
 
 
