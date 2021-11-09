@@ -54,6 +54,7 @@ For one to follow up with the code examples and explanations given in the articl
 
 Quarkus, like any other MicroProfile, follows the MicroProfile specifications. This property makes it to be able to allow developers to set the variables found in the whole project seamlessly so that they can be accessed in the project scope during different project life cycles.
 The settings of the project are usually stored in the `application.properties` file. The file can be located in the `resources` folder found in the `main` folder. Some variables that can be set include pointing out to **Datasource** such as _postgresql_ or _mysql_, **Datasource properties** and settings such as the _username_, _password_, _url_ and _access port_ among others.
+
 Configuration files can hold variables needed during the operation of the application. These can include variables that are to be isolated from the main application source code files. The variables can later be injected into the application when needed only.
 Developers always prefer to use the config files to set the overall system properties and environment variables.
 
