@@ -1,5 +1,21 @@
-Go is a general-purpose language. You can use Go to build web apps, microservices, cloud services, APIs, DevOps tooling, and any application. 
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-use-go-fiber-and-gorm-frameworks-to-run-a-golang-application/
+title: How to use Go Fiber and Gorm Frameworks to run a Golang Application
+description: In this tutorial, we will learn more about Go Fiber. Then, we will use Go Fiber with Gorm and an SQLite database to build a todo application. 
+author: joakim-gakure
+date: 2021-11-09T00:00:00-07:40
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/how-to-use-go-fiber-and-gorm-frameworks-to-run-a-golang-application/hero.jpg
+    alt: Golang Gorm frameworks
+---
+Go is a general-purpose language. You can use Go to build web apps, microservices, cloud services, APIs, DevOps tooling, and any application. 
+<!--more-->
 Go Fiber is an Express-inspired framework for Golang. Go Fiber is a web framework built on top of fast HTTP. It can be used to handle operations such as routing/endpoints, middleware, server request, etc.
 
 In this tutorial, we will learn more about Go Fiber. Then, we will use Go Fiber with Gorm and an SQLite database to build a todo application. 
@@ -41,7 +57,7 @@ In this case, `go-fiber-app` will be our direct module and a module declaration 
 ### Setting up a basic Go Fiber server
 Let's jump in and build our first HTTP Server in Go and get the most basic concept of Go Fiber. Just like Express, it is straightforward to start your first Go server using the Fiber framework.
 
-Go Fiber is an Express inspired framework. So let's take one step behind and see how we create [a simple Node.js server with Express](/engineering-education/express/). Below is a basic server that utilizes the Express framework.
+Go Fiber is an Express inspired framework. So let's take one step behind and see how we create a simple Node.js server with Express. Below is a basic server that utilizes the Express framework.
 ```js
 // add Express library
 const express = require("express");
@@ -304,10 +320,9 @@ func GetOne(ctx *fiber.Ctx) error {
 ```
 
 #### Create a new todo
-`AddTodo()` function created a new todo and saves it to the database. Here we are only adding `Name`. The `Completed` is set to be `false` by default. We will set `Completed` as `true` when updating completed todos.
+The `AddTodo()` function in the code below creates a new todo and saves it to the database. Here we are only adding `Name`. The `Completed` status is set to be `false` by default.
 
 This is where the `uuid` comes into play. We use a UUID instance to generate and inspect our data structure before inserting it into the database. It generates an immutable Universally Unique IDentifier([UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier)) random number. Thus ensuring each id is unique to one todo.
-
 ```go
 // @func AddTodo -> function that stores a new data (Create new todo)
 // @param c *fiber.Ctx -- fiber context
@@ -340,8 +355,7 @@ func AddTodo(ctx *fiber.Ctx) error {
 ```
 
 #### Delete a todo based on id
-
-`DeleteTodo()` will delete an existing todo. We have to specify an id as a parameter to the Delete hanker and endpoint. This specifies the single and unique todo we want to delete. There the id must be of an existing todo. Otherwise, we will return an error to that.
+In the code below,` DeleteTodo()` will delete an existing todo. First, we have to specify an id as a parameter to the Delete hanker and endpoint. This defines the single and unique todo we want to delete. There the id must be of an existing todo. Otherwise, we will return an error to that.
 
 We first need to fetch that todo and then send a delete request to the database to delete the id associated with that todo.
 
@@ -376,9 +390,7 @@ func DeleteTodo(ctx *fiber.Ctx) error {
 ```
 
 #### Update an existing todo
-
-`UpdateTodo()` will update the values of an existing todo. We need to first fetch a single todo by specifying the parameter id. Here we can change the name of todo and the `completed` value of a todo. The completed value will update the todo as complete with a `true` value.
-
+In the code below, the `UpdateTodo()` will update the values of an existing todo. We need to first fetch a single todo by specifying the parameter id. Here we can change the name of todo and the `completed` value of a todo. The completed value will update the todo as complete with a `true` value.
 ```go
 // @func UpdateTodo -> a function that ulters a todo data (Update todo)
 // @param c *fiber.Ctx -- fiber context
@@ -433,20 +445,16 @@ func UpdateTodo(ctx *fiber.Ctx) error {
 ```
 
 ### Assigning handlers to the respective routes
-
 We have added all the functions and handlers and defined all the logic for every CRUD operation. These handlers are accessed using the endpoint. These are `URLs` that send requests to perform an operation to a database or serve specific data to the user. We will implement this in the `main.go` file.
 
 #### Create a todos module
-
-"`go
+```go
 // the main module
 package main
 ```
 
 #### Import packages and modules
-
 Here we are importing local, native and third-party packages and modules we want to use.
-
 ```go
 import (
     // import packages
@@ -463,8 +471,7 @@ import (
 ```
 
 #### Set up the Fiber app
-
-To execute the Go Fiber, we need to set a Fiber app. Here we are adding `Group`, which defines the routed for our handlers. `Group` is also used to set up routes common prefix. In this case, each route will have `/v1` prefix.
+To execute the Go Fiber, we need to set a Fiber app. Here we are adding `Group`, which defines the routed for our handlers. `Group` is also used to set up routes common prefix. In this case, each path will have a `/v1` prefix.
 
 ```go
 // App config => App denotes the Fiber application.
@@ -477,8 +484,9 @@ func setupV1(app *fiber.App) {
 ```
 
 #### Set up the application routes
+Using the Fiber `Group`, let's set up our Routes. Each route will execute a single handler that we set in the `todo.go`. So here we are, adding simple routes and routes with parameters.
 
-Using the Fiber `Group`, let's set up our Routes. Each route will execute a single handler that we set in the `todo.go`. Here we are adding simple routes and routes with parameters. A simple route doesn't need any additional arguments besides the set `"/" ` endpoint. A route with a parameter has additional arguments that you need to pass to execute a given endpoint. In our case, all routes with parameters take `:id` as the additional argument.
+A simple route doesn't need any additional arguments besides the set `"/" ` endpoint. However, a route with a parameter has additional arguments that you need to pass to execute a given endpoint. In our case, all routes with parameters take `:id` as the additional argument.
 
 ```go
 // Router defines all router handle interface includes app and group router
@@ -499,9 +507,9 @@ func setupTodosRoutes(grp fiber.Router) {
 ```
 
 #### Initialize the database
+We set the database, but we didn't initialize or create the SQLite database. Here we need to create a `todos.db` file to save our todo.
 
-We set the database, but we didn't initialize or create the SQLite database. Here we need to create a `todos.db` file to save our todo. We are also migrating the set database structure. All this will be created automatically when we build our application.
-
+We are also migrating the set database structure. All this will be created automatically when we build our application.
 ```go
 // Database Connect function
 func initDatabase() {
@@ -526,10 +534,8 @@ func initDatabase() {
 }
 ```
 
-#### Define the application Entry point
-
+#### Define the application entry point
 This will define our application entry point. We are performing the following operation;
-
 - Instantiate a new Fiber App.
 - Call the `initDatabase()` method.
 - Call the `setupV1(app)` method.
@@ -572,14 +578,12 @@ func main() {
     }
 }
 ```
-
 The todo application is set and ready for testing.
 
 ### Testing
+We will use `air` command to start the server, i.e., run the following command inside your project root directory.
 
-Since Air we are using, we will use `air` command to start the server, i.e., run the following command inside your project root directory.
-
-"`bash
+```bash
 air
 ```
 
@@ -587,41 +591,31 @@ This builds an executable and saves it in a `temp` folder. Here is the command o
 
 ![air-server](/engineering-education/how-to-use-go-fiber-and-gorm-frameworks-to-run-a-golang-application/air-server.png)
 
-Also, our `todos.db` was successfully created. The app has successfully connected to the database, and all the database models have been migrated.
-
-With Air, it becomes easy to watch and build our sever. If you change any code, the server will live-reload, build and run again. First, Air will delete the tmp executable, rebuild the application, and save the newly built executable.
+With `Air`, it becomes easy to watch and build our sever. If you change any code, the server will live-reload, build and run again. First, `Air` will delete the tmp executable, rebuild the application, and save the newly built executable.
 
 ![air-live-reloaded-server](/engineering-education/how-to-use-go-fiber-and-gorm-frameworks-to-run-a-golang-application/air-live-reloaded-server.png)
 
-Let's now test our endpoints. We will use Postman to test these endpoints.
-
-The simple route
+Let's now test our endpoints. Again, we will use Postman to test these endpoints.
 
 Open your Postman and send a GET request to `http://127.0.0.1:3000` as shown below;
 
 ![postman-get-request](/engineering-education/how-to-use-go-fiber-and-gorm-frameworks-to-run-a-golang-application/postman.png)
 
-The plain text will be served.
-
-![postman-plain-text](/engineering-education/how-to-use-go-fiber-and-gorm-frameworks-to-run-a-golang-application/postman-plain-text.png)
-
 Let's now test the todo routes.
 
 - Add a new todo
-let's start by adding a list of todos to our database. Below is a sample todo list that I want to insert into the SQLite database. Navigate to Postman and perform a post request as illustrated below.
+Let's start by adding a list of todos to our database. Below is a sample todo list that I want to insert into the SQLite database. Next, navigate to Postman and perform a post request as illustrated below.
 
 ![add-a-new-todo](/engineering-education/how-to-use-go-fiber-and-gorm-frameworks-to-run-a-golang-application/add-a-new-todo.png)
 
-If the todo was successfully added, the new todo would be shown in your Postman's console.
-
+The new todo is as shown below:
 ![the-newly-added-todo](/engineering-education/how-to-use-go-fiber-and-gorm-frameworks-to-run-a-golang-application/the-newly-added-todo.png)
 
 If you get something different from what you added, probably you forgot one or two steps. Revisit your `AddTodo()` function or check the JSON data that you are using is well-formatted.
 
-Also, go ahead and add a number of other todos.
+Also, go ahead and add some other todos.
 
 - Fetch todos
-
 Let's now fetch the added todo. Here will perform a get request as shown below;
 
 ![postman-get-request](/engineering-education/how-to-use-go-fiber-and-gorm-frameworks-to-run-a-golang-application/postman.png)
@@ -629,13 +623,11 @@ Let's now fetch the added todo. Here will perform a get request as shown below;
 ![fetched-todos](/engineering-education/how-to-use-go-fiber-and-gorm-frameworks-to-run-a-golang-application/fetched-todos.png)
 
 - Fetch a single todo
-
 To fetch a single todo, you need to specify the id of the todo in your URL as a parameter. Check this example.
 
 ![single-todo](/engineering-education/how-to-use-go-fiber-and-gorm-frameworks-to-run-a-golang-application/single-todo.png)
 
 - Update a todo
-
 Once a todo is added, we can perform an update operation to change the values of that do. Here we have to specify the id of the todo we want to update its values. Then add the data that you want to replace you todo with
 
 ![update-a-todo](/engineering-education/how-to-use-go-fiber-and-gorm-frameworks-to-run-a-golang-application/update-a-todo.png)
@@ -645,8 +637,7 @@ Once you send a PATCH request, the values assigned to that todo's id will update
 ![updated-todo](/engineering-education/how-to-use-go-fiber-and-gorm-frameworks-to-run-a-golang-application/updated-todo.png)
 
 - Delete a todo
-
-Let's now perform the last operation by deleting an existing todo. Specify the id of todo you want to delete as shown below.
+Let's now perform the last operation by deleting an existing todo. First, specify the id of todo you want to delete, as shown below.
 
 ![todo-deleted](/engineering-education/how-to-use-go-fiber-and-gorm-frameworks-to-run-a-golang-application/todo-deleted.png)
 
@@ -655,7 +646,7 @@ If you try to send a GET request to the deleted todo, you should get an error th
 ![deleted-todo-not-found](/engineering-education/how-to-use-go-fiber-and-gorm-frameworks-to-run-a-golang-application/deleted-todo-not-found.png)
 
 ### Conclusion
-Golang is a cool language to work with. You can create almost any application that you can when using other languages. Go has the ability to handle extensive applications. Thus, it can build applications of all levels while ensuring minimalism due to its ability to utilize multi-core processing.
+Golang is a fantastic language. You can create almost any application that you can when using other languages. In addition, Go can handle extensive applications. Thus, it can build applications of all levels while ensuring minimalism due to its ability to utilize multi-core processing.
 
 ### Further readings
 - [Golang - Programming Basics](/engineering-education/golang-part-2-programming-basics/)
@@ -665,6 +656,9 @@ Golang is a cool language to work with. You can create almost any application th
 - [Building RESTful Services in Go with an Idiomatic Approach](/engineering-education/build-restful-services-in-go-with-an-idiomatic-approach/)
 - [How to build a REST-API using Golang and PostreSQL](/engineering-education/build-a-rest-api-application-using-golang-and-postgresql-database/)
 
-The code that we have used to build the todo application can be found on [GitHub for further reference](https://github.com/Joakim-gakure/Go-todo-app-using-Go-Fiber-and-Gorm/tree/main).
+The code we have used to build the todo application can be found on [GitHub for further reference](https://github.com/Joakim-gakure/Go-todo-app-using-Go-Fiber-and-Gorm/tree/main).
 
-I hope you found this tutorial helpful in understanding Go Fiber and how to use it to run and handle Go application.
+I hope you found this tutorial helpful in understanding Go Fiber and how to use it to run and handle Go applications.
+
+---
+Peer Review Contributions by: [Miller Juma](/engineering-education/authors/miller-juma/)
