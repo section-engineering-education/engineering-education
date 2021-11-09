@@ -23,7 +23,7 @@ Now, we are going to learn how composition is applied in problem-solving. We wil
 
 We will create three classes—the Main Class, the Parent class, and the child class.We will be running the programs at the Main class and creating the methods and attributes at the parent and child classes. Therefore, ensure that all your classes are in the same package for swift code execution.
 
-```
+```java
 package org.kimcode.composition;
 
 public class Engine {
@@ -81,7 +81,7 @@ From the above code, we have created a class named `Engine`. We have allocated s
 
 We will now create the parent class, which is the class Vehicle. Finally, we will link the `Class Engine` with the `Class Vehicle` by creating an Engine attribute.
 
-```
+```java
 package org.kimcode.composition;
 
 public class Vehicle {
@@ -144,7 +144,7 @@ public class Vehicle {
 ```
 As you can see from the above class Vehicle, we have treated the child class Engine as an attribute though it is not. So we have initialized it, created a constructor for it, and created a getter and setter for it, just like any other attribute. Let us now create the Main class where we will be running and implementing the code. 
 
-```
+```java
 package org.kimcode.composition;
 
 public class Main {
@@ -173,7 +173,7 @@ The output of the code is derived through composition.
 
 Let us now use a code snippet to show how composition is evaluated.
 
-```
+```java
 class Vehicle{
    String name="V8";
 }
@@ -187,7 +187,7 @@ class Car extends vehicle {
 }
 ```
 
-```
+```java
 public class Student {
 }
 public class College {
