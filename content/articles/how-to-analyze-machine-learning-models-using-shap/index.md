@@ -65,15 +65,15 @@ The reasons are as follows.
 
   Through Explainable AI, we can understand the internal functionalities of the model. It gives us a deeper understanding of how these models made the decisions. It enables the user to understand the criteria used to make these decisions.
 
-2. Reduce model bias
+2. Reduce model bias.
 
   When analyzing the machine learning model, we select the best features to build the model. This reduces the bias made by the model during prediction.
 
-3. Improve the model performance
+3. Improve the model performance.
 
   It improves model performance by selecting the best features to make predictions.
 
-4. Helps in model debugging
+4. Helps in model debugging.
 
   Through model debugging, it removes bugs and errors in the model.
 
