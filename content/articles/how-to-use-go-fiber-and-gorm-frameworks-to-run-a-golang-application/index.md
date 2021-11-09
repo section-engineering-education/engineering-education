@@ -685,7 +685,7 @@ Golang is a fantastic language. You can create almost any application that you c
 - [Advanced Programming Concepts with Go](/engineering-education/golang-advanced-programming-concepts/)
 - [Concurrency in Go](/engineering-education/concurrency-in-go/)
 - [Building RESTful Services in Go with an Idiomatic Approach](/engineering-education/build-restful-services-in-go-with-an-idiomatic-approach/)
-- [How to build a REST-API using Golang and PostreSQL](/engineering-education/build-a-rest-api-application-using-golang-and-postgresql-database/)
+- [How to build a REST-API using Golang and PostgreSQL](/engineering-education/build-a-rest-api-application-using-golang-and-postgresql-database/)
 
 The code we have used to build the todo application can be found on [GitHub for further reference](https://github.com/Joakim-gakure/Go-todo-app-using-Go-Fiber-and-Gorm/tree/main).
 
