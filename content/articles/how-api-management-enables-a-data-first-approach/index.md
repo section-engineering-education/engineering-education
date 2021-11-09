@@ -12,13 +12,13 @@ A data-first approach veers from that model and prioritizes raw information. You
 ### Why organizations need to adopt a data-first approach
 A data-first approach enables organizations to set realistic goals. Businesses must focus on achieving targets that align with their objectives. These goals must be relevant to their business model to avoid wastage of resources and to minimize losses. 
 
-Using a data-first approach method ensures that decisions rely on available data characteristics. Firms can make strategies based on specific patterns analyzed according to the received data. Other benefits are discussed below.
+Using a data-first approach method ensures that decisions rely on available data characteristics. As a result, firms can make strategies based on specific patterns analyzed according to the received data. Other benefits are discussed below.
 
 #### Reducing bias in decision making
 A data-first approach enables organizations to make decisions with less bias. Such data does not rely on speculation. Instead, it is factual, and that means a data-driven decision should follow the available evidence. A data-first approach modifies an organization's decision-making process to emulate logic. This method results in rational decisions and eliminates any form of bias.
 
 #### Risk minimization
-Minimizing risks is the goal of any business. Adopting a data-first approach guarantees this benefit. If you are a business owner or an employee at a firm, reducing risks is key to improving returns on investment. A data-first approach ensures that companies do not [blindly target the wrong goals](https://insidebigdata.com/2021/02/11/why-a-data-first-approach-is-the-key-to-a-successful-digital-transformation/). 
+Minimizing risks is the goal of any business. Adopting a data-first approach guarantees this benefit. If you are a business owner or an employee at a firm, reducing risks is key to improving returns on investment. In addition, a data-first approach ensures that companies do not [blindly target the wrong goals](https://insidebigdata.com/2021/02/11/why-a-data-first-approach-is-the-key-to-a-successful-digital-transformation/). 
 
 These are goals that are either unachievable or do not align with their business objectives. Eliminating this 'blindfolded' approach reduces resource wastage. Besides, using a data-first approach guides them to take well-calculated risks. Such strategic risks could result in greater profits or lessen the potential losses.
 
@@ -53,7 +53,7 @@ Besides, API management has a [proxy layer](https://www.mulesoft.com/resources/a
 API management platforms offer data first ecosystem management. They provide platforms for unifying and managing all applications and tools. It helps reduce the inconvenience of dealing with your digital entities separately. Instead, you get to have a [single-linked ecosystem](https://www.akana.com/blog/data-first).
 
 ### How a data-first approach is driving digital transformation
-Digital transformation is a process that acknowledges the dynamism of the digital landscape. Consumers' expectations evolve alongside this change as they desire more superior results. The constantly changing consumer data is at the centre of this revolution. It guides the direction of digital transformation. 
+Digital transformation is a process that acknowledges the dynamism of the digital landscape. Consumers' expectations evolve alongside this change as they desire superior results. The constantly changing consumer data is at the centre of this revolution. It guides the direction of digital transformation. 
 
 Companies that have adopted a data-first approach are keen to mould their technologies to match the market trends. The aim is to maximize their profits by fulfilling customers' needs.
 
