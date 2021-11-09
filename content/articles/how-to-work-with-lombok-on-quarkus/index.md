@@ -1,12 +1,8 @@
-Java language is a simple language for app development. The only turn-off to newbies is that it has so many syntactical terms to cram all at once.
-This makes the newcomers confused and also wish for any way to shorten the code for them. Frameworks such as SpringBoot, Micronaut, Quarkus, and others have tried to come up with ingenious ways to do this.
-This includes the use of easy-to-use libraries. These libraries provide annotations that can be quickly and easily used to replace blocks of codes.
+Java language is a simple language for app development. However, it challenges beginners due to the lost of syntactical terms required to be mastered. This confuses beginners.  The great news is that Frameworks such as SpringBoot, Micronaut, Quarkus, and others have tried to come up with ways to ease programmers of this challenge. This includes the introduction of easy-to-use libraries that provide annotations to quickly and easily replace blocks of code.
 
-Lombok is an example of one of these libraries. 'Project Lombok' as it's known, is a java library that plugs into your editor or IDE and builds tools simplifying Java.
-It takes away the writing of getters, setters, or equals methods again. This is by use of one annotation.  The class will have a fully-featured builder, Automated logging variables, and much more.
+Lombok is an example of one of these libraries. 'Project Lombok' as it's known, is a java library that plugs into your editor or IDE and builds tools simplifying Java. It takes away the writing of getters, setters, or equals methods again. This is by use of one annotation.  The class has a fully-featured builder, Automated logging variables, and much more.
 
 ### Table of Contents
-
 - [Key takeaways](#key-takeaways)
 - [Pre-requisites](#pre-requisites)
 - [Setup IDE for Lombok](#setup-ide-for-lombok)
@@ -36,9 +32,7 @@ It takes away the writing of getters, setters, or equals methods again. This is 
 - [References](#references)
 
 ### Key takeaways
-
-At the end of this article, the following will have been learned:
-
+At the end of this article, the reader should be well conversant with the following:
 - How to set up Lombok in a Quarkus project
 - IntelliJ Lombok setup
 - How to set up tests in Quarkus to test the Lombok project functionality
@@ -51,57 +45,40 @@ At the end of this article, the following will have been learned:
 - Slf4j, Lombok configurations, and custom logs
 
 ### Pre-requisites
-
-This Quarkus Lombok article requires the following for easier catch-up:
-
+To follow along with this article, the reader should have the following:
 - Java language prior knowledge
 - Java SDK set on the machine. The latest SDK version is recommended.
 - Quarkus supported IDEs or text editors. These lessen the project configurations and other tasks. Such include IntelliJ ultimate edition, VS Code, Eclipse among others. The ultimate version of IntelliJ is preferred since it has many tools in the store.
 - A good internet connection to fetch additional resources.
 
-> As for the requirements, the pre-requisites may change as time goes by since ever since the article is published.
-> JDK version `17`, VS Code version `1.61`, and IntelliJ Ultimate version `2021.2.3` were used for the screenshots.
-
-Once done, the following steps will be taken in the order in the article to achieve the points in the Key-takeaways section:
-
-- Setup IDE for Lombok
-- Create a Lombok Quarkus project
-- Application of Lombok features to the project
+> As for the requirements, the pre-requisites may change as time goes by since ever since the article is published. JDK version `17`, VS Code version `1.61`, and IntelliJ Ultimate version `2021.2.3` were used for the screenshots.
 
 ### Setup IDE for Lombok
-
 In this section, the main focus will be on setting up the following:
 
 - [IntelliJ IDEA](#IntelliJ-ultimate-Quarkus-Lombok-setup)
 - [Visual Studio Code](#Quarkus-Lombok-setup-for-VS-Code)
 
 #### IntelliJ ultimate Quarkus Lombok setup
-
-The Lombok plugin will be required for the IDE to easily work with Quarkus in a Quarkus project.
-
-- The plugin can be installed by heading over to the Settings/plugins option.
-- Search for '**Lombok**'. It will look as shown below:
+The Lombok plugin will be required for the IDE to easily work with Quarkus in a Quarkus project. The plugin can be installed by heading over to the Settings/plugins option then searching for 'Lombok'. It will look as shown below:
 
 ![Lombok IntelliJ plugin](/engineering-education/how-to-work-with-lombok-on-quarkus/Lombok-intellij-pliugin.png "Lombok IntelliJ plugin")
 
-- Install it. Restart the IDE.
+After a successful installation, restart the IDE.
 
 #### Quarkus Lombok setup for VS Code
-
-- As for VS code, make sure that it has the Quarkus tools installed as an extension. The extension is shown below:
+As for VS code, make sure that it has the Quarkus tools installed as an extension. The extension is shown below:
 
 ![VS Code Quarkus tools](/engineering-education/how-to-work-with-lombok-on-quarkus/quarkus-tools-vs-code.png "VS Code Quarkus tools")
 
-- Search for '**Lombok**' and install the Lombok annotations for VS Code. Check out its appearance in the image below:
+- Search for 'Lombok' and install the Lombok annotations for VS Code. Check out its appearance in the image below:
 
 ![Lombok VS Code support](/engineering-education/how-to-work-with-lombok-on-quarkus/lombok-annotations-vs-code.png "Lombok VS Code support")
 
-- Restart it to make sure all is well installed.
+- Restart it to make sure it reflects  the chnages.
 
-Once done, proceed with the following steps below.
 
 ### Create a Lombok Quarkus project
-
 Create a Quarkus project in your project directory through any of the three methods below:
 
 - [Through IntelliJ IDEA](#New-Quarkus-Lombok-project-in-IntelliJ)
@@ -121,8 +98,7 @@ Create a new project of the following structure:
 - In the next window, don't add any dependencies
 
 #### New Quarkus Lombok project in Visual Studio Code
-
-After the installation of the extensions, do the following:
+After the installation of the extensions, dfollow the steps below:
 
 - Open up the Command Palette. Do this by heading over to the View/Command Palette option.
 - Search Quarkus
@@ -137,22 +113,17 @@ After the installation of the extensions, do the following:
   - No extensions
 
 #### New Quarkus Lombok project in Quarkus.io starter
-
 - Head over to [Quarkus.io starter](https://code.quarkus.io/) website.
 - Set the following for the project:
-
   - **ArtifactId**: lombok-tutorial
   - **Group**: org.gs
-
-Check it out below:
 
 ![New Quarkus Lombok project using Quarkus.io starter](/engineering-education/how-to-work-with-lombok-on-quarkus/new-quarkus-lombok-intellij.png "New Quarkus Lombok project using Quarkus.io starter")
 
 - Download the zip code generated, extract it and open it up with the IDE or code editor.
 
 #### Folder Structure
-
-The following is the folder structure to be created:
+The following is the project folder structure:
 
 ```shell
 .
@@ -178,9 +149,7 @@ The following is the folder structure to be created:
 ### Create a Movies sample project
 
 #### Sample application
-
-- Create a new `Movie.java` file inside the **java** folder.
-- In it paste the following code:
+Create a new `Movie.java` file inside the **java** folder and in the file, add the following snippets.
 
 ```java
 import java.net.URL;
@@ -274,8 +243,7 @@ public class Movie {
 }
 ```
 
-- In the 'pom.xml' file, under the dependencies section, add the code below that adds the Jupiter JUnit package.
-  This allows testing of the project and running of additional test units.
+In the 'pom.xml' file, under the dependencies section, add the code below that adds the Jupiter JUnit package. This allows testing of the project and running of additional test units.
 
 ```xml
 <!--junit-jupiter.version-->
@@ -287,7 +255,7 @@ public class Movie {
 </dependency>
 ```
 
-- Add another code before the dependencies section as follows:
+Add another code before the dependencies section as follows:
 
 ```xml
 <properties>
@@ -298,10 +266,7 @@ public class Movie {
 </properties>
 ```
 
-This section holds some variables which state the versions of the dependencies used. For example, that of `JUnit` is `5.8.1`.
-
-- Reload the IDE or project to apply the changes made.
-- Create another file inside the **test** folder. Name it `MovieTest.java` file.
+This section holds some variables which state the versions of the dependencies used. For example, that of `JUnit` is `5.8.1`. Reload the IDE or project to apply the changes made then in the next step create a new  file inside the `test` folder. Name it `MovieTest.java` file.
 - In it paste the following code:
 
 ```java
@@ -430,14 +395,11 @@ class MovieTest {
 }
 ```
 
-- Run the tests with the IDE. If the run option can't be visible, right-click on the tests file and select the run option.
-
-The outcome will look as follows:
+Run the tests with the IDE. If the run option can't be visible, right-click on the tests file and select the run option. The outcome will look as follows:
 
 ![Running the tests](/engineering-education/how-to-work-with-lombok-on-quarkus/running-tests.png "Running the tests")
 
 #### Add Lombok dependencies
-
 In the 'pom.xml' file, under the dependencies section, add the following lines of code. These will allow the app to utilize the Project Lombok annotations.
 
 ```xml
@@ -449,18 +411,16 @@ In the 'pom.xml' file, under the dependencies section, add the following lines o
 </dependency>
 ```
 
-- In the properties section(in the 'properties' tags), add the following line of code:
+In the properties section(in the 'properties' tags), add the following line of code:
 
 ```xml
         <lombok.version>1.18.20</lombok.version>
 ```
 
-- Reload the app once more. This allows the IDE to fetch the project dependencies for development purposes.
+Reload the app once more. This allows the IDE to fetch the project dependencies for development purposes.
 
 ### Lombok features
-
-These are the annotations available for use in any project.
-Some which are also going to be discussed in the article include:
+These are the annotations available for use in any project. Some which are also going to be discussed in the article include:
 
 - [Getters and Setters](#Getters-and-Setters)
 - [NoArgsConstructor together with the AllArgsConstructor](#NoArgsConstructor-and-the-AllArgsConstructor)
@@ -475,11 +435,10 @@ Some which are also going to be discussed in the article include:
 - [Slf4j, lombok.config and CustomLog](#Slf4j,-Lombok.config-and-CustomLog)
 
 #### Getters and Setters
-
 These will reduce the code of the project. This is by replacing the Getters and Setters methods used by annotations.
 Lombok adds the methods behind the scene in a separate file keeping the code simple and clean.
 
-- Remove the Getters and Setters methods initially created in the **Movie.java** file
+- Remove the Getters and Setters methods initially created in the `Movie.java` file
 - Above the Movie class, add the following line of code:
 
 ```java
@@ -498,13 +457,9 @@ Hence, the methods generated will be seen after running the actual project or te
 > If they are only needed for only one item, they will be applied before that item only.
 
 #### NoArgsConstructor and the AllArgsConstructor
+These are used to create constructors for the program. In the **Movie.java** file found in the src folder, there are two types of constructors available. These are the No-argument and the All-argument constructors.  These are shown below:
 
-These are used to create constructors for the program.
-
-- In the **Movie.java** file found in the src folder, there are two types of constructors available. These are the No-argument and the All-argument constructors.
-  These are shown below:
-
-  - **No argument Constructor**:
+##### No argument Constructor
 
 ```java
     /**
@@ -515,7 +470,7 @@ These are used to create constructors for the program.
     }
 ```
 
-- **All argument Constructor**:
+##### All argument Constructor
 
 ```java
     public Movie(Long id, String title, String description, String country, int rating, URL officialSite, String language) {
@@ -529,26 +484,23 @@ These are used to create constructors for the program.
     }
 ```
 
-- Add the NoArgsConstructor and AllArgsConstructor annotations to the code below the getters and setters annotations:
+Add the NoArgsConstructor and AllArgsConstructor annotations to the code below the getters and setters annotations:
 
 ```java
 @NoArgsConstructor
 @AllArgsConstructor
 ```
 
-- Delete the No argument and all arguments constructors initially created from the file.
+Delete the `No argument` and `all arguments` constructors initially created from the file.
 
-> **NOTE:** Don't delete the constructors found in the test file.
+> NOTE: Don't delete the constructors found in the test file.
 
 - Re-run the test. This proves that all runs as expected.
 - Check for the **Movie.class** file in the target folder for the code added automatically to it.
 
 #### AccessLevel
 
-It is used to describe how the items can be accessed in the program. E.g. privately, publicly, protected, and many more.
-This annotation is useful in cases in which the Setters and Getters aren't applied to other variables by default.
-
-For example:
+It is used to describe how the items can be accessed in the program. E.g. privately, publicly, protected, and many more. This annotation is useful in cases in which the Setters and Getters aren't applied to other variables by default. For example:
 
 - Above the `private Long id;` line, add the following:
 
@@ -581,8 +533,7 @@ In this case, the following error will be popped-up:
 
 ![Runtime error](/engineering-education/how-to-work-with-lombok-on-quarkus/set-id-error.png "Runtime error")
 
-This is because the variable is inaccessible by Project Lombok due to its access level.
-The easiest solution to such kinds of errors is to remove the access level or change its access level type to '**none**'.
+This is because the variable is inaccessible by Project Lombok due to its access level. The easiest solution to such kinds of errors is to remove the access level or change its access level type to 'none'.
 
 - Remove the access level from the id of type long.
 - Re-run the tests.
@@ -612,22 +563,13 @@ The easiest solution to such kinds of errors is to remove the access level or ch
 @EqualsAndHashCode
 ```
 
-The '**EqualsAndHashCode**' annotation is used to generate the equals(Object other) and hashcode() methods.
-
-By default, the methods use all present fields as their arguments.
+The '**EqualsAndHashCode**' annotation is used to generate the equals(Object other) and hashcode() methods. By default, the methods use all present fields as their arguments.
 
 - Run the tests
 - Check the changes in the **Movie.class** file in the target folder.
 
 ##### Exclude option
-
-This is not a feature but rather an option for the features.
-
-If wanted or needed, some fields can be excluded from use in the functions or included.
-This is by the use of the `exclude` option.
-To do this, do the following:
-
-- In the  Movies.java file, add the 'exclude' option to the 'ToString' and 'EqualsAndHashCode' annotations as shown below:
+This is not a feature but rather an option for the features. If wanted or needed, some fields can be excluded from use in the functions or included. This is by the use of the `exclude` option. In the  Movies.java file, add the 'exclude' option to the 'ToString' and 'EqualsAndHashCode' annotations as shown below:
 
 ```java
 @ToString(exclude = "minutes")
@@ -640,11 +582,7 @@ Remember in the initial 'ToString' method created shown above, minutes were incl
 - Check the changes in the **Movie.class** file in the target folder. Notice that the minutes' field is excluded from the 'ToString' and 'EqualsAndHashCode' functions.
 
 #### Data
-
-The Data annotation automatically generates the Getters and Setters, ToString, and EqualsAndHashCode methods.
-To check this out, do the following:
-
-- Go to the **Movie.java** file in the src folder and delete and replace all the Getters and Setters, ToString, and EqualsAndHashCode annotations by the Data annotation.
+The Data annotation automatically generates the Getters and Setters, ToString, and EqualsAndHashCode methods. Go to the **Movie.java** file in the src folder and delete and replace all the Getters and Setters, ToString, and EqualsAndHashCode annotations by the Data annotation.
 
 ```java
 @Data
@@ -655,17 +593,14 @@ To check this out, do the following:
 
 #### NotNull
 
-This annotation makes sure that the parameter or field is not passed as an empty value.
-
-- Add the NotNull annotations before the id, title, and rating fields. An example is shown below:
+This annotation makes sure that the parameter or field is not passed as an empty value. Add the NotNull annotations before the id, title, and rating fields. An example is shown below:
 
 ```java
     @NotNull
     private Long id;
 ```
 
-- Create a new function in the class that calculates the sum by adding the value held in the minutes' field to an argument passed to it.
-  It shall look as follows:
+Create a new function in the class that calculates the sum by adding the value held in the minutes' field to an argument passed to it.
 
 ```java
     public int getMinutesPlusX(@NotNull int x){
@@ -677,7 +612,6 @@ Since it has the NotNull annotation near the argument being passed to it, it won
 
 - Run the tests
 - Check the changes in the **Movie.class** file in the target folder. Notice that the annotation won't allow a null value to be passed, even for the recently created function as seen in the code generated in the **Movie.class** file found in the target folder.
-  The code looks like this:
 
 ```java
 public int getMinutesPlusX(@NotNull int x) {
@@ -687,14 +621,7 @@ public int getMinutesPlusX(@NotNull int x) {
 ```
 
 #### Accessors
-
-Lombok has an interesting annotation by the name 'Accessors'. This annotation removes the prefix used in fields getters and setters methods.
-It can both be added to the whole class or per field as required.
-It has different options such as the _fluent_, _chain_, and _prefix_.
-
-For example:
-
-- Add the 'Accessors' annotation to the **id** field as shown below:
+Lombok has an interesting annotation by the name 'Accessors'. This annotation removes the prefix used in fields getters and setters methods.It can both be added to the whole class or per field as required. It has different options such as the _fluent_, _chain_, and _prefix_. Add the 'Accessors' annotation to the **id** field as shown below:
 
 ```java
     @NotNull
@@ -776,11 +703,7 @@ movie = Movie.builder().title("The Lord of the Rings: The Fellowship of the Ring
         .build();
 ```
 
-The code above uses the same returns as the former code but the `builder()` function to set them up.
-
-- Re-run the tasks of testing the application to see if the code block works as expected.
-
-The return type is a success.
+The code above uses the same returns as the former code but the `builder()` function to set them up. Re-run the tasks of testing the application to see if the code block works as expected. The return type is a success.
 
 In the **MovieBuilder** class inside the **Movie.class** file generated after the tests run, one notices that it has the following in it:
 
@@ -794,10 +717,7 @@ private URL officialSite;
 private String language;
 ```
 
-This lacks the integer of the name '**minutes**'. This lack is because it uses the _final_ keyword.
-To solve this, use an annotation provided by Project Lombok called `@Builder.Default`.
-
-- Add it above the 'minutes' as shown below:
+This lacks the integer of the name '**minutes**'. This lack is because it uses the _final_ keyword. To solve this, use an annotation provided by Project Lombok called `@Builder.Default`. Add it above the 'minutes' as shown below:
 
 ```java
 @Getter(AccessLevel.PRIVATE)
