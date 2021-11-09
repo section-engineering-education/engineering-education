@@ -1,6 +1,21 @@
-### Introduction.
-ValueTuple is used to return several values from a method. Since these components are mutable, you can assign new values to them after they've been declared.
- 
+---
+layout: engineering-education
+status: publish
+published: true
+url: /understanding-valuetuples-in-c#/
+title: Understanding ValuTuples in C#
+description: This article will help the reader understand how to implement ValueTuples in C#. These components allow one to group unrelated data values.
+author: 
+date: 2021-11-09T00:00:00-12:06
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/understanding-valuetuples-in-c#/hero.jpg
+    alt: ValueTuples in C# Hero Image
+---
+ValueTuples are to return several values from a method. Since these components are mutable, you can assign new values to them after they've been declared.
+<!--more-->
 ValueTuple is available only in C# version `7.0` (.NET Framework 4.7). If in your project you don't see ValueTuple, it means that you have to install the ValueTuple package.
 
 ### Creating and initializing ValueTuple.
@@ -252,3 +267,5 @@ In summary, we have learned;
 
 We have also learned that ValueTuples have a simplified syntax and perform better than Tuples. They also can alter data members and give them meaningful names. Therefore we can say that it is best to use value tuples.
 
+---
+Peer Review Contributions by: [Wanja Mike](/engineering-education/authors/michael-barasa/)
