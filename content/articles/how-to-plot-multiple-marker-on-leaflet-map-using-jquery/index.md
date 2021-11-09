@@ -1,12 +1,29 @@
-### Introduction
-Markers are geospatial tools used to point or show the location of the desired object, given a geographic coordinate system (GCS). A geographic coordinate system (GCS) is a coordinate system associated with positions on earth. The latitude and longitude are types of geographic coordinates systems. Easting and northing are grid systems which are types of geographic coordinate systems. 
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-plot-multiple-marker-on-leaflet-map-using-jquery/
+title: How to plot multiple markers on leaflet map using jquery
+description: This tutorial will show you how to plot multiple markers on specific locations on a leaflet map using Leaflet.js.
+author: femi-ige-muyiwa-oladele
+date: 2021-11-09T00:00:00-12:30
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/how-to-plot-multiple-marker-on-leaflet-map-using-jquery/hero.jpg
+    alt: How to plot multiple markers on leaflet map using jquery Hero Image
+---
+
+Markers are geospatial tools used to point or show the location of the desired object, given a Geographic Coordinate System (GCS). A geographic coordinate system (GCS) is a coordinate system associated with positions on earth. The latitude and longitude are types of geographic coordinates systems. Easting and northing are grid systems which are types of geographic coordinate systems. 
+<!--more-->
 Leaflet.js has made it easy to plot markers on specific locations using a simple line of code. With jquery and a simple front-end modal, we can take it a step higher. We will show you how to build an input box to fill in these coordinates and render them on a map. Having geojson instead?, we will guide you on the process of uploading JSON files to your map.
 
 Let's get on with it then! 
 
-### Prerequisite
+### Prerequisites
 Don't want to feel left out? The reader should have prior knowledge about the following:
+
  -[JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript).
 - [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML). 
 - [CSS](https://developer.mozilla.org/en-US/docs/Web/css). 
