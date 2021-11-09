@@ -560,6 +560,8 @@ This proves that the configurations in the 'application.properties' file are equ
 - Try re-running the project in the other profiles.
 - Add new profile configurations and variables and run the application in them.
 
+Find the Repository with the article right [here](https://github.com/justusmbuvi/Quarkus-Configuration-profiles). Clone it and use it as per the licenses.
+
 ### Conclusion
 
 The following were learned in the article:
