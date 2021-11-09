@@ -5,7 +5,7 @@ published: true
 url: /understanding-valuetuples-in-c#/
 title: Understanding ValuTuples in C#
 description: This article will help the reader understand how to implement ValueTuples in C#. These components allow one to group unrelated data values.
-author: 
+author: michelle-ngei
 date: 2021-11-09T00:00:00-12:06
 topics: [Languages]
 excerpt_separator: <!--more-->
