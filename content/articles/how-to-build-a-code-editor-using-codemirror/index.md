@@ -84,6 +84,7 @@ Next, we'll create a navbar containing the aforementioned features. We'd start b
 ```
 
 If properly implemented, we should have our navbar as below;
+
 ![nav](/engineering-education/how-to-build-a-code-editor-using-codemirror/navbar.JPG)
 
 #### Adding the text editor and iframe display
@@ -120,6 +121,7 @@ We then create a container `div`, followed by two seperate `div` within the cont
 `.a` and `.pa` are the class names for the editor and Iframe display.
 
 Altogether, we should have our layout as below;
+
 ![editor](/engineering-education/how-to-build-a-code-editor-using-codemirror/editor.JPG)
 
 #### Adding the main editor features
@@ -290,8 +292,9 @@ The final code in the file should look like;
 
 If properly implemented, we should have the following results;
 
-![main](main-editor.JPG)
-![main](main-editor-2.JPG)
+![main editor](/engineering-education/how-to-build-a-code-editor-using-codemirror/main-editor.JPG)
+
+![main editor 2](/engineering-education/how-to-build-a-code-editor-using-codemirror/main-editor-2.JPG)
 
 ### Conclusion
 
