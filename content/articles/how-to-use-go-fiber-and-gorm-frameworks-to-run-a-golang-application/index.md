@@ -14,11 +14,11 @@ images:
   - url: /engineering-education/how-to-use-go-fiber-and-gorm-frameworks-to-run-a-golang-application/hero.jpg
     alt: Golang Gorm frameworks
 ---
-Go is a general-purpose language. You can use Go to build web apps, microservices, cloud services, APIs, DevOps tooling, and any application. 
+Go is a general-purpose language. You can use Go to build web apps, microservices, cloud services, APIs, DevOps tooling, and any application.
 <!--more-->
 Go Fiber is an Express-inspired framework for Golang. Go Fiber is a web framework built on top of fast HTTP. It can be used to handle operations such as routing/endpoints, middleware, server request, etc.
 
-In this tutorial, we will learn more about Go Fiber. Then, we will use Go Fiber with Gorm and an SQLite database to build a todo application. 
+In this tutorial, we will learn more about Go Fiber. Then, we will use Go Fiber with Gorm and an SQLite database to build a todo application.
 
 ### Prerequisites
 To follow along with this tutorial, ensure you have a basic knowledge of Golang. This include:
@@ -27,23 +27,24 @@ To follow along with this tutorial, ensure you have a basic knowledge of Golang.
 - Run and create Golang application as well as understand how to write Golang code.
 
 ### Setting up Go project
-Like the standard basic application, create a project folder and open it with your favourite text editor. I will be using Visual studio code in this tutorial. 
+Like the standard basic application, create a project folder and open it with your favorite text editor. I will be using Visual studio code in this tutorial.
 
-Go uses different libraries and frameworks. Therefore, when creating an application, you need to save the binaries of those packages within your project so that your app can access them. 
+Go uses different libraries and frameworks. Therefore, when creating an application, you need to save the binaries of those packages within your project so that your app can access them.
 
 Go also uses the file system to save module dependencies. This saves the Go module with the module paths and the sematic version associated with the currently installed module. We then import these modules to our application within the project's root directory.
 
-Go uses [`go.mod` and `go.sum`](https://golangbyexample.com/go-mod-sum-module/) to manage these dependencies. `go.mod` contains all the indirect dependencies you install with the version that you want to use.  
-Indirect dependencies are not used inside the project but are treated as indirect dependencies. 
+Go uses [`go.mod` and `go.sum`](https://golangbyexample.com/go-mod-sum-module/) to manage these dependencies. `go.mod` contains all the indirect dependencies you install with the version that you want to use. Indirect dependencies are not used inside the project but are treated as indirect dependencies.
 
 Also, any dependency mentioned in the `go.mod` package but not found in any of the source files is also considered an indirect dependency. `go.sum` maintains the checksum of the packages installed successfully.
 
 If you rerun the project, it will not install all the packages. It does this by storing the package's cache in the `$GOPATH/pkg/mod` directory. A comparative example of this is when using Node.js and NPM. In this case, `package.json` and `package-lock.json` files are used to manage Node.js dependencies.
 
 To initialize these files, run the following command at the root of your project directory.
+
 ```bash
 go mod init go-fiber-app
 ```
+
 A `go.mod` will be created with the following command;
 
 ```go
@@ -52,12 +53,13 @@ go 1.17
 ```
 
 In this case, `go-fiber-app` will be our direct module and a module declaration for maintaining version control.
-`go-fiber-app` acts as a URL for importing local modules within our application. `go 1.17` is the go version currently running on your computer. `go.sum` will be created afterwards when we start installing our packages.
+`go-fiber-app` acts as a URL for importing local modules within our application. `go 1.17` is the go version currently running on your computer. `go.sum` will be created afterward when we start installing our packages.
 
 ### Setting up a basic Go Fiber server
 Let's jump in and build our first HTTP Server in Go and get the most basic concept of Go Fiber. Just like Express, it is straightforward to start your first Go server using the Fiber framework.
 
 Go Fiber is an Express inspired framework. So let's take one step behind and see how we create a simple Node.js server with Express. Below is a basic server that utilizes the Express framework.
+
 ```js
 // add Express library
 const express = require("express");
@@ -71,7 +73,8 @@ app.get("/", (req, res) => {
 // Start server on port 3000
 app.listen(3000);
 ```
-Now with Golang and using the Fiber framework, the above Node.js example works just the same. It is only some syntax that changes. The same HTTP server is being implemented but with a different language using different frameworks. 
+
+Now with Golang and using the Fiber framework, the above Node.js example works just the same. It is only some syntax that changes. The same HTTP server is being implemented but with a different language using different frameworks.
 
 Let's dive in and see how we can create a look-alike server with Go and Fiber.
 
@@ -84,27 +87,36 @@ go get -u github.com/gofiber/fiber/v2
 Now we can start implementing our first Go Fiber inspired HTTP server. Go ahead and create a `main.go` file inside your project folder, then follow the steps below;
 
 - Add the main module
+
 The main module is included in every Go file. It imports modules to other modules within the Go local files.
+
 ```go
 package main
 ```
+
 - Since we are using Fiber, we need to import the package to access the Go Fiber function and methods.
+
 ```go
 // add Fiber package
 import "github.com/gofiber/fiber/v2" 
 ```
 
-- Add a main function
+- Add a main function.
+
 The main function is a special Go method that defines the entry point of a Golang application. It's used to execute other explicit functions or a block of Golang code.
+
 ```go
 func main() {
     // create a new Fiber instance
     app := fiber.New()
 ```
+
 Within the `main` function, we are creating a new Fiber instance. This will instantiate a Fiber app.
 
 - Create an endpoint
+
 `app.get` will set our default route function. It will take a `context` of Fiber context, and it expects an error. This `context` structure has all sorts of cool things. In our case, we are sending a plain string of text.
+
 ```go
 // Create a new endpoint
 app.Get("/", func(c *fiber.Ctx) error {
@@ -123,68 +135,77 @@ app.Listen(":3000")
 ```
 
 The app is ready, and we can now test it by running the following command;
+
 ```bash
 go run main.go
 ```
+
 Output:
+
 ![go-fiber-simple-server](/engineering-education/how-to-use-go-fiber-and-gorm-frameworks-to-run-a-golang-application/go-fiber-simple-server.png)
 
 And there you have it. Your simplest Go Fiber HTTP server is up and running. Navigate to `http://127.0.0.1:3000/`, and a simple 'hello world' text displays on the browser.
 
 ### Setting up a Fiber todos application
-The above is a simple HTTP server. Let's now dive into a more profound use case and explore more of the Go Fiber framework. First, we will use a todo application use case with an SQLite database to build a todos application. 
+The above is a simple HTTP server. Let's now dive into a more profound use case and explore more of the Go Fiber framework. First, we will use a todo application use case with an SQLite database to build a todos application.
 
 Let's start by creating a project directory. Then, initialize Go with `go mod init go-fiber-todos`.
 
 First, we will install the following packages.
 - Gorm
+
 ```bash
 go get -u gorm.io/gorm
 ```
+
 - Gorm SQLite driver
+
 ```bash
 go get -u gorm.io/driver/sqlite
 ```
 
 - Google [UUID](https://pkg.go.dev/github.com/google/uuid)
+
 ```bash
 go get github.com/google/uuid
 ```
 
 - Air
+
 Do you remember the [Nodemon](https://www.npmjs.com/package/nodemon) for the Node.js server? [Air](https://github.com/cosmtrek/air) works pretty much the same as Nodemon.
 
 When you are building a server, you probably need to watch over your files. This way, you only start your server once. Then, when you make changes to your file, the server is automatically restarted again.
 
 [Air](https://reposhub.com/go/miscellaneous/cosmtrek-air.html) is in the development package for Go. It live reloads your Go server whenever you modify your code. So you set it up and focus on your code.
 
-"`bash
+```bash
 go get -u github.com/cosmtrek/air
 ```
 
 ### Setting up Air for our project
-We need to set up `Air` so that the application can handle live reloads. `Air` will watch over the project files and directory, build and
-run the app by giving us some colourful logs output.
+We need to set up Air so that the application can handle live reloads. Air will watch over the project files and directory, build and
+run the app by giving us some colorful logs output.
 
 ![air-live-reloads](/engineering-education/how-to-use-go-fiber-and-gorm-frameworks-to-run-a-golang-application/air-live-reloads.gif)
 
-To initialize `Air` run;
+To initialize Air run;
+
 ```bash
 air init
 ```
 
-The above command will create a `.air.toml` file to the current directory with the default settings. From there, you can just run `air` and start watching over your development server. Or run `air -d' to print all logs in a debug environment.
+The above command will create a `.air.toml` file to the current directory with the default settings. From there, you can just run `air` and start watching over your development server. Or run `air -d` to print all logs in a debug environment.
 
 `.air.toml` is configurable. You can customize its parameters to suit your requirements. Check [this guide for more information](https://reposhub.com/go/miscellaneous/cosmtrek-air.html).
 
 ### Setting up the database
-We are using Gorm to set up our SQLite database drivers. Gorm also utilizes [go-sqlite3](github.com/mattn/go-sqlite3) package to set up an SQLite database. 
+We are using Gorm to set up our SQLite database drivers. Gorm also utilizes [go-sqlite3](github.com/mattn/go-sqlite3) package to set up an SQLite database.
 
-`go-sqlite3` is the `CGo` framework. `CGo` is a module in the Go programming language that enables the creation of packages that refer to C code. This means, if you are building your Go application using `go-sqlite3`, you need GCC (GNU Compiler Collection). 
+`go-sqlite3` is the `CGo` framework. `CGo` is a module in the Go programming language that enables the creation of packages that refer to C code. This means, if you are building your Go application using `go-sqlite3`, you need GCC (GNU Compiler Collection).
 
 >The GCC compiler is an optimized version of the GNU Project that compiles various programming languages such as C code.
 
-[`go-sqlite3` documentation](https://github.com/mattn/go-sqlite3#installation) states that ***after you have built and installed go-sqlite3 with `go install github.com/mattn/go-sqlite3` (which requires GCC), you can build your app without relying on GCC in future.*** 
+[`go-sqlite3` documentation](https://github.com/mattn/go-sqlite3#installation) states that ***after you have built and installed go-sqlite3 with `go install github.com/mattn/go-sqlite3` (which requires GCC), you can build your app without relying on GCC in future.***
 
 However, in our case, `go-sqlite3` is installed through the Gorm SQLite driver. Thus we need to set up a [GCC environment](https://gcc.gnu.org/install/). First [download GCC MinGW-w64](https://liquidtelecom.dl.sourceforge.net/project/mingw-w64/Toolchains%20targetting%20Win32/Personal%20Builds/mingw-builds/installer/mingw-w64-install.exe) for 32 and 64 bit Windows operating systems. Then, install MinGW-w64 into your laptop.
 
@@ -197,6 +218,7 @@ Once the installation is complete, add the GCC environment variable. Find the PA
 ```bash
 gcc
 ```
+
 If GCC is set, you will get this terminal output.
 
 ![gcc-installed](/engineering-education/how-to-use-go-fiber-and-gorm-frameworks-to-run-a-golang-application/gcc-installed.png)
@@ -213,6 +235,7 @@ package database
 ```
 
 Import SQLite drivers and Gorm. This will be responsible for creating our SQLite database.
+
 ```go
 // import packages
 import (
@@ -222,6 +245,7 @@ import (
 ```
 
 Create a database instance for the Gorm connector.
+
 ```go
 var (
     // Database instance => DB Gorm connector
@@ -230,9 +254,9 @@ var (
 ```
 
 ### Create todos
-At the root directory, create a `todos` folder. Inside this folder, create a `todos.go` file. We will use it to define routes logic to handle the end-to-end processing of data. 
+At the root directory, create a `todos` folder. Inside this folder, create a `todos.go` file. We will use it to define routes logic to handle the end-to-end processing of data.
 
-CRUD operations are done based on models, which helps maintain the structure of the data sent to and received from clients (as well as the relationships between them). Therefore, we will add a todo model that maintained the structure of the sent and received data.
+CRUD operations are done based on models, which helps maintain the structure of the data sent to and received from clients (as well as the relationships between them). Therefore, we will add a todo model that maintains the structure of the sent and received data.
 
 #### Create a todos module
 ```go
@@ -271,6 +295,7 @@ type Todo struct {
 
 #### Fetch all todos
 Here we are creating a `GetAll()` method. It will be responsible for handling all requests that fetch all the todos list. It is taking the Fiber context as a parameter to help set a handler. Once the todos are fetched, we will return them in JSON format.
+
 ```go
 // @ func GetAll -> function that fetches a single all todos (Get all todos)
 // @param c *fiber.Ctx -- fiber context
@@ -284,11 +309,12 @@ func GetAll(c *fiber.Ctx) error {
 ```
 
 #### Fetch a single todo based on id
-We are creating a `GetOne()` to fetch only one todo. In this case, when setting up this handler, we use the tod `id` as a parameter. This means we will create the handler endpoint as a route with a named parameter. 
+We are creating a `GetOne()` to fetch only one todo. In this case, when setting up this handler, we use the tod `id` as a parameter. This means we will create the handler endpoint as a route with a named parameter.
 
 Go Fiber will map this parameter to the endpoint that requests a single todo. So, for example, when setting the route to handle `GetOne()`, an `id` unique to one todo will be parsed and then return the fetched data that matches that id/parameter.
 
 In that case, we need to handle what the server sends back. If the `id` matches any existing todo, that todo will be returned to the Fiber context and output JSON format. If the `id` does not exist, the user will be served with an error `todo not found`.
+
 ```go
 // @ func GetOne -> function that fetches a single todo (Get single todo)
 // @param c *fiber.Ctx -- fiber context
@@ -323,6 +349,7 @@ func GetOne(ctx *fiber.Ctx) error {
 The `AddTodo()` function in the code below creates a new todo and saves it to the database. Here we are only adding `Name`. The `Completed` status is set to be `false` by default.
 
 This is where the `uuid` comes into play. We use a UUID instance to generate and inspect our data structure before inserting it into the database. It generates an immutable Universally Unique IDentifier([UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier)) random number. Thus ensuring each id is unique to one todo.
+
 ```go
 // @func AddTodo -> function that stores a new data (Create new todo)
 // @param c *fiber.Ctx -- fiber context
@@ -355,7 +382,7 @@ func AddTodo(ctx *fiber.Ctx) error {
 ```
 
 #### Delete a todo based on id
-In the code below,` DeleteTodo()` will delete an existing todo. First, we have to specify an id as a parameter to the Delete hanker and endpoint. This defines the single and unique todo we want to delete. There the id must be of an existing todo. Otherwise, we will return an error to that.
+In the code below, `DeleteTodo()` will delete an existing todo. First, we have to specify an id as a parameter to the Delete hanker and endpoint. This defines the single and unique todo we want to delete. There the id must be of an existing todo. Otherwise, we will return an error to that.
 
 We first need to fetch that todo and then send a delete request to the database to delete the id associated with that todo.
 
@@ -391,6 +418,7 @@ func DeleteTodo(ctx *fiber.Ctx) error {
 
 #### Update an existing todo
 In the code below, the `UpdateTodo()` will update the values of an existing todo. We need to first fetch a single todo by specifying the parameter id. Here we can change the name of todo and the `completed` value of a todo. The completed value will update the todo as complete with a `true` value.
+
 ```go
 // @func UpdateTodo -> a function that ulters a todo data (Update todo)
 // @param c *fiber.Ctx -- fiber context
@@ -455,6 +483,7 @@ package main
 
 #### Import packages and modules
 Here we are importing local, native and third-party packages and modules we want to use.
+
 ```go
 import (
     // import packages
@@ -476,7 +505,7 @@ To execute the Go Fiber, we need to set a Fiber app. Here we are adding `Group`,
 ```go
 // App config => App denotes the Fiber application.
 func setupV1(app *fiber.App) {
-    // Group is used for Routes with common prefix to define a new sub-router with optional middleware.
+    // Group is used for Routes with a common prefix to define a new sub-router with optional middleware.
     v1 := app.Group("/v1")
     //Each route will have /v1 prefix
     setupTodosRoutes(v1)
@@ -486,7 +515,7 @@ func setupV1(app *fiber.App) {
 #### Set up the application routes
 Using the Fiber `Group`, let's set up our Routes. Each route will execute a single handler that we set in the `todo.go`. So here we are, adding simple routes and routes with parameters.
 
-A simple route doesn't need any additional arguments besides the set `"/" ` endpoint. However, a route with a parameter has additional arguments that you need to pass to execute a given endpoint. In our case, all routes with parameters take `:id` as the additional argument.
+A simple route doesn't need any additional arguments besides the set `"/"` endpoint. However, a route with a parameter has additional arguments that you need to pass to execute a given endpoint. In our case, all routes with parameters take `:id` as the additional argument.
 
 ```go
 // Router defines all router handle interface includes app and group router
@@ -510,6 +539,7 @@ func setupTodosRoutes(grp fiber.Router) {
 We set the database, but we didn't initialize or create the SQLite database. Here we need to create a `todos.db` file to save our todo.
 
 We are also migrating the set database structure. All this will be created automatically when we build our application.
+
 ```go
 // Database Connect function
 func initDatabase() {
@@ -578,6 +608,7 @@ func main() {
     }
 }
 ```
+
 The todo application is set and ready for testing.
 
 ### Testing
@@ -591,7 +622,7 @@ This builds an executable and saves it in a `temp` folder. Here is the command o
 
 ![air-server](/engineering-education/how-to-use-go-fiber-and-gorm-frameworks-to-run-a-golang-application/air-server.png)
 
-With `Air`, it becomes easy to watch and build our sever. If you change any code, the server will live-reload, build and run again. First, `Air` will delete the tmp executable, rebuild the application, and save the newly built executable.
+With `air`, it becomes easy to watch and build our sever. If you change any code, the server will live-reload, build and run again. First, `air` will delete the `tmp` executable, rebuild the application, and save the newly built executable.
 
 ![air-live-reloaded-server](/engineering-education/how-to-use-go-fiber-and-gorm-frameworks-to-run-a-golang-application/air-live-reloaded-server.png)
 
