@@ -1,6 +1,21 @@
-### Introduction
-Serialization transforms a data structure or object state into a format that can be saved in a file, memory or sent over a computer network and then reconstructed. This is a benefit of Serialization in terms of transmitting the converted data.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /serialization-in-c-sharp/
+title: Serialization in C#
+description: This tutorial will guide the reader through the process of serializing objects in C# using different serialization techniques. Serialization is the process of converting an object into a stream of bytes to store the object or transmit it to memory, a database, or a file.
+author: erick-kiragu
+date: 2021-11-09T00:00:00-14:24
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/serialization-in-c-sharp/hero.png
+    alt: Serialization in C# Hero Image
+---
+Serialization is the process of converting an object into a stream of bytes to store the object or transmit it to memory, a database, or a file. This is a benefit of serialization in terms of transmitting the converted data.
+<!--more-->
 ### Prerequisites
 - Have [visual studio 2019](https://visualstudio.microsoft.com/vs/) software installed. It is the IDE used to run Csharp programs.
 - Have some prior knowledge in .NET programming and XML files.
@@ -53,8 +68,7 @@ public string identity;
 
 ### Types of Serialization in C#
 
-1. **Binary Serialization**
-
+#### 1. Binary Serialization
 The `System.Runtime.Serialization` is a namespace that includes binary serialization classes. In computing, a namespace is a collection of symbols used to identify and refer to various things. A namespace ensures that all objects in a set have unique, easy-to-recognize names. Binary encoding provides a concise serialization for storage and socket-based network streams.
 
 With Binary serialization, even read-only members are serialized, improving speed. This is the method for converting .NET objects into byte streams. During binary serialization, all public, private, and read-only members are processed. Binary serialization is used to quickly convert items to bytes. It utilizes `System.Runtime. serialization.Formatters.Binary` reference.
@@ -99,8 +113,7 @@ namespace Demo
 
 > There can be a problem if the binary Serialization is done incorrectly. Detailed security information can be found in the BinaryFormatter Security Documentation.
 
-2. **XML serialization**
-
+#### 2. XML serialization
 The public members of a class instance may be serialized to an XML stream. Serializing XML takes longer than serializing binary files. XML Serialization is used to enable cross-platform compatibility. Serializing XML is textual. XML files are easy to read and edit. XmlAttribute provides a serialization attribute that accepts XML.
 
 The XmlSerializer class uses the XML serialization standard to serialize an object. Here's how to use XmlSerializer:
@@ -113,8 +126,7 @@ xmlSerializer.Serialize(Writer, pushObject);
 }
 ```
 
-3. **SOAP serialization**
-
+#### 3. SOAP serialization
 Simple Object Access Protocol (SOAP) is an XML-based protocol for data transmission between computers and offers the transport mechanism for web services. SOAP is language and platform agnost.
 
 SOAP serialization is used when we need to move items that are made up of incompatible designs, from one application to another.
@@ -162,7 +174,7 @@ namespace soapSerializationSample
 
 - `using System.Runtime.Serialization` and `using System.Runtime.Serialization.Formatters.Soap` are the references for the code to do SOAP serialization.
 
-**Custom Serialization**
+### Custom Serialization
 Custom serialization allows event serialization and de-serialization. Using an ISerializable interface may help. Custom serialization allows you to control which items are serialized and how. SerializableAttribute and ISerializable interface are required.
 
 Consider the following code, which demonstrates custom Serialization using the ISerializable interface:
@@ -178,3 +190,6 @@ public virtual void GetObjectData(SerializationInfo information, StreamingContex
 In this tutorial, we have learned serialization object steps, serialization in action, various types of serialization with which binary serialization, XML serialization, SOAP serialization, and custom serialization are included with their examples. 
 
 Happy cording!
+
+---
+Peer Review Contributions by: [Eric Gacoki](/engineering-education/authors/eric-gacoki/)
