@@ -1,8 +1,4 @@
-# Recovering passwords from Windows/MacOS/Linux
-
-## Introduction
-
-In this generation, [Wi-Fi](https://www.cisco.com/c/en/us/products/wireless/what-is-wifi.html) has become an important thing to many of us. Whenever you go to different places, whether in town, houses, or shops, you will find people using WiFi on their devices. It could be on a smartphone, a desktop computer, a tablet, etc. These devices may be connected to different Wi-Fi networks, which may require a password to connect to them. As time goes by, one may forget the WiFi password of a specific Wi-Fi network that they are interested in. Well, don’t worry, the Windows operating system has got you covered. Windows can save/store all Wi-Fi network passwords that have previously been connected to your device.
+In this generation, [Wi-Fi](https://www.cisco.com/c/en/us/products/wireless/what-is-wifi.html) has become an important thing to many of us. Whenever you go to different places, whether in town, houses, or shops, you will find people using WiFi on their devices. It could be on a smartphone, a desktop computer, a tablet, etc. These devices may be connected to different Wi-Fi networks, which may require a password to connect to them. As time goes by, one may forget the WiFi password of a specific Wi-Fi network that they are interested in. Windows, MacOS and Linux can save all the Wi-Fi network passwords that have previously been connected to your device.
 
 In windows, Wi-Fi passwords from saved Wi-Fi networks are hidden from the user. Unlike mobile operating systems like Android, Windows has terminals that can be used to acquire the Wi-Fi passwords that are saved in the device. You'll be required to write some simple commands on the terminal to recover these saved passwords. In this article, I'll take you through the steps to reсоver Wi-Fi раsswоrds that are saved in your device, and I'll also give you the commands to use them.
 
@@ -101,7 +97,7 @@ Step 2:
 [Click here](https://en.wikipedia.org/wiki/MacOS) to know more about **MacOS** 
 
 ### Linux
-In Linux OS, WiFi passwords of saved networks can be acquired by running this command in the command line `$ sudo grep psk= /etc/NetworkManager/system-connections/*` this will show you the list of the WiFi networks and their passwords.
+In Linux OS, WiFi passwords of saved networks can be acquired by running this command in the command line `sudo grep psk= /etc/NetworkManager/system-connections/*` this will show you the list of the WiFi networks and their passwords.
 
 [Click here](https://www.linux.com/what-is-linux/) to for more information about **Linux**
 
