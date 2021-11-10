@@ -95,55 +95,55 @@ The approach we intend to adopt in this tutorial is to have a `JSON` file that c
 I decided to use an array of dummies questions but you could make use of actual questions about your websites, products, or services.
 Each dummy question has an id, which is required during all React mapping operations to prevent a repetition of data, there is a question field and also a corresponding answer field. That wraps up this step, time to proceed to the next step.
 
-### Step 4: Creating the Accordion component (Accordion.js)
-The accordion component is the container of which the questions and answers will be displayed, think of it as a showcase for the FAQs. To set up the component, we will create an `Accordion.js` file, thereafter we implement the code snippet below:
+### Step 4: Creating the Banner component (Banner.js)
+The banner component is the container of which the questions and answers will be displayed, think of it as a showcase for the FAQs. To set up the component, we will create an `Banner.js` file, thereafter we implement the code snippet below:
 
 ```JavaScript
-import React, { useState, useContext, createContext } from "react";
-import { Container, Title, Item, Inner, Question, Body } from "./styles ";
+import React, { useState } from "react";
+import { Container, Header, Entity, Inner, Question, Text } from "./styles ";
 
-const ToggleContext = createContext();
-export default function Accordion({ children, ...restProps }) {
+const QuestionContext = React.createContext();
+export default function Banner({ children, ...restProps }) {
   return (
     <Container {...restProps}>
       <Inner>{children}</Inner>
     </Container>
   );
 }
-Accordion.Title = function AccordionTitle({ children, ...restProps }) {
-  return <Title {...restProps}> {children}</Title>;
+Banner.Header = function BannerHeader({ children, ...restProps }) {
+  return <Header {...restProps}> {children}</Header>;
 };
-Accordion.Item = function AccordionItem({ children, ...restProps }) {
-  const [toggle, setToggle] = useState(false);
+Banner.Entity = function BannerEntity({ children, ...restProps }) {
+  const [open, setOpen] = useState(false);
   return (
-    <ToggleContext.Provider value={{ toggle, setToggle }}>
-      <Item {...restProps}> {children}</Item>
-    </ToggleContext.Provider>
+    <QuestionContext.Provider value={{ open, setOpen }}>
+      <Entity {...restProps}> {children}</Entity>
+    </QuestionContext.Provider>
   );
 };
-Accordion.Question = function AccordionHeader({ children, ...restProps }) {
-  const { toggle, setToggle } = useContext(ToggleContext);
+Banner.Question = function BannerHeader({ children, ...restProps }) {
+  const { open, setOpen } = React.useContext(QuestionContext);
 
   return (
-    <Question onClick={() => setToggle((toggle) => !toggle)} {...restProps}>
+    <Question onClick={() => setOpen((open) => !open)} {...restProps}>
       {children}
-      {toggle ? <h3>^</h3> : <h3>+</h3>}
+      {open ? <h3>^</h3> : <h3>+</h3>}
     </Question>
   );
 };
-Accordion.Body = function AccordionBody({ children, ...restProps }) {
-  const { toggle } = useContext(ToggleContext);
+Banner.Text = function BannerText({ children, ...restProps }) {
+  const { open } = React.useContext(QuestionContext);
 
-  return toggle ? <Body {...restProps}>{children}</Body> : null;
+  return open ? <Text {...restProps}>{children}</Text> : null;
 };
 ```
 
 Let's go over what is happening with our code block. 
-- First, we created and used a context API named `ToggleContext` to monitor the state of our accordion component and to ensure that two questions cannot be opened simultaneously.
-- Additionally, we imported a few reusable components, i.e. the Title, Questions, Body, and Item which we will create and export soon. 
-  The title will be displayed at the top of the page telling the user that it is an FAQ page. While the question and Body will show the questions and answers respectively.
+- First, we created and used a context API named `QuestionContext` to monitor the state of our Banner component and to ensure that two questions cannot be opened simultaneously.
+- Additionally, we imported a few reusable components, i.e. the Header, Questions, Text, and Entity which we will create and export soon. 
+  The header will be displayed at the top of the page telling the user that it is an FAQ page. While the question and Text will show the questions and answers respectively.
 
-### Step 5: Styling the Accordion component (Styles.js)
+### Step 5: Styling the Banner component (Styles.js)
 Those reusable components we imported earlier will now be created and styled also using React-styled component libraries. the idea of reusable components is that they can be imported and used in any part of the website without writing the same code block over again. To do that, we open a new `Styles.js` file which we will subsequently write all our styles functions below:
 
 ```JavaScript
@@ -151,68 +151,67 @@ Those reusable components we imported earlier will now be created and styled als
 import styled from "styled-components/macro";
 
 export const Container = styled.div`
+  border-bottom: 9px solid #070707;
   display: flex;
-  border-bottom: 8px solid black;
 `;
-export const Item = styled.div`
-  color: black;
-  border: 1px solid black;
+export const Entity = styled.div`
+  color: #070707;
+  border: 1px solid #070707;
+  max-width: 690px;
+  width: 99%;
   margin-bottom: 10px;
-  max-width: 700px;
-  width: 100%;
   margin: auto;
   &:first-of-type {
-    margin-top: 1em;
+    margin-top: 1.5em;
   }
 `;
 export const Inner = styled.div`
-  display: flex;
-  padding: 70px 45px;
-  flex-direction: column;
-  max-width: 815px;
+  padding: 75px 40px;
+  max-width: 800px;
   margin: auto;
+  flex-direction: column;
+  display: flex;
 `;
 export const Question = styled.div`
-  display: flex;
-  font: 20px;
+  font: 25px;
   justify-content: space-between;
   cursor: pointer;
-  margin-bottom: 1px;
+  margin-bottom: 2px;
+  display: flex;
   font-weight: normal;
-  background: #303030;
-  padding: 0.8em 1.2em;
-  user-select: none;
+  background: #1a1919;
+  padding: 0.75em 1.12em;
   align-items: center;
 `;
-export const Body = styled.p`
-  max-height: 1200px;
-  transition: max-height 0.25s cubic-bezier(0.5, 0, 0.1, 1);
+export const Text = styled.p`
+  max-height: 1190px;
   font-size: 16px;
-  font-weight: normal;
+  font-weight: 500;
   line-height: normal;
   background: #303030;
-  padding: 0.8em 2.2em 0.8em 1.3em;
-  white-space: pre-wrap;
+  transition: max-height 0.23s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0.9em 2.1em 0.7em 1.4em;
   user-select: none;
+  white-space: pre-wrap;
 
-  @media (max-width: 600px) {
-    font-size: 16px;
-    line-height: 22px;
+  @media (max-width: 550px) {
+    font-size: 15px;
+    line-height: 25px;
   }
 `;
-export const Title = styled.h1`
-  font-size: 50px;
-  line-height: 6;
-  margin-top: 0;
-  margin-bottom: 8px;
-  color: black;
+export const Header = styled.h1`
+  color: #070707;
+  line-height: 7;
+  margin-top: 0 !important;
+  font-size: 45px;
+  margin-bottom: 9px;
   text-align: center;
 
   @media (max-width: 600px) {
-    font-size: 35px;
+    font-size: 33px;
   }
 
-  color: black;
+  color: #070707;
 `;
 ```
 
@@ -224,26 +223,26 @@ It is believed that the most preferred way of displaying items from an array is 
 
 ```JavaScript
 import React from "react";
-import faqsData from "./Faq.json";
-import Accordion from "./Accordion";
+import questions from "./Faq.json";
+import Banner from "./Banner";
 export function App() {
   return (
-    <Accordion>
-      <Accordion.Title>Frequently Asked Questions</Accordion.Title>
-      {faqsData.map((item) => (
-        <Accordion.Item key={item.id}>
-          <Accordion.Question>{item.question}</Accordion.Question>
-          <Accordion.Body>{item.answers}</Accordion.Body>
-        </Accordion.Item>
+    <Banner>
+      <Banner.Header>Frequently Asked Questions</Banner.Header>
+      {questions.map((question) => (
+        <Banner.Entity key={question.id}>
+          <Banner.Question>{question.question}</Banner.Question>
+          <Banner.Text>{question.answers}</Banner.Text>
+        </Banner.Entity>
       ))}
-      <h5>
+      <h4>
         Question not on the list? Contact out help desk for further enquiries
-      </h5>
-    </Accordion>
+      </h4>
+    </Banner>
   );
 }
 ```
-from the snippet above, we imported our faq, mapped, and displayed them with their corresponding answers. we also made use of our reusable `Accordion` component.
+from the snippet above, we imported our faq, mapped, and displayed them with their corresponding answers. we also made use of our reusable `Banner` component.
 Our FAQ page is ready for viewing on our browser. To do that, we open the `command terminal` in our text editor and run the command below
 
 ```bash
@@ -258,11 +257,11 @@ yarn start
 
 Once the development server is up and running, you should get a page that looks like this:
 ![faq page](\engineering-education\building-faq-page-using-react-styled-components-with-react/image1.jpg)
-Finally, to further enhance the beauty of our page, we will go ahead and add some font classes, remove unnecessary margins and change the background color of the page to black. To do that, delete the `app.css` file, thereafter, in the `index.css` file, simply paste the code snippet below:
+Finally, to further enhance the beauty of our page, we will go ahead and add some font classes, remove unnecessary margins and change the background color of the page to #070707. To do that, delete the `app.css` file, thereafter, in the `index.css` file, simply paste the code snippet below:
 
 ```CSS
 body {
-  background-color: black !important;
+  background-color: #070707 !important;
   margin: 0;
   color: white;
   font-family: "Arial", "Helvetica Neue", "sans-serif";
