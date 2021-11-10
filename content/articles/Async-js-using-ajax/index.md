@@ -1,11 +1,26 @@
-## Asynchronous JavaScript: Fetching Data from external API using AJAX
-**AJAX** stands for Asynchronous JavaScript and XML. It’s a set of web technology used to send and receive data between a client and server.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /async-js-using-ajax/
+title: Asynchronous JavaScript - Fetching Data From an External API Using AJAX
+description: In this article, we will learn how to fetch data from an external API using AJAX. AJAX is a technology that allows us to fetch data from an external API without having to reload the full page.
+author: godwin-martins
+date: 2021-11-10T00:00:00-11:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/async-js-using-ajax/hero.jpg
+    alt: Asynchronous JavaScript AJAX
+---
+**AJAX** stands for Asynchronous JavaScript and XML. It’s a set of web technology used to send and receive data between a client and server.
+<!--more-->
 Ajax allows you to make requests asynchronously without having to reload the page. Ajax can send and receive information in various formats, including JSON, XML, HTML, and text files.
 
-In this tutorial. To show how Ajax works, we’ll create a JavaScript program that fetches data from an external API, format it, and return random Chuck Norris’ jokes.
+In this tutorial, to show how Ajax works, we’ll create a JavaScript program that fetches data from an external API, formats it, and returns random Chuck Norris jokes.
 
-It’s pretty simple, Ajax goes out, gets the jokes, returns them, and then displays them to the user.
+It’s pretty simple. Ajax goes out, gets the jokes, returns them, and then displays them to the user.
 
 ### Prerequisites
 To follow along with this tutorial, you will need to have some knowledge of the following:
@@ -13,19 +28,19 @@ To follow along with this tutorial, you will need to have some knowledge of the 
 - [JavaScript](https://www.geeksforgeeks.org/introduction-to-javascript/).
 - [HTML](https://www.w3schools.com/html/default.asp).
 - [Skeleton CSS](http://getskeleton.com/#intro).
-- Code editors (Preferably [Visual Studio Code](https://code.visualstudio.com/)).
 - [How APIs work](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Introduction).
+- A code editor (Preferably [Visual Studio Code](https://code.visualstudio.com/)).
 
 ### Goals of the tutorial
 This tutorial aims to create a webpage that gets random jokes from the [Chuck Norris Jokes API](http://api.icndb.com/random) and displays them to the user.
 
 At the end of this tutorial, the reader should be able to make a call to an external API, get data and display the result on the webpage.
 
-First thing first, build out the UI.
+First things first, build out the UI.
 
 - Create an HTML file.
 - Save the file as `index.html`.
-- Create an Html Boilerplate.
+- Create an HTML boilerplate.
 
 ```html
 <!DOCTYPE html>
@@ -133,7 +148,7 @@ button.addEventListener("click", generateNewJokes);
 ### Prepare the AJAX request
 - Create a function named `generateNewJokes()` for the click event.
 - Grab the `#number-of-jokes` element from the UI and assign it to a variable.
-- Create a variable called request and set it to new [XHR](https://en.wikipedia.org/wiki/XMLHttpRequest) object.
+- Create a variable called request and set it to a new [XHR](https://en.wikipedia.org/wiki/XMLHttpRequest) object.
 
 ```javascript
 function generateNewJokes(e) {
@@ -158,7 +173,7 @@ newXHRRequest.open(
 );
 ```
 
-- Set `newXHRRequest.onload` to a function
+- Set `newXHRRequest.onload` to a function.
 
 ```javascript
 newXHRRequest.onload = function () {};
@@ -170,7 +185,7 @@ newXHRRequest.onload = function () {};
 - Initialize a variable and set it to nothing (we will use it to concatenate the response).
 - Check to see if the response type returns success.
 - If the response type returns "success", create a [forEach](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach) loop to loop through the values of the response to get the jokes and append the joke inside a list tag (using [template literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) for flexible formatting).
-- If the response type is not success, append an error response to the list item.
+- If the response type is not a success, append an error response to the list item.
 - Set the `innerHTML` of the `ol` with the class of jokes to the output.
 
 ```javascript
@@ -203,7 +218,7 @@ newXHRRequest.send();
 >
 > The [Chuck Norris Jokes API](http://api.icndb.com/random) can only generate random jokes, that is how the API works.
 >
-> You can style the output to whichever way that suits you..
+> You can style the output to whichever way suits you.
 
 The final JavaScript file should look like this 👇:
 
@@ -246,9 +261,14 @@ function generateNewJokes(e) {
 
 The final application will look like this:
 
-![Output](output.png "Final Output")
+![Output](/engineering-education/async-js-using-ajax/output.png "Final Output")
 
 ### Conclusion
 Using the **ICNDB API** is an easy way to show how getting data from an external API using AJAX works. Ajax uses the GET method to pull jokes from the Internet Chuck Norris Jokes Database.
 
 A point to also note is that all APIs do not work the same way nor do they handle requests and respond the same way. It is very important to check the documentation of the API one intends to work with.
+
+Happy coding!
+
+---
+Peer Review Contributions by: [Geoffrey Mungai](/engineering-education/authors/geoffrey-mungai/)
