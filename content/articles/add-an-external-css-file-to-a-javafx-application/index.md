@@ -22,16 +22,21 @@ Challenges come when one decides to style the JavaFX application. It is a cumber
 In the FXML file, it's also hard to follow up with the styling in the code since it's not continuous. You may also have noticed that the keywords used during styling are different from those of an HTML file.
 
 ### Table of contents
+
 - [Key takeaways](#key-takeaways)
 - [Prerequisites](#prerequisites)
 - [Ways of styling a JavaFX application](#ways-of-styling-a-javafx-application)
 - [Create a new JavaFX file](#create-a-new-javafx-file)
-- [Folder Structure](#folder-structure)
+- [Folder structure](#folder-structure)
 - [Add code inside the FXML application](#add-code-inside-the-fxml-application)
 - [Add styling to the application](#add-styling-to-the-application)
-  - [Adding an internal styling](#adding-an-internal-styling)
-  - [Using pre-saved variables](#using-pre-saved-variables)
-  - [Using an external CSS file](#using-an-external-css-file)
+  - [1. Adding an internal styling](#1-adding-an-internal-styling)
+    - [Hardcode it](#hardcode-it)
+    - [Using the SceneBuilder](#using-the-scenebuilder)
+  - [2. Using pre-saved variables](#2-using-pre-saved-variables)
+  - [3. Using an external CSS file](#3-using-an-external-css-file)
+    - [External styling format](#external-styling-format)
+    - [External CSS for multiple scenes instances](#external-css-for-multiple-scenes-instances)
 - [Conclusion](#conclusion)
 - [References](#references)
 
