@@ -1,28 +1,39 @@
+Augmented Reality (AR) is a technology that combines digital content with real-world objects. It allows users to interact with the world around them through their mobile devices.
 
-Augmented Reality(AR) is currently one of the revolutionizing features of technology in recent years. With AR we can bend reality in the way that we want, this is like an extension of reality or we can say reevaluating the future.
+AR is currently one of the most revolutionary features of technology in recent years. With AR, we can bend reality in the way that we want. This is like an extension of reality, or we can say, reevaluating the future.
 
-AR is a technology that combines digital content with real-world objects. It allows users to interact with the world around them through their mobile devices.
+In this article, we will learn how to create a simple AR application with Android Studio.
 
-In this artical we will learn how to create a simple AR application with Android Studio.
+### Table of contents
+- [prerequisites](#prerequisites)
+- [Configuring android studio](#configuring-android-studio)
+- [Adding the 3D model to the project](#adding-the-3D-model-to-the-project)
+- [Adding sceneform ux library](#adding-sceneform-ux-library)
+- [Adding permissions for camera](#adding-permissions-for-camera)
+- [Application design](#application-design)
+- [Java codes](#java-codes)
+- [Running the app](#Running-the-app)
+- [Conclution](#conclution)
+- [References](#References)
+
 
 ### prerequisites
 
-You must have some basics on Java programming language.
-You should be equiped with Andriod Studio 3.1 and above.
+- You must have a basic understanding of the Java programming language.
+- You should be equipped with Android Studio 3.1 or above.
 
 ### configuring android studio
-To create an augmented reality application you should have android studio 3.1 and above. Now open your Android Studio, create a new project, and here you give a name to your app, Set language to Java, minimum API level should be at least  API 24: Android 7.0. Now you have completed the first part of configuring the IDE to create an AR app.
+To create an augmented reality application, you must have Android Studio 3.1 or above. Now open your Android Studio, create a new project, and here you give a name to your app, Set the language to Java; the minimum API level should be at least API 24: Android 7.0. Now you have completed the first part of configuring the IDE to create an AR app.
 
-The next step is you download the plugin necessary for supporting Augmented Reality by importing 3D models and viewing them. To do this go to settings(in Android Studio IDE) then to plugins and search for Google  Sceneform tools and install it and restart your android studio.
-
+The next step is to download the plugin necessary for supporting Augmented Reality by importing 3D models and viewing them. To do this, go to settings (in Android Studio IDE), then to plugins and search for Google Sceneform Tools, install it, and restart your Android Studio.
 You should have some 3D models. You can download 3D objects from 
 [here](https://drive.google.com/folderview?id=1Ls6fzMiFTx8_uE7A6or_l6YnouJIFSsc)
 
 ### Adding the 3D model to the project.
 
-After downloading the folders you will copy the sampledata folder to the go-to Android Studio, right-click on the app section, select open in then select explorer. Paste sampledata folder here. 
+After downloading the folders, you will copy the sampledata folder to the go-to Android Studio, right-click on the app section, select "open in," then select "Explorer." Paste the sampledata folder here.
 
-On the Java section, right-click, select the new folder the assets. Right-click on the new assets directory and select open in explorer and paste AR.src(from the one that you downloaded in the assets folder) file there. This is shown here
+In the Java section, right-click and select the new folder "assets." Right-click on the new assets directory and select "open in Explorer" and paste the AR.src (from the one that you downloaded in the assets folder) file there. This is shown here.
 
  ![alt text](/engineering-education/creating-simple-visual-augmented-reality-application-in-android/assets.png)
 
@@ -73,9 +84,8 @@ We now need to configure the layout of the application. On the activity_main.xml
 
 ### Java codes
 These codes are written in the MainActivity.Java window. These codes are:
-package com.example.AugmetedReality2;
-
 ```java
+package com.example.AugmetedReality2;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
@@ -119,11 +129,11 @@ This code should be implemented as shown:
 
 ### Running the app
 
-Connect your Android phone to the pc via USB(USB debugging), and run the app.
+Connect your Android phone to the PC via USB (USB debugging), and run the app.
 
 ### Conclusion 
 
-In conclusion, we have gone through what Augmented Reality is, how to make a simple visual augmented reality app. This article serves only as an introduction to building a Visual Augmented Reality android application. It's highly recommended to try out the code manually by reading further from the referenced articles.
+In conclusion, we have gone through what augmented reality is and how to make a simple visual augmented reality app. This article serves only as an introduction to building a visual augmented reality android application. It's highly recommended to try out the code manually by reading further from the referenced articles.
 
 ### References
 You can learn more about Augmented Reality programming from these articles.
