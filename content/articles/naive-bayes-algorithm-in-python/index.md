@@ -1,9 +1,9 @@
-# Steb by Step Implementation of Naive Bayes Algorithm in R
+### Steb by Step Implementation of Naive Bayes Algorithm in R
 
 Naive Bayes is a machine learning algorithm based on the Bayes Theorem, and it's used for classification problems. The naive Bayes classifier is very effective and can be used with highly complex problems despite its simplicity. Due to its ability to handle highly complex tasks, the Naive Bayes has gained popularity in machine learning for a long time. Some Naive Bayes applications include; sentiment analysis, spam filtering, text classification, and many more.
 
 This tutorial will discuss the Naive Bayes algorithm and its principles to deliver a solid and clear understanding of this tool. Later, we shall discuss the real-world application of the Naive Bayes algorithm and finally implement and evaluate its performance using a confusion matrix in R.
-## Prerequisite
+### Prerequisite
 To follow along with this material comfortably, you're required to have:
 - [R](https://cran.r-project.org/) installed on your computer
 - Programming skills in R
@@ -12,11 +12,11 @@ To follow along with this material comfortably, you're required to have:
   1. install.packages('caTools')
   2. install.packages('e1071')
 
-#### Introduction to the Bayes Algorithm
+### Introduction to the Bayes Algorithm
 Before diving into *Naive Bayes*, we must first understand the *Bayes Theorem* and its assumptions. To understand this, first, we consider a conditional probability from which the mathematical representation of the *Bayes theorem* is derived. From the probability and statistic world, the conditional probability is defined as:
 
 $p(A|B)=\frac{p(A\cap B)}{p(B)}$
--
+
 Where:
 - A and B are two events.
 - $p(A|B)$ is the conditional probability. We read this as the probability of *A* given *B*.
@@ -24,7 +24,7 @@ Where:
 - $p(B)$ is the probability of event ${B}$ .
 
 From the probability rules:
-> **sum**: $p(A)=\sum_{all B} {p(A,B)}$ and,
+**sum**: $p(A)=\sum_{all B} {p(A,B)}$ and,
 **Product:** ${p(A,B)}=p(B|A)p(A)$
 
 From the symmetry property $p(A, B ) = p(B, A)$, and thus we can define:
@@ -47,7 +47,7 @@ This  $p(B)$ ensures that the sum of the *posterior* over all A values equals on
 
 The *Bayes theorem* assumes that events A and B are independent of each other. However, with real-world datasets, this assumption is not always valid. It's usual for dataset features to be correlated, and therefore this assumption the *Bayes theorem* based on remains to be 'naive'. This is why in machine learning, this algorithm is called **Naive Bayes ALgorithm**.
 
-## Implementing Naive Bayes Algorithm
+### Implementing Naive Bayes Algorithm
 This session will implement our model on a business dataset that contains information about customers who previously transacted with the business. The dataset consists of 400 customers, and each customer has information on their age, the estimated salary, and whether they bought a particular product or not. Our task is to train a Naive Bayes classifier to understand the correlation between the features, i.e., `Age` and the `EstimatedSalary`, and the `Purchased` target variable. The essence of this is to enable the business to predict which customer is likely to purchase their new product just released to the market and accurately target them with valid ads from their social networks. The link to download this data is provided in the prerequisites section.
 
 ### Step 1: Data preprocessing
@@ -69,7 +69,7 @@ data = read.csv('data.csv')
 head(data)
 
 ```
-**Output**
+#### Output
 
 ![image](/engineering-education/naive-bayes-algorithm-in-python/output-image.png)
 
@@ -111,12 +111,12 @@ y_predict = predict(classifier, newdata = Test_set[-3])
 conf_matrx = table(Test_set[, 3], y_predict)
 conf_matrx
 ```
-**Obtained Confusion Matrix**
+#### Obtained Confusion Matrix
 
 ![confusion matrix](/engineering-education/naive-bayes-algorithm-in-python/confusion-matrix.png)
 
 From the above confusion matrix, we notice that out of 100, the model could predict 86% of the data correctly with only 14% incorrect predictions. From this, it's clear that our model has an accuracy of 84%. The accuracy of 84% is a good score, and thus we can conclude that our classifier was able to classify our data accurately.
-# Conclusion
+### Conclusion
 In this tutorial, we have learned the Naive Bayes classifier's theory. First, we showed how to derive a mathematical formula of this classifier from the basic conditional probability. Later, we showed how to implement the  Naive Bayes classifier in R and evaluated its performance using a confusion matrix. From the confusion matrix, we saw its ability to classify the data by giving a relatively incredible score. Since we now understand this classifier better, we can widen our knowledge by challenging ourselves with more implementation tasks to handle problems such as email classification, transaction classification, and health data to classify tumours and other diseases. Here we reach the end of this session's learning.
 
 Happy Learning.
