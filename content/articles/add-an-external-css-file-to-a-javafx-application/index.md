@@ -14,13 +14,12 @@ images:
   - url: /engineering-education/add-an-external-css-file-to-a-javafx-application/hero.png
     alt: Add an external CSS file to a JavaFX Application Hero Image
 ---
-Are you having trouble attaching an external CSS file to a JavaFX application?. Or, having issues with how to link an externally designed styling sheet to your program?.
+
+Are you having trouble attaching an external CSS file to a JavaFX application or linking an externally designed styling sheet to your program? In this article, we will be looking at how to solve these issues.
 <!--more-->
-Worry no more! in this article, you will find answers to these problems. By now, as you have noticed, JavaFX is easy to work with. 
+Challenges come when one decides to style the JavaFX application. It is a cumbersome procedure since each element requires its style. Issues of the designer remembering previously used styles on different elements arises again and again.
 
-Challenges come when one decides to style the JavaFX application. It is a cumbersome procedure since each element requires its style. Issues of the designer remembering previously used styles on different elements arises again and again. This is pretty challenging. 
-
-In the FXML file, it also is hard to follow up with the styling in the code since it is not continuous. You may also have noticed that the keywords used during styling are different from those of an HTML file. Well, there is a solution to this problem.
+In the FXML file, it's also hard to follow up with the styling in the code since it's not continuous. You may also have noticed that the keywords used during styling are different from those of an HTML file.
 
 ### Table of contents
 - [Key takeaways](#key-takeaways)
@@ -31,44 +30,34 @@ In the FXML file, it also is hard to follow up with the styling in the code sinc
 - [Add code inside the FXML application](#add-code-inside-the-fxml-application)
 - [Add styling to the application](#add-styling-to-the-application)
   - [Adding an internal styling](#adding-an-internal-styling)
-    - [Hardcode it](#hardcode-it)
-    - [Using the SceneBuilder](#using-the-scenebuilder)
   - [Using pre-saved variables](#using-pre-saved-variables)
   - [Using an external CSS file](#using-an-external-css-file)
-    - [Setting up the project for external CSS styling](#setting-up-the-project-for-external-css-styling)
-      - [Adding via the Main class file](#adding-via-the-main-class-file)
-      - [Adding it via the SceneBuilder or Hardcoding it](#adding-it-via-the-scenebuilder-or-hardcoding-it)
-    - [External styling format](#external-styling-format)
-    - [External CSS for many scenes instances](#external-css-for-multiple-scenes-instances)
 - [Conclusion](#conclusion)
 - [References](#references)
 
 ### Key takeaways
-At the end of the article, you will gain the following knowledge:
+At the end of the article, the reader should know:
 - Saving a repetitive style for easier use on other elements using variables.
 - Adding an external stylesheet to the application.
 - Referencing elements in the stylesheet by adding JavaFX classes.
 - Linking the stylesheet to many scenes.
 
 ### Prerequisites
-The basics needed for quick follow-up of this article are:
+To follow this article, you will need:
 - Java Development Kit installed on your machine. The recommendation is the latest JDK in the market. JDK 17 was used for the article.
-- A good Java IDE. The recommendation is the latest version of the IntelliJ ultimate edition. This is because it has the support of JavaFX. For the article, IntelliJ version `2021.2.2` was used as seen in the screenshot captured.
-- A good internet connection. This is for fetching indexes for quick development. It will also be used in the generation of the project.
+- A good Java IDE. The recommendation is the latest version of the IntelliJ ultimate edition. This is because it has the support of JavaFX. For the article, IntelliJ version `2021.2.2` was used.
+- A good internet connection. This is used to fetch indexes for quick development. It will also be used in the generation of the project.
 
-> **NOTE**: The prerequisites can change as time changes from the day the article is published.
-> Make sure to follow up on _the latest versions_ of the technologies mentioned.
-> The appearance of the applications used may also vary based on the dates of release.
+> The prerequisites can change as time changes from the day the article is published. Make sure to follow up on _the latest versions_ of the technologies mentioned. The appearance of the applications used may also vary based on the dates of release.
 
 ### Ways of styling a JavaFX application
 A JavaFX application can be customized using different styles. These styles include the following:
 - _Using an internal styling_: This is provided by default by the SceneBuilder
-- _Using pre-saved variables_: These variables help one to re-use them hence reducing code duplication in the FXML file.
+- _Using pre-saved variables_: These variables can be re-used hence reducing code duplication in the FXML file.
 - _Using an external CSS file_: This file customizes according to the requirements of the project. It reduces code duplication and errors.
 
 In this article, all the above will be demonstrated in a JavaFX application. To do this, we will follow the steps below:
 - Design a sample JavaFX login application.
-- Know how styling can be done to the application.
 - Style the JavaFX application using the normal internal styling.
 - Style the application using pre-saved styling variables.
 - Apply the styling using an external CSS file.
@@ -83,7 +72,7 @@ In this article, all the above will be demonstrated in a JavaFX application. To 
 ![App dependencies](/engineering-education/add-an-external-css-file-to-a-javafx-application/new-javafx-app-dependencies.png "App dependencies")
 
 ### Folder structure
-The application folder structure looks as shown below:
+The application folder structure is as shown below:
 
 ```shell
 .
@@ -104,20 +93,21 @@ The application folder structure looks as shown below:
 ```
 
 ### Add code inside the FXML application
-- Delete the following code inside the `HelloController.java` file shown in the folder structure above:
+Delete the following code inside the `HelloController.java` file shown in the folder structure above:
 
 ```java
-    @FXML
+@FXML
 private Label welcomeText;
 
 @FXML
-protected void onHelloButtonClick(){
-        welcomeText.setText("Welcome to JavaFX Application!");
-        }
+protected void onHelloButtonClick() {
+    welcomeText.setText("Welcome to JavaFX Application!");
+}
 ```
 
 This will remove the functionality of the 'Hello button' in the application.
-- Delete the `V-Box` that contains the `Hello button` and the Label in the `hello-view.fxml` file using the SceneBuilder as shown below:
+
+Delete the `V-Box` that contains the `Hello button` and the Label in the `hello-view.fxml` file using the SceneBuilder as shown below:
 
 ![Delete the VBox](/engineering-education/add-an-external-css-file-to-a-javafx-application/delete-vbox.png "Delete the VBox")
 
@@ -140,9 +130,7 @@ The above step deletes this code in the file:
 </VBox>
 ```
 
-- Download the `login.png` image found in this [link](https://github.com/blacklihgt/Add-an-external-CSS--stylesheet-file-to-a-JavaFX-Application/blob/main/src/main/resources/com/login/javafxstyle/login.png).
-- Copy-paste the image into the location where the `hello-view.fxml` file is.
-- Copy the code below and paste it into the `hello-view.fxml` file where the deleted code was.
+Download the `login.png` image found in this [link](https://github.com/blacklihgt/Add-an-external-CSS--stylesheet-file-to-a-JavaFX-Application/blob/main/src/main/resources/com/login/javafxstyle/login.png). Copy-paste the image into the location where the `hello-view.fxml` file is. Copy the code below and paste it into the `hello-view.fxml` file where the deleted code was.
 
 ```xml
 
@@ -175,37 +163,25 @@ The above step deletes this code in the file:
 ```
 
 The step produces the following output when viewed using the SceneBuilder:
-- **ImageView**: _login.png_ image view.
-- **Labels**: _Login title_, _enter the details below_, _Username_, _Password_, _Sign in error_.
-- **TextField**: _Username_.
-- **PasswordField**: _Password_.
-- **CheckBox**: _Remember Me_.
-- **Buttons**: _Cancel_, _Sign in_, _Forgot password_.
 
 ![Login page output](/engineering-education/add-an-external-css-file-to-a-javafx-application/login-page-output.png "Login page output")
 
-- Head over to the `HelloApplication.java` file and make sure to set the Scene dimensions to 600 by 400. This step can be done by copy-pasting the code below in the Scene section:
+Head over to the `HelloApplication.java` file and make sure to set the Scene dimensions to 600 by 400:
 
 ```java
 Scene scene=new Scene(fxmlLoader.load(),600,400);
 ```
 
 ### Add styling to the application
-As mentioned before there are three ways to customize the appearance of the application. These include:
-- Internal styling.
-- Pre-saved variables.
-- External CSS file.
+As mentioned before, there are three ways to customize the appearance of the application.
 
-Let us start with the first one.
-
-#### Adding an internal styling
+#### 1. Adding an internal styling
 It can be achieved in two ways:
 - By hardcoding it into the application.
 - By using the SceneBuilder.
 
 ##### Hardcode it
-- Open the FXML file. Click on the `Text` option, at the bottom left part near the status bar, to view the window in a text format.
-- In the file, under the label with the **fx:id** of loginTitleLabel, add the following styling:
+Open the FXML file. Click on the `Text` option, at the bottom left part near the status bar, to view the window in a text format. In the file, under the label with the **fx:id** of loginTitleLabel, add the following styling:
 
 ```xml
 
@@ -215,8 +191,9 @@ It can be achieved in two ways:
 
 ```
 
-The styling makes it _huge_, _bold_ , and with some _linear gradient filling_ in it.
-- In the label with the **fx:id** of `enterDetailsLabel`, add the following styling to it:
+The styling makes it _huge_ and _bold_ with some _linear gradient filling_ in it.
+
+In the label with the **fx:id** of `enterDetailsLabel`, add the following styling to it:
 
 ```xml
 
@@ -226,7 +203,7 @@ The styling makes it _huge_, _bold_ , and with some _linear gradient filling_ in
 
 ```
 
-- In the labels with the **fx:id** of `usernameLabel` and `passwordLabel`, add the following respectively:
+In the labels with the **fx:id** of `usernameLabel` and `passwordLabel`, add the following respectively:
 
 ```xml
 
@@ -255,7 +232,7 @@ and
 
 ```
 
-- Add the following styling to the label with the **fx:id** of `errorLabel`:
+Add the following styling to the label with the **fx:id** of `errorLabel`:
 
 ```xml
 
@@ -264,7 +241,7 @@ and
 
 ```
 
-- As for the remaining buttons, the following will be the styling to be applied to them:
+As for the remaining buttons, the following will be their style:
 
 ```xml
 
@@ -281,15 +258,15 @@ and
 
 > The `onAction` property links the button to a function found in the controller. On a trigger event such as a button click, the function gets executed.
 
-- Open the `HelloCOntroller` file and copy-paste the code below inside the `HelloController` class. Make sure to do the recommended imports as suggested by the IDE:
+Open the `HelloController` class and paste the code below. Make sure to add the required imports:
 
 ```java
 /*Import JavaFX controls*/
 @FXML
-Button cancelButton,signInButton;
+Button cancelButton, signInButton;
 
 @FXML
-Label errorLabel,loginTitleLabel;
+Label errorLabel, loginTitleLabel;
 
 @FXML
 TextField usernameTextField;
@@ -299,20 +276,20 @@ PasswordField passwordPasswordField;
 
 /*Close the scene once the cancel button is clicked*/
 @FXML
-protected void onCancelButtonClick(){
-        Stage stage=(Stage)cancelButton.getScene().getWindow();
-        stage.close();
-        }
+protected void onCancelButtonClick() {
+    Stage stage = (Stage) cancelButton.getScene().getWindow();
+    stage.close();
+}
 
 /* Make the label with the fx:id of 'errorLabel' change its text and color on Sign in Button click */
 @FXML
-protected void onSignInButtonClick(){
-        errorLabel.setText("Sign In Success!");
-        errorLabel.setStyle("-fx-text-fill: GREEN;");
-        }
+protected void onSignInButtonClick() {
+    errorLabel.setText("Sign In Success!");
+    errorLabel.setStyle("-fx-text-fill: GREEN;");
+}
 ```
 
-- Run the application via the `HelloApplication.java` file as shown in the image below:
+Run the application via the `HelloApplication.java` file as shown in the image below:
 
 ![Run the application](/engineering-education/add-an-external-css-file-to-a-javafx-application/run-application.png "Run the application")
 
@@ -323,68 +300,67 @@ The output looks as shown below:
 As we have seen, the application runs as expected.
 
 ##### Using the SceneBuilder
-- Open the FXML file using the SceneBuilder option found at the bottom left side of the window near the status bar.
-- To add the styling for the controls used in the application, click on the control in mind. In this case, start with the label of `fx:id` of`loginTitleLabel`.
-- On the tab on the right-hand side, under the properties section, notice that the SceneBuilder automatically recognizes the available formats set to the element. Now, set the following to it:
-  - Check the **Underline** checkbox.
-  - In the styles section add the following properties by clicking on the `+` sign.
-    - `-fx-background-color`: _#f3f3f3_
-    - `-fx-border-radius`: _5_
-    - `-fx-border-color`: _linear-gradient(from 0% 0% to 100% 200%, repeat, aqua 0%, red 50%)_
+Open the FXML file using the SceneBuilder option found at the bottom left side of the window near the status bar.
+
+To add the styling for the controls used in the application, click on the control in mind. In this case, start with the label of `fx:id` of `loginTitleLabel`.
+
+On the tab on the right-hand side, under the properties section, notice that the SceneBuilder automatically recognizes the available formats set to the element. 
+
+Check the **Underline** checkbox. In the styles section add the following properties by clicking on the `+` sign.
+  - `-fx-background-color`: _#f3f3f3_
+  - `-fx-border-radius`: _5_
+  - `-fx-border-color`: _linear-gradient(from 0% 0% to 100% 200%, repeat, aqua 0%, red 50%)_
 
 The SceneBuilder styling section in the properties tab will look as follows:
 
 ![loginTitle SceneBuilder styling](/engineering-education/add-an-external-css-file-to-a-javafx-application/logintitle-scenebuilder-styling.png "loginTitle SceneBuilder styling")
 
-- Click on the `Remember me` checkbox and select the `Selected` option.
-- Run the application.
+Click on the `Remember me` checkbox and select the `Selected` option. Run the application.
 
 It produces the following output:
 
 ![Second Output](/engineering-education/add-an-external-css-file-to-a-javafx-application/second-output.png "Second Output")
 
-As seen, there are more options provided by the SceneBuilder in the _Properties_, _Layout_, and _Code_ tabs. Adding styling using this method is very simple and no need for much hustle since there is the provision of GUI.
+As seen, there are more options provided by the SceneBuilder in the _Properties_, _Layout_, and _Code_ tabs. Adding styling using this method is very simple since there is the provision of GUI.
 
-#### Using pre-saved variables
-To do this, the styling will be stored in variables. These variables will be reusable pieces of code. They reduce code errors especially when the styling is long and cumbersome to remember.
-- Open up the Controller in the application.
-- Above the importation of the controls, add variables that hold styling for the application. We do this by adding the code below:
+#### 2. Using pre-saved variables
+To do this, the styling will be stored in variables. These variables will be reusable pieces of code. They reduce code errors especially when the styling is long and hard to remember.
 
-```java
-        String successStyle=String.format("-fx-border-color: #4fd800; -fx-border-width: 2; -fx-border-radius: 5;");
-        String successStyleGradient=String.format("-fx-text-fill: #4fd800;");
-```
-
-Now use the variables to style different components of the page again and again. An example is both the TextField and the PasswordField.
-
-- Copy the code below in the `onSignInButtonClick` function below the others.
+Open up the Controller in the application. Above the controls imports, add variables that hold styling for the application:
 
 ```java
-        usernameTextField.setStyle(successStyle);
-        passwordPasswordField.setStyle(successStyle);
-        signInButton.setStyle(successStyleGradient);
+String successStyle = String.format("-fx-border-color: #4fd800; -fx-border-width: 2; -fx-border-radius: 5;");
+String successStyleGradient = String.format("-fx-text-fill: #4fd800;");
 ```
 
-- Run the application. The output is as shown below when the `Sign-In button` is clicked:
+Now use the variables to style different components of the page. An example is both the TextField and the PasswordField.
+
+Paste the code below in the `onSignInButtonClick` function below the others.
+
+```java
+usernameTextField.setStyle(successStyle);
+passwordPasswordField.setStyle(successStyle);
+signInButton.setStyle(successStyleGradient);
+```
+
+Run the application. The output is as shown below when the `Sign-In button` is clicked:
 
 ![Third output](/engineering-education/add-an-external-css-file-to-a-javafx-application/variable-styling.png "Third output")
 
-As seen from the above steps, the styling can be quickly re-used in the project for efficient code. It makes it easy for the developer especially in large projects with many styling presets for different elements.
+As seen from the above steps, the styling can be quickly re-used in the project for efficient code. It makes development easy for the developer especially in large projects with many styling presets for different elements.
 
-#### Using an external CSS file
-When it comes to some advanced styling, it is better to use this kind of styling. Not only is it easy to manage but it also supports code readability.
+#### 3. Using an external CSS file
+When it comes to advanced styling, it is better to use this kind of styling. Not only is it easy to manage, but it also supports code readability.
 
-##### Setting up the project for external CSS styling
 There are two methods of adding an external stylesheet to the program. These are:
 - Adding it via the `HelloApplication.java` file.
 - Adding it via the SceneBuilder or hardcoding it.
 
 Let us quickly look at both:
 
-###### Adding via the main class file
-To add it, follow the steps below:
-- Create a new CSS file in the location of the FXML file.
-- In the `HelloApplication.java` file, add the line of code below to it. Add it below the `Scene scene = new Scene(fxmlLoader.load(), 600, 400);` line.
+**1. Adding via the main class file**
+
+To add it, create a new CSS file in the location of the FXML file. In the `HelloApplication.java` file, add the following line of code below.
 
 ```java
 scene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
@@ -392,7 +368,8 @@ scene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm()
 
 This applies the styling in the `styles.css` file to the scene created.
 
-###### Adding it via the SceneBuilder or Hardcoding it
+**2. Adding it via the SceneBuilder or Hardcoding it**
+
 The SceneBuilder adds a particular stylesheet styling to a specific control in the application.
 This addition is different from using the scene styling mentioned above that adds styling to the whole scene.
 
@@ -401,9 +378,9 @@ Hence, one will be required to repeat the steps over and over again.
 2. In the Properties tab, under the 'JavaFX CSS' section, click on the 'Stylesheets' option.
 3. Select the CSS file, and that's it.
 
-> One can also apply a styling of a particular class to control the application by just linking them.
-> This linking can be achieved by adding the CSS class to the control in the SceneBuilder at the 'Styles Class' option in the 'JavaFX CSS' section.
-> The class can be different from the ones which are known by the application. It can be defined in the Stylesheet added to the control or the Scene. This is shown later on in the code found in this article.
+One can also apply the styling of a particular class to control the application by just linking them. 
+
+This linking can be achieved by adding the CSS class to the control in the SceneBuilder at the 'Styles Class' option in the 'JavaFX CSS' section. The class can be different from the ones which are known by the application. It can be defined in the Stylesheet added to the control or the Scene. This is shown later on in the code found in this article.
 
 When the AnchorPane CSS class is set to 'unique', it produces the code shown below as seen in the Text View:
 
@@ -416,7 +393,7 @@ When the AnchorPane CSS class is set to 'unique', it produces the code shown bel
 Before adding any styling, first, let us look how the styling format looks like:
 
 ##### External styling format
-For the external CSS styling, if one wants to refer to the **name** (fx:id) of the component, use a `#` symbol before the styles. The format is shown below:
+For the external CSS styling, if one wants to refer to the **name** (fx:id) of the component, they use a `#` symbol before the styles. The format is shown below:
 
 ```css
 #titleLabel {
@@ -424,7 +401,7 @@ For the external CSS styling, if one wants to refer to the **name** (fx:id) of t
 }
 ```
 
-The **controls** provided, are referenced by the CSS file as a form of **classes**. Hence, to refer to a set of a whole class, first, start with a `.` (period) symbol. Follow it up with the name of the control in small letters before the styles.
+The **controls** provided, are referenced by the CSS file as a form of **classes**. Hence, to refer to a set of a whole class, start with a `.` (period) symbol. Follow it up with the name of the control in small letters before the styles.
 
 Examples of such control and their class names are:
 - **Button**: button
@@ -452,7 +429,7 @@ For any styling for the JavaFX application, start with the `-fx-` text then foll
 > Make sure to find out the styling that can be applied to each and how it does before applying it.
 > Check them out in the [JavaFX documentation](https://docs.oracle.com/javase/8/index.html) provided by Oracle.
 
-- Now, in the StyleSheet created, copy-paste the code below to it:
+Now, in the StyleSheet created, paste the code below to it:
 
 ```css
 .root {
@@ -485,7 +462,7 @@ For any styling for the JavaFX application, start with the `-fx-` text then foll
 
 It applies the styling for all root contents, label controls, and both the loginTitleLabel and errorLabel controls.
 
-Also, more styling can be added to it. These include the after-effects on checkbox checking. To achieve the following, copy and paste the code below to it:
+Also, more styling can be applied. These include the after-effects on checkbox checking. To achieve the following, copy and paste the code below to it:
 
 ```css
 /* Checkbox formatting */
@@ -508,37 +485,34 @@ This produces the output below:
 ![External CSS](/engineering-education/add-an-external-css-file-to-a-javafx-application/final-external-styling.png "External CSS")
 
 ##### External CSS for multiple scenes instances
-In the case of many scenes, add the styling by using different codes of lines.
-- Add a line of code to first point to the location of the Stylesheet then refer to it per the many scenes created.
+Add a line of code to first point to the location of the Stylesheet then refer to it per the many scenes created.
 
-Open the `HelloApplication.java` file and copy-paste the code below:
+Open the `HelloApplication.java` file and paste the code below:
 
 ```java
 /*Multiple scenes created*/
-Scene scene= new Scene(fxmlLoader.load(),600,400);
-        Scene scene1= new Scene(fxmlLoader.load(),800,400);
-        Scene scene2= new Scene(fxmlLoader.load(),1000,400);
-        Scene scene3= new Scene(fxmlLoader.load(),1200,400);
-        Scene scene4= new Scene(fxmlLoader.load(),1200,600);
-        Scene scene5= new Scene(fxmlLoader.load(),1200,1000);
+Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+Scene scene1 = new Scene(fxmlLoader.load(), 800, 400);
+Scene scene2 = new Scene(fxmlLoader.load(), 1000, 400);
+Scene scene3 = new Scene(fxmlLoader.load(), 1200, 400);
+Scene scene4 = new Scene(fxmlLoader.load(), 1200, 600);
+Scene scene5 = new Scene(fxmlLoader.load(), 1200, 1000);
 
-        /*Show the location of the CSS resource file*/
-        String css = this.getClass().getResource("styles.css").toExternalForm();
+/*Show the location of the CSS resource file*/
+String css = this.getClass().getResource("styles.css").toExternalForm();
 
-        /*Add the stylesheet quickly to the many scenes*/
-        scene.getStylesheets().add(css);
-        scene1.getStylesheets().add(css);
-        scene2.getStylesheets().add(css);
-        scene3.getStylesheets().add(css);
-        scene4.getStylesheets().add(css);
-        scene5.getStylesheets().add(css);
+/*Add the stylesheet quickly to the many scenes*/
+scene.getStylesheets().add(css);
+scene1.getStylesheets().add(css);
+scene2.getStylesheets().add(css);
+scene3.getStylesheets().add(css);
+scene4.getStylesheets().add(css);
+scene5.getStylesheets().add(css);
 ```
 
 ### Conclusion
-In conclusion, the following has been achieved and learned:
-- Adding an internal styling to the application. This was through:
-  - Hardcoding it into the FXML file.
-  - Using the SceneBuilder.
+In conclusion, we have achieved:
+- Adding an internal styling to the application.
 - Using pre-saved variables to add the styling.
 - Adding the styling via an external CSS file for one or many scenes.
 
