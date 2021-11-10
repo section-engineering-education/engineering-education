@@ -4,23 +4,23 @@ status: publish
 published: true
 url: /model-interpretation-using-lime/
 title: Model Interpretation using LIME
-description: In this tutorial, we will build a simple machine learning model then use LIME  to interpret our model.
+description: In this tutorial we will build a simple machine learning model then use LIME (Local Interpretable Model-Agnostic Explanations) to interpret our model.
 author: willyngashu
-date: 2021-10-13T00:00:00-19:27
+date: 2021-11-10T00:00:00-12:27
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/model-interpretation-using-lime/hero.jpg
- alt: Model Interpretation using LIME Hero image
+    alt: Model Interpretation using LIME Hero image
 ---
-Model interpretation finds out why a model makes decisions during the prediction phase. This ensures we have a fair, accountable, and transparent model. 
+Model interpretation finds out why a model makes certain decisions during the prediction phase. This ensures we have a fair, accountable, and transparent model. 
 <!--more-->
-In model interpretation we try to answer the question; why should we trust the model? and why did the model make this conclusion?. Using model interpretation, we can be able to explain what the model is doing and why it's making a prediction. 
+In model interpretation, we try to answer the question; why should we trust the model? Why did the model make this conclusion?. Using model interpretation, we may be able to explain what the model is doing and why it's making a prediction. 
 
 This helps the involved stakeholders and end-users understand how the model works. This makes users have trust and confidence to use these models to solve mission-critical real-world problems. 
 
-These problems are such as self-driving cars model and health system models. They have a great impact on society and business because they are matter of life or death.
+These problems are helpful in matters such as self-driving cars models and health system models. They have a great impact on society and business because they are matter of life or death.
 
 In this tutorial, we will build a simple machine learning model, then use [LIME](https://christophm.github.io/interpretable-ml-book/lime.html) to interpret our model.
 
@@ -43,20 +43,20 @@ In this tutorial, we will build a simple machine learning model, then use [LIME]
 - [References](#References)
 
 ### Prerequisites
-To follow through this article, the reader should:
+To follow through with this article, the reader should:
 - Have [Python](https://www.python.org/) installed.
 - Have an understanding of [Python programming.](/engineering-education/python-projects-for-beginners/)
 - Be familiar with [machine learning modeling.](engineering-education/house-price-prediction/)
 - Be familiar with [Google colab notebooks.](https://colab.research.google.com)
 
 ### Introduction
-Model interpretation has made a great impact in today's machine learning building. Through interpretation, we can build a more robust, accurate, and most trustworthy model. 
+Model interpretation has made a great impact in today's machine learning builds. Through interpretation, we can build a more robust, accurate, and most trustworthy model. 
 
-These are some of the reasons why model interpretation is important among others.
+These are a few reasons why model interpretation is important among others.
 
 #### Importance of model interpretation
 - It detects errors and bugs in the model - Models are prone to errors and bugs. These may be due to human errors or deprecated software dependencies. Model interpretation debugs these errors and resolves them.
-- It detects bias during model training - Bias occurs when we have unbalanced data. This is when we did not split our dataset correctly. Model interpretation ensures that our dataset is well balanced to avoid bias.
+- It detects bias during model training - Bias occurs when we have unbalanced data. This is when we do not split our dataset correctly. Model interpretation ensures that our dataset is well balanced to avoid any bias.
 - To know model reliability - A reliable model is one that can give consistent results. Through model interpretation, we will be able to know if we can trust a model's prediction results.
 - To improve model performance and generalization - Model interpretation increases the model's accuracy score. This ensures that it has a higher chance of making correct predictions.
 - To identify wrong classifications during prediction - Model interpretation analyzes the prediction results. It uses different techniques to identify the wrong and right predictions. This ensures that only the right predictions are accepted.
@@ -72,8 +72,7 @@ This technique is specific to only certain models and may not be applied to othe
 It also checks how they impact the general functionalities of the model.
 
 #### Local or global scope method
-The local scope is used in individual prediction and explains why a model made a single prediction.
-The global scope goes beyond individual prediction, it explains the general behavior of the model.
+The local scope is used in individual prediction and explains why a model made a single prediction. The global scope goes beyond individual prediction, it explains the general behavior of the model.
 
 In this tutorial, we will build a simple classification model using the iris dataset. The model classifies the flower species based on user input. 
 
@@ -82,8 +81,7 @@ From there, we will use LIME to interpret this model. To download the dataset fo
 Let us start building our model.
 
 #### Importing exploratory data analysis packages
-These packages are used for data analysis and manipulation. We use Pandas to load our dataset.
-Numpy conducts mathematical and scientific computations on our dataset.
+These packages are used for data analysis and manipulation. We use Pandas to load our dataset. Numpy conducts mathematical and scientific computations on our dataset.
 
 ```python
 import pandas as pd
@@ -122,7 +120,7 @@ Labels are the target variable that the model is trying to predict. In this case
 Y = df['species']
 ```
 
-Let us makes the output unique, this ensures that we reduce model bias.
+Let us makes the output unique, this ensures that we can reduce model bias.
 
 ```python
 class_names = Y.unique()
@@ -179,13 +177,13 @@ This shows that there is a total of `105` flower species and `4` columns in the 
 Next, let us use logistic regression to build and train our model.
 
 ### Model training using logistic regression
-We start by initializing the `LogisticRegression()` method. This algorithm is used for training our model.
+We start by initializing the `LogisticRegression()` method. This algorithm is used when training our model.
 
 ```python
 model_logreg = LogisticRegression()
 ```
 
-After initializing our model, we now fit the model into the dataset. We fit our model using the training dataset. The model uses this dataset to recognize the pattern that enhances predictive analysis.
+After initializing our model, we will fit the model into the dataset. We fit our model using the training dataset. The model uses this dataset to recognize the pattern that enhances predictive analysis.
 
 During the training phase, the model gains knowledge through learning and stores it. It eventually uses this stored knowledge to make predictions.
 
@@ -217,7 +215,9 @@ To evaluate this prediction, we need to calculate the accuracy score of this mod
 ### Calculating the accuracy score
 The accuracy score shows the number of correct predictions made by our model. We express it as a percentage.
 
-The higher the accuracy score the better the model in making predictions. The accuracy score is calculated as follows:
+The higher the accuracy score the better the model in making predictions. 
+
+The accuracy score is calculated as follows:
 
 ```python
 accuracy_score(Y_test,model_logreg.predict(X_test))
@@ -258,21 +258,25 @@ According to our model, these are the prediction results, but should we trust th
 
 That is why we need to use model interpretation techniques to verify these results and increase our trust in the model. This ensures that we know how the model works and it's level of reliability.
 
-Let us start model interpretation with LIME
+Let us start our model interpretation with LIME.
 
 ### Model interpretation with LIME
 LIME stands for Local Interpretable Model-Agnostic Explanations, it covers a local scope. Local scope is used in individual prediction. It explains why the model made a single prediction and does this simply and understandably.
 
-To use LIME, we first need to install it. We install LIME using the following command:
+To use LIME, we first need to install it. 
+
+We install LIME using the following command:
 
 ```python
 !pip install lime
 ```
 
-LIME has different methods used for interpretation. This depends on the type of data used as input. They include:
-- Tabular data interpretation technique
-- Textual data interpretation technique
-- Image data interpretation technique
+LIME has different methods used for interpretation. This depends on the type of data used as input. 
+
+They include:
+- Tabular data interpretation technique.
+- Textual data interpretation technique.
+- Image data interpretation technique.
 
 In this tutorial, we will be using tabular data. Tabular data is a type of data organized in rows and columns.
 
@@ -324,11 +328,11 @@ This enables us to see the results in our notebook as shown in the image below.
 ![Explainer results](/engineering-education/model-interpretation-using-lime/explainer-resultst.jpg)
 
 From the image above we can see that LIME has given the prediction probability as follows:
-- setosa with a probability of 0.88
-- versicolor with a probability of 0.12
-- virginica with a probability of 0.0
+- setosa with a probability of 0.88.
+- versicolor with a probability of 0.12.
+- virginica with a probability of 0.0.
 
-This shows setosa with a higher probability of 0.88 this makes it the right prediction result. The middle of the image provides the rules that must be achieved so that the prediction is setosa. 
+This shows setosa with a higher probability of 0.88 which makes it the right prediction result. The middle of the image provides the rules that must be achieved so that the prediction is setosa. 
 
 The rules are as follows:
 - petal_length >= 1.50
