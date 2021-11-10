@@ -6,7 +6,7 @@ url: /getting-started-with-alpinejs/
 title: Getting Started With Alpine.js
 description: This article deals with Alpine.js which is a new, lightweight, JavaScript framework used in web development.
 author: zubair-idris-aweda
-date: 2021-10-20T00:00:00-06:10
+date: 2021-11-10T00:00:00-11:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,6 +14,7 @@ images:
   - url: /engineering-education/getting-started-with-alpinejs/hero.png
     alt: Getting Started With Alpine.js Hero Image
 ---
+
 Alpine.js is a rugged, minimal tool for composing behavior in your markup. Think of it like jQuery for the modern web. It is very reactive like Vue and it is very lightweight. Alpine.js is very simple to use and set up. It does not need any installation with NPM, the CDN version works enough magic.
 <!--more-->
 Alpine.js is not a replacement for full-fledged frameworks like Vue, React, or Angular. Instead, it is a lighter framework for the most simple needs used in applications that need minimal JavaScript, usually server-side rendered web applications.
@@ -45,7 +46,9 @@ By the end of this tutorial, you should be conversant with:
 This article will show how to build a primary application to store TODOs, illustrating some of the features in Alpine.Js.
 
 ### Alpine.js installation
-To get started with the application, we have to first install all the required dependencies, Alpine.js and Bootstrap CSS. To install Bootstrap, get the starter template from the [official website](https://getbootstrap.com/docs/5.1/getting-started/introduction/#starter-template). Edit this template with this to have the correct title and a basic card and list (of Todos).
+To get started with the application, we have to first install all the required dependencies, Alpine.js and Bootstrap CSS. 
+
+To install Bootstrap, get the starter template from the [official website](https://getbootstrap.com/docs/5.1/getting-started/introduction/#starter-template). Edit this template with this to have the correct title and a basic card and list (of Todos).
 
 ```html
 <!doctype html>
@@ -138,7 +141,7 @@ To see how this directive works, we add a click listener to the first list item 
 <li class="list-group-item list-group-item-success" x-data x-on:click="alert('Hi')">First Item</li>
 ```
 
-Do not worry about the `x-data` directive yet. It will be explained well under[state management](#state-management-in-alpinejs).
+Do not worry about the `x-data` directive yet. It will be explained well under [state management](#state-management-in-alpinejs).
 
 See how easy that is. 
 
@@ -325,7 +328,7 @@ This same functionality can be achieved using `x-if` like this:
 </div>
 ```
 
-Notice that the `x-if` examples has an additional `template` tag, this is because `x-if` leverages [`template` browser behavior](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template). It can remove the paragraph from the page when `showName` returns false, or add it to the page when it returns true.
+Notice that the `x-if` examples has an additional `template` tag. This is because `x-if` leverages [`template` browser behavior](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template). It can remove the paragraph from the page when `showName` returns false, or add it to the page when it returns true.
 
 Another difference between the `x-if` and `x-show` directives is that you can add a transition to the hiding and showing of the element when using `x-show`. This transition can be customized as you like. Read more on transitions [here](https://alpinejs.dev/essentials/templating#toggling-with-transitions).
 
@@ -359,7 +362,7 @@ We can take a moment to add another fix to our application. Currently, the 'Hit 
 This example listens to the `focus` and `blur` events to update the state of the hint text. At this point, you must have seen the reactive nature of Alpine.js.
 
 #### Looping elements
-Apart from being able to render elements if some condition is true. Alpine.js lets you repeat a block of code many times, or display a list of data. It creates DOM elements based on data from a list. The `x-for` directive, like the `x-if` directive, must be used with a `template` tag. For example, you may print 1 to 10 to your screen using:
+Apart from being able to render elements if some condition is true, Alpine.js lets you repeat a block of code many times, or display a list of data. It creates DOM elements based on data from a list. The `x-for` directive, like the `x-if` directive, must be used with a `template` tag. For example, you may print 1 to 10 to your screen using:
 
 ```html
 <ul x-data>
@@ -421,7 +424,7 @@ At this point, we are very close to the initial design. However, we have not bee
 #### Manipulating HTML attributes
 To manipulate the styling of each list-item, we can use Alpine.js `x-bind` directive. This directive lets us set HTML attributes as the result of JavaScript expressions. For example, to set the `src` attribute of an image:
 ```html
-<div x-data="{ image_src: 'hero.jepg' }">
+<div x-data="{ image_src: 'hero.png' }">
     <img x-bind:src="image_src">
 </div>
 ```
@@ -449,7 +452,7 @@ This example uses ternary operators to determine the appropriate Bootstrap class
 
 ![Colorful Todo List](/engineering-education/getting-started-with-alpinejs/colorful.png)
 
-To wrap up this tutorial, we should be filter these items by their status, as listed at the top.
+To wrap up this tutorial, we should be filtering these items by their status, as listed at the top.
 
 ### Filter by status
 Filtering todo items by status involves a few steps.
@@ -460,7 +463,7 @@ First, clicking on the pills at the top should update some states. This state wi
 <body class="container bg-pink" x-data="{ viewing: 'all' }"></body>
 ```
 
-Adds a viewing state, to know which state is being viewed currently.
+Add a viewing state, to know which state is being viewed currently.
 
 ```html
 <div>
@@ -483,7 +486,7 @@ Now, the `viewing` state changes when any one of these is clicked. To respond to
     :class="todo.status === 'completed' ? list_class + ' list-group-item-success' : todo.status === 'cancelled' ? list_class + ' list-group-item-danger' : list_class"
 ></li>
 ```
-In this example, first, we declare a `will_show` state that determines the display status of the list item. WWe want every item displayed when 'all' is clicked, initializing it based on this value.
+In this example, we first declare a `will_show` state that determines the display status of the list item. We want every item displayed when 'all' is clicked, initializing it based on this value.
 
 Then, a new directive, `x-init`, is introduced. This directive lets you run some code when a template is created in the DOM. In this example, we watch for changes in the `viewing` state. Then, we respond to these by updating the will_show state if the item's status is the same as the selected category.
 
