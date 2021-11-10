@@ -1,7 +1,7 @@
 ### Introduction
-The built-in logging module in Python is intended to provide vital visibility into your applications with little configuration. This article describes how to configure Python's logging module to log all the data needed, route it to desired destinations, and consolidate logs to gain deeper insights into Python applications.
-An external configuration file can also be used to configure the Python logging subsystem. The Python standard library contains the specifications for the logging configuration format.
-The logging library follows a modular design and is divided into four categories: loggers, handlers, filters, and formats.
+The implicit logging module in Python is expected to furnish essential permeability to your applications with little design. This article portrays how to design Python's logging module to log every bit of the information required, course it to wanted objections, and solidify logs to acquire further bits of knowledge into Python applications. 
+An outside setup document can likewise be utilized to arrange the Python logging subsystem. The Python standard library contains the particulars for the logging setup design. 
+The logging library follows a secluded plan and is isolated into four classes: lumberjacks, controllers, channels, and organizations.
 
 ### Table of content
 
@@ -15,11 +15,11 @@ The logging library follows a modular design and is divided into four categories
 - [Further activity reading](#further-activity-reading)
 
 ### Modify your logs' need level and objective 
-The logging module is related with [Python's standard library](https://docs.python.org/3/library/), so you can utilize it rapidly without introducing anything. The `basicConfig()` technique for the logging module is the speediest strategy for planning your lumberjack's ideal direct. Notwithstanding, the [Python documentation](https://docs.python.org/3.7/library/logging.html#logger-objects) proposes making a lumberjack for every module in your application—and arranging a lumberjack for each module game-plan utilizing `basicConfig()` alone can be annoying. Thusly, most applications (counting web systems like Django) use document-based or word-reference-based logging plans not surprisingly. 
+The logging module is related with [Python's standard library](https://docs.python.org/3/library/), so you can utilize it rapidly without introducing anything. The `basicConfig()` technique for the logging module is the speediest strategy for planning your lumberjack's ideal direct. Notwithstanding, the [Python documentation](https://docs.python.org/3.7/library/logging.html#logger-objects) proposes making a lumberjack for every module in your application—and arranging a lumberjack for each module game-plan utilizing `basicConfig()` alone can be annoying. In this manner, most applications (counting web frameworks like Django) use record-based or word-reference-based logging plans.
 
 The three significant measures of `basicConfig()` are: 
 
-- level: plunging succession of event. The log levels accessible are DEBUG, INFO, WARNING, ERROR, and CRITICAL. The level is set to WARNING of course, which implies that Python's logging module will absolutely ignore any DEBUG or INFO messages. 
+- level: plunging succession of event. The log levels accessible are DEBUG, INFO, WARNING, ERROR, and CRITICAL.The level is set to Notice clearly, which proposes that Python's logging module will absolutely ignore any Research or Information messages. 
 
 - controller: determines where your logs will be piped. Except if determined, the logging library will utilize a StreamHandler to way log messages to sys.stderr (normally the control center). 
 
@@ -80,7 +80,7 @@ Logs follow a specific rules design that includes the accompanying ascribes:
 
 - %(asctime)s: it yields the date and season of the log, in [local time](https://docs.python.org/3.7/library/time.html#time.asctime). 
 
-- %(levelname)s : the logging level of the message. 
+- %(levelname)s : the logging level of the information. 
 
 - %(message)s: message 
 
@@ -238,7 +238,7 @@ format=%(asctime)s %(name)s - %(levelname)s:%(message)s
 
 ```
 
-Python documentation directs that only one overseer can be appended to one lumberjack. More data on engendering see the [documentation](https://docs.python.org/3/library/logging.html#logging.Logger.propagate).Taking a gander at the outline '( higher module and lesser module)', the two lumberjacks will give a DEBUG yield and high-need signs in the arrangement '(formatter_simpleFormatter)' and incorporates them into a log record (file.log) i.e: 
+Python library directs that only one overseer can be appended to one lumberjack. More data on engendering see the [documentation](https://docs.python.org/3/library/logging.html#logging.Logger.propagate).Taking a gander at the outline '( higher module and lesser module)', the two lumberjacks will give a DEBUG yield and high-need signs in the arrangement '(formatter_simpleFormatter)' and incorporates them into a log record (file.log) i.e: 
 
 This will take out the need to annex `logging.basicConfig(level=logging.DEBUG, format='%(asctime)s %(name)s %(levelname)s:%(message)s')` in your portions. 
 
@@ -289,11 +289,11 @@ On running the code it yields the going with:
 
 ``` 
 
-2021-11-03 00:57:48,351 lowermodule - ERROR:[Errno 2] No such record or inventory: 'nonexistentfile.txt' 
+2021-11-03 00:57:48,351 lessermodule - ERROR:[Errno 2] No such record or inventory: 'nonexistentfile.txt' 
 
-2021-11-03 00:57:48,351 lowermodule - ERROR:[Errno 2] No such record or inventory: 'nonexistentfile.txt' 
+2021-11-03 00:57:48,351 lessermodule - ERROR:[Errno 2] No such record or inventory: 'nonexistentfile.txt' 
 
-Traceback (most recent call last): 
+Traceback (latest call last): 
 
 Record "/home/molly/logstest/lesser_module.py", line 14, in word_count 
 
@@ -331,7 +331,7 @@ def word_count(myid):
 
 endeavor: 
 
-# remember the number of words for a record, file, and log the result 
+# recollect the number of words for a record, document, and log the outcome
 
 with open(myid, 'r+') as f: 
 
@@ -369,7 +369,7 @@ The yield will be,
 
 exception doesn't manage yet gets logged, because of our traceback code 
 
-2021-11-03 00:22:31,891 lowermodule - ERROR:uncaught exceptional case: Traceback (most recent call last): 
+2021-11-03 00:22:31,891 lessermodule - ERROR:uncaught exceptional case: Traceback (latest call last): 
 
 Archive "/home/molly/logstest/lesser_module.py", line 23, in word_count 
 
@@ -433,7 +433,7 @@ format=%(asctime)s %(name)s %(levelname)s %(message)s
 [formatter_simpleFormatter]
 format=%(asctime)s %(name)s - %(levelname)s:%(message)s
 ```
-Logs that are sent to the console `(with consoleHandler)` follow the `simpleFormatter` style to enhance readability. After the inclusion of pythonjsonlogger.jsonlogger.JsonFormatter class in your configuration file, the fileConfig() function will be able to create the JsonFormatter if the code runs in an environment that is able to import pythonjsonlogger. In case you're not utilizing record based setup, you should import the python-json-lumberjack library in your application code, and characterize a controller and formatter, as depicted in the [documentation](https://github.com/madzak/python-json-logger#integrating-with-pythons-logging-framework):
+Logs that are shipped from the command prompt `(with consoleHandler)` follow the `simpleFormatter` style to enhance readability. After the inclusion of pythonjsonlogger.jsonlogger.JsonFormatter class in your configuration file, the fileConfig() function will be able to create the JsonFormatter if the code runs in an environment that is able to import pythonjsonlogger. In case you're not utilizing record based setup, you should append the python-json-lumberjack library in your application code, and characterize a controller and formatter, as depicted in the [documentation](https://github.com/madzak/python-json-logger#integrating-with-pythons-logging-framework):
 
 ```
 from pythonjsonlogger import jsonlogger 
@@ -491,7 +491,7 @@ In the program above, `run_duration`, portrays the estimation of the span of the
 When you're unifying your Python logs with observing assistance, you can begin investigating them close by circulated demand follows and foundation measurements to get further perceivability into your applications. Assistance like Datadog can interface logs with measurements and application execution observing information to assist you with seeing the full picture.
 
 ### Conclusion
-The Logging module simplifies everything and eases the pressure of complexity. It is considered to be really versatile. Its arrangement is very sensible and ought to oblige your usage case out of the box. You can add fundamental logging to a little project, or you can go comparatively as making your own custom log levels, regulator classes, and that is just a glimpse of something larger in the event that you are working on a significant errand. 
+The Logging module simplifies everything and eases the pressure of complexity. It is considered to be really versatile. Its arrangement is very sensible and ought to oblige your usage case out of the box. You can add fundamental logging to a little activity, or you can go comparatively as making your own practise log levels, regulator genres, and that is just a glimpse of something larger in the event that you are working on a significant errand. 
 
 If you haven't been using marking in your applications, this is a good chance to start. Exactly when done right, logging will without a doubt take out a huge load of contact from your progression cycle and help you with finding opportunities to take your application to a more significant level. I prefer logging since it simplifies load complexity to be very precise and understandable.
 
