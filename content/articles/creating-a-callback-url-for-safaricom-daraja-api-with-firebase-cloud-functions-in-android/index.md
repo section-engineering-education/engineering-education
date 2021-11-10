@@ -340,14 +340,14 @@ In your manifest file, make sure you have included the service that we have crea
 ```xml
 <application>
 ...
-        <service
-            android:name=".MessagingService"
-            android:stopWithTask="false"
-            android:exported="false">
-            <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-            </intent-filter>
-        </service>
+  <service
+      android:name=".MessagingService"
+      android:stopWithTask="false"
+      android:exported="false">
+      <intent-filter>
+          <action android:name="com.google.firebase.MESSAGING_EVENT" />
+      </intent-filter>
+  </service>
 </application>
 ```
 
