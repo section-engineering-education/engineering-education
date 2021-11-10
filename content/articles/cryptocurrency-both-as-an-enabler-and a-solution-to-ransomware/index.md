@@ -44,13 +44,13 @@ These cyber attackers also program Crypto Mining Malware to detect the start of 
 This kind of attack where cybercriminals use the computing power of your computer to mine cryptocurrency is known as cryptojacking. Victims of Cryptojacking experience the following negative effects on their device systems:
 
 - Overheating computers.
-- Decrease on device performance.
-- Weakening of system networks
-- Increased processor usage
-- System slow down
-- Higher than usual battery-draining
-- Increased processor usage
-- Unusual CPU fan speeds
+- Decrease in device performance.
+- Weakening of system networks.
+- Increased processor usage.
+- System slow down.
+- Higher than usual battery-draining.
+- Increased processor usage.
+- Unusual CPU fan speeds.
 
 ### Cryptocurrency as a solution to ransomware
 
@@ -62,7 +62,7 @@ Virtual Asset Service Providers (VASP), authorities, and providers of [cryptoass
 
 Investigators used this technology to track and [arrest Vachon-Desjardins](https://blog.chainalysis.com/reports/netwalker-ransomware-disruption-arrest). Blockchain analysis associated Vachon-Desjardins with at least 345 addresses. The report alleged that he received Bitcoin valued at more than $14 million. Before his arrest, this Bitcoin had risen its value to around $27.6 million.
 
-Criminals take laundered cryptocurrency to banks through crypto exchanges. They convert cryptocurrency to fiat currency from banks. This would make it easy to detect and track transactions by cybercriminals are aware of this. So, they use non-compliant exchanges and mixers to make tracking difficult. Typically, they mix their bitcoins with those of other users, so they are not easily detected.
+Criminals take laundered cryptocurrency to banks through crypto exchanges. They convert cryptocurrency to fiat currency from banks. This would make it easy to detect and track transactions and cybercriminals are aware of this. So, they use non-compliant exchanges and mixers to make tracking difficult. Typically, they mix their bitcoins with those of other users, so they are not easily detected.
 
 Hackers also use other strategies such as peer-to-peer (P2P) platforms and peel chain patterns to make detection difficult. Peel chain pattern is a trick that hackers rely on to obfuscate illicit funds. They transfer ransom funds through multiple bitcoin wallets to conceal the trail of illegally acquired cryptocurrency. P2P platforms allow hackers to exchange cryptocurrency with other hackers to avoid authorities.
 
@@ -84,3 +84,6 @@ While banning the use of cryptocurrency is one of the proposals to reduce attack
 - [How Does Cryptocurrency Mining Work?](/engineering-education/how-crypto-mining-works/)
 
 - [Building a Cryptocurrency Tracking Telegram Bot with Python](/engineering-education/cryptocurrency-tracking-telegram-bot/)
+
+---
+Peer Review Contributions by: [Collins Ayuya](https://www.section.io/engineering-education/authors/collins-ayuya/)
