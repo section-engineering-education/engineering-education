@@ -1,0 +1,139 @@
+[MediaPipe](https://google.github.io/mediapipe/solutions/hands) provides many customizable ML pre-trained models. The handpose model is one of their latest releases. With researchers aiming to democratize AI using such amazing pre-trained models, it is important that we can understand ML with only a few lines of code. This tutorial aims to show our readers how to build their very own Handpose detector using MediaPipe and Python. They'll be able to use their computer's webcam to track the joints in their hands and in real-time. 
+
+### Prerequistes
+To follow along with this tutorial, you'll need to be familiar with:
+- Jupyter Notebook/Google Colab.
+> We will be using Google Colab for this tutorial.
+- Machine learning modelling.
+
+### Table of contents
+- [The handpose model](#the-handpose-model)
+- [Installing and importing dependencies](#installing-and-importing-dependencies)
+- [Detecting handposes in real-time using webcam](#detecting-handposes-in-real-time-using-webcam)
+- [Output images using OpenCV](#output-images-using-opencv)
+- [Wrapping up](#wrapping-up)
+- [Further reading](#further-reading)
+
+### The handpose model
+Handpose recognition is a deep learning technique that allows you to detect different points on your hand. These points on your hand are commonly referred to as landmarks. These landmarks consist of joints, tips, and bases of your fingers. The handpose model is provided by tensorflow.js and can detect 21 different distinct points in your hand. 
+
+The MediaPipe Hands model is a lightweight ML pipeline consisting of a palm detector and a hand-skeleton finger tracking model. Initially, the palm detector detects the initial hand locations, and afterwards, hand-skeleton finger tracking model performs precise keypoint localization predicting 21, 3D hand key-points per detected hand.
+
+Let's see how we can use this handpose model in a project.
+
+### Installing and importing dependencies
+We perform a quick pip install for two core dependencies; the MediaPipe and openCV python libraries. MediaPipe is an open-sourced, cross-platform library that provides many ready-to-use ML solutions for solving computer vision problems. A few examples include ML solutions for [Face Detection](https://google.github.io/mediapipe/solutions/face_detection.html), [Selfie Segmentation](https://google.github.io/mediapipe/solutions/selfie_segmentation.html), [Hair Segmentation](https://google.github.io/mediapipe/solutions/hair_segmentation.html), and [Object Detection](https://google.github.io/mediapipe/solutions/object_detection.html). 
+For this tutorial, we will leverage the library to import the [MediaPipe Hands](https://google.github.io/mediapipe/solutions/hands) model in our project.
+
+We will also be installing the OpenCV library. Like MediaPipe, OpenCV is a library that also helps in solving computer vision problems. In this tutorial, we will use the library to work with images and access our webcam in real-time easily.
+
+```python
+!pip install mediapipe opencv-python
+```
+The next thing that we are going to do is import those dependencies we installed into our notebook.
+
+```python
+import mediapipe as mp
+import cv2
+import numpy as np
+import uuid
+import os
+```
+We've imported five dependencies:
+- `mediapipe` allows us to leverage the MediaPipe ML solution.
+- `cv2` gives us OpenCV.
+- `numpy` makes it easier to work with number outputs.
+- `uuid` allows you to generate a uniform unique identifier.
+- `os` allows us to work with files in our operating system.
+
+Now that we have installed and imported the required dependencies, we can now go ahead and start setting up mediapipe. From mediapipe, let's bring in the drawing utility to help us draw all the landmarks on our hands and the mediapipe hands model itself.
+
+```python
+mp_drawing = mp.solutions.drawing_utils
+mp_hands = mp.solutions.hands
+```
+Now that all that's done, let's set up our webcam using the standard OpenCV code. If you've worked with OpenCV before, the following block of code might seem familiar; if you're not familiar with it, please refer to their [documentation](https://opencv.org/). 
+
+```python
+cap = cv2.VideoCapture(0)
+while  cap.isOpened():
+    ret, frame = cap.read()
+
+    cv2.imshow('Handpose detection', frame)
+
+    if cv2.waitKey(10) & 0xFF == ord('q'):
+            break
+cap.release()
+cv2.destroyAllWindows()
+```
+Let's now overlay the mediapipe hands model on top of the standard OpenCV code. We will take the feed from our webcam, pass it to mediapipe, make detections, and render the results to the image. So, we'll not only get the webcam feedback, but a webcam feed with all those detections applied onto it.
+
+### Detecting handposes in real-time using webcam
+In this section, we will be detecting our handposes. As we put our hand up to the webcam, we should see all the joints within our hands detected in real-time.
+
+```python
+cap = cv2.VideoCapture(0)
+
+with mp_hands.Hands(min_detection_confidence=0.8, min_tracking_confidence=0.5) as hands: 
+    while cap.isOpened():
+        ret, frame = cap.read()
+        
+        image = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+        
+        image.flags.writeable = False
+        
+        results = hands.process(image)
+        
+        image.flags.writeable = True
+        
+        image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
+       
+        print(results)
+        
+        # Rendering results
+        if results.multi_hand_landmarks:
+            for num, hand in enumerate(results.multi_hand_landmarks):
+                mp_drawing.draw_landmarks(image, hand, mp_hands.HAND_CONNECTIONS, 
+                                         )
+            
+        cv2.imwrite(os.path.join('Output Images', '{}.jpg'.format(uuid.uuid1())), image)
+        cv2.imshow('Handpose detection', image)
+
+        if cv2.waitKey(10) & 0xFF == ord('q'):
+            break
+
+cap.release()
+cv2.destroyAllWindows()
+```
+We first instantiate our model using the following code `with mp_hands.Hands(min_detection_confidence=0.8, min_tracking_confidence=0.5) as hands`. We pass in two keyword arguments, the `min_detection_confidence`, setting the detection confidence to 80% and `min_tracking_confidence`, setting the tracking confidence to 50%.
+
+We then recolor our frame from `BGR` to `RGB` using OpenCV's `cvtColor` method. By default, OpenCV sets the format of image color to `BGR`. We need to set it to `RGB` as that's the format mediapipe accepts. We store this result in a variable called `image`.
+
+We set our writeable flag, `image.flags.writeable` to be `false` initially to avoid then set it back to `true` after we've performed the detection. The code `hands.process(image)` goes ahead and makes our detection and stores it in a variable known as `results`.
+
+The next step involves using the `cvtColor` method. We set the color of our image back to `BGR` from `RGB` and print our detection results. At this point, nothing has happened to our webcam image. If we type in `results.multi_hand_landmarks` on our terminal, we should see the handpose detection results. We need to render these detections onto our image.
+
+The last bit of the code helps us render these results onto our image. If we have results in `multi_hand_landmarks`, render the image, if not, don't render. We then loop through each set of results and draw the landmarks. `mp_hands.HAND_CONNECTIONS` tells us the sets of relationships; which landmarks are connected to which ones allowing us to draw the connections. 
+
+By default, mediapipe detects a maximum number of two hands. If by any chance you want to detect the hands of more than one person, you'll have to introduce an argument, `max_num_hands`, and indicate the number of hands you want to detect. It's set to two by default to reduce latency as there's no point in invoking another detection if there's no other hand to be detected. That's an important point to note.
+
+That's it. If you run the webcam feed and show your hand, you should have landmark detections on your fingers.
+
+### Output images using OpenCV
+Finally, if you want to save the results from the detection, maybe for a research paper or for your personal use, you can do so by writing adding the following code:
+
+```python
+        cv2.imwrite(os.path.join('Output Images', '{}.jpg'.format(uuid.uuid1())), image)
+```
+
+The above line of code is going to save our image. The unique identifier, `format(uuid.uuid1()` generates unique names for our detected images to avoid naming conflicts when saving the images. 
+Please find the code for this tutorial [here](https://colab.research.google.com/drive/17_OZM5FdgBlzQchpGpD6lqfVpPTefLhY?usp=sharing).
+
+### Wrapping up
+That wraps up this tutorial. We began by installing and importing our dependencies, we made detections from our webcam and applied those detections to our webcam feed. The last step involved saving our outputs. You can go ahead and try it out yourself.
+
+Happy coding!
+
+### Further reading
+- [MediaPipe HandPose](https://github.com/tensorflow/tfjs-models/tree/master/handpose)
+- [Create a New React App](https://reactjs.org/docs/create-a-new-react-app.html)
