@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /toastr-laravel/
-title: Getting started with Non blocking notifications in Laravel
+title: Getting started with Non blocking Toastr notifications in Laravel
 description: This tutorial will show you how to integrate a very interactive package in your Laravel application to display any alert depending on your needs. These alerts range from warnings, errors and success messages.
 author:  vincent-oriyo
 date: 2021-11-05T00:00:00-07:40
