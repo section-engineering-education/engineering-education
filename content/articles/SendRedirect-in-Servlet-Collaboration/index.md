@@ -19,7 +19,7 @@ At the end of this article, a learner should know the following:
 ### Prerequisites
 - It's necessary to have a basic understanding of Java and the servlet's introduction part.
 - It is necessary to have a basic understanding of the `RequestDispatcher()` method. You can learn more about it by clicking [here](https://www.section.io/engineering-education/servlet-request-and-servlet-collaboration/#requestdispatcher-methods).
-- Install an open-source editor, such as [Eclipse](https://www.eclipse.org/downloads/packages/release/kepler/sr1/eclipse-ide-java-developers), [Netbeans](https://netbeans.apache.org/download/index.html), etc. In this article, we will use Eclipse IDE.
+- Install a Java editor like [Eclipse](https://www.eclipse.org/downloads/packages/release/kepler/sr1/eclipse-ide-java-developers), [Netbeans](https://netbeans.apache.org/download/index.html) on your computer. In this article, we will use Eclipse IDE.
 - Your machine should have Tomcat Server installed. It's available for download on their official [website](https://tomcat.apache.org/). We'll use TomCat version 10 in this case.
 
 ### Table of content
@@ -35,10 +35,9 @@ The main goal of this method is to send responses from a specific request to the
 
 ### Difference between SendRedirect method and RequestDispatcher forward method
 1. The `forward ()` method of the `RequestDispatcher` works on the server-side, while the `SendRedirect()` method works on the client-side.
-2. `SendRedirect()` always sends a new request, whereas `forward()` sends the same request and response objects to another servlet.
-3. Request dispatcher works on the request object, while `SendRedirect()` works on the response object.
-4. The `forward()` method is also significantly faster than the `SendRedirect()`. This is because, unlike the `forward()` method, the `SendRedirect()` method necessitates two browser requests instead of one.
-5. When the `SendRedirect()` method is used, the original `URL` is always changed. However, when the `forward()` method is applied, the original `URL` remains unchanged.
+2. Request dispatcher works on the request object, while `SendRedirect()` works on the response object.
+3. The `forward()` method is also significantly faster than the `SendRedirect()`. This is because, unlike the `forward()` method, the `SendRedirect()` method necessitates two browser requests instead of one.
+4. When the `SendRedirect()` method is used, the original `URL` is always changed. However, when the `forward()` method is applied, the original `URL` remains unchanged.
 ### An example of how to use the SendRedirect method
 We'll make a program with the following pages to demonstrate how to use the SendRedirect method:
 #### A JSP login page.
@@ -59,15 +58,8 @@ We'll make a program with the following pages to demonstrate how to use the Send
 Open Eclipse or any other Java IDE, create a new Dynamic web project by selecting a new Dynamic web project. Provide your favorite project name. In my case, I will call it SendRedirectDemo.
 #### Step 2: Creating Login JSP page 
 By right-clicking SendRedirectDemo and selecting New JSP, you can code a JSP page as shown. Provide your JSP class name. I will call it login.
-
+The JSP page's body is shown below.
 ```JSP
-
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
 <body>
 <form action="SevletPage" method="post">
 Enter User name <input type="text" name="userName" required><br>
@@ -84,7 +76,7 @@ if("invalid".equals(message))
 <p>Wrong password or user name, please try again!</p>
 <%} %>
 </body>
-</html>
+
 ```
  
  #### Step 3: Creating a SevletPage 
@@ -121,21 +113,14 @@ public class SevletPage extends HttpServlet
 }
 
  ```
- #### Creating a home HTML page
+ #### HTML Home page.
  To create this page, right-click on the above project and select new HTML. Finish by providing your HTML page a name. In this case, we will name it home.
-
+The HTML page's body is shown below.
  ```HTML
 
- <!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Home</title>
-</head>
 <body>
 <h1>welcome to the home page</h1>
 </body>
-</html>
  ```
 
 ### Conclusion
