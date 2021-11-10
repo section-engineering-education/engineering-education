@@ -365,7 +365,7 @@ By reaching here, this means that one has learned the following:
 
 Happy coding.
 
-You can view the full project [here]().
+You can view the full project [here](https://github.com/franciskaguongo/Dynamically-Update-React-and-Javascript-with-CSS-Custom-Properties).
 
 ### References
 - [React useEffect hooks](https://reactjs.org/docs/hooks-reference.html) documentation.
