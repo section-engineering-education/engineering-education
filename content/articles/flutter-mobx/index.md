@@ -15,12 +15,11 @@ images:
     alt: Flutter state management with Mobx
 ---
 
-### Introduction
-
-Managing application state in a clean and optimized way is very important when dealing with large Flutter applications. State management is the handling of application data between different screens and components. This article will discuss how to retrieve data from an API and pass it to a service class to the UI. The UI will listen for data from the API. When the data is available, the application will display a list of items. When it is in a loading state, The application will show a progress indicator.
+Managing application state in a clean and optimized way is very important when dealing with large Flutter applications. State management is the handling of application data between different screens and components. 
+<!--more-->
+This article will discuss how to retrieve data from an API and pass it to a service class to the UI. The UI will listen for data from the API. When the data is available, the application will display a list of items. When it is in a loading state, the application will show a progress indicator.
 
 ### Prerequisites
-
 1. [Flutter SDK](https://flutter.dev/docs/get-started/install) installed.
 2. Preferred IDE or code editor installed.
 3. Knowledge in [Flutter](https://flutter.dev/docs).
@@ -49,7 +48,7 @@ $ flutter doctor
 Now that you have verified that everything is set up correctly, execute the command below to create a new flutter project.
 
 ```bash
-$ Flutter create news_app # news_app is the name of the application
+$ flutter create news_app # news_app is the name of the application
 ```
 
 Open the generated project in your code editor, add the dependencies below to `pubspec.yml` file.
@@ -78,7 +77,7 @@ dev_dependencies:
 
 ### Domain
 
-In the project's lib folder, create a new dart file named `article.dart` and add the code snippet below..
+In the project's lib folder, create a new dart file named `article.dart` and add the code snippet below.
 
 ```dart
 class Articles {
