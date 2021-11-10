@@ -20,9 +20,8 @@ To follow this guide, one needs permission from a WordPress website to carry out
 Penetration testing is the practice of analyzing websites, systems, applications, and networks to find vulnerabilities an attacker might exploit.
 
 These vulnerabilities could be because of various reasons. Let us check out a few of them:
-
 + **The design and implementation of the WP website**. A poorly designed and implemented website is open to these security issues, brute force attacks, denial of service (DoS) attacks, theft of sensitive data, and malware-related hacks.
-+ **Poor system configuration**. System configuration is like the heart and soul of your WP site. A poor system configuration increases the chances of attacks. Also, make sure that WordPress core, themes and plugins are updated. 
++ **Poor system configuration**. System configuration is like the heart and soul of your WP site. A poor system configuration increases the chances of attacks. Also, make sure that WordPress core, themes, and plugins are updated. 
 + **Unsecure network**. Using networks from untrusted sources is dangerous. There are high chances of a WP site attack when connected to an unsecured network.
 + **System complexity**. The more complex the architecture of the WP website or system is, the higher the chances of being attacked. 
 
@@ -64,14 +63,14 @@ While doing penetration testing, break it down into the following:
 ### Using Kali Linux on VirtualBox for WordPress security
 Getting started with WordPress penetration testing, Kali Linux is the standard tool for penetration testers. Kali Linux has multiple tools modeled towards web security tasks such as penetration testing. Therefore we'll need to install Kali Linux on a virtual machine (virtual box).
 
-While doing pen-testing, you become a hacker on your site. Virtual machines are amazing tools if you want to become a hacker or learn Linux. We're going to set up a virtual machine on our computers. A virtual machine is simply a computer inside a computer.
+While doing pen-testing, you become a hacker on your site. [Virtual machines](https://azure.microsoft.com/en-us/overview/what-is-a-virtual-machine/#what-benefits) are amazing tools if you want to become a hacker or learn Linux. We're going to set up a virtual machine on our computers. A virtual machine is simply a computer inside a computer.
 
 #### Installing Kali Linux on a VirtualBox
 We'll use Kali Linux installed on a virtual machine on our computers to carry out penetration testing. Some developers use VMWare to host the virtual machine, which is commercial software. Other developers use Virtual Box, which is free software. Both of these tools work well. In our case, we will use a Virtual Box.
 
 To begin, install Kali Linux with VirtualBox.
-1. Download and install Virtual Box on your computer.
-2. Download Kali Linux 64 bit.
+1. [Download and install Virtual Box](https://www.virtualbox.org/wiki/Downloads) on your computer.
+2. [Download Kali Linux 64 bit](https://www.kali.org/get-kali/#kali-bare-metal).
 3. Create a VirtualBox virtual machine to host Kali Linux, then select Debian 64 bit as the Operating system (OS). Ensure you select 10GB disk space or more to prevent running out.
 4. Boot into the new virtual machine.
 5. Boot into Kali and select the install option.
@@ -95,6 +94,8 @@ WPScan is a WordPress vulnerability scanner that examines your website to see th
 
 Replace `example.com` with the URL of your WordPress site.
 
+To learn more, go through the [WPScan documentation](https://blog.wpscan.com/wpscan-user-documentation/).
+
 #### Sqlmap
 Sqlmap is an extremely efficient penetration testing tool. It focuses on detecting SQL injection (SQLi) vulnerabilities on WordPress websites. Also, the Sqlmap tool helps developers to find SQL bugs present in themes and plugins. To use this tool, open the Kali Linux terminal and type this command:
 
@@ -104,19 +105,19 @@ Sqlmap is an extremely efficient penetration testing tool. It focuses on detecti
 
 The term `-dbs` will help you identify any SQLi bug found in the database during WP penetration testing.
 
-Therefore if there is no bug found, that doesn't signify that the site is safe. Sqlmap tool has multiple options to find SQLi vulnerabilities. To learn more, go through the Sqlmap documentation.
+Therefore if there is no bug found, that doesn't signify that the site is safe. Sqlmap tool has multiple options to find SQLi vulnerabilities. To learn more, go through the [Sqlmap documentation](https://sqlmap.org/).
 
 #### PHPStan
-[PHPStan](https://phpstan.org/user-guide/getting-started) is an analysis tool that helps you discover bugs in your WordPress site. This tool comes as an extension designed for WordPress and which is downloaded separately. After configuring this tool, open the Kali Linux terminal and type this command:
+PHPStan is an analysis tool that helps you discover bugs in your WordPress site. This tool comes as an extension designed for WordPress and which is downloaded separately. After configuring this tool, open the Kali Linux terminal and type this command:
 
 `vendor/bin/phpstan analyze Dir1 Dir2`
 
 ![PHPStan](/engineering-education/wordpress-penetration-testing/phpstan.jpg)
 
-Then, replace `Dir1` and `Dir2` with the directories consisting of the WordPress code that you want to scan for bugs. To learn more, check out [PHPStan documentation](https://phpstan.org/user-guide/getting-started).
+Then, replace `Dir1` and `Dir2` with the directories consisting of the WordPress code that you want to scan for bugs. To learn more, check out the [PHPStan documentation](https://phpstan.org/user-guide/getting-started).
 
 #### XSSer
-[Cross-Site Scripting (XSS)]() is a common security threat found in WordPress websites. Hence, we can examine various WordPress themes and plugins for XSS bugs using a tool called Cross-Site "Scripter" (XSSer).
+[Cross-Site Scripting (XSS)](https://owasp.org/www-community/attacks/xss/) is a common security threat found in WordPress websites. Hence, we can examine various WordPress themes and plugins for XSS bugs using a tool called Cross-Site "Scripter" (XSSer).
 
 XSSer is a framework to discover, exploit, and report XSS vulnerabilities on your WordPress websites. In addition, this tool enables you to bypass certain security filters and particular techniques of code injection.
 
@@ -126,9 +127,15 @@ To do a simple scan, you can use a graphical interface. To do so, open the Kali 
 
 ![Xsser](/engineering-education/wordpress-penetration-testing/xxser.jpg)
 
-When the graphical interface opens, set the suitable options and enter the site's details, and WP pen-testing for XSS vulnerabilities will begin.
+When the graphical interface opens, set the suitable options and enter the site's details, and WP pen-testing for XSS vulnerabilities will begin. To learn more, go through the [Xsser documentation](https://xsser.03c8.net/).
 
 ### Conclusion
 I hope this guide has given an excellent introduction to WordPress penetration testing and practice as well. WordPress security is essential, and it's valuable to invest in the security of your WordPress website.
 
 Using the information provided in this document, you can come up with a WP pen-testing strategy. Now assemble your tools to perform reconnaissance and scanning, exploit where needed and mitigate vulnerabilities that you discover. Good luck!
+
+### Further reading
+To learn more about WordPress penetration testing, go through these articles:
++ https://securityboulevard.com/2020/03/penetration-testing-for-wordpress-websites/
++ https://gupta-bless.medium.com/penetration-testing-on-wordpress-f96bc701832e
++ https://www.getastra.com/blog/security-audit/wordpress-penetration-testing/
