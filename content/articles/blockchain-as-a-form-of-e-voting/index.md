@@ -98,7 +98,9 @@ In a democratic voting process, **security** and **reliability** are essential. 
 
 One of the problems with e-voting is that it is almost impossible to satisfy all the requirements. Understand e-voting here as any voting system maintained over some form of hardware or software. We have several amazing and ingenious technologies to apply in these systems, but even so, they almost always require a trade-off. To guarantee one (or more) of the requirements, we need to give up totally or partially of others. With Blockchain, it won't be any different. But despite this, it is still promising.
 
-Blockchain fraud is *theoretically* impossible when implemented correctly. The votes would be transferred as assets in the Blockchain, and changing or deleting votes would be [unfeasible](https://www.mdpi.com/1424-8220/21/17/5874). The voting process would not depend on an organization, institution, or government, that is, central authorities.
+Blockchain fraud is *theoretically* impossible when implemented correctly. The votes would be transferred as assets in the Blockchain, and changing or deleting votes would be [unfeasible](https://www.mdpi.com/1424-8220/21/17/5874). The voting process would not depend on an organization, institution, or government, that is, central authorities. 
+
+In fact, this is the principle behind DAOs ([Decentralized Autonomous Organizations](https://en.wikipedia.org/wiki/Decentralized_autonomous_organization)) -- organizations driven by a common goal whose rules, operations, and decisions are stored in a Blockchain. These organizations work autonomously and as everything is done through the Blockchain, the rules are applied equally to all members (nodes) and everything is transparent, making corruption difficult. This structure allows DAOs to be self-organized and non-hierarchical. [One of the most common uses of DAOs, thanks to their characteristics, is for voting and democratic decision-making, as they allow for open, transparent and decentralized participation.](https://linda.mirror.xyz/Vh8K4leCGEO06_qSGx-vS5lvgUqhqkCz9ut81WwCP2o) 
 
 Votes would be publicly stored on the Blockchain and distributed to all network nodes rather than stored on centralized servers. Thus, everyone could check the votes and follow the progression of the voting, whether voters or candidates, and they (probably) won't know who voted for whom because users do not use usernames or anything like that.
 
@@ -132,6 +134,8 @@ Blockchain is a relatively new technology and has its pros and cons in the conte
 - [Bitcoin: A Peer-to-Peer Electronic Cash System. Satoshi Nakamoto.](https://bitcoin.org/bitcoin.pdf)
 - [The great chain of being sure about things. The Economist.](https://www.economist.com/briefing/2015/10/31/the-great-chain-of-being-sure-about-things)
 - [Blockchain for Electronic Voting System — Review and Open Research Challenges.](https://www.mdpi.com/1424-8220/21/17/5874)
+- [Decentralized Autonomous Organizations.](https://en.wikipedia.org/wiki/Decentralized_autonomous_organization)
+- [A Beginner's Guide to DAOs](https://linda.mirror.xyz/Vh8K4leCGEO06_qSGx-vS5lvgUqhqkCz9ut81WwCP2o) 
 - [How Moscow organized voting on a Blockchain in 2020. ICT Moscow.](https://ict.moscow/en/news/how-moscow-organized-voting-on-blockchain-in-2020/)
 - [Blockchain: a graph primer.](https://arxiv.org/abs/1708.08749) 
 - [Cybernetic election v1.0: how the Blockchain voting system was created in Moscow.](https://habr.com/ru/article/480152/)
