@@ -151,7 +151,7 @@ In this tutorial, we looked at the different types of computer font formats and 
 ### Reference
 [Python GUI programming with Tkinter](https://www.perlego.com/book/721869/python-gui-programming-with-tkinter-pdf) by Alan D Moore
 
-Happy Coding!
+Happy coding!
 
 ---
 Peer Review Contributions by: [Geoffrey Mungai](/engineering-education/authors/geoffrey-mungai/)
