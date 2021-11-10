@@ -136,6 +136,6 @@ Using the information provided in this document, you can come up with a WP pen-t
 
 ### Further reading
 To learn more about WordPress penetration testing, go through these articles:
-+ https://securityboulevard.com/2020/03/penetration-testing-for-wordpress-websites/
-+ https://gupta-bless.medium.com/penetration-testing-on-wordpress-f96bc701832e
-+ https://www.getastra.com/blog/security-audit/wordpress-penetration-testing/
++ [Penetration Testing for WordPress](https://securityboulevard.com/2020/03/penetration-testing-for-wordpress-websites/)
++ [Penetration Testing on WordPress](https://gupta-bless.medium.com/penetration-testing-on-wordpress-f96bc701832e)
++ [WordPress Penetration Testing](https://www.getastra.com/blog/security-audit/wordpress-penetration-testing/)
