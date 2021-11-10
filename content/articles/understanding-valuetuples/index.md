@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /understanding-valuetuples-in-c#/
+url: /understanding-valuetuples/
 title: Understanding ValueTuples in C#
 description: This article will help the reader understand how to implement ValueTuples in C#. These components allow one to group unrelated data values.
 author: michelle-ngei
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/understanding-valuetuples-in-c#/hero.jpg
+  - url: /engineering-education/understanding-valuetuples/hero.jpg
     alt: ValueTuples in C# Hero Image
 ---
 ValueTuples are used to return several values from a method. Since these components are mutable, you can assign new values to them after they have been declared.
