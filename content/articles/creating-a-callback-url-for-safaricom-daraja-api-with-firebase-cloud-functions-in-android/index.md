@@ -1,6 +1,5 @@
-### Creating a Callback URL for Safaricom Daraja API - (Lipa na Mpesa) with Firebase Cloud Functions in Android
-
-Adding Lipa Na Mpesa features to your Android has been made easier with the introduction of the Daraja API developed by Safaricom. It is the wish of every developer to receive all the information that Safaricom sends when a user of their app does a transaction because some payments go through and some fail. This information is useful in updating records in your Application.
+### Introduction
+Implementing `Lipa-Na-Mpesa` (Pay with MPesa) features in your Android has been made easier with the introduction of the [Daraja API](https://github.com/jumaallan/android-mpesa-api) developed by [Safaricom](https://www.safaricom.co.ke/). Every developer wishes to receive all the information that Safaricom sends when a user performs a transaction because some transactions go through and some fail. This information is useful in updating records in your application.
 
 As an Android developer, having a callback URL means that you need to have a REST backend that will receive a response. This might be expensive. We can create a simple API with Firebase Cloud Functions that will help us to receive the data for the callback URL.
 
@@ -16,17 +15,16 @@ As an Android developer, having a callback URL means that you need to have a RES
 - [Creating M-Pesa Interface](#step-7---creating-m-pesa-interface)
 - [Firebase Messaging Service](#step-8---firebase-messaging-service)
 - [MainActivity](#step-9---write-mainactivity-code)
-- [Demo](#demo)
+- [App Demo](#app-demo)
 - [Conclusion](#conclusion)
 - [References](#references)
 
 ### Prerequisites
-To complete this tutorial, you must have the following software installed on your computer: 
-- [Android Studio](https://developer.android.com/studio/index.html).
+To complete this tutorial, you must have:
+- [Android Studio](https://developer.android.com/studio/index.html) installed on your computer.
 - Solid understanding of how to create and run Android apps.
-- The [Kotlin](https://kotlinlang.org/) programming language's fundamentals.
-- Basic knowledge of Kotlin Coroutines.
-- Understanding of Cloud Functions: In this post, [Creating A Serverless Function](https://www.section.io/engineering-education/serverless-api-firebase/), you may learn how to develop a serverless function. 
+- Basic knowledge of [Kotlin](https://kotlinlang.org/) and Coroutines.
+- Understanding of Cloud Functions. You can learn how to develop a serverless function in this tutorial [Creating A Serverless Function](https://www.section.io/engineering-education/serverless-api-firebase/).
 
 ### Daraja API Callback URL
 A callback is an asynchronous API request that comes from the API server and is sent to the client in response to one of the client's previous requests. When using Daraja API, Safaricom requires you to pass a URL that they will return information of the processed transactions from your App.
@@ -34,15 +32,16 @@ A callback is an asynchronous API request that comes from the API server and is 
 ### Step 1 - Create a project on Firebase Console
 First, create a project on Firebase and link it to your Android app. After a successful linking, make sure your project is in the `Blaze` Plan so that we can use Cloud Functions.
 
-[!Change To Blaze](section-engineering/creating-a-callback-url-for-safaricom-daraja-api-with-firebase-cloud-functions-in-android/changeToBlaze.png)
+![Change To Blaze](section-engineering/creating-a-callback-url-for-safaricom-daraja-api-with-firebase-cloud-functions-in-android/changeToBlaze.png)
 
 ### Step 2 - Create a Project on Android Studio
 Create an empty Android Project
 
-[!New Project](section-engineering/creating-a-callback-url-for-safaricom-daraja-api-with-firebase-cloud-functions-in-android/create_android_proj.png)
+![New Project](section-engineering/creating-a-callback-url-for-safaricom-daraja-api-with-firebase-cloud-functions-in-android/create_android_proj.png)
 
-Add all the necessary dependencies.
-```Gradle
+Add all the necessary dependencies:
+
+```gradle
     // Daraja API Library
     implementation 'com.androidstudy:daraja:1.0.2'
 
@@ -65,26 +64,26 @@ First, we'll start by creating a Firebase function, if you don't know how to cre
 
 Let's quickly create a Cloud Function that we will use.
 
-Once your project is ready and you have added all the necessary dependencies, open the terminal in your android studio and key in the following commands:
+Once your project is ready and you have added all the necessary dependencies, open the terminal in your Android Studio and key in the following commands:
 
-1. `npm install -g firebase-tools` - to install Firebase
-2. `firebase login` - Login to your Firebase Function
-3. `firebase init functions` - to initialize your project
-4. Choose, 'Use an Existing project'
-5. Choose the project that you want to link the functions, for this tutorial I'll choose 'LNMCallback'
-6. For language, choose 'Javascript'
-7. For ESLint, just choose 'N'
-8. To install dependencies with npm? - Choose 'Y'
+1. `npm install -g firebase-tools` - to install Firebase.
+2. `firebase login` - Login to your Firebase Function.
+3. `firebase init functions` - to initialize your project.
+4. Choose, `Use an Existing project`.
+5. Choose the project that you want to link the functions, for this tutorial I'll choose `LNMCallback`.
+6. For language, choose `Javascript`
+7. For ESLint, just choose `N`
+8. To install dependencies with npm? - Choose `Y`
 
-Once you see Firebase initialization complete! we are ready to go to the next step. We need to install `express body-parser` which is a middleware, for us to be able to read the “body” of an incoming JSON object.
+Once you see Firebase initialization complete! We're ready to proceed to the next step. We need to install `express body-parser` which is a middleware, for us to be able to read the `body` of an incoming JSON object.
 
-In your Android Studio, Switch to project View and open the `functions` folder in the terminal and paste the following command.
+In your Android Studio, switch to project-view and open the `functions` folder in the terminal and paste the following command:
 
 `npm install express body-parser -S`
 
 Once you've installed the body-parser, you're ready to go. In 'index.js,' we need to write the Cloud Function code, erase everything and paste the following code:
 
-```Javascript
+```javascript
 let functions = require('firebase-functions');
 let admin = require('firebase-admin');
 
@@ -96,7 +95,6 @@ const app = express();
 app.use(body_parser.json());
 app.disable('x-powered-by');
 
-
 app.post('/CallbackUrl', (request, result) => {
     let response = { "ResultCode": 0, "ResultDesc": "Success" }
 
@@ -105,7 +103,7 @@ app.post('/CallbackUrl', (request, result) => {
     let requestBody = request.body;
     let myPayload = JSON.stringify(requestBody)
 
-    // Logs successfull function calls
+    // Logs successful function calls
     console.log(myPayload)
 
     let topicId =  body.Body.stkCallback.CheckoutRequestID
@@ -128,32 +126,32 @@ exports.api = functions.https.onRequest(app);
 ```
 
 It's time to deploy the function to Firebase after writing the code.
-To deploy, use the instructions below.
 
-- 'firebase deploy --only functions'
+Use `firebase deploy --only functions` to deploy the function.
 
 Once the deployment is complete, you should see something like this: 
 
-[!Deployed](section-engineering/creating-a-callback-url-for-safaricom-daraja-api-with-firebase-cloud-functions-in-android/deployed.png)
+![Deployed](section-engineering/creating-a-callback-url-for-safaricom-daraja-api-with-firebase-cloud-functions-in-android/deployed.png)
 
 When you open your Firebase Console, you will be able to see the deployed function.
 
 ### Step 4 - Creating an App in the Safaricom Developers Portal
-In this step, you'll link your app with Safaricom Daraja API - Lipa Na Mpesa
+In this step, we'll link our app with Safaricom Daraja API - Lipa Na Mpesa.
 
-Go to [Safaricom developer portal](https://developer.safaricom.co.ke/) and log in. If you don't have an account, create one.
-Once ready, in the menu bar click on My Apps and choose, Create a new app and make sure you have ticked "Lipa na M-Pesa Sandbox".
+Go to [Safaricom developer portal](https://developer.safaricom.co.ke/) and log in. If you don't have an account yet, create one.
 
-[!New App](section-engineering/creating-a-callback-url-for-safaricom-daraja-api-with-firebase-cloud-functions-in-android/create_app.png)
+Once ready, in the menu bar click on *My Apps* and choose, *Create a new app* and make sure you have ticked **Lipa na M-Pesa Sandbox**.
 
-> Take note of the `CONSUMER_KEY` and the `CONSUMER_SECRET` because we will use them in the Android App.
+![New App](section-engineering/creating-a-callback-url-for-safaricom-daraja-api-with-firebase-cloud-functions-in-android/create_app.png)
 
-[!Mpesa App](section-engineering/creating-a-callback-url-for-safaricom-daraja-api-with-firebase-cloud-functions-in-android/mpesa_app.png)
+> Take note of the `CONSUMER_KEY` and the `CONSUMER_SECRET` because we will use them later in the App.
+
+![Mpesa App](section-engineering/creating-a-callback-url-for-safaricom-daraja-api-with-firebase-cloud-functions-in-android/mpesa_app.png)
 
 ### Step 5 - Designing the layout
 In this step, we will create a simple XML layout that will contain an EditText for inputting a phone number and a button to initiate the transaction.
 
-```Xml
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -203,7 +201,7 @@ In this step, we will create a simple XML layout that will contain an EditText f
 ### Step 6 - Creating Data Class
 In this step, we will create a data class that will map our response from the API. 
 
-```Kotlin
+```kotlin
 data class Transaction(
     @SerializedName("Body")
     val body: Body
@@ -243,7 +241,7 @@ data class Transaction(
 ### Step 7 - Creating M-Pesa Interface
 In this step, we'll define an interface with two methods. The first method will be called when a transaction is successful, while the second one will be called when a transaction fails due to different reasons such as insufficient balance.
 
-```Kotlin
+```kotlin
 interface MpesaListener {
     fun sendingSuccessful(transactionAmount: String, phoneNumber: String, transactionDate: String, MPesaReceiptNo: String)
 
@@ -253,7 +251,8 @@ interface MpesaListener {
 
 ### Step 8 - Firebase Messaging Service
 In this step, we will create a Firebase Messaging Service class that will do most of the app logic of receiving the response of the API.
-```Kotlin
+
+```kotlin
 class MessagingService : FirebaseMessagingService() {
 
     override fun onNewToken(p0: String) {
@@ -298,6 +297,7 @@ class MessagingService : FirebaseMessagingService() {
                         amountTransacted = transaction.value
                     }
                 }
+
                 MainActivity.mpesaListener.sendingSuccessful(
                     amountTransacted,
                     phoneNumber,
@@ -318,9 +318,9 @@ class MessagingService : FirebaseMessagingService() {
 }
 ```
 
-In your manifest, make sure you have included the service that we have created, go to your manifest and paste the following lines of code.
+In your manifest file, make sure you have included the service that we have created, go to your manifest and paste the following lines of code:
 
-```
+```xml
 <application>
 ...
         <service
@@ -335,104 +335,101 @@ In your manifest, make sure you have included the service that we have created, 
 ```
 
 ### Step 9 - Write MainActivity Code
-In this step, we will write code that will make use of the [android-mpesa-api](https://github.com/jumaallan/android-mpesa-api) to integrate payment into our app.
+In this step, we will write code that makes use of the [android-mpesa-api](https://github.com/jumaallan/android-mpesa-api) to integrate payment into our app.
 
 #### Initializing the Daraja API
-Here, replace the SECRET_KEY and the CONSUMER_SECRET_KEY with the ones that you were given when you created an App in the Safaricom Developers portal.
+Here, replace the `SECRET_KEY` and the `CONSUMER_SECRET_KEY` with the ones that you were given when you created an App in the Safaricom developers portal.
 
-```Kotlin
-        daraja = Daraja.with("CONSUME_KEY", "CONSUMER_SECRET_KEY", Env.SANDBOX,
-            object : DarajaListener<AccessToken> {
-                override fun onResult(result: AccessToken) {
-                    Toast.makeText(applicationContext, result.access_token, Toast.LENGTH_SHORT).show()
-                }
+```kotlin
+daraja = Daraja.with("CONSUME_KEY", "CONSUMER_SECRET_KEY", Env.SANDBOX,
+    object : DarajaListener<AccessToken> {
+        override fun onResult(result: AccessToken) {
+            Toast.makeText(applicationContext, result.access_token, Toast.LENGTH_SHORT).show()
+        }
 
-                override fun onError(error: String?) {
-                    Toast.makeText(applicationContext, error.toString(), Toast.LENGTH_SHORT).show()
-                }
+        override fun onError(error: String?) {
+            Toast.makeText(applicationContext, error.toString(), Toast.LENGTH_SHORT).show()
+        }
 
-            })
+    })
 ```
 
 When a user clicks the button, we need the following code to be executed:
-```Kotlin
-        findViewById<Button>(R.id.button).setOnClickListener {
-            val phoneNumber = phoneNum.text.toString()
-            val lnmExpress = LNMExpress(
-                "174379",
-                "bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919",
-                TransactionType.CustomerPayBillOnline,
-                "1",
-                phoneNumber,
-                "174379",
-                phoneNumber,
-                "https://us-central1-lnmcallback-c79b4.cloudfunctions.net/api/CallbackUrl",
-                "001ABC",
-                "Goods Payment"
-            )
-            ....
+
+```kotlin
+findViewById<Button>(R.id.button).setOnClickListener {
+    val phoneNumber = phoneNum.text.toString()
+    val lnmExpress = LNMExpress(
+        "174379",
+        "bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919",
+        TransactionType.CustomerPayBillOnline,
+        "1",
+        phoneNumber,
+        "174379",
+        phoneNumber,
+        "https://us-central1-lnmcallback-c79b4.cloudfunctions.net/api/CallbackUrl",
+        "001ABC",
+        "Goods Payment"
+    )
+    ....
 ```
 
-Here, we pass the content of the phone number EditText and also use 1 as the default amount for the transaction.
+Here, we pass the phone number and also use 1 as the default amount for the transaction.
 
-> Now it is high time to go to your Firebase Console in the Functions section and copy the URL for our API that was generated.
+> Go to your Firebase console in the Functions section and copy the URL for our API that was generated.
 
-[!Function](section-engineering/creating-a-callback-url-for-safaricom-daraja-api-with-firebase-cloud-functions-in-android/functions_console.png)
+![Function](section-engineering/creating-a-callback-url-for-safaricom-daraja-api-with-firebase-cloud-functions-in-android/functions_console.png)
 
-In this case, mine is :
+In this case, mine is:
 
-`https://us-central1-lnmcallback-c79b4.cloudfunctions.net/api`
+ `https://us-central1-lnmcallback-c79b4.cloudfunctions.net/api`
 
-Append the word `/CallbackUrl` to the end of the URL, so that the end URL will be: 
+Append the word `/CallbackUrl` to the end of the URL, so that the end URL looks like this:
 
 `https://us-central1-lnmcallback-c79b4.cloudfunctions.net/api/CallbackUrl`
 
-This will be our callback URL so that Safaricom can send us the Response to Transactions that have been initiated. Go and replace where we had written 'MY_CALLBACK_URL' with this URL.
+This will be our callback URL so that Safaricom can send us the response to transactions that have been initiated. Go and replace where we had written `MY_CALLBACK_URL` with the new URL.
 
 ### Attaching FirebaseMessaging service
-In this step,  inside the `onResult` method, we instantiate the `FirebaseMessaging` and subscribe to topics with the `CheckoutRequestID` of the transaction that has been initiated.
+In this step, inside the `onResult` method, we instantiate the `FirebaseMessaging` and subscribe to topics with the `CheckoutRequestID` of the transaction that has been initiated.
 
-```Kotlin
-            daraja.requestMPESAExpress(lnmExpress, object : DarajaListener<LNMResult> {
-                override fun onResult(result: LNMResult) {
-                    FirebaseMessaging.getInstance().subscribeToTopic(result.CheckoutRequestID.toString())
-                }
+```kotlin
+daraja.requestMPESAExpress(lnmExpress, object : DarajaListener<LNMResult> {
+    override fun onResult(result: LNMResult) {
+        FirebaseMessaging.getInstance().subscribeToTopic(result.CheckoutRequestID.toString())
+    }
 
-                override fun onError(error: String?) {
-                    Toast.makeText(applicationContext, "An Error Occurred: $error", Toast.LENGTH_SHORT).show()
-                }
-            })
+    override fun onError(error: String?) {
+        Toast.makeText(applicationContext, "An Error Occurred: $error", Toast.LENGTH_SHORT).show()
+    }
+})
 ```
 
 > Make sure your MainActivity implements the interface that we have created and overrides the methods that we have created in it. 
 
-Inside the two methods that you have overriden, in `sendSuccessful`, because we will display the results on the main thread, we'll define a `CoroutineScope` and add a `Toast`:
-```Kotlin
-    override fun sendingSuccessful(transactionAmount: String, phoneNumber: String, transactionDate: String, MPesaReceiptNo: String) {
-        CoroutineScope(Dispatchers.Main).launch {
-            Toast.makeText(
-                applicationContext,
-                "Transaction Successful\nM-Pesa Receipt No: $MPesaReceiptNo\nTransaction Date: $transactionDate\nTransacting Phone Number: $phoneNumber\nAmount Transacted: $transactionAmount", Toast.LENGTH_LONG).show()
+Inside the two methods that we have overridden, we'll define a `CoroutineScope` and add a `Toast` to indicate the success or failure of the transaction.
 
-        }
+```kotlin
+override fun sendingSuccessful(transactionAmount: String, phoneNumber: String, transactionDate: String, MPesaReceiptNo: String) {
+    CoroutineScope(Dispatchers.Main).launch {
+        Toast.makeText(
+            applicationContext,
+            "Transaction Successful\nM-Pesa Receipt No: $MPesaReceiptNo\nTransaction Date: $transactionDate\nTransacting Phone Number: $phoneNumber\nAmount Transacted: $transactionAmount", Toast.LENGTH_LONG).show()
     }
+}
+
+override fun sendingFailed(cause: String) {
+    CoroutineScope(Dispatchers.Main).launch {
+        Toast.makeText(
+            applicationContext, "Transaction Failed\nReason: $cause", Toast.LENGTH_LONG
+        ).show()
+    }
+}
 ```
 
-Also, in the `sendFailed` method inside a `CoroutineScope`, we will display a  toast when a transaction fails and display the reason. i.e., insufficient balance.
+#### The whole implementation of the MainActivity
 
-```Kotlin
-    override fun sendingFailed(cause: String) {
-        CoroutineScope(Dispatchers.Main).launch {
-            Toast.makeText(
-                applicationContext, "Transaction Failed\nReason: $cause", Toast.LENGTH_LONG
-            ).show()
-        }
-    }
-```
-
-#### The Whole Implementation of the MainActivity
-
-```Kotlin
+```kotlin
 class MainActivity : AppCompatActivity(), MpesaListener {
 
     companion object {
@@ -506,17 +503,18 @@ class MainActivity : AppCompatActivity(), MpesaListener {
 }
 ```
 
-### Demo
 #### App Demo
-[!Send Success](section-engineering/creating-a-callback-url-for-safaricom-daraja-api-with-firebase-cloud-functions-in-android/send_success.png)
+Upon running the app, it should look like this and you should be able to initiate a transaction.:
 
-[!Send Failed](section-engineering/creating-a-callback-url-for-safaricom-daraja-api-with-firebase-cloud-functions-in-android/send_failed.png)
+![Send Success](section-engineering/creating-a-callback-url-for-safaricom-daraja-api-with-firebase-cloud-functions-in-android/send_success.png)
+
+![Send Failed](section-engineering/creating-a-callback-url-for-safaricom-daraja-api-with-firebase-cloud-functions-in-android/send_failed.png)
 
 #### Firebase Functions Log
-[!Functions Logs](section-engineering/creating-a-callback-url-for-safaricom-daraja-api-with-firebase-cloud-functions-in-android/successful_transaction.png)
+![Functions Logs](section-engineering/creating-a-callback-url-for-safaricom-daraja-api-with-firebase-cloud-functions-in-android/successful_transaction.png)
 
 ### Conclusion
-In this tutorial, we have learned how to create a Callback Url, we have also seen how to create an App in the Safaricom Developers Portal, and finally, we have used the URL that we created to receive callbacks from transactions. It was a long tutorial and I hope you have learned a lot. For a full implementation of the tutorial, check on this Github Repository [LNMCallback](https:github.com/osirevaline/LNMCallback.git) 
+In this tutorial, we have learned how to create a Callback URL, we have also seen how to create an App in the Safaricom developers Portal, and finally, we have used the URL that we created to receive callbacks from transactions. It was a long tutorial and I hope you have learned a lot. For a full implementation of the tutorial, check on this [Github Repository](https:github.com/osirevaline/LNMCallback.git).
 
 ### References
 - [Safaricom Daraja Documentation](https://developer.safaricom.co.ke/)
