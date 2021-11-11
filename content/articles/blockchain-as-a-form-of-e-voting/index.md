@@ -6,7 +6,7 @@ url: /blockchain-as-a-form-of-e-voting/
 title: Blockchain as a form of E-voting
 description: The objective of this tutorial is to help the reader learn how blockchain technology is used in electronic voting, its advantages, and problems, and end by talking a little about Moscow's experience using Blockchain in real-life voting.
 author: samuel-santos
-date: 2021-11-10T00:00:00-13:00
+date: 2021-11-11T00:00:00-13:00
 topics: [Blockchain]
 excerpt_separator: <!--more-->
 images:
@@ -100,7 +100,7 @@ One of the problems with e-voting is that it is almost impossible to satisfy all
 
 Blockchain fraud is *theoretically* impossible when implemented correctly. The votes would be transferred as assets in the Blockchain, and changing or deleting votes would be [unfeasible](https://www.mdpi.com/1424-8220/21/17/5874). The voting process would not depend on an organization, institution, or government, that is, central authorities. 
 
-In fact, this is the principle behind DAOs ([Decentralized Autonomous Organizations](https://en.wikipedia.org/wiki/Decentralized_autonomous_organization)) -- organizations driven by a common goal whose rules, operations, and decisions are stored in a Blockchain. These organizations work autonomously and as everything is done through the Blockchain, the rules are applied equally to all members (nodes) and everything is transparent, making corruption difficult. This structure allows DAOs to be self-organized and non-hierarchical. [One of the most common uses of DAOs, thanks to their characteristics, is for voting and democratic decision-making, as they allow for open, transparent and decentralized participation.](https://linda.mirror.xyz/Vh8K4leCGEO06_qSGx-vS5lvgUqhqkCz9ut81WwCP2o) 
+In fact, this is the principle behind [Decentralized Autonomous Organizations](https://en.wikipedia.org/wiki/Decentralized_autonomous_organization) (DAOs) where organizations are driven by a common goal whose rules, operations, and decisions are stored in a Blockchain. These organizations work autonomously and as everything is done through the Blockchain, the rules are applied equally to all members (nodes) and everything is transparent, making corruption difficult. This structure allows DAOs to be self-organized and non-hierarchical. [One of the most common uses of DAOs, thanks to their characteristics, is for voting and democratic decision-making, as they allow for open, transparent and decentralized participation.](https://linda.mirror.xyz/Vh8K4leCGEO06_qSGx-vS5lvgUqhqkCz9ut81WwCP2o) 
 
 Votes would be publicly stored on the Blockchain and distributed to all network nodes rather than stored on centralized servers. Thus, everyone could check the votes and follow the progression of the voting, whether voters or candidates, and they (probably) won't know who voted for whom because users do not use usernames or anything like that.
 
