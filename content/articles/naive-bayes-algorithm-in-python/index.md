@@ -136,3 +136,6 @@ From the above confusion matrix, we notice that out of 100, the model could pred
 In this tutorial, we have learned the Naive Bayes classifier's theory. First, we showed how to derive a mathematical formula of this classifier from the basic conditional probability. Later, we showed how to implement the  Naive Bayes classifier in R and evaluated its performance using a confusion matrix. From the confusion matrix, we saw its ability to classify the data by giving a relatively incredible score. Since we now understand this classifier better, we can widen our knowledge by challenging ourselves with more implementation tasks to handle problems such as email classification, transaction classification, and health data to classify tumours and other diseases. Here we reach the end of this session's learning.
 
 Happy Learning.
+
+---
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
