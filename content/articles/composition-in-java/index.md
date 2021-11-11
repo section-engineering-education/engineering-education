@@ -216,7 +216,7 @@ public class College {
 ```
 
 ### Conclusion
-This article taught the readers how composition could be pretty helpful when coding. By utilizing code re-use,  one can have a clean and organized code with maximum characters. Furthermore, the composition helps locate a bug in your code since the neat arrangement enables straightforward code interpretation. Besides, these are the critical concepts brought out in the tutorial;
+This article taught the readers how composition could be pretty helpful when coding. By utilizing code re-use,  one can have a clean and organized code with maximum characters. Furthermore, composition helps locate a bug in your code since the neat arrangement enables straightforward code interpretation. Besides, these are the critical concepts brought out in the tutorial;
 - Introduction to composition in Java.
 - Features available in composition.
 - Implementation of Composition using an example.
