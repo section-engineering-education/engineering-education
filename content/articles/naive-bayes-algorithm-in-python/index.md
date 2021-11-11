@@ -1,8 +1,23 @@
-### Steb by Step Implementation of Naive Bayes Algorithm in R
+---
+layout: engineering-education
+status: publish
+published: true
+url: /naive-bayes-algorithm-in-python/
+title: A Step by Step Guide to Implement Naive Bayes Algorithm in R
+description: This tutorial will discuss the Naive Bayes algorithm, the real-world application of the Naive Bayes algorithm, implement and evaluate its performance using a confusion matrix in R.
+author: lawrence-mbici
+date: 2021-11-11T00:00:00-21:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/naive-bayes-algorithm-in-python/hero.png 
+    alt: A Step by Step Guide to Implement Naive Bayes Algorithm in R
+---
 Naive Bayes is a machine learning algorithm based on the Bayes Theorem, and it's used for classification problems. The naive Bayes classifier is very effective and can be used with highly complex problems despite its simplicity. Due to its ability to handle highly complex tasks, the Naive Bayes has gained popularity in machine learning for a long time. Some Naive Bayes applications include; sentiment analysis, spam filtering, text classification, and many more.
+<!--more-->
+This tutorial will discuss the Naive Bayes algorithm and its principles to deliver a solid and clear understanding of this tool. Later, we will discuss the real-world application of the Naive Bayes algorithm and finally implement and evaluate its performance using a confusion matrix in R.
 
-This tutorial will discuss the Naive Bayes algorithm and its principles to deliver a solid and clear understanding of this tool. Later, we shall discuss the real-world application of the Naive Bayes algorithm and finally implement and evaluate its performance using a confusion matrix in R.
 ### Prerequisite
 To follow along with this material comfortably, you're required to have:
 - [R](https://cran.r-project.org/) installed on your computer
@@ -116,6 +131,7 @@ conf_matrx
 ![confusion matrix](/engineering-education/naive-bayes-algorithm-in-python/confusion-matrix.png)
 
 From the above confusion matrix, we notice that out of 100, the model could predict 86% of the data correctly with only 14% incorrect predictions. From this, it's clear that our model has an accuracy of 84%. The accuracy of 84% is a good score, and thus we can conclude that our classifier was able to classify our data accurately.
+
 ### Conclusion
 In this tutorial, we have learned the Naive Bayes classifier's theory. First, we showed how to derive a mathematical formula of this classifier from the basic conditional probability. Later, we showed how to implement the  Naive Bayes classifier in R and evaluated its performance using a confusion matrix. From the confusion matrix, we saw its ability to classify the data by giving a relatively incredible score. Since we now understand this classifier better, we can widen our knowledge by challenging ourselves with more implementation tasks to handle problems such as email classification, transaction classification, and health data to classify tumours and other diseases. Here we reach the end of this session's learning.
 
