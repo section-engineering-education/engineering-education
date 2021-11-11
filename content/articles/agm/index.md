@@ -217,7 +217,7 @@ Next, copy and paste the following snippets into your maps template;
 </agm-map>
 
 ```
-The above template has a header, in this case, ' Map Of Nairobi, Kenya`. We also have the `<agm-map></agm-map>` element, which we have edited to meet our requirements. For example, we have bound the coordinates, zooming conditions, colours and many more features which help us customize our map.
+The above template has a header, in this case, ' Map Of Nairobi, Kenya'. We also have the `<agm-map></agm-map>` element, which we have edited to meet our requirements. For example, we have bound the coordinates, zooming conditions, colours and many more features which help us customize our map.
 
 > It's important to note that all the bindings above have been defined on the script which we will see in a minute.
 
