@@ -142,6 +142,7 @@ public class Vehicle {
 }
 
 ```
+
 As you can see from the above class Vehicle, we have treated the child class Engine as an attribute though it is not. So we have initialized it, created a constructor for it, and created a getter and setter for it, just like any other attribute. Let us now create the Main class where we will be running and implementing the code. 
 
 ```java
@@ -158,6 +159,7 @@ public class Main {
     }
 }
 ```
+
 The Main class java enables you to run all the code in the package specified. You first create an object, the vehicle; for our case, we have a **Benz**. We also have created an Engine. A preview of the full code as in the Intellij is as shown below:
 
 ![Main Page](/engineering-education/composition-in-java/Main.png)
@@ -199,7 +201,7 @@ public class College {
 ```
 
 ### Conclusion
-This artice taught th readers how composition can be pretty helpful when coding. By utilizing code, re-use you can have a clean and organized code with maximum use of characters. The composition also helps locate a bug on your code since the neat arrangement enables straightforward interpretation of code. Besides, these are the key concept brought out in the tutorial:
+This artice taught the readers how composition can be pretty helpful when coding. By utilizing code re-use,  one can have a clean and organized code with maximum use of characters. The composition also helps locate a bug on your code since the neat arrangement enables straightforward interpretation of code. Besides, these are the key concept brought out in the tutorial:
 1. Introduction to composition in Java.
 2. Features available in composition.
 3. Implementation of Composition using an example.
