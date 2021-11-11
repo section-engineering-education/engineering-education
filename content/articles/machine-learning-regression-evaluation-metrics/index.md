@@ -2,7 +2,7 @@
 In machine learning, a regression model is a type of model that predicts a numeric value. These values can be those of price, fees, score, etc. We need to measure the performance of machine learning models in order to determine their reliability. After model fitting, we assess the performance of the model by comparing the predictions the model generates to actual data.
 
 ### Introduction
-There are numerous regression evaluation metrics. All these metrics aim at showing us the prediction error of our model. An error is defined as the difference between the predicted value and the actual value. The lower the error, the better the performance of the model, and the higher the error, the worse the performance of the model.
+There are numerous regression evaluation metrics. All these metrics aim at showing us the prediction error of our model. An error is defined as the difference between the value the model predicts and the actual value. The lower the error, the better the performance of the model, and the higher the error, the worse the performance of the model.
 
 In this tutorial, we are going to discuss various evaluation metrics used in regression models. We will also discuss the advantages and disadvantages of these regression model metrics. Finally, we will discuss what a good regression model is.
 
@@ -79,7 +79,7 @@ We calculate *RMSE* by following the steps below:
 1. Calculate the error for each data point.
 2. Calculate the squared value of the residuals.
 3. Calculate the average of the squared residuals.
-4. Obtain the square root of the result.
+4. Obtain the square root of the answer in step 3.
 
 **Advantages**
 - When it comes to outliers, *RMSE* is more sensitive than *MAE*.
@@ -88,7 +88,7 @@ We calculate *RMSE* by following the steps below:
 **Disadvantages**
 - When compared to *MAE* it is less robust to outliers.
 ### R Squared (R²)
-This metric is used to describe the goodness of fit of linear regression. It is also known as the coefficient of determination. Simply put R² is used to show : 
+This metric is used to describe the goodness of fit of linear regression. We also refer to it as the coefficient of determination. Simply put R² is used to show : 
 
 "How the change in the output (y) is a result of the change in the input (x).
 
@@ -124,13 +124,13 @@ Adjusted R-squared will penalize us for adding independent variables that do not
 - None. This is because it solves the problem of *R²*. The problem is that in R² every time a new term is introduced R² increases. This is regardless of whether the new term is relevant to the model or not.
 
 ### Root Mean Squared Log Error.
-In Root Mean Squared Squared Log Error, a higher penalty is administered when the predicted value is lower than the actual value. When the value the model predicts is higher than the actual value, a lower penalty is administered.
+In Root Mean Squared Squared Log Error, a higher penalty is administered when the value the model predicts is lower than the actual value. When the value the model predicts is higher than the actual value, *RMSLE* administers a lower penalty.
 
 We use the formula below to calculate the *root mean squared error*:
 
 ![RMSLE](/engineering-education/machine-learning-regression-evaluation-metrics/rmsle.png)
 
-In the *root mean squared error* we previously discussed, the presence of an outlier will make the error shoot to a very higher value. In *RMSLE*, the effect of the outlier is significantly lower due to the Introduction of log in the formula.
+In the *root mean squared error* we previously discussed, if an outlier is present, the error will shoot to a very high value. In *RMSLE*, the effect of the outlier is significantly lower due to the Introduction of log in the formula.
 
 **Advantages**
 - Useful when we want the output to vary on large scale.
