@@ -1,15 +1,30 @@
-### Creating a screen recorder using python and pycharm
-In this tutorial, we will learn how to use the python packages to create a screen recorder. We will then go futher to integrate a webcam recorder into our software. A person using Windows, macOS, or Linux can follow through.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /create-a-screen-recorder-using-python-and-pycharm/
+title: Creating a Screen Recorder Using Python and Pycharm
+description: In this tutorial, we will learn how to use the python packages to create a screen recorder.
+author: simon-kiruri
+date: 2021-11-05T00:00:00-02:16
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+ - url: /engineering-education/create-a-screen-recorder-using-python-and-pycharm/hero.jpg
+   alt: Screen Recorder with Python
+---
+
+In this tutorial, we will learn how to use the python packages to create a screen recorder. We will then go futher to integrate a webcam recorder into our software. A person using Windows, macOS, or Linux can follow through.
+ <!--more-->
 ### Introduction
-A screen recorder is software that captures the contents and activities taking place on a computer screen. This software is vital during activities such as when creating tutorials, recording screen content, for future reference, etc.
+A screen recorder is software that captures the contents and activities taking place on a computer screen. This software is vital during activities such as creating  video tutorials, recording screen content, for future reference, etc.
 
 When recording tutorials, you might want to use the webcam so that your audience can see you, this creates a memorable and interactive session. This leads to screen recorders having webcam recording capability. 
 
-When it comes to price, some of this software is not pocket-friendly. Others miss some specific features we want to use.
+When it comes to price, some of this software is not pocket-friendly. Others miss some specific features we would want to use.
 
 **Python** as a programming language, has packages that wil help us create our own screen recorder. This helps us add the features we intend to use and discard the ones we do not require. 
-
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
@@ -38,7 +53,8 @@ We will have to prepare our working space in pycharm. Open the pycharm app. Once
 
 We now have to install the packages we discussed above into pycharm. Follow the following steps to install them.
 
-To install DateTime key in the following command in the terminal.
+To install DateTime key in the following command in the terminal
+
 ```bash
 pip install DateTime
 ```
@@ -49,22 +65,31 @@ Wait for a few seconds for datetime to be successifully installed.
 We will repeat the same procedure for the rest of the packages. Only the commands will change. Use the following commands for the respective package:
 
 **numpy**
+
 ```bash
  pip install numpy
  ```
+ 
  **win32api**
+ 
  ```bash
  pip install pywin32
  ```
+ 
  **cv2**
+ 
  ```bash
  pip install opencv-python
  ```
+ 
  **Python image library**
+ 
  ```bash
  pip install Pillow
  ```
-We now have our workspace ready, lets start coding.
+ 
+We now have our workspace ready, lets start coding:
+
 ```python
  import datetime
 from PIL import ImageGrab
@@ -105,4 +130,7 @@ Here is a screenshot of the output the code will produce.
 ### Conclusion
 We have built a screen recorder and integrated it with a webcam recorder. Now run your software and enjoy your new screen recorder.
 
-! Happy coding.
+Happy coding!
+
+---
+Peer Review Contributions by: [Adrian Murage](/engineering-education/authors/adrian-murage/)
