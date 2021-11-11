@@ -15,69 +15,49 @@ images:
     alt: Building Chat Application with Django Channels
 ---
 
+This tutorial will build a fully functional chat application by implementing the chat server using Django Channel. This Channel was implemented on the asynchronous server that is used by Django. And this server was named Asynchronous Server Gateway Interface `ASGI`.
 
-This tutorial will build a fully functional chat application by implementing the chat server using Django Channel. Channel is created on the async-server that Django uses to implement application servers which is `ASGI`.
+ASGI is the server specification that the Channel was built upon. Like the `Web Server Gateway Interface` WSGI, this gives the opportunity of choosing server and framework of choice rather than just accepting the Channel server.
 
-ASGI is the server specification that the Channel was built upon. Like the `Web Server Gateway Interface` WSGI, this gives the opportunity of choosing servers and a framework of choice rather than just accepting the Channel server called `Daphne`.
-
-Channel allows the `HyperText Transfer Protocol` and other protocols that have long connections time. It can also be integrated with WebSockets, chatbots, and more.
-
-It also allows both the synchronous and asynchronous parts of Django's views through the Channels layers. This layer makes communication easier by dividing the application into different processes.
+Channel allows the `HyperText Transfer Protocol` and other protocols that have long connections time. The Channel layers divide the entire applications into processes and supports parts of Django views.
 
 ### Spinning up the project
 
-Let us get started on building the chat application. We have to spin up Django's server by making a fresh project from scratch. Navigate to your terminal and follow the processes below;
+Let us get started to build the chat application. Navigate to your terminal and follow the processes below;
 
-
-```bash
-$ cd Desktop
-$ mkdir newproject
-$ cd newproject 
-$ virtualenv venv
-$ cd venv
-$ source venv/Scripts/activate
-$ pip install django
-``` 
-
-Now that we have the latest Django version, we can prepare the project using the commands below;
-
+Note that Django must have be installed on your local machine.
 
 ```bash
-$ django-admin startproject mychatapp
-$ cd mychatapp
-$ code  .
-$ python manage.py runserver
+$ django-admin startproject djangochatapp
+$ cd djangochatapp
+$ code .
 ```
-
-Open the browser and route to `http://localhost:8080`, the Django's default project page will show up.
-
-Let install the channels dependency and make the requirements file.
-
+Let us install the channels dependency and make the requirements file.
 
 ```bash
-$ python -m pip install -U channels
-$ pip freeze > requirements.txt
+$ pip install channels
+$ pip freeze > req.txt
 ```
 Make sure that the Channel is added to the `INSTALLED_APP` in the `settings.py` file of your project folder.
 
-Channels is built on top of `ASGI`. Therefore, we must adjust the `asgi.py` file in the `mychatapp` with the codes below.
+Edit the `asgi.py` in `djangochatapp` folder with the codes below.
 
 ```python
 import os
 from channels.routing import ProtocolTypeRouter
 from django.core.asgi import get_asgi_application
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'mychatapp.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'djangochatapp.settings')
 application = ProtocolTypeRouter({
     "http": get_asgi_application()
 })
 ```
 
-Finally, the `ASGI` has to be pointing to your `asgi.py` file, and that is done in the `settings.py`;
+Finally, the `ASGI` server must point to `asgi.py` file. That will be done inside `settings.py` file;
 
-Note that this will replace the WSGIserver that came default with the Django project.
+Note: This will replace the WSGIserver that came default with the Django project.
 
 ```
-ASGI_APPLICATION = "myproject.asgi.application"
+ASGI_APPLICATION = "djangochatapp.asgi.application"
 ```
 
 The Channel server will take over the default Django's WSGI server and allow only the   `HTTP` protocol with this code.
@@ -88,9 +68,9 @@ Run the server with the command below and then open up the browser with the loca
 $ python manage.py run server
 ```
 
-![500 Internal Server Error](/engineering-education/building-chat-application-with-django-channels/server-error.png)
+[500 Internal Server Error](/engineering-education/building-chat-application-with-django-channels/server-error.png)
 
-### Creating the chat app
+### Creating the chat application
 
 It is a good practice to separate the codes for the chats in its stand-alone application. Following the Django way of creating an app;
 
