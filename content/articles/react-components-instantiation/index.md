@@ -37,6 +37,7 @@ ReactDOM  is important for rendering JSX elements and react components to the DO
 Lets now create a component class .To create our component class we will subclass `React.Component`,we will do this by using the following syntax `class V extends React.Component {}`.This is how  ES6  creates a stateful component.  
 
 We will now add the render function in our code:
+
 ```js
    class V extends React.Component {
    render() {}
@@ -54,6 +55,7 @@ Its a must for a render funcion to have a return statement. This return statemen
 ```
  
 The difference between HTML like  and Component instances in JSX elements is that To make a React component, you write a JSX element. Instead of naming your JSX element using tags like `<P></p>` `<h1></h1>` or `<div></div>` as shown below:
+
 ```js
   ReactDOM.render(
     <h1>Welcome to React World</h1>,
@@ -96,6 +98,7 @@ The new keyword Creates a blank, simple JavaScript item. Its syntax is `new cons
 
 #### Instantiating function component
 As shown in the code below  , React creates an instance of the function component using the `new` keyword:
+
 ```js
     function Drink(color, taste, temperature) {
     this.color = color;
