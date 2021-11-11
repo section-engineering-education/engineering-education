@@ -8,7 +8,7 @@ Elarian is a framework that helps you build a customer service strategy that is 
 4. Elarian account for dashboard access
 
 ### Creating an account
-
+Visit The link
 
 ### Setup the Node.js project 
 
