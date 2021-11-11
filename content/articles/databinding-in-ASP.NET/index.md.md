@@ -1,6 +1,6 @@
-# **Data Binding in ASP.NET**
+### **Databinding in ASP.NET**
 
-## **Introduction**
+### **Introduction**
 `ASP.NET` also provides the feature of `Databinding`. 
 Using Databinding in ASP.NET, you can attach any server controls to various expressions, collections, even methods, or properties.
 Database, static files or any other source selection is simplified with Databinding. 
