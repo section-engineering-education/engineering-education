@@ -6,7 +6,7 @@ url: /getting-started-with-agm/
 title: Getting Started With AGM
 description: This tutorial will show you how to integrate Google maps in your Angular application by building a sample project.
 author: bhanji-brilliant
-date: 2021-11-11T00:00:00-05:35
+date: 2021-11-11T00:00:00-13:35
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
