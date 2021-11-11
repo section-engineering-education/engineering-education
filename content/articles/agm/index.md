@@ -177,9 +177,10 @@ Now that we have set up our module, maps component and interface, let's proceed 
 ```html
 <app-maps></app-maps>
 ```
-The above template has been edited to include elements of the `<app-maps></app-maps>. This ensures that our maps template is displayed in our app components, which we're using as our main component.
+The above template has been edited to include elements of the `<app-maps></app-maps>`. This ensures that our maps template is displayed in our app components, which we're using as our main component.
 
 Next, copy and paste the following snippets into your maps template;
+
 ```html
 <!-- This is our HTML page where our map will be displayed  -->
 <h3> Map Of Nairobi, Kenya</h3>
