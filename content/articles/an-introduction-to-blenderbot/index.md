@@ -5,8 +5,8 @@ published: true
 url: /an-introduction-to-blenderbot/
 title: An Introduction to Blenderbot
 description: In this tutorial, we will create a chatbot using PyTorch and the Blenderbot model.
-author: lisbon-cheop
-date: 2021-10-28T00:00:00-18:00
+author: esther-awuor
+date: 2021-11-11T00:00:00-18:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
