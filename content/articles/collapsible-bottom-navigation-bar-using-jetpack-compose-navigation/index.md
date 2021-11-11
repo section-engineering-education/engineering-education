@@ -1,6 +1,22 @@
-[Navigation](https://developer.android.com/guide/navigation) is an essential part of any mobile app but it can be very challenging to get it right. Many challenges at hand are related to handling various aspects of the application lifecycle, deep linking, back stack handling, and state saving, just to name a few.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-create-a-collapsible-bottom-navigation-bar-using-jetpack-compose/
+title: How to Create a Collapsible Bottom Navigation Bar with Jetpack Compose in Android
+description: This tutorial provides a step-by-step guide on how to create a collapsible bottom navigation bar with Jetpack compose in Android.
+author: antony-gitau
+date: 2021-11-11T00:00:00-18:59
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
-This means you just focus on building features and spend less time creating UI you want to showcase in your android application.
+  - url: /engineering-education/how-to-create-a-collapsible-bottom-navigation-bar-using-jetpack-compose/hero.png
+    alt:  How to Create a Collapsible Bottom Navigation Bar with Jetpack Compose Hero Image
+---
+[Navigation](https://developer.android.com/guide/navigation) is an essential part of any mobile app but it can be challenging to get it right. Many challenges are related to handling various aspects of the application lifecycle, deep linking, back stack handling, and state saving, just to name a few.
+<!--more-->
+This means you just focus on building features and spend less time creating UI you want to showcase in your Android application.
 
 This guide will use [Jetpack Compose](/engineering-education/getting-started-with-jetpack-compose-in-android/) to create Android screens. We will create `collapsed Bottom Navigation` using the Jetpack Compose Navigation component.  
 
@@ -26,9 +42,9 @@ Jetpack Compose also makes Navigation between your application simple and easy. 
 Switching between Bottom Navigation items, and each item maintains its own state. This guide creates a basic collapsible Bottom Navigation to help you understand more about the Jetpack Compose Navigation.
 
 ### Creating a Jetpack Compose app
-First, head over to your Android Studio and create a new Android project. Android provides you with a Jetpack Compose boilerplate application. Since we are using Jetpack compose, we will select an `empty compose activity` as shown below:
+First, head over to your Android Studio and create a new Android project. Android provides you with a Jetpack Compose template app. Since we are using Jetpack compose, we will select an `empty compose activity` as shown below:
 
-![Empty compose activity](/engineering-education/collapsible-bottom-navigation-bar-using-jetpack-compose-navigation/empty-compose-activity.png)
+![Empty compose activity](/engineering-education/how-to-create-a-collapsible-bottom-navigation-bar-using-jetpack-compose/empty-compose-activity.png)
 
 Then add a Compose Navigation dependency in your `app.gradle` file:
 
@@ -47,11 +63,11 @@ We will create a class that will define these items and hold their properties. L
 
 In our root project package, create a new package and name it `navigationBar`. Inside the `navigationBar` package, create a new Kotlin class file, name it `NavigationBarItems`.
 
-![kotlin-class](/engineering-education/collapsible-bottom-navigation-bar-using-jetpack-compose-navigation/kotlin-class.png)
+![kotlin class](/engineering-education/how-to-create-a-collapsible-bottom-navigation-bar-using-jetpack-compose/kotlin-class.png)
 
-Create this class as a `sealed Class`:
+Create this as a `sealed Class`:
 
-![kotlin sealed class](/engineering-education/collapsible-bottom-navigation-bar-using-jetpack-compose-navigation/kotlin-sealed-class.png)
+![kotlin sealed class](/engineering-education/how-to-create-a-collapsible-bottom-navigation-bar-using-jetpack-compose/kotlin-sealed-class.png)
 
 The `NavigationBarItems` data class will contain three properties:
 
@@ -433,3 +449,6 @@ Jetpack Compose is a remarkable technology that is revolutionizing the way you w
 - [Bottom Navigation Bar in Android Applications](/engineering-education/bottom-navigation-bar-in-android/)
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Eric Gacoki](/engineering-education/authors/eric-gacoki/)
