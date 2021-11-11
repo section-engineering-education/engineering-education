@@ -29,7 +29,7 @@ This article will be covering the following:
 5. The applications of tiny machine learning.
 
 ### Prerequisites
-A basic understanding of machine learning and embedded systems would be helpful for any reader following along. For an introduction or refresher on some basic machine learning concepts check out this [article](/supervised-learning-algorithms/).
+A basic understanding of machine learning and embedded systems would be helpful for any reader following along. For an introduction or refresher on some basic machine learning concepts check out this [article](/engineering-education/supervised-learning-algorithms/).
 
 ### Useful terms
 **MCU** – [Microcontroller units](https://www.arrow.com/en/research-and-events/articles/engineering-basics-what-is-a-microcontroller) refers to integrated circuits used for specific applications such as in consumer electronics, telecommunications, and touch sensing solutions. They often control other parts of an electronic system and can interface with the physical world through built-in communication and peripherals.
@@ -84,9 +84,9 @@ Sustainability is being threatened by some technology trends. Machine learning m
 
 The evolution of Graphics Processing Units (GPUs) has made it possible to deal with much larger datasets. Cloud-based services (like Software-as-a-Service platforms) also emerged. However, the convergence of the increase in digital data produced with the advancement of GPUs and the emergence of cloud services meant that the size of algorithms could continue to grow.
 
-As they grew (exponentially) so did their computational requirements. For example, consider state-of-the-art language models like [BERT](https://arxiv.org/abs/1810.04805), [GPT-2]( https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf) and [GPT-3](/introducing-gpt3/#). Bert Large was released in 2018 with 355 million parameters to its name. GPT-2 followed in 2019 with 1.5 billion parameters. This year, GPT-3 blew them both out of the water with 175 billion parameters.
+As they grew (exponentially) so did their computational requirements. For example, consider state-of-the-art language models like [BERT](https://arxiv.org/abs/1810.04805), [GPT-2]( https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf) and [GPT-3](/engineering-education/introducing-gpt3/#). Bert Large was released in 2018 with 355 million parameters to its name. GPT-2 followed in 2019 with 1.5 billion parameters. This year, GPT-3 blew them both out of the water with 175 billion parameters.
 
-This demonstrates that the size of these language models is increasing by at least a factor of 10 annually. In fact, model sizes are already outpacing GPU memory. To read more on these models check out this [article](/introducing-gpt3/#).
+This demonstrates that the size of these language models is increasing by at least a factor of 10 annually. In fact, model sizes are already outpacing GPU memory. To read more on these models check out this [article](/engineering-education/introducing-gpt3/#).
 
 Having such large models means that one would need great amounts of power to run and maintain the models. Power usage has been increasing with a scary increase in the size of models. It is estimated that GPT-3 used about 3 GWh of electricity to train. You can imagine the size of carbon emission as a result of such power usage. The carbon footprint as a result is very large and will keep increasing if these trends continue.
 
@@ -121,7 +121,7 @@ Although, if it were a situation involving an intelligent end device with on-dev
 #### System Reliability and Data Security
 Transmission of raw data from end devices to the cloud over lossy and unpredictable wireless channels opens up the whole system to a couple of problems. First, wireless transmissions need a sizeable amount of energy. Two, these transmissions need a lot of bandwidth.
 
-This transmission approach is also prone to errors. Another concern is the possibility of cyberattacks. For example, a [man-in-the-middle attack](/man-in-the-middle-attack/). Information can be intercepted by a third party between the end device and the cloud.
+This transmission approach is also prone to errors. Another concern is the possibility of cyberattacks. For example, a [man-in-the-middle attack](/engineering-education/man-in-the-middle-attack/). Information can be intercepted by a third party between the end device and the cloud.
 
 Furthermore, having data in a single location (which is the cloud in this case) makes it less secure. In the event of a breach, all systems dependent on the warehoused data will be affected. The reliability of the system is affected.
 
@@ -144,7 +144,7 @@ Furthermore, mainstream data science frameworks need to be adapted to the requir
 
 ### Applications of Tiny Machine Learning
 #### Industry 4.0
-We can describe Industry 4.0 as an initiative that uses various systems to build automated, integrated, and scalable production systems of the future. Industry 4.0 is powered by technologies such as the Internet of Things. To learn more about Industry 4.0, check out this [article](/industry-4.0-and-cybersecurity/) I wrote a while back.
+We can describe Industry 4.0 as an initiative that uses various systems to build automated, integrated, and scalable production systems of the future. Industry 4.0 is powered by technologies such as the Internet of Things. To learn more about Industry 4.0, check out this [article](/engineering-education/industry-4.0-and-cybersecurity/) I wrote a while back.
 
 Under the banner of Industry 4.0, manufacturing and industrial sectors are benefitting from vast digitalization.
 

@@ -15,7 +15,7 @@ images:
 ---
 In this article, we will understand how validation of XML is done using XML Schema Definition (XSD). By the end of this article, you will get an overview of various techniques for validating XML elements and attributes using XML Schema Definition (XSD).
 <!--more-->
-You will also learn step by step how we validate XML. I highly recommend going through my [previous article](/validating-xml-using-dtd/), to understand the basics of XML and the importance of validation.
+You will also learn step by step how we validate XML. I highly recommend going through my [previous article](/engineering-education/validating-xml-using-dtd/), to understand the basics of XML and the importance of validation.
 ### Table of Contents
 - [Introduction](#introduction)
 - [What is XML Schema Definition?](#what-is-xml-schema-definition)
@@ -24,7 +24,7 @@ You will also learn step by step how we validate XML. I highly recommend going t
 - [Further Reading](#further-reading)
 
 ### Introduction
-In the [previous article](/validating-xml-using-dtd/), we understood various data serialization techniques like XML, the importance of validating XML, and also validated an XML schema using Document Type Definition (DTD).
+In the [previous article](/engineering-education/validating-xml-using-dtd/), we understood various data serialization techniques like XML, the importance of validating XML, and also validated an XML schema using Document Type Definition (DTD).
 
 [Document Type Definition (DTD)](https://en.wikipedia.org/wiki/Document_type_definition) helped us in validating the XML schema by parsing the structure of the XML document. But, we can't rely entirely on validation using DTD, since there are high chances of faulty data or data types mismatch in values.
 
