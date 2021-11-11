@@ -1,3 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /composition-in-java/
+title: Getting Started with Composition in Java
+description: In this tutorial, the reader will learn how to use Composition in Java, applications and benefits of the same.
+author: kim-k
+date: 2021-11-11T00:00:00-12:10
+topics: [Langugaes]
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/composition-in-java/hero.jpg
+    alt: Getting Started with Composition in Java Image
+---
+
 ### Composition in Java
 Like most OOP languages, Java does not allow multiple inheritances. This problem limits the programmer from applying code re-use with more objects with strong relationships or similar properties.
 
@@ -5,8 +21,7 @@ Like most OOP languages, Java does not allow multiple inheritances. This problem
  
  The examples above show that neither the class Engine nor the class Wheels can exist without the class Car. Likewise, the class Heart and Class stomach both depend on the class Body to exist.
  
- ### Introduction
- 
+
 As we have learned from the example above, there are two categories of classes. First, the `Parent class` is usually independent. For instance, the Class Car and the  Class Body are parent classes.
 
 However, there is the dependent class that cannot exist without the presence of the parent class. This class is known as the `child class`. For example, `Class Engine`, `Class Wheels` from the parent `Class Car`, `Class Heart`, and the `Class Stomach` are child classes of the parent `class Body`.
