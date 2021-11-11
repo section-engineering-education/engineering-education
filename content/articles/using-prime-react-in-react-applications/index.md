@@ -163,6 +163,9 @@ Within the div tag of our `app.js` file, we add our Navigation element:
 </div>. 
 ```
 
+A screenshot of our app.js file
+![App](/engineering-education/using-prime-react-in-react-applications/app.png)
+
 CSS styles can be added to change the pre-defined styles.
 
 #### Step 5 - Making use of PrimeReact Components
@@ -182,10 +185,14 @@ This is shown below:
  
  ```javascript
  const list = [
-    {label: 'Home', icon: 'pi pi-fw pi-home'},
-    {label: 'About', icon: 'pi pi-fw pi-calendar'},
-    {label: 'Contact', icon: 'pi pi-fw pi-file'},
-    {label: 'Log In', icon: 'pi pi-fw pi-cog'}
+    {label: 'Home', icon: 'pi pi-fw pi-home', command: () => window.location.href='/';
+},
+    {label: 'About', icon: 'pi pi-fw pi-file', command: () => window.location.href='/about';
+},
+    {label: 'Contact', icon: 'pi pi-fw pi-phone', command: () => window.location.href='/contact';
+},
+    {label: 'Log In', icon: 'pi pi-fw pi-sign-in', command: () => window.location.href='/signin';
+}
 ]
 ```
 
@@ -201,10 +208,22 @@ import './Nav.css'
 
 const Navigation = () => {
      const list = [
-        {label: 'Home', icon: 'pi pi-fw pi-home'},
-        {label: 'About', icon: 'pi pi-fw pi-calendar'},
-        {label: 'Contact', icon: 'pi pi-fw pi-file'},
-        {label: 'Log In', icon: 'pi pi-fw pi-cog'}
+        { label: 'Home', 
+          icon: 'pi pi-fw pi-home', 
+          command: () => window.location.href='/';
+        },
+        { label: 'About',
+          icon: 'pi pi-fw pi-file', 
+          command: () =>  window.location.href='/about';
+         },
+        { label: 'Contact', 
+          icon: 'pi pi-fw pi-phone', 
+          command: () => window.location.href='/contact';
+        },
+        { label: 'Log In', 
+          icon: 'pi pi-fw pi-sign-in', 
+          command: () =>   window.location.href='/signin';
+        }
     ];
     
     return(
@@ -229,8 +248,14 @@ const Navigation = () => {
 export default Navigation;
 ```
 
-The list variable will store what will be displayed on our Navigation bar. 
+The list variable will store what will be displayed on our Navigation bar.
+The label shows the values we want to display on our navigation, we can change it to anything we want.
+The command gives functionality to our navigation label, it enables links when we click our label
+The icon represents our primereact icons. The icons can be changed.
+On our menubar component the modal displays our list variable, the start and end properties is not necessary at all we can remove it we don't like it, it can also be edited or rearrange to fit our desire. I won't remove it cause to me it looks professional.
+If we are not satisfied with the style on our menubar we can always use in-line styling or import an external css styles to over-ride our current style.
 
+> To know more about primereact icons click [here](https://www.primefaces.org/diamond/icons.xhtml)
 > To know more about Menubar components from [here](https://primefaces.org/primereact/showcase/#/menubar)
 
 In the div tag, we added a className and gave it the value navigation (we can call the value anything we want). The className value will serve as a link to our external CSS style sheet, we must create a CSS file called Nav.css to store our external CSS styles then import Nav.css in our component so as to make the styles work in our application.   
