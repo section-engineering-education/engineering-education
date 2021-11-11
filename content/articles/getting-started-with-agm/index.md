@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /agm/
+url: /getting-started-with-agm/
 title: Getting Started With AGM
 description: This tutorial will show you how to integrate Google maps in your Angular application by building a sample project.
 author: bhanji-brilliant
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/agm/hero.png
+  - url: /engineering-education/getting-started-with-agm/hero.png
     alt: AGM angular maps javascript
 ---
 Maps have become one of the core features of most web applications. For example, a company may want to show its office directly on the site. A ride-hailing service portal may also keep track of all live rides on the map. These are all made possible by map integrations.  
@@ -97,7 +97,7 @@ From the above snippet, you notice that we're required to add our Maps API key. 
 
 To retrieve your API key, head over to your Google developer [account](https://developers.google.com/maps/documentation/javascript/get-api-key?hl=en#key), and enable your Google Maps API functionality as shown below:
 
-![creating-api-key](/engineering-education/agm/api-key.png)
+![creating-api-key](/engineering-education/getting-started-with-agm/api-key.png)
 
 Copy this newly generated key on the screen prompt, and add it to your environment as shown below:
 ```ts
@@ -300,7 +300,8 @@ Our class has multiple properties, such as the coordinates of the city we want t
 We also 3 methods, `onMarkerClickEvent()`, `onMapClickEvent()`, and `markerDragEnd()`. These are used to define the functionality of our map. For example, we define what should happen when the user clicks on the map, when a user drags the map and many other properties you may find [here](https://developers.google.com/maps/documentation/javascript/overview).
 
 Output:
-![map-output](/engineering-education/agm/map.png)
+
+![map-output](/engineering-education/getting-started-with-agm/map.png)
 
 ### Conclusion
 In this tutorial, we've discussed Angular Google maps. We've seen how to integrate this package in our Angular application to display the map of Nairobi City in Kenya.
