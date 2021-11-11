@@ -1,6 +1,6 @@
 The number of web applications has increased tremendously in the recent past. These applications require internet connectivity, which partly explains why there is a growing demand for internet services to gain access to them. 
 
-However, there are instances when users experience internet connection losses, which disrupts the use of online applications. Some of the causes of internet connection losses include poor weather, power outages, and poor internet coverage. Such instances have increased the need for applications that can work in offline mode.
+However, in the event of lost internet connection, users find it difficult to gain access to online applications. This is especially in the case of applications that support online mode only. Lost internet connection may be caused by poor internet coverage, poor weather conditions, and power outages. There is a growing need for applications that can allow usage even in the event of poor internet or lost internet connection. 
 
 This article takes you through the basics of making web applications work offline. It will also go through the benefits of having an application that supports offline mode and the implementation of this functionality. 
 
@@ -41,7 +41,7 @@ The implementation of offline mode in web applications depends on the following 
 #### Offline data storage
 When building a web application that supports offline mode, data is stored in the browser. The following are the main data storage tools employed:
 - **IndexedDB:** This is also termed as Indexed Database API. It is used for making data available to the client-side of the application in offline mode. Your application should not allow HTTPS calls to avoid failure in offline mode. 
-- **Service workers:** These tools work as proxies for the client-side of applications. When clients make network requests, ServiceWorkers intercept them and send responses to the clients.  Offline mode does not depend on networks. In this mode, downloaded data is stored in an offline cache. Service workers fetch cached responses from the offline cache and send them to the clients.
+- **Service workers:** These tools work as proxies for the client-side of applications. When clients make network requests, Service workers intercept them and send responses to the clients.  Offline mode does not depend on networks. In this mode, downloaded data is stored in an offline cache. Service workers fetch cached responses from the offline cache and send them to the clients.
   
 The following diagram shows the lifecycle of the service workers. 
 
@@ -50,7 +50,7 @@ The following diagram shows the lifecycle of the service workers.
 [Image Source](https://yalantis.com/uploads/ckeditor/pictures/4093/service-workers-for-a-web-app.png)
 
 #### Data sync for the applications
-When the user is in offline mode due to a lost internet connection, he can still perform some actions. The IndexedDB stores these user actions. The corresponding data is synchronized with the server when the network connection resumes so that any pending jobs can be processed. It is important to set the triggers of data synchronization. The developers should set a reasonable sync frequency that optimizes battery usage. 
+When the user is in offline mode due to a lost internet connection, he can still perform some actions. The **IndexedDB** stores these user actions. The corresponding data is synchronized with the server when the network connection resumes so that any pending jobs can be processed. It is important to set the triggers of data synchronization. The developers should set a reasonable sync frequency that optimizes battery usage. 
 
 ### Conclusion
 In this article, we have gone through the basics of making your web application work offline. To summarize: 
