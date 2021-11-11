@@ -252,7 +252,81 @@ logging.config.fileConfig('/way/to/logging.ini', disable_existing_loggers=False)
 lumberjack = logging.getLogger(__name__) 
 
 ```
+Alternarively you can use django application to log your files since it utilizes python modules. The following steps should be adhered to while utilizing django logging:
+- configure location.py for various loggers, handlers, filters and formatters.
+- Appending the logger's code in views or any other module applicable
+Configuring location.py
 
+In appending logging in Django, we have to configure its locale. That is defining 
+- loggers
+- handlers
+- formatters
+- filters
+The method used in Django is `dictConfig` since it works under dissimilar modules. A sample illustration is as below:
+```python
+#Logging Information 
+
+LOGGING = { 
+
+'variant': 1, 
+
+# Version of logging 
+
+'disable_existing_loggers': False, 
+
+#disable logging 
+
+# Handlers 
+
+'overseers': { 
+
+'record': { 
+
+'level': 'Investigate', 
+
+'class': 'logging.FileHandler', 
+
+'filename': 'dataflair-debug.log', 
+
+}, 
+
+'console': { 
+
+'class': 'logging.StreamHandler', 
+
+}, 
+
+}, 
+
+# Loggers 
+
+'lumberjacks': { 
+
+'django': { 
+
+'overseers': ['file', 'console'], 
+
+'level': 'Investigate', 
+
+'proliferate': True, 
+
+'level': os.getenv('DJANGO_LOG_LEVEL', 'Investigate') 
+
+}, 
+
+}, 
+
+}
+```
+In Django there are in-built variable logging thus the logging's custom values come from the libray. There key notes in the logging dictionary; version, disable-existing-loggers, handlers and loggers. Version key diplays the mapping form in which by default has value 1. 
+Disable-existing-logger key tells Django not to disable loggers.This Key by custom is true. It s important not to set to true while working with database queries and functions.
+Handlers handle the message and pass them to support, record, and more. The actual controllers are a word reference. That word reference key names will be the names of the controllers. There are various types but more emphasis is on:
+- FileHandler: logger-name – filehandler.It will store the logs in a file. 
+- StreamHandler: logger name – console. It will stream the log on console.
+Loggers log your server or software details. Django provides several loggers for example django.request.
+
+to implement logging you ou9ght to start your server that is `$python manage.py runserver`. Thereafter hit enter and the following messages would be displayed since the default level is set to debug.
+![output](/engineering-education/how-to-collect-update-and-organize-python-logs/output.png)
 ### Fuse tracebacks and exceptional case managing in your logs. 
 
 Logging tracebacks in your exception logs are huge in researching. `Logging.error()` doesn't connect any tracebacks nuances anyway it shows exception as an error.Set the sys.exc_info to True to enable `logging.error()` get tracebacks. 
