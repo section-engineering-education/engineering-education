@@ -29,7 +29,7 @@ This tutorial will show you how to integrate Google maps in your Angular applica
 - [Conclusion](#conclusion)
 
 ### Prerequisites
-- Google developer account.
+- [Google developer account](https://developers.google.com).
 - Basic knowledge of JavaScript/TypeScript.
 - Basic knowledge of Angular2+.
 - Angular project locally installed.
