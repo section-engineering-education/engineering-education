@@ -6,15 +6,14 @@ url: /snorkel-python-for-labeling-datasets-programmatically/
 title: Snorkel Python for Labelling Datasets Programmatically
 description: Snorkel is a Python library that is used for data labelling. In this article, we will build an application that labels sentences as a question or not a question using Snorkel.
 author: charles-kariuki
-date: 2021-10-19T00:00:00-18:00
+date: 2021-11-11T00:00:00-10:30
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  -url: /engineering-education/snorkel-python-for-labeling-datasets-programmatically/hero.jpg
+ - url: /engineering-education/snorkel-python-for-labeling-datasets-programmatically/hero.jpg
    alt: Snorkel python for labelling datasets example image
 ---
-
 Snorkel is a Python library that is used for data labelling. It programmatically manages and builds training datasets without manual labelling. In machine learning, labels are the target or the output variable in a dataset. This is what the model is attempting to predict.
 
 Instead of humans labelling large datasets manually, Snorkel assigns labels to the extensive training data automatically. This is done using a set of user rules, labelling functions, and other in-built techniques.
@@ -52,7 +51,7 @@ To follow along easily, the reader should:
 - Know about [machine learning modelling.](engineering-education/house-price-prediction/)
 - Know how to use [Google Colab notebooks.](https://colab.research.google.com)
 - Have some knowledge of [Pandas.](https://pandas.pydata.org/)
-- Be familiar with [Scikit-learn](https://scikit-learn.org/stable/)
+- Be familiar with [Scikit-learn.](https://scikit-learn.org/stable/)
 
 ### How to install Snorkel Python
 
@@ -71,7 +70,7 @@ Our unlabeled dataset is in text file format.
 A snip of our dataset is shown below.
 ![Unlabeled dataset](/engineering-education/snorkel-python-for-labeling-datasets-programmatically/dataset-snip.jpg)
 
-To download this text file, click [here](https://drive.google.com/file/d/1H7FOMagrtQP1KHzvY93sGeYWe2Ro-U1E/view?usp=sharing)
+To download this text file, click [here.](https://drive.google.com/file/d/1H7FOMagrtQP1KHzvY93sGeYWe2Ro-U1E/view?usp=sharing)
 
 ### Load the dataset
 
@@ -113,7 +112,7 @@ Let's import the `random` package.
 import random
 ```
 
-Let's now shuffle our dataset using the `random. shuffle()` method.
+Let's now shuffle our dataset using the `random.shuffle()` method.
 
 ```python
 random.shuffle(data)
@@ -188,7 +187,7 @@ The output is shown below.
 
 This shows we have a total of `44` sentences in our test set and `1` column.
 
-### Define our labeling functions
+### Define our labelling functions
 
 Labelling functions define the rules that the labelling model uses. These rules are used to predict the label of unlabeled data.
 
@@ -283,7 +282,7 @@ def lf_regex_contains_question_mark(x):
   return QUESTION if re.search(r".*?",x.sentences,flags=re.I) else ABSTAIN
 ```
 
-We now need to apply all these labelling functions to our train set data set.
+We now need to apply all these labelling functions to our train set dataset.
 
 ### Combining the labeling functions
 
@@ -340,7 +339,7 @@ We also use the following parameters.
 
 - `n_epochs=500` - The number of iterations the model passes through the `L_train`.
 
-- `cardinality=2`- This shows the possible labels outputs. In our case, we have `1` and `-1`.
+- `cardinality=2` - This shows the possible labels outputs. In our case, we have `1` and `-1`.
 - `verbose=True` - This allows us to use regular expressions when searching for `?`.
 - `log_freq=100` - It checks the frequency in which specific phrases are distributed in the dataset.
 - `seed=123` - Random numbers that our model will use during model training.
@@ -381,7 +380,7 @@ After successfully applying all the labelling functions to our dataset, we start
 
 Using this tutorial, a reader should be able to label a dataset programmatically using Snorkel.
 
-To get the notebook for this tutorial, click [here](https://colab.research.google.com/drive/1fY85B0_JDogI4_d2isWBEJAbfQyoyfsl?usp=sharing)
+To get the notebook for this tutorial, click [here.](https://colab.research.google.com/drive/1fY85B0_JDogI4_d2isWBEJAbfQyoyfsl?usp=sharing)
 
 ### References
 
