@@ -221,3 +221,6 @@ This article taught the readers how composition could be pretty helpful when cod
 - Features available in composition.
 - Implementation of Composition using an example.
 - Difference between Composition and Inheritance.
+
+---
+Peer Review Contributions by: [Jerim Kaura](/engineering-education/authors/jerim-kaura/)
