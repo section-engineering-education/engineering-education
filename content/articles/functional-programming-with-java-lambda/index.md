@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /functional-programming-with-java-lambda/
 title: Functional Programming with Java Lambda
-description: In this article, we will look at the concept of functional programming in Java. we will also explain how a function can be used as a value.
+description: In this article we will look at the concept of functional programming in Java. We will also explain how a function can be used as a value.
 author: popoola-tunde
-date: 2021-10-12T00:00:00-10:03
+date: 2021-11-11T00:00:00-12:03
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,21 +14,19 @@ images:
   - url: /engineering-education/functional-programming-with-java-lambda/hero.jpg
     alt: Functional Programming with Java Lambda Hero Image
 ---
-Java is an object-oriented programming language. It promotes the encapsulation of all variables and methods of the class.
+Java is an object-oriented programming language. It promotes the encapsulation of all variables and methods of the class. That is, code blocks before Java version 8 are written by binding classes with variables, methods, and objects.
 <!--more-->
-That is, code blocks before Java version 8 are written by binding classes with variables, methods, and objects. The process of passing a behavior to methods takes extra work and load. This is because we are passing a class with another attribute.
+The process of passing a behavior to methods takes extra work and load. This is because we are passing a class with another attribute. In Java 8, Lambda was introduced to represent the functional interface of Java. This means that the Lambda expression is the expression of a functional interface.
 
-In Java 8, Lambda was introduced to represent the functional interface of Java. This means that the Lambda expression is the expression of a functional interface.
+The introduction of functional programming was to implement behavior code. This code makes it easier to create a function that performs a specific task. Also, this code does not belong to any class thus it is treated as a value.
 
-The introduction of functional programming was to implement behavior code. This code makes it easier to create a function that performs a specific task. Also, this code does not belong to any class thus treated as a value.
-
-In this article, the reader will be able to understand Java's functional programming and learn how to assign lambdas to an interface. We will work with lambda expressions using a different number of parameters.
+In this article, the reader will understand Java's functional programming and learn how to assign lambdas to an interface. We will work with lambda expressions using a different number of parameters.
 
 The reader will be able to convert the object or a class's method to lambdas function with less code. The reader will also understand the importance of using functional programming.
 
 ### Prerequisites
 To follow along with this tutorial, the reader should have:
-- Basic knowledge of Java.
+- A basic knowledge of Java.
 - [Java](https://www.oracle.com/java/technologies/downloads/) installed.
 - Any Java IDE of their choice.
 - An understanding of class's and static methods.
@@ -60,7 +58,7 @@ myfunction ablockOfCode = public void perform(){
 
 With Java functional programming, assigning a block of code to a variable is possible. Let us consider the code above with lambdas expressions.
 
-To represent the code above in lambdas expression, a lot of elements in the block of code can be removed
+To represent the code above in lambdas expression, a lot of elements in the block of code can be removed.
 
 ```java
 
@@ -70,7 +68,7 @@ myfunction ablockOfCode = () -> System.out.print(“Hello world”);
 
 From our code above, we can see that the access modifier and return type are removed. This is because they are not required in the expression.
 
-The lambda expression has a very simple, unique, and flexible syntax. This syntax also follows the normal syntax of the assignment of a value to a variable in java. That is, assigning a variable with a data type and the expression as a value.
+The lambda expression has a very simple, unique, and flexible syntax. This syntax also follows the normal syntax of the assignment of a value to a variable in Java. That is, assigning a variable with a data type and the expression as a value.
 
 Java is a strongly typed programming language because every variable must be declared with a data type. The method of assigning a variable name to a lambda expression must also have a data type of the class's interface.
 
@@ -209,7 +207,7 @@ An intermediate operation is an activity that plays out a particular task on a s
 | filter    | The filter method allows us to get elements of the stream that meet certain conditions. |
 | distinct  | The distinct method returns distinct elements of the stream.                            |
 | limit     | The limit method returns elements of the stream with the given number or limit.         |
-| map       | The map method allows us to map elements of one stream to elements of another stream    |
+| map       | The map method allows us to map elements of one stream to elements of another stream.    |
 | sorted    | Returns elements of the stream in a given order.                                        |
 
 #### The intermediate operation
@@ -245,7 +243,7 @@ public static void main(String[] args) {
 
 ```
 
-The first line of the code above declares the main method. The main method serves as the entry point of the code to the java interpreter. The second line of the code declares an ArrayList `myList` that takes an array value. 
+The first line of the code above declares the main method. The main method serves as the entry point of the code to the Java interpreter. The second line of the code declares an ArrayList `myList` that takes an array value. 
 - `Arrays.asList()` converts the array to a list. 
 - `myList.stream()` converts the list to a stream. 
 - `filter(s -> s.startsWith("c"))` filters the element of the list that start with `c`. 
@@ -269,20 +267,13 @@ Lastly, we explained the concept of a stream pipeline by giving insight into the
 
 ### References
 - [Java version 16 documentation on stream](http://https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/util/stream/package-summary.html)
-
 - [JRebel](https://www.jrebel.com/blog/pros-and-cons-of-lambdas-in-java-8)
-
 - [Theserveside blog](https://www.theserverside.com/blog/Coffee-Talk-Java-News-Stories-and-Opinions/Benefits-of-lambda-expressions-in-Java-makes-the-move-to-a-newer-JDK-worthwhile)
-
 - [Stackity stream guide](https://stackify.com/streams-guide-java-8/)
-
 - [Winterbe](https://winterbe.com/posts/2014/07/31/java8-stream-tutorial-examples/)
-
 - [Java 16 documentation on function API](https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/util/function/package-summary.html)
-
-Java - How to Program 10th Ed - Early Objects Version by Pual Deitel and Harvey Deitel
-
-Introduction to Java Programming, Comprehensive Version by Y. Daniel Liang of Armstrong Atlantic State University
+- Java - How to Program 10th Ed - Early Objects Version by Pual Deitel and Harvey Deitel
+- Introduction to Java Programming, Comprehensive Version by Y. Daniel Liang of Armstrong Atlantic State University
 
 ---
 Peer Review Contributions by: [Dawe Daniel](/engineering-education/authors/dawe-daniel/)
