@@ -10,12 +10,14 @@ date: 2021-11-10T00:00:00-11:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
-
   - url: /engineering-education/async-js-using-ajax/hero.jpg
     alt: Asynchronous JavaScript AJAX
 ---
+
 **AJAX** stands for Asynchronous JavaScript and XML. It’s a set of web technology used to send and receive data between a client and server.
+
 <!--more-->
+
 Ajax allows you to make requests asynchronously without having to reload the page. Ajax can send and receive information in various formats, including JSON, XML, HTML, and text files.
 
 In this tutorial, to show how Ajax works, we’ll create a JavaScript program that fetches data from an external API, formats it, and returns random Chuck Norris jokes.
@@ -23,6 +25,7 @@ In this tutorial, to show how Ajax works, we’ll create a JavaScript program th
 It’s pretty simple. Ajax goes out, gets the jokes, returns them, and then displays them to the user.
 
 ### Prerequisites
+
 To follow along with this tutorial, you will need to have some knowledge of the following:
 
 - [JavaScript](https://www.geeksforgeeks.org/introduction-to-javascript/).
@@ -32,6 +35,7 @@ To follow along with this tutorial, you will need to have some knowledge of the 
 - A code editor (Preferably [Visual Studio Code](https://code.visualstudio.com/)).
 
 ### Goals of the tutorial
+
 This tutorial aims to create a webpage that gets random jokes from the [Chuck Norris Jokes API](http://api.icndb.com/random) and displays them to the user.
 
 At the end of this tutorial, the reader should be able to make a call to an external API, get data and display the result on the webpage.
@@ -132,6 +136,7 @@ First things first, build out the UI.
 ```
 
 ### The JavaScript
+
 - Open `index.js`.
 - Grab the button from the DOM.
 
@@ -146,6 +151,7 @@ button.addEventListener("click", generateNewJokes);
 ```
 
 ### Prepare the AJAX request
+
 - Create a function named `generateNewJokes()` for the click event.
 - Grab the `#number-of-jokes` element from the UI and assign it to a variable.
 - Create a variable called request and set it to a new [XHR](https://en.wikipedia.org/wiki/XMLHttpRequest) object.
@@ -161,15 +167,16 @@ function generateNewJokes(e) {
 
 - Inside the `generateNewJokes` function, create the object, `newXHRRequest.open()` that takes three parameters:
 
-  1. The `newXHRRequest`, which is [GET method](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods)
-  2. The link and append the number variable to get the numbers entered by the user and pass it to the.
-  3. Set the last variable to true to make it asynchronous
+  1. The HTTP request method, in this case, a [GET method](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods).
+  2. A DOMString representing the URL to send the request to.
+  3. Async, which is an optional boolean set to `true` indicating the operation to be asynchronous.
 
 ```javascript
 newXHRRequest.open(
   "GET",
   `http://api.icndb.com/jokes/random/${numberOfJokes}`,
   true
+  // the numbers of jokes is appended to the url after a forward slash to specify the numbers of jokes to fetch from the server
 );
 ```
 
@@ -180,6 +187,7 @@ newXHRRequest.onload = function () {};
 ```
 
 #### Inside the function
+
 - Check if [XHR STATUS](https://www.w3schools.com/xml/ajax_xmlhttprequest_response.asp) returns a 200.
 - Parse the response text in a JSON format to a variable.
 - Initialize a variable and set it to nothing (we will use it to concatenate the response).
@@ -264,6 +272,7 @@ The final application will look like this:
 ![Output](/engineering-education/async-js-using-ajax/output.png "Final Output")
 
 ### Conclusion
+
 Using the **ICNDB API** is an easy way to show how getting data from an external API using AJAX works. Ajax uses the GET method to pull jokes from the Internet Chuck Norris Jokes Database.
 
 A point to also note is that all APIs do not work the same way nor do they handle requests and respond the same way. It is very important to check the documentation of the API one intends to work with.
@@ -271,4 +280,5 @@ A point to also note is that all APIs do not work the same way nor do they handl
 Happy coding!
 
 ---
+
 Peer Review Contributions by: [Geoffrey Mungai](/engineering-education/authors/geoffrey-mungai/)
