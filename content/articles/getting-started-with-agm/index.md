@@ -97,7 +97,7 @@ From the above snippet, you notice that we're required to add our Maps API key. 
 
 To retrieve your API key, head over to your Google developer [account](https://developers.google.com/maps/documentation/javascript/get-api-key?hl=en#key), and enable your Google Maps API functionality as shown below:
 
-![creating-api-key](/engineering-education/getting-started-with-agm/api-key.png)
+![creating api key](/engineering-education/getting-started-with-agm/api-key.jpg)
 
 Copy this newly generated key on the screen prompt, and add it to your environment as shown below:
 ```ts
