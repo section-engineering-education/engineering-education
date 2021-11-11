@@ -1,10 +1,11 @@
 ### React Components  Instantiation
 
-There are different types of react components: Functional Components and  Class Components
+There are different types of react components: Functional Components and  Class Components.
 
 React Component is a small,reusable bite of code which is responsible  for one job  which often includes rendering HTML.
 
 Throughout this tutorial we will be mostly talking about Jsx. JSX element can be written in HTML format or it may be written as a component instance.In JSX you use capitalization to differentiate between HTML like and component instance .
+
 #### Prerequisites
 To effectively uderstand the reader will need the following:
 
