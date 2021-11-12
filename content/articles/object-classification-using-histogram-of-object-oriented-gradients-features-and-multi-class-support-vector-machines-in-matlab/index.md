@@ -2,16 +2,16 @@
 layout: engineering-education
 status: publish
 published: true
-url: /how-to-solve-initial-value-problem-using-ode45-in-matlab/
-title: How to Solve Initial Value Problem (IVP) using ODE45 in Matlab
-description: This tutorial will discuss the multi-class object classification with the help of HOG features. Also, it provides a step by step guide of how one can use the technique using Matlab. 
+url: /object-classification-using-histogram-of-object-oriented-gradients-features-and-multi-class-support-vector-machine-in-matlab/
+title: Object Classification Using Histogram of Object Oriented Gradients Features and Multi-class Support Vector Machine in Matlab
+description: This tutorial will discuss the multi-class object classification with the help of HOG features. Also, it provides a step by step guide of how one can use this technique using Matlab. 
 author: joseph-odhiambo
 date: 2021-09-30T00:00:00-15:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/object-classification-using-histogram-of-oriented-gradients-features-and-multi-class-support-vector-machine-in-matlab/hero.jpg
+  - url: /engineering-education/object-classification-using-histogram-of-object-oriented-gradients-features-and-multi-class-support-vector-machine-in-matlab/hero.jpg
     alt: Object Classification Using Histogram of Object Oriented Gradients Features Hero Image
 ---
 
@@ -33,18 +33,18 @@ To follow along with this tutorial, you'll need:
 - Proper understanding of [MATLAB](https://www.section.io/engineering-education/getting-started-with-matlab/) basics.
 
 ### The overall scheme
-![image of the scheme](/engineering-education/object-classification-using-histogram-of-oriented-gradients-features-and-multi-class-support-vector-machine-in-matlab/classification-one.png)
+![Image of the scheme](/engineering-education/object-classification-using-histogram-of-oriented-gradients-features-and-multi-class-support-vector-machine-in-matlab/classification-one.png)
 
-In the training image database, we have all the training images in the training database folder. You first convert all these images to their corresponding HOG features. These HOG features are then stored in the feature database and used to train the ECOC based multi-class SVM classifiers. So once the training is complete, we get a trained classifier. The trained classifier is ready to classify the input images. 
+In the training image database, we have all the training images in the training database folder. First, all these images are converted to their corresponding HOG features. These HOG features are then stored in the feature database and used to train the ECOC based multi-class SVM classifiers. So once the training is complete, we get a trained classifier. The trained classifier is ready to classify the input images. 
 
-To test its performance, we give the test image. So all the test images stored in the test image database are first converted to their corresponding HOG features and then given to the trained classifier. The trained classifier then classifies all the input images, and we get the test outcomes. Based on the outcomes, we can go for accuracy and plot for the confusion matrix, e.t.c.
+To test its performance, we give a test image. So all the test images stored in the test image database are first converted to their corresponding HOG features and then given to the trained classifier. The trained classifier then classifies all the input images, and we get the test outcomes. Based on the outcomes, we can go for accuracy and plot for the confusion matrix, e.t.c.
 
 ### Image dataset
 You can get the image dataset that we are going to use [here](https://www.kaggle.com/smeschke/four-shapes). This database has a total of 16000 greyscale images of the size `200 x 200`. We classify the images into four categories, that is, circle, square, triangle and star.
 
 From the 16000 images, we are using only 4800 images for our training and testing. We are taking 1000 images from each category for training purposes. It totals 4000 images. We then use 200 images from each category for testing purposes. It sums to a total of 800 images for testing. The folder structure should be as shown below:
 
-![folder structure](/engineering-education/object-classification-using-histogram-of-oriented-gradients-features-and-multi-class-support-vector-machine-in-matlab/classification_two.png)
+![The folder structure](/engineering-education/object-classification-using-histogram-of-oriented-gradients-features-and-multi-class-support-vector-machine-in-matlab/classification_two.png)
 
 ### Error-correcting output codes(ECOC) based multi-class SVM
 In machine learning, many algorithms, such as linear regression, SVM, e.t.c, can deal with binary classification problems. A binary classification problem is one where there are only two target classes, for example, yes or no, black or white, e.t.c. It means that you can only classify two input objects into the two classes.
@@ -108,9 +108,9 @@ With these two pieces of information, that is, the number of images and size of 
 trainfeatures = zeros(totaltrainimages, hogfeatures, 'single');    %feature database
 ```
 
-We mean that the `trainfeature` is the database that stores all the HOG features in the images.
+The code above shows that the `trainfeature` is the database that stores all the HOG features in the images.
 
-After that, we read all these images from the `traindb` one by one to find their HOG features. These HOG features and storing in the `trainfeatures` matrix:
+After that, we read all these images from the `traindb` one by one to find their HOG features. These HOG features are stored in the `trainfeatures` matrix:
 
 ```matlab 
 for i = 1:totaltrainimages
@@ -120,20 +120,20 @@ for i = 1:totaltrainimages
 end
 ```
 
-Also, we read the labels of the four different shapes using the command below:
+We will also read the labels of the four different shapes using the command below:
 
 ```Matlab 
 traininglabels = traindb.Labels;
 ```
 
-We then use the `fitcecoc` function to implement the ECOC feature classifiers for multi-class SVM:
+Then, we will use the `fitcecoc` function to implement the ECOC feature classifiers for multi-class SVM:
 
 ```Matlab
 %fitcecoc uses SVM learner and a 'one-vs-one' encoding scheme
 classifiers = fitcecoc(trainingfeatures, traininglabels);
 ```
 
-The training features are the x-values, while `traininglabels` is the y-values. We don't define any other parameter, which means that all the parameters are at their default values. Once this is complete, the classifier parameter will go into the `classifier` variable.
+The training features are the x-values, while `traininglabels` are the y-values. We don't define any other parameter, which means that all the parameters are at their default values. Once this is complete, the classifier parameter will go into the `classifier` variable.
 
 ### Testing all the images
 Here, we read the number of the total images in the test folder and the `testfeatures`. It is also a matrix, with the rows being the total number of the test images and the columns being the size of the HOG features.
@@ -152,7 +152,7 @@ for i = 1:totaltestimages
 end
 ```
 
-Read the labels:
+Then the labels:
 
 ```Matlab
 testlabels = testdb.Labels;      %getting labels
@@ -164,14 +164,16 @@ Now that we have all the test images in the `testfeatures` matrix and have train
 predictedlabels = predicted(classifiers, testfeatures);
 ```
 
-So here, we have taken the trained classifier and the features of all the test images and stored them in the test feature variable. Next, the predicted labels are stored in the `predictedlabels` variable. After this, we find the accuracy of our classifier. This accuracy is the comparison of the predicted labels and the pre-defined labels. Also, you can plot the confusion matrix, which helps in interpretation of the results.
+So here, we have taken the trained classifier and the features of all the test images and stored them in the test feature variable. Next, the predicted labels are stored in the `predictedlabels` variable.
+
+After this, we find the accuracy of our classifier. This accuracy is the comparison of the predicted labels and the pre-defined labels. Also, you can plot the confusion matrix, which helps in interpretation of the results.
 
 ```matlab
 accuracy = (sum(predictedlabels == testlabels)/numel(testlabels))*100;
 plotconfusion(testlabels, predictedlabels)
 ```
 
-If we run this program, we get the confusion matrix which is displayed in the image below. It is because it shows that our classifier is already classified.
+If we run this program, we get the confusion matrix as shown in the image below. It shows that our classifier is already classified.
 
 ![confusion matrix](/engineering-education/object-classification-using-histogram-of-oriented-gradients-features-and-multi-class-support-vector-machine-in-matlab/classification_three.png)
 
@@ -214,7 +216,7 @@ Now let us run the program for the discrete testing. When you run it, Matlab ask
 
 To see the robustness of our classifier, we are going to use a distorted image and see if the classifier can still identify it. For image distortion, you can use your prefered software. So you distort the image and use it as the input. Let's see how this works:
 
-![distored image](/engineering-education/object-classification-using-histogram-of-oriented-gradients-features-and-multi-class-support-vector-machine-in-matlab/classification_five.png)
+![distorted image](/engineering-education/object-classification-using-histogram-of-oriented-gradients-features-and-multi-class-support-vector-machine-in-matlab/classification_five.png)
 
 As we can see, the scheme is working fine. It means that it is accurate and robust.
 
