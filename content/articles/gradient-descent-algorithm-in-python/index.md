@@ -66,17 +66,18 @@ We start by initializing $\theta_0$ and $\theta_1$ to some random values on the 
 $\theta_0 = 0$
 $\theta_1 = 0$
 
-We then determine the derivative of the cost function $J(\theta_0, \theta_1)$ at these initial points with respect to $\theta_o$ and $\theta_1$. We thus obtain two partial derivatives. These derivatives tell us the direction of the cost function we should take to minimize the error. We usually take 
+We then determine the derivative of the cost function $J(\theta_0, \theta_1)$ at these initial points with respect to $\theta_o$ and $\theta_1$. We thus obtain two partial derivatives. These derivatives tell us the direction of the cost function we should take to minimize the error. 
 
 Using these gradients and our cost function, we take a step towards the direction in which the cost function gradually decreases with a high value. As a result, we end up landing in a new position on the cost curve. In the process, the values of $\theta_0$ and $\theta_1$ are updated. 
 
 The process repeats itself until the algorithm reaches or approaches close to the global minimum. Below is a mathematical representation of the gradient descent algorithm.
 
-## The gradient descent algorithm
+### The gradient descent algorithm
 
- Reapt until convergence:{
- $\theta_1  := \theta_1 - \alpha\frac{\delta}{\delta\theta_1}J(\theta)$
- $\theta_0 := \theta_0 - \alpha\frac{\delta}{\delta \theta_0}J(\theta)$
+Repeat until convergence:
+{
+$\theta_1  := \theta_1 - \alpha\frac{\delta}{\delta\theta_1}J(\theta)$
+$\theta_0 := \theta_0 - \alpha\frac{\delta}{\delta \theta_0}J(\theta)$
   }
 
 Where:
