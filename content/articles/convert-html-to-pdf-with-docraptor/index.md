@@ -15,7 +15,7 @@ It is easy for anyone to deliver PDFs because they are a standard document prese
 ### Installation
 To get started with Docraptotr, we need to install it in our local machine. Installation can be done in two ways. The first way is using composer dependency manager, while the second way is by downloading a zip file of the library and extracting it in the specific project folder.
 
-#### Using composer
+#### Donloading using using composer
 - Download composer from this [link](https://getcomposer.org/download/) then execute the command below to install Docraptor.
 
 ```php
@@ -30,7 +30,7 @@ Navigate through [this](https://docraptor.com/documentation) link to find the in
 require_once('./path/to/docraptor-php/autoload.php');
 ```
 
-### Authentication
+### API authentication
 Every project where an API is used needs an API key. The key identifies the machine from where the request for specific resources is coming. Our project is not an exception; therefore, we need to add an API Key to authenticate the source of our help. We will use the phrase "KEY YOUR API HERE" as our API key, which we get after sending an HTTP request. This key, however, only allows us to use watermarked documents.
 
 
@@ -39,7 +39,7 @@ $configuration=DocRaptor\configuration::getDefaultconfiguration();  //requests f
 $configuration->setUsername('KEY_YOUR_API_HERE');   //works for test document 
 ```
 
-### Add HTML or a URL
+### Adding HTML or a URL to use
 This section is where most of the work is done as we add the HTML content to be converted here. Any HTML that we need to convert must exist in the single document we are working on. In the file names `docaptor.php`, add the code snippet below:
 
 ```php
@@ -132,7 +132,7 @@ $doc = setDocumentUrl("http: //DocRaptor.com/returns/sales.html");  //or use a u
 
 Whether you use HTML or URLs in your report, all of the resources you reference should be accessible via the internet for DocRaptor to work. So we need to have an internet connection.
 
-### API options
+### API document options
 Given that DocRaptor may also convert documents into other files, for instance, HTML to Excel, we must create the correct document. Hence set the document type as PDF.
 
 ```php
@@ -151,7 +151,7 @@ Another essential thing to note is that by default, JavaScript is off, but you n
 $doc->setJavaScript('true');    //enable javascript processing 
 ```
 
-### Get documentation
+### Get documentation for the library
 Following the configuration of your API, run this code to generate your file. Document creation is a one-line code.  It also includes an error-handling mechanism that consolidates mistakes in managing the structure if something goes wrong.
 
 ```php
