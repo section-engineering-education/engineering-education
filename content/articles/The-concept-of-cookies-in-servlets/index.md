@@ -40,7 +40,8 @@ The `Cookie` class in the Servlet API is used to create cookies. Cookies are cre
 ### How does Cookie work
 When a client makes a new request to a Web Server, the webserver assigns a unique ID as a `cookie`, which is then sent back with the response to the client and saved in the client's browser.
 
-This `cookie` value is likewise provided to the server when the client sends another request, and the server uses this value to identify the user.
+
+When a client sends another request, the server receives all cookie values stored in text form in the user's browser and uses them to identify the user and their current state. When a user browses an online store and adds some items to their cart, and then goes on to do something else, he or she may become disconnected from the site; however, when he or she reconnects, he will be able to retrieve his or her previous carts.
 
 In this case, a cookie is used to store information required each time the client visits a website, such as a user ID, name, or other identifiers.
 ### Types of Cookies in Java Servlet
@@ -68,13 +69,13 @@ It's valid for multiple sessions and, unlike non-persistent cookies, it's not de
 #### Cookie class
 A `Cookie` class contains several cookie-related methods that allow you to use cookies.
 #### Methods of Cookie class
-- `void setMaxAge()`: For example, this method can be used to set Cookie's maximum age. The cookie lifetime can be specified when max-age is set in web applications.
+- `void setMaxAge()`: Cookie's maximum age is set using this `setMaxAge()` method.. The cookie lifetime can be specified when max-age is set in web applications.
 - `void setValue()`: When a new value is assigned to the cookie, this method is used.
 - `String getName()`: Returns the cookie's name, which cannot be modified after it has been created.
 - `String getValue()`: This method aids in obtaining the cookie's current value.
-- `int getVersion()`: Cookie's version number is returned by this method.
+- `int getVersion()`: By using this method, you can get the version number of a cookie.
 - `void setVersion()`: Cookie's version number is set in this method.
-- ` int getMaxAge()`: This method is used to determine a cookie's maximum age.
+- ` int getMaxAge()`: Using getMaxAge(), you can determine the cookie's maximum age.
 - `String getPath()`: The path from the cookie is obtained using this method.
 - `void setPath()`: This method is used to specify a cookie path. For example, in a web application, it is possible to specify a specific path for the cookies to be saved.
 - `String getDomain()`: This method can be used to extract the domain name from a cookie.
