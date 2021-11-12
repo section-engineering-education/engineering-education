@@ -154,7 +154,27 @@ data class RetrievalEvent (
 The properties of this data class is set to the retrieved SMS message. This is done if the background processing was successful. A timeout usually occurs if no message is received within 5 minutes. If it occurs, timeout is set to true. Then, send the event to the listening subscriber.
 
 ### Step 5: Register the BroadcastReceiver on Android Manifest
-In your app's `AndroidManifest.xml` file, register `BroadcastReceiver`.
+In your app's `AndroidManifest.xml` file, register `BroadcastReceiver`:
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<manifest 
+    ...    >
+
+    <application
+        ... >
+
+        <receiver
+            android:name=".MessageBroadcastReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.android.gms.auth.api.phone.SMS_RETRIEVED"/>
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>
+```
 
 Next, in our `MainActivity class`, we'll register, unregister, and implement our subscribers. The `onReceiveSms()` method will be invoked when an event is posted. It is usually annotated with the `@Subscribe` annotation.
 
