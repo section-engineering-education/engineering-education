@@ -1,9 +1,10 @@
-Tables are of extreme importance when it comes to data entry and display in applications. Table views support the tabular format display. This kind of format makes it easy to correct and check data patterns.- Ever since the creation of this kind of data display format, and well illustration in Sheet apps e.g. Excel, developers prefer it in TPS and MIS systems.
+Tables are significant when it comes to data entry and display in applications. Table views support the tabular format display. This kind of format makes it easy to correct and check data patterns. Since this kind of data display format was created in Sheet applications, e.g., Excel, developers have preferred it in TPS and MIS systems.
 
-JavaFX, being focused on UI, has ways to represent data in tabular format. The problem is that one can only view but not edit each cell individually since they aren't editable. This article has solutions to this issue. By the end of the article, the reader will be able to create an editable Table View. That will enable easy data updates directly on the Table being displayed.
+Being focused on UI, JavaFX can represent data in tabular format. However, one can only view but not edit each cell individually since they are not editable. This article has solutions to this issue. The reader will create an editable Table View by the end of the article. That will enable easy data updates directly on the table being displayed.
 
 ### Table of Contents
 
+- [Table of Contents](#table-of-contents)
 - [Key takeaways](#key-takeaways)
 - [Pre-requisites](#pre-requisites)
 - [Article structure](#article-structure)
@@ -50,7 +51,7 @@ the [Key TakeAways](#key-takeaways) section:
 - Make the Table data editable
 - Fetch the contents edited
 
-Let's begin with the first step:
+Let us begin with the first step:
 
 ### Project initialization
 
@@ -63,12 +64,11 @@ To set up a new JavaFX project, do the following:
   - **Group**: com.table
   - **Artifact**: editabletableview
 
-This is shown below:
+These are shown below:
 
 ![New JavaFX editable tableview project](engineering-education/javafx-editable-table-view/new-javafx-editable-tableview-project.png "New JavaFX editable tableview project")
 
-- Click '**Next**'. In the **Dependencies** section, set the dependencies shown below and click on the '**Finish**'
-  button:
+- Click '**Next**'. In the **Dependencies** section, set the dependencies shown below and click on the '**Finish**' button:
 
 ![Project dependencies](engineering-education/javafx-editable-table-view/new-javafx-editable-tableview-project-dependencies.png "Project dependencies")
 
@@ -96,7 +96,7 @@ The application generated has the following structure:
 
 - Create a new folder in the `java/com/table/editabletableview` path and name it `model`. It will hold the dummy data.
 - Create another folder named `controller` in the same path.
-- Change the location of the `HelloController.java` file to the new 'controller' folder created. This can be simply done by right-clicking on the file and pasting it to the new location.
+- Change the location of the `HelloController.java` file to the new 'controller' folder created. This step can be done by right-clicking the file and pasting it to the new location.
 - In the 'model' folder, create a new file named `User.java`.
 
 The resulting folder structure looks as follows:
@@ -106,7 +106,7 @@ The resulting folder structure looks as follows:
 ├── src
 │   ├── main
 │       ├── java
-│          ├── com.table.editabletableview
+│          ├── com. table.editabletableview
 │               ├── controller
 │                   └── HelloController.java
 │               └── model
@@ -114,7 +114,7 @@ The resulting folder structure looks as follows:
 │               └── HelloApplication.java
 │          └── module-info.java
 │       └── resources
-│          └── com.table.editabletableview
+│          └── com. table.editabletableview
 │             └── hello-view.fxml
 ├── editable-tableview.iml
 └── pom.xml
@@ -125,15 +125,15 @@ The resulting folder structure looks as follows:
 To achieve this, do the following:
 
 - Open the FXML file found in the `resources/com/table/editabletableview` path.
-- The IDE will produce a prompt notification at the top of the file to install JavaFX SDK. Just allow it and the IDE
+- The IDE will produce a prompt notification at the top of the file to install JavaFX SDK. Just allow it, and the IDE
   will automatically set it up and configure it for the project.
-- On the bottom left area near the status bar click on the 'SceneBuilder' option to view and develop the application using the SceneBuilder.
-- If it is the first time to create a JavaFX project using the IDE on the machine, it will give prompt notification to install the SceneBuilder. Just click on the 'Install' option and the IDE will download it and set it up.
+- On the bottom left area near the status bar, click on the 'SceneBuilder' option to view and develop the application using the SceneBuilder.
+- If it is the first time to create a JavaFX project using the IDE on the machine, it will give prompt notification to install the SceneBuilder. Just click on the 'Install' option, and the IDE will download it and set it up.
 - Restart the IDE if it does not automatically load to the SceneBuilder view.
 
 ### Table creation and design
 
-- In the SceneBuilder view, delete the 'VBox' holding the 'Hello' button by simply right-clicking on it and selecting the Delete option. The code below will be deleted. This can be viewed in the 'Text' view.
+- In the SceneBuilder view, delete the 'VBox' holding the 'Hello' button by simply right-clicking on it and selecting the Delete option. The code shown below will be deleted. This step can be viewed in the 'Text' view.
 
 ```xml
 
@@ -160,7 +160,7 @@ protected void onHelloButtonClick(){
 }
 ```
 
-- In the `HelloApplication.java` file, change the width and height of the Scene created to 800 by 600 as shown in the
+- In the `HelloApplication.java` file, change the width and height of the Scene created to 800 by 600, as shown in the
   line of code below:
 
 ```java
@@ -172,8 +172,7 @@ as follows:
 
 - Open the FXML file and drag-and-drop a BorderPane from the left-side panel, under the **Containers** section into the
   center of the design page.
-- On the Layout section under the right-side panel set the following for the BorderPane so that it can fit with the
-  Scene created:
+- On the Layout section under the right-side panel, set the following for the BorderPane so that it can fit with the Scene created:
   - `Pref Width`: 800
   - `Pref Height`: 600
 
@@ -182,9 +181,9 @@ as follows:
 
 ![New TableView](engineering-education/javafx-editable-table-view/new-tableview.png "New TableView")
 
-- Double-click on the `C1` header and change it to `id`. do the same for the `C2` header and make it read `name`.
-- To add other columns, head over to the 'Controls' section and select the 'TableColumn' option. Drag-and-drop it next to the other columns and size it appropriately. Its name will be `email`.
-- Add other two columns to the TableView named `notes` and `edit` respectively. Adjust the sizes appropriately so that the columns fit the TableView.
+- Double-click on the `C1` header and change it to `id`. Do the same for the `C2` header and make it read `name`.
+- To add other columns, head over to the 'Controls' section and select the 'TableColumn' option. Then, drag-and-drop it next to the other columns and size it appropriately. Its name will be `email`.
+- Add other two columns to the TableView named `notes` and `edit`, respectively. Adjust the sizes appropriately so that the columns fit the TableView.
 
 The SceneBuilder will generate the following code:
 
@@ -243,7 +242,7 @@ public User(String id,String name,String email,String notes,Button update){
 }
 ```
 
-- Inside the constructor, create a function that makes the '**update**' button. The button will display the results of the row when clicked. This allows one to see the results, hence, determine if the results are as expected.
+- Inside the constructor, create a function that makes the '**update**' button. The button will display the results of the row when clicked. This button allows one to see the results, hence, determining if the results are as expected.
 
   On **update** button click:
 
@@ -320,7 +319,7 @@ This code sets up getters and setters for:
 
 For the '**HelloController.java**' file, do the following:
 
-- Make the class implement '**Initializable**'. This is shown below:
+- Make the class implement '**Initializable**'. This class is shown below:
 
 ```java
 public class HelloController implements Initializable {
@@ -330,9 +329,9 @@ public class HelloController implements Initializable {
 ```
 
 > **Initializable**, is a JavaFX interface that enables use of the **initialize** method.
-This method is useful in resolving root element relative paths.
+This method helps resolve root element relative paths.
 
-- Import the controls that will be used in the application. Look at it in the code below:
+- Import the controls that will be used in the application. It is shown in the code below:
 
 ```java
 public static TableView<User> table_info_app;
@@ -363,9 +362,9 @@ public void initialize(URL url,ResourceBundle resourceBundle){
 }
 ```
 
-> **NOTE**: The `location` parameter is used in the resolving of the relative paths for the root objects if it is known while the `resources` does localization for the root object.
+> **NOTE**: The `location` parameter is used to resolve the relative paths for the root objects if it is known, while the `resources` does localization for the root object.
 
-- Elaborate more on the functions of the `initializeCols()` function. It shall be pointing out that the values entered for specific row cells are of a particular set of datatype as defined in the 'User' model. For example all values
+- Elaborate more on the functions of the `initializeCols()` function. It shall be pointing out that the values entered for specific row cells are of a particular set of datatype as defined in the 'User' model. For example, all values
   in the _column_id_ section are for all IDs.
 
 ```java
@@ -407,7 +406,7 @@ private void loadData(){
 }
 ```
 
-This code above produces the outcome as records stored in the system.
+This code above produces the outcome as records are stored in the system.
 
 - Run the application through the 'Main' class. The output looks like this:
 
@@ -415,13 +414,13 @@ This code above produces the outcome as records stored in the system.
 
 - Try to double-click on a cell and see if the contents can be modified.
 
-As noted, it can only select it but can't allow editing of the contents.
+As noted, it can only select it but cannot allow editing of the contents.
 
 ### Make the Table cells editable
 
 Now in the Controller, do the following:
 
-- Add a function, that is the `editableCols()` method to make the cell have a 'Text Field's' property that not only allows displaying the message but also editing properties. It also changes the value of the cell once a commit is done. A commit is done when the value is changed and the Enter button is pressed.
+- Add a function, that is, the `editableCols()` method, to make the cell have a 'Text Field's' property that allows displaying the message and editing properties. It also changes the value of the cell once a commit is done. A commit is done when the value is changed, and the Enter button is pressed.
 
 ```java
 private void editableCols(){
@@ -446,8 +445,8 @@ private void editableCols(){
 ```
 
 The above code does the following:
-  - Makes the TableView and all in it (e.g. cells) to be editable
-  - Get the specific cell whether on the IDs, names, email, and notes column when doubled clicked on
+  - Makes the TableView and all in it (e.g., cells) to be editable
+  - Get the specific cell whether, on the IDs, names, email, and notes column when doubled clicked on
 
   
 - To use the above function, call it inside the `initializeCols()` function, under the `col_update` line using the line below:
@@ -457,8 +456,8 @@ The above code does the following:
 editableCols();
 ```
 
-- Re-run the application and try again. Notice that now the updates happen when the changes are done and the Enter key is pressed to commit the changes.
-  On pressing the Update button, the outputs are sent to the terminal as configured before.
+- Re-run the application and try again. Notice that now the updates happen when changes are done, and the Enter key is pressed to commit the changes.
+  The outputs are sent to the terminal as configured before on the Update button press.
 
 ![Final Result](engineering-education/javafx-editable-table-view/final-output.png "Final Result")
 
@@ -469,6 +468,8 @@ Find the code [here](https://github.com/prograte/JavaFX-editable-table-view).
 
 ### Conclusion
 
+The tabular format is a very appealing form of data representation. It is easy to understand and use. It is also effortless to edit and update the content. JavaFX allows one to view and update the content in a tabular form. It also allows stylings to be applied to the tables created.
+
 At this point, the reader has learned and known how to:
 
 - Start a JavaFX project
@@ -476,6 +477,7 @@ At this point, the reader has learned and known how to:
 - Adding dummy data to the table
 - Make the Table data editable
 - Fetch the contents edited in the console
+- Manipulate the edited data
 
 ### References
 
