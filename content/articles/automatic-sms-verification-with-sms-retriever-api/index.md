@@ -249,12 +249,23 @@ To generate the hash string, you can use the following methods:
 - Use `SignatureHelper class`. This class will help to generate our app's hash string. After using this class to obtain the hash string, always remove it.
 
 ```kotlin
+    /**
+     * This is a helper class to generate your message hash to be included in your SMS message.
+     *
+     * Without the correct hash, your app won't recieve the message callback. This only needs to be
+     * generated once per app and stored. Then you can remove this helper class from your code.
+     */
 class SignatureHelper(context: Context?) :
     ContextWrapper(context) {
+    // For each signature create a compatible hash
+     /**
+       * Get all the app signatures for the current package
+       */
     val appSignature: ArrayList<String>
         get() {
             val appCodes = ArrayList<String>()
             try {
+                // Get all package signatures for the current package
                 val myPackageName = packageName
                 val myPackageManager = packageManager
                 val signatures =
@@ -262,7 +273,7 @@ class SignatureHelper(context: Context?) :
                         myPackageName,
                         PackageManager.GET_SIGNATURES
                     ).signatures
-
+                // For each signature create a compatible hash
                 for (signature in signatures) {
                     val hash =
                         hash(myPackageName, signature.toCharsString())
@@ -291,11 +302,13 @@ class SignatureHelper(context: Context?) :
                     MessageDigest.getInstance(HASH_TYPE)
                 messageDigest.update(appInfo.toByteArray(StandardCharsets.UTF_8))
                 var myHashSignature = messageDigest.digest()
+                // truncated into NUM_HASHED_BYTES
                 myHashSignature = Arrays.copyOfRange(
                     myHashSignature,
                     0,
                     HASHED_BYTES
                 )
+                // encode into Base64
                 var base64Hash = Base64.encodeToString(
                     myHashSignature,
                     Base64.NO_PADDING or Base64.NO_WRAP
