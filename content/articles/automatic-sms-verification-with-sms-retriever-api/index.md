@@ -268,25 +268,16 @@ class SignatureHelper(context: Context?) :
                 // Get all package signatures for the current package
                 val myPackageName = packageName
                 val myPackageManager = packageManager
-                val signatures =
-                    myPackageManager.getPackageInfo(
-                        myPackageName,
-                        PackageManager.GET_SIGNATURES
-                    ).signatures
+                val signatures = myPackageManager.getPackageInfo(myPackageName,PackageManager.GET_SIGNATURES).signatures                                      
                 // For each signature create a compatible hash
                 for (signature in signatures) {
-                    val hash =
-                        hash(myPackageName, signature.toCharsString())
+                    val hash = hash(myPackageName, signature.toCharsString())                      
                     if (hash != null) {
                         appCodes.add(String.format("%s", hash))
                     }
                 }
             } catch (e: PackageManager.NameNotFoundException) {
-                Log.d(
-                    TAG,
-                    "Package not found",
-                    e
-                )
+                Log.d(TAG,"Package not found",e)                             
             }
             return appCodes
         }
@@ -298,25 +289,15 @@ class SignatureHelper(context: Context?) :
         private fun hash(pkgName: String, signature: String): String? {
             val appInfo = "$pkgName $signature"
             try {
-                val messageDigest =
-                    MessageDigest.getInstance(HASH_TYPE)
+                val messageDigest =  MessageDigest.getInstance(HASH_TYPE)                   
                 messageDigest.update(appInfo.toByteArray(StandardCharsets.UTF_8))
                 var myHashSignature = messageDigest.digest()
-                // truncated into NUM_HASHED_BYTES
-                myHashSignature = Arrays.copyOfRange(
-                    myHashSignature,
-                    0,
-                    HASHED_BYTES
-                )
+                // truncated into HASHED_BYTES
+                myHashSignature = Arrays.copyOfRange(myHashSignature,0,HASHED_BYTES)                                                                       
                 // encode into Base64
-                var base64Hash = Base64.encodeToString(
-                    myHashSignature,
-                    Base64.NO_PADDING or Base64.NO_WRAP
-                )
+                var base64Hash = Base64.encodeToString(myHashSignature,Base64.NO_PADDING or Base64.NO_WRAP)                                          
                 base64Hash = base64Hash.substring(0, BASE64_CHAR)
-                Log.d(
-                    TAG, String.format("pkg: %s -- hash: %s", pkgName, base64Hash)
-                )
+                Log.d(TAG, String.format("pkg: %s -- hash: %s", pkgName, base64Hash))                             
                 return base64Hash
             } catch (error: NoSuchAlgorithmException) {
                 Log.e(TAG, "Algorithm not Found", error)
