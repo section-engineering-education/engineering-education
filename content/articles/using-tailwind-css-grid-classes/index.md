@@ -87,11 +87,11 @@ The following are the other classes that we have used:
 
 We have now completely set our HTML and added Tailwind classes. This is how it looks like:
 
-![Small Screen](/engineering-education/using-tailwind-grid-classes/image-sm.png)
+![Small Screen](/engineering-education/using-tailwind-css-grid-classes/image_sm.png)
 
-![Medium Screen](/engineering-education/using-tailwind-grid-classes/image-md.png)
+![Medium Screen](/engineering-education/using-tailwind-css-grid-classes/image_md.png)
 
-![Large Screen](/engineering-education/using-tailwind-grid-classes/image-lg.png)
+![Large Screen](/engineering-education/using-tailwind-css-grid-classes/image_lg.png)
 
 As shown above, the layout of the elements changes depending on the screen size of the viewport. This is called responsiveness.
 
@@ -120,7 +120,7 @@ For example, if we want a cell to span two rows, then we use `row-span-2`, and i
 </div>
 ```
 
-![Row and Column Span](/engineering-education/using-tailwind-grid-classes/row-and-column-span.png)
+![Row and Column Span](/engineering-education/using-tailwind-css-grid-classes/row_and_column_span.png)
 
 ### Grid gap classes
 The gap classes are used to add space between rows and columns. The gap classes include: `gap-{size}`, `gap-x-{size}` and `gap-y-{size}`. 
@@ -148,11 +148,11 @@ We can control gaps at specific screen sizes in Tailwind by adding a `{screen}:`
 </div>
 ```
 
-![Gap in Small Screen](/engineering-education/using-tailwind-grid-classes/gap-sm.png)
+![Gap in Small Screen](/engineering-education/using-tailwind-css-grid-classes/gap_sm.png)
 
-![Gap in Medium Screen](/engineering-education/using-tailwind-grid-classes/gap-md.png)
+![Gap in Medium Screen](/engineering-education/using-tailwind-css-grid-classes/gap_md.png)
 
-![Gap in Large Screen](/engineering-education/using-tailwind-grid-classes/gap-lg.png)
+![Gap in Large Screen](/engineering-education/using-tailwind-css-grid-classes/gap_lg.png)
 
 ### Conclusion
 We have gone through several Tailwind CSS grid classes and how to implement them in a web page comprehensively. You can now create more and even better designs using Talwind grid layout classes on your own. 
