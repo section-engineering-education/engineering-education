@@ -6,7 +6,7 @@ url: /add-an-external-css-file-to-a-javafx-application/
 title: Add an external CSS file to a JavaFX Application
 description: In this tutorial, the reader will learn how to add an external CSS file to a JavaFX application. We will look at how to add internal styling to the application using Pre-saved variables and via an external CSS file for one or multiple scenes.
 author: roy-kibet
-date: 2021-10-21T00:00:00-10:50
+date: 2021-11-12T00:00:00-03:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
