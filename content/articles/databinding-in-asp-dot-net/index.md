@@ -5,10 +5,10 @@ So ASP.NET Databinding provides a simple and easy way to build a link between se
 To follow along, you need:
 - To have visual studio installed on your computer.
 - A basic understanding of C# language.
-Table of content
+### Table of content
 - [Concepts of Databinding in ASP.NET](#concepts-of-Databinding-in-ASP.NET)
 - [What is Databinding?](#what-is-Databinding)
-- [How to create Databinding in ASP.NET](#how-to-createdatabinding-in-ASP.NET)
+- [How to create Databinding in ASP.NET](#how-to-createdatabinding-in-ASP.NET).
 
 ### **Concepts of Databinding in ASP.NET**
 `Databinding in ASP.NET` makes it easier to combine an ASP.NET code. with the results of database queries, collection, method calls, and properties. 
