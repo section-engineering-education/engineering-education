@@ -6,15 +6,15 @@ url: /understanding-enum-types-in-java/
 title: Understanding enum types in Java
 description: This article explains the basic structure of an enum class and then takes it a step higher by exploring the relationship between enums and classes.
 author: ehis-edemakhiota
-date: 2021-10-20T00:00:00-06:10
+date: 2021-11-12T00:00:00-03:30
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/understanding-enum-types-in-java/hero.png
+  - url: /engineering-education/understanding-enum-types-in-java/hero.jpg
     alt: Understanding enum types in Java Hero Image
 ---
-Enums types are potent tools in Java. Enums can define a class of named constants and offer type safety and keys in a switch statement or expression.
+Enum types are potent tools in Java. Enums can define a class of named constants and offer type safety and keys in a switch statement or expression.
 <!--more-->
 This article explains the basic structure of an enum class in Java and then takes it a step higher by exploring the relationship between enums and classes(enums implementing interfaces, enum having instance variables, methods, and constructors), exploring how to set custom enum properties. 
 
@@ -23,9 +23,7 @@ We will be demonstrating the application of enums in building a poker card game 
 ### Goal
 At the end of the tutorial, the reader should understand the following:
 - The basic structure of an enum type.
-- The relationship between enums and classes:
-  * Defining constructors, instance, and methods variables in enum classes.
-  * Enums implementing interfaces.
+- The relationship between enums and classes
 - Defining custom properties for enum types and accessing ordinal values for enum constants.
 - The applications of enums.
 
@@ -36,11 +34,13 @@ To fully understand this tutorial, you are required to have the following in pla
 - IntelliJ code editor [installed](https://www.jetbrains.com/idea/download/).
 
 #### The basic structure of a Java Enum type
-The declaration of a Java Enum starts with the keyword- **enum**, followed by the type name specified in `camelCase` (as is the naming convention for all Java classes). Following the type name is a pair of curly braces that form the enum class's context or scope. Within these curly braces are a set of unique identifiers which represent the enum constants. 
+The declaration of a Java Enum starts with the keyword- **enum**, followed by the type name specified in `camelCase` (as is the naming convention for all Java classes). 
+
+Following the type name is a pair of curly braces that form the enum class's context or scope. Within these curly braces are a set of unique identifiers which represent the enum constants. 
 
 **Note: No two enum constants can use the same identifier.**
 
-**It is also an excellent practice to capitalize enum constants, which aligns with the naming convention for Java constants and makes them stand out.**
+> It is also an excellent practice to capitalize enum constants, which aligns with the naming convention for Java constants and makes them stand out.
 
 ```java
 enum Suit{
@@ -114,9 +114,9 @@ public void printCardSuit(Suit suit){
 }
 ```
 
-We have called `printCardSuit(`) that takes in an enum of type Suit which we defined earlier in our tutorial, and then passes the value of that enum to an enclosed switch expression meaning that a call to the method as follows `printCardSuit(Suit.HEARTS)` will produce the output: Its hearts! and the call `printCardSuit(Suit.SPADES)` will produce the output: Its spades!
+We have called `printCardSuit(`) that takes in an enum of type Suit which we defined earlier in our tutorial. It then passes the value of that enum to an enclosed switch expression meaning that a call to the method as follows `printCardSuit(Suit.HEARTS)` will produce the output: Its hearts! and the call `printCardSuit(Suit.SPADES)` will produce the output: Its spades!
 
-Enums types in Java extend from the class `java.lang.Enum` means that when we define an enum type, additional methods are added to our definition implicitly. One of these methods is the valueOf() which allows us to create an enum constant using the toString representation of the enum constant as follows:
+Enums types in Java extend from the class `java.lang.Enum` meaning that when we define an enum type, additional methods are added to our definition implicitly. One of these methods is the valueOf() which allows us to create an enum constant using the toString representation of the enum constant as follows:
 
 `Suit cardSuit = Suit.valueOf(“HEARTS”)`
 
@@ -159,9 +159,11 @@ class Suit{
 }
 ```
 
-Hence, every enum constant is a representation of an object of the enum class. Enums are closely related to classes in JavaJava but not so related. One of the significant differences is that an enum cannot extend another class because an enum implicitly extends from the Java.lang.
+Hence, every enum constant is a representation of an object of the enum class. Enums are closely related to classes in Java but not so related. 
 
-Enum, and since a method cannot inherit from more than the method in JavaJava, the Enum class cannot inherit from another class. Extending from the Java.lang.Enum makes the following methods available implicitly in the enum class:
+One of the significant differences is that an enum cannot extend another class because an enum implicitly extends from the Java.lang.Enum, and since a method cannot inherit from more than the method in Java, the Enum class cannot inherit from another class. 
+
+Extending from the Java.lang.Enum makes the following methods available implicitly in the enum class:
 
 1. **The values() method**: This returns an array of all the constants defined in the enum class.
    For example:
@@ -252,7 +254,7 @@ Information about the different poker hands can be found [here]( https://en.wiki
 
 Here is the class diagram: 
 
-![Game Controller Class Diagram](/engineering-education/understanding-enum-types-in-java/class_diagram.png)
+![Game Controller Class Diagram](/engineering-education/understanding-enum-types-in-java/class_diagram.jpg)
 
 First, let us define the Player Class. A player has a name and a `playerHand`, which is an array of 5 Cards.
 
