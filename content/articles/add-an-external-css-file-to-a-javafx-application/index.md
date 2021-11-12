@@ -516,23 +516,13 @@ scene5.getStylesheets().add(css);
 ```
 
 ### Conclusion
+In conclusion, the application's appearance is as important to the end-users as the functionality. The more appealing it is, the more users get to accept it. Advanced styling helps in the creation of modern UI designs. As the world evolves, designers have to be on a constant lookout for improvements and new UI designs in the market.
 
-In conclusion, the application's appearance is as important to the end-users as the functionality. The more good-looking, the more users get to accept it. Advanced styling helps in the creation of modern UI designs. As the world evolves, designers have to be on a constant lookout for improvements and new UI designs in the market.
+JavaFX is a very compatible UI framework for any Java program. It can be used both for simple and advanced projects involving complex designs. Understanding how the designs and styling work in a JavaFX program is of key importance. It allows one to go beyond imagination when building modern designs for desktop applications. 
 
-JavaFX is a very compatible UI framework for any Java program. It can be used both for simple and advanced projects involving complex designs. Understanding how the designs and styling work in a JavaFX program is of key importance. It allows one to go beyond imagination when building modern designs for desktop applications.
+We have gone through adding styles in your JavaFX programs. Go ahead and try out different styles in your applications.
 
-The following have been achieved and learned in the article:
-
-- Importance of modern UI designs in applications, in both web and desktops
-- How JavaFX styling relates to normal CSS styling for web applications
-- Different ways in which JavaFX allows one to apply styling to an application
-- Recognizing styling in the application
-- Adding an internal styling to the application. This addition was through:
-  - Hard-coding it into the FXML file
-  - Using the SceneBuilder
-- Using Pre-saved variables to add the styling
-- Adding the styling via an external CSS file for one or multiple scenes.
-- Adding styling for multiple Scenes in the application
+Happy coding!
 
 ### References
 - [JavaFX Oracle Documentation](https://docs.oracle.com/javafx/2/api/)
