@@ -6,8 +6,6 @@ In this tutorial, you will learn how to make a Blazor Server-Side Application fr
 The types of CRUD operations you will perform include creating,reading, updating and deleting data from the list.
 
 ### Table of contents
-- [Introduction](#introduction)
-- [Table of contents](#table-of-contents)
 - [Prerequisites](#prerequisites)
 - [Creating and Reading data from list](#creating-and-reading-data-from-list)
 - [Updating/Editing the list](#updatingediting-the-list)
@@ -21,6 +19,7 @@ In order to understand this tutorial well, you will need to have an understandin
 - Basic knowledge of [C#](https://docs.microsoft.com/en-us/dotnet/csharp/) language
 - Microsoft Visual Vtudio installed and well set. Download it [here](https://visualstudio.microsoft.com/vs/community/)
 - Basic [HTML](https://devdocs.io/html/) knowledge
+- Basic [ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/?view=aspnetcore-6.0)
   
 Now, you will open Microsoft Visual Studio and select `New Project` as shown in the figure below and click next.
 
