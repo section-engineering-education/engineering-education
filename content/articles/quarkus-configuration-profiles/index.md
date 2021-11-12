@@ -1,17 +1,14 @@
-Working with Quarkus as a Reactive framework is easy and very appealing to Java users. It comes with exciting features such as hot reloading, reactive program development capabilities, quick boot and reboot time, MicroProfile specification support, among many others. It is also possible to quickly produce end products to be shipped to the operation environment.
+Working with Quarkus as a Reactive framework is easy and appealing to Java users. It comes with exciting features such as hot reloading, reactive program development capabilities, quick boot and reboot time, MicroProfile specification support, among many others. 
 
-Among these numerous features, some small challenges need to be considered for sorting out. These issues arise during the continuous development phase. The phase involves constant development, testing, and deployment to prototype servers that mock the original ones. An example of such includes the constant setting of variables, output results, and ports during development, testing, and production. This is key when running multiple copies of the same system while quickly distinguishing them via the variables, output results, ports, and security settings used.
-
-In this article, one will be able to learn about Quarkus profiles. These are like a collection of settings that can be assigned a certain tag to quickly access them. Access depends on the current environment in use.
+In this article, one will be able to learn about Quarkus profiles. These are like a collection of settings that can be assigned a specific tag to access them quickly. But, of course, access depends on the current environment in use.
 
 ### Table of Contents
-
 - [Key takeaways](#key-takeaways)
-- [Pre-requisites](#pre-requisites)
+- [Prerequisites](#prerequisites)
 - [What is Quarkus Configuration Profiles?](#what-is-quarkus-configuration-profiles)
 - [Checking and configuring application properties](#checking-and-configuring-application-properties)
-  - [Create a new Quarkus project](#create-a-new-quarkus-project)
-    - [Project Structure](#project-structure)
+  - [Creating a new Quarkus project](#creating-a-new-quarkus-project)
+    - [Project structure](#project-structure)
   - [Set up some configurations](#set-up-some-configurations)
   - [Testing the configurations](#testing-the-configurations)
 - [Configuring the application using Quarkus configuration profiles](#configuring-the-application-using-quarkus-configuration-profiles)
@@ -29,20 +26,16 @@ In this article, one will be able to learn about Quarkus profiles. These are lik
 - [References](#references)
 
 ### Key takeaways
-
 Some points to be taken in by the end of the article follow up include:
-
 - What is Quarkus Configuration Profiles
 - Importance of configuration profiles
-- Some ways of setting up configuration profiles in Quarkus. These include setting the profiles in the 'application.properties' and 'YAML' files.
+- Some ways of setting up configuration profiles in Quarkus. These include setting the profiles in the `application.properties` and 'YAML' files.
 - Easily navigating between the profiles set during the development stages.
 
-### Pre-requisites
-
+### Prerequisites
 For one to follow up with the code examples and explanations given in the article, the following will be required:
-
 - Java Development Kit installed on the machine. The recommendation is the latest JDK in the market. JDK 17 is used for the article.
-- A good Java IDE. The recommendation is the latest version of the IntelliJ Ultimate edition. This choice is because it has the support of MicroProfile, among which Quarkus is one of them. For the article, IntelliJ version `2021.2.2` was used, as seen in the screenshot captured.
+- A good Java IDE. The recommendation is the latest version of the IntelliJ Ultimate edition. This choice is because it supports MicroProfile, among which Quarkus is one of them. IntelliJ version `2021.2.2` was used for the article, as seen in the screenshot captured.
 - Familiar with databases.
 - A good internet connection. The internet is for fetching indexes for quick development. It will also be used in the generation of the project.
 
