@@ -18,8 +18,6 @@ Now that we’ve learnt about ORMs and more specifically, Dapper, we can now dig
 -   [Postman](https://www.postman.com/downloads/) or any REST Client
 
 ### Table of Contents
-- [Prerequisites](#prerequisites)
-- [Table of Contents](#table-of-contents)
 - [What is Dapper?](#what-is-dapper)
 - [Creating a new ASP.NET Core API project](#creating-a-new-aspnet-core-api-project)
 - [Setting Up Our Database](#setting-up-our-database)
