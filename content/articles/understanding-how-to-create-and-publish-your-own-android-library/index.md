@@ -6,7 +6,7 @@ url: /how-to-create-and-publish-your-own-android-library/
 title: How to Create and Publish your own Android Library
 description: This tutorial will take the reader through the process of creating and publishing an Android Library. A library is a collection of classes that can be used by Android applications as dependencies.
 author: joel-kanyi
-date: 2021-11-02T00:00:00-10:42
+date: 2021-11-12T00:00:00-04:30
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,9 +14,10 @@ images:
   - url: /engineering-education/how-to-create-and-publish-your-own-android-library/hero.png
     alt: How to Create and Publish your own Android Library hero image
 ---
+
 Every Android developer considers how they can reuse their code rather than rewriting it from scratch. By developing a library, developers also contribute to the open-source ecosystem by having their code used by other developers.
 <!--more-->
-No developer can evade working without libraries because they are such important components of the development process. They allow you to speed up your development by leveraging a pre-built solution rather than creating all of the code yourself.
+No developer can work without libraries because they are such important components of the development process. They allow you to speed up your development by leveraging a pre-built solution rather than creating all of the code yourself.
 
 ### Prerequisites
 To follow along make sure you have the following:
@@ -25,7 +26,7 @@ To follow along make sure you have the following:
 - A basic understanding of the [Kotlin](https://kotlinlang.org/) programming language. 
 
 ### What is an Android Library?
-A library is a collection of classes that can be used by Android applications as dependencies. Libraries are often used to provide common functionality that can be reused by other applications.
+A library is a collection of classes that can be used by Android applications as dependencies. Libraries are often used to provide common functionalities that can be reused by other applications.
 
 The structure of an Android library is the same as that of an Android app module. Among other things, the library can include source code, resource files, and an Android manifest. Instead of an APK that runs on a device, it compiles into an Android Archive (AAR) file that can be used as a dependency for an Android app module.
 
@@ -35,7 +36,7 @@ Create an empty Android Studio project as illustrated below:
 ![New Project](/engineering-education/how-to-create-and-publish-your-own-android-library/create_project.png)
 
 ### Step 2 - Create Library Module
-- In this step, in your Android Studio:
+In this step, in your Android Studio:
 Switch to `project` and right-click on your project name to create a new module: 
 
 ![Switch Module](/engineering-education/how-to-create-and-publish-your-own-android-library/switch_module.png)
