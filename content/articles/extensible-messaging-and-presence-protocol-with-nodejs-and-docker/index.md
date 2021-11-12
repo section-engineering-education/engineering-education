@@ -194,7 +194,7 @@ xmpp.on("chat", (from, message) => {
 
 // connect method requires object with paramters below
 xmpp.connect({
-    "jid": "myself @localhost",
+    "jid": "myself@localhost",
     "password": "2mypassword2",
     "host": "localhost",
     "port": 5222
