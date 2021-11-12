@@ -111,7 +111,7 @@ To do this, follow the steps below:
 
 The result of these two steps are shown below inside the header tag:
 
-```javascript
+```html
 <header className="App-header">
     <p>
     {/*Insert the SVG here*/}
@@ -236,7 +236,7 @@ function setColor (newColor){
 
 Replace it with the following code that creates three buttons that can instantly set the color of the app logo to the one defined in each.
 
-```js
+```html
 <p>
     <button onClick={() => setColor('orange')}>orange</button>
     <button onClick={() => setColor('blueviolet')}>blueviolet</button>
@@ -268,7 +268,7 @@ Do this as follows:
 
 - Create an input of the _range_ type. It will have a range of 0 to 100, and a _defaultValue_ of `--logo-size`. Do this above the `p` tags holding the SVG.
 
-```js
+```html
 <p>
     <input name="size" min="0" max="100" type="range" defaultValue="40" onChange={handleOSizeChange}/>
 </p>
