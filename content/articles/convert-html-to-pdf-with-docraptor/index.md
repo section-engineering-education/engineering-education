@@ -216,8 +216,11 @@ The complete code for the application can be found [here](https://github.com/tav
 ![generated-pdf](/engineering-education/convert-html-to-pdf-with-docraptor/converted-pdf-with-docraptor.png)
 
 ### Conclusion
-DocRapor has been used to convert HTML to PDF format for a long time. Its strategy differs from other strategies because it is more detailed, compact, and direct. It is considered when we need to convert multiple reports to PDF format. From the establishment to the documentation and links provided, the means of use are provided where other cases are involved.
+DocRaptor has been used to convert HTML to PDF format for a long time. Its strategy differs from other strategies because it is more detailed, compact, and direct. It is considered when we need to convert multiple reports to PDF format. From the establishment to the documentation and links provided, the means of use are provided where other cases are involved.
 
 This article will be beneficial because diverse techniques are organized with proper documentation. In addition, the code snippets are easy to understand and experiment with. You can find more about the topic [here](https://www.phptutorial.net/php-tutorial/php-csv/) and more information about Docraptord at [docraptor's API documentation](https://github.com/DocRaptor/docraptor-php)
 
 Happy Coding!
+
+---
+Peer Review Contributions by: [Mercy Meave](/engineering-education/authors/mercy-meave/)
