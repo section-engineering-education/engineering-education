@@ -1,4 +1,22 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /using-tailwind-css-grid-classes/
+title: Using Tailwind CSS Grid Classes
+description: In this article, the reader will understand the various grid classes in Tailwind CSS used in building responsive web pages.
+author: ian-masae
+date: 2021-10-08T00:00:00-07:40
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/using-tailwind-css-grid-classes/hero.jpg
+    alt: Using Tailwind CSS Grid Classes Hero Image
+---
 CSS Grid is a layout system used in web design to layout UI elements of a web page using rows and columns. We can easily do this with Tailwind CSS. Tailwind CSS added a comprehensive set of utilities for working with CSS grid layout! 
+
+<!--more-->
 
 In this tutorial, we will learn how we can easily layout elements in our web page using the grid classes in Tailwind CSS. We will also learn how to make responsive designs for our elements using these classes.
 
@@ -137,6 +155,11 @@ We can control gaps at specific screen sizes in Tailwind by adding a `{screen}:`
 ![Gap in Large Screen](/engineering-education/using-tailwind-grid-classes/gap-lg.png)
 
 ### Conclusion
-We have gone through several Tailwind CSS grid classes and how to implement them in a web page comprehensively. You can now create more and even better designs using Talwind grid layout classes on your own. Hope this tutorial was helpful.
+We have gone through several Tailwind CSS grid classes and how to implement them in a web page comprehensively. You can now create more and even better designs using Talwind grid layout classes on your own. 
+
+Hope you find this tutorial was helpful.
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Monica Masae](/engineering-education/authors/monica-masae/)
