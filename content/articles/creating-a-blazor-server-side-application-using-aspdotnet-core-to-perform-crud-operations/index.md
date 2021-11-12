@@ -133,16 +133,12 @@ The `@page "/students"` is a URL that matches this component to be accessed by t
             }
     </tbody>
 </table>
-
-
 @code {  
     private List<Blazor_Server_App.Data.Student> student;
-
     protected override void OnInitialized()
     {
         student = StudentService.GetStudent();
     }
-
 }
 ```
 
@@ -254,7 +250,6 @@ You will use the above method in the `EditStudent` component.
 @code {
     [Parameter]
     public String Id { get; set; }
-
     private Blazor_Server_App.Data.Students student { get; set; }
     protected override void OnInitialized()
     {
