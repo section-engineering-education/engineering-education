@@ -12,13 +12,13 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/why-use-load-balancing-in-an-application/hero.jpg
-    alt: Why Use Load Balancing in an Application Hero Image
+    alt: Why use a Load Balancer in an Application Hero Image
 ---
-Applications and websites nowadays have millions of requests coming in from end-users. End-users expect that the application responds with the correct images or texts requested.
+Applications and websites nowadays have millions of requests coming in from end-users. End-users expect the application to respond with the correct images or texts requested.
 
 <!--more-->
 
-Application components can fail or get overwhelmed by the incoming requests. It leads to a bad user experience. For the applications to perform and be available, we must include a load balancer in them. 
+Application components can fail or get overwhelmed by the incoming requests, which affects user experience. For the applications to perform and be available, we must include a load balancer in them. 
 
 Before load balancing, there was a different approach to making applications available. The solution was to add servers to the infrastructure, which was uneconomic. When load balancing was introduced, the problem of cost was solved. Balancing the load is done by a dedicated load balancer which improves user experience.
 
@@ -28,7 +28,7 @@ At the end of the article the learner will be able to:
 
 1. Understand what load balancing is.
 
-2. Walk through of how a load balancer performs its tasks.
+2. Understand how a load balancer performs its tasks.
 
 3. Know the advantages of using load balancers.
 
@@ -38,27 +38,29 @@ At the end of the article the learner will be able to:
 
 To understand the concept of load balancing, we will use a scenario of a website that gets famous in a short time. 
 
-Let's say we have a machine that hosts `mywebsite.com`. It is associated with a public-facing IP address of e.g. `1.2.3`.4 to keep things simple. We have a user that wants to access the application through a domain name that is mapped to the IP address. The user makes a request and receives a response from the server. The response will be delivered fast. This works well for a single user. 
+Let's say we have a machine that hosts `mywebsite.com`. It is associated with a public-facing IP address of e.g. `1.2.3.4` to keep things simple. We have a user that wants to access the application through a domain name that is mapped to the IP address. The user makes a request and receives a response from the server. The response will be delivered fast. This works well for a single user. 
 
-Taking that single user and multiplying by let us say, `100,000` users. You will have 100,000 requests coming to the server. The requests can come in very fast. This causes the individual machine to get overworked and explode. It won't be able to handle any more traffic. 
+Taking that the users increase to let's say, `100,000` users. You will have 100,000 requests coming to the server. The requests can come in very fast. This may lead to overloading of the individual machine and it won't be able to handle any more requests. 
 
-To solve this kind of problem, one may think of introducing a new machine. This machine will have a different public-facing IP address of say `5.6.7.8`. Instead of all users having to hit the first machine, others can be directed to the second machine. This too has a problem. How does one know which machine to hit? This is where load balancing comes to play. 
+To solve this kind of problem, one may think of introducing a new machine. This machine will have a different public-facing IP address of maybe `5.6.7.8`. Instead of all users having to hit the first machine, others can be directed to the second machine. This too has a problem.
+
+How does one know which machine to hit? This is where load balancing comes to play. 
 
 A load balancer is a component. It sits between application servers and the request that comes from the users. 
 
-With load-balancing, the IP of the servers becomes private. They won't be exposed to the public-facing internet. The load balancer is then given a public IP address e.g. `6.7.8.9`. At this point, the users make requests. The DNS resolution is going to point to the load balancer IP address. The load balancer will then know which IP addresses of the application servers are available to receive requests. It, thus, decides which server to route the traffic to.
+With load-balancing, the IP of the servers becomes private. They won't be exposed to the public-facing internet. The load balancer is then given a public IP address e.g. `6.7.8.9`. At this point, the users can make requests, then the DNS resolution points to the load balancer IP address. The load balancer will then know which IP addresses of the application servers are available to receive requests. It, thus, decides which server to route the traffic to.
 
 ![image of a load balancer](/engineering-education/why-use-load-balancing-in-an-application/loadbalancing.png/)
 
 ### A walk through of how an application load balancer performs its tasks
 
-1. A user opens up a web page. Example `section.io`.
+1. A user opens up a web page, for example `section.io`.
 
-2. A request is made by the user. A frontend server receives the request and figures out where to forward the request. 
+2. A request is made by the user, a frontend server receives the request and figures out where to forward the request. 
 
-3. The backend server processes the request and sends a response to the frontend server. Meanwhile, the backend server reports its status to the load balancer.
+3. The backend server then processes the request and sends a response to the frontend server. Meanwhile, the backend server reports its status to the load balancer.
 
-4. Finally the frontend server returns the response to the user.
+4. The frontend server finally returns the response to the user.
 
 One can use load balancers on different layers of an application. It includes:
 
@@ -92,7 +94,7 @@ One can use load balancers on different layers of an application. It includes:
 
     A second request comes assuming from a different client. That request gets sent to the second server. At this point, we do not have more servers. The second server is the last on the list of servers. 
 
-    As soon as the third request comes in, it gets redirected to the first server. The next request will be redirected to the second server and so on in a cyclic manner. 
+    As soon as the third request comes in, it is redirected to the first server. The next request will be redirected to the second server and so on in a cyclic manner. 
 
     This algorithm is ideal for servers with similar specifications. In the event where the server specs are not identical, one of the servers will become overloaded. It leads to failure or downtime of the overloaded server.
 
