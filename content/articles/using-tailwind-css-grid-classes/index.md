@@ -6,7 +6,7 @@ url: /using-tailwind-css-grid-classes/
 title: Using Tailwind CSS Grid Classes
 description: In this article, the reader will understand the various grid classes in Tailwind CSS used in building responsive web pages.
 author: ian-masae
-date: 2021-10-08T00:00:00-07:40
+date: 2021-11-12T00:00:00-10:30
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -15,9 +15,7 @@ images:
     alt: Using Tailwind CSS Grid Classes Hero Image
 ---
 CSS Grid is a layout system used in web design to layout UI elements of a web page using rows and columns. We can easily do this with Tailwind CSS. Tailwind CSS added a comprehensive set of utilities for working with CSS grid layout! 
-
 <!--more-->
-
 In this tutorial, we will learn how we can easily layout elements in our web page using the grid classes in Tailwind CSS. We will also learn how to make responsive designs for our elements using these classes.
 
 Let's take a look at how they work.
@@ -31,7 +29,6 @@ Let’s jump into it!
 
 ### Overview
 In this tutorial we will go through the following:
-
 1. Linking the project with Tailwind
 2. Setting up the HTML
 3. Grid row and columns classes and responsiveness
@@ -55,10 +52,9 @@ We will link our Tailwind stylesheet to our HTML project using `<link>` tag as s
 ```
 
 ### Our HTML
-
 First, we will style the body using classes inside the `<body>` tag. You can choose any other color that is appealing to you. Then, we will set the height of our containment `<div>` using class, `min-h-screen` which means that the minimum height of the container is equal to 100 of the viewport.
 
-We will then create another container inside the first container. This container will contain the elements which we will be laying out in rows and columns.
+We will then create another container inside the first container. This container will contain the elements which we will be laying out in rows and columns:
 
 ```html
 <body class="bg-green-400">
@@ -80,23 +76,24 @@ We will then create another container inside the first container. This container
 ```
 
 The following are the other classes that we have used: 
- - `flex` aligns the elements side by side
- - `items-center` and `justify-center` makes the elements appear at the center of the screen.
- - `rounded-lg` make the edges of the elements have a rounded look.
- - `bg-green-100` classes gives the elements a green background color.
+- `flex` aligns the elements side by side
+- `items-center` and `justify-center` makes the elements appear at the center of the screen.
+- `rounded-lg` make the edges of the elements have a rounded look.
+- `bg-green-100` classes gives the elements a green background color.
 
 We have now completely set our HTML and added Tailwind classes. This is how it looks like:
 
-![Small Screen](/engineering-education/using-tailwind-css-grid-classes/image_sm.png)
+![Small Screen](/engineering-education/using-tailwind-css-grid-classes/image-sm.png)
 
-![Medium Screen](/engineering-education/using-tailwind-css-grid-classes/image_md.png)
+![Medium Screen](/engineering-education/using-tailwind-css-grid-classes/image-md.png)
 
-![Large Screen](/engineering-education/using-tailwind-css-grid-classes/image_lg.png)
+![Large Screen](/engineering-education/using-tailwind-css-grid-classes/image-lg.png)
 
 As shown above, the layout of the elements changes depending on the screen size of the viewport. This is called responsiveness.
 
 ### Grid rows and columns and responsiveness
-To be able to use grid classes, we need to start by giving the `<div>` container,  the `grid` class as shown in the code above. This grid class controls the display type of this element.
+To be able to use grid classes, we need to start by giving the `<div>` container, the `grid` class as shown in the code above. This grid class controls the display type of this element.
+
 In Tailwind CSS, responsiveness is achieved by the use of these `{screen:}` prefixes: `sm:` for small screen sizes, `md:` for medium screen sizes, and `lg:` for large screen sizes.
 
 The `grid-col-2` utility that we have used sets the elements to be in two columns. This takes effect on all screen sizes. To change this to only take effect on small screen devices, we use the prefix, `sm:` before the class. The rows are automatically set to match the number of columns. We can also use `sm:grid-rows-5` to achieve the same result as per this example which we have ten elements.
@@ -120,7 +117,7 @@ For example, if we want a cell to span two rows, then we use `row-span-2`, and i
 </div>
 ```
 
-![Row and Column Span](/engineering-education/using-tailwind-css-grid-classes/row_and_column_span.png)
+![Row and Column Span](/engineering-education/using-tailwind-css-grid-classes/row-and-column-span.png)
 
 ### Grid gap classes
 The gap classes are used to add space between rows and columns. The gap classes include: `gap-{size}`, `gap-x-{size}` and `gap-y-{size}`. 
@@ -148,11 +145,11 @@ We can control gaps at specific screen sizes in Tailwind by adding a `{screen}:`
 </div>
 ```
 
-![Gap in Small Screen](/engineering-education/using-tailwind-css-grid-classes/gap_sm.png)
+![Gap in Small Screen](/engineering-education/using-tailwind-css-grid-classes/gap-sm.png)
 
-![Gap in Medium Screen](/engineering-education/using-tailwind-css-grid-classes/gap_md.png)
+![Gap in Medium Screen](/engineering-education/using-tailwind-css-grid-classes/gap-md.png)
 
-![Gap in Large Screen](/engineering-education/using-tailwind-css-grid-classes/gap_lg.png)
+![Gap in Large Screen](/engineering-education/using-tailwind-css-grid-classes/gap-lg.png)
 
 ### Conclusion
 We have gone through several Tailwind CSS grid classes and how to implement them in a web page comprehensively. You can now create more and even better designs using Talwind grid layout classes on your own. 
