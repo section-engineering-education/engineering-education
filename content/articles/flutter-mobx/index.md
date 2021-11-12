@@ -15,6 +15,25 @@ images:
     alt: Flutter state management with Mobx
 ---
 
+
+### Table of contents
+- [Prerequisites](#prerequisites)
+- [Introduction](#introduction)
+- [Table of contents](#table-of-contents)
+- [Project setup](#project-setup)
+- [Domain](#domain)
+- [Service](#service)
+- [State Manager](#state-manager)
+- [UI](#ui)
+- [Testing](#testing)
+- [Conclusion](#conclusion)
+
+### Prerequisites
+1. [Flutter SDK](https://flutter.dev/docs/get-started/install) installed.
+2. Preferred IDE or code editor installed.
+3. Knowledge in [Flutter](https://flutter.dev/docs).
+
+### Introduction
 Managing application state in a clean and optimized way is very important when dealing with large Flutter applications. State management is the handling of application data between different screens and components. 
 <!--more-->
 This article will discuss retrieving data from an API and passing it to a service class to the UI. The UI will listen for data from the API. When the data is available, the application will display a list of items. In addition, the application will show a progress indicator when it is in a loading state.
@@ -105,24 +124,6 @@ when((_) {
   print('Counter is zero');
 });
 ```
-
-### Prerequisites
-1. [Flutter SDK](https://flutter.dev/docs/get-started/install) installed.
-2. Preferred IDE or code editor installed.
-3. Knowledge in [Flutter](https://flutter.dev/docs).
-
-### Table of contents
-
-- [Introduction](#introduction)
-- [Prerequisites](#prerequisites)
-- [Table of contents](#table-of-contents)
-- [Project setup](#project-setup)
-- [Domain](#domain)
-- [Service](#service)
-- [State Manager](#state-manager)
-- [UI](#ui)
-- [Testing](#testing)
-- [Conclusion](#conclusion)
 
 ### Project setup
 
