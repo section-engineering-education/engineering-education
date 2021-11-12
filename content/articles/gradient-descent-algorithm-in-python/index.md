@@ -85,18 +85,19 @@ Where:
 - $\frac{\delta}{\delta\theta_1}J(\theta)$ is derivative of our cost function $J(\theta)$ with respect to $\theta_1$.
 - $\frac{\delta}{\delta \beta_0}J(\theta)$ is derivative our cost function $J(\theta)$ with respect to $\theta_0$.
 
-The learning rate determines the step size we take down the slope. Choosing a small learning rate value may take the gradient descent too long to converge to the local minimum. On the other hand, a too-large value may overshoot our local minimum and the gradient descent and may never converge. So this value should not be too small or too large.
-
+The learning rate determines the step size we take down the slope. Choosing a small learning rate value may take the gradient descent too long to converge to the local minimum. On the other hand, a too-large value may overshoot our local minimum and the gradient descent and may never converge. Therefore this value should not be too small or too large.
 
 ### Implementing the gradient descent
-In this session, we shall assume we are given a cost function of the form: $J(\theta) = (\theta - 5)^2$ and $\theta$ takes values in the range 10. Let us start by importing libraries we shall work with
+In this session, we shall assume we are given a cost function of the form: $J(\theta) = (\theta - 5)^2$ and $\theta$ takes values in the range 10. 
+
+Let us start by importing libraries we will be working with:
 
 ```python
 import numpy as np
 import matplotlib.pyplot as plt
 ```
 
-### Generate some random data points.
+### Generate some random data points
 
 ```python
 theta = np.arange(12)
@@ -106,6 +107,7 @@ print(theta,J)
 ```
 
 ### Output
+
 ![output](/engineering-education/gradient-descent-algorithm-in-python/output.png)
 
 
@@ -123,7 +125,9 @@ plt.show()
 ```
 
 ### Output
+
 ![cost curve](/engineering-education/gradient-descent-algorithm-in-python/cost_function.png)
+
 Our cost function is convex, and we can see its minimum is at $\theta=5$. So now we shall run gradient descent, which should return a value equal to or very close to 5.
 
 ### Obtaining the optimal $\theta$ using gradient descent
@@ -142,7 +146,7 @@ for i in range (50):
   print(beta)
 ```
 
-Running the code above, we obtain our optimal $\theta$ as $\theta=4.999928637615365$. This value is very close to the real value, and therefore the gradient descent did excellent work. 
+Running the code above, we will obtain our optimal $\theta$ as $\theta=4.999928637615365$. This value is very close to the real value, and therefore the gradient descent did excellent work. 
 
 ### Viewing the error plot
 
@@ -152,10 +156,13 @@ plt.plot(error)
 ```
 
 ![gradient descent](/engineering-education/gradient-descent-algorithm-in-python/error.png)
-From this plot, we notice that the error was initially high, but with each run of gradient descent, it decreases until it is at its minimum value where it can change anymore.
+
+From this plot, we may notice that the error was initially high, but with each run of gradient descent, it decreases until it is at its minimum value where it can not change anymore.
 
 ### Conclusion
-This article looked at the theory behind the gradient descent algorithm and explained how this algorithm works. We then learned how to use python to obtain the optimal value of the learning parameter; for our case, we assume a simple linear regression of a model given cost function. To this fur, we reach the end of our learning journey.
+This article looked at the theory behind the gradient descent algorithm and explained how this algorithm works. We then learned how to use Python to obtain the optimal value of the learning parameter. In our case, we assumed a simple linear regression of a model given cost function. 
+
+Happy coding!
 
 ---
 Peer Review Contributions by: [Mercy Meave](/engineering-education/authors/mercy-meave/)
