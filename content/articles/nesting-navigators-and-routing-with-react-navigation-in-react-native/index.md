@@ -1,4 +1,4 @@
-Changing between screens is a requirement in nearly all mobile applications. React Native's `react-navigation` library is stunning and simple to use for this purpose. It's a well-known library for React Native application routing and navigation. 
+Changing between screens is a requirement in nearly all mobile applications. React Native's `react-navigation library is stunning and simple to use for this purpose. It's a well-known library for React Native application routing and navigation. 
 
 When you nest navigators, the screens of one navigator are rendered inside the screens of another. If there is a stack, switching to a different screen will cause a new screen to be displayed.
 
@@ -54,7 +54,7 @@ $ npm run android
 
 ### Second Step- Creating a HomeScreen and NewWorkerScreen
 
-It will be necessary for your app starting with the HomeScreen and another screen that we will name new wrokers screen. These two screen will be essential for us to navigate through. In this section we will be creating the two screens. In the HomeScreen.js you will have to create a new file, paste the App.js code and open:
+It will be necessary for your app starting with the HomeScreen and another screen that we will name new workers screen. These two screens will be essential for us to navigate through. In this section, we will be creating the two screens. In the HomeScreen.js you will have to create a new file, paste the App.js code and open:
 
 ```
 nano HomeScreen.js
@@ -114,7 +114,7 @@ export default NewWorkerScreen;
 ```
 
 ### Third Step - Navigating React Pages using StackNavigator
-Nesting navigators is the same as nesting ordinary components in that it renders a navigator within a screen of another navigator. Nesting numerous navigators is frequently required to get the desired UI behavior.
+Nesting navigators is the same as nesting ordinary components in that it renders a navigator within a screen of another navigator. Nesting numerous navigators are frequently required to get the desired UI behavior.
 You'll utilize a StackNavigator to move between screens. In this regard, a StackNavigator is similar to a call stack in functionality. You'll notice that as you move through the screens, the one before it rises to the top of the stack of screens.
 Now we need to open the `app.js` and then replace its content. The content that we'll replace with includes two screens that we created i.e the home and NewWorker screens. 
 
@@ -169,7 +169,7 @@ export default App;
 While revisiting our `App.js` we'll find that we added `NavigationContainer` and `createStackNavigator` to ease and allow navigation from one screen to another. We also added the two screens: `HomeScreen` and `NewWorkerScreen` between the **<Stack.Navigator>** that we will be navigating through and thus navigator is aware of your two screens.
 
 
-### Fourth Step - Adding Buttons to HomeScreen and NewWWorkerScreen
+### Fourth Step - Adding Buttons to HomeScreen and NewWorkerScreen
 
 Add buttons to switch between the two screens, if necessary. As long as the navigation object is included in the StackNavigator, many of its useful attributes will be transmitted down to your screen.
 
@@ -193,8 +193,8 @@ Now, in NewWorkerScreen.js, build a button for YHomescreen:
 />
 ```
 ### Fifth Step- Passing Data to Other Screens Using Context
-Create an array of potential wokers, including Jeff, Kim and Cal and an empty array of present wokers. In addition, you'll implement a feature that allows users to add new acquaintances to their existing list of contacts.
-Add possibleWorkers and currentWorkers to the component’s state:
+Create an array of potential workers, including Jeff, Kim, and Cal, and an empty array of present workers. In addition, you'll implement a feature that allows users to add new acquaintances to their existing list of contacts.
+Add possible workers and current workers to the component’s state:
 ```js
 
 
@@ -255,7 +255,7 @@ class App extends React.Component {
 }
 ```
 #### Adding WorkersContext to App
-To see your wokers on HomeScreen.js, you'll need to add them to WorkersScreen.js first. It's possible to add this feature to your screens with context because this project is built on React.
+To see your workers on HomeScreen.js, you'll need to add them to WorkersScreen.js first. It's possible to add this feature to your screens with context because this project is built on React.
 You first will want a new WorkersContext file:
 ```
 nano WorkersContext.js
@@ -306,7 +306,7 @@ class App extends React.Component {
 
 It is feasible to remove the imports of View and Text from react-native since you no longer use them.
 
-Consumers will only be able to access your data if you supply them with a value. Lets do that:
+Consumers will only be able to access your data if you supply them with a value. Let us do that:
 ```js
 
 
@@ -344,7 +344,7 @@ class App extends React.Component {
 }
 
 ```
-HomeScreen and WokersScreen can now refer to currentWorkers and possibleWorkers in the event of any context changes.
+HomeScreen and WokersScreen can now refer to current workers and possible workers in the event of any context changes.
 
 Work on referencing context in your displays is now possible.
 #### Adding WorkersContext to HomeScreen
@@ -386,10 +386,10 @@ class Home extends React.Component {
 HomeScreen.contextType = WorkersContext;
 ```
 #### Adding WorkersContext to WokersScreen
-In this step, you will set up the application to display the possible wokers and provide buttons for adding them to the current wokers.
+In this step, you will set up the application to display the possible workers and provide buttons for adding them to the current workers.
 ```js
 import React from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { StyleSheet, Text, View, Button } from 'react-native;
 import { WorkersContext } from './WorkersContext';
 
 class Workers extends React.Component {
@@ -423,7 +423,7 @@ class Workers extends React.Component {
 WorkersScreen.contextType = WorkersContext;
 
 ```
-There is an option to add workers on the WorkersScreen. When you do so, the list of possibleworkers  will be reduced. The number of workerson the HomeScreen is steadily increasing.
+There is an option to add workers on the WorkersScreen. When you do so, the list of possible workers will be reduced. The number of workers on the HomeScreen is steadily increasing.
 
 Switching displays and exchanging data is now possible.
 
