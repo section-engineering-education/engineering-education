@@ -5,6 +5,7 @@ Gettext is a GNU utility that helps you with the translation of your application
 
 
 In this article, I will show you how to develop a multiLanguage translator using Streamlit and Gettext. We will create a simple iOS app that can translate a sentence from English to Polish, from German to Russian, or from French to Chinese.
+
 ### Prerequisites
 -I assume that you already have the basic knowledge of Streamlit, if not then check out a blog post on Streamlit which explains everything in detail about it. 
 - Understand how to develop Ios applications.
@@ -25,20 +26,25 @@ The final step is changing the language of our app. For this purpose, there are 
 }
 ```
 As you can see, we use Yandex Translated Text key to translate from Russian. NSLocalizedString macro is used for localization of English and Polish strings, so they will be read from Localizable. strings files.
+
 ```swift
 NSString *YandexApp = @"iTranslate"; 
 NSString *YandexLanguageKey = @"YNDictionaryKeyYandexTranslatedText"; 
 NSLocalizedString(@"English", @"en"); 
 NSLocalizedString(@"Polish", @"pl");
 ```
+
 Finally, we have all our UI objects connected to the outlets and actions. We also implemented a label that shows the current language of the application, for this purpose we use the NSLocalizedString method to read from the Localizable.strings file:
+
 ```swift
 NSString *_i18n(""); 
 NSString *getText() { 
   return _i18n; 
 }
 ```
+
 After all these steps, our Xcode project is ready to build and run. The resulting app has a simple menu with language change action and a label that shows the current language.
+
 ```swift
 - (void)changeLanguage:(id)sender { 
   NSString *newLang = [NSString stringWithFormat:@"ru"]; 
