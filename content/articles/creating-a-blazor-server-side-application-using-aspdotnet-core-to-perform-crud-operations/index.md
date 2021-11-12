@@ -1,5 +1,4 @@
 ### Introduction
-
 Server-side processing occurs when a page is requested for the first time and when pages are posted back to the server. For example, validation, saving and retrieving data, and navigating to other pages are all examples of server-side processing.
 
 In this tutorial, you will learn how to make a Blazor Server-Side Application from scratch and perform CRUD operations in it.
@@ -44,7 +43,6 @@ Now run run app to see how it looks like in a web browser. It should look like t
 The webpage has three pages and you shall also add one page to fetch students' data and perform `CRUD` operations in it.
 
 ### Creating and Reading data from list
-
 In the shared folder, there is a file named `NavMenu.razor`, this file shall be used to create a link to the newly created file page. To create the `students page` you will need to add the following html code to the file.
 
 ```HTML
@@ -118,7 +116,6 @@ The `@page "/students"` is a url that matches to this component to be accessed b
 @page "/students"
 <h3>Students</h3>
 @inject Blazor_Server_App.Data.IStudentsService StudentService;
-
 <table class ="table">
     <thead>
         <tr>
@@ -176,10 +173,9 @@ namespace Blazor_Server_App.Data
 ```
 
 ### Updating/Editing the list
-
 To create an edit function to this page, you will need to create a link that would take your routing from the students page to another page which shows the details of the students that we want to update or edit.
 
-To do this, in the `Student.razor` file, you will add an empty header in the table header and and an action of an anchor tag in the table body that has a new student location that you want the user to send to. Also, along with the routing, you will pass the student Id so that you can search the student in the new location using the Id.
+To do this, in the `Student.razor` file, you will add an empty header in the table header and an action of an anchor tag in the table body that has a new student location that you want the user to send to. Also, along with the routing, you will pass the student Id so that you can search the student in the new location using the Id.
 
 ```HTML
 <table class="table">
@@ -212,10 +208,8 @@ Now to fetch the Id, you will implement the code below in your `EditStudent.razo
 ```C#
 @page "/students{Id}"
 <h3>EditStudent</h3>
-
 <h4>Id</h4>
 @code {
-
     [Parameter]
     public String Id { get; set; }
 }
@@ -246,7 +240,6 @@ You will use the above method in the `EditStudent` component.
 @inject Blazor_Server_App.Data.IStudentsService StudentsService;
 @inject NavigationManager Navigation
 <h4>Id</h4>
-
 <EditForm Model="student" onSubmit ="@submitForm">
     <div class="form-group">
         <label>Id</label>
@@ -257,11 +250,8 @@ You will use the above method in the `EditStudent` component.
         <inputText id="Name" class="form-control" value ="@student.Name" name="name" @bind-value="student.Name"></inputText>
     </div>
      <button type="submit" class="btn btn-primary">Update</button>
-
 </EditForm>
-
 @code {
-
     [Parameter]
     public String Id { get; set; }
 
@@ -297,7 +287,6 @@ You will implement the above interface method in the student service file. This 
 ```
 
 ### Adding data to a list
-
 To add a student to the list, you will go to the student service interface and create a method for adding a student. The method shall be a void and receives the student model i.e
 
 ```C#
@@ -356,7 +345,6 @@ private void SubmitForm()
 ```
 
 ### Deleting data in a list
-
 In the students razor page, you will add another table data for a button and give it the value of `Delete` and give it an oclick action and give it the method `onDelete` and pass the value of student to it.
 
 ```HTML
@@ -382,5 +370,4 @@ public void DeleteStudent(Guid id)
 ```
 
 ### Conclusion
-
 From this tutorial, you shall be able to implememt the create, delete, read and update operations in a web page.
