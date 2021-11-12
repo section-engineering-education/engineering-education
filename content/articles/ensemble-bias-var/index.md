@@ -78,7 +78,7 @@ Increasing the bias leads to a decrease in variance. Suppose we reduce bias, and
 Ensemble learning is especially useful when trying to control the two errors.
 
 ### Ensemble methods, bias, and variance
-We covered ensemble learning techniques like bagging, boosting, and stacking in a previous [article](/ensemble-learning/). As a result, we won’t reintroduce them here. We mentioned that bagging helps reduce the variance while boosting reduces bias. In this section, we will seek to understand how bagging and boosting impact variance and bias.
+We covered ensemble learning techniques like bagging, boosting, and stacking in a previous [article](/engineering-education/ensemble-learning/). As a result, we won’t reintroduce them here. We mentioned that bagging helps reduce the variance while boosting reduces bias. In this section, we will seek to understand how bagging and boosting impact variance and bias.
 
 #### Bagging and variance
 Bagging is meant to reduce the variance without increasing the bias. This technique is especially effective where minute changes in a learner’s training set lead to huge changes in the predicted output. Bagging reduces the variance by aggregating individual models. These models have dissimilar statistical properties like the means and standard deviations, among others.

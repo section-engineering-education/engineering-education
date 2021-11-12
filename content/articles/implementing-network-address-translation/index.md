@@ -132,7 +132,7 @@ Dynamic NAT reduces this problem to some degree. However, if a large percentage 
 
 To understand how PAT works, it is important to recall how the host uses the Transmission Control Protocol (TCP), User Datagram Protocol (UDP) and port numbers to transmit data.
 
-To learn more about TCP and UDP, it is highly recommeded to go over [this](/understanding-tcp-ip-transport-layer-protocols/) article before continuing to read.
+To learn more about TCP and UDP, it is highly recommeded to go over [this](/engineering-education/understanding-tcp-ip-transport-layer-protocols/) article before continuing to read.
 
 With these protocols, PAT can map multiple private addresses to one or more public addresses by ensuring that devices use different TCP and UDP port numbers for each session.
 

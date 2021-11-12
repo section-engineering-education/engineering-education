@@ -13,7 +13,7 @@ images:
   - url: /engineering-education/secured-deeplearning-in-remote-devices/hero.jpg
     alt: Secured Deep Learning in Remote Devices
 ---
-In my [previous article](/understanding-differential-privacy), we understood the basics of differential privacy. In this article, we will cover how differential privacy can be applied as Federated Learning that can be deployed in remote devices.
+In my [previous article](/engineering-education/understanding-differential-privacy), we understood the basics of differential privacy. In this article, we will cover how differential privacy can be applied as Federated Learning that can be deployed in remote devices.
 <!--more-->
 We'll be building a simple deep learning model to demonstrate the working of federated learning. As a prerequisite, you must have an intermediate level of understanding of Python and Deep Learning with the [PyTorch](https://pytorch.org) library.
 
@@ -129,7 +129,7 @@ A Torch tensor is a multi-dimensional matrix containing elements of a single dat
 #### Neural network architecture
 We create a very simple neural network architecture consisting of 4 fully connected layers, with ReLU as activation functions used after each layer.
 
-To understand more about Neural networks, read [this article](/introduction-to-neural-networks/) before further implementation.
+To understand more about Neural networks, read [this article](/engineering-education/introduction-to-neural-networks/) before further implementation.
 
 ReLU is an activation function that converts the values below zero to zero, and the value remains the same if it is above zero.
 
@@ -186,7 +186,7 @@ We instantiate both the devices with separate neural network models. We also ini
 
 Optimizers are algorithms or methods used to change the attributes of your neural network such as weights and learning rate to reduce the losses.
 
-Here, we use the Stochastic Gradient Descent (SGD) optimizer. In short, SGD helps us reduce the loss faster, which happens batch-wise. More about SGD can be read [this article](/sgd-classifier/).
+Here, we use the Stochastic Gradient Descent (SGD) optimizer. In short, SGD helps us reduce the loss faster, which happens batch-wise. More about SGD can be read [this article](/engineering-education/sgd-classifier/).
 
 ```python
   device1_model = Net() # Initialize neural network for Device1

@@ -43,8 +43,8 @@ These tools include:
 - A localhost Web Server – In our case we'll use WAMP (for Windows), LAMP (for Linux), or MAMP (for MacOs). This localhost webserver comes installed with latest PHP and MySQL database so you will not need to install them manually.
 To install either MAMP, LAMP, or WAMP go to http://ampps.com/downloads and choose the software your platform.
 - Composer – This is a dependency management software for PHP. To install the composer visit https://getcomposer.org/ and download it there for your platform.
-- [Node.js](/why-node-js-is-popular/) – This is a free and open source JavaScript runtime environment that executes JavaScript outside of the browser. We will not write any Node.js code but it will be used in the background by Laravel to streamline our development.
-- Code editor – A [code editor](/atom-vs-visual-studio-code-functionality-and-features-comparison/) will be required. We recommend to use Visual Studio Code: It is free.
+- [Node.js](/engineering-education/why-node-js-is-popular/) – This is a free and open source JavaScript runtime environment that executes JavaScript outside of the browser. We will not write any Node.js code but it will be used in the background by Laravel to streamline our development.
+- Code editor – A [code editor](/engineering-education/atom-vs-visual-studio-code-functionality-and-features-comparison/) will be required. We recommend to use Visual Studio Code: It is free.
 - A browser – Google Chrome, Edge, Safari, or Mozilla Firefox will do just fine.
 - Background knowledge of the PHP Programming Language.
 
@@ -700,7 +700,7 @@ Then modify the code in your `BlogPostController.php` in `show()` method to look
 
 public function show(BlogPost $blogPost)
 {
-    return view(‘blog.show’, [
+    return view('blog.show', [
         ‘post’ => $blogPost,
     ]); //returns the view with the post
 }

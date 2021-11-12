@@ -33,7 +33,7 @@ Take a look at some of the framework integrations [here](https://cloudinary.com/
 | -  |Node.js| -  |
 | -  |.Net| -  |
 
-You can find a comprehensive guide or tutorial on how to upload images to Cloudinary using *Django* [here](/uploading-images-to-cloudinary-from-django-application/#conclusion). I highly recommend it for *Python* developers.
+You can find a comprehensive guide or tutorial on how to upload images to Cloudinary using *Django* [here](/engineering-education/uploading-images-to-cloudinary-from-django-application/#conclusion). I highly recommend it for *Python* developers.
 
 In this tutorial, we are going to learn how to upload an image to Cloudinary using Node.js.
 
@@ -48,7 +48,7 @@ At the end of the tutorial, you will have learned about:
 The basic requirements for this tutorial are:
 - Web development basics.
 - A basic IDE installation on the machine. In our case, we will be using [Visual Studio Code](https://code.visualstudio.com/download) (free, easy to use, and very efficient).
-- [Node.js](/why-node-js-is-popular/) basics.
+- [Node.js](/engineering-education/why-node-js-is-popular/) basics.
 - A stable internet connection.
 
 ### Table of contents
@@ -65,7 +65,7 @@ The basic requirements for this tutorial are:
 - [References](#references)
 
 ### Create an account
-Cloudinary provides developers with a free account option. Some of the advantages of this account are mentioned in the blog found [here](/uploading-images-to-cloudinary-from-django-application/#conclusion).
+Cloudinary provides developers with a free account option. Some of the advantages of this account are mentioned in the blog found [here](/engineering-education/uploading-images-to-cloudinary-from-django-application/#conclusion).
 
 Once created proceed to the next steps.
 
@@ -97,7 +97,7 @@ npm i nodemon cloudinary dotenv formidable express
 
 This will provide safety when working with the API names and keys in any Node.js project since they are stored away from the main process and are only available when required. It provides safety and security using [The Twelve-Factor App](https://12factor.net/config) methodology. 
 
-You can learn more about Environment Variables in Node.js, what are `.env` files, and how to work and configure them [here](/nodejs-environment-variables/).
+You can learn more about Environment Variables in Node.js, what are `.env` files, and how to work and configure them [here](/engineering-education/nodejs-environment-variables/).
 
 Once done you can update any of the packages which were initially installed by running `npm update` in the integrated terminal.
 
