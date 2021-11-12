@@ -1,16 +1,34 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /convert-html-to-pdf-with-docraptor/
+title: Converting HTML to PDF using the Docraptor Library
+description: This article will guide the reader on using DocRaptor to convert HTML into a PDF.
+author: jkennedy-ndutha
+date: 2021-11-12T00:00:00-16:34
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/convert-html-to-pdf-with-docraptor//hero.png 
+    alt: Convert HTML to pdf using Docraptor Image.
+---
+
 ### Introduction
-It is easy for anyone to deliver PDFs because they are a standard document presentation format. Everything is given as a PDF now, including requests, receipts, and appropriation reports. However, the planned duration of PDF can be inconvenient if you need to create a large number of PDFs quickly. DocRaptor is an HTML-to-PDF API that significantly enhances the current situation and has a PHP framework for simple joining. This article will guide the reader on using DocRaptor to convert HTML into a PDF.
+It is easy for anyone to deliver PDFs because they are a standard document presentation format. Everything is given as a PDF now, including requests, receipts, and appropriation reports. However, the planned duration of PDF can be inconvenient if you need to create a large number of PDFs quickly. 
+
+DocRaptor is an HTML-to-PDF API that significantly enhances the current situation and has a PHP framework for simple joining. This article will guide the reader on using DocRaptor to convert HTML into a PDF.
 
 ### Table of content
 - [Introduction](#introduction)
 - [Table of content](#table-of-content)
 - [Installation](#installation)
-- [Authentication](#authentication)
-- [Add HTML or a URL](#add-html-or-a-url)
-- [API options](#api-options)
-- [Get documentation](#get-documentation)
+- [API Authentication](#api-authentication)
+- [Adding HTML content or a URL](#adding-html-content-or-a-url)
+- [API document options](#api-document-options)
+- [Get the API documentation](#get-documentation-for-the-library)
 - [Conclusion](#conclusion)
-  - [Further activity reading](#further-activity-reading)
  
 ### Installation
 To get started with Docraptotr, we need to install it in our local machine. Installation can be done in two ways. The first way is using composer dependency manager, while the second way is by downloading a zip file of the library and extracting it in the specific project folder.
@@ -39,7 +57,7 @@ $configuration=DocRaptor\configuration::getDefaultconfiguration();  //requests f
 $configuration->setUsername('KEY_YOUR_API_HERE');   //works for test document 
 ```
 
-### Adding HTML or a URL to use
+### Adding HTML content or a URL
 This section is where most of the work is done as we add the HTML content to be converted here. Any HTML that we need to convert must exist in the single document we are working on. In the file names `docaptor.php`, add the code snippet below:
 
 ```php
