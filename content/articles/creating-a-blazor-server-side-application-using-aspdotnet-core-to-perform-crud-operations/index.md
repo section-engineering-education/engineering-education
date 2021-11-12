@@ -20,6 +20,7 @@ In order to understand this tutorial well, you will need to have an understandin
 - Basic knowledge of [Blazor framework](https://blazor.syncfusion.com/documentation/introduction)
 - Basic knowledge of [C#](https://docs.microsoft.com/en-us/dotnet/csharp/) language
 - Microsoft Visual Vtudio installed and well set. Download it [here](https://visualstudio.microsoft.com/vs/community/)
+- Basic [HTML](https://devdocs.io/html/) knowledge
   
 Now, you will open Microsoft Visual Studio and select `New Project` as shown in the figure below and click next.
 
