@@ -17,7 +17,94 @@ images:
 
 Managing application state in a clean and optimized way is very important when dealing with large Flutter applications. State management is the handling of application data between different screens and components. 
 <!--more-->
-This article will discuss how to retrieve data from an API and pass it to a service class to the UI. The UI will listen for data from the API. When the data is available, the application will display a list of items. When it is in a loading state, the application will show a progress indicator.
+This article will discuss retrieving data from an API and passing it to a service class to the UI. The UI will listen for data from the API. When the data is available, the application will display a list of items. In addition, the application will show a progress indicator when it is in a loading state.
+
+MobX has four principle concepts that we will learn and understand how they work: `observables`, `computed values`, `reactions` and `actions`.
+
+#### Observables
+Observables in MobX allow us to add observable capabilities to our data structures—like classes, objects, arrays—and make our properties observables. This means that our property stores a single value, and whenever the value of that property changes, MobX will keep track of the value of the property for us.
+
+For example, let’s imagine we have a variable called counter. We can easily create an observable by using the `@observable` decorator, like this:
+
+```dart
+class counter {
+  @observable
+  int value = 0;
+}
+```    
+
+By using the `@observable` decorator, we’re telling MobX that we want to keep track of the counter's value, and every time the counter changes, we’ll get the updated value.
+
+#### Computed values                                    
+In MobX, we can understand computed values as values that can be derived from our state, so the name `computed values` makes total sense. They are functions derived from our state, so their return values will change as well whenever our state changes.
+
+You must remember about computed values that the get syntax is required, and the derivation that it makes from your state is automatic, you don’t need to do anything to get the updated value.
+
+```dart
+class counter {
+  @observable
+  int value = 0;
+
+  @computed
+  int get doubleValue => value * 2;
+}
+```
+
+#### Actions
+Actions in MobX are a very important concept because they’re responsible for modifying our state. They’re responsible for changing and modifying our observables.
+
+```dart
+class counter {
+  @observable
+  int value = 0;
+
+  @action
+  void increment() {
+    value++;
+  }
+
+  @action
+  void decrement() {
+    value--;
+  }
+}
+```
+
+#### Reactions
+Reactions in MobX are pretty similar to computed values, but the difference is that reactions trigger side effects and occur when our observables change. Reactions in MobX can either be UI changes or background changes—for example, a network request, a print on the console, etc.
+
+We have the custom reactions: autorun, reaction, when.
+
+##### autorun
+Autorun will run every time specific observable changes. For example, if we wanted to print the value of the counter every time it changes, we could do like this:
+
+```dart
+autorun((_) {
+  print(counter.value);
+});
+```
+
+##### Reaction
+Reaction is similar to autorun, but it gives us more control over which we should track observables’ values. It receives two arguments: the first is a simple function to return the data used in the second argument. The second argument will be the effect function; this effect function will only react to data passed in the first function argument. This effect function will only be triggered when the data you passed in the first argument has changed.
+
+```dart
+reaction((_) {
+  return counter.value;
+}, (_) {
+  print('Counter changed to ${counter.value}');
+});
+```
+
+##### when
+When is very similar to reaction, but it’s more specific. It’s a function that will only react to data matching the data you pass in the first argument.
+
+```dart
+when((_) {
+  return counter.value == 0;
+}, (_) {
+  print('Counter is zero');
+});
+```
 
 ### Prerequisites
 1. [Flutter SDK](https://flutter.dev/docs/get-started/install) installed.
