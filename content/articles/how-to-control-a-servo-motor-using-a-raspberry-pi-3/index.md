@@ -54,10 +54,10 @@ Generally; a servo motor operation is geared towards getting the shaft of the mo
 
 Examples of servo motors are shown in the images below:
 Diagram 1
-![Servo motor diagram 1](/engineering-education/ how-to-control-a-servo-motor-using-a-raspberry-pi-3/servo.png)
+![Servo motor diagram 1](/engineering-education/how-to-control-a-servo-motor-using-a-raspberry-pi-3/servo.png)
 
 Diagram 2
-![Servo motor diagram 2](/engineering-education/ how-to-control-a-servo-motor-using-a-raspberry-pi-3/servo-motor.png)
+![Servo motor diagram 2](/engineering-education/how-to-control-a-servo-motor-using-a-raspberry-pi-3/servo-motor.png)
 
 ### Setting up Raspberry Pi to control the Servo motor
 
@@ -67,10 +67,10 @@ Take note that the motor has a set of 3 wires, red, brown, and orange.
 The red one is +ve and the brown one is -ve. The orange wire is used to transmit the control signals i.e., Pulse width modulation control signal.
 
 The 3 wires are connected to different pins on the raspberry pi therefore, for flexibility we will connect them using jumper cables as shown in the diagram below:
-![Jumper cable connection](/engineering-education/ how-to-control-a-servo-motor-using-a-raspberry-pi-3/jumper-cable.png)
+![Jumper cable connection](/engineering-education/how-to-control-a-servo-motor-using-a-raspberry-pi-3/jumper-cable.png)
 
 We then connect the signal wire to GPIO pin 11, the positive to pin 4 which supplies 5 volts, and the -ve to pin 6 as shown in the diagram below:
-![Pin connections on Pi](/engineering-education/ how-to-control-a-servo-motor-using-a-raspberry-pi-3/pi-pin-numbering.jpg)
+![Pin connections on Pi](/engineering-education/how-to-control-a-servo-motor-using-a-raspberry-pi-3/pi-pin-numbering.jpg)
 
 #### Step 2: Programming the Raspberry Pi
 **2.1 Importing libraries**
