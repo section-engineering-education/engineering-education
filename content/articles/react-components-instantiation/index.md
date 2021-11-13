@@ -1,8 +1,8 @@
 ### React Components  Instantiation
 
-There are different types of react components: Functional Components and  Class Components.
+React Component is a small, reusable bite of code which is responsible  for   rendering HTML.
 
-React Component is a small, reusable bite of code which is responsible  for one job  which often includes rendering HTML.
+There are different types of React components but in this article I will be covering two types  which are functional components and class components.
 
 Throughout this tutorial we will be mostly talking about JSX. JSX element can be written in HTML format or it may be written as a component instance.In JSX you use capitalization to differentiate between HTML like and component instance .
 
@@ -79,7 +79,7 @@ Lets now create a component instance by adding `<Valley/>` which will be our com
 ```
 The code appears this way after creating a component instance.There’s your component instance!
 
-Valley  is a class which gets instantiated when  it is passed as an argument in `ReactDOM.render`
+class `Valley` gets instantiated when it gets passed as an argument in `ReactDOM.render`
 
 Lets now render our component:
 ```js
@@ -89,9 +89,9 @@ Lets now render our component:
   );
 ```
 
-`ReactDOM.render()` will tell `<Valley />` which is our component class to call its render method.
+`ReactDOM.render()` then tells  our component class `<Valley />` to call its render method.
 
-`<Valley />` will call its render method, which will return the JSX element `<h1>Welcome to React world</h1>`.  This will enable “Welcome to React world” to be exhibited  on the screen.
+class `<Valley />` then calls its render method, which  returns the JSX element `<h1>Welcome to React world</h1>`.  This will enable “Welcome to React world” to be exhibited  on the screen.
 
 #### Using new keyword 
 The new keyword Creates a blank, simple JavaScript item. Its syntax is `new constructor[([arguments])]`. 
