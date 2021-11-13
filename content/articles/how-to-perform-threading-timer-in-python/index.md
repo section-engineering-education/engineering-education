@@ -4,13 +4,16 @@ Threading allows multiple tasks to run concurrently. When task **A** is running 
 To run thread concurrently *Python* uses a technique known as task switching. Python switches between each task rapidly making it **seem** like multiple tasks are running in parallel making it useful in event-driven tasks.
 Thread being lightweight they require less memory hence  saving on CPU resources.
 A thread has an entry, an execution, and an exit point.
-In the Python library, the timer is a subclass of the **“threading”** class that is used for code execution after a specified period of time. Threading in Python Timer() starts following the delay defined as an argument within the threading. The Timer class thus calls itself delaying the execution of the following operation by the same amount of time specified.
+Python library contains, the timer is a subclass of the **“threading”** class that is used for code execution after a limited period of time. Threading in Python Timer() starts following the delay defined as an argument within the threading. The Timer class thus calls itself delaying the execution of the following operation by the same amount of time specified.
 
 -  [Prerequisites](#prerequisites)
 -  [Python Timer Functions ](#python-timer-functions)
+-  [Threading Module Overview](#threading-module-overview)
 -  [Creating and Using Timer Class](#creating-and-using-timer-class)
- -  [Working with Python Decorator](#working-with-python-decorator)
- - [Conclusion](#Conclusion)
+-  [Working with Python Decorator](#working-with-python-decorator)
+-  [Importance of using Threads](#importance-of-using-threads)
+-  [Conclusion](#conclusion)
+ 
 
 ### Prerequisites
 - You have to be familiar with Python basics and get started with it. Refer to this article to [a beginners guide to python](/engineering-education/a-beginners-guide-to-python/)
@@ -18,7 +21,7 @@ In the Python library, the timer is a subclass of the **“threading”** class 
 
 ### Python Timer Functions
 After every specified number of seconds, a timer class function is called.
-**start()** This function is used to initialize a timer. Ending or quitting  the timer one has to use a **cancel()** function.
+**start()** This function is used to initialize a timer. To end or quit  the timer one has to use a **cancel()** function.
 Importing the threading class is necessary for one to use the threading class. 
  The calling thread can be suspended for  seconds using the function  **time.sleep(secs)**.
  - To understand further I will be illustrating by use of a code snippet and also with the expected output inform of a screenshot.
@@ -55,10 +58,18 @@ S.cancel()
  - Below is the output of the above program:
  ![cancel](/engineering-education/how-to-perform-threading-timer-in-python/cancel.png)
  
+ ### Threading Module Overview
+The latest threading module included with the current Python 2.4 provides much more powerful, high-level support for threads than the thread module that were preceded.
+The threading module exposes all the methods of the thread module and provides some additional functions as depicted below :
+
+            thread.activeCount() − Returns how many thread objects are active.
+            thread.currentThread() − Returns how many thread objects in the caller's thread control.
+            thread.enumerate() − Returns an overview list of all thread objects that are currently active.
+            
 ### Creating and Using Timer Class
 The beauty of threading is that you can tell the computer to perform a task some other time or do it at the same time. You can also execute the code at the same time on different threads making it extremely powerful. A timer class always runs in intervals. The Python Timer class is used when we want to perform an operation or have a function run after a specified period of time has passed. The threading class has a subclass called class timer. We will create Timer objects when we need time-bound actions (methods), in technical terms.
 To use Timer class we will first have to import the time module. 
-**args** parameter is used to give arguments to the functions to be called.
+**args** parameter is always preferably used to declare arguments to the functions to be called.
  ```py
 ##Timers  
 ##Execute code at timed intervals  
@@ -121,6 +132,14 @@ import time
 ```
 When the code is run the output is:
 ``TIME PASSED IS: 0.59 SECS``
+
+### Importance of using Threads
+ - Threads can be operated really concurrently, multithreaded programs can run quicker on computer systems with several CPUs.
+ - A program can continue to respond to input. This is true on a single CPU as well as several CPUs.
+ - Threads in a process can share global variable memory. When a global variable is modified in one thread, it affects all threads. Local can also variables can exist in a thread.
+ - The handling of threads in an operating system is easier than the handling of processes. As a result, they're sometimes referred to as light-weight processes.
+ - It can be pre-empted (interrupted) hence allowing for high priority processes
+ - It can temporarily be put on hold (at times refered to as in sleeping mode) while other threads are running - this is called **yielding**.
 
 ### Conclusion
 We have gained the following insights from this article:
