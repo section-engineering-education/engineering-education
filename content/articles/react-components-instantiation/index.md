@@ -44,7 +44,7 @@ We will now add the render function in our code:
    }
 ```
 
-Its a must for a render funcion to have a return statement. This return statement returns a JSX expression as shown:
+Its a must for a render funcion to have a return statement. A JSX expression is returned  by the return statement in the render function as shown:
 
 ```js
   class V extends React.Component {
