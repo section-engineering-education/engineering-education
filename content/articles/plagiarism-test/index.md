@@ -1,3 +1,7 @@
+# CSS Grid
+
+## Intro
+
 CSS Grid is a layout system used in web design to layout UI elements of a web page using rows and columns. We can easily do this with Tailwind CSS. Tailwind CSS added a comprehensive set of utilities for working with CSS grid layout!
 <!--more-->
 In this tutorial, we will learn how we can easily layout elements in our web page using the grid classes in Tailwind CSS. We will also learn how to make responsive designs for our elements using these classes.
