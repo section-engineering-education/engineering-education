@@ -1,63 +1,93 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /whatsapp-sentimental-analysis-using-dialogflow-twilio/
+title: WhatsApp Sentimental Analysis using Dialogflow Twilio Integration
+description: This article will help the reader understand how to perform WhatsApp sentimental analysis ysing Dialogflow Twilio integration.
+author: jethro-magaji
+date: 2021-11-13T00:00:00-02:48
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
-Today, you will build a WhatsApp chatbot that will tell you how people feel about a topic based on sentiment analysis of tweets on that topic. You will build this chatbot using [Dialogflow](https://cloud.google.com/dialogflow/docs) and the Google Cloud Natural Language Processing API to analyze the tweets, and Twilio for WhatsApp integration.
+  - url: /engineering-education/whatsapp-sentimental-analysis-using-dialogflow-twilio/hero.jpg
+    alt: Dialogflow Twilio Integration Hero Image
+---
+This tutorial will show you how to build a WhatsApp chatbot that predicts how people feel as regards a particular topic using sentiment analysis. 
+<!--more-->
+We will build this chatbot using [Dialogflow](https://cloud.google.com/dialogflow/docs) and the Google Cloud Natural Language Processing API to analyze the tweets.
+
+ We will also use Twilio for WhatsApp integration.
 
 ### Prerequisites
-
-- A free [Twilio](https://www.twilio.com/try-twilio) Account
-- A [Google Cloud](https://cloud.google.com/) Account
-- A [Twitter developer](https://developer.twitter.com/en) Account
-- A [WhatsApp](https://www.whatsapp.com/) Account
-- A [Dialogflow](https://dialogflow.cloud.google.com/#/login) Account
-- [Node.js](https://nodejs.org/en/) and [npm](https://www.npmjs.com/)
-- An installation of [ngrok](https://ngrok.com/)
+To follow along, you need:
+- A [Twilio](https://www.twilio.com/try-twilio) account
+- A [Google Cloud](https://cloud.google.com/) account
+- A [Twitter developer](https://developer.twitter.com/en) account
+- A [WhatsApp](https://www.whatsapp.com/) account
+- A [Dialogflow](https://dialogflow.cloud.google.com/#/login) account
+- [Node.js](https://nodejs.org/en/), [npm](https://www.npmjs.com/), and [ngrok](https://ngrok.com/) installed.
 
 ### Creating a Google Cloud account
+You will need to [log in](https://accounts.google.com/signin/v2/identifier?service=ahsid&passive=true&continue=https%3A%2F%2Fcloud.google.com%2F_d%2Freturn%3Fcontinue%3Dhttps%253A%252F%252Fcloud.google.com%252F&flowName=GlifWebSignIn&flowEntry=ServiceLogin) or create a [Google Cloud account](https://cloud.google.com/) to use the Cloud Natural Language API. 
 
-You will need to [log in](https://accounts.google.com/signin/v2/identifier?service=ahsid&passive=true&continue=https%3A%2F%2Fcloud.google.com%2F_d%2Freturn%3Fcontinue%3Dhttps%253A%252F%252Fcloud.google.com%252F&flowName=GlifWebSignIn&flowEntry=ServiceLogin) or create a [Google Cloud account](https://cloud.google.com/) to use the Cloud Natural Language API. Create an account with your credit card details but you won’t be charged unless you exceed the free tier limit. Additionally, new users get [$300 in free credits](https://cloud.google.com/free/docs/gcp-free-tier/#free-trial).
+Create an account with your credit card details but you won't be charged unless you exceed the free tier limit. 
 
-After you have created your account or signed in, create a “New Project”:
+Additionally, new users get [$300 in free credits](https://cloud.google.com/free/docs/gcp-free-tier/#free-trial).
 
-For existing users go to your dashboard app bar and click on the current project name dropdown.
+After you have created your account or signed in, create a `New Project`:
+
+For existing users, navigate to your dashboard `app bar` and click on the current project name dropdown.
 
 ![Cloud account](/engineering-education/whatsapp-sentimental-analysis-using-dialogflow-twilio/cloud-account.png)
 
-Next, click on the “NEW PROJECT” button.
+Next, click on the `NEW PROJECT` button:
 
 ![GCP Project](/engineering-education/whatsapp-sentimental-analysis-using-dialogflow-twilio/gcp-project.png)
 
-Then, add the required details for your project and click on “CREATE” to create a new project.
+Then, add the required details for your project and click on `CREATE` to generate a new project.
 
 ![Google cloud project](/engineering-education/whatsapp-sentimental-analysis-using-dialogflow-twilio/create-project.png)
 
-Next, you will need to enable the Cloud Natural Language API for the project to perform sentiment analysis.
+Next, you need to enable the Cloud Natural Language API for the project to perform sentiment analysis.
 
-To enable it, find the “Getting Started” card on your new project’s main dashboard, click on “Explore and Enable APIs”, and search for “Cloud Natural Language API” in the top search bar:
+To enable it, find the `Getting Started` card on your new project's main dashboard.
+
+Click on `Explore and Enable APIs`, and search for `Cloud Natural Language API` in the top search bar:
 
 ![Cloud NLP](/engineering-education/whatsapp-sentimental-analysis-using-dialogflow-twilio/cloud-nlp.png)
 
-If you see a modal telling you to enable billing, select “ENABLE BILLING”. You won't be charged anything, but you need to tell Google Cloud Platform to link this API to your payment method.
+If you are prompted to activate billing, select `ENABLE BILLING`. You won't be charged anything.
 
 ### Building an intent in Dialogflow
+Dialogflow, powered by Google, offers a framework for understanding Natural Language. It enables us to create interfaces for communication. 
 
-Dialogflow, powered by Google, offers an application for understanding Natural Language that enables us to create interfaces for communication. You’re going to use Dialogflow with a fulfillment webhook. A fulfillment webhook allows you to write JavaScript code in the Dialogflow in-line editor and deploy it as a cloud function. You’ll use this to build a conversational experience for the WhatsApp chatbot. If you don’t have a [Dialogflow account](https://dialogflow.cloud.google.com/#/login) you can create one.
+We will use Dialogflow with a fulfillment webhook. A fulfillment webhook allows you to write JavaScript code in Dialogflow's in-line editor and deploy it as a cloud function. 
 
-Once logged in to Dialogflow, create an agent by clicking the **+ Create Agent** button towards the top left of the screen. Give your agent a name and then under the **Google Project** label, select your Google Cloud project for importing. To finish, hit the blue **CREATE** button at the top of the screen.
+We will use this to feature build a conversational experience for the WhatsApp chatbot. If you don’t have a [Dialogflow account](https://dialogflow.cloud.google.com/#/login), you should create one.
 
-You will need a basic understanding of Dialogflow. If you will need to read up, please check out the [official documentation](https://cloud.google.com/dialogflow/docs/).
+Once you are logged in to Dialogflow, create an agent by clicking the **+ Create Agent** button towards the top left of the screen. 
 
-Next, create an intent for the conversation by clicking the **+** button next to **Intents**. You’ll see a screen that looks like this:
+Name your agent and then under the **Google Project** label, select your Google Cloud project to import. Finally, hit the blue **CREATE** button at the top of the screen.
+
+Note that you need a basic understanding of Dialogflow. Please check out the [official documentation](https://cloud.google.com/dialogflow/docs/).
+
+Next, create an intent for the conversation by clicking the **+** button next to **Intents**. You'll see a screen that looks like this:
 
 ![Create Intent](/engineering-education/whatsapp-sentimental-analysis-using-dialogflow-twilio/dialogflow-intent.png)
 
 Under the **Training phrases** heading, click the **ADD TRAINING PHRASES** button.
 
-To add a training phrase type in a phrase that a user might ask, for example: “How do people feel about “Twilio”?.
+To add a `training phrase` type in a question that a user might ask. For example, How do people feel about Twilio?.
 
-In this example, the user wants to know more about “Twilio”, but it could be any other search word or phrase. Using Dialogflow Natural Language Processing you can replace the search word with an entity that can carry any parameter.
+In the above example, the user wants to know more about Twilio. Using Dialogflow Natural Language Processing, we can replace the search word with an entity that accepts different parameters.
 
-Now, the training can be rewritten like this; How do people feel about “X”? The “X” here is an entity that can carry any parameter.
+Now, the training phrase can be rewritten like this; How do people feel about X? The `X`, in this context, is an entity that can accept any parameter.
 
-To do this, type the phrase: “How do people feel about X” and then highlight the letter “X” with your cursor. At that point, a dialog with a list of entities will show up. Select `@sys.any` as the entity, as shown in the image below. Hit the `return` key to submit the training phrase.
+To do this, type the phrase: How do people feel about X, and then highlight the letter `X` with your cursor. 
+
+At that point, a dialog with a list of entities will show up. Select `@sys.any` as the entity, as shown in the image below. Press the `return` key to submit the training phrase.
 
 ![Training phrases on Dialogflow](/engineering-education/whatsapp-sentimental-analysis-using-dialogflow-twilio/dialogflow-intent2.png)
 
@@ -70,21 +100,23 @@ Repeat this process for the following training phrases:
 
 ![Intent in Dialogflow](/engineering-education/whatsapp-sentimental-analysis-using-dialogflow-twilio/dialogflow-intent3.png)
 
-Do feel free to create another intent and add training phrases of your choice if you feel the need to.
+Feel free to create another intent and add more training phrases.
 
 ### Action and parameters
+The `X` in the training phrases is an entity type that extracts any parameter from the user expression. 
 
-The “X” in the training phrases is an entity type that extracts any parameter from the user expression. So, we turned `X` into a variable that can represent anything.
+In other words, we turned `X` into a variable that can represent anything.
 
-Dialogflow provides pre-defined [system entities](https://cloud.google.com/dialogflow/docs/entities-system) that can match many common types of data. For example, there are system entities for matching dates, times, colors, email addresses, and so on. You can also create your own [custom entities](https://cloud.google.com/dialogflow/docs/entities-custom) for matching custom data.
+Dialogflow provides pre-defined [system entities](https://cloud.google.com/dialogflow/docs/entities-system) that can match common data types. 
+
+For example, there are system entities for matching dates, times, colors, email addresses, and so on. You can also create your own [custom entities](https://cloud.google.com/dialogflow/docs/entities-custom).
 
 ![Entity in Dialogflow](/engineering-education/whatsapp-sentimental-analysis-using-dialogflow-twilio/dialogflow-intent4.png)
 
 ### Responses
+We also need to add default responses to the chatbot in case our query does not return any results.
 
-You need to also add default responses to the chatbot in the case that there’s no result for the query made.
-
-Scroll down past where you added the training phrases to a section titled **Responses**. Click the button that says **ADD RESPONSES**.
+Scroll down to the **Responses** section and click the **ADD RESPONSES** button.
 
 You can add the following statements as default responses for the intent:
 
@@ -95,20 +127,20 @@ You can add the following statements as default responses for the intent:
 ![Responses In Dialogflow](/engineering-education/whatsapp-sentimental-analysis-using-dialogflow-twilio/dialogflow-intent5.png)
 
 ### Fulfillment
+This intent also needs a fulfillment webhook to give the correct responses for the user's query. To make this work, toggle **Enable webhook call for this intent** to _on_.
 
-This intent will also need a fulfillment webhook in order to give the correct responses for the query made by the user. To make this work, toggle **Enable webhook call for this intent** to be _on_.
+![Webhook in Dialogflow](/engineering-education/whatsapp-sentimental-analysis-using-dialogflow-twilio/dialogflow-intent6.png)
 
-![Webhook in Dialogflow](/engineering-education/whatsapp-sentimental-analysis-using-dialogflow-twilio/dialogflow-intent6.png "An image showing how to enable webhook in Dialogflow")
+After enabling the webhook, click the blue **SAVE** button at the top of the screen. 
 
-After enabling the webhook, click the blue **SAVE** button at the top of the screen. Next, click **Fulfillment** from the left side menu. Switch the **Disabled** toggle to the right of the title **Inline Editor,** to **Enabled**. This allows you to write your webhook code right inside of Dialogflow.
+Next, click **Fulfillment** from the left side menu. Set the **Disabled** toggle to the right of the **Inline Editor** to **Enabled**. This allows you to write your webhook code inside the Dialogflow.
 
 ![Editor for Dialogflow](/engineering-education/whatsapp-sentimental-analysis-using-dialogflow-twilio/dialogflow-fullfillment.png)
 
-#### _Add your code to the inline editor_
+#### Add code to the inline editor
+In the _index.js_ file tab, add the following code:
 
-In the_index.js_ file tab, add the following code:
-
-```javascript
+```js
 // See https&#x3A;//github.com/dialogflow/dialogflow-fulfillment-nodejs
 // for Dialogflow fulfillment library docs, samples, and to report issues
 "use strict";
@@ -118,11 +150,11 @@ const httpRequest = require("request-promise-native");
 const { dialogflow } = require('actions-on-google');
 ```
 
-The code imports all the required dependencies.
+The above code imports all the required dependencies.
 
-Below the above code, add the following, taking care to replace the placeholder with your actual project ID, as shown on the highlighted line:
+Next, replace the placeholder with your actual `project ID`, as shown below:
 
-```javascript hl_lines=”5”
+```javascript hl_lines= "5"
 // Create an app instance
 const app = dialogflow();
 const languageClient = new language.LanguageServiceClient({
@@ -130,27 +162,30 @@ const languageClient = new language.LanguageServiceClient({
 });
 ```
 
-This code creates a new instance of the Dialogflow app and an instance of the Natural Language Service client. It requires your project ID to work.
+The above code creates a new instance of the `Dialogflow` app and an instance of the Natural Language Service client. Note that it requires your project ID to work.
 
 #### Create a Twitter developer account
-
 Before moving on, you’ll need to create a developer account with either your existing Twitter account or a [new account](https://twitter.com/).
 
-Then, go to [developer.twitter.com](https://developer.twitter.com/en/apply-for-access) to create a developer account.
+Navigate to [developer.twitter.com](https://developer.twitter.com/en/apply-for-access) to create a developer account.
 
 ![Twitter developer](/engineering-education/whatsapp-sentimental-analysis-using-dialogflow-twilio/twitter-developer.png)
 
-Fill out the description of use for your app by selecting the use case for your app and writing out the reasons you want to use the Twitter API. It might take some time for your application to be approved because of the high number of applications.
+Fill out the description for your app by selecting its use case and reasons why you want to use the Twitter API. 
 
-Once your application has been approved, head back to Create an App by naming your app and describing how your app will be used.
+It might take some time for your app to be approved because of the high number of applications.
 
-Then select **Keys and tokens**, then copy and save your API keys somewhere you can easily retrieve them.
+Once your application has been approved, proceed and create an app.
 
-Set up a development environment under “Search Tweets: 30-Days/Sandbox” and name the environment. I have named mine “testing”:
+Select **Keys and tokens**, then copy and save your API keys somewhere you can easily retrieve them.
+
+Set up a development environment under `Search Tweets: 30-Days/Sandbox` and name the environment. I have named mine as `testing`:
 
 ![Dev environment](/engineering-education/whatsapp-sentimental-analysis-using-dialogflow-twilio/twitter-developer2.png)
 
-After obtaining your Twitter API Key and API Secret, head back to the Dialogflow inline editor. In the_index.js_ file, add the following code below what you have so far, replacing the placeholder API and secret values with the ones you just obtained from Twitter.
+After obtaining your `Twitter API Key` and `API Secret`, head back to the Dialogflow inline editor. 
+
+In the `index.js` file, add the following code:
 
 ```javascript hl_lines=”17 18”
 // This is the environment for the Twitter premium search api.
@@ -171,7 +206,7 @@ const CONSUMER_SECRET = 'YOUR_TWITTER_SECRET_KEY';
 process.env.DEBUG = "dialogflow:debug"; // enables lib debugging statements
 ```
 
-Continuing on, add the following code beneath the existing code:
+Next, add the code below:
 
 ```javascript
 /*
@@ -203,11 +238,15 @@ function extractText(searchResults) {
 }
 ```
 
-This code defines a helper function that removes all retweets from the search results and saves them to an array. The code also extracts all the tweets from the API response and saves them to an array.
+This code defines a helper function that removes all retweets from the search results and saves them to an array. 
 
-Next, copy the following code and paste it below what exists so far in order to call the `intent()` method on your app. It passes the name of the intent you created_Sentiment_ and two params, then sets the input equal to params.any and makes a request to the Twitter API using what the user said to the Action and API credentials.
+The above code also extracts all tweets from the API response and adds them to an array.
 
-```javascript
+Next, add the following code to access the `intent()` method on your app. It passes the name of the intent and two params.
+
+It then sets the input equal to `params.any` and requests the Twitter API.
+
+```js
 // The Sentiment intent
 app.intent('Sentiment', (agent, params) => {
 const inputEntity = params.any;
@@ -255,11 +294,16 @@ return httpRequest.post(request_options).then((body) => {
 exports.dialogflowFirebaseFulfillment = functions.https.onRequest(app);
 ```
 
-This code submits the response from Twitter to the Natural Language Processing API. The NLP returns a sentiment score (results), which you save to a variable and returns a response from the Action based on whether the score from the NLP API is positive or negative. `conv.close` ends the conversation each time the Action responds.
+The above code submits the response from Twitter to the Natural Language Processing API. 
+
+The NLP returns a sentiment score (results), which you save to a variable.
+
+It also fetches a response from the Action based on whether the score from the NLP API is positive or negative. 
+
+`conv.close` ends the conversation each time the Action responds.
 
 #### Add your code to the package.json file
-
-In your inline editor, switch to the tab called package.json. Copy and paste the following json inside this file:
+In your inline editor, switch to the `package.json` tab. Copy and paste the following content inside this file:
 
 ```json
 {
@@ -287,13 +331,12 @@ In your inline editor, switch to the tab called package.json. Copy and paste the
 }
 ```
 
-This code holds all the relevant metadata and dependencies for your project.
+The above content holds all relevant metadata and dependencies for your project.
 
-At this point, you’re done setting up your Dialogflow fulfillment webhook. Press the **DEPLOY** button below the inline editor to deploy your cloud function.
+At this point, you're done setting up your Dialogflow fulfillment webhook. Press the **DEPLOY** button in the inline editor to deploy your cloud function.
 
 ### Integrating Twilio with Dialogflow
-
-Create a new directory on your computer, change into it, and initialize a new Node.js project:
+Create a new directory on your computer. In this folder, initialize a Node.js project:
 
 ```bash
 mkdir whatsapp-sentiments
@@ -301,13 +344,13 @@ cd whatsapp-sentiments
 npm init -y
 ```
 
-Using the command below, install the following packages:
+We need to install the following packages:
 
-- [Nodemon](https://www.npmjs.com/package/nodemon) is a tool that helps develop NodeJs based applications by automatically restarting the node application when file changes in the directory are detected.
+- [Nodemon](https://www.npmjs.com/package/nodemon) is a tool that helps develop Node.js based applications by automatically restarting the server whenever file changes.
 - The [Dialogflow](https://www.npmjs.com/package/dialogflow) package is an API client for Node.js.
-- [Twilio Node Helper Library](https://www.npmjs.com/package/twilio) provides access to the Twilio API.
-- [Express](https://www.npmjs.com/package/express) lets you structure a web application to handle multiple different HTTP requests at a specific URL.
-- [Body-parser](https://www.npmjs.com/package/body-parser) is a middleware used to extract the body from the incoming requests.
+- [Twilio Node Helper library](https://www.npmjs.com/package/twilio) provides access to the Twilio API.
+- [Express](https://www.npmjs.com/package/express) lets you structure a web application to handle multiple HTTP requests at a specific URL.
+- [Body-parser](https://www.npmjs.com/package/body-parser) is a middleware used to extract the body from incoming requests.
 - [UUID](https://www.npmjs.com/package/uuid) is used for identifying information that needs to be unique.
 
 ```bash
@@ -321,28 +364,37 @@ touch index.js && touch twilio.js && touch dfservice.js
 ```
 
 #### Getting your Google Cloud project service keys
+In your Google Cloud project dashboard, launch the menu bar, and navigate to the `IAM & ADMIN`, on its drop-down, click on the `Service Accounts`. 
 
-Head to your Google Cloud project dashboard. Open up the menu bar, and go to the “IAM & ADMIN”, on its drop-down click on the “Service Accounts”. Then you will see your project ID service account, click on it to open up the service account details, under the “Keys” click on “ADD KEY” and you will see a dialog pop up like this below, check the “JSON” key type, once you click on “CREATE” the JSON file will be downloaded automatically.
+You will see your project ID service account, click on it to open up the service account details. 
+
+Under the `Keys` click on `ADD KEY` and you will see a dialog pop up like the one shown below.
+
+Check the `JSON` key type and click on the `CREATE` button. The JSON file will be downloaded automatically.
 
 ![Gcp service account](/engineering-education/whatsapp-sentimental-analysis-using-dialogflow-twilio/gcp-appengine.png)
 
 #### Setting up Twilio sandbox for WhatsApp
+Navigate to the [WhatsApp section of your Twilio Console](https://www.twilio.com/console/sms/whatsapp/learn) to activate the Twilio Sandbox. 
 
-Go to the [WhatsApp section of your Twilio Console](https://www.twilio.com/console/sms/whatsapp/learn) to activate the Twilio Sandbox for WhatsApp. The sandbox allows you to test out the Twilio WhatsApp API using a universal shared number without the need to wait for WhatsApp to approve your Twilio number.
+The sandbox allows you to test out the Twilio WhatsApp API using a shared number without waiting for WhatsApp to approve your Twilio number.
 
-After checking the box to activate the sandbox, they will ask you to send a specific message from your WhatsApp number to the provided universal Twilio WhatsApp number. Add the Twilio WhatsApp number to your contact list and send the message. After completing this step, you will get this success screen:
+After checking the box to activate the sandbox, you will need to send a specific message from your WhatsApp number to the provided universal Twilio WhatsApp number. 
+
+Add the Twilio WhatsApp number to your contact list and send the message. After completing this step, you should see the following success screen:
 
 ![Twilio WhatsApp sandbox](/engineering-education/whatsapp-sentimental-analysis-using-dialogflow-twilio/twilio-console.png)
 
 #### Adding code to the files
+Add the JSON file of your `Google cloud Project service account key` that you recently downloaded to your code directory and rename it to `config.js`.
 
-Add the JSON file of your ‘Google cloud Project service account key’ you recently downloaded to your code directory and rename it to “_config.js_”.
+Go to your main dashboard [Twilio console](https://www.twilio.com/login?g=%2Fconsole%3F_ga%3D2.265740303.1482277847.1606396463-363876625.1593051224&t=f7ede302996c9b6272621fa8b186f084683729fa1eeefc629e066dc7938dfe6a) and find your `Account SID` and `Auth Token`. 
 
-Go to your main dashboard [Twilio console](https://www.twilio.com/login?g=%2Fconsole%3F_ga%3D2.265740303.1482277847.1606396463-363876625.1593051224&t=f7ede302996c9b6272621fa8b186f084683729fa1eeefc629e066dc7938dfe6a) and find your** “Account SID” and “Auth Token”. Copy and paste these values into the “_config.js_” file. Your “_config.js”_ file should look like this:
+Copy and paste these values into the `config.js` file, as shown below:
 
 ![Twilio developer console](/engineering-education/whatsapp-sentimental-analysis-using-dialogflow-twilio/twilio-console2.png)
 
-```javascript
+```js
 module.exports = {
    accountSid: 'YOUR_TWILIO_ACCOUNT_SID',
    authToken: 'YOUR_TWILIO_AUTH_TOKEN',
@@ -351,11 +403,11 @@ module.exports = {
 }
 ```
 
-Replace your Twilio account SID and Auth token with these placeholders; 'YOUR_TWILIO_ACCOUNT_SID' and 'YOUR_TWILIO_AUTH_TOKEN'
+Replace your `Twilio account SID` and `Auth token` with these placeholders: 'YOUR_TWILIO_ACCOUNT_SID' and 'YOUR_TWILIO_AUTH_TOKEN'.
 
-Add this code in the “_index.js”_ file
+Add this code in the _index.js_ file:
 
-```javascript
+```js
 const express = require('express');
 const bodyParser = require('body-parser');
 const uuid = require('uuid');
@@ -368,9 +420,9 @@ const port = 80;
 const sessionIds = new Map();
 ```
 
-This code allows your app to use the express, body-parser, uuid, Dialogflow file and Twilio library.
+This code allows your app to use `express`, `body-parser`, `uuid`, `Dialogflow file`, and `Twilio` library.
 
-```javascript
+```js
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.post('/', async(req, res) => {
@@ -390,7 +442,7 @@ app.post('/', async(req, res) => {
 });
 ```
 
-```javascript
+```js
 /// To check if theres an existing sessionID or not
 function setSessionAndUser(senderID) {
    if (!sessionIds.has(senderID)) {
@@ -400,11 +452,13 @@ function setSessionAndUser(senderID) {
 app.listen(port, () => console.log(`Magic on ${port}`));
 ```
 
-Whenever a message is sent, a new session begins and you will see the sender number, the receiver (Universal Twilio number), and the message. The text query will be sent to Dialogflow, and then the response is sent to Twilio in form of a fulfillment text and you will receive a WhatsApp message from Twilio.
+Whenever a message is sent, a new session begins and you will see the sender number, the receiver (Universal Twilio number), and the message. 
 
-Add this code in the “_dfservice.js”_ file
+The text query will be sent to Dialogflow, and then the response is sent to Twilio in form of a fulfillment text and you will receive a WhatsApp message from Twilio.
 
-```javascript
+Add this code in the _dfservice.js_ file
+
+```js
 const dialogflow = require('dialogflow');
 const config = require('./config');
 const credentials = {
@@ -419,7 +473,7 @@ const sessionClient = new dialogflow.SessionsClient(
 );
 ```
 
-```javascript
+```js
 module.exports = {
    async sendTextQueryToDialogFlow(sessionIds, sender, text, params = {}) {
    const sessionPath = sessionClient.sessionPath(config.project_id, sessionIds.get(sender));
@@ -460,11 +514,13 @@ module.exports = {
 }
 ```
 
-The code above sends the text query to Dialogflow using the Dialogflow default request payload that receives the text and sessionPath. The intent for the text will be detected and the response for the intent will be sent to Twilio.
+The code above sends the text query to Dialogflow using the default request payload that receives the text and sessionPath. 
 
-Add this code in the “twilio.js”_ file
+The intent for the text will be detected and the response will be sent to Twilio.
 
-```javascript
+Add this code in the _twilio.js_ file:
+
+```js
 const config = require('./config');
 const client = require('twilio')(config.accountSid, config.authToken);
    function sendText(from, message, to) {
@@ -493,33 +549,40 @@ Open up your command line to run your project on localhost using this command:
 Nodemon index.js
 ```
 
-After running this command you will get a success message of “Magic on 80”.
+After running this command you will get the `Magic on 80` success message.
 
-Next, open up your Ngrok CLI and start an HTTP tunnel forwarding to your local port 80 using this command:
+Next, open up your `Ngrok CLI` and start an HTTP tunnel forwarding to your local port 80 using this command:
 
 ```bash
 Ngrok http 80
 ```
 
-On your terminal you should see this:
+On your terminal, you should see this:
 
 ![Ngrok terminal](/engineering-education/whatsapp-sentimental-analysis-using-dialogflow-twilio/ngrok-terminal.png)
 
-Copy the URL provided by Ngrok, you are going to use it for your webhook.
+Copy the provided url by Ngrok since we will use it in the webhook.
 
 ### Add the webhook to Twilio
+Head up to your Twilio console and navigate to the programmable messaging tab.
 
-Head up to your Twilio console and navigate to the programmable messaging tab and go to the sandbox settings, paste in the Ngrok URL in the “WHEN A MESSAGE COMES IN” field and save it, your screen should look like this:
+Navigate to the `sandbox settings` and paste in the `Ngrok URL` in the `WHEN A MESSAGE COMES IN` field and save it. Your screen should look like this:
 
 ![Twilio WhatsApp sandbox](/engineering-education/whatsapp-sentimental-analysis-using-dialogflow-twilio/twilio-whatapp.png)
 
 ### Testing the webhook
+You have successfully connected your webhook with Twilio, now you can test the chatbot on WhatsApp by asking it some questions and seeing the response. 
 
-You have successfully connected your webhook with Twilio, now you can test the chatbot on WhatsApp by asking it some questions and see the response you will get. Here’s what I got:
+Here’s what I got:
 
-![WhatsApp chat conversation](/engineering-education/whatsapp-sentimental-analysis-using-dialogflow-twilio/whatsapp-twilio.png)![WhatsApp chat conversation](/engineering-education/whatsapp-sentimental-analysis-using-dialogflow-twilio/whatsapp-twilio2.png)
+![WhatsApp chat conversation](/engineering-education/whatsapp-sentimental-analysis-using-dialogflow-twilio/whatsapp-twilio.png)
+
+![WhatsApp chat conversation](/engineering-education/whatsapp-sentimental-analysis-using-dialogflow-twilio/whatsapp-twilio2.png)
 
 ### Conclusion
+Congratulations! You have successfully created a chatbot using Dialogflow, WhatsApp, and Google Cloud Natural Language Processing API that performs sentimental analysis on tweets from Twitter using Twitter’s API. 
 
-Congratulations! You have successfully created a chatbot using Dialogflow, WhatsApp, and Google Cloud Natural Language Processing API that performs sentimental analysis on tweets from Twitter using Twitter’s API. With this knowledge, you can nowbuild chatbots for different kinds of applications using an external API, Twilio, Google Cloud APIs, and Dialogflow.
-_I would like to give [Major League Hackathon (MLH)](https://mlh.io/) credits for organizing a Local Host event on building a sentimental analysis chatbot for Actions on Google using Dialogflow._
+With this knowledge, you can now build chatbots for different kinds of applications using an external API, Twilio, Google Cloud APIs, and Dialogflow.
+
+---
+Peer Review Contributions by: [Wanja Mike](/engineering-education/authors/michael-barasa/)
