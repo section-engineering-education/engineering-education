@@ -1,6 +1,3 @@
-
-### Introduction of routing and navigation in flutter applications.
-
 ### Introduction
 Navigating in flutter apps, all you have to do is use the default navigation that comes with Flutter. For complex flutter application consider the addition of  dynamic links, authorizations, and authentication . GetX does a good job of helping you with this by using middleware and bindings, child routes.
 ### Topics to handle
