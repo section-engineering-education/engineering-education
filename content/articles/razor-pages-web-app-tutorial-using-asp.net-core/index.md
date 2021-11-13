@@ -6,7 +6,7 @@ url: /razor-pages-web-app-tutorial-using-asp.net-core/
 title: Razor Pages Web App Tutorial Using ASP.NET Core
 description: The goal of this tutorial is to help the reader build Razor Pages Web Application using ASP.NET Core.
 author: daniel-masika
-date: 2021-10-18T00:00:00-15:00
+date: 2021-10-13T00:00:00-15:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -19,6 +19,8 @@ Razor Pages is a server-side, page-focused framework that allows for the creatio
 If you have been looking for a better and simpler way to create a razor pages web app, using ASP.NET Core would be the best for you. This focuses on how one could come up with a working razor page web app.
 
 ### Table of contents
+
+- [Table of contents](#table-of-contents)
 - [Prerequisites](#prerequisites)
 - [Creating a razor pages web application](#creating-a-razor-pages-web-application)
 - [Integrating a model into a Razor Pages app](#integrating-a-model-into-a-razor-pages-app)
@@ -132,7 +134,6 @@ To add the above data, we will have the following code;
 
 ```C#
 namespace Model
-
 {
     public class Students
     {
