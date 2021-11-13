@@ -286,7 +286,7 @@ Add `C` to the current path set. , we pass `B` as the parent node. `C` has one o
 
 #### Code Implemetation
 
-We will add a new method called HasCycle to our existing class. HasCyle is the DFS Function. Below is the code that implements cycle detection in an undirected graph.
+We will add a new method called HasCycle to our existing class. HasCyle is the DFS Function. Below is the code that implements cycle detection in an undirected graph. Note that on line `if (current != parent)`, we first check if we are going back to the parent node. If yes, no cycle has been found. Otherwise, a cycle is found.
 
 ```c#
 
