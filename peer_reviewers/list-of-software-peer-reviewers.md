@@ -11,7 +11,7 @@
 | Linus Muema |  [EngEd Author Page](https://www.section.io/engineering-education/authors/linus-muema/) | [GitHub Profile](https://github.com/LinusMuema) | - Google certified AAD - Android - Kotlin|
 | Louise Findlay | [EngEd Author Page](https://www.section.io/engineering-education/authors/louise-findlay/) | [GitHub Profile](https://github.com/louisefindlay23) | - Front-End Web Development (HTML, CSS + JS) - Back-End Web Development (Node.js, Express + EJS) - Static Site Generator (Eleventy) - CMS (WordPress)|
 | Mike White | [EngEd Author Page](https://www.section.io/engineering-education/authors/mike-white/) | [GitHub Profile](https://github.com/Botahamec) | - example 1 - example 2 - example 3|
-| Mohan Raj | [EngEd Author Page](https://www.section.io/engineering-education/authors/mohan-raj/) | [GitHub Profile](https://github.com/zolomohan) | - JavaScript - React/React Native - Node.js - Express - Python - Django - Ruby - Rails - C, C++, C# - Dart - Flutter - Testing |
+| Mohan Raj | [EngEd Author Page](https://www.section.io/engineering-education/authors/mohan-raj/) | [GitHub Profile](https://github.com/zolomohan) | - JavaScript - React - React Native - Next.js - Node.js - Express - MongoDB - Agora - Blockchain - Cryptocurrency - Web3 - Metamask - SQL - Python - Django - Ruby - Rails - C, C++, C# - Dart - Flutter - Testing - AWS (S3 - Lambdas - API Gateway) - Firebase |
 | Mungai Njoroge | [EngEd Author Page](https://www.section.io/engineering-education/authors/geoffrey-mungai/) | [GitHub Profile](https://github.com/geoffrey45) | - Backend Development(Flask, Django, Node.js) - Frontend Development(Angular, Vue) - Programming Languages (Python, JavaScript)|
 | Nadiv Gold Edelstein | [EngEd Author Page](https://www.section.io/engineering-education/authors/nadiv-gold-edelstein/) | [GitHub Profile](https://github.com/nadivgold) | - example 1 - example 2 - example 3|
 | Onesmus Mbaabu | [EngEd Author Page](https://www.section.io/engineering-education/authors/onesmus-mbaabu/) | [GitHub Profile](https://github.com/mbaabuones) | - Artificial Intelligence - Machine Learning - Data Science - Web Development (Front End)|
@@ -27,7 +27,7 @@
 | Eric Gacoki | [EngEd Author Page](https://www.section.io/engineering-education/authors/eric-gacoki/) | [GitHub Profile](https://github.com/Ericgacoki) | - Android development (Kotlin) - JavaScript - Python - Networking |
 | Miller Juma | [EngEd Author Page](https://www.section.io/engineering-education/authors/miller-juma/) | [GitHub Profile](https://github.com/jumamiller) | - PHP - JavaScript - Laravel - Angular Web Development |
 | Monica Masae | [EngEd Author Page](https://www.section.io/engineering-education/authors/monica-masae/) | [GitHub Profile](https://github.com/M0nicah) | - JavaScript - Web Development |
-|  - |  - |  - | -|
+| John Amiscaray | [EngEd Author Page](https://www.section.io/engineering-education/authors/john-amiscaray/) | [Github Profile](https://github.com/john-amiscaray) | - Spring Framework - Java - Angular - Javascript - Web Development |
 |  - |  - |  - | -|
 |  - |  - |  - | -|
 |  - |  - |  - | -|
