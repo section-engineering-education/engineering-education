@@ -9,8 +9,8 @@ Throughout this tutorial we will be mostly talking about JSX. JSX element can be
 #### Prerequisites
 To effectively uderstand the reader will need the following:
 
-- Basic uderstanding of Reactlibrary
-- A suitable IDE such as VS Code or online IDE such as JS complete or Codepen
+- Basic uderstanding of React library
+- A suitable IDE such as VS Code or online IDE such as JScomplete or Codepen
 - Basic uderstanding of JSX
 
 #### Key takeaways 
@@ -21,7 +21,7 @@ To effectively uderstand the reader will need the following:
 - How React creates an instancReact Components  Instantiation
 
 #### Instantiating React component
-Lets begin by  importing the React library and then we will  save the library in a variable named `react`. 
+Let's begin by  importing the React library and then we will  save the library in a variable named `react`. 
 
 ```js
   import React from 'react';
@@ -34,7 +34,7 @@ After importing the React library we will import ReactDOM using th code below:
 ```    
 ReactDOM  is important for rendering JSX elements and react components to the DOM.
 
-Lets now create a component class .To create our component class we will subclass `React.Component`,we will do this by using the following syntax `class V extends React.Component {}`.This is how  ES6  creates a stateful component.  
+Let's now create a component class .To create our component class we will subclass `React.Component`,we will do this by using the following syntax `class V extends React.Component {}`.This is how  ES6  creates a stateful component.  
 
 We will now add the render function in our code:
 
