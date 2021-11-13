@@ -6,7 +6,7 @@ url: /mysql-connection-graphical-user-interface-design-using-javafx-and-scene-bu
 title: MySQL Connection Graphical User Interface design Using JavaFX and Scene builder
 description: In this article, we will study how JavaFX scene builder can be used to design and develop an application that can connect to the MySQL database. We will look at how to design and create a simple GUI using the JavaFX scene builder.
 author: ayoma-joseph
-date: 2021-11-04T00:00:00-12:15
+date: 2021-11-13T00:00:00-12:15
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
