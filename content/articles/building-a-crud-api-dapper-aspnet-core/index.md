@@ -1,10 +1,10 @@
 ### Building a CRUD API with the Dapper ORM in ASP.NET Core
-ORM stands for Object Relational Mapper(ORM). It could also stand for Object Relational Mapping, which explains the technique that ORMs use. An ORM is usually a library that makes communicating with our database easy. It uses a mechanism that makes our database look like one very big object. ORMs employ [abstraction](https://en.wikipedia.org/wiki/Abstraction_(computer_science)) to ‘hide’ the unwanted details and focus on the very important and basic functionalities. After abstraction, our data is then broken into smaller chunks which are referred to as [models](https://en.wikipedia.org/wiki/Database_model). In this article, we'll be learning how to build an API by using [Dapper](https://dapper-tutorial.net/) to make queries.
+ORM stands for Object Relational Mapper(ORM). It could also stand for Object Relational Mapping, which describes the method that ORMs apply. An ORM is usually a library that makes interacting with our database easy. ORMs employ [abstraction](https://en.wikipedia.org/wiki/Abstraction_(computer_science)) to ‘mask’ the unwanted details and focus on the very important and basic functionalities. After abstraction, our data is then broken into smaller parts which are referred to as [models](https://en.wikipedia.org/wiki/Database_model). In this article, we'll be learning how to build an API by using [Dapper](https://dapper-tutorial.net/) to make queries.
 
 ### Key Takeaways
   At the end of this article, you should be able to:
 - Know what ORMs are and how they work
-- Be able to create an ASP.NET Core API project
+- Be able to create an ASP.NET Core API project with the dotnet CLI
 - Be able to make queries with the Dapper ORM
 - Document an ASP.NET core API with Swagger.
 
@@ -42,25 +42,25 @@ Dapper has some key features which make it an obvious choice for an ORM. Some of
 #### Some Helpful Dapper Methods
 
 ###### Execute
-Execute is an extension method that can be called from any object of type IDbConnection. The method executes a command and returns the number of affected rows. It is usually used to execute stored procedures and INSERT, UPDATE, and DELETE operations.
+The `Execute` method executes a command and returns the number of affected rows. It is usually used to perform INSERT, UPDATE, and DELETE operations.
 
-###### Query
-Query method is an extension method that can be called from any object of type IDbConnection. It can execute a query and map the result. It is usually used to fetch objects from the database.
+##### Query
+This method executes a query and maps the result. It is usually used to fetch objects from the database.
 
-###### QueryFirst
-It is an extension method that can be called from any object of type IDbConnection. It executes a query and maps the first result that matches the parameters in the query.
+##### QueryFirst
+This method executes a query and maps the first result that matches the parameters in the query.
 
-###### QueryFirstOrDefault
-This method is an extension method that can be called from any object of type IDbConnection. It functions like `QueryFirst` but returns a default value if the sequence contains no elements.
+##### QueryFirstOrDefault
+This functions like QueryFirst but returns a default value if the sequence contains no elements.
 
-###### QuerySingle
-This method is an extension method that can be called from any object of type IDbConnection. It executes a query and maps the first result. It throws an exception if there is not exactly one element in the sequence which happens either when no element or more than one element is returned.
+##### QuerySingle
+It executes a query and maps the result provided that there is only one item in the sequence. It throws an exception if there is not exactly one element in the sequence which happens either when no element or more than one element is returned.
 
-###### QuerySingleOrDefault
-It is an extension method that can be called from any object of type IDbConnection. It can execute a query and map the first result, or a default value if the sequence is empty; this method throws an exception if there is more than one element in the sequence.
+##### QuerySingleOrDefault
+This method works like `QuerySingle` but returns a default value if no item is returned from the database.
 
-###### QueryMultiple
-This method is an extension method that can be called from any object of type IDbConnection. It can execute multiple queries within the same command and map results.
+##### QueryMultiple
+This method can execute many queries simultaneously with one command and map results.
 
 
 ### Creating a new ASP.NET Core API project
@@ -879,6 +879,3 @@ namespace TodoAPI.Controllers
 
  ### Conclusion
  This article introduced you to or gave you more insight into what Object Relational Mappers(ORMs) are and how they work. More specifically, it explains what Dapper is and why you would want to use it. We also learnt first-hand how to integrate Dapper into an ASP.NET Core API. As a bonus, we saw how to generate the Swagger Docs for our API. The complete code for this article is here: [Dapper-ASP.NET-Core-TodoAPI](https://github.com/olumidayy/Dapper-ASP.NET-Core-TodoAPI). Feel free to add more features or contribute!
-
-
-
