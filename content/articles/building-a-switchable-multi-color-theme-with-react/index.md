@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /building-a-switchable-multi-color-theme-with-react/
-title: Building a Switchable Multi-Color Theme uminosing React
+title: Building a Switchable Multi-Color Theme using React
 description: In this tutorial, we will discuss the simple steps required in building multiple themes for websites using React.js and CSS.
 author: vickky-cletus
 date: 2021-10-07T00:00:00-14:38
