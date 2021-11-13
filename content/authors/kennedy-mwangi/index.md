@@ -1,5 +1,6 @@
 ---
-title: Kennedy Mwangi
+title: Kennedy Ndutha Mwangi
 type: authors
+github : https://github.com/kmwangi-ken
 ---
-Kennedy is an Information technology graduate from Karatina University. He is fluent in web development with both the front-end and back-end using JavaScript. He is very passionate about Linux and Android development.
+I'm a soul web developer specializing in back-end programming, functionality, user experience design, and search engine optimization. I'm kind, hardworking, and open-minded. I readily communicate with folks and adapt to changes. It is my belief that someone should always work on honing their expert talents and mastering new skills.
