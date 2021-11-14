@@ -1,6 +1,6 @@
- Natural language processing helps computers to understand speech and written text like a human being. This helps machines to compute necessary responses.
+Natural language processing helps computers to understand speech and written text like a human being. This helps machines to compute necessary responses.
 
- One of the NLP applications is emotion detection in text. The emotion detection model is a type of model that is used to detect the type of feeling and attitude in a given text. It may be a feeling of joy, sadness, fear, anger, surprise, disgust, or shame. An emotion detection model can classify a text into the following categories.
+One of the NLP applications is emotion detection in text. The emotion detection model is a type of model that is used to detect the type of feeling and attitude in a given text. It may be a feeling of joy, sadness, fear, anger, surprise, disgust, or shame. An emotion detection model can classify a text into the following categories.
 
 Using emotion detection in the text, businesses can know how customers feel about their brand and products. This helps businesses to improve product quality and service delivery.
 
@@ -27,8 +27,7 @@ We then use Scikit-learn in building our model. It contains all the algorithms r
 - You must know [Python](/engineering-education/python-projects-for-beginners/) programming.
 - You must know how to build [machine learning models.](/engineering-education/house-price-prediction/).
 - You must know how to work with [Pandas](https://numpy.org/) and [Numpy.](https://numpy.org/).
-- Have some knowledge of [natural language processing.](/engineering-education/how-to-create-nlp-application-with-flair/)
-
+- Have some knowledge of [natural language processing.](/engineering-education/how-to-create-nlp-application-with-flair/)V
 > NOTE: In this tutorial, we will use [Google Colab](https://research.google.com/) to build our model.
 
 ### Exploring our dataset
@@ -40,12 +39,13 @@ The snip of the dataset is shown below.
 
 ![Dataset snip](/engineering-education/how-to-build-an-nlp-based-emotion-detection-model-using-neattext-and-scikit-learn/dataset-snip.png)
 
-To get this dataset in CSV format, click [here](https://drive.google.com/file/d/1tamvXZzgcYcHRr3GwFk8C4LVVaWHMqt0/view?usp=sharing)
+To get this dataset in CSV format, click [here.](https://drive.google.com/file/d/1tamvXZzgcYcHRr3GwFk8C4LVVaWHMqt0/view?usp=sharing)
 
 Let's now load this dataset into our Google Colab notebook.
 
 #### Loading exploratory data analysis packages
-We import two exploratory data analysis packages, pandas and Numpy. We will use pandas to read our CSV file and load it into our Google Colab notebook. Numpy is used to perform mathematical computations in our dataset. It also works with arrays.
+We import two exploratory data analysis packages, pandas and Numpy. We will use pandas to read our CSV file and load it into our Google Colab notebook. 
+Numpy is used to perform mathematical computations in our dataset. It also works with arrays.
 
 ```python
 import pandas as pd
@@ -134,7 +134,6 @@ The output of the dataset after removing user handles and stopwords is shown bel
 Now that we cleaned our dataset, let's load our machine learning packages.
 
 ### Importing machine learning packages
-
 ```python
 from sklearn.linear_model import LogisticRegression
 from sklearn.feature_extraction.text import CountVectorizer
@@ -144,27 +143,22 @@ from sklearn.metrics import accuracy_score
 From the code above, we have imported the following.
 
 #### LogisticRegression
-
 `LogisticRegression` is an algorithm used for both classification and regression. This algorithm is imported from [Scikit-learn](https://scikit-learn.org/stable/). Will be used for emotion classification.
 
 #### CountVectorizer
-
 Machine learning models have a problem comprehending raw text. Machines cannot process the raw text data and it has to be converted into a matrix of numbers. Machines work well with numbers.
 
 CountVectorizer is used to convert the raw text into a matrix of numbers. This process depends on the frequency of each word in the entire text. During this process, `CountVectorizer` extracts important features from the text. They are then used as input for the model during training.
 
 #### train_test_split
-
 This method is important during the splitting of the dataset. It splits the dataset set into two sets, a train set, and a test set. This depends on the percentage specified by the user.
 
 #### accuracy_score
-
 This is important when calculating the accuracy score of our model during prediction.
 
 Let's now specify our features and labels.
 
 ### Model features and labels
-
 Features are the attributes and variables extracted from the dataset. These extracted features are used as input for the model during training. The model learns from features. Our feature is the `Clean_Text` column.
 
 Labels are the output or the target variable. Our label is the `Emotion` column, this is what the model is predicting.
@@ -174,7 +168,6 @@ Xfeatures = df['Clean_Text']
 ylabels = df['Emotion']
 ```
 ### Dataset splitting
-
 We need to split our dataset into a train set and test set. The model will learn from the train set. The test set will be used to evaluate the model performance. It also measured the model's knowledge capability.
 
 We specify the `test_size=0.3`, this will spit our dataset as follows. `70%` of data will be used for training and `30%` for testing.
@@ -185,7 +178,6 @@ Machine learning pipeline is a new approach adopted by many developers. It produ
 To use this pipeline approach, we need to import the `Pipeline` package.
 
 ### Pipeline approach
-
 Let's import the `Pipeline` using the following code.
 
 ```python
@@ -205,7 +197,6 @@ pipe_lr = Pipeline(steps=[('cv',CountVectorizer()),('lr',LogisticRegression())])
 After initializing the two stages, we need to fit these stages into our dataset. We will use the train set dataset which is specified as `x_train` and `y_train`
 
 ### Model fitting
-
 To fit the pipeline stages into `x_train` and `y_train`, run this code.
 
 ```python
@@ -220,7 +211,6 @@ This process produces the optimal model that will give the best results. With ti
 Let's check the accuracy score produced by our `Pipeline.`
 
 ### Calculating the accuracy score
-
 To check the accuracy score, run this command.
 
 ```python
@@ -236,7 +226,6 @@ When the accuracy score is expressed as a percentage it becomes `82.0%`. This is
 Let's use this model to make a prediction.
 
 ### Making a single prediction
-
 A model should be able to classify a given text into emotion labels. Let's use a sample text.
 
 ```python
@@ -255,7 +244,6 @@ array(['joy'], dtype=object)
 The prediction outcome is `joy`, this is the right prediction. This shows that our model can accurately predict. It can be adopted and deployed to production.
 
 ### Conclusion
-
 In this tutorial, we have learned how to build an emotion detection model using Neattext and Scikit-learn. We started by cleaning our dataset using Neattext. The dataset has to be in the right shape before it is used for training.
 
 We then started exploring the different machine learning packages and algorithms to use. We used the logistic regression algorithm to build our emotion detection model. We also introduced a concept known as machine learning pipeline. The pipeline approach made our work easier. It automates the `CounterVectorizer` process and model building.
