@@ -121,6 +121,6 @@ Add these files to the same PR (pull request).
 
 (See image below for file structure.)
 
-![Author file structure example](/static/images/meta-image-frontmatter.png)
+![Author file structure example](/static/images/meta-image-frontmatter.PNG)
 
 Congratulations! Your article is now ready to be submitted for review and approval by the Section team. Open a PR and we'll be happy to review it.
