@@ -14,6 +14,7 @@ images:
   - url: /engineering-education/spring-boot-crud-api/hero.jpg
     alt: CRUD API using Spring Boot example image
 ---
+
 In this tutorial, we are going to build a Spring Boot Rest CRUD API with Gradle as our build tool. Rest APIs make it possible to establish communication between a backend server and a frontend web or mobile applications.
 <!--more-->
 ### Prerequisites
@@ -273,7 +274,7 @@ public class TodoController {
     public ResponseEntity<Todo> getTodo(@PathVariable Long todoId) {
         return new ResponseEntity<>(todoService.getTodoById(todoId), HttpStatus.OK);
     }
-    //The function receives a POST request, processes it, creates a new Todo and saves it to the database, and returns a resource link to the created todo.    @PostMapping
+    //The function receives a POST request, processes it, creates a new Todo and saves it to the database, and returns a resource link to the created todo.           @PostMapping
     public ResponseEntity<Todo> saveTodo(@RequestBody Todo todo) {
         Todo todo1 = todoService.insert(todo);
         HttpHeaders httpHeaders = new HttpHeaders();
