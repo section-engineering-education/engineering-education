@@ -1,4 +1,4 @@
-# Phone Verification Laravel Using Twilio
+# Phone Verification in Laravel Using Twilio
 Almost every online registration that requires a user's phone number will verify the phone number's legitimacy in some way, either via a text message, a phone call, or any other handy technique. It's vital to double-check a phone number, especially if it's the only means to reach the person.
 
 In this article, we will learn how to call a user's registered phone number to verify the phone number's authenticity. If the user answers the phone, he or she will be asked to enter a one-time password (OTP) that was generated and displayed on his or her screen during the signup process. The user account will not be verified if an incorrect OTP is entered or if the user refuses to answer the phone. The user account will be verified if the user answers the phone and enters the correct OTP.
