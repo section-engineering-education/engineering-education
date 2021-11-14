@@ -1,10 +1,10 @@
 ### Introduction
 
-XMPP - Extensible Messaging and Presence Protocol, originally known as `ejabberd` is an open communication protocol for instant messaging presence information and contact list.  
+XMPP - Extensible Messaging and Presence Protocol, known as `ejabberd` is an open communication protocol for instant messaging presence information and contact list.  
 
-It is used by almost all large messaging systems such as WhatsApp, Facebook, Google-Doc, e.t.c. This was encrypted by default.
+It is used by almost all large messaging systems such as WhatsApp, Facebook, Google-Doc, e.t.c. This is encrypted by default.
 
-This tutorial will explain the XMPP architecture, how it works, and build a demo server called `ejabberd` using node js and docker. This will establish connections between two clients having XMPP servers running.
+This tutorial will explain the XMPP architecture, how it works, and build a demo server connection using node js and docker. This will establish connections between two clients having XMPP servers running.
 
 ### Key takeaways
 
@@ -23,7 +23,7 @@ This is used to build a very standard messaging protocol using its default encry
 
 If XMPP is the backend of your application, it paves way for a lot of clients to talk directly with it.
 
-Like  Google mail, it was made as a decentralized protocol. That is clients can belong to different XMPP servers and still connect. 
+Like  Google mail, it was made a decentralized protocol. That is clients can belong to different XMPP servers and still connect. 
 
 #### XMPP architecture
 
@@ -41,7 +41,7 @@ There are three different XML stanzas that XMPP supports.
 2. The status can also be exchanged like <presence/>
 3. Information query which is the request-response like <iq/> tag.
 
-Finally, the whole of XMPP is decentralized. For instance, we have the domain `myxmpp.com` server between two clients. See below how the connection works :)
+Finally, the whole of XMPP is decentralized. For instance, we have the domain `myxmpp.com` server between two clients. See the instance below on how the connection works :)
 
 ClientA concects to xmpp server,
 
@@ -70,8 +70,7 @@ ClientA sends a message to ClientB through the server
     <body>Hello  </body>
 </message>
 ```
-
-ClientB receives the message from ClientA
+Client B receives the message from Client A
 
 ```xml
 <message from='a@myxmpp.com'>
@@ -83,6 +82,14 @@ ClientA terminates the stream
 ```xml
 </stream:stream'>
 ``` 
+
+The above code snippet is showing the architecture of this XMPP server. This is how the server connects different clients by using the properties of the `stream` defined.
+
+Every stream tag has `from`, `to`, `version` and `xmlns` parameters. It is the server that pre-populates these arguments based on the client details supplied during registration.
+
+No worries, all of these will soon clear when we build a demo. This
+
+
 #### XMPP Transport 
 
 XMPP is one of the transport agnostic built on top of Transfer Control Protocol `TCP`. The default port is `5222` that the server runs on.
@@ -95,25 +102,30 @@ This is avoided by hosting the XMPP server on HTTP with long polling since it on
 
 In this demo, we spin up XMPP server `ejabberd` with docker because that is the easiest way. We will create two users, spin up node js XMPP client to connect to server and chat. 
 
-Docker is required to be installed on the local machine. We have to create an ejabberd instance image using the below command. Navigate to the terminal or bash to run the commands.
-
-This command will run the XMPP server on port `5222` and create its image with the name `ejabberd/ecs`.
+Docker is required to be installed on the local machine. We have to create an `ejabberd` instance image using the below command. Navigate to the terminal or bash to run the commands.
 
 ```docker
 docker run --name ejabberd -p 5222:5222 ejabberd/ecs
 ```
-Note that the server is already listening and make sure it is open.
 
-Open another terminal and let us register the two users with docker commands.
+The command above will run the `ejabberd` server which is the XMPP server on port `5222` and create its docker image with the name `ejabberd/ecs`.
+
+Note:) the server is already listening, ensure that it is open.
+
+Open another terminal and register the two clients with these docker commands.
 
 ```docker
 docker exec -it ejabberd  bin/ejabberdctl register admin localhost mypassword1
 ```
-Successful registration will return a message like `User user1@localhost successfully registered`. 
+Docker will execute the registration by going into the `ejbberd/bin/ejabberdctl` directory. Then register a new user with the username and password provided.
 
-The keyword `user1` is the name of the first user. While `localhost` is pointing to the local IP of your machine. This can be changed if another address is required.
+The keyword `admin` is the name of the first user. While `localhost` is pointing to the local IP of your machine. 
 
-Let us register another user with the commands below.
+Note:) This can be changed if another IP address is required or actual domain can also be used.
+
+Upon successfully registering, it will return a message like `User admin@localhost successfully registered`. 
+
+Furthermore, we need to register another user with the commands below.
 
 ```docker
 docker exec -it ejabberd  bin/ejabberdctl register myself localhost mypassword2
@@ -124,38 +136,38 @@ How do we connect the two clients with the server? This is where node js comes i
 
 Open your favorite code editor and create a node project using its terminal.
 
-Note: `node` must have been installed on your local computer.
+Note:) The dependency `node` must have been installed on your local machine.
 
 ```javascript
-npm init .
-npm install simple-xmpp
+$ npm init .
+$ npm install simple-xmpp
 ```
+The JavaScript code snippet above creates a new project directory that contains the `package.json` file. This file tracks all dependencies required for your project.
 
-The `simple-xmpp` is the library that is required to spin up the XMPP server for connection between clients.
+The `simple-xmpp` installed, is the library required to spin up the XMPP server connection between different clients. And this is installed globally since `--save-dev` command was not given.
 
-Inside the project directory which has the `package.json`, make `admin.js` and `myself .js` files. 
-
-It is in these files that we write the connection code for the server.
+Inside the project directory which has the `package.json`, make `admin.js` and `myself .js` files. Inside these files, the connections to the server and other clients will be done.
 
 Code for `admin.js` is given in the snippet below;
 
 ```javascript
+// we bring in the server library
 const xmpp = require("simple-xmpp"); 
 
-// this function sends message every 5 seconds
+// this function recursively call itself by sending the provided message every 5 seconds.
 function send(){
     setTimeout(send, 5000);
     xmpp.send("myself @localhost", `hi! Today is ${new Date().toLocaleString()}`)
 }
 
-//online
+//if online, that is connected to the server the send function will be excuted and log to console
 xmpp.on("online", data => {
     console.log("hello, you are live!");
     console.log(`Connected as ${data.jid.user}`);
     send();
 });
 
-// on chat
+// if chat was received from other client, the log will be executed
 xmpp.on("chat", (from, message) => {
     console.log(`Got a message! ${message} from ${from}`)
 })
@@ -168,58 +180,68 @@ xmpp.connect({
     "port": 5222
 })
 ```
+The `simple-xmpp` library has different arguments that is called. In above code snippets, we called on both the `online` and `chat` arguments from the `on` method.
 
-However, codes for `myself .js` will be the snippets below;
+Once the admin user is connected to the server, the `on` method identifies the connection as `online` and the callback function will be executed.
+
+However, the `on` method of the library will only execute the callback function of `chat` argument if any message is received from the other client.
+
+Furthermore, the `simple-xmpp` library has the `connect` method which has different properties required. 
+
+The `jid` serves as the identity of each client which was returned from the registration above.
+
+All other parameters are the `password`, `host`, and the `port`.
+
+The same connection is required for the other client but with different parameters. Therefore, find the snippets below for `myself.js` file.
 
 ```javascript
 const xmpp = require("simple-xmpp"); 
 
-// this function sends message every 5 seconds
 function send(){
     setTimeout(send, 5000);
     xmpp.send("admin@localhost", `hi! Today is ${new Date().toLocaleString()}`)
 }
 
-//online
 xmpp.on("online", data => {
     console.log("hello, you are live!");
     console.log(`Connected as ${data.jid.user}`);
     send();
 });
 
-// on chat
 xmpp.on("chat", (from, message) => {
     console.log(`Got a message! ${message} from ${from}`)
 })
 
-// connect method requires object with paramters below
 xmpp.connect({
     "jid": "myself@localhost",
-    "password": "2mypassword2",
+    "password": "mypassword2",
     "host": "localhost",
     "port": 5222
 })
 ```
-Open to different code editor terminals and run the commands below. Ensure you are inside the project directory.
+Now, open to different code editor terminals and run the commands below. 
+
+Ensure you are inside the project directory. From the first terminal, run the code below;
 
 ```javascript
-node user1.js
+node admin.js
 ```
-Running this command, you will receive the message in the console below;
+Running this command, you will receive the message that was logged from the `online` argument of `on` method.
 
 ```
 Hey, you are online!
 Connected as user1
 ```
-Now run this below in another terminal. Then the message will start sending and a connection is established.
+Now run this in the second terminal. This will spin up other client server.
 
 ```javascript
-node user2.js
+node myself.js
 ```
+Now that both clients are connected, the message body of the `send()` function will start popping every 5 seconds to both connections.
 
-Immediately the message body of the `send()` function will start popping every 5 seconds.
+With this connection, we have achieved the motive of this tutorial.
 
 ### Conclusion
-In this tutorial, you were introduced to the meaning, underline architecture, and how the XMPP server works. Also, we built a demo on docker using node js which connected two main users. 
+In this tutorial, I introduced you to the meaning, underline architecture, and how the XMPP server works. Also, we built a demo connection using node Js and docker was used to spinning up the server image so that we could register clients.
 
 Thank you for reading!
