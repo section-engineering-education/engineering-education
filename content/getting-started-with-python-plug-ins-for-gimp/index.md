@@ -7,8 +7,18 @@ GIMP is an open-source picture control program that numerous people use as a pra
 
 This article will wind up being hollering to utilize GIMP-Python, which is a gathering of Python modules that permit you to program in Python to mechanize errands in the GNU Image Manipulation Program (GIMP). These Python modules are generally covered for the libgimp library. GIMP-Python isn't generally so old as Script-Fu developments. To run scripts in Script-Fu, a module is used. The Python script turns into the predominant point of convergence in GIMP-Python and practices the work. You may run the GIMP-Python scripts clearly from GIMP, or you can use GIMP's bunch mode to start it from the request line
 ### Table of content
-
-
+- [Goal](#goal)
+- [Introduction](#introduction)
+- [Table of content](#table-of-content)
+- [Installation](#installation)
+- [Enrolling your content](#enrolling-your-content)
+- [Scripting the resize](#scripting-the-resize)
+- [Running the resize module script](#running-the-resize-module-script)
+- [Prearranging the picture change](#prearranging-the-picture-change)
+- [Running the revived module script](#running-the-revived-module-script)
+- [Running both on a folder](#running-both-on-a-folder)
+- [Conclusion](#conclusion)
+- [Further reading](#further-reading)
 ###  Installation
 You can introduce and utilize both gimp and python on any stage in 'Mac OS,', 'Linux, and 'Microsoft windows'. You can compose complex modules for GIMP utilizing python and have the option to run them on these stages. 
 - GIMP is an open-source picture control program that many individuals use as a feasible option in contrast to a portion of the business contributions, subsequently making it more straightforward to introduce on your gadget. You can download the most recent version of GIMP ['here'](http://www.gimp.org/downloads/). 
