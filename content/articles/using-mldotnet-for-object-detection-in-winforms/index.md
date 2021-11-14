@@ -1,14 +1,32 @@
-### Introduction
-Object detection is the ability of a program to be able to detect objects in an image. ML lets the .NET developers implement this feature by using the ML.NET framework that they can use to create bespoke machine learning models in C# or F# without leaving the `dotnet` framework.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /using-mldotnet-for-object-detection-in-winforms/
+title: Using ML.NET for Object Detection in WinForms
+description: This article goes through how data to be transmitted on a network is encoded. It will emphasize more on the different data encoding techniques. It will also talk about digital and analog data.
+author: geoffrey-omukuba
+date: 2021-09-06T00:00:00-12:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
-In this article, we shall be looking at how we can implement the same ML.NET framework in a windows forms app to create a C# project that can detect objects in an image.
+  - url: /engineering-education/using-mldotnet-for-object-detection-in-winforms/hero.jpg
+    alt: Using ML.NET for Object Detection in WinForms Hero Image
+---
+Object detection is the ability of a program to detect objects in an image. ML lets the .NET developers implement this feature by using the ML.NET framework to create bespoke machine learning models in C# or F#.
+
+In this article, we will look at how we can use the ML.NET framework to create a windows forms app that can detect objects in an image.
 
 ### Prerequisites
-- Basic understanding of C# that can be read from the Microsoft website [here](https://docs.microsoft.com/en-us/dotnet/csharp/)
-- Basic understanding of [.NET](https://docs.microsoft.com/en-us/dotnet/) development platform
-- Have Microsoft Visual Studio installed or download Visual Studio from Microsoft's site [here](https://visualstudio.microsoft.com/vs/)
+To follow along, you need to have:
+- Basic understanding of C#. You can learn from the [Microsoft website](https://docs.microsoft.com/en-us/dotnet/csharp/).
+- Basic understanding of [.NET](https://docs.microsoft.com/en-us/dotnet/) development platform.
+- Microsoft Visual Studio installed. You can download Visual Studio from [here](https://visualstudio.microsoft.com/vs/).
 
-The first step is opening the visual studio and following the steps below.
+Let's get started!
+
+The first step is opening visual studio and following the steps below:
 1. Click on `Create new project`.
 2. On the next screen search for `Windows Forms` and select `Windows Forms App(.NET Framework)` and select the one that is using `C#`. and click `Next`
 3. Enter the name of the project you want to create i.e, `Win_Forms_ObjectDetection`, and click `create`.
@@ -34,6 +52,7 @@ In your `MLModels` folder, you will add `lbls.txt` file that contains `red`, `bl
 You will create four classes in your `Models` folder i.e, `ImageSettings`, `ImageInputs`, `ImageResults`, and `BndBox`.
 
 Now, double click on the button you created to open `form1.cs` that you shall add the following code to enable the click event.
+
 ```C#
 namespace ObjectDetection
 {
@@ -220,5 +239,6 @@ Now, there are four classes in your `Models` folder that you created. The code i
 There is one thing remaining in the code, creating where we shall put the information you have been writing in the form of code above. To do this, go to the `Toolbox` and select `PictureBox`, drag it to the form layout, give it the name `imgResult`, and implement it with the code function after the `for loop` i.e, `imagePrediction.Image = image;`
 
 When you debug your project, it should be able to detect and put labels on the objects in the images that you are detecting.
+
 #### Conclusion
 From a better understanding and following of this tutorial, it is clear that object detection is not only implemented in python. It is also implemented in C# using the ML.NET framework provided the required nuggets packages are downloaded in the Microsoft Visual Studio.
