@@ -1,23 +1,23 @@
-### Table of Contents:
+## Table of Contents:
+
 - [Getting Started with Polynomial Regression in Python](#getting-started-with-polynomial-regression-in-python)
 - [Prerequisites](#prerequisites)
 - [Introduction to Polynomial Regression](#introduction-to-polynomial-regression)
 - [Polynomial curve fitting](#polynomial-curve-fitting)
-- [Obtaining the $\bold w$](#obtaining-the-bold-w)
+  - [Obtaining the $\bold w$](#obtaining-the-bold-w)
 - [Implementing the polynomial regression model](#implementing-the-polynomial-regression-model)
-  - [Step 1: Importing the libraries](#step-1-importing-the-libraries)
-  - [Step 2: Importing the dataset](#step-2-importing-the-dataset)
-  - [Step 3: Training the Linear Regression model on the whole dataset](#step-3-training-the-linear-regression-model-on-the-whole-dataset)
+- [Step 1: Importing the libraries](#step-1-importing-the-libraries)
+- [Step 2: Importing the dataset](#step-2-importing-the-dataset)
+- [Step 3: Training the Linear Regression model on the whole dataset](#step-3-training-the-linear-regression-model-on-the-whole-dataset)
   - [Output](#output)
-  - [Step 4: Training the Polynomial Regression model on the whole dataset](#step-4-training-the-polynomial-regression-model-on-the-whole-dataset)
+- [Step 4: Training the Polynomial Regression model on the whole dataset](#step-4-training-the-polynomial-regression-model-on-the-whole-dataset)
   - [Output](#output-1)
-  - [Step 5: Visualising the Linear Regression results](#step-5-visualising-the-linear-regression-results)
-  - [Step 6: Visualising the Polynomial Regression results](#step-6-visualising-the-polynomial-regression-results)
-  - [Step 7: Visualising the Polynomial Regression results (for higher resolution and smoother curve)](#step-7-visualising-the-polynomial-regression-results-for-higher-resolution-and-smoother-curve)
-  - [Step 8: Predicting a new result with Linear Regression](#step-8-predicting-a-new-result-with-linear-regression)
-  - [Step 9: Predicting a new result with Polynomial Regression](#step-9-predicting-a-new-result-with-polynomial-regression)
+- [Step 5: The Linear Regression results visualization](#step-5-the-linear-regression-results-visualization)
+- [Step 6: The Polynomial Regression results visualization](#step-6-the-polynomial-regression-results-visualization)
+- [Step 7: The Polynomial Regression results visualisation(for higher resolution and smoother curve)](#step-7-the-polynomial-regression-results-visualisationfor-higher-resolution-and-smoother-curve)
+- [Step 8: A new result prediction with Linear Regression](#step-8-a-new-result-prediction-with-linear-regression)
+- [Step 9: A new result prediction with Polynomial Regression](#step-9-a-new-result-prediction-with-polynomial-regression)
 - [Conclussion](#conclussion)
-  
   ### Getting Started with Polynomial Regression in Python
 Polynomial regression is a machine learning model used to model non-linear relationships between dependent and independent variables. Examples of cases where polynomial regression can be used include modelling population growth, the spread of diseases, and epidemics.
 
@@ -33,16 +33,17 @@ The obtained curve would look like the one in the figure below:
 Usually, when fitting a curve, the goal is to exploit the training set and learn the underlying regularities of the data in order to predict the target variable values on new values of the input variable $x$. The general task here is to discover the underlying function from which the training data was generated. To find this function, we need to generalize the ﬁnite data of the training set optimally. However, the training set is typically corrupted with random noise. This situation poses a challenge, and so to have a valid generalization of the data, we need to minimize this noise. The noise here is nothing but the uncertainty associated with the actual value of $y$ we are trying to predict using the input value $x$.
 
 ### Polynomial curve fitting
-In polynomial, we fit the data using a polynomial function of the form:
+The polynomial function we use to fit the data is of the form:
 
-$$y(x,\bold{w})=w_0 + w_1x + w_2x^2 + , . . .,+ w_Mx^M=\sum_M w_jx^j $$
+\[y(x,\bold{w})=w_0 + w_1x + w_2x^2 + , . . .,+ w_Mx^M=\sum_{j=0}^{M} w_jx^j \]
 
-where:
-- $M$ is the order of the polynomial.
-- $x^j$ denotes x raised to the power of j.
-- $\bold{w}=w_0 , . . . , w_M$ denotes a vector of weights.
+
+where
+- \(M\) is the polynomial order.
+- \(x^j\) is input variable \(x\) raised to the power \(j\).
+- \(\bold{w}=w_0 , .\ .\ . , w_M\) denotes a vector of weights.
   
-As we can note from the above, the polynomial function $y(x, \bold w)$ is a non-linear function of $x$. However, this function is a linear function of the weights $\bold w$. Functions that are non-linear in the input variable but linear in the unknown set of the parameters are linear and fall under the *linear models* class. Thus a *polynomial regression* is a **linear model**.
+From the polynomial hypothesis above, we note that this function \(y(x, \bold w)\) is a non-linear function of \(x\). However, this function is a linear function of the weights \(\bold w\). Functions that are non-linear in the input variable but linear in the unknown set of the parameters are linear and fall under the *linear models* class. Thus a *polynomial regression* is a **linear model**.
 
 Now the task is to determine the value of $\bold w$ and $M$.
 
@@ -50,7 +51,7 @@ Now the task is to determine the value of $\bold w$ and $M$.
 
 To determine the values of the coefﬁcients, we first ﬁt a polynomial to the training dataset. After that, we find the error function, i.e., $E(\bold w)$, which measures the misﬁt between the fitted curve $y(x, \bold w)$ and the data points of the training set. One of the most used error functions in machine learning is the sum of squares of the errors between the predictions $y(x_n, \bold w)$  and the corresponding target values for each point $x_n$ $y_n$ fin the data. This error function is of the form:
 
-$$E(\bold w)=\frac{1}{2}\sum ( {y(x_n , w) − y_n } )^2$$
+\[E(\bold w)=\frac{1}{2}\sum ( {y(x_n , w) − y_n } )^2\]
 
 Where:
 - The factor of 1/2 is introduced for later convenience.
@@ -72,10 +73,11 @@ The dataset that we shall use in this tutorial can be obtained from [here](https
 To get started, we import the required libraries for this session and load the dataset.
 
 ### Step 1: Importing the libraries
+We import the following libraries:
 ```python
-import numpy as np # linear algebra
-import matplotlib.pyplot as plt # for plotting
-import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
 
 ```
 
@@ -107,9 +109,9 @@ y = dataset.iloc[:, -1].values # extracts the labels from the dataset
 In this step, we train the linear regression model on the entire dataset. The code below explains how this is done.
 
 ```python
-from sklearn.linear_model import LinearRegression # importing the Linear Regression model
-lin_reg = LinearRegression() # creating an instance of the Linear Regression model
-lin_reg.fit(X, y) # fitting the model to the training set
+from sklearn.linear_model import LinearRegression # import the Linear Regression model
+lin_reg = LinearRegression() # creat model object
+lin_reg.fit(X, y) # fits the model to the training data
 
 ```
 #### Output
@@ -124,8 +126,8 @@ The output indicates the linear regression model has been trained on the whole d
 In this step, we train the polynomial regression model on the whole dataset. The code below explains how this is done.
 ```python
 from sklearn.preprocessing import PolynomialFeatures # importing a class for Polynomial Regression
-poly_reg = PolynomialFeatures(degree = 4) # degree = 4 is the order of the polynomial
-X_poly = poly_reg.fit_transform(X) # transforms the features to the polynomial form
+poly_regr = PolynomialFeatures(degree = 4) # our polynomial model is of order
+X_poly = poly_regr.fit_transform(X) # transforms the features to the polynomial form
 lin_reg_2 = LinearRegression() # creates a linear regression object
 lin_reg_2.fit(X_poly, y) # fits the linear regression object to the polynomial features
 
@@ -137,7 +139,7 @@ LinearRegression(copy_X=True, fit_intercept=True, n_jobs=None, normalize=False)
  ```
  The output indicates the polynomial regression model has been trained on the whole dataset.
 
-### Step 5: Visualising the Linear Regression results
+### Step 5: The Linear Regression results visualization
 In this step, we plot the Linear Regression results. To visualize the results of this model, let's execute the following code.
 
 ```python
@@ -155,7 +157,7 @@ The code above plots the data and fit a linear regression model on it, as shown 
 
 As seen from the plot above, the linear regression model does not fit the data well.
 
-### Step 6: Visualising the Polynomial Regression results
+### Step 6: The Polynomial Regression results visualization
 
 To visualize the polynomial regression results, let's execute the code below.
 
@@ -173,17 +175,17 @@ The code above plots the data and fit a polynomial regression model on it, as sh
 
 ![graph](/engineering-education/polynomial-regression-in-python/polynomial-2.png)
 
-### Step 7: Visualising the Polynomial Regression results (for higher resolution and smoother curve)
+### Step 7: The Polynomial Regression results visualisation(for higher resolution and smoother curve)
 In this step, we plot the Polynomial Regression results on a higher resolution (100 points per axis) to get a smoother curve. To visualize the results of this model, let's execute the following code.
 
 ```python
 X_grid = np.arange(min(X), max(X), 0.1) # choice of 0.1 instead of 0.01 to make the graph smoother
-X_grid = X_grid.reshape((len(X_grid), 1)) # reshape the array to be a matrix
-plt.scatter(X, y, color = 'red') # plotting the training set
-plt.plot(X_grid, lin_reg_2.predict(poly_reg.fit_transform(X_grid)), color = 'blue') # plotting the polynomial regression line
-plt.title('Truth or Bluff (Polynomial Regression)') # adding a tittle to our plot
-plt.xlabel('Position level') # adding a label to the x-axis
-plt.ylabel('Salary') # adding a label to the y-axis
+X_grid = X_grid.reshape((len(X_grid), 1)) # reshapes the array to be a matrix
+plt.scatter(X, y, color = 'red') # plots the training set
+plt.plot(X_grid, lin_reg_2.predict(poly_reg.fit_transform(X_grid)), color = 'blue') # plots a polynomial regression line
+plt.title('Truth or Bluff (Polynomial Regression)') # adds tittle to the plot
+plt.xlabel('Position level') # adds label to the x-axis
+plt.ylabel('Salary') # adds label to the y-axis
 plt.show() # prints our plot
 
 ```
@@ -191,7 +193,7 @@ The code above yields the plot below.
 
 ![graph](/engineering-education/polynomial-regression-in-python/polynomial-3.png)
 
-### Step 8: Predicting a new result with Linear Regression
+### Step 8: A new result prediction with Linear Regression
 Here, we predict a new output with the Linear Regression model. Let's execute the code below and see the output.
 
 ```python
@@ -204,10 +206,10 @@ Upon executing the code above, the output is:
  ```bash
  array([330378.78787879])
 
- ```
-The variable $X=6.5$ is exact between $X=6 and X=7$. Thus we expect the model to predict a salary value between 150000 and 200000. With linear regression, this is not the case. It overshoots the expected salary actually by almost two times. This indicates that linear regression is not suitable for this problem.
+ ``` 
+The variable \(X=6.5\) is exact between \(X=6\) and \(X=7\). Thus we expect the model to predict a salary value between 150000 and 200000. With linear regression, this is not the case. It overshoots the expected salary actually by almost two times. This indicates that linear regression is not suitable for this problem.
 
-### Step 9: Predicting a new result with Polynomial Regression
+### Step 9: A new result prediction with Polynomial Regression
 
 Here, we predict a new output with the Polynomial Regression model. Let's execute the code below and see the output.
 ```python
