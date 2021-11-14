@@ -5,7 +5,7 @@ published: true
 url: /convert-html-to-pdf-with-docraptor/
 title: Converting HTML to PDF using the Docraptor Library
 description: This article will guide the reader on using DocRaptor to convert HTML into a PDF.
-author: jkennedy-ndutha
+author: kennedy-ndutha
 date: 2021-11-12T00:00:00-16:34
 topics: [Languages]
 excerpt_separator: <!--more-->
