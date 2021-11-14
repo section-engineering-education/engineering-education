@@ -6,8 +6,8 @@ This phone number verification will be accomplished in Laravel by utilizing a Tw
 
 ### Prerequisites
 
-- To follow this tutorial, we'll assume the following for this tutorial:
-- You are having understanding of [PHP and Laravel](https://laravel.com/docs/8.x)
+  To follow this tutorial, we'll assume the following for this tutorial:
+- You are having basic understanding of [PHP and Laravel](https://laravel.com/docs/8.x)
 - You are having Larave 8.x in your machine
 - You are having MySQL installed on your machine.
 - You are having a[ Composer globally installed](https://getcomposer.org/doc/00-intro.md).
@@ -22,7 +22,7 @@ This phone number verification will be accomplished in Laravel by utilizing a Tw
 - Database Migration
 - Set Up Twilio
 - Calling User's Phone Number
-- Instructing, Collecting and Account Verification
+- Instructing, Collecting Input and Account Verification
 - Conlusion
 
 ### Creating and Setting Up a New Laravel App
@@ -636,7 +636,7 @@ public function postReverify(Request $request){
 
 
 ```
-### Instructing, Collecting and Account Verification
+### Instructing, Collecting Input and Account Verification
 At this stage, we have done allot, but we are yet to instruct the user on what to do when he/she receives the call, collect the user input and verify the user account. Let's use artisan to quickly create a controller that handles this. Execute this command:
 
 ```
