@@ -1,4 +1,4 @@
-A socket consists of two major endpoints. One end sends data, and the other end receives data. Take an example of what you can do over the internet. In this case, different nodes/computers are connected to establish a connection that will allow you to send or receive data. A node can be a server or a client. A client sends a request, and the server will send back a response. These connections between the server and client are achieved through sockets. A socket acts as the communication endpoint.
+A socket consists of two major endpoints. One end sends data, and the other end receives data. Take an example of what you can do over the internet. In this case, different nodes/computers are connected to establish a connection that will allow you to send or receive data. A node can be a server or a client. A client sends a request, and the server will send back a response. These connections between the server and client are achieved through sockets. Thus, a socket acts as the communication endpoint.
 
 This guide will help you understand the socket concept by building client-server socket architecture using the AioHTTP.
 
@@ -143,7 +143,7 @@ if __name__ == '__main__':
 
 Here are targeting the `/` route and the `/todos` route, both of which will be handled by the same function. We are also starting our server by running the application instance.
 
-Now you can start the server by running the following command on your terminal. Before running the command, ensure you are in the project folder that hosts the `server.py` file.
+You can start the server by running the following command on your terminal. Before running the command, ensure you are in the project folder that hosts the `server.py` file.
 
 ```bash
 ./Scripts/python server.py
@@ -155,7 +155,7 @@ The server is up and running, and as you can the server is listening on port `80
 
 ### Building a client with AioHTTP
 
-Create a `client.py` file in the project folder. Let's configure the client using the AioHTTP.
+Create a `client.py` file in the project folder. Next, let's configure the client using the AioHTTP.
 
 Import the `aiohttp` and `asyncio` modules.
 
