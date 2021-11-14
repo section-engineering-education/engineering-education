@@ -35,7 +35,7 @@ The key requirements for a successful integration include;
     Android studio
     Facebook business account
 
-### Initial integration steps
+### Stage One integration steps
 
 Before beginning the integration process, you have to first setup your Facebook Business Manager account for the ads.
 The steps below will guide you on setting up your account.
