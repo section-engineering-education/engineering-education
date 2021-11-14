@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /multilanguage-translator-using-streamlit-and-gettext/
 title: How to Develop a Multilanguage Translator using Streamlit and Gettext
-description: This article will help the reader understand how to develop a translation application using Streamlit and Gettext.
+description: This article will help the reader understand how to develop a translation application using Streamlit and Gettext. We will create a simple iOS app that can translate sentences.
 author: johnnie-mbugua
-date: 2021-11-12T00:00:00-02:48
+date: 2021-11-14T00:00:00-12:48
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -33,7 +33,7 @@ Here is what we want the resulting app to look like:
 
 The project structure is simple. The `mainWindow` controller has three outlets for UI objects that show English text, Polish translation, or German-Russian translation. 
 
-Two Action objects allow us to change the language and refresh translations. We will use both outlets to show the text in `UILabel` and `UIButton`. 
+Two action objects allow us to change the language and refresh translations. We will use both outlets to show the text in `UILabel` and `UIButton`. 
 
 These objects are connected to `IBOutlet` properties of the mainWindow controller so that we can customize their properties from Storyboard.
 
@@ -64,7 +64,7 @@ NSLocalizedString(@"English", @"en");
 NSLocalizedString(@"Polish", @"pl");
 ```
 
-Finally, we have all our UI objects connected to the outlets and actions. We also implemented a label that shows the current language of the application.
+Then we have all our UI objects connected to the outlets and actions. We also implemented a label that shows the current language of the application.
 
 To achieve this feature, we use the NSLocalizedString method to read from the `Localizable.strings` file:
 
@@ -89,25 +89,26 @@ After all these steps, our Xcode project is ready to build and run. The resultin
   }
 
 ```
+
 We are going to develop another multiLanguage translator using Streamlit and Gettext here. But before that, let's understand the basics of Gettext.
 
 #### Gettext basics
 Gettext tool will use three files to store the translatable strings:
 
-`.mo`: This is the compiled version of the `.po` (Portable Object) file and is used by all GNU/Linux distributions.
+1. `.mo`: This is the compiled version of the `.po` (Portable Object) file and is used by all GNU/Linux distributions.
 
 If you are using Ubuntu then you can find the multiLanguage translator in `/usr/share/locale/<your_language>/LC_MESSAGES/`.
 
-* `.PO`: This is an XML like text file which stores all the translatable strings for your application.
+2. `.PO`: This is an XML like text file which stores all the translatable strings for your application.
 
-* `.pot` (Template): This file contains header information about your project, just fill out the last few lines and create a template using `msgfmt`.
+3. `.pot` (Template): This file contains header information about your project, just fill out the last few lines and create a template using `msgfmt`.
   
 Now let's see how to develop a multiLanguage translator in PHP using streamLit and Gettext. 
 
 #### Step 1: Download Streamlit
 The first step is to download the latest version of Gettext, GNU Gettext tools, and streamLit from their official websites.
 
-#### Step 2:  Make Project Directory Structure
+#### Step 2: Make the project directory structure
 We are going to create a new directory for our project, you can name it anything you like but make sure that your path is set as `locales.inc.php`.
 
 ```php
@@ -147,11 +148,13 @@ We need to add localizable strings for different languages in `en_US.po` file th
 You can add as many phrases as you wish. However, make sure not to exceed the character limit.
 
 #### Step 5: Compile .po files
-We will use Gettext tools to compile the `en_US.po` file to `en_US.mo`. We do so using the following steps:
+We will use Gettext tools to compile the `en_US.po` file to `en_US.mo`. 
 
-1. Go to the terminal and navigate to the project root directory where we copied `.pot` files in the previous step.
+We do so using the following steps:
 
-2. Execute the command below:
+- Go to the terminal and navigate to the project root directory where we copied `.pot` files in the previous step.
+
+- Execute the command below:
 
 ```bash
 msgfmt en_US.po -o LC_MESSAGES/en_US.mo
@@ -159,12 +162,12 @@ msgfmt en_US.po -o LC_MESSAGES/en_US.mo
 
 You can find the `en_US.mo` file in your project root directory after executing this command successfully.
 
-3. Repeat these steps for each `.po` file that was copied in the previous steps to compile different languages.
+- Repeat these steps for each `.po` file that was copied in the previous steps to compile different languages.
 
 #### Step 6: Adding translatable string array
 Next, we need to add an array of all the localizable strings that were added in the `en_US.po` file.
 
-1. Open up `locale/LC_MESSAGES/en_US.po` file and add the code below:
+- Open up `locale/LC_MESSAGES/en_US.po` file and add the code below:
 
 ```PHP
 msgid "msgstr "
@@ -188,6 +191,8 @@ You can add as many languages as you like but make sure to keep the character li
 In this tutorial, we have learned how to develop a multilanguage translator using Gettext and Streamlit.
 
 You can, therefore, use this knowledge to craft other quality applications.
+
+Happy coding!
 
 ---
 Peer Review Contributions by: [Wanja Mike](/engineering-education/authors/michael-barasa/)
