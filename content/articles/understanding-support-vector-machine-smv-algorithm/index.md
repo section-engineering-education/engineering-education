@@ -12,7 +12,7 @@ Before reading this tutorial, the reader should have the following basic concept
 
 ### Table of Contents
 - [Overview of Support Vector Machine](#overview-of-support-vector-machine)
-- [How does Support Vector Machine work](#how-does-support-vector-machine-work)
+- [Functionality of Support Vector Machine](#functionality-of-support-vector-machine)
 - [Implementation of SVM in Python](#implementation-of-svm-in-python)
 - [Tuneing Parameters in SVM](#tuneing-parameters-in-svm)
 - [The Advantages and disadvantages of utilizing SVM](#the-advantages-and-disadvantages-of-utilizing-svm)
@@ -78,26 +78,23 @@ clf = SVC(kernel='a linear')
 clf.fit(q_train,w_train)
 y_pred = clf.pred(q_trial)
 print(accurate_marks(w_test,w_predict))
-
 ```
+
 **Explanation** We used `kernel=a linear` in the previous code to generate an SVM for variables that can be segregated linearly. On the other hand, nonlinear data might want a different strategy. As a result, we used the classifier to identify patterns in the original training data before moving on.
 
 ### Tuneing Parameters in SVM
 When using machine learning methods, model accuracy may be improved by modifying parameter values. Look at the list of SVM parameters.
 
-```
-sklearn.svm.SVC(C=1.0, kernel='rbf', degree=2, gamma=0.0, coef0=0.0, shrinking=True, probability=False,tol=0.01, cache_size=150, class_quantity=None, verbose=False, maximum_iters=-1, random_nature=None)
-```
 We'll discuss `kernel,` `gamma,` and `C,` three crucial model performance parameters.
 
- A variety of options are available from the kernel in this situation, including `linear,` `rbf,` and `poly` (the default being rbf ). Non-linear hyper-plane issues benefit from the use of the concepts `rbf` and `poly.` Tuneing of parameters is used in a linear kernel to classify two iris data set characteristics based on their kind.
+ A variety of options are available from the kernel in this situation, including `linear,` `rbf,` and `poly` (the default being rbf ). It is preferable to employ the notions of `rbf` and `poly` for nonlinear hyperplane issues. Tuneing of parameters is used in a linear kernel to classify two iris data set characteristics based on their kind.
 
 ### The Advantages and disadvantages of utilizing SVM
 **Advantages**
 - The greater the difference between the two, the better.
 - It works effectively in three-dimensional situations that are both complicated and dynamic.
-- This approach works effectively when the number of dimensions exceeds the number of samples.
-- Since it only uses a portion of the decision function's training points, it is also memory-efficient (known as support vectors).
+- Whenever the number of observations is more than the sample size, this method works well.
+- It also saves memory because just a small portion of the determination function's training points are used (called the support vector).
 
 **Disadvantages**
 - Because of the time required to train while working with large data sets, performance suffers.
@@ -105,17 +102,17 @@ We'll discuss `kernel,` `gamma,` and `C,` three crucial model performance parame
 - Probability estimates in SVM are generated via a time-consuming five-fold cross-validation technique. SVC, the scikit-learn library's associated SVC approach, uses this technique.
 
 ### How to select vector machines kernels
-Most of the time, we have no idea which kernel will be the most efficient given a randomly generated dataset. We should start with the easiest hypothesis space and work our way up from there, as we don't know anything about our data. To sum up, if our dataset is linearly separable, we will get good results with the linear kernel, otherwise, it will fall short.
+On a completely random set of data, we usually don't know which core is perhaps the most efficient. Because we don't know anything about the data, we must start with the smallest hypothesis space and work our way up. In conclusion, a linear kernel would produce decent results if our data set is linearly divided; else, it will fail.
 
-For the sake of simplicity and better visualization, let's assume our dataset just has two dimensions. This is a complete success. Next up is the RBF kernel SVM.
+Let's pretend your dataset just has two dimensions for ease of display. This is a resounding success. The RBF core's SVM is shown below.
 
 ![Rbf kernel svm](engineering-education/understanding-support-vector-machine-smv-algorithm/smv.jpg)
 
-It appears that linear and RBF kernel SVM will both do equally well with this dataset. How do we know that the linear hypothesis is the best one to use? I'm reminded of Occam's Razor in this situation. Because they need bigger training sets, parametric models like the linear support vector machine (SVM) are more difficult to employ than RBF kernel SVMs. While it is more expensive to train an RBF kernel SVM, it is also more expensive to keep the kernel matrix around and project into an `infinite` higher dimensional space where the data remains linearly separable. When there are more hyperparameters to change, model selection becomes more expensive. Overfitting a complex model is also easier.
+This data set appears to be handled equally well by the linear SVM and the RBF core SVM. How can we figure out the linear hypothesis to use? Occam's Razor comes to mind here. Because they require bigger training sets, metric models like linear support vector machines (SVMs) are more challenging to employ than SVMs with RBF kernels. The RBF kernel SVM is more expensive to train, but it is also more expensive to store the kernel matrix and project it into a high-dimensional `infinite` space in which the data is transmitted linearly. The developed model will be more costly to the many hyperparameters we need to adjust. Complex models may also be retrained more easily.
 
-Anyway, the polynomial kernel isn't a big deal to me at this point. In actuality, it's not as useful as you may think because of problems with efficiency performance (both computationally and predictively). Instead of using the Radial Basis Function kernel, use a linear SVM (or logistic regression) for basic problems. This is the general principle to keep in mind.
+Anyway, we should not be too concerned about the present polynomial kernel. Due to efficiency difficulties, this isn't as handy as you may imagine for (both computational and forecasting). Instead of using the Radial Basis Function kernel, use a linear SVM (or logistic regression) for basic problems. This is the general principle to keep in mind.
 
-The RBF kernel SVM's decision area is also linear. As a result, RBF kernel SVM elevates your samples to a higher dimensional feature space, where you may use a linear decision boundary to split your classes.
+The RBF kernel SVM's decision area is also linear. As a consequence, the RBF core SVM elevates the samples into a high-dimensional feature set with linear decision boundaries that may be used to differentiate classes.
 
 ### Conclution
  As evidenced in this tutorial, we have looked more into the Support Vector Machine machine learning algorithm. We discussed the model's working concept, how to construct it in Python, how to optimize its parameters, and its benefits and disadvantages.
