@@ -1,7 +1,7 @@
 ﻿### Introduction
 Over the years, APIs have gradually gained popularity in major businesses and enterprises. The main reason is that organizations have seen a tremendous increase in IoT devices and mobile applications, which mostly rely on backend interactions. Therefore, an API can be considered a crucial business resource that any modern enterprise cannot assume.
 
-According to recent statistics, it is evident that businesses and large enterprises have seen value in their digital operations through APIs. These businesses include the banking and finance sector, media and entertainment industries, and automotive industries. Due to their continued use of APIs in their operations, they have made tremendous growth in their sectors.
+According to recent statistics, it is evident that businesses and large enterprises have seen value in their digital operations through APIs. These businesses include the banking and finance sector, media and entertainment industries, and automotive industries. These indusrties have made tremendous growth in their sectors due to the continued use of APIs in their operations
 
 In the past, huge enterprises started utilizing APIs in their digital operations to grow and diversify their businesses and maximize their profits. SMEs have now joined the plan and have started using APIs in their operations to remain competitive and relevant in this digital space.
 
@@ -19,20 +19,20 @@ The challenging dilemma arises for business owners on the best practices of deve
 - [Conclusion](#conclusion)
 
 ### Concept of APIs
-API is a short form for Application Programming Interface. It is an entry framework that allows the developers to communicate with a given application. It is evident that in this era, applications, whether mobile or web, can never be standalone and often needs to interact and respond to each other.
+API is a short form for Application Programming Interface. It is an entry framework that allows the developers to communicate with a given application. It is evident that in this era, applications, whether mobile or web, can never be standalone and often need to interact and respond to each other.
 
 Below are the reasons that make the use of APIs important for organizations:
 
-- API allows access to application's data and logic that can be used for monetization purposes
-- The API uses the functionality of the application
-- Allows microservices interactions
-- It connects different ecosystems such as B2B and C2B
-- It offers powerful integrations
-- It enhanced the development of new features in the business
-- It opens up new opportunities for growth and innovations
+- API allows access to application's data and logic that can be used for monetization purposes.
+- The API uses the functionality of the application.
+- Allows microservices interactions.
+- It connects different ecosystems such as B2B and C2B.
+- It offers powerful integrations.
+- It enhanced the development of new features in business.
+- It opens up new opportunities for growth and innovations.
 
 ### Understanding API architecture
-API architecture refers to the process whereby a developer decides on which methodology and the process are required during the development of the API and how it will run. It defined the components and their logical interactions.
+API architecture refers to the process where a developer makes a decision on the methodology and the process to be used during the development of the API and how the API will run. It defines the components and their logical interactions.
 
 The architectural decisions about the API being developed have to be made before the actual design and development. It includes the technical requirements of the API, the tier, the API lifecycle management, operations and security, and finally, the API monetization.
 
@@ -42,13 +42,13 @@ Below are the essential components that API architecture consists of:
 #### API Gateway
 This component is mainly concerned with security, caching, and orchestration purposes. In simple terms, it acts as the single gateway into the internal API architecture.
 
-It serves the below functions:
+It serves the following functions:
 - It offers load balancing capabilities and partitioning of microservices.
 - It assists in monitoring and filtering traffic from various devices such as mobile, web, or B2B.
 - It contains gateway layers that assist in exposing third-party APIs, microservices, and VMs found on the application server provider.
 
 #### API Portal
-This component acts as middleware between API consumers and providers. It has below functions:
+This component acts as middleware between API consumers and providers. It has the following functions:
 - Assists in the analysis of the API.
 - It is responsible for the documentation of the API.
 - It is essential in the marketing of APIs.
@@ -60,20 +60,20 @@ It involves planning and making decisions on which API architecture to use durin
 At this stage, the developers have to deal with API complexity, error handling and prevention measures, consistency, and performance of the API. It means that API design and architecture are significant and define the outcome of the API later on.
 
 #### Factors to consider when performing an API design
-- API design goals should be aligned with the goals of the given business
-- The required resources have to be available, and proper management ensured
-- The use cases supported by the API should be considered
-- The target audience  and users should be predefined
-- The API value addition, channels, and ensure developers’ motivation to encourage its usage
-- The applications intended to make use of the developed API should be beneficial to the end-users
+- API design goals should be aligned with the goals of the given business.
+- The required resources have to be available, and proper management ensured.
+- The use cases supported by the API should be considered.
+- The target audience  and users should be predefined.
+- The API value addition, channels, and ensure developers’ motivation to encourage its usage.
+- The applications intended to make use of the developed API should be beneficial to the end-users.
 
 #### Best practices when designing an API
 The following best practices should be considered when designing an API:
-- An API should draw its focus on its consumption and ensure consistency
-- A clear statement on the value the API offers should be well presented to the developers
-- Early optimizations should be avoided, and too much complexity should not be given to the developers
-- The APIs security has to be ensured with strict rules imposed on it
-- An API should have excellent error handling
+- An API should draw its focus on its consumption and ensure consistency.
+- A clear statement on the value the API offers should be well presented to the developers.
+- Early optimizations should be avoided, and too much complexity should not be given to the developers.
+- The APIs security has to be ensured with strict rules imposed on it.
+- An API should have excellent error handling.
 
 ### Core goals of API design
 Every organization defines unique requirements of what their API should be designed. Below are objectives each API design tends to achieve:
@@ -88,7 +88,7 @@ An API should have an extra security layer that ensures all the requests are not
 All organizations strive to increase and expand their operations. This would mean that the API should be designed to allow scalability to handle a growth in the products offered, security needs, or even an increase in data needs.
 
 #### Collaboration
-API should ensure components' reusability in application development.  This saves development time and prevents the developers from performing redundant and repetitive tasks repeatedly. This also assists the developers in focusing on trying and testing new tools, which is more valuable to the organization. It also helps the developers hire third-party companies to handle more complex tasks as they focus on the organization system.
+API should ensure components' reusability in application development.  This saves development time and prevents the developers from performing redundant and repetitive tasks. This also assists the developers in focusing on trying and testing new tools, which is more valuable to the organization. It also helps the developers hire third-party companies to handle more complex tasks as they focus on the organization system.
 
 #### Value addition
 Through the use of APIs, organizations can get value and generate more revenue. In most cases, APIs assist in attracting new clients and also bringing more value to the existing ones. Also, the organization can monetize the use of its API software. The software can also be integrated with other modules of the organization, such as sales and marketing, making the operations more efficient.
@@ -124,6 +124,6 @@ In this layer, the API is integrated to ensure synchronous service access betwee
 It is the most crucial layer since real action occurs here. This is where clients’ applications, developers, and users get a chance to work with the organization applications and data of the organization.
 
 ### Conclusion
-Users will only adopt the use of the given API if it offers the value it intends to. This would mean the design and architectural factors and practices covered in this article cannot be overlooked.
+Users will only adopt the use of the given API if it offers the value it intends to. This would mean the design, architectural factors, and practices covered in this article cannot be overlooked.
 
 Business owners and stakeholders should make informed decisions when developing their APIs to meet their needs and add value.
