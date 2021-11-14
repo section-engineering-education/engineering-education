@@ -1,4 +1,4 @@
-# How to Verify Phone Number in Laravel Using Twilio TwiML Voice: `<Gather>`
+# Phone Verification Laravel Using Twilio
 Almost every online registration that requires a user's phone number will verify the phone number's legitimacy in some way, either via a text message, a phone call, or any other handy technique. It's vital to double-check a phone number, especially if it's the only means to reach the person.
 
 In this article, we will learn how to call a user's registered phone number to verify the phone number's authenticity. If the user answers the phone, he or she will be asked to enter a one-time password (OTP) that was generated and displayed on his or her screen during the signup process. The user account will not be verified if an incorrect OTP is entered or if the user refuses to answer the phone. The user account will be verified if the user answers the phone and enters the correct OTP.
@@ -54,7 +54,7 @@ php artisan serve
 ```
 
 If you followed all of the steps correctly, you should be able to see your new app in the browser by now when you visit `http://127.0.0.1:8000/ `as shown below.
-![larave home page](/how-to-verify-phone-number-in-laravel-using-twilio-TwiML-voice-gather/laravel-index-page.jpg)
+![larave home page](/phone-verification-in-laravel-using-twilio/laravel-index-page.jpg)
 
  
 ### Set Up Authentication (Controller, Routes and Views)
@@ -401,7 +401,7 @@ We no want to include the authentication view. Create a folder in inside the vie
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Laravel - ItSolutionStuff.com</title>
+    <title>Laravel</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <style type="text/css">
         @import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
@@ -551,7 +551,7 @@ TWILIO_SID= "YOUR ACCOUNT SID HERE"
 TWILIO_AUTH_TOKEN= "YOUR ACCOUNT AUTH TOKEN HERE"
 
 ``` 
-![twilio tokens](/how-to-verify-phone-number-in-laravel-using-twilio-TwiML-voice-gather/twili-tokens.jpg)
+![twilio tokens](/phone-verification-in-laravel-using-twilio/twili-tokens.jpg)
 
 #### Install Twilio’s SDK Using Composer
 The Twilio PHP Helper Library must be installed via the composer. This will allow us to communicate with Twilio's API from our code. In your terminal, type the following command:
@@ -771,7 +771,7 @@ ngrok http 8000
 
 Following the successful execution of the preceding command, you should see the following screen:
 
-![ngrok](/how-to-verify-phone-number-in-laravel-using-twilio-TwiML-voice-gather/ngrok.jpg)
+![ngrok](/phone-verification-in-laravel-using-twilio/ngrok.jpg)
 
 Take note of the forwarding URL (`http://159f-129-205-113-23.ngrok.io`) which will be use to access our application online. Now let us replace modify the `makeCall `method by adding the forwarding URL to our twilio URL. Open `app/Http/Controllers/AuthController.php`
 ```
@@ -800,4 +800,4 @@ Now our application is ready. Visit ` http://159f-129-205-113-23.ngrok.io/regist
 ### Conlusion
 In this tutorial, we have learnt how to use Laravel and twilio to interact with users and verify their phone number, collect input from a user during call, call a phone number from our application and implementing authentication. While we covered a lot in this tutorial, there are still numerous ways to engage your user in our application using the twilio services.
 
-This project's code is all housed in this [GitHub repository](https://github.com/philzy94/How-to-Verify-Phone-Number-in-Laravel-Using-Twilio-TwiML-Voice-Gather-).
+This project's code is all housed in this [GitHub repository](https://github.com/philzy94/phone-verification-in-laravel-using-twilio).
