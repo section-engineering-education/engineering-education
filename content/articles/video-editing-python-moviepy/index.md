@@ -54,7 +54,7 @@ Move `sample-mp4-file.mp4` to the folder with `moviepy_test.py`.
 
 The video should look like this by default:
 
-<iframe width="478" height="269" src="https://www.youtube.com/embed/awhxIqnmtMQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="478" height="269" src="https://www.youtube.com/embed/uV4vbfYoovE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Basic editing
 The key objects in MoviePy are **VideoClips**. 
@@ -105,7 +105,7 @@ Save and run your code. It may take 30-60 seconds to finish running. You should 
 
 It should be much shorter:
 
-<iframe width="478" height="269" src="https://www.youtube.com/embed/dVUUgxRrCTU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="478" height="269" src="https://www.youtube.com/embed/Zu2Nxf2iTxg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Adding effects
 #### Video effects
@@ -152,7 +152,7 @@ final_clip.write_videofile("output_2.mp4")
 
 Our new output should look bright and distorted in the first part. The second part should be "color-inverted", where colors become their opposites. This means black would change to white.
 
-<iframe width="478" height="269" src="https://www.youtube.com/embed/ndzBa6zo_Z8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="478" height="269" src="https://www.youtube.com/embed/NPqb4jg6fEE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 #### Audio effects
 We've changed the image, but we haven't yet changed the sound.
@@ -199,7 +199,7 @@ final_clip = concatenate_videoclips([clip_v2, clip2, clip3, clip4])
 final_clip.write_videofile("output_3.mp4")
 ```
 
-<iframe width="478" height="269" src="https://www.youtube.com/embed/XK753eNjuqw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="478" height="269" src="https://www.youtube.com/embed/b-dG9N7nLDI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Putting it all together
 Perhaps you want to stack video clips on top of each other. Or, maybe play music over the video. For these features, we need **compositing**.
@@ -250,7 +250,7 @@ final_clip.write_videofile("output_4.mp4")
 
 The final result now has the music, overlaid clips, and all the previous edits.
 
-<iframe width="478" height="269" src="https://www.youtube.com/embed/lDBJhMxXFB0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="478" height="269" src="https://www.youtube.com/embed/nUWCk1OfUMg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Conclusion
 Good job! You've just edited and remixed a video, all in a Python program. There are plenty of other things you can do with MoviePy, now that you know the basics. 
