@@ -24,8 +24,6 @@ To follow along, you need to have:
 - Basic understanding of [.NET](https://docs.microsoft.com/en-us/dotnet/) development platform.
 - Microsoft Visual Studio installed. You can download Visual Studio from [here](https://visualstudio.microsoft.com/vs/).
 
-Let's get started!
-
 The first step is opening visual studio and following the steps below:
 1. Click on `Create new project`.
 2. On the next screen search for `Windows Forms` and select `Windows Forms App(.NET Framework)` and select the one that is using `C#`. and click `Next`
@@ -39,16 +37,29 @@ The form designer should look at the one shown in the figure below.
 
 You will be required to download some nugget packages for the object detection to be effective. These packages are `Microsoft.ML`, `Microsoft.ML.OnnxRuntime`, and because you are dealing with object detection you will also download `Microsoft.ML.Image.Analytics`. You will also download `Microsoft.ML.OnnxTransformer` because you are using the Microsoft object detection model.
 
-You will encounter an error when you build the project, this is because `ML.NET` supports only a 64-bit processor and the settings is 32-bit processor. To solve this error you have to right-click on the project name and navigate to properties, then go to build and select `x64` under `platform target`
+#### Selecting a the right processor
+You will encounter an error when you build the project, this is because `ML.NET` supports only a 64-bit processor and the settings is 32-bit processor.
 
+To solve this error you have to right-click on the project name and navigate to properties, then go to build and select `x64` under `platform target`
+
+### Adding a button
 Now on the toolbox sidebar, drag a `Button` and drop at the bottom of the form designer tab. Go to the properties side and rename it from `button1` to `Select Image`.
+
 On the same properties sidebar, scroll down to `Name` and change the name to give it the name `imgSelectBtn`.
 
-To make the `btnSelectImage` functional you shall use the `fileSystemWatcher` and the `openFileDialog` which goes at the bottom of the window that you shall rename to `fileWatcher` and `fileDialog` respectively. A `fileSystemWatcher` watches for different changes in the and the file directory `openFileDialog` asks the user to open a file and select a file from it.
-You shall also create some folders i.e, `MLmodels` and `Models` for different classes that you shall be using.
+### Enabling the button
+To make the `btnSelectImage` functional you will use the `fileSystemWatcher` and the `openFileDialog` which goes at the bottom of the window and rename it to `fileWatcher` and `fileDialog` respectively.
 
+ A `fileSystemWatcher` watches for different changes in the system and the file directory.
+
+ `openFileDialog` asks the user to open a file and select a file from it.
+ #### Creating folders
+You will also create some folders i.e, `MLmodels` and `Models` for different classes that you shall be using.
+
+#### MLModels folder
 In your `MLModels` folder, you will add `lbls.txt` file that contains `red`, `blue`, `white`, and `green` colors which give the different labels that we are using and the `model.onnx` file from the custom vision.
 
+#### Models folder
 You will create four classes in your `Models` folder i.e, `ImageSettings`, `ImageInputs`, `ImageResults`, and `BndBox`.
 
 Now, double click on the button you created to open `form1.cs` that you shall add the following code to enable the click event.
@@ -218,27 +229,35 @@ namespace ObjectDetection
     }
 }
 ```
-
-From the code above;
+### Code explanation
 To show the file dialog, the code in the function `private void imgSelectBtn_Click(object sender, EventArgs e)` is used.
 
-The `ML.NET` code is in the constructor `public Form1()` for the form that is executed whenever the form appears as the main form. You will give it empty data i.e, `var emptyStatistics` since you are using it for predictions, and give it a new list of data from the image input class i.e, `new List<ImageInput>()` that you created in the models folder.
+The `ML.NET` code is in the constructor `public Form1()` for the form that is executed whenever the form appears as the main form.
+
+You will give it empty data i.e, `var emptyStatistics` since you are using it for predictions, and give it a new list of data from the image input class i.e, `new List<ImageInput>()` that you created in the models folder.
 
 You will also need to do a pipeline to resize images using the `ImageResizingEstimator` that uses navigation called `Netron` and also use the image resizing parameters you set in the `ImageSettings` file in your `Models` folder.
 
 The `InputColumnName` inputs the name of the image from the `ImageInput` file in the model folder.
 
-You can also realize that there is a `_predictionEngine` in the `ML.NET` code, what this does is to receive the parameters of the image data when it is set to `context.model.CreatePredictionEngine<ImageInput, ImagePredictions>(model)` from the models folder.
+You realize that there is a `_predictionEngine` in the `ML.NET` code, what this does is to receive the parameters of the image data when it is set to `context.model.CreatePredictionEngine<ImageInput, ImagePredictions>(model)` from the models folder.
 
 In the button function, the prediction engine is used to take in the data that is to be predicted i.e, `image` from the file dialog, and where the image data after detection is to be stored. i.e, `var results`.
 
 The code also has `BndBoxes`. This code includes the X_axis and Y_axis values, the height and width of the prediction levels. This code is auto-generated when the class is created.
 
-Now, there are four classes in your `Models` folder that you created. The code in this class files are not to be changed since they are auto-generated, but you can edit the code in the `ImageSettings` file and use the type of width and height that you wish to use.
+Now, there are four classes in your `Models` folder that you created.
 
-There is one thing remaining in the code, creating where we shall put the information you have been writing in the form of code above. To do this, go to the `Toolbox` and select `PictureBox`, drag it to the form layout, give it the name `imgResult`, and implement it with the code function after the `for loop` i.e, `imagePrediction.Image = image;`
+The code in this class files are not to be changed since they are auto-generated.
 
-When you debug your project, it should be able to detect and put labels on the objects in the images that you are detecting.
+The only class you can edit is the `ImageSettings` file and use the type of width and height that you want your image to fit.
+
+### Adding a picture
+The main thing remaining for your project is creating where you will your image to do the predictions.
+
+To do this, go to the `Toolbox` and select `PictureBox`, drag it to the form layout, give it the name `imgResult`, and implement it with the code function after the `for loop` i.e, `imagePrediction.Image = image;`
+
+When you run your project, it will be able to detect and put labels on the objects in the image that you are detecting.
 
 #### Conclusion
-From a better understanding and following of this tutorial, it is clear that object detection is not only implemented in python. It is also implemented in C# using the ML.NET framework provided the required nuggets packages are downloaded in the Microsoft Visual Studio.
+From a better understanding and following of this tutorial, it is clear that object detection is not only implemented in python. It is also implemented in C# using the ML.NET framework provided the required NuGet packages are downloaded in the Microsoft Visual Studio.
