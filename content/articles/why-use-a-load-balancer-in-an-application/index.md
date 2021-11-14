@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /why-use-a-load-balancer-in-an-application/
 title: Why Use a Load Balancer in an Application
-description: This article will explain how to improve user experience using a load balancer in an application.
+description: This article will explain how to improve user experience using a load balancer in an application. Load balancers can distribute traffic across a cluster of servers.
 author: margaret-sitati
 date: 2021-11-14T00:00:00-09:00
 topics: []
