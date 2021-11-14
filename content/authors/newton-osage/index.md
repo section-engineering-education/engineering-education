@@ -1,5 +1,5 @@
 ---
-tittle: Newton Osage
+tittle: John Newton
 type: authors
 ---
 
