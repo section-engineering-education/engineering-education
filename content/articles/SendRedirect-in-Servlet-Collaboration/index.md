@@ -1,6 +1,7 @@
 ### Introduction
-The `sendRedirect()` method of the `HTTPServletResponse`, is used to redirect responses from one page to another. This method allows you to move user content from one web page to the next. Evans Lodoctor, a section Engineering contributor, introduced servlet collaboration using the `RequesDispatcher()` method in its [article](https://www.section.io/engineering-education/servlet-request-and-servlet-collaboration/#requestdispatcher-methods). In this article, we will see how the `SendRedirect()` gives the same functionalities.
+The `sendRedirect()` method of the `HTTPServletResponse` redirects responses from one page to another. This method allows you to move user content from one web page to the next. Evans Lodoctor, a section Engineering contributor, introduced servlet collaboration using the `RequesDispatcher()` method in its [article](https://www.section.io/engineering-education/servlet-request-and-servlet-collaboration/#requestdispatcher-methods). In this article, we will see how the `SendRedirect()` gives the same functionalities.
 In basic terms, the `SendRedirect()` method allows you to redirect a user's response to another web page, for example:
+
 ```java
 String country="Kenya";
 if("Kenya".equals(n))
@@ -12,7 +13,7 @@ if("Kenya".equals(n))
 `SendRedirect()` is used in the above snippet code to direct the client browser to the htmlPage if the condition is satisfied.
 ### Objectives.
 At the end of this article, a learner should know the following:
-1. The `SendRedirect()` method and how to use it.
+1. The `SendRedirect()` method and its use.
 2. Recognize the distinction between the `SendRedirect()` and `forward()` methods.
 3. Using an example, learn how to implement the `SendRedirect()` method.
 
@@ -41,7 +42,7 @@ The main goal of this method is to send responses from a specific request to the
 ### An example of how to use the SendRedirect method
 We'll make a program with the following pages to demonstrate how to use the SendRedirect method:
 #### A JSP login page.
- This page includes a login form as well as a paragraph indicating that the information entered is incorrect.
+ This page includes a login form and a paragraph indicating that the information entered is incorrect.
 #### Servlet page.
  This page will assist us in determining whether the user's credentials are valid. The user's browser will get directed to the home page if the entered details are correct. If not, a login page will be displayed, and a message will pop up to show that the user has entered incorrect information.
 #### Home page in HTML.
@@ -50,7 +51,7 @@ We'll make a program with the following pages to demonstrate how to use the Send
  #### NOTE:
  Make sure you understand the following areas before continuing to work on this sample project:
  1. Understanding of how to use Eclipse, a Java IDE, to create Servlet, JSP, and HTML pages.
- 2. You should be able to run a web project on a server, such as TomCat.
+ 2. You should run a web project on a server, such as TomCat.
 
 #### Steps to create this demo project:
 
@@ -124,8 +125,7 @@ The HTML page's body is shown below.
  ```
 
 ### Conclusion
-
-In conclusion, we learned about the `SendRedirect()` method and how to use it. We also understand the difference between the Java Servlet's `SendRedirect()` and `forward()` methods. In this case, a learner should know how to implement the `SendRedirect()` method to create interactive web pages.
+In conclusion, we learned about the `SendRedirect()` method and its use. We also understand the difference between the Java Servlet's `SendRedirect()` and `forward()` methods. In this case, a learner should know how to implement the `SendRedirect()` method to create interactive web pages.
 
 ### References
 - [SendRedirect in servlet Javatpoint](https://www.javatpoint.com/sendRedirect()-method)
