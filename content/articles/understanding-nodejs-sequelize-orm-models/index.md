@@ -6,7 +6,7 @@ url: /understanding-nodejs-sequelize-orm-models/
 title: Understanding Node.js Sequelize ORM Models
 description: This article will help you understand Sequelize models, from definition to usage. Sequelize works with all the SQL-based databases
 author:  benson-kariuki
-date: 2021-11-02T00:00:00-07:40
+date: 2021-11-15T00:00:00-09:45
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
