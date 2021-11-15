@@ -6,7 +6,7 @@ url: /object-serialization-and-deserialization-in-java/
 title: Serialization and deserialization in Java
 description: This article explains the concept of serialization and deserialization in the context of Java.
 author: grace-wanjiru
-date: 2021-10-22T00:00:00-09:00
+date: 2021-11-14T00:00:00-22:30
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -15,7 +15,7 @@ images:
    alt: Serialization and deserialization diagram
 ---
 
-In this tutorial, we will go through how serialization works and how we can implement it. we will also look at examples of how we can serialize a data structure using various Java concepts in doing so.
+In this tutorial, we will go through how serialization works and how we can implement it. We will also look at examples of how we can serialize a data structure using various Java concepts.
 <!--more-->
 `Serialization` in Java is a byte-stream representation of an entity's state. All the entity's data is inside the stream of bits. `Deserialization` is the reversal of serialization, in which a byte data type stream is turned back to a memory object. The best thing about both techniques is that they're both JVM-agnostic, which means you can serialize on one JVM and de-serialize on another.
 
