@@ -3,8 +3,8 @@ layout: engineering-education
 status: publish
 published: true
 url: /understanding-nodejs-sequelize-orm-models/
-title:Understanding Node.js Sequelize ORM Models
-description:This article will help you understand Sequelize models, from model definition to model usage. Sequelize works with all the SQL-based databases
+title: Understanding Node.js Sequelize ORM Models
+description: This article will help you understand Sequelize models, from definition to usage. Sequelize works with all the SQL-based databases
 author:  benson-kariuki
 date: 2021-11-02T00:00:00-07:40
 topics: [Languages]
@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/understanding-nodejs-sequelize-orm-models/hero.jpg
     alt: Node Models image
 ---
-[Sequelize](https://sequelize.org/) is an Object Relational Mapper for Node.js. Sequelize let's us connect to a database and perform operations without writing raw SQL queries. It abstracts SQL queries and makes it easier to interact with database models as objects. 
+[Sequelize](https://sequelize.org/) is an Object Relational Mapper for Node.js. Sequelize lets us connect to a database and perform operations without writing raw SQL queries. It abstracts SQL queries and makes it easier to interact with database models as objects. 
 <!--more-->
 This article will help you understand Sequelize models, from model definition to model usage. Sequelize works with all the SQL-based databases. In this tutorial, I will use MySQL. However, you can use any SQL-based database of your choice.
 
@@ -33,7 +33,7 @@ This article will help you understand Sequelize models, from model definition to
 ### Prerequisites
 For easier follow up on this article, you may require the following:
 - Basic understanding of [Node.js](https://www.w3schools.com/nodejs/).
-- Node.js installation on your computer.
+- Node.js installed on your computer.
 - Knowledge in [relational database management systems (RDBMS)](https://www.codecademy.com/articles/what-is-rdbms-sql).
 - An SQL-based DBMS installed on your computer.
 - Basic knowledge in Sequelize installation and set-up. Luckily, this has already been covered in the article, [Introduction to Sequelize ORM for Node.js](https://www.section.io/engineering-education/introduction-to-sequalize-orm-for-nodejs/).
@@ -48,13 +48,13 @@ At the end of this tutorial, you should be able to:
 
 ### Sequelize set up
 This tutorial assumes that you have already installed [Node.js](https://nodejs.org/en/), an SQL-based DBMS, and a code editor.
-**Step 1**
+
 Install Sequelize by running the command below on your command line.
 
 ```bash
 npm install --save sequelize
 ```
-**Step 2**
+
 Install Sequelize database driver for the database you would like to use by running one of the commands below.
 
 ```bash
@@ -62,13 +62,13 @@ npm install --save pg pg-hstore # PostgresSQL
 npm install --save mysql2 # MySQL
 npm install --save tedious # MS SQL
 ```
-**Step 3**
+
 Install npm package [Sequelize-CLI](https://www.npmjs.com/package/sequelize-cli).
 
 ```bash
 npm install - g sequelize-cli
 ```
-**Step 4**
+
 Create a project folder. In your project folder path, run the command below to initialize Sequelize in the folder.
 
 ```bash
@@ -77,12 +77,13 @@ sequelize init
 
 The above command creates the following folders:
 - `config`: a folder that contains config file
-- `migrations`: a folder that all migration files
-- `models`: a folder that all models for the project
-- `seeders`: a folder that contains all the seed files
+- `migrations`: a folder that holds all migration files
+- `models`: a folder that contains all models for the project
+- `seeders`: a folder that holds all the seed files
 
 For more Sequelize-CLI commands, run `sequelize` on the command line or refer to the [official documentation](https://www.npmjs.com/package/sequelize-cli).
-**NOTE:** All Sequelize-CLI commands are supposed to run in the project folder.
+
+> All Sequelize-CLI commands are supposed to run in the project folder.
 
 #### Database connection
 Navigate to the `config.json` file under the `config` folder generated earlier to connect to the database. This file holds the database connections for development, test, and production databases. Edit the development database connection as shown in the code snippet below.
@@ -106,7 +107,9 @@ sequelize db:create
 ```
 
 ### Introduction to models in Sequelize
-Models are the backbone of any Object-Relational Mapping (ORM). Therefore, you must understand how to work with models extensively to realize the full benefits of ORM. Models are database-independent. A model is an abstraction that reflects an entity or a table in the database. A model in Sequelize defines the entity's name in the database, the entity attributes, and their data types.
+Models are the backbone of any Object-Relational Mapping (ORM). Therefore, you must understand how to work with models extensively to realize the full benefits of ORM. 
+
+Models are database-independent. A model is an abstraction that reflects an entity or a table in the database. A model in Sequelize defines the entity's name in the database, the entity attributes, and their data types.
 
 In this tutorial, let's consider a database that stores users and blog posts. We need two tables to store users and posts. There will be a one-to-many relationship between the entity `User` and the entity `Post`. For this tutorial, we will keep it simple.
 
@@ -134,7 +137,8 @@ sequelize model:generate --name ModelName --attributes attribute1:datatype, attr
 ```
 
 The above command will create the models. New files in the `migrations` folder and `models` folder are created. To modify each model, edit the files as per the model name.
-**Note:** The commands do not include the attribute `id`, which should be the primary key for each table. The attribute is automatically generated. 
+
+> The commands do not include the attribute `id`, which should be the primary key for each table. The attribute is automatically generated. 
 
 You can add more attributes by editing the model files generated, `user.js,` and `post.js.` By default, the table name is as same as the model name. Open model files and define the table name as shown below.
 
@@ -188,7 +192,7 @@ node app.js
 
 The app automatically connects to the database and synchronizes the models with the database.
 
-**Note:** Sequelize automatically creates two new columns named `createdAt` and `updatedAt`. The two columns stores a timestamp showing when a record was created and updated, respectively.
+Sequelize automatically creates two new columns named `createdAt` and `updatedAt`. The two columns store timestamps showing when a record was created and updated, respectively.
 
 Synchronization in production can be destructive and is not recommended. Use synchronization at the development level only. In production, implement synchronization with [Migrations](https://sequelize.org/master/manual/migrations.html).
 
@@ -262,7 +266,9 @@ class Post extends Model {
 The source code for the `User` and `Post` models is on [Github](https://github.com/Tsanguu/Node.js-Sequelize-Tutorial-1).
 
 ### App testing
-We can now test our app with data. We will use [Postman](https://www.postman.com/) to make requests. Install Postman on your computer. We will create an endpoint for each functionality. To implement the changes to the database, run the applications. We will not make more changes to the models. Edit `app.js`. Replace the line
+We can now test our app with data. We will use [Postman](https://www.postman.com/) to make requests. 
+
+We will create an endpoint for each functionality. To implement the changes to the database, run the applications. We will not make more changes to the models. Edit `app.js`. Replace the line
 
 ```js
 await sequelize.sync({force: true});
@@ -292,7 +298,7 @@ app.post("/users", async(req,res) =>{
 });
 ```
 
-On Postman, create a `POST` request with the endpoint location as `http://localhost:5005/users/`. In the Body section, select `raw JSON` and insert the JSON data below. 
+In Postman, create a `POST` request with the endpoint location as `http://localhost:5005/users/`. In the Body section, select `raw JSON` and insert the JSON data below. 
 
 ```json
    {
@@ -321,7 +327,7 @@ app.get("/users", async(req,res) =>{
 });
 ```
 
-On Postman, create a `GET` request with the endpoint location as `http://localhost:5005/users/`. You will get a JSON response with all the users in the database.
+In Postman, create a `GET` request with the endpoint location as `http://localhost:5005/users/`. You will get a JSON response with all the users in the database.
 
 ![users](/engineering-education/understanding-nodejs-sequelize-orm-models/postman-get-users.png)
 
@@ -350,7 +356,9 @@ app.put("/users/:id", async(req,res) =>{
 });
 ```
 
-On Postman, create a `PUT` request with the endpoint location as `http://localhost:5005/users/1`. The number at the end of the URL represents the primary key to the record to be updated. In the body section, select `raw JSON` and insert the JSON data with the changes you want to make to the record.
+In Postman, create a `PUT` request with the endpoint location as `http://localhost:5005/users/1`. The number at the end of the URL represents the primary key to the record to be updated. 
+
+In the body section, select `raw JSON` and insert the JSON data with the changes you want to make to the record.
 
 ```json
    {
@@ -383,7 +391,7 @@ app.post("/posts", async(req,res) =>{
 });
 ```
 
-On Postman, create a `POST` request with the endpoint location as `http://localhost:5005/posts/`. In the body section, select `raw JSON` and insert the JSON data below.
+In Postman, create a `POST` request with the endpoint location as `http://localhost:5005/posts/`. In the body section, select `raw JSON` and insert the JSON data below.
 
 ```json
    {
@@ -411,7 +419,7 @@ app.get("/posts", async(req,res) =>{
 });
 ```
 
-On Postman, create a `GET` request with the endpoint location as `http://localhost:5005/posts/`. You will get a JSON response with all the posts in the database.
+In Postman, create a `GET` request with the endpoint location as `http://localhost:5005/posts/`. You will get a JSON response with all the posts in the database.
 
 ![Postman get posts](/engineering-education/understanding-nodejs-sequelize-orm-models/postman-get-posts.png)
 
@@ -434,7 +442,7 @@ app.delete("/users/:id", async(req,res) =>{
 });
 ```
 
-On Postman, create a `DELETE` request with the endpoint location as `http://localhost:5005/users/5`. The number at the end of the URL represents the primary key to the record to be deleted.
+In Postman, create a `DELETE` request with the endpoint location as `http://localhost:5005/users/5`. The number at the end of the URL represents the primary key to the record to be deleted.
 
 ![Postman delete user](/engineering-education/understanding-nodejs-sequelize-orm-models/postman-delete-user.png)
 
