@@ -1,4 +1,4 @@
-Working with Quarkus as a Reactive framework is easy and appealing to Java users. It comes with exciting features such as hot reloading, reactive program development capabilities, quick boot and reboot time, MicroProfile specification support, among many others. 
+Working with Quarkus as a Reactive framework is accessible and appealing to Java users. It comes with exciting features such as hot reloading, reactive program development capabilities, quick boot and reboot time, MicroProfile specification support, among many others.
 
 In this article, one will be able to learn about Quarkus profiles. These are like a collection of settings that can be assigned a specific tag to access them quickly. But, of course, access depends on the current environment in use.
 
@@ -34,34 +34,31 @@ Some points to be taken in by the end of the article follow up include:
 
 ### Prerequisites
 For one to follow up with the code examples and explanations given in the article, the following will be required:
-- Java Development Kit installed on the machine. The recommendation is the latest JDK in the market. JDK 17 is used for the article.
-- A good Java IDE. The recommendation is the latest version of the IntelliJ Ultimate edition. This choice is because it supports MicroProfile, among which Quarkus is one of them. IntelliJ version `2021.2.2` was used for the article, as seen in the screenshot captured.
+- Latest Java Development Kit installed on the machine. Version 17 is used for the article.
+- A good Java IDE. [IntelliJ](https://www.jetbrains.com/idea/download/) version `2021.2.2` was used for the article, as seen in the screenshot captured.
 - Familiar with databases.
-- A good internet connection. The internet is for fetching indexes for quick development. It will also be used in the generation of the project.
+- A good internet connection. The internet is for fetching indexes for quick development and project generation.
 
 > **NOTE**:- These pre-requisites may change as time goes by ever since the day that the article is published.
-> Make sure to follow up on _the latest versions_ of the technologies mentioned above.
-> The appearance of the applications used may also differ based on the release dates.
+> Make sure to follow up on _the latest versions_ of the aforementioned technologies.
+> The appearance of the applications may differ based on the release dates.
 
 ### What is Quarkus Configuration Profiles?
+Quarkus, like any other MicroProfile, follows the MicroProfile specifications. It makes it to be able to allows developers to set the variables found in the whole project seamlessly so that developers can access them in the project scope during different project life cycles.
+The project's settings are usually stored in the `application.properties` file. In addition, developers can locate the file in the `resources` folder found in the `main` folder. Some variables that developers can set include pointing out to **Datasource** such as _postgresql_ or _mysql_, **Datasource properties** and settings such as the _username_, _password_, _url_, and _access port_ among others.
 
-Quarkus, like any other MicroProfile, follows the MicroProfile specifications. This property makes it to be able to allow developers to set the variables found in the whole project seamlessly so that they can be accessed in the project scope during different project life cycles.
-The settings of the project are usually stored in the `application.properties` file. The file can be located in the `resources` folder found in the `main` folder. Some variables that can be set include pointing out to **Datasource** such as _postgresql_ or _mysql_, **Datasource properties** and settings such as the _username_, _password_, _url_ and _access port_ among others.
+Configuration files can hold variables needed during the operation of the application. These can include variables isolated from the main application source code files. Thus, the variables can later be injected into the application when needed only.
+Developers prefer config files to set the overall system properties and environment variables.
 
-Configuration files can hold variables needed during the operation of the application. These can include variables that are to be isolated from the main application source code files. The variables can later be injected into the application when needed only.
-Developers always prefer to use the config files to set the overall system properties and environment variables.
-
-Quarkus' configuration profiles are like containers that hold on settings and variables to be used in the overall application or during a particular phase in the project life cycle. They can hold one or multiple variables and settings. When used, for example, during a phase, they override similar settings or variable data set before.
+Quarkus' configuration profiles are like containers that hold on settings and variables to be used in the overall application or during a particular phase in the project life cycle. They can contain one or multiple variables and settings. When used, for example, during a phase, they override similar settings or variable data set before.
 
 Setting up these profiles is advantageous since one can quickly switch when the app is under different development stages. These are such as from development to testing and from testing to production. The switching between configurations does not require additional settings. The framework automatically does the switching for one.
 
 ### Checking and configuring application properties
-
-In this section, the configuration of a Quarkus project is going to be shown.
+In this section, the configuration of a Quarkus project will be shown.
 To be able to configure the properties of the application in Quarkus, do the following:
 
 #### Create a new Quarkus project
-
 - Open up IntelliJ and click on create a new project.
 - Select Quarkus as the framework to be used.
 - Then, set it up as shown in the images below:
@@ -75,7 +72,6 @@ To be able to configure the properties of the application in Quarkus, do the fol
 > An alternative way is by using the [Quarkus project initializer site](https://code.quarkus.io/).
 
 ##### Project Structure
-
 The newly created application directory structure is as shown below:
 
 ```shell
@@ -103,7 +99,7 @@ The newly created application directory structure is as shown below:
 
 ![Location of the application.properties file](/engineering-education/quarkus-configuration-profiles/application.properties-file-location.png "Location of the application.properties file")
 
-The file is for the overall application during phases such as development, testing and production.
+The file is for the overall application during the development, testing, and production phases.
 
 - Run the app using the command below:
 
@@ -126,13 +122,12 @@ curl http://localhost:8080/hello
 ```
 
 #### Set up some configurations
-
 - Open the 'application.properties' file.
 - In it do the following:
   - Set the HTTP port that takes in the requests and gives out the responses to port `8081` from the normal `8080`.
   - The kind of data source. In this case, it will be PostgreSQL
   - The database credentials (Username and password)
-  - The JDBC url. This is always used to establish a connection between the application and the database in use.
+  - The JDBC URL. This URL is always used to connect the application and the database.
   - Hibernate-ORM database generation property. This property provides one with complete Object Relational Mapper support.
   - The log type is to be displayed in the console. That will be of the _INFO_ type.
 
@@ -150,8 +145,7 @@ quarkus.log.console.level=INFO
 ```
 
 #### Testing the configurations
-
-- Now re-run the application and check on which port it now runs on.
+- Restart the application and check on which port it now runs on.
 
 Notice that it runs on the newly set port.
 
@@ -162,7 +156,6 @@ curl http://localhost:8081/hello
 ```
 
 ### Configuring the application using Quarkus configuration profiles
-
 Achieve this by following steps following:
 
 - Learn on How to set up the configuration formats
@@ -170,19 +163,18 @@ Achieve this by following steps following:
 - Test the configuration profiles set
 
 #### Quarkus' Configuration Profile formats
-
 The available configuration profiles for Quarkus are three. These are:
 
 - **dev**: This is only active in the _development_ phase. For instance, when executing `./mvnw compile quarkus:dev`.
 - **test**: Its application is in the _test_ phase. For instance, when executing the `./mvnw compile quarkus:test`.
-- **prod**: This is only active in the _production_ phase. For instance, when executing `./mvnw package`. This is because the settings will be applied to the packaged application used in the operational environment.
+- **prod**: This is only active in the _production_ phase. For instance, when executing `./mvnw package`. Developers will apply the settings to the packaged application used in the operational environment.
 
-Quarkus recognizes by default the profiles above. However, this does not mean that one cannot add other customizable profiles apart from the three mentioned above. This method is shown later on.
+Quarkus recognizes by default the profiles above. However, this does not mean adding other customizable profiles apart from the three mentioned above is impossible. This method is shown later on.
 
 The configuration profiles have a particular format for them to be recognized and separated from another. It begins with the percentage or modulus sign (%), followed by the profile name and the variable or settings. Finally, these will be separated by a period sign (`.`).
 It will be ended by the value to be held.
 
-This formart will look as follows:
+This format will look as follows:
 
 ```properties
 # An example of a configuration profile format
@@ -199,8 +191,7 @@ So, for instance, if it is under the development profile, it can be:
 That overrides the one in the default or the global configuration. Hence, the HTTP access port will be `8082` during the development phase.
 
 #### Using default configuration profiles
-
-To use the following in the application, simply copy and paste the following to the application.properties file:
+To use the following in the application, copy and paste the following to the 'application.properties' file:
 
 ```properties
 # Global
@@ -233,7 +224,7 @@ quarkus.log.console.level=INFO
 
 - **Dev mode**
 
-Now run the application using the development configuration profile by running it in dev mode.
+Now run the application using the development configuration profile in dev mode.
 Do this by running this code in the terminal:
 
 ```shell
@@ -273,18 +264,17 @@ Run the jar file by executing the following command:
 java -jar target/quarkus-config-profiles-1.0-SNAPSHOT-runner.jar
 ```
 
-This can be accessed via:
+One can access this running application via:
 
 ```shell
 curl http://localhost:8085/hello
 ```
 
 One can also change the data source based on those available. For example, one can choose `H2` instead of Postgres or any other as needed.
-This can be set differently for different profiles.
-For instance, it is possible to run the application with a local database server in the development phase while deploying the packaged application that uses a remote database in the production mode.
+The data sources can be set differently for different profiles.
+For instance, it is possible to run the application with a local database server in the development phase while deploying the packaged application that uses a remote database in the Production mode.
 
 #### Using user defined configuration profile
-
 - Use the same format as shown above to accomplish this. For example, for a profile with the name "prototype", under the other profiles, do the following:
 
 ```properties
@@ -308,12 +298,10 @@ curl http://localhost:9095/hello
 ```
 
 ### Setting up and using variables in different profiles
-
 Variables set in this location can be injected into the application following the Java EE and MicroProfile standards and specifications.
 The variables can override the previously set environment variable value depending on the configuration profile in use.
 
 #### Setting up variables
-
 - To add variables, for instance, variables called '_name_', '_age_' and '_height_' that belong to a '_**person**_' object add the code below to the file under the **GLOBAL** configuration settings:
 
 ```properties
@@ -360,7 +348,6 @@ person.height=174
 ```
 
 #### Injecting the variables
-
 - Head over to the 'ExampleResource.java' file.
 - Add the following code in the file inside the class. That is above the other blocks:
 
@@ -400,12 +387,12 @@ public void testPersonEndpoint() {
         }
 ```
 
-This shall be used to check if the output of the profile used is as expected.
+This test shall be used to check if the output of the profile used is as expected.
 
 #### Testing the variables
+In this section, project tests will be carried out.
 
 ##### Testing in the dev profile
-
 - Run the application using the following:
 
 ```shell
@@ -414,12 +401,11 @@ This shall be used to check if the output of the profile used is as expected.
 
 - In another terminal, access it using `curl http://localhost:8082/hello/person`.
 
-The results will be '_The person is mike of age 22 yrs and of the height of 170 cm_'. This is because when the tests are run, it will use the _test_ profile.
+The results will be '_The person is mike of age 22 yrs and of the height of 170 cm_'. This outputs this result because the _test_ profile is used when the tests are run.
 
 - On the terminal with the logs, key in `r` to run the tests. If it produces a successful output, then all is well.
 
-##### testing in the prototype profile
-
+##### Testing in the prototype profile
 - Run the application using the following:
 
 ```shell
@@ -431,7 +417,6 @@ The results will be '_The person is mike of age 22 yrs and of the height of 170 
   The expected output is, '_The person is jane of age 54 yrs and of the height of 174 cm_'.
 
 ### Configuration profiles in YAML files
-
 Another method in which one can configure profiles in Quarkus is by use of the YAML files.
 
 To do this, follow the steps below:
@@ -451,11 +436,10 @@ Alternatively, add the block of code below inside the `pom.xml` file inside the 
 </dependency>
 ```
 
-- Reload the whole project by right-clicking on the 'pom.xml' file and selecting the 'Reload project' option under the 'Maven' option.
-  Similarly, just restart the IDE, and it will refresh the project.
-- Rename the 'application.properties' file to 'application.properties.OLD'. This will make its contents available in the system but not used in the application. This aids in referring to the configurations when converting them into the YAML file.
-- In the same location as the 'application.properties.OLD' file, create a new file named 'application.yml'.
-- Now, use the indentation formatting styles to translate the configs from the 'application.properties.OLD' to the 'application.yml' file. This is shown below:
+- Reload the whole project by right-clicking on the 'pom.xml' file and selecting the 'Reload project' option under the 'Maven' option. Similarly, just restart the IDE, and it will refresh the project.
+- Rename the 'application.properties' file to 'application.properties.OLD'. It makes its contents available in the system but not used in the application. This aids in referring to the configurations when converting them into the YAML file.
+- In the exact location as the 'application.properties.OLD' file, create a new file named 'application.yml'.
+- Now, use the indentation formatting styles to translate the configs from the 'application.properties.OLD' to the 'application.yml' file. It is shown below:
 
 ```yaml
 # Global configurations and variables
@@ -554,10 +538,9 @@ This proves that the configurations in the 'application.properties' file are equ
 - Try re-running the project in the other profiles.
 - Add new profile configurations and variables and run the application in them.
 
-Find the Repository with the article right [here](https://github.com/justusmbuvi/Quarkus-Configuration-profiles). Clone it and use it as per the licenses.
+Find the Repository with the article right [here](https://github.com/justusmbuvi/Quarkus-Configuration-profiles). Then, clone it and use it as per the licenses.
 
 ### Conclusion
-
 The following were learned in the article:
 
 - What is Quarkus configuration profiles
@@ -571,6 +554,4 @@ The following were learned in the article:
 ****
 
 ### References
-
 - [Quarkus Hibernate ORM](https://quarkus.io/guides/hibernate-orm)
-
