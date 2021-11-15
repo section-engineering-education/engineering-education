@@ -125,4 +125,4 @@ If a tumor is malignant or benign, our studies show that this machine learning c
 ### Conclusion
 Determination can be done by looking at the features of cancer cells, which can indicate whether they are `malignant` or `benign.` We used `scikit-learn` to address a machine learning problem. Python framework Scikit-learn is a free and open-source tool for machine learning, machine mining, and data analysis.
 
-To see the whole code for this tutorial, click [here](https://colab.research.google.com/drive/1Ztr7e9qZ9nrLHSGXJ1EAjBplNGXXtjC7#scrollTo=x_YKyDySkY8e)
+To see the whole code for this tutorial, click [here](https://colab.research.google.com/drive/1Ztr7e9qZ9nrLHSGXJ1EAjBplNGXXtjC7?usp=sharing)
