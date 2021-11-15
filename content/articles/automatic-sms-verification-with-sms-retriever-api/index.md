@@ -1,10 +1,28 @@
-Automatic SMS verification can be done with the help of an API called the `Sms Retriever API`. With the use of this API, users do not need to enter the verification code manually nor does the API require any extra app permissions. In this tutorial, we'll learn how we can implement this feature in an Android app.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /automatic-sms-verification-in-android/
+title: Automatic SMS verification with SMS Retriever API in Android
+description: This tutorial will take the reader through the process of setting up an automatic SMS verification in Android. When using SMS Retriever API, users do not need to enter the verification code manually nor does the API require any extra app permissions.
+author: robert-muriithi
+date: 2021-11-15T00:00:00-08:41
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/automatic-sms-verification-in-android/hero.png
+    alt: Automatic SMS verification in Android Hero Image
+---
+Automatic SMS verification can be done with the help of an API called the `Sms Retriever API`. With the use of this API, users do not need to enter the verification code manually nor does the API require any extra app permissions.
+<!--more-->
+In this tutorial, we'll learn how we can implement this feature in an Android app.
 
 ### Prerequisites
 To follow along with this tutorial, the reader should:
-- Have an understanding of the `Kotlin` programming language
+- Have an understanding of the `Kotlin` programming language.
 - Know how to design layouts using `XML` in Android studio.
-- Have an understanding of `Android Broadcasts`
+- Have an understanding of `Android Broadcasts`.
 
 ### Goal
 By the end of this tutorial, the reader will have understood:
@@ -27,7 +45,7 @@ The SMS Retriever API listens for an SMS containing OTP code. Upon receiving the
 
 ### Step 1. Create a new Android studio project
 
-![Create Project](/automatic-sms-verification-with-the-sms-retriever-api/create-project.png)
+![Create Project](/engineering-education/automatic-sms-verification-in-android/create-project.png)
 
 ### Step 2: Add the necessary dependencies
 We are going to use the following: 
@@ -71,7 +89,7 @@ We'll create an Edit Text in this section. This Edit text will display one-time 
 ### Sending the mobile number to the server
 In this step, you have to get the user's phone number from the `EditText`. Send it to your verification server which should return the one-time code. Because I don't have a verification server yet, we're not going to use that method in this article. We'll send the SMS from another phone. The SMS will contain a four-digit code.
 
-This code will be extracted and displayed on the Edit text we added in `activity_main.xml`.
+This code will be extracted and displayed on the EditText we added in `activity_main.xml`.
 
 To perform SMS verification on a server, check out [SMS Verification on Server](https://developers.google.com/identity/sms-retriever/verify).
 
@@ -159,10 +177,10 @@ In your app's `AndroidManifest.xml` file, register `BroadcastReceiver`:
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <manifest 
-    ...    >
+    ...     >
 
     <application
-        ... >
+        ...     >
 
         <receiver
             android:name=".MessageBroadcastReceiver"
@@ -252,7 +270,7 @@ To generate the hash string, you can use the following methods:
     /**
      * This is a helper class to generate your message hash to be included in your SMS message.
      *
-     * Without the correct hash, your app won't recieve the message callback. This only needs to be
+     * Without the correct hash, your app won't receive the message callback. This only needs to be
      * generated once per app and stored. Then you can remove this helper class from your code.
      */
 class SignatureHelper(context: Context?) :
@@ -323,7 +341,7 @@ u0tUcRo4UQ7
 ### Demo Screens
 Upon running the app, this is what to expect:
 
-![Screen One](/automatic-sms-verification-with-the-sms-retriever-api/screen-one.png)
+![Screen One](/engineering-education/automatic-sms-verification-in-android/screen-one.png)
 
 You can find the whole project on [GitHub](https://github.com/robert-muriithi/SmsRetriverApiDemo.git).
 
@@ -331,3 +349,6 @@ You can find the whole project on [GitHub](https://github.com/robert-muriithi/Sm
 Automatic Retriever API is a library that helps in detecting and extracting OTP code. This code is usually sent back to the server for verification. This API performs the task without requiring the user to provide permissions for the app. This makes the user's onboarding experience smooth and appealing.
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Eric Gacoki](/engineering-education/authors/eric-gacoki/)
