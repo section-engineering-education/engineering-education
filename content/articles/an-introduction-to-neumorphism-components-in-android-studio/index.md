@@ -14,13 +14,10 @@ images:
   - url: /engineering-education/multilanguage-translator-using-streamlit-and-gettext/hero.jpg
     alt: Multilanguage Translator using Streamlit and Gettext Hero Image
 ---
-Translation is the process of changing text from one language to another. This process is useful when you are communicating with people who speak different languages. 
+Translation is the process of changing text from one language to another. This process is useful when you are communicating with people who speak different languages.
 <!--more-->
 
-
-
-
-Neumorphism is a design concept used to make soft widgets based on object shadows. It uses highlights and shadows to create elements that appear to be floating above the surface. 
+Neumorphism is a design concept used to make soft widgets based on object shadows. It uses highlights and shadows to create elements that appear to be floating above the surface.
 
 In other words, the object seems to extrude from the background. Its aesthetic is made to implement actual Android components.
 
@@ -60,7 +57,7 @@ Here are some screens implemented using the Neumorphic Elements concept.
 [***Image Source***](https://dribbble.com/shots/9527558-Freebie-Neumorphic-UX-UI-Elements)
 
 ### How neumorphism works
-Neumorphism design structure relies on a shadowing system. This approach elevates an object above the base layer. 
+Neumorphism design structure relies on a shadowing system. This approach elevates an object above the base layer.
 
 As a result, it creates realistic and unique-looking elements.
 
@@ -88,9 +85,13 @@ The following shapes can be implemented using neumorphism:
 To follow along with this guide, prior knowledge of Java is essential. You should also be familiar with Android Studio.
 
 ### Getting started
-To implement neumorphism in Android Studio, we need to install a library. Go ahead and start a new project. 
+To implement neumorphism in Android Studio, we need to install a library. Go ahead and start a new project.
 
 Include the following library in your `app.gradle` file;
+
+```java
+implementation 'com.github.fornewid:neumorphism:0.2.1'
+```
 
 This library transforms UI components to the Neumorphic pattern view in the Android app without creating customized drawable views. The library will help us build Neumorphic android user interfaces that look as if they were floating above the surface of your mobile screen.
 
