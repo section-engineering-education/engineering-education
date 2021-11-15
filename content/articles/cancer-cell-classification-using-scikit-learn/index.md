@@ -3,7 +3,31 @@ Machine Learning is an area of AI that explores how computers can learn without 
 
 In order to ascertain if cancer cells are `malignant` or `benign`, we need to look at their physical properties, which can be utilized to identify them. Scikit-learn will be used to address a machine learning problem. Python framework Scikit-learn is a free and open-source tool for machine learning, machine mining, and data analysis.
 ### Prerequisites
-1. Using Scikit-learn will be a necessity for our project. Run the following line on the command prompt to download and install it on your computer, or [follow this documentation.](https://scikit-learn.org/0.17/install.html)
+1. Using Scikit-learn will be a necessity for our project. 
+2. Jupyter notebooks are preferred for this project, however you are free to use any IDE of your choice.
+### Table of contents
+- [Naive Bayes algorithm](#naive-bayes-algorithm)
+- [Naive Bayes algorithm](#naive-bayes-algorithm)
+    - [Advantages of the Naive Bayes classification](#advantages-of-the-Naive-Bayes-classification)
+    - [Disadvantages of the Naive Bayes classification](#disadvantages-of-the-Naive-Bayes-classification)
+- [The dataset](#the-dataset)
+- [Classification implemented with the Scikit-learn framework](#classification-implemented-with-the-scikit-learn-framework)
+- [Conclusion](#conclusion)
+### Naive Bayes algorithm
+Despite its simplicity, Naive Bayes is a potent algorithm for predicting outcomes. In Naive Bayes, each input variable is assumed to be independent, which is why it's named naive. In reality, this is a big assumption, and the technique works well for a wide range of difficult tasks.
+
+This popular method for binary classification, dubbed Naive Bayes, will be selected for use in this model.
+### Advantages of the Naive Bayes classification
+- It's a snap to put into action.
+- Less training data is needed.
+- Continuous and discrete data are also supported.
+- The number of predictors and data points can be increased indefinitely, making it extremely flexible and adaptable.
+- It is rapid and can be used to make predictions in real-time.
+### Disadvantages of the Naive Bayes classification
+- In naive Bayes, all predictors (or traits) are assumed to be independent, however, this is rarely the case in reality.
+- To avoid assigning zero probability to a categorical variable whose category was not accessible in the training dataset, this technique uses the 'zero-frequency problem.
+### Installations
+Run the following line on the command prompt to download and install it on your computer, or [follow this documentation.](https://scikit-learn.org/0.17/install.html)
 ```
 pip install scikit-learn
 ```
@@ -13,11 +37,6 @@ To set it up, use the command line and enter the following code:
 ```
 pip install jupyter
 ```
-### Table of contents
-- [The dataset](#the-dataset)
-- [Classification implemented with the Scikit-learn framework](#classification-implemented-with-the-scikit-learn-framework)
-- [Naive Bayes algorithm](#naive-bayes-algorithm)
-- [Conclusion](#conclusion)
 ### The dataset
 We will be classifying cancer cells based on their features and identifying them if they are malignant or benign using scikit-learn library for python programming language. We will be using the breast cancer Wisconsin dataset for our machine learning problem.
 
@@ -104,17 +123,7 @@ OUTPUT
 0.9414893617021277
 ```
 If a tumor is malignant or benign, our studies show that this machine learning classifier based on the `Naive Bayes` algorithm is 94.15% accurate.
-### Naive Bayes algorithm
-Despite its simplicity, Naive Bayes is a potent algorithm for predicting outcomes. In Naive Bayes, each input variable is assumed to be independent, which is why it's named naive. In reality, this is a big assumption, and the technique works well for a wide range of difficult tasks.
-#### Advantages of the Naive Bayes classification
-- It's a snap to put into action.
-- Less training data is needed.
-- Continuous and discrete data are also supported.
-- The number of predictors and data points can be increased indefinitely, making it extremely flexible and adaptable.
-- It is rapid and can be used to make predictions in real-time.
-#### Disadvantages
-- In naive Bayes, all predictors (or traits) are assumed to be independent, however, this is rarely the case in reality.
-- To avoid assigning zero probability to a categorical variable whose category was not accessible in the training dataset, this technique uses the 'zero-frequency problem.
 ### Conclusion
 Determination can be done by looking at the features of cancer cells, which can indicate whether they are `malignant` or `benign.` We used `scikit-learn` to address a machine learning problem. Python framework Scikit-learn is a free and open-source tool for machine learning, machine mining, and data analysis.
-To get the Google Colab notebook for this tutorial, click [here](https://colab.research.google.com/drive/1Ztr7e9qZ9nrLHSGXJ1EAjBplNGXXtjC7#scrollTo=x_YKyDySkY8e)
+
+To see the whole code for this tutorial, click [here](https://colab.research.google.com/drive/1Ztr7e9qZ9nrLHSGXJ1EAjBplNGXXtjC7#scrollTo=x_YKyDySkY8e)
