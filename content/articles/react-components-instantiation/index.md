@@ -12,6 +12,7 @@ To effectively uderstand the reader will need the following:
 - Basic uderstanding of React library
 - A suitable IDE such as VS Code or online IDE such as JScomplete or Codepen
 - Basic uderstanding of JSX
+*****In this tutorial i will be using [JScomplete](https://jscomplete.com/playground).To use js complete with react first install [React Developer Tools extension](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en)*****
 
 #### Key takeaways 
 - What is component instantiation
@@ -89,12 +90,12 @@ Lets now render our component:
   );
 ```
 
-`ReactDOM.render()` then tells  our component class `<Valley />` to call its render method.
+The render method is called when `ReactDOM.render()` tells  our component class `<Valley />` to call its render method.
 
 class `<Valley />` then calls its render method, which  returns the JSX element `<h1>Welcome to React world</h1>`.  This will enable “Welcome to React world” to be exhibited  on the screen.
 
 #### Using new keyword 
-The new keyword Creates a blank, simple JavaScript item. Its syntax is `new constructor[([arguments])]`. An instance  of class is created when you create an object.The name  of the class to be instantiated  is provided by the name of the constructor. The new object is initialized by the constructor.A reference is returned to the object created by the new operator.
+The new keyword Creates a blank, simple JavaScript item. Its syntax is `new constructor[([arguments])]`. When you create an object a class instance is created.The name  of the class to be instantiated  is provided by the name of the constructor. The new object is initialized by the constructor.A reference is returned to the object created by the new operator.
 
 The new keyword makes `this` keyword to point the object that as been newly created .Each time  `this` is mentioned  the new keyword executes the constructor function , using the object which has been newly created.Hence the newly created object is returned .
 
@@ -110,7 +111,7 @@ The new keyword makes `this` keyword to point the object that as been newly crea
   console.log(Object.getPrototypeOf(studdy) === Student.prototype)
 ```
 ****what happens in the code above****
-- `const study` means: Memory is needed for variable declaration.
+- `const studdy` means: Memory is needed for variable declaration.
 - Assignment operator `=` means: `this` variable is going to be nitialized with the expression after the assignment operator `=`.
 - Expression `new Student(50): A new object is created  and the prototype is set to student.prototype.
 - The marks gets assigned to the newly created studdy object.
