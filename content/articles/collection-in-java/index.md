@@ -118,7 +118,7 @@ Let's now take a look at the interfaces individually.
 This is the baseline interface in the hierarchy tree. It contains the methods that can be called by any of the classes in the hierarchy tree. 
 
 It can be implemented as shown below.
-```
+```java
 Iterator<T> iterator()  
 ```
 
@@ -132,7 +132,7 @@ Method in the collection framework include:  `clear()`, `add()`, `size()`.
 
 This is a sub-class of the collection interface. This type of interface deals with data of the type list. The list interface can be implemented via different classes as listed below. The classes include `Arraylist`, `Linkedlist`, `Vector`, `Stack`.
 
-```
+```java
 List <data-type> arrayList = new ArrayList<> ();
 List <data-type> linkedList = new LinkedList<> ();
 List <data-type> stack = new Stack<> ();
@@ -171,7 +171,7 @@ public class Main {
     }
 }
 ```
-```
+```bash
 Kolbe
 Kimosop
 Baker
@@ -193,14 +193,14 @@ An example of a method we only had to call is the `hasNext()` method. We only ha
 `Deque` interface on the other hand extends the Queue interface. **Deque** stands for Double-Ended-Queue. Unlike Queue, you can add elements from any end.
 
 Below is how to instantiate Queue:
-```
+```java
 Queue<String> q1 = new PriorityQueue();  
 Queue<String> q2 = new ArrayDeque();  
 ```
 
 
 We can instantiate Deque as follows:
-```
+```java
 Deque dq = new ArrayDeque();  
 ```
 
@@ -211,7 +211,7 @@ Below are some of the classes of the set interface.
 `Hashset`, `Treeset`, `LinkedHashSet`, etc.
 
 Below is a syntax to instantiate the set.
-```
+```java
 Set<data-type> set1 = new HashSet<data-type>();  
 Set<data-type> set2 = new LinkedHashSet<data-type>();  
 Set<data-type> set3 = new TreeSet<data-type>();  
@@ -222,7 +222,7 @@ Set<data-type> set3 = new TreeSet<data-type>();
 It is used with a collection that uses a hash table for storage. The elements inserted into the hashcode are saved according to the elements' hash code.
 The example below will help us understand HashSet better.
 
-```
+```java
 import java.util.HashSet;
 import java.util.Iterator;
 
@@ -244,7 +244,7 @@ public class Main {
 
 ```
 
-```
+```bash
 //Output
 Lebron
 for
