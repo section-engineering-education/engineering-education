@@ -23,10 +23,12 @@ To effectively uderstand the reader will need the following:
 - How React creates an instancReact Components  Instantiation
 
 #### Instantiating React component
-Let's begin by  importing the React library .After importing the React library we then save it in a variable named `react`. 
+Let's begin by  importing the React library .
 
 ```js
   import React from 'react';
+  
+  //'react'is used in saving React library
 ```
     
 After importing the React library we will import ReactDOM using th code below:
