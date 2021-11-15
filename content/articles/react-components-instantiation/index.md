@@ -94,7 +94,27 @@ Lets now render our component:
 class `<Valley />` then calls its render method, which  returns the JSX element `<h1>Welcome to React world</h1>`.  This will enable “Welcome to React world” to be exhibited  on the screen.
 
 #### Using new keyword 
-The new keyword Creates a blank, simple JavaScript item. Its syntax is `new constructor[([arguments])]`. 
+The new keyword Creates a blank, simple JavaScript item. Its syntax is `new constructor[([arguments])]`. An instance  of class is created when you create an object.The name  of the class to be instantiated  is provided by the name of the constructor. The new object is initialized by the constructor.A reference is returned to the object created by the new operator.
+
+The new keyword makes `this` keyword to point the object that as been newly created .Each time  `this` is mentioned  the new keyword executes the constructor function , using the object which has been newly created.Hence the newly created object is returned .
+
+ ***example***
+ ```js
+ function Student (marks) {
+  this.marks = marks;
+  }
+
+ const studdy = new Student(50);
+
+  console.log(studdy);
+  console.log(Object.getPrototypeOf(studdy) === Student.prototype)
+```
+****what happens in the code above****
+- `const study` means: Memory is needed for variable declaration.
+- Assignment operator `=` means: `this` variable is going to be nitialized with the expression after the assignment operator `=`.
+- Expression `new Student(50): A new object is created  and the prototype is set to student.prototype.
+- The marks gets assigned to the newly created studdy object.
+- The object which as been newly created gets returned and is assigned to variable studdy.
 
 #### Instantiating function component
 As shown in the code below  , React creates an instance of the function component using the `new` keyword:
