@@ -1,3 +1,20 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-api-management-enables-a-data-first-approach/
+title: How API Management Enables a Data Firsrt Hero Image
+description: This article discusses a data-first approach, why organizations need to adopt it, and how it fuels digital transformation. It also explains how API management enables a data-first model.
+author: jayden-kiprotich
+date: 2021-11-15T00:00:00-12:29
+topics: [API]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/how-api-management-enables-a-data-first-approach/hero.png
+    alt: How API Management Enables a Data Firsrt Hero Image
+---
+
 Building business innovation and risk models is a for data first organizations. These models are typically built around multiple sources of digital influence. Data first businesses use many technologies to expand upon API first approaches.
 
 Application Programming Interface (API) management incorporates a data-first approach to improve flexibility. APIs can keep accommodating more complex data as they keep developing. New data shapes them, and this minimizes a need to re-architect them. By enabling a data-first approach, APIs improve user experience on all devices.
