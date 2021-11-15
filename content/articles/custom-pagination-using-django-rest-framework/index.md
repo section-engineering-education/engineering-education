@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /custom-pagination-using-django-rest-framework/
 title: Custom Pagination Using Django REST Framework with Vue
-description: This tutorial aims to help the reader understand how to paginate web applications for better user experience and readability and how one can customize and modify the default pagination styles using Django REST Framework with Vue.
+description: This tutorial aims to help the reader understand how to paginate web applications for a better user experience and readability. It also looks at how one can customize and modify the default pagination styles using Django REST Framework with Vue.
 author: atonya-dennis
-date: 2021-11-8T00:00:00-11:45
+date: 2021-11-15T00:00:00-11:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -26,19 +26,16 @@ In the end, the reader will understand the various ways of data pagination and i
 - [Prerequisites](#prerequisites)
 - [Pagination](#pagination)
 - [Ways of Pagination](#ways-of-pagination)
-  - [Project Structure.](#project-structure)
-  - [Class-Based Views](#class-based-views)
-  - [Function-Based Views](#function-based-views)
 - [Custom Pagination Using Django Rest Framework](#custom-pagination-using-django-rest-framework)
 - [Conclusion](#conclusion)
 
 ### Prerequisites
-To get the most out of this tutorial, you should already understand the following.
+To get the most out of this tutorial, you should have:
 - Knowledge of Python and Django concepts.
 - A solid understanding of Django REST Framework and Vue.
 - A suitable IDE installed such as Pycharm, Visual Studio Code, etc.
 
-This article will use the Pycharm IDE; use this [page](https://www.jetbrains.com/pycharm/download/#section=windows) to download and install it on your machine.
+This article will use the Pycharm IDE. Use this [page](https://www.jetbrains.com/pycharm/download/#section=windows) to download and install it on your machine.
 
 ### Pagination
 Pagination is the process of splitting the content of a web page into discrete pages to make it more efficient to use and read when working with large lists of items. 
@@ -227,7 +224,7 @@ def PostList(request):
 ```
 In the above view, we've instantiated the `Paginator` class with the number of objects(three) to be displayed on each page. 
 
-The `request.GET.get('page')`argument returns the current page number. We have used the `page()` method to get the items from the appropriate page number. 
+The `request.GET.get('page')` argument returns the current page number. We have used the `page()` method to get the items from the appropriate page number. 
 
 We then have two exception statements for `PageNotAnInteger` and `EmptyPage`, both subclasses of `InvalidPage`,then, finally rendering the HTML content.
 
@@ -251,7 +248,7 @@ Now proceed and restart your server; you should be able to see the following con
 ![Function Based Views](/engineering-education/custom-pagination-using-django-rest-framework/function_based.jpg)
 
 ### Custom Pagination Using Django Rest Framework
-For custom pagination asn we had discussed previosuly, let's install the Django REST Framework and Vue with the following commands:
+For custom pagination as we had discussed previosuly, we install the Django REST Framework and Vue with the following commands:
 ```bash
 pip install djangorestframework
 npm install vue
@@ -345,7 +342,7 @@ urlpatterns = [
     path('',include(router.urls))
 ]
 ```
-For the REST API, import the`serializers`  and the `Post ` model, then add the following code to `serializers.py` that specifies all the fields to be obtained from the database.
+For the REST API, import the `serializers`  and the `Post ` model, then add the following code to `serializers.py` that specifies all the fields to be obtained from the database.
 ```python
 class PostSerializer(serializers.ModelSerializer):
     class Meta:
