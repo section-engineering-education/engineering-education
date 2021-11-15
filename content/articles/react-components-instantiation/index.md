@@ -13,7 +13,7 @@ To effectively uderstand the reader will need the following:
 - A suitable IDE such as VS Code or online IDE such as JScomplete or Codepen
 - Basic uderstanding of JSX
 
-*****In this tutorial i will be using [JScomplete](https://jscomplete.com/playground).To use js complete with react first install [React Developer Tools extension](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en)*****
+**In this tutorial i will be using [JScomplete](https://jscomplete.com/playground).To use js complete with react first install [React Developer Tools extension](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en)**
 
 #### Key takeaways 
 - What is component instantiation
@@ -23,7 +23,7 @@ To effectively uderstand the reader will need the following:
 - How React creates an instancReact Components  Instantiation
 
 #### Instantiating React component
-Let's begin by  importing the React library and then we will  save the library in a variable named `react`. 
+Let's begin by  importing the React library .After importing the React library we then save it in a variable named `react`. 
 
 ```js
   import React from 'react';
@@ -96,7 +96,7 @@ The render method is called when `ReactDOM.render()` tells  our component class 
 class `<Valley />` then calls its render method, which  returns the JSX element `<h1>Welcome to React world</h1>`.  This will enable “Welcome to React world” to be exhibited  on the screen.
 
 #### Using new keyword 
-The new keyword Creates a blank, simple JavaScript item. Its syntax is `new constructor[([arguments])]`. When you create an object a class instance is created.The name  of the class to be instantiated  is provided by the name of the constructor. The new object is initialized by the constructor.A reference is returned to the object created by the new operator.
+The new keyword Creates a blank, simple JavaScript item. Its syntax is `new constructor[([arguments])]`. When you create an object a class instance is created.The  class  name to be instantiated  is provided by the  constructor name. The new object is initialized by the constructor.A reference is returned to the object created by the new operator.
 
 The new keyword makes `this` keyword to point the object that as been newly created .Each time  `this` is mentioned  the new keyword executes the constructor function , using the object which has been newly created.Hence the newly created object is returned .
 
