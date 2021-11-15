@@ -78,4 +78,5 @@ In this article, we have gone through the basics of making your web application 
 
 Happy learning!
 
+---
 Peer Review Contributions by: [Onesmus Mbaabu](/engineering-education/authors/onesmus-mbaabu/)
