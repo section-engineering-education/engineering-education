@@ -1,5 +1,21 @@
-Sequelize is a JavaScript library that manages almost all popular databases like PostgreSQL, MySQL, SQLite, and MSSQL.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /complete-guide-on-using-sequelize-basic-and-advanced-features/
+title: Complete Guide On Using Basic and Advanced Sequelize features
+description: This tutorial will guide the reader on how to work with Sequelize, the need for using it. And, we will build a simple project to demonstrate various features in it.
+author: joshua-adesanya
+date: 2021-11-15T00:00:00-22:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/complete-guide-on-using-sequelize-basic-and-advanced-features/hero.png
+    alt: Complete Guide On Using Sequelize - Basic and Advanced features Image
+---
+Sequelize is a JavaScript library that manages almost all popular databases like PostgreSQL, MySQL, SQLite, and MSSQL.
+<!--more-->
 Object Relation Mappers (ORM) are used to convert object-relational syntax to the database schema. Usually, sequelize is used with NodeJS. We can call Sequelize as an ORM.
 
 Sequelize only supports relational databases. Databases like Mongo DB or other NoSQL databases are not supported.
@@ -1254,3 +1270,6 @@ Thank you for reading.
 You can find the full code [here](https://github.com/Josh4324/sequelize-guide).
 
 Happy coding.
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
