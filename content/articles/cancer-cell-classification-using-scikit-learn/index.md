@@ -7,7 +7,6 @@ In order to ascertain if cancer cells are `malignant` or `benign`, we need to lo
 2. Jupyter notebooks are preferred for this project, however you are free to use any IDE of your choice.
 ### Table of contents
 - [Naive Bayes algorithm](#naive-bayes-algorithm)
-- [Naive Bayes algorithm](#naive-bayes-algorithm)
     - [Advantages of the Naive Bayes classification](#advantages-of-the-Naive-Bayes-classification)
     - [Disadvantages of the Naive Bayes classification](#disadvantages-of-the-Naive-Bayes-classification)
 - [The dataset](#the-dataset)
