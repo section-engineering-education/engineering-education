@@ -1,14 +1,14 @@
 # How to build a Chrome Extension that displays motivational quotes using Javascript
 
 ### Introduction
-Every Chrome Extension that exists on the chrome web store performs a specific task. Over the years I have had to install a couple of extensions that either helped me accomplish tasks at work, or enabled me to maximize productivity.
+Every Chrome extension that exists on the chrome web store performs a specific task. Over the years I have had to install a couple of extensions that either helped me accomplish tasks at work, or enabled me to maximize productivity.
 
 Having used the Pomodoro timer extension for the last few months, I noticed a steep increase in productivity. So I thought to myself, "I am going to build something similar" - a Chrome extension that will display motivational quotes at scheduled intervals (cheesy right!).
 
 I had zero knowledge about how to build one until this point. Luckily, the official Chrome documentation helped me understand the concepts I needed to just get started with building what I wanted.
 
-Chrome Extensions are relatively easy to develop, and yes you can create them locally on your machine and have them interact with any page on the web. Think of them as small applications residing on the browser and with their help we can access information about a website, and build awesome things with them.
-    
+Chrome extensions are relatively easy to develop, and yes you can create them locally on your machine and have them interact with any page on the web. Think of them as small applications residing on the browser and with their help we can access information about a website, and build awesome things with them.
+
 In this tutorial, you, and I are going to build a Chrome extension using Javascript. Its major functionality will be to display random motivational quotes from an API.
 
 You will learn about the core concepts used in this work, and this will just be sufficient to enable you to build something similar or even more complex.
@@ -20,7 +20,7 @@ To better understand and build along with this tutorial you should have:
 - An offline or online code editor (VS Code in my case).
 - Some knowledge of Javascript and its syntax.
 - Your desktops notification turned on - this is where our motivational quotes will be displayed.
-    
+
 ### Table of Contents
   - [Getting started](#Getting-started)
   - [Adding icons](#Adding-icons)
@@ -33,7 +33,6 @@ To better understand and build along with this tutorial you should have:
   - [Creating notifications](#Creating-notifications)
   - [Conclusion](#Conclusion)
   - [References](#Reference)
-  
 
 ### Getting started
 To get started we will need to create a directory to hold the extension's files on our local machine. Using windows command prompt we can type in the following: 
@@ -59,7 +58,7 @@ Next, we will create a `manifest.json` file and add the following codes to make 
 
 The `manifest.json` file contains important information about the extension.
 
-- The `name` field contains information about the title of the extension we are building - Random Quote Extension.
+- The `name` field contains information about the title of the extension we are building - Random Quote Extension for Chrome.
 - The `Description` field as the name implies gives a brief description of the functionality of the extension.
 - The `manifest_version` field tells us the current version we are building with. Ensure to use 3.0 as the previous version (2.0) is deprecated
 - Also, it is nice to start with a `version` that is small, you may want to update your extension as time passes. I go with 1.0 for now.
@@ -119,7 +118,7 @@ They would be to:
 - Fetch data from an API
 - Schedule continuous API calls at timed intervals.
 
-Awesome! we can go ahead to implement these but first, let us create a component called the background script.
+Awesome! We can go ahead to implement these but first, let us create a component called the background script.
 
 ### Creating the background script
 Extensions are composed of various components created with basic web technologies: HTML, CSS, and Javascript. Components include `background scripts` `content scripts` `options page` and a few others.
@@ -216,13 +215,13 @@ The code snippet below shows exactly how we can implement this:
 chrome.runtime.onInstalled.addListener(() => {
   console.log('onInstalled...');
 
-async function startRequest() {
+  async function startRequest() {
   
-  const response = await fetch('https://api.quotable.io/random');
-  const newData = await response.json();
-  const data = `${newData.content} —${newData.author}`
-  console.log(data)
-}
+    const response = await fetch('https://api.quotable.io/random');
+    const newData = await response.json();
+    const data = `${newData.content} —${newData.author}`
+    console.log(data)
+  }
 });
 ```
 
@@ -327,7 +326,7 @@ If you decide otherwise you can still share with a few friends, even without pub
 - Lastly, they should have their system notifications visible.
 
 ### Conclusion
-Hooray🎉🎉 you have learned how to build a simple Chrome browser extension, register components like background script in the manifest file, fetch data from APIs, and learned to use Chrome extension APIs like chrome.alarms and chrome.notifications.
+Hooray🎉🎉 you have learned how to build a simple Chrome browser extension, register components like background script in the manifest file, fetch data from APIs, and how to use Chrome extension APIs like `chrome.alarms` and `chrome.notifications`.
 
 You can now share with friends with or without hosting in the web-store.
 
