@@ -11,7 +11,8 @@ topics: [API]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/how-api-management-enables-a-data-first-approach/hero.png
+  - url: /engineering-education/how-api-management-enables-a-data-first-approach/hero.jpg---
+Peer Review Contributions by: [Mercy Meave](/engineering-education/authors/mercy-meave/)
     alt: How API Management Enables a Data Firsrt Hero Image
 ---
 
