@@ -1,5 +1,21 @@
-The number of web applications has increased tremendously in the recent past. These applications require internet connectivity, which partly explains why there is a growing demand for internet services to gain access to them. 
+---
+layout: engineering-education
+status: publish
+published: true
+url: /the-basics-to-making-your-web-application-work-offline/
+title: The Basics to Making your Web Application Work Offline
+description: In this article, we will learn the fundamental aspects in making your web application work offline. We will look at the offline mode phenomenon, benefits of having an application that works offline, and the implementatioon of offline mode.  
+author: arthur-muthee
+date: 2021-11-15T00:00:00-13:30
+topics: [Web Development]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/the-basics-to-making-your-web-application-work-offline/hero.jpg
+    alt: Web Application Image
+---
+The number of web applications has increased tremendously in the recent past. These applications require internet connectivity, which partly explains why there is a growing demand for internet services to gain access to them. 
+<!--more-->
 However, in the event of lost internet connection, users find it difficult to gain access to online applications. This is especially in the case of applications that support online mode only. Lost internet connection may be caused by poor internet coverage, poor weather conditions, and power outages. There is a growing need for applications that can allow usage even in the event of poor internet or lost internet connection. 
 
 This article takes you through the basics of making web applications work offline. It will also go through the benefits of having an application that supports offline mode and the implementation of this functionality. 
@@ -61,3 +77,5 @@ In this article, we have gone through the basics of making your web application 
 5. We have gone through the main data storage tools when an application works offline.
 
 Happy learning!
+
+Peer Review Contributions by: [Onesmus Mbaabu](/engineering-education/authors/onesmus-mbaabu/)
