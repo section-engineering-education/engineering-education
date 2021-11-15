@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /representing-data-in-django-using-matplotlib/
-title: Representing Data in Django Using Matplotlib
+title: Representing Data in Django using Matplotlib
 description: In this article, we are going to learn how to create a Django application that visualizes and represents data using Matplotlib.
 author: john-kiguru
-date: 2021-11-07T00:00:00-18:00
+date: 2021-11-15T00:00:00-11:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -16,23 +16,22 @@ images:
 ---
 When building applications using Django, you may find that you need to present data visualizations using graphs and charts. Matplotlib is one of the popular python libraries that lets you achieve it.
 <!--more-->
-In this article, we are going to create a sample Django application that uses matplotlib to visualize data.
+In this article, we are going to create a sample Django application that uses Matplotlib to visualize data.
 
 ### Prerequisites
-As a prerequisite:
-- You have `Django` installed and you are familiar with creating a simple Django application.
-- You have installed `matplotlib`. To install use `pip install matplotlib`.
-- Basic knowledge of python is very important.
+- You should have `Django` installed. You also need to be familiar with creating a simple Django application.
+- Install `matplotlib` library using `pip install matplotlib` comamnd.
+- Some basic knowledge of Python is important.
 
 ### Key takeaways
 In this article, we are going to:
 1. Learn how to build a Django application.
-2. Learn how to use `matplotlib` to visualize data in your Django application.
+2. Learn how to use `matplotlib` to visualize data in a Django application.
 
 ### Getting started
-We are going to create a simple web application to keep track of sales and inventory. This application holds information about customers, products, salespeople, and sales.
+We will create a simple web application to keep track of sales and inventory. This application holds information about customers, products, salespeople, and sales.
 
-To create the project, move to your preferred folder and run:
+To create the project, move to your preferred folder and run the command below:
 
 ```bash
 django-admin startproject SALES
@@ -41,32 +40,30 @@ django-admin startproject SALES
 This command will create a basic setup for the project with a folder structure as shown:
 
 ```txt
-.
 ├── db.sqlite3
 ├── manage.py
 ├── SALES
-│   ├── asgi.py
-│   ├── __init__.py
-│   ├── settings.py
-│   ├── urls.py
-│   └── wsgi.py
+│   ├── asgi.py
+│   ├── __init__.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
 ├── static
-│   ├── book.jpg
-│   ├── bootstrap-5.0.0-beta1-dist
-│   │   ├── css
-│   │   │   ├── bootstrap.css
-│   │   │   ├── bootstrap.css.map
-│   │   │   ├── bootstrap-grid.css
-│   ├── style.css
+│   ├── book.jpg
+│   ├── bootstrap-5.0.0-beta1-dist
+│   │   ├── css
+│   │   │   ├── bootstrap.css
+│   │   │   ├── bootstrap.css.map
+│   │   │   ├── bootstrap-grid.css
+│   ├── style.css
 ```
 
-We will then create an app called `sales`. And, you can run it using `python3 manage.py startapp sales`.
+We will then create an app called `sales`. You can run it using `python3 manage.py startapp sales` command.
 
 We will need to edit our `settings.py` file to register the app and configure the static files for styling the application.
 
-Edit the file and add these lines in `INSTALLED_APPS` as follows:
+Edit the `SALES/settings.py` file and add these lines in the `INSTALLED_APPS` array as follows:
 
-`SALES/settings.py`
 ```python
 INSTALLED_APPS = [
     'sales',
@@ -79,11 +76,12 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 ```
 
-Here, we have registered the app and added `django-crispy-forms` to style our forms. We have also declared that static files will be handled in the `/static` folder. We will also store all uploaded media files in a folder called `/media`.
+In the above code, we have registered the app and added `django-crispy-forms` to style our forms. 
 
-To route the settings for files, we need to edit the `urls.py` file as follows:
+We have also declared that static files will be handled in the `/static` folder. We will store all uploaded media files in a folder called `/media`.
 
-`SALES/urls.py`
+To route our settings, we need to edit the `urls.py` file as follows:
+
 ```python
 from django.conf import settings
 from django.conf.urls.static import static
@@ -96,9 +94,8 @@ urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 ```
 
 ### Building models
-We are now going to build model classes. Edit the `models.py` as follows:
+We are now going to build model classes. Edit the `models.py` file as follows:
 
-`sales/models.py`
 ```python
 from django.contrib.auth.models import User
 from django.db import models
@@ -148,12 +145,10 @@ class Sale(models.Model):
 
 - We are going to represent the sales data using the `Sale` class.
 - We have overridden the `save` method such that if the `transaction_id` is null, one will be generated automatically.
-- We have also declared if the created time is not defined then the time will be set to the current time.
-- We need to create the `generate_code` function.
+- We have also declared if the `created time` is not defined then the time will be set to the `current time`.
 
-Let's create a `utils.py` file and add the following lines of code:
+We now need to create the `generate_code` function. Let's create a `utils.py` file and add the following lines of code:
 
-`sales/utils.py`
 ```python
 import uuid
 
@@ -163,9 +158,8 @@ def generate_code():
 
 `generate_code()` returns a random code consisting of 12 alphanumeric characters in uppercase.
 
-Let's register the models to the admin site by adding the following code to the `admin.py` file as shown:
+Let's register the models to the admin site by adding the following code to the `admin.py` file:
 
-`sales/admin.py`
 ```python
 from django.contrib import admin
 from .models import Customer, Sale, SalesPerson
@@ -176,20 +170,19 @@ admin.site.register(Sale)
 admin.site.register(SalesPerson)
 ```
 
-Create a superuser by running `python3 manage.py createsuperuser`.
+Create a `superuser` by running `python3 manage.py createsuperuser` command.
 
 When you log in to `http://127.0.0.1:8000/admin`, you should be able to create different sale records.
 
-> Note that, even if you leave the `transaction_id` field blank, it will be automatically generated for you.
+> Note that if the `transaction_id` field is blank, a new value will be generated automatically.
 
 ### Representing data
 Now that we have added data to our database, let's work on representing them in our application.
 
-We will begin by creating a search form that allows a user to search for particular data by filtering based on date,  transaction, customer address, and total price.
+We will begin by creating a search form that allows a user to search for particular data. We will filter information based on `date`, `transaction`, `customer address`, and `total price`.
 
 Let's create a `forms.py` file to define the form fields:
 
-`sales/forms.py`
 ```python
 from django import forms
 
@@ -212,11 +205,10 @@ class SalesSearchForm(forms.Form):
     results_by = forms.ChoiceField(choices=RESULTS_CHOICES)
 ```
 
-The form will allow the user to choose a date, select chart type that results according to `CHART_CHOICES` and `RESULTS_CHOICES` as given in the file above.
+The form will allow the user to choose a date, select chart type that groups results according to `CHART_CHOICES` and `RESULTS_CHOICES` as outlined in the above file.
 
-We need to create some views to get data to our web page. In our `views.py` file, let's edit it as follows:
+We need to create some views to retrieve data to our web page. In our `views.py` file, let's edit it as follows:
 
-`sales/views.py`
 ```python
 import pandas
 from django.shortcuts import render
@@ -238,7 +230,6 @@ We need to create an HTML file that holds these visualizations.
 
 Let's begin by modifying the settings on the template configuration by editing `settings.py` as shown:
 
-`SALES/settings.py`
 ```python
 TEMPLATES = [
     {
@@ -259,7 +250,7 @@ TEMPLATES = [
 
 This setting will tell Django to look for HTML files from a folder called `templates`.
 
-Create a folder called `templates` in the same level as `manage.py`, and add the new HTML files under the same folder.
+Create a folder called `templates` in the same level as `manage.py`, and add the new HTML files in it.
 
 The `templates` folder should look as follows:
 
@@ -301,13 +292,12 @@ Edit the `base.html` as follows:
 
 This is the base HTML file that will be used by other files. All common stylings are defined here.
 
-This file avoids rewriting the same lines of code across many other files. Any other file that needs the stylings, will only need to use `{% extends 'base.html' %}`.
+This file allows us to avoid rewriting the same lines of code. We will only need to use `{% extends 'base.html' %}` in other files that require styling.
 
-This base file links different routes across the application. We have a route `Home` to navigate to the data representation page.
+This base file links different routes in the application. We have a route `Home` to navigate to the data representation page.
 
 The `sales.html` file should be similar to this:
 
-`templates/sales.html`
 ```html
 {% extends 'base.html' %}
 {% load static %}
@@ -328,7 +318,7 @@ Home
 {% endblock content %}
 ```
 
-This file allows us to display our search form in the file. The user can fill the form and submit using the `Search` button.
+This file allows us to display our search form in the file. The user can fill the form and submit using the `search` button.
 
 ### Routing views
 To see our views in action, we will need to configure the routes.
@@ -339,7 +329,6 @@ The mappings above imply that the requests will be handled by this file and then
 
 Add the following lines of code to it:
 
-`sales/urls.py`
 ```python
 from django.urls import path
 from . import views
@@ -358,10 +347,9 @@ urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 ```
 
-Let's also edit `base.html` to be able to access the view. Edit it as follows:
+Let's also edit `base.html` to access the view. Edit it as follows:
 
-`templates/base.html`
-```jinja
+```html
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
@@ -388,14 +376,14 @@ Let's also edit `base.html` to be able to access the view. Edit it as follows:
 </html>
 ```
 
-When you visit `http://127.0.0.1:8000` you should get a page  something to this:
+When you visit `http://127.0.0.1:8000` you should get the following page:
 
-![Sales Page](/engineering-education/representing-data-in-django-using-matplotlib/SalesPage.png)
+![Sales Page](/engineering-education/representing-data-in-django-using-matplotlib/salespage.png)
 
 ### Creating the graphical representations.
 Now, we are going to start building the graphical representations part of our web page.
 
-Firstly, we will have to install the `pandas` library to create data frames for the sales data.
+Firstly, we need to install the `pandas` library to create data frames for the sales data.
 
 The resulting data frame will be used for plotting with `matplotlib`.
 
@@ -403,7 +391,6 @@ Now, run `pip install pandas` to install it.
 
 We are going to handle the plotting in the `utils.py` file, and it will be used in the `views.py` file as shown:
 
-`sales/views.py`
 ```python
 import pandas
 from django.shortcuts import render
@@ -454,14 +441,13 @@ def sales(request):
 - The value of chart type and result type will be `#1`, `#2` depending on the choice of the user.
 - If a user chooses a pie chart, then the `chart_type` variable will be `#2`, as we had declared in our `forms.py` file.
 - We then filter all sales that are in the range between `date_from` and `date_to`. If there are any sales, we create a data frame using the sales queryset values.
-- We also reset the created year value to the format `d/m/Y`.
+- We also reset the `created year` value to the format `d/m/Y`.
 - We rename `customer_id` to `customer`, `salesman_id` to `salesman`, and `id` to `sales_id`.
 - Then, we initialize the variable `chart` with the function `get_chart()` as defined in `utils.py`, which takes in the chart type, the sales data frame, and the results by values.
 - Finally, we convert the sales data frame to HTML format, so that we will be able to display it on the web page by passing the data frame and the chart to the HTML page.
 
-Let's now work with the `utils.py` file as shown:
+Let's now work with the `utils.py` file, as shown below:
 
-`sales/utils.py`
 ```python
 import uuid, base64
 from .models import *
@@ -517,12 +503,11 @@ When the function `get_chart()` is called the following takes place:
 4. The fourth statement groups our data frame by the key using the sum of the total price.
 5. The charts are then plotted according to the user's choice.
 6. The statement ` pyplot.tight_layout()`adjusts the size of the chart to the size of `fig`
-7. We lastly initialize a chart variable with `get_graph()` function and return it. The function begins by creating a buffer variable as a file object.
+7. We lastly initialize a chart variable with `get_graph()` function and return it. The method begins by creating a buffer variable as a file object.
 8. The charts are saved in the buffer as an image. The buffer content is encoded using `base64.b64encode()` function. The bytes are then decoded and returned. The buffer is discarded when the close() function is called.
 
 We will now edit our `sales.html` file in order to see our dataframe and chart:
 
-`templates/sales.html`
 ```html
 {% extends 'base.html' %}
 {% load static %}
@@ -554,23 +539,23 @@ Home
 {% endblock content %}
 ```
 
-If we have a sales data frame, we display it after the form. We use the `safe` filter to make the data frame more readable in our page.
+If we have a sales data frame, we display it after the form. We use the `safe` filter to make the data frame more readable on our page.
 
 The part `data:image/png;base64` is responsible for handling displaying the image of our chart. Without this, we cannot see the image.
 
-When you fill the form you should have something like this when you select bar chart.
+When you fill the form, you should have something like this when you select `bar chart`.
 
 `http://127.0.0.1:8000/`
 
-![Bar Graph](/engineering-education/representing-data-in-django-using-matplotlib/BarGraph.png)
+![Bar Graph](/engineering-education/representing-data-in-django-using-matplotlib/bargraph.png)
 
 When you select the pie chart:
 
-![Pie Chart](/engineering-education/representing-data-in-django-using-matplotlib/PieChart.png)
+![Pie Chart](/engineering-education/representing-data-in-django-using-matplotlib/piechart.png)
 
 When you select line graph:
 
-![Line Graph](/engineering-education/representing-data-in-django-using-matplotlib/LineGraph.png)
+![Line Graph](/engineering-education/representing-data-in-django-using-matplotlib/linegraph.png)
 
 ### Conclusion
 You have now successfully created a Django application that uses matplotlib to represent data.
