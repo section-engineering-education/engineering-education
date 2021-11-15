@@ -1,46 +1,41 @@
-Sequelize is a JavaScript library that manages databases. It supports all the popular databases such as PostgreSQL, MySQL, SQLite, and MSSQL. This kind of package is known as an Object Relation Mapper.
-Object Relation Mappers are used to convert object-relational syntax to the database schema. Sequelize is used with NodeJS.
+Sequelize is a JavaScript library that manages almost all popular databases like PostgreSQL, MySQL, SQLite, and MSSQL.
 
-<!--more-->
+Object Relation Mappers (ORM) are used to convert object-relational syntax to the database schema. Usually, sequelize is used with NodeJS. We can call Sequelize as an ORM.
 
-Sequelize only supports relational databases, and databases like Mongo DB or other NoSQL databases are not supported. Sequelize supports solid transaction, eager and lazy loading, relations, read replication, and other cool features.
+Sequelize only supports relational databases. Databases like Mongo DB or other NoSQL databases are not supported.
+
+Sequelize supports solid transaction, eager and lazy loading, relations, read replication, and other cool features.
 
 By the end of this tutorial, you will adequately understand the following:
-
 - How to install Sequelize
 - How to install drivers associated with the different databases.
 - Connecting to the database and testing the connection.
 - How to use Sequelize CLI.
 - Model Querying (Inserting, Updating, Deleting).
 - Associations (One to One, One to Many, Many to Many)
+- Node.js runtime
 
-- Node js runtime
-- Postgresql || MSQL || MSSQL || SQLITE
-
-### Prerequisites knowledge
-
-Before we continue it is recommended to have the following.
-
+### Prerequisites
+Before we continue further, it is recommended to have the following:
 - A basic knowledge of JavaScript.
-- A basic knowledge of Node Js and Express Js.
+- A basic knowledge of Node.js and Express.js.
 - Familiarization with any of these databases i.e MYSQL, POSTGRESQL, MSSQL, SQLite
-- A basic knowledge of postman, which we will use to test our endpoints.
+- A basic knowledge of Postman, which we will use to test our endpoints.
 - Text Editor - I will be using VS Code.
 
 In this article, we will go through features you will need when using sequelize, and we will be using a project-based approach.
 
 Let's get started!
 
-### Project Setup
-
+### Project setup
 ```bash
 mkdir sequelize-project
 cd sequelize-project
 ```
 
-We used the shell command `mkdir` to create the directory `sequelize-project` and used the `cd` command to navigate into the `sequelize-project` folder.
+We use the shell command `mkdir` to create the directory `sequelize-project` and use the `cd` command to navigate into the `sequelize-project` folder.
 
-The next step is to initiate a Node JS application.
+The next step is to initiate a Node.js application.
 
 ```bash
 npm init -y
@@ -63,9 +58,8 @@ This command will create a `package.json` with default settings.
 }
 ```
 
-### Express Setup
-
-We will need to install express and a couple of packages to set up our node js server.
+### Setting up express server
+We will need to install express and a couple of packages along with the Node.js server.
 
 ```bash
 npm i express cors morgan dotenv nodemon cors
@@ -84,14 +78,13 @@ The next step is to start adding the necessary code to our files, we will start 
 
 `.env`
 
-We will add the PORT
+We will add the PORT as shown:
 
-PORT=5000
+`PORT=5000`
 
 Our node server will be running on this port.
 
 `app.js`
-
 ```js
 const express = require("express");
 const cors = require("cors");
@@ -118,7 +111,6 @@ app.use(
 
 //Enable cors
 app.use(cors());
-
 app.use(morgan("common"));
 
 app.get("/api", (req, res) => {
@@ -149,7 +141,6 @@ app.listen(port, () => {
 The code above contains the necessary things to make our node server run successfully.
 
 `package.json`
-
 ```js
 {
   "name": "sequelize-project",
@@ -172,41 +163,38 @@ The code above contains the necessary things to make our node server run success
 }
 ```
 
-We added script to be able to successfully run our node js server.
+We added `scripts` to run the Node.js server.
 
-Using `npm start` will start the project but will stop running after it hits an error
+Using `npm start` will start the project, but stops running if it hits an error. Whereas, using `npm run dev` runs continuously, even if an error is encountered.
 
-Using `npm run dev` will start the project and keep running after it hits an error
+`npm run dev` contains a package called `nodemon` that helps us establish a server that runs the node file.
 
-### Running the App
+Let's run the app:
 
 ```bash
 npm run dev
 ```
 
-### Installing Sequqlize
+### Installing sequelize
+To fully set up Sequelize, we need to have the database ready. It can be either MySQL, PostgreSQL, MSSQL, or SQLite.
 
-To fully set up Sequelize, we need to have created your database in either MYSQL, POSTGRESQL, MSSQL, or SQLite
+First thing first, we need to install `sequelize` and `sequelize-cli`.
 
-we will need the database details during the sequelize setup.
-
-First thing first, we need to install sequelize and sequelize-cli, this package will help bootstrap the necessary setup we need for sequelize in a node js application. It will create the necessary files, migration, and models folder.
+These packages will help bootstrap the necessary setup that we need for sequelize in a Node.js application. It will create the necessary files, migration, and models folder.
 
 ```bash
 npm i sequelize sequelize-cli
 ```
 
-After installing sequelize and sequelize-cli, it's time to start using the sequelize commands to set up sequelize.
-
-First and most important command
+Then, we initialize it:
 
 ```bash
 sequelize init
 ```
 
-This will initiate our sequelize setup. it will create the `config` folder which contains the `config.js` file, the `migrations` folder which will contain the migrations, the `model` folder which will contain the models, the `seeders` folder, which will contain the seeder files if there is any.
+On initializing, it will create the `config` folder that contains the `config.js` file, the `migrations` folder that contains the migrations, the `model` folder that contains the models, the `seeders` folder that contains the seeder files, if there is any.
 
-Our project file structure should look like this.
+Now, our project file structure should look like this:
 
 ```bash
 sequelize-project
@@ -219,15 +207,15 @@ sequelize-project
 └── package.json
 ```
 
-The next step is to decide which database we want to use, your choice of database will determine the package you will install.
+The next step is to decide which database we want to use. Your choice of database will determine the package you will need to install.
 
-MYSQL
+MySQL
 
 ```bash
 npm install mysql2
 ```
 
-POSTGRESQL
+PostgreSQL
 
 ```bash
 npm install pg
@@ -251,24 +239,20 @@ MARIADB
 npm install mariadb
 ```
 
-We can decide to use anyone we like, it doesn't matter, we will see later on where we need to set up some things to indicate which database we decided to use.
+Let's go with PostgreSQL for this tutorial.
 
-We will continue with PostgreSQL for this tutorial, but you can decide to use any database you like, it doesn't matter.
-
-I have created a database on Postgresql
-
-#### Details
+I have created a database on PostgreSQL as shown:
 
 Database name - Sequelize
 Database user - josh
-password - \***\*\*\*\*\***
-host - localhost i.e this can be a server
+Password - \***\*\*\*\*\***
+Host - localhost
 
-We need to go into our `.env` file and add our database details to it, the essence of the `.env` file is to have access to all details inside it using process.env
+We need to go into our `.env` file and add the database details to it. The essence of the `.env` file is to have access to all details inside it using `process.env`.
 
-We also need to create a new file `.gitignore`, every file or folder specified inside the `.gitignore` file will not be pushed to the repo when we decide to push it, common files we put inside the `.gitigore` are `node_modules` and `.env`, we don't want people to see our database details so it is wise not to push our `.env` file.
+Also, let's create a `.gitignore` file that excludes files that need not be pushed to the git repository. Here, we exclude the `node_modules` and `.env` files.
 
-Our project file structure should look like this at this point.
+Now, the project file structure should look like:
 
 ```bash
 sequelize-project
@@ -284,7 +268,7 @@ sequelize-project
 
 Content of the `.env` file
 
-```bash
+```env
 PORT=5000
 DATABASE_USER=josh
 DATABASE_PASSWORD=password
@@ -294,33 +278,17 @@ DATABASE_DIALECT=postgres
 DATABASE_PORT=5432
 ```
 
-Default Port for Databases
-MYSQL - 3306
-POSTGRESQL - 5432
-MSSQL - 1433
-MARIADB - 3306
+> Default Port for databases:
+MySQL (mysql) - `3306`
+PostgreSQL (postgres) - `5432`
+MSSQL (mssql) - `1433`
+MARIADB (mariadb) - `3306`
 
-The Database dialect is the name of the database you decide to use.
-Dialect name for other databases.
+The next step is to add the database credentials to the `config.json` file that is inside the config folder.
 
-MYSQL - 'mysql'
-MSSQL - 'mssql'
-MARIADB - 'mariadb'
-POSTGRESQL - 'postgres'
-SQLITE - 'sqlite'
-
-Content of the `.gitignore` file
-
-```js
-node_modules.env;
-```
-
-The next step is to add our database credential to the `config.json` file which is inside the config folder
-
-The `config.json` file will not allow us to use our `.env` file, we will rename it as `config.js`, and add the code below.
+The `config.json` file will not allow us to use our `.env` file, we will rename it as `config.js`, and add the code below:
 
 `config.js`
-
 ```js
 const dotenv = require("dotenv");
 const path = require("path");
@@ -341,10 +309,9 @@ module.exports = {
 };
 ```
 
-The next step is to update the `index.js` inside the model folder. Replace the code inside the file with the code below.
+The next would be to update the `index.js` inside the `model` folder as shown below:
 
 `index.js`
-
 ```js
 "use strict";
 const fs = require("fs");
@@ -355,6 +322,7 @@ const env = process.env.NODE_ENV || "development";
 const config = require(__dirname + "/../config/config.js");
 const db = {};
 
+// Initialize the sequelize object
 let sequelize = new Sequelize({
   host: config.host,
   username: config.username,
@@ -395,32 +363,25 @@ Object.keys(db).forEach((modelName) => {
 });
 
 db.sequelize = sequelize;
-db.Sequelize = Sequelize;
-
 module.exports = db;
 ```
 
-The next step is to check our connection, the code above checks if the database connection is successful or has an error.
+The code above checks if the database connection is successful or has an error.
 
-It will log out "success" if it connects successfully, otherwise, it will log out an error.
+It returns "success", if it connects successfully, or it will log out with an error.
 
-If the server is currently running, we can stop it using, control C and run the code below.
+If the server is currently running, we can stop it using, `Ctrl + C`.
 
 ```bash
-node models/index.js
 Executing (default): SELECT 1+1 AS result
 success
 ```
 
-We should get the result above if we followed the steps above well.
+We should get the result above, if we have followed all the steps above well.
 
-We have been setting up a project-based environment so that we can be able to start building projects with this knowledge immediately
-after this tutorial.
+Having understood the basics, let's get into building the actual project.
 
-It's time to get into Sequelize properly now.
-
-#### Creating Models
-
+#### Creating models
 Let's build a user model, we will use the `sequelize-cli` power commands to build a user model.
 
 Our user will have a firstName, lastName, age, and any other properties we would like to add.
@@ -513,7 +474,6 @@ class UserService {
 ```
 
 #### Inserting - Create
-
 This is used to create an instance of the model, it is the combination of the build and save method.
 
 When the create method is used, the data is created in the database.
@@ -566,7 +526,6 @@ node services/user-service.js
 ```
 
 ### Getting - Finders
-
 These finders method uses SELECT query behind the scene.
 
 We have about 5 methods for find operations in Sequelize.
@@ -661,7 +620,6 @@ class UserService {
     async findOne(firstname){
         return await User.findOne({where: {firstName: firstname}});
     }
-
 }
 
 let userService = new UserService();
@@ -751,7 +709,6 @@ node services/user-service.js
 ```
 
 ### Updating
-
 update
 
 This method can be used to update existing data.
@@ -792,7 +749,6 @@ node services/user-service.js
 check the User table to confirm, the data has been updated.
 
 ### Deleting
-
 destroy
 
 This method can be used to delete existing data.
@@ -831,7 +787,6 @@ node services/user-service.js
 check the User table to confirm, the User has been deleted.
 
 #### Associations
-
 Associations refer to a relationship between tables.
 
 A relationship can be established between tables when one table uses a foreign key that references the primary key of another table.
@@ -847,7 +802,6 @@ There are three major types of relationship
 3. Many to Many
 
 ##### One to One Association
-
 This association refers to when a record in a particular table is associated with another record in another table, a typical example is that a userId in the user table can only be associated with one user profile in the profile table.
 
 We need two tables to be able to show how this works, we already have a user table created from our User Model, let's create a profile table.
@@ -950,7 +904,6 @@ const result = async() => {
 }
 
 result();
-
 ```
 
 The important thing to note here is that the userId points to an existing user.
@@ -984,7 +937,6 @@ The user property contains the user information, this is the advantage of the on
 You can also use the method above to associate the User to the Profile from the User Model.
 
 ##### One to Many Association
-
 This association refers to when a record in a particular table is associated with more than one record in another table, a typical example is that a userId in the user table can be associated with many cars in the cars table.
 
 We need two tables to be able to show how this works, we already have a user table created from our User Model, let's create a car table.
@@ -1177,7 +1129,6 @@ Sample result for what the user data looks like this -
 The key takeaway here is that the car's property will contain an array of cars. This means anytime you query for a single user or all users, they will also show the "many" cars if the cars are more than one associated with the user, in case the user has no car, it will return an empty array.
 
 ##### Many to Many Association
-
 This association refers to when many records in a particular table are associated with many records in another table. This does not explain anything, stay with me. we have 2 two tables, actor and movie tables. One actor can be in more than one movie, one movie can have more than one actor. Seriously this looks confusing, how do we track this, it sounds like a two-way one-to-many relationship. The only difference is that there is no one unique record on both sides, so we need an additional table to keep track of the actor and movie, let's call the table movieactor. The essence of this table is that for every movie created we can add many actors to it and for every actor created we can add a movie. At this point, let's get back to coding.
 
 We need to create 3 tables, actor, movie, movieactor
@@ -1380,7 +1331,6 @@ node services/movie-service.js
 The only thing new here is the addActor method, the many-to-many relationship gives the model access to methods such as addMovie and addActor like we have access to the addActor from the Movie model, we also have access to the addMovie from the Actor model, so after creating a movie, if the actor has been created, you can add the actor to the movie. When we get the movie, either through findOne movie or FindAll, we will see an array of all actors attached to the movie. it is similar to what we see with the one-to-many relationship.
 
 ### Conclusion
-
 There are one or two holes along the way, we didn't implement the many-to-many for the actor part, we only did it for the movie part, I purposely left them so you can be able to practice what you are learning.
 
 I hope you found this tutorial useful.
