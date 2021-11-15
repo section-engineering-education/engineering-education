@@ -12,6 +12,7 @@ To effectively uderstand the reader will need the following:
 - Basic uderstanding of React library
 - A suitable IDE such as VS Code or online IDE such as JScomplete or Codepen
 - Basic uderstanding of JSX
+
 *****In this tutorial i will be using [JScomplete](https://jscomplete.com/playground).To use js complete with react first install [React Developer Tools extension](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en)*****
 
 #### Key takeaways 
