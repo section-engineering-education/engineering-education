@@ -1,6 +1,21 @@
-﻿### Introduction
-Over the years, APIs have gradually gained popularity in major businesses and enterprises. The main reason is that organizations have seen a tremendous increase in IoT devices and mobile applications, which mostly rely on backend interactions. Therefore, an API can be considered a crucial business resource that any modern enterprise cannot assume.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-develop-an-api-architecture/
+title: How to Develop an API Architecture
+description: In this article, we will look at the basics of developing an API architecture. We will go through API design and its goals, API design architectural styles and the best practices when designing an API. 
+author: lilian-kerubo
+date: 2021-11-15T00:00:00-13:30
+topics: [API]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/how-to-develop-an-api-architecture/hero.jpg
+    alt: API Image
+---
+Over the years, APIs have gradually gained popularity in major businesses and enterprises. The main reason is that organizations have seen a tremendous increase in IoT devices and mobile applications, which mostly rely on backend interactions. Therefore, an API can be considered a crucial business resource that any modern enterprise cannot assume.
+<!--more-->
 According to recent statistics, it is evident that businesses and large enterprises have seen value in their digital operations through APIs. These businesses include the banking and finance sector, media and entertainment industries, and automotive industries. These indusrties have made tremendous growth in their sectors due to the continued use of APIs in their operations
 
 In the past, huge enterprises started utilizing APIs in their digital operations to grow and diversify their businesses and maximize their profits. SMEs have now joined the plan and have started using APIs in their operations to remain competitive and relevant in this digital space.
@@ -8,7 +23,6 @@ In the past, huge enterprises started utilizing APIs in their digital operations
 The challenging dilemma arises for business owners on the best practices of developing APIs for their digital channels and maximizing their profits. This article will guide business owners and stakeholders on building a state of art API architecture that would suit their business digital strategy.
 
 ### Table of contents
-- [Introduction](#introduction)
 - [Concept of APIs](#concept-of-apis)
 - [Understanding API architecture](#understanding-api-architecture)
 - [API architecture components](#api-architecture-components)
@@ -124,6 +138,7 @@ In this layer, the API is integrated to ensure synchronous service access betwee
 It is the most crucial layer since real action occurs here. This is where clients’ applications, developers, and users get a chance to work with the organization applications and data of the organization.
 
 ### Conclusion
-Users will only adopt the use of the given API if it offers the value it intends to. This would mean the design, architectural factors, and practices covered in this article cannot be overlooked.
+Users will only adopt the use of the given API if it offers the value it intends to. This would mean the design, architectural factors, and practices covered in this article cannot be overlooked. Business owners and stakeholders should make informed decisions when developing their APIs to meet their needs and add value.
 
-Business owners and stakeholders should make informed decisions when developing their APIs to meet their needs and add value.
+---
+Peer Review Contributions by: [Onesmus Mbaabu](/engineering-education/authors/onesmus-mbaabu/)
