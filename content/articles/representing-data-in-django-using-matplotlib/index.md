@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/representing-data-in-django-using-matplotlib/hero.jpg
     alt: Representing Data in Django Using Matplotlib hero image
 ---
-When building applications using Django, you may find that you need to present data visualizations using graphs and charts. Matplotlib is one of the popular python libraries that lets you achieve it.
+When building applications using Django, you may need to present data visualizations using graphs and charts. Matplotlib is one of the popular Python libraries that lets you achieve this functionality.
 <!--more-->
 In this article, we are going to create a sample Django application that uses Matplotlib to visualize data.
 
