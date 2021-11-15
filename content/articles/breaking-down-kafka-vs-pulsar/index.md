@@ -19,7 +19,7 @@ Messaging systems are essential for their ability to enable remote communication
 This article will compare Kafka and Pulsar in terms of architecture, geo-replication, and use cases.
 
 ### An overview of Apache Kafka
-[LinkedIn](https://engineering.linkedin.com/blog/2019/apache-kafka-trillion-messages) released [Apache Kafka](https://kafka.apache.org/) in 2011. The open-source event streaming platform was founded on the concept of a distributed commit log. It can manage trillions of events daily. Kafka’s functionality consists of publishing/subscribing (pub/sub), processing of event streams, and permanent storage. To get a more in depth look at Kafka, check out this [Introduction to Kafka article here](/introduction-to-kafka/).
+[LinkedIn](https://engineering.linkedin.com/blog/2019/apache-kafka-trillion-messages) released [Apache Kafka](https://kafka.apache.org/) in 2011. The open-source event streaming platform was founded on the concept of a distributed commit log. It can manage trillions of events daily. Kafka’s functionality consists of publishing/subscribing (pub/sub), processing of event streams, and permanent storage. To get a more in depth look at Kafka, check out this [Introduction to Kafka article here](/engineering-education/introduction-to-kafka/).
 
 ### An overview of Apache Pulsar
 The original idea behind the development of [Apache Pulsar](https://pulsar.apache.org/) was to create a queuing system. But this has expanded in the latest releases to incorporate event streaming features. [Yahoo](http://www.yahoo.com/) originally developed Pulsar. But the [Apache Software Foundation](https://www.apache.org/) has now taken control over the project.
@@ -71,7 +71,7 @@ Pulsar IO connectors allow easy creation, deployment, and management of connecto
 
 Besides, Pulsar’s deployment model for functions and connectors is much more flexible. You can run these functions and connectors within a broker to allow easy deployment. Or otherwise, run them in a dedicated pool of nodes, as with Kafka streams.
 
-This will allow for massive scale-out. You can also configure Pulsar to schedule connector workloads and functions as pods. This is possible considering Pulsar integrates seamlessly with [Kubernetes](/what-is-kubernetes/).
+This will allow for massive scale-out. You can also configure Pulsar to schedule connector workloads and functions as pods. This is possible considering Pulsar integrates seamlessly with [Kubernetes](/engineering-education/what-is-kubernetes/).
 
 ### Conclusion
 Pulsar is still young when compared to the more mature Kafka. Kafka was developed and is suitable for high scale use cases. However, Pulsar’s ecosystem is expanding and developing, with new use cases being added and its technology developing rapidly. Besides, Pulsar is less complex to scale and operate.
@@ -87,4 +87,4 @@ In short, Pulsar is helpful to organizations working to embrace event streaming 
 
 - [Pulsar IO](https://pulsar.apache.org/docs/en/2.3.1/io-overview/)
 
-- [Introduction to Kafka](/introduction-to-kafka/)
+- [Introduction to Kafka](/engineering-education/introduction-to-kafka/)

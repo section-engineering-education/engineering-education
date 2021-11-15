@@ -16,7 +16,7 @@ images:
 ### Electron with Create-React-App
 The methods of creating desktop applications have come a long way. Every day, developers are coming up with easier to use options for creating desktop applications. Electron is one of those solutions. It uses web technologies wrapped around Node.js to come up with web technologies.
 <!--more-->
-For a more detailed introduction to the whole Electron.js ecosystem, you can read [this article](/cross-platform-applications-electron/). Electron uses HTML/CSS and JavaScript traditionally. You can use HTML, CSS, and vanilla JavaScript to build Electron applications.
+For a more detailed introduction to the whole Electron.js ecosystem, you can read [this article](/engineering-education/cross-platform-applications-electron/). Electron uses HTML/CSS and JavaScript traditionally. You can use HTML, CSS, and vanilla JavaScript to build Electron applications.
 
 Other options available include using React and other JavaScript frameworks.
 

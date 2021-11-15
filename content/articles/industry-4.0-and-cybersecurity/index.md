@@ -56,7 +56,7 @@ Cyber-physical systems are simply a new generation of integrations of physical p
 
 Cyber-Physical Systems have numerous applications in the following sectors; manufacturing, energy, infrastructure, consumer, communication, military, robotics, smart buildings, healthcare, infrastructure, and transportation among others.
 
-Noteworthy applications include autonomous driving and smart grid. Communications in these systems take place through the internet. This would mean that connectivity is provided over standard protocols, namely Internet Protocol and Transmission Control Protocol. These protocols possess notorious vulnerabilities. An example is the [Man-in-the-Middle attack](https://us.norton.com/internetsecurity-wifi-what-is-a-man-in-the-middle-attack.html). For more detailed information on Man-in-the-middle attacks, you can read [this related article](/man-in-the-middle-attack/).
+Noteworthy applications include autonomous driving and smart grid. Communications in these systems take place through the internet. This would mean that connectivity is provided over standard protocols, namely Internet Protocol and Transmission Control Protocol. These protocols possess notorious vulnerabilities. An example is the [Man-in-the-Middle attack](https://us.norton.com/internetsecurity-wifi-what-is-a-man-in-the-middle-attack.html). For more detailed information on Man-in-the-middle attacks, you can read [this related article](/engineering-education/man-in-the-middle-attack/).
 
 It is common to find these protocols in use in these systems without any additional protection against the aforementioned vulnerabilities. Coupled with additional security challenges, Cyber-Physical Systems are challenged in upholding the fundamental principles of [information security (Confidentiality, Integrity, and Availability)](https://www.techopedia.com/2/27825/security/the-basic-principles-of-it-security)
 
@@ -133,10 +133,10 @@ Denial of Service refers to the act of rendering the services offered by a syste
 
 System downtime and unavailability is also a consequence. This ends up being extremely costly for an enterprise since physical components such as sensors and servers may need to be replaced and reconfigured. Service downtime in a business context is also tremendously expensive. These attacks are highly unpredictable therefore difficult to manage and regulate.
 
-For more detailed information on what a Denial of Service attack is, feel free to [read this article](/denial-of-service/).
+For more detailed information on what a Denial of Service attack is, feel free to [read this article](/engineering-education/denial-of-service/).
 
 #### Enterprise Cyber-Espionage
-In this competitive industrial landscape, there is incentive in acquiring key information about the competitor. Thanks to the interconnected nature of the Industry 4.0 systems, various competitors may interact and collaborate to achieve various production goals. Increased interconnection of physical systems, and the vast nature of these networks means data is widespread across these systems, proving that there are even more points of attack and access confidential information. For example, attackers may eavesdrop, through executing a [Man-In-The-Middle attack](/man-in-the-middle-attack/).
+In this competitive industrial landscape, there is incentive in acquiring key information about the competitor. Thanks to the interconnected nature of the Industry 4.0 systems, various competitors may interact and collaborate to achieve various production goals. Increased interconnection of physical systems, and the vast nature of these networks means data is widespread across these systems, proving that there are even more points of attack and access confidential information. For example, attackers may eavesdrop, through executing a [Man-In-The-Middle attack](/engineering-education/man-in-the-middle-attack/).
 
 Furthermore, the evolution of cybercrime has bred increasingly organized groups of cyber criminals who find an incentive in targeting various industries and accessing critical information and intellectual property. Solutions to these increasingly common fears and problems should be geared towards guaranteeing transparency and trust across these platforms, systems, and networks.
 
