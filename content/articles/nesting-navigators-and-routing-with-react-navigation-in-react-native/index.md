@@ -1,4 +1,4 @@
-Changing between screens is a requirement in nearly all mobile applications. React Native's `react-navigation library is stunning and simple to use for this purpose. It's a well-known library for React Native application routing and navigation. 
+Changing between screens is a requirement in nearly all mobile applications. React Native's `react-navigation` library is stunning and simple to use for this purpose. It's a well-known library for React Native application routing and navigation. 
 
 When you nest navigators, the screens of one navigator are rendered inside the screens of another. If there is a stack, switching to a different screen will cause a new screen to be displayed.
 
