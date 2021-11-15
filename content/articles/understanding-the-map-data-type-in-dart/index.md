@@ -29,13 +29,13 @@ This article will cover:
 ### An introduction to Dart and its data types/data structures.
 
 Like most Programming languages have naming and binding rules, data items and values representation/allowed, and how to manipulate the data types, Dart similarly follows the rules when variables are created in it– allowing each variable to have an associated data type.
-In this section, we'll first understand what Dart is and some of its data types. Later, we will explore the map as a data type.
+This section will first understand what Dart is and some of its data types. Later, we will explore the map as a data type.
 
 ### What are maps?
 
 [Dart](https://dart.dev/) is an open-source programming language developed by Google and is popular for web & and mobile apps, often client optimized. (Client-facing) 
 
-Dart is an object-oriented, type-safe and platform-independent language allowing developers to create fast-paced applications and systems. 
+Dart is an object-oriented, type-safe, and platform-independent language allowing developers to create fast-paced applications and systems. 
 
 The compiler technology used in Dart lets developers run code on native platforms (mobile and desktop) and web platforms (web apps). 
 
@@ -51,13 +51,13 @@ Some of the built-in and commonly used data types in Dart are:
 
 - Maps 
 
-Let’s get started with Maps! 
+Let us get started with Maps! 
 
 ### The map syntax and declaration.
 
 Dart map is an object store for data in key-value form/pair. Values/items stored in a map can be referenced multiple times within your code and only be retrieved or reached using its associated Key. 
 
-Maps in Dart are similar to dictionaries in Python and accepts data of any type for the key and value pairs. (Dynamic collection).
+Maps in Dart are similar to dictionaries in Python and accept data of any type for the key and value pairs. (Dynamic collection).
 
 A Map is declared in curly braces, with each key-value pair delimited by commas. The items contained in a map can be iterated, and the order of iteration of the key-values define which type of map is declared/ are created. 
 
@@ -69,13 +69,13 @@ Dart maps can be declared using Map Literals or Map Constructors.
 
 **HashMap**  
 
-[HashMap](https://api.flutter.dev/flutter/dart-collection/HashMap-class.html) items are accessible in any order. Values are iterated in the same order as their associated keys, so iterating the keys and values in parallel will give matching Key and value pairs. 
+[HashMap](https://api.flutter.dev/flutter/dart-collection/HashMap-class.html) items are accessible in any order. In addition, values are iterated in the same order as their associated keys, so iterating the keys and values in parallel will give matching Key and value pairs. 
 
  
 
 **LinkedHashMap** 
 
-Accessing [LinkedHashMap](https://api.flutter.dev/flutter/dart-collection/LinkedHashMap-class.html) items happen in a predictable order. The key-value pairs occur in the order in which they were inserted. 
+Accessing [LinkedHashMap](https://api.flutter.dev/flutter/dart-collection/LinkedHashMap-class.html) items happen in a predictable order. This is because the key-value pairs occur in the order they were inserted. 
 
 **SplayTreeMap**. 
 
@@ -84,23 +84,25 @@ Accessing [LinkedHashMap](https://api.flutter.dev/flutter/dart-collection/Linked
  
 ### Features of a map.
 
-* Has the Length property that defines the number of key/value pairs in any given map.  
+* Has the Length property that defines the number of key/value pairs in any map.  
 
 This property is declared as:
+
 ```Dart
- int get length. 
+ int get length 
  ```
 
 * Has the isEmpty property tied to its operations to define the existence of key/value pairs. 
 
 This property is declared as:
+
 ```Dart
  bool get isEmpty. 
 ```
-* Has the Keys property to enumerate all key items in Dart map. 
+* Has the Keys property to enumerate all key items in the Dart map. 
 
 This property is declared as: 
-```Dart
+"`Dart
 int get Key.
 ```
  
@@ -108,13 +110,14 @@ int get Key.
 * Has the Values property to enumerate all value items in the Dart map. 
 
 This property is declared as: 
+
 ```Dart
 int get Value. 
 ```
 
 ### Manipulating  Map Elements.
 
-Now that we understand what a map is, let's look at how we can manipulate Dart map in different scenarios.
+Now that we understand what a map is let us look at how we can manipulate Dart map in different scenarios.
 
 #### Determining the size of a map
 The length property is used when returning the total number of key-value pairs of elements that constitute a map.
@@ -143,10 +146,10 @@ The expected output will be:
 
 ![Length](/engineering-education/understanding-the-map-data-type-in-dart/lenth.png).
 
-The map above contains three key-value pair elements for the student's `name`, the `email` and the `RegNumber` hence the output 3.
+The map above contains three key-value pair elements for the student's `name`, the `email`, and the `RegNumber` hence the output 3.
 
 #### Determining Key-Value existence
-To confirm that a key and or its correspondent value exists within a defined map, the `containsKey()` method and the `containsValue() method are used respectively.
+To confirm that a key and its correspondent value exist within a defined map, the `containsKey()` method and the `containsValue() method are used.
 
 Example:
 ```Dart
@@ -166,14 +169,14 @@ print(student.containsKey('doe@gmail.com'));
 
 The output of the first statement will be `true` because the student's map contains a `Name` key, while the second print statement will return `false` because the `Password` key does not exist.
 
-The third print statement returns `false` because there is no record of `RashFord` as a value. The final print statement returns `true` as `doe@gmail.com` is the email's key value.
+The third print statement returns `false` because there is no record of `RashFord` as a value. Finally, the final print statement returns `true` as `doe@gmail.com` is the email's key value.
 
 #### Inserting pair elements in a Map
 Inserting new key-value pairs in a map can be implemented in two ways:
 
 1. Adding values to a Map Literal.
 The code below implements the insertion:
-```Dart
+"`Dart
 
 void main(){
     var student = {'Name':'Adam Doe', 'Email':'doe@gmail.com', 'RegNumber':'B11/6732/2020'};
@@ -205,6 +208,7 @@ void main(){
 ```
 
 Output:
+
 ```bash
 
 {'Id':'414JK33', 'Year':'Third Year'}
@@ -215,6 +219,7 @@ Output:
 Merging different defined maps will add all the key-value pairs in one map to key-value pairs of another map. This implementation uses the `addAll()` function.
 
 Example:
+
 ```Dart
 
 void main(){
@@ -236,16 +241,17 @@ Output:
 ```
 ![Length](/engineering-education/understanding-the-map-data-type-in-dart/merging.png).
 
-All the pair elements in the `colors'` map are added to those of the `cakes'` map, and a new map concatenates all the key-values in both maps as in the output is displayed.
+All the pair elements in the `colors" map are added to those of the `cakes" map, and a new map concatenates all the key-values in both maps as in the output.
 
 #### Removing pair elements from a map
 To remove some key-value pairs in a map, we use the remove() method. The method is called on the map, and a `key` whose value is to be removed from the map is passed to this method.
 
 Syntax:
+
 ```bash
 Map.remove(Object Key)
 ```
-The object key passed to the `remove()` function is the entry that will be deleted from the map.
+The object key passed to the `remove()` function is the entry deleted from the map.
 
 ```Dart
 
@@ -258,6 +264,7 @@ print(x);
 ```
 
 Output:
+
 ```bash
 
 {'A':'Blackforest', 'B':'whiteforest', 'c':'Chocolate', 1:'Brown', 2:'Yellow'}
@@ -266,8 +273,8 @@ Output:
 
 ### Conclusion
 
-In this tutorial, we have learned what maps are in Dart and how to create them. We have also learnt how to manipulate map elements to output specific user requirements.
-Don’t forget to test out the constructions in your projects to understand how they work fully.
+In this tutorial, we have learned what maps are in Dart and how to create them. We have also learned how to manipulate map elements to output specific user requirements.
+Do not forget to test out the constructions in your projects to understand how they work entirely.
 
 #### Further reading
 1. https://api.dart.dev/stable/2.14.4/dart-core/Map-class.html
