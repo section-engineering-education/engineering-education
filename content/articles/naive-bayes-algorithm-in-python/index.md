@@ -6,7 +6,7 @@ url: /naive-bayes-algorithm-in-python/
 title: A Step by Step Guide to Implement Naive Bayes Algorithm in R
 description: This tutorial will discuss the Naive Bayes algorithm, the real-world application of the Naive Bayes algorithm, implement and evaluate its performance using a confusion matrix in R.
 author: lawrence-mbici
-date: 2021-11-11T00:00:00-21:00
+date: 2021-11-15T00:00:00-21:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -19,10 +19,10 @@ Naive Bayes is a machine learning algorithm based on the Bayes Theorem, and it's
 This tutorial will discuss the Naive Bayes algorithm and its principles to deliver a solid and clear understanding of this tool. Later, we will discuss the real-world application of the Naive Bayes algorithm and finally implement and evaluate its performance using a confusion matrix in R.
 
 ### Prerequisite
-To follow along with this material comfortably, you're required to have:
-- [R](https://cran.r-project.org/) installed on your computer
-- Programming skills in R
-- A [dataset](https://github.com/mbici/data/blob/main/data.csv) that we shall use in our implementation
+To follow along with this tutorial, you're required to have:
+- [R](https://cran.r-project.org/) installed on your computer.
+- Programming skills in R.
+- A [dataset](https://github.com/mbici/data/blob/main/data.csv) that we shall use in our implementation.
 - Require packages installed, i.e., 
   1. install.packages('caTools')
   2. install.packages('e1071')
@@ -66,12 +66,12 @@ The *Bayes theorem* assumes that events A and B are independent of each other. H
 This session will implement our model on a business dataset that contains information about customers who previously transacted with the business. The dataset consists of 400 customers, and each customer has information on their age, the estimated salary, and whether they bought a particular product or not. Our task is to train a Naive Bayes classifier to understand the correlation between the features, i.e., `Age` and the `EstimatedSalary`, and the `Purchased` target variable. The essence of this is to enable the business to predict which customer is likely to purchase their new product just released to the market and accurately target them with valid ads from their social networks. The link to download this data is provided in the prerequisites section.
 
 ### Step 1: Data preprocessing
-In this step, we shall not dive into details of the data preprocessing steps. Instead, we can refer to [this](/engineering-education/data-preprocessing-in-r/) article for information on performing data preprocessing.
-To start by, first, we need to install the required libraries. Let's copy-paste and execute the code below on the console.
+In this step, we will not dive into details of the data preprocessing steps. Instead, we can refer to [this](/engineering-education/data-preprocessing-in-r/) article for information on performing data preprocessing in r.
+
+First, we need to install the required libraries. Let's copy-paste and execute the code below on the console.
 ```r
 install.packages('caTools') # contains tools for data splitting
 install.packages('e1071') # cointains the naive Bayes classifier model
-
 ```
 However, we only need to install these packages if they're not already in our system.
 
@@ -80,16 +80,14 @@ Next, we import our dataset and view the first five rows with the help of the `h
 ```r
 # Importing the dataset
 data = read.csv('data.csv')
-# Looking at the first 10 observationd of our dataset
+# Looking at the first 10 observations of our dataset
 head(data)
-
 ```
-#### Output
+Output:
 
-![image](/engineering-education/naive-bayes-algorithm-in-python/output-image.png)
+![Image](/engineering-education/naive-bayes-algorithm-in-python/output-image.png)
 
-As we can see, the data has two features, i.e., `Age` and `EstimatedSalary` with the Purchased as the target variable, which takes value 1 for customer bought and 0 for customer didn't buy the product. On the rows is the number corresponding to a particular customer. Hoping we now understand our data better. Let's continue with our preprocessing activity. The code snippet below concludes this activity.
-
+As we can see, the data has two features, i.e., `Age` and `EstimatedSalary` with `Purchased` as the target variable. The target variable takes the value 1 for a customer who bought and 0 for customer who didn't buy the product. The number on the rows corresponds to a particular customer. Hoping we now understand our data better, let's continue with our preprocessing activity. The code snippet below concludes this activity.
 
 ```r
 # Encoding the target variable
@@ -106,8 +104,8 @@ Train_set[-3] = scale(Train_set[-3])
 Test_set[-3] = scale(Test_set[-3])
 
 ```
-### Step 2: Fitting the Naive Bayes classifier to the Training set
-To get started, let's make sure that the `e1071 package` is installed on R. As we earlier said, we only install this package if it is not already installed in on our systems; otherwise, we proceed and load its library.
+### Step 2: Fitting the Naive Bayes classifier to the training set
+To get started, let's make sure that the `e1071 package` is installed on R. As we earlier said, we only install this package if it is not already installed on our systems; otherwise, we proceed and load its library.
 
 ```r
 library(e1071) # load the library
@@ -116,7 +114,7 @@ classifier = naiveBayes(x = Train_set[-3],
 
 ```
 
-### Step 3: Predicting the Test set results
+### Step 3: Predicting the test set results
 
 ```r
 # Predicting the Test set outputs
