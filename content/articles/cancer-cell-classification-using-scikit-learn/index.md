@@ -42,14 +42,14 @@ data = load_breast_cancer()
 #### 3. Arranging and analyzing data
 Before we can learn how to train our model, we need to organize the data and and if you wish to what it contains then you can use the **print()** function in order to gain a better sense of what we have.
 ```python
-label_names = data['namesTargeted']
-labels = data['ourTarget']
-feature_names = data['feature_names']
-features = data['ourData']
+namesForlabels = data['target_names']
+ourlabels = data['target']
+namesForfeature = data['feature_names']
+ourfeatures = data['data']
 ```
 You can then use the **print()** method to examine the data.
 ```Python
-print(label_names)
+print(namesForlabels)
 ```
 OUTPUT
 ```bash
@@ -59,11 +59,11 @@ Tumor data is classified as `malignant` or `non-malignant` as you can see.
 
 Labels 0 and 1 are binary values representing labels where 0 indicates malignant tumors and 1 indicates benign tumors when they are written.
 ```Python
-print(labels)
+print(ourlabels)
 ```
 The tumor's 30 distinct characteristics and properties may be seen in full detail when the features are printed. Training our model on factors such as a tumor's malignant or benign status will help us make an accurate prediction.
 ```Python
-print(features)
+print(ourfeatures)
 ```
 There are 569 instances of tumor data in the dataset in question, each with a numerical value for one of the 30 variables in question. Data you have acquired indicates that the first tumor is malignant and has a mean radius of 1.79900000e+01 based on the information you know.
 
@@ -74,7 +74,7 @@ Sklearn comes with a function called **train test split()**, which automatically
 ```Python 
 from sklearn.model_selection import train_test_split
 
-train, test, trainingLabels, testingLabels = train_test_split(features, labels, test_size = 0.33, random_state = 42)
+train, test, trainingLabels, testingLabels = train_test_split(ourfeatures, ourlabels, test_size = 0.33, random_state = 42)
 ```
 It is possible to utilize the test size as a parameter to randomly divide the data. We've divided the original data into test data by a third of its original size. Other than that, the rest of the data is used for training. A different label for the train and test variables is used for each.
 
@@ -85,7 +85,7 @@ You can select from a wide variety of machine learning models to meet your needs
 from sklearn.naive_bayes import GaussianNB
 
 gaussiannb = GaussianNB()
-model = gaussiannb.fit(train, trainingLabels)
+ourModel = gaussiannb.fit(train, trainingLabels)
 ```
 To generate predictions on our test set, we first need to finish training the model. The built-in **predict()** function returns a prediction value array for each data point in the test set. Our forecasts will be displayed using the **print()** method.
 ```Python
@@ -117,3 +117,4 @@ Despite its simplicity, Naive Bayes is a potent algorithm for predicting outcome
 - To avoid assigning zero probability to a categorical variable whose category was not accessible in the training dataset, this technique uses the 'zero-frequency problem.
 ### Conclusion
 Determination can be done by looking at the features of cancer cells, which can indicate whether they are `malignant` or `benign.` We used `scikit-learn` to address a machine learning problem. Python framework Scikit-learn is a free and open-source tool for machine learning, machine mining, and data analysis.
+To get the Google Colab notebook for this tutorial, click [here](https://colab.research.google.com/drive/1Ztr7e9qZ9nrLHSGXJ1EAjBplNGXXtjC7#scrollTo=x_YKyDySkY8e)
