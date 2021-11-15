@@ -7,6 +7,54 @@ The following are the details:
 Construct public set and set functions for every data component, with the set function setting the data participant's variable and the get function retrieving the data participant's result.
 Making all users of the information private.
 
+#### Types of Encapsulation
+In OOP, there are three forms of encapsulation as shown below.
+* Class encapsulation
+* Function encapsulation
+* Member variable encapsulation
+
+As the title suggests, all data members are made private under member variable encapsulation. Setters and Getters functions are to be used by any object that wants to change or obtain the value of a data member. Contrarily, some of the functions and constructors in function encapsulation are declared private. The entire class is designated as private in Class Encapsulation.
+
+#### How Encapsulation is Implemented
+Encapsulation is implemented in C++ as a class that encapsulates data and the methods that operate on it. Data is typically designated as private so that it cannot be accessed outside of the class. The public functions are defined and may be retrieved by the use of the class's objects.
+However, we are unable to openly access private members' data, which is referred to as "data hiding." Data is protected and can be viewed by functions of the class where it is defined when this is performed.
+Below is how it is performed.
+```#include <iostream>
+using namespace std;
+
+class Player {
+  private:
+    // Private attribute
+    int Goals;
+
+  public:
+    // Setter
+    void setGoals(int g) {
+      Goals = g;
+    }
+    // Getter
+    int getGoals() {
+      return Goals;
+    }
+};
+
+int main() {
+  Player myObj;
+  myObj.setGoals(10);
+  cout << myObj.getGoals();
+  return 0;
+}
+```
+The `goals` attribute is private, which have restricted access.
+
+The `public` `setGoals()` method takes a parameter `(g)` and assigns it to the `goals` attribute `(goals = g)`.
+
+The `public getGoals()` method returns the value of the private goals attribute.
+
+Inside `main()`, we create an object of the `Player` class. Now we can use the `setGoals()` method to set the value of the private attribute to **10**. Then we call the `getGoals()` method on the object to return the value.
+
+
+
 ### Encapsulation and Abstraction
 
 **Data Abstraction** is a process by which the programmer decides what data will be shown in public; nevertheless, the practical execution of the Abstraction is nothing more than Encapsulation, which is accomplished through the use of access modifiers. 
@@ -17,6 +65,10 @@ You may argue that Encapsulation is the Abstraction's implementation.
 * Abstraction is a technique for masking undesired data and revealing useful information. Encapsulation, on the other hand, is the process of combining code and data into a unified unit in order to safeguard data from external view.
 * Encapsulation involves masking the internal details or mechanics of how an object does something, whereas abstraction allows you to concentrate on what the item does rather than how it does it.
 * Abstraction is achieved by the use of abstract classes and interfaces, while Encapsulation on the other hand, is implemented by the use of access modifiers (Public, Protected, and Private).
+
+#### Encapsulation vs Inheritance 
+Encapsulation links code to the data it distorts, while inheritance allows a class to inherit the attributes and functions of another class. Encapsulation is exemplified by an ATM that binds together several denominations of bank notes as well as all of the activities necessary to withdraw money. Inheritance may be seen in the classification of vehicles as cars, bikes, buses, trucks, and so on.
+Inheritance means that a subclass gets all of its primary class's characteristics and functions. On the other hand, encapsulation states that one class should not have access to another class's private data.
 
 
 #### Why Encapsulation
