@@ -142,7 +142,6 @@ Once you’ve started a new project, we need to obtain the API keys and tokens. 
 Now, select **Node.js** and **Generate Private Key**, to generate the admin credentials private key in JavaScript. This private key is used to authenticate us as the admin of the project and give us various permissions. Download the generated private key and store it safely. We will need to import this file later while writing our Cloud Function.
 
 Now, we need to obtain our `firebase_CONFIG` variable from the console. To do this, go to **Settings**, scroll down and you will find a snippet with your firebase config. Copy the `databaseURL` and store it for later use.
-
 ### Write the Cloud Function
 Now comes the most integral part. Let’s write the Cloud Function.
 
