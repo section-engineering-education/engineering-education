@@ -123,7 +123,7 @@ The HTML page's body is shown below.
 <h1>welcome to the home page</h1>
 </body>
  ```
-
+Click [here](https://github.com/Chaun864/SendRedirect-Demo) to download the complete source code.
 ### Conclusion
 In conclusion, we learned about the `SendRedirect()` method and its use. We also understand the difference between the Java Servlet's `SendRedirect()` and `forward()` methods. In this case, a learner should know how to implement the `SendRedirect()` method to create interactive web pages.
 
