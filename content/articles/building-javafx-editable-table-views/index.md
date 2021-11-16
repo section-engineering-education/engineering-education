@@ -2,16 +2,16 @@
 layout: engineering-education
 status: publish
 published: true
-url: /javafx-editable-table-view/
+url: /building-javafx-editable-table-views/
 title: Building JavaFX Editable Table Views
 description: In this article, we will go through how to setup and create TableView in JavaFX. We will also learn how to make these views editable.
 author: prosper-grateful-juma
 date: 2021-11-16T00:00:00-19:15
-topics: []
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/javafx-editable-table-view/hero.png
+  - url: /engineering-education/building-javafx-editable-table-views/hero.png
     alt: Building JavaFX Editable Table Views Hero Image
 ---
 Tables are significant when it comes to data entry and display in applications. Table views support the tabular format display.
@@ -80,12 +80,12 @@ To set up a new JavaFX project, do the following:
   - **Group**: com.table
   - **Artifact**: editabletableview
 
-![New JavaFX editable tableview project](engineering-education/javafx-editable-table-view/new-javafx-editable-tableview-project.png)
+![New JavaFX editable tableview project](engineering-education/building-javafx-editable-table-views/new-javafx-editable-tableview-project.png)
 
 - Click '**Next**'.
 - In the **Dependencies** section, set the dependencies as shown below and click on the '**Finish**' button:
 
-![Project dependencies](engineering-education/javafx-editable-table-view/new-javafx-editable-tableview-project-dependencies.png)
+![Project dependencies](engineering-education/building-javafx-editable-table-views/new-javafx-editable-tableview-project-dependencies.png)
 
 #### Initial project structure
 The application generated has the following structure:
@@ -189,7 +189,7 @@ center of the design page.
 - Drag-and-drop a `TableView` control from the left-side panel into the 'center' section of the BorderPane. The results
 should look as follows:
 
-![New TableView](engineering-education/javafx-editable-table-view/new-tableview.png)
+![New TableView](engineering-education/building-javafx-editable-table-views/new-tableview.png)
 
 - Double-click on the `C1` header and change it to `id`. Do the same for the `C2` header and edit it as `name`.
 - To add other columns, head over to the `Controls` section and select the `TableColumn` option. Then, drag-and-drop it next to the other columns and size it appropriately. Its name will be `email`.
@@ -220,7 +220,7 @@ The `SceneBuilder` will generate the following code:
 
 The results are as follows:
 
-![Created a table layout](engineering-education/javafx-editable-table-view/created-a-table-layout.png)
+![Created a table layout](engineering-education/building-javafx-editable-table-views/created-a-table-layout.png)
 
 ### Add data items on the TableView
 #### Define Users model
@@ -399,7 +399,7 @@ This code above produces the outcome as records are stored in the system.
 
 - Run the application through the 'Main' class. The output looks like this:
 
-![Uneditable TableView](engineering-education/javafx-editable-table-view/uneditable-tableview.png)
+![Uneditable TableView](engineering-education/building-javafx-editable-table-views/uneditable-tableview.png)
 
 - Try to double-click on a cell and see if the contents can be modified.
 
@@ -445,7 +445,7 @@ editableCols();
 
 The outputs are sent to the terminal as configured before on the Update button press.
 
-![Final Result](engineering-education/javafx-editable-table-view/final-output.png)
+![Final Result](engineering-education/building-javafx-editable-table-views/final-output.png)
 
 The content updates can be fetched for updating the content in the database.
 
