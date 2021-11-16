@@ -1,5 +1,21 @@
-This tutorial will cover how to build a Question-Answering web application using Google's BERT model.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /getting-started-with-question-answering-using-bert/
+title: Getting Started with Question Answering (Q&A) using BERT
+description: This tutorial will cover how to build a Question-Answering web application using Google's BERT model.
+author: lilian-tonia
+date: 2021-11-16T00:00:00-11:00
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/getting-started-with-question-answering-using-bert/hero.png
+    alt: Getting Started with Question Answering (Q&A) using BERT Hero Image
+---
+This tutorial will cover how to build a Question-Answering web application using Google's BERT model.
+<!--more-->
 ### Prerequisites
 To follow allow with this tutorial, you need to be familiar with:
 - [React](https://reactjs.org/docs/create-a-new-react-app.html)
