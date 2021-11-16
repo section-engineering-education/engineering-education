@@ -1,20 +1,21 @@
 Working with Quarkus as a Reactive framework is accessible and appealing to Java users. It comes with exciting features such as hot reloading, reactive program development capabilities, quick boot and reboot time, MicroProfile specification support, among many others.
 
-In this article, one will be able to learn about Quarkus profiles. These are like a collection of settings that can be assigned a specific tag to access them quickly. But, of course, access depends on the current environment in use.
+In this article, one will be able to learn about Quarkus profiles. These are like a collection of settings that can be assigned a specific tag to access them quickly. However, of course, access depends on the current environment in use.
 
 ### Table of Contents
-- [Key takeaways](#key-takeaways)
+
 - [Prerequisites](#prerequisites)
+- [Key takeaways](#key-takeaways)
 - [What is Quarkus Configuration Profiles?](#what-is-quarkus-configuration-profiles)
 - [Checking and configuring application properties](#checking-and-configuring-application-properties)
-  - [Creating a new Quarkus project](#creating-a-new-quarkus-project)
-    - [Project structure](#project-structure)
+  - [Create a new Quarkus project](#create-a-new-quarkus-project)
+    - [Project Structure](#project-structure)
   - [Set up some configurations](#set-up-some-configurations)
   - [Testing the configurations](#testing-the-configurations)
 - [Configuring the application using Quarkus configuration profiles](#configuring-the-application-using-quarkus-configuration-profiles)
   - [Quarkus' Configuration Profile formats](#quarkus-configuration-profile-formats)
   - [Using default configuration profiles](#using-default-configuration-profiles)
-  - [Using user defined configuration profile](#using-user-defined-configuration-profile)
+  - [Using user-defined configuration profile](#using-user-defined-configuration-profile)
 - [Setting up and using variables in different profiles](#setting-up-and-using-variables-in-different-profiles)
   - [Setting up variables](#setting-up-variables)
   - [Injecting the variables](#injecting-the-variables)
@@ -25,17 +26,10 @@ In this article, one will be able to learn about Quarkus profiles. These are lik
 - [Conclusion](#conclusion)
 - [References](#references)
 
-### Key takeaways
-Some points to be taken in by the end of the article follow up include:
-- What is Quarkus Configuration Profiles
-- Importance of configuration profiles
-- Some ways of setting up configuration profiles in Quarkus. These include setting the profiles in the `application.properties` and 'YAML' files.
-- Easily navigating between the profiles set during the development stages.
-
 ### Prerequisites
 For one to follow up with the code examples and explanations given in the article, the following will be required:
 - Latest Java Development Kit installed on the machine. Version 17 is used for the article.
-- A good Java IDE. [IntelliJ](https://www.jetbrains.com/idea/download/) version `2021.2.2` was used for the article, as seen in the screenshot captured.
+- A good Java IDE. IntelliJ version `2021.2.2` was used for the article, as seen in the screenshot captured. Download IntelliJ [here](https://www.jetbrains.com/idea/download/).
 - Familiar with databases.
 - A good internet connection. The internet is for fetching indexes for quick development and project generation.
 
@@ -43,10 +37,16 @@ For one to follow up with the code examples and explanations given in the articl
 > Make sure to follow up on _the latest versions_ of the aforementioned technologies.
 > The appearance of the applications may differ based on the release dates.
 
-### What is Quarkus Configuration Profiles?
-Quarkus, like any other MicroProfile, follows the MicroProfile specifications. It makes it to be able to allows developers to set the variables found in the whole project seamlessly so that developers can access them in the project scope during different project life cycles.
-The project's settings are usually stored in the `application.properties` file. In addition, developers can locate the file in the `resources` folder found in the `main` folder. Some variables that developers can set include pointing out to **Datasource** such as _postgresql_ or _mysql_, **Datasource properties** and settings such as the _username_, _password_, _url_, and _access port_ among others.
+### Key takeaways
+Some points to be taken in by the end of the article follow up include:
+- What is Quarkus Configuration Profiles
+- Importance of configuration profiles
+- Some ways of setting up configuration profiles in Quarkus. These include setting the profiles in the `application.properties` and 'YAML' files.
+- Easily navigating between the profiles set during the development stages.
 
+### What is Quarkus Configuration Profiles?
+Quarkus, like any other MicroProfile, follows the MicroProfile specifications. It allows developers to seamlessly set the variables found in the whole project to access them in the project scope during different project life cycles.
+The project's settings are usually stored in the `application.properties` file. In addition, developers can locate the file in the `resources` folder found in the `main` folder. Some variables that developers can set include pointing out to **Datasource** such as _postgresql_ or _mysql_, **Datasource properties** and settings such as the _username_, _password_, _url_, and _access port_ among others.
 Configuration files can hold variables needed during the operation of the application. These can include variables isolated from the main application source code files. Thus, the variables can later be injected into the application when needed only.
 Developers prefer config files to set the overall system properties and environment variables.
 
@@ -274,7 +274,7 @@ One can also change the data source based on those available. For example, one c
 The data sources can be set differently for different profiles.
 For instance, it is possible to run the application with a local database server in the development phase while deploying the packaged application that uses a remote database in the Production mode.
 
-#### Using user defined configuration profile
+#### Using user-defined configuration profile
 - Use the same format as shown above to accomplish this. For example, for a profile with the name "prototype", under the other profiles, do the following:
 
 ```properties
@@ -391,6 +391,10 @@ This test shall be used to check if the output of the profile used is as expecte
 
 #### Testing the variables
 In this section, project tests will be carried out.
+The following are the tests to be carried out:
+
+- Testing the variables in the dev profile
+- Testing the variables in the prototype profile
 
 ##### Testing in the dev profile
 - Run the application using the following:
@@ -401,7 +405,7 @@ In this section, project tests will be carried out.
 
 - In another terminal, access it using `curl http://localhost:8082/hello/person`.
 
-The results will be '_The person is mike of age 22 yrs and of the height of 170 cm_'. This outputs this result because the _test_ profile is used when the tests are run.
+The results will be '_The person is mike of age 22 yrs and of the height of 170 cm_'. The output of this result is because the _test_ profile is used when the tests are run.
 
 - On the terminal with the logs, key in `r` to run the tests. If it produces a successful output, then all is well.
 
@@ -437,7 +441,7 @@ Alternatively, add the block of code below inside the `pom.xml` file inside the 
 ```
 
 - Reload the whole project by right-clicking on the 'pom.xml' file and selecting the 'Reload project' option under the 'Maven' option. Similarly, just restart the IDE, and it will refresh the project.
-- Rename the 'application.properties' file to 'application.properties.OLD'. It makes its contents available in the system but not used in the application. This aids in referring to the configurations when converting them into the YAML file.
+- Rename the 'application.properties' file to 'application.properties.OLD'. It makes its contents available in the system but not used in the application. This renaming aids in referring to the configurations when converting them into the YAML file.
 - In the exact location as the 'application.properties.OLD' file, create a new file named 'application.yml'.
 - Now, use the indentation formatting styles to translate the configs from the 'application.properties.OLD' to the 'application.yml' file. It is shown below:
 
@@ -520,7 +524,7 @@ person:
     height: 174
 ```
 
-- Re-run the application in the prototype profile using:
+- Restart the application in the prototype profile using:
 
 ```shell
 ./mvnw compile quarkus:dev -Dquarkus.profile=prototype
@@ -533,9 +537,9 @@ curl http://localhost:9095/hello/person
 ```
 
 The output is '_The person is jane of age 54 yrs and of height of 174 cm_'. Run the tests in the log terminal by pressing `r`. The tests will run successfully as before.
-This proves that the configurations in the 'application.properties' file are equal to that in the 'application.yml' file.
+This run proves that the configurations in the 'application.properties' file are equal to that in the 'application.yml' file.
 
-- Try re-running the project in the other profiles.
+- Try restarting the project in the other profiles.
 - Add new profile configurations and variables and run the application in them.
 
 Find the Repository with the article right [here](https://github.com/justusmbuvi/Quarkus-Configuration-profiles). Then, clone it and use it as per the licenses.
