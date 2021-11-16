@@ -64,7 +64,7 @@ Let us look at them and try to understand how they work.
 
 
 ### Implementing Hierarchical Clustering
-Now is the time to put all we have discussed above into action. Here we shall use a real-world dataset to implement an Agglomerative clustering model and finally visualize how the model could discover various clusters from the data. So let download this dataset [here]() and get started as follows:
+Now is the time to put all we have discussed above into action. Here we shall use a real-world dataset to implement an Agglomerative clustering model and finally visualize how the model could discover various clusters from the data. So let download this dataset [here](https://github.com/DennisKimt/datasets/blob/main/Mall_Customers.csv) and get started as follows:
 
 Once we have downloaded our data, the first thing is to import all the necessary libraries for this session. The following code import these libraries.
 ### Importing the libraries
