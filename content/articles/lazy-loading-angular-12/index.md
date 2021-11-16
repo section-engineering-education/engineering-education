@@ -4,14 +4,14 @@ status: publish
 published: true
 url: /lazy-loading-angular-12/
 title: How to lazy load components in Angular 12
-description: This tutorial instroduces reader to the basic concepts of lazy loading components.
+description: This tutorial introduces reader to the basic concepts of lazy loading Angular components.
 author:  jared-phelix
 date: 2021-16-15T00:00:00-11:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/lazy-loading-angular-12/hero.jpg
+  - url: /engineering-education/lazy-loading-angular-12/hero.png
     alt: Lazy loading in angular
 ---
 
@@ -48,7 +48,7 @@ It's an asynchronous way of loading components in an Angular application. The ne
 > It's also vital that components are loaded once, so when a user visits a specific lazy loaded route, the component will be readily available when a user visits next time, hence the concept of Single Page Application (SPA)
 
 ### Setting up the project
-Now that we have got an idea of why we need to lazy load our applications, let's now proceed and set up our project by running the following commands:
+Now that we have got an idea of why we need to lazy load our applications, we now proceed and set up our project by running the following commands:
 ```bash
 ng new lazyLoadingExample
 ```
@@ -57,12 +57,11 @@ ng new lazyLoadingExample
 Now that our application is ready let's move forward and set up our government project with different departments.
 
 Our project will have three modules, the `AuthModule`, `GovernmentModule`, and the `GovernmentFormsModule`.
-Our main objective is to load these three modules at different times depending on the route activated by the user.
+The main objective is to load these three modules at different times depending on the route activated by the user.
 
 Let's set up our three modules by running the following commands:
 ```bash
  cd lazyLoadingExample
- 
  ng g module auth --routing
  ng g module government --routing
  ng g module government-forms --routing
@@ -71,7 +70,6 @@ Let's set up our three modules by running the following commands:
 The above commands set up three previously discussed modules, each with a routing module to set up our routes.
 
 Next, add two components to the `auth` directory as shown below:
-
 ```bash
 ng g c auth/register
 ng g c auth/login
@@ -80,7 +78,6 @@ ng g c auth/login
 When the above commands are executed, `RegisterComponent` and `LoginComponent` components are added to the `AuthModule`.
 
 Let's follow the above steps and add components for the government modules as shown below:
-
 ```bash
 # add ministries and governor office components
 ng g c government/ministry
