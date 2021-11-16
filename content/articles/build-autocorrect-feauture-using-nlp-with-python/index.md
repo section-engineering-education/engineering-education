@@ -114,7 +114,6 @@ print(f"There are {len(vocab)} unique words in the vocabulary.")
 The following output is displayed in the terminal showing  number of unique words and the top 10 words in the dictionary. 
 
 ```bash
-C:\Users\denatonya\PycharmProjects\Autocorrect_System\venv\Scripts\python.exe C:/Users/denatonya/PycharmProjects/Autocorrect_System/main.py
 The first ten words in the text are: 
 ['a', 'ability', 'able', 'about', 'above', 'accept', 'according', 'account', 'across', 'act']
 There are 1001 unique words in the vocabulary.
@@ -137,7 +136,6 @@ print(f"There are {len(word_count_dict)} key values pairs")
 The output displayed is as shown below with 1001 key values pairs: 
 
 ```bash
-C:\Users\denatonya\PycharmProjects\Autocorrect_System\venv\Scripts\python.exe C:/Users/denatonya/PycharmProjects/Autocorrect_System/main.py
 The first ten words in the text are: 
 ['a', 'ability', 'able', 'about', 'above', 'accept', 'according', 'account', 'across', 'act']
 There are 1001 unique words in the vocabulary.
