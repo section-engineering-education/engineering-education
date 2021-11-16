@@ -1,4 +1,22 @@
-This tutorial will use the detoxify pre-trained model to recognize toxic sentences. We will also integrate this model into the Gradio app to build an interactive application that will allow the user to enter a sentence. The model will give an output if the sentence is toxic or not.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /building-a-toxicity-classifier/
+title: Building a Toxicity Classifier using Python
+description: This tutorial will help the reader understand how to build a toxicity classifier to recognize toxic sentences.
+author: lilian-cheptoo
+date: 2021-11-16T00:00:00-13:00
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/building-a-toxicity-classifier/hero.png
+    alt: Building a Toxicity Classifier using Python Hero image
+---
+This tutorial will use the detoxify pre-trained model to recognize toxic sentences. 
+<!--more-->
+We will also integrate this model into the Gradio app to build an interactive application that will allow the user to enter a sentence. The model will give an output if the sentence is toxic or not.
 
 ### Prerequisites
 To follow along with this tutorial, you need to:
