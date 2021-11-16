@@ -1,12 +1,25 @@
-### Introduction
+---
+layout: engineering-education
+status: publish
+published: true
+url: /lazy-loading-angular-12/
+title: How to lazy load components in Angular 12
+description: This tutorial instroduces reader to the basic concepts of lazy loading components.
+author:  jared-phelix
+date: 2021-16-15T00:00:00-11:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
-Building large applications have a significant impact on the total loading time. Moreover, as the application grows, its performance on the browser reduces significantly hence low user experience.
+  - url: /engineering-education/lazy-loading-angular-12/hero.jpg
+    alt: Lazy loading in angular
+---
 
+Building large applications have a significant impact on the application route loading time. Moreover, as the application grows, its performance on the browser reduces significantly hence low user experience.
+<!--more-->
 In this tutorial, I'll walk you through the concepts of lazy loading in Angular and how it can improve the application loading time on the browser.
 
 ### Table of contents
-
-- [Introduction](#introduction)
 - [Table of contents](#table-of-contents)
 - [Prerequisites](#prerequisites)
 - [Objectives](#objectives)
@@ -17,38 +30,33 @@ In this tutorial, I'll walk you through the concepts of lazy loading in Angular 
 - [Conclusion](#conclusion)
 
 ### Prerequisites
-
 To follow this tutorial along, you need the following;
-
 - Angular CLI is locally installed.
-- Basic knowledge of Angular2+
-- Basic knowledge in JavaScript/TypeScript
+- Basic knowledge of Angular2+.
+- Basic knowledge of JavaScript/TypeScript.
 
 ### Objectives
-
-This tutorial aims to teach you everything you need to know about lazy loading, a concept that will change the way you approach your coding techniques for large applications in Angular.
+This tutorial aims to teach you everything you need to know about lazy loading, a concept that will change how you approach your coding techniques for extensive applications in Angular.
 
 ### What's lazy loading?
+Lazy loading is a technique used in programming to improve the performance of applications, especially web pages, and reduce their load time. It causes pages to load much faster initially, and the additional files are downloaded when needed by the user.
 
-Lazy loading is a concept in Angular that helps load a component when its route is activated. For example, a `RegisterComponent` would be loaded when the `register` route is visited, while other components are not loaded.  
+It's an asynchronous way of loading components in an Angular application. The needed components are loaded to the browser, while those whose routes have not been visited remain unloaded.
 
-It's an asynchronous way of loading components in an Angular application. The needed components are loaded to the browser, while the components whose routes have not been visited remain unloaded.
+>The most important reason lazy loading is used is to improve the application's general loading time. Therefore, it's essential for use in large applications such as e-commerce applications with extensive listings of products.
 
-The most crucial reason why lazy loading is in use is to improve the application general loading time. Therefore, it's essential for use in large applications such as e-commerce applications with extensive listings of products.
-
-> It's also vital that components are loaded once, so when a user visits a specific lazy loaded route, the component will be readily available when user visits next time, hence the concept of Single Page Application (SPA)
+> It's also vital that components are loaded once, so when a user visits a specific lazy loaded route, the component will be readily available when a user visits next time, hence the concept of Single Page Application (SPA)
 
 ### Setting up the project
-
-Let's begin by installing our application by running the following commands:
-
+Now that we have got an idea of why we need to lazy load our applications, let's now proceed and set up our project by running the following commands:
 ```bash
 ng new lazyLoadingExample
 ```
+>The above command,`ng new lazyLoadingExample,` installs our Angular application. It's important to remember that these commands are only made available for use when you have installed the Angular CLI (globally/to a specific directory).
 
-Now that we've our application ready let's move forward and set up our government project with different departments.
+Now that our application is ready let's move forward and set up our government project with different departments.
 
-Our project will have three modules, the `AuthModule`, `GovernmentModule` and the `GovernmentFormsModule`.
+Our project will have three modules, the `AuthModule`, `GovernmentModule`, and the `GovernmentFormsModule`.
 Our main objective is to load these three modules at different times depending on the route activated by the user.
 
 Let's set up our three modules by running the following commands:
@@ -60,9 +68,9 @@ Let's set up our three modules by running the following commands:
  ng g module government-forms --routing
 ```
 
-The above commands set up three previously discussed modules, each with a routing module where we set up our routes.
+The above commands set up three previously discussed modules, each with a routing module to set up our routes.
 
-Next, add two components to the auth directory as shown below:
+Next, add two components to the `auth` directory as shown below:
 
 ```bash
 ng g c auth/register
@@ -86,24 +94,26 @@ ng g c governor-forms/book-appointment
 ```
 
 ### Setting up shared components
+In the previous section, we set up our project components and modules. We also added the routing modules, which we will edit to help us implement lazy loading.
 
-In most cases, you'll need to set up these routes within a given layout. For example, login/register forms may only have inputs without the navbar or footer, unlike the other components.
+In this section, we build a reusable component layout to help us share the standard features of the application.
 
-Let's, therefore, setup two layout components within a `shared` module as shown below:
+>In most cases, you'll need to set up these routes within a given layout. For example, login/register forms may only have inputs without the navbar or footer, unlike the other components.
 
+Let's proceed and setup two layout components within a `shared` module as shown below:
+
+First, create a shared module within the `app` directory:
 ```bash
 ng g module shared
 ```
 
+Next, run the following commands to add layout components:
 ```bash
 ng g c shared/main-layout
 ng g c shared/auth-layout
 ```
 
-The commands above create a module for sharing components, main layout and authentication layout.
-
-Let's edit our main layout component as shown below:
-
+Now that we've our layout module and components, edit main layout component as shown below:
 ```html
 <!--/app/shared/MainLayoutComponent  -->
 <div class="top-row">
@@ -222,7 +232,7 @@ Let's edit our main layout component as shown below:
     </div>
     <div class="row footer-contents-bottom">
       <div class="col-md-6 copyright">
-        <h3>COPYRIGHT 2021 ALL RIGHT RESERVED</h3>
+        <h3>COPYRIGHT 2021, ALL RIGHTS RESERVED</h3>
       </div>
       <div class="col-md-6 banner">
         <h3>Some footer</h3>
@@ -233,15 +243,23 @@ Let's edit our main layout component as shown below:
 
 ```
 
-We've defined our layout (you may use your layout); otherwise, style the above template with Boostrap/CSS. Our layout has one important element, <router-outlet></router-outlet>`. This is where our components that will use this component will be rendered. You notice that the component will have to be sandwiched in between the header and footer.
+The above template has 3 main parts, the header, main body and the footer.The header section has the authentication logic which checks if the current visiting user is authenticated or not.
+
+`<a *ngIf="currentUser!=null" class="btntop">Logged in as {{currentUser.name}}</a>`.  
+The condition above checks if the `currentUser` object is null or has a value.
+> It's important to note that this `currentUser` object is stored in the browser's local storage.
+
+We then have the sign out button which is only made visible to the visiting user only if they are already authenticated as shown in the following conditions:  
+` <button *ngIf="currentUser!=null" class="btntop btn btn-link" (click)="logout()">Sign Out</button>`.
+
+Next after the header we have the `<router-outlet></router-outlet>` element. The `router-outlet is a directive that's available from the `@angular/router package and is used by the router to mark wherein a template, a matched component should be inserted.
+
+We've only defined basic information about our application on the footer, which you customize to meet your requirements.
 
 >Next, define your auth layout following the above concepts!
 
 ### Setting up lazy routes
-
-Now that we've layouts let's proceed and set up the authentication routes as shown below(This section assumes you set up the auth layout in the previous section).
-
-
+Now that we've layouts, let's proceed and set up the authentication routes as shown below (This section assumes you set up the auth layout in the previous area).
 ```ts
 ...
 const routes: Routes = [
@@ -272,7 +290,6 @@ The above module setup has two routes, `register` and `login`, each with their r
 
 Next, import this `AuthRoutingModule` module into the main module as shown below:
 
-
 ```ts
 ...
 const routes: Routes = [
@@ -290,10 +307,9 @@ const routes: Routes = [
 
 ```
 
-The above module defines the path, in this case, `auth`, and now instead of setting up the component, we instead load the `AuthModule`, which already have the components.
+The above module defines the path, in this case, `auth`, and now instead of setting up the component, we load the `AuthModule`, which already has the components.
 
-Now our routes for authentications are:
-
+Resultant full paths for authentications are:
 ```bash
 /auth/register
 /auth/login
@@ -303,6 +319,15 @@ You notice that the path combines the main route `auth` and that of the children
 
 The concepts remain the same, and you can follow the above procedure to set up other lazy loading routes for the `government` and the `government forms.
 
-
 ### Conclusion
 In this tutorial, we've discussed the concept of Angular lazy loading. You've seen how we can use this concept to only load components whose routes have been activated by the user.
+
+Components must not be referenced anywhere else except its routing module. Therefore, we need to remove the component's reference from the `app-module.ts` file; otherwise, it will be eagerly loaded.
+All child routes must be stacked together and have the same route prefix.
+
+Lazy loading is a great way to make your SPA lean and mean faster load times with a few minor changes. These better user experiences will make all the difference for your end-users!
+
+Happy coding!
+
+---
+Peer Review Contributions by: [Miller Juma](/engineering-education/authors/miller-juma/)
