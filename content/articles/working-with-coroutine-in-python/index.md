@@ -1,6 +1,7 @@
 ### Introduction
 Expanded subroutines are referred to as coroutines. A process willingly relinquishes control on a periodic or idle basis to enable other programs to run at the same time, which is known as cooperative multitasking.
-
+In Python, generators are functions that construct iterators.
+When the generator wants to return anything, it uses the same syntax as a function, but instead of writing `return`, we write `yield`.
 With a few more methods and slight variations in yield statements, coroutines vary from Python's generators. Data may be consumed by coroutines in the same way that data is generated for iteration.
 
 The reader should already be familiar with Python's generators.
@@ -36,8 +37,8 @@ Coroutines will use the `send()` method to transmit names, and only those with t
 
 ```python
 def print_cognomen (prfx):
-  print("The coroutine object is looking for the prefix: {}".format(prfx))
-  while True: 
+    print("The coroutine object is looking for the prefix: {}".format(prfx))
+    while True: 
     GivenCognomen = (yield) 
     if prfx in GivenCognomen:
       print(GivenCognomen) 
