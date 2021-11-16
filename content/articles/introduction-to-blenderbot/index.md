@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /introduction-to-blenderbot/
 title: An Introduction to Blenderbot
-description: In this tutorial, we will create a chatbot using PyTorch and the Blenderbot model.
+description: In this tutorial, we will create a chatbot using PyTorch and the Blenderbot model. The model uses a standard seq2seq model transformer-based architecture to generate responses.
 author: esther-awuor
 date: 2021-11-16T00:00:00-16:00
 topics: [Machine Learning]
