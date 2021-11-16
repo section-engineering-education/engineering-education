@@ -172,3 +172,6 @@ I hope you enjoyed this tutorial.
 ### References
 - [Toxicity classifier](https://github.com/tensorflow/tfjs-models/tree/master/toxicity)
 - [Dataset](https://www.kaggle.com/c/jigsaw-multilingual-toxic-comment-classification)
+
+---
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
