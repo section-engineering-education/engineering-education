@@ -1,3 +1,21 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /handpose-detection-using-mediapipe-and-python/
+title: MediaPipe HandPose Detection using Python
+description: This tutorial will show the reader how to build a Handpose detector using MediaPipe and Python.
+author: sharon-kinyan
+date: 2021-11-16T00:00:00-19:00
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/handpose-detection-using-mediapipe-and-python/hero.png
+    alt: handpose example image 
+---
+Handpose recognition is a deep learning technique that allows you to detect different points on your hand. These points on your hand are commonly referred to as landmarks. These landmarks consist of joints, tips, and bases of your fingers.
+<!--more-->
 [MediaPipe](https://google.github.io/mediapipe/solutions/hands) provides many customizable ML pre-trained models. The handpose model is one of their latest releases. With researchers aiming to democratize AI using such amazing pre-trained models, it is important that we can understand ML with only a few lines of code. This tutorial aims to show our readers how to build their very own Handpose detector using MediaPipe and Python. They'll be able to use their computer's webcam to track the joints in their hands and in real-time. 
 
 ### Prerequistes
