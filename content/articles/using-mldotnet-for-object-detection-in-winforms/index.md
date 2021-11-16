@@ -246,11 +246,29 @@ In the button function, the prediction engine is used to take in the data that i
 
 The code also has `BndBoxes`. This code includes the X_axis and Y_axis values, the height and width of the prediction levels. This code is auto-generated when the class is created.
 
-Now, there are four classes in your `Models` folder that you created.
+Now, there are four classes in your `Models` folder that you created. i.e;
 
-The code in this class files are not to be changed since they are auto-generated.
+### Image settings class
+The image settings class is used to set the width and height of the images. The code below is used in the class.
 
-The only class you can edit is the `ImageSettings` file and use the type of width and height that you want your image to fit.
+```C#
+Public class ImageSettings
+{
+  public const int imgHeit = 400;
+  public const int imgBreadth =400;
+}
+```
+
+### Image input class.
+The image input class receives the data of the image that is to be predicted. This class takes properties from the images settings class and it is a bitmap type of data.
+
+```C#
+public class ImageInput
+{
+  [imageType(ImageSettings.imgHeit, ImageSettings.imgBreadth)]
+  public Bitmap Image {get; set; }
+}
+```
 
 ### Adding a picture
 The main thing remaining for your project is creating where you will your image to do the predictions.
