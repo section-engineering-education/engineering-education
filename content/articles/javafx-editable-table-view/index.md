@@ -1,10 +1,16 @@
-Tables are significant when it comes to data entry and display in applications. Table views support the tabular format display. This kind of format makes it easy to correct and check data patterns. Since this kind of data display format was created in Sheet applications, e.g., Excel, developers have preferred it in TPS and MIS systems.
+Tables are significant when it comes to data entry and display in applications. Table views support the tabular format display.
 
-Being focused on UI, JavaFX can represent data in tabular format. However, one can only view but not edit each cell individually since they are not editable. This article has solutions to this issue. The reader will create an editable Table View by the end of the article. That will enable easy data updates directly on the table being displayed.
+This kind of format makes it easy to correct and check data patterns. Since this kind of data display format was created in sheet applications like Microsoft Excel, developers have preferred it in [TPS](https://en.wikipedia.org/wiki/Transaction_processing_system) and [MIS](https://en.wikipedia.org/wiki/Management_information_system) systems.
+
+With focus on the user interface, JavaFX represents data in a tabular format. However, one can only view, but not edit each cell individually.
+
+This article provides solutions for addressing this issue.
+
+By the end of this article, the reader will learn to create an editable table view that enables easy data updates directly on the table.
 
 ### Table of contents
 - [Key takeaways](#key-takeaways)
-- [Pre-requisites](#pre-requisites)
+- [Prerequisites](#prerequisites)
 - [Article structure](#article-structure)
 - [Project initialization](#project-initialization)
   - [Initial Project Structure](#initial-project-structure)
@@ -20,48 +26,48 @@ Being focused on UI, JavaFX can represent data in tabular format. However, one c
 
 ### Key takeaways
 At the article's tip, the reader will be able to do the following:
-- Create a TableView
-- Format the Table
-- Add data items on the TableView
-- Make the TableView editable through the use of its controller
-- Get the edited items
+- Create a [TableView](https://docs.oracle.com/javafx/2/api/javafx/scene/control/TableView.html).
+- Format the table.
+- Add data items on the `TableView`.
+- Make the `TableView` editable through the use of its controller.
+- Get the edited items.
 
 ### Pre-requisites
-This article is an intermediate-level Java user article. If new to JavaFX, start with a simple hands-on project in this [article](https://www.section.io/engineering-education/design-a-sign-up-and-login-gui-using-javafx/). To easily follow up with the article's content, the following are the needed skills and tools:
+This article is an intermediate-level article on JavaFX.
 
-- A good Java IDE. The recommendation is the use of the latest IntelliJ Ultimate version.
-- A good internet connection
-- Java SDK installed on the machine. JDK 17 was used for the screenshots.
+If you're new to JavaFX, start with a simple hands-on project by going through this [article](/engineering-education/design-a-sign-up-and-login-gui-using-javafx/).
+
+To easily follow up with the article's content, the following are the needed skills and tools:
+- A good Java IDE. The recommendation will be to use the latest IntelliJ version.
+- A good internet connection.
+- Java SDK installed on the machine. Here, we will be using JDK 17.
 
 > **NOTE**: The system requirements and specifications may change over time. Make sure to be watching out for new ones and how to implement them in the project.
 
 ### Article structure
-In the article, the following steps will be followed to accomplish the points noted in
-the [Key TakeAways](#key-takeaways) section:
-
-- Project initialization
-- Table creation and design
-- Adding dummy data to the table
-- Make the Table data editable
-- Fetch the contents edited
+In the article, the following steps will be followed to accomplish the points noted in the [key takeaways](#key-takeaways) section:
+- Project initialization.
+- Table creation and design.
+- Adding dummy data to the table.
+- Make the Table data editable.
+- Fetch the contents edited.
 
 Let us begin with the first step:
 
 ### Project initialization
 To set up a new JavaFX project, do the following:
 
-- Open the IDE and click on the '**New Project**' button
-- Select JavaFX as the Framework
+- Open the IDE and click on the '**New Project**' button.
+- Select JavaFX as the framework.
 - Set the following in the window:
   - **Name**: editable-tableview
   - **Group**: com.table
   - **Artifact**: editabletableview
 
-These are shown below:
-
 ![New JavaFX editable tableview project](engineering-education/javafx-editable-table-view/new-javafx-editable-tableview-project.png)
 
-- Click '**Next**'. In the **Dependencies** section, set the dependencies shown below and click on the '**Finish**' button:
+- Click '**Next**'.
+- In the **Dependencies** section, set the dependencies as shown below and click on the '**Finish**' button:
 
 ![Project dependencies](engineering-education/javafx-editable-table-view/new-javafx-editable-tableview-project-dependencies.png)
 
@@ -87,8 +93,8 @@ The application generated has the following structure:
 #### New project structure
 - Create a new folder in the `java/com/table/editabletableview` path and name it `model`. It will hold the dummy data.
 - Create another folder named `controller` in the same path.
-- Change the location of the `HelloController.java` file to the new 'controller' folder created. This step can be done by right-clicking the file and pasting it to the new location.
-- In the 'model' folder, create a new file named `User.java`.
+- Change the location of the `HelloController.java` file to the new `controller` folder created. This step can be done by right-clicking the file and pasting it to the new location.
+- In the `model` folder, create a new file named `User.java`.
 
 The resulting folder structure looks as follows:
 
@@ -115,14 +121,15 @@ The resulting folder structure looks as follows:
 To achieve this, do the following:
 
 - Open the FXML file found in the `resources/com/table/editabletableview` path.
-- The IDE will produce a prompt notification at the top of the file to install JavaFX SDK. Just allow it, and the IDE
-  will automatically set it up and configure it for the project.
-- On the bottom left area near the status bar, click on the 'SceneBuilder' option to view and develop the application using the SceneBuilder.
+- The IDE will produce a prompt notification at the top of the file to install `JavaFX SDK`. Just allow it, and the IDE will automatically set it up and configure it for the project.
+- On the bottom left area near the status bar, click on the `SceneBuilder` option to view and develop the application using the [SceneBuilder](https://www.oracle.com/java/technologies/javase/javafxscenebuilder-info.html).
 - If it is the first time to create a JavaFX project using the IDE on the machine, it will give prompt notification to install the SceneBuilder. Just click on the 'Install' option, and the IDE will download it and set it up.
-- Restart the IDE if it does not automatically load to the SceneBuilder view.
+- Restart the IDE, if it does not automatically load to the SceneBuilder view.
 
 ### Table creation and design
-- In the SceneBuilder view, delete the 'VBox' holding the 'Hello' button by simply right-clicking on it and selecting the Delete option. The code shown below will be deleted. This step can be viewed in the 'Text' view.
+- In the SceneBuilder view, delete the `VBox` holding the `Hello` button by simply right-clicking on it and selecting the Delete option.
+
+The code shown below will be as deleted. This step can be viewed in the `Text` view here:
 
 ```xml
 <VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
@@ -148,32 +155,31 @@ protected void onHelloButtonClick(){
 }
 ```
 
-- In the `HelloApplication.java` file, change the width and height of the Scene created to 800 by 600, as shown in the
-  line of code below:
+- In the `HelloApplication.java` file, change the width and height of the `Scene` created to `800` by `600`, as shown in the
+line of code below:
 
 ```java
 Scene scene=new Scene(fxmlLoader.load(),800,600);
 ```
 
-Once done, that removes the default example code generated during project initialization. Now proceed to the next steps
+On doing that, it removes the default example code generated during project initialization. Now, proceed to the next steps
 as follows:
 
-- Open the FXML file and drag-and-drop a BorderPane from the left-side panel, under the **Containers** section into the
-  center of the design page.
-- On the Layout section under the right-side panel, set the following for the BorderPane so that it can fit with the Scene created:
+- Open the FXML file and drag-and-drop a `BorderPane` from the left-side panel, under the **Containers** section into the
+center of the design page.
+- On the layout section under the right-side panel, set the following for the `BorderPane` so that it can fit with the Scene created:
   - `Pref Width`: 800
   - `Pref Height`: 600
-
-- Drag-and-drop a TableView control from the left-side panel into the 'center' section of the BorderPane. The results
-  look as follows:
+- Drag-and-drop a `TableView` control from the left-side panel into the 'center' section of the BorderPane. The results
+should look as follows:
 
 ![New TableView](engineering-education/javafx-editable-table-view/new-tableview.png)
 
-- Double-click on the `C1` header and change it to `id`. Do the same for the `C2` header and make it read `name`.
-- To add other columns, head over to the 'Controls' section and select the 'TableColumn' option. Then, drag-and-drop it next to the other columns and size it appropriately. Its name will be `email`.
-- Add other two columns to the TableView named `notes` and `edit`, respectively. Adjust the sizes appropriately so that the columns fit the TableView.
+- Double-click on the `C1` header and change it to `id`. Do the same for the `C2` header and edit it as `name`.
+- To add other columns, head over to the `Controls` section and select the `TableColumn` option. Then, drag-and-drop it next to the other columns and size it appropriately. Its name will be `email`.
+- Add other two columns to the `TableView` named `notes` and `edit`, respectively. Adjust the sizes appropriately so that the columns fit the TableView.
 
-The SceneBuilder will generate the following code:
+The `SceneBuilder` will generate the following code:
 
 ```xml
 <!--The application's controller is well pointed out-->
@@ -194,7 +200,7 @@ The SceneBuilder will generate the following code:
 </BorderPane>
 ```
 
-> Notice that the controller location is well shown out in the application.
+> Notice that, the controller location is well shown out in the application.
 
 The results are as follows:
 
@@ -209,8 +215,7 @@ In the '**User.java**' file, do the following:
 ```java
 /*Add the strings and buttons to be used in the application*/
 String id,name,email,notes;
-
-        Button update;
+Button update;
 ```
 
 - Generate their constructor. It looks as shown below:
@@ -256,40 +261,32 @@ update.setOnAction(e->{
 ```java
 /* Getters and setters */
 public String getId(){
-        return id;
-        }
-
+  return id;
+}
 public void setId(String id){
-        this.id=id;
-        }
-
+  this.id=id;
+}
 public String getName(){
-        return name;
-        }
-
+  return name;
+}
 public void setName(String name){
-        this.name=name;
-        }
-
+  this.name=name;
+}
 public String getEmail(){
-        return email;
-        }
-
+  return email;
+}
 public void setEmail(String email){
-        this.email=email;
-        }
-
+  this.email=email;
+}
 public String getNotes(){
-        return notes;
-        }
-
+  return notes;
+}
 public void setNotes(String notes){
-        this.notes=notes;
-        }
-
+  this.notes=notes;
+}
 public Button getUpdate(){
-        return update;
-        }
+  return update;  
+}
 ```
 
 This code sets up getters and setters for:
@@ -331,8 +328,8 @@ The code above imports:
 - Table Columns: column_id,column_name,column_email,column_notes
 - Button: col_update
 
-
-- Under the imported controls, use the code below to do initialization of a controller after the controller's root element has been processed completely. It will also execute two functions that will be defined later on. These are the `initializeCols()` and the `loadData()` functions.
+- Under the imported controls, use the code below to do initialization of a controller after the controller's root element has been processed completely.
+- It executes two functions that will be defined later on. These are the `initializeCols()` and the `loadData()` functions.
 
 ```java
 @Override
@@ -346,33 +343,27 @@ public void initialize(URL url,ResourceBundle resourceBundle){
 
 > **NOTE**: The `location` parameter is used to resolve the relative paths for the root objects if it is known, while the `resources` does localization for the root object.
 
-- Elaborate more on the functions of the `initializeCols()` function. It shall be pointing out that the values entered for specific row cells are of a particular set of datatype as defined in the 'User' model. For example, all values
-  in the _column_id_ section are for all IDs.
+- To elaborate more on the functions of the `initializeCols()` function. It will be pointing out that the values entered for specific row cells are of a particular set of datatype as defined in the 'User' model. For example, all values in the _column_id_ section are for all IDs.
 
 ```java
 private void initializeCols(){
-    // User.java ==>> id, name, email, notes;
-
-    column_id.setCellValueFactory(new PropertyValueFactory<>("id"));
-    column_name.setCellValueFactory(new PropertyValueFactory<>("name"));
-    column_email.setCellValueFactory(new PropertyValueFactory<>("email"));
-    column_notes.setCellValueFactory(new PropertyValueFactory<>("notes"));
-    col_update.setCellValueFactory(new PropertyValueFactory<>("update"));
-
-
+  // User.java ==>> id, name, email, notes;
+  column_id.setCellValueFactory(new PropertyValueFactory<>("id"));
+  column_name.setCellValueFactory(new PropertyValueFactory<>("name"));
+  column_email.setCellValueFactory(new PropertyValueFactory<>("email"));
+  column_notes.setCellValueFactory(new PropertyValueFactory<>("notes"));
+  col_update.setCellValueFactory(new PropertyValueFactory<>("update"));
 }
 ```
 
-The code above,as previously stated, associates each column in the table with a datatype e.g.:
-- column_id to carry IDs(id)
-- column_name for names(name)
-- column_email for email
-- column_notes for notes
-- column_update for update button(button)
+As previously stated, each column in the table is associated with a datatype:
+- `column_id` to carry IDs(id)
+- `column_name` for names(name)
+- `column_email` for email
+- `column_notes` for notes
+- `column_update` for update button(button)
 
-
-- Create another function named `loadData()` that creates dummy data for the application through iteration. Copy-paste
-  the following code into the file.
+- Create another function named `loadData()` that creates dummy data for the application through iteration. Copy-paste the following code into the file.
 
 ```java
 private void loadData(){
@@ -396,12 +387,13 @@ This code above produces the outcome as records are stored in the system.
 
 - Try to double-click on a cell and see if the contents can be modified.
 
-As noted, it can only select it but cannot allow editing of the contents.
+As mentioned earlier, we can only select it, but cannot edit the contents.
 
-### Make the Table cells editable
-Now in the Controller, do the following:
+### Make the table cells editable
+Now, in the Controller, do the following:
 
-- Add a function, that is, the `editableCols()` method, to make the cell have a 'Text Field's' property that allows displaying the message and editing properties. It also changes the value of the cell once a commit is done. A commit is done when the value is changed, and the Enter button is pressed.
+- Add a function `editableCols()` to make the cell have a `Text Field` property that allows displaying the message and editing properties.
+- It also changes the value of the cell once a commit is done. A commit is done when the value is changed, and the Enter button is pressed.
 
 ```java
 private void editableCols(){
@@ -423,9 +415,8 @@ private void editableCols(){
 ```
 
 The above code does the following:
-  - Makes the TableView and all in it (e.g., cells) to be editable
-  - Get the specific cell whether, on the IDs, names, email, and notes column when doubled clicked on
-
+- Makes the `TableView` with all the cells editable.
+- Get the specific cell whether, on the IDs, names, email, and notes column when doubled clicked on.
   
 - To use the above function, call it inside the `initializeCols()` function, under the `col_update` line using the line below:
 
@@ -434,25 +425,28 @@ The above code does the following:
 editableCols();
 ```
 
-- Re-run the application and try again. Notice that now the updates happen when changes are done, and the Enter key is pressed to commit the changes.
-  The outputs are sent to the terminal as configured before on the Update button press.
+- Re-run the application and try again. Notice that, now the updates happen when changes are done, and the Enter key is pressed to commit the changes.
+
+The outputs are sent to the terminal as configured before on the Update button press.
 
 ![Final Result](engineering-education/javafx-editable-table-view/final-output.png)
 
 The content updates can be fetched for updating the content in the database.
 
-Find the code [here](https://github.com/prograte/JavaFX-editable-table-view).
+You can find the full code [here](https://github.com/prograte/JavaFX-editable-table-view).
 
 ### Conclusion
-The tabular format is a very appealing form of data representation. It is easy to understand and use. It is also effortless to edit and update the content. JavaFX allows one to view and update the content in a tabular form. It also allows stylings to be applied to the tables created.
+The tabular format is a very appealing form of data representation. It is easy to understand and use. It is also effortless to edit and update the content.
+
+JavaFX allows one to view and update the content in a tabular form. It also allows stylings to be applied to the tables created.
 
 At this point, the reader has learned and known how to:
-- Start a JavaFX project
-- Table creation and design
-- Adding dummy data to the table
-- Make the Table data editable
-- Fetch the contents edited in the console
-- Manipulate the edited data
+- Start a JavaFX project.
+- Create table and design them.
+- Add dummy data to the table.
+- Make the table data editable.
+- Fetch the contents edited in the console.
+- Manipulate the edited data.
 
 ### References
 - [Initializable Interface](https://docs.oracle.com/javase/8/javafx/api/javafx/fxml/Initializable.html) JavaFX documentation.
