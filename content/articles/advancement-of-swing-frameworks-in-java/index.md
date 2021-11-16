@@ -52,7 +52,7 @@ Although the component blueprint of Swing's Framework is based on MVC, the tradi
 ### Event handling
 Since we have some information about swing frameworks we can proceed to how events are handled in the preceding section. Swing generates the interactions to be handled by the components responding to user input as well as events. When a set timer goes off, it triggers an event. 
 
-The most important part of all Swing-based applications is event handling. In most instances, Events in AWT are also used in swings, and the execution of these events are all contained in `java.awt.event`. The `java.swing.event`allows for packaging only Swing-specific events. Illustrated by code below is an event-generated swing button `PUSH `.
+The most important part of all Swing-based applications is event handling. In most instances, Events in AWT are also used in swings, and the execution of these events are all contained in `java.awt.event`. The `java.swing.event`allows for packaging only Swing-specific events. Illustrated by the code below is an event-generated swing button `PUSH `.
 
 ```java
 package eventdemo;
