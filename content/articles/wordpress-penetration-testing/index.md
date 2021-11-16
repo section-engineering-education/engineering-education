@@ -17,9 +17,9 @@ This article will cover WordPress penetration testing (pen-testing), how hackers
 To follow this guide, one needs permission from a WordPress website to carry out penetration testing. Also, make sure Kali Linux and virtual box are installed on your computer. Kali Linux contains several security tools which handle information security tasks such as penetration testing.
 
 ### What is WordPress penetration testing?
-Penetration testing is the practice of analyzing websites, systems, applications, and networks to find vulnerabilities an attacker might exploit.
+The practice of assessing websites, systems, apps, and networks for vulnerabilities that an attacker could exploit is known as penetration testing.
 
-These vulnerabilities could be because of various reasons. Let us check out a few of them:
+These vulnerabilities could be caused by a variety of factors. Let's have a look at a couple of them:
 + **The design and implementation of the WP website**. A poorly designed and implemented website is open to these security issues, brute force attacks, denial of service (DoS) attacks, theft of sensitive data, and malware-related hacks.
 + **Poor system configuration**. System configuration is like the heart and soul of your WP site. A poor system configuration increases the chances of attacks. Also, make sure that WordPress core, themes, and plugins are updated. 
 + **Unsecure network**. Using networks from untrusted sources is dangerous. There are high chances of a WP site attack when connected to an unsecured network.
@@ -27,7 +27,7 @@ These vulnerabilities could be because of various reasons. Let us check out a fe
 
 Penetration testing has never been more critical than it is today. The best defense starts by knowing your strengths and weaknesses, which attackers could take advantage of.
 
-Pentesting provides you with intelligence and insights into how to mature your WordPress security. Simply, you become the hacker to secure your site. This is by understanding how you are likely to be attacked and what steps to take to secure your site.
+Pentesting provides you with intelligence and insights into how to mature your WordPress security. Simply, you take on the role of a hacker to secure your website. This is by understanding how you are likely to be attacked and what steps to take to secure your site.
 
 The penetration testing process identifies the system's vulnerabilities, system exploitation, discovering vulnerabilities, and reporting.
 
@@ -55,23 +55,23 @@ To avoid falling into the trap of being hacked, make sure:
 A penetration testing methodology is a systematic approach used to identify vulnerabilities and weaknesses in the IT infrastructure. This systematic approach gives you the utmost amount of information about the security outlook of your system, network, website, or application.
 
 While doing penetration testing, break it down into the following:
-1. **Reconnaissance**. In this phase, you gather information about your system, network, and servers.
+1. **Reconnaissance**. In this phase, You collect data on your system, network, and servers.
 2. **Scanning**. In this phase, you run a scan on your site to find vulnerabilities.
 3. **Exploitation**. In this phase, you test any possible exploitation of flaws identified in the previous phase. The exploitation of security vulnerabilities allows assessing their impact.
 4. **Mitigation**. This phase removes the vulnerabilities you have found from your system, network, and servers.
 
 ### Using Kali Linux on VirtualBox for WordPress security
-Getting started with WordPress penetration testing, Kali Linux is the standard tool for penetration testers. Kali Linux has multiple tools modeled towards web security tasks such as penetration testing. Therefore we'll need to install Kali Linux on a virtual machine (virtual box).
+When it comes to WordPress penetration testing, Kali Linux is the main tool for penetration testers. Kali Linux has multiple tools modeled towards web security tasks such as penetration testing. As a result, we'll have to set up Kali Linux on a virtual machine (VirtualBox).
 
-While doing pen-testing, you become a hacker on your site. [Virtual machines](https://azure.microsoft.com/en-us/overview/what-is-a-virtual-machine/#what-benefits) are amazing tools if you want to become a hacker or learn Linux. We're going to set up a virtual machine on our computers. A virtual machine is simply a computer inside a computer.
+While doing pen-testing, you become a hacker on your site. [Virtual machines](https://azure.microsoft.com/en-us/overview/what-is-a-virtual-machine/#what-benefits) are excellent tools if you want to become a hacker or learn Linux. On our computers, we'll set up a virtual machine. A virtual machine is a computer inside another computer.
 
 #### Installing Kali Linux on a VirtualBox
-We'll use Kali Linux installed on a virtual machine on our computers to carry out penetration testing. Some developers use VMWare to host the virtual machine, which is commercial software. Other developers use Virtual Box, which is free software. Both of these tools work well. In our case, we will use a Virtual Box.
+To perform penetration testing, we'll use Kali Linux installed on a virtual machine on our computers. Developers use either VMWare or VirtualBox to host the virtual machine. VMWare is commercial software, and VirtualBox is free software. Both of these tools work well. In our case, we will use a Virtual Box.
 
 To begin, install Kali Linux with VirtualBox.
 1. [Download and install Virtual Box](https://www.virtualbox.org/wiki/Downloads) on your computer.
 2. [Download Kali Linux 64 bit](https://www.kali.org/get-kali/#kali-bare-metal).
-3. Create a VirtualBox virtual machine to host Kali Linux, then select Debian 64 bit as the Operating system (OS). Ensure you select 10GB disk space or more to prevent running out.
+3. To host Kali Linux, create a VirtualBox virtual machine and choose Debian 64 bit as the operating system (OS). To avoid running out of disk space, choose a size of at least 10GB.
 4. Boot into the new virtual machine.
 5. Boot into Kali and select the install option.
 6. Open VirtualBox and Kali Linux will be visible. Please select it and click Start.
@@ -79,14 +79,14 @@ To begin, install Kali Linux with VirtualBox.
 ![Kali Linux and VirtualBox Install](/engineering-education/wordpress-penetration-testing/kali-vb-install.jpg)
 
 ### WordPress penetration testing tools
-WordPress security is essential. Make sure everything is up to date, including WordPress, themes, and plugins. To conduct WP security, you need the right tools. This is why we installed Kali Linux, as it comes with a wide variety of security tools.
+WordPress security is essential. Make sure that everything, including WordPress core, themes, and plugins, is up to date. You'll need the necessary tools to conduct WP security. This is why we chose Kali Linux, which includes a wide range of security features.
 
-Now that our setup is up and running, let us go through WP penetration testing tools and how they are used.
+Now that our setup is up and running let us go through WP penetration testing tools and how they are used.
 
 #### WPScan
 WPScan is a command-line (CLI) tool that is free for use. Its focus is on WordPress security and is a significant choice for [black-box testing](https://en.wikipedia.org/wiki/Black-box_testing) of your WordPress site. 
 
-WPScan is a WordPress vulnerability scanner that examines your website to see the WordPress core, theme, and plugins installed and reports any vulnerabilities. To use this tool, open the Kali Linux terminal and type this command:
+WPScan is a WordPress vulnerability scanner that scans your website for vulnerabilities in the WordPress core, theme, and plugins installed. To use this program, start a terminal in Kali Linux and type the following command:
 
 `wpscan --url http://example.com`
 
@@ -97,29 +97,29 @@ Replace `example.com` with the URL of your WordPress site.
 To learn more, go through the [WPScan documentation](https://blog.wpscan.com/wpscan-user-documentation/).
 
 #### Sqlmap
-Sqlmap is an extremely efficient penetration testing tool. It focuses on detecting SQL injection (SQLi) vulnerabilities on WordPress websites. Also, the Sqlmap tool helps developers to find SQL bugs present in themes and plugins. To use this tool, open the Kali Linux terminal and type this command:
+Sqlmap is a powerful tool for penetration testing. It concentrates on identifying SQL injection (SQLi) flaws on WordPress sites. The Sqlmap tool also aids developers in locating SQL problems in themes and plugins. To use this program, start a terminal in Kali Linux and type the following command:
 
 `sqlmap -u  www.example.com/index.html?parameter=1" --dbs`
 
 ![Sqlmap](/engineering-education/wordpress-penetration-testing/sqlmap.jpg)
 
-The term `-dbs` will help you identify any SQLi bug found in the database during WP penetration testing.
+During WP penetration testing, the keyword '-dbs' will assist you to find any SQLi bugs found in the database.
 
-Therefore if there is no bug found, that doesn't signify that the site is safe. Sqlmap tool has multiple options to find SQLi vulnerabilities. To learn more, go through the [Sqlmap documentation](https://sqlmap.org/).
+As a result, the absence of a flaw does not imply that the site is secure. Sqlmap is a tool that can be used to find SQLi vulnerabilities. See the [Sqlmap documentation](https://sqlmap.org/) for further information.
 
 #### PHPStan
-PHPStan is an analysis tool that helps you discover bugs in your WordPress site. This tool comes as an extension designed for WordPress and which is downloaded separately. After configuring this tool, open the Kali Linux terminal and type this command:
+PHPStan is a WordPress analysis tool that can help you find bugs in your site. This tool is available as a WordPress extension that must be downloaded separately. After configuring this tool, open the Kali Linux terminal and type this command:
 
 `vendor/bin/phpstan analyze Dir1 Dir2`
 
 ![PHPStan](/engineering-education/wordpress-penetration-testing/phpstan.jpg)
 
-Then, replace `Dir1` and `Dir2` with the directories consisting of the WordPress code that you want to scan for bugs. To learn more, check out the [PHPStan documentation](https://phpstan.org/user-guide/getting-started).
+Then, replace 'Dir1' and 'Dir2' with the directories containing the WordPress code you want to test. Check out the [PHPStan documentation](https://phpstan.org/user-guide/getting-started) for further information.
 
 #### XSSer
-[Cross-Site Scripting (XSS)](https://owasp.org/www-community/attacks/xss/) is a common security threat found in WordPress websites. Hence, we can examine various WordPress themes and plugins for XSS bugs using a tool called Cross-Site "Scripter" (XSSer).
+[Cross-Site Scripting (XSS)](https://owasp.org/www-community/attacks/xss/) is a common security problem found in WordPress websites. To prevent this threat, we use a tool called Cross-Site "Scripter" to look for XSS issues in various WordPress themes and plugins (XSSer).
 
-XSSer is a framework to discover, exploit, and report XSS vulnerabilities on your WordPress websites. In addition, this tool enables you to bypass certain security filters and particular techniques of code injection.
+XSSer is a program for finding, exploiting, and reporting cross-site scripting (XSS) vulnerabilities in WordPress websites. Furthermore, you can use this tool to get beyond some security filters and code injection techniques.
 
 To do a simple scan, you can use a graphical interface. To do so, open the Kali Linux terminal and type this command:
 
@@ -130,9 +130,10 @@ To do a simple scan, you can use a graphical interface. To do so, open the Kali 
 When the graphical interface opens, set the suitable options and enter the site's details, and WP pen-testing for XSS vulnerabilities will begin. To learn more, go through the [Xsser documentation](https://xsser.03c8.net/).
 
 ### Conclusion
-I hope this guide has given an excellent introduction to WordPress penetration testing and practice as well. WordPress security is essential, and it's valuable to invest in the security of your WordPress website.
+I hope this guide has provided a good overview of WordPress penetration testing and practice.
+WordPress security is critical, and it's worthwhile to invest in your website's protection.
 
-Using the information provided in this document, you can come up with a WP pen-testing strategy. Now assemble your tools to perform reconnaissance and scanning, exploit where needed and mitigate vulnerabilities that you discover. Good luck!
+Using the information provided in this document, you can come up with a WP pen-testing strategy. Now assemble your tools to perform reconnaissance and scanning, exploit where needed and mitigate vulnerabilities that you discover. Best of luck!
 
 ### Further reading
 To learn more about WordPress penetration testing, go through these articles:
