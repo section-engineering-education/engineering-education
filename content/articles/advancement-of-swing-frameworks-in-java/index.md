@@ -1,13 +1,28 @@
-﻿### Advancement of Swing Frameworks in Java
- Java Foundation Class took swing Framework to be  part of it. Java version 1.1 initially contained Swing Framework as a well-defined library. Later on, it got integrated into Java language.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /advancement-of-swing-frameworks-in-java/
+title: Advancement of Swing Frameworks in Java
+description: Swing in Java is an Application Programming Interface (API) for providing graphical user interface elements to Java Programs. In this article, we will learn all you need to get started with swings in Java.
+author: jacob-muganda
+date: 2021-11-16T00:00:00-11:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
-**Framework** can enhance issues due to the fact frameworks may be large and complex. When we recall small programs, a spring framework can bring about greater difficulty than the unique gadget it supposedly improves. Since the Swing Framework has dreams that lessen any tough results that a larger framework ought to do.
+  - url: /engineering-education/advancement-of-swing-frameworks-in-java/hero.png
+    alt: Advancement of Swing Frameworks in Java Hero Image
+---
+Java Foundation Class took Swing Framework to be part of it. Java version 1.1 initially contained Swing as a well-defined library. Later on, it got integrated into the Java language.
+<!--more-->
+The framework can enhance issues due to the fact frameworks may be large and complex. When we recall small programs, a spring framework can bring about greater difficulty than the unique gadget it supposedly improves, since Swing has dreams that lessen any tough results that a larger framework ought to do.
 
- 
-The primary objective of the framework is to provide the kernel of a  Swing application, assisting programmers to get started swiftly and to gain optimum practices from just a few elements similar to every Swing Framework.
+The primary objective of the framework is to provide the kernel of a Swing application, assisting programmers to get started swiftly and to gain optimum practices from just a few elements similar to every Swing Framework.
+
 ### Table of contents
--  [Prerequisites](#prerequisites)
--  [Pluggable Feel and Look Provided by Swing](#pluggable-feel-and-look-provided-by-swing)
+- [Prerequisites](#prerequisites)
+- [Pluggable Feel and Look Provided by Swing](#pluggable-feel-and-look-provided-by-swing)
 - [The MVC Connection](#the-mvc-connection)
 - [Event Handling](#event-handling)
 - [Performing  Swing Painting ](#performing-swing-painting)
@@ -16,32 +31,39 @@ The primary objective of the framework is to provide the kernel of a  Swing appl
 
 ### Prerequisites
 
-To follow along, you must:
+To follow along with this article, the reader must have the following:
+- Familiarity with Java programming language.
+- Familiarity with the introduction to java swing. Refer to this [introduction to java swing](https://www.section.io/engineering-education/introduction-to-java-swing/) article. 
 
-1.  Be familiar with java programming language.
-2.  Be familiar with introduction to java swing. Refer to this article to  [introduction to java swing](https://www.section.io/engineering-education/introduction-to-java-swing/)
+### Pluggable feel and look provided by swing
+The pluggable feel and look provided by Swing is one of the reasons that makes it considered by Java code.  The control of Swing makes it create an aesthetic feeling. Meaning that the look and feel of a component can be separated from the logic of the component because that is what Swing does. 
 
-### Pluggable Feel and Look Provided by Swing
-  
-Pluggable Feel and Look Provided by Swing makes it  considered by Java code. Control of Swing makes it  create an aesthetic feeling. Meaning that  the look and feel of a component can be separated from the logic of the component because that is what Swing does. It is possible to “plug in” an unused look and feel for any given component with failure to create any side effects in the code that uses that component. Pluggable feel-and-look has important benefits all through. It is practical to explain a feel and look that is uniform across all platforms. That is, suppose an application will be running  in a MacOS environment only, it is achievable to define the MacOS feel and look. It is also possible to model the convention feel and look. To sum up, the feel and look can be changed dynamically at run time.
+It is possible to “plugin” an unused look and feels for any given component with failure to create any side effects in the code that uses that component. Pluggable feel-and-look has important benefits all through. 
 
-### The MVC Connection
- The **Swing Framework** is ideal since it is underpinned by the ideas and its design refering to the link created by the MVC, problems arise from Swing components due to a high level of differences caused by the separation of the controller and view. Swing deploys a modified version of MVC, on the other hand, that combines view and controller binding into an exclusive logical object referred to as the UI delegate. The Separable Model blueprint or the Model-Delegate blueprint are the two techniques used by Swing. Although the component blueprint of Swing's Framework is based on MVC, the traditional implementation is not deployed. The blueprint of the Model-Delegate resizes and realizes Swing's pluggable feel and look.
+It is practical to explain a feel and look that is uniform across all platforms, that is, suppose an application will be running in a MacOS environment only, it is achievable to define the MacOS feel and look. It is also possible to model the convention feel and look. 
+
+To sum up, the feel and look can be changed dynamically at run time.
+
+### The MVC (Model-View-Controller) Connection
+The Swing framework is ideal since it is underpinned by the ideas and its design referring to the link created by the MVC. Problems arise from Swing components due to a high level of differences caused by the separation of the controller and view.
+
+On the other hand, Swing deploys a modified version of MVC, that combines view and controller binding into an exclusive logical object referred to as the UI delegate. The Separable Model blueprint or the Model-Delegate blueprint are the two techniques used by Swing. 
+
+Although the component blueprint of Swing's Framework is based on MVC, the traditional implementation is not deployed. The blueprint of the Model-Delegate resizes and realizes Swing's pluggable feel and look.
 
 ### Event Handling
-Since we are already learnt a little about swing frameworks we can proceed to how events are handled in the preceding section.
-**Swing Framework** generates the interactions to be handled by the components responding to user input as well as events. When a set timer goes off, that is, triggers an event. The most important part of all Swing-based applications is event handling. In most instances, Events in AWT are also used in swings, and the execution of these events are all contained in *java.awt.event*. The *java.swing.event* allows for packaging only Swing-specific events. Illustrated by code below is an event-generated swing button **PUSH**.
+Since we have some information about swing frameworks we can proceed to how events are handled in the preceding section. Swing generates the interactions to be handled by the components responding to user input as well as events. When a set timer goes off, it triggers an event. 
+
+The most important part of all Swing-based applications is event handling. In most instances, Events in AWT are also used in swings, and the execution of these events are all contained in `java.awt.event`. The `java.swing.event`allows for packaging only Swing-specific events. Illustrated by code below is an event-generated swing button `PUSH `.
+
 ```java
-// Illustration on handling events in Swing program.
 package eventdemo;
-//  Is used to provide  classes and interfaces for  events triggered by components of the AWT.
 import java.awt.event.*;
-// Allows for use of input methods  at runtime
 import javax.swing.*;
-// Creation of class called  EventDemo
+
+
 class EventDemo {
  JLabel lbJ;
-  // We will be forming a JFrame repository.
  EventDemo() {
 JFrame frJ = new JFrame("EVENT HANDLER ILLUSTRATOR");
  // We will be performing layout specification
@@ -62,11 +84,9 @@ JFrame frJ = new JFrame("EVENT HANDLER ILLUSTRATOR");
  });
  // include listener for Event2.
  jbtnEvent2.addActionListener(new ActionListener(){
-  // we display the line below.
  lbJ.setText("EVENT2 HAS BEEN HANDLED." + "\n");
  }
  );
- //  The buttons are to be included in the content pane.
  frJ.add(jbtnEvent1);
  frJ.add(jbtnEvent2);
  // text-based label will have to be created.
@@ -85,23 +105,26 @@ JFrame frJ = new JFrame("EVENT HANDLER ILLUSTRATOR");
      //Recall method (function) EventDemo
  new EventDemo();
  }
- });//Closing the method called using braces
+ });
  }
 }
 ```
 When you run your program the first output gotten is this:
+
 ![Button](/engineering-education/advancement-of-swing-frameworks-in-Java/button.png)
 
-when you click the first button you get the display as shown below:
+When you click the first button you get the display as shown below:
+
 ![Event1](/engineering-education/advancement-of-swing-frameworks-in-Java/event1.png)
 
 When you click the second button  you get the output display as shown below:
+
 ![Event2](/engineering-education/advancement-of-swing-frameworks-in-Java/event2.png)
 
-### Performing Swing Painting 
-In order for painting to be achieved, we need to understand the following.
-**Swing Framework**  is powerful as it happens that it does not limit to using Swing Framework since it has functions allowing users to  input directly into the output area of the frame, panel, or other components of swing, such as JLabel. 
-Moreover,  in a number of cases usage of Swing will not need the direct drawing to the display of the component, this functionality is dependant on those applications. To input directly in the given output of the display included in a component, you will be required to use the drawing approaches and procedures included in the AWT library, like drawRect( ) method or  even  drawLine( ) method.
+### Performing swing painting 
+For the painting to be achieved, we need to understand the following. Swing Framework is powerful as it happens that it does not limit to using Swing Framework since it has functions allowing users to input directly into the output area of the frame, panel, or other components of swing, such as JLabel. 
+
+Moreover, in several cases usage of Swing will not need the direct drawing to the display of the component, this functionality is dependant on those applications. To input directly in the given output of the display included in a component, you will be required to use the drawing approaches and procedures included in the AWT library, like the `drawRect()` method or even the `drawLine()` method.
 
 ```java
 // We will painting  the panel lines.
@@ -177,18 +200,23 @@ class PaintPanel extends JPanel {
  }
 }
 ```
+
 ![Painting](/engineering-education/advancement-of-swing-frameworks-in-Java/painting.png)
 
-  The paintComponent( ) method is overridden by the PaintPanel, in order to manage painting. Enabling the PaintPanel to   write directly onto the output display of the component while painting is being carried out. The program has a default border format that it uses making the area not to be declared and adding the panel towards the middle. The display in the panel is sized to fill the middle.
+The `paintComponent()` method is overridden by the PaintPanel, to manage painting. Enabling the PaintPanel to write directly onto the output display of the component while painting is being carried out. The program has a default border format that it uses making the area not to be declared and adding the panel towards the middle. The display in the panel is sized to fill the middle.
 
 ### Conclusion
+In this article, we have learned how to perform the following task using Swing frameworks:
+- Handling events.
+- Painting in the panel.
+- Understanding how swing supports a pluggable look and feel.
+- Understanding the concept of MVC.
+- 
+From the insights gained. Moreover, you are also equipped with the necessary information to handle swing frameworks entirely. You are now a swing geek. 
 
-In this article, we will be  using Swing Frameworks to:
-##### 1. Handle events.
-#####  2. Painting in the panel.
-##### 3. Understanding how swing Supports a Pluggable Look and Feel.
-##### 4. Understanding the concept of MVC.
-From the insights gained. Moreover, you are also equipped with the necessary information to handle swing frameworks entirely.
-You are now a swing geek. Happy designing of Swing Framesworks!
+Happy designing of Swing frameworks!
 
+Happy Learning!
 
+---
+Peer Review Contributions by: [Briana Nzivu](/engineering-education/authors/briana-nzivu/)
