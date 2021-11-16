@@ -1,49 +1,62 @@
- Building FAQ page using React-styled components and React.js
-Addressing user questions and concerns is a priority for corporations, online vendors, and even your small blog or website. An efficient way of handling user queries is having a comprehensive frequently asked questions (FAQ) page. In this tutorial, we will use a modern web design library known as React-styled components alongside React.js to create an attractive FAQ page that can be adopted and integrated into a new or already existing website.
+# Building FAQ page using React-styled components and React.js
+Addressing user questions and concerns is a priority for corporations, online vendors, and even your small blog or website. An efficient way of handling user queries is having a comprehensive frequently asked questions (FAQ) page.
+
+In this tutorial, we will use a modern web design library known as React-styled components alongside React.js to create an attractive FAQ page that can be adopted and integrated into a new or already existing website.
 
 ### Key takeaways
-After this tutorial, the reader is expected to understand and also have the knowledge to perform the following:
-- Creating FAQ page with React-styled component and React.js
-- Adding and using Styled-components
-- Styling and customizing the FAQ page
-- Adding questions and answers with JSON
-- Creating reusable components with React-styled components
+By reading this tutorial, the reader is expected to have a good understanding of the following:
+- Creating FAQ page with React-styled component and React.js.
+- Adding and using styled-components.
+- Styling and customizing the FAQ pages.
+- Adding questions and answers with JSON.
+- Creating reusable components with React-styled components.
 
-### Prerequisite
-Although this article is extremely beginner-friendly, basic knowledge of React.js and any other design framework will enable you to follow up with the tutorial. Take a moment and enroll in a crash course if you do not possess the above.
+### Prerequisites
+Although this article is extremely beginner-friendly, basic knowledge of React.js and any other design framework will enable you to follow up with the tutorial.
 
-### Tutorial Overview
-For ease of understanding, this article will be broken down into various steps required to create an FAQ page using React-styled component and React.js. let's begin with the first step:
+Take a moment and enroll in a crash course if you do not possess the above.
 
-### Step 1: Creating the React App
-As you are already familiar with, every React development cycle begins with the creation of the `react app`. This step is very easy and we will go through it together. To achieve this, in your `command terminal, run the following command below
+### Tutorial overview
+For ease of understanding, this article will be broken down into various steps required to create an FAQ page using React-styled component and React.js.
+
+Let's begin with the first step:
+
+#### Step 1: Creating the React App
+As you are already familiar with, every React development cycle begins with the creation of the `react app`.
+
+To achieve this, in your command terminal, run the command as shown below:
 
 ```bash
 npm create-react-app Faq-app
 ```
 
-Alternative, if you're a yarn user
+Alternative, if you're a `yarn` user:
 
 ```bash
 yarn create-react-app Faq-app
 ```
 
-That's it, the above command will set up your application and install the default dependencies required to begin the development.
+The above command will set up your application and install the default dependencies required to begin the development.
 
-### Step 2: Setting up the Dependencies
-React.js alone is capable of doing a lot of cool things, but combining that power with some package dependencies, in our case React-styled components will dramatically reduce the complexity of developing and styling our application. To install the dependencies into our `react app`, we go back to the command terminal and run the command below
+#### Step 2: Setting up the dependencies
+React.js alone is capable of doing a lot of cool things, but combining that power with some package dependencies, in our case React-styled components will dramatically reduce the complexity of developing and styling our application.
+
+To install the dependencies into our `react app`, we go back to the command terminal and run the command below:
 
 ```bash
 npm install styled-components
 ```
 
-Or for yarn users
+For `yarn` users:
 
 ```bash
 yarn add styled-components
 ```
 
-As simple as that, we have successfully added styled-components to our application. Feel free to open up the `package.json` file and check the dependencies for `styled-components`.
+As simple as that, we have successfully added styled-components to our application.
+
+Feel free to open up the `package.json` file and check the dependencies for `styled-components`.
+
 It should look similar to this:
 
 ```JSON
@@ -59,8 +72,14 @@ It should look similar to this:
 }
 ```
 
-### Step 3: Creating the Array of Questions and Answers (faq.json)
-The approach we intend to adopt in this tutorial is to have a `JSON` file that contains an array of questions and their corresponding answers. Afterward, we display the questions by creating a `map` function that loops over the array and displays all our questions and answers accordingly. To achieve this, in the `src` folder, create a `faq.json` file which will accommodate the questions and answer below:
+#### Step 3: Creating an array of questions and answers
+The approach we intend to adopt in this tutorial, is to have a `JSON` file that contains an array of questions and their corresponding answers.
+
+Let's name the file as `faq.json`.
+
+Then, we display the questions by creating a `map` function that loops over the array and displays all our questions and answers accordingly.
+
+To achieve this in the `src` folder, create a `faq.json` file that accommodates the questions and answer as shown below:
 
 ```JSON
 [
@@ -92,11 +111,18 @@ The approach we intend to adopt in this tutorial is to have a `JSON` file that c
 ]
 ```
 
-I decided to use an array of dummies questions but you could make use of actual questions about your websites, products, or services.
-Each dummy question has an id, which is required during all React mapping operations to prevent a repetition of data, there is a question field and also a corresponding answer field. That wraps up this step, time to proceed to the next step.
+Here, we have used an array of sample questions.
 
-### Step 4: Creating the Banner component (Banner.js)
-The banner component is the container of which the questions and answers will be displayed, think of it as a showcase for the FAQs. To set up the component, we will create an `Banner.js` file, thereafter we implement the code snippet below:
+But, you could make use of actual questions about your website, products, or services.
+
+Each dummy question has an `id`, which is required for mapping operations to prevent a repetition of data. We also have a question field, and a corresponding answer field.
+
+That wraps up this step, time to proceed to the next step.
+
+#### Step 4: Creating the banner component
+The banner component is the container where the questions and answers would be displayed.
+
+To set up the component, we will create an `Banner.js` file with the code as shown below:
 
 ```JavaScript
 import React, { useState } from "react";
@@ -133,21 +159,23 @@ Banner.Question = function BannerHeader({ children, ...restProps }) {
 };
 Banner.Text = function BannerText({ children, ...restProps }) {
   const { open } = React.useContext(QuestionContext);
-
   return open ? <Text {...restProps}>{children}</Text> : null;
 };
 ```
 
-Let's go over what is happening with our code block. 
+Let's understand from the above code snippet: 
 - First, we created and used a context API named `QuestionContext` to monitor the state of our Banner component and to ensure that two questions cannot be opened simultaneously.
 - Additionally, we imported a few reusable components, i.e. the Header, Questions, Text, and Entity which we will create and export soon. 
-  The header will be displayed at the top of the page telling the user that it is an FAQ page. While the question and Text will show the questions and answers respectively.
+- The header will be displayed at the top of the page telling the user that it is an FAQ page. While the `Question` and `Text` will shown as the questions and answers respectively.
 
-### Step 5: Styling the Banner component (Styles.js)
-Those reusable components we imported earlier will now be created and styled also using React-styled component libraries. the idea of reusable components is that they can be imported and used in any part of the website without writing the same code block over again. To do that, we open a new `Styles.js` file which we will subsequently write all our styles functions below:
+#### Step 5: Styling the Banner component
+Those reusable components we imported earlier will now be created and styled also using React-styled component libraries.
+
+The idea of reusable components is that they can be imported and used in any part of the website without having to write the same code block over again.
+
+To do that, we open a new `Styles.js` file which we will subsequently write all our styles functions below:
 
 ```JavaScript
-
 import styled from "styled-components/macro";
 
 export const Container = styled.div`
@@ -215,11 +243,18 @@ export const Header = styled.h1`
 `;
 ```
 
-Our styles functions are fairly easy to understand. For starters those are not pure CSS codes, we are simply using the Styled-component library to implement JavaScript looking like CSS (CSS-in-JS), which is the beauty of this approach. The first thing to do when using styled-components libraries is to import it to any file you wish to use it in as shown above.
+For starters, those are not pure CSS codes, we are simply using the styled-component library to implement JavaScript looking like CSS (CSS-in-JS), which is the beauty of this approach.
+
+The first thing to do when using styled-components libraries is to import it to any file you wish to use it in as shown above.
+
 Finally, we added some responsiveness to keep our page looking good on large, medium, and small screens.
 
-### Step 6: Mapping and displaying the FAQs (Faq.js)
-It is believed that the most preferred way of displaying items from an array is with the use of a `map` function. In our `App.js`, first, we clear the default boilerplate, thereafter We will import our dummies question from the JSON file we created earlier, then set up the `map` function by:
+#### Step 6: Mapping and displaying the FAQs
+It is believed that the most preferred way of displaying items from an array is with the use of a `map` function.
+
+In our `App.js`, first, we clear the default boilerplate. 
+
+Thereafter, We will import our sample questions from the JSON file we created earlier, then set up the `map` function by:
 
 ```JavaScript
 import React from "react";
@@ -242,22 +277,28 @@ export function App() {
   );
 }
 ```
-from the snippet above, we imported our faq, mapped, and displayed them with their corresponding answers. we also made use of our reusable `Banner` component.
+
+From the snippet above, we imported our FAQs, mapped, and displayed them with their corresponding answers using reusable `Banner` component.
+
 Our FAQ page is ready for viewing on our browser. To do that, we open the `command terminal` in our text editor and run the command below
 
 ```bash
 npm start
 ```
 
-Alternatively
+Alternatively:
 
 ```bash
 yarn start
 ```
 
 Once the development server is up and running, you should get a page that looks like this:
-![faq page](\engineering-education\building-faq-page-using-react-styled-components-with-react/image1.jpg)
-Finally, to further enhance the beauty of our page, we will go ahead and add some font classes, remove unnecessary margins and change the background color of the page to #070707. To do that, delete the `app.css` file, thereafter, in the `index.css` file, simply paste the code snippet below:
+
+![faq page](/engineering-education/building-faq-page-using-react-styled-components-with-react/image1.jpg)
+
+Finally, to further enhance the beauty of our page, we will go ahead, and add some font classes, remove unnecessary margins and change the background color of the page to #070707.
+
+To do that, delete the `app.css` file, and then in the `index.css` file, simply paste the code snippet below:
 
 ```CSS
 body {
@@ -273,11 +314,14 @@ body {
 
 Once the code snippet is correctly implemented, your FAQ page should look like this below:
 
-![faq page](\engineering-education\building-faq-page-using-react-styled-components-with-react/image2.jpg)
+![faq page](/engineering-education/building-faq-page-using-react-styled-components-with-react/image2.jpg)
 
 ### Conclusion
-React-styled components, as we have discussed extensively in this article, combined with React.js can be used in numerous productive ways. In this tutorial, we created, styled, and displayed an FAQ page with React-styled component. you're at liberty to use the libraries in your next project. I hope this article was helpful to you.
-Happy Coding!
+React-styled components, as we have discussed extensively in this article, combined with React.js can be used in numerous productive ways.
+
+In this tutorial, we created, styled, and displayed an FAQ page with React-styled component.
+
+Happy coding.
 
 ### References
 https://www.styled-components.com/
