@@ -30,7 +30,7 @@ In this article, one will be able to learn about Quarkus profiles. These are lik
 For one to follow up with the code examples and explanations given in the article, the following will be required:
 - Latest Java Development Kit installed on the machine. Version 17 is used for the article.
 - A good Java IDE. IntelliJ version `2021.2.2` was used for the article, as seen in the screenshot captured. Download IntelliJ [here](https://www.jetbrains.com/idea/download/).
-- Familiar with databases.
+- Familiar with SQL.
 - A good internet connection. The internet is for fetching indexes for quick development and project generation.
 
 > **NOTE**:- These pre-requisites may change as time goes by ever since the day that the article is published.
