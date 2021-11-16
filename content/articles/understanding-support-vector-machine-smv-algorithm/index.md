@@ -21,7 +21,7 @@ Before reading this tutorial, the reader should have the following basic concept
 ### Overview of Support Vector Machine
 Classification and regression issues may both benefit from the use of Support Vector Machine (SVM), a machine learning approach. The most typical problem to which this approach is used is one of classification. There are n characteristics in our dataset, and the value of every feature seems to be the outcome of a specific coordinate. The SVM approach represents each data point as an n-dimensional space position. To do this, we first find the hyperplane that adequately separates the two categories of information. Look at the below illustration.
 
-![The diagram shows an SMV example](engineering-education/understanding-support-vector-machine-svm-algorithm/vector.jpg)
+![The diagram shows an SVM example](engineering-education/understanding-support-vector-machine-svm-algorithm/vector.jpg)
 
 Each observation's coordinates are used to construct support vectors for the model. As a consequence, the classification algorithm serves as a boundary between the two classes.
 
@@ -117,6 +117,6 @@ The RBF kernel SVM's decision area is also linear. As a consequence, the RBF cor
 ### Conclution
  As evidenced in this tutorial, we have looked more into the Support Vector Machine machine learning algorithm. We discussed the model's working concept, how to construct it in Python, how to optimize its parameters, and its benefits and disadvantages.
  
-Here is the full code repo [link] of Support Vector Machines(https://gist.github.com/mblondel/586753/f740949d0336484567dd422fe53445ac8821f5b2)
+Here is the full code [repo link](https://gist.github.com/mblondel/586753/f740949d0336484567dd422fe53445ac8821f5b2) of Support Vector Machines.
 
- Happy Coding!
+Happy Coding!
