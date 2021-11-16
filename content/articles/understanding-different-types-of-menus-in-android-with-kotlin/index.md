@@ -358,15 +358,15 @@ This is accomplished on the choices menu by placing an icon on the menu item to 
 ### The types of menus explained above
 
 #### Options menu
-![demo](/engineering-education/understanding-different-types-of-menus-in-android-with-kotlin/options menu.png)
+![demo](/engineering-education/understanding-different-types-of-menus-in-android-with-kotlin/options-menu.png)
 #### popup menu
-![demo](/engineering-education/understanding-different-types-of-menus-in-android-with-kotlin/popup menu.png)
+![demo](/engineering-education/understanding-different-types-of-menus-in-android-with-kotlin/popup-menu.png)
 #### Action mode menu
-![demo](/engineering-education/understanding-different-types-of-menus-in-android-with-kotlin/action mode.png)
+![demo](/engineering-education/understanding-different-types-of-menus-in-android-with-kotlin/action-mode.png)
 #### Checkable menu
 ![demo](/engineering-education/understanding-different-types-of-menus-in-android-with-kotlin/checkable.png)
 #### Floating contextual menus
-![demo](/engineering-education/understanding-different-types-of-menus-in-android-with-kotlin/floating contextual.png)
+![demo](/engineering-education/understanding-different-types-of-menus-in-android-with-kotlin/floating-contextual.png)
 
 ### Conclusion
 To wrap up the entire content covered in this article, we have learned what is menus as used in android, The different types of menus, the difference between menu types and design guidelines together with the best practices when handling menus, and get the full implementation on [github](https://github.com/benta-odek/MenusDemo.git).
