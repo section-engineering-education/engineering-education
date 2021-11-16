@@ -152,3 +152,6 @@ Happy coding!
 ### References
 - [Question and Answer Pretrained Model](https://github.com/tensorflow/tfjs-models/tree/master/qna)
 - [Create a New React App](https://reactjs.org/docs/create-a-new-react-app.html)
+
+---
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
