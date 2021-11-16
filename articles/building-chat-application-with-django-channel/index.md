@@ -14,8 +14,6 @@ images:
   - url: /engineering-education/building-chat-application-with-django-channel/hero.png
     alt: Building Chat Application with Django Channels
 ---
-
-T
 This tutorial will build a fully functional chat application by implementing the chat server using Django Channel. This Channel was implemented on the asynchronous server used by Django. And this server was named Asynchronous Server Gateway Interface `ASGI`.
 
 ASGI is the server specification that the Channel was built upon. Like the WSGI, both server and framework can be chosen with choice rather than just accepting the Channel server.
@@ -53,13 +51,13 @@ application = ProtocolTypeRouter({
 
 Finally, the `ASGI` server must point to the `asgi.py` file. That will be done inside the `settings.py` file;
 
-Note: This will replace the WSGIserver that came default with the Django project.
+Note: This will replace the WSGI server that came default with the Django project.
 
 ```
 ASGI_APPLICATION = "letschat.asgi.application"
 ```
 
-The Channel server will take over the default Django's WSGI server and allow only the   `HTTP` protocol with this code.
+The Channel server will take over the default Django's WSGI server and allow only the `HTTP` protocol with that code above.
 
 Run the server with the command below and then open up the browser with the localhost; you should see the message of `500 internal server error`.
 
