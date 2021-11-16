@@ -28,9 +28,7 @@ The primary objective of the framework is to provide the kernel of a Swing appli
 - [Performing  Swing Painting ](#performing-swing-painting)
 - [Conclusion](#conclusion)
 
-
 ### Prerequisites
-
 To follow along with this article, the reader must have the following:
 - Familiarity with Java programming language.
 - Familiarity with the introduction to java swing. Refer to this [introduction to java swing](https://www.section.io/engineering-education/introduction-to-java-swing/) article. 
@@ -44,14 +42,14 @@ It is practical to explain a feel and look that is uniform across all platforms,
 
 To sum up, the feel and look can be changed dynamically at run time.
 
-### The MVC (Model-View-Controller) Connection
+### The MVC (Model-View-Controller) connection
 The Swing framework is ideal since it is underpinned by the ideas and its design referring to the link created by the MVC. Problems arise from Swing components due to a high level of differences caused by the separation of the controller and view.
 
 On the other hand, Swing deploys a modified version of MVC, that combines view and controller binding into an exclusive logical object referred to as the UI delegate. The Separable Model blueprint or the Model-Delegate blueprint are the two techniques used by Swing. 
 
 Although the component blueprint of Swing's Framework is based on MVC, the traditional implementation is not deployed. The blueprint of the Model-Delegate resizes and realizes Swing's pluggable feel and look.
 
-### Event Handling
+### Event handling
 Since we have some information about swing frameworks we can proceed to how events are handled in the preceding section. Swing generates the interactions to be handled by the components responding to user input as well as events. When a set timer goes off, it triggers an event. 
 
 The most important part of all Swing-based applications is event handling. In most instances, Events in AWT are also used in swings, and the execution of these events are all contained in `java.awt.event`. The `java.swing.event`allows for packaging only Swing-specific events. Illustrated by code below is an event-generated swing button `PUSH `.
@@ -60,8 +58,6 @@ The most important part of all Swing-based applications is event handling. In mo
 package eventdemo;
 import java.awt.event.*;
 import javax.swing.*;
-
-
 class EventDemo {
  JLabel lbJ;
  EventDemo() {
