@@ -16,7 +16,7 @@ images:
 The key ideas behind Capsule Networks (CapsNets) were introduced in 2011 by [Geoffrey E. Hinton](https://en.wikipedia.org/wiki/Geoffrey_Hinton) in a research paper called [Transforming Autoencoders](http://www.cs.toronto.edu/~bonner/courses/2020s/csc2547/papers/capsules/transforming-autoencoders,-hinton,-icann-2011.pdf). Although, he did have a difficult time making the network work properly.  
 <!--more-->
 ### Prerequisites
-Understanding how Convolutional Neural Networks (CNNs) work is key to understanding Capsule Networks as it improves on CNNs. If you are not familiar with how CNN's work, please feel free to read my previous [article](/basics-of-convolution-neural-networks/) on the basics of CNNs. 
+Understanding how Convolutional Neural Networks (CNNs) work is key to understanding Capsule Networks as it improves on CNNs. If you are not familiar with how CNN's work, please feel free to read my previous [article](/engineering-education/basics-of-convolution-neural-networks/) on the basics of CNNs. 
 
 ### Table of contents
 1. [The Orientation Problem in Convolutional Neural Networks (CNNs)](#the-orientation-problem-in-convolutional-neural-networks-cnns) 
@@ -35,7 +35,7 @@ Understanding how Convolutional Neural Networks (CNNs) work is key to understand
 In 2017, Geoffrey E. Hinton, alongside Sara Sabour and Nicholas Frosst, published a paper called [Dynamic Routing Between Capsules](https://www.cs.toronto.edu/~hinton/absps/DynamicRouting.pdf/). The three researchers built on the key ideas first published in 2011, and achieved state-of-the-art performance on the MNIST dataset, and demonstrated better results than Convolutional Neural Networks (CNNs) on highly overlapping digits. They also tested the capsule model on the CIFAR10 dataset, and it achieved a 10.6% error, which is not state-of-the-art, but it's a good start. 
 
 ### The orientation problem in Convolutional Neural Networks (CNNs)
-Convolutional Neural Networks have been used in the [Computer Vision](/computer-vision-straight-lines/) domain for several years now. These networks have produced state-of-the-art results when solving image classification, image segmentation, and object detection tasks. Yet, these networks are not perfect. CNN's tend to fail when they are fed with images that differ in orientation and sizes. 
+Convolutional Neural Networks have been used in the [Computer Vision](/engineering-education/computer-vision-straight-lines/) domain for several years now. These networks have produced state-of-the-art results when solving image classification, image segmentation, and object detection tasks. Yet, these networks are not perfect. CNN's tend to fail when they are fed with images that differ in orientation and sizes. 
 
 Let's look at an example to understand what I mean. Suppose I take an original image of a dog and flip it upside down, as shown below. 
 

@@ -18,7 +18,7 @@ images:
 <!--more-->
 
 ### Prerequisites
-This article on [fuzzy logic](/an-overview-of-fuzzy-logic-system/) is an excellent introduction to the basics of crisp and fuzzy sets. Moreover, it introduces the representation of fuzzy sets and their applications. 
+This article on [fuzzy logic](/engineering-education/an-overview-of-fuzzy-logic-system/) is an excellent introduction to the basics of crisp and fuzzy sets. Moreover, it introduces the representation of fuzzy sets and their applications. 
 
 ### Table of contents
 - Degree of membership function.

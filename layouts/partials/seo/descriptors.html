@@ -5,7 +5,6 @@
 <meta name="application-name" content="{{ if .Title }}{{ .Title }} | {{ end }}{{ .Site.Title }}" />
 
 <!-- Open Graph Protocol http://ogp.me/ -->
-<!-- <meta property="fb:app_id" content="your_app_id" /> -->
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_US">
 <meta property="og:url" content="{{ .Permalink }}">
@@ -21,4 +20,4 @@
 <meta property="twitter:url" content="{{ .Permalink }}">
 <meta property="twitter:title" content="{{ if .Title }}{{ .Title }} | {{ end }}{{ .Site.Title }}">
 <meta property="twitter:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
-<meta property="twitter:image" content='{{ if .Params.images }}{{ (index .Params.images 0).url }}{{ else }}{{.Site.BaseURL}}images/social-share.jpg{{ end }}'>
+<meta property="twitter:image" content='{{ if .Params.images }}{{ replaceRE "/engineering-education/" "" .Site.BaseURL}}{{ (index .Params.images 0).url }}{{ else }}{{.Site.BaseURL}}images/social-share.jpg{{ end }}'>
