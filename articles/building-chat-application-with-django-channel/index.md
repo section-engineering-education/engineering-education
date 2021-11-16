@@ -15,11 +15,12 @@ images:
     alt: Building Chat Application with Django Channels
 ---
 
+T
 This tutorial will build a fully functional chat application by implementing the chat server using Django Channel. This Channel was implemented on the asynchronous server used by Django. And this server was named Asynchronous Server Gateway Interface `ASGI`.
 
-ASGI is the server specification that the Channel was built upon. Like the `Web Server Gateway Interface` WSGI, this gives the opportunity of choosing the server and framework of choice rather than just accepting the Channel server.
+ASGI is the server specification that the Channel was built upon. Like the WSGI, both server and framework can be chosen with choice rather than just accepting the Channel server.
 
-Channel allows the `HyperText Transfer Protocol` and other protocols that have long connections time. The Channel layers divide the entire applications into processes and support parts of Django views.
+The Django Channel supports HTTP and other types of protocols that have long connections time. The Channel layers divide the entire applications into processes and support parts of Django views.
 
 ### Spinning up the project
 
@@ -37,8 +38,7 @@ Let us install the channels dependency and make the requirements file.
 $ pip install channels
 $ pip freeze > req.txt
 ```
-Make sure that the Channel is added to the `INSTALLED_APP` in the `settings.py` file of your project folder.
-
+Add the Channel library to the apps inside the `settings.py` file.
 Edit the `asgi.py` in the `letschat` folder with the codes below.
 
 ```python
@@ -56,7 +56,7 @@ Finally, the `ASGI` server must point to the `asgi.py` file. That will be done i
 Note: This will replace the WSGIserver that came default with the Django project.
 
 ```
-ASGI_APPLICATION = "letschatletschatletschatletschatletschatletschatletschatletschatletschatletschatletschatletschat.asgi.application"
+ASGI_APPLICATION = "letschat.asgi.application"
 ```
 
 The Channel server will take over the default Django's WSGI server and allow only the   `HTTP` protocol with this code.
@@ -66,7 +66,6 @@ Run the server with the command below and then open up the browser with the loca
 ```bash
 $ python manage.py run server
 ```
-
 [500 Internal Server Error](/engineering-education/building-chat-application-with-django-channels/server-error.png)
 
 ### Creating the chat application
@@ -78,16 +77,15 @@ $ python manage.py startapp letschat_app'
 ```
 Add the new app to the installed apps section inside the `settings.py` file.
 
-The next thing is to create a `letschat/template/letschat_app` directory, then make an `index.html` file.
+The next thing is to create a `letschat/template/letschat_app` directory, then make an HTML file called `index`.
 
 Navigate to the index.html and type out the boiler codes below;
 
 ![Index Page](/engineering-education/building-chat-application-with-django-channels/indexhtml.png) 
 
+The HTML template code allows clients to enter the name of the chat room they are navigating.
 
-The HTML template code allows clients to enter the name of the chat room they are navigating. Then the JavaScript does the trick by grabbing the submitted room name.
-
-The submitted room name will be attached to the windows path and sent to the server. The server will receive the request and match it to the URLs if found.
+The submitted room name will be attached to the windows path and gets sent to the server. The server will receive the request and match it to the URLs if found.
 
 We have to make both the `URLs` and `views` for the incoming HTTP requests from clients.
 
@@ -125,8 +123,7 @@ Now run your server with the command below.
 ```bash
 $ python manage.py runserver
 ```
-
-Running the server and navigating to the `http://localhost:8080/chat/` will open the chat page with both the inputs and submit buttons.
+While the server is running, navigate to the `http://localhost:8080/chat/` and open the chat page.  Both the input and submit forms will be shown.
 
 But if you type in any room name, you should receive a `page not found` message because we have not implemented any other chat room for communication.
 
@@ -162,7 +159,6 @@ urlpatterns = [
     path('<str:name>/', room_name, name='room'),
 ]
 ```
-
 When running the server, do move to `http://localhost:8080/chats/`; you should confirm the below image.
 
 ![Room 1](/engineering-education/building-chat-application-with-django-channels/chat.png) 
@@ -177,7 +173,7 @@ But we have to make a consumer that will accept the WebSocket connections.
 
 Historically, Django servers route URLConf to the appropriate view function and send the Html templates. The same thing goes to when Channels using the Daphne server receives any request, it maps the routing to the consumer and looks up to appropriate function.
 
-Make `consumers.py` file inside the chat app folder and used the code snippets in the image below.
+Make `consumers.py` file inside the chat app folder and use the code snippets in the image below.
 
 ![Consumer 1](/engineering-education/building-chat-application-with-django-channels/consumer1.png)
 
@@ -189,12 +185,9 @@ Note:) the regular expression used solves the `URLRouter` limitations.
 
 Also, the `as_asgi()` method on the `Consumer` class does the same task as the class-based views method in Django, which is `as_view()`.
 
-Allowing connections between multiple requests or clients chatting at the same time, we will redirect to the WebSocket URLpatterns.
-
-Navigate to the `asgi.py` in the chat app folder and add the codes with the following;
+Now we have to redirect to the socket URL defined. Navigate to the `asgi.py`, and configure the routing as the snippet below;
 
 ```python
-# letschat/asgi.py
 from channels.auth import AuthMiddlewareStack
 import letschat_app.routing 
 application = ProtocolTypeRouter({
@@ -222,19 +215,14 @@ Note: you need to have [Docker](/https://docs.docker.com/engine/install/),
 
 [Redis](/https://redis.io/download/) and `channels_redis` installed.
 
-
 ```bash
 $ docker run -p 6379:6379 -d redis:5
 $ python3 -m pip install channels_redis
-$ pip freeze > req.txt
 ```
 
 Having installed the dependencies, we must track the layers by adding the code below to `settings.py` just under the `ASGI_APPLICATION`.
 
-This will allow the host machine to connect with the Redis server.
-
 ```python
-# letschat/settings.py
 CHANNEL_LAYERS = {
     'default': {
         'BACKEND': 'channels_redis.core.RedisChannelLayer',
@@ -244,6 +232,9 @@ CHANNEL_LAYERS = {
     },
 }
 ```
+Channel layers will point to the Redis layer as its store. This connection is made using the library installed above.
+
+The library requires a `BACKEND` configuration and its `CONFIG` property that defines the host which is the Redis server running locally.
 
 To test the application, open a browser window and an incognito tab window Simultaneously. And spin up the server;
 
@@ -254,7 +245,7 @@ Open browser to `http://127.0.0.1:8000/chats/room/` in both windows and type mes
 
 You will receive them in the two chat logs `textarea`.
 
-Now you have a functional basic chat application. I commend your efforts.
+Now you have a functional basic chat application. This will prepare you ahead of your project and guide you against boring documentation.
 
 You care to know more, navigate to [Channels](/https://channels.readthedocs.io/en/stable/tutorial/part_1.html/).
 ---
