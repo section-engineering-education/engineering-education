@@ -1,5 +1,21 @@
-Tables are significant when it comes to data entry and display in applications. Table views support the tabular format display.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /javafx-editable-table-view/
+title: Building JavaFX Editable Table Views
+description: In this article, we will go through how to setup and create TableView in JavaFX. We will also learn how to make these views editable.
+author: prosper-grateful-juma
+date: 2021-11-16T00:00:00-19:15
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/javafx-editable-table-view/hero.png
+    alt: Building JavaFX Editable Table Views Hero Image
+---
+Tables are significant when it comes to data entry and display in applications. Table views support the tabular format display.
+<!--more-->
 This kind of format makes it easy to correct and check data patterns. Since this kind of data display format was created in sheet applications like Microsoft Excel, developers have preferred it in [TPS](https://en.wikipedia.org/wiki/Transaction_processing_system) and [MIS](https://en.wikipedia.org/wiki/Management_information_system) systems.
 
 With focus on the user interface, JavaFX represents data in a tabular format. However, one can only view, but not edit each cell individually.
@@ -451,3 +467,6 @@ At this point, the reader has learned and known how to:
 ### References
 - [Initializable Interface](https://docs.oracle.com/javase/8/javafx/api/javafx/fxml/Initializable.html) JavaFX documentation.
 - [PropertyValueFactory](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/cell/PropertyValueFactory.html) class JavaFX documentation.
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
