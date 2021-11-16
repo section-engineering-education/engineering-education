@@ -1,13 +1,22 @@
-# Phone Verification in Laravel Using Twilio
-Almost every online registration that requires a user's phone number will verify the phone number's legitimacy in some way, either via a text message, a phone call, or any other handy technique. It's vital to double-check a phone number, especially if it's the only means to reach the person.
+# Phone Verification Laravel Using Twilio
 
-In this article, we will learn how to call a user's registered phone number to verify the phone number's authenticity. If the user answers the phone, he or she will be asked to enter a one-time password (OTP) that was generated and displayed on his or her screen during the signup process. The user account will not be verified if an incorrect OTP is entered or if the user refuses to answer the phone. The user account will be verified if the user answers the phone and enters the correct OTP.
-This phone number verification will be accomplished in Laravel by utilizing a Twilio programmable voice service called TwiML Voice: `<Gather>`, which allows you to gather a user's input while they are on the phone. Twilio is a cloud communication platform that provides a variety of products and solutions to help you engage your users, one of which is the Programmable Voice, which allows you to make and receive calls from within your application.
+
+### Table of Contents
+- Prerequisites
+- Introduction
+- Creating and Setting Up a New Laravel App
+- Setting Up Authentication (Controller, Routes and Views)
+- Database Migration
+- Set Up Twilio
+- Calling User's Phone Number
+- Instructing, Collecting and Account Verification
+- Conlusion
+
 
 ### Prerequisites
 
-  To follow this tutorial, we'll assume the following for this tutorial:
-- You are having basic understanding of [PHP and Laravel](https://laravel.com/docs/8.x)
+- To follow this tutorial, we'll assume the following for this tutorial:
+- You are having understanding of [PHP and Laravel](https://laravel.com/docs/8.x)
 - You are having Larave 8.x in your machine
 - You are having MySQL installed on your machine.
 - You are having a[ Composer globally installed](https://getcomposer.org/doc/00-intro.md).
@@ -16,20 +25,20 @@ This phone number verification will be accomplished in Laravel by utilizing a Tw
 - You are having a verified number (If you are in trial mode).
 - You are having a [voice-enabled Twilio phone number]([url](https://www.twilio.com/console/phone-numbers/incoming))
 
-### Table of Contents
-- Creating and Setting Up a New Laravel App
-- Set Up Authentication (Controller, Routes and Views)
-- Database Migration
-- Set Up Twilio
-- Calling User's Phone Number
-- Instructing, Collecting Input and Account Verification
-- Conlusion
+### Introduction
+Almost every online registration that requires a user's phone number will verify the phone number's legitimacy in some way, either via a text message, a phone call, or any other handy technique. It's vital to double-check a phone number, especially if it's the only means to reach the person.
+
+In this article, we will learn how to call a user's registered phone number to verify the phone number's authenticity. If the user answers the phone, he or she will be asked to enter a one-time password (OTP) that was generated and displayed on his or her screen during the signup process. The user account will not be verified if an incorrect OTP is entered or if the user refuses to answer the phone. The user account will be verified if the user answers the phone and enters the correct OTP.
+
+This phone number verification will be accomplished in Laravel by utilizing a Twilio programmable voice service called TwiML Voice: `<Gather>`, which allows you to gather a user's input while they are on the phone. Twilio is a cloud communication platform that provides a variety of products and solutions to help you engage your users, one of which is the Programmable Voice, which allows you to make and receive calls from within your application.
 
 ### Creating and Setting Up a New Laravel App
 We'll use composer to create a new Laravel installation. We do this by entering the following command into our terminal: 
+
 ```
 composer create-project laravel/laravel programmable-voice
 ````
+
 ```
 cd programmable-voice
 ```
@@ -52,14 +61,15 @@ Using MYSQL database management application, create a new database called twilio
 ```
 php artisan serve
 ```
+If you followed all of the steps correctly, you should be able to see your new app in the browser by now when you visit `http://127.0.0.1:8000/` as shown below.
 
-If you followed all of the steps correctly, you should be able to see your new app in the browser by now when you visit `http://127.0.0.1:8000/ `as shown below.
 ![larave home page](/phone-verification-in-laravel-using-twilio/laravel-index-page.jpg)
 
  
-### Set Up Authentication (Controller, Routes and Views)
-Now that we have setup the database credentials, we can now set up authentication (we will set up the authentication controller, routes and views). We will set up laravel authentication manually.
-Controller 
+### Setting Up Authentication (Controller, Routes and Views)
+Now that we have setup the database credentials, we can now set up authentication (we will set up the authentication controller, routes and views). We will be setting up laravel authentication manually.
+
+#### Controller 
 Let us start by creating our Auth Controller where we will handle all the authentication processes. Run the below artisan command.
 
 ```
@@ -86,7 +96,8 @@ class AuthController extends Controller
 
 ```
 
-Let us add the following importation to our 'app/Http/Controllers/Auth/AuthController.php'.
+Let us add the following importation to our `app/Http/Controllers/Auth/AuthController.php`.
+
 ```
 
 use Illuminate\Support\Facades\Hash;
@@ -186,10 +197,10 @@ public function index()
 
 ```
 
-We have now added all that we need to authenticate a user in our` app/Http/Controllers/Auth/AuthController.php`. The `index `method, the `registration `method, and the `reverify `method return the `login`, `registration `and `verification `view respectively. The `dashboard `method returns the `dashboard ` view only if the user us authenticated, else it will redirect to the `login `with an error message. The `postRegistration ` method saves all the user’s input and making sure that the data provided by the user met up to the validation. The `postLogin `function authenticate the user. The `logout ` method logs the user out and also clears the session. 
+We have now added all that we need to authenticate a user in our` app/Http/Controllers/Auth/AuthController.php`. The `index `method, the `registration `method, and the `reverify `method returns the `login`, `registration `and `verification `view respectively. The `dashboard `method returns the `dashboard ` view only if the user us authenticated, else it will redirect to the `login `with an error message.This tis done using the `Auth::check()`. The `postRegistration ` method saves all the user’s input and making sure that the data provided by the user passes the validation check, it then redirect the user to the login page with a success message. The `postLogin` method authenticates the user base on the credetials provided by the user and the verification status. this uses the `Auth::attempt($credentials)`. The `logout ` method logs the user out and also clears the session using the `Session::flush()`
 
 #### Route 
-Add the following code to `routes/web.php `
+We need to add how route to anable users navigate through pages in our application. Add the following code to `routes/web.php `
 ```
 
     Route::get('login', [AuthController::class, 'index'])->name('login');
@@ -206,196 +217,12 @@ Add the following code to `routes/web.php `
 
 
 ```
+This anables users to navigate through pages in our application.
+
 #### Views
-We no want to include the authentication view. Create a folder in inside the views folder and call it auth. We will be creating our authentication views (`login.blade.php`, `registration.blade.php` and `verification.blade.php`) in the auth folder while the `dashboard.blade.php` and `layout.blade.php` will be create in the views folder.
+We now want to include the authentication view. Create a folder inside the views folder and call it auth. We will be creating all our authentication views (`login.blade.php`, `registration.blade.php` and `verification.blade.php`) in the auth folder while the `dashboard.blade.php` and `layout.blade.php` will be create in the views folder.
 
-`resources/views/auth/Login.blade.php` 
-```
-@extends('layout')  
-@section('content')
-<main class="login-form">
-  <div class="cotainer">
-      <div class="row justify-content-center">
-          <div class="col-md-8">
-              <div class="card">
-                  <div class="card-header">Login</div>
-                  <div class="card-body">
-                  @if (Session::has('errors'))
-                        <div class="alert alert-danger" role="alert">
-                            {{ Session::get('errors')->first() }}
-                        </div>
-                    @endif
-
-                    @if (Session('status'))
-                        <div class="alert alert-danger" role="alert">
-                            Your account has not been verified, click the verify button to verify account
-                            <a class="btn  btn-primary mx-sm-3" href= "{{ route('reverify') }}">Verify</a>
-
-                        </div>                        
-
-                    @endif
-
-                    @if(session('success'))
-                        <div class="alert alert-info"> 
-                            Your Verification code is <strong>{{session('success')}}</strong> 
-                            Please answer the call and follow the intruction. Once you are verified, you can then login
-                            <a class="btn  btn-primary mx-sm-3" href= "{{ route('reverify') }}">Try again</a>
-                        </div>
-                    @endif
-
-                      <form action="{{ route('login.post') }}" method="POST">
-                          @csrf
-                          <div class="form-group row">
-                              <label for="phone_number" class="col-md-4 col-form-label text-md-right">Phone Number</label>
-                              <div class="col-md-6">
-                                  <input type="number" id="phone_number" class="form-control" name="phone_number" required autofocus>
-                                  @if ($errors->has('phone_number'))
-                                      <span class="text-danger">{{ $errors->first('phone_number') }}</span>
-                                  @endif
-                              </div>
-                          </div>
-  
-                          <div class="form-group row">
-                              <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
-                              <div class="col-md-6">
-                                  <input type="password" id="password" class="form-control" name="password" required>
-                                  @if ($errors->has('password'))
-                                      <span class="text-danger">{{ $errors->first('password') }}</span>
-                                  @endif
-                              </div>
-                          </div>
-
-                          <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
-                     
-                          <div class="col-md-6 offset-md-4">
-                              <button type="submit" class="btn btn-primary">
-                                  Login
-                              </button>
-                          </div>
-                      </form>
-                        
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
-</main>
-@endsection
-
-```
-`resources/views/auth/registration.blade.php `
-
-```
-@extends('layout')  
-@section('content')
-<main class="login-form">
-  <div class="cotainer">
-      <div class="row justify-content-center">
-          <div class="col-md-8">
-              <div class="card">
-                  <div class="card-header">Register</div>
-                  <div class="card-body">
-                  
-                      <form action="{{ route('register.post') }}" method="POST">
-                          @csrf
-                          <div class="form-group row">
-                              <label for="name" class="col-md-4 col-form-label text-md-right">Name</label>
-                              <div class="col-md-6">
-                                  <input type="text" id="name" class="form-control" name="name" required autofocus>
-                                  @if ($errors->has('name'))
-                                      <span class="text-danger">{{ $errors->first('name') }}</span>
-                                  @endif
-                              </div>
-                          </div>
-  
-                          <div class="form-group row">
-                              <label for="phone_number" class="col-md-4 col-form-label text-md-right">Phone Number</label>
-                              <div class="col-md-6">
-                                  <input type="number" id="phone_number" class="form-control" name="phone_number" required autofocus>
-                                  @if ($errors->has('phone_number'))
-                                      <span class="text-danger">{{ $errors->first('phone_number') }}</span>
-                                  @endif
-                              </div>
-                          </div>
-  
-                          <div class="form-group row">
-                              <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
-                              <div class="col-md-6">
-                                  <input type="password" id="password" class="form-control" name="password" required>
-                                  @if ($errors->has('password'))
-                                      <span class="text-danger">{{ $errors->first('password') }}</span>
-                                  @endif
-                              </div>
-                          </div>
-  
-                          <div class="form-group row">
-                              <div class="col-md-6 offset-md-4">
-                                  <div class="checkbox">
-                                      <label>
-                                          <input type="checkbox" name="remember"> Remember Me
-                                      </label>
-                                  </div>
-                              </div>
-                          </div>
-  
-                          <div class="col-md-6 offset-md-4">
-                              <button type="submit" class="btn btn-primary">
-                                  Register
-                              </button>
-                          </div>
-                         
-                      </form>
-                        
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
-</main>
-@endsection
-
-```
-`resources/views/auth/verification.blade.php `
-```
-@extends('layout')
-  @section('content')
-<main class="login-form">
-  <div class="cotainer">
-      <div class="row justify-content-center">
-          <div class="col-md-8">
-              <div class="card">
-                  <div class="card-header">Phone Verification</div>
-                  <div class="card-body">
-  
-                  <form action="{{ route('reverify.post') }}" method="POST">
-                          @csrf
-                          <div class="form-group row">
-                              <label for="phone_number" class="col-md-4 col-form-label text-md-right">enter your registered Phone Number</label>
-                              <div class="col-md-6">
-                                  <input type="number" id="phone_number" class="form-control" name="phone_number" required autofocus>
-                                  @if ($errors->has('phone_number'))
-                                      <span class="text-danger">{{ $errors->first('phone_number') }}</span>
-                                  @endif
-                              </div>
-                          </div>
-
-                          <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
-                   
-  
-                          <div class="col-md-6 offset-md-4">
-                              <button type="submit" class="btn btn-primary">
-                                  Verify
-                              </button>
-                          </div>
-                      </form>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
-</main>
-@endsection
-```
+Open `resources/views` create a new file and name it `layout.blade.php`. open the file `resources/views/layout.blade.php` and include the following code.
 `resources/views/layout.blade.php` 
 ```
 <!DOCTYPE html>
@@ -479,8 +306,206 @@ We no want to include the authentication view. Create a folder in inside the vie
 </body>
 </html>
 ```
+The `layout.blade.php` view provides a laout or design that is share across other blade views to avoid repeation of code.
 
-`resources/views/dashboard.blade.php `
+In `resources/views/auth` create a new file and name it `Login.blade.php`. open `resources/views/auth/Login.blade.php` and include the following code.
+```
+@extends('layout')  
+@section('content')
+<main class="login-form">
+  <div class="cotainer">
+      <div class="row justify-content-center">
+          <div class="col-md-8">
+              <div class="card">
+                  <div class="card-header">Login</div>
+                  <div class="card-body">
+                  @if (Session::has('errors'))
+                        <div class="alert alert-danger" role="alert">
+                            {{ Session::get('errors')->first() }}
+                        </div>
+                    @endif
+
+                    @if (Session('status'))
+                        <div class="alert alert-danger" role="alert">
+                            Your account has not been verified, click the verify button to verify account
+                            <a class="btn  btn-primary mx-sm-3" href= "{{ route('reverify') }}">Verify</a>
+
+                        </div>                        
+
+                    @endif
+
+                    @if(session('success'))
+                        <div class="alert alert-info"> 
+                            Your Verification code is <strong>{{session('success')}}</strong> 
+                            Please answer the call and follow the intruction. Once you are verified, you can then login
+                            <a class="btn  btn-primary mx-sm-3" href= "{{ route('reverify') }}">Try again</a>
+                        </div>
+                    @endif
+
+                      <form action="{{ route('login.post') }}" method="POST">
+                          @csrf
+                          <div class="form-group row">
+                              <label for="phone_number" class="col-md-4 col-form-label text-md-right">Phone Number</label>
+                              <div class="col-md-6">
+                                  <input type="number" id="phone_number" class="form-control" name="phone_number" required autofocus>
+                                  @if ($errors->has('phone_number'))
+                                      <span class="text-danger">{{ $errors->first('phone_number') }}</span>
+                                  @endif
+                              </div>
+                          </div>
+  
+                          <div class="form-group row">
+                              <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
+                              <div class="col-md-6">
+                                  <input type="password" id="password" class="form-control" name="password" required>
+                                  @if ($errors->has('password'))
+                                      <span class="text-danger">{{ $errors->first('password') }}</span>
+                                  @endif
+                              </div>
+                          </div>
+
+                          <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+                     
+                          <div class="col-md-6 offset-md-4">
+                              <button type="submit" class="btn btn-primary">
+                                  Login
+                              </button>
+                          </div>
+                      </form>
+                        
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</main>
+@endsection
+
+```
+The login view displays the login form which enables user input (phone numberand password) and sends it to the `postlogin` method for authentication, it displasy an error if the there is one
+
+Open `resources/views/auth` create a new file and name it `registration.blade.php`. open the file `resources/views/auth/registration.blade.php` and include the following code.
+
+
+```
+@extends('layout')  
+@section('content')
+<main class="login-form">
+  <div class="cotainer">
+      <div class="row justify-content-center">
+          <div class="col-md-8">
+              <div class="card">
+                  <div class="card-header">Register</div>
+                  <div class="card-body">
+                  
+                      <form action="{{ route('register.post') }}" method="POST">
+                          @csrf
+                          <div class="form-group row">
+                              <label for="name" class="col-md-4 col-form-label text-md-right">Name</label>
+                              <div class="col-md-6">
+                                  <input type="text" id="name" class="form-control" name="name" required autofocus>
+                                  @if ($errors->has('name'))
+                                      <span class="text-danger">{{ $errors->first('name') }}</span>
+                                  @endif
+                              </div>
+                          </div>
+  
+                          <div class="form-group row">
+                              <label for="phone_number" class="col-md-4 col-form-label text-md-right">Phone Number</label>
+                              <div class="col-md-6">
+                                  <input type="number" id="phone_number" class="form-control" name="phone_number" required autofocus>
+                                  @if ($errors->has('phone_number'))
+                                      <span class="text-danger">{{ $errors->first('phone_number') }}</span>
+                                  @endif
+                              </div>
+                          </div>
+  
+                          <div class="form-group row">
+                              <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
+                              <div class="col-md-6">
+                                  <input type="password" id="password" class="form-control" name="password" required>
+                                  @if ($errors->has('password'))
+                                      <span class="text-danger">{{ $errors->first('password') }}</span>
+                                  @endif
+                              </div>
+                          </div>
+  
+                          <div class="form-group row">
+                              <div class="col-md-6 offset-md-4">
+                                  <div class="checkbox">
+                                      <label>
+                                          <input type="checkbox" name="remember"> Remember Me
+                                      </label>
+                                  </div>
+                              </div>
+                          </div>
+  
+                          <div class="col-md-6 offset-md-4">
+                              <button type="submit" class="btn btn-primary">
+                                  Register
+                              </button>
+                          </div>
+                         
+                      </form>
+                        
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</main>
+@endsection
+
+```
+This is the registration veiw wich provides a registration form to the user and also collect the input of the user and the sends it to `postRegistration` method for processing. User is redirected to login page if registration is successful, else it displays an error message.
+
+
+Open `resources/views/auth`, create a new file and name it `verification.blade.php`. open the file `resources/views/auth/verification.blade.php` and include the following code.
+
+```
+@extends('layout')
+  @section('content')
+<main class="login-form">
+  <div class="cotainer">
+      <div class="row justify-content-center">
+          <div class="col-md-8">
+              <div class="card">
+                  <div class="card-header">Phone Verification</div>
+                  <div class="card-body">
+  
+                  <form action="{{ route('reverify.post') }}" method="POST">
+                          @csrf
+                          <div class="form-group row">
+                              <label for="phone_number" class="col-md-4 col-form-label text-md-right">enter your registered Phone Number</label>
+                              <div class="col-md-6">
+                                  <input type="number" id="phone_number" class="form-control" name="phone_number" required autofocus>
+                                  @if ($errors->has('phone_number'))
+                                      <span class="text-danger">{{ $errors->first('phone_number') }}</span>
+                                  @endif
+                              </div>
+                          </div>
+
+                          <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+                   
+  
+                          <div class="col-md-6 offset-md-4">
+                              <button type="submit" class="btn btn-primary">
+                                  Verify
+                              </button>
+                          </div>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</main>
+@endsection
+```
+This view allows only one input which is the user's phone number. when a user register but not verified and he tries to login, he/she will be redirected to this page asking theuser to verify the phone number by providing their registered phone number.
+
+Open `resources/views/`, create a new file and name it `dashboard.blade.php`. open the file `resources/views/dashboard.blade.php` and include the following code.
+
 ```
 @extends('layout')  
 @section('content')
@@ -506,7 +531,9 @@ We no want to include the authentication view. Create a folder in inside the vie
 @endsection
 
 ```
-We'll also need to modify the `app/User.php` model. The code below ensures that the phone, name, and password fields are mass-assigned. More information on [mass assignment](https://laravel.com/docs/8.x/eloquent) can be found in the Laravel documentation:
+The `dashboard.blade.php` is where the user will be redirected to once he/she is authenticated. This view can only be access if the user is authenticated.
+
+Now that we are done with our views, we also need to modify the `app/User.php` model. The code below ensures that the phone, name, and password fields are mass-assigned. More information on [mass assignment](https://laravel.com/docs/8.x/eloquent) can be found in the Laravel documentation:
 
 ```
 protected $fillable = [
@@ -589,7 +616,7 @@ This is where we call the user and instruct him on what to do. Using the credent
 - The second parameter which is the “from” is your twilio phone number. This must be a Twilio phone number with voice capabilities that you have created in your console. Note that this phone number must have voice functionality.
 - To me, the most intriguing aspect of Twilio voice API is the third parameter. The third parameter is a URL to an XML file that must return valid TwiML (Twilio Markup Language) or a URL to your application that Twilio will send an HTTP request to for instructions on how to handle the call. This URL must be a live URL that be accessible online because Twilio will send an HTTP request to this URL. This is where Ngrok comes in. It will assist us in obtaining a live URL for our application.
 
-In `AuthController.php` we need to modify our `postRegistration `method to call the `makeCall `method and also add `postReverify `method to enable a registered but yet to verify user verify his/her account.
+In `AuthController.php` we need to modify our `postRegistration ` method to call the `makeCall `method and also add `postReverify ` method to enable a registered but yet to verify user verify his/her account.
 ```
 
 public function postRegistration(Request $request)
@@ -636,7 +663,7 @@ public function postReverify(Request $request){
 
 
 ```
-### Instructing, Collecting Input and Account Verification
+### Instructing, Collecting and Account Verification
 At this stage, we have done allot, but we are yet to instruct the user on what to do when he/she receives the call, collect the user input and verify the user account. Let's use artisan to quickly create a controller that handles this. Execute this command:
 
 ```
@@ -794,7 +821,6 @@ public function makeCall($call_to) {
     }
 
 ```
-
 Now our application is ready. Visit ` http://159f-129-205-113-23.ngrok.io/registration ` to test the application
 
 ### Conlusion
