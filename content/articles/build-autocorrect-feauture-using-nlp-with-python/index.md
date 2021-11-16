@@ -14,9 +14,9 @@ images:
   - url: /engineering-education/build-autocorrect-feature-using-nlp-with-python/hero.jpg
     alt: Natural Language processing example image
 ---
-One application of Natural Language Processing (NLP) is the Autocorrect function. This feature works on every smartphone keyboard regardless of the brand, it is specially programmed to generalize all the correct words that are in the vocabulary and tries to find the most similar words to those words, not in the vocabulary.
+One application of Natural Language Processing (NLP) is the Autocorrect function. This feature works on every smartphone keyboard regardless of the brand. It is specially programmed to generalize all the correct words in the vocabulary and try to find the most similar words to those words, not in the vocabulary. 
 <!--more-->
-To understand how it works, will cover Natural Language Processing in this article and how we can use it with Python to build the autocorrect feature showing all the steps involved. 
+To understand how it works, we will cover Natural Language Processing in this article and use it with Python to build the autocorrect feature showing all the steps involved.
 
 ### Table of contents
 - [Table of contents](#table-of-contents)
@@ -37,11 +37,11 @@ To follow along with this tutorial, the reader should:
 - Have a basic understanding of Python and the various python libraries used in Natural language processing.
 - Know how to use Pycharm or any other IDE or code editor for running Python.
 
-To download and install the Pycharm IDE on your PC, go to this [site](https://www.jetbrains.com/pycharm/download/#section=windows).
+Go to this [site](https://www.jetbrains.com/pycharm/download/#section=windows) to download and install the Pycharm IDE on your PC.
 
 
 ### Natural Language Processing(NLP)
-Natural Language Processing (NLP) is a branch of computer science and artificial intelligence that focuses on allowing computers to understand and process human natural language.. NLP is a programming language that allows computers to evaluate and interpret large volumes of natural language data.
+Natural Language Processing (NLP) is a branch of computer science and artificial intelligence that allows computers to understand and process natural human language. NLP is a programming language that enables computers to evaluate and interpret large volumes of natural language data.
 It paves the door for more interactivity and productivity in a variety of fields:
 - Search Autocorrect and Autocomplete.
 - Language Translation and Grammar checkers.
@@ -51,7 +51,7 @@ It paves the door for more interactivity and productivity in a variety of fields
 We'll look at how it's employed in autocorrection systems in this tutorial.
 
 ### Autocorrect Feature
-The Autocorrect model is completely based on Natural Language Processing (NLP), and it is programmed to correct spellings and errors while inputting text and tries to locate the most comparable related words, as the name suggests. It works by comparing the words in the vocabulary dictionary and the typed words on the keyboard. 
+The Autocorrect model is completely based on Natural Language Processing (NLP). It is programmed to correct spellings and errors while inputting text and locating the most comparable related words, as the name suggests. It compares the words in the vocabulary dictionary and the typed words on the keyboard. 
 If the typed word is found in the dictionary, the autocorrect feature assumes you typed the correct term. If the word does not exist, the tool identifies the most comparable words in our smartphone's history, as it indicates.
 
 When building this model/feature the following steps are involved:
@@ -65,7 +65,7 @@ The following are examples of edits:
   
   >NOTE: We usually take n between 1 to 3 edits for autocorrect systems.
 
- - *Filtering Suggested Candidates* - Only correctly spelt real words from our created candidate list are considered, so we can compare them to the words in the dictionary and then filter out the ones that don't exist in the dictionary.
+ - *Filtering Suggested Candidates* - Only correctly spelled real words from our created candidate list are considered, so we can compare them to the words in the dictionary and then filter out the ones that don't exist in the dictionary.
  - *Order Filtered Candidates based on word probabilities* - Probabilities of the words is calculated based on the following formula: P(w) = C(w)/V, where;
       `P(w)`- the probability of a word,w.
       `C(w)` - number of times(frequency) word appears in the vocabulary dictionary.
@@ -121,7 +121,7 @@ There are 1001 unique words in the vocabulary.
 #### Frequency and Probability of Dictionary Words 
 We use the `counter function` to find the frequency of the words by applying the code below.
 ```python
-# a get_count function that returns a dictionary of word vs frequency
+ # a get_count function that returns a dictionary of word versus frequency
 def get_count(words):
     word_count_dict = {}
     for word in words:
@@ -155,7 +155,7 @@ def get_probs(word_count_dict):
     return probs
 ```
 #### Implement 4 edit word functions
-Each of the 4 edit functions is implemented as shown below each performing different tasks as early illustrated. We can also combine the functions to be able to find a list of all the strings that are n edits to perform.
+Each of the four edit functions is implemented below, each performing different tasks as illustrated earlier. We can also combine the functions with finding a list of all the strings that are n edited to execute.
 
 ```python
 
@@ -237,7 +237,7 @@ def edit_two_letters(word, allow_switches=True):
     return edit_two_set
 ```
 #### Finding Similar/Corrected Word
-The program prompts the user to enter a word, if the word exists in the dictionary it is assumed to be right else a similar word is produced by the program. This is implemented by this piece of code.
+The program prompts the user to enter a word. If the word exists in the dictionary, it is assumed to be right, or else the program produces a similar word. This piece of code implements this.
 
 ```python
 # get corrected word
@@ -269,7 +269,7 @@ word 0: dead, probability 0.000999
 Process finished with exit code 0
 ```
 ### Conclusion
-As we have seen, Natural Language Processing plays a crucial role in enabling computers to understand and process human natural language. This is as implemented above using the autocorrect system.
+As we have seen, Natural Language Processing plays a crucial role in enabling computers to understand and process natural human language. This is as implemented above using the autocorrect system.
 The full combined code can be found on [GitHub](https://github.com/dentex22/Autocorrect_System).
 
 To summarize, we have:
