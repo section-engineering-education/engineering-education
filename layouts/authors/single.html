@@ -40,7 +40,7 @@
       <div class="section-rich-text-inner prl-5">
         <div class="section-rich-text-leading">
           {{ range .Resources }}
-          <img class="avatar" src="{{ (.Resize "400x").Permalink }}" />
+          <img class="avatar" src="{{ (.Resize "400x").Permalink }}" alt="{{ $.Params.title }}" />
           {{ end }}
 
           {{ .Content }}
