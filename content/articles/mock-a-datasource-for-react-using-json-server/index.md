@@ -1,13 +1,13 @@
-When building a React project, if it has endpoints, developers end up needing some quick-to-use data sources. This provides test data to test the package if it works correctly.
-Datasource mostly used may include DBMS systems such as MySQL, Postgres, SQL among many others. The problem with this approach is that during prototyping e.g. in Rapid Prototyping Approach if the application prototype is seemed to be not as expected it will be quickly discarded.
-The extra setup and configurations will be both tedious and useless since they will be quickly discarded.
+When building a React project, developers need some quick-to-use data sources if it has endpoints. These data sources provide test data to test whether the package works correctly.
+Datasource mainly used may include DBMS systems such as MySQL, Postgres, SQL, among many others. The problem with this approach is that during prototyping, e.g., in Rapid Prototyping Approach, if the application prototype seems not expected, it will be quickly discarded.
+The extra setup and configurations will be tedious and useless since they will be quickly discarded.
 
-This produces a need to create a data source that can be quickly set up and discarded, yet it performs the same functionality as the DBMS.
+The process produces a need to create a data source that can be quickly set up and discarded, yet it performs the same functionality as the DBMS.
 It should also be small enough for fewer storage requirements and produce correct and accurate results as expected.
-Such data sources problems can be solved by the use of the Json-Server library.
+The use of the Json-Server library can solve such data sources problems.
 
 The Json-Server library is quick to install, configure, use and discard in a React application.
-In this article, one will learn how to do the following on the package mentioned above in a React app.
+This article will learn how to do the following on the package mentioned above in a React app.
 
 ### Table of Contents
 
@@ -31,14 +31,14 @@ In this article, one will learn how to do the following on the package mentioned
 - [Run the application](#run-the-application)
 - [References](#references)
 
-### KeyTakeaways
+### key takeaways
 
 By the end, the following will be learned:
 
 - What is the JSOn-Server library
 - Set up the JSOn-Server library in a React application
 - Connect the app to the library
-- Use the library acts as a data source in place of a real DBMS
+- Use the library acts as a data source in place of an actual DBMS
 - Removing the dependency from the application and discarding the prototype
 
 ### Pre-requisites
@@ -58,13 +58,13 @@ A brief info on what is going to be done in the article is as follows:
 - Style the application
 - Install JSON Server in the machine
 - Set up the JSON Server as a mock database server
-- Configure the JSON Server datasource in the project
+- Configure the JSON Server data source in the project
 - Run the application
 
 ### Learn briefs on the JSON Server package
 
 JSON Server can allow almost all back-end requests and responses. They can be accessed via the GET, POST, PUT, PATCH and DELETE methods.
-It allows use of routes to access data items stored in the Mock database file(its in JSON format). This may include examples such as `GET    /posts`, `PUT    /posts/1`, or `DELETE /posts/1` among others.
+It allows routes to access data items stored in the Mock database file(it's in JSON format). This may include examples such as `GET    /posts`, `PUT    /posts/1`, or `DELETE /posts/1`.
 
 The module allows other operations to be done on the database such as:
 
@@ -82,8 +82,8 @@ More on JSON Server library will also be mentioned in the article.
 
 ### Create a React app
 
-In this section, a React app will be created. The app will be a budget planning application that will add items and remove them from a list.
-The app saves and retrieves data from a datasource inform of a JSON object.
+In this section, a React app will be created. The app will be a budget planning application to add items and remove them from a list.
+The app saves and retrieves data from a data source in form of a JSON object.
 
 #### New React app
 
@@ -179,7 +179,7 @@ export default Footer
 ```
 
 #### Button component
-- Add a button that is a reusable component for multiple click actions. This button will be used for opening the Add form, and closing the form. The code for the button is as shown below:
+- Add a button that is a reusable component for multiple click actions. This button will open the Add form and close the form. The code for the button is as shown below:
 
 ```js
 import PropTypes from 'prop-types'
@@ -331,7 +331,7 @@ export default AddBudget
 
 - It does the following:
   - Displays an error when no budget item is added during the addition process
-  - It otherwise takes the value that has been input and adds it to the others held at the data source. Addition takes place when the submit button is pressed.
+  - It otherwise takes the value that has been input and adds it to the others held at the data source. The addition takes place when the submit button is pressed.
   - It allows one to either set the reminder on or off for a particular item
   - The application will then reload automatically on the added list
 
@@ -402,7 +402,7 @@ export default AddBudget
 The code will allow the application to do the following:
 
 - Displays the items in the list of the budget
-- Allow deletion of the items in the list. It deletes the items even in the datasource.
+- Allow deletion of the items in the list. It deletes the items even in the data source.
 - It allows one to use the toggle function to set the reminder on or off.
 
 ### Allow API data from links
@@ -532,7 +532,7 @@ export default App
 - This code shown above does the following: 
   - Fetches the items from the specified URL and displays them
   - Adds items to the list
-  - Deletes the items in the datasource
+  - Deletes the items in the data source
   - Toggles the item reminder (on, off) states
 
 ### Style the application
@@ -688,7 +688,7 @@ JSON server can be installed by running the command below:
 npm install -g json-server
 ```
 
-The command installs the package at a global scope.
+The command installs the package at global scope.
 
 Once installed, head over to the 'package.json' file and add a script that quickly runs the server.
 In the scripts section, add the following line of code:
@@ -697,10 +697,10 @@ In the scripts section, add the following line of code:
 "server": "json-server --watch db.json --port 5000"
 ```
 
-This code above runs the server which serves responses on requests from the application. The datasource which acts as a database at this app is the 'db.json'  file.
+This code above runs the server that serves responses to requests from the application. The data source which acts as a database at this app is the 'db.json'  file.
 It will be accessed via port `5000` as seen above and in the 'App.js' file.
 
-### Configure the JSON Server datasource in the project
+### Configure the JSON Server data source in the project
 
 In the 'db.json' file, the server serves requests under the `http://localhost:5000/budgets/` URL.
 The data items are under the budgets section.
@@ -763,25 +763,25 @@ npm run server
 ```
 
 - Access the application in the browser via the following URL: `http://localhost:3000/`.
-- Reload the application's browser window till it displays the items if it doesn't for any reason.
+- Reload the application's browser window till it displays the items if it does not work for any reason.
 
 The outcome looks like shown below:
 
-![Final image for the application](/engineering-education/mock-a-datasource-for-react-using-json-server/final-server-product-image.png "Final image for the application")
+![Final image for the application](/engineering-education/mock-a-data source-for-react-using-json-server/final-server-product-image.png "Final image for the application")
 
 ### More on JSON Server
 
-Let's look more of the module:
+Let us look more at the module:
 
 #### Change port, file and file paths
 
-- The filename and port in which the Server runs can be changed for instance to `database.json` on port `3010` by running the command below on the terminal:
+- The filename and port in which the Server runs can be changed, for instance, to `database.json` on port `3010` by running the command below on the terminal:
 
 ```shell
 json-server --watch database.json --port 3010
 ```
 
-- Static files located at different folders can also be served as shown below:
+- Static files located in different folders can also be served as shown below:
 
 ```shell
 json-server database.json --static ./public/database
@@ -789,9 +789,9 @@ json-server database.json --static ./public/database
 
 #### Perform Queries on the data
 
-This may be useful for example when searching using the search bar in the application window. Follow the steps below:
+This action may be helpful to, for example, when searching using the search bar in the application window. Follow the steps below:
 
-- Query the database for a certain value by running the following in a new terminal:
+- Query the database for a particular value by running the following in a new terminal:
 
 ```shell
 curl  http://localhost:5000/budgets?q=Carrots
@@ -802,12 +802,12 @@ The return value looks like follows:
 
 ![Perform queries](/engineering-education/mock-a-datasource-for-react-using-json-server/querying.png "Perform queries")
 
-The module allows use of middlewares, random data generation, accessing the datasource remotely, setting of custom routes among many other more things.
+The module allows middlewares, random data generation, accessing the data source remotely, setting custom routes, e.t.c.
 
 #### Add delay and change Host
 
 - To change the host, use the `-H` or `--host` option.
-- Adding some delays (in milliseconds) to the server so that it can replicate a real server, use the `-d` or `--delay` option.
+- Adding some delays (in milliseconds) to the server to replicate a real server, use the `-d` or `--delay` option.
 
 Both of these two are shown below:
 
@@ -821,9 +821,9 @@ Find the code for this article in this [link](https://github.com/blacklihgt/Mock
 
 ### Conclusion
 
-In conclusion, quick to run and throw away parts are really important to developers during software development.
-These parts are useful in agile programming and prototyping. JSON Server dependency is an example of quick dispensable project development unit.
-It is small sized, easy to install and use, learn and dispose.
+In conclusion, running and throwing away parts are essential to developers during software development.
+These parts are helpful in agile programming and prototyping. JSON Server dependency is an example of a quick dispensable project development unit.
+It is small-sized, easy to install, use, learn, and dispose of.
 
 At this point, the following have been covered:
 
