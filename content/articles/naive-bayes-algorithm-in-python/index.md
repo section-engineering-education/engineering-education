@@ -35,7 +35,7 @@ $p(A|B)=\frac{p(A\cap B)}{p(B)}$
 Where:
 - A and B are two events.
 - $p(A|B)$ is the conditional probability. We read this as the probability of *A* given *B*.
-- $p(A\cap B)=p(A, B)$  is called the join probability, i.e.,  probability of A and B happening together.
+- $p(A\cap B)=p(A, B)$  is called the joint probability, i.e.,  probability of A and B happening together.
 - $p(B)$ is the probability of event ${B}$ .
 
 From the probability rules:
@@ -44,7 +44,7 @@ From the probability rules:
 
 From the symmetry property $p(A, B ) = p(B, A)$, and thus we can define:
 $p(B|A)=\frac{p(A,B)}{p(A)}\rightarrow {p(A,B)}=p(B|A)p(A)$
-This defines our product rule is above.
+This relationship defines how the product rule above comes about.
 Using the above rule, we can rewrite our conditional probability as follows:
 $p(A|B)=\frac{p(B|A)p(A)}{p(B)}$
 which is the *Bayes theorem*. Note that, introducing the sum rule on the $p{(B)}$, this theorem can be written as:
