@@ -1,72 +1,141 @@
-Customer service is important to your business because it retains customers and extracts more value from them. By providing top-notch customer service, businesses recoup customer acquisition costs and cultivate a loyal following that refers customers, serves as case studies, and provides testimonials and reviews.
-Elarian is a framework that helps you build a customer service strategy that is aligned with your business goals. It simplifies the process of building data-driven applications by engaging customers over channels such as SMS, UUSD, Telegram bots, WhatsApp, and more.
+Customer service is important to any business brand. However, picking and choosing the right digital channels to reach your customers can be difficult. For this reason, it makes sense for businesses to embrace customer engagement software to remain relevant. Elarian is a framework that helps you build a customer service strategy that is aligned with your business goals. Its focus is simplifying the process of building data-driven applications by engaging customers over channels such as SMS, UUSD, Telegram bots, WhatsApp, and more.
+
+In this tutorial, we will build a USSD service using Elarian and `Node.js`.
+
+### Table of Contents
+
+- [Table of Contents](#table-of-contents)
+- [Prerequisites](#prerequisites)
+- [Creating an account](#creating-an-account)
+- [Setup the Node.js project](#setup-the-nodejs-project)
+- [Managing Elarian Customer Data](#managing-elarian-customer-data)
+- [Elarian USSD service in Node.js](#elarian-ussd-service-in-nodejs)
+- [Conclusion](#conclusion)
  
 ### Prerequisites
 
-1. A Text Editor, I recommend [VS Code](https://nodejs.org/en/) for development
-2. A [Node.js](https://code.visualstudio.com/) runtime installed in your machine
+1. A Text Editor, I recommend [VS Code](https://nodejs.org/en/) for development.
+   
+2. A [Node.js](https://code.visualstudio.com/) runtime installed in your machine.
+   
 3. A basic understanding of the [JavaScript](https://www.w3schools.com/js/DEFAULT.asp) programming language, preferably ES6 and above.
+   
 4. You will need an Elarian account. To create a dashboard sign up to [elarian](https://account.elarian.com/auth/signup).
 
 ### Creating an account
-Head over to [elarian](https://account.elarian.com/auth/signup) to create an account using GitHub account or else, Google account or even use your email and password.
 
-A successful login will take you to your AstraDB dashboard. Then, on the left panel of the dashboard, click create database.
+To get started, head over to [elarian](https://account.elarian.com/auth/signup) and sign up using your email and password. Alternatively, you can also use providers such as Google and GitHub to sign in. 
+
+![Elarian SignIn](./engineering-education/elarian-signup.png)
+
+Elarian will send an email verification link before you can access the dashboard. A successful login will take you to the Elarian dashboard that looks like:
+
+![dashboard](./engineering-education/org-explorer.png)
 
 ### Setup the Node.js project 
-We will create a project folder and name it `elarian-app-demo`:
 
+To set up the project, open your terminal and create a folder named `elarian-app-demo`:
 ```bash
 mkdir elarian-app-demo
 ```
-
-Next, open the project folder on your IDE and initialize the Node.js app:
-
+Next, navigate inside the folder and initialize the Node.js app using the command: 
 ```bash
 cd elarian-app-demo && npm init -y
-code .
 ```
 
-The `npm init -y` command will create a `package.json` file for application dependencies.
+Let's now open the project folder in VS Code:
 
+```bash
+code .
+```
+The command `npm init -y` creates a `package.json` file to hold metadata relevant to our app such as project description, versioning, dependencies, etc.
+
+For our application, we need the following packages from npm:
+-  The `Elarian JavaScript SDK` with Node.js version 8 or above.
+  
+- `Dotenv`: To safely store API keys, we will inject environment variables from a `.env` file in our application, avoiding hardcoding any sensitive data. Ensure to add a .env in your .gitignore file not to push this to a GitHub repository.
+
+- `Nodemon`: nodemon package will monitor all changes in our application and continuously restart our server.
+  
+On your terminal, install the packages using the command below:
+
+```bash
+npm i elarian dotenv
+```
+
+For `nodemon`, we will install the module as a development dependency:
+```bash
+npm install --save-dev nodemon
+```
+To bootstrap,  create the root `index.js` file inside the `elarian-app-demo` directory and import the `Elarian` and `dotenv` packages as:
 
 ```js
 const { Elarian } = require('elarian');
-
 const dotenv = require('dotenv');
 
 dotenv.config()
 ```
 
+To create a client instance of `Elarian`, we need to pass the `orgId`, `appId`, and `apiKey`. Therefore, let's head back to the dashboard to grab these credentials. To manage customers, we need to create an organization as the namespace that holds apps and channels where our customers will engage. 
+
+On our dashboard from the left panel, click the `New Organization` button to create an organization.
+
+![new org](./create-org.png)
+
+In our case, we will create a test sandbox environment and name it `elarian-demo`.
+
+![org name and type](./engineering-education/org-create.png).
+
+Before generating an API key from the settings section, let's create an app and name it `customer-demo-app`:
+
+![new app](./engineering-education/new-app.png)
+
+Finally, under settings, we can generate an API key:
+
+![API key](./../elarian-demo/assets/api-key.png)
+
+You will need to safely store the `orgId`, `appId`, and `apiKey` in a `.env` file.
+Your `.env` file will have the variables as:
+```bash
+ELARIAN_ORGID=your_org_id
+ELARIAN_APPID=your_app_id
+ELARIAN_API_KEY=your_api_key
+```
+Since we have `dotenv.config()` initialized in our `index.js`, we can safely instantiate the `elarianClient` object with:
+
 ```js
 const elarianClient = new Elarian({
-    orgId: 'el_org_eu_LdW7eC',
-    appId: 'el_app_jRFCDq',
-    apiKey: 'el_k_test_3e8ae97fccf78ab4b5796fa45c3d2ccd0e257bab50753668d625808673243247'
+    orgId: process.env.ELARIAN_ORGID,
+    appId: process.env.ELARIAN_APPID,
+    apiKey: process.env.ELARIAN_API_KEY
 });
 ```
+>> Note: In the `.gitignore` file, be sure to exclude `.env` so that the credentials do not commit to any GitHub public repository.
+
+Finally, to test the connection, we need to listen for error and connection events from our `elarianClient` instance. Notice how Elarian uses error first handlers where we reserve the first event for the error object. Otherwise, a successful connection to Elarian should log the success message to the console.
 
 ```js
 elarianClient
         .on("error", (error) => {
-          console.log("connection error", error)
+          console.log("A connection error", error)
         })
         .on("connected", () => {
-          console.log("Connection is successfully")
+          console.log("Elarian connection is successful")
         })
         .connect()
 ```
+### Managing Elarian Customer Data
+Elarian is built in mind with the customer as the unit of abstraction. To achieve this, it manages data in a reactive paradigm. The broad category includes:
 
-### Elarian Customer Data
+1. Metadata holds a key-value data store associated with information about a unique customer.
+   
+2. With AppData, we can store data that tracks the state of the user in our application. For example, in our USSD application, AppData will hold the state of the user in different transitions and application lifecycle. The data is stored in memory for quick access.
+   
+3. Identity Data will allow you to uniquely identify the customer from your application. With this, Elarian can initiate requests and generate data to help you improve your customer profile.
 
-1. Metadata allows you to store data about your cutomer in a key-value map associated with a unique customer. The data can be in either string or binary format.
-2. AppData allows you to store data that will track state of user in your application. For example, in our USSD application, we will need AppData to hold the state of user at different transitions. The data is stored in memory for quick access.
+We will use the above strategies to manage customer data in the next sections.
 
-### Integrating Elarian USSD service
-
-Working with Customer Data
-Elarian provides several constructs to help you organize your customer data. The broad categories of all supported customer data are Identity Data, Metadata and App Data. In this section we are only going to interact with app data and metadata.
-
+### Elarian USSD service in Node.js
 
 ```js
 const USSDHandler = async (notification, customer, appData, callback) => {
@@ -206,33 +275,7 @@ const USSDHandler = async (notification, customer, appData, callback) => {
   } 
 ```
 
-
 ### Conclusion
 
-Elarian provides a customer service startegy that is time and cost effective. Having this in place can enable your brand to stand out from the competition maintain positive customer experience, and reputation. With the vast cloud services available, we can easily integrate payment solutions such as M-Pesa, provide WhatsApp and Telegram bots that integrate seamlessly with your applications, and more.
-
-For further learning on how to integrate UUSD, SMS, and perform other communication functions, check out [Elarian docs](https://developers.elarian.com/introduction-to-elarian/what-is-elarian).
-
-
-Engagement Automation
-
-Elarian allows you to initiate requests to customers and handle notifications from customers through communication or payment providers. In line with the customer being the unit of abstraction, all data that a customer generates is stored in the customer's perspective, making it easy for your application to build a better profile of the customer's behavior.
-
-
-Customer Data Management
-
-Elarian provides several constructs to help you organize your customer data. The broad categories of supported customer data are Identity Data, Metadata, and App Data.
-
-Identity Data
-
-Identity Data refers to data that allows your application to identify one customer or groups of customers. At the moment, there are four primary pieces of identity data, and these are customerNumber, customerId, secondaryId, and tags.
-
-Metadata
-
-Metadata allows you to store arbitrary data about your customer in a key-value map associated with a unique customer. The data can be in either string or binary format, which allows you to serialize complex objects and associate them with the customer. Examples of metadata could be a user's address, language preference, or gender.
-
-App Data
-
-App Data allows you to store arbitrary data to help determine the state of a user for a specific application. Using the survey application as an example, you could use app data to store what question you're currently waiting for the user to answer. App data can also be in string or binary format.
-
-A customer can have multiple instances of app data linked to them, e.g., the survey app data and the loyalty program app data. The appId passed while establishing a connection determines the instance of the customer's app data that will be made available. Another way to think about this is establishing connections to different databases, only that the database (app data) stores information for a single customer.
+In conclusion, Elarian is a service provider that helps achieve a customer-first business model. It helps meet your business need by seamlessly integrating with the vast channel of providers in a reactive programming style that is robust, scalable, and hassle-free in infrastructure deployment and management.
+For further learning on how to integrate UUSD, SMS, WhatsApp, Telegram bots, Africa's Talking, and payment functionalities, check out [Elarian docs](https://developers.elarian.com/introduction-to-elarian/what-is-elarian).
