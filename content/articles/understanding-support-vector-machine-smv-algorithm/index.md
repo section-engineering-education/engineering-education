@@ -84,6 +84,9 @@ print(accurate_marks(w_test,w_predict))
 
 ### Tuneing Parameters in SVM
 When using machine learning methods, model accuracy may be improved by modifying parameter values. Look at the list of SVM parameters.
+```
+sklearn.svm.SVC(C=1.0, kernel='rbf', degree=2, gamma=0.0, coef0=0.0, shrinking=True, probability=False,tol=0.01, cache_size=150, class_quantity=None, verbose=False, maximum_iters=-1, random_nature=None)
+```
 
 We'll discuss `kernel,` `gamma,` and `C,` three crucial model performance parameters.
 
