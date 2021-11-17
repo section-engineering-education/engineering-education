@@ -24,6 +24,7 @@ In order to achieve a level of consistent style and increasingly elevated qualit
 - Prepared Markdown (.md) file. (Note: All articles must be submitted in properly-formatted Markdown.)
 - Verified PayPal account. (At this time, we only service payments through PayPal. If you don’t have a PayPal account, please check whether [PayPal is available in your region](https://www.paypal.com/en/webapps/mpp/country-worldwide).) Otherwise, payouts may experience delays.
 - To ensure expedite reviews, publishing, and payouts for articles, we request that ***all first drafts submitted be error-free (pre-checked for English grammar, technically accurate, properly cited, formatted, etc.) and it be ready for publishing*** by meeting our suggested article guidelines as outlined below. 
+
 Here is a [free tool](https://writeandimprove.com/?lang=en-GB) to help improve your writing skills. Please be sure to go over our [resources page](https://github.com/section-engineering-education/engineering-education/blob/master/new_contributors/resources-page.md) to take a look at all the listed resources to help improve overall techinical writing abilities.)
 
 All contributors are expected to review and adhere to [Our Code of Conduct](https://github.com/section-io/engineering-education/blob/master/CODE_OF_CONDUCT.md) before submitting articles.
