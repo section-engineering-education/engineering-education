@@ -60,8 +60,7 @@ Now that we know the mathematical representation of the *Bayes theorem* let's un
   $p(B)=\sum_{all A} {p(B|A)p(A)}$
 This  $p(B)$ ensures that the sum of the *posterior* over all A values equals one.
 
-The *Bayes theorem* assumes that events A and B are independent of each other. However, with real-world datasets, this assumption is not always valid. It's usual for dataset features to be correlated, and therefore this assumption the *Bayes theorem* based on remains to be 'naive'. This is why in machine learning, this algorithm is called **Naive Bayes ALgorithm**.
-
+The *Bayes theorem* assumes that events A and B are independent of each other. However, with real-world datasets, this assumption is not always valid. It's usual for dataset features to be correlated, and therefore this assumption the *Bayes theorem* based on remains to be 'naive'. This is why in machine learning, this algorithm is called **Naive Bayes Algorithm**.
 ### Implementing Naive Bayes Algorithm
 This session will implement our model on a business dataset that contains information about customers who previously transacted with the business. The dataset consists of 400 customers, and each customer has information on their age, the estimated salary, and whether they bought a particular product or not. Our task is to train a Naive Bayes classifier to understand the correlation between the features, i.e., `Age`,  `EstimatedSalary`, and the `Purchased` target variable. The essence of this is to enable the business to predict which customer is likely to purchase their new product just released to the market and accurately target them with valid ads from their social networks. The link to download this data is provided in the prerequisites section.
 ```
