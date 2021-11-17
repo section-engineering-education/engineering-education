@@ -104,7 +104,7 @@ Once the scene builder is installed, right-click on the FXML file in the project
 
 ![Figure 4](/engineering-education/mysql-connection-graphical-user-interface-design-using-javafx-and-scene-builder/figure4.png)
 
-The left side of the scene builder has the components library which can be dragged and dropped into the scene in the middle of the window. The right side shows the properties of the component library which has been selected from the scene. 
+The left side of the scene builder has the components library which can be dragged and dropped into the scene in the middle of the window. The right side shows the properties of the component library which have been selected from the scene. 
 
 The document pane of the scene builder shows components hierarchy and control. The hierarchy shows the layout of the components in the order in which they were added to the scene. Whereas, the controller pane shows the control class. This class contains the business logic codes for performing actions and events.
 
@@ -262,7 +262,7 @@ The main fields for our design include the following:
 
 #### Text fields
 1. **Database name text field** - This allows users to give the name of the database with which the application should communicate. The database name should be provided in this field as it is written in the database application.
-2. **Username text field** - This allows users to provide the database username which connects to the databases. The database username for log in is given in this field to allow our application to sign into the database.
+2. **Username text field** - This allows users to provide the database username which connects to the databases. The database username for login is given in this field to allow our application to sign into the database.
 3. **Password** - This is the database password provided for the user. It will allow the application to be authenticated and authorized to access the given database.
 4. **Server** - This is the main location where the database storage is hosted. It could be a local host or remote server.
 
@@ -272,7 +272,7 @@ The main fields for our design include the following:
 3. **Test the connection** - The action event for this button is to communicate with the database to check if the connection strings provided are correct and if the application can communicate with the database.
 
 ### Event handler code
-#### Creating the connection string code XML File
+#### Creating the connection string code XML file
 The code creates an XML file which stores the MySQL connection credentials.
 
 ```java
@@ -355,7 +355,7 @@ public void readDbConnectionFile() {
 ```java
    public void dbConnectionMethod() {
 
-        readDbConnectionFile(); //Calls the method which reads the file and set the values to the components
+        readDbConnectionFile(); //Calls the method which reads the file and sets the values to the components
 
         //Using the components getter methods to get the values and assign the connection required strings
         pass = txtdbPassword.getText();
@@ -376,7 +376,7 @@ public void readDbConnectionFile() {
     }
 
 ```
-### Final GUI Application
+### Final GUI application
 
 ![Figure 10](/engineering-education/mysql-connection-graphical-user-interface-design-using-javafx-and-scene-builder/figure10.png)
 
@@ -387,8 +387,11 @@ With on click of the save button, the method to create an XML file and save to t
 On click, the application reads the XML files, gets the connection strings, and tries to connect with the MySQL database. If the connection is successful it displays "connected" to the database as indicated in the screenshot above.
 
 ### Conclusion
+In this article, we have learned how JavaFX scene builder can design a desktop application that can connect to the database. Through interaction with the desktop application user interface, data can be saved in the database (MySQL) for processing or any other manipulation. 
 
-In this article, we have learned how JavaFX scene builder can design a desktop application that can connect to the database. Through interaction with the desktop application user interface, data can be saved in the database (MySQL) for processing or any other manipulation. We have learned how JavaFX scene builder automates FXML code for the UI making the design very easy. We have also been able to learn how MySQL connection strings can be input from a user interface, saved in an XML file format, and later called any time we need our application to communicate to the database. The code parts used in this article can be found at my [GitHub Repo](https://github.com/JosephAyoma/JavaFX-scenebuilder-for-mysql-connection).
+We have also learned how JavaFX scene builder automates FXML code for the UI making the design very easy. We have been able to learn how MySQL connection strings can be input from a user interface, saved in an XML file format, and later called any time we need our application to communicate to the database. 
+
+The code parts used in this article can be found at my [GitHub Repo](https://github.com/JosephAyoma/JavaFX-scenebuilder-for-mysql-connection).
 
 ---
 Peer Review Contributions by: [Dawe Daniel](/engineering-education/authors/dawe-daniel/)
