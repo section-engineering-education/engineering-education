@@ -74,7 +74,7 @@ We ask all students to have an active, verified, fully set up PayPal account (th
 
 Not having a PayPal account DOES NOT BAR anyone from participating, building up a resume, and published works to enhance one’s career. 
 
-You can contribute articles to publish to build up a portfolio.
+You can contribute articles to publish to build up a portfolio without a PayPal account.
 
 ### Does Section provide revision services?
 We will look over the all articles that come in to ensure they are publish worthy - but our peer reviewer team is only looking to improve the content by making suggestions. 
