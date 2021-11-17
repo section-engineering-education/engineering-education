@@ -199,7 +199,7 @@ I am wonderful!*/
 - Since the student class extends the human class the student class calls the `super` method with the `name` argument which will invoke the human class constructor function and store the name too.
 - A `greet` function is defined by both classes . 
 
-***What happens when we test the script ***
+***What happens when we test the script***
 
 - const 01 will use the greet method from its class(the person class)
 - const 02 will use the greet method from the student class
