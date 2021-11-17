@@ -5,7 +5,6 @@ The main criteria that we're using to evaluate the incoming requests include:
 - Programming-centric topics in the web technologies space - We're most interested in articles that take a practitioner's approach to solving common (and not so common) challenges in the modern technology ecosystem. We tend to lean more heavily towards meaty front- and back-end technology-related content and are generally less interested in tangential technology topics, such as UI design and hardware.
 
 ### Contributor Documentation
-
 Here's a list of our contributor documentation to help you get started on your first article.
 
 - [Contributing](https://github.com/section-engineering-education/engineering-education/blob/master/new_contributors/CONTRIBUTING.md): This document is your main starting point. It introduces you to the program and guides you through signing up, proposing your first article and suggested article structures.
