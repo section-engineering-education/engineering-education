@@ -1,8 +1,13 @@
-A 'linked list' is used to hold node-based data. Data in a linked list is spread across multiple locations rather than being stored in a single location in memory like in an array. Each node has a reference section where an address or the address of the next node is maintained.
+A `linked list` is used to hold node-based data. Data in a linked list is spread across multiple locations rather than being stored in a single location in memory like in an array. Each node has a reference section where an address or the address of the next node is maintained.
 
 The brief linked list has links connecting some of the nodes. By removing the challenges of an array, such as the requirement for contiguous memory and the difficulty of array insertion and deletion, an array data structure is improved.
 A linked list, on the other hand, makes it simple to add and delete items as your requirements change.
-
+### Table of contents
+- [Differences between a linked list and an Array](#differences-between-a-linked-list-and-an-array)
+- [What a generic linked list is and how it is used](#what-a-generic-linked-list-is-and-how-it-is-used)
+    - [Primary linked list member functions](#primary-linked-list-member-functions)
+- [Implementation of a Java single-linked list](#implementation-of-a-java-single-linked-list)
+- [Conclusion](#conclusion)
 ### Differences between a linked list and an Array
 A linked list and an Array differ in various ways that you should be aware of. They are listed below:
 1. There is only one memory address for a complete array, whereas a linked list stores various elements at different memory locations.
@@ -11,9 +16,8 @@ A linked list and an Array differ in various ways that you should be aware of. T
 4. A linked list uses less space than an array because pointers can be stored close to nodes instead of in the middle of the list.
 5. In a linked list, only linear search is performed, however in an array linear search and binary search are both used.
 
-### What a generic linked list is and how it's used.
-There are many different ways to create a generic linked list because they can carry any form of data.
-
+### What a generic linked list is and how it is used
+There are many different ways to create a generic linked list because they can carry any form of data. An implementation of linked lists that may store any data type is known as a generic linked list. Integers are stored in one linked list, while floats are stored in the other.
 #### Primary linked list member functions
 These are functions that can be performed on a linked list:
 - Sort: Sort the linked list's nodes.
