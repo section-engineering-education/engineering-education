@@ -1,0 +1,153 @@
+ {{ define "main" }}
+<article> 
+
+  <section class='hero-blocks xs-pt-50 xs-pb-50 sm-pt-100 sm-pb-100 -blue-blocks'>
+
+    <div class="hero-blocks-mobile">
+
+      <div class="hero-blocks-mobile-left">
+        <div class="hero-blocks-mobile-left-large"></div>
+      </div>
+
+      <div class="hero-blocks-mobile-right">
+        <div class="hero-blocks-mobile-right-small"></div>
+        <div class="hero-blocks-mobile-right-large"></div>
+        <div class="hero-blocks-mobile-right-stripes"></div>
+      </div>
+
+    </div>
+
+    <div class="section-container relative">
+
+      <div class="hero-blocks-left-blocks">
+        <div class="hero-blocks-left-blocks-large"></div>
+        <div class="hero-blocks-left-blocks-stripes"></div>
+      </div>
+
+    <div class="hero-blocks-inner relative prl-5">
+      <div class="hero-blocks-middle">
+
+        <h1 class="title-2 xs-mb-30">{{ .Title }}</h1>
+        <h5 class="text-16 text-blockquote">{{ .Date.Format "January 2, 2006" }}</h5>
+        {{ with .Params.topics }}
+        <ul class="list-flex xs-mt-8 topics">
+          <li class="xs-mr-6 text-18-regular">Topics:</li>
+          {{ range . }}
+          {{- $topicURLparts :=  slice "topic" (urlize .) -}}
+          {{- $topicURL := delimit $topicURLparts "/"| printf "/%s/" -}}
+          <li class="xs-mr-6 topic"><a class="text-18-regular text-light-blue decoration-none" href="/engineering-education{{ $topicURL }}">{{ . }}</a></li>
+          {{ end }}
+        </ul>
+
+        {{ end }}
+
+        </div>
+      </div>
+
+      <div class="hero-blocks-right-blocks">
+        <div class="hero-blocks-right-blocks-small"></div>
+        <div class="hero-blocks-right-blocks-large"></div>
+        <div class="hero-blocks-right-blocks-stripes"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section-rich-text blog-styling xs-pb-30">
+    <div class="section-container">
+      <div class="section-rich-text-inner prl-5">
+        <div class="social-list">
+          <a class="social-list-twitter" href=""></a>
+          <a class="social-list-linkedin" href=""></a>
+          <a class="social-list-facebook" href=""></a>
+        </div>
+        <div class="social-list">
+            <div class="addthis_inline_share_toolbox"></div>
+        </div>
+        <div class="section-rich-text-leading">
+        {{ .Content }}
+        </div>
+
+        {{ if hugo.Environment | eq "development" }}
+
+        <script type = "text/javascript">
+          var images = document.getElementsByTagName('img'); 
+          for (var i = 0; i < images.length; i++) {
+            images[i].src = images[i].src.replace("/engineering-education/", "/");
+          };
+          console.log(images[2].src);
+        </script>
+
+        {{ else }}
+        {{ end }}
+
+        {{ $author_page := (printf "/authors/%s/index.md" .Params.author) }}
+        {{ with $.Site.GetPage $author_page }}
+          <div class="section-rich-text-leading bio">
+            <hr>
+            <h4>About the author</h4>
+            {{ range .Resources }}
+            <img class="avatar" src="{{ (.Resize "180x").Permalink }}">
+            {{ end }}
+            <span class="text-22"><a class="link-basic" href="{{ .Permalink }}">{{ .Params.title }}</a></span>
+            <p>
+              {{ .Content }}
+            </p>
+            <ul class="social">
+              {{ with .Params.twitter }}
+                <li>
+                  <i class="twitter"></i>
+                  <a href="{{ . }}" target="_blank">Follow @{{ index (last 1 (split . "/")) 0 }}</a>
+                </li>
+              {{ end }}
+              {{ with .Params.linkedin }}
+                <li>
+                  <i class="linkedin"></i>
+                  <a href="{{ . }}" target="_blank">Connect on LinkedIn</a>
+                </li>
+              {{ end }}
+              {{ with .Params.github }}
+                <li>
+                  <i class="github"></i>
+                  <a href="{{ . }}" target="_blank">Follow @{{ index (last 1 (split . "/")) 0 }} on GitHub</a>
+                </li>
+              {{ end }}
+              {{ with .Params.website }}
+                <li>
+                  <i class="website"></i>
+                  <a href="{{ . }}" target="_blank">Visit website</a>
+                </li>
+              {{ end }}
+            </ul>
+          </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+</article>
+
+<div class="section-rich-text-enged prl-5">
+  <span class="text-blue text-18-regular">This article was contributed by a student member of Section's Engineering Education Program. Please report any errors or innaccuracies to <a href="mailto:enged@section.io">enged@section.io</a>.</span>
+</div>
+
+<section class="section-rich-text xs-pb-80 xs-pt-80">
+  <div class="section-container">
+    <div class="section-rich-text-inner prl-5">
+      <a class="decoration-none" href="{{ .Site.Data.globals.enged_cta.url }}">
+        <div class="cta-block-box -blue-blocks relative xs-mt-40 xs-mb-80">
+          <div class="cta-block-box-left-block absolute"></div>
+          <div class="cta-block-box-left-stripes absolute"></div>
+          <div class="cta-block-box-inner pa-5 cta-shadow">
+            <h3 class="title-3 xs-mb-20">{{ .Site.Data.globals.enged_cta.title }}</h3>
+            <p class="xs-mb-20">{{ .Site.Data.globals.enged_cta.copy }}</p>
+            <span class="link-with-arrow-blue text-blue text-18-medium">{{ .Site.Data.globals.enged_cta.text }}</span>
+          </div>
+          <div class="cta-block-box-right-block absolute"></div>
+          <div class="cta-block-box-right-stripes absolute"></div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+{{ end }}

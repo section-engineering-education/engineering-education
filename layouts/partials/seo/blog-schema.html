@@ -1,0 +1,40 @@
+<script type="application/ld+json">
+  {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "url": "https://www.section.io",
+      "logo": "https://www.section.io/images/logo.png",
+      "sameAs" : [
+      "https://twitter.com/section_io",
+      "https://www.linkedin.com/company/section_io/",
+      "https://github.com/section-engineering-education/engineering-education"
+      ]
+  }
+</script>
+<script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage" : {
+        "@type" : "WebPage",
+        "@id" : "{{ .Site.BaseURL }}"
+      },
+      "name" : "{{ .Title }}",
+      "headline" : "{{ .Title }}",
+      "description" : "{{ if .Description }}{{ .Description }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ end }}{{ end }}",
+      "author": {
+        "@type": "Person",
+        "name": "{{ .Params.author }}"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Section",
+        "logo": "https://www.section.io/images/logo.png"
+      },
+      "image" : {{ if isset .Params "images" }}"{{ "https://www.section.io" }}{{ (index .Params.images 0).url }}"{{ else }}"{{ "https://www.section.io/assets/images/blog/featured-images/section-edge-computing-blog.jpg" }}"{{ end }},
+      "inLanguage" : "en-US",
+      "datePublished": "{{ .Date }}",
+      "url" : "{{ .Permalink }}",
+      "keywords" : [ {{ if isset .Params "tags" }}{{ range .Params.tags }}"{{ . }}",{{ end }}{{ end }}"Blog" ]
+  }
+</script>

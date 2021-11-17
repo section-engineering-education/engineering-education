@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html {{ with .Site.LanguageCode }}lang="{{ . }}"{{ end }}>
+  <head>
+    {{- block "head" . -}}
+      <title>{{ block "title" . }}{{ with .Title }}{{ . }} | {{ end }}{{ .Site.Title }}{{ end }}</title>
+      {{- partial "head" . -}}
+
+    {{- end -}}
+  </head>
+
+  <body class="{{ with .Section }}section-{{ . | urlize }} {{ end }}{{ with .Kind }}kind-{{ . | urlize }} {{ end }}{{ with .Type }}type-{{ . | urlize }} {{ end }}">
+     <!-- Google Tag Manager (noscript) -->
+     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TVKJV5G"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+
+      {{- block "navigation" . -}}
+        {{/* Use this block to override the navigation for any layout */}}
+          {{- partial "components/header" . -}}
+      {{- end -}}
+
+      <div class="main-wrapper fill-white xs-mt-80">
+        {{- block "main" . -}}
+          {{/* Use this block to render the main content for any layout */}}
+        {{- end -}}
+      </div>
+
+      {{- block "footer" . -}}
+        {{/* Use this block to override the footer for any layout */}}
+        {{- partial "components/footer-collapsible" . -}}
+        {{- partial "components/footer" . -}}
+      {{- end -}}
+
+      {{- block "scripts" . -}}
+      {{/* Use this block to override the scripts for any layout */}}
+      {{- partial "footer-scripts" . -}}
+    {{- end -}}
+
+  </body>
+</html>

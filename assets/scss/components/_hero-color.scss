@@ -1,0 +1,931 @@
+.hero-color.fill-blue {
+  min-height: pxem(252);
+  overflow: hidden;
+
+  .hero-color-left {
+    min-height: pxem(252);
+    @include flex-width-grid(100%);
+
+    @include mq($from: 800px ) {
+      @include flex-width-grid(20%);
+    }
+
+    &-small-stripe {
+      position: absolute;
+      width: pxem(121);
+      height: pxem(121);
+      top: 0;
+      margin-top: -30px;
+      left: 370px;
+      background: repeating-linear-gradient(
+        -45deg,
+        $fill-white,
+        transparent 2px,
+        transparent 13px,
+        $fill-white 13px
+      );
+      display: none;
+      transition: all 1s ease;
+      opacity: 0.65;
+
+      @include mq($from: 980px ) {
+        left: 170px;
+        display: block;
+      }
+
+      @include mq($from: 1320px ) {
+        left: 370px;
+        display: block;
+      }
+    }
+
+    &-large-stripe {
+      position: absolute;
+      display: block;
+      width: pxem(333);
+      height: pxem(143);
+      bottom: 0;
+      left: 0;
+
+
+      margin-left: -100px;
+      margin-bottom: -60px;
+      background: repeating-linear-gradient(
+        -45deg,
+        $fill-white,
+        transparent 2px,
+        transparent 13px,
+        $fill-white 13px
+      );
+      transition: all 1s ease;
+      opacity: 0.65;
+
+      @include mq($from: 980px ) {
+        margin-bottom: -20px;
+        margin-left: -140px;
+      }
+
+      @include mq($from: 1320px ) {
+        margin-left: -30px;
+      }
+    }
+
+    &-small-color {
+      position: absolute;
+      width: pxem(60);
+      height: pxem(60);
+      background: $fill-lighter-blue;
+      z-index: 99;
+      transition: all 1s ease;
+      display: none;
+
+      @include mq($from: 980px ) {
+        top: 50%;
+        left: 190px;
+        margin-top: -30px;
+        display: block;
+      }
+
+      @include mq($from: 1320px ) {
+        left: 300px;
+        display: block;
+      }
+    }
+  }
+
+  .hero-color-right {
+
+    &-large-stripe {
+      position: absolute;
+      display: block;
+      width: pxem(332);
+      height: pxem(154);
+      margin-top: -80px;
+      top: 0;
+      right: -50px;
+
+      background: repeating-linear-gradient(
+        -45deg,
+        $fill-white,
+        transparent 2px,
+        transparent 13px,
+        $fill-white 13px
+      );
+      transition: all 1s ease;
+      opacity: 0.65;
+
+      @include mq($from: 980px ) {
+        margin-top: -50px;
+        right: 0;
+      }
+
+      @include mq($from: 1320px ) {
+        margin-top: -50px;
+        top: 0;
+        right: 160px;
+      }
+    }
+
+    &-small-color {
+      position: absolute;
+      width: pxem(95);
+      height: pxem(95);
+      background: $fill-lighter-blue;
+      top: 50%;
+      right: 100px;
+      margin-top: -65px;
+      display: block;
+      z-index: 99;
+      transition: all 1s ease;
+      display: none;
+
+      @include mq($from: 980px ) {
+        right: 50px;
+        display: block;
+      }
+
+      @include mq($from: 1320px ) {
+        right: 100px;
+        display: block;
+      }
+    }
+  }
+
+  .hero-color-middle {
+    text-align: left;
+    overflow: hidden;
+    min-height: pxem(252);
+    @include flex-width-grid(100%);
+
+    @include mq($from: 800px ) {
+      @include flex-width-grid(60%);
+    }
+
+    @include mq($from: 420px ) {
+      text-align: center;
+    }
+
+    p {
+      max-width: pxem(563);
+    }
+
+    &-right-stripes {
+      position: absolute;
+      display: block;
+      width: pxem(332);
+      height: pxem(154);
+      margin-top: -90px;
+      top: 0;
+      right: -150px;
+
+      background: repeating-linear-gradient(
+        -45deg,
+        $fill-white,
+        transparent 2px,
+        transparent 13px,
+        $fill-white 13px
+      );
+      transition: all 1s ease;
+      opacity: 0.65;
+
+      @include mq($from: 800px ) {
+        display: none;
+      }
+    }
+
+    &-left-stripes {
+      position: absolute;
+      display: block;
+      width: pxem(332);
+      height: pxem(154);
+      margin-bottom: -80px;
+      bottom: 0;
+      left: -150px;
+
+      background: repeating-linear-gradient(
+        -45deg,
+        $fill-white,
+        transparent 2px,
+        transparent 13px,
+        $fill-white 13px
+      );
+      transition: all 1s ease;
+      opacity: 0.65;
+
+      @include mq($from: 800px ) {
+        display: none;
+      }
+    }
+  }
+
+  .hero-color-right {
+    min-height: pxem(252);
+    @include flex-width-grid(100%);
+
+    @include mq($from: 800px ) {
+      @include flex-width-grid(20%);
+    }
+  }
+
+}
+
+.hero-color.fill-green {
+  min-height: pxem(252);
+  overflow: hidden;
+
+  .hero-color-left {
+    min-height: pxem(252);
+    @include flex-width-grid(100%);
+
+    @include mq($from: 800px ) {
+      @include flex-width-grid(20%);
+    }
+
+    &-small-stripe {
+      position: absolute;
+      width: pxem(121);
+      height: pxem(121);
+      top: 0;
+      margin-top: -30px;
+      left: 370px;
+      background: repeating-linear-gradient(
+        -45deg,
+        $fill-white,
+        transparent 2px,
+        transparent 13px,
+        $fill-white 13px
+      );
+      display: none;
+      transition: all 1s ease;
+      opacity: 0.65;
+
+      @include mq($from: 980px ) {
+        left: 170px;
+        display: block;
+      }
+
+      @include mq($from: 1320px ) {
+        left: 370px;
+        display: block;
+      }
+    }
+
+    &-large-stripe {
+      position: absolute;
+      display: block;
+      width: pxem(333);
+      height: pxem(143);
+      bottom: 0;
+      left: 0;
+
+
+      margin-left: -100px;
+      margin-bottom: -60px;
+      background: repeating-linear-gradient(
+        -45deg,
+        $fill-white,
+        transparent 2px,
+        transparent 13px,
+        $fill-white 13px
+      );
+      transition: all 1s ease;
+      opacity: 0.65;
+
+      @include mq($from: 980px ) {
+        margin-bottom: -20px;
+        margin-left: -140px;
+      }
+
+      @include mq($from: 1320px ) {
+        margin-left: -30px;
+      }
+    }
+
+    &-small-color {
+      position: absolute;
+      width: pxem(60);
+      height: pxem(60);
+      background: $fill-dark-green;
+      z-index: 99;
+      transition: all 1s ease;
+      display: none;
+
+      @include mq($from: 980px ) {
+        top: 50%;
+        left: 190px;
+        margin-top: -30px;
+        display: block;
+      }
+
+      @include mq($from: 1320px ) {
+        left: 300px;
+        display: block;
+      }
+    }
+  }
+
+  .hero-color-right {
+
+    &-large-stripe {
+      position: absolute;
+      display: block;
+      width: pxem(332);
+      height: pxem(154);
+      margin-top: -80px;
+      top: 0;
+      right: -50px;
+
+      background: repeating-linear-gradient(
+        -45deg,
+        $fill-white,
+        transparent 2px,
+        transparent 13px,
+        $fill-white 13px
+      );
+      transition: all 1s ease;
+      opacity: 0.65;
+
+      @include mq($from: 980px ) {
+        margin-top: -50px;
+        right: 0;
+      }
+
+      @include mq($from: 1320px ) {
+        margin-top: -50px;
+        top: 0;
+        right: 160px;
+      }
+    }
+
+    &-small-color {
+      position: absolute;
+      width: pxem(95);
+      height: pxem(95);
+      background: $fill-dark-green;
+      top: 50%;
+      right: 100px;
+      margin-top: -65px;
+      display: block;
+      z-index: 99;
+      transition: all 1s ease;
+      display: none;
+
+      @include mq($from: 980px ) {
+        right: 50px;
+        display: block;
+      }
+
+      @include mq($from: 1320px ) {
+        right: 100px;
+        display: block;
+      }
+    }
+  }
+
+  .hero-color-middle {
+    text-align: left;
+    overflow: hidden;
+    min-height: pxem(252);
+    @include flex-width-grid(100%);
+
+    @include mq($from: 800px ) {
+      @include flex-width-grid(60%);
+    }
+
+    @include mq($from: 420px ) {
+      text-align: center;
+    }
+
+    p {
+      max-width: pxem(563);
+    }
+
+    a {
+      @extend .text-18-regular;
+
+      &:hover {
+        opacity: .75;
+      }
+    }
+
+    &-right-stripes {
+      position: absolute;
+      display: block;
+      width: pxem(332);
+      height: pxem(154);
+      margin-top: -110px;
+      top: 0;
+      right: -150px;
+
+      background: repeating-linear-gradient(
+        -45deg,
+        $fill-white,
+        transparent 2px,
+        transparent 13px,
+        $fill-white 13px
+      );
+      transition: all 1s ease;
+      opacity: 0.65;
+
+      @include mq($from: 800px ) {
+        display: none;
+      }
+    }
+
+    &-left-stripes {
+      position: absolute;
+      display: block;
+      width: pxem(332);
+      height: pxem(154);
+      margin-bottom: -110px;
+      bottom: 0;
+      left: -150px;
+
+      background: repeating-linear-gradient(
+        -45deg,
+        $fill-white,
+        transparent 2px,
+        transparent 13px,
+        $fill-white 13px
+      );
+      transition: all 1s ease;
+      opacity: 0.65;
+
+      @include mq($from: 800px ) {
+        display: none;
+      }
+    }
+  }
+
+  .hero-color-right {
+    min-height: pxem(252);
+    @include flex-width-grid(100%);
+
+    @include mq($from: 800px ) {
+      @include flex-width-grid(20%);
+    }
+  }
+
+}
+
+.hero-color.fill-orange {
+  min-height: pxem(252);
+  overflow: hidden;
+
+  .hero-color-left {
+    min-height: pxem(252);
+    @include flex-width-grid(100%);
+
+    @include mq($from: 800px ) {
+      @include flex-width-grid(20%);
+    }
+
+    &-small-stripe {
+      position: absolute;
+      width: pxem(121);
+      height: pxem(121);
+      top: 0;
+      margin-top: -30px;
+      left: 370px;
+      background: repeating-linear-gradient(
+        -45deg,
+        $fill-white,
+        transparent 2px,
+        transparent 13px,
+        $fill-white 13px
+      );
+      display: none;
+      transition: all 1s ease;
+      opacity: 0.65;
+
+      @include mq($from: 980px ) {
+        left: 170px;
+        display: block;
+      }
+
+      @include mq($from: 1320px ) {
+        left: 370px;
+        display: block;
+      }
+    }
+
+    &-large-stripe {
+      position: absolute;
+      display: block;
+      width: pxem(333);
+      height: pxem(143);
+      bottom: 0;
+      left: 0;
+
+
+      margin-left: -100px;
+      margin-bottom: -60px;
+      background: repeating-linear-gradient(
+        -45deg,
+        $fill-white,
+        transparent 2px,
+        transparent 13px,
+        $fill-white 13px
+      );
+      transition: all 1s ease;
+      opacity: 0.65;
+
+      @include mq($from: 980px ) {
+        margin-bottom: -20px;
+        margin-left: -140px;
+      }
+
+      @include mq($from: 1320px ) {
+        margin-left: -30px;
+      }
+    }
+
+    &-small-color {
+      position: absolute;
+      width: pxem(60);
+      height: pxem(60);
+      background: $fill-dark-orange;
+      z-index: 99;
+      transition: all 1s ease;
+      display: none;
+
+      @include mq($from: 980px ) {
+        top: 50%;
+        left: 190px;
+        margin-top: -30px;
+        display: block;
+      }
+
+      @include mq($from: 1320px ) {
+        left: 300px;
+        display: block;
+      }
+    }
+  }
+
+  .hero-color-right {
+
+    &-large-stripe {
+      position: absolute;
+      display: block;
+      width: pxem(332);
+      height: pxem(154);
+      margin-top: -80px;
+      top: 0;
+      right: -50px;
+
+      background: repeating-linear-gradient(
+        -45deg,
+        $fill-white,
+        transparent 2px,
+        transparent 13px,
+        $fill-white 13px
+      );
+      transition: all 1s ease;
+      opacity: 0.65;
+
+      @include mq($from: 980px ) {
+        margin-top: -50px;
+        right: 0;
+      }
+
+      @include mq($from: 1320px ) {
+        margin-top: -50px;
+        top: 0;
+        right: 160px;
+      }
+    }
+
+    &-small-color {
+      position: absolute;
+      width: pxem(95);
+      height: pxem(95);
+      background: $fill-dark-orange;
+      top: 50%;
+      right: 100px;
+      margin-top: -65px;
+      display: block;
+      z-index: 99;
+      transition: all 1s ease;
+      display: none;
+
+      @include mq($from: 980px ) {
+        right: 50px;
+        display: block;
+      }
+
+      @include mq($from: 1320px ) {
+        right: 100px;
+        display: block;
+      }
+    }
+  }
+
+  .hero-color-middle {
+    text-align: left;
+    overflow: hidden;
+    min-height: pxem(252);
+    @include flex-width-grid(100%);
+
+    @include mq($from: 800px ) {
+      @include flex-width-grid(60%);
+    }
+
+    @include mq($from: 420px ) {
+      text-align: center;
+    }
+
+    p {
+      max-width: pxem(563);
+    }
+
+    &-right-stripes {
+      position: absolute;
+      display: block;
+      width: pxem(332);
+      height: pxem(154);
+      margin-top: -90px;
+      top: 0;
+      right: -150px;
+
+      background: repeating-linear-gradient(
+        -45deg,
+        $fill-white,
+        transparent 2px,
+        transparent 13px,
+        $fill-white 13px
+      );
+      transition: all 1s ease;
+      opacity: 0.65;
+
+      @include mq($from: 800px ) {
+        display: none;
+      }
+    }
+
+    &-left-stripes {
+      position: absolute;
+      display: block;
+      width: pxem(332);
+      height: pxem(154);
+      margin-bottom: -80px;
+      bottom: 0;
+      left: -150px;
+
+      background: repeating-linear-gradient(
+        -45deg,
+        $fill-white,
+        transparent 2px,
+        transparent 13px,
+        $fill-white 13px
+      );
+      transition: all 1s ease;
+      opacity: 0.65;
+
+      @include mq($from: 800px ) {
+        display: none;
+      }
+    }
+  }
+
+  .hero-color-right {
+    min-height: pxem(252);
+    @include flex-width-grid(100%);
+
+    @include mq($from: 800px ) {
+      @include flex-width-grid(20%);
+    }
+  }
+
+}
+
+.hero-color.fill-purple {
+  min-height: pxem(252);
+  overflow: hidden;
+
+  .hero-color-left {
+    min-height: pxem(252);
+    @include flex-width-grid(100%);
+
+    @include mq($from: 800px ) {
+      @include flex-width-grid(20%);
+    }
+
+    &-small-stripe {
+      position: absolute;
+      width: pxem(121);
+      height: pxem(121);
+      top: 0;
+      margin-top: -30px;
+      left: 370px;
+      background: repeating-linear-gradient(
+        -45deg,
+        $fill-white,
+        transparent 2px,
+        transparent 13px,
+        $fill-white 13px
+      );
+      display: none;
+      transition: all 1s ease;
+      opacity: 0.65;
+
+      @include mq($from: 980px ) {
+        left: 170px;
+        display: block;
+      }
+
+      @include mq($from: 1320px ) {
+        left: 370px;
+        display: block;
+      }
+    }
+
+    &-large-stripe {
+      position: absolute;
+      display: block;
+      width: pxem(333);
+      height: pxem(143);
+      bottom: 0;
+      left: 0;
+
+
+      margin-left: -100px;
+      margin-bottom: -60px;
+      background: repeating-linear-gradient(
+        -45deg,
+        $fill-white,
+        transparent 2px,
+        transparent 13px,
+        $fill-white 13px
+      );
+      transition: all 1s ease;
+      opacity: 0.65;
+
+      @include mq($from: 980px ) {
+        margin-bottom: -20px;
+        margin-left: -140px;
+      }
+
+      @include mq($from: 1320px ) {
+        margin-left: -30px;
+      }
+    }
+
+    &-small-color {
+      position: absolute;
+      width: pxem(60);
+      height: pxem(60);
+      background: $fill-dark-purple;
+      z-index: 99;
+      transition: all 1s ease;
+      display: none;
+
+      @include mq($from: 980px ) {
+        top: 50%;
+        left: 190px;
+        margin-top: -30px;
+        display: block;
+      }
+
+      @include mq($from: 1320px ) {
+        left: 300px;
+        display: block;
+      }
+    }
+  }
+
+  .hero-color-right {
+
+    &-large-stripe {
+      position: absolute;
+      display: block;
+      width: pxem(332);
+      height: pxem(154);
+      margin-top: -80px;
+      top: 0;
+      right: -50px;
+
+      background: repeating-linear-gradient(
+        -45deg,
+        $fill-white,
+        transparent 2px,
+        transparent 13px,
+        $fill-white 13px
+      );
+      transition: all 1s ease;
+      opacity: 0.65;
+
+      @include mq($from: 980px ) {
+        margin-top: -50px;
+        right: 0;
+      }
+
+      @include mq($from: 1320px ) {
+        margin-top: -50px;
+        top: 0;
+        right: 160px;
+      }
+    }
+
+    &-small-color {
+      position: absolute;
+      width: pxem(95);
+      height: pxem(95);
+      background: $fill-dark-purple;
+      top: 50%;
+      right: 100px;
+      margin-top: -65px;
+      display: block;
+      z-index: 99;
+      transition: all 1s ease;
+      display: none;
+
+      @include mq($from: 980px ) {
+        right: 50px;
+        display: block;
+      }
+
+      @include mq($from: 1320px ) {
+        right: 100px;
+        display: block;
+      }
+    }
+  }
+
+  .hero-color-middle {
+    text-align: left;
+    overflow: hidden;
+    min-height: pxem(252);
+    @include flex-width-grid(100%);
+
+    @include mq($from: 800px ) {
+      @include flex-width-grid(60%);
+    }
+
+    @include mq($from: 420px ) {
+      text-align: center;
+    }
+
+    p {
+      max-width: pxem(563);
+    }
+
+    &-right-stripes {
+      position: absolute;
+      display: block;
+      width: pxem(332);
+      height: pxem(154);
+      margin-top: -90px;
+      top: 0;
+      right: -150px;
+
+      background: repeating-linear-gradient(
+        -45deg,
+        $fill-white,
+        transparent 2px,
+        transparent 13px,
+        $fill-white 13px
+      );
+      transition: all 1s ease;
+      opacity: 0.65;
+
+      @include mq($from: 800px ) {
+        display: none;
+      }
+    }
+
+    &-left-stripes {
+      position: absolute;
+      display: block;
+      width: pxem(332);
+      height: pxem(154);
+      margin-bottom: -80px;
+      bottom: 0;
+      left: -150px;
+
+      background: repeating-linear-gradient(
+        -45deg,
+        $fill-white,
+        transparent 2px,
+        transparent 13px,
+        $fill-white 13px
+      );
+      transition: all 1s ease;
+      opacity: 0.65;
+
+      @include mq($from: 800px ) {
+        display: none;
+      }
+    }
+  }
+
+  .hero-color-right {
+    min-height: pxem(252);
+    @include flex-width-grid(100%);
+
+    @include mq($from: 800px ) {
+      @include flex-width-grid(20%);
+    }
+  }
+
+}
