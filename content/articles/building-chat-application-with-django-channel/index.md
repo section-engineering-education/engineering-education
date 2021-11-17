@@ -2,11 +2,11 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/building-chat-application-with-django-channel/
+url: /building-chat-application-with-django-channel/
 title: Building Chat Application with Django Channels
 description: This tutorial explains how to use Django channels in a Djnago application by building a fully functional chat application
 author: francisca-adekanye
-date: 2020-11-07T00:00:00-10:00
+date: 2021-11-17T00:00:00-12:00
 topics: [API]
 excerpt_separator: <!--more-->
 images:
@@ -14,8 +14,9 @@ images:
   - url: /engineering-education/building-chat-application-with-django-channel/hero.png
     alt: Building Chat Application with Django Channels
 ---
-This tutorial will build a fully functional chat application by implementing the chat server using Django Channel. This Channel was implemented on the asynchronous server used by Django. And this server was named Asynchronous Server Gateway Interface `ASGI`.
 
+This tutorial will build a fully functional chat application by implementing the chat server using Django Channel. This Channel was implemented on the asynchronous server used by Django. And this server was named Asynchronous Server Gateway Interface `ASGI`.
+<!--more-->
 ASGI is the server specification that the Channel was built upon. Like the WSGI, both server and framework can be chosen with choice rather than just accepting the Channel server.
 
 The Django Channel supports HTTP and other types of protocols that have long connections time. The Channel layers divide the entire applications into processes and support parts of Django views.
@@ -64,11 +65,11 @@ Run the server with the command below and then open up the browser with the loca
 ```bash
 $ python manage.py run server
 ```
-[500 Internal Server Error](/engineering-education/building-chat-application-with-django-channels/server-error.png)
+![500 Internal Server Error](/engineering-education/building-chat-application-with-django-channel/server-error.png)
 
 ### Creating the chat application
 
-It is a good practice to separate the codes for the chats in its stand-alone application. Following the Django way of creating an app;
+It is a good practice to separate the code for the chats in its stand-alone application. Following the Django way of creating an app;
 
 ```bash
 $ python manage.py startapp letschat_app'
@@ -77,9 +78,9 @@ Add the new app to the installed apps section inside the `settings.py` file.
 
 The next thing is to create a `letschat/template/letschat_app` directory, then make an HTML file called `index`.
 
-Navigate to the index.html and type out the boiler codes below;
+Navigate to the index.html and type out the boiler code below;
 
-![Index Page](/engineering-education/building-chat-application-with-django-channels/indexhtml.png) 
+![Index Page](/engineering-education/building-chat-application-with-django-channel/indexhtml.png) 
 
 The HTML template code allows clients to enter the name of the chat room they are navigating.
 
@@ -108,7 +109,7 @@ urlpatterns = [
 ]
 ```  
 
-The next step is to register the app URLConf file with the project. Navigate to the `urls.py` of the `letschat` folder and do the mapping like below;
+The next step is to register the app URLConf file with the project. Navigate to the `urls.py` of the `letschat` folder and map as below;
 
 ```python
 from Django.URLs import path, include
@@ -127,7 +128,7 @@ But if you type in any room name, you should receive a `page not found` message 
 
 ### Setting up a chat server
 
-First of all, we need to add another room chat template. Inside the `letschat/templates/letschat_app` directory, make ``chatroom.html` and type the code snippets below.
+First of all, we need to add another room chat template. Inside the `letschat/templates/letschat_app` directory, create `chatroom.html` and type the code snippets below.
 
 
 ![ChatRoom Page 1](/engineering-education/building-chat-application-with-django-channels/chatroomhtml1.png) 
@@ -159,11 +160,11 @@ urlpatterns = [
 ```
 When running the server, do move to `http://localhost:8080/chats/`; you should confirm the below image.
 
-![Room 1](/engineering-education/building-chat-application-with-django-channels/chat.png) 
+![Room 1](/engineering-education/building-chat-application-with-django-channel/chat.png) 
 
 Then enter any room name of your choice for connections. That will open up the chat room like this;
 
-![Room 2](/engineering-education/building-chat-application-with-django-channels/chatroom.png)
+![Room 2](/engineering-education/building-chat-application-with-django-channel/chatroom.png)
 
 But we have to make a consumer that will accept the WebSocket connections.
 
@@ -179,7 +180,7 @@ Make `consumers.py` file inside the chat app folder and use the code snippets in
 ![Consumer 2](/engineering-education/building-chat-application-with-django-channels/consumer2.png)
 
 
-Note:) the regular expression used solves the `URLRouter` limitations.
+> The regular expression used solves the `URLRouter` limitations.
 
 Also, the `as_asgi()` method on the `Consumer` class does the same task as the class-based views method in Django, which is `as_view()`.
 
@@ -250,5 +251,4 @@ For further reading, navigate to [Channels](/https://channels.readthedocs.io/en/
 Happy reading!
 
 ---
-
 Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
