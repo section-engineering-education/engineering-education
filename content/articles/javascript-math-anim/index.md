@@ -2,14 +2,14 @@ Animations are a great way to catch a user's attention and enhance the look of y
 
 ![Circle](/engineering-education/javascript-math-anim/circle.png)
 
-The line shows the path the image follows.
+Where the line shows the path the image follows.
 
 ### Prerequisites
 
 1. An understanding of JavaScript
 2. An understanding of HTML and CSS
 
-### A brief look at the sin and cos functions in creating a circle.
+### A brief look at the sin and cos functions in creating a circle
 
 These two functions play a great role in defining the x and y coordinates of a circle. Let's have a look at this figure.
 
@@ -66,7 +66,7 @@ The vertical radius of our circle is computed using `Math.sin()` and multiplied 
 > Note that you can make the image move in an anticlockwise function by making the top style negative. You can also change the speed of rotation by changing the number which you multiply the difference between the current time and the previous time the function executed i.e (currentTimeParam - prevTimeArg) * **0.004**. If you increase the number, the speed will increase. If you make it smaller, it will slow down the speed.
 
 The `requestAnimationFrame()` function schedules the `animate()` function to run whenever the browser is ready to paint the window/screen with new content. 
-The `animate()` function also calls `requestAnimationFrame()` function to schedule the next screen update. The `animate()` function here receives the current timestamp as an argument using the arrow function.  
+The `animate()` function also calls the `requestAnimationFrame()` function to schedule the next screen update. The `animate()` function here receives the current timestamp as an argument using the arrow function.  
 
 > You can also set the path to an ellipse. You can do that by changing the two radii: horizontal radius and vertical radius.
 
@@ -115,13 +115,13 @@ The `animate()` function also calls `requestAnimationFrame()` function to schedu
 
 It's a very small amount of code. We set the styles of the figure element and the image. 
 
-For the `circle` class, we give it a block display, a black background, and a round border. The height and width are set equal for it to have the same diameter all through. We need it to appear like a circle. 
+For the `circle` class, we give it a block display, a black background, and a round border. The height and width are set equal for it to have the same diameter throughout. This way, we can make it appear like a circle. 
 
-The `radial-gradient` sets the gradient color at the center to start with the light green then end with black in a gradient fashion. Read more about `radial-gradient` [here](https://developer.mozilla.org/en-US/docs/Web/CSS/gradient/radial-gradient()) at MDN documentation. This gradient effect gives it a spherical look.
+The `radial-gradient` function sets the color at the center to start with light green then end with black in a gradient fashion. Read more about `radial-gradient` [here](https://developer.mozilla.org/en-US/docs/Web/CSS/gradient/radial-gradient()) at the MDN documentation. This gradient effect gives it a spherical look.
 
-We give the `container` class a 100% width, a height of 100 view height, and a flex display. We justify the content and align everything to the center. This places our content in the `container` div at the center.
+We give the `container` class a 100% width, a height of 100 view height, and a flex display. We also justify the content and align everything to the center. This centers our content in the `container` div horizontally and vertically.
 
-The `circleimage` is given a `z-index` of 2 to overlay it over everything just in case due to responsiveness, the `sphere` overlaps with the image. The margins are set to make it fit at almost the center. Again, the border-radius is set to 50% to give it a circular look of a rotating object.
+The `circleimage` is given a `z-index` of 2 to overlay it over everything just in case the `sphere` overlaps with the image due to responsiveness. The margins are set to make it fit at almost the center. Again, the border-radius is set to 50% to give it a circular look of a rotating object.
 
 Our 'sphere' is not perfectly at the center of the rotation if you are keen. You can fine-tune it using your styling.
 
@@ -188,10 +188,10 @@ Our 'sphere' is not perfectly at the center of the rotation if you are keen. You
     </script>
 </html>
 ```
-### Application of this
+### Applications of this
 
-The most suitable areas for using these, that is after modifying it, include a circular progress indicator, a rotor in an aircraft/drone in a game, etc. This is a very basic illustration. If manipulated well, it can give some good use.
+The most suitable areas for using these, that is after modifying it, include a circular progress indicator, a rotor in an aircraft/drone in a game, etc. These ideas are just some of many things you can do if you are creative and manipulate this idea well enough.
 
 ### Conclusion
 
-We first looked at how the sin and cos functions are used in circles. Next, we created a simple JavaScript code to show the creation of one animation. Hope you will build on it more. Have a great read.
+We first looked at how the sin and cos functions are used in circles. Next, we created a simple script in JavaScript to show the creation of an animation. I hope you get the chance to creatively build onto this simple program in a fun way. Have a great read.
