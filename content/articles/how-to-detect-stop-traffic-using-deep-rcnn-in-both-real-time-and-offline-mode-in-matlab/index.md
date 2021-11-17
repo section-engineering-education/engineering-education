@@ -54,7 +54,9 @@ For the proposed work, we use a total of 60 images. These images are downloaded 
 ![show how your draw the ROI](/engineering-education/how-to-detect-stop-traffic-using-deep-r-cnn-in-both-real-time-and-offline-mode-in-matlab/stopSeven.png)
 
 - Once you are done labeling the images, click on the export images and specify where you want to export them. For our case, we export to the current directory.
+
 - Since we export to the workspace, we use the `label` format and give the variable name. Also, the variable name should be `stopSigns` due to the pre-trained network.
+
 - Once all these are done, we see all the images exported to the workspace.
 
 ![images in the workspace](/engineering-education/how-to-detect-stop-traffic-using-deep-r-cnn-in-both-real-time-and-offline-mode-in-matlab/stopEight.png)
@@ -123,7 +125,8 @@ We then finally show the output.
 figure
 imshow(img)
 ```
-![teted image](/engineering-education/how-to-detect-stop-traffic-using-deep-r-cnn-in-both-real-time-and-offline-mode-in-matlab/stopTen.png)
+![tested image](/engineering-education/how-to-detect-stop-traffic-using-deep-r-cnn-in-both-real-time-and-offline-mode-in-matlab/stopTen.png)
+
 ### Matlab code for testing videos(offline mode)
 First input the video
 ```matlab
@@ -153,6 +156,8 @@ runloop = isOpen(videoplayer);   %checking video player is ON or OFF
 end
 ```
 The `step(videoplayer,img)` means that all the images with bounding boxes and annotations are given to the video player object for display. You get the output with the stop sign detected if you execute the program.
+
+![Output for offline video](/engineering-education/how-to-detect-stop-traffic-using-deep-r-cnn-in-both-real-time-and-offline-mode-in-matlab/stopTen.png)
 
 ### Matlab code for testing video(Realtime)
 In this case, we are using the webcam to capture the live video. Now, this is what makes the difference between the offline and the online case. The rest of the code is similar for both cases. Also, instead of reading the frames, we take snapshots and read them.
