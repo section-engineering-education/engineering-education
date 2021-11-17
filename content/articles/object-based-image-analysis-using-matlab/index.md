@@ -71,7 +71,7 @@ Morphological operations mainly involve subtracting some parts of a binarized im
 ### Obtaining boundary by erosion
 In this method, some pixels from a binarized are removed, the eroded part is then subtracted from the main image containing the main object. The remaining part is the boundary of the object. Erosion of image is done using the function `imerode` with a specified `strel` length. The following codes and step by step illustrations of this method;
 ```matlab
-i = imread(plate.PNG);
+i = imread(plate.PNG); %importing the image to workspace
 figure,imshow(i)
 ```
 ![Imported image](engineering-education/object-based-image-analysis-using-matlab/objectanalysis_seven.jpg)
@@ -81,13 +81,13 @@ figure,imshow(i_gray)
 ```
 ![Grayscale version of the imported image](engineering-education/object-based-image-analysis-using-matlab/objectanalysis_eight.jpg)
 ```matlab
-i2 = i_gray< 250; 
+i2 = i_gray< 250; %making a black and white image
 figure, imshow (i2)
 ```
 ![Black and white image](engineering-education/object-based-image-analysis-using-matlab/objectanalysis_nine.jpg)
 
 ```matlab
-se1 = strel('disk',80);
+se1 = strel('disk',80); % specifying strel length
 i_eroded = imerode(i2,se1); % erosion process
 figure, imshow(i_eroded)
 ```
