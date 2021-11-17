@@ -20,7 +20,7 @@ ASGI is the server specification that the Channel was built upon. Like the WSGI,
 
 The Django Channel supports HTTP and other types of protocols that have long connections time. The Channel layers divide the entire applications into processes and support parts of Django views.
 
-### Spinning up the project
+### Project setup
 
 Let us get started to build the chat application. Navigate to your terminal and follow the processes below;
 
@@ -245,7 +245,8 @@ You will receive them in the two chat logs `textarea`.
 
 Now you have a functional basic chat application. This will prepare you ahead of your project and guide you against boring documentation.
 
-You care to know more, navigate to [Channels](/https://channels.readthedocs.io/en/stable/tutorial/part_1.html/).
+For further reading, navigate to [Channels](/https://channels.readthedocs.io/en/stable/tutorial/part_1.html/).
+
 ---
 
 Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
