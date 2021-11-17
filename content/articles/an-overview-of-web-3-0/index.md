@@ -1,5 +1,21 @@
-The World Wide Web (WWW) is a crucial element of our modern life. It has become part of our life, and it would not be easy to live without it. This is because technology has dramatically advanced to the point that people can now work remotely and interact effortlessly using the internet. As a result, the reliance on the WWW has grown in the last three decades and has gone through stages of evolution from [Web 1.O](https://websitebuilders.com/how-to/glossary/web1/), [Web 2.O](https://en.wikipedia.org/wiki/Web_2.0), and [Web 3.O](https://web3.foundation/).
+---
+layout: engineering-education
+status: publish
+published: true
+url: /an-overview-of-web-3-o/
+title: An Overview of web 3.O 
+description: This article will explain Web 3 or the future of the web. If you want to stay up-to-date on how we'll change our lives soon, make sure you read this article to get the complete picture. Without further ado, let's get started.
+author: judy-nduati
+date: 2021-11-17T00:00:00-03:10
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/an-overview-of-web-3-o/hero.jpg
+    alt: Web image
+---
+The World Wide Web (WWW) is a crucial element of our modern life. It has become part of our life, and it would not be easy to live without it. This is because technology has dramatically advanced to the point that people can now work remotely and interact effortlessly using the internet. As a result, the reliance on the WWW has grown in the last three decades and has gone through stages of evolution from [Web 1.O](https://websitebuilders.com/how-to/glossary/web1/), [Web 2.O](https://en.wikipedia.org/wiki/Web_2.0), and [Web 3.O](https://web3.foundation/).
+<!--more-->
 Most individuals are probably curious about the future of the internet. Web 3.O (Web 3) is the web of the future. Many people are unsure how the next-generation internet (Web 3) will work. Web 3 is part of a much broader transition phase that we shall experience. As a result, there is a more significant change on the internet right now, and many changes are being implemented.
 
 The internet just got a lot more complicated. There's an increased awareness of web 3, and there is so much jargon in the space, and it isn't easy to understand what it's all about. This article will break down all the jargon for you and make you perfectly understand what web 3.O is all about.
@@ -16,6 +32,7 @@ This article will explain Web 3 or the future of the web. If you want to stay up
 The internet and web technology have certainly evolved in the past few years. The World Wide Web has come through different phases: Web 1.O, Web 2.O, and Web 3.O. Each phase has brought about new technologies, tools, and techniques relevant to recruiters.
 
 ![Evolution of web](/engineering-education/an-overview-of-web-3-o/web-evolution.jpg)
+
 [Image source](https://martech.zone/web-1-web-2-web-3-0/)
 
 Let's dive deeper to find out how the internet evolved from its initiation to what we know it as today.
@@ -58,6 +75,7 @@ There is the blockchain concept because nodes connect one another, and the signi
 Looking at companies that control the internet, for example, Google and Microsoft, all traffic goes through them, they have the most money, have all the data, they have all resources. So what is the best way to compete with them? Decentralized systems are the answer.
 
 ![Decentralized web](/engineering-education/an-overview-of-web-3-o/decentralized-web.jpg)
+
 [Image source](https://www.tal-com.com/online-services/how-decentralized-internet-works-must-read)
 
 #### Money value
@@ -101,3 +119,6 @@ The use of blockchain technology and decentralized nodes allows secure data stor
 
 ### Conclusion
 Web 3 will change our lives by bringing an internet of value and developments. These developments will only be possible with blockchain technology, which serves as the basis of this next-generation internet. The field of digital technology is growing very fast, and very soon, Web 3.O will be here.
+
+---
+Peer Review Contributions by: [Miller Juma](/engineering-education/content/authors/miller-juma/)
