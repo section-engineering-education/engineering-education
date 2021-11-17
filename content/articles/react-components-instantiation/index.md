@@ -104,7 +104,7 @@ The new keyword makes `this` keyword to point the object that as been newly crea
 
  #### Instantiating function component
 
- ***example***
+ ***example One***
  ```js
  function Student (marks) {
   this.marks = marks;
@@ -122,7 +122,9 @@ The new keyword makes `this` keyword to point the object that as been newly crea
 - The marks gets assigned to the newly created studdy object.
 - The object which as been newly created gets returned and is assigned to variable studdy.
 
-As shown in the code below  , React creates an instance of the function component using the `new` keyword:
+***example two***
+
+As shown   , React creates an instance of the function component using the `new` keyword:
 
 ```js
     function Drink(color, taste, temperature) {
