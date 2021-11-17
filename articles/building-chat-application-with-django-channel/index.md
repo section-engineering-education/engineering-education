@@ -247,6 +247,8 @@ Now you have a functional basic chat application. This will prepare you ahead of
 
 For further reading, navigate to [Channels](/https://channels.readthedocs.io/en/stable/tutorial/part_1.html/).
 
+Happy reading!
+
 ---
 
 Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
