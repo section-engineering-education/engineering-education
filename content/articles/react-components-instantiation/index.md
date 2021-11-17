@@ -83,7 +83,7 @@ Lets now create a component instance by adding `<Valley/>` which will be our com
 ```
 The code appears this way after creating a component instance.There’s your component instance!
 
-class `Valley` gets instantiated when it gets passed as an argument in `ReactDOM.render`
+When class `Valley` gets passed as an argument in `ReactDOM.render` it gets instantiated  
 
 Lets now render our component:
 ```js
@@ -175,7 +175,8 @@ class Student extends Human {
     console.log(`Hello ${this.name} from ${this.level}`);
   }
 }
-// In the code below we are instantiating one object from the person class and two others from  the student class. The arguments we pass here when we instantiate these objects  are accessible in the constructor function of the class
+/*In the code below we are instantiating one object from the person class and two others from  the student class. 
+The arguments we pass here when we instantiate these objects  are accessible in the constructor function of the class*/
 
 const o1 = new Human("John");
 const o2 = new Student("Tina", "1st Grade");
@@ -203,7 +204,7 @@ I am wonderful!*/
 
 - const 01 will use the greet method from its class(the person class)
 - const 02 will use the greet method from the student class
-- cons 03 will use its own directly defined greet method 
+- const 03 will use its own directly defined greet method 
 
 #### Conclusion
 A react component instance is the use of classes to instantiate  React component.You can either use multiple instances or just a single instance in your react application.Each instance can perform individually this makes them a requirement when creating an application. Instances are a duplicate of the original class.A component in React can be  either a class or a function.
