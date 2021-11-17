@@ -130,8 +130,7 @@ conf_matrx
 From the above confusion matrix, we notice that out of 100, the model could predict 86% of the data correctly with only 14% incorrect predictions. From this, it's clear that our model has an accuracy of 84%. The accuracy of 84% is a good score, and thus we can conclude that our classifier was able to classify our data accurately.
 
 ### Conclusion
-In this tutorial, we have learned the Naive Bayes classifier's theory. First, we showed how to derive a mathematical formula of this classifier from the basic conditional probability. Later, we showed how to implement the  Naive Bayes classifier in R and evaluated its performance using a confusion matrix. From the confusion matrix, we saw its ability to classify the data by giving a relatively incredible score. Since we now understand this classifier better, we can widen our knowledge by challenging ourselves with more implementation tasks to handle problems such as email classification, transaction classification, and health data to classify tumours and other diseases. Here we reach the end of this session's learning.
-
+In this tutorial, we have learned the Naive Bayes classifier's theory. First, we showed how to derive a mathematical formula of this classifier from the basic conditional probability. Later, we showed how to implement the  Naive Bayes classifier in R and evaluated its performance using a confusion matrix. From the confusion matrix, we saw its ability to classify the data by giving a relatively incredible score. Since we now understand this classifier better, we can widen our knowledge by challenging ourselves with more implementation tasks to handle problems such as email classification, transaction classification, and health data to classify tumors and other diseases. Here we reach the end of this session's learning.
 Happy Learning.
 
 ---
