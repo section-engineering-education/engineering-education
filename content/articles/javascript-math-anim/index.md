@@ -1,6 +1,6 @@
 Animations are a great way to catch a user's attention and enhance the look of your website. In this article, we will look at how Javascript's built-in functions such as `Math.cos()` and `Math.sin()` can be applied to create the animations. We will be creating an animation to show a simple rotating system so that we see how the functions are applied. The final output will resemble this:
 
-![Circle](circle.png)
+![Circle](/engineering-education/javascript-math-anim/circle.png)
 
 The line shows the path the image follows.
 
@@ -12,7 +12,7 @@ The line shows the path the image follows.
 
 These two functions play a great role in defining the x and y coordinates of a circle. Let's have a look at this figure.
 
-![Triangle shot](triangle.png)
+![Triangle shot](/engineering-education/javascript-math-anim/triangle.png)
 
 Using the basic trigonometric formulas, we see that `sin θ = (y/r)` and `cos θ = (x/r)`.
 
