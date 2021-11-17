@@ -80,9 +80,9 @@ Logs follow a specific rules design that includes the accompanying ascribes:
 
 - %(asctime)s: it yields the date and season of the log, in [local time](https://docs.python.org/3.7/library/time.html#time.asctime). 
 
-- %(levelname)s : the logging level of the information. 
+- %(rankname)s : the logging rank of the information. 
 
-- %(message)s: message 
+- %(purport)s: tenor 
 
 [For more data on the attributes](https://docs.python.org/3/library/logging.html#logrecord-ascribes) you can remember for the organization of each log record.
 ### Make a redid arrangement with different loggers and objections.
@@ -186,7 +186,7 @@ Lumberjack personality is set certainly after the timestamp, and in this manner,
 
 - use fileConfig() to send out logs to a few areas. 
 
-Utilizing record based (fileConfig()) or [dictionary-based (dictConfig()) configurations](https://docs.python.org/3.7/library/logging.config.html#logging.config.dictConfig) gives admittance to order more custom arranging and directing choices for each lumberjack in your application and commodity logs to a few areas. 
+Utilizing record based (indexConfig()) or [lexicon-based (dictConfig()) configurations](https://docs.python.org/3.7/library/logging.config.html#logging.config.dictConfig) gives admittance to order more custom arranging and directing choices for each lumberjack in your application and commodity logs to a few areas. 
 
 A logging setup record needs to contain most extreme three sections: 
 
@@ -216,23 +216,23 @@ keys=simpleFormatter
 
 [logger_root] 
 
-level=DEBUG 
+stage=DEBUG 
 
 handlers=fileHandler 
 
 [handler_fileHandler] 
 
-class=FileHandler 
+magnificence=FileHandler 
 
-level=DEBUG 
+degree=DEBUG 
 
 formatter=simpleFormatter 
 
-args=("/way/to/log/file.log",) 
+args=("/way/to/log/record.log",) 
 
 [formatter_simpleFormatter] 
 
-format=%(asctime)s %(name)s - %(levelname)s:%(message)s 
+display=%(asctime)s %(call)s - %(rankname)s:%(tenor)s
 
 ```
 
@@ -361,9 +361,7 @@ On running the code, it yields the going with:
 
 ``` 
 
-2021-11-03 00:57:48,351 lessermodule - ERROR:[Errno 2] No such record or inventory: 'nonexistentfile.txt' 
-
-2021-11-03 00:57:48,351 lessermodule - ERROR:[Errno 2] No such record or inventory: 'nonexistentfile.txt' 
+2021-11-03 00:57:48,351 lessermodule - ERROR:[Errno 5] No such record or inventory: 'nonexistentfile.txt' 
 
 Traceback (latest call last): 
 
@@ -371,7 +369,7 @@ Record "/home/molly/logstest/lesser_module.py", line 14, in word_count
 
 with open(myfile, 'r') as f: 
 
-FileNotFoundError: [Errno 2] No such document or inventory: 'nonexistentfile.txt' 
+IndexNotFoundError: [Errno 5] No such document or inventory: 'noexistentingfile.txt' 
 
 ```
 
@@ -391,15 +389,15 @@ If it happens it doesn't find the right unique case type, the interpreter incorp
 
 # lesser_module.py 
 
-import logging.config 
+purport logging.config 
 
-import traceback 
+purport traceback 
 
-logging.config.fileConfig('logging.ini', disable_existing_loggers=False) 
+logging.config.fileConfig('logging.ini', enfeeble_existing_loggers=Faulty) 
 
 logger = logging.getLogger(__name__) 
 
-def word_count(myid): 
+define word_count(myid): 
 
 endeavor: 
 
@@ -451,7 +449,7 @@ TypeError: create() takes unequivocally one dispute (2 given)
 
 ```
 
-This dictates that the code contains a `TypeError` unique case that isn't dealt with in the endeavor except for reasoning, yet since we fused the 'traceback' code, it will get logged.
+This dictates that the code contains a `TypeError` unique case that isn't dealt with in the endeavor except for reasoning, yet It will be logged since we fused the 'traceback' code.
 
 ### To work with investigating, design your logs in JSON and merge them 
 This part will examine how to style signs in JSON, make redid ascribes, unify and break down information with a log the board answer to gain a superior comprehension of use execution, disappointments, and considerably more. 
@@ -471,40 +469,40 @@ After establishment, you'll need to refresh design records to make the current f
 keys=root,lesser_module
 
 [handlers]
-keys=consoleHandler,fileHandler
+keys=animateHandler,IndexHandler
 
 [formatters]
-keys=simpleFormatter,json
+keys=plainFormatter,json
 
 [logger_root]
 level=DEBUG
-handlers=consoleHandler
+handlers=animateHandler
 
 [logger_lesser_module]
 level=DEBUG
-handlers=fileHandler
+handlers=indexHandler
 qualname=lesser_module
 
-[handler_consoleHandler]
+[handler_animateHandler]
 class=StreamHandler
 level=DEBUG
-formatter=simpleFormatter
+formatter=plainFormatter
 args=(sys.stdout,)
 
-[handler_fileHandler]
-class=FileHandler
-level=DEBUG
+[handler_indexHandler]
+class=IndexHandler
+rank=DEBUG
 formatter=json
-args=("/home/emily/myapp.log",)
+args=("/home/molly/myid.log",)
 
 [formatter_json]
 class=pythonjsonlogger.jsonlogger.JsonFormatter
-format=%(asctime)s %(name)s %(levelname)s %(message)s
+format=%(asctime)s %(call)s %(rankname)s %(tenor)s
 
 [formatter_simpleFormatter]
-format=%(asctime)s %(name)s - %(levelname)s:%(message)s
+format=%(asctime)s %(call)s - %(rankname)s:%(tenor)s
 ```
-Logs shipped from the command prompt `(with consoleHandler)` follow the `simpleFormatter` style to enhance readability. After the inclusion of pythonjsonlogger.jsonlogger.JsonFormatter class in your configuration file, the fileConfig() function will create the JsonFormatter if the code runs in an environment that can import pythonjsonlogger. In case you're not utilizing record based setup, you should append the python-json-lumberjack library in your application code and characterize a controller and formatter, as depicted in the [documentation](https://github.com/madzak/python-json-logger#integrating-with-pythons-logging-framework):
+Logs shipped from the command prompt `(with consoleHandler)` follow the `simpleFormatter` style to enhance readability. After the inclusion of pythonjsonlogger.jsonlogger.JsonFormatter class in your configuration file, the fileConfig() function will create the JsonFormatter if the code runs in an environment that can import pythonjsonlogger. In case you're not utilizing record based setup, you should append the python-json-lumberjack assortment in your function code and characterize a controller and formatter, as depicted in the [library](https://github.com/madzak/python-json-logger#integrating-with-pythons-logging-framework):
 
 ```
 from pythonjsonlogger import jsonlogger 
@@ -564,7 +562,7 @@ When you're unifying your Python logs with observing assistance, you can begin i
 ### Conclusion
 The Logging module simplifies everything and eases the pressure of complexity. It is considered to be versatile. Its arrangement is sensible and ought to oblige your usage case out of the box. You can add fundamental logging to a little activity, or you can go comparatively making your practice log levels, regulator genres, and that is just a glimpse of something larger if you are working on a significant errand.
 
-If you haven't been using marking in your applications, this is a good chance to start. Exactly when done right, logging will undoubtedly take out a huge load of contact from your progression cycle and help you find opportunities to take your application to a more significant level. I prefer logging since it simplifies load complexity to be very precise and understandable.
+If you haven't been using marking in your applications, this is a good chance to start. Exactly when done right, logging will undoubtedly take out a huge load of contact from your progression cycle and will aid you to take your function to a more significant level. I prefer logging since it simplifies load complexity to be very precise and understandable.
 
 ### Further activity reading
 
