@@ -1,23 +1,36 @@
 # How to build a task manager with angular.
 
-## Introduction
+### Introduction
 As developers, it is common practice to build simple applications. This will help solidify ones knowledge about a particular programming language or framework. 
 
 In this article, we will build a simple task manager application (AKA To-do app) using  [angular](https://angular.io/docs). Angular is a JavaScript framework.
 
+### Key takeaways
+At the end of this tutorial, you should be able to:
+-  create and structure an angular project.
+-  create a component in angular.
+-  build a simple application.
+-  save items to local storage
 
-## What is a Task Manager?
+### Overview
+-  Introduction
+-  Key takeaways
+-  Overview
+-  What is a Task Manager
+-  Prerequisites
+-  Create a new angular project
+-  Create a component
+-  Add task
+-  Mark task as done
+-  Delete a task
+-  Save to local storage
+-  Summary
+
+### What is a Task Manager?
 A task manager writes, organizes, and rearranges tasks more efficiently. The task manager we will build will allow the user to add a task, mark the task as complete, and delete the task.
 
 
-## Key Takeaways From This Article
-1. How to create and structure an angular project.
-2. How to create modules and components in angular.
-3. Build a simple application.
-4. Save tasks to local storage
-
-
-## Prerequisites
+### Prerequisites
 
 Before we get started, here are a few prerequisites for developing a task manager via Angular;
 
@@ -25,17 +38,8 @@ Before we get started, here are a few prerequisites for developing a task manage
 - You should be fairly familiar with [Angular](https://angular.io/docs) and JavaScript. Knowledge of [TypeScript](https://www.typescriptlang.org/) is useful but not requisite.
 
 
-## Overview
-1. Create a new angular project
-2. Create a component
-3. Add task
-4. Mark task as done
-5. Delete a task
-6. Save to local storage
 
-
-
-## Create a new angular project
+### Create a new angular project
 
 Before one can create a new project on angular, one will need to install angular CLI. Run `npm install -g @angular/cli` on the terminal or command prompt to install the CLI.
 
@@ -63,7 +67,7 @@ Next, run the command `ng serve -o` and wait for some minutes, your application 
 The `ng serve` command sets up the server, observes the files, and rebuilds the app as you make changes to those files.
 
 
-## Create a component
+### Create a component
 
 Components are the main constituents of an angular application. Each component consists of;
 
@@ -130,7 +134,7 @@ Once you paste the HTML code, you should see something like the image below on y
 Note: The buttons are static so we are going to make them work in the next section.
 
 
-##  Add Tasks to the To-do list
+###  Add Tasks to the To-do list
 
 Tasks will be added to the to-do list by clicking the ‘Add’ button or pressing the enter key.
 
@@ -274,7 +278,7 @@ After looping, set the `<p>` to display the task dynamically.
 
 
 
-## Mark Task as Done
+### Mark Task as Done
 
 When a task is completed, it should be marked as such. This can be done by striking a line through the task. To achieve this, we will do the following:
 
@@ -386,7 +390,7 @@ So far, these are the codes in `todo.component.ts` file:
 ```
 
 
-## Delete Task
+### Delete Task
 
 Tasks can be deleted or removed from the to-do list. For this to be achieved, the following should be done simultaneously; 
 
@@ -421,7 +425,7 @@ Tasks can be deleted or removed from the to-do list. For this to be achieved, th
 The `splice()` method will remove the task whose index was passed in the `removeTask` method.
 
 
-## Save task to local storage
+### Save task to local storage
 
  `[localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)`  is a JavaScript feature that allows sites to store data in key-value pairs. The browser stores this data with no expiration date. This means that the stored data will remain even after the browser is refreshed or closed. 
 There are different  [localStorage methods](https://blog.logrocket.com/localstorage-javascript-complete-guide/#howdoeslocalstoragework) which can be used to achieve specific needs.
@@ -471,7 +475,7 @@ The complete code for this tutorial is on [github](https://github.com/edidee/ang
  
 
 
-## Summary
+### Summary
 
 So far, this article has given a complete guide on how you can build a simple task manager in Angular. I know this will be of great help to developers starting out in Angular.
 
