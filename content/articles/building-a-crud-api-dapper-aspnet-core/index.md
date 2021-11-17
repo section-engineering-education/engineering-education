@@ -65,22 +65,22 @@ This method can execute many queries simultaneously with one command and map res
 
 ### Creating a new ASP.NET Core API project
  After installing the Dotnet Framework SDK, go ahead to your console and type the command below to confirm that it is in fact, installed:
- ```sh
+ ```bash
  $ dotnet --version
  5.0.301
  ```
  If you have the framework installed, you should see the version of your SDK just below your command. If you don't, download it from [*HERE*](https://dotnet.microsoft.com/download). After making sure we have the SDK installed, we can go ahead to create our project. Since we'll be building an API, we'll use the command for creating an API project. To do this, open a terminal or command prompt and navigate to the directory in which you'd like your project to be created. Now enter the command below:
-  ```sh
+  ```bash
  $ dotnet new webapi -n TodoAPI
  ```
  The `n` flag just tells dotnet what we want to call our app. This should create a new starter project for our API. Navigate into the project folder and type the following command:
-   ```sh
+   ```bash
  $ dotnet run
  ```
  It should start our server on the port shown. This is usually `5000`. When you open this project in your preferred editor, you'll see that a controller has been defined in `Controllers/WeatherForecastController.cs`. To test this controller, open your REST client or browser and enter the following link: http://localhost:5000/WeatherForecast. You should see the data that was returned from that controller.
  ### Setting Up Our Database
  The first thing we want to do here is to add our connection string to our `appsettings.json` file. Like so:
- ```
+ ```json
  ...
  "ConnectionStrings": {
     "SqlConnection": "your_connection_string"
@@ -226,6 +226,8 @@ namespace TodoAPI.Extensions
     }
 }
 ```
+The extension above helps to add an external method to the `IHost` class. This makes it possible for the `MigrateDatabase` method to be called whenever this extension is 'used' on any instantiation of the `IHost` class. Learn more about extension methods [here](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/extension-methods).
+
 To make sure that this is called, head over to `Program.cs` and alter the code as shown below:
 ```C#
 ......
@@ -238,7 +240,7 @@ To make sure that this is called, head over to `Program.cs` and alter the code a
     }
 ......
 ```
-
+As shown above, the migrations are run just as the app is been built and just before it is run.
 There are a few things we need to add to our `Startup.cs` file as well. This is shown below:
 ```C#
 ......
@@ -256,6 +258,8 @@ There are a few things we need to add to our `Startup.cs` file as well. This is 
         }
 ......
 ```
+
+The snippet above configures FluentMigrator and adds logging for it. This helps to visualise the migrations in the console. The code above also adds configuration for our SQL server.
 
 After doing this, try to start your app by running `dotnet run` and the migration should be run just before the app starts. If you encounter any errors, try to retrace your steps to find the root of the problem.
 
@@ -784,12 +788,12 @@ namespace TodoAPI.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class UsersController : ControllerBase
+    public class UsersController : ControllerBase // 1
     {
         private readonly ILogger<UsersController> _logger;
         private readonly IUserRepository _userRepository;
 
-        public UsersController(ILogger<UsersController> logger, IUserRepository userRepository)
+        public UsersController(ILogger<UsersController> logger, IUserRepository userRepository) //2
         {
             _logger = logger;
             _userRepository = userRepository;
@@ -814,20 +818,20 @@ namespace TodoAPI.Controllers
             }
         }
 
-        [HttpGet]
-        [Route("{userId}")]
-        public async Task<IActionResult> GetById(Guid userId)
+        [HttpGet] //3
+        [Route("{userId}")] //4
+        public async Task<IActionResult> GetById(Guid userId) //5
         {
             try
             {
-                var Data = await _userRepository.GetById(userId);
-                return Ok(new {
+                var Data = await _userRepository.GetById(userId); //6
+                return Ok(new { //7
                     Success = true,
                     Message = "User fetched.",
                     Data
                 });
             }
-            catch (Exception ex)
+            catch (Exception ex) //8
             {
                 Console.WriteLine(ex.Message);
                 return StatusCode(500, ex.Message);
@@ -835,8 +839,9 @@ namespace TodoAPI.Controllers
         }
     }
 }
-
 ```
+ The files above are responsible for getting data from and responding to our requests. With the help of the DTOs that we defined earlier, the exchange of data between the entities is made seamless. Using the `UsersController` class above for reference, comment #1 is where our class is defined. It inherits from the `ControllerBase` class as seen above. ASP.NET is quite smart. It takes the letters before 'Controller' and maps the methods to their respective endpoints. In the case of `UsersController`, it maps the methods to the `users` route. At #2, this is where our dependencies are injected. This is possible because the dependencies have earlier been registered as services. Looking at the `GetById`, comment #3 denotes the method that this method accepts. It is a `GET` method. #4 tells our method what route we want it to answer to. In some cases like this one, we could also pass data in the route as parameters. `userId` is the parameter we're expecting in this case. By #5, the required data `userId` has been parsed from the route. #6 is where we use `_userRepository`, which we injected earlier at #2 `_userRepository` to communicate with the database. #7 is where we return the data fetched as a response with a code of 200. It's a 200 response because it is wrapped with `Ok()`. Learn more about dotnet API responses [here](https://docs.microsoft.com/en-us/dotnet/api/system.web.http.apicontroller?view=aspnetcore-2.2#methods). If any error is encountered, it is caught at #8 and returned as an error message with a status code of 500.
+
  ### Testing The Endpoints
  Now let's start our app and test with Postman.
  ###### User Endpoints
