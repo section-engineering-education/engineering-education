@@ -45,8 +45,7 @@ From the probability rules:
 From the symmetry property $p(A, B ) = p(B, A)$, and thus we can define:
 $p(B|A)=\frac{p(A,B)}{p(A)}\rightarrow {p(A,B)}=p(B|A)p(A)$
 This defines our product rule is above.
-
-Using the above rule, we can rewrite our coditionaol probability as follows:
+Using the above rule, we can rewrite our conditional probability as follows:
 $p(A|B)=\frac{p(B|A)p(A)}{p(B)}$
 which is the *Bayes theorem*. Note that, introducing the sum rule on the $p{(B)}$, this theorem can be writen as,
 
