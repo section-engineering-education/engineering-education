@@ -47,7 +47,7 @@ $p(B|A)=\frac{p(A,B)}{p(A)}\rightarrow {p(A,B)}=p(B|A)p(A)$
 This defines our product rule is above.
 Using the above rule, we can rewrite our conditional probability as follows:
 $p(A|B)=\frac{p(B|A)p(A)}{p(B)}$
-which is the *Bayes theorem*. Note that, introducing the sum rule on the $p{(B)}$, this theorem can be writen as,
+which is the *Bayes theorem*. Note that, introducing the sum rule on the $p{(B)}$, this theorem can be written as:
 
 $p(A|B)=\frac{p(B|A)p(A))}{\sum_{all A} {p(B|A)p(A)}}$.
 
