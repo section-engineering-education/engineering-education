@@ -207,12 +207,62 @@ In the scene builder menu, click on `preview` and select `show preview`. Our des
 ### Design FXML file
 The Scene Builder automatically generates an FXML file for the UI design. Below is the FXML file code generated for the design.
 
+```xml
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="main" focusTraversable="true" prefHeight="308.0" prefWidth="506.0" stylesheets="@mainCascadeStyleSheet.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mysqlconnection.FXMLDocumentController">
+    <children>
+        <Label fx:id="label" alignment="CENTER" layoutY="40.0" minHeight="16" minWidth="69" prefHeight="37.0" prefWidth="524.0" styleClass="label-bright" />
+      <Button id="submit" fx:id="submit" layoutX="129.0" layoutY="248.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Save" />
+      <Label alignment="CENTER_RIGHT" layoutY="93.0" prefHeight="44.0" prefWidth="127.0" text="Database name" />
+      <Label alignment="CENTER_RIGHT" layoutX="4.0" layoutY="130.0" prefHeight="37.0" prefWidth="120.0" text="Username" />
+      <Label alignment="CENTER_RIGHT" layoutY="165.0" prefHeight="44.0" prefWidth="120.0" text="Password" />
+      <Label alignment="CENTER_RIGHT" layoutX="1.0" layoutY="205.0" prefHeight="37.0" prefWidth="120.0" text="Server" />
+      <PasswordField fx:id="txtdbPassword" alignment="CENTER" layoutX="129.0" layoutY="167.0" prefHeight="44.0" prefWidth="380.0" />
+      <TextField fx:id="txtdbName" alignment="CENTER" layoutX="129.0" layoutY="94.0" prefHeight="37.0" prefWidth="380.0" />
+      <TextField fx:id="txtdbUserName" alignment="CENTER" layoutX="129.0" layoutY="130.0" prefHeight="37.0" prefWidth="380.0" />
+      <TextField fx:id="txtdbServer" alignment="CENTER" layoutX="129.0" layoutY="211.0" prefHeight="37.0" prefWidth="380.0" />
+      <Button fx:id="bntConString" layoutX="187.0" layoutY="248.0" mnemonicParsing="false" onAction="#getString" text="Get Connection String" />
+      <Button fx:id="bntTest" layoutX="370.0" layoutY="248.0" mnemonicParsing="false" onAction="#testConnectionAction" text="Test Connection" />
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="-1.0" layoutY="6.0" prefHeight="21.0" prefWidth="524.0" text="MySQL CONNECTION GRAPHICAL USER INTERFACE" textAlignment="RIGHT" textFill="#cfcee4" wrapText="true">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+    </children>
+   <effect>
+      <DisplacementMap>
+         <mapData>
+            <FloatMap />
+         </mapData>
+      </DisplacementMap>
+   </effect>
+   <styleClass>
+      <String fx:value="background" />
+      <String fx:value="label-bright" />
+      <String fx:value="password-field" />
+      <String fx:value="textfield" />
+   </styleClass>
+</AnchorPane>
+
+```
+
 ### Design description
 The main fields for our design include the following:
 
 #### Text fields
 1. **Database name text field** - This allows users to give the name of the database with which the application should communicate. The database name should be provided in this field as it is written in the database application.
-2. **Username text field** - This allows users to provide the database username which connects to the databases. If the database admin was to connect and log into the database, what name could he use to log in. this is the name provided for the user name.
+2. **Username text field** - This allows users to provide the database username which connects to the databases. The database username for log in is given in this field to allow our application to sign into the database.
 3. **Password** - This is the database password provided for the user. It will allow the application to be authenticated and authorized to access the given database.
 4. **Server** - This is the main location where the database storage is hosted. It could be a local host or remote server.
 
@@ -337,9 +387,8 @@ With on click of the save button, the method to create an XML file and save to t
 On click, the application reads the XML files, gets the connection strings, and tries to connect with the MySQL database. If the connection is successful it displays "connected" to the database as indicated in the screenshot above.
 
 ### Conclusion
-JavaFX is a set of graphics and media packages that enable designers, developers, and testers to design, create, debug, and deploy client applications on diverse operating system platforms. Through interaction with the desktop application user interface, data can be saved in a database (MySQL) for processing or any other manipulation. 
 
-In this article, we have learned how JavaFX scene builder can design a desktop application that can connect to the database. The code parts used in this article can be found at my [GitHub Repo](https://github.com/JosephAyoma/JavaFX-scenebuilder-for-mysql-connection).
+In this article, we have learned how JavaFX scene builder can design a desktop application that can connect to the database. Through interaction with the desktop application user interface, data can be saved in the database (MySQL) for processing or any other manipulation. We have learned how JavaFX scene builder automates FXML code for the UI making the design very easy. We have also been able to learn how MySQL connection strings can be input from a user interface, saved in an XML file format, and later called any time we need our application to communicate to the database. The code parts used in this article can be found at my [GitHub Repo](https://github.com/JosephAyoma/JavaFX-scenebuilder-for-mysql-connection).
 
 ---
 Peer Review Contributions by: [Dawe Daniel](/engineering-education/authors/dawe-daniel/)
