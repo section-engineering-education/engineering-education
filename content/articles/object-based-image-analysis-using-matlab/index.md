@@ -1,10 +1,10 @@
 
 ### Introduction
-Object-based image analysis is the processing of an image based on the classification of its pixels to get more useful information on the image, such information can be based on height, edges, and boundaries. Matlab provides an interactive environment for object-based image analysis through the execution of functions used in analysis or inbuilt apps for image processing.
+Object-based image analysis is the processing of an image based on the classification of its pixels to get more helpful information on the image. For example, such data can be based on height, edges, and boundaries. Matlab provides an interactive environment for object-based image analysis by executing functions used in analysis or inbuilt apps for image processing.
 
-Images contain objects with distinct regions, these regions have features such as area, perimeter, shapes, and height. Matlab allows for analysis of these properties using image analyzer functions or region props to obtain data from these images.
+Images contain objects with distinct regions. These regions have features such as area, perimeter, shapes, and height. Matlab allows for analysis of these properties using image analyzer functions or region props to obtain data from these images.
 
-Object-based image analysis is useful especially in analyzing satellite maps, machine vision, and obtaining information based on object characteristics in an image.
+Object-based image analysis is useful, especially in analyzing satellite maps, machine vision, and obtaining information based on object characteristics in an image.
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
@@ -25,16 +25,16 @@ To follow along with this tutorial, you'll need:
 
 
 ### Edge detection 
-Edge detection is the process of identification of points within an image, these points are where the image has great contrast and they are the defining points of the image. Edge detection work by detecting changes in brightness of the image pixels.
+Edge detection is the identification of points within an image. These points are where the image has excellent contrast, and they are the defining points of the image. Edge detection work by detecting changes in brightness of the image pixels.
 
 Edge detection is useful in image segmentation and data extraction for comparison, objects separation, computer vision, and machine learning. Matlab supports a variety of functions that aids in edge detection.
 
 ### Methods of edge detection
-There are several methods used in edge detection in images, these methods are used with the main function `edge`.  We will demonstrate most of these methods using a similar image and then compare the outcome to find a more suitable method providing a more detailed outcome.
+There are several methods used in edge detection in images. These methods are used with the primary function `edge`.  We will demonstrate most of these methods using a similar image and then compare the outcome to find a more suitable way to provide a more detailed output.
 
-All these methods only accept a grayscale image input hence it is important to fast convert the RGB image to a grayscale image, conversion of RGB to gray is done using the function `rgb2gray`. The initial stage of all image processes is the importation of the image to Matlab workspace, importation of image is done using the function `imread('imagefolderpath')`. 
+All these methods only accept a grayscale image input; hence it is essential to fast convert the RGB image to a grayscale image, conversion of RGB to gray is done using the function `rgb2gray`. The initial stage of all image processes is importing the image to the Matlab workspace. Importation of image is done using the function `imread('imagefolderpath')`. 
 
-The following codes are used in importation and image conversion to grayscale, the outcome will be used to demonstrate various methods of edge detection.
+The following codes are used in importation and image conversion to grayscale. The outcome will be used to demonstrate various edge detection methods.
 ```matlab
 i = imread('print.PNG'); %importing the image
 figure,imshow(i)
@@ -46,7 +46,7 @@ figure,imshow(i2)
 ```
 ![Grayscale image](/engineering-education/object-based-image-analysis-using-matlab/objectanalysis_two.jpg)
 
-We will use the grayscale image `i2` to demonstrate various methods of edge detection in images. The following are methods used in edge detection:
+We will use the grayscale image `i2` to demonstrate various edge detection methods in images. The following are methods used in edge detection:
 
 - Sobel; in this method, the edge is determined from the points with the highest gradient. This method is executed using the function `sobel` and the syntax is `i_edge = edge(i_gray,'sobel')`.
 ```matlab
@@ -60,7 +60,7 @@ figure,imshow(s)
 p = edge(i2,'prewitt'); %edge detection using prewitt method
 figure, imshow(p)
 ```
-![Edges detected using prewitt method](/engineering-education/object-based-image-analysis-using-matlab/objectanalysis_four.jpg)
+![Edges detected using Prewitt method](/engineering-education/object-based-image-analysis-using-matlab/objectanalysis_four.jpg)
 
 - Log: This method smoothens the image then executes the laplacian function resulsting to a double edged image. This method uses the funtion `log` and the syntax is `i_edge = edge(i_gray,'log')`.
 ```matlab
@@ -69,7 +69,7 @@ figure, imshow(l)
 ```
 ![Edge detected using log method](/engineering-education/object-based-image-analysis-using-matlab/objectanalysis_five.jpg)
 
-- Canny: This method detects the edges by separating noise from the image, this is better because it does not disturb the features of the edges in the image. This method uses the function `canny` and the syntax is `i_edges = edge(i_gray,'canny')`.
+- Canny: This method detects the edges by separating noise from the image. This is better because it does not disturb the features of the edges in the image. This method uses the function `canny` and the syntax is `i_edges = edge(i_gray,'canny')`.
 ```matlab
 c = edge(i2,'canny'); %edge detection using canny method
 figure, imshow(c)
@@ -78,10 +78,10 @@ figure, imshow(c)
 
 
 ### Object boundary detection
-Boundaries are lines that mark the limits of an object or an area. A boundary in images can be detected by either performing morphological operations on the image or by using toolbox functions.
+Boundaries are lines that mark the limits of an object or an area. A boundary in images can be detected by either performing morphological operations on the image or using toolbox functions.
 
 ### Boundary detection using morphological operations
-Morphological operations mainly involve subtracting some parts of a binarized image remaining with only the boundary of the object. In morphological operations, boundaries can be detected by either `erosion` or `dilation` of the objects whose boundary is to be obtained.
+Morphological operations mainly involve subtracting some parts of a binarized image remaining with only the object's boundary. In morphological operations, boundaries can be detected by either `erosion` or `dilation` of the objects whose boundary is to be obtained.
 
 ### Obtaining boundary by erosion
 In this method, some pixels from a binarized are removed, the eroded part is then subtracted from the main image containing the main object. The remaining part is the boundary of the object. Erosion of image is done using the function `imerode` with a specified `strel` length. The following codes and step by step illustrations of this method;
@@ -114,7 +114,7 @@ figure , imshow(i_boundary)
 ![Boundary of the object by erosion method](/engineering-education/object-based-image-analysis-using-matlab/objectanalysis_eleven.jpg)
 
 ### Obtaining boundary by dilation
-Dilation increases the size of the object boundary by adding some pixels to the boundary of the image, the number of pixels added depends on the size and the shape of the object being processed. When the binarized version of the original image is subtracted from the dilated image, the resultant image is the boundary of the targeted object. Dilation of the image is done using the function `imdilate` with a specified `strel` length on a binary image. The output image depends on the contrast and sharpness of pixels in the original image. The following are the codes used in this method.
+Dilation increases the size of the object boundary by adding some pixels to the boundary of the image, the number of pixels added depends on the size and the shape of the object being processed. When the binarized version of the original image is subtracted from the dilated image, the resultant image is the boundary of the targeted object. Dilation of the image is done using the function `imdilate` with a specified `strel` length on a binary image. The output image depends on the original image's contrast and sharpness of pixels. The following are the codes used in this method.
 ```matlab
 i = imread('plate.PNG'); %importing an image
 figure,imshow(i)
@@ -149,7 +149,7 @@ figure,imshow(i4)
 
 ###  Highlighting text in an image
 In an image containing text messages with different words, the words are the objects contained in the image. Matlab provides functions for highlighting specified words in a text image.
-We  will demonstrate  by highlighting the word 'MATLAB' in an image containing random letters. `locatetext` function is used to locate the text to be highlighted, the following codes are used in the process;
+We  will demonstrate  by highlighting the word 'MATLAB' in an image containing random letters. `locatetext` function is used to locate the text to be highlighted. The following codes are used in the process;
 ```matlab
 i = imread('C:/Users/user/Pictures/TEXT.PNG'); % importing the image
 figure,imshow(i)
@@ -169,7 +169,7 @@ figure,imshow(i2)
 ![Highted text image](/engineering-education/object-based-image-analysis-using-matlab/objectanalysis_nineteen.jpg)
 
 ### Labeling objects in images
-Objects contained in an image can be detected and labeled using the function `bwlabel`, this function is executed in a binarized image. One can view the labeled object by converting `bwlabel` results to RGB image using the function `label2rgb`. we will demonstrate this process using the following codes:
+Objects contained in an image can be detected and labeled using the `bwlabel` function. This function is executed in a binarized image. One can view the labeled object by converting `bwlabel` results to RGB image using the function `label2rgb`. we will demonstrate this process using the following codes:
 ```matlab
 i = imread('capture.PNG'); %importing the image
 figure,imshow(i)
@@ -193,9 +193,8 @@ figure,imshow(i4)
 ![The labeled objects](/engineering-education/object-based-image-analysis-using-matlab/objectanalysis_twentythree.jpg)
 
 ### Conclusion
-Object-based image analysis helps in distinguishing objects contained in an image from the background part of the image by extracting certain features of the objects like boundaries and edges. Object-based image analysis has a wide range of areas of application, it can be applied in areas like;
+Object-based image analysis helps distinguish objects contained in an image from the background part of the image by extracting certain features like boundaries and edges. Object-based image analysis has a wide range of areas of application. It can be applied in areas like;
 - Machine vision.
 - Fingerprint matching for verification.
 - medical diagnosis.
 - Map analysis.
-
