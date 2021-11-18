@@ -1,5 +1,5 @@
 ---
-title: Bernard Mburu
+title: Bernard Njenga
 type: authors
 ---
 
