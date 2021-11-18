@@ -306,7 +306,7 @@ In conclusion, we learned how to create an HTML, CSS, and JavaScript compatible 
 We brought all these components together to have a responsive code editor using codemirror. [Here](https://github.com/ayodele96/code-editor/blob/main/code-editor.html) is a link to the github repository containing the full code.
 
 ### Further reading
-- [The codemirror documentation](https://codemirror.net/)
+- [Codemirror Documentation](https://codemirror.net/)
 
 Happy coding!
 
