@@ -30,24 +30,24 @@ We will use these two functions to rotate an image in our animation. Find more a
 This is the JavaScript code.
 
 ```javascript
-    // The image variable
-    let image = document.querySelector("img");
-    // 90 degrees
-    let angle = Math.PI / 2;
+// The image variable
+let image = document.querySelector("img");
+// 90 degrees
+let angle = Math.PI / 2;
 
-    function animate(currentTimeParam, prevTimeArg) {
+function animate(currentTimeParam, prevTimeArg) {
 
-        if (prevTimeArg != null) {
-            angle += (currentTimeParam - prevTimeArg) * 0.004;
-        }
-        // Setting the previous time to the time the function currently fires
-        prevTimeArg = currentTimeParam ;
-        image.style.top = (Math.sin(angle) * 150) + "px";
-        image.style.left = (Math.cos(angle) * 150) + "px";
-        // Passing the current time and previous times
-        requestAnimationFrame(currentTime => animate(currentTime, prevTimeArg));
+    if (prevTimeArg != null) {
+        angle += (currentTimeParam - prevTimeArg) * 0.004;
     }
-    requestAnimationFrame(animate);
+    // Setting the previous time to the time the function currently fires
+    prevTimeArg = currentTimeParam ;
+    image.style.top = (Math.sin(angle) * 150) + "px";
+    image.style.left = (Math.cos(angle) * 150) + "px";
+    // Passing the current time and previous times
+    requestAnimationFrame(currentTime => animate(currentTime, prevTimeArg));
+}
+requestAnimationFrame(animate);
 ```
 
 #### Explanation
@@ -73,42 +73,42 @@ The `animate()` function also calls the `requestAnimationFrame()` function to sc
 
 ```html
 <!DOCTYPE html>
-<html>
-<head>
-    <title>Test</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        .circle {
-          display: block;
-          background: black;
-          border-radius: 100%;
-          height: 100px;
-          width: 100px;
+<html lang="en">
+  <head>
+      <title>Test</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <style>
+          .circle {
+            display: block;
+            background: black;
+            border-radius: 100%;
+            height: 100px;
+            width: 100px;
 
-          background: radial-gradient(circle at center,#31f541, #000);
-        }
-        .container {
-          width: 100%;
-          height: 100vh;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-        .circle-image{
-            z-index: 2; 
-            position: absolute; 
-            margin-left: 50%; 
-            margin-top: 50vh; 
-            border-radius: 50%;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <img class="circle-image" src="https://sacco.terrence-aluda.com/sacco/images/blue.png"> 
-        <figure class="circle"></figure>
-    </div>
-</body>
+            background: radial-gradient(circle at center,#31f541, #000);
+          }
+          .container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+          .circle-image{
+              z-index: 2; 
+              position: absolute; 
+              margin-left: 50%; 
+              margin-top: 50vh; 
+              border-radius: 50%;
+          }
+      </style>
+  </head>
+  <body>
+      <div class="container">
+          <img class="circle-image" src="https://sacco.terrence-aluda.com/sacco/images/blue.png"> 
+          <figure class="circle"></figure>
+      </div>
+  </body>
 </html>
 ```
 
@@ -128,63 +128,63 @@ Our 'sphere' is not perfectly at the center of the rotation if you are keen. You
 
 ```html
 <!DOCTYPE html>
-<html>
-<head>
-    <title>Test</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        .circle {
-            display: block;
-            background: black;
-            border-radius: 100%;
-            height: 100px;
-            width: 100px;
+<html lang="en">
+  <head>
+      <title>Test</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <style>
+          .circle {
+              display: block;
+              background: black;
+              border-radius: 100%;
+              height: 100px;
+              width: 100px;
 
-            background: radial-gradient(circle at center,#31f541, #000);
-        }
-        .container {
-            width: 100%;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .circle-image{
-            z-index: 2;
-            position: absolute;
-            margin-left: 50%;
-            margin-top: 50vh;
-            border-radius: 50%;
-        }
-    </style>
-</head>
-<body>
-<div class="container">
-    <img class="circle-image" src="https://sacco.terrence-aluda.com/sacco/images/blue.png">
-    <figure class="circle"></figure>
-</div>
-</body>
-<script>
-    // The image variable
-    let image = document.querySelector("img");
-    // 90 degrees
-    let angle = Math.PI / 2;
+              background: radial-gradient(circle at center,#31f541, #000);
+          }
+          .container {
+              width: 100%;
+              height: 100vh;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+          }
+          .circle-image{
+              z-index: 2;
+              position: absolute;
+              margin-left: 50%;
+              margin-top: 50vh;
+              border-radius: 50%;
+          }
+      </style>
+  </head>
+  <body>
+    <div class="container">
+        <img class="circle-image" src="https://sacco.terrence-aluda.com/sacco/images/blue.png">
+        <figure class="circle"></figure>
+    </div>
+    <script>
+        // The image variable
+        let image = document.querySelector("img");
+        // 90 degrees
+        let angle = Math.PI / 2;
 
-    function animate(currentTimeParam, prevTimeArg) {
+        function animate(currentTimeParam, prevTimeArg) {
 
-        if (prevTimeArg != null) {
-            angle += (currentTimeParam - prevTimeArg) * 0.004;
+            if (prevTimeArg != null) {
+                angle += (currentTimeParam - prevTimeArg) * 0.004;
+            }
+            // Setting the previous time to the time the function currently fires
+            prevTimeArg = currentTimeParam ;
+            image.style.top = (Math.sin(angle) * 150) + "px";
+            image.style.left = (Math.cos(angle) * 150) + "px";
+            // Passing the current time and previous times
+            requestAnimationFrame(currentTime => animate(currentTime, prevTimeArg));
         }
-        // Setting the previous time to the time the function currently fires
-        prevTimeArg = currentTimeParam ;
-        image.style.top = (Math.sin(angle) * 150) + "px";
-        image.style.left = (Math.cos(angle) * 150) + "px";
-        // Passing the current time and previous times
-        requestAnimationFrame(currentTime => animate(currentTime, prevTimeArg));
-    }
-    requestAnimationFrame(animate);
-</script>
+        requestAnimationFrame(animate);
+    </script>
+  </body>
 </html>
 ```
 ### Applications of this
