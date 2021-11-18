@@ -16,7 +16,7 @@ images:
 ---
 Handpose recognition is a deep learning technique that allows you to detect different points on your hand. These points on your hand are commonly referred to as landmarks. These landmarks consist of joints, tips, and bases of your fingers.
 <!--more-->
-[MediaPipe](https://google.github.io/mediapipe/solutions/hands) provides many customizable ML pre-trained models. The handpose model is one of their latest releases. With researchers aiming to democratize AI using such amazing pre-trained models, it is important that we can understand ML with only a few lines of code. This tutorial aims to show you how to build your very own Handpose detector using MediaPipe and Python. You'll be able to use your computer's webcam to track the joints in your hands, and in real-time. 
+[MediaPipe](https://google.github.io/mediapipe/solutions/hands) provides many customizable ML pre-trained models. The handpose model is one of their latest releases. With researchers aiming to democratize AI using such amazing pre-trained models, it is important that we can understand ML with only a few lines of code. This tutorial aims to show you how to build your very own Handpose detector using MediaPipe and Python. You'll be able to use your computer's webcam to track the joints in your hands. 
 
 ### Prerequistes
 To follow along with this tutorial, you'll need to be familiar with:
@@ -27,7 +27,7 @@ To follow along with this tutorial, you'll need to be familiar with:
 ### Table of contents
 - [The handpose model](#the-handpose-model)
 - [Installing and importing dependencies](#installing-and-importing-dependencies)
-- [Detecting handposes in real-time using webcam](#detecting-handposes-in-real-time-using-webcam)
+- [Detecting handposes using images captured by our webcam](#detecting-handposes-using-images-captured-by-our-webcam)
 - [Output images using OpenCV](#output-images-using-opencv)
 - [Wrapping up](#wrapping-up)
 - [Further reading](#further-reading)
@@ -56,6 +56,7 @@ import cv2
 import numpy as np
 import uuid
 import os
+from google.colab.patches import cv2_imshow
 ```
 We've imported five dependencies:
 - `mediapipe` allows us to leverage the MediaPipe ML solution.
@@ -73,30 +74,85 @@ mp_hands = mp.solutions.hands
 Now that all that's done, let's set up our webcam using the standard OpenCV code. If you've worked with OpenCV before, the following block of code might seem familiar; if you're not familiar with it, please refer to their [documentation](https://opencv.org/). 
 
 ```python
-cap = cv2.VideoCapture(0)
-while  cap.isOpened():
-    ret, frame = cap.read()
-
-    cv2.imshow('Handpose detection', frame)
-
-    if cv2.waitKey(10) & 0xFF == ord('q'):
-            break
-cap.release()
-cv2.destroyAllWindows()
+img = cv2.imread('logo.png', cv2.IMREAD_UNCHANGED)
+cv2_imshow(img)
 ```
+
+But, before we get to that, accessing your webcam using OpenCV in Google Colab isn't straightforward as you're not using your local runtime, but rather, a Google Colab runtime. To utilize your local machine's webcam within the virtual machine, you can copy-paste the following JavaScript code into your colab:
+
+```js
+from IPython.display import display, Javascript
+from google.colab.output import eval_js
+from base64 import b64decode
+
+def take_photo(filename='photo.jpg', quality=0.8):
+  js = Javascript('''
+    async function takePhoto(quality) {
+      const div = document.createElement('div');
+      const capture = document.createElement('button');
+      capture.textContent = 'Capture';
+      div.appendChild(capture);
+
+      const video = document.createElement('video');
+      video.style.display = 'block';
+      const stream = await navigator.mediaDevices.getUserMedia({video: true});
+
+      document.body.appendChild(div);
+      div.appendChild(video);
+      video.srcObject = stream;
+      await video.play();
+
+      // Resize the output to fit the video element.
+      google.colab.output.setIframeHeight(document.documentElement.scrollHeight, true);
+
+      // Wait for Capture to be clicked.
+      await new Promise((resolve) => capture.onclick = resolve);
+
+      const canvas = document.createElement('canvas');
+      canvas.width = video.videoWidth;
+      canvas.height = video.videoHeight;
+      canvas.getContext('2d').drawImage(video, 0, 0);
+      stream.getVideoTracks()[0].stop();
+      div.remove();
+      return canvas.toDataURL('image/jpeg', quality);
+    }
+    ''')
+  display(js)
+  data = eval_js('takePhoto({})'.format(quality))
+  binary = b64decode(data.split(',')[1])
+  with open(filename, 'wb') as f:
+    f.write(binary)
+  return filename
+```
+This code is pre-built by Google's team to help make it easy for developers to access their webcam. You can easily access it [here](https://colab.research.google.com/notebooks/snippets/advanced_outputs.ipynb#scrollTo=iU_0F2SVW4Yb).
+
+In addition, also copy-paste the code below. Running this code will open your computer's webcam. Once it has launched, you can capture a image of yourself. Remember to capture your image with one of your hand(s) as this model is aimed at capturing handposes. You won't see any results if you don't capture your hands. This image will be saved as `photo.jpg`.
+
+```
+from IPython.display import Image
+try:
+  filename = take_photo()
+  print('Saved to {}'.format(filename))
+  
+  # Show the image which was just taken.
+  display(Image(filename))
+except Exception as err:
+  # Errors will be thrown if the user does not have a webcam or if they do not
+  # grant the page permission to access it.
+  print(str(err))
+```
+
 Let's now overlay the mediapipe hands model on top of the standard OpenCV code. We will take the feed from our webcam, pass it to mediapipe, make detections, and render the results to the image. So, we'll not only get the webcam feedback, but a webcam feed with all those detections applied onto it.
 
-### Detecting handposes in real-time using webcam
-In this section, we will be detecting our handposes. As we put our hand up to the webcam, we should see all the joints within our hands detected in real-time.
+### Detecting handposes using images captured by our webcam
+In this section, we will be detecting our handposes. In the captured image where we put our hand up to the webcam, we should see all the joints within our hands detected.
 
 ```python
-cap = cv2.VideoCapture(0)
+cap = cv2.imread('photo.jpg', cv2.IMREAD_UNCHANGED)
 
-with mp_hands.Hands(min_detection_confidence=0.8, min_tracking_confidence=0.5) as hands: 
-    while cap.isOpened():
-        ret, frame = cap.read()
+with mp_hands.Hands(min_detection_confidence=0.8, min_tracking_confidence=0.5) as hands: #You can pass `max_num_hands` argument here as well if you want to detect more that one hand
         
-        image = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+        image = cv2.cvtColor(cap, cv2.COLOR_BGR2RGB)
         
         image.flags.writeable = False
         
@@ -115,12 +171,8 @@ with mp_hands.Hands(min_detection_confidence=0.8, min_tracking_confidence=0.5) a
                                          )
             
         cv2.imwrite(os.path.join('Output Images', '{}.jpg'.format(uuid.uuid1())), image)
-        cv2.imshow('Handpose detection', image)
+        cv2_imshow(image)
 
-        if cv2.waitKey(10) & 0xFF == ord('q'):
-            break
-
-cap.release()
 cv2.destroyAllWindows()
 ```
 We first instantiate our model using the following code `with mp_hands.Hands(min_detection_confidence=0.8, min_tracking_confidence=0.5) as hands`. We pass in two keyword arguments, the `min_detection_confidence`, setting the detection confidence to 80% and `min_tracking_confidence`, setting the tracking confidence to 50%.
