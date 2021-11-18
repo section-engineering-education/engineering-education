@@ -1,5 +1,5 @@
-When building a React project, developers need some quick-to-use data sources if it has endpoints. These data sources provide test data to test whether the package works correctly.
-Datasource mainly used may include DBMS systems such as MySQL, Postgres, SQL, among many others. The problem with this approach is that during prototyping, e.g., in Rapid Prototyping Approach, if the application prototype seems not expected, it will be quickly discarded.
+When building a React project, developers need some quick-to-use data sources with endpoints. These data sources provide test data to test whether the package works correctly.
+Datasource mainly used may include DBMS systems such as MySQL, Postgres, SQL, among many others. The problem with this approach is that during prototyping, e.g., in Rapid Prototyping Approach, it will be quickly discarded if the application prototype is not as expected.
 The extra setup and configurations will be tedious and useless since they will be quickly discarded.
 
 The process produces a need to create a data source that can be quickly set up and discarded, yet it performs the same functionality as the DBMS.
@@ -50,7 +50,7 @@ For the article, the following are required for easy article follow-up:
 - React development environment already setup
 - React development skills
 
-A brief info on what is going to be done in the article is as follows:
+Brief info on what is going to be done in the article is as follows:
 
 - Learn briefs on the JSON Server package
 - Create a React application
@@ -63,10 +63,10 @@ A brief info on what is going to be done in the article is as follows:
 
 ### Learn briefs on the JSON Server package
 
-JSON Server can allow almost all back-end requests and responses. They can be accessed via the GET, POST, PUT, PATCH and DELETE methods.
-It allows routes to access data items stored in the Mock database file(it's in JSON format). This may include examples such as `GET    /posts`, `PUT    /posts/1`, or `DELETE /posts/1`.
+JSON Server can allow almost all back-end requests and responses. They can be accessed via the GET, POST, PUT, PATCH, and DELETE methods.
+It allows routes to access data items stored in the Mock database file(in JSON format). They may include examples such as `GET    /posts`, `PUT    /posts/1`, or `DELETE /posts/1`.
 
-The module allows other operations to be done on the database such as:
+The module allows other operations to be done on the database, such as:
 
 - **Filter**: e.g. `GET /posts?title=json-server&author=riro` or `GET /comments?author.name=riro`
 - **Pagination**: e.g. `GET /posts?_page=9&_limit=23`
@@ -74,20 +74,20 @@ The module allows other operations to be done on the database such as:
 - **Slicing**: e.g. `GET /posts/4/comments?_start=20&_limit=10`
 - **Operators**: e.g. for getting range (`_gte`, `lte`), excluding a value(`_ne`), filtering a value(`_like`)
 - **Full-text search**: e.g. `GET /posts?q=tomcat`
-- **Relationships**: e.g. inclusion of child resources(`_embed`), inclusion of parent resources(`_expand`), to get or create nested resources
+- **Relationships**: e.g., the inclusion of child resources(`_embed`), the inclusion of parent resources(`_expand`), to get or create nested resources
 - **Database**: e.g. `GET \db`
-- **Homepage**: e.g. `GET /`. One can serve the application files in the public folder, use the `./public` path.
+- **Homepage**: e.g. `GET /`. Using the ' ./public ' path, one can serve the application files in the public folder.
 
 More on JSON Server library will also be mentioned in the article.
 
 ### Create a React app
 
 In this section, a React app will be created. The app will be a budget planning application to add items and remove them from a list.
-The app saves and retrieves data from a data source in form of a JSON object.
+The app saves and retrieves data from a data source in a JSON object.
 
 #### New React app
 
-- Open the folder in which the application should be created in and run this command:
+- Open the folder in which the application should be created and run this command:
 
 ```shell
 npx create-react-app react-budget-tracker
@@ -158,7 +158,7 @@ Header.propTypes = {
 export default Header
 ```
 
-This creates a simple header for a webpage and avails it for use.
+This code creates a simple header for a web page and allows it for use.
 
 #### Footer component
 - In the 'Footer.js' file, the following will be the code:
@@ -179,7 +179,7 @@ export default Footer
 ```
 
 #### Button component
-- Add a button that is a reusable component for multiple click actions. This button will open the Add form and close the form. The code for the button is as shown below:
+- Add a button that is a reusable component for multiple click actions. For example, this button will open the Add form and close the form. The code for the button is as shown below:
 
 ```js
 import PropTypes from 'prop-types'
@@ -775,7 +775,7 @@ Let us look more at the module:
 
 #### Change port, file and file paths
 
-- The filename and port in which the Server runs can be changed, for instance, to `database.json` on port `3010` by running the command below on the terminal:
+- The filename and port where the Server runs can be changed, for instance, to `database.json` on port `3010` by running the command below on the terminal:
 
 ```shell
 json-server --watch database.json --port 3010
@@ -823,7 +823,7 @@ Find the code for this article in this [link](https://github.com/blacklihgt/Mock
 
 In conclusion, running and throwing away parts are essential to developers during software development.
 These parts are helpful in agile programming and prototyping. JSON Server dependency is an example of a quick dispensable project development unit.
-It is small-sized, easy to install, use, learn, and dispose of.
+It is small-sized, easy to install, use, learn, and dispose of when one has finished using the prototype.
 
 At this point, the following have been covered:
 
