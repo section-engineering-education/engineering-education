@@ -199,7 +199,7 @@ public function index()
 
 We have now added all that we need to authenticate a user in our` app/Http/Controllers/Auth/AuthController.php`. The `index `method, the `registration `method, and the `reverify `method returns the `login`, `registration `and `verification `view respectively. The `dashboard `method returns the `dashboard ` view only if the user us authenticated, else it will redirect to the `login `with an error message.This tis done using the `Auth::check()`. The `postRegistration ` method saves all the user’s input and making sure that the data provided by the user passes the validation check, it then redirect the user to the login page with a success message. The `postLogin` method authenticates the user base on the credetials provided by the user and the verification status. this uses the `Auth::attempt($credentials)`. The `logout ` method logs the user out and also clears the session using the `Session::flush()`
 
-#### Route 
+#### Routes
 We need to add how route to anable users navigate through pages in our application. Add the following code to `routes/web.php `
 ```
 
@@ -220,7 +220,7 @@ We need to add how route to anable users navigate through pages in our applicati
 This anables users to navigate through pages in our application.
 
 #### Views
-We now want to include the authentication view. Create a folder inside the views folder and call it auth. We will be creating all our authentication views (`login.blade.php`, `registration.blade.php` and `verification.blade.php`) in the auth folder while the `dashboard.blade.php` and `layout.blade.php` will be create in the views folder.
+We now want to include the authentication view. Create a folder inside the views folder and call it auth. All authentication views wll be in auth folder except for `dashboard.blade.php` and `layout.blade.php` that will be in the views folder.
 
 Open `resources/views` create a new file and name it `layout.blade.php`. open the file `resources/views/layout.blade.php` and include the following code.
 `resources/views/layout.blade.php` 
@@ -678,11 +678,11 @@ use Twilio\Rest\Client;
 
 
 public function makeCall($call_to) {
-        $token = getenv("TWILIO_AUTH_TOKEN");
-        $twilio_sid = getenv("TWILIO_SID");
-        $twilio = new Client($twilio_sid, $token);
+        $twilio_token = getenv("TWILIO_AUTH_TOKEN");
+        $twilio_sid_token = getenv("TWILIO_SID");
+        $twilio_client = new Client($twilio_sid_token, $twilio_token);
        
-        $twilio->calls->create($call_to, // to
+        $twilio_client->calls->create($call_to, // to
                         "+17122145457", // from
                         [
                             "url" => " http://localhost:8000/build-twiml/user-input/".$call_to
@@ -767,10 +767,10 @@ class PhoneVerificationController extends Controller
 {
     public function userInput($call_to)
     {
-        $response = new VoiceResponse();
-        $response->say("Hello, thank you for registering with us.");
+        $twilioResponse = new VoiceResponse();
+        $twilioResponse->say("Hello, thank you for registering with us.");
 
-        $gather = $response->gather([
+        $gather = $twilioResponse->gather([
             'action' => '/build-twiml/'.$call_to. '/verification',
             'numDigits' => 6,
             'timeout'=>10, 
@@ -778,9 +778,9 @@ class PhoneVerificationController extends Controller
 
         $gather->say("Please enter the six digits verification code that is currently displaying on your screen to verify your phone number");
 
-        $response->say('Sorry. You did not respond and your account can not be verify. Goodbye');
-        $response->hangup();        
-        echo $response;
+        $twilioResponse->say('Sorry. You did not respond and your account can not be verify. Goodbye');
+        $twilioResponse->hangup();        
+        echo $twilioResponse;
     }
 
     public function verifyNumber($call_to)
@@ -788,25 +788,25 @@ class PhoneVerificationController extends Controller
         $user = User::where('phone_number', $call_to)->first();
         $code = $_POST['Digits'];
 
-        $response = new VoiceResponse();
+        $twilioResponse = new VoiceResponse();
         
         if($_POST['Digits'] == $user->verification_code){
             $emailNumber= User::where('phone_number', $call_to)->update(['isVerified' => true]);
 
             if($emailNumber){
-            $response->say('You account has been verified. Goodbye');
+            $twilioResponse->say('You account has been verified. Goodbye');
                 
             }
             else{
-                $response->say('An error accured while trying to verify your account. Please try again.');
-                $response->redirect('/build-twiml/user-input/'.$call_to);
+                $twilioResponse->say('An error accured while trying to verify your account. Please try again.');
+                $twilioResponse->redirect('/build-twiml/user-input/'.$call_to);
             }
         }
         else{
-            $response->say('You entered a wrong verification, and your account can not be verified. Goodbye');
+            $twilioResponse->say('You entered a wrong verification, and your account can not be verified. Goodbye');
         }
     
-        echo $response;
+        echo $twilioResponse;
     }
 }
 
@@ -907,6 +907,8 @@ public function makeCall($call_to) {
 Now our application is ready. Visit ` http://159f-129-205-113-23.ngrok.io/registration ` to test the application
 
 ### Conlusion
-In this tutorial, we have learnt how to use Laravel and twilio to interact with users and verify their phone number, collect input from a user during call, call a phone number from our application and implementing authentication. While we covered a lot in this tutorial, there are still numerous ways to engage your user in our application using the twilio services.
+In this tutorial, we have learnt how to use Laravel and twilio to interact with users and verify their phone number, collect input from a user during call, call a phone number from our application and implementing authentication. Despite the much we have covered, there are still numerous ways to engage your user in our application using the twilio services.
 
 This project's code is all housed in this [GitHub repository](https://github.com/philzy94/phone-verification-in-laravel-using-twilio).
+
+Have a wonderful coding experience. 
