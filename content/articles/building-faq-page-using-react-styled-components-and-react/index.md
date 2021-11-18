@@ -5,7 +5,7 @@ published: true
 url: /building-faq-page-using-react-styled-components-and-react/
 title: Building FAQ page using React-styled components and React.js
 description: This tutorial will guide the reader on how to build an FAQ page using React.js and React-styled components.
-author: oluwatomisin-bamimore
+author: kingsley-jack
 date: 2021-11-18T00:00:00-09:30
 topics: []
 excerpt_separator: <!--more-->
