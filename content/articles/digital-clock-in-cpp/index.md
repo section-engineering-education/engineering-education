@@ -3,78 +3,78 @@ layout: engineering-education
 status: publish
 published: true
 url: /digital-clock-in-cpp/
-title: Digital clock in cpp
-description: In this tutorial, we will learn how to create a digital watch using the C++ programming language in a step-by-step manner.
+title: Digital Clock in C++
+description: In this tutorial, we will learn how to create a digital watch using the C++ programming language.
 author: sabina-nyambura
-date: 2021-10-26T00:00:00-18:30
+date: 2021-11-18T00:00:00-10:20
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/digital-clock-in-cpp/hero.png
-    alt: Digital clock in cpp Hero Image
+    alt: Digital clock in C++ Hero Image
 ---
-A **digital clock**, as opposed to  an analog clock, shows the time digitally (in numbers or other symbols). There is a misconception that digital watches and electronic drives are synonymous.
+A digital clock, as opposed to an analog clock, shows the time digitally (in numbers or other symbols). In this tutorial, we will develop a digital clock using C++.
  <!--more-->
-But, this is not true. The term "digital" only describes the time display, not the actual campaign itself. In this tutorial, we will learn how to create a digital watch using the C++ programming language in a step-by-step manner.
-
-Bjarne Stroustrup developed C++ in 1979 while working at Bell Labs. With its mix of high-level and low-level language characteristics, C++ is known as a medium language. Since C++ is a superset of C, it's possible to write a valid C++ program.
+Bjarne Stroustrup developed C++ in 1979 while working at Bell Labs. With its mix of high and low-level language characteristics, C++ is regarded as a medium language. 
 
 ### Prerequisites
-To follow along with this tutorial, the reader should:
-- Have basic knowledge of the C++ programming language. Check the article on [introduction to C++](https://www.section.io/engineering-education/intro-to-c-part1/) to learn about the C++ programming language.
-- Have an IDE installed. Click [here](https://code.visualstudio.com/)
- to install Visual studio code. 
-
-> Visual studio code supports almost every major programming language. That is why I recommend using it as our IDE.
+To follow along with this tutorial, the reader should have:
+- Some basic knowledge of C++ programming language. Check this article on [introduction to C++](https://www.section.io/engineering-education/intro-to-c-part1/).
+- An IDE installed. We will use [Visual studio code](https://code.visualstudio.com/) in this 
 
 ### Table of contents
-- [An overview of our project](#an-overview-of-our-project)
-- [Obtain the system current time](#obtain-the-system-current-time)
-- [Utilize struct attributes](#utilize-struct-attributes)
-- [Display the digital clock](#display-the-digital-clock)
+- [Project overview](#project-overview)
+- [Obtaining the system current time](#obtaining-the-current-system-time)
+- [Utilizing struct attributes](#utilizing-struct-attributes)
+- [Displaying the digital clock](#displaying-the-digital-clock)
 - [How to increment the time](#how-to-increment-the-time)
 - [A complete demo of our project](#a-complete-demo-of-our-project)
 - [Conclusion](#conclusion)
 
-### An overview of our project
-To build our digital watch, we will use a c++ program. Conditions and loops are two important c++ programming concepts that we will practice here. 
+### Project overview
+Conditions and loops are two important C++ concepts that we will practice when building the digital clock. 
 
-We'll use the `time()` function to get the local time. To initialize our variables, we will use the `tm` structure, which contains data and time characteristics. An excellent C++ digital clock application will be built using an endless `while` loop.
+We'll use the `time()` function to get the local time. 
 
-Let's break down the digital clock program into more miniature stages to make it easier to understand and complete. These are the actions that must be taken:
-- Use the `time()` method to find out what time it is right now on your machine.
+To initialize our variables, we will use the `tm` structure, which contains data and time characteristics. 
+
+Let's break down the digital clock program into smaller steps to make it easier to understand and complete. 
+
+The following actions must be implemented:
+- Use the `time()` method to determine the current system time.
 - Initialize the `tm` structure with the hours, minutes, and seconds declarations.
-- In an endless while loop, show the current time on a digital clock.
+- Show the current time on a digital clock using a `while` loop.
 - Increase the hours, minutes, and seconds variables depending on the current situation and the input.
-- Add a delay and then delete all prior times from the screen.
+- Add a delay and then delete content from the screen.
 
-### Obtain the system current time
-To be able to get the system current time, use the following procedure:
-- Use the time library's `time()` method in C++. It provides an object of type time `t` with the current time as a value.
-- Use the `local time()` method to convert a time to identifier's reference to a `tm` identifier.
-An identifier is a name used to identify a single thing or a single class of objects. The `object` or class may be a concept, a countable physical object, or a physical noncountable substance.
-- Declare a `timePtr` tm type pointer to hold the `localtime()` function's result.
+### Obtaining the current system time
+We use the following procedure to obtain the current time:
+- Use the time library's `time()` method in C++. It provides an object of type time with the current time as a value.
 
-A pointer is a kind of object in computer programming that keeps track of a memory location. Other values in computer memory or memory-mapped devices may serve as examples of this.
+- Use the `localtime()` method to convert a time to a `tm` identifier. An identifier is a name used to refer to a class of objects. 
 
-- Using the `tm` structure type, we can manipulate time by using characteristics like `tm sec`, `tm min`, `tm hour`, and so on.
+- Declare a `timePtr` type pointer to hold the value returned by the `localtime()` function.
 
-The syntax below is used to get the local time.
+- The `tm` type allows us to manipulate time using characteristics such as `tm sec`, `tm min`, `tm hour`, and so on.
+
+The following syntax is used to retrieve the local time:
 
 ```c++
 time_t t = time(NULL);
     tm *timePtr = localtime(&t)
 ```
 
-### Utilize struct attributes
-- The arrow operator may be used to retrieve the properties of `timeptr`, a pointer to a struct to object.
-- Set the time `sec` property to the value of the `sec` variable you declared.
-- Initialize the variable `min` with the `tm min` attribute before declaring another one with the same name.
-- Use the `tm` hour property to set the hours variable to zero.
-- Declare an AM/PM `timestr` variable.
+### Utilizing struct attributes
+The arrow operator may be used to retrieve the properties of `timeptr`.
 
-The code below stores the local time in the variables using the pointers. And, the `if` condition is used to change the local time to the 12-hour clock format.
+Set the time `sec` property to the value of the `sec` variable that you declared.
+
+Initialize the variable `min` with the `tm min` attribute before declaring another one with the same name.
+
+Use the `tm` hour property to set the hours variable to zero. Then, declare an AM/PM `timestr` variable.
+
+The code below stores the local time in variables using pointers. The `if` condition is used to change the local time to the 12-hour clock format.
 
 ```c++
     time_t t = time(NULL);
@@ -86,14 +86,7 @@ The code below stores the local time in the variables using the pointers. And, t
 
 ```
 
-### Display the digital clock
-To achieve the idea of showing the user the working digital watch, I used the `while` loop condition. The procedure below gives an idea of how to output the clock.
-- To construct an endless loop, use a while loop with actual instead of any condition.
-- Print the variable hours, minutes, and seconds.
-- To make it appear suitable, print appropriate gaps and lines.
-
-Use the loop below:
-
+### Displaying the digital clock:
 ```c++
 while (true)
     {
@@ -109,10 +102,11 @@ Since we have created our digital clock, the next step changes the time on our d
 
 ### How to increment the time
 Follow the procedure below to increment the time in our digital clock:
+
 - Increment the `sec` variable on every iteration of the while loop.
-- Once the sec value reaches 60, increment the `min` variable by one and set the `sec` back to one.
-- In the same way, when the `min` reaches 60, increment hours by one and set the `min` variable to 0.
-- Set the hours to 00 when it reaches 24. This is because the standard time in the 24-hour system ranges from one to twenty-four repeatedly.
+- Once the `sec` value reaches `60`, increment the `min` variable by `one`. Reset the `sec` back to one.
+- In the same way, when the `min` reaches `60`, increment hours by `one` and reset the `min` variable to `0`.
+- Set the hours to `00` when it reaches 24. This is because the standard time in the 24-hour system ranges from one to twenty-four.
 
 Use the code below to accomplish the time increment.
 
@@ -140,11 +134,11 @@ Use the code below to accomplish the time increment.
     }
 ```
 
-After incrementing, the last step is to ask ourselves how to add delay and clear the screen simultaneously. To achieve this, we will use the steps below:
-- Use `system(cls)` to remove the prior staff from view.
-- To give our digital clock software some slack, we'll use the `sleep()` function.
-- Add a one-second delay by entering a value of 1000.
-- The `window.h` header has a `sleep()` method.
+After incrementing, the last step is to  add a delay and clear the screen simultaneously. 
+
+To achieve this functionality, we will use the following steps:
+- Use `system(cls)` to clear the `view`.
+- We will add a `1000` ms delay using the `sleep()` function.
 
 ```c++
 while (true)
@@ -179,6 +173,7 @@ while (true)
 ```
 
 ### A complete demo of our project
+Here is the complete code for the digital clock application:
 
 ```c++
 #include <iostream>
@@ -186,8 +181,7 @@ while (true)
 #include <windows.h>
 using namespace std;
 
-int main()
-{
+int main(){
     time_t t = time(NULL);
     tm *timePtr = localtime(&t); // stores the local time of the computer.
 
@@ -196,8 +190,7 @@ int main()
     int hrs = (timePtr->tm_hour);
 
 
-while (true)
-    {
+while (true){
         system("cls");
 
         cout << "The digital time is :";
@@ -234,12 +227,10 @@ The output will be:
 
 ![The digital clock](/engineering-education/digital-clock-in-c++/digital-clock.png)
 
-> The time to be displayed will differ depending on the local time on your device.
+> Note that the displayed time will differ depending on your location.
 
 ### Conclusion
-From the tutorial above, we learned the steps to create a digital clock. At the end we were able make an example clock to experiment with the knowledge learned in the article. Also, we gained some knowledge on using `if` statements and also the loops using the `while` loop.
-
-Happy coding!
+In the above tutorial, we have learned the steps required to create a digital clock. We also gained some knowledge on using `if` statements and `while` loops.
 
 ---
 Peer Review Contributions by: [Dawe Daniel](/engineering-education/authors/dawe-daniel/)
