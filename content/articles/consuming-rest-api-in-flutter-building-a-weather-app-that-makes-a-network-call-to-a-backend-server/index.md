@@ -19,18 +19,18 @@ To follow along, you should have:
 ### Creating a Flutter application in Android Studio
 This project uses Android Studio as its Integrated Development Environment(IDE). You need to launch Android Studio and create a new Flutter project. Ensure that you set the type as Flutter application, and select the path where your Flutter SDK is located, then click next. Next, fill in the project details in the image below and click finish.
 
-![creating a new Flutter project](create_project.png)
+![creating a new Flutter project](/engineering-education/consuming-rest-api-in-flutter-building-a-weather-app-that-makes-a-network-call-to-a-backend-server/create_project.png)
 
 ### Integrating the Dio package
 To add the Dio package as a dependency into the application, go to the [Dio Documentation](https://pub.dev/packages/dio), copy `dio: ^4.0.0`, and add it to the project `pubspec.yaml` file. Then, run the command `pub get` to sync the dependency in the project.
 
-![adding dio to the project](dio.png) 
+![adding dio to the project](/engineering-education/consuming-rest-api-in-flutter-building-a-weather-app-that-makes-a-network-call-to-a-backend-server/dio.png) 
 
 Also add [Getx](https://pub.dev/packages/get) and [Get Storage](https://pub.dev/packages/get_storage) for state management and local storage respectively. If you don't know how to use the GetX package for state management in flutter read my article on [Getx](https://www.section.io/engineering-education/flutter-getx-ecosystem-for-state-management/). In addition, add the [geolocator](https://pub.dev/packages/geolocator) dependency `geolocator: ^7.7.0` and [flutter spinkit](https://pub.dev/packages/flutter_spinkit) dependency `flutter_spinkit: ^5.1.0`.
 
 The geolocator allows us to easily access platform-specific locations, while the flutter Spinkit gives us a collection of loading indicators. The dependencies section of your `pubspec.yaml` file should look like this.
 
-![pubspec](pubspec.png)
+![pubspec](/engineering-education/consuming-rest-api-in-flutter-building-a-weather-app-that-makes-a-network-call-to-a-backend-server/pubspec.png)
 
 ### Project Structure
 The project is being structured in this order:
