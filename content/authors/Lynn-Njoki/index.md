@@ -1,0 +1,1 @@
+Lynn is a student in data analytics. Her passions are in data collection, analytics and application of data in real world situations. 
