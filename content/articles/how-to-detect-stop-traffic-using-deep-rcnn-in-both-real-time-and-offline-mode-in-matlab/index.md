@@ -157,7 +157,7 @@ end
 ```
 The `step(videoplayer,img)` means that all the images with bounding boxes and annotations are given to the video player object for display. You get the output with the stop sign detected if you execute the program.
 
-![Output for offline video](/engineering-education/how-to-detect-stop-traffic-using-deep-r-cnn-in-both-real-time-and-offline-mode-in-matlab/stopTen.png)
+![Output for offline video](/engineering-education/how-to-detect-stop-traffic-using-deep-r-cnn-in-both-real-time-and-offline-mode-in-matlab/stopEleven.png)
 
 ### Matlab code for testing video(Realtime)
 In this case, we are using the webcam to capture the live video. Now, this is what makes the difference between the offline and the online case. The rest of the code is similar for both cases. Also, instead of reading the frames, we take snapshots and read them.
