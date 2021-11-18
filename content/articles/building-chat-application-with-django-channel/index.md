@@ -6,7 +6,7 @@ url: /building-chat-application-with-django-channel/
 title: Building Chat Application with Django Channels
 description: This tutorial explains how to use Django channels in a Djnago application by building a fully functional chat application
 author: francisca-adekanye
-date: 2021-11-17T00:00:00-12:00
+date: 2021-11-18T00:00:00-09:00
 topics: [API]
 excerpt_separator: <!--more-->
 images:
@@ -14,6 +14,12 @@ images:
   - url: /engineering-education/building-chat-application-with-django-channel/hero.png
     alt: Building Chat Application with Django Channels
 ---
+
+This tutorial will build a fully functional chat application by implementing the chat server using Django Channel. This Channel was implemented on the asynchronous server used by Django. And this server was named Asynchronous Server Gateway Interface `ASGI`.
+<!--more-->
+ASGI is the server specification that the Channel was built upon. Like the WSGI, both server and framework can be chosen with choice rather than just accepting the Channel server.
+
+The Django Channel supports HTTP and other types of protocols that have long connections time. The Channel layers divide the entire applications into processes and support parts of Django views.
 
 ### Table of Contents
 - [Table of Contents](#table-of-contents)
@@ -31,16 +37,8 @@ images:
 - [Redis](https://redis.io/download/) installed on your machine.
 
 
-### Goal
-This tutorial will build a fully functional chat application by implementing the chat server using Django Channel. This Channel was implemented on the asynchronous server used by Django. And this server was named Asynchronous Server Gateway Interface `ASGI`.
-<!--more-->
-
-ASGI is the server specification that the Channel was built upon. Like the WSGI, both server and framework can be chosen with choice rather than just accepting the Channel server.
-
-The Django Channel supports HTTP and other types of protocols that have long connections time. The Channel layers divide the entire applications into processes and support parts of Django views.
 
 ### Project setup
-
 Let us get started to build the chat application. Navigate to your terminal and follow the processes below.
 
 ```bash
@@ -87,7 +85,6 @@ $ python manage.py run server
 
 
 ### Creating the chat application
-
 It is a good practice to separate the code for the chats in its stand-alone application. Following the Django way of creating an app;
 
 ```bash
@@ -148,14 +145,13 @@ While the server is running, navigate to the `http://localhost:8080/chat/` and o
 But if you type in any room name, you should receive a `page not found` message because we have not implemented any other chat room for communication.
 
 ### Setting up a chat server
-
 First, we need to add another room chat template. Inside the `letschat/templates/letschat_app` directory, create `chatroom.html` and type the code snippets below.
 
 
-![ChatRoom Page 1](/engineering-education/building-chat-application-with-django-channels/chatroomhtml1.png) 
+![ChatRoom Page 1](/engineering-education/building-chat-application-with-django-channel/chatroomhtml1.png) 
 
 
-![ChatRoom Page 2](/engineering-education/building-chat-application-with-django-channels/chatroomhtml2.png) 
+![ChatRoom Page 2](/engineering-education/building-chat-application-with-django-channel/chatroomhtml2.png) 
 
 
 > **Note**: The two code snippets are the continuation of each other.
@@ -195,16 +191,15 @@ Input any room name of your choice for connections. That will open up the chat r
 But we have to make a consumer that will accept the WebSocket connections.
 
 ### Making consumers accept the connection
-
 Historically, Django servers route URLConf to the appropriate view function and send the Html templates. The same thing goes to when Channels using the Daphne server receives any request, it maps the routing to the consumer and looks up to appropriate function.
 
 Make `consumers.py` file inside the chat app folder and use the code snippets in the image below.
 
 
-![Consumer 1](/engineering-education/building-chat-application-with-django-channels/consumer1.png)
+![Consumer 1](/engineering-education/building-chat-application-with-django-channel/consumer1.png)
 
 
-![Consumer 2](/engineering-education/building-chat-application-with-django-channels/consumer2.png)
+![Consumer 2](/engineering-education/building-chat-application-with-django-channel/consumer2.png)
 
 
 The regular expression used solves the `URLRouter` limitations.
@@ -271,7 +266,7 @@ You will receive them in the two chat logs `textarea`.
 
 Now you have a functional basic chat application. This will prepare you ahead of your project and guide you against boring documentation.
 
-For further reading, navigate to [Channels](/https://channels.readthedocs.io/en/stable/tutorial/part_1.html/).
+For further reading, navigate to [Channels](https://channels.readthedocs.io/en/stable/tutorial/part_1.html/).
 
 Happy reading!
 
