@@ -28,12 +28,12 @@ This project requires less or no knowledge in creating menu bars, but a little k
 You can choose any text editor you wish with notepad, visual studio code, Atom, Sublime Text, etc.
 Also, you need a web server installed. In our case, we will use XAMP(Apache HTTP Server), but you can choose to download your own choice, such as WAMP server, Nginx Web Server, Lighttpd Web Server, etc.
 
-###  Significance of utilizing the flat menu
-1. They limit time spent looking over what clients should perform to arrive at their ideal substance/content.
-1. Using horizontal scrolling menus saves vertical page space by setting a unique component.
-1. It keeps the menu thing list from wrapping to the accompanying line, which will be acceptable while thinking about vertical dividing and style.
-1. The best strategy for showing a rundown menu of things in a solitary way without using a scrollbar.
-1. It will be reasonable to make a responsive menu interface viable with web and versatile ports.
+### Significance of utilizing flat menu
+ * They limit time spent looking over what clients should perform to arrive at their ideal substance/content.
+ * Using horizontal scrolling menus saves vertical page space by setting a unique component.
+ * It keeps the menu thing list from wrapping to the accompanying line, which will be acceptable while thinking about vertical dividing and style.
+ * The best strategy for showing a rundown menu of things in a solitary way without using a scrollbar.
+ * It will be reasonable to make a responsive menu interface viable with web and versatile ports.
 
 ### Available modules and libraries to make navigation menus
 There are a lot of available libraries and modules out on the web; nonetheless, in this article, we will utilize Jquery with the blend of PHP and HTML to make our menu bar that intermediate and beginner web developers will understand.
