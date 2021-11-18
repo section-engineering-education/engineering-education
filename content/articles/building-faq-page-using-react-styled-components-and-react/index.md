@@ -9,7 +9,7 @@ By reading this tutorial, the reader is expected to have a good understanding of
 - Adding and using styled-components.
 - Styling and customizing the FAQ pages.
 - Adding questions and answers with JSON.
-- Creating reusable components with React-styled components.
+- Creating reusable components with React-styled components
 
 ### Prerequisites
 Although this article is extremely beginner-friendly, basic knowledge of React.js and any other design framework will enable you to follow up with the tutorial.
@@ -21,7 +21,7 @@ For ease of understanding, this article will be broken down into various steps r
 
 Let's begin with the first step:
 
-#### Step 1: Creating the React App
+#### Step 1: Creating the React.js app
 As you are already familiar with, every React development cycle begins with the creation of the `react app`.
 
 To achieve this, in your command terminal, run the command as shown below:
@@ -317,12 +317,10 @@ Once the code snippet is correctly implemented, your FAQ page should look like t
 ![faq page](/engineering-education/building-faq-page-using-react-styled-components-with-react/image2.jpg)
 
 ### Conclusion
-React-styled components, as we have discussed extensively in this article, combined with React.js can be used in numerous productive ways.
+React-styled components, as we have discussed extensively in this article, combined with React.js can be used in numerous productive ways. In this tutorial, we created, styled, and displayed an FAQ page with React-styled component.
 
-In this tutorial, we created, styled, and displayed an FAQ page with React-styled component.
-
-Happy coding.
+You can find the full code [here](https://github.com/KingsleyJack/faq-app).Happy coding.
 
 ### References
-https://www.styled-components.com/
+- [React styled components](https://www.styled-components.com/)
 
