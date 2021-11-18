@@ -3,15 +3,12 @@
 ## Introduction
 
 Have you had a problem figuring out how to test your Django application continuously? Do you know how to integrate GitHub Actions, automated testing, and Django?
-
 If these questions are in your mind, then you are in luck.
 
+In this article, we will be testing the Django application with [Pytest](https://docs.pytest.org/en/stable/getting-started.html#:~:text=pytest%20is%20a%20framework%20that,for%20your%20application%20or%20library.), Dockerize it and write codes to run the tests automatically with GitHub Actions.
+
+Pytest is a Python library used for running tests for Python code.
 [GitHub Actions](https://docs.github.com/en/actions) enables you can automate a lot of repetitive stuff in your repository.
-
-In this article, we will be testing the Django application with [Pytest](https://docs.pytest.org/en/stable/getting-started.html#:~:text=pytest%20is%20a%20framework%20that,for%20your%20application%20or%20library.).
-
-Pytest is a Python library used for running tests for Python code. 
-
 Docker helps make sure your app works the same way on all platforms. Adding these functionalities to your application can make it easy for **[continuous delivery](https://en.wikipedia.org/wiki/Continuous_delivery#:~:text=Continuous%20delivery%20(CD)%20is%20a,with%20greater%20speed%20and%20frequency.)** and collaboration.
 
 Here you will learn how to configure GitHub Actions to automate your Django tests.
