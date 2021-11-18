@@ -1,8 +1,22 @@
-### Introduction
-Server-side processing occurs when a page is requested for the first time and when pages are posted back to the server. For example, validation, saving and retrieving data, and navigating to other pages are all examples of server-side processing.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /creating-a-blazor-server-side-application-using-aspdotnet-core-to-perform-crud-operations/
+title: Blazor Server-Side Application Using ASP.NET Core To Perform CRUD Operations
+description: In this tutorial, we will learn how to make a Blazor server-side application from scratch and perform CRUD operations in it.
+author: joseph-ongoma
+date: 2021-11-18T00:00:00-13:40
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
-In this tutorial, you will learn how to make a Blazor Server-Side Application from scratch and perform CRUD operations in it.
-The types of CRUD operations you will perform include creating, reading, updating, and deleting data from the list.
+  - url: /engineering-education/java-timer-tasks/hero.jpg
+    alt: Blazor Server-Side Application Using ASP.NET Core To Perform CRUD Operations Hero Image
+---
+Server-side processing occurs when a page is requested for the first time and when pages are posted back to the server. For example, validation, saving and retrieving data, and navigating to other pages are all examples of server-side processing.
+<!--more-->
+In this tutorial, you will learn how to make a Blazor Server-Side Application from scratch and perform CRUD operations in it. The types of CRUD operations you will perform include creating, reading, updating, and deleting data from the list.
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
@@ -74,7 +88,8 @@ namespace Blazor_Server_App.Data
 ```
 
 You will implement the method above in the `StudentService` file. You will create a private property of field so as to utilize the list of students by creating a private list of students and returning the list as shown below in the code snippet below.
-
+---
+Peer Review Contributions by: [Dawe Daniel](/engineering-education/authors/dawe-daniel/)
 ```C#
 namespace Blazor_Server_App.Data
 {
@@ -133,7 +148,7 @@ The `@page "/students"` is a URL that matches this component to be accessed by t
             }
     </tbody>
 </table>
-@code {  
+@code {
     private List<Blazor_Server_App.Data.Student> student;
     protected override void OnInitialized()
     {
@@ -168,7 +183,7 @@ namespace Blazor_Server_App.Data
 }
 ```
 
-### Updating/Editing the list
+### Updating/editing the list
 To create an edit function to this page, you will need to create a link that would take your routing from the student's page to another page which shows the details of the students that we want to update or edit.
 
 To do this, in the `Student.razor` file, you will add an empty header in the table header and action of an anchor tag in the table body that has a new student location that you want the user to send to. Also, along with the routing, you will pass the student Id so that you can search the student in the new location using the Id.
@@ -269,7 +284,7 @@ To do this, you will go to the student service interface and create a method to 
 
 ```C#
  void UpdateStudent(Students students);
- ```
+```
 
 You will implement the above interface method in the student service file. This is basically updating the students by getting the student first and updating the list with a new student.
 
@@ -346,7 +361,7 @@ In the students' razor page, you will add another table data for a button and gi
 <td>
      <button class = "btn btn-secondary" onclick="@(e=> onDelete(student.Id))">Delete</button>
  </td>
- ```
+```
 
 Now, in the student service interface, you will create a method to delete a student and implement the method in the student service file by fetching the student data and removing it from the list.
 
@@ -365,4 +380,7 @@ public void DeleteStudent(Guid id)
 ```
 
 ### Conclusion
-From this tutorial, you shall be able to implement the create, delete, read and update operations on a web page.
+From this tutorial, you will be able to implement the create, delete, read and update operations on a web page.
+
+---
+Peer Review Contributions by: [Dawe Daniel](/engineering-education/authors/dawe-daniel/)
