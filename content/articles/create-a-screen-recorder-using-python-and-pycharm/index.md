@@ -48,7 +48,7 @@ To create our screen recorder we will need the following Python packages:
 ### Creating a screen recorder and integrating it with a webcam recorder
 We will have to prepare our working space in Pycharm. Open the Pycharm app. Once it is open, click on the new project as shown in the screenshot below. Then click create on the next window that appears.
 
-![pycharm](/engineering-education/creating-a-screen-recorder-using-python-and-pycharm/pycharm.png)
+![pycharm](/engineering-education/create-a-screen-recorder-using-python-and-pycharm/pycharm.png)
 
 We now have to install the packages we discussed above into Pycharm. Follow the following steps to install them.
 
@@ -58,7 +58,7 @@ To install the DateTime, key in the following command in the terminal:
 pip install DateTime
 ```
 
-![packages](/engineering-education/creating-a-screen-recorder-using-python-and-pycharm/packages.png)
+![packages](/engineering-education/create-a-screen-recorder-using-python-and-pycharm/packages.png)
 
 Wait for a few seconds for datetime to be successifully installed.
 
@@ -125,7 +125,7 @@ while True:
 ### Results
 Here is a screenshot of the output the code will produce.
 
-![Results](/engineering-education/creating-a-screen-recorder-using-python-and-pycharm/results.png)
+![Results](/engineering-education/create-a-screen-recorder-using-python-and-pycharm/results.png)
 
 **Note:** The recorded video will be saved in your home folder under a folder named Pycharm project.
 
