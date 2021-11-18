@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /introduction-to-pragmatic-functional-java/
 title: Introduction to Pragmatic Functional Java
-description: This article is an attempt to create a new Java coding style called Pragmatic Functional Java. Clean, trustworthy, and understandable code is generated via the use of a compiler.
+description: This article is an attempt to create a new Java coding style called Pragmatic Functional Java. Functionality with pragmatism PFJ Java, the functional programming equivalent to Java, incorporates ideas and methods from PFJ Java (PFJ).
 author: mary-wanjiku
-date: 2021-11-01T00:00:00-13:40
+date: 2021-11-18T00:00:00-14:34
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,11 +14,11 @@ images:
   - url: /engineering-education/introduction-to-pragmatic-functional-java/hero.jpg
     alt: Introduction to Pragmatic Functional Java Hero image
 ---
-This article is an attempt to create a new Java coding style called Pragmatic Functional Java. Clean, trustworthy, and understandable code is generated via the use of a compiler.
+This article is an attempt to help developers write in a new Java coding style called Pragmatic Functional Java (PFJ). PDF is clean, trustworthy, and understandable code is generated via the use of a compiler.
 <!--more-->
 Even though Java 8 continues to employ this coding style, Java 11 streamlines and clarifies it significantly. With Java 17, it becomes even more descriptive, and gains from each new Java feature.
 
-Functionality in a pragmatic manner instead of being a freebie, Java necessitates significant adjustments in the working habits and methodologies of developers. It is not simple to change habits, and it is much more difficult when the habits are important and have been around for a long time.
+Java causes significant adjustments to the working habits and methodologies of developers. It is not a simple task to change habits, and it is much more difficult when the habits are important and have been around for a long time.
 
 ### Table of contents
 - [Pragmatic functional Java components](#pragmatic-functional-java-components)
@@ -31,10 +31,12 @@ Functionality in a pragmatic manner instead of being a freebie, Java necessitate
 - [Brief technical overview of option and result](#brief-technical-overview-of-option-and-result)
 
 ### Pragmatic functional Java components
-Functionality with pragmatism PFJ Java, the functional programming equivalent to Java, incorporates ideas and methods from PFJ Java (PFJ). PFJ uses Functional Pragmatic (FP) concepts but does not try to enforce Functional Pragmatic specific terminology.
+PFJ uses Functional Pragmatic (FP) concepts but does not try to enforce Functional Pragmatic specific terminology.
 
-Pragmatic in the sense of serving practical purposes that there are many aspects that Java emphasizes:
-- Lowering the mental burden
+Pragmatic in the sense of serving practical purposes, there are many aspects that Java emphasizes. 
+
+Such as:
+- Lowering the mental burden.
 - Increasing the dependability of the code.
 - Increasing the long-term maintenance capabilities of the system.
 - To aid in the construction of error-free code, you may use a compiler.
@@ -44,10 +46,10 @@ PFJ has lofty objectives, however, there are just two rules to follow:
 - Avoid using the `null` object.
 - In the business world, there should be no exceptions at all under the circumstances.
 
-Following is an in-depth look at each of these rules:
+We will be going into an in-depth look at each of these rules.
 
-### ANAMAP rule, Avoiding the null components
-Variable nullability is a `Special State`. The boilerplate code they use in their programs and the run-time faults they introduce are common. To get around these problems, utilize PFJ's `Option<Q>` container to hold any missing values. Input data and fields are included as well as the returned results in this.
+### ANAMAP rule, avoiding the null components
+Variable nullability is a `Special State`. The boilerplate code they use in their programs and the run-time faults they introduce are common. To get around these problems, utilize PFJ's `Option<Q>` container to hold any missing values. Input data and fields are included as well as the returned results.
 
 A class can internally utilize the value `null` to increase efficiency or to retain backward compatibility in specific instances. `Option<Q>` should always be carefully specified and not evident to class users in certain instances, so that every class API may utilize it.
 
@@ -61,10 +63,10 @@ Catastrophic (technical) defects are the exceptions in PFJ, not normal mistakes.
 
 `Special States` may also include business exceptions. It utilizes the `Result<Q>` container to deal with enterprise-level issues. This includes returned values, input parameters, and fields. Using this container for fields is rare.
 
-Exceptions at the corporate level are only authorized when required. Older Java libraries may be interacted with by using wrapper methods. Wrapping is supported by the Result<Q> container. This container implements them.
+Exceptions at the corporate level are only authorized when required. Older Java libraries may be interacted with by using wrapper methods. Wrapping is supported by the `Result<Q>` container. This container implements them.
 
 The following advantages come from not making any exceptions to the rule of null business exceptions:
-- The source code is littered with mistakes. Time spent reading is unnecessary. If you want to know what exceptions might well be thrown when and under what circumstances, look at the call trees, documentation, and source code.
+- The source code is littered with mistakes. Time spent reading is unnecessary. If you want to know what exceptions might be thrown when and under what circumstances, look at the call trees, documentation, and source code.
 - During the compilation process, the compiler guarantees proper error management and propagation is carried out. Error management and propagation have a low amount of boilerplate code.
 - For circumstances in which everything goes according to plan, and faults can be addressed when it's most convenient, programming may be written to accommodate this.
 - This code is easy to read and comprehend since there are no unexpected breaks or transitions in the execution sequence.
@@ -108,9 +110,8 @@ public interface ClientRepository
 }
 ```
 
-**Explanation**
-
-To begin with, the example uses interfaces to provide context clarity. The most crucial aspect is the `getClientWithProfile` method.
+#### Explanation
+The example uses interfaces to provide context clarity. The most crucial aspect is the `getClientWithProfile` method.
 
 Let's study this step-by-step.
 
@@ -150,13 +151,15 @@ The existing code does not adhere to PFJ guidelines. When exceptions are trigger
 #### Using legacy code
 Invoking old code has two drawbacks. Each instance may be traced back to an infringement of the appropriate PFJ regulation:
 
-**Resolving Business Exceptions**
+#### Resolving business exceptions
 
 `lift()` in the `Result<Q>` contains a convenience method for most usage scenarios.
 
 A `Result<Q>` object might well be created from an exception that serves as a Calling for a `Cause instance.` Another argument is a lambda that encapsulates the PFJ-compatible code in its function.
 
-A throwable exception may be turned into an instance of Cause using the `Causesutility` class's `fromThrowable()` function. With these functions combined, the following results may be obtained using the method `Result.lift()`:
+A throwable exception may be turned into an instance of Cause using the `Causesutility` class's `fromThrowable()` function. 
+
+With these functions combined, the following results may be obtained using the method `Result.lift()`:
 
 ```Java
 public static Results<> buildURI(String uri)
@@ -170,7 +173,7 @@ What happens if you work with a null value? The `option.option()` method may be 
 ### Supplying an old-style API
 Old code often needs the use of PFJ-style code to function. If you are using an older API, you may have to keep it around for compatibility with the modern PFJ method. Because of this, you'll want to create a new PFJ-style API first, and then a traditional adaptor.
 
-There are some simple helper techniques that might be handy:
+There are some simple techniques that might be handy:
 
 ```Java
 public static <Q> Q unwrap(Results<Q> values) {
@@ -183,7 +186,6 @@ public static <Q> Q unwrap(Results<Q> values) {
 
 There is no ready-to-use assistance technique in `Result<Q>` because of these factors:
 - Checked and unchecked case-specific exceptions would be thrown in various ways.
-- Depending on the use case, causes may be transformed into a wide variety of various exceptions.
 - Depending on the use case, causes may be transformed into a wide variety of various exceptions.
 
 ### Managing variable scopes
@@ -212,9 +214,8 @@ For `function02` and `function 03` to have access to the value01, they should ca
        .flatMap(value02 -> function03(value01, value02, ...));
 ```
 
-**Explanation**
-
-Value01 cannot be accessed because of an Error. We must utilize a nested scope, i.e. nest calls, to keep value available.
+#### Explanation
+Value01 cannot be accessed because of an Error. We must utilize a nested scope, i.e. nest calls, to keep the value available.
 
 ```Java
  function01(...)
@@ -222,11 +223,10 @@ Value01 cannot be accessed because of an Error. We must utilize a nested scope, 
            .flatMap(value02 -> function03(value01, value02, ...)));
 ```
 
-**Explanation**
-
+#### Explanation
 The first flatMap makes use of function1's value as a return value, whereas flatMap02 does the same with function02's element. Function03 may now access and use value1, since it's still inside the scope.
 
-The more nested scopes there are, the more difficult it is to comprehend and understand the code. In this case, expanding the scope of a function is highly suggested.
+The more nested scopes there are, the more difficult it is to comprehend the code. In this case, expanding the scope of a function is highly suggested.
 
 2. **Parallel Scopes**
 Many unrelated variables must be calculated or retrieved before beginning construction of an item. Consider the following example.
@@ -241,9 +241,9 @@ return new MyObj(value01, value02, value03);
 
 At first glance, moving to PFJ style scopes seems a lot like converting to nested scopes. In imperative programming, all values are equally visible. If numerous values are required, scopes will become too nested, which is a bad thing.
 
-When `option<Q>` is used, all of `Result<Q>` method is accessible. In this way, all computations are performed in `parallel`, and the result is an individual `MapperX<...>` user interface. 
+When `option<Q>` is used, all of the `Result<Q>` method is accessible. In this way, all computations are performed in `parallel`, and the result is an individual `MapperX<...>` user interface. 
 
-here are three methods in total on this interface, each named after a different return value. Input lambdas are accepted by these methods, and they behave precisely the same as equivalent methods in `option<Q>` and `Result<Q>`. This is an example of imperative code being rewritten in PFJ style.
+Here are three methods in total on this interface, each named after a different return value. Input lambdas are accepted by these methods, and they behave precisely the same as equivalent methods in `option<Q>` and `Result<Q>`. This is an example of imperative code being rewritten in PFJ style.
 
 ```Java
 return Result.all(
@@ -253,8 +253,7 @@ return Result.all(
         ).map(MyObj::new);
 ```
 
-**Explanation**
-
+#### Explanation
 This approach offers a few additional benefits, such as being flat and small. In the first place, it demonstrates its purpose by doing extensive calculations and then saving all of the results.
 
 The sequential pattern of imperative programming makes it difficult to see the end aim. The second reason is that, since each number is computed separately, no other values are thrown into the mix. With less background, it's easier to understand and justify each function call.
@@ -268,7 +267,7 @@ To implement the monad, we use the basic variation of it called `Option<Q>`.
 
 Two aspects are the emphasis of this implementation:
 - There should be no problems using this class with other JDK classes, such as `Optional<Q>` and `Stream`.
-- API was designed to make a purpose statement more comprehensible
+- API was designed to make a purpose statement more comprehensible.
 
 Each container has just a few essential methods, such as these:
 - While conserving state, `Option<Q>` may still alter values using the map transformation function. Thus, the final result is still favorable.
@@ -276,11 +275,11 @@ Each container has just a few essential methods, such as these:
 - To handle both cases, present/empty as well as successful/failed concurrently, `Result<Q>` contains a fold() function.
 
 ### Conclusion
-As a result of this tutorial, we now have a basic understanding of the pragmatic function in the Java programming language.
+As a result of this article, we now have a basic understanding of the pragmatic function in the Java programming language.
 
 It is a contemporary, functional programming-based Java coding language that is simple and understandable. In addition, we have demonstrated how we can put it into action.
 
-Happy coding!
+Happy reading!
 
 ---
 Peer Review Contributions by: [Monica Masae](/engineering-education/authors/monica-masae/)
