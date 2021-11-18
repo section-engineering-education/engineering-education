@@ -15,8 +15,9 @@ images:
    alt: Introduction to Automation PyAutoGUI example image
 ---
 
- 
 Doing the same repetitive tasks daily can be a bit boring. Automating those tasks can save us much time and help us be productive in other areas. We can achieve the automation process with a Python library known as PyAutoGUI. To learn more about PyAutoGUI, click [here](https://pyautogui.readthedocs.io/en/latest/).
+
+<!--more-->
 
 In this article, we are going to take a look at a simple automation task. It involves opening Google Chrome, clicking on the address search bar, typing the URL to YouTube, searching for a video (in this case, a snap), clicking on it to play and finally minimizing the Google Chrome window. 
 
