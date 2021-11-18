@@ -1,4 +1,10 @@
-### Introduction
+### Prerequisites
+To follow along this tutorial with ease, one should meet the following requirements.
+- Have a basic understanding of programming in node js and docker commands.
+- A pre-installed IDE, preferably [Visual Studio Code](https://code.visualstudio.com/download).
+- [Docker](https://www.docker.com/products/docker-desktop).
+- [Node Js](https://nodejs.org/en/download/).
+
 
 XMPP - Extensible Messaging and Presence Protocol, known as `ejabberd` is an open communication protocol for instant messaging presence information and contact list.  
 
