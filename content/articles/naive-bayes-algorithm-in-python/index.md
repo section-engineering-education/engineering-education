@@ -6,7 +6,7 @@ url: /naive-bayes-algorithm-in-python/
 title: A Step by Step Guide to Implement Naive Bayes Algorithm in R
 description: This tutorial will discuss the Naive Bayes algorithm, its real-world application, implementation, and evaluate its performance using a confusion matrix in R.
 author: lawrence-mbici
-date: 2021-11-18T00:00:00-11:00
+date: 2021-11-18T00:00:00-11:30
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
