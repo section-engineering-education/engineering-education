@@ -1,6 +1,21 @@
-# Building FAQ page using React-styled components and React.js
-Addressing user questions and concerns is a priority for corporations, online vendors, and even your small blog or website. An efficient way of handling user queries is having a comprehensive frequently asked questions (FAQ) page.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /building-faq-page-using-react-styled-components-and-react/
+title: Building FAQ page using React-styled components and React.js
+description: This tutorial will guide the reader on how to build an FAQ page using React.js and React-styled components.
+author: oluwatomisin-bamimore
+date: 2021-11-18T00:00:00-09:30
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/building-faq-page-using-react-styled-components-and-react/hero.png
+    alt: Building FAQ page using React-styled components and React.js Hero Image
+---
+Addressing user questions and concerns is a priority for corporations, online vendors, and even your small blog or website. An efficient way of handling user queries is having a comprehensive frequently asked questions (FAQ) page.
+<!--more-->
 In this tutorial, we will use a modern web design library known as React-styled components alongside React.js to create an attractive FAQ page that can be adopted and integrated into a new or already existing website.
 
 ### Key takeaways
@@ -324,3 +339,5 @@ You can find the full code [here](https://github.com/KingsleyJack/faq-app).Happy
 ### References
 - [React styled components](https://www.styled-components.com/)
 
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
