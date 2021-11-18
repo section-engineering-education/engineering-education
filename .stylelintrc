@@ -1,0 +1,61 @@
+{
+  "rules": {
+    "at-rule-blacklist": ["debug"],
+    "at-rule-no-unknown": null,
+    "at-rule-no-vendor-prefix": true,
+    "block-no-empty": true,
+    "block-opening-brace-space-before": "always",
+    "color-named": "never",
+    "color-no-invalid-hex": true,
+    "declaration-bang-space-after": "never",
+    "declaration-bang-space-before": "always",
+    "declaration-block-semicolon-newline-after": "always",
+    "declaration-block-semicolon-space-before": "never",
+    "declaration-block-single-line-max-declarations": 1,
+    "declaration-block-trailing-semicolon": "always",
+    "declaration-colon-space-after": "always-single-line",
+    "declaration-colon-space-before": "never",
+    "font-family-name-quotes": "always-unless-keyword",
+    "function-comma-space-after": "always-single-line",
+    "function-url-quotes": "always",
+    "indentation": 2,
+    "length-zero-no-unit": true,
+    "media-feature-name-no-vendor-prefix": true,
+    "media-feature-parentheses-space-inside": "never",
+    "media-feature-range-operator-space-before": "always",
+    "media-feature-range-operator-space-after": "always",
+    "media-feature-colon-space-before": "never",
+    "media-feature-colon-space-after": "always",
+    "no-duplicate-selectors": true,
+    "no-missing-end-of-source-newline": true,
+    "number-leading-zero": "always",
+    "number-no-trailing-zeros": true,
+    "property-no-unknown": true,
+    "property-no-vendor-prefix": true,
+    "rule-empty-line-before": [
+      "always-multi-line",
+      {
+        "ignore": ["after-comment"]
+      }
+    ],
+    "selector-class-pattern": [
+      "^[a-z0-9\\-]+$",
+      {
+        "message":
+          "Selector should be written in lowercase with hyphens (selector-class-pattern)"
+      }
+    ],
+    "selector-attribute-quotes": "always",
+    "selector-attribute-operator-space-before": "never",
+    "selector-attribute-operator-space-after": "never",
+    "selector-attribute-brackets-space-inside": "never",
+    "selector-combinator-space-after": "always",
+    "selector-list-comma-newline-after": "always",
+    "selector-no-vendor-prefix": true,
+    "selector-pseudo-class-parentheses-space-inside": "never",
+    "selector-pseudo-element-colon-notation": "single",
+    "selector-pseudo-element-no-unknown": true,
+    "string-quotes": "double",
+    "value-no-vendor-prefix": true
+  }
+}

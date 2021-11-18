@@ -1,0 +1,18 @@
+@mixin gt-regular {
+  font-family: "gt-regular";
+  font-weight: 400;
+}
+
+@mixin gt-medium {
+  font-family: "gt-medium";
+  font-weight: 500;
+}
+
+@mixin gt-bold {
+  font-family: "gt-bold";
+  font-weight: 600;
+}
+
+@mixin gt-fine {
+  font-family: "gt-fine";
+}

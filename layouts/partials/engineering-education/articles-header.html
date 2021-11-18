@@ -1,0 +1,97 @@
+<!-- Sajari ping-back code -->
+<script type="text/javascript">
+  var _sj = _sj || [];
+  _sj.push(['project', '1568234116078614868']);
+  _sj.push(['collection', 'section-io']);
+  (function () {
+    var sj = document.createElement('script');
+    sj.type = 'text/javascript';
+    sj.async = true;
+    sj.src = '//cdn.sajari.com/js/sj.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(sj, s);
+  })();
+</script>
+<!-- End Sajari ping-back code -->
+
+<article>
+  <header>
+    <section class='hero-color flex align-center justify-center fill-blue'>
+      <div class="hero-color-left relative">
+        <div class="hero-color-left-large-stripe"></div>
+        <div class="hero-color-left-small-color"></div>
+        <div class="hero-color-left-small-stripe"></div>
+      </div>
+      <div class="hero-color-middle flex align-center justify-center relative">
+        <div class="hero-color-middle-left-stripes"></div>
+        <div class="prl-5">
+          <h1 class="title-2 text-white xs-pb-10">EngEd Program</h1>
+          <p class="text-16 text-white" style="text-align: left;">
+          <span class="justify-center">Section's Engineering Education (EngEd) Program fosters a community of university students in Computer Science related fields of study to research and write about topics that are relevant to engineers in the modern technology landscape. You can find more information and program guidelines in the <a style="text-decoration: none;" href="https://github.com/section-io/engineering-education"><span class="text-white" style="text-decoration: underline;">GitHub repository</span></a>. If you're currently enrolled in a Computer Science related field of study and are interested in participating in the program, please complete <a style="text-decoration: none;" href="https://docs.google.com/forms/d/e/1FAIpQLSfTbj3kqvEJEb5RLjqJurfbHa8ckzQx0CjRzaizblue9ZOK5A/viewform?usp=sf_link"><span class="text-white" style="text-decoration: underline;">this form</span></a>.</span>
+          </p>
+        </div>
+        <div class="hero-color-middle-right-stripes"></div>
+      </div>
+      <div class="hero-color-right relative">
+        <div class="hero-color-right-large-stripe"></div>
+        <div class="hero-color-right-small-color"></div>
+      </div>
+    </section>
+  </header>
+  <div class="section-container enged-listing-posts-container">
+    <div style="padding: 4% 2% 2%;" class="section-container flex align-center justify-center text-18-regular">
+      {{ with .Site.GetPage "/engineering-education" }}
+      {{ .Content }}
+      {{ end }}
+    </div>
+  </div>
+
+  <section >
+    <div class="author-carousel">
+      <div class="author-carousel-inner flex">
+        {{ range first 25 (where .Site.Pages "Params.type" "authors" | shuffle) }}
+        <a class="author-carousel-item link-basic" href="{{ .Permalink }}">
+          <div class="author-carousel-item-wrap fill-white flex cta-shadow flex-column">
+            {{ range .Pages }}
+            {{ end }}
+            <img class="avatar" src="{{ .Permalink }}{{ index .Resources 0 }}" />
+            <div class="author-carousel-item-content flex flex-column align-center">
+              <div class="author-carousel-item-content-inner prl-5 xs-pt-10 xs-pb-10 flex flex-column fill-white">
+                <h3 class="title-6">{{.Title}}</h3>
+              </div>
+            </div>
+          </div>
+        </a>
+        {{ end }}
+      </div>
+    </div>
+    <p style="text-align: center;">
+      <span class="text-18-medium"><a href="/engineering-education/authors/" class="decoration-none link-with-arrow-blue">View All EngEd Contributors</a></span>
+    </p>
+  </section>
+
+  <div class="section enged-listing-search flex align-center xs-pb-20 xs-pt-40 sm-pb-300 sm-pt-60">
+    <div class="section-container enged-listing-search-container xs-mb-20">
+      <div id="educationSearch"></div>
+    </div>
+  </div>
+
+  <section class="enged-listing-categories flex align-start xs-pb-40 sm-pb-60 md-pb-80">
+    <div class="section-container enged-listing-categories-container">
+      <p class="xs-pb-10 text-18-medium text-testimonial">Topics</p>
+      <ul class="list-unstyled list-flex flex-wrap data-filter-group">
+        {{ $currentPage := . }}
+        {{ if hugo.Environment | eq "development" }}
+        <li class="xs-pr-20"><a href="/" class="{{ if isset $currentPage.Data "Term" }}text-18-regular{{ else }}text-18-medium{{ end }} text-light-blue decoration-none" \>All</a> </li>
+        {{ else }}
+        <li class="xs-pr-20"><a href="/engineering-education/" class="{{ if isset $currentPage.Data "Term" }}text-18-regular{{ else }}text-18-medium{{ end }} text-light-blue decoration-none" \>All</a> </li>
+        {{ end }}
+        {{ $baseurl := .Site.BaseURL }}
+
+        {{ range .Site.Taxonomies.topics }}
+        <li class="xs-pr-20"><a href="{{ .Page.Permalink }}" class="{{ if eq $currentPage.Permalink .Page.Permalink }}text-18-medium{{ else }}text-18-regular{{ end }} text-light-blue decoration-none">{{ .Page.Title }}</a> </li>
+        {{ end }}
+      </ul>
+    </div>
+  </section>
+</article>

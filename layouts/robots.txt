@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+Disallow: /sign-up/
+Disallow: /sign-up-routing/
+Disallow: /feedback/tg20/
+Disallow: /feedback/thanks/
+Disallow: /feedback/flyer/
+Disallow: /error/
+Disallow: /home-alt/
+Disallow: /csrfToken*
+
+sitemap: https://www.section.io/sitemap.xml
