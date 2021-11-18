@@ -562,6 +562,7 @@ On the web browser navigate to [http://127.0.0.1:8000/chats/room/](http://127.0.
 
 You will receive them in the two chat logs `textarea`.
 
+### Conclusion
 Now you have a functional basic chat application. This will prepare you ahead of your project and guide you against boring documentation.
 
 For further reading, navigate to [Channels](/https://channels.readthedocs.io/en/stable/tutorial/part_1.html/).
