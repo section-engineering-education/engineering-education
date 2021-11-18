@@ -16,13 +16,13 @@ images:
 ---
 Handpose recognition is a deep learning technique that allows you to detect different points on your hand. These points on your hand are commonly referred to as landmarks. These landmarks consist of joints, tips, and bases of your fingers.
 <!--more-->
-[MediaPipe](https://google.github.io/mediapipe/solutions/hands) provides many customizable ML pre-trained models. The handpose model is one of their latest releases. With researchers aiming to democratize AI using such amazing pre-trained models, it is important that we can understand ML with only a few lines of code. This tutorial aims to show our readers how to build their very own Handpose detector using MediaPipe and Python. They'll be able to use their computer's webcam to track the joints in their hands and in real-time. 
+[MediaPipe](https://google.github.io/mediapipe/solutions/hands) provides many customizable ML pre-trained models. The handpose model is one of their latest releases. With researchers aiming to democratize AI using such amazing pre-trained models, it is important that we can understand ML with only a few lines of code. This tutorial aims to show you how to build your very own Handpose detector using MediaPipe and Python. You'll be able to use your computer's webcam to track the joints in your hands, and in real-time. 
 
 ### Prerequistes
 To follow along with this tutorial, you'll need to be familiar with:
+- Machine learning modelling.
 - Jupyter Notebook/Google Colab.
 > We will be using Google Colab for this tutorial.
-- Machine learning modelling.
 
 ### Table of contents
 - [The handpose model](#the-handpose-model)
@@ -35,7 +35,7 @@ To follow along with this tutorial, you'll need to be familiar with:
 ### The handpose model
 Handpose recognition is a deep learning technique that allows you to detect different points on your hand. These points on your hand are commonly referred to as landmarks. These landmarks consist of joints, tips, and bases of your fingers. The handpose model is provided by tensorflow.js and can detect 21 different distinct points in your hand. 
 
-The MediaPipe Hands model is a lightweight ML pipeline consisting of a palm detector and a hand-skeleton finger tracking model. Initially, the palm detector detects the initial hand locations, and afterwards, hand-skeleton finger tracking model performs precise keypoint localization predicting 21, 3D hand key-points per detected hand.
+The MediaPipe Hands model is a lightweight ML pipeline consisting of a palm detector and a hand-skeleton finger tracking model. Initially, the palm detector detects the hand locations, and afterwards, hand-skeleton finger tracking model performs precise keypoint localization predicting 21, 3D hand key-points per detected hand.
 
 Let's see how we can use this handpose model in a project.
 
@@ -48,7 +48,7 @@ We will also be installing the OpenCV library. Like MediaPipe, OpenCV is a libra
 ```python
 !pip install mediapipe opencv-python
 ```
-The next thing that we are going to do is import those dependencies we installed into our notebook.
+Next, we will import the necessary dependencies into our notebook.
 
 ```python
 import mediapipe as mp
@@ -64,7 +64,7 @@ We've imported five dependencies:
 - `uuid` allows you to generate a uniform unique identifier.
 - `os` allows us to work with files in our operating system.
 
-Now that we have installed and imported the required dependencies, we can now go ahead and start setting up mediapipe. From mediapipe, let's bring in the drawing utility to help us draw all the landmarks on our hands and the mediapipe hands model itself.
+We can now go ahead and start setting up mediapipe. From mediapipe, let's bring in the mediapipe hands model and drawing utility to help us draw all the landmarks on our hands.
 
 ```python
 mp_drawing = mp.solutions.drawing_utils
@@ -141,7 +141,7 @@ That's it. If you run the webcam feed and show your hand, you should have landma
 Finally, if you want to save the results from the detection, maybe for a research paper or for your personal use, you can do so by writing adding the following code:
 
 ```python
-        cv2.imwrite(os.path.join('Output Images', '{}.jpg'.format(uuid.uuid1())), image)
+          cv2.imwrite(os.path.join('Output Images', '{}.jpg'.format(uuid.uuid1())), image)
 ```
 
 The above line of code is going to save our image. The unique identifier, `format(uuid.uuid1()` generates unique names for our detected images to avoid naming conflicts when saving the images. 
