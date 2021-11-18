@@ -2,5 +2,8 @@
 title: Kennedy Ndutha
 type: authors
 github : https://github.com/taves-hub
+images: 
+  - url: engineering-education/authors/kennedy-ndutha/avatar.jpg
 ---
-I'm a soul web developer specializing in back-end programming, functionality, user experience design, and search engine optimization. I'm kind, hardworking, and open-minded. I readily communicate with folks and adapt to changes. It is my belief that someone should always work on honing their expert talents and mastering new skills.
+
+Kennedy Ndutha is a Computer Engineering enthusiast who is interested in online development and machine learning. He has contributed to several web development projects. When he is not working on computers, he is an enthusiastic participant in Visual Effect Design and playing games.
