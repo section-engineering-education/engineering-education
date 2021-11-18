@@ -190,8 +190,10 @@ Our 'sphere' is not perfectly at the center of the rotation if you are keen. You
 ```
 ### Applications of this
 
-The most suitable areas for using these, that is after modifying it, include a circular progress indicator, a rotor in an aircraft/drone in a game, etc. These ideas are just some of many things you can do if you are creative and manipulate this idea well enough.
+The most suitable areas for using these, that is after modifying it, include a circular progress indicator, a rotor in an aircraft/drone in a game, etc. These ideas are just some of many things you can do if you are creative and manipulate this idea well enough. An easy to start with example to practice is a solar system animation such as the one found [here](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Basic_animations#an_animated_solar_system) using this concept instead of the Canvas.
 
 ### Conclusion
 
-We first looked at how the sin and cos functions are used in circles. Next, we created a simple script in JavaScript to show the creation of an animation. I hope you get the chance to creatively build onto this simple program in a fun way. Have a great read.
+We first looked at how the sin and cos functions are used in circles. Next, we created a simple script in JavaScript to show the creation of an animation. Finally, we looked at embedding the script in an HTML file. I hope you get the chance to creatively build onto this simple program in a fun way. 
+
+Have a great coding adventure.
