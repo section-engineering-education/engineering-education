@@ -6,7 +6,7 @@ Have you had a problem figuring out how to test your Django application continuo
 
 If these questions are in your mind, then you are in luck.
 
-[GitHub Actions](https://docs.github.com/en/actions) enabes you can automate a lot of repetitive stuff in your repository.
+[GitHub Actions](https://docs.github.com/en/actions) enables you can automate a lot of repetitive stuff in your repository.
 
 In this article, we will be testing the Django application with [Pytest](https://docs.pytest.org/en/stable/getting-started.html#:~:text=pytest%20is%20a%20framework%20that,for%20your%20application%20or%20library.).
 
