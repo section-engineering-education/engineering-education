@@ -30,28 +30,24 @@ We will use these two functions to rotate an image in our animation. Find more a
 This is the JavaScript code.
 
 ```javascript
-	   //the image variable
-       let image = document.querySelector("img");
-       //90 degrees
-       let angle = Math.PI / 2;
-       let prevTimeArg;
-       //timestamp variables
-       let prevTime = null;
-       let currentTime = Date.now();
+    // The image variable
+    let image = document.querySelector("img");
+    // 90 degrees
+    let angle = Math.PI / 2;
 
-       function animate(currentTimeParam, prevTimeArg) {
+    function animate(currentTimeParam, prevTimeArg) {
 
-           if (prevTimeArg != null) {
-              angle += (currentTimeParam - prevTimeArg) * 0.004;
-           }
-           //setting the previous time to the time the function currently fires
-            prevTimeArg = currentTimeParam ;
-           image.style.top = (Math.sin(angle) * 150) + "px";
-           image.style.left = (Math.cos(angle) * 150) + "px";
-           //passing the currnt time and previous times
-           requestAnimationFrame(currentTime => animate(currentTime, prevTimeArg));
-       }
-       requestAnimationFrame(animate);
+        if (prevTimeArg != null) {
+            angle += (currentTimeParam - prevTimeArg) * 0.004;
+        }
+        // Setting the previous time to the time the function currently fires
+        prevTimeArg = currentTimeParam ;
+        image.style.top = (Math.sin(angle) * 150) + "px";
+        image.style.left = (Math.cos(angle) * 150) + "px";
+        // Passing the current time and previous times
+        requestAnimationFrame(currentTime => animate(currentTime, prevTimeArg));
+    }
+    requestAnimationFrame(animate);
 ```
 
 #### Explanation
@@ -81,7 +77,7 @@ The `animate()` function also calls the `requestAnimationFrame()` function to sc
 <head>
     <title>Test</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style type="text/css">
+    <style>
         .circle {
           display: block;
           background: black;
@@ -98,7 +94,7 @@ The `animate()` function also calls the `requestAnimationFrame()` function to sc
           justify-content: center;
           align-items: center;
         }
-        .circleimage{
+        .circle-image{
             z-index: 2; 
             position: absolute; 
             margin-left: 50%; 
@@ -109,7 +105,7 @@ The `animate()` function also calls the `requestAnimationFrame()` function to sc
 </head>
 <body>
     <div class="container">
-        <img class="circleimage" src="https://sacco.terrence-aluda.com/sacco/images/blue.png"> 
+        <img class="circle-image" src="https://sacco.terrence-aluda.com/sacco/images/blue.png"> 
         <figure class="circle"></figure>
     </div>
 </body>
@@ -135,63 +131,60 @@ Our 'sphere' is not perfectly at the center of the rotation if you are keen. You
 <html>
 <head>
     <title>Test</title>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style type="text/css">
+    <style>
         .circle {
-          display: block;
-          background: black;
-          border-radius: 100%;
-          height: 100px;
-          width: 100px;
+            display: block;
+            background: black;
+            border-radius: 100%;
+            height: 100px;
+            width: 100px;
 
-          background: radial-gradient(circle at center,#31f541, #000);
+            background: radial-gradient(circle at center,#31f541, #000);
         }
         .container {
-          width: 100%;
-          height: 100vh;
-          display: flex;
-          justify-content: center;
-          align-items: center;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
-        .circleimage{
-            z-index: 2; 
-            position: absolute; 
-            margin-left: 50%; 
-            margin-top: 50vh; 
+        .circle-image{
+            z-index: 2;
+            position: absolute;
+            margin-left: 50%;
+            margin-top: 50vh;
             border-radius: 50%;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <img class="circleimage" src="https://sacco.terrence-aluda.com/sacco/images/blue.png"> 
-        <figure class="circle"></figure>
-    </div>
+<div class="container">
+    <img class="circle-image" src="https://sacco.terrence-aluda.com/sacco/images/blue.png">
+    <figure class="circle"></figure>
+</div>
 </body>
 <script>
-	   //the image variable
-       let image = document.querySelector("img");
-       //90 degrees
-       let angle = Math.PI / 2;
-       let prevTimeArg;
-       //timestamp variables
-       let prevTime = null;
-       let currentTime = Date.now();
+    // The image variable
+    let image = document.querySelector("img");
+    // 90 degrees
+    let angle = Math.PI / 2;
 
-       function animate(currentTimeParam, prevTimeArg) {
+    function animate(currentTimeParam, prevTimeArg) {
 
-           if (prevTimeArg != null) {
-              angle += (currentTimeParam - prevTimeArg) * 0.004;
-           }
-           //setting the previous time to the time the function currently fires
-            prevTimeArg = currentTimeParam ;
-           image.style.top = (Math.sin(angle) * 150) + "px";
-           image.style.left = (Math.cos(angle) * 150) + "px";
-           //passing the currnt time and previous times
-           requestAnimationFrame(currentTime => animate(currentTime, prevTimeArg));
-       }
-       requestAnimationFrame(animate);
-    </script>
+        if (prevTimeArg != null) {
+            angle += (currentTimeParam - prevTimeArg) * 0.004;
+        }
+        // Setting the previous time to the time the function currently fires
+        prevTimeArg = currentTimeParam ;
+        image.style.top = (Math.sin(angle) * 150) + "px";
+        image.style.left = (Math.cos(angle) * 150) + "px";
+        // Passing the current time and previous times
+        requestAnimationFrame(currentTime => animate(currentTime, prevTimeArg));
+    }
+    requestAnimationFrame(animate);
+</script>
 </html>
 ```
 ### Applications of this
