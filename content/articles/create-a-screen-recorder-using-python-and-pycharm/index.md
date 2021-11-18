@@ -14,7 +14,7 @@ images:
  - url: /engineering-education/create-a-screen-recorder-using-python-and-pycharm/hero.jpg
    alt: Screen Recorder with Python
 ---
-In this tutorial, we will learn how to use the python packages to create a screen recorder. We will then go futher to integrate a webcam recorder into our software. A person using Windows, macOS, or Linux can follow through.
+In this tutorial, we will learn how to use the Python packages to create a screen recorder. We will then go further to integrate a webcam recorder into our software. A person using Windows, macOS, or Linux can follow through.
 <!--more-->
 ### Introduction
 A screen recorder is software that captures the contents and activities taking place on a computer screen. This software is vital during activities such as creating video tutorials, recording screen content, for future reference (note-taking), etc.
