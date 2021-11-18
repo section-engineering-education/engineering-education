@@ -15,13 +15,25 @@ images:
     alt: Building Chat Application with Django Channels
 ---
 
+### Prerequisites
+To follow along this tutorial with ease, one should meet the following requirements.
+- Have a basic understanding of programming in django and docker commands.
+- A pre-installed IDE, preferably [Visual Studio Code](https://code.visualstudio.com/download).
+- [Docker](https://www.docker.com/products/docker-desktop).
+- [Redis](https://redis.io/download/).
+
+
+### Goal
 This tutorial will build a fully functional chat application by implementing the chat server using Django Channel. This Channel was implemented on the asynchronous server used by Django. And this server was named Asynchronous Server Gateway Interface `ASGI`.
 <!--more-->
+
 ASGI is the server specification that the Channel was built upon. Like the WSGI, both server and framework can be chosen with choice rather than just accepting the Channel server.
 
 The Django Channel supports HTTP and other types of protocols that have long connections time. The Channel layers divide the entire applications into processes and support parts of Django views.
 
 ### Project setup
+
+I have a published tutorial that can walk you through Django installations and its core concepts. Kindly brush through this - [Django](https://www.section.io/engineering-education/core-concepts-of-django-to-learn/).
 
 Let us get started to build the chat application. Navigate to your terminal and follow the processes below;
 
@@ -65,7 +77,10 @@ Run the server with the command below and then open up the browser with the loca
 ```bash
 $ python manage.py run server
 ```
+
+
 ![500 Internal Server Error](/engineering-education/building-chat-application-with-django-channel/server-error.png)
+
 
 ### Creating the chat application
 
@@ -80,7 +95,9 @@ The next thing is to create a `letschat/template/letschat_app` directory, then m
 
 Navigate to the index.html and type out the boiler code below;
 
+
 ![Index Page](/engineering-education/building-chat-application-with-django-channel/indexhtml.png) 
+
 
 The HTML template code allows clients to enter the name of the chat room they are navigating.
 
@@ -136,6 +153,7 @@ First of all, we need to add another room chat template. Inside the `letschat/te
 
 ![ChatRoom Page 2](/engineering-education/building-chat-application-with-django-channels/chatroomhtml2.png) 
 
+
 Note:) The two code snippets are the continuation of each other.
 
 The common convention to distinguish the `HTTP` connection from WebSockets is to use the `ws` protocol.
@@ -160,11 +178,15 @@ urlpatterns = [
 ```
 When running the server, do move to `http://localhost:8080/chats/`; you should confirm the below image.
 
+
 ![Room 1](/engineering-education/building-chat-application-with-django-channel/chat.png) 
+
 
 Then enter any room name of your choice for connections. That will open up the chat room like this;
 
+
 ![Room 2](/engineering-education/building-chat-application-with-django-channel/chatroom.png)
+
 
 But we have to make a consumer that will accept the WebSocket connections.
 
@@ -174,13 +196,14 @@ Historically, Django servers route URLConf to the appropriate view function and 
 
 Make `consumers.py` file inside the chat app folder and use the code snippets in the image below.
 
+
 ![Consumer 1](/engineering-education/building-chat-application-with-django-channels/consumer1.png)
 
 
 ![Consumer 2](/engineering-education/building-chat-application-with-django-channels/consumer2.png)
 
 
-> The regular expression used solves the `URLRouter` limitations.
+The regular expression used solves the `URLRouter` limitations.
 
 Also, the `as_asgi()` method on the `Consumer` class does the same task as the class-based views method in Django, which is `as_view()`.
 
@@ -210,14 +233,12 @@ This will help to store the frequent chats as long as the chat server is still i
 
 Now we have to spin up the Redis server on default port `6379` by running the following command;
 
-Note: you need to have [Docker](/https://docs.docker.com/engine/install/), 
-
-[Redis](/https://redis.io/download/) and `channels_redis` installed.
-
 ```bash
 $ docker run -p 6379:6379 -d redis:5
-$ python3 -m pip install channels_redis
+$ pip install channels_redis
 ```
+
+This docker command will spin up the Redis image and run it on the specified port. Then we installed the `channel_redis`, which is the library required to connect with the memory store.
 
 Having installed the dependencies, we must track the layers by adding the code below to `settings.py` just under the `ASGI_APPLICATION`.
 
