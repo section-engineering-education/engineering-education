@@ -11,10 +11,10 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/how-to-build-a-code-editor-using-codemirror
+  - url: /engineering-education/how-to-build-a-code-editor-using-codemirror/hero.jpg
     alt: How to build a code editor using codemirror
 ---
-The advent of online code tutorial websites has brought a need for live code editors. These editors aim to portray available code snippets or add some augmentation to the code snippet. Online code editors also serve as remote workspaces and teamwork tools. Several websites use code editors, with the most popular being `codepen`. There are other notable mentions like `w3school` and `js fiddle`.
+Online code tutorial websites have brought a need for live code editors. These editors aim to portray code snippets or add some augmentation to the code snippet. Online code editors also serve as remote workspaces and teamwork tools.  Several websites use code editors, with the most popular being `codepen`. There are other notable mentions like `w3school` and `js fiddle`.
 <!--more-->
 In this article, we will focus around CodeMirror. CodeMirror is what we call a `flexible` text editor implemented in JavaScript for browsers to edit code. We will discuss codemirror's several language modes and addons used for more advanced editing functionalities. 
 
