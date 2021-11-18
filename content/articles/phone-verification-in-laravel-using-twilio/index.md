@@ -310,40 +310,29 @@ The `layout.blade.php` view provides a laout or design that is share across othe
 
 In `resources/views/auth` create a new file and name it `Login.blade.php`. open `resources/views/auth/Login.blade.php` and include the following code.
 ```
-@extends('layout')  
+@extends('layout')
+  
 @section('content')
 <main class="login-form">
   <div class="cotainer">
       <div class="row justify-content-center">
           <div class="col-md-8">
               <div class="card">
-                  <div class="card-header">Login</div>
+                  <div class="card-header">Register</div>
                   <div class="card-body">
-                  @if (Session::has('errors'))
-                        <div class="alert alert-danger" role="alert">
-                            {{ Session::get('errors')->first() }}
-                        </div>
-                    @endif
-
-                    @if (Session('status'))
-                        <div class="alert alert-danger" role="alert">
-                            Your account has not been verified, click the verify button to verify account
-                            <a class="btn  btn-primary mx-sm-3" href= "{{ route('reverify') }}">Verify</a>
-
-                        </div>                        
-
-                    @endif
-
-                    @if(session('success'))
-                        <div class="alert alert-info"> 
-                            Your Verification code is <strong>{{session('success')}}</strong> 
-                            Please answer the call and follow the intruction. Once you are verified, you can then login
-                            <a class="btn  btn-primary mx-sm-3" href= "{{ route('reverify') }}">Try again</a>
-                        </div>
-                    @endif
-
-                      <form action="{{ route('login.post') }}" method="POST">
+                  
+                      <form action="{{ route('register.post') }}" method="POST">
                           @csrf
+                          <div class="form-group row">
+                              <label for="name" class="col-md-4 col-form-label text-md-right">Name</label>
+                              <div class="col-md-6">
+                                  <input type="text" id="name" class="form-control" name="name" required autofocus>
+                                  @if ($errors->has('name'))
+                                      <span class="text-danger">{{ $errors->first('name') }}</span>
+                                  @endif
+                              </div>
+                          </div>
+  
                           <div class="form-group row">
                               <label for="phone_number" class="col-md-4 col-form-label text-md-right">Phone Number</label>
                               <div class="col-md-6">
@@ -363,14 +352,23 @@ In `resources/views/auth` create a new file and name it `Login.blade.php`. open 
                                   @endif
                               </div>
                           </div>
-
-                          <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
-                     
+  
+                          <div class="form-group row">
+                              <div class="col-md-6 offset-md-4">
+                                  <div class="checkbox">
+                                      <label>
+                                          <input type="checkbox" name="remember"> Remember Me
+                                      </label>
+                                  </div>
+                              </div>
+                          </div>
+  
                           <div class="col-md-6 offset-md-4">
                               <button type="submit" class="btn btn-primary">
-                                  Login
+                                  Register
                               </button>
                           </div>
+                         
                       </form>
                         
                   </div>
