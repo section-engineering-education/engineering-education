@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /create-a-screen-recorder-using-python-and-pycharm/
 title: Creating a Screen Recorder Using Python and Pycharm
-description: In this tutorial, we will learn how to use the python packages to create a screen recorder.
+description: In this tutorial we will learn how to use the Python packages to create a screen recorder. Python as a programming language, has packages that wil help us create our own screen recorder.
 author: simon-kiruri
-date: 2021-11-05T00:00:00-02:16
+date: 2021-11-17T00:00:00-19:16
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -14,11 +14,10 @@ images:
  - url: /engineering-education/create-a-screen-recorder-using-python-and-pycharm/hero.jpg
    alt: Screen Recorder with Python
 ---
-
 In this tutorial, we will learn how to use the python packages to create a screen recorder. We will then go futher to integrate a webcam recorder into our software. A person using Windows, macOS, or Linux can follow through.
- <!--more-->
+<!--more-->
 ### Introduction
-A screen recorder is software that captures the contents and activities taking place on a computer screen. This software is vital during activities such as creating  video tutorials, recording screen content, for future reference, etc.
+A screen recorder is software that captures the contents and activities taking place on a computer screen. This software is vital during activities such as creating video tutorials, recording screen content, for future reference (note-taking), etc.
 
 When recording tutorials, you might want to use the webcam so that your audience can see you, this creates a memorable and interactive session. This leads to screen recorders having webcam recording capability. 
 
@@ -34,59 +33,62 @@ When it comes to price, some of this software is not pocket-friendly. Others mis
 - [Conclusion](#Conclusion)
 
 ### Prerequisites
-For you to follow through this article you should:
+For the you to follow along with this article you should:
 - Be familiar with the Python programming language.
-- Have pycharm installed on your computer. If not, download the [Pycharm Community Edition.](https://www.jetbrains.com/pycharm/download/) We are going to use the pycharm community version since it is free.
+- Have pycharm installed on your computer. If not, download the [Pycharm Community Edition](https://www.jetbrains.com/pycharm/download/). We are going to use the Pycharm community version since it is free.
 
 ### Python packages we will use
-To create our screen recorder we will need the following python packages:
-- **Datetime** We will need this package to know the exact time the screen recording starts and ends. 
-- **Python image library** We will need this package to capture the images on the screen.
-- **Numpy**We will need this package to convert our image to an array to pass it to open cv.
-- **win32api** We will need this package to capture the resolution of the screen.
-- **cv2** We will need this package to be able to save our captured images in video format to file explorer.
+To create our screen recorder we will need the following Python packages:
+- **Datetime:** We will need this package to know the exact time the screen recording starts and ends. 
+- **Python image library:** We will need this package to capture the images on the screen.
+- **Numpy:** We will need this package to convert our image to an array to pass it to open cv.
+- **win32api:** We will need this package to capture the resolution of the screen.
+- **cv2:** We will need this package to be able to save our captured images in video format to our file explorer.
 
 ### Creating a screen recorder and integrating it with a webcam recorder
-We will have to prepare our working space in pycharm. Open the pycharm app. Once it is open, click on the new project as shown in the screenshot below. Then click create on the next window that appears.
+We will have to prepare our working space in Pycharm. Open the Pycharm app. Once it is open, click on the new project as shown in the screenshot below. Then click create on the next window that appears.
 
 ![pycharm](/engineering-education/creating-a-screen-recorder-using-python-and-pycharm/pycharm.png)
 
-We now have to install the packages we discussed above into pycharm. Follow the following steps to install them.
+We now have to install the packages we discussed above into Pycharm. Follow the following steps to install them.
 
-To install DateTime key in the following command in the terminal
+To install the DateTime, key in the following command in the terminal:
 
 ```bash
 pip install DateTime
 ```
+
 ![packages](/engineering-education/creating-a-screen-recorder-using-python-and-pycharm/packages.png)
 
 Wait for a few seconds for datetime to be successifully installed.
 
-We will repeat the same procedure for the rest of the packages. Only the commands will change. Use the following commands for the respective package:
+We will repeat the same procedure for the rest of the packages. Only the commands will change. 
 
-**numpy**
+Use the following commands for the respective package:
+
+#### numpy
 
 ```bash
- pip install numpy
- ```
+pip install numpy
+```
  
- **win32api**
+#### win32api
  
- ```bash
- pip install pywin32
- ```
+```bash
+pip install pywin32
+```
  
- **cv2**
+#### cv2
  
- ```bash
- pip install opencv-python
- ```
+```bash
+pip install opencv-python
+```
  
- **Python image library**
+#### Python image library
  
- ```bash
- pip install Pillow
- ```
+```bash
+pip install Pillow
+```
  
 We now have our workspace ready, lets start coding:
 
@@ -125,7 +127,7 @@ Here is a screenshot of the output the code will produce.
 
 ![Results](/engineering-education/creating-a-screen-recorder-using-python-and-pycharm/results.png)
 
-**Note:** The recorded video will be saved in your home folder under a folder named pycharm project.
+**Note:** The recorded video will be saved in your home folder under a folder named Pycharm project.
 
 ### Conclusion
 We have built a screen recorder and integrated it with a webcam recorder. Now run your software and enjoy your new screen recorder.
