@@ -1,11 +1,5 @@
 ### Using React Hooks: Understanding React UseEffect and creating custom Hooks
 
-React Hooks are special functions that allow you to &quot;hook into&quot; React features without the need to create classes. They provide an alternative to writing class-based components (as hooks do not function inside classes).
-
-Operations like data fetching or manually changing the Document Object Model (DOM) via React components can cause side effects or &quot;effects&quot; as they are known. This can affect other components within your application.
-
-React comes with in-built hooks like `useEffect` that allow you to perform side effects from a function or component. With a single effect function, we can achieve the purposes of the React classes including `componentDidMount`, `componentWillUnmount` and `componentDidUpdate`.
-
 ---
 layout: engineering-education
 status: publish
@@ -22,9 +16,9 @@ images:
   - url: /engineering-education/understanding-react-useeffect/hero.jpg
     alt: Understanding React UseEffect and creating custom Hooks Hero Image
 ---
-React Hooks are special functions that allow you to "hook into" React features without the need to create classes. These provide an alternative to writing class-based components (as hooks do not function inside classes).
+React Hooks are special functions that allow you to "hook into" React features without the need to create classes. They provide an alternative to writing class-based components (as hooks do not function inside classes).
 <!--more-->
-Operations like data fetching or manually changing the DOM via React components can cause side effects or "effects" as they are known. This can affect other components within your application.
+Operations like data fetching or manually changing the Document Object model (DOM) via React components can cause side effects or "effects" as they are known. This can affect other components within your application.
 
 React comes with in-built hooks like `useEffect` that allow you to perform side effects from a function or component. With a single effect function, we can achieve the purposes of the React classes. This includes `componentDidMount`, `componentWillUnmount`, and `componentDidUpdate`.
 
@@ -190,9 +184,6 @@ The output above shows the value of `counter`. The initial render of the compone
 
 Let us modify the code by altering the array dependence, which is currently empty, and then reflect the current status of `counter`.
 
-Let us change the code by altering the array dependence, which is currently empty, and then reflect the current status of `counter`.
-
-
 ```javascript
 
 import React, { useState, useEffect } from &quot;react&quot;;
@@ -274,9 +265,6 @@ The counter starts counting when the page loads for the first time. It was incre
 
 ### Rules for using `useEffect`
 We use the `useEffect` hook to run functionalities during the lifetime of the component rather than specific user interactions or DOM events.
-
-We use the `useEffect` hook to run functionalities during the component&#39;s lifetime rather than specific user interactions or DOM events.
-
 
 For example, you might wish to get a list of users as soon as the page loads. The names of the people change as the component mounts without user interaction.
 
@@ -368,9 +356,6 @@ In the example above, we used `useState` and `useEffect`,  which are two differe
 We used the `useState` variable to regulate the API response, and the `useEffect` was employed for data retrieval. We used the `try-catch` function to regulate whether the obtained request succeeded or failed.
 We imported axios, which was used to make a `get **`** request to the API. We received the result, and passed it to the `setState` to map across the available users list.
 
-We imported axios, which was used to make a `get` request to the API. We received the result and passed it to the `setState` to map across the available users' list.
-
-
 ![list of users](/engineering-education/understanding-react-useeffect/list-of-users.png)
 
 The request we used above returned the result that we can see in the image above.
@@ -384,12 +369,6 @@ Here is a typical error that necessitates the employment of a cleanup function w
 
 | Warning: Cannot perform a React state update on an unmounted component. This is a no-op, but it indicates a memory leak in your application. To fix, cancel all subscriptions and asynchronous tasks in a useEffect cleanup function. |
 | --- |
-
-### How to use useEffect to "clean up" effects
-Below is a typical error that necessitates the employment of a cleanup function within a `useEffect`:
-
-| Warning: Can&#39;t perform a React state update on an unmounted component. This is a no-op, but it indicates a memory leak in your application. To fix, cancel all subscriptions and asynchronous tasks in a useEffect cleanup function. |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 
 
 To fix the error, we can add a cleanup method to our application as shown below:
@@ -483,13 +462,7 @@ In the code above, the cleanup function runs after the second change in the `use
 ### How to create a custom hook
 We can construct logic that can be reused across our applications by creating our custom hooks. It generates a lot of reusable features.
 
-
-We can construct logic that can be reused across our applications by creating our own custom hooks. It generates a lot of reusable features.
-
 To begin, let us create a folder within our `src` directory and name it `hooks` and then we create a file called `CounterHook.jsx` within the `hooks` folder.
-
-To begin, let&#39;s create a **`** hooks`folder within our `src`directory and a`CounterHook.jsx`file within the `hooks` folder.
-
 
 Add the code below to the `CounterHook.jsx` file.
 
@@ -560,21 +533,11 @@ return (
 
 Our application is not broken; in fact, it is in perfect working order! We imported the `CounterHook` component as a hook which we can also use in any other programs. The custom hook we created improves the efficiency of our application.
 
-Our application is not broken; in fact, it is in perfect working order!. The custom hook we created improves the efficiency of our application.
-
-
 Depending on the context of your application, creating custom hooks should be dependent on personal preferences.
 
 ### Conclusion
-We have learned what hooks are, how they work, and their benefits. We have also demonstrated how useEffect can manage side effects from components. Lastly, we were able to create a custom reusable hook with simple logic.
-
-
 We have learned what hooks are, how they work and their benefits. We have also demonstrated how useEffect can manage side effects from components. Lastly, we have been able to create a custom reusable hook with simple logic.
 With the React `useEffect` hook, you can manage component lifecycle seamlessly without necessarily having to convert your functional based components into class based components.
-
-### References:
-
-With the React `useEffect` hook, you can manage component lifecycle  without having to convert your functional based components into class based components.
 
 
 ### References
@@ -584,9 +547,6 @@ With the React `useEffect` hook, you can manage component lifecycle  without hav
 - [How the useEffect Hook Works (with Examples)](https://daveceddia.com/useeffect-hook-examples/)
 - [A Simple Explanation of React.useEffect()](https://dmitripavlutin.com/react-useeffect-explanation/)
 - [Full React Tutorial #14 - useEffect Hook (the basics)](https://www.youtube.com/watch?v=gv9ugDJ1ynU)
-- [React v16.8: The One With Hooks – React Blog](https://reactjs.org/blog/2019/02/06/react-v16.8.0.html)
-
-
 - [React v16.8: The One With Hooks – React Blog](https://reactjs.org/blog/2019/02/06/react-v16.8.0.html)
 
 ---
