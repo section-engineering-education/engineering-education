@@ -1,8 +1,11 @@
 ### Introduction
 A site's menu is a crucial component. It's the passage that customers will see on the pages. Therefore, the header requires an essential menu, one of the most visible components that immediately attract the customer's attention.
+
 When there is a wide range of categories for these reasons pages, it becomes challenging to create a menu that allows customers to find them.
 For implementing horizontal scrolling menu highlights for your application, many outsider modules or libraries are available.
-Nothing compares to our unique code. In this tutorial, we'll look at how a model may be used to create a simple flat horizontal scrolling menu but before that, let us learn the following.
+Nothing compares to our unique code.
+
+In this tutorial, we'll look at how a model may be used to create a simple flat horizontal scrolling menu but before that, let us learn the following.
 
 ### Table of content:
 - [Introduction](#introduction)
