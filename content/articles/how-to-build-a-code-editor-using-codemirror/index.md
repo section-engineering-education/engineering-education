@@ -3,27 +3,25 @@ layout: engineering-education
 status: publish
 published: true
 url: /how-to-build-a-code-editor-using-codemirror/
-title: How to build a code editor using codemirror
+title: How to Build a Code Editor using Codemirror
 description: In this article, we'll focus on CodeMirror. CodeMirror is a versatile text editor implemented in JavaScript for the browser.
-author: Femi-ige ayodele
-date: 2021-04-14T00:00:00-12:00
+author: femi-ige-ayodele
+date: 2021-11-18T00:00:00-13:15
 topics: []
 excerpt_separator: <!--more-->
 images:
+
   - url: /engineering-education/how-to-build-a-code-editor-using-codemirror
     alt: How to build a code editor using codemirror
 ---
+The advent of online code tutorial websites has brought a need for live code editors. These editors aim to portray available code snippets or add some augmentation to the code snippet. Online code editors also serve as remote workspaces and teamwork tools. Several websites use code editors, with the most popular being `codepen`. There are other notable mentions like `w3school` and `js fiddle`.
+<!--more-->
+In this article, we will focus around CodeMirror. CodeMirror is what we call a `flexible` text editor implemented in JavaScript for browsers to edit code. We will discuss codemirror's several language modes and addons used for more advanced editing functionalities. 
 
-The advent of online code tutorial websites has brought a need for live code editors. These editors aim to portray available code snippets or add some augmentation to the code snippet. Online code editors also serve as remote workspaces, teamwork tools if implemented. Several websites use code editors, with the most popular being `codepen`. There are other notable mentions like `w3school` and `js fiddle`.
-
-In this article, we'll centre around CodeMirror. CodeMirror is what we will call a `flexible` text editor implemented in JavaScript for browsers to edit code. We will discuss codemirror's several language modes and addons used for more advanced editing functionalities. It is the editor used in dev tools for [Mozilla's Firefox](https://hacks.mozilla.org/2013/11/firefox-developer-tools-episode-27-edit-as-html-codemirror-more/), [IOS' Safari](https://developer.apple.com/safari/tools/) and [Google's Chrome](https://developer.chrome.com/docs/devtools/).
-
-This tutorial will guide you on how to build your code editor using code mirror's unique API.
+It is the editor used in dev tools for [Mozilla's Firefox](https://hacks.mozilla.org/2013/11/firefox-developer-tools-episode-27-edit-as-html-codemirror-more/), [IOS' Safari](https://developer.apple.com/safari/tools/) and [Google's Chrome](https://developer.chrome.com/docs/devtools/). This tutorial will guide you on how to build your code editor using code mirror's unique API.
 
 ### Prerequisites
-
-For a smooth sailing all through the process of this tutorial, the reader should have an intermediate to expert knowledge on the following:
-
+For a smooth process through this tutorial, the reader should have an intermediate to expert knowledge on the following:
 - [Here](https://developer.mozilla.org/en-US/docs/Web/JavaScript) is a link to a JavaScript documentation.
 - [Here](https://developer.mozilla.org/en-US/docs/Web/HTML) is a link to a HTML documentation.
 - [Here](https://developer.mozilla.org/en-US/docs/Web/css) is a link to a HTML documentation.
@@ -31,17 +29,17 @@ For a smooth sailing all through the process of this tutorial, the reader should
 - [_visual studio code_](https://code.visualstudio.com/download), [_sublime text_](https://www.sublimetext.com/3).
 
 ### Goal
+In this guide, we will build a code editor using codemirror's API. At the end of this tutorial, we will have a functional code editor to run `HTML`, `CSS` and `JavaScript`. 
 
-In this guide, we will build a code editor using codemirror's API. At the end of this tutorial, we will have a functional code editor to run `HTML`, `CSS` and `JavaScript`. It will also have features such as code autocomplete, quick format. With split.js, our editor will have a split, adjustable screen between the editor and iframe display.
+It will also have features such as code autocomplete, quick format. With split.js, our editor will have a split, adjustable screen between the editor and iframe display.
 
-### Getting Started
-
-To get started, we'd need to import codemirror's Javascript and CSS files. We took the liberty of downloading the files and stored on the GitHub repository [here](https://github.com/ayodele96/code-editor/tree/main/src). For ease, we advise the files should be downloaded to your local storage.
+### Getting started
+To get started, we'll need to import codemirror's JavaScript and CSS files. We took the liberty of downloading the files and stored on the GitHub repository [here](https://github.com/ayodele96/code-editor/tree/main/src). To make things simpler, we advise the files should be downloaded to your local storage.
 
 #### Creating the navbar
-
 We'll create a simple front end with buttons like run and a drop-down containing our format and comment feature. To achieve this, we'd be making use of `bootstrap 5` which will help with styling the page.
-To get started, we initialize our HTML boilerplate, add our personal CSS and the bootstrap JS and CSS files using a content delivery network (CDN).
+
+To get started, we initialize our HTML boilerplate, add our personal CSS, the bootstrap JS, and CSS files using a content delivery network (CDN).
 
 ```html
 <html lang="en">
@@ -61,7 +59,11 @@ To get started, we initialize our HTML boilerplate, add our personal CSS and the
 </html>
 ```
 
-Next, we'll create a navbar containing the aforementioned features. We'd start by adding a `nav` tag to our body section, followed by a div. After, we'll add an unordered list tag (`ul`) within the div and concurrently an ordered list tag (`li`) within for the `run`. That's the essential tags for the navbar. The desired design for the navigation bar is shown below;
+Next, we'll create a navbar containing the aforementioned features. We'll start by adding a `nav` tag to our body section, followed by a div. 
+
+After, we'll add an unordered list tag (`ul`) within the div and concurrently an ordered list tag (`li`) within for the `run`. That's the essential tags for the navbar. 
+
+The desired design for the navigation bar is shown below:
 
 ```html
 <nav class="navbar navbar-inverse">
@@ -83,13 +85,12 @@ Next, we'll create a navbar containing the aforementioned features. We'd start b
 </nav>
 ```
 
-If properly implemented, we should have our navbar as below;
+If properly implemented, we should see our navbar as illustrated below:
 
 ![nav](/engineering-education/how-to-build-a-code-editor-using-codemirror/navbar.JPG)
 
 #### Adding the text editor and iframe display
-
-This part involves adding a side by side editor and iframe display. We would split them apart using an adjustable resizer with the aid of split.js. We will add the codemirrors CSS and JS files, the split.js JS files with a content delivery network.
+This part involves adding a side by side editor and iframe display. We would split them apart using an adjustable resizer with the aid of split.js. We will add the codemirrors CSS and JS files, the split.js files with a content delivery network.
 
 ```html
 <link rel="stylesheet" href="codemirror.css" />
@@ -97,9 +98,11 @@ This part involves adding a side by side editor and iframe display. We would spl
 <script src="https://unpkg.com/split.js/dist/split.min.js"></script>
 ```
 
-Note! We have made some slight changes to Codemirror's CSS to get our desired result.
+>Note: We have made some slight changes to Codemirror's CSS to get our desired result.
 
-We then create a container `div`, followed by two seperate `div` within the container. One of those `div` is for the editor and the other for the iframe display. For the split feature, we would create a script tag for that. An example of the implementation is placed below;
+We then create a container `div`, followed by two seperate `div` within the container. One of those `div` is for the editor and the other for the iframe display. For the split feature, we would create a script tag for that. 
+
+An example of the implementation is placed below:
 
 ```html
 <div class="editor">
@@ -118,17 +121,16 @@ We then create a container `div`, followed by two seperate `div` within the cont
 </script>
 ```
 
-`.a` and `.pa` are the class names for the editor and Iframe display.
+`.a` and `.pa` are the class names for the editor and iframe display.
 
-Altogether, we should have our layout as below;
+Altogether, we should have our layout as shown below:
 
 ![editor](/engineering-education/how-to-build-a-code-editor-using-codemirror/editor.JPG)
 
 #### Adding the main editor features
+Next up, we will make the editor JavaScript, CSS and HTML compatible. We will also add the auto-complete and format features.
 
-Next up, We will make the editor javascript, CSS and HTML compatible. We will also add the auto-complete and format features.
-
-Let's begin. First, we import the `Javascript`, `HTML` and `CSS` javascript files into our code as shown below;
+Let's begin. We need to import the `Javascript`, `HTML` and `CSS` JavaScript files into our code as shown below:
 
 ```html
 <script src="xml.js"></script>
@@ -137,7 +139,9 @@ Let's begin. First, we import the `Javascript`, `HTML` and `CSS` javascript file
 <script src="htmlmixed.js"></script>
 ```
 
-We will be creating a script tag, this is the essential part of the project. According to the documentation, we are to use `.getValue()` rather than `.value()`. The javascript code is as shown below;
+We will be creating a script tag, this is the essential part of the project. According to the documentation, we are to use `.getValue()` rather than `.value()`. 
+
+The JavaScript code is as shown below:
 
 ```js
 var htmlEditor = CodeMirror(
@@ -178,7 +182,7 @@ document.querySelector("#run-btn").addEventListener("click", function () {
 
 `.querySelector()` gives the first element that matches a given CSS selector in the document.
 
-For the `auto-compelete` feature, `comment` and `format` feature, we will import their respective javascript and css files as shown below;
+For the `auto-compelete` feature, `comment` and `format` feature, we will import their respective JavaScript and CSS files as shown below:
 
 ```html
 <link rel="stylesheet" href="show-hint.css" />
@@ -188,7 +192,7 @@ For the `auto-compelete` feature, `comment` and `format` feature, we will import
 <script src="html-hint.js"></script>
 ```
 
-The final code in the file should look like;
+The final code in the file should look like this:
 
 ```html
 <html lang="en">
@@ -290,20 +294,21 @@ The final code in the file should look like;
 </html>
 ```
 
-If properly implemented, we should have the following results;
+If properly implemented, we should have the following results:
 
 ![main editor](/engineering-education/how-to-build-a-code-editor-using-codemirror/main-editor.JPG)
 
 ![main editor 2](/engineering-education/how-to-build-a-code-editor-using-codemirror/main-editor-2.JPG)
 
 ### Conclusion
+In conclusion, we learned how to create an HTML, CSS, and JavaScript compatible editor. We added an HTML code format feature, auto-completion feature, adjustable split-screen using split.js. 
 
-In conclusion, we learned how to create an HTML, CSS and javascript compatible editor, add an HTML code format feature, auto-completion feature, adjustable split-screen using split.js. We brought all these components together to have a responsive code editor using codemirror.
-[here](https://github.com/ayodele96/code-editor/blob/main/code-editor.html) is a link to the github repository containing the full code.
+We brought all these components together to have a responsive code editor using codemirror. [Here](https://github.com/ayodele96/code-editor/blob/main/code-editor.html) is a link to the github repository containing the full code.
 
-### Further Reading
-
+### Further reading
 - [The codemirror documentation](https://codemirror.net/)
+
+Happy coding!
 
 ---
 
