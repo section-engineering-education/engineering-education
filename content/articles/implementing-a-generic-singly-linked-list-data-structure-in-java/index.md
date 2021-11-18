@@ -47,7 +47,7 @@ These are functions that can be performed on a linked list:
 - `Traversal` - Accesses the connected list's elements one by one.
 
 ### Implementation of a Java single-linked list
-In this section, we'll explore how generics can be used to implement a singly linked list in a type-safe, parameterized fashion. We will use the Java program below to generate our own type-safe linked list in the Java programming language. It is available for download here.
+In this section, we'll explore how generics can be used to implement a singly linked list in a type-safe, parameterized fashion. We will use the Java program below to generate our own type-safe linked list in the Java programming language.
 
 ```Java
 public class NewnewSinglyLinkedList {
