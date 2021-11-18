@@ -6,18 +6,17 @@ url: /introduction-to-automation-pyautogui/
 title: Introduction to Automation Using PyAutoGUI 
 description: In this article, we are going to take a look at a simple automation task that involves opening Google Chrome, click on the address search bar, typing the URL to YouTube, searching for a video and playing the video.
 author: raphael-mbindyo
-date: 2021-11-06T00:00:00-18:00
+date: 2021-11-18T00:00:00-12:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  -url: /engineering-education/introduction-to-automation-pyautogui/hero.jpg
+ - url: /engineering-education/introduction-to-automation-pyautogui/hero.jpg
    alt: Introduction to Automation PyAutoGUI example image
 ---
-
-Doing the same repetitive tasks daily can be a bit boring. Automating those tasks can save us much time and help us be productive in other areas. We can achieve the automation process with a Python library known as PyAutoGUI. To learn more about PyAutoGUI, click [here](https://pyautogui.readthedocs.io/en/latest/).
-
+Doing the same repetitive tasks daily can be a bit boring. Automating those tasks can save us much time and help us be productive in other areas. 
 <!--more-->
+We can achieve the automation process with a Python library known as PyAutoGUI. To learn more about PyAutoGUI, click [here](https://pyautogui.readthedocs.io/en/latest/).
 
 In this article, we are going to take a look at a simple automation task. It involves opening Google Chrome, clicking on the address search bar, typing the URL to YouTube, searching for a video (in this case, a snap), clicking on it to play and finally minimizing the Google Chrome window. 
 
