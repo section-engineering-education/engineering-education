@@ -341,14 +341,6 @@ padding-top: 20px;
 padding-bottom: 20px;
 }
 
-.success-flag{
-background-color: #ccffcc;
-color: green;
-border: none;
-padding-top: 20px;
-padding-bottom: 20px;
-}
-
 .info-flag{
 background-color: #b3e6ff;
 color: blue;
@@ -429,12 +421,6 @@ Open `resources/views/auth` create a new file and name it `registration.blade.ph
   
 @section('content')
 
-
-
-
-
-
-
 <style>
 
 .main-div{
@@ -482,29 +468,7 @@ label{
     color: red;
 }
 
-.error-flag{
-background-color: #ffcccc;
-color: red;
-border: none;
-padding-top: 20px;
-padding-bottom: 20px;
-}
 
-.success-flag{
-background-color: #ccffcc;
-color: green;
-border: none;
-padding-top: 20px;
-padding-bottom: 20px;
-}
-
-.info-flag{
-background-color: #b3e6ff;
-color: blue;
-border: none;
-padding-top: 20px;
-padding-bottom: 20px;
-}
 </style>
 
 
@@ -609,27 +573,44 @@ This view allows only one input which is the user's phone number. when a user re
 Open `resources/views/`, create a new file and name it `dashboard.blade.php`. open the file `resources/views/dashboard.blade.php` and include the following code.
 
 ```
-@extends('layout')  
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+@extends('layout')
   
-                <div class="card-body">
+@section('content')
+
+<style>
+    .success-flag{
+background-color: #ccffcc;
+color: green;
+border: none;
+padding-top: 20px;
+padding-bottom: 20px;
+}
+
+.main-div{
+    
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 2%;
+    text-align: center;
+    background-color: white;
+    
+
+}
+</style>
+
+<div class="main-div">
+    <h2 style="color: gray; padding-top:20px;">DASHBOARD</h2>
+
                     @if (session('success'))
-                        <div class="alert alert-success" role="alert">
+                        <div class="success-flag">
                             {{ session('success') }}
                         </div>
                     @endif
 
-                    Welocome <strong>{{auth()->user()->name}}</strong> You are Logged In8
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+                    Welocome <strong>{{auth()->user()->name}}</strong> You are Logged In
+    
+                    </div>
+
 @endsection
 
 ```
