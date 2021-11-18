@@ -30,23 +30,26 @@ We will use these two functions to rotate an image in our animation. Find more a
 This is the JavaScript code.
 
 ```javascript
-        //the image variable
+	   //the image variable
        let image = document.querySelector("img");
        //90 degrees
        let angle = Math.PI / 2;
+       let prevTimeArg;
        //timestamp variables
        let prevTime = null;
        let currentTime = Date.now();
 
        function animate(currentTimeParam, prevTimeArg) {
 
-           if (lastTime != null) {
+           if (prevTimeArg != null) {
               angle += (currentTimeParam - prevTimeArg) * 0.004;
-              lastTime = currentTimeParam ;
            }
+           //setting the previous time to the time the function currently fires
+            prevTimeArg = currentTimeParam ;
            image.style.top = (Math.sin(angle) * 150) + "px";
            image.style.left = (Math.cos(angle) * 150) + "px";
-           requestAnimationFrame(currentTime => animate(currentTime, prevTime));
+           //passing the currnt time and previous times
+           requestAnimationFrame(currentTime => animate(currentTime, prevTimeArg));
        }
        requestAnimationFrame(animate);
 ```
@@ -166,23 +169,26 @@ Our 'sphere' is not perfectly at the center of the rotation if you are keen. You
     </div>
 </body>
 <script>
-//the image variable
+	   //the image variable
        let image = document.querySelector("img");
        //90 degrees
        let angle = Math.PI / 2;
+       let prevTimeArg;
        //timestamp variables
        let prevTime = null;
        let currentTime = Date.now();
 
        function animate(currentTimeParam, prevTimeArg) {
 
-           if (lastTime != null) {
+           if (prevTimeArg != null) {
               angle += (currentTimeParam - prevTimeArg) * 0.004;
-              lastTime = currentTimeParam ;
            }
+           //setting the previous time to the time the function currently fires
+            prevTimeArg = currentTimeParam ;
            image.style.top = (Math.sin(angle) * 150) + "px";
            image.style.left = (Math.cos(angle) * 150) + "px";
-           requestAnimationFrame(currentTime => animate(currentTime, prevTime));
+           //passing the currnt time and previous times
+           requestAnimationFrame(currentTime => animate(currentTime, prevTimeArg));
        }
        requestAnimationFrame(animate);
     </script>
