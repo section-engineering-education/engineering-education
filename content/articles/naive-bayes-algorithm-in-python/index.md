@@ -27,7 +27,7 @@ To follow along with this tutorial, you're required to have:
   1. install.packages('caTools')
   2. install.packages('e1071')
 
-### Introduction to the Bayes Algorithm
+### Introduction to the Naive Bayes Algorithm
 Before diving into *Naive Bayes*, we must first understand the *Bayes Theorem* and its assumptions. To understand this, we first consider a conditional probability from which the mathematical representation of the *Bayes theorem* is derived. From the probability and statistic world, the conditional probability is defined as:
 
 $p(A|B)=\frac{p(A\cap B)}{p(B)}$
@@ -48,7 +48,7 @@ $p(B|A)=\frac{p(A,B)}{p(A)}\rightarrow {p(A,B)}=p(B|A)p(A)$
 
 This relationship defines how the product rule above comes about.
 
-Using the above rule, we can rewrite our conditional probability as follows:
+Using the rule above, we can rewrite our conditional probability as follows:
 
 $p(A|B)=\frac{p(B|A)p(A)}{p(B)}$ which is the *Bayes theorem*. Note that, introducing the sum rule on the $p{(B)}$, this theorem can be written as:
 
@@ -108,7 +108,7 @@ Test_set[-3] = scale(Test_set[-3])
 ```
 
 ### Step 2: Fitting the Naive Bayes classifier to the training set
-To get started, let's make sure that the `e1071 package` is installed on R. As we earlier said, we only install this package if it is not already installed on our systems. Otherwise, we proceed and load its library.
+To get started, let's make sure that the `e1071` package is installed on R. As we earlier said, we only install this package if it is not already installed on our systems. Otherwise, we proceed and load its library.
 
 ```r
 library(e1071) # load the library
@@ -116,10 +116,10 @@ classifier = naiveBayes(x = Train_set[-3],
                         y = Train_set$Purchased) # Fits Naive Bayes Model to the training set
 ```
 
-### Step 3: Predicting the test set
+### Step 3: Predicting the test set results
 
 ```r
-# Predicting the test set
+# Predicting the test set output
 y_predict = predict(classifier, newdata = Test_set[-3])
 
 # Creating a Confusion Matrix
@@ -130,7 +130,7 @@ This is the result obtained from the confusion matrix:
 
 ![Confusion matrix](/engineering-education/naive-bayes-algorithm-in-python/confusion-matrix.png)
 
-From the above confusion matrix, we notice that out of 100%, the model could predict 86% of the data correctly with only 14% incorrect predictions. From this, it's clear that our model has an accuracy of 84%. The accuracy of 84% is a good score, and thus we can conclude that our classifier is able to classify our data accurately.
+From the confusion matrix shown above, we notice that out of 100%, the model could predict 86% of the data correctly with only 14% incorrect predictions. From this, it's clear that our model has an accuracy of 84%. The accuracy of 84% is a good score, and thus we can conclude that our classifier is able to classify our data accurately.
 
 ### Conclusion
 In this tutorial, we have learned the Naive Bayes classifier's theory. First, we showed how to derive a mathematical formula of this classifier from the basic conditional probability. Later, we showed how to implement the Naive Bayes classifier in R and evaluated its performance using a confusion matrix. From the confusion matrix, we saw its ability to classify the data by giving a relatively incredible score. We can challenge ourselves by implementing tasks to handle problems such as email classification, transaction classification, and health data to classify tumors and other diseases. 
