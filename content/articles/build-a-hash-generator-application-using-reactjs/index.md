@@ -1,8 +1,25 @@
-Hashing is converting an input of any length into a fixed-sized string of text using a mathematical function. This means that any text can be converted into an array of numbers and letters through an algorithm, no matter how long it is. The text being converted/hashed is referred to as an input. The algorithm used to covert this string is called a hash function. 
+---
+layout: engineering-education
+status: publish
+published: true
+url: /build-a-hash-generator-application-using-reactjs/
+title: Reactjs Hash Application Generator
+description: This guide will walk the reader about the Hash functions and illustrates how to build a Hash generator application using React.js. We will create a simple app that calculates hashes from text strings, hash them, and send back the hashed text to the user.
+author: moses-maina
+date: 2021-11-18T00:00:00-16:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+ - url: /engineering-education/build-a-hash-generator-application-using-reactjs/hero.png
+   alt: Reactjs Hash Application Generator Image
+---
+
+Hashing is converting an input of any length into a fixed-sized string of text using a mathematical function. This means that any text can be converted into an array of numbers and letters through an algorithm, no matter how long it is. The text being converted/hashed is referred to as an input. The algorithm used to covert this string is called a hash function. 
+<!--more-->
 The generated value is called a Hash value. A hashed text is also referred to as digest. Hashing converts the original information, i.e., plain text, to an alternative form where only the authorized parties can understand it.
 
-This guide will teach the reader about the Hash functions and illustrates how to build a Hash generator application using React.js. We will create a simple app that calculates hashes from text strings, hash them, and send back the hashed text to the user.
+This guide will walk the reader about the Hash functions and illustrates how to build a Hash generator application using React.js. We will create a simple app that calculates hashes from text strings, hash them, and send back the hashed text to the user.
 
 ### Prerequisites
 To follow along with this article, ensure you have the following basic requirements:
@@ -635,3 +652,6 @@ To Learn more about these algorithms and Crypto, check the following resources:
 - [Symmetric/Secret key encryption](/engineering-education/secret-key-cryptography-in-js/)
 - [Asymmetric/Public key encryption](/engineering-education/implementing-public-key-cryptography-in-javascript/)
 - [Crypto Node.js module](https://nodejs.org/api/crypto.html)
+
+---
+Peer Review Contributions by: [Mercy Meave](/engineering-education/authors/mercy-meave/)
