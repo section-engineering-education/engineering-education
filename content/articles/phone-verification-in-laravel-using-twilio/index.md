@@ -313,70 +313,137 @@ In `resources/views/auth` create a new file and name it `Login.blade.php`. open 
 @extends('layout')
   
 @section('content')
-<main class="login-form">
-  <div class="cotainer">
-      <div class="row justify-content-center">
-          <div class="col-md-8">
-              <div class="card">
-                  <div class="card-header">Register</div>
-                  <div class="card-body">
-                  
-                      <form action="{{ route('register.post') }}" method="POST">
+
+<style>
+
+.main-div{
+    
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 2%;
+    text-align: center;
+    background-color: white;
+    
+
+}
+.input-item{
+    display: block;
+    padding-top: 10px;
+    padding-left: 10px;
+    text-align: justify;
+    
+    
+}
+.input-style{
+  width: 80%;
+  margin-bottom: 8px;
+
+  border-radius: 5px;
+  
+  border: 1px solid gray;
+  padding: 11px 19px;
+}
+.submit-bn{
+  margin: 7px 0;
+  background-color: #1E90FF;
+  width: 20%;
+  color: white;
+  padding: 10px 17px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+}
+label{
+    font-size: 20px;
+    font-weight: 400;
+}
+.small-error{
+    color: red;
+}
+
+.error-flag{
+background-color: #ffcccc;
+color: red;
+border: none;
+padding-top: 20px;
+padding-bottom: 20px;
+}
+
+.success-flag{
+background-color: #ccffcc;
+color: green;
+border: none;
+padding-top: 20px;
+padding-bottom: 20px;
+}
+
+.info-flag{
+background-color: #b3e6ff;
+color: blue;
+border: none;
+padding-top: 20px;
+padding-bottom: 20px;
+}
+</style>
+
+
+<div class="main-div">
+    <h2 style="color: gray; padding-top:20px;">LOGIN</h2>
+@if (Session::has('errors'))
+                        <div class="error-flag">
+                            {{ Session::get('errors')->first() }}
+                        </div>
+                    @endif
+
+                    @if (Session('status'))
+                        <div class="error-flag">
+                            Your account has not been verified, click the verify button to verify account
+                            <a class="submit-bn" href= "{{ route('reverify') }}">Verify</a>
+
+                        </div>                        
+
+                    @endif
+
+                    @if(session('success'))
+                        <div class="info-flag"> 
+                            Your Verification code is <strong>{{session('success')}}</strong> 
+                            Please answer the call and follow the intruction. You can login on successful registration
+                            <a class="submit-bn" href= "{{ route('reverify') }}">Try again</a>
+                        </div>
+                    @endif
+    
+                    <form action="{{ route('login.post') }}" method="POST">
                           @csrf
-                          <div class="form-group row">
-                              <label for="name" class="col-md-4 col-form-label text-md-right">Name</label>
-                              <div class="col-md-6">
-                                  <input type="text" id="name" class="form-control" name="name" required autofocus>
-                                  @if ($errors->has('name'))
-                                      <span class="text-danger">{{ $errors->first('name') }}</span>
-                                  @endif
-                              </div>
-                          </div>
-  
-                          <div class="form-group row">
-                              <label for="phone_number" class="col-md-4 col-form-label text-md-right">Phone Number</label>
-                              <div class="col-md-6">
-                                  <input type="number" id="phone_number" class="form-control" name="phone_number" required autofocus>
+                          <div class="input-item">
+                              <label class="">Phone Number</label>
+                              <div class="">
+                                  <input type="number" class="input-style" name="phone_number" required> <br/>
                                   @if ($errors->has('phone_number'))
-                                      <span class="text-danger">{{ $errors->first('phone_number') }}</span>
+                                      <span class="small-error">{{ $errors->first('phone_number') }}</span>
                                   @endif
                               </div>
                           </div>
   
-                          <div class="form-group row">
-                              <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
-                              <div class="col-md-6">
-                                  <input type="password" id="password" class="form-control" name="password" required>
+                          <div class="input-item">
+                              <label class="">Password</label>
+                              <div class="">
+                                  <input type="password"  class="input-style" name="password" required> <br/>
                                   @if ($errors->has('password'))
-                                      <span class="text-danger">{{ $errors->first('password') }}</span>
+                                      <span class="small-error"> {{$errors->first('password')}} </span>
                                   @endif
                               </div>
-                          </div>
-  
-                          <div class="form-group row">
-                              <div class="col-md-6 offset-md-4">
-                                  <div class="checkbox">
-                                      <label>
-                                          <input type="checkbox" name="remember"> Remember Me
-                                      </label>
-                                  </div>
-                              </div>
-                          </div>
-  
-                          <div class="col-md-6 offset-md-4">
-                              <button type="submit" class="btn btn-primary">
-                                  Register
+                          </div>                        
+                     
+                          <div class="">
+                              <button type="submit" class="submit-bn">
+                                  Login
                               </button>
                           </div>
-                         
                       </form>
-                        
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
-</main>
+
+</div>
+
+
 @endsection
 
 ```
