@@ -337,10 +337,12 @@ This will however raise an error caused by improperly configured SQLite. To solv
 #     }
 # }
 ```
+Afterwards, run this command:
+```python
+zappa update dev
+```
 
-Now, run `zappa update dev`
-
-You should receive a URL where you may access your API via the internet after successful deployment. This is how it should look:
+You should receive a URL where you can access your API via the internet after successful deployment.
 
 ```python
 https://oitzappv43.execute-api.eu-west-2.amazonaws.com/dev
@@ -352,11 +354,80 @@ Copy the generated URL for your app and paste it into the project's `ALLOWED_HOS
 ALLOWED_HOSTS = ["oitzappv43.execute-api.eu-west-2.amazonaws.com"]
 ```
 
-When making modifications to your project, note that you'll need to update the deployment with the command above.
+Whenever modifications are made to your project, always update the deployment with the command used above.
 
 Now, we can run this URL and load our application.
 
 ![Admin](/engineering-education/deploying-a-serverless-jango-restapi-with-zappa-on-aws/admin.png)
+
+We've successfully redeployed the application. However, notice that the styling is not working properly, this is because we failed to map our application across to the CSS which contains the styling. Let us quickly do that. 
+
+### Manage static files
+
+For the default Django styles to work at the deployed stage, static files need to be managed, and to do this, begin by creating an [S3 bucket](https://console.aws.amazon.com/s3/) with a distinct name. Also, ensure you uncheck ***'Block all public access'***  then proceed in creating the bucket.
+
+Next, in the "*permissions*" section of your bucket, go to the Cross-Origin resource sharing (CORS) section to allow access from other hosts, edit the file to the following configuration:
+
+```python
+[
+  {
+    "AllowedHeaders": ["*"],
+    "AllowedMethods": ["GET"],
+    "AllowedOrigins": ["*"],
+    "MaxAgeSeconds": 3000
+  }
+]
+```
+
+### Setting Django Static File
+
+Install the *Django s3 storage* library in order to work with S3. 
+
+```python
+pip install django-s3-storage
+```
+
+Next, in your `settings.py` file, add `'django_s3_storage'` to installed apps. 
+
+```python
+INSTALLED_APPS = [
+  ... 
+'django_s3_storage'
+]
+```
+
+Also add the following:
+
+```python
+if DEBUG:
+   STATICFILES_DIRS = [
+   os.path.join(BASE_DIR, 'static'),
+   ]
+else:
+   STATIC_ROOT = os.path.join(BASE_DIR,'static')
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+S3_BUCKET_NAME = "Enter the name ofyour bucket"
+STATICFILES_STORAGE = "django_s3_storage.storage.StaticS3Storage"
+AWS_S3_BUCKET_NAME_STATIC = S3_BUCKET_NAME
+# serve the static files directly from the specified s3 bucket
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % S3_BUCKET_NAME
+STATIC_URL = "https://%s/" % AWS_S3_CUSTOM_DOMAIN
+# if you have configured a custom domain for your static files use:
+#AWS_S3_PUBLIC_URL_STATIC = "https://static.yourdomain.com/"
+```
+
+Afterward, run the following commands to update the changes and upload the static files to the bucket:
+
+```python
+$ zappa update dev
+$ zappa manage dev "collectstatic --noinput"
+```
+
+Re-run the admin page. The API at this point should render the required styles accurately. 
+
+![Admin with static file](/engineering-education/deploying-a-serverless-jango-restapi-with-zappa-on-aws/admin.png)
 
 As seen our application is running successfully.
 
