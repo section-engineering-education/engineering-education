@@ -24,9 +24,9 @@ To follow allow with this tutorial, you need to be familiar with:
 
 ### Table of contents
 - [What is BERT](#what-is-bert)
-- [How to install the BERT model and import its dependencies](#how-to-install-the-bert-model-and-import-dependencies)
+- [How to install the BERT model and import its dependencies](#how-to-install-the-bert-model-and-import-its-dependencies)
+- [Loading the tensorflow model](#loading-the-tensorflow-model)
 - [Creating an interface to capture the questions and answers](#creating-an-interface-to-capture-the-questions-and-answers)
-- [Performing evaluations and score readings from the model](#performing-evaluations-and-score-readings-from-the-model)
 - [Conclusion](#conclusion)
 
 ### What is BERT
@@ -58,7 +58,7 @@ import { Fragment } from 'react';
 ```
 Our first import allows us to refer to the tensorflow.js library in our code as `tf`. The second import allows us to refer to the BERT model inside our code as `qna`. The third and fourth import imports the css style for our loader that we mentioned above. Lastly, we've imported `Fragment`, which allows us to return multiple elements without adding extra nodes to the DOM. 
 
-The next step involves setting up our references and state hooks. Hooks tend to create a symbolic link to various elements. By default, the React library imports the following hooks; `useRef`, `useEffect`, and `useState`. You can see it at the top on the `App.js` file. `useState` allows us to work with states within our react app. It will be used to store our questions and passage. For a detailed explanation about hooks and references in React, please refer to this [documentation](https://reactjs.org/docs/hooks-intro.html).
+The next step involves setting up our references and state hooks. Hooks tend to create a symbolic link to various elements. By default, the React library imports the following hooks; `useRef`, `useEffect`, and `useState`. You can see it at the top on the `App.js` file. `useState` allows us to work with states within our react app. It will be used to store our questions and passage. For a detailed explanation about hooks and references in React, please refer to this [documentation](https://reactjs.org/docs/hooks-intro.html)
 
 ```js
   const passageRef = useRef(null); 
@@ -68,7 +68,7 @@ The next step involves setting up our references and state hooks. Hooks tend to 
 ```
 We've set up two references and state hooks.
 
-### Loading our tensorflow model
+### Loading the tensorflow model
 ```js
 const loadModel = async ()=>{
     const loadedModel = await qna.load()
@@ -81,9 +81,9 @@ The above code goes ahead and loads our `qna` model. We've written a new functio
 ```js
 useEffect(()=>{loadModel()}, [])
 ```
-The `[]` square brackets tells us how many times we want the model to load. In our case, only once. We don't want the model to load everytime as it's too big. So the square brackets tells it to run only once using the `useEffect` hook. 
+The `[]` square brackets tell us how many times we want the model to load. In our case, only once. We don't want the model to load every time as it's too big. So the square brackets tell it to run only once using the `useEffect` hook. 
 
-At this point in time, you can try and re-start your react app to see whether the app starts and loads the model successfully. Please give it some time to load. You'll see the `Model loaded successfuly!` on the console log if everything is okay. You can now close the app.
+At this point, you can try and re-start your react app to see whether the app starts and loads the model successfully. Please give it some time to load. You'll see the `Model loaded successfully!` on the console log if everything is okay. You can now close the app.
 
 Let's now define a function that allows us to ask questions to the model. After setting up this function, we'll hook it up to our user interface.
 
@@ -101,9 +101,9 @@ const questionAnswer = async (e) =>{
     }  
   }
 ```
-That's our `questionAnswer` function done. We've made the function asynchronous as we'll have to "await" our model to respond with our answers. The line of code `(e.which === 13 && model !== null )` checks whether a user has pressed the `Enter` button on our keyboard to submit a question. It also makes sure that our model is loaded before submitting the question. The variables `passage`, and `question` grabs the passage and question values respectively to be able to go ahead and ask that question. Please remember that our passage and question are hooked up to `passageRef` and `questionRef` to our references. We then pass our passage and question to our model so that it can find answers. These answers are stored in a variable known as `answers`. We then push these answers into the `setAnswer` state. 
+That's our `questionAnswer` function done. We've made the function asynchronous as we'll have to "await" our model to respond with our answers. The line of code `(e.which === 13 && model !== null )` checks whether a user has pressed the `Enter` button on our keyboard to submit a question. It also makes sure that our model is loaded before submitting the question. The variables `passage`, and `question` grab the passage and question values respectively to be able to go ahead and ask that question. Please remember that our passage and question are hooked up to `passageRef` and `questionRef` to our references. We then pass our passage and question to our model so that it can find answers. These answers are stored in a variable known as `answers`. We then push these answers into the `setAnswer` state. 
 
-Let's now go ahead and create our user interface so that all these code can make sense and see the entire flow of our application. 
+Let's now go ahead and create our user interface so that all these codes can make sense and see the entire flow of our application. 
 
 ### Creating an interface to capture the questions and answers
 ```js
@@ -141,11 +141,11 @@ If our model has loaded, we use `React.Fragment` to go ahead and define our user
 
 > By default, React only allows us to render one element.
 
-Our user interface has three key parts. The `Passage`, `Ask a Question`, and `Answers` parts. The `Passage` is just a text area where we put a passage which we want the model to read through. The `Ask a Question` area allow us to pass our input question. On key press (Enter), it triggers the `questionAnswer` function which we defined earlier, runs our passage and question to the model, and returns an answer. If we've got no answer, then we are going to be displaying nothing. Finally, the model performs evaluations and score readings from the model. 
+Our user interface has three key parts. The `Passage`, `Ask a Question`, and `Answers` parts. The `Passage` is just a text area where we put a passage that we want the model to read through. The `Ask a Question` area allows us to pass our input question. On key press (Enter), it triggers the `questionAnswer` function which we defined earlier, runs our passage and question to the model, and returns an answer. If we've got no answer, then we are going to be displaying nothing. Finally, the model performs evaluations and score readings from the model. 
 
 ### Conclusion
-This tutorial has demonstrated how we can leverage the pre-trained BERT model to build a BERT powered question and answer web application. We can pass through a passage, ask it a question, and by using that passage, the model is able to extrapolate and give you an answer back from that passage. Impressive, right?
-You can try it out yourself. Grab any passage from wikipedia and wait and see what answers it will give and their score values.
+This tutorial has demonstrated how we can leverage the pre-trained BERT model to build a BERT-powered question-and-answer web application. We can pass through a passage, ask it a question, and by using that passage, the model can extrapolate and give you an answer back from that passage. Impressive, right?
+You can try it out yourself. Grab any passage from Wikipedia and wait and see what answers it will give and their score values.
 
 Happy coding!
 
