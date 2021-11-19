@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /using-mldotnet-for-object-detection-in-winforms/
 title: Using ML.NET for Object Detection in WinForms
-description: Object detection is the ability of a program to detect objects in an image. ML lets the .NET developers implement this feature by using the ML.NET framework to create bespoke machine learning models in C# or F#. In this article, we will look at how we can use the ML.NET framework to create a windows forms app that can detect objects in an image.
+description: In this article, we will look at how we can use the ML.NET framework to create a windows forms app that can detect objects in an image.
 author: geoffrey-omukuba
-date: 2021-09-06T00:00:00-12:00
+date: 2021-11-19T00:00:00-02:30
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,8 +14,9 @@ images:
   - url: /engineering-education/using-mldotnet-for-object-detection-in-winforms/hero.jpg
     alt: Using ML.NET for Object Detection in WinForms Hero Image
 ---
-Object detection is the ability of a program to detect objects in an image. ML lets the .NET developers implement this feature by using the ML.NET framework to create bespoke machine learning models in C# or F#.
 
+Object detection is the ability of a program to detect objects in an image. ML lets the .NET developers implement this feature by using the ML.NET framework to create bespoke machine learning models in C# or F#.
+<!--more-->
 In this article, we will look at how we can use the ML.NET framework to create a windows forms app that can detect objects in an image.
 
 ### Prerequisites
@@ -24,20 +25,22 @@ To follow along, you need to have:
 - Basic understanding of [.NET](https://docs.microsoft.com/en-us/dotnet/) development platform.
 - Microsoft Visual Studio installed. You can download Visual Studio from [here](https://visualstudio.microsoft.com/vs/).
 
-The first step is opening visual studio and following the steps below:
+The first step is opening visual studio and follow the steps below:
 1. Click on `Create new project`.
 2. On the next screen search for `Windows Forms` and select `Windows Forms App(.NET Framework)` and select the one that is using `C#`. and click `Next`
 3. Enter the name of the project you want to create i.e, `Win_Forms_ObjectDetection`, and click `create`.
 
-![Project name](/engineering-education/using-ml.net-for-object-detection-in-winforms/projectname.jpg)
+![Project name](/engineering-education/using-mldotnet-for-object-detection-in-winforms/projectname.jpg)
 
 The form designer should look at the one shown in the figure below.
 
-![Design](/engineering-education/using-ml.net-for-object-detection-in-winforms/appearance.jpg)
+![Design](/engineering-education/using-mldotnet-for-object-detection-in-winforms/appearance.jpg)
 
-You will be required to download some nugget packages for the object detection to be effective. These packages are `Microsoft.ML`, `Microsoft.ML.OnnxRuntime`. Since you are dealing with object detection, you will also download `Microsoft.ML.Image.Analytics`. You will also download `Microsoft.ML.OnnxTransformer` because you are using the Microsoft object detection model.
+You will be required to download some nugget packages for the object detection to be effective. These packages are `Microsoft.ML`, `Microsoft.ML.OnnxRuntime`. 
 
-### Selecting a the right processor
+Since you are dealing with object detection, you will also download `Microsoft.ML.Image.Analytics`. You will also download `Microsoft.ML.OnnxTransformer` because you are using the Microsoft object detection model.
+
+### Selecting the right processor
 You will encounter an error when you build the project, this is because `ML.NET` supports only a 64-bit processor and the settings is 32-bit processor.
 
 To solve this error, right-click on the project name and navigate to properties, then go to build and select `x64` under `platform target`.
@@ -251,6 +254,7 @@ The code also has `BndBoxes`. This code includes the X-axis and Y-axis values, t
 Now, there are four classes in your `Models` folder that you created. i.e:
 
 **Image settings class**
+
 The image settings class is used to set the width and height of the images. The code below is used in the class.
 
 ```C#
@@ -262,6 +266,7 @@ Public class ImageSettings
 ```
 
 **Image input class**
+
 The image input class receives the data of the image that is to be predicted. This class takes properties from the images settings class and it is a bitmap type of data:
 
 ```C#
@@ -287,4 +292,4 @@ Hope you find this tutorial helpful.
 Happy coding!
 
 ---
-Peer Review 
+Peer Review Contributions by: [Monica Masae](/engineering-education/authors/monica-masae/)
