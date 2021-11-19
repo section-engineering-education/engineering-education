@@ -13,8 +13,6 @@ In this tutorial, we will learn how to create, read, update and delete spatial d
 - [Conclusion](#conclusion)
 - [Further Reading](#further-reading)
 
-
-
 ### Prerequisites
 * How to create a Flask app
 * How to use Postman
