@@ -6,7 +6,7 @@ url: /how-to-create-font-chooser-app/
 title: How to Create a Font Chooser App Using Python
 description: This article will show you how to create a font chooser app using Python.
 author: majiyebo-ezra-shewuri
-date: 2021-10-27T00:00:00-11:00
+date: 2021-11-19T00:00:00-02:45
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,6 +14,7 @@ images:
   - url: /engineering-education/how-to-create-font-chooser-app/hero.jpg
     alt: Font Chooser Tkinter
 ---
+
 A font picker is a simple application that allows you to browse through all the fonts installed on your computer, filtering down your options to find the ideal one for your project.
 <!--more-->
 In this tutorial, the Tkinter Python library will be used to construct a font chooser application.
@@ -47,7 +48,7 @@ pip install tk
 ### A little background about fonts
 A font is a digital data file that contains a collection of graphically related glyphs. A font maker application is used to design and create a computer font.
 
-Fonts are also known as typefaces, and they come in a variety of weights, shapes, sizes, colour, design and widths.
+Fonts are also known as typefaces, and they come in a variety of weights, shapes, sizes, color, design and widths.
 
 According to estimates, there are over half a million fonts in use worldwide. A font chooser application will assist computer users in filtering down the total number of fonts installed in a computer system and selecting the font they wants to use.
 
@@ -146,7 +147,7 @@ And the font chooser interface will look like this:
 ![fontapp image](/engineering-education/how-to-create-font-chooser-app/fontchooserapp.png)
 
 ### Conclusion
-In this tutorial, we looked at the different types of computer font formats and how to make a font chooser application.
+In this tutorial, we looked at the different types of computer font formats and how to make a font chooser application. Go ahead and try it out in your projects.
 
 ### Reference
 [Python GUI programming with Tkinter](https://www.perlego.com/book/721869/python-gui-programming-with-tkinter-pdf) by Alan D Moore
