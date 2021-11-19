@@ -1,6 +1,6 @@
 We are building a REST API that can be used to update a geospatial database. Using flask restful, we will perform basic CRUD(create, read, update and delete) operations on spatial data. It is recommended that readers should know how to create a geospatial database. You can click here to learn how to create a geodatabase using flask, PostgreSQL and Postgis. 
 
-In this tutorial, we will learn how to create, read, update and delete spatial data from a geospatial database using flask_restful. We will be converting the code in this tutorial to API, so that it can accept a request from different apps such as mobile apps, web-apps and desktop apps.
+In this tutorial, we will learn how to create, read, update and delete spatial data from a geospatial database using flask_restful. We will be converting the code in this [tutorial](https://www.section.io/engineering-education/how-to-create-a-geoserver-and-geodatabase/) to API, so that it can accept a request from different apps such as mobile apps, web-apps and desktop apps.
 
 ### Table of Contents
 - [Prerequisites](#prerequisites)
@@ -12,6 +12,8 @@ In this tutorial, we will learn how to create, read, update and delete spatial d
 - [Delete](#delete)
 - [Conclusion](#conclusion)
 - [Further Reading](#further-reading)
+
+
 
 ### Prerequisites
 * How to create a Flask app
@@ -187,3 +189,5 @@ We have created an API that can be used for creating, reading, updating and dele
 - [Flask Restful](https://flask-restful.readthedocs.io/en/latest)
 - [HTTP status code](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
 
+
+[Github repository](https://github.com/isaiaholadapo/api-geodatabase)
