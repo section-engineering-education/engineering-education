@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /cryptocurrency-both-as-an-enabler-and a-solution-to-ransomware/
+url: /cryptocurrency-both-as-an-enabler-and-a-solution-to-ransomware/
 title: Cryptocurrency both as an Enabler and a Solution to Ransomware
 description: This article will highlight how cryptocurrency has an impact on ransomware activities.
 author: bashiir-isla
@@ -11,14 +11,12 @@ topics: [Blockchain]
 excerpt_separator: <!--more-->
 images:
 
- - url: /engineering-education/cryptocurrency-both-as-an-enabler-and a-solution-to-ransomware/hero.jpg
+ - url: /engineering-education/cryptocurrency-both-as-an-enabler-and-a-solution-to-ransomware/hero.jpg
    alt: Crypto Example Image
 ---
-Ransomware continues to cause harm despite implementing prevention and mitigation steps suggested by cybersecurity specialists and other players. Newer malware enablers are a significant contributor to this trend. Cryptocurrency is one of such enablers of increased malware spread. 
-<!--more-->
 
 [Ransomware](/engineering-education/what-is-ransomware/) continues to cause harm despite implementing prevention and mitigation steps suggested by cybersecurity specialists and other players. Newer malware enablers are a significant contributor to this trend. Cryptocurrency is one of such enablers of increased malware spread.
-
+<!--more-->
 Various players in the tech industry have proposed divergent solutions to mitigate malware attacks, including banning cryptocurrency usage. Some believe that the best solution is taking the necessary steps to limit the spread of cryptocurrency-enabled ransomware.
 
 This article discusses the ransomware problem with crypto, cryptocurrency mining malware, and how cryptocurrency solves the ransomware problem.
