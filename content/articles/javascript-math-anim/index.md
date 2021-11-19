@@ -45,7 +45,6 @@ function animate(currentTimeParam){
     prevTimeArg = currentTimeParam ;
     image.style.top = (Math.sin(angle) * 150) + "px";
     image.style.left = (Math.cos(angle) * 150) + "px";
-    // Passing the current time and previous times
     requestAnimationFrame(currentTime => animate(currentTime));
 }
 requestAnimationFrame(animate);
@@ -77,6 +76,7 @@ The `animate()` function also calls the `requestAnimationFrame()` function to sc
 <html lang="en">
   <head>
       <title>Test</title>
+      <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <style>
           .circle {
@@ -166,25 +166,24 @@ Our 'sphere' is not perfectly at the center of the rotation if you are keen. You
         <figure class="circle"></figure>
     </div>
     <script>
-        // The image variable
-        let image = document.querySelector("img");
-        // 90 degrees
-        let angle = Math.PI / 2;
-        //variable to store the previous time the animate funuction last fired
-        let prevTimeArg;
-        function animate(currentTimeParam, prevTimeArg) {
+      // The image variable
+      let image = document.querySelector("img");
+      // 90 degrees
+      let angle = Math.PI / 2;
+      //variable to store the previous time the animate funuction last fired
+      let prevTimeArg;
+      function animate(currentTimeParam){
 
-            if (prevTimeArg != null) {
-                angle += (currentTimeParam - prevTimeArg) * 0.004;
-            }
-            // Setting the previous time to the time the function currently fires
-            prevTimeArg = currentTimeParam ;
-            image.style.top = (Math.sin(angle) * 150) + "px";
-            image.style.left = (Math.cos(angle) * 150) + "px";
-            // Passing the current time and previous times
-            requestAnimationFrame(currentTime => animate(currentTime, prevTimeArg));
-        }
-        requestAnimationFrame(animate);
+          if (prevTimeArg != null) {
+              angle += (currentTimeParam - prevTimeArg) * 0.004;
+          }
+          // Setting the previous time to the time the function currently fires
+          prevTimeArg = currentTimeParam ;
+          image.style.top = (Math.sin(angle) * 150) + "px";
+          image.style.left = (Math.cos(angle) * 150) + "px";
+          requestAnimationFrame(currentTime => animate(currentTime));
+      }
+      requestAnimationFrame(animate);
     </script>
   </body>
 </html>
