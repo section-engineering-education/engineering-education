@@ -35,7 +35,7 @@ Bidirectional Encoder Representations from Transformers (BERT) is a natural lang
 This model was originally presented by Jacob Devlin and his research team at Google in 2018.
 
 ### How to install the BERT model and import its dependencies
-We will be using the pre-built BERT model from TensorFlow.js for this build. Pre-trained models make it easy to get started with huge models without getting involved with many setup and training.
+We will be using the pre-built BERT model from TensorFlow.js for this build. Pre-trained models make it easy to get started with huge models without getting involved with much setup and training.
 
 We will be installing three packages. `@tensorflow/tfjs` to install tensorflow.js library, `@tensorflow-models/qna` to download the question-answering model, and `react-loader-spinner` to give us a nice loading interface as our BERT model is being downloaded. It is quite a large model. Thus, a nice loading interface would come in handy.
 
