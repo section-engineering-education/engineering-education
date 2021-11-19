@@ -34,6 +34,7 @@ This is the JavaScript code.
 let image = document.querySelector("img");
 // 90 degrees
 let angle = Math.PI / 2;
+//variable to store the previous time the animate funuction last fired
 let prevTimeArg;
 function animate(currentTimeParam){
 
@@ -169,6 +170,7 @@ Our 'sphere' is not perfectly at the center of the rotation if you are keen. You
         let image = document.querySelector("img");
         // 90 degrees
         let angle = Math.PI / 2;
+        //variable to store the previous time the animate funuction last fired
         let prevTimeArg;
         function animate(currentTimeParam, prevTimeArg) {
 
