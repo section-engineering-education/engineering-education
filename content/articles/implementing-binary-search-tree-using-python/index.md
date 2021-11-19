@@ -22,12 +22,17 @@ In this article, we will:
 - Discuss various types of binary trees.
 
 ### Table of contents
-1. [Prerequisites](#prerequisites)
-2. [Types of binary tree](#types-of-binary-search-trees)
-3. [Creating binary tree](#creating-a-tree)
-4. [Delete a tree](#deleting-a-tree)
-5. [Checking empty nodes](#checking-for-empty-nodes)
-7. [Conclusion](#conclusion)
+- [Table of contents](#table-of-contents)
+- [Prerequisites](#prerequisites)
+- [Binary search tree](#binary-search-tree)
+- [Types of binary search trees](#types-of-binary-search-trees)
+- [Creating a binary tree](#creating-a-binary-tree)
+- [Deleting a tree](#deleting-a-tree)
+- [Adding data in tree](#adding-data-in-tree)
+- [Checking for empty nodes](#checking-for-empty-nodes)
+- [Searching for a node in the tree](#searching-for-a-node-in-the-tree)
+  - [Benefits of using binary search trees](#benefits-of-using-binary-search-trees)
+- [Conclusion](#conclusion)
 
 ### Prerequisites
 In order to understand this tutorial, you must have:- 
@@ -64,12 +69,12 @@ We need the following Python syntax to generate a binary tree. A recursive funct
 
 ```python
 class binary_tree:
-  def __init__(self, key)   #function that holds 2 parameters self == object of class
-        self.leftchild = None
-        self.rightchild = None
+  def __init__(self, key)   #function to insert data to our binary tree
+        self.leftchild = None #set leftchild of the tree to add items
+        self.rightchild = None #set rightchild of the tree to add items
         self.key = key
   class binary_tree:
-    def __init__(self):
+    def __init__(self): #generate a tree to hold values 
       self.root = None
     #this is the end 
 ```
@@ -78,22 +83,22 @@ class binary_tree:
 Incase one wants to get rid of a tree use this script:
 
 ```python
-def add(self, value):
+def add(self, value): #function to add data items to the tree
   if self.key is None:
-      self.key = data
+      self.key = data #begin adding elements to the binary tree
       return
   if self.key == value:   # this will take care for duplicate nodes
       return              
-  if value < self.key:
+  if value < self.key:  #if value of the key node is more than the leftchild accept values
      if self.leftchild:
-       self.leftchild.add(value)
-      else:
+       self.leftchild.add(value) #set values to the leftchild of the tree
+      else:   
          self.leftchild = binary_tree(value)
-  else:
-    if self.rightchild:
-      self.rightchild.add(value)
+  else:   #values are more than the key value
+    if self.rightchild:     #if on the rigghtchild of the tree
+      self.rightchild.add(value)  #set values to rightchild
       else:
-        self.rightchild = binary_tree(value)
+        self.rightchild = binary_tree(value) #values cannot be less then the root key
     ##End of search of our binary tree
 ```
 
@@ -102,17 +107,17 @@ Inorder to add data in our tree use this python script:
 
 ```python
 root = binary_tree(50)    # 50 is our root key and our object is root
-elements = {20,56,3,4,7,10,17,20}
+elements = {20,56,3,4,7,10,17,20}   #adds values to the tree 
 for i in elements:
-    root.add(i)
+    root.add(i)     #recursively adds values in the tree
   root.search(10)
 ```
 
 ### Checking for empty nodes
 
 ```python
-def add(self,value):
-  if self.key is None:
+def add(self,value):    #check for empty values 
+  if self.key is None:  #if value is set  to None
     self.key = value
 ```
 
@@ -125,7 +130,7 @@ If the data is less than the root key, we will search on the left subtree else s
 
 ```python
   def search(self, value):
-      if self.key == value:
+      if self.key == value:     #check if value is equal to the key val
         print("The node is present")
         return
       if value < self.key:    #Here left subtree can be empty or it can contain one or more nodes
@@ -135,9 +140,10 @@ If the data is less than the root key, we will search on the left subtree else s
           print("The node is empty in the tree!")
       else:
         if self.rightchild:
-            self.rightchild.search(value)
-        else: 
-            print("The node is empty in the tree!")          
+            self.rightchild.search(value)   #search for all the values in the rightchild
+            return true
+        else:   
+            print("The node is empty in the tree!")          #print out empty rightchild nodes in the tree
 ```
 
 The following table below summarises the space and time complexity of the algorithm:
@@ -161,7 +167,13 @@ The following table below summarises the space and time complexity of the algori
 7. Reduces the time of the search, deletion, lookup by half.
 
 ### Conclusion
-
+In this article we have learned the following:
+ - What is a binary search tree
+ - Types of binary search trees
+ - Creating a tree
+ - Adding data in tree
+ - Checking for empty nodes
+ - Some of the benefits of using binary  search trees
 
 ---
 Peer Review Contributions by: [Wanja Mike](/engineering-education/authors/michael-barasa/)
