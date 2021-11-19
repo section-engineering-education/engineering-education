@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /using-mldotnet-for-object-detection-in-winforms/
 title: Using ML.NET for Object Detection in WinForms
-description: This article goes through how data to be transmitted on a network is encoded. It will emphasize more on the different data encoding techniques. It will also talk about digital and analog data.
+description: Object detection is the ability of a program to detect objects in an image. ML lets the .NET developers implement this feature by using the ML.NET framework to create bespoke machine learning models in C# or F#. In this article, we will look at how we can use the ML.NET framework to create a windows forms app that can detect objects in an image.
 author: geoffrey-omukuba
 date: 2021-09-06T00:00:00-12:00
 topics: [Languages]
