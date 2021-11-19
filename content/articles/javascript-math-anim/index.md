@@ -45,8 +45,8 @@ function animate(currentTimeParam, prevTimeArg) {
     image.style.top = (Math.sin(angle) * 150) + "px";
     image.style.left = (Math.cos(angle) * 150) + "px";
     // Passing the current time and previous times
-    //For the previous time, we pass in the `prevTimeArg` argument
-    //prevTimeArg` stores this time
+    // For the previous time, we pass in the `prevTimeArg` argument
+    // prevTimeArg` stores this time
     requestAnimationFrame(currentTime => animate(currentTime, prevTimeArg));
 }
 requestAnimationFrame(animate);
