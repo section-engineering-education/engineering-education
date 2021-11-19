@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /implementing-binary-search-tree-using-python/
 title: How to Implement Binary Search Tree in Python
-description: This article will help the reader understand how to implement binary search tree in Python.
+description: This article will help the reader understand how to implement a binary search tree in Python.
 author: samuel-mutero
 date: 2021-11-17T00:00:00-14:48
 topics: [Languages]
@@ -22,21 +22,20 @@ In this article, we will:
 - Discuss various types of binary trees.
 
 ### Table of contents
-- [Table of contents](#table-of-contents)
 - [Prerequisites](#prerequisites)
 - [Binary search tree](#binary-search-tree)
 - [Types of binary search trees](#types-of-binary-search-trees)
 - [Creating a binary tree](#creating-a-binary-tree)
 - [Deleting a tree](#deleting-a-tree)
-- [Adding data in tree](#adding-data-in-tree)
+- [Adding data in a tree](#adding-data-in-a-tree)
 - [Checking for empty nodes](#checking-for-empty-nodes)
 - [Searching for a node in the tree](#searching-for-a-node-in-the-tree)
   - [Benefits of using binary search trees](#benefits-of-using-binary-search-trees)
 - [Conclusion](#conclusion)
 
 ### Prerequisites
-In order to understand this tutorial, you must have:- 
-1. An IDE (integrated development environment) that will aid in running our code. We will use Pycharm which can be downloaded from [here](https://www.jetbrains.com/pycharm/download) .
+To understand this tutorial, you must have:- 
+1. An IDE (integrated development environment) that will aid in running our code. We will use Pycharm which can be downloaded from [here](https://www.jetbrains.com/pycharm/download).
 2. Some basic knowledge of Python.
 
 ### Binary search tree
@@ -45,7 +44,7 @@ A binary tree is a set of finite nodes that can be empty or may contain several 
 A node is made up of three entities. A value with two pointers on the left and right.
 The root node is the parent component on each subtree. It can also be considered as the topmost node in a tree.
 
-The nodes attached to the parent element are referred to as chidren. Leaf nodes, on the other hand, are the base elements in a binary tree.
+The nodes attached to the parent element are referred to as children. Leaf nodes, on the other hand, are the base elements in a binary tree.
 
 ### Types of binary search trees
 The various types of binary trees include:
@@ -62,7 +61,7 @@ A balanced tree is quite efficient when searching, inserting, and deleting compo
 
 3. Full binary tree
 
-It contains an equal number of nodes in each subtree except from the leaf nodes.
+It contains an equal number of nodes in each subtree except for the leaf nodes.
 
 ### Creating a binary tree
 We need the following Python syntax to generate a binary tree. A recursive function is required since the sub-tree has similar elements.
@@ -70,8 +69,8 @@ We need the following Python syntax to generate a binary tree. A recursive funct
 ```python
 class binary_tree:
   def __init__(self, key)   #function to insert data to our binary tree
-        self.leftchild = None #set leftchild of the tree to add items
-        self.rightchild = None #set rightchild of the tree to add items
+        self.leftchild = None #setting leftchild of the tree to add items
+        self.rightchild = None #setting rightchild of the tree to add items
         self.key = key
   class binary_tree:
     def __init__(self): #generate a tree to hold values 
@@ -80,7 +79,7 @@ class binary_tree:
 ```
 
 ### Deleting a tree
-Incase one wants to get rid of a tree use this script:
+To delete a tree we use the following code:
 
 ```python
 def add(self, value): #function to add data items to the tree
@@ -103,7 +102,7 @@ def add(self, value): #function to add data items to the tree
 ```
 
 ### Adding data in tree 
-Inorder to add data in our tree use this python script: 
+To add data to our tree, we use the following Python script: 
 
 ```python
 root = binary_tree(50)    # 50 is our root key and our object is root
@@ -114,19 +113,20 @@ for i in elements:
 ```
 
 ### Checking for empty nodes
+The `check()` function below allows us to check for empty nodes:
 
 ```python
-def add(self,value):    #check for empty values 
+def check(self,value):    #check for empty values 
   if self.key is None:  #if value is set  to None
     self.key = value
 ```
 
 ### Searching for a node in the tree
-If we want to know whether a given node is there or not, we will compare the data of the given node with the data of the root node.
+If we want to know whether a given node is there or not, we will compare the data of the given node with that in the root node.
 
 First, we need to search whether the root key is equal to the given data. If the given node is present in the tree, we can print a message.
 
-If the data is less than the root key, we will search on the left subtree else search on the right subtree.
+If the data is less than the root key, we will search on the left subtree, else, we look at the right subtree.
 
 ```python
   def search(self, value):
@@ -148,7 +148,8 @@ If the data is less than the root key, we will search on the left subtree else s
 
 The following table below summarises the space and time complexity of the algorithm:
 
-    Binary Search Tree
+**Binary Search Tree**
+
 |     | Average  | Worst case|
 |:--- | :--- | :---|
 |**Space**| *O(n)*|*O(n)*|
@@ -157,23 +158,17 @@ The following table below summarises the space and time complexity of the algori
 **Insertion** |*O(log n)* |*O(n)*
 **Removal** |*O(log n)* |*O(n)*
 
+
 #### Benefits of using binary search trees 
-1. They allow fast lookup, addition, and deletion of items in a tree.
-2. It can be used to implement either dynamic sets of elements or lookup tables.
-3. They allow the finding of an element by its key.
-4. They keep the keys in sorted order and one can call the item by its index.
-5. They traverse the tree from its root to the leaf nodes hence making comparisons to keys stored in the nodes of the tree and deciding whether to continue searching in the right or the left subtrees.
-6. They use a logarithmic time complexity of k = log(n) where k is the lookup, insertion, and removal time and n is the number of items stored in the tree. This is better than the linear search time.
-7. Reduces the time of the search, deletion, lookup by half.
+- They allow fast lookup, addition, and deletion of items in a tree.
+- It can be used to implement either dynamic sets of elements or lookup tables.
+- They allow one to find an element using its key.
+- They use a logarithmic time complexity of `k = log(n)` where `k` is the lookup, insertion, and removal time and `n` is the number of items stored in the tree. This is better than linear search time.
 
 ### Conclusion
-In this article we have learned the following:
- - What is a binary search tree
- - Types of binary search trees
- - Creating a tree
- - Adding data in tree
- - Checking for empty nodes
- - Some of the benefits of using binary  search trees
+In this article, we have learned the definition and types of binary search trees.
+
+We have also discussed how to create a tree, as well as add and delete data. Finally, we looked at how to check for empty nodes.
 
 ---
 Peer Review Contributions by: [Wanja Mike](/engineering-education/authors/michael-barasa/)
