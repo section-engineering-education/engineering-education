@@ -34,8 +34,8 @@ This is the JavaScript code.
 let image = document.querySelector("img");
 // 90 degrees
 let angle = Math.PI / 2;
-
-function animate(currentTimeParam, prevTimeArg) {
+let prevTimeArg;
+function animate(currentTimeParam){
 
     if (prevTimeArg != null) {
         angle += (currentTimeParam - prevTimeArg) * 0.004;
@@ -45,9 +45,7 @@ function animate(currentTimeParam, prevTimeArg) {
     image.style.top = (Math.sin(angle) * 150) + "px";
     image.style.left = (Math.cos(angle) * 150) + "px";
     // Passing the current time and previous times
-    // For the previous time, we pass in the `prevTimeArg` argument
-    // prevTimeArg` stores this time
-    requestAnimationFrame(currentTime => animate(currentTime, prevTimeArg));
+    requestAnimationFrame(currentTime => animate(currentTime));
 }
 requestAnimationFrame(animate);
 ```
@@ -67,12 +65,7 @@ The vertical radius of our circle is computed using `Math.sin()` and multiplied 
 > Note that you can make the image move in an anticlockwise function by making the top style negative. You can also change the speed of rotation by changing the number which you multiply the difference between the current time and the previous time the function executed i.e (currentTimeParam - prevTimeArg) * **0.004**. If you increase the number, the speed will increase. If you make it smaller, it will slow down the speed.
 
 The `requestAnimationFrame()` function schedules the `animate()` function to run whenever the browser is ready to paint the window/screen with new content. 
-The `animate()` function also calls the `requestAnimationFrame()` function to schedule the next screen update. The `animate()` function here receives the current timestamp as an argument using the arrow function. For the previous time(the time the function last fired), we pass in the `prevTimeArg` argument. `prevTimeArg` stores this time as it was set in this line:
-
-```javascript
-    // Setting the previous time to the time the function currently fires
-    prevTimeArg = currentTimeParam ;
-```
+The `animate()` function also calls the `requestAnimationFrame()` function to schedule the next screen update. 
 
 > You can also set the path to an ellipse. You can do that by changing the two radii: horizontal radius and vertical radius.
 
@@ -176,7 +169,7 @@ Our 'sphere' is not perfectly at the center of the rotation if you are keen. You
         let image = document.querySelector("img");
         // 90 degrees
         let angle = Math.PI / 2;
-
+        let prevTimeArg;
         function animate(currentTimeParam, prevTimeArg) {
 
             if (prevTimeArg != null) {
@@ -187,8 +180,6 @@ Our 'sphere' is not perfectly at the center of the rotation if you are keen. You
             image.style.top = (Math.sin(angle) * 150) + "px";
             image.style.left = (Math.cos(angle) * 150) + "px";
             // Passing the current time and previous times
-            //For the previous time, we pass in the `prevTimeArg` argument
-            //prevTimeArg` stores this time
             requestAnimationFrame(currentTime => animate(currentTime, prevTimeArg));
         }
         requestAnimationFrame(animate);
