@@ -5,7 +5,7 @@ published: true
 url: /building-javafx-editable-table-views/
 title: Building JavaFX Editable Table Views
 description: In this article we will go through how to setup and create TableView in JavaFX. We will also learn how to make these views editable.
-author: prosper-grateful
+author: prosper-grateful-juma
 date: 2021-11-18T00:00:00-13:40
 topics: [Languages]
 excerpt_separator: <!--more-->
