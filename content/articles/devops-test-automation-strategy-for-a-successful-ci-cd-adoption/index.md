@@ -1,99 +1,95 @@
 ### Introduction 
-Test robotization is the foundation of DevOps culture. While a ton of establishments have understood its need and importance for quite a while presently, the breakout of the COVID-19 pandemic has driven them to accept mechanized testing all through the SDLC for CI/CD. Nonetheless, the desperate requirement for cutting edge test robotization, attributable to the work from home the truth is making the test computerization execution testing. 
-In IT organizations, designers, engineers in the tasks office and analyzers wear many caps, with different obligations and occupation profiles as they all work in particular working units as isolated bodies. Henceforward, the basic inquiry is whether QA can upgrade and provoke item conveyance by joining these particular bunches under the DevOps banner. What's more, on the off chance that it thus, then, at that point, the inquiry is how to consolidate robotized testing situations. This article will endeavor to address this multitude of inquiries and give steps to set up a hearty testing robotization methodology. 
+Test automation is the cornerstone of DevOps culture. While a lot of institutions have realized its need and significance for a long time now, the breakout of the COVID-19 pandemic has driven them to embrace automated testing throughout the SDLC for CI/CD. However, the dire need for advanced test automation, owing to the work from home reality is making test automation implementation more challenging.
+In IT companies, developers, engineers in the operations department and testers wear many hats, with various duties and job profiles as they all work in distinct operating units as separate bodies. Henceforward, the critical question is whether QA can enhance and prompt product delivery by uniting these distinct clusters under the DevOps flag. And if so, then the question is how to incorporate automated testing scenarios. This article will attempt to answer all these questions and provide steps to establish a robust testing automation strategy.
 ### Table of content 
 - [Introduction](#introduction)
 - [Table of content](#table-of-content)
-- [Why is having a test robotization procedure essential for CI/CD?](#why-is-having-a-test-robotization-procedure-essential-for-cicd)
-- [Six ventures to construct a fruitful CI test computerization procedure](#six-ventures-to-construct-a-fruitful-ci-test-computerization-procedure)
-  - [Define your projects extent of mechanization](#define-your-projects-extent-of-mechanization)
-  - [Choose the fitting testing robotization tool](#choose-the-fitting-testing-robotization-tool)
-  - [Set up your own cloud based test climate](#set-up-your-own-cloud-based-test-climate)
-  - [Conduct an experiment hazard appraisal](#conduct-an-experiment-hazard-appraisal)
-  - [Run and oversee experiments](#run-and-oversee-experiments)
-  - [Analyze ceaselessly and redesign the methodology for development](#analyze-ceaselessly-and-redesign-the-methodology-for-development)
-- [Benefits of test computerization](#benefits-of-test-computerization)
+- [Why is having a test automation strategy crucial for CI/CD?](#why-is-having-a-test-automation-strategy-crucial-for-cicd)
+- [Six steps to building a successful CI test automation strategy](#six-steps-to-building-a-successful-ci-test-automation-strategy)
+  - [Define your project’s scope of automation](#define-your-projects-scope-of-automation)
+  - [Choose the appropriate testing automation tool](#choose-the-appropriate-testing-automation-tool)
+  - [Set up your cloud-based test environment](#set-up-your-cloud-based-test-environment)
+  - [Conduct a test case risk assessment](#conduct-a-test-case-risk-assessment)
+  - [Run and manage test cases](#run-and-manage-test-cases)
+  - [Analyze continuously and remodel the strategy for improvement](#analyze-continuously-and-remodel-the-strategy-for-improvement)
+- [Benefits of test automation](#benefits-of-test-automation)
 - [Conclusion](#conclusion)
 
-### Why is having a test robotization procedure essential for CI/CD?
-Automated testing is the chief move the right way when you set out on your robotization adventure. Nevertheless, for reliable transport to be correct a solid match for the designer, you truly need to create a quick and perpetual analysis part. But, just tolerating the DevOps test computerization part isn't good, considering the way that to achieve compelling CI/CD complete it precisely. 
-A piece of the genuine instances of the best advancement disillusionments shows what can happen when adequate testing isn't done on independent structures/programming. For instance, 
-> On April 26, 1994, a plane named Airbus A300B4-622R was finishing its standard flight plan, when not long before its landing in Nagoya Airport it crushed, causing a significant misfortune count of 264 people. To date, the setback remains as maybe the most dangerous fiascos all through the whole presence of China Airlines. 
-> Similarly, on August 14, 2003, after 2:00 PM, a high-voltage power line in northern Ohio brushed against some blocked trees and shut down absolutely, obliging 50 billion people to live without power for two days. The ready system frustration achieved by programming issues made it likely the best blackout in North American history.
-### Six ventures to construct a fruitful CI test computerization procedure
-#### Define the extent of your project of mechanization 
-The underlying advance is to dissect the degree of your endeavor as indicated by a robotization point of view. 
-Here, all assumptions, endeavors, and runs ought to be obvious by the item bunch, including its intervals of time. 
-The focal thought for motorizing tests is to know which ones to robotize. You can't robotize everything, so you should organize your requirements, which will ultimately achieve higher ROI. One of the outstanding models that can help you in shortlisting tests for computerization is Mike Cohen's test robotization pyramid, which consolidates: 
-1. Unit test 
-2. Acceptance test 
-3. User Interface test 
-![pyramid](pyramid.png) 
-Notwithstanding the quantity of Selenium arranges your analyzers might know without doubt testing orders they use, somethings basically can't be motorized like: 
-> Ever-changing necessities 
-> Exhaustive documentation 
-> Anti-robotization 
-> One-time testing 
+### Why is having a test automation strategy crucial for CI/CD?
+Automated testing is the first move in the right direction when you embark on your automation journey. However, for continuous delivery to be right up the developer’s alley, you need to build a rapid and continuous feedback mechanism. Although, merely embracing the DevOps test automation mechanism is not adequate, because to achieve successful CI/CD it is necessary to implement it correctly.
+Some of the severe real-world instances of the biggest technology failures (which occurred years ago, when the world was not as technologically sophisticated) indicate what can happen when adequate testing is not done on respective systems/software. For instance,
+> On April 26, 1994, an aircraft named Airbus A300B4-622R was finishing its usual flight routine, when right before its landing at Nagoya Airport it crashed, inflicting a heavy casualty count of 264 people. To date, the accident remains one of the most lethal mishaps in the history of China Airlines.
+> Similarly, on August 14, 2003, after 2:00 PM, a high-voltage power line in northern Ohio brushed against some overgrown trees and shut down completely, forcing 50 billion people to live without power for two days. The alarm system failure caused by software issues made it one of the biggest blackouts in North American history.
+### Six steps to building a successful CI test automation strategy
+#### Define your project’s scope of automation
+The first step is to examine the scope of your project from an automation point of view. Here, all deliverables, tasks, and sprints must be well-defined by the software team, including its time frames.
+The deciding factor for automating test cases is to know which ones to automate. You cannot automate everything, so you should be lining up your priorities, which will ultimately result in higher ROI. One of the well-known models that can aid you in shortlisting test cases for automation is Mike Cohen’s test automation pyramid, which includes:
+1. Unit test
+2. Acceptance test
+3. User Interface (UI) test 
+![pyramid](/engineering-education/devops-test-automation-strategy-for-a-successful-ci-cd-adoption/pyramid.png) 
+No matter how many Selenium commands your testers might know or what testing commands they use, some things simply cannot be automated like:
+> Ever-changing needs
+> Exhaustive documentation
+> Anti-automation (like CAPTCHA)
+> One-time testing
 > Ad-hoc testing
-#### Choose the fitting testing robotization tool 
-Picking a fitting test computerization gadget that satisfies the rules of your endeavor is crucial since it is one of the indispensable components to ensure the achievement of your flexible test motorization framework. Regardless, a focal issue is the decision of the right instrument from a wide display of computerization devices open in the market today. 
-To pick the most fitting testing instrument that keeps an eye on your exceptional endeavor needs, follow these several direct advances: 
-Step 1:	Understand your endeavor needs totally 
-Stage 2: Check whether the gadget will maintain the stage/advancement on which your item/application is manufactured 
-Step 3:	Examine if the gadget can execute cross-stage testing 
-Step 4:	Verify if the gadget will see as some sort of concordance between effortlessness of movement and development 
-Stage 5: While shortlisting instruments ponder these basic limits: 
-Approving expense of the instrument 
-Upkeep costs 
-Gadget flexibility 
-Planning and support 
-Gadget execution and reliability 
-Regardless, it is continually urged to guide the top-level all-around informed specialists with the right authority to pick/plan a fitting testing gadget. 
-#### Set up your cloud-based test climate 
-A test climate is a mix of equipment and programming, which empowers QA analyzers to run different tests on clever local/web applications. Be that as it may, it requires a lot of exertion and skill to assemble/convey an anticipated, cloud-based test climate for a substantial CI/CD pipeline. Henceforth, a savvy move is to counsel the right arrangement supplier for designing a steady, cloud-based test climate. 
-Nonetheless, you should find specific ways to make/design a mechanized test climate for DevOps like: 
-Step 1		Realizing the prerequisites of a testing climate.
-Step 2		Planning, creating, and provisioning of the test climate. 
-Step 3		Embracing vital innovations and apparatuses with licenses.
-Step 4		Data veiling and desensitization.
-Step 5		Controlling and noticing the test climate proactively.
-#### Conduct an experiment hazard appraisal 
-The fourth step is to analyze the perils associated with automation testing, check out the earnestness of those risks, and how to propel them. A trial risk assessment is a two-adventure strategy, which fuses: 
+#### Choose the appropriate testing automation tool
+Picking a suitable test automation tool that meets the standards of your project is crucial since it is one of the key factors to ensure the success of your adaptive test automation strategy. However, a major concern is the selection of the right tool from a wide array of automation tools available in the market today.
+To select the most appropriate testing tool that addresses your unique project needs, follow these few simple steps:
+Step 1:    Understand your project needs thoroughly
+Step 2:    Check whether the tool will support the platform/technology on which your software/app is built
+Step 3:    Examine if the tool can execute cross-platform testing
+Step 4:    Verify if the tool will strike a balance between ease of operation and technology
+Step 5:    While shortlisting tools consider these vital parameters:
+          > Licensing cost of the tool
+          > Maintenance costs
+          > Tool scalability
+          > Training and support
+          > Tool performance and stability
+However, it is always advised to consult the best-in-class subject matter experts with the right expertise to choose/configure an appropriate testing tool. 
+#### Set up your cloud-based test environment
+A test environment is a combination of hardware and software, which enables QA testers to run multiple tests on novel native/web applications. However, it requires a great deal of effort and expertise to build/deploy a predictable, cloud-based test environment for a concrete CI/CD pipeline. Hence, a smart move is to consult the right solution provider for configuring a stable, cloud-based test environment.
+However, you must take certain steps to create/configure an automated test environment for DevOps like:
+Step 1:    Realizing the requirements of a test environment
+Step 2:    Planning, developing, and provisioning of the test environment
+Step 3:    Embracing necessary technologies and tools with licenses
+Step 4:    Data masking and desensitization
+Step 5:    Controlling and observing the test environment proactively
+#### Conduct a test case risk assessment
+The fourth step is to analyze the risks linked with automation testing, examine the severity of those risks, and how to optimize it. A test case risk assessment is a two-step procedure, which includes:
+**Step 1: Functional path risk assessment**
+In this step, you need to capture the risk involved in every functional module and prioritize all functional modules against each other.
+**Step 2: Risk rating of test case**
+Once you identify the functional risks linked to a specific module, the second step is to calibrate those risks by recognizing the probability of failure and severity of business damage and then computing the risk factor for every test case with the following formula. 
+> Risks rating of test case = probability of failure * the severity of business damage
+ A few other risks that you must consider for your test cases are:
+ - Configuration risk
+ - API design risk
+ - Refactoring risk
+ - Integration risk
+ - Market risk
+ - Orchestration risk
+#### Run and manage test cases
+It is vital to define the test cases, execute them and manage them for effective automated testing. An execution plan must consist of two chief things:
+1. Daily tasks and
+2. Automation procedures
+Moreover, there are certain test tips that you can follow while writing test scripts and executing them like:
+- Choosing the test cases that you are willing to automate
+- Running and verifying test cases multiple times before adding them to a regression suite
+- Trying to make a test case resilient to changes
+- Using pipeline orchestrators to execute numerous test cases simultaneously
+#### Analyze continuously and remodel the strategy for improvement
+The last but not the least step is to constantly analyze the success and revamp the test automation strategy model via the automation maturity model (if needed). All you need to do in revamping the strategy is to go through everything in your existing strategy, find faults (if any) and fix them using the automation maturity model. This model is divided into multiple phases as follows:
 
-**Step 1:** 
-Utilitarian way peril evaluation 
-In this movement, you need to get the risk suggested in each helpful module and spotlight all viable modules against each other. 
-**Step 2:** 
-Hazard rating of analysis 
-At the point when you recognize the utilitarian perils associated with a specific module, the ensuing development is to adjust those risks by seeing the probability of dissatisfaction and earnestness of business hurt and thereafter handling the risk factor for each test with the going with formula. 
-- Risks rating of analysis = probability of dissatisfaction * earnestness of business hurt 
-> Few unique perils that you ought to consider for your examinations are: 
-- Configuration peril 
-- API design peril 
-- Refactoring peril 
-- Integration peril 
-- Market peril 
-- Orchestration peril
-#### Run and oversee experiments 
-Portray the trials, execute them and manage them for practical robotized testing. An execution plan ought to involve two supervisor things: 
-1. Step by step tasks and,
-2. Robotization strategi
-Additionally, there are certain test tips that you can follow while forming test scripts and executing them like: 
-- Choosing the analyses that you will automate 
-- Running and affirming investigates various events before adding them to a backslide suite 
-- Trying to advance a test safeguard solid to changes 
-- Using pipeline orchestrators to execute different examinations simultaneously
-#### Analyze ceaselessly and redesign the methodology for development 
-The last yet not the most un-advance is to ceaselessly take apart the accomplishment and re-try the test robotization framework model through motorization improvement model. All you truly need to do in re-trying the system is to go through everything in your present method, find defects and fix them using the computerization advancement model. This model is isolated into different stages as follows: 
-
-![automation-model](devops-automation-model.png) 
-### Benefits of test computerization 
-- Higher ROI 
-- Enhanced viability 
-- Reduced freedom to-grandstand 
-- Analysis of different investigations 
-- Fast-paced input response 
-- Optimum system use 
-- Predictable cloud-based test environment 
+![automation-model](/engineering-education/devops-test-automation-strategy-for-a-successful-ci-cd-adoption/devops-automation-model.png) 
+### Benefits of test automation
+ - Higher ROI
+ - Enhanced efficiency
+ - Reduced time-to-market
+ - Analysis of multiple test cases
+ - Fast-paced feedback response
+ - Optimum infrastructure utilization
+ - Predictable cloud-based test environment
 ### Conclusion 
-To rehearse the advantages of test computerization, a top-notch test motorization strategy is should have been executed, which could be exorbitant. The other test is to search for the right test motorization game plan provider with a skilled gathering of experts to send, build and stay aware of the test robotization system/structure. On the off chance that you will leave on your DevOps motorization adventure, contact our space subject matter experts, who will help you from advising, developing a vanguard robotization methodology to staying aware of the test suite.
+To fully exercise the merits of test automation, a top-notch test automation strategy is required to be implemented, which could be expensive. The other challenge is to search for the right test automation solution provider with a skilled team of experts to deploy, build and maintain the test automation strategy/framework.
