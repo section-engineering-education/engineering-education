@@ -6,7 +6,7 @@ url: /cryptocurrency-both-as-an-enabler-and-a-solution-to-ransomware/
 title: Cryptocurrency both as an Enabler and a Solution to Ransomware
 description: This article will highlight how cryptocurrency has an impact on ransomware activities.
 author: bashiir-isla
-date: 2021-11-09T00:00:00-18:00
+date: 2021-11-19T00:00:00-06:30
 topics: [Blockchain]
 excerpt_separator: <!--more-->
 images:
