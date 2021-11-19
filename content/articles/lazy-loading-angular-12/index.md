@@ -6,7 +6,7 @@ url: /lazy-loading-angular-12/
 title: How to Lazy Load Components in Angular 12
 description: This tutorial introduces reader to the basic concepts of lazy loading Angular components. We will learn how we can use this concept to only load components whose routes have been activated by the user.
 author:  jared-phelix
-date: 2021-11-18T00:00:00-18:00
+date: 2021-11-18T00:00:00-19:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
