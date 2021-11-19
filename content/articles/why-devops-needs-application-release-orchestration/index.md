@@ -14,14 +14,21 @@ images:
   - url: /engineering-education/why-devops-needs-application-release-orchestration/hero.jpg
     alt: Devops Image
 ---
-The world is increasingly adopting computerization. Individuals and organizations depend on software and applications to create and market their products and services. However, there remains a significant gap between the creation and delivery of software from the source to the end-user. This is a challenge that has become a common issue for the [DevOps](/engineering-education/what-it-takes-to-be-a-devops-engineer/) team. DevOps' focus is to improve the production speed of new software and applications. Yet, the lack of efficient processes to facilitate their speedy delivery to the consumers creates an unsustainable lag.
+
+The world is increasingly adopting computerization. Individuals and organizations depend on software and applications to create and market their products and services. However, there remains a significant gap between the creation and delivery of software from the source to the end-user. 
 <!--more-->
-There is also a need to link up DevOps with the market. Application release orchestration (ARO) is key in ensuring that the processes fulfill the end goal of reaching the final consumer in time. A complete DevOps implementation needs release orchestration. Release orchestration automates repetitive manual tasks. This enhances reduced costs, improved software delivery, and greater development cycle transparency.
+This is a challenge that has become a common issue for the [DevOps](/engineering-education/what-it-takes-to-be-a-devops-engineer/) team. DevOps' focus is to improve the production speed of new software and applications. Yet, the lack of efficient processes to facilitate their speedy delivery to the consumers creates an unsustainable lag.
+
+There is also a need to link up DevOps with the market. Application release orchestration (ARO) is key in ensuring that the processes fulfill the end goal of reaching the final consumer in time. 
+
+A complete DevOps implementation needs release orchestration. Release orchestration automates repetitive manual tasks. This enhances reduced costs, improved software delivery, and greater development cycle transparency.
 
 This article will discuss why Application Release Orchestration (ARO) matters, who it benefits, and top ARO tools. We will also discuss No-Code DevOps Orchestration and how it promotes delivery.
 
 ### What is Application Release Orchestration (ARO)?
-Application release orchestration coordinates complex releases across environments. It promotes better collaboration between operations and development. Release orchestration simplifies and automates manual, repetitive tasks, which contributes to reduced costs. It reduces time-to-market and enhances greater transparency in the software development and delivery cycle.
+Application release orchestration coordinates complex releases across environments. It promotes better collaboration between operations and development. 
+
+Release orchestration simplifies and automates manual, repetitive tasks, which contributes to reduced costs. It reduces time-to-market and enhances greater transparency in the software development and delivery cycle.
 
 Such an architecture allows developers to configure their pipeline and reporting to create a consistent and regular schedule for releases. ARO provides a single coherent interface instead of loose API integrations. The resultant interface is coherent and cuts through the different tracking methods and formats to get things done. Whatever the pipeline, release orchestration helps scale and deliver quality software faster.
 
@@ -68,7 +75,7 @@ When choosing the appropriate Application Release Orchestration platform, you ha
 [GitLab](https://about.gitlab.com/) is an open-source DevOps platform that provides continuous integration and deployment data pipeline features. It allows self-hosting on any plan. However, it has a relatively slower interface than its competitors, and repositories may experience bugs.
 
 #### CloudBees CD
-[CloudBees CD] is an ARO tool and a DevOps platform that makes the software release process less cumbersome. It provides deployment automation, release orchestration and lets you track and modify your software delivery pipeline. It is easy to install and comes at no cost. However, its user interface is less user-friendly.
+[CloudBees CD](https://www.cloudbees.com/products/continuous-delivery) is an ARO tool and a DevOps platform that makes the software release process less cumbersome. It provides deployment automation, release orchestration and lets you track and modify your software delivery pipeline. It is easy to install and comes at no cost. However, its user interface is less user-friendly.
 
 #### Azure Pipelines
 [Azure pipelines](https://azure.microsoft.com/en-us/services/devops/pipelines/) deployment with data pipelines so that less time is spent creating software features and more in incorporating innovation. It has a simple layout that makes it easy to navigate. But it lacks a streamlined setup of continuous integration and continuous delivery.
@@ -88,9 +95,9 @@ DevOps enhances a faster creation of software and apps, while application releas
 Release orchestration ensures delivery pipelines are implemented based on templates. That gives an assurance that there is a consistent, repeatable, and foolproof process for running releases. Furthermore, it allows the modeling of application development and release processes as a customized sequence of steps and phases based on an organization’s needs.
 
 ### Further reading 
-- [DevOps and Continuous Delivery at the Edge](/blog/devops-continuous-delivery-edge-compute/)
-- [DevOps and Current CDN Providers](/blog/cdns-and-devops/)
-- [What it Takes to be a DevOps Engineer](/engineering-education/what-it-takes-to-be-a-devops-engineer/)
+- [DevOps and Continuous Delivery at the Edge](https://www.section.io/blog/devops-continuous-delivery-edge-compute/)
+- [DevOps and Current CDN Providers](https://www.section.io/blog/cdns-and-devops/)
+- [What it Takes to be a DevOps Engineer](/what-it-takes-to-be-a-devops-engineer/)
 
 ---
 Peer Review Contributions by: [Onesmus Mbaabu](/engineering-education/authors/onesmus-mbaabu/)
