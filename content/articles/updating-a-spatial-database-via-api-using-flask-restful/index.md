@@ -189,5 +189,4 @@ We have created an API that can be used for creating, reading, updating and dele
 - [Flask Restful](https://flask-restful.readthedocs.io/en/latest)
 - [HTTP status code](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
 
-
 [Github repository](https://github.com/isaiaholadapo/api-geodatabase)
