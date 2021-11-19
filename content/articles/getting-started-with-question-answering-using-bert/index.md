@@ -58,7 +58,7 @@ import { Fragment } from 'react';
 ```
 Our first import allows us to refer to the tensorflow.js library in our code as `tf`. The second import allows us to refer to the BERT model inside our code as `qna`. The third and fourth import imports the css style for our loader that we mentioned above. Lastly, we've imported `Fragment`, which allows us to return multiple elements without adding extra nodes to the DOM. 
 
-The next step involves setting up our references and state hooks. Hooks tend to create a symbolic link to various elements. By default, the React library imports the following hooks; `useRef`, `useEffect`, and `useState`. You can see it at the top on the `App.js` file. `useState` allows us to work with states within our react app. It will be used to store our question and passage. For a detailed explanation about hooks and references in React, please refer to this [documentation](https://reactjs.org/docs/hooks-intro.html)
+The next step involves setting up our references and state hooks. Hooks tend to create a symbolic link to various elements. By default, the React library imports the following hooks; `useRef`, `useEffect`, and `useState`. You can see it at the top on the `App.js` file. `useState` allows us to work with states within our react app. It will be used to store our questions and passage. For a detailed explanation about hooks and references in React, please refer to this [documentation](https://reactjs.org/docs/hooks-intro.html).
 
 ```js
   const passageRef = useRef(null); 
