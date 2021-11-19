@@ -1730,41 +1730,70 @@ protected $except = [
 
 ```
 
-
-
-
-
 Exposing the Application
 
-At this level, for us to have a perfectly working application, our application needs to be accessible online. Fortunately, ngrok makes it possible for us to do just that. You can learn how to set up ngrok from their official doc. Let’s begin by launching your Laravel application. To start your Laravel application, open your terminal and navigate to the folder of your application, then enter the following commands:
+
+At this level, for us to have a perfectly working application, our application needs to be accessible online. lucky for us, the possibility can be achieved with ngrok. You can learn how to set up ngrok from their official doc. Let’s start the laravel application by opening the terminal and navigating to the application folder, then enter the following commands:
+
+
+
+
 
 
 
 ```
+
+
 
 php artisan serve
 
 
 
-```
 
-
-
-This will start your Laravel application on your local machine on a specific port (8000 in my case), which will be printed to the terminal after the command is successfully executed. To make your application publicly accessible, lunch a ngrok executable file terminal and run the following command on it terminal:
 
 
 
 ```
+
+
+
+
+
+
+
+The Laravel application will start running on the local machine on a specific port (8000 in my case), which will be displayed to the terminal after a successful execution. The ngrok executable file terminal can then be launched and used to make our application accessible in the internet:
+
+
+
+
+
+
+
+```
+
+
 
 ngrok http 8000
 
 
 
+
+
+
+
 ```
 
 
 
-Following the successful execution of the preceding command, you should see the following screen:
+
+
+
+
+The below screen should display if the execution is successful:
+
+
+
+
 
 
 
@@ -1772,9 +1801,19 @@ Following the successful execution of the preceding command, you should see the 
 
 
 
+
+
+
+
 Take note of the forwarding URL (`http://159f-129-205-113-23.ngrok.io`) which will be used to access our application online. Now let us replace modify the `makeCall `method by adding the forwarding URL to our twilio URL. Open `app/Http/Controllers/AuthController.php`
 
+
+
 ```
+
+
+
+
 
 
 
@@ -1784,27 +1823,50 @@ use Twilio\Rest\Client;
 
 
 
+
+
+
+
+
+
 public function makeCall($call_to) {
 
-        $token = getenv("TWILIO_AUTH_TOKEN");
+        $twilio_token = getenv("TWILIO_AUTH_TOKEN");
 
-        $twilio_sid = getenv("TWILIO_SID");
+        $twilio_sid_token = getenv("TWILIO_SID");
 
-        $twilio = new Client($twilio_sid, $token);
+        $twilio_client = new Client($twilio_sid_token, $twilio_token);
+
 
        
 
-        $twilio->calls->create($call_to, // to
+
+
+        $twilio_client->calls->create($call_to, // to
+
+
 
                         "+17122143185", // from
 
+
+
                         [
+
+
 
                             "url" => "http://159f-129-205-113-23.ngrok.io/build-twiml/user-input/".$call_to
 
+
+
                         ]
 
+
+
                );
+
+
+
+
 
 
 
@@ -1812,15 +1874,31 @@ public function makeCall($call_to) {
 
 
 
+
+
+
+
 ```
+
+
 
 Now our application is ready. Visit ` http://159f-129-205-113-23.ngrok.io/registration ` to test the application
 
 
 
+
+
+
+
 ### Conlusion
 
+
+
 In this tutorial, we have learned how to use Laravel and twilio to interact with users and verify their phone numbers, collect input from a user during the call, call a phone number from our application, and implement authentication. Despite the much we have covered, there are still numerous ways to engage your user in our application using the Twilio services.
+
+
+
+
 
 
 
@@ -1828,5 +1906,11 @@ This project's code is all housed in this [GitHub repository](https://github.com
 
 
 
+
+
+
+
 Have a wonderful coding experience. 
+
+
 
