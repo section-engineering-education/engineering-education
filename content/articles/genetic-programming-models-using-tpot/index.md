@@ -2,20 +2,22 @@
 layout: engineering-education
 status: publish
 published: true
-url: /implementing-gan-from-scratch/
-title: Implementing GANs from Scratch
-description: 
-author: deewakar-chakraborty
-date: 2021-10-19T00:00:00-18:00
-topics: [Languages]
+url: /genetic-programming-models-using-tpot/
+title: Genetic Programming Models Using TPOT
+description: Genetic programming is a technique by which models and programs evolve. With time the model finds the optimal solution. The model starts from poor or unfit parameters. It then gradually evolves into a superior model.
+author: bravin-wasike
+date: 2021-11-19T00:00:00-18:00
+topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
 
   -url: /engineering-education/implementing-gan-from-scratch/hero.jpg
-   alt: Implementing GANs example image
+   alt: Genetic programming models TPOT
 ---
 
 Genetic programming is a technique by which models and programs evolve. With time the model finds the optimal solution. The model starts from poor or unfit parameters. It then gradually evolves into a superior model.
+
+<!--more-->
 
 It does this in an automated way to reduce time in model building and evolving processes. It automates stages in machine learning from dataset pre-processing to building the model.
 
@@ -66,16 +68,13 @@ TPOT is a powerful Python library used to automate the machine learning process.
 
 TPOT uses three concepts during the genetic programming process.
 
-1. Selection.
-   TPOT selects the algorithm that will give the best results.
-2. Crossover
-   After selecting the algorithms, these algorithms are cross-bred to find a hybrid solution.
-3. Mutation:
-   Over time these algorithms change and become more advanced. This yields the optimal solution.
+1. _Selection_: TPOT selects the algorithm that will give the best results.
+2. _Crossover_: After selecting the algorithms, these algorithms are cross-bred to find a hybrid solution.
+3. _Mutation_: Over time these algorithms change and become more advanced. This yields the optimal solution.
 
 TPOT is built on top of powerful Python libraries such as [NumPy](http://www.numpy.org/), [scikit-learn](http://www.scikit-learn.org/), [pandas](http://pandas.pydata.org/) and [joblib](https://joblib.readthedocs.io/en/latest/). This makes it powerful for genetic programming and automation.
 
-[Scikit-learn] has contains the following algorithms for classification and regression.
+[Scikit-learn] contains the following algorithms for classification and regression.
 
 1. [Support Vector Machines.](https://scikit-learn.org/stable/supervised_learning.html#supervised-learning)
 2. [Stochastic Gradient Descent.](https://scikit-learn.org/stable/supervised_learning.html#supervised-learning)
@@ -88,7 +87,7 @@ TPOT is built on top of powerful Python libraries such as [NumPy](http://www.num
 
 TPOT iterates through these algorithms and finds the best one. The one with the highest accuracy score is the one that is chosen. It can also combine two or more algorithms to come up with a hybrid algorithm.
 
-To see the power of TPOT, we start by using individual algorithms in building the model.
+To see the power of TPOT, we start by using individual algorithms to build the model.
 
 We will use two algorithms [linear regression](https://scikit-learn.org/stable/supervised_learning.html#supervised-learning) and [random forest](https://scikit-learn.org/stable/supervised_learning.html#supervised-learning) in building the model.
 
@@ -98,7 +97,7 @@ In the next section, we will use TPOT in building a machine learning model. Firs
 
 ### Model building using individual algorithms
 
-We will use the iris dataset to build our model. The model classifies the flower species based on the input features. To get this dataset, click [here](https://drive.google.com/file/d/1gmfoaF14KhMybNThcaU72edgbFm7DO9l/view?usp=sharing)
+We will use the iris dataset to train our model. The model classifies the flower species based on the input features. To get this dataset, click [here](https://drive.google.com/file/d/1gmfoaF14KhMybNThcaU72edgbFm7DO9l/view?usp=sharing)
 
 A snip of the dataset is shown in the image below.
 
@@ -187,7 +186,7 @@ Output after conversion:
 
 ![Output](/engineering-education/genetic-programming-models-using-tpot/output-columns.png)
 
-We then add the dictionary labels into our dataset. The three-label dictionaries will be added in a new column called `new_label`.
+We then add the dictionary labels into our dataset. We will add the three-label dictionaries in a new column called `new_label`.
 
 ```python
 df['new_label'] = df['species'].map(data_set)
@@ -234,7 +233,7 @@ We can now use `cross_val_score` in the `LogisticRegression` algorithm. We will 
 
 The model will iterate ten times and find the average accuracy after the ten iterations. Thus, the model learns from the dataset and improves over time.
 
-We also build our model using the `xfeatures` and `ylabels` we created earlier.
+We also built our model using the `xfeatures` and `ylabels` we created earlier.
 
 ```python
 cv_scores = cross_val_score(LogisticRegression(),xfeatures,ylabels,cv=10)
@@ -266,13 +265,13 @@ The average score:
 
 ### Building using random forest classifier algorithm
 
-We will use the second algorithm to build our model. We can then compare the two algorithms' accuracy scores.
+We will use Random Forest as the second algorithm to model the data. We can then compare the two algorithms' accuracy scores.
 
 ```python
 rf_cv_scores = cross_val_score(RandomForestClassifier(),xfeatures,ylabels,cv=10)
 ```
 
-We will do the same ten folds in building our model.
+We will do the same ten folds in training our model.
 
 The score of the algorithm.
 
@@ -359,14 +358,11 @@ In the code above:
 
 We initialize our TPOT application using the `TPOTClassifier()` method. But, first, we pass the following parameters.
 
-1. Set `generations=5`
-   Generation represents the number of iterations TPOT will run. This helps TPOT to find an optimal pipeline. Here we will set the generation to 5.
+1. Set `generations=5`. Generation represents the number of iterations TPOT will run. This helps TPOT to find an optimal pipeline. Here we will set the generation to 5.
 
-2. Set `random_state=42`
-   It is used to reproduce our of our split dataset.
+2. Set `random_state=42`. It is used to reproduce our of our split dataset.
 
-3. Set `verbosity=2`
-   It is used to give progress and information about the TPOT operation.
+3. Set `verbosity=2`. It is used to give progress and information about the TPOT operation.
 
 ```python
 tpot = TPOTClassifier(generations=5,verbosity=2, random_state=42)
@@ -390,7 +386,7 @@ We will have an optimization process. TPOT will iterate 5 times to find the opti
 
 Useful since it saves the users time by automating the whole process. During this optimization process, TPOT uses the concept of genetic programming. As a result, it eventually finds the best algorithm.
 
-Only the best algorithm will be chosen. Then, the poor algorithms will be dropped. After the optimization process, the output is as shown.
+We choose the best algorithm, and subsequently, the poor algorithms are dropped. After the optimization process, the output is as shown.
 
 ![Optimization process](/engineering-education/genetic-programming-models-using-tpot/methods-and-attributes.png)
 
