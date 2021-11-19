@@ -1,4 +1,23 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /javascript-math-anim/
+title: Using JavaScript's mathematical functions to create animations
+description: In this article, we discuss how we can use sin and cosine functions to create animations.  
+author: vincent-ngunzulu
+date: 2021-11-19T00:00:00-07:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+ - url: /engineering-education/javascript-math-anim/hero.jpg
+   alt: JavaScript animations with mathematical functions
+---
+
 Animations are a great way to catch a user's attention and enhance the look of your website. In this article, we will look at how Javascript's built-in functions such as `Math.cos()` and `Math.sin()` can be applied to create the animations. We will be creating an animation to show a simple rotating system so that we see how the functions are applied. The final output will resemble this:
+
+<!--more-->
 
 ![Circle](/engineering-education/javascript-math-anim/circle.png)
 
@@ -197,3 +216,6 @@ The most suitable areas for using these, that is after modifying it, include a c
 In this guide, we first looked at how the sin and cos functions are used in circles. Next, we created a simple script in JavaScript to show the creation of an animation. Finally, we looked at embedding the script in an HTML file. I hope you get the chance to creatively build onto this simple program in a fun way. 
 
 Have a great coding adventure!
+
+---
+Peer Review Contributions by: [John Amiscaray](/engineering-education/authors/john-amiscaray/)
