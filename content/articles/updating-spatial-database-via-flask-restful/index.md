@@ -13,11 +13,9 @@ In this tutorial, we will learn how to create, read, update and delete spatial d
 - [Conclusion](#conclusion)
 - [Further Reading](#further-reading)
 
-
-
 ### Prerequisites
-* How to create a Flask app
-* How to use Postman
+- How to create a Flask app
+- How to use Postman
 
 Readers need to know how to create a geospatial database and server, you can [click here](https://www.section.io/engineering-education/how-to-create-a-geoserver-and-geodatabase/) to read this tutorial on how to create a geospatial database, server and a new flask app.
 
