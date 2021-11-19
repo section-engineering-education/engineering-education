@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /how-to-develop-an-api-architecture/
 title: How to Develop an API Architecture
-description: In this article, we will look at the basics of developing an API architecture. We will go through API design and its goals, API design architectural styles and the best practices when designing an API. 
+description: In this article, we will look at the basics of developing an API architecture. We will go through API design and its goals, API design architectural styles, and the best practices when designing an API. 
 author: lilian-kerubo
 date: 2021-11-15T00:00:00-13:30
 topics: [API]
@@ -16,7 +16,7 @@ images:
 ---
 Over the years, APIs have gradually gained popularity in major businesses and enterprises. The main reason is that organizations have seen a tremendous increase in IoT devices and mobile applications, which mostly rely on backend interactions. Therefore, an API can be considered a crucial business resource that any modern enterprise cannot assume.
 <!--more-->
-According to recent statistics, it is evident that businesses and large enterprises have seen value in their digital operations through APIs. These businesses include the banking and finance sector, media and entertainment industries, and automotive industries. These indusrties have made tremendous growth in their sectors due to the continued use of APIs in their operations
+According to recent statistics, organizations have seen value in their digital operations through APIs. These include businesses operating in the banking and finance sector, media and entertainment industries, and automotive industries. These businesses have achieved tremendous growth due to the continued use of APIs in their operations.
 
 In the past, huge enterprises started utilizing APIs in their digital operations to grow and diversify their businesses and maximize their profits. SMEs have now joined the plan and have started using APIs in their operations to remain competitive and relevant in this digital space.
 
@@ -35,14 +35,13 @@ The challenging dilemma arises for business owners on the best practices of deve
 ### Concept of APIs
 API is a short form for Application Programming Interface. It is an entry framework that allows the developers to communicate with a given application. It is evident that in this era, applications, whether mobile or web, can never be standalone and often need to interact and respond to each other.
 
-Below are the reasons that make the use of APIs important for organizations:
-
+The following points explain why the use of APIs is important for organizations:
 - API allows access to application's data and logic that can be used for monetization purposes.
 - The API uses the functionality of the application.
 - Allows microservices interactions.
 - It connects different ecosystems such as B2B and C2B.
 - It offers powerful integrations.
-- It enhanced the development of new features in business.
+- It enhances the development of new features in business.
 - It opens up new opportunities for growth and innovations.
 
 ### Understanding API architecture
@@ -51,7 +50,7 @@ API architecture refers to the process where a developer makes a decision on the
 The architectural decisions about the API being developed have to be made before the actual design and development. It includes the technical requirements of the API, the tier, the API lifecycle management, operations and security, and finally, the API monetization.
 
 ### API architecture components
-Below are the essential components that API architecture consists of:
+Below are the essential components of API architecture:
 
 #### API Gateway
 This component is mainly concerned with security, caching, and orchestration purposes. In simple terms, it acts as the single gateway into the internal API architecture.
