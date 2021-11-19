@@ -1,7 +1,22 @@
-### Introduction
-Expanded subroutines are referred to as coroutines. A process willingly relinquishes control on a periodic or idle basis to enable other programs to run at the same time, which is known as cooperative multitasking.
-In Python, generators are functions that construct iterators.
-When the generator wants to return anything, it uses the same syntax as a function, but instead of writing `return`, we write `yield`.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /coroutines-in-python/
+title: Working with Coroutines in Python
+description: This article will explain how to use coroutines in Python. We will also differentiate betweeen coroutines and subroutines.
+author: stanley-nganga
+date: 2021-11-19T00:00:00-11:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/coroutines-in-python/hero.jpg
+    alt: Coroutines Python
+---
+Expanded subroutines are referred to as coroutines. A process willingly relinquishes control on a periodic or idle basis to enable other programs to run at the same time. This is known as cooperative multitasking.
+<!--more-->
+In Python, generators are functions that construct iterators. When the generator wants to return anything, it uses the same syntax as a function, but instead of using `return`, we use `yield`.
+
 With a few more methods and slight variations in yield statements, coroutines vary from Python's generators. Data may be consumed by coroutines in the same way that data is generated for iteration.
 
 The reader should already be familiar with Python's generators.
@@ -17,20 +32,22 @@ The reader should already be familiar with Python's generators.
 
 ### What is a coroutine in Python?
 A coroutine is a function that can pause and resume its execution.
+
 Throughout a length of time, a process that is willingly relinquishing control of itself might benefit from using coroutines (periodically). You run programs simultaneously while a coroutine is idle.
 
 Yield statements utilization and some extra methods make generators differ from coroutines.
 
-### Coroutines Vs Subroutines
+### Coroutines Vs subroutines
 1. Coroutines may be accessed from numerous locations while the main function is the sole point of entry for subroutines.
-2. Corporative coroutines build a pipeline structure while they are being executed but while using subroutines, you may create an executable with a linear flow.
+2. Corporative coroutines build a pipeline structure while they are being executed.But while using subroutines, you may create an executable with a linear flow.
 3. Suspension and resumption are from a single point in subroutines while in coroutines is from multiple points. In coroutines, we can still resume execution from where we interrupted it.
 4. The main function shows the results of data processing in subroutines unlike in coroutines where the output of a coroutine may be seen.
-5. Python coroutines, do not have a primary function to arrange and coordinate their execution, unlike subroutines which have the main function for controlling and co-ordinating subroutine execution in python.
+5. Python coroutines do not have a primary function to arrange and coordinate their execution. Subroutines have a main function for controlling and co-ordinating subroutine execution in python.
 
 ### How different are coroutines from threads?
-- With threads, the operating system changes running threads proactively as per its scheduler, which is an algorithm in the operating system kernel.
-- Activities are collaboratively multi-tasked by stopping and restarting functions at predetermined times, it can sometimes be within a single thread. This is accomplished through the use of coroutines.
+With threads, the operating system changes running threads proactively as per its scheduler, which is an algorithm in the operating system kernel.
+
+Activities are collaboratively multi-tasked by stopping and restarting functions at predetermined times, it can sometimes be within a single thread. This is accomplished through the use of coroutines.
 
 ### Coroutines in a Python program
 Coroutines will use the `send()` method to transmit names, and only those with the prefix "Student" will be displayed at the end.
@@ -73,9 +90,11 @@ The names were sent to the function's coroutine using the `send()` technique. As
 ### Coroutines execution
 Python coroutines and Python generators have a lot in common, as do many other types of Python code. Unless and until the coroutine is called in a program, nothing else happens.
 
-Execution begins when `_next_()` is invoked. The initial expression is performed when invoked.
+Execution begins when `__next__()` is invoked. The initial expression is performed when invoked.
 
-The coroutine's execution comes to a halt as it awaits the value to be sent to the coroutine object. Each time a new coroutine object receives an initial value, it first checks to see whether the specified prefix is present before printing the name with that prefix. For as long as you're using this phrase, you'll keep seeing it until you run across the `name = (yield)` expression again.
+The coroutine's execution comes to a halt as it awaits the value to be sent to the coroutine object. Each time a new coroutine object receives an initial value, it first checks to see whether the specified prefix is present before printing the name with that prefix.
+
+For as long as you're using the this phrase, you'll keep seeing it until you run across the `name = (yield)` expression again.
 
 ### How to close coroutines
 The program's `close()` method must be called to stop a coroutine. The `GeneratorExit` exception may be captured by halting the coroutine first, which is our usual method of collecting exceptions.
@@ -120,7 +139,7 @@ The following are some of the pipe's requirements:
 - The whole pipeline is descended from a single source (the producer). In most cases, the producer is a simple procedure rather than a coroutine.
 - The final destination of the pipe is a sink. All data might be collected and shown in a sink.
 
-The following is an example of a program for coroutine with a pipeline structure.
+The following is an example of a program for a coroutine with a pipeline structure.
 
 ```python
 def creator(StatedPhrase, AdjacentCoroutine): 
@@ -171,4 +190,8 @@ A pipeline may take advantage of a variety of coroutines and data filtering this
 
 ### Conclusion
 In this tutorial, I have taken you through what coroutines are as well as how to execute and also close them. Coroutines are different from threads and subroutines and have been covered as well.
-Happy learning!
+
+Happy coding!
+
+---
+Peer Review Contributions by: [Geoffrey Mungai](/engineering-education/authors/geoffrey-mungai/)
