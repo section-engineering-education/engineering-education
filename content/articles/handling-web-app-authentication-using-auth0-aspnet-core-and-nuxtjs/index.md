@@ -6,24 +6,24 @@ url: /handling-web-app-authentication-using-auth0-aspnet-core-and-nuxtjs/
 title: Handling Web App authentication using Auth0, ASP.NET Core and Nuxt.js
 description: This tutorial will use `Auth0` to authenticate the users into the system using `ASP.NET Core API` and `Nuxt.js`.
 author: lilian-ogoti
-date: 2021-08-21T00:00:00-09:00
+date: 2021-11-19T00:00:00-07:00
 topics: []
 excerpt_separator: <!--more-->
 images:
+
   - url: /engineering-education/handling-web-app-authentication-using-auth0-aspnet-core-and-nuxtjs/hero.jpg
     alt: Handling Web App authentication using Auth0, ASP.NET Core and Nuxt.js hero image
 ---
 
-### Introduction
-
-Modern applications have implemented several mechanisms to authenticate and verify their visitors. Each developer tends to devise their methods of authenticating and verifying the users accessing the system. It might seem to be a simple approach, but building own authentication system or even integrating it with third parties social media platforms like [Google](https://www.google.com/) and [Facebook](https://www.facebook.com/) can be tedious, time-consuming, and at times complex.
+Modern applications have implemented several mechanisms to authenticate and verify their visitors. Each developer tends to devise their methods of authenticating and verifying the users accessing the system. 
+<!--more-->
+It might seem like a simple approach, but building own authentication system or even integrating it with third parties social media platforms like [Google](https://www.google.com/) and [Facebook](https://www.facebook.com/) can be tedious, time-consuming, and at times complex.
 
 A better approach would be to use an already dedicated authentication platform to verify and authenticate users into the system. A good example is [Auth0](https://auth0.com/), which relieves the developers of dealing with sensitive user data as it handles the authentication. The platform is backed by a dedicated team of security experts specializing in handling user data privacy.
 
 This guide will use the `Auth0` platform to authenticate and verify the users into the system using `ASP.NET Core API` and `Nuxt.js`.
 
 ### Table of contents
-
 - [Introduction](#introduction)
 - [Prerequisites](#prerequisites)
 - [Understanding the concept of Auth0](#understanding-the-concept-of-auth0)
@@ -35,7 +35,6 @@ This guide will use the `Auth0` platform to authenticate and verify the users in
 - [Further reading](#further-reading)
 
 ### Prerequisites
-
 - Latest [Visual Studio](https://visualstudio.microsoft.com/vs/) installed
 - A good understanding of [ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/?view=aspnetcore-5.0), [JavaScript](https://www.javascript.com/), [Vue.js](https://vuejs.org/v2/guide/) and [Nuxt.js](https://nuxtjs.org/docs/get-started/installation)
 - A web browser installed, preferably [Google Chrome](https://www.google.com/intl/en_us/chrome/)
@@ -43,26 +42,23 @@ This guide will use the `Auth0` platform to authenticate and verify the users in
 - [Auth0](https://auth0.com/) account
 
 ### Understanding the concept of Auth0
-
 `Auth0` deals with the user management in a given system. Its purpose is to authenticate and verify requests in a system. Auth0 comes with many features used in authentication. Some of these features include social media sign-in using `Facebook` or `Google`, [Single-Sign-On](https://www.onelogin.com/learn/how-single-sign-on-works) (SSO), and also supports [Multi-Factor Authentication](https://www.onelogin.com/learn/what-is-mfa).
 
 ### How Auth0 authentication works
-
 The user will login from the client-side application using their correct username and password or social media platforms. Next, the sign-in request is then forwarded to the `Auth0` platform, and upon successful authentication, it responds with an access token.
 
 The client application can then request data from the backend, which it sends along with the previous access token. On receipt of the request, the backend API will first verify the token with `Auth0` to confirm that it is valid, and upon successful verification, it responds with the requested data.
 
 ### Setting up Auth0
+We will first create the `Auth0` account by visiting [this link](https://auth0.com/signup). We will access our `Auth0` after signing in and then navigate to the `Application` tab. Click on `Create Application` option and click on the `Single Page Web Application` option to create it as shown below:
 
-We will first create the `Auth0` account by visiting [this link](https://auth0.com/signup). Then we will access our `Auth0` after signing in and then navigate to the `Application` tab. We will then click on `Create Application` option and click on the `Single Page Web Application` option to create it as shown below:
+![create auth0 app](/engineering-education/handling-web-app-authentication-using-auth0-aspnet-core-and-nuxtjs/create-app-auth0.png)
 
-![create auth0 app](/engineering-education/handling-web-app-authentication-using-auth0-aspnet-core-and-nuxtjs/create-app-auth0.PNG)
+Next, go to the setting tab of our new `Auth0` application and note down the `Domain` and `Client ID` that we will use later in this tutorial.
 
-Next, we will go to the setting tab of our new `Auth0` application and note down the `Domain` and `Client ID` that we will use later in this tutorial.
+![auth0 domain](/engineering-education/handling-web-app-authentication-using-auth0-aspnet-core-and-nuxtjs/auth0-domain.png)
 
-![auth0 domain](/engineering-education/handling-web-app-authentication-using-auth0-aspnet-core-and-nuxtjs/auth0-domain.PNG)
-
-On the same application page, we will locate the `Application URLs` and fill the following fields as below:
+On the same application page, locate the `Application URLs` and fill the following fields as below:
 
 ```bash
 Origins (CORS) = http://localhost:3000
@@ -74,13 +70,13 @@ Then we save the changes done.
 
 Note that the link <http://localhost:3000> will be the URL of our Nuxt application. Also, one can change port `3000` if they are using a different port as per their preferences.
 
-Next, we need our `Auth0` to connect to our API. First, we will navigate to the APIs and click on `Create API` button. Then we input the required details: `Name` and an `Identifier` and click `Create` button as shown below. We should note the `Identifier` since we will need it later.
+Next, we need our `Auth0` to connect to our API. First, we navigate to the APIs and click on `Create API` button. Then we input the required details: `Name` and an `Identifier` and click the `Create` button as shown below. We should note the `Identifier` since we will need it later.
 
-![auth0 API](/engineering-education/handling-web-app-authentication-using-auth0-aspnet-core-and-nuxtjs/auth-api.PNG)
+![auth0 API](/engineering-education/handling-web-app-authentication-using-auth0-aspnet-core-and-nuxtjs/auth-api.png)
 
 ### Creating an ASP .NET Core backend API
 
-In this section, we will create a new project using Visual Studio `ASP.NET Core API` project templates. We will first launch our Visual Studio application, create a new project, select `ASP.NET Core Web Application`, and click on the `API` option.
+In this section, we will create a new project using Visual Studio `ASP.NET Core API` project templates. We first launch our Visual Studio application, create a new project, select `ASP.NET Core Web Application`, and click on the `API` option.
 
 The below `NuGet packages` have to be pre-installed in the Visual Studio:
 
@@ -91,7 +87,7 @@ Microsoft.AspNetCore.Authentication.JwtBearer
 
 Since we will have to verify access tokens using `Auth0`, our `ASP.NET API` must know the `Domain` and `Identifier` values we earlier got from `Auth0 API`. We are going to use [User Secrets](https://docs.microsoft.com/en-us/aspnet/core/security/app-secrets?view=aspnetcore-5.0&tabs=windows) variables to ensure enhanced security in our application.
 
-We will browse to the ASP.NET Core project directory and execute the below commands in the terminal:
+Browse to the ASP.NET Core project directory and execute the below commands in the terminal:
 
 ```bash
 dotnet user-secrets init
@@ -101,7 +97,7 @@ dotnet user-secrets set " Config:Auth:Authority" "<The Auth0 API Domain>"
 
 Note that `Domain` and `Identifier` values should be substituted with the Domain and Identifier we earlier got from the API we created in `Auth0`.
 
-Next, we will edit the `ConfigureServices` method inside the `Startup` Class as below:
+Next, edit the `ConfigureServices` method inside the `Startup` Class as below:
 
 ```c#
 public void ConfigureServices(IServiceCollection config_serv)
@@ -122,7 +118,7 @@ public void ConfigureServices(IServiceCollection config_serv)
 
 In the above code snippet, we have configured `ASP.NET Core` to authenticate the requests with a JWT Bearer's help and validated them against `Auth0` using the values we previously stored in the `User Secrets` variables.
 
-We will also edit our `Configure` method as we configure the [middleware pipeline](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/middleware/) property as below:
+We also edit our `Configure` method as we configure the [middleware pipeline](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/middleware/) property as below:
 
 ```c#
 public void Configure(IApplicationBuilder config_app, IWebHostEnvironment env)
@@ -150,21 +146,23 @@ public void Configure(IApplicationBuilder config_app, IWebHostEnvironment env)
 }
 ```
 
-In the above code snippet, we have added a CORS policy that forwards the requests to the backend API from the Nuxt application running on the address <http://localhost:3000>. Next, we have invoked the function `config_app.UseAuthentication()` allows the application to use the configuration we earlier defined in the `ConfigureServices` method.
+In the above code snippet, we have added a CORS policy that forwards the requests to the backend API from the Nuxt application running on the address <http://localhost:3000>. 
 
-Finally, we will protect one of the controllers in our application. In this case, since we used Visual Studio `ASP.NET Core Web template`, we already have a `WeatherForecastController` in place. To protect that controller, we will add the `[Authorize]` attribute on the top of that class: the `WeatherForecassController class`.
+Next, we have invoked the function `config_app.UseAuthentication()` allows the application to use the configuration we earlier defined in the `ConfigureServices` method.
+
+Finally, we'll protect one of the controllers in our application. In this case, since we used Visual Studio `ASP.NET Core Web template`, we already have a `WeatherForecastController` in place. To protect that controller, we will add the `[Authorize]` attribute on the top of that class: the `WeatherForecassController class`.
 
 ### Creating the Nuxt client application
 
-In this section, we will create the `Nuxt` client application. We will start by running the below command in the terminal:
+In this section, we will create the `Nuxt` client application. Start by running the below command in the terminal:
 
 ```bash
 yarn create nuxt-app <the-application-name>
 ```
 
-The command will prompt for options to select, and we will leave them as they are to things simple.
+The command will prompt for options to select, and we will leave them as they are to keep things simple.
 
-Then, we will install several dependencies and modules that our client `Nuxt` application requires. First, we will browse to the Nuxt project root folder and execute the below commands:
+Then, we install several dependencies and modules that our client `Nuxt` application requires. First, browse to the Nuxt project root folder and execute the below commands:
 
 ```bash
 yarn add @nuxtjs/auth @nuxtjs/dotenv @nuxtjs/axios
@@ -172,7 +170,7 @@ yarn add @nuxtjs/auth @nuxtjs/dotenv @nuxtjs/axios
 
 The above command fetches the [Axios](https://www.npmjs.com/package/axios) package, which assists in making the requests to our backend API. The `Auth` module handles authentication on the Nuxt client application. The `Dotenv` module saves the secret `Auth0` values in environment variables stored inside a `.env` file.
 
-Then, we will declare the environment variables and store them in a `.env` file in the Nuxt project directory as below:
+Declare the environment variables and store them in a `.env` file in the Nuxt project directory as below:
 
 ```
 CONFIG_AUTH_DOMAIN=My_Domain
@@ -180,9 +178,9 @@ CONFIG_AUTH_CLIENTID=My_ClientID
 CONFIG_AUTH_AUDIENCE=My_Identifier
 ```
 
-We note that the values `My_Domain`, `My_ClientID`, and `My_Identifier` will come from `Auth` application we earlier created in the `Auth0` account.
+Note that the values `My_Domain`, `My_ClientID`, and `My_Identifier` will come from `Auth` application we earlier created in the `Auth0` account.
 
-We will edit the file `nuxt.config.js` as below for Nuxt application to make use of previously installed modules:
+Edit the file `nuxt.config.js` as below for Nuxt application to make use of previously installed modules:
 
 ```js
 modules: [
@@ -291,24 +289,26 @@ dotnet build
 dotnet run
 ```
 
-To execute the Nuxt client project, we will browse to the Nuxt project root directory and run the below commands in the terminal:
+To execute the Nuxt client project, browse to the Nuxt project root directory and run the below commands in the terminal:
 
 ```bash
 yarn build
 yarn start
 ```
 
-Then we will browse to the `base URL` of our Nuxt application: <http://locahost:3000>, and a login page will be displayed as below:
+Browse to the `base URL` of our Nuxt application: <http://locahost:3000>, and a login page will be displayed as below:
 
-![login page](/engineering-education/handling-web-app-authentication-using-auth0-aspnet-core-and-nuxtjs/login-page.PNG)
+![login page](/engineering-education/handling-web-app-authentication-using-auth0-aspnet-core-and-nuxtjs/login-page.png)
 
 Then, we will click the login button, which will redirect us to the `Auth0` sign-in page as below:
 
-![auth0 login](/engineering-education/handling-web-app-authentication-using-auth0-aspnet-core-and-nuxtjs/auth-login.PNG)
+![auth0 login](/engineering-education/handling-web-app-authentication-using-auth0-aspnet-core-and-nuxtjs/auth-login.png)
 
-Then we will sign in with any method we specified when setting up the `Auth0` account. Upon successful authentication, we will then be redirected to the index page of our client application. This makes it possible for the frontend to send a request for data from the backend and request a bearer token from `Auth0`. The API then verifies if the token is valid against `Auth0`, and on successful verification, it returns the weather forecast data as shown below:
+Then we will sign in with any method we specified when setting up the `Auth0` account. Upon successful authentication, we will then be redirected to the index page of our client application. 
 
-![weather-forecast](/engineering-education/handling-web-app-authentication-using-auth0-aspnet-core-and-nuxtjs/weather-forecast.PNG)
+This makes it possible for the frontend to send a request for data from the backend and request a bearer token from `Auth0`. The API then verifies if the token is valid against `Auth0`, and on successful verification, it returns the weather forecast data as shown below:
+
+![weather-forecast](/engineering-education/handling-web-app-authentication-using-auth0-aspnet-core-and-nuxtjs/weather-forecast.png)
 
 ### Wrapping up
 
