@@ -5,7 +5,7 @@ published: true
 url: /embracing-api-first-approach-beyond-product-designing/
 title: Embracing API-first Approach Beyond Product Designing
 description: This article will take you through the API-first approach and how we can embrace it beyond product designing. We will look at the basics of API-first design and the importance of API-first approach to developers.  
-author: Pologi
+author: gideon-pologi
 date: 2021-11-17T00:00:00-13:30
 topics: [API]
 excerpt_separator: <!--more-->
@@ -14,27 +14,27 @@ images:
   - url: /engineering-education/embracing-api-first-approach-beyond-product-designing/hero.jpg
     alt: API-first Image
 ---
-Organizations and individuals alike relied on code first approach to building application applications until recently. With this technique, business requirements are laid out first, and code development happens after. The documentation is generated from the code. But using this approach results in reworks, delays, and disjointed developer experience, particularly in cloud-driven landscapes.
+Organizations and individuals relied on a code-first approach to build applications until recently. With this technique, business requirements are laid out first, and code development happens after. The documentation is generated from the code. But using this approach results in reworks, delays, and disjointed developer experience, particularly in cloud-driven landscapes.
 <!--more-->
-Organizations have now moved to the cloud and adopted cloud services. A code First approach is not the best fit for such a development environment. An API-first approach is. An API-first approach adds more flexibility and clarity to the development process and supports a reactive event-driven programming paradigm.
+Organizations have now moved to the cloud and adopted cloud services. An API-first approach is the best fit for such a development environment. This approach adds more flexibility and clarity to the development process and supports a reactive event-driven programming paradigm.
 
-In this post, you'll learn what an API-first approach is and why you need to develop the API first. You will also know what API-first design is, why you need an API-first approach as a developer, and the relevance of API to automation.
+In this post, you'll learn what an API-first approach is and why you need to develop the API first. You will also know what API-first design is, why you need an API-first approach as a developer and the relevance of API to automation.
 
 ### What is an API-first approach?
 Under an API-first approach, the application programming process starts with planning the API. Each stage of the API-first programming method stays within the initial API plan. This approach promotes API's reusability, quality, and consistency. It does this by:
 - Ensuring your app is integrable with other apps and systems. In this way, a developer can use your API to integrate your app into their projects.
-- Ensuring your API is adoptable to a wide range of users.
-- Using an easy-to-understand API specification language. [API Blueprint](https://apiblueprint.org/), [RAML](https://raml.org/), and [Swagger](https://swagger.io/) are examples of easy to navigate languages.
+- Ensuring your API is adaptable to a wide range of users.
+- Using an easy-to-understand API specification language. [API Blueprint](https://apiblueprint.org/), [RAML](https://raml.org/), and [Swagger](https://swagger.io/) are examples of easy-to-navigate languages.
 
 ### What is API-first design?
-In an API-first architecture, the developer creates an API first before developing other relevant resources and tools. Apps created this way can easily interface with one another. Here are example scenarios of API-first design.
+In an API-first architecture, the developer creates an API first before developing other relevant resources and tools. Apps created this way can easily interface with one another. Here are examples of API-first design.
 - An API created before syncing with a database.
 - An API created before integrating with a system.
 - An API created before an app.
 - An API created before a website.
 
 ### Why API first?
-APIs are essential as they allow you use multiple components as the building blocks to creating new products. They can even create reusable and modular apps by implementing an API-first approach. This approach is a major move towards the timely implementation of a successful digital transformation strategy.
+APIs are essential as they allow you to use multiple components as the building blocks for creating new products. They can even create reusable and modular apps by implementing an API-first approach. This approach is a major move towards the timely implementation of a successful digital transformation strategy.
 
 There are more reasons as to why you should use API-first development. The main ones are discussed below.
 
@@ -53,10 +53,10 @@ By now, you already know that APIs are adaptable and reusable. This is important
 Microservices architectures are so common to developers. They provide a different software development approach together with integration technologies, API management, and deployment technologies. This enables developers to create highly available, fault-tolerant systems. With API first, it is easier to carry out orchestration strategies, including load-balancing incoming requests, achieving redundancy of crucial elements, and automating the deployment of microservices. System redundancy and fail-safes such as [circuit breaker design patterns](https://en.wikipedia.org/wiki/Circuit_breaker_design_pattern) ensure the continuation of system operations when a microservice fails.
 
 ### Why do developers need an API-first approach?
-More and more developers are joining their peers in applying an API-first approach to other use cases beyond building products. They are using an API-first approach to automate processes. The trend is taking root because an API-first approach brings value to developers in diverse ways, as you'll see below.
-- **Allowing development teams to work in parallel** - With an API-first approach, you can establish a contract. That is, you can create a contract between services followed by teams across the organization so that those teams can work on different phases of the API concurrently. So, developers can move on to the next API without necessarily waiting for update releases of an API. Also, they can test API dependencies and mock APIs (before deploying them) subject to the established API description documents.
-- **Ensuring good developer experiences** - Developers are the primary consumers of APIs. Their experience is, therefore, of significant influence on the success of an API. The learning curve for API first approach is less steep because this strategy allows code reuse. This is important to creating a positive experience among the developers using APIs.
-- **Reducing development effort** - Imagine building a new API and writing code from scratch for every project. This would cost you time and other resources. API-first approach allows you to reuse code and API on different projects, so you do not start from scratch.
+More and more developers are joining their peers in applying an API-first approach to other use cases beyond building products. They are using an API-first approach to automate processes. An API-first approach brings value to developers in the following ways.
+- **Allows development teams to work in parallel:** With an API-first approach, you can establish a contract. That is, you can create a contract between services followed by teams across the organization so that those teams can work on different phases of the API concurrently. So, developers can move on to the next API without necessarily waiting for update releases of an API. Also, they can test API dependencies and mock APIs (before deploying them) subject to the established API description documents.
+- **Ensures good developer experiences:** Developers are the primary consumers of APIs. Their experience is, therefore, of significant influence on the success of an API. The learning curve for API first approach is less steep because this strategy allows code reuse. This is important to creating a positive experience among the developers using APIs.
+- **Reduces development effort:** Imagine building a new API and writing code from scratch for every project. This would cost you time and other resources. API-first approach allows you to reuse code and API on different projects, so you do not start from scratch.
 
 ### Why API is relevant to automation
 Cloud providers allow the usage of APIs to automate processes in the cloud. Automating without APIs is challenging, and increasing efficiency and maintaining consistent processes may not be possible. If you opt for manual processes, you should also be aware that you cannot similarly repeat processes.
