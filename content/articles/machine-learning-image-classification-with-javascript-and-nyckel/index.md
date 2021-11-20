@@ -67,7 +67,7 @@ Under the body tag is where the upload button and the upload section lies. This 
 ```
 When you run the combination of the code above, you should have a web page with a button and an upload section only as shown in the photo below.
 
-![htmlResult](htmlResult.png)
+![htmlResult](/engineering-education/machine-learning-image-classification-with-javascript-and-nyckel/htmlResult.png)
 
 #### **CSS Styling**
 In this section we will style the web page to make look presentable and appealing.
@@ -230,7 +230,7 @@ To link this file to the html file, add the reference link below in the html fil
 
 After applying the css code above, save and refresh the page. The result for this exact code gives the result as shown in the photo below;
 
-![styled](styled.png)
+![styled](engineering-education/machine-learning-image-classification-with-javascript-and-nyckel/styled.png)
 
 #### **Javascript functions**
 Javascript helps in client-side scripting. It mostly uses functions to enabled some activities in a webpage. Example of such activities to be enabled by these functions in this page include; upload by dragging, Sending AJAX request to Nyckel to run against ML model, ensure what is uploaded is an image, resizing large images and many more.
@@ -469,10 +469,10 @@ Once done, your application is ready for testing with photos which were not incl
 After integrating the model with the web application, you can now upload photos to see how good the app is. The photo below shows how a successful categorization is displayed.
 
 #### Result for a picture with a mask
-![with mask](withmask.png)
+![with mask](engineering-education/machine-learning-image-classification-with-javascript-and-nyckel/withmask.png)
 
 #### Result for picture without a mask 
-![without mask](withoutmask.png)
+![without mask](engineering-education/machine-learning-image-classification-with-javascript-and-nyckel/withoutmask.png)
 
 ### Conclusion
 To this extent, you must have learnt how to train a model, a web application that is compatible with a ML model and how to integrate the model into web applications.
