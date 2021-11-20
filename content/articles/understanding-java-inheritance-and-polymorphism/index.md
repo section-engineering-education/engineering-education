@@ -19,7 +19,7 @@ At the end of this tutorial, the reader should understand:
 - The importance of polymorphism and inheritance
 - Implementation of inheritance and polymorphism in Java
  
-To get started, read [this article](https://www.section.io/engineering-education/oop-in-java-abstraction-and-encapsulation/) to have an understanding of how to create objects from classes
+To get started, read [this article](https://www.section.io/engineering-education/oop-in-java-abstraction-and-encapsulation/) to have an understanding of how to create objects from classes.
  
 ### What is inheritance?
  
@@ -28,39 +28,39 @@ Imagine you want to design a class to create Car objects such as Toyota, Benz, R
 ```java
 // Declare a car superclass
 public class Car {
- private int speed;
- private String name;
- private String color;
- private int enginePower;
- 
- public Car() {
- 
- }
- 
- public void accelerate() {
- System.out.println(“Car is accelerating…”);
- }
- 
- public void setSpeed(int speed) {
- System.out.println("The car is " + speed);
- }
- 
- public int getSpeed() {
- return speed;
- }
+  private int speed;
+  private String name;
+  private String color;
+  private int enginePower;
+
+  public Car() {
+
+  }
+
+  public void accelerate() {
+    System.out.println(“Car is accelerating…”);
+  }
+
+  public void setSpeed(int speed) {
+    System.out.println("The car is " + speed);
+  }
+
+  public int getSpeed() {
+    return speed;
+  }
 }
  
 ```java
 // Declare a sub car class
 public class Toyota extends Car {
- private int registrationNumber;
- private int engineNumber;
- 
- 
- public Toyota() {
- // Toyota constructor calling the constructor of the superclass
- super();
- }
+  private int registrationNumber;
+  private int engineNumber;
+
+
+  public Toyota() {
+  // Toyota constructor calling the constructor of the superclass
+  super();
+  }
 }
 ```
  
@@ -68,13 +68,12 @@ The keyword `extends` implies that the `Toyota` class inherits from and is a chi
  
 ```java
 public class Main {
- public static void main(String[] args) {
- // This is the setSpeed() and accelerate method in the Car class being accessed by the Toyota object.
- Toyota myToyota = new Toyota();
- myToyota.setSpeed(3);
- myToyota.accelerate();
- }
- 
+  public static void main(String[] args) {
+    // This is the setSpeed() and accelerate method in the Car class being accessed by the Toyota object.
+    Toyota myToyota = new Toyota();
+    myToyota.setSpeed(3);
+    myToyota.accelerate();
+  }
 }
 ```
  
@@ -95,11 +94,10 @@ It is now time to look at types of inheritance but before that, let me make one 
  
 ```java
 public class Toyota {
- public void accelerate() {
- super.accelerate();
- System.out.println(“Toyota is accelerating”);
- }
- 
+  public void accelerate() {
+    super.accelerate();
+    System.out.println(“Toyota is accelerating”);
+  }
 }
 ```
 ### Types of Inheritance
@@ -117,12 +115,12 @@ In this kind of inheritance, the subclass can only inherit properties and method
  
 ```java
 public class SectionStudent {
- // Declare your instance variables and methods here
+  // Declare your instance variables and methods here
 }
- 
+
 public class SectionInheritance extends SectionStudent {
- // Declare your instance variables and methods here
- 
+  // Declare your instance variables and methods here
+}
 ```
 In single inheritance, the class `SectionInheritance` can only inherit from `SectionStudent`.
  
@@ -180,53 +178,53 @@ Suppose we create a program that mimics the movement of animals. Classes `Dog`, 
  
 ```java
 public class Animal {
- public void animalMove() {
- System.out.println(“Animal move”);
- }
+  public void animalMove() {
+    System.out.println(“Animal move”);
+  }
 }
- 
+
 public class Dog {
- public void animalMove() {
- System.out.println(“Dog is running”);
- }
+  public void animalMove() {
+    System.out.println(“Dog is running”);
+  }
 }
- 
+
 public class Fish {
- public void animalMove() {
- System.out.println(“Fish is swimming”);
- }
+  public void animalMove() {
+    System.out.println(“Fish is swimming”);
+  }
 }
- 
+
 public class Bird {
- public void animalMove() {
- System.out.println(“Bird is flying”);
- }
+  public void animalMove() {
+    System.out.println(“Bird is flying”);
+  }
 }
- 
+
 public class Snake {
- public void animalMove() {
- System.out.println(“Snake is crawling”);
- }
+  public void animalMove() {
+    System.out.println(“Snake is crawling”);
+  }
 }
 ```
 To test whether the above code applies polymorphism let’s use the main method to test it.
  
 ```java
 public static void main(String[] args) {
- Animal animal = new Animal();
- animal.animalMove;
- 
- Animal dog = new Dog();
- dog.animalMove();
- 
- Animal fish = new Fish();
- fish.animalMove();
- 
- Animal bird = new Bird();
- bird.animalMove();
- 
- Animal snake = new Snake();
- snake.animalMove();
+  Animal animal = new Animal();
+  animal.animalMove;
+
+  Animal dog = new Dog();
+  dog.animalMove();
+
+  Animal fish = new Fish();
+  fish.animalMove();
+
+  Animal bird = new Bird();
+  bird.animalMove();
+
+  Animal snake = new Snake();
+  snake.animalMove();
  
 }
 ```
@@ -256,21 +254,21 @@ This is a concept in which methods are declared with the same name but with diff
  
 ```java
 public class MathAddition {
- public int sum(int a, int b, int c) {
- return a + b + c;
- }
- 
- public int sum(int x, int y) {
- return x + y;
- }
+  public int sum(int a, int b, int c) {
+    return a + b + c;
+  }
+
+  public int sum(int x, int y) {
+    return x + y;
+  }
 }
 ```
 From the above code snippet, the method `sum` was declared twice. Assuming `sum` was called by an object of type `MathAddition`, which do you think will be invoked? The answer is simple, the method invoked is determined by the number of arguments passed at compile-time, as shown below:
  
 ```java
 public static void main(String []args){
- MathAddition addition = new MathAddition();
- System.out.println(addition.sum(3, 3, 3));
+  MathAddition addition = new MathAddition();
+  System.out.println(addition.sum(3, 3, 3));
 }
 ```
 The result of the above method call will be `9`. Remember we have two methods with the same name and different parameters but at invocation, three arguments were passed into the method so the method with the three parameters was executed. This is compile-time polymorphism.
@@ -285,29 +283,29 @@ This is a concept in which a method declared in the parent class is given a diff
  
 ```java
 public class Animal {
- public void animalRun() {
- System.out.println(“Animal is running”);
- }
+  public void animalRun() {
+    System.out.println(“Animal is running”);
+  }
 }
- 
+
 public class Bird extends Animal {
- public void animalRun() {
- System.out.println(“Bird is running”);
- }
+  public void animalRun() {
+    System.out.println(“Bird is running”);
+  }
 }
- 
+
 public class Main {
- public static void main(String[] args) {
- 
- // This will invoke the method in the Animal superclass
- Animal newAnimal = new Animal();
- newAnimal.animalRun();
- 
- // This will invoke the method in the Bird subclass
- Animal birdAnimal = new Bird();
- birdAnimal.animalRun();
- 
- }
+  public static void main(String[] args) {
+
+    // This will invoke the method in the Animal superclass
+    Animal newAnimal = new Animal();
+    newAnimal.animalRun();
+
+    // This will invoke the method in the Bird subclass
+    Animal birdAnimal = new Bird();
+    birdAnimal.animalRun();
+
+  }
 }
 ```
  
