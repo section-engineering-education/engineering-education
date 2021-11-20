@@ -1,8 +1,8 @@
 ### Walsh Hadamard transform for signal and image compression using Matlab
 ### Introduction
-The Walsh-Hadamard transform is a non-sinusoidal, orthogonal transform widely used in signal and image processing. Here, you decompose the signal into a set of basis functions (similar to harmonics in Fourier). These basis functions are the Walsh function, which are rectangular or square waves with +1 or -1. In addition, like the fast Fourier transform(FFT), the Walsh-Hadamard transform has a fast version known as fast Walsh-Hadamard transform(FWHT).
+The Walsh-Hadamard transform is a non-sinusoidal, orthogonal transform widely used in signal and image processing. Here, you decompose the signal into a set of basis functions (similar to harmonics in Fourier). These basis functions are the Walsh function, rectangular or square waves with +1 or -1. In addition, like the fast Fourier transform(FFT), the Walsh-Hadamard transform has a fast version known as fast Walsh-Hadamard transform(FWHT).
 
-The Walsh-Hamard has a wide application in the field of science and engineering. These applications include image processing, speech processing, signal and image compression, power spectrum analysis, spread spectrum analysis e.t.c. In this tutorial, we will look at signal and image compression using Matlab. We will look at its theory and its computation for both 1d and 2d signals.
+The Walsh-Hamard has a wide application in the field of science and engineering. These applications include image processing, speech processing, signal and image compression, power spectrum analysis, spread spectrum analysis e.t.c. This tutorial will look at signal and image compression using Matlab. We will look at its theory and computation for both 1d and 2d signals.
 
 ### Prerequisites
 To follow along with this tutorial, you'll need:
@@ -17,7 +17,7 @@ $FWHT: y_n=\frac{1}{N}\sum x_i=\sum y_n WAL(n,i)$  for i = 1,2,...,N
 Where;
 WAL(n, i) are Walsh functions.
 
-To compute WHT, the length of signal `N` must be in the power of 2(i.e. $N=2^2$). If the length is not in the power of 2, it is with zeros to make it to the power of 2. Thus, you compute the equation of FWHT by matrix multiplication.    
+To compute WHT, the length of signal `N` must be in the power of 2(i.e., $N=2^2$). If the length is not in the power of 2, it is with zeros to make it to the power of 2. Thus, you compute the equation of FWHT by matrix multiplication.    
 
 $x(t) ={x_1, x_2, ..., x_n}$
 
@@ -36,7 +36,7 @@ $H_n^{-1}=H_n^T=H_n$. It is because $H_n$ is orthogonal and involutionary. Ortho
 $$\begin{vmatrix}x_1\\x_2\\:\\:\\x_N\end{vmatrix}=\frac{1}{N}*\begin{vmatrix}H_{11}&H_{12}....&H_{1N}\\H_{21}&H_{22}....&H_{2N}\\:\\:\\H_{N1}&H_{N2}....&H_{NN}\end{vmatrix}*\begin{vmatrix}y_1\\y_2\\:\\:\\y_N\end{vmatrix}$$
 
 ### Hadamard matrix
-It is the square matrix of size 2x2, 4x4, 8x8, e.t.c. The dimensions are given by $2^N$. The first order Hadamard matrix($H_1$) is given by;
+It is the square matrix of 2x2, 4x4, 8x8, e.t.c. The dimensions are given by $2^N$. The first order Hadamard matrix($H_1$) is given by;
 
 $$H_1=
 \left(\begin{array}{cc} 
@@ -76,12 +76,12 @@ The higher-order Hadamard matrix $H_N$ can be obtained by the iteration rule bel
 
 $H_N=H_1 * H_{N-1}$
 
-Now, we want to see how we can get the Walsh matrix from Hadamard.
+We want to see how we can get the Walsh matrix from Hadamard.
 Consider the hadamard matrix($H_2$)
 
 ![the h2 matrix](walshOne.png)
 
-If we look at the first row, we see that the sign of the elements does not change from the first column to the last. However, the sign changes from 1 to -1, then to 1, then -1 again, which sums to three changes in the second row and then you move to the third and fourth rows. Here, we consider how the sign changes. If we arrange the rows in the increasing number of sign changes, it becomes the Walsh matrix, as shown below.
+If we look at the first row, we see that the sign of the elements does not change from the first column to the last. However, the sign changes from 1 to -1, then to 1, then -1 again, which sums to three changes in the second row, and then you move to the third and fourth rows. Here, we consider how the sign changes. If we arrange the rows in the increasing number of sign changes, it becomes the Walsh matrix, as shown below.
 
 ![The Walsh matrix](walshTwo.png)
 
@@ -105,14 +105,16 @@ let $$x(n)=
 \left(\begin{array}{cc} 
 1 & 5 & -3 & 2\end{array}\right)
 $$
-Using N as 4, find the inverse and forward transformation of the matrix.
+Using N(hadamard matrix) as 4, we can find the inverse and forward transformation of the matrix. This can be done using the code below;
 ```matlab
 x = [1;5;-3;2];       % signal
 H = hadamard(4);       %hadamard matrix
 y = (1/4)*H*x;         %forward transform
 x_r = H*y;                %Inverse transform formula
 ```
-Alternatively, matlab has in-built functions `fwht` for forward transformation and `ifwht` for inverse transform. To apply this in our example, we will have;
+In the code below, we use the formula of finding the forward and inverse transform of the matrix. We use `1/4*H*x` for the forward since it is a 1-D signal, and for the inverse, the formula is `H*y`. Thus, the `h` is the Hadamard matrix, and `x` is our matrix.
+
+Alternatively, matlab has in-built functions `fwht` for forward transformation and `ifwht` for inverse transform. To apply this in our example, we will have the code below;
 ```matlab
 Yy = fwht(x,4, 'hadamard');          %Forward WHT
 xr = ifwht(Yy,4, 'hadamard');        %Inverse WHT
@@ -126,13 +128,14 @@ let $$x(n)=
 75 & 64 & 120 & 97\\
 10 & 255 & 0 & 55\end{array}\right)
 $$
-Just as we did for the 1-D, we will also do it here.
+Just as we did for the 1-D, we will also do it here. We find the forward and the inverse transform of our matrix. The Hadamard matrix remains to be 4. Now for this 2-D signal, the formula will be `1/16*H*x`.
 ```Matlab
 I = [250, 128, 100, 25;40 102 95 48;75, 64, 120, 97;10, 225, 0, 55];       % signal
 H = hadamard(4);       %hadamard matrix
 y = (1/16)*H*I*H;         %forward transform
 x_r = H*y*H;                %Inverse transform formula
 ```
+
 ### Fast WHT
 This method is developed with the complexity O(NlogN). It uses only addition and subtraction. To see how this works, we use the butterfly structure shown below;
 ![butterfly structure](walshThree.png)
@@ -145,18 +148,20 @@ This program begins by loading the ECG signal in a .mat file. You can find ECG s
 %program for 1D hadamard transform
 load ecg;    %loading ECG signal
 ```
-We then extract the length of the signal which is corresponding to the $2^n$. Since our signal is of 5000samples, but 5000 is not to the power of 2 and so, we take 4096 which is in the power of $2^n$
-```matlab 
+We then extract the length of the signal, which corresponds to the $2^n$. Since our signal is of 5000samples, but 5000 is not to the power of 2, we take 4096, which is in the power of $2^n$. We use the' floor' function to ensure that the number of samples is 4096.
+```Matlab 
 n = log(length(x))/log(2);   %Adjusting length to make it power of 2
 n = floor(n);
 x = x(1:2^n);
 ```
-Let us add noise to make this signal noisy and find the WHT coefficients.
+Let us add noise to make this signal noisy and find the WHT coefficients. 
 ```matlab
 x = x + 0.1.*randn(1, length(x));    %Adding noise
 y = fwht(x);          %Walsh hadamard transform(WHT)
 ```
-Since we want to visualize this, we should have a backup for our coefficients. We are copying the coefficients to a different variable, ` yo', to get the backup for the coefficients.
+The `randn` function adds random noise to the signal, and the `fwt` is Matlab's in-built function for finding the forward Walsh Hadamard transform.
+
+Since we want to visualize this, we should back up our coefficients. We are copying the coefficients to a different variable, ` yo', to get the backup for the coefficients.
 ```Matlab
 y0=y; % backup
 ```
@@ -167,27 +172,31 @@ xr = ifwht(y);     %signal reconstruction using inverse WHT
 ```
 Now plot the signals to visualize the output.
 ```matlab
-subplot(221)
+subplot(221)     %plot for the noisy ecg signal
 plot(x);   title('noisyECG signal');
 
-subplot(222)
+subplot(222)    %plot for the hadamard coefficients
 plot(abs(y0), 'k');   title('Hadamard transform co-efficient')
 
-subplot(223)
+subplot(223)   % Truncated hadamard transform coefficients
 plot(abs(y), 'k');   title('Truncated Hadamard transform co-efficient')
 
-subplot(224)
+subplot(224)    % filtered ecg signal
 plot(x);   title('filtered ECG signal');
+```
+![output signals](walshFour.png)
 
-figure
+Let's create a plot for both the original and filtered signal in the same plot using the code below to see this more clearly.
+```Matlab
+figure   %plot of original and filtered ecg signals.
 plot(x); hold on;
 plot(xr, 'r', 'LineWidth', 1)
 title('Original and filtered ECG signal')
 ```
-The output is as shown below;
-![output signals](walshFour.png)
+`x` is the original signal, while `xr` is the filtered signal. The `r` means that the filtered signal is plotted red with a line width of 1.
 
-As we can see, we have our first image as the noisy ECG and image 2 is the corresponding Hadamard co-efficient, while the third is the discarded signal. Thus, compared to the first image, our final image has no noise. To see this, open figure 2 since it gives a clear view. The red one is the filtered signal using this method.
+The output is as shown below;
+
 ![figure 2](walshFive.png)
 
 ### Matlab code to implement image compression using FWHT
@@ -199,24 +208,25 @@ filewithpath = strcat(pathname, filename);
 img = imread(filewithpath);
 [r, c] = size(img);   %getting image size
 ```
-We then make our image in double format.
+We then make our image double format using the `double` function.
 ```Matlab
 imgg = double(img);
 ```
-Now, perform a WHT using the matlab's inbuilt function to the signal as we saw earlier.
-```matlab
+Now, perform a WHT using Matlab's inbuilt function to the signal. Matlab is not capable of performing the transformation for 2-D signals. So we do it column and row-wise using the 1-D transformation method.
+```Matlab
 %Forward WHT
 yc = fwht(imgg); %Column wise operation
 yr = fwht(yc');  %Row wise operation
-y = yr';   %WHT co-efficients
+y = yr';   %WHT coefficients
 yo=y;     %Co-efficient backup
 ```
-Discard your co-efficients. This is by using the code below;
-```matlab
-y(256:r, 256:c) = 0;  %truncating WHT co-efficients
+`yc` gives the column-wise transformation, and `yr` gives the row-wise transformation equal to the WHT coefficients. 
+Discard your coefficients. It is by using the code below;
+```Matlab
+y(256:r, 256:c) = 0;  %truncating WHT coefficients
 ```
-You then perform inverse WHT on the discarded co-efficient to get the final signal.
-```matlab
+You then perform inverse WHT on the discarded co-efficient to get the final signal. Also, here, Matlab cannot perform the inverse WHT for 2-D signals. So, we do it in column and row-wise, as shown below.
+```Matlab
 %inverse WHT
 Ir1 = ifwht(y);  %column wise operation
 Ir2 = ifwht(Ir1'); %Row wise operation 
@@ -227,7 +237,7 @@ Since the output image from the inverse WHT is in the double format, we convert 
 imgr8 = uint8(imgr);
 imwrite(imgr8, 'imgcompressed.jpg');    % writing image
 ```
-Now, compare the PSNR of the original and the compressed image. This enables you to have the idea about the quality.
+Now, compare the peak signal to noise ratio(PSNR) of the original and the compressed image. This enables you to have the idea about the quality.
 ```matlab
 %Calculate PSNR
 mse = sum(sum((imgr-imgg).^2))/(r*c);
@@ -236,19 +246,21 @@ PSNR = 10*log10(double((maxp^2)/mse));
 
 fprintf('\n PSNR=%f\n', PSNR);
 ```
-Plot your outputs
-```matlab
+`mse` is the root mean square of the signal, and `maxp` is the maximum pixel of the image. Thus, the formula for finding the `PSNR` is `10log10(maxp^2)/mse`.
+
+To make it more visible, we plot the outputs using the codes below;
+```Matlab
 %displaying results
-subplot(221)
+subplot(221)   %plot of the original image
 imshow(img);    title('Original image')
 
-subplot(222)
+subplot(222)   %plot of the hadamard transform coefficients
 imshow(imadjust(yo));   title('Hadamard Transform co-efficients')
 
-subplot(223)
+subplot(223)  %plot of the truncated hadamard transform coefficients
 imshow(imadjust(y));  title('Truncated Hadamard transform co-efficients')
 
-subplot(224)
+subplot(224)  % Plot of the finally compressed image
 imshow(imgr8);    title('compressed image');
 ```
 Below is the output;
