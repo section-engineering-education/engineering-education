@@ -275,7 +275,7 @@ Then we use the add method inherited from JFrame to add our panel to the frame.
 ```java
 add(panel);
 ```
-We need to add all the panels defined to the frame in ordr to to view the components.
+We need to add all the panels defined to the frame in order to to view the components.
 ```java
     // main method to invoke the class
     public static void main(String[] args) {
