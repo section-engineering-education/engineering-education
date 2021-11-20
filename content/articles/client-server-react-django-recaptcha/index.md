@@ -28,6 +28,8 @@ To enable reCAPTCHA on your website, you first need to register your site on the
 - Accept the reCAPTCHA's terms of service and click submit.
 - You will then be provided with a **site key**(to use in the frontend) and a **secret key**(to use in the backend).
 
+![Recaptcha](recaptchaSnap.PNG)
+
 #### Setting up our Frontend
 Create a folder named **react-django-recaptcha**. Open the folder in your terminal and run the following command:
 
@@ -118,11 +120,11 @@ export default App;
 
 **Code explanation**
 
-- In the above code, we have a contact form that contains the fields; name, email, and message. We keep track of the data entered in these fields using the useState() hook.
-- In the `div` with the className `cta`, we have our ReCaptcha component that takes two attributes, one is the site key that we get from the Google reCAPTCHA website. The other attribute is an `onChange` attribute that calls the `handleRecaptcha` function when the reCAPTCHA component is clicked on.
+- In the above code, we have a contact form that contains the fields; name, email, and message. We keep track of the data entered in these fields using the `useState()` hook.
+- In the `div` with the className `cta`, we have our ReCaptcha component that takes two attributes, one is the site key that we get from the Google reCAPTCHA website. The other attribute is an `onChange` attribute that calls the `handleRecaptcha()` function when the reCAPTCHA component is clicked on.
 - Below the reCAPTCHA component, we conditionally render the `Submit` button depending on the outcome of the reCAPTCHA. We only show it when the success value of the reCAPTCHA evaluates to true(when the user successfully solves the reCAPTCHA challenge). This helps to ensure that the form data can only be submitted after the reCAPTCHA challenge has been solved.
-- The `handleRecaptcha` function takes in a value that we send to the backend for server-side verification. You can console.log the value to see it. We use the Fetch API to make a POST request to the route `http://127.0.0.1:8000/recaptcha/` which we will, later on, create on our server. We then use the response we get from the server and pass it to the `setCaptchaResult` function which sets the state of the `captchaResult`. The response is either true or false. If it is true, we show the `Submit` button.
-- After the Submit button has been displayed(which means that the reCAPTCHA challenge has been successfully solved) you can go ahead and handle the form submission using the `handleSubmit` function.
+- The `handleRecaptcha()` function takes in a value that we send to the backend for server-side verification. You can console.log the value to see it. We use the Fetch API to make a POST request to the route `http://127.0.0.1:8000/recaptcha/` which we will, later on, create on our server. We then use the response we get from the server and pass it to the `setCaptchaResult()` function which sets the state of the `captchaResult`. The response is either true or false. If it is true, we show the `Submit` button.
+- After the Submit button has been displayed(which means that the reCAPTCHA challenge has been successfully solved) you can go ahead and handle the form submission using the `handleSubmit()` function.
 
 Now, open the `App.css` and modify it with the following code to make our webpage look better:
 ```css
