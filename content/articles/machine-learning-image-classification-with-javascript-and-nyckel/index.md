@@ -1,13 +1,18 @@
 ### Machine Learning Image Classification with Javacsript and Nyckel.
 
+### Introduction
+Artificial intelligence has become the future of technology and everyone is trying to apply it in all areas. Artificially intelligent applications are a huge contribution to AI technology with the likes of trading bots and others. Web developers too want to integrate these models into their applications.
+
+This article shows how you can implement Machine Learning models in a web application to classify images. In this case, we will classify and identify the images of people that are wearing and those who are not wearing a mask.
+
 ### Table of Contents
 - [Introduction](#introduction)
 
 - [Requirements](#requirements)
 
-- [Building the Machine Learning model using Nyckel](#building-the-Machine-Learning-model-using-nyckel)
+- [Javascript CSS and HTML website build](#javascript-css-and-html-website-build)
 
-- [Javascript CSS and HTML website build](#Javascript-css-and-html-website-build)
+- [Building the Machine Learning model using Nyckel](#building-the-machine-learning-model-using-nyckel)
 
 - [ML model integration with the Web Application](#ml-model-integration-with-the-web-application)
 
@@ -15,10 +20,6 @@
 
 - [Conclusion](#conclusion)
 
-### Introduction
-Artificial intelligence has become the future of technology and everyone is trying to apply it in all areas. Artificially intelligent applications are a huge contribution to AI technology with the likes of trading bots and others. Web developers too want to integrate these models into their applications.
-
-This article shows how you can implement Machine Learning models in a web application to classify images. In this case, we will classify and identify the images of people that are wearing and those who are not wearing a mask.
 
 ### What is Nyckel?
 Nyckel is a Machine Learning API that provides automated training to models instead of manually writing the code. It also allows these models to be integrated into applications with the best simplicity.
@@ -436,6 +437,7 @@ To link this file to the html file, you will similarly create a Javascript refer
 Now refresh your page and try clicking on the upload area. It opens the windows explorer to allow you upload a photo.
 
 ### Building the Machine Learning model Using Nyckel
+
 In this section, we are going to train a model using Nyckel to classify images of people wearing a mask and those not wearing a mask. You will require a web association with access 'Nyckel website' for worked on preparing of the model. The steps below will produce a successfully trained model for our web application.
 
  #### **Create a Nyckel account**
