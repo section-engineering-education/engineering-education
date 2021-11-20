@@ -1,5 +1,5 @@
 ### DBSCAN Algorithm in Python
-DBSCAN is a popular **density-based** data clustering algorithm compared to the K-means clustering and the hierarchical clustering algorithms. First of all, DBSCAN stands for ''Density-Based Spatial Clustering of Applications with Noise''. This algorithm clusters the data points by separating the high-density regions from the low-density areas. Unlike the K-Means algorithm, the best thing with this algorithm is that we need not provide the number of clusters required prior. DBSCAN algorithm group points based on distance measurement, usually the *Euclidean distance*and the *minimum number of points*. An essential property of this algorithm is that it helps us track down the outliers as the points in low-density regions; hence it's not sensitive to outliers as is the case of K-Means clustering.
+DBSCAN is a popular **density-based** data clustering algorithm. The DBSCAN is an abbreviation for the ''Density-Based Spatial Clustering of Applications with Noise''. To cluster data points, this algorithm separates the high-density regions of the data from the low-density areas. Unlike the K-Means algorithm, the best thing with this algorithm is that we need not provide the number of clusters required prior. DBSCAN algorithm group points based on distance measurement, usually the *Euclidean distance*and the *minimum number of points*. An essential property of this algorithm is that it helps us track down the outliers as the points in low-density regions; hence it's not sensitive to outliers as is the case of K-Means clustering.
 
 ### Prerequisites
 1. Python installed on your system or access to the Google Colab.
@@ -8,38 +8,39 @@ DBSCAN is a popular **density-based** data clustering algorithm compared to the 
 ### Introduction
 DBSCAN algorithm works with two parameters. These parameters are:
 
- 1. **Epsilon(Eps):** This is the maximum distance between two points so that we can consider them as neighbours. We consider *Eps* as a threshold for considering two points as neighbours. If the distance between any two points is less than or equal to the *Eps*, these points are considered neighbours. 
-2. **MinPoints:** This refers to the minimum number of points required to form a cluster. We consider MinPoints as a threshold for considering a cluster as a cluster. A cluster is only recognized if the number of points is greater than or equal to the *MinPts*.
+ 1. **Epsilon(Eps):** The *Eps* is the maximum distance required for two points to be considered neighbors. We consider *Eps* as a threshold for considering two points as neighbors. If their distance is less than or equal to the *Eps*, these points are considered neighbors. 
+2. **MinPoints:** This is the minimum number of points that form a cluster. We consider MinPoints as a threshold for considering a cluster as a cluster. A cluster is only recognized if the number of points is greater than or equal to the *MinPts*.
    
-Based on these two parameters, we classify data points into three categories. So let's look at these categories.
+We classify data points into three categories based on the two parameters above. So let's look at these categories.
 
 ### Types of data points in a DBSCAN Clustering
 After the DBSCAN clustering is complete, we end up with three types of data points as follows:
-1. **Core:** This is a point with at least *Minpoints* including itself within the distance *Eps* from itself.
-2. **Border:** This point has at least one Core point at a distance *Eps*, but itself is not a core point, i.e., it does not satisfy the definition of core point.
-3. **Noise:** This is the point that is neither a *Core* nor a *Border*. This point usually has less than *Minpoints* within distance *Eps* from itself.
+1. **Core:** This is a point from which the two parameters above are fully defined, i.e., a point with at least *Minpoints* within the *Eps* distance from itself.
+2. **Border:** This point with at least one *Core point* within *Eps* distance from itself, but still is not a core point, i.e., it does not satisfy the definition of core point.
+3. **Noise:** This is a point that is neither a *Core* nor a *Border*. This point usually has less than *Minpoints* within distance *Eps* from itself.
 
-Now, let's look at the algorithmic steps for DBSCAN.
+The next thing is to look at the algorithmic steps involved in DBSCAN.
 
 ### DBSCAN Algorithm 
-The algorithmic steps for the DBSCAN clustering are as follows:
+The following are the DBSCAN clustering algorithmic steps;
 
-- **Step 1:** Initially, the algorithms start by selecting a point (x) randomly from the data set and finding all the neighbour points within *Eps* from it. If the number of *Eps-neighbours* is greater than or equal to **MinPoints**, we consider x a core point. Then, together with its *Eps-neighbours*, x forms the first cluster. 
+- **Step 1:** Initially, the algorithms start by selecting a point (x) randomly from the data set and finding all the neighbor points within *Eps* from it. If the number of *Eps-neighbours* is greater than or equal to **MinPoints**, we consider x a core point. Then, together with its *Eps-neighbours*, x forms the first cluster. 
 
-  After creating the first cluster, we examine all other points and find their respective *Eps -neighbours*. If a member has at least *MinPoints* *Eps-neighbours*, expand the initial cluster by adding those *Eps-neighbours* to the cluster. This continues until there are no more points to add to this cluster.
+  After creating the first cluster, we examine all its member points and find their respective *Eps -neighbors*. If a member has at least *MinPoints* *Eps-neighbours*, we expand the initial cluster by adding those *Eps-neighbours* to the cluster. This continues until there are no more points to add to this cluster.
   
-- **Step 2:** For any other core point not assigned to a cluster, create a new cluster.
+- **Step 2:** Create a new cluster for any other core point not assigned to a cluster.
   
 - **Step 3:** Find all its density recursively connected points and assign them to the same cluster as the core point.
   
-- **Step 4:** Iterate through the remaining unvisited points in the dataset and assign them to the nearest cluster at *Eps* distance from themselves. We then set to the noise those points that do not belong to any cluster
+- **Step 4:** Iterate through all unattended points in the dataset and assign them to the nearest cluster at *Eps* distance from themselves. Those points which belong to no cluster set them to the noise.
 
 ### Python Implementation of DBSCAN
 As usual to any implementation, we get started with fetching the dataset and preparing it ready for our model implementation. But, first, let's download this data  [here](https://github.com/Daniel695/datasets/blob/main/Mall_Customers.csv).
 
 ### Data Preprocessing
+#### importing the required libraries
+
 ```python
-# importing the libraries
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -110,9 +111,9 @@ Before we apply the DBSCAN model, first, we need to obtain its two parameters.
 - If the dataset has two dimensions, use the min sample per cluster as 4.
 - If the data has more than two dimensions, the min sample per cluster should be,
  Min_sample(MinPoints) = 2 * Data dimension
-Since our data is two dimensional, we shall use the default value of 4 as our MinPoint parameter. 
+Since our data is two-dimensional, we shall use the default value of 4 as our MinPoint parameter. 
 
-2. Epsilon(Eps): To calculate the value of *Eps*, we shall calculate the distance between each data point to its closest neighbour using the Nearest Neighbours. After that, we sort them and finally plot them. From the plot, we identify the maximum value at the curvature of the graph. This value is our *Eps*.
+2. Epsilon(Eps): To calculate the value of *Eps*, we shall calculate the distance between each data point to its closest neighbor using the Nearest Neighbours. After that, we sort them and finally plot them. From the plot, we identify the maximum value at the curvature of the graph. This value is our *Eps*.
 
 #### Calculate the distances between data points using Nearest Neighbours.
 ```python
@@ -164,7 +165,7 @@ plt.show() # showing the plot
 #### Clusters plot
 ![clusters plot](/engineering-education/dbscan-clustering-in-python/clusters-plot.png)
 ### Conclusion
-In this article, we have covered the DBSCAN algorithm. First, we looked at its key parameters and how this algorithm clusters the data points. We also learned about three types of data points associated with the DBSCAN algorithm. Later we looked at how we implement this algorithm. 
+In this article, we have covered the DBSCAN algorithm. First, we looked at its key parameters and how this algorithm clusters the data points. We also learned about three data points associated with the DBSCAN algorithm. Later we looked at how we implement this algorithm. 
 Here is the end of this session.
 
 Happy learning.
