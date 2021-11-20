@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /implementing-binary-search-tree-using-python/
 title: How to Implement Binary Search Tree in Python
-description: This article will help the reader understand how to implement a binary search tree in Python.
+description: This article will help the reader understand how to implement a binary search tree in Python. We will learn how to create a tree and delete data. We will look at how to check for empty nodes.
 author: samuel-mutero
-date: 2021-11-17T00:00:00-14:48
+date: 2021-11-19T00:00:00-18:07
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,11 +14,11 @@ images:
   - url: /engineering-education/implementing-binary-search-tree-using-python/hero.jpg
     alt: Binary Search Tree in Python Hero Image
 ---
-In this tutorial, we will learn how to use a binary search tree in Python. Note that a binary tree is a non-linear data structure while linked lists and arrays are linear data structures.
+In this tutorial, we will learn how to use a binary search tree in Python. Note that a binary tree is a non-linear data structure, while linked lists and arrays are linear data structures.
 <!--more-->
 In this article, we will:
-- Create a new tree with root key, nodes, and base elements also called leaf nodes
-- Determine the space and time complexity of this algorithm
+- Create a new tree with root key, nodes, and base elements also called leaf nodes.
+- Determine the space and time complexity of this algorithm.
 - Discuss various types of binary trees.
 
 ### Table of contents
@@ -34,34 +34,20 @@ In this article, we will:
 - [Conclusion](#conclusion)
 
 ### Prerequisites
-To understand this tutorial, you must have:- 
-1. An IDE (integrated development environment) that will aid in running our code. We will use Pycharm which can be downloaded from [here](https://www.jetbrains.com/pycharm/download).
+To follow along with this tutorial, you must have:
+1. An IDE (integrated development environment) that will aid in running our code. We will use Pycharm which can be downloaded [here](https://www.jetbrains.com/pycharm/download).
 2. Some basic knowledge of Python.
 
 ### Binary search tree
-A binary tree is a set of finite nodes that can be empty or may contain several elements.
+A binary tree is a set of finite nodes that can be empty or may contain several elements. A node is made up of three entities. A value with two pointers on the left and right. The root node is the parent component on each subtree. 
 
-A node is made up of three entities. A value with two pointers on the left and right.
-The root node is the parent component on each subtree. It can also be considered as the topmost node in a tree.
-
-The nodes attached to the parent element are referred to as children. Leaf nodes, on the other hand, are the base elements in a binary tree.
+It can also be considered as the topmost node in a tree. The nodes attached to the parent element are referred to as children. Leaf nodes, on the other hand, are the base elements in a binary tree.
 
 ### Types of binary search trees
 The various types of binary trees include:
-
-1. Complete binary tree
-
-All levels of the tree are filled and the root key has a sub-tree that contains two or no nodes.
-
-2. Balanced binary tree
-
-The leaf nodes are not far from the root which is more of a relative metric. The nodes can be more than a single level in a tree.
-
-A balanced tree is quite efficient when searching, inserting, and deleting components.
-
-3. Full binary tree
-
-It contains an equal number of nodes in each subtree except for the leaf nodes.
+1. Complete binary tree: All levels of the tree are filled and the root key has a sub-tree that contains two or no nodes.
+2. Balanced binary tree: The leaf nodes are not far from the root which is more of a relative metric. The nodes can be more than a single level in a tree. A balanced tree is quite efficient when searching, inserting, and deleting components.
+3. Full binary tree: It contains an equal number of nodes in each subtree except for the leaf nodes.
 
 ### Creating a binary tree
 We need the following Python syntax to generate a binary tree. A recursive function is required since the sub-tree has similar elements.
@@ -146,9 +132,9 @@ If the data is less than the root key, we will search on the left subtree, else,
             print("The node is empty in the tree!")          #print out empty rightchild nodes in the tree
 ```
 
-The following table below summarises the space and time complexity of the algorithm:
+The table below summarizes the space and time complexity of the algorithm:
 
-**Binary Search Tree**
+#### Binary Search Tree
 
 |     | Average  | Worst case|
 |:--- | :--- | :---|
@@ -166,9 +152,9 @@ The following table below summarises the space and time complexity of the algori
 - They use a logarithmic time complexity of `k = log(n)` where `k` is the lookup, insertion, and removal time and `n` is the number of items stored in the tree. This is better than linear search time.
 
 ### Conclusion
-In this article, we have learned the definition and types of binary search trees.
+In this article we learned the definition and different types of binary search trees. We also discussed how to create a tree, as well as add and delete data. Finally, we looked at how to check for empty nodes.
 
-We have also discussed how to create a tree, as well as add and delete data. Finally, we looked at how to check for empty nodes.
+Happy coding!
 
 ---
 Peer Review Contributions by: [Wanja Mike](/engineering-education/authors/michael-barasa/)
