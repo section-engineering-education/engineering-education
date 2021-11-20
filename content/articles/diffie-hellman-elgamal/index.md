@@ -15,7 +15,9 @@ images:
 ---
 Security plays a crucial role in data communication and data protection. It helps prevent unauthorized access to confidential information, which may lead to data loss and data modification by unknown people making data transferred safe and unchanged.
 <!--more-->
-This article will cover how one can understand various asymmetric encryption algorithms: Diffie Helman and Elgamal to protect data transferred from sender to receiver. Furthermore, it will equip the learner with the knowledge of how to encrypt and decrypt data send together with generating the encryption and decryption keys.
+This article will cover how one can understand various asymmetric encryption algorithms: Diffie Helman and Elgamal to protect data transferred from sender to receiver. 
+
+Furthermore, it will equip the learner with the knowledge of how to encrypt and decrypt data send together with generating the encryption and decryption keys.
 
 ### Table of contents
    - [Prerequisites](#prerequisites)
@@ -29,11 +31,11 @@ This article will cover how one can understand various asymmetric encryption alg
       - [Key Generation](#key-generation)
       - [Encryption](#encryption)
       - [Decryption](#decryption)
-   - [Implementing DHKE in Python](#Implementing DHKE in Python)
+   - [Implementing DHKE in Python](#implementing-dhke-in-python)
    - [Conclusion](#conclusion)
 
 ### Prerequisites
-To follow along, the reader should:
+To follow this tutorial along, the reader should:
 - Have a basic understanding of security concepts.
 - Have a prior understanding of modular arithmetic.
 - Know how to use various development environments for writing and running python code.
@@ -41,39 +43,71 @@ To follow along, the reader should:
 ### Objectives
 By the end of this article, the reader should have basic understandings of generating keys using Diffie-Hellman algorithms and encryption and decryption using Elgamal.
 
-### Asymmetric Encryption
-Asymmetric encryption, also known as `public-key encryption`, involves enciphering information in transit from authorized persons and deciphering by authorized persons using keys.
-These keys include:
+
+### Asymmetric encryption
+Asymmetric encryption, also known as public-key encryption, involves enciphering information in transit from authorized persons and deciphering by authorized persons using keys.
+
+In asymmetric cryptography, both communicating parties (i.e. both Alice and Bob) have two keys of their own — just to be clear, that's four keys total.
+
+Each party has their own public key, which they share with the world, and their own private key which they ... well, which they keep private, of course but, more than that, which they keep as a closely guarded secret. 
+
+The magic of public key cryptography is that a message encrypted with the public key can only be decrypted with the private key. Alice will encrypt her message with Bob's public key, and even though Eve knows she used Bob's public key, and even though Eve knows Bob's public key herself, she is unable to decrypt the message. Only Bob, using his secret key, can decrypt the message ... assuming he's kept it secret, of course.
+
+The keys include:
 - Public key- which is the encryption key and is known to everyone in the network.
 - Private key- which is the decryption key known to only the receiver of the message.
 
-This encryption is used to curb the various problem facing symmetric encryption, which includes:
+This encryption is used to curb the various problem facing symmetric encryption, which include:
 1. Key distribution.
  Key distribution under symmetric encryption requires either:
-   - That two communicants already share a key which somehow has been distributed to them
+   - That two communicants already share a key which somehow has been distributed to them.
    - The use of a Key Distribution Center. This requirement negated the very essence of cryptography, that is, the ability to maintain total secrecy over your communication.
+
    If their users were forced to share their keys with a Key Distribution Center, it could be compromised by either burglary or subpoena.
-2. Creation and verification of the digital signature
+
+2. Creation and verification of the digital signature.
    - If the use of cryptography were to become widespread, not just in military situations but for commercial and private purposes, then electronic messages and documents would need the equivalent of signatures used in paper documents.
 
 >Asymmetric algorithms rely on one key for encryption and a different but related key for decryption.
+
 These algorithms have the following important characteristic:
 1. It is computationally infeasible to determine the decryption key, given only knowledge of the cryptographic algorithm and the encryption key.
 2. The two related keys can be used for encryption, with the other used for decryption.
 
 ![Asymmetric encryption.](/\engineering-education\content\articles\understanding-diffie-helman-and-elgamal-asymmetric-encryption/asymmetric-encryption.png)
 
-### Modular Exponential
-In cryptography, it is important to find the modulus of p<sup>e</sup> mod m when p,e, and m are very large integers. It is very hard to compute p<sup>e</sup> then divide by m and find the remainder because p<sup>e</sup> is a huge number.
+### Modular exponential
+Most technological applications of modular arithmetic involve exponentials with
+very large numbers. For example, a typical problem related to encryption might
+involve solving one of the following two equations:
+```
+67930^32319 == (mod 103969) (70)
+67930^b == 48560 (mod 103969) (71)
+```
 
-The computation can be done using an algorithm that employs the binary expansion of the exponent of e.
-Reduce the value given using the binary form of e and compute the modulus of the value in each step.
-**Example:**
-To compute 3^9, we have that 9 in binary is 1001 so that 3^9=3^8.3^1
-By successively squaring, we find that3^2=9,3^4=9^2=81 and 3^8=81^2=6561
-Consequently,
-Since 3^9=3^8.3^1, which equals 6561.3=19,683
-To work out the modulus of 3^9 mod 5
+It turns out that `a = 6582` and `b = 32320` solve these equations, but those
+answers are not obvious at all from looking at the equations. More importantly,
+it is not even clear how we would go about determining `a` and `b`.
+
+In what is part of a great mystery of the modern study of computational complexity, the first equation is relatively easy for computers to solve, whereas there is no known way of eficiently solving the second problem.
+
+In this section we will look at some problems involving modular exponentiation and some techniques we can use to solve such problems.
+
+In cryptography, it is important to find the modulus of `p`<sup>`e`</sup> `mod m` where `p`,`e`, and `m` are very large integers. 
+
+>Note: It is very hard to compute `p`<sup>`e`</sup> then divide by `m` and find the remainder because `p`<sup>`e`</sup> is a very large number.
+
+The computation can be done using an algorithm that employs the binary expansion of the exponent of `e`.
+
+Reduce the value given using the binary form of `e` and compute the modulus of the value in each step.
+
+Let's proceed and look at an example:
+
+To compute `3^9`, we have that `9` in binary is `1001` so that `3^9=3^8.3^1`
+By successively squaring, we find that `3^2=9,3^4=9^2=81` and `3^8=81^2=6561`.
+
+Since `3^9=3^8.3^1`, which equals `6561.3=19,683`, to work out the modulus of `3^9 mod 5`;
+
 **Solution:**
 Assume x=1 and p=3(base)
 compute x mod 5 where x=x*p where the binary value is 1 and it remains where the value same is 0
@@ -97,7 +131,7 @@ Return the last value of x = 3
 3^9 mod 5 =3
 ```
 
-### Modular Exponential Using Python
+### Modular exponential using Python
 ```python
 #Input three numbers.
 x = int(input("Enter First Value :"))
