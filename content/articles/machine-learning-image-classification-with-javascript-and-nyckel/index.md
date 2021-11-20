@@ -295,9 +295,7 @@ $(function ()
         resizeAndUploadImage(file);
     });
 });
-```
 
-```Javascript
 function showImage(file)
 {
     var reader = new FileReader();
@@ -307,9 +305,7 @@ function showImage(file)
     }
     reader.readAsDataURL(file);
 }
-```
 
-```javascript
 function resizeAndUploadImage(file)
 {
     // Ensure it's an image
@@ -360,9 +356,6 @@ function resizeAndUploadImage(file)
         resetPage();
     }
 }
-```
-
-```Javascript
 /* Utility function to convert a canvas to a BLOB */
 var dataURLToBlob = function (dataURL)
 {
@@ -391,9 +384,6 @@ var dataURLToBlob = function (dataURL)
     return new Blob([uInt8Array], { type: contentType });
 }
 /* End Utility function to convert a canvas to a BLOB      */
-```
-
-```Javascript
 function displayResult(response)
 {
     resetPage();
