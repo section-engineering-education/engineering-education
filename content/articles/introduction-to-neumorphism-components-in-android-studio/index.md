@@ -2,16 +2,16 @@
 layout: engineering-education
 status: publish
 published: true
-url: /an-introduction-to-neumorphism-components-in-android-studio/
+url: /introduction-to-neumorphism-components-in-android-studio/
 title: Introduction to Neumorphism in Android Studio
-description: This article will introduce the reader to neumorphism in Android Studio. Neumorphism is a popular user design concept.
-author: johnnie-mbugua
-date: 2021-11-19T00:00:00-08:48
+description: This article will introduce the reader to neumorphism in Android Studio. Neumorphism is a popular user design concept. Neumorphism allows you to implement floating UI objects. This concept is almost identical to material design.
+author: edwin-wachira
+date: 2021-11-20T00:00:00-08:48
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/an-introduction-to-neumorphism-components-in-android-studio/hero.jpg
+  - url: /engineering-education/introduction-to-neumorphism-components-in-android-studio/hero.jpg
     alt: Neumorphism in Android Studio Hero Image
 ---
 Neumorphism is a design concept used to make soft widgets based on object shadows. It uses highlights and shadows to create elements that appear to be floating above the surface.
@@ -20,44 +20,40 @@ In other words, the object seems to extrude from the background. Its aesthetic i
 
 The following image shows a calculator app created using the neumorphic design:
 
-![neumorphism-music-player](/engineering-education/an-introduction-to-neumorphism-components-in-android-studio/neumorphism-music-player.png)
+![Neumorphism music player](/engineering-education/introduction-to-neumorphism-components-in-android-studio/neumorphism-music-player.png)
 
-[***Image Source***](https://play.google.com/store/apps/details?id=com.ayush.musical)
+[Image Source](https://play.google.com/store/apps/details?id=com.ayush.musical)
 
 Skeuomorphism elements resemble real-life objects. The following example showcases skeuomorphic elements.
 
-![***instagram-new-logo-design-illustration***](/engineering-education/an-introduction-to-neumorphism-components-in-android-studio/instagram-new-logo-design-illustration.jpg)
+![Instagram new logo design illustration](/engineering-education/introduction-to-neumorphism-components-in-android-studio/instagram-new-logo-design-illustration.jpg)
 
-[**Image Source**](https://smithhousedesign.com/new-logo-instagram-marks-beginning-end-flat-design/)
+[Image Source](https://smithhousedesign.com/new-logo-instagram-marks-beginning-end-flat-design/)
 
 Here are other examples of skeuomorphism:
 
-![apple-example](/engineering-education/an-introduction-to-neumorphism-components-in-android-studio/apple-example.png)
+![Apple example](/engineering-education/introduction-to-neumorphism-components-in-android-studio/apple-example.png)
 
-[***Image Source***](https://dribbble.com/shots/12910101-Apple-not-flat)
+[Image Source](https://dribbble.com/shots/12910101-Apple-not-flat)
 
-![telegram-mail-example](/engineering-education/an-introduction-to-neumorphism-components-in-android-studio/telegram-mail-example.png)
+![Telegram mail example](/engineering-education/introduction-to-neumorphism-components-in-android-studio/telegram-mail-example.png)
 
-[***Image Source***](https://dribbble.com/shots/14389278-Mail-Icon)
+[Image Source](https://dribbble.com/shots/14389278-Mail-Icon)
 
 Check this [link](https://dribbble.com/tags/skeuomorphic) for more skeuomorphic design concepts.
 
 ### Background
-Neumorphism relies heavily on layers, shadows, and angles to dictate hierarchy and context while embracing minimalism.
+Neumorphism relies heavily on layers, shadows, and angles to dictate hierarchy and context while embracing minimalism. Neumorphism began from numerous concepts posted on Dribbble. One of these elements was posted by [Alexander Plyuto](https://dribbble.com/shots/8557373-Skeuomorph-Mobile-Banking-Dark-Mode).
 
-Neumorphism began from numerous concepts posted on Dribbble. One of these elements was posted by [Alexander Plyuto](https://dribbble.com/shots/8557373-Skeuomorph-Mobile-Banking-Dark-Mode).
+In this guide, we will look at how to implement neumorphism designs in Android Studio. Here are some screens implemented using the Neumorphic concept.
 
-In this guide, we will look at how to implement neumorphism designs in Android Studio.
+![Neumorphism example](/engineering-education/introduction-to-neumorphism-components-in-android-studio/example2.png)
 
-Here are some screens implemented using the Neumorphic concept.
+[Image Source](https://dribbble.com/shots/10000695-Neumorphism-Sweet-Mix)
 
-![Neumorphism-example](/engineering-education/an-introduction-to-neumorphism-components-in-android-studio/example2.png)
+![Neumorphism example](/engineering-education/introduction-to-neumorphism-components-in-android-studio/example3.png)
 
-[***Image Source***](https://dribbble.com/shots/10000695-Neumorphism-Sweet-Mix)
-
-![Neumorphism-example](/engineering-education/an-introduction-to-neumorphism-components-in-android-studio/example3.png)
-
-[***Image Source***](https://dribbble.com/shots/9527558-Freebie-Neumorphic-UX-UI-Elements)
+[Image Source](https://dribbble.com/shots/9527558-Freebie-Neumorphic-UX-UI-Elements)
 
 ### How neumorphism works
 Neumorphism design structure relies on a shadowing system. This approach elevates an object above the base layer. As a result, it creates realistic and unique-looking elements.
@@ -70,15 +66,15 @@ Therefore, this means that if there is a light source:
 
 Neumorphism will show the following shadows and highlights depending on the light source.
 
-![neumorphism-light-source](/engineering-education/an-introduction-to-neumorphism-components-in-android-studio/light-source.jpg)
+![neumorphism-light-source](/engineering-education/introduction-to-neumorphism-components-in-android-studio/light-source.jpg)
 
-[***Image Source***](https://github.com/fornewid/neumorphism#lightsource)
+[Image Source](https://github.com/fornewid/neumorphism#lightsource)
 
 The following shapes can be implemented using neumorphism:
 
-![neumorphism-shape-type](/engineering-education/an-introduction-to-neumorphism-components-in-android-studio/shape-type.jpg)
+![neumorphism-shape-type](/engineering-education/introduction-to-neumorphism-components-in-android-studio/shape-type.jpg)
 
-[***Image Source***](https://github.com/fornewid/neumorphism#shapetype)
+[Image Source](https://github.com/fornewid/neumorphism#shapetype)
 
 ### Prerequisites
 To follow along with this guide, prior knowledge of Java is essential. You should also be familiar with Android Studio.
@@ -86,7 +82,9 @@ To follow along with this guide, prior knowledge of Java is essential. You shoul
 ### Getting started
 To implement neumorphism in Android Studio, we need to install a `neumorphism` library. 
 
-Go ahead and start a new project. Then include the following library in your `app.gradle` file:
+Go ahead and start a new project. 
+
+Then include the following library in your `app.gradle` file:
 
 ```java
 implementation 'com.github.fornewid:neumorphism:0.2.1'
@@ -100,9 +98,7 @@ Neumorphism allows you to implement floating UI objects. This concept is almost 
 The main difference between the two is that neumorphic objects are extruded from the background while material design components cast a shadow while blocking the light source.
 
 ### Usage
-The parent neumorphic view (element) should always be set to false (`android:clipChildren="false"`). 
-
-This is important to prevent the clipping of shadows. If this solution doesn't work (depending on the view group such as `Relativelayout`), use `android:padding`.
+The parent neumorphic view (element) should always be set to false (`android:clipChildren="false"`). This is important to prevent the clipping of shadows. If this solution doesn't work (depending on the view group such as `Relativelayout`), use `android:padding`.
 
 An object should have the same color as your background. It's vital to have a matching background color to create the aesthetic framed shadows.
 
@@ -224,11 +220,11 @@ Here is a simple example of a sign-in user interface:
 </RelativeLayout>
 ```
 
-![neumorphism-login-ui](/engineering-education/an-introduction-to-neumorphism-components-in-android-studio/neumorphism-login-ui.jpg)
+![neumorphism-login-ui](/engineering-education/introduction-to-neumorphism-components-in-android-studio/neumorphism-login-ui.jpg)
 
 Each of the above elements can be modified. Check this [guide](https://github.com/fornewid/neumorphism#usage) to learn more about neumorphism.
 
-In the above code, you should remember to:
+In the code above, you should remember to:
 - Specify your light source as `app:neumorph_lightSource="leftTop|leftBottom|rightTop|rightBottom`".
 - Add shadow elevation and highlight colors.
 - Predefine ViewGroup or View types (style="@style/Widget.Neumorph.Button")
@@ -327,18 +323,14 @@ The above example can be replicated to a different shape type such as `PRESSED` 
 </RelativeLayout>
 ```
 
-![neumorphism-pressed-login-ui](/engineering-education/an-introduction-to-neumorphism-components-in-android-studio/neumorphism-pressed-login-ui.jpg)
+![neumorphism-pressed-login-ui](/engineering-education/introduction-to-neumorphism-components-in-android-studio/neumorphism-pressed-login-ui.jpg)
 
 ### Final notes
-Neumorphism is not a very versatile design. At times it is not clear, especially when using buttons. 
-
-This is because the change of state is not visible enough. This poses a challenge to people with visual impairments or mobile phones with low-quality screens.
-
-One of the best use cases of neumorphism is when using cards.
+Neumorphism is not a very versatile design. At times it is not clear, especially when using buttons. This is because the change of state is not visible enough. This poses a challenge to people with visual impairments or mobile phones with low-quality screens. One of the best use cases of neumorphism is when using cards.
 
 Check out the following [modern dashboard design](https://github.com/Wachira48/NeumorphismAndroidUI/blob/master/app/src/main/res/layout/activity_dashboard_u_i.xml) implemented using Neumorphism.
 
-![neumorphism-dashboard-ui-design](/engineering-education/an-introduction-to-neumorphism-components-in-android-studio/neumorphism-dashboard-ui-design.jpg)
+![neumorphism-dashboard-ui-design](/engineering-education/introduction-to-neumorphism-components-in-android-studio/neumorphism-dashboard-ui-design.jpg)
 
 You can access the complete code from this [GitHub repository](https://github.com/Wachira48/NeumorphismAndroidUI).
 
@@ -350,14 +342,10 @@ Neumorphism can be applied well in:
 
 ### Further reading
 - [Weather forecast app](https://play.google.com/store/apps/details?id=com.barcelonacodeschool.neumorphismweather)
-
 - [Todo tasks and schedule](https://play.google.com/store/apps/details?id=com.flutter.bananavolt.neumorphism.neo.todo)
-
 - [Neumorphism calculator](https://play.google.com/store/apps/details?id=dev.littleforest.calculator_app)
-
 - [Neumorphic calculator](https://play.google.com/store/apps/details?id=dev.luhluh.neucalcu)
-
-- [music player](https://play.google.com/store/apps/details?id=com.ayush.musical)
+- [Music Player](https://play.google.com/store/apps/details?id=com.ayush.musical)
 
 ---
 Peer Review Contributions by: [Wanja Mike](/engineering-education/authors/michael-barasa/)
