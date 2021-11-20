@@ -79,11 +79,11 @@ $H_N=H_1 * H_{N-1}$
 We want to see how we can get the Walsh matrix from Hadamard.
 Consider the hadamard matrix($H_2$)
 
-![the h2 matrix](walshOne.png)
+![the h2 matrix](/engineering-education/walsh-hamard-transform-for-signal-and-image-compression-using-matlab/walshOne.png)
 
 If we look at the first row, we see that the sign of the elements does not change from the first column to the last. However, the sign changes from 1 to -1, then to 1, then -1 again, which sums to three changes in the second row, and then you move to the third and fourth rows. Here, we consider how the sign changes. If we arrange the rows in the increasing number of sign changes, it becomes the Walsh matrix, as shown below.
 
-![The Walsh matrix](walshTwo.png)
+![The Walsh matrix](/engineering-education/walsh-hamard-transform-for-signal-and-image-compression-using-matlab/walshTwo.png)
 
 ### Walsh-Hadamard transform for images
 For 2-D signals(images of NxN),  You can obtain the forward Walsh method transform by the following matrix equation.
@@ -138,7 +138,7 @@ x_r = H*y*H;                %Inverse transform formula
 
 ### Fast WHT
 This method is developed with the complexity O(NlogN). It uses only addition and subtraction. To see how this works, we use the butterfly structure shown below;
-![butterfly structure](walshThree.png)
+![butterfly structure](/engineering-education/walsh-hamard-transform-for-signal-and-image-compression-using-matlab/walshThree.png)
 
 The blue arrows show addition, while the red shows subtraction. It makes the computation faster. Matlab's in-built functions `fwht` and `ifwht` are based on this fast WHT algorithm.
 
@@ -184,7 +184,7 @@ plot(abs(y), 'k');   title('Truncated Hadamard transform co-efficient')
 subplot(224)    % filtered ecg signal
 plot(x);   title('filtered ECG signal');
 ```
-![output signals](walshFour.png)
+![output signals](/engineering-education/walsh-hamard-transform-for-signal-and-image-compression-using-matlab/walshFour.png)
 
 Let's create a plot for both the original and filtered signal in the same plot using the code below to see this more clearly.
 ```Matlab
@@ -197,7 +197,7 @@ title('Original and filtered ECG signal')
 
 The output is as shown below;
 
-![figure 2](walshFive.png)
+![figure 2](/engineering-education/walsh-hamard-transform-for-signal-and-image-compression-using-matlab/walshFive.png)
 
 ### Matlab code to implement image compression using FWHT
 This method has a very good energy compaction property. Energy compaction property means very few coefficients have the maximum part of the energy. So, you can ignore or zero out a large number of co-efficient from the transform matrix. It is why you can achieve the compression of the input image.
@@ -264,7 +264,7 @@ subplot(224)  % Plot of the finally compressed image
 imshow(imgr8);    title('compressed image');
 ```
 Below is the output;
-![output](walshSix.png)
+![output](/engineering-education/walsh-hamard-transform-for-signal-and-image-compression-using-matlab/walshSix.png)
 As we can see, there is no difference between the input image and the output in terms of appearance. It is how efficiently this method works. To see if your image is compressed, you can compare the input and output sizes in the folders. The image is compressed from 113kb to 32kb, which is a good compression.
 
 ### Conclusion
