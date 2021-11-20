@@ -35,6 +35,7 @@ There are several methods used in edge detection in images. These methods are us
 All these methods only accept a grayscale image input; hence it is essential to fast convert the RGB image to a grayscale image, conversion of RGB to gray is done using the function `rgb2gray()`. The initial stage of all image processes is importing the image to the Matlab workspace. Importation of image is done using the function `imread('imagefolderpath')`. 
 
 The following codes are used in importation and image conversion to grayscale. The outcome will be used to demonstrate various edge detection methods.
+
 First, we import the image using the following codes.
 ```matlab
 i = imread('print.PNG'); %importing the image
@@ -172,6 +173,7 @@ figure,imshow(i4) %Displaying the boundaries obtained
 ###  Highlighting text in an image
 In an image containing text messages with different words, the words are the objects contained in the image. Matlab provides functions for highlighting specified words in a text image.
 We will demonstrate by highlighting the word 'MATLAB' in an image containing random letters. `locatetext()` function is used to locate the text to be highlighted. The following codes are used in the process;
+
 First, we import the image containing the text using the codes below.
 ```matlab
 i = imread('C:/Users/user/Pictures/TEXT.PNG'); % importing the image
@@ -195,6 +197,7 @@ figure,imshow(i2) %Displaying the highlighted text in the image
 
 ### Labeling objects in images
 Objects contained in an image can be detected and labeled using the `bwlabel()` function. This function is executed in a binarized image. One can view the labeled object by converting `bwlabel()` results to RGB image using the function `label2rgb()`. we will demonstrate this process using the following codes:
+
 We first import the image using the codes below.
 ```matlab
 i = imread('capture.PNG'); %importing the image
