@@ -1,3 +1,31 @@
+
+### Introduction
+XMPP - Extensible Messaging and Presence Protocol, known as `ejabberd` is an open communication protocol for instant messaging presence information and contact list maintenance. 
+
+Originally developed by the open-source community, the protocols were formalized as an approved instant messaging standard in 2004 and has been continuously developed with new extensions and features.
+
+It is used by almost all large messaging systems such as WhatsApp, Facebook, Google-Doc, e.t.c. 
+
+Note:) This is encrypted by default.  This was built on top `OMEMO` end-to-end encryption protocol specification.
+
+This specification defines a protocol for end-to-end encryption in one-to-one chats, as well as group chats where each participant may have multiple clients per account.
+
+Compared to commercial instant messaging protocols, XMPP is defiined on an open standard in the application layer.
+
+Various XMPP client software are available on both desktop and mobile platforms and devices. By 2003, the protocol was used by over ten million people worldwide on the network, according to the XMPP Standards Foundation. 
+
+This tutorial will explain the XMPP architecture, how it works, and build a demo server connection using node js and docker. This will establish connections between two clients having XMPP servers running. 
+
+### Table of Contents
+- [Table of Contents](#table-of-contents)
+- [Prerequisites](#prerequisites)
+- [Key Takeaways](#key-takeaways)
+- [Why XMPP](#why-xmpp)
+- [XMPP Architecture](#xmpp-architecture)
+- -[XMPP Transport](#xmpp-transport)
+- [XMPP Server Demo with NodeJs and Docker](#xmpp-server-demo-with-nodejs-and-docker)
+
+
 ### Prerequisites
 To follow along this tutorial with ease, one should meet the following requirements.
 - Have a basic understanding of programming in node js and docker commands.
@@ -5,20 +33,13 @@ To follow along this tutorial with ease, one should meet the following requireme
 - [Docker](https://www.docker.com/products/docker-desktop).
 - [Node Js](https://nodejs.org/en/download/).
 
-
-XMPP - Extensible Messaging and Presence Protocol, known as `ejabberd` is an open communication protocol for instant messaging presence information and contact list.  
-
-It is used by almost all large messaging systems such as WhatsApp, Facebook, Google-Doc, e.t.c. This is encrypted by default.
-
-This tutorial will explain the XMPP architecture, how it works, and build a demo server connection using node js and docker. This will establish connections between two clients having XMPP servers running.
-
 ### Key takeaways
 
 At the end of this tutorial, you would know the following points;
 1. Why XMPP?.
 2. Architecture and how it works underline.
 3. XMPP Transport
-3. Building a demo XMPP server with node js and docker.
+3. XMPP Server Demo with NodeJs and Docker
 
 If you want to learn stuff, kindly stay tuned, and let's jump into it.
 
@@ -31,7 +52,7 @@ If XMPP is the backend of your application, it paves way for a lot of clients to
 
 Like  Google mail, it was made a decentralized protocol. That is clients can belong to different XMPP servers and still connect. 
 
-#### XMPP architecture
+#### XMPP Architecture
 
 In this section, we look at the architectures of this technology and how it works internally.
 
@@ -47,9 +68,13 @@ There are three different XML stanzas that XMPP supports.
 2. The status can also be exchanged like <presence/>
 3. Information query which is the request-response like <iq/> tag.
 
-Finally, the whole of XMPP is decentralized. For instance, we have the domain `myxmpp.com` server between two clients. See the instance below on how the connection works :)
+Finally, the whole of XMPP is decentralized. This means no client is directly connected to another. T
 
-ClientA concects to xmpp server,
+The connection is achieved by server as the intermediary between clients. 
+
+For instance, we have the domain `myxmpp.com` server between two clients. See the instance below on how the connection works :)
+
+ClientA connects to xmpp server,
 
 ```xml
     <stream:stream
@@ -86,7 +111,7 @@ Client B receives the message from Client A
 
 ClientA terminates the stream
 ```xml
-</stream:stream'>
+</stream:stream>
 ``` 
 
 The above code snippet is showing the architecture of this XMPP server. This is how the server connects different clients by using the properties of the `stream` defined.
@@ -104,7 +129,7 @@ This server can be blocked by firewalls because it does not like random ports.
 
 This is avoided by hosting the XMPP server on HTTP with long polling since it only sends a message when the server receives a new request. That is HTTP is not bi-directional and is stateless.
 
-#### XMPP server with nodejs and docker
+#### XMPP server demo with nodejs and docker
 
 In this demo, we spin up XMPP server `ejabberd` with docker because that is the easiest way. We will create two users, spin up node js XMPP client to connect to server and chat. 
 
