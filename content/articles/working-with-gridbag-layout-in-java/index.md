@@ -1,42 +1,50 @@
-## Introduction
+### Table of Contents
+- [Table of Contents](#table-of-contents)
+- [Introduction](#introduction)
+- [Prerequisite](#prerequisite)
+- [Goal](#goal)
+- [Gridbag Layout](#gridbag-layout)
+  - [Arranging components in a Container](#arranging-components-in-a-container)
+  - [What are Layout Managers](#what-are-layout-managers)
+  - [Types of Layout Managers](#types-of-layout-managers)
+  - [What is GridBag Layout Manager](#what-is-gridbag-layout-manager)
+  - [Working with GridBag layout](#working-with-gridbag-layout)
+  - [Setting the Panel’s layout](#setting-the-panels-layout)
+  - [GridBag Constraints](#gridbag-constraints)
+  - [Methods of Adding Constraints to Component](#methods-of-adding-constraints-to-component)
+  - [The Computer Assisted Learning (CAL) User Interface](#the-cal-user-interface)
+- [Conclusion](#conclusion)
+
+### Introduction
 Transitioning from console apps to GUI apps is one of the greatest fantasies of every budding developer. But the spoiler comes when you discover that GUI is only fun when you know which, how, and when to use it.
 Knowing how to position your GUI components on the screen and the right layout to use is a tedious task and a very important aspect of programming GUI in Java.
 In this article, we will be diving deep into working GridBag layout in Java and how you can use it to achieve that desired User Interface (UI).
 
 
-## Table of Contents
-* Arranging components in a container
-* What are layout managers
-* Types of Layout Managers
-* What is GridBag layout manager
-* Working with GridBag layout
-* Building a Computer Assisted Learning (CAL) user interface with GridBag layout
-* Conclusion
-
-
-## Prerequisite
+### Prerequisite
 * Working knowledge of basic programming in Java.
 * Basic understanding of OOP principles in Java.
 * Have Java installed in your machine and a suitable Integrated Development Environment (IDE). I recommend NetBeans because we will be making use of it in this tutorial.
 
-## Goal
+### Goal
 By the end of this tutorial, you will:
 * Get familiar with the different types of layout managers in Java.
 * Have in-depth knowledge of Gridbag layout in Java.
 * Know when, why, and how to use Gridbag layout in Java.
 
-### Arranging components in a Container
-Java provides different options to position components in our container which includes:
-1. Absolute positioning: This gives you absolute control over the size and position of components on the panel. It allows you to explicitly specify the size and position of each component. You can achieve absolute positioning by setting the container’s layout manager to `null`. i.e. `setLayout(null);`And also setting the containers `setSize` and `setBounds` method of each of the component.
+### Gridbag Layout
+#### Arranging components in a Container
+Java provides different options to position components in the container which includes:
+1. Absolute positioning: This gives you absolute control over the size and position of components on the panel. It allows you to explicitly specify the size and position of each component. You can achieve absolute positioning by setting the container’s layout manager to `null`. i.e. `setLayout(null);`. And also setting the containers `setSize` and `setBounds` method of each of the component any desired value.
 
 2. Visual programming: This is the use of a GUI design tool that allows you to drag and drop components from a set of components into the design area of the IDE.   These components are usually located at the sidebar of the IDE. You can find them at the component toolbox of the IDE. They can be modified to fit design needs. You can also add event handling codes to these components after the design. The event handling codes add functionalities to the components. The IDE creates the code for the GUI during all the processes of design so you can later change it to fit needs.
  
 3. Layout managers: This involves the use of a defined or customized layout to position components on the panel or frame. Layout managers give more flexibility in defining components size. But give less control over the absolute position of each component. 
 
-### What are Layout Managers
-Layout managers are responsible for positioning each GUI component in their frames or panel. Layout managers allow you ly align components in desired positions. Instead of bothering about their exact position, we rather lay them out on the panel with some specific constraints and the layout manager takes care of the positioning.
+#### What are Layout Managers
+Layout managers are responsible for positioning each GUI component in their frames or panel. Layout managers allow you to align components in desired positions. Instead of bothering about their exact position, we rather lay them out on the panel with some specific constraints and the layout manager takes care of the positioning.
 
-### Types of Layout Managers
+#### Types of Layout Managers
 Below are some of the layout managers Java provides:
 * Flow layout
 * Border layout
@@ -47,63 +55,63 @@ Below are some of the layout managers Java provides:
 
 In this article, we will be considering the Gridbag layout and building an amazing user interface with it.
 
-### What is GridBag Layout Manager
-The gridbag layout manager places components in rows and columns similar to the grid layout. But with gridbag layout, you can specify the size of each row or column. You can also decide whether a component spans many rows or columns. Gridbag layout is one of the most flexible and complex layout manager among all that Java provides. It is used to build complicated UIs and it is one of the most used layout managers. When working with components of different sizes, then the gridbag layout is for you.
+#### What is GridBag Layout Manager
+The Gridbag layout manager places components in rows and columns similar to the grid layout. But with Gridbag layout, you can specify the size of each row or column. You can also decide whether a component spans many rows or columns. Gridbag layout is one of the most flexible but complex layout manager among all that Java provides. It is used to build complicated UIs and it is one of the most used layout managers. When working with components of different sizes, then the Gridbag layout is for you.
 Gridbag layout represents the position of each component in form of a table containing rows and columns. The component's positions are outlined using gridlines like in the image below.
 
 ![Gridbag layout sketch](/working-with-gridbag-layout-in-java/1-layout-sketch.jpg)
 
-It is always advisable to draft out the components in a panel using gridlines before coding them out with gridbag layout. This will give you a visual insight of the location of each component on the panel.
-As seen from the image above, some components occupy only one grid, while some occupy more than one. This implies that the components don’t need to be of the same size. You can specify how many grids a component spans using the gridweight and gridheight methods of the gridbag constraint object we will consider later in this article.
+It is always advisable to draft out the components in a panel using gridlines before coding them out with Gridbag layout. This will give you a visual insight of the location of each component on the panel.
+As seen from the image above, some components occupy only one grid, while some occupy more than one. This implies that the components don’t need to be of the same size. You can specify how many grids a component spans using the `gridweight` and `gridheight` methods of the `GridBagConstraints` object we will consider later in this article.
 
-### Working with GridBag layout
-Now, let’s analyze the image above considering each component, alignment, x and y position, and the span.
+#### Working with GridBag layout
+Now, let’s analyze the image above considering each component, x and y position, and the span.
 
-Component | x | y | span 
-----------|---|---|-----------------------
-ComboBox “Easy” | 0 | 0 | 1 
-ComboBox “Multiplication” | 2 | 0 | 1
-TextField1 | 0 | 1 | 3
-TextField2 | 1 | 2 | 1
-Button “Start” | 0 | 3 | 1
-Button “Enter” | 1 | 3 | 1
-Button “Stop” | 2 | 3 | 1
+| Component                 | x   | y   | span |
+| ------------------------- | --- | --- | ---- |
+| ComboBox “Easy”           | 0   | 0   | 1    |
+| ComboBox “Multiplication” | 2   | 0   | 1    |
+| TextField1                | 0   | 1   | 3    |
+| TextField2                | 1   | 2   | 1    |
+| Button “Start”            | 0   | 3   | 1    |
+| Button “Enter”            | 1   | 3   | 1    |
+| Button “Stop”             | 2   | 3   | 1    |
 
-The first element at the top left corner of the panel is located at position (0, 0). This is the starting point of the layout and every other component follows. From the example above, the “easy” checkbox is the takes this first position. This component only spans 1 column which is specified in the table.
+The first element at the top left corner of the panel is located at position (0, 0). This is the starting point of the layout and every other component follows. From the example above, the “Easy” checkbox takes this first position. It only spans 1 column which is specified in the table.
 
 > The span specifies how many cells a component occupies. The default is 1. 
 
 For the sake of this tutorial, we will explicitly add the 1 in our definition for clarity.
-The next component of the grid is the “multiplication” checkbox located at position (2, 0). You can find it in column 2 and Like the “easy” checkbox, this also spans 1 column. But, notice the space between the two checkboxes, which is one of the powerful features of the gridbag layout. The elements are evenly spaced and each element sits as desired in their respective position.
-The next component is the textfield1, which is located at (0, 1). You can find this component in column 0 and row 1. It also spans 3 columns. The fact that it spans through columns 2 and 3 does not matter in the definition. One important thing to consider when laying out a component is the start position. We can set components to span as many rows and columns as required. Depending on the direction it spans towards, it won’t affect other cells located next to the current cell.
+The next component of the grid is the “Multiplication” checkbox located at position (2, 0). You can find it in column 2 and Like the “Easy” checkbox, this also spans 1 column. But, notice the space between the two checkboxes, which is one of the powerful features of the Gridbag layout. The elements are evenly spaced and each element sits as desired in their respective position.
+The next component is the Textfield1, which is located at (0, 1). You can find this component in column 0 and row 1. It also spans 3 columns. The fact that it spans through columns 2 and 3 does not matter in the definition. One important thing to consider when laying out a component is the start position. We can set components to span as many rows and columns as required. Depending on the direction it spans towards, it won’t affect other cells located next to the current cell.
 Other components follow suit in the same order and span one cell each. Textfield2 located at (1, 2), button “Start” at (0, 3), button “Enter” at (1, 3), button “Stop” at (2, 3).
 
-### Setting the Panel’s layout
-We set the gridbag layout as the layout of our panel like other layout managers. This is done by passing an object of the gridbag layout into the panel `setLayout` method as shown below:
+#### Setting the Panel’s layout
+We set the Gridbag layout as the layout of our panel like other layout managers. This is done by passing an object of  `GridBagLayout` into the panel `setLayout` method as shown below:
 ```java
     panel1 = new JPanel();
     panel1.setLayout(new GridBagLayout());
 ```
-Another method that can you can use to set the panel layout is passing the layout object as an argument in the panel instance object constructor as shown below:
+Another method that you can use to set the panel layout is passing the layout object as an argument in the panel instance object constructor as shown below:
 ```java
     panel1 = new JPanel(new GridBagLayout());
 ```
 The two methods work fine, but it is advisable to use the first method for the sake of clarity.
 
-### GridBag Constraints
-We determine the size and position of each component in the panel using the gridbag constraints. Each element in the panel has some characteristics which are defined by the gridbag constraints. Some commonly used methods in the GridBagConstraints class are listed below:
+#### GridBag Constraints
+We determine the size and position of each component in the panel using the Gridbag constraints. Each element in the panel has some characteristics which are defined by the Gridbag constraints. Some commonly used methods in the `GridBagConstraints` class are listed below:
 
-Field | Functionality
-----------|-----------
-int gridx | The column of the component
-int gridy | The row of the component
-int gridwidth | The number of columns a component span
-int gridheight | The number of rows a component span
-int fill | A constant that determines how a component handles remaining space in a cell
-int anchor | A constant that determines where the component is placed if it does not fill the cell
-Insets ins | Determines the padding around each component
+| Field          | Functionality                                                                         |
+| -------------- | ------------------------------------------------------------------------------------- |
+| int gridx      | The column of the component                                                           |
+| int gridy      | The row of the component                                                              |
+| int gridwidth  | The number of columns a component span                                                |
+| int gridheight | The number of rows a component span                                                   |
+| int fill       | A constant that determines how a component handles remaining space in a cell          |
+| int anchor     | A constant that determines where the component is placed if it does not fill the cell |
+| Insets ins     | Determines the padding around each component                                          |
 
-### Methods of Adding Constraints to Component
+#### Methods of Adding Constraints to Component
 The first approach we will consider is to create a `GridBagConstraints` object. Then add the constraint object along with the component into the panel. You can use this constraint object to add constraints to other components, but the fields of the object are changed when necessary. Below is an example 
 ```java
 panel1 = new JPanel();
@@ -127,7 +135,7 @@ panel1.add(textField2, constr);
 ```
 The snippet above creates a single constraint object and uses it to add two components to the panel. Notice that all the necessary fields are filled before adding the constraint to the textField1. The constraints fields are then modified before adding to textField2. Using this method, change only the necessary fields to avoid repetition.
 
-The second approach is to create a helper method that you can call and pass values for each field of the constraint. The snippet below uses the add method to add a constraint to a component and then adds the component to the panel.
+The second approach is to create a helper method that you can call and pass values for each field of the constraint. The snippet below uses the `add` method to add constraints to a component and then adds the component to the panel.
 
 ```java
 public static void add(JPanel panel, JComponent comp, int x, int y, int width, int height) {
@@ -142,7 +150,7 @@ GridBagConstraints constr = new GridBagConstraints();
         panel.add(comp, constr);
 }
 ```
-This method is then called whenever you need to add a component to the panel. You must pass in all the parameters to add the component successfully.
+This method is then called whenever you need to add a component to the panel. You must pass in all the parameters to add the component successfully. For example
 
 ```java
 add(panel1, textField1, 0, 1, 3, 1);
@@ -150,11 +158,11 @@ add(panel1, textField1, 0, 1, 3, 1);
 In a case where you need to add more constraints, then specify these constraints in the method’s parameter.
 
 
-### The CAL User Interface
+#### The CAL User Interface
 
 ![Final looks](/working-with-gridbag-layout-in-java/2-final.jpg)
  
-The user interface (UI) above is a good example demonstrating the capabilities of gridbag layout. Let’s build the UI using gridbag layout.
+The user interface (UI) above is a good example demonstrating the capabilities of Gridbag layout. Let’s build the UI using Gridbag layout.
 
 ```java
 import java.awt.*;
@@ -247,12 +255,12 @@ The string passed in is the title of the application.
 
 ![GUI title](/working-with-gridbag-layout-in-java/3-gui-title.jpg) 
 
-It then creates a new panel object and sets the panel’s layout to “GridBagLayout”. This is the point where we set the layout of our panel. The layouts can be any of the layouts listed above, but for the sake of this tutorial, we entered “GridBagLayout”.
+It then creates a new panel object and sets the panel’s layout to “GridBagLayout”. This is the point where we set the layout of our panel. The layouts can be any of the layouts listed above, but for the sake of this tutorial, we will use “GridBagLayout”.
 ```java
   	panel = new JPanel();
         panel.setLayout(new GridBagLayout()); // set panel's layout
 ```
-The next series of statements initialized the components declared and then adds some styling to these components. And then proceeds to add each component to the panel using the `addComponent` method defined earlier. It passes in as an argument the panel to add the component to, the component, and the constraints.
+The next series of statements initialized the components declared and then adds some styling to these components. And then proceeds to add each component to the panel using the `addComponent` method defined earlier. It takes in as an argument the panel to add the component to, the component, and the constraints.
 
 ```java
         add(panel, level, 0, 0, 1, 1);
@@ -267,7 +275,7 @@ Then we use the add method inherited from JFrame to add our panel to the frame.
 ```java
 add(panel);
 ```
-We need to add all the panels defined to the frame to view the components.
+We need to add all the panels defined to the frame in ordr to to view the components.
 ```java
     // main method to invoke the class
     public static void main(String[] args) {
@@ -281,7 +289,7 @@ The main method of the program firsts creates an object of the class and then in
 
 ![Close Window](/working-with-gridbag-layout-in-java/4-close-button.jpg)
  
-## Conclusion
+### Conclusion
 Building a GUI app in Java is an interesting adventure for developers as users can visually interact with your app. But what’s more important is to know how to build the app using the right tools.
-The aim of using CAL to explain the concept of Gridbag layout is to show the implementation and importance of this concept. While this article covers the main part of working with gridbag layout, do well to check out the official [Java documentation](https://docs.oracle.com/javase/7/docs/api/java/awt/GridBagLayout.html) of gridbag layout.
+The aim of using CAL to explain the concept of Gridbag layout is to show the implementation and importance of this concept. While this article covers the main part of working with Gridbag layout, do well to check out the official [Java documentation](https://docs.oracle.com/javase/7/docs/api/java/awt/GridBagLayout.html) for more on Gridbag layout.
 
