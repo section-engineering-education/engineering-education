@@ -131,7 +131,7 @@ In Java, multiple inheritance is not allowed although it can be implemented thro
  
 #### Multi-level Inheritance
  
-In multi-level inheritance, a subclass serves also as a base class for yet another subclass. For instance, say a vehicle class is serving as a superclass for every moving machine including a car, and a car also serves as a superclass for specific kinds of cars like Toyota, Benz, etc. This is the concept of the inheritance hierarchy. The code snippet below illustrates the concept of multilevel inheritance:
+In multi-level inheritance, a subclass serves also as a base class for yet another subclass. For instance, say a vehicle class is serving as a superclass for every moving machine including a car, and a car also serves as a superclass for specific kinds of cars like Toyota, Benz, etc. This is the concept of the inheritance hierarchy. The code snippet below illustrates the concept of multi-level inheritance:
  
 ```java
 public class Vehicle {
