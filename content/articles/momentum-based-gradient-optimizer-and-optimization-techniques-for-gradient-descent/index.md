@@ -37,7 +37,7 @@ The quick convergence of Adaptive Optimization Algorithms, on the other hand, is
 - [Optimizer to use](#optimizer-to-use)
 
 ### Optimization techniques
-For a brief while, we'll consider various optimization methods frequently employed in Deep Learning. In other words, if you came to this article hoping to learn the equation and mathematical explanation, don't bother. 
+For a brief while, we'll consider various optimization methods frequently employed in Deep Learning. In other words, if you came to this article hoping to learn the equation and mathematical explanation. We will also look at some Adaptive Optimization Algorithms (AOA). Compiling a program based on the current execution profile is known as adaptive optimization in computer science. You can easily make a tradeoff between JIT compilation and instruction interpretation in an adaptive optimizer solution.
 
 This page also includes a quick overview of the many approaches that are accessible, including those provided by the Keras package.
 
@@ -48,14 +48,14 @@ Utilize an Adaptive Optimization Algorithm (AOA) that uses exponentially-weighte
 There must be a systematic approach to feeding the data to minimize the impact of noise during optimization. To resolve this issue, exponentially weighted averages might be used.
 
 Using an iterative process, we can approximate the trends in a P-dimensional noisy dataset by calculating the parameters as we go through the data:
-```
+```Latex
 On iteration p:
     Get next  θp 
     v_θ = β vθ + (1 - β)θp
 ```
 **Vθ** is averaged across its preceding **1/(1 - β)** iterations, giving a value of **vθ**. With the help of averages, you can eliminate all the randomness and merely keep track of the overall trend. As a result of this method, the algorithm is more resistant to sample noise and can be trained more quickly.
 ### How does momentum help in gradient descent
-To describe a gradient descent algorithm, the term `momentum` is used. This method works by detecting the direction of the steepest slope in its present state and then travelling in the direction of that sharpest slope to update its status.
+This method works by detecting the direction of the steepest slope in its present state and then travelling in the direction of that sharpest slope to update its status.
 
 Momentum helps distinguish recent derivatives when Gradient Descent approaches the middle phase of the ravine, and so boosts the gradient descent's direction.
 
@@ -70,7 +70,7 @@ In the next section, we'll take a look at a few approaches used in AOAs.
 RMSProp and momentum combine to create this effect. Use this method to figure out how fast your brain is adapting to new information. Like momentum, it saves the declining arithmetic mean of the squared gradients and an average of the past gradients, which is a similar feature.
 
 On a smooth surface, it's considerably easier for Adam to make a mistake because of his high coefficient of friction. So, for example, this strategy's pseudocode appears like this:
-```
+```Latex
 D = 0
 K = 0
 for each iteration p
@@ -83,7 +83,7 @@ for each iteration p
 ```
 
 ### RMSProp
-
+It is an extension of gradient descent and AdaGrad that employs a decaying average of partial gradients to change the step size for each parameter.The drawback of AdaGrad is overcome by using a decaying moving average. This allows the algorithm to ignore early gradients and concentrate on the most recently recorded partial gradients as the search progresses.
 Improve AdaGrad by applying the adaptive learning rate method based on the Root Mean Square. The exponential moving average is used rather than the cumulative sum of squared gradients used by AdaGrad There is only one step that differs between AdaGrad and RMSProp: the first one. 
 
 That's all RMSProp does: it takes the learning rate and smooths it down by an average. So this strategy's pseudocode appears like this:
