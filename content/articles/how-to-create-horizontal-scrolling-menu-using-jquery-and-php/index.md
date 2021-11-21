@@ -23,7 +23,8 @@ This project requires less or no knowledge in creating menu bars, but a little k
 You can choose any text editor you wish with notepad, visual studio code, Atom, Sublime Text, etc.
 Also, you need a web server installed. In our case, we will use XAMP(Apache HTTP Server), but you can choose to download your own choice, such as WAMP server, Nginx Web Server, Lighttpd Web Server, etc.
 You will also need to download  the jQuery source code and save it appropriately.
-when saving your files use this example format to save them in htdocs folder in the XAMP installation directory as shown. ![files-structure](https://github.com/Njengab/engineering-education/blob/how-to-create-horizontal-scrolling-menu-using-jquery-and-php/content/articles/how-to-create-horizontal-scrolling-menu-using-jquery-and-php/files-structure.png)
+when saving your files use this example format to save them in htdocs folder in the XAMP installation directory as shown.
+![files-structure](https://github.com/Njengab/engineering-education/blob/how-to-create-horizontal-scrolling-menu-using-jquery-and-php/content/articles/how-to-create-horizontal-scrolling-menu-using-jquery-and-php/files-structure.png)
 
 The HTML for the menu is included in the landing page, index.php. The connection.php file is used to get data for the scrollable menu from the database.
 ### Significance of utilizing flat menu
