@@ -45,8 +45,8 @@ On the snap occasion of these controls, the jQuery function() is called to move 
 Rightward squiggle & leftward squiggle arrows  (⇝ and ⇜) will be employed in our tutorial.
 We will employ the above symbols to maneuver over the menu, but you can always use any other direction symbols of your choice. With a click, each opposite arrow will help in scrolling over the menu to and fro, thus assisting visitors in fetching menu items quickly on the page.
 ### Hypertext markup language to show menu and result
-This html code includes right and left-way route symbols to assist clients in accessing the information base and diverse menu items. The menu items are taken from the table information in our menu2 database.A simple navigation menu with four divs will be used in our HTML code. The first two divs include our user interface arrows(⇝ and ⇜), labeled &#8669 and &#8668, respectively.
-We'll use their Ids to style the UI arrows in CSS. The third and fourth divs will let us work with and decorate our database table items. The PHP foreach construct allows us to show and iterate over the contents of our SQL database in our menu model.
+Our html code includes right and left-way route symbols to assist clients in accessing the information base and diverse menu items. The menu items are taken from the table information in our menu2 database.A simple navigation menu with four divs will be used in our HTML code. The first two divs include our user interface arrows(⇝ and ⇜), labeled &#8669 and &#8668, respectively.
+We'll use their navigation Ids to style the UI arrows in CSS. The third and fourth divs will let us work with and decorate our database table items. The PHP foreach construct allows us to show and iterate over the contents of our SQL database in our menu model.
 ``` html
 <!DOCTYPE html>
 <html lang="en">
