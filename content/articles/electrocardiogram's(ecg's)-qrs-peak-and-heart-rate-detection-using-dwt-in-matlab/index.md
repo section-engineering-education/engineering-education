@@ -1,0 +1,177 @@
+### Electrocardiogram's(ECG's) QRS peak and heart rate detection using Discrete Wavelet Transform(DWT) in Matlab
+### Introduction
+The QRS combines three deflections (Q, R, and S) seen on a typical ECG. It corresponds to the depolarization of the right and left ventricles of the human heart and contraction of the large ventricular muscles. In numerical and functional analysis, a discrete wavelet transform (DWT) is any wavelet transform in which the wavelets are discretely sampled. The discrete wavelet transform has many engineering, mathematics, and computer science applications. Most notably, it is used for signal coding to represent a discrete signal in a more redundant form, often as preconditioning for data compression.
+
+The `sym4` wavelet resembles the QRS, suitable for QRS detection. Therefore, this process can help to diagnose various heart diseases. This tutorial will look at how to obtain the peak and rate of detection of these ECGs using the ECG database. From this method, we can get the heart rate. 
+
+### Prerequisites
+To follow along with this tutorial, you'll need:
+- [MATLAB](https://www.mathworks.com/products/get-matlab.html?s_tid=gn_getml) installed.
+- Proper understanding of [MATLAB](https://www.section.io/engineering-education/getting-started-with-matlab/) basics.
+
+### Table of content
+- [Introduction](#introduction)
+- [Prerequisites](#prerequisites)
+- [Table of content](#table-of-content)
+- [QRS complex](#qrs-complex)
+- [ECG database on PhysioNet](#ecg-database-on-physionet)
+- [Use of symlet4 wavelet for ecg signal analysis](#use-of-symlet4-wavelet-for-ecg-signal-analysis)
+- [Proposed DWT based qrs detection](#proposed-dwt-based-qrs-detection)
+- [Matlab code for the R-peaks.](#matlab-code-for-the-r-peaks)
+- [conclusion](#conclusion)
+
+### QRS complex
+As we said earlier, it is a combination of three deflections(Q, R, and S) seen on a typical ecg signal.
+
+![image of qrs](image1.png)
+
+Where P: is the first deflection.
+Q: Is the first negative deflection to the baseline.
+R: Is the highest positive deflection to the baseline.
+S: The second negative deflection to the baseline.
+
+The amplitude of a normal QRS is 5 to 30mm, and the duration is 0.06 to 0.12 seconds. The width, amplitude, and shape of the QRS  complex help diagnose ventricular arrhythmias, conduction abnormalities, ventricular hypertrophy, myocardial infarction, electrolyte rearrangements, and other diseases state. Note that the QRS complex does not always have all three QRS. It can have various shapes as shown below;
+
+![qrs complex configuration](image2.png)
+
+### ECG database on PhysioNet
+For analysis, a few ecg signals from MIT-BIH arrhythmia and the ECG-ID database are downloaded from [PhysioNet](https://physionet.org/). Each ecg signal on PhysioNet has the following three files.
+1. *.atr: Reference Annotation.
+2. *.dat: Datafile(signal).
+3. *.hea: Header file.
+
+Now Matlab cannot read such files. We have to convert our ecg to a `.mat` file. To convert an ecg signal to a `.mat` file, we use the [PhysioNet ATM](https://archives.physionet.org/cgi-bin/atm/ATM). The interface of the ATM bank is;
+
+![ATM interface](image3.png)
+
+You can select your database in the input by clicking on the dropdown arrow to choose your database. Note that all the PhysioNet ecg databases are available here.
+
+![Show all the databases in the dropdown](image4.png)
+
+You can select the record, signals, annotation, output length, time format, and data format since they all have options. When you reach the toolbox section, you also select your options, but when you choose `plot waveforms`, we will have the plots of the waveform as shown below;
+
+![waveform](image4.png)
+
+Since we need to read it in Matlab, we export it. To do that, we select the `export signal as .mat` and then download it on that toolbox.
+
+![exporting](image5.png)
+
+![downloading](image6.png)
+
+Since we only need the signal, we download the `.mat` file.
+
+### Use of symlet4 wavelet for ecg signal analysis
+The `sym4` wavelet resembles the QRS complex, making it a good choice for QRS detection. To illustrate this more clearly, see the extracted QRS complex and a dilated `sym4` wavelet for comparison in the figure.
+
+![comparison](image7.png)
+
+As you can see, the QRS complex of the ecg is quite similar to the `sym4` wavelet in shape. It is why `sym4` wavelets are always preferred for the ecg signal analysis.
+
+### Proposed DWT based QRS detection
+Below are the essential ecg signals, and if we look at them carefully, we can locate the labeled areas with a particular frequency contribution.
+
+![image of freq distribution](image8.png)
+
+f1: Represents the high-frequency noise and has some frequency f1.
+f2: It is the QRS that has the frequency contribution of f2.
+f3: Slow varying content of the ecg and have a frequency contribution f3.
+
+The relationship between these three frequencies will be;
+
+f1>f2>f3
+
+Now, our objective is that we want to preserve all the R-peaks and eliminate all the other frequencies. To make it clear, we say that we want to eliminate `f1` and `f3` but preserve `f2`. It is called bandpass filtering, and you achieve the filtering with the help of the wavelet transform. Wavelet transform separates signal components into different frequency bands. Therefore, You can implement bandpass filtering by eliminating some frequency bands.
+
+This bandpass filtering can be achieved by eliminating wavelet coefficients of some lower scale(high frequencies) and higher scales(lower frequency) of ecg signals. For this purpose, an undecimated wavelet transform is used to get wavelet coefficients.
+
+What is an undecimated wavelet transform? Well, in a normal `mra` wavelet, transform signals are downsampled to two after every decomposition level, by which its size reduces at every decomposition level. Now in an undecimated wavelet, the signal length remains the same. A 4-level decomposition of an ecg signal using `sym4` is in the figure below;
+
+![sym4 decomposition](image9.png)
+
+The first plot is the ecg signal, and `d` are the detailed coefficients at every level of the ecg signal. `a4` is the approximate coefficients at level 4. We will obtain the bandpass filtering by removing the co-efficient `a4` since it will not be considered. Similarly, `d1` and `d2` will be eliminated. 
+The reason why we don't consider it is because it is an approximated coefficient. It carries all the low-frequency details. `d1` and `d2` are not considered because they contain details of the signal's high frequency. `d2` and `d4` are considered to reconstruct or achieve the signal the bandpass filtering.
+
+We get the following signals by considering only `d3` and `d4` and taking the inverse wavelet transform.
+
+![signal](image10.png)
+
+With the help of a standard peak detection algorithm, we can locate these R-peaks. Also, you find the number of total R-peaks for a given time interval to find the heart rate. For example, suppose we have a 10-second ecg signal and the total number of R-peaks have some values, then we can find the number of R-peaks in a minute, representing the beat per minute which is the heart rate.
+
+### Matlab code to get QRS peak and heart rate from ecg signals
+We first input our signal. Now here it is the user to input the signal, so Matlab should ask it. For Matlab to allow the user to select the signals from the folder, we use the `uigetfile` function. This function takes into consideration the path and the file name.
+```Matlab
+%program to get QRS peaks and heart rate from ecg signal
+
+[filename, pathname]=uigetfile('*.*', 'select your ecg signal');
+filewithpath = strcat(pathname, filename);
+```
+We need the sampling frequency of the signal. These sampling frequencies are defined in the database. We use the ' input ' function since the user defines the sampling frequency. This function reads the user input. After this, you load your data using the `load` function
+```matlab
+Fs = input('Enter sampling rate:');
+ecg = load(filename);   %reading ecg signal
+```
+Normalize the amplitude. It is done by dividing the ecg value by the gain. This gain value is given in the database too. We also get the length of the signal using function `length,` and this function takes in the signal as the input. This length helps in determining the time taken by the signal.
+```Matlab
+ecgsig = (ecg.val)./200; %Normalize gain
+t = 1:length(ecgsig);  %No. of samples
+tx = t./Fs;  %Getting time vector
+```
+Now, we need to compute the undecimated wavelet transform of the 4-level using `sym4`. It is to ensure that the length of the signal remains the same. To compute this, we use the `modwt` function. This function takes `ecg signal` and the `sym4` level, 4.
+```Matlab
+wt = modwt(ecgsig,4, 'sym4');  %4-level undecimated DWT using sym4
+wtrec = zeros(size(wt));
+```
+As explained earlier, our wavelet transform has 5 rows, that is, $a_n, d_4, d_3, d_2$, and  $d_1$. We don't need the approximated and high-frequency coefficients $d_1$ and $d_2$. So we extract the $d_3$ and $d_4$, which are the 3rd and 4th rows. To extract, we use the rows to extract as the argument for the undecimated DWT.
+```Matlab
+wtrec(3:4, :)= wt(3:4,:);   %extracting only d3 and d4 coefficients
+```
+By performing the inverse discrete wavelet transform(IDWT), we will have a signal that has only the r-peaks well preserved. Inverse DWT returns the signal to the original form after performing the DWT. In Matlab, we use `imodwt` function to do the IDWT with the arguments as the signals with the extracted parts `wtrec`.
+```Matlab
+y=imodwt(wtrec, 'sym4');  %IDWT with only d3 and d4.
+y=abs(y).^2;  %magnitude square
+```
+We then find the average of the signal. It will be used as the threshold when finding the signal's peak. Finding the average is done by using the `mean` function.
+```Matlab
+avg = mean(y);   %getting average of y^2 as threshold
+
+%Finding peaks
+[Rpeaks, locs] = findpeaks(y,t, 'MinPeakHeight', 8*avg, 'MinPeakDistance', 50);
+```
+`find peaks` is a variable available in the signal processing toolbox to find the peaks. We have the minimum peak distance as `50` to avoid false detection if the peaks are close to each other. It could happen due to improper filtering. `locs` give the location of the R-peaks.
+Now, let's find the location of the R-peaks in consideration of the length of the signal. It represents the number of beats. This number of beats is then converted to beats per minute.
+```Matlab
+nohb = length(locs);   %No. of beats
+timelimit = length(ecgsig)/Fs;  %getting the time function of the signal
+hbpermin = (nohb*60)/timelimit;   %Getting Beat per minute.
+disp(strcat('HeartRate= ', num2str(hbpermin)))  %displaying the heartrate
+```
+Plot the normal ecg signal against time. It is to be able to see the difference.
+```Matlab
+%displaying ecg signal and detected R-peaks
+subplot(211)
+plot(tx, ecgsig);
+
+xlim([0, timelimit])
+grid on
+xlabel('seconds')
+ylabel('ECG signal')
+```
+Plot also the filtered signal along with the detected peaks.
+```matlab
+subplot(212)
+plot(t,y)
+grid on
+xlim([0, length(ecgsig)]);
+hold on
+plot(locs, Rpeaks, 'ro')
+xlabel('samples')
+title(strcat('R peaks found and heartrate: ', num2str(hbpermin)))  % displayes the heartrate.
+```
+when we execute our program, we will have;
+
+![output](image11.png)
+
+### Conclusion
+ECG, QRS, and heart rate detection are easier using the discrete wavelet transform. Matlab is the best software for wavelet analysis. As we have seen, these transforms are already done and exist in in-built form. Therefore, it makes it easy to perform operations. Also, Matlab has other built-in functions that help analyze the signal apart from having the transform in in-built form. These functions are such as `length` for getting the length. Furthermore, the database for the ecg signal is compatible with Matlab since it gives options to download Matlab files.
+
+!enjoy coding
