@@ -1,6 +1,6 @@
 ### Introduction
  
-Java is an object-oriented programming language since it provides Java developers with the ability to implement objects as real-life entities. OOP is a programming paradigm that is built around objects and their properties (attributes) and behaviors (methods). So, generally, software design using object-oriented principles is focused on objects and operations on them. Amongst many features of object-oriented programming is the fact that it encourages code reusability and extensibility. We will explain these two terms in detail later in this article.
+Java is an object-oriented programming language since it provides Java developers with the ability to implement objects as real-life entities. OOP is a programming paradigm that is built around objects and their properties (attributes) and behaviors (methods). So, generally, software design using object-oriented principles is focused on objects and operations on them. In this article, we will explain two core OOP principles inheritance and polymorphism. Amongst many features of object-oriented programming is the fact that it encourages code reusability and extensibility. We will explain these two terms in detail later in this article.
  
 ### Prerequisites
  
