@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /strict-type-validation-with-pydantic/
 title: Strict Type Validation With Pydantic
-description: This tutorial will guide the reader on how to type validate the inputs using Pydantic. We'll also learn about create custom validators.
+description: This tutorial will guide the reader on how to type validate the inputs using Pydantic. We will also learn about create custom validators. Type validation can be made more accessible with frameworks like Pydantic.
 author: oluwatomisin-bamimore
-date: 2021-10-28T00:00:00-18:20
+date: 2021-11-21T00:00:00-12:20
 topics: [API]
 excerpt_separator: <!--more-->
 images:
@@ -14,26 +14,23 @@ images:
   - url: /engineering-education/strict-type-validation-with-pydantic/hero.png
     alt: Strict Type Validation With Pydantic Image
 ---
-Type validation is the process of making sure what you get is what you are expecting.
+Type validation is the process of making sure what you get is what you are expecting. If an endpoint is supposed to get an integer, you use type validation to ensure the input is an integer and not a string. It could be time-consuming to write your validation logic.
 <!--more-->
-If an endpoint is supposed to get an integer, you use type validation to ensure the input is an integer and not a string. It could be time-consuming to write your validation logic.
-
 Many API frameworks have type validation out of the box, whereas lightweight programming frameworks like Flask do not. Type validation can be made more accessible with frameworks like Pydantic.
 
-In this post, we'll look at various Pydantic features and examples of how to use them.
+In this post, we'll look at various Pydantic features and examples on how to use them.
 
 ### Prerequisites
-- To have Python (>= 3.6) installed
+For the reader to follow along, they must have the following:
+- Have Python (>= 3.6) installed.
 - Install `Pydantic` with:
 
 ```bash
 pip install pydantic
 ```
 
-### Data Models
-Objects in Pydantic are defined using models.
-
-A model class inherits from the `BaseModel` class. All of the fields and custom validation logic sit in the data model class.
+### Data models
+Objects in Pydantic are defined using models. A model class inherits from the `BaseModel` class. All of the fields and custom validation logic sit in the data model class.
 
 A simple example is a model that defines a user profile and the fields it contains.
 
@@ -62,7 +59,6 @@ print(profile)
 ```
 
 Passing the `new_profile` dictionary, which contains information about a new profile, into the `Profile` model will validate the `new_profile`.
-
 
 If you run the code snippet above, you will get this error:
 
@@ -125,7 +121,7 @@ print(profile.firstname, profile.lastname)
 Jane Doe
 ```
 
-### Recursive Models
+### Recursive models
 When dealing with nested fields, using a data model as a data type in another model arises.
 
 A data model can be declared as a type in another data model. You need recursive models when a field in one model has other child fields related to it. This is the concept of recursive models. 
@@ -172,7 +168,9 @@ print(profile.dict())
 ### Pydantic field types
 Pydantic supports an extensive range of field types from Python's standard library. The list is limitless and can't be exhausted in this article.
 
-Pydantic also has custom types like `PaymentCardNumber`. See how it works in the snippet below:
+Pydantic also has custom types like `PaymentCardNumber`. 
+
+See how it works in the snippet below:
 
 ```Python
 from pydantic import BaseModel
@@ -192,11 +190,11 @@ print(new_payment)
 
 **Output:**
 
-```
+```bash
 card_number='4238721116652766'
 ```
 
-Credit Card numbers are validated using the [Luhn algorithm](https://en.wikipedia.org/wiki/Luhn_algorithm). Pydantic runs the validation under the hood to validate any input to the `card_number` field.
+Credit card numbers are validated using the [Luhn algorithm](https://en.wikipedia.org/wiki/Luhn_algorithm). Pydantic runs the validation under the hood to validate any input to the `card_number` field.
 
 If the input is invalid:
 
@@ -225,7 +223,9 @@ card_number
 ### Custom validators
 Pydantic also allows writing custom validation methods. It is useful when working with generic data types that need custom validation.
 
-In the example below, we will validate an employee ID. It is a string with four integers, a hyphen and two alphabets. For example, `2345-HG`.
+In the example below, we will validate an employee ID. It is a string with four integers, a hyphen and two alphabets. 
+
+For example, `2345-HG`.
 
 ```Python
 from pydantic import BaseModel, validator
@@ -284,7 +284,7 @@ except:
     print("ERROR")
 ```
 
-### Generating JSON sSchemas
+### Generating JSON schemas
 Pydantic models can generate JSON schema complaints with the OpenAPI specifications. You can use the `Field` object to populate the schema with information.
 
 Schemas help define the structure of a JSON document. Schemas are needed for generating API documentation.
@@ -366,6 +366,8 @@ Pydantic is built in a way that allows room for flexibility. You can use Pydanti
 Frameworks like FastAPI support Pydantic out of the box. Other loosely coupled frameworks like Flask do not come bundled with Pydantic but allow room for integration.
 
 From examples in the article, Pydantic enables you to control input types custom validation, because input validation is a significant step towards securing your application.
+
+Happy learning!
 
 ### Further reading
 - [Validators](https://pydantic-docs.helpmanual.io/usage/validators/)
