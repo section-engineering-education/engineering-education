@@ -1,5 +1,4 @@
 ### Introduction
-
 Today, there are many websites providing important services to society. In order to carry out this process, they need to protect their websites from unethical users. This led to the introduction of authentication and authorization on their websites.
 
 Authentication is the process or action of verifying the identity of a user or process. User authentication for each device ensures that the individual using the device is recognized by the company, and authorization gives users permission to access a service.
@@ -11,9 +10,6 @@ In this tutorial, you will learn how authentication and authorization are implem
 - Object Relation Mapping/Database
   
 ### Table of contents
-
-- [Introduction](#introduction)
-- [Table of contents](#table-of-contents)
 - [Prerequisites](#prerequisites)
 - [Getting started](#getting-started)
 - [The user interface](#the-user-interface)
@@ -22,7 +18,6 @@ In this tutorial, you will learn how authentication and authorization are implem
 - [Conclusion](#conclusion)
   
 ### Prerequisites
-
 To follow through this tutorial;
 
 - you will need have [Visual Studio](https://visualstudio.microsoft.com/vs/community/) installed.
@@ -30,7 +25,6 @@ To follow through this tutorial;
 - You will need a basic understanding of [Blazor](https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor)
 
 ### Getting started
-
 You will first start with creating a server side blazor app. Open Microsoft Visual Studio and select `Create a New Project`.
 
 ![New Project](/engineering-education/creating-a-blazor-server-side-application-using-aspdotnet-core-to-perform-crud-operations/newproject.jpg)
@@ -48,11 +42,9 @@ On the next screen, choose `.NET Core 3.1 (Long-term support)` as your target fr
 ![Target framework](/engineering-education/creating-a-blazor-server-side-application-using-aspdotnet-core-to-perform-crud-operations/framework.jpg)
 
 ### The user interface
-
 This is the layer that the user interacts with. It enables users to register, log in, recover passwords, and manage user profiles.
 
 ### Functionality layer
-
 This layer is used to authenticate and authorize user information. In your project you will work on this layer to implement the authorizatization function.
 
 To start your authentication functionality, go to the `startup.cs` file, in the `configure` method, you will add the following code to enable authentication and authorization after the else statement.
@@ -151,7 +143,6 @@ What needs to happen is to change state when a user is validated, to do this, yo
                 new Claim(ClaimTypes.Name, "johndoe@gmail.com"),
             }, "apiauth_ype");
             var user = new ClaimsPrincipal(identity);
-
             NotifyAuthenticationStateChanged(Task.FromResult(new AuthenticationState(user)));
         }
 ```
@@ -202,7 +193,6 @@ Now to use the session storage, you will write a construtor in the `NewAuthentic
 
 ```csharp
 private ISessionStorageService _sessionStorageService;
-
 public NewAuthenticationStateProvider(ISessionStorageService sessionStorageService)
 {
      _sessionStorageService = SessionStorageService;
@@ -258,7 +248,6 @@ public UserLoggedOut()
             _sessionStorageService.RemoveItemAsync("emailAddresss");
             var identity = new ClaimsIdentity();
             var user = new ClaimsPrincipal(identity);
-
             NotifyAuthenticationStateChanged(Task.FromResult(new AuthenticationState(user)));        
 }
 ```
@@ -279,11 +268,9 @@ public void Logout()
 ```
 
 ### Object relation mapping or Data base
-
  This layer stores, operates, and updates user information.
 
 ### Conclusion
-
 From this tutorial, you, as a reader, should be able to understand each and every part of the code snippet that I have taken you through.
 
 **NOTE:** *Any errors in the project are solved by importing the necessary CSharp packages.*
