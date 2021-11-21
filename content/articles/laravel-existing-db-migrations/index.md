@@ -29,7 +29,7 @@ This article is based on Laravel's Eloquent ORM which I have given the link poin
 
 ### Prerequisites
 
-The article is a bit advanced, so a prior experience with Laravel is required. You can check the basics of creating a laravel application [here](https://www.section.io/engineering-education/laravel-beginners-guide-blogpost/) where you will got thorough a step by step process of creating a blog. Moreover, you need a knowledge of PHP.
+The article is a bit advanced, so a prior experience with Laravel is required. You can check the basics of creating a Laravel application [here](https://www.section.io/engineering-education/laravel-beginners-guide-blogpost/) where you will got thorough a step by step process of creating a blog. Moreover, you need a knowledge of PHP.
 
 ### Getting started
 We will create some migration on an existing database shown in these screenshots. It does not have many records. It's only for demonstrating the article.
@@ -52,7 +52,7 @@ We proceed to create a simple Laravel application. I called mine *migration-test
     $laravel new migration-test
 ```
 
-Next step is to create the laravel model and the migration.
+Next step is to create the Laravel model and the migration.
 
 ```bash
 $php artisan make:model class_subjects -m
@@ -159,7 +159,7 @@ if (!Schema::hasTable('class_subjects')){
     //code
 }
 ```
-We do that so that laravel does not replace our existing table.
+We do that so that Laravel does not replace our existing table.
 
 If it does not exist, then it creates the table with the predefined fields. You can leave the code inside the `if` statement empty since we already have the table. But because of coding ethics, we add the code.
 
@@ -200,7 +200,7 @@ That's it.
 
 ### Summary
 
-In a nutshell, we created a laravel application, added the model and the migration, then run the migrations to suit an already created table.
+In a nutshell, we created a Laravel application, added the model and the migration, then run the migrations to suit an already created table.
 
 ### Conclusion
-This was an article for laravel, but you can use the same logic to the technology that you use. I hope you got some insights. Have a great coding adventure.
+This was an article for Laravel, but you can use the same logic to the technology that you use. I hope you got some insights. Have a great coding adventure.
