@@ -171,7 +171,7 @@ We can derive the following syntax.
 (paraml, param2) => {return expression; }
 ```
 
-Because more than one parameter requires parentheses, [rest](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters) and [destructing](/object-arrays-destructuring/) parameters can be implemented using an arrow function. 
+Because more than one parameter requires parentheses, [rest](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters) and [destructing](/engineering-education/object-arrays-destructuring/) parameters can be implemented using an arrow function. 
 
 They both need parentheses.
 

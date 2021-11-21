@@ -321,7 +321,7 @@ Module patterns help you implement the art of building Node.js projects at scale
 Happy coding.
 
 ### Further reading
-- [RESTful Web API in Node.js using PostgresSQL and Express](/restful-web-api-using-nodejs-postgressql-and-express/)
+- [RESTful Web API in Node.js using PostgresSQL and Express](/engineering-education/restful-web-api-using-nodejs-postgressql-and-express/)
 - [Logging with Winston and Node.js](/engineering-education/logging-with-winston/)
 - [Documenting a Node.js REST API using Swagger](/engineering-education/documenting-node-js-rest-api-using-swagger/)
 - [Uploading Files Using Multer in a Node.js](/engineering-education/uploading-files-using-multer-nodejs/)

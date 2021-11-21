@@ -32,8 +32,8 @@ However, with Docker, you create a single file and run few commands. This will s
 This tutorial will demonstrate how to Dockerize a WordPress website using Docker-compose through Docker commands. 
 
 ### Prerequisites
-- This guide uses Docker to implement the application containerization. Prior knowledge of [Docker](/getting-started-with-docker/) is essential.
-- Basic knowledge on how to [create Docker images](/django-docker/) and [start Docker containers](https://docs.docker.com/engine/reference/commandline/start/).
+- This guide uses Docker to implement the application containerization. Prior knowledge of [Docker](/engineering-education/getting-started-with-docker/) is essential.
+- Basic knowledge on how to [create Docker images](/engineering-education/django-docker/) and [start Docker containers](https://docs.docker.com/engine/reference/commandline/start/).
 - Basic knowledge on how to [install and use WordPress](youtube.com/watch?v=8AZ8GqW5iak).
 
 ### Getting ready
@@ -284,13 +284,13 @@ We now have WordPress up and running. This is an easier way to set up the WordPr
 Happy coding!
 
 ### Further learning
-- [Getting Started with Docker](/getting-started-with-docker/)
-- [Understanding Docker Concepts](/docker-concepts/)
-- [How to Create Django Docker Images](/django-docker/)
-- [How to Create Spring Boot Docker Images](/spring-docker/)
-- [Building A Node.js Application Using Docker](/building-a-nodejs-application-using-docker/)
-- [Debugging a Node.js app running in Docker](/debug-node-docker/)
-- [Breaking Down Kubernetes vs Docker Swarm](/breaking-down-kubernetes-vs-docker-swarm/)
+- [Getting Started with Docker](/engineering-education/getting-started-with-docker/)
+- [Understanding Docker Concepts](/engineering-education/docker-concepts/)
+- [How to Create Django Docker Images](/engineering-education/django-docker/)
+- [How to Create Spring Boot Docker Images](/engineering-education/spring-docker/)
+- [Building A Node.js Application Using Docker](/engineering-education/building-a-nodejs-application-using-docker/)
+- [Debugging a Node.js app running in Docker](/engineering-education/debug-node-docker/)
+- [Breaking Down Kubernetes vs Docker Swarm](/engineering-education/breaking-down-kubernetes-vs-docker-swarm/)
 
 
 ---

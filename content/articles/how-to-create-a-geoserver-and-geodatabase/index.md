@@ -1,43 +1,78 @@
-In this tutorial, we will learn how to create a geospatial server and database, the server will power the database and will serve as the gateway between the users and the spatial database. Let's define some keywords:
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-create-a-geoserver-and-geodatabase/
+title: Creating a Geoserver and a Geodatabase
+description: In this tutorial, we will learn how to create a geospatial server and database. The server will power the database and serve as the gateway between the users and the spatial database. 
+author: isaiah-olatunbosun
+date: 2021-10-13T00:00:00-12:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-Spatial data is any data that contains the longitude and latitude  of any location, they provide information about a physical location and are also referred to as Geographic Information System(GIS). 
+  - url: /engineering-education/how-to-create-a-geoserver-and-geodatabase/hero.jpg
+    alt: Creating a Geoserver and a Geodatabase Image
+---
+
+In this tutorial, we will learn how to create a geospatial server and database. The server will power the database and serve as the gateway between the users and the spatial database. 
+<!--more-->
+Spatial data is any data that contains the longitude and latitude of any location. Thus, they provide information about a physical location . Spatial data is also referred to as Geographic Information System (GIS). 
 
 Geoserver is a server that processes spatial data and also powers a geodatabase. It serves as the link between geodatabase and users by giving them access to spatial data.
 
-The geodatabase is a database that stores spatial data, it allows users to create, update, retrieve and delete spatial data. The data can be stored as points, lines or polygons. We will use PostgreSQL extension call Postgis so that the database can handle spatial data.
+The geodatabase is a database that stores spatial data. It allows users to create, update, retrieve and delete spatial data. The data can be stored as points, lines or polygons. We will use a PostgreSQL extension call `Postgis` so that the database can handle spatial data.
 
-## Table of Contents
--  [Prerequisites](#prerequisites)
-- [Database](#database)
-- [Saving Coordinates](#saving-coordinates)
-- [Displaying Coordinates](#displaying-coordinates)
+### Table of content
+- [Prerequisites](#prerequisites)
+- [Building the database](#building-the-database)
+- [Saving the Coordinates](#saving-the-coordinates)
+- [Displaying Coordinates](#displaying-the-coordinates)
 - [Conclusion](#conclusion)
 - [Further Reading](#further-reading)
 
-##Prerequisites
--   Basic understanding of Python, HTMl and Jinja Templating
+### Prerequisites
+-   Basic understanding of Python, HTML and Jinja Templating
 -   PostgreSQL
--   PostGis
+-   PostGIS
 
+Before we start coding, we need to do basic setup. Then, we will create and activate a new environment called env. [Click here](https://www.section.io/engineering-education/introduction-to-virtual-environments-and-dependency-managers/) to learn how to create a new virtual environment.
 
-Before we start coding we need to do some basic setup, We will create and activate a new environment called env, [click here](https://www.section.io/engineering-education/introduction-to-virtual-environments-and-dependency-managers/) to learn how to create a new virtual environment
+### Building the database
+We begin database installation by installing `Postgis`. 
 
-let's create a database called geodata in PostgreSQL
+First, download and install the software from this [link](https://postgis.net/install). Next, we will create the database from our terminal and sign in as a `Postgres user` by running the command below. Ensure you enter your user password once the command executes.
 
-##Database
-Let's start by installing Postgis, download and install the software from `https://postgis.net/install`. We will create the database from our terminal. let's sign in as a postgres user and type your postgres user password:
-
-`psql -U postgres`
-
-The next step is to create the database type:
-`CREATE DATABASE geodata;`
-
-We need to connect the database and also enable the Postgis extension on it using the code below:
+```bash
+psql -U Postgres
 ```
+
+The next step is to create the database:
+```bash
+CREATE DATABASE geodata
+```
+
+We need to connect the database to the project and also enable the Postgis extension on it using the code below:
+
+```bash
 \c geodata;
 CREATE EXTENSION postgis;
 \q
 ```
+<<<<<<< HEAD
+
+We connected to the database using `\c geodata;` while `CREATE EXTENSION postgis;` enables the PostGIS extension, and we quit psql using `\q`.
+
+The next step is to connect our database to the project so let us install Flask, geoalchemy2, flask_sqlalchemy and psycopg2.
+
+```bash
+pip install flask geoalchemy2 flask_sqlalchemy psycopg2
+```
+
+Create a new file `app.py` and type the following code snippet:
+
+```py
+=======
 We connected to the database using `\c geodata;` while `CREATE EXTENSION postgis;` enabled the postgis extension and we quit psql using `\q`
 
 The next step is to connect our database to the project so let's install Flask, geoalchemy2, flask_sqlalchemy and psycopg2
@@ -47,6 +82,7 @@ we will install flask by using:
 
 let's start building our project, let's create a new file app.py and type the following codes:
 ```
+>>>>>>> 985da7c8fe639c94308953167e8e5a2a8f16c03b
 from flask import Flask
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'Thisissecret!'
@@ -58,6 +94,37 @@ if __name__ == "__main__":
     app.run(host="127.0.0.1", port="5000", debug=True)
 ```
 
+<<<<<<< HEAD
+We created a new Flask instance in the app variable, which we can use in our project. We also created a secret key that should be changed to a secure key.  You can generate a random number using UUID. The last section tells the app to run when the condition __name__ == "__main__" is true.
+
+```py
+app.config['SQLALCHEMY_DATABASE_URI']='postgresql://postgres:password@localhost/geodata'
+```
+PostgreSQL tells sqlalchemy that we are using a PostgreSQL database management system.
+
+- Postgres: is our database user
+- password: is the database user password
+- geodata: is the database that we will use
+
+
+We will connect our database to the project using flask_sqlalchemy.
+
+```py
+from flask_sqlalchemy import SQLAlchemy
+```
+
+After importing, we will merge the instance to our app using:
+
+```py
+db = SQLAlchemy(app)
+```
+
+We will use the `db` object to create our models and save data to our database. 
+
+It is time to create our table. Let us call it `AoiCordinate`, and it will have a geometry column called `coordinate` to store all our coordinates:
+
+```py
+=======
 We created a new Flask instance in the app variable which we can use in some parts of our project. We also created a secret key, it should be changed to a secure key you can generate a random number using UUID. The last section tells the app to run when the condition __name__ == "__main__" is true.
 
 The code app.run starts our server and it's running on the ip 127.0.01 and on the default port 5000 the port can be changed to any 4 number as long as it's not being used by any app/software and the server will work effectively.
@@ -79,23 +146,40 @@ We will use the db object to create our models and for saving data to our databa
 
 It's time to create our table, let's call it AoiCordinate and it will have a geometry column called coordinate  it will store all our coordinates:
 ```
+>>>>>>> 985da7c8fe639c94308953167e8e5a2a8f16c03b
 class AoiCoordinate(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     aoi = db.Column(db.String(50), nullable=False)
     coordinate = db.Column(Geometry('POLYGON'))
 ```
+<<<<<<< HEAD
+
+We will use Python shell to create our database by importing the db object.
+
+```py
+=======
 We will use Python shell to create our database by importing the db object, in your terminal type python next import the db object
 ```
+>>>>>>> 985da7c8fe639c94308953167e8e5a2a8f16c03b
 from app import db
 db.create_all()
 exit()
 ```
 
+<<<<<<< HEAD
+### Saving the coordinates
+Users can submit their coordinates by filling up a form and uploading a `geojson` file or `shapefile`, so let us create the submission endpoint. 
+
+Let us add the snippet below to our `app.py` file.
+
+```py
+=======
 ## Saving Coordinates
 
 Users can submit their coordinates by filling a form and uploading a geojson file or shapefile, so let's create the submission endpoint. Let's add these codes to our app.py file
 
 ```
+>>>>>>> 985da7c8fe639c94308953167e8e5a2a8f16c03b
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
@@ -112,6 +196,42 @@ def index():
 return render_template('index.html')
 ```
 
+<<<<<<< HEAD
+The `@app.route('/', methods=['GET', 'POST'])` creates the endpoint that accepts GET and POST requests. We create a function called `index` and it renders the `index.html` page. 
+
+Inside the function, we check if the request is a POST request to process the form. The variable `aoi` stores the user area of interest, while the `file` stores the uploaded coordinate. 
+
+The file content was read using the `read()` method and converted to a JSON object using `json. loads()`. 
+
+The `aoi_coordinate` variable selects the coordinates of the Polygon from `file_json`. The coordinate variable adds the `aoi` and `coordinate` as defined in our model.
+
+Finally, we added the coordinate to our database and committed the changes using the db object.
+
+Flask uses the Jinja templating method to render HTML pages, and that Is what we will use in this tutorial. [Click here](https://hackersandslackers.com/flask-jinja-templates/)  to read more about Jinja templating.
+
+HTML pages are stored in the templates folder, so let Us create a new folder called `templates` in our root directory. Inside the templates folder, we will also create a new file called ``index.html. Finally, we will use bootstrap 5.1 to style our form.
+
+```html
+<form action="{{url_for('index')}}",  method="post">
+   <div class="mb-3">
+      <label for="exampleInputText" class="form-label">Location</label>
+      <input type="text" class="form-control" id="exampleInputText" >
+   </div>
+   <div class="mb-3">
+      <label for="formFile" class="form-label">Upload Coordinate</label>
+      <input class="form-control" name="coordinate" type="file" id="formFile">
+   </div>
+   <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+```
+
+### Displaying the coordinates
+Create another route that will display all the saved coordinates. The coordinates are saved as binary, so we will use `geoalchemy2 to_shape` to convert it to readable coordinates. 
+
+We will import `to_shape` and use these snippets to retrieve all our coordinates.
+
+```py
+=======
 The `@app.route('/', methods=['GET', 'POST'])` creates the endpoint it means that the form will be displayed on the homepage and it will accept GET and POST requests. We create a function called index and it renders the index.html page. Inside the function, we checked if the request is a POST request so that we can processing the form. The variable aoi stores the user area of interest, while the file variable stores the uploaded coordinate. The file content was read using the read() method and converted to a JSON object using `json.loads()`. 
 
 The aoi_coordinate variable selects the coordinates of the Polygon from file_json, the coordinate variable adds the aoi and coordinate as defined in our model. We added the coordinate to our database and committed the changes using the db object.
@@ -139,6 +259,7 @@ The form action attributes tell the browser that the request will be processed o
 Let's create another route that will display all the saved coordinates, the coordinates are saved as binary so we will use geoalchemy2 to_shape to convert it to coordinates. 
 We will import to_shape and use these codes to retrieve all our coordinates.
 ```
+>>>>>>> 985da7c8fe639c94308953167e8e5a2a8f16c03b
 from geoalchemy2.shape import to_shape
 
 @app.route('/all')
@@ -156,6 +277,20 @@ def all_coordinate():
         all_cord.append(location)
 
     return render_template('all.html', all_coordinates=all_cord)
+<<<<<<< HEAD
+```
+
+We queried the database and retrieved all the coordinates in the coordinates variable. Since they are stored as binary, we need to convert them back to coordinates by looping through them and appending them to the empty list `all_cord`. 
+
+While looping, each coordinate is saved in the `location_coordinate` variable.
+
+The location dictionary stores each location Aoi and coordinate and is appended to the `all_coord` list. We stored the list in `all_coordinates` and passed it to the `all.html` page.
+
+
+Let us create the `all.html` page that extends the `., using the codes below:
+
+```html
+=======
 
 ```
 We queried the database and retrieve all the coordinates in the coordinates variable. Since they are stored as binary we need to convert them back to coordinates by looping through them and appending them to the empty list all_cord. While looping each coordinate is saved in the location_coordinate variable, while the aoi is saved in the location_aoi variable.
@@ -165,6 +300,7 @@ The location dictionary stores each location aoi and coordinate and it's appende
 
 Let's create the all.html page and it will extend the base.html, the page will display all our coordinates, using the codes below:
 ```
+>>>>>>> 985da7c8fe639c94308953167e8e5a2a8f16c03b
 {% extends 'base.html' %}
 
 {% block main %}
@@ -186,6 +322,20 @@ Let's create the all.html page and it will extend the base.html, the page will d
     {% endfor %}
   </tbody>
 </table>
+<<<<<<< HEAD
+```
+
+### Conclusion
+This tutorial taught us how to create a geospatial server and database that saves and returns location coordinates. The app can be further built as an API service and rendered to logistics companies because they can quickly coordinate a particular location. 
+
+### Further Reading
+- [Python Virtual Environment](https://www.section.io/engineering-education/introduction-to-virtual-environments-and-dependency-managers/) 
+- [Flask Jinja Templating](https://hackersandslackers.com/flask-jinja-templates/) 
+- [Github Repository](https://github.com/isaiaholadapo/geoserver-and-geodatabase)
+
+---
+Peer Review Contributions by: [Jerim Kaura](/engineering-education/authors/jerim-kaura/)
+=======
 
 ```
 
@@ -201,3 +351,4 @@ In this tutorial we learnt how to create a soespatial server and database, that 
 - [Flask Jinja Templating](https://hackersandslackers.com/flask-jinja-templates/) 
 
 [Github Repository](https://github.com/isaiaholadapo/geoserver-and-geodatabase)
+>>>>>>> 985da7c8fe639c94308953167e8e5a2a8f16c03b
