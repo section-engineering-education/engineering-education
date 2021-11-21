@@ -15,8 +15,6 @@ images:
    alt: Gradient Descent Based Optimization Techniques example image
 ---
 
-### Introduction
-
 Alternative models can be built using Gradient Descent in machine learning systems. An objective function specifies the level of inaccuracy that a Machine Learning model will have on a given dataset during the training phase.
 
 A random set of values will be used throughout training to maintain fairness. As a result, we get closer to the ideal function value with each repetition.
@@ -39,7 +37,7 @@ The quick convergence of Adaptive Optimization Algorithms, on the other hand, is
 ### Optimization techniques
 For a brief while, we'll consider various optimization methods frequently employed in Deep Learning. In other words, if you came to this article hoping to learn the equation and mathematical explanation. We will also look at some Adaptive Optimization Algorithms (AOA). Compiling a program based on the current execution profile is known as adaptive optimization in computer science. You can easily make a tradeoff between JIT compilation and instruction interpretation in an adaptive optimizer solution.
 #### Why do we optimize our machine learning models?
-Every iteration is compared to the previous one, and the hyperparameters are tweaked until the results are as good as they can be. We are able to produce a model that is both accurate and error-free. A model can be optimized in a variety of ways.
+Every iteration is compared to the previous one, and the hyperparameters are tweaked until the results are as good as they can be. We can produce a model that is both accurate and error-free. A model can be optimized in a variety of ways.
 
 This page also includes a quick overview of the many approaches that are accessible, including those provided by the Keras package.
 ### Momentum-based Optimization
@@ -56,14 +54,14 @@ On iteration p:
 ```
 **Vθ** is averaged across its preceding **1/(1 - β)** iterations, giving a value of **vθ**. With the help of averages, you can eliminate all the randomness and merely keep track of the overall trend. As a result of this method, the algorithm is more resistant to sample noise and can be trained more quickly.
 ### How does momentum help in gradient descent
-This method works by detecting the direction of the steepest slope in its present state and then travelling in the direction of that sharpest slope to update its status.
+This method works by detecting the direction of the steepest slope in its present state and then traveling in the direction of that sharpest slope to update its status.
 
 Momentum helps distinguish recent derivatives when Gradient Descent approaches the middle phase of the ravine, and so boosts the gradient descent's direction.
 
 Momentum is a prominent strategy used in conjunction with SGD. When searching, momentum collects the gradients of previous steps and the current ones to decide the best course of action. The following changes have been made to the gradient descent equations.
 ###  Stochastic Gradient Descent 
 
-Using Stochastic Graduated Descent instead of Classic Gradient Descent, several of the flaws in the classic method are corrected By computing the derivative for each point on the trajectory it follows. It attempts to make up for its lack of computational rigour. It has more considerable noise than Gradient Descent. Hence it takes longer iterations to get to a minimal solution using SGD. In contrast to Gradient Descent, SGD computes the derivatives for all points at the same time.
+Using Stochastic Graduated Descent instead of Classic Gradient Descent, several of the flaws in the classic method are corrected By computing the derivative for each point on the trajectory it follows. It attempts to make up for its lack of computational rigor. It has more considerable noise than Gradient Descent. Hence it takes longer iterations to get to a minimal solution using SGD. In contrast to Gradient Descent, SGD computes the derivatives for all points at the same time.
 ### Adaptive Moment Estimation
 RMSProp and momentum combine to create this effect. Use this method to figure out how fast your brain is adapting to new information. Like momentum, it saves the declining arithmetic mean of the squared gradients and an average of the past gradients, which is a similar feature.
 
@@ -81,11 +79,11 @@ for each iteration p
 ```
 
 ### RMSProp
-It is an extension of gradient descent and AdaGrad that employs a decaying average of partial gradients to change the step size for each parameter.The drawback of AdaGrad is overcome by using a decaying moving average. This allows the algorithm to ignore early gradients and concentrate on the most recently recorded partial gradients as the search progresses.
+It is an extension of gradient descent and AdaGrad that employs a decaying average of partial gradients to change the step size for each parameter. The drawback of AdaGrad is overcome by using a decaying moving average. This allows the algorithm to ignore early gradients and concentrate on the most recently recorded partial gradients as the search progresses.
 Improve AdaGrad by applying the adaptive learning rate method based on the Root Mean Square. The exponential moving average is used rather than the cumulative sum of squared gradients used by AdaGrad There is only one step that differs between AdaGrad and RMSProp: the first one. 
 
 That's all RMSProp does: it takes the learning rate and smooths it down by an average. So this strategy's pseudocode appears like this:
-```
+```Latex
 K = 0
 for each iteration i
     compute dW
@@ -108,9 +106,9 @@ There are extensions for AdaGrad that can be used to slow down the monotonically
 
 The only thing left to figure out is the current iteration's average after subtracting the previous iteration's average and the current gradient.
 #### There have been significant developments on the Adadelta front
-In order to overcome Adagrad's shortcomings, two new ideas have been implemented by Adadelta.
-- The sum of squared gradients should be accumulated within a limited period of time, rather than over the course of time. For example, the sum of squared slopes in Adagrad can be accumulated up to infinity, but this is not the case here. Learning rate approaches 0 as sum approaches infinite since this total is in denominator and learning rate is in numerator. In order to keep learning going even after many iterations, Adadelta limits the maximum size of the total that can be computed.
-- Correct the inconsistencies in the units used in gradient descent algorithms. In the past algorithms (e.g. Adagrad, SGD or Momentum), the units of a parameter's gradient instead of its parameter are updated. In other words, the update's units don't line up with the parameter's units. A Hessian approximation is used in place of the learning to ensure that the update direction matches the negative gradient at every step as in SGD. As a result, there is no longer a need to manually set the learning rate in the update rule.
+To overcome Adagrad's shortcomings, two new ideas have been implemented by Adadelta.
+- The sum of squared gradients should be accumulated within a limited time, rather than with time. For example, the sum of squared slopes in Adagrad can be accumulated up to infinity, but this is not the case here. Learning rate approaches 0 as sum approaches infinite since this total is in denominator and learning rate is in the numerator. To keep the learning going even after many iterations, Adadelta limits the maximum size of the total that can be computed.
+- Correct the inconsistencies in the units used in gradient descent algorithms. In the past algorithms (e.g. Adagrad, SGD, or Momentum), the units of a parameter's gradient instead of its parameter are updated. In other words, the update's units don't line up with the parameter's units. A Hessian approximation is used in place of the learning to ensure that the update direction matches the negative gradient at every step as in SGD. As a result, there is no longer a need to manually set the learning rate in the update rule.
 ### Mini Batch Stochastic Gradient Descent
 
 Several improvements have been made to the SGD algorithm in recent years. SGD, however,  is time-consuming since it computes derivatives for every point in the dataset individually.
@@ -120,7 +118,7 @@ The ability of adaptive optimization algorithms to swiftly converge has recently
 ### Various other optimizers that have emerged in the last few years
 After AMSGrad, a slew of new optimizers was proposed. In addition, many weight decay remedies have been implemented, such as the QHAdam average that combines a regular SGD step with a momentum SGD step and the AggMo combination that combines multiple momentum terms. This [blog article](https://johnchenresearch.github.io/demon/) gives an overview of modern gradient descent techniques.
 ### How to choose an optimizer
-Continuous function optimization is the most prevalent type of optimization problem in machine learning, where the function's input parameters are real-valued numeric values, such as floating point values. As with the input, the function's output is a real-valued assessment of those values.
+Continuous function optimization is the most prevalent type of optimization problem in machine learning, where the function's input parameters are real-valued numeric values, such as floating-point values. As with the input, the function's output is a real-valued assessment of those values.
 
 Problems of this type can be referred to as "continuous function optimization," in contrast to "combinatorial optimization problems," which deal with functions that accept discrete variables.
 
@@ -128,7 +126,7 @@ Continuous function optimization problems can benefit from a wide variety of opt
 
 Grouping optimization methods by the amount of information available about the goal function that may be exploited and harnessed by the optimization process is one option.
 
-Generally, the more information about the target function that is accessible, the easier it is to optimize if the knowledge can be successfully utilised in the search.
+Generally, the more information about the target function that is accessible, the easier it is to optimize if the knowledge can be successfully utilized in the search.
 
 For optimization methods, one of the most significant differences is whether or not a point exists in the objective function. A candidate solution's first derivative (gradient or slope) calculability is evaluated in this manner. There are two kinds of algorithms: those that can use the gradient information and others that can't use it.
 
@@ -136,7 +134,7 @@ For optimization methods, one of the most significant differences is whether or 
 
 What's the best way to improve your website now? In cases when the input data is sparse, adaptive learning-rate approaches are likely to be the most effective. Additionally, you won't have to fiddle with the learning rate because the default number will likely produce the greatest results.
 
-As a result, RMSprop is an Adagrad module that addresses Adagrad's rapidly decreasing learning rates. Adadelta employs the RMS of parameter changes in the numinator update rule, whereas this algorithm does not. In a long-awaited update, Adam finally adds bias correction and momentum to RMSprop. As far as I can tell, RMSprop, Adadelta, and Adam all perform well in similar situations. At the end of the optimization, Kingma et al. show that Adam's bias-correction helps Adam slightly surpass RMSprop. Thus, Adam may be the best overall option.
+As a result, RMSprop is an Adagrad module that addresses Adagrad's rapidly decreasing learning rates. Adadelta employs the RMS of parameter changes in the nominator update rule, whereas this algorithm does not. In a long-awaited update, Adam finally adds bias correction and momentum to RMSprop. As far as I can tell, RMSprop, Adadelta, and Adam all perform well in similar situations. At the end of the optimization, Kingma et al. show that Adam's bias-correction helps Adam slightly surpass RMSprop. Thus, Adam may be the best overall option.
 
 Interestingly, several recent works have used a simple learning rate annealing schedule and vanilla SGD without momentum. It is well known that SGD can discover a minimum. Still, it may take longer than some other optimizers, is more dependent on a strong initialization and anneal scheduling, and may get trapped at saddle points rather than local minima. The adaptive learning rate approaches, on the other hand, are ideal if you want to achieve fast convergence and train a deep or complicated neural network.
 
