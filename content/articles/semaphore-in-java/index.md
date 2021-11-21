@@ -30,66 +30,66 @@ Let us see how we can implement semaphores in the following code below:
 ```Java
 package com.techvidvan.semaphore;
 import java.util.concurrent. * ; 
-class ResourceToBeShared {
+class ResourceBeingShared {
   static int myCounter = 0;
 }
 
-class MyNewThread extends Thread {
-  Semaphore mySemaphore;
-  String nameOfThread;
-  public MyNewThread(Semaphore mySemaphore, String nameOfThread) {
-    super(nameOfThread);
-    this.mySemaphore = mySemaphore;
-    this.nameOfThread = nameOfThread;
+class newThread extends new Thread {
+  Semaphore mySemaph;
+  String myThreadName;
+  public newThread(Semaphore mySemaph, String myThreadName) {
+    super(myThreadName);
+    this.mySemaph = mySemaph;
+    this.myThreadName = myThreadName;
   }@Override
   public void **run()** {
     if (this.getName().equals("Thread1")) {
-      System.out.println("Starting " + nameOfThread);
+      System.out.println("Starting " + myThreadName);
       try {
         //  getting permit. 
-        System.out.println(nameOfThread + " -> permit waiting."); 
-        mySemaphore.acquire();
+        System.out.println(myThreadName + " -> permit waiting."); 
+        mySemaph.acquire();
 
-        System.out.println(nameOfThread + " -> getting permit.");
+        System.out.println(myThreadName + " -> getting permit.");
 
         for (int b = 0; b < 5; b++) {
-          ResourceToBeShared.myCounter++;
-          System.out.println(nameOfThread + ": " + ResourceToBeShared.myCounter);
+          ResourceBeingShared.myCounter++;
+          System.out.println(myThreadName + ": " + ResourceBeingShared.myCounter);
 
-          Thread.sleep(10);
+          new Thread.sleep(10);
         }
       }
       catch(InterruptedException exc) {
         System.out.println(exc);
       }
-      System.out.println(nameOfThread + " -> releasing permit.");
-      mySemaphore.release();
+      System.out.println(myThreadName + " -> releasing permit.");
+      mySemaph.release();
     }
 
     else {
-      System.out.println("Starting-> " + nameOfThread);
+      System.out.println("Starting-> " + myThreadName);
       try {
     
-        System.out.println(nameOfThread + " -> permit waiting..");
+        System.out.println(myThreadName + " -> permit waiting..");
 
-        mySemaphore.acquire();
+        mySemaph.acquire();
 
-        System.out.println(nameOfThread + " -> getting permit.");
+        System.out.println(myThreadName + " -> getting permit.");
 
         // As at this moment, the shared resource can be used. To unlock the lock, this thread must do so, as well as any other threads that are waiting in line.
         for (int b = 0; b < 5; b++) {
-          ResourceToBeShared.myCounter--;
-          System.out.println(nameOfThread + ": " + ResourceToBeShared.myCounter);
+          ResourceBeingShared.myCounter--;
+          System.out.println(myThreadName + ": " + ResourceBeingShared.myCounter);
 
-          Thread.sleep(10);
+          new Thread.sleep(10);
         }
       }
       catch(InterruptedException exc) {
         System.out.println(exc);
       }
       
-      System.out.println(nameOfThread + " -> releasing permit.");
-      mySemaphore.release();
+      System.out.println(myThreadName + " -> releasing permit.");
+      mySemaph.release();
     }
   }
 }
@@ -97,11 +97,11 @@ class MyNewThread extends Thread {
 public class Demosemaphores {
   public static void main(String args[]) throws InterruptedException {
     
-    Semaphore mySemaphore = new Semaphore(1);
+    Semaphore mySemaph = new Semaphore(1);
 
     
-    MyNewThread b1 = new MyNewThread(mySemaphore, "My Thread 1");
-    MyNewThread b2 = new MyNewThread(mySemaphore, "My Thread 2");
+    newThread b1 = new newThread(mySemaph, "My new Thread 1");
+    newThread b2 = new newThread(mySemaph, "My new Thread 2");
 
     b1.start();
     b2.start();
@@ -110,7 +110,7 @@ public class Demosemaphores {
     b2.join();
 
     //It will always be 0 when both threads have finished their work.
-    System.out.println("My counter: " + ResourceToBeShared.myCounter);
+    System.out.println("My counter: " + ResourceBeingShared.myCounter);
   }
 }
 ```
