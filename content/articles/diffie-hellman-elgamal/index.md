@@ -23,9 +23,9 @@ Furthermore, it will equip the learner with the knowledge of how to encrypt and 
    - [Prerequisites](#prerequisites)
    - [Objectives](#objectives)
    - [Asymmetric Encryption.](#asymmetric-encryption)
-   - [Modular Exponential](#modular-exponential)
-   - [Modular Exponential Using Python](#modular-exponential-using-python)
-   - [Working of DHKE Protocol](#working-of-dhke-protocol)
+   - [Modular Exponentiation](#modular-exponentiation)
+   - [Modular Exponentiation Using Python](#modular-exponentiation-using-python)
+   - [Working of Diffie Helman Key Exchange Protocol](#working-of-diffie-helman-key-exchange-protocol)
       - [Steps involved](#steps-involved)
    - [Application of DHKE in ElGamal](#application-of-dhke-in-elgamal)
       - [Key Generation](#key-generation)
@@ -41,67 +41,41 @@ To follow this tutorial along, the reader should:
 - Know how to use various development environments for writing and running python code.
 
 ### Objectives
-By the end of this article, the reader should have basic understandings of generating keys using Diffie-Hellman algorithms and encryption and decryption using Elgamal.
+By the end of this article, the reader should have basic understanding of generating keys using Diffie-Hellman algorithms and encryption and decryption using Elgamal algorithm.
 
 
 ### Asymmetric encryption
-Asymmetric encryption, also known as public-key encryption, involves enciphering information in transit from authorized persons and deciphering by authorized persons using keys.
+Asymmetric encryption is also known as public-key encryption. It involves enciphering information by a sender and deciphering it by the receiver using keys. Each party has their own public key which they can share with the world and a private key which they must keep secret. The magic of public key cryptography is that a message encrypted with the public key can only be decrypted with the private key. A sender will encrypt his or her message with the receiver's public key. Even  though an adversary may know the encryption key, he or she is unable to decrypt the message. The reciver however using his or her secret key, is able to decrypt the ciphertext.
 
-In asymmetric cryptography, both communicating parties (i.e. both Alice and Bob) have two keys of their own — just to be clear, that's four keys total.
-
-Each party has their own public key, which they share with the world, and their own private key which they ... well, which they keep private, of course but, more than that, which they keep as a closely guarded secret. 
-
-The magic of public key cryptography is that a message encrypted with the public key can only be decrypted with the private key. Alice will encrypt her message with Bob's public key, and even though Eve knows she used Bob's public key, and even though Eve knows Bob's public key herself, she is unable to decrypt the message. Only Bob, using his secret key, can decrypt the message ... assuming he's kept it secret, of course.
-
-The keys include:
-- Public key- which is the encryption key and is known to everyone in the network.
-- Private key- which is the decryption key known to only the receiver of the message.
-
-This encryption is used to curb the various problem facing symmetric encryption, which include:
+Public key encryption is an attempt to curb the following problem faced by symmetric encryption:
 1. Key distribution.
  Key distribution under symmetric encryption requires either:
    - That two communicants already share a key which somehow has been distributed to them.
-   - The use of a Key Distribution Center. This requirement negated the very essence of cryptography, that is, the ability to maintain total secrecy over your communication.
-
-   If their users were forced to share their keys with a Key Distribution Center, it could be compromised by either burglary or subpoena.
+   - The use of a Key Distribution Center. This requirement negated the very essence of cryptography, that is, the ability to maintain total secrecy over your communication. If their users were forced to share their keys with a Key Distribution Center, it could be compromised by either burglary or subpoena.
 
 2. Creation and verification of the digital signature.
    - If the use of cryptography were to become widespread, not just in military situations but for commercial and private purposes, then electronic messages and documents would need the equivalent of signatures used in paper documents.
 
->Asymmetric algorithms rely on one key for encryption and a different but related key for decryption.
-
-These algorithms have the following important characteristic:
+Asymmetric algorithms rely on one key for encryption and a different but related key for decryption. These algorithms have the following important characteristic:
 1. It is computationally infeasible to determine the decryption key, given only knowledge of the cryptographic algorithm and the encryption key.
 2. The two related keys can be used for encryption, with the other used for decryption.
 
-![Asymmetric encryption.](/\engineering-education\content\articles\understanding-diffie-helman-and-elgamal-asymmetric-encryption/asymmetric-encryption.png)
+![Asymmetric encryption.](/engineering-education\content\articles\understanding-diffie-helman-and-elgamal-asymmetric-encryption/asymmetric-encryption.png)
 
-### Modular exponential
-Most technological applications of modular arithmetic involve exponentials with
-very large numbers. For example, a typical problem related to encryption might
+### Modular Exponentiation
+Most technological applications of modular arithmetic involve exponentials with very large numbers. For example, a typical problem related to encryption might
 involve solving one of the following two equations:
 ```
 67930^32319 == (mod 103969) (70)
 67930^b == 48560 (mod 103969) (71)
 ```
-
-It turns out that `a = 6582` and `b = 32320` solve these equations, but those
-answers are not obvious at all from looking at the equations. More importantly,
-it is not even clear how we would go about determining `a` and `b`.
-
-In what is part of a great mystery of the modern study of computational complexity, the first equation is relatively easy for computers to solve, whereas there is no known way of eficiently solving the second problem.
-
-In this section we will look at some problems involving modular exponentiation and some techniques we can use to solve such problems.
-
-In cryptography, it is important to find the modulus of `p`<sup>`e`</sup> `mod m` where `p`,`e`, and `m` are very large integers. 
+The  answers to the above questions are not as obvious as we may assume just from looking at the equations. More importantly, it is not even clear how we would go about determining `a` and `b`. In what is part of a great mystery of the modern study of computational complexity, the first equation is relatively easy for computers to solve, however, there is no known way of efficiently solving the second problem.
 
 >Note: It is very hard to compute `p`<sup>`e`</sup> then divide by `m` and find the remainder because `p`<sup>`e`</sup> is a very large number.
 
-The computation can be done using an algorithm that employs the binary expansion of the exponent of `e`.
+Despite the difficulties discussed above, it is important to find the modulus of `p`<sup>`e`</sup> `mod m` where `p`,`e`, and `m` are very large integers. The computation can therefore be done using an algorithm that employs the binary expansion of the exponent of `e`, reducing the value given using the binary form of `e` and finally computing the modulus of the value in each step.
 
-Reduce the value given using the binary form of `e` and compute the modulus of the value in each step.
-
-Let's proceed and look at an example:
+Below is an illustratory example:
 
 To compute `3^9`, we have that `9` in binary is `1001` so that `3^9=3^8.3^1`
 By successively squaring, we find that `3^2=9,3^4=9^2=81` and `3^8=81^2=6561`.
@@ -131,7 +105,7 @@ Return the last value of x = 3
 3^9 mod 5 =3
 ```
 
-### Modular exponential using Python
+### Modular Exponentiation using Python
 ```python
 #Input three numbers.
 x = int(input("Enter First Value :"))
@@ -146,8 +120,8 @@ Enter First Value : 2
 Enter Second Value : 3
 Value  = 8
 
-### Working of DHKE Protocol
-It involves exchanging secret/asymmetric keys between sender and receiver by using asymmetric encryption(public and private key)
+### Working of Diffie Helman Key Exchange Protocol
+It involves exchanging secret/asymmetric keys between sender and receiver  using asymmetric encryption(public and private key). It can be abbreviated as DHKE.
 
 #### Steps involved
 1. Assume a prime number `Q`
@@ -169,13 +143,12 @@ KDoe = Pa<SUP>Xb</SUP> mod Q
 ```
 
 ### Application of DHKE in ElGamal
-It's an asymmetric key encryption algorithm.
-It involves key generation using DHKE, encryption using the key, and decryption using the private key.
+Elgamal algorithm is an asymmetric key encryption algorithm. It involves key generation using DHKE, encryption using the key, and decryption using the private key.
 
 ![Illustration of DHKE key agreement using colors.](/\engineering-education\content\articles\understanding-diffie-helman-and-elgamal-asymmetric-encryption/Diffie-Helman.png)
 *[Image Source: Wikipedia](https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FDiffie%25E2%2580%2593Hellman_key_exchange&psig=AOvVaw1NIqEyjjySTC7rZb5GimUv&ust=1632470050062000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCIjF0KTPlPMCFQAAAAAdAAAAABAD)*
 
-It involves:
+It involves the following components:
 
 #### Key Generation
 The key generation process involves the use of the DHKE process mentioned above, that is:
@@ -229,7 +202,7 @@ Thus:
 
 ### Implementing DHKE in Python
 Now that we've understood the algorithms for key generations using DHKE.
-Let's proceed and see how we can implement the same using Python.
+Let's proceed and see how we can implement the same using Python programming language.
 
 In your project root, run the following commands to install the Diffie Hellman package:
 
@@ -282,9 +255,7 @@ print("Equal shared keys:", johnSharedKey == doeSharedKey)
 
 ```
 
-When you run code above, it will generate and print two 2048-bit public keys (for John and for Doe). Assume that John and Doe have exchanged their public keys (e.g. send them to each other through Internet). Once John has received Doe's public key, she can calculate the shared secret by combining it to her private key. 
-
-Respectively, once Doe has received John's public key, he can calculate the shared secret by combining it to his private key. The sample output from the above example shows that the shared secret is always the same number (2048-bit integer):
+On execution of the above code, two 2048-bit public keys (for John and for Doe) are generated and printed. Assuming that John and Doe have exchanged their public keys. Once John has received Doe's public key, she can calculate the shared secret by combining it to her private key and vice versa. The sample output below shows that the shared secret is always the same number (2048-bit integer):
 
 Output:
 ```bash
@@ -296,6 +267,10 @@ Doe shared key: 0x60d96187ae1db8e8acac7795837a2964e4972ebf666eaecfa09135371a2de5
 Equal shared keys: True
 ```
 
->It's important to note that your output will be different from the above output due to the randomness of generation.
+>It is important to note that your output will be different from the above output due to the randomness of generation.
+>
 ### Conclusion
-As discussed above, it's clear that security plays an important role in the sender-receiver communication using Diffie Helman and Elgamal encryption algorithms since the algorithms solve the problem of key distribution as the sender and receiver can generate the same key.
+It is therefore very clear that security plays an important role in data communication. Using Diffie Helman and Elgamal encryption algorithms seems to solve the problem of key distribution as the sender and receiver can generate the same key hence throwing key distribution out of the equation.
+
+
+Happy reading!
