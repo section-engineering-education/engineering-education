@@ -1,6 +1,22 @@
-Augmented Reality (AR) is a technology that combines digital content with real-world objects. It allows users to interact with the world around them through their mobile devices.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /creating-simple-visual-augmented-reality-application-in-android/
+title: Creating a simple Visual Augmented Reality application in Android
+description: Augmented Reality (AR) is a technology that combines digital content with real-world objects. It allows users to interact with the world around them through their mobile devices. In this article, we will learn how to create a simple AR application.
+author: emmanuel-ezenagu
+date: 2021-11-18T00:00:00-12:10
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
-AR is currently one of the most revolutionary features of technology in recent years. With AR, we can bend reality in the way that we want. This is like an extension of reality, or we can say, reevaluating the future.
+  - url: /engineering-education/creating-simple-visual-augmented-reality-application-in-android/hero.jpg
+    alt: Creating a simple Visual Augmented Reality application in Android Hero Image
+---
+Augmented Reality (AR) is a technology that combines digital content with real-world objects. It allows users to interact with the world around them through their mobile devices.
+<!--more-->
+AR is currently one of the most revolutionary features of technology in recent years. With AR, we can bend reality in the way we want, which is like an extension of reality, or we can say, reevaluating the future.
 
 In this article, we will learn how to create a simple AR application with Android Studio.
 
@@ -16,8 +32,7 @@ In this article, we will learn how to create a simple AR application with Androi
 - [Conclution](#conclution)
 - [References](#References)
 
-
-### prerequisites
+### Prerequisites
 
 - You must have a basic understanding of the Java programming language.
 - You should be equipped with Android Studio 3.1 or above.
