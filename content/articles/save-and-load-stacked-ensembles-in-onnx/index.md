@@ -75,7 +75,7 @@ df
 ```
 Output:
 
-![Image by author](df1.PNG)
+![DataFrame](df1.PNG)
 *Image by author*
 
 We will seperate the data columns from the label/target, "Outcome";
