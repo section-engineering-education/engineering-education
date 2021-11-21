@@ -1,4 +1,5 @@
 ### Introduction
+
 Today, there are many websites providing important services to society. In order to carry out this process, they need to protect their websites from unethical users. This led to the introduction of authentication and authorization on their websites.
 
 Authentication is the process or action of verifying the identity of a user or process. User authentication for each device ensures that the individual using the device is recognized by the company, and authorization gives users permission to access a service.
@@ -10,6 +11,8 @@ In this tutorial, you will learn how authentication and authorization are implem
 - Object Relation Mapping/Database
   
 ### Table of contents
+- [Introduction](#introduction)
+- [Table of contents](#table-of-contents)
 - [Prerequisites](#prerequisites)
 - [Getting started](#getting-started)
 - [The user interface](#the-user-interface)
