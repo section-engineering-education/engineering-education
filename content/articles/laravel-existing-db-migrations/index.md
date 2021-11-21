@@ -7,6 +7,7 @@ All the options given are not suitable. We need a way to run our migrations on t
 We will run our migrations on an already created database using a sample table without installing any package. So let's get into it. 
 
 ### Table of contents
+
 1. [Brief overview](#brief-overview)
 2. [Prerequisites](#prerequisites)
 3. [Getting started](#getting-started)
@@ -16,7 +17,7 @@ We will run our migrations on an already created database using a sample table w
 7. [Summary](#summary)
 8. [Conclusion](#conclusion)
 
-#### Brief overview
+### Brief overview
 
 When we want to create a database table in Laravel, we first need to create the table's model. We set, in the model, the table name and its fields. 
 
@@ -26,11 +27,11 @@ This said, Laravel's official [documentation](https://laravel.com/docs/8.x/eloqu
 
 This article is based on Laravel's Eloquent ORM which I have given the link pointing to its documentation. Eloquent Object Relational Mapper(ORM) gives us an easy way to manipulate our database without caring much about the SQL query codes. For raw database manipulation, find more about them [here](https://laravel.com/docs/8.x/database).
 
-#### Prerequisites
+### Prerequisites
 
 The article is a bit advanced, so a prior experience with Laravel is required. You can check the basics of creating a laravel application [here](https://www.section.io/engineering-education/laravel-beginners-guide-blogpost/) where you will got thorough a step by step process of creating a blog. Moreover, you need a knowledge of PHP.
 
-#### Getting started
+### Getting started
 We will create some migration on an existing database shown in these screenshots. It does not have many records. It's only for demonstrating the article.
 
 ![database screenshot](/engineering-education/laravel-existing-db-migrations/screen-one.png)
@@ -81,7 +82,7 @@ When you check your working directory, you will see the migration file and the m
 
 *Model file(The top most one)*
 
-#### Modifying the model file
+### Modifying the model file
 
 ```php
 <?php
@@ -107,7 +108,7 @@ We add the table name and the fields in the table. `$fillable` in Laravel is use
 
 For the timestamps, we turn it to `false` since we had not added timestamps to our table. Setting this to `false` instructs Laravel not to create the timestamp fields.
 
-#### Modifying the migration file
+### Modifying the migration file
 
 ```php
 <?php
@@ -162,7 +163,7 @@ We do that so that laravel does not replace our existing table.
 
 If it does not exist, then it creates the table with the predefined fields. You can leave the code inside the `if` statement empty since we already have the table. But because of coding ethics, we add the code.
 
-#### Running the migrations
+### Running the migrations
 If you're working in your localhost, you can run the migrations using this terminal command:
 
 ```bash
@@ -197,9 +198,9 @@ We will also see that our table is untampered with.
 
 That's it.
 
-#### Summary
+### Summary
 
 In a nutshell, we created a laravel application, added the model and the migration, then run the migrations to suit an already created table.
 
-#### Conclusion
+### Conclusion
 This was an article for laravel, but you can use the same logic to the technology that you use. I hope you got some insights. Have a great coding adventure.
