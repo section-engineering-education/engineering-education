@@ -23,20 +23,36 @@ To create a customized zooming action, several methods should be implemented for
 Within the created class ensure you have declared the following variables that would aid in the creation of these zooming controls.
 
 ```kotlin
-    var myMatrix: Matrix? = null
-    private var matrixValue: FloatArray? = null
-    var mode = NONE
+var myMatrix: Matrix? = null
+private var matrixValue: FloatArray? = null
+var mode = NONE
 
-    // Scales
-    var presentScale = 1f
-    var minimumScale = 1f
-    var maximumScale = 4f
+// Scales
+var presentScale = 1f
+var minimumScale = 1f
+var maximumScale = 4f
 
-    //Dimensions
-    var originalWidth = 0f
-    var originalHeight = 0f
-    var viewedWidth = 0
-    var viewedHeight = 0
+//Dimensions
+var originalWidth = 0f
+var originalHeight = 0f
+var viewedWidth = 0
+var viewedHeight = 0
+```
+Now include the following constructor details in the code structure
+```kotlin
+constructor(context: Context) : super(context) {
+        constructionDetails(context)
+    }
+
+    constructor(context: Context, @Nullable attrs: AttributeSet?) : super(context, attrs) {
+        constructionDetails(context)
+    }
+
+    constructor(context: Context?, attrs: AttributeSet?, defStyleAttr: Int) : super(
+        context!!,
+        attrs,
+        defStyleAttr
+    )
 ```
 
 Create the following method which serves as the foundation for the zooming functionality's creation.
@@ -75,7 +91,7 @@ This class overrides two methods that are `onScaleBegin` and `onScale` which con
 
 The `onScale` function converts the original picture size to a given scale factor. The following code demonstrates how to use the `onScale` function in its entirety.
 ```kotlin
-        override fun onScale(detector: ScaleGestureDetector): Boolean {
+override fun onScale(detector: ScaleGestureDetector): Boolean {
             var mScaleFactor = detector.scaleFactor
             val previousScale = mScaleFactor
             presentScale*=mScaleFactor
@@ -102,7 +118,7 @@ The `onScale` function converts the original picture size to a given scale facto
             fittedTranslation()
             return true
 
-        }
+        }      
 ```
 
 The method used to fix transition and put matrix value within an array for analysis  is as shown below:
@@ -132,6 +148,18 @@ Another important method used to fit the image onto the screen according to its 
         val factorY = mViewedHeight.toFloat() / mImageHeight.toFloat()
         factor = factorX.coerceAtMost(factorY)
         myMatrix!!.setScale(factor, factor)
+        
+        // Centering the image
+       var repeatedYSpace = (mViewedHeight.toFloat()
+                - factor * mImageHeight.toFloat())
+        var repeatedXSpace = (mViewedWidth.toFloat()
+                - factor * mImageWidth.toFloat())
+        repeatedYSpace /= 2.toFloat()
+        repeatedXSpace /= 2.toFloat()
+        myMatrix!!.postTranslate(repeatedXSpace, repeatedYSpace)
+        originalWidth = mViewedWidth - 2 * repeatedXSpace
+        originalHeight = mViewedHeight - 2 * repeatedYSpace
+        imageMatrix = myMatrix
   }
 
 ```
