@@ -26,8 +26,7 @@ In this tutorial, we will:
 - Learn how to add click listeners on the buttons.
 
 ### Designing Custom Expandable Floating Action Button
-After creating your new project, go to the `drawable` folder and import drawable icons from vector Assets. These icons will be at the center of the FAB. 
-Right-click on `drawable`, select new then select `Vector Asset` and choose an icon from `Clip Art`.
+After creating your new project, go to the `drawable` folder and import drawable icons from vector Assets. These icons will be at the center of the FAB. To add icons, right-click on `drawable`, select new then select `Vector Asset` and choose an icon from `Clip Art`.
 In this tutorial, we are going to choose the add, call, and message icons. Hence we are going to create a custom FAB with three buttons. 
 Our `activity_main.xml` will have the following code:
 ```xml
@@ -89,10 +88,10 @@ To create animations, go to Resource Manager, and select Animation then click on
 For the button `Add`, we will have two Animation Resource Files for rotating it to open and to close.
 Buttons `Call` and `Message` will have two Animation Resource Files for animating from and to the bottom of the `Add` button.
 1. `from_bottom_animation.xml`:
+This animates buttons from bottom. Here, Call and Message buttons are translated from  bottom to top.  
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <set xmlns:android="http://schemas.android.com/apk/res/android"
-
     android:fillAfter="true">
     <translate
         android:duration="300"
@@ -112,8 +111,12 @@ Buttons `Call` and `Message` will have two Animation Resource Files for animatin
 
 </set>
 ```
+- `translate` tag is useful in moving buttons along X and Y axis.
+- `scale` tag shows the center of rotation along the X and Y axis.
+- `alpha` tag is used to represents the obesity of animation. It is set from 0 to 1 with a duration of 800ms.
 
 2. `to_bottom_animation.xml`:
+Animates the buttons from top to bottom.
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <set xmlns:android="http://schemas.android.com/apk/res/android"
@@ -139,8 +142,8 @@ Buttons `Call` and `Message` will have two Animation Resource Files for animatin
 
 </set>
 ```
-
 3. `rotate_close_animation.xml`:
+Animates the Add button by rotating it at an angle of 45 degrees.
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <set xmlns:android="http://schemas.android.com/apk/res/android"
@@ -157,6 +160,7 @@ Buttons `Call` and `Message` will have two Animation Resource Files for animatin
 ```
 
 4. `rotate_open_animation.xml`:
+Rotates the button at an angle of 45 degrees. 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <set xmlns:android="http://schemas.android.com/apk/res/android"
@@ -171,7 +175,15 @@ Buttons `Call` and `Message` will have two Animation Resource Files for animatin
 
 </set>
 ```
-
+Here is the explanation of the attributes used in animation: 
+- `fromXDelta` - Change in X coordinate to apply at the start of the animation
+- `toXDelta`   - Change in X coordinate to apply at the end of the animation
+- `fromYDelta` - Change in Y coordinate to apply at the start of the animation
+- `toYDelta`   - Change in Y coordinate to apply at the end of the animation 
+- `fromDegrees` - The angle at which the rotation begins.
+- `toDegrees` - The angle at which the rotation stops.
+- `duration` - The duration till which the animation will be playing. The number is in milliseconds, so 1000ms is 1 second.
+- The pivotX and pivotY is the central point of the animation.
 ### Initializing The Animations
 In the `MainActivity.kt` add the following code to globally initialize the animations:
 ```kotlin
@@ -182,18 +194,6 @@ private val toBottomAnimation: Animation by lazy {AnimationUtils.loadAnimation(t
 ```
 Below is the complete implementation of the `MainActivty.kt` class:
 ```kotlin
-package com.example.expandablefabdemo
-
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import android.view.View.INVISIBLE
-import android.view.View.VISIBLE
-import android.view.animation.Animation
-import android.view.animation.AnimationUtils
-import android.widget.Toast
-import com.example.expandablefabdemo.databinding.ActivityMainBinding
-
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
@@ -221,8 +221,6 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
     }
-
-
     private fun onAddButtonClicked() {
         setVisibility(addButtonClicked)
         setAnimation(addButtonClicked)
@@ -269,21 +267,15 @@ class MainActivity : AppCompatActivity() {
             binding.floatingActionButtonMessage.isClickable = false
         }
     }
-
 }
-
-
 ```
-
 ### Designing Extendable Floating Action Button
 For the Extendable Floating Action Button, we are going to use a library. 
-In the `settings.gradle`, add jitpack library inside the `repositories`.
-
+In the `settings.gradle`, add the jitpack library inside the `repositories`.
 ```gradle
 maven { url 'https://jitpack.io' }
 ```
-In the `gradle.build` project level, add the following dependency:
-
+In the `build.gradle` project level, add the following dependency:
 ```gradle
 implementation 'com.github.imtuann:FloatingActionButtonExpandable:1.1.2'
 ```
@@ -301,7 +293,6 @@ For that reason, we are going to create a recycler row and name it `message_recy
     android:layout_margin="8dp"
     app:cardCornerRadius="10dp">
 
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -318,7 +309,6 @@ For that reason, we are going to create a recycler row and name it `message_recy
             app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </androidx.cardview.widget.CardView>
 ```
 In the `activity_message.xml` add the following code to create the Extendable FAB button and the `RecyclerView`:
@@ -358,22 +348,12 @@ In the `activity_message.xml` add the following code to create the Extendable FA
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
 ### Creating the Message Recycler Adapter
 A recycler view always needs an adapter.
  In the `MessageAdapter.kt` class add the following code:
 ```kotlin
-package com.example.expandablefabdemo
-
-import android.view.LayoutInflater
-import android.view.ViewGroup
-import android.widget.Toast
-import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.RecyclerView
-import com.example.expandablefabdemo.databinding.MessageRecyclerRowBinding
-
 class MessageAdapter(private var text: List<String>): RecyclerView.Adapter<MessageAdapter.MyViewHolder>() {
 
     //object MyDiffUtilCallback: DiffUtil.ItemCallback
@@ -386,7 +366,6 @@ class MessageAdapter(private var text: List<String>): RecyclerView.Adapter<Messa
                 Toast.makeText(binding.chatsTextView.context, "$position", Toast.LENGTH_SHORT).show()
             }
         }
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
@@ -405,15 +384,6 @@ class MessageAdapter(private var text: List<String>): RecyclerView.Adapter<Messa
 
 Finally, add the following code in the `MessageActivity.kt` class:
 ```kotlin
-package com.example.expandablefabdemo
-
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import android.widget.Toast
-import androidx.recyclerview.widget.RecyclerView
-import com.example.expandablefabdemo.databinding.ActivityMessageBinding
-import com.example.expandablefabdemo.databinding.MessageRecyclerRowBinding
-
 class MessageActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMessageBinding
@@ -422,8 +392,6 @@ class MessageActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMessageBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-
         addToChatList()
         binding.recyclerRow.adapter = MessageAdapter(chatLists)
         setUpFloatingActionButton()
@@ -453,7 +421,6 @@ class MessageActivity : AppCompatActivity() {
     }
 }
 ```
-
 ![Project Demo](/engineering-education/creating-custom-expandable-fab/custom-expandable-fab.gif)
 
 ### Conclusion
