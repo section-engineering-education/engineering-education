@@ -28,6 +28,7 @@ To follow through this tutorial;
 - You will need a basic understanding of [Blazor](https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor)
 
 ### Getting started
+
 You will first start with creating a server side blazor app. Open Microsoft Visual Studio and select `Create a New Project`.
 
 ![New Project](/engineering-education/creating-a-blazor-server-side-application-using-aspdotnet-core-to-perform-crud-operations/newproject.jpg)
