@@ -140,7 +140,7 @@ df.sample(10) # This specifies the time taken, 10 seconds
 
 
 ### Convert multiple JSON files to CSV files
-A JSON file contains basic data structures and objects in JavaScript Object Notation (JSON). Sending data between an internet app and a server is the most common use case.
+A JSON file contains basic data structures and objects in JavaScript Object Notation (JSON). The most common use case is sending data between an internet app and a server.
 
 A CSV file is created by concatenating/merging/joining several JSON files (at least one column must be the same in each file) and then saving the result as a flattened data frame. The following sample will help you understand the task's whole procedure:
 
