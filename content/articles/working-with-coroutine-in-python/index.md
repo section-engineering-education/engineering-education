@@ -94,7 +94,7 @@ Execution begins when `__next__()` is invoked. The initial expression is perform
 
 The coroutine's execution comes to a halt as it awaits the value to be sent to the coroutine object. Each time a new coroutine object receives an initial value, it first checks to see whether the specified prefix is present before printing the name with that prefix.
 
-For as long as you're using the this phrase, you'll keep seeing it until you run across the `name = (yield)` expression again.
+You will see this expression repeated until you run across the `name = (yield)` expression again.
 
 ### How to close coroutines
 The program's `close()` method must be called to stop a coroutine. The `GeneratorExit` exception may be captured by halting the coroutine first, which is our usual method of collecting exceptions.
