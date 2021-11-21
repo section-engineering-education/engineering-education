@@ -4,7 +4,7 @@ type: authors
 github: https://github.com/iannjari
 twitter: https://twitter.com/IanNjari
 images:
-  - url: /engineering-education/authors/Ian-Njari/avatar.jpeg 
+  - url: /engineering-education/authors/Ian-Njari/avatar.jpg 
 ---
 Ian is a Computer Science student at Kenyatta University.
 
