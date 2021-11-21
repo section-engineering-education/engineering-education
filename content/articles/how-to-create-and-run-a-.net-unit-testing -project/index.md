@@ -1,6 +1,6 @@
 ### Introduction
-Any programming language must include some form of testing. We will use Visual Studio to test ASP.Net apps.
-Write a test code in Visual Studio. It's also used to run an ASP.Net application's test code. It becomes much easier to check for faults in an ASP.Net application this way. The testing module in Visual Studio provides the built-in capability. A test for an ASP.Net project is run right immediately.
+Any programming language must include some form of testing. Unit test is utilized when testing a unit. A unit is a portion of code that can be separated logically in a system. We will use Visual Studio to test ASP.Net apps.
+It's also used to run an ASP.Net application's test code. It becomes much easier to check for faults in an ASP.Net application this way. The testing module in Visual Studio provides the built-in capability. A test for an ASP.Net project is run right immediately.
 
 ### Table of contents
 - [What is unit testing](#what-is-unit-testing)
@@ -60,19 +60,18 @@ An expensive patch may be required if a problem is found late in the development
 
 ![create a console project](/engineering-education/how-to-create-and-run-a-dotnet-unit-testing-project/image2.png)
 
+
 3. Decide on a name for your endeavor and then get to operate. For this project i called it `Collegefinance`. Either the.NET Core 3.1 or.NET 5 target framework will have to be selected.
 As you work on the School project, the Program.cs file will be open in the code editor.
 
-
 ![Naming the project](/engineering-education/how-to-create-and-run-a-dotnet-unit-testing-project/image2.png)
 
-> If you can't open the Program.cs file directly; you may do so in Solution Explorer by double-clicking it.
+>If you can't open the Program.cs file directly; you may do so in Solution Explorer by double-clicking it.
+
 4. To use the `CollegeFinance` class, add the following C# code to `Program.cs`:
 
 ```C#
-
 using System;
-
 namespace BankAccountNS
 {
     /// <summary>
@@ -82,61 +81,49 @@ namespace BankAccountNS
     {
         private readonly string n_studentIdentity;
         private double n_Remainder;
-
         private CollegeFinance() { }
-
         public CollegeFinance(string studentIdentity, double Remainder)
         {
             n_studentIdentity = studentIdentity;
             n_Remainder = Remainder;
         }
-
         public string studentIdentity
         {
             get { return n_studentIdentity; }
         }
-
         public double Remainder
         {
             get { return n_Remainder; }
         }
-
         public void Arrears(double total)
         {
             if (total > n_Remainder)
             {
                 throw new ArgumentOutOfRangeException("total");
             }
-
             if (total < 0)
             {
                 throw new ArgumentOutOfRangeException("total");
             }
-
             n_Remainder += total; // intentionally incorrect code
         }
-
         public void Solvency(double total)
         {
             if (total < 0)
             {
                 throw new ArgumentOutOfRangeException("total");
             }
-
             n_Remainder += total;
         }
-
         public static void Main()
         {
             CollegeFinance dc = new CollegeFinance("Anthony Lincons", 12.88);
-
             dc.Solvency(6.88);
             dc.Arrears(12.54);
             Console.WriteLine("Current remainder is ${0}", dc.Remainder);
         }
     }
 }
-
 ```
 
 5. Right-click on the file in Solution Explorer and select Build Solution from the Build menu (or Ctrl + SHIFT + B) to rename it to `CollegeFinance.cs`.
@@ -156,6 +143,7 @@ We have a project that we can now be put to the test.
 ![Project naming](/engineering-education/how-to-create-and-run-a-dotnet-unit-testing-project/image5.png)
 
 4. Create a new CollegeTests project with the desired architecture (.NET Core 3.1 or.NET 5) selected. We've integrated `CollegeTests` into the `Collegefinance`.
+
 5. Make sure the CollegeTests project contains a mention of the College project.
 In the project created click to View in the menu bar, click Solution Explorer from the list, click dependencies and then add dependencies by right clicking the reference option.
 
@@ -168,17 +156,16 @@ In this phase, we will rename the file as `CollegeFinanceTests.cs` which is more
 Add the following code to the CollegeFinanceTests.cs file:
 
 ```C#
+using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-namespace collegeTests
+namespace CollegeTests
 {
-[TestsClass]
-public class CollegeFinanceTests
-{
-[TestMethod]
-public void TestsMethod1()
-{
-}
-}
+ [TestClass]
+ public class CollegeFinanceTests
+ {
+   [TestMethod]
+   public void TestMethodl()
+ }
 }
 ```
 
@@ -209,9 +196,7 @@ public void Arrears_WithValidTotal_UpdatesRemainder()
     double ArrearsTotal = 5.11;
     double anticipated = 6.33;
     CollegeFinance account = new CollegeFinance("Anthony Lincons", beginningRemainder);
-
     account.Arrears(ArrearsTotal);
-
     double attested = account.Remainder;
     Assert.AreEqual(anticipated, attested, 0.002, "The account has not been charged appropriately.");
 }
