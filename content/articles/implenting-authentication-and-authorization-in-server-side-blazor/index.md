@@ -1,5 +1,4 @@
 ### Introduction
-
 Today, there are many websites providing important services to society. In order to carry out this process, they need to protect their websites from unethical users. This led to the introduction of authentication and authorization on their websites.
 
 Authentication is the process or action of verifying the identity of a user or process. User authentication for each device ensures that the individual using the device is recognized by the company, and authorization gives users permission to access a service.
@@ -11,8 +10,6 @@ In this tutorial, you will learn how authentication and authorization are implem
 - Object Relation Mapping/Database
   
 ### Table of contents
-- [Introduction](#introduction)
-- [Table of contents](#table-of-contents)
 - [Prerequisites](#prerequisites)
 - [Getting started](#getting-started)
 - [The user interface](#the-user-interface)
@@ -28,7 +25,6 @@ To follow through this tutorial;
 - You will need a basic understanding of [Blazor](https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor)
 
 ### Getting started
-
 You will first start with creating a server side blazor app. Open Microsoft Visual Studio and select `Create a New Project`.
 
 ![New Project](/engineering-education/creating-a-blazor-server-side-application-using-aspdotnet-core-to-perform-crud-operations/newproject.jpg)
@@ -61,7 +57,7 @@ To start your authentication functionality, go to the `startup.cs` file, in the 
 The next step is to add an authentication state provider which will give you the state of the user. To do this, you will add a class named `AuthStateProvider` in your Data folder.
 Now in the created class, in order to return the authentication state of the hard coded user, e.g,  `johndoe@gmail.com` because there is no user logged in to the system, you will use the code below.
 
-```csharp
+```c#
 namespace ServerApp.Data
 {
     public class NewAuthenticationStateProvider : AuthenticationStateProvider
@@ -82,7 +78,7 @@ namespace ServerApp.Data
 
 The next thing is to add the authentication state provider in the `startup.cs` file. This is done in the `ConfigureServices` method. Use the code line below.
 
-```csharp
+```c#
 services.AddScoped<NewAuthenticationStateProvider, NewAuthenticationStateProvider>();
 ```
 
@@ -92,7 +88,7 @@ The next thing is to tell the application route that you are expecting `NewAuthe
 
 You will again put the code inside `Not found` parameters in ` <CascadingAuthenticationState>`. These are the two states that take the authentication state as cascading. i.e;
 
-```html
+```HTML
  <NotFound>
         <CascadingAuthenticationState>
             <LayoutView Layout="@typeof(MainLayout)">
@@ -104,7 +100,7 @@ You will again put the code inside `Not found` parameters in ` <CascadingAuthent
 
 Now, on the index page, what you will do is to show the name of authenticated user on the screen. To do this, you will use the code below.
 
-```html
+```HTML
 <SurveyPrompt Title="How is Blazor working for you?" />
 <AuthorizeView>
     <Authorized>
@@ -120,7 +116,7 @@ Now, on the index page, what you will do is to show the name of authenticated us
 
 Now you need to create a log in page to enable you sign in, to do this, go to the pages folder and add another page. Open the file and add the code below;
 
-```csharp
+```c#
 @page "/login"
 @Using ServerApp.Data
 @code  {
@@ -139,7 +135,7 @@ private async Task<bool> Validate User()
 
 What needs to happen is to change state when a user is validated, to do this, you will create a function in the `NewAuthenticationStateProvider` file that takes a string as a parameter and call it `UserAuthenticated`. and send it to `NotifyAuthenticationStateChanged`. This tells the authentication state privider that the state of the application has changed.
 
-```csharp
+```c#
  public void UserAuthenticated(string name)
         {
             var identity = new ClaimsIdentity(new[]
@@ -159,43 +155,43 @@ In the login razor page, you will inject the `AuthenticationStateProvider` using
 
 When a user clicks on login, he or she will need to be marked as authentiacted, this is done by passing in the user email address as shown below.
 
-```csharp
+```c#
 ((NewAuthenticationStateProvider)AuthenticationStateProvider).UserAuthenticated(user.EmailAddress);
 ```
 
 You now need  to navigate to the index page from the login screen, so you will inject a navigation manager in the `login.razor page`. i.e;
 
-```csharp
+```c#
 @inject NavigationManger NavigationManager;
 ```
 
 To navigate to home page, you will use the code line below;
 
-```csharp
+```c#
 NavigationManager.NavigateTo("/");
 ```
 
 When you refresh your browser, you notice that you are signed out. To ensure that you are not signed out, you will download a `NUGET` package called `Blazored.SessionStorage` and add it in the `startup.cs` file.
 
-```csharp
+```c#
 services.AddBlazoredSessionStorage();
 ```
 
 Now in the login in page you will need to inject the session storage using the code line below;
 
-```csharp
+```c#
 @inject Blazored.SessionStorage.ISessionStorageService sessionStorage
 ```
 
 You will also add a key that will be the email address of the user so that even if the user refreshes tha browser,the username will be stored in the session storage. To do that you will add the code below in the `private async Task<bool> Validate User()` function.
 
-```csharp
+```c#
 await sessionStorage.setItemAsync("emailAddress", user.emailAdress);
 ```
 
 Now to use the session storage, you will write a construtor in the `NewAuthenticationStateProvider`.
 
-```csharp
+```c#
 private ISessionStorageService _sessionStorageService;
 public NewAuthenticationStateProvider(ISessionStorageService sessionStorageService)
 {
@@ -205,7 +201,7 @@ public NewAuthenticationStateProvider(ISessionStorageService sessionStorageServi
 
 Now that you have the session state provider, when the browser is refreshed and user has some value, you need the browser to return the user data else log out the user. To do that you will use the code below in the `public override Task<AuthenticationState> GetAuthenticationStateAsync()` fuction, you will add the code below and call it whenever you refresh the browser.
 
-```csharp
+```c#
 var emailAddress = await _sessionStorageService.GetItemAsync<string>(emailAddress);
 ClaimsIdentity identity;
 if(emailAddress != null)
@@ -223,7 +219,7 @@ else
 
 You will also tell the function that it is an async function because you are using the `await` keyword in the code above.
 
-```csharp
+```c#
 public override async Task<AuthenticationState> GetAuthenticationStateAsync()
 ```
 
@@ -231,7 +227,7 @@ Change the code line `return Task.FromResult(true);` to `return await Task.FromR
 
 The last thing to do is implement the log out function. You will go to the `shared` folder and open the `MainLayout.razor` file and create an authorize view inside the `div class ="main"` i.e;
 
-```html
+```HTML
 <AuthorizeView>
     <Authorized>
         <a href = "/login>" @onclick = "(() =>Logout())>Logout</a>
@@ -246,7 +242,7 @@ The code above is basically telling the user to log in if he or she is not logge
 
 To implement the log out function, you will create a method in the `NewAuthenticationStateProvider` that will mark the user as logged out. i.e;
 
-```csharp
+```c#
 public UserLoggedOut()
 {
             _sessionStorageService.RemoveItemAsync("emailAddresss");
@@ -258,13 +254,13 @@ public UserLoggedOut()
 
 You will need to inject the authorization state provide in the `MainLayout.razor` page;
 
-```csharp
+```c#
 @inject AuthenticationStateProvider AuthenticationStateProvider
 ```
 
 Add the code below in the `@code` part to mark the user as logged out.
 
-```csharp
+```c#
 public void Logout()
 {
      ((NewAuthenticaticationStateProvider)AuthenticationStateProvider).UserLoggedOut();
@@ -277,4 +273,4 @@ public void Logout()
 ### Conclusion
 From this tutorial, you, as a reader, should be able to understand each and every part of the code snippet that I have taken you through.
 
-**NOTE:** *Any errors in the project are solved by importing the necessary CSharp packages.*
+**NOTE:** *Any errors in the project are solved by importing the necessary C# packages.*
