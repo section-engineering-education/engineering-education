@@ -16,20 +16,19 @@ To better understand and build along with this tutorial you should have:
 - Your desktops notification turned on - this is where our motivational quotes will be displayed
     
 ### Table of Contents
-- [How to build a Chrome Extension that displays motivational quotes using Javascript](#how-to-build-a-chrome-extension-that-displays-motivational-quotes-using-javascript)
-    - [Introduction](#introduction)
-    - [Prerequisites](#prerequisites)
-    - [Table of Contents](#table-of-contents)
-    - [Getting started](#getting-started)
-    - [Adding icons](#adding-icons)
-    - [Functionality](#functionality)
-    - [Creating the background script](#creating-the-background-script)
-    - [Adding permissions](#adding-permissions)
-    - [Fetching random quotes from the API](#fetching-random-quotes-from-the-api)
-    - [Calling the quotes at intervals](#calling-the-quotes-at-intervals)
-    - [creating notifications](#creating-notifications)
-    - [Conclusion](#conclusion)
-    - [References](#references)
+- [Introduction](#introduction)
+- [Prerequisites](#prerequisites)
+- [Table of Contents](#table-of-contents)
+- [Getting started](#getting-started)
+- [Adding icons](#adding-icons)
+- [Functionality](#functionality)
+- [Creating the background script](#creating-the-background-script)
+- [Adding permissions](#adding-permissions)
+- [Fetching random quotes from the API](#fetching-random-quotes-from-the-api)
+- [Calling the quotes at intervals](#calling-the-quotes-at-intervals)
+- [creating notifications](#creating-notifications)
+- [Conclusion](#conclusion)
+- [References](#references)
   
     
 ### Getting started
@@ -301,9 +300,9 @@ You can now share with friends with or without hosting in the web-store.
 I'm excited to see the amazing things you'll build 🚀🚀
 
 ### References
-- https://developer.chrome.com/docs/extensions/mv3/getstarted/
-- https://www.youtube.com/watch?v=7Tu2j2pc87I&t=418s
-- https://www.youtube.com/watch?v=ew9ut7ixIlI&t=1s
+- [Chrome Extension Documentation](https://developer.chrome.com/docs/extensions/mv3/getstarted/)
+- [Rusty zone - How to call an API from a Chrome Extension](https://www.youtube.com/watch?v=7Tu2j2pc87I&t=418s)
+- [The Coding train - Chrome Extensions](https://www.youtube.com/watch?v=ew9ut7ixIlI&t=1s)
 
 
 
