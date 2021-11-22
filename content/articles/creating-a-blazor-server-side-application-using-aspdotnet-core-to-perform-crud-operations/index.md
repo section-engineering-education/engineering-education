@@ -389,7 +389,6 @@ public void DeleteStudent(Guid id)
 ```
 
 ### Conclusion
-This tutorial is meant for any .NET framework developer whether a beginner or experienced but with a credit to the experienced one since it takes the reader through a step by step, explaining each code snippet, in the project. This makes this tutorial easy to read and understand.
-
+This tutorial is meant for any .NET framework developer. Since takes the reader through a step by step explaining what the code snippets does, it is easily understandable to beginners who are looking for an easy to understand tutorial.
 ---
 Peer Review Contributions by: [Dawe Daniel](/engineering-education/authors/dawe-daniel/)
