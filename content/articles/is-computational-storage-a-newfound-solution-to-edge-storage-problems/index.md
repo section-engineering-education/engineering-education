@@ -1,5 +1,21 @@
-Is Computational Storage a Newfound Solution to Edge Storage Problems?
+---
+layout: engineering-education
+status: publish
+published: true
+url: /is-computational-storage-a-newfound-solution-to-edge-storage-problems/
+title: Is Computational Storage a Newfound Solution to Edge Storage Problems?
+description: This article will discuss how computational storage is interlinked with edge storage, how it is serving data centers, and the storage issues it is solving for edge devices.
+author: bridget-mwikali
+date: 2021-11-22T00:00:00-19:30
+topics: [Edge Computing]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/is-computational-storage-a-newfound-solution-to-edge-storage-problems/hero.jpg
+    alt: Is Computational Storage a Newfound Solution to Edge Storage Problems? Hero Image
+---
+Is Computational Storage a Newfound Solution to Edge Storage Problems?
+<!--more-->
 In an era of increased data flow, everyone wants to get value from processed data quickly. Yet edge storage delays the processing because of an existing gap between data storage and processing. It is increasingly important to bridge this gap to improve data processing speeds.
 
 Computational storage is key to bridging that gap. It enables storage devices to process data directly at the point of storage. It reduces data overload at the edge and improves processing speeds. Applying computer storage reduces real-time data processing challenges.
