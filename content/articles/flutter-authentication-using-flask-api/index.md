@@ -1,0 +1,470 @@
+### Introduction
+
+software or applications mostly hold data that is not supposed to be accessible to everyone.
+this has made Authentication a core aspect of software or application development.
+
+#### Flutter
+Flutter is a UI toolkit created by google, it is used to build cross-platform mobile applications for Android and IOS, and desktop applications for Windows, Mac, and Linux. UIs built with Flutter always depend on backend technologies for functionalities like authentication, one of these backend technologies is Flask.
+Flask is a python web framework for building web applications.
+
+#### Authentication
+Authentication is the process of proving if a user trying to access a system has permission to do so. 
+
+### Prerequisite
+In this guide flutter version, 2.5 is used to build the flutter project, android studio is the IDE used to write the code but visual studio code can be used. For the python API endpoint Flask was used to build it. To code along the tools mentioned previously are recommended. This article assumes the reader has a background knowledge of flutter and python flask.
+
+### Goals
+This guide is written to help understand how flutter apps interact with the backend, it will give an understanding of how authentication works using flask as the backend technology. At the
+end of the guide, an app is going to be built which will work as shown below.
+![demo](/engineering-education/flutter-authentication-using-flask-api/demo.gif)
+
+### Understanding apps
+Web Applications are mostly built in two parts There is the *frontend* and the *backend*.
+The two parts are very delicate in that they are mostly built differently, and sometimes by different developers. 
+#### Frontend 
+The frontend part of an app is also known as the client-side of the app. The frontend
+ focus on how the application looks, frontend developers make sure the apps look good 
+ and is responsive(i.e it looks good on all screens). 
+ 
+ #### Backend
+ The backend part of an app focuses on 
+ how the application works, the backend of an app is also known as the 
+ the server-side of the app, backend developers make sure data received from 
+ users are properly stored and are easily
+rendered to users with speed and efficiency.
+
+#### APIs (Applicaion Programming interface)
+An API is like a middle man between the backend and frontend, 
+it connects computers or computer programs using endpoints. An endpoint is simply a means of communication between two or more systems where a request is sent from the frontend to a 
+web application or a web server.The transfer of data from the client side of an application and server side is made possible by an API. Data can also be transferred from one backend server to another backend server using APIs. Below is the code snippet of a basic login and register endpoint built for authentication using Python's Flask.
+
+```python
+from flask import Blueprint, request, json, jsonify
+from .models import Student
+from software import db
+
+views = Blueprint('views', __name__)
+
+@views.route('/register', methods=["GET", "POST"])
+def register():
+    d={}
+    if request.method =="POST":
+        mail = request.form["email"]
+        password = request.form["password"]
+
+        email = Student.query.filter_by(email=mail).first()
+
+        if email is None:
+            register = Student(email=mail, password=password)
+
+            db.session.add(register)
+            db.session.commit()
+           
+            return jsonify(["Register success"])
+        else:
+            # already exist
+            
+            return jsonify(["user alredy exist"])
+
+
+@views.route('/login', methods=["GET", "POST"])
+def login():
+    d = {}
+    if request.method == "POST":
+        mail = request.form["email"]
+        password = request.form["password"]
+
+        login = Student.query.filter_by(email=mail, password=password).first()
+
+        if login is None:
+            # acount not found
+            
+            return jsonify(["Wrong Credentials"]) 
+        else:
+            # acount found
+            
+            return jsonify([ "success"])
+```
+The code snippet for the register endpoint above accepts data from a form and filters through data already existing in the database to make sure there is no inconsistency in data, the result of the filter is then determining the outcome.
+
+The code snippet for the login endpoint filters the data to make sure the user is registered if registered the user is given access to information in the system if not the user gets a message telling that the credentials are wrong. 
+
+The endpoint above can be accessed using the link below. 
+
+#### Register
+```
+https://flaskflutterlogin.herokuapp.com/register
+```
+#### Login
+```
+https://flaskflutterlogin.herokuapp.com/login
+```
+### Flutter App Design
+#### Installation
+To build a flutter app, flutter had to be installed on the computer. Click [here and follow each step to download](https://flutter.dev/docs/get-started/install) if you don't know how to. Then a new flutter project was created from the terminal using the command shown below.
+
+```terminal
+flutter create nameOfApp
+```
+After installation, the `main.dart` file located inside the lib folder which is found inside the project directory was cleared and replaced with the code snippet below.
+
+```dart
+import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:loginwithapi/views/login.dart';
+import 'package:loginwithapi/views/register.dart';
+import 'package:loginwithapi/views/welcome.dart';
+
+void main() {
+  runApp( MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: "LoginApp",
+      home: WelcomePage(),
+      builder: EasyLoading.init(),
+    );
+  }
+}
+```
+from the code snippet above `import 'package:flutter/material.dart';` import MaterialApp which is a widget that wraps multiple widgets that are mostly required for material design applications. If you paste the above code snippet you will notice red lines indicating something is wrong with the imports. one will be from `import 'package:flutter_easyloading/flutter_easyloading.dart';` to fix, add *flutter_easyloading* to packages using the command 
+```bash
+flutter pub add flutter_easyloading
+```
+the above command adds flutter_easyloading to packages in the project. for `import 'package:loginwithapi/views/welcome.dart';`
+The error is there because the line of code is importing a class from a page that does not exist. 
+Inside the build widget, A MaterialApp was returned which has a title and a home the title is mostly the name of the app and in the home, a WelcomPage class is called.
+ To fix the red line error add the welcomePage class, create two new folders inside the lib folder and name them `views` and `service` inside the views folder create three files with names `login.dart`, `register.dart`, and `welcome.dart` and add the code snippet below into;
+
+#### Welcome
+```dart
+import 'package:flutter/material.dart';
+import 'package:loginwithapi/views/login.dart';
+import 'package:loginwithapi/views/register.dart';
+
+class WelcomePage extends StatefulWidget {
+  const WelcomePage({Key? key}) : super(key: key);
+
+  @override
+  _WelcomePageState createState() => _WelcomePageState();
+}
+
+class _WelcomePageState extends State<WelcomePage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(),
+      body: Container(
+        margin: const EdgeInsets.symmetric(horizontal: 30),
+        decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            InkWell(
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => LoginPage()));
+                },
+                child: Container(
+                  margin:
+                  const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                  child: const Center(
+                    child: Text(
+                      "Login",
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold, color: Colors.white),
+                    ),
+                  ),
+                  height: 50,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                      color: Colors.red,
+                      borderRadius: BorderRadius.circular(25)),
+                )),
+            InkWell(
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => RegisterPage()));
+                },
+                child: Container(
+                  margin:
+                  const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                  child: const Center(
+                    child: Text(
+                      "Register",
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold, color: Colors.white),
+                    ),
+                  ),
+                  height: 50,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                      color: Colors.green,
+                      borderRadius: BorderRadius.circular(25)),
+                ))
+          ],
+        ),
+      ),
+    );
+  }
+}
+```
+
+
+#### Login
+
+```dart
+import 'package:flutter/material.dart';
+import 'package:loginwithapi/service/http_service.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
+
+class LoginPage extends StatefulWidget {
+  const LoginPage({Key? key}) : super(key: key);
+
+  @override
+  _LoginPageState createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  late String email;
+  late String password;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(title: const Text('Login Page')),
+        body: Container(
+          margin: const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+          child: Column(
+            children: [
+              TextField(
+                obscureText: false,
+                decoration: InputDecoration(hintText: 'email'),
+                onChanged: (value) {
+                  setState(() {
+                    email = value;
+                  });
+                },
+              ),
+              TextField(
+                obscureText: true,
+                decoration: InputDecoration(hintText: 'password'),
+                onChanged: (value) {
+                  setState(() {
+                    password = value;
+                  });
+                },
+              ),
+              InkWell(
+                  onTap: () async {
+                    print(password);
+                    print(email);
+                    await HttpService.login(email, password, context);
+                  },
+                  child: Container(
+                    margin: const EdgeInsets.symmetric(
+                        horizontal: 20, vertical: 10),
+                    child: const Center(
+                      child: Text(
+                        "Login",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, color: Colors.white),
+                      ),
+                    ),
+                    height: 50,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                        color: Colors.red,
+                        borderRadius: BorderRadius.circular(25)),
+                  ))
+            ],
+          ),
+        )
+      // ignore: avoid_unnecessary_containers
+    );
+  }
+}
+```
+
+### Register
+
+```dart
+import 'package:flutter/material.dart';
+import 'package:loginwithapi/service/http_service.dart';
+
+class RegisterPage extends StatefulWidget {
+  const RegisterPage({Key? key}) : super(key: key);
+
+  @override
+  _RegisterPageState createState() => _RegisterPageState();
+}
+
+class _RegisterPageState extends State<RegisterPage> {
+
+  late String email;
+  late String password;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(title: const Text('Register Page')),
+        body: Container(
+          margin: const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+          child: Column(
+            children: [
+              TextField(
+                obscureText: false,
+                decoration: InputDecoration(hintText: 'email'),
+                onChanged: (value) {
+                  setState(() {
+                    email = value;
+                  });
+                },
+              ),
+              TextField(
+                obscureText: true,
+                decoration: InputDecoration(hintText: 'password'),
+                onChanged: (value) {
+                  setState(() {
+                    password = value;
+                  });
+                },
+              ),
+              InkWell(
+                  onTap: () async {
+                    await HttpService.register(email, password, context);
+                  },
+                  child: Container(
+                    margin: const EdgeInsets.symmetric(
+                        horizontal: 20, vertical: 10),
+                    child: const Center(
+                      child: Text(
+                        "Register",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, color: Colors.white),
+                      ),
+                    ),
+                    height: 50,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                        color: Colors.red,
+                        borderRadius: BorderRadius.circular(25)),
+                  ))
+            ],
+          ),
+        )
+      // ignore: avoid_unnecessary_containers
+    );
+  }
+}
+```
+
+The code snippet in the welcome file is made up of two inkwell widgets wrapped inside a container. The inkwell widget responds to touch performed by a user. The one labeled login will take you to the login page when clicked and the other labeled register will take you to the register page when clicked.
+
+The code snippet in the login and register file is made of two `TextField` widgets and one `InkWell` widget, all wrapped in a container. The Inkwell widget submits the data gotten from the text when clicked. You will observe a red line on `import 'package:loginwithapi/service/http_service.dart';` this is also because you are importing `http_service.dart`. Will fix that in a bit, before then you can clear the import with the error and you app should look as shown in the pictures below.
+
+![Welcome Page](/engineering-education/flutter-authentication-using-flask-api/welcome.jpeg)
+
+![Login Page](/engineering-education/flutter-authentication-using-flask-api/login.jpeg)
+
+![Register Page](/engineering-education/flutter-authentication-using-flask-api/register.jpeg)
+
+### Login and Register Logic
+
+To write the login and register logic, create a file inside the service folder we created earlier and paste the code snippet below.
+
+```dart
+import 'dart:convert';
+import 'dart:io';
+
+import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:http/http.dart' as http;
+import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:loginwithapi/views/dashboard.dart';
+import 'package:loginwithapi/views/welcome.dart';
+
+class HttpService {
+  static final _client = http.Client();
+
+  static var _loginUrl = Uri.parse('https://flaskflutterlogin.herokuapp.com/login');
+
+  static var _registerUrl = Uri.parse('https://flaskflutterlogin.herokuapp.com/register');
+
+  static login(email, password, context) async {
+    http.Response response = await _client.post(_loginUrl, body: {
+      "email": email,
+      "password": password,
+    });
+
+    if (response.statusCode == 200) {
+      print(jsonDecode(response.body));
+      var json = jsonDecode(response.body);
+
+      if (json[0] == 'success') {
+        await EasyLoading.showSuccess(json[0]);
+        await Navigator.push(
+            context, MaterialPageRoute(builder: (context) => Dashboard()));
+      } else {
+        EasyLoading.showError(json[0]);
+      }
+    } else {
+      await EasyLoading.showError(
+          "Error Code : ${response.statusCode.toString()}");
+    }
+  }
+
+  static register(email, password, context) async {
+    http.Response response = await _client.post(_registerUrl, body: {
+      "email": email,
+      "password": password,
+    });
+
+    if (response.statusCode == 200) {
+      var json = jsonDecode(response.body);
+      if (json[0] == 'username already exist') {
+        await EasyLoading.showError(json[0]);
+
+      } else {
+        await EasyLoading.showSuccess(json[0]);
+        Navigator.pushReplacement(
+            context, MaterialPageRoute(builder: (context) => Dashboard()));
+      }
+    } else {
+      await EasyLoading.showError(
+          "Error Code : ${response.statusCode.toString()}");
+    }
+  }
+}
+```
+From the code `import 'package:http/http.dart' as http;` is importing http which is a flutter package that enables flutter apps to fetch and post data from an API endpoint. `import 'dart:convert';` helps in encoding and decoding data. The rest of the imports are familiar except for `import 'package:loginwithapi/views/dashboard.dart';` which we will look at a bit.
+
+After all Imports, HttpService class was created where `_loginUrl` is declared as a property of the class holding the login URL endpoint and `_registerUrl` is declared as a property holding the register URL endpoint.
+
+The login method was created which took `email and password` as parameters. async and await are used in other to speed up fetching and posting data because accessing data from a server takes time.
+The conditional statement in the method is checking for the response of the endpoint if the response is 200 which means success, the code decodes the response and uses flutter easy_loading, which is a package used for giving messages alerts in flutter apps, to send either an error or a success message depending on the condition giving from the server-side of the application. In our case, if the decoded response is `'success'` then a success alert message is popped up for the user telling the user that login is successful and then the user will be navigated to the next page, else an error message is popped up for the user telling him/her that credentials are wrong as shown in the picture below.
+
+![wrong login credentials error message](/engineering-education/flutter-authentication-using-flask-api/wrong-credentials.jpeg)
+
+![Login success ](/engineering-education/flutter-authentication-using-flask-api/login-success.jpeg)
+
+The register method is taking the same parameters as the login method, it's also using async and await like the register, the only difference is the error message decoded message which will pop up the message `user already exists` if the user exists or a success message `registered successfully if the user does not exist. as shown in the picture below.
+
+![User already exist ](/engineering-education/flutter-authentication-using-flask-api/user-exist.jpeg)
+
+![Register success](/engineering-education/flutter-authentication-using-flask-api/register-success.jpeg)
+
+### Conclusion
+We were able to build an app that can register and login a user using API endpoints the Github repository for the flutter code can be found [here](https://github.com/wobin1/Flutter-Authentication-with-flask-api) and the flask API repo can be found here [here](https://github.com/wobin1/flask-login-for-flutter).
+
+### Further Reading
+- [flutter user authentication](https://medium.com/codex/flutter-user-authentication-part-1-models-and-api-acf33cf42f83)
+- [How To Create Login System in Flutter With Rest API ](https://www.youtube.com/watch?v=2DtFGF2v_vk)
+
+
