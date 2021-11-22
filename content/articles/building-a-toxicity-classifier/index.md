@@ -67,8 +67,7 @@ Let's try and perform prediction on a simple sentence to establish whether it's 
 ```python
 predictor.predict('Why are you so fat?')
 ```
-In some modern cultures, calling someone `fat` isn't such a big issue. But in others, people mind find it offensive. Let's see what the model thinks.
-
+In some modern cultures, calling someone `fat` isn't such a big issue. But in other cultures, they might find it offensive. Let's see what the model thinks.
 The output:
 
 ```bash
