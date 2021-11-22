@@ -5,4 +5,4 @@ twitter: https://twitter.com/gmcodes20
 images:
   - url: /engineering-education/authors/godwin-martins/avatar.jpg
 ---
-Martins is a graduate Computer Science student who is interested in how the internet works, a frontend developer, and a Web3 enthusiast
+Martins is a graduate Computer Science student interested in how the internet works, a frontend developer, and a Web3 enthusiast.
