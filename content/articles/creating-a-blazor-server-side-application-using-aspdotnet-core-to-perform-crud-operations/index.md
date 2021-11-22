@@ -389,7 +389,7 @@ public void DeleteStudent(Guid id)
 ```
 
 ### Conclusion
-From this tutorial, you will be able to put in place the create, delete, read and update operations on a web page.
+This tutorial is meant for any .NET framework developer whether a beginner or experienced but with a credit to the experienced one since it takes the reader through a step by step, explaining each code snippet, in the project. This makes this tutorial easy to read and understand.
 
 ---
 Peer Review Contributions by: [Dawe Daniel](/engineering-education/authors/dawe-daniel/)
