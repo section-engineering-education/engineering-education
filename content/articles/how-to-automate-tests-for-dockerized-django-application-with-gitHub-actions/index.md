@@ -1,55 +1,62 @@
-# How to Automate Tests for Dockerized Django Applications with GitHub Actions
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-automate-tests-for-dockerized-django-application-with-gitHub-actions/
+title: Automating tests for Dockerized Django applications with GitHub Actions
+description:In this article, the reader will learn how to test a Django application with Pytest, Dockerize it, and configure GitHub Actions to automate your Django tests.
+author:muhammed-ali
+date: 2021-11-22T00:00:00-12:10
+topics: [Langugaes]
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/how-to-automate-tests-for-dockerized-django-application-with-gitHub-actions/hero.jpg
+    alt: Automating tests for Dockerized django application Image
+---
 
-## Introduction
-
-Have you had a problem figuring out how to test your Django application continuously? Do you know how to integrate GitHub Actions, automated testing, and Django?
-If these questions are in your mind, then you are in luck.
-
-In this article, you will learn how to test Django application with [Pytest](https://docs.pytest.org/en/stable/getting-started.html#:~:text=pytest%20is%20a%20framework%20that,for%20your%20application%20or%20library.), Dockerize it and configure GitHub Actions to automate your Django tests.
-
+In this article, the reader will learn how to test a Django application with [Pytest](https://docs.pytest.org/en/stable/getting-started.html), Dockerize it, and configure GitHub Actions to automate your Django tests.
+ <!--more-->
 Pytest is a Python library used for running tests for Python code.
-[GitHub Actions](https://docs.github.com/en/actions) enables you can automate a lot of repetitive stuff in your repository.
-Docker helps make sure your app works the same way on all platforms. Adding these functionalities to your application can make it easy for **[continuous delivery](https://en.wikipedia.org/wiki/Continuous_delivery#:~:text=Continuous%20delivery%20(CD)%20is%20a,with%20greater%20speed%20and%20frequency.)** and collaboration.
+[GitHub Actions](https://docs.github.com/en/actions) enables you can automate much repetitive stuff in your repository.
+
+Docker ensures your application works the same way on all platforms. Adding these functionalities to your application can make it easy for [continuous delivery]https://en.wikipedia.org/wiki/Continuous_delivery)and collaboration.
 
 
 ### Prerequisites
-
-To follow this tutorial the following is required:
-
-1. knowledge of Django
-2. Knowledge of Git/GitHub
+The reader needs the following to follow along with this tutorial:
+1. A good understanding of Django
+2. Using f Git/GitHub
 3. [Docker](https://docs.docker.com/get-docker/) and [Docker compose](https://docs.docker.com/compose/install/) installed
 
-## Building a Base Django App
+### Building a Base Django App
+Let us, first of all, build the project that we will be using for this tutorial.
+We create a new virtual environment for the project, which will come in handy when trying to get a list of all the dependencies.
 
-Let's first of all build the project that we will be using for this tutorial.
-First of all, create a new virtual environment for the project, which will come in handy when you are trying to get a list of all the dependencies.
-
-After creating the virtual environment, install Django with:
+After creating the virtual environment, install Django with the following command executed in the terminal.
 
 ```bash
 (env)$ pip install django
 ```
 
-Run the code below to create a new project:
+Run the command below to create a new project:
 
 ```bash
 (env)$ django-admin startproject <name_of_project>
 ```
 
-Example:
+For instance, if the name of your application is `django_test_githubactions`, use that name in the command.
 
 ```bash
 (env)$ django-admin startproject django_test_githubactions
 ```
 
-`cd` into the directory that contains *manage.py* and run the code below to initialize the Django application:
+`cd` into the directory that contains *manage.py* and execute the command below to initialize the Django application:
 
 ```bash
 (env)$ python manage.py startapp blog
 ```
 
-Add “blog” to *settings.py* file which will enable Django recognise the app you just created.
+Add `blog` application to the list of the installed application in the `settings.py` file. This step enables Django to recognize it ans a sub-application to the main application. 
 
 ```python
 INSTALLED_APPS = [
@@ -59,7 +66,7 @@ INSTALLED_APPS = [
 ```
 
 
-We will be building a blog application for this illustration so in the ~*/blog/models.py* file and paste the code below:
+We will be building a blog application for this illustration, so in the `*`blog/models.py` file and paste the code snippet below:
 
 ```python
 from django.db import models
@@ -72,7 +79,7 @@ from django.db import models
            return self.title
 ```
 
-Next we have to write the logic to display the content. To do this, navigate to *app/views.py* on your text editor and paste the code below:
+Next, we have to write the logic to display the content. To do this, navigate to `app/views.py`. Then, add the code snippet below in that file.
 
 ```python
 from django.shortcuts import get_object_or_404, render
@@ -82,7 +89,7 @@ def content_view(request, pk):
    return render(request, "blog/article.html", {'post':post})
 ```
 
-Next, update your *urls.py* file with the code below so that we can access that route in the browser.
+Next, update your `urls.py` file with the code below to access that route in the browser.
 
 ```python
 
@@ -93,16 +100,16 @@ urlpatterns = [
 ]
 ```
 
-Next, create a template folder in the app directory to hold the template to display the blog content. Navigate to your app folder and create *templates/blog/article.html* and paste the code below:
+Next, create a `templates` folder in the app directory to hold the template to display the blog content. Navigate to your app folder and create `templates/blog/article.html`  and paste the code below:
 
-```
+```html
 Blog title:  
     {% if post.content %}  
     {{ post.content }}  
     {% endif %}
 ```
 
-Migrate the models so that you can start adding articles to the database. To do this go to your terminal/command prompt run:
+Migrate the `models` to start adding articles to the database. To do this, go to your terminal/command prompt run:
 
 ```bash
 (env)$ python manage.py makemigrations
@@ -115,63 +122,59 @@ Then run:
 ```
 
 ### Populate the Database
-
-We need to populate our database so that we can actually know whether our application is working as expected. To populate the database, go to your terminal the below instruction to go into the Django shell:
+We need to populate our database to know whether our application is working as expected. To populate the database, go to your terminal the below instruction to go into the Django shell:
 
 ```bash
 (env)$ python manage.py shell
 ```
 
-Then run the code below one after the other, the second line populates the database.
+Then run the code below one after the other; the second line adds a single record to the database and saves it. You can use the same format to add more data.
 
 ```bash
 >>> from blog.models import Article
 >>> Article.objects.create(author_name="Ali",title="First app", content="Some detail of the article").save()`
 ```
 
-You can add more data if you like.
-
-Now run your server and go to your localhost([http://127.0.0.1:8000/](http://127.0.0.1:8000/)) then add the *id* of the article you just added, like this: [http://127.0.0.1:8000/1](http://127.0.0.1:8000/1), you’ll see that the article content is being displayed.
+Now run your server and go to your localhost([http://127.0.0.1:8000/](http://127.0.0.1:8000/)) then add the *id* of the article you just added, like this: [http://127.0.0.1:8000/1](http://127.0.0.1:8000/1), you will see that the article content is being displayed.
 
 ![display-blog.png](display-blog.png)
 
-## How to Add Tests to Django Application
+### How to Add Tests to Django Application
+This section will show you how to add tests to your URLs and models. Before testing the application, execute the command below to install the testing library.
 
-In this section I will show you how to add tests to your urls and models. Before you start testing the application you just created install the necessary libraries, you can install them with the code below:
-
-```
+```bash
 (env)$ pip install pytest pytest-django
 ```
 
 [Pytest-django](https://pytest-django.readthedocs.io/en/latest/) is a plugin built to make it easier for you to use Pytest with Django.
 
-Next, create a file with name *pytest.ini* in the root at the root of your project. In the *pytest.ini* file you will put the path to the *settings.py* file of your project. In the *pytest.ini* file, paste the code below:
+Next, create a file with the name `pytest.ini` at the root of your project. In the `pytest.ini` file, you will put the path to your project's `settings.py` file. In the `pytest.ini` file, paste the code below:
 
-```
+```python
 [pytest]
 DJANGO_SETTINGS_MODULE = django_test_githubactions.settings
 ```
 
-Next, create a test folder in the app directory where all your test files for that app will be, so you’ll create a new directory in the blog application, *blog/tests/*.
+Next, create a test folder in the app directory where all your test files for that app will be. So you will create a new directory in the blog application, `blog/tests/`.
 
-To start, we will test the *urls.py* file so you’ll create a new file in the test folder *blog/tests/test_urls.py*.
-Note:
-All test files must begin with *test_* because that is the convention when working with Pytest. 
+To start, we will test the `urls.py` file, so you will create a new file in the test folder `blog/tests/test_urls.py`.
 
-Paste the code below in the *test_urls.py* file you just created.
+>All test files must begin with `test_` because that is the convention used with Pytest. 
+
+Paste the code below in the `test_urls.py` file you just created.
 
 ```python
 from django.urls import reverse, resolve
 from django.urls import path
 
     class TestUrls: 
-    # here you are checking if the path's view name is content
+    # here, you are checking if the path's view name is content
         def test_post_content_url(self):  
             path = reverse('content', kwargs={'pk':1})  
             assert resolve(path).view_name == "content"  # here you are checking if the path's view name is content 
 ```
 
-Next, we will be testing the models, create a new file for it app/tests/test_models.py, and put the code below:
+Next, we will be testing the models, create a new file for it `app/tests/test_models.py`, and add the code snippet below:
 
 ```python
 import pytest  
@@ -196,15 +199,15 @@ To run the tests, go to your command line and run:
 (env)$ python -m pytest
 ```
 
-You should see something like the image below to show that all the tests passed:
+You should see a similar process like the image below to show that all the tests passed:
 
 ![run-test.png](run-test.png)
 
-## Setting up Docker
+### Setting up Docker
 
-In this section you will learn how to use Docker and Docker compose to run your application. Assuming you have installed Docker and Docker compose on your local machine,  create a *Dockerfile* file at the root of your project. In the *Dockerfile* you'll put step-by-step instructions that will be used to build the Docker image.
+This section helps you learn how to use Docker and Docker compose to run your application. Assuming you have installed Docker and Docker compose on your local machine,  create a `Dockerfile` file at the root of your project. In the `Dockerfile`, you will put step-by-step instructions that will be used to build the Docker image.
 
-The *Dockerfile* you just created should contain the code below:
+The `Dockerfile` you just created should contain the code below:
 
 ```docker
 FROM python:3.7-alpine
@@ -222,17 +225,19 @@ WORKDIR /project
 COPY . .
 ```
 
-`FROM python:3.7-alpine` is the image you are going to inherit your Dockerfile from, it is usually the language you are using.
+`FROM python:3.7-alpine` is the image you will inherit your Dockerfile from. It is usually the language you are using.
 
-`ENV PYTHONUNBUFFERED 1`  is necessary so Docker doesn't buffer the output and that you can see the output of your application (e.g. Django logs) in real time.
+`ENV PYTHONUNBUFFERED 1`  is necessary, so Docker does not buffer the output and that you can see the output of your application (e.g., Django logs) in real-time.
 
 `COPY ./requirements.txt /requirements.txt` copy the *requirements.txt* file adjacent to the *Dockerfile* file in your local machine for our Docker image *requirements.txt*.
 
-`RUN pip install -r /requirements.txt` Install requirements.txt file in docker image
+`RUN pip install -r /requirements.txt` Install requirements.txt file in the docker image.
 
-Next, create *requirements.txt* file at the root of your project, this file will contain will contain a list of all the dependencies we would like to install for the project. Paste the text below in the *requirements.txt* file.
+Next, create a `requirements.txt` file at the root of your project. This file will contain a list of all the dependencies we would like to install for the project. 
 
-```
+Paste the text below in the `requirements.txt` file.
+
+```txt
 asgiref==3.4.1
 attrs==21.2.0
 Django==3.2.7
@@ -244,9 +249,8 @@ six==1.16.0
 sqlparse==0.4.1
 ```
 
-## Setup Docker Compose
-
-In this section you willl write the instruction in other to tell Docker how to run your application. At the root of your project, create *docker-compose.yml* file and add the following:
+### Setup Docker Compose
+In this section, you will write the instruction to tell Docker how to run your application. First, at the root of your project, create a `docker-compose.yml` file and add the lines of code.
 
 ```yaml
 version: "3"   # Verion of docker-compose we want to use
@@ -255,7 +259,7 @@ services:
     build:
     # command that is used to run services
       context: . # builds the current directory
-    # map port on local machine to port on docker image
+    # map port on local machine to port on the docker image
     ports:
       - "8000:8000"
       
@@ -267,28 +271,26 @@ services:
 
 After that, go to your terminal and run `$ docker-compose build` to build our image using the docker-compose configuration.
 
-Docker-compose runs at `0.0.0.0:8000` which is not recognized by Django so you need to add it to your `ALLOWED_HOSTS` in your *settings.py* file, like this:
+Docker-compose runs at `0.0.0.0:8000` which Django does not recognize so you need to add it to your `ALLOWED_HOSTS` in your `settings.py` file, like this:
 
+```py
 `ALLOWED_HOSTS = ['0.0.0.0']`
-
-Now run `$ docker-compose up` to start the server and go to [http://0.0.0.0:8000/1](http://0.0.0.0:8000/1) on your browser and you will see the blog you created.
+```
+Now run `$ docker-compose up` to start the server and go to [http://0.0.0.0:8000/1](http://0.0.0.0:8000/1) on your browser, and you will see the blog you created.
 
 ![docker.png](docker.png)
 
-## Setup GitHub Actions
+### Setup GitHub Actions
+[GitHub Actions](https://docs.github.com/en/actions) enables you to automate, customize specified development and deployment processes in your GitHub repository. This tutorial will just be used for automating Django tests, which is what you will be learning in this section.
 
-[GitHub Actions](https://docs.github.com/en/actions) enables you to automate, customize specified development and deployment processes in your GitHub repository. In this tutorial it will just be used for automating Django tests, which is what you will be learning in this section.
-
-### Some Terminology
-
-1. Jobs: step-by-step instructions for an action.
-2. Workflows: A workflow is a list of automated processes made up of one or more jobs that are configured on a YAML file.
+### Terminologies
+1. Jobs: step-by-step instructions for action.
+2. Workflows: A workflow is a list of automated processes of one or more jobs configured on a YAML file.
 
 ### Activate GitHub Actions in your Project
+On your text editor, navigate to the root of your project and create a directory named `.github/workflows` in there, create a file named `main.yml` f. The `main.yml` file will contain all the GitHub Actions commands.
 
-On your text editor, navigate to the root of your project and create a directory named *.github/workflows* in there create *main.yml* file. The *main.yml* file will contain all the GitHub Actions commands.
-
-In the *main.yml* file you just created, paste the code below
+Paste the code below in the `main.yml` file you just created.
 
 ```yaml
 name: test_project  
@@ -311,21 +313,18 @@ jobs:
 
 The code above just runs tests on your latest push. You can visit the [GitHub docs](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions) page to learn more about syntax.
 
-## GitHub Actions at Work
-
-Commit and push all the code you have at the moment to GitHub.
-
-After pushing your code, go to your project on GitHub and click on the “Actions” tab. You’ll see that your GitHub Actions ran completely and that your application has been tested and all tests passed.
+### GitHub Actions at Work
+Commit and push all the code you have at the moment to GitHub. After pushing your code, go to your project on GitHub and click on the “Actions” tab.  If you followed the steps correctly, you would see that your GitHub Actions ran completely and that your application has been tested and all tests passed.
 
 ![github-actions.png](github-actions.png)
 
-When you click on it you should see this:
+When you click on it, you should see this:
 
 ![github-actions1.png](github-actions1.png)
 
-To check if the intention of GitHub Actions is met you will update the test so it fails.
+To check if the intention of GitHub Actions is met, you will update the test, so it fails.
 
-In the models test, change it to:
+In the models' test, change it to:
 
 ```python
 def test_article_create():  
@@ -339,16 +338,16 @@ def test_article_create():
    assert article.content=="The article's content"
 ```
 
-Commit and push your code. Go to your project Actions and you should see the test fails, to show that our GitHub Actions instructions are working as expected.
+Commit and push your code. Then, go to your project Actions, and you should see the test fails to show that our GitHub Actions instructions are working as expected.
 
 ![fail-test.png](fail-test.png)
 
-## Conclusion
+### Conclusion
 
-In this tutorial, you learned how to write unit tests for Django application URL and models at the same time you were able to automate the process of running the tests when your application is pushed to GitHub.
+This tutorial taught you to write unit tests for Django application URLs and models. At the same time, you could automate the process of running the tests when your application is pushed to GitHub.
 
 In addition, you can add some linting tests to the workflow to improve the continuous integration of your application. Through my explanation and some research, doing that should be easy.
 
-Hopefully, with this article, you can add some continuous delivery with GitHub Actions for your future projects.
+Hopefully, you can add some continuous delivery with GitHub Actions for your future projects with this article.
 
 The code for this tutorial can be found on [GitHub](https://github.com/khabdrick/Django-docker-actions).
