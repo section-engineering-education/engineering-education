@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/how-cart-algorithms-are-substantial-in-speech-emotion-recognition/hero.jpg
     alt: CART example image 
 ---
-Unlike humans, who have the human ability to recognize emotion from speech, machines do not have the sense to analyze feelings. Speech emotional recognition is vital in understanding human emotions such as amusements, frustrations, or disappointment.
+Unlike humans, who have the human ability to recognize emotion from speech, machines do not have the sense to analyze feelings. Speech emotional recognition is vital in understanding human emotions such as amusement, frustration, or disappointment.
 <!--more-->
 
 Emotions are vital in day-to-day life, especially in interpersonal human interaction. They are helpful both in intelligent and rational decisions. Unlike humans, who have the human ability to recognize emotion from speech, machines do not have the sense to analyze feelings. Speech emotional recognition is vital in understanding human emotions such as amusements, frustrations, or disappointment. Speech emotion recognition informs the computer on the physical and emotional state of an individual from a speech.
