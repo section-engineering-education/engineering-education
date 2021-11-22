@@ -1,6 +1,23 @@
-How CART algorithms are substantial in speech emotion recognition
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-cart-algorithms-are-substantial-in-speech-emotion-recognition/
+title: How CART Algorithms are Substantial in Speech Emotion Recognition
+description: In this article, we will assess the use of CART algorithms in speech emotion recognition.
+author: lynn-njoki
+date: 2021-11-22T00:00:00-18:00
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
 
-Emotions are very vital in day-to-day life, especially in interpersonal human interaction. They are helpful both in intelligent and rational decisions. Unlike humans, who have the human ability to recognize emotion from speech, machines do not have the sense to analyze feelings. Speech emotional recognition is vital in understanding human emotions such as amusements, frustrations, or disappointment. Speech emotion recognition informs the computer on the physical and emotional state of an individual from a speech.
+  - url: /engineering-education/how-cart-algorithms-are-substantial-in-speech-emotion-recognition/hero.jpg
+    alt: CART example image 
+---
+Unlike humans, who have the human ability to recognize emotion from speech, machines do not have the sense to analyze feelings. Speech emotional recognition is vital in understanding human emotions such as amusements, frustrations, or disappointment.
+<!--more-->
+
+Emotions are vital in day-to-day life, especially in interpersonal human interaction. They are helpful both in intelligent and rational decisions. Unlike humans, who have the human ability to recognize emotion from speech, machines do not have the sense to analyze feelings. Speech emotional recognition is vital in understanding human emotions such as amusements, frustrations, or disappointment. Speech emotion recognition informs the computer on the physical and emotional state of an individual from a speech.
 
 A wide range of studies have focused on detecting a person's emotions. They include the use of computer games, audio surveillance, robots, others. Machine learning algorithms have been termed as more efficient in classification and prediction, which is vital in speech emotion recognition. However, there is a lot of information about the use of [CART](/engineering-education/decision-tree-in-python/) in speech emotion recognition that needs assessment which the study focuses on.
 
