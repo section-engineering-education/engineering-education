@@ -4,7 +4,19 @@ Smart contracts are scripts of code which can facilitate the exchange of money, 
 
 In this article, we will discuss how Ethereum works, its disruptive technologies, and the smart contracts ecosystem.
 
+### Table of contents
+- [Table of contents](#table-of-contents)
+- [Understanding Ethereum and smart contracts](#understanding-ethereum-and-smart-contracts)
+- [Common blockchain and smart contracts use cases](#common-blockchain-and-smart-contracts-use-cases)
+  - [Supply Chain](#supply-chain)
+  - [Real Estate](#real-estate)
+  - [Banking](#banking)
+  - [Health Care](#health-care)
+- [Conclusion](#conclusion)
+
 ### Understanding Ethereum and smart contracts
+
+![Smart Contracts](./smartcontracts.jpg)
 
 As we discussed in the introduction, blockchain is a chain of blocks that contains information. A blockchain is a distributed ledger that is completely open to anyone. Each block contains some data, the hash of
 the block and the hash of the previous block. Hash identifies a block and all of its contents
@@ -37,9 +49,11 @@ So, with the popularity of blockchain-based contracts rising across all levels o
  -->
 ### Common blockchain and smart contracts use cases
 
-Some industries that are currently used include:
+Some of the industries that smart contracts and blockchain can be implemented include:
 
-__Supply Chain__
+#### Supply Chain
+
+![supply chain](./supply-chain-management.jpg)
 
 Blockchain has the capability to drive the new era of Logistics and supply chain management. As business are expanding, the producation and complexity of managing the isolated units is demanding. However, this can be effectively managed a proper management to the supply chain is implemented. Where blockchain slots in is when a chain grows and hence a vast amount of third-party agents gets involved. The issues that arise from this is the efficiency, transparency, and overall honesty. Since blockchain is a distributed ledger, it becomes handy in the following ways.
 
@@ -49,20 +63,22 @@ Blockchain has the capability to drive the new era of Logistics and supply chain
 
 - Applying a universal solution in cost reduction: The blockchain technology architecture has the ability to scale in distributed ledger infrastructure. Therefore, we can create a shared network for order management from suppliers. Therefore, the approval and validation of orders is automated. 
 
-__Real Estate__
+#### Real Estate
 In land and real estate, a lot of paper work is involved. By this, blockchain can progress the industry by minimizing the paper work and applying smart contracts to automate verification, and validation of property ownership. The timestamping of records over the decentralized ledger can improve time-taking processes.
 
-__Banking__
+#### Banking
 The modern financial system relies on huge centralized banks to hold the fiat currency to validate and perform transactions. However, the banking software system adds extra cost and hassles making it inefficient.
 By using smart contracts aspect of Ethereum, we can unlock a huge potential of a much faster and protected record of loans. Further more, with the rise of [DeFi](https://www.coindesk.com/learn/what-is-defi/), we can build apps on blockchain that act as lending platforms in an anonymous system to completes traditional financial transactions without a governing body.
 
-__Health Care__
+#### Health Care
+
 The health industry is growing rapidly. With the vast volume of medical data, the regulation still makes most of this information remain inaccessible from the outside. This makes it hard for research of increasing complexit of diseases, data breaches, and innovation. However, blockchain is a technology that can fix most of this issues when implemented. Below is why blockchain is a great fit:
 
 - Involving several parties means that we need to improve trust by reducing the trustee middlemen to improve efficiency. Therefore, blockchain can create the version of truth by building consensus while giving the end-users the control of data.
 
 - The data needs to be reliable. To achieve this, the data needs to be decentralized and encrypted to avoid the ineffectiveness of central authority failures.
 
+![Healthcare](./data-transaction-healthcare.png)
 
 ### Conclusion
 
