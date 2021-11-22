@@ -271,3 +271,6 @@ To get the Google Colab notebook for this tutorial, click [here](https://colab.r
 - [Getting started with machine learning pipeline](https://valohai.com/machine-learning-pipeline/)
 - [Pandas Documentation](https://pandas.pydata.org/)
 - [NumPy Documentation](https://numpy.org/)
+
+---
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
