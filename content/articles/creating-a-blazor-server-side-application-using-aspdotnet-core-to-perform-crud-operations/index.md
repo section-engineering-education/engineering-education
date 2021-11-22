@@ -389,6 +389,6 @@ public void DeleteStudent(Guid id)
 ```
 
 ### Conclusion
-This tutorial is meant for any .NET framework developer. Since takes the reader through a step by step explaining what the code snippets does, it is easily understandable to beginners who are looking for an easy to understand tutorial.
+From this  tutorial, we have learned about server side blazor in ASP.NET Core. From this tutorial, we are able to tell how server side blazor is different from other client side blazor applications. We are also able to follow along easily, understand what each code sample is doing, making it easy to understand the tutorial.
 ---
 Peer Review Contributions by: [Dawe Daniel](/engineering-education/authors/dawe-daniel/)
