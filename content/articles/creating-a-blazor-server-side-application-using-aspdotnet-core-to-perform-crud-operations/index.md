@@ -27,8 +27,6 @@ In this tutorial, you will learn how to make a Blazor server-side application fr
 - [Conclusion](#conclusion)
 
 ### Prerequisites
-
-
 To follow through this tutorial, you will need to have:
 - A basic knowledge of [Blazor framework](https://blazor.syncfusion.com/documentation/introduction)
 - A basic knowledge of [C#](https://docs.microsoft.com/en-us/dotnet/csharp/) language
