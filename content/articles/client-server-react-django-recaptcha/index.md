@@ -42,7 +42,7 @@ To enable reCAPTCHA on your website, you first need to register your site on the
 - Accept the reCAPTCHA's terms of service and click submit.
 - You will then be provided with a **site key**(to use in the frontend) and a **secret key**(to use in the backend).
 
-![Recaptcha](/engineering-education/client-server-react-django-recaptcha/recaptchaSnap.PNG)
+![Recaptcha](recaptchaSnap.PNG)
 
 #### Setting up our Frontend
 Create a folder named **react-django-recaptcha**. Open the folder in your terminal and run the following command:
