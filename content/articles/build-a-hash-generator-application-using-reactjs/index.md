@@ -6,7 +6,7 @@ url: /build-a-hash-generator-application-using-reactjs/
 title: Reactjs Hash Application Generator
 description: This guide will walk the reader about the Hash functions and illustrates how to build a Hash generator application using React.js. We will create a simple app that calculates hashes from text strings, hash them, and send back the hashed text to the user.
 author: moses-maina
-date: 2021-11-18T00:00:00-16:00
+date: 2021-11-22T00:00:00-16:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
