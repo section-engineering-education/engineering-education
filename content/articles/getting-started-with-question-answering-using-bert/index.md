@@ -6,7 +6,7 @@ url: /getting-started-with-question-answering-using-bert/
 title: Getting Started with Question Answering (Q&A) using BERT
 description: This tutorial will cover how to build a Question-Answering web application using Google's BERT model.
 author: lilian-tonia
-date: 2021-11-16T00:00:00-11:00
+date: 2021-11-22T00:00:00-13:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -42,7 +42,7 @@ We will be installing three packages. `@tensorflow/tfjs` to install tensorflow.j
 ```js
 npm i @tensorflow/tfjs @tensorflow-models/qna react-loader-spinner
 ```
-After successful installation, you can start up the react app to see if everything is okay. We start react using the `npm start` command as shown below:
+After successful installation, you can start up the react app to see if everything is okay. We start it using the `npm start` command as shown below:
 
 ```js
 npm start
@@ -76,7 +76,7 @@ const loadModel = async ()=>{
     console.log('Model loaded successfully!')
   } 
 ```
-The above code goes ahead and loads our `qna` model. We've written a new function, and we've named it `loadModel`, and we've made it asynchronous. Inside that function, we've created a new variable known as `loadedModel`, and then we await our `qna` model to load. This is going to load the question-answering model into our app. Eventually, we should see `Model loaded successfully` to our console if our model loads successfully. To run that function, we go ahead and write the following code:
+The code above goes ahead and loads our `qna` model. We've written a new function, made it asynchronous, and named it as `loadModel`. Inside that function, we've created a new variable known as `loadedModel`, and then we await our `qna` model to load. This is going to load the question-answering model into our app. Eventually, we should see `Model loaded successfully` to our console if our model loads successfully. To run that function, we go ahead and write the following code:
 
 ```js
 useEffect(()=>{loadModel()}, [])
@@ -135,17 +135,18 @@ Let's now go ahead and create our user interface so that all these codes can mak
   );
 }
 ```
-That's our user interface code written in full. Quite a lot of code there. Let me explain. First, we are checking if our model has loaded using `model ==null ?`. If the model is loading, we display a `div` with the string, `The model is loading`. We then use our `Loader` function which we imported earlier to display a beautiful loader interface. You can play around with the `type`, `color`, `height`, and `width`. Refer to this [article](https://www.npmjs.com/package/react-loader-spinner) to learn more.
+That's our user interface code written in full. Quite a lot of code there. Let me explain. 
+
+First, we are checking if our model has loaded using `model ==null ?`. If the model is loading, we display a `div` with the string, `The model is loading`. We then use our `Loader` function which we imported earlier to display a beautiful loader interface. You can play around with the `type`, `color`, `height`, and `width`. Refer to this [article](https://www.npmjs.com/package/react-loader-spinner) to learn more.
 
 If our model has loaded, we use `React.Fragment` to go ahead and define our user interface. It allows us to render multiple elements. 
 
 > By default, React only allows us to render one element.
 
-Our user interface has three key parts. The `Passage`, `Ask a Question`, and `Answers` parts. The `Passage` is just a text area where we put a passage that we want the model to read through. The `Ask a Question` area allows us to pass our input question. On key press (Enter), it triggers the `questionAnswer` function which we defined earlier, runs our passage and question to the model, and returns an answer. If we've got no answer, then we are going to be displaying nothing. Finally, the model performs evaluations and score readings from the model. 
+Our user interface has three key parts. The `Passage`, `Ask a Question`, and `Answers` parts. The `Passage` is a text area where we put a passage that we want the model to read through. The `Ask a Question` area allows us to pass our input question. On key press (Enter), it triggers the `questionAnswer` function which we defined earlier, runs our passage and question to the model, and returns an answer. If we've got no answer, then we are going to be displaying nothing. Finally, the model performs evaluations and score readings from the model. 
 
 ### Conclusion
-This tutorial has demonstrated how we can leverage the pre-trained BERT model to build a BERT-powered question-and-answer web application. We can pass through a passage, ask it a question, and by using that passage, the model can extrapolate and give you an answer back from that passage. Impressive, right?
-You can try it out yourself. Grab any passage from Wikipedia and wait and see what answers it will give and their score values.
+This tutorial has demonstrated how we can leverage the pre-trained BERT model to build a BERT-powered question-and-answer web application. We can pass through a passage, ask it a question, and by using that passage, the model can extrapolate and give you an answer back from that passage. You can try it out yourself. Grab any passage from Wikipedia and wait to see what answers it will give and their score values.
 
 Happy coding!
 
