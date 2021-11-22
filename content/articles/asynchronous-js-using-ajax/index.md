@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /async-js-using-ajax/
+url: /asynchronous-js-using-ajax/
 title: Asynchronous JavaScript - Fetching Data From an External API using AJAX
 description: In this article we will learn how to fetch data from an external API using AJAX. AJAX is a technology that allows us to fetch data from an external API without reloading the full page.
 author: godwin-martins
@@ -11,7 +11,7 @@ topics: [Languages, API]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/async-js-using-ajax/hero.jpg
+  - url: /engineering-education/asynchronous-js-using-ajax/hero.jpg
     alt: Asynchronous JavaScript AJAX
 ---
 *AJAX* stands for Asynchronous JavaScript and XML. It is a set of web technology used to send and receive data between a client and server.
@@ -261,7 +261,7 @@ function generateNewJokes(e) {
 
 The final application will look like this:
 
-![Output](/engineering-education/async-js-using-ajax/output.png "Final Output")
+![Output](/engineering-education/asynchronous-js-using-ajax/output.png "Final Output")
 
 ### Conclusion
 Using the **Internet Chuck Norris Database (ICNDB) API** is an easy way to show how getting data from an external API using AJAX works. For example, Ajax uses the GET method to pull jokes from the Internet Chuck Norris Jokes Database.
