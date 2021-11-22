@@ -4,7 +4,7 @@ In an era of increased data flow, everyone wants to get value from processed dat
 
 Computational storage is key to bridging that gap. It enables storage devices to process data directly at the point of storage. It reduces data overload at the edge and improves processing speeds. Applying computer storage reduces real-time data processing challenges.
 
-This article will discuss how computational storage is interlinked with edge storage, how it is serving data centers and the storage issues it is solving for edge devices.
+This article will discuss how computational storage is interlinked with edge storage, how it is serving data centers, and the storage issues it is solving for edge devices.
 
 ### What is computational storage?
 
@@ -20,7 +20,7 @@ Computational storage reduces the cost of moving data to the system. Today, smal
 
 Adopting edge computing allows quicker processing of data as it comes in. This is why platforms like [Apache Hadoop](https://hadoop.apache.org/) and others that have adopted computational storage are gaining popularity. Computational storage efficiently deals with the large and quick influx of data. So, there is no need to have more extensive data centers using traditional computation models.
 
-Besides, computation storage enhances flexibility in the data processing. If you have to collect data at one point and later process it somewhere else, you need to operate close to the processors. This scenario imposes limitations on your ability to create value from data when distant from processors. Computation at the edge allows you to collect and process data instantly.
+Besides, computation storage enhances flexibility in data processing. If you have to collect data at one point and later process it somewhere else, you need to operate close to the processors. This scenario imposes limitations on your ability to create value from data when distant from processors. Computation at the edge allows you to collect and process data instantly.
 
 For instance, edge computing makes it easy to process crime reports using surveillance camera images. Such data can undergo processing to reveal geometric figures instantly. This kind of flexibility ensures that data processing occurs at any point and time.
 
