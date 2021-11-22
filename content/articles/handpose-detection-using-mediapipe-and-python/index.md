@@ -197,7 +197,7 @@ Finally, if you want to save the results from the detection, maybe for a researc
 ```
 
 The above line of code is going to save our image. The unique identifier, `format(uuid.uuid1()` generates unique names for our detected images to avoid naming conflicts when saving the images. 
-Please find the code for this tutorial [here](https://colab.research.google.com/drive/1Wck-1AVrFYvz_2SWne_3ZaIqKIkaHj_K?usp=sharing).
+Please find the code for this tutorial [here](https://colab.research.google.com/drive/1IwGAb35fnSuGQwX50mB6rtTapycSIK58?usp=sharing).
 
 ### Wrapping up
 That wraps up this tutorial. We began by installing and importing our dependencies, we made detections from our webcam and applied those detections to our webcam feed. The last step involved saving our outputs. You can go ahead and try it out yourself.
