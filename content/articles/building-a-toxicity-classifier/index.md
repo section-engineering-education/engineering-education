@@ -179,7 +179,7 @@ interface.launch()
 ```
 ![Gradio](/engineering-education/building-a-toxicity-classifier/gradio.png)
 
-We have successfully built a multi-lingual toxicity classifier using gradio. Please find the code for this tutorial [here](https://colab.research.google.com/drive/1etWFSEhuzKih5VB-Pp2kqgxcV2NeTvn5?usp=sharing).
+We have successfully built a multi-lingual toxicity classifier using gradio. Please find the code for this tutorial [here](https://colab.research.google.com/drive/1aSBPqXQ4fXO2qDVj9im6xrhj5AHXtnlz?usp=sharing).
 
 ### Wrapping up
 As you've seen, it's really simple to create your toxicity classifier. Of course, this is not meant to be used in a production scale application, but it gives you the basics of open-source models you can use to build yours. Feel free to read further the documentation in the reference section. 
