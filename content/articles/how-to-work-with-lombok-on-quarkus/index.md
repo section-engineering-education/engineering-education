@@ -1,3 +1,5 @@
+
+
 Java language is a simple language for app development. However, it challenges beginners due to the loss of syntactical terms required to be mastered. This loss confuses beginners.
 
 The great news is that Frameworks such as SpringBoot, Micronaut, Quarkus, and others have tried to come up with ways to ease programmers of this challenge. These solutions include the introduction of easy-to-use libraries that provide annotations to quickly and easily replace blocks of code.
@@ -38,9 +40,11 @@ To follow along with this article, the reader should have the following:
 
 ### Setup IDE for Lombok
 #### IntelliJ ultimate Quarkus Lombok setup
-The Lombok plugin will be required for the IDE to efficiently work with Quarkus in a Quarkus project. The plugin can be installed by heading over to the Settings/plugins option then searching for 'Lombok'. It will look as shown below:
+The  IDE requires the Lombok plugin to work with Quarkus in a Quarkus project efficiently. 
 
-![Lombok IntelliJ plugin](/engineering-education/how-to-work-with-lombok-on-quarkus/Lombok-intellij-pliugin.png "Lombok IntelliJ plugin")
+Head over to the `Settings/plugins` option, then search for 'Lombok' to install the plugin. It will look as shown below:
+
+![Lombok IntelliJ plugin](/engineering-education/how-to-work-with-lombok-on-quarkus/Lombok-intellij-pliugin.png)
 
 After a successful installation, restart the IDE.
 
@@ -49,7 +53,7 @@ As for VS code, ensure that it has the Quarkus tools installed as an extension. 
 ![VS Code Quarkus tools](/engineering-education/how-to-work-with-Lombok-on-quarkus/quarkus-tools-vs-code.png "VS Code Quarkus tools")
 
 - Search for 'Lombok' and install the Lombok annotations for VS Code. Check out its appearance in the image below:
-![Lombok VS Code support](/engineering-education/how-to-work-with-Lombok-on-quarkus/lombok-annotations-vs-code.png "Lombok VS Code support")
+![Lombok VS Code support](/engineering-education/how-to-work-with-Lombok-on-quarkus/lombok-annotations-vs-code.png)
 
 - Restart it to make sure it reflects the changes.
 
@@ -60,7 +64,7 @@ Create a new project of the following structure:
 - Group: org.gs
 - Artifact: Lombok-tutorial
 
-![New Quarkus project in IntelliJ](/engineering-education/how-to-work-with-lombok-on-quarkus/new-quarkus-lombok-intellij.png "New Quarkus project in IntelliJ")
+![New Quarkus project in IntelliJ](/engineering-education/how-to-work-with-lombok-on-quarkus/new-quarkus-lombok-intellij.png)
 
 - In the next window, do not add any dependencies
 
@@ -70,7 +74,7 @@ After the installation of the extensions, follow the steps below:
 - Search Quarkus
 - Select on the 'Generate a Quarkus project' option
 
-![New Quarkus project in VS Code](/engineering-education/how-to-work-with-lombok-on-quarkus/new-quarkus-lombok-vs-code.png "New Quarkus plombok.configroject in VS Code")
+![New Quarkus project in VS Code](/engineering-education/how-to-work-with-lombok-on-quarkus/new-quarkus-lombok-vs-code.png)
 
 - Set the following:
   - Build tool: Maven
@@ -85,7 +89,7 @@ After the installation of the extensions, follow the steps below:
   - ArtifactId: lombok-tutorial
   - Group: org.gs
 
-![New Quarkus Lombok project using Quarkus.io starter](/engineering-education/how-to-work-with-Lombok-on-quarkus/new-quarkus-Lombok-intellij.png "New Quarkus Lombok project using Quarkus.io starter")
+![New Quarkus Lombok project using Quarkus.io starter](/engineering-education/how-to-work-with-Lombok-on-quarkus/new-quarkus-Lombok-intellij.png)
 
 - Download the zip code generated, extract it and open it up with the IDE or code editor.
 
@@ -365,7 +369,7 @@ This section holds some variables which state the versions of the dependencies u
 
 Run the tests with the IDE. If the run option is not visible, right-click on the tests file and select the run option. The outcome will look as follows:
 
-![Running the tests](/engineering-education/how-to-work-with-Lombok-on-quarkus/running-tests.png "Running the tests")
+![Running the tests](/engineering-education/how-to-work-with-Lombok-on-quarkus/running-tests.png)
 
 #### Add Lombok dependencies
 In the `pom.xml` file, add the following lines of code under the dependencies section. These will allow the app to utilize the Project Lombok annotations.
@@ -390,7 +394,7 @@ Reload the app once more. This line of code allows the IDE to fetch the project 
 ### Lombok features
 
 #### Getters and Setters
-These will reduce the code of the project. It does it by replacing the Getters and Setters methods used by annotations. Lombok adds the scenes' methods in a separate file keeping the code clean and straightforward. Remove the Getters and Setters methods initially created in the `Movie.java` file, then add the following line of code above the Movie class.
+These will reduce the code of the project. It does it by replacing the Getters and Setters methods used by annotations. Lombok adds the scenes' methods in a separate file keeping the code clean and straightforward. Remove the Getters and Setters methods initially created in the `Movie.java` file, then add the following code above the Movie class.
 
 ```Java
 @Getter @Setter
@@ -476,7 +480,7 @@ import lombok.Getter;
 
 In this case, the following error will be popped-up:
 
-![Runtime error](/engineering-education/how-to-work-with-Lombok-on-quarkus/set-id-error.png "Runtime error")
+![Runtime error](/engineering-education/how-to-work-with-Lombok-on-quarkus/set-id-error.png)
 
 The variable is inaccessible by Project Lombok due to its access level. Therefore, the easiest solution to such errors is to remove the access level or change its access level type to 'none.
 - Remove the access level from the id of type long.
@@ -575,7 +579,7 @@ private Long id;
 
 It produces the error as shown below:
 
-![Can't find setId Error](/engineering-education/how-to-work-with-lombok-on-quarkus/can't-find-setId.png "Can't find setId Error")
+![Can't find setId Error](/engineering-education/how-to-work-with-lombok-on-quarkus/can't-find-setId.png)
 
 - Head over to the `Movie.class` found in the target folder. Notice that the prefix 'Set' and 'Get' before the field id is no longer there.
   It just remains to be 'id'. So it is by utilizing Java's function overloading capability.
@@ -667,7 +671,7 @@ private final int minutes = 120;
 ```
 
 - Run all the tests as before.
-Check if there is some additional code generated in the `Movie.class` file.
+Check if some additional code is generated in the `Movie.class` file.
 
 The following code is added to the class:
 
@@ -745,7 +749,7 @@ Reload the application to fetch the dependency and add it to the project, then a
 @Slf4j
 ```
 
-Lombok will provide one with log variables to use to write the log out of the box. It can be info, debug, or error log. Add the line below in the `getMinutesPlusX` function:
+Lombok will provide one with log variables to write the log out of the box. It can be info, debug, or error log. Add the line below in the `getMinutesPlusX` function:
 
 ```Java
 log.info("Adding {}", x);
@@ -767,7 +771,7 @@ Add the line below in the `MovieTest.java` file:
 
 Run all the tests, then check out for the log of the type 'info' generated in the log generated at the console. It should look as shown below:
 
-![Log of type 'info' generated](/engineering-education/how-to-work-with-Lombok-on-quarkus/log-info.png "Log of type 'info' generated")
+![Log of type 'info' generated](/engineering-education/how-to-work-with-Lombok-on-quarkus/log-info.png)
 
 In addition, it generates the following in the `Movie.class` file:
 
@@ -783,7 +787,7 @@ One can use the 'topic' option to change the name of the log being output. To do
 
 Run the tests once more, then check for the difference in the output console. It has a custom name instead of the default. It looks as follows:
 
-![Changes in the Log Topic](log-topic.png "Changes in the Log Topic")
+![Changes in the Log Topic](/engineering-education/how-to-work-with-Lombok-on-quarkus/log-topic.png)
 
 Lombok allows developers to use custom loggers such as the Java Logger. To do this, follow these steps:
 
