@@ -133,7 +133,7 @@ print(student.containsKey('doe@gmail.com'));
 }
 ```
 
-![Length](/engineering-education/understanding-the-map-data-type-in-dart/key.png).
+![Key](/engineering-education/understanding-the-map-data-type-in-dart/key.png).
 
 The output of the first statement will be `true` because the student's map contains a `Name` key, while the second print statement will return `false` because the `Password` key does not exist.
 
@@ -160,7 +160,7 @@ Adding an extra pair element of the student course will return a new map that lo
 
 {'Name':'Adam Doe', 'Email':'doe@gmail.com', 'RegNumber':'B11/6732/2020', 'course':'Bcom'}
 ```
-![Length](/engineering-education/understanding-the-map-data-type-in-dart/insert.png).
+![Insert](/engineering-education/understanding-the-map-data-type-in-dart/insert.png).
 
 
 #### Adding values through a Map Constructor
@@ -184,7 +184,7 @@ Output:
 {'Id':'414JK33', 'Year':'Third Year'}
 ```
 
-![Length](/engineering-education/understanding-the-map-data-type-in-dart/constructor.png).
+![Constructor](/engineering-education/understanding-the-map-data-type-in-dart/constructor.png).
 
 #### Merging Maps
 Merging different defined maps will add all the key-value pairs in one map to key-value pairs of another map. This implementation uses the `addAll()` function.
@@ -211,7 +211,7 @@ Output:
 {'A':'Blackforest', 'B':'whiteforest', 'c':'Chocolate', 1:'Brown', 2:'Yellow', 3:'Indigo'}
 ```
 
-![Length](/engineering-education/understanding-the-map-data-type-in-dart/merging.png).
+![Merging](/engineering-education/understanding-the-map-data-type-in-dart/merging.png).
 
 All the pair elements in the `colors" map are added to those of the `cakes" map, and a new map concatenates all the key values in both maps as in the output.
 
@@ -242,7 +242,7 @@ Output:
 {'A':'Blackforest', 'B':'whiteforest', 'c':'Chocolate', 1:'Brown', 2:'Yellow'}
 ```
 
-![Length](/engineering-education/understanding-the-map-data-type-in-dart/deleting.png).
+![Deleting](/engineering-education/understanding-the-map-data-type-in-dart/deleting.png).
 
 ### Conclusion
 In this tutorial, we have learned what maps are in Dart and how to create them. We have also learned how to manipulate map elements to output specific user requirements.
