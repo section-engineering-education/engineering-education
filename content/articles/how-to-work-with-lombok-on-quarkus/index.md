@@ -39,7 +39,7 @@ To follow along with this article, the reader should have the following:
 > As for the requirements, the pre-requisites may change as time goes by since ever since the article is published. JDK version `17`, VS Code version `1.61`, and IntelliJ Ultimate version `2021.2.3` were used for the screenshots.
 
 ### Setup IDE for Lombok
-#### IntelliJ ultimate Quarkus Lombok setup
+#### IntelliJ ultimate setup
 The  IDE requires the Lombok plugin to work with Quarkus in a Quarkus project efficiently. 
 
 Head over to the `Settings/plugins` option, then search for 'Lombok' to install the plugin. It will look as shown below:
@@ -48,17 +48,17 @@ Head over to the `Settings/plugins` option, then search for 'Lombok' to install 
 
 After a successful installation, restart the IDE.
 
-#### Quarkus Lombok setup for VS Code
+#### Setup for VS Code
 As for VS code, ensure that it has the Quarkus tools installed as an extension. The extension is shown below:
-![VS Code Quarkus tools](/engineering-education/how-to-work-with-Lombok-on-quarkus/quarkus-tools-vs-code.png)
+![VS Code Quarkus tools](/engineering-education/how-to-work-with-lombok-on-quarkus/quarkus-tools-vs-code.png)
 
 - Search for 'Lombok' and install the Lombok annotations for VS Code. Check out its appearance in the image below:
-![Lombok VS Code support](/engineering-education/how-to-work-with-Lombok-on-quarkus/lombok-annotations-vs-code.png)
+![Lombok VS Code support](/engineering-education/how-to-work-with-lombok-on-quarkus/lombok-annotations-vs-code.png)
 
 - Restart it to make sure it reflects the changes.
 
 ### Create a Lombok Quarkus project
-#### New Quarkus Lombok project in IntelliJ
+#### Quarkus Lombok project IntelliJ
 Create a new project of the following structure:
 - Name: Lombok-tutorial
 - Group: org.gs
@@ -68,7 +68,7 @@ Create a new project of the following structure:
 
 - In the next window, do not add any dependencies
 
-#### New Quarkus Lombok project in Visual Studio Code
+#### Quarkus Lombok project in Visual Studio Code
 After the installation of the extensions, follow the steps below:
 - Open up the Command Palette. Do this by heading over to the View/Command Palette option.
 - Search Quarkus
@@ -82,14 +82,14 @@ After the installation of the extensions, follow the steps below:
   - Artifact Id: lombok-tutorial
   - No extensions
 
-#### New Quarkus Lombok project in Quarkus.io starter
+#### Quarkus Lombok project in Quarkus.io starter
 
 - Head over to [Quarkus.io starter](https://code.quarkus.io/) website.
 - Set the following for the project:
   - ArtifactId: lombok-tutorial
   - Group: org.gs
 
-![New Quarkus Lombok project using Quarkus.io starter](/engineering-education/how-to-work-with-Lombok-on-quarkus/new-quarkus-Lombok-intellij.png)
+![New Quarkus Lombok project using Quarkus.io starter](/engineering-education/how-to-work-with-lombok-on-quarkus/new-quarkus-Lombok-intellij.png)
 
 - Download the zip code generated, extract it and open it up with the IDE or code editor.
 
@@ -119,7 +119,6 @@ The following is the project folder structure:
 
 ### Create a Movies sample project
 
-#### Sample application
 Create a new `Movie.java` file inside the java folder and in the file, add the following snippets.
 
 ```Java
@@ -369,9 +368,9 @@ This section holds some variables which state the versions of the dependencies u
 
 Run the tests with the IDE. If the run option is not visible, right-click on the tests file and select the run option. The outcome will look as follows:
 
-![Running the tests](/engineering-education/how-to-work-with-Lombok-on-quarkus/running-tests.png)
+![Running the tests](/engineering-education/how-to-work-with-lombok-on-quarkus/running-tests.png)
 
-#### Add Lombok dependencies
+### Add Lombok dependencies
 In the `pom.xml` file, add the following lines of code under the dependencies section. These will allow the app to utilize the Project Lombok annotations.
 
 ```xml
@@ -480,7 +479,7 @@ import lombok.Getter;
 
 In this case, the following error will be popped-up:
 
-![Runtime error](/engineering-education/how-to-work-with-Lombok-on-quarkus/set-id-error.png)
+![Runtime error](/engineering-education/how-to-work-with-lombok-on-quarkus/set-id-error.png)
 
 The variable is inaccessible by Project Lombok due to its access level. Therefore, the easiest solution to such errors is to remove the access level or change its access level type to 'none.
 - Remove the access level from the id of type long.
@@ -771,7 +770,7 @@ Add the line below in the `MovieTest.java` file:
 
 Run all the tests, then check out for the log of the type 'info' generated in the log generated at the console. It should look as shown below:
 
-![Log of type 'info' generated](/engineering-education/how-to-work-with-Lombok-on-quarkus/log-info.png)
+![Log of type 'info' generated](/engineering-education/how-to-work-with-lombok-on-quarkus/log-info.png)
 
 In addition, it generates the following in the `Movie.class` file:
 
@@ -787,7 +786,7 @@ One can use the 'topic' option to change the name of the log being output. To do
 
 Run the tests once more, then check for the difference in the output console. It has a custom name instead of the default. It looks as follows:
 
-![Changes in the Log Topic](/engineering-education/how-to-work-with-Lombok-on-quarkus/log-topic.png)
+![Changes in the Log Topic](/engineering-education/how-to-work-with-lombok-on-quarkus/log-topic.png)
 
 Lombok allows developers to use custom loggers such as the Java Logger. To do this, follow these steps:
 
@@ -813,7 +812,7 @@ return this.minutes + x;
 }
 ```
 
-![Custom logging using Java Logger](/engineering-education/how-to-work-with-Lombok-on-quarkus/custom-logs.png)
+![Custom logging using Java Logger](/engineering-education/how-to-work-with-lombok-on-quarkus/custom-logs.png)
 
 ### Conclusion
 In conclusion, the above article provided deep insight into setting up an IDE for developing a Quarkus project with Lombok. As a result, we created a simple project to demonstrate the concept and in-depth discussion of Getters and Setters, NoArgsConstructor and the AllArgsConstructor, AccessLevel, ToString, EqualsAndHashCode, Data, NotNull, Accessors, Builder, and Slf4j.
