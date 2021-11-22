@@ -50,9 +50,9 @@ Let us explore some examples:
 
 ```javascript
 
-import React, { useState, useEffect } from &quot;react&quot;;
+import React, { useState, useEffect } from "react";
 
-import &quot;./Counter.css&quot;;
+import "./Counter.css";
 
 export const Counter = () =\&gt; {
 
@@ -62,20 +62,20 @@ const [count, setCount] = useState(0);
 
 useEffect(() =\&gt; {
 
-console.log(&quot;counter ran once&quot;);
+console.log("counter ran once");
 
 }, []);
 
 return (
 
-\&lt;div className=&quot;modal&quot;\&gt;
+\&lt;div className="modal"\&gt;
 
-\&lt;div className=&quot;modal\_\_counter&quot;\&gt;
+\&lt;div className="modal\_\_counter"\&gt;
 
 
 \&lt;div
 
-className=&quot;modal\_\_counter--decrease&quot;
+className="modal\_\_counter--decrease"
 
 onClick={() =\&gt; setCount(count - 1)}
 
@@ -86,12 +86,12 @@ onClick={() =\&gt; setCount(count - 1)}
 \&lt;/div\&gt;
 
 
-\&lt;div className=&quot;modal\_\_counter--reset&quot;\&gt;{count}\&lt;/div\&gt;
+\&lt;div className="modal\_\_counter--reset"\&gt;{count}\&lt;/div\&gt;
 
 
 \&lt;div
 
-className=&quot;modal\_\_counter--increase&quot;
+className="modal\_\_counter--increase"
 
 onClick={() =\&gt; setCount(count + 1)}
 
@@ -186,9 +186,9 @@ Let us modify the code by altering the array dependence, which is currently empt
 
 ```javascript
 
-import React, { useState, useEffect } from &quot;react&quot;;
+import React, { useState, useEffect } from "react";
 
-import &quot;./Counter.css&quot;;
+import "./Counter.css";
 
 export const Counter = () =\&gt; {
 
@@ -198,21 +198,21 @@ const [count, setCount] = useState(0);
 
 useEffect(() =\&gt; {
 
-console.log(&quot;counter ran once&quot;);
+console.log("counter ran once");
 
 }, [count]); //current status of count is used to update component
 
 return (
 
-\&lt;div className=&quot;modal&quot;\&gt;
+\&lt;div className="modal"\&gt;
 
-\&lt;div className=&quot;modal\_\_counter&quot;\&gt;
+\&lt;div className="modal\_\_counter"\&gt;
 
 {/\* subtraction button to reduce the value of counter \*/}
 
 \&lt;div
 
-className=&quot;modal\_\_counter--decrease&quot;
+className="modal\_\_counter--decrease"
 
 onClick={() =\&gt; setCount(count - 1)}
 
@@ -224,13 +224,13 @@ onClick={() =\&gt; setCount(count - 1)}
 
 {/\* counter value is displayed \*/}
 
-\&lt;div className=&quot;modal\_\_counter--reset&quot;\&gt;{count}\&lt;/div\&gt;
+\&lt;div className="modal\_\_counter--reset"\&gt;{count}\&lt;/div\&gt;
 
 {/\* addition button to increase the value of counter \*/}
 
 \&lt;div
 
-className=&quot;modal\_\_counter--increase&quot;
+className="modal\_\_counter--increase"
 
 onClick={() =\&gt; setCount(count + 1)}
 
@@ -276,9 +276,9 @@ Now that we have some understanding of the `useEffect`, let us fetch some data w
 
 ```javascript
 
-import React, { useEffect, useState } from &quot;react&quot;;
+import React, { useEffect, useState } from "react";
 
-import axios from &quot;axios&quot;
+import axios from "axios"
 
 export const Users = () =\&gt; {
 
@@ -296,9 +296,9 @@ try {
 
 const res = await
 
-//A GET request is sent to retrieve &quot;users&quot;
+//A GET request is sent to retrieve "users"
 
-axios.get(&quot;[https://jsonplaceholder.typicode.com/users](https://jsonplaceholder.typicode.com/users)&quot;);
+axios.get("[https://jsonplaceholder.typicode.com/users](https://jsonplaceholder.typicode.com/users)");
 
 //We set names using the data from the response of the API call
 
@@ -363,7 +363,7 @@ The request we used above returned the result that we can see in the image above
 Before we conclude, let us take a look at the final key point.
 
 
-### How to use useEffect to &quot;clean up&quot; effects
+### How to use useEffect to "clean up" effects
 
 Here is a typical error that necessitates the employment of a cleanup function within a `useEffect`:
 
@@ -375,9 +375,9 @@ To fix the error, we can add a cleanup method to our application as shown below:
 
 ```javascript
 
-import React, { useEffect, useState } from &quot;react&quot;;
+import React, { useEffect, useState } from "react";
 
-import axios from &quot;axios&quot;
+import axios from "axios"
 
 export const Users = () =\&gt; {
 
@@ -395,9 +395,9 @@ try {
 
 const res = await
 
-//A GET request is sent to retrieve &quot;users&quot;
+//A GET request is sent to retrieve "users"
 
-axios.get(&quot;[https://jsonplaceholder.typicode.com/users](https://jsonplaceholder.typicode.com/users)&quot;);
+axios.get("[https://jsonplaceholder.typicode.com/users](https://jsonplaceholder.typicode.com/users)");
 
 //We set names using the data from the response of the API call
 
@@ -417,7 +417,7 @@ getAllUsers(); //component unmounts
 
 return () =\&gt; {
 
-console.log(&#39;I am inside a cleanup function&#39;);
+console.log("I am inside a cleanup function");
 
 };
 
@@ -468,7 +468,7 @@ Add the code below to the `CounterHook.jsx` file.
 
 ```javascript
 
-import { useState } from &quot;react&quot;;
+import { useState } from "react";
 
 export const useCounter = () =\&gt; {
 
@@ -490,11 +490,11 @@ Next, let us add this function to our `counter` application.
 
 ```javascript
 
-import React from &quot;react&quot;;
+import React from "react";
 
-import &quot;./Counter.css&quot;;
+import "./Counter.css";
 
-import { useCounter } from &quot;../../hooks/CounterHook&quot;;
+import { useCounter } from "../../hooks/CounterHook";
 
 export const Counter = () =\&gt; {
 
@@ -502,19 +502,19 @@ const { counter, increment, decrement } = useCounter();
 
 return (
 
-\&lt;div className=&quot;modal&quot;\&gt;
+\&lt;div className="modal"\&gt;
 
-\&lt;div className=&quot;modal\_\_counter&quot;\&gt;
+\&lt;div className="modal\_\_counter"\&gt;
 
-\&lt;div className=&quot;modal\_\_counter--decrease&quot; onClick={decrement}\&gt;
+\&lt;div className="modal\_\_counter--decrease" onClick={decrement}\&gt;
 
 -
 
 \&lt;/div\&gt;
 
-\&lt;div className=&quot;modal\_\_counter--reset&quot;\&gt;{counter}\&lt;/div\&gt;
+\&lt;div className="modal\_\_counter--reset"\&gt;{counter}\&lt;/div\&gt;
 
-\&lt;div className=&quot;modal\_\_counter--increase&quot; onClick={increment}\&gt;
+\&lt;div className="modal\_\_counter--increase" onClick={increment}\&gt;
 
 +
 
