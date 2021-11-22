@@ -45,7 +45,7 @@ For this tutorial, we leverage the library to import the [MediaPipe Hands](https
 
 We will also be installing the OpenCV library. Like MediaPipe, OpenCV is a library that also helps in solving computer vision problems. In this tutorial, we will use the library to work with images and access our webcam in real-time easily.
 
-```python
+```bash
 !pip install mediapipe opencv-python
 ```
 Next, we will import the necessary dependencies into our notebook.
