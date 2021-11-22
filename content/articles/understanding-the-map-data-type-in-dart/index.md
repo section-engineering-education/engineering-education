@@ -4,10 +4,10 @@ status: publish
 published: 
 url: /understanding-the-map-data-type-in-dart/
 title: Understanding the Map data type in Dart
-description: 
+description: This article will provide the reader with an insight into Map data type.
 author: elly-omondi
-date: 2021-06-10T00:00:00-14:00
-topics: []
+date: 2021-11-22T00:00:00-14:00
+topics: [Language]
 excerpt_separator: <!--more-->
 images:
 
@@ -84,7 +84,7 @@ int get Key.
 int get Value. 
 ```
 
-### Manipulating  Map Elements.
+### Manipulating  Map elements.
 Now that we understand what a map is let us look at how we can manipulate Dart map in different scenarios.
 
 #### Determining the size of a map
@@ -116,7 +116,7 @@ The expected output will be:
 
 The map above contains three key-value pair elements for the student's `name`, the `email`, and the `RegNumber` hence the output 3.
 
-#### Determining Key-Value existence
+#### Determining key-value existence
 To confirm that a key and its correspondent value exist within a defined map, the `containsKey()` method and the `containsValue() method are used.
 
 Example:
@@ -163,7 +163,7 @@ Adding an extra pair element of the student course will return a new map that lo
 ![Length](/engineering-education/understanding-the-map-data-type-in-dart/insert.png).
 
 
-#### Adding values through a Map Constructor.
+#### Adding values through a Map Constructor
 This method  of inserting new pair elements to a map is through a map constructor and is implemented as below:
 
 ```Dart
