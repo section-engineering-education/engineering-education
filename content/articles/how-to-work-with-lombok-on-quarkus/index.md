@@ -50,7 +50,7 @@ After a successful installation, restart the IDE.
 
 #### Quarkus Lombok setup for VS Code
 As for VS code, ensure that it has the Quarkus tools installed as an extension. The extension is shown below:
-![VS Code Quarkus tools](/engineering-education/how-to-work-with-Lombok-on-quarkus/quarkus-tools-vs-code.png "VS Code Quarkus tools")
+![VS Code Quarkus tools](/engineering-education/how-to-work-with-Lombok-on-quarkus/quarkus-tools-vs-code.png)
 
 - Search for 'Lombok' and install the Lombok annotations for VS Code. Check out its appearance in the image below:
 ![Lombok VS Code support](/engineering-education/how-to-work-with-Lombok-on-quarkus/lombok-annotations-vs-code.png)
@@ -813,7 +813,7 @@ return this.minutes + x;
 }
 ```
 
-![Custom logging using Java Logger](/engineering-education/how-to-work-with-Lombok-on-quarkus/custom-logs.png "Custom logging using Java Logger")
+![Custom logging using Java Logger](/engineering-education/how-to-work-with-Lombok-on-quarkus/custom-logs.png)
 
 ### Conclusion
 In conclusion, the above article provided deep insight into setting up an IDE for developing a Quarkus project with Lombok. As a result, we created a simple project to demonstrate the concept and in-depth discussion of Getters and Setters, NoArgsConstructor and the AllArgsConstructor, AccessLevel, ToString, EqualsAndHashCode, Data, NotNull, Accessors, Builder, and Slf4j.
