@@ -1,3 +1,5 @@
+# WordPress penetration testing
+
 WordPress (WP) is a Content Management System (CMS) that powers many websites on the internet. Technology is growing at an accelerated rate, and it's everywhere today. Businesses have increased their dependency on Information Technology (IT), including social media, WP websites, and more. But cyber risk continues to rise at an alarming rate.
 
 There are many security vulnerabilities linked to WordPress websites. These vulnerabilities include cybercriminals attacking systems, servers, stealing everything from passwords to data.
