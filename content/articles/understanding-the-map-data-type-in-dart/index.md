@@ -26,7 +26,7 @@ This article will cover:
 
 
 ### An introduction to Dart and its data types/data structures.
-Like most Programming languages have naming and binding rules, data items and values representation/allowed, and how to manipulate the data types, Dart similarly follows the rules when variables are created in it– allowing each variable to have an associated data type. This section will first understand what Dart is and some of its data types. Later, we will explore the map as a data type.
+Like most Programming languages have naming and binding rules, data items and values representation/allowed, and how to manipulate the data types, Dart similarly follows the rules when variables are created in it– allowing each variable to have an associated data type. This section will first understand what Dart is and its data types. Later, we will explore the map as a data type.
 
 
 [Dart](https://dart.dev/) is an open-source programming language developed by Google and is popular for web & and mobile apps, often client optimized. (Client-facing)  Dart is an object-oriented, type-safe, and platform-independent language allowing developers to create fast-paced applications and systems. The compiler technology used in Dart lets developers run code on native platforms (mobile and desktop) and web platforms (web apps). Some of the built-in and commonly used data types in Dart are: 
@@ -78,14 +78,14 @@ Accessing [LinkedHashMap](https://api.flutter.dev/flutter/dart-collection/Linked
 int get Key.
 ```
 
-- Has the Values property to enumerate all value items in the Dart map. This property is declared as follows: 
+- Has the Values property to enumerate all valuable items in the Dart map. This property is declared as follows: 
 
 ```Dart
 int get Value. 
 ```
 
 ### Manipulating  Map elements.
-Now that we understand what a map is let us look at how we can manipulate Dart map in different scenarios.
+Now that we understand what a map is, let us look at how we can manipulate Dart map in different scenarios.
 
 #### Determining the size of a map
 The length property is used when returning the total number of key-value pairs of elements that constitute a map.
@@ -213,7 +213,7 @@ Output:
 
 ![Length](/engineering-education/understanding-the-map-data-type-in-dart/merging.png).
 
-All the pair elements in the `colors" map are added to those of the `cakes" map, and a new map concatenates all the key-values in both maps as in the output.
+All the pair elements in the `colors" map are added to those of the `cakes" map, and a new map concatenates all the key values in both maps as in the output.
 
 #### Removing pair elements from a map
 To remove some key-value pairs in a map, we use the remove() method. The method is called on the map, and a `key` whose value is to be removed from the map is passed to this method.
