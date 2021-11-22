@@ -1,4 +1,4 @@
-## Table of Contents:
+### Table of Contents:
 
 - [Getting Started with Polynomial Regression in Python](#getting-started-with-polynomial-regression-in-python)
 - [Prerequisites](#prerequisites)
