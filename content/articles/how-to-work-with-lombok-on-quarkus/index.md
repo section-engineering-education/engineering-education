@@ -1,7 +1,21 @@
-
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-work-with-lombok-on-quarkus/
+title: Getting Started With Quarkus
+description: This tutorial will provide a step by step guide on how to use Lombok library on a Quarkus project. It aims at providing an insight on the features of Lombok by building a Movie application.
+author: chris-mutua
+date: 2021-11-22T00:00:00-08:50
+topics: []
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/how-to-work-with-lombok-on-quarkus/hero.png
+    alt: Lombok Quakus image example
+---
 
 Java language is a simple language for app development. However, it challenges beginners due to the loss of syntactical terms required to be mastered. This loss confuses beginners.
-
+<!--more-->
 The great news is that Frameworks such as SpringBoot, Micronaut, Quarkus, and others have tried to come up with ways to ease programmers of this challenge. These solutions include the introduction of easy-to-use libraries that provide annotations to quickly and easily replace blocks of code.
 
 Lombok is an example of one of these libraries. 'Project Lombok' as it is known, is a java library that plugs into your editor or IDE and builds tools simplifying Java. It again takes away the writing of getters, setters, or equal methods. It is by use of one annotation.  The class has a fully-featured builder, Automated logging variables, and more.
@@ -818,3 +832,6 @@ return this.minutes + x;
 In conclusion, the above article provided deep insight into setting up an IDE for developing a Quarkus project with Lombok. As a result, we created a simple project to demonstrate the concept and in-depth discussion of Getters and Setters, NoArgsConstructor and the AllArgsConstructor, AccessLevel, ToString, EqualsAndHashCode, Data, NotNull, Accessors, Builder, and Slf4j.
 
 You can find more about this topic in the [official documentaion](https://github.com/projectLombok/Lombok).
+
+---
+Peer Review Contributions by: [Jerim Kaura](/engineering-education/authors/jerim-kaura/)
