@@ -6,7 +6,7 @@ url: /async-js-using-ajax/
 title: Asynchronous JavaScript - Fetching Data From an External API using AJAX
 description: In this article we will learn how to fetch data from an external API using AJAX. AJAX is a technology that allows us to fetch data from an external API without reloading the full page.
 author: godwin-martins
-date: 2021-11-22T00:00:00-13:00
+date: 2021-11-22T00:00:00-13:10
 topics: [Languages, API]
 excerpt_separator: <!--more-->
 images:
