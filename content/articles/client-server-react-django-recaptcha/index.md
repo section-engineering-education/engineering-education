@@ -1,10 +1,24 @@
-### Client-Server Implementation of reCAPTCHA with React and Django
+---
+layout: engineering-education
+status: publish
+published: true
+url: /client-server-react-django-recaptcha/
+title:  Client-Server Implementation of reCAPTCHA with React and Django
+description: This tutorial introduces reader to the basic concepts of Google ReCAPTCHA v2.
+author:  kevin-kimani
+date: 2021-11-22T00:00:00-18:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/client-server-react-django-recaptcha/hero.png
+    alt: React reCAPTURE image
+---
 Google provides a service known as reCAPTCHA that helps keep malicious users away from your website. It does this by posing a challenge that is easy for humans to solve but tough for bots. This service is mostly used on forms to ensure that the information being submitted is coming from a human being and this helps avoid spamming.
-
+<!--more-->
 In this article, we will discuss how we can integrate the reCAPTCHA v2 service into our website. ReCAPTCHA v2 verifies that it is a human accessing a website by posing a challenge. We will use React (a JavaScript framework for building user interfaces) for the frontend and Django(a python backend technology) to create our backend.
 
-#### Pre-requisites
+#### Prerequisites
 To be able to follow along in this article, the reader will need to have:
 - Node.js installed.
 - Python installed.
@@ -117,8 +131,6 @@ function App() {
 
 export default App;
 ```
-
-**Code explanation**
 
 - In the above code, we have a contact form that contains the fields; name, email, and message. We keep track of the data entered in these fields using the `useState()` hook.
 - In the `div` with the className `cta`, we have our ReCaptcha component that takes two attributes, one is the site key that we get from the Google reCAPTCHA website. The other attribute is an `onChange` attribute that calls the `handleRecaptcha()` function when the reCAPTCHA component is clicked on.
@@ -357,3 +369,6 @@ Google reCAPTCHA provides a great and simple way of protecting us from being vic
 After applying this to your website, you can now go ahead and handle the form submission.
 
 Happy coding!!!
+
+---
+Peer Review Contributions by: [Miller Juma](/engineering-education/authors/miller-juma/)
