@@ -2,12 +2,12 @@
 layout: engineering-education
 status: publish
 published: true
-url: /how-to-automate-tests-for-dockerized-django-application-with-gitHub-actions/
+url: /how-to-automate-tests-for-dockerized-django-application-with-gitub-actions/
 title: Automating tests for Dockerized Django applications with GitHub Actions
-description:In this article, the reader will learn how to test a Django application with Pytest, Dockerize it, and configure GitHub Actions to automate your Django tests
+description: In this article, the reader will learn how to test a Django application with Pytest, Dockerize it, and configure GitHub Actions to automate your Django tests.
 author: muhammed-ali
 date: 2021-11-22T00:00:00-12:10
-topics: [Langugaes]
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
   - url: /engineering-education/how-to-automate-tests-for-dockerized-django-application-with-gitHub-actions/hero.jpg
@@ -351,3 +351,6 @@ In addition, you can add some linting tests to the workflow to improve the conti
 Hopefully, you can add some continuous delivery with GitHub Actions for your future projects with this article.
 
 The code for this tutorial can be found on [GitHub](https://github.com/khabdrick/Django-docker-actions).
+
+---
+Peer Review Contributions by: [Jerim Kaura](/engineering-education/authors/jerim-kaura/)
