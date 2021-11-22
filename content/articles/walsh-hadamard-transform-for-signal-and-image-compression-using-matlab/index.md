@@ -1,15 +1,17 @@
 
-The Walsh-Hadamard transform is a non-sinusoidal, orthogonal transform widely used in signal and image processing. Here, you decompose the signal into a set of basis functions (similar to harmonics in Fourier). These basis functions are the Walsh function, rectangular or square waves with +1 or -1. In addition, like the fast Fourier transform(FFT), the Walsh-Hadamard transform has a fast version known as fast Walsh-Hadamard transform(FWHT).
+The Walsh-Hadamard transform is a non-sinusoidal, orthogonal transform widely used in signal and image processing. In this transform, the signal is decomposed into a set of basis functions (similar to harmonics in Fourier). These basis functions are the Walsh functions, rectangular or square waves with +1 or -1. In addition, like the fast Fourier transform(FFT), the Walsh-Hadamard transform has a fast version known as fast Walsh-Hadamard transform(FWHT).
 
-The Walsh-Hamard has a wide application in the field of science and engineering. These applications include image processing, speech processing, signal and image compression, power spectrum analysis, spread spectrum analysis e.t.c. This tutorial will look at signal and image compression using Matlab. We will look at its theory and computation for both 1d and 2d signals.
+The Walsh-Hamard has a wide application in the field of science and engineering. These applications include image processing, speech processing, signal and image compression, power spectrum analysis, spread spectrum analysis e.t.c.
+
+This tutorial will look at signal and image compression using Matlab. We will look at its theory and computation for both 1-D and 2-D signals.
 
 ### Prerequisites
 To follow along with this tutorial, you'll need:
 - [MATLAB](https://www.mathworks.com/products/get-matlab.html?s_tid=gn_getml) installed.
 - Proper understanding of [MATLAB](https://www.section.io/engineering-education/getting-started-with-matlab/) basics.
 
-### Forward and inverse WHT
-The forward(FWHT) and the inverse(IFWHT) are symmetrical and use identical calculation processes. You define the FWHT and IWHT for a signal `x(t)` of length `N` as;
+### the Forward and inverse WHT
+The forward(FWHT) and the inverse(IFWHT) are symmetrical and they both use identical calculation processes. We define the FWHT and IWHT for a signal `x(t)` of length `N` as:
 
 $FWHT: y_n=\frac{1}{N}\sum x_i=\sum y_n WAL(n,i)$  for i = 1,2,...,N
 
@@ -26,16 +28,18 @@ To elaborate this, we have;
 
 $$\begin{vmatrix}y_1\\y_2\\:\\:\\y_N\end{vmatrix}=\frac{1}{N}*\begin{vmatrix}H_{11}&H_{12}....&H_{1N}\\H_{21}&H_{22}....&H_{2N}\\:\\:\\H_{N1}&H_{N2}....&H_{NN}\end{vmatrix}*\begin{vmatrix}x_1\\x_2\\:\\:\\x_N\end{vmatrix}$$
 
-Here, $H_N$ is the Hadamard matrix, where $N =2^n$. Similarly, inverse transform can be obtained by;
+Here, $H_N$ is the Hadamard matrix, where $N =2^n$. Similarly, inverse transform can be obtained by:
 
 $x = H_n^{-1}=H_ny$
 
-$H_n^{-1}=H_n^T=H_n$. It is because $H_n$ is orthogonal and involutionary. Orthogonal means that there is a perpendicular vector. So when we work this out, we are going to have;
+$H_n^{-1}=H_n^T=H_n$.
+
+It is because $H_n$ is orthogonal and involutionary. Orthogonal means that there is a perpendicular vector. So when we work this out, we are going to have:
 
 $$\begin{vmatrix}x_1\\x_2\\:\\:\\x_N\end{vmatrix}=\frac{1}{N}*\begin{vmatrix}H_{11}&H_{12}....&H_{1N}\\H_{21}&H_{22}....&H_{2N}\\:\\:\\H_{N1}&H_{N2}....&H_{NN}\end{vmatrix}*\begin{vmatrix}y_1\\y_2\\:\\:\\y_N\end{vmatrix}$$
 
 ### Hadamard matrix
-It is the square matrix of 2x2, 4x4, 8x8, e.t.c. The dimensions are given by $2^N$. The first order Hadamard matrix($H_1$) is given by;
+It is the square matrix of 2x2, 4x4, 8x8, e.t.c. The dimensions are given by $2^N$. The first order Hadamard matrix($H_1$) is given by:
 
 $$H_1=
 \left(\begin{array}{cc} 
@@ -44,7 +48,7 @@ $$H_1=
 \end{array}\right)
 $$ 
 
-The second Hadamard matrix is given by;
+The second Hadamard matrix is given by:
 
 $$H_2=
 \left(\begin{array}{cc} 
@@ -61,7 +65,8 @@ $H_2=H_1 * H_1$
 
 Where; 
 `*` is the Kronecker product.
-What Kronecker product mean is, if we have two matrix A and B, then it is the product of matrix A and elements of B as shown below;
+What Kronecker product mean is, if we have two matrix A and B, then it is the product of matrix A and elements of B as shown below:
+
 $$A*B=
 \left(\begin{array}{cc} 
 A(1,1).B & A(1,2).B & ... & A(1,N).B\\
@@ -307,3 +312,6 @@ As we can see, there is no difference between the input image and the output in 
 Walsh-Hadamard, which is a combination of two algorithms, Walsh and Hadamard, is an efficient method of signal filtering and image compression, as we have seen. It is because these algorithms work on the matrix basic. Since signals and images are a combination of matrices, this method finds it easy to handle them efficiently and fast. Also, the in-built functions in Matlab make the whole process since writing the code of the whole algorithm is a whole bunch of work.
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Monica Masae](/engineering-education/authors/monica-masae/)
