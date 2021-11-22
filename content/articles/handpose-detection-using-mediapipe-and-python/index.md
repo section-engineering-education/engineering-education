@@ -206,7 +206,6 @@ Happy coding!
 
 ### Further reading
 - [MediaPipe HandPose](https://github.com/tensorflow/tfjs-models/tree/master/handpose)
-- [Create a New React App](https://reactjs.org/docs/create-a-new-react-app.html)
 
 ---
 Peer Review Contributions by: [Collins Ayuya](https://www.section.io/engineering-education/authors/collins-ayuya/)
