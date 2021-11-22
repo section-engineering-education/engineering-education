@@ -1,7 +1,22 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /consuming-rest-api-in-flutter-building-a-weather-app-that-makes-a-network-call-to-a-backend-server/
+title: Building a weather app that makes a network call to a backend server
+description: This tutorial will show you how to consume APIs in Flutter by building a weather application that makes network calls to a backend server.
+author: eme-lekwa
+date: 2021-11-22T00:00:00-07:20
+topics: [Languages, API]
+excerpt_separator: <!--more-->
+images:
 
-### Goal
+  - url: /engineering-education/consuming-rest-api-in-flutter-building-a-weather-app-that-makes-a-network-call-to-a-backend-server/hero.png
+    alt: Weather app with APIs in Flutter image
+---
+
 This article will walk the reader through how to consume a REST API in a flutter application using the Dio package. We will be building a weather app that provides real-time weather information by making a network call to a weather API. 
-
+<!--more-->
 The app requests the user's location and returns weather information about the user's current location. Flutter GetX package will be used for state management; however, emphasis is on Dio and network calls.
 
 ### Key takeaways
@@ -32,7 +47,7 @@ The geolocator allows us to easily access platform-specific locations, while the
 
 ![pubspec](/engineering-education/consuming-rest-api-in-flutter-building-a-weather-app-that-makes-a-network-call-to-a-backend-server/pubspec.png)
 
-### Project Structure
+### Project structure
 The project is being structured in this order:
 - model(Object Representation of the data)
 - controller(Logic)
@@ -43,7 +58,7 @@ The project is being structured in this order:
 ### Models
 In the model folder, we will create a class that represents the object that we will receive from the server. Create a dart file `weather_model.dart` as shown below.
 
-#### The Weather Model
+#### The weather model
 
 ```Dart
 
@@ -409,7 +424,7 @@ Next, we create a method called `request`, which uses the instance of the Dio(`_
 And lastly, we created a method to handle errors. It takes a `DioError` and returns an appropriate message when there is a SocketException, connection Timeout, and nothing was returned.
 
 
-#### LocalStorage
+#### The LocalStorage
 This class will enable us to save a token to the Local Storage, get a token, etc. We are using `GetStorage` for this.
 
 ```Dart
@@ -445,7 +460,7 @@ class LocalStorage {
 
 ```
 
-#### The Weather Service
+#### The weather service
 Create a dart file, call it `weather_service` and write the following code.
 
 ```Dart
@@ -492,7 +507,7 @@ We use the `GeoLocator` package to the user's current location, then have access
 The request method was called and passed in the endpoint, returning the Response. Note that we have wrapped what may go wrong in a [try and catch](https://www.tutorialkart.com/dart/dart-try-catch/). We called the `handleError` method we created in the `BaseService` class and threw the error. If an error occurs, we catch it.
 
 
-### The Controller
+### Working on the controller
 Under the controller folder, create a `weather_controller.dart` file as shown below.
 
 ```Dart
@@ -529,7 +544,7 @@ We created a `WeatherController` class that extends the `GetxController` class i
 We injected the `WeatherService` class we created in the service folder using GetX and used the instance created to call the `getWeather` method and save the Response in a variable `res` and return the Response.
 
 
-### The Utilities
+### Building the project utilities
 
 This folder houses our helper classes. Create a `constants.dart` file as shown below:
 
@@ -556,7 +571,7 @@ const kConditionTextStyle = TextStyle(
 
 This file contains the text style and sizes we want to use in the application.
 
-#### WeatherSnackbar class
+#### Coding the WeatherSnackbar class
 
 ```Dart
 
@@ -632,7 +647,7 @@ class WeatherSnackBars {
 
 We have created two snack bars using GetX for a successful response and an error.
 
-#### The WeatherStatus Class
+#### Working on the WeatherStatus Class
 Next, create a `WeatherStatus` class that will return the appropriate message and Icon based on the weather data returned.
 
 ```Dart
@@ -673,7 +688,7 @@ class WeatherStatus {
 
 ```
 
-### The View
+### Coding the View
 
 ```Dart
 import 'package:flutter/material.dart';
@@ -788,3 +803,6 @@ We have injected an instance of our controller and called the `getWeatherData` m
 In this tutorial, you have learned how to make network calls over the HTTP and consume a rest API using the Dio package. We have demonstrated this by building a weather app that fetches weather data from Weather API.
 
 The source code can be found on this [Repository](https://github.com/Lekwacious/WeatherApp).
+
+---
+Peer Review Contributions by: [Jerim Kaura](/engineering-education/authors/jerim-kaura/)
