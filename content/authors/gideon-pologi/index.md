@@ -1,0 +1,1 @@
+Gideon Pologi is a second-year Computer Science student. He is currently honing his skills in software development. He loves to connect with peers through writing engaging tech tutorials and articles.

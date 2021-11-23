@@ -29,7 +29,7 @@ The function will accept some user data and return a profile based on the data.
 After uploading the generator function to AWS Lambda, we'll create a client program that communicates with the user-profile-generating function on AWS Lambda.
 
 If you are new to serverless computing, it is highly recommended to go through these articles:
-- [How to build apps with Serverless architecture](/how-to-build-apps-with-serverless-architecture/)
+- [How to build apps with Serverless architecture](/engineering-education/how-to-build-apps-with-serverless-architecture/)
 - [Comparing serverless computing with containers](/engineering-education/comparing-serverless-computing-vs-containers/)
 - [How to migrate an on-premise application to serverless](/engineering-education/how-to-migrate-an-on-prem-application-to-serverless/)
 

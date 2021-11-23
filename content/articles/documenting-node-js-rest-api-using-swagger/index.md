@@ -28,7 +28,7 @@ To follow along in this article, it is essential to have the following:
 - Some basic knowledge of JavaScript.
 - Familiarity with building REST APIs using [Express.js](https://expressjs.com/). 
 
-If you are not familiar, you can reference this [article](/restful-web-api-using-nodejs-postgressql-and-express/).
+If you are not familiar, you can reference this [article](/engineering-education/restful-web-api-using-nodejs-postgressql-and-express/).
 
 ### Overview
 - [Introduction](#introduction)

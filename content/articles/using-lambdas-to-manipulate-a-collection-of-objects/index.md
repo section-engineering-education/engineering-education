@@ -198,7 +198,6 @@ Displaying the sorted list by Card:
 ```
 
 #### Example 2
-
 ```java
 Predicate<Wallet> takeMoneyAndBlackCard=
                 e -> (e.takeMoney() >= 30000 && e.getCards().equals(Card.Black));

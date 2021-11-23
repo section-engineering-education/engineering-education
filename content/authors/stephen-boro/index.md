@@ -2,6 +2,11 @@
 title: Stephen Boro
 type: authors
 Github: https://github.com/Stephen-writer
+<<<<<<< HEAD
+=======
+images:
+  - url: /engineering-education/authors/stephen-boro/avatar.jpg 
+>>>>>>> b419b678c36d44ef68084afc9560b596ff9ec1d5
 ---
 
 Stephen Boro is a data science student with a passion for software development, artificial intelligence, and Python programming. He has exceptional talents and has shown the ability to boost technological knowledge advancement. When he is not coding, he enjoys outdoor activities and video games. Table tennis and FIFA  are two examples.

@@ -33,7 +33,7 @@ Let us look at the differences between Node.js and Nuxt which are two important 
 ### Why is Node.js Needed
 JavaScript is a powerful object-oriented programming language that runs within a browser. To harness the power of JS on the server-side, Node.js was created.
 
-For a more detailed discussion about Node.js, check out [this](/why-node-js-is-popular/) article by [Geoffrey Mungai](/engineering-education/authors/geoffrey-mungai/).
+For a more detailed discussion about Node.js, check out [this](/engineering-education/why-node-js-is-popular/) article by [Geoffrey Mungai](/engineering-education/authors/geoffrey-mungai/).
 
 Node.js is a server-side JavaScript runtime environment. It is based on the Google V8 engine. Today, it is one of the most popular server-side languages for the web.
 
