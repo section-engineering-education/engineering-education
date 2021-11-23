@@ -256,6 +256,7 @@ public class Cal {
 	}
 }
 ```
+Go ahead and run the code [here](https://replit.com/@Calvin49/Implementing-a-Generic-Singly-linked-list-Data-Structure-in)
 
 Output:
 
