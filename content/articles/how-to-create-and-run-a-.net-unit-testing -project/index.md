@@ -1,5 +1,6 @@
-Any programming language must include some form of testing. A unit test is utilized when testing a unit. A unit is a portion of code that can be separated logically in a system. We will use Visual Studio to test ASP.Net apps.
-It's also used to run an ASP.Net application's test code. It becomes much easier to check for faults in an ASP.Net application this way. The testing module in Visual Studio provides the built-in capability. A test for an ASP.Net project is run right immediately.
+Any application must undergo some form of testing. A unit test is utilized when testing a unit of the application. A unit is a portion of code that can be separated logically in a system.
+
+We will use Visual Studio to test ASP.Net apps. It's also used to run an ASP.Net application's test code. It becomes much easier to check for faults in an ASP.Net application this way. The testing module in Visual Studio provides the built-in capability. A test for an ASP.Net project is run right immediately.
 
 ### Table of contents
 - [What is unit testing](#what-is-unit-testing)
@@ -30,7 +31,7 @@ All .net languages utilize NUnit, a widely known unit-testing framework. It's a 
 The available unit testing methods include:
 
 - **Manual**- You need to create an explanatory document describing each step in the process for those who use a manual approach.
-- 
+
 - **Automated**- Automated unit tests are still the most popular approach. When using an automated method, it's usual to create test cases inside a testing framework.
 
 All failed tests will be noted and reported, as well as a description of all successful tests.
@@ -78,7 +79,8 @@ An expensive patch may be required if a problem is found late in the development
 
 
 3. Decide on a name for your endeavor and then get to operate. For this project, I called it `Collegefinance`. Either the.NET Core 3.1 or.NET 5 target framework will have to be selected.
-As you work on the School project, the Program.cs file will be open in the code editor.
+
+As you work on the School project, the `Program.cs` file will be open in the code editor.
 
 ![Naming the project](/engineering-education/how-to-create-and-run-a-dotnet-unit-testing-project/image2.png)
 
@@ -90,9 +92,6 @@ As you work on the School project, the Program.cs file will be open in the code 
 using System;
 namespace BankAccountNS
 {
-    /// <summary>
-    /// Bank account demo class.
-    /// </summary>
     public class CollegeFinance
     {
         private readonly string n_studentIdentity;
@@ -168,6 +167,7 @@ In the project created click to View in the menu bar, click Solution Explorer fr
 ![Reference](/engineering-education/how-to-create-and-run-a-dotnet-unit-testing-project/image6.png)
 
 ### Make a test class
+
 In this phase, we will rename the file as `CollegeFinanceTests.cs` which is more informative rather than reusing the template as per the project for testing the `CollegeFinance` class.
 Add the following code to the CollegeFinanceTests.cs file:
 
@@ -185,7 +185,8 @@ namespace CollegeTests
 }
 ```
 
-#### Make sure to include a using clause.
+***Make sure to include a using clause***
+
 If you wish to call into the test project without suitably qualified identifiers, add a using line to the test class. Add the following to the class file's header:
 
 ```C#
@@ -193,7 +194,9 @@ using CollegeFinanceNS;
 ```
 
 ### Prerequisites for the test class
+
 A test class must satisfy the following criteria:
+
 - Any class with unit testing methods that wish to run in Test Explorer must have the `[TestClass]` attribute.
 - This property must be present in every method `[TestMethod]` you plan on using in Test Explorer so that it can be recognized by the tool.
 
@@ -221,12 +224,14 @@ public void Arrears_WithValidTotal_UpdatesRemainder()
 The function is simple: it creates a new CollegeFinance object with a starting remainder and then withdraws a valid amount. It checks if the ending remainder is as predicted using the Assert.AreEqual function. Assert is an example of a method. Assert, AreEqual. 
 
 #### Specifications for the test technique
+
 A test method must satisfy the following conditions:
 - It has the [TestMethod] attribute on it.
 - It gives a void result.
 - It isn't allowed to have parameters.
 
 ### Create the test and execute it
+
 1. Choose Build Solution from the Build drop-down menu.
 
 ![Build](/engineering-education/how-to-create-and-run-a-dotnet-unit-testing-project/image7.png)
