@@ -39,9 +39,9 @@ APIs are essential as they allow you to use multiple components as the building 
 There are more reasons as to why you should use API-first development. The main ones are discussed below.
 
 #### Accelerated development process
-The API-first strategy concentrates time and resources on API development before beginning coding. You may argue that this might cause delays in time to market the app, but this is not the case. This strategy allows you to reuse existing infrastructure power and software to promote faster software delivery. Time to market is also accelerated by integrating existing components and improving the software delivery and development processes.
+The API-first strategy concentrates time and resources on API development before beginning coding. You may argue that this might cause delays in time to market for the app, but this is not the case. This strategy allows you to reuse existing infrastructure power and software to promote faster software delivery. Time to market is also accelerated by integrating existing components and improving the software delivery and development processes.
 
-With an API-first approach, you're sure to optimize your total development time and achieve agility even where the APIs fail to cover all the system's features. When you generate an initial API for an APP, you also speed up the initial iterations in the interface development process. Once you have defined the initial API, you can better enhance and expand it while adding new features. In addition, such an intuitive interface allows working with multiple data sources.
+With an API-first approach, you are sure to optimize your total development time and achieve agility even where the APIs fail to cover all the system's features. When you generate an initial API for an APP, you also speed up the initial iterations in the interface development process. Once you have defined the initial API, you can better enhance and expand it while adding new features. In addition, such an intuitive interface allows working with multiple data sources.
 
 #### Consistency
 We live in a multi-screen world that expects developers to deliver applications that perform consistently across all platforms and devices. You achieve this by building a single app on top of an API layer to serve multiple applications hosted on different platforms. While this is not usually a straightforward process, using an API-first strategy makes it a lot easier. An app built this way delivers efficiency with high-end cross-compatibility. In addition, the process of updating and maintaining apps across all platforms, whether web-based or native on mobile and non-mobile platforms, becomes more manageable.
@@ -61,7 +61,7 @@ More and more developers are joining their peers in applying an API-first approa
 ### Why API is relevant to automation
 Cloud providers allow the usage of APIs to automate processes in the cloud. However, automating without APIs is challenging, and increasing efficiency and maintaining consistent processes may not be possible. If you opt for manual processes, you should also know that you cannot similarly repeat processes.
 
-Testers and developers often run things more than twice. They use an API-first strategy to automate every process in the application development lifecycle and achieve consistency. DevOps use this approach to achieve frequent releases.
+Testers and developers often run things more than twice. They use an API-first strategy to automate every process in the application development lifecycle and achieve consistency. DevOps uses this approach to achieve frequent releases.
 
 Competition in the app development industry is fierce, and only those that develop apps quickly survive. Therefore, the speed to market is of significant consideration. API-first approach allows you to add new technologies and service offerings to applications without re-architecting the entire site.
 
