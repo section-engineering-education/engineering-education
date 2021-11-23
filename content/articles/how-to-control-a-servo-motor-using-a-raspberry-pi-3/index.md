@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/ how-to-control-a-servo-motor-using-a-raspberry-pi-3/hero.jpg
     alt: How to control a Servo Motor using a Raspberry Pi 3 Hero Image
 ---
-Internet of Things or popularly abbreviated as IoT, has facilitated the easy remote control and integration of mobile and end devices.
+Internet of Things abbreviated as IoT, has facilitated the easy remote control and integration of mobile and end devices.
 <!--more-->
 This is a simple scenario of such an application where a raspberry pi can be used to control a motor.
 
@@ -27,15 +27,15 @@ This is a simple scenario of such an application where a raspberry pi can be use
 
 ### Prerequisites
 To follow along with this tutorial, the reader should have:
-1. A basic knowledge of [IoT](https://www.section.io/engineering-education/an-overview-of-iot-technology/).
-2. A basic knowledge and operation on [Raspberry Pi](raspberrypi.org).
+1. Basic knowledge of [IoT](https://www.section.io/engineering-education/an-overview-of-iot-technology/).
+2. Basic knowledge and operation on [Raspberry Pi](raspberrypi.org).
 
 ### Introduction to motors
 Motors are machines that operate to produce motion. This can be simply explained as changing of electric power into mechanical power.
 
 Electric current and the magnetic fields in a motor interact to produce force in the form of torque which in turn moves the motor shaft.
 
-For a motor to produce that mechanical power, we need to provide it with electrical power in adequate voltage range. This is because very high voltages will mean increased power of the motor which results to wear. And, tear that will make the motor break.
+For a motor to produce that mechanical power, we need to provide it with adequate electrical power voltage range. This is because very high voltages will mean increased power of the motor which results to wear. And, tear that will make the motor break.
 
 How efficient the motor is, depends on the quality of the motor.
 
@@ -49,7 +49,7 @@ Servo motors are made from DC motors by adding the following components:
 - Some gear reduction to reduce the angle of rotation.
 - An electric circuit that controls the motor to tell it the direction it should move and how much to turn to that direction.
 
-Generally; a servo motor operation is geared towards getting the shaft of the motor to a desired position around 180 degrees from a reference point.
+Generally; a servo motor operation is geared towards getting the shaft of the motor to the desired position around 180 degrees from a reference point.
 
 Examples of servo motors are shown in the images below:
 
@@ -61,9 +61,9 @@ Examples of servo motors are shown in the images below:
 #### Step 1: Connecting the motor to Raspberry Pi through wires
 Take note that the motor has a set of 3 wires, red, brown, and orange. The red one is `+ve` and the brown one is `-ve`. 
 
-The orange wire is used to transmit the control signals i.e., Pulse width modulation control signal. The 3 wires are connected to different pins on the raspberry pi.
+The orange wire is used to send the control signals i.e., Pulse width modulation control signal. The 3 wires are connected to different pins on the raspberry pi.
 
-Therefore, for flexibility, we will connect them using jumper cables as shown in the diagram below:
+Thus, for flexibility, we will connect them using jumper cables as shown in the diagram below:
 
 ![Jumper cable connection](/engineering-education/how-to-control-a-servo-motor-using-a-raspberry-pi-3/jumper-cable.png)
 
@@ -94,7 +94,7 @@ We proceed to set pin 11 as the output:
 GPIO.setup(11,GPIO.OUT)
 ```
 
-Next, we set up a variable I called mine `servo` as pin 11 with PWM. The 50 defines the pulse frequency at pin 11 and the 11 is simply the pin number.
+Next, we set up a variable I called my `servo` pin 11 with PWM. The 50 defines the pulse frequency at pin 11 and the 11 is simply the PIN number.
 
 ```bash
 servo = GPIO.PWM(11,50)
