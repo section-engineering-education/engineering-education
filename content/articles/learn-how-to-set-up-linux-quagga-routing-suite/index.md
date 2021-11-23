@@ -57,10 +57,14 @@ Currently Quagga supports `GNU/LINUX` and `BSD`. Porting Quagga to other platfor
 - FreeBSD
 - NetBSD
 - OpenBSD
-Versions of these platforms that are older than around 2 years from the point of their original release may need some work. Similarly, the following platforms may workwith some effort:
+- 
+Versions of these platforms that are older than around 2 years from the point of their original release may need some work. Similarly, the following platforms may workwith      some effort:
+
 - Solaris
 - Mac OSX
+
 Also note that, in particular ragarding proprietary platforms,compiler and C library choice will affect Quagga. Only recent versions ofthe following C compilers are well tested:
+
 - GNU'S GCC
 - LLVM'S clang
 - intel's ICC
