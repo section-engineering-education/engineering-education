@@ -14,6 +14,14 @@ We will use Visual Studio to test ASP.Net apps. It's also used to run an ASP.Net
 - [Creating a method for testing](#creating-a-method-for-testing)
 - [Create the test and execute it](#create-the-test-and-execute-it)
 
+### Prerequisites
+
+To follow along with this tutorial, you'll need the following:
+
+- A basic understand of C#
+- A basic understanding of ASP.Net
+- [Visual Studio](https://visualstudio.microsoft.com/downloads/)
+
 ### What is unit testing
 
 Unit testing determines if components or individual software units correspond to the designed specifications and testing, accompanying data, and usage procedures.
