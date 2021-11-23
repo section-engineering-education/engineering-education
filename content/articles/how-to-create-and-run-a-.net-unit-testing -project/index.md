@@ -1,5 +1,5 @@
 ### Introduction
-Any programming language must include some form of testing. Unit test is utilized when testing a unit. A unit is a portion of code that can be separated logically in a system. We will use Visual Studio to test ASP.Net apps.
+Any programming language must include some form of testing. A unit test is utilized when testing a unit. A unit is a portion of code that can be separated logically in a system. We will use Visual Studio to test ASP.Net apps.
 It's also used to run an ASP.Net application's test code. It becomes much easier to check for faults in an ASP.Net application this way. The testing module in Visual Studio provides the built-in capability. A test for an ASP.Net project is run right immediately.
 
 ### Table of contents
@@ -15,24 +15,35 @@ It's also used to run an ASP.Net application's test code. It becomes much easier
 - [Create the test and execute it](#create-the-test-and-execute-it)
 
 ### What is unit testing
+
 Unit testing determines if components or individual software units correspond to the designed specifications and testing, accompanying data, and usage procedures.
+
 A unit is a short piece of code that performs a specific task. The unit test is a brief script or code that verifies a particular unit's behavior and returns a pass or fail result.
+
 The goal of the unit test is for developers to be able to run as many unit tests as feasible to find potential flaws.
+
 Other types of testing will be required after the application has passed unit testing for further validation.
+
 All .net languages utilize NUnit, a widely known unit-testing framework. It's a free and open-source program that lets you manually code scripts. It allows for the performance of simultaneous data-driven tests.
 
 ### Types of approaches to unit testing
+
 The available unit testing methods include:
+
 - **Manual**- You need to create an explanatory document describing each step in the process for those who use a manual approach.
+- 
 - **Automated**- Automated unit tests are still the most popular approach. When using an automated method, it's usual to create test cases inside a testing framework.
 
 All failed tests will be noted and reported, as well as a description of all successful tests.
 
 ### Techniques for Testing Units
+
 Black box testing involves testing the user interface and input and output, while White box testing focuses on the functional behavior of the software application.
-Test suites, methods, test cases, and risk assessments are carried out using gray box testing.
-The user interface of a software program is tested via black-box testing.
+
+Test suites, methods, test cases, and risk assessments are carried out using gray box testing. The user interface of a software program is tested via black-box testing.
+
 The following are unit testing techniques:
+
 - Statements included in the scope
 - Coverage of the decision-making process
 - Coverage of Different Branches
@@ -40,18 +51,24 @@ The following are unit testing techniques:
 - Coverage by a Finite State Machine
 
 ### Benefits of Unit testing
+
 - **A greater rate of progress:**
 Writing unit tests saves developers time by reducing the amount of time they spend troubleshooting. Adding new features to the product and then refactoring the code will be easier for developers if they have confidence in what may fail. This is impossible without unit testing.
+
 - **New and improved Concept:**
 Creating unit tests helps developers see how their code will be used across the system, leading to a better overall design.
+
 - **The use of a more robust feedback mechanism:**
 It will be possible to evaluate the current status of the system after all unit tests have been performed. These tests provide programmers a better idea of the state of the code, such as whether it's finished or not. Test environment modifications may impact the code base, but the feedback system can assist in communicating how the test environment is doing.
+
 - **It is a useful pre-regression tool:**
 Developers will be able to restructure or reorganize code with ease after all unit tests have been completed. Developers may rest easy knowing that their changes won't harm other modules or the whole system.
+
 - **Cost-cutting:**
 An expensive patch may be required if a problem is found late in the development process. Early detection of fundamental issues (which may have a significant impact on the system later) using a well-designed set of unit tests helps keep maintenance costs down in the long run.
 
 ### Creating a project
+
 1. When creating a new project, we will use Visual Studio and create a new project from the start menu.
 
 ![create a new project](/engineering-education/how-to-create-and-run-a-dotnet-unit-testing-project/image1.png)
@@ -61,12 +78,12 @@ An expensive patch may be required if a problem is found late in the development
 ![create a console project](/engineering-education/how-to-create-and-run-a-dotnet-unit-testing-project/image2.png)
 
 
-3. Decide on a name for your endeavor and then get to operate. For this project i called it `Collegefinance`. Either the.NET Core 3.1 or.NET 5 target framework will have to be selected.
+3. Decide on a name for your endeavor and then get to operate. For this project, I called it `Collegefinance`. Either the.NET Core 3.1 or.NET 5 target framework will have to be selected.
 As you work on the School project, the Program.cs file will be open in the code editor.
 
 ![Naming the project](/engineering-education/how-to-create-and-run-a-dotnet-unit-testing-project/image2.png)
 
->If you can't open the Program.cs file directly; you may do so in Solution Explorer by double-clicking it.
+> If you can't open the Program.cs file directly; you may do so in Solution Explorer by double-clicking it.
 
 4. To use the `CollegeFinance` class, add the following C# code to `Program.cs`:
 
@@ -145,7 +162,7 @@ We have a project that we can now be put to the test.
 4. Create a new CollegeTests project with the desired architecture (.NET Core 3.1 or.NET 5) selected. We've integrated `CollegeTests` into the `Collegefinance`.
 
 5. Make sure the CollegeTests project contains a mention of the College project.
-In the project created click to View in the menu bar, click Solution Explorer from the list, click dependencies and then add dependencies by right clicking the reference option.
+In the project created click to View in the menu bar, click Solution Explorer from the list, click dependencies, and then add dependencies by right-clicking the reference option.
 
 6. Expand Projects, then Solution, and finally Collegefinance in the Reference Manager dialog box.
 
