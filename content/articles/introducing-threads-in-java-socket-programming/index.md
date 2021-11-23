@@ -33,11 +33,13 @@ public class TestingServer
     public static void main(String[] args) throws IOException
     {   
         ServerSocket ourNewSocketServer = new ServerSocket(3333);
+        // Forcing a client request into an unending loop
         while (true)
         {
             Socket newsoct = null;            
             try
             {               
+            // receive inbound requests from clients
                 newsoct = ourNewSocketServer.accept();
                 
                 System.out.println("Client connected : " + newsoct);
@@ -73,6 +75,7 @@ class OurClientHandler extends Thread
 
     final DataOutputStream sdtOutput;
     final Socket newsoct;
+    // Constructor
     
     public OurClientHandler(Socket newsoct, DataInputStream sdtinput, DataOutputStream sdtOutput)
     {
@@ -108,7 +111,7 @@ class OurClientHandler extends Thread
                 
                 Date newDt = new Date();
                 
-                
+                // output stream dependent on the client's response
                 switch (newresuiltReceived) {
                 
                     case "Date" :
@@ -167,13 +170,13 @@ public class NewClient
             Socket newsoct = new Socket(adress, 3333);           
             DataInputStream sdtinput = new DataInputStream(newsoct.getInputStream());
             DataOutputStream sdtOutput = new DataOutputStream(newsoct.getOutputStream());
-    
+    // The following loop is responsible for exchanging data between the client and client handle.
             while (true)
             {
                 System.out.println(sdtinput.readUTF());
                 String tosend = newscanner.nextLine();
                 sdtOutput.writeUTF(tosend);
-                
+                // If the client sends an exit, then the connection should be closed and the while loo should be terminated.
                 if(tosend.equals("Exit"))
                 {
                     System.out.println("Closing connection : " + newsoct);
