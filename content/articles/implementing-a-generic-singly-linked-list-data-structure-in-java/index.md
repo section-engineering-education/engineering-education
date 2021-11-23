@@ -50,74 +50,134 @@ These are functions that can be performed on a linked list:
 In this section, we'll explore how generics can be used to implement a singly linked list in a type-safe, parameterized fashion. We will use the Java program below to generate our own type-safe linked list in the Java programming language.
 
 ```Java
-public class NewnewSinglyLinkedList {
-// first will be the first node in our New newSinglyLinkedList
-// Generic node instance
-    private Node first;
+import java.io.*;
+class node<T> {
+	T data;
+	node<T> next;
+	node(T data)
+	{
+		this.data = data;
+		this.next = null;
+	}
+}
+class list<T> {
+	node<T> head;
+	private int newlength = 0;
+	list() { this.head = null; }
+	void add(T data)
+	{
+		node<T> newtemp = new node<>(data);
+		// If the list has no items, then a new value is assigned to the head node.
+		if (this.head == null) {
+			head = newtemp;
+		}
+		else {
+			node<T> X = head;
+			while (X.next != null) {
+				X = X.next;
+			}
 
-    public boolean isEmpty(){
-        return length() == 0;
-        }
-        /// Parameterized constructor to assign value
-         public void append(T data){
-             if(first == null){
-                 // Storing value of node
-                 first = new Node(data);
-                 return;
-                 }
-                 // Storing address of next node
-                 tail().next = new Node(data);
-         }
-         private Node tail() {
-             Node tail = first;
-             while(tail.next != null){
-                 tail = tail.next;
-                 }
-                 return tail;
-                 }
+			// Topping off the list with an additional, higher-valued node
+			X.next = newtemp;
+		}
+		newlength++;
+	}
+	void add(int newposition, T data)
+	{
+		if (newposition > newlength + 1) {
+			return;
+		}
+		if (newposition == 1) {
+			node<T> newtemp = head;
+			head = new node<T>(data);
+			head.next = newtemp;
 
+			return;
+		}
 
-    @Override
-    public String toString(){
-        StringBuilder newStringBuilder = new StringBuilder();
-        Node ourCurrentNode = first;
-        // // If list already exists
-        while(ourCurrentNode != null){
-            newStringBuilder.append(ourCurrentNode).append("--&gt;");
-            // Iterating till end of the List
-            ourCurrentNode = ourCurrentNode.next;
-            }
-            if(newStringBuilder.length() &amp;gt;=5){
-                newStringBuilder.delete(newStringBuilder.length() - 5, newStringBuilder.length());
-                }
-                return newStringBuilder.toString();
-                }
+		// node for traversal
+		node<T> newtemp = head;
+		// Dummy node 
+		node<T> prev = new node<T>(null);
+		while (newposition - 1 > 0) {
+			prev = newtemp;
+			newtemp = newtemp.next;
+			newposition--;
+		}
+		prev.next = new node<T>(data);
+		prev.next.next = newtemp;
+	}
+	void remove(T key)
+	{
+		// Dummy node with null value
+		node<T> prev = new node<>(null);
+		prev.next = head;
+		node<T> next = head.next;
+		node<T> newtemp = head;
+		boolean exists = false;
 
-    public int length() {
-         int length = 0;
-         Node ourCurrentNode = first;
-         // It will Start counting from our first node
-         while(ourCurrentNode != null){
-             // Increasing length after adding new node
-             length ++;
-             ourCurrentNode = ourCurrentNode.next;
-             }
-              return length;
-        }
+		if (head.data == key) {
+			head = head.next;
+			exists = true;
+		}
+		while (newtemp.next != null) {
 
-        private static class Node {
-            private Node next;
-             private T data;
-             // Adding new valued node at the end of the list
-             public Node(T data) {
-                 this.data = data;
-                  }
+			if (String.valueOf(newtemp.data).equals(
+					String.valueOf(key))) {
+				prev.next = next;
+				exists = true;
+				break;
+			}
+			prev = newtemp;
+			newtemp = newtemp.next;
+			next = newtemp.next;
+		}
 
-    @Override
-    public String toString() {
-        return data.toString();
-        }
-    }
+		if (exists == false
+			&& String.valueOf(newtemp.data).equals(
+				String.valueOf(key))) {
+
+			prev.next = null;
+			exists = true;
+		}
+		if (exists) {
+			newlength--;
+		}
+		else {
+			System.out.println(
+				"The linked list does not contain the given value.");
+		}
+	}
+	void clear()
+	{
+		head = null;
+		newlength = 0;
+	}
+	boolean empty()
+	{
+		if (head == null) {
+			return true;
+		}
+		return false;
+	}
+	int newlength() { return this.newlength; }
+
+	public String toString()
+	{
+		String S = "{ ";
+		node<T> X = head;
+
+		if (X == null)
+			return S + " }";
+
+		while (X.next != null) {
+			S += String.valueOf(X.data) + " -> ";
+			X = X.next;
+		}
+
+		S += String.valueOf(X.data);
+		return S + " }";
+	}
 }
 ```
 
@@ -143,41 +203,80 @@ Here is an example:
 Now that we have a working linked list implementation, we can construct a test program to see how it performs.
 
 ```Java
-public class NewLinkedListTest {
-     public static void main(String args[]) {
+public class Cal {
 
-           SinglyLinkedList newSinglyLinkedList = new SinglyLinkedList();
-           newSinglyLinkedList.append("Student");
-           newSinglyLinkedList.append("Name");
-           newSinglyLinkedList.append("Class");
-        // Displaying elements message only
-           System.out.println(" Our Singlylinkedlist contains: " + newSinglyLinkedList);
-           // Displaying  length message only
-           System.out.println("length of Our Singlylinkedlist is: " + newSinglyLinkedList.length());
-           // Displaying message if Our Singlylinkedlist empty
-           System.out.println("is Our Singlylinkedlist empty? : " + newSinglyLinkedList.isEmpty());
+	public static void main(String[] args)
+	{
+		// Creating new empty Integer linked list
+		list<Integer> list1 = new list<>();
+		System.out.println(
+			"Created a linked list of integers: List1 :");
+		list1.add(10);
+		list1.add(20);
+		list1.add(30);
 
-           newSinglyLinkedList iList = new newSinglyLinkedList();
-           //iList.append("one"); i.e compilation error
+		System.out.println(
+			"list1 after adding 10,20 and 30 :");
+		System.out.println(list1);
+		list1.remove(20);
 
-           // Attempting to insert a String into an integer list
-           iList.append(202);
-           iList.append(404);
-           // Displaying message
-           System.out.println("Our Singlylinkedlist : " + iList);
-           System.out.println("length of Our Singlylinkedlist : " + iList.length());
-    }
+		System.out.println("list1 after removal of 20 :");
+		System.out.println(list1);
+
+		list<String> list2 = new list<>();
+		System.out.println(
+			"\nString LinkedList created as list2");
+
+		list2.add("Hey");
+		list2.add("There");
+
+		System.out.println(
+			"list2 after adding hey and There :");
+		System.out.println(list2);
+
+		list2.add(2, "Cal");
+		System.out.println(
+			"list2 after adding Cal at newposition 2 :");
+		System.out.println(list2);
+
+		list<Float> list3 = new list<>();
+		System.out.println(
+			"\nFloat LinkedList created as list3");
+
+		list3.add(10.25f);
+		list3.add(10.42f);
+		list3.add(10.99f);
+
+		System.out.println(
+			"list3 after adding 10.25, 10.42 and 10.99 :");
+		System.out.println(list3);
+		System.out.println("Clearing list3 :");
+		list3.clear();
+		System.out.println(list3);
+	}
 }
 ```
 
 Output:
 
 ```bash
- Our Singlylinkedlist contains: Student-->Name-->Class
-length of Our Singlylinkedlist is: 3
-is Our Singlylinkedlist empty? : false
-Our Singlylinkedlist: 202-->404
-length of Our Singlylinkedlist : 2
+Created a linked list of integers: List1 :
+list1 after adding 10,20 and 30 :
+{ 10 -> 20 -> 30 }
+list1 after removal of 20 :
+{ 10 -> 30 }
+
+String LinkedList created as list2
+list2 after adding hey and There :
+{ Hey -> There }
+list2 after adding Cal at newposition 2 :
+{ Hey -> Cal -> There }
+
+Float LinkedList created as list3
+list3 after adding 10.25, 10.42 and 10.99 :
+{ 10.25 -> 10.42 -> 10.99 }
+Clearing list3 :
+{  }
 ```
 
 This brings us to the end of article on utilizing Generics to build a linked list in Java. A circular linked list or a double linked list in Java may be implemented as a follow-up question, depending on the interviewer's taste. As an alternative, you can use them as a coding exercise to improve your skills.
