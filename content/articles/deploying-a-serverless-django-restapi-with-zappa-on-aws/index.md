@@ -421,8 +421,8 @@ STATIC_URL = "https://%s/" % AWS_S3_CUSTOM_DOMAIN
 Afterward, run the following commands to update the changes and upload the static files to the bucket:
 
 ```python
-$ zappa update dev
-$ zappa manage dev "collectstatic --noinput"
+zappa update dev
+zappa manage dev "collectstatic --noinput"
 ```
 
 Re-run the admin page. The API at this point should render the required styles accurately. 
