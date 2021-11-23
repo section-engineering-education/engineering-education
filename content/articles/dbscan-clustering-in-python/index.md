@@ -1,3 +1,20 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /dbscan-clustering-in-python/
+title: DBSCAN Algorithm in Python
+description: DBSCAN algorithm group points based on distance measurement. To cluster data points, this algorithm separates the high-density regions of the data from the low-density areas. This article will demostrate how DBSCAN algorithm is used in clustering.
+author: stanley-juma
+date: 2021-11-23T00:00:00-11:37
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/dbscan-clustering-in-python/hero.png
+    alt: DBSCAN Algorithm in Python image
+---
+
 ### DBSCAN Algorithm in Python
 DBSCAN is a popular **density-based** data clustering algorithm. The DBSCAN is an abbreviation for the **Density-Based Spatial Clustering of Applications with Noise**. To cluster data points, this algorithm separates the high-density regions of the data from the low-density areas. Unlike the K-Means algorithm, the best thing with this algorithm is that we need not provide the number of clusters required prior. 
 
