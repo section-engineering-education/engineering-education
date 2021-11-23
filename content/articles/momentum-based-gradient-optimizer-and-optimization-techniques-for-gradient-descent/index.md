@@ -47,12 +47,15 @@ Utilize an Adaptive Optimization Algorithm (AOA) that uses exponentially-weighte
 There must be a systematic approach to feeding the data to minimize the impact of noise during optimization. To resolve this issue, exponentially weighted averages might be used.
 
 Using an iterative process, we can approximate the trends in a P-dimensional noisy dataset by calculating the parameters as we go through the data:
-$
+
 On iteration p:
-    Get next  θp 
-    v_θ = β vθ + (1 - β)θp
-$
-**Vθ** is averaged across its preceding **1/(1 - β)** iterations, giving a value of **vθ**. With the help of averages, you can eliminate all the randomness and merely keep track of the overall trend. As a result of this method, the algorithm is more resistant to sample noise and can be trained more quickly.
+
+Get next 
+
+&theta;p    
+v<sub>&theta;</sub> = &beta;v<sub>&theta;</sub> + (1 - &beta;)&theta;<sub>p</sub>
+
+v<sub>&theta;</sub> is averaged across its preceding 1/(1 - &beta;)&theta;<sub>p</sub> iterations, giving a value of v<sub>&theta;</sub>. With the help of averages, you can eliminate all the randomness and merely keep track of the overall trend. As a result of this method, the algorithm is more resistant to sample noise and can be trained more quickly.
 ### How does momentum help in gradient descent
 This method works by detecting the direction of the steepest slope in its present state and then traveling in the direction of that sharpest slope to update its status.
 
@@ -66,30 +69,39 @@ Using Stochastic Graduated Descent instead of Classic Gradient Descent, several 
 RMSProp and momentum combine to create this effect. Use this method to figure out how fast your brain is adapting to new information. Like momentum, it saves the declining arithmetic mean of the squared gradients and an average of the past gradients, which is a similar feature.
 
 On a smooth surface, it's considerably easier for Adam to make a mistake because of his high coefficient of friction. So, for example, this strategy's pseudocode appears like this:
-$
+
 D = 0
 K = 0
+
 for each iteration p
-    compute dW
-    D = β1K + (1 -β1) dW
-     D = V⁄{1 -β1i}
-    K = β2K + (1 -β2) dW2
-    K = S⁄{1 -β2i}
-    W = W - α V⁄√S + ε
-$
+
+compute dW
+
+D= &beta;<sub>1</sub>K + (1 - &beta;<sub>1</sub>)dw
+
+D= v/(1 - &beta;<sub>1</sub><sup>i</sup>)
+
+K= &beta;<sub>2</sub>K + (1 - &beta;<sub>2</sub>)dw<sup>2</sup>
+
+K= S/(1 - &beta;<sub>2</sub><sup>i</sup>)
+
+W= W - &alpha;V\sqrt{S} + &epsilon;
 
 ### RMSProp
 It is an extension of gradient descent and AdaGrad that employs a decaying average of partial gradients to change the step size for each parameter. The drawback of AdaGrad is overcome by using a decaying moving average. This allows the algorithm to ignore early gradients and concentrate on the most recently recorded partial gradients as the search progresses.
 Improve AdaGrad by applying the adaptive learning rate method based on the Root Mean Square. The exponential moving average is used rather than the cumulative sum of squared gradients used by AdaGrad There is only one step that differs between AdaGrad and RMSProp: the first one. 
 
 That's all RMSProp does: it takes the learning rate and smooths it down by an average. So this strategy's pseudocode appears like this:
-$
+
 K = 0
+
 for each iteration i
-    compute dW
-    K = βK +(1 -β)dW2
-    W = W -α dW⁄√S + ε
-$
+compute dW
+
+K = &beta;K + (1- &beta;)dw<sup>2</sup>
+
+W = w- &alpha;dw\frac{\sqrt{S} + &epsilon;}
+
 ### AdaGrad
 
 When employing an Adaptive Gradient, you'll have to adjust the learning rate for parameters at each iteration based on where they're found. This means you'll learn more slowly in frequent areas while learning more quickly in less frequent ones.
