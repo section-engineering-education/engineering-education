@@ -14,17 +14,17 @@ images:
   - url: /engineering-education/using-lambdas-to-manipulate-a-collection-of-objects/hero.jpg
     alt: Manipulate Objects using Lambdas Hero Image
 ---
-Java is an object-oriented programming language. Lambdas allow programmers to make their code shorter, efficient, and more functional. 
+Java is an object-oriented programming language. Lambdas allow programmers to make their code shorter, efficient, and more functional.
 <!--more-->
-An object could be physical or imaginary, it just has to do with the way we see things in general. 
+An object could be physical or imaginary, it just has to do with the way we see things in general.
 
 For example, a wallet is an object that has a method to store money, make money, add cards, get cards; this is physical.
 
-On the other hand, an account can also store money, check balance but it's imaginary.
+On the other hand, an account can also store money and check balance; but that's imaginary.
 
-Example 2: A bucket is an object that has a method to store fluids either solid, liquid, or gas.
+Example 2: A bucket is an object that has a method to store either solid, liquid, or gas.
 
-Now it gets interesting when you have a collection of wallets with different items and you want to access the one with the red card that has more than $30,000. 
+Now it gets interesting when you have a collection of wallets with different items and you want to access the one with the red card that has more than $30,000.
 
 This is when lambdas come in. They help one to iterate through a collection of objects and avoid numerous mistakes.
 
@@ -32,25 +32,24 @@ This is when lambdas come in. They help one to iterate through a collection of o
 To follow along, you should have a basic understanding of the Java OOP (Object Oriented Programming) concept and lambdas.
 
 ### Objectives
-This tutorial will help you understand: 
+This tutorial will help you understand:
 - How lambdas work.
 - How to sort objects using lambdas.
 - How to calculate the value of an object.
-- How to group a collection of objects. 
+- How to group a collection of objects.
 - How to check for a unique object.
 
-### Importance of Lambdas
-Using lambdas is an effective way of writing your code. Some critics argue that lambdas are not clear but in the real sense, they are efficient and minimize errors.
+### Importance of lambdas
+Using lambdas is an effective way of writing your code. Some critics argue that lambdas are not clear. However, in the real sense, they are efficient and minimize errors.
 
 Let's use our wallet object as a case study.
 
-You will create different wallets based on color and money. We will then manipulate these objects using these two variables (color or money).
+We will create different wallets based on color and money. We will then manipulate these objects using these two variables (color or money).
 
 > Note that this operation is time-consuming and may lead to high time complexity.
 
 ### Getting started
-Firstly, we are going to create the following classes or objects:
-
+First, we are going to create the following classes or objects:
 1. Card (AtM card)
 2. Wallet
 3. The Collection_Wallet as a driver class
@@ -58,6 +57,8 @@ Firstly, we are going to create the following classes or objects:
 Create a folder and name it `Lambda_Collection`. It will store our three classes (package).
 
 Here is the code for the Card, Wallet, and Collection_Wallet classes:
+
+Card:
 
 ```java
 package Lambda_Collection;
@@ -67,6 +68,8 @@ public enum Card {
 }
 ```
 
+Wallet:
+
 ```java
 package Lambda_Collection;
 
@@ -75,7 +78,7 @@ import java.util.List;
 
 public class Wallet {
 
-    private double money;   
+    private double money;
     private Card card;//card is a variable of Card object and this phenomenon is called Composition.
     int counter=0;
 
@@ -88,7 +91,7 @@ public class Wallet {
         public void storeMoney(double money){
             this.money+=money;
         }
-        
+
         public double takeMoney(){
             return money;
         }
@@ -100,22 +103,22 @@ public class Wallet {
         public Card getCards(){
             return card;
         }
-        
+
     @Override
     public String toString() {
         return  String.format("%s%.2f %s ",
                  "#",takeMoney(), getCards());
          }
 }
-``` 
+```
 
-In the code above, we have created a folder or package for storing or code. 
+In the code above, we have created a folder or package for storing our code.
 
 Next, we created an `object` of `card`, `wallet`, and then an `Enum` class that contains the color of the individual class.
 
 The toString method allows us to make the object visible.
 
-The following code shows how the `wallet` collection look like before we use lambdas:
+The following code shows how the `wallet` collection looks like before we use lambdas:
 
 ```java
 package Lambda_Collection;
@@ -154,12 +157,12 @@ The `list.stream()` method creates a stream of Wallet. In other words, it helps 
 To access specific fields, we use the `filter` method. This function takes in a predicate expression and returns a boolean value.
 
 The two major interfaces that help in manipulating collections using lambdas are `Functions<T, R>` and `Predicate<T>`.
- 
+
 The `Predicate` takes in an argument and returns a `boolean` value (true or false).
 
-The returned value is then used to check whether a particular parameter meets the defined condition. 
+The returned value is then used to check whether a particular parameter meets the defined condition.
 
-`Function` takes in two arguments and also returns the required datatype. The Customers<T> take in argument but returns nothing. 
+`Function` takes in two arguments and also returns the required datatype. The Customers<T> takes in an argument but returns nothing.
 
 Finally, `Supplier<T>` takes in no argument and returns a value of T.
 
@@ -168,7 +171,6 @@ We use the `Predicate` interface to check if the pipeline meets a certain condit
 Add the following code in your `Collection_Wallet` class:
 
 #### Example 1
-
 Selecting an object based on `card color` and `amount`:
 
 ```java
@@ -188,10 +190,10 @@ A positive value is returned when the first component is greater. Zero is return
 Output:
 
 ```bash
-Displaying the sorted list by Card: 
-'#44000.00 Black 
-#54000.00 Black 
-#74000.00 Black 
+Displaying the sorted list by Card:
+'#44000.00 Black
+#54000.00 Black
+#74000.00 Black
 #64000.00 Black'
 ```
 
@@ -209,16 +211,16 @@ Predicate<Wallet> takeMoneyAndBlackCard=
 
 Output:
 
-Display the sorted list according to the amount of money: 
+Displays the sorted list according to the amount of money:
 
 ```bash
-$44000.00 Black 
-$54000.00 Black 
-$64000.00 Black 
-$74000.00 Black 
+$44000.00 Black
+$54000.00 Black
+$64000.00 Black
+$74000.00 Black
 ```
 
-What if we want to find a single wallet with an amount of money higher than $30000? In this case, we use the `findFirst()` intermediate method.
+What if we want to find a single wallet with an amount of money higher than $30,000? In this case, we use the `findFirst()` intermediate method.
 
 ```java
  Predicate<Wallet> takeMoneyAndBlackCard=
@@ -235,7 +237,8 @@ Output:
 ```bash
 $34000.00 Red
 ```
-> Make sure that each time you invoke a `Predicate interface` to always use a different variable.
+
+> Make sure to always use a different variable each time you invoke a `Predicate interface`.
 
 Using the `Function<T, R>` method:
 
@@ -252,17 +255,17 @@ Using the `Function<T, R>` method:
 Output:
 
 ```bash
-$4000.00 Blue 
-$14000.00 Black 
-$24000.00 Red 
-$34000.00 Red 
-$34000.00 Blue 
-$44000.00 Black 
-$44000.00 Green 
-$44000.00 Green 
-$54000.00 Black 
-$64000.00 Black 
-$74000.00 Black 
+$4000.00 Blue
+$14000.00 Black
+$24000.00 Red
+$34000.00 Red
+$34000.00 Blue
+$44000.00 Black
+$44000.00 Green
+$44000.00 Green
+$54000.00 Black
+$64000.00 Black
+$74000.00 Black
 ```
 
 Let's see how to reverse elements based on values in the collection using lambdas:
@@ -276,21 +279,22 @@ System.out.println("Display by money then by card in reserve order)
 
 Output:
 
-**Display by money then by card**
+Display by money then by card:
 
 ```bash
-$74000.00 Black 
-$64000.00 Black 
-$54000.00 Black 
-$44000.00 Green 
-$44000.00 Green 
-$44000.00 Black 
-$34000.00 Blue 
-$34000.00 Red 
-$24000.00 Red 
-$14000.00 Black 
+$74000.00 Black
+$64000.00 Black
+$54000.00 Black
+$44000.00 Green
+$44000.00 Green
+$44000.00 Black
+$34000.00 Blue
+$34000.00 Red
+$24000.00 Red
+$14000.00 Black
 $4000.00 Blue
 ```
+
 ### Grouping
 We map a wallet to the unique color of a card using the code below:
 
@@ -395,8 +399,9 @@ Output:
 ```bash
 Sum of Black Card wallet via average method: 250000.00
 ```
+
 ### Conclusion
-In this tutorial, we learned how to iterate through a collection of objects, manipulate it with functional interfaces such as `Functions<T, R>`, and `Predicate<T>`.
+In this tutorial, we learned how to iterate through a collection of objects, and manipulate it with functional interfaces such as `Functions<T, R>`, and `Predicate<T>`.
 
 We also grouped objects using map functional interface which takes in two arguments `Card` and `Long`.
 
