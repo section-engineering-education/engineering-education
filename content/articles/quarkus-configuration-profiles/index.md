@@ -523,14 +523,11 @@ Try restarting the project in the other profiles. Add new profile configurations
 Find the Repository with the article right [here](https://github.com/justusmbuvi/Quarkus-Configuration-profiles). Then, clone it and use it as per the licenses.
 
 ### Conclusion
-In this article, we've learnt the following:
-- What is Quarkus configuration profiles?
-- Setting up configurations in Quarkus.
-- Using and testing configurations in the project.
-- Setting up configurations in Quarkus using configuration profiles in:
-  - application.properties file.
-  - YAML files.
-- Testing the configuration profiles.
+System development is a time-taking process involving several changes in settings as the product's environment changes. That led to the need for a quick way to switch between them, hence the introduction of configuration profiles.
+
+In this article, we've discussed and learned what is Quarkus configuration profiles, types of the profiles such as the development, production, testing, and custom; setting them up in Quarkus in `application.properties` file and `YAML` files, and using and testing them in the project.
+
+Have you found what you were looking for? If not, find out more on Quarkus configuration profiles such as system properties, environment variables, MicroProfile configuration files, among many others [here](https://quarkus.io/guides/config-reference).
 
 ### References
 - [Quarkus Hibernate ORM](https://quarkus.io/guides/hibernate-orm)
