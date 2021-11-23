@@ -1,4 +1,21 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /recovering-wifi-passwords-from-operating-systems/
+title: Recovering Wi-Fi Passwords from Windows, macOS & Linux
+description: This tutorial will help you to recover forgotten Wi-Fi passwords if the device you have has connected to the Network atleast once and has a terminal.
+author: lenox-majiwa
+date: 2021-01-14T00:00:00-11:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/recovering-wifi-passwords-from-operating-systems/hero.jpg
+    alt: Recovering Wi-Fi Passwords from Windows, macOS & Linux Hero Image
+---
 In this generation, [Wi-Fi](https://www.cisco.com/c/en/us/products/wireless/what-is-wifi.html) has become an important thing to many of us. Whenever you go to different places, whether in town, houses, or shops, you will find people using WiFi on their devices. It could be on a smartphone, a desktop computer, a tablet, etc. These devices may be connected to different Wi-Fi networks, which may require a password to connect to them. As time goes by, one may forget the WiFi password of a specific Wi-Fi network that they are interested in. Operating systems such as Windows, macOS, and Linux can save all the Wi-Fi network passwords that have previously been connected to your device.
+<!--more-->
 
 In these three Operating systems, Wi-Fi passwords from saved Wi-Fi networks are hidden from the user. Unlike mobile operating systems like Android, Desktop operating systems like Windows, macOS and Linux have terminals that can be used to acquire the Wi-Fi passwords that are saved in the device. You'll be required to write some simple commands on the respective terminals to recover these saved passwords. In this article, I'll take you through the steps to reсоver Wi-Fi раsswоrds that are saved in your device, and I'll also give you the commands to use them. This will enable users to view the passwords to connect other devices to the same Wi-Fi networks.
 
