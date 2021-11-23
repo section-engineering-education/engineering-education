@@ -1,3 +1,20 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-perform-threading-timer-in-python/
+title: How to Perform Threading Timer in Python
+description: This tutorial will guide the reader on how to create a threading timer in Python using the threading module
+author: jacob-oduor
+date: 2021-11-23T00:00:00-10:20
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/how-to-perform-threading-timer-in-python/hero.png
+    alt: How to Perform Threading Timer in Python
+---
+
 ### How to Perform Threading Timer in Python
 
 Threading allows multiple tasks to run concurrently. For example, when task **A** is running, I do not have to wait for it to complete. Meanwhile, tasks **B**, **C** will also be running. When the tasks are running simultaneously, they require multiple CPUs.
@@ -6,17 +23,22 @@ The thread being lightweight, they require less memory hence saving on CPU resou
 A thread has an entry, an execution, and an exit point.
 Python library contains a timer, a subclass of the **“threading”** class used for code execution after a limited period. Threading in Python Timer() starts following the delay defined as an argument. The Timer class thus calls itself delaying the execution of the following operation by the same amount of time specified.
 
--  [Prerequisites](#prerequisites)
--  [Python Timer Functions ](#python-timer-functions)
--  [Threading Module Overview](#threading-module-overview)
--  [Creating and Using Timer Class](#creating-and-using-timer-class)
--  [Working with Python Decorator](#working-with-python-decorator)
--  [Importance of using Threads](#importance-of-using-threads)
--  [Conclusion](#conclusion)
+### Table of Contents
+- [How to Perform Threading Timer in Python](#how-to-perform-threading-timer-in-python)
+- [Table of Contents](#table-of-contents)
+- [Prerequisites](#prerequisites)
+- [Python Timer Functions](#python-timer-functions)
+  - [Instance #1](#instance-1)
+  - [Instance #2](#instance-2)
+- [Threading Module Overview](#threading-module-overview)
+- [Creating and Using Timer Class](#creating-and-using-timer-class)
+- [Working with Python Decorator](#working-with-python-decorator)
+- [Importance of using Threads](#importance-of-using-threads)
+- [Conclusion](#conclusion)
  
 
 ### Prerequisites
-- You have to be familiar with Python basics and get started with it. Refer to this article to [a beginners guide to python](/engineering-education/a-beginners-guide-to-python/)
+- Basic knowledge in Python. Refer to this article [beginners guide to python](/engineering-education/a-beginners-guide-to-python/) to get started with Python.
 
 
 ### Python Timer Functions
@@ -25,8 +47,8 @@ After every specified number of seconds, a timer class function is called.
 Importing the threading class is necessary for one to use the threading class. 
  The calling thread can be suspended for  seconds using the function  **time.sleep(secs)**.
  - To understand further I will be illustrating by use of a code snippet and also with the expected output inform of a screenshot.
- ## Instance #1
- **code:**
+
+ #### Instance #1
  ```py
  ## How class threading.Timer() in python works  
 import threading as th  
@@ -37,12 +59,11 @@ S = th.Timer(5.0, sctn)
 S.start()  
 print("Exit Program\n")
 ```
-- After the code is run, it takes five minutes to display **SECTION FOR LIFE** as the output.
+- After the code is run, it takes five minutes to display `SECTION FOR LIFE` as the output.
   ![start](/engineering-education/how-to-perform-threading-timer-in-python/start.png)
   
-   ## Instance #2
+#### Instance #2
 In this second example, I will show you how to implement the suspend method ``cancel()``, which we had seen earlier to end a thread. 
-**code:**
 ```py
 ##Illustrating the use of cancel() method in class Timer.  
 import threading as th  
@@ -58,14 +79,15 @@ S.cancel()
 - Below is the output of the above program:
  ![cancel](/engineering-education/how-to-perform-threading-timer-in-python/cancel.png)
  
- ### Threading Module Overview
+### Threading Module Overview
 The latest threading module included with the current Python 2.4 provides much more powerful, high-level support for threads than the previous thread module.
 The threading module exposes all the methods of the thread module and provides some additional functions as depicted below :
+```
+  thread.activeCount() − Returns how many thread objects are active.
+  thread.currentThread() − Returns how many thread objects in the caller's thread control.
+  thread.enumerate() − Returns an overview list of all thread objects that are currently active.
+``` 
 
-            thread.activeCount() − Returns how many thread objects are active.
-            thread.currentThread() − Returns how many thread objects in the caller's thread control.
-            thread.enumerate() − Returns an overview list of all thread objects that are currently active.
-            
 ### Creating and Using Timer Class
 The beauty of threading is that you can tell the computer to perform a task some other time or do it simultaneously. You can also execute the code simultaneously on different threads, making it extremely powerful. A timer class always runs in intervals. The Python Timer class is used to perform an operation or have a function run after a specified period has passed. The threading class has a subclass called the class timer. In technical terms, we will create Timer objects when we need time-bound actions (methods), in technical terms.
 To use Timer class we will first have to import the time module. 
@@ -136,7 +158,7 @@ When the code is run the output is:
  - Threads can be operated concurrently, multithreaded programs can run quicker on computer systems with several CPUs.
  - A program can continue to respond to input. This is true on a single CPU as well as several CPUs.
  - Threads in a process can share global variable memory. When a global variable is modified in one thread, it affects all threads. Local can also variables can exist in a thread.
- - The handling of threads in an operating system is easier than handling processes. As a result, they're sometimes referred to as lightweight processes.
+ - Handling of threads in an operating system is easier than handling processes. As a result, they're sometimes referred to as lightweight processes.
  - It can be pre-empted (interrupted) hence allowing for high priority processes
  - It can temporarily be put on hold (at times referred to as in sleeping mode) while other threads are running - this is called **yielding**.
 
@@ -150,3 +172,6 @@ We have gained the following insights from this article:
     - The decorator is used once but the function gets timed on and on.
 
 Enjoy timing your threads.
+
+---
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
