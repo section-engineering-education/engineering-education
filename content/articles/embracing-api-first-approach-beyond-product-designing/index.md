@@ -6,7 +6,7 @@ url: /embracing-api-first-approach-beyond-product-designing/
 title: Embracing API-first Approach Beyond Product Designing
 description: This article will take you through the API-first approach and how we can embrace it beyond product designing. We will look at the basics of API-first design and the importance of the API-first approach to developers. 
 author: gideon-pologi
-date: 2021-11-23T00:00:00-10:00
+date: 2021-11-23T00:00:00-10:10
 topics: [API]
 excerpt_separator: <!--more-->
 images:
