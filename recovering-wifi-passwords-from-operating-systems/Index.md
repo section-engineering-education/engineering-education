@@ -1,6 +1,6 @@
-In this generation, [Wi-Fi](https://www.cisco.com/c/en/us/products/wireless/what-is-wifi.html) has become an important thing to many of us. Whenever you go to different places, whether in town, houses, or shops, you will find people using WiFi on their devices. It could be on a smartphone, a desktop computer, a tablet, etc. These devices may be connected to different Wi-Fi networks, which may require a password to connect to them. As time goes by, one may forget the WiFi password of a specific Wi-Fi network that they are interested in.Operating systems such as Windows, MacOS and Linux can save all the Wi-Fi network passwords that have previously been connected to your device.
+In this generation, [Wi-Fi](https://www.cisco.com/c/en/us/products/wireless/what-is-wifi.html) has become an important thing to many of us. Whenever you go to different places, whether in town, houses, or shops, you will find people using WiFi on their devices. It could be on a smartphone, a desktop computer, a tablet, etc. These devices may be connected to different Wi-Fi networks, which may require a password to connect to them. As time goes by, one may forget the WiFi password of a specific Wi-Fi network that they are interested in. Operating systems such as Windows, macOS, and Linux can save all the Wi-Fi network passwords that have previously been connected to your device.
 
-In these three Operating systems, Wi-Fi passwords from saved Wi-Fi networks are hidden from the user. Unlike mobile operating systems like Android,( Windows, MacOS and Linux) have terminals that can be used to acquire the Wi-Fi passwords that are saved in the device. You'll be required to write some simple commands on the respective terminals to recover these saved passwords. In this article, I'll take you through the steps to reсоver Wi-Fi раsswоrds that are saved in your device, and I'll also give you the commands to use them. This will enable users to view the passwords to connect other devices to the same Wi-Fi networks.
+In these three Operating systems, Wi-Fi passwords from saved Wi-Fi networks are hidden from the user. Unlike mobile operating systems like Android, Desktop operating systems like Windows, macOS and Linux have terminals that can be used to acquire the Wi-Fi passwords that are saved in the device. You'll be required to write some simple commands on the respective terminals to recover these saved passwords. In this article, I'll take you through the steps to reсоver Wi-Fi раsswоrds that are saved in your device, and I'll also give you the commands to use them. This will enable users to view the passwords to connect other devices to the same Wi-Fi networks.
 
 ### Table of Contents
 
@@ -26,7 +26,7 @@ To know more about **CMD** [click here](https://en.wikipedia.org/wiki/Cmd.exe).
 
 A shell is a user interface that provides access to a variety of application services. The shell can be based on the command line, or it can include a graphical interface (GUI).
 
-***Windows PowerShell*** is a shell originally developed by Microsoft for user use and suspension management. PowerShell is an open-source project and can be installed on macOS, windows, and Linux Operating Systems. This Shell is based on the .NET framework and incorporates a command-line shell and writing language.
+***Windows PowerShell*** is a shell originally developed by Microsoft for user use and suspension management. PowerShell is an open-source project and can be installed on macOS, Windows, and Linux Operating Systems. This Shell is based on the .NET framework and incorporates a command-line shell and writing language.
 
 For more about PowerShell [Click here](https://en.wikipedia.org/wiki/PowerShell)
 
@@ -71,6 +71,7 @@ Other operating systems such as Mac and Linux have various ways of uncovering Wi
 In Mac OS, we can find WiFi passwords for saved WiFi networks by using the ***terminal***. 
 
 Step 1:
+
 You'll have to open the terminal then type and run this command; `security find-generic-password -wa "wifiname"` substituting "wifiname" with the name of your WiFi network.
 
 ![Terminal](/engineering-education/recovering-WiFi-passwords-from-operating-systems/Terminal.jpg)
@@ -82,9 +83,10 @@ You'll have to open the terminal then type and run this command; `security find-
 > *image showing how to write the step 1 command*
 
 Step 2:
- You'll then be required to fill in your admin credentials and thereafter your password will be displayed in your terminal console.
 
- ![Security confirmation](/engineering-education/recovering-WiFi-passwords-from-operating-systems/fade.jpg)
+You'll then be required to fill in your admin credentials and thereafter your password will be displayed in your terminal console.
+
+![Security confirmation](/engineering-education/recovering-WiFi-passwords-from-operating-systems/fade.jpg)
 
 > *Enter your security credentials as shown*
 
@@ -95,17 +97,21 @@ Step 2:
 [Click here](https://en.wikipedia.org/wiki/MacOS) to know more about **MacOS** 
 
 ### Linux
+
 In Linux OS, WiFi passwords of saved networks can be acquired by running this command in the command line `sudo grep psk= /etc/NetworkManager/system-connections/*` this will show you the list of the WiFi networks and their passwords.
 
 [Click here](https://www.linux.com/what-is-linux/) to for more information about **Linux**
 
-### ***Conclusion***
+### Conclusion
+
 People can be forgetful, but from now on, you don't have to worry about remembering your Wi-Fi passwords. You'll be able to recover your Wi-Fi password in your password from any Windows/Mac/Linux operating system.
 
 These operating systems have other different commands that may be useful to your tech-life
 
-To get to know more about commands in ;
+Refer to the below articles to learn more about commands in:
+
 - Windows CMD [click here](https://www.thomas-krenn.com/en/wiki/Cmd_commands_under_Windows)
+- Windows powershell [click here](https://devblogs.microsoft.com/scripting/table-of-basic-powershell-commands/)
 - MacOS Terminal [click here](https://www.techrepublic.com/article/macos-terminal-commands-every-mac-user-should-know/)
 - Ubuntu Linux [click here](https://www.dell.com/support/kbdoc/en-us/000123974/introduction-to-basic-troubleshooting-commands-within-ubuntu-linux)
-- windows powershell [click here](https://devblogs.microsoft.com/scripting/table-of-basic-powershell-commands/)
+
