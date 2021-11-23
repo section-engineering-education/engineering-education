@@ -275,7 +275,7 @@ What do you want to call this environment (default 'dev'): dev
 ```
 
 Flowing from this instruction, select an environment name. In this project, we used the default name, '*dev'.*
-![Zappa initalisation](/engineering-education/deploying-a-serverless-django-restapi-with-zappa-on-aws/zappainit.jpg)
+![Zappa initalisation](/engineering-education/deploying-a-serverless-django-restapi-with-zappa-on-aws/zappainit.PNG)
 
 ```python
 It looks like this is a Django application!
