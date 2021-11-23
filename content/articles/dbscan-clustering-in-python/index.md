@@ -24,7 +24,7 @@ After the DBSCAN clustering is complete, we end up with three types of data poin
 
 The next thing is to look at the algorithmic steps involved in DBSCAN.
 
-### DBSCAN Algorithm 
+### DBSCAN algorithm 
 The following are the DBSCAN clustering algorithmic steps;
 
 - **Step 1:** Initially, the algorithms start by selecting a point (x) randomly from the data set and finding all the neighbor points within *Eps* from it. If the number of *Eps-neighbours* is greater than or equal to **MinPoints**, we consider x a core point. Then, with its *Eps-neighbours*, x forms the first cluster. 
@@ -37,11 +37,11 @@ After creating the first cluster, we examine all its member points and find thei
   
 - **Step 4:** Iterate through all unattended points in the dataset and assign them to the nearest cluster at *Eps* distance from themselves. Those points which belong to no cluster set them to the noise.
 
-### Python Implementation of DBSCAN
+### Python iplementation of DBSCAN
 As usual to any implementation, we get started with fetching the dataset and preparing it ready for our model implementation. However, first, let us download this data  [here](https://github.com/Daniel695/datasets/blob/main/Mall_Customers.csv).
 
 ### Data Preprocessing
-#### importing the required libraries
+#### Importing the required libraries
 Let us begin by importing the required libraries for implementation on the algorithm.
 
 ```python
@@ -52,10 +52,11 @@ import pandas as pd
 data = pd.read_csv("/content/drive/MyDrive/Mall_Customers.csv")
 ```
 
-#### Data Exploratory Analysis 
+#### Data exploratory analysis 
+This is the process of investigating the available data and determining inconsistencies in patterns and other anomalies with the help of graphical representations and statistical summaries.
 
 - Checking the head of the data.
-- 
+
 ```python
 data.head()
 ```
@@ -97,7 +98,7 @@ x = data.loc[:, ['Annual Income (k$)',
 
 ```
 
-- let us check the shape of x
+- Let us check the shape of x
   
 ```python
 print(x.shape)
