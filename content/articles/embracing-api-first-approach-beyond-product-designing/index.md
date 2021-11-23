@@ -44,13 +44,17 @@ The API-first strategy concentrates time and resources on API development before
 With an API-first approach, you are sure to optimize your total development time and achieve agility even where the APIs fail to cover all the system's features. When you generate an initial API for an APP, you also speed up the initial iterations in the interface development process. Once you have defined the initial API, you can better enhance and expand it while adding new features. In addition, such an intuitive interface allows working with multiple data sources.
 
 #### Consistency
-We live in a multi-screen world that expects developers to deliver applications that perform consistently across all platforms and devices. You achieve this by building a single app on top of an API layer to serve multiple applications hosted on different platforms. While this is not usually a straightforward process, using an API-first strategy makes it a lot easier. An app built this way delivers efficiency with high-end cross-compatibility. In addition, the process of updating and maintaining apps across all platforms, whether web-based or native on mobile and non-mobile platforms, becomes more manageable.
+We live in a multi-screen world that expects developers to deliver applications that perform consistently across all platforms and devices. You achieve this by building a single app on top of an API layer to serve multiple applications hosted on different platforms. 
+
+While this is not usually a straightforward process, using an API-first strategy makes it a lot easier. An app built this way delivers efficiency with high-end cross-compatibility. In addition, the process of updating and maintaining apps across all platforms, whether web-based or native on mobile and non-mobile platforms, becomes more manageable.
 
 #### Future-proofing the product
 By now, you already know that APIs are adaptable and reusable. This is important when upgrading the API with new features and services. You do not need to restructure the entire product, thus retaining the original functionality, accommodating future demands and innovations, and reducing the risk of failure.
 
 #### Highly available, fault-tolerant systems
-Microservices architectures are familiar to developers. However, they provide a different software development approach with integration technologies, API management, and deployment technologies. This enables developers to create highly available, fault-tolerant systems. With API first, it is easier to carry out orchestration strategies, including load-balancing incoming requests, achieving redundancy of crucial elements, and automating the deployment of microservices. In addition, system redundancy and fail-safes such as [circuit breaker design patterns](https://en.wikipedia.org/wiki/Circuit_breaker_design_pattern) ensure the continuation of system operations when a microservice fails.
+Microservices architectures are familiar to developers. However, they provide a different software development approach with integration technologies, API management, and deployment technologies. This enables developers to create highly available, fault-tolerant systems. 
+
+With API first, it is easier to carry out orchestration strategies, including load-balancing incoming requests, achieving redundancy of crucial elements, and automating the deployment of microservices. In addition, system redundancy and fail-safes such as [circuit breaker design patterns](https://en.wikipedia.org/wiki/Circuit_breaker_design_pattern) ensure the continuation of system operations when a microservice fails.
 
 ### Why do developers need an API-first approach?
 More and more developers are joining their peers in applying an API-first approach to other use cases beyond building products. For example, they are using an API-first approach to automate processes. An API-first approach brings value to developers in the following ways.
