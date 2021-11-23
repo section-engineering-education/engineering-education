@@ -1,3 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-create-and-run-a-dot-net-unit-testing-project/
+title: How to create and run a .Net Unit Testing Project
+description: This tutorial will help the readers understand about Unit Testing and how to create a project with unit testing un .NET.
+author: gitau-kimani
+date: 2021-01-14T00:00:00-11:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/how-to-create-and-run-a-dot-net-unit-testing-project/hero.jpg
+    alt: How to create and run a .Net Unit Testing Project Image
+---
 Any application must undergo some form of testing. A unit test is utilized when testing a unit of the application. A unit is a portion of code that can be separated logically in a system.
 
 We will use Visual Studio to test ASP.Net apps. It's also used to run an ASP.Net application's test code. It becomes much easier to check for faults in an ASP.Net application this way. The testing module in Visual Studio provides the built-in capability. A test for an ASP.Net project is run right immediately.
