@@ -138,6 +138,9 @@ results = model(img)
 
 results.pandas().xyxy[0]
 ```
+
+To see the results of the code above, feel free to access it on [GitHub.](https://github.com/FREDERICO23/object-detection)
+
 ### Model training 
 
 Since the COCO dataset is automatically downloaded from [YOLOv5 latest releases](https://github.com/ultralytics/yolov5/releases), we will proceed to train our model.
@@ -171,6 +174,9 @@ python val.py --weights yolov5x.pt --data coco.yaml --img 640 --iou 0.65 --half
 
 The model's evaluation results will be saved to directory `runs/val/exp`.
 
+Below is an example of our output:
+
+![evaluation](/engineering-education/building-an-object-detection-model-with-yolov5-and-pytorch/evaluation.jpg)
 
 ### Conclusion
 
