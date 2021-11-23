@@ -1,4 +1,3 @@
----
 layout: engineering-education
 status: publish
 published: true
@@ -56,32 +55,6 @@ We need to connect the database to the project and also enable the Postgis exten
 
 ```bash
 \c geodata;
-CREATE EXTENSION postgis;
-\q
-```
-
-We connected to the database using `\c geodata;` while `CREATE EXTENSION postgis;` enables the PostGIS extension, and we quit psql using `\q`.
-
-The next step is to connect our database to the project so let us install Flask, geoalchemy2, flask_sqlalchemy and psycopg2.
-
-```bash
-pip install flask geoalchemy2 flask_sqlalchemy psycopg2
-```
-
-Create a new file `app.py` and type the following code snippet:
-
-```py
-from flask import Flask
-app = Flask(__name__)
-app.config['SECRET_KEY'] = 'Thisissecret!'
-app.config['SQLALCHEMY_DATABASE_URI']='postgresql://postgres:password@localhost/geodata'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-
-
-if __name__ == "__main__":
-    app.run(host="127.0.0.1", port="5000", debug=True)
-```
-
 We created a new Flask instance in the app variable, which we can use in our project. We also created a secret key that should be changed to a secure key.  You can generate a random number using UUID. The last section tells the app to run when the condition __name__ == "__main__" is true.
 
 ```py
