@@ -18,16 +18,52 @@ images:
 Quagga is a popular open source project for providing routing services on the Linux platform. It is made up of several components for various dynamic protocols.
 <!--more-->
 Such as, Open Shortest Path First (OSPF), Routing Information Protocol (RIP), Border Gateway Protocol (BGP), Intermediate System to Intermediate System (IS-IS), and Multiprotocol Label Switching (MPLS). It partially uses the same virtual terminal or CLI (vty/vtysh) for protocol configuration as CISCO/JUNIPER. We will install Quagga routing suite on Ubuntu in this article.
-
+### Objectives
+> By the end of this article you should be able to :
+- Know what is Quagga Linux and its brief history
+- Understand the working of Quagga Linux
+- Know why you should use Quagga linux
+- Supported Platforms by Quagga linux
+- Install Quagga in a Linux Environment
+- Configure the following:
+      1. Zebra daemon
+      2. Ospfd daemon
+      3. Ripd daemon
 ### Table of contents
-- [Introduction](#introduction)
+- [Objectives](#objectives)
+- [Table of contents](#table-of-contents)
+- [A quick history of Quagga and an explanation of what it is](#a-quick-history-of-quagga-and-an-explanation-of-what-it-is)
+- [How does Quagga work?](#how-does-quagga-work)
+- [Who uses Quagga today, and what other open-source alternatives are available?](#who-uses-quagga-today-and-what-other-open-source-alternatives-are-available)
+- [Supported Platforms](#supported-platforms)
 - [Installation](#installation)
 - [Configuration](#configuration)
   - [Zebra daemon](#zebra-daemon)
-  - [Ospfd daemon](#ospfd-daemon)
+- [Ospfd daemon](#ospfd-daemon)
   - [Ripd daemon](#ripd-daemon)
 - [Conclusion](#conclusion)
   - [Further reading](#further-reading)
+### A quick history of Quagga and an explanation of what it is
+Quagga is a GPLv2-licensed open-source routing stack. It's a program that implements IP routing protocols like `RIP`, `RIPng`, `OSPF`, and `ISIS`. I'd want to create a clear separation between a routing stack and a complete router solution. Traffic forwarding and a routing stack are required for a complete router. Only the routing protocols are implemented by Quagga. It may operate on Linux and forward traffic using the regular Linux kernel, or it can connect to a distributed forwarding platform using OpenFlow or another open or proprietary interface. It might also be used just for routing protocols to accept and announce routes using off-the-shelf routers.
+Around ten years ago, Quagga arose from the `Zebra` routing code. `Zebra` is no longer a public project, although it is still available as a commercial solution through `IP Infusion` as `ZebOS`.
+### How does Quagga work?
+A system with Quagga installed acts as a dedicated router. With Quagga, your machine exchanges routing information with other routers using routing protocals. Quagga uses this information to update the kernel routing table so that the right data goes to the place.
+### Who uses Quagga today, and what other open-source alternatives are available?
+Quagga is primarily used in virtual environments, large data centers (cloud providers), and the academic/research community, where an open-source implementation of routing protocols is required as a foundation for experimenting with new standards and ideas.
+Regrettably, the majority of large users use Quagga in secret. They're not going to admit it in public. They use Quagga because it allows them to tailor it to their network's specific needs. `Bird` is the most viable open-source alternative to Quagga as far as viable open-source alternatives go. `Bird` began as a `BGP route-server/reflector` for Internet service providers and exchange points. It has a lot of features that are unique to this environment. `Bird` has evolved into a more generic routing stack in recent years. It has long supported `OSPF`, and `ISIS` is in the works. `Bird` is most commonly used in environments where the system only receives and sends `BGP`. Aside from `Bird`, there's `XORP`, which has a small but active community, as well as the OpenBSD-supported `OpenBGPd` and `OpenOSPFd` projects.
+### Supported Platforms
+Currently Quagga supports `GNU/LINUX` and `BSD`. Porting Quagga to other platforms is too difficult as platform dependent code should most be limited to the `zebra` daemon. Protocal daemons are mostly platform independent. The list of officially supported platforms are listed below. Note that Quagga may run correctly on other platforms, and may run with partial functionality on further platforms.
+- GNU/Linux
+- FreeBSD
+- NetBSD
+- OpenBSD
+Versions of these platforms that are older than around 2 years from the point of their original release may need some work. Similarly, the following platforms may workwith some effort:
+- Solaris
+- Mac OSX
+Also note that, in particular ragarding proprietary platforms,compiler and C library choice will affect Quagga. Only recent versions ofthe following C compilers are well tested:
+- GNU'S GCC
+- LLVM'S clang
+- intel's ICC
 
 ### Installation
 Quagga can be installed from source code, but we'll use the `deb/binary` package in this article. To check the Qugaaga package's dependencies, run the command below:
@@ -51,7 +87,7 @@ Quagga package installation is shown in following figure:
 ![installation2](/engineering-education/learn-how-to-set-up-linux-quagga-routing-suite/installation2.png)
 
 ### Configuration
-Unless a few kernel settings are enabled, linux-based devices do not support packet forwarding by default. Using the commands indicated in the figure below enable packet forwarding for IPv4. Setting will be permanently saved in `/etc/sysctl.conf` file.
+Unless a few kernel settings are enabled, linux-based devices do not support packet forwarding by default. Using the commands indicated in the figure below enable packet forwarding for IPv4. Setting will be permanently saved in `/etc/sysctl.conf` file.
 
 ```shellscript
 $echo "net.ipv4.conf.all.forwarding=1" | sudo tee -a /etc/sysctl.conf
@@ -204,9 +240,7 @@ The Routing Information Protocol (RIP) daemon handles the routing tables of rout
 ![ripd](/engineering-education/learn-how-to-set-up-linux-quagga-routing-suite/ripd.png)
 
 ### Conclusion
-The Quagga routing suite is primarily used to execute dynamic routing on the Linux platform. We learnt how to install, configure, and use the Quagga routing suite in this tutorial.
-
-The Quagga routing allows you to configure routing protocols like OSPF and RIP in a variety of ways. Small and medium businesses can benefit from Quagga-based routing devices (SME).
+The Quagga routing suite is primarily used to execute dynamic routing on the Linux platform. We learnt how to install, configure, and use the Quagga routing suite in this tutorial.The Quagga routing suite allows you to configure routing protocols like `OSPF` and `RIP` in a variety of ways. Small and medium businesses can benefit from Quagga-based routing devices (SME).
 
 #### Further reading
 - [How to set up Squirrelmail on a Linux computer](https://squirrelmail.org/docs/admin/admin-3.html)
