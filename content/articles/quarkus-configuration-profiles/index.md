@@ -527,7 +527,7 @@ System development is a time-taking process involving several changes in setting
 
 In this article, we've discussed and learned what is Quarkus configuration profiles, types of the profiles such as the development, production, testing, and custom; setting them up in Quarkus in `application.properties` file and `YAML` files, and using and testing them in the project.
 
-Have you found what you were looking for? If not, find out more on Quarkus configuration profiles such as system properties, environment variables, MicroProfile configuration files, among many others [here](https://quarkus.io/guides/config-reference).
+Have you found what you were looking for? If not, find out more on Quarkus configuration profiles such as system properties, environment variables, MicroProfile configuration files, among many others [here](https://quarkus.io/guides/config-reference). Want to discover more on Quarkus and its extensions, read more [here](https://www.bookstack.cn/read/quarkus-1.7-en/fdda5b8a1dd02bf6.md).
 
 ### References
 - [Quarkus Hibernate ORM](https://quarkus.io/guides/hibernate-orm)
