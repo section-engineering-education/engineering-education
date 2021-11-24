@@ -1,17 +1,20 @@
-When building a React project, developers need some quick-to-use data sources with endpoints. These data sources provide test data to test whether the package works correctly.
-Datasource mainly used may include DBMS systems such as MySQL, Postgres, SQL, among many others. The problem with this approach is that during prototyping, e.g., in Rapid Prototyping Approach, it will be quickly discarded if the application prototype is not as expected.
+Developers need some quick-to-use data sources with endpoints when building a React project. These data sources provide test data to test whether the package works correctly.
+A [data source](https://docs.microsoft.com/en-us/sql/odbc/reference/data-sources?view=sql-server-ver15) can be said to be the initial location where data is born or a live data feed. It may be a database, flat file, live measurement data from physical devices, among many others.
+Datasource mainly used are databases managed by DBMS(s) such as MySQL, Postgres, SQL, among many others. The problem with this approach is that during prototyping, e.g., in Rapid Prototyping Approach, it will be quickly discarded if the application prototype is not as expected.
+[Rapid Prototyping Approach](https://www.productplan.com/glossary/rapid-prototyping/) is a type of Agile system development methodology that allows one to create a prototype for testing and validation of the requirements in a Requirement Specification Document(RSD).
+This development is through several iterations. The prototype may then be used as a primary system or discarded so that another primary system may be developed based on the prototype.
 The extra setup and configurations will be tedious and useless since they will be quickly discarded.
 
 The process produces a need to create a data source that can be quickly set up and discarded, yet it performs the same functionality as the DBMS.
 It should also be small enough for fewer storage requirements and produce correct and accurate results as expected.
-The use of the Json-Server library can solve such data sources problems.
+The `json-server` library can solve such data sources problems.
 
-The Json-Server library is quick to install, configure, use and discard in a React application.
+The `json-server` library is quick to install, configure, use and discard in a React application.
 This article will learn how to do the following on the package mentioned above in a React app.
 
 ### Table of Contents
 
-- [KeyTakeaways](#keytakeaways)
+- [Key takeaways](#key-takeaways)
 - [Pre-requisites](#pre-requisites)
 - [Learn briefs on the JSON Server package](#learn-briefs-on-the-json-server-package)
 - [Create a React app](#create-a-react-app)
@@ -24,19 +27,24 @@ This article will learn how to do the following on the package mentioned above i
   - [Budget.js file](#budgetjs-file)
   - [AddBudget component](#addbudget-component)
   - [Budgets.js file](#budgetsjs-file)
-- [Allow API data from links](#allow-api-data-from-links)
+- [Get the items from the server](#get-the-items-from-the-server)
 - [Style the application](#style-the-application)
 - [Install JSON Server in the machine](#install-json-server-in-the-machine)
-- [Configure the JSON Server datasource in the project](#configure-the-json-server-datasource-in-the-project)
+- [Configure the JSON Server data source in the project](#configure-the-json-server-data-source-in-the-project)
 - [Run the application](#run-the-application)
+- [More on JSON Server](#more-on-json-server)
+  - [Change port, file and file paths](#change-port-file-and-file-paths)
+  - [Perform Queries on the data](#perform-queries-on-the-data)
+  - [Add delay and change Host](#add-delay-and-change-host)
+- [Conclusion](#conclusion)
 - [References](#references)
 
-### key takeaways
+### Key takeaways
 
 By the end, the following will be learned:
 
-- What is the JSOn-Server library
-- Set up the JSOn-Server library in a React application
+- What is the `json-server` library
+- Set up the `json-server` library in a React application
 - Connect the app to the library
 - Use the library acts as a data source in place of an actual DBMS
 - Removing the dependency from the application and discarding the prototype
@@ -63,20 +71,20 @@ Brief info on what is going to be done in the article is as follows:
 
 ### Learn briefs on the JSON Server package
 
-JSON Server can allow almost all back-end requests and responses. They can be accessed via the GET, POST, PUT, PATCH, and DELETE methods.
-It allows routes to access data items stored in the Mock database file(in JSON format). They may include examples such as `GET    /posts`, `PUT    /posts/1`, or `DELETE /posts/1`.
+JSON Server can allow almost all back-end requests and responses. They can be accessed via the `GET`, `POST`, `PUT`, `PATCH`, and `DELETE` methods.
+It allows routes to access data items stored in the Mock database file(JSON). They may include examples such as `GET/posts`, `PUT/posts/1`, or `DELETE/posts/1`.
 
 The module allows other operations to be done on the database, such as:
 
-- **Filter**: e.g. `GET /posts?title=json-server&author=riro` or `GET /comments?author.name=riro`
-- **Pagination**: e.g. `GET /posts?_page=9&_limit=23`
-- **Sorting**: e.g. `GET /posts/5/comments?_sort=votes,likes&_order=desc,asc`
-- **Slicing**: e.g. `GET /posts/4/comments?_start=20&_limit=10`
-- **Operators**: e.g. for getting range (`_gte`, `lte`), excluding a value(`_ne`), filtering a value(`_like`)
-- **Full-text search**: e.g. `GET /posts?q=tomcat`
-- **Relationships**: e.g., the inclusion of child resources(`_embed`), the inclusion of parent resources(`_expand`), to get or create nested resources
-- **Database**: e.g. `GET \db`
-- **Homepage**: e.g. `GET /`. Using the ' ./public ' path, one can serve the application files in the public folder.
+- **Filter**: e.g. `GET/posts?title=json-server&author=riro` or `GET/comments?author.name=riro`. These requests filters for posts with title of 'json-server' and author name of 'riro' and comments with the author name of 'riro' respectively. An example is a GET request on `http://www.albana.com/posts?title=json-server&author=riro`.
+- **Pagination**: e.g. `GET/posts?_page=9&_limit=23`. This request will fetch posts from page 9, and the page limit is set to 23. An example is a GET request on `http://www.albana.com//posts?_page=9&_limit=23`.
+- **Sorting**: e.g. `GET/posts/5/comments?_sort=votes,likes&_order=desc,asc`. This request does the sorting of the comments by using the votes and likes in an ascending and descending order, respectively. An example is a GET request on `http://www.albana.com/posts/5/comments?_sort=votes,likes&_order=desc,asc`.
+- **Slicing**: e.g. `GET/posts/4/comments?_start=20&_limit=10`. This request truncates the comments after 10 comments starting from comment number 20. An example is a GET request on `http://www.albana.com/posts/1/comments?_start=20&_end=33`.
+- **Operators**: e.g. for getting range (`_gte`, `lte`), excluding a value(`_ne`), filtering a value(`_like`). An example is a GET request on `http://www.albana.com/posts/4/comments?_ne=sad`. It excludes any comment with the value of 'sad' while `http://www.albana.com\author_like=chris` searches for authors with a name related to 'chris' (RegEx is used).
+- **Full-text search**: e.g. `GET/posts?q=tomcat`. This request searches for the value '**tomcat**' in all the records stored. An example is a GET request on `http://www.albana.com/posts?q=tomcat`.
+- **Relationships**: e.g., the inclusion of child resources(`_embed`), the inclusion of parent resources(`_expand`), to get or create nested resources. An example is `http://www.albana.com/comments/1?_expand=post` that includes parent resource by the name 'post'.
+- **Database**: e.g. `GET\db`. This GET request brings up all database items of the specified database. An example is `http://www.albana.com/customers_db`.
+- **Homepage**: e.g. `GET/`. Using the `./public` path, one can serve the application files in the public folder. An example is `http://www.albana.com/`.
 
 More on JSON Server library will also be mentioned in the article.
 
@@ -88,15 +96,13 @@ The app saves and retrieves data from a data source in a JSON object.
 #### New React app
 
 - Open the folder in which the application should be created and run this command:
-
-```shell
+```bash
 npx create-react-app react-budget-tracker
 ```
 
 #### New project structure
 - Create the following application folder structure:
-
-```shell
+```bash
 .
 ├── node_modules
 ├── public
@@ -123,8 +129,8 @@ npx create-react-app react-budget-tracker
 ```
 
 #### Header component
-- In the 'Header.js', copy and paste the code below:
-
+As the name suggests, the `Header.js` file contains the header parts.
+- In the `Header.js`, its code is as shown below:
 ```js
 import PropTypes from 'prop-types'
 import { useLocation } from 'react-router-dom'
@@ -133,20 +139,24 @@ import Button from './Button'
 const Header = ({ title, onAdd, showAdd }) => {
   const location = useLocation()
 
+  /*The header has a title and a button that opens up a window to add the budget or close the window*/
   return (
-    <header className='header'>
-      <h1>{title}</h1>
-      {location.pathname === '/' && (
-        <Button
-          color={showAdd ? 'red' : 'green'}
-          text={showAdd ? 'Close' : 'Add'}
-          onClick={onAdd}
-        />
-      )}
-    </header>
+          <header className='header'>
+
+            <!-- The header has a title -->
+            <h1>{title}</h1>
+            {location.pathname === '/' && (
+                    <Button
+                            color={showAdd ? 'red' : 'green'}
+                            text={showAdd ? 'Close' : 'Add'}
+                            onClick={onAdd}
+                    />
+            )}
+          </header>
   )
 }
 
+/*Set the title*/
 Header.defaultProps = {
   title: 'Budget Tracker',
 }
@@ -155,44 +165,53 @@ Header.propTypes = {
   title: PropTypes.string.isRequired,
 }
 
+/*Export the header*/
 export default Header
 ```
 
-This code creates a simple header for a web page and allows it for use.
+This code creates a simple header for a web page and allows it to be used. It adds the following:
+- A header title
+- A button to open a section to add the budget item or close it
+- Set the button color
+- Set the title value and export the header
 
 #### Footer component
-- In the 'Footer.js' file, the following will be the code:
-
+- In the `Footer.js` file, the following will be the code:
 ```js
 import { Link } from 'react-router-dom'
 
+/*Add a footer to the application*/
 const Footer = () => {
   return (
-    <footer>
-      <p>Copyright &copy; 2021</p>
-      <Link to='/about'>About</Link>
-    </footer>
+            /*It has a copyright and a link to the about page*/
+          <footer>
+            <p>Copyright &copy; 2021</p>
+            <Link to='/about'>About</Link>
+          </footer>
   )
 }
 
 export default Footer
 ```
 
-#### Button component
-- Add a button that is a reusable component for multiple click actions. For example, this button will open the Add form and close the form. The code for the button is as shown below:
+The code generates a footer. The footer has copyright and an about-page link.
 
+#### Button component
+The `Button.js` adds a button that is a reusable component for multiple click actions. For example, this button will open the Add form and close the form.
+- The code for the button is as shown below:
 ```js
 import PropTypes from 'prop-types'
 
+/*A button that allows one to set its color, the text it displays and the function it executes on a click event*/
 const Button = ({ color, text, onClick }) => {
   return (
-    <button
-      onClick={onClick}
-      style={{ backgroundColor: color }}
-      className='btn'
-    >
-      {text}
-    </button>
+          <button
+                  onClick={onClick}
+                  style={{ backgroundColor: color }}
+                  className='btn'
+          >
+            {text}
+          </button>
   )
 }
 
@@ -209,22 +228,27 @@ Button.propTypes = {
 export default Button
 ```
 
+The code generates a button that allows one to set its:
+- color
+- text and
+- the function to be executed when it is clicked
+
 #### About page component
 - Now, add a webpage that may contain other page contents. In this case, an About page. This page's code is shown below:
-
 ```js
 import { Link } from 'react-router-dom'
 
+/*Generates a simple about page that has a simple button to go back to the main page*/
 const About = () => {
   return (
-    <div>
-      <h4>Version 1.0.0</h4>
-      <Link to='/'>
-          <button type="button" className={"btn btn-secondary"}>
-              Go Back
-          </button>
-      </Link>
-    </div>
+          <div>
+            <h4>Version 1.0.0</h4>
+            <Link to='/'>
+              <button type="button" className={"btn btn-secondary"}>
+                Go Back
+              </button>
+            </Link>
+          </div>
   )
 }
 
@@ -234,26 +258,32 @@ export default About
 It contains a button to go back to the previous page.
 
 #### Budget.js file
-- In the 'Budget.js' file, the following will be its code:
-
+The `Budget.js` file enables one to interact with a particular budget item in the server displayed on the screen. One can delete a budget or toggle its reminder state.
+- In the `Budget.js` file, the following will be its code:
 ```js
 import { FaTimes } from 'react-icons/fa'
 
+/*This will enable one to set the reminder to the budget on or off when double clicked on; and also to delete the budget*/
 const Budget = ({ budget, onDelete, onToggle }) => {
   return (
-    <div
-      className={`budget ${budget.reminder && 'reminder'}`}
-      onDoubleClick={() => onToggle(budget.id)}
-    >
-      <h3>
-        {budget.name}{' '}
-        <FaTimes
-          style={{ color: 'red', cursor: 'pointer' }}
-          onClick={() => onDelete(budget.id)}
-        />
-      </h3>
-      <p>{budget.amount}</p>
-    </div>
+          <!-- Toggle the budget reminder on or off when double on double click -->
+          <div
+                  className={`budget ${budget.reminder && 'reminder'}`}
+                  onDoubleClick={() => onToggle(budget.id)}
+          >
+            <h3>
+              <!-- Display the budget name -->
+              {budget.name}{' '}
+              <FaTimes
+                      /*Delete the budget when clicked*/
+                      style={{ color: 'red', cursor: 'pointer' }}
+                      onClick={() => onDelete(budget.id)}
+              />
+            </h3>
+
+            <!-- Display the budget Amount -->
+            <p>{budget.amount}</p>
+          </div>
   )
 }
 
@@ -261,13 +291,12 @@ export default Budget
 ```
 
 - It does the following:
-
   - It toggles from reminder states (on, off) when double-clicked on
   - It displays the item and the amount
 
 #### AddBudget component
-- In the 'AddBudget.js' file, copy-paste the following:
-
+The `AddBudget.js` file allows one to add budgets to the system. The budgets will then immediately be updated in the system hence visible.
+- In the `AddBudget.js` file, the following is its code:
 ```js
 import { useState } from 'react'
 
@@ -279,11 +308,13 @@ const AddBudget = ({ onAdd }) => {
   const onSubmit = (e) => {
     e.preventDefault()
 
+    /*Ensure that the name input is never null*/
     if (!name) {
       alert('Please add a budget')
       return
     }
 
+    /*When adding the budget, store the name, amount and the reminder status*/
     onAdd({ name: name, amount: amount, reminder })
 
     setName('')
@@ -291,38 +322,43 @@ const AddBudget = ({ onAdd }) => {
     setReminder(false)
   }
 
+  /*Display a form that allows one to enter the budget values*/
   return (
-    <form className='add-form' onSubmit={onSubmit}>
-      <div className='form-control'>
-        <label>Budget</label>
-        <input
-          type='text'
-          placeholder='Add Budget'
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-      </div>
-      <div className='form-control'>
-        <label>Amount</label>
-        <input
-          type='text'
-          placeholder='Amount'
-          value={amount}
-          onChange={(e) => setAmount(e.target.value)}
-        />
-      </div>
-      <div className='form-control form-control-check'>
-        <label>Set Reminder</label>
-        <input
-          type='checkbox'
-          checked={reminder}
-          value={reminder}
-          onChange={(e) => setReminder(e.currentTarget.checked)}
-        />
-      </div>
+          <form className='add-form' onSubmit={onSubmit}>
+            <div className='form-control'>
+              <label>Budget</label>
+              <input
+                      type='text'
+                      placeholder='Add Budget'
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+              />
+            </div>
 
-      <input type='submit' value='Save Budget' className='btn btn-block' />
-    </form>
+            <!--  Take in the amount -->
+            <div className='form-control'>
+              <label>Amount</label>
+              <input
+                      type='text'
+                      placeholder='Amount'
+                      value={amount}
+                      onChange={(e) => setAmount(e.target.value)}
+              />
+            </div>
+            
+            <!-- Take in the reminder status -->
+            <div className='form-control form-control-check'>
+              <label>Set Reminder</label>
+              <input
+                      type='checkbox'
+                      checked={reminder}
+                      value={reminder}
+                      onChange={(e) => setReminder(e.currentTarget.checked)}
+              />
+            </div>
+
+            <input type='submit' value='Save Budget' className='btn btn-block' />
+          </form>
   )
 }
 
@@ -336,67 +372,23 @@ export default AddBudget
   - The application will then reload automatically on the added list
 
 #### Budgets.js file
-- In the 'Budgets.js' file, the following will be the code:
-
+- In the `Budgets.js` file, the following will be the code:
 ```js
-import { useState } from 'react'
+import Budget from './Budget'
 
-const AddBudget = ({ onAdd }) => {
-  const [name, setName] = useState('')
-  const [amount, setAmount] = useState('')
-  const [reminder, setReminder] = useState(false)
-
-  const onSubmit = (e) => {
-    e.preventDefault()
-
-    if (!name) {
-      alert('Please add a budget')
-      return
-    }
-
-    onAdd({ name: name, amount: amount, reminder })
-
-    setName('')
-    setAmount('')
-    setReminder(false)
-  }
-
+/*Displays all the budgets fetched from the URL to the screen*/
+const Budgets = ({ budgets, onDelete, onToggle }) => {
+  /*Maps each budget per the budget's key*/
   return (
-    <form className='add-form' onSubmit={onSubmit}>
-      <div className='form-control'>
-        <label>Budget</label>
-        <input
-          type='text'
-          placeholder='Add Budget'
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-      </div>
-      <div className='form-control'>
-        <label>Amount</label>
-        <input
-          type='text'
-          placeholder='Amount'
-          value={amount}
-          onChange={(e) => setAmount(e.target.value)}
-        />
-      </div>
-      <div className='form-control form-control-check'>
-        <label>Set Reminder</label>
-        <input
-          type='checkbox'
-          checked={reminder}
-          value={reminder}
-          onChange={(e) => setReminder(e.currentTarget.checked)}
-        />
-      </div>
-
-      <input type='submit' value='Save Budget' className='btn btn-block' />
-    </form>
+          <>
+            {budgets.map((budget, index) => (
+                    <Budget key={index} budget={budget} onDelete={onDelete} onToggle={onToggle} />
+            ))}
+          </>
   )
 }
 
-export default AddBudget
+export default Budgets
 ```
 
 The code will allow the application to do the following:
@@ -405,10 +397,11 @@ The code will allow the application to do the following:
 - Allow deletion of the items in the list. It deletes the items even in the data source.
 - It allows one to use the toggle function to set the reminder on or off.
 
-### Allow API data from links
-- Now, once done with components, do this to the 'App.js' file:
-
+### Get the items from the server
+This step is accomplished in the `App.js` file. It specifies how the app interacts with the server and what happens to the data fetched.
+- Now, once done with components, do this to the `App.js` file:
 ```js
+/*Import the other components for the application*/
 import {useEffect, useState} from 'react'
 import {BrowserRouter as Router, Route} from 'react-router-dom'
 import Header from './components/Header'
@@ -418,259 +411,151 @@ import AddBudget from './components/AddBudget'
 import About from './components/About'
 
 const App = () => {
-    const [showAddBudget, setShowAddBudget] = useState(false)
-    const [budgets, setBudgets] = useState([])
+  const [showAddBudget, setShowAddBudget] = useState(false)
+  const [budgets, setBudgets] = useState([])
 
-    useEffect(() => {
-        const getBudgets = async () => {
-            const budgetsFromServer = await fetchBudgets()
-            setBudgets(budgetsFromServer)
-        }
-
-        getBudgets()
-    }, [])
-
-    // Fetch Budgets
-    const fetchBudgets = async () => {
-        const res = await fetch('http://localhost:5000/budgets')
-        const data = await res.json()
-
-        return data
+  useEffect(() => {
+      /*Make the app fetch the items assynchronously*/
+    const getBudgets = async () => {
+      const budgetsFromServer = await fetchBudgets()
+      setBudgets(budgetsFromServer)
     }
 
-    // Fetch Budgets
-    const fetchBudget = async (id) => {
-        const res = await fetch(`http://localhost:5000/budgets/${id}`)
-        const data = await res.json()
+    getBudgets()
+  }, [])
+```
 
-        return data
-    }
+The code imports the needed modules and allows the data items to be fetched asynchronously from the server.
 
-    // Add Budget
-    const addBudget = async (budget) => {
-        const res = await fetch('http://localhost:5000/budgets', {
-            method: 'POST',
-            headers: {
-                'Content-type': 'application/json',
-            },
-            body: JSON.stringify(budget),
-        })
+- Add the code below under the previous one:
+```js
+  // Fetch Budgets
+  const fetchBudgets = async () => {
+    const res = await fetch('http://localhost:5000/budgets')
+    const data = await res.json()
 
-        const data = await res.json()
+    return data
+  }
 
-        setBudgets([...budgets, data])
-    }
+  // Fetch Budgets
+  const fetchBudget = async (id) => {
+    const res = await fetch(`http://localhost:5000/budgets/${id}`)
+    const data = await res.json()
 
-    // Delete Budget
-    const deleteBudget = async (id) => {
-        const res = await fetch(`http://localhost:5000/budgets/${id}`, {
-            method: 'DELETE',
-        })
-        //We should control the response status to decide if we will change the state or not.
-        res.status === 200
+    return data
+  }
+
+  // Add Budget
+  const addBudget = async (budget) => {
+    const res = await fetch('http://localhost:5000/budgets', {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json',
+      },
+      body: JSON.stringify(budget),
+    })
+
+    const data = await res.json()
+
+    setBudgets([...budgets, data])
+  }
+
+  // Delete Budget
+  const deleteBudget = async (id) => {
+    const res = await fetch(`http://localhost:5000/budgets/${id}`, {
+      method: 'DELETE',
+    })
+    //We should control the response status to decide if we will change the state or not.
+    res.status === 200
             ? setBudgets(budgets.filter((budget) => budget.id !== id))
             : alert('Error Deleting This Budget')
-    }
+  }
 
-    // Toggle Reminder
-    const toggleReminder = async (id) => {
-        const budgetToToggle = await fetchBudget(id)
-        const updateBudget = {...budgetToToggle, reminder: !budgetToToggle.reminder}
+  // Toggle Reminder
+  const toggleReminder = async (id) => {
+    const budgetToToggle = await fetchBudget(id)
+    const updateBudget = {...budgetToToggle, reminder: !budgetToToggle.reminder}
 
-        const res = await fetch(`http://localhost:5000/budgets/${id}`, {
-            method: 'PUT',
-            headers: {
-                'Content-type': 'application/json',
-            },
-            body: JSON.stringify(updateBudget),
-        })
+    const res = await fetch(`http://localhost:5000/budgets/${id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-type': 'application/json',
+      },
+      body: JSON.stringify(updateBudget),
+    })
 
-        const data = await res.json()
+    const data = await res.json()
 
-        setBudgets(
+    setBudgets(
             budgets.map((budget) =>
-                budget.id === id ? {...budget, reminder: data.reminder} : budget
+                    budget.id === id ? {...budget, reminder: data.reminder} : budget
             )
-        )
-    }
-
-    return (
-        <Router>
-            <div className='container'>
-                <Header
-                    onAdd={() => setShowAddBudget(!showAddBudget)}
-                    showAdd={showAddBudget}
-                />
-                <Route
-                    path='/'
-                    exact
-                    render={(props) => (
-                        <>
-                            {showAddBudget && <AddBudget onAdd={addBudget}/>}
-                            {budgets.length > 0 ? (
-                                <Budgets
-                                    budgets={budgets}
-                                    onDelete={deleteBudget}
-                                    onToggle={toggleReminder}
-                                />
-                            ) : (
-                                'No Budgets To Show'
-                            )}
-                        </>
-                    )}
-                />
-                <Route path='/about' component={About}/>
-                <Footer/>
-            </div>
-        </Router>
     )
+  }
+```
+
+The code specifies the URLs in which one can:
+- Add a new budget
+- Delete a budget
+- Fetch budgets
+- Toggle the reminder status
+
+
+- Now add a return together with an export statement as shown below:
+```js
+/*Dispaly all the budgets fetched, otherwise display that there are no budgets to show*/
+return (
+          <Router>
+            <div className='container'>
+              <Header
+                      onAdd={() => setShowAddBudget(!showAddBudget)}
+                      showAdd={showAddBudget}
+              />
+              <Route
+                      path='/'
+                      exact
+                      render={(props) => (
+                              <>
+                                {showAddBudget && <AddBudget onAdd={addBudget}/>}
+                                {budgets.length > 0 ? (
+                                        <Budgets
+                                                budgets={budgets}
+                                                onDelete={deleteBudget}
+                                                onToggle={toggleReminder}
+                                        />
+                                ) : (
+                                        'No Budgets To Show'
+                                )}
+                              </>
+                      )}
+              />
+              <Route path='/about' component={About}/>
+              <Footer/>
+            </div>
+          </Router>
+  )
 }
 
 export default App
 ```
 
-- This code shown above does the following: 
+- This code shown above does the following:
   - Fetches the items from the specified URL and displays them
   - Adds items to the list
   - Deletes the items in the data source
   - Toggles the item reminder (on, off) states
+- If the app finds no data on the server, it will display that no budget is found; otherwise, it displays all other budgets.
+- The code also contains the footer and the about page link.
 
 ### Style the application
-- Finally, do some styling to the application. The styling code that is found in the 'index.css' file:
-
-```css
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
-
-:root {
-  --primary-color: #4d91d1;
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: 'Poppins', sans-serif;
-}
-
-.container {
-  max-width: 500px;
-  margin: 30px auto;
-  overflow: auto;
-  min-height: 300px;
-  border: 1px solid steelblue;
-  padding: 30px;
-  border-radius: 5px;
-}
-
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-  color: var(--primary-color);
-}
-
-.btn {
-  display: inline-block;
-  background: var(--primary-color);
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  margin: 5px;
-  border-radius: 5px;
-  cursor: pointer;
-  text-decoration: none;
-  font-size: 15px;
-  font-family: inherit;
-}
-
-.btn:focus {
-  outline: none;
-}
-
-.btn:active {
-  transform: scale(0.98);
-}
-
-.btn-block {
-  display: block;
-  width: 100%;
-}
-
-.budget {
-  background: #f4f4f4;
-  margin: 5px;
-  padding: 10px 20px;
-  cursor: pointer;
-}
-
-.budget.reminder {
-  border-left: 5px solid green;
-}
-
-.budget h3 {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.budget p {
-  color: #a2a2a2;
-}
-
-.add-form {
-  margin-bottom: 40px;
-}
-
-.form-control {
-  margin: 20px 0;
-}
-
-.form-control label {
-  display: block;
-}
-
-.form-control input {
-  width: 100%;
-  height: 40px;
-  margin: 5px;
-  padding: 3px 7px;
-  font-size: 17px;
-}
-
-.form-control-check {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.form-control-check label {
-  flex: 1;
-}
-
-.form-control-check input {
-  flex: 2;
-  height: 20px;
-}
-
-footer {
-  margin-top: 30px;
-  text-align: center;
-}
-```
-
+- Finally, do some styling to the application. The styling code is found on this link. Download it and save it in the `src` folder.
 - Make sure to run the command below to install all necessary packages before running the application using the command below:
-
-```shell
+```bash
 npm install
 ```
 
 - Run the created application using the following command:
-
-```shell
+```bash
 npm run start
 ```
 
@@ -683,16 +568,14 @@ The application will look as shown below:
 ### Install JSON Server in the machine
 
 JSON server can be installed by running the command below:
-
-```shell
+```bash
 npm install -g json-server
 ```
 
 The command installs the package at global scope.
 
-Once installed, head over to the 'package.json' file and add a script that quickly runs the server.
+Once installed, head over to the `package.json` file and add a script that quickly runs the server.
 In the scripts section, add the following line of code:
-
 ```json
 "server": "json-server --watch db.json --port 5000"
 ```
@@ -702,11 +585,10 @@ It will be accessed via port `5000` as seen above and in the 'App.js' file.
 
 ### Configure the JSON Server data source in the project
 
-In the 'db.json' file, the server serves requests under the `http://localhost:5000/budgets/` URL.
+In the `db.json` file, the server serves requests under the `http://localhost:5000/budgets/` URL.
 The data items are under the budgets section.
 
-- Copy-paste the code below into the 'db.json' file:
-
+- Copy-paste the code below into the `db.json` file:
 ```json
 {
   "budgets": [
@@ -751,14 +633,12 @@ It contains five items under the budgets section. These are the Carrots, Laundry
 Test the JSON Server by doing the following:
 
 - Run the main React application in one terminal by using:
-
-```shell
+```bash
 npm run start
 ```
 
 - In another terminal, run the server using:
-
-```shell
+```bash
 npm run server
 ```
 
@@ -775,15 +655,13 @@ Let us look more at the module:
 
 #### Change port, file and file paths
 
-- The filename and port where the Server runs can be changed, for instance, to `database.json` on port `3010` by running the command below on the terminal:
-
-```shell
+- The filename and port where the Server runs can be changed to `database.json` on port `3010` by running the command below on the terminal:
+```bash
 json-server --watch database.json --port 3010
 ```
 
 - Static files located in different folders can also be served as shown below:
-
-```shell
+```bash
 json-server database.json --static ./public/database
 ```
 
@@ -792,8 +670,7 @@ json-server database.json --static ./public/database
 This action may be helpful to, for example, when searching using the search bar in the application window. Follow the steps below:
 
 - Query the database for a particular value by running the following in a new terminal:
-
-```shell
+```bash
 curl  http://localhost:5000/budgets?q=Carrots
 ```
 
@@ -810,8 +687,7 @@ The module allows middlewares, random data generation, accessing the data source
 - Adding some delays (in milliseconds) to the server to replicate a real server, use the `-d` or `--delay` option.
 
 Both of these two are shown below:
-
-```shell
+```bash
 json-server --watch db.json --port 5000 -H 127.0.0.1 -d 1500
 ```
 
@@ -831,6 +707,8 @@ At this point, the following have been covered:
 - Importance of JSON Server module in project development phase
 - Adding JSON Server module to a React project
 - Configuring JSON Server module
+
+Have you gotten hold of what you were searching for? If not, read more in the documentation found [here](https://www.npmjs.com/package/json-server).
 
 ### References
 
