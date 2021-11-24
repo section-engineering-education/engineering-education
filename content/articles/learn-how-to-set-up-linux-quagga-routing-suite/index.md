@@ -234,7 +234,7 @@ Zebra, ospfd and ripd can be configured using vtysh.
 
 ![available-daemons](/engineering-education/learn-how-to-set-up-linux-quagga-routing-suite/available-daemons-in-vtysh.png)
 
-Daemons configuration using telnet command is shown below.
+Now, let us look at daemon configurations using telnet commands.
 
 #### Zebra daemon
 The Quagga architecture is made up of a core daemon called `Zebra`. Zebra functions as an abstraction layer for the underlying Unix kernel and exposes the `Zserv` API to Quagga clients through a `Unix` or `TCP` stream. These Zserv clients are usually responsible for implementing a routing protocol and communicating routing updates to the zebra daemon.
