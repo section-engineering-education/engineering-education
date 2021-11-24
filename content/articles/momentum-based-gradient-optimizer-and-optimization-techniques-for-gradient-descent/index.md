@@ -55,7 +55,7 @@ Get next
 &theta;p    
 v<sub>&theta;</sub> = &beta;v<sub>&theta;</sub> + (1 - &beta;)&theta;<sub>p</sub>
 
-v<sub>&theta;</sub> is averaged across its preceding 1/(1 - &beta;)&theta;<sub>p</sub> iterations, giving a value of v<sub>&theta;</sub>. With the help of averages, you can eliminate all the randomness and merely keep track of the overall trend. As a result of this method, the algorithm is more resistant to sample noise and can be trained more quickly.
+*v<sub>&theta;</sub>* is averaged across its preceding *1/(1 - &beta;)&theta;<sub>p</sub>* iterations, giving a value of *v<sub>&theta;</sub>*. With the help of averages, you can eliminate all the randomness and merely keep track of the overall trend. As a result of this method, the algorithm is more resistant to sample noise and can be trained more quickly.
 ### How does momentum help in gradient descent
 This method works by detecting the direction of the steepest slope in its present state and then traveling in the direction of that sharpest slope to update its status.
 
