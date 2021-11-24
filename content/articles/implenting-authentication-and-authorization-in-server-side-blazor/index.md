@@ -40,7 +40,6 @@ On the next screen, where you are required to configure your new project, enter 
 On the next screen, choose `.NET Core 3.1 (Long-term support)` as your target framework and click on `Create`.
 
 ![Target framework](/engineering-education/creating-a-blazor-server-side-application-using-aspdotnet-core-to-perform-crud-operations/framework.jpg)
-
 ### The user interface
 This is the layer that the user interacts with. It enables users to register, log in, recover passwords, and manage user profiles.
 
