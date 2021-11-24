@@ -39,7 +39,7 @@ A linked list and an array differ in various ways that are listed below:
 There are many different ways to create a generic linked list because they can carry any form of data. Implementation of linked lists that may store any data type is known as a generic linked list. Integers are stored in one linked list, while floats are stored in the other.
 
 #### Primary linked list member functions
-These are functions that can be performed on a linked list:
+These are the functions that can be performed on a linked list:
 - `Sort` - Sorts the linked list's nodes.
 - `Search` - Chooses one of the related nodes and clicks on it.
 - `Deletion` - Gets rid of everything that's already there.
@@ -188,12 +188,15 @@ class list<T> {
 }}
 ```
 Go ahead and run the code [here](https://replit.com/@Calvin49/2Implementing-a-Generic-Singly-linked-list-Data-Structure-in)
-OUTPUT
+
+Output:
+
 ```bash
  javac -classpath .:/run_dir/junit-4.12.jar:target/dependency/* -d . Main.java
  java -classpath .:/run_dir/junit-4.12.jar:target/dependency/* Main
 >
 ```
+
 > For the sake of simplicity, we use a dummy node to represent the prior one in singly-linked lists since going backwards is impossible. 
 
 To represent the node before the current one, we create a dummy node. Because there isn't a previous node for the head node, then it's assigned the value null. 
@@ -273,6 +276,7 @@ public class Cal {
 	}
 }
 ```
+
 Go ahead and run the code [here](https://replit.com/@Calvin49/Implementing-a-Generic-Singly-linked-list-Data-Structure-in)
 
 Output:
@@ -297,7 +301,7 @@ Clearing list3 :
 {  }
 ```
 
-This brings us to the end of article on utilizing Generics to build a linked list in Java. A circular linked list or a double linked list in Java may be implemented as a follow-up question, depending on the interviewer's taste. As an alternative, you can use them as a coding exercise to improve your skills.
+This brings us to the end of our article on utilizing Generics to build a linked list in Java. A circular linked list or a double linked list in Java may be implemented as a follow-up question, depending on the interviewer's taste. As an alternative, you can use them as a coding exercise to improve your skills.
 
 For an interviewer, implementing various linked list methods such as inserting and deleting nodes from the beginning, middle, and end of a linked list is of interest. As well as sorting and finding elements inside an array of linked lists.
 
