@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /building-excel-spreadsheets-using-python/
 title: Building Excel Spreadsheets Using Python
-description: This tutorial will guide the reader on how to create and work with Excel spreadsheets using Python. We will explore more about Python libraries OpenPyxl and XlsxWriter.
+description: This tutorial will guide the reader on creating and working with Excel spreadsheets using Python. We will explore more about Python libraries OpenPyxl and XlsxWriter.
 author: benedict-ifeanyi-iheagwara
-date: 2021-11-07T00:00:00-19:00
+date: 2021-11-24T00:00:00-11:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,49 +14,50 @@ images:
   - url: /engineering-education/building-excel-spreadsheets-using-python/hero.png
     alt: Building Excel Spreadsheets Using Python Hero Image
 ---
-One of the most intuitive and user-friendly ways to manipulate large datasets is using spreadsheets. There are a lot of spreadsheet packages available today.
+One of the most intuitive and user-friendly ways to manipulate large datasets is using spreadsheets. As a result, there are a lot of spreadsheet packages available today.
 <!--more-->
-However, when it comes to analyzing datasets, Microsoft Excel takes the lead as the most preferred spreadsheet package. 
+However, Microsoft Excel takes the lead as the most preferred spreadsheet package for analyzing datasets. 
 
-In the article, you'll learn how to write and visualize your Excel spreadsheets with Python's libraries `OpenPyxl` and `XlsxWriter`.
+In the article, we will learn how to write and visualize Excel spreadsheets with Python's libraries `OpenPyxl` and `XlsxWriter`.
 
 ### Table of contents
+- [Table of contents](#table-of-contents)
 - [Prerequisites](#prerequisites)
-- [Getting Started with OpenPyxl and XlsxWriter.](#getting-started-with-openpyxl-and-xlsxwriter)
-    - [Installing OpenPyxl](#installing-openpyxl)
-    - [Installing XlsxWriter](#installing-xlsxwriter)
-- [Create, Read, and Load Existing Workbooks with OpenPyxl.](#create-read-and-load-existing-workbooks-with-openpyxl)
-- [Basic Excel Operations with OpenPyxl.](#basic-excel-operations-with-openpyxl)
-- [How to Visualize your Dataset with OpenPyxl.](#how-to-visualize-your-dataset-with-openpyxl)
-- [Create, Read, and Load Existing Workbooks with XlsxWriter.](#create-read-and-load-existing-workbooks-with-xlsxwriter)
-- [Basic Excel Operations with XlsxWriter.](#basic-excel-operations-with-xlsxwriter)
-- [How to Visualize your Dataset with XlsxWriter.](#how-to-visualize-your-dataset-with-xlsxwriter)
-- [Conclusion.](#conclusion)
+- [Getting Started with OpenPyxl and XlsxWriter](#getting-started-with-openpyxl-and-xlsxwriter)
+  - [Installing OpenPyxl](#installing-openpyxl)
+  - [Installing XlsxWriter](#installing-xlsxwriter)
+- [Create, read, and load existing workbooks with OpenPyxl](#create-read-and-load-existing-workbooks-with-openpyxl)
+- [Basic excel operations with OpenPyxl](#basic-excel-operations-with-openpyxl)
+- [How to visualize the dataset with OpenPyxl](#how-to-visualize-the-dataset-with-openpyxl)
+- [Create, read, and load existing workbooks with XlsxWriter](#create-read-and-load-existing-workbooks-with-xlsxwriter)
+- [Basic excel operations with XlsxWriter](#basic-excel-operations-with-xlsxwriter)
+- [How to visualize the dataset with XlsxWriter](#how-to-visualize-the-dataset-with-xlsxwriter)
+- [Conclusion](#conclusion)
 - [Further reading](#further-reading)
 
 ### Prerequisites
 This tutorial assumes that you have the following:
 - A basic understanding of Microsoft Excel.
 - The Python programming language.
-- An IDE (code editor); I would make use of a Jupyter notebook in this tutorial.
+- An IDE (code editor); I would use a Jupyter notebook in this tutorial.
 
 Here is a quick list of basic Excel's terminologies:
-- **Workbook/Spreadsheets** - This is your Excel file.
-- **Sheet/worksheet** - This is a page within your Excel file. You can have multiple sheets within your workbook.
+- **Workbook/Spreadsheets** - This is our Excel file.
+- **Sheet/worksheet** - This is a page within the Excel file. We can have multiple sheets within the workbook.
 - **Column** - This is the lettered vertical header. It starts from `A` to `XFD`.
 - **Row** - This is the numbered horizontal header. It starts from `1` to `1048576`.
-- **Cell** - These are the rectangular boxes in your worksheet.
+- **Cell** - These are the rectangular boxes in the worksheet.
 
-Your cells are named according to the row's number and column's letter they meet. The first cell in your worksheet is `A1`.
+The cells are named according to the row's number and column's letter they meet. For example, the first cell in the worksheet is `A1`.
 
 ### Getting Started with OpenPyxl and XlsxWriter
-Just like every other library in python, you will need to install and import your libraries before you get started.
+Just like every other library in python, we will begin with installing and importing the libraries before we get started.
 
-Python's OpenPyxl and XlsxWriter modules allow you to read and modify Excel spreadsheet files. These libraries are helpful when it comes to automating python data to Excel.
+Python's OpenPyxl and XlsxWriter modules allow us to read and modify Excel spreadsheet files. These libraries are helpful when it comes to automating python data to Excel.
 
-However, unlike OpenPyXl, you can not read and update existing excel files.
+However, unlike OpenPyXl, one can not read and update existing excel files.
 
-To install these modules, enter the following into your interactive shell:
+To install these modules, enter the following into the interactive shell:
 
 #### Installing OpenPyxl
 ```bash
@@ -68,14 +69,14 @@ pip install openpyxl
 pip install xlsxwriter
 ```
 
-You should get no error message if the module was correctly installed.
+You should get no error message if the module is correctly installed.
 
 However, if you have an error message, take a look at [OpenPyXl](https://openpyxl.readthedocs.io/en/stable/) and [XlsxWriter](https://xlsxwriter.readthedocs.io/getting_started.html) documentation.
 
-In the subsequent section, I will talk about how to create, read, and visualize your data using OpenPyxl, then I would move to XlsxWriter.
+In the subsequent section, I will discuss how to create, read, and visualize data using OpenPyxl; then, I will move to XlsxWriter.
 
 ### Create, read, and load existing workbooks with OpenPyxl
-Openpyxl allows you to read/write Excel 2010 xlsx/xlsm/xltx/xltm files.
+Openpyxl allows us to read/write Excel 2010 xlsx/xlsm/xltx/xltm files.
 
 Once installed, we will create a simple spreadsheet using the following code:
 
@@ -94,8 +95,9 @@ your_workbook.save(filename="hello_world_openpyxl.xlsx") #saving the file with t
 ```
 
 ![Creating a File with Openpyxl](/engineering-education/building-excel-spreadsheets-using-python/Imageone.PNG)
+*Screenshot by author*
 
-OpenPyxl allows you to load pre-existing workbooks. To follow along you can download the dataset we would use [here](https://github.com/Bennykillua/Project/blob/main/Write%20Excel%20using%20Python/Test.xlsx). I would use the `load_workbook function` to load this dataset.
+OpenPyxl allows us to load pre-existing workbooks. To follow along, you can download the dataset we will be using [here](https://github.com/Bennykillua/Project/blob/main/Write%20Excel%20using%20Python/Test.xlsx). Use the `load_workbook function` to load this dataset.
 
 ```python
 from openpyxl import load_workbook
@@ -104,10 +106,10 @@ your_workbook2 = load_workbook('Test.xlsx')
 print(your_workbook2.sheetnames)
 ```
 
-`your_workbook2.sheetnames` tells us the available sheets on our excel workbook.
+`your_workbook2.sheetnames` tells us the available sheets in our excel workbook.
 
 ### Basic excel operations with OpenPyxl
-Once you have loaded your data, you probably want to retrieve information from it. This can be done by calling the `.value` functions.
+Once you have loaded your data, we will retrieve information from it. This can be done by calling the `.value` functions.
 
 ```python
 print(your_workbook2['Products']['A2'].value)
@@ -125,7 +127,7 @@ print(row)
 print(col)
 ```
 
-Next, I would run two `for` loops; One would return every data on our rows and the other would return data in our columns.
+Next, I would run two `for` loops; One would return every data on our rows, and the other would return data in our columns.
 
 ```python
 for i in range(1, row+1):
@@ -135,7 +137,7 @@ for i in range(1, row+1):
  
 Now, let's move to cell formatting.
 
-Cell formatting customizes the look of the cell in your workbook. We would perform simple formatting on our loaded test workbook. But, first, we would create a worksheet object.
+Cell formatting customizes the look of the cell in the workbook. We would perform simple formatting on our loaded test workbook. But, first, we would create a worksheet object.
 
 ```python
 Wb = your_workbook2['Products']
@@ -143,9 +145,9 @@ Wb = your_workbook2['Products']
 
 Then, we would import `PatternFill`.
 
-Pattern Fill allows you to change the color and pattern of your cells. To define our PatternFill, we need to pass a pattern type and fgColor which has to be a hex code.
+Pattern Fill allows us to change the colour and pattern of the cells. To define our PatternFill, we need to pass a `pattern type` and `fgColor`, which is a hex code.
 
-You can get the hex code of any color from [Rapid tables](https://www.rapidtables.com/web/color/html-color-codes.html).
+You can get the hex code of any colour from [Rapid tables](https://www.rapidtables.com/web/color/html-color-codes.html).
 
 ```python
 from openpyxl.styles import PatternFill
@@ -154,7 +156,7 @@ first_style = PatternFill(patternType = 'solid', fgColor = '00FF00')
 Wb['B7'].fill = first_style
 ```
 
-Since we are making a change to the workbook, we have to save it once done running our code. Now, take a look at your spreadsheet, you'll see the changes have been made to cell `B7`.
+Since we are changing the workbook, we have to save it once done running our code. So now, take a look at the spreadsheet. You will see the changes have been made to cell `B7`.
 
 To save the spreadsheet, use `.save()` function:
 
@@ -165,11 +167,11 @@ your_workbook2.save(filename='Test.xlsx')
 ![Cell formatting With Openpyxl](/engineering-education/building-excel-spreadsheets-using-python/Imagetwo.PNG)
 *Screenshot by author*
 
-Conditional formatting differs from cell formatting because it allows you to highlight specific cells based on a condition. This draws your attention to certain cells and makes getting insights easy.
+Conditional formatting differs from cell formatting because it allows us to highlight specific cells based on a condition. This draws our attention to specific cells and makes getting insights accessible.
 
-I'll import the `ColorScaleRule()` to start the color scale in Excel.
+I'll import the `ColorScaleRule()` to start the colour scale in Excel.
 
-Color scales are visual guides that help in understanding data distribution. The darker and lighter shade of the color represents values at the extreme end. 
+Colour scales are visual guides that help in understanding data distribution. The darker and lighter shade of the colour represents values at the extreme end. 
 
 ```python
 from openpyxl.formatting.rule import ColorScaleRule
@@ -184,7 +186,7 @@ your_workbook2.save(filename='Test.xlsx')
 ![Conditional formatting with Openpyxl](/engineering-education/building-excel-spreadsheets-using-python/Imagethree.PNG)
 *Screenshot by author*
 
-Finally, let's add up the numbers in the first column. To achieve this, we would simply enter the sum formula into a cell.
+Finally, let's add up the numbers in the first column. To achieve this, we will enter the sum formula into a cell.
 
 ```python
 Wb['A13'] = 'Total'
@@ -193,12 +195,13 @@ your_workbook2.save(filename='Test.xlsx')
 ```
 
 ![Sum with Openpyxl](/engineering-education/building-excel-spreadsheets-using-python/Imagefour.PNG)
+
 *Screenshot by author*
 
 ### How to visualize the dataset with OpenPyxl
 As humans, we internalize things quickly if we can see them visually.
 
-Data visualization is the graphical representation of information. We can make more logical sense of a lot of information or data we come across today because of the use of visual elements such as graphs.
+Data visualization is the graphical representation of information. We can make more logical sense of a lot of information or data we come across today because of visual elements such as graphs.
 
 OpenPyXL supports creating bar, line, scatter, and pie charts. We would visualize a bar chart using our loaded test workbook:
 
@@ -206,7 +209,7 @@ OpenPyXL supports creating bar, line, scatter, and pie charts. We would visualiz
 from openpyxl.chart import BarChart, Reference
 ```
 
-Now, let's use these libraries and see how it plays out. Enter the code below into your interactive shell to create a bar chart:
+Now, let's use these libraries and see how it plays out. Enter the code below into the interactive shell to create a bar chart:
 
 ```python
 sheet = your_workbook2.active 
@@ -226,7 +229,7 @@ your_workbook2.save(filename='Test.xlsx')
 ![Bar chart with Openpyxl](/engineering-education/building-excel-spreadsheets-using-python/Imagefive.PNG)
 *Screenshot by author*
 
-We've created a bar chart using `BarChart()`. You can also create pie charts, line charts and scatter charts using `PieChart()`, `LineChart()`, and `ScatterChart()`.
+We've created a bar chart using `BarChart()`. We can also create pie charts, line charts and scatter charts using `PieChart()`, `LineChart()`, and `ScatterChart()`.
 
 Now, let's try all these out with `XlsxWriter`. 
 
@@ -240,7 +243,7 @@ your_workbook = xlsxwriter.Workbook('hello_world_xlwt.xlsx')  #Creating the work
 sheet1 = your_workbook.add_worksheet('Sheet 1')  #The add.worksheet() helps you add a worksheet into your excel files
 ```
 
-The `.write()` function allows you to add data. It requires two things:
+The `.write()` function allows us to add data. It requires two things:
 - The cell the data is to be entered on.
 - The data to be entered.
 
@@ -255,9 +258,10 @@ your_workbook.close() #once done, you close using .close
 ```
 
 ![Creating a  file with Xlsxwriter](/engineering-education/building-excel-spreadsheets-using-python/Imagesix.PNG)
+
 *Screenshot by author*
 
-You could also write the code above by specifying the row and column.
+We can also write the code above by specifying the row and column.
 
 ```python
 sheet1.write(0, 0 , 'Hello')  #Row 0 and column 0 which is A1
@@ -269,16 +273,16 @@ sheet1.write(1, 3, 'Two')
 your_workbook.close() #close the workbook
 ```
 
-Unfortunately, `XlsxWriter` does not allow you to read and write to pre-existing Excel workbooks. 
+Unfortunately, `XlsxWriter` does not allow us to read and write to pre-existing Excel workbooks. 
 
 ### Basic excel operations with XlsxWriter
 Let's try to perform some basic excel operations.
 
-We would start with a simple `SUM`.
+We start with a simple `SUM` operation.
 
-Before we can do that, we need to populate your worksheet with data using `.write_column` and `.write_row`.
+Before we do that, we need to populate our worksheet with data using `.write_column` and `.write_row`.
 
-The `.write_column` adds data to a column while the `.write_row` adds data to a row. You only need to specify the start cell.  This can be really useful when building headers. After this, we would add the data on Column D.
+The `.write_column` adds data to a column, while the `.write_row` adds data to a row. We only need to specify the start cell.  This can be useful when building headers. After this, we add the data on Column D.
 
 ```python
 import xlsxwriter  #Importing our library
@@ -296,11 +300,12 @@ your_workbook.close()
 ```
 
 ![Sum with Xlsxwriter.](/engineering-education/building-excel-spreadsheets-using-python/Imageseven.PNG)
+
 *Screenshot by author*
 
 Let's do some formatting.
 
-You can apply cell formatting by leveraging on themes. You can create and store different theme JSON formats and apply them to your script.
+We can apply cell formatting by leveraging on themes. For example, one can create and store different theme JSON formats and apply them to your script.
 
 ```python
 Cyan_design = your_workbook.add_format({'bg_color' :  'cyan'}) #Creating a theme
@@ -308,9 +313,9 @@ Cyan_design = your_workbook.add_format({'bg_color' :  'cyan'}) #Creating a theme
 sheet1.write('A7', '=PI()', Cyan_design) #Applying it on cell A7
 ```
 
-We can use the code below to do conditional formatting. You will need to put this code and append the codes below right before you close your workbook.
+We can use the code below to do conditional formatting. You will need to put this code and append the codes below right before you close the workbook.
 
-Like I mentioned earlier, XlsxWriter does not allow you to read and write to pre-existing Excel workbooks. 
+Like I mentioned earlier, XlsxWriter does not allow us to read and write to pre-existing Excel workbooks. 
 
 ```python
 oak_design = your_workbook.add_format({'bg_color' :  'green'',
@@ -336,14 +341,14 @@ sheet1.write('A8', 1234.56, currency_format)
 ![Formatting with Xlsxwriter](/engineering-education/building-excel-spreadsheets-using-python/Imageeight.PNG)
 *Screenshot by author*
 
-One thing to keep in mind is that, Python has a function called `help`. This can be called using:
+One thing to keep in mind is that Python has a function called `help`. This can be called using:
 
 ```python
 help(your_workbook.formats[0])
 ```
 
 ### How to visualize the dataset with XlsxWriter
-In order to make a pie chart, we'll use our knowledge of the functions learned earlier to build a dataset containing a list of West African countries and the number of states/regions.
+To make a pie chart, we'll use our knowledge of the earlier functions to build a dataset containing a list of West African countries and the number of states/regions.
 
 ```python
 import xlsxwriter 
@@ -393,7 +398,7 @@ workbook.close()
 *Screenshot by author*
 
 ### Conclusion
-Although this tutorial covers some of the fundamentals of manipulating and visualization using this library. You can learn more about how these libraries work by visiting their official documentation.
+Although this tutorial covers some fundamentals of manipulating and visualization using this library, you can learn more about how these libraries work by visiting their official documentation.
 
 Feel free to explore this [notebook](https://github.com/Bennykillua/Project/blob/main/Write%20Excel%20using%20Python/Write%20Excel%20using%20Python.ipynb) that I created as you follow the tutorial.
 
