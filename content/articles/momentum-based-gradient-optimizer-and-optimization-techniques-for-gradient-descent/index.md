@@ -85,7 +85,7 @@ K= &beta;<sub>2</sub>K + (1 - &beta;<sub>2</sub>)dw<sup>2</sup>
 
 K= S/(1 - &beta;<sub>2</sub><sup>i</sup>)
 
-W= W - &alpha;V\sqrt{S} + &epsilon;
+W= W - &alpha;VS<sup>-2</sup> + &epsilon;
 
 ### RMSProp
 It is an extension of gradient descent and AdaGrad that employs a decaying average of partial gradients to change the step size for each parameter. The drawback of AdaGrad is overcome by using a decaying moving average. This allows the algorithm to ignore early gradients and concentrate on the most recently recorded partial gradients as the search progresses.
@@ -100,7 +100,7 @@ compute dW
 
 K = &beta;K + (1- &beta;)dw<sup>2</sup>
 
-W = w- &alpha;dw\frac{\sqrt{S} + &epsilon;}
+W = w- &alpha;dw/(S<sup>-2</sup> + &epsilon;)
 
 ### AdaGrad
 
