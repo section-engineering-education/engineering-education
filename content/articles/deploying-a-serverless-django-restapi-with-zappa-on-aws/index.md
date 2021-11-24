@@ -17,11 +17,11 @@ images:
 
 Serverless technology has gradually become an area of interest in software development in recent times. A few years back, all applications built on classic web servers were manually managed until the development of this technology. This technology guarantees automatic web server configuration or permissions, allowing the developer to focus solely on developing and designing web applications while their cloud provider handles the heavy lifting by managing the servers, thereby, the user does not have to worry about manual configuration. *Isn't this cool?*
 
-Serverless technology was created with the main goal of enabling developers to build and run applications without having to interact with or manage servers. Now, this does not mean the application runs entirely without a server, but that the management of the server would be handled by Amazon Web Services (AWS) through an open-source project known as [Serverless Application Model (SAM) framework](https://github.com/aws/serverless-application-model).
+The main purpose for the development of serverless technologhy was to aid developers build and run applications without having to interact or manage servers. Now, this does not mean the application runs entirely without a server, but that the management of the server would be handled by Amazon Web Services (AWS) through an open-source project known as [Serverless Application Model (SAM) framework](https://github.com/aws/serverless-application-model).
 
 One of the upsides of serverless technology is that it runs on pay-per *request.* For example, a new company or startup that is low on budget can host their web apps on Lambda and only pay when a user requests the web app.
 
-This process is quite exciting although the implementation in Django may be challenging. However, this is made easy using ***Zappa***. [Zappa](https://www.zappa.io/) is an open-source tool used for creating, deploying, and managing serverless python applications on AWS products such as Lambda and API Gateway.
+This process is quite exciting although the implementation in Django may be challenging. However, this is made easy using ***Zappa***. [Zappa](https://www.zappa.io/) is an open-source tool for developing, deploying, and maintaining serverless Python applications on Amazon Web Services (AWS) technologies including Lambda and API Gateway.
 
 To aid your understanding, AWS Lambda is an amazon serverless computing platform, referred to as the crux of AWS serverless offering, which enables the user to run functions and manage computer resources automatically.
 
@@ -61,7 +61,7 @@ cd bookstore
 
 Next, we will be creating a virtual environment to host our project. All the installed packages for this project would be contained the virtual environment.
 
-To create a virtual environment, let’s begin by installing `virtualenv`.
+Create a virtual environment, 
 
 ```bash
 pip install virtualenv
@@ -343,7 +343,7 @@ Afterwards, run this command:
 zappa update dev
 ```
 
-You should receive a URL where you can access your API via the internet after successful deployment.
+After successful deployment, you should receive a URL through which you may access your API over the web.
 
 ```python
 https://oitzappv43.execute-api.eu-west-2.amazonaws.com/dev
@@ -355,7 +355,7 @@ Copy the generated URL for your app and paste it into the project's `ALLOWED_HOS
 ALLOWED_HOSTS = ["oitzappv43.execute-api.eu-west-2.amazonaws.com"]
 ```
 
-Whenever modifications are made to your project, always update the deployment with the command used above.
+Whenever modifications are made to your project, use the command above to update the deployment.
 
 Now, we can run this URL and load our application.
 
@@ -365,10 +365,9 @@ We've successfully redeployed the application. However, notice that the styling 
 
 ### Manage static files
 
-For the default Django styles to work at the deployed stage, static files need to be managed, and to do this, begin by creating an [S3 bucket](https://console.aws.amazon.com/s3/) with a distinct name. Also, ensure you uncheck ***'Block all public access'***  then proceed in creating the bucket.
+Static files must be maintained for the default Django styles to operate at the deployed stage, and to do so, start by establishing a with a unique name. Also, make sure ***'Block all public access'*** is unchecked before proceeding to create the bucket.
 
-Next, in the "*permissions*" section of your bucket, go to the Cross-Origin resource sharing (CORS) section to allow access from other hosts, edit the file to the following configuration:
-
+Next, in the "*permissions*" section of your bucket, navigate to Cross-Origin resource sharing (CORS) to allow access from other hosts, edit the file to this setup:
 ```python
 [
   {
@@ -433,8 +432,8 @@ Re-run the admin page. The API at this point should render the required styles a
 As seen our application is running successfully.
 
 ### Conclusion
+This course provides a walk-through guide on creating a Django REST API and deploying the API as a serverless application using Zappa on AWS Lambda. We began by building a simple RESTAPI  before proceeding to deploy on AWS. Having understood what Zappa is and how it works in Django. This knowledge can also be applied in your project, giving you the ease of building an application in which the server is managed automatically
 
-This course walked you through creating Django RESTful APIs and deploying them as serverless applications using Zappa on AWS Lambda. Having understood what Zappa is and how it works in Django. You can apply what you have learned in your projects to create APIs and deploy serverless Python applications.
 
 I hope you find this article of good use.
 
