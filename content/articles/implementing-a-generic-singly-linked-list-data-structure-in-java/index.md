@@ -51,6 +51,9 @@ In this section, we'll explore how generics can be used to implement a singly li
 
 ```Java
 import java.io.*;
+public class Main {
+public static void main(String[] args)
+	{
 class node<T> {
 	T data;
 	node<T> next;
@@ -61,6 +64,7 @@ class node<T> {
 	}
 }
 class list<T> {
+// Instances of a generic node type.
 	node<T> head;
 	private int newlength = 0;
 	list() { this.head = null; }
@@ -153,6 +157,7 @@ class list<T> {
 		head = null;
 		newlength = 0;
 	}
+  // It is the value that determines if the value to be erased is already there or not.
 	boolean empty()
 	{
 		if (head == null) {
@@ -160,8 +165,9 @@ class list<T> {
 		}
 		return false;
 	}
+  // Returning the length of LinkedList
 	int newlength() { return this.newlength; }
-
+// method
 	public String toString()
 	{
 		String S = "{ ";
@@ -179,7 +185,9 @@ class list<T> {
 		return S + " }";
 	}
 }
+}}
 ```
+Go ahead and run the code [here](https://replit.com/@Calvin49/2Implementing-a-Generic-Singly-linked-list-Data-Structure-in)
 
 > For the sake of simplicity, we use a dummy node to represent the prior one in singly-linked lists since going backwards is impossible. 
 
@@ -222,19 +230,21 @@ public class Cal {
 
 		System.out.println("list1 after removal of 20 :");
 		System.out.println(list1);
-
+    // An empty String linked list is created.
 		list<String> list2 = new list<>();
+    // displaying message
 		System.out.println(
 			"\nString LinkedList created as list2");
 
 		list2.add("Hey");
 		list2.add("There");
-
+    // displaying message
 		System.out.println(
 			"list2 after adding hey and There :");
 		System.out.println(list2);
 
 		list2.add(2, "Cal");
+    // displaying message
 		System.out.println(
 			"list2 after adding Cal at newposition 2 :");
 		System.out.println(list2);
@@ -242,7 +252,7 @@ public class Cal {
 		list<Float> list3 = new list<>();
 		System.out.println(
 			"\nFloat LinkedList created as list3");
-
+    // Adding elements 
 		list3.add(10.25f);
 		list3.add(10.42f);
 		list3.add(10.99f);
@@ -251,7 +261,9 @@ public class Cal {
 			"list3 after adding 10.25, 10.42 and 10.99 :");
 		System.out.println(list3);
 		System.out.println("Clearing list3 :");
+    // clearing this list
 		list3.clear();
+    // displaying the list again
 		System.out.println(list3);
 	}
 }
