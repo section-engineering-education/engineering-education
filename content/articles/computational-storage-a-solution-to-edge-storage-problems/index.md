@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /is-computational-storage-a-newfound-solution-to-edge-storage-problems/
+url: /computational-storage-a-solution-to-edge-storage-problems/
 title: Is Computational Storage a Newfound Solution to Edge Storage Problems?
 description: This article will discuss how computational storage is interlinked with edge storage, how it is serving data centers, and the storage issues it is solving for edge devices.
 author: bridget-mwikali
@@ -11,8 +11,8 @@ topics: [Edge Computing]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/is-computational-storage-a-newfound-solution-to-edge-storage-problems/hero.jpg
-    alt: Is Computational Storage a Newfound Solution to Edge Storage Problems? Hero Image
+  - url: /engineering-education/computational-storage-a-solution-to-edge-storage-problems/hero.jpg
+    alt: Computational Storage a Newfound Solution to Edge Storage Problems? Hero Image
 ---
 Is Computational Storage a Newfound Solution to Edge Storage Problems?
 <!--more-->
