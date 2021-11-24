@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /dynamically-update-react-and-javascript-with-css-variables/
 title: Dynamically Update React and JavaScript with CSS Variables
-description: In this article, you will learn how to dynamically update React.js and other JavaScript applications with custom CSS properties.
+description: In this article, the reader will learn how to dynamically update React.js and other JavaScript applications with custom CSS properties.
 author: francis-kaguongo
-date: 2021-11-08T00:00:00-22:30
+date: 2021-11-24T00:00:00-11:30
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -16,7 +16,7 @@ images:
 ---
 While one might be familiar with using CSS variables with something like [SASS](https://sass-lang.com), custom properties are native CSS implementation of using the variables right inside the browser.
 <!--more-->
-As already known, there are three main methods applied to use these custom variables. These include defining the double hyphen(`--`) prefixes on them, stating the variable's name, and prefixing it with the **var** keyword, representing it on an element or on a selector (this will make it be cascaded only within the scope).
+There are three main methods applied to use these custom variables. These include defining the double hyphen(`--`) prefixes on them, stating the variable's name, and prefixing it with the **var** keyword. Representing it on an element or on a selector (this will make it be cascaded only within the scope).
 
 The custom CSS variables are used in JavaScript and JavaScript frameworks.
 
@@ -24,7 +24,7 @@ In this article, we will learn how to use CSS Custom properties that dynamically
 
 ### Table of contents
 - [Key takeaways](#key-takeaways)
-- [Pre-requisites](#prerequisites)
+- [Prerequisites](#prerequisites)
 - [Create a new React app](#create-a-new-react-app)
   - [Folder Structure](#folder-structure)
 - [Adding a Custom Variable to change the React logo color](#adding-a-custom-variable-to-change-the-react-logo-color)
@@ -43,30 +43,30 @@ In this article, we will learn how to use CSS Custom properties that dynamically
 - Configure the variables to change with the application state dynamically.
 
 ### Prerequisites
-The following are the article pre-requisites:
-- Previous hands-on React.js experience
-- Previous experience in webpage design
-- React.js environment already set up on the machine in use
-- A good JavaScript IDE or editor
-- A stable internet connection
-- CSS knowledge
+For the reader to follow along, they will need the following:
+- Previous hands-on React.js experience.
+- Previous experience in webpage design.
+- React.js environment already set up on the machine in use.
+- A good JavaScript IDE or editor.
+- A stable internet connection.
+- CSS knowledge.
 
 If all are in place, let's get started.
 
-These are the steps to be followed in the process:
-1. Create a new React.js app
-2. Adding a custom variable to change the React.js logo color
-3. Getting property of a CSS custom property with JavaScript
-4. Setting up the value of a CSS custom property with JavaScript
-5. Dynamically resizing the logo with a custom CSS Property
-6. Speeding up a CSS animation by updating a CSS custom property
+These are the steps that we will follow in the process:
+1. Create a new React.js app.
+2. Adding a custom variable to change the React.js logo color.
+3. Getting property of a CSS custom property with JavaScript.
+4. Setting up the value of a CSS custom property with JavaScript.
+5. Dynamically resizing the logo with a custom CSS Property.
+6. Speeding up a CSS animation by updating a CSS custom property.
 
 ### Create a new React app
-- Head over to the folder location where the project will lie.
+- Head over to the folder location where the project will be.
 
 Create the app by running the command below on the terminal:
 
-```shell
+```bash
 npx create-react-app my-custom-properties
 ```
 
@@ -74,18 +74,18 @@ That will create an app named `my-custom-properties`.
 
 - Open it up and do a test run using the following command:
 
-```shell
+```bash
 cd my-custom-properties
 npm start
 ```
 
 - Access it via `http://localhost:3000/`.
-- If using VS Code, open it up using the `code .` command.
+- If you are using VS Code, open it up using the `code .` command.
 
 #### Folder structure
-The app has the following folder structure:
+The app should have the following folder structure:
 
-```shell
+```bash
 .
 ├── node_modules
 ├── public
@@ -105,8 +105,9 @@ The app has the following folder structure:
 ```
 
 ### Adding a custom variable to change the React logo color
+
 To do this, follow the steps below:
-- To target the SVG file used as the centered logo image, copy-paste it from the `logo.svg` file into the `App.js` file. Do this under the header tag in new `p` tags. Set its _className_ to `App-logo`.
+- To target the SVG file used as the centered logo image, copy-paste it from the `logo.svg` file into the `App.js` file. Do this under the header tag in new `p` tags. Set its *className* to `App-logo`.
 - Delete the last line that imported the image source. Doing this makes the SVG to be an inline SVG file.
 
 The result of these two steps are shown below inside the header tag:
@@ -157,11 +158,13 @@ Use the `root` element so that the variables may be visible in the entire applic
     }
 ```
 
-The good thing about variables is that they use easy-to-understand names, hence can be reused severally without errors.
+The good thing about variables is that they use easy-to-understand names, hence can be reused several times without errors.
 
 To change the variable's scope, refer to the element into which it is bound. The component will replace the root position.
 
-- Set the app logo to rely on the set variable for color property. Do this in the `App.css` file:
+- Set the app logo to rely on the set variable for color property. 
+
+Do this in the `App.css` file:
 
 ```css
 .App-logo g {
@@ -191,7 +194,7 @@ import { useEffect } from "react";
 
 This allows the app to run client-side code outside the scope of the React rendering component.
 
-Inside the `App()` function, add the _useEffect_ hook, grab the variable, and run it for the first time by using `[]`.
+Inside the `App()` function, add the *useEffect* hook, grab the variable, and run it for the first time by using `[]`.
 
 - Since no behavior is added in the block quotes, it prevents the re-firing of the application in each render.
 
@@ -203,7 +206,9 @@ useEffect(() => {
 ```
 
 - In it, create a constant that uses the `getComputedStyle()` function to fetch the value of its style.
-- Pass the root element (`document.documentElement`) as an argument, along with the `--logo-color` variable. Get the variable property value as shown below:
+- Pass the root element (`document.documentElement`) as an argument, along with the `--logo-color` variable. 
+
+Get the variable property value as shown below:
 
 ```js
 const color = getComputedStyle(document.documentElement).getPropertyValue('--logo-color');
@@ -221,8 +226,10 @@ Try changing the color from red to orange and refresh the page.
 This is because the `useEffect` hook is running only on the first instance. This requires another page refresh for it to be reflected.
 
 ### Setting up the value of a CSS custom property with JavaScript
-- In the _App.js_ file, under the _useEffect_ function, create a function that sets the color of an element to the one passed as an argument.
-- It will set the style property that is passed in the `--logo-color` variable with the new one passed as an argument. The two steps are shown in the code below:
+- In the *App.js* file, under the *useEffect* function, create a function that sets the color of an element to the one passed as an argument.
+- It will set the style property that is passed in the `--logo-color` variable with the new one passed as an argument. 
+
+The two steps are shown in the code below:
 
 ```js
 function setColor (newColor){
@@ -230,7 +237,7 @@ function setColor (newColor){
 }
 ```
 
-- Delete the code below in the _App.js_ file:
+- Delete the code below in the *App.js* file:
 
 ![Delete the code shown](/engineering-education/dynamically-update-react-and-javascript-with-css-variables/delete-code.png)
 
@@ -266,7 +273,7 @@ Do this as follows:
 }
 ```
 
-- Create an input of the _range_ type. It will have a range of 0 to 100, and a _defaultValue_ of `--logo-size`. Do this above the `p` tags holding the SVG.
+- Create an input of the *range* type. It will have a range of 0 to 100, and a *defaultValue* of `--logo-size`. Do this above the `p` tags holding the SVG.
 
 ```html
 <p>
@@ -274,7 +281,9 @@ Do this as follows:
 </p>
 ```
 
-- Create a function that handles the change of the value of the input of the type `range`. It will then set the value of the current position of the range input dynamically per each change. It will also return the current value in the browser console. Create it under the `setColor()` method:
+- Create a function that handles the change of the value of the input of the type `range`. It will then set the value of the current position of the range input dynamically per each change. It will also return the current value in the browser console. 
+
+Create it under the `setColor()` method:
 
 ```js
     function handleOSizeChange(event) {
@@ -329,7 +338,7 @@ function onSVGClick() {
 }
 ```
 
-- Target the SVG through the paragraph that encloses it. Targeting the SVG directly is quite tricky, hence pass through the paragraph.
+- Target the SVG through the paragraph that encloses it. Targeting the SVG directly is quite tricky, pass it through the paragraph.
 
 ```js
 <p onClick={onSVGClick}>
@@ -343,7 +352,7 @@ function onSVGClick() {
 
 - Re-run the application and click on the logo at a constant rate.
 
-The speed of the logo will continuously speed up till it reaches a reset point.
+The speed of the logo will continuously speed up until it reaches a reset point.
 
 The app will run as shown here:
 
@@ -351,21 +360,23 @@ The app will run as shown here:
 
 In the above function, the variables have been dynamically fetched and updated per event changes.
 
-All the above things, such as changing the color, size, and speed of rotation in the application, are examples of how CSS variables can be dynamically updated to create excellent effects.
+All the things above, such as changing the color, size, and speed of rotation in the application, are examples of how CSS variables can be dynamically updated to create excellent effects.
 
 This gives us an idea of how to implement it in the application in a very intuitive way to meet needs in a React or JavaScript application.
 
 ### Conclusion
-By reaching here, this means that one has learned the following:
-- How to set up the custom variables in a JavaScript framework such as React
-- Get the fetch the properties of the variables used
-- Know how to use the custom variables during state changes and events
-- How to use the variables to update component properties dynamically
-- How to configure the variables to change with the application state dynamically
+Congratulations on making it this far, this means that we have learned the following:
+- How to set up the custom variables in a JavaScript framework such as React.
+- Get the fetch the properties of the variables used.
+- Know how to use the custom variables during state changes and events.
+- How to use the variables to update component properties dynamically.
+- How to configure the variables to change with the application state dynamically.
 
 Happy coding.
 
 You can view the full project [here](https://github.com/franciskaguongo/Dynamically-Update-React-and-Javascript-with-CSS-Custom-Properties).
+
+Happy coding!
 
 ### References
 - [React useEffect hooks](https://reactjs.org/docs/hooks-reference.html) documentation.
