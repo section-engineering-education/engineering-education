@@ -26,13 +26,13 @@ With [docker](/engineering-education/getting-started-with-docker/), things get a
 
 This time you need not install all dependencies to set up a MySQL server. Docker helps you to containerize these dependencies so you can run them as containers.
 
-Docker will execute certain instructions for containerizing applications, set up a specific environment, and deliver fully [packaged and containerized applications](/running-and-managing-docker/) along with their dependencies and libraries. Here, we can specify the version of the MySQL server to be installed.
+Docker will execute certain instructions for containerizing applications, set up a specific environment, and deliver fully [packaged and containerized applications](/engineering-education/running-and-managing-docker/) along with their dependencies and libraries. Here, we can specify the version of the MySQL server to be installed.
 
 With Docker, you don't need to install and configure the MYSQL environment to access databases and records. Instead, it provides you with images (official software) that you use to run applications within your docker containers, such as PHPMyAdmin, Adminer, and Sequel Pro (for macOS).
 
 When you need to execute SQL queries, you will only need to set up a docker `yml` file, run a few commands, and docker will set everything ready for you. Thus, as a beginner, you can run and use SQL queries in a containerized environment.
 
-You can learn more about the concepts of Docker [here](/docker-concepts/).
+You can learn more about the concepts of Docker [here](/engineering-education/docker-concepts/).
 
 In this tutorial, we will learn how to dockerize (create a docker image an application) a MySQL database server and set up PHPMyAdmin or Adminer to interact with the MySQL Database.
 

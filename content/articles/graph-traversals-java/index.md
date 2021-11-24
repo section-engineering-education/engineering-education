@@ -40,7 +40,7 @@ Unweighted graphs have zero value edges, while weighted graphs have non-zero val
 
 Undirected and Unweighted  |  Directed and Weighted	 |	
 :-------------------------:|:-----------------------:|
-|![undirected](/graph-traversals-java/undirected.png)|![directed](/engineering-education/graph-traversals-java/directed.png)
+|![undirected](/engineering-education/graph-traversals-java/undirected.png)|![directed](/engineering-education/graph-traversals-java/directed.png)
 
 <br />
 <br />
@@ -183,7 +183,7 @@ class Main {
 
 ### Graph traversal algorithms
 #### BFS iterative
-[Breadth First Search](/breadth-first-search/) uses a queue to traverse the graph in a level like manner. A start node is added to the queue to start. 
+[Breadth First Search](/engineering-education/breadth-first-search/) uses a queue to traverse the graph in a level like manner. A start node is added to the queue to start. 
 
 As long as the queue is not empty, a node is removed and its unvisited neighbors are added to the queue. Since a graph may contain cycles, a visited hash set is used to keep track of all visited nodes. We only want to add unvisited nodes into the queue!
 

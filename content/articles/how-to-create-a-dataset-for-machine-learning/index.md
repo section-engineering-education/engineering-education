@@ -27,7 +27,7 @@ In fact, most of the machine learning models' problems aren't caused by the mode
 7. [References](#references)
 
 ### Prerequisites
-Before reading this article, the reader needs to have a little knowledge in Artificial Intelligence and Machine Learning. If you're still a beginner, feel free to read my previously published [article](/differences-between-artificial-intelligence-machine-learning-and-deep-learning/) explaining the difference between Artificial Intelligence and Machine Learning.
+Before reading this article, the reader needs to have a little knowledge in Artificial Intelligence and Machine Learning. If you're still a beginner, feel free to read my previously published [article](/engineering-education/differences-between-artificial-intelligence-machine-learning-and-deep-learning/) explaining the difference between Artificial Intelligence and Machine Learning.
 
 ### Introduction
 In any case, before we train a model, we need a dataset. There are many publicly available datasets that one can use in a project.
@@ -119,7 +119,7 @@ Now you have acquired enough data to have a representative dataset (a dataset th
 
 Time to label that data? Maybe. 
 
-The answer to that question solely depends on whether you are using [supervised learning or unsupervised learning](/supervised-learning-algorithms/). Unsupervised learning doesn't require your data to be labeled, while supervised learning does require data labeling.
+The answer to that question solely depends on whether you are using [supervised learning or unsupervised learning](/engineering-education/supervised-learning-algorithms/). Unsupervised learning doesn't require your data to be labeled, while supervised learning does require data labeling.
 
 The processes of labeling can be subjective and also labor-intensive. One can utilize crowdsourcing platforms such as [Amazon Mechanical Turk (MTurk)](https://www.mturk.com/) and [Citizen Science](https://en.wikipedia.org/wiki/Citizen_science) to achieve this goal.  
 
