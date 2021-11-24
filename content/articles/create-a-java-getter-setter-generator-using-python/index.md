@@ -68,10 +68,12 @@ Output:
 34
 ```
 
-Because the methods `get age()` and `set age()` are regular functions, they may provide the needed functionality. Python has a distinguishing function ().
+In the above code functions get_span() and set_span() act as normal functions and don’t play any impact as getters and setters, to achieve such functionality Python has a special function property().
 
 ### Get getters and setters behavior using @Property decorators
-This method returns a property object in Python. Methods for getting, setting, and deleting properties (). It takes four parameters in Python. This method gets an attribute's value from the file. fset sets an attribute's value. fdel deletes an attribute value. No documentation is created by default. Getter(), setter(), and deleter() (). Get, set, and delete (). Consider the following example:
+To accomplish getters and setters behavior in the preceding approach, we utilized the property() function. Getters and setters are also used for verifying the getting and setting of attribute values, as stated before in this article. Another option for implementing property functions is to use a decorator. One of the built-in decorators in Python is @property. Any decorator's major goal is to update your class's methods or attributes in such a manner that your class's users don't have to change their code. 
+
+Below is an example code,
 
 ```python
 class Section:   
@@ -154,28 +156,39 @@ To be able to do this we follow the algorithm below:
 ### Implementation of the algorithms
 
 ```python
+# Print getter and setter methods
 def print_getter_setter(variables, datatypes):
-
+    
+    # store the get and set variables
     getters = []
     setters = []
     for var in variables:
+    
+        # Prefix each variable with "get" and turn the initial character to uppercase.
         getter = "get" + var[0].capitalize() + var[1:]
         getters.append(getter)
+        
+        # Prefix each variable with "set" and turn the initial character to uppercase.
         setter = "set" + var[0].capitalize() + var[1:]
         setters.append(setter)
-
+   
     for k in range(len(variables)):
+    
+        #  Print out the getter method
         print("public " + datatypes[k] + " " + getters[k] +
             "() {\n\treturn " + variables[k] + ";\n}\n")
-
+            
+         #  Print out the setter method
         print("public void " + setters[k] + "(" + datatypes[k] +
             " " + variables[k] + ") {\n\tthis." + variables[k] +
             " = " + variables[k] + ";\n}\n")
 
 if __name__=="__main__":
 
+    # A list of variables
     variables = ["cdf", "stdID", "section", "y"]
 
+    # A list of datatypes 
     datatypes = ["int", "float", "double" , "String"]
 
     print_getter_setter(variables, datatypes)
