@@ -10,16 +10,14 @@ date: 2021-10-14T00:00:00-13:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
+
   - url: /engineering-education/responsive-flutter-design-using-mediaquery-class/hero.jpg
     alt: HResponsive Flutter Design using MediaQuery Class Hero Image
 ---
-
 This tutorial will teach us how to set up a Flutter application to be responsive and resolve satisfactorily on all devices.
-
 <!--more-->
 
 ### Introduction
-
 When we create our application using Flutter, we do not know the sizes the user’s device will view our application on, nor can we guess the orientation of the device.
 
 While it is possible to restrict our application to a specific orientation (either horizontal or vertical), writing different code to display our widgets in different device sizes is highly inefficient and can be a nightmare.
@@ -29,59 +27,35 @@ What will we do then if a new device screen size is released into the market?
 Why should we go through this trouble when we should be more focused on creating amazing functional applications? Luckily, Flutter has a way to ensure that our widgets are responsive and fit to a given screen size of the device they are viewed on.
 
 In this tutorial, you’ll:
-
 - Build a simple Flutter app that changes based on the layout.
-
 - Make use of Flutter’s MediaQuery, FittedBox, LayoutBuilder, OrientationBuilder, and AspectRatio widgets.
-
 - Handle changes in device orientation.
 
 ### Prerequisite
-
 - It is vital you have foreknowledge of how to set up a Flutter application. If we are new to Flutter, check out this piece of the [Flutter](https://flutter.dev/docs/get-started/install) documentation to get us started with a basic Flutter application.
 
-#### Table of Contents
-
+#### Table of contents
 - [Responsive flutter design using MediaQuery Class](#responsive-flutter-design-using-mediaquery-class)
-
   - [Introduction](#introduction)
-
   - [Prerequisite](#prerequisite)
-
   - [Table of Contents](#table-of-contents)
-
   - [Responsive Apps](#responsive-apps)
-
   - [Working with orientation in Flutter](#working-with-orientation-in-flutter)
-
   - [Creating layouts for larger screens in Flutter](#creating-layouts-for-larger-screens-in-flutter)
-
   - [Keyboard State Change](#keyboard-state-change)
-
   - [AspectRatio](#aspectratio)
-
   - [FittedBox](#fittedbox)
-
     - [Boxfit.fill](#boxfitfill)
-
     - [Boxfit.contain](#boxfitcontain)
-
     - [Boxfit.cover](#boxfitcover)
-
     - [Boxfit.fitHeight](#boxfitfitheight)
-
     - [Boxfit.fitWidth](#boxfitfitwidth)
-
     - [BoxFit.none](#boxfitnone)
-
     - [BoxFit.scaleDown](#boxfitscaledown)
+- [Conclusion](#conclusion)
+- [Further Reading](#further-reading)
 
-  - [Conclusion](#conclusion)
-
-  - [Further Reading](#further-reading)
-
-### Responsive Apps
-
+### Responsive apps
 A responsive app is one that is written in such a way that it fits the available screen size of the device it is viewed on. This is often achieved by the app re-rendering the UI if the user resizes the screen or if the device orientation is changed.
 
 Responsive apps are a vital concept for apps that run on a watch, phone, tablet, desktop.
@@ -141,7 +115,6 @@ The orientation can also be obtained using `MediaQuery.of(context).orientation`
 If we want to prevent the change and leave the display as only portrait irrespective of the device change, use `SystemChrome.setPreferredOrientations(DeviceOrientation.portraitUp);`
 
 ### Creating layouts for larger screens in Flutter
-
 It is advisable to let our app use up all the available space on the screen if we are working on devices with large screens. This can be achieved by creating two different layouts for larger device screens such as tablets, desktops, and screens for smaller devices like phones. As we have stated before this can become tiring over the long run so what do we do?
 
 Let's check out this example:
@@ -500,45 +473,37 @@ Color: Colors.white
 ```
 
 #### Boxfit.fill
-
 In the code above, the value assigned to the fit property specifies the child container should fit into the parent and fill the entire size of its parent. This makes the inserting container lose its sizing.
 
 #### Boxfit.contain
-
 This specifies that the child widget resizes itself to try as much as possible to fit the parent container either in width or height while doing so proportionally.
 
 #### Boxfit.cover
-
 Specifies that the child widget should scale proportionally both its width and height so as to cover up all its parent widget space. This may lead to the loss of some part of the child widget if the child widget is larger than the parent’s widget.
 
 #### Boxfit.fitHeight
-
 This specifies that the full height of the child widget is shown, irrespective of whether this means the child widget overflows the parent’s widget horizontally.
 
 #### Boxfit.fitWidth
-
 This specifies that the complete width of the child widget is shown, irrespective of whether this means the child widget overflows the parent’s widget vertically. This may lead to some aspects of the child widget being lost if the parent widget has a hard constraint on its size.
 
 #### BoxFit.none
-
 This aligns the child widget within the parent widget (by default, centering) and discards any portions of the child widget that lie outside the box. The child widget image is not resized.
 
 #### BoxFit.scaleDown
-
 This sets the child widget within the parent widget (by default, centering) and, if necessary, scales the child widget down to ensure that the child widget fits within the parent.
 
 ### Conclusion
-
 In this tutorial, we stated what a responsive Flutter application is and the importance of our application being responsive. When creating our application, these should be the first things we envision before proceeding to create our layout.
 
 Draft up how the application should be and have an idea of the set of devices our application will be likey displayed on. Nicely design apps that are responsive make users more engaged in the application and keeps them coming back.
 
-### Further Reading
+### Further reading
+- [Flutter Docs](https://flutter.dev/docs/development/ui/layout/adaptive-responsive)
+- [Aspect Ratio](https://api.flutter.dev/flutter/widgets/AspectRatio-class.html)
+- [Adaptive Layouts](https://www.youtube.com/watch?v=n6Awpg1MO6M&feature=emb_imp_woyt)
+- [Adaptive Layouts part 2](https://www.youtube.com/watch?v=eikOZzfc0l4&t=11s)
 
-- https://flutter.dev/docs/development/ui/layout/adaptive-responsive
+---
+Peer Review Contributions by: [Okelo Violet](/engineering-education/authors/okelo-violet/)
 
-- https://api.flutter.dev/flutter/widgets/AspectRatio-class.html
-
-- https://www.youtube.com/watch?v=n6Awpg1MO6M&feature=emb_imp_woyt
-
-- https://www.youtube.com/watch?v=eikOZzfc0l4&t=11s
