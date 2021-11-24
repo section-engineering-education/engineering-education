@@ -29,8 +29,7 @@ Now that we’ve learnt about ORMs and more specifically, Dapper, we can now dig
 - [Conclusion](#conclusion)
 
 ### What is Dapper?
-Dapper is an ORM for the .NET framework. While some may argue that it is not, it has earned the title of *King of the C# Micro ORMs*.
-Dapper is lightweight, fast and since you get to write your SQL own queries, it provides a lot of flexibility. Dapper makes methods that make it easy to communicate with our database. We will be looking at some of these methods shortly.
+Dapper is an ORM for the .NET framework. While some may argue that it is not, it has earned the title of *King of the C# Micro ORMs*. Dapper is lightweight, fast and since you get to write your SQL own queries, it provides a lot of flexibility. Dapper makes available, methods that make it easy to communicate with our database. We will be looking at some of these methods shortly.
 #### Some Helpful Dapper Methods
 
 ###### Execute
