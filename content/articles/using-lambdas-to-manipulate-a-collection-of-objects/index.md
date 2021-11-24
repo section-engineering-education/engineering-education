@@ -6,7 +6,7 @@ url: /using-lambdas-to-manipulate-a-collection-of-objects/
 title: How to Manipulate Objects using Lambdas in Java.
 description: This article will help the reader understand how to manipulate objects using Lambdas in Java.
 author: kingsley-nwarfor
-date: 2021-11-24T00:00:00-14:48
+date: 2021-11-23T00:00:00-14:48
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -44,7 +44,7 @@ Using lambdas is an effective way of writing your code. Some critics argue that 
 
 Let's use our wallet object as a case study.
 
-We will create different wallets based on color and money. We will then manipulate these objects using these two variables (color or money).
+You will create different wallets based on color and money. We will then manipulate these objects using these two variables (color or money).
 
 > Note that this operation is time-consuming and may lead to high time complexity.
 
@@ -162,7 +162,7 @@ The `Predicate` takes in an argument and returns a `boolean` value (true or fals
 
 The returned value is then used to check whether a particular parameter meets the defined condition.
 
-`Function` takes in two arguments and also returns the required datatype. The Customers<T> takes in an argument but returns nothing.
+`Function` takes in two arguments and returns the required datatype. The Customers<T> takes in an argument but returns nothing.
 
 Finally, `Supplier<T>` takes in no argument and returns a value of T.
 
@@ -172,6 +172,7 @@ Add the following code in your `Collection_Wallet` class:
 
 #### Example 1
 Selecting an object based on `card color` and `amount`:
+
 
 ```java
 Predicate<Wallet> takeMoneyAndBlackCard=
@@ -188,7 +189,6 @@ The `Comparator` interface compares two wallet objects based on the instance met
 A positive value is returned when the first component is greater. Zero is returned when the two elements are the same. The `forEach` function then terminates the entire pipeline.
 
 Output:
-
 ```bash
 Displaying the sorted list by Card:
 '#44000.00 Black
@@ -199,7 +199,7 @@ Displaying the sorted list by Card:
 
 #### Example 2
 ```java
-Predicate<Wallet> takeMoneyAndBlackCard=
+Predicate<Wallet> takeMoneyAndBlackCard
                 e -> (e.takeMoney() >= 30000 && e.getCards().equals(Card.Black));
         System.out.printf("%n Display of your sorted list: %n");
         list.stream()
@@ -381,7 +381,7 @@ Average of Wallet' money (via average method): 39454.55
 Calculating the total amount for a specific color of cards:
 
 ```java
- Predicate<Wallet> takeMoneyAndBlackCard1=
+ Predicate<Wallet> takeMoneyAndBlackCard1
                 e -> (e.getCards().equals(Card.Black) );
         System.out.printf(
                 "%nSum of Black Card wallet(via average method): %.2f%n",
@@ -407,6 +407,7 @@ We also grouped objects using map functional interface which takes in two argume
 ### Further reading
 - [TimeComplexity](https://www.mygreatlearning.com/blog/why-is-time-complexity-essential/)
 - [Java Documentation](https://docs.oracle.com/javase/8/docs/api/)
+
 
 ---
 Peer Review Contributions by: [Wanja Mike](/engineering-education/authors/michael-barasa/)
