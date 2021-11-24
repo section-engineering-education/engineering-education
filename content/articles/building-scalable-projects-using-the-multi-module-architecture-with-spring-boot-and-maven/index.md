@@ -1,20 +1,20 @@
-# Multi-Module Project Setup in Spring Boot
-
 A three-man organisation in 2019 grew to become a twelve-man team fourteen months later. The growth in team members was necessitated by the growth in the project. However, for them also came an increase in the cost of building, maintaining and scaling the project; they were running the microservices architecture.
 
 In this tutorial, we will be going through the multi-module architecture - which is an drastic improvement on the monolith approach, yet offering as much possibilities of the microservices architecture, while evading the huge demands of microservices. We will be building a model of a hospital management system, taking into account some of the departments that make for a successful medical application.
 
-## Table of contents
+### Table of contents
 The tutorial will cover:
-- Why is the multi-module approach better than the monolith
-- Advantages of multi-module over microservices architecture
-- Setting a Spring Boot multi-module project
-- How can we make them interact with each other?
-- Gaining the benefits of microservices architecture from the multi-module architecture
-- Bonus
-- Conclusion
+- [Why is the multi-module approach better than the monolith](#why-is-the-multi-module-better-than-monolith?)
+- [Advantages of multi-module over microservices architecture](#advantages-of-multi-module-over-microservices)
+- [Disadvantages of multi-module architecture](#disadvantages-of-multi-module-architecture)
+- [Setting a Spring Boot multi-module project](#setting-a-Spring-boot-multi-module-project)
+- [How can we make them interact with each other?](#how-can-we-make-them-interact-with-each-other?)
+- [Gaining the benefits of microservices architecture from the multi-module architecture](#gaining-the-benefits-of-microservices-architecture-from-the-multi-module-architecture)
+- [Key Takeaways](#key-takeaways)
+- [Bonus](#bonus)
+- [Conclusion](#conclusion)
 
-## Prerequisites
+### Prerequisites
 To make the most of this tutorial, it is required to have:
 -	Basic understanding of microservices.
 -	Familiarity with the Spring Boot framework.
@@ -25,13 +25,19 @@ To make the most of this tutorial, it is required to have:
 Traditional, monolith design puts all the services for a project in one singular module. Everything is housed in one big box just as they are. In multi-module, each service is compartmentalised before being placed in the big box; the project. Multi-module allows for code re-usability unlike monolith. Code maintenance and adding new features or functionality is much easier.
 
 ### Advantages of Multi-module over Microservices
-No doubt, the microservices architecture is beneficial. However, in comparison with the multi-module architecture, it appears to have some short-comings. The first would be ensuring availability of services at optimal time.
+In microservices architecture, services are built separately as individual projects and deployed separately. For instance, the authentication service for a bank, built for just authenticating users and requests, deployed to an AWS server instance, communicating over some structured means with another service, say Transfer Service of the same bank, built for transfers but deployed elsewhere, like Heroku.
 
-Because services in the microservices architecture are deployed separately, it means that a downtime in one service could cripple an entire organisation, depending on how many services depend on it.
+With this design, availability across all interconnected services simultaneously can be difficult. In our example above, if the authentication service’s server reports a downtime, every other service depending on it, like the Transfer Service, will also not work. Searching this out to be fixed can be challenging, especially if the service reporting the downtime is not a bogus, popular service within the organisation.
 
-Also, passing around dependencies can be tricky. For large teams and projects, this can be challenging. With the multi-module architecture, services are still developed individually but within a mother project that caters to all of them.
+In multi-module, there is  only one project, but several compartments or modules, each representing a service – authentication module, transfer module, etc., all housed in that project. This project is hosted in just one place and so, its server’s availability means a total system availability every time. This approach also lowers the cost of hosting projects; microservices is clearly more expensive to maintain.
 
-Therefore, interest is not necessarily spread across several services but is channelled to the mother project and by extension, the child services. As a result, multi-module projects are easier to maintain than microservices.
+Also, passing dependencies to projects in microservices is not a walk in the pack. It still boils to service availability. However, with multi-module, dependencies do not leave the system. It is much easier to pass project-specific and module-specific dependencies around. This makes maintenance easier with multi-module architecture.
+### Disadvantages of the multi-module architecture
+One notable, seeming demerit of the multi-module architecture is that it can become clumsy and confusing when the project gets really big and there are many hands on it at the same time. This is with respect to the structure of the project
+
+Also, even though separate modules can be picked up as jar files for other services, this is not as efficient as that which microservices offers.
+
+On a light note, multi-module does not seem to have any disadvantage in comparison with monolith architecture
 
 ### Actual Setup of a Multi-Module project
 Now we go through the process of setting up a Spring Boot multi-module project. We will mimic a small hospital management system and see how different departments will interact in terms of services. To build this, we would need some services, say `Doctor Service`, `Patient Service`, `Consultation Service`. while these can co-exist in separate modules according to their name, we will create modules as recommended the spring way – data, service and controller modules - all together in the same project - `demohospital`. The method for creating these four modules can be used to create as many as are needed in the project.
@@ -104,7 +110,7 @@ Let us imagine that a `Payment Service` is to be implemented into the Hospital m
 
 
 
-## Gaining the benefits of microservices architecture from the multi-module architecture
+### Gaining the benefits of microservices architecture from the multi-module architecture
 To enjoy what microservices offer while using multi-module architecture is simple. This means that you can copy out the jar file of any of the modules/services above – say Payment Service for instance – and deploy it into another entirely different project, for reuse. All you need to do is to write `<packagin>jar</packaging>`in the POM file of the module you want to resuse as jar – ideally, in all the modules. Spring Boot automatically does the rest for you. Now you can reuse that modules anywhere else.
 
 One interesting thing to note is that, if there is an issue in any of the module, you can simply go to that module, fix up the issue and rebuild is as an independent jar, without interfering with the other modules
@@ -112,12 +118,15 @@ One interesting thing to note is that, if there is an issue in any of the module
 ![Packaging](/engineering-education/building-scalable-projects-using-the-multi-module-architecture-with-spring-boot-and-maven/packaging.jpg)
 
 
-## Conclusion
+### Key Takeaways
+In this tutorial, we got a brief understanding of monolith, multi-module and microservices project architectures are. We looked at the merits and demerits of the multi-module architecture with respect to both monolith and microservices architecture. By using a project, we were able to setup a small multi-module project, set up modules and passed some dependencies around. The bonus section required that reader of the tutorial created a new module, using the approaches described in the tutorial.
+
+### Conclusion
 Using the multi-module architecture is more convenient. You have separation of interests and still, a lot of control of the project in one place. Recognising a system downtime and fixing it is faster, and scalability is guaranteed.
 
 This project can be found on the [Github link](https://github.com/teevyne/multi-module-setup)
 
-## References
+### References
 https://spring.io/guides/gs/multi-module
 
 https://www.javatpoint.com/spring-boot-multi-module-project
