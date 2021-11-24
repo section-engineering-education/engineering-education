@@ -3,11 +3,11 @@ layout: engineering-education
 status: publish
 published: true
 url: /understanding-react-useeffect/
-title: Understanding React UseEffect and creating custom Hooks
+title: Understanding React UseEffect and Creating Custom Hooks
 description: In this article we will look at what hooks are, how they work and their benefits. We will also demonstrate how useEffect can manage side effects from components.
 author: zuko-obi
-date: 2021-11-16T00:00:00-12:03
-topics: []
+date: 2021-11-23T00:00:00-18:45
+topics: [API]
 excerpt_separator: <!--more-->
 images:
 
@@ -24,7 +24,7 @@ React comes with in-built hooks like `useEffect` that allow you to perform side 
 By the end of this tutorial, the reader will be able to understand:
 - What React hooks are and their benefits.
 - The functionalities of `useEffect`.
-- Rules for using `useEffect`.
+- Rules when using `useEffect`.
 - How to consume APIs with `useEffect` and process responses.
 - How to use `useEffect` to "clean up" effects (or "after effects" as I call them) by returning a function.
 
@@ -32,11 +32,11 @@ By the end of this tutorial, the reader will be able to understand:
 To follow through with this article, the reader should have:
 - React v16.0 or newer installed.
 - An understanding of Javascript.
-- A Basic knowledge of ReactJS.
+- A Basic knowledge of React.js.
 - A suitable text editor of your choice.
 
 ### What are React hooks?
-React Hooks are the best thing to happen to React devs in a long time. It makes it possible for functional programmers to create dynamic projects. 
+React Hooks are the best thing to happen for React devs in a long time. It makes it possible for functional programmers to create dynamic projects. 
 
 This happens without having to write classes as class-based components need a `render() method`, have complex UI logic and are generally more complex to manage. You create a hook depending on its utility.
 
@@ -108,7 +108,9 @@ onClick={() =\&gt; setCount(count + 1)}
 
 ```
 
-The above code is a simple counter that allows the user to increase and decrease a value. Let us add some styling to it with the code below:
+The above code is a simple counter that allows the user to increase and decrease a value. 
+
+Let us add some styling to it with the code below:
 
 ```css
 .modal\_\_counter {
@@ -246,15 +248,15 @@ This informs us that there has been a change in our `counter` variable. It conti
 
 The counter starts counting when the page loads for the first time. It was increased three times, resulting in a total of four runs.
 
-### Rules for using `useEffect`
+### Rules for using 'useEffect'
 We use the `useEffect` hook to run functionalities during the lifetime of the component rather than specific user interactions or DOM events.
 
 For example, you might wish to get a list of users as soon as the page loads. The names of the people change as the component mounts without user interaction.
 
-It is recommended that you use `useEffect` for asynchronous operations. This helps to avoid unwanted errors that could cause your UI to become unusable.
+It is recommended that you use `useEffect` for asynchronous operations. This helps avoid unwanted errors that could cause your UI to become unusable.
 
 ### How to consume APIs with useEffect and process responses
-Now that we have some understanding of the `useEffect`, let us fetch some data with an API. We will use the [JSON placeholder](https://jsonplaceholder.typicode.com/) free API, a standard API for working with dummy data.
+Now that we have some understanding of the `useEffect`, let us fetch some data with an API. We will use the [JSON placeholder](https://jsonplaceholder.typicode.com/) free API, a standard API to work with the dummy data.
 
 ```javascript
 
@@ -512,9 +514,11 @@ Our application is not broken; in fact, it is in perfect working order! We impor
 Depending on the context of your application, creating custom hooks should be dependent on personal preferences.
 
 ### Conclusion
-We have learned what hooks are, how they work and their benefits. We have also demonstrated how useEffect can manage side effects from components. 
+We have learned what hooks are, how they work, and their benefits. We have also demonstrated how useEffect can manage side effects from components. 
 
 Lastly, we have been able to create a custom reusable hook with simple logic. With the React `useEffect` hook, you can manage component lifecycle seamlessly without necessarily having to convert your functional based components into class based components.
+
+Happy coding!
 
 ### References
 - [Using the Effect Hook – React](https://reactjs.org/docs/hooks-effect.html)
