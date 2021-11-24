@@ -3,11 +3,11 @@ layout: engineering-education
 status: publish
 published: true
 url: /complete-guide-on-using-sequelize-basic-and-advanced-features/
-title: Complete Guide On Using Basic and Advanced Sequelize Features
+title: Using Basic and Advanced Sequelize Features
 description: This tutorial will guide the reader on how to work with Sequelize, the need for using it. We will also build a simple project to demonstrate various features in it.
 author: joshua-adesanya
 date: 2021-11-24T00:00:00-13:00
-topics: []
+topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
@@ -19,7 +19,7 @@ Sequelize is a JavaScript library that manages most of all the popular databases
 Sequelize only supports relational databases. Databases like Mongo DB or other NoSQL databases are not supported. Sequelize supports solid transaction, eager and lazy loading, relations, read replication, and other cool features.
 
 By the end of this tutorial, the reader will adequately understand the following:
-- How to install Sequelize
+- How to install Sequelize.
 - How to install drivers associated with the different databases.
 - Connecting to the database and testing the connection.
 - How to use Sequelize CLI.
@@ -88,13 +88,17 @@ sequelize-project
 
 The next step is to start adding the necessary code to our files, we will start with `.env`
 
-`.env`
+```bash
+.env
+```
 
 We will add the PORT as shown:
 
-`PORT=5000`
+```bash
+PORT=5000
+```
 
-Our node server will be running on this port.
+Our node.js server will be running on this port.
 
 `app.js`
 ```js
@@ -152,7 +156,10 @@ app.listen(port, () => {
 
 The code above contains the necessary things to make our node server run successfully.
 
-`package.json`
+```bash
+package.json
+```
+
 ```js
 {
   "name": "sequelize-project",
@@ -177,7 +184,7 @@ The code above contains the necessary things to make our node server run success
 
 We added `scripts` to run the Node.js server.
 
-Using `npm start` will start the project, but stops running if it hits an error. Whereas, using `npm run dev` runs continuously, even if an error is encountered.
+Using `npm start` we will start the project, but it'll stop running if it hits an error. Whereas, using `npm run dev` runs continuously, even if an error is encountered.
 
 `npm run dev` contains a package called `nodemon` that helps us establish a server that runs the node file.
 
@@ -190,7 +197,7 @@ npm run dev
 #### Installing sequelize
 To fully set up Sequelize, we need to have the database ready. It can be either MySQL, PostgreSQL, MSSQL, or SQLite.
 
-First thing first, we need to install `sequelize` and `sequelize-cli`.
+We need to install `sequelize` and `sequelize-cli`.
 
 These packages will help bootstrap the necessary setup that we need for sequelize in a Node.js application. It will create the necessary files, migration, and models folder.
 
@@ -231,14 +238,16 @@ Let's go with PostgreSQL for this tutorial.
 
 I have created a database on PostgreSQL as shown:
 
+```bash
 Database name - Sequelize
 Database user - josh
 Password - \***\*\*\*\*\***
 Host - localhost
+```
 
 We need to go into our `.env` file and add the database details to it. The essence of the `.env` file is to have access to all details inside it using `process.env`.
 
-Also, let's create a `.gitignore` file that excludes files that need not be pushed to the git repository. Here, we exclude the `node_modules` and `.env` files.
+Also, let's create a `.gitignore` file that excludes files that do not need to be pushed to the git repository. Here, we exclude the `node_modules` and `.env` files.
 
 Now, the project file structure should look like:
 
@@ -254,7 +263,7 @@ sequelize-project
 └── package.json
 ```
 
-Content of the `.env` file
+Content of the `.env` file:
 
 ```env
 PORT=5000
