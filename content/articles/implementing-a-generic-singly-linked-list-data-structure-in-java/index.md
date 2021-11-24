@@ -188,7 +188,12 @@ class list<T> {
 }}
 ```
 Go ahead and run the code [here](https://replit.com/@Calvin49/2Implementing-a-Generic-Singly-linked-list-Data-Structure-in)
-
+OUTPUT
+```bash
+ javac -classpath .:/run_dir/junit-4.12.jar:target/dependency/* -d . Main.java
+ java -classpath .:/run_dir/junit-4.12.jar:target/dependency/* Main
+>
+```
 > For the sake of simplicity, we use a dummy node to represent the prior one in singly-linked lists since going backwards is impossible. 
 
 To represent the node before the current one, we create a dummy node. Because there isn't a previous node for the head node, then it's assigned the value null. 
