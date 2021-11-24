@@ -12,7 +12,7 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/complete-guide-on-using-sequelize-basic-and-advanced-features/hero.png
-    alt: Complete Guide On Using Sequelize - Basic and Advanced features Image
+    alt: Complete Guide On Using Sequelize Basic and Advanced features Image
 ---
 Sequelize is a JavaScript library that manages most of all the popular databases like PostgreSQL, MySQL, SQLite, and MSSQL. Object Relation Mappers (ORM) are used to convert object-relational syntax to the database schema. Usually, sequelize is used with Node.js. We can call Sequelize an ORM.
 <!--more-->
@@ -275,17 +275,20 @@ DATABASE_DIALECT=postgres
 DATABASE_PORT=5432
 ```
 
-> Default Port for databases:
+Default Port for databases: 
+```bash
 MySQL (mysql) - `3306`
 PostgreSQL (postgres) - `5432`
 MSSQL (mssql) - `1433`
 MARIADB (mariadb) - `3306`
+```
 
 The next step is to add the database credentials to the `config.json` file that is inside the config folder.
 
 The `config.json` file will not allow us to use our `.env` file, we will rename it as `config.js`, and add the code below:
 
 `config.js`
+
 ```js
 const dotenv = require("dotenv");
 const path = require("path");
@@ -309,6 +312,7 @@ module.exports = {
 The next would be to update the `index.js` inside the `model` folder as shown below:
 
 `index.js`
+
 ```js
 "use strict";
 const fs = require("fs");
@@ -374,7 +378,7 @@ Executing (default): SELECT 1+1 AS result
 success
 ```
 
-We should get the result above, if we have followed all the steps above well.
+We should get the result above, if we have followed all the steps above correctly.
 
 Having understood the basics, let's get into building the actual project.
 
@@ -421,14 +425,13 @@ sequelize db:migrate
 ```
 
 **Output:**
+
 ```bash
 == 20210727120010-create-user: migrating =======
 == 20210727120010-create-user: migrated (0.350s)
 ```
 
-After running the command above, the user table has been created in the database, as we specified in the `.env` file.
-
-The next step is to create a `services` folder for the node server API.
+After running the command above, the user table has been created in the database, as we specified in the `.env` file. The next step is to create a `services` folder for the node server API.
 
 We will be experimenting with sequelize, since we have a user model already we shall create a `user-service.js` file inside our `services` folder.
 
@@ -459,9 +462,7 @@ class UserService { }
 ```
 
 #### Inserting data
-When the create method is used, the data is created in the database.
-
-To create a user from the model, we use the sequelize `create` method.
+When the create method is used, the data is created in the database. To create a user from the model, we use the sequelize `create` method.
 
 If we pass a user object into this `createUser` method, it will create a user in the user table.
 
@@ -493,7 +494,7 @@ async createUser(user) {
 
 The code above will not allow the age to be saved to the database, because we have restricted it to save only `firstName` and `lastName`.
 
-To test this, run the code below
+To test this, run the code below:
 
 ```bash
 node services/user-service.js
@@ -531,7 +532,7 @@ result();
 
 We don't need to pass anything to it, `User.findAll()` will give us all the users in the user table.
 
-To test this, run the code below
+To test this, run the code below:
 
 ```bash
 node services/user-service.js
@@ -562,7 +563,7 @@ const result = async() => {
 result();
 ```
 
-To test this, run the code below
+To test this, run the code below:
 
 ```bash
 node services/user-service.js
@@ -571,7 +572,7 @@ node services/user-service.js
 ##### findOne
 Based on the optional arguments that we pass, it fetches the very first entry.
 
-The option query looks like this `{where: { firstName: 'josh' }}`
+The option query looks like this `{where: { firstName: 'josh' }}`.
 
 ```js
 const User = require("../models/index")['User'];
@@ -624,7 +625,7 @@ const result = async() => {
 result();
 ```
 
-To test this, run the code below
+To test this, run the code below:
 
 ```bash
 node services/user-service.js
@@ -658,7 +659,7 @@ const result = async() => {
 result();
 ```
 
-To test this, run the code below
+To test this, run the code below:
 
 ```bash
 node services/user-service.js
@@ -692,7 +693,7 @@ const result = async() => {
 result();
 ```
 
-To test this, run the code below
+To test this, run the code below:
 
 ```bash
 node services/user-service.js
@@ -723,16 +724,14 @@ const result = async() => {
 result();
 ```
 
-To test this, run the code below
+To test this, run the code below:
 
 ```bash
 node services/user-service.js
 ```
 
 ### Associations
-Associations refer to the relationship between different tables.
-
-A relationship can be established between tables, when one table uses a foreign key that references the primary key of another table.
+Associations refer to the relationship between different tables. A relationship can be established between tables, when one table uses a foreign key that references the primary key of another table.
 
 A primary key is an unique identifier for a particular table, while a foreign key is the field linked to another table primary key when performing associations.
 
@@ -744,9 +743,7 @@ There are three major types of relationship:
 3. Many to Many
 
 #### One to One Association
-This association refers when a record in a particular table is associated with another record of another table.
-
-A typical example is that a `userId` in the user table can only be associated with one user profile in the profile table.
+This association refers when a record in a particular table is associated with another record of another table. A typical example is that a `userId` in the user table can only be associated with one user profile in the profile table.
 
 We need two tables to be able to show how this works, we already have a user table created from our User Model, let's create a profile table.
 
@@ -765,6 +762,7 @@ sequelize db:migrate
 ```
 
 **Output:**
+
 ```bash
 == 20211022092823-create-profile: migrating =======
 == 20211022092823-create-profile: migrated (0.147s)
@@ -773,6 +771,7 @@ sequelize db:migrate
 We need to go into the `models/profile.js` to set our `userId` as the primary key and set the association. In this case, it's `Profile.hasOne(User)`.
 
 `models/profile.js`
+
 ```js
 "use strict";
 const { Model } = require("sequelize");
@@ -812,6 +811,7 @@ We set the `userId` as the primary key. We also associated the Profile model wit
 We need to create a `profile-service.js` file inside our services folder.
 
 `services/profile-service.js`
+
 ```js
 const Profile = require("../models/index")['Profile'];
 const User = require("../models/index")['User'];
@@ -848,9 +848,7 @@ const result = async() => {
 result();
 ```
 
-The important thing to note here is that the `userId` points to an existing user.
-
-Another thing to note is that the "include" contains the model that we are trying to associate with.
+The important thing to note here is that the `userId` points to an existing user. Another thing to note is that the "include" contains the model that we are trying to associate with.
 
 To test this, run the code below:
 
@@ -858,7 +856,7 @@ To test this, run the code below:
 node services/profile-service.js
 ```
 
-Inside our `profileService`, we have the `createProfile` and `getAll` methods which were used to create profile for a user and the other to get all the profiles in the database.
+Inside our `profileService`, we have the `createProfile` and `getAll` methods which were used to create a profile for a user and the other to get all the profiles in the database.
 
 Sample result for one the profile looks like this:
 ```json
@@ -888,9 +886,7 @@ We need two tables to be able to show how this works, we already have a user tab
 sequelize model:generate --name Cars --attributes color:string,name:string,userId:integer
 ```
 
-We will get a result that a new model and a new migration have been created.
-
-Every time we create a model or create a migration we need to run a migration for it to reflect in the database.
+We will get a result that a new model and a new migration have been created. Every time we create a model or create a migration we need to run a migration for it to reflect in the database.
 
 ```bash
 sequelize db:migrate
@@ -898,9 +894,10 @@ sequelize db:migrate
 == 20211023110522-create-cars: migrated (0.606s)
 ```
 
-We need to go into the `models/cars.js` to set our `userId` as the primary key, we can also decide to set a one-to-one for the cars. This means can one car, can only have one user `Cars.hasOne(user)`.
+We need to go into the `models/cars.js` to set our `userId` as the primary key, we can also decide to set a one-to-one for the cars. This means one car can only have one user `Cars.hasOne(user)`.
 
 `models/cars.js`
+
 ```js
 "use strict";
 const { Model } = require("sequelize");
@@ -937,6 +934,7 @@ module.exports = (sequelize, DataTypes) => {
 To show the one to many relationship, we need to go inside the `models/user.js` and add `user.hasMany(cars)`:
 
 `models/user.js`
+
 ```js
 "use strict";
 const { Model } = require("sequelize");
@@ -978,6 +976,7 @@ module.exports = (sequelize, DataTypes) => {
 We need to create a `cars-service.js` file inside our services folder. We will be creating new cars inside this file, remember that the cars will be attached to one user.
 
 `services/cars-service.js`
+
 ```js
 const User = require("../models/index")["User"];
 const Cars = require("../models/index")["Cars"];
@@ -1002,7 +1001,7 @@ const result = async () => {
 result();
 ```
 
-To test this, run the code below
+To test this, run the code below:
 
 ```bash
 node services/cars-service.js
@@ -1013,6 +1012,7 @@ We have successfully created our cars, I will advise you to create more than one
 We would go into our user-service file to get all users, we should have the property of the car showing all cars belonging to each user.
 
 `services/user-service.js`
+
 ```js
 const User = require("../models/index")["User"];
 const Profile = require("../models/index")["Profile"];
@@ -1050,7 +1050,7 @@ To test this, run the code below:
 node services/user-service.js
 ```
 
-Sample result for what the user data looks like this:
+Sample result for what the user data should look like this:
 
 ```json
 {
@@ -1065,9 +1065,7 @@ Sample result for what the user data looks like this:
 }
 ```
 
-The key takeaway here is that the car's property will contain an array of cars.
-
-This means anytime you query for a single user or all users, they will also show the "many" cars, if we have more than one associated cars. In case the user has no car, it will return an empty array.
+The key takeaway here is that the car's property will contain an array of cars. This means anytime you query for a single user or all users, they will also show the "many" cars, if we have more than one associated cars. In case the user has no car, it will return an empty array.
 
 #### Many to Many Association
 This association refers to when many records in a particular table are associated with many records in another table.
@@ -1099,6 +1097,7 @@ All our models have been created and tables have been added to the database.
 We need to update the movie and actor model.
 
 `models/actor.js`
+
 ```js
 "use strict";
 const { Model } = require("sequelize");
@@ -1136,6 +1135,7 @@ For the many-to-many relationship, we used the `belongsToMany`, we have somethin
 We also added the through property, which is pointing to the `MovieActor` model. We have addressed other properties in the one-to-one and one-to-many.
 
 `models/movie.js`
+
 ```js
 "use strict";
 const { Model } = require("sequelize");
@@ -1173,6 +1173,7 @@ We don't need to add anything to the MovieActor Model.
 Now, we need to create `movie-service.js` and `actor-service.js`.
 
 `services/actor-service.js`
+
 ```js
 const Actor = require("../models/index")['Actor'];
 const User = require("../models/index")['User'];
@@ -1204,6 +1205,7 @@ node services/actor-service.js
 In the `actor-service.js`, we created an actor, we will need this actor created in the movie-service to explain the many to many, then you can also replicate the many to many in the actor-service.
 
 `services/movie-service.js`
+
 ```js
 const Movie = require("../models/index")['Movie'];
 const Actor = require("../models/index")['Actor'];
@@ -1251,9 +1253,7 @@ To test this, run the code below:
 node services/movie-service.js
 ```
 
-The only thing new here is the `addActor` method.
-
-The many-to-many relationship gives the model access to methods such as `addMovie` and `addActor`.
+The only thing new here is the `addActor` method. The many-to-many relationship gives the model access to methods such as `addMovie` and `addActor`.
 
 Like we have access to the `addActor` from the `Movie` model, we also have access to the `addMovie` from the `Actor` model.
 
@@ -1263,12 +1263,12 @@ It is similar to what we see with the one-to-many relationship.
 
 ### Conclusion
 So far, we have learned:
-- How to install Sequelize
+- How to install Sequelize.
 - How to install drivers associated with the different databases.
 - Connecting to the database and testing the connection.
-- How to use Sequelize CLI
-- CRUD operations using Sequelize
-- Database associativity
+- How to use Sequelize CLI.
+- CRUD operations using Sequelize.
+- Database associativity.
 
 Thank you for reading.
 
