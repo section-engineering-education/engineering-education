@@ -50,7 +50,7 @@ You'll need the following to serialize binary or XML data:
 Create instances of the stream and the format to use, then use the Serialize function on the format. This call receives two strings as parameters: the stream and the object to serialize.
 
 ### C# Serialization in action
-With apps, we must store data on durable or non-durable media for later retrieval. Serialization may help. Serialization is needed to transmit an object over a network. Serializing in C#, the app needs a serialization namespace. In C#, utilize the [ Serializable] property.
+With apps, we must store data on durable or non-durable media for later retrieval. Serialization may help. Serialization is needed to transmit an object over a network. Serializing in C#, the app needs a serialization namespace. In C#, utilize the `Serializable` property.
 
 Consider the following example:
 
@@ -80,7 +80,7 @@ The `System.Runtime.Serialization` is a namespace that includes binary serializa
 
 With Binary serialization, even read-only members are serialized, improving speed. This is the method for converting .NET objects into byte streams. During binary serialization, all public, private, and read-only members are processed. Binary serialization is used to convert items to bytes quickly. It utilizes `System.Runtime. serialization.Formatters.Binary` reference.
 
-Below is a biliary Serialization example:
+Below is a binary Serialization example:
 
 ```csharp
 using System;
@@ -190,7 +190,7 @@ Consider the following code, which demonstrates custom Serialization using the I
 [Serializable] public class Push : ISerializable
 {
 public virtual void GetObjectData(SerializationInfo information, StreamingContext context)
-{
+}
 ```
 
 ### Conclusion
