@@ -1,5 +1,23 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-solve-discrete-logistic-equation-in-matlab/
+title: How to Solve a Discrete Logistic Equation in Matlab
+description: In this tutorial the reader will understand the Walsh hadarmard transform and its applications in science and engineering. The reader will also understand the image compression process using functions in Matlab.
+author: peter-adongo
+date: 2021-09-14T00:00:00-00:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/
+walsh-hadamard-transform-for-signal-and-image-compression-using-matlab/hero.jpg
+    alt: Walsh Hadamard Trasform For Signal and Image Compression Using Matlab Hero Image
+---
 The Walsh-Hadamard transform is a non-sinusoidal, orthogonal transform widely used in signal and image processing. In this transform, the signal is decomposed into a set of basis functions (similar to harmonics in Fourier). These basis functions are the Walsh functions, rectangular or square waves with +1 or -1. In addition, like the fast Fourier transform(FFT), the Walsh-Hadamard transform has a fast version known as fast Walsh-Hadamard transform(FWHT).
+
+<!--more-->
 
 The Walsh-Hamard has a wide application in the field of science and engineering. These applications include image processing, speech processing, signal and image compression, power spectrum analysis, spread spectrum analysis e.t.c.
 
@@ -309,7 +327,9 @@ The output is as shown below:
 As we can see, there is no difference between the input image and the output in terms of appearance. It is how efficiently this method works. To see if your image is compressed, you can compare the input and output sizes in the folders. The image is compressed from 113kb to 32kb, which is a good compression.
 
 ### Conclusion
-Walsh-Hadamard, which is a combination of two algorithms, Walsh and Hadamard, is an efficient method of signal filtering and image compression, as we have seen. It is because these algorithms work on the matrix basic. Since signals and images are a combination of matrices, this method finds it easy to handle them efficiently and fast. Also, the in-built functions in Matlab make the whole process since writing the code of the whole algorithm is a whole bunch of work.
+Walsh-Hadamard, which is a combination of two algorithms, Walsh and Hadamard, is an efficient method of signal filtering and image compression, as we have seen. It is because these algorithms work on the matrix basic.
+
+Since signals and images are a combination of matrices, this method finds it easy to handle them efficiently and fast. Also, the in-built functions in Matlab make the whole process simple, since writing the code of the whole algorithm without Matlab is tiresome.
 
 Happy coding!
 
