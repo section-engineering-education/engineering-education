@@ -6,7 +6,7 @@ url: /building-excel-spreadsheets-using-python/
 title: Building Excel Spreadsheets Using Python
 description: This tutorial will guide the reader on creating and working with Excel spreadsheets using Python. We will explore more about Python libraries OpenPyxl and XlsxWriter.
 author: benedict-ifeanyi-iheagwara
-date: 2021-11-24T00:00:00-11:00
+date: 2021-11-24T00:00:00-11:25
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
