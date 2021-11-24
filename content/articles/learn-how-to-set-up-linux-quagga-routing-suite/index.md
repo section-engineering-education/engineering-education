@@ -47,11 +47,11 @@ By the end of this article, you should be able to:
 ### A quick history of Quagga and an explanation of what it is
 Quagga is a GPLv2-licensed open-source routing stack. It is a program that implements IP routing protocols like `RIP`, `RIPng`, `OSPF`, and `ISIS`. 
 
-I'd want to create a clear separation between a routing stack and a complete router solution. Traffic forwarding and a routing stack are required for a complete router. Whereas, only the routing protocols are implemented by Quagga.
+Let's look at the distinction between a `routing stack` and a `complete router.` A routing stack is a set of protocols that transmit routing information between network nodes so that each node has the necessary knowledge of the network architecture, whereas a complete router is a networking device that routes data packets between computer networks. A complete router in Quagga requires traffic forwarding and a routing stack, however only routing protocols are implemented.
 
-It may operate on Linux and forward traffic using the regular Linux kernel. Or, it can connect to a distributed forwarding platform using OpenFlow or another open or proprietary interface. Furthermore, it may also be used for routing protocols to accept and announce routes using off-the-shelf routers.
+Quagga can run on Linux and forward traffic using the standard Linux kernel, or it can use OpenFlow or another open  proprietary interface to connect to a distributed forwarding platform. It can also be used with off-the-shelf routers to accept and advertise routes for routing protocols.
 
-Around ten years ago, Quagga arose from the `Zebra` routing code. `Zebra` is no longer a public project, although it is still available as a commercial solution through `IP Infusion` as `ZebOS`.
+Quagga evolved from the `Zebra` routing code about 10 years ago. `Zebra` is no longer a public project, but it is still available as a commercial solution under the name `ZebOS` from `IP Infusion.`
 
 ### How does Quagga work?
 A system with Quagga installed acts as a dedicated router. With Quagga, your machine exchanges routing information with other routers using routing protocols.
