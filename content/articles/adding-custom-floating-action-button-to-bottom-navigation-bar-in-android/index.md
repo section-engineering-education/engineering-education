@@ -1,22 +1,22 @@
 ### Adding A Centered Custom Floating Action Button To Bottom Navigation Bar(Android)
-A Floating Action Button varies from other buttons. FAB is a circular shape button with a centralized icon that appears in front of all screen content. This promotes users action, including adding an item to an existing list.
+Floating Action Button varies from other buttons. FAB is a circular shape button with a centralized icon. This button appears in front of all screen content. It promotes a users action, including adding an item to an existing list.
 
 ### What we need
 - Have some knowledge in `Kotlin`
-- Know how to create an Android project in `Android Studio`
+- To know process of creating a project in Android Studio 
 - Know how to create a bottomNavigationBar
 
 ### Goal
 - Adding a material design component. 
 - Creating a bottom navigation bar.
-- Adding a centered floating action button to a bottom navigation bar.
+- Adding a custom floating action button at the center of a bottom navigation bar.
 
 ### Introduction
-In this tutorial we are going to learn how to add a custom floating action button to a bottom navigation bar.
+In this article we will create an application that will have a floating action button at the center of a bottom navigation bar.
 
-A bottom navigation bar is a bar that usually appears at the bottom of a screen. It contains destination icon. To make it more appealing, we add a floating action button.
+A bar that usually appears at the bottom of a screen is called a Bottom Navigation Bar. It contains destination icon. To make it more appealing, we add a floating action button.
  
-Floating action button(FAB) is a circular shaped button that has a centered icon in it. It usually appears in front of a screen and performs an action in an application when triggered.
+Floating action button abbreviated as FAB is a circular shaped button that has an icon centred in it. It usually appears in front of a screen and performs an action in an application when triggered.
   
 ### What is a Floating Action Button
 There are three forms of FAB; Regular, Mini and Extended floating action button. In this article we are going to focus on the regular FAB centered in a Bottom Navigation Bar.
@@ -30,7 +30,9 @@ Bottom Navigation Bar it is a view that comes from Material Design Library. It i
 Let us dive into coding and create our custom Floating Action Button.
 
 ### Step 1: Create new project
-- Click on File -> New -> New Project
+- Click on File
+- Click on New
+- CClick on New Project
 - Select Empty Activity then click Next
 ![creating a project](engineering-education/adding-custom-floating-action-button-to-bottom-navigation-bar-in-android/creating_project.png)
 - Give a name to your new project for example, floatingActionButton
@@ -61,7 +63,7 @@ Let us dive into coding and create our custom Floating Action Button.
 - The add icon is what we are going to add to our Floating Action Button.
 - If we have imported the five icons, we are good to go.
 
-### Step 4: Let us create a Menu for our bottomNavigationView
+### Step 4: Create a menu for BottomNavigationView
 - On the res file, right click on it -> New -> Android Resource File.
 ![creating a res file](engineering-education/adding-custom-floating-action-button-to-bottom-navigation-bar-in-android/adding_android_resource_file.png)
 - On the Resource Type select menu.
@@ -69,28 +71,28 @@ Let us dive into coding and create our custom Floating Action Button.
 ![bottom_menu_nav](engineering-education/adding-custom-floating-action-button-to-bottom-navigation-bar-in-android/bottom_menu_nav.png)
 - We can then see the design. 
 - Click on the code so that in the xml file, we can create the single items that will on our menu.
-- Write the following xml code:
+- Create your menu layout as follows:
 
 ``` xml
  <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:id="@+id/bnbMenuHome"
+    
+    <item android:id="@+id/bottomMenuHomeIcon"
         android:title="Home Icon"
-        android:icon="@drawable/ic_home_bnb"/>
+        android:icon="@drawable/ic_home_bootom"/>
 
-    <item android:id="@+id/bnbMenuSearch"
+    <item android:id="@+id/bottomMenuSearchIcon"
         android:title="Search Icon"
-        android:icon="@drawable/ic_search_bnb"/>
+        android:icon="@drawable/ic_search_bottom"/>
 
-    <item android:id="@+id/bnbMenuPerson"
+    <item android:id="@+id/bottomMenuPersonIcon"
         android:title="Profile Icon"
-        android:icon="@drawable/ic_person_bnb"/>
+        android:icon="@drawable/ic_person_bottom"/>
 
-    <item android:id="@+id/bnbMenuSetting"
+    <item android:id="@+id/bottomMenuSettingIcon"
         android:title="Setting Icon"
-        android:icon="@drawable/ic_settings_bnb"/>
-
+        android:icon="@drawable/ic_settings_bottom"/>
 </menu>
 ```
 - The output:
@@ -121,7 +123,7 @@ Let us dive into coding and create our custom Floating Action Button.
         android:layout_gravity="bottom">
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bottomNavView"
+            android:id="@+id/bottomNavationView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginEnd="16dp"
@@ -167,24 +169,24 @@ class MainActivity : AppCompatActivity() {
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:id="@+id/bnbMenuHome"
+    <item android:id="@+id/bottomMenuHomeIcon"
         android:title="Home Icon"
-        android:icon="@drawable/ic_home_bnb"/>
+        android:icon="@drawable/ic_home_bootom"/>
 
-    <item android:id="@+id/bnbMenuSearch"
+    <item android:id="@+id/bottomMenuSearchIcon"
         android:title="Search Icon"
-        android:icon="@drawable/ic_search_bnb"/>
+        android:icon="@drawable/ic_search_bottom"/>
 
-    <item android:id="@+id/bnbMenuPlaceholder"
+    <item android:id="@+id/bottomMenuPlaceholder"
          android:title=""/>
 
-    <item android:id="@+id/bnbMenuPerson"
+    <item android:id="@+id/bottomMenuPersonIcon"
         android:title="Profile Icon"
-        android:icon="@drawable/ic_person_bnb"/>
+        android:icon="@drawable/ic_person_bottom"/>
 
-    <item android:id="@+id/bnbMenuSetting"
+    <item android:id="@+id/bottomMenuSettingIcon"
         android:title="Setting Icon"
-        android:icon="@drawable/ic_settings_bnb"/>
+        android:icon="@drawable/ic_settings_bottom"/>
 
 </menu>
 ```
@@ -201,8 +203,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        bottomNavView.background = null
-        bottomNavView.menu.getItem(2).isEnabled = false
+        bottomNavationView.background = null
+        bottomNavationView.menu.getItem(2).isEnabled = false
  
         //creating a toast
         floatingActionButton = findViewById(R.id.fab)
@@ -217,9 +219,10 @@ This is the expected output after running your application
 ![FAB demo](engineering-education/adding-custom-floating-action-button-to-bottom-navigation-bar-in-android/FAB.mp4)
 
 ### Conclusion
-This is not the only thing to know about floating action buttons. Keep exploring and learn more.
+Floatng Action Button has more than what we have covered in this article. Keep exploring and learn more.
 
 ### Reference
 -[material design](https://material.io/components/app-bars-bottom)
+
 -[android developers](https://developer.android.com/guide/topics/ui/floating-action-button)
 
