@@ -1,18 +1,17 @@
-FaunaDB is a hosted cloud database that is entirely serverless. It's extremely fast and scales infinitely in the cloud. FaunaDB lets you manage your database data from its web interface or the command line. It has the ability to handle complex data modeling use cases.
+FaunaDB is a hosted cloud database that is entirely serverless. It is fast and scales infinitely in the cloud. FaunaDB lets you manage your database data from its web interface or the command line. It can handle complex data modeling use cases.
 
 SQL is preferred for its security and data consistency, and NoSQL is preferred for its flexibility, scalability, and productivity. FaunaDB is a hybrid of these two. It combines the safety and security of SQL with the productivity and scalability of NoSQL.
 
 This guide will use FaunaDB, model the data relationships, and create an API that you can use to connect to your frontend application. We will bootstrap Next.js with TypeScript and Apollo client on the frontend and create a blog app that leverages the serverless FaunaDB and Apollo server on the backend. Then, we deploy the application using the Next.js Versel.
 
 ### Prerequisites
-It is essential to have the following requirements on hand to quickly follow along with this guide.
-
+To follow along with this tutorial, you need to:
 - Have [Node.js](https://nodejs.org/en/) installed on your computer.
 - Be familiar with TypeScript.
-- Basic knowledge working with Apollo client and server.
-- Basic understanding of FaunaDB.
+- Have a basic knowledge of working with Apollo client and server.
+- Have a basic understanding of FaunaDB.
 
-### Tables of content
+### Table of content
 - [Prerequisites](#prerequisites)
 - [Tables of content](#tables-of-content)
 - [Setting up and configuring FaunaDB](#setting-up-and-configuring-faunadb)
@@ -47,7 +46,6 @@ npm init --yes
 ```
 
 Install the following packages:
-
 - [FaunaDB](https://www.npmjs.com/package/faunadb):  For providing a driver to access FaunaDB instance.
 - [Apollo server](https://www.npmjs.com/package/apollo-server): For setting up backend GraphQL API.
 - [GraphQL](https://www.npmjs.com/package/graphql): For providing a query language for the API.
@@ -89,7 +87,7 @@ To get your secret, go to the dashboard of the Fauna database you have just crea
 
 You probably don't have any key right now; click on **New Key**, Enter any Key name, and then hit **Save**. Copy the Key present on the new page and paste it in the **secret** section of the above code.
 
-The domain will be determined by the region you have selected. For example, if you have selected **US**, the domain will be `db.us.fauna.com`. For **EU**, it will be `db.eu.fauna.com`. Refer to this [docs](https://docs.fauna.com/fauna/current/learn/understanding/region_groups) for more information. You can view your region group in the **DB overview** section.
+The domain will be determined by the region you have selected. For example, if you have selected **US**, the domain will be `db.us.fauna.com`. For **EU**, it will be `db.eu.fauna.com`. Refer to these [docs](https://docs.fauna.com/fauna/current/learn/understanding/region_groups) for more information. You can view your region group in the **DB overview** section.
 
 The next step is to come up with the type definitions. Add the following after the previous section.
 
@@ -116,16 +114,15 @@ type Mutation {
 `;
 ```
 
-Based on the information provided above, we're defining the following fields for each blog article.
-
+Based on the information provided above, we're defining the following fields for each blog article:
 - Ref: A unique identifier for the article.
 - Title: Article's title.
 - Summary: Short description of the article.
 - Content: Article's content.
 
-We're also defining a query for getting multiple and single articles. And a mutation to create an article based on the article's fields.
+We're also defining a query for getting many and single articles. And, a mutation to create an article based on the article's fields.
 
-Next, add a method to get multiple articles as follows;
+Next, add a method to get many articles as follows;
 
 ```js
 const  getArticles = async() => {
@@ -201,7 +198,7 @@ const createArticle = async (title,summary,content) => {
 }
 ```
 
-We're creating an article using the `title`, `summary`, and `content` fields. Then return the article created. In case of any error, return that specif error message.
+We are creating an article using the `title`, `summary`, and `content` fields. Then return the article created. In case of any error, return that specif error message.
 
 Connect the above functions to the `Query` or `Mutation` object using the below resolver.
 
@@ -217,7 +214,7 @@ const resolvers = {
 }
 ```
 
-We're just connecting the types we defined for the `Query` and `Mutation` to their respective resolver functions above.
+We are connecting the types we defined for the `Query` and `Mutation` to their respective resolver functions above.
 
 Instantiate the apollo server.
 
@@ -262,7 +259,7 @@ npm run dev
 
 ![initial_server_log](/engineering-education/create-a-nextjs-blog-app-with-faunadb-typescript-and-apollo-server/initial-server-log.PNG)
 
-From your browser, visit the URL logged on your console. Since we're using `Apollo Server`, you will receive a page similar to the one shown below.
+From your browser, visit the URL logged on your console. Since we're using `Apollo Server`, you will receive a page like the one shown below.
 
 ![apollo-launch-server](/engineering-education/create-a-nextjs-blog-app-with-faunadb-typescript-and-apollo-server/apollo-launch-server.PNG)
 
@@ -480,7 +477,7 @@ export default function Layout({children}:LayoutProps) {
 }
 ```
 
-Here we're basically setting up a static `Head` configuration, the dynamic content for the `Navbar` and `Footer` pages, and some basic styling.
+Here we are setting up a static `Head` configuration, the dynamic content for the `Navbar` and `Footer` pages, and some basic styling.
 
 Import the above `Layout` into the `pages/_app.tsx` file. Then inside the `ApolloProvider` wrap the `Component` with `Layout` so that the `Navbar` and `Footer` can be persistent on all pages.
 
@@ -495,7 +492,6 @@ import Layout from "../components/Layout";
 ```
 
 ### Fetching the added articles
-
 To fetch the added articles, we will work on the `pages/index.tsx` file and edit it as follows;
 
 ```tsx
@@ -576,7 +572,6 @@ Depending on whether you have saved articles;
 ![articles_home](/engineering-education/create-a-nextjs-blog-app-with-faunadb-typescript-and-apollo-server/articles-home.PNG)
 
 ### Adding an article
-
 To handle this operation, Navigate to the `pages` directory of the project folder and create an `add-article.tsx` file. Then add the following code block to handle adding a new article.
 
 ```tsx
@@ -768,7 +763,7 @@ const GET_ARTICLE = gql`
     }
 `;
 
-// get multiple articles
+// get many articles
 const GET_ARTICLES = gql`
     query GetArticles {
     articles {
@@ -854,7 +849,7 @@ export async function getStaticPaths(){
 }
 ```
 
-Here we're creating two queries, one for fetching a single article and the other for fetching multiple articles.
+Here we're creating two queries, one for fetching a single article and the other for fetching many articles.
 
 We're using two methods for data fetching. `getStaticProps` and `getStaticPaths`. `getStaticProps` will be used to fetch the article from the server-side, whereas `getStaticPaths` will fetch the articles at build time.
 
@@ -867,8 +862,9 @@ Ensure the fronted and backed development servers are running. Open `http://loca
 ![article-spec-page](/engineering-education/create-a-nextjs-blog-app-with-faunadb-typescript-and-apollo-server/article-spec-page.PNG)
 
 ### Conclusion
-We built a blog application with Next.js, TypeScript, Apollo Client, Apollo Server, and FaunaDB. Refer to the following for more information on the technologies and techniques used in this topic.
+We built a blog application with Next.js, TypeScript, Apollo Client, Apollo Server, and FaunaDB. Refer to the further reading section for more information on the technologies and techniques used in this topic.
 
+### Further reading
 - [Apollo client guide](https://www.apollographql.com/docs/react/)
 - [Apollo server guide](https://www.apollographql.com/docs/apollo-sever/)
 - [FaunaDB tutorial](https://docs.fauna.com/fauna/current/tutorials/)
