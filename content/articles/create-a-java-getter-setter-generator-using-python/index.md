@@ -35,7 +35,7 @@ The value which a getter method returns is its argument. This is useful for OOP 
 
 This helps establish private class characteristics in object-oriented programming. Using getters and setters ensures there is data encapsulation.
 
-Why do we use setters and getters:
+Why we use setters and getters:
 - To promote encapsulation.
 - To keep the interface even if the internals change.
 - To add validation logic to value acquisition and setting.
