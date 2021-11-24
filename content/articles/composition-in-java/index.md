@@ -5,8 +5,8 @@ published: true
 url: /composition-in-java/
 title: Getting Started with Composition in Java
 description: In this tutorial the reader will learn how to use Composition in Java, some of the applications and the benefits.
-author: kim-k
-date: 2021-11-24T00:00:00-14:50
+author: emmanuel-kipchumba
+date: 2021-11-24T00:00:00-15:50
 topics: [Langugaes]
 excerpt_separator: <!--more-->
 images:
