@@ -1,22 +1,20 @@
 # How to build a task manager with angular.
 
 ### Introduction
-As developers, it is common practice to build simple applications. This will help solidify one's knowledge about a particular programming language or framework. 
-
-In this article, we will build a simple task manager application (AKA To-do app) using [Angular](https://angular.io/docs). Angular is a JavaScript framework.
+[Angular](https://angular.io/docs) is a popular Javascript framework. It can be used to build different applications ranging from simple to complex. In this article, we will build a simple task manager application (AKA To-do app). A task manager writes, organizes, and rearranges tasks more efficiently. The task manager we will build will allow the user to add a task, mark the task as complete, and delete the task.  
 
 ### Table of content
--  Prerequisites
--  Introduction
--  Key takeaways
--  What is a Task Manager
--  Create a new angular project
--  Create a component
--  Add task
--  Mark task as done
--  Delete a task
--  Save to local storage
--  Summary
+-  [Introduction](#introduction)
+-  [Table of contents](#table-of-contents)
+-  [Prerequisites](#prerequisites)
+-  [Key takeaways](#key-takeaways)
+-  [Create a new angular project](#create-a-new-angular-project)
+-  [Create a component](#create-a-component)
+-  [Add task](#add-task)
+-  [Mark task as done](#mark-task-as-done)
+-  [Delete a task](#delete-a-task)
+-  [Save to local storage](#save-to-local-storage)
+-  [Summary](#summary)
 
 
 ### Prerequisites
@@ -24,77 +22,45 @@ Before we get started, here are a few prerequisites for developing a task manage
 
 - You should have [Node.js](https://nodejs.org/en/) installed on your computer.
 - You should be fairly familiar with [Angular](https://angular.io/docs) and JavaScript. Knowledge of [TypeScript](https://www.typescriptlang.org/) is useful but not requisite.
+- You should have [Angular Cli](https://angular.io/cli) installed on your computer.
 
 ### Key takeaways
 At the end of this tutorial, you should be able to:
--  create and structure an angular project.
--  create a component in Angular.
--  build a simple application.
+-  build a simple task manager.
 -  save items to local storage
 
 
-### What is a Task Manager?
-A task manager writes, organizes, and rearranges tasks more efficiently. The task manager we will build will allow the user to add a task, mark the task as complete, and delete the task.
-
-
 ### Create a new angular project
-Before creating a new angular project, one will need to install angular CLI. Run `npm install -g @angular/cli` on the terminal or command prompt to install the CLI.
+To create a new Angular project, run the CLI command `ng new *project name*` on your command prompt. We will use `todoApp` as the project name for this article.
 
-   ```npm install -g @angular/cli
-   ```
-
-After installing the CLI, you can now create a new angular project. Run the CLI command `ng new *project name*` to do this. We will use `todoApp` as the project name for this article.
-
-    ``` ng new todoApp 
+    ```bash 
+    ng new todoApp 
     ```
- Accept the defaults by pressing the enter key.
+Once the project is named, the Angular CLI installs the necessary Angular npm packages and other dependencies for the project.
+To serve your application to the browser, cd into the project directory and run the command:
 
-The Angular CLI will install the required Angular npm packages and other dependencies for the project.
-
-The Angular CLI has a server to serve and build applications locally.
-To serve your application to the browser, you will first navigate to the workspace folder. Run `cd todoApp` to do so. 
-Next, run the command `ng serve -o` and wait for some minutes; your application will launch in the browser.
-
-
-    ```
-    cd todoApp
+    ```bash
     ng serve -o
     ```
 
-The `ng serve` command sets up the server, observes the files, and rebuilds the app as you change those files.
-
-
 ### Create a component
-Components are the main constituents of an angular application. Each component consists of;
+After creating a new project, it is only ideal to create a component where our codes will be written.
+Run the command below to create a `todo` component:
 
-- An HTML template: states what is rendered on the page.
-- A Typescript class: defines the behavior of the template.
-- A CSS file: it is used to style the template.
-
-Components can be created manually or by using the Angular CLI. For this article, it will be created using the latter. You can start by running the command below on your terminal.
-
-    ```
+    ```bash
     ng generate component todo
     
-    // OR
+    # OR
     
     ng g c todo
     ```
 
-The CLI command above tells the Angular CLI to generate a `todo` component.
-Now in your code, check the `app` folder, which is in the `src` folder, and you will notice a `todo` folder has been created. This `todo` folder contains the HTML, CSS, and TypeScript files, as shown below.
+Next, we will put some HTML code in the `todo.component.html` file. We will use tailwind for styling. In essence, the tailwind [CDN link](https://v1.tailwindcss.com/docs/installation#using-tailwind-via-cdn) should be added to the `index.html` file.
 
-![Angular Setup](/how-to-build-a-task-manager-with-angular/angular_setup.png)
-
-
-After generating the component, it will be automatically imported into the app module. The component is also added to the `declarations` array. You should check the `app.module.ts` file to see this.
-
-![App Module](/how-to-build-a-task-manager-with-angular/app_module.png)
+Copy and paste the code below in the `todo.component.html` file.
 
 
-Next, we will put some HTML code in the `todo.component.html` file. We will use tailwind for styling. In essence, the tailwind [CDN](https://v1.tailwindcss.com/docs/installation#using-tailwind-via-cdn) link should be added to the `index.html` file. Like so;
-
-```
+```html
     //todo.component.html
     
     <div class="h-100 w-full flex items-center justify-center bg-teal-lightest font-sans">
@@ -126,9 +92,7 @@ Once you paste the HTML code, you should see something like the image below on y
 
 ![Todo List](/how-to-build-a-task-manager-with-angular/todo-list.png)
 
-
 Note: The buttons are static, so we will make them work in the next section.
-
 
 ###  Add Tasks to the To-do list
 Tasks will be added to the to-do list by clicking the ‘Add’ button or pressing the enter key.
@@ -137,6 +101,7 @@ Let’s see what happens under the hood;
 Since the ‘Add’ button and the input box are in a form element, we will handle them using the Angular [FormGroup](https://angular.io/api/forms/FormGroup#description) property.
 
 To use the [FormGroup](https://angular.io/api/forms/FormGroup#description) property, you will first import it in the `app.module.ts` file using 
+
 ```
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 ```
@@ -151,7 +116,7 @@ We will also add a `formControlName` and set it to `todoItem`.
 
 Next, add an event listener `(ngSubmit)` to the form element. The event listener will listen for a submitted event and trigger an `addTask()` method.
 
-```
+```html
     //todo.component.html
     
     <div class="h-100 w-full flex items-center justify-center bg-teal-lightest font-sans">
@@ -170,7 +135,7 @@ Finally, to make our form functional, we will write some JavaScript code in our 
 1. Import the `[FormBuilder](https://angular.io/api/forms/FormBuilder)` service from the `@angular/forms` package. This service gives suitable methods for creating controls.
 
 
-```
+```javascript
     //todo.component.ts
     
     import { Component, OnInit } from '@angular/core';
@@ -179,7 +144,7 @@ Finally, to make our form functional, we will write some JavaScript code in our 
 
 2. Inject the `FormBuilder` service in the `TodoComponent` `constructor()`. This service is included in the `[ReactiveFormsModule](https://angular.io/api/forms/ReactiveFormsModule)` module, which has already been imported.
 
-```
+```javascript
     //todo.component.ts
     
     export class TodoComponent implements OnInit {
@@ -191,7 +156,7 @@ Finally, to make our form functional, we will write some JavaScript code in our 
 
 3. We will use the `FormBuilder` `group()` method to collect the inputted task. These methods set the `newTodoForm` property to a form model containing the `todoItem` field.
 
-```
+```javascript
     //todo.component.ts
     
     export class TodoComponent implements OnInit {
@@ -212,7 +177,7 @@ Finally, to make our form functional, we will write some JavaScript code in our 
 
 The entire Todo component class is as follows:
  
-```
+```javascript
     //todo.component.ts
     
     import { Component, OnInit } from '@angular/core';
@@ -241,7 +206,7 @@ The looping will be done in the `todo.component.html` file.
 After looping, set the `<p>` to display the task dynamically.
 
 
-```
+```html
     //todo.component.html
     
     <div class="h-100 w-full flex items-center justify-center bg-teal-lightest font-sans">
@@ -279,7 +244,7 @@ When a task is completed, it should be marked as such. This can be done by strik
 
 1. Add a click event to the Done button on `todo.component.html` with` markDone(value)` method.
 
-```
+```html
     //todo.component.html
     
     <p class="w-full text-grey-darkest" [ngClass]="{'line-through': value.completed}">  {{value.name}}</p>
@@ -289,7 +254,7 @@ When a task is completed, it should be marked as such. This can be done by strik
 
 2.  In the `TodoComponent` class, we will define the `markDone` method.
 
-```
+```javascript
     //todo.component.ts
     
     completed: boolean = false;
@@ -305,7 +270,7 @@ When a task is completed, it should be marked as such. This can be done by strik
 In the code snippet above, a variable `completed` is created and set to a boolean `false`. This variable is used to toggle the ‘Done’ button. Hence, when `value.complete` is true, bind a line-through class to the task. 
  
 
-```
+```html
     //todo.component.html
     
     <p class="w-full text-grey-darkest" [ngClass]="{'line-through': value.completed}">  {{value.name}}</p>
@@ -317,7 +282,7 @@ ELSE, move it to the beginning of the `taskList` array using the `unshift()` met
 
 So far, these are the codes in the `todo.component.ts` file:
 
-```
+```javascript
     //todo.component.ts
     
     import { Component, OnInit } from '@angular/core';
@@ -354,7 +319,7 @@ So far, these are the codes in the `todo.component.ts` file:
     }
 ```
 
-```
+```html
     //todo.component.html
      
     <div class="h-100 w-full flex items-center justify-center bg-teal-lightest font-sans">
@@ -390,7 +355,7 @@ Tasks can be deleted or removed from the to-do list. For this to be achieved, th
 1. Add a click event to the ‘Remove’ button. Set the click event to the `removeTask(i)` method with the index of the task passed into the method. 
 
 
-```
+```html
     //todo.component.html
     
     <div>
@@ -408,7 +373,7 @@ Tasks can be deleted or removed from the to-do list. For this to be achieved, th
 
 2. Define the `removeTask` method in the `todo.component.ts` file:
 
-```
+```javascript
     //todo.component.ts
     
     removeTask(i: any) {
@@ -423,7 +388,7 @@ The `splice()` method will remove the task whose index was passed in the `remove
 There are different  [localStorage methods](https://blog.logrocket.com/localstorage-javascript-complete-guide/#howdoeslocalstoragework) which can be used to achieve specific needs.
 First, when any task is added to the to-do list, it should also be added to the local storage. This is done by modifying the `addTask()` method as shown below:
 
-```
+```javascript
     //todo.component.ts
     
     addTask() {
@@ -441,7 +406,7 @@ Using the `.setItem()`, which accepts a key and value, a task is stored in the l
 `JSON.stringify()` will convert the content of `taskList` array to a string.
 Next, add ` window.localStorage.setItem('task', JSON.stringify(this.taskList))` to `removeTask()`. This will keep the task deleted from the to-do list even after the browser is refreshed.
 
-```
+```javascript
     //todo.component.ts 
  
     removeTask(i: any) {
@@ -454,7 +419,7 @@ Finally, we want the saved task to remain even after closing or refreshing the b
 To achieve these, we have to use one angular lifecycle hook called ` [ngOninit()](https://angular.io/api/core/OnInit) `. 
 `[ngOninit()](https://angular.io/api/core/OnInit)` is invoked only when the directive is instantiated.
 
-```
+```javascript
     //todo.component.ts
  
     ngOnInit(): void {
