@@ -1,5 +1,7 @@
 ---
 title: Kingsley Nwafor
-type: Author
+type: authors
+images:
+  - url: /engineering-education/authors/kingsley-nwafor/avatar.png
 ---
-I'm a passionate digital native at Semicolon Africa, I love music and meeting digital natives all around the world. In my leisure time I code java, python, spring-boot, R, Machine-Learing with python.
+I'm a passionate digital associate at Semicolon Africa. I love music and meeting other digital ethuasists across the world. In my leisure time, I code in Java, python, Spring-boot, and R.
