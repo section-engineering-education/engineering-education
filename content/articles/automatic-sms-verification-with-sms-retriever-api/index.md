@@ -4,29 +4,29 @@ status: publish
 published: true
 url: /automatic-sms-verification-in-android/
 title: Automatic SMS verification with SMS Retriever API in Android
-description: This tutorial will take the reader through the process of setting up an automatic SMS verification in Android. When using SMS Retriever API, users do not need to enter the verification code manually nor does the API require any extra app permissions.
+description: This tutorial will take the reader through the process of setting up an automatic SMS verification in Android. When using SMS Retriever API, users do not need to enter the verification code manually.
 author: robert-muriithi
-date: 2021-11-15T00:00:00-08:41
-topics: [Languages]
+date: 2021-11-23T00:00:00-19:10
+topics: [API]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/automatic-sms-verification-in-android/hero.png
     alt: Automatic SMS verification in Android Hero Image
 ---
-Automatic SMS verification can be done with the help of an API called the `Sms Retriever API`. With the use of this API, users do not need to enter the verification code manually nor does the API require any extra app permissions.
+Automatic SMS verification can be done with the help of an API called the `SMS Retriever API`. With the use of this API, users do not need to enter the verification code manually nor does the API require any extra app permissions.
 <!--more-->
 In this tutorial, we'll learn how we can implement this feature in an Android app.
 
 ### Prerequisites
 To follow along with this tutorial, the reader should:
-- Have an understanding of the `Kotlin` programming language.
+- Have an understanding of the [`Kotlin`](/engineering-education/search/?q=Kotlin) programming language.
 - Know how to design layouts using `XML` in Android studio.
 - Have an understanding of `Android Broadcasts`.
 
 ### Goal
-By the end of this tutorial, the reader will have understood:
-- What SMS Verification process is.
+By the end of this tutorial, the reader should understand:
+- What tje SMS Verification process is.
 - How to use an automatic SMS verification feature on your app.
 
 ### What is SMS Retriever API?
@@ -34,14 +34,14 @@ SMS Retriever is an API that allows you to verify users' SMS without forcing the
 
 When the user device receives a message, Google play services checks the app hash. It then sends the message text to your app over the SMS Retriever API. The app then reads and extracts the code in the SMS message. This code is usually sent back to the server for verification.
 
-### SMS Verification process
+### SMS verification process
 For mobile number verification, you need to implement the client side first. Afterwards, the server side, to complete the verification procedure. Usually, you send the user's phone number to the server performing the verification. The server then sends an OTP (one time password) code to the phone number provided.
 
 The SMS Retriever API listens for an SMS containing OTP code. Upon receiving the code, it sends it back to the server to complete the verification process.
 
 ### Why use Automatic SMS Retriever API?
-- Google abolished all apps using `CALL_LOG` and `READ_SMS` permissions. This is because they violated of users privacy. This led to removal of apps using these permissions from play store in January 19th, 2021.
-- Provides a smooth and effortless user experience.
+- Google abolished all apps using `CALL_LOG` and `READ_SMS` permissions. This is because they violated users privacy. This led to removal of apps using these permissions from play store in January 19th, 2021.
+- It provides a smoother and effortless user experience.
 
 ### Step 1. Create a new Android studio project
 
@@ -49,13 +49,13 @@ The SMS Retriever API listens for an SMS containing OTP code. Upon receiving the
 
 ### Step 2: Add the necessary dependencies
 We are going to use the following: 
-- Apache Commons - This library will help us to extract the code from the SMS message.
-- Google Play Services API - This library holds the SMS retrieval class
+- Apache Commons - This library will help us extract the code from the SMS message.
+- Google Play Services API - This library holds the SMS retrieval class.
 - EventBus - To listen for received SMS from the SMS Retrieval API, we'll use a BroadcastReceiver. EventBus is a publisher/subscriber pattern library. We use it to communicate between our BroadcastReceiver and Activity classes.
 
 Add these to the build.gradle file and sync the project:
 
-```gradle
+```bash
 implementation 'org.apache.commons:commons-lang3:3.11'
 implementation 'com.google.android.gms:play-services-auth:19.2.0'
 implementation 'org.greenrobot:eventbus:3.2.0'
@@ -158,7 +158,7 @@ class MessageBroadcastReceiver : BroadcastReceiver() {
 
 On the `onReceive()` method, first we check the status of `SMS Retriever` background processing. We also construct an instance of the `RetrievalEvent` class. This is the event class that `EventBus` will send to our `Subscriber`. The class `RetrievalEvent` will be a data class.
 
-If you are completely new to EventBus, consider learning about it [here](https://greenrobot.org/eventbus/).
+If you are completely new to EventBus, consider learning more about it [here](https://greenrobot.org/eventbus/).
 
 #### RetrievalEvent
 
@@ -196,7 +196,7 @@ In your app's `AndroidManifest.xml` file, register `BroadcastReceiver`:
 
 Next, in our `MainActivity class`, we'll register, unregister, and implement our subscribers. The `onReceiveSms()` method will be invoked when an event is posted. It is usually annotated with the `@Subscribe` annotation.
 
-Registering and unregistering receivers is usually  done on `onStart()` and `onStop()` methods respectively. The `substringAfterLast()` function is used to extract the code sent through SMS.
+Registering and unregistering receivers is usually done on `onStart()` and `onStop()` methods respectively. The `substringAfterLast()` function is used to extract the code sent through SMS.
 
 > NOTE: Always remember to register and unregister members to avoid memory leaks.
 
@@ -263,7 +263,7 @@ class MainActivity : AppCompatActivity() {
 
 ### Computing your app's hash string
 To generate the hash string, you can use the following methods:
-- Use [Play App Signing](https://support.google.com/googleplay/android-developer/answer/9842756?visit_id=637672247631770776-2285078183&rd=1)
+- Use [Play App Signing](https://support.google.com/googleplay/android-developer/answer/9842756?visit_id=637672247631770776-2285078183&rd=1).
 - Use `SignatureHelper class`. This class will help to generate our app's hash string. After using this class to obtain the hash string, always remove it.
 
 ```kotlin
@@ -329,7 +329,7 @@ class SignatureHelper(context: Context?) :
 Finally, remember that the format you should use on your message is as follows: 
 - The message should be less than 140 bytes.
 - The message should have the OTP code.
-- Your message should end with you app's 11-character hash string 
+- Your message should end with your app's 11-character hash string.
 
 The following is an example
 
@@ -343,7 +343,7 @@ Upon running the app, this is what to expect:
 
 ![Screen One](/engineering-education/automatic-sms-verification-in-android/screen-one.png)
 
-You can find the whole project on [GitHub](https://github.com/robert-muriithi/SmsRetriverApiDemo.git).
+You can find the whole project on [GitHub here](https://github.com/robert-muriithi/SmsRetriverApiDemo.git).
 
 ### Conclusion
 Automatic Retriever API is a library that helps in detecting and extracting OTP code. This code is usually sent back to the server for verification. This API performs the task without requiring the user to provide permissions for the app. This makes the user's onboarding experience smooth and appealing.
