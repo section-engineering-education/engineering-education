@@ -1,19 +1,33 @@
-# WordPress penetration testing
+---
+layout: engineering-education
+status: publish
+published: true
+url: /wordpress-penetration-testing/
+title: WordPress Penetration Testing
+description: This article 
+author: esther-waithera
+date: 2021-11-23T00:00:00-18:20
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/wordpress-penetration-testing/hero.jpg
+    alt: WordPress Penetration Testing example image
+---
 WordPress (WP) is a Content Management System (CMS) that powers many websites on the internet. Technology is growing at an accelerated rate, and it's everywhere today. Businesses have increased their dependency on Information Technology (IT), including social media, WP websites, and more. But cyber risk continues to rise at an alarming rate.
-
+<!--more-->
 There are many security vulnerabilities linked to WordPress websites. These vulnerabilities include cybercriminals attacking systems, servers, stealing everything from passwords to data.
 
 In most cases, security experts are the ones who carry out penetration tests. However, developers need to understand how to make their WP websites more secure.
 
 This article will cover WordPress penetration testing (pen-testing), how hackers gain access to WP websites, WPsecurity tips, and how to perform one yourself using WP pen-testing tools.
 
-### Table of Contents
-+ [What is WordPress penetration testing?](#what-is-wordpress-penetration-testing)
-+ [How hackers gain access to websites](#how-hackers-gain-access-to-websites)
-+ [Penetration testing methodology](#penetration-testing-methodology)
-+ [Using kali Linux on VirtualBox for WordPress security](#using-kali-linux-on-virtualbox-for-wordpress-security)
-+ [WordPress penetration testing tools](#wordpress-penetration-testing-tools)
+### Table of contents
+- [What is WordPress penetration testing?](#what-is-wordpress-penetration-testing)
+- [How hackers gain access to websites](#how-hackers-gain-access-to-websites)
+- [Penetration testing methodology](#penetration-testing-methodology)
+- [Using kali Linux on VirtualBox for WordPress security](#using-kali-linux-on-virtualbox-for-wordpress-security)
+- [WordPress penetration testing tools](#wordpress-penetration-testing-tools)
 
 ### Prerequisites
 To follow this guide, one needs permission from a WordPress website to carry out penetration testing. Also, make sure Kali Linux and virtual box are installed on your computer. Kali Linux contains several security tools which handle information security tasks such as penetration testing.
@@ -22,10 +36,10 @@ To follow this guide, one needs permission from a WordPress website to carry out
 The practice of assessing websites, systems, apps, and networks for vulnerabilities that an attacker could exploit is known as penetration testing.
 
 These vulnerabilities could be caused by a variety of factors. Let's have a look at a couple of them:
-+ **The design and implementation of the WP website**. A poorly designed and implemented website is open to these security issues, brute force attacks, denial of service (DoS) attacks, theft of sensitive data, and malware-related hacks.
-+ **Poor system configuration**. System configuration is like the heart and soul of your WP site. A poor system configuration increases the chances of attacks. Also, make sure that WordPress core, themes, and plugins are updated. 
-+ **Unsecure network**. Using networks from untrusted sources is dangerous. There are high chances of a WP site attack when connected to an unsecured network.
-+ **System complexity**. The more complex the architecture of the WP website or system is, the higher the chances of being attacked. 
+- **The design and implementation of the WP website**. A poorly designed and implemented website is open to these security issues, brute force attacks, denial of service (DoS) attacks, theft of sensitive data, and malware-related hacks.
+- **Poor system configuration**. System configuration is like the heart and soul of your WP site. A poor system configuration increases the chances of attacks. Also, make sure that WordPress core, themes, and plugins are updated. 
+- **Unsecure network**. Using networks from untrusted sources is dangerous. There are high chances of a WP site attack when connected to an unsecured network.
+- **System complexity**. The more complex the architecture of the WP website or system is, the higher the chances of being attacked. 
 
 Penetration testing has never been more critical than it is today. The best defense starts by knowing your strengths and weaknesses, which attackers could take advantage of.
 
@@ -35,23 +49,23 @@ The penetration testing process identifies the system's vulnerabilities, system 
 
 ### How hackers gain access to websites
 A hacker put together a lot of information about your site. The attacker's main aim is to get into your website and have access to the WP admin. Once The hacker can access the WP admin, then he/she will know these things:
-+ WordPress version
-+ Theme
-+ Plugins and their versions
-+ User enumeration
+- WordPress version
+- Theme
+- Plugins and their versions
+- User enumeration
 
 If the hackers find [user enumeration](https://www.rapid7.com/blog/post/2017/06/15/about-user-enumeration/), then they know your site is vulnerable. This is how hackers gain access to websites:
-+ User enumeration. Hackers use brute-force attack techniques to guess or confirm legit users in a system.
-+ Using vulnerable plugins and themes.
-+ [SQL injections attacks](/engineering-education/how-to-fix-and-prevent-sql-injection-in-wordpress/).
-+ [Cross-site scripting (XSS) attacks](/engineering-education/how-to-prevent-cross-site-scripting-in-node-js/).
-+ [Cross-site request forgery (CSRF) attacks](/engineering-education/understanding-csrf/).
-+ [Social engineering attacks](https://www.imperva.com/learn/application-security/social-engineering-attack/).
+- User enumeration. Hackers use brute-force attack techniques to guess or confirm legit users in a system.
+- Using vulnerable plugins and themes.
+- [SQL injections attacks](/engineering-education/how-to-fix-and-prevent-sql-injection-in-wordpress/).
+- [Cross-site scripting (XSS) attacks](/engineering-education/how-to-prevent-cross-site-scripting-in-node-js/).
+- [Cross-site request forgery (CSRF) attacks](/engineering-education/understanding-csrf/).
+- [Social engineering attacks](https://www.imperva.com/learn/application-security/social-engineering-attack/).
 
 To avoid falling into the trap of being hacked, make sure:
-+ Your WordPress, plugins, and themes are updated regularly.
-+ WP-Hardening for L1 security. Ensure you install the [WP hardening](https://wordpress.org/plugins/wp-security-hardening/) plugin for WP security.
-+ Scan your server regularly. Be security conscious.
+- Your WordPress, plugins, and themes are updated regularly.
+- WP-Hardening for L1 security. Ensure you install the [WP hardening](https://wordpress.org/plugins/wp-security-hardening/) plugin for WP security.
+- Scan your server regularly. Be security conscious.
 
 ### Penetration testing methodology
 A penetration testing methodology is a systematic approach used to identify vulnerabilities and weaknesses in the IT infrastructure. This systematic approach gives you the utmost amount of information about the security outlook of your system, network, website, or application.
@@ -139,6 +153,6 @@ Using the information provided in this document, you can come up with a WP pen-t
 
 ### Further reading
 To learn more about WordPress penetration testing, go through these articles:
-+ [Penetration Testing for WordPress](https://securityboulevard.com/2020/03/penetration-testing-for-wordpress-websites/)
-+ [Penetration Testing on WordPress](https://gupta-bless.medium.com/penetration-testing-on-wordpress-f96bc701832e)
-+ [WordPress Penetration Testing](https://www.getastra.com/blog/security-audit/wordpress-penetration-testing/)
+- [Penetration Testing for WordPress](https://securityboulevard.com/2020/03/penetration-testing-for-wordpress-websites/)
+- [Penetration Testing on WordPress](https://gupta-bless.medium.com/penetration-testing-on-wordpress-f96bc701832e)
+- [WordPress Penetration Testing](https://www.getastra.com/blog/security-audit/wordpress-penetration-testing/)
