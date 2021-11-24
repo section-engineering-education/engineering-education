@@ -1,7 +1,7 @@
 ---
 title: Isaiah Olatunbosun
 type: authors
-linkedin: https://www.linkedin.com/in/isaiah-oladapo/
+twitter: https://www.twitter.com/isaiaholadapo18
 github: https://github.com/isaiaholadapo
 images:
   - url: /engineering-education/authors/isaiah-olatunbosun/avatar.jpeg 
