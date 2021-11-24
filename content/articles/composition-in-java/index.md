@@ -179,7 +179,7 @@ The Main class, java, enables you to run all the code in the package specified. 
 
 A preview of the full code as in the Intellij is as shown below:
 
-![Main Page](/engineering-education/composition-in-java/Main.png)
+![Main Page](/engineering-education/composition-in-java/main.png)
 
 The output of the code is derived through composition.
 
