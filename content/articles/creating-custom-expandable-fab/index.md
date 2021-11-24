@@ -1,13 +1,15 @@
-This tutorial is going to cover on how to create a custom Expandable Floating Action Button (FAB). Creating custom expandable FAB involves using Animation class. Animations show a change of state in the button when clicked.
-### What is Floating Action Button?
-Floating Action Button is a circular button that usually floats on the screen and displays the primary action of an application. 
-Expandable Floating Actions Buttons is a FAB that can animate when clicked or when the user scrolls the contents on the screen.
+This tutorial is going to cover how to create a custom Expandable Floating Action Button (FAB) in Android. Creating custom expandable FAB involves using the Animation class. Animations show a change of state in the button when clicked.
+
+### What is a Floating Action Button?
+A Floating Action Button is a circular button that usually floats on the screen and displays the primary action of an application.
+
+Expandable Floating Actions Button is a FAB that can animate when clicked or when the user scrolls the contents on the screen.
 
 ### Table of Contents
 - [Prerequisites](#prerequisites)
 - [Goals](#goals)
-- [Designing Custom Expandable Floating Action Button](#designing-custom-expandable-floating-action-button)
-- [Creating Custom Floating Action Button Animations](#creating-custom-floating-action-button-animations)
+- [Designing Custom Expandable FAB](#designing-custom-expandable-fab)
+- [Creating Custom FAB Animations](#creating-custom-fab-animations)
 - [Initializing The Animations](#initializing-the-animations)
 - [Designing Extendable Floating Action Button](#designing-extendable-floating-action-button)
 - [Creating the Message Recycler Adapter](#creating-the-message-recycler-adapter)
@@ -15,20 +17,23 @@ Expandable Floating Actions Buttons is a FAB that can animate when clicked or wh
 
 ### Prerequisites
 To follow through this tutorial, the reader should:
-- Have a basic understanding of [Material Components Design] for designing pleasant interface(https://material.io/components/buttons-floating-action-button#anatomy).
-- Good understanding of [Kotlin] (https://kotlinlang.org/) programming language and View Binding.
-- Have [Android Studio] (https://developer.android.com/studio/index.html) installed.
+- Have a basic understanding of [Material components design](https://material.io/components/buttons-floating-action-button#anatomy).
+- Be conversant with the [Kotlin](https://kotlinlang.org/) programming language and `ViewBinding`.
+- Have [Android Studio](https://developer.android.com/studio/index.html) installed.
 
 ### Goals
 In this tutorial, we will:
 - Design a custom Extendable Floating Action Button.
 - Design an Expandable Floating Action Button.
-- Learn how to add click listeners on the buttons.
+- Learn how to handle FAB clicks.
 
-### Designing Custom Expandable Floating Action Button
-After creating your new project, go to the `drawable` folder and import drawable icons from vector Assets. These icons will be at the center of the FAB. To add icons, right-click on `drawable`, select new then select `Vector Asset` and choose an icon from `Clip Art`.
-In this tutorial, we are going to choose the add, call, and message icons. Hence we are going to create a custom FAB with three buttons. 
+### Designing Custom Expandable FAB
+After creating your new project, go to the `drawable` folder and import drawable icons from vector Assets. These icons will be placed at the center of the FAB. To add icons, right-click on `drawable`, select `new`, then select `Vector Asset` and choose an icon from `Clip Art`.
+
+In this tutorial, we are going to choose the `add`, `call`, and `message` icons. Hence we are going to create a custom FAB with three buttons.
+
 Our `activity_main.xml` will have the following code:
+
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
@@ -80,15 +85,58 @@ Our `activity_main.xml` will have the following code:
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
-Buttons for Call and Message are set invisible. They will be visible when the Add button is clicked.
 
-### Creating Custom Floating Action Button Animations
-We are now going to create animations that will display the other two buttons (Call and Message) when the Add button is clicked. 
-To create animations, go to Resource Manager, and select Animation then click on (+) to add `Animation Resource File`. 
-For the button `Add`, we will have two Animation Resource Files for rotating it to open and to close.
-Buttons `Call` and `Message` will have two Animation Resource Files for animating from and to the bottom of the `Add` button.
-1. `from_bottom_animation.xml`:
-This animates buttons from bottom. Here, Call and Message buttons are translated from  bottom to top.  
+Initially, the Call and Message buttons are set invisible. They will be visible when the Add button is clicked.
+
+### Creating Custom FAB Animations
+We are now going to create animations that will apply to the other two buttons (Call and Message) when the Add button is clicked.
+
+To create animations, go to Resource Manager, and select Animation, then click on (+) to add `Animation Resource File`.
+
+For the `Add` button, we will have two animation resource files, one for rotating it when opening and the other when closing.
+
+Buttons `Call` and `Message` will have two animation resource files for animating from and to the bottom of the `Add` button.
+
+
+1. `rotate_open_animation.xml`:
+This rotates the button from 0 to 45 degrees.
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:fillAfter="true">
+    <rotate
+        android:fromDegrees="0"
+        android:pivotX="50%"
+        android:pivotY="50%"
+        android:toDegrees="45"
+        android:duration="300"/>
+
+</set>
+```
+
+2. `rotate_close_animation.xml`:
+Animates the Add button by rotating it from 45 to 0 degrees.
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:fillAfter="true">
+    <rotate
+        android:fromDegrees="45"
+        android:pivotX="50%"
+        android:pivotY="50%"
+        android:toDegrees="0"
+        android:duration="300"/>
+
+</set>
+```
+
+3. `from_bottom_animation.xml`:
+This animates buttons from the bottom. Here, Call and Message buttons are translated from  bottom to top.  
+
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <set xmlns:android="http://schemas.android.com/apk/res/android"
@@ -111,12 +159,15 @@ This animates buttons from bottom. Here, Call and Message buttons are translated
 
 </set>
 ```
+
+#### Explanation:
 - `translate` tag is useful in moving buttons along X and Y axis.
 - `scale` tag shows the center of rotation along the X and Y axis.
-- `alpha` tag is used to represents the obesity of animation. It is set from 0 to 1 with a duration of 800ms.
+- `alpha` tag represents the opacity of animation. It is set from 0 to 1 with a duration of 800ms.
 
-2. `to_bottom_animation.xml`:
+4. `to_bottom_animation.xml`:
 Animates the buttons from top to bottom.
+
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <set xmlns:android="http://schemas.android.com/apk/res/android"
@@ -142,57 +193,29 @@ Animates the buttons from top to bottom.
 
 </set>
 ```
-3. `rotate_close_animation.xml`:
-Animates the Add button by rotating it at an angle of 45 degrees.
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<set xmlns:android="http://schemas.android.com/apk/res/android"
 
-    android:fillAfter="true">
-    <rotate
-        android:fromDegrees="45"
-        android:pivotX="50%"
-        android:pivotY="50%"
-        android:toDegrees="0"
-        android:duration="300"/>
-
-</set>
-```
-
-4. `rotate_open_animation.xml`:
-Rotates the button at an angle of 45 degrees. 
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<set xmlns:android="http://schemas.android.com/apk/res/android"
-
-    android:fillAfter="true">
-    <rotate
-        android:fromDegrees="0"
-        android:pivotX="50%"
-        android:pivotY="50%"
-        android:toDegrees="45"
-        android:duration="300"/>
-
-</set>
-```
-Here is the explanation of the attributes used in animation: 
-- `fromXDelta` - Change in X coordinate to apply at the start of the animation
-- `toXDelta`   - Change in X coordinate to apply at the end of the animation
-- `fromYDelta` - Change in Y coordinate to apply at the start of the animation
-- `toYDelta`   - Change in Y coordinate to apply at the end of the animation 
+Here is the explanation of the attributes used in animation:
+- `fromXDelta` - Change in X coordinate to apply at the start of the animation.
+- `toXDelta`   - Change in X coordinate to apply at the end of the animation.
+- `fromYDelta` - Change in Y coordinate to apply at the start of the animation.
+- `toYDelta`   - Change in Y coordinate to apply at the end of the animation.
 - `fromDegrees` - The angle at which the rotation begins.
 - `toDegrees` - The angle at which the rotation stops.
-- `duration` - The duration till which the animation will be playing. The number is in milliseconds, so 1000ms is 1 second.
-- The pivotX and pivotY is the central point of the animation.
+- `duration` - The period during which the animation plays measured in milliseconds.
+- The `pivotX` and `pivotY` form the central point of the animation.
+
 ### Initializing The Animations
-In the `MainActivity.kt` add the following code to globally initialize the animations:
+In the `MainActivity.kt`, add the following code to globally initialize the animations:
+
 ```kotlin
 private val rotateOpenAnimation: Animation by lazy {AnimationUtils.loadAnimation(this, R.anim.rotate_open_animation)}
 private val rotateCloseAnimation: Animation by lazy {AnimationUtils.loadAnimation(this, R.anim.rotate_close_animation)}
 private val fromBottomAnimation: Animation by lazy {AnimationUtils.loadAnimation(this, R.anim.from_bottom_animation)}
 private val toBottomAnimation: Animation by lazy {AnimationUtils.loadAnimation(this, R.anim.to_bottom_animation)}
 ```
+
 Below is the complete implementation of the `MainActivty.kt` class:
+
 ```kotlin
 class MainActivity : AppCompatActivity() {
 
@@ -269,19 +292,26 @@ class MainActivity : AppCompatActivity() {
     }
 }
 ```
+
 ### Designing Extendable Floating Action Button
-For the Extendable Floating Action Button, we are going to use a library. 
-In the `settings.gradle`, add the jitpack library inside the `repositories`.
+For the Extendable Floating Action Button, we are going to use a third party library. In the `settings.gradle`, add the jitpack library inside the `repositories`.
+
 ```gradle
 maven { url 'https://jitpack.io' }
 ```
+
 In the `build.gradle` project level, add the following dependency:
+
 ```gradle
 implementation 'com.github.imtuann:FloatingActionButtonExpandable:1.1.2'
 ```
-After adding the above dependencies, you are now set to design the button. The library has all the functions for animating the button whenever the recycler view is scrolled.
-Extendable Floating Action Button is mostly used in messaging applications to add chats like in the messaging app. It, therefore, requires a recycler view for scrolling to allow the animation of the button.
-For that reason, we are going to create a recycler row and name it `message_recycler_row.xml` and add the following XML code:
+
+After adding the above dependencies, you are now set to design the button. The library has all the functions for animating the button whenever the RecyclerView is scrolled.
+
+Extendable Floating Action Button is mostly used in messaging applications to add chats like in the Google messages app. It, therefore, requires us to use a RecyclerView.
+
+For this reason, we are going to create a recycler row and name it `message_recycler_row.xml` and add the following XML code:
+
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
@@ -311,6 +341,7 @@ For that reason, we are going to create a recycler row and name it `message_recy
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>
 ```
+
 In the `activity_message.xml` add the following code to create the Extendable FAB button and the `RecyclerView`:
 
 ```xml
@@ -350,13 +381,12 @@ In the `activity_message.xml` add the following code to create the Extendable FA
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
+
 ### Creating the Message Recycler Adapter
-A recycler view always needs an adapter.
- In the `MessageAdapter.kt` class add the following code:
+A RecyclerView always needs an adapter. In the `MessageAdapter.kt` class add the following code:
+
 ```kotlin
 class MessageAdapter(private var text: List<String>): RecyclerView.Adapter<MessageAdapter.MyViewHolder>() {
-
-    //object MyDiffUtilCallback: DiffUtil.ItemCallback
 
     inner class MyViewHolder(val binding: MessageRecyclerRowBinding): RecyclerView.ViewHolder(binding.root){
 
@@ -383,6 +413,7 @@ class MessageAdapter(private var text: List<String>): RecyclerView.Adapter<Messa
 ```
 
 Finally, add the following code in the `MessageActivity.kt` class:
+
 ```kotlin
 class MessageActivity : AppCompatActivity() {
 
@@ -421,10 +452,10 @@ class MessageActivity : AppCompatActivity() {
     }
 }
 ```
+
 ![Project Demo](/engineering-education/creating-custom-expandable-fab/custom-expandable-fab.gif)
 
 ### Conclusion
-In this tutorial, we have learned how to create both custom Expandable Floating Action Button and Extendable Floating Action Button. The codes provided not only helps in creating the FABs but also help in learning how to implement click and scroll listeners on the recycler view.
+In this tutorial, we have learned how to create a custom Expandable Floating Action Button and an Extendable Floating Action Button. The code provided not only helps in creating the FAB but also help in learning how to implement clicks and scroll listeners on the RecyclerView.
 
 Happy coding!
-
