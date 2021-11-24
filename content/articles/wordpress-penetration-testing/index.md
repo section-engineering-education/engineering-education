@@ -146,8 +146,6 @@ After configuring this tool, open the Kali Linux terminal and type this command:
 vendor/bin/phpstan analyze Dir1 Dir2
 ```
 
-![PHPStan](/engineering-education/wordpress-penetration-testing/phpstan.jpg)
-
 Then, replace 'Dir1' and 'Dir2' with the directories containing the WordPress code you want to test. Check out the [PHPStan documentation](https://phpstan.org/user-guide/getting-started) for further information.
 
 #### XSSer
@@ -161,7 +159,7 @@ To do a simple scan, you can use a graphical interface. To do so, open the Kali 
 xxser --gtk
 ```
 
-![Xsser](/engineering-education/wordpress-penetration-testing/xxser.jpg)
+![Xsser](/engineering-education/wordpress-penetration-testing/xsser.jpg)
 
 When the graphical interface opens, set the suitable options and enter the site's details, and WP pen-testing for XSS vulnerabilities will begin. To learn more, go through the [Xsser documentation](https://xsser.03c8.net/).
 
