@@ -307,7 +307,7 @@ To check that everything is working, we can go back to the dashboard to run a te
 
 ![first screen](/engineering-education/elarian-js-demo/initial-screen.png)
 
-After succeful USSD prompt, we should see the following message before the simulator closes:
+After a successful USSD prompt, we should see the following message before the simulator closes:
 
 ![final screen](/engineering-education/elarian-js-demo/final-screen_.png)
 
