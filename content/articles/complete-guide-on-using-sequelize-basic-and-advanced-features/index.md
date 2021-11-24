@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /complete-guide-on-using-sequelize-basic-and-advanced-features/
-title: Complete Guide On Using Basic and Advanced Sequelize features
-description: This tutorial will guide the reader on how to work with Sequelize, the need for using it. And, we will build a simple project to demonstrate various features in it.
+title: Complete Guide On Using Basic and Advanced Sequelize Features
+description: This tutorial will guide the reader on how to work with Sequelize, the need for using it. We will also build a simple project to demonstrate various features in it.
 author: joshua-adesanya
-date: 2021-11-15T00:00:00-22:00
+date: 2021-11-24T00:00:00-13:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -14,15 +14,11 @@ images:
   - url: /engineering-education/complete-guide-on-using-sequelize-basic-and-advanced-features/hero.png
     alt: Complete Guide On Using Sequelize - Basic and Advanced features Image
 ---
-Sequelize is a JavaScript library that manages almost all popular databases like PostgreSQL, MySQL, SQLite, and MSSQL.
+Sequelize is a JavaScript library that manages most of all the popular databases like PostgreSQL, MySQL, SQLite, and MSSQL. Object Relation Mappers (ORM) are used to convert object-relational syntax to the database schema. Usually, sequelize is used with Node.js. We can call Sequelize an ORM.
 <!--more-->
-Object Relation Mappers (ORM) are used to convert object-relational syntax to the database schema. Usually, sequelize is used with NodeJS. We can call Sequelize as an ORM.
+Sequelize only supports relational databases. Databases like Mongo DB or other NoSQL databases are not supported. Sequelize supports solid transaction, eager and lazy loading, relations, read replication, and other cool features.
 
-Sequelize only supports relational databases. Databases like Mongo DB or other NoSQL databases are not supported.
-
-Sequelize supports solid transaction, eager and lazy loading, relations, read replication, and other cool features.
-
-By the end of this tutorial, you will adequately understand the following:
+By the end of this tutorial, the reader will adequately understand the following:
 - How to install Sequelize
 - How to install drivers associated with the different databases.
 - Connecting to the database and testing the connection.
