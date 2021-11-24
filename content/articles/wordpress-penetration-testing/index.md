@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /wordpress-penetration-testing/
 title: WordPress Penetration Testing
-description: This article 
+description: This article will cover WordPress penetration testing (pen-testing), how hackers gain access to WP websites, WPsecurity tips, and how to perform one yourself using WP pen-testing tools. 
 author: esther-waithera
 date: 2021-11-23T00:00:00-18:20
 topics: [Languages]
@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/wordpress-penetration-testing/hero.jpg
     alt: WordPress Penetration Testing example image
 ---
-WordPress (WP) is a Content Management System (CMS) that powers many websites on the internet. Technology is growing at an accelerated rate, and it's everywhere today. Businesses have increased their dependency on Information Technology (IT), including social media, WP websites, and more. But cyber risk continues to rise at an alarming rate.
+WordPress (WP) is a Content Management System (CMS) that powers many websites on the internet. Technology is growing at an accelerated rate, and it's everywhere today. Businesses have increased their dependency on Information Technology (IT), including social media, WP websites, and more. With this increased dependecy, cyber risk continues to rise at an alarming rate.
 <!--more-->
 There are many security vulnerabilities linked to WordPress websites. These vulnerabilities include cybercriminals attacking systems, servers, stealing everything from passwords to data.
 
