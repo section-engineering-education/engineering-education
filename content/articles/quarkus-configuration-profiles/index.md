@@ -6,7 +6,7 @@ url: /quarkus-configuration-profiles/
 title: Working with Quarkus Configuration Profiles
 description: In this article, we will be learning about Quarkus profiles. These are a collection of settings that can be assigned a specific tag to access them quickly.
 author: justus-mbuvi
-date: 2021-11-17T00:00:00-03:00
+date: 2021-11-24T00:00:00-11:30
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
