@@ -1,33 +1,49 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /creating-simple-visual-augmented-reality-application-in-android/
+title: Creating a simple visual Augmented Reality application in Android
+description: This article will cover Augmented Reality (AR), which is a technology that combines digital content with real-world objects.
+author: ian-muriuki
+date: 2021-11-24T00:00:00-12:10
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/creating-simple-visual-augmented-reality-application-in-androidhero.jpg
+    alt: Creating a simple visual Augmented Reality application in Android Hero Image
+---
+Augmented Reality (AR) is a technology that combines digital content with real-world objects. It allows users to interact with the world around them through their mobile devices.
+<!--more-->
 Augmented Reality (AR) is a technology that combines digital content with real-world objects. It allows users to interact with the world around them through their mobile devices.
 
-Augmented Reality is currently one of the most revolutionary features of technology in recent years. With AR, we can bend reality in the way that we want. This is like an extension of reality, or we can say, reevaluating the future. AR is currently being used from many different perspectives like for innovation and safety. AR helps us interact with the environment we are in.
-Augmented Reality is almost as same as virtual Reality but there is a slight difference between them. 
-The difference between them is:
-AR uses the being real-world terrain and puts virtual information on top of it to enhance the experience while virtual reality immerses druggies, allowing them to"inhabit"an entirely different terrain altogether, specially a virtual one created and rendered by computers. Druggies may be immersed in an animated scene or a factual position that has been mugged and bedded in a virtual reality app. Through a virtual reality bystander, druggies can look up, down, or any which way, as if they were actually there.
-The other difference is that VR uses a headset while AR just uses  mobile devices using their camera.
+Augmented reality is currently one of the most revolutionary features of technology in recent years. With AR, we can bend reality in the way we want. We can say, reevaluating the future. AR is currently being used for many different perspectives, for example, innovation and safety. 
 
-I am excited to share with you what I think will be the next huge technological innovation. In this article, we will learn how to create a simple AR application with Android Studio.
+Augmented reality is almost the same as virtual reality, but there is a slight difference between them. The difference between them is that AR uses real-world terrain and puts virtual information on top of it to enhance the experience while virtual reality immerses druggies, allowing them to"inhabit"an entirely different terrain altogether, especially a virtual one created and rendered by computers.
+
+Druggies may be immersed in an animated scene or a factual position that has been mugged and bedded in a virtual reality app. Through a virtual reality bystander, druggies can look up, down, or any which way, as if they were there. The other difference is that VR uses a headset while AR uses mobile devices using their camera.
+
+In this article, we will learn how to create a simple AR application using Android Studio.
 
 ### Table of contents
-- [prerequisites](#prerequisites)
+- [Prerequisites](#prerequisites)
 - [Configuring android studio](#configuring-android-studio)
 - [Adding the 3D model to the project](#adding-the-3D-model-to-the-project)
-- [Adding sceneform ux library](#adding-sceneform-ux-library)
+- [Adding sceneform UX library](#adding-sceneform-ux-library)
 - [Adding permissions for camera](#adding-permissions-for-camera)
 - [Application design](#application-design)
 - [Java codes](#java-codes)
 - [Running the app](#Running-the-app)
-- [Conclution](#conclution)
+- [Conclusion](#conclusion)
 - [References](#References)
 
+### Prerequisites
+- A basic understanding of the Java programming language.
+- Have [Android Studio](https://developer.android.com/studio?gclid=CjwKCAiA4veMBhAMEiwAU4XRr-huBPp7DhmSVFRy0tk4f02kyJqfuLify3KrbKV0HbNjQvLKImmJohoC9QMQAvD_BwE&gclsrc=aw.ds) 3.1 or above installed.
 
-### prerequisites
-
-- You must have a basic understanding of the Java programming language.
-- You should be equipped with Android Studio 3.1 or above.
-
-### configuring android studio
-To create an augmented reality application, you must have Android Studio 3.1 or above. Now open your Android Studio, create a new project, and here you give a name to your app, Set the language to Java; the minimum API level should be at least API 24: Android 7.0. Now you have completed the first part of configuring the IDE to create an AR app.
+### Step one: Configuring android studio
+To create an augmented reality application, you must have Android Studio 3.1 or above. Open Android Studio and create a new project. Name your app and set the language to Java; the minimum API level should be API 24: Android 7.0. Now you have completed the first part of configuring the IDE to create an AR app.
 
 The next step is to download the plugin necessary for supporting Augmented Reality by importing 3D models and viewing them. To do this, go to settings (in Android Studio IDE), then to plugins and search for Google Sceneform Tools, install it, and restart your Android Studio.
 You should have some 3D models. You can download 3D objects from:
