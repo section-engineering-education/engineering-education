@@ -11,7 +11,7 @@ topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
 
- - url: /engineering-education/polynomial-regression-in-pythonhero.jpg
+ - url: /engineering-education/polynomial-regression-in-python/hero.jpg
    alt: Polynomial Regression example image
 ---
 
@@ -92,7 +92,7 @@ To get started, we import the required libraries for this session and load the d
 
 ### Step 1: Importing the libraries
 We import the following libraries:
-"`python
+```python
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -134,7 +134,7 @@ lin_reg.fit(X, y) # fits the model to the training data
 ```
 #### Output
 
- "`bash
+ ```bash
  LinearRegression(copy_X=True, fit_intercept=True, n_jobs=None, normalize=False)
 
  ```
@@ -196,7 +196,7 @@ The code above plots the data and fit a polynomial regression model on it, as sh
 ### Step 7: The Polynomial Regression results visualization (for higher resolution and smoother curve)
 In this step, we plot the Polynomial Regression results on a higher resolution (100 points per axis) to get a smoother curve. To visualize the results of this model, let's execute the following code.
 
-"`python
+```python
 X_grid = np.arange(min(X), max(X), 0.1) # choice of 0.1 instead of 0.01 to make the graph smoother
 X_grid = X_grid.reshape((len(X_grid), 1)) # reshapes the array to be a matrix
 plt.scatter(X, y, color = 'red') # plots the training set
@@ -221,7 +221,7 @@ lin_reg.predict([[6.5]]) # predicting a new result with linear regression
 
 Upon executing the code above, the output is:
 
- "`bash
+ ```bash
  array([330378.78787879])
 
  ``` 
@@ -230,7 +230,7 @@ The variable \(X=6.5\) is exact between \(X=6\) and \(X=7\). Thus we expect the 
 ### Step 9: A new result prediction with Polynomial Regression
 
 Here, we predict a new output with the Polynomial Regression model. Let's execute the code below and see the output.
-"`python
+```python
 lin_reg_2.predict(poly_reg.fit_transform([[6.5]]))
 
 ```
