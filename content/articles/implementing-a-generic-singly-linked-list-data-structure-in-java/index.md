@@ -47,7 +47,7 @@ These are the functions that can be performed on a linked list:
 - `Traversal` - Accesses the connected list's elements one by one.
 
 ### Implementation of a Java single-linked list
-In this section, we'll explore how generics can be used to implement a singly linked list in a type-safe, parameterized fashion. We will use the Java program below to generate our own type-safe linked list in the Java programming language.
+In this section, we will explore how generics can be used to implement a singly linked list in a type-safe, parameterized fashion. We will use the Java program below to generate our own type-safe linked list.
 
 ```Java
 import java.io.*;
@@ -199,7 +199,7 @@ Output:
 
 > For the sake of simplicity, we use a dummy node to represent the prior one in singly-linked lists since going backwards is impossible. 
 
-To represent the node before the current one, we create a dummy node. Because there isn't a previous node for the head node, then it's assigned the value null. 
+To represent the node before the current one, we create a dummy node. Because there isn't a previous node for the head node, then it is assigned the value null. 
 
 Here is an example:
 
