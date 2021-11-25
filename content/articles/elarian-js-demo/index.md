@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /elarian-js-demo/
-title: BGetting started with Elarian
+title: Getting started with Elarian
 description: Elarian is a framework tha focuses on simplifying building data-driven applications by engaging customers over channels such as SMS, UUSD, Telegram bots, WhatsApp, and more. To understand more on Elarian, this tutorial will build a USSD service using Elarian and `Node.js`.
 author: wilson-gichuhi
 date: 2021-11-25T00:00:00-10:00
