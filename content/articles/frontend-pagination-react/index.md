@@ -12,8 +12,6 @@ To be able to follow along, the reader should have:
 - Basic understanding of the Fetch API
 - A code editor and a browser.
 
-
-
 #### Goal
 This article will enable the user to:
 - Implement front-end pagination in React.
@@ -138,7 +136,6 @@ Paste in the following code below the in the `return()` section below the `<hr /
 
 In the code above, we are using the [ternary operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) to conditionally render our posts. If the loading state is `true`, we are rendering a spinner from the `react-loader-spinner` package that shows that the data is still being fetched. If the loading state is `false`, we are rendering the posts.
 
-
 #### Implementing Pagination
 To implement pagination, paste in the following code below the `render()` method:
 ```js
@@ -148,7 +145,6 @@ const indexOfFirstPost = indexOfLastPost - this.state.postsPerPage;
 
 const currentPosts = this.state.posts.slice(indexOfFirstPost, indexOfLastPost);
 ```
-
 **Code explanation:**
 
 We use the above code to get the `currentPosts`, i.e the posts we want to display on a certain page. To get this, we need to calculate the `indexOfLastPost` that is the last post on a certain page and `indexOfFirstPost` that is the first post on a certain page.
@@ -208,7 +204,6 @@ const setPage = (pageNum) => {
 }
 ```
 The function takes in the `pageNum` as an argument and uses it to update the current page state. After the `currentPage` state is updated, new values `indexOfLastPost`, `indexOfFirstPost` and `currentPosts` are calculated and the page content is updated immediately.
-
 
 #### Full Code for Pagination
 ```js
