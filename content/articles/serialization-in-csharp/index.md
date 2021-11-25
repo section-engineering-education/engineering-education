@@ -2,23 +2,23 @@
 layout: engineering-education
 status: publish
 published: true
-url: /serialization-in-c-sharp/
+url: /serialization-in-csharp/
 title: Serialization in C#
 description: This tutorial will guide the reader through serializing objects in C# using different serialization techniques. Serialization is the process of converting an object into a stream of bytes to store the object or transmit it to memory, a database, or a file.
 author: erick-kiragu
-date: 2021-11-24T00:00:00-14:24
+date: 2021-11-25T00:00:00-10:30
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/serialization-in-c-sharp/hero.png
+  - url: /engineering-education/serialization-in-csharp/hero.png
     alt: Serialization in C# Hero Image
 ---
 Serialization is the process of converting an object into a stream of bytes to store the object or transmit it to memory, a database, or a file. This is beneficial in terms of transmitting the converted data.
 <!--more-->
 ### Prerequisites
-- Have [Visual Studio 2019](https://visualstudio.microsoft.com/vs/) software installed on your machine. It is the IDE used to run Csharp programs.
-- Have some prior knowledge in `.NET` programming and XML files.
+- [Visual Studio 2019](https://visualstudio.microsoft.com/vs/) installed on your machine. It is the IDE used to run Csharp programs.
+- Have prior knowledge in `.NET` programming and XML files.
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
@@ -50,7 +50,7 @@ You'll need the following to serialize binary or XML data:
 Create instances of the stream and the format to use, then use the Serialize function on the format. This function receives two strings as parameters: the stream and the object to serialize.
 
 ### C# Serialization in action
-When using applications, we must store data on durable or non-durable media for later retrieval. Serialization may help. Serialization is needed to transmit an object over a network. Serializing in C#, the app needs a serialization namespace. In C#, we utilize the `Serializable` property.
+When using applications, we must store data in durable or non-durable media for later retrieval. Serialization may help. Serialization is needed to transmit an object over a network. Serializing in C#, the app needs a serialization namespace. In C#, we utilize the `Serializable` property.
 
 Consider the following example:
 
@@ -62,7 +62,7 @@ public string identity;
 }
 ```
 
-To make any subject non-serializable, use the `NonSerialized` attribute. To show the `NonSerialized` property, consider the following sample class:
+To make any subject non-serializable, use the `NonSerialized` attribute. For example, to show the `NonSerialized` property, consider the following sample class:
 
 ```csharp
 [Serializable] public class Examine //We added the serializable symbol to make this class serializable.
@@ -78,9 +78,9 @@ public string identity;
 #### 1. Binary Serialization
 The `System.Runtime.Serialization` is a namespace that includes binary serialization classes. In computing, a namespace is a collection of symbols used to identify and refer to various things. A namespace ensures that all objects in a set have unique and easy-to-recognize names. The binary encoding provides a straightforward serialization for storage and socket-based network streams.
 
-With Binary serialization, even read-only members are serialized thus improving performance in terms of speed. This is the method for converting .NET objects into byte streams. During binary serialization, all public, private, and read-only members are processed. Binary serialization is used to quickly convert items to bytes. It utilizes `System.Runtime.Serialization.Formatters.Binary` reference.
+With binary serialization, even read-only members are serialized, thus improving performance in terms of speed. This is the method for converting .NET objects into byte streams. During binary serialization, all public, private, and read-only members are processed. Binary serialization is used to convert items to bytes quickly. It utilizes `System.Runtime.Serialization.Formatters.Binary` reference.
 
-Below is a binary Serialization example:
+Below is a binary serialization example:
 
 ```csharp
 using System;
@@ -118,12 +118,12 @@ namespace Demo
 }
 ```
 
-> There can be security issues if the binary serialization is done incorrectly. Detailed information can be found in the BinaryFormatter Security Documentation.
+> There can be security issues if the binary serialization is done incorrectly. Detailed information can be found in the `BinaryFormatter` Security Documentation.
 
 #### 2. XML serialization
 The public members of a class instance may be serialized to an XML stream. Serializing XML takes longer than serializing binary files. XML Serialization is used to enable cross-platform compatibility. Serializing XML is textual. XML files are easy to read and edit. XmlAttribute provides a serialization attribute that accepts XML.
 
-The XmlSerializer class uses the XML serialization standard to serialize an object. Here is an example on how to use XmlSerializer:
+The XmlSerializer class uses the XML serialization standard to serialize an object. Here is an example of how to use XmlSerializer:
 
 ```csharp
 XmlSerializer Serializer = new XmlSerializer(typeof(Push));
@@ -134,7 +134,7 @@ xmlSerializer.Serialize(Writer, pushObject);
 ```
 
 #### 3. SOAP serialization
-Simple Object Access Protocol (SOAP) is an XML-based protocol for data transmission between computers and offers the transport mechanism for web services. SOAP is a language and platform agnostic.
+Simple Object Access Protocol (SOAP) is an XML-based protocol for data transmission between computers and offers the transport mechanism for web services. SOAP is a language and is platform agnostic.
 
 SOAP serialization is used to move items made up of incompatible designs from one application to another.
 
@@ -177,14 +177,14 @@ namespace soapSerializationSample
 
 - `SoapFormatter formatter = new  SoapFormatter()` is used to serialize the object created.
 
-- `formatter.Serializa(fileStream, sample)` serializes the objects to .data file format.
+- `formatter.Serializa(fileStream, sample)` serializes the objects to `.data` file format.
 
 - `using System.Runtime.Serialization` and `using System.Runtime.Serialization.Formatters.Soap` are the references for the code to perform SOAP serialization.
 
 ### Custom Serialization
 Custom serialization allows event serialization and de-serialization. Using an `ISerializable` interface may help. Custom serialization allows you to control which items are serialized and how. **SerializableAttribute** and **ISerializable** interfaces are required.
 
-Consider the following code, which demonstrates custom Serialization using the ISerializable interface:
+Consider the following code, which demonstrates custom serialization using the `ISerializable` interface:
 
 ```csharp
 [Serializable] public class Push : ISerializable
@@ -194,9 +194,9 @@ public virtual void GetObjectData(SerializationInfo information, StreamingContex
 ```
 
 ### Conclusion
-In this tutorial, we covered serialization object steps, serialization in action and various types of serialization. These include binary serialization, XML serialization, SOAP serialization, and custom serialization. Finally, we conclude the article with several examples to represent the same.
+In this tutorial, we covered serialization object steps, implemented serialization and various types of serialization. These include binary serialization, XML serialization, SOAP serialization, and custom serialization. Finally, we conclude the article with several examples to represent the same.
 
-Happy cording!
+Happy coding!
 
 ---
 Peer Review Contributions by: [Eric Gacoki](/engineering-education/authors/eric-gacoki/)
