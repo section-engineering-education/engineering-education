@@ -16,7 +16,7 @@ images:
 ---
 Google provides a service known as reCAPTCHA that helps keep malicious users away from your website. It does this by posing a simple challenge for humans to solve and hard for bots.
 <!--more-->
-This article will discuss integrating the reCAPTCHA v2 service into our website. ReCAPTCHA v2 verifies that a human is accessing a website by posing a challenge. We will use React (a JavaScript framework for building user interfaces) for the frontend and Django(a python backend technology) to create our backend.
+This tutorial will show you how to implement google reCAPTCHA v2 into your Django and React application..
 
 #### Prerequisites
 To be able to follow along in this article, the reader will need to have:
