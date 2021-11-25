@@ -14,39 +14,49 @@ images:
   - url: /engineering-education/deploying-a-serverless-django-restapi-with-zappa-on-aws/hero.png
     alt: Deploying a Serverless Django REST API with Zappa on AWS hero image
 ---
-Serverless technology has gradually become an area of interest in software development in recent times. A few years back, all applications built on classic web servers were manually managed until the development of this technology. This technology guarantees automatic web server configuration or permissions, allowing the developer to focus solely on developing and designing web applications while their cloud provider handles the heavy lifting by managing the servers, thereby, the user does not have to worry about manual configuration. *Isn't this cool?*
+Serverless technology has gradually become an area of interest in software development in recent times. A few years back, all applications built on classic web servers were manually managed until the development of this technology.
 <!--more-->
-The main purpose for the development of serverless technologhy was to aid developers build and run applications without having to interact or manage servers. Now, this does not mean the application runs entirely without a server, but that the management of the server would be handled by Amazon Web Services (AWS) through an open-source project known as [Serverless Application Model (SAM) framework](https://github.com/aws/serverless-application-model).
+This technology guarantees automatic web server configuration or permissions, allowing the developer to focus solely on developing and designing web applications, while their cloud provider handles the heavy lifting by managing the servers. 
 
-One of the upsides of serverless technology is that it runs on pay-per *request.* For example, a new company or startup that is low on budget can host their web apps on Lambda and only pay when a user requests the web app.
+Thereby, the user does not have to worry about manual configuration of servers.
 
-This process is quite exciting although the implementation in Django may be challenging. However, this is made easy using ***Zappa***. [Zappa](https://www.zappa.io/) is an open-source tool for developing, deploying, and maintaining serverless Python applications on Amazon Web Services (AWS) technologies including Lambda and API Gateway.
+*Isn't this cool?*
 
-To aid your understanding, AWS Lambda is an amazon serverless computing platform, referred to as the crux of AWS serverless offering, which enables the user to run functions and manage computer resources automatically.
+The main purpose for the development of serverless technology was to aid developers build and run applications without having to interact or manage servers
 
-These configurations and deployment are handled automatically by Zappa with just a click. Well, not literally you will still need to configure it by running Zappa in it and setting a few parameters using a CLI interface. However, this is a lot easier and faster than conventional web servers.
+Now, this does not mean the application runs entirely without a server, but that the management of the server would be handled by Amazon Web Services (AWS) through an open-source project known as [Serverless Application Model (SAM) framework](https://github.com/aws/serverless-application-model).
+
+One of the upsides of serverless technology is that it runs on pay-per *request*.
+
+For example, a new company or startup that is low on budget can host their web apps on [AWS Lambda](https://aws.amazon.com/lambda/) to pay only when a user sends a request to the web app.
+
+This process is quite exciting although the implementation in Django may be challenging. However, this is made easy using ***Zappa***.
+
+[Zappa](https://www.zappa.io/) is an open-source tool for developing, deploying, and maintaining serverless Python applications on Amazon Web Services (AWS) technologies including Lambda and [API Gateway](https://aws.amazon.com/api-gateway/).
+
+To aid your understanding, [AWS Lambda](https://aws.amazon.com/lambda/) is an Amazon serverless computing platform, referred to as the crux of AWS serverless offering that enables the user to run functions and manage computer resources automatically.
+
+These configurations and deployment are handled automatically by Zappa with just a click. Well, not literally you will still need to configure it by running Zappa in it and setting a few parameters using a CLI interface.
+
+However, this is a lot easier and faster than conventional web servers.
 
 In the course of this project, we will work on how Zappa is implemented in Django by building a serverless Django REST API and deploying the application to AWS Lambda using Zappa.
 
-### Prerequisite
-
-- Basic knowledge of python
-- Good understanding of Django
-- [An AWS account](https://aws.amazon.com/)
+### Prerequisites
+- Basic knowledge of Python.
+- Good understanding of Django.
+- [An AWS account](https://aws.amazon.com/).
 
 ### How does Zappa work
+Zappa is a tool that allows deploying Django applications to AWS in a serverless environment. With Zappa, developers can deploy a [WSGI-compatible](en.wikipedia.org/wiki/Web_Server_Gateway_Interface) application using Amazon Web Service products such as Lambda, API Gateway, and S3.
 
-Simply, Zappa is a tool that allows deploying Django applications to AWS in a serverless environment. With Zappa, developers can deploy a WSGI-compatible application using Amazon Web Service products such as Lambda, API Gateway, and S3.
-
-*This is how it works.*
-
-When the user sends a request to the server, which is received by API Gateway, the Gateway starts a server inside our lambda function. Now, Django is installed in the same way that a lambda function is. The request is subsequently sent to the server, which the Django app handles via the WSGI layer. The server transmits the response to the API Gateway shortly before it is destroyed. Lastly, the API Gateway provides the client with a response.
+When the user sends a request to the server that is received by API Gateway, it starts a server inside our lambda function. Now, Django is installed in the same way that a lambda function is. The request is subsequently sent to the server, which the Django app handles via the WSGI layer. The server transmits the response to the API Gateway shortly before it is destroyed. Lastly, the API Gateway provides the client with a response.
 
 That been understood, let's proceed to build our Django application.
 
 ### Project setup: Building a Django RESTAPI Application
+In this project, we will be creating an E-book store, where the users can get a list of all books, create new books, edit and delete books.
 
-In this project, we will be creating an E-book store, in which users can get a list of all books, create new books, edit and delete books.
 We will begin by creating a directory for our project in our terminal.
 
 ```bash
@@ -54,20 +64,17 @@ mkdir bookstore
 cd bookstore
 ```
 
- 
-
-**Setting up virtual environment**
-
+#### Setting up virtual environment
 Next, we will be creating a virtual environment to host our project. All the installed packages for this project would be contained the virtual environment.
 
-Create a virtual environment, 
+Create a virtual environment using:
 
 ```bash
 pip install virtualenv
 virtual env
 ```
 
-Let’s activate our virtual environment
+Let's activate our virtual environment
 
 For Windows:
 
@@ -75,7 +82,7 @@ For Windows:
 env\Scripts\activate 
 ```
 
-Mac/Linux:
+For Mac/Linux:
 
 ```bash
 source env/bin/activate
@@ -89,7 +96,7 @@ Next, install the Django dependencies.
 pip install django djangorestframework zappa
 ```
 
-Now we can create both our Django project and app. 
+Now, we can create our Django project and run the app as shown below:
 
 ```bash
 django-admin startproject bookstore 
@@ -97,7 +104,7 @@ cd bookstore
 django-admin startapp ebook
 ```
 
-Next, in your project folder, open up the *settings.py* file add `rest_framework` and the name of the app-created `ebook` in the list of installed apps. 
+Next, in your project folder, open up the `settings.py` file, and add `rest_framework` along with the name of the created app `ebook` to the list of installed apps:
 
 ```python
 INSTALLED_APPS = [
@@ -113,6 +120,7 @@ INSTALLED_APPS = [
 ```
 
 ### Creating models
+Let's build a model that stores information about books.
 
 ```python
 from django.db import models
@@ -136,14 +144,14 @@ class Book(models.Model):
         return self.title
 ```
 
-Next, migrate models into the database using these commands:
+Next, we migrate these models into the database using these commands:
 
 ```python
 python manage.py makemigrations
 python manage.py migrate
 ```
 
-Next, register the models in your `ebook/admin.py` file. 
+Then, we register the models in your `ebook/admin.py` file. 
 
 ```python
 from django.contrib import admin
@@ -153,25 +161,25 @@ from .models import Book
 admin.site.register(Book)
 ```
 
- 
-**Creating Serializer file**
+#### Creating Serializer file
+Create a new file `serializers.py` file in your app directory.
 
-Create a new file, `serializers.py` file in your app directory. The function of serializer is to return a response of the users request. Add the following lines of code:
+The function of serializer is to return a response of the users request. Add the following lines of code:
 
 ```python
 from rest_framework import serializers
 from .models import Book
 
 class BookSerializer(serializers.ModelSerializer):
-
     class Meta:
         model = Book
         fields = '__all__'
 ```
 
-**Creating views**
+#### Creating views
+Create your user's views in your `ebook/views.py` file.
 
- Create your user's views in your `ebook/views.py` file, the views file handle the logic of our API HTTP actions, make requests such as GET, POST, UPDATE and DELETE to the API endpoints. Add these lines of code to you `views.py` :
+The `views` file handles the logic of our API HTTP actions, make requests such as `GET`, `POST`, `UPDATE`, and `DELETE` to the API endpoints. Add these lines of code to you `views.py` :
 
 ```python
 from rest_framework import generics
@@ -191,9 +199,8 @@ The *BookList* view displays a list of all books and also allows the users to cr
 
 The *BookDetail*, the other view, allows the user to create, retrieve, update, and delete a specific book. 
 
-**Create a URL handler**
-
-When a user makes a request, the Django controller takes over and searches the urls.py file for the corresponding view, returning the response or an error if not found.
+#### Create a URL handler
+When a user makes a request, the Django controller takes over and searches the `urls.py` file for the corresponding view, returning the response or an error if not found.
 
 In Django, the "*urlpatterns*" tuple is the most significant element, the URL-to-view mapping is defined here. To create a URL handler.
 
@@ -204,7 +211,6 @@ from django.urls import path
 from .views import BookList, BookDetail
 
 urlpatterns = [
-    
     path('api/books/', BookList.as_view()),
     path('api/books/{id}', BookDetail.as_view()),
 ]
