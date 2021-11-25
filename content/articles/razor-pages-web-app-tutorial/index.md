@@ -71,19 +71,19 @@ We need to change the welcome message to add the following code to `cs.cshtml.cs
 ```C#
 namespace StudentsCheckList.Pages
 {
-    public class IndexModel : PageModel
-    {
-        private readonly ILogger _logger;
-        public string Message{get; set;}
-        public IndexModel(ILogger logger)
-        {
+    public class IndexModel : PageModel
+    {
+        private readonly ILogger _logger;
+        public string Message{get; set;}
+        public IndexModel(ILogger logger)
+        {
            _logger = logger;
-        }
-        public void OnGet()
-        {
-            Message = "Hello, welcome to the Web App Tutorial.";
-        }
-    }
+        }
+        public void OnGet()
+        {
+            Message = "Hello, welcome to the Web App Tutorial.";
+        }
+    }
 }
 ```
 
@@ -93,23 +93,28 @@ In the `index.cshtml` code, we remove the `welcome` message and add `@Model.Mess
 To add a model to your web application, right-click on the `Solution 'StudentsCheckList'` in the solution explorer tab and navigate to `Add`, and select `New Project`.
 
 In the new project selected, we are only interested in the `Class Library Project`, so in the search bar, type `Class Library` and select `Class Library(.NET Standard)` that uses the C# language`.
+
 ![model](/engineering-education/razor-pages-web-app-tutorial/nxt.png)
+
 Click next and enter the name of the model you are adding. Click create on the next screen.
+
 ### Updating/adding data to the razor pages web application
 This application will be used to `create`, `read`, `update`, and `delete` operations.
+
 In this model, we want to create a list of students of a given school, so we add `RegNo`, `Name`, `Email`, `Department`, and `Degree` in the public class to come up with the following sample code.
+
 ```C#
 using System;
 namespace Model
 {
-    public enum Class1
-    {
-        Name,
-        RegNo,
-        Email,
-        Department,
+    public enum Class1
+    {
+        Name,
+        RegNo,
+        Email,
+        Department,
         Degree
-    }
+    }
 }
 ```
 
@@ -122,20 +127,21 @@ In this class, we need to include these five data types. i.e,
 - Email
 - Department
 - Degree
-
+  
 To add the above data, we will have the following code;
 
 ```C#
 namespace Model
+
 {
-    public class Students
-    {
+    public class Students
+    {
      public int RegNo { get; set; }
-      public String Name { get; set; }
-      public String Email { get; set; }
-      public String Department { get; set; }
+      public String Name { get; set; }
+      public String Email { get; set; }
+      public String Department { get; set; }
       public String Degree { get; set; }
-    }
+    }
 }
 ```
 
@@ -174,19 +180,19 @@ using StudentsCheckList.Services
 using StudentsCheckList.Models;
 namespace StudentsCheckList.Pages.Students
 {
-    public class IndexModel : PageModel
-    {
-        private readonly IStudentsRepository studentsRepository;
-        public IEnumerable(IEnumerable Students { get; set; })
-        {
-            [BindProperty(supportsGet = true)]
-            public String termToSearch { get; set; }
-        }
-        public void OnGet()
-        {
-        Students = studentsRepository.search(termToSearch);
-        }
-    }
+    public class IndexModel : PageModel
+    {
+        private readonly IStudentsRepository studentsRepository;
+        public IEnumerable(IEnumerable Students { get; set; })
+        {
+            [BindProperty(supportsGet = true)]
+            public String termToSearch { get; set; }
+        }
+        public void OnGet()
+        {
+        Students = studentsRepository.search(termToSearch);
+        }
+    }
 }
 ```
 
@@ -198,34 +204,35 @@ We will have the code below in the `Students repository class`;
 using StudentsCheckList.Models;
 namespace StudentsCheckList.Services;
 {
-    public interface IStudentsRepository
-    {
-        IEnumerable<Students> Search(String termToSearch);
-        IEnumerable<Students> GetAllStudents();
-        Students GetStudents(int id);
-    }
+    public interface IStudentsRepository
+    {
+        IEnumerable<Students> Search(String termToSearch);
+        IEnumerable<Students> GetAllStudents();
+        Students GetStudents(int id);
+    }
 }
 ```
 
 We'll add the following code to the `mock Students repository class`;
 
 ```C#
-    public Students GetStudents(int id);
+    public Students GetStudents(int id);
 {
 return _studentsList.FirstOrDefault(e=> e.id == id);
 }
 public IEnumerable<Students> Search(string termToSearch)
 {
-    return _studentsList;
+    return _studentsList;
 }
 public IEnumerable Search(string termToSearch)
-    if(string.IsNullOrEmpty(termToSearch))
+    if(string.IsNullOrEmpty(termToSearch))
 {
-    return _studentsList;
+    return _studentsList;
 }
 {
-    return _studentsList.Where(e => e.Name.Contains(termToSearch) ||
-                                    e.Email.Contains(termToSearch) ||
+    return _studentsList.Where(e => e.Name.Contains(termToSearch) ||
+
+                                    e.Email.Contains(termToSearch) ||
                                     
                                     e.RegNo.Contains(termToSearch).toList();
 };
@@ -257,6 +264,7 @@ For the second and third files above to be effective, and since they are already
              $(this).next(".custom-file-label").html(fileName);
          });
      });
+
      </script>
      <partial name = "_ValidationScriptsPartial" />
  }
@@ -264,9 +272,9 @@ For the second and third files above to be effective, and since they are already
 
 `_ValidationScriptsPartial` is in the solution explorer in the `shared` folder.
 
- Now, when you fill a form, all the requirements will have to be fulfilled to be able to submit the form.
+ Now, when you fill a form, all the requirements will have to be fulfilled to be able to submit the form.
 
- If the client-side validation is not working on your computer, check the following;
+ If the client-side validation is not working on your computer, check the following;
 
 1. If you have JavaScript enabled in your browser.
 2. Confirm that the libraries files are loaded in the environment you are testing.
