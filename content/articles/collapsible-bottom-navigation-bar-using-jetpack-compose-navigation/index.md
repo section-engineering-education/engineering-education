@@ -3,8 +3,8 @@ layout: engineering-education
 status: publish
 published: true
 url: /how-to-create-a-collapsible-bottom-navigation-bar-using-jetpack-compose/
-title: How to Create a Collapsible Bottom Navigation Bar with Jetpack Compose in Android
-description: This tutorial provides a step-by-step guide on how to create a collapsible bottom navigation bar with Jetpack compose in Android.
+title: How to Create a Collapsible Bottom Navigation Bar using Jetpack Compose in Android
+description: This tutorial provides a step-by-step guide on how to create a collapsible bottom navigation bar using Jetpack compose in Android.
 author: antony-gitau
 date: 2021-11-11T00:00:00-18:59
 topics: [Languages]
@@ -12,7 +12,7 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/how-to-create-a-collapsible-bottom-navigation-bar-using-jetpack-compose/hero.png
-    alt:  How to Create a Collapsible Bottom Navigation Bar with Jetpack Compose Hero Image
+    alt:  How to Create a Collapsible Bottom Navigation Bar using Jetpack Compose Hero Image
 ---
 [Navigation](https://developer.android.com/guide/navigation) is an essential part of any mobile app but it can be challenging to get it right. Many challenges are related to handling various aspects of the application lifecycle, deep linking, back stack handling, and state saving, just to name a few.
 <!--more-->
