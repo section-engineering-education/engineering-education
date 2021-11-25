@@ -308,9 +308,9 @@ For an interviewer, implementing various linked list methods such as inserting a
 Several code tasks are using the linked list in this part, but remember to learn how to create a single linked list in Java first before moving on.
 
 ### Conclusion
-The linked list is a common data structure used in programming and many interview questions focus on linked lists. To write production code, you do not need to put in place your own linked list. 
+The linked list is a common data structure used in programming and many interview questions focus on linked lists. You do not need to create your own linked list in order to write production code.
 
-Nonetheless, all these interview questions demand you to code in Java a linked list to answer the coding challenges provided by the Java API or the JDK. Unless you are confident in your ability to build linked lists, solving issues like reversing a linked list or finding the middle member of a linked list in a single pass would be tough.
+Regardless, all of these interview questions require you to create a linked list in Java in order to meet the coding challenges presented by the Java API or the JDK. Unless you are confident in your ability to build linked lists, solving issues like reversing a linked list or finding the middle member of a linked list in a single pass would be tough.
 
 ---
 Peer Review Contributions by: [Dawe Daniel](/engineering-education/authors/dawe-daniel/)
