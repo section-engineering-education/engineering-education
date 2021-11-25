@@ -1,6 +1,23 @@
-Pytorch lightning is a high-level framework built on top of Pytorch. As we know, Pytorch is already great. Pytorch lighning is in a lot of ways even greater. It is very similar as is Keras to TensorFlow. The framework is built to make training neural networks easier and to reduce the training code that is needed. The framework let's you spend less time on engineering and more time on research.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /an-introduction-to-pytorch-lightning/
+title: An Introduction to PyTorch Lightning
+description: This tutorial will introduce users to the Pytorch Lightning framework and implement an example to demonstrate its use.
+author: willies-ogola
+date: 2021-11-25T00:00:00-22:00
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
 
-This tutorial will introduce this framework and implement an example to demonstrate how the framework can be used.
+  - url: /engineering-education/an-introduction-to-pytorch-lightning/hero.png
+    alt: Pytorch Example Image
+---
+PyTorch Lightning is a open-source, lightweight Python wrapper for Machine Learning researchers that is built on top of PyTorch. With this framework, you don't have to remember all the tiny details of the PyTorch framework because PyTorch Lightning handles that.
+<!--more-->
+
+Pytorch Lightning is a high-level framework built on top of Pytorch. As we know, Pytorch is already great. Pytorch lightning is in a lot of ways even greater. It is very similar as is Keras to TensorFlow. The framework is built to make training neural networks easier and to reduce the training code that is needed. The framework let's you spend less time on engineering and more time on research. This tutorial will introduce this framework and implement an example to demonstrate how it can be used.
 
 ### Table of contents
 - [PyTorch](#pytorch)
