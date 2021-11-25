@@ -5,6 +5,8 @@ A graph is a non-linear data structure that consists of:-
 2. Some ordered pairs of the form (u, v) are called edges.
 
 
+Graphs are one of the most versatile data structures. This is because they allow us to solve interesting problems. They are used in social networks and GPS. One can apply it anywhere you want to model the relationship between a bunch of objects. In this article, our primary focus will be on how to detect a cycle. It is important to know this concept to help us detect infinite loops in a computer program.
+
 
 #### Prerequisite
 
@@ -22,6 +24,7 @@ To be able to follow this article well, one needs:
 
 
 #### Key Takeaways 
+-  A brief overview of a graph.
 
 - Understand what a cycle is in a graph.
 
@@ -29,9 +32,9 @@ To be able to follow this article well, one needs:
 
       1) Depth-first search algorithm.
 
-            - Cycle detection on a directed graph
+            - Cycle detection on a directed graph.
 
-            - Cycle detection on an undirected graph
+            - Cycle detection on an undirected graph.
 
 - Understand different applications of cycle detection.
 
@@ -53,7 +56,7 @@ The edges can also have weights. We use these weights to represent how strong th
 
 With this brief description, we can get to know what a cycle is and how to detect that in a graph.
 
-### What Is A Cycle In Graphs?
+### What is a cycle in graphs?
 
 A cycle in a graph is where the first and the last vertices are the same. If one starts from one vertex, travels along a path, and ends up at the starting vertex, then this path is a cycle. Cycle detection is the process of finding a cycle.
 
@@ -65,17 +68,17 @@ In our example below, we have a cycle in the path `1` to `3`to `4` and back to `
 
 Let's lookup for node `6`. If we start our search going through the path of `1` to `3` to `4`, we will get back to `1`. We have detected a loop at this point. There is no way of ending it. This cycle will keep going. Thus, we will never get to `6`.
 
-### How To Detect A Cycle.
+### How to detect a cycle.
 
 There are different algorithms one can use to detect a cycle. These include:-
 
-1. #### Depth First Search.
+1. #### Depth first search.
 
 Depth First Search (DFS), is a graph traversal method. We start our search from a particular vertex. We then explore all other vertexes as long as we can go along that path. On reaching the end of that path, we do a backtrack up to the point where we began from. The stack data structure is the best for doing the backtracking.
 
 [Image of DFS](/engineering-education/graph-cycle-detection/dfs.png/)
 
-#### Example Of How DFS Works.
+#### Example of how DFS works.
 
 From the DFS diagram above, say `1` is our start node. We look at the first item that will be in our adjacency matrix. That is `2`.Instead of queueing nodes adjacent to `1`, we queue nodes that are adjacent to `2`. So we will go to `6`. If `6` is the node we were looking for we stop. Let us assume it is not. We backtrack to `2`. From `2`, we look for other nodes that are connected to it. That is `7`. Since `7` does not have any other connected node and it isn't what we are looking for, we backtrack to `2`. We have finished visiting all nodes connected to `2`. So we backtrack to `1`.
 
@@ -83,7 +86,7 @@ From `1`, we check which other node is connected to it. We have `3`. We visit no
 
 We again check from our list for any other node connected to `1`. We have `4`. We visit `4`. `4` doesn't have any other node connected to it. We backtrack to `1`. `1` still has `5` connected to it. We visit `5` and backtrack back to `1`. We are done visiting all nodes.
 
-#### Implementing Cycle Detection Using DFS.
+#### Implementing cycle detection using DFS.
 
 To detect a cycle in a graph, we visit the node, mark it as visited. Then visit all the nodes connected to it. A cycle will be detected when visiting a node that has been marked as visited. The node will also be part of the current path. Below is an explanation, using the cycle graph image.
 
@@ -107,15 +110,15 @@ We have visited nodes `1`, `2`, `5`, `6`, and only node `1` is part of the curre
 
 At this point, we find that `1` is part of our current path. It is also visited. A cycle is detected.
 
-### Code Implementation of Cycle Detection In C#.
+### Code Implementation of cycle detection in C#.
 
 1. Open Visual Studio. Create a Console Application called GraphCycleDetect.
 
-2. In the main method we create a jagged array. This is what will show how vertexes are connected.
+2. In the `Main()` method we create a jagged array. This is what will show how vertexes are connected.
 
-3. We Declare a variable to hold the number of vertexes.
+3. We Declare a variable called `graph` to hold the number of vertexes.
 
-4. We Call the MakeGraph function. Pass the number of vertexes and the graph as the parameters to that function. Below is the code that implements steps 1 to 4.
+4. We Call the `MakeGraph()` function. Pass the number of vertexes and the graph as the parameters to that function. Below is the code that implements steps 1 to 4.
 
 ```c#
 
@@ -163,21 +166,21 @@ At this point, we find that `1` is part of our current path. It is also visited.
 
 ```
 
-7. Construct a graph in the MakeGraph function.
+7. Construct a graph in the `MakeGraph()` function.
 
-  - Declare a Dictionary data structure. This is what will store our adjacency list/graph.
+  - Declare a Dictionary data structure, `ls`. This is what will store our adjacency list/graph.
 
-  - Declare a visited boolean variable. Its size is the number of nodes.
+  - Declare a visited boolean variable, `visited`. Its size is the number of nodes.
 
-  - Declare a path boolean variable. Its size is the number of nodes.
+  - Declare a path boolean variable, `path`. Its size is the number of nodes.
 
   - Populate the dictionary with values.
 
   - Iterate through the nodes. For each iteration:-
 
-    - Call the DFS function.
+    - Call the `DFS()` function.
 
-  - If the function returns a true, a cycle has been detected. Otherwise, there is no cycle when it returns false.
+  - If the function returns a `true`, a cycle has been detected. Otherwise, there is no cycle when it returns `false`.
 
   Below is the code implementation of step 7 above.
 
@@ -232,7 +235,7 @@ At this point, we find that `1` is part of our current path. It is also visited.
 
 ```
 
-6. Create a boolean DFS function that detects whether there is a cycle or not. Below is the code for the same. We use recursion for backtracking. If a cycle is detected, we return true, otherwise, we return false.
+6. Create a boolean `DFS()` function that detects whether there is a cycle or not. Below is the code for the same. We use recursion for backtracking. If a cycle is detected, we return `true`, otherwise, we return `false`.
 
 ```c#
        private static bool Dfs(Dictionary<int, List<int>> graph, int start, bool[] visited, bool[] path)
@@ -288,11 +291,11 @@ At this point, we find that `1` is part of our current path. It is also visited.
 
 ```
 
-### OUTPUT
+The output of the above code after running will be:- 
 
 [Image of Output](/engineering-education/graph-cycle-detection/output1.png/)
 
-2. ### Cycle Detection in Undirected Graph.
+2. ### Cycle detection in undirected Graph.
 
 In the above example, we have talked about finding a cycle in a directed graph. That algorithm does not work for undirected graphs.
 
@@ -312,9 +315,9 @@ Add `C` to the current path set. , we pass `B` as the parent node. `C` has one o
 
 [Image of Undirected Graph](/engineering-education/graph-cycle-detection/unidirected.png/)
 
-#### Code Implemetation
+#### Code implemetation
 
-We will add a new method called HasCycle to our existing class. HasCyle is the Dfs Function. Below is the code that implements cycle detection in an undirected graph. Note that line `if (current != parent)`, we first check if we are going back to the parent node. If yes, no cycle has been found. Otherwise, a cycle is found.
+We will add a new method called `HasCycle()` to our existing class. `HasCyle()` is the Dfs Function in this case. Below is the code that implements cycle detection in an undirected graph. Note that line `if (current != parent)`, we first check if we are going back to the parent node. If yes, `no cycle` has been found. Otherwise, `a cycle is found`.
 
 ```c#
 
@@ -361,7 +364,7 @@ We will add a new method called HasCycle to our existing class. HasCyle is the D
 
 ```
 
-In this particular example, we are dealing with characters. We will change the MakeGraph function and Main function to accommodate the characters. The concept is still the same as for the directed graph for these two functions.
+In this particular example, we are dealing with characters. We will change the `MakeGraph()` function and `Main()` function to accommodate the characters. The concept is still the same as for the directed graph for these two functions.
 
 ```c#
 
@@ -443,11 +446,11 @@ In this particular example, we are dealing with characters. We will change the M
 
 ```
 
-### OUTPUT
+The output of the above code after running it will be:- 
 
 [Image of Output](/engineering-education/graph-cycle-detection/output1.png/)
 
-### Application of Cycle Detection
+### Application of cycle detection
 
 1. It is used a lot in distributed message-based algorithms.
 
@@ -457,6 +460,6 @@ In this particular example, we are dealing with characters. We will change the M
 
 ### Conclusion
 
-From this article, we have been able to cover in-depth DFS traversal to just understand how to detect a cycle in a graph. It is an important concept especially when one finds themselves having to apply it. I hope this article has made that concept clear.
+From this article, we have been able to cover in-depth, DFS traversal. It is the best algorithm used to detect a cycle in a graph. It is an important concept especially when one finds themselves having to apply it. I hope this article has made that concept clear.
 
 Happy coding!!
