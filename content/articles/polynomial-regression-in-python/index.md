@@ -15,8 +15,8 @@ images:
    alt: Polynomial Regression example image
 ---
 
-### Table of Contents:
-
+### Table of Contents
+- [Table of Contents](#table-of-contents)
 - [Getting Started with Polynomial Regression in Python](#getting-started-with-polynomial-regression-in-python)
 - [Prerequisites](#prerequisites)
 - [Introduction to Polynomial Regression](#introduction-to-polynomial-regression)
@@ -29,9 +29,9 @@ images:
   - [Output](#output)
 - [Step 4: Training the Polynomial Regression model on the whole dataset](#step-4-training-the-polynomial-regression-model-on-the-whole-dataset)
   - [Output](#output-1)
-- [Step 5: The Linear Regression results visualization](#step-5-the-linear-regression-results-visualization)
+- [Step 5: The visualization of linear regression results](#step-5-the-visualization-of-linear-regression-results)
 - [Step 6: The Polynomial Regression results visualization](#step-6-the-polynomial-regression-results-visualization)
-- [Step 7: The Polynomial Regression results visualisation(for higher resolution and smoother curve)](#step-7-the-polynomial-regression-results-visualisationfor-higher-resolution-and-smoother-curve)
+- [Step 7: The Polynomial Regression results visualization (for higher resolution and smoother curve)](#step-7-the-polynomial-regression-results-visualization-for-higher-resolution-and-smoother-curve)
 - [Step 8: A new result prediction with Linear Regression](#step-8-a-new-result-prediction-with-linear-regression)
 - [Step 9: A new result prediction with Polynomial Regression](#step-9-a-new-result-prediction-with-polynomial-regression)
 - [Conclussion](#conclussion)
@@ -53,15 +53,15 @@ Usually, when fitting a curve, the goal is to exploit the training set and learn
 ### Polynomial curve fitting
 The polynomial function we use to fit the data is of the form:
 
-\[y(x,\bold{w})=w_0 + w_1x + w_2x^2 + , . . .,+ w_Mx^M=\sum_{j=0}^{M} w_jx^j \]
+$y(x,\bold{w})=w_0 + w_1x + w_2x^2 + , . . .,+ w_Mx^M=\sum_{j=0}^{M} w_jx^j$
 
 
-where
-- \(M\) is the polynomial order.
-- \(x^j\) is input variable \(x\) raised to the power \(j\).
-- \(\bold{w}=w_0 , .\ .\ . , w_M\) denotes a vector of weights.
+where;
+- $M$ is the polynomial order.
+- $x^j$ is input variable $x$ raised to the power $j$.
+- $\bold{w}=w_0 , .\ .\ . , w_M$ denotes a vector of weights.
   
-From the polynomial hypothesis above, we note that this function \(y(x, \bold w)\) is a non-linear function of \(x\). However, this function is a linear function of the weights \(\bold w\). Therefore, functions that are non-linear in the input variable but linear in the unknown set of the parameters are linear and fall under the *linear models* class. Thus a *polynomial regression* is a **linear model**.
+From the polynomial hypothesis above, we note that this function $y(x, \bold w)$ is a non-linear function of $x$. However, this function is a linear function of the weights $\bold w$. Therefore, functions that are non-linear in the input variable but linear in the unknown set of the parameters are linear and fall under the *linear models* class. Thus a *polynomial regression* is a **linear model**.
 
 Now the task is to determine the value of $\bold w$ and $M$.
 
@@ -69,7 +69,7 @@ Now the task is to determine the value of $\bold w$ and $M$.
 
 To determine the values of the coefﬁcients, we first ﬁt a polynomial to the training dataset. After that, we find the error function, i.e., $E(\bold w)$, which measures the misﬁt between the fitted curve $y(x, \bold w)$ and the data points of the training set. One of the most used error functions in machine learning is the sum of squares of the errors between the predictions $y(x_n, \bold w)$  and the corresponding target values for each point $x_n$ $y_n$ fin the data. This error function is of the form:
 
-\[E(\bold w)=\frac{1}{2}\sum ( {y(x_n , w) − y_n } )^2\]
+$E(\bold w)=\frac{1}{2}\sum ( {y(x_n , w) − y_n } )^2$
 
 Where:
 - The factor of 1/2 is introduced for later convenience.
@@ -225,7 +225,7 @@ Upon executing the code above, the output is:
  array([330378.78787879])
 
  ``` 
-The variable \(X=6.5\) is exact between \(X=6\) and \(X=7\). Thus we expect the model to predict a salary value between 150000 and 200000. With linear regression, this is not the case. It overshoots the expected salary actually by almost two times. This indicates that linear regression is not suitable for this problem.
+The variable $X=6.5$ is exact between $X=6$ and $X=7$. Thus we expect the model to predict a salary value between 150000 and 200000. With linear regression, this is not the case. It overshoots the expected salary actually by almost two times. This indicates that linear regression is not suitable for this problem.
 
 ### Step 9: A new result prediction with Polynomial Regression
 
