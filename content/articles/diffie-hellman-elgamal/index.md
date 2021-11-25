@@ -2,7 +2,7 @@
 layout: engineering-education
 status: true
 published: true
-url: /understanding-diffie-helman-and-elgamal-asymmetric-encryption/
+url: /diffie-hellman-elgamal/
 title: Understanding Diffie Helman and Elgamal Asymmetric Encryption
 description: This tutorial will help the reader understand the concept of Diffie Helman and Elgamal Asymmetric encryption algorithms together with key generation,encryption and decryption process.
 author: gitahi-philomena
@@ -11,7 +11,7 @@ topics: [Security]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/understanding-diffie-helman-and-elgamal-asymmetric-encryption/hero.jpg
+  - url: /engineering-education/diffie-hellman-elgamal/hero.jpg
     alt: Encryption Example Image
 ---
 Security plays a crucial role in data communication and data protection. It helps prevent unauthorized access to confidential information, which may lead to data loss and modification by unknown people making data transferred safe and unchanged.
@@ -38,7 +38,7 @@ To follow this tutorial along, you need the following;
 - Basic knowledge of modular arithmetic.
 - Basic understanding of security concepts.
 - Familiar with basic concepts of Python.
-- Local development environment. We'll use [Pycharm](https://www.jetbrains.com/pycharm/) in this tutorial.
+- Local development environment. We'll use [Pycharm](https://www.jetbrains.com/pycharm/) as our IDE in this tutorial.
 
 ### Objectives
 By the end of this article, the reader should have a basic understanding of generating keys using Diffie-Hellman algorithms and encryption and decryption using the Elgamal algorithm.
@@ -333,3 +333,6 @@ Equal shared keys: True
 Therefore, it is apparent that security plays a vital role in data communication. Using Diffie Helman and Elgamal encryption algorithms seems to solve the problem of key distribution as the sender and receiver can generate the same key hence throwing key distribution out of the equation.
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Miller Juma](/engineering-education/content/authors/miller-juma/)
