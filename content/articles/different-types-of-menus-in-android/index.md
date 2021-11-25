@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /different-types-of-menus-in-android/
-title: Different types of Menus in Android
+title: Different Types of Menus in Android
 description: This tutorial will guide the reader through the process of creating different types of menus in Android. Menus are fundamental UI elements that are frequently used to hold actions that could otherwise be buried.
 author: benta-odek
 date: 2021-11-24T00:00:00-20:20
@@ -26,9 +26,9 @@ These hidden elements could be accessed by:
 - To provide a capability that allows shifting to various parts of the application that are not easily available in the presence of user interface display.
 
 ### Prerequisites
-To follow this tutorial, you need to:
+To follow this tutorial, the reader will need to:
 - Have Android Studio installed on your machine.
-- Have basic knowledge of the Kotlin programming language.
+- Have a basic understanding of the Kotlin programming language.
 - Have a basic knowledge of Android app development.
 
 ### Types of Menus Used in Android
@@ -83,7 +83,6 @@ On the resource folder, create a menu directory and within the directory create 
 ```
 
 #### Explanation
-
 - `<menu>` - This is an element that provides the basis for creating menu items and groups.
 - `<item>` - Items are used to represent the single elements to be displayed in the menu. It provides the capability to build several menu items.
 - `<group>` - Group allows you to categorize menu items that are said to be sharing the same properties for example active state and visibility.
@@ -135,17 +134,19 @@ override fun onOptionsItemSelected(item: MenuItem): Boolean {
 The `when` statement is used to evaluate the value of the `itemId`. If its value is equal to the value of the `R.id.<item_id>`, the `Toast.makeText` method is called with the message showing the clicked item. This indicates that the menu is working. We can therefore perform the desired action.
 
 #### Contextual Menus
-Contextual menus are utilized when actions connected to a certain item or context frame are presented on the current screen. Examples of such menus are shown when one long presses an image 
+Contextual menus are utilized when actions connected to a certain item or context frame are presented on the current screen. Examples of such menus are shown when one long presses an image. 
 
 Contextual menus are of two types:
 - Floating contextual menus.
-- Contextual Action menus.
+- Contextual action menus.
 
 #### Floating contextual menus
 When one long presses (press and hold) on an item, this menu appears as a floating list of menu items. Support for floating contextual menu should be declared. This menu allows actions to be performed on one item at a time.
 
 #### Handling clicks on floating contextual menu items
-Just like options menus, floating contextual menus click listeners also needs to be handled to provide a relevant and appropriate action required by the user. This click listener is handled in the following method after the creation of the menu:
+Just like options menus, floating contextual menus click listeners also needs to be handled to provide a relevant and appropriate action required by the user. 
+
+This click listener is handled in the following method after the creation of the menu:
 
 ```kotlin
  //Float contextual menu
@@ -187,8 +188,8 @@ override fun onContextItemSelected(item: MenuItem): Boolean {
 
 ![Floating contextual menu](/engineering-education/different-types-of-menus-in-android/floating-contextual.png)
 
-#### Contextual Action menu
-This is a type of contextual menu that is majorly used to display the operations based on the long clicked item. Several methods are often used to manipulate the contextual action mode menu. The methods are explained below.
+#### Contextual action menu
+This is a type of contextual menu that is usually used to display the operations based on the long clicked item. Several methods are often used to manipulate the contextual action mode menu. The methods are explained below.
 
 The first method is used to create the contextual action mode menu:
 
@@ -201,7 +202,7 @@ private val mActionCallback = object : ActionMode.Callback {
     }
 ```
 
-To prepare the contextual action mode menu, the method below is appropriate to be used to perform that action.
+To prepare the contextual action mode menu, we can use this method below to perform that action.
 
 ```kotlin
 override fun onPrepareActionMode(mode: ActionMode, menu: Menu): Boolean {
@@ -313,7 +314,6 @@ A checkable menu can be designed as follows. Create a menu resource file and add
 ```
 
 #### Explanation
-
 `checkablebehaviour` is a property that can be used to indicate the check behavior and actions on checkable menu items. It can be specified in the following ways:
 - `all` - This is used to demonstrate that all of the options may be selected, and a checkbox is used to facilitate this operation.
 - `single` - This is used to show that just one item may be picked, and the radio button is used to do so.
@@ -346,7 +346,7 @@ override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
 If a menu item is clicked, it is first examined to see if it is checked, then updated using this code `item.isChecked = !item.isChecked`.
 
-#### Intent-Based menus
+#### Intent-based menus
 In contrast to intent-based menus, other menus are created sorely using a menu resource file. Menus based on intent are dynamically added based on the application.
 
 Within the checkable menu resource file add the following implementation which is used as the intent-based menu item.
@@ -357,7 +357,7 @@ Within the checkable menu resource file add the following implementation which i
 </group>
 ```
 
-Then within the `onCreateOptionsMenu` method, add the below implementation to integrate the intent-based menu.
+Then within the `onCreateOptionsMenu` method, add the implementation below to integrate the intent-based menu.
 
 ```kotlin
 //Intent based menu
@@ -372,23 +372,12 @@ menu!!.addIntentOptions(
 
 ### Design guidelines and best practices for menus
 Based on the different types of menus, there are design guidelines and best practices to be followed.
-- The best place to issue a command
-Think of the command and how it performs its actions. Does it apply to specific selection or the entire activity?
-
-- Ordering of menu items
-When arranging menu items, place the actions that are always used often and first first.
-
-- Recoverability of menu items
-Don't position menu items where users can't readily access contextual or popup menus by long-pressing a specific item on the screen.
-
-- First Context menu item
-The first context menu option should always be the pick of the most straightforward action, for example, open.
-
-- Identify selected items with a context menu
-This is always done with the help of popup or action mode in that one should take care of the item user-selected. Otherwise, the user is likely to forget. Therefore, it is appropriate to identify the item selected to provide a context menu. Doing so helps the user recall the action they were to perform.
-
-- Fix the most important commands
-This is accomplished on the choices menu by placing an icon on the menu item to guarantee that it is always fixed and accessible to users as shown below:
+- The best place to issue a command: Think of the command and how it performs its actions. Does it apply to specific selection or the entire activity?
+- Ordering of menu items: When arranging menu items, place the actions that are always used often and first first.
+- Recoverability of menu items: Don't position menu items where users can't readily access contextual or popup menus by long-pressing a specific item on the screen.
+- First context menu item: The first context menu option should always be the pick of the most straightforward action, for example, open.
+- Identify selected items with a context menu: This is always done with the help of popup or action mode in that one should take care of the item user-selected. Otherwise, the user is likely to forget. Therefore, it is appropriate to identify the item selected to provide a context menu. Doing so helps the user recall the action they were to perform.
+- Fix the most important commands: This is accomplished on the choices menu by placing an icon on the menu item to guarantee that it is always fixed and accessible to users as shown below:
 
 ```xml
 <item
@@ -399,10 +388,10 @@ This is accomplished on the choices menu by placing an icon on the menu item to 
 ```
 
 ### Conclusion
-In this article, we have learned what are menus as used in Android, the different types of menus, the difference between menu types and design guidelines together with the best practices when handling menus. You can get the full implementation on [Github](https://github.com/benta-odek/MenusDemo.git).
+In this article, we have learned what menus are used in Android, the different types of menus, the difference between menu types and design guidelines together with the best practices when handling menus. You can get the full implementation on [GitHub](https://github.com/benta-odek/MenusDemo.git).
 
 ### Reference
-Don't lock the potential to explore more on [Menus](https://developer.android.com/guide/topics/ui/menus).
+Unlock the potential to explore more on [Menus](https://developer.android.com/guide/topics/ui/menus).
 
 Happy coding!
 
