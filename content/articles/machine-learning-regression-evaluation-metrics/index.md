@@ -130,6 +130,8 @@ We use the following formula to calculate *adjusted r squared*:
 
 ![Adjusted](/engineering-education/machine-learning-regression-evaluation-metrics/adjusted.png)
 
+*[Image Source: Analytics.com](https://ai-ml-analytics.com/wp-content/uploads/2020/04/Adjusted-R-Squared.png))*
+
 Adjusted R-squared will penalize us for adding independent variables that do not fit the model. The number of independent variables (predictors) is represented by *p* in the above formula.
 
 **Advantages**
