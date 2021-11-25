@@ -16,7 +16,7 @@ images:
 ---
 Google provides a service known as reCAPTCHA that helps keep malicious users away from your website. It does this by posing a challenge that is easy for humans to solve but tough for bots. This service is mostly used on forms to ensure that the information being submitted is coming from a human being and this helps avoid spamming.
 <!--more-->
-In this article, we will discuss how we can integrate the reCAPTCHA v2 service into our website. ReCAPTCHA v2 verifies that it is a human accessing a website by posing a challenge. We will use React (a JavaScript framework for building user interfaces) for the frontend and Django(a python backend technology) to create our backend.
+This article will discuss how we can integrate the reCAPTCHA v2 service into our website. ReCAPTCHA v2 verifies that a human is accessing a website by posing a challenge. We will use React (a JavaScript framework for building user interfaces) for the frontend and Django(a python backend technology) to create our backend.
 
 #### Prerequisites
 To be able to follow along in this article, the reader will need to have:
@@ -37,22 +37,21 @@ By the end of this article, the reader will be able to:
 To enable reCAPTCHA on your website, you first need to register your site on the reCAPTCHA website so that you be able to acquire the site and secret keys. Click [here](https://www.google.com/recaptcha/admin/create) to open the Google reCAPTCHA section for registering a new site. Fill in the required information as shown below:
 
 - In the **Label** text field, enter your site name.
-- In the **reCAPTCHA** section, choose reCAPTCHA v2. In the options list that appears, select option 1("I'm not a robot" Checkbox).
+- In the **reCAPTCHA** section, choose reCAPTCHA v2. In the options list that appears, select option 1("I'm not a robot" checkbox).
 - In the **Domains** section, enter the following two options: 127.0.0.1 and localhost.
 - Accept the reCAPTCHA's terms of service and click submit.
-- You will then be provided with a **site key**(to use in the frontend) and a **secret key**(to use in the backend).
+- You will then be provided with a **site key**(to use in the frontend) and a **secret key**(in the backend).
 
 ![Recaptcha](/engineering-education/client-server-react-django-recaptcha/recaptchaSnap.PNG)
 
 #### Setting up our Frontend
 Create a folder named **react-django-recaptcha**. Open the folder in your terminal and run the following command:
-
 ```bash
 npx create-react-app frontend
 ```
 
 The above command will create our React frontend.
-Run the following commands to navigate into the frontend directory and open the directory in your code editor, in this case VS code.
+Run the following commands to navigate into the frontend directory and open the directory in your code editor, Visual Studio code.
 ```bash
 cd frontend
 code .
@@ -132,11 +131,11 @@ function App() {
 export default App;
 ```
 
-- In the above code, we have a contact form that contains the fields; name, email, and message. We keep track of the data entered in these fields using the `useState()` hook.
-- In the `div` with the className `cta`, we have our ReCaptcha component that takes two attributes, one is the site key that we get from the Google reCAPTCHA website. The other attribute is an `onChange` attribute that calls the `handleRecaptcha()` function when the reCAPTCHA component is clicked on.
+- In the above code, we have a contact form that contains the fields; name, email, and message. We track the data entered in these fields using the `useState()` hook.
+- In the `div` with the className `cta`, we have our ReCaptcha component that takes two attributes. One is the site key that we get from the Google reCAPTCHA website. The other attribute is an `onChange` attribute that calls the `handleRecaptcha()` function when the reCAPTCHA component is clicked on.
 - Below the reCAPTCHA component, we conditionally render the `Submit` button depending on the outcome of the reCAPTCHA. We only show it when the success value of the reCAPTCHA evaluates to true(when the user successfully solves the reCAPTCHA challenge). This helps to ensure that the form data can only be submitted after the reCAPTCHA challenge has been solved.
-- The `handleRecaptcha()` function takes in a value that we send to the backend for server-side verification. You can console.log the value to see it. We use the Fetch API to make a POST request to the route `http://127.0.0.1:8000/recaptcha/` which we will, later on, create on our server. We then use the response we get from the server and pass it to the `setCaptchaResult()` function which sets the state of the `captchaResult`. The response is either true or false. If it is true, we show the `Submit` button.
-- After the Submit button has been displayed(which means that the reCAPTCHA challenge has been successfully solved) you can go ahead and handle the form submission using the `handleSubmit()` function.
+- The `handleRecaptcha()` function takes in a value that we send to the backend for server-side verification. You can console.log the value to see it. Next, we use the Fetch API to make a POST request to the route `http://127.0.0.1:8000/recaptcha/`, which we will, later on, create on our server. We then use the response we get from the server and pass it to the `setCaptchaResult()` function, which sets the state of the `captchaResult`. The response is either true or false. If it is true, we show the `Submit` button.
+- After the Submit button has been displayed(which means that the reCAPTCHA challenge has been successfully solved), you can go ahead and handle the form submission using the `handleSubmit()` function.
 
 Now, open the `App.css` and modify it with the following code to make our webpage look better:
 ```css
@@ -221,9 +220,9 @@ cd recaptchaVerification
 
 code .
 ```
-The first command creates a Django application with the name `recaptchaVerification`, the second one changes our active directory and the last one launches our code editor.
+The first command creates a Django application with the name `recaptchaVerification`, the second one changes our active directory, and the last one launches our code editor.
 
-Open the integrated terminal and make sure that the virtual environment is still active. If it is not, type in the following commands to activate it:
+Open the integrated terminal and ensure that the virtual environment is still active. If it is not, type in the following commands to activate it:
 
 ```bash
 cd ..
@@ -235,7 +234,7 @@ To make sure our server is working, you can run the following command(remember t
 python manage.py runserver
 ```
 
-We now need to create a new app that will handle our API requests. Run the following command to create an app named `api`:
+We now need to create a new app to handle our API requests. Run the following command to create an app named `api`:
 
 ```bash
 django-admin startapp api
@@ -251,8 +250,8 @@ python -m pip install requests
 python -m pip install django-cors-headers
 ```
 
-- The first command installs Django Rest Framework that helps us to create an API.
-- The second command installs the Requests HTTP library that helps us to send HTTP requests easily. We will use this to send an HTTP request to Google ReCAPTCHA to verify the user's response.
+The first command installs Django Rest Framework, which helps us create an API.
+- The second command installs the Requests HTTP library that helps us send HTTP requests easily. We will use this to send an HTTP request to Google ReCAPTCHA to verify the user's response.
 - The last command installs CORS that allows in-browser requests to your Django application from other origins. This will enable our React frontend to make requests to our Django backend.
 
 **Modifying the `settings.py` file**:
@@ -298,7 +297,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:3000",
 ]
 ```
-This will allow requests from our localhost port 3000 where our React app is running.
+This will allow requests from our localhost port 3000 to run our React app.
 
 **Modifying the `recaptchaVerification\urls.py` file**:
 
@@ -339,7 +338,7 @@ def recaptcha(request):
 
 ```
 - In the above code, we use  `@api_view` decorator provided by the Django Rest Framework to restrict only POST requests to this API route.
-- We then use the requests HTTP library to make a POST request to `https://www.google.com/recaptcha/api/siteverify`. This API post request can take three parameters; secret, response, and remoteip. The `secret` is the secret key provided by the Google reCAPTCHA website, the `response` is the user response token that we get from the frontend when the user solves the captcha challenge and `remoteip` is the user's IP address. The first two are required but the `remoteip` is optional. In our example, we have only used the `secret` and the `response`.
+- We then use the requests HTTP library to make a POST request to `https://www.google.com/recaptcha/api/siteverify`. This API post request can take three parameters; secret, response, and remoteip. The `secret` is the secret key provided by the Google reCAPTCHA website, the `response` is the user response token that we get from the frontend when the user solves the captcha challenge and `remoteip` is the user's IP address. The first two are required but the `remoteip` is optional. We have only used the `secret` and the `response` in our example.
 - The API responds with a JSON object that contains the following attributes; `success` which is either true or false, `challenge_ts` which is the timestamp the challenge was taken, `hostname` which is the name of our hostname of the site where the captcha was solved(in our case, localhost) and `error-codes` which are optional.
 - We store the API response in `r` and then send it to the frontend as a JSON object.
 
@@ -354,17 +353,17 @@ urlpatterns = [
     path('recaptcha/', views.recaptcha)
 ]
 ```
-The code above exposes our API endpoint that will be accessed by the frontend. 
+The code above exposes our API endpoint that the frontend will access. 
 
 #### Testing our Application
-To test our application, make sure that the React front-end and the Django back-end are running. Now go to your browser on `localhost:3000` and you will see that the contact form is there but the submit button is not visible.
+To test our application, ensure that the React front-end and the Django back-end are running. Now go to your browser on `localhost:3000,` and you will see that the contact form is there, but the submit button is not visible.
 
-After you solve the captcha challenge, the submit button will appear, and only then can you submit the form. This ensures that someone has to solve the captcha challenge before they submit data.
+After you solve the captcha challenge, the submit button will appear, and only then can you submit the form. This ensures that someone has to solve the captcha challenge before submitting data.
 
-You'll also notice that after a while, the captcha verification displays a message, 'verification expired. Check the checkbox again' and the submit button disappears. This means that our application is working perfectly fine because the submit button will only be displayed when our server responds with `success = true`.
+You'll also notice that the captcha verification displays a message, 'verification expired after a while. Check the checkbox again,' and the submit button disappears. This means that our application is working perfectly fine because the submit button will only be displayed when our server responds with `success = true`.
 
 #### Conclusion
-Google reCAPTCHA provides a great and simple way of protecting us from being victims of spamming. This is one way of implementing Google reCAPTCHA and there are other ways which you can look up on the internet. 
+Google reCAPTCHA provides a great and simple way of protecting us from being victims of spamming. This is one way of implementing Google reCAPTCHA, and there are other ways that you can look up on the internet. 
 
 After applying this to your website, you can now go ahead and handle the form submission.
 
