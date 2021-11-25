@@ -1,4 +1,22 @@
-This tutorial is going to cover how to create a custom Expandable Floating Action Button (FAB) in Android. This involves using the Animation class. Animations show a change of state in the button when clicked.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /creating-a-custom-fab-in-android/
+title: How to create Custom Extendable and Expandable FAB in Android Using Kotlin
+description: This tutorial will guide the reader through the process of creating a custom extendable and expandable FAB in Android using kotlin. A FAB is a circular button that usually floats on the screen.
+author: omondi-alex
+date: 2021-11-26T00:00:00-00:29
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/creating-a-custom-fab-in-android/hero.png
+    alt: How to create a custom FAB in Android Hero Image
+---
+This tutorial is going to cover how to create a custom Expandable Floating Action Button (FAB) in Android. This involves using the Animation class.
+<!--more-->
+Animations show a change of state in the button when clicked.
 
 ### What is a Floating Action Button?
 A Floating Action Button is a circular button that usually floats on the screen and displays the primary action of an application.
@@ -472,9 +490,12 @@ The class above have methods for setting a listener to the Floating Action Butto
 
 The RecyclerView is set up to detect changes in scroll position. When scrolling, the button will expand hence the name Expandable Floating Action Button.
 
-![Project Demo](/engineering-education/creating-custom-expandable-fab/custom-expandable-fab.gif)
+![Project Demo](/engineering-education/creating-a-custom-fab-in-android/custom-expandable-fab.gif)
 
 ### Conclusion
 In this tutorial, we have learned how to create a custom Expandable Floating Action Button and an Extendable Floating Action Button. The code provided not only helps in creating the FAB but also help in learning how to implement clicks and scroll listeners on the RecyclerView.
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Eric Gacoki](/engineering-education/authors/eric-gacoki/)
