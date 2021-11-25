@@ -13,16 +13,14 @@ images:
   - url: /engineering-education/understanding-diffie-helman-and-elgamal-asymmetric-encryption/hero.jpg
     alt: Encryption Example Image
 ---
-Security plays a crucial role in data communication and data protection. It helps prevent unauthorized access to confidential information, which may lead to data loss and data modification by unknown people making data transferred safe and unchanged.
+Security plays a crucial role in data communication and data protection. It helps prevent unauthorized access to confidential information, which may lead to data loss and modification by unknown people making data transferred safe and unchanged.
 <!--more-->
-This article will cover how one can understand various asymmetric encryption algorithms: Diffie Helman and Elgamal to protect data transferred from sender to receiver. 
-
-Furthermore, it will equip the learner with the knowledge of how to encrypt and decrypt data send together with generating the encryption and decryption keys.
+This article will cover Diffie Hellman's (DH) key exchange algorithm, which involves deriving the same key from both sender and receiver. Additionally, we'll also cover the concepts of the Elgamal encryption algorithm by using DHKE generated keys.
 
 ### Table of contents
    - [Prerequisites](#prerequisites)
    - [Objectives](#objectives)
-   - [Asymmetric Encryption.](#asymmetric-encryption)
+   - [Getting started with asymmetric encryption](#getting-started-with-asymmetric-encryption)
    - [Modular Exponentiation](#modular-exponentiation)
    - [Modular Exponentiation Using Python](#modular-exponentiation-using-python)
    - [Working of Diffie Helman Key Exchange Protocol](#working-of-diffie-helman-key-exchange-protocol)
@@ -35,19 +33,21 @@ Furthermore, it will equip the learner with the knowledge of how to encrypt and 
    - [Conclusion](#conclusion)
 
 ### Prerequisites
-To follow this tutorial along, the reader should:
-- Have a basic understanding of security concepts.
-- Have a prior understanding of modular arithmetic.
-- Know how to use various development environments for writing and running python code.
+To follow this tutorial along, you need the following;
+- Basic knowledge of modular arithmetic.
+- Basic understanding of security concepts.
+- Familiar with basic concepts of Python.
+- Local development environment. We'll use [Pycharm](https://www.jetbrains.com/pycharm/) in this tutorial.
 
 ### Objectives
-By the end of this article, the reader should have basic understanding of generating keys using Diffie-Hellman algorithms and encryption and decryption using Elgamal algorithm.
+By the end of this article, the reader should have a basic understanding of generating keys using Diffie-Hellman algorithms and encryption and decryption using the Elgamal algorithm.
 
+### Getting started with asymmetric encryption
+Asymmetric encryption is also known as public-key encryption. It involves enciphering information by a sender and deciphering it by the receiver using keys. Each party has its public key to share with the world and a private key that they must keep secret.
 
-### Asymmetric encryption
-Asymmetric encryption is also known as public-key encryption. It involves enciphering information by a sender and deciphering it by the receiver using keys. Each party has their own public key which they can share with the world and a private key which they must keep secret. The magic of public key cryptography is that a message encrypted with the public key can only be decrypted with the private key. A sender will encrypt his or her message with the receiver's public key. Even  though an adversary may know the encryption key, he or she is unable to decrypt the message. The reciver however using his or her secret key, is able to decrypt the ciphertext.
+The magic of public-key cryptography is that a message encrypted with the public key can only be decrypted with the private key. A sender will encrypt their message with the receiver's public key. Even though an adversary may know the encryption key, they cannot decrypt the message. However, using their secret key, the receiver can decrypt the ciphertext.
 
-Public key encryption is an attempt to curb the following problem faced by symmetric encryption:
+Public key encryption is an attempt to curb the following problems faced by symmetric encryption:
 1. Key distribution.
  Key distribution under symmetric encryption requires either:
    - That two communicants already share a key which somehow has been distributed to them.
@@ -56,44 +56,50 @@ Public key encryption is an attempt to curb the following problem faced by symme
 2. Creation and verification of the digital signature.
    - If the use of cryptography were to become widespread, not just in military situations but for commercial and private purposes, then electronic messages and documents would need the equivalent of signatures used in paper documents.
 
-Asymmetric algorithms rely on one key for encryption and a different but related key for decryption. These algorithms have the following important characteristic:
-1. It is computationally infeasible to determine the decryption key, given only knowledge of the cryptographic algorithm and the encryption key.
-2. The two related keys can be used for encryption, with the other used for decryption.
+Asymmetric algorithms rely on one key for encryption and a different but related key for decryption. Therefore, these algorithms have the following important characteristic:
+- It is computationally infeasible to determine the decryption key, given only knowledge of the cryptographic algorithm and the encryption key.
+- The two related keys can be used for encryption, with the other used for decryption.
 
-![Asymmetric encryption.](/engineering-education\content\articles\understanding-diffie-helman-and-elgamal-asymmetric-encryption/asymmetric-encryption.png)
 
-### Modular Exponentiation
+### Modular exponentiation
+Modular exponentiation is the remainder when an integer `B` (the base) is raised to the power `e` (the exponent), and divided by `A` positive integer `M` (the modulus); that is,  
+`C` = `B`<sup>`e`</sup> mod `M`.
+
 Most technological applications of modular arithmetic involve exponentials with very large numbers. For example, a typical problem related to encryption might
 involve solving one of the following two equations:
 ```
 67930^32319 == (mod 103969) (70)
 67930^b == 48560 (mod 103969) (71)
 ```
-The  answers to the above questions are not as obvious as we may assume just from looking at the equations. More importantly, it is not even clear how we would go about determining `a` and `b`. In what is part of a great mystery of the modern study of computational complexity, the first equation is relatively easy for computers to solve, however, there is no known way of efficiently solving the second problem.
+The answers to the above questions are not as obvious as we may assume from the equations. But, more importantly, it is not even clear how we would go about determining `a` and `b`. 
 
->Note: It is very hard to compute `p`<sup>`e`</sup> then divide by `m` and find the remainder because `p`<sup>`e`</sup> is a very large number.
+The first equation is relatively easy for computers to solve in what is part of a great mystery of the modern study of computational complexity. However, there is no known way of efficiently solving the second problem.
 
-Despite the difficulties discussed above, it is important to find the modulus of `p`<sup>`e`</sup> `mod m` where `p`,`e`, and `m` are very large integers. The computation can therefore be done using an algorithm that employs the binary expansion of the exponent of `e`, reducing the value given using the binary form of `e` and finally computing the modulus of the value in each step.
+> Note: It's very hard to compute `p`<sup>`e`</sup> then divide by `m` and find the remainder because `p`<sup>`e`</sup> is a very large number.
 
-Below is an illustratory example:
+Despite the difficulties discussed above, it is essential to find the modulus of   `p`<sup>`e`</sup> `mod m` where `p`, `e`, and `m` are very large integers. 
 
-To compute `3^9`, we have that `9` in binary is `1001` so that `3^9=3^8.3^1`
-By successively squaring, we find that `3^2=9,3^4=9^2=81` and `3^8=81^2=6561`.
+Therefore, the computation can be done using an algorithm that employs the binary expansion of the exponent `e`, reducing the value given (p) using the binary form of `e` and finally computing the modulus of the value in each step.
 
-Since `3^9=3^8.3^1`, which equals `6561.3=19,683`, to work out the modulus of `3^9 mod 5`;
+Let's look at an example:
 
-**Solution:**
-Assume x=1 and p=3(base)
-compute x mod 5 where x=x*p where the binary value is 1 and it remains where the value same is 0
-and p mod 5 where p=p^2
-9=1001  (binary)
+To compute `3^9`, we have `9` in binary as `1001` such that `3^9=3^8.3^1.`
+By successively squaring, we find that `3^2=9`,`3^4=9^2=81` and `3^8=81^2=6561`.
+
+Since `3^9=3^8.3^1`, which equals `6561.3=19,683`, to compute the modulus of `3^9 mod 5` using the modular exponentiation, let's proceed and follow the steps below:
+
+- Step 1: Assume `x=1` and `p=3(base)`,
+- Step 2: Compute;
+   `x mod 5` where `x=x*p` when the binary value is `1` and remains where the binary value is `0`:  
+    `p mod 5` where `p=p^2  `
+> Note: 9=1001  in binary
 
 ```matlab
 A1 
 >> x=3 mod 5=3
 p=9 mod 5=4
 A2 
->>x remains 3 because the binary value is 0<br>
+>>x remains 3 because the binary value is 0
    p=16 mod 5=1
 A3
  >>x remain 3
@@ -105,34 +111,84 @@ Return the last value of x = 3
 3^9 mod 5 =3
 ```
 
-### Modular Exponentiation using Python
+### Modular exponentiation using Python
+As we've learned above, modular multiplication allows us to keep the intermediate result at each step. Here's the implementation of a simple repeated multiplication algorithm for computing modular exponents this way:
+
 ```python
-#Input three numbers.
-x = int(input("Enter First Value :"))
-y = int(input("Enter Second Value :"))
-z = (int)(1e9+7) # to compute some very, very large number 
-# power function use
-d = power(x, y) % z 
-print ("Value Is =",d) 
+def modexp_mul(a, b, n):
+    r = 1
+    for i in xrange(b):
+        r = r * a % n
+    return r
 ```
-*Output*
-Enter First Value : 2
-Enter Second Value : 3
-Value  = 8
+The above implementation is much better than the naive algorithm, but it's pretty slow, requiring b multiplications (and reductions modulo n).
+
+We can apply the modular reduction rule to the more efficient exponentiation algorithms.
+
+```python
+def modexp_rl(a, b, n):
+    r = 1
+    while 1:
+        if b % 2 == 1:
+            r = r * a % n
+        b /= 2
+        if b == 0:
+            break
+        a = a * a % n
+
+    return r
+```
+The above code has the right-to-left method with modular reductions at each step.
+We use the same algorithm but reduce every multiplication. So the numbers we deal with here are never very large.  
+
+We could as well implement the left-to-right method as shown below:
+
+```python
+def modexp_lr(a, b, n):
+    r = 1
+    for bit in reversed(_bits_of_n(b)):
+        r = r * r % n
+        if bit == 1:
+            r = r * a % n
+    return r
+```
+And with _bits_of_n being, as before:
+
+```python
+def _bits_of_n(n):
+    """ Return the list of the bits in the binary
+        representation of n, from LSB to MSB
+    """
+    bits = []
+
+    while n:
+        bits.append(n % 2)
+        n /= 2
+
+    return bits
+```
+
+> Note: Exponentiation and modular exponentiation are one of those applications in which an efficient algorithm is required for feasibility. Using the trivial/naive algorithms is possible only for small cases which aren't very interesting. One needs powerful methods in his toolbox to process realistically large numbers (such as the ones required for cryptographic algorithms).
 
 ### Working of Diffie Helman Key Exchange Protocol
-It involves exchanging secret/asymmetric keys between sender and receiver  using asymmetric encryption(public and private key). It can be abbreviated as DHKE.
+As we have discussed, cryptography provides secure end-to-end communication by employing encryption and decryption. The encryption algorithm converts the input (plaintext) into an encrypted output (ciphertext) using a key. The key must remain secure and unknown to the attacker for the system to stay secure.
+
+A key exchange protocol is used for symmetric cryptosystems to establish the shared key by communicating it over an insecure channel, requiring no previous connections.
+
+For example, if Alice and Bob want to exchange encrypted messages, Alice and Bob will not need to meet in person secretly to share the key. Instead, they can use an insecure channel effectively and share the key using the Diffie-Hellman key exchange protocol (DH protocol).
+
+DH protocol involves exchanging secret/asymmetric keys between sender and receiver using asymmetric encryption(public and private key). It can be abbreviated as DHKE.
 
 #### Steps involved
-1. Assume a prime number `Q`
-2. Set `B` a primitive root of `Q`
- `B < Q`
+1. Assume a prime number `Q.`
+2. Set `B` a primitive root of `Q.`
+ `B < Q.`
 3. Assume `Xa` to be the sender's private key and `Xb` to be the receiver's private key. 
 
 Public key of John (sender) = `Pa` = B<SUP>Xa</SUP> mod Q
 Public key of Doe (receiver) = `Pb` = B<SUP>Xb</SUP> mod Q
 
-The encryption key on the sender should be equal to that of the receiver as shown below:
+The encryption key on the sender should be equal to that of the receiver, as shown below:
 
 ```properties
 
@@ -142,16 +198,19 @@ KDoe = Pa<SUP>Xb</SUP> mod Q
 
 ```
 
-### Application of DHKE in ElGamal
-Elgamal algorithm is an asymmetric key encryption algorithm. It involves key generation using DHKE, encryption using the key, and decryption using the private key.
+The security of the DH Protocol relies on the fact that the functions X and Y are one-way. It is computationally infeasible to calculate the corresponding keys for an attacker who knows the leaked values of X and Y.
 
-![Illustration of DHKE key agreement using colors.](/\engineering-education\content\articles\understanding-diffie-helman-and-elgamal-asymmetric-encryption/Diffie-Helman.png)
-*[Image Source: Wikipedia](https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FDiffie%25E2%2580%2593Hellman_key_exchange&psig=AOvVaw1NIqEyjjySTC7rZb5GimUv&ust=1632470050062000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCIjF0KTPlPMCFQAAAAAdAAAAABAD)*
+Although the DH Protocol is safe against passive attackers, it is vulnerable to active attackers who can modify messages and interfere with the shared key.
+
+### Application of DHKE in ElGamal
+Diffie-Hellman (DH) is a key agreement algorithm, ElGamal an asymmetric encryption algorithm. Diffie-Hellman enables two parties to agree on a common shared secret that can be used subsequently in a symmetric algorithm like AES. Neither of the parties can tell beforehand what the secret will be, only that once they are done, they both end up with the same number.
+
+Elgamal involves key generation using DHKE, encryption using the key, and decryption using the private key.
 
 It involves the following components:
 
 #### Key Generation
-The key generation process involves the use of the DHKE process mentioned above, that is:
+The key generation process involves the use of the DHKE process as discussed previously, that is:
 
 Let `Q` be 19, and `B` be 10.
 Suppose `A` generates a key pair as follows:
@@ -184,9 +243,9 @@ KJohn = KDoe = K (Encryption Key)
 #### Encryption
 Assuming `B` wants to send a message that read 17 to `A.`
 `M` = 17
-Cipher for `CM` = `M K mod Q`
+Cipher for `CM` = `M K mod Q.`
 Which is 17*7 mod 19 = 5
-`B` send 5 the ciphertext and its public key (5,11) to `A`
+`B` send 5 the ciphertext and its public key (5,11) to `A.`
 
 #### Decryption
 A uses the public key of B to recover the key
@@ -202,7 +261,7 @@ Thus:
 
 ### Implementing DHKE in Python
 Now that we've understood the algorithms for key generations using DHKE.
-Let's proceed and see how we can implement the same using Python programming language.
+Let's proceed and see how we can implement the same using the Python programming language.
 
 In your project root, run the following commands to install the Diffie Hellman package:
 
@@ -226,13 +285,13 @@ Requirement already satisfied: pyyaml in /usr/lib/python3/dist-packages (from Na
 Installing collected packages: Naked, shellescape, Crypto, pyDHE
   WARNING: The script naked is installed in '/home/jumamiller/.local/bin' which is not on PATH.
   Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
-  WARNING: The scripts crypto and decrypto are installed in '/home/jumamiller/.local/bin' which is not on PATH.
+  Warning: The scripts crypto and decrypto are installed in '/home/jumamiller/.local/bin' which is not on PATH.
   Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
 Successfully installed Crypto-1.4.1 Naked-0.1.31 pyDHE-1.0.0 shellescape-3.8.1
 
 ```
 
-Now that we've `pyDHE` ready, let's proceed and implement our Diffie Hellman agorithm:
+Now that we've `pyDHE` ready, let's proceed and implement our Diffie Hellman algorithm:
 
 ```python
 import pyDHE
@@ -255,7 +314,7 @@ print("Equal shared keys:", johnSharedKey == doeSharedKey)
 
 ```
 
-On execution of the above code, two 2048-bit public keys (for John and for Doe) are generated and printed. Assuming that John and Doe have exchanged their public keys. Once John has received Doe's public key, she can calculate the shared secret by combining it to her private key and vice versa. The sample output below shows that the shared secret is always the same number (2048-bit integer):
+On execution of the above code, two 2048-bit public keys (for John and Doe) are generated and printed. Assuming that John and Doe have exchanged their public keys. Once John has received Doe's public key, she can calculate the shared secret by combining it with her private key and vice versa. The sample output below shows that the shared secret is always the same number (2048-bit integer):
 
 Output:
 ```bash
@@ -267,10 +326,9 @@ Doe shared key: 0x60d96187ae1db8e8acac7795837a2964e4972ebf666eaecfa09135371a2de5
 Equal shared keys: True
 ```
 
->It is important to note that your output will be different from the above output due to the randomness of generation.
+>It is essential to note that your output will be different from the above output due to the randomness of the generation.
 >
 ### Conclusion
-It is therefore very clear that security plays an important role in data communication. Using Diffie Helman and Elgamal encryption algorithms seems to solve the problem of key distribution as the sender and receiver can generate the same key hence throwing key distribution out of the equation.
+Therefore, it is apparent that security plays a vital role in data communication. Using Diffie Helman and Elgamal encryption algorithms seems to solve the problem of key distribution as the sender and receiver can generate the same key hence throwing key distribution out of the equation.
 
-
-Happy reading!
+Happy coding!
