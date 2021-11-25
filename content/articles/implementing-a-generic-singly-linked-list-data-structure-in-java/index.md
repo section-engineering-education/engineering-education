@@ -18,7 +18,7 @@ A `linked list` is used to hold node-based data. Data in a linked list is spread
 <!--more-->
 Each node has a reference section where an address of the next node is maintained. The brief linked list has links connecting some of the nodes. 
 
-By removing the challenges of an array, such as the need for contiguous memory and the difficulty of array insertion and deletion, an array data structure is improved. A linked list, but, makes it simple to add and delete items as your requirements change.    
+An array data structure is improved by addressing array obstacles such as the need for contiguous memory and the difficulty of array insertion and deletion. A linked list, on the other hand, makes it simple to add and remove items as your needs change.    
 
 ### Table of contents
 - [Differences between a linked list and an array](#differences-between-a-linked-list-and-an-array)
