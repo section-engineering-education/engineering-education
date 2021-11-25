@@ -142,7 +142,7 @@ The output indicates the linear regression model has been trained on the whole d
 
 ### Step 4: Training the Polynomial Regression model on the whole dataset
 In this step, we train the polynomial regression model on the whole dataset. The code below explains how this is done.
-"`python
+```python
 from sklearn.preprocessing import PolynomialFeatures # importing a class for Polynomial Regression
 poly_regr = PolynomialFeatures(degree = 4) # our polynomial model is of order
 X_poly = poly_regr.fit_transform(X) # transforms the features to the polynomial form
