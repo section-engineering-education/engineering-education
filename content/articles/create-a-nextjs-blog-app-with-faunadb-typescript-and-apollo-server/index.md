@@ -1,4 +1,22 @@
-FaunaDB is a hosted cloud database that is entirely serverless. It is fast and scales infinitely in the cloud. FaunaDB lets you manage your database data from its web interface or the command line. It can handle complex data modeling use cases.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /create-a-nextjs-blog-app-with-faunadb-typescript-and-apollo-server/
+title: Create a Next.js Blog App with TypeScript, Apollo Server and FaunaDB
+description: This guide will use FaunaDB, model the data relationships, and create an API that you can use to connect to your frontend application.
+author: catherine-macharia
+date: 2021-11-26T00:00:00-03:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/create-a-nextjs-blog-app-with-faunadb-typescript-and-apollo-server/hero.jpg
+    alt: Create a Next.js Blog App with TypeScript, Apollo Server and FaunaDB Hero Image
+---
+FaunaDB is a hosted cloud database that is entirely serverless. It is fast and scales infinitely in the cloud. 
+<!--more-->
+FaunaDB lets you manage your database data from its web interface or the command line. It can handle complex data modeling use cases.
 
 SQL is preferred for its security and data consistency, and NoSQL is preferred for its flexibility, scalability, and productivity. FaunaDB is a hybrid of these two. It combines the safety and security of SQL with the productivity and scalability of NoSQL.
 
@@ -24,7 +42,9 @@ To follow along with this tutorial, you need to:
 - [Conclusion](#conclusion)
 
 ### Setting up and configuring FaunaDB
-If you already have a FaunaDB account, you can log in [here](https://dashboard.fauna.com/accounts/login). Otherwise, you may [register](https://dashboard.fauna.com/accounts/register) for one. Then create a Fauna database from [here](https://dashboard.fauna.com/).
+If you already have a FaunaDB account, you can log in [here](https://dashboard.fauna.com/accounts/login). Otherwise, you may [register](https://dashboard.fauna.com/accounts/register) for one. 
+
+Then, create a Fauna database from [here](https://dashboard.fauna.com/).
 
 ![create-fauna-db](/engineering-education/create-a-nextjs-blog-app-with-faunadb-typescript-and-apollo-server/create-fauna-db.png)
 
@@ -34,7 +54,7 @@ Once a database is created, create a new collection where the blog documents wil
 
 Enter the **collection name** and then click **Save**. The collection will be created, and you will be redirected to the collections page.
 
-Fauna saves data and information in "documents." If you're used to working with other databases, individual documents in a collection are comparable to the rows in a table. As of now, it won't have any documents.
+Fauna saves data and information in "documents." If you are used to working with other databases, individual documents in a collection are comparable to the rows in a table. As of now, it won't have any documents.
 
 ![new-collection-page](/engineering-education/create-a-nextjs-blog-app-with-faunadb-typescript-and-apollo-server/new-collection-page.PNG)
 
@@ -87,7 +107,9 @@ To get your secret, go to the dashboard of the Fauna database you have just crea
 
 You probably don't have any key right now; click on **New Key**, Enter any Key name, and then hit **Save**. Copy the Key present on the new page and paste it in the **secret** section of the above code.
 
-The domain will be determined by the region you have selected. For example, if you have selected **US**, the domain will be `db.us.fauna.com`. For **EU**, it will be `db.eu.fauna.com`. Refer to these [docs](https://docs.fauna.com/fauna/current/learn/understanding/region_groups) for more information. You can view your region group in the **DB overview** section.
+The domain will be determined by the region you have selected. For example, if you have selected **US**, the domain will be `db.us.fauna.com`. 
+
+For **EU**, it will be `db.eu.fauna.com`. Refer to these [docs](https://docs.fauna.com/fauna/current/learn/understanding/region_groups) for more information. You can view your region group in the **DB overview** section.
 
 The next step is to come up with the type definitions. Add the following after the previous section.
 
@@ -114,13 +136,13 @@ type Mutation {
 `;
 ```
 
-Based on the information provided above, we're defining the following fields for each blog article:
-- Ref: A unique identifier for the article.
-- Title: Article's title.
-- Summary: Short description of the article.
-- Content: Article's content.
+Based on the information provided above, we are defining the following fields for each blog article:
+- `Ref`: A unique identifier for the article.
+- `Title`: Article's title.
+- `Summary`: Short description of the article.
+- `Content`: Article's content.
 
-We're also defining a query for getting many and single articles. And, a mutation to create an article based on the article's fields.
+We are also defining a query for getting many and single articles. And, a mutation to create an article based on the article's fields.
 
 Next, add a method to get many articles as follows;
 
@@ -154,9 +176,9 @@ const  getArticles = async() => {
 
 Using the `faunaClient` instance, we're able to retrieve articles from our database.
 
-We're using the `Map` to go through the returned data sets, `Paginate` to add pagination to our dataset, and `Lambda` to be able to get the specific ids of each dataset.
+We are using the `Map` to go through the returned data sets, `Paginate` to add pagination to our dataset, and `Lambda` to be able to get the specific ids of each dataset.
 
-We're also mapping through the dataset, restructuring it to match our schema. And in case of any error, return that error message.
+We are also mapping through the dataset, restructuring it to match our schema. And in case of any error, return that error message.
 
 Implement the method to get a single article as follows
 
@@ -176,9 +198,9 @@ const getArticle  = async (id) => {
 }
 ```
 
-We're requesting the data of a specific article based on the id, which is the reference number for every given single article.
+We are requesting the data of a specific article based on the `id`, which is the reference number for every given single article.
 
-We then return the fetched data, and in case of any error, we're returning the error message.
+We then return the fetched data, and in case of any error, we are returning the error message.
 
 Implement the method to create an article as follows;
 
@@ -198,7 +220,7 @@ const createArticle = async (title,summary,content) => {
 }
 ```
 
-We are creating an article using the `title`, `summary`, and `content` fields. Then return the article created. In case of any error, return that specif error message.
+We are creating an article using the `title`, `summary`, and `content` fields. Then, return the article created. In case of any error, return that specific error message.
 
 Connect the above functions to the `Query` or `Mutation` object using the below resolver.
 
@@ -259,31 +281,32 @@ npm run dev
 
 ![initial_server_log](/engineering-education/create-a-nextjs-blog-app-with-faunadb-typescript-and-apollo-server/initial-server-log.PNG)
 
-From your browser, visit the URL logged on your console. Since we're using `Apollo Server`, you will receive a page like the one shown below.
+From your browser, visit the URL logged on your console. Since we are using `Apollo Server`, you will receive a page like the one shown below.
 
 ![apollo-launch-server](/engineering-education/create-a-nextjs-blog-app-with-faunadb-typescript-and-apollo-server/apollo-launch-server.PNG)
 
-Click on `Query your server`. And your playground will be populated for the current running server.
+Click on `Query your server` and your playground will be populated for the current running server.
 
 ![apollo-playground](/engineering-education/create-a-nextjs-blog-app-with-faunadb-typescript-and-apollo-server/apollo-gui-playground.PNG)
 
 Feel free to interact with the `GUI`, write operations on the `operations` tab, run them and view the response from the `response` section.
 
-Our server is now up and running. Let's build the front end using Next.js.
+Our server is now up and running. Let us build the frontend using `Next.js`.
 
 ### Setting up the frontend
-To set up the frontend, we will use [create next app](https://nextjs.org/docs/api-reference/create-next-app), a tool provided by the Next.js team to make setting up a Next.js project much easier. Create a fronted directory. Within that folder, run the following command to initialize the Next.js project.
+To set up the frontend, we will use [create next app](https://nextjs.org/docs/api-reference/create-next-app), a tool provided by the Next.js team to make setting up a Next.js project much easier. 
+
+Create a fronted directory. Within that folder, run the following command to initialize the Next.js project.
 
 ```bash
 npx create-next-app --typescript .
 ```
 
-Since we will be using TypeScript, we need to pass in the `--typescript` parameter followed by a  `.` to specify that the project to hosted in the current directory.
+Since we will be using TypeScript, we need to pass in the `--typescript` parameter followed by a `.` to specify that the project is to be hosted in the current directory.
 
-After the installation is complete, we will need to install two packages;
-
-- `@apollo-client`: For connecting to our Apollo server instance.
-- `graphql`: For interpreting the queries that will be in our application.
+After the installation is complete, we will need to install two packages:
+- `@apollo-client` - For connecting to our Apollo server instance.
+- `graphql` - For interpreting the queries that will be in our application.
 
 Run the following command to install the above packages.
 
@@ -292,7 +315,9 @@ npm i @apollo/client graphql
 ```
 
 ### Configuring the frontend
-Configuring implies setting up the utilities and the components we will need in our application. Create a `lib` directory on the project root folder. Inside the `lib` directory, create an `apollo-client.tsx` file and add the following function.
+Configuring implies setting up the utilities and the components we will need in our application. Create a `lib` directory on the project root folder. 
+
+Inside the `lib` directory, create an `apollo-client.tsx` file and add the following function.
 
 ```tsx
 import {ApolloClient,InMemoryCache} from "@apollo/client";
@@ -307,7 +332,7 @@ export const getApolloClient = () => {
 
 The above function is instantiating an `ApolloClient` by passing in the `URI` of our `ApolloServer` and a `cache` where `ApolloClient` will save its cached queries.
 
-Navihate to the `pages/_app.tsx` and import the `ApolloProvider`  and `getApolloClient` functions as follows.
+Navigate to the `pages/_app.tsx` and import the `ApolloProvider`  and `getApolloClient` functions as follows.
 
 ```tsx
 import {
@@ -330,7 +355,9 @@ Wrap the `Component` returned with the `ApolloProvider` and provide its client.
 </ApolloProvider>
 ```
 
-Create a `components` directory on the project root folder. Inside it, create a `navbar` and `footer` directories. Inside the `navbar` directory, create a `Navbar.tsx` and `Navbar.module.css` file. In the `Navbar.tsx`, add the following code block to create a simple navbar.
+Create a `components` directory on the project root folder. Inside it, create a `navbar` and `footer` directories. 
+
+Inside the `navbar` directory, create a `Navbar.tsx` and `Navbar.module.css` file. In the `Navbar.tsx`, add the following code block to create a simple navbar.
 
 ```tsx
 import React from 'react'
@@ -477,7 +504,7 @@ export default function Layout({children}:LayoutProps) {
 }
 ```
 
-Here we are setting up a static `Head` configuration, the dynamic content for the `Navbar` and `Footer` pages, and some basic styling.
+Here, we are setting up a static `Head` configuration, the dynamic content for the `Navbar` and `Footer` pages, and some basic styling.
 
 Import the above `Layout` into the `pages/_app.tsx` file. Then inside the `ApolloProvider` wrap the `Component` with `Layout` so that the `Navbar` and `Footer` can be persistent on all pages.
 
@@ -555,24 +582,24 @@ const Home: NextPage = () => {
 export default Home;
 ```
 
-The `useQuery` hook sends our query to our `Apollo server` by passing the `query` as the parameter. This will either `loading`, `error`, `data` states. If we're in the `loading` state, it means the server is fetching the articles; If an error occurs during this process, an error message will be returned. Otherwise, the loaded list of data/articles will be returned.
+The `useQuery` hook sends our query to our `Apollo server` by passing the `query` as the parameter. This will either `loading`, `error`, `data` states. 
 
-If there are no saved articles, we will receive a message. Othersier the articles will be mapped to the set `container` UI.
+If we are in the `loading` state, it means the server is fetching the articles. If an error occurs during this process, an error message will be returned. Otherwise, the loaded list of data/articles will be returned.
 
-Start the development server for the frontend by running the following command. Make sure you are this command within the folder that hosts the backed Next.js application.
+If there are no saved articles, we will receive a message. Otherwise, the articles will be mapped to the set `container` UI.
+
+Start the development server for the frontend by running the following command. Make sure you run this command within the folder that hosts the backend Next.js application.
 
 ```bash
 npm run dev
 ```
 
-Ensure that the development server of the apollo server is still up and running. Then open `http://localhost:3000` on your browser.
-
-Depending on whether you have saved articles;
+Ensure that the development server of the apollo server is still up and running. Then open `http://localhost:3000` on your browser depending on whether you have saved articles.
 
 ![articles_home](/engineering-education/create-a-nextjs-blog-app-with-faunadb-typescript-and-apollo-server/articles-home.PNG)
 
 ### Adding an article
-To handle this operation, Navigate to the `pages` directory of the project folder and create an `add-article.tsx` file. Then add the following code block to handle adding a new article.
+To handle this operation, navigate to the `pages` directory of the project folder and create an `add-article.tsx` file. Then add the following code block to handle adding a new article.
 
 ```tsx
 import React,{useState} from 'react';
@@ -721,28 +748,26 @@ export default function AddArticle() {
 
 ```
 
-We're using `state` to hold `title`, `summary`, `content`, `form error`, and a `success message`.
+We're using `state` to hold `title`, `summary`, `content`, `form error`, and a `success message`.We have the GraphQL mutation query that runs and adds the article on the server.
 
-We have the GraphQL mutation query that runs and add the article on the server.
+We then instantiate the `useMutation` hook and destructure the `submit function`, `loading`, `data`, and `error`. The `handleSubmit` function will check if all fields have been filled with the necessary data and then send a request to the server using the `submit function` from `useMutation`.
 
-We then instantiate the `useMutation` hook and destructure the `submit function`, `loading`, `data`, and `error`.
+When the article is submitted successfully, we reset the state and show a success message. Otherwise, if an error occurs, we are setting a form error and showing the error directly from `useMutation`.
 
-The `handleSubmit` function will check if all fields have been filled with the necessary data and then send a request to the server using the `submit function` from `useMutation`.
-
-When the article is submitted successfully, we reset the state and show a success message. Otherwise, if an error occurs, we're setting a form error and showing the error directly from `useMutation`.
-
-Ensure the fronted and backed development servers are running. Open `http://localhost:3000` on your browser and click `Add article` on the navigation bar;
+Ensure the fronted and backed development servers are running. Open `http://localhost:3000` on your browser and click `Add article` on the navigation bar.
 
 ![add-article](/engineering-education/create-a-nextjs-blog-app-with-faunadb-typescript-and-apollo-server/add-article.PNG)
 
-Fill in the fields and send a request;
+Fill in the fields and send a request.
 
 ![add-article-response](/engineering-education/create-a-nextjs-blog-app-with-faunadb-typescript-and-apollo-server/add-article-response.PNG)
 
 Go to the `Home` page, and you should see your newly added articles.
 
 ### Showing a single article
-Navigate to your `pages` folder and create a `posts` directory. Inside the `posts` directory, create a `[ref].tsx` file. The square brackets in Next.js imply that the `ref` will be dynamic and refer to a single request associated with the current `ref` (the article's reference number/id). In the `[ref].tsx` file, add the following code block.
+Navigate to your `pages` folder and create a `posts` directory. Inside the `posts` directory, create a `[ref].tsx` file. The square brackets in Next.js imply that the `ref` will be dynamic and refer to a single request associated with the current `ref` (the article's reference number/id). 
+
+In the `[ref].tsx` file, add the following code block.
 
 ```tsx
 import React from 'react'
@@ -849,13 +874,9 @@ export async function getStaticPaths(){
 }
 ```
 
-Here we're creating two queries, one for fetching a single article and the other for fetching many articles.
+Here we're creating two queries, one for fetching a single article and the other for fetching many articles. We're using two methods for data fetching. `getStaticProps` and `getStaticPaths`. `getStaticProps` will be used to fetch the article from the server-side, whereas `getStaticPaths` will fetch the articles at build time.
 
-We're using two methods for data fetching. `getStaticProps` and `getStaticPaths`. `getStaticProps` will be used to fetch the article from the server-side, whereas `getStaticPaths` will fetch the articles at build time.
-
-In both cases, we're instantiating `apolloClient` with `getApolloClient`.
-
-In the `getStaticPaths`, set `fallback` to `false` so that any path not generated will return a `404` error.
+In both cases, we're instantiating `apolloClient` with `getApolloClient`. In the `getStaticPaths`, set `fallback` to `false` so that any path not generated will return a `404` error.
 
 Ensure the fronted and backed development servers are running. Open `http://localhost:3000` on your browser. On the home page, click on any article title, and you will be redirected to its specific page as such.
 
@@ -869,3 +890,6 @@ We built a blog application with Next.js, TypeScript, Apollo Client, Apollo Serv
 - [Apollo server guide](https://www.apollographql.com/docs/apollo-sever/)
 - [FaunaDB tutorial](https://docs.fauna.com/fauna/current/tutorials/)
 - [Data fetching in Next.js](https://nextjs.org/docs/basic-features/data-fetching)
+
+---
+Peer Review Contributions by: [Dawe Daniel](/engineering-education/authors/dawe-daniel/)
