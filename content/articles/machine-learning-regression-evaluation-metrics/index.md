@@ -21,7 +21,7 @@ We need to measure the performance of machine learning models in order to determ
 In this tutorial, we are going to discuss various evaluation metrics used in regression models. Besides, we will discuss the advantages and disadvantages of these regression model metrics. Finally, we will discuss what a good regression model is.
 
 ### Prerequisites
-To understand this article you must:
+To understand this article, you ought to:
 - Be familiar with Machine learning.
 - Be familiar with regression models.
 
@@ -103,6 +103,7 @@ We calculate *RMSE* by following the steps below:
 
 **Disadvantages**
 - When compared to *MAE* it is less robust to outliers.
+
 ### R Squared (R²)
 This metric is used to describe the goodness of fit of linear regression. We also refer to it as the coefficient of determination. Simply put R² is used to show : 
 
@@ -139,7 +140,7 @@ Adjusted R-squared will penalize us for adding independent variables that do not
 **Disadvantages**
 - None. This is because it solves the problem of *R²*. The problem is that in R² every time a new term is introduced R² increases. This is regardless of whether the new term is relevant to the model or not.
 
-### Root Mean Squared Log Error.
+### Root Mean Squared Log Error
 In Root Mean Squared Squared Log Error, a higher penalty is administered when the value the model predicts is lower than the actual value. When the value the model predicts is higher than the actual value, *RMSLE* administers a lower penalty.
 
 We use the formula below to calculate the *root mean squared error*:
@@ -155,9 +156,12 @@ In the *root mean squared error* we previously discussed, if an outlier is prese
 - Not very helpful when we are developing a model in which we are calling the inputs.
 
 ### What is a good regression model
-A good regression model is one in which the difference between the predicted values and the actual values is low. The lower the better. The model should also be unbiased. To understand what a biased model is, refer to the following article [What intuitively is "bias"?](https://stats.stackexchange.com/questions/13643/what-intuitively-is-bias).
+A good regression model is one in which the difference between the predicted values and the actual values is low. The lower the better. The model should also be unbiased. To understand what a biased model is, refer to the following [article](https://stats.stackexchange.com/questions/13643/what-intuitively-is-bias).
 
 ### Conclusion
 In this article, we have discussed the metrics used in the regression model. You now know what each metric entails. You will now be able to choose the metric that works for you when implementing these metrics in your model.
 
 Wish you all the luck!
+
+---
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
