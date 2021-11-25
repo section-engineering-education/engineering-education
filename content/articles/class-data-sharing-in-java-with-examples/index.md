@@ -1,3 +1,20 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /class-data-sharing-in-java-with-examples/
+title: Data sharing in Java
+description: This article will explore data sharing in Java and provide examples on the same concept.
+author: bancy-wangu
+date: 2021-11-25T00:00:00-10:00
+topics: [Node.js]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/class-data-sharing-in-java-with-examples/hero.jpg
+    alt: Data sharing in Java Image
+---
+
 ### Introduction
 When using the Class Data Sharing(CDS) JVM capability, several Java Virtual Machines may share the memory of loaded classes. From Java 1.5, the Sun JVM has included a CDS. However, it was seldom used because it only applied to system classes and serial trash collectors.
 
