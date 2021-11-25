@@ -1,4 +1,4 @@
-This tutorial is going to cover how to create a custom Expandable Floating Action Button (FAB) in Android. Creating custom expandable FAB involves using the Animation class. Animations show a change of state in the button when clicked.
+This tutorial is going to cover how to create a custom Expandable Floating Action Button (FAB) in Android. This involves using the Animation class. Animations show a change of state in the button when clicked.
 
 ### What is a Floating Action Button?
 A Floating Action Button is a circular button that usually floats on the screen and displays the primary action of an application.
@@ -17,7 +17,7 @@ Expandable Floating Actions Button is a FAB that can animate when clicked or whe
 
 ### Prerequisites
 To follow through this tutorial, the reader should:
-- Have a basic understanding of [Material components design](https://material.io/components/buttons-floating-action-button#anatomy).
+- Have a basic understanding of [Material components](https://material.io/components/buttons-floating-action-button#anatomy).
 - Be conversant with the [Kotlin](https://kotlinlang.org/) programming language and `ViewBinding`.
 - Have [Android Studio](https://developer.android.com/studio/index.html) installed.
 
@@ -28,11 +28,11 @@ In this tutorial, we will:
 - Learn how to handle FAB clicks.
 
 ### Designing Custom Expandable FAB
-After creating your new project, go to the `drawable` folder and import drawable icons from vector Assets. These icons will be placed at the center of the FAB. To add icons, right-click on `drawable`, select `new`, then select `Vector Asset` and choose an icon from `Clip Art`.
+After creating a new Android project, go to the `drawable` folder and import drawable icons from vector Assets. These icons will be placed at the center of the FAB. To add icons, right-click on `drawable`, select `new`, then select `Vector Asset` and choose an icon from `Clip Art`.
 
-In this tutorial, we are going to choose the `add`, `call`, and `message` icons. Hence we are going to create a custom FAB with three buttons.
+In this tutorial, we are going to choose the `add`, `call`, and `message` icons. Therefore, we are going to create a custom FAB with three buttons.
 
-Our `activity_main.xml` will have the following code:
+Paste the following code into `activity_main.xml` file:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -86,17 +86,16 @@ Our `activity_main.xml` will have the following code:
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
 
-Initially, the Call and Message buttons are set invisible. They will be visible when the Add button is clicked.
+Initially, the Call and Message buttons are set invisible. They will appear when the Add button is clicked.
 
 ### Creating Custom FAB Animations
 We are now going to create animations that will apply to the other two buttons (Call and Message) when the Add button is clicked.
 
-To create animations, go to Resource Manager, and select Animation, then click on (+) to add `Animation Resource File`.
+To create animations, go to resource manager, and select Animation, then click on (+) to add `Animation Resource File`.
 
 For the `Add` button, we will have two animation resource files, one for rotating it when opening and the other when closing.
 
-Buttons `Call` and `Message` will have two animation resource files for animating from and to the bottom of the `Add` button.
-
+Buttons `Call` and `Message` will have two animation resource files for animating from top to bottom of the `Add` button.
 
 1. `rotate_open_animation.xml`:
 This rotates the button from 0 to 45 degrees.
@@ -104,8 +103,8 @@ This rotates the button from 0 to 45 degrees.
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <set xmlns:android="http://schemas.android.com/apk/res/android"
-
     android:fillAfter="true">
+
     <rotate
         android:fromDegrees="0"
         android:pivotX="50%"
@@ -122,8 +121,8 @@ Animates the Add button by rotating it from 45 to 0 degrees.
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <set xmlns:android="http://schemas.android.com/apk/res/android"
-
     android:fillAfter="true">
+
     <rotate
         android:fromDegrees="45"
         android:pivotX="50%"
@@ -135,12 +134,13 @@ Animates the Add button by rotating it from 45 to 0 degrees.
 ```
 
 3. `from_bottom_animation.xml`:
-This animates buttons from the bottom. Here, Call and Message buttons are translated from  bottom to top.  
+This animates buttons from the bottom. Here, Call and Message buttons are translated from bottom to top.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <set xmlns:android="http://schemas.android.com/apk/res/android"
     android:fillAfter="true">
+
     <translate
         android:duration="300"
         android:fromYDelta="300%"
@@ -162,10 +162,11 @@ This animates buttons from the bottom. Here, Call and Message buttons are transl
 
 #### Explanation:
 - `translate` tag is useful in moving buttons along X and Y axis.
-- `scale` tag shows the center of rotation along the X and Y axis.
-- `alpha` tag represents the opacity of animation. It is set from 0 to 1 with a duration of 800ms.
+- `scale` is used in scaling buttons along X and/or Y axis.
+- `pivot` tag shows the center of rotation along the X and Y axis.
+- `alpha` tag represents the opacity of the animation. It is set from 0 to 1 with a duration of 800ms.
 
-4. `to_bottom_animation.xml`:
+1. `to_bottom_animation.xml`:
 Animates the buttons from top to bottom.
 
 ```xml
@@ -294,27 +295,28 @@ class MainActivity : AppCompatActivity() {
 ```
 
 ### Designing Extendable Floating Action Button
-For the Extendable Floating Action Button, we are going to use a third party library. In the `settings.gradle`, add the jitpack library inside the `repositories`.
+For the Extendable FAB, we are going to use a third party library. In the `settings.gradle`, add the jitpack library inside the `repositories`.
 
 ```gradle
 maven { url 'https://jitpack.io' }
 ```
 
-In the `build.gradle` project level, add the following dependency:
+In the `build.gradle` project level file, add the following dependency:
 
 ```gradle
 implementation 'com.github.imtuann:FloatingActionButtonExpandable:1.1.2'
 ```
-After adding the above dependencies, you are now set to design the button. The library has all the functions for animating the button whenever the RecyclerView is scrolled.
 
-Extendable Floating Action Button is mostly used in messaging applications to add chats like in the Google messages app. It, therefore, requires us to use a RecyclerView. A RecyclerView is used to display a list of data. It consists of the following components:
+After syncing the project, you are now set to design the button. The library has all the functions for animating the button whenever the RecyclerView is scrolled.
 
-   - RecyclerRow: this is the view declared in your activity. It’s where the list of data will be displayed.
-   - Layout Manager: it defines how the list should organize our data. It could be horizontal, vertical, or a grid layout.
-   - Adapter: this connects our data, usually a list, to our RecyclerView. It also observes changes in the list and updates the RecyclerView.
-   - ViewHolder: this holds the View onto which we display the data.
-   
-We are going to create a recycler row and name it `message_recycler_row.xml` and add the following XML code for displaying the list of data:
+Extendable FAB is mostly used in messaging applications to add chats like in the Google messages app. It, therefore, requires us to use a RecyclerView. A RecyclerView is used to display a list of data. It consists of the following components:
+
+ - `RecyclerRow` - This is the view declared in your activity. It’s where the list of data will be displayed.
+ - `Layout Manager` - It defines how the list should organize our data. It could be horizontal, vertical, or a grid layout.
+ - `Adapter` - This connects our data, usually a list, to our RecyclerView. It also observes changes in the list and updates the RecyclerView.
+ - `ViewHolder` - This holds the View onto which we display the data.
+
+We are going to create a recycler row item named `message_recycler_row.xml` and add the following XML code.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -387,22 +389,11 @@ In the `activity_message.xml` add the following code to create the Extendable FA
 ```
 
 ### Creating the Message Recycler Adapter
-An Adapter connects our data, usually a list, to our RecyclerView. It also observes changes in the list and updates the RecyclerView. Inside the Adapter we have a ViewHolder class that holds the View onto which we display the data. Here is the ViewHolder class:
+An Adapter connects our data, usually a list, to our RecyclerView. It also observes changes in the list and updates the RecyclerView. Inside the Adapter we have a ViewHolder class that holds the View onto which we display the data. 
 
-```kotlin
-inner class MyViewHolder(val binding: MessageRecyclerRowBinding): RecyclerView.ViewHolder(binding.root){
-
-        init {
-            binding.chatsTextView.setOnClickListener {
-                val position: Int = adapterPosition
-                Toast.makeText(binding.chatsTextView.context, "$position", Toast.LENGTH_SHORT).show()
-            }
-        }
-    }
-```
 An Adapter requires that you implement the following methods:
-- `onCreateViewHolder()` - The Recyclerview invokes this method to create a ViewHolder.
-- `onBindView.Holder()`- This method binds data on the Viewholder provided as an argument.
+- `onCreateViewHolder()` - The RecyclerView invokes this method to create a ViewHolder.
+- `onBindView.Holder()`- This method binds data on the ViewHolder provided as an argument.
 - `getItemCount()` - Returns the number of items in the RecyclerView.
 
 In the `MessageAdapter.kt` class add the following code to create the Adapter class:
@@ -433,7 +424,8 @@ class MessageAdapter(private var text: List<String>): RecyclerView.Adapter<Messa
     }
 }
 ```
-RecyclerView is explained [here](https://www.section.io/engineering-education/android-recyclerviews/).
+
+To read more about RecyclerView, check out [this article](https://www.section.io/engineering-education/android-recyclerviews/).
 
 Finally, add the following code in the `MessageActivity.kt` class:
 
@@ -456,18 +448,18 @@ class MessageActivity : AppCompatActivity() {
         binding.expandableFAB.setOnClickListener {
             Toast.makeText(applicationContext, "FAB button clicked", Toast.LENGTH_SHORT).show()
         }
-
+        // Detect a scroll and respond based on the direction
         binding.recyclerRow.addOnScrollListener(object : RecyclerView.OnScrollListener(){
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
-                if (dy > 0){
+                if (dy > 0){ // Scrolling down
                     binding.expandableFAB.collapse()
-                }else{
+                }else{ // Scrolling up
                     binding.expandableFAB.expand()
                 }
             }
         })
     }
-
+    // Add data to the list
     private fun addToChatList() {
         for (i in 0..50){
             chatLists.add("Hello, Happy Coding. Let's have a chat even as we code.")
@@ -475,7 +467,10 @@ class MessageActivity : AppCompatActivity() {
     }
 }
 ```
-The class above have methods for setting a listener to the Floating Action Button. When the FAB button is clicked, it will expand and toast a text to show that the button is clicked. It also have a method for implementing scroll listener on the RecyclerView. When scrolling, the button will expand hence the name Expandable Floating Action Button.
+
+The class above have methods for setting a listener to the Floating Action Button. When the FAB button is clicked, it will expand and toast a text to show that the button is clicked.
+
+The RecyclerView is set up to detect changes in scroll position. When scrolling, the button will expand hence the name Expandable Floating Action Button.
 
 ![Project Demo](/engineering-education/creating-custom-expandable-fab/custom-expandable-fab.gif)
 
