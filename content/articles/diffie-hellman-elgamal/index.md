@@ -1,10 +1,11 @@
 ---
 layout: engineering-education
 status: true
-published: false
+published: true
 url: /understanding-diffie-helman-and-elgamal-asymmetric-encryption/
 title: Understanding Diffie Helman and Elgamal Asymmetric Encryption
 description: This tutorial will help the reader understand the concept of Diffie Helman and Elgamal Asymmetric encryption algorithms together with key generation,encryption and decryption process.
+author: gitahi-philomena
 date: 2021-09-05T00:00:00-02:00 
 topics: [Security]
 excerpt_separator: <!--more-->
