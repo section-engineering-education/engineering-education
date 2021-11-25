@@ -55,7 +55,7 @@ We calculate *MAE* by following the steps below:
 2. Calculate the absolute value. This helps to get rid of the sign.
 3. Calculate the average of all residuals.
 
-If *MAE* is zero, the model predictions are perfect. The higher the *MAE* the worse the predictions are.
+If *MAE* is zero, the model predictions are perfect (but this will almost never happen). The higher the *MAE* the worse the predictions are.
 
 **Advantages**
 - The *Mean Absolute Error* obtained is in a similar unit as the output variable.
@@ -98,7 +98,7 @@ We calculate *RMSE* by following the steps below:
 4. Obtain the square root of the answer in step 3.
 
 **Advantages**
-- When it comes to outliers, *RMSE* is more sensitive than *MAE*.
+- When it comes to outliers, *RMSE* is more sensitive than *MAE* i.e It penalizes the presence of outliers by producing large errors. This makes it useful when large errors are undesirable.
 - Makes it easier to compute gradient when used as a loss function.
 
 **Disadvantages**
@@ -107,7 +107,7 @@ We calculate *RMSE* by following the steps below:
 ### R Squared (R²)
 This metric is used to describe the goodness of fit of linear regression. We also refer to it as the coefficient of determination. Simply put, R² is used to show how the change in the output (y) is a result of the change in the input (x).
 
-We use the following formula to calculate *RMSE*:
+We use the following formula to calculate *R²*:
 
 ![R Squared](/engineering-education/machine-learning-regression-evaluation-metrics/r.png)
 
@@ -130,7 +130,7 @@ We use the following formula to calculate *adjusted r squared*:
 
 ![Adjusted](/engineering-education/machine-learning-regression-evaluation-metrics/adjusted.png)
 
-Adjusted R-squared will penalize us for adding independent variables that do not fit the model. The independent variable is represented by *k* in the above formula.
+Adjusted R-squared will penalize us for adding independent variables that do not fit the model. The number of independent variables (predictors) is represented by *p* in the above formula.
 
 **Advantages**
 - It shows us how relevant the new independent variables we add is.
@@ -143,7 +143,7 @@ In RMSLE, a higher penalty is administered when the value the model predicts is 
 
 We use the formula below to calculate the *root mean squared log error*:
 
-![RMSLE](/engineering-education/machine-learning-regression-evaluation-metrics/rmsle.png)
+![RMSLE](/engineering-education/machine-learning-regression-evaluation-metrics/log.png)
 
 In the *root mean squared error*, we previously discussed that if an outlier is present, the error will shoot to a very high value. In *RMSLE*, the effect of the outlier is significantly lower due to the introduction of log in the formula.
 
