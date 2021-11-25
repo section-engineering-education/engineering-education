@@ -548,7 +548,7 @@ export default App
 - The code also contains the footer and the about page link.
 
 ### Style the application
-- Finally, do some styling to the application. The styling code is found on this link. Download it and save it in the `src` folder.
+- Finally, do some styling to the application. The styling code is found on this [link](https://github.com/blacklihgt/Mock-a-Datasource-for-React-using-JSON-Server/blob/main/src/index.css). Download it and save it in the `src` folder.
 - Make sure to run the command below to install all necessary packages before running the application using the command below:
 ```bash
 npm install
