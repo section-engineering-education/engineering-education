@@ -1,3 +1,20 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /elarian-js-demo/
+title: BGetting started with Elarian
+description: Elarian is a framework tha focuses on simplifying building data-driven applications by engaging customers over channels such as SMS, UUSD, Telegram bots, WhatsApp, and more. To understand more on Elarian, this tutorial will build a USSD service using Elarian and `Node.js`.
+author: wilson-gichuhi
+date: 2021-11-25T00:00:00-10:00
+topics: [Node.js]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/elarian-js-demo/hero.jpg
+    alt: Getting Stated with Elarian Image
+---
+
 Customer service is essential to any business brand. However, picking and choosing the proper digital channels to reach your customers can be difficult. For this reason, it makes sense for businesses to embrace customer engagement software to remain relevant. 
 
 Elarian is a framework that helps you build a customer service strategy aligned with your business goals. Its focus is simplifying building data-driven applications by engaging customers over channels such as SMS, UUSD, Telegram bots, WhatsApp, and more.
@@ -77,13 +94,13 @@ const dotenv = require('dotenv');
 dotenv.config()
 ```
 
-To create a client instance of `Elarian`, we need to pass the `orgId`, `appId`, and `apiKey`. Therefore, let's head back to the dashboard to grab these credentials. To manage customers, we need to create an organization as the namespace that holds apps and channels where our customers will engage. 
+To create a client instance of `Elarian`, we must pass the `orgId`, `appId`, and `apiKey`. Therefore, let's head back to the dashboard to grab these credentials. To manage customers, we need to create an organization as the namespace that holds apps and channels where our customers will engage. 
 
-From the left panel, click the `New Organization` button to create an organization on our dashboard.
+Click the `New Organization` button to create an organization on our dashboard from the left panel.
 
 ![new org](/engineering-education/elarian-js-demo/create-org.png)
 
-In our case, we will create a test sandbox environment and name it `elarian-demo`. Before generating an API key from the settings section, let's create an app and name it `customer-demo-app`:
+In our case, we will create a test sandbox environment and name it `elarian-demo`. However, before generating an API key from the settings section, let's create an app and name it `customer-demo-app`:
 
 ![new app](/engineering-education/elarian-js-demo/new-app.png)
 
@@ -132,18 +149,18 @@ Elarian is built in mind with the customer as the unit of abstraction. To achiev
 2. With AppData, we can store data that tracks the user's state in our application. For example, in our USSD application, AppData will hold the user's state in different transitions and application lifecycle. Furthermore, the data is stored in memory for quick access.
 3. Identity Data will allow you to uniquely identify the customer from your application. With this, Elarian can initiate requests and generate data to help you improve your customer profile.
 
-In the following sections, we will use the above strategies to manage customer data.
+We will use the above strategies to manage customer data in the following sections.
 
 ### Elarian USSD service in Node.js
 Before using a USSD service, we need to register a channel from our dashboard. Head over to your account and click under the channels tab. For our case, click on the `USSD Service code section`. 
 
 ![USSD Channel](/engineering-education/elarian-js-demo/channel.png)
 
-Now, we need to choose the USSD code and the app that our channel will use. For our test case, the USSD code is `*350#`.
+We need to choose the USSD code and the app that our channel will use. The USSD code is `*350#` for our test case.
 
 ![channel code and app](/engineering-education/elarian-js-demo/channel-app-code.png)
 
-Having earlier established the Elarian connection successfully, we now need a function to handle our `ussdSession`. Just above the `elarianClient` connection method, add the following code snippet:
+Having earlier established the Elarian connection successfully, and we now need a function to handle our `ussdSession`. Just above the `elarianClient` connection method, add the following code snippet:
 
 ```js
 elarianClient.on('ussdSession', USSDHandler);
@@ -151,7 +168,7 @@ elarianClient.on('ussdSession', USSDHandler);
 
 Here, we listen for `ussdSession` to fire up from the user interaction with our application and therefore execute the `USSDHandler` that we will be creating in a moment. 
 
-Our `USSDHandler` function handles user interaction with our application session. Since we are using the USSD Service code as the channel, our function will need the channel data to be passed in as the arguments. Channel data is the data that is generated from a customer while engaging with the channel. This can trigger events such as notifications or callbacks for user response.  Let's define the `USSDHandler` function below:
+Our `USSDHandler` function handles user interaction with our application session. Since we use the USSD Service code as the channel, our function will need the channel data to be passed in as the arguments. Channel data is the data that is generated from a customer while engaging with the channel. This can trigger events such as notifications or callbacks for user response.  Let's define the `USSDHandler` function below:
 
 ```js
 const USSDHandler = async (notification, customer, appData, callback) => {
@@ -198,13 +215,13 @@ Let's briefly dissect the above code:
 
 - From our customer object, we use the method `getMetaData` that holds customer data such as email, name, age, and password for our communication protocol.
   
-- The notification object contains the `input` as well as the channel of communication needed to respond to the user.
+- The notification object contains the `input` and the channel of communication needed to respond to the user.
   
 - AppData stores the state in memory for quick access and tracks transition between screens.
   
 - By default, the screen is set to `home`. We will then need to change the state and screen view depending on user interactions.
 
-From our USSD session, we need to save the email, name, age, and password from the customer.  Each of these steps involves different screens that will be handled using a switch statement.
+From our USSD session, we need to save the customer's email, name, age, and password.  Each step involves different screens that will be handled using a switch statement.
 
 ```js
 
@@ -303,7 +320,7 @@ From our USSD session, we need to save the email, name, age, and password from t
   } 
 ```
 
-To check that everything is working, we can go back to the dashboard to run a test. On the bottom left, launch the USSD simulator. The simulator will prompt the phone number and a USSD code. Here is a working test!
+To check that everything is working, we can run a test to go back to the dashboard. On the bottom left, launch the USSD simulator. The simulator will prompt the phone number and a USSD code. Here is a working test!
 
 ![first screen](/engineering-education/elarian-js-demo/initial-screen.png)
 
@@ -318,3 +335,6 @@ For this application, check the source code on Github [here](https://github.com/
 In conclusion, Elarian is a service provider that helps achieve a customer-first business model. It helps meet your business need by seamlessly integrating with the vast channel of providers in a reactive programming style that is robust, scalable, and hassle-free in infrastructure deployment and management.
 
 For further learning how to integrate UUSD, SMS, WhatsApp, Telegram bots, Africa's Talking, and payment functionalities, check out [Elarian docs](https://developers.elarian.com/introduction-to-elarian/what-is-elarian).
+
+---
+Peer Review Contributions by: [Mercy Meave](/engineering-education/authors/mercy-meave/)
