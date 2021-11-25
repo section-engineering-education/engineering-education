@@ -5,8 +5,8 @@ published: true
 url: /polynomial-regression-in-python/
 title: Polynomial Regression in Python
 description: In this article, we understand the theory of polynomial regression and implement it using libraries in Python.
-author: 
-date: 2021-11-19T00:00:00-18:00
+author: faith-mwangangi
+date: 2021-11-25T00:00:00-18:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
