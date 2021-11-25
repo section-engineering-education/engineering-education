@@ -34,12 +34,12 @@ PyTorch Lightning was built by William Falcon while undertaking his Ph.D. AI stu
 #### Installing and importing dependencies
 As I mentioned earlier, Pytorch lightning is built on top of Pytorch. So, we still need to import the vanilla Pytorch before installing PyTorch Lightning. The PyTorch installation has been covered in a lot of tutorials, please refer to this [tutorial](/engineering-education/building-a-grammar-correction-python-app-with-gramformer-and-gradio/) to install PyTorch. 
 
-```python
+```bash
 !pip install pytorch-lightning
 ```
 If you are performing an Anaconda install, use the following command:
 
-```python
+```bash
 conda install pytorch-lightning -c conda-forge
 ```
 After installation, we need to import the necessary dependencies into the code.
@@ -66,7 +66,7 @@ learning_rate = 0.001
 ```
 The code below shows how you would describe a PyTorch Lightning module. Notice this is a `lightning module` instead of a `torch.nn.Module`. We first need to initialize our model with an input size of `784` neural networks, `500` hidden neurons, and `10` output classes. We've set the number of epochs to only 3 as we are not training on a GPU machine and it would take a long time to train if we increased the number of epochs.
 
-In PyTorch lightning, `forward` defines the prediction/inference actions. The `training_step` defines the train loop. It is independent of forward. We are also calculating the cross entropy and returning the loss. Finally, to log to [Tensorboard](https://www.tensorflow.org/tensorboard), you can use the key `log` which can be called from any method in the LightningModule.
+In PyTorch lightning, `forward` defines the prediction/inference actions. The `training_step` defines the train loop. It is independent of forward. We are also calculating the cross entropy and returning the loss. Finally, [tensorboard](https://www.tensorflow.org/tensorboard) is one of the most common loggers used by machine learning researchers. To log to Tensorboard, you can use the key `log` which can be called from any method in the LightningModule.
 
 ```python
 class LitNeuralNet(pl.LightningModule):
@@ -159,7 +159,7 @@ if __name__ == '__main__':
 ```
 In the `configure_optimizer` function, we can pass in any optimizer you want to use. For our case, we've chosen the `Adam` optimizer. Besides, we can pass in the `learning_rate` parameter; a learning rate of 0.001 is chosen for this experiment. 
 
-As you've seen in the code above, with PyTorch Lightning, anything that is critical to this project is listed and organized in a way that is cohesive across every single project in the world. For instance, if you want to know which data is used, you need to go to the `train_dataloader()`. If you want to know which optimizer is used, you go look at the `configure_optimizers()` function and you'll find it. 
+As you've seen in the code above, with PyTorch Lightning, anything that is critical to this project is listed and organized in a way that is cohesive across every single project in the world. For instance, if you want to know which data is used, you need to go to the `train_dataloader()`. If you want to know which optimizer is used, you go look at the `configure_optimizers()` function and you'll find it. Also, if you've noticed there's no GPU code, or half-precision code, all that is done for you behind the hood in PyTorch Lightning. 
 
 Please find the full code [here](https://colab.research.google.com/drive/1tYa4uaxqCQDuFmwaNQ_90C2HVzOcI-kq?usp=sharing).
 
