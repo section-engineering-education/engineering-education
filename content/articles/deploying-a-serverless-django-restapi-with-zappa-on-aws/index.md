@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /deploying-a-serverless-jango-restapi-with-zappa-on-aws/
+url: /deploying-a-serverless-django-restapi-with-zappa-on-aws/
 title: Deploying a Serverless Django REST API with Zappa on AWS
 description: This article provides a walk through on how serverless technology works using Zappa and how Zappa is implemented in Django, while focusing on building a REST API and deploying same using Zappa on AWS.
 author: anita-achu
@@ -11,12 +11,11 @@ topics: [Python]
 excerpt_separator: <!--more-->
 images: 
 
-  - url: /engineering-education/deploying-a-serverless-jango-restapi-with-zappa-on-aws/hero.PNG
-    alt: Django and Zappa image
+  - url: /engineering-education/deploying-a-serverless-django-restapi-with-zappa-on-aws/hero.png
+    alt: Deploying a Serverless Django REST API with Zappa on AWS hero image
 ---
-
 Serverless technology has gradually become an area of interest in software development in recent times. A few years back, all applications built on classic web servers were manually managed until the development of this technology. This technology guarantees automatic web server configuration or permissions, allowing the developer to focus solely on developing and designing web applications while their cloud provider handles the heavy lifting by managing the servers, thereby, the user does not have to worry about manual configuration. *Isn't this cool?*
-
+<!--more-->
 The main purpose for the development of serverless technologhy was to aid developers build and run applications without having to interact or manage servers. Now, this does not mean the application runs entirely without a server, but that the management of the server would be handled by Amazon Web Services (AWS) through an open-source project known as [Serverless Application Model (SAM) framework](https://github.com/aws/serverless-application-model).
 
 One of the upsides of serverless technology is that it runs on pay-per *request.* For example, a new company or startup that is low on budget can host their web apps on Lambda and only pay when a user requests the web app.
@@ -217,7 +216,7 @@ Lastly, test out the API to see the work we have done so far to ensure it's runn
 
 ***Hey! we are done building. Ladies and gentlemen let us deploy!***
 
-![Deployment](/engineering-education/deploying-a-serverless-jango-restapi-with-zappa-on-aws/meme.jpg)
+![Deployment](/engineering-education/deploying-a-serverless-django-restapi-with-zappa-on-aws/meme.jpg)
 
 [Image source](https://www.google.com/url?sa=i&url=https%3A%2F%2Fmakeameme.org%2Fmeme%2Fbrace-yourself-deploy&psig=AOvVaw30-YKcrTN4IWmGoZeWsnAT&ust=1637270554714000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPiBt6GqoPQCFQAAAAAdAAAAABAJ)
 
@@ -359,7 +358,7 @@ Whenever modifications are made to your project, use the command above to update
 
 Now, we can run this URL and load our application.
 
-![Admin](/engineering-education/deploying-a-serverless-jango-restapi-with-zappa-on-aws/admin.png)
+![Admin](/engineering-education/deploying-a-serverless-django-restapi-with-zappa-on-aws/admin.png)
 
 We've successfully redeployed the application. However, notice that the styling is not working properly, this is because we failed to map our application across to the CSS which contains the styling. Let us quickly do that. 
 
@@ -427,7 +426,7 @@ zappa manage dev "collectstatic --noinput"
 
 Re-run the admin page. The API at this point should render the required styles accurately. 
 
-![Admin with static file](/engineering-education/deploying-a-serverless-jango-restapi-with-zappa-on-aws/admin.png)
+![Admin with static file](/engineering-education/deploying-a-serverless-django-restapi-with-zappa-on-aws/admin.png)
 
 As seen our application is running successfully.
 
