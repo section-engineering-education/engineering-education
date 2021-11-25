@@ -305,12 +305,16 @@ In the `build.gradle` project level, add the following dependency:
 ```gradle
 implementation 'com.github.imtuann:FloatingActionButtonExpandable:1.1.2'
 ```
-
 After adding the above dependencies, you are now set to design the button. The library has all the functions for animating the button whenever the RecyclerView is scrolled.
 
-Extendable Floating Action Button is mostly used in messaging applications to add chats like in the Google messages app. It, therefore, requires us to use a RecyclerView.
+Extendable Floating Action Button is mostly used in messaging applications to add chats like in the Google messages app. It, therefore, requires us to use a RecyclerView. A RecyclerView is used to display a list of data. It consists of the following components:
 
-For this reason, we are going to create a recycler row and name it `message_recycler_row.xml` and add the following XML code:
+   - RecyclerRow: this is the view declared in your activity. It’s where the list of data will be displayed.
+   - Layout Manager: it defines how the list should organize our data. It could be horizontal, vertical, or a grid layout.
+   - Adapter: this connects our data, usually a list, to our RecyclerView. It also observes changes in the list and updates the RecyclerView.
+   - ViewHolder: this holds the View onto which we display the data.
+   
+We are going to create a recycler row and name it `message_recycler_row.xml` and add the following XML code for displaying the list of data:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -383,11 +387,29 @@ In the `activity_message.xml` add the following code to create the Extendable FA
 ```
 
 ### Creating the Message Recycler Adapter
-A RecyclerView always needs an adapter. In the `MessageAdapter.kt` class add the following code:
+An Adapter connects our data, usually a list, to our RecyclerView. It also observes changes in the list and updates the RecyclerView. Inside the Adapter we have a ViewHolder class that holds the View onto which we display the data. Here is the ViewHolder class:
+
+```kotlin
+inner class MyViewHolder(val binding: MessageRecyclerRowBinding): RecyclerView.ViewHolder(binding.root){
+
+        init {
+            binding.chatsTextView.setOnClickListener {
+                val position: Int = adapterPosition
+                Toast.makeText(binding.chatsTextView.context, "$position", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+```
+An Adapter requires that you implement the following methods:
+- `onCreateViewHolder()` - The Recyclerview invokes this method to create a ViewHolder.
+- `onBindView.Holder()`- This method binds data on the Viewholder provided as an argument.
+- `getItemCount()` - Returns the number of items in the RecyclerView.
+
+In the `MessageAdapter.kt` class add the following code to create the Adapter class:
 
 ```kotlin
 class MessageAdapter(private var text: List<String>): RecyclerView.Adapter<MessageAdapter.MyViewHolder>() {
-
+    // ViewHolder class for holding the view
     inner class MyViewHolder(val binding: MessageRecyclerRowBinding): RecyclerView.ViewHolder(binding.root){
 
         init {
@@ -405,12 +427,13 @@ class MessageAdapter(private var text: List<String>): RecyclerView.Adapter<Messa
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         holder.binding.chatsTextView.text = text[position]
     }
-
+  
     override fun getItemCount(): Int {
         return text.size
     }
 }
 ```
+RecyclerView is explained [here](https://www.section.io/engineering-education/android-recyclerviews/).
 
 Finally, add the following code in the `MessageActivity.kt` class:
 
@@ -452,6 +475,7 @@ class MessageActivity : AppCompatActivity() {
     }
 }
 ```
+The class above have methods for setting a listener to the Floating Action Button. When the FAB button is clicked, it will expand and toast a text to show that the button is clicked. It also have a method for implementing scroll listener on the RecyclerView. When scrolling, the button will expand hence the name Expandable Floating Action Button.
 
 ![Project Demo](/engineering-education/creating-custom-expandable-fab/custom-expandable-fab.gif)
 
