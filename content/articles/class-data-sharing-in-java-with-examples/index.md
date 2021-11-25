@@ -1,6 +1,6 @@
 ### Introduction
-When using the Class Data Sharing(CDS) JVM capability, several Java Virtual Machines may share the memory of loaded classes. From Java 1.5, the Sun JVM has included a CDS. Because it only applied to system classes and serial trash collectors, it was seldom used.
-There were additional GC techniques and application classes in Oracle JDK 9 that made a big difference. This was a paid functionality before JDK 10. Classes are stored in a memory-mapped file when utilizing CDS. The internal representation of this class is quicker to load since it may be shared by several JVMs.
+When using the Class Data Sharing(CDS) JVM capability, several Java Virtual Machines may share the memory of loaded classes. From Java 1.5, the Sun JVM has included a CDS. However, it was seldom used because it only applied to system classes and serial trash collectors.
+AdditionalAdditional GC techniques and application classes in Oracle JDK 9 made a big difference. This was a paid functionality before JDK 10. Classes are stored in a memory-mapped file when utilizing CDS. The internal representation of this class is quicker to load since several JVMs may share it.
 
 ### Table of contents
 - [What is data class sharing](#what-is-data-class-sharing)
@@ -20,12 +20,12 @@ The responsiveness of Java SE improvement is by including CDS. The faster your s
 
 #### Reducing the new JVM instances' environmental impact
 - JVM processes running on a single machine can only access a small part of the shared archive. It takes longer for our JVM instances to start now that we do not duplicate data throughout them.
-- For Java Hotspot VM to operate, the class information must be saved in a specified manner. It saves RAM space as compared to using the traditional class data. Storage savings allow many applications to operate within the same computer at the same time. Increase the memory footprint by changing the number of Windows application pages assigned to the process' address space. Because of this improvement, the modular image's runtime components use less RAM (inside Windows). Once the goal of reducing one's carbon footprint has been set, there would be no going back for the foreseeable future.
+- For Java Hotspot VM to operate, the class information must be saved in a specified manner. It saves RAM space as compared to using the traditional class data. Storage savings allow many applications to operate within the same computer simultaneously. Increase the memory footprint by changing the number of Windows application pages assigned to the process' address space. Because of this improvement, the modular image's runtime components use less RAM (inside Windows). Once the goal of reducing one's carbon footprint has been set, there would be no going back for the foreseeable future.
 
 ### Process of Application Class Data Sharing
-A speedier runtime start thanks to the ability to archive application classes is a huge benefit. AppCDS minimizes the runtime footprint of numerous JVM processes by sharing memory amongst many JVM processes.
+A speedier runtime start thanks to archive application classes is a huge benefit. In addition, AppCDS minimizes the runtime footprint of numerous JVM processes by sharing memory amongst many JVM processes.
 
-You may save application classes on a networked storage device using this feature. All Java processes share class information, which means different Java processes can share the same class information.AppCDS is the only class loader that supports archives; the normal system class loader does not. Thus, several Java virtual machines (JVMs) may share a single archive file, saving both space and time.
+You may save application classes on a networked storage device using this feature. All Java processes share class information, which means different Java processes can share the same class information.AppCDS is the only class loader that supports archives; the normal system class loader does not. Thus, several Java virtual machines (JVMs) may share a single archive file, saving space and time.
 
 A shared archive of application classes is what we mean by `Application Class Data Sharing` (ACDS).
 AppCDS provides Class Information Sharing from the following classes:
@@ -37,7 +37,7 @@ AppCDS provides Class Information Sharing from the following classes:
 > It is possible to apply CDS across application classes because of Application Class Information Sharing (ACIS).
 There are three components to this method:
 1. In the first file, keep track of every class your application has stacked.
-2. For each class, create a file with the name Shared Dump.
+2. Create a file with the name Shared Dump for each class.
 3. The Shared Dump may be used while the program is still running.
 
 **Step 1: Making a list of every single class.**
@@ -54,7 +54,7 @@ In the image below, our class AppClassDataSharing is listed in the newly created
 ![Entry for our own class AppClassDataSharing](engineering-education/class-data-sharing-in-java-with-examples/app.jpg)
 
 **Step 2: Create a file with the name shared dump for the above classes.**
-At the same time, this lst record generates a dump.
+At the same time, this `lst` record generates a dump.
 A shared archive file may be created by running command and selecting the appropriate options as shown below:
 
 `java -XX:+UnlockCommercialFeatures -Xshare:dump -XX:+UseAppCDS -XX:SharedClassListFile=LoadedClasses.lst -XX:SharedArchiveFile=CustomSharedArchive.jsa -cp AppCDS.jar`
@@ -110,7 +110,7 @@ Data exchange across classes is allowed by default. You have the option of manua
 Here are some more command-line parameters to aid with troubleshooting and diagnostics:
 - `Xshare:off` is the default setting.
 Sets whether or not class data may be shared.
-- `Xshare:on` signifies that the file is available for sharing. To enable the exchange of class information. If you cannot activate the class data sharing feature, an error message will be shown, and the software will shut down.
+- `Xshare:on` signifies that the file is available for sharing to enable the exchange of class information. If you cannot activate the class data sharing feature, an error message will be shown, and the software will shut down.
 - `Xshare:on` Due to the operating system's use of address space layout randomization, this option can only be used for testing. Do not depend upon it to avoid occasional failures. Data loss is dangerous when using this option in production settings.
 - The auto-sharing feature of `Xshare`.To default to class data sharing. Enable student data sharing across classes wherever workable.
 
