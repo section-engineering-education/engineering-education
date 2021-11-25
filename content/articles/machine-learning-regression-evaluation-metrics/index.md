@@ -1,14 +1,32 @@
-### Machine learning regression evaluation metrics
-In machine learning, a regression model is a type of model that predicts a numeric value. These values can be those of price, fees, score, etc. We need to measure the performance of machine learning models in order to determine their reliability. After model fitting, we assess the performance of the model by comparing the predictions the model generates to actual data.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /machine-learning-regression-evaluation-metrics/
+title: Machine Learning Regression Evaluation Metrics
+description: In this tutorial, we will discuss various evaluation metrics used in regression models, advantages and disadvantages of these regression model metrics.
+author: denis-kuria
+date: 2021-11-25T00:00:00-13:00
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
 
-### Introduction
-There are numerous regression evaluation metrics. All these metrics aim at showing us the prediction error of our model. An error is defined as the difference between the value the model predicts and the actual value. The lower the error, the better the performance of the model, and the higher the error, the worse the performance of the model.
+  - url: /engineering-education/machine-learning-regression-evaluation-metrics/hero.jpg 
+    alt: Machine Learning Regression Evaluation Metrics Hero image
+---
+In machine learning, a regression model is a type of model that predicts a numeric value. These values can be those of price, fees, score, etc. 
+<!--more-->
+We need to measure the performance of machine learning models in order to determine their reliability. After model fitting, we assess the performance of the model by comparing the predictions the model generates to actual data. 
 
-In this tutorial, we are going to discuss various evaluation metrics used in regression models. We will also discuss the advantages and disadvantages of these regression model metrics. Finally, we will discuss what a good regression model is.
+In this tutorial, we are going to discuss various evaluation metrics used in regression models. Besides, we will discuss the advantages and disadvantages of these regression model metrics. Finally, we will discuss what a good regression model is.
+
+### Prerequisites
+To understand this article you must:
+- Be familiar with Machine learning.
+- Be familiar with regression models.
 
 ### Table of contents
-- [Prerequisites](#prerequisites)
--  [Reference Diagram](#reference-diagram)
+- [Introduction](#introduction)
 - [Mean Absolute Error (*MAE*)](#mean-absolute-error-mae)
 - [Mean Squared Error (*MSE*)](#mean-squared-error-mse)
 - [Root Mean Squared Error(*RMSE*)](#root-mean-squared-error-rmse)
@@ -18,14 +36,12 @@ In this tutorial, we are going to discuss various evaluation metrics used in reg
 - [What is a good regression model](#what-is-a-good-regression-model)
 - [Conclusion](#Conclusion)
 
-### Prerequisites
-To understand this article you must:
-- Be familiar with Machine learning.
-- Be familiar with regression models.
-### Reference diagram
+### Introduction
+There are numerous regression evaluation metrics. All these metrics aim at showing us the prediction error of our model. An error is defined as the difference between the value the model predicts and the actual value. The lower the error, the better the performance of the model, and the higher the error, the worse the performance of the model.
+
 ![Reference](/engineering-education/machine-learning-regression-evaluation-metrics/reference.jpeg)
 
-The above diagram shows what is an error and how it is computed.
+The diagram above shows what an error is and how it is computed.
 
 ### Mean Absolute Error (MAE)
 We obtain *MAE* by calculating the absolute difference between the predictions made by the model and the real values. Absolute means that we do not put into consideration the sign of the difference obtained. *MAE* is calculated using the formula below.
