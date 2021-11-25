@@ -6,7 +6,7 @@ url: /different-types-of-menus-in-android/
 title: Different types of Menus in Android
 description: This tutorial will guide the reader through the process of creating different types of menus in Android. Menus are fundamental UI elements that are frequently used to hold actions that could otherwise be buried.
 author: benta-odek
-date: 2021-11-21T00:00:00-14:00
+date: 2021-11-24T00:00:00-20:20
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
