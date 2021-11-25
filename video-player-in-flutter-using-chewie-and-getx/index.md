@@ -49,6 +49,7 @@ The result will be something like this:
 We're going to create a screen to show our video player. This screen will have buttons for controlling the playback and two text fields to write the URL of the resource we want to play and its title.
 
 #### VideoScreen
+This is the page that we will use to interact with the our videos.Let's start with the a basic page with a title.
 
 ```dart
 
@@ -66,7 +67,7 @@ class VideoScreenState extends State {
 
 Widget build(BuildContext context) { 
 
- return new Scaffold( 
+ return new Scaffold(//contains our components of the application.
 
      appBar: new AppBar( 
 
@@ -85,16 +86,17 @@ Widget build(BuildContext context) {
 As you see, we have a simple screen with an `appbar `, which will have the title of our player, and a `Scaffold`. The `Scaffold` will contain the background image of our video player and two rows: one with the "Play" button on top and another showing the title and URL of the selected resource.
 
 #### Align Widget
+This widget contains a container where we will add our components. The main purpose of the align widget is to make sure that the compononets will be placed correctly and in a more appealing location on the screen.
 
 ```dart
 
 Widget build(BuildContext context) { 
 
- return new Align( alignment: Alignment.center, 
+ return new Align( alignment: Alignment.center, //align the child at the center of the screen.
 
  child: new Padding( 
 
-   padding: const EdgeInsets.all(16.0),
+   padding: const EdgeInsets.all(16.0),//all edges will be 16 pixels from the walls.
 
    child: new Container( 
 
@@ -115,7 +117,7 @@ Widget build(BuildContext context) {
 We use the `Align` widget to align the element in the `Center` of the screen. In this case, it will be a `Container`, so we'll add a white background and a black border with inner padding of 16dp.
 
 #### Row widget
-
+The Row widget will contains buttons of applications. 
 ```dart
 
 Container build(BuildContext context) { 
@@ -181,7 +183,7 @@ We use two `Expanded` widgets. The first one lets us add a `border-radius` to ou
 We're going to use `Padding` during the whole screen, but on this `Row`, we need it in both directions because we'll have one button that stretches across all its width (the "PLAY") and another that has a smaller width (the "STEP_BACKWARD").
 
 Now, let's see how we'll build the elements on this row. First of all, we have to create a button with some text inside it:
-
+#### Buttons
 ```dart
 Widget buildButton(String title, BuildContext context) { 
  return new Container( 
@@ -278,7 +280,7 @@ Widget buildButton(String title, BuildContext context, [Color color]) {
 ```
 
 ### Conclusion
-You can find the complete code of this example [here](https://github.com/escamoteur/flutter-chewie-getx/tree/master/videoplayer)
+You can find the complete code of this example [here](https://github.com/kanoinikita/flutter-chewie-getx/tree/master/videoplayer)
 
 ---
 Peer Review Contributions by: [Okelo Violet](/engineering-education/authors/okelo-violet/)
