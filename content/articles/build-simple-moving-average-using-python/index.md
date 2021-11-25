@@ -1,6 +1,6 @@
 
 ### Introduction
-Moving Average, are progress pointers utilized in different fields, including inherent sciences and securities exchange exchanging. These estimations work out force as noticed qualities over the long haul. For instance, in the securities exchange, the straightforward moving normal can assist signal with moving inversions. Computing the moving normally in Python is clear, and it very well may be refined utilizing custom capacities, a blend of standard library capacities, or incredible outsider libraries like Pandas. In this article, we'll see how to register some normal moving midpoints in Python and imagine them with Plotly. In this article, I will be demonstrating how to build a moving average indicator in two methods ie using DataFrames and Native pandas function and using the pandas_ta library.
+Moving Average, are progress pointers utilized in different fields, including inherent sciences and securities exchange exchanging. These estimations work out force as noticed qualities over the long haul. For instance, in the securities exchange, the straightforward moving normal can assist signal with moving inversions. Computing the moving normally in Python is clear, and it very well may be refined utilizing custom capacities, a blend of standard library capacities, or incredible outsider libraries like Pandas. In this article, we'll see how to register some normal moving midpoints in Python and imagine them with Pyplot. In this article, I will be demonstrating how to build a moving average indicator in two methods ie using DataFrames and Native pandas function and using the pandas_ta library.
 
 Table of contents
 - [Introduction](#introduction)
@@ -8,7 +8,7 @@ Table of contents
 - [Requirements](#requirements)
 - [How to use the moving average indicator in technical analysis](#how-to-use-the-moving-average-indicator-in-technical-analysis)
 - [Introduction to DataFrames and Native pandas function](#introduction-to-dataframes-and-native-pandas-function)
-- [Using pandas_ta Library](#using-pandas_ta-library)
+- [How pandas_ta Library is incorporated.](#how-pandas_ta-library-is-incorporated)
 - [Plotting Moving Average](#plotting-moving-average)
 - [conclusion](#conclusion)
 
@@ -16,13 +16,13 @@ Table of contents
 A Moving Average (MA) is a technical pointer for streamlining value drifts by sifting through "clamor" from irregular momentary value variances. They are utilized in different fields, including innate sciences and financial exchange exchanging.
 ### Requirements
 1. Visual studio code or pycharm
-2. Brow ser
+2. Browser
 3. wifi connection
 ### How to use the moving average indicator in technical analysis
 First, you choose a time period, like 30 minutes, an hour, or a week, for which you want to determine the average. Support and resistance levels can be determined using moving averages. To use it as a support, ensure that the price is above it. When the price is below it, use it as resistance.
 
 
-![support](support.png)
+![support](/education-engineering/build-simple-moving-average-using-python/support.png)
 
 ### Introduction to DataFrames and Native pandas function
 
@@ -41,12 +41,12 @@ pip install yfinance
 
 ```
 ```python
-# import yfinance to get pricing data
+# yfinance will give us price history
 import yfinance as finance
 
-# Get 1Month price history for $NVDA 
-nv = finance.Ticker('AAPL')
-fd = nv.history(period='1mo')[['Open', 'High', 'Low', 'Close', 'Volume']]  # specifies columns
+
+nv = finance.Ticker('NVDA')
+fd = nv.history(period='1mo')[['Open', 'Close', 'High', 'Low', 'Volume']] # specifies columns
 
 ```
 For my case, the following are the result.
@@ -91,25 +91,25 @@ Result.
 
 ```
 
-                  Open        High         Low       Close     Volume
+                                Open        High         Low       Close    Volume      SMA_10
 Date
-2021-10-06  201.199997  207.199997  200.800003  207.000000   29720200
-2021-10-07  210.919998  213.220001  209.720001  210.750000   25691900
-2021-10-08  211.009995  212.059998  207.750000  208.309998   15102500
-2021-10-11  205.750000  210.630005  205.110001  206.949997   16338800
-2021-10-12  208.279999  210.570007  205.279999  206.710007   16213400
-2021-10-13  209.179993  209.899994  207.130005  209.389999   18065200
-2021-10-14  212.880005  217.550003  211.220001  217.460007   24358900
-2021-10-15  218.100006  219.309998  216.619995  218.619995   22679500
-2021-10-18  217.490005  222.910004  216.440002  222.220001   18949400
-2021-10-19  222.759995  223.789993  220.369995  222.899994   16147300
+2021-10-18  217.490005  222.910004  216.440002  222.220001  18949400         NaN
+2021-10-19  222.759995  223.789993  220.369995  222.899994  16147300         NaN
+2021-10-20  223.050003  224.330002  219.820007  221.029999  14627600         NaN
+2021-10-21  220.970001  227.110001  220.830002  226.919998  18759000         NaN
+2021-10-22  228.229996  231.300003  225.610001  227.259995  24938400         NaN
+2021-10-25  229.729996  233.550003  227.699997  231.660004  23023500         NaN
+2021-10-26  239.889999  252.589996  239.240005  247.169998  48589800         NaN
+2021-10-27  244.740005  250.899994  242.820007  244.509995  24599000         NaN
+2021-10-28  248.779999  249.500000  245.229996  249.410004  23420400         NaN
+2021-10-29  250.009995  257.089996  250.000000  255.669998  29213700  234.874998
 
 ```
-The first line specifies averages of the previous 10 periods of close column values to be used in calculating a rolling mean.
+First-line determines averages of the past 10 times of close segment esteems to be utilized in working out a moving mean.
 
-### Using pandas_ta Library
+### How pandas_ta Library is incorporated.
 
-pandas_ta is integrated with **DataFrames** natively, making it simple to add technical indicators. Consider the following code, which adds the daily closing price's 5,10, and 20-period Simple Moving Averages.
+pandas_ta is privately consolidated with **DataFrames**, simplifying it to add specialized markers. Consider the following code, which adds the daily closing price's 5,10, and 20-period Simple Moving Averages.
 
 Here we will be adding indicators to the above data.
 
@@ -155,22 +155,22 @@ import pandas_ta as ta
 
 ### Plotting Moving Average
 
-Since DataFrames are full of numbers that don't offer a way of visualizing, we will create a visualization of moving averages using pandas, pandas_ta, and plotly.
+Since DataFrames are full of numbers that don't offer a way of visualizing, we will create a visualization of moving averages with plotly,pandas_ta, and pandas.
 
 Take a look at this code.
 
 ```python
-
+import yfinance as fc
 import pandas_ta as ta
-import yfinance as finance
 import plotly.graph_objects as pg
 
 
-# Get BTC-USD Data
-fn = finance.Ticker('BTC-USD').history(period='6mo')[['Open', 'Close', 'High', 'Low', 'Volume']]
 
-# include the moving average indicators
-m_a = ta.Strategy(
+#Here we are getting data of BTC-USD
+fn=fc.Ticker('BTC-USD').history(period='6mo')[['Open', 'Close', 'High', 'Low', 'Volume']]
+
+# integrate moving average
+m_a=ta.Strategy(
     name="moving indicators",
     ta=[
         {"kind": "sma", "length": 20},
@@ -229,7 +229,7 @@ Here we are:
 
 
 
-![result](result1.png)
+![result](/education-engineering/build-simple-moving-average-using-python/result1.png)
 
 In the above result, moving averages are not noticeable in light of the fact that we didn't add them through ploty in the wake of working out them by means of pandas_ta. In the following code, we will add additional follows utilizing Plotly API.
 
@@ -259,12 +259,12 @@ figure.add_trace(
 figure.show()
 ```
 
-![result](result2.png)
+![result](/education-engineering/build-simple-moving-average-using-python/result2.png)
 
-The 20-period simple moving average (magenta line) is plotted against the 10-time exponential moving average in this representation (dark line.) When the EMA and SMA are plotted together, we can see a change in momentum in numerous spaces where the EMA crosses the SMA. Because of the way that the EMA mirrors a quicker change in value force, this hybrid example is much of the time utilized as a composite specialized pointer to gauge arising value patterns.
+The 20-period simple moving average (magenta line) is plotted against the 10-time exponential moving average in this representation (dark line.)Right when the EMA and SMA are plotted together, we can see a change of power in different spaces where the EMA crosses the SMA. Because of the way that the EMA mirrors a quicker change in value force, this hybrid example is much of the time utilized as a composite specialized pointer to gauge arising value patterns.
 
 ### conclusion
-Moving averages are excellent tools for predicting momentum shifts in observed qualities over time. We've seen how Python can make it easier to figure out and visualize these specialized markers in order to provide significant (and noteworthy) bits of knowledge. Moving midpoints on their own smoothes out instability and reflect momentum patterns.
+Moving averages are marvelous devices for expecting energy shifts in saw qualities as time goes on. We've seen how Python can simplify it to figure out and picture these particular markers to give basic (and significant) snippets of data. Moving midpoints on their own smoothes out instability and reflect momentum patterns.
 At the point when utilized pair or related to other measurable techniques, they can turn out to be significantly more impressive gauging and forecast devices. Consolidating moving midpoints as elements in straight relapse displaying, for instance, can give a more strong prescient ability. When one starts designing composite elements with different moving midpoints, the sky might be the breaking point for prescient precision upgrades.
 
 Happy coding!
