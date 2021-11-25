@@ -6,7 +6,7 @@ url: /genetic-programming-models-using-tpot/
 title: Genetic Programming Models Using TPOT
 description: Genetic programming is a technique by which models and programs evolve. With time the model finds the optimal solution. The model starts from poor or unfit parameters. It then gradually evolves into a superior model.
 author: bravin-wasike
-date: 2021-11-19T00:00:00-18:00
+date: 2021-11-24T00:00:00-17:10
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
