@@ -28,8 +28,8 @@ To follow along with this tutorial, you'll need to have:
 - An understanding of [MATLAB](https://www.section.io/engineering-education/getting-started-with-matlab/) basics.
 
 ### How to locate the app
-To locate this App:
-- At the top of the window, click on the App's and click on the dropdown arrow.
+To locate this app:
+- At the top of the window, click on App's and click on the dropdown arrow.
 
 ![image](/engineering-education/how-to-ground-truth-label-your-datasets-for-creating-autonomous-driving-systems-using-matlab-ground-truth-app
 /ground1.png)
@@ -39,21 +39,21 @@ To locate this App:
 ![image2](/engineering-education/how-to-ground-truth-label-your-datasets-for-creating-autonomous-driving-systems-using-matlab-ground-truth-app
 /ground2.png)
 
-- Click on this App to open it.
+- Click on this app to open it.
 
-Ground truth labeler App allows us to label videos and images for automotive applications. As we all know, labeling is a tedious and time-consuming process, but it is necessary. 
+Ground truth labeler app allows us to label videos and images for automotive applications. As we all know, labeling is a tedious and time-consuming process, but it is necessary. 
 
 It gives us test data to evaluate the perception algorithm. Our workflow for this tutorial will be:
-- Creating ground truth data for the detection and semantic segmentation.
+- Creating ground truth data for detection and semantic segmentation.
 - Use an algorithm to automate the labeling process.
 - Integrate ground truth information from other sensors.
 
 ### Creating ground truth data for object detection and semantic segmentation
-Once we open the App, we need to load data into it. To do this, click on the `load` at the top-left corner of the App.
+Once we open the app, we need to load data into it. To do this, click on `load` at the top-left corner of the app.
 
-If you click on it, the App asks about the type of data that you are inputting. As you can see, we have three options: video, image sequence, and custom reader. The most common file format for data in this App is video and image sequences. But, we use the custom reader if you have a different file format from those mentioned before.
+If you click on it, the app asks about the type of data that you are inputting. As you can see, we have three options: video, image sequence, and custom reader. The most common file format for data in this app is video and image sequences. But, we use the custom reader if you have a different file format from those mentioned before.
 
-For this tutorial, we are going to load a 25second video into the App. After doing this, we start by ROI label(region of interest) by clicking on the label button.
+For this tutorial, we are going to load a 25second video into the app. After doing this, we start by ROI label(region of interest) by clicking on the label button.
 
 ![labelling button](/engineering-education/how-to-ground-truth-label-your-datasets-for-creating-autonomous-driving-systems-using-matlab-ground-truth-app
 /ground3.png)
@@ -65,7 +65,7 @@ When you click on this, the window below opens up.
 
 Now let's begin with that of `vehicle` then click `ok`. Note that you can label your data before defining the ROI. 
 
-Also, this App has a workspace shown below where all your label is stored, and you can see them.
+Also, this app has a workspace shown below where all your label is stored, and you can see them.
 
 ![workspace](/engineering-education/how-to-ground-truth-label-your-datasets-for-creating-autonomous-driving-systems-using-matlab-ground-truth-app
 /ground5.png)
@@ -75,7 +75,7 @@ After completing this, label the vehicle with the bounding box. To label the dat
 ![vehicles labelled](/engineering-education/how-to-ground-truth-label-your-datasets-for-creating-autonomous-driving-systems-using-matlab-ground-truth-app
 /ground6.png)
 
-Let's label the sub-labels. Sub-labels are parts that are associated with a parent label.
+Let us label the sub-labels. Sub-labels are parts that are associated with a parent label.
 
 For example, we can have vehicle number plates or even wheels as the sub-labels. Let's, for example, name our vehicles `tarlight`. To label, the sub-labels, click on the `sub-labels` right next to the `label` button and then label them on your input using bounding boxes. 
 
@@ -126,7 +126,7 @@ For example, we are going to track the cars for seven seconds.
 ![tracking](/engineering-education/how-to-ground-truth-label-your-datasets-for-creating-autonomous-driving-systems-using-matlab-ground-truth-app
 /ground12.png)
 
-After this, you click on the `automate` once you click this, the window displays the instruction for using this algorithm. Read through these instructions and then click on the play at the top of the window.
+After this, you click on `automate`. Once you click this, the window displays the instruction for using this algorithm. Read through these instructions and then click on the play at the top of the window.
 
 ![automation](/engineering-education/how-to-ground-truth-label-your-datasets-for-creating-autonomous-driving-systems-using-matlab-ground-truth-app
 /ground12a.png)
@@ -150,7 +150,9 @@ Also, you can label individual pixels in the image using the `pixel label`. Let'
 Note that you can erase sections that you never intended to be labeled using `erase`, and they also include those that you may have missed using the `brush`. We also have a feature, `smart polygon`. This feature allows you to make a surrounding of what you want to label and makes its segmentation. After all these, you can save your work.
 
 ### Integrate ground truth information from other sensors.
-This feature allows you to integrate ground truth information from other signals. For example, let's open a video that has been time-synchronized with lidar data. To open this, execute the command below:
+This feature allows you to integrate ground truth information from other signals. For example, let's open a video that has been time-synchronized with lidar data. 
+
+To open this, execute the command below:
 
 ```Matlab
 groundTruthLabeler('01_city_c2s_fcw_10s.mp4', 'ConnectorTargetHandle', @LidarDisplay);
@@ -166,9 +168,9 @@ The first is the ground truth labeler with the video data and the point cloud pl
 The importance of this is that lidar data can provide information that vision sensors alone cannot determine. For example, the lidar data provides the distance that the ego vehicle is from the surrounding objects.
 
 ### Conclusion
-Ground truth labeler is so effective in the automation of the labeling process. Despite the labeling process that can be time-consuming and tedious, this App can do that with a button click. 
+Ground truth labeler is so effective in the automation of the labeling process. Despite the labeling process that can be time-consuming and tedious, this app can do that with a button click. 
 
-Also, as we have seen, using the App is very simple. This App opens the door for all the possible algorithm. 
+Also, as we have seen, using the app is very simple. This app opens the door for all the possible algorithm. 
 
 It is now up to the user to decide the algorithm to use depending on what he does. As we know that the accuracy of algorithms varies, not restricting to certain algorithms is a good idea.
 
