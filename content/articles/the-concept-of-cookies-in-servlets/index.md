@@ -3,21 +3,23 @@ layout: engineering-education
 status: publish
 published: true
 url: /the-concept-of-cookies-in-servlets/
-title: Getting Started with cookies in Servlets
-description: This tutorial will guide the reader on how to create and read cookies in Servlets.
+title: Getting Started With Cookies in Servlets
+description: This tutorial will guide the reader on how to create and read cookies in Servlets. Cookies are text-based bits of information sent by the webserver to the client.
 author: evans-lodoctor
-date: 2021-11-22T00:00:00-10:20
-topics: []
+date: 2021-11-25T00:00:00-02:50
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/the-concept-of-cookies-in-servlets/hero.jpg
+  - url: /engineering-education/the-concept-of-cookies-in-servlets/hero.png
     alt: Getting Started with cookies in Servlets
 ---
+Cookies are text-based bits of information sent by the webserver to the client. It's delivered along with a client's response. A cookie, in simple words, is a method of keeping a client's state by a web server.
+<!--more-->
+When a client makes a new request, it sends the request along with all cookies accessible for the server to recognize. When a cookie's life expectancy ends, the client browser deletes it.
 
 ### Table of content
 - [Table of content](#table-of-content)
-- [Introduction](#introduction)
 - [Prerequisites](#prerequisites)
 - [Objectives](#objectives)
 - [API for Cookies](#api-for-cookies)
@@ -37,16 +39,12 @@ images:
   - [Getting cookie from a client request](#getting-cookie-from-a-client-request)
   - [Deletting cookies](#deletting-cookies)
 - [Example to demonstrate Servlet Cookie](#example-to-demonstrate-servlet-cookie)
-  - [Steps to create this Cookies project:](#steps-to-create-this-cookies-project)
+  - [Steps to create this Cookies project](#steps-to-create-this-cookies-project)
   - [Step 1: Creating the Example to demonstrate cookies in servlet project.](#step-1-creating-the-example-to-demonstrate-cookies-in-servlet-project)
   - [Step 2: Creating index.JSP page](#step-2-creating-indexjsp-page)
   - [Step 3: Creating a ProcessOneServlet Servlet page](#step-3-creating-a-processoneservlet-servlet-page)
   - [Step 4: Creating and reading values from Cookies Servlet page](#step-4-creating-and-reading-values-from-cookies-servlet-page)
 - [Conclusion](#conclusion)
-
-### Introduction
-
-Cookies are text-based bits of information sent by the webserver to the client. It's delivered along with a client's response. A cookie, in simple words, is a method of keeping a client's state by a web server. When a client makes a new request, it sends the request along with all cookies accessible for the server to recognize. When a cookie's life expectancy ends, the client browser deletes it.
 
 ### Prerequisites
 - Basic knowlegde of Java and Servlet.
@@ -55,74 +53,75 @@ Cookies are text-based bits of information sent by the webserver to the client. 
 
 ### Objectives
 Learners should be able to answer the following questions by the end of this article:
-1. What are cookies? And why is it important to use it?
+1. What is a cookie? And why is it important to use it?
 2. How do cookies work? What types of cookies are there in Java Servlet?
 3. What is Cookie's class? And what are the methods required for cookies?
 4. How to implement cookies in the Java Servlet program?
 
 ### API for Cookies
+The `Cookie` class in the Servlet API is used to create cookies. This class employs a variety of approaches to give various cookie activities.
 
-The `Cookie` class in the Servlet API is used to create cookies. Cookies are created using the Servlet API's 'Cookie' class. This class employs a variety of approaches to give various cookie activities. The `addCookie()` method, for example, is used to add cookies to the response object. Then, it sends cookie data from a client to a server or server to a client using the HTTP response. The `getCookies()` method, on the other hand, is used to access the cookies that have been added to the response object.
+The `addCookie()` method, for example, is used to add cookies to the response object. It then sends cookie data from a client to a server or server to a client using the HTTP response.
+
+The `getCookies()` method, on the other hand, is used to access the cookies that have been added to the response object.
 
 ### How does Cookie work
 When a client makes a new request to a Web Server, the webserver assigns a unique ID as a `cookie`, which is then sent back with the response to the client and saved in the client's browser.
 
+When a client sends another request, the server receives all cookie values stored in text form in the user's browser and uses them to identify the user and their current state.
 
-When a client sends another request, the server receives all cookie values stored in text form in the user's browser and uses them to identify the user and their current state. When a user browses an online store and adds some items to their cart, and then goes on to do something else, he or she may become disconnected from the site; however, when he or she reconnects, he will be able to retrieve his or her previous carts.
+When a user browses an online store and adds some items to their cart, and then goes on to do something else, he or she may become disconnected from the site; however, when he or she reconnects, he will be able to retrieve his or her previous carts.
 
 In this case, a cookie is used to store information required each time the client visits a website, such as a user ID, name, or other identifiers.
 
 ### Types of Cookies in Java Servlet
-Two types of cookies in the servlet are Non-persistent and persistent cookies.
+There are two types of cookies in the servlet, these are Non-persistent, and persistent cookies.
 
 #### Non persistent cookies
-
 A non-persistent/Session cookie is only valid for one session and is automatically deleted when the browser is closed.
 
 #### persistent cookies
-
 It's valid for multiple sessions and, unlike non-persistent cookies, it's not deleted when the user closes the browser; instead, it's deleted only when the user logs out or signs out.
 
 ### Advantage of Cookies
-
 - Transparent: Cookies work in this case without the user being aware that data is being saved in their browser.
 - Simplest technique: Cookies are the most basic method for keeping client states while connected to a web server.
 - Because cookies are stored in the client browser, they reduce the load on the server's memory.
-  
-### Disadvantage 
--  Cookies will only work if the user's web browser allows them; otherwise, they will not.
+
+### Disadvantage
+- Cookies will only work if the user's web browser allows them; otherwise, they will not.
 - In a Cookie object, only textual data can be stored.
 
 ### Cookie class and the methods required for cookies
-
 #### Cookie class
 A `Cookie` class contains several cookie-related methods that allow you to use cookies.
 
 #### Methods of Cookie class
-- `void setMaxAge()`: Cookie's maximum age is set using this `setMaxAge()` method.. The cookie lifetime can be specified when max-age is set in web applications.
+- `void setMaxAge()`: Cookie's maximum age is set using this `setMaxAge()` method. The cookie lifetime can be specified when max-age is set in web applications.
 - `void setValue()`: When a new value is assigned to the cookie, this method is used.
 - `String getName()`: Returns the cookie's name, which cannot be modified after it has been created.
 - `String getValue()`: This method aids in obtaining the cookie's current value.
 - `int getVersion()`: By using this method, you can get the version number of a cookie.
 - `void setVersion()`: Cookie's version number is set in this method.
-- ` int getMaxAge()`: Using getMaxAge(), you can determine the cookie's maximum age.
+- ` int getMaxAge()`: Using `getMaxAge()`, you can determine the cookie's maximum age.
 - `String getPath()`: The path from the cookie is obtained using this method.
 - `void setPath()`: This method is used to specify a cookie path. For example, in a web application, it is possible to specify a specific path for the cookies to be saved.
 - `String getDomain()`: This method can be used to extract the domain name from a cookie.
- 
-### How to create, delete, and get cookies
 
+### How to create, delete, and get cookies
 #### Creating a new Cookie object
 
 ```java
 Cookie object=new Cookie("uName",variableName);
 ```
+
 #### Setting up lifespan for a cookie
 
 ```java
 object.serMaxAge(20*60); // setting maximum age of the cookie.
 
 ```
+
 #### Sending the cookies to the client
 
 ```java
@@ -131,33 +130,31 @@ response.addCookie(object); // adding cookie to the response object.
 
 #### Getting cookie from a client request
 
-```java 
+```java
 Cookie[] object=request.getCookies();
 ```
+
 #### Deletting cookies
 
 ```java
-Cookie object=new Cookie("userId",""); 
+Cookie object=new Cookie("userId","");
 ck.setMaxAge(0);
 response.addCookie(object);
-
 ```
 
 ### Example to demonstrate Servlet Cookie
-We'll develop two servlet classes in this example, one to create cookies and the other to retrieve them. Here we will create two cookies to hold the user name and the allocated user subject, respectively.
+We'll develop two servlet classes in this example, one to create cookies and the other to retrieve them. Here, we will create two cookies to hold the user name and the allocated user subject, respectively.
 
 In this scenario, the JSP page gives us a form to fill out with our information, such as user name and subject.
 
-#### Steps to create this Cookies project:
-
+#### Steps to create this Cookies project
 #### Step 1: Creating the Example to demonstrate cookies in servlet project.
 Open Eclipse or any other Java IDE, create a new Dynamic web project by selecting a new Dynamic web project. Provide your favorite project name. In my case, I will call it `Example to demonstrate cookies in servlet`.
 
-#### Step 2: Creating index.JSP page 
-By right-clicking on `Example to demonstrate cookies in servlet` and selecting New JSP, you can code a JSP page as shown. Provide your JSP class name. I will call it `index.jsp`.
+#### Step 2: Creating index.JSP page
+By right-clicking on `Example to demonstrate cookies in servlet` and selecting New JSP, you can code a JSP page as shown. Provide your JSP class name. I will call mine `index.jsp`:
 
-```JSP
-
+```html
 <!DOCTYPE html>
 <html>
 
@@ -179,11 +176,9 @@ By right-clicking on `Example to demonstrate cookies in servlet` and selecting N
 ```
 
 #### Step 3: Creating a ProcessOneServlet Servlet page
-You can code a Servlet page as shown below by right-clicking on the `Example to demonstrate cookies in servlet` project selecting New Servlet. First, provide your Servlet class name. I will call it `ProcessOneServlet`.
+You can code a Servlet page as shown below by right-clicking on the `Example to demonstrate cookies in servlet` project selecting New Servlet. First, provide your Servlet class name. I will call mine `ProcessOneServlet`.
 
 ```java
-
-
 import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
@@ -195,11 +190,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/ProcessOneServlet")
-public class ProcessOneServlet extends HttpServlet 
+public class ProcessOneServlet extends HttpServlet
 {
 	private static final long serialVersionUID = 1L;
-    
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
   {
 		response.setContentType("text/html");
 		String uName=request.getParameter("userName");
@@ -216,11 +211,11 @@ public class ProcessOneServlet extends HttpServlet
 
 }
 ```
+
 #### Step 4: Creating and reading values from Cookies Servlet page
-You can code a Servlet page as shown below by right-clicking on the `Example to demonstrate cookies in servlet` project selecting New Servlet. Provide your Servlet class name. I will call it `ReadingValuesFromCookies`.
-```java 
+You can code a Servlet page as shown below by right-clicking on the `Example to demonstrate cookies in servlet` project selecting New Servlet. Provide your Servlet class name. I will call mine `ReadingValuesFromCookies`.
 
-
+```java
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -235,8 +230,8 @@ import javax.servlet.http.HttpServletResponse;
 public class ReadingValuesFromCookies extends HttpServlet
  {
 	private static final long serialVersionUID = 1L;
-    
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
   {
 		response.setContentType("text/html");
 		PrintWriter out= response.getWriter();
@@ -247,11 +242,14 @@ public class ReadingValuesFromCookies extends HttpServlet
 	}
 
 }
-
 ```
-### Conclusion
 
-In summary, we have learned what cookies are in Java `Servlet` and why they are important to use. We also learned about the `Cookie` class and cookies methods used while creating and sending cookies to the client browser. In this case, a learner should be able to know how to implement the cookies concept.
+### Conclusion
+In summary, we have learned what cookies are in Java `Servlet` and why they are important to use. We also learned about the `Cookie` class and cookies methods used while creating and sending cookies to the client browser.
+
+You should now to know how to implement the cookies concept.
+
+Happy coding!
 
 ---
 Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
