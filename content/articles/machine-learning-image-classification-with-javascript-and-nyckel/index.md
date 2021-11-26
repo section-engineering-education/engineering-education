@@ -117,24 +117,23 @@ body {
 /* Thumbnail */
 
 .thumbnail {
-    width: 80px;
-    height: 80px;
-    padding: 2px;
-    border: 2px solid lightgray;
-    border-radius: 3px;
-    float: left;
-}
+    width: 70px;
+    height: 70px
+    padding: 4px;
+    border: 4px dotted;
+    float: cente;;
+  }
 
 .size {
     font-size: 12px;
-}
+  }
 
 h1 {
     text-align: center;
     font-size: 4vw;
     margin-top: 5vh;
     color: black;
-}
+  }
 
 h2 {
     color: white;
@@ -242,40 +241,49 @@ This code below contains such functions. Create a Javascript file(.js)
 $(function ()
 {
     // preventing page from redirecting
-    $("html").on("dragover", function (e)
+    
+    $("html").on("dragover", function (d)
     {
-        e.preventDefault();
-        e.stopPropagation();
+        d.preventDefault();
+        d.stopPropagation();
         $("h2").text("Drag here");
     });
 
-    $("html").on("drop", function (e) { e.preventDefault(); e.stopPropagation(); });
+    $("html").on("drop", function (d) 
+      { 
+        d.preventDefault();
+        d.stopPropagation();
+        });
 
-    // Drag enter
-    $('.upload-area').on('dragenter', function (e)
-    {
-        e.stopPropagation();
-        e.preventDefault();
+    // Dragging entry as 'dragenter'
+    
+    $('.upload-area').on('dragenter', 
+    function (d)
+       {
+        d.stopPropagation();
+        d.preventDefault();
         $("h2").text("Drop");
     });
 
-    // Drag over
-    $('.upload-area').on('dragover', function (e)
+    // Dragging over as 'dragover'
+    
+    $('.upload-area').on('dragover', function (d)
     {
-        e.stopPropagation();
-        e.preventDefault();
+        d.stopPropagation();
+        d.preventDefault();
         $("h2").text("Drop");
     });
 
     // Drop
-    $('.upload-area').on('drop', function (e)
-    {
-        e.stopPropagation();
-        e.preventDefault();
+    $('.upload-area').on('drop', 
+    function (d)
+      {
+        d.stopPropagation();
+        d.preventDefault();
 
         $("h2").text("Checking...");
 
-        var file = e.originalEvent.dataTransfer.files;
+        var file = d.originalEvent.dataTransfer.files;
 
         showImage(file[0]);
 
@@ -300,9 +308,9 @@ $(function ()
 function showImage(file)
 {
     var reader = new FileReader();
-    reader.onload = function (e)
+    reader.onload = function (d)
     {
-        $('.upload-area').css("background-image", "url(" + e.target.result + ")");
+        $('.upload-area').css("background-image", "url(" + d.target.result + ")");
     }
     reader.readAsDataURL(file);
 }
