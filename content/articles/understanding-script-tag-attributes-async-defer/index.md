@@ -6,7 +6,7 @@ url: /understanding-script-tag-attributes-async-defer/
 title: Understanding Async and Defer HTML Attributes
 description: This article will help the reader understand async and defer tags. These attributes help to reduce delays when the browser parses HTML code. 
 author: emmanuel-alege
-date: 2021-11-25T00:00:00-18:07
+date: 2021-11-26T00:00:00-06:30
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
