@@ -112,11 +112,5 @@ Some of the projects that you can try out with your newly acquired skills are li
  5. Create a time lock wallet whereby funds are locked for a certain period.
  6. Airdrops which is a mechanism to distribute your tokens basically for free.
 
- Some of the projects that you can try out with your newly acquired skills are listed below in order of increasing complexity. The projects are however not limited to  the ones displayed below
- 1. Hello world
- 2. Simple storage whereby you are now able to modify the data of your smart contract and it ceases being a read-only smart contract.
- 3. A voting smart contract where people can create a poll with different choices and a period for voting plus whatever functionality you may feel the need to add.
- 4. Create an ether wallet where users can store their cryptos
- 5. Create a time lock wallet whereby funds are locked for a certain period.
- 6. Airdrops which is a mechanism to distribute your tokens basically for free.
+ 
  
