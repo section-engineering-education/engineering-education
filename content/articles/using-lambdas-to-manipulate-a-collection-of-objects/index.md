@@ -5,7 +5,7 @@ published: true
 url: /using-lambdas-to-manipulate-a-collection-of-objects/
 title: How to Manipulate Objects Using Lambdas in Java
 description: This article will help the reader understand how to manipulate objects using Lambdas in Java.
-author: kingsley-nwarfor
+author: kingsley-nwafor
 date: 2021-11-23T00:00:00-11:30
 topics: [Languages]
 excerpt_separator: <!--more-->
@@ -38,7 +38,6 @@ This tutorial will help you understand:
 - How to calculate the value of an object.
 - How to group a collection of objects.
 - How to check for a unique object.
-
 
 ### Importance of Lambdas
 Using lambdas is an effective way of writing your code. Some critics argue that lambdas are not clear, but in the real sense, they are efficient and minimize errors.
@@ -214,7 +213,6 @@ Predicate<Wallet> takeMoneyAndBlackCard=
 Output:
 
 Display the sorted list according to the amount of money:
-
 
 ```bash
 $44000.00 Black
@@ -413,6 +411,5 @@ We also grouped objects using map functional interface which takes in two argume
 - [TimeComplexity](https://www.mygreatlearning.com/blog/why-is-time-complexity-essential/)
 - [Java Documentation](https://docs.oracle.com/javase/8/docs/api/)
 
-  
 ---
 Peer Review Contributions by: [Wanja Mike](/engineering-education/authors/michael-barasa/)
