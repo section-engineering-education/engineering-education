@@ -6,7 +6,7 @@ url: /how-to-build-an-nlp-based-emotion-detection-model-using-neattext-and-sciki
 title: How to build an NLP based emotion detection model using NeatText and Scikit-learn
 description: This tutorial will show the reader how to build an NLP based emotion detection model using NeatText and Scikit-learn.
 author: francis-ndiritu
-date: 2021-11-22T00:00:00-13:30
+date: 2021-11-26T00:00:00-19:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -14,11 +14,11 @@ images:
   - url: /engineering-education/how-to-build-an-nlp-based-emotion-detection-model-using-neattext-and-scikit-learn/hero.jpg
     alt: How to build an NLP based emotion detection model using NeatText and Scikit-learn Hero image
 ---
-Natural language processing helps computers to understand speech and written text like a human being. This helps machines to compute necessary responses. 
+Natural language processing helps computers to understand speech and written text like a human being. This allows machines to compute necessary responses. 
 <!--more-->
 One of the NLP applications is emotion detection in text. The emotion detection model is a type of model that is used to detect the type of feeling and attitude in a given text. It may be a feeling of joy, sadness, fear, anger, surprise, disgust, or shame. An emotion detection model can classify a text into the following categories. By using emotion detection in text, businesses can know how customers feel about their brand and products. This helps businesses to improve product quality and service delivery.
 
-In this tutorial, we will use Neattext and Scikit-learn in building our model.  Neattext is a Python library that is used to pre-process our dataset. Neattext will clean the text dataset by removing stop words and other noise. This makes it easy for the model to use the dataset during training. We'll use Scikit-learn in building our model. It contains all the algorithms required for classification. This is a practical guide from data preprocessing to model building and testing.
+In this tutorial, we will use Neattext and Scikit-learn in building our model.  Neattext is a Python library used to pre-process our dataset. Neattext will clean the text dataset by removing stop words and other noise. This makes it easy for the model to use the dataset during training. We'll use Scikit-learn to build our model. It contains all the algorithms required for classification. This is a practical guide from data pre-processing to model building and testing.
 
 ### Prerequisites
 - You must know [Python](/engineering-education/python-projects-for-beginners/) programming.
@@ -42,11 +42,11 @@ In this tutorial, we will use Neattext and Scikit-learn in building our model.  
 - [Reference](#references)
 
 ### Exploring our dataset
-In this tutorial, we will use a dataset that contains various texts with different emotion labels. The dataset has a total of eight emotion labels as follows: Joy, sadness, fear, anger, surprise, neutral, disgust, and shame.
+In this tutorial, we will use a dataset that contains various texts with different emotion labels. The dataset has eight emotion labels that are named as follows: joy, sadness, fear, anger, surprise, neutral, disgust, and shame.
 
 The dataset will be used during the training phase. The trained model will then be used to classify a given text into the emotion labels.
 
-The snip of the dataset is shown below:
+A snip of the dataset is shown below:
 
 ![Dataset snip](/engineering-education/how-to-build-an-nlp-based-emotion-detection-model-using-neattext-and-scikit-learn/dataset-snip.png)
 
@@ -70,7 +70,7 @@ Use the following command to load the dataset:
 ```python
 df = pd.read_csv("emotion-dataset.csv")
 ```
-To see how the dataset is structured use this command:
+To see how the dataset is structured, use this command:
 
 ```python
 df.head()
@@ -79,9 +79,9 @@ The output is shown below.
 
 ![Dataset structure](/engineering-education/how-to-build-an-nlp-based-emotion-detection-model-using-neattext-and-scikit-learn/dataset-structure.png)
 
-From the image above, we can see that our dataset has two columns: `Emotion` and `Text`. The emotion column represents the various emotion labels. The text column shows all the texts in our dataset.
+The image above shows that our dataset has two columns: `Emotion` and `Text`. The `Emotion` column represents the various emotion labels. The `Text` column shows all the texts in our dataset.
 
-Let's now show the value count for each emotion. This will give the total number of texts for each emotion label.
+Let us now show the value count for each emotion. This will give the total number of texts for each emotion label.
 
 ```python
 df['Emotion'].value_counts()
@@ -125,9 +125,9 @@ df['Clean_Text'] = df['Text'].apply(nfx.remove_userhandles)
 We use `apply()` method to add `remove_userhandles`. We save the cleaned dataset into a new column named `Clean_Text`.
 
 #### Removing stopwords
-Stopwords is a list of all the commonly used words in any language. Stopwords carry very little useful information and have very little impact on the model during training. These words lead to model bias during training. Removing stopwords eliminate unimportant words, allowing applications to focus on the important words instead.
+Stopwords is a list of all the commonly used words in any language. Stopwords carry very little helpful information and have minimal impact on the model during training. These words lead to model bias during training. Removing stopwords eliminate unimportant words, allowing applications to focus on the essential words instead.
 
-Common stopwords are like articles of a given language. In the English language they include: `the`, `is`, `and` and `are`.
+Common stopwords are like articles of a given language. They include: `the`, `is`, `and` and `are` in the English language.
 
 ```python
 df['Clean_Text'] = df['Clean_Text'].apply(nfx.remove_stopwords)
@@ -153,11 +153,11 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 ```
-From the code above, we have imported the following.
+From the code above, we have imported the following:
 
-- `LogisticRegression` is an algorithm used for both classification and regression. This algorithm is imported from [Scikit-learn](https://scikit-learn.org/stable/). It will be used for emotion classification.
+- `LogisticRegression` is an algorithm used for both classification and regression. This algorithm is imported from [Scikit-learn](https://scikit-learn.org/stable/). We will use it for emotion classification.
 
-- Machine learning models have a problem comprehending raw text. Machines cannot process the raw text data and it has to be converted into a matrix of numbers. Machines work well with numbers. `CountVectorizer` is used to convert the raw text into a matrix of numbers. This process depends on the frequency of each word in the entire text. During this process, `CountVectorizer` extracts important features from the text. They are then used as input for the model during training.
+- Machine learning models have a problem comprehending raw text. Machines cannot process the raw text data, and it has to be converted into a matrix of numbers. Machines work well with numbers. `CountVectorizer` is used to convert the raw text into a matrix of numbers. This process depends on the frequency of each word in the entire text. During this process, `CountVectorizer` extracts important features from the text. They are used as input for the model during training.
 
 - The `train_test_split` method is important during the splitting of the dataset. It splits the dataset set into two sets, a train set, and a test set. This depends on the percentage specified by the user.
 
@@ -168,7 +168,7 @@ Let's now specify our features and labels.
 ### Model features and labels
 Features are the attributes and variables extracted from the dataset. These extracted features are used as input for the model during training. The model learns from features. Our feature is the `Clean_Text` column.
 
-Labels are the output or the target variable. Our label is the `Emotion` column, this is what the model is predicting.
+Labels are the output or the target variable. Our label is the `Emotion` column, and this is what the model is predicting.
 
 ```python
 Xfeatures = df['Clean_Text']
