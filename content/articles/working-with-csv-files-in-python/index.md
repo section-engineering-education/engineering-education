@@ -108,6 +108,81 @@ SCHOOL            CEO         YEAR
 
 From the code above, `import pandas` is used to import the pandas module, `csvFile = pandas.read_csv('fonteds.csv')` is used to read the fonted.csv file and `print(csvFile)` is used to output the read csv file. 
 
+#### reading from a specific row
+Here we will create a CSV file with multiple rows and columns to illustrate how to read from a specific row.
+
+Create a CSV file by entering the below data in your notepad and saving it as `student-data.csv`. The file will be used to show how to manipulate the CSV files.
+
+```bash
+RegNo   Name        Course  year-of-study   Department
+001     James       BCS     2.1             Computing
+002     John        BFF     1.2             IT
+003     Christine   BSS     4.2             SPAS
+004     Lilian      BCOM    3.1             Business
+005     Beth        BIT     2.2             IT
+```
+
+To read a specific row in the CSV file we use the `read_cv` function from the panda's library. The example below illustrates how to read from a specific row.
+
+```python
+# Import Pandas 
+import pandas as pd
+# Specify the file location of our CSV file
+data = pd.read_csv('File-location/student-data.csv')
+# Extract top four data of the specified rows
+print (data[0:4]['year-of-study'])
+```
+
+The above code will output the following information:
+
+```bash
+0   2.1
+1   1.2
+2   4.2
+3   3.1
+Name: Name, dtype: float64
+```
+
+#### Read a precise Column
+The panda's library's read_csv method may additionally read specified columns. This is done using the `.loc()` multi-axes indexing function. Let's look into an example program. In this example, we will show the `Name` and `Course` columns for all rows.
+
+> We will use the `student-data.csv` file from the previous example.
+
+```python
+# Import the Pandas module
+import pandas as pd
+# Specify the file location of our CSV file
+data = pd.read_csv('File-location/student-data.csv')
+print (data.loc[:,['Name','Course']])
+```
+
+The  output
+
+```bash
+    Name        Course  
+0   James       BCS                  
+1   John        BFF                
+2   Christine   BSS                
+3   Lilian      BCOM               
+4   Beth        BIT    
+```
+
+#### Manupulate csv files
+Since you can't edit a CSV file while reading from it, you need to create a new one and write to it.
+
+> We will use the `student-data.csv` file from the previous example.
+
+From the `student-data.csv` file above, the data is written using uppercase. To demonstrate how to edit and save CSV files we will change the uppercase letters in our file to lower case letters.
+
+```python
+with open('student-data.csv','r') as f:
+    with open('lowwer-case.csv','w') as ff:
+        ff.write(f.readline())
+        ff.write(f.read().lower())
+```
+
+The above code creates a new CVS file with all letters in it changed to lower case.
+
 ### Working with large CSV files in Python
 When dealing with CSV data, normally read it in using pandas before munging and analyzing it. Due to memory constraints, reading huge files straight into pandas may be difficult (or impossible) on a consumer machine.
 
