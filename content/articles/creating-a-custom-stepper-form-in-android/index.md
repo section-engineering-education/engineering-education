@@ -1,5 +1,22 @@
-### Creating a Custom Stepper Form in Android
-When creating forms in Android apps, you may sometimes want to present all the information in the available screen space. This approach is a bit cumbersome as not everything can fit in one screen. To improve consistency, the user interface, and make the app more interactive, a stepper is implemented.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /creating-a-custom-stepper-form-in-android/
+title: Creating a Custom Stepper Form in Android
+description: This tutorial will guide the reader through the process of creating a custom stepper form in Android. A stepper displays the user’s progress through a series of steps.
+author: feswal-salim
+date: 2021-11-26T00:00:00-15:01
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/creating-a-custom-stepper-form-in-android/hero.png
+    alt: Creating a Custom Stepper Form in Android Hero Image
+---
+When creating forms in Android apps, you may sometimes want to present all the information in the available screen space. This approach is a bit cumbersome as not everything can fit in one screen.
+<!--more-->
+To improve consistency, the user interface, and make the app more interactive, a stepper is implemented.
 
 ### Prerequisites
 To follow along:
@@ -372,3 +389,6 @@ In this tutorial, we have learned what a stepper is, what are its applications, 
 For a full implementation of the Stepper form, check out [this Github repository](https://github.com/feswalsalim/StepperFormDemo.git).
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Eric Gacoki](/engineering-education/authors/eric-gacoki/)
