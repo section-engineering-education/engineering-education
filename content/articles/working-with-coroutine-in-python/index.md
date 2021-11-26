@@ -33,14 +33,14 @@ The reader should already be familiar with Python's generators.
 ### What is a coroutine in Python?
 A coroutine is a function that can pause and resume its execution.
 
-Throughout a length of time, a process that is willingly relinquishing control of itself might benefit from using coroutines (periodically). You run programs simultaneously while a coroutine is idle.
+Throughout a length of time,  parocess that is willingly relinquishing control of itself might benefit from using coroutines (periodically). You run programs simultaneously while a coroutine is idle.
 
 Yield statements utilization and some extra methods make generators differ from coroutines.
 
-### Coroutines Vs subroutines
+### Coroutines vs subroutines
 1. Coroutines may be accessed from numerous locations while the main function is the sole point of entry for subroutines.
-2. Corporative coroutines build a pipeline structure while they are being executed.But while using subroutines, you may create an executable with a linear flow.
-3. Suspension and resumption are from a single point in subroutines while in coroutines is from multiple points. In coroutines, we can still resume execution from where we interrupted it.
+2. Corporative coroutines build a pipeline structure while they are being executed. But while using subroutines, you may create an executable with a linear flow.
+3. Suspension and resumption are from a single point in subroutines while in coroutines is from multiple points. In coroutines, we can still resume execution from where we interrupted.
 4. The main function shows the results of data processing in subroutines unlike in coroutines where the output of a coroutine may be seen.
 5. Python coroutines do not have a primary function to arrange and coordinate their execution. Subroutines have a main function for controlling and co-ordinating subroutine execution in python.
 
@@ -88,13 +88,13 @@ The coroutine object is looking for the prefix.: Student
 The names were sent to the function's coroutine using the `send()` technique. As the output shows only the names that march the prefix `Student` has been reported. `Student` has been used as a coroutine keyword.
 
 ### Coroutines execution
-Python coroutines and Python generators have a lot in common, as do many other types of Python code. Unless and until the coroutine is called in a program, nothing else happens.
+Python coroutines and Python generators have a lot in common, as do many other types of Python code. Unless and until the coroutine is called in a program, nothing happens.
 
-Execution begins when `__next__()` is invoked. The initial expression is performed when invoked.
+Execution begins when `__next__()` is invoked. The initial expression is executed when invoked.
 
 The coroutine's execution comes to a halt as it awaits the value to be sent to the coroutine object. Each time a new coroutine object receives an initial value, it first checks to see whether the specified prefix is present before printing the name with that prefix.
 
-You will see this expression repeated until you run across the `name = (yield)` expression again.
+You will see the `__next__()` expression repeated until you run across the `name = (yield)` expression again.
 
 ### How to close coroutines
 The program's `close()` method must be called to stop a coroutine. The `GeneratorExit` exception may be captured by halting the coroutine first, which is our usual method of collecting exceptions.
