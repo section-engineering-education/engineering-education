@@ -26,21 +26,21 @@ To better understand and build along with this tutorial you should have:
 ### Table of Contents
 
 - [How to build a Chrome Extension that displays motivational quotes using Javascript](#how-to-build-a-chrome-extension-that-displays-motivational-quotes-using-javascript)
-- [Introduction](#introduction)
-- [Prerequisites](#prerequisites)
-- [Table of Contents](#table-of-contents)
-- [Getting started](#getting-started)
-- [Adding icons](#adding-icons)
-- [Functionality](#functionality)
-- [Creating the background script](#creating-the-background-script)
-- [background.js](#backgroundjs)
-- [Adding permissions](#adding-permissions)
-- [Fetching random quotes from the API](#fetching-random-quotes-from-the-api)
-- [Calling the quotes at intervals](#calling-the-quotes-at-intervals)
-- [Creating notifications](#creating-notifications)
-- [What to do?](#what-to-do)
-- [Conclusion](#conclusion)
-- [References](#references)
+    - [Introduction](#introduction)
+    - [Prerequisites](#prerequisites)
+    - [Table of Contents](#table-of-contents)
+    - [Getting started](#getting-started)
+    - [Adding icons](#adding-icons)
+    - [Functionality](#functionality)
+    - [Creating the background script](#creating-the-background-script)
+    - [background.js](#backgroundjs)
+    - [Adding permissions](#adding-permissions)
+    - [Fetching random quotes from the API](#fetching-random-quotes-from-the-api)
+    - [Calling the quotes at intervals](#calling-the-quotes-at-intervals)
+    - [Creating notifications](#creating-notifications)
+      - [What to do?](#what-to-do)
+    - [Conclusion](#conclusion)
+    - [References](#references)
 
 ### Getting started
 
@@ -77,13 +77,13 @@ Now that we have our manifest file setup, let us add the directory as an extensi
 Navigate to the Extensions management page by clicking on the extensions menu button at the top right of the browser, and selecting manage extensions at the bottom of the menu.
 
 You should see a page like this:
-![developer](/engineering-education/how-to-build-a-chrome-extension-that-displays-motivational-quotes-using-javascript/images/developer.png)
+![developer](/engineering-education/how-to-build-a-chrome-extension-that-displays-motivational-quotes-using-javascript/developer.png)
 
 Toggle on the developer mode and click on the load unpacked button. This opens your local machine directories and prompts you to choose the directory you would like to load as an extension.
 
 Alright! you should see something similar to the image below:
 
-![unpacked](/engineering-education/how-to-build-a-chrome-extension-that-displays-motivational-quotes-using-javascript/images/unpacked.png)
+![unpacked](/engineering-education/how-to-build-a-chrome-extension-that-displays-motivational-quotes-using-javascript/unpacked.png)
 
 We now have the extension listed amongst our previously installed extensions. Although, you'll notice yours does not have a custom icon. Let's fix that right away.
 
@@ -313,7 +313,7 @@ async function startRequest() {
 
 Finally, our motivational quotes are displayed in the notifications box like so:
 
-![extension](/engineering-education/how-to-build-a-chrome-extension-that-displays-motivational-quotes-using-javascript/images/completed.png)
+![extension](/engineering-education/how-to-build-a-chrome-extension-that-displays-motivational-quotes-using-javascript/completed.png)
 
 Now that you have your extension up and running, you may want to publish it on the [Chrome web store](https://developer.chrome.com/docs/webstore/publish/) - you are however required to pay a small fee.
 
