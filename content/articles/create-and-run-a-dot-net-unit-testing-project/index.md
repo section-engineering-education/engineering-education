@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /create-and-run-a-dot-net-unit-testing-project/
-title: How to create and run a .Net Unit Testing Project
-description: This tutorial will help the readers understand about Unit Testing and how to create a project with unit testing un .NET.
+title: How to Create and Run a .Net Unit Testing Project
+description: This tutorial will help the reader understand about Unit Testing and how to create a project with unit testing un .NET.
 author: gitau-kimani
-date: 2021-01-14T00:00:00-11:00
+date: 2021-11-26T00:00:00-14:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -14,9 +14,11 @@ images:
   - url: /engineering-education/create-and-run-a-dot-net-unit-testing-project/hero.jpg
     alt: How to create and run a .Net Unit Testing Project Image
 ---
-Any application must undergo some form of testing. A unit test is utilized when testing a unit of the application. A unit is a portion of code that can be separated logically in a system.
+All applications must undergo some form of testing. A unit test is utilized when testing a unit of the application. A unit is a portion of code that can be separated logically in a system.
 <!--more-->
-We will use Visual Studio to test ASP.Net apps. It's also used to run an ASP.Net application's test code. It becomes much easier to check for faults in an ASP.Net application this way. The testing module in Visual Studio provides the built-in capability. A test for an ASP.Net project is run right immediately.
+In this tutorial, we will use Visual Studio to test ASP.Net apps. It's also used to run an ASP.Net application's test code. It becomes much easier to check for faults in an ASP.Net application this way. 
+
+The testing module in Visual Studio provides the built-in capability. A test for an ASP.Net project is run right immediately.
 
 ### Table of contents
 - [What is unit testing](#what-is-unit-testing)
@@ -31,15 +33,12 @@ We will use Visual Studio to test ASP.Net apps. It's also used to run an ASP.Net
 - [Create the test and execute it](#create-the-test-and-execute-it)
 
 ### Prerequisites
-
 To follow along with this tutorial, you'll need the following:
-
-- A basic understand of C#
-- A basic understanding of ASP.Net
-- [Visual Studio](https://visualstudio.microsoft.com/downloads/)
+- A basic understand of C#.
+- A basic understanding of ASP.Net.
+- A text editor like [Visual Studio](https://visualstudio.microsoft.com/downloads/).
 
 ### What is unit testing
-
 Unit testing determines if components or individual software units correspond to the designed specifications and testing, accompanying data, and usage procedures.
 
 A unit is a short piece of code that performs a specific task. The unit test is a brief script or code that verifies a particular unit's behavior and returns a pass or fail result.
@@ -51,48 +50,38 @@ Other types of testing will be required after the application has passed unit te
 All .net languages utilize NUnit, a widely known unit-testing framework. It's a free and open-source program that lets you manually code scripts. It allows for the performance of simultaneous data-driven tests.
 
 ### Types of approaches to unit testing
-
 The available unit testing methods include:
 
-- **Manual**- You need to create an explanatory document describing each step in the process for those who use a manual approach.
+- **Manual:** You need to create an explanatory document describing each step in the process for those who use a manual approach.
 
-- **Automated**- Automated unit tests are still the most popular approach. When using an automated method, it's usual to create test cases inside a testing framework.
+- **Automated:** Automated unit tests are still the most popular approach. When using an automated method, it's usual to create test cases inside a testing framework.
 
 All failed tests will be noted and reported, as well as a description of all successful tests.
 
-### Techniques for Testing Units
-
+### Techniques for testing units
 Black box testing involves testing the user interface and input and output, while White box testing focuses on the functional behavior of the software application.
 
 Test suites, methods, test cases, and risk assessments are carried out using gray box testing. The user interface of a software program is tested via black-box testing.
 
 The following are unit testing techniques:
+- Statements included in the scope.
+- Coverage of the decision-making process.
+- Coverage of Different Branches.
+- Coverage of the Situation.
+- Coverage by a Finite State Machine.
 
-- Statements included in the scope
-- Coverage of the decision-making process
-- Coverage of Different Branches
-- Coverage of the Situation
-- Coverage by a Finite State Machine
+### Benefits of unit testing
+- **A greater rate of progress:** Writing unit tests saves developers time by reducing the amount of time they spend troubleshooting. Adding new features to the product and then refactoring the code will be easier for developers if they have confidence in what may fail. This is impossible without unit testing.
 
-### Benefits of Unit testing
+- **New and improved concept:** Creating unit tests helps developers see how their code will be used across the system, leading to a better overall design.
 
-- **A greater rate of progress:**
-Writing unit tests saves developers time by reducing the amount of time they spend troubleshooting. Adding new features to the product and then refactoring the code will be easier for developers if they have confidence in what may fail. This is impossible without unit testing.
+- **The use of a more robust feedback mechanism:** It will be possible to evaluate the current status of the system after all unit tests have been performed. These tests provide programmers a better idea of the state of the code, such as whether it's finished or not. Test environment modifications may impact the code base, but the feedback system can assist in communicating how the test environment is doing.
 
-- **New and improved Concept:**
-Creating unit tests helps developers see how their code will be used across the system, leading to a better overall design.
+- **It is a useful pre-regression tool:** Developers will be able to restructure or reorganize code with ease after all unit tests have been completed. Developers may rest easy knowing that their changes won't harm other modules or the whole system.
 
-- **The use of a more robust feedback mechanism:**
-It will be possible to evaluate the current status of the system after all unit tests have been performed. These tests provide programmers a better idea of the state of the code, such as whether it's finished or not. Test environment modifications may impact the code base, but the feedback system can assist in communicating how the test environment is doing.
-
-- **It is a useful pre-regression tool:**
-Developers will be able to restructure or reorganize code with ease after all unit tests have been completed. Developers may rest easy knowing that their changes won't harm other modules or the whole system.
-
-- **Cost-cutting:**
-An expensive patch may be required if a problem is found late in the development process. Early detection of fundamental issues (which may have a significant impact on the system later) using a well-designed set of unit tests helps keep maintenance costs down in the long run.
+- **Cost-cutting:** An expensive patch may be required if a problem is found late in the development process. Early detection of fundamental issues (which may have a significant impact on the system later on) using a well-designed set of unit tests helps keep maintenance costs down in the long run.
 
 ### Creating a project
-
 1. When creating a new project, we will use Visual Studio and create a new project from the start menu.
 
 ![create a new project](/engineering-education/create-and-run-a-dot-net-unit-testing-project/image1.png)
@@ -101,10 +90,9 @@ An expensive patch may be required if a problem is found late in the development
 
 ![create a console project](/engineering-education/create-and-run-a-dot-net-unit-testing-project/image2.png)
 
+3. Decide on a name for your endeavor. For this project, I decided to call it `Collegefinance`. Either the.NET Core 3.1 or.NET 5 target framework will have to be selected.
 
-3. Decide on a name for your endeavor and then get to operate. For this project, I called it `Collegefinance`. Either the.NET Core 3.1 or.NET 5 target framework will have to be selected.
-
-As you work on the School project, the `Program.cs` file will be open in the code editor.
+As you work on the school project, the `Program.cs` file will be open in the code editor.
 
 ![Naming the project](/engineering-education/create-and-run-a-dot-net-unit-testing-project/image2.png)
 
@@ -165,8 +153,7 @@ namespace BankAccountNS
 }
 ```
 
-5. Right-click on the file in Solution Explorer and select Build Solution from the Build menu (or Ctrl + SHIFT + B) to rename it to `CollegeFinance.cs`.
-We have a project that we can now be put to the test.
+5. Right-click on the file in Solution Explorer and select Build Solution from the Build menu (or Ctrl + SHIFT + B) to rename it to `CollegeFinance.cs`. We now have a project that we can put to the test.
 
 ### How to create a unit-testing project
 1. Add a new project simply from File Menu.
@@ -183,16 +170,15 @@ We have a project that we can now be put to the test.
 
 4. Create a new CollegeTests project with the desired architecture (.NET Core 3.1 or.NET 5) selected. We've integrated `CollegeTests` into the `Collegefinance`.
 
-5. Make sure the CollegeTests project contains a mention of the College project.
-In the project created click to View in the menu bar, click Solution Explorer from the list, click dependencies, and then add dependencies by right-clicking the reference option.
+5. Make sure the CollegeTests project contains a mention of the College project. In the project created click to View in the menu bar, click Solution Explorer from the list, click dependencies, and then add dependencies by right-clicking the reference option.
 
 6. Expand Projects, then Solution, and finally Collegefinance in the Reference Manager dialog box.
 
 ![Reference](/engineering-education/create-and-run-a-dot-net-unit-testing-project/image6.png)
 
 ### Make a test class
+In this phase, we will rename the file `CollegeFinanceTests.cs` which is more informative rather than reusing the template as per the project for testing the `CollegeFinance` class.
 
-In this phase, we will rename the file as `CollegeFinanceTests.cs` which is more informative rather than reusing the template as per the project for testing the `CollegeFinance` class.
 Add the following code to the CollegeFinanceTests.cs file:
 
 ```C#
@@ -211,16 +197,16 @@ namespace CollegeTests
 
 ***Make sure to include a using clause***
 
-If you wish to call into the test project without suitably qualified identifiers, add a using line to the test class. Add the following to the class file's header:
+If you wish to call into the test project without suitably qualified identifiers, add a using line to the test class. 
+
+Add the following to the class file's header:
 
 ```C#
 using CollegeFinanceNS;
 ```
 
 ### Prerequisites for the test class
-
 A test class must satisfy the following criteria:
-
 - Any class with unit testing methods that wish to run in Test Explorer must have the `[TestClass]` attribute.
 - This property must be present in every method `[TestMethod]` you plan on using in Test Explorer so that it can be recognized by the tool.
 
@@ -229,7 +215,9 @@ You may use functions in test classes without the `[TestMethod]` attribute in yo
 In the following approach, we will create unit testing methods to verify the `Fees` method of the `CollegeFinance` class's behavior.
 
 ### Creating a method for testing
-As a first step, we'll ensure that a valid payment has been made to the account. Class `CollegeFinanceTests` should have method:
+As a first step, we'll ensure that a valid payment has been made to the account. 
+
+Class `CollegeFinanceTests` should have this method:
 
 ```c#
 [TestMethod]
@@ -245,30 +233,26 @@ public void Arrears_WithValidTotal_UpdatesRemainder()
 }
 ```
 
-The function is simple: it creates a new CollegeFinance object with a starting remainder and then withdraws a valid amount. It checks if the ending remainder is as predicted using the Assert.AreEqual function. Assert is an example of a method. Assert, AreEqual. 
+The function is simple: it creates a new CollegeFinance object with a starting remainder and then withdraws a valid amount. It checks if the ending remainder is as predicted using the Assert.AreEqual function. Assert is an example of a method.
 
 #### Specifications for the test technique
-
 A test method must satisfy the following conditions:
 - It has the [TestMethod] attribute on it.
 - It gives a void result.
 - It isn't allowed to have parameters.
 
 ### Create the test and execute it
-
 1. Choose Build Solution from the Build drop-down menu.
 
 ![Build](/engineering-education/create-and-run-a-dot-net-unit-testing-project/image7.png)
 
 2. If Test Explorer isn't already open, go to test> Windows, then select Test Explorer from the main menu.
-3. Run the test from the Run All section.
-While running the test, a progress bar appears and changes color.
-If all tests are successful, then the bar is green; otherwise, it is red.
-The test will fail if we assume our worst-case scenario.
+3. Run the test from the Run All section. While running the test, a progress bar appears and changes color. If all tests are successful, then the bar is green; otherwise, it is red. The test will fail if we assume our worst-case scenario.
 4. To explore more about a technique, open Test Explorer and click on the technique's name.
 
-#### Then re-test when you've fixed the code
+#### Then re-test when you have fixed the code
 An explanation for the failure is included in the test findings. It's easy to see what was expected and what was obtained by using the `AreEqual` method's message. The remainder grew rather than decreased as a result of the sum paid.
+
 During the unit test, an issue was discovered: instead of being deducted, the sum paid is added to the account Remainder.
 
 #### Correct the problem.
@@ -285,7 +269,11 @@ n_Remainder -= total;
 ```
 
 ### Conclusion
-As evident in this tutorial, Unit testing is the first level of testing in an ASP.Net project. Unit testing is a test of an application's functioning. The purpose of the testing is to guarantee that the application performs as planned. Opening Visual Studio and creating a test project is the first step. The test project will have all of the code required to test the application.
+As evident in this tutorial, Unit testing is the first level of testing in an ASP.Net project. Unit testing is a test of an application's functioning. The purpose of the testing is to guarantee that the application performs as planned. 
+
+Opening Visual Studio and creating a test project is the first step. The test project will have all of the code required to test the application.
+
+Happy coding!
 
 ---
 Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)
