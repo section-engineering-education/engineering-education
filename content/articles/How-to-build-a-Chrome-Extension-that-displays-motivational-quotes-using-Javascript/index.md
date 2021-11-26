@@ -1,16 +1,30 @@
-# How to build a Chrome Extension that displays motivational quotes using Javascript
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-build-a-chrome-extension-that-displays-motivational-quotes-using-javascript/
+title: How to Build a Chrome Extension that Displays Motivational Quotes Using Javascript
+description: This article will guide you through the process of building a chrome extension that displays motivational quotes as notifications using javascript.
+author: muhammed-umar
+date: 2021-11-26T00:00:00-11:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/how-to-build-a-chrome-extension-that-displays-motivational-quotes-using-javascript/hero.jpg
+    alt: Chrome Extension Quotes JavaScript
+---
 
-### Introduction
+Every Chrome extension that exists on the Chrome web store performs a specific task. Over the years I have had to install a couple of extensions that either helped me accomplish tasks at work, or enabled me to maximize productivity.
 
-Every Chrome Extension that exists on the chrome web store performs a specific task. Over the years I have had to install a couple of extensions that either helped me accomplish tasks at work, or enabled me to maximize productivity.
+<!--more-->
 
-Having used the Pomodoro timer extension for the last few months, I noticed a steep increase in productivity. So I thought to myself, "I am going to build something similar" - a Chrome extension that will display motivational quotes at scheduled intervals (cheesy right!).
+Having used the Pomodoro timer extension for the last few months, I noticed a steep increase in productivity. So I thought to myself, "I am going to build something similar" - a Chrome extension that will display motivational quotes at scheduled intervals. (Cheesy right!).
 
 I had zero knowledge about how to build one until this point. Luckily, the official Chrome documentation helped me understand the concepts I needed to just get started with building what I wanted.
 
-Chrome Extensions are relatively easy to develop, and yes you can create them locally on your machine and have them interact with any page on the web. Think of them as small applications residing on the browser and with their help we can access information about a website, and build awesome things with them.
+Chrome extensions are relatively easy to develop, and you can create them locally on your machine and have them interact with any page on the web. Think of them as small applications residing on the browser and with their help we can access information about a website, and build awesome things with them.
 
-In this tutorial, you, and I are going to build a Chrome extension using Javascript. Its major functionality will be to display random motivational quotes from an API.
+In this tutorial, we are going to build a Chrome extension using Javascript. Its major functionality will be to display random motivational quotes from an API.
 
 You will learn about the core concepts used in this work, and this will just be sufficient to enable you to build something similar or even more complex.
 
@@ -19,32 +33,35 @@ You will learn about the core concepts used in this work, and this will just be 
 To better understand and build along with this tutorial you should have:
 
 - The Chrome browser installed.
-- An offline or online code editor (VS Code in my case).
+- A code editor (VS Code in my case).
 - Some knowledge of Javascript and its syntax.
 - Your desktops notification turned on - this is where our motivational quotes will be displayed.
 
 ### Table of Contents
 
-- [How to build a Chrome Extension that displays motivational quotes using Javascript](#how-to-build-a-chrome-extension-that-displays-motivational-quotes-using-javascript)
-    - [Introduction](#introduction)
-    - [Prerequisites](#prerequisites)
-    - [Table of Contents](#table-of-contents)
-    - [Getting started](#getting-started)
-    - [Adding icons](#adding-icons)
-    - [Functionality](#functionality)
-    - [Creating the background script](#creating-the-background-script)
-    - [background.js](#backgroundjs)
-    - [Adding permissions](#adding-permissions)
-    - [Fetching random quotes from the API](#fetching-random-quotes-from-the-api)
-    - [Calling the quotes at intervals](#calling-the-quotes-at-intervals)
-    - [Creating notifications](#creating-notifications)
-      - [What to do?](#what-to-do)
-    - [Conclusion](#conclusion)
-    - [References](#references)
+<<<<<<< HEAD
+
+- [How to build a Chrome Extension that displays motivational quotes using Javascript](#how-to-build-a-chrome-extension-that-displays-motivational-quotes-using-javascript) - [Introduction](#introduction) - [Prerequisites](#prerequisites) - [Table of Contents](#table-of-contents) - [Getting started](#getting-started) - [Adding icons](#adding-icons) - [Functionality](#functionality) - [Creating the background script](#creating-the-background-script) - [background.js](#backgroundjs) - [Adding permissions](#adding-permissions) - [Fetching random quotes from the API](#fetching-random-quotes-from-the-api) - [Calling the quotes at intervals](#calling-the-quotes-at-intervals) - [Creating notifications](#creating-notifications) - [What to do?](#what-to-do) - [Conclusion](#conclusion) - [References](#references)
+  =======
+- [Getting started](#getting-started)
+- [Adding icons](#adding-icons)
+- [Functionality](#functionality)
+- [Creating the background script](#creating-the-background-script)
+- [background.js](#backgroundjs)
+- [Adding permissions](#adding-permissions)
+- [Fetching random quotes from the API](#fetching-random-quotes-from-the-api)
+- [Calling the quotes at intervals](#calling-the-quotes-at-intervals)
+- [Creating notifications](#creating-notifications)
+- [What to do?](#what-to-do)
+- [Conclusion](#conclusion)
+- [References](#references)
+  > > > > > > > d08a5e4244e1dd292e3fda6990708afe095e70ee
 
 ### Getting started
 
-To get started we will need to create a directory to hold the extension's files on our local machine. Using windows command prompt we can type in the following:
+To get started we will need to create a directory to hold the extension's files on our local machine.
+
+Using the Windows command prompt we can type in the following:
 
 ```bash
 mkdir Random-Quote-Extension
@@ -68,13 +85,13 @@ Next, we will create a `manifest.json` file and add the following codes to make 
 The `manifest.json` file contains important information about the extension.
 
 - The `name` field contains information about the title of the extension we are building - Random Quote Extension.
-- The `Description` field as the name implies gives a brief description of the functionality of the extension.
-- The `manifest_version` field tells us the current version we are building with. Ensure to use 3.0 as the previous version (2.0) is deprecated
+- The `description` field as the name implies gives a brief description of the functionality of the extension.
+- The `manifest_version` field tells us the current version we are building with. Ensure you use 3.0 as the previous version (2.0) is deprecated
 - Also, it is nice to start with a `version` that is small, you may want to update your extension as time passes. I go with 1.0 for now.
 
 Now that we have our manifest file setup, let us add the directory as an extension in developer mode in our Chrome browser.
 
-Navigate to the Extensions management page by clicking on the extensions menu button at the top right of the browser, and selecting manage extensions at the bottom of the menu.
+Navigate to the extensions management page by clicking on the extensions menu button at the top right of the browser, and selecting manage extensions at the bottom of the menu.
 
 You should see a page like this:
 ![developer](/engineering-education/how-to-build-a-chrome-extension-that-displays-motivational-quotes-using-javascript/developer.png)
@@ -85,13 +102,16 @@ Alright! you should see something similar to the image below:
 
 ![unpacked](/engineering-education/how-to-build-a-chrome-extension-that-displays-motivational-quotes-using-javascript/unpacked.png)
 
-We now have the extension listed amongst our previously installed extensions. Although, you'll notice yours does not have a custom icon. Let's fix that right away.
+We now have the extension listed amongst our previously installed extensions. Although, you'll notice yours does not have a custom icon.
+
+Let's fix that right away.
 
 ### Adding icons
 
-To attach customized icons to the toolbar, we create the action field to house the default icon field which contains our desired images. Also, to display these icons on the extension management page that shows favicon, we attach a new field called icons.
+To attach customized icons to the toolbar, we create the action field to house the default icon field which contains our desired images. Also, to display these icons on the extension managemwent page that shows favicon, we attach a ne field called icons.
 
-Its elements are the same images the default icon uses. You can access these images on my [Github repo](https://github.com/deverten/RandomQuoteExtension/tree/main/images)
+Its elements are the same images the default icon uses. You can access these images on my [Github repo](https://github.com/deverten/RandomQuoteExtension/tree/main/images).
+
 Go ahead and update the `manifest.json` file to look like this:
 
 ```json
@@ -115,20 +135,20 @@ Go ahead and update the `manifest.json` file to look like this:
 }
 ```
 
-You would have noticed the fields "16", "48", and "128". They are the pixel sizes for each image (ignore my naming conventions for the images). If you are making a custom icon you will need to resize your images to meet the standards - (16px by 16px, 48px by 48px, 128px by 128px).
+You might have noticed the fields "16", "48", and "128". They are the pixel sizes for each image (ignore my naming conventions for the images). If you are making a custom icon you will need to resize your images to meet the standards - (16px by 16px, 48px by 48px, 128px by 128px).
 
 Reload the extension and watch the icons take effect in the toolbar and extension management page.
 
 ### Functionality
 
-We now have a Chrome extension installed with little to no functionality. That, we shall fix in a bit but for clarity, I would like us to highlight the functionalities we expect of the extension.
+We now have a Chrome extension installed with no functionality. That, we shall fix in a bit but for clarity, I would like us to highlight the functionalities we expect of the extension.
 
 They would be to:
 
 - Fetch data from an API
 - Schedule continuous API calls at timed intervals.
 
-Awesome! we can go ahead to implement these but first, let us create a component called the background script.
+Awesome! We can go ahead and implement these but first, let us create the background script.
 
 ### Creating the background script
 
@@ -138,9 +158,11 @@ Depending on the intended functionality of the extension, we may not need to use
 
 Let's dive right into creating our `background script` and registering it in our `manifest.json`.
 
-Create a new file and call it `background.js`, next let us register it in our manifest file. If you're wondering why we must do this, think of the manifest as a register where all components are referenced. They also show the expected behavior of the files.
+Create a new file and call it `background.js`.
 
-The manifest.json file should look somewhat identical to this now:
+Next, let us register it in our manifest file. If you're wondering why we must do this, think of the manifest as a register where all components are referenced. They also show the expected behavior of the files.
+
+The `manifest.json` file should look somewhat identical to this now:
 
 ```json
 {
@@ -170,7 +192,9 @@ The extension now looks out for the `service worker`: `background.js`. When we r
 
 ### background.js
 
-We want the extension to listen for events when first installed, hence we include a listening event and `background.js` should look like so:
+We want the extension to listen for events when first installed, hence we include a listening event.
+
+The `background.js` should look like so:
 
 ```javascript
 chrome.runtime.onInstalled.addListener(() => {
@@ -265,9 +289,11 @@ async function startRequest() {
 }
 ```
 
-The `chrome.alarms.create` creates an alarm, in this case, it is the event of the API call. It takes the name of the alarm (`startRequest`) and `periodInMinutes` as parameters. We make the API call `startRequest()` when the alarm is created.
+The `chrome.alarms.create` creates an alarm. In this case, it is the event of the API call. It takes the name of the alarm (`startRequest`) and `periodInMinutes` as parameters. We make the API call `startRequest()` when the alarm is created.
 
-We then create a listener and call the `startRequest` function. That should pretty much be all for now. We will go ahead and display the output in our notifications box.
+We then create a listener and call the `startRequest` function. That should pretty much be all for now.
+
+We will go ahead and display the output in our notifications box.
 
 ### Creating notifications
 
@@ -322,14 +348,14 @@ If you decide otherwise you can still share with a few friends, even without pub
 #### What to do?
 
 - Right-click on the folder containing your extension.
-- select `send to compressed(zip)folder` to create a zip file copy.
+- Select `send to compressed(zip)folder` to create a zip file copy.
 - Share via any medium to your friends e.g mail, hard drives, etc.
-- They can install the extension on their local machines by unzipping the file, then going to the chrome extension management page on their browser and clicking on `load unpacked` as we did in the beginning. This should prompt them to select the unzipped file folder. Tadaa! it works.
+- They can install the extension on their local machines by unzipping the file, then going to the chrome extension management page on their browser and clicking on `load unpacked` as we did in the beginning. This should prompt them to select the unzipped file folder.
 - Lastly, they should have their system notifications visible.
 
 ### Conclusion
 
-Hooray🎉🎉 you have learned how to build a simple Chrome browser extension, register components like background script in the manifest file, fetch data from APIs, and learned to use Chrome extension APIs like chrome.alarms and chrome.notifications.
+Hooray 🎉🎉 You have learned how to build a simple Chrome browser extension, register components like background script in the manifest file, fetch data from APIs, and how to use the Chrome extension APIs like chrome.alarms and chrome.notifications.
 
 You can now share with friends with or without hosting in the web-store.
 
@@ -338,5 +364,11 @@ I'm excited to see the amazing things you'll build 🚀🚀
 ### References
 
 - [Chrome Documentation](https://developer.chrome.com/docs/extensions/mv3/getstarted/)
-- [Rusty Zone - How to call an API from a chrome extension](https://www.youtube.com/watch?v=7Tu2j2pc87I&t=418s)
-- [The Coding Train - Chrome Extensions](https://www.youtube.com/watch?v=ew9ut7ixIlI&t=1s)
+- [Rusty Zone - How to call an API from a chrome extension](https://www.youtube.com/watch?v=7Tu2j2pc87I)
+- [The Coding Train - Chrome Extensions](https://www.youtube.com/watch?v=ew9ut7ixIlI)
+
+Happy coding!
+
+---
+
+Peer Review Contributions by: [Geoffrey Mungai](/engineering-education/authors/geoffrey-mungai/)
