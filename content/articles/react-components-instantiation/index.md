@@ -142,7 +142,9 @@ In our code below the developper class  define a constructor function .The devel
 **Below is an example of code to show class component  instantiation that outputs greetings.**
 
 In  our code their is a human class and a student class ,that extends the  Human class .Both classes define a constructor function.Every student is a human too.
-Both classes define a constructor function. The  name argument is expected by the  human class and  that value is stored on the instance using `this` keyword. The name and the level argument is expected by the student class and then the level value is stored on its instance.Since the student class extends the human class the student class calls the `super` method with the `name` argument which will invoke the human class constructor function and store the name too. A `greet` function is defined by both classes . 
+Both classes define a constructor function. The  name argument is expected by the  human class and  that value is stored on the instance using `this` keyword.
+
+The name and the level argument is expected by the student class and then the level value is stored on its instance.Since the student class extends the human class the student class calls the `super` method with the `name` argument which will invoke the human class constructor function and store the name too. A `greet` function is defined by both classes . 
 
 ```js
   class Human{
