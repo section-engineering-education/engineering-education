@@ -189,11 +189,7 @@ Let's import `Pipeline` using the following code:
 ```python
 from sklearn.pipeline import Pipeline
 ```
-To use `Pipeline` we need to specify the machine learning stages we want to automate. In this tutorial, we have two processes we want to automate.
-
-The first stage is the `CountVectorizer` process. This stage is used to convert the raw text dataset into a matrix of numbers that a machine can understand.
-
-The second stage is the model training process using the `LogisticRegression` algorithm. In this stage, the model learns from the dataset. During training, it understands patterns. It gains knowledge and uses the knowledge to make predictions.
+To use `Pipeline` we need to specify the machine learning stages we want to automate. In this tutorial, we have two processes we want to automate. The first stage is the `CountVectorizer` process. This stage is used to convert the raw text dataset into a matrix of numbers that a machine can understand. The second stage is the model training process using the `LogisticRegression` algorithm. In this stage, the model learns from the dataset. During training, it understands patterns, gains knowledge, and uses the knowledge to make predictions.
 
 Let's initialize these two stages:
 
