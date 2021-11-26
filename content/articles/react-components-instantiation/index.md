@@ -104,17 +104,7 @@ The new keyword makes `this` keyword to point the object that as been newly crea
   ```
 The code above only returns the student marks. 
 
-The JS engine will see the new keyword,then it  creates a new object and sets the prototype to Student.prototype. If a property is undefined in the new object which is requested, the script will check the [[Prototype]] object for the property.Lets add the following code .
-
-Lets add `console.log(Object.getPrototypeOf(studdy) === Student.prototype)` to see if prototype of studdy is student which will output the following:
-
-`{
-    "marks": 50
-}
-
-true`
-
-This outputs true.If we add `Student` instead of `studdy` as shown `console.log(Object.getPrototypeOf(Student) === Student.prototype)` it will output false because Student is not a prototype of Student.
+The JS engine will see the new keyword, then it will  create a new object and sets the prototype to Student.prototype. If a property is undefined in the new object which is requested, the script will check the [[Prototype]] object for the property.Lets add the following code .Lets add `console.log(Object.getPrototypeOf(studdy) === Student.prototype)` to see if prototype of studdy is student which will output true. If we add `Student` instead of `studdy` as shown `console.log(Object.getPrototypeOf(Student) === Student.prototype)` it will output false because Student is not a prototype of Student.
 
 ****what happens in the code above****
 
@@ -186,9 +176,9 @@ o3.greet = () => console.log('I am wonderful!');
 ```
 **expected output**
 
-Hello John!
-Hello Tina from 1st Grade
-I am wonderful!
+- Hello John!
+- Hello Tina from 1st Grade
+- I am wonderful!
 
 ***What happens when we test the script***
 
