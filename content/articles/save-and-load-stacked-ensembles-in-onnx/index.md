@@ -82,7 +82,8 @@ It is sourced from [Kaggle](https://www.kaggle.com/fedesoriano/heart-failure-pre
 
 Output:
 
-![DataFrame](/engineering-education/edit/master/content/articles/save-and-load-stacked-ensembles-in-onnx/df1.png)
+![DataFrame](../save-and-load-stacked-ensembles-in-onnx/df1.png)
+
 *Image by author*
 
 We will seperate the data columns from the label/target, "Outcome";
@@ -103,7 +104,12 @@ x_train, x_test, y_train, y_test = train_test_split(
 ```
 
 ### Training and evaluating the stacked classifier
-We shall employ a stack with a randomForest, kNN classifier, GradientBoosting classifier and a logistic regressor as a final model.
+We shall employ a stack with a [randomForest](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html), [kNN classifier](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html), [GradientBoosting classifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingClassifier.html) and a [logistic regressor](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html) as a final model.
+A random forest classifier uses a number of decision trees on randomly selected subsets of the data and uses the decisions of these trees as votes on the final decision.
+A k-Nearest Neighbors classifier uses data and classifies new data points based on similarity, for example; distance.
+A Gradient Boosing Classifier combines many weak learning classifiers together to create a strong predictive model.
+The Logistic Regression is used to model data in a linear regression and then predict the outcome which falls into classes instead of continuous values.
+
 Import packages;
 
 ```python
@@ -178,7 +184,7 @@ initial_types =  [('feature_input', FloatTensorType([None, 3])),
 ```
 In our case, our data has 8 Float types.
 
-**Note**: Int can be treated as float
+> NOTE: Int can be treated as float
 So we shall make the variable ```initial_types``` as;
 
 ```python
@@ -196,8 +202,8 @@ with open("stacked_clf.onnx", "wb") as f:
 The model is saved sucessfully.
 
 
-***Note:** If establishing the initial types is challenging, for example, the data has too many features, the ```to_onnx``` method handles this directly for you.
-You just need to pass the x test data (or one of it's column) as an argurment and ONNX extracts it automatically.
+> NOTE: If establishing the initial types is challenging, for example, the data has too many features, the ```to_onnx``` method handles this directly for you.
+You just need to pass the `x_test` data (or one of it's column) as an argurment and ONNX extracts it automatically.
 
 ```python
 # Use a section of data instead of x_test to avoid key errors
@@ -226,7 +232,7 @@ pred_onx = sess.run([label_name],
 
 Let us see our predictions:
 ```python
-pred_onx
+print(pred_onx)
 ```
 Output:
 ```
@@ -246,7 +252,10 @@ Output:
 ###  Conclusion
 In this tutorial, you learnt how to install ONNX and onnxruntime, determine ONNX input initialtypes, serializing and saving a stacked ensemble to ONNX format and finally loading it to production using an Onnx runtime Inference session.
 This model can now be served through a Web App framework like Streamlit and Dash, used in the backend (Django, Flask) or an API.
-In case of a hard nut to crack with ONNX you can raise an issue on [onnx's github](https://github.com/onnx/sklearn-onnx/issues)
+
+In case of a hard nut to crack with ONNX you can raise an issue on [onnx's github](https://github.com/onnx/sklearn-onnx/issues).
+
+A notebook with this code is available [here](https://github.com/iannjari/scrapbook/blob/main/Stacked_Ensemble.ipynb).
 
 Happy ML-ing!
 
@@ -259,5 +268,6 @@ Happy ML-ing!
 
 [Common errors with onnxruntime](http://onnx.ai/sklearn-onnx/auto_examples/plot_errors_onnxruntime.html?highlight=errors)
 
+ [Notebook with accompanying Source Code](https://github.com/iannjari/scrapbook/blob/main/Stacked_Ensemble.ipynb).
 
 
