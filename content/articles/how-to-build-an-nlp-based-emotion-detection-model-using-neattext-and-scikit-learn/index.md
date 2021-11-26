@@ -155,19 +155,13 @@ from sklearn.metrics import accuracy_score
 ```
 From the code above, we have imported the following.
 
-#### LogisticRegression
-`LogisticRegression` is an algorithm used for both classification and regression. This algorithm is imported from [Scikit-learn](https://scikit-learn.org/stable/). Will be used for emotion classification.
+- `LogisticRegression` is an algorithm used for both classification and regression. This algorithm is imported from [Scikit-learn](https://scikit-learn.org/stable/). It will be used for emotion classification.
 
-#### CountVectorizer
-Machine learning models have a problem comprehending raw text. Machines cannot process the raw text data and it has to be converted into a matrix of numbers. Machines work well with numbers.
+- Machine learning models have a problem comprehending raw text. Machines cannot process the raw text data and it has to be converted into a matrix of numbers. Machines work well with numbers. `CountVectorizer` is used to convert the raw text into a matrix of numbers. This process depends on the frequency of each word in the entire text. During this process, `CountVectorizer` extracts important features from the text. They are then used as input for the model during training.
 
-CountVectorizer is used to convert the raw text into a matrix of numbers. This process depends on the frequency of each word in the entire text. During this process, `CountVectorizer` extracts important features from the text. They are then used as input for the model during training.
+- The `train_test_split` method is important during the splitting of the dataset. It splits the dataset set into two sets, a train set, and a test set. This depends on the percentage specified by the user.
 
-#### train_test_split
-This method is important during the splitting of the dataset. It splits the dataset set into two sets, a train set, and a test set. This depends on the percentage specified by the user.
-
-#### accuracy_score
-This is important when calculating the accuracy score of our model during prediction.
+- The `accuracy_score` is important when calculating the accuracy score of our model during prediction.
 
 Let's now specify our features and labels.
 
