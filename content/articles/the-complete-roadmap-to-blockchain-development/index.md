@@ -93,7 +93,7 @@ contract HelloWorld {
 
  Finally, you need to test your smart contract appropriately before deploying it since as I mentioned earlier, the code is immutable. The testing is easily achieved using the truffle framework. 
 
- I hope you can see that smart contracts cover a large part of blockchain development but I also hope that you can appreciate that it is not wise to learn smart contracts in isolation.
+Smart contracts cover a large part of blockchain development. However, it is not wise to learn smart contracts in isolation.
 
   #### 4. Front-End Development
 
