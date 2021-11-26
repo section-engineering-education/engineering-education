@@ -1,6 +1,23 @@
-### Introduction
+---
+layout: engineering-education
+status: publish
+published: true
+url: /understanding-java-inheritance-and-polymorphism/
+title: Understanding Java Inheritance and Polymorphism
+description: In this article, we discuss the oop concepts of inheritance and polymorphism in the context of Java.
+author: frank-joseph
+date: 2021-11-26T00:00:00-07:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/understanding-java-inheritance-and-polymorphism/hero.jpg
+    alt: hero image
+---
  
-Java is an object-oriented programming language since it provides Java developers with the ability to implement objects as real-life entities. OOP is a programming paradigm that is built around objects and their properties (attributes) and behaviors (methods). So, generally, software design using object-oriented principles is focused on objects and operations on them. In this article, we will explain two core OOP principles inheritance and polymorphism. Amongst many features of object-oriented programming is the fact that it encourages code reusability and extensibility. We will explain these two terms in detail later in this article.
+Java is an object-oriented programming language since it provides Java developers with the ability to implement objects as real-life entities. OOP (object-oriented programming) is a programming paradigm built around objects and their properties (attributes) and behaviors (methods). So, generally, software design using object-oriented principles is focused on objects and operations on them. Amongst many features of object-oriented programming is the fact that it encourages code reusability and extensibility. We will explain these two terms in detail later. In this article, we will explain two core OOP principles in inheritance and polymorphism.
+
+<!--more-->
  
 ### Prerequisites
  
@@ -38,7 +55,7 @@ public class Car {
     }
 
     public void accelerate() {
-        System.out.println("Car is accelerating…");
+        System.out.println("The car is accelerating…");
     }
 
     public void setSpeed(int speed) {
@@ -49,8 +66,7 @@ public class Car {
         return speed;
     }
 }
- 
-```java
+
 // Declare a sub car class
 public class Toyota extends Car {
     private int registrationNumber;
@@ -69,7 +85,7 @@ The keyword `extends` implies that the `Toyota` class inherits from and is a chi
 ```java
 public class Main {
     public static void main(String[] args) {
-        // This is the setSpeed() and accelerate method in the Car class being accessed by the Toyota object.
+        // This is the setSpeed() and accelerate() method in the Car class being accessed by the Toyota object.
         Toyota myToyota = new Toyota();
         myToyota.setSpeed(3);
         myToyota.accelerate();
@@ -82,7 +98,7 @@ It is proper to say that a subclass is a specialized version of the superclass. 
 ```java
 Car myToyota = new Car();
 // An object of type Car is assigned to a variable of type Car or
-Car myToyota = new Toyota();
+Car myToyota1 = new Toyota();
 ```
 
 An object of type Toyota is assigned to a variable of type Car. This is possible because Toyota is a subclass or a descendant of Car. The principle of polymorphic substitution cannot hold in the reverse direction. That is, a Car object can not be used in place of a Toyota object. For instance, the code below will cause a compilation error:
@@ -94,10 +110,10 @@ Toyota myToyota = new Car();
 It is now time to look at types of inheritance but before that, let me make one point clear. When a method in the superclass is overridden in the subclass, the superclass method is accessible in the base class using the `super` keyword followed by a period. The code snippet below illustrates this:
  
 ```java
-public class Toyota {
+public class Toyota extends Car{
     public void accelerate() {
         super.accelerate();
-        System.out.println(“Toyota is accelerating”);
+        System.out.println("Toyota is accelerating");
     }
 }
 ```
@@ -112,7 +128,7 @@ These are the types of inheritance in Java:
  
 #### Single Inheritance
  
-In this kind of inheritance, the subclass can only inherit properties and methods from a single parent class. The subclass can also add more features to the existing code. The example below illustrates single inheritance:
+In this kind of inheritance, the subclass only inherits properties and methods from a single parent class. The subclass can also add more features to the existing code. The example below illustrates single inheritance:
  
 ```java
 public class SectionStudent {
@@ -123,15 +139,15 @@ public class SectionInheritance extends SectionStudent {
     // Declare your instance variables and methods here
 }
 ```
-In single inheritance, the class `SectionInheritance` can only inherit from `SectionStudent`.
+In single inheritance, the class `SectionInheritance` only inherits from `SectionStudent`.
  
 #### Multiple Inheritance
  
-In Java, multiple inheritance is not allowed although it can be implemented through the use of an interface. Multiple interfaces can be implemented in Java but only one class can be extended.
+In Java, multiple inheritance is not allowed although it can be implemented through the use of interfaces. Multiple interfaces can be implemented in Java but only one class can be extended.
  
 #### Multi-level Inheritance
  
-In multi-level inheritance, a subclass serves also as a base class for yet another subclass. For instance, say a vehicle class is serving as a superclass for every moving machine including a car, and a car also serves as a superclass for specific kinds of cars like Toyota, Benz, etc. This is the concept of the inheritance hierarchy. The code snippet below illustrates the concept of multi-level inheritance:
+In multi-level inheritance, a subclass serves also as a base class for yet another subclass. For instance, say a vehicle class is serving as a superclass for every moving machine including a car, and a car also serves as a superclass for specific kinds of cars like Toyota, Benz, etc. This is the concept of multi-level inheritance. The code snippet below illustrates this:
  
 ```java
 public class Vehicle {
@@ -147,7 +163,7 @@ public class Benz extends Car {
 ```
 #### Hierarchical Inheritance
  
-This is a type of inheritance in which more than one class is based on a superclass. For instance, a `Benz` class inherits from a `Car`, a `Toyota` class inherits from a `Car` and the list continues. In simpler terms, hierarchical inheritance is the kind of inheritance in which the parent is inherited by different classes. This example illustrates the idea of hierarchical inheritance:
+This is a type of inheritance in which more than one class is based on a superclass. For instance, a `Benz` class inherits from a `Car`, a `Toyota` class inherits from a `Car` and the list continues. In simpler terms, hierarchical inheritance is the kind of inheritance in which the parent is inherited by different classes:
  
 ```java
 public class Car {
@@ -184,25 +200,25 @@ public class Animal {
     }
 }
 
-public class Dog {
+public class Dog extends Animal{
     public void animalMove() {
         System.out.println("Dog is running");
     }
 }
 
-public class Fish {
+public class Fish extends Animal{
     public void animalMove() {
         System.out.println("Fish is swimming");
     }
 }
 
-public class Bird {
+public class Bird extends Animal{
     public void animalMove() {
         System.out.println("Bird is flying");
     }
 }
 
-public class Snake {
+public class Snake extends Animal{
     public void animalMove() {
         System.out.println("Snake is crawling");
     }
@@ -213,7 +229,7 @@ To test whether the above code applies polymorphism let’s use the main method 
 ```java
 public static void main(String[] args) {
     Animal animal = new Animal();
-    animal.animalMove;
+    animal.animalMove();
 
     Animal dog = new Dog();
     dog.animalMove();
@@ -285,7 +301,7 @@ This is a concept in which a method declared in the parent class is given a diff
 ```java
 public class Animal {
     public void animalRun() {
-        System.out.println(“Animal is running”);
+        System.out.println("Animal is running");
     }
 }
 
@@ -334,3 +350,6 @@ In this article, we have learned about the concept of inheritance and polymorphi
  
 - Java - How to program 10th Ed-Early Object Version- Deitel
 - [OOP in Java - Getting Started with Abstraction and Encapsulation](https://www.section.io/engineering-education/oop-in-java-abstraction-and-encapsulation/)
+
+---
+Peer Review Contributions by: [John Amiscaray](/engineering-education/authors/john-amiscaray/)
