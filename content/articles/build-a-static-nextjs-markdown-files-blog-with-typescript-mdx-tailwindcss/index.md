@@ -11,11 +11,11 @@ Building an application with Next.js is made powerful by some of the cool featur
 In this guide, we will build a static Next.js Markdown files blog with Typescript, MDX, Tailwind CSS. We will discuss technologies and build an entire application from scratch using this stack. Finally, set up the whole stack to the CI/CD Versel deployment.
 
 ### Prerequisites
-To continue in this article, it is helpful to have the following:
+To proceed with this tutorial, it is important to have the following;
 
 - [Node.js](https://nodejs.org/en/) installed on your system.
-- Basic knowledge working with React, Next.js and TypeScript.
-- Working knowledge with Git and GitHub.
+- Basic knowledge working with React, Next.js, and TypeScript.
+- Basic understanding of Git and GitHub.
 
 ### Table of content
 - [Prerequisites](#prerequisites)
