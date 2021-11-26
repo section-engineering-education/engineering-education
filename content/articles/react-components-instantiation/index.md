@@ -92,7 +92,7 @@ The new keyword makes `this` keyword to point the object that as been newly crea
 
  #### Instantiating function component
 
- ***example ***
+ ***example***
  ```js
  function Student (marks) {
   this.marks = marks;
