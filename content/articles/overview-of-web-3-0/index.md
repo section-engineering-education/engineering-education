@@ -12,7 +12,7 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/overview-of-web-3-0/hero.jpg
-    alt: Web image
+    alt: Web 3.0 image
 ---
 The World Wide Web (WWW) is a crucial element of our modern life. It has become part of our life, and it would not be easy to live without it. This is because technology has dramatically advanced to the point that people can now work remotely and interact effortlessly using the internet. 
 <!--more-->
