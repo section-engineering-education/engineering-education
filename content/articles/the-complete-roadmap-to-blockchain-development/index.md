@@ -91,7 +91,7 @@ contract HelloWorld {
 
  In the public testnets and the mainnet, you would need to make use of a service called Infura. Infura is an API that runs ethereum clients for you since it is not easy to run clients on your own. In addition to that, the way you send transactions in Ganache is quite different compared to how transactions take place in public testnets and mainnet. The learning curve increases exponentially with practice.
 
- Finally, you need to test your smart contract appropriately before deploying it since as I mentioned earlier, the code is immutable. The testing is easily achieved using the truffle framework. 
+Finally, you need to test your smart contract appropriately before deploying it since as mentioned earlier, the code is immutable. The testing is easily achieved using the truffle framework. 
 
 Smart contracts cover a large part of blockchain development. However, it is not wise to learn smart contracts in isolation.
 
