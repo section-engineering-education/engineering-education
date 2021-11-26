@@ -4,7 +4,7 @@ Not so many people can explain what blockchain is, let alone how the technology 
 
 It is quite evident that blockchain technology will affect crucial aspects of our lives thus creating a myriad of opportunities for blockchain developers in the near future. This tutorial will give you a road map on how you can become a blockchain developer and prepare yourself for the future. As the adage says "Opportunity favors the prepared mind".
 
-In this fun-filled tutorial, you will learn how to create a smart contract on top of the ethereum blockchain. Oh no! what is a smart contract? what is an ethereum blockchain? I thought the blockchain was just one thing. Relax! you will get a definition of all the buzzwords and so much more. Somebody with no technical background can follow along with this tutorial, the implementation is what separates the chaff from the wheat Lol!.
+Somebody with no technical background can follow along with this tutorial, the implementation is what separates the chaff from the wheat.
 
 ### Blockchain development introduction
 A blockchain is a network of computers connected in some way and they collectively run what is called a blockchain client. The bitcoin blockchain,binance smart chain, and the ethereum blockchain are examples of blockchain clients. In blockchain development, we have two types of developers namely:-
