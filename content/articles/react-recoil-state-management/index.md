@@ -1,8 +1,8 @@
 ### Getting Started with Recoil as a State Management Library for React Applications
 
-Managing state in your web application is very important as it helps avoid making many API calls and reduces the passing of props between components. With a state management library, data flows from your app to state and vice versa and you can access the data from any component without passing it as props.
+Managing state in your web application is very important as it helps ensure that data displayed across different pages is consistent. React by default provides the `useState()` hook that we can use to store and modify the state the application. The disadvantage of this hook is that we have to pass the state from one component to another and as the project becomes bigger, passing too many props might become hectic. State management libraries solve this problem by creating a global store where each component can access the data it needs. With a state management library, data flows from your app to state and vice versa and you can access the data from any component without passing it as props.
 
-In this article, we will take a look at how we can manage state in our React applications using Recoil. Recoil is much easier to get started with compared to other state management libraries like Redux. We will create a Todo application that allows the user to add todos, mark them as complete, delete them, and filter between the completed and the uncompleted ones. 
+In this article, we will take a look at how we can manage state in our React applications using Recoil. We will create a Todo application that allows the user to add todos, mark them as complete, delete them, and filter between the completed and the uncompleted ones. 
 
 #### Pre-requisites
 The following are needed to be able to follow along:
