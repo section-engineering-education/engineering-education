@@ -11,15 +11,17 @@ Graphics can be shown in a variety of ways in browsers. To position and color no
 1. SVG(Scalable Vector Graphics)
 2. Canvas
 
- SVG is based on the DOM. Consider it as a markup tool that emphasizes shapes over text. You can use SVG by either directly embedding it in a HTML document or using a tag. THis article focuses on the canvas so we won't go further into SVG. Read more about it [here](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/svg) if you are interested in SVG. 
+ SVG is based on the DOM. Consider it as a markup tool that emphasizes shapes over text. You can use SVG by either directly embedding it in an HTML document or using a tag. This article focuses on the canvas, so we won't go further into SVG. Read more about it [here](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/svg) if you are interested in SVG. 
  
- The second option is the canvas. A canvas is a single DOM element that gives us a way to draw shapes on a node's space using it's provided drawing interface and methods. You can easily declare a canvas using the `<canvas>` tag as shown in the line below.
+ The second option is the canvas. A canvas is a single DOM element that gives us a way to draw shapes on a node's space using its provided drawing interface and methods. You can easily declare a canvas element using the `<canvas>` tag as shown in the line below.
 
  ```html
 <canvas width="200" height="200"></canvas>
  ```
 
-We can give it width and height attributes to determine its size in pixels. A newly created canvas is transparent and shows up as empty space in the DOM. To access the drawing interface, we create a context object which contains methods that provide the shapes. WE can use two drawing styles: `2d` for two-dimensional(2D) graphics and `webgl` for three-dimensional(3D) graphics through the OpenGL interface. We pass the style we are going to use in the context's `getContext()` method as a paarameter i.e:
+We can give it width and height attributes to determine its size in pixels. A newly created canvas is transparent and shows up as a space in the DOM. To access the drawing interface, we create a context object which contains methods that provide the shapes. 
+
+We can use two drawing styles: `2d` for two-dimensional(2D) graphics and `webgl` for three-dimensional(3D) graphics through the OpenGL interface. We pass the style we are going to use in the context's `getContext()` method as a parameter i.e:
 
 ```javascript
 let context = canvas.getContext("2d");
@@ -27,28 +29,29 @@ let context = canvas.getContext("2d");
 
 We are going to use `2d` for our article. For a detailed `webgl` guide, follow this [link](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API/Tutorial/Getting_started_with_WebGL).
 
-THe two canvas main 2D methods we will be using for our article are:
+The two main canvas 2D methods we will be using for our article are:
 1. `arc()` - For drawing the pie chart's arcs.
 2. `lineTo()` - For drawing a separator line between the pie's slices.
 
-Lastly, we will use JavaScript's array `reduce()`method. This will in handy when we will be processing the data to display in our chart. 
+Lastly, we will use JavaScript's array `reduce()` method. This will come in handy when we will be processing the data to display in our chart. 
 
 #### arc()
 A simple example to demonstrate the creation of  an arc is shown in this snippet:
+
 ```html
 <!DOCTYPE html>
 <html>
 <head>
-	<title>canvas test</title>
-	<style type="text/css">
-		        .container {
+    <title>canvas test</title>
+    <style type="text/css">
+                .container {
           width: 100%;
           height: 100vh;
           display: flex;
           justify-content: center;
           align-items: center;
         }
-	</style>
+    </style>
 </head>
 <body>
 <div class="container">
@@ -64,37 +67,40 @@ A simple example to demonstrate the creation of  an arc is shown in this snippet
 </script>
 </html>
 ```
-THis produces:
+
+This produces:
 
 ![pie-one](/engineering-education/javascript-canvas-piechart/pie-one.png)
 
-This is the `arc()'s` syntax:
+This is the `arc()` method's syntax:
 
 ```javascript
 void ctx.arc(center-x-coordinate,center-y-coordinate, arc-radius-length, startAngle, endAngle [, counterclockwise]);
 ```
-We pass in the center's x and y coordinates, the radius' length, the angle where the arc will start and where it will end. We then have an optional boolean value for the direction our arc will follow bewtween the two angles. It is counterclockwise by default(`true`). If `false`, it draws it in an clockwise manner.
+We pass in the center's x and y coordinates, the radius' length, and the angles where the arc will start and where it will end. We then have an optional boolean value for the direction our arc will follow between the two angles. It is counterclockwise by default(`true`). If `false`, it draws it in a clockwise manner.
 
-> NOTE: We use the radians method to denote our angles where `Math.PI(π)` is **180°**. It starts from 0°, in our case, in a counterclockwise manner. THat's why our 90°(`Math.PI(π)/2`) is located at the bottom.
+> NOTE: We use the radians method to denote our angles where `Math.PI(π)` is **180°**. It starts from 0°, in our case, in a counterclockwise manner that's why our 90°(`Math.PI(π)/2`) is located at the bottom.
 
-WE also stroked it to give it the black line. In our case for the pie chart, we will use the `fill()` method. We will look at that later.
+We also stroked it to give it the black line. In our case for the pie chart, we will use the `fill()` method. We will look at that later.
 
 #### lineTo()
-THis method is used to draw a straight line.It is used together with the `beginPath()` and `moveTo()` to create a line. `beginPath()` is used to start a new path while the `moveTo()` creates a point(a 'from' coordinate) which will be joined by the `lineTo()` method. Let's seee through an example:
+This method is used to draw a straight line. It is used together with the `beginPath()` and `moveTo()` to create a line. `beginPath()` is used to start a new path while the `moveTo()` creates a point(a 'from' coordinate) which will be joined by the `lineTo()` method. Let's see that through an example:
+
 ```javascript
 ctx.beginPath();
 ctx.moveTo(50,0);   
 ctx.lineTo(200, 0);
 ctx.stroke();
 ```
-The output is as shown here:
-![line](/engineering-education/javascript-canvas-piechart/pie-two.png)
 
 We start at `(50,0)` then end at `(200,0)`.
+The output is as shown below:
+
+![line](/engineering-education/javascript-canvas-piechart/pie-two.png)
 
 #### Array.prototype.reduce()
 
-THis method executes a user-defined callback function on each element of the array passed to it in order. The result of running this method across all elements of the array is a single value. LEt's demonstrate this through a multiplication example.
+This method executes a user-defined callback function on each element of the array passed to it in order. It returns a single value. Let's see this using a multiplication example.
 
 ```javascript
 const testArray = [5, 5, 9, 1];
@@ -103,10 +109,13 @@ const ourCallback = (prevElem, currElem) => prevElem * currElem;
 console.log(testArray.reduce(ourCallback));
 ```
 
-THe result will be **225**. As far as the `reduce()` function is related to this, we will be using only that functionality. More on the reduce() function is found [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce).
+The result will be **225**. 
 
-### Drwaing the pie
-This is where our article is based on. WE will start of by creating a `results` object where we will create our pie from.
+As far as the `reduce()` function is related to this, we will be using only that functionality. More on the reduce() function is found [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce).
+
+### Drawing the pie
+This is where our article is based on. We will start by creating a `results` object where we will create our pie from.
+
 ```javascript
 const results = [
     {mood: "Angry", count: 1499, color: "#0a9627"},
@@ -115,9 +124,9 @@ const results = [
     {mood: "Gloomy", count: 195, color: "#F73809"}
 ];
 ```
-It contains different moods of people, their total number, and the color representing the mood in descending order.
+It contains different moods of people, their total number, and the color representing the mood in descending order. (Let's assume it's from a surveying API 😃).
 
-To get the total number of people in the surver, we use the `reduce()` function as shown below:
+To get the total number of people who participated in the survey, we use the `reduce()` function as shown below:
 
 ```javascript
 let sum = 0;
@@ -129,16 +138,19 @@ Next, we draw the pie.
 ```javascript
 let currentAngle = 0;
 for (let moodValue of results) {
+    //calculating the angle the slice(portion) will take in the chart
     let portionAngle = (moodValue.count / totalNumberOfPeople) * 2 * Math.PI;
+    //drawing an arc and a line to the center to differentiate the slice from the rest
     ctx.beginPath();
     ctx.arc(100, 100, 100, currentAngle, currentAngle + portionAngle);
     currentAngle += portionAngle;
     ctx.lineTo(100, 100);
+    //filling the slices with the corresponding mood's color
     ctx.fillStyle = moodValue.color;
     ctx.fill();
 }
 ```
-WE have a `for/of` loop where we start by calculating the angle the slice(portion) will take in the chart using this formula:
+We have a `for/of` loop where we start by calculating the angle the slice(portion) will take in the chart using this formula:
 
 ```
 (total number of people containing a mood / total number of people) * 360°
@@ -146,7 +158,8 @@ WE have a `for/of` loop where we start by calculating the angle the slice(portio
 
 > We start from 0° to 360° in an anticlockwise fashion.
 
-We then draw an arc and a line to the center to differentiate the slice from the rest. We set the current angle to where angle the portion consumed. This will be used to set where the next slice will start from.
+We then draw an arc and a line to the center to differentiate the slice from the rest. We set the current angle to where angle the portion consumed. This will be used to set where the next slice will start.
+
 For the colors, we style the portion with the corresponding mood's color using the `fill()` method. Here, we don't use the `stroke()` method.
 
 The final output is shown below:
@@ -154,11 +167,10 @@ The final output is shown below:
 ![pie](/engineering-education/javascript-canvas-piechart/pie-three.png)
 
 ### Further practice
-To build on this more, you can create line charts, bar charts using the canvas. Note that you have to play with rotations because the canvas starts to draw fromm the top-left and not the bottom left. You can also add text to the slices.
+To build on this more, you can create line charts, bar charts, etc using the canvas. Note that you have to play with rotations because the canvas starts to draw from the top-left and not the bottom-left. You can also add text to the slices.
 
 ### Conclusion
 
-In a nutshell, we walked through the canvas briefly, looked at the canvas' methods we would use and the JavaScript's `reduce()` method. To wrap up everything, we quickly created the pie using a simple JavaScript code.
+In a nutshell, we walked through the canvas briefly, looked at the canvas' methods we would use and the JavaScript's `reduce()` method. Lastly, we quickly created the pie using a simple JavaScript code.
 
 Happy coding!
-
