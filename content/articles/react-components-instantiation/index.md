@@ -1,7 +1,7 @@
 ### React Components  Instantiation
 
 React Component is a small, reusable bite of code which is responsible  for   rendering HTML. In React we can define components as a class or a function.
-For a React component to be defined ,we should first create a component and then extend `React.component class`. For example in order to create a `Classroom` component. The `Classroom` class should have the classroom details. 
+For a React component to be defined ,we should first create a component and then extend `React.component class`. For example in order to create a `Classroom` component. The `Classroom` component should have the classroom details. 
 
 In this article I will be covering two types  which are functional components and class components. Throughout this tutorial we will be mostly talking about JSX. JSX element can be written in HTML format or it may be written as a component instance.In JSX you use capitalization to differentiate between HTML like and component instance .
 
