@@ -13,7 +13,7 @@ images:
   - url: /engineering-education/basics-of-convolution-neural-networks/hero.jpg
     alt: convolution neural networks learning image
 ---
-This article assumes a basic understanding of Machine Learning (ML) and Deep Learning (DL). For an introduction to ML and DL, feel free to check out my previous [article](/differences-between-artificial-intelligence-machine-learning-and-deep-learning/).
+This article assumes a basic understanding of Machine Learning (ML) and Deep Learning (DL). For an introduction to ML and DL, feel free to check out my previous [article](/engineering-education/differences-between-artificial-intelligence-machine-learning-and-deep-learning/).
 <!--more-->
 ### Prerequisites
 ### Introduction
@@ -164,7 +164,7 @@ Stride refers to the number of pixels a convolution filter moves. It can be comp
 
 ### Applications of Convolution Neural Networks
 #### Computer Vision
-Image classification is a very common problem in [computer vision](/computer-vision-straight-lines/). The goal in image classification is to learn features directly from image data. We then use these learned features for classification. For instance, feeding an image of a cat as our input, the network should classify the image as a cat.
+Image classification is a very common problem in [computer vision](/engineering-education/computer-vision-straight-lines/). The goal in image classification is to learn features directly from image data. We then use these learned features for classification. For instance, feeding an image of a cat as our input, the network should classify the image as a cat.
 
 Recently, CNN have been used for image captioning. Here, the goal is to generate a sentence that describes the semantic content in an image. It’s achieved by combining CNN with a [Recurrent Neural Network](https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-recurrent-neural-networks/)(RNN). In the last layer in the CNN architecture, instead of a fully connected (FC) layer, it replaces the last layer of the CNN with an RNN.    
 

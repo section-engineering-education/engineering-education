@@ -7,7 +7,7 @@ title: Introduction to Machine Learning using C++
 description: This article takes the reader through implementing machine learning algorithms using c++. The algorithms will be implemented from scratch to better understand them.
 author: eugiene-kanillar
 date: 2021-05-06T00:00:00-10:30
-topics: [Languages]
+topics: [Machine Learning, Languages]
 excerpt_separator: <!--more-->
 images:
 

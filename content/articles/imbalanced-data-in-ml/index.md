@@ -7,7 +7,7 @@ title: Handling Imbalanced Datasets in Machine Learning
 description: This article will be going over techniques used to handle imbalanced dataset in machine learning algorithms.
 author: collins-ayuya
 date: 2020-12-03T00:00:00-12:00
-topics: []
+topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
 
@@ -28,7 +28,7 @@ Data powers machine learning algorithms. It's important to have balanced dataset
 3. Techniques to handle imbalanced data.
 
 ### Prerequisites
-One only needs to understand general machine learning concepts. They can be found in this [article](/supervised-learning-algorithms/).
+One only needs to understand general machine learning concepts. They can be found in this [article](/engineering-education/supervised-learning-algorithms/).
 
 ### Why is imbalance an issue?
 Data fuels machine learning algorithms. In the absence of a good quality dataset, even the best of algorithms struggles to produce good results. An imbalanced dataset is defined by great differences in the distribution of the classes in the dataset.

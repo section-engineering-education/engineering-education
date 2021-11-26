@@ -18,14 +18,14 @@ A tuple is an ordered collection of items. An ordered collection keeps the items
 Tuples are like lists but vary in the following aspects: They are immutable, (we cannot change them) unlike lists which are mutable (we can change them). Let us learn more about tuples and their related methods. We’ll also learn to effectively use them in Python.
 
 For more background on the different data structures in Python, check out the following articles:
-- [Introduction to Data Structures](/data-structures-python-part-1/)
-- [List](/list-data-structure-python/)
-- [Stack](/stack-data-structure-python/)
-- [Queue](/queue-data-structure-python/)
-- [Linked Lists](/linked-list-data-structure-python/)
-- [Binary Trees](/binary-tree-data-structure-python/)
-- [Heaps](/heap-data-structure-python/)
-- [Graphs](/graph-data-structure-python/)
+- [Introduction to Data Structures](/engineering-education/data-structures-python-part-1/)
+- [List](/engineering-education/list-data-structure-python/)
+- [Stack](/engineering-education/stack-data-structure-python/)
+- [Queue](/engineering-education/queue-data-structure-python/)
+- [Linked Lists](/engineering-education/linked-list-data-structure-python/)
+- [Binary Trees](/engineering-education/binary-tree-data-structure-python/)
+- [Heaps](/engineering-education/heap-data-structure-python/)
+- [Graphs](/engineering-education/graph-data-structure-python/)
 
 *Note: Prerequisites -- Make sure you have basic Python knowledge before diving into this article. It also might be a good idea to check out some linear data structures. (links are given above)*
 

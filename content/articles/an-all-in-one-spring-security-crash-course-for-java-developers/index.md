@@ -23,68 +23,68 @@ In this guide, we will assume that you have some experience with Spring Boot. Th
 The main features we will cover are different tactics for authentication and authorization. Authorization is the process of verifying the user to do what they are asking to do. Authentication is the process of verifying who it is that is sending a request. The three authentication strategies we will go over are HTTP basic, JWT, and OAuth.
 
 ### HTTP basic authentication
-With HTTP basic authentication, each secured request requires an Authorization header. Each request sent to your controllers has headers. These are a bunch of key-value pairs that give extra information about the request. When I say *Authorization header*, this means the *key* of the header is the string *Authorization*. 
+With HTTP basic authentication, each secured request requires an Authorization header. Each request sent to your controllers has headers. These are a bunch of key-value pairs that give extra information about the request. When I say *Authorization header*, this means the *key* of the header is the string *Authorization*.
 
-With HTTP Basic Authentication, the value must be in this format: `Basic <Credentials>`. The credentials, in this case, is the username and password joined by a colon and base 64 encoded. While simple, this strategy comes with some concerns. 
+With HTTP Basic Authentication, the value must be in this format: `Basic <Credentials>`. The credentials, in this case, is the username and password joined by a colon and base 64 encoded. While simple, this strategy comes with some concerns.
 
-Base 64 encoding is easily reversible and thus practically unprotected. Although we can compensate with an HTTPS connection, it is still not ideal to have credentials attached to every request. The browser can sometimes send the Authorization header automatically if you have an active session. 
+Base 64 encoding is easily reversible and thus practically unprotected. Although we can compensate with an HTTPS connection, it is still not ideal to have credentials attached to every request. The browser can sometimes send the Authorization header automatically if you have an active session.
 
 This can make your clients vulnerable to a CSRF (cross-site request forgery) attack. These are attacks where another web server can send a request while your client has an active session. With JWT authentication, however, we can avoid this issue completely.
 
 ### JWT authentication
-JWT authentication is a fairly new technology but is increasingly becoming popular. It is a way to allow stateless authentication across your application. What this means is that you no longer have to store user information in a session to authenticate each request. Instead, we send this information with each request along with any data we want. 
+JWT authentication is a fairly new technology but is increasingly becoming popular. It is a way to allow stateless authentication across your application. What this means is that you no longer have to store user information in a session to authenticate each request. Instead, we send this information with each request along with any data we want.
 
-How this works is that when the client logs in, the server gives them a JSON Web Token (JWT). Afterward, the client has to put that token in the Authorization header of each request after the word *Bearer* and space. The token has three different parts, the header, the payload, and the signature. The header is a JSON String with metadata about the token. 
+How this works is that when the client logs in, the server gives them a JSON Web Token (JWT). Afterward, the client has to put that token in the Authorization header of each request after the word *Bearer* and space. The token has three different parts, the header, the payload, and the signature. The header is a JSON String with metadata about the token.
 
-The payload is also a JSON String but instead contains information for the request. The fields in the payload are known as claims. The payload must contain a claim known as the subject but you can also put any claims you need. This subject claim is simply an identifier for the user that sent the request. Both the header and payload are base 64 encoded but as mentioned earlier, anyone can easily decode them. Thus, you must not put any sensitive information in the payload. 
+The payload is also a JSON String but instead contains information for the request. The fields in the payload are known as claims. The payload must contain a claim known as the subject but you can also put any claims you need. This subject claim is simply an identifier for the user that sent the request. Both the header and payload are base 64 encoded but as mentioned earlier, anyone can easily decode them. Thus, you must not put any sensitive information in the payload.
 
-What makes JWT secure is the signature. The signature is the header and the payload encrypted with a secret key known as the secret. The secret makes it so that anyone who doesn’t know the key can not decrypt the signature. If someone modifies the header or payload, the server can decode the signature and see that it was tempered with. 
+What makes JWT secure is the signature. The signature is the header and the payload encrypted with a secret key known as the secret. The secret makes it so that anyone who doesn’t know the key can not decrypt the signature. If someone modifies the header or payload, the server can decode the signature and see that it was tempered with.
 
 This also ensures that nobody can just make their own token to try to cheat the system. The Authorization header is also not automatically added to each request by the browser. As mentioned earlier, the browser automatically adding the header creates a vulnerability to CRSF. This way, we avoid the issue of CSRF altogether.
 
 ### OAuth
-With OAuth, authentication is instead handled by a trusted third-party. This is when a website asks you to login using let's say your Google account instead of an account for that website. This may particularly be useful if your application uses services from Google that needs the user's Google account. 
+With OAuth, authentication is instead handled by a trusted third-party. This is when a website asks you to login using let's say your Google account instead of an account for that website. This may particularly be useful if your application uses services from Google that needs the user's Google account.
 
 **Note:** you could combine the use of OAuth and JWT authentication. The third-party could handle all the accounts for you and the initial login. Then after that initial login, we can give a JWT token to authenticate the further requests without using sessions. We won't be covering that strategy in this guide.
 
 ### Implementing security with HTTP basic authentication
-Now that we covered what these authentication methods are, let’s start implementing them. What we are going to do is set up a Spring Boot application to have a database of users with encoded passwords. Then, we are going to configure HTTP basic authentication for every request. 
+Now that we covered what these authentication methods are, let’s start implementing them. What we are going to do is set up a Spring Boot application to have a database of users with encoded passwords. Then, we are going to configure HTTP basic authentication for every request.
 
 In our example, we will secure the following endpoints:
 
 ```java
     @Autowired
     private UserService userService;
-    
+
     @PostMapping("/api/auth/signup")
     public ResponseEntity<Void> signUp(@RequestBody UserDto userDto){
-    
+
        userService.saveUser(userDto);
        return ResponseEntity.noContent().build();
-    
+
     }
-    
+
     @GetMapping("/api/hello-world")
     public String helloWorld(){
-    
+
        return "Hello World";
-    
+
     }
-    
-    
+
+
     @GetMapping("/api/secret-admin-business")
     public Integer getMeaningOfLife(){
-    
+
        return 42;
-    
+
     }
 ```
 
 We would want our signup endpoint to be completely public with no authentication. Meanwhile, the hello world endpoint should be accessible by any authenticated user. Lastly, `/api/secret-admin-business` should only be accessible by admins.
 
-First, we create a new Spring Boot app from the Spring initializer. We are going to need the Spring starter security dependency, Spring web dependency, and the dependency for the database of your choice. 
+First, we create a new Spring Boot app from the Spring initializer. We are going to need the Spring starter security dependency, Spring web dependency, and the dependency for the database of your choice.
 
-To focus on the security aspect of things, I’m going to only briefly describe the data access layer. I will leave out the database configuration as well. 
+To focus on the security aspect of things, I’m going to only briefly describe the data access layer. I will leave out the database configuration as well.
 
 Here we will work with the following User entity that we will store in the database:
 
@@ -129,9 +129,9 @@ public class User {
 
 We will use the authority field to allow only admins to access the `/api/secret-admin-business` endpoint. We’ll also have corresponding DTO, `JpaRespository`, and `UserService` classes for this entity. The JpaRespository will have a single `findUserByUsername` method defined. Meanwhile, the `UserService` class will have a single `saveUser method`. This will convert a DTO into a User object and save it.
 
-Next, we need to implement the `UserDetailsService` interface. Spring will use this class to access our users for authentication. You will notice we have to implement one method, `loadUserByUsername`. 
+Next, we need to implement the `UserDetailsService` interface. Spring will use this class to access our users for authentication. You will notice we have to implement one method, `loadUserByUsername`.
 
-This method returns a `UserDetails` object and throws a `UsernameNotFoundException`. `UserDetails` however is an interface and we do not yet have an implementation. This interface will serve as a wrapper for our `User` object. We will use it to give extra information Spring security needs about our users. 
+This method returns a `UserDetails` object and throws a `UsernameNotFoundException`. `UserDetails` however is an interface and we do not yet have an implementation. This interface will serve as a wrapper for our `User` object. We will use it to give extra information Spring security needs about our users.
 
 Let’s first create the following implementation of `UserDetails`:
 
@@ -234,7 +234,7 @@ public class AppUserDetailsService implements UserDetailsService {
 }
 ```
 
-After that, we need to create a class to start configuring security. First, we need to create a subclass of the `WebSecurityConfigurerAdapter` class. That superclass has methods we can override to configure security, Then we have to add the `@Configuration` and `@EnableWebSecurity` annotations to that class. 
+After that, we need to create a class to start configuring security. First, we need to create a subclass of the `WebSecurityConfigurerAdapter` class. That superclass has methods we can override to configure security, Then we have to add the `@Configuration` and `@EnableWebSecurity` annotations to that class.
 
 Finally, we add the following:
 
@@ -276,14 +276,14 @@ public PasswordEncoder getPasswordEncoder(){
 }
 ```
 
-In the first method, we restrict the `/api/secret-admin-business` endpoint to be called only by users who are admins. For Spring to consider the user an admin, their authority field must be the String “ROLE_ADMIN”. The `hasAnyRole` method adds the “ROLE_” prefix to the string we pass as the role. Then we specify that each request requires HTTP basic authentication. 
+In the first method, we restrict the `/api/secret-admin-business` endpoint to be called only by users who are admins. For Spring to consider the user an admin, their authority field must be the String “ROLE_ADMIN”. The `hasAnyRole` method adds the “ROLE_” prefix to the string we pass as the role. Then we specify that each request requires HTTP basic authentication.
 
 We also disable CSRF security for simplicity. In the next method, we make Spring security ignore the signup endpoint. This way, this endpoint will not need authentication as we discussed earlier. Notice that we also configured the use of a password encoder and created a bean for it. We have to make sure that before we save DTOs we first encode the password with the password encoder’s `encode` method.
 
 Just like that, we have configured simple HTTP basic authentication. Not only that but our app has some role-based authorization too. Although role-based authorization isn't the only authorization method that Spring provides. Spring security also allows authorization on a method-level using annotations.
 
 ### Simple method-level authorization
-As an impractical example, say we gave the `User` objects a new field called `secret`. This contains sensitive information only the owner of the secret should access. Then suppose we had an endpoint `/api/user/{username}/secret` which we can send a GET request to retrieve a user’s secret. 
+As an impractical example, say we gave the `User` objects a new field called `secret`. This contains sensitive information only the owner of the secret should access. Then suppose we had an endpoint `/api/user/{username}/secret` which we can send a GET request to retrieve a user’s secret.
 
 The corresponding controller would call the following method from the `UserService` class:
 
@@ -308,12 +308,12 @@ import org.springframework.security.config.annotation.method.configuration.Globa
 @Configuration
 @EnableGlobalMethodSecurity(
   prePostEnabled = true)
-public class MethodSecurityConfig 
+public class MethodSecurityConfig
   extends GlobalMethodSecurityConfiguration {
 }
 ```
 
-Notice how we set the `prePostEnabled` property to true. This allows us to use the `@PreAuthorize` and `@PostAuthorize` annotations. Adding these annotations to a method allows us to check the application uses it as intended. 
+Notice how we set the `prePostEnabled` property to true. This allows us to use the `@PreAuthorize` and `@PostAuthorize` annotations. Adding these annotations to a method allows us to check the application uses it as intended.
 
 In our case, we would add the annotation to our `getSecret` method as follows:
 
@@ -324,7 +324,7 @@ In our case, we would add the annotation to our `getSecret` method as follows:
 As the annotation’s value suggests, it ensures that the username passed is that of the logged-in user.
 
 ### Implementing JWT
-Now let's try and see how to upgrade our application to use JWT based authentication. Unfortunately, configuring JWT gets more involved than setting up HTTP basic authentication. I have created as straightforward of an implementation as I could so you can follow along. 
+Now let's try and see how to upgrade our application to use JWT based authentication. Unfortunately, configuring JWT gets more involved than setting up HTTP basic authentication. I have created as straightforward of an implementation as I could so you can follow along.
 
 We start by adding the following dependency:
 
@@ -334,6 +334,57 @@ We start by adding the following dependency:
    <artifactId>java-jwt</artifactId>
    <version>3.10.3</version>
 </dependency>
+```
+
+Next, we need to create an implementation of the `AuthenticationManager` interface to inject into our beans. This service will have a single method that will take an `Authentication` object. This object contains `principal` and `credentials` fields that we need to verify. For our use case, we will use them to represent a username and password respectively. However, since they are both of type `Object` you may have them be whatever you want. Here is our implementation:
+
+```java
+package me.john.amiscaray.springsecuritydemo.services;
+
+import me.john.amiscaray.springsecuritydemo.data.UserRepo;
+import me.john.amiscaray.springsecuritydemo.entities.User;
+import me.john.amiscaray.springsecuritydemo.exception.AuthenticationExceptionImpl;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.AuthenticationException;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
+
+@Service
+public class AuthenticationManagerImpl implements AuthenticationManager {
+
+    private final UserRepo userRepo;
+    private final PasswordEncoder passwordEncoder;
+
+    public AuthenticationManagerImpl(UserRepo userRepo, PasswordEncoder passwordEncoder) {
+        this.userRepo = userRepo;
+        this.passwordEncoder = passwordEncoder;
+    }
+
+    @Override
+    public Authentication authenticate(Authentication authentication) throws AuthenticationException {
+
+        /*
+         We will have the principal and credentials fields be used as usernames and passwords respectively, so we
+         need to assert that they are indeed Strings. This will throw an Exception if that is not true.
+         */
+        assert (authentication.getPrincipal() instanceof String && authentication.getCredentials() instanceof String);
+
+        User user = userRepo.findUserByUsername((String) authentication.getPrincipal()).orElseThrow();
+
+        if(passwordEncoder.matches((String) authentication.getCredentials(), user.getPassword())){
+
+            return authentication;
+
+        }
+
+        /*
+         AuthenticationExceptionImpl is a simple class I defined which extends AuthenticationException (an abstract class).
+         */
+        throw new AuthenticationExceptionImpl("Could not verify user");
+
+    }
+}
 ```
 
 Then, we create the following service class:
@@ -417,7 +468,7 @@ public class JWTAuthService {
 }
 ```
 
-The `getJWT` method tries to find the user with the username found in the DTO. Then it tries to authenticate the user using the given credentials and the authorities stored in the `UserDetails`. If the authentication was successful, we create the JWT token. We set the subject as their username and an expiration date of 10 hours from the current time. 
+The `getJWT` method tries to find the user with the username found in the DTO. Then it tries to authenticate the user using the given credentials and the authorities stored in the `UserDetails`. If the authentication was successful, we create the JWT token. We set the subject as their username and an expiration date of 10 hours from the current time.
 
 Then we sign it with a particular encryption algorithm and our secret. In the `verify` method we decode the given JWT token using our secret, verify it and retrieve the subject which would be the user. We then retrieve the `UserDetails` of the user. Using the `UserDetails` we created and return a `UsernamePasswordAuthenticationToken` object. We will use this object to tell Spring who it is that sent the request.
 
@@ -432,7 +483,7 @@ public String JWTLogin(@RequestBody UserDto userDto){
 }
 ```
 
-Finally, we need to add a filter to verify the JWT tokens sent with every request. In case you don’t know, filters are a class used to intercept requests. 
+Finally, we need to add a filter to verify the JWT tokens sent with every request. In case you don’t know, filters are a class used to intercept requests.
 
 They are the foundation of what makes Spring security work behind the scenes:
 
@@ -483,32 +534,38 @@ public class JWTFilter extends BasicAuthenticationFilter {
 }
 ```
 
-Finally, we need to update our security configuration to add this filter. Then we need to remove HTTP basic and make sure not to check for a JWT token when sending a login request:
+Now that we have that filter, we need to update our security configuration to apply it. Then we need to remove HTTP basic and make sure not to check for a JWT token when sending a login or sign up request:
 
 ```java
+    @Autowired
+    private AuthenticationManager authenticationManager;
+
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-    
+
         http.csrf().disable()
                 .authorizeRequests()
                 .antMatchers("/api/secret-admin-business").hasAnyRole("ADMIN")
                 .anyRequest().authenticated()
                 .and()
-                .addFilter(new JWTFilter(authenticationManager(), authService))
+                .addFilter(new JWTFilter(authenticationManager, authService))
                 // Remove sessions since we are now using JWT
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-    
+
     }
-    
+
     @Override
     public void configure(WebSecurity web) throws Exception {
-    
+
         web.ignoring()
             .antMatchers("/api/auth/signup")
             .antMatchers("/api/auth/login");
-    
+
     }
 ```
+
+> Please Note: AuthenticationManager requires the password encoder, and the SecurityConfig requires the AuthenticationManager. Because the SecurityConfig contains the PasswordEncoder bean, a circular dependency issue may arise. To fix this, you'll need to declare the PasswordEncoder bean in another class for this setup.
+
 ### Implementing OAuth
 Now let’s have a look at how we can use OAuth as our authentication strategy. As our authentication provider, we will be using GitHub. For simplicity let’s start from scratch with a new Spring Boot project. This project will use the Spring Security, OAuth2 client, and Spring web dependencies. So we have something to see as our homepage, we will add the following controller:
 
@@ -526,15 +583,15 @@ public class HomeController {
 }
 ```
 
-Then, go to GitHub, click settings, developer settings, OAuth apps, and register a new application. 
+Then, go to GitHub, click settings, developer settings, OAuth apps, and register a new application.
 
 Then add the following properties:
 
 ![OAuth With Github Config](/engineering-education/an-all-in-one-spring-security-crash-course-for-java-developers/oauth-with-github-config.png)
 
-The Authorization callback URL, is the URL we will send to the user when authenticated. After registering the application, Github will give a `client ID` and the option to generate a `client secret`. We will need to add these to our spring project’s properties. 
+The Authorization callback URL, is the URL we will send to the user when authenticated. After registering the application, Github will give a `client ID` and the option to generate a `client secret`. We will need to add these to our spring project’s properties.
 
-For simplicity, we will be setting the properties as a YAML file instead of the usual properties file. You would simply rename the `application.properties` file to `application.yml`. 
+For simplicity, we will be setting the properties as a YAML file instead of the usual properties file. You would simply rename the `application.properties` file to `application.yml`.
 
 Then add the following configuration:
 
@@ -555,7 +612,7 @@ Then, when you run the app and go to the homepage you should see the following:
 ![OAuth With Github Page](/engineering-education/an-all-in-one-spring-security-crash-course-for-java-developers/oauth-with-github-page.png)
 
 ### Conclusion
-In this guide, we went through how to use many of the key Spring security features. Although we went through rather quickly, hopefully, this guide has given you a good idea on how to secure your Spring Boot applications. As a next step, I would suggest trying to use this knowledge to secure an existing application you have. 
+In this guide, we went through how to use many of the key Spring security features. Although we went through rather quickly, hopefully, this guide has given you a good idea on how to secure your Spring Boot applications. As a next step, I would suggest trying to use this knowledge to secure an existing application you have.
 
 I would also recommend you try to add claims to the JWT token and try to parse them in a request. You can also try to combine OAuth and JWT as mentioned earlier. As a final note, you can find the final code for this guide [here](https://github.com/john-amiscaray/Spring-Security-Crash-Course).
 
