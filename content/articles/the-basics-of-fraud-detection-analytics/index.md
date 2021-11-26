@@ -1,4 +1,4 @@
-Technology advancements have come with the risk of internet-related fraud. Fraud in organizations has led to the loss of revenue, which has led to the increased demand for fraud detection analytics. Fraud detection analytics enable organizations to detect fraudulent activities early enough to prevent the further occurrence or reduce the associated loss. 
+Technology advancements have come with the risk of internet-related fraud. Fraud in organizations has led to the loss of revenue, which has increased the demand for fraud detection analytics. Fraud detection analytics enable organizations to detect fraudulent activities early enough to prevent further occurrence of such activities or reduce the associated loss. 
 
 This article will provide an overview of fraud detection analytics and explain why it is important in the tech industry. It will also take you through the fraud analytics methods and give you some tips for building a reliable fraud detection solution. 
 
@@ -7,10 +7,10 @@ Understanding the concept of fraud detection analytics requires knowledge of the
 
 Fraud detection is the process of identifying this form of deceptive action. It can be done before fraud occurs, during the process of fraud, or after the fraud has taken place. Fraud detection analytics refers to a combination of techniques of fraud detection and data analytics that are employed to detect and prevent the occurrence of fraud. Some of the data analytics techniques that are used in fraud detection include data mining, clustering analysis, data pre-processing, and data matching. 
 
-Fraud detection analysis relies on the use of data to identify the occurrence of fraud. For example, data pre-processing enhances the detection of missing data in a dataset. Missing data may show that there is a possibility of fraud. Data matching enhances the comparison of two datasets to detect an abnormality. If there are significant differences, then analysts can conduct further investigations to detect fraud. Data mining allows the security team to cluster and segment data to identify whether the dataset shows patterns that correspond to fraud. 
+Fraud detection analysis relies on data to identify the occurrence of fraud. For example, data pre-processing enhances the detection of missing data in a dataset. Missing data may show that there is a possibility of fraud. Data matching enhances the comparison of two datasets to detect an abnormality. If there are significant differences, then analysts can conduct further investigations to detect fraud. Data mining allows the security team to cluster and segment data to identify whether the dataset shows patterns that correspond to fraud. 
 
 ### Why fraud detection analytics?
-The following explains why fraud detection analytics is important in organizations:
+The following are the reasons why fraud detection analytics is important in organizations:
 - **Reduced fraud exposure:** With fraud detection analytics, the system seals any loopholes for conducting fraudulent activities. Fraudsters have limited opportunities for conducting fraud, which reduces fraud exposure. 
 - **Reliable fraud detection:** Fraud detection analytics offers a reliable way of detecting fraudulent activity even before damage has been caused. This is in the case of early-detection systems. These systems can identify any attempt to undertake a fraudulent activity. This enhances control and security in the organization. 
 - **Increased customer trust:** Fraud detection analytics ensures that the system of the organization is safe. When customers experience little or no security issues, they develop trust. Increased customer trust contributes towards customer loyalty, which is important for an organization’s growth. 
