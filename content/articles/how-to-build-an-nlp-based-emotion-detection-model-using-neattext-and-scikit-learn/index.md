@@ -20,8 +20,14 @@ One of the NLP applications is emotion detection in text. The emotion detection 
 
 In this tutorial, we will use Neattext and Scikit-learn in building our model.  Neattext is a Python library that is used to pre-process our dataset. Neattext will clean the text dataset by removing stop words and other noise. This makes it easy for the model to use the dataset during training. We'll use Scikit-learn in building our model. It contains all the algorithms required for classification. This is a practical guide from data preprocessing to model building and testing.
 
+### Prerequisites
+- You must know [Python](/engineering-education/python-projects-for-beginners/) programming.
+- You must know how to build [machine learning models.](/engineering-education/house-price-prediction/).
+- You must know how to work with [Pandas](https://numpy.org/) and [Numpy.](https://numpy.org/).
+- Have some knowledge of [natural language processing.](/engineering-education/how-to-create-nlp-application-with-flair/)V
+> NOTE: In this tutorial, we will use [Google Colab](https://research.google.com/) to build our model.
+
 ### Table of contents
-- [Prerequisites](#prerequisites)
 - [Exploring our dataset](#exploring-our-dataset)
 - [Loading dataset](#loading-dataset)
 - [Getting started with Neattext](#getting-started-with-neattext)
@@ -35,29 +41,22 @@ In this tutorial, we will use Neattext and Scikit-learn in building our model.  
 - [Conclusion](#conclusion)
 - [Reference](#references)
 
-### Prerequisites
-- You must know [Python](/engineering-education/python-projects-for-beginners/) programming.
-- You must know how to build [machine learning models.](/engineering-education/house-price-prediction/).
-- You must know how to work with [Pandas](https://numpy.org/) and [Numpy.](https://numpy.org/).
-- Have some knowledge of [natural language processing.](/engineering-education/how-to-create-nlp-application-with-flair/)V
-> NOTE: In this tutorial, we will use [Google Colab](https://research.google.com/) to build our model.
-
 ### Exploring our dataset
-In this tutorial, we will use a dataset that contains various texts with different emotion labels. The dataset has a total of eight emotion labels as follows. Joy, sadness, fear, anger, surprise, neutral, disgust, and shame.
+In this tutorial, we will use a dataset that contains various texts with different emotion labels. The dataset has a total of eight emotion labels as follows: Joy, sadness, fear, anger, surprise, neutral, disgust, and shame.
 
 The dataset will be used during the training phase. The trained model will then be used to classify a given text into the emotion labels.
 
-The snip of the dataset is shown below.
+The snip of the dataset is shown below:
 
 ![Dataset snip](/engineering-education/how-to-build-an-nlp-based-emotion-detection-model-using-neattext-and-scikit-learn/dataset-snip.png)
 
-To get this dataset in CSV format, click [here.](https://drive.google.com/file/d/1tamvXZzgcYcHRr3GwFk8C4LVVaWHMqt0/view?usp=sharing)
+To get this dataset in CSV format, click [here](https://drive.google.com/file/d/1tamvXZzgcYcHRr3GwFk8C4LVVaWHMqt0/view?usp=sharing).
 
 Let's now load this dataset into our Google Colab notebook.
 
 #### Loading exploratory data analysis packages
 We import two exploratory data analysis packages, pandas and Numpy. We will use pandas to read our CSV file and load it into our Google Colab notebook. 
-Numpy is used to perform mathematical computations in our dataset. It also works with arrays.
+Numpy works with arrays and is used to perform mathematical computations in our dataset.
 
 ```python
 import pandas as pd
@@ -66,12 +65,12 @@ import numpy as np
 Let's use `pandas` to load our dataset.
 
 ### Loading dataset
-Use the following command to load the dataset.
+Use the following command to load the dataset:
 
 ```python
 df = pd.read_csv("emotion-dataset.csv")
 ```
-To see how the dataset is structured use this command.
+To see how the dataset is structured use this command:
 
 ```python
 df.head()
@@ -80,7 +79,7 @@ The output is shown below.
 
 ![Dataset structure](/engineering-education/how-to-build-an-nlp-based-emotion-detection-model-using-neattext-and-scikit-learn/dataset-structure.png)
 
-From the image above we can see that our dataset has two columns: `Emotion` and `Text`. The emotion column represents the various emotion labels. The text shows all the texts in our dataset.
+From the image above, we can see that our dataset has two columns: `Emotion` and `Text`. The emotion column represents the various emotion labels. The text column shows all the texts in our dataset.
 
 Let's now show the value count for each emotion. This will give the total number of texts for each emotion label.
 
@@ -96,7 +95,7 @@ Let's now start cleaning our dataset using Neattext.
 ### Getting started with Neattext
 As mentioned earlier, Neattext is a Python library that is used to pre-process our dataset. Neattext will clean the text dataset by removing stop words and other noise.
 
-To install Neattext, run this command.
+To install Neattext, run this command:
 
 ```python
 !pip install neattext
@@ -111,7 +110,7 @@ To use `neattext`, let's list all the methods and attributes used by `neattext` 
 ```python
 dir(nfx)
 ```
-The output for the methods and attributes is shown below.
+The output for the methods and attributes is shown below:
 
 ![Methods and attributes](/engineering-education/how-to-build-an-nlp-based-emotion-detection-model-using-neattext-and-scikit-learn/methods-attributes.png)
 
@@ -123,29 +122,29 @@ The dataset contains some Twitter handles of different users. This is noise to o
 ```python
 df['Clean_Text'] = df['Text'].apply(nfx.remove_userhandles)
 ```
-We use `apply()` to add `remove_userhandles`. We save the cleaned dataset into a new column named `Clean_Text`.
+We use `apply()` method to add `remove_userhandles`. We save the cleaned dataset into a new column named `Clean_Text`.
 
 #### Removing stopwords
-Stopwords is a list of all the commonly used words in any language. The words being common they have little classification power. These words may lead to model bias during training.
-Common stopwords are like articles of a given language.  In the English language they include: `the`, `is`, `and` and `are`.
+Stopwords is a list of all the commonly used words in any language. The words being common they have little classification power. These words may lead to model bias during training. Common stopwords are like articles of a given language. In the English language they include: `the`, `is`, `and` and `are`.
 
 ```python
 df['Clean_Text'] = df['Clean_Text'].apply(nfx.remove_stopwords)
 ```
 In this section, we also use `apply()` to add `remove_stopwords`. We save the cleaned dataset into a new column named `Clean_Text`.
 
-To get the output of the clean dataset, run this command.
+To get the output of the clean dataset, run this command:
 
 ```python
 df
 ```
-The output of the dataset after removing user handles and stopwords is shown below.
+The output of the dataset after removing user handles and stopwords is shown below:
 
 ![Clean dataset](/engineering-education/how-to-build-an-nlp-based-emotion-detection-model-using-neattext-and-scikit-learn/clean-dataset.png)
 
 Now that we cleaned our dataset, let's load our machine learning packages.
 
 ### Importing machine learning packages
+
 ```python
 from sklearn.linear_model import LogisticRegression
 from sklearn.feature_extraction.text import CountVectorizer
@@ -180,17 +179,16 @@ Xfeatures = df['Clean_Text']
 ylabels = df['Emotion']
 ```
 ### Dataset splitting
-We need to split our dataset into a train set and test set. The model will learn from the train set. The test set will be used to evaluate the model performance. It also measured the model's knowledge capability.
+We need to split our dataset into a train set and test set. The model will learn from the train set. The test set will be used to evaluate the model performance. It also measures the model's knowledge capability.
 
-We specify the `test_size=0.3`, this will spit our dataset as follows. `70%` of data will be used for training and `30%` for testing.
+We specify the `test_size=0.3`, this will spit our dataset as follows: `70%` of data will be used for training and `30%` for testing.
 
-To make the process of our model faster and automated, we will use a machine learning pipeline. Machine learning pipelines automate the machine learning workflows such as model fitting and training.  Doing so saves the developers time and reduces model errors.
-Machine learning pipeline is a new approach adopted by many developers. It produces quality models which are free from bugs.
+To make the process of our model faster and automated, we will use a machine learning pipeline. Machine learning pipelines automate the machine learning workflows such as model fitting and training, doing so, saves the developers time and reduces model errors. Machine learning pipeline is a new approach adopted by many developers. It produces quality models which are free from bugs.
 
 To use this pipeline approach, we need to import the `Pipeline` package.
 
 ### Pipeline approach
-Let's import the `Pipeline` using the following code.
+Let's import `Pipeline` using the following code:
 
 ```python
 from sklearn.pipeline import Pipeline
@@ -201,7 +199,7 @@ The first stage is the `CountVectorizer` process. This stage is used to convert 
 
 The second stage is the model training process using the `LogisticRegression` algorithm. In this stage, the model learns from the dataset. During training, it understands patterns. It gains knowledge and uses the knowledge to make predictions.
 
-Let's initialize the two stages.
+Let's initialize these two stages:
 
 ```python
 pipe_lr = Pipeline(steps=[('cv',CountVectorizer()),('lr',LogisticRegression())])
@@ -209,12 +207,12 @@ pipe_lr = Pipeline(steps=[('cv',CountVectorizer()),('lr',LogisticRegression())])
 After initializing the two stages, we need to fit these stages into our dataset. We will use the train set dataset which is specified as `x_train` and `y_train`
 
 ### Model fitting
-To fit the pipeline stages into `x_train` and `y_train`, run this code.
+To fit the pipeline stages into `x_train` and `y_train`, run this code:
 
 ```python
 pipe_lr.fit(x_train,y_train)
 ```
-The `Pipeline` will run the following stages automatically and produce the following output.
+The `Pipeline` will run the following stages automatically and produce the following output:
 
 ![Pipeline ouput](/engineering-education/how-to-build-an-nlp-based-emotion-detection-model-using-neattext-and-scikit-learn/pipeline-otput.png)
 
@@ -223,7 +221,7 @@ This process produces the optimal model that will give the best results. With ti
 Let's check the accuracy score produced by our `Pipeline.`
 
 ### Calculating the accuracy score
-To check the accuracy score, run this command.
+To check the accuracy score, run this command:
 
 ```python
 pipe_lr.score(x_test,y_test)
@@ -233,7 +231,7 @@ The output is shown below.
 ```bash
 0.8200421536692853
 ```
-When the accuracy score is expressed as a percentage it becomes `82.0%`. This is a high accuracy after the first phase of training. Through continuous training, the model will increase the accuracy score. The higher the accuracy score the better model in making predictions.
+When the accuracy score is expressed as a percentage, it becomes `82.0%`. This is a high accuracy after the first phase of training. Through continuous training, the model will increase the accuracy score. The higher the accuracy score the better model in making predictions.
 
 Let's use this model to make a prediction.
 
@@ -248,7 +246,7 @@ Let's now use our model to make the prediction.
 ```python
 pipe_lr.predict([sample1])
 ```
-We use the `predict` method to predict our sample text. The prediction outcome is shown below.
+We use the `predict` method to predict our sample text. The prediction outcome is shown below:
 
 ```bash
 array(['joy'], dtype=object)
