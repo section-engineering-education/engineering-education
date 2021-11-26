@@ -6,7 +6,7 @@ url: /fruit-mania-game-in-javaScript-JavaScript-for-game-Development/
 title: Creating Fruit Mania Game Using Javascript
 description: In this instructional exercise, you will learn how to make a fruit-themed version of the classic arcade game Fruit Ninja. The main objective is to see how creative you can be with your degree of javaScript expertise.
 author: esther-maina
-date: 2021-11-14T00:00:00-10:45
+date: 2021-11-25T00:00:00-03:08
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -15,8 +15,8 @@ images:
 ---
 In this instructional exercise, you will learn how to make a fruit-themed version of the classic arcade game (Fruit Ninja). The main objective is to see how creative you can be with your degree of javaScript expertise.
 <!--more-->
-### Prerequisite
-Before we get started on the game itself, we should be aware of some of the approaches that will be used to achieve our project's goal.
+### Prerequisites
+Before we get started on the game itself, we should be aware of some of the methods that will be used to achieve our project's goal.
 
 These methods include:
 - `addEventListener()`
@@ -31,7 +31,7 @@ These methods include:
 You can refer to the [documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript) for more information.
 
 ### Table of content
-- [Prerequisite](#prerequisite)
+- [Prerequisites](#prerequisites)
 - [Table of content](#table-of-content)
 - [Fruit mania game](#fruit-mania-game)
   - [index.html](#indexhtml)
@@ -102,7 +102,7 @@ We will be able to store our candy in this `grid` box. We will have the followin
 ```
 
 #### app.js
-First and foremost, we have an event listener named `DOMContentLoaded` as part of our boilerplate setup, and this is simply checking to see if our script file is loaded when the 'HTML element is displayed on the screen.
+First and foremost, we have an event listener named `DOMContentLoaded` as part of our boilerplate setup, and this is simply checking to see if our script file is loaded when the HTML element is displayed on the screen.
 
 ```javascript
 document.addEventListener("DOMContentLoaded", () => {});
@@ -218,7 +218,7 @@ function dragEnd() {
 
 Now that we have determined a valid move, we may graciously search for a match, in this case, we will find a match for the number `3` candies.
 
-You are allowed to search for matches for any number you want, if you so like. When a match is found, the score will be updated as well as a new batch of candies will be generated.
+You are allowed to search for matches for any number you want, if you so like. When a match is found, the score will be updated and a new batch of candies will be generated.
 
 ```javascript
  const checkRowForThree = () => {
