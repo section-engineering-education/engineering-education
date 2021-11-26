@@ -6,7 +6,7 @@ url: /the-concept-of-cookies-in-servlets/
 title: Getting Started With Cookies in Servlets
 description: This tutorial will guide the reader on how to create and read cookies in Servlets. Cookies are text-based bits of information sent by the webserver to the client.
 author: evans-lodoctor
-date: 2021-11-25T00:00:00-02:50
+date: 2021-11-26T00:00:00-02:50
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:

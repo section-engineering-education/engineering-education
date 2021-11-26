@@ -6,7 +6,7 @@ url: /fruit-mania-game-in-javaScript-JavaScript-for-game-Development/
 title: Creating Fruit Mania Game Using Javascript
 description: In this instructional exercise, you will learn how to make a fruit-themed version of the classic arcade game Fruit Ninja. The main objective is to see how creative you can be with your degree of javaScript expertise.
 author: esther-maina
-date: 2021-11-25T00:00:00-03:08
+date: 2021-11-26T00:00:00-03:08
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:

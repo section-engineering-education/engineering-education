@@ -6,7 +6,7 @@ url: /sendredirect-in-servlet-collaboration/
 title: Getting started with SendRedirect in Servlet Collaboration
 description: This tutorial will provide a step-by-step guide on how to implement HTTP redirects from one web page to another using servlet SendRedirect.
 author: Chaun864
-date: 2021-11-25T00:00:00-01:35
+date: 2021-11-26T00:00:00-01:35
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
