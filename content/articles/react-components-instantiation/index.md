@@ -29,7 +29,8 @@ Let's begin by  importing the React library .
   
 ```
 
-The reason why we are importing react is, JSX will be converted in to regular javascript which uses react's `React.createElement` method. 
+The reason why we are importing react is, JSX will be converted in to regular javascript which uses react's `React.createElement` method. We need to import React when using JSX. JSX  is not uderstood  by your normal compiler .This is like telling your compiler you are providing it a JSX file.
+
 After importing the React library we will import ReactDOM . ReactDom is a different module .If you are not using ES6 install react-dom in your IDE using `npm install react-dom` but since we will be using  using ES6 we will import `ReactDOM` using the code below:
 
 ```js
