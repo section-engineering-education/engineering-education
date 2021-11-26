@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /build-a-hash-generator-application-using-reactjs/
-title: Reactjs Hash Application Generator
-description: This guide will walk the reader about the Hash functions and illustrates how to build a Hash generator application using React.js. We will create a simple app that calculates hashes from text strings, hash them, and send back the hashed text to the user.
+title: React.js Hash Application Generator
+description: This guide will walk the reader through Hash functions and illustrates how to build a Hash generator application using React.js. We will create a simple app that calculates hashes from text strings, hash them, and send back the hashed text to the user.
 author: moses-maina
-date: 2021-11-22T00:00:00-16:00
+date: 2021-11-26T00:00:00-12:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,16 +14,14 @@ images:
  - url: /engineering-education/build-a-hash-generator-application-using-reactjs/hero.png
    alt: Reactjs Hash Application Generator Image
 ---
-
-Hashing is converting an input of any length into a fixed-sized string of text using a mathematical function. This means that any text can be converted into an array of numbers and letters through an algorithm, no matter how long it is. The text being converted/hashed is referred to as an input. The algorithm used to covert this string is called a hash function. 
+Hashing is converting an input of any length into a fixed-sized string of text using a mathematical function. This means that we can convert any text into an array of numbers and letters through an algorithm, no matter how long it is. The text being converted/hashed is referred to as an input. The algorithm used to covert this string is called a hash function. 
 <!--more-->
 The generated value is called a Hash value. A hashed text is also referred to as digest. Hashing converts the original information, i.e., plain text, to an alternative form where only the authorized parties can understand it.
 
-This guide will walk the reader about the Hash functions and illustrates how to build a Hash generator application using React.js. We will create a simple app that calculates hashes from text strings, hash them, and send back the hashed text to the user.
+This guide will walk the reader about the Hash functions and illustrates how to build a Hash generator application using React.js. We will create a simple app that calculates hashes from text strings, hash them, and sends back the hashed text to the user.
 
 ### Prerequisites
 To follow along with this article, ensure you have the following basic requirements:
-
 - [Node.js](https://nodejs.org/en/) installed on your computer.
 - Some basic knowledge of working JavaScript and React.js framework.
 - Understand the concept of cryptography.
@@ -40,15 +38,19 @@ To follow along with this article, ensure you have the following basic requireme
 - [Conclusion](#conclusion)
 
 ### Different types of Hash functions
-Hash functions, also known as hash algorithms, create digital fingerprints and signatures. A hash function maps arbitrary strings. It breaks it up. Then these arbitrary strings of data will get mapped to a fixed-length output. Even if the size of the input strings is changed, the output strings or the hash remains of the same length for a particular hash function. You can use different types of hash functions to hash any input values. Some of the popular hash functions include:
+Hash functions, also known as hash algorithms, create digital fingerprints and signatures. A hash function maps arbitrary strings. It breaks it up. Then these arbitrary strings of data will get mapped to a fixed-length output. 
+
+Even if the size of the input strings is changed, the output strings or the hash remains of the same length for a particular hash function. You can use different types of hash functions to hash any input values. Some of the popular hash functions include:
 
 - Message Digest (MD)
 
-It's a hash function that produces a 128-bit hash value. It accepts an input of any length, and it returns as output a fixed-length digest value used for authenticating the original messages. Digest size is always 128 bits, irrespective of the input. MD5 was designed as an improvement to a prior MD4 message-digest algorithm
+It's a hash function that produces a 128-bit hash value. It accepts an input of any length, and it returns as output a fixed-length digest value used for authenticating the original messages. Digest size is always 128 bits, irrespective of the input. MD5 was designed as an improvement to a prior MD4 message-digest algorithm.
 
 - Secure Hash Function (SHA)
 
-Secure Hash Algorithms, also known as SHA, are a family of cryptographic hash functions designed to keep secure data developed by the National Security Agency (NSA). It does so by converting the data into a hash. It uses a modular algorithm that accepts various bitwise operations and compression functions. There are different SHA family hash functions. This include:
+Secure Hash Algorithms, also known as SHA, are a family of cryptographic hash functions designed to keep secure data developed by the National Security Agency (NSA). It does so by converting the data into a hash. It uses a modular algorithm that accepts various bitwise operations and compression functions. There are different SHA family hash functions. 
+
+These include:
 
 1. SHA-0 - This algorithm generates a 160-bits string value as the hash. It developed weaknesses, and its algorithm didn't become very popular, and SHA-1 was designed to correct its weaknesses.
 
@@ -64,20 +66,25 @@ Secure Hash Algorithms, also known as SHA, are a family of cryptographic hash fu
 - The hashes should always look random. This means that if you change one value anywhere in the input string, the whole digest should change, the hash digest should change. There should be no pattern between changes in text and changes in the hash. It changes to another utterly random value.
 
 - Free collisions - finding a duplicate of another generated hash value should be practically impossible.
-- It should not be expensive. A good hash function should be computationally efficient because it should be practical be applied in an application.
 
-- It should have the capacity to hash different kinds of data. For example, although this guide hashes text, a good hash function should hash other data inputs such as files. With this, we can track if a file has been changed. With such properties, you can treat if a file has been changed, given that changes a single bit of that file will generate a whole different hash value.
+- It should not be expensive. A good hash function should be computationally efficient because it should be practical when applied in an application.
+
+- It should have the capacity to hash different kinds of data. For example, although this guide hashes text, a good hash function should hash other data inputs such as files. With this, we can track if a file has been changed. With such properties, you can notice if a file has been changed, given that changes to a single bit of that file will generate a whole different hash value.
 
 ### Encryption vs. Hashing
-Although the process hash function uses the hashing algorithms to generate the hash value, they are primarily used for comparison, not for encryption purposes. One thing to note is that hashed outputs are generated in a public fashion. So everything is public. There's no secrecy.
+Although the process of hash function uses the hashing algorithms to generate the hash value, they are primarily used for comparison, not for encryption purposes. One thing to note is that hashed outputs are generated in a public fashion. So everything is public. There's no secrecy.
 
 Encryption is a particular type of encoding used to transfer private data. In encryption, the data to be encrypted is transformed using encryption algorithms like Rivest-Shamir-Adleman (RSA) using a cipher method. Thus, the encrypted data is also called the ciphertext. 
 
 Unlike the hash, ciphertext and be decoded and converted to the actual original input. Thus, ciphertext facilitates a private/secret sharing of data. In this case, the sender encoded the original data and sent it as ciphertext. The recipient will decode the sent ciphertext and convert it to plaintext to understand the shared message.
 
-Hashed data is non-reversible. For example, when hashing is being used for logging system purposes. Once the user logins, the partial password is hashed using a hashing algorithm that checks against the database. So if the hash keys are the same, the user is given login permission, achieving integrity. And these processes are all non-reversible. so if you hash a word, a password, or file, you can't take that hash value and then find out what the original input was
-.
-Ciphertext length varies. A ciphertext length depends on the length of the messages being shared. So is the messages are long, the ciphertext will be generated based on the input text. However, a hash will always have the same length based on the used hash function. For example, if you were to hash a single word and an entire book with a hash function, you would still get the same length of the different hash values.
+Hashed data is non-reversible. For example, when hashing is being used for logging system purposes. Once the user logins, the partial password is hashed using a hashing algorithm that checks against the database. 
+
+If the hash keys are the same, the user is given login permission, achieving integrity. These processes are all non-reversible. If you hash a word, a password, or file, you can't take that hash value and then find out what the original input was.
+
+Ciphertext length varies. A ciphertext length depends on the length of the messages being shared. So if the messages are long, the ciphertext will be generated based on the input text. However, a hash will always have the same length based on the used hash function. 
+
+For example, if you were to hash a single word and an entire book with a hash function, you would still get the same length of the different hash values.
 
 ### Setting up a Hash Generator using React.js
 We will use the [create-react-app](https://github.com/facebook/create-react-app) tool to set up a React app. It does the heavy lifting of configuring Webpack and Babel so that you can focus on the code to scale up the application.
@@ -94,7 +101,7 @@ Give it a few minutes for the application to be fully set up once the process co
 cd hash-generator-app
 ```
 
-Finally, start the development server by running;
+Then, start the development server by running:
 
 ```bash
 npm run start
@@ -208,7 +215,7 @@ After saving the changes, your page should have the following form.
 
 The next step will involve working on the `onSubmit` function to hash the text that the user is sending, store it in the state, and display it.
 
-The `src/App.js` file, import the Crypto module and set states for different hash functions, as shown below.
+In the `src/App.js` file, import the Crypto module and set states for different hash functions, as shown below.
 
 ```js
 import crypto from "crypto-js";
@@ -251,7 +258,7 @@ const onSubmit = e => {
 
 Here we are using [MD5](https://www.sciencedirect.com/topics/computer-science/message-digest-algorithm-5), [SHA512](https://medium.com/@zaid960928/cryptography-explaining-sha-512-ad896365a0c1). [SHA256](https://qvault.io/cryptography/how-sha-2-works-step-by-step-sha-256/) and [SHA3](https://www.movable-type.co.uk/scripts/sha3.html). Feel free to change the hash function to any string you want to generate.
 
-All the above algorithms use asymmetric encryption, meaning they do not use any key during hashing. In all cases, we are converting to string to view the output.
+All the algorithms above use asymmetric encryption, meaning they do not use any key during hashing. In all cases, we are converting to string to view the output.
 
 Add the following to the form inside the `form-content` `div` so that you can view the generated hashed values.
 
@@ -320,11 +327,13 @@ Ensure that the development server is still running and refresh your browser's t
 ![generated-hash-form-with-output](/engineering-education/build-a-hash-generator-application-using-reactjs/generated-hash-form-with-output.png)
 
 ### Conclusion
-To be considered cryptographically secure, the hash functions should be impossible for an attacker to generate a message that matches a specific hash value. A slight change in the plaintext should trigger a drastic difference in the two digests. This way, it is impossible for an attacker to create two messages that produce the same hash value. So there is no way to regenerate the plain text.
+To be considered cryptographically secure, the hash functions should be impossible for an attacker to generate a message that matches a specific hash value. A slight change in the plaintext should trigger a drastic difference in the two digests. 
 
-This article has created a hashed text generator application based on the user's input using React and the Crypto module.
+This way, it is impossible for an attacker to create two messages that produce the same hash value. So there is no way to regenerate the plain text.
 
-To Learn more about these algorithms and Crypto, check the following resources:
+In this article we learned how to create a hashed text generator application based on the user's input using React and the Crypto module.
+
+To learn more about these algorithms and Crypto, check the following resources:
 - [Understanding Hashing in Cryptography](/engineering-education/understand-hashing-in-cryptography/)
 - [How Password Hashing Occurs](/engineering-education/how-password-hashing-occurs/)
 - [What Is MD5 and Why Is It Considered Insecure?](/engineering-education/what-is-md5/)
