@@ -104,7 +104,13 @@ In the design of the DAPP, there will be two main challenges; first, the integra
  ### Conclusion and projects
  In conclusion, becoming a blockchain developer takes a lot of practice and commitment. It is not for the faint-hearted. It requires creativity to implement the concepts in code. After becoming proficient in the fundamental concepts of blockchain you may choose to specialize in a specific field. You may choose to become a smart contract specialist and devise more methods of gas optimization and how to enhance security in smart contracts. Alternatively, you may choose to specialize in Defi(Decentralized finance) which is the most common use case for blockchain. The main project in Defi are things like decentralized exchanges like UNISWAP, lending protocols, yield aggregators, e.t.c. It's a whole interesting field by itself
 
- **Projects**
+Some of the projects that you can try out with your newly acquired skills are listed below by order of increasing complexity. The projects are however not limited to  the ones displayed below.
+ 1. Hello world.
+ 2. Simple storage whereby you are now able to modify the data of your smart contract and it ceases being a read-only smart contract.
+ 3. A voting smart contract where people can create a poll with different choices and a period for voting plus whatever functionality you may feel the need to add.
+ 4. Create an ether wallet where users can store their cryptos.
+ 5. Create a time lock wallet whereby funds are locked for a certain period.
+ 6. Airdrops which is a mechanism to distribute your tokens basically for free.
 
  Some of the projects that you can try out with your newly acquired skills are listed below in order of increasing complexity. The projects are however not limited to  the ones displayed below
  1. Hello world
