@@ -37,31 +37,31 @@ In this article, you will learn how to:
 To install ONNX and onnxruntime on a local environment, run the following commands;
 
 - If using pip, on your terminal;
-```
+```bash
 pip install onnx
 ```
 and 
-```
+```bash
 pip install onnxruntime
 ```
 
 - If using anaconda, on anaconda terminal;
-```
+```bash
 conda install -c conda-forge onnx
 ```
 and
-```
+```bash
 conda install -c conda-forge onnxruntime
 ```
 
 Note: ONNX is not pre-installed in the runtime environments on Google Colab and Kaggle notebooks
 
-To install ONNX and onnxruntime on Google Colab or Kaggle, run;
-```
+To install ONNX and onnxruntime on Google Colab or Kaggle, run in a code cell;
+```bash
 !pip install onnx
 ```
 and
-```
+```bash
 !pip install onnxruntime
 ```
 **Note:** Online editors like repl.it may fail to run the code below in full due to in-sufficient memory allocations.
@@ -72,11 +72,17 @@ Let's start by importing pandas and the data
 import pandas as pd
 path='https://raw.githubusercontent.com/iannjari/datasets/main/diabetes.csv'
 df=pd.read_csv(path,engine='python')
-df
+print(df)
 ```
+#### Our data
+The Heart Failure Prediction Dataset is a combination of 5 datasets and has 11 features in total.
+The target feature ```Heart Disease```  is whether a patient has Heart Disease or not (1 or 0).
+It is sourced from [Kaggle](https://www.kaggle.com/fedesoriano/heart-failure-prediction) where a detailed description of its attributes and sources of its constituent datasets are listed.
+
+
 Output:
 
-![DataFrame](df1.png)
+![DataFrame](/engineering-education/edit/master/content/articles/save-and-load-stacked-ensembles-in-onnx/df1.png)
 *Image by author*
 
 We will seperate the data columns from the label/target, "Outcome";
@@ -86,7 +92,7 @@ target_name = "Outcome"
 target = df[target_name]
 
 data = df.drop(columns=[target_name])
-data
+print(data)
 ```
 Split the data into training and testing partitions;
 
@@ -124,7 +130,7 @@ pipeline = make_pipeline(
             ("knn",KNeighborsClassifier(n_neighbors=5))],final_estimator=LogisticRegression()))
 
 pipeline.fit(x_train,y_train)
-pipeline.score(x_test,y_test)
+print(pipeline.score(x_test,y_test))
 ```
 Output:
 ```
