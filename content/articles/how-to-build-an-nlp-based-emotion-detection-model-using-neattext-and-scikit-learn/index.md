@@ -97,7 +97,7 @@ As mentioned earlier, Neattext is a Python library that is used to pre-process o
 
 To install Neattext, run this command:
 
-```python
+```bash
 !pip install neattext
 ```
 Let's import `neattext` as follows.
@@ -125,7 +125,9 @@ df['Clean_Text'] = df['Text'].apply(nfx.remove_userhandles)
 We use `apply()` method to add `remove_userhandles`. We save the cleaned dataset into a new column named `Clean_Text`.
 
 #### Removing stopwords
-Stopwords is a list of all the commonly used words in any language. The words being common they have little classification power. These words may lead to model bias during training. Common stopwords are like articles of a given language. In the English language they include: `the`, `is`, `and` and `are`.
+Stopwords is a list of all the commonly used words in any language. Stopwords carry very little useful information and have very little impact on the model during training. These words lead to model bias during training. Removing stopwords eliminate unimportant words, allowing applications to focus on the important words instead.
+
+Common stopwords are like articles of a given language. In the English language they include: `the`, `is`, `and` and `are`.
 
 ```python
 df['Clean_Text'] = df['Clean_Text'].apply(nfx.remove_stopwords)
@@ -214,7 +216,7 @@ pipe_lr.fit(x_train,y_train)
 ```
 The `Pipeline` will run the following stages automatically and produce the following output:
 
-![Pipeline ouput](/engineering-education/how-to-build-an-nlp-based-emotion-detection-model-using-neattext-and-scikit-learn/pipeline-otput.png)
+![Pipeline ouput](/engineering-education/how-to-build-an-nlp-based-emotion-detection-model-using-neattext-and-scikit-learn/pipeline-output.png)
 
 This process produces the optimal model that will give the best results. With time the model will improve on its own and give better prediction results.
 
