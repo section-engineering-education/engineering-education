@@ -138,11 +138,12 @@ public T SomeMethod<T>(int someNumber, bool isValid)
 ```
 
 Apart from the above conventions, there are other several conventions that a programmer needs to consider and apply while in their daily routine of programming.
-1. The choice of word - Use readable identifier names. Underscores, hyphens, and other non-alphanumeric characters should not be used.
+1. The choice of word - Use readable identifier names. Underscores, hyphens, and other non-alphanumeric characters should not be used. The choice of word implies that not any word can be used when programming, instead the proper words should be utilized.
 2. Hungarian notation is neither acceptable nor encouraged.
+A hungarian notation is whereby the name of a variable or function denotes its intent or kind, as well as its type in some languages. This therefore creates a programming language dependency and makes maintenance more difficult.
 3. The use of Abbreviations and Acronyms - Do not use acronyms that aren't generally recognized, and even if they are, only use them when essential.
-4. Abbreviations and contractions should not be used as identifier names.
-5. Use `GetWindow` instead of `GetWin`.
+4. Abbreviations and contractions should not be used as identifier names. This simply means that when one is writing an identifier, words should not be contracted but instead well-known identifiers should be used.
+5. Do not use `GetWin` instead of `GetWindow`. This is because it is somehow confusing instead a programmer is advised to use well-known abbreviations eg For UserInterface, one may use UI which is more identifiable.
 
 ### Layout Conventions
 For a clear understanding of the code and its structure, formatting is exercised as a coding convention.
