@@ -7,7 +7,7 @@ It is quite evident that blockchain technology will affect crucial aspects of ou
 Somebody with no technical background can follow along with this tutorial, the implementation is what separates the chaff from the wheat.
 
 ### Blockchain development introduction
-A blockchain is a network of computers connected in some way and they collectively run what is called a blockchain client. The bitcoin blockchain,binance smart chain, and the ethereum blockchain are examples of blockchain clients. In blockchain development, we have two types of developers namely:-
+A blockchain is a network of computers connected in some way and they collectively run what is called a blockchain client. The bitcoin blockchain, binance smart chain, and the ethereum blockchain are examples of blockchain clients.
 1. Core developers
 2. App developers
 
