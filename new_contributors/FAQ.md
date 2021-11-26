@@ -64,10 +64,17 @@ Most importantly we look for authors who have demonstrated great technical acume
 The position is a compensated position - 50 USD per successful article review.
 
 ### Are the positions voluntary or are Peer Reviewers compensated?
-We always encourage friendly reviews among the community to help each other out before article submission. Verifired Peer Reviewers are paid $50.00 USD per successful article revision.
+We always encourage friendly reviews among the community to help each other out before article submission. Verified Peer Reviewers are paid $50.00 USD per successful article revision.
 
 ### How often are article payouts?
 We typically send article payouts once a week (usually of Fridays) but that may vary depending on holidays, sick, or OOO (out-of-office) days.
+
+### Do we need a PayPal account to participate in the EngEd program?
+We ask all students to have an active, verified, fully set up PayPal account (that is registered under their name) to get any compensation for the articles published.
+
+Not having a PayPal account DOES NOT BAR anyone from participating, building up a resume, and published works to enhance one’s career. 
+
+You can contribute articles to publish to build up a portfolio without a PayPal account.
 
 ### Does Section provide revision services?
 We will look over the all articles that come in to ensure they are publish worthy - but our peer reviewer team is only looking to improve the content by making suggestions. 
