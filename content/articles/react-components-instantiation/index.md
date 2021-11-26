@@ -25,8 +25,7 @@ To effectively uderstand the reader will need the following:
 Let's begin by  importing the React library .
 
 ```js
-  import React from 'react';
-  
+  import React from 'react'; 
 ```
 
 The reason why we are importing react is, JSX will be converted in to regular javascript which uses react's `React.createElement` method. We need to import React when using JSX. JSX  is not uderstood  by your normal compiler .This is like telling your compiler you are providing it with a JSX file.
