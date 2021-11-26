@@ -11,7 +11,7 @@ topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
 
- - url: /engineering-education/polynomial-regression-in-python/hero.jpg
+ - url: /engineering-education/polynomial-regression-in-python/hero.png
    alt: Polynomial Regression example image
 ---
 
@@ -21,7 +21,7 @@ images:
 - [Prerequisites](#prerequisites)
 - [Introduction to Polynomial Regression](#introduction-to-polynomial-regression)
 - [Polynomial curve fitting](#polynomial-curve-fitting)
-  - [Obtaining the $\bold w$](#obtaining-the-bold-w)
+  - [Obtaining the $\textbf w$](#obtaining-the-textbf-w)
 - [Implementing the polynomial regression model](#implementing-the-polynomial-regression-model)
 - [Step 1: Importing the libraries](#step-1-importing-the-libraries)
 - [Step 2: Importing the dataset](#step-2-importing-the-dataset)
@@ -42,7 +42,7 @@ Polynomial regression is a machine learning model used to model non-linear relat
 A general understanding of Python and the Linear Regression Model will be helpful for the reader to follow along.
 
 ### Introduction to Polynomial Regression
-Suppose we want to predict the value of a real-valued target variable $y$ using real-valued inputs of the observed variable $x$. Suppose our training set comprises of N training examples, with $\bold x$ being features variable written $\bold x ≡ (x_1 , . . . , x_N )^T$ , and a corresponding target variable $y$ given as, $\bold y ≡ (y_1 , . . . , y_N )^T$  with N = 10. Now, suppose we fit a polynomial curve on this data:
+Suppose we want to predict the value of a real-valued target variable $y$ using real-valued inputs of the observed variable $x$. Suppose our training set comprises of N training examples, with $\textbf x$ being features variable written $\textbf{x} ≡ (x_1 , . . . , x_N )^T$ , and a corresponding target variable $y$ given as, $\textbf{ y} ≡ (y_1 , . . . , y_N )^T$  with N = 10. Now, suppose we fit a polynomial curve on this data:
 
 The obtained curve would look like the one in the figure below:
 
@@ -53,32 +53,32 @@ Usually, when fitting a curve, the goal is to exploit the training set and learn
 ### Polynomial curve fitting
 The polynomial function we use to fit the data is of the form:
 
-$y(x,\bold{w})=w_0 + w_1x + w_2x^2 + , . . .,+ w_Mx^M=\sum_{j=0}^{M} w_jx^j$
+$y(x,\textbf{w})=w_0 + w_1x + w_2x^2 + , . . .,+ w_Mx^M=\sum_{j=0}^{M} w_jx^j$
 
 
 where;
 - $M$ is the polynomial order.
 - $x^j$ is input variable $x$ raised to the power $j$.
-- $\bold{w}=w_0 , .\ .\ . , w_M$ denotes a vector of weights.
+- $\textbf{w}=w_0 , .\ .\ . , w_M$ denotes a vector of weights.
   
-From the polynomial hypothesis above, we note that this function $y(x, \bold w)$ is a non-linear function of $x$. However, this function is a linear function of the weights $\bold w$. Therefore, functions that are non-linear in the input variable but linear in the unknown set of the parameters are linear and fall under the *linear models* class. Thus a *polynomial regression* is a **linear model**.
+From the polynomial hypothesis above, we note that this function $y(x, \textbf w)$ is a non-linear function of $x$. However, this function is a linear function of the weights $\textbf w$. Therefore, functions that are non-linear in the input variable but linear in the unknown set of the parameters are linear and fall under the *linear models* class. Thus a *polynomial regression* is a **linear model**.
 
-Now the task is to determine the value of $\bold w$ and $M$.
+Now the task is to determine the value of $\textbf w$ and $M$.
 
-#### Obtaining the $\bold w$
+#### Obtaining the $\textbf w$
 
-To determine the values of the coefﬁcients, we first ﬁt a polynomial to the training dataset. After that, we find the error function, i.e., $E(\bold w)$, which measures the misﬁt between the fitted curve $y(x, \bold w)$ and the data points of the training set. One of the most used error functions in machine learning is the sum of squares of the errors between the predictions $y(x_n, \bold w)$  and the corresponding target values for each point $x_n$ $y_n$ fin the data. This error function is of the form:
+To determine the values of the coefﬁcients, we first ﬁt a polynomial to the training dataset. After that, we find the error function, i.e., $E(\textbf w)$, which measures the misﬁt between the fitted curve $y(x, \textbf w)$ and the data points of the training set. One of the most used error functions in machine learning is the sum of squares of the errors between the predictions $y(x_n, \textbf w)$  and the corresponding target values for each point $x_n$ $y_n$ fin the data. This error function is of the form:
 
-$E(\bold w)=\frac{1}{2}\sum ( {y(x_n , w) − y_n } )^2$
+$E(\textbf w)=\frac{1}{2}\sum ( {y(x_n , w) − y_n } )^2$
 
 Where:
 - The factor of 1/2 is introduced for later convenience.
 - $y(x_n, w)$ is the predicted value from the model.
 - $y_n$ Is the actual value of the input variable.
   
-The good thing with this error function is that it's nonnegative, and it can be zero only and only if the function $y(x, \bold w)$ passes exactly through each point of the training set.
+The good thing with this error function is that it's nonnegative, and it can be zero only and only if the function $y(x, \textbf w)$ passes exactly through each point of the training set.
 
-To solve the problem of the curve ﬁtting, we choose the value of $\bold w$ for which $E(\bold w)$ is minimized as small as possible. Since the error function is quadratic, we can solve it using techniques such as the *Least Squares* or the *gradient descent* optimizer. We thus obtain the optimal set of the parameters $\bold w$ for which $E(\bold w)$ is minimized as small as possible. The unique set of solutions for $\bold w$ we obtain through minimizing the error function is denoted as $\bold w^\star$. From this, we represent our polynomial function as: $$y(x,\bold w^\star)$$
+To solve the problem of the curve ﬁtting, we choose the value of $\textbf w$ for which $E(\textbf w)$ is minimized as small as possible. Since the error function is quadratic, we can solve it using techniques such as the *Least Squares* or the *gradient descent* optimizer. We thus obtain the optimal set of the parameters $\textbf w$ for which $E(\textbf w)$ is minimized as small as possible. The unique set of solutions for $\textbf w$ we obtain through minimizing the error function is denoted as $\textbf w^\star$. From this, we represent our polynomial function as: $$y(x,\textbf w^\star)$$
 
 Our only remaining discussion now is how we choose the value of $M$ for our polynomial function. Selecting a value of $M$ is a problem that results in the *model comparison* or *model selection*. It turns out that setting a value of $M$ too small may *underfit* our model, and putting it too large, may result in the problem of *over-fitting* hence a poor generalization of the data in both cases. Therefore, as the goal is to achieve good generalization, we need to select a value of $M$ that help in generalizing the model better.
 
