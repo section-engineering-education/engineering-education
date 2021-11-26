@@ -1,41 +1,42 @@
 # Saving and Loading Stacked Ensemble Classifiers in ONNX format in Python
 
-Stacked ensemble models are learners that increase predictive performance over stand-alone learners by combining the results of two or several models and running them through a meta-learner. The stacked models are different (not a single type), unlike in bagging methods (just decision trees) and each of the model in the stack does not correct the predictions of the previous ones as it happens in boosting. You can learn how to build one on [this](https://www.section.io/engineering-education/ensemble-learning-based-regression-model-using-python/) Sections article by Adhinga Fredrick.
+Stacked ensemble models are learners that increase predictive performance over stand-alone learners by combining the results of two or several models and running them through a meta-learner. The stacked models are different (not a single type), unlike in bagging methods (just decision trees) and each of the model in the stack does not correct the predictions of the previous ones as it happens in boosting. You can learn how to build one by reading [this article by Adhinga Fredrick](/engineering-education/ensemble-learning-based-regression-model-using-python/).
 
 
-Open Neural Network Exchange (ONNX) is an open source format for deep and traditional machine learning developed by Microsoft that has a unified schema for saving models despite the library they were developed in. Launched in December 2017, it gives data scientists and Machine learning engineers a way to persist models without worrying about platform inconsistencies and library version deprecation.
-It is also key as a means to avoid vendor lockin since ONNX models can be deployed on any platform - not just where they were trained.
-Container-based methods of pushing models to production like Docker can also be by-passed altogether.
+[Open Neural Network Exchange](https://onnx.ai/) (ONNX) is an open source format for deep and traditional machine learning developed by Microsoft that has a unified schema for saving models despite the library they were developed in. Launched in December 2017, it gives data scientists and Machine learning engineers a way to persist models without worrying about platform inconsistencies and library version deprecation.
+It is also key as a means to avoid vendor lockin since ONNX models can be deployed on any platform - not just where they were trained. Assume you trained an image recognition 
+model on Nvidia's GPUs but for operations purpuses, you decide to deploy it to a production environment on Google's TPUs. Well, ONNX is a nifty tool to transfer the model between the two.
+Container-based methods of pushing models to production like Docker can also be by-passed altogether. For Machine Learning Engineers who want to ship models that are usable in a cross-platform way, containerizaion can be avoided by using this tool.
 
 Saving this type of a model in ONNX format and using it in production can prove challenging as this scenario is not adequately documented.
 So how can stacked ensembles be serialized using ONNX?
 
-## Table of Contents
-  1. Preparing the environments
-  2. Importing and preparing the data
-  3. Building and evaluating the classifier
-  4. Serializing the model to ONNX format
-  5. Loading the model using ONNX runtime Inference Session
+### Table of contents
+- Preparing the environments
+- Importing and preparing the data
+- Building and evaluating the classifier
+- Serializing the model to ONNX format
+- Loading the model using ONNX runtime Inference Session
 
 ### Prerequisites
-  1. Basic knowledge of Python
-  2. Machine learning model building, evaluation and validation in Scikit-Learn
-  3. Basic data manipulation skills
-  4. Python(with pip,numpy,pandas and Scikit-Learn) installed on your computer, or an online environment like Google Colab or Kaggle
+- Basic knowledge of Python
+- Machine learning model building, evaluation and validation in Scikit-Learn
+- Basic data manipulation skills
+- Python(with pip,numpy,pandas and Scikit-Learn) installed on your computer, or an online environment like Google Colab or Kaggle
 
 
 ### Goals of the Tutorial
 In this article, you will learn how to:
-  - install ONNX and onnxruntime
-  - determine the ONNX input initialtypes 
-  - serializing and saving a stacked ensemble to ONNX format
-  - loading it to production using an Onnx runtime Inference session.
+- install ONNX and onnxruntime
+- determine the ONNX input initialtypes 
+- serializing and saving a stacked ensemble to ONNX format
+- loading it to production using an Onnx runtime Inference session.
 
 ### Setting up environments
 
 To install ONNX and onnxruntime on a local environment, run the following commands;
 
-+ If using pip, on your terminal;
+- If using pip, on your terminal;
 ```
 pip install onnx
 ```
@@ -44,7 +45,7 @@ and
 pip install onnxruntime
 ```
 
-+ If using anaconda, on anaconda terminal;
+- If using anaconda, on anaconda terminal;
 ```
 conda install -c conda-forge onnx
 ```
