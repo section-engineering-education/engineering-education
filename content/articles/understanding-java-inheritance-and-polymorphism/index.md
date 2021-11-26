@@ -1,6 +1,23 @@
-### Introduction
+---
+layout: engineering-education
+status: publish
+published: true
+url: /understanding-java-inheritance-and-polymorphism/
+title: Understanding Java Inheritance and Polymorphism
+description: In this article, we discuss the oop concepts of inheritance and polymorphism in the context of Java.
+author: frank-joseph
+date: 2021-11-26T00:00:00-07:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/understanding-java-inheritance-and-polymorphism/hero.jpg
+    alt: hero image
+---
  
 Java is an object-oriented programming language since it provides Java developers with the ability to implement objects as real-life entities. OOP (object-oriented programming) is a programming paradigm built around objects and their properties (attributes) and behaviors (methods). So, generally, software design using object-oriented principles is focused on objects and operations on them. Amongst many features of object-oriented programming is the fact that it encourages code reusability and extensibility. We will explain these two terms in detail later. In this article, we will explain two core OOP principles in inheritance and polymorphism.
+
+<!--more-->
  
 ### Prerequisites
  
@@ -333,3 +350,6 @@ In this article, we have learned about the concept of inheritance and polymorphi
  
 - Java - How to program 10th Ed-Early Object Version- Deitel
 - [OOP in Java - Getting Started with Abstraction and Encapsulation](https://www.section.io/engineering-education/oop-in-java-abstraction-and-encapsulation/)
+
+---
+Peer Review Contributions by: [John Amiscaray](/engineering-education/authors/john-amiscaray/)
