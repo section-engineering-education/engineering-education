@@ -6,7 +6,7 @@ url: /creating-custom-expandable-fab/
 title: Creating Custom Extendable and Expandable Floating Action Button in Android Using Kotlin
 description: This tutorial will guide the reader through creating a custom extendable and expandable FAB in Android using kotlin. A FAB is a circular button that usually floats on the screen.
 author: omondi-alex
-date: 2021-11-26T00:00:00-22:45
+date: 2021-11-26T00:00:00-23:15
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
