@@ -20,7 +20,7 @@ Augmented Reality (AR) is a technology that combines digital content with real-w
 
 Augmented reality is currently one of the most revolutionary features of technology in recent years. With AR, we can bend reality in the way we want. We can say, reevaluating the future. AR is currently being used for many different perspectives, for example, innovation and safety. 
 
-Augmented reality is almost the same as virtual reality, but there is a slight difference between them. The difference between them is that AR uses real-world terrain and puts virtual information on top of it to enhance the experience while virtual reality immerses druggies, allowing them to"inhabit"an entirely different terrain altogether, especially a virtual one created and rendered by computers.
+Augmented reality is almost the same as virtual reality, but there is a slight difference between them. The difference between them is that AR uses real-world terrain and puts virtual information on top of it to enhance the experience while virtual reality immerses druggies, allowing them to"inhabit" an entirely different terrain altogether, especially a virtual one created and rendered by computers.
 
 Druggies may be immersed in an animated scene or a factual position that has been mugged and bedded in a virtual reality app. Through a virtual reality bystander, druggies can look up, down, or any which way, as if they were there. The other difference is that VR uses a headset while AR uses mobile devices using their camera.
 
@@ -46,27 +46,29 @@ In this article, we will learn how to create a simple AR application using Andro
 To create an augmented reality application, you must have Android Studio 3.1 or above. Open Android Studio and create a new project. Name your app and set the language to Java; the minimum API level should be API 24: Android 7.0. Now you have completed the first part of configuring the IDE to create an AR app.
 
 The next step is to download the plugin necessary for supporting Augmented Reality by importing 3D models and viewing them. To do this, go to settings (in Android Studio IDE), then to plugins and search for Google Sceneform Tools, install it, and restart your Android Studio.
-You should have some 3D models. You can download 3D objects from:
-[here](https://drive.google.com/folderview?id=1Ls6fzMiFTx8_uE7A6or_l6YnouJIFSsc). I would suggest you use a 3D object with over 75 points. 
 
-### Adding the 3D model to the project.
+**Note: You should have some 3D models. You can download 3D objects from [here](https://drive.google.com/folderview?id=1Ls6fzMiFTx8_uE7A6or_l6YnouJIFSsc). I would suggest you use a 3D object with over 75 points.**
 
-After downloading the folders, you will copy the sampledata folder to the go-to Android Studio, right-click on the app section, select "open in," then select "Explorer." Paste the sampledata folder here.
+### Step two: Adding the 3D model to the project.
+After downloading the folders, you will copy the sampledata folder. 
 
-In the Java section, right-click and select the new folder "assets." Right-click on the new assets directory and select "open in Explorer" and paste the AR.src (from the one that you downloaded in the assets folder) file there. This is shown here.
+In Android Studio, right-click on the app section --> open in --> Explorer. Paste the sampledata folder here.
+
+In the Java section, right-click and select the `new folder assets`. Right-click on the `new assets` directory --> `open in explorer` and paste the `AR.src` (from the one you downloaded in the assets folder) file there, shown here.
 
  ![alt text](/engineering-education/creating-simple-visual-augmented-reality-application-in-android/assets.png)
 
-### Adding sceneform ux library
+### Step three: Adding sceneform UX library
+First, add the libraries to dependencies in your app level `build.gradle` file.
 
-We add the libraries to dependacies in build.grindle:(app)
-They are 
-```java
+```gradle
     implementation 'com.google.ar.sceneform.ux:sceneform-ux:1.17.1'
     implementation 'com.google.ar.sceneform:core:1.17.1'
     implementation 'com.google.sceneform:1.17.1'
 ```
-They are to be implemented as shown here 
+
+They are to be implemented as shown here:
+
 ![alt text](/engineering-education/creating-simple-visual-augmented-reality-application-in-android/dependencies.png)
 
 On the same build.gridle(:app) window add the highlighted codes.
@@ -84,27 +86,26 @@ Lastly, add the plugin id in build.gridle(:app)
 
 
 
-### Adding permissions for camera
+### Step four: Adding camera permissions
+In the `AndroidManifest.xml` page, add the following codes;
 
-On the AndroidManifest.xml page, add the following codes;
-
-```java    
+```manifest-    
     <uses-permission android:name="android.permission.CAMERA"/>
     <uses-feature android:name="android.hardware.camera.ar" android:required="true"/>
 ```
 
-They should be as shown here
+They should be as shown here:
+
  ![alt text](/engineering-education/creating-simple-visual-augmented-reality-application-in-android/permission.png)
 
-### Application design
-
-We now need to configure the layout of the application. On the activity_main.xml window under layout folder modify existing codes to these shown below.
+### Step five : Designing the applications UI
+In this step, we need to configure the layout of the application. In the `activity_main.xml` window under the layout folder, modify existing codes to these shown below.
 
 ![alt text](/engineering-education/creating-simple-visual-augmented-reality-application-in-android/mainactivity.png)
 
-Note that we change the layout from the dafault layout to relative layout.
+**Note: You change the layout from the dafault layout to relative layout.**
 
-### Java codes
+### Step six : Implementing the functionality
 These codes are written in the MainActivity.Java window. These codes are:
 ```java
 package com.example.AugmetedReality2;
@@ -156,11 +157,8 @@ The codes will allow users to drag or trasform the 3D object.
 Connect your Android phone to the PC via USB (USB debugging), and run the app.
 
 ### Conclusion 
+In conclusion, we have gone through augmented reality and how to make a simple visual augmented reality app. This article serves only as an introduction to building a visual augmented reality android application. I highly recommended trying out the code manually just for better practice.
 
-In conclusion, we have gone through what augmented reality is and how to make a simple visual augmented reality app. This article serves only as an introduction to building a visual augmented reality android application. It's highly recommended to try out the code manually by reading further from the referenced articles.
+You can learn more about Augmented Reality programming from these [AR codes](https://developers.google.com/ar) and [Codiant](https://www.codiant.com/services/augmented-reality-app-development).
 
-### References
-You can learn more about Augmented Reality programming from these articles.
-[here](https://developers.google.com/ar)
-
-[here](https://www.codiant.com/services/augmented-reality-app-development)
+Happy coding!
