@@ -1,14 +1,27 @@
-### JAVA: Introduction to Autotype promotion when overloading
+---
+layout: engineering-education
+status: publish
+published: true
+url: /Automatic-type-promotion/
+title: Automatic type promotion
+description: This article will cover a brief introduction to auto type promotion and method overloading and their relationships, reasons or circumstances under which you may be required to apply automatic type promotion and the different types or ways of implementing type promotion. 
+author: 
+date: 2021-11-27T00:00:00-12:10
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
-#### What is type promotion?
+  - url: /engineering-education/Automatic-type-promotion/hero.jpg
+    alt: Automatic type promotion Hero Image
+---
+Type promotion is a common occurrence in java programming which, can be achieved automatically in the case of primitive data types through the use of autotype promotion which is also referred to as automatic data type promotion.
+<!--more-->
+Sometimes automatic type casting is confused with typecasting, which should not be the case as casting is achieved manually by a programmer during system coding.
+You also need to understand that datatypes once promoted cannot be "depromoted".
 
-Type promotion is a common occurrence in java programming. This can be achieved automatically in the case of primitive data types through the use of Autotype promotion which can also be referred to as an Automatic data type promotion. Sometimes automatic type casting is confused with typecasting which should not be the case as casting is achieved manually by a programmer during system coding.
+Overloading is a concept in java where different methods are allowed to have a common name. The methods, however, differ by the parameters that they take in or even their input data types.
 
-In another case, you also need to understand that datatypes once promoted cannot be "depromoted".
-
-Overloading is a concept in java where different methods are allowed to have a common name, the methods however differ by the parameters that they take in or even their input data types. 
-
-Automatic type casting mainly occurs in instances of method overloading hence it is incumbent that we understand both two concepts clearly before we begin.
+Automatic type casting mainly occurs in method overloading; hence, it is incumbent that we understand both concepts clearly before we begin
 
 ### Table of contents
 
