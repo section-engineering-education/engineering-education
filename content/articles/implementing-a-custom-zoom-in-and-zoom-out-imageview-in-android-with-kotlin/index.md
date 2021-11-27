@@ -166,7 +166,7 @@ Another important method used to fit the image onto the screen according to its 
 
 `getFittedTranslation` is a method that handles the negative coordinates of the image and the case when the image is not zoomed. The below code explains the implementation:
 ```kotlin
-    private fun getFittedTranslation(vSize: Float, cSize: Float, mTranslate: Float): Float {
+    private fun getFittedTranslation(mTranslate: Float,vSize: Float, cSize: Float): Float {
         val minimumTranslation: Float
         val maximumTranslation: Float
         if (cSize <= vSize) { // case: NOT ZOOMED
