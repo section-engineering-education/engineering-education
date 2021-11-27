@@ -1,7 +1,22 @@
-### How to detect stop traffic using deep R-NN in both real-time and offline mode in Matlab
-### Introduction
-R-CNN(Region with convolution neural network) is a deep learning approach used to detect various objects in an image. It finds its application in autonomous vehicles, smart surveillance systems, and facial expressions e.t.c. 
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-detect-stop-traffic-using-deep-rcnn-in-both-real-time-and-offline-mode-in-matlab/
+title: How to detect stop traffic using deep R-NN in both real-time and offline mode in Matlab
+description: In this tutorial, we are going to use the R-CNN. First, we will use the image labeler application to create our pre-trained image database. Here, transfer learning is used where a pre-trained R-CNN is re-trained on its image dataset.
+author: florence-atieno
+date: 2021-11-27T00:00:00-04:47
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/how-to-detect-stop-traffic-using-deep-rcnn-in-both-real-time-and-offline-mode-in-matlab/hero.jpg
+    alt: rcnn realtime matlab
+---
+
+R-CNN(Region with convolution neural network) is a deep learning approach used to detect various objects in an image. It finds its application in autonomous vehicles, smart surveillance systems, and facial expressions e.t.c. 
+<!--more-->
 The models for object detection using R-CNN are based on three processes. The first process is finding the region in the image that may contain an object, that is, the region of the proposal. It then extracts the CNN features from the region and lastly classifies the object using the extracted features.
 
 There are three variants of R-CNN. These are R-CNN, Fast R-CNN, and Faster R-CNN. As the name suggests, the speed of training and detection improves from the first to the last. 
@@ -211,3 +226,6 @@ Traffic stop sign detection is a very important capability of Matlab. The implem
 As we have seen, the training code is easy, and its implementation is effective. Also, the training algorithm is so accurate. Matlab has in-built functions that are easy to use and very effective.
 
 Happy coding!
+---
+Peer Review Contributions by: [Miller Juma](/engineering-education/content/authors/miller-juma/)
+
