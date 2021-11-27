@@ -49,9 +49,11 @@ It gives us test data to evaluate the perception algorithm. Our workflow for thi
 ### Creating ground truth data for object detection and semantic segmentation
 Once we open the app, we need to load data into it. To do this, click on `load` at the top-left corner of the app.
 
-If you click on it, the app asks about the type of data that you are inputting. As you can see, we have three options: video, image sequence, and custom reader. The most common file format for data in this app is video and image sequences. But, we use the custom reader if you have a different file format from those mentioned before.
+If you click on it, the app asks about the type of data that you are inputting. As you can see, we have three options: video, image sequence, and custom reader. 
 
-For this tutorial, we are going to load a 25second video into the app. After doing this, we start by ROI label(region of interest) by clicking on the label button.
+The most common file format for data in this app is video and image sequences. But, we use the custom reader if you have a different file format from those mentioned before.
+
+For this tutorial, we are going to load a 25 second video into the app. After doing this, we start by the ROI (region of interest) label by clicking on the label button.
 
 ![labelling button](/engineering-education/how-to-ground-truth-label-your-datasets/ground3.png)
 
@@ -59,23 +61,21 @@ When you click on this, the window below opens up.
 
 ![new window](/engineering-education/how-to-ground-truth-label-your-datasets/ground4.png)
 
-Now let's begin with that of `vehicle` then click `ok`. Note that you can label your data before defining the ROI. 
+Now, let us begin with that of `vehicle` then click `ok`. Note that you can label your data before defining the ROI. 
 
 Also, this app has a workspace shown below where all your label is stored, and you can see them.
 
 ![workspace](/engineering-education/how-to-ground-truth-label-your-datasets/ground5.png)
 
-After completing this, label the vehicle with the bounding box. To label the data, with the bounding box around them, click on the label at the top of the workspace.
+After completing this, label the vehicle with the bounding box. To label the data with the bounding box around them, click on the label at the top of the workspace.
 
 ![vehicles labelled](/engineering-education/how-to-ground-truth-label-your-datasets/ground6.png)
 
-Let us label the sub-labels. Sub-labels are parts that are associated with a parent label.
-
-For example, we can have vehicle number plates or even wheels as the sub-labels. Let's, for example, name our vehicles `tarlight`. To label, the sub-labels, click on the `sub-labels` right next to the `label` button and then label them on your input using bounding boxes. 
+Let us label the sub-labels. Sub-labels are parts that are associated with a parent label. For example, we can have vehicle number plates or even wheels as the sub-labels. Let's, for example, name our vehicles `tarlight`. To label, the sub-labels, click on the `sub-labels` right next to the `label` button and then label them on your input using bounding boxes. 
 
 You can have as many bounding boxes as you want. If you click on the`sub-label` button, a new window like that of labeling prompts the user to input the name of the sub-labels.
 
-To make the labels on the input image, you have to select the bounding box of the parent label, and then you make your label inside the bounding box of this main bounding box. If you don't select the parent label first, you won't be able to make your sub-labels. 
+To make the labels on the input image, you have to select the bounding box of the parent label, and then you make your label inside the bounding box of this main bounding box. If you do not select the parent label first, you will not be able to make your sub-labels. 
 
 From the definition, sub-labels are parts of the parent data or ROI.
 
@@ -93,11 +93,11 @@ After making your attributes, you click `ok`, which appears on the left side of 
 
 ![giving vehicle type](/engineering-education/how-to-ground-truth-label-your-datasets/ground9.png)
 
-We are happy with our label, but you notice that if we go to another frame, the labels aren't there, as shown below. To go to the next frame, click on the forward circled in the image below:
+We are happy with our label, but you notice that if we go to another frame, the labels are not there, as shown below. To go to the next frame, click on the forward circled in the image below:
 
 ![next frame](/engineering-education/how-to-ground-truth-label-your-datasets/ground10.png)
 
-We notice that we can go ahead and make the labeling again, but this will be tiresome and boring since it is just a repetition of what we did before. This is where now automation comes in.
+We notice that we can go ahead and make the labeling again, but this will be tiresome and boring since it is a repetition of what we did before. This is where automation comes in.
 
 ### Use an algorithm to automate the labeling process.
 There are so many in-built algorithms in Matlab that help you with this. You can use an in-built algorithm or write your algorithm to do this, Matlab accepts all these options. 
@@ -131,7 +131,7 @@ Also, you can label individual pixels in the image using the `pixel label`. Let'
 
 ![using pixel label](/engineering-education/how-to-ground-truth-label-your-datasets/ground15.png)
 
-Note that you can erase sections that you never intended to be labeled using `erase`, and they also include those that you may have missed using the `brush`. We also have a feature, `smart polygon`. This feature allows you to make a surrounding of what you want to label and makes its segmentation. After all these, you can save your work.
+Note that you can erase sections that you never intended to be labeled using `erase` and they also include those that you may have missed using the `brush`. We also have a feature, `smart polygon`. This feature allows you to make a surrounding of what you want to label and makes its segmentation. After all these, you can save your work.
 
 ### Integrate ground truth information from other sensors.
 This feature allows you to integrate ground truth information from other signals. For example, let's open a video that has been time-synchronized with lidar data. 
