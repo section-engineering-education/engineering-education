@@ -2,20 +2,20 @@
 layout: engineering-education
 status: publish
 published: true
-url: /how-to-automate-tests-for-dockerized-django-application-with-gitub-actions/
+url: /dockerized-django-application-with-github-actions/
 title: Automating tests for Dockerized Django applications with GitHub Actions
 description: In this article, the reader will learn how to test a Django application with Pytest, Dockerize it, and configure GitHub Actions to automate your Django tests.
 author: muhammed-ali
-date: 2021-11-22T00:00:00-12:10
+date: 2021-11-26T00:00:00-19:10
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/how-to-automate-tests-for-dockerized-django-application-with-gitHub-actions/hero.jpg
+
+  - url: /engineering-education/dockerized-django-application-with-github-actions/hero.jpg
     alt: Automating tests for Dockerized django application Image
 ---
-
 In this article, the reader will learn how to test a Django application with [Pytest](https://docs.pytest.org/en/stable/getting-started.html), Dockerize it, and configure GitHub Actions to automate your Django tests.
- <!--more-->
+<!--more-->
 Pytest is a Python library used for running tests for Python code.
 [GitHub Actions](https://docs.github.com/en/actions) enables you can automate much repetitive stuff in your repository.
 
@@ -137,7 +137,7 @@ Then run the code below one after the other; the second line adds a single recor
 
 Now run your server and go to your localhost([http://127.0.0.1:8000/](http://127.0.0.1:8000/)) then add the *id* of the article you just added, like this: [http://127.0.0.1:8000/1](http://127.0.0.1:8000/1), you will see that the article content is being displayed.
 
-![display-blog.png](/engineering-education/how-to-automate-tests-for-dockerized-django-application-with-gitHub-actions/display-blog.png)
+![display-blog.png](/engineering-education/dockerized-django-application-with-github-actions/display-blog.png)
 
 ### How to Add Tests to Django Application
 This section will show you how to add tests to your URLs and models. Before testing the application, execute the command below to install the testing library.
@@ -201,7 +201,7 @@ To run the tests, go to your command line and run:
 
 You should see a similar process like the image below to show that all the tests passed:
 
-![run-test.png](/engineering-education/how-to-automate-tests-for-dockerized-django-application-with-gitHub-actions/run-test.png)
+![run-test.png](/engineering-education/dockerized-django-application-with-github-actions/run-test.png)
 
 ### Setting up Docker
 
@@ -278,7 +278,7 @@ Docker-compose runs at `0.0.0.0:8000` which Django does not recognize so you nee
 ```
 Now run `$ docker-compose up` to start the server and go to [http://0.0.0.0:8000/1](http://0.0.0.0:8000/1) on your browser, and you will see the blog you created.
 
-![docker.png](/engineering-education/how-to-automate-tests-for-dockerized-django-application-with-gitHub-actions/docker.png)
+![docker.png](/engineering-education/dockerized-django-application-with-github-actions/docker.png)
 
 ### Setup GitHub Actions
 [GitHub Actions](https://docs.github.com/en/actions) enables you to automate, customize specified development and deployment processes in your GitHub repository. This tutorial will just be used for automating Django tests, which is what you will be learning in this section.
@@ -316,11 +316,11 @@ The code above just runs tests on your latest push. You can visit the [GitHub do
 ### GitHub Actions at Work
 Commit and push all the code you have at the moment to GitHub. After pushing your code, go to your project on GitHub and click on the “Actions” tab.  If you followed the steps correctly, you would see that your GitHub Actions ran completely and that your application has been tested and all tests passed.
 
-![github-actions.png](/engineering-education/how-to-automate-tests-for-dockerized-django-application-with-gitHub-actions/github-actions.png)
+![github-actions.png](/engineering-education/dockerized-django-application-with-github-actions/github-actions.png)
 
 When you click on it, you should see this:
 
-![github-actions1.png](/engineering-education/how-to-automate-tests-for-dockerized-django-application-with-gitHub-actions/github-actions1.png)
+![github-actions1.png](/engineering-education/dockerized-django-application-with-github-actions/github-actions1.png)
 
 To check if the intention of GitHub Actions is met, you will update the test, so it fails.
 
@@ -340,7 +340,7 @@ def test_article_create():
 
 Commit and push your code. Then, go to your project Actions, and you should see the test fails to show that our GitHub Actions instructions are working as expected.
 
-![fail-test.png](/engineering-education/how-to-automate-tests-for-dockerized-django-application-with-gitHub-actions/fail-test.png)
+![fail-test.png](/engineering-education/dockerized-django-application-with-github-actions/fail-test.png)
 
 ### Conclusion
 
