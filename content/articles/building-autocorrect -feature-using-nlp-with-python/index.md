@@ -74,7 +74,7 @@ We will need a dictionary to develop the autocorrect system, much as our smartph
 
 #### Installing Libraries
 We start by installing all the libraries general to machine learning using `pip` command from the terminal.
-```python
+```bash
 pip install pattern
 pip install pyspellchecker
 pip install autocorrect
@@ -169,7 +169,17 @@ def DeleteLetter(word):
 
 
 delete_word_l = DeleteLetter(word="cans")
+```
+From the code above, we use the `DeleteLetter` function which removes a letter from  a given word. The word is first split `split_list=[]` into its component; the left and the right. We then loop over the sequence character of the words using `for` loop and the length of the word. We then use the list compression to return all the instances of words with a letter deleted stored in the `delete_list` array list. For example;
 
+```python
+print(DeleteLetter("trash"))
+```
+The output:
+```bash
+['rash', 'tash', 'trsh', 'trah', 'tras']
+```
+```python
 # SwitchLetter:swap two adjacent letters
 def SwitchLetter(word):
     split_l = []
@@ -181,7 +191,17 @@ def SwitchLetter(word):
 
 
 switch_word_l = SwitchLetter(word="eta")
+```
+The `SwitchLetter` functions takes a word, splits its and switches `switch_1`all the letters in that word from left to right using `for` loop. For example;
 
+```python
+print(SwitchLetter("trash"))
+```
+The output:
+```bash
+['rtash', 'tarsh', 'trsah', 'trahs']
+```
+```python
 # replace_letter: changes one letter to another
 def replace_letter(word):
     split_l = []
@@ -194,7 +214,16 @@ def replace_letter(word):
 
 
 replace_l = replace_letter(word='can')
-
+```
+The `replace_letter` function takes a letter and goes through all the characters in the English alphabet and swaps that letter with English alphabet. For example;
+```python
+print(replace_letter("trash"))
+```
+The output:
+```bash
+['arash', 'brash', 'crash', 'drash', 'erash', 'frash', 'grash', 'hrash', 'irash']
+```
+```python
 # insert_letter: adds additional characters
 def insert_letter(word):
     split_l = []
@@ -205,9 +234,18 @@ def insert_letter(word):
     insert_list = [a + l + b for a, b in split_l for l in letters]
     # print(split_l)
     return insert_list
+```
+The `insert_letter` function takes a word, and for every character in the English alphabet it is going to take the left component of the words and appends the right components. For example:
+```python
+print(insert("trash"))
+```
+```bash
+['atrash', 'btrash', 'ctrash', 'dtrash', 'etrash', 'ftrash', 'gtrash', 'htrash', 'itrash', 'jtrash', 'ktrash', 'ltrash', 'mtrash', 'ntrash', 'otrash', 'ptrash', 'qtrash', 'rtrash']
+```
+>NOTE: All the four edit functions uses the `split` method for every word.
 
-
-
+We then combine the edit functions to allow the autocorrect feature delete, replace,insetrt and swap the letters in a word to produce another correct word from the dictionary similar to the input word.
+```python
 # combining the edits
 # switch operation optional
 def edit_one_letter(word, allow_switches=True):
@@ -231,8 +269,6 @@ def edit_two_letters(word, allow_switches=True):
             edit_set2.update(edit_two)
     return edit_set2
 
-
-
 # get corrected word
 def get_corrections(word, probs, vocab, n=2):
     suggested_word = []
@@ -243,18 +279,15 @@ def get_corrections(word, probs, vocab, n=2):
     best_suggestion = [[s, probs[s]] for s in list(reversed(suggested_word))]
     return best_suggestion
 
-
 my_word = input("Enter any word:")
 probs = get_probs(word_count)
 tmp_corrections = get_corrections(my_word, probs, v, 2)
 for i, word_prob in enumerate(tmp_corrections):
     print(f"word {i}: {word_prob[0]}, probability {word_prob[1]:.6f}")
 ```
-The output below is produced when a user tries to type the word `daed` to mean `dead`. The autocorrect system produces a similar word `dead` with a probability of `0.000999`.
-```bash
-Enter any word: daed
-word 0: dead, probability 0.000999
-```
+The program will prompt the user to input a word then will go through the dictionary and produce words similar to the input word. For instance when a user tries to type the word `daed` to mean `dead`. The autocorrect system produces a similar word `dead` with a probability of `0.000999`.
+![Autocorrect Output](/engineering-education/building-autocorrect-feature-using-nlp-with-python/output.jpg)
+
 ### Conclusion
 As we have seen, Natural Language Processing plays a crucial role in enabling computers to understand and process natural human language. This is as implemented above using the autocorrect system.
 The full combined code can be found on [GitHub](https://github.com/dentex22/Autocorrect_System).
