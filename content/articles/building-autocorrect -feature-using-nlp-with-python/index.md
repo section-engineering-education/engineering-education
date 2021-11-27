@@ -62,6 +62,7 @@ The following are examples of edits:
       `REPLACE` - changes one letter to another.
 
   >NOTE: We usually take n between 1 to 3 edits for autocorrect systems.
+  
  - *Filtering Suggested Candidates* - Only correctly spelled real words from our created candidate list are considered, so we can compare them to the words in the dictionary and then filter out the ones that don't exist in the dictionary.
  - *Order Filtered Candidates based on word probabilities* - Probabilities of the words is calculated based on the following formula: P(w) = C(w)/V, where;
       `P(w)`- the probability of a word,w.
