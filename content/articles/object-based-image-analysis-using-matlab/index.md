@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /object-based-image-analysis-using-matlab/
 title: Object Based Image Analysis using Matlab
-description: This tutorial introduces reader to the basic concepts of object based image analysis using matlab
+description: This tutorial introduces reader to the basic concepts of object based image analysis using matlab. Matlab provides an interactive environment for object-based image analysis by executing functions used in object base analysis or inbuilt apps for image processing.
 author: alphonce-arogo
-date: 2021-11-27T00:00:00-18:00
+date: 2021-11-27T00:00:00-1:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
