@@ -1,5 +1,21 @@
-Technology advancements have come with the risk of internet-related fraud. Fraud in organizations has led to the loss of revenue, which has increased the demand for fraud detection analytics. Fraud detection analytics enable organizations to detect fraudulent activities early enough to prevent further occurrence of such activities or reduce the associated loss. 
+---
+layout: engineering-education
+status: publish
+published: true
+url: /the-basics-of-fraud-detection-analytics/
+title: The Basics of Fraud Detection Analytics
+description: In this article, we will learn the fundamental aspects of fraud detection analytics. We will go through the benefits, process, and use cases of this phenomenon and get important tips for building a reliable fraud detection framework.
+author: ann-waweru
+date: 2021-11-27T00:00:00-12:10
+topics: [Security]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/the-basics-of-fraud-detection-analytics/hero.jpg
+    alt: Fraud Analytics Hero Image
+---
+Technology advancements have come with the risk of internet-related fraud. Fraud in organizations has led to the loss of revenue, which has increased the demand for fraud detection analytics. Fraud detection analytics enable organizations to detect fraudulent activities early enough to prevent further occurrence of such activities or reduce the associated loss. 
+<!--more-->
 This article will provide an overview of fraud detection analytics and explain why it is important in the tech industry. It will also take you through the fraud analytics methods and give you some tips for building a reliable fraud detection solution. 
 
 ### Overview of fraud detection analytics
@@ -78,3 +94,8 @@ Several transactions are done in the financial sector daily. These transactions 
 Fraud detection analytics entails the use of data analytics and other fraud detection techniques to identify or prevent the occurrence of fraud. This phenomenon is important in organizations because it reduces exposure to deceptive actions and enhances improved organizational performance. Some of the industries that benefit from fraud detection analytics include finance and insurance. 
 
 Organizations should choose fraud detection methods that are economical and convenient to enhance efficiency in fraud detection. The suggested tips for designing a reliable fraud detection framework can help in optimizing fraud detection in organizations. 
+
+Happy learning!
+
+---
+Peer Review Contributions by: [Onesmus Mbaabu](/engineering-education/authors/onesmus-mbaabu/)
