@@ -1,8 +1,8 @@
 
 ### Introduction
-Object-based image analysis is the processing of an image based on the classification of its pixels to get more helpful information based on the objects contained in the image. Such data can be based on height, object edges, or object boundaries. Matlab provides an interactive environment for object-based image analysis by executing functions used in object base analysis or inbuilt apps for image processing.
+Object-based image analysis is the processing of an image based on the classification of its pixels to get more helpful information based on the objects contained in the image. For example, such data can be based on height, object edges, or object boundaries. Matlab provides an interactive environment for object-based image analysis by executing functions used in object base analysis or inbuilt apps for image processing.
 
-Images contain objects with distinct regions. These objects have boundaries, shapes, and edges. Matlab allows for analysis of these properties using image analyzer functions or region props to obtain data from these images. The article will discuss various methods of edge detection, boundary detection, labeling of image objects, and highlighting text objects in an image. 
+Images contain objects with distinct regions. These objects have boundaries, shapes, and edges. Matlab allows for analysis of these properties using image analyzer functions or region props to obtain data from these images. The article will discuss various edge detection methods, boundary detection, labeling of image objects, and highlighting text objects in an image. 
 
 Object-based image analysis is useful, especially in analyzing satellite maps, machine vision, fingerprint identification, and obtaining information based on object characteristics in an image.
 
@@ -36,7 +36,7 @@ Edge detection is useful in image segmentation and data extraction for compariso
 ### Methods of edge detection
 There are several methods used in edge detection in images. These methods are used with the primary function `edge()`.Most edge detection methods will be demonstrated in the article using the same input image and then comparing the output image to find a more suitable edge detection method. The syntax for edge detection is `i=edge(grayscale image,'method')`
 
-All these methods only accept a grayscale image input, hence, converting the imported RGB image to a grayscale image is essential. RGB image to grayscale image conversion is done using the function `rgb2gray()`. The initial stage of all image processes is importing the image to the Matlab workspace. Importation of image is done using the function `imread('imagefolderpath')`. 
+All these methods only accept a grayscale image input; hence, converting the imported RGB image to a grayscale image is essential. RGB image to grayscale image conversion is done using the function `rgb2gray()`. The initial stage of all image processes is importing the image to the Matlab workspace. Importation of image is done using the function `imread('imagefolderpath')`. 
 
 First, we import the image using the function `imread()` as demonstrated with the below codes.
 ```matlab
@@ -82,7 +82,7 @@ figure, imshow(p) %displaying edges detected using prewitt method
 ### Log method of edge detection 
 This method smoothens the image then executes the laplacian function resulting in a double-edged image. This method uses the function `log()` and the syntax is `i_edge = edge(i_gray,'log')`.
 
-From the below codes showing edge detection using the log method, the resultant image containing edges detected is assigned a variable `l`, the grayscale input image is labeled `i2` and the edge detection method is specified as `log`.
+From the below codes showing edge detection using the log method, the resultant image containing edges detected is assigned a variable `l`. The grayscale input image is labeled `i2` and the edge detection method is specified as `log`.
 ```matlab
 l = edge(i2,'log'); %edge detection using log method
 figure, imshow(l) %displaying edges detected using log method
@@ -104,15 +104,15 @@ figure, imshow(c) %displaying edges detected using canny method
 Boundaries are lines that mark the limits of an object or an area. A boundary in images can be detected by either performing morphological operations on the image or using toolbox functions.
 
 ### Boundary detection using morphological operations
-Morphological operations mainly involve subtracting some parts of a binarized image with only the object's boundary. In morphological operations, boundaries can be detected by either erosion or dilation of the entities whose boundary is to be obtained. The following are methods used in boundary detection using morphological process;
+Morphological operations mainly involve subtracting parts of a binarized image with only the object's boundary. In morphological operations, boundaries can be detected by either erosion or dilation of the entities whose boundary is obtained. The following are methods used in boundary detection using morphological process;
 
 - Morphological erosion.
 - Morphological dilation.
 
 ### Obtaining boundary by Morphological erosion
-In this method, some pixels from a binarized image are eroded, the eroded part is then subtracted from the main image containing the main object. The remaining part is the boundary of the object. Erosion of image is done using the function `imerode()` with a specified `strel()` length. The following codes used and step by step illustrations of this method of boundary detection;
+In this method, some pixels from a binarized image are eroded. The eroded part is then subtracted from the main image containing the main object. The remaining part is the boundary of the object. Erosion of image is done using the function `imerode()` with a specified `strel()` length. The following codes used and step by step illustrations of this method of boundary detection;
 
-First, we import the input image used to perform the operations. The image is imported using the function `imread()` as shown in the codes below.
+First, we import the input image used to perform the operations. The image is imported using the function `imread()` shown in the codes below.
 ```matlab
 i = imread(plate.PNG); %importing the image to workspace
 figure,imshow(i) %displaying the imported image
@@ -149,9 +149,9 @@ figure , imshow(i_boundary) % displaying the boundary obtained
 ![Boundary of the object by erosion method](/engineering-education/object-based-image-analysis-using-matlab/objectanalysis_eleven.jpg)
 
 ### Obtaining boundary by dilation
-Dilation increases the size of the object boundary by adding some pixels to the boundary of the image, the number of pixels added depends on the size and the shape of the object being processed. When the binarized version of the original image is subtracted from the dilated image, the resultant image is the boundary of the targeted object. Dilation of the image is done using the function `imdilate()` with a specified `strel()` length on a binary image. The output image depends on the original image's contrast and sharpness of pixels. The following are the step by step codes used in this method of boundary detection:
+Dilation increases the size of the object boundary by adding some pixels to the boundary of the image. The number of pixels added depends on the size and the shape of the object being processed. When the binarized version of the original image is subtracted from the dilated image, the resultant image is the boundary of the targeted object. Dilation of the image is done using the function `imdilate()` with a specified `strel()` length on a binary image. The output image depends on the original image's contrast and sharpness of pixels. The following are the step by step codes used in this method of boundary detection:
 
-First, the input image is imported the function `imread()` as shown in the below codes. The imported image will be assigned a variable `i`.
+First, the input image is imported the function `imread()` shown in the codes below. The imported image will be assigned a variable `i`.
 ```matlab
 i = imread('plate.PNG'); %importing an image
 figure,imshow(i) %Displaying the imported image
@@ -165,14 +165,14 @@ figure,imshow(i2) %Displaying the grayscale image
 ```
 ![Grayscale version of the imported image](/engineering-education/object-based-image-analysis-using-matlab/objectanalysis_thirteen.jpg)
 
-The grayscale image `i2` is then converted to a binary image `bw1` using the function `imbinarize()` as shown in the following codes.
+The grayscale image `i2` is then converted to a binary image `bw1` using the function `imbinarize()` shown in the following codes.
 ```matlab
 bw1 = imbinarize(i2); %binarizing the grayscale image
 figure,imshow(bw1) %Displaying the binarized image
 ```
 ![Binary image](/engineering-education/object-based-image-analysis-using-matlab/objectanalysis_fourteen.jpg)
 
-We then specify the strel length which will be used to perform morphological dilation, a disk length of 5 will be used to dilate the binary image `bw1`. The dilated image will be assigned `i3`  as demonstrated in the below codes.
+We then specify the strel length used to perform morphological dilation. A disk length of 5 will be used to dilate the binary image `bw1`. The dilated image will be assigned `i3`  as demonstrated in the below codes.
 ```matlab
 se = strel('disk',5); % specifying strel length
 i3 = imdilate(bw1,se); % dilation of the image at a specified strel length
@@ -192,7 +192,7 @@ figure,imshow(i4) %Displaying the boundaries obtained
 In an image containing text messages with different words, the words are the objects contained in the image. Matlab provides functions for highlighting specified words in a text image.
 We will demonstrate by highlighting the word 'MATLAB' in an image containing random letters. `locatetext()` function is used to locate the text to be highlighted. The following codes are used in the process;
 
-First, we import the image containing different words using the function `imread()`. The imported image is assigned variable `i` as shown in the below codes.
+First, we import the image containing different words using the` imread()` function. The imported image is assigned variable `i` as shown in the below codes.
 ```matlab
 i = imread('C:/Users/user/Pictures/TEXT.PNG'); % importing the image
 figure,imshow(i) %Displaying the imported image
@@ -205,7 +205,7 @@ ocrOutput = ocr(i) %text data
 ```
 ![Image text data](/engineering-education/object-based-image-analysis-using-matlab/objectanalysis_eighteen.jpg)
 
-Location of the words is done using the function `locatetext()` within the detected text data. For our case, the condition is `ignoreCase`, meaning the specified words will be seen and highlighted regardless of the case. We will assign `i2` to the image with highlighted words. Highlighting the words is done using the function `insertshape()`. We will use a `FilledRectangle` to highlight the specified words as shown in the below codes.
+Location of the words is done using the function `locatetext()` within the detected text data. For our case, the condition is `ignoreCase`, meaning the specified words will be seen and highlighted regardless of the case. We will assign `i2` to the image with highlighted words. Highlighting the words is done using the function `insertshape()`. Finally, we will use a `FilledRectangle` to highlight the specified words as shown in the below codes.
 ```matlab
 text_location = locateText(ocrOutput, 'Matlab', 'IgnoreCase', true); %specifying text to located
 i2 = insertShape(i, 'FilledRectangle', text_location); % highlighting the located text
@@ -216,7 +216,7 @@ figure,imshow(i2) %Displaying the highlighted text in the image
 ### Labeling objects in images
 Objects containing an image can be detected and labeled using the `bwlabel()` function. This function is executed in a binarized image. Furthermore, one can view the labeled object by converting `bwlabel()` results to RGB images using the function `label2rgb()`. We will demonstrate this process using the following codes:
 
-We first import the image using the function `imread()` as shown in the codes below. The imported image will be assigned the variable `i`.
+We first import the image using the function `imread()` shown in the codes below. The imported image will be assigned the variable `i`.
 ```matlab
 i = imread('capture.PNG'); %importing the image
 figure,imshow(i) %Displaying the imported image
