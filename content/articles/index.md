@@ -17,14 +17,13 @@ images:
 Type promotion is a common occurrence in java programming which, can be achieved automatically in the case of primitive data types through the use of autotype promotion which is also referred to as automatic data type promotion.
 <!--more-->
 Sometimes automatic type casting is confused with typecasting, which should not be the case as casting is achieved manually by a programmer during system coding.
-You also need to understand that datatypes once promoted cannot be "depromoted".
+You also need to understand that datatypes once promoted cannot be "depromoted."
 
 Overloading is a concept in java where different methods are allowed to have a common name. The methods, however, differ by the parameters that they take in or even their input data types.
 
 Automatic type casting mainly occurs in method overloading; hence, it is incumbent that we understand both concepts clearly before we begin
 
 ### Table of contents
-
 1. [Prerequisites](#prerequisites)
 2. [Primitive data types and the acceptable promotions](#primitive-data-types-and-the-acceptable-promotions)
 3. [Rules-for-Automatic-type-promotion](#rules-for-automatic-type-promotion)
@@ -33,13 +32,10 @@ Automatic type casting mainly occurs in method overloading; hence, it is incumbe
 6. [Conclusion](#conclusion)
 
 ### Prerequisites
-
 For a reader to understand this article, they should have to know the following:
-
-- A basic understanding of java as a programing language.
+- A basic understanding of java programing language.
 
 ### Primitive data types and the acceptable promotions
-
 - byte
 - char
 - short
@@ -52,28 +48,23 @@ Below is a diagrammatic illustration of possible type promotions:
 
 ![type promotions](/engineering-education/Automatic-type-promotion/INT.png)
 
-The Java code fragment below shows the variable declaration and instantiation of 2 variables `num1` and `num2` each of which are `bytes`. It then goes ahead to declare a variable `mult1` which is `int` and is expected to store the products of `num1` and `num2`. 
+The Java code fragment below shows the variable declaration and instantiation of 2 variables, `num1` and `num2`, each byte. It then declares a variable mult1 which is int and is expected to store the products of `num1` and `num2`.
 
 ``` java
-
 byte num1 = 200;
 byte num2 = 50;
 int mult1 = num1*num2;
-
 ```
-When the multiplication is done, the product cannot be contained in a `byte ` location hence the byte is promoted to int automatically using Automatic type promotion. This allows the product to be stored in `int`.
 
-### Rules for Automatic type promotion
+When the multiplication is done, the product cannot be contained in a `byte` location; hence the byte is promoted to int automatically using Automatic type promotion, which allows the storage of the product in `int`.
 
-
-The following rules for type promotion  must be followed when executing expressions in java to achieve correct results:
-
+### Rules for automatic type promotion
+The following rules for type promotion must be followed when executing expressions in java to achieve correct results:
 1. All variables of the types `byte`, `short`, and `char` must be auto type promoted to `int`.
-2. If any variable taking part in an operation is `long`, then the operation result has to be `long` too. 
-3. If any variable taking part in an operation is `float`, then the operation result has to be `float` too. An example is shown below illustrating this rule:
+2. If any variable taking part in an operation is `long`, the operation result has to be `long`.
+3. If any variable taking part in an operation is `float`, the operation result has to be `float`. An example is shown below illustrating this rule:
 
 ```java
-
 public class AutoTypePromotion {
  public static void main(String[] args) {
   short num1 = 6;
@@ -84,12 +75,11 @@ public class AutoTypePromotion {
  }
 }
 ``` 
-This outputs `720.98f` which is also a floating-point value hence confirming the rule in question.
+The output is  `720.98f`, which is also a floating-point value hence confirming the rule in question.
 
-4. If any variable taking part in an operation is `double`, then the operation result has to be `double` too. An example is shown below illustrating this rule:
+4. If any variable taking part in an operation is `double`, the operation result has to be `double`. An example is shown below illustrating this rule:
 
 ```java
-
 public class AutoTypePromotion {
  public static void main(String[] args) {
   int num1 = 100;
@@ -99,14 +89,13 @@ public class AutoTypePromotion {
  }
 }
 ```
-This will output `25.0`.whichis a double because the result of the expression automatically becomes a double as stated by the above rule.
 
-### Automatic Type promotion with method overloading
+The output `25.0` which is a double because the result of the expression automatically becomes a double as stated by the above rule.
+
+### Automatic type promotion with method overloading
 
 ```java
-
 package example; 
-
 class AutoTypepromotion  
 {  
     void average(int x, long y)  
@@ -125,7 +114,7 @@ class AutoTypepromotion
     }  
 }  
 ```
-The above code fragment implements a method overloading by having two functions each called average and they have different parameters. Automatic Type promotion is done making the results `long` because one of the operands in the operation was of the type `long`.
+The above code fragment implements a method overloading by having two functions, each called average, with different parameters. Automatic Type promotion is done, making the results `long` because one of the operands in operation was `long`.
 
 ### Problems that may arise due to automatic type promotion
 
@@ -133,7 +122,7 @@ As useful as automatic type promotion is in java, it may sometimes result in com
 
 ![problem](/engineering-education/Automatic-type-promotion/int2.png)
 
-This error is caused by the automatic promotion of the type `byte` to `int`at execution time. therefore if it has to be a `byte` then typecasting needs to be performed explicitly.
+This error is caused by the automatic promotion of the type `byte` to the entire execution time. Therefore if it has to be a `byte`, then typecasting needs to be performed explicitly.
 
 Below is a full java program illustrating Automatic type promotion:
 
@@ -172,10 +161,14 @@ public class AutomaticTypePromotion
     }
 }
 ```
-Output
+
+Output:
+
 ![output](/engineering-education/Automatic-type-promotion/ou.png)
 
 ### Conclusion
+Despite the benefits we have seen with automatic type promotion, some requirements do not support it. It only supports [typecasting](https://www.javatpoint.com/type-casting-in-java) or widening, which means [narrowing](https://www.tutorialspoint.com/narrowing-conversion-in-java#:~:text=Narrowing%20conversion%20is%20needed%20when,to%20integer%20using%20Narrowing%20Conversion.) is uncatered for; hence narrowing has to be done manually by the programmer, which raises the need to learn manual types of casting.
 
-Despite the benefits we have seen with automatic type promotion, there are some requirements that they do not support. It only supports type [casting](https://www.javatpoint.com/type-casting-in-java) or widening. This means narrowing is uncatered for hence [narrowing](https://www.tutorialspoint.com/narrowing-conversion-in-java#:~:text=Narrowing%20conversion%20is%20needed%20when,to%20integer%20using%20Narrowing%20Conversion.) has to be done manually by the programmer. This raises the need to learn manual types of casting.
+Happy learning!
 
+Peer Review Contributions by: [Briana Nzivu](/engineering-education/authors/briana-nzivu/
