@@ -3,15 +3,15 @@ layout: engineering-education
 status: publish
 published: true
 url: /object-based-image-analysis-using-matlab/
-title:  Client-Server Implementation of reCAPTCHA with React and Django
-description: This tutorial introduces reader to the basic concepts of Google ReCAPTCHA v2.
-author:  kevin-kimani
-date: 2021-11-22T00:00:00-18:00
+title: Object based image analysis using matlab
+description: This tutorial introduces reader to the basic concepts of object based image analysis using matlab
+author:  alphonce-arogo
+date: 2021-11-27T00:00:00-18:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/object-based-image-analysis-using-matlab/hero.png
+  - url: /engineering-education/object-based-image-analysis-using-matlab/hero.jpg
     alt: Object image analysis img
 ---
 Object-based image analysis is the processing of an image based on the classification of its pixels to get more helpful information based on the objects contained in the image. For example, such data can be based on height, object edges, or object boundaries. Matlab provides an interactive environment for object-based image analysis by executing functions used in object base analysis or inbuilt apps for image processing.
