@@ -22,7 +22,7 @@ Benefits of coding conventions:
 1. They make copying, changing, and maintaining code a lot easier.
 2. They help readers understand the code faster by allowing them to make assumptions based on prior knowledge.
 3. They give the code a unified design so readers may concentrate on the content rather than the layout.
-4. They tell the best way to use the C# programming language in the most ideal manner.
+4. They tell the most ideal manner to use the C# programming language.
 
 Several coding conventions are used in the C# programming language:
 1. Naming conventions
@@ -31,8 +31,9 @@ Several coding conventions are used in the C# programming language:
 
 There are a few naming conventions that should be followed while writing C# code. All information about public elements applies as well to protected and protected internal elements in the following scenarios, which are all supposed to be visible to external callers.
 
-### Pascal's case
-In the Pascal case, every first letter of every word is capitalized as displayed in the example below. One can use the Pascal case for identifiers with three or more characters.
+### Naming conventions
+#### Pascal's case
+In the Pascal case, the first letter of every word is capitalized as displayed in the example below. One can use the Pascal case for identifiers with three or more characters.
 
 When naming a class, record, or struct, use pascal casing ("PascalCasing").
 
@@ -62,7 +63,7 @@ public interface IPublicInstitution
 }
 ```
 
-Besides to what it's already there, public members of types can be named using the pascal case.
+Besides to what is already there, public members of types can be named using the pascal case.
 
 ```c#
 public class PracticeExample1
@@ -98,17 +99,13 @@ public record PublicIntitution
 ```
 
 ### Camel case
-The camelCasing convention, which is used for parameter names, capitalizes the first letter of each word except the first.
+The `camelCasing` convention, which is used for parameter names, capitalizes the first letter of each word except the first.
 
 ```
 voidMain
 ```
 
 Another implementation of the camel case is when naming private or internal fields.
-
-```
-camelCasing
-```
 
 ```c#
 public class DataService
@@ -138,12 +135,11 @@ public T SomeMethod<T>(int someNumber, bool isValid)
 ```
 
 Apart from the above conventions, there are other several conventions that a programmer needs to consider and apply while in their daily routine of programming.
-1. The choice of word - Use readable identifier names. Underscores, hyphens, and other non-alphanumeric characters should not be used. The choice of word implies that not any word can be used when programming, instead the proper words should be utilized.
-2. Hungarian notation is neither acceptable nor encouraged.
-A hungarian notation is whereby the name of a variable or function denotes its intent or kind, as well as its type in some languages. This therefore creates a programming language dependency and makes maintenance more difficult.
-3. The use of Abbreviations and Acronyms - Do not use acronyms that aren't generally recognized, and even if they are, only use them when essential.
-4. Abbreviations and contractions should not be used as identifier names. This simply means that when one is writing an identifier, words should not be contracted but instead well-known identifiers should be used.
-5. Do not use `GetWin` instead of `GetWindow`. This is because it is somehow confusing instead a programmer is advised to use well-known abbreviations eg For UserInterface, one may use UI which is more identifiable.
+1. The choice of word - Use readable identifier names. Underscores, hyphens, and other non-alphanumeric characters should not be used. The choice of word implies that not any word can be used when programming, instead the proper words should be used.
+2. Hungarian notation is neither acceptable nor encouraged - A hungarian notation is whereby the name of a variable or function denotes its intent or kind, as well as its type in some languages. This therefore creates a programming language dependency and makes maintenance more difficult.
+3. The use of abbreviations and acronyms - Do not use acronyms that aren't generally recognized, and even if they are, only use them when essential.
+4. Abbreviations and contractions should not be used as identifier names - This simply means that when one is writing an identifier, words should not be contracted but instead well-known identifiers should be used.
+5. Do not use `GetWin` instead of `GetWindow` - This is because it is somehow confusing instead a programmer is advised to use well-known abbreviations eg For UserInterface, one may use UI which is more identifiable.
 
 ### Layout Conventions
 For a clear understanding of the code and its structure, formatting is exercised as a coding convention.
@@ -153,9 +149,9 @@ Some of the layout coding conventions are:
 - Each line should accommodate one statement.
 - Each line should only accommodate one declaration.
 - If the continuation lines are not indented consequently, they are supposed to be indented at a stop of one tab.
-- At least a single blank line is supposed to be added between the property definitions and the method.
+- At least a single blank line is supposed to be added between the property definitions and the method. It is done to make sure that your code is clean and neat so that it is readable. A reader will have an easy time following your code and know what each line entails.
 
-Use enclosure or parenthesis to make provisions in an articulation clear, as displayed in the code beneath.
+Use enclosure or parenthesis to make provisions in an articulation clear, as displayed in the code below.
 
 ```c#
 if ((valxyz > valxyz) && (valabc > valabc))
@@ -199,7 +195,9 @@ for (var j = 0; j < 1000; j++)
 ```
 
 #### Event handlers with relaxed delegates
-Event handler arguments (Object and EventArgs) should not be qualified explicitly. Use relaxed delegates instead of event arguments if you're not utilizing the event parameters. Take the following as an example:
+Event handler arguments (Object and EventArgs) should not be qualified explicitly, use relaxed delegates instead of event arguments if you're not utilizing the event parameters. 
+
+Take the following as an example:
 
 `(sender as Object, e As EventArgs)`
 
