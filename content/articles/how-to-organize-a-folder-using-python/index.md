@@ -5,7 +5,7 @@ published: true
 url: /how-to-organize-a-folder-using-python/
 title: How to Organize a Folder using Python
 description: This article will show a reader how to organize folders using a python script. It also explains how to move files to different folders by taking a source directory and a destination directory as parameters. 
-author: nathaniel-dauda-wobin
+author: nathaniel-dauda-musa
 date: 2021-10-14T00:00:00-04:00
 topics: [Languages]
 excerpt_separator: <!--more-->
