@@ -6,7 +6,7 @@ url: /learn-how-to-set-up-linux-quagga-routing-suite/
 title: Learn how to set up Linux's Quagga Routing Suite
 description: In this tutorial, we will look at how to introduce the Quagga steering suite on Ubuntu working framework through an order line interface.
 author: bernard-mburu
-date: 2021-11-24T00:00:00-12:30
+date: 2021-11-27T00:00:00-06:04
 topics: [Linux]
 excerpt_separator: <!--more-->
 images:
@@ -16,7 +16,7 @@ images:
 ---
 Quagga is a popular open-source project for providing routing services on the Linux platform. It is made up of several components for various dynamic protocols.
 <!--more-->
-Such as Open Shortest Path First (OSPF), Routing Information Protocol (RIP), Border Gateway Protocol (BGP), Intermediate System to Intermediate System (IS-IS), and Multiprotocol Label Switching (MPLS). It partially uses the same virtual terminal or CLI (vty/vtysh) for protocol configuration as CISCO/JUNIPER. 
+Such as Open Shortest Path First (OSPF), Routing Information Protocol (RIP), Border Gateway Protocol (BGP), Intermediate System to Intermediate System (IS-IS), and Multiprotocol Label Switching (MPLS). It partially uses the same virtual terminal or CLI (vty/vtysh) for protocol configuration as Cisco/Juniper.
 
 in this article, we will install the Quagga routing suite on Ubuntu.
 
@@ -45,9 +45,11 @@ By the end of this article, you should be able to:
   - [Further reading](#further-reading)
 
 ### A quick history of Quagga and an explanation of what it is
-Quagga is a GPLv2-licensed open-source routing stack. It is a program that implements IP routing protocols like `RIP`, `RIPng`, `OSPF`, and `ISIS`. 
+Quagga is a GPLv2-licensed open-source routing stack. It is a program that implements IP routing protocols like `RIP`, `RIPng`, `OSPF`, and `ISIS`.
 
-Let's look at the distinction between a `routing stack` and a `complete router.` A routing stack is a set of protocols that transmit routing information between network nodes so that each node has the necessary knowledge of the network architecture, whereas a complete router is a networking device that routes data packets between computer networks. A complete router in Quagga requires traffic forwarding and a routing stack, however only routing protocols are implemented.
+Let's look at the distinction between a `routing stack` and a `complete router.` A routing stack is a set of protocols that transmit routing information between network nodes so that each node has the necessary knowledge of the network architecture, whereas a complete router is a networking device that routes data packets between computer networks.
+
+A complete router in Quagga requires traffic forwarding and a routing stack, however only routing protocols are implemented.
 
 Quagga can run on Linux and forward traffic using the standard Linux kernel, or it can use OpenFlow or another open  proprietary interface to connect to a distributed forwarding platform. It can also be used with off-the-shelf routers to accept and advertise routes for routing protocols.
 
@@ -61,16 +63,16 @@ Quagga uses this information to update the kernel routing table so that the righ
 ### Who uses Quagga today and what other open-source alternatives are available?
 Quagga is primarily used in virtual environments, large data centers (cloud providers), and the academic/research community. It is used where an open-source implementation of routing protocols is required as a foundation for experimenting with new standards and ideas.
 
-Regrettably, the majority of large users use Quagga in secret and they're not going to admit it in public. They use Quagga because it allows them to tailor it to their network's specific needs. 
+Regrettably, the majority of large users use Quagga in secret and they're not going to admit it in public. They use Quagga because it allows them to tailor it to their network's specific needs.
 
-`Bird` is the most viable open-source alternative to Quagga as far as viable open-source alternatives go. `Bird` began as a `BGP route-server/reflector` for Internet service providers and exchange points and it has a lot of features that are unique to this environment. 
+`Bird` is the most viable open-source alternative to Quagga as far as viable open-source alternatives go. `Bird` began as a `BGP route-server/reflector` for Internet service providers and exchange points and it has a lot of features that are unique to this environment.
 
-`Bird` has evolved into a more generic routing stack in recent years and it has long supported `OSPF`, and `ISIS` is in the works. `Bird` is most commonly used in environments where the system only receives and sends `BGP`. 
+`Bird` has evolved into a more generic routing stack in recent years and it has long supported `OSPF`, and `ISIS` is in the works. `Bird` is most commonly used in environments where the system only receives and sends `BGP`.
 
 Aside from `Bird`, there's `XORP`, which has a small but active community, as well as the OpenBSD-supported `OpenBGPd` and `OpenOSPFd` projects.
 
 ### Supported Platforms
-Currently, Quagga supports `GNU/LINUX` and `BSD`. Porting Quagga to other platforms is too difficult as platform-dependent code is limited to the `zebra` daemon. 
+Currently, Quagga supports `GNU/LINUX` and `BSD`. Porting Quagga to other platforms is too difficult as platform-dependent code is limited to the `zebra` daemon.
 
 Protocol daemons are mostly platform-independent. The list of officially supported platforms are listed below:
 - GNU/Linux
@@ -78,7 +80,7 @@ Protocol daemons are mostly platform-independent. The list of officially support
 - NetBSD
 - OpenBSD
 
-> Quagga may run correctly on other platforms and may run with partial functionality on further platforms. Versions of these platforms that are older than around 2 years from the point of their original release may need some work. 
+> Quagga may run correctly on other platforms and may run with partial functionality on further platforms. Versions of these platforms that are older than around 2 years from the point of their original release may need some work.
 
 Similarly, the following platforms may work with some effort:
 - Solaris
@@ -92,8 +94,8 @@ Similarly, the following platforms may work with some effort:
 ### Installation
 Quagga can be installed from source code, but we will use the `deb/binary` package in this article. To check the Qugaaga package's dependencies, run the command below:
 
-```shellscript
-#apt-cache depends quagga
+```bash
+apt-cache depends quagga
 ```
 
 - The output of the above command is shown below:
@@ -102,8 +104,8 @@ Quagga can be installed from source code, but we will use the `deb/binary` packa
 
 - Run the following command to install Qugaaga routing software:
 
-```shellscript
-#apt-get install quagga
+```bash
+apt-get install quagga
 ```
 
 Quagga package installation is shown in the following figure:
@@ -113,17 +115,17 @@ Quagga package installation is shown in the following figure:
 ### Configuration
 Unless a few kernel settings are enabled, Linux-based devices do not support packet forwarding by default. Using the commands indicated in the figure below, enable packet forwarding for IPv4. Settings will be permanently saved in `/etc/sysctl.conf` file.
 
-```shellscript
-$echo "net.ipv4.conf.all.forwarding=1" | sudo tee -a /etc/sysctl.conf
-$echo "net.ipv4.conf.default.forwarding=1" | sudo tee -a /etc/sysctl.conf
-$sudo sysctl -p
+```bash
+echo "net.ipv4.conf.all.forwarding=1" | sudo tee -a /etc/sysctl.conf
+echo "net.ipv4.conf.default.forwarding=1" | sudo tee -a /etc/sysctl.conf
+sudo sysctl -p
 ```
 
 ![configuration](/engineering-education/learn-how-to-set-up-linux-quagga-routing-suite/configuration.png)
 
 We will now configure Quagga routing software to run on Linux after enabling packet forwarding. To run the Quagga daemon on Ubuntu, you'll need to do the following:
 
-```shellscript
+```bash
 ripngd.conf
 ospfd.conf
 bgpd.conf
@@ -144,15 +146,15 @@ Copying sample files under `/etc/quagga/` path is shown in following figure:
 
 Rename samples files after copying in `/etc/quagga` directory.
 
-```shellscript
-root@debian:/etc/quagga$sudo mv ripngd.conf.sample ripngd
-root@debian:/etc/quagga$sudo mv ospfd.conf.sample ospfd.conf
-root@debian:/etc/quagga$sudo mv bgpd.conf.sample bgpd.conf
-root@debian:/etc/quagga$sudo mv ripd.conf.sample ripd.conf
-root@debian:/etc/quagga$sudo mv zebra.conf.sample zebra.conf
-root@debian:/etc/quagga$sudo mv vtysh.conf.sample vtysh.conf
-root@debian:/etc/quagga$sudo mv isisd.conf.sample isisd.conf
-root@debian:/etc/quagga$sudo mv babeld.conf.sample babeld.conf
+```bash
+sudo mv ripngd.conf.sample ripngd
+sudo mv ospfd.conf.sample ospfd.conf
+sudo mv bgpd.conf.sample bgpd.conf
+sudo mv ripd.conf.sample ripd.conf
+sudo mv zebra.conf.sample zebra.conf
+sudo mv vtysh.conf.sample vtysh.conf
+sudo mv isisd.conf.sample isisd.conf
+sudo mv babeld.conf.sample babeld.conf
 ```
 
 ![rename](/engineering-education/learn-how-to-set-up-linux-quagga-routing-suite/rename.png)
@@ -163,13 +165,13 @@ Because the Quagga daemon runs as quagga, it changes the ownership and permissio
 
 Run the following command under the `/etc/quagga` folder to change ownership and permission:
 
-```shellscript
-$sudo chown quagga:quagga *
+```bash
+sudo chown quagga:quagga *
 ```
 
 ![user-group](/engineering-education/learn-how-to-set-up-linux-quagga-routing-suite/user-group.png)
 
-The permission "640" has already been assigned to the files. Finally, we must enable or disable Quagga's many daemons. This is because the Zebra daemon is an essential component of the routing suite, it must be enabled in the /etc/quagga/daemons file. 
+The permission "640" has already been assigned to the files. Finally, we must enable or disable Quagga's many daemons. This is because the Zebra daemon is an essential component of the routing suite, it must be enabled in the /etc/quagga/daemons file.
 
 Only OSPF and RIP dynamic protocol daemons are enabled in the file in this post.
 
@@ -183,8 +185,8 @@ The Configuration file with OSPF and RIP enabled is shown below:
 
 Different daemons of the Quagga suite will run on the TCP protocol and listening ports will be from 2600-2800.
 
-```shellscript
-@root-debian:/etc/quagga$ cat /etc/services | grep zebra
+```bash
+cat /etc/services | grep zebra
 
 zebrasrv       2600/tcp      # zebra service
 zebra          2601/tcp      # zebra vty
@@ -200,23 +202,23 @@ isisd          2608/tcp      # ISISd vty (zebra)
 
 Start Quagga routing suite using the following command:
 
-```shellscript
-$sudo /etc/init.d/quagga restart
+```bash
+sudo /etc/init.d/quagga restart
 ```
 
 ![quaggaStarting](/engineering-education/learn-how-to-set-up-linux-quagga-routing-suite/quagga-starting.png)
 
 Using the netstat command, we can confirm the successful running of daemons.
 
-```shellscript
-$sudo netstat -antp | grep 260
+```bash
+sudo netstat -antp | grep 260
 ```
 
 ![netstat](/engineering-education/learn-how-to-set-up-linux-quagga-routing-suite/netstat.png)
 
 Quagga routing can be configured using the following ways:
 
-```shellscript
+```bash
 vtysh
 
 telnet (telnet 127.0.0.1 ospfd/ripd/bgpd/zebra)
@@ -224,8 +226,8 @@ telnet (telnet 127.0.0.1 ospfd/ripd/bgpd/zebra)
 
 vtysh provides a central location for all daemon configuration. To start a virtual shell (vtysh) for Quagga configuration, type the following command in a terminal:
 
-```shellscript
-$ sudo vtysh
+```bash
+sudo vtysh
 ```
 
 ![vtysh](/engineering-education/learn-how-to-set-up-linux-quagga-routing-suite/vtysh.png)
@@ -241,8 +243,8 @@ The Quagga architecture is made up of a core daemon called `Zebra`. Zebra functi
 
 The command below shows how to configure `zebra` accordingly.
 
-```shellscript
-#telnet localhost 2601
+```bash
+telnet localhost 2601
 ```
 
 ![zebra-telnet](/engineering-education/learn-how-to-set-up-linux-quagga-routing-suite/zebra-telnet.png)
@@ -252,8 +254,8 @@ The ospfd daemon controls routing tables using the Open Shortest Path First (OSP
 
 - To configure `ospfd` on `Quagga-suite` run the below command:
 
-```shellscript
-# telnet localhost 2604
+```bash
+telnet localhost 2604
 ```
 
 ![telnet-ospfd](/engineering-education/learn-how-to-set-up-linux-quagga-routing-suite/telnet-ospfd.png)
@@ -263,8 +265,8 @@ The Routing Information Protocol (RIP) daemon handles the routing tables of rout
 
 - The code below demonstrates how to configure `ripd` daemon in the Quagga suite.
 
-```shellscript
-# telnet localhost 2602
+```bash
+telnet localhost 2602
 ```
 
 ![ripd](/engineering-education/learn-how-to-set-up-linux-quagga-routing-suite/ripd.png)
