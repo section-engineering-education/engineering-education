@@ -7,7 +7,7 @@ title: Automating Tests for Dockerized Django Applications with GitHub Actions
 description: In this article, the reader will learn how to test a Django application with Pytest, dockerize it, and configure GitHub Actions to automate your Django tests.
 author: muhammed-ali
 date: 2021-11-26T00:00:00-19:10
-topics: [Languages]
+topics: []
 excerpt_separator: <!--more-->
 images:
 
@@ -24,7 +24,7 @@ Docker ensures your application works the same way on all platforms. Adding thes
 The reader should have the following to follow along with this tutorial:
 1. A good understanding of Django.
 2. Using Git/GitHub.
-3. [Docker](https://docs.docker.com/get-docker/) and [Docker compose](https://docs.docker.com/compose/install/) installed
+3. [Docker](https://docs.docker.com/get-docker/) and [Docker compose](https://docs.docker.com/compose/install/) installed.
 
 ### Building a base Django app
 Let us build the project that we will be using for this tutorial. We will create a new virtual environment for the project, which will come in handy when trying to get a list of all the dependencies.
