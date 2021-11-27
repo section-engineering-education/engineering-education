@@ -6,7 +6,7 @@ url: /creating-a-custom-stepper-form-in-android/
 title: Creating a Custom Stepper Form in Android
 description: This tutorial will guide the reader through the process of creating a custom stepper form in Android. A stepper displays the user’s progress through a series of steps.
 author: feswal-salim
-date: 2021-11-26T00:00:00-15:01
+date: 2021-11-27T00:00:00-11:30
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/creating-a-custom-stepper-form-in-android/hero.png
     alt: Creating a Custom Stepper Form in Android Hero Image
 ---
-When creating forms in Android apps, you may sometimes want to present all the information in the available screen space. This approach is a bit cumbersome as not everything can fit in one screen.
+When creating forms in Android apps, you may want to present all the information in the available screen space. This approach is a bit cumbersome as not everything can fit in one screen.
 <!--more-->
 To improve consistency, the user interface, and make the app more interactive, a stepper is implemented.
 
@@ -22,22 +22,35 @@ To improve consistency, the user interface, and make the app more interactive, a
 To follow along:
 - Make sure you have Android Studio installed.
 - You need a good understanding of how to create and run Android applications.
-- Knowledge of the [Kotlin](https://kotlinlang.org/) programming language and  `ViewBinding` is required.
+- Knowledge of the [Kotlin](https://kotlinlang.org/) programming language and `ViewBinding` is required.
 
 ### Table of contents
+- [Prerequisites](#prerequisites)
+- [Table of contents](#table-of-contents)
 - [Goals](#goals)
 - [Introduction](#introduction)
-- [Application of Step forms](#application-of-stepper-forms)
-- [Creating an Android project](#step-1---creating-an-android-project)
-- [Setting up the project](#step-2---setting-up-the-project)
-- [Define steps titles](#step-3---define-step-titles)
-- [App layout](#step-4---app-layout)
-- [Navigating to the next form](#step-5---navigating-to-the-next-step)
-- [Handling back navigating ](#step-6---handling-back-navigation)
+- [Application of Stepper forms](#application-of-stepper-forms)
+- [Step 1 - Creating an Android project](#step-1---creating-an-android-project)
+- [Step 2 - Setting up the project](#step-2---setting-up-the-project)
+- [Step 3 - Define step titles](#step-3---define-step-titles)
+- [Step 4 - App layout](#step-4---app-layout)
+  - [Define StepView](#define-stepview)
+  - [Explanation](#explanation)
+- [Define form layouts](#define-form-layouts)
+  - [Personal details form](#personal-details-form)
+  - [Location details form](#location-details-form)
+  - [Usage details form](#usage-details-form)
+  - [Employment details form](#employment-details-form)
+  - [Loan details form](#loan-details-form)
+  - [Navigation button](#navigation-button)
+- [Step 5 - Navigating to the next step](#step-5---navigating-to-the-next-step)
+  - [Explanation](#explanation-1)
+- [Step 6 - Handling back navigation](#step-6---handling-back-navigation)
+  - [Explanation](#explanation-2)
 - [Conclusion](#conclusion)
 
 ### Goals
-By the end of this tutorial, the reader will able to:
+By the end of this tutorial, the reader will be able to:
 - Understand what a stepper form is.
 - Know various applications of stepper forms.
 - Learn how to create a stepper form.
@@ -47,22 +60,22 @@ Steppers display progress through a sequence of logical and numbered steps. They
 
 Stepper divides the current screen into different views and the contents are distributed over all of them. Users can navigate through these views.
 
-Steppers keep users informed about their progress by indicating what step they’re on and how many steps they have left. This could otherwise be a challenge due to the limited screen space. 
+Steppers keep users informed about their progress by indicating what step they’re on and how many steps they have left. This could otherwise be a challenge due to the limited screen space.
 
 ### Application of Stepper forms
 Stepper Forms can be used in:
 - Loan apps whereby a user needs to fill in a lot of details.
-- Applications where when a user is registering they need to fill in more information that cannot fit on a single screen.
+- Applications where when a user is registering, they need to fill in more information that cannot fit on a single screen.
 
 In this tutorial, we will create a form for a loan application that asks the user to fill in details such as names, location details, how he/she will use the loan, current employment details, and finally, the loan amount in the last form.
 
 ### Step 1 - Creating an Android project
-Launch Android Studio and create an empty Android Project.
+Launch Android Studio and create an empty android project.
 
-![project](/engineering-education/creating-a-custom-stepper-form-in-android/project.jpg)
+![project](/engineering-education/creating-a-custom-stepper-form-in-android/project.png)
 
 ### Step 2 - Setting up the project
-In this step, copy the following dependency and paste it into your app-level `build.gradle`.
+In this step, copy the following dependency and paste it into your app-level `build.gradle` file.
 
 ```gradle
 dependencies {
@@ -71,7 +84,7 @@ dependencies {
 ```
 
 ### Step 3 - Define step titles
-In the `res` directory, open `string.xml` and add the following array. This is the list of titles that will appear at the top of each step. 
+In the `res` directory, open `string.xml` and add the following array. This is the list of titles that will appear at the top of each step.
 
 ```xml
 <array name="details">
@@ -83,10 +96,10 @@ In the `res` directory, open `string.xml` and add the following array. This is t
 </array>
 ```
 
-### Step 4 - App Layout
+### Step 4 - App layout
 At this point, we are going to define a layout that will define how the different steps will be displayed.
 
-#### Define `StepView`
+#### Define StepView
 In the `res` directory, open your layout file and add the following code.
 
 ```xml
@@ -129,7 +142,7 @@ In the `res` directory, open your layout file and add the following code.
 In this View:
 - We have added the attribute `app:sv_steps="@array/details"` that contains the steps that we defined in strings.
 
-> You can play around with the different attributes available to come up with a stepper of your preferred appearance i.e changing the different color and size properties.
+> You can play around with the different attributes available to come up with a stepper of your preferred appearance. I.e changing the different color and size properties.
 
 ### Define form layouts
 To achieve the different forms in different steps, we will create layouts and hide them, then displaying them at the right step.
@@ -172,7 +185,7 @@ The following will be the layout for this step:
 
     <!-- YOUR_VIEWS -->
 
-</androidx.constraintlayout.widget.ConstraintLayout>     
+</androidx.constraintlayout.widget.ConstraintLayout>
 ```
 
 ![step 2](/engineering-education/creating-a-custom-stepper-form-in-android/step2.png)
@@ -192,7 +205,7 @@ The following will be the layout for this step:
 
     <!-- YOUR_VIEWS -->
 
-</androidx.constraintlayout.widget.ConstraintLayout>       
+</androidx.constraintlayout.widget.ConstraintLayout>
 ```
 
 ![step 3](/engineering-education/creating-a-custom-stepper-form-in-android/step3.png)
@@ -212,7 +225,7 @@ The following will be the layout for this step:
 
     <!-- YOUR_VIEWS -->
 
-</androidx.constraintlayout.widget.ConstraintLayout>    
+</androidx.constraintlayout.widget.ConstraintLayout>
 ```
 
 ![step 4](/engineering-education/creating-a-custom-stepper-form-in-android/step4.png)
@@ -232,7 +245,7 @@ The following will be the layout for this step:
 
     <!-- YOUR_VIEWS -->
 
-</androidx.constraintlayout.widget.ConstraintLayout>       
+</androidx.constraintlayout.widget.ConstraintLayout>
 ```
 
 ![step 5](/engineering-education/creating-a-custom-stepper-form-in-android/step5.png)
@@ -255,7 +268,7 @@ Finally, lets add a button that will help us in navigating through the five form
     app:layout_constraintStart_toStartOf="parent" />
 ```
 
-> NOTE: Except for the first form, set the other forms' visibility to `gone`. This will ensure that only one form is visible at a time.  
+> NOTE: Except for the first form, set the other forms' visibility to `gone`. This will ensure that only one form is visible at a time.
 
 ### Step 5 - Navigating to the next step
 After defining our layouts, what remains is to add some logic to our `MainActivity.kt` to help us navigate through different forms.
@@ -329,10 +342,10 @@ Inside the `onClickListener` of the button, we are switching positions, whereby,
 
 In the `else` part, we set the position to "0" and call the `StepView`'s `done` method.
 
-> In this `else` clause, we can add code to either navigate a user to another `Activity` or `Fragment`
+In this `else` clause, we can add code to either navigate a user to another `Activity` or `Fragment`
 
 ### Step 6 - Handling back navigation
-It is good to add a capability where a user can navigate to the previous step. To do so, we will implement the `onBackPressed` method.
+It is good to add a feature that allows a user to navigate to the previous step. To do so, we will implement the `onBackPressed` method.
 
 ```kotlin
 override fun onBackPressed() {
