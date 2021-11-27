@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /machine-learning-regression-evaluation-metrics/
 title: Machine Learning Regression Evaluation Metrics
-description: In this tutorial, we will discuss various evaluation metrics used in regression models, advantages and disadvantages of these regression model metrics.
+description: In this tutorial, the reader will learn various evaluation metrics used in regression models, advantages, and disadvantages of these regression model metrics.
 author: denis-kuria
-date: 2021-11-25T00:00:00-19:00
+date: 2021-11-27T00:00:00-10:10
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -14,14 +14,14 @@ images:
   - url: /engineering-education/machine-learning-regression-evaluation-metrics/hero.jpg 
     alt: Machine Learning Regression Evaluation Metrics Hero image
 ---
-In machine learning, a regression model is a type of model that predicts a numeric value. These values can be those of price, fees, score, etc. 
+In machine learning, a regression model is a type of model that predicts a numeric value. These values can be those of prices, fees, scores, etc. 
 <!--more-->
 We need to measure the performance of machine learning models to determine their reliability. After model fitting, we assess the model's performance by comparing the predictions the model generates to actual data. 
 
-In this tutorial, we are going to discuss various evaluation metrics used in regression models. Besides, we will discuss the advantages and disadvantages of these regression model metrics, and what contitutes a good regression model.
+In this tutorial, we are going to discuss various evaluation metrics used in regression models. We will also discuss the advantages and disadvantages of these regression model metrics, and what constitutes a suitable regression model.
 
 ### Prerequisites
-To understand this article, you ought to be familiar with:
+To understand this article, the reader ought to be familiar with:
 - Machine learning.
 - Regression models.
 
@@ -47,14 +47,14 @@ We obtain *MAE* by calculating the absolute difference between the predictions m
 
 ![MAE](/engineering-education/machine-learning-regression-evaluation-metrics/mae.png)
 
-where *n* is the total number of data points.
+Where *n* is the total number of data points.
 
 We calculate *MAE* by following the steps below:
 1. Calculate the residual (error) of each data point.
 2. Calculate the absolute value. This helps to get rid of the sign.
 3. Calculate the average of all residuals.
 
-If *MAE* is zero, the model predictions are perfect (but this will rarely happen). The higher the *MAE*, the worse the predictions are.
+If *MAE* is zero, the model predictions are perfect (but this will rarely happen). The higher the *MAE*, the worse the predictions will be.
 
 **Advantages**
 - The *Mean Absolute Error* obtained is in a similar unit as the output variable.
@@ -64,14 +64,13 @@ If *MAE* is zero, the model predictions are perfect (but this will rarely happen
 - We have to apply gradient descent to the graph of *MAE* to make it differentiable.
 
 ### Mean Squared Error (MSE)
-This metric is almost similar to *MAE*. The difference is that in *MSE*, instead of using absolute values, we use the squares of the difference between the predicted values and the actual values. In the case of data outliers, *MSE* will be larger than *MAE* since we are squaring the error.
+This metric is almost similar to *MAE*. Instead of using absolute values, we are using the squares of the difference between the predicted values and the actual values. In the case of data outliers, *MSE* will be larger than *MAE* since we are squaring the error.
 
 *MSE* is calculated using the following formula:
 
 ![MSE](/engineering-education/machine-learning-regression-evaluation-metrics/mse.png)
 
 We calculate *MSE* by following the steps below:
-
 1. Calculate the error of each data point.
 2. Calculate the squared value of the errors.
 3. Calculate the average of the results we got in step 2.
@@ -90,7 +89,6 @@ We use the following formula to calculate *RMSE*:
 ![RMSE](/engineering-education/machine-learning-regression-evaluation-metrics/rmse.png)
 
 We calculate *RMSE* by following the steps below:
-
 1. Calculate the error for each data point.
 2. Calculate the squared value of the residuals.
 3. Calculate the average of the squared residuals.
@@ -101,10 +99,10 @@ We calculate *RMSE* by following the steps below:
 - Makes it easier to compute gradient when used as a loss function.
 
 **Disadvantages**
-- When compared to *MAE*, it is less robust to outliers.
+- When compared to *MAE*, it is less robust than other outliers.
 
 ### R Squared (R²)
-This metric is used to describe the goodness of fit of linear regression. We also refer to it as the coefficient of determination. Simply put, R² is used to show how the change in the output (y) is a result of the change in the input (x).
+This metric is used to describe the accuracy of fit of linear regression. We also refer to it as the coefficient of determination. Simply put, R² is used to show how the change in the output (y) is a result of the change in the input (x).
 
 We use the following formula to calculate *R²*:
 
@@ -158,6 +156,8 @@ A good regression model constitutes a model in which the difference between the 
 
 ### Conclusion
 In this article, we have discussed the metrics used in the regression model. You now know what each metric entails. You will now be able to choose the metric that is best suited for you when implementing these metrics in your model.
+
+Happy learning!
 
 ---
 Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
