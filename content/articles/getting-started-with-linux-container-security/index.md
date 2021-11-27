@@ -44,7 +44,7 @@ Unprivileged containers only work when `LXC` communicates with three parts of `s
 
 Consequently, most security concerns in those containers apply to any random unprivileged user, and these issues are regarded as a generic kernel security bug rather than an LXC issue.
 
-> Note that LXC does not stop [denial of service attacks](/denial-of-service/) automatically. Hence one needs to follow specific security protocols when running several untrusted containers or using untrusted users when operating the containers. 
+> Note that LXC does not stop [denial of service attacks](/engineering-education/denial-of-service/) automatically. Hence one needs to follow specific security protocols when running several untrusted containers or using untrusted users when operating the containers. 
 
 Some of the security measures to consider may include:
 - Cgroup limits - The limits in LXC come from its parent. In cases where limits have not been made regarding what resources, memory, and time one container can use, it can easily lead to a DoS attack on the host. To resolve the problem, appropriate lxc.cgroup configurations entries (memory, CPU, and pids) or settings are made. During authentication, parent users should be assigned the correct configured cgroups. 
