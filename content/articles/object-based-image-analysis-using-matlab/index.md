@@ -12,7 +12,7 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/object-based-image-analysis-using-matlab/hero.jpg
-    alt: Object image analysis img
+    alt: Object image analysis image
 ---
 Object-based image analysis is the processing of an image based on the classification of its pixels to get useful information based on the objects contained in the image. For example, such data can be based on height, object edges, or object boundaries. 
 <!--more-->
