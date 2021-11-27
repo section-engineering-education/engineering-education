@@ -6,7 +6,7 @@ url: /how-to-invoke-a-soap-web-service-in-java/
 title: How to Invoke a SOAP Web Service in Java
 description: In this tutоriаl, we will walk the reader on hоw tо invоke а SОАР (Simрle Оbjeсt Ассess Рrоtосоl) сlient in Jаvа with JАX-WS RI in Jdk 8 аnd Jdk 11.
 author: tonny-sage
-date: 2021-11-1T00:00:00-15:00
+date: 2021-11-22T00:00:00-11:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
