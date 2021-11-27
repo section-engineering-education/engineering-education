@@ -15,7 +15,7 @@ The logging library follows a secluded plan and is isolated into four classes: l
  The `basicConfig()` technique for the logging module is the speediest strategy for planning your lumberjack's ideal direction. Notwithstanding, the [Python documentation](https://docs.python.org/3.7/library/logging.html#logger-objects) proposes making a lumberjack for every module in your application—and arranging a lumberjack for each module game-plan utilizing `basicConfig()` alone can be annoying. 
 The three significant measures of `basicConfig()` are: 
 - level: plunging succession of events. The log ranks congenial are DEBUG, INFO, WARNING, ERROR, and CRITICAL. In addition, the level is set to Notice clearly, which proposes that Python's logging module will ignore any Research or Information messages. 
-- controller: determines where the application will pipe your logs. Except if determined, the logging library will utilize a StreamHandler to log messages to sys.stderr (normally the control center). 
+- controller: determines where the application will pipe your logs.
 - design: Messges are logged in this format: `LEVEL>:LOGGER NAME>: MESSAGE>`. In the following module, I'll talk about how to alter this to fuse timestamps and supplemental data that is significant for investigating. 
 Inferable from how the logging module includes WARNING and more significant level logs as a substitute, you might be missing out on genuinely low logs that can work with rhizome cause assessment. Maybe utilizing a `StreamHandler` or a `SocketHandler` to channel logs to the control center or an unessential help over the organization, use a `FileHandler` to log single or extra documents on the circle.  
 Benefits of logging documents 
@@ -32,7 +32,7 @@ Logs follow a specific rules design that includes the accompanying ascribes:
 
 - %(purport)s: tenor 
 
-[To get deeper information on attributes](https://docs.python.org/3/library/logging.html#logrecord-ascribes) you can remember for the organization of each log record.
+[More about attributes](https://docs.python.org/3/library/logging.html#logrecord-ascribes).
 ### Make a redid arrangement with different loggers and objections.
 The more your application ranges, the more you are needed to utilize a solid, explained way of designing each specific logger by incorporating the lumberjack name as a section of each log. The following are the conversations: 
 - arrange various lumberjacks and record the lumberjack personality powerfully to self-assertively set, the lumberjack title to suit the personality of your module, utilize the logging library's incorporated [getLogger() approach](https://docs.python.org/3.7/library/logging.html#logging.getLogger): 
@@ -79,7 +79,7 @@ A logging setup record needs to contain most extreme three sections:
 - `[loggers]`: the personality of the lumberjacks you will design. 
 - `[handlers]`: controllers intended to be utilized by these lumberjacks. 
 - `[formatters]`: the structure you need each lumberjack to follow. 
-Each part should annex a comma-isolated rundown of at least one `keys: keys=handler1,handler2,handler3,[....]`. Keys direct the personality of different parts that you will be needed to design, arranged as `[<SECTION_NAME>_<KEY_NAME>]`, by which the fragment name is either lumberjack, controller, or formatter. 
+ Keys direct the personality of different parts that you will be needed to design, arranged as `[<SECTION_NAME>_<KEY_NAME>]`, by which the fragment name is either lumberjack, controller, or formatter. 
 The following is a basic outline of a logging setup document.
 ```python 
 [loggers] 
@@ -160,7 +160,7 @@ LOGGING = {
 }, 
 }
 ```
-In Django, there is in-built variable logging; thus, the logging's custom values come from the library. In addition, there are keynotes in the logging dictionary; version, disable-existing-loggers, handlers, and loggers. Version key displays the mapping form in which by default has value 1. 
+In Django, there is in-built variable contained in the library. In addition, there are keynotes in the logging dictionary; version, disable-existing-loggers, handlers, and loggers. Version key displays the mapping form in which by default has value 1. 
 The disable-existing-logger Key tells Django not to disable loggers. This Key by custom is true. However, it's important not to set it to true while working with database queries and functions.
 Handlers handle the message and pass them to support records and more. The actual controllers are a word reference. That word reference key names will be the names of the controllers. There are various types, but more emphasis is on:
 - FileHandler: logger-name – filehandler.First, it will store the logs in a file. 
@@ -185,8 +185,7 @@ logger.error(e, exc_info=True)
 ```
 - Recording unhandled exceptional cases: 
 It isn't easy to go before and resolve each achievable exceptional case. But, fundamentally, guarantee your logs can get every exclusion, and you can deal with them later. 
-An unhandled exclusion happens when the application code doesn't true to form handle extraordinary cases that are outside the `try...except` block. For instance, when you endeavor to open a record on a plate, it's anything but a surprising issue for the archive not to exist. The .NET Framework will then throw a 'FileNotFoundException'. 
-If it happens it doesn't find the right unique case type, the interpreter incorporates [sys.excepthook()](https://docs.python.org/3/library/sys.html#sys.excepthook) with three conflicts: exception class, the uncommon case event, and traceback. More to that you can use python's standard [traceback lirary](https://docs.python.org/3/library/traceback.html) to coordinate traceback and connect it in the log message in an event as under:
+An unhandled exclusion happens when the application code doesn't true to form handle extraordinary cases that are outside the `try...except` block. For instance, when you endeavor to open a record on a plate, it's anything but a surprising issue for the archive not to exist. The .NET Framework will then throw a 'FileNotFoundException'.  More to that you can use python's standard [traceback lirary](https://docs.python.org/3/library/traceback.html) to coordinate traceback and connect it in the log message in an event as under:
 
 ```python 
 
@@ -216,15 +215,6 @@ logger.error("uncaught exceptional case: %s", traceback.format_exc())
 return False 
 in case __name__ == '__main__': 
 word_count('myfile.txt') 
-```
-The yield will be, 
-```
-exception doesn't manage yet gets logged, because of our traceback code 
-2021-11-03 00:22:31,891 lessermodule - ERROR:uncaught exceptional case: Traceback (latest call last): 
-Archive "/home/molly/logstest/lesser_module.py", line 23, in word_count 
-j.write("this archive has %d words", final_word_count) 
-TypeError: create() takes unequivocally one dispute (2 given) 
-
 ```
 This dictates that the code contains a `TypeError` unique case that isn't dealt with in the endeavor except for reasoning, yet It will be logged since we fused the 'traceback' code.
 
@@ -314,4 +304,5 @@ If you haven't been using marking in your applications, this is a good chance to
 ### Further activity reading
 
 More on python logs [visit](https://docs.python.org/3/library/logging.html)
+
 Happy coding!
