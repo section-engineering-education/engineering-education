@@ -6,8 +6,8 @@ url: /class-data-sharing-in-java-with-examples/
 title: Data sharing in Java
 description: This article will explore data sharing in Java and provide examples on the same concept.
 author: bancy-wangu
-date: 2021-11-25T00:00:00-10:00
-topics: [Node.js]
+date: 2021-11-28T00:00:00-10:00
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
