@@ -307,7 +307,7 @@ yarn start
 
 Once the development server is up and running, you should get a page that looks like this:
 
-![faq page](/engineering-education/building-faq-page-using-react-styled-components-with-react/image1.jpg)
+![faq page](/engineering-education/building-faq-page-using-react-styled-components-and-react/image1.jpg)
 
 Finally, to further enhance the beauty of our page, we will go ahead, and add some font classes, remove unnecessary margins and change the background color of the page to #070707.
 
@@ -327,7 +327,7 @@ body {
 
 Once the code snippet is correctly implemented, your FAQ page should look like this below:
 
-![faq page](/engineering-education/building-faq-page-using-react-styled-components-with-react/image2.jpg)
+![faq page](/engineering-education/building-faq-page-using-react-styled-components-and-react/image2.jpg)
 
 ### Conclusion
 React-styled components, as we have discussed extensively in this article, combined with React.js can be used in numerous productive ways. In this tutorial, we created, styled, and displayed an FAQ page with React-styled component.
