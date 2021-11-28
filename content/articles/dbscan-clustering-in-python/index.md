@@ -194,3 +194,6 @@ plt.show() # showing the plot
 In this article, we have covered the DBSCAN algorithm. First, we looked at its key parameters and how this algorithm clusters the data points. We also learned about three data points associated with the DBSCAN algorithm. Later we looked at how we implement this algorithm. 
 
 Happy learning.
+
+---
+Peer Review Contributions by: [Jerim Kaura](/engineering-education/authors/jerim-kaura/)
