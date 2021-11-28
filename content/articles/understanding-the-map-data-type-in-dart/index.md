@@ -111,7 +111,7 @@ The expected output will be:
 3
 ```
 
-![Length](/engineering-education/understanding-the-map-data-type-in-dart/lenth.png).
+![Length](/engineering-education/understanding-the-map-data-type-in-dart/length.png).
 
 The map above contains three key-value pair elements for the student's `name`, the `email`, and the `RegNumber` hence the output 3.
 
