@@ -7,7 +7,10 @@ In this article, we will look at the basic knowledge on object detection before 
 
 ### Introduction
 
-**Object detection** is a computer vision task that involves identifying instances of an object of a certain class within an image or a video. Object detection has two main state-of-art methods namely:
+**Object detection** is a computer vision task that involves identifying instances of an object of a certain class within an image or a video.
+With a wide are of applications like self-driving cars, security, manufacturing, etc. ,Object detection is a very interesting computer vision task to get started with.
+
+Object detection has two main state-of-art methods namely:
 
 1.  One-stage methods - these are mainly focused on the inference speed. Examples include: YOLO, RetinaNet, and SSD
 2.  Two-stage methods - these are mainly focused on detection accuracy. Examples include Mask R-CNN, Faster R-CNN, and Cascade R-CNN.
@@ -109,7 +112,9 @@ The above image objects will be detected as shown below:
 
 ![boda](/engineering-education/building-an-object-detection-model-with-yolov5-and-pytorch/boda.jpg)
 
-The detected image results are stored in the path `runs/detect/exp`.
+>**N/B:** The detected image results are stored in the path `runs/detect/exp`.
+
+For other objects, use the following commands:
 
 ```bash
 python detect.py --source vid.mp4  # for a specific video
@@ -118,6 +123,9 @@ python detect.py --source path/*.jpg  # for a specific glob
 python detect.py --source 'https://youtu.be/Zgi9g1ksQHc'  # for a specific YouTube video
 python detect.py --source 'rtsp://example.com/media.mp4'  # for a specific RTSP, RTMP, or HTTP stream
 ```
+
+>**N/B**: Before running the commands above, make sure the objects you want to detect are located at `data/...` e.g. `data/videos`, `data/images` etc.
+
 ### Model inference with PyTorch Hub and YOLOv5
 
 To check the inference using PyTorch, we will load the pre-trained YOLOv5s model from PyTorch Hub and then pass an image for inference. 
@@ -153,7 +161,7 @@ or
 ```bash
 python train.py --img 640 --batch 16 --epochs 3 --data coco128.yaml --weights '' --cfg yolov5s.yaml --cache
 ```
-Our **training results** will be saved to the directory`runs/train/exp` with incrementing run directories, i.e. `runs/train/exp1`, `runs/train/exp2`.
+Our **training results** will be saved to the directory `runs/train/exp` with incrementing run directories, i.e. `runs/train/exp1`, `runs/train/exp2`...
 
 ### Model validation
 
@@ -168,18 +176,22 @@ unzip -q tmp.zip -d ../datasets && rm tmp.zip
 ```
 
 Once done, we will then run the following  command to validate our model.
+
 ```bash
 python val.py --weights yolov5x.pt --data coco.yaml --img 640 --iou 0.65 --half
 ```
-
-The model's evaluation results will be saved to directory `runs/val/exp`.
-
 Below is an example of our output:
 
 ![evaluation](/engineering-education/building-an-object-detection-model-with-yolov5-and-pytorch/evaluation.jpg)
 
+The model's evaluation results will be saved to directory `runs/val/exp`.
+
+
+
 ### Conclusion
 
-Like we have seen above, object detection is a very interesting computer vision task to get started with. Despite its numerous applications in fields like self-driving cars, security, manufacturing, etc. it can be also used as an onboarding project for computer vision and artificial intelligence enthusiasts. 
+To wrap up, we have looked at what object detection is, its applications and implementation. We have also tackled the YOLO object detection algorithm (YOLOv5 particularly) which we have used to perform our own object detection from, setting up our environment to being detecting images and videos.
 
 >N/B: The actual process of building of the model from scratch goes beyond this tutorial.
+
+Happy coding!
