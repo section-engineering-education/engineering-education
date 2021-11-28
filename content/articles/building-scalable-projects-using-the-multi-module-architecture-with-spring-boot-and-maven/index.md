@@ -87,7 +87,7 @@ For this project, I have chosen the `Spring Web` and `Lombok` dependencies. You 
 
 Click next after selecting dependencies. You can either choose to open on the same window, thereby replacing the present open project or open in another window:
 
-![Continue Project](/engineering-education/building-scalable-projects-using-the-multi-module-architecture-with-spring-boot-and-maven/springstart1.jpg)
+![Continue Project](/engineering-education/building-scalable-projects-using-the-multi-module-architecture-with-spring-boot-and-maven/startproject1.jpg)
 
 Now, we can see the project open and the dependencies we selected, displayed in the `pom.xml` file:
 
@@ -113,7 +113,7 @@ A `data` module has been created by you.
 
 ![Data Two](/engineering-education/building-scalable-projects-using-the-multi-module-architecture-with-spring-boot-and-maven/datatwo.jpg)
 
-Following the same approach, let us create the `Service` and `Controller` modules.
+Following the same approach, let us create the `Service` and `Controller` modules:
 - Right-click on the project name.
 - Click `New` > `Module`.
 - Select `Maven`, type in a Name (this time, it would be `Service`)
@@ -173,7 +173,7 @@ Now, they can send emails and text messages and other notifications.
 
 ![Payment](/engineering-education/building-scalable-projects-using-the-multi-module-architecture-with-spring-boot-and-maven/payment.jpg)
 
-## Bonus
+### Bonus
 Let us imagine that a `Payment Service` is to be implemented into the Hospital management System later.
 
 This is very simple and straightforward.
