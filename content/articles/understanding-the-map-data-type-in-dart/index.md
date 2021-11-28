@@ -4,7 +4,7 @@ status: publish
 published: 
 url: /understanding-the-map-data-type-in-dart/
 title: Understanding the Map Data Type in Dart
-description: This article will provide the reader with an insight into Map data type.
+description: This article will provide the reader with an insight into Map data type. We will also learn how to manipulate map elements to output specific user requirements.
 author: elly-omondi
 date: 2021-11-28T00:00:00-12:30
 topics: [Language]
