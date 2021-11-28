@@ -129,7 +129,7 @@ print('Accuracy of the model on the 10000 test images: % d %%' % (
 			100 * correct / total))
 
 ```
-To put it another way, if you followed the instructions exactly, you would have an accuracy rate of 82%, which is significantly lower than the current best model, which makes use of a different sort of neural network architecture.
+To put it another way, if you followed the instructions exactly, you would have an accuracy rate of 91%, which is significantly lower than the current best model, which makes use of a different sort of neural network architecture.
 
 You can run the whole code [here](https://colab.research.google.com/drive/1eL6a4_QxAZxqLV83vJOsLkPF09hYwThn?usp=sharing)
 ### References 
