@@ -1,6 +1,6 @@
-## HOW TO TUNE RECOMMENDATION  ENGINE TO FORECAST FUTURE TRENDS.
-
-### Introduction
+![](hero.jpg.jpg)
+### How To Tune Recommendation  Engine To Forecast Future Trends.
+#### Introduction
 We begin this article by describing what a recommendation system is and how we can go about to tune it. To achieve this, we would follow the steps listed below in no particular order:
 - What is a Recommendation Engine?
 - Deeper Look into building a Recommendation Model.
@@ -11,13 +11,13 @@ We begin this article by describing what a recommendation system is and how we c
 In this article, we will consider some steps required to build a recommendation engine using an educational recommendation engine as a case study. This engine is capable of recommending the best learning materials to users and is going to be built with an algorithm that functions from the user’s history pattern. 
 This educational app aims to assist users by suggesting the choicest materials to aid their study. This article further explains how users’ history patterns can suggest better ways to source for these materials using a recommendation model. 
 
-### Prerequisite:
+#### Prerequisite:
 - Knowledge of Python programming.
 - Knowledge of Data Science.
 - Basic knowledge of mathematical concepts (statistics).
 
                       
-### What is a recommendation model?
+#### What is a recommendation model?
 
 In the second half of 1970s, the first manifestation of recommender systems was noticed at the Usenet communication system which was created by the Duke University. This discovery was carried out during some research work by researchers in the field of cognition science and information retrieval. 
 
@@ -53,7 +53,7 @@ These techniques are widely adopted by online businesses to track customers' ord
 
 The next subtopic below contains some well-explained procedures involved in tuning a recommendation model.
 
-### Deeper Look into building a Recommendation Model
+#### Deeper Look into building a Recommendation Model
 Getting alternatives or close substitutes for goods or some certain goods is an issue to a certain individual. Let’s consider parents who are concerned about monitoring  what content their wards consume online. Such a parent would purchase the right movies that are free from adult content for their children. Therefore, the Recommendation Model, plays a key role here and can be used to recommend movies, music, e.t.c based on certain features in the data set to an individual, a group, or a parent.
 
 There are three (3)  types of recommendation models. They are:
@@ -63,10 +63,10 @@ There are three (3)  types of recommendation models. They are:
 
 In this article, we will be using the content-based recommendation model. The content-based recommendation model suggests similar items based on a particular item. This system uses item metadata, such as genre, director, description, actors for the movie recommendation. The general idea behind this particular type of recommendation system is that if a person likes a particular item, they will also like an item that is similar to it. This similarity in choices makes it easier for the recommendation model to recommend the next item. Here, the recommendation model makes use of the user's past item metadata. A good example is YouTube, with a lot of videos online and topics on different subject matter. The recommendation system is then used to determine the favorite choice of a user’s video ‘suggestion list’ based on the previous history. This algorithm pattern continues and keeps on suggesting new videos that you could potentially watch.
 
-### BUILDING THE ALGORITHM MODEL
+#### BUILDING THE ALGORITHM MODEL
 In building this algorithm (model) for our case study, we are going to use the Python programming language because of its robust libraries and the fact that it is faster, precise, and more accurate when it comes to scientific calculations. 
 
-### BUILDING THE CLASSIFICATION MODEL
+#### BUILDING THE CLASSIFICATION MODEL
 We will build this classification model using the ‘Cosine Similarity matrix’. The cosine similarity matrix helps to take the distance between points. For instance, let us consider some points and we name them : X1, X2, X3, X4…….Xn. 
 We will then check closely and make our observations on the relationship within these points X1,X2,X3,X4...........Xn. 
 Note that, if the distance between two certain points are close ,we will group them as related i.e(positive) but if the distance between points   X1,  X2,  X3, X4……….Xn are far apart, we will group them as (negative) or we can also refer to them as dissimilar or unrelated.
@@ -82,7 +82,7 @@ After that you install the following packages using ‘pip install’ for window
 
 The sklearn is used for scientific calculation, pandas are used for loading the data into the notebook in other for me to be able to work with, Matplotlib is used for plotting of graphs, Numpy is being used for mathematical computation while Jupyter notebook/Jupyter lab is an environment where the python code will be written.
 
-### About Data-set
+#### About Data-set
 This dataset files contain metadata for all 45,000 movies listed in the Full MovieLens Dataset. The dataset consists of movies released on or before July 2017. This dataset captures feature points like overview, plot, budget, revenue, posters, release dates, languages, production companies, countries, TMDB vote counts, and vote averages.
 These feature points could be potentially used to train machine learning models for content and collaborative filtering.
 
@@ -106,34 +106,30 @@ from ast import literal_eval
 ```
 The above code snippet shows a function that loads a dataset.
 
-### Snippet of libraries 
-![ Fig 1 showing imported Libraries.](./images/image1.0.PNG)
-Fig. 1 shows imported Libraries
-
- 
+#### Snippet of libraries 
 To load the dataset, we will make use of the pandas DataFrame library. The panda’s DataFrame library is mainly used for data manipulation and analysis. It helps to represent your data set in a row-column format. Pandas DataFrame library is backed by the NumPy array for the implementation of pandas data objects. Pandas offer off-the-shelf data structures and operations for manipulating numerical tables, time series, imagery, and natural language processing datasets. Pandas are useful for those datasets which can be easily represented in a tabular fashion.
 
 
-### Loading Dataset
+#### Loading Dataset
 
-![ Fig 2 shows some set of loaded dataset](./images/image2.0.PNG)
- Fig. 2 shows some set of loaded dataset
+![ Fig 1 shows some set of loaded dataset](image2.0.PNG)
+ Fig. 1 shows some datasets that have been loaded
 
 Next, we will check for missing values in our data set. This is done to avoid bias in our models. From the code snippet below there are missing values in our dataset. To avoid the models from being biased, we deal with the missing values by replacing them with the mean and mode of the column.
 
-![Fig 3 showing: checks for missing values](./images/image3.0.PNG)
-Fig. 3 shows the checks for missing values
+![Fig 2 showing: checks for missing values](image3.0.PNG)
+Fig. 2 shows the for missing values checks that has been carried out
 
 
-![Fig 4 showing the fixing missing values of the mean and mode](./images/image4.0.PNG)
-Fig. 4 shows the fixing missing values of the mean and mode
-### Plot Description Based Recommender
+![Fig 3 showing the fixing missing values of the mean and mode](image4.0.PNG)
+Fig. 3 shows how the missing values of the mean and mode were fixed
+#### Plot Description Based Recommender
 In this section, we will be building a system that recommends movies that are similar to a particular movie. To achieve this, we will compute pairwise cosine similarity scores for all movies based on their plot descriptions and recommend movies based on that similarity score threshold.
 The plot description is available as the overview feature in my movie dataset. Let's inspect the plots of these movies:
  
 
-![Fig 5  shows an Overview](./images/image5.0.PNG)
-Fig. 5  shows an Overview 
+![Fig 4  shows an Overview](image5.0.PNG)
+Fig. 4  shows an Overview 
 
 Since we have to deal with the Natural Language Processing problem. And it is not possible to compute the similarity between any two overviews in their raw forms. To do this we will have to compute the word to vectors of each overview or document. 
 As the name suggests, word vectors are vectorized representations of words in a document. The vectors carry a semantic meaning with them. For example, man & king will have vector representations close to each other while man & woman would have representation far from each other.
@@ -143,21 +139,21 @@ The TF-IDF score is the frequency of a word occurring in a document, down-weight
 In this case, we are going to use the sci-kit-learn library which has a built-in TF-IDFVectorizer class that produces the TF-IDF matrix. To make the algorithm work properly without any bias, we remove words that are not relevant to the topic. An example of such words includes ‘like’, ‘the’, ‘an’, ‘on’, e.t.c.
 				
 
-### A Snippet of TF-IDF Matrix
+#### A Snippet of TF-IDF Matrix
 
-![Fig 6 showing TF-IDF matrix.](./images/image6.0.PNG)
-Fig. 6 shows the TF-IDF matrix
+![Fig 5 showing TF-IDF matrix.](image6.0.PNG)
+Fig. 5 shows the TF-IDF matrix
 
 From the above output, we can observe that 22645 different vocabularies or words in our dataset have 5157 movies. With the TFI-DF matrix, it will be easier for us to compute the cosine similarity. This cosine similarity helps to calculate a numeric quantity that denotes the similarity between two movies. 
 This can be mathematically expressed as:
 
-![Cosine formula calculation](./images/image6.0b.PNG)
-The image above shows the cosine formula calculation.
+![Cosine formula calculation](image6.0b.PNG)
+The image above shows the cosine formula calculation that shows similarity.
 
 Since we used the TF-IDF vectorizer, calculating the dot product between each vector will directly give us the cosine similarity score. Next, we will use sklearn’s linear_kernel() instead of cosine_similarities() because it is faster. This would return a matrix of shape 5157x5157, which means each movie overview cosine similarity score with every other movie overview. Hence, each movie will be a 1x5157 column vector where each column will be a similarity score with each movie.
 
-![Fig 7 shows the computation of the TF-IDF matrix.](./images/image7.0.PNG)
-Fig. 7 shows the computation of the TF-IDF matrix
+![Fig 6 shows the computation of the TF-IDF matrix.](image7.0.PNG)
+Fig. 6 shows the computation of the TF-IDF matrix
 
 We are now going to define a function that takes in a movie title as an input and outputs a list of the 10 most similar movies. For us to do this, we will need a reverse mapping of movie titles and DataFrame indices. Also, we will need a mechanism to identify the index of a movie in the Movie DataFrame, given its title. 
 
@@ -180,13 +176,13 @@ The above code snippet shows a function of our recommendation model
 
 A snippet of the Recommendation model
 
-![Fig 8 showing recommendation model.](./images/image8.0.PNG)
-Fig. 8 shows the recommendation model
+![Fig 7 showing recommendation model.](image8.0.PNG)
+Fig. 7 shows the recommendation model of our movie
 
 After getting the function, we will then save it using joblib and generate the requirements using the command pip freeze > requirements.txt. This will help us to avoid some environmental variable issues while deploying the model on any hosting site, also it will make it easier for other machine learning engineers to contribute and improve on the model. 
   
 
-### FINE-TUNING THE RECOMMENDATION MODEL.
+#### FINE-TUNING THE RECOMMENDATION MODEL.
 
 To fine-tune the recommendation system model, we will have to build a system based on some metadata which includes: ‘casts’, ‘crew’, ‘keywords’, and ‘genres’.
 This will help to increase the performance of the recommendation model by capturing more of the finer details.
@@ -214,12 +210,9 @@ from ast import literal_eval
 from sklearn.model_selection import train_test_split
 
 ```
+		
 
-![Fig 9 showing Libraries.](./images/image9.0.PNG)
-Fig. 9 shows Libraries.
-			
-
-### Loading Dataset
+#### Loading Dataset
 We are going to load the dataset from three different data tables and merge them all in one dataframe.
 To do this, we will, first of all, convert the id’s columns of the individual dataframe to integers, this conversion makes it easier for them to be merged as one.
 
@@ -240,16 +233,14 @@ recom_model_mov = recom_model_mov.merge(recom_model_key, on='id')
 
 ```
 
-### Loading and Merging dataframe
+#### Loading and Merging dataframe
 
-![Fig 10 showing Merging datasets tables.](./images/image10.0.PNG)
-Fig. 10 shows Merging datasets tables.
 			
-### Selecting the Features
+#### Selecting the Features
 Since we are trying to tune the model to get a more robust recommendation system that will be perfect for recommending movies that have similar features. We can achieve this by extracting four features from the merged dataframe. These features include cast, crew, genres, and keywords. With these features, we will be able to build a model that can tell us the movies that have the same storyline and actions. For instance, if you have watched a movie, and perhaps went ahead to like it, a similar movie will be recommended to you, this is not done by accident or magic, it is all algorithm model at play here. This is why you notice that there are certain movies that children of a certain age can view (parental guidance and restrictions).
 Back to our steps, so next, we will have to first convert the data from Stringfield lists using the literal_eval for safe evaluation and expression.
 
-### Features Selections
+#### Features Selections
 
 ```python
 features = ['cast', 'crew','keywords','genres']
@@ -257,14 +248,11 @@ for feature in features:
 	recom_model_mov[feature] = recom_model_mov[feature].apply(literal_eval)
 ```
 
-![Fig. 11 shows some Features.](./images/image11.0.PNG)
- Fig. 11 shows some Features
-
-### Function for Extraction of Required Information.
+#### Function for Extraction of Required Information.
 
 We create a function that will help in extracting the required information from our features such as the directors, title, cast, keywords, and genres.
 
-### Snippet of Function
+#### Snippet of Function
 ```python
 def get_director(x)
 for i in x:
@@ -283,9 +271,6 @@ def get_list(x):
 	return []		
 ```
 
-![Fig 12 shows some function for Extraction of Required Information.](./images/image12.0.PNG)
-Fig. 12 shows some functions for Extraction of Required Information.
-
 ```python
 recom_model_mov['director'] = recom_model_mov['crew'].apply(get_director)
 features = ['cast', 'keywords','genres']
@@ -297,11 +282,7 @@ for feature in features:
 
 ```
 
-
-![Fig 13 showing how to apply function to get names of directors and list of movies.](./images/image13.0.PNG)
-Fig. 13 shows how to apply a function to get names of directors and a list of movies.
-
-### Function For Cleaning Dataset
+#### Function For Cleaning Dataset
 To improve the quality of our recommendation model, increase productivity and do away with incorrect information we will have to clean our dataset.
 
 ```python
@@ -323,16 +304,14 @@ recom_model_mov[feature] = recom_model_mov[feature].apply(clean_data)
 
 ```
 
-### Snippet
+#### Snippet
 
-![Fig 14 shows the function and its application.](./images/image14.0.PNG)
-Fig. 14 shows the function and its application
 
 Since we have cleaned our dataset, we are now in a position to create a function that contains all the features that we have to feed to our vectorizer.
 This function will join all the feature columns and the output will be used to build the model.
 				
 
-### Snippet
+#### Snippet
 
 ```python
 def create_soup(x):
@@ -351,14 +330,11 @@ def create_soup(x):
 	tfidf_matrix.shape
 ```
 
-![Fig 15 showing some application of the function and Vectorizer.](./images/image15.0.PNG)
-Fig. 15 shows some application of the function and Vectorizer
-
 From the output, we can see that there are 9879 vocabularies in the features that we feed to our vectorizers. 
 Next, we will use the cosine similarity to measure the distance between two embeddings.
 
 	
-### Application of cosine-similarity
+#### Application of cosine-similarity
 
 ```python
 cosine_similarity_matric = cosine_similarity(tfidf_matrix, tfidf_matrix)
@@ -381,21 +357,17 @@ def get_recommendations(title, cosine_sim=cosine_sim):
 	return metadata['title'].iloc[movie_indices]
 ```
 
-![Fig 16 showing output results.](./images/image16.0.PNG)
-Fig. 16 shows output results
-		
-
-### Snippet of output
+#### Snippet of output
 
 ```python
 get recommendations('The Godfather', cosine_similarity_matric)
 
 ```
 The above code snippet shows a function for Fine-tuned model for better perfomance
-![Fig 17 shows output of recommended movies.](./images/image17.0.PNG)
-Fig. 17 shows the output of recommended movies
+![Fig 8 shows output of recommended movies.](image9.0.PNG)
+Fig. 8 shows the output of recommended movies
 
-### CONCLUSION
+#### CONCLUSION
 In this article, we were able to fine-tune our movie recommendation model. We also gave a brief introduction to Machine Learning and Artificial Intelligence. By now, we all agree that recommender systems are here to stay. They are widespread and popular among users drowning in the flood of information. The success of these solutions is indisputable and has irrevocably become part of our lives, let’s just think about Youtube or Facebook, we will then realize that we can also consider ways where we can channel this knowledge or data sets into positive use. 
 If you have any questions, don't hesitate to contact me on: 
 
