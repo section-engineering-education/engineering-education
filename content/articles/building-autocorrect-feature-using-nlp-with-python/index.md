@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/building-autocorrect-feature-using-nlp-with-python/hero.jpg
     alt: Natural Language processing example image
 ---
-One of the features that uses [Natural Language Processing (NLP)](https://en.wikipedia.org/wiki/Natural_language_processing) is the Autocorrect function. This feature works on every smartphone keyboard regardless of the brand.
+One of the features that use [Natural Language Processing (NLP)](https://en.wikipedia.org/wiki/Natural_language_processing) is the Autocorrect function. This feature works on every smartphone keyboard regardless of the brand.
 <!--more-->
 It is specially programmed to generalize all the correct words in the dictionary and looks for the words that are the most comparable to those words not in the vocabulary. 
 
@@ -64,10 +64,10 @@ When building this model/feature, the following steps are involved:
 #### Identifying misspelled word
 A word is misspelled, if the text is not found on the vocabulary of the corpus (dictionary), then the autocorrect system flags out for correction.
 
-#### Find strings that are N-edit-distance away from misspelled word
+#### Find strings that are N-edit-distance away from the misspelled word
 Editing is an operation performed on the string to change it to another string.
 
-The `n` represents the edit distance like 1, 2, 3, so on, that keeps track of the number of edit operations to be done.
+The `n` represents the edit distance like 1, 2, 3, so on, which keeps track of the number of edit operations to be done.
 
 Hence, the `edit distance` is the count of the number of operations performed on a word to edit it.
 
@@ -83,7 +83,7 @@ The following are examples of edits:
 Only correctly spelled words from the created candidate list are considered, so that we can compare them to the words in the corpus to filter out the ones that don't exist.
 
 #### Order Filtered Candidates based on word probabilities
-Probabilities of the words is calculated based on the following formula:
+The probabilities of the words are calculated based on the following formula:
 
 `P(w) = C(w)/V`
 
@@ -92,7 +92,7 @@ Probabilities of the words is calculated based on the following formula:
 `V` - the total sum of words in the dictionary.
 
 #### Choose the most-likely candidate
-When the probabilities are calculated, the actual list of words are grouped by the most likely word from the created candidates.
+When the probabilities are calculated, the actual list of words is grouped by the most likely word from the created candidates.
 
 ### Building autocorrect feature
 We will need a dictionary to develop an autocorrect system where the smartphone uses history to match the typed words to see if they are correct or not.
@@ -100,7 +100,7 @@ We will need a dictionary to develop an autocorrect system where the smartphone 
 For this tutorial, we will use a [sample.txt](https://github.com/dentex22/Autocorrect_System/blob/main/sample.txt) file found in the project folder containing the 1000 most used vocabularies.
 
 #### Installing libraries
-We start by installing all the libraries general to machine learning using `pip` command from the terminal.
+We start by installing all the libraries general to machine learning using the `pip` command from the terminal.
 
 ```bash
 pip install pattern
@@ -136,7 +136,7 @@ print(f"The first 10 words in our dictionary are: \n{w[0:10]}")
 print(f"The dictionary has {len(v)} words ")
 ```
 
-The number of unique words and the top 10 words from the dictionary are displayed as output:
+The number of unique words and the top 10 words from the dictionary is displayed as output:
 
 ```bash
 The first 10 words in our dictionary are: 
@@ -201,7 +201,7 @@ delete_word_l = DeleteLetter(word="cans")
 ```
 From the code above, we use the `DeleteLetter` function that removes a letter from  a given word.
 
-The word is first split `split_list=[]` into its component - the left and the right. We then loop over the sequence character of the words using `for` loop.
+The word is first split `split_list=[]` into its component - the left and the right. We then loop over the sequence of characters using a `for` loop.
 
 Then, we use the compress the list to return all the instances of words with the deleted letter stored in the `delete_list` array list.
 
@@ -230,7 +230,7 @@ def SwitchLetter(word):
 switch_word_l = SwitchLetter(word="eta")
 ```
 
-The `SwitchLetter` functions takes a word, splits, and swaps  all the letters in that word from left to right using `switch_1`.
+The `SwitchLetter` functions take a word, splits, and swap all the letters in that word from left to right using `switch_1`.
 
 For example:
 
@@ -352,7 +352,7 @@ As we have seen, NLP plays a crucial role in enabling computers to understand an
 You can find the full working code [here](https://github.com/dentex22/Autocorrect_System).
 
 To summarize, we have:
-- Learned what Natural Language Processing its ability to autocorrect words.
+- Learned what Natural Language Processing is and its ability to autocorrect words.
 - Explored the autocorrect system and the various steps taken to build it.
 - Implemented an autocorrect system using NLP with Python.
 
