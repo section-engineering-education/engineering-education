@@ -1,3 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /building-scalable-projects-using-the-multi-module-architecture-with-spring-boot-and-maven/
+title: Building Scalable Multi-Module Projects in Spring Boot
+description: In this article, we will look at multi-module and microservices architecture. We will also implement a Spring Boot project that uses multi-module architecture.
+author: ayemobola-tolulope
+date: 2021-11-28T00:00:00-19:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/building-scalable-projects-using-the-multi-module-architecture-with-spring-boot-and-maven/hero.jpg
+    alt: Building Scalable Multi-Module Projects in Spring Boot Example Image
+---
 A three-man organisation in 2019 grew to become a twelve-man team fourteen months later. The growth in team members was necessitated by the growth in the project.
 
 However, there was an increase in the cost of building, maintaining, and scaling the project; they were running the microservices architecture.
@@ -213,3 +229,6 @@ Happy coding.
 - [Creating a Multi Module Project by Spring IO](https://spring.io/guides/gs/multi-module)
 - [Spring Boot Multi-Module Project by Javatpoint](https://www.javatpoint.com/spring-boot-multi-module-project)
 - [Multi-Module Monolithic as Microservice by DZone](https://dzone.com/articles/multi-module-monolithic-as-microservice)
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
