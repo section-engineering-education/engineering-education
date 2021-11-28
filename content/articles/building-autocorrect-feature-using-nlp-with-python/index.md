@@ -3,8 +3,8 @@ layout: engineering-education
 status: draft
 published: true
 url: /building-autocorrect-feature-using-nlp-with-python/
-title: Build an Autocorrect Feature using NLP with Python.
-description: The objective of this tutorial is to help the reader understand how Natural Language processing can be used with Python in building autocorrect features in systems. 
+title: Building an Autocorrect Feature using NLP with Python.
+description: The objective of this tutorial is to help the reader understand how Natural Language processing can be used in building autocorrect features for systems, using Python.
 author: antony-lia
 date: 2021-11-13T00:00:00-2:30
 topics: [Machine Learning]
@@ -361,4 +361,4 @@ One can find more information about NLP [here](https://realpython.com/nltk-nlp-p
 Happy coding.
 
 ---
-Peer Review Contributions by:
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
