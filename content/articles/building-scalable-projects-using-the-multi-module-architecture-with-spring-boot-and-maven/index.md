@@ -15,7 +15,7 @@ images:
     alt: Building Scalable Multi-Module Projects in Spring Boot Example Image
 ---
 A three-man organisation in 2019 grew to become a twelve-man team fourteen months later. The growth in team members was necessitated by the growth in the project.
-
+<!--more-->
 However, there was an increase in the cost of building, maintaining, and scaling the project; they were running the microservices architecture.
 
 In this tutorial, we will be going through the multi-module architecture - which gives a drastic improvement on the monolith approach, yet offering as much possibilities of the microservices architecture, while evading the huge demands of microservices.
