@@ -45,11 +45,12 @@ test_loader = torch.utils.data.DataLoader(dataset = test_dataset,shuffle = False
 ### Defining our hyperparameters
 Let us define our hyperparameters:
 ```Python
-input_size = 400
-number_classes = 10
-nummber_epochs = 5
+input_size = 784
+num_classes = 10
+num_epochs = 5
 batch_size = 100
-reading_rate = 0.001
+learning_rate = 0.001
+
 ```
 The image size that we will use for our image will be 20*20. This means that our input size will be 400. In addition, there are 10 digits in this, thus we can generate 10 alternative results. In this way, number_classes will be set to ten. In addition, we'll run the full dataset through five iterations of training. Finally, we will train in small batches of 100 images each so that the software does not crash because of memory overflow.
 
