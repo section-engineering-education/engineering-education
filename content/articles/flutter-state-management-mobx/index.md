@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /flutter-state-management-mobx/
-title: Flutter state management with Mobx
+title: Flutter State Management with Mobx
 description: In this tutorial, we will build a news application that will use Mobx to manage the state of the application 
 author: faith-siaji
 date: 2021-11-28T00:00:00-13:00
@@ -35,9 +35,9 @@ Managing application state in a clean and optimized way is very important when d
 3. Knowledge in [Flutter](https://flutter.dev/docs).
 
 ### Introduction
-This article will discuss retrieving data from an API and passing it to a service class to the UI. The UI will listen for data from the API. When the data is available, the application will display a list of items. In addition, the application will show a progress indicator when it is in a loading state.
+This article will discuss how to retrieve data from an API and passing it to a service class to the UI. The UI will listen for data from the API. When the data is available, the application will display a list of items. 
 
-MobX has four principle concepts that we will learn and understand how they work: `observables`, `computed values`, `reactions` and `actions`.
+In addition, the application will show a progress indicator when it is in a loading state. MobX has four principle concepts that we will learn and understand how they work: `observables`, `computed values`, `reactions` and `actions`.
 
 #### Observables
 Observables in MobX allow us to add observable capabilities to our data structures—like classes, objects, arrays—and make our properties observables. This means that our property stores a single value, and whenever the value of that property changes, MobX will keep track of the value of the property for us.
@@ -54,7 +54,7 @@ class counter {
 By using the `@observable` decorator, we’re telling MobX that we want to keep track of the counter's value, and every time the counter changes, we’ll get the updated value.
 
 #### Computed values                                    
-In MobX, we can understand computed values as values that can be derived from our state, so the name `computed values` makes total sense. They are functions derived from our state, so their return values will change as well whenever our state changes.
+In MobX, we can understand computed values as values that can be derived from our state, so the name `computed values` makes total sense. They are functions derived from our state, so their return values will change whenever our state changes.
 
 You must remember about computed values that the get syntax is required, and the derivation that it makes from your state is automatic, you don’t need to do anything to get the updated value.
 
@@ -94,7 +94,7 @@ Reactions in MobX are pretty similar to computed values, but the difference is t
 We have the custom reactions: autorun, reaction, when.
 
 ##### autorun
-Autorun will run every time specific observable changes. For example, if we wanted to print the value of the counter every time it changes, we could do like this:
+Autorun will run every time a specific observable changes. For example, if we wanted to print the value of the counter every time it changes, we could do something like this:
 
 ```dart
 autorun((_) {
@@ -103,7 +103,9 @@ autorun((_) {
 ```
 
 ##### Reaction
-Reaction is similar to autorun, but it gives us more control over which we should track observables’ values. It receives two arguments: the first is a simple function to return the data used in the second argument. The second argument will be the effect function; this effect function will only react to data passed in the first function argument. This effect function will only be triggered when the data you passed in the first argument has changed.
+Reaction is similar to autorun, but it gives us more control when tracking observables’ values. It receives two arguments: the first is a simple function to return the data used in the second argument. 
+
+The second argument will be the effect function; this effect function will only react to data passed in the first function argument. This effect function will only be triggered when the data you passed in the first argument has changed.
 
 ```dart
 reaction((_) {
@@ -125,13 +127,14 @@ when((_) {
 ```
 
 ### Project setup
-
 Before proceeding, run the command below to verify that you have installed Flutter correctly on your machine.
 
 ```bash
 $ flutter doctor
 ```
+
 ![Command window](/engineering-education/flutter-state-management-mobx/command.png)
+
 Now that you have verified that everything is set up correctly, execute the command below to create a new flutter project.
 
 ```bash
@@ -157,13 +160,12 @@ dev_dependencies:
     sdk: flutter
 ```
 
-* `mobx`- state manager we will be using.
-* `http`- internet connection library we will be using to retrieve news data from an API.
-* `url_launcher`- opens a browser with the URL provided. In our case, every news item will have a URL pointing to the website where the news was published.
-* `mobx_codegen`- code generation tool for `mobx` state manager.
+- `mobx`- state manager we will be using.
+- `http`- internet connection library we will be using to retrieve news data from an API.
+- `url_launcher`- opens a browser with the URL provided. In our case, every news item will have a URL pointing to the website where the news was published.
+- `mobx_codegen`- code generation tool for `mobx` state manager.
 
 ### Domain
-
 In the project's lib folder, create a new dart file named `article.dart` and add the code snippet below.
 
 ```dart
@@ -238,7 +240,6 @@ class Articles {
 The `Article` class above represents a news item. Article class will map to the JSON object returned by the API.
 
 ### Service
-
 Create a new dart file named `service.dart` and add the code snippet below in the lib folder.
 
 ```dart
@@ -274,10 +275,8 @@ class NetworkService {
 
 - `getData(String url)` method takes in the URL and retrieves a list of news items from the API URL provided.
   
-
-### State Manager
-
-In the lib folder, create a new dart file named `news_store.dart` . This file will contain our state management code.
+### State manager
+In the lib folder, create a new dart file named `news_store.dart`. This file will contain our state management code.
 Add the code snippet below to `news_Store.dart` file created above.
 
 ```dart
@@ -316,7 +315,6 @@ abstract class _NewsStore with Store {
 
 - `@observable` annotation indicates that the application can listen for any changes in the variable marked. For example, our application will listen for changes in the list of articles. When the articles are retrieved from the API and added to the articles list, the articles will be displayed on the UI rather than a progress indicator.
 - `@action` annotation marks the `fetchArticle()` as actionable, meaning it performs certain operations and changes the data state in the variable marked with `@observable` annotation.
- 
 
 ### UI
 In the lib folder, create a new dart file named `home_screen.dart` and add the code snippet below.
@@ -413,6 +411,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 }
 ```
+
 The code snippet above represents the user interface of the application. Next, we retrieve and render the news items on the ArticleContainer widget.
 
 In the `main.dart` file, add the code snippet below.
@@ -440,12 +439,12 @@ class Application extends StatelessWidget {
 ```
 
 ### Testing
-
 ![News List](/engineering-education/flutter-state-management-mobx/news.png)
 
 ### Conclusion
-
 With all the content covered in this article, you can now try building a production-grade Flutter application, managing the application state using Mobx, and following the recommended patterns, i.e. model view, ViewModel(MVVM) pattern.
+
+Happy coding!
 
 ---
 
