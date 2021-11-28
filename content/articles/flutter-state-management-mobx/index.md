@@ -2,19 +2,20 @@
 layout: engineering-education
 status: publish
 published: true
-url: /flutter-mobx/
+url: /flutter-state-management-mobx/
 title: Flutter state management with Mobx
 description: In this tutorial, we will build a news application that will use Mobx to manage the state of the application 
 author: faith-siaji
-date: 2021-11-07T00:00:00-10:00
-topics: [Android]
+date: 2021-11-28T00:00:00-13:00
+topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/flutter-mobx/hero.jpg
+  - url: /engineering-education/flutter-state-management-mobx/hero.jpg
     alt: Flutter state management with Mobx
 ---
-
+Managing application state in a clean and optimized way is very important when dealing with large Flutter applications. State management is the handling of application data between different screens and components. 
+<!--more-->
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
@@ -34,8 +35,6 @@ images:
 3. Knowledge in [Flutter](https://flutter.dev/docs).
 
 ### Introduction
-Managing application state in a clean and optimized way is very important when dealing with large Flutter applications. State management is the handling of application data between different screens and components. 
-<!--more-->
 This article will discuss retrieving data from an API and passing it to a service class to the UI. The UI will listen for data from the API. When the data is available, the application will display a list of items. In addition, the application will show a progress indicator when it is in a loading state.
 
 MobX has four principle concepts that we will learn and understand how they work: `observables`, `computed values`, `reactions` and `actions`.
@@ -132,7 +131,7 @@ Before proceeding, run the command below to verify that you have installed Flutt
 ```bash
 $ flutter doctor
 ```
-![Command window](/engineering-education/flutter-mobx/command.png)
+![Command window](/engineering-education/flutter-state-management-mobx/command.png)
 Now that you have verified that everything is set up correctly, execute the command below to create a new flutter project.
 
 ```bash
@@ -442,7 +441,7 @@ class Application extends StatelessWidget {
 
 ### Testing
 
-![News List](/engineering-education/flutter-mobx/news.png)
+![News List](/engineering-education/flutter-state-management-mobx/news.png)
 
 ### Conclusion
 
