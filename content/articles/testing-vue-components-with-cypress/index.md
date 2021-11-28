@@ -21,6 +21,7 @@ In this tutorial, am going to talk more about how we can test Vue Components Wit
  Component testing; as the name recommends, is a strategy of testing the most reduced or the littlest unit of any application. Part testing at times is likewise alluded to as Program or Module Testing. An application can be thought about a mix and combination of numerous little individual modules
 
 Here's an illustration of a Cypress components test that includes some of the aspects we'll go through:
+For a simplified example you can view a `privacy-policy` page [here](https://github.com/Wanjiku25/vue-component-with-cypress)
 
 ```javascript
 import { mount } from '@cypress/vue'; // include the mount method from vue-test-utils
@@ -82,8 +83,10 @@ Vue Test Utils let you mount a part, arrange its settings, and phony out various
 
 Jest is an astounding test sprinter, and it will set up the mounted part in a program setting utilizing jsdom. The primary contrast between the two techniques is setting, as cypress' part test sprinter mounts vue parts utilizing vue Test Utils. Cypress as of now finishes to-end tests in the program, and parts tests work similarly. This suggests we can watch our tests run, stop them in the middle, associate with the application, or study occasions from prior in the run, and realize that the program APIs our application depends on are genuine program conduct, not jsdom imagined portrayals of similar abilities. 
 
-When the part is introduced, all of the ordinary cypress things that we've been acting in start to finish tests apply, and a couple of niggling issues with part choice are no more. Cypress will be responsible for mimicking all client cooperations and making declarations concerning how the application will react. This deals with the agreement's client confronting parts, yet what might be said about the agreement's designer confronting perspectives, like occasions, props, and all the other things? Vue Test Utils comes in accommodating in the present circumstance.
-We may make assertions on the covering that Vue Test Utils gives around the mounted part utilizing cypress. We can test the part's usefulness as a client without composing any system explicit code, and we can simply use Vue Test Utils to mount the part and notice specific structure movement on a case by case basis. In the wake of performing something Vue-explicit, you never need to trust that a '$nexttick' from Vue will refresh the condition of the part
+When the part is introduced, all of the ordinary cypress things that we've been acting in start to finish tests apply, and a couple of niggling issues with part choice are no more. Cypress will be responsible for mimicking all client cooperations and making declarations concerning how the application will react. 
+This deals with the agreement's client confronting parts, yet what might be said about the agreement's designer confronting perspectives, like occasions, props, and all the other things? Vue Test Utils comes in accommodating in the present circumstance.
+We may make assertions on the covering that Vue Test Utils gives around the mounted part utilizing cypress. We can test the part's usefulness as a client without composing any system explicit code, and we can simply use Vue Test Utils to mount the part and notice specific structure movement on a case by case basis.
+In the wake of performing something Vue-explicit, you never need to trust that a '$nexttick' from Vue will refresh the condition of the part
 
 ### Vuetify importation
 The code in that repo is organized in a pretty normal manner, with a plugins subdirectory containing plugins that produce veutif instances. The application imports this, but our test setup may also import it and utilize it to mount the component that is being tested. In the repo, a command has been added to cypress that will use one instead of the normal mount function.
