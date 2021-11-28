@@ -1,18 +1,33 @@
-### Introduction
-Zooming is an in-motion operation done to enlarge or reduce the size of an image or an object in an Android application. It provides a powerful and appealing visual effect to the users.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /implementing-custom-zoom-in-imageview-in-android/
+title: Implementing a Custom Zoom in and Zoom out ImageView in Android with Kotlin
+description: This tutorial takes the reader through the process of implementing a custom zoom in and zoom out ImageView in Android with Kotlin. Zooming is an in-motion operation done to enlarge or reduce the size of an image or an object in an Android application.
+author: brandy-odhiambo
+date: 2021-11-28T00:00:00-13:59
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/implementing-custom-zoom-in-imageview-in-android/hero.png
+    alt: Custom Zoom in ImageView in Android Hero Image
+---
+Zooming is an in-motion operation done to enlarge or reduce the size of an image or an object in an Android application. It provides a powerful and appealing visual effect to the users.
+<!--more-->
 ### Prerequisites
 - Make sure you have Android Studio installed on your computer.
 - Knowledge of the fundamental concepts of the Kotlin programming language is required.
 - Have basic mathematical knowledge of Matrices.
 - Have basic knowledge of creating and running Android applications.
 
-### Importance of Zooming in Android
+### Importance of zooming in Android
 - It gives a view of images that are not concentrated onto the current screen.
 - Zoom control allows users to put in place a clear view to all the large and small objects on the screen.
 - Zoom provides a way in which users can concentrate on a specified sector of the entire image and study it.
 
-### Creating a Customized Zooming Effect
+### Creating a customized zooming effect
 To successfully create a customized zooming action, several methods should be implemented.
 
 To begin with, let's create a class that extends `AppCompatImageView` and implement the following:
@@ -243,7 +258,7 @@ Now that we've constructed the customized zoom functionality, we need to know wh
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />    
+        app:layout_constraintTop_toTopOf="parent" />
 ```
 
 > Note: Your package name might be different from the one shown above.
@@ -251,9 +266,9 @@ Now that we've constructed the customized zoom functionality, we need to know wh
 ### Demo
 Run the app and try to zoom in and out. It should work as shown below:
 
-![Image not zoomed](/engineering-education/implementing-a-custom-zoom-in-and-zoom-out-imageview-in-android-with-kotlin/demo1.png)
+![Image not zoomed](/engineering-education/implementing-custom-zoom-in-imageview-in-android/demo1.png)
 
-![Zoomed image](/engineering-education/implementing-a-custom-zoom-in-and-zoom-out-imageview-in-android-with-kotlin/demo2.png)
+![Zoomed image](/engineering-education/implementing-custom-zoom-in-imageview-in-android/demo2.png)
 
 ### Conclusion
 In this tutorial, we have learned what zooming is and how to implement a custom zoom functionality in an ImageView in Android using kotlin.
@@ -262,3 +277,6 @@ To see the full code implementation, check out [this Github repository](https://
 
 ### Reference
 Explore more on [Custom Zooming](https://developer.android.com/training/animation/zoom).
+
+---
+Peer Review Contributions by: [Eric Gacoki](/engineering-education/authors/eric-gacoki/)
