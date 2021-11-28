@@ -11,8 +11,8 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/building-faq-page-using-react-styled-components-and-react/hero.png
-    alt: Building FAQ page using React-styled components and React.js Hero Image
+  - url: /engineering-education/building-faq-page-using-react-styled-components-and-react/hero.jpg
+    alt: Building FAQ page using React-styled React.js Hero Image
 ---
 Addressing user questions and concerns is a priority for corporations, online vendors, and even your small blog or website. An efficient way of handling user queries is having a comprehensive frequently asked questions (FAQ) page.
 <!--more-->
