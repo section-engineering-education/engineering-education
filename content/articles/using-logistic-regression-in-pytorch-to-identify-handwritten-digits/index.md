@@ -37,7 +37,7 @@ train_dataset = dsets.MNIST(root ='./data',train = True, download = True)
 
 test_dataset = dsets.MNIST(root ='./data', train = False, transform = transforms.ToTensor())
 
-# Dataset Loader (Input Pipeline)
+# Dataset Loader 
 train_loader = torch.utils.data.DataLoader(dataset = train_dataset, shuffle = True)
 
 test_loader = torch.utils.data.DataLoader(dataset = test_dataset,shuffle = False)
@@ -104,7 +104,6 @@ for epoch in range(num_epochs):
 		images = Variable(images.view(-1, 28 * 28))
 		labels = Variable(labels)
 
-		# Forward + Backward + Optimize
 		optimizer.zero_grad()
 		outputs = model(images)
 		loss = criterion(outputs, labels)
@@ -133,11 +132,9 @@ To put it another way, if you followed the instructions exactly, you would have 
 
 You can run the whole code [here](https://colab.research.google.com/drive/1eL6a4_QxAZxqLV83vJOsLkPF09hYwThn?usp=sharing)
 ### References 
-[To see whole code click here](https://colab.research.google.com/drive/1eL6a4_QxAZxqLV83vJOsLkPF09hYwThn?usp=sharing)
-
-[PyTorch](https://drive.google.com/drive/folders/0B41Zbb4c8HVyUndGdGdJSXd5d3M?resourcekey=0-s90CYmIbmbqbO1Mvtwmlog)
-
-[Linear Regression](https://machinelearningmastery.com/linear-regression-for-machine-learning/)
+1. [To see whole code click here](https://colab.research.google.com/drive/1eL6a4_QxAZxqLV83vJOsLkPF09hYwThn?usp=sharing)
+2. [PyTorch](https://drive.google.com/drive/folders/0B41Zbb4c8HVyUndGdGdJSXd5d3M?resourcekey=0-s90CYmIbmbqbO1Mvtwmlog)
+3. [Linear Regression](https://machinelearningmastery.com/linear-regression-for-machine-learning/)
 ### Conclusion
 With the help of Logistic Regression and PyTorch, we learned how the MNIST handwritten digits dataset may be identified.
 
