@@ -126,7 +126,7 @@ java -XX:SharedClassListFile=<class_list_file> -Xshare:dump
 Every time an archive is created, diagnostic data is made available.
 
 ### Controlling the Sharing of Class Data Manually
-Data exchange across classes is allowed by default. You have the option of manually enabling and deactivating this function.
+Data exchange across classes is allowed by default. You have the option of enabling and deactivating this function manually.
 Here are some more command-line parameters to aid with troubleshooting and diagnostics:
 - `Xshare:off` is the default setting. This sets whether or not class data may be shared.
 - `Xshare:on` signifies that the file is available for sharing to enable the exchange of class information. If you cannot activate the class data sharing feature, an error message will be shown, and the software will shut down.
@@ -137,3 +137,6 @@ Here are some more command-line parameters to aid with troubleshooting and diagn
 This tutorial demonstrated how the Java data class sharing feature speeds up startup while using less memory (JVM). We have also looked at data class sharing, application data sharing, and how to control data sharing manually.
 
 Happy Coding!
+
+---
+Peer Review Contributions by: [Mercy Meave](/engineering-education/authors/mercy-meave/)
