@@ -61,6 +61,8 @@ Output:
 3   20.0    1   20.0    AND
 4   15.1    0   25.0    No
 ```
+> You can find the csv file [here](https://colab.research.google.com/drive/1O7O4oo2k5FIFFTcE-bU8kBGxeumyv1v2?usp=sharing)
+
 Looking at the dataset's dimensions as a measure of its size:
 ```Python
 dataset.shape
