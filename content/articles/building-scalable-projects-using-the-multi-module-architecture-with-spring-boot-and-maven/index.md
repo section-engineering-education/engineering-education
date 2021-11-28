@@ -3,7 +3,6 @@ A three-man organisation in 2019 grew to become a twelve-man team fourteen month
 In this tutorial, we will be going through the multi-module architecture - which is an drastic improvement on the monolith approach, yet offering as much possibilities of the microservices architecture, while evading the huge demands of microservices. We will be building a model of a hospital management system, taking into account some of the departments that make for a successful medical application.
 
 ### Table of contents
-The tutorial will cover:
 - [Why is the multi-module approach better than the monolith](#why-is-the-multi-module-better-than-monolith?)
 - [Advantages of multi-module over microservices architecture](#advantages-of-multi-module-over-microservices)
 - [Disadvantages of multi-module architecture](#disadvantages-of-multi-module-architecture)
