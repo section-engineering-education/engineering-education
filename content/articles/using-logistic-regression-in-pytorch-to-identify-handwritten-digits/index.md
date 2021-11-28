@@ -14,29 +14,33 @@ To predict a binary result, we use the statistical technique of logistic regress
 Importing Library functions and objects into your code is necessary once your installation is complete.
 Here are the functions and objects to import:
 
-- The **torch.tn** module: Contains code for the required model.
+- The **torch.nn** module: Contains code for the required model.
 - The **torchvision.datasets**: Includes MNIST dataset of handwritten digits that we shall be using here.
 - The **torchvision.transforms**: We shall be using it here to tt from images to PyTorch tensors.
-- The **torch.autograd**: We will be used to define our tensors.
+- The **torch.autograd**: Will be used to define our tensors.
 
 Type the code below to import the library functions and objects;
 ```Python
-from torch.autograd import Variable
 import torch
-import torch.tn as tn
-import torchvision.datasets as td
-import torchvision.transforms as tt
+import torch.nn as tn
+import torch.nn.functional as tF
+import torch.optim as optim
+import torchvision.datasets as dsets
+import torchvision.transforms as transforms
+from torch.autograd import Variable
+
 ```
-After importing we shall now download and load our dataset to memory. this will be done in the following code:
+After importing we shall now download and load our dataset to memory. This will be done in the following code:
 ```Python
-tr_dataset = td.MNIST(root ='./data', train = True, tt = transforms.ToTensor(), download = True)
+# MNIST Dataset 
+train_dataset = dsets.MNIST(root ='./data',train = True, download = True)
 
-test_dataset = td.MNIST(root ='./data', train = False, tt = transforms.ToTensor())
+test_dataset = dsets.MNIST(root ='./data', train = False, transform = transforms.ToTensor())
 
-tr_loader = torch.utils.data.DataLoader(dataset = tr_dataset, batch_size = batch_size, shuffle = True)
+# Dataset Loader (Input Pipeline)
+train_loader = torch.utils.data.DataLoader(dataset = train_dataset, shuffle = True)
 
-test_loader = torch.utils.data.DataLoader(dataset = test_dataset,
-batch_size = batch_size, shuffle = False)
+test_loader = torch.utils.data.DataLoader(dataset = test_dataset,shuffle = False)
 ```
 ### Defining our hyperparameters
 Let us define our hyperparameters:
@@ -51,26 +55,23 @@ The image size that we will use for our image will be 20*20. This means that our
 
 After that, we'll lay out our model in the following manner. In this section, we'll define the forward pass after setting up our model as a subclass of **torch.tn.Module**. As we are building the code, we will not need to mention the softmax in the **forward()** function because it will be determined internally during each forward run.
 ```Python
-class PytorchImplementation(tn.Module):
-    def __init__(self, input_size, number_classes):
-        super(PytorchImplimentation, self).__init__()
-        self.linear = tn.Linear(input_size, number_classes)
+class LogisticRegression(tn.Module):
+	def __init__(self, input_size, num_classes):
+		super(LogisticRegression, self).__init__()
+		self.linear = tn.Linear(input_size, num_classes)
 
-    def forward(self, b):
-        out = self.linear(b)
-        return out
+	def forward(self, x):
+		out = self.linear(x)
+		return out
 ```
 Now that our class has been established, we may create an instance of it.
 ```Python
-newmodel = LogisticRegression(input_size, number_classes)
+model = LogisticRegression(input_size, num_classes)
 ```
 ### Building The Neural Network
 Our loss function and optimizer are now set. As specified in the hyperparameter above, we'll use the cross-entropy loss and the stochastic gradient descent algorithm with a reading rate of 0.001 for the optimizer.
 Let's import some modules first before building a new class for the network we're developing.
 ```python
-import torch.nn as tn
-import torch.nn.functional as tF
-import torch.optim as optim
 class NeuralNetwork(tn.Module):
    def __init__(self):
       super(NeuralNetwork, self).__init__()
@@ -86,7 +87,7 @@ class NeuralNetwork(tn.Module):
       b = tF.relu(self.fch1(b))
       b = tF.dropout(b, trai=self.training)
       b = self.fch2(b)
-return tF.log_softmax(b)
+      return tF.log_softmax(b)
 ```
 To get the network and the optimizer up and running;
 ```python
@@ -96,41 +97,43 @@ opti = torch.optim.SGD(newmodel.parameters(), lr = reading_rate)
 ```
 We're ready to begin training now. Resetting all gradients to 0 will be the first step here, followed by a forward pass, the loss calculation, backpropagation, and the updating of all weights.
 ```python
+# Training the Model
+for epoch in range(num_epochs):
+	for i, (images, labels) in enumerate(train_loader):
+		images = Variable(images.view(-1, 28 * 28))
+		labels = Variable(labels)
 
-for epoch in range(number_epochs):
-    for b, (images, labels) in enumerate(tr_loader):
-        images = Variable(images.view(-1, 28 * 28))
-        labels = Variable(labels)
+		# Forward + Backward + Optimize
+		optimizer.zero_grad()
+		outputs = model(images)
+		loss = criterion(outputs, labels)
+		loss.backward()
+		optimizer.step()
 
-        opti.zero_grad()
-        outputs = model(images)
-        loss_calculation = criterion(outputs, labels)
-        loss_calculation.backward()
-        opti.step()
-
-        if (b + 1) % 100 == 0:
-            print('Epoch: [% d/% d], Step: [% d/% d], loss_calculation: %.4f'
-                % (epoch + 1, number_epochs, i + 1,
-                    len(tr_dataset) // batch_size, loss_calculation.data[0]))
-
+		if (i + 1) % 100 == 0:
+			print('Epoch: [% d/% d], Step: [% d/% d], Loss: %.4f'% (epoch + 1, num_epochs, i + 1, len(train_dataset) // batch_size, loss.data))
 ```
 Finally, we'll run the model through its paces using the code below.
 ```Python
-# Test the Model
-accurate = 0
-sbtotal = 0
+correct = 0
+total = 0
 for images, labels in test_loader:
-    images = Variable(images.view(-1, 20 * 20))
-    outputs = model(images)
-    _, predicted_data = torch.max(outputs.data, 1)
-    sbtotal += labels.size(0)
-    accurate += (predicted_data == labels).sum()
+	images = Variable(images.view(-1, 28 * 28))
+	outputs = model(images)
+	_, predicted = torch.max(outputs.data, 1)
+	total += labels.size(0)
+	correct += (predicted == labels).sum()
 
-print('The model's accuracy on the 10,000 test photos.: % d %%' % (
-            100 * accurate / sbtotal)
+print('Accuracy of the model on the 10000 test images: % d %%' % (
+			100 * correct / total))
+
 ```
 To put it another way, if you followed the instructions exactly, you would have an accuracy rate of 82%, which is significantly lower than the current best model, which makes use of a different sort of neural network architecture.
+
+You can run the whole code [here](https://colab.research.google.com/drive/1eL6a4_QxAZxqLV83vJOsLkPF09hYwThn?usp=sharing)
 ### References 
+[To see whole code click here](https://colab.research.google.com/drive/1eL6a4_QxAZxqLV83vJOsLkPF09hYwThn?usp=sharing)
+
 [PyTorch](https://drive.google.com/drive/folders/0B41Zbb4c8HVyUndGdGdJSXd5d3M?resourcekey=0-s90CYmIbmbqbO1Mvtwmlog)
 
 [Linear Regression](https://machinelearningmastery.com/linear-regression-for-machine-learning/)
