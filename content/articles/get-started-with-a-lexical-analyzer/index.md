@@ -195,14 +195,14 @@ They can also contain other functions that the program may execute on the run.
 These are optional.
 
 The three sections are divided by delimiters (`%%`) as shown below:
-```
+```c
 1. Definitions section:
 
-%{    contains C code, usually consisting of the libraries
-        #define external global declarations that one wants to be part of the code for y.tab.c
+%{    contains C code, usually consisting of the required project libraries
+       Define usin '#define' external global declarations that one wants to be part of the code for y.tab.c
 %}
 
-The file can include optional macro definitions for regular expressions.
+The file can include optional macro definitions that will be used for regular expressions.
 
 %%
 
@@ -216,6 +216,9 @@ another regular expression { another c code based on this RegEX }
 
 Additional code here
 ```
+
+`y.tab.c` is an output file that is compiled producing a yyparse function. It is produced with a C language compiler.
+
 ### Create a Lex file and run it
 
 Let us create a Lex analyzer that counts the number of words in a file and their total size.
