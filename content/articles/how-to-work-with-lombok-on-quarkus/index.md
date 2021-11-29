@@ -16,9 +16,9 @@ images:
 
 Java language is a simple language for app development. However, it challenges beginners due to the loss of syntactical terms required to be mastered. This loss confuses beginners.
 <!--more-->
-The great news is that Frameworks such as SpringBoot, Micronaut, Quarkus, and others have tried to come up with ways to ease programmers of this challenge. These solutions include the introduction of easy-to-use libraries that provide annotations to quickly and easily replace blocks of code.
+The great news is that Frameworks such as SpringBoot, Micronaut, Quarkus, and others have integrated easy-to-use libraries. These libraries provide annotations to quickly and effortlessly replace blocks of code with short annotations.
 
-Lombok is an example of one of these libraries. 'Project Lombok' as it is known, is a java library that plugs into your editor or IDE and builds tools simplifying Java. It again takes away the writing of getters, setters, or equal methods. It is by use of one annotation.  The class has a fully-featured builder, Automated logging variables, and more.
+Lombok is an example of one of these libraries. "Project Lombok", as it is known, is a Java library that simplifies Java. It takes away the writing of Getters, Setters, or Equal methods, among many others, by the use of one or more annotations. The class has a fully-featured builder, automated logging variables, and more. This article discusses and allows one to get hands-on experience on Lombok in a Quarkus project.
 
 ### Table of Contents
 
@@ -46,8 +46,8 @@ At the end of this article, the reader should be well conversant with the follow
 ### Pre-requisites
 To follow along with this article, the reader should have the following:
 - Java language prior knowledge
-- Java SDK set on the machine. The latest SDK version is recommended.
-- The ultimate version of IntelliJ is preferred since it has many tools in the store.
+- Java SDK installed on the machine. The latest SDK version is recommended. Download it in [this](https://www.oracle.com/java/technologies/downloads/) link to install on Windows, Mac, or Linux. To install it step by step in the Terminal, follow the steps shown [here](https://opensource.com/article/19/11/install-java-linux).
+- The ultimate version of IntelliJ is preferred since it has many tools in the store. Click [here](https://www.jetbrains.com/idea/download/) to download the IDE.
 - A good internet connection to fetch additional resources.
 
 > As for the requirements, the pre-requisites may change as time goes by since ever since the article is published. JDK version `17`, VS Code version `1.61`, and IntelliJ Ultimate version `2021.2.3` were used for the screenshots.
@@ -163,12 +163,12 @@ import java.net.URL;
     this.language = language;
     }
 
-  /An empty constructor/
+  //An empty constructor
   public Movie() {
 
   }
 
-  /Set Getters and Setters/
+  //Set Getters and Setters
   public Long getId() {
   return id;
   }
@@ -239,9 +239,10 @@ In the '`pom.xml`' file, add the code below that adds the Jupiter JUnit package 
 </dependency>
 ```
 
-Add another code before the dependencies section as follows:
+Add this code below before the dependencies section. This section holds some variables which state the versions of the dependencies used. For example, that of `JUnit` is `5.8.1`. First, reload the IDE or project to apply the changes made, then in the next step, create a new file inside the `test` folder. Name it `MovieTest.java` file.
 
 ```xml
+<!--dependecies versions used-->
 <properties>
 <maven.compiler.source>17</maven.compiler.source>
 <maven.compiler.target>17</maven.compiler.target>
@@ -250,9 +251,8 @@ Add another code before the dependencies section as follows:
 </properties>
 ```
 
-This section holds some variables which state the versions of the dependencies used. For example, that of `JUnit` is `5.8.1`. First, reload the IDE or project to apply the changes made, then in the next step, create a new file inside the `test` folder. Name it `MovieTest.java` file.
-
-- In it, paste the following code:
+Now reload the IDE or project to apply the changes made, then in the next step, create a new file inside the `test` folder. Name it `MovieTest.java` file.
+In it, paste the following code:
 
 ```Java
 /**
@@ -279,6 +279,7 @@ This section holds some variables which state the versions of the dependencies u
     movie.setId(1L);
     }
 
+// Test the getId method
   @Test
   void getId() {
   assertNotNull(movie);
@@ -288,6 +289,7 @@ This section holds some variables which state the versions of the dependencies u
   /**
   * Sets id.
     */
+     // Test the setId method
     @Test
     void setId() {
     assertNotNull(movie);
@@ -295,12 +297,14 @@ This section holds some variables which state the versions of the dependencies u
     assertEquals(2L, movie.getId());
     }
 
+ // Test the getTitle method
   @Test
   void getTitle() {
   assertNotNull(movie);
   assertEquals("The Lord of the Rings: The Fellowship of the Ring", movie.getTitle());
   }
 
+ // Test the setTitle method
   @Test
   void setTitle() {
   assertNotNull(movie);
@@ -308,12 +312,14 @@ This section holds some variables which state the versions of the dependencies u
   assertEquals("The Fellowship of the Ring", movie.getTitle());
   }
 
+ // Test the getDescription method
   @Test
   void getDescription() {
   assertNotNull(movie);
   assertEquals("In the second age of Middle-earth, the lords of Elves...", movie.getDescription());
   }
 
+ // Test the setDescription method
   @Test
   void setDescription() {
   assertNotNull(movie);
@@ -321,12 +327,14 @@ This section holds some variables which state the versions of the dependencies u
   assertEquals("The lord of Elves, in the second age...", movie.getDescription());
   }
 
+ // Test the getCountry method
   @Test
   void getCountry() {
   assertNotNull(movie);
   assertEquals("New Zealand - United States", movie.getCountry());
   }
 
+ // Test the setCountry method
   @Test
   void setCountry() {
   assertNotNull(movie);
@@ -334,12 +342,14 @@ This section holds some variables which state the versions of the dependencies u
   assertEquals("NZ - US", movie.getCountry());
   }
 
+ // Test the getRating method
   @Test
   void getRating() {
   assertNotNull(movie);
   assertEquals(8, movie.getRating());
   }
 
+ // Test the setRating method
   @Test
   void setRating() {
   assertNotNull(movie);
@@ -347,6 +357,7 @@ This section holds some variables which state the versions of the dependencies u
   assertEquals(9, movie.getRating());
   }
 
+  // Test the getOfficialSite method
   @Test
   void getOfficialSite() {
   assertNotNull(movie);
@@ -358,6 +369,7 @@ This section holds some variables which state the versions of the dependencies u
   *
   * @throws MalformedURLException the malformed url exception
     */
+    // Test the setOfficialSite method
     @Test
     void setOfficialSite() throws MalformedURLException {
     assertNotNull(movie);
@@ -365,12 +377,14 @@ This section holds some variables which state the versions of the dependencies u
     assertEquals("http://www.lordsoftherings.com", movie.getOfficialSite().toString());
     }
 
+  // Test the getLanguage method
   @Test
   void getLanguage() {
   assertNotNull(movie);
   assertEquals("English", movie.getLanguage());
   }
 
+  // Test the setLanguage method
   @Test
   void setLanguage() {
   assertNotNull(movie);
@@ -388,6 +402,7 @@ Run the tests with the IDE. If the run option is not visible, right-click on the
 In the `pom.xml` file, add the following lines of code under the dependencies section. These will allow the app to utilize the Project Lombok annotations.
 
 ```xml
+<!-- Require lombok for the project -->
 <dependency>
 <groupId>org.projectlombok</groupId>
 <artifactId>lombok</artifactId>
@@ -396,9 +411,10 @@ In the `pom.xml` file, add the following lines of code under the dependencies se
 </dependency>
 ```
 
-In the properties section(in the 'properties' tags), add the following line of code:
+In the properties section(in the 'properties' tags), specify the version of Lombok to be used in the project. Accomplish this by adding the following line of code:
 
 ```xml
+<!-- Specify the version to be used -->
 <lombok.version>1.18.20</lombok.version>
 ```
 
@@ -410,6 +426,7 @@ Reload the app once more. This line of code allows the IDE to fetch the project 
 These will reduce the code of the project. It does it by replacing the Getters and Setters methods used by annotations. Lombok adds the scenes' methods in a separate file keeping the code clean and straightforward. Remove the Getters and Setters methods initially created in the `Movie.java` file, then add the following code above the Movie class.
 
 ```Java
+// Create getters and setters methods
 @Getter @Setter
 ```
 Next, rerun the tests to determine whether the code structure has not changed. If they all run successfully, the code's structure has not changed. At the moment, if you head over to the 'target' folder and open the Movie class, you will notice that all the Getters and Setter methods are automatically declared here but used in the code.
@@ -428,6 +445,7 @@ These are used to create constructors for the program. There are two types of co
 /**
 * Instantiates a new Movie.
 */
+// No argument constructor
 public Movie() {
 
     }
@@ -436,6 +454,7 @@ public Movie() {
 ##### All argument Constructor
 
 ```java
+// All argument constructor
 public Movie(Long id, String title, String description, String country, int rating, URL officialSite, String language) {
 this.id = id;
 this.title = title;
@@ -450,6 +469,7 @@ this.language = language;
 - Add the `NoArgsConstructor` and `AllArgsConstructor` annotations to the code below the `Getters` and `Setters` annotations:
 
 ```Java
+// Generate the NoArgsConstructor and AllArgsConstructor
 @NoArgsConstructor
 @AllArgsConstructor
 ```
@@ -467,18 +487,21 @@ It is used to describe how the items can be accessed in the program. E.g., priva
 - Above the `private Long id;` line, add the following:
 
 ```java
+// Generate Setters with the private access level
 @Setter(AccessLevel.PRIVATE)
 ```
 
 - Above the `private URL officialSite;` line, add the following:
 
 ```Java
+// Generate Setters with the protected access level
 @Setter(AccessLevel.PROTECTED)
 ```
 
 - Add another variable to the code known as minutes, as shown below:
 
 ```Java
+// Variable declaration and initialization
 private final int minutes = 120;
 ```
 
@@ -487,6 +510,7 @@ private final int minutes = 120;
 ```java
 import lombok.Getter;
 
+// Generate Getters and Setters with the private access level
 @Getter(AccessLevel.PRIVATE)
 @Setter(AccessLevel.PRIVATE)
 ```
@@ -508,7 +532,7 @@ The variable is inaccessible by Project Lombok due to its access level. Therefor
 - Find the ToString method automatically generated. It looks as shown below:
 
 ```java
-/Return class name, all fields separated by commas in a string form/
+//Return class name, all fields separated by commas in a string form
 public String toString() {
 Long var10000 = this.getId();
 return "Movie(id=" + var10000 + ", title=" + this.getTitle() + ", description=" + this.getDescription() + ", country=" + this.getCountry() + ", rating=" + this.getRating() + ", officialSite=" + this.getOfficialSite() + ", language=" + this.getLanguage() + ", minutes=" + this.getMinutes() + ")";
@@ -519,6 +543,7 @@ return "Movie(id=" + var10000 + ", title=" + this.getTitle() + ", description=" 
 - Like in the other annotations, add the `EqualsAndHashCode` to the Movie class.
 
 ```Java
+// Generate the Equals and HashCode methods
 @EqualsAndHashCode
 ```
 
@@ -530,6 +555,7 @@ The `EqualsAndHashCode` annotation is used to generate the equals(Object other) 
 It is not a feature but rather an option for the features. If wanted or needed, some fields can be excluded from use in the functions or included. This exclusion is by the use of the `exclude` option. In the  Movies.java file, add the 'exclude' option to the `ToString` and `EqualsAndHashCode` annotations as shown below:
 
 ```Java
+// Don't include minutes variable in the ToString, Equals and HashCode methods
 @ToString(exclude = "minutes")
 @EqualsAndHashCode(exclude = "minutes")
 ```
@@ -543,6 +569,7 @@ Remember, minutes were included in the initial 'ToString' function created above
 The `Data` annotation automatically generates the Getters and Setters, ToString, and EqualsAndHashCode methods. Go to the `Movie.java` file in the src folder and delete and replace all the `Getters` and `Setters`, `ToString`, and `EqualsAndHashCode` annotations by the `Data` annotation.
 
 ```Java
+// Generates the Getters and Setters, ToString, and EqualsAndHashCode methods
 @Data
 ```
 
@@ -553,6 +580,7 @@ The `Data` annotation automatically generates the Getters and Setters, ToString,
 This annotation makes sure that the parameter or field is not passed as an empty value. Add the `NotNull` annotations before the id, title, and rating fields. An example is shown below:
 
 ```Java
+// Ensure that the parameter or field is not passed as an empty value
 @NotNull
 private Long id;
 ```
@@ -560,7 +588,8 @@ private Long id;
 Create a new function in the class that calculates the sum by adding the value held in the minutes' field to an argument passed to it.
 
 ```java
-publilombok.configc int getMinutesPlusX(@NotNull int x){
+// Simple function that adds an input to the minutes variable
+int getMinutesPlusX(@NotNull int x){
 return this.minutes + x;
 }
 ```
@@ -571,6 +600,7 @@ Since it has the `NotNull` annotation near the argument being passed to it, it w
 - Check the changes in the `Movie.class` file in the target folder. Notice that the annotation will not allow a null value to be passed, even for the recently created function, as seen in the code generated in the `Movie.class` file found in the target folder.
 
 ```java
+// Annotation won't allow null values
 public int getMinutesPlusX(@NotNull int x) {
 Objects.requireNonNull(this);
 return 120 + x;
@@ -583,6 +613,7 @@ Lombok has an interesting annotation by the name `Accessors`. This annotation re
 - Add the `Accessors` annotation to the id field as shown below:
 
 ```Java
+// Remove the prefix in fields generated by the Getters and Setters methods
 @NotNull
 @Accessors(fluent = true)
 private Long id;
@@ -627,6 +658,7 @@ To see out its functionality, do the following:
 In the `Movie.class` file in the target folder, it adds the following block of code:
 
 ```java
+// The Annotation creates this builder code block
 public static Movie.MovieBuilder builder() {
 return new Movie.MovieBuilder();
 }
@@ -649,7 +681,7 @@ movie.id(1L);
 - In the same file, now add the following block of code:
 
 ```java
-/It does just like the former code by setting the return values expected/
+// It does just like the former code by setting the return values expected
 movie = Movie.builder().title("The Lord of the Rings: The Fellowship of the Ring")
 .description("In the second age of Middle-earth, the lords of Elves...")
 .country("New Zealand - United States")
@@ -677,6 +709,7 @@ private String language;
 It lacks the integer of the name 'minutes'. This lack is because it uses the final keyword. To solve this, use an annotation provided by Project Lombok called `@Builder.Default`. Add it above the 'minutes' as shown below:
 
 ```Java
+// Use Builder.Default to get through the final keyword
 @Getter(AccessLevel.PRIVATE)
 @Setter(AccessLevel.PRIVATE)
 @Builder.Default
@@ -708,6 +741,7 @@ It shows that it has been added to the file.
 - Now, add a list of strings of the name 'cast' in the `Movie.java` file. It is as shown below:
 
 ```Java
+// Add a list of strings with the name 'cast'
 private List<String> cast;
 ```
 
@@ -717,6 +751,7 @@ private List<String> cast;
 Notice that it adds a method that passes the whole list of strings as shown below:
 
 ```Java
+// This method generated passes the whole list of strings
 public Movie.MovieBuilder cast(List<String> cast) {
 this.cast = cast;
 return this;
@@ -726,7 +761,7 @@ return this;
 - Add the following line of code above it before rerunning the tests:
 
 ```java
-/This line passes a single string element inside the list of string cast/
+// This line passes a single string element inside the list of string cast
 @Singular("cast")
 ```
 
@@ -740,6 +775,7 @@ The `Singular` annotation does the following:
 Notice that now the application generates a code that adds an element inside the string of list cast as shown below, among others:
 
 ```Java
+// Adds an element inside the string of list cast
 public Movie.MovieBuilder cast(Collection<? extends String> cast) {
 ```
 
@@ -759,12 +795,14 @@ Slf4j is a simple logging framework abstraction.To use the Slf4j, a new Maven de
 Reload the application to fetch the dependency and add it to the project, then add the following annotation to the `Movie.java` file:
 
 ```Java
+// Adds the log variables to the class generated
 @Slf4j
 ```
 
 Lombok will provide one with log variables to write the log out of the box. It can be info, debug, or error log. Add the line below in the `getMinutesPlusX` function:
 
 ```Java
+// Generate the log variables of the type 'info'
 log.info("Adding {}", x);
 ```
 
@@ -789,12 +827,14 @@ Run all the tests, then check out for the log of the type 'info' generated in th
 In addition, it generates the following in the `Movie.class` file:
 
 ```java
+// Generated line of code
 private static final Logger log = LoggerFactory.getLogger(`Movie.class`);
 ```
 
 One can use the 'topic' option to change the name of the log being output. To do this, modify the annotation used to as shown below:
 
 ```Java
+// Specify the custom topic of all logs generated
 @Slf4j(topic="MovieDAO")
 ```
 
@@ -807,7 +847,7 @@ Lombok allows developers to use custom loggers such as the Java Logger. To do th
 - Add a new file in the root directory and name it `lombok.config`.
 - Add the following custom configurations to it so that it allows the app to use Java Logger for logs
 
-```lombok.config
+```properties
 lombok.log.fieldisstatic = false
 lombok.log.custom.declaration = java.util.logging.Logger java.util.logging.Logger.getLogger(NAME)(TOPIC)
 ```
@@ -815,11 +855,7 @@ lombok.log.custom.declaration = java.util.logging.Logger java.util.logging.Logge
 For this configuration to be used, replace the `@Slf4j(topic="MovieDAO")` annotation with the `@CustomLog` annotation. Modify the `log.info("Adding {}", x);` line to give the final output as shown:
 
 ```java
-public int getMinutesPlusX(@NotNull int x){
-log.info("Adding " + x);
-return this.minutes + x;
-}
-```java
+// Modify the getMinutesPlusX function in order to produce logs as required
 public int getMinutesPlusX(@NotNull int x){
 log.info("Adding " + x);
 return this.minutes + x;
