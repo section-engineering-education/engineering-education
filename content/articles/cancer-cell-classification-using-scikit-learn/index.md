@@ -2,6 +2,7 @@
 Machine Learning is an area of AI that explores how computers can learn without needing to be explicitly taught. Machine learning can help tackle many real-world problems.
 
 To determine whether cancer cells are `malignant` or `benign,` we must examine their physical properties, which can be used to identify them. A machine learning problem will be addressed using `Scikit-learn`. Scikit-learn, a Python framework, is a free and open-source tool for machine learning, machine mining, and data analysis.
+
 ### Prerequisites
 1. Using Scikit-learn will be a necessity for our project. 
 2. Jupyter notebooks are preferred for this project, however you are free to use any IDE of your choice.
@@ -32,12 +33,14 @@ This popular method for binary classification, dubbed Naive Bayes, will be selec
 - 
 ### Installations
 Run the following line on the command prompt to download and install it on your computer, or [follow this documentation.](https://scikit-learn.org/0.17/install.html)
+
 ```bash
 pip install scikit-learn
 ```
 > For this project, Jupyter notebooks are encouraged, although you are free to use any IDE you choose. Instead of developing an entire script from scratch, one can execute a few lines of code and see what happens one by one rather than writing the entire script and running it.
 
 To set it up, use the command line and enter the following code:
+
 ```bash
 pip install jupyter
 ```
@@ -45,6 +48,7 @@ pip install jupyter
 We will be classifying cancer cells based on their features and identifying them if they are malignant or benign using scikit-learn library for python programming language. We will be using the breast cancer Wisconsin dataset for our machine learning problem.
 
 Malignant and benign breast cancer tumors are included in the data set, as well as their respective classification labels. The following function can be used to load it:
+
 ```python
 load_breast_cancer([return_X_y])
 ```
@@ -67,6 +71,7 @@ data = load_breast_cancer()
 ```
 #### 3. Arranging and analyzing data
 Before we can learn how to train our model, we need to organize the data and and if you wish to what it contains then you can use the **print()** function in order to gain a better sense of what we have.
+
 ```python
 namesForlabels = data['target_names']
 ourlabels = data['target']
@@ -141,10 +146,10 @@ Output:
 ```
 If a tumor is malignant or benign, our studies show that this machine learning classifier based on the `Naive Bayes` algorithm is 94.15% accurate.
 
+To see the whole code for this tutorial, click [here](https://colab.research.google.com/drive/1Ztr7e9qZ9nrLHSGXJ1EAjBplNGXXtjC7?usp=sharing).
+
 ### Conclusion
 Determination can be done by looking at the features of cancer cells, which can indicate whether they are `malignant` or `benign.` We used `scikit-learn` to address a machine learning problem. Python framework Scikit-learn is a free and open-source tool for machine learning, machine mining, and data analysis.
-
-To see the whole code for this tutorial, click [here](https://colab.research.google.com/drive/1Ztr7e9qZ9nrLHSGXJ1EAjBplNGXXtjC7?usp=sharing)
 
 ---
 Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
