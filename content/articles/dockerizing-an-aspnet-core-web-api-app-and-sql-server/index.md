@@ -1,4 +1,19 @@
-﻿### Introduction
+﻿---
+layout: engineering-education
+status: publish
+published: true
+url: /dockerizing-an-aspnet-core-web-api-app-and-sql-server/
+title: Dockerizing an ASP.NET Core Web API app and SQL Server
+description: This guide will cover the step-by-step ways of configuring ASP.NET core application's and SQL server 2019 to run on a Docker container.
+author: lewel-murithi
+date: 2021-11-28T00:00:00-15:00
+topics: [Containers]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/dockerizing-an-aspnet-core-web-api-app-and-sql-server/hero.jpg
+    alt: Dockerizing an ASP.NET Core Web API app and SQL Server Hero Image
+---
 Microsoft developed an open-source and cross-platform framework that replaces the old classic ASP.NET called ASP.NET Core. The framework is known for building modern, cloud-based, and internet-connected web applications and services. The organizations can decide to deploy the application on-premise or in cloud environments.
 
 Docker, on the other hand, is the technology that allows developers to deploy and run containers. It provides the application with a complete runtime environment, such as the operating system and system libraries, to run smoothly and independently.
@@ -22,7 +37,7 @@ This guide will cover the step-by-step ways of configuring ASP.NET Core applicat
 3. [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/) installed.
 4. Proficient in [Docker commands](https://docs.docker.com/engine/reference/commandline/docker/), [SQL Server commands](https://www.edureka.co/blog/sql-commands), and [ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/introduction-to-aspnet-core?view=aspnetcore-6.0) language.
 
-### Setting up the SQL Server Docker image
+### Setting up the SQL server docker image
 We will start by pulling the latest SQL Server 2019 container image by executing the below command in the terminal:
 
 ```bash
@@ -42,7 +57,7 @@ The above command contains the following:
 
 The Docker container is now up and running.
 
-#### SQL Server connection using SSMS
+#### SQL server connection using SSMS
 Here, we will use the SQL Server Management Studio tool to connect our SQL Server running on a Docker container.
 
 To achieve this, we are going to input the below details in the SSMS connection window:
@@ -56,7 +71,7 @@ After we are done, we click on the `Connect` button. It will ensure that we have
 
 Once the database is connected, we can then interact with the database.
 
-### Creating CRUD operations in an ASP .NET Core application
+### Creating CRUD operations in an ASP.NET Core application
 We will start by launching the Visual Studio application on the desktop. Then, we select `ASP.NET Core Web App (Model-View-Controller)` template as shown below:
 
 ![new ASP project](/engineering-education/dockerizing-an-aspnet-core-web-api-app-and-sql-server/new-asp-proj.png)
@@ -69,7 +84,7 @@ Then, click next as we continue to configure our new project. At this stage also
 
 ![disable docker option](/engineering-education/dockerizing-an-aspnet-core-web-api-app-and-sql-server/disable-docker.png)
 
-#### Creating database using Entity Framework Core
+#### Creating database using entity framework core
 This section will create a new database and name it `FilmDB` in the SQL Server running in our Docker container. We will have only one table named `Film`, where we will perform CRUD operations from the ASP.NET Core application. [EF Core](https://docs.microsoft.com/en-us/ef/core/) will handle these operations.
 
 The frontend ASP.NET Core application will interact with our backend SQL Server database that is running on the Docker, as shown below:
@@ -182,7 +197,7 @@ namespace DockerSqlAsp.Controllers {
 }
 ```
 
-#### Creating the User Interface Views
+#### Creating the user interface views
 We are done with our controller, and now it is time to create our views for the application. Inside the **Views/Home** directory, we will create three files and name them `AddNew.cshtml`, `Modify.cshtml`, and `Index.cshtml`. The views will act as the user interface for our application.
 
 We start by coding `AddNew.cshtml` as below:
@@ -279,7 +294,7 @@ Finally, we code the file `Index.cshtml` as below:
 </div>
 ```
 
-#### Performing EF Core Migrations
+#### Performing EF core migrations
 We will first locate and open the file `appsettings.json` in the project solution explorer. Here we will create a connection string that will connect our frontend application to the SQL Server database. The file will appear as below:
 
 ```json
@@ -386,7 +401,7 @@ Note that we have provided the DataSource value as `sqldb` instead of `localhost
 
 The above makes it possible for containers to interact with each other using their names instead of IP addresses.
 
-#### Running EF Core Migrations
+#### Running EF core migrations
 We will edit the database connection string again to use `localhost, 1440`, instead of `sqldb`. The main reason is that EF core needs to be aware of the database the migrations are being performed. Below is how the modified connection string would appear:
 
 ```json
@@ -429,3 +444,6 @@ The complete project files and code can be accessed at my [GitHub Repo](https://
 2. [Understanding Container Orchestration](https://www.capitalone.com/tech/cloud/what-is-container-orchestration/).
 3. [Docker Compose in a Nutshell](https://docs.docker.com/compose/).
 4. [Working with EF Core](https://docs.microsoft.com/en-us/ef/core/get-started/overview/first-app?tabs=netcore-cli).
+
+---
+Peer Review Contributions by: [Dawe Daniel](/engineering-education/authors/dawe-daniel/)
