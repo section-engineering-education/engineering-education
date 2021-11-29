@@ -138,4 +138,6 @@ You can run the whole code [here](https://colab.research.google.com/drive/1eL6a4
 ### Conclusion
 With the help of Logistic Regression and PyTorch, we learned how the MNIST handwritten digits dataset may be identified.
 
-In the data folder, the MNIST dataset is initially downloaded. The hyperparameters are then set up and loaded into the environment. The Logistic Regression model can then be defined and used. The MNIST dataset is used to train and test the model.
+In the data folder, the MNIST dataset is initially downloaded. The hyperparameters are then set up, loaded into the environment and a neural network build. The Logistic Regression model can then be defined and used. The MNIST dataset is used here to train and test the model.
+
+Happy coding!
