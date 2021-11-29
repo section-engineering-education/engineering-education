@@ -1,3 +1,20 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /working-with-csv-files-in-python/
+title: Working with CSV files in Python
+description: This article will cover the basics of working with csv files in Python. The article will explain how to read,clean and analyze data from csv files.
+author: kelvin-munene
+date: 2021-10-21T00:00:00-07:20
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/working-with-csv-files-in-python/hero.png
+    alt: Working with CSV files in Python
+---
+
 ### Introduction
 CSV (Comma Separated Values) is a basic file format for tabular data. Most programs create CSV files. They allow you to simply export and import data from spreadsheets and databases. To analyze, graph, or publish data mining results, they can be exported to a CSV file and imported into a spreadsheet.
 
@@ -326,3 +343,7 @@ print(df.head())
 Thank you for reading to the end. This tutorial taught us how to work with CSV files in Python. We have learned how to write and read CSV files, work with large CSV files, convert multiple JSON files to CSV files, and finally how to create a data frame using CSV files 
 
 Happy cording!
+
+---
+
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
