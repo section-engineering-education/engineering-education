@@ -3,11 +3,11 @@ layout: engineering-education
 status: publish
 published: true
 url: /learn-how-to-set-up-linux-quagga-routing-suite/
-title: Learn how to set up Linux's Quagga Routing Suite
+title: Learn How to Set up Linux's Quagga Routing Suite
 description: In this tutorial, we will look at how to introduce the Quagga steering suite on Ubuntu working framework through an order line interface.
 author: bernard-mburu
 date: 2021-11-27T00:00:00-06:04
-topics: [Linux]
+topics: []
 excerpt_separator: <!--more-->
 images:
 
