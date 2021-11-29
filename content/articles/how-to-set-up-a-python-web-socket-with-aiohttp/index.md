@@ -1,3 +1,20 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-set-up-a-python-web-socket-with-aiohttp/
+title: How to set up a Simple Python WebSocket with AioHTTP
+description: In this tutorial, we will build a client-server socket architecture application using AioHTTP.
+author: carol-wanjiru
+date: 2021-11-29T00:00:00-13:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/how-to-set-up-a-python-web-socket-with-aiohttp/hero.png
+    alt: How to set up a Simple Python WebSocket with AioHTTP
+---
+
 A socket consists of two major endpoints. One end sends data, and the other end receives data. Take an example of what you can do over the internet. In this case, different nodes/computers are connected to establish a connection that will allow you to send or receive data. A node can be a server or a client. A client sends a request, and the server will send back a response. These connections between the server and client are achieved through sockets. Thus, a socket acts as the communication endpoint.
 
 This guide will help you understand the socket concept by building client-server socket architecture using the AioHTTP.
