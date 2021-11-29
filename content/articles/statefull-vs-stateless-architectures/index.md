@@ -44,13 +44,15 @@ The main difference between the two architectures is how they handle states. In 
 
 In a stateless build system, extra information is  held on the client-side. Thus, as the system conveys different information, each session'reminds' the server of its preceeding sessions through the use of Cookies.
 
-### Network Protocols and the architectures they use
+### Network Protocols and their Architectures
 
-Network protocols are divided into two: stateful protocols and stateless protocols. Whether a protocol is stateful or stateless depends on how long the state of interaction with it is being recorded and how that information needs to be stored.
+Network protocols are divided into two: 
+- Stateful protocols 
+- Stateless protocols. 
 
-The receiver cannot keep the session state from preceding requests in a stateless network protocol. The sender (or server) sends an important session state to the receiver while ensuring that every request can be processed in isolation, meaning without linking with the session state from past demands kept by the receiver. They do not have to depend or wait on recommendations that follow. 
-
-### Examples of stateless protocols include
+### Examples
+  #### Stateless Protocols 
+  
 
 - The Hypertext Transfer Protocol (HTTP): The foundation on which the World Wide Web was built.
 - The User Datagram Protocol: Used in real-time services like video communications 
@@ -61,7 +63,7 @@ The receiver cannot keep the session state from preceding requests in a stateles
 
 On the other hand, the receiver can keep session state/status info from the previous requests in a stateful network protocol.
 
-### Examples of stateful protocols include
+#### Statefull Protocols
 - The File Transfer Protocol (FTP).
 
 > The traditional FTP server couples with the client in an interactive session where while in session, a user is provided with a way to verify and set a few variables, all stored server-side, as part of the session state.
@@ -69,13 +71,13 @@ On the other hand, the receiver can keep session state/status info from the prev
 - Telnet 
 - The Transmission Control Protocol (TCP)
 
-### API-based Internet Services and their relation to stateful and stateless architectures
+### API-based Internet Services and their Relation to Stateful and Stateless Architectures
 
 The move to switch from a statefuk designed system to a stteless alternative is linked to the popularity of the diverse ways of building application programming interfaces (APIs) and web apps. At the start of the 21st century, the Simple Object Access Protocol (SOAP) was the prevalent design pattern. The design pattern allowed the creation of stateful architectures, evident from the services and applications that were develooed during the period. 
 
 RESTful services developed in popularity as a result of its stateless design, eventually surpassing SOAP in usage. In the design world, Graph QL is gaining traction. RESTful services, like Graph QL-based services, are stateless thus e nd-users have a lot of influence over what data is sent to and from the servers.
 
-### Differences between stateless and stateful architectures
+### Differences Between Atateless and Atateful Architectures
 The main difference between the two architectures is how they handle user states and sessions. The differences between the two areas are highlighted in the table below:
 
 **Stateless**|**Stateful**
@@ -87,7 +89,7 @@ The server and client are independent and loosely coupled.|The server and client
 Servers in this architecture are crash-proof. They can be restarted after a failure. The other servers could continue to handle a user request when the server handling it goes down.|Servers in this architecture do not recover easily from a crash. They store session status and information about a client during sessions. So if they crash, the session has to start over.
 
 
-### Advantages stateless architecture
+### Advantages Stateless Architecture
 1.	A network's monitoring system does not need to read the information beyond a single request to comprehend it, which improves visibility. This is because, every request is handled in isolation.
 2.	They simplify the design of the server since most functionality is handled client-side.
 3.	It is very reliable as it recovers from partial failures easily. The server does not need to store any particular state or session; thus, a failed server can restart or transfer the client's request to another server of the same organization.
@@ -95,11 +97,11 @@ Servers in this architecture are crash-proof. They can be restarted after a fail
 5.	They can easily handle multiple sessions simultaneously since every request is isolated.
 6.	Memory usage on the server-side is reduced. This is because the information used to handle requests is not stored there.
 
-### Disadvantages of stateless protocols 
+### Disadvantages of Stateless Protocols 
 1.	Recurring poor network performances. This might occur when increasing the redundant data sent in sequences of requests. Remember, we mentioned that data is not left on the server in a stateless network architecture.
- ### Advantages of stateful architecture
+ ### Advantages of Stateful Architecture
 1.	Stateful architecture may add a security advantage to systems. That is why many banks rely on it to allow users to make online transactions. Its disadvantages, however, outweigh its benefits.
-### Disadvantages of stateful architecture include:
+### Disadvantages of Stateful Architecture include:
 1.	It does not easily recover from partial failures. When a server fails, it cannot just restart or pass a user request to another server because it needs to hold the session state along with the details.
 2.	As much of the complex functionality is handled server-side, an intricate server design is needed to design the server.
 3.	Too much dependency between server and client that when one side fails, all connections are lost, and the running process has to start over.
