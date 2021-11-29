@@ -176,7 +176,7 @@ if __name__ == '__main__':
 ```
 In the `configure_optimizer` function, we can pass in any optimizer you want to use. For our case, we've chosen the `Adam` optimizer. Besides, we can pass in the `learning_rate` parameter; a learning rate of 0.001 is chosen for this experiment. 
 
-As you've seen in the code above, with PyTorch Lightning, anything that is critical to this project is listed and organized in a way that is cohesive across every single project in the world. For instance, if you want to know which data is used, you need to go to the `train_dataloader()`. If you want to know which optimizer is used,  you only need to look at the `configure_optimizers()` function, and you'll find it. Also, if you've noticed there's no GPU code, or half-precision code, all that is done for you behind the hood in PyTorch Lightning. 
+As you've seen in the code above, with PyTorch Lightning, anything that is critical to this project is listed and organized in a way that is cohesive across every single project in the world. For instance, if you want to know which data is used, you need to go to the `train_dataloader()` function. If you want to know which optimizer is used,  you only need to look at the `configure_optimizers()` function, and you'll find it. Also, if you've noticed there's no GPU code, or half-precision code, all that is done for you under the hood in PyTorch Lightning. 
 
 Please find the full code [here](https://colab.research.google.com/drive/1tYa4uaxqCQDuFmwaNQ_90C2HVzOcI-kq?usp=sharing).
 
