@@ -1,22 +1,29 @@
-Developers need some quick-to-use data sources with endpoints when building a React project. These data sources provide test data to test whether the package works correctly.
-A [data source](https://docs.microsoft.com/en-us/sql/odbc/reference/data-sources?view=sql-server-ver15) can be said to be the initial location where data is born or a live data feed. It may be a database, flat file, live measurement data from physical devices, among many others.
-Datasource mainly used are databases managed by DBMS(s) such as MySQL, Postgres, SQL, among many others. The problem with this approach is that during prototyping, e.g., in Rapid Prototyping Approach, it will be quickly discarded if the application prototype is not as expected.
-[Rapid Prototyping Approach](https://www.productplan.com/glossary/rapid-prototyping/) is a type of Agile system development methodology that allows one to create a prototype for testing and validation of the requirements in a Requirement Specification Document(RSD).
-This development is through several iterations. The prototype may then be used as a primary system or discarded so that another primary system may be developed based on the prototype.
-The extra setup and configurations will be tedious and useless since they will be quickly discarded.
+Developers need some quick-to-use data sources with endpoints when building a React.js project. These data sources provide test data to test whether the package works correctly.
+
+A [data source](https://docs.microsoft.com/en-us/sql/odbc/reference/data-sources?view=sql-server-ver15) can be said as the initial location where data is born. It may be a database, flat file, live measurement data from physical devices, among many others.
+
+Datasource mainly used are databases managed by DBMS(s) such as MySQL, Postgres, SQL, among many others.
+
+The problem with this approach is that during prototyping. For example, in Rapid Prototyping Approach, it will be quickly discarded if the application prototype is not as expected.
+
+[Rapid Prototyping Approach](https://www.productplan.com/glossary/rapid-prototyping/) is a type of agile system development methodology that allows one to create a prototype for testing and validating the requirements of a Requirement Specification Document (RSD).
+
+This development happens through several iterations. The prototype may then be used as a primary system or it can be discarded, so that another primary system may be developed based on the prototype.
+
+By building a prototype, the extra setup and configurations can be avoided, if there are going to be quickly discarded.
 
 The process produces a need to create a data source that can be quickly set up and discarded, yet it performs the same functionality as the DBMS.
-It should also be small enough for fewer storage requirements and produce correct and accurate results as expected.
-The `json-server` library can solve such data sources problems.
 
-The `json-server` library is quick to install, configure, use and discard in a React application.
-This article will learn how to do the following on the package mentioned above in a React app.
+It should also be small enough for fewer storage requirements to produce correct and accurate results as expected.
 
-### Table of Contents
+The `json-server` library can solve such data sources problems. The `json-server` library is quick to install, configure, use, and discard in a React application.
 
+In this article, you will learn how to do the following on the package mentioned above in a React.js app.
+
+### Table of contents
 - [Key takeaways](#key-takeaways)
 - [Pre-requisites](#pre-requisites)
-- [Learn briefs on the JSON Server package](#learn-briefs-on-the-json-server-package)
+- [Understanding the json-server package](#understanding-the-json-server-package)
 - [Create a React app](#create-a-react-app)
   - [New React app](#new-react-app)
   - [New project structure](#new-project-structure)
@@ -32,59 +39,73 @@ This article will learn how to do the following on the package mentioned above i
 - [Install JSON Server in the machine](#install-json-server-in-the-machine)
 - [Configure the JSON Server data source in the project](#configure-the-json-server-data-source-in-the-project)
 - [Run the application](#run-the-application)
-- [More on JSON Server](#more-on-json-server)
+- [More on JSON server](#more-on-json-server)
   - [Change port, file and file paths](#change-port-file-and-file-paths)
-  - [Perform Queries on the data](#perform-queries-on-the-data)
+  - [Perform queries on the data](#perform-queries-on-the-data)
   - [Add delay and change Host](#add-delay-and-change-host)
 - [Conclusion](#conclusion)
 - [References](#references)
 
 ### Key takeaways
-
 By the end, the following will be learned:
-
-- What is the `json-server` library
-- Set up the `json-server` library in a React application
-- Connect the app to the library
-- Use the library acts as a data source in place of an actual DBMS
-- Removing the dependency from the application and discarding the prototype
+- What is the `json-server` library?
+- Set up the `json-server` library in a React.js application.
+- Connect the app to the library.
+- Using the library as a data source in place of an actual DBMS.
+- Removing the dependency from the application and discarding the prototype.
 
 ### Pre-requisites
-
 For the article, the following are required for easy article follow-up:
-
-- A good React IDE or text editor set up on the machine
-- A stable internet application
-- React development environment already setup
-- React development skills
+- A good IDE or text editor set up on the machine.
+- A stable internet connection.
+- React development environment already setup.
+- React development skills.
 
 Brief info on what is going to be done in the article is as follows:
+- Learn briefs on the JSON server package.
+- Create a React.js application.
+- Set it up to allow API data from links.
+- Style the application.
+- Install JSON Server in the machine.
+- Set up the JSON Server as a mock database server.
+- Configure the JSON Server data source in the project.
+- Run the application.
 
-- Learn briefs on the JSON Server package
-- Create a React application
-- Set it up to allow API data from links
-- Style the application
-- Install JSON Server in the machine
-- Set up the JSON Server as a mock database server
-- Configure the JSON Server data source in the project
-- Run the application
+### Understanding the json-server package
+JSON server allows almost all type of back-end requests and responses like `GET`, `POST`, `PUT`, `PATCH`, and `DELETE` methods.
 
-### Learn briefs on the JSON Server package
-
-JSON Server can allow almost all back-end requests and responses. They can be accessed via the `GET`, `POST`, `PUT`, `PATCH`, and `DELETE` methods.
-It allows routes to access data items stored in the Mock database file(JSON). They may include examples such as `GET/posts`, `PUT/posts/1`, or `DELETE/posts/1`.
+It has routes to access data items stored in the mock database file (JSON). Few examples are `GET /posts` for fetching all the posts, `PUT /posts/1` for updating the first post, or `DELETE /posts/1` for deleting the first post.
 
 The module allows other operations to be done on the database, such as:
 
-- **Filter**: e.g. `GET/posts?title=json-server&author=riro` or `GET/comments?author.name=riro`. These requests filters for posts with title of 'json-server' and author name of 'riro' and comments with the author name of 'riro' respectively. An example is a GET request on `http://www.albana.com/posts?title=json-server&author=riro`.
-- **Pagination**: e.g. `GET/posts?_page=9&_limit=23`. This request will fetch posts from page 9, and the page limit is set to 23. An example is a GET request on `http://www.albana.com//posts?_page=9&_limit=23`.
-- **Sorting**: e.g. `GET/posts/5/comments?_sort=votes,likes&_order=desc,asc`. This request does the sorting of the comments by using the votes and likes in an ascending and descending order, respectively. An example is a GET request on `http://www.albana.com/posts/5/comments?_sort=votes,likes&_order=desc,asc`.
-- **Slicing**: e.g. `GET/posts/4/comments?_start=20&_limit=10`. This request truncates the comments after 10 comments starting from comment number 20. An example is a GET request on `http://www.albana.com/posts/1/comments?_start=20&_end=33`.
-- **Operators**: e.g. for getting range (`_gte`, `lte`), excluding a value(`_ne`), filtering a value(`_like`). An example is a GET request on `http://www.albana.com/posts/4/comments?_ne=sad`. It excludes any comment with the value of 'sad' while `http://www.albana.com\author_like=chris` searches for authors with a name related to 'chris' (RegEx is used).
-- **Full-text search**: e.g. `GET/posts?q=tomcat`. This request searches for the value '**tomcat**' in all the records stored. An example is a GET request on `http://www.albana.com/posts?q=tomcat`.
-- **Relationships**: e.g., the inclusion of child resources(`_embed`), the inclusion of parent resources(`_expand`), to get or create nested resources. An example is `http://www.albana.com/comments/1?_expand=post` that includes parent resource by the name 'post'.
-- **Database**: e.g. `GET\db`. This GET request brings up all database items of the specified database. An example is `http://www.albana.com/customers_db`.
-- **Homepage**: e.g. `GET/`. Using the `./public` path, one can serve the application files in the public folder. An example is `http://www.albana.com/`.
+#### Filter
+Examples - `GET/posts?title=json-server&author=riro` or `GET/comments?author.name=riro`.
+
+These end-points filters `posts` with `title` of `json-server` and `author` name of `riro` and `comments` with the `author` name of `riro` respectively.
+
+An example is a `GET` request on `http://www.albana.com/posts?title=json-server&author=riro`.
+
+#### Pagination
+Examples - `GET/posts?_page=9&_limit=23`.
+
+This request will fetch posts from page 9, and the page limit is set to 23.
+
+An example is a GET request on `http://www.albana.com//posts?_page=9&_limit=23`.
+
+#### Sorting
+e.g. `GET/posts/5/comments?_sort=votes,likes&_order=desc,asc`. This request does the sorting of the comments by using the votes and likes in an ascending and descending order, respectively. An example is a GET request on `http://www.albana.com/posts/5/comments?_sort=votes,likes&_order=desc,asc`.
+#### Slicing
+e.g. `GET/posts/4/comments?_start=20&_limit=10`. This request truncates the comments after 10 comments starting from comment number 20. An example is a GET request on `http://www.albana.com/posts/1/comments?_start=20&_end=33`.
+#### Operators
+e.g. for getting range (`_gte`, `lte`), excluding a value(`_ne`), filtering a value(`_like`). An example is a GET request on `http://www.albana.com/posts/4/comments?_ne=sad`. It excludes any comment with the value of 'sad' while `http://www.albana.com\author_like=chris` searches for authors with a name related to 'chris' (RegEx is used).
+#### Full-text search
+e.g. `GET/posts?q=tomcat`. This request searches for the value '**tomcat**' in all the records stored. An example is a GET request on `http://www.albana.com/posts?q=tomcat`.
+#### Relationships
+e.g., the inclusion of child resources(`_embed`), the inclusion of parent resources(`_expand`), to get or create nested resources. An example is `http://www.albana.com/comments/1?_expand=post` that includes parent resource by the name 'post'.
+#### Database
+e.g. `GET\db`. This GET request brings up all database items of the specified database. An example is `http://www.albana.com/customers_db`.
+#### Homepage
+e.g. `GET/`. Using the `./public` path, one can serve the application files in the public folder. An example is `http://www.albana.com/`.
 
 More on JSON Server library will also be mentioned in the article.
 
