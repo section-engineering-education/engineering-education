@@ -11,7 +11,7 @@ topics: [Languages, API]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/consuming-rest-api-in-flutter-building-a-weather-app-that-makes-a-network-call-to-a-backend-server/hero.png
+  - url: /engineering-education/consuming-rest-api-in-flutter-building-a-weather-app-that-makes-a-network-call-to-a-backend-server/hero.jpeg
     alt: Weather app with APIs in Flutter image
 ---
 
@@ -37,11 +37,11 @@ This project uses Android Studio as its Integrated Development Environment(IDE).
 ![creating a new Flutter project](/engineering-education/consuming-rest-api-in-flutter-building-a-weather-app-that-makes-a-network-call-to-a-backend-server/create_project.png)
 
 ### Integrating the Dio package
-To add the Dio package as a dependency into the application, go to the [Dio Documentation](https://pub.dev/packages/dio), copy `dio: ^4.0.0`, and add it to the project `pubspec.yaml` file. Then, run the command `pub get` to sync the dependency in the project.
+To add the Dio package as a dependency into the application, go to the [Dio Documentation](https://pub.dev/packages/dio), copy `dio: ^4.0.0`, and add it to the project's `pubspec.yaml` file. Then, run the command `pub get` to sync the dependency in the project.
 
 ![adding dio to the project](/engineering-education/consuming-rest-api-in-flutter-building-a-weather-app-that-makes-a-network-call-to-a-backend-server/dio.png) 
 
-Also add [Getx](https://pub.dev/packages/get) and [Get Storage](https://pub.dev/packages/get_storage) for state management and local storage respectively. If you don't know how to use the GetX package for state management in flutter read my article on [Getx](https://www.section.io/engineering-education/flutter-getx-ecosystem-for-state-management/). In addition, add the [geolocator](https://pub.dev/packages/geolocator) dependency `geolocator: ^7.7.0` and [flutter spinkit](https://pub.dev/packages/flutter_spinkit) dependency `flutter_spinkit: ^5.1.0`.
+Also add [Getx](https://pub.dev/packages/get) and [Get Storage](https://pub.dev/packages/get_storage) for state management and local storage respectively. If you don't know how to use the GetX package for state management in flutter read my article on [Getx](/engineering-education/flutter-getx-ecosystem-for-state-management/). In addition, add the [geolocator](https://pub.dev/packages/geolocator) dependency `geolocator: ^7.7.0` and [flutter spinkit](https://pub.dev/packages/flutter_spinkit) dependency `flutter_spinkit: ^5.1.0`.
 
 The geolocator allows us to easily access platform-specific locations, while the flutter Spinkit gives us a collection of loading indicators. The dependencies section of your `pubspec.yaml` file should look like this.
 
@@ -49,14 +49,14 @@ The geolocator allows us to easily access platform-specific locations, while the
 
 ### Project structure
 The project is being structured in this order:
-- model(Object Representation of the data)
-- controller(Logic)
-- service(classes that allow us to make network calls)
-- views(the UI)
-- utilities (components we want to reuse)
+- Model (Object Representation of the data)
+- Controller (Logic)
+- Service (classes that allow us to make network calls)
+- Views (the UI)
+- Utilities (components we want to reuse)
 
 ### Models
-In the model folder, we will create a class that represents the object that we will receive from the server. Create a dart file `weather_model.dart` as shown below.
+In the model folder, we will create a class representing the object we will receive from the server. First, create a dart file called `weather_model.dart` as shown below.
 
 #### The weather model
 
@@ -292,10 +292,7 @@ class Wind {
 
 ```
 
-The class contains
-instance variables,
-the constructor for initializing the fields on object creation, and
-methods that will convert the JSON we receive from the API into Dart Classes.
+The class contains instance variables, the constructor for initializing the fields on object creation, and methods that will convert the JSON that we receive from the API into Dart Classes.
 
 
 ### Service
@@ -303,7 +300,7 @@ This folder will contain classes that enable the application to make network cal
 
 
 #### The BaseService class
-Create a dart file named `logger.dart` and create a class called LogginInterceptor that will extend the Interceptor class from the Dio package.
+Create a dart file named `logger.dart` and create a class called `LogginInterceptor` that will extend the `Interceptor` class from the `Dio` package.
 
 ```Dart
 
@@ -357,9 +354,9 @@ class LoggingInterceptor extends Interceptor {
 
 ```
 
-By extending the `Interceptor` class, we access its methods and override them as already seen. The `onRequest` method in the Interceptor class, which we have overridden, will be executed before any request is initiated. On the other hand, the `onResponse` method will be executed on the success of our network call. By overriding the `onError` method, we have access to the error message that may occur in the process of the network call. It is executed when there is an error.
+By extending the `Interceptor` class, we access its methods and override them as already seen. The `onRequest` method in the `Interceptor` class, which we have overridden, will be executed before any request is initiated. On the other hand, the `onResponse` method will be executed on the success of our network call. By overriding the `onError` method, we have access to the error message that may occur in the process of the network call. It is executed when there is an error.
 
-Let us configure the Dio package so we can connect to the server. Create `base_service.dart` class.
+Let us configure the `Dio` package so we can connect to the server. Create `base_service.dart` class.
 
 ```Dart
 import 'package:dio/dio.dart';
@@ -417,11 +414,11 @@ handleError(DioError error) {
 
 ```
 
-First, we created an instance of Dio named  `_dio`. The underscore makes it private. We have passed in the headers, where we have defined the content type we want to receive, in this case, a [json](https://en.wikipedia.org/wiki/JSON#:~:text=JSON%20(JavaScript%20Object%20Notation%2C%20pronounced,(or%20other%20serializable%20values),  set the connection Time out, receive Time out and an interceptor(which is the LoggingInterceptor class we created above)
+First, we created an instance of `Dio` named  `_dio`. The underscore makes it private. We have passed in the headers, where we have defined the content type we want to receive. In this case, a [JSON](https://en.wikipedia.org/wiki/JSON). Set the connection Time out, receive Time out and an `Interceptor` (which is the `LoggingInterceptor` class we created above)
 
-Next, we create a method called `request`, which uses the instance of the Dio(`_dio`) to call the Dio request method that allows us to make HTTP calls with options. It takes a URL which is the URL path(endpoint), data which is the request data, and options that contain the HTTP method and the headers.
+Next, we create a method called `request`, which uses the instance of the Dio(`_dio`) to call the `Dio` request method that allows us to make HTTP calls with options. It takes a URL which is the URL path (endpoint), data which is the request data, and options that contain the HTTP method and the headers.
 
-And lastly, we created a method to handle errors. It takes a `DioError` and returns an appropriate message when there is a SocketException, connection Timeout, and nothing was returned.
+And lastly, we created a method to handle errors. It takes a `DioError` and returns an appropriate message when there is a `SocketException`, `connection Timeout`, and nothing was returned.
 
 
 #### The LocalStorage
@@ -461,7 +458,7 @@ class LocalStorage {
 ```
 
 #### The weather service
-Create a dart file, call it `weather_service` and write the following code.
+Create a dart file, call it `weather_service.dart` and write the following code.
 
 ```Dart
 
@@ -492,11 +489,11 @@ class WeatherService {
 }
 
 ```
-First, we created an instance of the `BaseService` class above to access the `request` method. In the next step, we created a variable `apiKey` that holds our project's API key. To get an API key, go to [Open Weather](https://openweathermap.org/api) and create an account, then generate an API key for yourself.
+First, we created an instance of the `BaseService` class above to access the `request` method. Next, we created a variable `apiKey` that holds our project's API key in the next step. To get an API key, go to [Open Weather](https://openweathermap.org/api) and create an account, then generate an API key for yourself.
 
-Next, we have created a method called `getWeather`, which returns a [Future](https://api.flutter.dev/flutter/dart-async/Future-class.html) of Response. A Future in Flutter represents a potential value or error that will be available at some time in the future. Because we do not know when our method will return the weather information from the API, the return type is a future. Since we are returning a future, we need to add the `async` keyword to the method and `await` the tasks we think will take time to complete. Thus, the [async -await](https://dart.dev/codelabs/async-await) makes our method asynchronous.
+Next, we have created a `getWeather` method, which returns a [Future](https://api.flutter.dev/flutter/dart-async/Future-class.html) of Response. A Future in Flutter represents a potential value or error that will be available at some time in the future. Because we do not know when our method will return the weather information from the API, the return type is a future. Since we are returning a Future, we need to add the `async` keyword to the method and `await` the tasks we think will take time to complete. Thus, the [async -await](https://dart.dev/codelabs/async-await) makes our method asynchronous.
 
-We use the `GeoLocator` package to the user's current location, then have access to the longitude and latitude, which we have added as request parameters to the endpoint. To get the location, we grant permission to the app to access the device's location. For Andriod got into the `AndroidManifest.xml` file and added these two lines inside the `manifest tag` The `AndroidManifest.xml` file can be found on this directory `android -> app-> src -> main.`
+We use the `GeoLocator` package to the user's current location, then access the longitude and latitude, which we have added as request parameters to the endpoint. To get the location, we grant permission to the app to access the device's location. For Andriod got into the `AndroidManifest.xml` file and added these two lines inside the `manifest tag` The `AndroidManifest.xml` file can be found on this directory `android -> app-> src -> main.`
 
 ```xml
 <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -539,7 +536,7 @@ class WeatherController extends GetxController {
 
 ```
 
-We created a `WeatherController` class that extends the `GetxController` class in the above snippet. Learn how to use GetX for state management [here](https://www.section.io/engineering-education/flutter-getx-ecosystem-for-state-management/#:~:text=GetX%20is%20a%20simple%20yet,dependency%20injection%2C%20and%20route%20management.&text=It%20supports%20the%20decoupling%20of,%2C%20dependency%20injection%2C%20and%20navigation.). We then defined a `getWeatherData` method which returns a `Future` of `Weather`. The `Weather` is the class we created in the model, representing our data.
+We created a `WeatherController` class that extends the `GetxController` class in the above snippet. Learn how to use GetX for state management [here](/engineering-education/flutter-getx-ecosystem-for-state-management/). We then defined a `getWeatherData` method which returns a `Future` of `Weather`. The `Weather` is the class we created in the model, representing our data.
 
 We injected the `WeatherService` class we created in the service folder using GetX and used the instance created to call the `getWeather` method and save the Response in a variable `res` and return the Response.
 
@@ -645,7 +642,7 @@ class WeatherSnackBars {
 }
 ```
 
-We have created two snack bars using GetX for a successful response and an error.
+We have created two snack bars using `GetX` for a successful response and an error.
 
 #### Working on the WeatherStatus Class
 Next, create a `WeatherStatus` class that will return the appropriate message and Icon based on the weather data returned.
@@ -791,10 +788,6 @@ class LocationScreen extends StatelessWidget {
     );
   }
 }
-
-
-
-
 ```
 
 We have injected an instance of our controller and called the `getWeatherData` method inside a FutureBuilder of type Weather. If the future has data, it will return the data; otherwise, if it has an error, it renders the error. However, if the above is not the case, we show the `SpinKitDoubleBounce` showing that our data is loading.
@@ -802,7 +795,7 @@ We have injected an instance of our controller and called the `getWeatherData` m
 ### Conclusion
 In this tutorial, you have learned how to make network calls over the HTTP and consume a rest API using the Dio package. We have demonstrated this by building a weather app that fetches weather data from Weather API.
 
-The source code can be found on this [Repository](https://github.com/Lekwacious/WeatherApp).
+The source code can be found in this [repository](https://github.com/Lekwacious/WeatherApp).
 
 ---
 Peer Review Contributions by: [Jerim Kaura](/engineering-education/authors/jerim-kaura/)
