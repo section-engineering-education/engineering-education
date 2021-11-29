@@ -52,7 +52,7 @@ batch_size = 100
 learning_rate = 0.001
 
 ```
-The image size that we will use for our image will be 20*20. This means that our input size will be 400. In addition, there are 10 digits in this, thus we can generate 10 alternative results. In this way, number_classes will be set to ten. In addition, we'll run the full dataset through five iterations of training. Finally, we will train in small batches of 100 images each so that the software does not crash because of memory overflow.
+The image size that we will use for our image will be 28*28. This means that our input size will be 784. In addition, there are 10 digits in this, thus we can generate 10 alternative results. In this way, number_classes will be set to ten. In addition, we'll run the full dataset through five iterations of training. Finally, we will train in small batches of 100 images each so that the software does not crash because of memory overflow.
 
 After that, we'll lay out our model in the following manner. In this section, we'll define the forward pass after setting up our model as a subclass of **torch.tn.Module**. As we are building the code, we will not need to mention the softmax in the **forward()** function because it will be determined internally during each forward run.
 ```Python
