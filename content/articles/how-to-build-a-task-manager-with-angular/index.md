@@ -1,7 +1,24 @@
-# How to build a task manager with angular.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-interact-with-an-api-from-a-vuejs-application/
+title: How to Build a Task Manager using Angular 12
+description: This article walks the reader through the basic concepts of building a simple task manager application.
+author: edidiong-etok
+date: 2021-11-29T00:00:00-11:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-### Introduction
-[Angular](https://angular.io/docs) is a popular Javascript framework. It can be used to build different applications ranging from simple to complex. In this article, we will build a simple task manager application (AKA To-do app). A task manager writes, organizes, and rearranges tasks more efficiently. The task manager we will build will allow the user to add a task, mark the task as complete, and delete the task.  
+  - url: /engineering-education/how-to-interact-with-an-api-from-a-vuejs-application/hero.jpg
+    alt: How to Interact With an API from a Vue.js Application Hero Image
+---
+[Angular](https://angular.io/docs) is a popular Javascript framework. It can be used to build different applications ranging from simple to complex.
+<!--more-->
+A task manager writes, organizes, and rearranges tasks more efficiently. The task manager we will build will allow the user to add a task, mark the task as complete, and delete the task.  
+
+In this tutorial, we discuss the concepts of building a sample Angular task manager application.
 
 ### Table of content
 -  [Introduction](#introduction)
@@ -18,51 +35,45 @@
 
 
 ### Prerequisites
-Before we get started, here are a few prerequisites for developing a task manager via Angular;
-
-- You should have [Node.js](https://nodejs.org/en/) installed on your computer.
+To follow along with this tutorial;
+- You should have [Node.js](https://nodejs.org/en/) installed on your local machine.
 - You should be fairly familiar with [Angular](https://angular.io/docs) and JavaScript. Knowledge of [TypeScript](https://www.typescriptlang.org/) is useful but not requisite.
-- You should have [Angular Cli](https://angular.io/cli) installed on your computer.
+- You should have [Angular CLI](https://angular.io/cli) installed on your local development machine.
 
 ### Key takeaways
-At the end of this tutorial, you should be able to:
--  build a simple task manager.
--  save items to local storage
-
+By the end of this tutorial, you should be able to:
+-  Build a simple task manager.
+-  Save items to local storage.
 
 ### Create a new angular project
-To create a new Angular project, run the CLI command `ng new *project name*` on your command prompt. We will use `todoApp` as the project name for this article.
+Run the CLI command `ng new *project name*` on your command prompt to create a new Angular project. We will use `todoApp` as the project name for this article.
+```bash 
+ng new todoApp 
+```
 
-    ```bash 
-    ng new todoApp 
-    ```
-Once the project is named, the Angular CLI installs the necessary Angular npm packages and other dependencies for the project.
-To serve your application to the browser, cd into the project directory and run the command:
+The above Angular CLI command installs all the necessary Angular [NPM](https://www.npmjs.com/) packages and other dependencies for the project.
 
-    ```bash
-    ng serve -o
-    ```
+To serve your application to the browser, `cd` into the project root directory and run the command:
+```bash
+ng serve 
+```
 
 ### Create a component
-After creating a new project, it is only ideal to create a component where our codes will be written.
+Now that we've setup our project, let's proceed and create a `todo` component to handle all our logics:
+
 Run the command below to create a `todo` component:
+```bash
+ng generate component todo
+# OR
+ng g c todo
+```
 
-    ```bash
-    ng generate component todo
-    
-    # OR
-    
-    ng g c todo
-    ```
+Next, let's add template code in the `todo.component.html` file. Again, we will use tailwind for styling. 
 
-Next, we will put some HTML code in the `todo.component.html` file. We will use tailwind for styling. In essence, the tailwind [CDN link](https://v1.tailwindcss.com/docs/installation#using-tailwind-via-cdn) should be added to the `index.html` file.
+> Note: Tailwind CSS [CDN link](https://v1.tailwindcss.com/docs/installation#using-tailwind-via-cdn) should be added to the `index.html` file.
 
 Copy and paste the code below in the `todo.component.html` file.
-
-
-```html
-    //todo.component.html
-    
+```html   
     <div class="h-100 w-full flex items-center justify-center bg-teal-lightest font-sans">
         <div class="bg-white rounded shadow p-6 m-4 w-full lg:w-3/4 lg:max-w-lg">
             <div class="mb-4">
@@ -90,19 +101,18 @@ Copy and paste the code below in the `todo.component.html` file.
 
 Once you paste the HTML code, you should see something like the image below on your browser.
 
-![Todo List](/how-to-build-a-task-manager-with-angular/todo-list.png)
+![Todo List](/engineering-education/how-to-build-a-task-manager-with-angular/todo-list.png)
 
-Note: The buttons are static, so we will make them work in the next section.
+> Note: The buttons are static, so we will make them work next.
 
 ###  Add Tasks to the To-do list
-Tasks will be added to the to-do list by clicking the ‘Add’ button or pressing the enter key.
+Tasks will be added to the to-do list by clicking the `Add` button or by pressing the `Enter` key.
 
-Let’s see what happens under the hood;
-Since the ‘Add’ button and the input box are in a form element, we will handle them using the Angular [FormGroup](https://angular.io/api/forms/FormGroup#description) property.
+Let's see what happens under the hood;
+Since the `Add` button and the input box are in a form element, we handle them using the Angular [FormGroup](https://angular.io/api/forms/FormGroup#description) property.
 
-To use the [FormGroup](https://angular.io/api/forms/FormGroup#description) property, you will first import it in the `app.module.ts` file using 
-
-```
+To use the FormGroup property, we first import it in the `app.module.ts` file as shown below:
+```typescript
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 ```
 The property will be automatically included in the `imports` array, as shown in the image below.
@@ -242,7 +252,7 @@ After looping, set the `<p>` to display the task dynamically.
 When a task is completed, it should be marked as such. This can be done by striking a line through the task. To achieve this, we will do the following:
 
 
-1. Add a click event to the Done button on `todo.component.html` with` markDone(value)` method.
+1. Add a click event to the Done button on the `todo.component.html` with the` markDone(value)` method.
 
 ```html
     //todo.component.html
@@ -352,7 +362,7 @@ So far, these are the codes in the `todo.component.ts` file:
 ### Delete Task
 Tasks can be deleted or removed from the to-do list. For this to be achieved, the following should be done simultaneously; 
 
-1. Add a click event to the ‘Remove’ button. Set the click event to the `removeTask(i)` method with the index of the task passed into the method. 
+1. Add a click event to the ‘Remove’ button. Next, set the click event to the `removeTask(i)` method with the index of the task passed into the method. 
 
 
 ```html
@@ -436,3 +446,7 @@ The complete code for this tutorial is on [github](https://github.com/edidee/ang
 So far, this article has given a complete guide on how you can build a simple task manager in Angular. I know this will be of great help to developers starting in Angular.
 
 Happy Coding ☺️ 
+
+
+---
+Peer Review Contributions by: [Miller Juma](/engineering-education/content/authors/miller-juma/)
