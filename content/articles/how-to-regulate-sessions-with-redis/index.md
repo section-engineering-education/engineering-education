@@ -250,6 +250,8 @@ app.get('/:country', checkForCache, async (req, res) => {
 
 ```
 ### Result
+
+
  <img src="redis screenshot1 (1).jpg" alt="alt text" height="500" width="600"/>
 
  Above is the result of all the universities in Mexico using the API after inputting the country at the top. And at the bottom of the image, we can see it took 8.71s just to do that which is quite slow. So to reduce the time, I will be installing this data into our Redis server so when the user makes a request it will check if the data already exists.
