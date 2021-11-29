@@ -37,7 +37,7 @@ Run the following line on the command prompt to download and install it on your 
 ```bash
 pip install scikit-learn
 ```
-> For this project, Jupyter notebooks are encouraged, although you are free to use any IDE you choose. Instead of developing an entire script from scratch, one can execute a few lines of code and see what happens one by one rather than writing the entire script and running it.
+> For this project, Jupyter notebook are encouraged, although you are free to use any IDE you choose. Instead of developing an entire script from scratch, one can execute a few lines of code and see what happens one by one rather than writing the entire script and running it.
 
 To set it up, use the command line and enter the following code:
 
@@ -117,7 +117,7 @@ It is possible to utilize the test size as a parameter to randomly divide the da
 Refer to the [documentation](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html) for further information on how to use **train_test_split**() function.
 
 #### 5. Building the Model
-You can select from a wide variety of machine learning models to meet your needs. Each one has advantages and cons of its own. A popular method for binary classification, dubbed `Naive Bayes,` has been selected for use in this model. GaussianNB is the first module that needs to be imported and initialized using **GaussianNB()** function. then use the **fit()** method to train your model on the dataset's data.
+You can select from a wide variety of machine learning models to meet your needs. Each one has advantages and cons of its own. A popular method for binary classification, dubbed `Naive Bayes,` has been selected for use in this model. GaussianNB is the first module that needs to be imported and initialized using **GaussianNB()** function and then use the **fit()** method to train your model on the dataset's data.
 
 ```python
 from sklearn.naive_bayes import GaussianNB
