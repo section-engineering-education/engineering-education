@@ -37,8 +37,7 @@ In this tutorial, we are going to create an Agent-Based Model from scratch. The 
 
 ### p5.js
 
-> If you are already familiar with p5.js you can skip this section.
-> 
+> If you are already familiar with p5.js you can skip this section. 
 
 We a going to use [p5.js, a Javascript library for creative coding,](https://p5js.org/)  to create our model. One of the applications of creative coding is to explain things visually. This is particularly interesting when we combine it with Agent-Based Models. With p5.js, we are able to:
 
@@ -187,14 +186,14 @@ So, let's create `agent.js` and create our `Agent` class and constructor:
 class Agent {
 
     constructor(initialEnergy, 
-								foodEnergy, 
-								lostEnergy, 
-								maxEnergy, 
-								reprodProb,
-								reprodNumber,
-								visionR,
-								maxSpeed,
-								r) {
+                foodEnergy, 
+                lostEnergy, 
+                maxEnergy, 
+                reprodProb,
+                reprodNumber,
+                visionR,
+                maxSpeed,
+                r) {
         // constructor code here
     }
 
@@ -241,7 +240,7 @@ constructor(...) {
   this.lostEnergy = lostEnergy
   this.maxEnergy = maxEnergy
   this.reprodProb = reprodProb
-	this.reprodNumber = reprodNumber
+  this.reprodNumber = reprodNumber
   this.visionR = visionR
   this.maxSpeed = maxSpeed
   this.r = r
@@ -338,14 +337,14 @@ We already have basic agents! Now it's time to draw! Let's represent a sheep usi
 ```jsx
 show() {
 
-	push() // starting a new drawing state
-	translate(this.pos.x, this.pos.y) // displacing the cursor by pos.x and pos.y
+  push() // starting a new drawing state
+  translate(this.pos.x, this.pos.y) // displacing the cursor by pos.x and pos.y
   fill(255, 255, 255) // setting fill color as rgb(255, 255, 255)
   strokeWeight(1) // setting stroke weight as 1
   circle(0, 0, this.r)	// drawing a circle in the position (0, 0) with a the specified radius
 	// note that the circle position is (0, 0) but we have translated the cursor by pos.x and pos.y before
 	// thus the circle will be displayed in position (0 + pos.x, 0 + pos.y) = (pos.x, pos.y)
-	pop() // restoring the previous drawing state
+  pop() // restoring the previous drawing state
 
 }
 ```
@@ -355,15 +354,15 @@ And inside Wolf's `show()`:
 ```jsx
 show() {
 
-	push() // starting a new drawing state
-	translate(this.pos.x, this.pos.y) // displacing the cursor by pos.x and pos.y
+  push() // starting a new drawing state
+  translate(this.pos.x, this.pos.y) // displacing the cursor by pos.x and pos.y
   fill(56, 56, 56) // setting fill color as rgb(56, 56, 56)
   strokeWeight(1) // setting stroke weight as 1
-	// displaying the triangle with:
-	// vertex 1: (-radius, -radius / 2)
-	// vertex 2: (-radius, radius / 2)
-	// vertex 3(radius, 0)
-	// remember that this is displaced by pos.x and pos.y because of `translate()`
+  // displaying the triangle with:
+  // vertex 1: (-radius, -radius / 2)
+  // vertex 2: (-radius, radius / 2)
+  // vertex 3(radius, 0)
+  // remember that this is displaced by pos.x and pos.y because of `translate()`
   triangle(-this.r, -this.r / 2, -this.r, this.r / 2, this.r, 0)
   pop() // restoring the previous drawing state
 
@@ -539,7 +538,7 @@ To make the movement more nice-looking, let's just add one thing in Wolf's `show
 show() {
 
   push() // starting a new drawing state
-	translate(this.pos.x, this.pos.y) // displacing the cursor by pos.x and pos.y
+  translate(this.pos.x, this.pos.y) // displacing the cursor by pos.x and pos.y
   fill(56, 56, 56) // setting fill color as rgb(56, 56, 56)
   strokeWeight(1) // setting stroke weight as 1
   // displaying the triangle with:
@@ -1194,8 +1193,8 @@ grassAvailable(x, y) {
   let j = Math.floor(y/this.tile_size)
 
 	if (i < 0 || i >= this.dimensions[0] || j < 0 || j >= this.dimensions[1]) {
-		// agent is out of screen
-    return null
+	  // agent is out of screen
+      return null
   }
 
 	// the tile that contains (x, y) is the tile (i, j)
