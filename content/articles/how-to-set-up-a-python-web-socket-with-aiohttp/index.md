@@ -15,7 +15,7 @@ images:
     alt: How to set up a Simple Python WebSocket with AioHTTP
 ---
 
-A socket consists of two major endpoints. One end sends data, and the other end receives data. Take an example of what you can do over the internet. In this case, different nodes/computers are connected to establish a connection that will allow you to send or receive data. A node can be a server or a client. A client sends a request, and the server will send back a response. These connections between the server and client are achieved through sockets. Thus, a socket acts as the communication endpoint.
+A web socket consists of two major endpoints. One end sends data, and the other end receives data. Take an example of what you can do over the internet. In this case, different nodes/computers are connected to establish a connection that will allow you to send or receive data. A node can be a server or a client. A client sends a request, and the server will send back a response. These connections between the server and client are achieved through sockets. Thus, a socket acts as the communication endpoint.
 
 This guide will help you understand the socket concept by building client-server socket architecture using the AioHTTP.
 
@@ -25,10 +25,13 @@ The library supports client and HTTP servers, client WebSockets and server WebSo
 
 We will build a WebSocket by setting up the client and the server with AioHTTP and sending data between the client and the server.
 
-To follow along with this tutorial, ensure you have [Python3](https://www.python.org/) installed on your computer and some basic knowledge working with Python.
+### Prerequisites
+1. [Python 3.7](https://www.python.org/) or later installed on your machine.
+2. Basic knowledge of Python programming.
 
 ### Table of contents
 
+- [Prerequisites](#prerequisites)
 - [Table of contents](#table-of-contents)
 - [Setting up a virtualenv](#setting-up-a-virtualenv)
 - [Installing AioHTTP](#installing-aiohttp)
@@ -41,14 +44,16 @@ To follow along with this tutorial, ensure you have [Python3](https://www.python
 
 [Virtualenv](https://pypi.org/project/virtualenv/) is a tool for creating an independent Python environment. This implies that all the libraries that we will install will be installed specifically for our project. Create a project folder and open it in a command line.
 
-Then install the virtualenv by runninh;
+Then install the virtualenv by running the following command:
 
 ```bash
 pip3 install virtualenv
 ```
 
 If you have virtualenv already installed, ensure that your [pip](https://pypi.org/project/pip/) is up to date by running the following command from your terminal.
-
+```bash
+pip --version
+```
 You can check the version of virtualenv installed on your computer by running;
 
 ```bash
@@ -158,7 +163,7 @@ if __name__ == '__main__':
     web.run_app(app)
 ```
 
-Here are targeting the `/` route and the `/todos` route, both of which will be handled by the same function. We are also starting our server by running the application instance.
+Here we are targeting the `/` route and the `/todos` route, both of which will be handled by the same function. We are also starting our server by running the application instance.
 
 You can start the server by running the following command on your terminal. Before running the command, ensure you are in the project folder that hosts the `server.py` file.
 
