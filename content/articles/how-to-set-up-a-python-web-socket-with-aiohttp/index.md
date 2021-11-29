@@ -211,3 +211,7 @@ We have built a simple WebSocket by setting up an AioHTTP server and client and 
 - [AioHTTP client](https://docs.aiohttp.org/en/stable/client.html#aiohttp-client)
 - [AioHTTP server](https://docs.aiohttp.org/en/stable/web.html#aiohttp-web)
 - [AioHTTP tutorials](http://demos.aiohttp.org/en/latest/)
+
+---
+
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
