@@ -129,8 +129,9 @@ Output:
  [2.060e+01 2.933e+01 1.401e+02 ... 2.650e-01 4.087e-01 1.240e-01]
  [7.760e+00 2.454e+01 4.792e+01 ... 0.000e+00 2.871e-01 7.039e-02]]
 ```
-There are 569 instances of tumor data in the dataset in question, each with a numerical value for one of the 30 variables in question. Data you have acquired indicates that the first tumor is malignant and has a mean radius of 1.79900000e+01 based on the information you know.
+There are 569 instances of tumor data in the dataset in question, each with a numerical value for one of the 30 variables in question. 
 
+So, from the above data, we can conclude that the first instance of tumor is **malignant** and it has a mean radius of value 1.79900000e+01. 
 #### 4. Creating sets of data to organize the information
 We need to evaluate our classifier's accuracy by running it on data that has never been seen before.This means we'll divide our data into two sets, the training and test sets, before we begin creating our model. Training and evaluation of the model will be done on the training set, and then it will be used to predict the unknown test set.
 
