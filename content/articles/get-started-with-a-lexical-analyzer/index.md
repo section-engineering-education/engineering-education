@@ -184,7 +184,8 @@ It contains literal blocks, definitions, internal table declarations, start cond
 It can contain things like the 'include' section found in the C program. This statement states the things that the program could need.
 Definitions can be written inside the `%{` and `%}` signs.
 
-**Rules and actions**: This section carries patterns and _C_ code(actions). These patterns can be in ECMAScript RegEx or wildcard format. It specifies the tokens the program checks, and the C code states what happens when they are found in the Actions section.
+##### Rules and actions
+This section carries patterns and _C_ code(actions). These patterns can be in ECMAScript RegEx or wildcard format. It specifies the tokens the program checks, and the C code states what happens when they are found in the Actions section.
 Actions can be found inside the curly brackets({ ... }).
 The actions or macros can be optional too. Hence, they can be left blank.
 
