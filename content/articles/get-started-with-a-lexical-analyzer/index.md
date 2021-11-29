@@ -188,7 +188,8 @@ Definitions can be written inside the `%{` and `%}` signs.
 Actions can be found inside the curly brackets({ ... }).
 The actions or macros can be optional too. Hence, they can be left blank.
 
-**Subroutines**: C codes that state additional user-defined functions executed when the patterns are found or not found.
+##### Subroutines
+C codes that state additional user-defined functions executed when the patterns are found or not found.
 They can also contain other functions that the program may execute on the run.
 These are optional.
 
