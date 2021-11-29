@@ -179,7 +179,8 @@ Lex files have three main parts. These parts are the following:
 - Rules
 - Subroutines
 
-**Definition**: It contains literal blocks, definitions, internal table declarations, start conditions, and translations.
+##### Definition
+It contains literal blocks, definitions, internal table declarations, start conditions, and translations.
 It can contain things like the 'include' section found in the C program. This statement states the things that the program could need.
 Definitions can be written inside the `%{` and `%}` signs.
 
