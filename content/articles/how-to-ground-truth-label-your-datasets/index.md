@@ -28,7 +28,7 @@ To follow along with this tutorial, you'll need to have:
 - An understanding of [MATLAB](https://www.section.io/engineering-education/getting-started-with-matlab/) basics.
 
 ### How to locate the app
-To locate this app:
+To find this app:
 - At the top of the window, click on `APPS` and click on the dropdown arrow as shown below:
 
 ![image](/engineering-education/how-to-ground-truth-label-your-datasets/ground1.png)
@@ -37,7 +37,7 @@ To locate this app:
 
 ![image 2](/engineering-education/how-to-ground-truth-label-your-datasets/ground2.png)
 
-- Click on round truth labeler to open it.
+- Click on the ground truth labeler to open it.
 
 Ground truth labeler allows us to label videos and images for automotive applications. As we all know, labeling is a tedious and time-consuming process, but it is necessary. 
 
@@ -67,11 +67,11 @@ Also, this app has a workspace shown below where all your labels are stored, and
 
 ![workspace](/engineering-education/how-to-ground-truth-label-your-datasets/ground5.png)
 
-After completing this, label the vehicle with the bounding box. To label the data with a bounding box around them, click on the label at the top of the workspace.
+After completing this, label the vehicle with the bounding box. To label the data with a bounding box, click on the label at the top of the workspace.
 
 ![vehicles labelled](/engineering-education/how-to-ground-truth-label-your-datasets/ground6.png)
 
-Let us label the sub-labels. Sub-labels are parts that are associated with a parent label. For example, we can have vehicle number plates or even wheels as the sub-labels. Let's, for example, name our vehicles `tarlight`. To label the sub-labels, click on the `sub-labels` right next to the `label` button and label them on your input using bounding boxes. 
+Let us label the sub-labels. Sub-labels are parts that are associated with a parent label. For example, we can have vehicle number plates or even wheels as the sub-labels. Let's, for example, name our vehicles `tarlight`. To label, the sub-labels, click on the `sub-labels` right next to the `label` button and label them on your input using bounding boxes. 
 
 You can have as many bounding boxes as you want. If you click on the `sub-label` button, a new window like that of labeling prompts the user to input the name of the sub-labels.
 
@@ -83,7 +83,7 @@ From the definition, sub-labels are parts of the parent data or ROI.
 
 We can assign attributes for our labels and sub-labels. Attribute information makes up the metadata associated with the label. 
 
-In our example, we have the vehicle as the parent label. So now the attribute for vehicles can be vehicles type. 
+In our example, we have the vehicle as to the parent label. So now the attribute for vehicles can be vehicles type. 
 
 This attribute window allows the user to input various types as a list. You can have as many as you want.
 
@@ -97,7 +97,7 @@ We are happy with the labels. You may notice that the labels are not present whe
 
 ![next frame](/engineering-education/how-to-ground-truth-label-your-datasets/ground10.png)
 
-We notice that we can go ahead and repeat the entire process of labeling again, but this will be redundant. It is ideal to introduce automation in such scenarios.
+We notice that we can go ahead and repeat the entire process of labeling, but this will be redundant. Therefore, it is ideal for introducing automation in such scenarios.
 
 ### Use an algorithm to automate the labeling process.
 There are so many in-built algorithms in Matlab that help you with this. You can use an in-built algorithm or write your algorithm to do this; Matlab allows all these options. 
@@ -123,15 +123,15 @@ Once completed, click on `accept`. You can look at the `label summary` to see ho
 ![label summary](/engineering-education/how-to-ground-truth-label-your-datasets/ground13.png)
 
 ### Other capabilities
-Let's say that we want to label the lanes. In this case, we cannot use bounding boxes; we will use the line and label the lanes. It means that you draw lines on the lanes, and they will be labeled.
+Let's say that we want to label the lanes. In this case, we cannot use bounding boxes; we will use the line and label the lanes. It means that you draw lines on the lanes and label them.
 
 ![labeling the lane](/engineering-education/how-to-ground-truth-label-your-datasets/ground14.png)
 
-Also, you can label individual pixels in the image using the `pixel label`. For example, let's say we want to label the road. We will make a label named `road` and use the pixel label.
+Also, you can label individual pixels in the image using the `pixel label`. For example, let's say we want to label the road. We will make a label named `road` and use the `pixel` label. There is a future `flood fill` at the top of the window in the image below. It enables you to label a wide region at once.
 
 ![using pixel label](/engineering-education/how-to-ground-truth-label-your-datasets/ground15.png)
 
-Note that you can erase sections that you never intended to be labeled using `erase`, and they also include those that you may have missed using the `brush`. Another feature called `smart polygon` allows us to make a surrounding of what you want to label and makes its segmentation. After all these, you can save your work.
+Note that you can erase sections that you never intended to be labeled using `erase`. Because `flood fill` does the labeling randomly over a wide region, you should erase the mislabeling. Also, you can include those that you may have missed to label using the `brush`. Another feature called `smart polygon` allows us to make boundaries of what you want to label and makes its segmentation. After all these, you can save your work.
 
 ### Integrate ground truth information from other sensors.
 This feature allows you to integrate ground truth information from other signals. For example, let's open a video that has been time-synchronized with lidar data. 
@@ -141,6 +141,7 @@ To open this, execute the command below:
 ```Matlab
 groundTruthLabeler('01_city_c2s_fcw_10s.mp4', 'ConnectorTargetHandle', @LidarDisplay);
 ```
+> Note that the video `01_city_c2s_fcw_10s.mp4` is a Matlab video and there readily available. So all you need to do is to execute the command in the command window.
 
 This command opens up two windows.
 
@@ -148,7 +149,7 @@ This command opens up two windows.
 
 The first is the ground truth labeler with the video data and the point cloud player, which contains synchronized lidar data. You notice that it is synchronized because if you scrub through the lidar player, we are also scrubbing through the video player. 
 
-This is important because lidar data can provide information that vision sensors alone cannot determine. For example, the lidar data provides the ego vehicle's distance from the surrounding objects.
+It is important because lidar data can provide information that vision sensors alone cannot determine. For example, the lidar data provides the vehicle's distance from the surrounding objects.
 
 ### Conclusion
 Ground truth labeler is so effective in the automation of the labeling process. Despite the labeling process that can be time-consuming and tedious, this app can do that with a button click. 
