@@ -6,7 +6,7 @@ url: /class-data-sharing-in-java-with-examples/
 title: Data Sharing in Java
 description: This article will explore data sharing in Java. It will also discuss how Java Virtual Machines use this concept to improve memory usage.
 author: bancy-wangui
-date: 2021-11-28T00:00:00-10:00
+date: 2021-11-30T00:00:00-01:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
