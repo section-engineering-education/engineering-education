@@ -78,33 +78,41 @@ It has routes to access data items stored in the mock database file (JSON). Few 
 
 The module allows other operations to be done on the database, such as:
 
-#### Filter
+#### Performing database Filters
 Examples - `GET/posts?title=json-server&author=riro` or `GET/comments?author.name=riro`.
 
 These end-points filters `posts` with `title` of `json-server` and `author` name of `riro` and `comments` with the `author` name of `riro` respectively.
 
-An example is a `GET` request on `http://www.albana.com/posts?title=json-server&author=riro`.
+An example of a `GET` request format is as shown below:
+`http://www.albana.com/posts?title=json-server&author=riro`
 
-#### Pagination
+#### Adding Pagination to the results fetched
 Examples - `GET/posts?_page=9&_limit=23`.
 
 This request will fetch posts from page 9, and the page limit is set to 23.
 
-An example is a GET request on `http://www.albana.com//posts?_page=9&_limit=23`.
+An example of a GET request format is as follows:
+`http://www.albana.com//posts?_page=9&_limit=23`
 
-#### Sorting
-e.g. `GET/posts/5/comments?_sort=votes,likes&_order=desc,asc`. This request does the sorting of the comments by using the votes and likes in an ascending and descending order, respectively. An example is a GET request on `http://www.albana.com/posts/5/comments?_sort=votes,likes&_order=desc,asc`.
-#### Slicing
+#### Sorting items from the database
+An example is `GET/posts/5/comments?_sort=votes,likes&_order=desc,asc`. This request does the sorting of the comments by using the votes and likes in an ascending and descending order, respectively. An example is a GET request on `http://www.albana.com/posts/5/comments?_sort=votes,likes&_order=desc,asc`.
+
+#### Performing Slice operations on the data
 e.g. `GET/posts/4/comments?_start=20&_limit=10`. This request truncates the comments after 10 comments starting from comment number 20. An example is a GET request on `http://www.albana.com/posts/1/comments?_start=20&_end=33`.
+
 #### Operators
 e.g. for getting range (`_gte`, `lte`), excluding a value(`_ne`), filtering a value(`_like`). An example is a GET request on `http://www.albana.com/posts/4/comments?_ne=sad`. It excludes any comment with the value of 'sad' while `http://www.albana.com\author_like=chris` searches for authors with a name related to 'chris' (RegEx is used).
-#### Full-text search
+
+#### Doing Full-text searches in the database
 e.g. `GET/posts?q=tomcat`. This request searches for the value '**tomcat**' in all the records stored. An example is a GET request on `http://www.albana.com/posts?q=tomcat`.
-#### Relationships
+
+#### Creating Relationships in te database items
 e.g., the inclusion of child resources(`_embed`), the inclusion of parent resources(`_expand`), to get or create nested resources. An example is `http://www.albana.com/comments/1?_expand=post` that includes parent resource by the name 'post'.
-#### Database
+
+#### Fetching for full Database
 e.g. `GET\db`. This GET request brings up all database items of the specified database. An example is `http://www.albana.com/customers_db`.
-#### Homepage
+
+#### Navigating to the Homepage
 e.g. `GET/`. Using the `./public` path, one can serve the application files in the public folder. An example is `http://www.albana.com/`.
 
 More on JSON Server library will also be mentioned in the article.
@@ -158,23 +166,23 @@ import { useLocation } from 'react-router-dom'
 import Button from './Button'
 
 const Header = ({ title, onAdd, showAdd }) => {
-  const location = useLocation()
+const location = useLocation()
 
-  /*The header has a title and a button that opens up a window to add the budget or close the window*/
-  return (
-          <header className='header'>
+/*The header has a title and a button that opens up a window to add the budget or close the window*/
+return (
+  <header className='header'>
 
-            <!-- The header has a title -->
-            <h1>{title}</h1>
-            {location.pathname === '/' && (
-                    <Button
-                            color={showAdd ? 'red' : 'green'}
-                            text={showAdd ? 'Close' : 'Add'}
-                            onClick={onAdd}
-                    />
-            )}
-          </header>
-  )
+  <!-- The header has a title -->
+  <h1>{title}</h1>
+  {location.pathname === '/' && (
+    <Button
+      color={showAdd ? 'red' : 'green'}
+      text={showAdd ? 'Close' : 'Add'}
+      onClick={onAdd}
+      />
+  )}
+  </header>
+)
 }
 
 /*Set the title*/
@@ -203,13 +211,13 @@ import { Link } from 'react-router-dom'
 
 /*Add a footer to the application*/
 const Footer = () => {
-  return (
-            /*It has a copyright and a link to the about page*/
-          <footer>
-            <p>Copyright &copy; 2021</p>
-            <Link to='/about'>About</Link>
-          </footer>
-  )
+return (
+  /*It has a copyright and a link to the about page*/
+    <footer>
+      <p>Copyright &copy; 2021</p>
+        <Link to='/about'>About</Link>
+    </footer>
+)
 }
 
 export default Footer
@@ -225,15 +233,15 @@ import PropTypes from 'prop-types'
 
 /*A button that allows one to set its color, the text it displays and the function it executes on a click event*/
 const Button = ({ color, text, onClick }) => {
-  return (
-          <button
-                  onClick={onClick}
-                  style={{ backgroundColor: color }}
-                  className='btn'
-          >
-            {text}
-          </button>
-  )
+return (
+  <button
+    onClick={onClick}
+      style={{ backgroundColor: color }}
+      className='btn'
+   >
+    {text}
+  </button>
+)
 }
 
 Button.defaultProps = {
@@ -261,16 +269,16 @@ import { Link } from 'react-router-dom'
 
 /*Generates a simple about page that has a simple button to go back to the main page*/
 const About = () => {
-  return (
-          <div>
-            <h4>Version 1.0.0</h4>
-            <Link to='/'>
-              <button type="button" className={"btn btn-secondary"}>
-                Go Back
-              </button>
-            </Link>
-          </div>
-  )
+return (
+<div>
+<h4>Version 1.0.0</h4>
+  <Link to='/'>
+    <button type="button" className={"btn btn-secondary"}>
+    Go Back
+    </button>
+  </Link>
+</div>
+)
 }
 
 export default About
@@ -286,26 +294,26 @@ import { FaTimes } from 'react-icons/fa'
 
 /*This will enable one to set the reminder to the budget on or off when double clicked on; and also to delete the budget*/
 const Budget = ({ budget, onDelete, onToggle }) => {
-  return (
-          <!-- Toggle the budget reminder on or off when double on double click -->
-          <div
-                  className={`budget ${budget.reminder && 'reminder'}`}
-                  onDoubleClick={() => onToggle(budget.id)}
-          >
-            <h3>
-              <!-- Display the budget name -->
-              {budget.name}{' '}
-              <FaTimes
-                      /*Delete the budget when clicked*/
-                      style={{ color: 'red', cursor: 'pointer' }}
-                      onClick={() => onDelete(budget.id)}
-              />
-            </h3>
+return (
+<!-- Toggle the budget reminder on or off when double on double click -->
+    <div
+      className={`budget ${budget.reminder && 'reminder'}`}
+      onDoubleClick={() => onToggle(budget.id)}
+    >
+      <h3>
+        <!-- Display the budget name -->
+        {budget.name}{' '}
+           <FaTimes
+          /*Delete the budget when clicked*/
+          style={{ color: 'red', cursor: 'pointer' }}
+            onClick={() => onDelete(budget.id)}
+            />
+        </h3>
 
-            <!-- Display the budget Amount -->
-            <p>{budget.amount}</p>
-          </div>
-  )
+          <!-- Display the budget Amount -->
+          <p>{budget.amount}</p>
+      </div>
+)
 }
 
 export default Budget
@@ -345,41 +353,41 @@ const AddBudget = ({ onAdd }) => {
 
   /*Display a form that allows one to enter the budget values*/
   return (
-          <form className='add-form' onSubmit={onSubmit}>
-            <div className='form-control'>
-              <label>Budget</label>
-              <input
-                      type='text'
-                      placeholder='Add Budget'
-                      value={name}
-                      onChange={(e) => setName(e.target.value)}
-              />
-            </div>
+  <form className='add-form' onSubmit={onSubmit}>
+    <div className='form-control'>
+      <label>Budget</label>
+      <input
+        type='text'
+        placeholder='Add Budget'
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+        />
+    </div>
 
-            <!--  Take in the amount -->
-            <div className='form-control'>
-              <label>Amount</label>
-              <input
-                      type='text'
-                      placeholder='Amount'
-                      value={amount}
-                      onChange={(e) => setAmount(e.target.value)}
-              />
-            </div>
-            
-            <!-- Take in the reminder status -->
-            <div className='form-control form-control-check'>
-              <label>Set Reminder</label>
-              <input
-                      type='checkbox'
-                      checked={reminder}
-                      value={reminder}
-                      onChange={(e) => setReminder(e.currentTarget.checked)}
-              />
-            </div>
+    <!--  Take in the amount -->
+    <div className='form-control'>
+      <label>Amount</label>
+      <input
+              type='text'
+              placeholder='Amount'
+              value={amount}
+              onChange={(e) => setAmount(e.target.value)}
+      />
+    </div>
 
-            <input type='submit' value='Save Budget' className='btn btn-block' />
-          </form>
+    <!-- Take in the reminder status -->
+    <div className='form-control form-control-check'>
+      <label>Set Reminder</label>
+      <input
+              type='checkbox'
+              checked={reminder}
+              value={reminder}
+              onChange={(e) => setReminder(e.currentTarget.checked)}
+      />
+    </div>
+
+    <input type='submit' value='Save Budget' className='btn btn-block' />
+  </form>
   )
 }
 
@@ -399,13 +407,13 @@ import Budget from './Budget'
 
 /*Displays all the budgets fetched from the URL to the screen*/
 const Budgets = ({ budgets, onDelete, onToggle }) => {
-  /*Maps each budget per the budget's key*/
-  return (
-          <>
-            {budgets.map((budget, index) => (
-                    <Budget key={index} budget={budget} onDelete={onDelete} onToggle={onToggle} />
-            ))}
-          </>
+/*Maps each budget per the budget's key*/
+return (
+  <>
+    {budgets.map((budget, index) => (
+    <Budget key={index} budget={budget} onDelete={onDelete} onToggle={onToggle} />
+    ))}
+  </>
   )
 }
 
@@ -432,87 +440,87 @@ import AddBudget from './components/AddBudget'
 import About from './components/About'
 
 const App = () => {
-  const [showAddBudget, setShowAddBudget] = useState(false)
-  const [budgets, setBudgets] = useState([])
+const [showAddBudget, setShowAddBudget] = useState(false)
+const [budgets, setBudgets] = useState([])
 
-  useEffect(() => {
-      /*Make the app fetch the items assynchronously*/
-    const getBudgets = async () => {
-      const budgetsFromServer = await fetchBudgets()
-      setBudgets(budgetsFromServer)
-    }
+useEffect(() => {
+  /*Make the app fetch the items assynchronously*/
+  const getBudgets = async () => {
+    const budgetsFromServer = await fetchBudgets()
+    setBudgets(budgetsFromServer)
+  }
 
-    getBudgets()
-  }, [])
+  getBudgets()
+}, [])
 ```
 
 The code imports the needed modules and allows the data items to be fetched asynchronously from the server.
 
 - Add the code below under the previous one:
 ```js
-  // Fetch Budgets
-  const fetchBudgets = async () => {
-    const res = await fetch('http://localhost:5000/budgets')
-    const data = await res.json()
+// Fetch Budgets
+const fetchBudgets = async () => {
+  const res = await fetch('http://localhost:5000/budgets')
+  const data = await res.json()
 
-    return data
-  }
+  return data
+}
 
-  // Fetch Budgets
-  const fetchBudget = async (id) => {
-    const res = await fetch(`http://localhost:5000/budgets/${id}`)
-    const data = await res.json()
+// Fetch Budgets
+const fetchBudget = async (id) => {
+  const res = await fetch(`http://localhost:5000/budgets/${id}`)
+  const data = await res.json()
 
-    return data
-  }
+  return data
+}
 
-  // Add Budget
-  const addBudget = async (budget) => {
-    const res = await fetch('http://localhost:5000/budgets', {
-      method: 'POST',
-      headers: {
-        'Content-type': 'application/json',
-      },
-      body: JSON.stringify(budget),
-    })
+// Add Budget
+const addBudget = async (budget) => {
+  const res = await fetch('http://localhost:5000/budgets', {
+  method: 'POST',
+  headers: {
+    'Content-type': 'application/json',
+  },
+  body: JSON.stringify(budget),
+  })
 
-    const data = await res.json()
+  const data = await res.json()
 
-    setBudgets([...budgets, data])
-  }
+  setBudgets([...budgets, data])
+}
 
-  // Delete Budget
-  const deleteBudget = async (id) => {
-    const res = await fetch(`http://localhost:5000/budgets/${id}`, {
-      method: 'DELETE',
-    })
-    //We should control the response status to decide if we will change the state or not.
-    res.status === 200
-            ? setBudgets(budgets.filter((budget) => budget.id !== id))
-            : alert('Error Deleting This Budget')
-  }
+// Delete Budget
+const deleteBudget = async (id) => {
+  const res = await fetch(`http://localhost:5000/budgets/${id}`, {
+    method: 'DELETE',
+  })
+  //We should control the response status to decide if we will change the state or not.
+  res.status === 200
+    ? setBudgets(budgets.filter((budget) => budget.id !== id))
+    : alert('Error Deleting This Budget')
+}
 
-  // Toggle Reminder
-  const toggleReminder = async (id) => {
-    const budgetToToggle = await fetchBudget(id)
-    const updateBudget = {...budgetToToggle, reminder: !budgetToToggle.reminder}
+// Toggle Reminder
+const toggleReminder = async (id) => {
+const budgetToToggle = await fetchBudget(id)
+const updateBudget = {...budgetToToggle, reminder: !budgetToToggle.reminder}
 
-    const res = await fetch(`http://localhost:5000/budgets/${id}`, {
-      method: 'PUT',
-      headers: {
-        'Content-type': 'application/json',
-      },
-      body: JSON.stringify(updateBudget),
-    })
+const res = await fetch(`http://localhost:5000/budgets/${id}`, {
+  method: 'PUT',
+  headers: {
+    'Content-type': 'application/json',
+  },
+  body: JSON.stringify(updateBudget),
+})
 
-    const data = await res.json()
+  const data = await res.json()
 
-    setBudgets(
-            budgets.map((budget) =>
-                    budget.id === id ? {...budget, reminder: data.reminder} : budget
-            )
+  setBudgets(
+    budgets.map((budget) =>
+            budget.id === id ? {...budget, reminder: data.reminder} : budget
     )
-  }
+  )
+}
 ```
 
 The code specifies the URLs in which one can:
@@ -526,35 +534,35 @@ The code specifies the URLs in which one can:
 ```js
 /*Dispaly all the budgets fetched, otherwise display that there are no budgets to show*/
 return (
-          <Router>
-            <div className='container'>
-              <Header
-                      onAdd={() => setShowAddBudget(!showAddBudget)}
-                      showAdd={showAddBudget}
-              />
-              <Route
-                      path='/'
-                      exact
-                      render={(props) => (
-                              <>
-                                {showAddBudget && <AddBudget onAdd={addBudget}/>}
-                                {budgets.length > 0 ? (
-                                        <Budgets
-                                                budgets={budgets}
-                                                onDelete={deleteBudget}
-                                                onToggle={toggleReminder}
-                                        />
-                                ) : (
-                                        'No Budgets To Show'
-                                )}
-                              </>
-                      )}
-              />
-              <Route path='/about' component={About}/>
-              <Footer/>
-            </div>
-          </Router>
-  )
+<Router>
+<div className='container'>
+  <Header
+    onAdd={() => setShowAddBudget(!showAddBudget)}
+    showAdd={showAddBudget}
+  />
+  <Route
+    path='/'
+    exact
+    render={(props) => (
+      <>
+        {showAddBudget && <AddBudget onAdd={addBudget}/>}
+        {budgets.length > 0 ? (
+          <Budgets
+            budgets={budgets}
+            onDelete={deleteBudget}
+            onToggle={toggleReminder}
+          />
+        ) : (
+            'No Budgets To Show'
+        )}
+      </>
+    )}
+  />
+  <Route path='/about' component={About}/>
+  <Footer/>
+</div>
+</Router>
+)
 }
 
 export default App
