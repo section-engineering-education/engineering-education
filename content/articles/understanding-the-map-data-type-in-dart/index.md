@@ -255,5 +255,5 @@ Happy coding!
 2. https://www.tutorialspoint.com/dart_programming/dart_programming_map.htm
 
 ---
-Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/mercy-meave/)
+Peer Review Contributions by: [Mercy Meave](/engineering-education/authors/mercy-meave/)
 
