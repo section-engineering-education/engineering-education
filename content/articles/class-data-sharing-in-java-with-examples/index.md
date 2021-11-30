@@ -3,9 +3,9 @@ layout: engineering-education
 status: publish
 published: true
 url: /class-data-sharing-in-java-with-examples/
-title: Data sharing in Java
-description: This article will explore data sharing in Java and provide examples on the same concept.
-author: bancy-wangu
+title: Data Sharing in Java
+description: This article will explore data sharing in Java. It will also discuss how Java Virtual Machines use this concept to improve memory usage.
+author: bancy-wangui
 date: 2021-11-28T00:00:00-10:00
 topics: [Languages]
 excerpt_separator: <!--more-->
@@ -14,129 +14,146 @@ images:
   - url: /engineering-education/class-data-sharing-in-java-with-examples/hero.jpg
     alt: Data sharing in Java Image
 ---
+When using the Class Data Sharing(CDS), several Java Virtual Machines may share the memory of loaded classes. 
+<!--more-->
+From Java 1.5, the Sun JVM has included a CDS. However, it was rarely used because it only applied to system classes and serial trash collectors.
 
-### Introduction
-When using the Class Data Sharing(CDS) JVM capability, several Java Virtual Machines may share the memory of loaded classes. From Java 1.5, the Sun JVM has included a CDS. However, it was seldom used because it only applied to system classes and serial trash collectors.
+Additional GC techniques and application classes in Oracle JDK 9 made a big difference. This was a paid functionality before JDK 10. 
 
-AdditionalAdditional GC techniques and application classes in Oracle JDK 9 made a big difference. This was a paid functionality before JDK 10. Classes are stored in a memory-mapped file when utilizing CDS. The internal representation of this class is quicker to load since several JVMs may share it.
+Classes are stored in a memory-mapped file when utilizing CDS. The internal representation of this class is quicker to load since it is shared by several JVMs.
 
 ### Table of contents
 - [What is data class sharing](#what-is-data-class-sharing)
-- [Process of Application Class Data Sharing](#process-of-application-class-data-sharing)
-- [ Ways of renewing the shared archive across every platform](#ways-of-renewing-the-shared-archive-across-every-platform)
-- [Controlling the Sharing of Class Data Manually](#controlling-the-sharing-of-class-data-manually)
+- [Application Class Data Sharing](#application-class-data-sharing)
+- [Ways of renewing the shared archive across every platform](#ways-of-renewing-the-shared-archive-across-every-platform)
+- [Controlling the sharing of Class Data Manually](#controlling-the-sharing-of-class-data-manually)
 
 ### What is data class sharing
-We can operate many Java virtual machines using class information or data sharing (CDS). Default classes are loaded as soon as there is an Oracle Java Runtime Environment(JRE) installation. After that, there is a copy of everything in a central location. Therefore, you do not need to install the JRE before building the shared archive.
+We can operate many Java virtual machines using class information or data sharing (CDS). Default classes are loaded as soon as there is an Oracle Java Runtime Environment(JRE) installation. 
 
-Memory is planned to the common file with the goal that the information in the JVM can get to it when the JVM runs. Thus, downloading the common file instead of the singular classes saves time.
+After that, everything is copied and stored in a central location. Therefore, you do not need to install the JRE before building the shared archive.
 
-Parallelism may be divided into three different types: serial The G1 garbage collector's choices for transferring class data include using OldGC or any other garbage collection method. The G1 garbage collector and shared strings are the only ways to utilize class data sharing.
+Memory is allocated to the common file with the goal that the information in the JVM can be accessed when the JVM runs. 
 
-The responsiveness of Java SE improvement is by including CDS. The faster your software runs, the less memory it will consume.
+Therefore, the common file will be downloaded instead of the singular classes which save time.
 
-#### Reducing the new JVM instances' environmental impact
-- JVM processes running on a single machine can only access a small part of the shared archive. It takes longer for our JVM instances to start now that we do not duplicate data throughout them.
+Parallelism may be divided into three different types. The G1 garbage collector's choices for transferring class data include using OldGC or any other garbage collection method. 
 
-- For Java Hotspot VM to operate, the class information must be saved in a specified manner. It saves RAM space as compared to using the traditional class data. Storage savings allow many applications to operate within the same computer simultaneously. 
+Note that the G1 garbage collector and shared strings are the only ways to utilize class data sharing.
 
-Increase the memory footprint by changing the number of Windows application pages assigned to the process' address space. Because of this improvement, the modular image's runtime components use less RAM (inside Windows). Once the goal of reducing one's carbon footprint has been set, there would be no going back for the foreseeable future.
+CDS helps to improve the responsiveness of Java SE. The faster your software runs, the less memory it will consume.
 
-### Process of Application Class Data Sharing
-A speedier runtime start thanks to archive application classes is a huge benefit. In addition, AppCDS minimizes the runtime footprint of numerous JVM processes by sharing memory amongst many JVM processes.
+#### Reducing the environmental impact of new JVM instances
+JVM processes running on a single machine can only access a small part of the shared archive. It takes longer for our JVM instances to start since we do not duplicate data.
 
-You may save application classes on a networked storage device using this feature. All Java processes share class information, which means different Java processes can share the same class information.AppCDS is the only class loader that supports archives; the normal system class loader does not. Thus, several Java virtual machines (JVMs) may share a single archive file, saving space and time.
+For Java Hotspot VM to operate, the class information must be saved in a specified manner. This saves RAM space as compared to using the traditional class data. 
 
-A shared archive of application classes is what we mean by `Application Class Data Sharing` (ACDS).
-AppCDS provides Class Information Sharing from the following classes:
+Storage savings allow many applications to run on the computer simultaneously. 
+
+The memory footprint can be increased by changing the number of applications assigned to the process' address space. Due to this improvement, the modular image's runtime components use less RAM (inside Windows). 
+
+### Application Class Data Sharing
+Archived application classes facilitate a faster runtime which is a huge benefit. In addition, AppCDS minimizes the runtime footprint of numerous JVM processes by allowing them to share memory. 
+
+You may, therefore, save application classes on a networked storage device using this feature. 
+
+All Java processes share class information. This means that different Java processes can share the same class information.
+
+AppCDS is the only class loader that supports archives; the normal system class loader does not. Thus, several Java virtual machines (JVMs) may share a single archive file which saves time and space.
+
+`Application Class Data Sharing` (ACDS) refers to a shared archive of application classes.
+
+AppCDS provides Class Data Sharing from the following classes:
 - Runtime image classes for the platform.
 - Running applications from the image's runtime.
-- Applications rely on classpath classes.
+- Classpath classes.
 - Classes based on a module's route.
 
 > It is possible to apply CDS across application classes because of Application Class Information Sharing (ACIS).
-There are three components to this method:
-1. In the first file, keep track of every class your application has stacked.
-2. Create a file with the name Shared Dump for each class.
-3. The Shared Dump may be used while the program is still running.
 
-**Step 1: Making a list of every single class.**
-In order to launch our Java program, `AppClassDataSharing.java,` we will need to download the `AppCDS.jar` file. This is possible due to AppCDS not unloading level classes. For us, this order will generate a `first` file: To utilize AppCDS, go through the steps in this order:
+The two activities associated with this method are:
+1. Keeping track of every class the application has stacked.
+2. Creating a file with the name `Shared Dump` for each class. The Shared Dump may be used while the program is still running.
+
+### Step 1: Making a list of every single class
+To launch our `AppClassDataSharing.java` file, we will need to download the `AppCDS.jar` file using the command below:
 
 `java -XX:UnlockCommercialFeatures-XX:UseAppCDS-XX:DumpLoadedClassList=LoadedClasses.lst -jar AppCDS.jar.`
 
-We do not want to interfere with the JRE files to make this file instead.
+Note that we do not want to interfere with the JRE resources. So, we need to create a new file as demonstrated below:
 
-![Creating a file in custom location](engineering-education/class-data-sharing-in-java-with-examples/custom.jpg)
+![Creating a file in custom location](/engineering-education/class-data-sharing-in-java-with-examples/custom.jpg)
 
-In the image below, our class AppClassDataSharing is listed in the newly created file LoadedClasses.lst.
+In the following image, the `AppClassDataSharing` class is listed in the newly created `LoadedClasses.lst`.
 
-![Entry for our own class AppClassDataSharing](engineering-education/class-data-sharing-in-java-with-examples/app.jpg)
+![Entry for our own class AppClassDataSharing](/engineering-education/class-data-sharing-in-java-with-examples/app.jpg)
 
-**Step 2: Create a file with the name shared dump for the above classes.**
-At the same time, this `lst` record generates a dump.
-A shared archive file may be created by running command and selecting the appropriate options as shown below:
+### Step 2: Create a file with the name shared dump 
+A shared archive file may be created by running a new command and selecting the appropriate options as shown below:
 
 `java -XX:+UnlockCommercialFeatures -Xshare:dump -XX:+UseAppCDS -XX:SharedClassListFile=LoadedClasses.lst -XX:SharedArchiveFile=CustomSharedArchive.jsa -cp AppCDS.jar`
 
-Utilize `CusomSharedArchive.jsa` when loading classes while the app is started.
+Utilize `CustomSharedArchive.jsa` when loading classes when the app is initialized.
 
-**Step 3: When launching the app, choose Shared Dump from the menu.**
-CustomSharedArchive.jsa should be executed with the specified commands and arguments to utilize our app.
+### Step 3: Selecting the Shared Dump file from the menu
+`CustomSharedArchive.jsa` should be executed with the specified commands and arguments to utilize our app.
 
-The arbitrary random no-generator holder and AppClassDataSharing are now loaded from a sharing item document that holds their shared data.
+The arbitrary random `no-generator` holder and `AppClassDataSharing` are now loaded from a sharing item document. This component stores crucial data.
 
-We may use the time function to examine how `- Xshare:on` and `- Xshare:off` impact execution. However, the data may not be meaningful due to the app's modest size. So we used git bash since we could not use cmd.
+We may use the time function to examine how `- Xshare: on` and `- Xshare: off` impact execution. However, the data may not be meaningful due to the app's modest size. 
 
-![Difference of Xshare:on and xshare:off](engineering-education/class-data-sharing-in-java-with-examples/xshare.jpg)
+![Difference of Xshare:on and xshare:off](/engineering-education/class-data-sharing-in-java-with-examples/xshare.jpg)
 
-Our software is now smaller and requires less time to execute, so that we may use Program Class Data Sharing.
+Our software is now smaller and requires less time to execute.
 
-###  Ways of renewing the shared archive across every platform
-It is possible to rebuild the shared archive on any supported platform, including Linux. The default JRE installation now includes a large number of library classes. Would it be workable to add more classes to the document if necessary? Given an improvement, which dumps all loaded library classes from your framework's class loading tracer or running applications, you might develop a rundown of class members.
+###  Renewing the shared archive across every platform
+It is possible to rebuild the shared archive on any supported platform, including Linux. The default JRE installation now includes a large number of library classes. 
+
+Due to an improvement that dumps all loaded library classes from your framework's loading tracer, you might develop a rundown of class members.
 
 ```java
 java -XX:DumpLoadedClassList=<class_list_file>
 ```
 
-Create the shared archive using the class list you got from the profiling data.
-It is possible to locate the shared JVM library and archive in the following locations:
-
-1. It is stored in a directory on each of the three operating systems.
+Create the shared archive using the class list you retrieved from the profiling data. It is possible to locate the shared JVM library and archive using the following commands:
 
 ```bash
 /lib/[arch]/server/classes.jsa
 ```
 
-2. There are many puts on Windows frameworks where you might get to the downloadable file:
+For Windows:
 
 ```bash
 /bin/server/classes.jsa
 ```
 
-It overwrites any earlier forms of the file record if the indistinguishable archive file name is now in its presence. Thus, another file might be made by just overwriting the current one.
+The JVM library overwrites the file if the same archive file is located. Therefore, another file might be made by just overwriting the current one.
 
-A new archive file may be created by logging in as an administrator(s). Sign in using a computer that resembles the Java SE establishment in a highly networked environment. If you cannot make changes in the installation directory, check your permissions.
-To re-create the archive using the supplied classes, type:
+A new archive file may be created by logging in as an administrator. Sign in using a computer that resembles the Java SE establishment in a highly networked environment. 
 
-```Java
+Use the following command to re-create the archive using the supplied classes:
+
+```java
 java -XX:SharedClassListFile=<class_list_file> -Xshare:dump
 ```
 
-Every time an archive is created, diagnostic data is made available.
+Diagnostic data is made available each time an archive is created.
 
-### Controlling the Sharing of Class Data Manually
-Data exchange across classes is allowed by default. You have the option of enabling and deactivating this function manually.
+### Controlling the sharing of Class Data Manually
+Data exchange across classes is allowed by default. However, you can enable and deactivate this function manually.
+
 Here are some more command-line parameters to aid with troubleshooting and diagnostics:
-- `Xshare:off` is the default setting. This sets whether or not class data may be shared.
-- `Xshare:on` signifies that the file is available for sharing to enable the exchange of class information. If you cannot activate the class data sharing feature, an error message will be shown, and the software will shut down.
-- `Xshare:on` Due to the operating system's use of address space layout randomization, this option can only be used for testing. Do not depend upon it to avoid occasional failures. Data loss is dangerous when using this option in production settings.
-- The auto-sharing feature of `Xshare`.To default to class data sharing. Enable student data sharing across classes wherever workable.
+
+- `Xshare: off` is the default setting. It determines whether or not class data may be shared.
+
+- `Xshare: on` signifies that the file is available for sharing. If you cannot activate the class data sharing feature, an error message will be shown, and the software will shut down. This option can only be used for testing due to space layout randomization. 
+
 
 ### Conclusion
-This tutorial demonstrated how the Java data class sharing feature speeds up startup while using less memory (JVM). We have also looked at data class sharing, application data sharing, and how to control data sharing manually.
+This tutorial demonstrated how the Java data class sharing feature speeds up startup while using less memory (JVM). 
 
-Happy Coding!
+We have also looked at data class sharing using `Xshare: off` and `Xshare: on` commands.
+
 
 ---
 Peer Review Contributions by: [Mercy Meave](/engineering-education/authors/mercy-meave/)
