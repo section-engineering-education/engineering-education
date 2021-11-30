@@ -1,5 +1,21 @@
-Developers need some quick-to-use data sources with endpoints when building a React.js project. These data sources provide test data to test whether the package works correctly.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /mock-a-datasource-for-react-using-json-server/
+title: Mock a Datasource for react using json-server
+description: In this tutorial, the reader will learn how to build a mock a datasource using `json-server` to rapidly build React.js prototypes.
+author: roy-kibet
+date: 2021-11-30T00:00:00-19:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/mock-a-datasource-for-react-using-json-server/hero.png
+    alt: Mock a Datasource for react using json-server example image
+---
+Developers need some quick-to-use data sources with endpoints when building a React.js project. These data sources provide test data to test whether the package works correctly.
+<!--more-->
 A [data source](https://docs.microsoft.com/en-us/sql/odbc/reference/data-sources?view=sql-server-ver15) can be said as the initial location where data is born. It may be a database, flat file, live measurement data from physical devices, among many others.
 
 Datasource mainly used are databases managed by DBMS(s) such as MySQL, Postgres, SQL, among many others.
@@ -38,11 +54,7 @@ In this article, you will learn how to do the following on the package mentioned
 - [Configure the JSON Server data source in the project](#configure-the-json-server-data-source-in-the-project)
 - [Run the application](#run-the-application)
 - [More on JSON server](#more-on-json-server)
-  - [Change port, file and file paths](#change-port-file-and-file-paths)
-  - [Perform queries on the data](#perform-queries-on-the-data)
-  - [Add delay and change Host](#add-delay-and-change-host)
 - [Conclusion](#conclusion)
-- [References](#references)
 
 ### Key takeaways
 By the end, the following will be learned:
@@ -687,7 +699,7 @@ npm run server
 
 The outcome looks like shown below:
 
-![Final image for the application](/engineering-education/mock-a-data-source-for-react-using-json-server/inal-server-product-image.png)
+![Final image for the application](/engineering-education/mock-a-datasource-for-react-using-json-server/final-server-product-image.png)
 
 ### More on JSON Server
 Let us look more about the package.
@@ -749,3 +761,6 @@ At this point, the following have been covered:
 You can find the full code [here](https://github.com/blacklihgt/Mock-a-Datasource-for-React-using-JSON-Server).
 
 You can read more about `json-server` package [here](https://www.npmjs.com/package/json-server).
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
