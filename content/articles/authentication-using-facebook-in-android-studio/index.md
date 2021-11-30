@@ -236,8 +236,10 @@ import java.util.*
 
 private const val TAG = "MainActivity"
 class MainActivity : AppCompatActivity() {
-
+//To avoid findViewById, we use view binding.
+//Declare it as bellow
     private lateinit var binding: ActivityMainBinding
+//Declare the Facebook callbackmanager    
     private lateinit var callBackManager: CallbackManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -245,8 +247,18 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view: View = binding.root
         setContentView(view)
+        
+//Now Initialize the callbackmanager
+
         callBackManager = CallbackManager.Factory.create()
+        
+//set the login button with permissions to read and ad to a list all user data you want to get   
+
         binding.loginButton.setReadPermissions(listOf("email","public_profile","user_gender","user_birthday"))
+        
+//now after the login button is clicked a callback is registered.
+//This callback can return an error, success or can be cancelled
+
         binding.loginButton.registerCallback(callBackManager, object : FacebookCallback<LoginResult>{
             override fun onCancel() {
                 Toast.makeText(this@MainActivity,
@@ -266,6 +278,9 @@ class MainActivity : AppCompatActivity() {
                 graphRequest.executeAsync()
             } })
     }
+//This function gets the users facebook data.
+//This includes the username, email, birthday, gener and the ptofile picture.
+//As they appear in facebook
 
     private fun getFacebookData(jsonObject: JSONObject?) {
         val profilePic = "https://graph.facebook.com/${jsonObject
