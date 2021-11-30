@@ -1,15 +1,36 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /implementing-gan-from-scratch/
+title: Implementing GANs from Scratch
+description: 
+author: bonface-ndolo
+date: 2021-11-19T00:00:00-18:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+ - url: /engineering-education/implementing-gan-from-scratch/hero.jpg
+   alt: Implementing GANs example image
+---
+
 ### Introduction
 The odds ratio can be calculated using logistic regression when there are multiple explanatory variables. The approach is quite similar to multiple linear regression, except that the response variable is a binomial. An event's odds ratio is the final result of each variable's influence on the odds ratio.
-To predict a binary result, we use the statistical technique of logistic regression. The MNIST dataset contains handwritten digits, therefore we'll use Logistic Regression in PyTorch to figure out which ones they are.
-### Prerequisite
+
+To predict a binary result, we use the statistical technique of logistic regression. The MNIST dataset contains handwritten digits. Therefore we'll use Logistic Regression in PyTorch to figure out which ones they are.
+
+### Prerequisites
 1. Install [PyTorch](https://pytorch.org/) into your Python environment.
 2. Having some knowledge of the Python programming language is a good idea.
+
 ### Table of contents
 - [Library functions and objects](#library-functions-and-objects)
 - [Defining our hyperparameters](#defining-our-hyperparameters)
 - [Building The Neural Network](#building-the-neural-network)
 - [References ](#references )
 - [Conclusion](#conclusion)
+ 
 ### Library functions and objects
 Importing Library functions and objects into your code is necessary once your installation is complete.
 Here are the functions and objects to import:
@@ -17,7 +38,7 @@ Here are the functions and objects to import:
 - The **torch.nn** module: Contains code for the required model.
 - The **torchvision.datasets**: Includes MNIST dataset of handwritten digits that we shall be using here.
 - The **torchvision.transforms**: We shall be using it here to tt from images to PyTorch tensors.
-- The **torch.autograd**: Will be used to define our tensors.
+- The **torch.autograd**: This will be used to define our tensors.
 
 Type the code below to import the library functions and objects;
 ```Python
@@ -52,7 +73,7 @@ batch_size = 100
 learning_rate = 0.001
 
 ```
-The image size that we will use for our image will be 28*28. This means that our input size will be 784. In addition, there are 10 digits in this, thus we can generate 10 alternative results. In this way, number_classes will be set to ten. In addition, we'll run the full dataset through five iterations of training. Finally, we will train in small batches of 100 images each so that the software does not crash because of memory overflow.
+The image size that we will use for our image will be 28*28. This means that our input size will be 784. In addition, there are ten digits in this. Thus we can generate ten alternative results. In this way, number_classes will be set to ten. In addition, we'll run the full dataset through five iterations of training. Finally, we will train in small batches of 100 images each so that the software does not crash because of memory overflow.
 
 After that, we'll lay out our model in the following manner. In this section, we'll define the forward pass after setting up our model as a subclass of **torch.tn.Module**. As we are building the code, we will not need to mention the softmax in the **forward()** function because it will be determined internally during each forward run.
 ```Python
@@ -131,13 +152,18 @@ print('Accuracy of the model on the 10000 test images: % d %%' % (
 To put it another way, if you followed the instructions exactly, you would have an accuracy rate of 91%, which is significantly lower than the current best model, which makes use of a different sort of neural network architecture.
 
 You can run the whole code [here](https://colab.research.google.com/drive/1eL6a4_QxAZxqLV83vJOsLkPF09hYwThn?usp=sharing)
+
 ### References 
 1. [To see whole code click here](https://colab.research.google.com/drive/1eL6a4_QxAZxqLV83vJOsLkPF09hYwThn?usp=sharing)
 2. [PyTorch](https://drive.google.com/drive/folders/0B41Zbb4c8HVyUndGdGdJSXd5d3M?resourcekey=0-s90CYmIbmbqbO1Mvtwmlog)
 3. [Linear Regression](https://machinelearningmastery.com/linear-regression-for-machine-learning/)
 ### Conclusion
-With the help of Logistic Regression and PyTorch, we learned how the MNIST handwritten digits dataset may be identified.
+With the help of Logistic Regression and PyTorch, we learned how the MNIST handwritten digits are identified.
 
-In the data folder, the MNIST dataset is initially downloaded. The hyperparameters are then set up, loaded into the environment and a neural network build. The Logistic Regression model can then be defined and used. The MNIST dataset is used here to train and test the model.
+In the data folder, the MNIST dataset is initially downloaded. The hyperparameters are then set up, loaded into the environment and a neural network built. The Logistic Regression model can then be defined and used. The MNIST dataset is used here to train and test the model.
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+
