@@ -40,7 +40,7 @@ In this article, you will learn how to do the following on the package mentioned
 - [Key takeaways](#key-takeaways)
 - [Pre-requisites](#pre-requisites)
 - [Understanding the json-server package](#understanding-the-json-server-package)
-- [Create a React app](#create-a-react-app)
+- [Building the React.js application](#building-the-reactjs-application)
   - [Header component](#header-component)
   - [Footer component](#footer-component)
   - [Button component](#button-component)
@@ -66,9 +66,9 @@ By the end, the following will be learned:
 
 ### Pre-requisites
 For the article, the following are required for easy article follow-up:
-- A good IDE or text editor set up on the machine.
+- A good IDE or text editor is set up on the machine.
 - A stable internet connection.
-- React development environment already setup.
+- React development environment already set up.
 - React development skills.
 
 Brief info on what is going to be done in the article is as follows:
@@ -82,16 +82,16 @@ Brief info on what is going to be done in the article is as follows:
 - Run the application.
 
 ### Understanding the json-server package
-JSON server allows almost all type of back-end requests and responses like `GET`, `POST`, `PUT`, `PATCH`, and `DELETE` methods.
+JSON server allows almost all types of back-end requests and responses like `GET`, `POST`, `PUT`, `PATCH`, and `DELETE` methods.
 
-It has routes to access data items stored in the mock database file (JSON). Few examples are `GET /posts` for fetching all the posts, `PUT /posts/1` for updating the first post, or `DELETE /posts/1` for deleting the first post.
+It has routes to access data items stored in the mock database file (JSON). A few examples are `GET /posts` for fetching all the posts, `PUT /posts/1` for updating the first post, or `DELETE /posts/1` for deleting the first post.
 
 The module allows other operations to be done on the database, such as:
 
 #### Performing database filters
 Examples - `GET /posts?title=json-server&author=riro` or `GET/comments?author.name=riro`.
 
-These end-points filters `posts` with `title` of `json-server` and `author` name of `riro` and `comments` with the `author` name of `riro` respectively.
+These end-points filter `posts` with the `title` of `json-server` and `author` name of `riro` and `comments` with the `author` name of `riro` respectively.
 
 #### Adding pagination to the results fetched
 Example - `GET /posts?_page=9&_limit=23`.
@@ -101,7 +101,7 @@ This request will fetch posts from page `9`, and the page limit is set to `23`.
 #### Sorting items from the database
 Example - `GET/posts/5/comments?_sort=votes,likes&_order=desc,asc`.
 
-This request does the sorting of the `comments` based on the `votes` and `likes` in an ascending and descending orders, respectively.
+This request does the sorting of the `comments` based on the `votes` and `likes` in ascending and descending orders, respectively.
 
 #### Performing slice operations on the data
 Example - `GET/posts/4/comments?_start=20&_limit=10`.
@@ -118,7 +118,7 @@ Example - `GET/posts?q=tomcat`.
 
 This request searches for the value `tomcat` in all the records stored.
 
-#### Creating relationships in te database items
+#### Creating relationships with the database items
 The inclusion of child resources using `_embed`, and the inclusion of parent resources using `_expand` creates nested resources.
 
 An example is `GET /comments/1?_expand=post` that includes parent resource by the name `post`.
@@ -128,7 +128,7 @@ Example - `GET\db`.
 
 This `GET` fetches all the database items of the specified database.
 
-### Create a React app
+### Building the React.js application
 In this section, a React.js app will be created. We will be building a budget planning application to add or remove them from a list.
 
 The app saves and retrieves data from a data source using a JSON object.
@@ -336,7 +336,7 @@ export default Budget
 ```
 
 The above code:
-- Acts as a toggles for the reminder states (on, off) when double-clicked on.
+- Acts as a toggle for the reminder states (on, off) when double-clicked on.
 - Displays the item and the amount.
 
 #### AddBudget component
@@ -594,7 +594,7 @@ This code shown above does the following:
 - The code also contains the footer and the about page link.
 
 ### Style the application
-- Finally, do some styling to the application. The styling code is found on this [link](https://github.com/blacklihgt/Mock-a-Datasource-for-React-using-JSON-Server/blob/main/src/index.css). Download it and save it in the `src` folder.
+- Finally, do some styling for the application. The styling code is found on this [link](https://github.com/blacklihgt/Mock-a-Datasource-for-React-using-JSON-Server/blob/main/src/index.css). Download it and save it in the `src` folder.
 
 Make sure to run the command below to install all necessary packages before running the application using the command below:
 
@@ -621,7 +621,7 @@ JSON server can be installed by running the command below:
 npm install -g json-server
 ```
 
-The command installs the package at a global scope.
+The command installs the package at global scope.
 
 Once installed, head over to the `package.json` file and add a script that quickly runs the server.
 
@@ -702,7 +702,7 @@ The outcome looks like shown below:
 ![Final image for the application](/engineering-education/mock-a-datasource-for-react-using-json-server/final-server-product-image.png)
 
 ### More on JSON Server
-Let us look more about the package.
+Let us look more into the package.
 
 #### Change port, file, and file paths
 The filename and port where the server runs can be changed to `database.json` on port `3010` by running the command below on the terminal:
@@ -749,7 +749,7 @@ In conclusion, running and throwing away parts are essential to developers durin
 
 These parts are helpful in agile programming and prototyping. JSON Server dependency is an example of a quick dispensable project development unit.
 
-It is small-sized, easy to install, use, learn, and dispose when one has finished using the prototype.
+It is small-sized, easy to install, use, learn, and dispose of when one has finished using the prototype.
 
 At this point, the following have been covered:
 
@@ -760,7 +760,7 @@ At this point, the following have been covered:
 
 You can find the full code [here](https://github.com/blacklihgt/Mock-a-Datasource-for-React-using-JSON-Server).
 
-You can read more about `json-server` package [here](https://www.npmjs.com/package/json-server).
+You can read more about the `json-server` package [here](https://www.npmjs.com/package/json-server).
 
 ---
 Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
