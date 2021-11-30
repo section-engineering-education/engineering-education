@@ -177,7 +177,7 @@ As you've seen in the code above, with PyTorch Lightning, anything that is criti
 
 To better understand how PyTorch Lightning saves us a great deal of time and to summarize what we've learned in this tutorial, let's take a look at how PyTorch Lightning converts a vanilla PyTorch code removing all the boilerplate code.
 
-![Conversion from PyTorch to PyTorch Lightning](/engineering-education/an-introduction-to-pytorch-lightning/pytorchlightning.gif)
+![Conversion from PyTorch to PyTorch Lightning](https://youtu.be/xTTFQE2_pYY)
 
 *[Image Source: PyTorch Lightning](https://github.com/PyTorchLightning/pytorch-lightning)*
 
