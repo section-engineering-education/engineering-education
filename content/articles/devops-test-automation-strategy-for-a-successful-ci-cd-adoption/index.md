@@ -1,7 +1,28 @@
-### Introduction 
-Test automation is the cornerstone of DevOps culture. While a lot of institutions have realized its need and significance for a long time now, the breakout of the COVID-19 pandemic has driven them to embrace automated testing throughout the SDLC for CI/CD. However, the dire need for advanced test automation, owing to the work from home reality is making test automation implementation more challenging.
-In IT companies, developers, engineers in the operations department and testers wear many hats, with various duties and job profiles as they all work in distinct operating units as separate bodies. Henceforward, the critical question is whether QA can enhance and prompt product delivery by uniting these distinct clusters under the DevOps flag. And if so, then the question is how to incorporate automated testing scenarios. This article will attempt to answer all these questions and provide steps to establish a robust testing automation strategy.
-### Table of content 
+---
+layout: engineering-education
+status: publish
+published: true
+url: /devops-test-automation-strategy-for-a-successful-ci-cd-adoption/
+title:Devops test automation strategy for a successful CI/CD adoption 
+description: In this tutorial we will learn about DevOps test automation strategy for a successful CI/CD adoption.
+author: johnson-kamau
+date: 2021-11-30T00:00:00-12:10
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/devops-test-automation-strategy-for-a-successful-ci-cd-adoptiont/hero.jpg
+    alt: Devops test automation strategy for a successful CI/CD adoption Hero Image
+--- 
+Test automation is the cornerstone of DevOps culture. While many institutions have realized its need and significance for a long time now, the breakout of the COVID-19 pandemic has driven them to embrace automated testing throughout the SDLC for CI/CD. 
+<!--more-->
+However, the dire need for advanced test automation, owing to the work from home reality, makes test automation implementation more challenging. In IT companies, developers and engineers in the operations department and testers wear many hats, with various duties and job profiles. They all work in distinct operating units as separate bodies. 
+
+Henceforward, the critical question is whether QA can enhance and prompt product delivery by uniting these distinct clusters under the DevOps flag. Moreover, if so, then the question is how to incorporate automated testing scenarios. 
+
+This article will attempt to answer all these questions and provide steps to establish a robust testing automation strategy.
+
+### Table of contents
 - [Introduction](#introduction)
 - [Table of content](#table-of-content)
 - [Why is having a test automation strategy crucial for CI/CD?](#why-is-having-a-test-automation-strategy-crucial-for-cicd)
