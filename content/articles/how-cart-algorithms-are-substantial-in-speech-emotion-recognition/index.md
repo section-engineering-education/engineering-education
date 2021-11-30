@@ -8,7 +8,7 @@ The article focuses on assessing the substantial use of CART algorithms in speec
 
 ### The system of emotion recognition
 
-The system of speech emotion recognition is so like the pattern system. The system automatically identifies the human beings' emotions from a voice. The system is usually based on the signal of speech and emotion recognition methods. The system consists of five main steps;
+The system of speech emotion recognition highly comparable to the pattern recognition task which is highly structural. The system automatically identifies the human beings' emotions from a voice. The system is usually based on the signal of speech and emotion recognition methods. The system consists of five main steps;
 
 - Emotional speech input
 - Feature selection and extraction
@@ -28,7 +28,7 @@ The various emotional recognition extracts critical emotional features from spee
 
 #### Training
 
-This is another crucial step of the speech recognition system. The step entails voice training of the computers for speech recognition. The entails entail assigning a weight of features using estimators and considering small sets of features. The estimators are trained on the features of the initial stage and predictive power.
+This is another crucial step of the speech recognition system. The step entails voice training of the computers for speech recognition. It involve assigning a weight of features using estimators and considering small sets of features. The estimators are trained on the features of the initial stage and predictive power.
 
 #### Classification
 
