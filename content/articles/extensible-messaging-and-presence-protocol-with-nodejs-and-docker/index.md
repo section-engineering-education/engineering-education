@@ -1,6 +1,22 @@
-### Introduction
+---
+layout: engineering-education
+status: publish
+published: true
+url: /extensible-messaging-and-presence-protocol-with-nodejs-and-docker/
+title: Extensible Messaging and Presence Protocol - XMPP with NodeJs and Docker
+description: This tutorial walks you through the concepts of XMPP architecture, how it works, and builds a demo server connection using [Node.js](https://nodejs.org/en/docs/) and [docker](https://docs.docker.com/). 
+author: arafat-olayiwola
+date: 2021-11-30T00:00:00-11:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/extensible-messaging-and-presence-protocol-with-nodejs-and-docker/hero.png
+    alt: XMPP img docker
+---
 Extensible Messaging and Presence Protocol (XMPP) is an open communication protocol for instant messaging presence information and contact list maintenance.
 
+<!--more-->
 This tutorial walks you through the concepts of XMPP architecture, how it works, and builds a demo server connection using [Node.js](https://nodejs.org/en/docs/) and [docker](https://docs.docker.com/). 
 
 ### Table of Contents
@@ -247,3 +263,6 @@ This tutorial introduced the concept of the meaning, underline architecture, and
 We also built a demo connection using Node.js, and docker was used to spinning up the server image to register clients. 
 
 Thank you for reading!
+
+---
+Peer Review Contributions by: [Miller Juma](/engineering-education/content/authors/miller-juma/)
