@@ -230,6 +230,8 @@ public void setY(String y) {
 }
 ```
 
+From the program above, the line `def print_getter_setter(variables, datatypes):` is function that print getter and setter methods for variables according to Java, the line `getter = []` and `setter = []` are used to store the to store the set and get variables respectively. After storing the variables, we prepend `get` and `set` in every variable and turn the initial character to uppercase. The line of code `print("public " + datatypes[i] + " " + getters[i] + "() {\n\treturn " + variables[i] + ";\n}\n")` print out the getter method while the line `print("public void " + setters[i] + "(" + datatypes[i] + " " + variables[i] + ") {\n\tthis." + variables[i] + " = " + variables[i] + ";\n}\n")` print out the setter method. The line `if __name__=="__main__":` is the driver function. The line `variables = ["abc", "empId", "GFG", "x"]` list all the variables that re used as the output variable while the the line `datatypes = ["int", "float", "double" , "String"]` list the datatypes corresponding to the list of the variables.
+
 ### Conclusion
 In this article, we have learned what getters and setters are in the python programming language. We have also learned how to get `getters` and `setters` behavior using the `property()` function, `@Property` decorators, and finally using normal functions. 
 
