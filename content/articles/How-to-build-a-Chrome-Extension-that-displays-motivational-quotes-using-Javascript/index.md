@@ -38,11 +38,6 @@ To better understand and build along with this tutorial you should have:
 - Your desktops notification turned on - this is where our motivational quotes will be displayed.
 
 ### Table of Contents
-
-<<<<<<< HEAD
-
-- [How to build a Chrome Extension that displays motivational quotes using Javascript](#how-to-build-a-chrome-extension-that-displays-motivational-quotes-using-javascript) - [Introduction](#introduction) - [Prerequisites](#prerequisites) - [Table of Contents](#table-of-contents) - [Getting started](#getting-started) - [Adding icons](#adding-icons) - [Functionality](#functionality) - [Creating the background script](#creating-the-background-script) - [background.js](#backgroundjs) - [Adding permissions](#adding-permissions) - [Fetching random quotes from the API](#fetching-random-quotes-from-the-api) - [Calling the quotes at intervals](#calling-the-quotes-at-intervals) - [Creating notifications](#creating-notifications) - [What to do?](#what-to-do) - [Conclusion](#conclusion) - [References](#references)
-  =======
 - [Getting started](#getting-started)
 - [Adding icons](#adding-icons)
 - [Functionality](#functionality)
@@ -55,7 +50,6 @@ To better understand and build along with this tutorial you should have:
 - [What to do?](#what-to-do)
 - [Conclusion](#conclusion)
 - [References](#references)
-  > > > > > > > d08a5e4244e1dd292e3fda6990708afe095e70ee
 
 ### Getting started
 
@@ -94,6 +88,7 @@ Now that we have our manifest file setup, let us add the directory as an extensi
 Navigate to the extensions management page by clicking on the extensions menu button at the top right of the browser, and selecting manage extensions at the bottom of the menu.
 
 You should see a page like this:
+
 ![developer](/engineering-education/how-to-build-a-chrome-extension-that-displays-motivational-quotes-using-javascript/developer.png)
 
 Toggle on the developer mode and click on the load unpacked button. This opens your local machine directories and prompts you to choose the directory you would like to load as an extension.
