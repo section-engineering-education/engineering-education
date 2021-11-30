@@ -25,8 +25,6 @@ In this article, you will learn how to do the following on the package mentioned
 - [Pre-requisites](#pre-requisites)
 - [Understanding the json-server package](#understanding-the-json-server-package)
 - [Create a React app](#create-a-react-app)
-  - [New React app](#new-react-app)
-  - [New project structure](#new-project-structure)
   - [Header component](#header-component)
   - [Footer component](#footer-component)
   - [Button component](#button-component)
@@ -78,59 +76,61 @@ It has routes to access data items stored in the mock database file (JSON). Few 
 
 The module allows other operations to be done on the database, such as:
 
-#### Performing database Filters
-Examples - `GET/posts?title=json-server&author=riro` or `GET/comments?author.name=riro`.
+#### Performing database filters
+Examples - `GET /posts?title=json-server&author=riro` or `GET/comments?author.name=riro`.
 
 These end-points filters `posts` with `title` of `json-server` and `author` name of `riro` and `comments` with the `author` name of `riro` respectively.
 
-An example of a `GET` request format is as shown below:
-`http://www.albana.com/posts?title=json-server&author=riro`
+#### Adding pagination to the results fetched
+Example - `GET /posts?_page=9&_limit=23`.
 
-#### Adding Pagination to the results fetched
-Examples - `GET/posts?_page=9&_limit=23`.
-
-This request will fetch posts from page 9, and the page limit is set to 23.
-
-An example of a GET request format is as follows:
-`http://www.albana.com//posts?_page=9&_limit=23`
+This request will fetch posts from page `9`, and the page limit is set to `23`.
 
 #### Sorting items from the database
-An example is `GET/posts/5/comments?_sort=votes,likes&_order=desc,asc`. This request does the sorting of the comments by using the votes and likes in an ascending and descending order, respectively. An example is a GET request on `http://www.albana.com/posts/5/comments?_sort=votes,likes&_order=desc,asc`.
+Example - `GET/posts/5/comments?_sort=votes,likes&_order=desc,asc`.
 
-#### Performing Slice operations on the data
-e.g. `GET/posts/4/comments?_start=20&_limit=10`. This request truncates the comments after 10 comments starting from comment number 20. An example is a GET request on `http://www.albana.com/posts/1/comments?_start=20&_end=33`.
+This request does the sorting of the `comments` based on the `votes` and `likes` in an ascending and descending orders, respectively.
+
+#### Performing slice operations on the data
+Example - `GET/posts/4/comments?_start=20&_limit=10`.
+
+This request truncates the `comments` after `10` comments starting from comment number `20`.
 
 #### Operators
-e.g. for getting range (`_gte`, `lte`), excluding a value(`_ne`), filtering a value(`_like`). An example is a GET request on `http://www.albana.com/posts/4/comments?_ne=sad`. It excludes any comment with the value of 'sad' while `http://www.albana.com\author_like=chris` searches for authors with a name related to 'chris' (RegEx is used).
+For excluding a value we use `_ne`, and for filtering based on a value, we use `_like`.
 
-#### Doing Full-text searches in the database
-e.g. `GET/posts?q=tomcat`. This request searches for the value '**tomcat**' in all the records stored. An example is a GET request on `http://www.albana.com/posts?q=tomcat`.
+An example `GET /posts/4/comments?_ne=sad` request, excludes any comment with the value of `sad`, while `GET \author_like=chris` searches for `authors` with a name related to `chris` (RegEx is used).
 
-#### Creating Relationships in te database items
-e.g., the inclusion of child resources(`_embed`), the inclusion of parent resources(`_expand`), to get or create nested resources. An example is `http://www.albana.com/comments/1?_expand=post` that includes parent resource by the name 'post'.
+#### Doing full-text searches in the database
+Example - `GET/posts?q=tomcat`.
 
-#### Fetching for full Database
-e.g. `GET\db`. This GET request brings up all database items of the specified database. An example is `http://www.albana.com/customers_db`.
+This request searches for the value `tomcat` in all the records stored.
 
-#### Navigating to the Homepage
-e.g. `GET/`. Using the `./public` path, one can serve the application files in the public folder. An example is `http://www.albana.com/`.
+#### Creating relationships in te database items
+The inclusion of child resources using `_embed`, and the inclusion of parent resources using `_expand` creates nested resources.
 
-More on JSON Server library will also be mentioned in the article.
+An example is `GET /comments/1?_expand=post` that includes parent resource by the name `post`.
+
+#### Fetching for full database
+Example - `GET\db`.
+
+This `GET` fetches all the database items of the specified database.
 
 ### Create a React app
+In this section, a React.js app will be created. We will be building a budget planning application to add or remove them from a list.
 
-In this section, a React app will be created. The app will be a budget planning application to add items and remove them from a list.
-The app saves and retrieves data from a data source in a JSON object.
+The app saves and retrieves data from a data source using a JSON object.
 
-#### New React app
+Let's get started.
 
-- Open the folder in which the application should be created and run this command:
+Open the folder in which the application should be created and run this command:
+
 ```bash
 npx create-react-app react-budget-tracker
 ```
 
-#### New project structure
-- Create the following application folder structure:
+The folder structure should look like this:
+
 ```bash
 .
 ├── node_modules
@@ -159,30 +159,32 @@ npx create-react-app react-budget-tracker
 
 #### Header component
 As the name suggests, the `Header.js` file contains the header parts.
+
 - In the `Header.js`, its code is as shown below:
+
 ```js
 import PropTypes from 'prop-types'
 import { useLocation } from 'react-router-dom'
 import Button from './Button'
 
 const Header = ({ title, onAdd, showAdd }) => {
-const location = useLocation()
+  const location = useLocation()
 
-/*The header has a title and a button that opens up a window to add the budget or close the window*/
-return (
-  <header className='header'>
+  /*The header has a title and a button that opens up a window to add the budget or close the window*/
+  return (
+    <header className='header'>
 
-  <!-- The header has a title -->
-  <h1>{title}</h1>
-  {location.pathname === '/' && (
-    <Button
-      color={showAdd ? 'red' : 'green'}
-      text={showAdd ? 'Close' : 'Add'}
-      onClick={onAdd}
-      />
-  )}
-  </header>
-)
+    <!-- The header has a title -->
+    <h1>{title}</h1>
+    {location.pathname === '/' && (
+      <Button
+        color={showAdd ? 'red' : 'green'}
+        text={showAdd ? 'Close' : 'Add'}
+        onClick={onAdd}
+        />
+    )}
+    </header>
+  )
 }
 
 /*Set the title*/
@@ -198,50 +200,53 @@ Header.propTypes = {
 export default Header
 ```
 
-This code creates a simple header for a web page and allows it to be used. It adds the following:
-- A header title
-- A button to open a section to add the budget item or close it
-- Set the button color
-- Set the title value and export the header
+This code creates a simple header for a web page and allows it to be used to add the following:
+- A header title.
+- A button to add the budget item and to remove it.
+- Set the button color.
+- Set the title value and export the header.
 
 #### Footer component
 - In the `Footer.js` file, the following will be the code:
+
 ```js
 import { Link } from 'react-router-dom'
 
 /*Add a footer to the application*/
 const Footer = () => {
-return (
-  /*It has a copyright and a link to the about page*/
-    <footer>
-      <p>Copyright &copy; 2021</p>
-        <Link to='/about'>About</Link>
-    </footer>
-)
+  return (
+    /*It has a copyright and a link to the about page*/
+      <footer>
+        <p>Copyright &copy; 2021</p>
+          <Link to='/about'>About</Link>
+      </footer>
+  )
 }
 
 export default Footer
 ```
 
-The code generates a footer. The footer has copyright and an about-page link.
+The code generates a footer that contains copyright and an about-page link.
 
 #### Button component
-The `Button.js` adds a button that is a reusable component for multiple click actions. For example, this button will open the Add form and close the form.
-- The code for the button is as shown below:
+The `Button.js` adds a reusable button component for multiple click actions.
+
+For example, this button can open the `Add` form and `Close` the form.
+
 ```js
 import PropTypes from 'prop-types'
 
 /*A button that allows one to set its color, the text it displays and the function it executes on a click event*/
 const Button = ({ color, text, onClick }) => {
-return (
-  <button
-    onClick={onClick}
-      style={{ backgroundColor: color }}
-      className='btn'
-   >
-    {text}
-  </button>
-)
+  return (
+    <button
+      onClick={onClick}
+        style={{ backgroundColor: color }}
+        className='btn'
+    >
+      {text}
+    </button>
+  )
 }
 
 Button.defaultProps = {
@@ -257,13 +262,14 @@ Button.propTypes = {
 export default Button
 ```
 
-The code generates a button that allows one to set its:
-- color
-- text and
-- the function to be executed when it is clicked
+The code generates a button that allows one to set its
+- color,
+- text, and
+- the function to be executed when it is clicked.
 
 #### About page component
-- Now, add a webpage that may contain other page contents. In this case, an About page. This page's code is shown below:
+- Now, add an about webpage that contains details related to the author.
+
 ```js
 import { Link } from 'react-router-dom'
 
@@ -284,48 +290,46 @@ return (
 export default About
 ```
 
-It contains a button to go back to the previous page.
-
 #### Budget.js file
 The `Budget.js` file enables one to interact with a particular budget item in the server displayed on the screen. One can delete a budget or toggle its reminder state.
-- In the `Budget.js` file, the following will be its code:
+
 ```js
 import { FaTimes } from 'react-icons/fa'
 
 /*This will enable one to set the reminder to the budget on or off when double clicked on; and also to delete the budget*/
 const Budget = ({ budget, onDelete, onToggle }) => {
-return (
-<!-- Toggle the budget reminder on or off when double on double click -->
-    <div
-      className={`budget ${budget.reminder && 'reminder'}`}
-      onDoubleClick={() => onToggle(budget.id)}
-    >
-      <h3>
-        <!-- Display the budget name -->
-        {budget.name}{' '}
-           <FaTimes
-          /*Delete the budget when clicked*/
-          style={{ color: 'red', cursor: 'pointer' }}
-            onClick={() => onDelete(budget.id)}
-            />
-        </h3>
+  return (
+  <!-- Toggle the budget reminder on or off when double on double click -->
+      <div
+        className={`budget ${budget.reminder && 'reminder'}`}
+        onDoubleClick={() => onToggle(budget.id)}
+      >
+        <h3>
+          <!-- Display the budget name -->
+          {budget.name}{' '}
+            <FaTimes
+            /*Delete the budget when clicked*/
+            style={{ color: 'red', cursor: 'pointer' }}
+              onClick={() => onDelete(budget.id)}
+              />
+          </h3>
 
-          <!-- Display the budget Amount -->
-          <p>{budget.amount}</p>
-      </div>
-)
+            <!-- Display the budget Amount -->
+            <p>{budget.amount}</p>
+        </div>
+  )
 }
 
 export default Budget
 ```
 
-- It does the following:
-  - It toggles from reminder states (on, off) when double-clicked on
-  - It displays the item and the amount
+The above code:
+- Acts as a toggles for the reminder states (on, off) when double-clicked on.
+- Displays the item and the amount.
 
 #### AddBudget component
 The `AddBudget.js` file allows one to add budgets to the system. The budgets will then immediately be updated in the system hence visible.
-- In the `AddBudget.js` file, the following is its code:
+
 ```js
 import { useState } from 'react'
 
@@ -394,41 +398,41 @@ const AddBudget = ({ onAdd }) => {
 export default AddBudget
 ```
 
-- It does the following:
-  - Displays an error when no budget item is added during the addition process
-  - It otherwise takes the value that has been input and adds it to the others held at the data source. The addition takes place when the submit button is pressed.
-  - It allows one to either set the reminder on or off for a particular item
-  - The application will then reload automatically on the added list
+The above code:
+- Displays an error when no budget item is added during the addition process
+- It otherwise takes the value that has been input and adds it to the others held at the data source. The addition takes place when the submit button is pressed.
+- It allows one to either set the reminder `on` or `off` for a particular item
+- The application will then reload automatically on the added list
 
 #### Budgets.js file
 - In the `Budgets.js` file, the following will be the code:
+
 ```js
 import Budget from './Budget'
 
 /*Displays all the budgets fetched from the URL to the screen*/
 const Budgets = ({ budgets, onDelete, onToggle }) => {
 /*Maps each budget per the budget's key*/
-return (
-  <>
-    {budgets.map((budget, index) => (
-    <Budget key={index} budget={budget} onDelete={onDelete} onToggle={onToggle} />
-    ))}
-  </>
-  )
+  return (
+    <>
+      {budgets.map((budget, index) => (
+      <Budget key={index} budget={budget} onDelete={onDelete} onToggle={onToggle} />
+      ))}
+    </>
+    )
 }
 
 export default Budgets
 ```
 
-The code will allow the application to do the following:
-
-- Displays the items in the list of the budget
-- Allow deletion of the items in the list. It deletes the items even in the data source.
-- It allows one to use the toggle function to set the reminder on or off.
+This code:
+- Displays the items in the list of the budget.
+- Allows deletion of the items from the list, and from the data source.
+- It allows one to use a toggle function to set the reminder `on` or `off`.
 
 ### Get the items from the server
 This step is accomplished in the `App.js` file. It specifies how the app interacts with the server and what happens to the data fetched.
-- Now, once done with components, do this to the `App.js` file:
+
 ```js
 /*Import the other components for the application*/
 import {useEffect, useState} from 'react'
@@ -457,6 +461,7 @@ useEffect(() => {
 The code imports the needed modules and allows the data items to be fetched asynchronously from the server.
 
 - Add the code below under the previous one:
+
 ```js
 // Fetch Budgets
 const fetchBudgets = async () => {
@@ -524,100 +529,105 @@ const res = await fetch(`http://localhost:5000/budgets/${id}`, {
 ```
 
 The code specifies the URLs in which one can:
-- Add a new budget
-- Delete a budget
-- Fetch budgets
-- Toggle the reminder status
+- Adds a new budget.
+- Deletes a budget.
+- Fetch budgets.
+- Toggle the reminder status.
 
 
 - Now add a return together with an export statement as shown below:
 ```js
-/*Dispaly all the budgets fetched, otherwise display that there are no budgets to show*/
+/*Display all the budgets fetched, otherwise display that there are no budgets to show*/
 return (
-<Router>
-<div className='container'>
-  <Header
-    onAdd={() => setShowAddBudget(!showAddBudget)}
-    showAdd={showAddBudget}
-  />
-  <Route
-    path='/'
-    exact
-    render={(props) => (
-      <>
-        {showAddBudget && <AddBudget onAdd={addBudget}/>}
-        {budgets.length > 0 ? (
-          <Budgets
-            budgets={budgets}
-            onDelete={deleteBudget}
-            onToggle={toggleReminder}
-          />
-        ) : (
-            'No Budgets To Show'
+  <Router>
+    <div className='container'>
+      <Header
+        onAdd={() => setShowAddBudget(!showAddBudget)}
+        showAdd={showAddBudget}
+      />
+      <Route
+        path='/'
+        exact
+        render={(props) => (
+          <>
+            {showAddBudget && <AddBudget onAdd={addBudget}/>}
+            {budgets.length > 0 ? (
+              <Budgets
+                budgets={budgets}
+                onDelete={deleteBudget}
+                onToggle={toggleReminder}
+              />
+            ) : (
+                'No Budgets To Show'
+            )}
+          </>
         )}
-      </>
-    )}
-  />
-  <Route path='/about' component={About}/>
-  <Footer/>
-</div>
-</Router>
+      />
+      <Route path='/about' component={About}/>
+      <Footer/>
+    </div>
+  </Router>
 )
 }
 
 export default App
 ```
 
-- This code shown above does the following:
-  - Fetches the items from the specified URL and displays them
-  - Adds items to the list
-  - Deletes the items in the data source
-  - Toggles the item reminder (on, off) states
+This code shown above does the following:
+- Fetches the items from the specified URL and displays them.
+- Adds items to the list.
+- Deletes the items in the data source.
+- Toggles the item reminder (on, off) states.
 - If the app finds no data on the server, it will display that no budget is found; otherwise, it displays all other budgets.
 - The code also contains the footer and the about page link.
 
 ### Style the application
 - Finally, do some styling to the application. The styling code is found on this [link](https://github.com/blacklihgt/Mock-a-Datasource-for-React-using-JSON-Server/blob/main/src/index.css). Download it and save it in the `src` folder.
-- Make sure to run the command below to install all necessary packages before running the application using the command below:
+
+Make sure to run the command below to install all necessary packages before running the application using the command below:
+
 ```bash
 npm install
 ```
 
-- Run the created application using the following command:
+Run the created application using the following command:
+
 ```bash
 npm run start
 ```
 
 The application will look as shown below:
 
-![Home page](/engineering-education/mock-a-datasource-for-react-using-json-server/Homepage.png "Home page")
-![Add items](/engineering-education/mock-a-datasource-for-react-using-json-server/add-items.png "Add items")
-![About page](/engineering-education/mock-a-datasource-for-react-using-json-server/about-page.png "About page")
+![Home page](/engineering-education/mock-a-datasource-for-react-using-json-server/Homepage.png)
+![Add items](/engineering-education/mock-a-datasource-for-react-using-json-server/add-items.png)
+![About page](/engineering-education/mock-a-datasource-for-react-using-json-server/about-page.png)
 
-### Install JSON Server in the machine
-
+### Install json-server
 JSON server can be installed by running the command below:
+
 ```bash
 npm install -g json-server
 ```
 
-The command installs the package at global scope.
+The command installs the package at a global scope.
 
 Once installed, head over to the `package.json` file and add a script that quickly runs the server.
-In the scripts section, add the following line of code:
+
 ```json
 "server": "json-server --watch db.json --port 5000"
 ```
 
-This code above runs the server that serves responses to requests from the application. The data source which acts as a database at this app is the 'db.json'  file.
-It will be accessed via port `5000` as seen above and in the 'App.js' file.
+This code above runs a server that serves responses to requests from the application. The data source which acts as a database at this app is the `db.json` file.
 
-### Configure the JSON Server data source in the project
+It will be accessed via port `5000` as seen above and in the `App.js` file.
 
+### Configure the json-server data source
 In the `db.json` file, the server serves requests under the `http://localhost:5000/budgets/` URL.
+
 The data items are under the budgets section.
 
-- Copy-paste the code below into the `db.json` file:
+Copy-paste the code below into the `db.json` file:
+
 ```json
 {
   "budgets": [
@@ -655,18 +665,19 @@ The data items are under the budgets section.
 }
 ```
 
-It contains five items under the budgets section. These are the Carrots, Laundry, Ginger, Electricity, and Water.
+It contains five items under the budgets section. These are the `Carrots`, `Laundry`, `Ginger`, `Electricity`, and `Water`.
 
 ### Run the application
-
 Test the JSON Server by doing the following:
 
 - Run the main React application in one terminal by using:
+
 ```bash
 npm run start
 ```
 
 - In another terminal, run the server using:
+
 ```bash
 npm run server
 ```
@@ -676,59 +687,57 @@ npm run server
 
 The outcome looks like shown below:
 
-![Final image for the application](/engineering-education/mock-a-data source-for-react-using-json-server/final-server-product-image.png "Final image for the application")
+![Final image for the application](/engineering-education/mock-a-data-source-for-react-using-json-server/inal-server-product-image.png)
 
 ### More on JSON Server
+Let us look more about the package.
 
-Let us look more at the module:
+#### Change port, file, and file paths
+The filename and port where the server runs can be changed to `database.json` on port `3010` by running the command below on the terminal:
 
-#### Change port, file and file paths
-
-- The filename and port where the Server runs can be changed to `database.json` on port `3010` by running the command below on the terminal:
 ```bash
 json-server --watch database.json --port 3010
 ```
 
 - Static files located in different folders can also be served as shown below:
+
 ```bash
 json-server database.json --static ./public/database
 ```
 
-#### Perform Queries on the data
-
-This action may be helpful to, for example, when searching using the search bar in the application window. Follow the steps below:
+#### Perform queries on the data
+This action may be helpful when searching using the search bar. Follow the steps below:
 
 - Query the database for a particular value by running the following in a new terminal:
+
 ```bash
-curl  http://localhost:5000/budgets?q=Carrots
+curl http://localhost:5000/budgets?q=Carrots
 ```
 
-Here, the database is searched for any item with the value of 'Carrots' in it.
+Here, the database is searched for any item with the value of `Carrots` in it.
+
 The return value looks like follows:
 
-![Perform queries](/engineering-education/mock-a-datasource-for-react-using-json-server/querying.png "Perform queries")
+![Perform queries](/engineering-education/mock-a-datasource-for-react-using-json-server/querying.png)
 
-The module allows middlewares, random data generation, accessing the data source remotely, setting custom routes, e.t.c.
+The module allows middlewares, random data generation, accessing the data source remotely, setting custom routes, and many more.
 
-#### Add delay and change Host
-
+#### Add delay and change host
 - To change the host, use the `-H` or `--host` option.
 - Adding some delays (in milliseconds) to the server to replicate a real server, use the `-d` or `--delay` option.
 
 Both of these two are shown below:
+
 ```bash
 json-server --watch db.json --port 5000 -H 127.0.0.1 -d 1500
 ```
 
-Check out more on it [here](https://www.npmjs.com/package/json-server) on the docs.
-
-Find the code for this article in this [link](https://github.com/blacklihgt/Mock-a-Datasource-for-React-using-JSON-Server).
-
 ### Conclusion
-
 In conclusion, running and throwing away parts are essential to developers during software development.
+
 These parts are helpful in agile programming and prototyping. JSON Server dependency is an example of a quick dispensable project development unit.
-It is small-sized, easy to install, use, learn, and dispose of when one has finished using the prototype.
+
+It is small-sized, easy to install, use, learn, and dispose when one has finished using the prototype.
 
 At this point, the following have been covered:
 
@@ -737,8 +746,6 @@ At this point, the following have been covered:
 - Adding JSON Server module to a React project
 - Configuring JSON Server module
 
-Have you gotten hold of what you were searching for? If not, read more in the documentation found [here](https://www.npmjs.com/package/json-server).
+You can find the full code [here](https://github.com/blacklihgt/Mock-a-Datasource-for-React-using-JSON-Server).
 
-### References
-
-- JSON Server [Documentations](https://www.npmjs.com/package/json-server)
+You can read more about `json-server` package [here](https://www.npmjs.com/package/json-server).
