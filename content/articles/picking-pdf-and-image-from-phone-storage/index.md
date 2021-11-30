@@ -1,4 +1,4 @@
-This tutorial is going to cover on how to open gallery and files apps from your android application and pick an image and a PDF file. You will learn about intents specifically implicit intents. 
+This tutorial will cover how to open gallery and files apps from your android application and pick an image and a PDF file. In addition, you will learn about intents, specifically implicit intents. 
 There has been a challenge of choosing files from the phone storage since the contents available on the internet are ambiguous. This tutorial is going to simplify your work. 
 
 ### Table of Contents
@@ -26,16 +26,16 @@ Understanding this tutorial requires that you have:
 File choosing in Android involves implicit intents. Implicit intent is a type of intent that navigates the user to another application. For File choosing to be successful, certain permissions MUST  be allowed in the app manifest.
 
 ### What is Intents
-Is an object that facilitates communication between app components. Intents are used in cases when an application wants to start an activity, start a service, or when delivering a broadcast.
+Intent is an object that facilitates communication between app components. For example, intents are used when an application starts an activity, starts a service, or delivers a broadcast.
 
 ### Types of Intents
 Intents consist of two types:
 
 #### Implicit intents
-Is a type of intent that facilitates communication between two different apps. For instance, in this tutorial, we are going to imply implicit intent to communicate with the gallery and files apps. Implicit intents only need the declaration of the general action to be performed.
+Implicit intent is a type of intent that facilitates communication between two different apps. For instance, in this tutorial, we will imply implicit intent to communicate with the gallery and files apps. Implicit intents only need the declaration of the general action to be performed.
 
 #### Explicit intents
-Is a type of intent that allows communication within an application itself. For example, when you want to navigate from one activity to the next, you will trigger an explicit intent. 
+An explicit intent is a type of intent that allows communication between application components. For example, when you want to navigate one activity to the next, you will trigger an explicit intent. 
 
 Enough of theory let's dive into implementation.
 
@@ -123,8 +123,7 @@ Below is a screenshot of the alert dialog.
 
 [Alert Dialog](/engineering-education/picking-pdf-and-image-from-phone-storage/alert-dialog.png)
 
-When you want only the images in your gallery to be displayed, you include the type of intent to be images but if you want to display videos as well do not specify the type. 
-You can specify the type by including this:
+>Note: When you want only the images in your gallery to be displayed, you include the intent to be images, but if you want to display videos, do not specify the type. You can specify the type by including the code below in your intent:
 
 ```kotlin
 pickFromGallery.type = "/image"
@@ -317,6 +316,6 @@ class MainActivity : AppCompatActivity() {
 [Screenshot](!/engineering-education/picking-pdf-and-image-from-phone-storage/screenshot.png)
 
 ### Coclusion
-This tutorial is only meant to guide you through. You need to try the codes provided to practice and master the concept. 
+This tutorial is only meant to guide you through. First, you need to try the codes provided to practice and master the concept. [Intents](https://developer.android.com/guide/components/intents-filters) have various uses in Android development and should well understood.
 
-Happy codding!!!.
+Happy coding!!!.
