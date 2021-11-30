@@ -1,38 +1,60 @@
- Machine learning and deep learning frameworks have nothing to do with data purification. As part of data mining, preprocessing involves transforming raw data into a format that can be interpreted by the end-user. We'll look into Data Cleaning and missing values whereby, in a dataset, missing values are typically denoted by Nan, null, or None.
+For machine learning and deep learning models to perform well, data cleaning is one of the most important step. It involves transforming raw data into a format that can be interpreted by the end-user by handling missing values, handling special characters, handling skewed data, and so on.
 
- The dataset's data structure can be improved by removing errors, duplication, corrupted items, and other issues.
- ### Prerequisites
-1. Install [Python](https://www.python-ds.com/python-environment) into your Python environment.
-2. Having some knowledge of the Python programming language is a good idea.
+In this article, we'll look into data cleaning and handling missing values.
 
- Table of content:
-- [The significance of completing the missing values](#the-significance-of-completing-the-missing-values)
+Generally, missing values are denoted by `NaN`, `null`, or `None`.
+
+The dataset's data structure can be improved by removing errors, duplication, corrupted items, and other issues.
+
+### Prerequisites
+- Install [Python](https://www.python-ds.com/python-environment) into your Python environment.
+- Having some knowledge of the Python programming language is a good idea.
+
+### Table of contents
+- [Significance of handling the missing values](#significance-of-handling-the-missing-values)
 - [Problems caused by missing values](#problems-caused-by-missing-values)
 - [Types of missing data types](#types-of-missing-data-types)
 - [Classifications of missing values ](#classifications-of-missing-values )
 - [Types of Imputed Information](#types-of-imputed-information)
 - [How to fix our dataset's missing data](#how-to-fix-our-dataset's-missing-data)
-### The significance of completing the missing values
-Effective data management necessitates the ability to fill in blanks. It's a big deal in data analysis because it has such an impact on the outcome. When you're aware of so many data gaps, it's hard to accept the results. The statistical strength of a study might be weakened by skewed estimates, leading to inaccurate results.
+
+### Significance of handling the missing values
+Effective data management necessitates the ability to fill in blanks. It's a big deal in data analysis because it has such an impact on the outcome.
+
+When you're aware of so many data gaps, it's hard to accept the results. The statistical strength of a study might be weakened by skewed estimates, leading to inaccurate results.
+
 ### Problems caused by missing values
-- Because of this, it becomes more difficult to rule out the null hypothesis during testing.
-- Parameter estimations could be affected if data is lost.
+- Because of this, it becomes more difficult to rule out the [null hypothesis](https://en.wikipedia.org/wiki/Null_hypothesis) during testing.
+- Parameter estimations could be affected, if data is lost.
 - The sample's representation may be distorted as a result.
 - Because of this, interpreting the study's results may be more difficult.
+- The accuracy of models might not be right.
+- Data inconsistencies might lead to frequent errors while training the model.
+
 ### Types of missing data types
-Several classifications can be used depending on the pattern or data that is lacking from the dataset or data.
-#### 1. Missing Completely at Random
-This occurs when the chance of missing data is unrelated to the precise value that will be obtained or the observed replies to a query.
+Several classification or prediction models depends on the pattern of the data lacking from the dataset.
+
+#### Missing completely at random
+This occurs when the chance of missing data is unrelated to the prediction value or the observed response to a query.
+
+In simple words, missing data that are not correlated with the target variable can be ignored.
 
 **Solution:** Deleting rows or columns.
-#### 2. Missing at Random
-Rather than taking into account a single missing value, a cluster of observed responses has a greater impact on the likelihood that an experimenter will receive a missing response.
+
+#### Missing at Random
+Rather than taking into account of a single missing value, a cluster of observed responses has a greater impact on the likelihood that an experimenter will receive as a missing response.
 
 **Solution:** Imputation of data.
-#### 3. Missing not at Random
-Missing not at Random is the only piece of information that is lacking, other than the previously listed categories. Managing the MNAR data sets is a major annoyance. Modeling the missing data is the only way to get a good approximation of the parameters in this scenario.
+
+We impute the missing data, when we find that missing data has high correlation to the target variable that might result in better model results.
+
+#### Missing not at Random
+Missing not at random is the only piece of information that is lacking, other than the previously listed categories.
+
+Managing the MNAR data sets is a major annoyance. Modeling the missing data is the only way to get a good approximation of the parameters in this scenario.
 
 **Solution:** Improve dataset find data.
+
 ### Classifications of missing values  
 Missing values can be classified into the following categories:
 1. Numerical dataset with a continuous variable or attribute
