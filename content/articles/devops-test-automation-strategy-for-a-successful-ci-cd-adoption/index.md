@@ -37,73 +37,87 @@ This article will attempt to answer all these questions and provide steps to est
 - [Conclusion](#conclusion)
 
 ### Why is having a test automation strategy crucial for CI/CD?
-Automated testing is the first move in the right direction when you embark on your automation journey. However, for continuous delivery to be right up the developer’s alley, you need to build a rapid and continuous feedback mechanism. Although, merely embracing the DevOps test automation mechanism is not adequate, because to achieve successful CI/CD it is necessary to implement it correctly.
-Some of the severe real-world instances of the biggest technology failures (which occurred years ago, when the world was not as technologically sophisticated) indicate what can happen when adequate testing is not done on respective systems/software. For instance,
-> On April 26, 1994, an aircraft named Airbus A300B4-622R was finishing its usual flight routine, when right before its landing at Nagoya Airport it crashed, inflicting a heavy casualty count of 264 people. To date, the accident remains one of the most lethal mishaps in the history of China Airlines.
-> Similarly, on August 14, 2003, after 2:00 PM, a high-voltage power line in northern Ohio brushed against some overgrown trees and shut down completely, forcing 50 billion people to live without power for two days. The alarm system failure caused by software issues made it one of the biggest blackouts in North American history.
+Automated testing is the first move in the right direction when you embark on your automation journey. However, for continuous delivery to be right up the developer’s alley, you need to build a rapid and continuous feedback mechanism. Although merely embracing the DevOps test automation mechanism is not adequate because to achieve successful CI/CD, it is necessary to implement it correctly. 
+
+Some of the severe real-world instances of the biggest technology failures (which occurred years ago, when the world was not as technologically sophisticated) indicate what can happen when adequate testing is not done on respective systems/software. For instance, on April 26, 1994, an Airbus A300B4-622R was finishing its usual flight routine when right before its landing at Nagoya Airport, it crashed, inflicting a heavy casualty count of 264 people. 
+
+To date, the accident remains one of the most lethal mishaps in the history of China Airlines. Similarly, on August 14, 2003, after 2:00 PM, a high-voltage power line in northern Ohio brushed against some overgrown trees. It shut down completely, forcing 50 billion people to live without power for two days. The alarm system failure caused by software issues made it one of the most significant blackouts in North American history.
+
 ### Six steps to building a successful CI test automation strategy
 #### Define your project’s scope of automation
-The first step is to examine the scope of your project from an automation point of view. Here, all deliverables, tasks, and sprints must be well-defined by the software team, including its time frames.
-The deciding factor for automating test cases is to know which ones to automate. You cannot automate everything, so you should be lining up your priorities, which will ultimately result in higher ROI. One of the well-known models that can aid you in shortlisting test cases for automation is Mike Cohen’s test automation pyramid, which includes:
+The first step is to examine the scope of your project from an automation point of view. The software team must define all deliverables, tasks, and sprints, including their time frames. 
+
+The deciding factor for automating test cases is to know which ones to automate. You cannot automate everything, so you should be lining up your priorities, ultimately resulting in higher ROI. One of the well-known models that can aid you in shortlisting test cases for automation is Mike Cohen’s test automation pyramid, which includes:
 1. Unit test
 2. Acceptance test
 3. User Interface (UI) test 
+
 ![pyramid](/engineering-education/devops-test-automation-strategy-for-a-successful-ci-cd-adoption/pyramid.png) 
-No matter how many Selenium commands your testers might know or what testing commands they use, some things simply cannot be automated like:
-> Ever-changing needs
-> Exhaustive documentation
-> Anti-automation (like CAPTCHA)
-> One-time testing
-> Ad-hoc testing
+
+No matter how many Selenium commands your testers might know, or what testing commands they use, some things cannot be automated like:
+
+Ever-changing needs Exhaustive documentation Anti-automation (like CAPTCHA) One-time testing Ad-hoc testing.
+
 #### Choose the appropriate testing automation tool
-Picking a suitable test automation tool that meets the standards of your project is crucial since it is one of the key factors to ensure the success of your adaptive test automation strategy. However, a major concern is the selection of the right tool from a wide array of automation tools available in the market today.
-To select the most appropriate testing tool that addresses your unique project needs, follow these few simple steps:
-Step 1:    Understand your project needs thoroughly
-Step 2:    Check whether the tool will support the platform/technology on which your software/app is built
-Step 3:    Examine if the tool can execute cross-platform testing
-Step 4:    Verify if the tool will strike a balance between ease of operation and technology
-Step 5:    While shortlisting tools consider these vital parameters:
-          > Licensing cost of the tool
-          > Maintenance costs
-          > Tool scalability
-          > Training and support
-          > Tool performance and stability
+Picking a suitable test automation tool that meets the standards of your project is crucial since it is one of the critical factors to ensure the success of your adaptive test automation strategy. However, a significant concern is selecting the right tool from a wide array of automation tools available in the market today. 
+
+To select the most appropriate testing tool that addresses your unique project needs, follow these few simple steps: 
+- Step 1: Understand your project needs thoroughly.
+- Step 2: Check whether the tool will support the platform/technology on which your software/app is built.
+- Step 3: Examine if the tool can execute cross-platform testing.
+- Step 4: Verify if the tool will strike a balance between ease of operation and technology.
+- Step 5: While shortlisting tools consider these vital parameters:
+          * Licensing cost of the tool
+          * Maintenance costs
+          * Tool scalability
+          * Training and support
+          * Tool performance and stability
+          
 However, it is always advised to consult the best-in-class subject matter experts with the right expertise to choose/configure an appropriate testing tool. 
+
 #### Set up your cloud-based test environment
-A test environment is a combination of hardware and software, which enables QA testers to run multiple tests on novel native/web applications. However, it requires a great deal of effort and expertise to build/deploy a predictable, cloud-based test environment for a concrete CI/CD pipeline. Hence, a smart move is to consult the right solution provider for configuring a stable, cloud-based test environment.
-However, you must take certain steps to create/configure an automated test environment for DevOps like:
-Step 1:    Realizing the requirements of a test environment
-Step 2:    Planning, developing, and provisioning of the test environment
-Step 3:    Embracing necessary technologies and tools with licenses
-Step 4:    Data masking and desensitization
-Step 5:    Controlling and observing the test environment proactively
+A test environment combines hardware and software, enabling QA testers to run multiple tests on native/web applications. However, it requires a great deal of effort and expertise to build/deploy a predictable, cloud-based test environment for a concrete CI/CD pipeline. 
+
+Hence, a smart move is to consult the right solution provider for configuring a stable, cloud-based test environment. However, you must take specific steps to create/configure an automated test environment for DevOps, like:
+- Step 1: Realizing the requirements of a test environment.
+- Step 2: Planning, developing, and provisioning the test environment.
+- Step 3: Embracing necessary technologies and tools with licenses.
+- Step 4: Data masking and desensitization. 
+- Step 5: Controlling and observing the test environment proactively.
+
 #### Conduct a test case risk assessment
-The fourth step is to analyze the risks linked with automation testing, examine the severity of those risks, and how to optimize it. A test case risk assessment is a two-step procedure, which includes:
-**Step 1: Functional path risk assessment**
+The fourth step is to analyze the risks linked with automation testing, examine the severity of those risks, and optimize it. A test case risk assessment is a two-step procedure, which includes:
+
+##### Step 1: Functional path risk assessment
 In this step, you need to capture the risk involved in every functional module and prioritize all functional modules against each other.
-**Step 2: Risk rating of test case**
-Once you identify the functional risks linked to a specific module, the second step is to calibrate those risks by recognizing the probability of failure and severity of business damage and then computing the risk factor for every test case with the following formula. 
-> Risks rating of test case = probability of failure * the severity of business damage
- A few other risks that you must consider for your test cases are:
+
+##### Step 2: Risk rating of a test case.
+Once you identify the operational risks linked to a specific module, the second step is to calibrate those risks by recognizing the probability of failure and severity of business damage and then computing the risk factor for every test case with the following formula.
+
+Risks rating of test case = probability of failure * the severity of business damage A few other risks that you must consider for your test cases are:
  - Configuration risk
  - API design risk
  - Refactoring risk
  - Integration risk
  - Market risk
  - Orchestration risk
+ 
 #### Run and manage test cases
-It is vital to define the test cases, execute them and manage them for effective automated testing. An execution plan must consist of two chief things:
-1. Daily tasks and
+It is vital to define the test cases, execute them and manage them for effective automated testing. An execution plan must consist of two top things:
+1. Daily tasks
 2. Automation procedures
-Moreover, there are certain test tips that you can follow while writing test scripts and executing them like:
-- Choosing the test cases that you are willing to automate
-- Running and verifying test cases multiple times before adding them to a regression suite
-- Trying to make a test case resilient to changes
-- Using pipeline orchestrators to execute numerous test cases simultaneously
+
+Moreover, there are specific test tips that you can follow while writing test scripts and executing them like:
+- Choosing the test cases that you are willing to automate.
+- Running and verifying test cases multiple times before adding them to a regression suite.
+- Trying to make a test case resilient to changes.
+- Using pipeline orchestrators to execute numerous test cases simultaneously.
+
 #### Analyze continuously and remodel the strategy for improvement
-The last but not the least step is to constantly analyze the success and revamp the test automation strategy model via the automation maturity model (if needed). All you need to do in revamping the strategy is to go through everything in your existing strategy, find faults (if any) and fix them using the automation maturity model. This model is divided into multiple phases as follows:
+The last but minor step is to constantly analyze the success and revamp the test automation strategy model via the automation maturity model (if needed). All you need to do in revamping the strategy is to go through everything in your existing strategy, find faults (if any) and fix them using the automation maturity model. This model is divided into multiple phases as follows:
 
 ![automation-model](/engineering-education/devops-test-automation-strategy-for-a-successful-ci-cd-adoption/devops-automation-model.png) 
+
 ### Benefits of test automation
  - Higher ROI
  - Enhanced efficiency
@@ -112,5 +126,11 @@ The last but not the least step is to constantly analyze the success and revamp 
  - Fast-paced feedback response
  - Optimum infrastructure utilization
  - Predictable cloud-based test environment
+ 
 ### Conclusion 
-To fully exercise the merits of test automation, a top-notch test automation strategy is required to be implemented, which could be expensive. The other challenge is to search for the right test automation solution provider with a skilled team of experts to deploy, build and maintain the test automation strategy/framework.
+To fully exercise the merits of test automation, a top-notch test automation strategy must be implemented, which could be expensive. The other challenge is to search for the right test automation solution provider with a skilled team of experts to deploy, build and maintain the test automation strategy/framework.
+
+Happy learning!
+
+---
+Peer Review Contributions by: [Briana Nzivu](/engineering-education/authors/briana-nzivu/)
