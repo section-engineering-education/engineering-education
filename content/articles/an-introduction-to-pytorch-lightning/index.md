@@ -126,11 +126,11 @@ In the training step, we'll discuss five functions. We have the `train_dataloade
         )
         # Data loader
         train_loader = torch.utils.data.DataLoader(
-            dataset=train_dataset, batch_size=batch_size, num_workers=4, shuffle=False
+            dataset=train_dataset, batch_size=batch_size, num_workers=2, shuffle=False
         )
         return train_loader
 ```
-The `train_dataloader()` function generates the training data loader. It allows us to load the dataset we want to use for our project. In this project, we are loading the MNIST dataset.
+The `train_dataloader()` function generates the training data loader. It allows us to load the dataset we want to use for our project. In this project, we are loading the MNIST dataset. The number of workers, `num_workers` change depending on the numbers of CPUs in your machine. Most computers have 4 CPUS. If so, change that value to 4 or to the number of CPUs available on your machine.
 
 ```python
     def val_dataloader(self):
@@ -139,7 +139,7 @@ The `train_dataloader()` function generates the training data loader. It allows 
         )
 
         test_loader = torch.utils.data.DataLoader(
-            dataset=test_dataset, batch_size=batch_size, num_workers=4, shuffle=False
+            dataset=test_dataset, batch_size=batch_size, num_workers=2, shuffle=False
         )
         return test_loader
 ```
@@ -188,3 +188,6 @@ Happy coding!
 ### Further reading
 - [PyTorch Lightning](https://www.pytorchlightning.ai/)
 - [PyTorch Lightning GitHub Repo](https://github.com/PyTorchLightning/pytorch-lightning)
+
+---
+Peer Review Contributions by: [Collins Ayuya](https://www.section.io/engineering-education/authors/collins-ayuya/)
