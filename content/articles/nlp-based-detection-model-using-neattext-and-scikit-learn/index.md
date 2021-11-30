@@ -2,21 +2,21 @@
 layout: engineering-education
 status: publish
 published: true
-url: /how-to-build-an-nlp-based-emotion-detection-model-using-neattext-and-scikit-learn/
+url: /nlp-based-detection-model-using-neattext-and-scikit-learn/
 title: How to build an NLP based emotion detection model using NeatText and Scikit-learn
 description: This tutorial will show the reader how to build an NLP based emotion detection model using NeatText and Scikit-learn.
 author: francis-ndiritu
-date: 2021-11-27T00:00:00-13:00
+date: 2021-11-30T00:00:00-09:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/how-to-build-an-nlp-based-emotion-detection-model-using-neattext-and-scikit-learn/hero.jpg
-    alt: How to build an NLP based emotion detection model using NeatText and Scikit-learn Hero image
+  - url: /engineering-education/nlp-based-detection-model-using-neattext-and-scikit-learn/hero.jpg
+    alt: NLP emotion detection NeatText Scikit-learn Hero image
 ---
-Natural language processing helps computers to understand speech and written text like a human being. This allows machines to compute necessary responses. 
+Natural language processing helps computers to understand speech and written text like a human being. This allows machines to compute necessary responses. One of the NLP applications is emotion detection in text.
 <!--more-->
-One of the NLP applications is emotion detection in text. The emotion detection model is a type of model that is used to detect the type of feeling and attitude in a given text. It may be a feeling of joy, sadness, fear, anger, surprise, disgust, or shame. An emotion detection model can classify a text into the following categories. By using emotion detection in text, businesses can know how customers feel about their brand and products. This helps businesses to improve product quality and service delivery.
+The emotion detection model is a type of model that is used to detect the type of feeling and attitude in a given text. It may be a feeling of joy, sadness, fear, anger, surprise, disgust, or shame. An emotion detection model can classify a text into the following categories. By using emotion detection in text, businesses can know how customers feel about their brand and products. This helps businesses to improve product quality and service delivery.
 
 In this tutorial, we will use Neattext and Scikit-learn in building our model. Neattext is a Python library used to pre-process our dataset. Neattext will clean the text dataset by removing stop words and other noise. This makes it easy for the model to use the dataset during training. We'll use Scikit-learn to build our model. It contains all the algorithms required for classification. This is a practical guide from data pre-processing to model building and testing.
 
@@ -47,7 +47,7 @@ In this tutorial, we will use a dataset that contains various texts with differe
 
 A snip of the dataset is shown below:
 
-![Dataset snip](/engineering-education/how-to-build-an-nlp-based-emotion-detection-model-using-neattext-and-scikit-learn/dataset-snip.png)
+![Dataset snip](/engineering-education/nlp-based-detection-model-using-neattext-and-scikit-learn/dataset-snip.png)
 
 To get this dataset in CSV format, click [here](https://drive.google.com/file/d/1tamvXZzgcYcHRr3GwFk8C4LVVaWHMqt0/view?usp=sharing).
 
@@ -76,7 +76,7 @@ df.head()
 ```
 The output is shown below:
 
-![Dataset structure](/engineering-education/how-to-build-an-nlp-based-emotion-detection-model-using-neattext-and-scikit-learn/dataset-structure.png)
+![Dataset structure](/engineering-education/nlp-based-detection-model-using-neattext-and-scikit-learn/dataset-structure.png)
 
 The image above shows that our dataset has two columns: `Emotion` and `Text`. The `Emotion` column represents the various emotion labels. The `Text` column shows all the texts in our dataset.
 
@@ -87,7 +87,7 @@ df['Emotion'].value_counts()
 ```
 The output is shown below:
 
-![Value count](/engineering-education/how-to-build-an-nlp-based-emotion-detection-model-using-neattext-and-scikit-learn/emotion-value-count.png)
+![Value count](/engineering-education/nlp-based-detection-model-using-neattext-and-scikit-learn/emotion-value-count.png)
 
 We can now start cleaning our dataset using Neattext.
 
@@ -111,7 +111,7 @@ dir(nfx)
 ```
 The output for the methods and attributes is shown below:
 
-![Methods and attributes](/engineering-education/how-to-build-an-nlp-based-emotion-detection-model-using-neattext-and-scikit-learn/methods-attributes.png)
+![Methods and attributes](/engineering-education/nlp-based-detection-model-using-neattext-and-scikit-learn/methods-attributes.png)
 
 We are interested in only two methods from the list, the `remove_stopwords` and `remove_userhandles`.
 
@@ -140,7 +140,7 @@ df
 ```
 The output of the dataset after removing user handles and stopwords is shown below:
 
-![Clean dataset](/engineering-education/how-to-build-an-nlp-based-emotion-detection-model-using-neattext-and-scikit-learn/clean-dataset.png)
+![Clean dataset](/engineering-education/nlp-based-detection-model-using-neattext-and-scikit-learn/clean-dataset.png)
 
 Now that we cleaned our dataset, we can now load our machine learning packages.
 
@@ -205,7 +205,7 @@ pipe_lr.fit(x_train,y_train)
 ```
 The `Pipeline` will run the following stages automatically and produce the following output:
 
-![Pipeline ouput](/engineering-education/how-to-build-an-nlp-based-emotion-detection-model-using-neattext-and-scikit-learn/pipeline-output.png)
+![Pipeline ouput](/engineering-education/nlp-based-detection-model-using-neattext-and-scikit-learn/pipeline-output.png)
 
 This process produces the optimal model that will give the best results. With time the model will improve on its own and give better prediction results.
 
