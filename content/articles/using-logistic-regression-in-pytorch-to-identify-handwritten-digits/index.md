@@ -2,12 +2,12 @@
 layout: engineering-education
 status: publish
 published: true
-url: /implementing-gan-from-scratch/
-title: Implementing GANs from Scratch
+url: /using-logistic-regression-in-pytorch-to-identify-handwritten-digits/
+title: Using Logistic Regression in PyTorch to Identify Handwritten Digits
 description: 
-author: bonface-ndolo
+author: masese-gavin
 date: 2021-11-19T00:00:00-18:00
-topics: [Languages]
+topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
 
