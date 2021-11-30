@@ -2,4 +2,4 @@
 title: Linchez Maina
 type: authors 
 ---
-Maina is an undergraduate computer student. He is interested in learning artificial intelligence and machine learning but has a thing for web development. 
+linchez Maina is an undergraduate student who is interested in artificial intelligence and machine learning but has a passion for web development. He like to spend his leisure watching documentaries and loves to connect with people. 
