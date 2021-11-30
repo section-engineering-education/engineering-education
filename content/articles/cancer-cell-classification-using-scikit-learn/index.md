@@ -6,7 +6,7 @@ To determine whether cancer cells are `malignant` or `benign,` we must examine t
 ### Prerequisites
 1. Using Scikit-learn will be a necessity for our project. 
 2. Jupyter notebooks are preferred for this project, however you are free to use any IDE of your choice.
-3. Breast cancer wisconsin (diagnostic) dataset will be used in this tutorial therefore ensure its loaded.
+3. Breast cancer wisconsin (diagnostic) dataset will be used in this tutorial therefore ensure its loaded. You can download a copy of UCI ML Breast Cancer Wisconsin (Diagnostic) dataset from [here](https://scikit-learn.org/0.21/modules/generated/sklearn.datasets.load_breast_cancer.html)
 
 ### Table of contents
 - [Naive Bayes algorithm](#naive-bayes-algorithm)
@@ -17,7 +17,8 @@ To determine whether cancer cells are `malignant` or `benign,` we must examine t
 - [Conclusion](#conclusion)
 
 ### Naive Bayes algorithm
-Despite its simplicity, Naive Bayes is a potent algorithm for predicting outcomes. In Naive Bayes, each input variable is assumed to be independent, which is why it's named naive. In reality, this is a big assumption, and the technique works well for a wide range of difficult tasks.
+Despite its simplicity, Naive Bayes is a potent algorithm for predicting outcomes. In Naive Bayes, each input variable is assumed to be independent, which is why it's named naive. In reality, this is a big assumption, and the technique works well for a wide range of difficult tasks. When assumption of independence holds, a Naive Bayes classifier performs better compare to other models like logistic regression and you need less training data. It perform well in case of categorical input variables compared to numerical variable
+
 
 This popular method for binary classification, dubbed Naive Bayes, will be selected for use in this model.
 
@@ -46,7 +47,7 @@ To set it up, use the command line and enter the following code:
 pip install jupyter
 ```
 ### The dataset
-We will be classifying cancer cells based on their features and identifying them if they are malignant or benign using scikit-learn library for python programming language. We will be using the breast cancer Wisconsin dataset for our machine learning problem.
+We will be classifying cancer cells based on their features and identifying them if they are malignant or benign using scikit-learn library for python programming language. We will be using the [breast cancer Wisconsin dataset](https://scikit-learn.org/0.21/modules/generated/sklearn.datasets.load_breast_cancer.html) for our machine learning problem.
 
 Malignant and benign breast cancer tumors are included in the data set, as well as their respective classification labels. The data set has data of 569 tumors and includes data on 30 attributes of a tumor that we will be using to train our model. The following function can be used to load it:
 ```python
