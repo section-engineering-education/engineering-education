@@ -16,12 +16,12 @@ images:
 ---
 Machine Learning is an area of AI that explores how computers can learn without needing to be explicitly taught. Machine learning can help tackle many real-world problems.
 <!--more-->
-To determine whether cancer cells are `malignant` or `benign,` we must examine their physical properties, which can be used to identify them. A machine learning problem will be addressed using `Scikit-learn`. Scikit-learn, a Python framework, is a free and open-source tool for machine learning, machine mining, and data analysis.
+To determine whether cancer cells are `malignant` or `benign,` we must examine their physical properties, which we can use to identify them. A machine learning problem will be addressed using `Scikit-learn`. Scikit-learn, a Python framework, is a free and open-source tool for machine learning, machine mining, and data analysis.
 
 ### Prerequisites
 1. Using Scikit-learn will be a necessity for our project. 
 2. Jupyter notebook is preferred for this project. But, you are free to use any IDE of your choice.
-3. Breast cancer wisconsin (diagnostic) dataset will be used in this tutorial, therefore, ensure its loaded. You can download a copy of this dataset from [here](https://scikit-learn.org/0.21/modules/generated/sklearn.datasets.load_breast_cancer.html).
+3. Breast Cancer Wisconsin (diagnostic) dataset will be used in this tutorial. Therefore, ensure it's loaded. You can download a copy of this dataset from [here](https://scikit-learn.org/0.21/modules/generated/sklearn.datasets.load_breast_cancer.html).
 
 ### Table of contents
 - [Naive Bayes algorithm](#naive-bayes-algorithm)
@@ -32,52 +32,49 @@ To determine whether cancer cells are `malignant` or `benign,` we must examine t
 - [Conclusion](#conclusion)
 
 ### Naive Bayes algorithm
-Despite its simplicity, Naive Bayes is a potent algorithm for predicting outcomes. In Naive Bayes, each input variable is assumed to be independent, which is why it's named naive. In reality, this is a big assumption, and the technique works well for a wide range of difficult tasks. When assumption of independence holds, a Naive Bayes classifier performs better compare to other models like logistic regression, and you need less training data. 
-It perform well where you need to use categorical input variables compared to numerical variable. This popular method for binary classification, known as Naive Bayes, will be selected for use in this tutorial.
+Despite its simplicity, Naive Bayes is a robust algorithm for predicting outcomes. In Naive Bayes, each input variable is assumed to be independent, which is why it's named naive. In reality, this is a big assumption, and the technique works well for a wide range of challenging tasks. When the assumption of independence holds, a Naive Bayes classifier performs better compared to other models like logistic regression, and you need less training data. 
+
+It performs well where you need to use categorical input variables compared to numerical variables. This popular method for binary classification, known as Naive Bayes, will be selected for use in this tutorial.
 
 ### Advantages of the Naive Bayes classification
 - It's easy to get started using it.
-- Less training data is needed.
+- Less training data is needed for training.
 - Continuous and discrete data are also supported.
 - The number of predictors and data points can be increased indefinitely, making it extremely flexible and adaptable.
 - It is rapid and can be used to make predictions in real-time.
 
 ### Disadvantages of the Naive Bayes classification
-- In naive Bayes, all predictors (or traits) are assumed to be independent, however, this is rarely the case in reality.
-- To avoid assigning zero probability to a categorical variable whose category was not accessible in the training dataset, this technique uses the zero-frequency problem. Zero frequency indicates simply a continuous term, no wave, no peaks passing.
+- In naive Bayes, all predictors (or traits) are assumed to be independent. However, this is rarely the case in reality. This technique uses the zero-frequency problem to avoid assigning zero probability to a categorical variable whose category was not accessible in the training dataset. Zero frequency indicates simply a continuous term, no wave, no peaks passing.
 
 ### Installations
-Run the following line on the command prompt to download and install it on your computer, or [follow this documentation.](https://scikit-learn.org/0.17/install.html)
+Please run the following line on the command prompt to download and install scikit-learn on your computer. You can as well follow this {documentation](https://scikit-learn.org/0.17/install.html) to install it.
 
 ```bash
 pip install scikit-learn
 ```
-> For this project, Jupyter notebook are encouraged, although you are free to use any IDE you choose. Instead of developing an entire script from scratch, one can execute a few lines of code and see what happens one by one rather than writing the entire script and running it.
+> For this project, Jupyter notebook is encouraged, although you can use any IDE you choose. Instead of developing an entire script from scratch, one can execute a few lines of code and see what happens one by one rather than writing the whole script and running it.
 
-To set it up, use the command line and enter the following code:
+To install jupyter botebook, use the command line and enter the following code:
 
 ```bash
 pip install jupyter
 ```
 ### The dataset
-We will be classifying cancer cells based on their features and identifying them if they are malignant or benign using scikit-learn library for python programming language. We will be using the [Breast Cancer Wisconsin dataset](https://scikit-learn.org/0.21/modules/generated/sklearn.datasets.load_breast_cancer.html) for our machine learning problem.
+We will be classifying cancer cells based on their features and identifying if they are malignant or benign using the scikit-learn library for python programming language. We will be using the Breast Cancer Wisconsin [dataset](https://scikit-learn.org/0.21/modules/generated/sklearn.datasets.load_breast_cancer.html) for our machine learning problem.
 
-Malignant and benign breast cancer tumors are included in the data set, as well as their respective classification labels. The data set has data of 569 tumors and includes data on 30 attributes of a tumor that we will be using to train our model. The following function can be used to load it:
+Malignant and benign breast cancer tumors are included in the data set and their respective classification labels. The data set has 569 tumors and includes data on 30 attributes of a tumor that we will be using to train our model. We can use the `load_breast_cancer()` function to load it.
 
-```python
-load_breast_cancer([return_X_y])
-```
 ### Classification implemented with the Scikit-learn framework
 #### 1. Adding the required modules and data to the import
 
-Scikit-learn and Breast cancer wisconsin (diagnostic) dataset will be imported into our program as a first step.
+Scikit-learn and Breast Cancer Wisconsin (diagnostic) dataset will be imported into our program as a first step.
 
 ```python
 import sklearn
 from sklearn.datasets import load_breast_cancer
 ```
 #### 2. Creating a variable from the dataset
-We must take into account the labels, classification labels, feature meanings, and the data to be learned from this dataset.
+We must consider the labels, classification labels, feature meanings, and the data to be learned from this dataset.
 
 ```python
 data = load_breast_cancer()
@@ -85,7 +82,7 @@ data = load_breast_cancer()
 We've loaded the breast cancer dataset into the `data` variable.
 
 #### 3. Arranging and analyzing data
-Before we can learn how to train our model, we need to organize the data. If you want to see what it contains, you can use the **print()** function.
+Before we can learn how to train our model, we need to organize the data. We can use the `print()` function if we want to see what it contains.
 
 ```python
 # Organizing our data
@@ -94,7 +91,7 @@ ourlabels = data['target']
 namesForfeature = data['feature_names']
 ourfeatures = data['data']
 ```
-You can then use the **print()** function to examine the data.
+You can then use the `print()` function to examine the data.
 
 ```python
 print(namesForlabels)
@@ -104,9 +101,9 @@ Output:
 ```bash
 ['malignant' 'benign']
 ```
-Tumor data is classified as `malignant` or `non-malignant` as you can see.
+Tumor data is classified as `malignant` or `non-malignant`, as you can see.
 
-Labels 0 and 1 are binary values representing labels where 0 indicates malignant tumors and 1 indicates benign tumors when they are written.
+Labels 0 and 1 are binary values representing labels where 0 indicates malignant tumors and 1 indicates benign tumors when written.
 
 ```python
 print(ourlabels)
@@ -131,7 +128,7 @@ Output:
  1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 0 1 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
  1 1 1 1 1 1 1 0 0 0 0 0 0 1]
 ```
-The tumor's 30 distinct characteristics and properties may be seen in full detail when the features are printed. Training our model on factors such as a tumor's malignant or benign status will help us make an accurate prediction.
+When the features are printed, the tumor's 30 distinct characteristics and properties may be seen in full detail. Training our model on factors such as a tumor's malignant or benign status will help us make an accurate prediction.
 
 ```python
 print(ourfeatures)
@@ -150,29 +147,30 @@ Output:
 There are 569 instances of tumor data in the dataset in question, each with a numerical value for one of the 30 variables in question. So, from the above data, we can conclude that the first instance of tumor is **malignant** and it has a mean radius of value 1.79900000e+01. 
 
 #### 4. Creating sets of data to organize the information
-We need to evaluate our classifier's accuracy by running it on data that has never been seen before. We'll divide our data into two sets, the training and test sets, before we begin creating our model. Training and evaluation of the model will be done on the training set, and then it will be used to predict the unknown test set.
+We need to evaluate our classifier's accuracy by running it on data never seen before. We'll split our data into two sets, the training and test sets, before creating our model. The model's training and evaluation will be done on the training set, and then we will use it to predict the unknown test set.
 
-Sklearn comes with a function called **train test split()**, which automatically divides the data into these two groups for us.
+Sklearn comes with a function called `train test split()`, which automatically splits the data into these two groups for us.
 
 ```python 
 from sklearn.model_selection import train_test_split
 
 train, test, trainingLabels, testingLabels = train_test_split(ourfeatures, ourlabels, test_size = 0.33, random_state = 42)
 ```
-It is possible to utilize the test size as a parameter to randomly divide the data. We've divided the original data into test data by a third of its original size. Other than that, the rest of the data is used for training. A different label for the train and test variables is used for each.
+It is possible to utilize the test size as a parameter to divide the data randomly. We've split the original data into test data by a third of its original size. Other than that, the rest of the data is used for training. A different label for the train and test variables is used for each.
 
-Refer to the [documentation](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html) for further information on how to use **train_test_split**() function.
+Refer to the [documentation](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html) for further information on how to use `train_test_split()` function.
 
 #### 5. Building the Model
-You can select from a wide variety of machine learning models to meet your needs. Each one has advantages and cons of its own. A popular method for binary classification, dubbed `Naive Bayes,` has been selected for use in this model. GaussianNB is the first module that needs to be imported and initialized using **GaussianNB()** function and then use the **fit()** method to train your model on the dataset's data.
+You can select from a wide variety of machine learning models to meet your needs. Each one has advantages and cons of its own. A popular method for binary classification, `Naive Bayes,` has been selected for this model. GaussianNB is the first module that needs to be imported and initialized using `GaussianNB()` function and then use the `fit()` method to train your model on the dataset's data.
 
 ```python
 from sklearn.naive_bayes import GaussianNB
 
 gaussiannb = GaussianNB()
+
 ourModel = gaussiannb.fit(train, trainingLabels)
 ```
-To generate predictions on our test set, we first need to finish training the model. The built-in **predict()** function returns a prediction value array for each data point in the test set. Our forecasts will be displayed using the **print()** method.
+To generate predictions on our test set, we first need to finish training the model. The built-in `predict()` function returns a prediction value array for each data point in the test set. Our forecasts will be displayed using the `print()` method.
 
 ```python
 ourPredictions = gaussiannb.predict(test)
@@ -189,7 +187,7 @@ Output:
  0 1 1]
 ```
 #### 6. Accuracy testing of the model trained
-If we want to make sure our model is accurate, we may compare the predictions it makes to the actual labels in the testing set. Use the sklearn module built-in **accuracy_score()** function for this task.
+If we want to make sure our model is accurate, we may compare its predictions to the actual labels in the testing set. We use the sklearn module built-in `accuracy_score()` function for this task.
 
 ```python
 from sklearn.metrics import accuracy_score
@@ -201,12 +199,12 @@ Output:
 ```bash
 0.9414893617021277
 ```
-If a tumor is malignant or benign, our studies show that this machine learning classifier based on the `Naive Bayes` algorithm is 94.15% accurate.
+These results show that this machine learning classifier based on the `Naive Bayes` algorithm is 94.15% accurate.
 
-To see the whole code for this tutorial, click [here](https://colab.research.google.com/drive/1Ztr7e9qZ9nrLHSGXJ1EAjBplNGXXtjC7?usp=sharing).
+To see the full code for this tutorial, click [here](https://colab.research.google.com/drive/1Ztr7e9qZ9nrLHSGXJ1EAjBplNGXXtjC7?usp=sharing).
 
 ### Conclusion
-Determination can be done by looking at the features of cancer cells, which can indicate whether they are `malignant` or `benign.` We used `scikit-learn` to address a machine learning problem. Python framework Scikit-learn is a free and open-source tool for machine learning, machine mining, and data analysis.
+Determination can be done by looking at the features of cancer cells, which can indicate whether cancer cells are `malignant` or `benign.` We used `scikit-learn` to address this machine learning problem. Python framework Scikit-learn is a free and open-source tool for machine learning, data mining, and data analysis.
 
 ---
 Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
