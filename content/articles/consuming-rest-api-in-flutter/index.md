@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /consuming-rest-api-in-flutter/
-title: Building a weather app that makes a network call to a backend server
+title: Building a Weather App Using Flutter and REST API   
 description: This tutorial will show you how to consume APIs in Flutter by building a weather application that makes network calls to a backend server.
 author: eme-lekwa
-date: 2021-11-22T00:00:00-07:20
+date: 2021-11-30T00:00:00-12:00
 topics: [Languages, API]
 excerpt_separator: <!--more-->
 images:
@@ -15,7 +15,7 @@ images:
     alt: Weather app with APIs in Flutter image
 ---
 
-This article will walk the reader through how to consume a REST API in a flutter application using the Dio package. We will be building a weather app that provides real-time weather information by making a network call to a weather API. 
+This article will walk the reader through how to consume a REST API in a flutter application using the `Dio` package. We will be building a weather app that provides real-time weather information by making a network call to a weather API. 
 <!--more-->
 The app requests the user's location and returns weather information about the user's current location. Flutter GetX package will be used for state management; however, emphasis is on Dio and network calls.
 
@@ -408,10 +408,6 @@ handleError(DioError error) {
   }
   return 'Something went wrong. Please try again later;
 }
-
-
-
-
 ```
 
 First, we created an instance of `Dio` named  `_dio`. The underscore makes it private. We have passed in the headers, where we have defined the content type we want to receive. In this case, a [JSON](https://en.wikipedia.org/wiki/JSON). Set the connection Time out, receive Time out and an `Interceptor` (which is the `LoggingInterceptor` class we created above)
@@ -790,7 +786,7 @@ class LocationScreen extends StatelessWidget {
 }
 ```
 
-We have injected an instance of our controller and called the `getWeatherData` method inside a FutureBuilder of type Weather. If the future has data, it will return the data; otherwise, if it has an error, it renders the error. However, if the above is not the case, we show the `SpinKitDoubleBounce` showing that our data is loading.
+We have injected an instance of our controller and called the `getWeatherData` method inside a `FutureBuilder` of type `Weather`. If the future has data, it will return the data; otherwise, if it has an error, it renders the error. However, if the above is not the case, we show the `SpinKitDoubleBounce` showing that our data is loading.
 
 ### Conclusion
 In this tutorial, you have learned how to make network calls over the HTTP and consume a rest API using the Dio package. We have demonstrated this by building a weather app that fetches weather data from Weather API.
