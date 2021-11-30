@@ -13,8 +13,8 @@ In this article, we'll go through XSS attacks in detail, their impact, and how t
 > **Disclaimer:** - This article is for educational purposes only.
 
 ### Prerequisites
-- Basic knowledge of HTML and Javascript
-- Basic knowledge of 
+
+ Basic knowledge of HTML and Javascript
 
 ### How XSS work
 Cross-site scripting is accomplished by tricking a vulnerable web application into returning malicious Javascript to users. When malicious code is executed inside a victim's browser, the attacker has complete control over how they interact with the app.
