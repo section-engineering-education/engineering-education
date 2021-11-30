@@ -1,40 +1,64 @@
-### Adding A Centered Custom Floating Action Button To Bottom Navigation Bar(Android)
-Floating Action Button varies from other buttons. FAB is a circular shape button with a centralized icon. This button appears in front of all screen content. It promotes a users action, including adding an item to an existing list.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /adding-custom-floating-action-button-to-bottom-navigation-bar-in-android/
+title: How to Add a Custom Floating Action Button to Bottom Navigation in Android
+description: This article will guide the reader on how to add a custom floating action button to the bottom navigation bar in Android.
+author: 
+date: 2021-11-30T00:00:00-08:48
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
-### What we need
-- Have some knowledge in `Kotlin`
-- To know process of creating a project in Android Studio 
-- Know how to create a bottomNavigationBar
+  - url: /engineering-education/adding-custom-floating-action-button-to-bottom-navigation-bar-in-android/hero.jpg
+    alt: Custom Floating Action Button Hero Image
+---
+Floating Action Buttons or FAB are different from other UI elements. FAB is a circular-shaped button with a centralized icon. 
+<!--more-->
+This button appears on top of all screen content. It promotes different actions including adding an item to a list.
+
+### Prerequisites
+To follow along, you need:
+- Some basic knowledge in [Kotlin](https://kotlinlang.org/).
+- Some understanding of Android Studio. 
 
 ### Goal
-- Adding a material design component. 
+This tutorial will accomplish the following objectives:
+- Using material design components. 
 - Creating a bottom navigation bar.
 - Adding a custom floating action button at the center of a bottom navigation bar.
 
 ### Introduction
-In this article we will create an application that will have a floating action button at the center of a bottom navigation bar.
+In this article, we will create an application that will have a floating action button at the center of a bottom navigation bar.
 
-A bar that usually appears at the bottom of a screen is called a Bottom Navigation Bar. It contains destination icon. To make it more appealing, we add a floating action button.
- 
-Floating action button abbreviated as FAB is a circular shaped button that has an icon centred in it. It usually appears in front of a screen and performs an action in an application when triggered.
-  
-### What is a Floating Action Button
-There are three forms of FAB; Regular, Mini and Extended floating action button. In this article we are going to focus on the regular FAB centered in a Bottom Navigation Bar.
+A bottom navigation bar usually contains different buttons and icons. To make it more appealing, we will add a floating action button.
 
-The area behind the Floating Action Button should contrast with application's color scheme. We can do this by customizing the Floating Action Button color. This is usually colored by colorAccent attribute. We can customize the colorAccent attribute with the theme color palette.
+A floating action button helps to attract the user's attention. This is because it appears on top of other UI content. 
 
-### What is a Bottom Navigation Bar
-Bottom Navigation Bar it is a view that comes from Material Design Library. It is usually added using BottomNavigationView. In your build.gradle, make sure you have design support library. It can contain only a single task. Yet, it is advisable that it should contain at least three destination icons.
+### Getting started
+The three forms of FAB are regular, mini and extended floating action buttons.
 
-### Coding
-Let us dive into coding and create our custom Floating Action Button.
+In this tutorial. we will focus on the regular FAB centered in a Bottom Navigation Bar.
 
-### Step 1: Create new project
+The background of a Floating Action Button should contrast with the application's color scheme. 
+
+We can do this by customizing the Floating Action Button color using the `colorAccent` attribute.
+
+Bottom Navigation Bar is imported from the `material design` library. It is usually added using `BottomNavigationView`. 
+
+In your app-level `build.gradle` file, ensure that you have the `material design` library. 
+
+> Note that a `Bottom Navigation Bar` can contain a single task or component. However, it's advisable to include at least three destination icons.
+
+### Step 1: Create a new project
 - Click on File
 - Click on New
 - CClick on New Project
 - Select Empty Activity then click Next
+
 ![creating a project](engineering-education/adding-custom-floating-action-button-to-bottom-navigation-bar-in-android/creating_project.png)
+
 - Give a name to your new project for example, floatingActionButton
 - On the same window, on Languages, select Kotlin as the language
 - Then click Finish
@@ -226,3 +250,6 @@ Floatng Action Button has more than what we have covered in this article. Keep e
 
 -[android developers](https://developer.android.com/guide/topics/ui/floating-action-button)
 
+
+---
+Peer Review Contributions by: [Wanja Mike](/engineering-education/authors/michael-barasa/)
