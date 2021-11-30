@@ -17,7 +17,11 @@ images:
 Unlike humans, who have the human ability to recognize emotion from speech, machines do not have the sense to analyze feelings. Speech emotional recognition is vital in understanding human emotions such as amusement, frustration, or disappointment.
 <!--more-->
 
+<<<<<<< Updated upstream
 Emotions are vital in day-to-day life, especially in interpersonal human interaction. They are helpful both in intelligent and rational decisions. Unlike humans, who have the human ability to recognize emotion from speech, machines do not have the sense to analyze feelings. Speech emotional recognition is vital in understanding human emotions such as amusements, frustrations, or disappointment. Speech emotion recognition informs the computer on the physical and emotional state of an individual from a speech.
+=======
+Emotions are vital in day-to-day life, especially in interpersonal human interaction. They are helpful both in intelligent and rational decisions. Unlike humans, who have the human ability to recognize emotion from speech, machines do not have the sense to analyze feelings. Speech emotional recognition is vital in understanding human emotions such as amusement, frustration, or disappointment. Speech emotion recognition informs the computer on the physical and emotional state of an individual from a speech.
+>>>>>>> Stashed changes
 
 A wide range of studies have focused on detecting a person's emotions. They include the use of computer games, audio surveillance, robots, others. Machine learning algorithms have been termed as more efficient in classification and prediction, which is vital in speech emotion recognition. However, there is a lot of information about the use of [CART](/engineering-education/decision-tree-in-python/) in speech emotion recognition that needs assessment which the study focuses on.
 
