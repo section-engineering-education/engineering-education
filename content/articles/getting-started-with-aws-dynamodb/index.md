@@ -19,7 +19,7 @@ DynamoDB is a platform as a service (PaaS) AWS product. The product is a managed
 ### Prerequisites
 This article is suitable for any reader interested in digging into DynamoDB. Most of the time, we are introduced to relational databases. Relational databases are SQL based. 
 
-Non-relational databases are also referred to as NoSQL databases, DynamoDB being one of them. It is recommended you get to know the differences between an SQL and a NoSQL database. The article [SQL or NoSQL - Which Database is Ideal](/sql-or-nosql-when-to-choose-what/) will come in handy.
+Non-relational databases are also referred to as NoSQL databases, DynamoDB being one of them. It is recommended you get to know the differences between an SQL and a NoSQL database. The article [SQL or NoSQL - Which Database is Ideal](/engineering-education/sql-or-nosql-when-to-choose-what/) will come in handy.
 
 #### Core components of DynamoDB
 - **Tables:** Data is stored in tables. This is similar to other database systems. For instance, you can have a table that stores student details.
