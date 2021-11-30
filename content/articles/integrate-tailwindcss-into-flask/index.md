@@ -174,7 +174,7 @@ Before we generate the CSS lets prepare a file where it should be dumped into. I
 In order to generate, the CSS from the preprocessor directives, we'll need to issue a command from the terminal using `npx` which is a tool that comes with npm (so ensure you have npm installed, you probably already do since Node.js is installed). Next we'll run the following command to compile and output the result into the `main.css` for our usage.
 
 ```bash
-npx tailwindcss-cli@latest build ./src/style.css -o css/main.css   
+npx tailwindcss -i ./src/style.css -o css/main.css   
 ```
 
 This would generate a lot of utility css classes for us to use in our server templates.
