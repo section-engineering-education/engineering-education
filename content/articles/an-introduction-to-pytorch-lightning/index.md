@@ -43,9 +43,6 @@ Many machine learning developers are skeptical about frameworks that tend to hid
 - Its models are hardware agnostic. It can run on any CPU, GPU, or TPU machine.
 - It prints out warnings and gives a developer machine learning tips if the developer happens to make mistakes in the code. This can be very helpful. 
 
-### Who is PyTorch Lightning for
-PyTorch Lightning was built by William Falcon while undertaking his Ph.D. AI studies research at the Computational Intelligence, Learning, Vision, and Robotics (CILVR) lab at New York University. He built the framework for use by professional and academic researchers (Ph.D. students) working in the AI industry.
-
 ### Demonstration on how PyTorch Lightning is used
 
 #### Installing and importing dependencies
