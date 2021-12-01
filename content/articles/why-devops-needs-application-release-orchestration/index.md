@@ -7,14 +7,13 @@ title: Why Devops Needs Application Release Orchestration
 description: In this article, we will learn why DevOps needs application release orchestration (ARO). We will look at the benefits of ARO, the beneficiaries of this phenomenon, and top ARO tools in the tech industry.  
 author: steve-nzovi
 date: 2021-11-19T00:00:00-03:30
-topics: [DevOps]
+topics: []
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/why-devops-needs-application-release-orchestration/hero.jpg
     alt: Devops Image
 ---
-
 The world is increasingly adopting computerization. Individuals and organizations depend on software and applications to create and market their products and services. However, there remains a significant gap between the creation and delivery of software from the source to the end-user. 
 <!--more-->
 This is a challenge that has become a common issue for the [DevOps](/engineering-education/what-it-takes-to-be-a-devops-engineer/) team. DevOps' focus is to improve the production speed of new software and applications. Yet, the lack of efficient processes to facilitate their speedy delivery to the consumers creates an unsustainable lag.
