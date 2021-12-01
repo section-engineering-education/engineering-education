@@ -15,7 +15,7 @@ images:
     alt: How to set up a Simple Python WebSocket with AioHTTP
 ---
 
-A web socket consists of two significant endpoints. One end sends data, and the other end receives data. Take an example of what you can do over the internet. In this case, different nodes/computers are connected to establish a connection that will allow you to send or receive data. 
+A web socket consists of two significant endpoints. One end sends data, and the other end receives data. Take an example of what you can do over the internet. In this case, different nodes/computers are connected to establish a connection that will allow you to send or receive data.
 <!--more-->
 
 A node can be a server or a client. A client sends a request, and the server will send back a response. These connections between the server and client are achieved through sockets. Thus, a socket acts as the communication endpoint.
@@ -39,7 +39,6 @@ We will build a WebSocket by setting up the client and the server with AioHTTP a
 - [Sending data between client and server](#sending-data-between-client-and-server)
 - [Conclusion](#conclusion)
 
-
 ### Prerequisites
 1. [Python 3.7](https://www.python.org/) or later installed on your machine.
 2. Basic knowledge of Python programming.
@@ -59,6 +58,7 @@ If you have pre-installed virtualenv, ensure that your [pip](https://pypi.org/pr
 ```bash
 pip --version
 ```
+
 You can check the version of virtualenv installed on your computer by running:
 
 ```bash
@@ -170,7 +170,11 @@ You can start the server by running the following command on your terminal. Befo
 ./Scripts/python server.py
 ```
 
-![Server response](/engineering-education/how-to-set-up-a-python-web-socket-with-aiohttp/server-start-response.png)
+Your response should be similar to;
+
+```bash
+========= Running on http://0.0.0.0.8080 =======
+```
 
 The server is up and running, and as you can the server is listening on port `8080`.
 
@@ -208,6 +212,7 @@ Initialize an event loop and run the `main` function in the event loop until com
 loop = asyncio.get_event_loop()
 loop.run_until_complete(main())
 ```
+
 The event loop will only close when the `main` function has been fully executed.
 
 ### Sending data between client and server
@@ -222,7 +227,23 @@ Open a separate tab of your terminal and run the following command inside the pr
 
 The above command will run the `main` function inside the `client.py` file, and your response should be comparable to:
 
-![Sending data response](/engineering-education/how-to-set-up-a-python-web-socket-with-aiohttp/sending-data-response.png)
+```bash
+200
+[
+    {
+        'id':'1',
+        'title': 'Go to the garden'
+    },
+    {
+        'id':'2',
+        'title': 'Go to the market'
+    },
+    {
+        'id':'3',
+        'title': 'Prepare dinner'
+    }
+]
+```
 
 ### Conclusion
 
