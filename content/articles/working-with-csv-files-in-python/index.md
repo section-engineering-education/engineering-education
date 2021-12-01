@@ -214,7 +214,7 @@ When dealing with CSV data, usually read it in using pandas before munging and a
 
 While it is simple to load data from CSV files into a database, there may be situations when you don't have access to or don't want to set up a database server. However, if you need to look at data in these big files for a short time, here is one method to accomplish it using Python, and pandas.
 
-Here is a method for handling large.csv files. The dataset we will be using is [gender_voice_dataset](/engineering-education/working-with-csv-files-in-python/voice.csv).
+Here is a method for handling large.csv files. The dataset we will be using is [gender_voice_dataset](https://drive.google.com/file/d/1HXAaZDfQROL1FH0yDv18s8iau3b_nBE_/view?usp=sharing).
 
 #### Using pandas.read_csv
 Large files may be handled by reading them in manageable size pieces, processing them before reading the next part. The chunk size option determines the number of lines. This method returns an iterator. For processing, a section of the file is read at a time.
