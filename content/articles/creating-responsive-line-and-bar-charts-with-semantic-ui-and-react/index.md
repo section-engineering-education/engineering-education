@@ -23,7 +23,7 @@ This tutorial will walk the reader through the various steps and dependencies re
 
 Think of it as plotting a graph with a set of variables in mathematics but in this case, React.js.
 
-### Key Takeaways
+### Key takeaways
 After completion of this tutorial, the reader should  understand the following:
 - Getting started with React functional components
 - Installing and adding the semantic-UI dependency to a web project
