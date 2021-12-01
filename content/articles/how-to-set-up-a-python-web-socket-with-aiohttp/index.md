@@ -6,7 +6,7 @@ url: /how-to-set-up-a-python-web-socket-with-aiohttp/
 title: How to Set Up a Simple Python WebSocket with AioHTTP
 description: In this tutorial, we will build a client-server socket architecture application using AioHTTP.
 author: carol-wanjiru
-date: 2021-12-12T00:00:00-11:35
+date: 2021-12-01T00:00:00-11:35
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -28,14 +28,10 @@ The library supports client and HTTP servers, client WebSockets and server WebSo
 
 We will build a WebSocket by setting up the client and the server with AioHTTP and sending data between the client and the server.
 
-### Prerequisites
-1. [Python 3.7](https://www.python.org/) or later installed on your machine.
-2. Basic knowledge of Python programming.
-
 ### Table of contents
 
-- [Prerequisites](#prerequisites)
 - [Table of contents](#table-of-contents)
+- [Prerequisites](#prerequisites)
 - [Setting up a virtual environment using virtualenv](#setting-up-a-virtual-environment-using-virtualenv)
 - [Installing AioHTTP](#installing-aiohttp)
 - [Building a server with AioHTTP](#building-a-server-with-aiohttp)
@@ -43,27 +39,33 @@ We will build a WebSocket by setting up the client and the server with AioHTTP a
 - [Sending data between client and server](#sending-data-between-client-and-server)
 - [Conclusion](#conclusion)
 
+
+### Prerequisites
+1. [Python 3.7](https://www.python.org/) or later installed on your machine.
+2. Basic knowledge of Python programming.
+
 ### Setting up a virtual environment using virtualenv
 
-[Virtualenv](https://pypi.org/project/virtualenv/) is a tool for creating an independent Python environment. This implies that all the libraries that we will install will be installed specifically for our project. Create a project folder and open it in a command line.
+[Virtualenv](https://pypi.org/project/virtualenv/) is a library for creating an independent Python environment. This implies that all the libraries we install will be installed locally for our project. Create a project folder and open it in a command line.
 
-Then install the virtualenv by running the following command:
+Then install virtualenv by running the following command:
 
 ```bash
 pip3 install virtualenv
 ```
 
 If you have pre-installed virtualenv, ensure that your [pip](https://pypi.org/project/pip/) is up to date by running the following command from your terminal.
+
 ```bash
 pip --version
 ```
-You can check the version of virtualenv installed on your computer by running;
+You can check the version of virtualenv installed on your computer by running:
 
 ```bash
 which virtualenv
 ```
 
-If the virtualenv version is not up to date, run this command to get the latest version installed;
+If the virtualenv version is not up to date, run this command to get the latest version installed:
 
 ```bash
 python3 -m pip install --upgrade pip
@@ -75,9 +77,9 @@ This will output the path as the already installed virtualenv. Initialize the en
 python3 -m virtualenv .
 ```
 
-Then activate this environment by running;
+Then run `Activate` to activate this environment by running:
 
-- For the Windows operating system, run this command in your;
+- For the Windows operating system, run this command in your:
 
 1. Powershell terminal
 
@@ -91,13 +93,13 @@ Then activate this environment by running;
 ./Scripts/activate.bat
 ```
 
-- For Unix systems use;
+- For Unix systems use:
 
 ```bash
 source /Scripts/activate
 ```
 
-At this point, the virtualenv is set up, and we can proceed to the next step.
+At this point, virtualenv is set up, and we can proceed to the next step.
 
 ### Installing AioHTTP
 
@@ -107,7 +109,7 @@ To install AioHTTP along with the related modules, run the following command:
 pip install aiohttp[speedups]
 ```
 
-The above command will install AioHTTP along with the following packages;
+The above command will install AioHTTP along with the following packages:
 
 - [Charset-normalizer](https://docs.aiohttp.org/en/stable/glossary.html#term-charset-normalizer) : A universal charset detector.
 
@@ -127,9 +129,7 @@ Import the `web` module from the `aiohttp` library.
 from aiohttp import web
 ```
 
-The web module will enable us to create a local webserver.
-
-Add some dummy list of todos.
+The web module will enable us to create a local webserver. Add some dummy list of todos.
 
 ```python
 todos = [
