@@ -2,31 +2,34 @@ Creating Responsive Line and Bar charts with React and Semantic-ui
 
 ### Introduction
 
-A graphic illustration is a basic form of content presentation in front-end web development. For example, line and bar charts may have various applications to show statistics of user engagements, user growth, ratings, etc. Creating the perfect responsive charts for your company or personal website will be made simple and easy to implement as we will use the react-chartjs-2 dependency. React-chartjs-2 with React.js reduces the complexity of building and customizing charts and graphs.
+Graphical representation is one of the most prevalent methods used to visualize and analyze data.  The most common types of graphical representation of data are bar charts and bars graphs.
 
-This tutorial will walk you through the various steps and dependencies required to build a responsive chart project. We will use React.js, semantic-ui, and CSS to generate line and bar charts with a set of coordinates and datasets.
+Line and bar charts have various applications to data visualization and representation. Among the applications of these charts include statistics of user engagements, user growth, ratings of products, and other commodities.
+
+This tutorial will walk the reader through the various steps and dependencies required to build a responsive chart project. We will use React.js, semantic-ui, and CSS to generate line and bar charts with a set of coordinates and datasets.
 
 Think of it as plotting a graph with a set of variables in mathematics but in this case, React.js.
 
 ### Key Takeaways
-
-It is expected that after this article, the reader will be equipped with the knowledge and necessary skill to understand and perform and the following:
-
+After completion of this tutorial, the reader should  understand the following:
 - Getting started with React functional components
-- Installing and adding the semantic-UI dependency to your web project
+- Installing and adding the semantic-UI dependency to a web project
 - Creating reusable components with React.js
 - Generating Line and Bar charts with react-chartjs-2
 - Styling the components with CSS and semantic-ui
 
 ### Prerequisite
 
-This tutorial requires intermediate knowledge of React.js, CSS, and any modern web styling libraries similar to Semantic-UI. So, for absolute beginners, take a moment and enroll in a [crash course](https://www.codecademy.com/learn/react-101).
+This tutorial requires intermediate knowledge of React.js, CSS, and any modern web styling libraries similar to Semantic-UI. So, for absolute beginners, take a moment and enroll in a [ Udemy crash course](https://www.codecademy.com/learn/react-101) here.
 
 ### Getting started with React functional components
 
-React functional component is a recent enhancement to React.js, the former being a class-based component. A functional component is a react function that accepts a `props` and returns a JSX (JavaScript syntax extension). Props in React.js are arguments or parameters that are passed to a React component to be rendered. For this tutorial, we will adopt react functional components for our application.
+React functional component is a recent enhancement to React.js.  The former React.js component was class-based. A functional component is a react function that accepts a `props` and returns a JSX (JavaScript syntax extension). Props in React.js are arguments or parameters that are passed to a React component to be rendered. For this tutorial, we will adopt React functional components for our application.
 
-To get started, we need to create the `react-app`. Creating the react-app is done through the command terminal. So, click open the command terminal and run the command below.
+To get started, we need to create the `react-app`. Creating the react-app is done through the command executed in the terminal. 
+
+
+So, open the command terminal and run the command below.
 
 ```bash
     npm create-react-app chart-app
@@ -38,17 +41,11 @@ Or for yarn users
     yarn create-react-app chart-app
 ```
 
-If you correctly implemented the command above, your new react application should be set up and ready for development. This process takes a few minutes, so ensure the operation is completed before proceeding to the next step.
+If the command above is implemented correctly, the new react application should be set up and ready for development. This process takes a few minutes, so ensure the operation is completed before proceeding to the next step.
 
 ### Chart building overview
 
-The task of creating responsive line and bar charts with React.js alongside other dependencies will be subdivided into the following steps:
-
-- Setting up the coordinate dataset
-- Installing the required dependencies (react-chartjs-2 and semantic-UI.)
-- Creating and setting up the chart component (Chart.js)
-- Styling and viewing our application
-  Now let us begin with our first step, shall we?
+Creating responsive a line and bar charts with React.js alongside other dependencies will be subdivided into the following steps.
 
 #### Setting up the coordinate dataset (Data.js):
 
@@ -93,10 +90,10 @@ module.exports = {
 From the code snippet above, we worked with the concept of the canvas, which, as we know, is used to render graphical elements in React.js.
 
 - We created a two-dimensional (2d) linear gradient called `linearstroke`, which we will use to generate the line and bar chart with the dataset above.
-- We also added some labels displayed at the bottom of the chart to provide names to the corresponding data, i.e. (“MON” representing 70, etc.)
+- We also added some labels displayed at the bottom of the chart to provide names to the corresponding data, i.e. (“MON” representing 70, "TUE" representing 80...)
 - Finally, we added border-width, border-color, background-color, and other styles properties to the dataset. Those default properties should be provided to make the chart look good and presentable.
 
-To conclude the coordinate setup, we need to create the option we passed to the `demoChart` above. The option will provide the x and y-axis, responsiveness, scales, spacings, etc. to do that, still, in the `Data.js` file, ship the code snippet above:
+To conclude the coordinate setup, we need to create the option we passed to the `demoChart` above. The option will provide the x and y-axis, responsiveness, scales, and spacings. to do that, still, in the `Data.js` file, ship the code snippet above:
 
 ```JavaScript
 let FirstChartOption = {
@@ -150,13 +147,13 @@ let FirstChartOption = {
 
 Note: to fix a possible error that may occur, place the `FirstChartOption` we just created above the `DemoChart`. Because we are attempting to use a set of variables before it is declared, and React.js frowns at it.
 
-We added barpercentage, paddings, fontColors, etc., to the chart in our options. As stated earlier, those are default properties provided to the chart component.
+We added `barpercentage`, `paddings`,  fontColors`, etc., to the chart in our options. As stated earlier, those are default properties provided to the chart component.
 
 Take a look at the official documentation of react-chartjs-2 for further clarity.
 
 #### Installing the required dependencies
 
-As you observed, we skipped installing the dependencies to set up our coordinate dataset. Whichever way you may choose to go about the project is okay. We are going to install the following dependencies to our application.
+As observed, we skipped installing the dependencies to set up our coordinate dataset. Whichever way we may choose to go about the project is okay. We are going to install the following dependencies to our application.
 
 - Semantic-ui-react and
 - React-chartjs-2
@@ -239,8 +236,8 @@ export default Chart;
 Let us discuss what is happening with the code snippet we just shipped.
 First, we imported the dataset we created in the first step. Then, we imported the `Line,` and `Bar` (Line for line-chart and Bar for bar-chart) components from the react-chartjs-2 library will be used to utilize the dataset and subsequently generate our charts.
 
-- Secondly, we imported the Card component from the semantic-UI dependency we also installed. The Card component will act as a container from the charts and add additional styles and responsiveness to the charts.
-  The Line and Bar charts accept two `props`, `data` and `options`. For the data, we pass down the `demoChart1.data` and then repeat the same for the option, replacing the data with options.
+- Secondly, we imported the Card component from the semantic-UI dependency we also installed. The Card component will act as a container from the charts and add additional styles and responsiveness.
+-The Line and Bar charts accept two `props`, `data` and `options`. For the data, we pass down the `demoChart1.data` and then repeat the same for the option, replacing the data with options.
 - Finally, we exported the Chart component for viewing on the browser window.
 
 #### Styling and viewing our application
