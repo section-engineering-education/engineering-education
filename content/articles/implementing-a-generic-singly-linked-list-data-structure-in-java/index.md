@@ -21,15 +21,17 @@ Each node has a reference section where the address of the next node is maintain
 An array data structure is improved by addressing its limitations, such as the need for contiguous memory and the difficulty of array insertion and deletion. Additionally, a linked list makes it simple to add and remove items as needs change.
 
 The simplest type of linked list, known as a Singly Linked List, is covered in this article. Linked Lists can be used in a wide range of applications, from simple to complex. We will take a look at them one at a time.
-
+### Prerequisite
+1. Before proceeding with this tutorial you should have a good knowledge of the Java programming language.
+2. For server-side Java development, have __IntelliJ IDEA__ as the IDE.
 ### Table of contents
 - [The Building Blocks](#the-building-blocks)
 - [Differences between a linked list and an array](#differences-between-a-linked-list-and-an-array)
-- [What is a generic linked list is and how is it used?](#what-is-a-generic-linked-list-is-and-how-is-it-used)
+- [What a generic linked list is and how it is used](#what-a-generic-linked-list-is-and-how-it-is-used)
     - [Primary linked list member functions](#primary-linked-list-member-functions)
 - [Singly-linked list](#singly-linked-lists)
 - [Testing a Java singly-linked list](#testing-a-java-singly-linked-list)
-- [Applications singly linked list](#applications-singly-linked-list)
+- [Applications of singly-linked list](#applications-of-a-singly-linked-list)
 - [Conclusion](#conclusion)
 
 ### The building blocks
@@ -62,7 +64,7 @@ A linked list and an array differ in various ways that are listed below:
 4. A linked list uses less space than an array because pointers can be stored close to nodes instead of in the middle of the list.
 5. In a linked list, only linear search is performed, but linear search and binary search are used in an array.
 
-### What is a generic linked list and how is it used?
+### What a generic linked list is and how it is used
 There are many ways to create a generic linked list because they can carry any form of data. Implementation of linked lists that may store any data type is known as a generic linked list. Integers are stored in one linked list, while floats are stored in the other.
 
 #### Primary linked list member functions
@@ -232,7 +234,7 @@ Here is an example:
 ```
 
 Take advantage of Generics' SinglyLinkedList. `Node<T>` will be the type of node variable. Now that we have covered the basics, let's get down to business by implementing the methods below:
-- Last but not least, we'll use add(T data).
+- We'll use add(T data).
 - Add the element at the top of the list.
 - Add an element to a specific location, use add(T data, int index).
 
