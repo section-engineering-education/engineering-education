@@ -24,7 +24,7 @@ This tutorial requires intermediate knowledge of React.js, CSS, and any modern w
 
 ### Getting started with React functional components
 
-React functional component is a recent enhancement to React.js.  The former React.js component was class-based. A functional component is a react function that accepts a `props` and returns a JSX (JavaScript syntax extension). Props in React.js are arguments or parameters that are passed to a React component to be rendered. For this tutorial, we will adopt React functional components for our application.
+React functional component is a recent enhancement to React.js.  The former React.js component was class-based. A functional component is a React function that accepts a `props` and returns a JSX (JavaScript syntax extension). Props in React.js are arguments or parameters that are passed to a React component to be rendered. For this tutorial, we will adopt React functional components for our application.
 
 To get started, we need to create the `react-app`. Creating the react-app is done through the command executed in the terminal. 
 
@@ -41,7 +41,7 @@ Or for yarn users
     yarn create-react-app chart-app
 ```
 
-If the command above is implemented correctly, the new react application should be set up and ready for development. This process takes a few minutes, so ensure the operation is completed before proceeding to the next step.
+If the command above is implemented correctly, the new React application should be set up and ready for development. This process takes a few minutes, so ensure the operation is completed before proceeding to the next step.
 
 ### Chart building overview
 
@@ -51,7 +51,7 @@ Creating responsive a line and bar charts with React.js alongside other dependen
 
 The coordinate dataset is similar to the table of values when plotting a graph in algebra. It provides a set of numbers and labels for the chart components, which will be passed down as `props` and displayed.
 
-To set up the coordinate dataset, we simply navigate to the `src` folder, then create a `Data.js` file. In the `Data.js`, we implement the code snippet below:
+To set up the coordinate dataset, we navigate to the `src` folder, then create a `Data.js` file. In the `Data.js`, we implement the code snippet below:
 
 ```JavaScript
 let demoChart1 = {
@@ -93,7 +93,7 @@ From the code snippet above, we worked with the concept of the canvas, which, as
 - We also added some labels displayed at the bottom of the chart to provide names to the corresponding data, i.e. (“MON” representing 70, "TUE" representing 80...)
 - Finally, we added border-width, border-color, background-color, and other styles properties to the dataset. Those default properties should be provided to make the chart look good and presentable.
 
-To conclude the coordinate setup, we need to create the option we passed to the `demoChart` above. The option will provide the x and y-axis, responsiveness, scales, and spacings. to do that, still, in the `Data.js` file, ship the code snippet above:
+To conclude the coordinate setup, we need to create the option we passed to the `demoChart` above. The option will provide the x and y-axis, responsiveness, scales, and spacing. To do that, still, in the `Data.js` file, ship the code snippet above:
 
 ```JavaScript
 let FirstChartOption = {
@@ -181,11 +181,11 @@ yarn add
 
 The command above should install the listed dependencies to our application—time to utilize them in the next step.
 
-#### Setting up the Chart component (Chart.js):
+#### Setting up the chart component (Chart.js):
 
 The chart component will be set up using the react-chartjs-2 dependency we installed above and the coordinate dataset we created earlier. A quick overview of react-chartjs-2, before the development of react-chartjs-2, creating graphical illustrations such as line and bar chart was burdensome. Therefore, React-chartjs-2 provides line, bar, pie charts, etc., for importation and use.
 
-In this tutorial, we will use the line and bar charts. To create and set up our chart component, in our `App.js` file, clear the default boilerplate codes and replace them with the code snippet below:
+In this tutorial, we will use line and bar charts. To create and set up our chart component, in our `App.js` file, clear the default boilerplate codes and replace them with the code snippet below:
 
 ```JavaScript
 import React from "react";
@@ -238,11 +238,11 @@ First, we imported the dataset we created in the first step. Then, we imported t
 
 - Secondly, we imported the Card component from the semantic-UI dependency we also installed. The Card component will act as a container from the charts and add additional styles and responsiveness.
 -The Line and Bar charts accept two `props`, `data` and `options`. For the data, we pass down the `demoChart1.data` and then repeat the same for the option, replacing the data with options.
-- Finally, we exported the Chart component for viewing on the browser window.
+- Finally, we exported the chart component for viewing on the browser window.
 
 #### Styling and viewing our application
 
-At this point, our application is ready for Styling and viewing. Since most of the elements we used are from the semantic-UI design library, default styles have already been added to the charts and texts, so we will add a few paddings and margins to keep things simple.
+At this point, our application is ready for styling and viewing. Since most of the elements we used are from the semantic-UI design library, default styles have already been added to the charts and texts, so we will add a few paddings and margins to keep things simple.
 
 Feel free to take it way beyond the basic styles that we will add. Adding styles to the application is easy. Open the `App.css` file in the `src` folder, clear all the default styles, and replace them with the CSS snippet below.
 
@@ -270,7 +270,7 @@ Feel free to take it way beyond the basic styles that we will add. Adding styles
 
 We have successfully added a few styles to our application, i.e., font-weight, color, adjusted the font size, added width and height of 100%, and finally, some margin and padding.
 
-That being done, it is time to view our application on the browser window. Open up the command terminal on your text editor, be sure to be inside the `chart-app` root directory, then run the command to start the development server shown below:
+That being done, it is time to view our application on the browser window. First, open up the command terminal on your text editor, be sure to be inside the `chart-app` root directory, then run the command to start the development server shown below:
 
 ```bash
 npm start
