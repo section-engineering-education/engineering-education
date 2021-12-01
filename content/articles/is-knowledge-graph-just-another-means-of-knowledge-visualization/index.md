@@ -38,8 +38,7 @@ Knowledge graphs improve machine learning systems' functionality in different wa
 Second, knowledge graphs combine several resources at once, as in search engines. Before knowledge graphs became part of Google's machine learning system, one had to search by typing all the text and symbols to find a given data source. But now, knowledge graphs have increased search engine prediction capabilities and made finding data online easier.
 
 ### Where are knowledge graphs used today?
-Knowledge graphs have a wide range of applications in the corporate and non-corporate worlds.
-
+Knowledge graphs have a wide range of applications in the corporate and non-corporate worlds:
 - They have improved browsing on search engines due to better predictability features.
 - Knowledge graphs like [KBpedia](https://kbpedia.org/) combine critical aspects of [Wikidata](https://www.wikidata.org/wiki/Wikidata:Main_Page) and [Wikipedia](https://www.wikipedia.org/) to help create an integrated online database for information sharing.
 - They help track user connections on social media platforms like Facebook.
