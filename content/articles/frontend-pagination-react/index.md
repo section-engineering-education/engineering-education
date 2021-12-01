@@ -1,5 +1,21 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /frontend-pagination-react/
+title: Implementing Frontend Pagination in React
+description: This article gives a step by step tutorial on how to add pagination to websites, using React.js.
+author: kevin-murimi
+date: 2021-09-08T00:00:00-06:11
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/frontend-pagination-react/hero.jpg
+    alt: Implementing Frontend Pagination in React Hero Image
+---
 
 To improve the user experience and allow easy navigation on a website, most websites do not show all the fetched data on a single web page. Most developers implement pagination that enables the data to be displayed on a sequence of pages. The user can easily navigate from one page to another with the click of a button.
+<!--more-->
 
 Pagination can be implemented on the server-side or the client-side. On the server-side, the client requests data in groups, for example, the client can request a list of the first ten items from an API or the database. Then when the user clicks the next button on the webpage, another group of data is requested from the server.
 
