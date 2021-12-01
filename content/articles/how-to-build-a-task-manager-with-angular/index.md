@@ -204,7 +204,7 @@ The entire Todo component class is as follows:
 Finally, we need to loop through and display the `taskList` array using `*ngFor`. 
 It's a predefined directive in Angular.
 
-It accepts an array to iterate data over atemplate to replicate the template with different data. It's the same as the `forEach()` method in JavaScript, which also iterates over an array.
+It accepts an array to iterate data over a template to replicate the template with different data. It's the same as the `forEach()` method in JavaScript, which also iterates over an array.
 
 The looping will be done in the `todo.component.html` file. 
 After looping, set the `<p>` to display the task dynamically.
