@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /how-to-build-a-chrome-extension-that-displays-motivational-quotes-using-javascript/
+url: /how-to-build-a-chrome-extension-using-javascript/
 title: How to Build a Chrome Extension that Displays Motivational Quotes Using Javascript
 description: This article will guide you through the process of building a chrome extension that displays motivational quotes as notifications using javascript.
 author: muhammed-umar
@@ -10,7 +10,7 @@ date: 2021-11-26T00:00:00-11:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/how-to-build-a-chrome-extension-that-displays-motivational-quotes-using-javascript/hero.jpg
+  - url: /engineering-education/how-to-build-a-chrome-extension-using-javascript/hero.jpg
     alt: Chrome Extension Quotes JavaScript
 ---
 
@@ -89,13 +89,13 @@ Navigate to the extensions management page by clicking on the extensions menu bu
 
 You should see a page like this:
 
-![developer](/engineering-education/how-to-build-a-chrome-extension-that-displays-motivational-quotes-using-javascript/developer.png)
+![developer](/engineering-education/how-to-build-a-chrome-extension-using-javascript/developer.png)
 
 Toggle on the developer mode and click on the load unpacked button. This opens your local machine directories and prompts you to choose the directory you would like to load as an extension.
 
 Alright! you should see something similar to the image below:
 
-![unpacked](/engineering-education/how-to-build-a-chrome-extension-that-displays-motivational-quotes-using-javascript/unpacked.png)
+![unpacked](/engineering-education/how-to-build-a-chrome-extension-using-javascript/unpacked.png)
 
 We now have the extension listed amongst our previously installed extensions. Although, you'll notice yours does not have a custom icon.
 
@@ -334,7 +334,7 @@ async function startRequest() {
 
 Finally, our motivational quotes are displayed in the notifications box like so:
 
-![extension](/engineering-education/how-to-build-a-chrome-extension-that-displays-motivational-quotes-using-javascript/completed.png)
+![extension](/engineering-education/how-to-build-a-chrome-extension-using-javascript/completed.png)
 
 Now that you have your extension up and running, you may want to publish it on the [Chrome web store](https://developer.chrome.com/docs/webstore/publish/) - you are however required to pay a small fee.
 
