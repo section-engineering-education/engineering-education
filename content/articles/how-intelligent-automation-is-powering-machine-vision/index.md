@@ -42,10 +42,10 @@ Business organizations also use computer vision in inventory control and managem
 In the pharmaceutical industry and other companies that deal in sensitive products, computer vision aids product traceability. Highly-regulated products require monitoring to avoid misuse by people. Computer vision helps pharmaceutical firms track the ingredients of a given product and monitor its expiration date.
 
 #### E-commerce
-In e-commerce, machine vision makes it possible to search for products online using pictures. Computer vision benefits consumers by improving their shopping experience. It eliminates potential errors that individuals make when buying replica products. Besides, it removes the ambiguity that people experience when reading product descriptions. One you upload a specific image the visual computing system in computer vision identifies it.
+In e-commerce, machine vision makes it possible to search for products online using pictures. Computer vision benefits consumers by improving their shopping experience. It eliminates potential errors that individuals make when buying replica products. Besides, it removes the ambiguity that people experience when reading product descriptions. Once you upload a specific image, the visual computing system in computer vision identifies it.
 
 #### Agriculture
-Farmers use computer vision system to harvest their farm products quickly. A computer vision algorithm classifies the farm products based on their quality, size, and shapes. The algorithm then directs robots to pluck farm produce. Computer vision has been used to harvest crops in some regions of the world and proved efficient. 
+Farmers use computer vision system to harvest their farm products quickly. A computer vision algorithm classifies the farm products based on their quality, size, and shapes. The algorithm then directs robots to pluck the farm produce. Computer vision has been used to harvest crops in some regions of the world and proved efficient. 
 
 In India, for example, computer vision has been used to [harvest grapes](https://www.roboticsbusinessreview.com/agriculture/tabletop-grapes-picked-robots-india-virginia-tech/). AI-powered computer vision robots grade the quality of the fruits before picking them. Computer vision also facilitates supervision of the crop in the field using drones. Drones can detect unfavorable weather conditions for their growth, ensuring that the farmers take appropriate measures to avoid loss of yields. Besides, drones fitted with computer vision also help detect ailing crops for spraying purposes.
 
