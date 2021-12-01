@@ -6,7 +6,7 @@ url: /how-to-build-a-chrome-extension-using-javascript/
 title: How to Build a Chrome Extension that Displays Motivational Quotes Using Javascript
 description: This article will guide you through the process of building a chrome extension that displays motivational quotes as notifications using javascript.
 author: muhammed-umar
-date: 2021-11-30T00:00:00-19:00
+date: 2021-11-30T00:00:00-19:30
 topics: [API, Languages]
 excerpt_separator: <!--more-->
 images:
