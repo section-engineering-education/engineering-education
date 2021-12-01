@@ -6,7 +6,7 @@ url: /dbscan-clustering-in-python/
 title: DBSCAN Algorithm in Python
 description: DBSCAN algorithm group points based on distance measurement. To cluster data points, this algorithm separates the high-density regions of the data from the low-density areas. This article will demostrate how DBSCAN algorithm is used in clustering.
 author: stanley-juma
-date: 2021-11-28T00:00:00-11:37
+date: 2021-12-1T00:00:00-12:58
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -15,7 +15,7 @@ images:
     alt: DBSCAN Algorithm in Python image
 ---
 
-### DBSCAN Algorithm in Python
+### DBSCAN algorithm in Python
 DBSCAN is a popular **density-based** data clustering algorithm. To cluster data points, this algorithm separates the high-density regions of the data from the low-density areas. Unlike the K-Means algorithm, the best thing with this algorithm is that we need not provide the number of clusters required prior. 
 
 DBSCAN algorithm group points based on distance measurement, usually the *Euclidean distance*and the *minimum number of points*. An essential property of this algorithm is that it helps us track down the outliers as the points in low-density regions; hence it is not sensitive to outliers as is the case of K-Means clustering.
@@ -58,6 +58,7 @@ After creating the first cluster, we examine all its member points and find thei
 As usual to any implementation, we get started with fetching the dataset and preparing it ready for our model implementation. However, first, let us download this data  [here](https://github.com/Daniel695/datasets/blob/main/Mall_Customers.csv).
 
 ### Data Preprocessing
+
 #### Importing the required libraries
 Let us begin by importing the required libraries for implementation on the algorithm.
 
@@ -68,7 +69,7 @@ import pandas as pd
 data = pd.read_csv("/content/drive/MyDrive/Mall_Customers.csv") # importing the dataset
 ```
 
-#### Exploratory Data analysis 
+#### Exploratory data analysis 
 This is the process of investigating the available data and determining inconsistencies in patterns and other anomalies with the help of graphical representations and statistical summaries.
 
 - Checking the head of the data.
