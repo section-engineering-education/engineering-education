@@ -6,7 +6,7 @@ url: /consuming-rest-api-in-flutter/
 title: Building a Weather App Using Flutter and REST API   
 description: This tutorial will show you how to consume APIs in Flutter by building a weather application that makes network calls to a backend server.
 author: eme-lekwa
-date: 2021-11-30T00:00:00-12:00
+date: 2021-12-01T00:00:00-10:45
 topics: [Languages, API]
 excerpt_separator: <!--more-->
 images:
