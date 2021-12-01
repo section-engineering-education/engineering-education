@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /create-a-java-getter-setter-generator-using-python/
 title: Create a Java getter-setter generator using Python
-description: In this article, we will learn what getters and setters are in the python programming language. We will take a look at how to get getters and setters behavior using the property() function, @Property decorators, and finally using normal functions.
+description: In this article, we will learn what getters and setters are in the python programming language. We will look at how to get getters and setters behavior using the property() function, @Property decorators, and normal functions.
 author: Dennis-Kariuki
-date: 2021-11-23T00:00:00-05:35
+date: 2021-12-01T00:00:00-05:35
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -17,23 +17,23 @@ images:
 --- 
 Python's getters and setters are unique. They allow data encapsulation while others have hidden fields for private variables. 
 <!--more-->
-Several OOP languages use getters and setters to store data. We conceal an object class's attributes so other classes' methods do not alter data accidentally.
+Several object-oriented programming (OOP) languages use getters and setters to store data. We conceal an object class's attributes so other classes' methods do not alter data accidentally.
 
-In object-oriented languages, these methods get and change data. Setting an object's attribute value is called `setting`. In this article, we will learn how to use Python's getter and setter methods.
+In object-oriented programming languages, these methods get and change data. Setting an object's attribute value is called `setting`. In this article, we will learn how to use Python's getter and setter methods.
 
 ### Table of contents
 - [Understanding getters and setters](#understanding-getters-and-setters)
 - [Get getters and setters behavior using normal functions](#get-getters-and-setters-behavior-using-normal-functions)
 - [Get getters and setters behavior using @Property decorators](#get-getters-and-setters-behavior-using-@Property-decorators)
-- [Get getters and setters behavior using the property() function](#get-getters-and-setters-behavior-using-the-roperty()-function)
+- [Get getters and setters behavior using the `property()` function](#get-getters-and-setters-behavior-using-the-roperty()-function)
 - [Project algorithm](#project-algorithm)
 - [Implementation of the algorithms](#implementation-of-the-algorithms)
 - [Conclusion](#conclusion)
 
 ### Understanding getters and setters
-The value which a getter method returns is its argument. This is useful for OOP private property access. A setter modifies a property's value. 
+The value which a getter method returns is its argument. This is useful for object-oriented programming private property access. A setter modifies a property's value. 
 
-This helps establish private class characteristics in object-oriented programming. Using getters and setters ensures there is data encapsulation.
+It helps establish private class characteristics in object-oriented programming. Using getters and setters ensures there is data encapsulation.
 
 Why we use setters and getters:
 - To promote encapsulation.
@@ -68,12 +68,16 @@ Output:
 34
 ```
 
-In the above code functions get_span() and set_span() act as normal functions and don’t play any impact as getters and setters, to achieve such functionality Python has a special function property().
+In the above code functions `get_span()` and `set_span()` act as normal functions and don’t have any impact as getters and setters. To achieve such functionality Python has a special function called `property()`.
 
 ### Get getters and setters behavior using @Property decorators
-To accomplish getters and setters behavior in the preceding approach, we utilized the property() function. Getters and setters are also used for verifying the getting and setting of attribute values, as stated before in this article. Another option for implementing property functions is to use a decorator. One of the built-in decorators in Python is @property. Any decorator's major goal is to update your class's methods or attributes in such a manner that your class's users don't have to change their code. 
+To accomplish getters and setters behavior in the preceding approach, we utilized the `property()` function. Getters and setters are also used for verifying the getting and setting of attribute values, as stated before in this article. 
 
-Below is an example code,
+Another option for implementing property functions is to use a decorator. One of the built-in decorators in Python is `@property`. 
+
+Any decorator's major goal is to update your class's methods or attributes in such a manner that your class's users don't have to change their code. 
+
+Below is an example code:
 
 ```python
 class Section:   
@@ -104,10 +108,12 @@ The getters method
 23
 ```
 
-The above program has one print statement. The output has three lines since the setter method set `span()` and the getter function get `span()` were both invoked. So span is a property object that helps secure private variable access.
+The above program has one print statement. The output has three lines since the setter method `set_span()` and the getter function `get_span()` were both invoked. So `span` is a property object that helps secure private variable access.
 
-### Get getters and setters behavior using the property() function
-The prior technique used the `property()` method to achieve getters and setters. Getters and setters are used to check attribute values. A decorator may impose property function, `@property` decorates Python. The main goal of a decorator is to change class methods or attributes without modifying user code.
+### Get getters and setters behavior using the `property()` function
+The prior technique used the `property()` method to achieve getters and setters. Getters and setters are used to check attribute values.
+
+A decorator may impose property function, `@property` decorates Python. The main goal of a decorator is to change class methods or attributes without modifying user code.
 
 ```python
 class Section:   
@@ -147,7 +153,7 @@ The `@property` decorator is used to construct Python getters and setters as sho
 ### Project algorithm
 In this project, we have a list of variable names and data types and must display all their getter-setter functions while adhering to fundamental Java programming rules.
 
-To be able to do this we follow the algorithm below:
+To be able to do this, we follow the algorithm below:
 - Transform the first character of each variable into an uppercase letter.
 - Add the word "get" to the beginning of each variable that has been updated and put them in a list.
 - Add the word "set" at the beginning of each variable that has been updated and save them in a list.
@@ -230,14 +236,21 @@ public void setY(String y) {
 }
 ```
 
-From the program above, the line `def print_getter_setter(variables, datatypes):` is function that print getter and setter methods for variables according to Java, the line `getter = []` and `setter = []` are used to store the to store the set and get variables respectively. After storing the variables, we prepend `get` and `set` in every variable and turn the initial character to uppercase. The line of code `print("public " + datatypes[i] + " " + getters[i] + "() {\n\treturn " + variables[i] + ";\n}\n")` print out the getter method while the line `print("public void " + setters[i] + "(" + datatypes[i] + " " + variables[i] + ") {\n\tthis." + variables[i] + " = " + variables[i] + ";\n}\n")` print out the setter method. The line `if __name__=="__main__":` is the driver function. The line `variables = ["abc", "empId", "GFG", "x"]` list all the variables that re used as the output variable while the the line `datatypes = ["int", "float", "double" , "String"]` list the datatypes corresponding to the list of the variables.
+We can break down the program as shown below: 
+- `def print_getter_setter(variables, datatypes):` is a function that prints getter and setter methods for variables according to Java. 
+- `getter = []` and `setter = []` - are used to store the set and get variables respectively. 
+- After storing the variables, we prepend `get` and `set` in every variable and turn the initial character to uppercase.
+- `print("public " + datatypes[i] + " " + getters[i] + "() {\n\treturn " + variables[i] + ";\n}\n")` - prints out the getter method.
+- `print("public void " + setters[i] + "(" + datatypes[i] + " " + variables[i] + ") {\n\tthis." + variables[i] + " = " + variables[i] + ";\n}\n")` - prints out the setter method.
+- `if __name__=="__main__":` - is the driver function. 
+- `variables = ["abc", "empId", "GFG", "x"]` - lists all the variables that are re-used as the output variables while `datatypes = ["int", "float", "double" , "String"]` lists the datatypes corresponding to the list of the variables.
 
 ### Conclusion
 In this article, we have learned what getters and setters are in the python programming language. We have also learned how to get `getters` and `setters` behavior using the `property()` function, `@Property` decorators, and finally using normal functions. 
 
-I urge the reader to use the knowledge gained to advance into getters and setters in other languages.
+I urge the reader to use the knowledge gained to advance into getters and setters in other programming languages.
 
-Happy cording!
+Happy coding!
 
 ---
 Peer Review Contributions by: [Dawe Daniel](/engineering-education/authors/dawe-daniel/)
