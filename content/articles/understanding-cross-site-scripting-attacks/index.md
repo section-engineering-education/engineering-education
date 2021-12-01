@@ -12,12 +12,7 @@ In this article, we'll go through XSS attacks in detail, their impact, and how t
 
 ### Prerequisites
 
-<<<<<<< HEAD
  Basic knowledge of HTML and Javascript
-=======
-- Basic knowledge of HTML and Javascript
-- Basic knowledge of 
->>>>>>> bf91d4f62b7a2726f22cff7a6f872323210b3b51
 
 ### How XSS work
 
