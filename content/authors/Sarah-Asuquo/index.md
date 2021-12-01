@@ -1,1 +1,1 @@
-Sarah is a student pursuing Information Technology. She is passionate, self-motivated, and a solution-oriented technology enthusiast. She is also a full stack web developer and a web designer. She loves technical writing and contributing to open-source projects.
+Sarah is an undergraduate student pursuing Information Technology. She is a passionate and solution-oriented technology enthusiast proficient in PHP, Mysql and python. She loves travelings and making friends.
