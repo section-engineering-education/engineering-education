@@ -182,7 +182,7 @@ Using the Euclidean distance, the numerator, $x-l^i$, tries to capture the dista
 Various types of kernels functions can deal with non-linear classification problems. However, in this session, we shall utilize the Gaussian RBF kernel as our kernel function.
 
 ### Implementing Kernel SVM
-The first thing we shall do is to import the dataset and clean it up before we can implement our model. We can download this dataset [here]().
+The first thing we shall do is to import the dataset and clean it up before we can implement our model. We can download this dataset [here](https://github.com/mbici/data/blob/main/dataset.csv).
 ### Data Preprocessing
 #### Step 1: Importing the libraries
 ```python
