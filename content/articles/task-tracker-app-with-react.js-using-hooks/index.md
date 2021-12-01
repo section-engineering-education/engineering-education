@@ -152,7 +152,7 @@ The return value for this filter is another of todos with two of the same ID as 
 Just like before, we will create a function called handleRemove click, which will call removeTodo with the todo ID. Now we can use this function as the onClick functionality for a todo remove button.
 
 If we run the app, we can now add, remove and toggle todos to complete.
-![Remove](/engineering-education/task-tracker-app-with-react-hooks/Remove.jpg)
+![Remove](/engineering-education/task-tracker-app-with-react-hooks/Remove.jpg) 
 
 With the functionality implemented, let us make our app look better. We will use material UI. for this project by running the following commands in the terminal :
 
