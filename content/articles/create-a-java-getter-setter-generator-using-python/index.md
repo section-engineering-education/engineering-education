@@ -22,14 +22,15 @@ Several object-oriented programming (OOP) languages use getters and setters to 
 In object-oriented programming languages, these methods get and change data. Setting an object's attribute value is called `setting`. In this article, we will learn how to use Python's getter and setter methods.
 
 ### Prerequisites
-- Download the Python IDE [here](https://www.python.org/downloads/) or use an online compiler from [here](https://www.onlinegdb.com/online_python_compiler)
-- Have some introduction knowledge in Python and Java programming language.
+To follow along with this tutorial, you need to:
+- [Download](https://www.python.org/downloads/) the Python IDE or use an [online compiler](https://www.onlinegdb.com/online_python_compiler) to run the code.
+- Have a basic knowledge of Python and Java programming languages.
 
 ### Table of contents
 - [Understanding getters and setters](#understanding-getters-and-setters)
 - [Get getters and setters behavior using normal functions](#get-getters-and-setters-behavior-using-normal-functions)
-- [Get getters and setters behavior using @Property decorators](#get-getters-and-setters-behavior-using-@Property-decorators)
-- [Get getters and setters behavior using the `property()` function](#get-getters-and-setters-behavior-using-the-roperty()-function)
+- [Get getters and setters behavior using @Property decorators](#get-getters-and-setters-behavior-using-property-decorators)
+- [Get getters and setters behavior using the `property()` function](#get-getters-and-setters-behavior-using-the-property-function)
 - [Project algorithm](#project-algorithm)
 - [Implementation of the algorithms](#implementation-of-the-algorithms)
 - [Conclusion](#conclusion)
@@ -104,7 +105,7 @@ kelvin.span = 23
 print(kelvin.span)  
 ```
 
-The output of the code
+Output:
 
 ```bash
 The setters method
