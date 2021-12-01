@@ -6,7 +6,7 @@ url: /how-to-build-a-task-manager-with-angular/
 title: How to Build a Task Manager using Angular 12
 description: This article walks the reader through the basic concepts of building a simple task manager application.
 author: edidiong-etok
-date: 2021-11-30T00:00:00-14:00
+date: 2021-12-01T00:00:00-14:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
