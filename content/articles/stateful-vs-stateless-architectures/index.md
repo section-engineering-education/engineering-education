@@ -12,7 +12,7 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /stateful-vs-stateless-architectures/hero.png
-    alt: Stateful vs Stateless Architectures Hero Image
+    alt: The Stateful vs Stateless Architectures Hero Image
 ---
 
 When developing applications and services, developers consider a number of factors to ensure their applications run in the most optimum way. Factors such as the scalability of the application/service, the hardware need such as networks speed and bandwidth required by the application, and the amount of temporary and permanent storage form a few of the factors that developers consider during the application development process. Additionally, developers consider the processing time, mainly determined by processor speed and application building architecture.
