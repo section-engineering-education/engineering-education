@@ -86,7 +86,7 @@ In your app-level `build.gradle` file, ensure that you have the `material design
 - If we have imported the five icons, we are good to go.
 
 ### Step 4: Create a menu for BottomNavigationView
-- On the res file, right click on it -> New -> Android Resource File.
+- On the res file, right click on it then click on New then Android Resource File.
 ![creating a res file](engineering-education/adding-custom-floating-action-button-to-bottom-navigation-bar-in-android/adding_android_resource_file.png)
 - On the Resource Type select menu.
 - Give your a file name for example bottom_menu_nav, then cick Ok.
@@ -123,7 +123,7 @@ In your app-level `build.gradle` file, ensure that you have the `material design
 ### Step 5: Let us go to activity_main.xml
 - Remove the textView with the text "Hello World"
 - Change the ConstraintLayout to CoordinatorLayout.
-- Add the followwing code:
+- Add the following code:
 
 ``` xml
 <?xml version="1.0" encoding="utf-8"?>
