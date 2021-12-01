@@ -23,7 +23,7 @@ Welcome to a tutorial on implementing a linear classifier using a Stochastic Gra
 4. Code a Linear Classifier
 
 ### Linear Classifiers   
-Linear classifiers are a type of [supervised learning algorithm](/supervised-learning-algorithms/) used on linear datasets. How is linearity defined in the case of a dataset?
+Linear classifiers are a type of [supervised learning algorithm](/engineering-education/supervised-learning-algorithms/) used on linear datasets. How is linearity defined in the case of a dataset?
 
 Consider a dataset with two classes. If the linear classifier can come up with a linear decision boundary to classify the two categories, that is, a straight line of the form $y=mx+c$, then the dataset is linearly separable.
 
@@ -133,7 +133,7 @@ We will define and initialize the parameters in this method, that will be used i
 
 *[Image Source](http://www.financial-hacker.com/build-better-strategies-part-5-developing-a-machine-learning-system/)*
 
-It's given by the equation $sig(x) = \frac{1}{1+e^-x}$. We use the [numpy library](/introduction-to-numpy/) to implement exponentiation. Numpy offers `np.exp()` function to compute the exponential function.
+It's given by the equation $sig(x) = \frac{1}{1+e^-x}$. We use the [numpy library](/engineering-education/introduction-to-numpy/) to implement exponentiation. Numpy offers `np.exp()` function to compute the exponential function.
 
 ```py
         def sigmoid(self,z):
@@ -245,7 +245,7 @@ Notice the sum of elements inside each list is 1. The sum of probabilities is 1.
             return np.c_[1-ones, ones]
 ```
 
-10. `plot`: The plot function uses the matplotlib library to plot graphs. More information can be found in this [article](/matplotlib-visualization-python/).
+10. `plot`: The plot function uses the matplotlib library to plot graphs. More information can be found in this [article](/engineering-education/matplotlib-visualization-python/).
 
 ```py            
         def plot(self):

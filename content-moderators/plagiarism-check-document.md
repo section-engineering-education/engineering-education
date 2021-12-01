@@ -55,3 +55,11 @@ After downloading the PDF report - upload to the PR via GitHub comments and a ty
 >Be sure to see our resources page to see more info on plagiarism and what is considered as such.
 
 ![comment](/static/images/comment.JPG)
+
+If the article is subject to closure due to a high plagiarism score or verbatim, you can use the template below and attach the PDF report too.
+
+> Hi @{author}
+>
+> Your article appears to have many sentences that are taken verbatim from third-party sources. We can't publish any content that is not original or properly cited/referenced. There are many free online tools where you can check this (such as quetext.com, and if you're uncertain about the definitions around plagiarism, this is a [good resource to reference](https://www.scribbr.com/category/plagiarism/).
+> We're really looking for unique/original content.
+

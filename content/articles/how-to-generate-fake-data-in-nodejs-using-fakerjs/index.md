@@ -31,7 +31,7 @@ The basic requirements for this course include:
 - Node.js basics.
 - A basic IDE is installed on the machine. We shall preferably use Visual Studio Code.
 - A stable internet connection.
-- MongoDB installed on your computer. You can check out how to install MongoDB on your computer [here](/working-with-databases-part1/).
+- MongoDB installed on your computer. You can check out how to install MongoDB on your computer [here](/engineering-education/working-with-databases-part1/).
 
 ### Table of contents
 - [What is Faker.js](#What-is-Faker.js)

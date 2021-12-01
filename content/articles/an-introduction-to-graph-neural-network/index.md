@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/an-introduction-to-graph-neural-network/hero.jpg
     alt: Artificial intelligence machine learning and deep learning
 ---
-Over the years, [Deep Learning (DL)](/introduction-to-deep-learning/) has been the key to solving many machine learning problems in fields of image processing, natural language processing, and even in the video games industry.
+Over the years, [Deep Learning (DL)](/engineering-education/introduction-to-deep-learning/) has been the key to solving many machine learning problems in fields of image processing, natural language processing, and even in the video games industry.
 All this generated data is represented in spaces with a finite number of dimensions i.e. 2D or 3D spaces.
 <!--more-->
 Yet, in most current applications, generated data is generated from non-Euclidean domains that represent data as graphs with relationships and mutual dependency between objects.
@@ -36,7 +36,7 @@ In this article, we will cover on:
 
 
 ### Prerequisites
-This article assumes a basic understanding of Machine Learning (ML) and Deep Learning (DL). For an introduction to ML and DL, feel free to check out my previous [article](/differences-between-artificial-intelligence-machine-learning-and-deep-learning).
+This article assumes a basic understanding of Machine Learning (ML) and Deep Learning (DL). For an introduction to ML and DL, feel free to check out my previous [article](/engineering-education/differences-between-artificial-intelligence-machine-learning-and-deep-learning).
 
 ### What is a Graph?
 Graphs are powerful data structures that model a set of objects and their relationships. These objects represent the nodes and the relationships represent edges.
@@ -54,7 +54,7 @@ In our article, we will refer to vertex, V, as the nodes.
 Let's take an example of a transportation system. The locations in the system represent the vertices, V, and the connections between these locations representing the edges.
 
 ### What is Graph Neural Network (GNN)?
-GNN is a technique in deep learning that extends existing [neural networks](/introduction-to-neural-networks/) for processing data on graphs.
+GNN is a technique in deep learning that extends existing [neural networks](/engineering-education/introduction-to-neural-networks/) for processing data on graphs.
 
 ![Structure of a GNN implementing a drug interaction network](/engineering-education/an-introduction-to-graph-neural-network/gnn-structure.PNG)<br>
 
