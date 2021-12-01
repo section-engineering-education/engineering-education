@@ -16,9 +16,7 @@ images:
 ---
 
 ### Introduction
-The odds ratio can be calculated using logistic regression when there are multiple explanatory variables. The approach is quite similar to multiple linear regression, except that the response variable is a binomial. An event's odds ratio is the final result of each variable's influence on the odds ratio.
-
-To predict a binary result, we use the statistical technique of logistic regression. The MNIST dataset contains handwritten digits. Therefore we'll use Logistic Regression in PyTorch to figure out which ones they are.
+Logistic Regression is a widely used statistical method for predicting a binary outcome from a set of independent variables. This [article](https://www.geeksforgeeks.org/understanding-logistic-regression/) previously covered the various properties of logistic regression and its Python implementation. Now we'll look at how to implement this in PyTorch and use Logistic Regression to classify handwritten digits from the MNIST dataset.
 
 ### Prerequisites
 1. Install [PyTorch](https://pytorch.org/) into your Python environment.
@@ -32,12 +30,12 @@ To predict a binary result, we use the statistical technique of logistic regress
 - [Conclusion](#conclusion)
  
 ### Library functions and objects
-Importing Library functions and objects into your code is necessary once your installation is complete.
+Importing library functions and objects into your code is necessary once your installation is complete.
 Here are the functions and objects to import:
 
-- The **torch.nn** module: Contains code for the required model.
+- The **torch.nn** module: Contains code thatwe will be using in our model.
 - The **torchvision.datasets**: Includes MNIST dataset of handwritten digits that we shall be using here.
-- The **torchvision.transforms**: We shall be using it here to tt from images to PyTorch tensors.
+- The **torchvision.transforms**: We shall be using it to transform from images to PyTorch tensors.
 - The **torch.autograd**: This will be used to define our tensors.
 
 Type the code below to import the library functions and objects;
@@ -73,9 +71,9 @@ batch_size = 100
 learning_rate = 0.001
 
 ```
-The image size that we will use for our image will be 28*28. This means that our input size will be 784. In addition, there are ten digits in this. Thus we can generate ten alternative results. In this way, number_classes will be set to ten. In addition, we'll run the full dataset through five iterations of training. Finally, we will train in small batches of 100 images each so that the software does not crash because of memory overflow.
+The image size that we will use for our image will be 28*28. This means that our input size will be 784. In addition, there are ten digits in this. Thus we can generate ten alternative results. In this way, `number_classes` will be set to ten. In addition, we'll run the full dataset through five iterations of training. Finally, we will train in small batches of 100 images each so that the software does not crash because of memory overflow.
 
-After that, we'll lay out our model in the following manner. In this section, we'll define the forward pass after setting up our model as a subclass of **torch.tn.Module**. As we are building the code, we will not need to mention the softmax in the **forward()** function because it will be determined internally during each forward run.
+After that, we'll lay out our model in the following manner. In this section, we'll define the forward pass after setting up our model as a subclass of __torch.tn.Module__. As we are building the code, we will not need to mention the softmax in the __forward()__ function because it will be determined internally during each forward run.
 ```Python
 class LogisticRegression(tn.Module):
 	def __init__(self, input_size, num_classes):
@@ -91,10 +89,12 @@ Now that our class has been established, we may create an instance of it.
 model = LogisticRegression(input_size, num_classes)
 ```
 ### Building The Neural Network
-Our loss function and optimizer are now set. As specified in the hyperparameter above, we'll use the cross-entropy loss and the stochastic gradient descent algorithm with a reading rate of 0.001 for the optimizer.
-Let's import some modules first before building a new class for the network we're developing.
+Our loss function and optimizer are now set. As specified in the hyperparameter above, we'll use the [cross-entropy loss](https://en.wikipedia.org/wiki/Cross_entropy) and the [stochastic gradient descent algorithm](https://en.wikipedia.org/wiki/Stochastic_gradient_descent) with a reading rate of 0.001 for the optimizer.
+Let's build a new class for the network we're developing.
 ```python
+# create a new class for the network
 class NeuralNetwork(tn.Module):
+# constructing our network with two-dimensional convolutional layers, followed by two fully-connected layers
    def __init__(self):
       super(NeuralNetwork, self).__init__()
       self.c1 = tn.Conv2d(1, 10, kernel_size=5)
@@ -117,7 +117,7 @@ criterion = tn.CrossEntropyLoss()
 network = NeuralNetwork()
 opti = torch.optim.SGD(newmodel.parameters(), lr = reading_rate)
 ```
-We're ready to begin training now. Resetting all gradients to 0 will be the first step here, followed by a forward pass, the loss calculation, backpropagation, and the updating of all weights.
+We're ready to begin training now. Resetting all gradients to 0 will be the first step here, followed by a forward pass, the loss calculation, backpropagation, and the updating of all weights. Dataloader will load the individual batches. We set the gradients to zero using `optimizer.zero_grad().` The `backward()` call will now collect a new set of gradients which we propagate back into each of the network’s parameters using optimizer.step().
 ```python
 # Training the Model
 for epoch in range(num_epochs):
@@ -149,13 +149,13 @@ print('Accuracy of the model on the 10000 test images: % d %%' % (
 			100 * correct / total))
 
 ```
-To put it another way, if you followed the instructions exactly, you would have an accuracy rate of 91%, which is significantly lower than the current best model, which makes use of a different sort of neural network architecture.
+To put it another way, I got 91 percent by following the steps, which is significantly lower than the current best model, which also uses a different type of neural network architecture.
 
 You can run the whole code [here](https://colab.research.google.com/drive/1eL6a4_QxAZxqLV83vJOsLkPF09hYwThn?usp=sharing)
 
 ### References 
 1. [To see whole code click here](https://colab.research.google.com/drive/1eL6a4_QxAZxqLV83vJOsLkPF09hYwThn?usp=sharing)
-2. [PyTorch](https://drive.google.com/drive/folders/0B41Zbb4c8HVyUndGdGdJSXd5d3M?resourcekey=0-s90CYmIbmbqbO1Mvtwmlog)
+2. [PyTorch](https://pytorch.org/)
 3. [Linear Regression](https://machinelearningmastery.com/linear-regression-for-machine-learning/)
 ### Conclusion
 With the help of Logistic Regression and PyTorch, we learned how the MNIST handwritten digits are identified.
