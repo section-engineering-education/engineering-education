@@ -15,7 +15,7 @@ images:
     alt: How to set up a Simple Python WebSocket with AioHTTP
 ---
 
-A web socket consists of two major endpoints. One end sends data, and the other end receives data. Take an example of what you can do over the internet. In this case, different nodes/computers are connected to establish a connection that will allow you to send or receive data. A node can be a server or a client. A client sends a request, and the server will send back a response. These connections between the server and client are achieved through sockets. Thus, a socket acts as the communication endpoint.
+A web socket consists of two significant endpoints. One end sends data, and the other end receives data. Take an example of what you can do over the internet. In this case, different nodes/computers are connected to establish a connection that will allow you to send or receive data. A node can be a server or a client. A client sends a request, and the server will send back a response. These connections between the server and client are achieved through sockets. Thus, a socket acts as the communication endpoint.
 
 This guide will help you understand the socket concept by building client-server socket architecture using the AioHTTP.
 
@@ -60,7 +60,7 @@ You can check the version of virtualenv installed on your computer by running;
 which virtualenv
 ```
 
-If virtualenv version is not up to date, run this command to get the latest version installed;
+If the virtualenv version is not up to date, run this command to get the latest version installed;
 
 ```bash
 python3 -m pip install --upgrade pip
@@ -163,7 +163,7 @@ if __name__ == '__main__':
     web.run_app(app)
 ```
 
-Here we are targeting the `/` route and the `/todos` route, both of which will be handled by the same function. We are also starting our server by running the application instance.
+Here we target the `/` route and the `/todos` route, both of which will be handled by the same function. We are also starting our server by running the application instance.
 
 You can start the server by running the following command on your terminal. Before running the command, ensure you are in the project folder that hosts the `server.py` file.
 
@@ -214,7 +214,7 @@ The event loop will only close when the `main` function has been fully executed.
 
 ### Sending data between client and server
 
-To send the data between the client and the server, we need to run the `client.py` file so that we can receive the dummy data we set from the server.
+To send the data between the client and the server, we need to run the `client.py` file to receive the dummy data we set from the server.
 
 Open a separate tab of your terminal and run the following command inside the project folder.
 
