@@ -3,11 +3,11 @@ layout: engineering-education
 status: publish
 published: true
 url: /how-to-set-up-a-python-web-socket-with-aiohttp/
-title: How to set up a Simple Python WebSocket with AioHTTP
+title: How to Set Up a Simple Python WebSocket with AioHTTP
 description: In this tutorial, we will build a client-server socket architecture application using AioHTTP.
 author: carol-wanjiru
-date: 2021-11-29T00:00:00-13:00
-topics: []
+date: 2021-12-12T00:00:00-11:35
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
@@ -15,7 +15,10 @@ images:
     alt: How to set up a Simple Python WebSocket with AioHTTP
 ---
 
-A web socket consists of two significant endpoints. One end sends data, and the other end receives data. Take an example of what you can do over the internet. In this case, different nodes/computers are connected to establish a connection that will allow you to send or receive data. A node can be a server or a client. A client sends a request, and the server will send back a response. These connections between the server and client are achieved through sockets. Thus, a socket acts as the communication endpoint.
+A web socket consists of two significant endpoints. One end sends data, and the other end receives data. Take an example of what you can do over the internet. In this case, different nodes/computers are connected to establish a connection that will allow you to send or receive data. 
+<!--more-->
+
+A node can be a server or a client. A client sends a request, and the server will send back a response. These connections between the server and client are achieved through sockets. Thus, a socket acts as the communication endpoint.
 
 This guide will help you understand the socket concept by building client-server socket architecture using the AioHTTP.
 
@@ -33,14 +36,14 @@ We will build a WebSocket by setting up the client and the server with AioHTTP a
 
 - [Prerequisites](#prerequisites)
 - [Table of contents](#table-of-contents)
-- [Setting up a virtualenv](#setting-up-a-virtualenv)
+- [Setting up a virtual environment using virtualenv](#setting-up-a-virtual-environment-using-virtualenv)
 - [Installing AioHTTP](#installing-aiohttp)
 - [Building a server with AioHTTP](#building-a-server-with-aiohttp)
 - [Building a client with AioHTTP](#building-a-client-with-aiohttp)
 - [Sending data between client and server](#sending-data-between-client-and-server)
 - [Conclusion](#conclusion)
 
-### Setting up a virtualenv
+### Setting up a virtual environment using virtualenv
 
 [Virtualenv](https://pypi.org/project/virtualenv/) is a tool for creating an independent Python environment. This implies that all the libraries that we will install will be installed specifically for our project. Create a project folder and open it in a command line.
 
@@ -50,7 +53,7 @@ Then install the virtualenv by running the following command:
 pip3 install virtualenv
 ```
 
-If you have virtualenv already installed, ensure that your [pip](https://pypi.org/project/pip/) is up to date by running the following command from your terminal.
+If you have pre-installed virtualenv, ensure that your [pip](https://pypi.org/project/pip/) is up to date by running the following command from your terminal.
 ```bash
 pip --version
 ```
@@ -66,15 +69,13 @@ If the virtualenv version is not up to date, run this command to get the latest 
 python3 -m pip install --upgrade pip
 ```
 
-This will output the path as the already installed virtualenv.
-
-Initialize the environment for this project using virtualenv
+This will output the path as the already installed virtualenv. Initialize the environment for this project using virtualenv
 
 ```bash
 python3 -m virtualenv .
 ```
 
-Then activate Activate this environment by running;
+Then activate this environment by running;
 
 - For the Windows operating system, run this command in your;
 
@@ -95,8 +96,6 @@ Then activate Activate this environment by running;
 ```bash
 source /Scripts/activate
 ```
-
-The virtualenv is now set up, and we can proceed to the following stage.
 
 At this point, the virtualenv is set up, and we can proceed to the next step.
 
@@ -122,7 +121,7 @@ The modules ensure that the AioHTTP module is as fast as possible when receiving
 
 Create a `server.py` file in the project folder. We will configure an AioHTTP server here.
 
-Import the `web` module from the `aiohttp` module.
+Import the `web` module from the `aiohttp` library.
 
 ```python
 from aiohttp import web
@@ -151,7 +150,7 @@ async def handle(request):
 
 Notice that the handler is an `async` function returning `JSON` data.
 
-- Initialize the application, set up the routes with their listeners, and add scripts for starting a server as shown below;
+- Initialize the application, set up the routes with their listeners, and add scripts for starting a server as shown below:
 
 ```python
 app = web.Application()
@@ -209,7 +208,6 @@ Initialize an event loop and run the `main` function in the event loop until com
 loop = asyncio.get_event_loop()
 loop.run_until_complete(main())
 ```
-
 The event loop will only close when the `main` function has been fully executed.
 
 ### Sending data between client and server
