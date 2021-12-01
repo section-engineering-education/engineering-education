@@ -52,9 +52,7 @@ In your app-level `build.gradle` file, ensure that you have the `material design
 > Note that a `Bottom Navigation Bar` can contain a single task or component. However, it's advisable to include at least three destination icons.
 
 ### Step 1: Create a new project
-- Click on File
-- Click on New
-- CClick on New Project
+- To create a new project, click on File followed by New then Project
 - Select Empty Activity then click Next
 
 ![creating a project](engineering-education/adding-custom-floating-action-button-to-bottom-navigation-bar-in-android/creating_project.png)
@@ -64,8 +62,8 @@ In your app-level `build.gradle` file, ensure that you have the `material design
 - Then click Finish
 
 ### Step 2: Add Material Design Dependencies
-- Click on the Gradle Script file.
-- Then click on the build.gradle(Module.floatingActionButton.app).
+- To add a Material Design Dependencies, click on the Gradle Script file.
+- Then click on the build.gradle(Module.app).
 - Under plugins add id 'kotlin-android-extensions'.
 - Under dependencies, add the material design dependencies.
  ```gradle
@@ -77,7 +75,7 @@ In your app-level `build.gradle` file, ensure that you have the `material design
 ### Step 3: Import icons 
 - Here we are going to import some icons for our bottomNavigationView.
 - We will import 5 icons, 4 for our bottomNavigationView and 1 for our Floating Action Button.
-- On the res file, right click on drawable-> New -> Vector Asset.
+- On the res file, right click on drawable followed by New then Vector Asset.
 ![creating a project](engineering-education/adding-custom-floating-action-button-to-bottom-navigation-bar-in-android/ading_vectorsAsset.png)
 - On the Clip Art, click on the clip art icon.
 - Search for a home icon select it then click Ok.
