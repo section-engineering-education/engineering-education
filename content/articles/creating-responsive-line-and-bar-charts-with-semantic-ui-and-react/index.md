@@ -1,9 +1,22 @@
-Creating Responsive Line and Bar charts with React and Semantic-ui
+---
+layout: engineering-education
+status: publish
+published: true
+url: /creating-responsive-line-and-bar-charts-with-semantic-ui-and-react/
+title: Creating Responsive Line and Bar charts with React and Semantic-UI
+description: In this article, the reader will learn how to build a resposive application that implements Line and Bar charts using Semantic-UI and React and vanilla CSS.
+author: fred-benson
+date: 2021-12-1T00:00:00-19:10
+topics: [Language]
+excerpt_separator: <!--more-->
+images:
 
-### Introduction
+  - url: /engineering-education/creating-responsive-line-and-bar-charts-with-semantic-ui-and-react/hero.jpg
+    alt: Creating Responsive Line and Bar charts with React and Semantic-UI Image
+---
 
 Graphical representation is one of the most prevalent methods used to visualize and analyze data.  The most common types of graphical representation of data are bar charts and bars graphs.
-
+<!--more-->
 Line and bar charts have various applications to data visualization and representation. Among the applications of these charts include statistics of user engagements, user growth, ratings of products, and other commodities.
 
 This tutorial will walk the reader through the various steps and dependencies required to build a responsive chart project. We will use React.js, semantic-ui, and CSS to generate line and bar charts with a set of coordinates and datasets.
@@ -292,3 +305,7 @@ This tutorial covered various aspects of creating responsive lines and bar chart
 
 - https://react.semantic-ui.com/elements/
 - https://www.npmjs.com/package/react-chartjs-2
+
+
+---
+Peer Review Contributions by: [Jerim Kaura](/engineering-education/authors/jerim-kaura/)
