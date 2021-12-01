@@ -1,6 +1,10 @@
 ### introduction
-Discord is a robust communication app used by a large community of gamers, developers, and cryptocurrency enthusiasts. Admins can add a plethora of unique Discord bots to their servers. There are also powerful APIs for creating Discord bots for those who prefer to take matters into their own hands.
-With Discord.js, it is relatively simple to create a Discord bot using Javascript. In this Discord bot tutorial, we'll go over everything you need to know to get a bot up and running on the Discord server.
+Discord is a robust communication app used by many gamers, developers, and cryptocurrency enthusiasts. In addition, the discord platform admins can add several unique Discord bots to their servers to automate most action in the platforms.
+
+There are also powerful APIs for creating Discord bots for those who prefer to take matters into their own hands.
+
+With Discord.js, it is relatively simple to create a Discord bot using Javascript. This Discord bot tutorial will go over everything you need to know to get a bot up and running on the Discord server.
+
 ### Table of content
 - [introduction](#introduction)
 - [Table of content](#table-of-content)
@@ -15,10 +19,11 @@ With Discord.js, it is relatively simple to create a Discord bot using Javascrip
 - [Conclusion](#conclusion)
 
 ### Requirements
-1. wifi connection
-2. discord account
-3. text editor
+1. Wifi connection
+2. Discord account
+3. Text editor
 4. Node v17.1.0 (latest version)
+
 ### Add New Discord Application
 visit https://discord.com/developers/applications. 
 1. Click on the New Application button.
