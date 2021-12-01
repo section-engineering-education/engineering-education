@@ -21,6 +21,10 @@ Several object-oriented programming (OOP) languages use getters and setters to 
 
 In object-oriented programming languages, these methods get and change data. Setting an object's attribute value is called `setting`. In this article, we will learn how to use Python's getter and setter methods.
 
+### Prerequisites
+- Download the Python IDE [here](https://www.python.org/downloads/) or use an online compiler from [here](https://www.onlinegdb.com/online_python_compiler)
+- Have some introduction knowledge in Python and Java programming language.
+
 ### Table of contents
 - [Understanding getters and setters](#understanding-getters-and-setters)
 - [Get getters and setters behavior using normal functions](#get-getters-and-setters-behavior-using-normal-functions)
