@@ -43,6 +43,7 @@
       })
     },300);
 </script>
+
 {{- if eq (getenv "HUGO_ENV") "production" | or (eq $.Site.Params.env "production") -}}
 {{ partial "head-scripts" }}
 {{- end -}}

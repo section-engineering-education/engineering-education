@@ -1,7 +1,7 @@
  {{ define "main" }}
-<article> 
-
-  <section class='hero-blocks xs-pt-50 xs-pb-50 sm-pt-100 sm-pb-100 -blue-blocks'>
+ <article> 
+   
+   <section class='hero-blocks xs-pt-50 xs-pb-50 sm-pt-100 sm-pb-100 -blue-blocks'>
 
     <div class="hero-blocks-mobile">
 
@@ -150,4 +150,56 @@
   </div>
 </section>
 
+<div class="comments-wrapper">
+  <div id="hyvor-talk-view"></div>
+</div>
+
+{{ if eq (getenv "HUGO_ENV") "production" | or (eq $.Site.Params.env "production") }}
+  <script type="text/javascript">
+    var HYVOR_TALK_WEBSITE = 5716;
+    var HYVOR_TALK_CONFIG = {
+        url: false,
+        id: 5716
+    };
+  </script>
+{{ else }}
+  <script type="text/javascript">
+    var HYVOR_TALK_WEBSITE = 5728;
+    var HYVOR_TALK_CONFIG = {
+        url: false,
+        id: 5728
+    };
+  </script>
+{{ end }}
+
+<script async type="text/javascript" src="//talk.hyvor.com/web-api/embed.js"></script>
+
+<script type="text/javascript">
+
+  const checkIfCookieExists = (value) => {
+    if (document.cookie.split(';').some((item) => item.trim().startsWith(`${value}=`))) {
+      console.log('Cookie does in fact exist..')
+      return true;
+    } else {
+      console.log('cookie Does not Exist...')
+      return false
+    }
+    
+  }
+  const hyvorCookieExists = checkIfCookieExists('hyvorTalkCookie');
+
+  // Capture toggle value/strategy.
+  /*  const hyvorToggle = fetch('https://aperture.section.io/ops/featuretoggle/api')
+    .then(response => response.json())
+    .then(data => console.log(data));  */
+
+  /*  const hyvorStrategy = hyvorToggle.features.find(feat => feat.name === 'section.io.hyvorTalk');  */
+  
+  // Determine whether user has the correct cookie
+  /* if (hyvorStrategy && hyvorStrategy.strategies.parameters.cookieName === hyvorCookieExists) {
+    // display comments,
+
+  } */
+
+</script> 
 {{ end }}
