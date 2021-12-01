@@ -1,7 +1,7 @@
-Recently, Firebase introduced Firebase version 9 of the library. This has created some differences with how we use Firebase with the previous versions. One of the major changes in version 9 of Firebase is the adoption of a more modular and functional approach. This means that we only import the Firebase functions that we need from the libraries. Previous versions used an object-oriented approach, where we call those functions and methods directly on Firebase objects. With Firebase 9, you only import the functions that you need for your specific application. Thus, allowing you to remove any unused codes within your application.
+Recently, Firebase introduced Firebase version 9 of the library. This has created some differences with how we use Firebase with the previous versions. One of the significant changes in version 9 of Firebase is adopting a more modular and functional approach. This means that we only import the Firebase functions that we need from the libraries. Previous versions used an object-oriented approach, where we call those functions and methods directly on Firebase objects. With Firebase 9, you only import the functions that you need for your specific application. Thus, allowing you to remove any unused codes within your application.
 
 ### Goal
-This guide will use Firebase 9 with React native and implement the new features to a React native application. We will build a todos application using React Native and Firebase 9.
+This guide will use Firebase 9 with React native and implement the new features to a React native application. First, we will build a todos application using React Native and Firebase 9.
 
 ### Prerequisites
 To proceed with this tutorial, it is essential to have the following tools and information.
@@ -20,7 +20,7 @@ Once the project is set and ready, click Continue. You will be redirected to the
 
 React Native is cross-platform. It supports both Ios and Android. Depending on the device you are building on, click on its icon to add Firebase to the application.
 
-On the resulting section, register the application package name or the Apple bundle ID if you are building for Ios. Then click the Register app.
+Register the application package name or the Apple bundle ID on the resulting section if you are building for Ios. Then click the Register app.
 
 ![application-registration](/engineering-education/firebase-nine-and-above-with-react-native/application-registration.png)
 
@@ -45,7 +45,7 @@ Install the Expo CLI tool if you have it installed on your computer:
 npm i -g expo-cli
 ```
 
-Run the following command to ensure the Expo CLI was safely installed. The version of the installed Expo CLI will be logged in your console.
+Run the following command to ensure We safely installed the Expo CLI. The version of the installed Expo CLI will be logged in your console.
 
 ```bash
 expo-CLI --version
@@ -80,7 +80,7 @@ expo-cli install @expo/vector-icons
 The application is now set for the next step.
 
 ### Configuring Firebase in the application
-In your project folder, create an `src` directory, and then inside `src` create a `firebase` directory. Inside the `firebase` directory, create a `config.js` file. In this `config.js` file;
+Create an `src` directory in your project folder, and then inside `src` create a `firebase` directory. Inside the `firebase` directory, create a `config.js` file. In this `config.js` file;
 
 - Start by importing Firebase and Firestore.
 
