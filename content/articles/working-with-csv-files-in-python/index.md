@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /working-with-csv-files-in-python/
 title: Working with CSV files in Python
-description: This article will cover the basics of working with csv files in Python. The article will explain how to read,clean and analyze data from csv files.
+description: This article will cover the basics of working with csv files in Python. It will also explain how to read, clean and analyze data from csv files.
 author: kelvin-munene
-date: 2021-10-21T00:00:00-07:20
+date: 2021-12-01T00:00:00-07:20
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -16,26 +16,29 @@ images:
 ---
 
 ### Introduction
-CSV (Comma Separated Values) is a basic file format for tabular data. Most programs create CSV files. They allow you to export and import data from spreadsheets and databases. For example, they can be exported to a CSV file and imported into a spreadsheet to analyze, graph, or publish data mining results.
+CSV (Comma Separated Values) is a basic file format for tabular data. Most programs create CSV files. They allow you to handle data from spreadsheets and databases. For example, tabular data can be exported to a CSV file and imported into a spreadsheet to analyze, graph, or publish data mining results.
 
-These files are quite easy to use in programming. CSV files may be directly accessed and manipulated by text file input and string manipulation language.
+These files have extensive support from several programming languages. CSV files may be directly accessed and manipulated by text file input and string manipulation language.
 
-### Prerequisite
-- Have [python IDE](https://www.python.org/downloads/) installed.
+### Prerequisites
+- Have [Python IDE](https://www.python.org/downloads/) installed.
 - Have some background information in the python programming language.
 
 ### Table of contents
 
 - [Introduction](#introduction)
-- [Prerequisite](#prerequisite)
+- [Prerequisites](#prerequisites)
 - [Table of contents](#table-of-contents)
 - [Write a CSV file](#write-a-csv-file)
   - [Using csv.writer class](#using-csvwriter-class)
   - [Using csv.DictWriter class](#using-csvdictwriter-class)
 - [Read a CSV file](#read-a-csv-file)
-  - [reading from a specific row](#reading-from-a-specific-row)
-  - [Read a precise Column](#read-a-precise-column)
-  - [Manupulate csv files](#manupulate-csv-files)
+  - [Using csv.reader():](#using-csvreader)
+  - [Using CSV.DictReader() class:](#using-csvdictreader-class)
+  - [Using pandas.read_csv() method:](#using-pandasread_csv-method)
+  - [Reading from a specific row](#reading-from-a-specific-row)
+  - [Read a precise column](#read-a-precise-column)
+  - [Manipulate CSV files](#manipulate-csv-files)
 - [Working with large CSV files in Python](#working-with-large-csv-files-in-python)
   - [Using pandas.read_csv](#using-pandasread_csv)
 - [Convert multiple JSON files to CSV files](#convert-multiple-json-files-to-csv-files)
@@ -44,20 +47,20 @@ These files are quite easy to use in programming. CSV files may be directly acce
 
 
 ### Write a CSV file
-Python provides a built-in CSV module. This module contains two CSV-writing classes:
+Python provides a built-in CSV module. This module contains two CSV writing classes:
 - Using `CSV.writer` class
 - Using `CSV.DictWriter` class
 
 #### Using csv.writer class
-csv.writer writes data to a CSV file. By default, user data is transformed into a delimited string. The CSV file object will not be recognized if quoted fields do not include `\n`.
+`csv.writer` writes data to a CSV file. By default, user data is transformed into a delimited string. The CSV file object will not be recognized if quoted fields do not include `\n`.
 
-To write to a CSV file, use the writer class. There's also `writerows()`.
+To write to a CSV file, use the writer class. The writer class is a subclass of the `csv.Dialect` class. The `csv.Dialect` class provides a set of parameters that can be used to customize the CSV file.
 
 - `writerow()`: This technique writes one row. This technique may create a field row.
 - `writerows()`: This technique writes numerous rows at once. This is for row lists.
 
 
-To illustrate the use of the `writerow()` class, let's create a student_file.csv as shown below.
+To illustrate the use of the `writerow()` class, let's create a sample CSV file, `student_file.csv`, as shown below.
 
 ```python
 import csv
@@ -77,7 +80,7 @@ The code above will output the following file-
 2, Marion koech, data science
 ```
 
-To illustrate the use of the `writerows()` class lets create a student_file.csv as shown below:
+To illustrate the use of the `writerows()` class, let's create a sample CSV file, `student_file.csv` as shown below:
 
 ```python
 import csv
@@ -88,31 +91,30 @@ with open('protagonist.csv', 'w') as file:
     writer.writerows(csv_rowlist)
 ```
 
-The program's output is as in `writerow()` example above. 
+The program's output is the same as in the `writerow()` example above. 
 
 #### Using csv.DictWriter class
 This class builds a column-to-dictionary writer object. This class supports two CSV writing methods. They are:
 
 - `writeheader()`: A simple CSV file with field names you choose publishes the first row.
 
-- `writerows()`: writerows() writes all rows but just values.
+- `writerows()`: `writerows` function writes all rows with just values.
 
 ### Read a CSV file
-The CSV module or Panda's library can read CSV files. To be able to read CSV files, one can use one of the below methods:
+The CSV module or pandas library can read CSV files. To be able to read CSV files, one can use one of the below methods:
 
-- **USing csv.reader():** The CSV file is first opened using the `open()` function in `r` mode (specify read mode when opening a file) and then read using the `reader()` method of the CSV module.
-
+#### Using csv.reader(): 
+The CSV file is first opened using the `open()` function in `r` mode (specify read mode when opening a file) and then read using the `reader()` method of the CSV module.
 
 > The `with` keyword simplifies exception handling and immediately ends the CSV file.
 
-- **Using CSV.DictReader() class:** The CSV file is opened using `open()`, then read using the CSV module's `DictReader` class, which works like a reader but converts CSV data to a dictionary. The file's first line contains dictionary keys.
+#### Using CSV.DictReader() class:
+The CSV file is opened using `open()`, then read using the CSV module's `DictReader` class, which works like a reader but converts CSV data to a dictionary. The file's first line contains dictionary keys.
 
-- **Using pandas.read_csv() method:** Using pandas library methods to read a CSV file is straightforward. Pandas read `csv()` reads data from CSV files.
+#### Using pandas.read_csv() method:
+Using pandas library methods to read a CSV file is straightforward. Consider the `fonteds.csv` CSV file. This is the file used to illustrate one of the methods.
 
-Consider the `fonteds.csv` CSV file. This is the file used to illustrate one of the methods.
-
-![Giant file](engineering-education/working-with-csv-files-in-python/image4.png
-)
+![Giant file](engineering-education/working-with-csv-files-in-python/image4.png)
 
 ```python 
 import pandas
@@ -132,9 +134,9 @@ SCHOOL            CEO         YEAR
 2 MMU   DICKSON NJOGU         2013
 ```
 
-From the code above, `import pandas` is used to import the pandas module, `csvFile = pandas.read_csv('fonteds.csv')` is used to read the fonted.csv file and `print(csvFile)` is used to output the read csv file. 
+From the code above, `import pandas` is used to import the pandas module, `csvFile = pandas.read_csv('fonteds.csv')` is used to read the `fonteds.csv` file and `print(csvFile)` is used to output the read csv file. 
 
-#### reading from a specific row
+#### Reading from a specific row
 Here we will create a CSV file with multiple rows and columns to illustrate how to read from a specific row.
 
 Create a CSV file by entering the below data in your notepad and saving it as `student-data.csv`. The file will be used to show how to manipulate the CSV files.
@@ -148,10 +150,10 @@ RegNo   Name        Course  year-of-study   Department
 005     Beth        BIT     2.2             IT
 ```
 
-To read a specific row in the CSV file we use the `read_cv` function from the panda's library. The example below illustrates how to read from a specific row.
+To read a specific row in the CSV file, we use the `read_cv` function from Panda's library. The example below illustrates how to read from a specific row.
 
 ```python
-# Import Pandas 
+# Import pandas 
 import pandas as pd
 # Specify the file location of our CSV file
 data = pd.read_csv('File-location/student-data.csv')
@@ -169,13 +171,14 @@ The above code will output the following information:
 Name: Name, dtype: float64
 ```
 
-#### Read a precise Column
-The panda's library's `read_csv` method may additionally read specified columns. This is done using the `.loc()` multi-axes indexing function. First, let's look into an example program. This example will show the `Name` and `Course` columns for all rows.
+#### Read a precise column
+
+The pandas library's `read_csv` method may additionally read specified columns. This is done using the `.loc()` multi-axes indexing function. First, let's look into an example program. This example will show the `Name` and `Course` columns for all rows.
 
 > We will use the `student-data.csv` file from the previous example.
 
 ```python
-# Import the Pandas module
+# Import the pandas module
 import pandas as pd
 # Specify the file location of our CSV file
 data = pd.read_csv('File-location/student-data.csv')
@@ -193,7 +196,7 @@ The  output
 4   Beth        BIT    
 ```
 
-#### Manupulate csv files
+#### Manipulate CSV files
 Since you can't edit a CSV file while reading from it, you must create a new one and write to it.
 
 > We will use the `student-data.csv` file from the previous example.
@@ -207,12 +210,12 @@ with open('student-data.csv','r') as f:
         ff.write(f.read().lower())
 ```
 
-The above code creates a new CVS file with all letters in it changed to lower case.
+The above code creates a new CSV file with all letters in it changed to lower case.
 
 ### Working with large CSV files in Python
 When dealing with CSV data, usually read it in using pandas before munging and analyzing it. However, reading huge files straight into pandas may be difficult (or impossible) on a consumer machine due to memory constraints.
 
-While it is simple to load data from CSV files into a database, there may be situations when you don't have access to or don't want to set up a database server. However, if you need to look at data in these big files for a short time, here is one method to accomplish it using Python, and pandas.
+While it is simple to load data from CSV files into a database, there may be situations where you don't have access to or don't want to set up a database server. However, if you need to look at data in these big files for a short time, here is one method to accomplish it using Python and pandas.
 
 Here is a method for handling large.csv files. The dataset we will be using is [gender_voice_dataset](https://drive.google.com/file/d/1HXAaZDfQROL1FH0yDv18s8iau3b_nBE_/view?usp=sharing).
 
@@ -243,11 +246,11 @@ df.sample(10) # This specifies the time taken, 10 seconds
 ### Convert multiple JSON files to CSV files
 A JSON file contains basic data structures and objects in JavaScript Object Notation (JSON). The most common use case is sending data between an internet app and a server.
 
-A CSV file is created by concatenating/merging/joining several JSON files (at least one column must be the same in each file) and saving the result as a flattened data frame. The following sample will help you understand the task's whole procedure:
+A CSV file is created by concatenating, merging or joining several JSON files (at least one column must be the same in each file) and saving the result as a flattened data frame. The following sample will help you understand the task's whole procedure:
 
 **Example program:**
 
-We'll input two JSON files and output a CSV. The used JSON files are:
+We will input two JSON files and output a CSV. The used JSON files are:
 
 `first.json file`
 
@@ -308,7 +311,7 @@ Follow the steps below to be able to convert
 - Merge the data frames.
 - Create a CSV file from the concatenated data.
 
-The result is shown in the code
+The result is shown in the code.
 
 ```python
 import pandas as pd
@@ -334,11 +337,11 @@ Download the example CSV file [here](https://www.kaggle.com/saurav9786/cardiogoo
 
 A dataframe can be created by:
 
-- read_csv() method
--  read_table() method
-- csv module
+- `read_csv()` method
+- `read_table()` method
+- `csv` module
 
-Let's look at an example using the read_table() method.
+Let's look at an example using the `read_table()` method.
 
 ```python
 import pandas as pd
@@ -349,9 +352,9 @@ print(df.head())
 ![Output](/engineering-education/working-with-csv-files-in-python/image3.png)
 
 ### Conclusion 
-Thank you for reading to the end. This tutorial taught us how to work with CSV files in Python. We have learned how to write and read CSV files, work with large CSV files, convert multiple JSON files to CSV files, and finally, create a data frame using CSV files. 
+Thank you for reading till the end. This tutorial taught us how to work with CSV files in Python. We learned how to write and read CSV files, work with large CSV files, convert multiple JSON files to CSV files, and finally, create a data frame using CSV files. 
 
-Happy cording!
+Happy coding!
 
 ---
 
