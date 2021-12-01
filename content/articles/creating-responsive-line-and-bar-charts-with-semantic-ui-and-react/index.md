@@ -149,7 +149,7 @@ Note: to fix a possible error that may occur, place the `FirstChartOption` we ju
 
 We added `barpercentage`, `paddings`,  fontColors`, etc., to the chart in our options. As stated earlier, those are default properties provided to the chart component.
 
-Take a look at the official documentation of react-chartjs-2 for further clarity.
+Take a look at the official documentation of [react-chartjs-2](https://github.com/reactchartjs/react-chartjs-2) for further clarity.
 
 #### Installing the required dependencies
 
@@ -157,7 +157,8 @@ As observed, we skipped installing the dependencies to set up our coordinate dat
 
 - Semantic-ui-react and
 - React-chartjs-2
-  To install the above dependencies, open the `package.json` file and add the dependencies below:
+
+To install the above dependencies, open the `package.json` file and add the dependencies below:
 
 ```JSON
 "dependencies": {
@@ -183,7 +184,7 @@ The command above should install the listed dependencies to our application—ti
 
 #### Setting up the chart component (Chart.js):
 
-The chart component will be set up using the react-chartjs-2 dependency we installed above and the coordinate dataset we created earlier. A quick overview of react-chartjs-2, before the development of react-chartjs-2, creating graphical illustrations such as line and bar chart was burdensome. Therefore, React-chartjs-2 provides line, bar, pie charts, etc., for importation and use.
+The chart component will be set up using the react-chartjs-2 dependency we installed above and the coordinate dataset we created earlier. React-chartjs-2 provides line, bar, pie charts, etc., for importation and use.
 
 In this tutorial, we will use line and bar charts. To create and set up our chart component, in our `App.js` file, clear the default boilerplate codes and replace them with the code snippet below:
 
@@ -233,16 +234,15 @@ function Chart() {
 export default Chart;
 ```
 
-Let us discuss what is happening with the code snippet we just shipped.
-First, we imported the dataset we created in the first step. Then, we imported the `Line,` and `Bar` (Line for line-chart and Bar for bar-chart) components from the react-chartjs-2 library will be used to utilize the dataset and subsequently generate our charts.
+Let us discuss what is happening with the code snippet we just shipped. First, we imported the dataset we created in the first step. Then, we imported the `Line,` and `Bar` (Line for line-chart and Bar for bar-chart) components from the react-chartjs-2 library will be used to utilize the dataset and subsequently generate our charts.
 
 - Secondly, we imported the Card component from the semantic-UI dependency we also installed. The Card component will act as a container from the charts and add additional styles and responsiveness.
--The Line and Bar charts accept two `props`, `data` and `options`. For the data, we pass down the `demoChart1.data` and then repeat the same for the option, replacing the data with options.
+- The Line and Bar charts accept two `props`, `data` and `options`. For the data, we pass down the `demoChart1.data` and then repeat the same for the option, replacing the data with options.
 - Finally, we exported the chart component for viewing on the browser window.
 
 #### Styling and viewing our application
 
-At this point, our application is ready for styling and viewing. Since most of the elements we used are from the semantic-UI design library, default styles have already been added to the charts and texts, so we will add a few paddings and margins to keep things simple.
+At this point, our application is ready for styling and viewing. Since most of the elements we used are from the `Semantic-UI design library`, default styles have already been added to the charts and texts, so we will add a few paddings and margins to keep things simple.
 
 Feel free to take it way beyond the basic styles that we will add. Adding styles to the application is easy. Open the `App.css` file in the `src` folder, clear all the default styles, and replace them with the CSS snippet below.
 
