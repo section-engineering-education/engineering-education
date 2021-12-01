@@ -60,7 +60,7 @@ $$f(x)\ \hArr\dot{x} = Ax + Bu$$
 Where:
 `u` is the control input for the system.
 
-We will say `u` is equal to the force on the cart in the `x` direction. It is reasonable. We mean here that, like a motor on one of those wheels, we can have some controllers to specify what we want. For example, if you specify that you want twice the force, it gives that and indicates that and makes the pendulum move.
+We will say `u` is equal to the force on the cart in the `x` direction. It is reasonable. We mean here that, like a motor on one of those wheels, we can have some controllers to specify what we want. For example, if you specify that you want twice the force, it will give the force then indicates it and makes the pendulum move.
 
 ### Matlab code
 We have a function `cartpend`, which stands for `cart pendulum system`. This function takes in the parameters of the cart as the argument. It gives the output as a time derivative.
