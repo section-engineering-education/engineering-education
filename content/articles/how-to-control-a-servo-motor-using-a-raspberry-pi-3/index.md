@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: / how-to-control-a-servo-motor-using-a-raspberry-pi-3/
+url: /how-to-control-a-servo-motor-using-a-raspberry-pi-3/
 title: How to Control a Servo Motor using a Raspberry Pi 3
 description: This article will seek to explain how a raspberry pi can be programmed to control a servo motor. The aim is to simulate a simple IoT scenario where the motor simulates a car engine and the Raspberry Pi simulates the control system.
 author: ruth-mare
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/ how-to-control-a-servo-motor-using-a-raspberry-pi-3/hero.jpg
+  - url: /engineering-education/how-to-control-a-servo-motor-using-a-raspberry-pi-3/hero.jpg
     alt: Servo Motor using a Raspberry Pi 3 Hero Image
 ---
 The Internet of Things abbreviated as IoT, this concept has facilitated the easier remote control and integration of mobile and end devices.
@@ -67,7 +67,7 @@ Thus, for more flexibility, we will connect them using jumper cables as shown in
 
 We then connect the signal wire to `GPIO` pin 11, the positive to pin 4 which supplies 5 volts, and the `-ve` to pin 6 as shown in the diagram below:
 
-![Pin connections on Pi](/engineering-education/how-to-control-a-servo-motor-using-a-raspberry-pi-3/pi-pin-numbering.jpg)
+![Pin connections on Pi](/engineering-education/ how-to-control-a-servo-motor-using-a-raspberry-pi-3/pi-pin-numbering.jpg)
 
 #### Step 2: Programming the Raspberry Pi
 
