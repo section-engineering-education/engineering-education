@@ -179,8 +179,7 @@ class _FirstPageState extends State<MyHomePage> {
 }
 ```
 
-This is where all the code we need to run for the page is. This page contains
-text field, button labels, and widgets.
+This is where all the code we need to run for the page is. This page contains text field, button labels, and widgets.
 
 - Step 3: Second screen.
 Create a new file in the lib folder and call it `secondpage.dart`. Then, in the same file, add the snippets below.
