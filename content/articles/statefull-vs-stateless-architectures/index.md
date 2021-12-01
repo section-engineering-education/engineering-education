@@ -2,20 +2,20 @@
 layout: engineering-education
 status: publish
 published: true
-url: /statefull-vs-stateless-architectures/
-title: Statefull vs Stateless Architectures
-description: In this article, we will explore Quality of Service and its importance to a network.
+url: /stateful-vs-stateless-architectures/
+title: Stateful vs Stateless Architectures
+description: In this article, we will explore what are stateless and stateful architectures.
 author: sudi-david
 date: 2021-11-26T00:00:00-09:00
 topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /understanding-quality-of-service/hero.png
-    alt: Statefull vs Stateless Architectures Hero Image
+  - url: /stateful-vs-stateless-architectures/hero.png
+    alt: Stateful vs Stateless Architectures Hero Image
 ---
 
-When developing applications and services, developers consider various factors to ensure their applications run in the most optimum way. Factors such as the scalability of the application/service, the hardware need such as networks speed and bandwidth required by the application, and the amount of temporary and permanent storage form a few of the factors that developers consider during the application development process. Additionally, developers consider the processing time, mainly determined by processor speed and application building architecture.
+When developing applications and services, developers consider a number of factors to ensure their applications run in the most optimum way. Factors such as the scalability of the application/service, the hardware need such as networks speed and bandwidth required by the application, and the amount of temporary and permanent storage form a few of the factors that developers consider during the application development process. Additionally, developers consider the processing time, mainly determined by processor speed and application building architecture.
 
 ### Learning Points 
 The article will cover:
