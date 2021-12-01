@@ -6,7 +6,7 @@ url: /working-with-csv-files-in-python/
 title: Working with CSV files in Python
 description: This article will cover the basics of working with csv files in Python. It will also explain how to read, clean and analyze data from csv files.
 author: kelvin-munene
-date: 2021-12-01T00:00:00-07:20
+date: 2021-12-01T00:00:00-12:40
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
