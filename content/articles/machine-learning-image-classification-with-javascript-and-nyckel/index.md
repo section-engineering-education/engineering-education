@@ -8,7 +8,7 @@ This article shows how you can implement Machine Learning models in a web applic
 ### Table of Contents
 - [Introduction](#introduction)
 - [Requirements](#requirements)
-- [Javascript CSS and HTML website build](#javascript-css-and-html-website-build)
+- [JavaScript CSS and HTML website build](#javascript-css-and-html-website-build)
 - [Building the Machine Learning model using Nyckel](#building-the-machine-learning-model-using-nyckel)
 - [ML model integration with the Web Application](#ml-model-integration-with-the-web-application)
 - [App live testing](#app-live-testing)
@@ -16,14 +16,14 @@ This article shows how you can implement Machine Learning models in a web applic
 ### Requirements
 To develop, you will need the following;
 - A suitable editor like visual studio, sublime and others.
-- Prior knowledge to Nyckel, css, Javascript.
+- Prior knowledge to Nyckel, css, JavaScript.
 - HTML basics.
 ### What is Nyckel?
 Nyckel is a Machine Learning API that provides automated training to models instead of manually writing the code. It also allows these models to be integrated into applications with the best simplicity.
 
 With these requirements in place, the coding journey can kick off.
 Follow each step below to develop your own Machine Learning-enabled web application.
-### Javascript CSS and HTML website build
+### JavaScript CSS and HTML website build
 We are going to build a simple web application where you can upload a photo from the desktop into the app. The layout will only need a section to place your photo and an button to make a system call to the file explorer.
 #### **HTML Build-up**
 Below are the steps involved in HTML build-up. Create a file with .html extension and follow the following steps.
@@ -64,10 +64,10 @@ and learn how to link them to the application. For more information on css styli
 
 When you use the code from the above link, similar results as those in the photo below are obtained.
 ![styled](/engineering-education/machine-learning-image-classification-with-javascript-and-nyckel/styled.png)
-#### **Javascript functions**
-Javascript helps in client-side scripting. It mostly uses functions to enabled some activities in a webpage. Example of such activities to be enabled by these functions in this page include; upload by dragging, Sending AJAX request to Nyckel to run against ML model, ensure what is uploaded is an image, resizing large images and many more.
+#### **JavaScript functions**
+JavaScript helps in client-side scripting. It mostly uses functions to enabled some activities in a webpage. Example of such activities to be enabled by these functions in this page include; upload by dragging, sending AJAX request to Nyckel to run against ML model, ensure what is uploaded is an image, resizing large images and many more.
 
-This code below contains such functions. Create a Javascript file(.js) and place the code below in it. The functions have been clearly explained using comments to help you get everything right.
+This code below contains such functions. Create a JavaScript file(.js) and place the code below in it. The functions have been clearly explained using comments to help you get everything right.
 
 ```Javascript
 $(function ()
