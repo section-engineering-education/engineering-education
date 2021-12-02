@@ -1,44 +1,27 @@
-A graph is a non-linear data structure that consists of:-
+Graphs are one of the most versatile data structures. This is because they allow us to solve interesting problems. They are used in social networks and GPS applications. One can apply it anywhere you want to model the relationship between a bunch of objects.
 
-1. Some grouped vertices are also called nodes.
+In this article, our primary focus will be on Graphs that have a cycle. We will discuss what that is. We will learn how to find out that a particular graph has a cycle. It is important to know this concept to avoid creating an infinite loop in an application when dealing with graphs.
 
-2. Some ordered pairs of the form (u, v) are called edges.
-
-
-Graphs are one of the most versatile data structures. This is because they allow us to solve interesting problems. They are used in social networks and GPS. One can apply it anywhere you want to model the relationship between a bunch of objects. In this article, our primary focus will be on how to detect a cycle. It is important to know this concept to help us detect infinite loops in a computer program.
-
-
-#### Prerequisite
+#### Prerequisites
 
 To be able to follow this article well, one needs:
 
 1. To have [Visual Studio](https://visualstudio.microsoft.com/) installed.
-
 2. Have an understanding of Recursion. [Recursion](https://www.youtube.com/watch?v=IJDJ0kBx2LM&t=163s)
-
-3. Some understanding of how to build a graph using an adjacency list and matrix.
-
-   -[Adjacency list](https://www.section.io/engineering-education/graphs-in-data-structure-using-cplusplus/)
-
+3. Some understanding of how to build a graph using an adjacency list and matrix. -[Adjacency list](https://www.section.io/engineering-education/graphs-in-data-structure-using-cplusplus/)
 4. A basic understanding of c# or any object-oriented programming language.
 
+#### Key Takeaways
 
-#### Key Takeaways 
--  A brief overview of a graph.
-
+- A brief overview of a graph.
 - Understand what a cycle is in a graph.
-
 - Understand how to detect a cycle. 
-
-      1) Depth-first search algorithm.
-
-            - Cycle detection on a directed graph.
-
-            - Cycle detection on an undirected graph.
-
+    1) Depth-first search algorithm. 
+        - Cycle detection on a directed graph. 
+        - Cycle detection on an undirected graph.
 - Understand different applications of cycle detection.
 
-### A brief overview of graph 
+### A brief overview of graph
 
 A graph is like a tree but without any cycles. We do not have a root node in graphs. Below, is an example of a graph with four nodes or vertex and six edges or lines. We don't have a limitation of how many connections we can have from one node. If two nodes are connected, we say they are adjacent or neighbors. `John` and `bob` are neighbors. `John` and `Sam` are not because they are not connected.
 
@@ -93,19 +76,14 @@ To detect a cycle in a graph, we visit the node, mark it as visited. Then visit 
 We declare two boolean array variables. One is called visited. The other is called path. The size of both arrays will be the number of vertexes. In this case, 6. They are first initialized to false.
 
 1. Visit node `1`. Mark it as visited. Mark it as part of our current path. Call node `2`.
-
 2. Visit node `2`. Mark it as visited. Mark it as part of our current path. Call node `5`.
-
 3. Visit node `5`. Mark it as visited. Mark it as part of our current path. No node is connected to it. Remove it from our current path by marking it as false. Leave visited as true. Return to node `2`.
-
 4. Visit node `6`. Mark it as visited. Mark it as part of our current path. Node `6` has no children. Remove it from our current path. Leave it as visited true.
-
 5. Return from node `2` to node `1`. Remove node `2` from our current path. This is because we have finished visiting all the nodes that are connected to it.
 
 We have visited nodes `1`, `2`, `5`, `6`, and only node `1` is part of the current path. Note that all these nodes are marked as visited.
 
 6. Go to node `3` mark it as visited and part of our current path. Call its child node `4`.
-
 7. Visit node `4` mark it as visited and part of our current path. Call its child node `1`.
 
 At this point, we find that `1` is part of our current path. It is also visited. A cycle is detected.
@@ -113,22 +91,16 @@ At this point, we find that `1` is part of our current path. It is also visited.
 ### Code Implementation of cycle detection in C#.
 
 1. Open Visual Studio. Create a Console Application called GraphCycleDetect.
-
 2. In the `Main()` method we create a jagged array. This is what will show how vertexes are connected.
-
 3. We Declare a variable called `graph` to hold the number of vertexes.
-
 4. We Call the `MakeGraph()` function. Pass the number of vertexes and the graph as the parameters to that function. Below is the code that implements steps 1 to 4.
 
 ```c#
-
-       public static void Main(string[] args)
-
+      public static void Main(string[] args)
        {
-           // Created the jagged array. It contains the vertexes and how they are to be connected. 
+           // Created the jagged array. It contains the vertexes and how they are to be connected.
            // E.g. new int[]{ 1,2}, means 1 is to be connected to 2
            int[][] graph = new int[][]
-
            {
 
                new int[]{ 1,2},
@@ -158,7 +130,7 @@ At this point, we find that `1` is part of our current path. It is also visited.
                 //Does the graph have a cycle ? ---> false
            Console.WriteLine($"Does the graph have a cycle ? ---> {hasCycle}");
 
-            // A built-in c# Static method that reads the next line of character. 
+            // A built-in c# Static method that reads the next line of character.
             //The result will stay on the output window when we add this line.
            Console.ReadLine();
 
@@ -168,28 +140,21 @@ At this point, we find that `1` is part of our current path. It is also visited.
 
 7. Construct a graph in the `MakeGraph()` function.
 
-  - Declare a Dictionary data structure, `ls`. This is what will store our adjacency list/graph.
+- Declare a Dictionary data structure, `ls`. This is what will store our adjacency list/graph.
+- Declare a visited boolean variable, `visited`. Its size is the number of nodes.
+- Declare a path boolean variable, `path`. Its size is the number of nodes.
+- Populate the dictionary with values.
+- Iterate through the nodes. For each iteration
+  - Call the `DFS()` function.
+- If the function returns a `true`, a cycle has been detected. Otherwise, there is no cycle when it returns `false`.
 
-  - Declare a visited boolean variable, `visited`. Its size is the number of nodes.
-
-  - Declare a path boolean variable, `path`. Its size is the number of nodes.
-
-  - Populate the dictionary with values.
-
-  - Iterate through the nodes. For each iteration:-
-
-    - Call the `DFS()` function.
-
-  - If the function returns a `true`, a cycle has been detected. Otherwise, there is no cycle when it returns `false`.
-
-  Below is the code implementation of step 7 above.
+Below is the code implementation of step 7 above.
 
 ```c#
 
        private static bool MakeGraph(int[][] graph, int nodes)
-
        {
-           // This is the dictionary for storing the adjacency list. 
+           // This is the dictionary for storing the adjacency list.
                 //It is of the type, int that will hold a node and List<int> that will hold all other nodes attached to the int node.
            Dictionary<int, List<int>> ls = new Dictionary<int, List<int>>();
            // We declare a visited bool array variable. We will store the visited nodes in it.
@@ -198,7 +163,6 @@ At this point, we find that `1` is part of our current path. It is also visited.
            bool[] path = new bool[nodes];
            // Loop through our jagged array, graph.
            for (int i = 0; i < graph.Length; i++)
-
            {
                // As we loop, check whether our dictionary already contains the node at index[i][0]
                // of our jagged array, graph. If it is not there, we add it to the dictionary, ls
@@ -210,14 +174,13 @@ At this point, we find that `1` is part of our current path. It is also visited.
 
                }
                // this line of code will connect the nodes. E.g. If we are given { 1,2}, we added 1 to our dictionary
-                    // on the line  ls.Add(graph[i][0], new List<int>()); 
+                    // on the line  ls.Add(graph[i][0], new List<int>());
                     //Therefore, in this next line,ls[graph[i][0]].Add(graph[i][1]); we connect the 1 to the 2
                ls[graph[i][0]].Add(graph[i][1]);
 
            }
             // We start our traversal here. We could also say that this is where we start our path from.
            for (int i = 0; i < nodes; i++)
-
            {
                // We do our Dfs starting from the node at i in this case our start point will be 0;
                // For each Dfs, we are checking if we will find a cycle. If yes, we immediately return true.
@@ -239,30 +202,25 @@ At this point, we find that `1` is part of our current path. It is also visited.
 
 ```c#
        private static bool Dfs(Dictionary<int, List<int>> graph, int start, bool[] visited, bool[] path)
-
        {
            // If we find that we marked path[start] true, we return true.
            // This means that we have come back to the node we started from hence a cycle has
            // been found.
            if (path[start])
-
            {
-
                return true;
-
            }
            // If we didn't find a cycle from the code block above, we mark visited[start] to true.
            visited[start] = true;
-           
+
            //  We also mark path[start] to true. This will help us know that the node start is on our
            //  current path.
            path[start] = true;
-           
+
             // We check whether our graph contains the start node. Sometimes the start node is not in our graph.
             // Therefore, if we do our traversal on such a node, an exception will be thrown. This is because the node does
             // not exist.
            if (graph.ContainsKey(start))
-
            {
                // We start our traversal from our start node of the graph.
                for each (var item in graph[start])
@@ -291,7 +249,7 @@ At this point, we find that `1` is part of our current path. It is also visited.
 
 ```
 
-The output of the above code after running will be:- 
+The output of the above code after running will be:-
 
 [Image of Output](/engineering-education/graph-cycle-detection/output1.png/)
 
@@ -299,7 +257,7 @@ The output of the above code after running will be:-
 
 In the above example, we have talked about finding a cycle in a directed graph. That algorithm does not work for undirected graphs.
 
-####  Why?
+#### Why?
 
 Below we have a graph. Using the previous algorithm, We put `A` and `B` in the current path set. Because there is an edge from `B` to `A` and `A` is part of the current path. A cycle is detected. The algorithm thinks there is a cycle in this graph. A cycle will always be detected between every two nodes connected by an edge. We need a different algorithm for Undirected Graph.
 
@@ -320,27 +278,20 @@ Add `C` to the current path set. , we pass `B` as the parent node. `C` has one o
 We will add a new method called `HasCycle()` to our existing class. `HasCyle()` is the Dfs Function in this case. Below is the code that implements cycle detection in an undirected graph. Note that line `if (current != parent)`, we first check if we are going back to the parent node. If yes, `no cycle` has been found. Otherwise, `a cycle is found`.
 
 ```c#
-
        public static bool HasCycle(Dictionary<int, List<char>> connections, int start, bool[] visited, int parent)
-
        {
-
            visited[start] = true;
            // Traverse the graph starting from the start node.
            foreach (var item in connections[start])
-
            {
 
                if (!visited[item])
-
                {
-                    // This is our recursive call. If in our recursion we find a cycle, we immediately return a true. 
+                    // This is our recursive call. If in our recursion we find a cycle, we immediately return a true.
                    if (HasCycle(connections, item, visited, start))
 
                    {
-
                        return true;
-
                    }
 
                }
@@ -349,11 +300,8 @@ We will add a new method called `HasCycle()` to our existing class. `HasCyle()` 
                 // This is where the difference comes from the directed graph. As we traverse, we check whether the node is a parent.
                 // If not then it means that a cycle has been found. We return true.
                if (current != parent)
-
                {
-
                    return true;
-
                }
 
            }
@@ -361,17 +309,13 @@ We will add a new method called `HasCycle()` to our existing class. `HasCyle()` 
            return false;
 
        }
-
 ```
 
 In this particular example, we are dealing with characters. We will change the `MakeGraph()` function and `Main()` function to accommodate the characters. The concept is still the same as for the directed graph for these two functions.
 
 ```c#
-
-       private static bool MakeGraph(char[][] graph, int nodes)
-
-       {
-
+    private static bool MakeGraph(char[][] graph, int nodes)
+    {
            Dictionary<int, List<char>> ls = new Dictionary<int, List<char>>();
 
            bool[] visited = new bool[100];
@@ -379,15 +323,10 @@ In this particular example, we are dealing with characters. We will change the `
            bool[] path = new bool[100];
 
            for (int i = 0; i < graph.Length; i++)
-
            {
-
                if (!ls.ContainsKey(graph[i][0]))
-
                {
-
                    ls.Add(graph[i][0], new List<char>());
-
                }
 
                ls[graph[i][0]].Add(graph[i][1]);
@@ -395,31 +334,24 @@ In this particular example, we are dealing with characters. We will change the `
            }
 
            for (int i = 0; i < ls.Count; i++)
-
            {
-
                    if (HasCycle(ls, ls.ElementAt(i).Key, visited, -1))
-
                        return true;
-
            }
 
            return false;
 
-       }
+    }
 
 ```
 
 ```c#
 
        public static void Main(string[] args)
-
        {
 
            char[][] graph = new char[][]
-
            {
-
                new char[]{ 'A','B'},
 
                new char[]{ 'B','A'},
@@ -446,16 +378,14 @@ In this particular example, we are dealing with characters. We will change the `
 
 ```
 
-The output of the above code after running it will be:- 
+The output of the above code after running it will be:-
 
 [Image of Output](/engineering-education/graph-cycle-detection/output1.png/)
 
 ### Application of cycle detection
 
 1. It is used a lot in distributed message-based algorithms.
-
 2. Used in concurrent systems to detect deadlocks.
-
 3. Used in cryptographic systems. It determines the keys of a message that can map that same message to the same encrypted value.
 
 ### Conclusion
