@@ -67,7 +67,7 @@ When you use the code from the above link, similar results as those in the photo
 #### **JavaScript functions**
 JavaScript helps in client-side scripting. It mostly uses functions to enabled some activities in a webpage. Example of such activities to be enabled by these functions in this page include; upload by dragging, sending AJAX request to Nyckel to run against ML model, ensure what is uploaded is an image, resizing large images and many more.
 
-This code below contains such functions. Create a JavaScript file(.js) and place the code below in it. The functions have been clearly explained using comments to help you get everything right.
+The following code contains such functions. Create a JavaScript file(.js) and place the code below in it. The functions have been clearly explained using comments to help you get everything right.
 
 ```Javascript
 $(function ()
