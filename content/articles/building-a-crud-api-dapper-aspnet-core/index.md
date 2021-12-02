@@ -45,7 +45,7 @@ This method executes a query and maps the first result that matches the paramete
 This functions like `QueryFirst` but returns a default value if the sequence contains no elements.
 
 ##### QuerySingle
-It executes a query and maps the result provided that there is only one item in the sequence. It throws an exception if there is not exactly one element in the sequence which happens either when no element or more than one element is returned.
+It executes a query and maps the result provided that there is only one item in the sequence. It throws an exception if there is not exactly one element in the sequence, which happens when no element or more than one element is returned.
 
 ##### QuerySingleOrDefault
 This method works like `QuerySingle` but returns a default value if no item is returned from the database.
@@ -76,11 +76,9 @@ You can go [here](https://dapper-tutorial.net/) to learn more about its function
 ### Setting Up Our Database
  The first thing we want to do here is to add our connection string to our `appsettings.json` file. Like so:
  ```json
- ...
  "ConnectionStrings": {
     "SqlConnection": "your_connection_string"
   }
-  ...
  ```
  After that, we'll need to install a database client. For this article, we'll be using the SQL client. You can install that by doing:
    ```
@@ -98,7 +96,7 @@ You can go [here](https://dapper-tutorial.net/) to learn more about its function
 
   Now that we have FluentMigrator installed, we can set up our migrations. Create a `Migrations` folder at the root of your project and add the following files to it.
 
-###### `Migrations/Initial_202125100001.cs`
+**Migrations/Initial_202125100001.cs**
   ```C#
 using FluentMigrator;
 
@@ -133,7 +131,7 @@ namespace TodoAPI.Migrations
     }
 }
   ```
-  ###### `Migrations/Seed_202125100002.cs`
+  **Migrations/Seed_202125100002.cs**
   ```C#
 using System;
 using System.Collections.Generic;
@@ -189,7 +187,7 @@ namespace TodoAPI.Migrations
   ```
 
   One migration creates the tables that we need and the other provides us with seed data so that we have data to work within our database. "But how do we run the migrations?", one might ask. Well, that's where FluentMigrator's runner comes in. Let's create an extension that runs our migrations just before our app is run. Create a new folder `Extensions` and add the file below to it:
-###### `Extensions/MigrationManager.cs`
+**Extensions/MigrationManager.cs**
  ```C#
 using System;
 using Microsoft.Extensions.DependencyInjection;
@@ -225,7 +223,6 @@ The extension above helps to add an external method to the `IHost` class. This m
 
 To make sure that this is called, head over to `Program.cs` and alter the code as shown below:
 ```C#
-......
     public static void Main(string[] args)
     {
         CreateHostBuilder(args)
@@ -233,16 +230,13 @@ To make sure that this is called, head over to `Program.cs` and alter the code a
             .MigrateDatabase() // Add this line
             .Run();
     }
-......
 ```
 As shown above, the migrations are run just as the app is been built and just before it is run.
 There are a few things we need to add to our `Startup.cs` file as well. This is shown below:
 ```C#
-......
     public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            .......
 
             // Add this
             services.AddLogging(c => c.AddFluentMigratorConsole())
@@ -251,7 +245,6 @@ There are a few things we need to add to our `Startup.cs` file as well. This is 
               .WithGlobalConnectionString(Configuration.GetConnectionString("SqlConnection"))
               .ScanIn(Assembly.GetExecutingAssembly()).For.Migrations());
         }
-......
 ```
 
 The snippet above configures FluentMigrator and adds logging for it. This helps to visualise the migrations in the console. The code above also adds configuration for our SQL server.
@@ -265,7 +258,7 @@ After doing this, try to start your app by running `dotnet run` and the migratio
  ```
  After installing Dapper, create a folder `Data` and in it, add the file below:
 
-###### `Data/DapperContext.cs`
+**Data/DapperContext.cs**
  ```C#
 using System.Data;
 using Microsoft.Data.SqlClient;
@@ -287,22 +280,19 @@ namespace TodoAPI.Data
  ```
 
  The class above is responsible for creating a connection to our database. Dapper is then used to communicate to our database using that connection. Don't forget to register this class as a service. Head over to `Startup.cs` and add the line as shown below:
- ```
- ......
+ ```C#
     public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton<DapperContext>(); // Add this line to register the service
             services.AddControllers();
-            ......
         }
-    ......
  ```
 ### Adding our App Logic(Models and Repositories)
  Now let's add the real logic for our API. Create a new folder, `Domain`. In this new folder, create three folders namely `Entities`, `Repositories` and `DTOs`.
 
  In the `Entities` folder is where we will define our models. Go ahead and add the following files:
 
-###### `Domain/Entities/User.cs`
+**Domain/Entities/User.cs**
 ```C#
 using System;
 using System.ComponentModel.DataAnnotations;
@@ -326,7 +316,7 @@ namespace TodoAPI.Domain.Entities
 }
 ```
 
-###### `Domain/Entities/TodoItem.cs`
+**Domain/Entities/TodoItem.cs**
 ```C#
 using System;
 using System.ComponentModel.DataAnnotations;
@@ -352,7 +342,7 @@ namespace TodoAPI.Domain.Entities
 }
  ```
 
-###### `Domain/Entities/TodoStatus.cs`
+**Domain/Entities/TodoStatus.cs**
 ```C#
  namespace TodoAPI.Domain.Entities
 {
@@ -366,7 +356,7 @@ namespace TodoAPI.Domain.Entities
  ```
  Next, let's add our Data Transfer Objects(DTOs). These will make exchanging data between requests, controllers and repositories easier and tidier.
 
-###### `DTOs/Todo.cs`
+**DTOs/Todo.cs**
 ```C#
 using System;
 using System.ComponentModel.DataAnnotations;
@@ -401,7 +391,7 @@ namespace TodoAPI.DTOs
 ```
  In the `Domain/Repositories/` folder, add the following files:
 
-###### `Domain/Repositories/ITodoRepository.cs`
+**Domain/Repositories/ITodoRepository.cs**
  ```C#
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -428,7 +418,7 @@ namespace TodoAPI.Domain.Repositories
 }
 ```
 
-###### `Domain/Repositories/IUserRepository.cs`
+**Domain/Repositories/IUserRepository.cs**
 ```C#
 using System;
 using System.Collections.Generic;
@@ -450,7 +440,7 @@ These are the methods that will, with the help of Dapper, communicate directly w
 
 Now create a folder `Repositories` in your `Data` folder. In this folder, we will add our repositories. These classes will implement the interfaces we added earlier in the `Domain/Repositories/` folder. This ensures that we are using the correct methods to communicate with our database. This folder will house the following files:
 
-###### `Domain/Repositories/UserRepository.cs`
+**Domain/Repositories/UserRepository.cs**
 ```C#
 using System.Collections.Generic;
 using System.Linq;
@@ -493,7 +483,8 @@ namespace TodoAPI.Data.Repositories
     }
 }
 ```
-###### `Domain/Repositories/TodoRepository.cs`
+
+**Domain/Repositories/TodoRepository.cs**
 ```C#
 using System.Collections.Generic;
 using System.Linq;
@@ -622,7 +613,7 @@ The `Update` and `Delete` methods work similarly to the `Create`. They also use 
 
 ### Adding Our Controllers
  In the `Controllers` folder, add the following files:
- ###### `Controllers/TodosController.cs`
+ **Controllers/TodosController.cs**
  ```C#
 using System;
 using System.Collections.Generic;
@@ -768,7 +759,7 @@ namespace TodoAPI.Controllers
 }
  ```
 
-###### `Controllers/UsersController.cs`
+**Controllers/UsersController.cs**
 ```C#
 using System;
 using System.Collections.Generic;
@@ -835,39 +826,51 @@ namespace TodoAPI.Controllers
     }
 }
 ```
- The files above are responsible for getting data from and responding to our requests. With the help of the DTOs that we defined earlier, the exchange of data between the entities is made seamless. Using the `UsersController` class above for reference, comment #1 is where our class is defined. It inherits from the `ControllerBase` class as seen above. ASP.NET is quite smart. It takes the letters before 'Controller' and maps the methods to their respective endpoints. In the case of `UsersController`, it maps the methods to the `users` route. At #2, this is where our dependencies are injected. This is possible because the dependencies have earlier been registered as services. Looking at the `GetById`, comment #3 denotes the method that this method accepts. It is a `GET` method. #4 tells our method what route we want it to answer to. In some cases like this one, we could also pass data in the route as parameters. `userId` is the parameter we're expecting in this case. By #5, the required data `userId` has been parsed from the route. #6 is where we use `_userRepository`, which we injected earlier at #2 `_userRepository` to communicate with the database. #7 is where we return the data fetched as a response with a code of 200. It's a 200 response because it is wrapped with `Ok()`. Learn more about dotnet API responses [here](https://docs.microsoft.com/en-us/dotnet/api/system.web.http.apicontroller?view=aspnetcore-2.2#methods). If any error is encountered, it is caught at #8 and returned as an error message with a status code of 500.
+ The files above are responsible for getting data from and responding to our requests. With the help of the DTOs that we defined earlier, the exchange of data between the entities is made seamless. Using the `UsersController` class above for reference, comment #1 is where our class is defined. It inherits from the `ControllerBase` class as seen above. ASP.NET is quite smart. It takes the letters before 'Controller' and maps the methods to their respective endpoints. In the case of `UsersController`, it maps the methods to the `users` route.
+
+ At #2, this is where our dependencies are injected. This is possible because the dependencies have earlier been registered as services.
+
+ Looking at the `GetById`, comment #3 denotes the method that this method accepts. It is a `GET` method.
+
+ #4 tells our method what route we want it to answer to. In some cases like this one, we could also pass data in the route as parameters. `userId` is the parameter we're expecting in this case.
+
+ By #5, the required data `userId` has been parsed from the route.
+
+ #6 is where we use `_userRepository`, which we injected earlier at #2 `_userRepository` to communicate with the database.
+
+ #7 is where we return the data fetched as a response with a code of 200. It's a 200 response because it is wrapped with `Ok()`. Learn more about dotnet API responses [here](https://docs.microsoft.com/en-us/dotnet/api/system.web.http.apicontroller?view=aspnetcore-2.2#methods). If any error is encountered, it is caught at #8 and returned as an error message with a status code of 500.
 
 ### Testing The Endpoints
  Now let's start our app and test with Postman.
  ###### User Endpoints
- ###### `[GET] /users` - Get all users
+ **[GET] /users** - Get all users
  ![get users](/engineering-education/building-a-crud-api-dapper-aspnet-core/get-users.png)
 
- ###### `[GET] /users/{user_id}` - Get user by ID
+ **[GET] /users/{user_id}** - Get user by ID
  We'll test this with one user’s ID from the result returned above.
  ![get user](/engineering-education/building-a-crud-api-dapper-aspnet-core/get-user.png)
 
  ###### Todos Endpoints
-  ###### `[GET] /todos` - Get all todo items
+  **[GET] /todos** - Get all todo items
   ![get todos](/engineering-education/building-a-crud-api-dapper-aspnet-core/get-todos.png)
 
-  ###### `[POST] /todos` - Create a new todo item
+  **[POST] /todos** - Create a new todo item
   ![create todo](/engineering-education/building-a-crud-api-dapper-aspnet-core/create-todo.png)
 
-  ###### `[GET] /todos/{todo_id}` - Get todo item by ID
+  **[GET] /todos/{todo_id}** - Get todo item by ID
   For this, we'll use the ID of the newly created item which was returned from the `[POST] /todos` endpoint above. This tests our get-by-ID endpoint and also confirms that the todo item was indeed added to the database.
   ![get todo](/engineering-education/building-a-crud-api-dapper-aspnet-core/get-todo.png)
 
-  ###### `[GET] /todos/users/{user_id}` - Get todo items by user ID
+  **[GET] /todos/users/{user_id}** - Get todo items by user ID
   ![get todos by user](/engineering-education/building-a-crud-api-dapper-aspnet-core/get-todos-user.png)
 
-  ###### `[PATCH] /todos` - Update a todo item
+  **[PATCH] /todos** - Update a todo item
   ![update todo](/engineering-education/building-a-crud-api-dapper-aspnet-core/update-todo.png)
   Let's then try to get the item again to make sure it was updated appropriately.
   ![get todo after update](/engineering-education/building-a-crud-api-dapper-aspnet-core/get-after-update.png)
   Sure enough, the fields were indeed updated as we can see above.
 
-  ###### `[DELETE] /todos` - Delete a todo item
+  **[DELETE] /todos** - Delete a todo item
   ![delete todo](/engineering-education/building-a-crud-api-dapper-aspnet-core/delete-todo.png)
   We will then try to get that item we just deleted.
   ![get todo after delete](/engineering-education/building-a-crud-api-dapper-aspnet-core/get-after-delete.png)
