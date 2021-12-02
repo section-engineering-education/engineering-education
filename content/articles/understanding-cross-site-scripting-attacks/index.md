@@ -62,8 +62,9 @@ We notice that as soon as we hit the go button after entering our XSS payload, w
 
 #### Reflected XSS
 
-The victim's request is used to inject the payload. The victim must either click on a malicious link or visit a property controlled by the attacker.
+This is a one-time XSS. The malicious script is part of the victim's online application request, which is frequently reflected in the application's response.
 
+Reflected XSS is most commonly employed in targeted attacks, where the hacker sends a phishing email with the malicious script and the URL. The attacker could even post a link on a public website and deceive the user into clicking it.
 #### Stored XSS
 
 Also known as `Persistent XSS`, the payload is saved on the server and can be triggered by a victim without requiring any user interaction outside of the application. This type of XSS happens when the server saves your supplied input somewhere into the server, (i.e. a Database or cache server).
@@ -95,7 +96,9 @@ As we can see, we got an alert box. This occurred because the payload was saved 
 
 #### DOM XSS
 
-The vulnerability lies in the client-side code rather than the server-side code. Injections are still usually requested by the victim.
+The victim's browser is directly affected by DOM XSS, which is a local attack. The 'Document Object Model(DOM)', which is the browser's API for manipulating and presenting web pages, is used in this attack rather than malicious content being delivered to the server.
+
+To carry out a scripting attack, DOM XSS uses this lawful client-side code. The most crucial aspect of DOM XSS is that the legitimate script adds HTML content to the web page shown in the user's browser using a user-supplied input.
 
 ### Impact of XSS
 
