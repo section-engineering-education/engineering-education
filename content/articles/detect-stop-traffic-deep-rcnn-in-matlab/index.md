@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /detect-stop-traffic-deep-rcnn-in-matlab/
-title: How to detect stop traffic using deep R-NN in both real-time and offline mode in Matlab
+title: How to Detect Stop Traffic Signs using Deep R-NN in Matlab
 description: In this tutorial we are going to use the R-CNN. We will use the image labeler application to create our pre-trained image database. Then transfer learning will be used where a pretrained R-CNN is retrained on its image dataset.
 author: florence-atieno
 date: 2021-12-01T00:00:00-17:55
@@ -20,7 +20,7 @@ The models for object detection using R-CNN are based on three processes. The fi
 
 There are three variants of R-CNN. These are R-CNN, Fast R-CNN, and Faster R-CNN. As the name suggests, the speed of training and detection improves from the first to the last. 
 
-In this tutorial, we are going to use the R-CNN. We will use the image labeler application to create our pre-trained image database. Here, transfer learning is used where a pre-trained R-CNN is re-trained on its image dataset.
+In this tutorial, we are going to use the R-CNN. We will learn how to detect stop traffic signs using Deep R-NN in both real-time and offline mode using Matlab. We will use the image labeler application to create our pre-trained image database. Here, transfer learning is used where a pre-trained R-CNN is re-trained on its image dataset.
 
 ### Prerequisites
 To follow along with this tutorial, you'll need:
