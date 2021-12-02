@@ -7,34 +7,24 @@ This article shows how you can implement Machine Learning models in a web applic
 
 ### Table of Contents
 - [Introduction](#introduction)
-
 - [Requirements](#requirements)
-
 - [Javascript CSS and HTML website build](#javascript-css-and-html-website-build)
-
 - [Building the Machine Learning model using Nyckel](#building-the-machine-learning-model-using-nyckel)
-
 - [ML model integration with the Web Application](#ml-model-integration-with-the-web-application)
-
 - [App live testing](#app-live-testing)
-
 - [Conclusion](#conclusion)
-
 ### Requirements
 To develop, you will need the following;
 - A suitable editor like visual studio, sublime and others.
 - Prior knowledge to Nyckel, css, Javascript.
 - HTML basics.
-
 ### What is Nyckel?
 Nyckel is a Machine Learning API that provides automated training to models instead of manually writing the code. It also allows these models to be integrated into applications with the best simplicity.
 
 With these requirements in place, the coding journey can kick off.
 Follow each step below to develop your own Machine Learning-enabled web application.
-
 ### Javascript CSS and HTML website build
 We are going to build a simple web application where you can upload a photo from the desktop into the app. The layout will only need a section to place your photo and an button to make a system call to the file explorer.
-
 #### **HTML Build-up**
 Below are the steps involved in HTML build-up. Create a file with .html extension and follow the following steps.
 This code is placed under the head tag creates a connection to the Javascript file.
@@ -74,7 +64,6 @@ and learn how to link them to the application. For more information on css styli
 
 When you use the code from the above link, similar results as those in the photo below are obtained.
 ![styled](engineering-education/machine-learning-image-classification-with-javascript-and-nyckel/styled.png)
-
 #### **Javascript functions**
 Javascript helps in client-side scripting. It mostly uses functions to enabled some activities in a webpage. Example of such activities to be enabled by these functions in this page include; upload by dragging, Sending AJAX request to Nyckel to run against ML model, ensure what is uploaded is an image, resizing large images and many more.
 
@@ -286,12 +275,10 @@ To link this file to the html file, you will similarly create a Javascript refer
 
 ```
 Now refresh your page and try clicking on the upload area. It opens the windows explorer to allow you upload a photo.
-
 ### Building the Machine Learning model Using Nyckel
 
 In this section, we are going to train a model using Nyckel to classify images of people wearing a mask and those not wearing a mask. You will require a web association with access 'Nyckel website' for worked on preparing of the model. The steps below will produce a successfully trained model for our web application.
-
- #### **Create a Nyckel account**
+#### **Create a Nyckel account**
 Creating an account will allow you to use Nyckel training site for your model. To sign-up, go to [nyckel.com](https://login.nyckel.com/login?state=hKFo2SBTbW16WjhGLWFjQ1A5UU5sbjZ5SmVSVG0ySmhLSVhYWaFupWxvZ2luo3RpZNkgdjd6bWtmdGRHUFRkNmpaOHNoVEdOSW0tX202QTg5clKjY2lk2SBJdnlPaktQa011YXJHMzZIb2xYb3NUU1BNVnJaT0xtOQ&client=IvyOjKPkMuarG36HolXosTSPMVrZOLm9&protocol=oauth2&redirect_uri=https%3A%2F%2Fwww.nyckel.com%2Fauthentication%2Flogin-callback&response_type=code&scope=openid%20profile%20email&code_challenge=hQvJg-KMgpHyRS8Z7JXGLBtZ1Kg31lFTdjh1Ns566Yc&code_challenge_method=S256&response_mode=query) sign-up page to set up your connection with this API.
 
 - After signing up, select input type (image for this case) then add output categories as  `with mask` and `without mask` then hit `create function` button. 
@@ -302,21 +289,16 @@ After categorizing, you will get a notification that your model is trained.
 Navigate to invoke section and perform a satisfaction test on the model by upload a different photo from the ones used in training the check the output function.
 
 Having done all that, your model is trained and ready to use.
-
 ### ML model integration with the web Application
 To integrate the trained model to the web application, navigate to API section and copy the url given and paste in the Javascript code under `$ajax`. The url looks almost familiar to the one shown below ending with the word `invoke`.
 
 Once done, your application is ready for testing with photos which were not included during training. 
-
 ### App live testing
 After integrating the model with the web application, you can now upload photos to see how good the app is. The photo below shows how a successful categorization is displayed.
-
 #### Result for a picture with a mask
 ![with mask](engineering-education/machine-learning-image-classification-with-javascript-and-nyckel/withmask.png)
-
 #### Result for picture without a mask 
 ![without mask](engineering-education/machine-learning-image-classification-with-javascript-and-nyckel/withoutmask.png)
-
 ### Conclusion
 To this extent, you must have learnt how to train a model, a web application that is compatible with a ML model and how to integrate the model into web applications.
 Having learnt this, developers can build any type of a Machine Learning-enable web application. The flexibility and easy usability with Nyckel will highly help in growth of Artificial Intelligence technology in the near future.
