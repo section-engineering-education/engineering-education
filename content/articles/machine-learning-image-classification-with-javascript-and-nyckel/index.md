@@ -20,15 +20,14 @@ This article shows how you can implement Machine Learning models in a web applic
 
 - [Conclusion](#conclusion)
 
-
-### What is Nyckel?
-Nyckel is a Machine Learning API that provides automated training to models instead of manually writing the code. It also allows these models to be integrated into applications with the best simplicity.
-
 ### Requirements
 To develop, you will need the following;
 - A suitable editor like visual studio, sublime and others.
 - Prior knowledge to Nyckel, css, Javascript.
 - HTML basics.
+
+### What is Nyckel?
+Nyckel is a Machine Learning API that provides automated training to models instead of manually writing the code. It also allows these models to be integrated into applications with the best simplicity.
 
 With these requirements in place, the coding journey can kick off.
 Follow each step below to develop your own Machine Learning-enabled web application.
