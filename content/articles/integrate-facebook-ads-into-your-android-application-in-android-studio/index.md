@@ -30,15 +30,14 @@ Monetizing Applications counts as one of the success of a developer other than p
 The key requirements for a successful integration include;
 - Facebook Audience Network SDK
 - Facebook Audience Network account
-- Android studio
+- [Android studio](#https://developer.android.com/studio/releases)
 - Facebook business account
 
 You also need to be familiar with the layout and how to use Android studio. With all these requirements in place, you can move on to the steps involved in the integration process.
-
 Assuming you have your Android studio up and running, the only thing you have to install is the FAN SDK.
 
  **FAN (Facebook Audience Network) SDK installation**
- To install, you can download your SDK manually from [here](https://developers.facebook.com/resources/audience-network-sdk-6.8.0.zip) (Not recommended) or follow the steps in [Stage 1 integration steps](#stage-1-integration-steps) to install it the right way.
+ To install, you can download your SDK manually from [here](https://developers.facebook.com/resources/audience-network-sdk-6.8.0.zip) (Not recommended) or follow the steps in [Initial integration steps](#initia-integration-steps) to install it the right way.
 
 ### Initial Integration steps
 
