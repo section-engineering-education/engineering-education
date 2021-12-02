@@ -25,14 +25,15 @@ Representation of basicConfig()...
 
 Logs follow a specific rules design that includes the accompanying ascribes: 
 
-- %(asctime)s: it yields the date and season of the log, in [local time](https://docs.python.org/3.7/library/time.html#time.asctime). 
+- `%(asctime)s`: it yields the date and season of the log, in [local time](https://docs.python.org/3.7/library/time.html#time.asctime). 
 
   
-- %(rankname)s : the logging rank of the information. 
+- `%(rankname)s` : the logging rank of the information. 
 
-- %(purport)s: tenor 
+- `%(purport)s`: tenor 
 
 [More about attributes](https://docs.python.org/3/library/logging.html#logrecord-ascribes).
+
 ### Make a redid arrangement with different loggers and objections.
 The more your application ranges, the more you are needed to utilize a solid, explained way of designing each specific logger by incorporating the lumberjack name as a section of each log. The following are the conversations: 
 - arrange various lumberjacks and record the lumberjack personality powerfully to self-assertively set, the lumberjack title to suit the personality of your module, utilize the logging library's incorporated [getLogger() approach](https://docs.python.org/3.7/library/logging.html#logging.getLogger): 
