@@ -1,4 +1,4 @@
-Cross-Site Scripting (XSS) attacks are a type of injection, in which malicious scripts are injected into otherwise benign and trusted websites. XSS attacks occur when an attacker uses a web application to send malicious code, generally in the form of a browser side script, to a different end-user. Flaws that allow these attacks to succeed are quite widespread and occur anywhere a web application uses input from a user. This occurs when the application generates output without validating or encoding it.
+Cross-Site Scripting (XSS) attacks are a type of injection in which malicious scripts are injected into otherwise benign and trusted websites. XSS attacks occur when an attacker uses a web application to send malicious code, generally in the form of a browser side script, to a different end-user. Flaws that allow these attacks to succeed are quite widespread and occur anywhere a web application uses input from a user. This occurs when the application generates output without validating or encoding it.
 
 *(Source: [OWASP](https://owasp.org/www-community/attacks/xss/#))*
 
@@ -12,9 +12,9 @@ In this article, we'll go through XSS attacks in detail, their impact, and how t
 
 ### Prerequisites
 
- Basic knowledge of HTML and Javascript
+- Basic knowledge of HTML and Javascript
 
-### How XSS work
+### How XSS works
 
 Cross-site scripting is accomplished by tricking a vulnerable web application into returning malicious Javascript to users. When malicious code is executed inside a victim's browser, the attacker has complete control over how they interact with the app.
 
@@ -56,7 +56,7 @@ Now let's look for XSS. The most simple XSS payload is the script tag. A script 
 
 ![alert](/understanding-cross-site-scripting-atacks/alert.png)
 
-We notice that as soon as we hit the go button after entering our XSS payload, we get an alert box with `1` displayed, which means our payload worked successfully. We just used the [alert](https://www.w3schools.com/jsref/met_win_alert.asp) function within javascript to display 1.
+We notice that as soon as we hit the go button after entering our XSS payload, we get an alert box with `1` displayed, which means our payload worked successfully. We just used the [alert](https://www.w3schools.com/jsref/met_win_alert.asp) function within JavaScript to display 1.
 
 ### Types of XSS
 
@@ -67,9 +67,9 @@ This is a one-time XSS. The malicious script is part of the victim's online appl
 Reflected XSS is most commonly employed in targeted attacks, where the hacker sends a phishing email with the malicious script and the URL. The attacker could even post a link on a public website and deceive the user into clicking it.
 #### Stored XSS
 
-Also known as `Persistent XSS`, the payload is saved on the server and can be triggered by a victim without requiring any user interaction outside of the application. This type of XSS happens when the server saves your supplied input somewhere into the server, (i.e. a Database or cache server).
+Also known as `Persistent XSS`, the payload is saved on the server and can be triggered by a victim without requiring any user interaction outside of the application. This type of XSS happens when the server saves your supplied input somewhere into the server (i.e. a database or cache server).
 
-#### Stored XSS Attack
+##### Stored XSS Example
 
 Let's go back to our vulnerable web application. We click on the `Your profile` tab, which presents us with a login page
 
@@ -84,7 +84,7 @@ password: test
 
 ![logged in](/understanding-cross-site-scripting-atacks/in.png)
 
-Now that we are logged in, let's inject our payload in the name field, and click on the update button to update our profile:
+Now that we are logged in, let's inject our payload in the name field and click on the update button to update our profile:
 
 ```javascript
 <script>alert(1)</script>
@@ -100,24 +100,27 @@ The victim's browser is directly affected by DOM XSS, which is a local attack. T
 
 To carry out a scripting attack, DOM XSS uses this lawful client-side code. The most crucial aspect of DOM XSS is that the legitimate script adds HTML content to the web page shown in the user's browser using a user-supplied input.
 
-### Impact of XSS
+### The Impact of XSS
 
-- Capture user credentials
-- Defacement of website 
-- Impersonate a user 
-- Carry out user action 
+Through XSS, the attacker can do the following:
+
+- capture user credentials
+- deface the website 
+- impersonate a user 
+- carry out user actions
 
 ### How to prevent XSS attacks
 
-- Usage of appropriate response headers
-- Filtering user input
-- Encode data on output
-- Sanitization of HTML
-- Encoding
+You may prevent XSS attacks through:
+
+- the usage of appropriate response headers
+- the filtering of user input
+- the encoding of data on output
+- sanitization of HTML
 
 ### Conclusion
 
-XSS is a common web vulnerability. Web vulnerability scanners such as [burp suite](https://portswigger.net/burp), can be used to carry out XSS tests on web applications. You can read more on XSS here
+XSS is a common web vulnerability. Web vulnerability scanners such as [burp suite](https://portswigger.net/burp), can be used to carry out XSS tests on web applications. You can read more on XSS here:
 
 - [Portswigger](https://portswigger.net/web-security/cross-site-scripting)
 - [Owasp](https://owasp.org/www-community/attacks/xss/)
