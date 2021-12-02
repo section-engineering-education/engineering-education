@@ -38,90 +38,113 @@ Semaphore class has the following methods:
 ### Semaphore implementation 
 Let us see how we can implement semaphores in the following code below:
 ```Java
-import java.util.concurrent. * ; 
-class ResourceBeingShared {
-  static int myCounter = 0;
+import java.util.concurrent.* ;
+
+class SharedR {
+  static int count = 0;
 }
 
-class newThread extends new Thread {
-  Semaphore mySemaph;
-  String myThreadName;
-  public newThread(Semaphore mySemaph, String myThreadName) {
-    super(myThreadName);
-    this.mySemaph = mySemaph;
-    this.myThreadName = myThreadName;
+class MyThread extends Thread {
+  Semaphore mysemaphore;
+  String threadName;
+  public MyThread(Semaphore mysemaphore, String threadName) {
+    super(threadName);
+    this.mysemaphore = mysemaphore;
+    this.threadName = threadName;
   }@Override
-  public void **run()** {
+  public void run() {
     if (this.getName().equals("Thread1")) {
-      System.out.println("Starting " + myThreadName);
+      System.out.println("Starting " + threadName);
       try {
-        //  getting permit. 
-        System.out.println(myThreadName + " -> permit waiting."); 
-        mySemaph.acquire();
+        System.out.println(threadName + " : waiting for a permit.");
 
-        System.out.println(myThreadName + " -> getting permit.");
+        //Acquiring the lock 
+        mysemaphore.acquire();
 
-        for (int b = 0; b < 5; b++) {
-          ResourceBeingShared.myCounter++;
-          System.out.println(myThreadName + ": " + ResourceBeingShared.myCounter);
+        System.out.println(threadName + " : getting a permit.");
 
-          new Thread.sleep(10);
+        // Accessing the shared resource. 
+        for (int i = 0; i < 5; i++) {
+          SharedR.count++;
+          System.out.println(threadName + ": " + SharedR.count);
+          Thread.sleep(10);
         }
       }
       catch(InterruptedException exc) {
         System.out.println(exc);
       }
-      System.out.println(myThreadName + " -> releasing permit.");
-      mySemaph.release();
+
+      // Releasing the permit. 
+      System.out.println(threadName + ": releasing the permit.");
+      mysemaphore.release();
     }
-
     else {
-      System.out.println("Starting-> " + myThreadName);
+      System.out.println("Starting :" + threadName);
       try {
-    
-        System.out.println(myThreadName + " -> permit waiting..");
+        System.out.println(threadName + ": waiting for a permit.");
 
-        mySemaph.acquire();
+        // acquiring the lock 
+        mysemaphore.acquire();
 
-        System.out.println(myThreadName + " -> getting permit.");
+        System.out.println(threadName + " gets a permit.");
 
-        // As at this moment, the shared resource can be used. To unlock the lock, this thread must do so, as well as any other threads that are waiting in line.
-        for (int b = 0; b < 5; b++) {
-          ResourceBeingShared.myCounter--;
-          System.out.println(myThreadName + ": " + ResourceBeingShared.myCounter);
+        // Now, accessing the shared resource. 
+        for (int i = 0; i < 5; i++) {
+          SharedR.count--;
+          System.out.println(threadName + ": " + SharedR.count);
 
-          new Thread.sleep(10);
+          Thread.sleep(10);
         }
       }
       catch(InterruptedException exc) {
         System.out.println(exc);
       }
-      
-      System.out.println(myThreadName + " -> releasing permit.");
-      mySemaph.release();
+      // Releasing the permit. 
+      System.out.println(threadName + ": releasing the permit.");
+      mysemaphore.release();
     }
   }
 }
-
-public class Demosemaphores {
+public class SemaphoreDemo {
   public static void main(String args[]) throws InterruptedException {
     
-    Semaphore mySemaph = new Semaphore(1);
+    Semaphore mysemaphore = new Semaphore(1);
 
-    
-    newThread b1 = new newThread(mySemaph, "My new Thread 1");
-    newThread b2 = new newThread(mySemaph, "My new Thread 2");
+    // Creating two threads with name b1 and b2 
+    MyThread b1 = new MyThread(mysemaphore, "Thread1");
+    MyThread b2 = new MyThread(mysemaphore, "Thread2");
 
     b1.start();
     b2.start();
-
     b1.join();
     b2.join();
 
-    //It will always be 0 when both threads have finished their work.
-    System.out.println("My counter: " + ResourceBeingShared.myCounter);
+    //count will always be 0 after both threads complete their execution 
+    System.out.println("count: " + SharedR.count);
   }
 }
+```
+Output:
+```bash
+Starting :Thread2
+Starting Thread1
+Thread1 : waiting for a permit.
+Thread2: waiting for a permit.
+Thread1 : getting a permit.
+Thread1: 1
+Thread1: 2
+Thread1: 3
+Thread1: 4
+Thread1: 5
+Thread1: releasing the permit.
+Thread2 gets a permit.
+Thread2: 4
+Thread2: 3
+Thread2: 2
+Thread2: 1
+Thread2: 0
+Thread2: releasing the permit.
+count: 0
 ```
 > Counter variable's final value will always be 0 in this program.
 ### How the application works 
