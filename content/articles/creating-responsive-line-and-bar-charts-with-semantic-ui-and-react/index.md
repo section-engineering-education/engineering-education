@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /creating-responsive-line-and-bar-charts-with-semantic-ui-and-react/
 title: Creating Responsive Line and Bar charts with React and Semantic-UI
-description: In this article, the reader will learn how to build a resposive application that implements Line and Bar charts using Semantic-UI and React and vanilla CSS.
+description: In this article, the reader will learn how to build a responsive application that implements Line and Bar charts using Semantic-UI, React, and vanilla CSS.
 author: fred-benson
-date: 2021-12-1T00:00:00-19:10
+date: 2021-12-2T00:00:00-11:10
 topics: [Language]
 excerpt_separator: <!--more-->
 images:
@@ -15,16 +15,18 @@ images:
     alt: Creating Responsive Line and Bar charts with React and Semantic-UI Image
 ---
 
-Graphical representation is one of the most prevalent methods used to visualize and analyze data.  The most common types of graphical representation of data are bar charts and bars graphs.
+Graphical representation is one of the most prevalent methods to visualize and analyze data. The most common types of graphical representation of data are bar charts and bars graphs.
+
 <!--more-->
-Line and bar charts have various applications to data visualization and representation. Among the applications of these charts include statistics of user engagements, user growth, ratings of products, and other commodities.
+
+Line and bar charts have various applications in data visualization and representation. Among the applications of these charts include statistics of user engagements, user growth, ratings of products, and other commodities.
 
 This tutorial will walk the reader through the various steps and dependencies required to build a responsive chart project. We will use React.js, semantic-ui, and CSS to generate line and bar charts with a set of coordinates and datasets.
 
 Think of it as plotting a graph with a set of variables in mathematics but in this case, React.js.
 
 ### Key takeaways
-After completion of this tutorial, the reader should  understand the following:
+After completiing the tutorial, the reader should understand the following:
 - Getting started with React functional components
 - Installing and adding the semantic-UI dependency to a web project
 - Creating reusable components with React.js
@@ -33,14 +35,13 @@ After completion of this tutorial, the reader should  understand the following:
 
 ### Prerequisite
 
-This tutorial requires intermediate knowledge of React.js, CSS, and any modern web styling libraries similar to Semantic-UI. So, for absolute beginners, take a moment and enroll in a [ Udemy crash course](https://www.codecademy.com/learn/react-101) here.
+This tutorial requires intermediate knowledge of React.js, CSS, and any modern web styling libraries similar to Semantic-UI. So, for absolute beginners, take a moment and enroll in the [React crash course by Codecademy](https://www.codecademy.com/learn/react-101) here for free.
 
 ### Getting started with React functional components
 
-React functional component is a recent enhancement to React.js.  The former React.js component was class-based. A functional component is a React function that accepts a `props` and returns a JSX (JavaScript syntax extension). Props in React.js are arguments or parameters that are passed to a React component to be rendered. For this tutorial, we will adopt React functional components for our application.
+React functional component is a recent enhancement to React.js. The former React.js component was class-based. A functional component is a React function that accepts a `props` and returns a JSX (JavaScript syntax extension). Props in React.js are arguments or parameters passed to a React component to be rendered. For this tutorial, we will adopt React functional components for our application.
 
 To get started, we need to create the `react-app`. Creating the react-app is done through the command executed in the terminal. 
-
 
 So, open the command terminal and run the command below.
 
