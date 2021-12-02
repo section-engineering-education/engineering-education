@@ -5,8 +5,8 @@ This tutorial aims at providing a solid foundation on the first steps to take to
 
 ### Prerequisites
 To follow along with this tutorial, you need to have the following:
-•	 A code editor like [Visual Studio Code(https://code.visualstudio.com/)].
-•	 Apache web server, Preferably [WampServer(https://www.wampserver.com/en/)].
+•	 A code editor like [Visual Studio Code](https://code.visualstudio.com/).
+•	 Apache web server, Preferably [WampServer](https://www.wampserver.com/en/).
 •	 GD library/extension. You can confirm if you have it installed by searching for “gd” in your php.ini file. You should find “etension=php_gd2.dll” else download it for free on the internet. 
 •	Basic knowledge of PHP.
 ### Create a Canvas, Ink and Paint Brush
