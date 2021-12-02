@@ -7,7 +7,7 @@ title: Integrating Django with TinyMCE
 description: This article will serve as a guide to integrating Django with a TinyMCE. TinyMCE is a rich and flexible online text editor that is compatible with Django amongst many other frameworks.
 author: samuel-mwangi
 date: 2021-01-22T00:00:00-10:00
-topics: Languages
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
