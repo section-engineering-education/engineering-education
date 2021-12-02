@@ -1,5 +1,22 @@
-### Introduction
-When developing a social app that incorporates video calling features, you may end up with a lot of boilerplate code. Agora is a platform that allows developers to create rich in-app experiences such as embedded voice and video chat, real-time recording, live streaming, and real-time messaging. 
+---
+layout: engineering-education
+status: publish
+published: true
+url: /creating-a-video-call-app-with-agora-sdk/
+title: Creating a One-to-One Video Call Android app with Agora SDK using Kotlin
+description: This tutorial takes the reader through the process of creating a one-to-one video call app with Agora SDK.
+author: joyce-wanjiru
+date: 2021-12-03T00:00:00-01:52
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/creating-a-video-call-app-with-agora-sdk/hero.png
+    alt: Creating a Video Call app with Agora SDK Hero Image
+---
+When developing an Android app that incorporates video calling features, you may end up with a lot of boilerplate code.
+<!--more-->
+Agora SDK is a platform that allows developers to create rich in-app experiences such as embedded voice and video chat, real-time recording, live streaming, and real-time messaging with relatively less code.
 
 ### Table of Contents
 - [Prerequisites](#prerequisites)
@@ -9,7 +26,7 @@ When developing a social app that incorporates video calling features, you may e
 - [Creating an Android Project](#creating-an-android-project)
 - [Setting Up the Project](#setting-up-the-project)
 - [Designing the User Interface](#designing-the-user-interface)
-- [Working on the MainActivity](#working-on-mainactivity)
+- [Creating the app logic](#creating-the-app-logic)
 - [Demo](#app-demo)
 - [Conclusion](#conclusion)
 - [References](#reference)
@@ -20,7 +37,7 @@ To follow along with this tutorial, you need to have:
 - Solid understanding of developing and running Android applications.
 - Fundamental knowledge of the [Kotlin](https://kotlinlang.org/) programming language.
 - An Agora account. If you don't have one yet, [Sign up](https://www.agora.io/en/) to get started.
-- Experience with Android `ViewBinding`. 
+- Experience with Android `ViewBinding`.
 
 ### Goals
 By the end of this tutorial, you will be able to:
@@ -36,32 +53,32 @@ Agora's video call APIs enhance social apps with new features like AR facial mas
 In this tutorial, we will use the SDK to add video calling capabilities in an Android app. 
 
 ### Creating a project on the Agora dashboard
-Open the [Agora Dashboard](https://console.agora.io/) and create a new project as shown below:
+Open the [Agora developer console](https://console.agora.io/) and create a new project as shown below:
 
-![New Agora App](engineering-education/creating-a-one-to-one-video-call-android-app-with-agora-sdk-with-kotlin/new_agora_project.png)
+![New Agora App](/engineering-education/creating-a-video-call-app-with-agora-sdk/new_agora_project.png)
 
 Choose a use case that suits your app i.e education, social, entertainment, etc.
 
 Once you have created the project, you'll be able to see it in your console. Click on the edit button to generate a temporary token that you'll use in your app.
 
-![Edit Agora App](engineering-education/creating-a-one-to-one-video-call-android-app-with-agora-sdk-with-kotlin/welcome_edit.png)
+![Edit Agora App](/engineering-education/creating-a-video-call-app-with-agora-sdk/welcome_edit.png)
 
 Scroll to the bottom of the page and select generate temporary tokens for audio/video calls.
 
-![Token Page](engineering-education/creating-a-one-to-one-video-call-android-app-with-agora-sdk-with-kotlin/temp_token.png)
+![Token Page](/engineering-education/creating-a-video-call-app-with-agora-sdk/temp_token.png)
 
 Enter the channel name and click on generate temp token.
 
-![Generate Token](engineering-education/creating-a-one-to-one-video-call-android-app-with-agora-sdk-with-kotlin/generate_token.png)
+![Generate Token](/engineering-education/creating-a-video-call-app-with-agora-sdk/generate_token.png)
 
 > Take note of the `APP ID`, `Channel Name`, and your `Temp Token`. They will be required in the next steps.
 
-![Generated Token](engineering-education/creating-a-one-to-one-video-call-android-app-with-agora-sdk-with-kotlin/generated_token.png)
+![Generated Token](/engineering-education/creating-a-video-call-app-with-agora-sdk/generated_token.png)
 
 ### Creating an Android project
 Open your Android Studio and create an empty project and give it a name of your choice.
 
-![Android App](engineering-education/creating-a-one-to-one-video-call-android-app-with-agora-sdk-with-kotlin/android_studio_project.png)
+![Android App](/engineering-education/creating-a-video-call-app-with-agora-sdk/android_studio_project.png)
 
 ### Setting up the project
 In your app-level `build.gradle` file, add the following dependency:
@@ -194,9 +211,9 @@ In this step, we will create a simple layout that will have a `FrameLayout` to s
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
 
-> Make sure you add the required icons.
+> Remember to add the required icons from the resource manager.
 
-### Working on MainActivity
+### Creating the app logic
 
 #### Declarations
 In your `MainActivity.kt` file, add the following declarations:
@@ -457,6 +474,7 @@ binding.buttonSwitchCamera.setOnClickListener {
 binding.buttonMute.setOnClickListener {
     mMuted = !mMuted
     rtcEngine.muteLocalAudioStream(mMuted)
+
     val res: Int = if (mMuted) {
         R.drawable.btn_mute
     } else {
@@ -481,21 +499,26 @@ override fun onDestroy() {
 ```
 
 ### App demo
-Install and run the app on two different devices and make sure that they are connected to the internet. You should expect it to work as shown in the screenshots below.
+Install and run the app on two different devices and make sure that they are connected to the internet. You should expect it to work as shown in the screenshots below:
 
-![Demo1](engineering-education/creating-a-one-to-one-video-call-android-app-with-agora-sdk-with-kotlin/demo1.png)
+![Screen 1](/engineering-education/creating-a-video-call-app-with-agora-sdk/demo1.png)
 
-![Demo2](engineering-education/creating-a-one-to-one-video-call-android-app-with-agora-sdk-with-kotlin/demo2.png)
+![Screen 2](/engineering-education/creating-a-video-call-app-with-agora-sdk/demo2.png)
 
-![Demo3](engineering-education/creating-a-one-to-one-video-call-android-app-with-agora-sdk-with-kotlin/demo3.png)
+![Screen 3](/engineering-education/creating-a-video-call-app-with-agora-sdk/demo3.png)
 
 ### Conclusion
-In this tutorial, we have learned what Agora video SDK is and how to create and obtain an access token from the Agora console.
+In this tutorial, we have learned what Agora video SDK is, how to obtain an access token from the Agora console, and how to create a video call app with the Agora SDK.
 
-We have then used Agora SDK to create a simple one-to-one video call app. Go ahead and apply these skills to create more advanced apps with video call features.
+Go ahead and apply these skills to create even more advanced apps.
 
 To see the full implementation of the app, check out [this Github repository](https://github.com/sheecodes/AgoraVideoCallDemo).
 
 ### Reference
 - [Agora SDK Documentation](https://docs.agora.io/en)
 - [Agora Video Call](https://docs.agora.io/en/Video/API%20Reference/java/index.html)
+
+Happy coding!
+
+---
+Peer Review Contributions by: [Eric Gacoki](/engineering-education/authors/eric-gacoki/)
