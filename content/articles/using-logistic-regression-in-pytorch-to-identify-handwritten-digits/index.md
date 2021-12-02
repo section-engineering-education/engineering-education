@@ -16,11 +16,12 @@ images:
 ---
 
 ### Introduction
-Logistic Regression is a widely used statistical method for predicting a binary outcome from a set of independent variables. This [article](https://www.geeksforgeeks.org/understanding-logistic-regression/) previously covered the various properties of logistic regression and its Python implementation. Now we'll look at how to implement this in PyTorch and use Logistic Regression to classify handwritten digits from the MNIST dataset.
+Logistic regression is a widely used statistical method for predicting a binary outcome from a set of independent variables. This [article](https://www.geeksforgeeks.org/understanding-logistic-regression/) covers the various properties of logistic regression and its Python implementation. We will look at implementing this in PyTorch. Further, we will use Logistic Regression to classify handwritten digits from the MNIST dataset.
+<!--more-->
 
 ### Prerequisites
 1. Install [PyTorch](https://pytorch.org/) into your Python environment.
-2. Having some knowledge of the Python programming language is a good idea.
+2. Python programming concepts
 
 ### Table of contents
 - [Library functions and objects](#library-functions-and-objects)
@@ -30,10 +31,10 @@ Logistic Regression is a widely used statistical method for predicting a binary 
 - [Conclusion](#conclusion)
  
 ### Library functions and objects
-Importing library functions and objects into your code is necessary once your installation is complete.
-Here are the functions and objects to import:
 
-- The **torch.nn** module: Contains code thatwe will be using in our model.
+Importing library functions and objects into your code is necessary to get the required functionality to implement neural networks. Here are the functions and objects we import:
+
+- The **torch.nn** module: Contains code that we will be using in our model.
 - The **torchvision.datasets**: Includes MNIST dataset of handwritten digits that we shall be using here.
 - The **torchvision.transforms**: We shall be using it to transform from images to PyTorch tensors.
 - The **torch.autograd**: This will be used to define our tensors.
@@ -117,7 +118,7 @@ criterion = tn.CrossEntropyLoss()
 network = NeuralNetwork()
 opti = torch.optim.SGD(newmodel.parameters(), lr = reading_rate)
 ```
-We're ready to begin training now. Resetting all gradients to 0 will be the first step here, followed by a forward pass, the loss calculation, backpropagation, and the updating of all weights. Dataloader will load the individual batches. We set the gradients to zero using `optimizer.zero_grad().` The `backward()` call will now collect a new set of gradients which we propagate back into each of the network’s parameters using optimizer.step().
+We're ready to begin training now. Resetting all gradients to 0 will be the first step here, followed by a forward pass, the loss calculation, backpropagation, and updating all weights. Dataloader will load the individual batches. We set the gradients to zero using `optimizer.zero_grad().` The `backward()` call will now collect a new set of gradients which we propagate back into each of the network’s parameters using the optimizer.step().
 ```python
 # Training the Model
 for epoch in range(num_epochs):
