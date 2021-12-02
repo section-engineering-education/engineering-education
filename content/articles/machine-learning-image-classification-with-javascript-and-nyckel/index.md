@@ -55,6 +55,8 @@ Under the body tag is where the upload button and the upload section lies. This 
   </div>
 </body>
 ```
+A container is created to hold the photo once uploaded using the division class `upload-area`.
+
 When you run the combination of the code above, you should have a web page with a button and an upload section only as shown in the photo below.
 
 ![htmlResult](/engineering-education/machine-learning-image-classification-with-javascript-and-nyckel/htmlResult.png)
@@ -268,6 +270,11 @@ function checkImageWithNyckel(image)
     });
 }
 ```
+As you all know, JavaScript is built-up by functions, the above script contains different functions  for different functionalities of the application.
+These functions enable `uploading`and `resizing`and ensure that the uploaded object matches the allowed format.
+
+The last section of the script forms introduces AJAX (Asynchronous JavaScript and XML) which invokes the machine learning model from it's development site using the url.
+
 To link this file to the html file, you will similarly create a JavaScript reference link in the html file below the css link as indicated below.
 
 ```html
