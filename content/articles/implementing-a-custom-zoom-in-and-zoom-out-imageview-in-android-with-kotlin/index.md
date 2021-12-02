@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /implementing-custom-zoom-in-imageview-in-android/
-title: Implementing a Custom Zoom in and Zoom out ImageView in Android with Kotlin
-description: This tutorial takes the reader through the process of implementing a custom zoom in and zoom out ImageView in Android with Kotlin. Zooming is an in-motion operation done to enlarge or reduce the size of an image or an object in an Android application.
+title: Implementing a Custom Zoom on ImageView in Android with Kotlin
+description: This tutorial takes the reader through the process of implementing a custom zoom in and zoom out ImageView in Android with Kotlin.
 author: brandy-odhiambo
-date: 2021-11-28T00:00:00-13:59
+date: 2021-12-02T00:00:00-11:20
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -17,6 +17,7 @@ images:
 Zooming is an in-motion operation done to enlarge or reduce the size of an image or an object in an Android application. It provides a powerful and appealing visual effect to the users.
 <!--more-->
 ### Prerequisites
+To best follow along with this tutorial, the reader will need the following:
 - Make sure you have Android Studio installed on your computer.
 - Knowledge of the fundamental concepts of the Kotlin programming language is required.
 - Have basic mathematical knowledge of Matrices.
@@ -31,7 +32,6 @@ Zooming is an in-motion operation done to enlarge or reduce the size of an image
 To successfully create a customized zooming action, several methods should be implemented.
 
 To begin with, let's create a class that extends `AppCompatImageView` and implement the following:
-
 - `View.OnTouchListener`
 - `GestureDetector.OnGestureListener`
 - `GestureDetector.OnDoubleTapListener`
@@ -100,7 +100,7 @@ private inner class ScalingListener : ScaleGestureDetector.SimpleOnScaleGestureL
 
 This class overrides two methods, `onScaleBegin` and `onScale` which contains the general implementation of the `ScaleGestureDetector` interface.
 
-`onScaleBegin` shows the mode level of the zooming which are ought to be done.
+`onScaleBegin` shows the mode level of the zooming which ought to be done.
 
 ```kotlin
 override fun onScaleBegin(detector: ScaleGestureDetector?): Boolean {
@@ -141,7 +141,7 @@ override fun onScale(detector: ScaleGestureDetector): Boolean {
 }    
 ```
 
-The method shown below is used used to fix transition and put matrix value within an array for analysis:
+The method shown below is used to fix transitions and put matrix value within an array for analysis:
 
 ```kotlin
 fun fittedTranslation() {
@@ -186,7 +186,9 @@ private fun putToScreen() {
 }
 ```
 
-`getFittedTranslation` is a method that handles the negative coordinates of the image and the case when the image is not zoomed. The following snippet shows its implementation:
+`getFittedTranslation` is a method that handles the negative coordinates of the image and the case when the image is not zoomed. 
+
+The following snippet shows its implementation:
 
 ```kotlin
 private fun getFittedTranslation(mTranslate: Float,vSize: Float, cSize: Float): Float {
@@ -246,7 +248,7 @@ override fun onTouch(mView: View, mMouseEvent: MotionEvent): Boolean {
 }
 ```
 
-Now that we've constructed the customized zoom functionality, we need to know where it applies for it to work. On to your `ImageView` within the XML file, replace the `ImageView` with the package name as shown below:
+Now that we've constructed the customized zoom functionality, we need to know where it applies for it to work. On your `ImageView` within the XML file, replace the `ImageView` with the package name as shown below:
 
 ```xml
 <com.odhiambodevelopers.mycustomzoomdemo.CustomZoom
@@ -271,9 +273,11 @@ Run the app and try to zoom in and out. It should work as shown below:
 ![Zoomed image](/engineering-education/implementing-custom-zoom-in-imageview-in-android/demo2.png)
 
 ### Conclusion
-In this tutorial, we have learned what zooming is and how to implement a custom zoom functionality in an ImageView in Android using kotlin.
+In this tutorial, we have learned what zooming is and how to implement a custom zoom functionality in an ImageView in Android using Kotlin.
 
-To see the full code implementation, check out [this Github repository](https://github.com/brandy-kay/MyCustomZoomDemo).
+To see the full code implementation, check out [this GitHub repository](https://github.com/brandy-kay/MyCustomZoomDemo).
+
+Happy coding!
 
 ### Reference
 Explore more on [Custom Zooming](https://developer.android.com/training/animation/zoom).
