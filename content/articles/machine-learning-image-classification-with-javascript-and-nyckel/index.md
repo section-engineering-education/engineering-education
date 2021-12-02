@@ -10,7 +10,7 @@ This article shows how you can implement machine learning models in a web applic
 - [Requirements](#requirements)
 - [JavaScript CSS and HTML website build](#javascript-css-and-html-website-build)
 - [Building the Machine Learning model using Nyckel](#building-the-machine-learning-model-using-nyckel)
-- [ML model integration with the Web Application](#ml-model-integration-with-the-web-application)
+- [Machine learning model integration with the Web Application](#machine-learning-model-integration-with-the-web-application)
 - [App live testing](#app-live-testing)
 - [Conclusion](#conclusion)
 ### Requirements
@@ -19,7 +19,7 @@ To develop, you will need the following;
 - Prior knowledge to Nyckel, css, JavaScript.
 - HTML basics.
 ### What is Nyckel?
-Nyckel is a Machine Learning API that provides automated training to models instead of manually writing the code. It also allows these models to be integrated into applications with the best simplicity.
+Nyckel is a machine learning API that provides automated training to models instead of manually writing the code. It also allows these models to be integrated into applications with the best simplicity.
 
 With these requirements in place, the coding journey can kick off.
 Follow each step below to develop your own machine learning-enabled web application.
@@ -60,7 +60,7 @@ When you run the combination of the code above, you should have a web page with 
 ![htmlResult](/engineering-education/machine-learning-image-classification-with-javascript-and-nyckel/htmlResult.png)
 
 The photo above shows the results with no styling applied. Since this tutorial is not deeply involved in website styling, you can apply your own styles
-and learn how to link them to the application. For more information on css styling, you can refer to this [article](https://www.section.io/engineering-education/getting-started-with-css/) for CSS beginners.. To get my styles that have been used for this particular tutorial, you can refer to my github [repository](https://github.com/del-ui/Machine-Learning-Image-Classifier-Application/blob/main/style.css) to get the full CSS code.
+and learn how to link them to the application. For more information on css styling, you can refer to this [article](https://www.section.io/engineering-education/getting-started-with-css/) for css beginners.. To get my styles that have been used for this particular tutorial, you can refer to my github [repository](https://github.com/del-ui/Machine-Learning-Image-Classifier-Application/blob/main/style.css) to get the full css code.
 
 When you use the code from the above link, similar results as those in the photo below are obtained.
 ![styled](/engineering-education/machine-learning-image-classification-with-javascript-and-nyckel/styled.png)
@@ -268,7 +268,7 @@ function checkImageWithNyckel(image)
     });
 }
 ```
-To link this file to the html file, you will similarly create a Javascript reference link in the html file below the css link as indicated below.
+To link this file to the html file, you will similarly create a JavaScript reference link in the html file below the css link as indicated below.
 
 ```html
 <script type="text/Javascript" src="../mlApp/js/main.js"></script>
@@ -289,7 +289,7 @@ After categorizing, you will get a notification that your model is trained.
 Navigate to invoke section and perform a satisfaction test on the model by upload a different photo from the ones used in training the check the output function.
 
 Having done all that, your model is trained and ready to use.
-### ML model integration with the web application
+### Machine Learning model integration with the web application
 To integrate the trained model to the web application, navigate to API section and copy the url given and paste in the JavaScript code under `$ajax`. The url looks almost familiar to the one shown below ending with the word `invoke`.
 
 Once done, your application is ready for testing with photos which were not included during training. 
