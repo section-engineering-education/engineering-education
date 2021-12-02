@@ -37,7 +37,7 @@ You also need to be familiar with the layout and how to use Android studio. With
 
 Assuming you have your Android studio up and running, the only thing you have to install is the FAN SDK.
 
- **FAN SDK installation**
+ **FAN (Facebook Audience Network) SDK installation**
  To install, you can download your SDK manually from [here](https://developers.facebook.com/resources/audience-network-sdk-6.8.0.zip) (Not recommended) or follow the steps in [Stage 1 integration steps](#stage-1-integration-steps) to install it the right way.
 
 ### Initial Integration steps
