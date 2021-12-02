@@ -274,7 +274,7 @@ I added the title, changed the text color, wrote some text, clicked the `insert/
 
 This is how my [homepage](http://127.0.0.1:8000/) looks like now:
 
-![homepage](/engineering-education/integrating-django-with-tinymce/tinymceTest.jpg)
+![homepage](/engineering-education/integrating-django-with-tinymce/homepage_Test.jpg)
 
 ### Conclusion
 If you're not okay with the size of your TinyMCE text editor, you could go back to its configurations in `settings.py` and adjust the `height` and `width` values until you get the size you want.
