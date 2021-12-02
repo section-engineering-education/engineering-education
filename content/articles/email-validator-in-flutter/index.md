@@ -26,15 +26,24 @@ Email validator is a Flutter package that checks whether an email is valid or no
 Email validator runs a check on the emails through a process called `swift process`. This process detects typographical errors or deliberate mistakes. Furthermore, it helps to organize and clean all email addresses in a flutter application.
 
 For this reason, it protects the email sender score while maximizing the efficiency of the flutter application. The key concepts from the use of this package are validity, risk, and the invalidity of any email address.
-
+- Validity -A valid email address consists of an email prefix and an email domain, both in acceptable formats. The prefix appears to the left of the @ symbol. The domain appears to the right of the @ symbol.
+- Risk - This the probabilty of sending messages or acceppting emails that are not right.
+- invalidity-Basically, it's just an address that doesn't have the correct format to be an email address, one that doesn't exist or doesn't anymore.
 This package consists of a class and a function. 
 
-The constructor for this class is pretty simple: Create a new instance of this class and set the validator type to either 1 or 2 (defaults to 1). The constructor should pass a string and an array of strings for validation.The arguments are also key factors.
+The constructor for this class is pretty simple: Create a new instance of this class. The constructor should pass a string and an array of strings for validation.The arguments are also key factors.
 
 The first argument is self-explanatory. It is just a boolean that specifies whether we are using the `local-part@domain.com` format or `domain.com` as our string to validate.
+```dart 
+if (!EmailValidator.validate(val!, true)) {
+                      return 'Invalid';
+  ```
 
 The second argument allows you to pass an array of strings that are valid domains for the email. This argument is only necessary if the string passed in as our first argument is in `domain.com` format; otherwise, it can be omitted.
-
+```dart
+controller: _emailController,//calling controller
+                  validator: (val)
+```
 If either of the first two arguments contains an error, then false should be returned. Otherwise, true should be returned, and our string should be validated.
 
 ### Benefits of email validator
