@@ -1,70 +1,73 @@
-### Creating a One-to-One Video Call Android App with Agora SDK with Kotlin  
-When developing a social app that has a video calling feature, a developer may require coming up with a lot of boilerplate code to achieve this. But with Agora, they got you covered. Agora is a platform for video, audio, and live interactive streaming that enables developers to create rich in-app experiences such as embedded voice and video chat, real-time recording, interactive live streaming, and real-time messaging. 
+### Introduction
+When developing a social app that incorporates video calling features, you may end up with a lot of boilerplate code. Agora is a platform that allows developers to create rich in-app experiences such as embedded voice and video chat, real-time recording, live streaming, and real-time messaging. 
 
 ### Table of Contents
 - [Prerequisites](#prerequisites)
 - [Goals](#goals)
-- [What is Agora Video Call SDK](#what-is-agora-video-call-sdk)
-- [Creating a Project on the Agora Dashboard](#step-1---creating-a-project-on-the-agora-dashboard)
-- [Creating an Android Prjoect](#step-2---create-an-android-project)
-- [Setting Up the Project](#step-3---setting-up-the-project)
-- [Designing the User Interface](#step-4---designing-the-user-interface)
-- [Working on the MainActivity](#step-5---working-on-the-mainactivity)
-- [Demo](#demo)
+- [What is Agora Video Call SDK?](#what-is-agora-video-call-sdk)
+- [Creating a Project on the Agora Dashboard](#creating-a-project-on-the-agora-dashboard)
+- [Creating an Android Project](#creating-an-android-project)
+- [Setting Up the Project](#setting-up-the-project)
+- [Designing the User Interface](#designing-the-user-interface)
+- [Working on the MainActivity](#working-on-mainactivity)
+- [Demo](#app-demo)
 - [Conclusion](#conclusion)
-- [References](#references)
+- [References](#reference)
 
 ### Prerequisites
-To follow along with this tutorial, you should have:
-- Installed [Android Studio](https://developer.android.com/studio/index.html) on your system.
-- Solid understanding of designing and operating Android applications.
+To follow along with this tutorial, you need to have:
+- [Android Studio](https://developer.android.com/studio/index.html) installed on your machine.
+- Solid understanding of developing and running Android applications.
 - Fundamental knowledge of the [Kotlin](https://kotlinlang.org/) programming language.
-- Have an Agora account; if you don't already have one, [Sign Up](https://www.agora.io/en/) to get started.
-- Experience with Android ViewBinding. 
+- An Agora account. If you don't have one yet, [Sign up](https://www.agora.io/en/) to get started.
+- Experience with Android `ViewBinding`. 
 
 ### Goals
-You should be able to grasp the following after this tutorial: 
-- What is Agora Video Call SDK?
-- How to Create and get Access Key for Agora SDK
-- Implementing the SDK for a One-to-One Video call app.
+By the end of this tutorial, you will be able to:
+- Understand what Agora video call SDK is.
+- Create and get the `access key` for Agora SDK.
+- Implement the SDK in a one-to-one video call app.
 
-### What is Agora Video Call SDK
-The video SDK from Agora makes it simple to integrate real-time video conversations into web, mobile, and native apps.
+### What is Agora Video Call SDK?
+Agora video call SDK is a platform that allows developers to create rich in-app experiences such as embedded voice and video chat, real-time recording, live streaming, and real-time messaging.
 
-Agora's Video Call APIs may enhance social apps with new features like AR facial masks and sound effects, while screen sharing, whiteboards, and other capabilities may benefit commercial and educational apps.
+Agora's video call APIs enhance social apps with new features like AR facial masks and sound effects when sharing your screen, whiteboards, and other capabilities that may benefit commercial and educational apps.
 
-In this article, we will use the SDK to add video calling capabilities to an Android app. 
+In this tutorial, we will use the SDK to add video calling capabilities in an Android app. 
 
-### Creating a Project on the Agora Dashboard
+### Creating a project on the Agora dashboard
+Open the [Agora Dashboard](https://console.agora.io/) and create a new project as shown below:
+
 ![New Agora App](engineering-education/creating-a-one-to-one-video-call-android-app-with-agora-sdk-with-kotlin/new_agora_project.png)
-Choose a use case that will suit you in your app i.e education, social, entertainment
 
-Once you have created, on your console, you will be able to see the newly created project, click on the edit pen so that we can generate a temporary token that we will use in our demo app.
+Choose a use case that suits your app i.e education, social, entertainment, etc.
+
+Once you have created the project, you'll be able to see it in your console. Click on the edit button to generate a temporary token that you'll use in your app.
 
 ![Edit Agora App](engineering-education/creating-a-one-to-one-video-call-android-app-with-agora-sdk-with-kotlin/welcome_edit.png)
 
-Scroll to the bottom of the page and select generate temporary tokens for audio/video call
+Scroll to the bottom of the page and select generate temporary tokens for audio/video calls.
 
 ![Token Page](engineering-education/creating-a-one-to-one-video-call-android-app-with-agora-sdk-with-kotlin/temp_token.png)
 
-Enter the channel name and click on generate temp token
+Enter the channel name and click on generate temp token.
 
 ![Generate Token](engineering-education/creating-a-one-to-one-video-call-android-app-with-agora-sdk-with-kotlin/generate_token.png)
 
-Take note of the `APP ID`, `Channel Name`, and your `Temp Token`
+> Take note of the `APP ID`, `Channel Name`, and your `Temp Token`. They will be required in the next steps.
 
 ![Generated Token](engineering-education/creating-a-one-to-one-video-call-android-app-with-agora-sdk-with-kotlin/generated_token.png)
 
-### Step 1 - Creating an Android Project
-Open your Android Studio and create an empty project
+### Creating an Android project
+Open your Android Studio and create an empty project and give it a name of your choice.
 
 ![Android App](engineering-education/creating-a-one-to-one-video-call-android-app-with-agora-sdk-with-kotlin/android_studio_project.png)
 
-### Step 2 - Setting Up the Project
-In your app-level `build.gradle` add the following dependency
+### Setting up the project
+In your app-level `build.gradle` file, add the following dependency:
 
-```Gradle
-dependecies{
+```gradle
+dependencies{
     ...
     
     implementation 'io.agora.rtc:full-sdk:3.1.3'
@@ -75,17 +78,18 @@ In your `Manifest` file, add the following permissions
 - INTERNET
 - READ_PHONE_STATE
 - RECORD_AUDIO
-- MODIFY_AUDIO_SETTINGS
+- MODIFY_AUDIO_SETTINGS and
 - CAMERA
 
-> To prevent code obfuscation in your `proguard-rules.pro` add the following code: 
-```
+> To prevent code obfuscation in your `proguard-rules.pro`, add the following code:
+
+```gradle
 -keep class io.agora.**{*;}
 ```
 
-In your `res` directory open `values` and then strings and then include your `APP_ID` and the `TEMP_TOKEN`
+In your `res` directory, open `values` >> `strings` and include your `APP_ID` and the `TEMP_TOKEN`.
 
-```Xml
+```xml
 <resources>
     ...
     
@@ -94,10 +98,12 @@ In your `res` directory open `values` and then strings and then include your `AP
 </resources>
 ```
 
-### Step 3 - Designing the User Interface
-In this step, we will create a simple layout that will have a `FrameLayout` to show the video of you and another `RelativeLayout` for the video of the other person, also well have some `ImageViews` for muting the microphone, ending a call or calling, and for switching the camera.
+> Make sure your `agora_token` points to the token that you obtained from the Agora console.
 
-```Xml
+### Designing the user interface
+In this step, we will create a simple layout that will have a `FrameLayout` to show the video of you and a `RelativeLayout` for the video of the other person. We'll also have some `ImageViews` (used as buttons) for muting the microphone, initiating or ending a call, and switching the camera.
+
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -188,11 +194,13 @@ In this step, we will create a simple layout that will have a `FrameLayout` to s
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
 
-> Make sure you have the required icons
+> Make sure you add the required icons.
 
-### Step 4 - Working on MainActivity
+### Working on MainActivity
 
 #### Declarations
+In your `MainActivity.kt` file, add the following declarations:
+
 ```kotlin
 private val PERMISSION_REQUEST_ID = 7
 
@@ -211,7 +219,7 @@ private lateinit var rtcEngine: RtcEngine
 ```
 
 #### Initialize the RtcEngine object.
-Create this method which will initialize the Agora RtcEngine
+Create this method which will initialize the Agora RtcEngine. RtcEngine is the core class of the Agora SDK.
 
 ```kotlin
 private fun initRtcEngine() {
@@ -223,12 +231,13 @@ private fun initRtcEngine() {
 }
 ```
 
-#### Setup the Video Configurations
+#### Setting up the video configurations
+
 ```kotlin
 private fun setupVideoConfig() {
 
     rtcEngine.enableVideo()
-
+    // Set the video encoding profile.
     rtcEngine.setVideoEncoderConfiguration(
         VideoEncoderConfiguration(
             VideoEncoderConfiguration.VD_640x360,
@@ -240,8 +249,9 @@ private fun setupVideoConfig() {
 }
 ```
 
-#### Setup Local Video and Remote Video
-In this step, we will setup the local video and the remote video that the current user will be viewing.
+#### Setting up Local and Remote video
+In this step, we will set up the local video and the remote video that the current user will be viewing.
+
 ```kotlin
 private fun setupLocalVideoView() {
     localView = RtcEngine.CreateRendererView(baseContext)
@@ -249,7 +259,6 @@ private fun setupLocalVideoView() {
     binding.localVideoView.addView(localView)
     rtcEngine.setupLocalVideo(VideoCanvas(localView, VideoCanvas.RENDER_MODE_HIDDEN, 0))
 }
-
 
 private fun setupRemoteVideoView(uid: Int) {
     if (binding.remoteVideoView.childCount > 1) {
@@ -262,7 +271,8 @@ private fun setupRemoteVideoView(uid: Int) {
 ```
 
 #### Joining a Channel
-After setting up the local video, the current user needs to join a channel
+After setting up the local video, the current user needs to join a channel to start receiving remote video streams.
+
 ```kotlin
 private fun joinChannel() {
     val token = getString(R.string.agora_token)
@@ -271,9 +281,7 @@ private fun joinChannel() {
 }
 ```
 
-> Make sure, your `R.string.agora_token` points to the token that you obtained from the Agora Console
-
-> Also make sure that the Channel name resembles the one that you input when creating the temporary token.
+> Make sure that the channel name resembles the one you entered when creating the temporary token.
 
 #### Leaving a Channel
 ```kotlin
@@ -282,10 +290,10 @@ private fun leaveChannel() {
 }
 ```
 
-#### Initializing the Agora Engine and Joining a Channel
-Create this method that will combine the three method methods that we have just created. 
+#### Initializing the Agora Engine and joining a channel
+Create this function that will combine the three functions that we have just created.
 
-> These are our usual steps for joining a channel and starting a call.
+> These are the usual steps for joining a channel and starting a call.
 
 ```kotlin
 private fun initAndJoinChannel() {
@@ -297,7 +305,8 @@ private fun initAndJoinChannel() {
 ```
 
 #### Permissions
-Declare this method, which will assist us in determining if permissions have been granted. 
+Declare this method, which will help us to determine whether or not the required permissions have been granted by the user.
+
 ```kotlin
 private fun checkSelfPermission(permission: String, requestCode: Int): Boolean {
     if (ContextCompat.checkSelfPermission(this, permission) != PackageManager.PERMISSION_GRANTED) {
@@ -309,7 +318,7 @@ private fun checkSelfPermission(permission: String, requestCode: Int): Boolean {
 }
 ```
 
-Check whether all permissions are given inside the `onCreate` procedure, then run the `initAgoraEngineAndJoinChannel` method. 
+Check whether all permissions are granted in the `onCreate` method, then call the `initAgoraEngineAndJoinChannel` function.
 
 ```kotlin
 if (checkSelfPermission(ALL_REQUESTED_PERMISSIONS[0], PERMISSION_REQUEST_ID) &&
@@ -319,7 +328,8 @@ if (checkSelfPermission(ALL_REQUESTED_PERMISSIONS[0], PERMISSION_REQUEST_ID) &&
 }
 ```
 
-Also, don't forget to override the `onRequestPermissionsResult` which checks if the requested permissions were granted.
+Also, don't forget to override the `onRequestPermissionsResult` which checks the result of the permission request.
+
 ```kotlin
 override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
     super.onRequestPermissionsResult(requestCode, permissions, grantResults)
@@ -336,13 +346,14 @@ override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out
             return
         }
         // Here we continue only if all permissions are granted.
-
         initAgoraEngineAndJoinChannel()
     }
 }
 ```
 
-#### Removing Remote View and Local Video
+#### Removing Remote view and Local video
+In this step, we will remove the remote video and the local video that the current user is viewing.
+
 ```kotlin
 private fun removeRemoteVideo() {
     if (remoteView != null) {
@@ -359,7 +370,7 @@ private fun removeLocalVideo() {
 }
 ```
 
-When a remote user leaves the channel, we need to remove the remote view by calling the `removeRemoteVideo` method
+When a remote user leaves the channel, we need to remove the remote view by calling the `removeRemoteVideo` method:
 
 ```kotlin
 private fun onRemoteUserLeft() {
@@ -367,8 +378,10 @@ private fun onRemoteUserLeft() {
 }
 ```
 
-#### Handling Rtc Engine Events
-Next, we need to handle some events of the `RtcEngine` such as when someone joins a channel successfully, when the first remote video is decoded and when the user is offline. Create a `RtcEventHandler` object and implement the necessary method.
+#### Handling RtcEngine events
+Next, we need to handle some events of the `RtcEngine` such as when someone joins a channel successfully, when the first remote video is decoded and when the user is offline.
+
+Create a `RtcEventHandler` object and implement the necessary methods as follows:
 
 ```kotlin
 private val mRtcEventHandler = object : IRtcEngineEventHandler() {
@@ -392,18 +405,17 @@ private val mRtcEventHandler = object : IRtcEngineEventHandler() {
 }
 ```
 
-#### Starting and Ending a Call
-To start the call, we need to set up a local video view and join a channel
+#### Starting and Ending a call
+To start the call, we need to set up a local video view and join a channel.
 
 ```kotlin
 private fun startCall() {
     setupLocalVideo()
     joinChannel()
 }
-
 ```
 
-To end the call, we need to remove the local and remote video and also leave the channel.
+To end the call, we need to remove the local and remote video and leave the channel.
 
 ```kotlin
 private fun endCall() {
@@ -411,16 +423,15 @@ private fun endCall() {
     removeRemoteVideo()
     leaveChannel()
 }
-
 ```
 
+Inside the `onCreate` method, we need to implement clicks such as when the following `Views` are clicked:
 
-Inside the `onCreate` method, we need to implement clicks such as when the following `Views` are clicked
 - Call Button
 - Mute Button
 - Switch Camera Button
 
-Add the following implementation
+Add the following implementation:
 
 ```kotlin
 binding.buttonCall.setOnClickListener {
@@ -456,8 +467,8 @@ binding.buttonMute.setOnClickListener {
 }
 ```
 
-#### Destroying Everything
-We also need to release resources when the app is closed and is no longer being used. Override the `onDestroy` and the following code.
+#### Destroying everything
+We also need to release resources when the app is closed and is no longer being used. Override the `onDestroy` and the following code:
 
 ```kotlin
 override fun onDestroy() {
@@ -469,7 +480,8 @@ override fun onDestroy() {
 }
 ```
 
-### Demo
+### App demo
+Install and run the app on two different devices and make sure that they are connected to the internet. You should expect it to work as shown in the screenshots below.
 
 ![Demo1](engineering-education/creating-a-one-to-one-video-call-android-app-with-agora-sdk-with-kotlin/demo1.png)
 
@@ -477,9 +489,12 @@ override fun onDestroy() {
 
 ![Demo3](engineering-education/creating-a-one-to-one-video-call-android-app-with-agora-sdk-with-kotlin/demo3.png)
 
-
 ### Conclusion
-In this tutorial, we have gone through Agora Video SDK, how to create and obtain an access token from the Agora Console. We have finally created a simple one-to-one video call app. Go ahead and apply what you have learned and create more advanced apps with video call capabilities. To check the full implementation of the app, check out this Github repository [AgoraVideoCallDemo](https://github.com/sheecodes/AgoraVideoCallDemo).
+In this tutorial, we have learned what Agora video SDK is and how to create and obtain an access token from the Agora console.
+
+We have then used Agora SDK to create a simple one-to-one video call app. Go ahead and apply these skills to create more advanced apps with video call features.
+
+To see the full implementation of the app, check out [this Github repository](https://github.com/sheecodes/AgoraVideoCallDemo).
 
 ### Reference
 - [Agora SDK Documentation](https://docs.agora.io/en)
