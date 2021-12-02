@@ -45,7 +45,7 @@ We will build a WebSocket by setting up the client and the server with AioHTTP a
 
 ### Setting up a virtual environment using virtualenv
 
-[Virtualenv](https://pypi.org/project/virtualenv/) is a library for creating an independent Python environment. This implies that all the libraries we install will be installed locally for our project. Create a project folder and open it in a command line.
+[Virtualenv](https://pypi.org/project/virtualenv/) is a library for creating an independent Python environment. All the libraries we install will be installed locally for our project. First, create a project folder and open it in a command line.
 
 Then install virtualenv by running the following command:
 
@@ -129,7 +129,7 @@ Import the `web` module from the `aiohttp` library.
 from aiohttp import web
 ```
 
-The web module will enable us to create a local webserver. Add some dummy list of todos.
+The web module will enable us to create a local webserver. First, add a dummy list of todos.
 
 ```python
 todos = [
@@ -216,8 +216,7 @@ loop.run_until_complete(main())
 The event loop will only close when the `main` function has been fully executed.
 
 ### Sending data between client and server
-
-To send the data between the client and the server, we need to run the `client.py` file to receive the dummy data we set from the server.
+To send the client and the server data, we need to run the `client.py` file to receive the dummy data we set from the server.
 
 Open a separate tab of your terminal and run the following command inside the project folder.
 
