@@ -6,7 +6,7 @@ url: /how-to-set-up-a-python-web-socket-with-aiohttp/
 title: How to Set Up a Simple Python WebSocket with AioHTTP
 description: In this tutorial, we will build a client-server socket architecture application using AioHTTP.
 author: carol-wanjiru
-date: 2021-12-02T00:00:00-10:00
+date: 2021-12-02T00:00:00-09:35
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
