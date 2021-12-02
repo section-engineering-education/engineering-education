@@ -67,7 +67,7 @@ We will create a class that will define these items and hold their properties. L
 
 In our root project package, create a new package and name it `navigationBar`. Inside the `navigationBar` package, create a new Kotlin class file, name it `NavigationBarItems`.
 
-![kotlin class](/engineering-education/how-to-create-a-collapsible-bottom-navigation-bar-using-jetpack-compose/kotlin-class.png)
+![kotlin class](/engineering-education/collapsible-bottom-navigation-bar-using-jetpack-compose-navigation/kotlin-class.png)
 
 Make it a `sealed Class`:
 
