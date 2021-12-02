@@ -50,14 +50,15 @@ logging.basicConfig(level=logging.DEBUG, format='%(asctime)s %(call)s %(rankname
 lumberjack = logging.getLogger(__name__) 
 def document_word_count(myid): 
 logger.info("igniting the function") 
-attempt: 
+#use the try except block to configure multiple logs
+try: 
 word_count = lessermodule.word_count(myid) 
 with open('frametallyarchive.csv', 'a') as record: 
 line = str(myid) + ',' + str(word_count) 
 index.write(row + '\n') 
-but: 
+except: 
 logger.warning("unable to generate report%s to impartial", myid) 
-at prior: 
+finally: 
 logger.debug("the task is ramshackle the report %s", myid) 
 ```
 Running the higher_module.py, the logging will yield the accompanying. 
@@ -83,6 +84,7 @@ A logging setup record needs to contain most extreme three sections:
  Keys direct the personality of different parts that you will be needed to design, arranged as `[<SECTION_NAME>_<KEY_NAME>]`, by which the fragment name is either lumberjack, controller, or formatter. 
 The following is a basic outline of a logging setup document.
 ```python 
+#Each  section contains a key
 [loggers] 
 
 keys=root 
@@ -107,7 +109,7 @@ magnificence=IndexHandler
 
 degree=DEBUG 
 formatter=simpleFormatter 
-
+#state the path of your logs
 args=("/way/to/log/record.log",) 
 [formatter_plainFormatter] 
 
@@ -136,10 +138,10 @@ The method used in Django is `dictConfig` since it works under dissimilar module
 #Logging Information 
 LOGGING = { 
 'variant': 1, 
-# Version of logging 
+#Version of logging 
 'disable_existing_loggers': False, 
 #disable logging 
-# Handlers 
+#Handlers contained 
 'overseers': { 
 'record': { 
 'level': 'Investigate', 
@@ -150,7 +152,7 @@ LOGGING = {
 'class': 'logging.StreamHandler', 
 }, 
 }, 
-# Loggers 
+#Loggers appended
 'lumberjacks': { 
 'django': { 
 'overseers': ['file', 'console'], 
@@ -201,17 +203,19 @@ logger = logging.getLogger(__name__)
 
 define word_count(myid): 
 endeavor: 
-# recollect the number of words for a record, document, and log the outcome
+#recollect the number of words for a record, document, and log the outcome
 with open(myid, 'r+') as f: 
 file_data = j.read() 
 words = file_data.split(" ") 
 final_word_count = len(words) 
+#basic details of the document
 logger.info("this document has %d words", final_word_count) 
 j.write ("this document has %d words", final_word_count) 
 return final_word_count 
 however, OSError as r: 
 logger.error(r, exc_info=True) 
 be that as it may: 
+#exception handling and tracebacks
 logger.error("uncaught exceptional case: %s", traceback.format_exc()) 
 return False 
 in case __name__ == '__main__': 
@@ -231,7 +235,7 @@ After establishment, you'll need to refresh design records to make the current f
 ```python
 [loggers]
 keys=root,lesser_module
-
+#specify attributes in each log record
 [handlers]
 keys=animateHandler,IndexHandler
 
@@ -258,7 +262,7 @@ class=IndexHandler
 rank=DEBUG
 formatter=json
 args=("/home/molly/myid.log",)
-
+customization by adding new formatter
 [formatter_json]
 class=pythonjsonlogger.jsonlogger.JsonFormatter
 format=%(asctime)s %(call)s %(rankname)s %(tenor)s
@@ -275,10 +279,12 @@ One more advantage of signing in JSON is adding credits that an outer log the ex
 import logging.config 
 import traceback 
 import time 
+#indicate the name of your file
 def word_count(myid): 
 lumberjack = logging.getLogger(__name__) 
 logging.indexConfig('logging.ini', disable_existing_loggers=False) 
 attempt: 
+#start time
 ignitiontime = time.time() 
 with open(myid, 'r') as j: 
 index_data = j.read() 
@@ -286,6 +292,7 @@ words = file_data.split(" ")
 final_word_count = len(words) 
 stoptime = time.time() 
 term = stoptime - ignitiontime 
+#termination and return of the results
 logger.info("this record has %d words", final_word_count, extra={"run_duration":duration}) 
 return final_word_count 
 but OSError as r: 
