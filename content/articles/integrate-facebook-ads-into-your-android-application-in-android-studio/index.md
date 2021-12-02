@@ -5,7 +5,7 @@
 
 - [Introduction](#introduction)
 
-- [Requirements analysis](#requirements-analysis)
+- [Prerequisites](#prerequisites)
 
 - [Initial integration steps](#initial-integration-steps)
 
@@ -40,7 +40,7 @@ Assuming you have your Android studio up and running, the only thing you have to
  **FAN SDK installation**
  To install, you can download your SDK manually from [here](https://developers.facebook.com/resources/audience-network-sdk-6.8.0.zip) (Not recommended) or follow the steps in [Stage 1 integration steps](#stage-1-integration-steps) to install it the right way.
 
-### Stage 1 Integration steps
+### Initial Integration steps
 
 Before beginning the integration process, you have to first setup your Facebook Business Manager account for the ads.
 The steps below will guide you on setting up your account.
