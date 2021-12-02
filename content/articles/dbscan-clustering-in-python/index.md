@@ -3,31 +3,33 @@ layout: engineering-education
 status: publish
 published: true
 url: /dbscan-clustering-in-python/
-title: DBSCAN Algorithm in Python
+title: DBSCAN Algorithm Clustering in Python
 description: DBSCAN algorithm group points based on distance measurement. To cluster data points, this algorithm separates the high-density regions of the data from the low-density areas. This article will demostrate how DBSCAN algorithm is used in clustering.
 author: stanley-juma
-date: 2021-12-1T00:00:00-12:58
+date: 2021-12-02T00:00:00-09:35
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/dbscan-clustering-in-python/hero.png
-    alt: DBSCAN Algorithm in Python image
+    alt: DBSCAN Algorithm Clustering Python image
 ---
+DBSCAN is a popular **density-based** data clustering algorithm. To cluster data points, this algorithm separates the high-density regions of the data from the low-density areas. Unlike the K-Means algorithm, the best thing with this algorithm is that we don't need to provide the number of clusters required prior. 
+<!--more-->
 
 ### DBSCAN algorithm in Python
-DBSCAN is a popular **density-based** data clustering algorithm. To cluster data points, this algorithm separates the high-density regions of the data from the low-density areas. Unlike the K-Means algorithm, the best thing with this algorithm is that we need not provide the number of clusters required prior. 
-
-DBSCAN algorithm group points based on distance measurement, usually the *Euclidean distance*and the *minimum number of points*. An essential property of this algorithm is that it helps us track down the outliers as the points in low-density regions; hence it is not sensitive to outliers as is the case of K-Means clustering.
+DBSCAN algorithm group points based on distance measurement, usually the *Euclidean distance* and the *minimum number of points*. An essential property of this algorithm is that it helps us track down the outliers as the points in low-density regions; hence it is not sensitive to outliers as is the case of K-Means clustering.
 
 ### Prerequisites
+To follow along the reader will need the following:
 1. Python installed on your system or access to the Google Colab.
-2. Dataset is available in the form of a CSV file.
+2. A Dataset available in the form of a CSV file.
 
 ### Introduction
-DBSCAN algorithm works with two parameters. These parameters are:
+DBSCAN algorithm works with two parameters. 
 
- 1. **Epsilon(Eps):** This is the least distance required for two points to be termed as a neighbor.  This distance is known as Epsilon(Eps). Thus we consider *Eps* as a threshold for considering two points as neighbors, i.e., if the distance between two points is utmost *Eps*, then we consider the two points to be neighbors.
+These parameters are:
+1. **Epsilon (Eps):** This is the least distance required for two points to be termed as a neighbor. This distance is known as Epsilon (Eps). Thus we consider *Eps* as a threshold for considering two points as neighbors, i.e., if the distance between two points is utmost *Eps*, then we consider the two points to be neighbors.
  
 2. **MinPoints:** This refers to the minimum number of points needed to construct a cluster. We consider MinPoints as a threshold for considering a cluster as a cluster. A cluster is only recognized if the number of points is greater than or equal to the *MinPts*.
    
@@ -42,7 +44,7 @@ After the DBSCAN clustering is complete, we end up with three types of data poin
 Let's now look at the algorithmic steps of DBSCAN clustering.
 
 ### DBSCAN algorithm 
-The following are the DBSCAN clustering algorithmic steps;
+The following are the DBSCAN clustering algorithmic steps:
 
 - **Step 1:** Initially, the algorithms start by selecting a point (x) randomly from the data set and finding all the neighbor points within *Eps* from it. If the number of *Eps-neighbours* is greater than or equal to **MinPoints**, we consider x a core point. Then, with its *Eps-neighbours*, x forms the first cluster. 
 
@@ -55,10 +57,9 @@ After creating the first cluster, we examine all its member points and find thei
 - **Step 4:** Iterate through all unattended points in the dataset and assign them to the nearest cluster at *Eps* distance from themselves. If a point does not fit any available clusters, locate it as a noise point.
 
 ### Python implementation of DBSCAN
-As usual to any implementation, we get started with fetching the dataset and preparing it ready for our model implementation. However, first, let us download this data  [here](https://github.com/Daniel695/datasets/blob/main/Mall_Customers.csv).
+As usual to any implementation, we get started with fetching the dataset and preparing it ready for our model implementation. However, first, let us download this data [here](https://github.com/Daniel695/datasets/blob/main/Mall_Customers.csv).
 
 ### Data Preprocessing
-
 #### Importing the required libraries
 Let us begin by importing the required libraries for implementation on the algorithm.
 
@@ -79,16 +80,17 @@ data.head()
 ```
 
 - Output
+
 ![dataset head](/engineering-education/dbscan-clustering-in-python/data-head.png)
 
--  Checking the shape of the dataset
+-  Checking the shape of the dataset.
 
 ```python
 print("Dataset shape:", data.shape)
 ```
 
-- #### Output
-- 
+#### Output
+
 ```bash
 Dataset shape: (200, 5)
 ```
@@ -100,7 +102,7 @@ Next, we check if the dataset has any missing values.
 data.isnull().any().any()
 ```
 
-- #### Output
+#### Output
 
 ```bash
 False
@@ -115,13 +117,13 @@ x = data.loc[:, ['Annual Income (k$)',
 
 ```
 
-- Let us check the shape of x
+- Let us check the shape of x.
   
 ```python
 print(x.shape)
 ```
 
-- #### Output
+#### Output
 
 ```bash
 (200, 2)
@@ -129,16 +131,15 @@ print(x.shape)
 
 Before we apply the DBSCAN model, first, we need to obtain its two parameters.
 
-1. MinPoints:  We can obtain the  minimum number of Points to be used to recognize a cluster, as follows:
+1. MinPoints: We can obtain the minimum number of Points to be used to recognize a cluster, as follows:
 - If the dataset has two dimensions, use the min sample per cluster as 4.
-- If the data has more than two dimensions, the min sample per cluster should be,
- Min_sample(MinPoints) = 2 * Data dimension
+- If the data has more than two dimensions, the min sample per cluster should be: Min_sample(MinPoints) = 2 * Data dimension 
  
 Since our data is two-dimensional, we shall use the default value of 4 as our MinPoint parameter. 
 
-2. Epsilon(Eps): To calculate the value of *Eps*, we shall calculate the distance between each data point to its closest neighbor using the Nearest Neighbours. After that, we sort them and finally plot them. From the plot, we identify the maximum value at the curvature of the graph. This value is our *Eps*.
+2. Epsilon (Eps): To calculate the value of *Eps*, we shall calculate the distance between each data point to its closest neighbor using the Nearest Neighbours. After that, we sort them and finally plot them. From the plot, we identify the maximum value at the curvature of the graph. This value is our *Eps*.
 
-#### Compute data proximity from each other using Nearest Neighbours.
+#### Compute data proximity from each other using Nearest Neighbours
 
 ```python
 from sklearn.neighbors import NearestNeighbors # importing the library
@@ -147,7 +148,7 @@ nbrs=neighb.fit(x) # fitting the data to the object
 distances,indices=nbrs.kneighbors(x) # finding the nearest neighbours
 ```
 
-#### Sorting and plot the distances between the data points.
+#### Sorting and plot the distances between the data points
 
 ```python
 # Sort and plot the distances results
@@ -160,9 +161,10 @@ plt.show() # showing the plot
 
 #### Output
 Executing the code above, we obtain the following plot:
+
 ![plot](/engineering-education/dbscan-clustering-in-python/distances-plot.png)
 
-From the above plot, we note the maximum curvature of the curve is about eight, and thus we chose our *Eps* as 8.
+From the above plot, we note the maximum curvature of the curve is about eight, and thus we picked our *Eps* as 8.
 
 We now have our two parameters as:
 - *MinPoints = 4*
@@ -170,7 +172,7 @@ We now have our two parameters as:
   
 Now that we have the parameters let us implement the DBSCAN model.
 
- ### Implementing the DBSCAN model
+### Implementing the DBSCAN model
 
 ```python
 from sklearn.cluster import DBSCAN
@@ -193,7 +195,7 @@ plt.show() # showing the plot
 ### Conclusion
 In this article, we have covered the DBSCAN algorithm. First, we looked at its key parameters and how this algorithm clusters the data points. We also learned about three data points associated with the DBSCAN algorithm. Later we looked at how we implement this algorithm. 
 
-Happy learning.
+Happy coding.
 
 ---
 Peer Review Contributions by: [Jerim Kaura](/engineering-education/authors/jerim-kaura/)
