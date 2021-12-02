@@ -7,7 +7,7 @@
 
 - [Requirements analysis](#requirements-analysis)
 
-- [Stage 1 integration steps](#stage-1-integration-steps)
+- [Initial integration steps](#initial-integration-steps)
 
 - [Integration in Android Studio](#integration-in-android-studio)
  
