@@ -1,3 +1,9 @@
 .comments-wrapper {
-  // margin: 0 auto;
+  #hyvor-talk-view {
+    display: none;
+  }
+
+  #hyvor-talk-view.visible {
+    display: block;
+  }
 }

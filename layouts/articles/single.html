@@ -171,35 +171,35 @@
     };
   </script>
 {{ end }}
-
 <script async type="text/javascript" src="//talk.hyvor.com/web-api/embed.js"></script>
 
 <script type="text/javascript">
-
   const checkIfCookieExists = (value) => {
     if (document.cookie.split(';').some((item) => item.trim().startsWith(`${value}=`))) {
-      console.log('Cookie does in fact exist..')
       return true;
-    } else {
-      console.log('cookie Does not Exist...')
-      return false
-    }
-    
+    } 
+    return false;
   }
-  const hyvorCookieExists = checkIfCookieExists('hyvorTalkCookie');
 
-  // Capture toggle value/strategy.
-  /*  const hyvorToggle = fetch('https://aperture.section.io/ops/featuretoggle/api')
-    .then(response => response.json())
-    .then(data => console.log(data));  */
+  const enableHyvorIfCookieExists = async () => {
+    // Capture toggle value/strategy.
+    const hyvorToggleCookieName = await fetch('https://aperture.section.io/ops/featuretoggle/api/client/features')
+      .then(response => response.json())
+      .then(data => {
+        const hyvorStrategy = data.features.find(feat => feat.name === 'section.io.hyvorTalk');
+        return hyvorStrategy.strategies[0].parameters.cookieName
+      });
+    
+    // Determine whether user has the correct cookie
+    const hyvorCookieExists = checkIfCookieExists(hyvorToggleCookieName);
 
-  /*  const hyvorStrategy = hyvorToggle.features.find(feat => feat.name === 'section.io.hyvorTalk');  */
-  
-  // Determine whether user has the correct cookie
-  /* if (hyvorStrategy && hyvorStrategy.strategies.parameters.cookieName === hyvorCookieExists) {
-    // display comments,
+    if (hyvorCookieExists) {
+      const commentsBox = document.getElementById('hyvor-talk-view');
+      commentsBox.classList.add('visible');
+    }
+  }
 
-  } */
-
+  enableHyvorIfCookieExists()
 </script> 
+
 {{ end }}
