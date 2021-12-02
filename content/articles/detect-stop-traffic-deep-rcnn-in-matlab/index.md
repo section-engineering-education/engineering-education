@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /how-to-detect-stop-traffic-using-deep-rcnn-in-both-real-time-and-offline-mode-in-matlab/
+url: /detect-stop-traffic-deep-rcnn-in-matlab/
 title: How to detect stop traffic using deep R-NN in both real-time and offline mode in Matlab
 description: In this tutorial, we are going to use the R-CNN. First, we will use the image labeler application to create our pre-trained image database. Here, transfer learning is used where a pre-trained R-CNN is re-trained on its image dataset.
 author: florence-atieno
@@ -11,11 +11,10 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/how-to-detect-stop-traffic-using-deep-rcnn-in-both-real-time-and-offline-mode-in-matlab/hero.jpg
+  - url: /engineering-education/detect-stop-traffic-deep-rcnn-in-matlab/hero.jpg
     alt: rcnn realtime matlab
 ---
-
-R-CNN(Region with convolution neural network) is a deep learning approach used to detect various objects in an image. It finds its application in autonomous vehicles, smart surveillance systems, and facial expressions e.t.c. 
+R-CNN (Region with convolution neural network) is a deep learning approach used to detect various objects in an image. It finds its application in autonomous vehicles, smart surveillance systems, and facial expressions e.t.c. 
 <!--more-->
 The models for object detection using R-CNN are based on three processes. The first process is finding the region in the image that may contain an object, that is, the region of the proposal. It then extracts the CNN features from the region and lastly classifies the object using the extracted features.
 
@@ -35,7 +34,7 @@ Models for object detection using R-CNNs are based on the following three proces
 
 There are three variants of an R-CNN. These are R-CNNs, fast R-CNN, and fast R-CNN.
 
-![cnns](/engineering-education/how-to-detect-stop-traffic-using-deep-rcnn-in-both-real-time-and-offline-mode-in-matlab/stopOne.png)
+![cnns](/engineering-education/detect-stop-traffic-deep-rcnn-in-matlab/stopOne.png)
 
 In this tutorial, we implement the basic  basic R-CNN.
 
@@ -43,11 +42,11 @@ In this tutorial, we implement the basic  basic R-CNN.
 The basic R-CNN detector first generates region proposals using a selective search algorithm such as search boxes. Unfortunately, these regions' proposals are `2000`, making this process slow since it has to locate the region proposals.  
 Each region is then cropped out from the image, resized, and reshaped to a square. It is then fed to the CNN for classification. Finally, an SVM trained using CNN features defines the region proposal bounding box.
 
-![svm](/engineering-education/how-to-detect-stop-traffic-using-deep-r-cnn-in-both-real-time-and-offline-mode-in-matlab/stopThree.png)
+![svm](/engineering-education/detect-stop-traffic-deep-rcnn-in-matlab/stopThree.png)
 
 The proposed scheme in image form is;
 
-![proposed scheme](/engineering-education/how-to-detect-stop-traffic-using-deep-r-cnn-in-both-real-time-and-offline-mode-in-matlab/stopTwo.png)
+![proposed scheme](/engineering-education/detect-stop-traffic-deep-rcnn-in-matlab/stopTwo.png)
 
 ### Database creation using Matlab's image labeler
 Although we are using a pre-trained R-CNN network for the proposed work, it must be trained on our database for fine-tuning. It means that we must have an image database. It may not necessarily contain images, but a few images will be sufficient to fine-tune the pre-trained R-CNN.
@@ -61,20 +60,20 @@ These images are then imported into the image labeler app for bounding box marki
 ### How to use Matlab's image labeler
 - Open the image labeler app.
 
-![show location](/engineering-education/how-to-detect-stop-traffic-using-deep-r-cnn-in-both-real-time-and-offline-mode-in-matlab/stopFour.png)
+![show location](/engineering-education/detect-stop-traffic-deep-rcnn-in-matlab/stopFour.png)
 
 - A new window opens up, and when you click on the load tab. Define the data source to import your dataset.
 
-![loading data](/engineering-education/how-to-detect-stop-traffic-using-deep-r-cnn-in-both-real-time-and-offline-mode-in-matlab/stopFive.png)
+![loading data](/engineering-education/detect-stop-traffic-deep-rcnn-in-matlab/stopFive.png)
 
 - Import all the `60` images. Click on the ROI label definition to define your ROI using the bounding boxes.
 
-![show roi label def](/engineering-education/how-to-detect-stop-traffic-using-deep-r-cnn-in-both-real-time-and-offline-mode-in-matlab/stopSix.png)
+![show roi label def](/engineering-education/detect-stop-traffic-deep-rcnn-in-matlab/stopSix.png)
 
 - A new window that asks you to give the label name. Note that since we are using a pre-trained network, the name should be a `stopSign` since it is defined in the network.
 - Click `ok` and then draw the bounding box around the stop sign image for all the images. It requires a lot of effort if you have thousands of images.
 
-![show how your draw the ROI](/engineering-education/how-to-detect-stop-traffic-using-deep-r-cnn-in-both-real-time-and-offline-mode-in-matlab/stopSeven.png)
+![show how your draw the ROI](/engineering-education/detect-stop-traffic-deep-rcnn-in-matlab/stopSeven.png)
 
 - Once you are done labeling the images, click on the export images and specify where you want to export them. For our case, we export to the current directory.
 
@@ -82,7 +81,7 @@ These images are then imported into the image labeler app for bounding box marki
 
 - Once all these are done, we see all the images exported to the workspace.
 
-![images in the workspace](/engineering-education/how-to-detect-stop-traffic-using-deep-r-cnn-in-both-real-time-and-offline-mode-in-matlab/stopEight.png)
+![images in the workspace](/engineering-education/detect-stop-traffic-deep-rcnn-in-matlab/stopEight.png)
 
 -  It is how you can use the image labeler to prepare your datasets. Then, after exporting the images, you can use them directly from the workspace or save them as a `.mat` file in the current directory by clicking on the `save`.
 
@@ -111,7 +110,7 @@ rcnn = trainRCNNObjectDetector(stopSigns, layers, options, 'NegativeOverlapRange
 
 All the trained layers and correspondings will be stored in the `rcnn` variable when training is complete. You can save this `rcnn` for future testing, but also you can still use it at the moment.
 
-![image of the training process](/engineering-education/how-to-detect-stop-traffic-using-deep-r-cnn-in-both-real-time-and-offline-mode-in-matlab/stopNine.png)
+![image of the training process](/engineering-education/detect-stop-traffic-deep-rcnn-in-matlab/stopNine.png)
 
 ### Matlab code for testing images(offline mode)
 Here, we require the user to be providing the input image for detection. This image is then read before the detection.
@@ -158,7 +157,7 @@ figure
 imshow(img)
 ```
 
-![tested image](/engineering-education/how-to-detect-stop-traffic-using-deep-r-cnn-in-both-real-time-and-offline-mode-in-matlab/stopTen.png)
+![tested image](/engineering-education/detect-stop-traffic-deep-rcnn-in-matlab/stopTen.png)
 
 ### Matlab code for testing videos (offline mode)
 First input the video:
@@ -193,7 +192,7 @@ end
 
 The `step(videoplayer,img)` means that all the images with bounding boxes and annotations are given to the video player object for display. You get the output with the stop sign detected if you execute the program.
 
-![Output for offline video](/engineering-education/how-to-detect-stop-traffic-using-deep-r-cnn-in-both-real-time-and-offline-mode-in-matlab/stopEleven.png)
+![Output for offline video](/engineering-education/detect-stop-traffic-deep-rcnn-in-matlab/stopEleven.png)
 
 ### Matlab code for testing video (realtime)
 In this case, we are using the webcam to capture the live video. Now, this is what makes the difference between the offline and the online case. The rest of the code is similar for both cases. Also, instead of reading the frames, we take snapshots and read them.
