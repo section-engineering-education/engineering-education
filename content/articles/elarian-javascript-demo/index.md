@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /elarian-javascript-demo/
-title: Getting started with Elarian
+title: Getting Started with Elarian
 description: Elarian is a framework tha focuses on simplifying building data-driven applications by engaging customers over channels such as SMS, UUSD, Telegram bots, WhatsApp, and more. This tutorial will build a USSD service using Elarian and Node.js.
 author: wilson-gichuhi
 date: 2021-12-03T00:00:00-10:20
@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/elarian-javascript-demo/hero.jpg
+  - url: /engineering-education/elarian-javascript-demo/hero.png
     alt: Getting Stated with Elarian Image
 ---
 Customer service is essential to any business brand. However, picking and choosing the proper digital channels to reach your customers can be difficult. For this reason, it makes sense for businesses to embrace customer engagement software to remain relevant. 
@@ -68,7 +68,7 @@ The command `npm init -y` creates a `package.json` file to hold metadata relevan
 For our application, we need the following packages from npm:
 -  The `Elarian JavaScript SDK` with Node.js version 8 or above.
   
-- `Dotenv`: To safely store API keys, we will inject environment variables from a `.env` file in our application, avoiding hardcoding any sensitive data. Ensure to add a .env in your .gitignore file not to push this to a GitHub repository.
+- `Dotenv`: To safely store API keys, we will inject environment variables from a `.env` file in our application, avoiding hardcoding any sensitive data. Ensure to add a .env in your .gitignore file so as to not to push this to a GitHub repository.
 
 - `Nodemon`: nodemon package will monitor all changes in our application and continuously restart our server.
   
@@ -84,9 +84,9 @@ For `nodemon`, we will install the module as a development dependency:
 npm install --save-dev nodemon
 ```
 
-To bootstrap,  create the root `index.js` file inside the `elarian-app-demo` directory and import the `Elarian` and `dotenv` packages as:
+To bootstrap, create the root `index.js` file inside the `elarian-app-demo` directory and import the `Elarian` and `dotenv` packages as:
 
-```js
+```JavaScript
 const { Elarian } = require('elarian');
 const dotenv = require('dotenv');
 
@@ -103,7 +103,7 @@ In our case, we will create a test sandbox environment and name it `elarian-demo
 
 ![new app](/engineering-education/elarian-javascript-demo/new-app.png)
 
-Finally, under settings, we can generate an API key:
+Then, under settings, we will generate an API key:
 
 ![API key](/engineering-education/elarian-javascript-demo/api-key.png)
 
@@ -118,7 +118,7 @@ ELARIAN_API_KEY=your_api_key
 
 Since we have `dotenv.config()` initialized in our `index.js`, we can safely instantiate the `elarianClient` object with:
 
-```js
+```JavaScript
 const elarianClient = new Elarian({
     orgId: process.env.ELARIAN_ORGID,
     appId: process.env.ELARIAN_APPID,
@@ -126,11 +126,11 @@ const elarianClient = new Elarian({
 });
 ```
 
->> Note: In the `.gitignore` file, be sure to exclude `.env` so that the credentials do not commit to any GitHub public repository.
+> Note: In the `.gitignore` file, be sure to exclude `.env` so that the credentials do not commit to any GitHub public repository.
 
-Finally, we need to listen for error and connection events from our `elarianClient` instance to test the connection. Notice how Elarian uses error first handlers to reserve the first event for the error object. Otherwise, a successful connection to Elarian should log the success message to the console.
+Then, we need to listen for error and connection events from our `elarianClient` instance to test the connection. Notice how Elarian uses error first handlers to reserve the first event for the error object. Otherwise, a successful connection to Elarian should log the success message to the console.
 
-```js
+```JavaScript
 elarianClient
         .on("error", (error) => {
           console.log("A connection error", error)
@@ -141,9 +141,10 @@ elarianClient
         .connect()
 ```
 
-### Managing Elarian Customer Data
-Elarian is built in mind with the customer as the unit of abstraction. To achieve this, it manages data in a reactive paradigm. The broad category includes:
+### Managing Elarian customer data
+Elarian is built in mind with the customer as the unit of abstraction. To achieve this, it manages data in a reactive paradigm. 
 
+The broad category includes:
 1. Metadata holds a key-value data store associated with information about a unique customer. 
 2. With AppData, we can store data that tracks the user's state in our application. For example, in our USSD application, AppData will hold the user's state in different transitions and application lifecycle. Furthermore, the data is stored in memory for quick access.
 3. Identity Data will allow you to uniquely identify the customer from your application. With this, Elarian can initiate requests and generate data to help you improve your customer profile.
@@ -159,17 +160,19 @@ We need to choose the USSD code and the app that our channel will use. The USSD 
 
 ![channel code and app](/engineering-education/elarian-javascript-demo/channel-app-code.png)
 
-Having earlier established the Elarian connection successfully, and we now need a function to handle our `ussdSession`. Just above the `elarianClient` connection method, add the following code snippet:
+Having earlier established the Elarian connection successfully, we now need a function to handle our `ussdSession`. Just above the `elarianClient` connection method, add the following code snippet:
 
-```js
+```JavaScript
 elarianClient.on('ussdSession', USSDHandler);
 ```
 
 Here, we listen for `ussdSession` to fire up from the user interaction with our application and therefore execute the `USSDHandler` that we will be creating in a moment. 
 
-Our `USSDHandler` function handles user interaction with our application session. Since we use the USSD Service code as the channel, our function will need the channel data to be passed in as the arguments. Channel data is the data that is generated from a customer while engaging with the channel. This can trigger events such as notifications or callbacks for user response.  Let's define the `USSDHandler` function below:
+Our `USSDHandler` function handles user interaction with our application session. Since we use the USSD Service code as the channel, our function will need the channel data to be passed in as the arguments. 
 
-```js
+Channel data is the data that is generated from a customer while engaging with the channel. This can trigger events such as notifications or callbacks for user response. Let's define the `USSDHandler` function below:
+
+```JavaScript
 const USSDHandler = async (notification, customer, appData, callback) => {
     try {
     const input = notification.input.text;
@@ -210,19 +213,16 @@ const USSDHandler = async (notification, customer, appData, callback) => {
 }
 ```
 
-Let's briefly dissect the above code:
+Let's briefly dissect the code above:
 
 - From our customer object, we use the method `getMetaData` that holds customer data such as email, name, age, and password for our communication protocol.
-  
 - The notification object contains the `input` and the channel of communication needed to respond to the user.
-  
 - AppData stores the state in memory for quick access and tracks transition between screens.
-  
 - By default, the screen is set to `home`. We will then need to change the state and screen view depending on user interactions.
 
-From our USSD session, we need to save the customer's email, name, age, and password.  Each step involves different screens that will be handled using a switch statement.
+From our USSD session, we need to save the customer's email, name, age, and password. Each step involves different screens that will be handled using a switch statement.
 
-```js
+```JavaScript
 
     switch (nextScreen) {
       case "quit":
@@ -327,13 +327,17 @@ After a successful USSD prompt, we should see the following message before the s
 
 ![final screen](/engineering-education/elarian-javascript-demo/final-screen_.png)
 
-For this application, check the source code on Github [here](https://github.com/Qodestackr/Elarian-USSD-Service).
+You can check the source code for this application on Github [here](https://github.com/Qodestackr/Elarian-USSD-Service).
 
 
 ### Conclusion
-In conclusion, Elarian is a service provider that helps achieve a customer-first business model. It helps meet your business need by seamlessly integrating with the vast channel of providers in a reactive programming style that is robust, scalable, and hassle-free in infrastructure deployment and management.
+In conclusion, Elarian is a service provider that helps achieve a customer-first business model. It helps meet your business need by seamlessly integrating with the vast channel of providers.
 
-For further learning how to integrate UUSD, SMS, WhatsApp, Telegram bots, Africa's Talking, and payment functionalities, check out [Elarian docs](https://developers.elarian.com/introduction-to-elarian/what-is-elarian).
+It does this in a reactive programming style that is robust, scalable, and hassle-free in infrastructure deployment and management.
+
+For further information how to integrate UUSD, SMS, WhatsApp, Telegram bots, Africa's Talking, and payment functionalities, check out [Elarian docs](https://developers.elarian.com/introduction-to-elarian/what-is-elarian).
+
+Happy coding!
 
 ---
 Peer Review Contributions by: [Mercy Meave](/engineering-education/authors/mercy-meave/)
