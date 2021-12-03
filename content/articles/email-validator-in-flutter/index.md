@@ -14,7 +14,8 @@ images:
   - url: /engineering-education/flutter-email-validator/hero.png
     alt: Flutter Email Validator Hero Image
 ---
-Email validator is a Flutter package that checks whether an email is valid or not. It is not based on regular expression, but rather checks if the email entered is linked to a reliable domain. Domains that exist are Gmail, Yahoo, Outlook, among others.
+Email validator is a Flutter package that checks whether an email is valid or not. It is not based on regular expression but rather checks if the email entered is linked to a reliable domain. Domains that exist are Gmail, Yahoo, Outlook, among others.
+ Domain Validation Tool is a free service that allows you to search up to 500 domains from your list. It's the most potent domain availability checker available on the internet today. 
 <!--more-->
 ### Key takeaways
 - What is an email validator?
@@ -23,48 +24,51 @@ Email validator is a Flutter package that checks whether an email is valid or no
 - Understand the implementation of email validator.
 
 ### Working mechanism of email validator
-Email validator runs a check on the emails through a process called `swift process`. This process detects typographical errors or deliberate mistakes. Furthermore, it helps to organize and clean all email addresses in a flutter application.
+Email validator runs a check on the emails through a process called `swift process`. This process detects typographical errors or deliberate mistakes. Furthermore, it helps organize and clean all email addresses in a flutter application. These protect the email sender scores maximizing the efficiency of the flutter application.  
 
-For this reason, it protects the email sender score while maximizing the efficiency of the flutter application. The key concepts from the use of this package are validity, risk, and the invalidity of any email address.
-- Validity -A valid email address consists of an email prefix and an email domain, both in acceptable formats. The prefix appears to the left of the @ symbol. The domain appears to the right of the @ symbol.
-- Risk - This the probabilty of sending messages or acceppting emails that are not right.
-- invalidity-Basically, it's just an address that doesn't have the correct format to be an email address, one that doesn't exist or doesn't anymore.
-This package consists of a class and a function. 
+The key concepts from the use of this package are validity, risk, and the invalidity of any email address.
+- Validity -A valid email address consists of an email prefix and an email domain. The prefix appears to the left of the @ symbol. The domain appears to the right of the @ symbol.
+- Risk - This is the probability of sending messages or accepting emails that are not right.
+- invalidity- It's an address that doesn't have the correct format of a valid email or existing email.
 
-The constructor for this class is pretty simple: Create a new instance of this class. The constructor should pass a string and an array of strings for validation.The arguments are also key factors.
+Email Validator package consists of a class and a function. 
 
-The first argument is self-explanatory. It is just a boolean that specifies whether we are using the `local-part@domain.com` format or `domain.com` as our string to validate.
+The constructor for this class is pretty simple: Create a new instance of this class. The constructor passes a string or an array of strings for validation. The arguments are also key factors.
+
+The first argument is self-explanatory. It is a boolean that specifies whether we are using the `local-part@domain.com` format or `domain.com` as our string to confirm emails.
 ```dart 
-if (!EmailValidator.validate(val!, true)) {
+if (! `local-part@domain.com`  (val!, true)) {
                       return 'Invalid';
+
+if (! `domain.com` (val!, true)) {
+
+                     return 'Invalid';
   ```
 
 The second argument allows you to pass an array of strings that are valid domains for the email. This argument is only necessary if the string passed in as our first argument is in `domain.com` format; otherwise, it can be omitted.
 ```dart
-controller: _emailController,//calling controller
-                  validator: (val)
+ var listof emails = ['jwaigs21@gmail.com',j@domain.com']
+if (x in listofemails{
+if (! `x` ends with '.com' (val!, true)) {
+                    return false;
 ```
 If either of the first two arguments contains an error, then false should be returned. Otherwise, true should be returned, and our string should be validated.
 
 ### Benefits of email validator
-1. Makes sure the user enters a correctly formatted email address while signing up.
-2. Ensures emails are not on the blocklist and are not sent to blacklisted email addresses or domains.
-3. Alerts if the username is available on the website during the registration process.
-4. You can add it as a pre-requisite while submitting the app to the app store and google play store for review purposes.
+1. Makes sure the user enters a correctly formatted email address while signing up. An error pops up if the email is not in the right format.
+2. Ensures emails are not on the blocklist, blacklisted emails, or domains. The package checks in existing emails from the web if they are in the blocklist.
+3. Alerts if the username is available on the website during the registration process. An alert has been that pops up when the user tries to use a non-existing email.
+4. You can add it as a pre-requisite while submitting apps to a app store and google play store for review purposes.
 
 ### Areas of application
-- Address CaptureSingle-line Address Verification Software.
-- Address VerifyAddress Enhancement.
-- Data CleanseBatch Data Cleanse & Maintenance.
-- Bank VerificationBank Account, Sort Code & IBAN Validation.
-- GeocodeLongitude & Latitude Data.
-- Email ValidationCheck and Verify Email Addresses.
-- This example brings us to the understanding usage of this API for serverless flutter applications.
+- Address CaptureSingle-line Address Verification Software. The Email validator is used to check the addresses of customers in companies.
+- Address VerifyAddress Enhancement. Email validator identifies any issues or possible problems in emails before ISPs or ESPs detect them.
+- Data CleanseBatch Data Cleanse & Maintenance. Email Validator detects and corrects or even removes corrupt or inaccurate emails.
+- Bank VerificationBank Account, Sort Code & IBAN Validation. Email validator validates the accounts sort codes, emails used in various accounts.
+- GeocodeLongitude & Latitude Data. Only 10% of email addresses collected are accurate, this bad data is due to human error. with an email validator, the error was reduced to Zero.
+- Email ValidationCheck and Verify Email Addresses. Email validator checks the email syntax and identifies fake and real email addresses.
 
-### Benefits of using Email Validator.
-Email validator works better in that it is a more accurate validation tool. In addition to validating email addresses, it also checks that domains are not likely to exist soon.
 
-Domain Validation Tool is a free service that allows you to search up to 500 domains from your list for availabilitydor and immediate results. It's the most potent domain availability checker available on the internet today. You can quickly check up to 500 domains from your list for availability and receive immediate results.
 
 ### Prerequisites
 - [Android Studio](https://developer.android.com/studio) or [Visual Code](https://code.visualstudio.com/) installed on your computer.
@@ -93,7 +97,7 @@ import 'package:email_validator/email_validator.dart'
 ```
 
 ### Project overview
-The project will have a submission form integrated with the `email validator` package that listens to user input. When the user enters the inputs an email or the password, the email validator listens throughout if the data is valid with the help of the validator package.
+Our flutter app is integrated with the `email validator` package that listens to the user's input. When the user enters the inputs an email or the password, the email validator will list if the data is valid.
 
 - Step 1 - Create a new flutter project.
 Open your terminal and execute the following command to create a new flutter project.
@@ -211,7 +215,7 @@ class SecondScreen extends StatelessWidget {
 ```
 
 - Step 4 - Testing the application
-We need to confirm if the application works perfectly and our validator works as desired. You need to ensure you set up an emulator or a mobile device set up to run the application.
+We need to confirm if the application works and our validator works as desired. You need to ensure you set up an emulator or a mobile device set up to run the application.
 
 Execute the command below to run the application.
 
@@ -236,9 +240,11 @@ Below are screenshots showing the expected results.
 | ![Valid Email Input](/engineering-education/flutter-email-validator/validemail.jpg) | ![After running and valid email](/engineering-education/flutter-email-validator/validatedemail.jpg) |
 
 ### Conclusion
-Email validator is one of the best ways to confirm emails in Flutter. It helps to reduce the invalid emails that users may use to sign up and help one easily maintain the available emails.
+ 
 
-I recommend any programmer to use any flutter application due to its' compatibility with all levels of flutter application, be it flutter web application, flutter mobile application, or any other application.
+Email validator works better in that it is a more accurate validation tool than humans. Also to validating email addresses, it also checks that domains are not likely to exist soon.
+
+Email validator is compatible with all levels of flutter application.
 
 ### References
 - [https://pub.dev/documentation/email_validator/latest/](https://pub.dev/documentation/email_validator/latest/)
