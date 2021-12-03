@@ -41,7 +41,7 @@ Automated testing is the first move in the right direction when you embark on yo
 
 Some of the severe real-world instances of the biggest technology failures (which occurred years ago, when the world was not as technologically sophisticated) indicate what can happen when adequate testing is not done on respective systems/software. For instance, on April 26, 1994, an Airbus A300B4-622R was finishing its usual flight routine when right before its landing at Nagoya Airport, it crashed, inflicting a heavy casualty count of 264 people. 
 
-To date, the accident remains one of the most lethal mishaps in the history of China Airlines. Similarly, on August 14, 2003, after 2:00 PM, a high-voltage power line in northern Ohio brushed against some overgrown trees. It shut down completely, forcing 50 billion people to live without power for two days. The alarm system failure caused by software issues made it one of the most significant blackouts in North American history.
+To date, the accident remains one of the most lethal mishaps in the history of China Airlines. Similarly, on August 14, 2003, after 2:00 PM, a high-voltage power line in northern Ohio brushed against some overgrown trees. It shut down completely, forcing 50 million people to live without power for two days. The alarm system failure caused by software issues made it one of the most significant blackouts in North American history.
 
 ### Six steps to building a successful CI test automation strategy
 #### Define your project’s scope of automation
