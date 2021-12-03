@@ -18,7 +18,7 @@ images:
 Python lists are extremely powerful features that cut down the lines of code and the time taken to write your code. In this article, we'll look at various ways to use the Python list data structure to create, update, and delete lists, along with other powerful list methods.
 <!--more-->
 
-*For more background on the different types of data structures in Python, check out my [previous article](/data-structures-python-part-1/).*
+*For more background on the different types of data structures in Python, check out my [previous article](/engineering-education/data-structures-python-part-1/).*
 
 ### Table of Contents
 - [Creating a List](#creation)

@@ -7,7 +7,7 @@ title: Handling Bias in Machine Learning
 description: This article will go over bias in machine learning, the various types of bias that occur in models and datasets and ultimately impact machine learning development.
 author: collins-ayuya
 date: 2020-10-08T00:00:00-11:00
-topics: []
+topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
 
@@ -29,7 +29,7 @@ In this article, we cover:
 4. Techniques to handle bias.
 
 ### Prerequisites
-Basic understanding of machine learning concepts. For an introduction to machine learning, check out this [article](/supervised-learning-algorithms/). I also briefly covered the basics of machine learning in a previous [article](/automated-fake-news-detection/).
+Basic understanding of machine learning concepts. For an introduction to machine learning, check out this [article](/engineering-education/supervised-learning-algorithms/). I also briefly covered the basics of machine learning in a previous [article](/engineering-education/automated-fake-news-detection/).
 
 ### Bias in Machine Learning
 [Wikipedia](https://en.wikipedia.org/wiki/Bias) describes bias as the disproportionate weight favoring or disfavoring an idea or thing in a closed-minded, unfair, or prejudicial way. Creators of machine learning models often unknowingly impart their various biases into their models. When this happens, it gives rise to what we refer to as algorithmic bias. [Algorithmic bias](https://en.wikipedia.org/wiki/Algorithmic_bias) refers to the methods in which algorithms portray bias of either their input data or their creators.

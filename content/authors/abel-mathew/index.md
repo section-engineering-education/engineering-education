@@ -3,6 +3,8 @@ title: Abel Mathew
 type: authors
 linkedin: https://www.linkedin.com/in/designrknight/
 github: https://github.com/DesignrKnight
+images:
+  - url: /engineering-education/authors/abel-mathew/avatar.jpg 
 ---
 
-Abel Mathew is a final year student at National Institute of Technology, Rourkela-India. He is a mobile application developer who has been actively leading the tech-based community at the University. He has interned at Goldman Sachs as a Summer Employee and is now working on projects that improve the life of students at his University.
+Abel Mathew is a passionate open-source and community enthusiast, interested in collaborating with others to implement robust features. As a Physics major by University curriculum, he has been actively involved in communities and projects centred on tech due to his immense interest in the field.

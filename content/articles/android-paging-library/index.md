@@ -28,7 +28,7 @@ The basic flow is, once a user nears the end of a recyclerview, the library fetc
 To follow through the article, you will need:
 - Android Studio installed
 - A basic understanding of Kotlin
-- Some experience with the [Room library](/introduction-to-room-db).
+- Some experience with the [Room library](/engineering-education/introduction-to-room-db).
 
 ### Step 1 — Getting the starter code
 You can [download](https://github.com/LinusMuema/kotlin/archive/54d55dbdda3afd9d166e765a3f8107eee2745954.zip) the starter code for this tutorial on GitHub.

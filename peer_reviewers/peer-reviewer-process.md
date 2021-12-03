@@ -1,4 +1,6 @@
 ### The EngEd Review Process:
+Note: There will always be topics we are not familiar with - we try not to review based on topics we are familiar with as this will cause some to go unassigned. We try to review with a basic developer background - see if the tutorial or article makes logical sense and if it can be followed along properly.
+
 #### Idea Approval:
 - Student can enroll to the EngEd program via our [Google Form](https://docs.google.com/forms/d/e/1FAIpQLSfTbj3kqvEJEb5RLjqJurfbHa8ckzQx0CjRzaizblue9ZOK5A/viewform?usp=sf_link)
 - We suggest all students start by reading the recently [published articles](/) to get a better sense of style and tonality the student
@@ -20,8 +22,6 @@
 - All payouts will be as follows:
 3/3/21
 To continue increasing that level of quality and value for the community - we’d like to notify everyone of an update in the payout structure. 
-
-Over the next few months, we will publish the first 60 approved articles within the month (i.e. 60 articles per month).
 
 Our new payout structure will be:
 

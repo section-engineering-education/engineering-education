@@ -32,7 +32,7 @@ Git makes collaboration easier for developers by helping to coordinate changes a
 ### How to Install Git
 
 **Linux**
-```
+```bash
 apt-get install git
 ```
 
@@ -75,7 +75,7 @@ This command will create an index file of HTML type. Likewise, you can create a 
 ### Checking the status of your repository
 So now we have some files in your repository. Let's check the current status of your repository. For this, we would use
 **git status**. This command tells us about the current state of the working directory. It tells you about what staged changes and files that aren't tracked by the Git.
-```
+```bash
 $ git status
 ```
 
@@ -85,24 +85,24 @@ Here's how to execute **git status** command:
 
 ### Adding some files to the staging area
 It helps to tell git that you want to add files to track. Here's how to do it:
-```
+```bash
 $ git add my_file
 ```
 
 Here's the code if you want to add more than one file:
-```
+```bash
 $ git add my_file2 my_file2
 ```
 
 If you want to add all your files at once, we can use the following:
-```
+```bash
 $ git add .
 ```
 
 ### Deleting files from the staging area
 Let's say you have some files that you no longer need. You can delete those files from the staging area by using the following command.
 
-```
+```bash
 $ git rm --cached [file_name]
 ```
 
@@ -111,7 +111,7 @@ This command would delete the particular file.
 ### Commit changes
 This command helps you to record the permanent snapshot in history. There are few ways to do it, but the best and quickest way to do is by using the following command.
 
-```
+```bash
 $ git commit -m "Anything you want to write"
 ```
 
@@ -121,7 +121,7 @@ Here's how to execute add and commit:
 
 ### Pushing your code in the cloud
 This command helps to push all the local branches to GitHub. After this, you will be able to see your changes in your GitHub repo. This way, you would be able to keep track of all your source code by keeping it safe in the cloud.
-```
+```bash
 $ git push
 ```
 
@@ -132,7 +132,7 @@ Here's how to execute push:
 
 ### Getting your files into the working directory
 This command lets you update your local branch, with all the new commits from the corresponding remote branch on GitHub. After using this command, you will be able to see all the changes made by the developers in the repository.
-```
+```bash
 $ git pull
 ```
 
