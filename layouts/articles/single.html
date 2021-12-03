@@ -183,11 +183,11 @@
 
   const enableHyvorIfCookieExists = async () => {
     // Capture toggle value/strategy.
-    const hyvorToggleCookieName = await fetch('https://aperture.section.io/ops/featuretoggle/api/client/features')
+    const hyvorToggleCookieName = await fetch('https://www.section.io/featuretoggle')
       .then(response => response.json())
       .then(data => {
         const hyvorStrategy = data.features.find(feat => feat.name === 'section.io.hyvorTalk');
-        return hyvorStrategy.strategies[0].parameters.cookieName
+        return hyvorStrategy.strategies[0].parameters.cookieName;
       });
     
     // Determine whether user has the correct cookie
@@ -199,7 +199,7 @@
     }
   }
 
-  enableHyvorIfCookieExists()
+  enableHyvorIfCookieExists();
 </script> 
 
 {{ end }}
