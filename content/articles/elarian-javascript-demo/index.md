@@ -2,26 +2,25 @@
 layout: engineering-education
 status: publish
 published: true
-url: /elarian-js-demo/
+url: /elarian-javascript-demo/
 title: Getting started with Elarian
-description: Elarian is a framework tha focuses on simplifying building data-driven applications by engaging customers over channels such as SMS, UUSD, Telegram bots, WhatsApp, and more. To understand more on Elarian, this tutorial will build a USSD service using Elarian and `Node.js`.
+description: Elarian is a framework tha focuses on simplifying building data-driven applications by engaging customers over channels such as SMS, UUSD, Telegram bots, WhatsApp, and more. This tutorial will build a USSD service using Elarian and Node.js.
 author: wilson-gichuhi
-date: 2021-11-25T00:00:00-10:00
+date: 2021-12-03T00:00:00-10:20
 topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/elarian-js-demo/hero.jpg
+  - url: /engineering-education/elarian-javascript-demo/hero.jpg
     alt: Getting Stated with Elarian Image
 ---
-
 Customer service is essential to any business brand. However, picking and choosing the proper digital channels to reach your customers can be difficult. For this reason, it makes sense for businesses to embrace customer engagement software to remain relevant. 
-
+<!--more-->
 Elarian is a framework that helps you build a customer service strategy aligned with your business goals. Its focus is simplifying building data-driven applications by engaging customers over channels such as SMS, UUSD, Telegram bots, WhatsApp, and more.
 
 This tutorial will build a USSD service using Elarian and `Node.js`.
 
-### Table of Contents
+### Table of contents
 - [Table of Contents](#table-of-contents)
 - [Prerequisites](#prerequisites)
 - [Creating an account](#creating-an-account)
@@ -39,11 +38,11 @@ This tutorial will build a USSD service using Elarian and `Node.js`.
 ### Creating an account
 To get started, head over to [elarian](https://account.elarian.com/auth/signup) and sign up using your email and password. Alternatively, you can also use providers such as Google and GitHub to sign in. 
 
-![Elarian SignIn](/engineering-education/elarian-js-demo/elarian-signup.png)
+![Elarian SignIn](/engineering-education/elarian-javascript-demo/elarian-signup.png)
 
 Elarian will send an email verification link before you can access the dashboard. A successful login will take you to the Elarian dashboard that looks like:
 
-![dashboard](/engineering-education/elarian-js-demo/org-explorer.png)
+![dashboard](/engineering-education/elarian-javascript-demo/org-explorer.png)
 
 ### Setup the Node.js project 
 To set up the project, open your terminal and create a folder named `elarian-app-demo`:
@@ -98,15 +97,15 @@ To create a client instance of `Elarian`, we must pass the `orgId`, `appId`, and
 
 Click the `New Organization` button to create an organization on our dashboard from the left panel.
 
-![new org](/engineering-education/elarian-js-demo/create-org.png)
+![new org](/engineering-education/elarian-javascript-demo/create-org.png)
 
 In our case, we will create a test sandbox environment and name it `elarian-demo`. However, before generating an API key from the settings section, let's create an app and name it `customer-demo-app`:
 
-![new app](/engineering-education/elarian-js-demo/new-app.png)
+![new app](/engineering-education/elarian-javascript-demo/new-app.png)
 
 Finally, under settings, we can generate an API key:
 
-![API key](/engineering-education/elarian-js-demo/api-key.png)
+![API key](/engineering-education/elarian-javascript-demo/api-key.png)
 
 You will need to safely store the `orgId`, `appId`, and `apiKey` in a `.env` file.
 Your `.env` file will have the variables as:
@@ -154,11 +153,11 @@ We will use the above strategies to manage customer data in the following sectio
 ### Elarian USSD service in Node.js
 Before using a USSD service, we need to register a channel from our dashboard. Head over to your account and click under the channels tab. For our case, click on the `USSD Service code section`. 
 
-![USSD Channel](/engineering-education/elarian-js-demo/channel.png)
+![USSD Channel](/engineering-education/elarian-javascript-demo/channel.png)
 
 We need to choose the USSD code and the app that our channel will use. The USSD code is `*350#` for our test case.
 
-![channel code and app](/engineering-education/elarian-js-demo/channel-app-code.png)
+![channel code and app](/engineering-education/elarian-javascript-demo/channel-app-code.png)
 
 Having earlier established the Elarian connection successfully, and we now need a function to handle our `ussdSession`. Just above the `elarianClient` connection method, add the following code snippet:
 
@@ -322,11 +321,11 @@ From our USSD session, we need to save the customer's email, name, age, and pass
 
 To check that everything is working, we can run a test to go back to the dashboard. On the bottom left, launch the USSD simulator. The simulator will prompt the phone number and a USSD code. Here is a working test!
 
-![first screen](/engineering-education/elarian-js-demo/initial-screen.png)
+![first screen](/engineering-education/elarian-javascript-demo/initial-screen.png)
 
 After a successful USSD prompt, we should see the following message before the simulator closes:
 
-![final screen](/engineering-education/elarian-js-demo/final-screen_.png)
+![final screen](/engineering-education/elarian-javascript-demo/final-screen_.png)
 
 For this application, check the source code on Github [here](https://github.com/Qodestackr/Elarian-USSD-Service).
 
