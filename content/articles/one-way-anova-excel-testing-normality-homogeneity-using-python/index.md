@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /one-way-anova-excel-testing-normality-homogeneity-using-python/
 title: Solving a One Way ANOVA with Excel using Python
-description: In this article we will be creating an ANOVA table using Microsoft Excel, box plots to test the normality of a one way ANOVA, and Bartlett's rule for homogeneity with Python.
+description: In this article, we will be creating an ANOVA table using Microsoft Excel, box plots to test the normality of a one way ANOVA, and Bartlett's rule for homogeneity with Python.
 author: kuteyi-victor-toluwase
 date: 2021-12-02T00:00:00-17:00
 topics: []
@@ -64,7 +64,7 @@ python -m pip install matplotlib
 python -m pip install seaborn
 ```
 
-After installing these dependencies, we'll proceed to create an ANOVA table with Excel.
+After installing these dependencies, we'll create an ANOVA table with Excel.
 
 ### Getting started
 #### Creating an ANOVA table with Excel
@@ -73,25 +73,25 @@ Microsoft Excels's Analysis Toolpak add-in is a game-changer in statistical Anal
 To perform a one way ANOVA, implement the following step.
 - Import your data set in any preferred Excel format.
 
-![data set](/engineering-education/Solving-a-one-way-anova-with-Excel-and-testing-for-normality-and-homogeneity-using-python/data-set.jpg)
+![data set](/engineering-education/one-way-anova-excel-testing-normality-homogeneity-using-python/data-set.jpg)
 
 - Go to the Data tab, click on the Data Analysis sub-tab. if you can't find the sub-tab, click [here](###analysis-toolpak).
 
 - Select ANOVA: single factor and click ok.
 - Click on the input range and highlight the dataset you want to use.
 
-![input range](/engineering-education/Solving-a-one-way-anova-with-Excel-and-testing-for-normality-and-homogeneity-using-python/input-range.jpg)
+![input range](/engineering-education/one-way-anova-excel-testing-normality-homogeneity-using-python/input-range.jpg)
 
 >Note: Highlight the numbers in the data set alone.
 
 - You can decide if you want to view it in the same spreadsheet or another spreadsheet.
 
-![result](/engineering-education/Solving-a-one-way-anova-with-Excel-and-testing-for-normality-and-homogeneity-using-python/result.jpg)
+![result](/engineering-education/one-way-anova-excel-testing-normality-homogeneity-using-python/result.jpg)
 
 In our ANOVA table above, we analysed the sum of squares and other values of the ANOVA. With this, we can solve a one way ANOVA using Microsoft Excel.
 
 #### Analysis toolpak
-The analysis toolpak is an essential add-in for what we are planning to do. To load the add-in, we'll do the following:
+The analysis toolpak is an essential add-in for what we are to do. To load the add-in, we'll do the following:
 - Click the file button or the Microsoft logo on the top left corner.
 - Select Excel options and scroll down to add-ins.
 - Out of the list, select Analysis Toolpak and click `Go`.
@@ -99,22 +99,24 @@ The analysis toolpak is an essential add-in for what we are planning to do. To l
 - Return to the Data tab, and you'll notice the data analysis sub-tab.
 
 #### Testing for normality using box plots
-Now we will create a Python file and import pandas, matplotlib and seaborn into our code. Pandas, Matplotlib & Seaborn are Python libraries for data analysis. 
+We'll create a Python file and import pandas, matplotlib and seaborn into our code. Pandas, Matplotlib & Seaborn are Python libraries for data analysis. 
 
-Pandas is used to import a wide variety of data formats, while Matplotlib and Seaborn are visualisation libraries used to generate powerful visualisations. Seaborn is a library that compiles statistical graphics in Python.
+Pandas imports tons of data formats, while Matplotlib and Seaborn are visualisation libraries used to generate powerful visualisations. Seaborn is a library that compiles statistical graphics in Python.
 
-It uses the matplotlib library. Next, we'll read our dataset (it will be in CSV file format). Then we will reshape the data frame suitable for the statistical model package and replace the column names. Now we'll generate a boxplot to see the data distribution by treatments.
+Next, we'll read our dataset using the .read() method from the panda library(we used a CSV file format). From the panda library, we will reshape the data frame suitable for the statistical model package using the .melt() method and in the line below, we'll replace the column names. 
+
+Lastly, we'll generate a boxplot to see the data distribution by treatments using our seaborn tool and plt.show() function to display our box plot.
 
 >Note: When reading from a directory, use double backslash or put `r` at the front of the directory address encased in a quote symbol.
 
-![unicode error](/engineering-education/Solving-a-one-way-anova-with-Excel-and-testing-for-normality-and-homogeneity-using-python/unicode-error.jpg)
+![unicode error](/engineering-education/one-way-anova-excel-testing-normality-homogeneity-using-python/unicode-error.jpg)
 
 Below is an implementation of the above instructions:
-```Python
+```python
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-data_set = pd.read_csv(r"C:\Users\DELL\Desktop\Solving-a-one-way-anova-with-Excel-and-testing-for-normality-and-homogeneity-using-python\assignments.csv")
+data_set = pd.read_csv(r"C:\Users\DELL\Desktop\one-way-anova-excel-testing-normality-homogeneity-using-python\assignments.csv")
 data_set_melt = pd.melt(data_set.reset_index(), id_vars=['index'], value_vars=['A', 'B', 'C', 'D', 'E'])
 data_set_melt.columns = ['index', 'treatments', 'value']
 ax = sns.boxplot(x='treatments', y='value', data=data_set_melt, color='#99c2a2')
@@ -122,15 +124,23 @@ ax = sns.swarmplot(x="treatments", y="value", data=data_set_melt, color='#7d0013
 plt.show()
 ```
 
-On implementation, our box plot will be shown as below:
+On implementation, our box plot will is shown as below:
 
-![boxplot](/engineering-education/Solving-a-one-way-anova-with-Excel-and-testing-for-normality-and-homogeneity-using-python/boxplot.jpg)
+![boxplot](/engineering-education/one-way-anova-excel-testing-normality-homogeneity-using-python/boxplot.jpg)
 
 #### Testing for homogeneity using Bartlett's rule
+Before we show you the process involved, we'll talk a bit about this rule. Maurice Stevenson Bartlett invented this rule and, it is a procedure used to check if samples drawn from different populations have the same variances. It tests the assumption that differences in group sizes are equal across groups. The conventional structure of this test involves:
+- Creating a hypothesis (null and alternate).
+- Calculating the test statistic.
+- Finding the critical value.
+- Concluding.
+
+Good news! Python has compiled these processes into a short line of code.
+
 To do this, we'll import scipy.stats and call bartlett's method on our data set.
 
 #### Example
-```Python
+```python
 A = 7,12,14,19,7
 B = 7,17,18,25,10
 C = 15,12,18,22,11
@@ -142,10 +152,10 @@ print(stats.bartlett(A, B, C, D, E))
 
 When we run the above code on our terminal, we should get:
 
-![bartlett](/engineering-education/Solving-a-one-way-anova-with-Excel-and-testing-for-normality-and-homogeneity-using-python/bartlett.jpg)
+![bartlett](/engineering-education/one-way-anova-excel-testing-normality-homogeneity-using-python/bartlett.jpg)
 
 ### Conclusion
-There are several tests we can conduct to test for normality and homogeneity in ANOVA using Python. In this article, we've learned how to test for normality with box plots and homogeneity with Bartlett's rule. 
+There are several tests we can conduct for normality and homogeneity in ANOVA using Python. In this article, we've learned how to test for normality with box plots and homogeneity with Bartlett's rule. 
 
 Happy coding!
 
