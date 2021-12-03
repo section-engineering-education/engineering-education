@@ -53,8 +53,7 @@ To install `pandas`, we'll need to:
 ```bash
 python -m pip install pandas
 ```
-
-Wait a moment till the necessary dependencies are installed. 
+Wait a moment till the dependency is installed. 
 
 Next, we'll follow the same steps for the other dependencies using the following commands respectively:
 ```bash
