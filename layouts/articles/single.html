@@ -178,9 +178,8 @@
 
 <script type="text/javascript">
   document.addEventListener("DOMContentLoaded", async function() {
-    const featureEnabled = await isFeatureEnabled('section.io.hyvorTalk');
 
-    if (featureEnabled) {
+    if (await unleash.isEnabled("section.io.hyvorTalk", {}, false)) {
       const commentsBox = document.getElementById('hyvor-talk-view');
       commentsBox.classList.add('visible');
     }
