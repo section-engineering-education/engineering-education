@@ -1,18 +1,17 @@
-Gradio is an open-source Python library used to generate user interfaces(UIs) for machine learning models. The user interfaces are easily adjustable depending on the user's needs. Gradio provides customizable interactive components like drag and drop components. Others include buttons, text boxes, and checkboxes used to create the user interface.
- 
-It also allows users to upload images and other files right in the browser using file dialogs. This makes it easier to make beautiful and interactive user interfaces. The process of making user interfaces are simple and easy to use.
+Gradio is an open-source python library that allows you to quickly create easy-to-use, customizable UI components for your machine learning model. Gradio allows you to integrate the GUI directly into your Python notebook making it easier to use.
 
-In this tutorial, we will start by exploring the functions of Gradio used to build user interfaces. Then, we will build a custom image classification model, and finally, we will create beautiful and interactive user interfaces using Gradio.
+In this tutorial, we will explore various Gradio functions and build a simple Gradio interface. We will then explore Gradio deeper and use the Gradio functions to build an image classification model. Finally, we will deploy the web application so that it can be accessed using a browser.
 
 ### Table of contents
 
 - [Prerequisites](#prerequisites)
-- [Introduction](#introduction)
 - [Getting started with Gradio](#getting-started-with-gradio)
+- [Installing Gradio](#installing-gradio)
+- [Simple Gradio interface](#simple-gradio-interface)
 - [Implementing multiple inputs and outputs](#implementing-multiple-inputs-and-outputs)
 - [Image classification model](#image-classification-model)
 - [Adding human readable labels](#adding-human-readable-labels)
-- [Building the sharable UI](#building-the-sharable-ui)
+- [Building the UI using Gradio](#building-the-ui-using-gradio)
 - [Conclusion](#conclusion)
 - [References](#references)
 
@@ -25,9 +24,10 @@ For a better understanding of this tutorial, the reader must have:
 
 Let's get to it!
 
-### Introduction
+### Getting started with Gradio
 
-Gradio integrates with most Python libraries including: 
+Gradio is a very powerful tool, it integrates with most Python libraries. These are some of the libraries: 
+
 1. Hugging face: 
 It is an open-source library used to build natural language processing applications.
 2. Matplotlib: 
@@ -39,20 +39,18 @@ It is used for computer vision and natural language processing.
 5. Sckit-learn: 
 It provides various classification, regression, and clustering algorithms for machine learning.
 6. Tensorflow:
- It is used to perform tasks for machine learning and artificial intelligence.
+It is used to perform tasks for machine learning and artificial intelligence.
 
-Gradio can also be embedded in Jupyter notebooks and Google Colab notebooks. This does not require running a separate Python script. 
-A user can interact with the model right in the working environment.
+Gradio can also be embedded in Jupyter notebooks and Google Colab notebooks. This does not require running a separate Python script. A user can interact with the model right in the working environment.
 
-When you launch a Gradio interface, it automatically generates a public link. This link is sharable. It allows other people to interact with your application remotely. The link expires after 72 hours. 
+When you launch a Gradio interface, it automatically generates a link. It allows other people to interact with your application remotely using the link. 
 
-You can also decide to host the application permanently on their servers which will cost you. 
-Gradio has the following benefits.
+Let's look at the key benefits of Gradio in detail.
 
-#### Benefits of Gradio
+#### Benefits of using Gradio
 
 - Enables you to create demos of your machine learning model.
-The demos can be used to present ideas to clients, users, and team members before the actual application are implemented.
+The demos can be used to present ideas to clients, users, and team members before the actual application is implemented.
 
 - Enable you to get user feedback.
 Gradio allows the collection of feedback from the user. A developer can therefore make the necessary improvements.
@@ -65,12 +63,13 @@ This makes it easy to use and develop models of machine learning apps.
 
 - Permanent deployment and hosting of the application
 Gradio enables you to permanently deploy the created application on their servers.
+
 - Easily sharing of the application
 Gradio generates a public link that enables other users to interact with the application remotely.
 
 Let's now start exploring Gradio practically.
 
-### Getting started with Gradio
+### Installing Gradio
 
 To get started with Gradio, we need to install it into our machine. Since we are using Google Colab, we install Gradio using the following command:
 
@@ -83,61 +82,59 @@ Then, import Gradio using the following command:
 ```python
 import gradio as gr
 ```
+We will start by creating simple Gradio interfaces before we move to build the image classification model.
 
-Now we launch Gradio using a simple function. In the code below, we have created a function `greet` that will return `Hello` and the `name` the user inputs. 
+### Simple Gradio interface
+
+To create a user interface, we will start by creating a simple `greet` function. The function will return `Hello` and the name of the user. 
+
+The function is created using the code below:
 
 ```python
 def greet(name):
  return "Hello " + name + "!"
 ```
-
-The next thing, we will create a user interface using the following code:
+The next thing, we need to add the logic to create a user interface. The user interface will allow users to input their names.
 
 ```python
 iface = gr.Interface(fn=greet, inputs="text", outputs="text")
 iface.launch()
 ```
 
-We build our interface using the `gr.interface` function. This function has the following parameters:
+In this code, we have built our interface using the `gr.interface` function. This function has the following parameters:
 
 - `fn`
 This takes the created function as an argument. In our case, the created function is `greet`.
 
 - `inputs`
-These are input component types that enter the Gradio interface. In our case, the input type is `text`.
+These are input component types that users enter in the Gradio interface. In our case, the input type is `text`.
 
 - `outputs`
-The ouput will be the text after processing.
+The output will be the text after processing.
 
-We also need to launch the user interface using the `launch()` method.  After running the code above, the user interface will appear in the Google Colab notebook.
-
-The user interface will also run in your browser using the following link: `https://localhost:7860/`.
+We now launch the user interface using the `launch()` method.  After running the code above, the user interface will appear in the Google Colab notebook. The user interface will also run in your browser using the following link: `https://localhost:7860/`.
 
 ![Gradio UI](/engineering-education/how-to-deploy-machine-learning-model-as-an-app-in-python-using-gradio/gradio-ui.png)
 
-The user interface is interactive. You can input your name, for example, `kelvin`, and press the `submit` button and it outputs `Hello Kelvin`.
+The user interface is interactive. You can input your name, for example, `kelvin`, and press the `submit` button and it outputs `Hello Kelvin`. Gradio also provides a unique URL/public link that allows people to access your application. The link is `https://51358.gradio.app` which is also found in the Google Colab notebook.
 
-Gradio also provides a public link that can be accessed by anyone remotely. The link is `https://51358.gradio.app` and expires within 72 hours.
-
-Let's look at another function.
-
-This function can handle multiple inputs and outputs. Our first function could only handle one input.
+Let's create another Gradio user interface. We will create a user interface that can handle multiple inputs and outputs. Our first function could only handle one input.
 
 ### Implementing multiple inputs and outputs
 
-The function above takes three parameters: `myname`, `is_day`, and `temperature`. The function returns the name of the user, the time of day, and the temperature in degrees celsius.
+We will use a Python function that takes three parameters: `myname`, `is_day`, and `temperature`. The function returns the name of the user, the time of day, and the temperature in degrees celsius.
 
-If it's day time, the user's interface will display `Good day`. If it's evening, the user interface will display `Good night`
+If it's moring, the user's interface will display `Good Morning`. If it's evening, the user interface will display `Good Evening`. This is shown using the following code:
 
 ```python
 def greet(myname, is_day, temperature):
-  greeting = "Good day" if is_day else "Good night"
-  salute = "%s %s. It is %s cels today" % (
+  greeting = "Good Morning" if is_day else "Good Evening "
+  salute = "%s %s. It is %s degrees today" % (
     greeting, myname, temperature)
   celsius = (temperature - 24) * 7 / 9
   return salute, round(celsius, 2)
 ```
-Let's create the Gradio interface. The function to create the Gradio interface is shown below.
+Let's create the Gradio interface. The function used to create the Gradio interface is shown in the code below:
 
 ```python
 iface = gr.Interface(
@@ -167,44 +164,45 @@ If the user does not select the checkbox the output is shown below.
 
 ![Multiple inputs and outputs](/engineering-education/how-to-deploy-machine-learning-model-as-an-app-in-python-using-gradio/multiple-inputs-output2.png)
 
-Now that we have explored the functions of Gradio, let's start with the image classification model.
+So far we have created two Gradio user interfaces using various functions. We were able to access the user interface both in the Google Colab application and using the browser. Let's now use Gradio to create the image classification model.
 
 ### Image classification model
 
-Let's import the machine learning packages required for image classification.
+To build the image classification model, let's import the machine learning packages required for image classification. These packages will be used to build the model and Gradio will be used to build the user interface for the model. This enables users to interact with the application. We import them using the following code:
 
 ```python
 import tensorflow as tf
 import numpy as np
 import requests
 ```
-We import the following.
+We have imported the following packages in the code above
 
 #### Tensorflow
 It's used to train our model to understand image classification. It contains deep neural networks with many layers that form the model architecture.
+
 #### numpy
 It will be used for data analysis and manipulation.
 
 #### requests
 It sends HTTP requests using Python. This enables us to interact with an external server.
 
-Lets load the model.
+Lets load the method used for image classification.
 ```python
 inception_net = tf.keras.applications.InceptionV3()
 ```
-The `InceptionV3()` is used to handle image classification in the TensorFlow library.
+The `InceptionV3()` method is used to handle image classification in the TensorFlow library.
 
 ### Adding human-readable labels
 
-In this tutorial, we are dealing with the classification of various animal images. We need to add the real names of these animals into our model so that humans can understand.
+In this section, we are dealing with the classification of various animal images. We need to add the real names of these animals into our model so that humans can understand. This is done using the following code:
 
 ```python
 response = requests.get("https://git.io/JJkYN")
 labels = response.text.split("\n")
 ```
- `requests.get` has been used to download all the names of animals from the given URL.  `response.text.split` is used to format the names and add them into the model as `labels`.
+In this code, `requests.get` has been used to download all the names of animals from "https://git.io/JJkYNURL.  `response.text.split` is used to format the names and add them into the model as `labels`.
 
-Let's now create a function to classify the images.
+Let's now create a function to classify the images as follows:
 
 ```python
 def classify_image(inp):
@@ -215,23 +213,22 @@ def classify_image(inp):
 ```
 Let's understand the function above:
 
-`inp.reshape`: Used to reshape our image into the given dimension to make it easier to use. We have also added our `inception_v3()` into our input images.
+`inp.reshape`: It's used to reshape our image into the given dimension to make it easier to use. We have also added our `inception_v3()` into our input images.
 
 We flatten the input layer to make it fit with our model. Finally, we return the output after prediction using the `prediction()` method.
 
-### Building the sharable UI
+### Building the UI using Gradio
 
-We start by initializing the input component of the Gradio UI. The input component holds the image given by the user during prediction.
+We start by initializing the input component of the Gradio UI. The input component holds the image uploaded by the user. The user will be able to upload an animal image in the UI, then the machine learning model should be able to classify the animal and output the name of the animal.
 
 The input component should match the dimensions given in the classification function. The input components will hold an image of the following dimension, `299, 299, 3`
 
-In the code below, we have specified the `inputs. Image` as `299, 299` and `outputs.Label` will have a total of three predictions.
-
+In the code below, we have specified the `inputs. Image` as `299, 299` and `outputs.Label` will have a total of three predictions. The three predictions are all the possible predictions made by the model.
 ```python
 image = gr.inputs.Image(shape=(299, 299))
 label = gr.outputs.Label(num_top_classes=3)
 ```
-Let's now create the actual user interface. The `gr.Interface` function has four parameters.
+Let's now create the Gradio interface using the following function. The `gr.Interface` function has four parameters.
 
 - lassify_image: This is a function used for image classification.
 - Image: The image given by the user.
@@ -245,11 +242,11 @@ gr.Interface(
     label,
  capture_session=True).launch();
 ```
-Once you run the codes above it will display the user interface as shown below.
+Once you run the code above, it will display the user interface as shown below.
 
 ![Image classification iterface](/engineering-education/how-to-deploy-machine-learning-model-as-an-app-in-python-using-gradio/image-classification-user-interface.png)
 
-The image above shows the Gradio user interface. The user interface has an input component that allows you to drag and drop an image to be classified.
+The image above shows the Gradio user interface. The user interface has an input component that allows you to drag and drop or upload an image to be classified.
 
 Let's download an image of a lion or any other animal. Drag and drop or upload the image into the input component. 
 
@@ -262,21 +259,25 @@ Gradio gave the prediction results as follows.
 - cheetah: 0% probability.
 - Arabian camel: 0% probability.
 
-This shows that our model was able to make a right prediction of a lion with a probability of `98%`. Gradio has also deployed our application into a public link of `https://39965.gradio.app` which will expire after 72 hours.
+This shows that our model was able to make a right prediction of a lion with a probability of `98%`. 
 
-The GIF image below shows you how to add another image to the input component.
+Gradio also automatically deploys the image classification application. We can access the application using a unique URL/public link:  `https://39965.gradio.app`. Using this link different people can interact with your application and use it for image classification.
+
+This link will be available in your Google Colab notebook once you launch the user interface. Therefore, we have successfully deployed our application live and will be accessible using the unique URL. This machine learning application can be used for production.
+
+> NOTE: The GIF image below shows you how to add another image to the input component.
 
 ![GIF image](/engineering-education/how-to-deploy-machine-learning-model-as-an-app-in-python-using-gradio/gif-image.png)
-
-You can also decide to permanently deploy the application on the Gradio servers. This will cost you a monthly subscription. For now, this machine learning model can be used for production.
 
 ### Conclusion
 
 In this tutorial, we have learned about how to deploy a machine learning model as an app in Python using Gradio. We started by discussing the benefits of Gradio and how it generates beautiful user interfaces.
 
-We explored Gradio functions and created user interfaces using these functions. From there we started to build an image classification model, our model was able to classify animal images. 
+We then explored Gradio functions and created user interfaces using these functions. From there we started to build an image classification model, our model was able to classify animal images. 
 
-Finally, people can now access the public link and interact with the application. Using this tutorial, a reader should be able to deploy a machine learning model as an app in Python using Gradio.
+Finally, the application was automatically deployed. People can now interact with the application using the unique URL provided by Gradio. Using this tutorial, a reader should be able to deploy a machine learning model as an app in Python using Gradio.
+
+To get this image classification model, click [here](https://colab.research.google.com/drive/17J054uCNRhGAmCbeyl7w0OYZjfB4AJcV?usp=sharing)
 
 ### References
 
