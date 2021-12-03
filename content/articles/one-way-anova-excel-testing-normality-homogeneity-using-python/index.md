@@ -22,7 +22,7 @@ With Python, the test for normality and homogeneity became easier. This tutorial
 
 ### Prerequisites
 This tutorial requires readers to have proper knowledge on the following:
-- Here is a link to the [Analysis of variance (ANOVA)](https://www.investopedia.com/terms/a/anova.asp) documentation.
+- Analysis of variance (ANOVA). Here's a [link]((https://www.investopedia.com/terms/a/anova.asp)) to their documentation.
 - [Microsoft Excel](https://www.guru99.com/excel-tutorials.html).
 - [Python](https://www.python.org/).
 
