@@ -5,7 +5,7 @@ published: true
 url: /one-way-anova-excel-testing-normality-homogeneity-using-python/
 title: Solving a One Way ANOVA with Excel using Python
 description: 
-author: 
+author: kuteyi-victor-toluwase
 date: 2021-12-02T00:00:00-17:00
 topics: []
 excerpt_separator: <!--more-->
