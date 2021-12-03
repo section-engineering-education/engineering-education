@@ -39,7 +39,7 @@ First, we will see how to do this for existing tables and databases.
 This article is based on Laravel’s Eloquent ORM, which I have given the link pointing to its documentation. Eloquent Object Relational Mapper(ORM) gives us an easy way to manipulate our database without caring much about the SQL query codes. For raw database manipulation, find more about them [here](https://laravel.com/docs/8.x/database).
 
 ### Prerequisites
-The article is a bit advanced, so a prior experience with Laravel is required. You can check the basics of creating a Laravel application [here](https://www.section.io/engineering-education/laravel-beginners-guide-blogpost/) where you will got thorough a step by step process of creating a blog. Moreover, you need a knowledge of PHP.
+The article is a bit advanced, so a prior experience with Laravel is required. You can check the basics of creating a Laravel application [here](https://www.section.io/engineering-education/laravel-beginners-guide-blogpost/) where you will go through a step by step process of creating a blog. Moreover, you need a knowledge of PHP.
 
 ### Getting started
 We will create some migration on an existing database shown in these screenshots. It does not have many records. It’s only for demonstrating the article.
