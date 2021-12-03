@@ -37,7 +37,7 @@ You also need to be familiar with the layout and how to use Android studio. With
 Assuming you have your Android studio up and running, the only thing you have to install is the FAN SDK.
 
  **FAN (Facebook Audience Network) SDK installation**
- To install, you can download your SDK manually from [here](https://developers.facebook.com/resources/audience-network-sdk-6.8.0.zip) (Not recommended) or follow the steps in [Initial integration steps](#initia-integration-steps) to install it the right way.
+ To install, you can download your SDK manually from [here](https://developers.facebook.com/resources/audience-network-sdk-6.8.0.zip) (Not recommended) or follow the steps in [Initial integration steps](#initial-integration-steps) to install it the right way.
 
 ### Initial Integration steps
 
@@ -75,7 +75,7 @@ Once done, you are ready for the integration process in the Android studio.
 Don't have an Application? No need to worry since you can set up a simple application in a few steps below.
 
 #### Step 1: Create a New Project
-If you don't have an application created already, open your Android Studio and create a new project with Ads activity. Since it is a test Application, you can use it without altering it. This [article](https://www.section.io/engineering-education/first-android-App/) can be very useful in helping you with proper project creation.
+For beginners, open your Android Studio and create a new project with Ads activity. Since it is a test Application, you can use it without altering it. This [article](https://www.section.io/engineering-education/first-android-App/) can be very useful in helping you with proper project creation.
 
 #### Step 2: Implement Facebook SDK
 Add this android dependency to the `build.gradle` file of the App module.
