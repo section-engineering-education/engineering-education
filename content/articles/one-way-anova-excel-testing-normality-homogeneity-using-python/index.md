@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /one-way-anova-excel-testing-normality-homogeneity-using-python/
 title: Solving a One Way ANOVA with Excel using Python
-description: 
+description: In this article we will be creating an ANOVA table using Microsoft Excel, box plots to test the normality of a one way ANOVA, and Bartlett's rule for homogeneity with Python.
 author: kuteyi-victor-toluwase
 date: 2021-12-02T00:00:00-17:00
 topics: []
@@ -14,11 +14,11 @@ images:
   - url: /engineering-education/one-way-anova-excel-testing-normality-homogeneity-using-python/hero.jpg
     alt: unit testing example image
 ---
-Over the years, data has been an essential part of how the world works. These data range from GDP to blood samples to every aspect of the world. As data grew, statistics found ways to extract meaning from them. One of these methods is the analysis of variance (ANOVA). ANOVA is a set of statistical models that analyses the differences among means.
+Over the years, data has been an essential part of how the world works. These data range from GDP to blood samples to every aspect of the world. As data grew, statistics found ways to extract meaning from them. 
 <!--more-->
-Microsoft came up with statistical add-ins within Excel to solve some of these problems. Although Microsoft Excel is still rather limited. Later came tools like R-studio and Python. With Python, the test for normality and homogeneity became easier.
+One of these methods is the analysis of variance (ANOVA). ANOVA is a set of statistical models that analyses the differences among means. Microsoft came up with statistical add-ins within Excel to solve some of these problems. Although Microsoft Excel is still rather limited. Later came tools like R-studio and Python. 
 
-This tutorial will focus on creating an ANOVA table using Microsoft Excel, box plots to test the normality of a one way ANOVA, and Bartlett's rule for homogeneity with Python.
+With Python, the test for normality and homogeneity became easier. This tutorial will focus on creating an ANOVA table using Microsoft Excel, box plots to test the normality of a one way ANOVA, and Bartlett's rule for homogeneity with Python.
 
 ### Prerequisites
 This tutorial requires readers to have proper knowledge on the following:
