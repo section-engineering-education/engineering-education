@@ -6,7 +6,7 @@ url: /convert-html-to-pdf-with-docraptor/
 title: Converting HTML to PDF using the Docraptor Library
 description: This article will guide the reader on using DocRaptor to convert HTML into a PDF.
 author: kennedy-ndutha
-date: 2021-11-18T00:00:00-11:14
+date: 2021-12-03T00:00:00-12:30
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -15,10 +15,13 @@ images:
     alt: Convert HTML to pdf using Docraptor Image.
 ---
 
-### Introduction
-It is easy for anyone to deliver PDFs because they are a standard document presentation format. Everything is given as a PDF now, including requests, receipts, and appropriation reports. However, the planned duration of PDF can be inconvenient if you need to create a large number of PDFs quickly. 
+It is easy for anyone to deliver PDFs because they are a standard document presentation format. Everything is given as a PDF now, including requests, receipts, and appropriation reports. However, the amount of time to generate large number of custom PDFs increases and becomes cumbersome. 
 
-DocRaptor is an HTML-to-PDF API that significantly enhances the current situation and has a PHP framework for simple joining. This article will guide the reader on using DocRaptor to convert HTML into a PDF.
+<!--more-->
+
+### Introduction
+
+DocRaptor is an HTML-to-PDF API that significantly enhances the process. It has a PHP framework for simple joining. This article will guide the reader on using DocRaptor to convert HTML into a PDF.
 
 ### Table of content
 - [Introduction](#introduction)
@@ -31,9 +34,9 @@ DocRaptor is an HTML-to-PDF API that significantly enhances the current situatio
 - [Conclusion](#conclusion)
 
 ### Installation
-To get started with Docraptotr, we need to install it in our local machine. Installation can be done in two ways. The first way is using composer dependency manager, while the second way is by downloading a zip file of the library and extracting it in the specific project folder.
+To get started with Docraptor, we need to install it in our local machine. Installation can be done in two ways. The first way is using composer dependency manager, while the second way is by downloading a zip file of the library and extracting it in the specific project folder.
 
-#### Donloading using using composer
+#### Downloading using composer
 - Download composer from this [link](https://getcomposer.org/download/) then execute the command below to install Docraptor.
 
 ```php
@@ -157,7 +160,7 @@ Given that DocRaptor may also convert documents into other files, for instance, 
 $doc->setDocumentType("pdf");   //pdf or xls or xlsx    //help you find the document later
 ```
 
-Additionally, because we are using a free API key, we should create a test document, but when the test is set to `true`, we need to note that the generated document will be watermarked, limited to 5 downloads expires after five days.
+Additionally, we should create a test document because we are using a free API key. When the test is set to `true`, we need to note that the generated document will be watermarked, limited to 5 downloads expires after five days.
 
 ```php
 $doc->setTest(true);    //test document are free but watermarked
