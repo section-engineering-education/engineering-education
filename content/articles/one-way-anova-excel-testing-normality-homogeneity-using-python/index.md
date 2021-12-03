@@ -12,7 +12,7 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/one-way-anova-excel-testing-normality-homogeneity-using-python/hero.jpg
-    alt: unit testing example image
+    alt: One Way ANOVA with Excel using Python example image
 ---
 Over the years, data has been an essential part of how the world works. These data range from GDP to blood samples to every aspect of the world. As data grew, statistics found ways to extract meaning from them. 
 <!--more-->
