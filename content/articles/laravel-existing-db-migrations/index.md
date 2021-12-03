@@ -52,8 +52,9 @@ As we can see, it has five fields:
 3. CLASS_NAME
 4. TEACHER_CODE
 5. STATUS
-I named the table *class_subjects* and the database *terrence_time*. You can choose your preferred name.
-We proceed to create a simple Laravel application. I called mine *migration-test*.
+
+The table is named *class_subjects* and the database, *terrence_time*. You can choose your preferred name.
+We proceed to create a simple Laravel application. For this article, let's call it *migration-test*.
 ```bash
     $laravel new migration-test
 ```
@@ -95,10 +96,10 @@ class class_subjects extends Model
     protected $fillable = [‘ID’,‘SUB_NAME’,‘CLASS_NAME’,‘TEACHER_CODE’,‘STATUS’];
 }
 ```
-We add the table name and the fields in the table. `$fillable` in Laravel is used to set fields that are mass-assignable. There is also `$guarded`, which sets fields that cannot be mass-assigned(protected fields). In this case, we want all our fields modifiable to use `$fillable`.
+We add the table name and the fields in the table. `$fillable` in Laravel is used to set fields that are mass-assignable. There is also `$guarded`, which sets fields that cannot be mass-assigned(protected fields). In this case, we want all our fields modifiable. We will use `$fillable`.
 
-> Mass-assigning is modifying the values of multiple fields all at once in an array.
-We turned it to `false` for the timestamps since we had not added timestamps to our table. Setting this to `false` instructs Laravel not to create the timestamp fields.
+> Mass-assigning is modifying the values of multiple fields all at once using a data structure such as an array.
+We set the timestamps variable to `false` since we had not added timestamp fields to our table. Setting this to `false` instructs Laravel not to create the default timestamp fields.
 
 ### Modifying the migration file
 ```php
@@ -138,7 +139,7 @@ class CreateClassSubjectsTable extends Migration
     }
 }
 ```
-Here, we check first if the table exists, as is the norm, through this if statement:
+Here, we check first if the table exists, as is the norm, using this `if` statement:
 ```php
 if (!Schema::hasTable(‘class_subjects’)){
     //code
@@ -156,10 +157,10 @@ If you’re on a live server, you will have to run a script that automatically r
 ```php
 Route::get(‘run-migrations’, function () {
     try {
-        //code...
+        //the migrate command
         return Artisan::call(‘migrate’);
     } catch (Exception $e) {
-        //throw $th;
+        //get the error message and display the error
         $e->getMessage();
         print($e);
     }
