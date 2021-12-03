@@ -1,26 +1,23 @@
 
-#Building a Lyrics Search app with Vanilla Javascript
+##Building a Lyrics Search app with Vanilla Javascript
 
-![hero image](/building-a-lyrics-search-app-with-vanilla-javascript/hero.jpg)
+![hero image](/building-lyrics-search-app-with-vanilla-javascript/hero.jpg)
 
 Knowing the lyrics of a song is a major problem most song-lovers encounter, especially when it is a rap song. Finding a solution to this problem, by creating a platform where users can search for lyrics by entering the artist name or title of the song is a lovely and useful project.
 
 In this article, I will walk you through how you can create a lyrics search app using HTML5, CSS3, Vanilla JS,async-await with fetch method, OVH API, and ES6 features like arrow functions.
 
-##Prerequisites
-..* A code editor. For example: Visual studio code.
+###Prerequisites
+- A code editor. For example: Visual studio code.
 
-..* Some basic knowledge of HTML , CSS , and JAVASCRIPT.
+- Some basic knowledge of HTML , CSS , and JAVASCRIPT.
 
-..* A laptop with an internet connection
+- A laptop with an internet connection
 
-##Structuring The Lyrics Search App With Html5.
+###Structuring The Lyrics Search App With Html5.
 
- To begin, create a folder named `lyrics-app`, then you create three files in the folder:
-
-..*`lyrics.html`
-..*`lyrics.css`
-..*`lyrics.js`
+ To begin, create a folder named `lyrics-app`, then you create three files in the folder:`lyrics.html`,`lyrics.css`and
+`lyrics.js`
 
 
 In the `lyrics.html` file, include the code below to create the structure for the lyrics search app.
@@ -57,7 +54,7 @@ In the `lyrics.html` file, include the code below to create the structure for th
 ```
 
 
-##Designing the lyrics search app
+###Designing the lyrics search app
     The next step is to design the web app with CSS by navigating to your CSS file. Here’s the CSS for the structure of the web app(HTML code):
 
 Firstly, style the overall HTML, body of the HTML, and the div with the class of container which embodies all other divs.
@@ -162,9 +159,9 @@ form {
 You have successfully designed the web page by adding colors, font sizes, font family, padding, margin, and so on just to make this web app look nice.
 
 Here is what your web page should look like now:
-![Screenshot for design](/building-a-lyrics-search-app-with-vanilla-javascript/design-screenshot.jpg)
+![Screenshot for design](/building-lyrics-search-app-with-vanilla-javascript/design-screenshot.jpg)
 
-##Adding functionality With Javascript.
+###Adding functionality With Javascript.
 In your `lyrics.js` file,  declare variables and use the DOM selectors to bring in elements from the lyrics.html file into our javascript file using the code snippet below:
 
 ```javascript
@@ -235,7 +232,7 @@ Comment out the showData function in the code snippet above(remember to uncommen
 
 Your screen should be like the screenshot below:
 
-![Screenshot for consoled data](/building-a-lyrics-search-app-with-vanilla-javascript/console-screenshot.jpg)
+![Screenshot for consoled data](/building-lyrics-search-app-with-vanilla-javascript/console-screenshot.jpg)
 
 The next thing to do is to create a function that will display the data in the console on the webpage. The function(showData)  is being called from the async function `getResults()`.
 
@@ -259,7 +256,7 @@ function showData(result) {
 ```
 In the code snippet above, a showData function was created and the result was passed as an argument. The name of the function is very descriptive, it is to display the lyrics on the web page. The question that comes to mind is where exactly do we want to display the lyrics, if you recall we have an empty div in the html file. The lyrics will be displayed inside that div, the variable that connects the div to the javascript file is the variable output.
 
-##INNER - HTML
+###INNER - HTML
 This is the DOM property that either sets or retrieves the content of an HTML element. In this instance, we want to set the content of the empty div tag in the HTML file to display the lyrics suggestions in a list form.
 
 
@@ -301,7 +298,7 @@ output.addEventLIstener(“click”,e => {
 
 Above is the code that helps to know if the clicked element is the span tag. If it is, (i.e the span tag is === variable clicked button), the statement in the if block is executed because the span tag has a class `attribute`. We store this attribute in variable `songTiltle` and also the attribute for the song artist in variable `artist` which the `getLyrics()` function.
 
-##getLyrics() async function
+###getLyrics() async function
 This is the most important function because this is what makes us get the lyrics themselves displayed. The function takes in two arguments artist and songTitle respectively, recall that you can search for lyrics through inputting song artist or song title. This is the reason why the getLyrics function is taking those two arguments.
 
 Below is the code for getLyrics async function:
@@ -451,7 +448,7 @@ async function getLyrics(artist, songTitle) {
 ```
 
 
-##Conclusion
+###Conclusion
  In this tutorial, we built a lyrics search web app using HTML5, CSS3, Vanilla Javascript alongside ES6 features.
 
 I’m a big fan of you not just stopping at what is provided in this tutorial. if indeed you’ve learned something from this, I challenge you to add some more features to this web app and also make the UI better. You can add a button that copies the lyrics to the clipboard or a button that helps you share lyrics with friends via social media.
