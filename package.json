@@ -15,8 +15,5 @@
   "bugs": {
     "url": "https://github.com/section-engineering-education/engineering-education/issues"
   },
-  "homepage": "https://github.com/section-engineering-education/engineering-education#readme",
-  "dependencies": {
-    "unleash-client": "^3.10.1"
-  }
+  "homepage": "https://github.com/section-engineering-education/engineering-education#readme"
 }
