@@ -173,33 +173,18 @@
 {{ end }}
 <script async type="text/javascript" src="//talk.hyvor.com/web-api/embed.js"></script>
 
+{{ $featureToggle := resources.Get "js/featureToggle.js" }}
+<script defer language="javascript" type="text/javascript" src="{{ $featureToggle.Permalink }}"></script>
+
 <script type="text/javascript">
-  const checkIfCookieExists = (value) => {
-    if (document.cookie.split(';').some((item) => item.trim().startsWith(`${value}=`))) {
-      return true;
-    } 
-    return false;
-  }
+  document.addEventListener("DOMContentLoaded", async function() {
+    const featureEnabled = await isFeatureEnabled('section.io.hyvorTalk');
 
-  const enableHyvorIfCookieExists = async () => {
-    // Capture toggle value/strategy.
-    const hyvorToggleCookieName = await fetch('https://www.section.io/featuretoggle')
-      .then(response => response.json())
-      .then(data => {
-        const hyvorStrategy = data.features.find(feat => feat.name === 'section.io.hyvorTalk');
-        return hyvorStrategy.strategies[0].parameters.cookieName;
-      });
-    
-    // Determine whether user has the correct cookie
-    const hyvorCookieExists = checkIfCookieExists(hyvorToggleCookieName);
-
-    if (hyvorCookieExists) {
+    if (featureEnabled) {
       const commentsBox = document.getElementById('hyvor-talk-view');
       commentsBox.classList.add('visible');
     }
-  }
-
-  enableHyvorIfCookieExists();
-</script> 
+  });
+</script>
 
 {{ end }}
