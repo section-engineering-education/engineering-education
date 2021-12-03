@@ -28,10 +28,10 @@ Monetizing Applications counts as one of the successes of a developer other than
 ### Prerequisites
 
 The key requirements for a successful integration include;
-- Facebook Audience Network SDK
-- Facebook Audience Network account
+- [Facebook Audience Network SDK](#https://developers.facebook.com/resources/audience-network-sdk-6.7.0.zip)
+- [Facebook Audience Network account](#https://business.facebook.com/pub/home/?source=help&business_id=1101812683558213&global_scope_id=1101812683558213)
 - [Android Studio](#https://developer.android.com/studio/releases)
-- Facebook business account
+- [Facebook business account](#https://business.facebook.com/overview)
 
 You also need to be familiar with the layout and how to use Android studio. With all these requirements in place, you can move on to the steps involved in the integration process.
 Assuming you have your Android studio up and running, the only thing you have to install is the FAN SDK.
@@ -167,6 +167,6 @@ Here are some demerits in an in-App advertisement;
 - **Cost incurred on the user** to get the advertisement. To get the advertisement, the user's internet bundles get consumed from an unintended advertisement viewing task.
 
 ### Conclusion
-At this point, you should be able to integrate his/her Application with Facebook Ads for added monetary advantage. However, this might not be an option for many developers depending on the kind of application they are developing. 
-The verdict on whether to integrate your Application with these Ads is always the owners' preference. 
+At this point, you should be able to integrate your application with Facebook Ads for added monetary advantage. However, this might not be an option for many developers depending on the kind of application they are developing. 
+The verdict on whether to integrate your application with these Ads is always the owners' preference. 
 
