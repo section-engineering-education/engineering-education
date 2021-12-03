@@ -1,6 +1,6 @@
 Graphs are one of the most versatile data structures. This is because they allow us to solve interesting problems. They are used in social networks and GPS applications. One can apply it anywhere you want to model the relationship between a bunch of objects.
 
-In this article, our primary focus will be on Graphs that have a cycle. We will discuss what that is. We will learn how to find out that a particular graph has a cycle. It is important to know this concept to avoid creating an infinite loop in an application when dealing with graphs.
+In this article, our primary focus will be on Graphs that have a cycle. We will discuss what that is. We then will get to know how to find out that a particular graph has a cycle. 
 
 #### Prerequisites
 
@@ -137,7 +137,6 @@ At this point, we find that `1` is part of our current path. It is also visited.
        }
 
 ```
-
 7. Construct a graph in the `MakeGraph()` function.
 
 - Declare a Dictionary data structure, `ls`. This is what will store our adjacency list/graph.
@@ -248,7 +247,6 @@ Below is the code implementation of step 7 above.
        }
 
 ```
-
 The output of the above code after running will be:-
 
 [Image of Output](/engineering-education/graph-cycle-detection/output1.png/)
@@ -310,7 +308,6 @@ We will add a new method called `HasCycle()` to our existing class. `HasCyle()` 
 
        }
 ```
-
 In this particular example, we are dealing with characters. We will change the `MakeGraph()` function and `Main()` function to accommodate the characters. The concept is still the same as for the directed graph for these two functions.
 
 ```c#
@@ -377,7 +374,6 @@ In this particular example, we are dealing with characters. We will change the `
        }
 
 ```
-
 The output of the above code after running it will be:-
 
 [Image of Output](/engineering-education/graph-cycle-detection/output1.png/)
