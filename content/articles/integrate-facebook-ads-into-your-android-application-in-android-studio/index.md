@@ -167,6 +167,6 @@ Here are some demerits in an in-App advertisement;
 - **Cost incurred on the user** to get the advertisement. To get the advertisement, the user's internet bundles get consumed from an unintended advertisement viewing task.
 
 ### Conclusion
-At this point, the reader should be able to integrate his/her Application with Facebook Ads for added monetary advantage. However, this might not be an option for many developers depending on the kind of application they are developing. 
+At this point, you should be able to integrate his/her Application with Facebook Ads for added monetary advantage. However, this might not be an option for many developers depending on the kind of application they are developing. 
 The verdict on whether to integrate your Application with these Ads is always the owners' preference. 
 
