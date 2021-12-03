@@ -52,6 +52,3 @@ weight = 80
 [[related.indices]]
 name  = "date"
 weight = 10
-[module]
-  [[module.imports]]
-    path = "github.com/hborrelli1/hugo-unleash-client"
