@@ -18,23 +18,44 @@ RPR is standardized by IEEE 802.17 and is a protocol for the transmission of dat
 
 With the deployment of resilient packet rings, the network has better utilization of bandwidth, throughput, higher deployment speed, optimization of operational cost and equipment. RPR was developed because the traditional ethernet lacks the capability to handle or offer business-class reliability. Also, it lacks the capacity to deal with latency adequately and quality of services for voice packets.  
 
+
 ### Basics of Resilient Packet Ring
 
 A resilient Packet ring station is established where fiber installation is done in a ringway. It has developed from Ethernet and SONET that were previously installed. It is generally a media access control packet that helps in numerical multiplexing over spatial reuse infrastructure. The spatial reuse infrastructure allows continued utilization of freed space to maximize the traffic being carried across. It meets the packet-based metropolitan area network requirements. 
 
-Nodes are used for effective bandwidth communication through wrapping and steering. During steering, in case of nodes damage, traffic is directed to the last node before the damaged one. If any of the lines breaks the ring is changed so that either of the rings becomes a return node. This way, the architecture has a shorter recovery time and hence less downtime.    
-
-### Adopted types of Transmission Media
-
-Media Access Control panels are the hardware required for interaction with wireless or wired transmission medium. It has a logical link control associated with the data link layer that offers control of the flow and multiplexing of the medium of transmission. During data transfers, MAC captures frames adding synchronization for effective transmission. A code for error detection is then added to the frame. MAC also compensates collisions through re originating transmission after detection of a jam signal. It ensures data integrity is maintained through the verification of the sequence for the sender’s frame check.
+Nodes are used for effective bandwidth communication through wrapping and steering. During steering, in case of nodes damage, traffic is directed to the last node before the damaged one. If any of the lines breaks the ring is changed so that either of the rings becomes a return node. This way, the architecture has a shorter recovery time and hence less downtime.   
 
 #### Traffic queues and Class of Service in Resilience Packet Ring 
 
-The traffic present in this technology is associated with Class of Service, which is categorized into classes A, B, and C. They signify high, medium, and low traffic simultaneously. Class A is a virtual circuit bandwidth that offers support to low latency applications such as video. Class B is a combination of the bandwidth for the virtual circuit as well as the intensity of the burst that is higher than the CIR. Class C is the most effective effort traffic that is highly flexible as it integrates any available bandwidth supporting the access traffic of the internet.  
+The traffic present in this technology is associated with Class of Service, which is categorized into classes A, B, and C. They signify high, medium, and low traffic simultaneously. Class A is a virtual circuit bandwidth that offers support to low latency applications such as video. Class B is a combination of the bandwidth for the virtual circuit as well as the intensity of the burst that is higher than the CIR. Class C is the most effective effort traffic that is highly flexible as it integrates any available bandwidth supporting the access traffic of the internet.
+
+
+
+### Adopted types of Transmission Media
+
+In this section, we will first discuss what transmission media is so that it can be easy to understand the second section.
+
+#### What is a transmission media
+
+In networking, a transmission media is any channel that is used to transfer information or packets from point A (source) to another point B (destination). The main aim of communication media is to carry data in the form of bits over a network. Transmission media can also be referred to as paths that exist between the sender and receiver in data communication. Transmission media are considered as layer one components in the Open System Interconnection (OSI) model.
+
+#### Which transmission media is used in RPR
+
+Media Access Control panels are the hardware required for interaction with wireless or wired transmission medium. It has a logical link control associated with the data link layer that offers control of the flow and multiplexing of the medium of transmission. During data transfers, MAC captures frames adding synchronization for effective transmission. A code for error detection is then added to the frame. MAC also compensates collisions through re originating transmission after detection of a jam signal. It ensures data integrity is maintained through the verification of the sequence for the sender’s frame check.  
+
+
 
 ### Application of Packet Ring Technology
 
-RPR is commonly used in national SONET, metropolitan, and ethernet carrier networks. This architecture is normally incorporated into the SONET networks so that they can gain the ability to transfer packets. This is because, the technology, RPR, offers the network statistical multiplexing that is fault-tolerant. 
+Resilient packet ring is a fairly new technology that is being adopted fast and widely. The network architecture is commonly applied in the following ways:
+
+#### National SONET, metropolitan, and ethernet carrier networks. 
+
+This architecture is normally incorporated into the SONET networks so that they can gain the ability to transfer packets. This is because, the technology, RPR, offers the network statistical multiplexing that is fault-tolerant. 
+
+#### Efficiency Improvement 
+
+RPR is a network architecture that is developed in such a way that it can achieve the needs of a packet-based Metropolitan Area Network based on packets. This network design is made up of packet-switching nodes that are connected to adjacent nodes using a pair of fiber. In addition to that, it has two counter-rotating rings. It is this design that makes sure that the architecture offers maximum efficiency to the users. 
 
 #### Fault Tolerance in RPR
 
@@ -43,7 +64,17 @@ To achieve this level of fault tolerance, a resilient packet ring employs the us
 
 ### Limitations related to Resilient Packet Ring
 
-The major limitation of RPR was the inability to support spatial reuse for frame transmission from or to media access control addresses which is not available in ring topologies. This was however fixed using a spatially-aware sublayer commonly known as SAS. This technology provides a way to reuse frame transmissions from or to media access control addresses not available in ring topologies. 
+The following are the major limitations of RPR.
+
+#### Spatial Reuse
+
+One of the major limitations of RPR was the inability to support spatial reuse for frame transmission from or to media access control addresses which is not available in ring topologies. This was however fixed using a spatially-aware sublayer commonly known as SAS. This technology provides a way to reuse frame transmissions from or to media access control addresses not available in ring topologies. 
+
+#### RPR Algorithm
+
+Resilient packet ring architecture uses an algorithm that determines how traffic will be distributed across the nodes. Despite the fairness and simpleness of this algorithm, it still poses some critical aspects that are concerning. For instance, there is a noticeable oscillation of allocated bandwidth on scenarios with unbalanced traffic. Such oscillations are a hindrance when it comes to achieving the high bandwidth utilization and reuse of spatial. Additionally, this algorithm has a very high level of sensitivity to its parameters.
+
+
 
 ### Conclusion 
 
