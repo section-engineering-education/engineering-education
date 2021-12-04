@@ -46,7 +46,7 @@ class student Constructor(name:string,age:Int,Email:string)
 }
 ```
 
-In the preceding example, the class student takes the parameters: "name" of type int, and "email" of type string. If you've not defined the access to use, i.e. (public, private, protected), then it won't be a must to use the constructor keyword, as shown below:
+In the preceding example, the class student takes the parameters: *name* of type int, and *email* of type string. If you've not defined the access to use, i.e. (public, private, protected), then it won't be a must to use the `constructor` keyword, as shown below:
 
 ```kotlin
 class student(name:string,age:Int,Email:string){ }
@@ -54,7 +54,7 @@ class student(name:string,age:Int,Email:string){ }
 
 #### Secondary constructor
 
-In Kotlin, a secondary constructor is created using the constructor keyword and can also be created in one or more classes. The example below shows how you can declare two constructors of a student having two parameters (name and year). 
+In Kotlin, a secondary constructor is created using the `constructor` keyword and can also be created in one or more classes. The example below shows how you can declare two constructors of a student having two parameters (name and year). 
 
 ```kotlin
 class student{ 
