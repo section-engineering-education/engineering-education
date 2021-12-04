@@ -14,13 +14,7 @@ images:
  - url: /engineering-education/momentum-based-gradient-optimizer-and-optimization-techniques-for-gradient-descent/hero.jpg
    alt: Gradient Descent Based Optimization Techniques example image
 ---
-
-Alternative models can be built using Gradient Descent in machine learning systems. An objective function specifies the level of inaccuracy that a Machine Learning model will have on a given dataset during the training phase.
-
-A random set of values will be used throughout training to maintain fairness. As a result, we get closer to the ideal function value with each repetition.
-
-The quick convergence of Adaptive Optimization Algorithms, on the other hand, is causing them to gain popularity. For better convergence resilience, these methods diverge from the traditional Gradient Descent algorithm.
-
+Gradient descent is the optimal method for optimizing neural networks and a variety of other machine learning algorithms. This post delves into the inner workings of several of the most popular gradient-based optimization algorithms, including Momentum, Adagrad, and Adam.
 ### Table of contents
 
 - [Optimization techniques](#optimization-techniques)
@@ -35,7 +29,7 @@ The quick convergence of Adaptive Optimization Algorithms, on the other hand, is
 - [How to choose an optimizer](#how-to-choose-an-optimizer)
 
 ### Optimization techniques
-For a brief while, we'll consider various optimization methods frequently employed in Deep Learning. In other words, if you came to this article hoping to learn the equation and mathematical explanation. We will also look at some Adaptive Optimization Algorithms (AOA). Compiling a program based on the current execution profile is known as adaptive optimization in computer science. You can easily make a tradeoff between JIT compilation and instruction interpretation in an adaptive optimizer solution.
+For a brief while, we'll consider various optimization methods frequently employed in Deep Learning. We will also look at some Adaptive Optimization Algorithms (AOA). Compiling a program based on the current execution profile is known as adaptive optimization in computer science. You can easily make a tradeoff between JIT compilation and instruction interpretation in an adaptive optimizer solution.
 #### Why do we optimize our machine learning models?
 Every iteration is compared to the previous one, and the hyperparameters are tweaked until the results are as good as they can be. We can produce a model that is both accurate and error-free. A model can be optimized in a variety of ways.
 
@@ -63,11 +57,11 @@ Momentum helps distinguish recent derivatives when Gradient Descent approaches t
 Momentum is a prominent strategy used in conjunction with SGD. When searching, momentum collects the gradients of previous steps and the current ones to decide the best course of action. The following changes have been made to the gradient descent equations.
 ###  Stochastic Gradient Descent 
 
-Using Stochastic Graduated Descent instead of Classic Gradient Descent, several of the flaws in the classic method are corrected By computing the derivative for each point on the trajectory it follows. It attempts to make up for its lack of computational rigor. It has more considerable noise than Gradient Descent. Hence it takes longer iterations to get to a minimal solution using SGD. In contrast to Gradient Descent, SGD computes the derivatives for all points at the same time.
+Using Stochastic Graduated Descent instead of Classic Gradient Descent, several of the flaws in the classic method are corrected by computing the derivative for each point on the trajectory it follows. It attempts to make up for its lack of computational rigor. It has more considerable noise than Gradient Descent. Hence it takes longer iterations to get to a minimal solution using SGD. In contrast to Gradient Descent, SGD computes the derivatives for all points at the same time.
 ### Adaptive Moment Estimation
-RMSProp and momentum combine to create this effect. Use this method to figure out how fast your brain is adapting to new information. Like momentum, it saves the declining arithmetic mean of the squared gradients and an average of the past gradients, which is a similar feature.
+RMSProp and momentum combine to create this effect. Like momentum, it saves the declining arithmetic mean of the squared gradients and an average of the past gradients, which is a similar feature.
 
-On a smooth surface, it's considerably easier for Adam to make a mistake because of his high coefficient of friction. So, for example, this strategy's pseudocode appears like this:
+On a smooth surface, it's considerably easier for Adam to make a mistake because of its high coefficient of friction. So, for example, this strategy's pseudocode appears like this:
 
 $$D = 0\\
 K = 0\\
@@ -81,10 +75,9 @@ W= W - \alpha \frac{V}{\sqrt{S} + \epsilon}
 $$
 
 ### RMSProp
-It is an extension of gradient descent and AdaGrad that employs a decaying average of partial gradients to change the step size for each parameter. The drawback of AdaGrad is overcome by using a decaying moving average. This allows the algorithm to ignore early gradients and concentrate on the most recently recorded partial gradients as the search progresses.
-Improve AdaGrad by applying the adaptive learning rate method based on the Root Mean Square. The exponential moving average is used rather than the cumulative sum of squared gradients used by AdaGrad There is only one step that differs between AdaGrad and RMSProp: the first one.
+It is an extension of gradient descent and AdaGrad that employs a decaying average of partial gradients to change the step size for each parameter. The drawback of AdaGrad is overcome by using a decaying moving average. This allows the algorithm to ignore early gradients and concentrate on the most recently recorded partial gradients as the search progresses. 
 
-That's all RMSProp does: it takes the learning rate and smooths it down by an average. So this strategy's pseudocode appears like this:
+RMSProp takes the learning rate and smooths it down by an average. So this strategy's pseudocode appears like this:
 
 $$K = 0\\
 for\; each\; iteration\; i\\
@@ -99,13 +92,12 @@ When employing an Adaptive Gradient, you'll have to adjust the learning rate for
 
 Using mathematical formulas, the learning rate equals gamma squared times the square root of that number. This method works.
 
-According to earlier AdaGrad computations in the update rule for all parameters, AdaGrad changes the general learning rate N. Cons: The denominator rises in a quadratic fashion, which makes it challenging to work with Since the addition of each additional word raises the total value, the value grows with time. As a result, learning becomes sluggish and eventually comes to a halt. 
+According to earlier AdaGrad computations in the update rule for all parameters, AdaGrad changes the general learning rate. 
 
-The size of the master step has less of an impact on this technique, and it also converges faster.
-
+Cons: The denominator rises in a quadratic fashion, which makes it challenging to work with Since the addition of each additional word raises the total value, the value grows with time. As a result, learning becomes sluggish and eventually comes to a halt. 
 ###  AdaDelta
 
-There are extensions for AdaGrad that can be used to slow down the monotonically decreasing pace of learning. For example, when utilizing AdaDelta, only a subset of prior gradients can be aggregated, not all of them (w). 
+There are extensions for AdaGrad that can be used to slow down the monotonically decreasing pace of learning. For example, when utilizing AdaDelta, only a subset of prior gradients can be aggregated, not all of the. 
 
 The only thing left to figure out is the current iteration's average after subtracting the previous iteration's average and the current gradient.
 #### There have been significant developments on the Adadelta front
@@ -136,7 +128,7 @@ For optimization methods, one of the most significant differences is whether or 
 
 What's the best way to improve your website now? In cases when the input data is sparse, adaptive learning-rate approaches are likely to be the most effective. Additionally, you won't have to fiddle with the learning rate because the default number will likely produce the greatest results.
 
-As a result, RMSprop is an Adagrad module that addresses Adagrad's rapidly decreasing learning rates. Adadelta employs the RMS of parameter changes in the nominator update rule, whereas this algorithm does not. In a long-awaited update, Adam finally adds bias correction and momentum to RMSprop. As far as I can tell, RMSprop, Adadelta, and Adam all perform well in similar situations. At the end of the optimization, Kingma et al. show that Adam's bias-correction helps Adam slightly surpass RMSprop. Thus, Adam may be the best overall option.
+As a result, RMSprop is an Adagrad module that addresses Adagrad's rapidly decreasing learning rates. Adadelta employs the RMS of parameter changes in the nominator update rule, whereas this algorithm does not. In a long-awaited update, Adam finally adds bias correction and momentum to RMSprop. As far as I can tell, RMSprop, Adadelta, and Adam all perform well in similar situations. Adam may be the best overall option.
 
 Interestingly, several recent works have used a simple learning rate annealing schedule and vanilla SGD without momentum. It is well known that SGD can discover a minimum. Still, it may take longer than some other optimizers, is more dependent on a strong initialization and anneal scheduling, and may get trapped at saddle points rather than local minima. The adaptive learning rate approaches, on the other hand, are ideal if you want to achieve fast convergence and train a deep or complicated neural network.
 
