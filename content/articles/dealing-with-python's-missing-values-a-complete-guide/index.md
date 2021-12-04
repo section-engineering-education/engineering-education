@@ -14,7 +14,6 @@ The dataset's data structure can be improved by removing errors, duplication, co
 - [Significance of handling the missing values](#significance-of-handling-the-missing-values)
 - [Problems caused by missing values](#problems-caused-by-missing-values)
 - [Types of missing data types](#types-of-missing-data-types)
-- [Classifications of missing values ](#classifications-of-missing-values )
 - [Types of Imputed Information](#types-of-imputed-information)
 - [How to fix our dataset's missing data](#how-to-fix-our-dataset's-missing-data)
 
@@ -34,37 +33,39 @@ When you're aware of so many data gaps, it's hard to accept the results. The sta
 ### Types of missing data types
 Several classification or prediction models depends on the pattern of the data lacking from the dataset.
 
-#### Missing completely at random
+#### 1. Missing completely at random
+It doesn't matter if there are observed or unobserved data when using MCAR. The participants with incomplete data and those with complete data did not show any systematic differences. If data are MCAR, the remaining data can be viewed as a simple random sample of the entire dataset of interest. According to most, MCAR is an overly optimistic and frequently unfounded assumption.
+
 This occurs when the chance of missing data is unrelated to the prediction value or the observed response to a query.
 
 In simple words, missing data that are not correlated with the target variable can be ignored.
 
-**Solution:** Deleting rows or columns.
+__Solution:__ Deleting rows or columns.
 
-#### Missing at Random
+#### 1. Missing at Random
+In the case of MAR data, the observed data are systematically linked to the missing data. A complete case analysis of a data set containing MAR data may or may not result in a bias, depending on whether all relevant data and no fields are missing. As long as you take into account the known factors , you can get an objective analysis of the case.
+
 Rather than taking into account of a single missing value, a cluster of observed responses has a greater impact on the likelihood that an experimenter will receive as a missing response.
 
-**Solution:** Imputation of data.
+__Solution:__ Imputation of data.
 
 We impute the missing data, when we find that missing data has high correlation to the target variable that might result in better model results.
 
-#### Missing not at Random
+#### 3. Missing not at Random
+Whenever data are MNAR, the missingness is systematically linked to the unobserved data, meaning that the missingness is linked to events or factors that the researcher is unable to measure. If a complete case analysis of a data set containing MNAR data is biased, the fact that sources of missing data are unmeasured means that this issue cannot be addressed in analysis and the estimate of effect will likely be biased.
+
 Missing not at random is the only piece of information that is lacking, other than the previously listed categories.
 
 Managing the MNAR data sets is a major annoyance. Modeling the missing data is the only way to get a good approximation of the parameters in this scenario.
 
-**Solution:** Improve dataset find data.
+__Solution:__ Improve dataset find data.
 
-### Classifications of missing values  
-Missing values can be classified into the following categories:
-1. Numerical dataset with a continuous variable or attribute
-2. Qualitative or feature variables are also included in the list of quantitative and objective variables.
 ### Types of Imputed Information
 A variety of sizes and shapes are offered in the form of imputations. To build an accurate model of our application, we must first fill in any data gaps that exist in our dataset. This is one of the techniques for doing so.
-- The term univariate or mean imputation is used when only the target variable is imputed.
-- Linear regression can be used to predict missing values based on other variables, or multivariate imputation can be used to predict missing values based on a single variable.
-- All missing values in the dataset can be imputed once to create an imputed set of values.
-- Several imputations are needed if the same missing values are imputed in different places in the same dataset more than once. This simply requires repeating a single imputation to produce a large number of imputed datasets from a single source dataset.
+- __Single imputation:__ Only add missing values to the dataset once to create an imputed dataset.
+- __Univariate imputation:__ Is the case in which only the target variable is used to generate the imputed values.
+- __Numerous imputations:__ Duplicate missing value imputation across multiple rows of data. To get multiple imputed datasets, you must basically repeat a single imputation process.
+- __Multivariate imputation:__ Impute values based on other variables, such as estimating missing values using linear regression. 
 ### How to fix our dataset's missing data
 There are a variety of approaches to dealing with missing data; we will look at some of them, but first, we will start from the beginning with things like importing libraries.
 ```Python
@@ -83,7 +84,7 @@ Output:
 3   20.0    1   20.0    AND
 4   15.1    0   25.0    No
 ```
-> You can find the csv file [here](https://colab.research.google.com/drive/1O7O4oo2k5FIFFTcE-bU8kBGxeumyv1v2?usp=sharing)
+> You can find the csv file [here for the dataset](https://colab.research.google.com/drive/1O7O4oo2k5FIFFTcE-bU8kBGxeumyv1v2?usp=sharing)
 
 Looking at the dataset's dimensions as a measure of its size:
 ```Python
@@ -101,9 +102,9 @@ AgeNumber    1
 PhD          0
 dtype: int64
 ```
-Don't worry about the info that isn't there. It's up to the algorithm to decide how it interprets the information you give it. Missing data affects algorithms in different ways. The optimal imputation values for missing data can be obtained by training loss reduction algorithms.
+Don't worry about missing information. The algorithm decides how to interpret the data you provide and also are affected by missing data. Training loss reduction algorithms yields optimal imputation values for missing data.
 
-Using linear regression as an example, an error can be made. As soon as we know what went wrong with the model, we have to figure out how to deal with the lack of data until we get a clearer grasp of what went wrong in the first place. If the reaction is positive, we'll proceed. If it is negative, we'll stop.
+An error can be made in linear regression. We need to deal with the lack of data until we figure out what went wrong with the model. If it's positive, we'll go ahead. If not, we'll stop.
 ```Python
 dataset["AgeNumber"][:10]
 ```
@@ -120,9 +121,9 @@ dataset.dropna(inplace=True)
 print(dataset.isnull().sum())
 ```
 #### Imputation based on the mean
-After calculating the non-missing values in a column, each missing value can be restored individually and independently. This approach is severely limited if you want to use it with anything other than numbers. If you only have a small amount of data, it's a quick and straightforward way to analyze it The lack of feature correlations is one of the flaws, but there are others as well. One column at a time can be used with this technique, and that's it. The model is likely to employ a skewed mean value to make up for the loss of the outlier treatment.
+Each missing value can be restored after calculating the non-missing values in a column. Using this method with anything other than numbers is severely restricted. It's a simple way to analyze small amounts of data. One flaw is the lack of feature correlations, but there are others. This technique only works with one column at a time. An outlier treatment will likely be replaced by a skewed mean value.
 
-Imputation based on the mean has some drawbacks; the fact that the technique only works with numerical datasets and fails when independent variables are correlated. Also, It is not possible to preserve the relationships between variables when using the mean. True, the observed data mean is preserved when the mean is inserted. When data are missing completely at random, it is still possible to get a fair and accurate estimate of the mean.
+The technique only works with numerical datasets and fails when independent variables are correlated. Using the mean also destroys the relationships between variables. True, the inserted mean preserves the observed data mean. Even when data are missing at random, a fair and accurate mean estimate can be obtained.
 ```Python
 dataset["AgeNumber"] = dataset["AgeNumber"].replace(num.NaN, dataset["AgeNumber"].mean())
 print(dataset["AgeNumber"][:10])
@@ -137,13 +138,13 @@ Output:
 Name: AgeNumber, dtype: float64
 ```
 #### Using the Median to Compute
-The median values of the population can be used to deal with outliers in the prior procedure. An outlier is an object or data item that is significantly different from the rest of the dataset. When sorting, a column's center value is updated rather than an outlier. No correlation between the independent variables was found, and it only works with numerical datasets. An independent variable is what you change precisely. 
+Using median values is another method of imputation that addresses the previous method's outlier issue. An outlier is an object or data item that is significantly different from the rest of the dataset. When sorting, a column's center value is updated rather than an outlier. No correlation between the independent variables was found, and it only works with numerical datasets. An independent variable is what you change precisely. 
 ```Python
 dataset["AgeNumber"] = dataset["AgeNumber"].replace(num.NaN, dataset["AgeNumber"].median())
 print(dataset["AgeNumber"][:10])
 ```
-#### Imputation  based on the most common values
-It can be applied to categorical variables with a restricted number of values. Education level is a good example of an ordinal categorical attribute that falls into this category: Data bias can occur since feature relationships are not considered when utilizing this procedure. If the category values are not evenly distributed among the categories, the likelihood of biasing the data increases.
+#### Imputation based on the most common values (mode)
+It can be applied to categorical variables with a restricted number of values. `Education level` is a good example of an ordinal categorical attribute that falls into this category: Data bias can occur since feature relationships are not considered when utilizing this procedure. If the category values are not evenly distributed among the categories, the likelihood of biasing the data increases.
 
 It is compatible with all data formats, and the value of covariance between independent features cannot be predicted.
 
@@ -153,7 +154,7 @@ dataset["AgeNumber"] = dataset["AgeNumber"].replace(num.NaN, statistics.mode(dat
 print(dataset["AgeNumber"][:10])
 ```
 #### Interpolation – Linear
-Connecting dots sequentially along a straight line is a technique for coming up with a number. Alternatively, it works by using the previous values to calculate the unknown one. Because Linear Interpolation is the default approach, it was not required to employ it. It is almost always used in a time-series dataset.
+It is a where a straight line is used to join dots in increasing order to approximate a missing value. For the most part, the unknown value is calculated in the same ascending order as the previous values. We didn't have to specify Linear Interpolation because it is the default method. Almost always, it will be used in a time-series dataset.
 ```Python
 dataset["AgeNumber"] = dataset["AgeNumber"].interpolate(method='linear', limit_direction='forward', axis=0)
 dataset.isnull().sum()
