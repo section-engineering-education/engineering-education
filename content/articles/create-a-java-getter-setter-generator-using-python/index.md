@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /create-a-java-getter-setter-generator-using-python/
 title: Create a Java getter-setter generator using Python
-description: In this article, we will learn what getters and setters are in the python programming language. We will look at how to get getters and setters behavior using the property() function, @Property decorators, and normal functions.
+description: In this article, we will learn what getters and setters are in the Python programming language. We will look at how to get getters and setters behavior using the property() function, @Property decorators, and normal functions.
 author: Dennis-Kariuki
-date: 2021-12-01T00:00:00-05:35
+date: 2021-12-04T00:00:00-05:35
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -242,7 +242,7 @@ public void setY(String y) {
 ```
 
 We can break down the program as shown below: 
-- `def print_getter_setter(variables, datatypes):` is a function that prints getter and setter methods for variables according to Java. 
+- `def print_getter_setter(variables, datatypes):` - is a function that prints getter and setter methods for variables according to Java. 
 - `getter = []` and `setter = []` - are used to store the set and get variables respectively. 
 - After storing the variables, we prepend `get` and `set` in every variable and turn the initial character to uppercase.
 - `print("public " + datatypes[i] + " " + getters[i] + "() {\n\treturn " + variables[i] + ";\n}\n")` - prints out the getter method.
