@@ -24,7 +24,7 @@ A constructor is a piece of code that is similar to a procedure or a method, usu
 
 ### How to use constructors to create an object
 
-As a function, the primary constructor is defined with the same name as the class, followed by parenthesis. However, the secondary constructor must be expressed with the `constructor` keyword.
+As a function, the primary constructor is defined with the same name as the class, followed by parentheses. However, the secondary constructor must be expressed with the `constructor` keyword.
 
 ### Types of Constructors in Kotlin
 
