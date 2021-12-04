@@ -16,9 +16,7 @@ In this article, we'll go through XSS attacks in detail, their impact, and how t
 
 ### How XSS works
 
-Cross-site scripting is accomplished by tricking a vulnerable web application into returning malicious Javascript to users. When malicious code is executed inside a victim's browser, the attacker has complete control over how they interact with the app.
-
-Cross-site scripting operates by changing the source code/storage system of a susceptible website such that malicious JavaScript is returned to users. When malicious code is executed inside a victim's browser, the attacker can completely compromise the victim's interaction with the application by collecting:
+ Cross-site scripting is accomplished by fooling susceptible web applications into returning malicious Javascript to users. The attacker gets complete control over how the victim interacts with the app when malicious code is executed inside the victim's browser by collecting:
 
 - session cookies 
 - user credentials 
@@ -62,9 +60,9 @@ We notice that as soon as we hit the go button after entering our XSS payload, w
 
 #### Reflected XSS
 
-This is a one-time XSS. The malicious script is part of the victim's online application request, which is frequently reflected in the application's response.
+This is a one-time XSS. The malicious script is part of the victim's online application request, which is being reflected in the application's response.
 
-Reflected XSS is most commonly employed in targeted attacks, where the hacker sends a phishing email with the malicious script and the URL. The attacker could even post a link on a public website and deceive the user into clicking it.
+Reflected XSS is commonly used in targeted attacks, where the hacker crafts and sends a phishing email with the malicious script and the URL. The attacker could even post a link on a public website and deceive the user into clicking it.
 #### Stored XSS
 
 Also known as `Persistent XSS`, the payload is saved on the server and can be triggered by a victim without requiring any user interaction outside of the application. This type of XSS happens when the server saves your supplied input somewhere into the server (i.e. a database or cache server).
@@ -98,7 +96,6 @@ As we can see, we got an alert box. This occurred because the payload was saved 
 
 The victim's browser is directly affected by DOM XSS, which is a local attack. The 'Document Object Model(DOM)', which is the browser's API for manipulating and presenting web pages, is used in this attack rather than malicious content being delivered to the server.
 
-To carry out a scripting attack, DOM XSS uses this lawful client-side code. The most crucial aspect of DOM XSS is that the legitimate script adds HTML content to the web page shown in the user's browser using a user-supplied input.
 
 ### The Impact of XSS
 
@@ -109,7 +106,7 @@ Through XSS, the attacker can do the following:
 - impersonate a user 
 - carry out user actions
 
-### How to prevent XSS attacks
+### How to mitigate XSS attacks
 
 You may prevent XSS attacks through:
 
