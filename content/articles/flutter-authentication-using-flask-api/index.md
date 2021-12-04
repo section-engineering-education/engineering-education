@@ -1,42 +1,34 @@
 ### Introduction
 
-software or applications mostly hold data that is not supposed to be accessible to everyone.
-This has made Authentication a core aspect of software or application development.
+Software or applications mostly hold data that is not supposed to be accessible to everyone. This has made authentication a core aspect of software or application development.
 
-#### Flutter
-Flutter is a UI toolkit created by google, it is used to build cross-platform mobile applications for Android and IOS, and desktop applications for Windows, Mac, and Linux. UIs built with Flutter always depend on backend technologies for functionalities like authentication, one of these backend technologies is Flask.
-Flask is a python web framework for building web applications.
+#### Understanding the Flutter framework
+Flutter is a UI toolkit created by google. It is used to build cross-platform mobile applications for Android and IOS and desktop applications for Windows, Mac, and Linux. 
+
+UIs built with Flutter always depend on the backend technology stack for core functionalities like authentication and access control. One of these backend technologies is the Flask framework. Flask is a python web framework for building web applications.
 
 #### Authentication
 Authentication is the process of proving if a user trying to access a system has permission to do so. 
 
 ### Prerequisite
-In this guide flutter version, 2.5 is used to build the flutter project, android studio is the IDE used to write the code but visual studio code can be used. For the python API endpoint Flask was used to build it. To code along the tools mentioned previously are recommended. This article assumes the reader has a background knowledge of flutter and python flask.
+In this guide flutter version, 2.5 is used to build the flutter project, and the android studio is the IDE used to write the code, but visual studio code can be used. To code along, the tools mentioned previously are recommended. This article assumes the reader has a background knowledge of flutter and python flask.
 
 ### Goals
-This guide is written to help understand how flutter apps interact with the backend, it will give an understanding of how authentication works using flask as the backend technology. At the
-end of the guide, an app is going to be built which will work as shown below.
+This guide is written to help understand how Flutter apps interact with the backend; it will understand how authentication works using flask as the backend technology. An app will be built at the end of the guide, which will work as shown below.
 ![demo](/engineering-education/flutter-authentication-using-flask-api/demo.gif)
 
 ### Understanding apps
-Web Applications are mostly built in two parts, there is the *frontend* and the *backend*.
-The two parts are very delicate in that they are mostly built differently, and sometimes by different developers. 
-#### Frontend 
-The frontend part of an app is also known as the client-side of the app. The frontend
- focus on how the application looks, frontend developers make sure the apps look good 
- and is responsive(i.e it looks good on all screens). 
- 
- #### Backend
- The backend part of an app focuses on 
- how the application works, the backend of an app is also known as the 
- the server-side of the app, backend developers make sure data received from 
- users are properly stored and are easily
-rendered to users with speed and efficiency.
+Web Applications are primarily built in two parts. There is the *frontend* and the *backend*. The two parts are very delicate in that they are mostly built differently and sometimes by different developers. \
 
-#### APIs (Applicaion Programming interface)
-An API is like a middle man between the backend and frontend, 
-it connects computers or computer programs using endpoints. An endpoint is simply a means of communication between two or more systems where a request is sent from the frontend to a 
-web application or a web server.The transfer of data from the client side of an application and server side is made possible by an API. Data can also be transferred from one backend server to another backend server using APIs. Below is the code snippet of a basic login and register endpoint built for authentication using Python's Flask.
+The frontend part of an app is also known as the client-side of the app. It
+ focuses on how the application looks, and frontend developers make sure the apps look good and are responsive(i.e., it looks good on all sizes of screens). 
+ 
+ The backend part of an app focuses on how the application works. The backend of an app is also known as the server-side of the app. Backend developers make sure data received from users are properly stored and are quickly rendered to users with speed and efficiency.
+
+#### Applicaion Programming Interface(APIs )
+An API is like a middle man between the backend and frontend. It connects computers or computer programs using endpoints. An endpoint means communication between two or more systems where a request is sent from the frontend to a web application or a web server.
+
+The transfer of data from the client-side of an application and server-side is made possible by an API. Data can also be transferred from one backend server to another backend server using APIs. For example, below is the code snippet of a primary login and register endpoint built for authentication using Python's Flask.
 
 ```python
 from flask import Blueprint, request, json, jsonify
@@ -87,7 +79,9 @@ def login():
 ```
 The code snippet for the register endpoint above accepts data from a form and filters through data already existing in the database to make sure there is no inconsistency in data. The result of the filter is then determining the outcome.
 
-The code snippet for the login endpoint filters the data to make sure the user is registered if registered the user is given access to information in the system if not the user gets a message telling that the credentials are wrong. 
+The code snippet for the register-endpoint above accepts data from a form and filters through data already existing in the database to ensure there is no data inconsistency. The result of the filter is then determining the outcome.
+
+The code snippet for the login endpoint filters the data to make sure the user is registered if registered. Then, the user is given access to information in the system. If not, the user gets a message telling that the credentials are wrong. 
 
 The endpoint above can be accessed using the link below. 
 
@@ -101,12 +95,12 @@ https://flaskflutterlogin.herokuapp.com/login
 ```
 ### Flutter App Design
 #### Installation
-To build a flutter app, flutter had to be installed on the computer. Click [here and follow each step to download](https://flutter.dev/docs/get-started/install) if you don't know how to. Then a new flutter project was created from the terminal using the command shown below.
+To build a flutter app, flutter had to be installed on the computer. Click [here and follow each step to download](https://flutter.dev/docs/get-started/install) if you do not know how to. Then a new flutter project was created from the terminal using the command shown below.
 
 ```terminal
-flutter create nameOfApp
+flutter create name-of-app
 ```
-After installation, the `main.dart` file located inside the lib folder which is found inside the project directory was cleared and replaced with the code snippet below.
+After installation, the `main.dart` file located inside the lib folder, which is found inside the project directory, was cleared and replaced with the code snippet below.
 
 ```dart
 import 'package:flutter/material.dart';
