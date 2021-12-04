@@ -159,9 +159,9 @@ You can also access the results of the code above on [GitHub.](https://github.co
 
 ### Model training
 
-Since the COCO dataset is automatically downloaded from [YOLOv5 latest releases](https://github.com/ultralytics/yolov5/releases), we will proceed to train our model.
+We will proceed to train our model on [COCO128](https://www.kaggle.com/ultralytics/coco128) which is automatically downloaded with YOLOv5 from [YOLOv5 latest releases](https://github.com/ultralytics/yolov5/releases).
 
-We will use YOLOv5 pretrained weights (`--weights yolov5s.pt`)   when training our model as shown below:
+We will use YOLOv5 pretrained weights (`--weights yolov5s.pt`)  when training our custom model cocas shown below:
 
 ```bash
 python train.py --img 640 --batch 16 --epochs 3 --data coco128.yaml --weights yolov5s.pt --cache
