@@ -1,0 +1,233 @@
+### Intoduction
+In Python's Natural Language Tool Kit (NLTK), you'll find the WordNet English dictionary. Natural Language Processing (NLP) is made simple with the help of this complete set of tools. As a part of this tutorial, we'll cover some of the program's most basic functions. To get started with WordNet, you first need to import the data.
+```python
+from nltk.corpus import wordnet as wn 
+```
+### Table of contents
+- [Synonyms and Synsets](#synonyms-and-synsets)
+- [Hypernyms and Hyponyms](#hypernyms-and-hyponyms)
+- [Meronyms and Holonyms ](#meronyms-and-holonyms)
+- [Entailments](#entailments)
+- [Conclusion](#conclusion)
+### Synonyms and Synsets
+All of the concepts in a synset have the same meaning since they are all synonyms in WordNet, which preserves synonyms in their natural form. A synset is a group of synonyms that are related to one another in the context of linguistics. The definition of a synset can be found in the synset's own language. According to what we'll see in the next section, the synset relationships are maintained.
+
+In the NLTK, the Synset interface can be used to search the WordNet database for a certain term. It's a list of words that convey the same meaning as each other. Words each have their own unique number of Synsets linked to them. A Synset can be created from a group of WordNet words that are conceptually related (short for Synonym-set). Each Synset is assigned a numerical value in addition to the names and pieces of speech it represents. A Synset is made up of these words.
+#### 1. Getting Synsets.
+Synsets relating to the word you gave in as an argument to wordnet.synsets("word") can be retrieved using this method.
+```python
+import nltk
+from nltk.corpus import wordnet as wn 
+wn.synsets('book')
+```
+OUTPUT
+```bash
+[Synset('book.n.01'),Synset('book.n.02'),Synset('record.n.05'),Synset('script.n.01'),Synset('ledger.n.01'),Synset('book.n.06'),Synset('book.n.07'),Synset('koran.n.01'),Synset('bible.n.01'),Synset('book.n.10'),Synset('book.n.11'),Synset('book.v.01'),Synset('reserve.v.04'),Synset('book.v.03'),Synset('book.v.04')]
+```
+The function also allows you to restrict the part of speech of the word by providing an optional position argument.
+
+Example for verbs
+```python
+import nltk
+from nltk.corpus import wordnet as wn
+wn.synsets('book', pos=wn.VERB)
+```
+OUTPUT
+```bash
+[Synset('book.v.01'),
+ Synset('reserve.v.04'),
+ Synset('book.v.03'),
+ Synset('book.v.04')]
+```
+Example for nouns
+```python
+import nltk
+from nltk.corpus import wordnet as wn
+wn.synsets('book', pos=wn.NOUN)
+```
+OUTPUT
+```bash
+[Synset('book.n.01'),Synset('book.n.02'),Synset('record.n.05'),Synset('script.n.01'),Synset('ledger.n.01'),Synset('book.n.06'),Synset('book.n.07'),Synset('koran.n.01'),Synset('bible.n.01'),Synset('book.n.10'),Synset('book.n.11')]
+```
+#### 2.  Getting the definition of a Synset.
+To do this, you can utilize the definition() function, which can be used to further analyze the Synset for a definition that is common to all of its Lemmas. This method returns a string that conforms to the most basic specification. There are two ways of achieving this:
+
+Example one
+
+In order to get at one of the items in the array provided by synsets('word'), we can do the following:
+```python
+import nltk
+from nltk.corpus import wordnet as wn
+synset_array = wn.synsets('book')
+synset_array[1].definition()
+```
+OUTPUT
+```bash
+'physical objects consisting of a number of pages bound together'
+```
+Example two
+```python
+import nltk
+from nltk.corpus import wordnet as wn
+synset_array = wn.synsets('book')
+synset_array[3].definition()
+```
+OUTPUT
+```bash
+'a written version of a play or other dramatic composition; used in preparing for a performance'
+```
+Names, a part of speech, and how many times a Synset has been defined can be obtained using Synset() 
+
+Example one
+```python
+import nltk
+from nltk.corpus import wordnet as wn
+wordnet.synset('book.n.02').definition()
+```
+OUTPUT
+```bash
+'physical objects consisting of a number of pages bound together'
+```
+Example two
+```python
+import nltk
+from nltk.corpus import wordnet as wn
+wordnet.synset('script.n.01').definition()
+```
+OUTPUT
+```bash
+'physical objects consisting of a number of pages bound together'
+```
+#### 3. How to get Lemmas of a Synset.
+Lemma names(), on the other hand, can be used in two different ways to get an array of all the Lemma names:
+
+First way
+```python
+import nltk
+from nltk.corpus import wordnet as wn
+wn.synsets('book')
+synset_array = wn.synsets('book')
+print(synset_array[3].lemma_names())
+```
+OUTPUT
+```bash
+['script', 'book', 'playscript']
+```
+Second way
+```python
+import nltk
+from nltk.corpus import wordnet as wn
+wn.synsets('book')
+print(wn.synset('book.n.07').lemma_names())
+```
+OUTPUT
+```bash
+['book', 'rule_book']
+```
+### Hypernyms and Hyponyms.
+A Hyponym is a type of Synset that has been modified for a specific purpose, as opposed to a generic Synset. It can be thought of as a child (or derived) class in the context of inheritance. A synonym is a function that returns an array containing all of the Synsets that are Hyponyms of the Synset that was passed in as an argument to the function (). Hypernyms exist in a number of shapes and sizes, but the Synset is by far the most popular. The terms Hyponym and Hypernym are diametrically opposed. The hypernyms of a Synset are returned as an array of values ().
+
+For example, the words 'banana' and 'mango' are hyponyms for the word 'fruit'. In this case, they are more specific concepts of the word 'fruit'. Furthermore, the term "fruit" is a hypernym for the words "banana" and "mango" because it refers to the general idea of fruits.
+
+EXAMPLE
+```python
+import nltk
+from nltk.corpus import wordnet as wn
+wn.synsets('eclipse')
+```
+OUTPUT
+```bash
+[Synset('eclipse.n.01'), Synset('overshadow.v.01'), Synset('eclipse.v.02')]
+```
+To get Hyponym 
+```python
+import nltk
+from nltk.corpus import wordnet as wn
+print(wn.synset('eclipse.n.01').hyponyms())
+```
+OUTPUT
+```bash
+[Synset('lunar_eclipse.n.01'), Synset('partial_eclipse.n.01'), Synset('solar_eclipse.n.01'), Synset('total_eclipse.n.01')]
+```
+To get Hypernym
+```python
+import nltk
+from nltk.corpus import wordnet as wn
+print(wn.synset('partial_eclipse.n.01').hypernyms())
+```
+OUTPUT
+```bash
+[Synset('eclipse.n.01')]
+```
+### Meronyms and Holonyms
+By using Meronyms and Holonyms, we can create a part-to-whole connection. Meronym and holonym are both used to express a portion of a bigger whole. Meronym and holonym both refer to the same thing, but in different ways. The half is represented by the meronym, whereas the whole is represented by the holonym.
+
+For example, the word 'bedroom' is a meronym for the word home. This is due to the fact that the bedroom is considered a component of the house. The words nose, eyes, and mouth are all meronyms for the word face.
+
+Examples
+```python
+import nltk
+from nltk.corpus import wordnet as wn
+wn.synsets('face') 
+ ```
+ OUTPUT
+```bash
+[Synset('face.n.01'),Synset('expression.n.01'),Synset('face.n.03'), Synset('face.n.04'), Synset('face.n.05'),Synset('side.n.04'),Synset('face.n.07'),Synset('face.n.08'),Synset('grimace.n.01'),Synset('font.n.01'),Synset('face.n.11'),Synset('boldness.n.02'),Synset('face.n.13'), Synset('confront.v.02'),Synset('confront.v.01'),Synset('front.v.01'),Synset('face.v.04'),Synset('face.v.05'),Synset('confront.v.03'),Synset('face.v.07'),Synset('face.v.08'),Synset('face.v.09')]
+ ```
+Example for Holonym
+```python
+import nltk
+from nltk.corpus import wordnet as wn
+wn.synset('face.n.01').part_holonyms() 
+```
+OUTPUT
+```bash
+[Synset('head.n.01'), Synset('homo.n.02')]
+```
+Example for Meronym
+```python
+import nltk
+from nltk.corpus import wordnet as wn
+wn.synset('face.n.01').part_meronyms()  
+ ```
+ OUTPUT
+ ```bash
+[Synset('beard.n.01'),Synset('brow.n.01'),Synset('cheek.n.01'),Synset('chin.n.01'),Synset('eye.n.01'),Synset('eyebrow.n.01'),Synset('facial.n.01'),Synset('facial_muscle.n.01'),Synset('facial_vein.n.01'),Synset('feature.n.02'),Synset('jaw.n.02'),Synset('jowl.n.02'),Synset('mouth.n.02'),Synset('nose.n.01')]
+```
+### Entailments
+An entailment is similar to an insinuation. Which is a conclusion that can only be derived from something even though it is not specifically expressed.
+
+For example
+```python
+import nltk
+from nltk.corpus import wordnet as wn
+wn.synsets('eat')
+```
+OUTPUT
+```bash
+[Synset('eat.v.01'),
+ Synset('eat.v.02'),
+ Synset('feed.v.06'),
+ Synset('eat.v.04'),
+ Synset('consume.v.05'),
+ Synset('corrode.v.01')]
+ ```
+```python
+import nltk
+from nltk.corpus import wordnet as wn
+wn.synset('eat.v.01').entailments()
+```
+OUTPUT
+```bash
+[Synset('chew.v.01'), Synset('swallow.v.01')]
+```
+
+### Conclusion
+In this article, we have looked at how you can get started with nltk wordnet in python. To summarize:
+
+1. We have learned how to get Synsets, the definition of a Synset, and all Lemmas of a Synset.
+2. How to get Hypernyms and Hyponyms.
+3. We have also learned about Meronyms, Holonyms, and Entailments. 
+
+
+
