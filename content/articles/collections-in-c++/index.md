@@ -2,10 +2,10 @@
 In c++, the collection is widely covered where it defines the framework under which data can be stored and manipulated. They can also be called containers.
 This article introduces you to these containers discussing them in detail and giving various examples of how data can be manipulated during runtime.
 
-Moreover, the article gives a clear explanation of the collection interface hierarchy as well as shows you sub-interfaces (classes) in it. Sub-interfaces like list, set, queue, etc will be explained further and show the relationship where it appears. Furthermore, we will see how to implement these sub-interfaces since w cannot implement collection itself. 
+Moreover, the article gives a clear explanation of the collection interface hierarchy as well as shows you sub-interfaces (classes) in it. Sub-interfaces like list, set, queue, etc will be explained further and show the relationship where it appears. Furthermore, we will see how to implement these sub-interfaces since we cannot implement collection itself. 
 
 ### Prerequisites
-For better understanding ,
+For better understanding,
 - A have basics of  c & c++ programming
 
 ### Table of content
@@ -25,7 +25,7 @@ In the list, we have  sub-classes  such as
 #### 2.**Queue**
 It consists of the following;
 - LinkedList
-- priorityque
+- priorityqueue
 #### 3.Qequeue
 Comprises of :
 - Arraydequeue
@@ -34,6 +34,7 @@ Comprises of :
 #### 4. **Set**
 - HashSet
 
+ 
 ### Relation of collection sub interface
 
 #### 1. List 
@@ -55,9 +56,10 @@ Since the list is doubly linked (data can be accessed bi-directionally and seque
  #include<list>
  int main() {
 
-     std::list<int>
+     std::list<int>//we are creating list 'my_list'having values in it
      my_list={10,33,56,3};
      for(int y:my_list)
+     //we give output of what is in the list
    { 
         std::cout <<y<<'\n';
    }
@@ -68,187 +70,217 @@ Since the list is doubly linked (data can be accessed bi-directionally and seque
 The following are some of the reasons why we use std::list
 - It provides better performance when doing things like inserting, moving, and extracting data from any position.
 - Its algorithms perform operations intensively.
-- When compared to other sequence containers like as array and vector, it performs significantly better.
+- It has better compared to other sequence containers like array and vector.
 
 #### **ArrayList**
 - They are containers that store different types of data.
 - Data stored in it is flexible and can be changed anytime.
 
-**Below is an example of  arraylist for insertion**
+**Below we are going to see an example of Arraylist when doing insertion**
 ```c++
 #include <list>
 using namespace std;
-int main() {
-// we are creating the list 'nlist' having integer values in it
-list<int>nlist = { 50, 56, 57, 60, 64 };
-// then we pushing the elements at the starting and  that in last
-nlist.push_back(60);
-nlist.push_front(0);
+int   main() {
+// we are creating the list 'ylist' having integer values in it
+list<int>ylist={ 50, 56, 57, 60, 64 };
+// then we are trying push the elements at the starting end and  that in last
+ylist.push_back(64);
+ylist.push_front(0);
 // there after we printing of the list elements after pushing
 list <int> :: iterator it;
-cout<< "After insertion the elements will b as follows : " <<endl;
-for(it = nlist.begin(); it != nlist.end(); it++)cout<< *it <<'\n';
+cout<< "After insertion the elements will be as follows : " <<endl;
+for
+      (it = ylist.begin();it != ylist.end();it++)cout<< *it  <<'\n';
 
 ```
 #### LinkedList
-Here data is stored successively like in arrays.
- A linked list is a collection that has nodes that contain data parts and a pointer that contains a memory location of the next element in the list.
+Here data is stored successively like in arrays. A linked list is a container whereby, we have nodes in which data is contained in them and the nodes also have a pointer that points to the next memory locations.
 Although data is stored sequentially the memory location does not share a border(not contiguous).
 
 **Below code shows how  we can create a node(structure) in linked list**
 ```c++
-#include <iostream>
-using namespace std;
-//now we are creating the node
-struct node
+#include <iostream> using namespace std;
+//now we want to create the node
+   my node
 {
-    int data;node *next;};
+    int data;node *next;};//not that,in c++ spaces can't affect the code 
 ```
 
-After now creating a node, we will create a class called "linked_list" which will now contain functions and member data required for the linked list. Therefore, we have to know that the begining node means a lot in list since access to it, means access to the entire list. So, in our example, let us call it 'head' and the last node 'tail'.
+The above program has taught has how to create a node,  below now we are going to see how we can create a class of our choice that will contain now member data and functions required for the list. We should also know that the first node in the list is of much importance because when we access the first node of the list it means that, the access is to the entire list. So, in our example below, have decided to call my first node 'entry ' and the last node 'exit'.
 ```c++
-#include <iostream>
-using namespace std;
+#include <iostream> using namespace std;
 //now we are creating the node
-struct node
+ my node
 {
-    int data;node *next;};
+int data;node *next;};
+//the class is now being created
+class linked_list {
+private: node *entry,*exit;public: linked_list()
+{//below we are saying null since no data entered
+entry = NULL;exit= NULL;
+}
+};
+int main()
+{
+linked_list t;
+return 0;
+}
+In the above example, we have seen that constructor of the linked list has made the nodes to be empty. That is why both entry and exit nodes are null since there is no element was added to the list. Therefore, below we will see how to create a function that will enable us to add elements to the node in our linked list.
+```C++
+
+#include <iostream> using namespace std;
+//now we are creating the node
+  my node
+{
+int data;node *next;};
+//the class is now being created
 class linked_list
 {
-private: node *Head,*Tail;
-public: linked_list()
+private: node *entry,*exit;public: linked_list()
+{
+entry = NULL;exit= NULL;
+}
+};
+void add_node(int j)
     {
-        Head = NULL;Tail = NULL;
+        node *tempPtr = new node;
+        tmp->data = j;
+        tmp->next = NULL;
+
+        if(entry == NULL)
+        {
+            entry= tmp;exit= tmp;
+        }
+        else
+        {
+            exit->next = tmp;
+            exit = exit->next;
+        }
     }
 };
 
 int main()
-
 {
-linked_list a;
+    linked_list t;
+    t.add_node(2);
+    t.add_node(4);
     return 0;
 }
-``` 
-The above example constructor of the linked list has made both head and tail null since no element was added to the list.As a result, we'll write a function to add a node to our linked list below.
-```C++
-
-#include <iostream>
-using namespace std;
-//now we are creating the node
-struct node
-{
-    int data;node *next;};
-
-class linked_list
-{
-private: node *Head,*Tail;
-public: linked_list()
-    {
-        Head = NULL;Tail = NULL;
-    }
-}
-
-   void add node(int x) (int x)
-{\s node *
-tmp = new node;\s tmp->data = x;\s tmp->next = NULL;
-
-if(head == NULL)\s {\s head = tmp;\s tail = tmp;\s }\s else\s {\s tail->next = tmp;\s tail = tail->next;\s }\s }\s};
-
-int main()\s{\s linked list a;\s a.add node(1);\s a.add node(2);\s return 0;\s}
 ```
-Node 'tmp=new node' here we are allocating a space required for the node by the 'new' operator so,'tmp' points to a node. 
-tmp->data=x -we are giving the value 'data' of tmp as passed to function.
+Node 'tmp=new node' here we are doing allocation of a space required for the node by the 'new' operator so, 'tmp' is used as a pointer which points to a node. 
+tmp->data=j we are giving the value 'data' of tmp as passed to function.
 ### 2. Queue
-The queue is a kind of data structure where it uses First in First Out(FIFO).
-Here data can be inserted and deleted from the queue. Therefore the end at which the data is inserted is called **rear** and the end to which data is deleted is called **front** end.
-In the queue, LinkedList can be used to store data. This becomes possible since in linked list data is stored successively. Therefore, this is where the queue and LinkedList come to interact.
+This is a kind of data structure where we use First in First Out(FIFO).
+Here data can be inserted and deleted from the queue. Therefore, the end at which the data is inserted is called **rear** and the end to which data is deleted is called **front** end.
+In the queue, LinkedList containers can also be used to store data(information). This becomes possible since in linked list data is stored successively. Therefore, the queue is known to have a relationship with LinkedList.
 
-The following program shows how queue can be implemented in linked list.
+The following program shows the implementation.
 ```C++
-#include <iostream>
-using namespace std;
+
+#include <iostream> using namespace std;
 //now we are creating the node
-struct node
+ my node
 {
-    int data;node *next;};
-    //The list is null since no data that has been entered in the list.
-struct node* front = NULL;
-struct node* rear = NULL;
-struct node* temp;
-void Insert() {\s int val;\s cout<<"Insert the element in queue : "<<endl;\s cin>> val;\s
-//Giving conditions
-if (rear == NULL) {\s rear = (struct node *)malloc(sizeof(struct node));\s rear->next = NULL;\s rear->data = val;\s front = rear;\s } else {\s temp=(struct node *)malloc(sizeof(struct node));\s rear->next = temp;\s temp->data = val;\s temp->next = NULL;\s rear = temp;\s }\s}
-void Delete() {
-   temp = front;
-   if (front == NULL) {
-      cout<<"Underflow"<<endl;
-      return;
+int data;node *next;};
+my node* front = NULL; my node* rear = NULL;
+my node* temp;
+void Insert() {int var;
+   //we are inserting elements in the queue
+   cout<<"Enter element of your choice in the queue: "<<\n;
+   cin>>var;
+ //condition
+   if 
+        (rear == NULL) {rear=(my node *)malloc(sizeof(my node));
+      rear->next = NULL;rear->data = var;
+      front = rear;
+   } 
+
+   else 
+   {
+      temp=(my node *)malloc(sizeof(my node));
+      rear->next = temp;temp->data = var;
+      temp->next = NULL;
+      rear = temp;
    }
-   else
-   if (temp->next != NULL) {
-      temp = temp->next;
-      cout<<"deleted Element from queue is : "<<front->data<<endl;
-      free(front);
-      front = temp;
-   } else {
-      cout<<"Element deleted from queue is : "<<front->data<<endl;
-      free(front);
-      front = NULL;rear = NULL;
+} 
+void Delete() { temp = front;
+if (front == NULL) 
+   { cout<<"Too small"<<endl;
+      return 0;
+   }
+
+   else if   (temp->next != NULL) {temp = temp->next;
+      cout<<"Elements you have removed from the queue are: "<<front->data<<endl;
+      free(front);front = temp;
+   }
+   
+    else
+   
+     {
+         cout<<" here is element  you removed from the queue: "<<front->data<<endl;
+      free(front);front = NULL;
+      rear = NULL;
    }
 }
 void Display() {
    temp = front;
    if ((front == NULL) && (rear == NULL)) {
-      cout<<"Queue is empty"<<endl;
+      cout<<"my queue has nothing"<<endl;
       return;
    }
-   cout<<"Queue elements are: ";
-   while (temp != NULL) {
-      cout<<temp->data<<" ";
-      temp = temp->next;
+       cout<<"Queue elements are: ";
+   while 
+
+   (temp != NULL) {
+      cout<<temp->data<<" ";temp = temp->next;
    }
    cout<<endl;
 }
 int main() {
-   int ch;
-   cout<<"1) Insert element to queue"<<endl;
-   cout<<"2) Delete element from queue"<<endl;
-   cout<<"3) Display all the elements of queue"<<endl;
-   cout<<"4) Exit"<<endl;
+   int char;
+   cout<<"a) key in element to queue"<<endl;
+   cout<<"b) Delete element from queue"<<endl;
+   cout<<"c) Display all the elements of queue"<<endl;
+   cout<<"d) Exit"<<endl;
    do {
-      cout<<"Enter your choice : "<<endl;
-      cin>>ch;
-      switch (ch) {
-         case 1: Insert();
+      cout<<"Enter element of your choice : "<<endl;
+      cin>>char;
+      switch (char) {
+         case a: Insert();
          break;
-         case 2: Delete();
+         case b: Delete();
          break;
-         case 3: Display();
+         case c: Display();
          break;
-         case 4: cout<<"Exit"<<endl;
+         case d: cout<<"Escape"<<endl;
          break;
-         default: cout<<"Invalid choice"<<endl;
+         default: cout<<"Try another choice"<<endl;
       }
-   } while(ch!=4);
+   } while(char!=d);
    return 0;
 }
 ``` 
 **Output**
 
 ```bash
-1.Insert element to the queue
-2. Delete an element from the queue
-3. Output all the elements of the queue
-4. Exit
-Enter your choice: 1\sInsert the element in queue: 4
-Enter your choice: 1\sInsert the element in queue : 3
-Enter your choice: 1\sInsert the element in queue: 5\sEnter your choice: 2
-Element deleted from the queue is: 4
-Enter your choice : 3
-Queue elements are : 3 5\sEnter your choice: 7
-Invalid choice
-Enter your choice
-Exit
+1) Insert element to the queue
+2) Remove element from the queue
+3) Display all the elements of the queue
+4) Escape
+Now key in your choice: a
+Insert the element in queue: 40
+Now key in your choice: a
+Insert the element in queue: 30
+Now key in your choice: a
+Insert the element in queue: 50
+Now key in your choice:b
+Element deleted from the queue is: 40
+Now key in your choice: c
+Queue elements are: 30 50
+Enter your choice: f
+Try another choice
+Enter your choice: d
+Escape
 ```
 #### **Priorityqueue**
 
@@ -257,7 +289,7 @@ The following are methods used:
 - add(Ee) =   specific elements are inserted  in the priority queue.
 - clear()= it removes elements from the queue.
 
-**3. Dequeue**
+#### **3. Dequeue**
 
 This is also a kind of datastructure where  deletion and insertion can be done just like  in the queue.
  operations done in dequeue
@@ -276,10 +308,8 @@ This is also a kind of datastructure where  deletion and insertion can be done j
 Since the interfaces are the foundation of the collection, here we are going to see the implementation of some of the interfaces.
 
 #### **1.List**
-
 The following are some of the functions used in the listing.
-- **Back()**-the value which is in the last element of the list is returned.
-
+- **Back()**-Here we return the last element in the list.
 - **Push front(t)**-A new element "t" is added at starting point of the list.
 - **Push_back(t)**- A new element ‘t’  is added at the end of the list.
 - **Pop_front()** – It removes the first element ant the list size is reduced by 1.
