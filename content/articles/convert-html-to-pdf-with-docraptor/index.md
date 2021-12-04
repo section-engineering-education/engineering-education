@@ -1,8 +1,6 @@
 ### Introduction.
  It is easy for anyone to deliver PDFs because they are a standard document presentation format. Everything is given as a PDF now, including requests, receipts, and appropriation reports. However, the planned duration of PDF can be inconvenient if you need to create a large number of PDFs quickly.
- 
- DocRaptor is an HTML-to-PDF API that significantly enhances the process. It has a PHP framework for simple joining (PHP library for easy integration). This article will guide the reader on using DocRaptor to convert HTML into a PDF.
-
+DocRaptor is an HTML-to-PDF API that significantly enhances the process. It has a PHP framework for simple joining (PHP library for easy integration). This article will guide the reader on using DocRaptor to convert HTML into a PDF.
 ### Table of content
 - [Introduction.](#introduction)
 - [Table of content](#table-of-content)
@@ -14,13 +12,12 @@
 - [Conclusion](#conclusion)
 ### Installation
 To get started with Docraptor, we need to install it in our local machine. Installation can be done in two ways. The first way is using composer dependency manager, while the second way is by downloading a zip file of the library and extracting it in the specific project folder.
-
-- Downloading using composer
+  #### Downloading using composer
 A composer is a tool for dependency management in PHP. It allows you to declare the libraries your project depends on and it will manage them for you either by installing or updating them, download composer from this [link](https://getcomposer.org/download/), open your command prompt, and then execute the command below to install Docraptor.
 ```php
 composer require docraptor/docraptor
 ```
-- Installation using a zip file
+#### Installation using a zip file
 Navigate through this [link](https://github.com/taves-hub/convert-html-to-pdf-with-docraptor/blob/main/docraptor.rar) to download the zip file. Download the file, then extract it into your workspace. Create a new file and name it `docraptor.php`, and include `autoload.php` in it.
 ```php
 //docraptor.php
@@ -114,27 +111,22 @@ $doc = setDocumentContent("<!DOCTYPE html>
 </html>");    //supply content directly 
 ```
 Notice that at times, we may want to convert a document that only exists in the internet space as opposed to having it locally on our machines. Therefore, we need to provide the link to the document we plan to use for such an instance. This process can be done as follows:
-
 ```php
 $docraptor = newDocRaptor\DocApi();
 $doc = newDocRaptor\doc();
 $doc = setDocumentUrl("http: //DocRaptor.com/returns/sales.html");  //or use a url
 ```
 Whether you use HTML or URLs in your report, all of the resources you reference should be accessible via the internet for DocRaptor to work. So we need to have an internet connection for that to take place.
-
 ### API document options
 Given that DocRaptor may also convert documents into other files, for instance, HTML to Excel, we must ensure that we create the correct document. Hence set the document type as PDF.
-
 ```php
 $doc->setDocumentType("pdf");   //pdf or xls or xlsx  //helps you find the document later
 ```
 Additionally, we should create a test document because we are using a free API key. When the test is set to `true`, we need to note that the generated document will be watermarked, limited to 5 downloads expires after five days.
-
 ```php
 $doc->setTest(true);    //test document are free but watermarked
-
+```
 Another essential thing to note is that by default, JavaScript is off, but you need to enable it to enhance speed during the document creation process.
-
 ```php
 $doc->setJavaScript('true');    //enable javascript processing 
 ```
@@ -150,9 +142,7 @@ try{
     echo $error->getResponseBody() ."\n";
 }
 ```
-
 Add the following code snippet to your file to enable the file to be saved on the server.
-
 ```php
 //saving to server
 $fie = fopen("/tmp/DocRaptor-php.pdf" , "wb");
@@ -177,9 +167,7 @@ echo($creat_response);
 exit;
 ```
 The complete code for the application can be found [here](https://github.com/taves-hub/convert-html-to-pdf-with-docraptor), and upon running the code above, it results in the following output.
-
 ![generated pdf](/engineering-education/convert-html-to-pdf-with-docraptor/converted-pdf-with-docraptor.png)
-
 ### Conclusion
 DocRaptor has been used to convert HTML to PDF format for a long time. Its strategy differs from other strategies because it is more detailed, compact, and direct. It is considered when we need to convert multiple reports to PDF format. From the establishment to the documentation and links provided, the means of use are provided where other cases are involved.
 This article will be beneficial because diverse techniques are organized with proper documentation. In addition, the code snippets are easy to understand and experiment with. You can find more information about Docraptor at [docraptor's API documentation](https://github.com/DocRaptor/docraptor-php).
