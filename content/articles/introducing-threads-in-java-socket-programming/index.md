@@ -213,6 +213,22 @@ public class NewClient
 }
 
  ```
+ Output:
+ ```bash
+ What do you want?[Date | Time]..
+Type Exit to terminate connection.
+Date
+2017/06/16
+What do you want?[Date | Time]..
+Type Exit to terminate connection.
+Time
+05:35:28
+What do you want?[Date | Time]..
+Type Exit to terminate connection.
+Exit
+Closing this connection : Socket[addr=localhost/127.0.0.1,port=5056,localport=60536]
+Connection closed
+ ```
 ### Method of operation for the program
 To run the Java Server Socket Program, you must first launch it from the data output stream prompt (console). Then, you will see a message that reads "Server Started..." on your data output stream screen.
 
