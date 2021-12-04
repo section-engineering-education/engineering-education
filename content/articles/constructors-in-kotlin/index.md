@@ -84,7 +84,7 @@ class myStudent{
 
 The output of the above code will look like this:
 
-```kotlin
+```
 Name = Alex 
 Id = 200
 ```
@@ -106,7 +106,7 @@ class myStudent(email:String){
 
 This outputs:
 
-```kotlin
+```
 Name = Alex Email = Alex@gmail
 ```
 
@@ -126,9 +126,9 @@ class myStudent{
                  val mystudent = myStudent("Alex",200) 
 }
 ```
-The output of the following code is:
+The output of the above code is:
 
-```kotlin
+```
 Name = Alex 
 Id = 200
 Email = Alex@gmail
@@ -160,9 +160,10 @@ class person(name:string,id:Int){
         val Person=person("Alex",200) 
 }
 ```
-Output:
 
-```kotlin
+When ran this would output:
+
+```
 Name = ALEX 
 Id =200
 ```
@@ -175,12 +176,12 @@ The main difference between a primary and secondary constructor is that the form
 
 - Minimize visibility of properties, i.e., private, public, protected. It allows you to control where your class members can be accessed from.
 - Combine property declaration. This is achieved through taking a property and setting it, effectively to a constructor parameter.
-- Improve variable naming. This is achieved by using variable naming rules; your variables should: 
+- Improve variable naming. This is achieved by using variable naming rules; your variable names should: 
   - Be based on the variable's purpose so it's clear what the variable is for.
   - Have no spaces between words. Ex. myClass.
   - Always start the variable name with an underscore. For example, _class.
-  - You are not permitted to use a single character.
-  - Special prefixes or suffixes (e.g. name_, mName, s_name, and kName), are not used except in the case of backing properties.
+  - Be greater than a single character.
+  - Not use special prefixes or suffixes (e.g. name_, mName, s_name, and kName), except in the case of backing properties.
 
 ### Conclusion
 
