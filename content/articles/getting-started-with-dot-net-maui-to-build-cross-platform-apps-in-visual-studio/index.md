@@ -77,4 +77,4 @@ From this article, you realize that using .NET MAUI, you can build applications 
 The same images can be used on different platforms provided they are saved with the `.svg` file format. This reduces the storage used for saving images and many files in your application.
 
 ### Conclusion
-.NET MAUI is an improvement of Xamarin.Forms. The main idea of the invention of the .NET MAUI framework was basically to reduce the amount of time used in the development process. Saving the amount of storage space used in application development is also an idea since only single files, code base are deployed on different platforms.
+.NET MAUI is an improvement of Xamarin.Forms. The main idea of the invention of the .NET MAUI framework was basically to reduce the amount of time used in the development process. Saving the amount of storage space used in application development is also an idea since only single files, the codebase is deployed on different platforms.
