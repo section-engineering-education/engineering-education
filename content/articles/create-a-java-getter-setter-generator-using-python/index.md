@@ -6,7 +6,7 @@ url: /create-a-java-getter-setter-generator-using-python/
 title: Create a Java getter-setter generator using Python
 description: In this article, we will learn what getters and setters are in the Python programming language. We will look at how to get getters and setters behavior using the property() function, @Property decorators, and normal functions.
 author: Dennis-Kariuki
-date: 2021-12-04T00:00:00-05:35
+date: 2021-12-04T00:00:00-01:10
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
