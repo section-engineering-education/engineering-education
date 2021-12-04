@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /dockerizing-an-aspnet-core-web-api-app-and-sql-server/
 title: Dockerizing an ASP.NET Core Web API app and SQL Server
-description: This guide will cover the step-by-step ways of configuring ASP.NET core application's and SQL server 2019 to run on a Docker container.
+description: This guide will cover the step-by-step ways of configuring ASP.NET core applications and SQL server 2019 to run on a Docker container.
 author: lewel-murithi
-date: 2021-11-28T00:00:00-15:00
+date: 2021-12-04T00:00:00-15:00
 topics: [Containers]
 excerpt_separator: <!--more-->
 images:
@@ -26,7 +26,7 @@ This guide will cover the step-by-step ways of configuring ASP.NET Core applicat
 - [Introduction](#introduction)
 - [Prerequisites](#prerequisites)
 - [Setting up the SQL server Docker image](#setting-up-the-sql-server-docker-image)
-- [Creating CRUD operations in an ASP.NET Core application](#creating-crud-operations-in-an-asp-net-core-application)
+- [Creating CRUD operations in an ASP.NET Core application](#creating-crud-operations-in-an-aspnet-core-application)
 - [Setting up Docker Compose for the project](#setting-up-docker-compose-for-the-project)
 - [Wrapping up](#wrapping-up)
 - [Further reading](#further-reading)
@@ -62,7 +62,6 @@ The Docker container is now up and running.
 Here, we will use the SQL Server Management Studio tool to connect our SQL Server running on a Docker container.
 
 To achieve this, we are going to input the details below in the SSMS connection window:
-
 - We will give our server the name `localhost, 1450`. One can opt to use a different IP address depending on the configuration. In our case, we have used `localhost` and `1433` as the port we configured.
 - For the SQL Server configuration login, we have used `SA` and password as `2Secure*Password2`.
 
@@ -298,7 +297,7 @@ Finally, we code the file `Index.cshtml` as shown below:
 ```
 
 #### Performing EF Core migrations
-We will first locate and open the file `appsettings.json` in the project solution explorer. Here, we will create a connection string that will connect our frontend application to the SQL Server database. 
+We will first locate and open the file `appsettings.json` in the project solution explorer. We will create a connection string that will connect our frontend application to the SQL Server database. 
 
 The file will appear as shown below:
 
@@ -310,9 +309,9 @@ The file will appear as shown below:
 }
 ```
 
-Note that the data source property represents the SQL Server address and the port running on the Docker container. The Initial Catalog value represents the database name.
+> The data source property represents the SQL Server address and the port running on the Docker container. The Initial Catalog value represents the database name.
 
-Also, note that it is possible to change the DataSource field to the internal IP address of the machine we are using.
+> It is possible to change the DataSource field to the internal IP address of the machine we are using.
 
 Next, we will navigate to the file `Startup.cs` so that we can add the database context as a service in the `ConfigureServices` method as shown below:
 
@@ -325,7 +324,7 @@ public void ConfigureServices(IServiceCollection config_serv)
 }
 ```
 
-Afterwards, we will execute EF Core migration commands. To achieve this, we will navigate to the Package Manager Console window in Visual Studio and run the commands below:
+Afterwards, we will execute EF Core migration commands. To achieve this, we will navigate to the package manager console window in Visual Studio and run the commands below:
 
 ```bash
 $ add-migration Migration1
@@ -443,7 +442,7 @@ It is better to remember that the SQL Server container needs to be running durin
 We will run the application in Visual Studio and retest the application by performing CRUD operations. We expect the same results as we got earlier.
 
 ### Wrapping up
-In this guide, we have learned how to create a Docker container for ASP.NET Core application's and SQL Server. We have also been able to use Docker Compose to run both containers simultaneously and perform CRUD operations.
+In this guide, we have learned how to create a Docker container for ASP.NET Core applications and SQL Servers. We have also used Docker Compose to run both containers simultaneously and perform CRUD operations.
 
 We have been able to pull and use the SQL Server container image to run the SQL Server container. This is essential, especially for the developers who do not intend to download and install SQL Server into their development environment. 
 
