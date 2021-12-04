@@ -3,9 +3,7 @@ Adding animations to your website makes it seem livelier and more attractive to 
 The downfall of adding animations using JavaScript is that they reduce a website's performance, especially when the developer fails to select an optimized library. However, there is a turnaround to such a problem, and that is using pure CSS and HTML. 
 
 ### Goal
-In this article, we will use pure CSS and HTML to add animations to a website similar to the one in the video below:
-
-<iframe width="478" height="269" src="https://www.youtube.com/embed/sAjpeUh3bIs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+In this article, we will use pure CSS and HTML to add animations to a website similar to the one in this [video](https://www.youtube.com/embed/sAjpeUh3bIs)
 
 ### Prerequisites
 To follow along with this tutorial, you should have:
