@@ -85,9 +85,9 @@ The Java application prints a 'Hello World' message when running the code below.
 /*Comments and whitespaces are not count*/
 public class HelloWorld
 {
-    public static void main(String[] args) {
-        System.out.println("Hello World!");
-    }
+  public static void main(String[] args) {
+    System.out.println("Hello World!");
+  }
 }
 ```
 
@@ -196,28 +196,22 @@ These are optional.
 
 The three sections are divided by delimiters (`%%`) as shown below:
 ```c
-1. Definitions section:
-
-%{    contains C code, usually consisting of the required project libraries
-       Define usin '#define' external global declarations that one wants to be part of the code for y.tab.c
+%{    
+    
+       
 %}
+%%
 
-The file can include optional macro definitions that will be used for regular expressions.
 
 %%
 
-2. Rules section:
 
-regular expression        { c code to be executed when this R.E. is matched against the source. }
-another regular expression { another c code based on this RegEX }
-%%
-
-3. User Sub-routines:
-
-Additional code here
 ```
 
 `y.tab.c` is an output file that is compiled producing a yyparse function. It is produced with a C language compiler.
+
+The image below shows a brief explanation of the code structure based on the parts defined and explained above:
+![Code structure](/engineering-education/get-started-with-a-lexical-analyzer/code-structure.png "Code structure")
 
 ### Create a Lex file and run it
 
