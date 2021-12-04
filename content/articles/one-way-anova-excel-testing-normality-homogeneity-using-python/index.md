@@ -18,11 +18,11 @@ Over the years, data has been an essential part of how the world works. These da
 <!--more-->
 One of these methods is the analysis of variance (ANOVA). ANOVA is a set of statistical models that analyses the differences among means. Microsoft came up with statistical add-ins within Excel to solve some of these problems. Although Microsoft Excel is still rather limited. Later came tools like R-studio and Python. 
 
-With Python, the test for normality and homogeneity became easier. This tutorial will focus on creating an ANOVA table using Microsoft Excel, box plots to test the normality of a one way ANOVA, and Bartlett's rule for homogeneity with Python.
+With Python, the test for normality and homogeneity became easier. In this tutorial, we'll focus on creating an ANOVA table using Microsoft Excel, box plots to test the normality of a one way ANOVA, and Bartlett's rule for homogeneity with Python.
 
 ### Prerequisites
 This tutorial requires readers to have proper knowledge on the following:
-- Analysis of variance (ANOVA). Here's a [link]((https://www.investopedia.com/terms/a/anova.asp)) to their documentation.
+- Analysis of variance (ANOVA). Here's a [link](https://www.investopedia.com/terms/a/anova.asp) to their documentation.
 - [Microsoft Excel](https://www.guru99.com/excel-tutorials.html).
 - [Python](https://www.python.org/).
 
@@ -75,7 +75,7 @@ To perform a one way ANOVA, implement the following step.
 
 ![data set](/engineering-education/one-way-anova-excel-testing-normality-homogeneity-using-python/data-set.jpg)
 
-- Go to the Data tab, click on the Data Analysis sub-tab. if you can't find the sub-tab, click [here](###analysis-toolpak).
+- Go to the Data tab, click on the Data Analysis sub-tab. if you can't find the sub-tab, check the sub heading beneath.
 
 - Select ANOVA: single factor and click ok.
 - Click on the input range and highlight the dataset you want to use.
@@ -101,9 +101,9 @@ The analysis toolpak is an essential add-in for what we are to do. To load the a
 #### Testing for normality using box plots
 We'll create a Python file and import pandas, matplotlib and seaborn into our code. Pandas, Matplotlib & Seaborn are Python libraries for data analysis. 
 
-Pandas imports tons of data formats, while Matplotlib and Seaborn are visualisation libraries used to generate powerful visualisations. Seaborn is a library that compiles statistical graphics in Python.
+These libraries serve a great importance in data visualisation. Pandas imports tons of data formats, while Matplotlib and Seaborn are visualisation libraries used to generate powerful visualisations. Seaborn is a library that compiles statistical graphics in Python.
 
-Next, we'll read our dataset using the .read() method from the panda library(we used a CSV file format). From the panda library, we will reshape the data frame suitable for the statistical model package using the .melt() method and in the line below, we'll replace the column names. 
+Next, we'll read our dataset using the .read() method from the pandas library(we used a CSV file format). From the pandas library, we will reshape the data frame suitable for the statistical model package using the .melt() method and in the line below, we'll replace the column names. 
 
 Lastly, we'll generate a boxplot to see the data distribution by treatments using our seaborn tool and plt.show() function to display our box plot.
 
@@ -124,12 +124,12 @@ ax = sns.swarmplot(x="treatments", y="value", data=data_set_melt, color='#7d0013
 plt.show()
 ```
 
-On implementation, our box plot will is shown as below:
+On implementation, our box plot is shown as below:
 
 ![boxplot](/engineering-education/one-way-anova-excel-testing-normality-homogeneity-using-python/boxplot.jpg)
 
 #### Testing for homogeneity using Bartlett's rule
-Before we show you the process involved, we'll talk a bit about this rule. Maurice Stevenson Bartlett invented this rule and, it is a procedure used to check if samples drawn from different populations have the same variances. It tests the assumption that differences in group sizes are equal across groups. The conventional structure of this test involves:
+Before we show you the process involved, we'll talk a bit about this rule. Maurice Stevenson Bartlett invented the rule and, it is a procedure used to check if samples drawn from different populations have the same variances. It tests the assumption that differences in group sizes are equal across groups. The conventional structure of this test involves:
 - Creating a hypothesis (null and alternate).
 - Calculating the test statistic.
 - Finding the critical value.
