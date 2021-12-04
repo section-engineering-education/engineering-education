@@ -1,7 +1,7 @@
 ### Introduction
 
 software or applications mostly hold data that is not supposed to be accessible to everyone.
-this has made Authentication a core aspect of software or application development.
+This has made Authentication a core aspect of software or application development.
 
 #### Flutter
 Flutter is a UI toolkit created by google, it is used to build cross-platform mobile applications for Android and IOS, and desktop applications for Windows, Mac, and Linux. UIs built with Flutter always depend on backend technologies for functionalities like authentication, one of these backend technologies is Flask.
@@ -19,7 +19,7 @@ end of the guide, an app is going to be built which will work as shown below.
 ![demo](/engineering-education/flutter-authentication-using-flask-api/demo.gif)
 
 ### Understanding apps
-Web Applications are mostly built in two parts There is the *frontend* and the *backend*.
+Web Applications are mostly built in two parts, there is the *frontend* and the *backend*.
 The two parts are very delicate in that they are mostly built differently, and sometimes by different developers. 
 #### Frontend 
 The frontend part of an app is also known as the client-side of the app. The frontend
@@ -85,7 +85,7 @@ def login():
             
             return jsonify([ "success"])
 ```
-The code snippet for the register endpoint above accepts data from a form and filters through data already existing in the database to make sure there is no inconsistency in data, the result of the filter is then determining the outcome.
+The code snippet for the register endpoint above accepts data from a form and filters through data already existing in the database to make sure there is no inconsistency in data. The result of the filter is then determining the outcome.
 
 The code snippet for the login endpoint filters the data to make sure the user is registered if registered the user is given access to information in the system if not the user gets a message telling that the credentials are wrong. 
 
@@ -132,14 +132,14 @@ class MyApp extends StatelessWidget {
   }
 }
 ```
-from the code snippet above `import 'package:flutter/material.dart';` import MaterialApp which is a widget that wraps multiple widgets that are mostly required for material design applications. If you paste the above code snippet you will notice red lines indicating something is wrong with the imports. one will be from `import 'package:flutter_easyloading/flutter_easyloading.dart';` to fix, add *flutter_easyloading* to packages using the command 
+From the code snippet above `import 'package:flutter/material.dart';` import `MaterialApp` which is a widget that wraps multiple widgets that are mostly required for material design applications. If you paste the above code snippet you will notice red lines indicating something is wrong with the imports. One will be from `import 'package:flutter_easyloading/flutter_easyloading.dart';` to fix, add *flutter_easyloading* to packages using the command 
 ```bash
 flutter pub add flutter_easyloading
 ```
-the above command adds flutter_easyloading to packages in the project. for `import 'package:loginwithapi/views/welcome.dart';`
+The above command adds `flutter_easyloading` to packages in the project. For `import 'package:loginwithapi/views/welcome.dart';`
 The error is there because the line of code is importing a class from a page that does not exist. 
-Inside the build widget, A MaterialApp was returned which has a title and a home the title is mostly the name of the app and in the home, a WelcomPage class is called.
- To fix the red line error add the welcomePage class, create two new folders inside the lib folder and name them `views` and `service` inside the views folder create three files with names `login.dart`, `register.dart`, and `welcome.dart` and add the code snippet below into;
+Inside the build widget, a `MaterialApp` was returned which has a title and a home the title is mostly the name of the app and in the home, a `WelcomPage` class is called.
+ To fix the red line error add the `welcomePage` class, create two new folders inside the lib folder and name them `views` and `service` inside the views folder create three files with names `login.dart`, `register.dart`, and `welcome.dart` and add the code snippet below into;
 
 #### Welcome
 ```dart
@@ -365,9 +365,9 @@ class _RegisterPageState extends State<RegisterPage> {
 }
 ```
 
-The code snippet in the welcome file is made up of two inkwell widgets wrapped inside a container. The inkwell widget responds to touch performed by a user. The one labeled login will take you to the login page when clicked and the other labeled register will take you to the register page when clicked.
+The code snippet in the welcome file is made up of two `inkwell` widgets wrapped inside a `Container`. The `inkwell` widget responds to touch performed by a user. The one labeled login will take you to the login page when clicked and the other labeled register will take you to the register page when clicked.
 
-The code snippet in the login and register file is made of two `TextField` widgets and one `InkWell` widget, all wrapped in a container. The Inkwell widget submits the data gotten from the text when clicked. You will observe a red line on `import 'package:loginwithapi/service/http_service.dart';` this is also because you are importing `http_service.dart`. Will fix that in a bit, before then you can clear the import with the error and you app should look as shown in the pictures below.
+The code snippet in the login and register file is made of two `TextField` widgets and one `InkWell` widget, all wrapped in a `Container`. The `Inkwell` widget submits the data gotten from the text when clicked. You will observe a red line on `import 'package:loginwithapi/service/http_service.dart';` this is also because you are importing `http_service.dart`. Will fix that in a bit, before then you can clear the import with the error and you app should look as shown in the pictures below.
 
 ![Welcome Page](/engineering-education/flutter-authentication-using-flask-api/welcome.jpeg)
 
@@ -443,25 +443,25 @@ class HttpService {
   }
 }
 ```
-From the code `import 'package:http/http.dart' as http;` is importing http which is a flutter package that enables flutter apps to fetch and post data from an API endpoint. `import 'dart:convert';` helps in encoding and decoding data. The rest of the imports are familiar except for `import 'package:loginwithapi/views/dashboard.dart';` which we will look at a bit.
+From the code `import 'package:http/http.dart' as http;` is importing http which is a flutter package that enables flutter apps to fetch and post data from an API endpoint. `import 'dart:convert';` helps in `encoding` and `decoding` data. The rest of the imports are familiar except for `import 'package:loginwithapi/views/dashboard.dart';` which we will look at a bit.
 
-After all Imports, HttpService class was created where `_loginUrl` is declared as a property of the class holding the login URL endpoint and `_registerUrl` is declared as a property holding the register URL endpoint.
+After all Imports, `HttpService` class was created where `_loginUrl` is declared as a property of the class holding the login URL endpoint and `_registerUrl` is declared as a property holding the register URL endpoint.
 
-The login method was created which took `email and password` as parameters. async and await are used in other to speed up fetching and posting data because accessing data from a server takes time.
-The conditional statement in the method is checking for the response of the endpoint if the response is 200 which means success, the code decodes the response and uses flutter easy_loading, which is a package used for giving messages alerts in flutter apps, to send either an error or a success message depending on the condition giving from the server-side of the application. In our case, if the decoded response is `'success'` then a success alert message is popped up for the user telling the user that login is successful and then the user will be navigated to the next page, else an error message is popped up for the user telling him/her that credentials are wrong as shown in the picture below.
+The `login` method was created which took `email and password` as parameters. `async` and `await` are used in other to speed up `fetching` and `posting` data because accessing data from a server takes time.
+The conditional statement in the method is checking for the `response` of the endpoint if the `response` is `200` which means `success`, the code decodes the response and uses flutter `easy_loading`, which is a package used for giving messages alerts in flutter apps, to send either an error or a success message depending on the condition giving from the server-side of the application. In our case, if the decoded response is `'success'` then a success alert message is popped up for the user telling the user that login is successful and then the user will be navigated to the next page, else an error message is popped up for the user telling him/her that credentials are wrong as shown in the picture below.
 
 ![wrong login credentials error message](/engineering-education/flutter-authentication-using-flask-api/wrong-credentials.jpeg)
 
 ![Login success ](/engineering-education/flutter-authentication-using-flask-api/login-success.jpeg)
 
-The register method is taking the same parameters as the login method, it's also using async and await like the register, the only difference is the error message decoded message which will pop up the message `user already exists` if the user exists or a success message `registered successfully if the user does not exist. as shown in the picture below.
+The register method is taking the same parameters as the login method, it's also using async and await like the register, the only difference is the error message decoded. `Easy_loading` will pop up the message `user already exists` if the user exists or a success message `registered successfully` if the user does not exist. as shown in the picture below.
 
 ![User already exist ](/engineering-education/flutter-authentication-using-flask-api/user-exist.jpeg)
 
 ![Register success](/engineering-education/flutter-authentication-using-flask-api/register-success.jpeg)
 
 ### Conclusion
-We were able to build an app that can register and login a user using API endpoints the Github repository for the flutter code can be found [here](https://github.com/wobin1/Flutter-Authentication-with-flask-api) and the flask API repo can be found here [here](https://github.com/wobin1/flask-login-for-flutter).
+We were able to build an app that can register and login a user using API endpoints. The Github repository for the flutter code can be found [here](https://github.com/wobin1/Flutter-Authentication-with-flask-api) and the flask API repo can be found here [here](https://github.com/wobin1/flask-login-for-flutter).
 
 ### Further Reading
 - [flutter user authentication](https://medium.com/codex/flutter-user-authentication-part-1-models-and-api-acf33cf42f83)
