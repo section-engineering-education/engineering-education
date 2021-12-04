@@ -249,11 +249,11 @@ The output of the above code after running will be:-
 
 ### 2. Cycle detection in undirected Graph.
 
-In the above example, we have talked about finding a cycle in a directed graph. That aproach does not work for undirected graphs.
+In the above example, we have talked about finding a cycle in a directed graph. That approach does not work for undirected graphs.
 
 #### Why?
 
-Below we have a graph. Using the previous aproach, We put `A` and `B` in the current path set. Because there is an edge from `B` to `A` and `A` is part of the current path. A cycle is detected. The algorithm thinks there is a cycle in this graph. A cycle will always be detected between every two nodes connected by an edge. We need a different algorithm for Undirected Graph.
+Below we have a graph. Using the previous approach, We put `A` and `B` in the current path set. Because there is an edge from `B` to `A` and `A` is part of the current path. A cycle is detected. The algorithm thinks there is a cycle in this graph. A cycle will always be detected between every two nodes connected by an edge. We need a different algorithm for Undirected Graph.
 
 [Image of Graph](/engineering-education/graph-cycle-detection/unidirected.png/)
 
