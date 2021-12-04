@@ -1,4 +1,22 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /understanding-cross-site-scripting-attacks/
+title: Understanding Cross-Site Scripting Attacks
+description: In this tutorial, we will take a look at what cross-site scripting attacks are with simple hands-on examples
+author: shuaib-oseni
+date: 2021-12-02T00:00:00-14:00
+topics: [Security]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/understanding-cross-site-scripting-attacks/hero.png
+    alt: cross-site scripting attacks
+---
+
 Cross-Site Scripting (XSS) attacks are a type of injection in which malicious scripts are injected into otherwise benign and trusted websites. XSS attacks occur when an attacker uses a web application to send malicious code, generally in the form of a browser side script, to a different end-user. Flaws that allow these attacks to succeed are quite widespread and occur anywhere a web application uses input from a user. This occurs when the application generates output without validating or encoding it.
+<!--more-->
 
 *(Source: [OWASP](https://owasp.org/www-community/attacks/xss/#))*
 
@@ -60,9 +78,16 @@ We notice that as soon as we hit the go button after entering our XSS payload, w
 
 #### Reflected XSS
 
+<<<<<<< HEAD
 This is a one-time XSS. The malicious script is part of the victim's online application request, which is being reflected in the application's response.
 
 Reflected XSS is commonly used in targeted attacks, where the hacker crafts and sends a phishing email with the malicious script and the URL. The attacker could even post a link on a public website and deceive the user into clicking it.
+=======
+This is a one-time XSS. The malicious script is part of the victim's online application request which is frequently reflected in the application's response.
+
+Reflected XSS is most commonly employed in targeted attacks where the hacker sends a phishing email with the malicious script in the URL. The attacker could even post a link on a public website and deceive the user into clicking it.
+
+>>>>>>> 484294b3fcd75eaa7ab3faebce261edc375aa04d
 #### Stored XSS
 
 Also known as `Persistent XSS`, the payload is saved on the server and can be triggered by a victim without requiring any user interaction outside of the application. This type of XSS happens when the server saves your supplied input somewhere into the server (i.e. a database or cache server).
@@ -94,7 +119,7 @@ As we can see, we got an alert box. This occurred because the payload was saved 
 
 #### DOM XSS
 
-The victim's browser is directly affected by DOM XSS, which is a local attack. The 'Document Object Model(DOM)', which is the browser's API for manipulating and presenting web pages, is used in this attack rather than malicious content being delivered to the server.
+The victim's browser is directly affected by DOM XSS, a local attack. The *Document Object Model* (DOM), the browser's API for manipulating and presenting web pages, is used in this attack rather than malicious content being delivered to the server.
 
 
 ### The Impact of XSS
@@ -121,3 +146,6 @@ XSS is a common web vulnerability. Web vulnerability scanners such as [burp suit
 
 - [Portswigger](https://portswigger.net/web-security/cross-site-scripting)
 - [Owasp](https://owasp.org/www-community/attacks/xss/)
+
+---
+Peer Review Contributions by: [John Amiscaray](/engineering-education/authors/john-amiscaray/)
