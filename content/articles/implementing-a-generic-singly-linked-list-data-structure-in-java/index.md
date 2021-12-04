@@ -6,7 +6,7 @@ url: /implementing-a-generic-singly-linked-list-data-structure-in-java/
 title: Implementing a Generic Singly linked list Data Structure in Java
 description: In this article, we will look at implementing a generic singly linked list data structure in Java.
 author: lynn-mumo
-date: 2021-12-01T00:00:00-10:30
+date: 2021-12-04T00:00:00-10:30
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -21,9 +21,11 @@ Each node has a reference section where the address of the next node is maintain
 An array data structure is improved by addressing its limitations, such as the need for contiguous memory and the difficulty of array insertion and deletion. Additionally, a linked list makes it simple to add and remove items as needs change.
 
 The simplest type of linked list, known as a Singly Linked List, is covered in this article. Linked Lists can be used in a wide range of applications, from simple to complex. We will take a look at them one at a time.
-### Prerequisite
+
+### Prerequisites
 1. Before proceeding with this tutorial you should have a good knowledge of the Java programming language.
 2. For server-side Java development, have __IntelliJ IDEA__ as the IDE.
+
 ### Table of contents
 - [The Building Blocks](#the-building-blocks)
 - [Differences between a linked list and an array](#differences-between-a-linked-list-and-an-array)
