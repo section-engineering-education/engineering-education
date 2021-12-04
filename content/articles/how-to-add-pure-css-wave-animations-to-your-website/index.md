@@ -260,6 +260,8 @@ body {
 ```
 Our final website will have a wave animation that moves from right to left.
 
+You can also look up this [GitHub repository](https://github.com/lin-chez/How-To-Add-Pure-CSS-Waves-To-Your-Website.git) to find the full code on how to add pure wave css animations to your website. 
+
 ### Conclusion
 
 Using HTML and CSS only, we have created a wave animation that is simple to implement and will improve the website's performance. No one ever wants a slow website. Always keep that in mind while creating your website. I hope this tutorial will help you develop an efficient and responsive website.
