@@ -1,5 +1,21 @@
-### Introduction
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-add-pure-css-wave-animations-to-your-website/
+title: How To Add Pure CSS Waves To Your Website
+description: In this article, we will use pure CSS and HTML to add animations to a website.
+author: linchez-maina
+date: 2021-12-04T00:00:00-15:20
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/how-to-add-pure-css-wave-animations-to-your-website/hero.jpg
+    alt: animations img
+---
 Adding animations to your website makes it seem livelier and more attractive to your users, increases its presence, and improves conversions. 
+<!--more-->
 The downfall of adding animations using JavaScript is that they reduce a website's performance, especially when the developer fails to select an optimized library. However, there is a turnaround to such a problem, and that is using pure CSS and HTML. 
 
 ### Goal
@@ -11,7 +27,7 @@ In this article, we will use pure CSS and HTML to add animations to a website si
 To follow along with this tutorial, you should have:
 
 - A basic knowledge of HTML and CSS.
-- Your favourite code editor.
+- Your favorite code editor.
 
 ### Learning points
 
@@ -31,7 +47,7 @@ CSS animations lets an element gradually change from one CSS configuration style
 
 A few of the advantages of using CSS animations, particularly over script-driven animation techniques like JavaScript, include:
 - Simplicity; you do not have to learn complex programming concepts.
-- You let the browser control the animation sequence when you use CSS animations. This optimizes performance and efficiency. The browser achieves this by reducing update times of animations running in tabs that are not visible.
+- You let the browser control the animation sequence when using CSS animations. This optimizes performance and efficiency. The browser achieves this by reducing update times of animations running in tabs that are not visible.
 - Good loading score. CSS animations load well, even under moderate system load. Using JavaScript can often make simple animations load poorly.
 
 ### How to Use the CSS Animation Property
@@ -44,7 +60,7 @@ You can learn how to configure the animation property using its sub-properties f
 
 ### Defining The Animation Order Using The `@Keyframes Rule.`
 
-After you have set your animation's sub-properties, ensuring to give the `animation-duration` priority, you need to define the animation's sequence or appearance. This is done by configuring more than one keyframe using the `@keyframes rule.`
+After you have set your animation's sub-properties, ensuring the `animation-duration` priority, you need to define the animation's sequence or appearance. This is done by configuring more than one keyframe using the `@keyframes rule.`
 
 You can learn how to use the `@keyfreame rule` from [here](https://www.w3schools.com/cssref/css3_pr_animation-keyframes.asp)
 
@@ -130,7 +146,7 @@ The final set of CSS rules defined for both `<div>` tags is as below:
   ```
 We set it to be just below the first child element. Go on to set the animation property.
 
-- We name the two animations, wave-one, and crests. We set the animation wave-one with the animation-delay property. Additionally, set it to a negative value to allow it to start first.
+- We name the two animations, wave-one and crests. We set the animation wave-one with the animation-delay property. Additionally, please set it to a negative value to allow it to start first.
   
 ```css
 animation: wave-one 8s cubic-bezier (0.37, 0.44, 0.64, 0.54) -.124s
@@ -250,4 +266,9 @@ Our final website will have a wave animation that moves from right to left.
 
 Using HTML and CSS only, we have created a wave animation that is simple to implement and will improve the website's performance. No one ever wants a slow website. Always keep that in mind while creating your website. I hope this tutorial will help you develop an efficient and responsive website.
 
-Thank you for reading this tutorial, Happy Coding!
+Thank you for reading this tutorial.
+
+Happy Coding!
+
+---
+Peer Review Contributions by: [Miller Juma](/engineering-education/content/authors/miller-juma/)
