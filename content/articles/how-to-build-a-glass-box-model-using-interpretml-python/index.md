@@ -145,7 +145,7 @@ Let's create labels and features for our model.
 Features are the `X variable` in our dataset. This represents all the input columns that will be used during model training.
 
 ```python
-Xfeatures = df1[[]]
+Xfeatures = df1[['age', 'job', 'marital', 'education', 'default', 'balance', 'housing','loan', 'contact', 'day', 'month', 'duration', 'campaign', 'pdays', 'previous', 'poutcome']]
 ```
 Labels are the `y variable` in our dataset. This represents the output column during the prediction phase.
 
