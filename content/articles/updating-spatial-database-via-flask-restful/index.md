@@ -180,12 +180,14 @@ This method is used for deleting the selected coordinate by sending a delete req
 If the coordinate is deleted successfully it will return the updated response code and status 200, but if not the default response will be returned.
 
 ### Conclusion
-We have created an API that can be used for creating, reading, updating and deleting records from a database. It can be deployed for mobile, web and desktop apps.
+APIs play a great role in web development because it allows programs to communicate easily and allow multiple users to have access to the program. It is also a source of income for the developer because users can be charged for using the API. 
+So, building an API that can update spatial records can serve as a spatial data bank that allows users to perform CRUD operations on spatial data accessible with mobile, web and desktop apps by sending requests to our server. All we need to do is to write a documentation on how they can use it.
+
 
 ### Further Reading
-- [How to create a Geoserver and Geodatabase](https://www.section.io/engineering-education/how-to-create-a-geoserver-and-geodatabase/)
-- [Flask Restful](https://flask-restful.readthedocs.io/en/latest)
-- [HTTP status code](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
+- [Creating a Geoserver and a Geodatabase - Section engineering-education](https://www.section.io/engineering-education/how-to-create-a-geoserver-and-geodatabase/)
+- [Flask-RESTful Docs](https://flask-restful.readthedocs.io/en/latest)
+- [HTTP response status codes - MDN Docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
 
 
 [Github repository](https://github.com/isaiaholadapo/api-geodatabase)
