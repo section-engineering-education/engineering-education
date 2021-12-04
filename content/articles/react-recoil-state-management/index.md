@@ -20,11 +20,11 @@ React by default provides the `useState()` hook that we can use to store and mod
 
 State management libraries solve this problem by creating a global store where each component can access the data it needs. With a state management library, data flows from your app to the state and vice versa, and you can access the data from any component without passing it as props.
 
-In this article, we will look at how we can manage state in our React applications using Recoil. We will create a Todo application that allows the user to add todos, mark them as complete, delete them, and filter between the completed and the uncompleted ones. 
+We will go through the steps we can follow to use Recoil to manage the state of our React web applications. We will create a Todo application that allows the user to add tasks, mark them as complete, delete them, and filter between the completed and the uncompleted ones. 
 
 #### Prerequisites
 The following are needed to be able to follow along:
-- Intermediate knowledge of [React](https://reactjs.org),a JavaScript library for building user interfaces.
+- Intermediate knowledge of [React](https://reactjs.org), a JavaScript library for building user interfaces.
 - Understanding of React functional components and the useState hook.
 - A code editor and a browser.
 
@@ -35,7 +35,7 @@ By the end of this article, you should be able to:
 
 #### Getting Started
 Before we get started, we need to familiarize ourselves with the following terms:
-- An `atom` - An atom is a piece of state. It can be updated and subscribed to(used in a component). Updating an atom causes the subscribed component to re-render with the new value.
+- An `atom` - An atom is a piece of state. We can import an atom into our components, which allows us to use and update it from our component. Every time an update is made to an atom, the component using the atom re-renders with the updated value.
 
 An atom is created as shown below:
 ```javascript
@@ -47,7 +47,7 @@ const atomName = atom({
 
 Each atom should have a key that must be unique and a default value.
 
--A `selector` - It is a function and it accepts atoms and other selectors as input. They are used to get derived data based on a state.
+-A `selector` - A selector is basically a function. Like normal functions, it accepts input(in this case, other selectors and atoms) and gives output. It used to get derived data based on a state.
 
 Selectors are defined as shown below:
 ```javascript
@@ -59,7 +59,7 @@ const selectorName = selector({
 });
 ```  
 
-Each selector also has a unique key and a `get` property that is, the function to be computed. A selector uses the `get` argument passed to it to access the value of atoms and other selectors. 
+Each selector also has a unique key and a `get` property that is, the function to be computed. To access the values of the inputs to the selector, the `get` keyword is used. 
 
 More information about atoms and selectors can be found [here](https://recoiljs.org/docs/introduction/core-concepts).
 
@@ -83,60 +83,65 @@ npm install recoil
 #### Creating the recoil folder
 In the `src` folder, create a new folder and name it to `recoil`. In the folder, create a new file and call it `atom.js`. We will create our atom and selectors in this file.
 
-Open the file and paste in the following code:
+Input the code given below into the `atom.js` file:
 ```javascript
+//import atom and selctor from the recoil package through object destructuring
 import { atom, selector } from "recoil";
 
-const todosState = atom({
-    key: "todosState",
+//create an atom that will be used to store all tasks entered by the user.
+const allTasks = atom({
+    key: "allTasks",
     default: []
 })
 
-const todosFilterState = atom({
-    key: "todosFilterState",
+//create an atom that will be used to toggle between different values in the filtered tasks selector
+const tasksFilter = atom({
+    key: "tasksFilter",
     default: "Show All"
   });
-  
-const filteredTodosState = selector({
-   key: "filteredTodosState",
+ 
+ //create a selector to help in toggling between all, completed and uncompleted tasks
+const filteredTasks = selector({
+   key: "filteredTasks",
     get: ({ get }) => {
-      const filter = get(todosFilterState);
-      const list = get(todosState);
+      const filter = get(tasksFilter);
+      const list = get(allTasks);
   
       switch (filter) {
         case "Show Completed":
-          return list.filter((item) => item.isComplete);
+          return list.filter((item) => item.isDone);
         case "Show Uncompleted":
-          return list.filter((item) => !item.isComplete);
+          return list.filter((item) => !item.isDone);
         default:
           return list;
       }
     }
   });
 
+
+//export our atoms and selector
 export {
-    todosState,
-    todosFilterState,
-    filteredTodosState
+    allTasks,
+    tasksFilter,
+    filteredTasks
 }
 ```
 
-In the above code, we first start by importing atom and selector from recoil. We then create our `todosAtom` that will store the todos added by the user.
+In the above code, we first start by importing atom and selector from recoil. We then create our `allTasks` atom that will store the tasks added by the user.
 
-We create the `todosFilterState` atom that will help when filtering between all completed and uncompleted todos. 
+We create the `tasksFilter` atom that will help in the `filteredTasks` selector when filtering between all completed and uncompleted tasks. 
+Then, we create a `filteredTasks` selector that accesses our atoms and stores them in constants(`filter` and `list`). It then uses the `switch` statement to return a list of tasks based on the selected criteria.
 
-Then, we create a `filteredTodosState` selector that accesses our atoms and stores them in constants. It then uses the `switch` statement that uses the filter method to return a list of todos based on the selected criteria.
-
-In our case, completed, uncompleted, and all(all is represented by the default, which returns the whole list of the todos).
+In our case, completed, uncompleted, and all(all is represented by the default, which returns the whole list of the tasks).
 
 #### Creating our components
 To create our components, in the `src` folder, create a new folder and name it `components`.
 
 Inside this components folder, create four files, namely:
-- `Input.js` - This will contain the form we will use to add new tasks(todos).
-- `Todos.js` - This will contain a list of all todos.
-- `Todo.js`  - This will represent each todo.
-- `TodoFilters.js` - This will contain a dropdown menu that we will use to select between all completed and uncompleted todos.
+- `Input.js` - This will contain the form we will use to add new tasks.
+- `Tasks.js` - This will contain a list of all tasks.
+- `Task.js`  - This will represent each task.
+- `TaskFilters.js` - This will contain a dropdown menu that we will use to select between all completed and uncompleted tasks.
 
 #### Creating our todo application
 Now that we have everything set up, open the `App.css` file and paste in the code below to apply basic styling:
@@ -155,17 +160,17 @@ import { RecoilRoot } from "recoil";
 import './App.css';
 
 import Input from "./components/Input";
-import TodoFilters from "./components/TodoFilters";
-import Todos from "./components/Todos";
+import TaskFilters from "./components/TaskFilters";
+import Tasks from "./components/Tasks";
 
 function App() {
   return (
     <div className="App">
       <h2>Todo App with React and Recoil</h2>
       <RecoilRoot>
-        <TodoFilters />
+        <TaskFilters />
         <Input />
-        <Todos />
+        <Tasks />
       </RecoilRoot>
     </div>
   );
@@ -176,35 +181,41 @@ export default App;
 
 In the code above, we import `RecoilRoot` and wrap our entire app(the components that need to access the state) around it. It acts as a provider so that all our components can access the atoms and selectors.
 
-#### Working on the add todo functionality
-Open the `Input.js` file and add the code below:
+#### Working on the add task functionality
+In the `Input.js` file, use the code below. This will help to add new tasks to our atom.
 ```javascript
 import React, { useState } from 'react'
 import { useSetRecoilState } from 'recoil'
-import { todosState } from '../recoil/atom'
+import { allTasks } from '../recoil/atom'
 
 const Input = () => {
-
+    //Track the value of the input field
     const [input, setInput] = useState("")
-    const setTodos = useSetRecoilState(todosState);
+    //Use the useSetRecoilState hook to update the allTasks atom
+    const setTasks = useSetRecoilState(allTasks);
 
-    const addTodo = (e) => {
+    //function to be called on the click of the add button.
+    const addTask = (e) => {
+        //prevent default form behavior on the click of add button
         e.preventDefault();
-        setTodos((oldTodos) => [
-            ...oldTodos, {
-                id: Math.floor(Math.random() * 1000),
+        //update the allTasks atom with the contents of the input field 
+        setTasks((oldTasks) => [
+            ...oldTasks, {
+                id: Math.floor(Math.random() * 1000), //generate a random id for the new task
                 text: input,
-                isComplete: false
+                isDone: false //set task completion to false by default
             }
         ])
-        setInput("")
+        setInput("") //clear the contents of the input field
     }
 
     return (
         <div>
+            {/* create a form that will be used to add a task */}
             <form>
                 <input type="text" value={input} onChange={(e) => setInput(e.target.value)} />
-                <button type='submit' disabled={!input} onClick={(e) => addTodo(e)}>Add</button>
+                {/* Disable the button when the input field is empty */}
+                <button type='submit' disabled={!input} onClick={(e) => addTask(e)}>Add</button>
             </form>
         </div>
     )
@@ -215,56 +226,55 @@ export default Input
 
 In the above code, we import the React `useState` hook that will help us to keep track of the value entered by the user.
 
-We have import the Recoil `useSetRecoilState` hook that will allow us to add todos to our `todosState` atom, which we have also imported in our file.
+We have import the Recoil `useSetRecoilState` hook that will allow us to add tasks to our `allTasks` atom, which we have also imported in our file.
 
-We also have created a constant `setTodos = useSetRecoilState(todosState);` which gives us a function that we can use to modify our `todosState` atom
+We also have created a constant `setTasks = useSetRecoilState(allTasks);` which gives us a function that we can use to modify our `allTasks` atom
 
-In our `return`  section, we have a `div` that contains an input field and a button that calls the `addTodo()` function when clicked. 
+In our `return`  section, we have a `form` that contains an input field and a button that calls the `addTask()` function when clicked. 
 
-The `addTodo()` function uses the `setTodos` function that we created earlier to add new items to our atom. The `setTodos` function takes the value of the items previously contained in our atom and returns an array with the newly added item.
+The `addTask()` function uses the `setTasks` function that we created earlier to add new items to our atom. The `setTasks` function takes the value of the items previously contained in our atom and returns an array with the newly added item.
 
 #### Reading data from the atoms
-To read data from the previously created atoms and display it on a web page, open the `Todos.js` file and paste in the code below:
+Use the code provided below in `Tasks.js`:
 ```javascript
 import React from 'react'
 import { useRecoilValue } from "recoil";
-import { filteredTodosState } from '../recoil/atom';
-import Todo from './Todo';
+import { filteredTasks } from '../recoil/atom';
+import Task from './Task';
 
-const Todos = () => {
-
-    const todos = useRecoilValue(filteredTodosState);
-
+function Tasks() {
+    //read the default return value(which is a list of all tasks) of the filtered tasks selector and assign it to a constant tasks
+    const tasks = useRecoilValue(filteredTasks);
     return (
         <div>
-            {todos.map((todo, index) => (
-                <Todo todo={todo} key={index} />
+            //map through the tasks array and call the Task component for each element. Also pass the value of each element to the Task component
+            {tasks.map((task, index) => (
+                <Task task={task} key={index} />
             ))}
         </div>
     )
 }
-
-export default Todos
+export default Tasks
 ```
 
-In the above code, we have imported `useRecoilValue` to read data from the atoms. In addition, we have also imported the `filteredTodosState` atom that contains the data we want to access.
+In the above code, we have imported `useRecoilValue` to read data from the atoms. In addition, we have also imported the `filteredTasks` selector that contains the data we want to access.
 
-Using `const todos = useRecoilValue(filteredTodosState);`, we have been able to read the data contained in the `filteredTodosState` atom and store it in a constant named `todos`.
+Using `const tasks = useRecoilValue(filteredTasks);`, we have been able to read the data contained in the `filteredTasks` selector and store it in a constant named `tasks`. The default return value of the `filteredTasks` selector is a list of all tasks.
 
-In the `return` section, we have mapped through the `todos` and passed the data to our `Todo` component. 
+In the `return` section, we have mapped through the `tasks` array and passed the data to our `Task` component. 
 
 More information about the map method can be found [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map).
 
 
-Next, open the `Todo.js` file and paste in the code below:
+Next, open the `Task.js` file and paste in the code below:
 ```javascript
 import React from 'react'
 import { useRecoilState } from 'recoil';
-import { todosState } from '../recoil/atom';
+import { allTasks } from '../recoil/atom';
 
-const Todo = ({ todo }) => {
-    const [todos, setTodos] = useRecoilState(todosState);
-    const index = todos.findIndex((todoItem) => todoItem === todo);
+const Task = ({ task }) => {
+    const [tasks, setTasks] = useRecoilState(allTasks);
+    const index = tasks.findIndex((taskItem) => taskItem === task);
 
     const replaceItemAtIndex = (arr, index, newValue) => {
         return [...arr.slice(0, index), newValue, ...arr.slice(index + 1)];
@@ -274,76 +284,74 @@ const Todo = ({ todo }) => {
         return [...arr.slice(0, index), ...arr.slice(index + 1)];
     };
 
-    const toggleTodoCompletion = () => {
-        const newTodos = replaceItemAtIndex(todos, index, {
-          ...todo,
-          isComplete: !todo.isComplete
+    const toggleTaskCompletion = () => {
+        const newTasks = replaceItemAtIndex(tasks, index, {
+          ...task,
+          isDone: !task.isDone
         });
-        setTodos(newTodos)
+        setTasks(newTasks)
     };
 
-    //Delete a todo
-    const deleteTodo = () => {
-        const newTodos = removeItemAtIndex(todos, index);
+    //Delete a task
+    const deleteTask = (id) => {
+        const newTasks = removeItemAtIndex(tasks, index);
 
-        setTodos(newTodos);
+        setTasks(newTasks);
     }
-
-    console.log(index)
 
     return (
         <div>
-            <span>{todo.text}</span>
+            <span>{task.text}</span>
             <input
                 type="checkbox"
-                checked={todo.isComplete}
-                onChange={toggleTodoCompletion}
+                checked={task.isDone}
+                onChange={toggleTaskCompletion}
             />
-            <button onClick={deleteTodo}>X</button>
+            <button onClick={deleteTask}>X</button>
         </div>
     )
 }
 
-export default Todo
+export default Task
 ```
 
-In this component, we accept the props passed from the `Todos.js` file through object destructuring. 
+In this component, we accept the props passed from the `Tasks.js` file through object destructuring. 
 
-Using the passed props, we return a `span` that contains the text, a checkbox that we can use to toggle between item completion, and a button that we can use to delete a todo. 
+Using the passed props, we return a `span` that contains the text, a checkbox that we can use to toggle between item completion, and a button that we can use to delete a task. 
 
-The checked value of the checkbox is based on whether the todo is marked as complete or incomplete.
+The checked value of the checkbox is based on whether the task is marked as complete or incomplete.
 
-On the click of the checkbox, we are calling the `toggleTodoCompletion()` function.
+On the click of the checkbox, we are calling the `toggleTaskCompletion()` function.
 
-The `toggleTodoCompletion()` calls the `replaceItemAtIndex()` and passes the todos array, the index of the item clicked on and the item clicked on itself(the item is spread out using the spread operator so that its contents can be modified. After spreading it out, the current value of `isCompleted` is appended) as arguments.
+The `toggleTaskCompletion()` calls the `replaceItemAtIndex()` and passes the tasks array, the index of the item clicked on and the item clicked on itself(the item is spread out using the spread operator so that its contents can be modified. After spreading it out, the current value of `isDone` is appended) as arguments.
 
-We get the index of the items from this function, `const index = todos.findIndex((todoItem) => todoItem === todo)`. 
+We get the index of the items from this function, `const index = tasks.findIndex((taskItem) => taskItem === task)`. 
 
 The `replaceItemAtIndex()` function takes in the arguments passed to it and returns an array modified using the slice method.
 
-The `toggleTodoCompletion()` stores the array received from the `replaceItemAtIndex()` function in constant named `newTodos`. It then calls the `setTodos()` function and passes the `newTodos`.
+The `toggleTaskCompletion()` stores the array received from the `replaceItemAtIndex()` function in constant named `newTasks`. It then calls the `setTasks()` function and passes the `newTasks`.
 
- The `setTodos()` function updates our atom with the new array.
+ The `setTasks()` function updates our atom with the new array.
 
 
-With the click of the delete button, we are calling the `deleteTodo()` method. This method calls the `removeItemAtIndex()` function and passes the todos array and the item's index being clicked on as arguments.
+With the click of the delete button, we are calling the `deleteTask()` method. This method calls the `removeItemAtIndex()` function and passes the tasks array and the item's index being clicked on as arguments.
 
-The `removeItemAtIndex()` takes in the arguments passed to it and returns an array modified using the JavaScript's `slice()` method. The `deleteTodo()` stores the returned array in a constant named `newTodos`. 
+The `removeItemAtIndex()` takes in the arguments passed to it and returns an array modified using the JavaScript's `slice()` method. The `deleteTask()` stores the returned array in a constant named `newTasks`. 
 
-It then calls the `setTodos()` function and passes the newTodos which updates our `todosState` atom.
+It then calls the `setTasks()` function and passes the newTasks which updates our `allTasks` atom.
 
 #### Implementing filters
-As we can now add, delete and toggle item completion, we can implement filters that will help us display todos based on specific criteria. 
+As we can now add, delete and toggle item completion, we can implement filters that will help us display tasks based on specific criteria. 
 
-To do this, open the `TodoFilters.js` file and paste in the code below:
+To do this, open the `TaskFilters.js` file and paste in the code below:
 ```javascript
 import React from 'react'
 import { useRecoilState } from "recoil";
-import { todosFilterState } from '../recoil/atom';
+import { tasksFilter } from '../recoil/atom';
 
-const TodoFilters = () => {
+const TaskFilters = () => {
 
-    const [filter, setFilter] = useRecoilState(todosFilterState);
+    const [filter, setFilter] = useRecoilState(tasksFilter);
 
     return (
         <div>
@@ -357,12 +365,12 @@ const TodoFilters = () => {
     )
 }
 
-export default TodoFilters
+export default TaskFilters
 ```
 
-In the above code, we have a dropdown menu that has three options. On changing the option, we pass the value of the currently selected option to the `setFilter()` function that references the `todosFilterState` atom. 
+In the above code, we have a dropdown menu that has three options. On changing the option, we pass the value of the currently selected option to the `setFilter()` function that references the `tasksFilter` atom. 
 
-On passing the filter, the switch statement in the `filteredTodosState` selector matches the filter against the defined cases and returns only the todos that match the predefined criteria.
+On passing the filter, the switch statement in the `filteredTasks` selector matches the filter against the defined cases and returns only the tasks that match the predefined criteria.
 
 #### Running our application
 To run the app, open the integrated terminal and run the command below:
@@ -370,7 +378,7 @@ To run the app, open the integrated terminal and run the command below:
 npm start
 ```
 
-On your browser, open the link `localhost:3000,` and you will see your todo app. You can be able to add todos, delete them, mark them as complete or incomplete, and filter between completed, uncompleted, and all todos.
+On your browser, open the link `localhost:3000,`. You can be able to add tasks, delete them, mark them as complete or incomplete, and filter between completed, uncompleted, and all tasks.
 
 ### Conclusion
 This is a basic implementation of Recoil in our React app. After understanding the concepts discussed above, you can go ahead and implement Recoil in your project. You can also work on this project and take it to the next level.
