@@ -1,12 +1,12 @@
 ---
 layout: engineering-education
-status: draft
+status: publish
 published: true
 url: /building-autocorrect-feature-using-nlp-with-python/
 title: Building an Autocorrect Feature using NLP with Python.
-description: The objective of this tutorial is to help the reader understand how Natural Language processing can be used in building autocorrect features for systems, using Python.
+description: The objective of this tutorial is to help the reader understand how Natural Language processing can be used in building autocorrect features for systems using Python.
 author: antony-lia
-date: 2021-11-13T00:00:00-2:30
+date: 2021-12-04T00:00:00-06:40
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -44,13 +44,13 @@ Natural Language Processing (NLP) is a branch of Artificial Intelligence that al
 
 NLP uses a programming language that enables computers to evaluate and interpret large volumes of natural language data.
 
-It paves the door for more interactivity and productivity in a variety of fields:
+It paves the door for more interactivity and productivity in a variety of fields, like:
 - Search autocorrect and autocomplete.
 - Language translation and grammar checkers.
 - Chatbots and social media monitoring.
 - Email filtering and voice assistants.
 
-We'll look at how it's employed in autocorrection systems in this tutorial.
+We'll look at how it's employed in auto-correction systems in this tutorial.
 
 ### Autocorrect feature
 The Autocorrect model is programmed to correct spellings and errors while inputting text and locating the most comparable related words.
@@ -62,7 +62,7 @@ If the typed word is found in the dictionary, the autocorrect feature assumes yo
 When building this model/feature, the following steps are involved:
 
 #### Identifying misspelled word
-A word is misspelled, if the text is not found on the vocabulary of the corpus (dictionary), then the autocorrect system flags out for correction.
+A word is misspelled if the text is not found on the vocabulary of the corpus (dictionary), then the autocorrect system flags out for correction.
 
 #### Find strings that are N-edit-distance away from the misspelled word
 Editing is an operation performed on the string to change it to another string.
@@ -73,23 +73,23 @@ Hence, the `edit distance` is the count of the number of operations performed on
 
 The following are examples of edits:
 - `INSERT` - a letter should be added.
-- `DELETE` - remove a letter.
-- `SWAP` - swap two adjacent letters.
+- `DELETE` - removes a letter.
+- `SWAP` - swaps two adjacent letters.
 - `REPLACE` - changes one letter to another.
 
-> NOTE: For autocorrect systems, we usually take `n` to be between 1 and 3 edits.
+> NOTE: For autocorrect systems, `n` is usually between 1 and 3 edits.
 
 #### Filtering suggested candidates
 Only correctly spelled words from the created candidate list are considered, so that we can compare them to the words in the corpus to filter out the ones that don't exist.
 
-#### Order Filtered Candidates based on word probabilities
+#### Order filtered candidates based on word probabilities
 The probabilities of the words are calculated based on the following formula:
 
 `P(w) = C(w)/V`
 
-`P(w)`- the probability of a word, `w`.
-`C(w)` - number of times (frequency) word appears in the vocabulary dictionary.
-`V` - the total sum of words in the dictionary.
+- `P(w)`- the probability of a word `w`.
+- `C(w)` - number of times (frequency) word appears in the vocabulary dictionary.
+- `V` - the total sum of words in the dictionary.
 
 #### Choose the most-likely candidate
 When the probabilities are calculated, the actual list of words is grouped by the most likely word from the created candidates.
@@ -201,9 +201,9 @@ delete_word_l = DeleteLetter(word="cans")
 ```
 From the code above, we use the `DeleteLetter` function that removes a letter from  a given word.
 
-The word is first split `split_list=[]` into its component - the left and the right. We then loop over the sequence of characters using a `for` loop.
+The word is first split `split_list=[]` into its components - the left and the right. We then loop over the sequence of characters using a `for` loop.
 
-Then, we use the compress the list to return all the instances of words with the deleted letter stored in the `delete_list` array list.
+Then, we use the compress the list to return all the instances of words without the deleted letter stored in the `delete_list` array list.
 
 For example:
 
@@ -230,7 +230,7 @@ def SwitchLetter(word):
 switch_word_l = SwitchLetter(word="eta")
 ```
 
-The `SwitchLetter` functions take a word, splits, and swap all the letters in that word from left to right using `switch_1`.
+The `SwitchLetter` function take a word, splits, and swaps all the letters in that word from left to right using `switch_1`.
 
 For example:
 
@@ -297,9 +297,9 @@ print(insert("trash"))
 ['atrash', 'btrash', 'ctrash', 'dtrash', 'etrash', 'ftrash', 'gtrash', 'htrash', 'itrash', 'jtrash', 'ktrash', 'ltrash', 'mtrash', 'ntrash', 'otrash', 'ptrash', 'qtrash', 'rtrash', ...]
 ```
 
-> NOTE: All the four edit functions uses the `split` method for every word.
+> NOTE: All the four edit functions use the `split` method for every word.
 
-We then combine these edit functions to allow the autocorrect features like delete, replace, insert, and swap the letters.
+We then combine these edit functions to allow the autocorrect features, like delete, replace, insert, and swap the letters.
 
 ```python
 # combining the edits
@@ -355,8 +355,6 @@ To summarize, we have:
 - Learned what Natural Language Processing is and its ability to autocorrect words.
 - Explored the autocorrect system and the various steps taken to build it.
 - Implemented an autocorrect system using NLP with Python.
-
-One can find more information about NLP [here](https://realpython.com/nltk-nlp-python/).
 
 Happy coding.
 
