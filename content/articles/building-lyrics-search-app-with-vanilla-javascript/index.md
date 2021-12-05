@@ -451,7 +451,3 @@ async function getLyrics(artist, songTitle) {
 I’m a big fan of you not just stopping at what is provided in this tutorial. if indeed you’ve learned something from this, I challenge you to add some more features to this web app and also make the UI better. You can add a button that copies the lyrics to the clipboard or a button that helps you share lyrics with friends via social media.
 
 The source code is available on [Github](https://github.com/shegz101/Lyrics-Web-App).
-
-
-
-
