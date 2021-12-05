@@ -22,7 +22,7 @@ In the `lyrics.html` file, include the code below to create the structure for th
 ```html
 
 <!DOCTYPE html>
-<html lang=”en”>
+<html lang="en">
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA_Compatible" content="IE=edge">
