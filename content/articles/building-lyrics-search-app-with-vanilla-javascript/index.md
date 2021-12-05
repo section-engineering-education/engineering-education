@@ -24,27 +24,27 @@ In the `lyrics.html` file, include the code below to create the structure for th
 <!DOCTYPE html>
 <html lang=”en”>
 <head>
-   <meta charset=”UTF-8”>
-   <meta http-equiv=”X-UA_Compatible” content=”IE=edge”>
-   <meta name=”viewport” content=”width=device-width,initial-scale=1.0”>
-   <link rel=”stylesheet” type=”text/css” href=”lyrics.css”/>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA_Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width,initial-scale=1.0">
+   <link rel="stylesheet" type="text/css" href="lyrics.css"/>
    <title>Lyrics Search App</title>
 </head>
 <body>
-   <div class=”container”>
-           <div class=”intro-text”>
+   <div class="container">
+           <div class="intro-text">
                  <h1>Learn your favourite</h1>
                  <h2>song lyrics</h2>
            </div>
            
-           <div id=”lyrics-search”>
-                   <form action=”#” id=”searchMe”>
-                         <input type=”text” id=”lyricSearch” placeholder=”artist name or song title”/>
+           <div id="lyrics-search">
+                   <form action="#" id="searchMe">
+                         <input type="text" id="lyricSearch" placeholder="artist name or song title"/>
                     </form>
-                     <div id=”search-result”></div>
+                     <div id="search-result"></div>
            </div>
    </div>
-<script src=”lyrics.js”></script>
+<script src="lyrics.js"></script>
 </body>
 </html>
 
@@ -162,11 +162,11 @@ In your `lyrics.js` file,  declare variables and use the DOM selectors to bring 
 
 ```javascript
 
-//you comment in js using double slash, with vscode just highlight what you want to comment and then press “ctrl + /”
+//you comment in js using double slash, with vscode just highlight what you want to comment and then press "ctrl + /"
 
-const form = document.getElementById(“searchMe”);//target the form tag in the html file
-const search = document.getElementById(“lyricSearch”);//target th input field 
-const output = document.getElementById(“search-result”);//target the output div
+const form = document.getElementById("searchMe");//target the form tag in the html file
+const search = document.getElementById("lyricSearch");//target th input field 
+const output = document.getElementById("search-result");//target the output div
 
 ```
 Let’s explore APIs and the desired API we would use to get the data we need to make this web app up and running.
@@ -184,13 +184,13 @@ To do this, let’s create an event listener using DOM events to listen for a su
 Here is the code snippet for this:
 
 ```javascript
-form.addEventListener(“submit”, 
+form.addEventListener("submit", 
      (e) => {
                    e.preventDefault();//this prevents the submission of form from reloading the page
                    let searchValue = search.value.trim();
            
                    if(!searchValue) {
-                         alert(“please fill the search field”);
+                         alert("please fill the search field");
                     } else {
                           getResult(searchValue);
                     }
@@ -198,7 +198,7 @@ form.addEventListener(“submit”,
 
 ```
 
-In the code above, we listened for a submit event after which we declared a variable `searchValue` to be equal to `search.value.trim()`, the `trim()` method simply trims whitespaces. The if statement validates if `searchValue` equals to an empty string, alert “please fill the input field”, else, invoke the `getResult()` function taking the `searchValue` as the argument.
+In the code above, we listened for a submit event after which we declared a variable `searchValue` to be equal to `search.value.trim()`, the `trim()` method simply trims whitespaces. The if statement validates if `searchValue` equals to an empty string, alert "please fill the input field", else, invoke the `getResult()` function taking the `searchValue` as the argument.
 
 I’d recommend that you explore the OVH API doc here before proceeding further we’re about to fetch data (lyrics) from the OVH API.
 
@@ -235,14 +235,14 @@ This is the code snippet for the showData function:
 ```javascript
 function showData(result) {
            output.innerHTML = `
-            <ul class=”lyrics”>
+            <ul class="lyrics">
                   ${result.data
                      .map(song) => `<li>
-                                        <span class=”attribute” song-title=”${song.title_short}” song-artist=”${song.artist.name}”> <strong>${song.title_short}</strong>-${song.artist.name}</span>
+                                        <span class="attribute" song-title="${song.title_short}" song-artist="${song.artist.name}"> <strong>${song.title_short}</strong>-${song.artist.name}</span>
                                     </li>
                                     `
                      )
-                     .join(“”)
+                     .join("")
                  }
             </ul>  
     `;
@@ -277,12 +277,12 @@ The following code helps us listen to click event inside the output innerHTML:
 
 ```javascript
 
-output.addEventLIstener(“click”,e => {
+output.addEventLIstener("click",e => {
        const clickedButton = e.target;
        
-      if(clickedButton.className === ‘attribute’) {
-            const artist = clickedButton.getAttribute(‘song-artist’);
-            const  songTitle = clickedButton.getAttribute(‘song-title’);
+      if(clickedButton.className === "attribute") {
+            const artist = clickedButton.getAttribute("song-artist");
+            const  songTitle = clickedButton.getAttribute("song-title");
 
             getLyrics(artist, songTitle);
        }   
@@ -302,11 +302,11 @@ async function getLyrics(artist, songTitle) {
         const response = await fetch(`${api}/v1/${artist}/${songTitle}`);
         const data = await resp[onse.json();
 
-        const lyrics = data.lyrics.replace(/(\r\n|\r|\n)/g, “<br>”);
+        const lyrics = data.lyrics.replace(/(\r\n|\r|\n)/g, "<br>");
         
-        output.innerHTML = `<h2 id=”lyricsHead”><strong>${songTiltle}</strong>-${artist}</h2>
+        output.innerHTML = `<h2 id="lyricsHead"><strong>${songTiltle}</strong>-${artist}</h2>
 
-        <p id=”lyrics-display”>${lyrics}</p>`;
+        <p id="lyrics-display">${lyrics}</p>`;
  }
 ```
 
@@ -366,19 +366,19 @@ The entire javascript code :
 ```javascript
 
 //defining the variables
-const form = document.getElementById(“searchMe”);//target the form tag in the html file
-const search = document.getElementById(“lyricSearch”);//target th input field 
-const output = document.getElementById(“search-result”);//target the output div
-const api = “https:/api.lyrics.ovh”;
+const form = document.getElementById("searchMe");//target the form tag in the html file
+const search = document.getElementById("lyricSearch");//target th input field 
+const output = document.getElementById("search-result");//target the output div
+const api = "https:/api.lyrics.ovh";
 
 //listening for a submit event
-form.addEventListener(“submit”, 
+form.addEventListener("submit", 
      (e) => {
                    e.preventDefault();//this prevents the submission of form from reloading the page
                    let searchValue = search.value.trim();
            
                    if(!searchValue) {
-                         alert(“please fill the search field”);
+                         alert("please fill the search field");
                     } else {
                           getResult(searchValue);
                     }
@@ -401,26 +401,26 @@ async function getResult(searchValue)  {
 //structuring how the result will be displayed using the suggestion mode the API supports
 function showData(result) {
            output.innerHTML = `
-            <ul class=”lyrics”>
+            <ul class="lyrics">
                   ${result.data
                      .map(song) => `<li>
-                                                     <span class=”attribute” song-title=”${song.title_short}” song-artist=”${song.artist.name}”> <strong>${song.title_short}</strong>-${song.artist.name}</span>
+                                                     <span class="attribute" song-title="${song.title_short}" song-artist="${song.artist.name}"> <strong>${song.title_short}</strong>-${song.artist.name}</span>
                                                </li>
                                                `
                      )
-                     .join(“”)
+                     .join("")
                  }
             </ul>  
     `;
 }
 
 //listening if the clicked event is on the span tag, so lyrics can be called and displayed
-output.addEventLIstener(“click”,e => {
+output.addEventLIstener("click",e => {
        const clickedButton = e.target;
        
-      if(clickedButton.className === ‘attribute’) {
-            const artist = clickedButton.getAttribute(‘song-artist’);
-            const  songTitle = clcikedButton.getAttribute(‘song-title’);
+      if(clickedButton.className === 'attribute') {
+            const artist = clickedButton.getAttribute('song-artist');
+            const  songTitle = clcikedButton.getAttribute('song-title');
 
             getLyrics(artist, songTitle);
        }   
@@ -432,11 +432,11 @@ async function getLyrics(artist, songTitle) {
         const response = await fetch(`${api}/v1/${artist}/${songTitle}`);
         const data = await resp[onse.json();
 
-        const lyrics = data.lyrics.replace(/(\r\n|\r|\n)/g, “<br>”);
+        const lyrics = data.lyrics.replace(/(\r\n|\r|\n)/g, "<br>");
         
-        output.innerHTML = `<h2 id=”lyricsHead”><strong>${songTiltle}</strong>-${artist}</h2>
+        output.innerHTML = `<h2 id="lyricsHead"><strong>${songTiltle}</strong>-${artist}</h2>
 
-        <p id=”lyrics-display”>${lyrics}</p>`;
+        <p id="lyrics-display">${lyrics}</p>`;
  }
 
 ```
