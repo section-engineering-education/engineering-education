@@ -133,7 +133,7 @@ In our code below the developer class  define a constructor function .The develo
  // expected output: "Tom"
  ```
 
-**Below is an example of code to show class component  instantiation that outputs greetings.**
+#### Below is an example of code to show class component  instantiation that outputs greetings.
 In  our code their is a human class and a student class ,that extends the  Human class .Both classes define a constructor function.Every student is a human too.
 Both classes define a constructor function. The  name argument is expected by the  human class and  that value is stored on the instance using `this` keyword.
 
