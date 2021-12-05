@@ -14,10 +14,8 @@ We will be creating the search app using HTML5, CSS3, Vanilla JS, async-await wi
 - Some basic knowledge of HTML, CSS, and JAVASCRIPT.
 - A laptop with an internet connection
 
-###Structuring The Lyrics Search App With Html5.
-
- To begin, create a folder named `lyrics-app`, then you create three files in the folder:`lyrics.html`,`lyrics.css`and
-`lyrics.js`
+### Structuring the lyrics search app with HTML 5.
+ To begin, create a folder named `lyrics-app`, then you create three files in the folder: `lyrics.html`, `lyrics.css` and `lyrics.js`
 
 
 In the `lyrics.html` file, include the code below to create the structure for the lyrics search app.
