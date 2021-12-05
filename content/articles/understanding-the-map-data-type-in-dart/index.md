@@ -7,7 +7,7 @@ title: Understanding the Map Data Type in Dart
 description: This article will provide the reader with an insight into Map data type. We will also learn how to manipulate map elements to output specific user requirements.
 author: elly-omondi
 date: 2021-11-28T00:00:00-12:30
-topics: [Language]
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
@@ -255,5 +255,5 @@ Happy coding!
 2. https://www.tutorialspoint.com/dart_programming/dart_programming_map.htm
 
 ---
-Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/mercy-meave/)
+Peer Review Contributions by: [Mercy Meave](/engineering-education/authors/mercy-meave/)
 
