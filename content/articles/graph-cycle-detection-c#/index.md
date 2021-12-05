@@ -43,13 +43,13 @@ Below, is an example of a graph with four nodes or vertex and six edges or lines
 
 If two nodes are connected, we say they are adjacent or neighbors. `John` and `bob` are neighbors. `John` and `Sam` are not because they are not connected.
 
-![image of a Graph](/engineering-education/graph-cycle-detection/graphexample.png/)
+![image of a Graph](/engineering-education/graph-cycle-detection-c#/graphexample.png/)
 
 If the edges have a direction, we say we have a directed graph. From the directed graph image below, `John` is connected to `Bob` but the opposite is not true.
 
 This is like how Twitter works. If you follow someone, there is a connection from your account to their account. Not the other way round unless they follow you as well.
 
-![image of a directed-graph](/engineering-education/graph-cycle-detection/directed-graph.png/)
+![image of a directed-graph](/engineering-education/graph-cycle-detection-c#/directed-graph.png/)
 
 There are undirected graphs as well. An example of this can be Facebook. When you add a friend, there is a connection from you to them. The Vice verse is true.
 
@@ -59,7 +59,7 @@ The edges can also have weights. We use these weights to represent how strong th
 
 When two people communicate, we can put more weight on them. We then use that to show their best friends using the nodes that have the highest weights.
 
-![Image of Weighted Graph](/engineering-education/graph-cycle-detection/weightedgraph.png/)
+![Image of Weighted Graph](/engineering-education/graph-cycle-detection-c#/weightedgraph.png/)
 
 With this brief description, we can get to know what a cycle is and how to detect that in a graph.
 
@@ -76,7 +76,7 @@ These are paths `1` to `2` to `6` and `1` to `2` to `7`. In any search, if you k
 
 When this is not managed, your algorithm will run infinite times. This leads to a `StackOverflow` exception error.
 
-![Image of Cycle Graph](/engineering-education/graph-cycle-detection/Cyclegraph.png/)
+![Image of Cycle Graph](/engineering-education/graph-cycle-detection-c#/Cyclegraph.png/)
 
 #### An example of how an infinite loop occurs.
 Let's lookup for node `6`. If we start our search going through the path of `1` to `3` to `4`, we will get back to `1`.
@@ -93,7 +93,7 @@ We then explore all other vertexes as long as we can go along that path. On reac
 
 The stack data structure is the best for doing the backtracking.
 
-![Image of DFS](/engineering-education/graph-cycle-detection/dfs.png/)
+![Image of DFS](/engineering-education/graph-cycle-detection-c#/dfs.png/)
 
 #### Example of how DFS works.
 From the DFS diagram above, say `1` is our start node. We look at the first item that will be in our adjacency matrix. That is `2`. 
@@ -289,7 +289,7 @@ If a cycle is detected, we return `true`, otherwise, we return `false`.
 ```
 The output of the above code after running will be:-
 
-![Image of Output](/engineering-education/graph-cycle-detection/output1.png/)
+![Image of Output](/engineering-education/graph-cycle-detection-c#/output1.png/)
 
 ### 2. Cycle detection in undirected Graph.
 In the above example, we have talked about finding a cycle in a directed graph. 
@@ -304,7 +304,7 @@ Because there is an edge from `B` to `A` and `A` is part of the current path. A 
 
 A cycle will always be detected between every two nodes connected by an edge. We need a different algorithm for Undirected Graph.
 
-![Image of Graph](/engineering-education/graph-cycle-detection/unidirected.png/)
+![Image of Graph](/engineering-education/graph-cycle-detection-c#/unidirected.png/)
 
 As we traverse the graph, we should pass the parent of each node to its neighbors. This will prevent going back to the parent.
 
@@ -318,7 +318,7 @@ When exploring the neighbors of `B` we will know we came from `A`. We won't go i
 
 Add `C` to the current path set. We pass `B` as the parent node. `C` has one other neighbor `A`. We have already visited `A`. It is part of our current path set as well. A cycle is detected.
 
-![Image of Undirected Graph](/engineering-education/graph-cycle-detection/unidirected.png/)
+![Image of Undirected Graph](/engineering-education/graph-cycle-detection-c#/unidirected.png/)
 
 #### Code implemetation
 We will add a new method called `HasCycle()` to our existing class. `HasCyle()` is the Dfs Function in this case. 
@@ -427,7 +427,7 @@ The concept is still the same as for the directed graph for these two functions.
 ```
 The output of the above code after running it will be:-
 
-![Image of Output](/engineering-education/graph-cycle-detection/output1.png/)
+![Image of Output](/engineering-education/graph-cycle-detection-c#/output1.png/)
 
 ### Application of cycle detection
 1. It is used a lot in distributed message-based algorithms.
