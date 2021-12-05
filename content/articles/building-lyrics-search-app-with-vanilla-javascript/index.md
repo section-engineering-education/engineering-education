@@ -253,7 +253,7 @@ function showData(result) {
 ```
 In the code snippet above, a showData function was created and the result was passed as an argument. The name of the function is very descriptive, it is to display the lyrics on the web page. The question that comes to mind is where exactly do we want to display the lyrics, if you recall we have an empty div in the html file. The lyrics will be displayed inside that div, the variable that connects the div to the javascript file is the variable output.
 
-###INNER - HTML
+### Inner - HTML
 This is the DOM property that either sets or retrieves the content of an HTML element. In this instance, we want to set the content of the empty div tag in the HTML file to display the lyrics suggestions in a list form.
 
 
