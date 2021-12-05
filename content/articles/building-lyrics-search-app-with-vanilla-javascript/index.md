@@ -10,10 +10,8 @@ In this article, we will be creating a platform where users can search for lyric
 We will be creating the search app using HTML5, CSS3, Vanilla JS, async-await with fetch method, OVH API, and ES6 features like arrow functions.
 
 ###Prerequisites
-- A code editor. For example: Visual studio code.
-
-- Some basic knowledge of HTML , CSS , and JAVASCRIPT.
-
+- A code editor (Visual studio code.)
+- Some basic knowledge of HTML, CSS, and JAVASCRIPT.
 - A laptop with an internet connection
 
 ###Structuring The Lyrics Search App With Html5.
