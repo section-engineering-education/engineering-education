@@ -35,7 +35,7 @@ To follow with this tutorial along, you need to have the following:
 - [Mailtrap](https://mailtrap.io/signin) account.
 
 ### Objectives
-By the end of this tutorial, you should be able to integrate Mailtrap into your PHP application to send mails.
+By the end of this tutorial, you should be able to integrate [Mailtrap](https://mailtrap.io) into your PHP application to test emails.
 
 ### Getting started with mailtrap
 Developing extensive applications come with a lot of demands. Such include the requirement to test your applications to ensure that everything work as intended.
@@ -46,11 +46,9 @@ One of the key requirements of these applications, such as [Edge as a service](h
 
 One key challenge to sending emails is that we ain't sure whether our emails are delivered or not. To be sure that emails are delivered, we need to test our emails in the development and staging levels to ensure that they work well in production.  
 
-
-Now, Mailtrap comes in on development and staging stages of application development process. It's being used to test the emails to ensure that they are delivered to the intended recipients. 
+Now, [Mailtrap](https://mailtrap.io) comes in on development and staging stages of application development process. It's being used to test the emails to ensure that they are delivered to the intended recipients. 
 
 In the next section, we dive in to look at the PHP mailing methods, how they work and the possible problems that they may face.
-
 
 ### PHP built-in mailing methods
 In PHP, we have 2 different ways of sending emails to our system users. 
@@ -75,15 +73,12 @@ mail(
 ```
 
 The above method takes in multiple paramaters, which we describe as follows:
-
 - `$to` : This parameter refers to the email recipient. This could be something like `test@section.io`.
 - `$subject`: This refers to the email subject which you MUST ensure that it meets the RFC 2047 - MIME (Multipurpose Internet Mail Extensions).
-- `$message`: This is your message body. We need to ensure that each line is separated with a CRLF (\r\n). 
-> NOTE: Lines should not be larger than 70 characters or else the messages won't be delivered.
-- `$additional_headers (optional)`- This is an array paramater that ensures that we can add additional information to our email header. This may include the `cc`, `Bcc` et cetera.
+- `$message`: This is your message body. We need to ensure that each line is separated with a CRLF (\r\n). Lines should not be larger than 70 characters or else the messages won't be delivered.
+- `$additional_headers (optional)`- This is an array paramater that ensures that we can add additional information to our email header. This may include the `CC`, `BCC` et cetera.
 
 Now that we understand the basic functionality of the PHP's `mail()` methods, let's proceed and send a sample email to just some random email.
-
 ```php
 <?php
 $to      = 'no-reply@section.io';
@@ -93,7 +88,6 @@ $headers = array(
     'Reply-To' => 'test2@example.com',
     'X-Mailer' => 'PHP/' . phpversion()
 );
-
 
 $message = '
 <html>
@@ -124,20 +118,16 @@ $headers[] = 'MIME-Version: 1.0';
 $headers[] = 'Content-type: text/html; charset=iso-8859-1';
 ```
 
-Otherwise, our email body will be delivered as HTML.
+Otherwise, our email body will be delivered as HTML. Other problems may arise when our transport protocol encounters wrong content.
 
-At this point, we assume that when this particular code is run, we expect it to run flawlessly.
+Now, at this point, we assume that when this particular code is run, we expect it to run flawlessly.
 
-But can we be sure that our email is delivered to the intended recipient?  
+However, can we be sure that our email is delivered to the intended recipient?  
 
-> NOTE: you may be wondering how the `from` email setting is done. We will modify this in the `php.ini` file.
-
-In the next section, let's send the same email with a mail package.
+In the next section, let's send the same email with a mail package. These packages will help us overcome the limitations of `mail()` method which is quite hard to use to check whether our email is delivered or not.
 
 ### PHP-mailing-packages
-One key drawback of the previous method of sending email is that it has very limited features or functionalities. 
-
-This is normally a problem faced when there is a need for bulk messsages. 
+One key drawback of the previous method of sending email is that it has very limited features or functionalities. This is normally a problem faced when there is a need for sending bulk messsages. 
 
 In this section, we look at how these drawbacks can be overcome, and subsequently analyse if our emails are develired to the intended recipients.  
 
@@ -146,10 +136,11 @@ We discuss the following packages:
 - Swift Mailer
 - Pear Mail
 
-Let's start with the `PHPMailer`:  
+Let's proceed and start with the `PHPMailer`:  
 
 PHPMailer is the most popular package for sending emails in PHP of all the packages we have listed above. 
 
+Create a PHP file `mail.php` and add the following code snippets:
 ```php
 <?php
 // Import the mailer class
@@ -187,7 +178,7 @@ if(!$mail->send()){
 }
 ```
 
-In the above code, we've installed the [PHPMailer](https://github.com/PHPMailer/PHPMailer) package. Next, we've created a new instance of this class, `$mail`.
+In the above code, we've installed the [PHPMailer](https://github.com/PHPMailer/PHPMailer) package. We've also created a new instance of this class, `$mail`.
 
 Next, we've created our Mailtrap account and grabbed the credentials [here](https://mailtrap.io/inboxes/1146710/settings).
 
@@ -197,22 +188,19 @@ When you create a project, ensure that you integrate it with the `PHPMailer` opt
 
 > You will notice that our screenshot has omitted the username and password. These are autogenerated and are different for each user.
 
-Next, we have set our `setFrom()` method to take in the sender's email and the email title.
+Next, we have set our `setFrom()` method to take in the sender's email and the email title. We then proceed to configure the recipients' email address and the email subject.
 
-We then proceed to configure the recipients' email address and the email subject.
+> Note: Previously, we had indicated that we can add our body as HTML, and then setup our content type appropriately.
 
-Previously, we had indicated that we can add our body as HTML, and then setup our content type appropriately.
-
-In the mail body above, we define the message as HTML to allow us customize the mail to meet our requirements.
-
-We then add the alternative tag and then finally adding an attachment.
+In the mail body above, we define the message as HTML to allow us customize the mail to meet our requirements. We then add the alternative tag and then finally adding an attachment.
 
 Finally, we use the PHPMailer's `$mail->send()` method to send our email. We have included the `if` statement to check whether our email has been sent or not. 
 
 When our email fails to be delivered, we notify the user by printing an alert message otherwise a success message.
 
-Let's proceed and implement the same using the `SwiftMailer`, while you implement `Pear Mail`.
+Let's proceed and implement the same using the `SwiftMailer` as follows:
 
+Create a new file `swift.php` file on your server and add the following code snippet:
 ```php
 <?php
 require_once './vendor/autoload.php';
@@ -249,7 +237,7 @@ require_once './vendor/autoload.php';
 }
 ```
 
-Just like the PHPMailer, we first install this package, and import it using the `./vendor/autoload.php` path. It's also important to note that this path may differ from yours.
+Just like the PHPMailer, we first install this package, and import it using the `./vendor/autoload.php` path. It's also important to note that this path may differ from your application path depending on your system settings.
 
 Next we set the transport to use the `Swift_SmtpTransport` of our Mailtrap. Grab your credentials and set them as shown on the code above.
 
@@ -260,7 +248,7 @@ Now, how do we know that our emails have been delivered?
 This is the reason why we're using the Mailrap. As shown on the configurations above, in contrast to the PHP `mail()` method, the packages allows us to configure our application to use the mailtrap which gives us a platform to test our application as discussed in the next section.
 
 ### Testing emails using the mailtrap
-Login to your [Mailtrap](#) account and got your [inbox](https://mailtrap.io/inboxes).
+Login to your [Mailtrap](#) account and go to your [inbox](https://mailtrap.io/inboxes) section as shown in the following screenshot.
 
 ![inbox](/engineering-education/php-mailtrap/inbox.png)
 
@@ -268,7 +256,7 @@ Next, click on the project name to expand on the emails you sent.
 
 ![inbox](/engineering-education/php-mailtrap/output.png)
 
-> Note, some features on the above screenshots have been skipped for securuty purposes.
+> Note: Some features on the above screenshots have been skipped for securuty purposes.
 
 ### Conclusion
 In this article, we have extensively discussed the basic concepts of PHP mailing methods. 
