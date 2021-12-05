@@ -321,7 +321,7 @@ Output content displays song titles in bolder form compared to the artist name b
 
 Finally, the lyrics are displayed in the paragraph tag when the span tag is clicked.
 
-###Styling and centering the lyrics
+### Styling and centering the lyrics
 Navigate to your css file and add the code below to style and center the lyrics:
 
 ```css
