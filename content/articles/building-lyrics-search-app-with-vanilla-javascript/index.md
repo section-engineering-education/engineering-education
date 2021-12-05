@@ -300,7 +300,7 @@ Below is the code for getLyrics async function:
 ```javascript
 async function getLyrics(artist, songTitle) {
         const response = await fetch(`${api}/v1/${artist}/${songTitle}`);
-        const data = await resp[onse.json();
+        const data = await response.json();
 
         const lyrics = data.lyrics.replace(/(\r\n|\r|\n)/g, "<br>");
         
@@ -430,7 +430,7 @@ output.addEventLIstener("click",e => {
 
 async function getLyrics(artist, songTitle) {
         const response = await fetch(`${api}/v1/${artist}/${songTitle}`);
-        const data = await resp[onse.json();
+        const data = await response.json();
 
         const lyrics = data.lyrics.replace(/(\r\n|\r|\n)/g, "<br>");
         
