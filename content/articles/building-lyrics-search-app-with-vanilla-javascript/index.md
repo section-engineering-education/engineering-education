@@ -7,7 +7,7 @@ Not knowing the lyrics of a song is a problem most song-lovers encounter, especi
 
 In this article, we will be creating a platform where users can search for lyrics by entering the artist name or title of the song.
 
-In this article, I will walk you through how you can create a lyrics search app using HTML5, CSS3, Vanilla JS,async-await with fetch method, OVH API, and ES6 features like arrow functions.
+We will be creating the search app using HTML5, CSS3, Vanilla JS, async-await with fetch method, OVH API, and ES6 features like arrow functions.
 
 ###Prerequisites
 - A code editor. For example: Visual studio code.
