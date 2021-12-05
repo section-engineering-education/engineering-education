@@ -39,11 +39,9 @@ Coincidentally, the rise in web usage led to an increase in the number of client
 
 ### What Are Stateful and Stateless Architectures 
 
-Stateful and stateless architectures define how users interact with services on the internet. Stateful architecture-based services maintain track of clients' records or sessions and apply different functionalities to similar user inputs based on the user's previous records. In a stateless design, services rely on the clients to keep track of transaction records, concentrating on operations that change the system's resources rather than its state.
+Stateful and stateless architectures define how users interact with services on the internet. 
 
-The main difference between the two architectures is how they handle states. In a stateful-based system, additional information is reserved on the server-side, saving the present transaction's state as it waits for the proceeding user requests. 
-
-The client-side holds all additional information in a stateless-based system. Thus, as the system conveys different information, each session reminds the server of its preceding sessions through cookies.
+Stateful based services maintain track of clients' records or sessions and apply different functionalities to similar user inputs based on the user's previous records. on the other hand, stateless services rely on the clients to keep track of transaction data, focusing on operations that  modifiy the system's resources instead of its state.
 
 ### Network Protocols and their Architectures
 
@@ -52,7 +50,6 @@ There are two types of network protocols:
 - Stateless protocols. 
 
 ### Examples of Stateless Protocols 
-  
 
 - The Hypertext Transfer Protocol (HTTP): The foundation of the World Wide Web.
 - The User Datagram Protocol: Used in real-time services like video communications 
@@ -73,9 +70,11 @@ On the other hand, the receiver can keep session state/status info from the prev
 
 ### API-Based Internet Services and their Relation to Stateful and Stateless Architectures
 
-The move from a stateful designed system to a stateless alternative is linked to the popularity of the diverse ways of building application programming interfaces (APIs) and web apps. At the start of the 21st century, the Simple Object Access Protocol (SOAP) was a prevalent design pattern. The design pattern allowed the creation of stateful architectures, evident from the services and applications developed during the period. 
+The move from a stateful designed system to a stateless alternative is linked to the popularity of the diverse ways of building application programming interfaces (APIs) and web apps. At the start of the 21st century, the popular design pattern was SOAP. The design pattern allowed the creation of stateful services and applications developed during the period. 
 
-Because of their stateless design, RESTful services grew in popularity and finally surpassed SOAP's utilization. Thus, end-users have a lot of influence over what data is transferred to and from the servers.
+RESTful services gained popularity to surpass SOAP's usage due to their stateless nature. However, their use was short as GraphQL is now the prevalent design. 
+
+GraphQL outperforms the RESTful design pattern as it gives end-users the power to choose what data they desire to share with a server.
 
 ### Differences Between Stateless and Stateful Architectures
 The main differences between the two architectures relate to how they handle user states and sessions. The table below highlights these differences.
