@@ -1,5 +1,4 @@
 ### React Components  Instantiation
-
 React Component is a small, reusable bite of code which is responsible  for   rendering HTML. In React we can define components as a class or a function.
 For a React component to be defined ,we should first create a component and then extend `React.component class`. For example in order to create a `Classroom` component. The `Classroom` component should have the classroom details. 
 
@@ -7,7 +6,6 @@ Throughout this tutorial we will be mostly talking about JSX. JSX element can be
 
 #### Prerequisites
 To effectively uderstand the reader will need the following:
-
 - Basic understanding of React library
 - A suitable IDE such as VS Code or online IDE such as JScomplete or Codepen
 - Basic understanding of JSX
@@ -111,7 +109,6 @@ The code above outputs the student marks. This is because the JS engine will see
 Lets add `console.log(Object.getPrototypeOf(studdy) === Student.prototype)` to see if prototype of studdy is student which will output true. If we add `Student` instead of `studdy` as shown `console.log(Object.getPrototypeOf(Student) === Student.prototype)` it will output false because Student is not a prototype of Student.
 
 ****what happens in the code above****
-
 - `const studdy` means: Memory is needed for variable declaration.
 - Assignment operator `=` means: `this` variable is going to be initialized with the expression after the assignment operator `=`.
 - Expression `new Student(50): A new object is created  and the prototype is set to student.prototype.
