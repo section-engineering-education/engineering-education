@@ -38,7 +38,7 @@ The most recommended one is manual code review to check whether the URL inputs a
 
 Sometimes, we might find that we don’t have access to the source code of our applications, but this should not hinder us from testing our applications.
 
-To show how we can test for SSRF in cases where you don't have access to the source code, I will use Labs from [Portswigger](https://portswigger.net/web-security/ssrf). We will look at a lab for a local server.
+To show how we can test for SSRF in cases where you don't have access to the source code, I will use Labs from [Portswigger](https://portswigger.net/web-security/ssrf/lab-basic-ssrf-against-localhost). We will look at a lab for a local server.
 
 In our lab, to identify the SSRF vulnerability, we are required to delete a user in the web application. The application here requests data from the server to display the amount of stock currently available.
 
