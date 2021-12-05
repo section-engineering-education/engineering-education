@@ -176,7 +176,7 @@ Declare the API URL using the code below:
 
 ```javascript
 
-const api = “https:/api.lyrics.ovh”;
+const api = "https://api.lyrics.ovh";
 ```
 The next phase is to submit the form, we would define what would happen if the form input field is empty and likewise what would happen if the form input field is not empty.
 
