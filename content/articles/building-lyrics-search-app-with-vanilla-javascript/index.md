@@ -3,7 +3,9 @@
 
 ![hero image](/building-lyrics-search-app-with-vanilla-javascript/hero.jpg)
 
-Knowing the lyrics of a song is a major problem most song-lovers encounter, especially when it is a rap song. Finding a solution to this problem, by creating a platform where users can search for lyrics by entering the artist name or title of the song is a lovely and useful project.
+Not knowing the lyrics of a song is a problem most song-lovers encounter, especially when it's a rap song.
+
+In this article, we will be creating a platform where users can search for lyrics by entering the artist name or title of the song.
 
 In this article, I will walk you through how you can create a lyrics search app using HTML5, CSS3, Vanilla JS,async-await with fetch method, OVH API, and ES6 features like arrow functions.
 
