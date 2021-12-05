@@ -50,9 +50,8 @@ In the `lyrics.html` file, include the code below to create the structure for th
 
 ```
 
-
-###Designing the lyrics search app
-    The next step is to design the web app with CSS by navigating to your CSS file. Here’s the CSS for the structure of the web app(HTML code):
+### Designing the lyrics search app
+The next step is to design the web app with CSS by navigating to your CSS file. Here’s the CSS for the structure of the web app(HTML code):
 
 Firstly, style the overall HTML, body of the HTML, and the div with the class of container which embodies all other divs.
 
@@ -158,7 +157,7 @@ You have successfully designed the web page by adding colors, font sizes, font f
 Here is what your web page should look like now:
 ![Screenshot for design](/building-lyrics-search-app-with-vanilla-javascript/design-screenshot.jpg)
 
-###Adding functionality With Javascript.
+### Adding functionality with JavaScript.
 In your `lyrics.js` file,  declare variables and use the DOM selectors to bring in elements from the lyrics.html file into our javascript file using the code snippet below:
 
 ```javascript
@@ -199,14 +198,12 @@ form.addEventListener(“submit”,
 
 ```
 
-
 In the code above, we listened for a submit event after which we declared a variable `searchValue` to be equal to `search.value.trim()`, the `trim()` method simply trims whitespaces. The if statement validates if `searchValue` equals to an empty string, alert “please fill the input field”, else, invoke the `getResult()` function taking the `searchValue` as the argument.
 
 I’d recommend that you explore the OVH API doc here before proceeding further we’re about to fetch data (lyrics) from the OVH API.
 
 Now, we would use  Async await with the fetch method to get data from the ovh lyrics API.
 Using the promise-based fetch API, we create an async function getResult(searchValue).
-
 
 Here is the code snippet to fetch the data:
 
