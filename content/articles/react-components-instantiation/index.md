@@ -115,7 +115,6 @@ Lets add `console.log(Object.getPrototypeOf(studdy) === Student.prototype)` to s
 - The marks gets assigned to the newly created studdy object.
 - The object which as been newly created gets returned and is assigned to variable studdy.
 
-
 #### Instantiating class component 
 A class is a blue print which helps you define shared structure  and behaviour between similar objects.Class components implements logic and state hence they are considered to be 'smart' .Props are passed down to class components and accessed with `this.props` in class component.
 
@@ -135,7 +134,6 @@ In our code below the developer class  define a constructor function .The develo
  ```
 
 **Below is an example of code to show class component  instantiation that outputs greetings.**
-
 In  our code their is a human class and a student class ,that extends the  Human class .Both classes define a constructor function.Every student is a human too.
 Both classes define a constructor function. The  name argument is expected by the  human class and  that value is stored on the instance using `this` keyword.
 
@@ -177,13 +175,11 @@ o3.greet = () => console.log('I am wonderful!');
  o3.greet();
 ```
 **expected output**
-
 - Hello John!
 - Hello Tina from 1st Grade
 - I am wonderful!
 
 ***What happens when we test the script***
-
 - const 01 will use the greet method from its class(the person class)
 - const 02 will use the greet method from the student class
 - const 03 will use its own directly defined greet method 
