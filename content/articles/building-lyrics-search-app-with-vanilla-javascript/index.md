@@ -295,7 +295,7 @@ output.addEventLIstener(“click”,e => {
 
 Above is the code that helps to know if the clicked element is the span tag. If it is, (i.e the span tag is === variable clicked button), the statement in the if block is executed because the span tag has a class `attribute`. We store this attribute in variable `songTiltle` and also the attribute for the song artist in variable `artist` which the `getLyrics()` function.
 
-###getLyrics() async function
+### GetLyrics() async function
 This is the most important function because this is what makes us get the lyrics themselves displayed. The function takes in two arguments artist and songTitle respectively, recall that you can search for lyrics through inputting song artist or song title. This is the reason why the getLyrics function is taking those two arguments.
 
 Below is the code for getLyrics async function:
