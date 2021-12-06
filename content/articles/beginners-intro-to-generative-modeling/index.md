@@ -225,7 +225,7 @@ Now, as an optimizer, I am going to use rmsprop. You are free to experiment with
 vae.compile(optimizer='rmsprop', loss=vae_loss)
 vae.summary()
 ```
-![vae-summary](model-summary.png)
+![vae-summary](model-summary.PNG)
 
 Finally we are ready to train our model.
 
@@ -266,8 +266,6 @@ The word **adversarial** points to the competitive dynamic between the generator
 Now let's take a look at the architecture of GAN.
 
 ![gan-architecture](gan-architecture.png)
-
-[Image source](https://developers.google.com/machine-learning/gan/gan_structure)
 
 We provide random noise input to our generator, which transforms the noise into a data sample. The generated data then acts as an input to the discriminator model. The discriminator model also takes real data samples as input, and its job is to classify the input as fake generated data or real data samples. In this way, we frame two loss functions, one is discriminator loss, and the other is generator loss. The discriminator loss is a classification error, and it is back-propagated through the discriminator network. In contrast, the generator loss is an error of classifying the fake generated data as real data, and it is back-propagated through the generator network. This way, two neural networks are being trained simultaneously in an adversarial manner. 
 
