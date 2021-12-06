@@ -96,7 +96,7 @@ The parsing of the HTML file can then continue after the content of the `script`
 
 The image below gives a better understanding of normal HTML parsing:
 
-![Normal-script-execution](/engineering-education/understanding-script-tag-attributes-async-defer/normal-execution.png)
+![Normal-script-execution](/engineering-education/understanding-script-tag-attributes-async-defer/Normal-Execution.png)
 
 As shown above:
 1. Once the browser parses HTML and comes across a script tag, it pauses HTML parsing.
@@ -150,7 +150,7 @@ In the above example, `short-script.js` may download first because of its size. 
 
 The image below provides a visual understanding of the defer attribute:
 
-![defer-script-execution](/engineering-education/understanding-script-tag-attributes-async-defer/defer-execution.png)
+![defer-script-execution](/engineering-education/understanding-script-tag-attributes-async-defer/Defer-Execution.png)
 
 From the image above:
 
@@ -185,7 +185,7 @@ In the example above:
 
 Async scripts usually follow the `load-first` principle. The image below provides a visual understanding of the async attribute.
 
-![Async-Execution](/engineering-education/understanding-script-tag-attributes-async-defer/async-execution.png)
+![Async-Execution](/engineering-education/understanding-script-tag-attributes-async-defer/Async-Execution.png)
 
 Async scripts work with available DOM elements. Even when DOM is not fully parsed. 
 
