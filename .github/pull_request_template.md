@@ -18,7 +18,7 @@
 - [ ] Does your article provide enough value and detail about your topic? - **Articles should be clear, accurate, and fully explained.**
 - [ ] Can your article be understood by beginners? - **Assume the audience is smart but has no prior exposure to the common terminology in your article.**
 
-- [ ] Have you included a hero image that is 600x400 pixels and have the copyright to use it? - **Tools:** [Pixlr Image Editor](https://pixlr.com/e) for resizing and [Unsplash](https://unsplash.com) for Creative Commons images
+- [ ] Have you included a hero image that is **600x400 pixels**, under **300KB in size**, and have the copyright to use it? - **Tools:** [Pixlr Image Editor](https://pixlr.com/e) for resizing and [Unsplash](https://unsplash.com) for Creative Commons images
       
 #### Grammar & plagiarism checks
 - [ ] Have you spellchecked and grammar checked your article? - **Tools:** [Write&Improve](https://writeandimprove.com/?lang=en-GB) - [ProWritingAid](https://prowritingaid.com/) - [Grammarly](https://grammarly.com) 
