@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /create-a-nextjs-blog-app-with-faunadb-typescript-and-apollo-server/
+url: /nextjs-blog-faunadb-typescript-apollo-server/
 title: Create a Next.js Blog App with TypeScript, Apollo Server and FaunaDB
 description: This guide will use FaunaDB, model the data relationships, and create an API that you can use to connect to your frontend application.
 author: catherine-macharia
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/create-a-nextjs-blog-app-with-faunadb-typescript-and-apollo-server/hero.jpg
+  - url: /engineering-education/nextjs-blog-faunadb-typescript-apollo-server/hero.jpg
     alt: Create a Next.js Blog App with TypeScript, Apollo Server and FaunaDB Hero Image
 ---
 FaunaDB is a hosted cloud database that is entirely serverless. It is fast and scales infinitely in the cloud. 
@@ -46,17 +46,17 @@ If you already have a FaunaDB account, you can log in [here](https://dashboard.f
 
 Then, create a Fauna database from [here](https://dashboard.fauna.com/).
 
-![create-fauna-db](/engineering-education/create-a-nextjs-blog-app-with-faunadb-typescript-and-apollo-server/create-fauna-db.png)
+![create-fauna-db](/engineering-education/nextjs-blog-faunadb-typescript-apollo-server/create-fauna-db.png)
 
 Once a database is created, create a new collection where the blog documents will be saved. Collections are Fauna's version of tables.
 
-![new-collection](/engineering-education/create-a-nextjs-blog-app-with-faunadb-typescript-and-apollo-server/new-collection.png)
+![new-collection](/engineering-education/nextjs-blog-faunadb-typescript-apollo-server/new-collection.png)
 
 Enter the **collection name** and then click **Save**. The collection will be created, and you will be redirected to the collections page.
 
 Fauna saves data and information in "documents." If you are used to working with other databases, individual documents in a collection are comparable to the rows in a table. As of now, it won't have any documents.
 
-![new-collection-page](/engineering-education/create-a-nextjs-blog-app-with-faunadb-typescript-and-apollo-server/new-collection-page.png)
+![new-collection-page](/engineering-education/nextjs-blog-faunadb-typescript-apollo-server/new-collection-page.png)
 
 ### Setting up the backend API
 Create a project directory and initialize an NPM project by running the following command.
@@ -103,7 +103,7 @@ const faunaClient = new faunadb.Client({
 
 To get your secret, go to the dashboard of the Fauna database you have just created and head over to the security section.
 
-![security_section](/engineering-education/create-a-nextjs-blog-app-with-faunadb-typescript-and-apollo-server/security-section.png)
+![security_section](/engineering-education/nextjs-blog-faunadb-typescript-apollo-server/security-section.png)
 
 You probably don't have any key right now; click on **New Key**, Enter any Key name, and then hit **Save**. Copy the Key present on the new page and paste it in the **secret** section of the above code.
 
@@ -279,15 +279,15 @@ Open the terminal from the current project location and run the following comman
 npm run dev
 ```
 
-![initial_server_log](/engineering-education/create-a-nextjs-blog-app-with-faunadb-typescript-and-apollo-server/initial-server-log.png)
+![initial_server_log](/engineering-education/nextjs-blog-faunadb-typescript-apollo-server/initial-server-log.png)
 
 From your browser, visit the URL logged on your console. Since we are using `Apollo Server`, you will receive a page like the one shown below.
 
-![apollo-launch-server](/engineering-education/create-a-nextjs-blog-app-with-faunadb-typescript-and-apollo-server/apollo-launch-server.png)
+![apollo-launch-server](/engineering-education/nextjs-blog-faunadb-typescript-apollo-server/apollo-launch-server.png)
 
 Click on `Query your server` and your playground will be populated for the current running server.
 
-![apollo-playground](/engineering-education/create-a-nextjs-blog-app-with-faunadb-typescript-and-apollo-server/apollo-gui-playground.png)
+![apollo-playground](/engineering-education/nextjs-blog-faunadb-typescript-apollo-server/apollo-gui-playground.png)
 
 Feel free to interact with the `GUI`, write operations on the `operations` tab, run them and view the response from the `response` section.
 
@@ -596,7 +596,7 @@ npm run dev
 
 Ensure that the development server of the apollo server is still up and running. Then open `http://localhost:3000` on your browser depending on whether you have saved articles.
 
-![articles_home](/engineering-education/create-a-nextjs-blog-app-with-faunadb-typescript-and-apollo-server/articles-home.png)
+![articles_home](/engineering-education/nextjs-blog-faunadb-typescript-apollo-server/articles-home.png)
 
 ### Adding an article
 To handle this operation, navigate to the `pages` directory of the project folder and create an `add-article.tsx` file. Then add the following code block to handle adding a new article.
@@ -756,11 +756,11 @@ When the article is submitted successfully, we reset the state and show a succes
 
 Ensure the fronted and backed development servers are running. Open `http://localhost:3000` on your browser and click `Add article` on the navigation bar.
 
-![add-article](/engineering-education/create-a-nextjs-blog-app-with-faunadb-typescript-and-apollo-server/add-article.png)
+![add-article](/engineering-education/nextjs-blog-faunadb-typescript-apollo-server/add-article.png)
 
 Fill in the fields and send a request.
 
-![add-article-response](/engineering-education/create-a-nextjs-blog-app-with-faunadb-typescript-and-apollo-server/add-article-response.png)
+![add-article-response](/engineering-education/nextjs-blog-faunadb-typescript-apollo-server/add-article-response.png)
 
 Go to the `Home` page, and you should see your newly added articles.
 
@@ -880,7 +880,7 @@ In both cases, we're instantiating `apolloClient` with `getApolloClient`. In the
 
 Ensure the fronted and backed development servers are running. Open `http://localhost:3000` on your browser. On the home page, click on any article title, and you will be redirected to its specific page as such.
 
-![article-spec-page](/engineering-education/create-a-nextjs-blog-app-with-faunadb-typescript-and-apollo-server/article-spec-page.png)
+![article-spec-page](/engineering-education/nextjs-blog-faunadb-typescript-apollo-server/article-spec-page.png)
 
 ### Conclusion
 We built a blog application with Next.js, TypeScript, Apollo Client, Apollo Server, and FaunaDB. Refer to the further reading section for more information on the technologies and techniques used in this topic.
