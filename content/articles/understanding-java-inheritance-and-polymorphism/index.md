@@ -6,7 +6,7 @@ url: /understanding-java-inheritance-and-polymorphism/
 title: Understanding Java Inheritance and Polymorphism
 description: In this article, we discuss the oop concepts of inheritance and polymorphism in the context of Java.
 author: frank-joseph
-date: 2021-12-06T00:00:00-10:45
+date: 2021-12-06T00:00:00-10:52
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
