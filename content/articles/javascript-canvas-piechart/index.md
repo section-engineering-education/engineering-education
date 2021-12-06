@@ -7,21 +7,21 @@ To follow through this, you will be required to have a basic understanding of th
 3. JavaScript
 
 ### An overview of the canvas
-Graphics can be shown in a variety of ways in browsers. To position and color normal DOM elements, the simplest method is to utilize styles. Some operations, however, like drawing lines between two or more locations, are particularly difficult to accomplish with standard HTML components. That being said, there are two other options provided:
+It is easy to position, give custom shapes and color to items in the DOM using the CSS styling provided. Some operations, however, like drawing lines between two or more locations, are particularly difficult to accomplish with standard HTML components. That being said, there are two other options provided:
 1. SVG(Scalable Vector Graphics)
 2. Canvas
 
- SVG is based on the DOM. Consider it as a markup tool that emphasizes shapes over text. You can use SVG by either directly embedding it in an HTML document or using a tag. This article focuses on the canvas, so we won't go further into SVG. Read more about it [here](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/svg) if you are interested in SVG. 
+ SVG is used to create vector graphics, as the name suggests, in XML format. This article focuses on the canvas, so we won't go further into SVG. Read more about it [here](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/svg) if you are interested in SVG. 
  
- The second option is the canvas. A canvas is a single DOM element that gives us a way to draw shapes on a node's space using its provided drawing interface and methods. You can easily declare a canvas element using the `<canvas>` tag as shown in the line below.
+ The second option is the canvas. A canvas is a single DOM element that gives us a way to draw shapes on a node's space using its provided drawing interface and methods. You can declare a simple canvas element as shown in the line below:
 
  ```html
 <canvas width="200" height="200"></canvas>
  ```
 
-We can give it width and height attributes to determine its size in pixels. A newly created canvas is transparent and shows up as a space in the DOM. To access the drawing interface, we create a context object which contains methods that provide the shapes. 
+Its size is determined in pixels. You can therefore set its dimensions(height and width) to tailor your needs. For us to start manipulating the canvas, we need to access its drawing methods. The methods are found in its drawing interface which we access by creating a context object. This object contains all the methods we will use to draw the shapes, set the color, create rotations, translations, etc.
 
-We can use two drawing styles: `2d` for two-dimensional(2D) graphics and `webgl` for three-dimensional(3D) graphics through the OpenGL interface. We pass the style we are going to use in the context's `getContext()` method as a parameter i.e:
+The object provides drawing styles: `2d` for two-dimensional(2D) graphics and `webgl` for three-dimensional(3D) graphics. We pass the style we are going to use in the context's `getContext()` method as a parameter i.e:
 
 ```javascript
 let context = canvas.getContext("2d");
@@ -130,25 +130,26 @@ To get the total number of people who participated in the survey, we use the `re
 
 ```javascript
 let sum = 0;
-let totalNumberOfPeople = results.reduce((sum, {count}) => sum + count, 0);
+let totalNumberOfPeople = results.reduce((sum, {total}) => sum + total, 0);
 ```
 
 Next, we draw the pie.
 
 ```javascript
-let currentAngle = 0;
-for (let moodValue of results) {
-    //calculating the angle the slice(portion) will take in the chart
-    let portionAngle = (moodValue.count / totalNumberOfPeople) * 2 * Math.PI;
-    //drawing an arc and a line to the center to differentiate the slice from the rest
-    ctx.beginPath();
-    ctx.arc(100, 100, 100, currentAngle, currentAngle + portionAngle);
-    currentAngle += portionAngle;
-    ctx.lineTo(100, 100);
-    //filling the slices with the corresponding mood's color
-    ctx.fillStyle = moodValue.color;
-    ctx.fill();
-}
+    let currentAngle = 0;
+
+    for (let moodValue of results) {
+        //calculating the angle the slice(portion) will take in the chart
+        let portionAngle = (moodValue.total / totalNumberOfPeople) * 2 * Math.PI;
+        //drawing an arc and a line to the center to differentiate the slice from the rest
+        ctx.beginPath();
+        ctx.arc(100, 100, 100, currentAngle, currentAngle + portionAngle);
+        currentAngle += portionAngle;
+        ctx.lineTo(100, 100);
+        //filling the slices with the corresponding mood's color
+        ctx.fillStyle = moodValue.shade;
+        ctx.fill();
+    }
 ```
 We have a `for/of` loop where we start by calculating the angle the slice(portion) will take in the chart using this formula:
 
@@ -165,6 +166,59 @@ For the colors, we style the portion with the corresponding mood's color using t
 The final output is shown below:
 
 ![pie](/engineering-education/javascript-canvas-piechart/pie-three.png)
+
+Here is the full code:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>canvas test</title>
+    <style type="text/css">
+                .container {
+          width: 100%;
+          height: 100vh;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+<canvas width="200" height="200"></canvas>
+</div>
+</body>
+<script>
+    let ctx = document.querySelector("canvas").getContext("2d");
+
+    const results = [
+        {mood: "Angry", total: 1499, shade: "#0a9627"},
+        {mood: "Happy", total: 478, shade: "#960A2C"},
+        {mood: "Melancholic", total:332, shade: "#332E2E"},
+        {mood: "Gloomy", total: 195, shade: "#F73809"}
+    ];
+
+    let sum = 0;
+    let totalNumberOfPeople = results.reduce((sum, {total}) => sum + total, 0);
+    let currentAngle = 0;
+
+    for (let moodValue of results) {
+        //calculating the angle the slice(portion) will take in the chart
+        let portionAngle = (moodValue.total / totalNumberOfPeople) * 2 * Math.PI;
+        //drawing an arc and a line to the center to differentiate the slice from the rest
+        ctx.beginPath();
+        ctx.arc(100, 100, 100, currentAngle, currentAngle + portionAngle);
+        currentAngle += portionAngle;
+        ctx.lineTo(100, 100);
+        //filling the slices with the corresponding mood's color
+        ctx.fillStyle = moodValue.shade;
+        ctx.fill();
+    }
+
+</script>
+</html>
+```
 
 ### Further practice
 To build on this more, you can create line charts, bar charts, etc using the canvas. Note that you have to play with rotations because the canvas starts to draw from the top-left and not the bottom-left. You can also add text to the slices.
