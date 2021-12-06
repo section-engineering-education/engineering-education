@@ -5,7 +5,7 @@ published: true
 url: /php-mailtrap/
 title: How to integrate PHP emails using Mailtrap 
 description: In this tutorial, we look at how we can integrate the popular Mailtrap platform in our PHP to send multiple emails.
-author: simon-mwaniki
+author: owino-wendy
 date: 2021-12-05T00:00:00-06:10
 topics: [Languages]
 excerpt_separator: <!--more-->
