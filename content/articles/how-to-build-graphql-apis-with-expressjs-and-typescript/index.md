@@ -736,3 +736,6 @@ You might also want to [dockerize](https://www.bezkoder.com/docker-compose-nodej
 The way we had structured the `schema` is suitable even for large applications. Let's take, for instance, an application with queries and mutations for `users`, `books`, `authors` etc., we need to destructure all the mutations and queries in the `resolver` object inside the `schema/index.js` file.
 
 Implmenting with [Apollo GraphQL](https://www.apollographql.com/docs/apollo-server/) is yet another option we have.
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
