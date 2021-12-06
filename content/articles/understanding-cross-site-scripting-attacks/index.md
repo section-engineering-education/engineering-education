@@ -15,10 +15,7 @@ images:
     alt: cross-site scripting attacks
 ---
 
-Cross-Site Scripting (XSS) attacks are a type of injection in which malicious scripts are injected into otherwise benign and trusted websites. XSS attacks occur when an attacker uses a web application to send malicious code, generally in the form of a browser side script, to a different end-user. Flaws that allow these attacks to succeed are quite widespread and occur anywhere a web application uses input from a user. This occurs when the application generates output without validating or encoding it.
-<!--more-->
-
-*(Source: [OWASP](https://owasp.org/www-community/attacks/xss/#))*
+Cross-site scripting (XSS) is a sort of web application vulnerability that attacks a website's user rather than the server itself. XSS allows an attacker to impersonate a vulnerable user and conduct any activities or access any data that the user is capable of.
 
 The Open Web Application Security Project publishes the OWASP Top 10 report. It is a list of the most serious web application security concerns. In the OWASP Top 10 of 2017, XSS is the second most prevalent issue and is found in around two-thirds of all applications.
 
