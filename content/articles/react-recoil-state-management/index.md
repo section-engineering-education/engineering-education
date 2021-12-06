@@ -12,24 +12,18 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/react-recoil-state-management/hero.jpg
-    alt: react recoil img
+    alt: react recoil State Management React Applications image
 ---
-Managing state in your web application is essential as it helps ensure that data displayed across different pages is consistent.
+Managing state in your web application is essential, as it helps ensure that data displayed across different pages is consistent. React by default provides the `useState()` hook that we can use to store and modify the application's state. 
 <!--more-->
-React by default provides the `useState()` hook that we can use to store and modify the application's state. 
-
 The disadvantage of this hook is that we have to pass the state from one component to another, and as the project becomes more extensive, passing too many props might become hectic.
 
-State management libraries solve this problem by creating a global store where each component can access the data it needs. 
+State management libraries solve this problem by creating a global store where each component can access the data it needs. With a state management library, data flows from your app to the state and vice versa, and you can access the data from any component without passing it as props.
 
-With a state management library, data flows from your app to the state and vice versa, and you can access the data from any component without passing it as props.
-
-We will go through the steps we can follow to use Recoil to manage the state of our React web applications. 
-
-We will then create a Todo application that allows the user to add tasks, mark them as complete, delete them, and filter between the completed and the uncompleted ones. 
+We will go through the steps to use Recoil to manage the state of our React web applications. We will then create a Todo application that allows the user to add tasks, mark them as complete, delete them, and filter between the completed and the uncompleted ones. 
 
 #### Prerequisites
-The following are needed to be able to follow along:
+The following are needed to follow along:
 - Intermediate knowledge of [React](https://reactjs.org), a JavaScript library for building user interfaces.
 - Understanding of React functional components and the `useState` hook.
 - A code editor and a browser.
@@ -39,14 +33,14 @@ By the end of this article, you should be able to:
 - Manage state in your React application using Recoil.
 - Have an understanding of Recoil atoms and selectors.
 
-#### Getting Started
+#### Getting started
 Before we get started, we need to familiarize ourselves with the following terms:
 - An `atom` - An atom is a piece of state. We can import an atom into our components, which allows us to use and update it from our component. 
 
 Every time an update is made to an atom, the component using the atom re-renders with the updated value.
 
 An atom is created as shown below:
-```javascript
+```JavaScript
 const atomName = atom({
   key: 'atomName',
   default: <defaultValue>,
@@ -55,10 +49,10 @@ const atomName = atom({
 
 Each atom should have a key that must be unique and a default value.
 
--A `selector` - A selector is a function. Like normal functions, it accepts input(in this case, other selectors and atoms) and gives output. It is used to get derived data based on a state.
+- A `selector` - A selector is a function. Like normal functions, it accepts input (in this case, other selectors and atoms) and gives output. It is used to get derived data based on a state.
 
 Selectors are defined as shown below:
-```javascript
+```JavaScript
 const selectorName = selector({
   key: 'selectorName',
   get: ({get}) => {
@@ -92,7 +86,7 @@ npm install recoil
 Create a new folder in the `src` folder and name it `recoil`. In the folder, create a new file and call it `atom.js`. We will create our atom and selectors in this file.
 
 Input the code given below into the `atom.js` file:
-```javascript
+```JavaScript
 //import atom and selctor from the recoil package through object destructuring
 import { atom, selector } from "recoil";
 
@@ -137,10 +131,9 @@ export {
 
 In the above code, we first import atom and selector from recoil. We then create our `allTasks` atom that will store the tasks added by the user.
 
-We create the `tasksFilter` atom that will help in the `filteredTasks` selector when filtering all completed and uncompleted tasks. 
-Then, we create a `filteredTasks` selector that accesses our atoms and stores them in constants(`filter` and `list`). It then uses the `switch` statement to return a list of tasks based on the selected criteria.
+We create the `tasksFilter` atom that will help in the `filteredTasks` selector when filtering all completed and uncompleted tasks. Then, we create a `filteredTasks` selector that accesses our atoms and stores them in constants (`filter` and `list`).
 
-In our case, completed, uncompleted, and all(all is represented by the default, which returns the whole list of the tasks).
+It then uses the `switch` statement to return a list of tasks based on the selected criteria. In our case, completed, uncompleted, and all (all is represented by the default, which returns the whole list of the tasks).
 
 #### Creating our components
 To create our components, in the `src` folder, create a new folder and name it `components`.
@@ -163,7 +156,7 @@ Now that we have everything set up, open the `App.css` file and paste in the cod
 ```
 
 Next, open the `App.js` file and paste in the code below:
-```javascript
+```JavaScript
 import { RecoilRoot } from "recoil";
 import './App.css';
 
@@ -187,11 +180,12 @@ function App() {
 export default App;
 ```
 
-We import `RecoilRoot` and wrap our entire app(the components that need to access the state) around it in the code above. It acts as a provider so that all our components can access the atoms and selectors.
+We import `RecoilRoot` and wrap our entire app (the components that need to access the state) around it in the code above. It acts as a provider so that all our components can access the atoms and selectors.
 
 #### Working on the add task functionality
 In the `Input.js` file, use the code below. This will help to add new tasks to our atom.
-```javascript
+
+```JavaScript
 import React, { useState } from 'react'
 import { useSetRecoilState } from 'recoil'
 import { allTasks } from '../recoil/atom'
@@ -232,19 +226,15 @@ const Input = () => {
 export default Input
 ```
 
-In the above code, we import the React `useState` hook that will help us to keep track of the value entered by the user.
+In the above code, we import the React `useState` hook that will help us to keep track of the value entered by the user. We have import the Recoil `useSetRecoilState` hook that will allow us to add tasks to our `allTasks` atom, which we have also imported in our file.
 
-We have import the Recoil `useSetRecoilState` hook that will allow us to add tasks to our `allTasks` atom, which we have also imported in our file.
-
-We also have created a constant `setTasks = useSetRecoilState(allTasks);` which gives us a function that we can use to modify our `allTasks` atom
-
-In our `return`  section, we have a `form` that contains an input field and a button that calls the `addTask()` function when clicked. 
+We also have created a constant `setTasks = useSetRecoilState(allTasks);` which gives us a function that we can use to modify our `allTasks` atom. In our `return`  section, we have a `form` that contains an input field and a button that calls the `addTask()` function when clicked. 
 
 The `addTask()` function uses the `setTasks` function that we created earlier to add new items to our atom. The `setTasks` function takes the value of the items previously contained in our atom and returns an array with the newly added item.
 
 #### Reading data from the atoms
 Use the code provided below in `Tasks.js`:
-```javascript
+```JavaScript
 import React from 'react'
 import { useRecoilValue } from "recoil";
 import { filteredTasks } from '../recoil/atom';
@@ -265,16 +255,14 @@ function Tasks() {
 export default Tasks
 ```
 
-In the above code, we have imported `useRecoilValue` to read data from the atoms. In addition, we have also imported the `filteredTasks` selector that contains the data we want to access.
+In code above, we have imported `useRecoilValue` to read data from the atoms. In addition, we have also imported the `filteredTasks` selector that contains the data we want to access.
 
 Using `const tasks = useRecoilValue(filteredTasks);`, we can read the data contained in the `filteredTasks` selector and store it in a constant named `tasks`. The default return value of the `filteredTasks` selector lists all tasks.
 
-In the `return` section, we have mapped through the `tasks` array and passed the data to our `Task` component. 
-
-More information about the map method can be found [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map).
+In the `return` section, we have mapped through the `tasks` array and passed the data to our `Task` component. More information about the map method can be found [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map).
 
 Next, open the `Task.js` file and paste in the code below:
-```javascript
+```JavaScript
 import React from 'react'
 import { useRecoilState } from 'recoil';
 import { allTasks } from '../recoil/atom';
@@ -322,35 +310,25 @@ const Task = ({ task }) => {
 export default Task
 ```
 
-This component accepts the props passed from the `Tasks.js` file through object destructuring. 
+This component accepts the props passed from the `Tasks.js` file through object destructuring. Using the passed props, we return a `span` that contains the text, a checkbox that we can use to toggle between item completion, and a button that we can use to delete a task. 
 
-Using the passed props, we return a `span` that contains the text, a checkbox that we can use to toggle between item completion, and a button that we can use to delete a task. 
+The checked value of the checkbox is based on whether the task is marked as complete or incomplete. On the click of the checkbox, we are calling the `toggleTaskCompletion()` function.
 
-The checked value of the checkbox is based on whether the task is marked as complete or incomplete.
+The `toggleTaskCompletion()` calls the `replaceItemAtIndex()` and passes the tasks array, the index of the item clicked on, and the item clicked on itself (the item is spread out using the spread operator so that its contents can be modified. After spreading it out, the current value of `isDone` is appended) as arguments.
 
-On the click of the checkbox, we are calling the `toggleTaskCompletion()` function.
-
-The `toggleTaskCompletion()` calls the `replaceItemAtIndex()` and passes the tasks array, the index of the item clicked on, and the item clicked on itself(the item is spread out using the spread operator so that its contents can be modified. After spreading it out, the current value of `isDone` is appended) as arguments.
-
-We get the index of the items from this function, `const index = tasks.findIndex((taskItem) => taskItem === task)`. 
-
-The `replaceItemAtIndex()` function takes in the arguments passed to it and returns an array modified using the slice method.
+We get the index of the items from this function, `const index = tasks.findIndex((taskItem) => taskItem === task)`. The `replaceItemAtIndex()` function takes in the arguments passed to it and returns an array modified using the slice method.
 
 The `toggleTaskCompletion()` stores the array received from the `replaceItemAtIndex()` function in constant named `newTasks`. It then calls the `setTasks()` function and passes the `newTasks`.
 
- The `setTasks()` function updates our atom with the new array.
+The `setTasks()` function updates our atom with the new array. With the click of the delete button, we are calling the `deleteTask()` method. This method calls the `removeItemAtIndex()` function and passes the tasks array and the item's index being clicked on as arguments.
 
-With the click of the delete button, we are calling the `deleteTask()` method. This method calls the `removeItemAtIndex()` function and passes the tasks array and the item's index being clicked on as arguments.
-
-The `removeItemAtIndex()` takes in the arguments passed to it and returns an array modified using the JavaScript's `slice()` method. The `deleteTask()` stores the returned array in a constant named `newTasks`. 
-
-It then calls the `setTasks()` function and passes the newTasks which updates our `allTasks` atom.
+The `removeItemAtIndex()` takes in the arguments passed to it and returns an array modified using the JavaScript's `slice()` method. The `deleteTask()` stores the returned array in a constant named `newTasks`. It then calls the `setTasks()` function and passes the newTasks which updates our `allTasks` atom.
 
 #### Implementing filters
-As we can now add, delete and toggle item completion, we can implement filters that will help us display tasks based on specific criteria. 
+We can now add, delete and toggle item completion, we can implement filters that will help us display tasks based on specific criteria. 
 
 To do this, open the `TaskFilters.js` file and paste in the code below:
-```javascript
+```JavaScript
 import React from 'react'
 import { useRecoilState } from "recoil";
 import { tasksFilter } from '../recoil/atom';
@@ -387,11 +365,11 @@ npm start
 On your browser, open the link `localhost:3000,`. You can add tasks, delete them, mark them as complete or incomplete, and filter between completed, uncompleted, and all tasks.
 
 ### Conclusion
-This is a basic implementation of Recoil in our React app. After understanding the concepts discussed above, you can implement Recoil in your project. 
+This was a basic implementation of Recoil in our React app. After better understanding the concepts discussed above, you can implement Recoil in your project. 
 
 You can also work on this project and take it to the next level.
 
-Happy Coding!!!
+Happy coding!!!
 
 ---
 Peer Review Contributions by: [Miller Juma](/engineering-education/content/authors/miller-juma/)
