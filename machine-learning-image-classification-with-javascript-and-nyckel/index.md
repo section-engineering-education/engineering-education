@@ -200,7 +200,7 @@ function resizeAndUploadImage(file)
     }
     else
     {
-    // If the file is not an image, upload is rejected and the page is reset to default
+    // If the file is not an image, upload is rejected with an alert and the page is reset to default
         alert("You must choose an image");
         resetPage();
     }
@@ -217,11 +217,13 @@ var dataURLToBlob = function (dataURL)
     var BASE64_MARKER = ';base64,';
     if (dataURL.indexOf(BASE64_MARKER) == -1)
     {
+    // The file is converted to url data which is the raaw data and split into two parts
         var parts = dataURL.split(',');
         var contentType = parts[0].split(':')[1];
         var raw = parts[1];
 
         return new Blob([raw], { type: contentType });
+        // Once the image is uploaded, this function returns it as raw url data
     }
 
     var parts = dataURL.split(BASE64_MARKER);
@@ -230,7 +232,7 @@ var dataURLToBlob = function (dataURL)
     var rawLength = raw.length;
 
     var uInt8Array = new Uint8Array(rawLength);
-// the blob is stored in form of an array that adjust with the data size 
+// the blob url data parts are stored in form of an array that adjust with the data size 
     for (var i = 0; i < rawLength; ++i)
     {
         uInt8Array[i] = raw.charCodeAt(i);
@@ -249,7 +251,7 @@ function displayResult(response)
     resetPage();
     $("#title").text(response.labelName);
 }
-
+// After a result is obtained, this function resets the page to be ready to receive another file.
 function resetPage()
 {
     $("#thinking").hide();
@@ -283,7 +285,7 @@ function checkImageWithNyckel(image)
         },
         error: function (response)
         {
-        Incase the model is unable to classify the image, the page is reset to indicate a classification error.
+        // Incase the model is unable to classify the image, the page is reset to indicate a classification error.
             alert("Error checking image", response);
             $("#title").show();
             resetPage();
