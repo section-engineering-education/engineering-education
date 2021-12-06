@@ -23,7 +23,7 @@ State management libraries solve this problem by creating a global store where e
 We will go through the steps to use Recoil to manage the state of our React web applications. We will then create a Todo application that allows the user to add tasks, mark them as complete, delete them, and filter between the completed and the uncompleted ones. 
 
 #### Prerequisites
-The following are needed to follow along:
+The following will be needed to follow along:
 - Intermediate knowledge of [React](https://reactjs.org), a JavaScript library for building user interfaces.
 - Understanding of React functional components and the `useState` hook.
 - A code editor and a browser.
