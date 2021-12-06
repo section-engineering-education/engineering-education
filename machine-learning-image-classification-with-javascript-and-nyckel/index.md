@@ -108,13 +108,14 @@ $(function ()
         $("h2").text("Drop");
     });
 
-    // Drop
+    // This allows the image being dragged to be droppable
     $('.upload-area').on('drop', 
     function (d)
       {
+      // after dropping the image(propagation) this prevents page from going back to default but insteadlet the image stick
+
         d.stopPropagation();
         d.preventDefault();
-
         $("h2").text("Checking...");
 
         var file = d.originalEvent.dataTransfer.files;
@@ -125,6 +126,7 @@ $(function ()
     });
 
     // Open file selector on div click
+    // When you click on the upload area, this opens your local files location (file explorer if it is a computer)
     $("#uploadfile").click(function ()
     {
         $("#file").click();
@@ -138,6 +140,7 @@ $(function ()
         resizeAndUploadImage(file);
     });
 });
+// This function reads the uploaded file into your application.
 function showImage(file)
 {
     var reader = new FileReader();
@@ -150,7 +153,7 @@ function showImage(file)
 
 function resizeAndUploadImage(file)
 {
-    // Ensure it's an image
+    // Ensure it's an image (the file must be a photo)
     if (file.type.match(/image.*/))
     {
         // Load the image
@@ -160,9 +163,10 @@ function resizeAndUploadImage(file)
             var image = new Image();
             image.onload = function (imageEvent)
             {
-                // Resize the image
+                // this gives the specifications to the canvas about the measurements of the uploaded image
+                // It checks the image size and if it does not match the required dimensions, it is resized to fit the canvas
                 var canvas = document.createElement('canvas'),
-                    max_size = 600,
+                    max_size = 600, //maximum size of any uploaded file
                     width = image.width,
                     height = image.height;
                 if (width > height)
@@ -179,21 +183,24 @@ function resizeAndUploadImage(file)
                         width *= max_size / height;
                         height = max_size;
                     }
+                    //New dimensions are given to the image if it exceeds the defined maximum
                 }
                 canvas.width = width;
                 canvas.height = height;
                 canvas.getContext('2d').drawImage(image, 0, 0, width, height);
                 var dataUrl = canvas.toDataURL('image/jpeg');
-                var resizedImage = dataURLToBlob(dataUrl);
-
+                var resizedImage = dataURLToBlob(dataUrl); //the resized image is then interpreted as raw data
+                
                 checkImageWithNyckel(resizedImage);
             }
             image.src = readerEvent.target.result;
         }
+        //this ensures that the image is read by Nyckel as raw data
         reader.readAsDataURL(file);
     }
     else
     {
+    // If the file is not an image, upload is rejected and the page is reset to default
         alert("You must choose an image");
         resetPage();
     }
@@ -223,7 +230,7 @@ var dataURLToBlob = function (dataURL)
     var rawLength = raw.length;
 
     var uInt8Array = new Uint8Array(rawLength);
-
+// the blob is stored in form of an array that adjust with the data size 
     for (var i = 0; i < rawLength; ++i)
     {
         uInt8Array[i] = raw.charCodeAt(i);
@@ -258,7 +265,7 @@ function checkImageWithNyckel(image)
 {
     var formdata = new FormData();
     formdata.append('file', image);
-
+// this get your model to function as if it is in your application
     $.ajax({
         url: 'https://www.nyckel.com/v1/functions/j3l3xdfs0fv4tec7/invoke',
         type: 'post',
@@ -266,8 +273,9 @@ function checkImageWithNyckel(image)
         contentType: false,
         processData: false,
         dataType: 'json',
-        success: functiosn (response)
+        success: function (response) // the image is checked against the model for classification
         {
+        // Once checked, the right classification response is displayed as "with mask" or "without mask"
             displayResult(response);
 
             //Show the JSON response in the console
@@ -275,6 +283,7 @@ function checkImageWithNyckel(image)
         },
         error: function (response)
         {
+        Incase the model is unable to classify the image, the page is reset to indicate a classification error.
             alert("Error checking image", response);
             $("#title").show();
             resetPage();
