@@ -1,13 +1,29 @@
-Recently, Firebase introduced Firebase version 9 of the library. This has created some differences with how we use Firebase with the previous versions. One of the significant changes in version 9 of Firebase is adopting a more modular and functional approach. This means that we only import the Firebase functions that we need from the libraries. Previous versions used an object-oriented approach, where we call those functions and methods directly on Firebase objects. With Firebase 9, you only import the functions that you need for your specific application. Thus, allowing you to remove any unused codes within your application.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /firebase-nine-and-above-with-react-native/
+title: Getting Started with Firebase 9 with React Native
+description: This tutorial will teach you how to get started with Firebase 9 with React Native, a simple todo application will be created to demostrate how to use Firebase 9 with React Native
+author: julius-gikonyo
+date: 2021-12-06T00:00:00-13:00
+topics: [API]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/firebase-nine-and-above-with-react-native/hero.jpg
+    alt: Getting Started with Firebase 9 with React Native Hero Image
+---
+
+Recently, Firebase introduced Firebase version 9 of the library. This has created some differences with how we use Firebase with the previous versions. One of the significant changes in version 9 of Firebase is adopting a more modular and functional approach. This means that we only import the Firebase functions that we need from the libraries. Previous versions used an object-oriented approach, where we call those functions and methods directly on Firebase objects. With Firebase 9, you only import the functions you need for your specific application. Thus, allowing you to remove any unused codes within your application.
 
 ### Goal
 This guide will use Firebase 9 with React native and implement the new features to a React native application. First, we will build a todos application using React Native and Firebase 9.
 
 ### Prerequisites
-To proceed with this tutorial, it is essential to have the following tools and information.
-
+It is essential to have the following tools to follow this tutorial.
 - [Node.js](https://nodejs.org/en/) installed on your computer.
-- Basic knowledge and understating of React Native.
+- Basic knowledge of React Native.
 - Basic understanding of the Firebase ecosystem.
 - An already set up account on [Firebase](https://firebase.google.com/).
 
@@ -20,7 +36,7 @@ Once the project is set and ready, click Continue. You will be redirected to the
 
 React Native is cross-platform. It supports both Ios and Android. Depending on the device you are building on, click on its icon to add Firebase to the application.
 
-Register the application package name or the Apple bundle ID on the resulting section if you are building for Ios. Then click the Register app.
+Register the application package name or the Apple bundle ID on the resulting section to build for Ios. Then click the Register app.
 
 ![application-registration](/engineering-education/firebase-nine-and-above-with-react-native/application-registration.png)
 
@@ -32,7 +48,7 @@ We will be using the Firebase Firestore database. Create a cloud Firestore datab
 
 ![cloud-firestore](/engineering-education/firebase-nine-and-above-with-react-native/cloud-firestore.png)
 
-Select your location from the available locations and then click on **Enable**. Give it some time for it to finish the provisioning then the database will be ready.
+Select your location from the available locations and click on **Enable**. Give it some time to finish the provisioning, and then the database will be ready.
 
 At this point, our project is created and configured. In the next step, we will set up the react native project.
 
@@ -117,7 +133,7 @@ export {firebase}
 With that, Firebase is configured within our application. In the next step, we will implement adding todos.
 
 ### Working with todos
-In the `src` folder, create a `components` folder. Inside the `components` folder, create two files:
+In the `src` folder, create a `components` folder. Then, inside the `components` folder, create two files:
 
 - `Todos.js` for adding the todos view and communicating with Firebase SDK.
 
@@ -272,9 +288,9 @@ From the above code block, we are:
 - Handling the functionality of adding a todo.
 - Handling the functionality of deleting a todo.
 - Showing a single todo from a render function.
-- Displaying a form for adding a todo and also showing the fetched todos.
+- Displaying a form for adding a todo and showing the fetched todos
 
-Fina;;y add the following styles to the `styles.js` file.
+Finaly add the following styles to the `styles.js` file.
 
 ```css
 import { StyleSheet } from 'react-native';
@@ -363,12 +379,12 @@ export default function App() {
 }
 ```
 
-We are basically replacing the boiler-plate code to return the `Todos` component.
+We are replacing the boiler-plate code to return the `Todos` component.
 
 ### Testing
 At this point, our application is ready for testing.
 
-Ensure you have a connected device, i.e., an actual device or an emulator. Run the following command from the terminal in the current project folder location:
+Ensure you have a connected device, i.e., an actual device or an emulator. Then, run the following command from the terminal in the current project folder location:
 
 ```bash
 npm run android # for android
@@ -399,3 +415,7 @@ This article covered building a simple todos application using React Native and 
 - [Working with Styled-components in React](/engineering-education/working-with-styled-components-in-react/)
 - [Google OAuth using Firebase in React Native](/engineering-education/react-native-firebase-google-authentication/)
 - [Email/Password Authentication using Firebase in React Native](/engineering-education/react-native-firebase-email-password-authentication/)
+
+---
+
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
