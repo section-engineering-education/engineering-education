@@ -49,7 +49,7 @@ In this project, we will be creating an E-book store, where the users can get a 
 
 We will begin by creating a directory for our project in our terminal.
 
-```
+```bash
 mkdir bookstore
 cd bookstore
 
@@ -59,7 +59,7 @@ Next, we will be creating a virtual environment to host our project. All the ins
 
 Create a virtual environment using:
 
-```
+```bash
 pip install virtualenv
 virtual env
 
@@ -70,7 +70,7 @@ Let's activate our virtual environment
 For Windows:
 
 ```
-env\\Scripts\\activate
+env\Scripts\activate
 
 ```
 
@@ -85,14 +85,14 @@ source env/bin/activate
 
 Next, install the Django dependencies.
 
-```
+```bash
 pip install django djangorestframework zappa
 
 ```
 
 Now, we can create our Django project and run the app as shown below:
 
-```
+```bash
 django-admin startproject bookstore
 cd bookstore
 django-admin startapp ebook
@@ -101,7 +101,7 @@ django-admin startapp ebook
 
 Next, in your project folder, open up the `settings.py` file, and add `rest_framework` along with the name of the created app `ebook` to the list of installed apps:
 
-```
+```python
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -119,7 +119,7 @@ INSTALLED_APPS = [
 
 Let's build a model that stores information about books.
 
-```
+```python
 from django.db import models
 
 # Create your models here.
@@ -146,7 +146,7 @@ Next, we migrate these models into the database using these commands:
 
 Next, we migrate these models into the database using these commands:
 
-```
+```python
 python manage.py makemigrations
 python manage.py migrate
 
@@ -154,7 +154,7 @@ python manage.py migrate
 
 Then, we register the models in your `ebook/admin.py` file.
 
-```
+```python
 from django.contrib import admin
 from .models import Book
 
@@ -169,7 +169,7 @@ Create a new file `serializers.py` file in your app directory.
 
 Serializer converts the data in our models or queryset into datatypes such as JSON, XML, etc., that can be easily understood. Now add these lines of code to create a serializer class:
 
-```
+```python
 from rest_framework import serializers
 from .models import Book
 
@@ -186,7 +186,7 @@ Create your user's views in your `ebook/views.py` file.
 
 The `views` file handles the logic of our API HTTP actions, making requests such as `GET`, `POST`, `UPDATE`, and `DELETE` to the API endpoints. Add these lines of code to you `views.py` :
 
-```
+```python
 from rest_framework import generics
 from .serializers import BookSerializer
 from .models import Book
@@ -254,14 +254,14 @@ Briefly, let's set up AWS on your console in other to properly utilize Zappa.
 
 The first step is to install Zappa in our virtual environment:
 
-```
+```python
 pip install zappa
 
 ```
 
 Next, initialize Zappa,
 
-```
+```bash
 zapa init
 
 ```
@@ -306,7 +306,7 @@ This command deploys our application which we named, ''dev",  however, an error 
 
 Afterward, run this command:
 
-```python
+```bash
 zappa update dev
 
 ```
@@ -322,7 +322,7 @@ After successful deployment, you should receive a URL through which you may acce
 
 Copy the generated URL for your app and paste it into the project's `ALLOWED_HOSTS` in your `settings.py`
 
-```
+```python
 ALLOWED_HOSTS = ["oitzappv43.execute-api.eu-west-2.amazonaws.com"]
 
 ```
@@ -355,14 +355,14 @@ Next, in the "*permissions*" section of your bucket, navigate to Cross-Origin re
 
 Install the *Django s3 storage* library in order to work with S3.
 
-```
+```bash
 pip install django-s3-storage
 
 ```
 
 Next, in your `settings.py` file, add `'django_s3_storage'` to installed apps.
 
-```
+```python
 INSTALLED_APPS = [
   ...
 'django_s3_storage'
@@ -395,7 +395,7 @@ STATIC_URL = "https://%s/" % AWS_S3_CUSTOM_DOMAIN
 
 Afterward, run the following commands to update the changes and upload the static files to the bucket:
 
-```
+```bash
 zappa update dev
 zappa manage dev "collectstatic --noinput"
 
