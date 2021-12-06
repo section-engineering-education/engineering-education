@@ -1,16 +1,16 @@
 # Introduction to Kernel Methods in Machine Learning
 
 ### Prerequisites
-- The Reader should have basic knowledge in machine learning [Click here](https://www.digitalocean.com/community/tutorials/an-introduction-to-machine-learning) to read more about machine learning basics.
-- The reader should be able to understand basic terms like Support Vector Machine, classifications, unsupervised learning and supervised learning.
-- Before digging deeper into the operation of Kernel Methods, it is necessary to first understand support vector machines, or SVMs, because kernels are implemented in SVM models.
+- The Reader should have basic knowledge in machine learning. [Click here](https://www.digitalocean.com/community/tutorials/an-introduction-to-machine-learning) to read more about machine learning basics.
+- The reader should understand basic terms like Support Vector Machine, classifications, unsupervised learning, and supervised learning.
+- Before digging deeper into the operation of Kernel Methods, it is necessary first to understand support vector machines or SVMs, because kernels are implemented in SVM models.
 
 
 ## Introduction
-The concept of "data drawn from some probability distribution" underpins many techniques in statistics and machine learning. A probability distribution is a model for the frequency of data points, i.e., how likely it is to see a particular value, outcome, or other occurrence. The parameters of the underlying distribution are used to define parametric methods (or algorithms).
+The concept of "data drawn from some probability distribution" underpins many statistics and machine learning techniques. A probability distribution is a model for the frequency of data points, i.e., how likely it is to see a particular value, outcome, or other occurrences. The parameters of the underlying distribution are used to define parametric methods (or algorithms).
 
-The assumed model for the likelihood, however, may not be correct; the "actual" distribution may be skewed, multimodal, with different components, and so on. In general, the scientist analyzing the data is unaware of this. This article aims to demonstrate the fundamental concepts underlying kernels as well as their applications in statistics and machine learning.
 
+However, the assumed model for the likelihood may not be correct; the "actual" distribution may be skewed, multimodal, with different components, and so on. In general, the scientist analyzing the data is unaware of this. This article aims to demonstrate the fundamental concepts underlying kernels and their applications in statistics and machine learning.
 
 ### Tables of Content
 - [What are kernels?](#what-are-kernels?)
@@ -21,7 +21,7 @@ The assumed model for the likelihood, however, may not be correct; the "actual" 
 ### _What are kernels?_
 Kernels, <span style="color:blue">also known as kernel techniques or kernel functions, are a collection of distinct forms of pattern analysis algorithms.</span> Using a linear classifier, they are utilized to solve a non-linear problem. SVM (Support Vector Machines) use Kernels Methods to solve classification and regression issues. The SVM (Support Vector Machine) employs a technique known as the ["Kernel Trick"](https://towardsdatascience.com/the-kernel-trick-c98cdbcaeb3f) in which the data is processed and an optimal boundary for the various outputs is determined.
 
-In other words a kernel is a term used to describe a way for applying linear classifiers to nonlinear problems by mapping nonlinear data onto a higher-dimensional space without having to visit or understand that higher-dimensional region.
+In other words a kernel is a term used to describe a way for applying linear classifiers to non-linear problems by mapping nonlinear data onto a higher-dimensional space without having to visit or understand that higher-dimensional region.
 
 ### __Supervised and unsupervised machine learning__
 ___Supervised machine learning___ is also known as supervised learning. It is distinguished by the use of labeled datasets to train algorithms capable of accurately classifying data or predicting outcomes.
@@ -44,11 +44,11 @@ Higher dimensions make support vector machines much more difficult to interpret.
 ### 2. Adaptive Filter
 The adaptive filter uses a linear filter that integrates the transfer function, controlled by various parameters and methods, which will be used to adjust these parameters as per the development algorithm. 
 
-Every adaptive filter is a digital filter mainly because of the complexity of this optimization algorithm . An adaptive filter is required for those applications where there is no prior information about the performance you want in advance or changes. The cost function is applied to a flexible closed loop filter, as necessary for optimal filter operation. Decides how to change the filter transfer function to reduce the cost of subsequent duplication.
+Every adaptive filter is a digital filter mainly because of the complexity of this optimization algorithm . An adaptive filter is required for those applications where there is no prior information about the performance you want in advance or changes. The cost function is applied to a flexible closed loop filter, as necessary for optimal filter operation. It decides how to change the filter transfer function to reduce the cost of subsequent duplication.
 
 
 ### 3. Kernel perception
-The kernel perceptron is a variant of the popular perceptron learning algorithm for learning kernel machines in machine learning. It contains nonlinear classifiers that use a kernel function to compute the similarity of unseen samples to training samples.
+The kernel perceptron is a variant of the popular perceptron learning algorithm for learning kernel machines in machine learning. It contains non-linear classifiers that use a kernel function to compute the similarity of unseen samples to training samples.
 
 The majority of the kernel algorithms discussed are statistically sound and are based on convex optimization or eigen problems. The statistical learning theory is used to analyze their statistical properties.
 
@@ -69,7 +69,7 @@ The first major component captures most of the data variability. The second main
 Kernel principal component analysis is an extension of PCA that uses kernel methods. In contrast to the standard linear PCA, the kernel variant works for a large number of attributes but becomes slow for a large number of examples.
 
 ### 5. Spectral clustering
-spectral clustering is known as segmentation-based object categorization in the use of image classification. In Spectral Clustering, size reduction is done before merging into smaller sizes, this is done using the eigenvalue matrix for data matching. It has its roots in graph theory, where this method is used to identify node communities on a graph based on the edges they connect. This method is flexible enough and allows us to compile data from non-graphs as well.
+Spectral clustering is known as segmentation-based object categorization in the use of image classification. In Spectral Clustering, size reduction is done before merging into smaller sizes, this is done using the eigen value matrix for data matching. It has its roots in graph theory, where this method is used to identify node communities on a graph based on the edges they connect. This method is flexible enough and allows us to compile data from non-graphs as well.
 
 Soft kernel spectral clustering (SKSC) uses algorithm 1 to calculate complex initial classification of training data. Next, the soft group assignments go
 computerized cosine distance between each point and other group prototypes in the speculative space e
