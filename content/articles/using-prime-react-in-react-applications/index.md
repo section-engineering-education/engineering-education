@@ -6,7 +6,7 @@ url: /using-prime-react-in-react-applications/
 title: How to use PrimeReact in React Applications
 description: In this article, we will create a Responsive Navbar in a React Application using a Library called Prime React. PrimeReact is a open source library which has styled components.
 author: gerald-ezenagu
-date: 2021-11-02T00:00:00-08:03
+date: 2021-12-07T00:00:00-00:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -14,11 +14,9 @@ images:
   - url: /engineering-education/using-prime-react-in-react-applications/hero.jpg
     alt: How to use PrimeReact in React Applications Hero Image
 ---
-
-React is all about components, these help us to reuse our JavaScript code over and over. It also maintains and updates the page. React is used to build single-page applications and user interfaces.
+React is all about components, these help us to reuse our JavaScript code over and over. It also helps us maintain and update the pages. React can be used to build single-page applications and user interfaces.
 <!--more-->
-
-PrimeReact is like CSS, which is used in styling the user interface of our application. But unlike CSS, PrimeReact has a pre-defined style in each component, which we can use in our React application.
+PrimeReact is like CSS, which can be used while styling the user interfaces. But unlike CSS, PrimeReact has a pre-defined style for each component, which we can be used in our React application.
 
 ### Table of contents
 - Navigation
@@ -32,9 +30,9 @@ PrimeReact is like CSS, which is used in styling the user interface of our appli
 
 ### Prerequisites
 For this tutorial:
-- Basic knowledge of React.js
-- Little knowledge of npm
-- Have visual studio code and npm installed, click [here](https://code.visualstudio.com/) to download visual studio code
+- Basic knowledge of React.js.
+- Little knowledge of npm.
+- Have visual studio code and npm installed, click [here](https://code.visualstudio.com/) to download visual studio code.
 
 ### Goal
 - To create a responsive navigation bar using Prime React components in a React.js application.
@@ -44,40 +42,50 @@ For this tutorial:
 Let's start coding.
 
 ### Navigation 
-In every website or rather Multi Page Applications, there exist a navigation menu usually located at the top of the website. 
-This serves as direction for visitors to access various pages in a website. It gives good user experience to the site as visitors can easily access the contents of the website.
-It is important for every website to have navigation unless the website is a static website. 
-In this tutorial we are going to learn how to use PrimeReact component to make a responsive navigation menu that has routing capabilities. 
+In every website or rather a multi-page application, there exist a navigation menu usually located at the top of the website.
 
-### What is PrimeReact
-PrimeReact is a UI component library for React applications. PrimeReact has different components for themes, styles, and icons which we can import and use in our React application. It is a free open-source library.
-When creating a React project, the main thing on a developer's mind is the layout and user interface on the project.
-Styling a particular component of a react project can be tricky and time consuming, but with PrimeReact we don't have to worry much about the styles. We only need to import the particular component we want to render in our project and PrimeReact takes care of the styles.
+This serves as direction for visitors to access various pages of a website. It gives good user experience to the site as visitors can easily access the contents of the website.
+
+It is important for every website to have navigation, unless the website is a static website.
+
+In this tutorial, we are going to learn how to use PrimeReact component to make a responsive navigation menu that has routing capabilities. 
+
+### What is PrimeReact?
+PrimeReact is a UI component library for React applications.
+
+PrimeReact has different components for themes, styles, and icons that can be imported to use in our React application. It is a free open-source library.
+
+When creating a React project, the main thing on a developer's mind is the layout and user interface of the project.
+
+Styling a particular component of a react project can be tricky and time consuming, but with PrimeReact we don't have to worry much about the styles. We only need to import the particular component that we want to render in our project and PrimeReact takes care of the styles.
+
 Sometimes the component we render may not be styled the way we want. PrimeReact allows us to modify the styles and properties of the component we render in our project. 
 
 > To know more about PrimeReact click [here](https://primefaces.org/primereact/showcase/#/)
 
 #### Step 1 - Create React application
-When creating React application, we first go to the folder we want our application to existing.
-To create a React application type the following command in a terminal or cmd.
+When creating React application, we first go to the folder where the application is stored.
 
-```
+To create a React application, type the following command in a terminal or a command prompt:
+
+```bash
 npx create-react-app my-prime
 ```
 
-After installing, type `cd my-prime` to go into my-prime folder.
+After installing, type `cd my-prime` to go into `my-prime` folder.
+
 Type `npm start` to start the development server. The React website can be seen on `http://localhost:3000/` in your system browser.
 
 #### Step 2 - Adding PrimeReact dependencies
-In order to add PrimeReact dependencies into our project, we first open the terminal of our visual studio code. Ensure that the terminal is accessing my-prime folder
+To add PrimeReact dependencies into our project, we first open the terminal of our visual studio code. Ensure that the terminal is accessing `my-prime` folder.
 
 Input `npm install primereact primeicons --save` and press "enter" to install prime react and prime icons.
 
-PrimeReact components need the PrimeIcons library for icons and `react-transition-group` for animations.
+`PrimeReact` components need the `PrimeIcons` library for icons and `react-transition-group` for animations.
 
-Type  `npm install react-transition-group` and press "enter" to install `react-transition-group`.
+Type `npm install react-transition-group` and press "enter" to install `react-transition-group`.
 
-After that has been installed, we then type `npm install react-router-dom` and press enter
+After that has been installed, we then type `npm install react-router-dom` and press "enter".
 
 If the dependencies we installed are shown as below in the `package.json` file, then our installation was successful. 
 
@@ -90,8 +98,12 @@ If the dependencies we installed are shown as below in the `package.json` file, 
   },
 ```
 
-#### Step - 3 Modifying our React application
-When we create a react project, react has some pre-defined codes we need to modify. Go to `http://localhost:3000/` in your browser, A website showing React logo will be displayed. Let's modify the website codes. Open the `app.js` file in your visual studio code editor, then remove all code within the div tag except `import './App.css'`. 
+#### Step 3 - Modifying our React application
+When we create a react project, react has some pre-defined codes that we need to modify.
+
+Go to `http://localhost:3000/` in your browser, a website showing React logo will be displayed.
+
+Let's modify the website codes by editing the `app.js` file in your visual studio code editor, then remove all code within the `div` tag except `import './App.css'`. 
 
 ```javascript
 import React from 'react'; //for React
@@ -108,7 +120,7 @@ function App() {
 export default App;
 ```
 
-We then import our prime react themes and icons
+We then import our prime react themes and icons.
 
 ```javascript
 import "primereact/resources/themes/vela-blue/theme.css";
@@ -116,9 +128,9 @@ import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
 ```
 
-The above CSS files provided by PrimeReact should be added at the top of the app.js file to enable primereact icons, themes, and styles to be effective in our browser.
+The above CSS files provided by PrimeReact should be added at the top of the `app.js` file to enable primereact icons, themes, and styles to be effective in our browser.
 
-Our `app.js` file should look like this below
+Our `app.js` file should look like this:
 
 ```javascript
 import './App.css';
@@ -138,12 +150,13 @@ export default App;
 ```
 
 #### Step 4 - Creating a Nav component
-We first need to create a component and import it into our `app.js`. 
-For example, within the `src` folder, let’s create a separate folder called `components`, where we'll store our Navigation code.
+We first need to create a component and import it into our `app.js`.
+
+For example, within the `src` folder, let's create a separate folder called `components`, where we'll store our Navigation code.
 
 Within the `components` folder, we create a new file and name it `Nav.js`.
 
-Then, we create a React function called Navigation, within the return parentheses we create a navbar for our browser using HTML elements like div tag, the header tag, nav tag, and ul tag.
+Then, we create a React function called Navigation, within the return parentheses we create a navbar for the browser using HTML elements like `div` tag, the `header` tag, `nav` tag, and `ul` tag.
 
 ```javascript
 const Navigation = () => {
@@ -161,9 +174,9 @@ const Navigation = () => {
 export default Navigation;
 ```
 
-After this our Navigation function should be imported inside our `app.js` file, within the div of our app.js we add our Navigation function so as to make our Navigation code display on the browser
+After this our Navigation function should be imported inside our `app.js` file, within the `div` of our `app.js`, we add our `Navigation` function that displays on the browser.
 
-```
+```js
 import Navigation from './component/Nav';
 ```
 
@@ -182,12 +195,14 @@ A screenshot of our app.js file
 
 CSS styles can be added to change the pre-defined styles.
 
-#### Step 5 - Making our Navigation Bar responsive 
-In this tutorial we'll be using Menubar which is one of the many navigation components PrimeReact gives us for our navigation.
-When styling the navigation menu, it's important to style both small and large screen sizes. With Menubar component we don't have to style any screen size.  We can edit the component, change the theme and add icons to our navigation menu.
+#### Step 5 - Making our navigation bar responsive 
+In this tutorial, we'll be using Menubar which is one of the many navigation components PrimeReact gives us for our navigation.
+
+When styling the navigation menu, it's important to style both small and large screen sizes. With `Menubar` component we don't have to style any screen size. We can edit the component, change the theme and add icons to our navigation menu.
+
 This makes our navigation responsive on all screen sizes, thereby giving our navigation a good user experience and makes it easily accessible for mobile devices.
 
-To use the Menubar component in our project, we need to import it inside our `Nav.js` file inside our component folder, then add it within our nav tag HTML element to make it display within our Navigation 
+To use the `Menubar` component in our project, we need to import it inside our `Nav.js` file inside our component folder, then add it within our `nav` tag HTML element to make it display within our `Navigation` function.
 
 ```javascript
 import { Menubar } from 'primereact/menubar';
@@ -209,28 +224,39 @@ const Navigation = () => {
 export default Navigation;
 ```
 
-The Menubar as shown above should be added at the top of our `Nav.js` file.
-We can see in the above our Menubar is placed inside a ul element, we have to create a navigation list that will be rendered in our Menubar
-We can create this list within our Navigation function or import it as properties or props.
-The list to be rendered must be stored in a variable, we can call the variable anything we want. This will store an array with objects nested within it.
-Within the object, we pass in the value we want on our navigation.
-We then assign the values to a label text, this will store the values.
-PrimeReact allows us to add icons to our values, that's if we want to. It not a must to add icons to our navigation. The icons help in representing our values but like i said it's not necessary.
+The `Menubar` as shown above should be added at the top of our `Nav.js` file.
 
-Our navigation list should look like this below, we can call the variable and label values anything we want it doesn't have to be the same with the code below.
+We can see in the above our Menubar is placed inside a `ul` element, we have to create a navigation list that will be rendered in our Menubar.
+
+We can create this list within our `Navigation` function or import it as properties or props.
+
+The list to be rendered must be stored in a variable, where we can call the variable that we want. This will store an array with objects nested within it.
+
+Within the object, we pass in the value we want on our navigation. We then assign the values to a label text, this will store the values.
+
+PrimeReact allows us to add icons to our values, if needed. It is not a must to add icons to our navigation. The icons help in representing our values.
+
+Our navigation list should look like this. Here, we can call the variable and label values anything that we want.
  
- ```javascript
- const navlist = [
-    {label: 'Home', icon: 'pi pi-fw pi-home'},
-    {label: 'About', icon: 'pi pi-fw pi-file'},
-    {label: 'Contact', icon: 'pi pi-fw pi-phone'}
+```javascript
+const navlist = [
+  {label: 'Home', icon: 'pi pi-fw pi-home'},
+  {label: 'About', icon: 'pi pi-fw pi-file'},
+  {label: 'Contact', icon: 'pi pi-fw pi-phone'}
 ]
 ```
-The icon recieve PrimeReact icons (pi), the position we want the icon to be, foward (pi-fw) and the value of the icon (pi-home)
-We then pass our navlist variable as a property to the Menubar. The name of the property that will hold our navlist is model, we can't change the name if we do our navlist items will not be rendered to the Document Object Model (DOM), same goes for label in our code above. PrimeReact component has been coded to host certain values, if we change these values our code won't work.
-The model recieves our variable inside an object because we want to use javascript values inside JSX and pass it to the Menubar which then render the variables to our navigation.
 
-Our `Nav.js` file should look like this
+The icon recieve PrimeReact icons (pi), the position we want the icon to be, foward (pi-fw), and the value of the icon (pi-home).
+
+We then pass our `navlist` variable as a property to the `Menubar`.
+
+The name of the property that will holds `navlist` is a model, we can't change the name, if we do our navlist items will not be rendered to the Document Object Model (DOM), same goes for label in our code above.
+
+PrimeReact component has been coded to host certain values, if we change these values our code won't work.
+
+The model recieves the variable inside an object because we want to use javascript values inside JSX and pass it to the Menubar which then renders the variables to our navigation.
+
+Our `Nav.js` file should look like this:
 
 ```javascript
 import { Menubar } from 'primereact/menubar';
@@ -262,10 +288,13 @@ export default Navigation;
 > To know more about primereact icons click [here](https://www.primefaces.org/diamond/icons.xhtml)
 > To know more about Menubar components from [here](https://primefaces.org/primereact/showcase/#/menubar)
 
-We can change the theme of our PrimeReact components. 
+We can change the theme of our PrimeReact components.
+
 PrimeReact gives us many theme to choose from, we can use different theme for our navigation.
-They affect the background-color and color of our Menubar, we may prefer a light theme or a dark theme for our navigation. 
-We're currently using a vela-blue theme which can be changed, we just need to go to our `app.js` file within our imported PrimeReact dependencies we change the vela-blue on theme.css to our desired theme
+
+They affect the background-color and color of our Menubar. We can choose either a light theme or a dark theme for our navigation.
+
+We're currently using a `vela-blue` theme. It can be changed by navigating to our `app.js` file, and edit the `theme.css` to the desired theme, while importing.
 
 ```javascript
 import "primereact/resources/themes/vela-blue/theme.css"; // edit vela-blue to change theme
@@ -273,37 +302,48 @@ import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
 ```
 
-You can see most Prime React theme from [here](https://primefaces.org/primereact/showcase/#/theming)
+You can see most Prime React theme from [here](https://primefaces.org/primereact/showcase/#/theming).
 
-#### Step 6 - Adding Routes to our Navigation
-After adding our Menubar component to our navigation and rendering it on the DOM, if we click on any of our rendered navlist nothing will happen to our website. The Uniform Resource Locators (URL) suppose to go to the page we clicked, but it doesn't.
-The Menubar component only render pre-defined styles to the DOM but it has no routes, it doesn't navigate our website, which is the main reason for using it. To make our navigation easy for users and go to the pages they clicked.
-How do we solve this? 
-By adding a command that runs an anonymous function when clicked any of our navlist variable.
-The function will hold the href which we will pass the desired URL path to, but remenber href is mostly used in HTML or JavaScript Syntax Extension (JSX) in React.  
-We can also use href keyword through the windows which is a DOM object, by using one of it's method called location which has a href property. 
-To use href through the windows, we say windows.location.href and pass our desired path in strings to it.
-This is shown below
+#### Step 6 - Adding routes to our navigation
+After adding our Menubar component to our navigation and rendering it on the DOM, if we click on any of our rendered `navlist` nothing will happen to our website.
+
+The Uniform Resource Locators (URL) must redirect to a page when clicked, but it doesn't.
+
+The `Menubar` component only render pre-defined styles to the DOM, but it has no routes, it doesn't navigate our website, which is the main reason for using it. To make our navigation easy for users and go to the pages they clicked.
+
+How do we solve this?
+
+By adding a command that runs an anonymous function when clicked any of our `navlist` variable.
+
+The function will hold the `href` which we will pass the desired URL path to, but remenber `href` is mostly used in HTML or JavaScript Syntax Extension (JSX) in React.
+
+We can also use `href` keyword through the windows, which is a DOM object, by using one of it's method called `location` which contains a `href` property.
+
+To use `href` through the windows, we assign the `windows.location.href` to the desired route, as a string.
 
 ```javascript
-  const navlist = [
-        {label: 'Home', icon: 'pi pi-fw pi-home', command: () => {
-            window.location.href='/';
-        }},
-        {label: 'About', icon: 'pi pi-fw pi-calendar', command: () =>{
-            window.location.href='/about'
-        }},
-        { label: 'Contact', icon: 'pi pi-fw pi-phone', command: () =>{
-            window.location.href='/contact'
-        }}
+const navlist = [
+  {label: 'Home', icon: 'pi pi-fw pi-home', command: () => {
+      window.location.href='/';
+  }},
+  {label: 'About', icon: 'pi pi-fw pi-calendar', command: () =>{
+      window.location.href='/about'
+  }},
+  { label: 'Contact', icon: 'pi pi-fw pi-phone', command: () =>{
+      window.location.href='/contact'
+  }}
+]
 ```
-The command code we added runs the anonymous function when clicked to the href path, thereby redirecting our website to the site clicked.
-When we do this and click on About or Contact nothing will happen because there's no React component being rendered to that path.
-We can create an About component that will be rendered when we click on About on our navigation.
+
+The code we added, runs the anonymous function when clicked to the `href` path, thereby redirecting our website to the site clicked.
+
+`/about` and `/contact` does not have React pages. We will have to create them manually.
 
 Within the `components` folder, we create a new file and name it `About.js`.
-Inside `About.js` we also create a React Function just like we did in the `Nav.js` called About and export it as default, we can now return some JSX inside this component. Let's add a header (h1) that display some information to the DOM.
-We can see this below
+
+Inside `About.js` we also create a React Function just like we did in the `Nav.js` called `About` and export it as default, we can now return some JSX inside this component.
+
+Let's add a header (h1) that displays some information to the DOM as shown:
 
 ```javascript
 const About = () => {
@@ -315,15 +355,17 @@ const About = () => {
 export default About;
 ```
 
-With all these done, when we go and click About on our Navigation. It still won't display what we returned to the DOM.
-We need to add Routes to the component and set a path for it to be displayed on the DOM, we can't just import it to our `app.js` file.  
+With all these done, before we go and click `About` on our `Navigation`, we need to add the routes to the component and set a path for it to be displayed on the DOM, we can't just import it to our `app.js` file.  
 
-To add Route to our About component, we need to import it from react-router-dom into our `app.js` file
-We import BrowserRouter, Routes and Route from react-router-dom.
-We wrap BrowserRouter in opening and closing tags, within it we wrap Routes also with opening and closing tags and wrap the Route with a self closing tag.
-We can't use Route without wrapping it with Routes, we'll get an error in our code if we do so.
-Within the Route tag we add two properties called path and element, the path accepts the location we want our component to be rendered and the element accepts the component we want to render to the DOM.
-We can see this below
+To add Route to our About component, we need to import it from react-router-dom into our `app.js` file.
+
+We import `BrowserRouter`, `Routes`, and `Route` from `react-router-dom`.
+
+We can't use `Route` without wrapping it with `Routes`, which is wrapped under `BrowserRouter`.
+
+Within the `Route` tag, we add two properties called `path` and `element`.
+
+The `path` accepts the location we want our component to be rendered and the `element` accepts the component we want to render to the DOM as shown:
 
 ```javascript
 import './App.css';
@@ -348,10 +390,12 @@ function App() {
 
 export default App;
 ```
-Then we import our About component into our `app.js` file and pass it to our Route as a property so as to render it on the specified path.
-We can also add another Route for the Home link in our navigation, but we will only pass a path to this particular Route.
 
-Our App.js file should look like this below
+Then, we import our `About` component into our `app.js` file, and pass it to our Route as a property so as to render it on the specified path.
+
+We can also add another `Route` for the `Home` link in our navigation, but we will only pass a path to this particular Route.
+
+Now, our `App.js` file should look like this:
 
 ```javascript
 import './App.css';
@@ -379,10 +423,9 @@ function App() {
 export default App;
 ```
 
-The above code renders our `About.js` component to the DOM when About is clicked on our navigation.
-While the second Route has an element of null since we want to return back to our initial page.
+The above code renders our `About.js` component to the DOM when `About` is clicked on our navigation. While the second `Route` has an element of `null` since we want to return back to our initial page.
+
 We can do the same for our remaining links in the navigation.
-We now have a responsive navigation that renders the About component when we clicked on About on our navigation and returns back to the original page when we click on Home.
 
 > To know more about react router click [here](https://reactrouter.com/docs/en/v6/getting-started/overview)
 
@@ -391,8 +434,7 @@ A screenshot of our app.js file
 
 > From this tutorial, one should be able to use PrimeReact to make a responsive navigation bar that has routing capabilities.
 
-### Summary
-
+### Conclusion
 We learned from this tutorial:
 
 - PrimeReact and its uses.
@@ -400,7 +442,7 @@ We learned from this tutorial:
 - How to create a responsive navigation bar.
 - How to add routes to our navigation list.
 
-Happy Coding!
+Happy coding.
 
 ---
-Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)
+Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/) and [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
