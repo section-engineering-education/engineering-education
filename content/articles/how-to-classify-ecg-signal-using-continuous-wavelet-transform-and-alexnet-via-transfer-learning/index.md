@@ -1,6 +1,5 @@
-### How to classify ECG signals using continuous wavelet transform and AlexNet via transfer learning
-### Introduction
-ECG signals represent the heart's electrical activity observed from a strategic point of the human body, characterized by Quasi-periodic voltage. AlexNet is a convolutional neural network that has eight different layers. This method I commonly used in the science sector and for image studies. Transfer learning (TL) is a research problem in machine learning that focuses on storing knowledge gained while solving one problem and applying it to a different but related problem. For example, knowledge gained while learning to recognize cars could use when trying to recognize trucks.
+
+ECG signals represent the heart's electrical activity observed from a strategic point of the human body, characterized by Quasi-periodic voltage. AlexNet is a convolutional neural network that has eight different layers. This method is commonly used in the science sector and for image studies. Transfer learning (TL) is a research problem in machine learning that focuses on storing knowledge gained while solving one problem and applying it to a different but related problem. For example, knowledge gained while learning to recognize cars could be used when trying to recognize trucks.
 
 This tutorial will classify the ECG signals using pre-trained deep CNN(AlexNet) via transfer learning in Matlab. For this purpose, we utilized the strength of a container wavelet transforms to represent the one dimension ECG signals as images. It makes it possible to be used as an input in the AlexNet.
 
@@ -9,17 +8,18 @@ To follow along with this tutorial, you'll need:
 - [MATLAB](https://www.mathworks.com/products/get-matlab.html?s_tid=gn_getml) installed.
 - Proper understanding of [MATLAB](https://www.section.io/engineering-education/getting-started-with-matlab/) basics.
 
-### Types of ecg signal for classification
-Primarily, we are taking three types of ecg signals, that is;
+### Types of ECG signal for classification
+Primarily, we are taking three types of ecg signals:
 ARR: Arrhythmias
-CHF: Congestive heart failure
+CHF: Congestive heart failure, and
 NSR: Normal Sinus Rythm
 
-They are shown below;
+They are shown below:
 
 ![types of signals](/engineering-education/how-to-classify-ecg-signals-using-continuous-wavelet-transform-and-alexnet-via-transfer-learning/classOne.png)
 
-The main object here is to train a CNN to distinguish between ARR, CHF, and NSR. These three signals(162 ecg recording) are obtained from ecg signal databases from the physionet. The three databases that we get these signals are;
+The main object here is to train a CNN to distinguish between ARR, CHF, and NSR. These three signals(162 ecg recording) are obtained from ecg signal databases from the physionet. The three databases that we get these signals are:
+
 1. MIT-BIH Arrhythmia database(96recordings)[ARR signals]
 2. MIT-BIH Normal Sinus Rythm Database(30recordings)[NSR signals]
 3. BIDMC Congestive Heart failure Database(36recordings)[CHF signals]
