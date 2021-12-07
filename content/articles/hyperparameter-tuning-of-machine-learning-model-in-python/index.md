@@ -19,7 +19,6 @@ Hyperparameters are parameters that can be fine-tuned and adjusted. This increas
 This tutorial will increase the model's accuracy score. This ensures that the model makes accurate predictions. We will also create a list of all the possible values for hyperparameters and iterate through the values, finding all the hyperparameters combinations. We then calculate and record the performance of each parameter. Finally, we use hyperparameters that will provide an optimal model.
 
 ### Table of contents
-
 - [Prerequisites](#prerequisites)
 - [Hyperparemeter tuning techniques](#hyperparemeter-tuning-techniques)
 - [Generate synthetic dataset](#generate-synthetic-dataset)
@@ -36,7 +35,6 @@ This tutorial will increase the model's accuracy score. This ensures that the mo
 - [References](#references)
 
 ### Prerequisites
-
 To follow along comfortably, a reader is required:
 - To have [Python](https://www.python.org/) installed.
 - To know [Python programming](/engineering-education/python-projects-for-beginners/)
@@ -45,13 +43,12 @@ To follow along comfortably, a reader is required:
 - To know how to work with [Google Colab notebook.](https://research.google.com/colaboratory/)
 
 ### Hyperparameter tuning techniques
-
 Choosing the optimal hyperparameters is important in building a successful machine learning model. 
 Hyperparameters have a great impact on the machine learning algorithms used. Manual searching for the best hyper-parameter is a tedious process. Therefore, we need techniques that simplify this work. 
 
 These techniques are as follows.
-#### Grid Search
 
+#### Grid Search
 This is a brute force searching technique. In this technique, we create a list of all the combination values for hyperparameters.  We then iterate through all hyperparameters. Finally, it records the best performing hyperparameters used in model training. This is shown below.
 
 ![Grid Search Technique](/engineering-education/hyperparameter-tuning-of-machine-learning-model-in-python/grid-search-technique.png)
@@ -67,23 +64,20 @@ For Example, instead of checking all the 10,000 possible values of hyperparamete
 *[Image source: Medium](https://miro.medium.com/max/610/1*ijBbgo-2nyMdHLc40_zgQQ.png)*
 
 #### Bayesian Optimization
-
 This technique uses probability to find a model with the minimum loss function. It does this by mapping the hyperparameters to the function that will produce an optimal model.
 Bayesian Optimization ensures that the process takes the minimum number of steps.
 
 #### Gradient-based optimization
-
 It is best used with the [gradient descent algorithm](/engineering-education/gradient-descent-algorithm-in-python/). It fine-tunes the parameters for the gradient descent algorithm to produce an optimal model.
 
 #### Evolutionary optimization
-
 This technique uses the concept of natural selection in hyperparameter tuning. They use the evolution process and survival of the fittest by [Charles Darwin](https://en.wikipedia.org/wiki/Charles_Darwin).
 
 In this tutorial, we will implement the fist approach of hyperparameter tuning: Grid Search Technique
 
 Let's now start with the practical approach.
-### Generate synthetic dataset
 
+### Generate synthetic dataset
 A synthetic dataset is artificially manufactured. It's used to explain certain machine learning concepts such as hyperparameter tuning easily.
 
 Let's import `make_classification` the machine learning package used to generate the synthetic dataset.
@@ -115,7 +109,6 @@ This specifies the number of repeated data points in the dataset.
 Is used to set the seeding factor used to randomly generate our dataset. This ensures that the model results can be reproduced and applied elsewhere.
 
 ### Examine the data dimension
-
 This is used to check the size and structure of our dataset. To check the data dimension run this code:
 
 ```python
@@ -133,7 +126,6 @@ The output is shown below:
 Let's split our dataset.
 
 ### Split our dataset
-
 Let's import the package required for dataset splitting.
 
 ```python
@@ -167,8 +159,8 @@ The output below represents 20% of the dataset.
 We will build a machine learning model using a random forest algorithm. After building the model, we will fine-tune the algorithm's parameters to produce an optimal model. 
 
 Let's build our model.
-### Building a machine learning model using Random Forest
 
+### Building a machine learning model using Random Forest
 Let's import the necessary machine learning packages.
 
 ```python
@@ -198,8 +190,8 @@ This represents the number of trees used to create the random forest algorithm. 
 We will also adjust this number to produce an optimal model.
 
 We can now start model fitting.
-### Model fitting
 
+### Model fitting
 We add our model to the training subset. The model learns and gains more knowledge. It uses the knowledge in the future to make predictions.
 
 ```python
@@ -228,7 +220,6 @@ The prediction results are shown below:
 In the image above, the model has classified the different datapoints in the testing dataset as `0` or `1`.
 
 ### Accuracy score
-
 It represents the number of accurate predictions in a given prediction sample. 
 
 ```python
@@ -242,7 +233,6 @@ The output is shown below:
 When converted into a percentage it becomes `87.5%`. This accuracy can be further increased through hyperparameter tuning. Let's get started with hyperparameter tuning.
 
 ### Getting started with hyperparameter tuning
-
 In this section, we will fine-tune the parameters of the random forest algorithm. Random forest algorithm has two important parameters: `max_features` and the `n_estimators.`
 
 - `max_features`
@@ -289,7 +279,6 @@ The range of `n_estimators` will be between `10` and `200`.
 Let's now use `max_features` and `n_estimators` to build our grid.
 
 ### Creating the grid
-
 We build the grid using the following code.
 
 ```python
@@ -315,7 +304,6 @@ We specify the number of iterations made by the `GridSearchCV` function. We set 
 The next step is to fit the `grid` into our training dataset.
 
 #### Grid fitting
-
 We fit the grid into our dataset using the following command.
 
 ```python
@@ -330,8 +318,7 @@ The optimized model output is shown below.
 The model used will be used to produce the best solution. Let's now check the best parameters of this model.
 
 ### The best parameters for the model
-
-To check the best parameters selected by the `GridSearchCV` function, run this code.
+To check the best parameters selected by the `GridSearchCV` function, run this code:
 
 ```python
 print("Optimal parameters %s accuracy score of  %0.2f"
@@ -341,9 +328,9 @@ The output below shows the best parameters and the accuracy score for the model.
 
 ![Best Parameters](/engineering-education/hyperparameter-tuning-of-machine-learning-model-in-python/best-parameters.png)
 
-The best parameters are as follows: `max_features: 1` and `n_estimators: 140`.  The optimized score is `91%`.
-### Conclusion
+The best parameters are as follows: `max_features: 1` and `n_estimators: 140`. The optimized score is `91%`.
 
+### Conclusion
 In this tutorial, we have learned about the different techniques used to perform hyperparameter tuning. We then trained our machine learning model.
 
 Finally, we started hyperparameter tuning using the grid search technique. We fine-tuned the `max_features` and `n_estimators` parameters of the random forest algorithm. After hyperparameter tuning, model accuracy increased from `87.5%` to `91%`. This shows that our model has improved and will produce an optimal solution. 
@@ -351,8 +338,10 @@ Finally, we started hyperparameter tuning using the grid search technique. We fi
 To view the model in this tutorial, click [here](https://colab.research.google.com/drive/1U2_6VtBLvgeTWYkq_M6Jzo54UgUrASZN?usp=sharing)
 
 ### References
-
 - [Python code notebook](https://colab.research.google.com/drive/1U2_6VtBLvgeTWYkq_M6Jzo54UgUrASZN?usp=sharing)
 - [Hyperparameter tuning techniques](https://towardsdatascience.com/understanding-hyperparameters-and-its-optimisation-techniques-f0debba07568)
 - [Sckit-learn documentation](https://scikit-learn.org/stable/)
 - [Random Forest for classification](/engineering-education/introduction-to-random-forest-in-machine-learning/)
+
+---
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
