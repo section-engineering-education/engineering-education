@@ -106,7 +106,7 @@ These are the independent variables that are used as input for the model. The mo
 This specifies the number of repeated data points in the dataset.
 
 - `random_state=1`
-Is used to set the seeding factor used to randomly generate our dataset. This ensures that the model results can be reproduced and applied elsewhere.
+It is used to set the seeding factor used to generate our dataset randomly. This ensures that the model results can be reproduced and applied elsewhere.
 
 ### Examine the data dimension
 This is used to check the size and structure of our dataset. To check the data dimension run this code:
