@@ -1,7 +1,21 @@
-### How Intelligent Automation is Powering Machine Vision
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-intelligent-automation-is-powering-machine-vision/
+title: How Intelligent Automation is Powering Machine Vision
+description: This article will look at intelligent automation and how it is relevant to machine vision. It will also discuss the computer vision technology used and the future of intelligent automation.
+author: nelly-atieno
+date: 2021-12-07T00:00:00-14:00
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /how-intelligent-automation-is-powering-machine-vision/hero.png
+    alt: Intelligent Automation Example Image
+---
 Incorporating [artificial intelligence](/engineering-education/differences-between-artificial-intelligence-machine-learning-and-deep-learning/) into the day-to-day operations of firms has become increasingly common. Having intelligent automation running operations is advantageous in many ways. It brings efficiency and effectiveness to a business's operations. Applications of intelligent automation today include machine vision, a key technology in the business world.
-
+<!--more-->
 Machine vision plays a crucial role in transforming images into digital data. Computers analyze the data to arrive at vital conclusions needed to make business and non-business decisions. A combination of artificial intelligence features and machine vision will make computer vision more effective.
 
 This article discusses machine vision and intelligent automation's relevance to machine vision. It also describes computer vision technology used and what to expect of computer vision technology and intelligent automation in the future.
@@ -20,7 +34,6 @@ Intelligent automation enables machine vision to learn from previous experiences
 is an example of a machine vision system that combines intelligent automation with machine vision. It learns the form and features of a product presented to it. A shape Sightech Eyebot classifies these products by shape and identifies those that deviate from the norm. Incorporating AI makes machine vision more efficient because it reduces redundancy and enhances its data processing speeds.
 
 ### Where is computer vision technology used today?
-
 #### Medicine
 Companies are increasingly adopting computer vision, and medicine is interestingly one of the fields venturing into this technology. Surgical operations are now using computer vision to improve medical imaging for [preoperative planning](https://www.researchgate.net/publication/328575507_Machine_Vision_Application_on_Science_and_Industry_Machine_Vision_Trends/link/5d4f704ba6fdcc370a8c2ec4/download). The images ensure that surgeons identify small details that could influence their diagnostic procedures and prognosis of the condition. Here, computer vision systems use 3-dimension high-resolution endoscopes to identify the pathology and make surgical incisions with precision.
 
@@ -57,9 +70,9 @@ Computer vision and technology combined with intelligent automation will guarant
 Besides, the medical-surgical field will experience a revolution towards the adoption of virtual operations. Currently, only a few centers are undertaking [robot-assisted surgeries](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6961426/), but that could change in a few decades. Improved computer vision and intelligent automation systems will enhance the efficiency of the virtually conducted surgeries. Surgeons working remotely can operate a patient using a robot, which will reduce the challenge of medical specialists' shortage.
 
 ### Conclusion
-Intelligent automation is the key to unlocking the full potential of machine vision. Machine vision detects object features in the surroundings. But without intelligent automation, it is prone to repeat mistakes. Intelligent automation makes machine vision systems teachable. They can learn from their previous errors and keep improving.
+Intelligent automation is the key to unlocking the full potential of machine vision. Machine vision detects object features in the surroundings. However, without intelligent automation, it is prone to repeat mistakes. Intelligent automation makes machine vision systems teachable. They can learn from their previous errors and keep improving.
 
-With technological advancements, intelligent automation and machine vision have become centers for important innovations, such as autonomous cars and virtual surgeries. They have also become vital in making manufacturing and distribution processes in organizations more efficient. Because of machine vision, companies now avoid losses associated with illegal and counterfeit products. Computer vision technology and intelligent automation promise a better future in automation.
+With technological advancements, intelligent automation and machine vision have become centers for important innovations such as autonomous cars and virtual surgeries. They have also become vital in making manufacturing and distribution processes in organizations more efficient. Machine vision enables companies to avoid losses associated with illegal and counterfeit products. Computer vision technology and intelligent automation promise a better future in automation.
 
 ### Further reading
 - [Differences between Artificial Intelligence, Machine Learning, and Deep Learning](/engineering-education/differences-between-artificial-intelligence-machine-learning-and-deep-learning/)
