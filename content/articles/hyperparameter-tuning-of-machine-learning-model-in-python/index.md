@@ -276,7 +276,7 @@ The output is shown below.
 
 The range of `n_estimators` will be between `10` and `200`.
 
-Let's now use `max_features` and `n_estimators` to build our grid.
+Now, let's use `max_features` and `n_estimators` to build our grid.
 
 ### Creating the grid
 We build the grid using the following code.
