@@ -1,7 +1,7 @@
 
 ##Building a Lyrics Search app with Vanilla Javascript
 
-![hero image](/building-lyrics-search-app-with-vanilla-javascript/hero.jpg)
+![hero image](/building-a-lyrics-search-app-with-vanilla-javascript/hero.jpg)
 
 Not knowing the lyrics of a song is a problem most song-lovers encounter, especially when it's a rap song.
 
@@ -159,7 +159,7 @@ form {
 You have successfully designed the web page by adding colors, font sizes, font family, padding, margin, and so on just to make this web app look nice.
 
 Here is what your web page should look like now:
-![Screenshot for design](/building-lyrics-search-app-with-vanilla-javascript/design-screenshot.jpg)
+![Screenshot for design](/building-a-lyrics-search-app-with-vanilla-javascript/design-screenshot.jpg)
 
 ### Adding functionality with JavaScript.
 In your `lyrics.js` file,  declare variables and use the DOM selectors to bring in elements from the lyrics.html file into our javascript file using the code snippet below:
@@ -226,7 +226,7 @@ Comment out the showData function in the code snippet above(remember to uncommen
 
 Your screen should be like the screenshot below:
 
-![Screenshot for consoled data](/building-lyrics-search-app-with-vanilla-javascript/console-screenshot.jpg)
+![Screenshot for consoled data](/building-a-lyrics-search-app-with-vanilla-javascript/console-screenshot.jpg)
 
 The next thing to do is to create a function that will display the data in the console on the webpage. The function(showData)  is being called from the async function `startSearch()`.
 
