@@ -1,9 +1,22 @@
-Hperparameters are parameters that can be fine-tuned and adjusted. This increases the accuracy score of a machine learning model. Machine algorithms such as [Random forest](/engineering-education/introduction-to-random-forest-in-machine-learning/), [K-Nearest Neighbor](/engineering-education/introduction-to-knn-algorithm/) and [Decison trees](/engineering-education/decision-tree-in-python/) have parameters that can be fine-tuned to achieve an optimized model. 
+---
+layout: engineering-education
+status: publish
+published: true
+url: /hyperparameter-tuning-of-machine-learning-model-in-python/
+title: Hyperparameter Tuning of Machine Learning Model in Python
+description: This tutorial aims to increase the model's accuracy score. It will guide you on how to create a list of all the possible values for hyperparameters and iterate through the values, finding all the hyperparameters combinations. We will then show you how to  calculate and record the performance of each parameter.
+author: willyngashu
+date: 2021-12-07T00:00:00-19:00
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
 
-In hyperparameter tuning, we increase the model's accuracy score. This ensures that the model makes accurate predictions.
-In hyperparameter tuning, we create a list of all the possible values for hyperparameters. We then iterate through the values and find all the hyperparameters combinations. 
-
-We then calculate and record the performance of each parameter. Finally, we use hyperparameters that will provide an optimal model.
+  - url: /engineering-education/hyperparameter-tuning-of-machine-learning-model-in-python/hero.jpg
+    alt: Hyperparameter Tuning of Machine Learning Model in Python Hero image
+---
+Hyperparameters are parameters that can be fine-tuned and adjusted. This increases the accuracy score of a machine learning model. Machine algorithms such as [Random forest](/engineering-education/introduction-to-random-forest-in-machine-learning/), [K-Nearest Neighbor](/engineering-education/introduction-to-knn-algorithm/) and [Decison trees](/engineering-education/decision-tree-in-python/) have parameters that can be fine-tuned to achieve an optimized model. 
+<!--more-->
+This tutorial will increase the model's accuracy score. This ensures that the model makes accurate predictions. We will also create a list of all the possible values for hyperparameters and iterate through the values, finding all the hyperparameters combinations. We then calculate and record the performance of each parameter. Finally, we use hyperparameters that will provide an optimal model.
 
 ### Table of contents
 
