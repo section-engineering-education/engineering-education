@@ -71,7 +71,7 @@ Bayesian Optimization ensures that the process takes the minimum number of steps
 It is best used with the [gradient descent algorithm](/engineering-education/gradient-descent-algorithm-in-python/). It fine-tunes the parameters for the gradient descent algorithm to produce an optimal model.
 
 #### Evolutionary optimization
-This technique uses the concept of natural selection in hyperparameter tuning. They use the evolution process and survival of the fittest by [Charles Darwin](https://en.wikipedia.org/wiki/Charles_Darwin).
+This technique uses the concept of natural selection in hyperparameter tuning. This technique uses the concept of evolution process and survival of the fittest by [Charles Darwin](https://en.wikipedia.org/wiki/Charles_Darwin).
 
 In this tutorial, we will implement the fist approach of hyperparameter tuning: Grid Search Technique
 
@@ -292,7 +292,7 @@ We now initialize the algorithm we want to fine-tune. We want to finetune the `R
 ```python
 rf = RandomForestClassifier()
 ```
-Now that we have initialized the algorithm, let now initialize the `GridSearchCV` function. 
+Now that we have initialized the algorithm, let's initialize the `GridSearchCV` function. 
 
 ```python
 grid = GridSearchCV(estimator=rf, param_grid=param_grid, cv=5)
