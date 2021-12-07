@@ -15,11 +15,9 @@ images:
     alt: cross-site scripting attacks
 ---
 
-Cross-site scripting (XSS) is a sort of web application vulnerability that attacks a website's user rather than the server itself. XSS allows an attacker to impersonate a vulnerable user and conduct any activities or access any data that the user is capable of.
+Cross-site scripting (XSS) is a type of web application vulnerability that attacks a website's user rather than the server itself. XSS allows an attacker to impersonate a vulnerable user and conduct any activities or use any data that the user has access to.
 
-The Open Web Application Security Project publishes the OWASP Top 10 report. It is a list of the most serious web application security concerns. In the OWASP Top 10 of 2017, XSS is the second most prevalent issue and is found in around two-thirds of all applications.
-
-*(Source: [OWASP](https://owasp.org/www-project-top-ten/2017/A7_2017-Cross-Site_Scripting_(XSS)))*
+The Open Web Application Security Project publishes the OWASP Top 10 report. It is a list of the most serious web application security concerns. In the OWASP Top 10 of 2017, XSS is the second most prevalent issue and is found in around two-thirds of all applications *(Source: [OWASP](https://owasp.org/www-project-top-ten/2017/A7_2017-Cross-Site_Scripting_(XSS)))*.
 
 In this article, we'll go through XSS attacks in detail, their impact, and how to mitigate them.
 
@@ -75,16 +73,10 @@ We notice that as soon as we hit the go button after entering our XSS payload, w
 
 #### Reflected XSS
 
-<<<<<<< HEAD
-This is a one-time XSS. The malicious script is part of the victim's online application request, which is being reflected in the application's response.
-
-Reflected XSS is commonly used in targeted attacks, where the hacker crafts and sends a phishing email with the malicious script and the URL. The attacker could even post a link on a public website and deceive the user into clicking it.
-=======
 This is a one-time XSS. The malicious script is part of the victim's online application request which is frequently reflected in the application's response.
 
 Reflected XSS is most commonly employed in targeted attacks where the hacker sends a phishing email with the malicious script in the URL. The attacker could even post a link on a public website and deceive the user into clicking it.
 
->>>>>>> 484294b3fcd75eaa7ab3faebce261edc375aa04d
 #### Stored XSS
 
 Also known as `Persistent XSS`, the payload is saved on the server and can be triggered by a victim without requiring any user interaction outside of the application. This type of XSS happens when the server saves your supplied input somewhere into the server (i.e. a database or cache server).
