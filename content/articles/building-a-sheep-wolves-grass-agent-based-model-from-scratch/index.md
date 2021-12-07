@@ -1,3 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /building-a-sheep-wolves-grass-agent-based-model-from-scratch/
+title: Building a Sheep-Wolves-Grass Agent-Based Model from scratch using p5.js
+description: This tutorial will take you through how to create an Agent-Based Model from scratch using the Sheep-Wolves-Grass dynamics model.
+author: samuel-santos
+date: 2021-12-07T00:00:00-19:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/building-a-sheep-wolves-grass-agent-based-model-from-scratch/hero.jpg
+    alt: Building a Sheep-Wolves-Grass Agent-Based Model Hero image
+---
 ### Prerequisites
 For this tutorial, you will need:
 - Basic knowledge of HTML, CSS, and JavaScript;
