@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /building-scalable-projects-using-the-multi-module-architecture-with-spring-boot-and-maven/
+url: /multi-module-architecture-with-spring-boot-and-maven/
 title: Building Scalable Multi-Module Projects in Spring Boot
 description: In this article, we will look at multi-module and microservices architecture. We will also implement a Spring Boot project that uses multi-module architecture.
 author: ayemobola-tolulope
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/building-scalable-projects-using-the-multi-module-architecture-with-spring-boot-and-maven/hero.jpg
+  - url: /engineering-education/multi-module-architecture-with-spring-boot-and-maven/hero.jpg
     alt: Building Scalable Multi-Module Projects in Spring Boot Example Image
 ---
 A three-man organization in 2019 grew to become a twelve-man team fourteen months later. The growth in team members was necessitated by the growth in the project.
@@ -86,17 +86,17 @@ While these can co-exist in separate modules according to their name, we will cr
 
 The method for creating these four modules can be used to create as many as are needed in the project.
 
-![Multi Module in Picture](/engineering-education/building-scalable-projects-using-the-multi-module-architecture-with-spring-boot-and-maven/picone.jpg)
+![Multi Module in Picture](/engineering-education/multi-module-architecture-with-spring-boot-and-maven/picone.jpg)
 
 To begin, fire up your Intellij code editor.
 
 If you have a project already open, click `File > New > Project` and if this is your first time, click `New Project`.
 
-![Project setup](/engineering-education/building-scalable-projects-using-the-multi-module-architecture-with-spring-boot-and-maven/startproject.jpg)
+![Project setup](/engineering-education/multi-module-architecture-with-spring-boot-and-maven/startproject.jpg)
 
 On the resulting modal form, select `Spring Initializr` on the left side, fill in the form like below, and click `Next`:
 
-![Spring Initializr](/engineering-education/building-scalable-projects-using-the-multi-module-architecture-with-spring-boot-and-maven/springstart.jpg)
+![Spring Initializr](/engineering-education/multi-module-architecture-with-spring-boot-and-maven/springstart.jpg)
 
 On the next page, select the dependencies you want available for all modules in the project.
 
@@ -106,13 +106,13 @@ For this project, I have chosen the `Spring Web` and `Lombok` dependencies. You 
 
 Click next after selecting dependencies. You can either choose to open on the same window, thereby replacing the present open project, or open in another window:
 
-![Continue Project](/engineering-education/building-scalable-projects-using-the-multi-module-architecture-with-spring-boot-and-maven/startproject1.jpg)
+![Continue Project](/engineering-education/multi-module-architecture-with-spring-boot-and-maven/startproject1.jpg)
 
 Now, we can see the project open and the dependencies we selected, displayed in the `pom.xml` file:
 
-![Pom File](/engineering-education/building-scalable-projects-using-the-multi-module-architecture-with-spring-boot-and-maven/parentpom.jpg)
+![Pom File](/engineering-education/multi-module-architecture-with-spring-boot-and-maven/parentpom.jpg)
 
-![Landing Page](/engineering-education/building-scalable-projects-using-the-multi-module-architecture-with-spring-boot-and-maven/landing.jpg)
+![Landing Page](/engineering-education/multi-module-architecture-with-spring-boot-and-maven/landing.jpg)
 
 Time for creating modules.
 
@@ -122,15 +122,15 @@ To create the first module, right-click on the project name `demohospital`, and 
 
 On the resulting model form, select `Maven`, and click `Next`.
 
-![Setting up](/engineering-education/building-scalable-projects-using-the-multi-module-architecture-with-spring-boot-and-maven/settingup.jpg)
+![Setting up](/engineering-education/multi-module-architecture-with-spring-boot-and-maven/settingup.jpg)
 
 Type in a Name (this will be the name of the module – in this case, `data`), leave `Location` as is, and click `Finish`. Spring Boot does the rest for you.
 
-![Data](/engineering-education/building-scalable-projects-using-the-multi-module-architecture-with-spring-boot-and-maven/data.jpg)
+![Data](/engineering-education/multi-module-architecture-with-spring-boot-and-maven/data.jpg)
 
 A `data` module has been created by you.
 
-![Data Two](/engineering-education/building-scalable-projects-using-the-multi-module-architecture-with-spring-boot-and-maven/datatwo.jpg)
+![Data Two](/engineering-education/multi-module-architecture-with-spring-boot-and-maven/datatwo.jpg)
 
 Following the same approach, let us create the `Service` and `Controller` modules:
 - Right-click on the project name.
@@ -140,11 +140,11 @@ Following the same approach, let us create the `Service` and `Controller` module
 
 You now have a `Service` module.
 
-![Service](/engineering-education/building-scalable-projects-using-the-multi-module-architecture-with-spring-boot-and-maven/service.jpg)
+![Service](/engineering-education/multi-module-architecture-with-spring-boot-and-maven/service.jpg)
 
 The exact same approach for the `Controller` module, as shown in the picture below
 
-![Controller](/engineering-education/building-scalable-projects-using-the-multi-module-architecture-with-spring-boot-and-maven/controller.jpg)
+![Controller](/engineering-education/multi-module-architecture-with-spring-boot-and-maven/controller.jpg)
 
 As it is now, the services needed by the hospital can be created in each of these modules and written to interact with one another.
 
@@ -190,7 +190,7 @@ Now, they can send emails and text messages and other notifications.
 </dependency>
 ```
 
-![Payment](/engineering-education/building-scalable-projects-using-the-multi-module-architecture-with-spring-boot-and-maven/payment.jpg)
+![Payment](/engineering-education/multi-module-architecture-with-spring-boot-and-maven/payment.jpg)
 
 ### Bonus
 Let us imagine that a `Payment Service` is to be implemented into the Hospital management System later.
@@ -202,7 +202,7 @@ This is straightforward.
 - Install it as a dependency in any or all of the other modules that need its methods and viola, you have a new module in your project.
 - You can try to create a `Logistics Service` to represent the logistics department of the hospital.
 
-![Bonus](/engineering-education/building-scalable-projects-using-the-multi-module-architecture-with-spring-boot-and-maven/bonus.jpg)
+![Bonus](/engineering-education/multi-module-architecture-with-spring-boot-and-maven/bonus.jpg)
 
 ### Gaining the benefits of microservices architecture from the multi-module architecture
 To enjoy what microservices offer while using multi-module architecture is simple. This means that you can copy out the jar file of any of the `modules/services` above – say `Payment Service` for instance – and deploy it into another entirely different project, for reuse.
@@ -213,7 +213,7 @@ Spring Boot automatically does the rest for you. Now you can reuse that module a
 
 One interesting thing to note is that, if there is an issue in any of the modules, you can simply go to that module, fix up the issue and rebuild it as an independent `jar`, without interfering with the other modules.
 
-![Packaging](/engineering-education/building-scalable-projects-using-the-multi-module-architecture-with-spring-boot-and-maven/packaging.jpg)
+![Packaging](/engineering-education/multi-module-architecture-with-spring-boot-and-maven/packaging.jpg)
 
 ### Conclusion
 In this tutorial:
