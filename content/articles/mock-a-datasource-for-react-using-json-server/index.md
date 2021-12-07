@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /mock-a-datasource-for-react-using-json-server/
-title: Mock a Datasource for react using json-server
-description: In this tutorial, the reader will learn how to build a mock a datasource using `json-server` to rapidly build React.js prototypes.
+title: Mock a Datasource for React using json-server
+description: In this tutorial, the reader will learn how to build a mock a datasource using json-server to rapidly build React.js prototypes.
 author: roy-kibet
-date: 2021-11-30T00:00:00-19:00
+date: 2021-12-07T00:00:00-09:20
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -16,29 +16,21 @@ images:
 ---
 Developers need some quick-to-use data sources with endpoints when building a React.js project. These data sources provide test data to test whether the package works correctly.
 <!--more-->
-A [data source](https://docs.microsoft.com/en-us/sql/odbc/reference/data-sources?view=sql-server-ver15) can be said as the initial location where data is born. It may be a database, flat file, live measurement data from physical devices, among many others.
+A [data source](https://docs.microsoft.com/en-us/sql/odbc/reference/data-sources?view=sql-server-ver15) is the initial location where data is born. It may be a database, flat file, live measurement data from physical devices, among many others.
 
-Datasource mainly used are databases managed by DBMS(s) such as MySQL, Postgres, SQL, among many others.
+Datasources are mainly used as the databases managed by DBMS(s) such as MySQL, Postgres, SQL, among many others. The problem with this approach is that during prototyping it will be quickly discarded if the application prototype is not as expected.
 
-The problem with this approach is that during prototyping. For example, in Rapid Prototyping Approach, it will be quickly discarded if the application prototype is not as expected.
+[Rapid Prototyping Approach](https://www.productplan.com/glossary/rapid-prototyping/) is a type of agile system development methodology that allows one to create a prototype to test and validate the requirements of a Requirement Specification Document (RSD).
 
-[Rapid Prototyping Approach](https://www.productplan.com/glossary/rapid-prototyping/) is a type of agile system development methodology that allows one to create a prototype for testing and validating the requirements of a Requirement Specification Document (RSD).
+This development happens through several iterations. The prototype may then be used as a primary system or it can be discarded, so that another primary system may be developed based on the prototype. By building a prototype, the extra setup and configurations can be avoided, if there are going to be quickly discarded.
 
-This development happens through several iterations. The prototype may then be used as a primary system or it can be discarded, so that another primary system may be developed based on the prototype.
+The process produces a need to create a data source that can be quickly set up and discarded, yet it performs the same functionality as the DBMS. It should also be small enough to have fewer storage requirements to produce correct and accurate results as expected.
 
-By building a prototype, the extra setup and configurations can be avoided, if there are going to be quickly discarded.
-
-The process produces a need to create a data source that can be quickly set up and discarded, yet it performs the same functionality as the DBMS.
-
-It should also be small enough for fewer storage requirements to produce correct and accurate results as expected.
-
-The `json-server` library can solve such data sources problems. The `json-server` library is quick to install, configure, use, and discard in a React application.
-
-In this article, you will learn how to do the following on the package mentioned above in a React.js app.
+The `json-server` library can solve such data sources problems. The `json-server` library is quick to install, configure, use, and discard in a React application. In this article, you will learn how to do the following on the package mentioned above in a React.js app.
 
 ### Table of contents
 - [Key takeaways](#key-takeaways)
-- [Pre-requisites](#pre-requisites)
+- [Prerequisites](#prerequisites)
 - [Understanding the json-server package](#understanding-the-json-server-package)
 - [Building the React.js application](#building-the-reactjs-application)
   - [Header component](#header-component)
@@ -57,16 +49,16 @@ In this article, you will learn how to do the following on the package mentioned
 - [Conclusion](#conclusion)
 
 ### Key takeaways
-By the end, the following will be learned:
+By the end, the reader will learn the following:
 - What is the `json-server` library?
 - Set up the `json-server` library in a React.js application.
 - Connect the app to the library.
 - Using the library as a data source in place of an actual DBMS.
 - Removing the dependency from the application and discarding the prototype.
 
-### Pre-requisites
-For the article, the following are required for easy article follow-up:
-- A good IDE or text editor is set up on the machine.
+### Prerequisites
+The following is required:
+- A good IDE or text editor set up on the machine.
 - A stable internet connection.
 - React development environment already set up.
 - React development skills.
@@ -82,60 +74,38 @@ Brief info on what is going to be done in the article is as follows:
 - Run the application.
 
 ### Understanding the json-server package
-JSON server allows almost all types of back-end requests and responses like `GET`, `POST`, `PUT`, `PATCH`, and `DELETE` methods.
+JSON server allows almost all types of back-end requests and responses like `GET`, `POST`, `PUT`, `PATCH`, and `DELETE` methods. It has routes to access data items stored in the mock database file (JSON).
 
-It has routes to access data items stored in the mock database file (JSON). A few examples are `GET /posts` for fetching all the posts, `PUT /posts/1` for updating the first post, or `DELETE /posts/1` for deleting the first post.
-
-The module allows other operations to be done on the database, such as:
+A few examples are `GET /posts` for fetching all the posts, `PUT /posts/1` for updating the first post, or `DELETE /posts/1` for deleting the first post. The module allows other operations to be done on the database, such as:
 
 #### Performing database filters
-Examples - `GET /posts?title=json-server&author=riro` or `GET/comments?author.name=riro`.
-
-These end-points filter `posts` with the `title` of `json-server` and `author` name of `riro` and `comments` with the `author` name of `riro` respectively.
+Examples - `GET /posts?title=json-server&author=riro` or `GET/comments?author.name=riro`. These end-points filter `posts` with the `title` of `json-server` and `author` name of `riro` and `comments` with the `author` name of `riro` respectively.
 
 #### Adding pagination to the results fetched
-Example - `GET /posts?_page=9&_limit=23`.
-
-This request will fetch posts from page `9`, and the page limit is set to `23`.
+Example - `GET /posts?_page=9&_limit=23`. This request will fetch posts from page `9`, and the page limit is set to `23`.
 
 #### Sorting items from the database
-Example - `GET/posts/5/comments?_sort=votes,likes&_order=desc,asc`.
-
-This request does the sorting of the `comments` based on the `votes` and `likes` in ascending and descending orders, respectively.
+Example - `GET/posts/5/comments?_sort=votes,likes&_order=desc,asc`. This request does the sorting of the `comments` based on the `votes` and `likes` in ascending and descending orders, respectively.
 
 #### Performing slice operations on the data
-Example - `GET/posts/4/comments?_start=20&_limit=10`.
-
-This request truncates the `comments` after `10` comments starting from comment number `20`.
+Example - `GET/posts/4/comments?_start=20&_limit=10`. This request truncates the `comments` after `10` comments starting from comment number `20`.
 
 #### Operators
-For excluding a value we use `_ne`, and for filtering based on a value, we use `_like`.
-
-An example `GET /posts/4/comments?_ne=sad` request, excludes any comment with the value of `sad`, while `GET \author_like=chris` searches for `authors` with a name related to `chris` (RegEx is used).
+When excluding a value we use `_ne`, and to filter based on a value, we use `_like`. An example `GET /posts/4/comments?_ne=sad` request, excludes any comment with the value of `sad`, while `GET \author_like=chris` searches for `authors` with a name related to `chris` (RegEx is used).
 
 #### Doing full-text searches in the database
-Example - `GET/posts?q=tomcat`.
-
-This request searches for the value `tomcat` in all the records stored.
+Example - `GET/posts?q=tomcat`. This request searches for the value `tomcat` in all the records stored.
 
 #### Creating relationships with the database items
-The inclusion of child resources using `_embed`, and the inclusion of parent resources using `_expand` creates nested resources.
-
-An example is `GET /comments/1?_expand=post` that includes parent resource by the name `post`.
+The inclusion of child resources using `_embed`, and the inclusion of parent resources using `_expand` creates nested resources. An example is `GET /comments/1?_expand=post` that includes parent resource by the name `post`.
 
 #### Fetching for full database
-Example - `GET\db`.
-
-This `GET` fetches all the database items of the specified database.
+Example - `GET\db`. This `GET` fetches all the database items of the specified database.
 
 ### Building the React.js application
-In this section, a React.js app will be created. We will be building a budget planning application to add or remove them from a list.
+In this section, a React.js app will be created. We will be build a budget planning application to add or remove them from a list. The app saves and retrieves data from a data source using a JSON object.
 
-The app saves and retrieves data from a data source using a JSON object.
-
-Let's get started.
-
-Open the folder in which the application should be created and run this command:
+Let's get started. Open the folder in which the application should be created and run this command:
 
 ```bash
 npx create-react-app react-budget-tracker
@@ -241,9 +211,7 @@ export default Footer
 The code generates a footer that contains copyright and an about-page link.
 
 #### Button component
-The `Button.js` adds a reusable button component for multiple click actions.
-
-For example, this button can open the `Add` form and `Close` the form.
+The `Button.js` adds a reusable button component for multiple click actions. For example, this button can open the `Add` form and `Close` the form.
 
 ```js
 import PropTypes from 'prop-types'
@@ -274,7 +242,7 @@ Button.propTypes = {
 export default Button
 ```
 
-The code generates a button that allows one to set its
+The code generates a button that allows one to set its:
 - color,
 - text, and
 - the function to be executed when it is clicked.
@@ -340,7 +308,7 @@ The above code:
 - Displays the item and the amount.
 
 #### AddBudget component
-The `AddBudget.js` file allows one to add budgets to the system. The budgets will then immediately be updated in the system hence visible.
+The `AddBudget.js` file allows one to add budgets to the system. The budgets will then immediately be updated in the system and make it visible.
 
 ```js
 import { useState } from 'react'
@@ -411,13 +379,13 @@ export default AddBudget
 ```
 
 The above code:
-- Displays an error when no budget item is added during the addition process
-- It otherwise takes the value that has been input and adds it to the others held at the data source. The addition takes place when the submit button is pressed.
-- It allows one to either set the reminder `on` or `off` for a particular item
-- The application will then reload automatically on the added list
+- Displays an error when no budget item is added during the addition process.
+- It otherwise takes the value that has been inputted and adds it to the others held at the data source. The addition takes place when the submit button is pressed.
+- It allows one to either set the reminder `on` or `off` for a particular item.
+- The application will then reload automatically on the added list.
 
 #### Budgets.js file
-- In the `Budgets.js` file, the following will be the code:
+- In the `Budgets.js` file, we can add the following code:
 
 ```js
 import Budget from './Budget'
@@ -594,7 +562,7 @@ This code shown above does the following:
 - The code also contains the footer and the about page link.
 
 ### Style the application
-- Finally, do some styling for the application. The styling code is found on this [link](https://github.com/blacklihgt/Mock-a-Datasource-for-React-using-JSON-Server/blob/main/src/index.css). Download it and save it in the `src` folder.
+- Now we can do create styling for the application. The styling code is found on this [link](https://github.com/blacklihgt/Mock-a-Datasource-for-React-using-JSON-Server/blob/main/src/index.css). Download it and save it in the `src` folder.
 
 Make sure to run the command below to install all necessary packages before running the application using the command below:
 
@@ -611,32 +579,28 @@ npm run start
 The application will look as shown below:
 
 ![Home page](/engineering-education/mock-a-datasource-for-react-using-json-server/Homepage.png)
+
 ![Add items](/engineering-education/mock-a-datasource-for-react-using-json-server/add-items.png)
+
 ![About page](/engineering-education/mock-a-datasource-for-react-using-json-server/about-page.png)
 
 ### Install json-server
-JSON server can be installed by running the command below:
+The JSON server can be installed by running the command below:
 
 ```bash
 npm install -g json-server
 ```
 
-The command installs the package at global scope.
-
-Once installed, head over to the `package.json` file and add a script that quickly runs the server.
+The command installs the package at global scope. Once installed, head over to the `package.json` file and add a script that quickly runs the server.
 
 ```json
 "server": "json-server --watch db.json --port 5000"
 ```
 
-This code above runs a server that serves responses to requests from the application. The data source which acts as a database at this app is the `db.json` file.
-
-It will be accessed via port `5000` as seen above and in the `App.js` file.
+This code above runs a server that serves responses to requests from the application. The data source which acts as a database on this app is the `db.json` file. It will be accessed via port `5000` as seen above and in the `App.js` file.
 
 ### Configure the json-server data source
-In the `db.json` file, the server serves requests under the `http://localhost:5000/budgets/` URL.
-
-The data items are under the budgets section.
+In the `db.json` file, the server serves requests under the `http://localhost:5000/budgets/` URL. The data items are under the budgets section. 
 
 Copy-paste the code below into the `db.json` file:
 
@@ -697,7 +661,7 @@ npm run server
 - Access the application in the browser via the following URL: `http://localhost:3000/`.
 - Reload the application's browser window till it displays the items if it does not work for any reason.
 
-The outcome looks like shown below:
+The outcome should look like the example shown below:
 
 ![Final image for the application](/engineering-education/mock-a-datasource-for-react-using-json-server/final-server-product-image.png)
 
@@ -726,37 +690,32 @@ This action may be helpful when searching using the search bar. Follow the steps
 curl http://localhost:5000/budgets?q=Carrots
 ```
 
-Here, the database is searched for any item with the value of `Carrots` in it.
-
-The return value looks like follows:
+Here, the database is searched for any item with the value of `Carrots` in it. The return value looks like the example below:
 
 ![Perform queries](/engineering-education/mock-a-datasource-for-react-using-json-server/querying.png)
 
-The module allows middlewares, random data generation, accessing the data source remotely, setting custom routes, and many more.
+The module allows middlewares, random data generation, accessing the data source remotely, setting custom routes, and much more.
 
 #### Add delay and change host
 - To change the host, use the `-H` or `--host` option.
 - Adding some delays (in milliseconds) to the server to replicate a real server, use the `-d` or `--delay` option.
 
-Both of these two are shown below:
+Both of these two options are shown below:
 
 ```bash
 json-server --watch db.json --port 5000 -H 127.0.0.1 -d 1500
 ```
 
 ### Conclusion
-In conclusion, running and throwing away parts are essential to developers during software development.
-
-These parts are helpful in agile programming and prototyping. JSON Server dependency is an example of a quick dispensable project development unit.
+In conclusion, running and throwing away parts is essential to developers during software development. These parts are helpful in agile programming and prototyping. JSON Server dependency is an example of a quick dispensable project development unit.
 
 It is small-sized, easy to install, use, learn, and dispose of when one has finished using the prototype.
 
 At this point, the following have been covered:
-
-- What is the JSON Server module
-- Importance of JSON Server module in project development phase
-- Adding JSON Server module to a React project
-- Configuring JSON Server module
+- What is the JSON Server module.
+- Importance of JSON Server module in project development phase.
+- Adding JSON Server module to a React project.
+- Configuring JSON Server module.
 
 You can find the full code [here](https://github.com/blacklihgt/Mock-a-Datasource-for-React-using-JSON-Server).
 
