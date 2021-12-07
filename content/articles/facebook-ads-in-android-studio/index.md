@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /integrate-airtable-with-nextjs/
+url: /facebook-ads-in-android-studio/
 title: Integrating Facebook Ads with your Android App in Android Studio
 description: In this article we will going over how to build a grocery list application using Nextjs and Airtable.
 author: giridhar-talla
@@ -11,8 +11,8 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/integrate-airtable-with-nextjs/hero.png
-    alt: Nextjs Airtable
+  - url: /engineering-education/facebook-ads-in-android-studio/hero.png
+    alt: Facebook Ads Android App in Android Studio
 ---
 Apart from designing mobile applications for technological advancements, developers are always looking for a return on their investment. This article demonstrates developers how to include banner and interstitial Ads in their applications, which is one of the best ways to earn money from apps.
 <!--more-->
