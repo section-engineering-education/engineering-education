@@ -6,7 +6,7 @@ url: /facebook-ads-in-android-studio/
 title: Integrating Facebook Ads with your Android App in Android Studio
 description: In this article we will going over how to build a grocery list application using Nextjs and Airtable.
 author: giridhar-talla
-date: 2021-10-12T00:00:00-15:30
+date: 2021-12-07T00:00:00-16:30
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/facebook-ads-in-android-studio/hero.png
     alt: Facebook Ads Android App in Android Studio
 ---
-Apart from designing mobile applications for technological advancements, developers are always looking for a return on their investment. This article demonstrates developers how to include banner and interstitial Ads in their applications, which is one of the best ways to earn money from apps.
+Apart from designing mobile applications for technological advancements, developers are always looking for a return on their investment. This article demonstrates how to include banner and advertisements in their applications, which is one of the best ways to earn money from apps.
 <!--more-->
 ### Table of contents
 - [Introduction](#introduction)
@@ -25,10 +25,8 @@ Apart from designing mobile applications for technological advancements, develop
 - [Demerits of integrating into some Applications](#demerits-of-integrating-into-some-applications)
 - [Conclusion](#conclusion)
 
-
-
 ### Introduction
-Monetizing Applications counts as one of the successes of a developer other than producing the required product. This motivates developers and programmers to come up with more software with a thought in mind that there will be an appreciation token.
+Monetizing an application is just as an important goal for a developer as producing the required product. This motivates developers and programmers to come up with more software with a thought in mind that there will be an appreciation token.
 
 ### Prerequisites
 The key requirements for a successful integration include:
