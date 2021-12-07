@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /generic-singly-linked-list-data-structure-java/
-title: Implementing a Generic Singly linked list Data Structure in Java
+title: Implementing a Generic Singly Linked List Data Structure in Java
 description: In this article, we will look at implementing a generic singly linked list data structure in Java.
 author: lynn-mumo
 date: 2021-12-07T00:00:00-13:30
