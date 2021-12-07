@@ -96,21 +96,25 @@ To open the phone's gallery you need an intent to handle the action. You will cl
 Add the following function to your code to display the alert dialog for selecting an image from the gallery or taking a photo.
 
 ```kotlin
+    // Function for displaying an AlertDialogue for choosing an image
     private fun selectImage() {
         val choice = arrayOf<CharSequence>("Take Photo", "Choose from Gallery", "Cancel")
         val myAlertDialog: AlertDialog.Builder = AlertDialog.Builder(this)
         myAlertDialog.setTitle("Select Image")
         myAlertDialog.setItems(choice, DialogInterface.OnClickListener { dialog, item ->
             when {
+                // Select "Choose from Gallery" to pick image from gallery
                 choice[item] == "Choose from Gallery" -> {
                     val pickFromGallery = Intent(Intent.ACTION_GET_CONTENT, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
                     pickFromGallery.type = "/image"
                     startActivityForResult(pickFromGallery, 1)
                 }
+                // Select "Take Photo" to take a photo
                 choice[item] == "Take Photo" -> {
                     val cameraPicture = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
                     startActivityForResult(cameraPicture, 0)
                 }
+                // Select "Cancel" to cancel the task
                 choice[item] == "Cancel" -> {
                     myAlertDialog.dismiss()
                 }
@@ -134,6 +138,7 @@ The difference between selecting an image from a gallery and taking a camera com
 You will learn how to pick a PDF from files and display it on the `TextView`. Picking PDF files comes in handy when you are developing an application that requires the user to select a PDF file and upload or share it with other users. Include the method below in your code to allow you to pick a PDF from files.
 
 ```kotlin
+    // Intent for navigating to the files
     private fun selectPdf() {
         val pdfIntent = Intent(Intent.ACTION_GET_CONTENT)
         pdfIntent.type = "application/pdf"
@@ -145,6 +150,7 @@ You will learn how to pick a PDF from files and display it on the `TextView`. Pi
 After implementing the intents, you will need the override the `onActivityResult` method as follows:
 
 ```kotlin
+// Override this method to allow you select an an image or a PDF
 override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
@@ -163,6 +169,7 @@ override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) 
                             imageSelected,
                             pathColumn, null, null, null
                         )
+                        // Setting the image to the ImageView
                         if (myCursor != null) {
                             myCursor.moveToFirst()
                             val columnIndex = myCursor.getColumnIndex(pathColumn[0])
@@ -186,6 +193,7 @@ override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) 
                 if (uriString.startsWith("content://")) {
                     var myCursor: Cursor? = null
                     try {
+                    // Setting the PDF to the TextView
                         myCursor = applicationContext!!.contentResolver.query(uri, null, null, null, null)
                         if (myCursor != null && myCursor.moveToFirst()) {
                             pdfName = myCursor.getString(myCursor.getColumnIndex(OpenableColumns.DISPLAY_NAME))
@@ -204,9 +212,11 @@ The complete code implementation is as follows,
 ```kotlin
 class MainActivity : AppCompatActivity() {
 
+    // Initializing the layout views
     private lateinit var pickImageTV: TextView
     private lateinit var imageView: ImageView
     private lateinit var pdfTextView: TextView
+    
     private lateinit var pdfUri: Uri
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -216,19 +226,25 @@ class MainActivity : AppCompatActivity() {
         pickImageTV = findViewById(R.id.imageTextView)
         imageView = findViewById(R.id.imageView)
         pdfTextView = findViewById(R.id.selectedPdf)
-
+        
+        // Setting click listener to the image TextView
         pickImageTV.setOnClickListener {
             selectImage()
         }
+        
+        // Setting click listener to the ImageView
         imageView.setOnClickListener {
             selectPdf()
         }
+        
+       // Setting click listener to the PDF TextView
         pdfTextView.setOnClickListener {
             selectPdf()
         }
     }
 
     private fun selectImage() {
+    // Creating AlertDialog
         val choice = arrayOf<CharSequence>("Take Photo", "Choose from Gallery", "Cancel")
         val myAlertDialog: AlertDialog.Builder = AlertDialog.Builder(this)
         myAlertDialog.setTitle("Select Image")
@@ -250,7 +266,7 @@ class MainActivity : AppCompatActivity() {
         })
         myAlertDialog.show()
     }
-
+    // Intent for openning files
     private fun selectPdf() {
         val pdfIntent = Intent(Intent.ACTION_GET_CONTENT)
         pdfIntent.type = "application/pdf"
