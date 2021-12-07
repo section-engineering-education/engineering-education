@@ -20,6 +20,4 @@
 {{ $secureSearchJS := $searchJS | resources.Fingerprint "sha512" }}
 <script type="text/javascript" src="{{ $secureSearchJS.Permalink }}" integrity="{{ $secureSearchJS.Data.Integrity }}"></script>
 
-<script async>(function(s,u,m,o,j,v){j=u.createElement(m);v=u.getElementsByTagName(m)[0];j.async=1;j.src=o;j.dataset.sumoSiteId='ec63874eefe248a0d5fe95d15859a8ad72d2179845ec3154e593a3ef56ec6d2d';v.parentNode.insertBefore(j,v)})(window,document,'script','//load.sumo.com/');</script>
-
 {{- block "additionalFooterScripts" . -}}{{- end -}}

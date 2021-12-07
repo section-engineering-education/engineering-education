@@ -24,6 +24,7 @@ In order to achieve a level of consistent style and increasingly elevated qualit
 - Prepared Markdown (.md) file. (Note: All articles must be submitted in properly-formatted Markdown.)
 - Verified PayPal account. (At this time, we only service payments through PayPal. If you don’t have a PayPal account, please check whether [PayPal is available in your region](https://www.paypal.com/en/webapps/mpp/country-worldwide).) Otherwise, payouts may experience delays.
 - To ensure expedite reviews, publishing, and payouts for articles, we request that ***all first drafts submitted be error-free (pre-checked for English grammar, technically accurate, properly cited, formatted, etc.) and it be ready for publishing*** by meeting our suggested article guidelines as outlined below. 
+
 Here is a [free tool](https://writeandimprove.com/?lang=en-GB) to help improve your writing skills. Please be sure to go over our [resources page](https://github.com/section-engineering-education/engineering-education/blob/master/new_contributors/resources-page.md) to take a look at all the listed resources to help improve overall techinical writing abilities.)
 
 All contributors are expected to review and adhere to [Our Code of Conduct](https://github.com/section-io/engineering-education/blob/master/CODE_OF_CONDUCT.md) before submitting articles.
@@ -36,12 +37,6 @@ Once you have narrowed your topic search to one you would like to write about, f
 Below is an example article and some suggested templates to help get you started:
 
 - [Example Article Submission](https://github.com/section-engineering-education/engineering-education/blob/master/new_contributors/example_article_submission.md): An example of a history of technology article
-
-- [How to Guide Template](https://github.com/section-engineering-education/engineering-education/blob/master/new_contributors/how-to-guide-template.md): A suggested structure for How to Guide articles
-
-- [Software Review Template](https://github.com/section-engineering-education/engineering-education/blob/master/new_contributors/software-review-template.md): A suggested structure for Software Review articles
-
-- [Tutorial Template](https://github.com/section-engineering-education/engineering-education/blob/master/new_contributors/tutorial-template.md): A suggested structure for Tutorial articles
 
 Once your topic has been approved and you have a final draft of your article ready to submit, follow these [step-by-step instructions](https://github.com/section-io/engineering-education/blob/master/UPLOAD_INSTRUCTIONS.md).The instructions walk through how to submit a PR (pull request) in Github with  your fully prepared article.
 

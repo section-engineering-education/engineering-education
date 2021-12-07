@@ -1,4 +1,4 @@
- {{ define "main" }}
+{{ define "main" }}
 <article> 
 
   <section class='hero-blocks xs-pt-50 xs-pb-50 sm-pt-100 sm-pb-100 -blue-blocks'>
@@ -149,5 +149,41 @@
     </div>
   </div>
 </section>
+
+<div class="comments-wrapper">
+  <div id="hyvor-talk-view"></div>
+</div>
+
+{{ if eq (getenv "HUGO_ENV") "production" | or (eq $.Site.Params.env "production") }}
+  <script type="text/javascript">
+    var HYVOR_TALK_WEBSITE = 5716;
+    var HYVOR_TALK_CONFIG = {
+        url: false,
+        id: 5716
+    };
+  </script>
+{{ else }}
+  <script type="text/javascript">
+    var HYVOR_TALK_WEBSITE = 5728;
+    var HYVOR_TALK_CONFIG = {
+        url: false,
+        id: 5728
+    };
+  </script>
+{{ end }}
+<script async type="text/javascript" src="//talk.hyvor.com/web-api/embed.js"></script>
+
+{{ $featureToggle := resources.Get "js/featureToggle.js" }}
+<script defer language="javascript" type="text/javascript" src="{{ $featureToggle.Permalink }}"></script>
+
+<script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", async function() {
+
+    if (await unleash.isEnabled("section.io.hyvorTalk", {}, false)) {
+      const commentsBox = document.getElementById('hyvor-talk-view');
+      commentsBox.classList.add('visible');
+    }
+  });
+</script>
 
 {{ end }}
