@@ -60,7 +60,7 @@ We need to import the exploratory data analysis packages to work with our datase
 import pandas as pd
 import numpy as np
 ```
-We will use a dataset collected from different banks. The dataset contains various information about the bank customers. For example, it predicts if a bank customer will subscribe to a monthly bak payment or not.
+We will use a dataset collected from different banks. The dataset contains various information about the bank customers. For example, it predicts if a bank customer will subscribe to a monthly bank payment or not.
 
 A snip of the dataset is shown below.
 
