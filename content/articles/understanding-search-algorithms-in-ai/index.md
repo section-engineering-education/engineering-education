@@ -45,8 +45,6 @@ When we have a given problem in AI, the search algorithm will identify the initi
 
 For every state attained by the AI agents, the search algorithms will conduct a goal test to establish whether the state is the desired state. If a particular state attained by the agents is not the goal state, then the search algorithm will continue searching until the goal state is attained. 
 
-The series of actions that transform the initial state to the endpoint or goal state provide the solution to the associated search problem. Real-life problems in AI use a series of actions to achieve the desired state from a defined initial state.
-
 ### Types of search algorithms
 Search algorithms can be divided into two broad categories: uninformed search algorithms and informed search algorithms.
 
@@ -81,19 +79,19 @@ Informed search algorithms can be further categorized into the following algorit
 - A* graph search
    
 ##### Greedy search
-In greedy search algorithms, the node that is closest to the goal node is expanded. A heuristic function h (x) is used to calculate the closeness factor. h (x) is an estimate of the distance between one node and the end or goal node. The smaller the value of h (x), the nearer the node is to the goal. When the greedy search is searching for the best path to the goal node, it will choose nodes with the lowest possible values. 
+In greedy search algorithms, the closest node to the goal node is expanded. The closeness factor is calculated using a heuristic function h (x). h (x) is an estimate of the distance between one node and the end or goal node. The lower the value of h (x), the closer the node is to the endpoint. When the greedy search is searching for the best path to the goal node, it will choose nodes with the lowest possible values. 
 
 ##### A* tree search
-This algorithm combines the attributes of the uniform cost algorithm and the greedy algorithm. The heuristic in this algorithm is a combination of the cost in the uniform cost algorithm (g (x)) and the greedy search cost (h (x)). The total cost is given as f (x). 
+This algorithm combines the attributes of the uniform cost algorithm and the greedy algorithm. Here, the heuristic is simply an amalgamation of the greedy search cost (h (x)) and the cost in the uniform cost algorithm (g (x)). The cumulative cost is denoted as f (x). 
 
-h (x) is known as the forward cost while g (x) is the backward cost. The forward cost estimates the distance between the current node and the goal node. The backward cost is the estimates the cumulative cost between a node and the root node. 
+h (x) is known as the forward cost while g (x) is the backward cost. The forward cost estimates the distance between the current node and the goal node. The backward cost is used to establish the overall cost between a node and the root node. 
 
 A* tree algorithm is optimal when the forward cost (h (x)) is less than or equal to the actual cost (h* (x)) for all nodes. This is called the admissibility property of A* tree algorithm. The strategy is to select the node with the lowest total cost value (f (x)). 
 
 ##### A* graph search 
-The main limitation of the A* tree algorithm is that it wastes time as a result of re-exploring initially explored branches. A* graph algorithm overcomes this limitation by configuring a rule that prevents it from exploring the same node twice. 
+The major drawback of A* tree algorithm is that there is wastage of time due to the re-exploration of branches that were initially explored. This drawback has been overcome by the A* graph algorithm, which configures a rule that averts the re-exploration of initially explored branches. 
 
-In this algorithm, the optimal solution is obtained when the forward cost associated with one node A and another successive node B (h (A) – h (B)) is less than or equal to their backward cost g (A->B). This is called the consistency property of A* graph search. 
+The optimal solution in the A* graph algorithm is achieved when the forward cost of two successive nodes is less than or equal to their associated backward cost. This property is termed as the consistency property of this algorithm. 
 
 ### Applications of search algorithms
 #### Vehicle routing
