@@ -1,5 +1,21 @@
-Search algorithms are important because they solve various problems in artificial intelligence. There are various search algorithms in AI. This article takes you through search algorithms, including their importance and properties. It will also provide the classification of search algorithms and identify the popular search algorithms in AI. 
+---
+layout: engineering-education
+status: publish
+published: true
+url: /understanding-search-algorithms-in-ai/
+title: Understanding Search Algorithms in AI
+description: In this article, we will go through search algorithms in artificial intelligence. These are algorithms that enable AI applications to find viable solutions to various problems. We will discuss the importance, properties, operation, types, and real-life applications of these algorithms. 
+author: grace-nkurikiyinka
+date: 2021-12-07T00:00:00-14:00
+topics: [Artificial Intelligence]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /understanding-search-algorithms-in-ai/hero.png
+    alt: Search Algorithm Example Image
+---
+Search algorithms are important because they solve various problems in artificial intelligence. There are various search algorithms in AI. This article takes you through search algorithms, including their importance and properties. It will also provide the classification of search algorithms and identify the popular search algorithms in AI. 
+<!--more-->
 ### What is a search algorithm?
 Search algorithms are algorithms that help in solving search problems. A search problem consists of a search space, start state, and goal state. Search algorithms help the AI agents to attain the goal state through the assessment of scenarios and alternatives. 
 
@@ -91,7 +107,7 @@ A* tree algorithm is optimal when the forward cost (h (x)) is less than or equal
 ##### A* graph search 
 The major drawback of A* tree algorithm is that there is wastage of time due to the re-exploration of branches that were initially explored. This drawback has been overcome by the A* graph algorithm, which configures a rule that averts the re-exploration of initially explored branches. 
 
-The optimal solution in the A* graph algorithm is achieved when the forward cost of two successive nodes is less than or equal to their associated backward cost. This property is termed as the consistency property of this algorithm. 
+The optimal solution in the A* graph algorithm is achieved when the forward cost of two successive nodes is less than or equal to their backward cost. This property is termed as the consistency property of this algorithm. 
 
 ### Applications of search algorithms
 #### Vehicle routing
@@ -116,3 +132,6 @@ This article looked at the essentials of search algorithms in artificial intelli
 6. The main applications of search algorithms include vehicle routing, nurse scheduling, record retrieval, and industrial processes. 
    
 Happy learning!
+
+---
+Peer Review Contributions by: [Onesmus Mbaabu](/engineering-education/authors/onesmus-mbaabu/)
