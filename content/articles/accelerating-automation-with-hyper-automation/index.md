@@ -1,7 +1,21 @@
-Accelerating Automation with Hyperautomation
+---
+layout: engineering-education
+status: publish
+published: true
+url: /accelerating-automation-with-hyper-automation/
+title: Acelerating Automation with Hyperautomation
+description: This article will look at hyper-automation, how this technology supports end-to-end automation, and how it accelerates automation. It will also go through the benefits and real-life applications of this phenomenon. 
+author: bashiir-isla
+date: 2021-12-07T00:00:00-14:00
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /accelerating-automation-with-hyper-automation/hero.png
+    alt: Hyperautomation Example Image
+---
 Every organization strives to make its operations faster and more efficient. One way to achieve this is through automation. Automation has helped many organizations accomplish a given level of their desired efficiency. Yet, they still want to optimize their resources and costs further. That is where hyperautomation comes in as the next better option.
-
+<!--more-->
 Hyperautomation is an advanced form of automation. It combines artificial intelligence, natural language processing, machine learning, and optical character recognition. It enables businesses to serve their customers and fulfill their goals fast and efficiently.
 
 In this article, we'll discuss what hyperautomation is and how it compares to intelligent automation. We'll also have a look at the benefits that hyperautomation brings to businesses, how it supports end-to-end automation, and where it is applied in real-life.
@@ -74,3 +88,6 @@ Hyperautomation has several advantages to businesses - most notably, improved pr
 - [Differences between Artificial Intelligence, Machine Learning, and Deep Learning](/engineering-education/differences-between-artificial-intelligence-machine-learning-and-deep-learning/)
 
 - [Introduction to Robotic Process Automation](/engineering-education/what-is-robotic-process-automation/)
+
+---
+Peer Review Contributions by: [Onesmus Mbaabu](/engineering-education/authors/onesmus-mbaabu/)
