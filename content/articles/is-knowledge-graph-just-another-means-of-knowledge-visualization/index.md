@@ -1,7 +1,21 @@
-Is a Knowledge Graph Just Another Means of Knowledge Visualization?
+---
+layout: engineering-education
+status: publish
+published: true
+url: /is-knowledge-graph-just-another-means-of-knowledge-visualization/
+title: Is Knowledge Graph Just Another Means of Knowledge Visualization?
+description: This article will take you through knowledge graphs, which are the foundation for modern data and analytics. It will explain whether these graphs are just another means of visualization and discuss how they are solving machine learning problems. 
+author: grace-mumbi
+date: 2021-12-07T00:00:00-14:00
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/is-knowledge-graph-just-another-means-of-knowledge-visualization/hero.png
+    alt: Knowledge Graph Example Image
+---
 Organizations must deal with constantly changing data needs. They need to come up with newer and more efficient ways to assess and handle incoming data. Knowledge graphs help move from the traditional database to modern technologies such as machine learning, natural language processing, and semantics.
-
+<!--more-->
 Knowledge graphs are the foundation for modern data and analytics. They help with data visualization. Combining machine learning and graph technologies has become a superior tool for businesses seeking to simplify data analysis.
 
 But the big question is whether knowledge graphs are just another means of knowledge visualization? We'll find this out in this article. Additionally, we'll find out how knowledge graphs are solving machine learning problems and where they're applied in real-life situations.
@@ -56,3 +70,6 @@ Knowledge graphs reduce the number of assumptions that an organization has to wo
 A knowledge graph is not just another means of knowledge visualization. It is a more elaborate form of knowledge visualization. It combines data collection, processing, analysis, and presentation. Knowledge graphs are becoming popular in machine learning because they combine several resources and add context to data. They make machine learning systems more precise in decision-making and trustable by considering the relationships between different data sources.
 
 Knowledge graphs have become integral in business. Their ability to help create network linking nodes is significant to companies. It helps identify potential clients and target them for advertisements on social media platforms. Knowledge graphs are transforming decision-making processes in businesses by widening their knowledge map and improving their overall functioning.
+
+---
+Peer Review Contributions by: [Onesmus Mbaabu](/engineering-education/authors/onesmus-mbaabu/)
