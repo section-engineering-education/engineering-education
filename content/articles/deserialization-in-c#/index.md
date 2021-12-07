@@ -1,6 +1,6 @@
 ### Introduction
-We ought to at first see what is serialization in c#. Is the most common way of bringing an object into a structure that tends to be composed in memory.
-Deserialization is the opposite course of serialization. It is the most common way of getting back the serialized object with the goal that it tends to be stacked into memory. It reestablishes the state of the object by setting properties, fields, and so forth.
+We ought to at first see what is serialization in c#. Is the process of bringing an object into a structure that tends to be composed in memory.
+Deserialization is the opposite course of serialization. It is the method involved in getting back the serialized object with the goal that it tends to be stacked into memory. It reestablishes the state of the object by setting properties, fields, and so forth.
 ### Prerequisites
 To follow along you need to:
 - Have [visual studio 2019](https://visualstudio.microsoft.com/vs/) IDE installed in your machine.
