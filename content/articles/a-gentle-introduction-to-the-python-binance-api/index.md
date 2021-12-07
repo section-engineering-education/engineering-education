@@ -333,3 +333,6 @@ In a nutshell, this tutorial has shown you what's possible with the python-binan
 
 ### Further reading
 - [Mplfinance](https://github.com/matplotlib/mplfinance)
+
+---
+Peer Review Contributions by: [Collins Ayuya](https://www.section.io/engineering-education/authors/collins-ayuya/)
