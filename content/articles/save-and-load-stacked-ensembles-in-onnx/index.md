@@ -16,19 +16,19 @@ images:
 ---
 Stacked ensemble models are learners that increase predictive performance over stand-alone learners by combining the results of two or several machine learning models and running them through a meta-learner.
 <!--more-->
-The stacked models are different (not a single type), unlike in bagging methods (just decision trees) where each model in the stack does not correct the predictions of the previous ones, like it happens in boosting. You can learn how to build one such Ensemble model by reading [this article by Adhinga Fredrick](/engineering-education/ensemble-learning-based-regression-model-using-python/).
+The stacked models are different (not a single type), unlike in bagging methods (just decision trees) where each model in the stack does not correct the predictions of the previous ones like it happens in boosting. You can learn how to build one such Ensemble model by reading [this article by Adhinga Fredrick](/engineering-education/ensemble-learning-based-regression-model-using-python/).
 
-[Open Neural Network Exchange](https://onnx.ai/) (ONNX) is an open source format for deep learning and traditional machine learning developed by Microsoft that has an unified schema for saving models despite the library they were developed in.
+[Open Neural Network Exchange](https://onnx.ai/) (ONNX) is an open-source format for deep learning and traditional machine learning developed by Microsoft that has a unified schema for saving models despite the library they were developed in.
 
 Launched in December 2017, it gives data scientists and machine learning engineers a way to persist models without worrying about platform inconsistencies and library version deprecation.
 
-It acts as a mean to avoid vendor locking, since ONNX models can be deployed on any platform - not just where they were trained.
+It acts as a means to avoid vendor locking since ONNX models can be deployed on any platform - not just where they were trained.
 
 Assume you trained an image recognition model on NVIDIA's GPUs. But, for operations purposes, you decide to deploy it to a production environment on Google's TPUs.
 
 Well, ONNX is a nifty tool to transfer the model between the two.
 
-Container-based methods for pushing models to production enviroment using Docker, can also be by-passed altogether. For machine learning engineers, who want to ship models across platforms, or containerizing them can be avoided by ONNX models.
+Container-based methods for pushing models to the production environment using Docker can also be bypassed altogether. For machine learning engineers, who want to ship models across platforms, or containerizing them can be avoided by ONNX models.
 
 So, how can stacked ensembles be serialized using ONNX?
 
@@ -37,18 +37,18 @@ So, how can stacked ensembles be serialized using ONNX?
 - Importing and preparing the data.
 - Building and evaluating the classifier.
 - Serializing the model to ONNX format.
-- Loading the model using ONNX runtime inference session.
+- Loading the model using the ONNX runtime inference session.
 
 ### Prerequisites
 - Basic knowledge of Python.
-- Machine learning model building, evaluation and validation in Scikit-Learn.
+- Machine learning model building, evaluation, and validation in Scikit-Learn.
 - Basic data manipulation skills.
-- Python (with `pip`, `numpy`, `pandas`, and `sklearn`) installed on your computer, or an online environment like Google Colab or Kaggle.
+- Python (with `pip`, `numpy`, `pandas`, and `sklearn`) installed on your computer or an online environment like Google Colab or Kaggle.
 
 ### Goal
 In this article, you will learn how to:
 - Install ONNX and `onnxruntime`
-- Determine the ONNX input initial types .
+- Determine the ONNX input initial types.
 - Serializing and saving a stacked ensemble to ONNX format.
 - Loading it to production using an ONNX runtime inference session.
 
@@ -78,7 +78,7 @@ To install ONNX and `onnxruntime` on Google Colab or Kaggle:
 !pip install onnxruntime
 ```
 
-> Note: Online editors like `repl.it` may fail to run our code due to in-sufficient memory allocations.
+> Note: Online editors like `repl.it` may fail to run our code due to insufficient memory allocations.
 
 ### Importing and preparing the data
 Let's start by importing `pandas` library and the dataset.
