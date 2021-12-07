@@ -1,7 +1,12 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /searching-and-sorting-techniques/
 title: Searching and Sorting Techniques 
 description: This article will discuss the various sorting and searching techniques, as well as their implementation in data structures and algorithms.
 author: jairus-onkundi
-date: 2021-12-04T00:00:00-00:00
+date: 2021-12-07T00:00:00-11:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -9,7 +14,6 @@ images:
   - url: /engineering-education/searching-and-sorting-techniques/hero.jpg
         alt: Searching and sorting techniques 
 ---
-
 Searching is the process of determining the position of an item in a list. This is a crucial aspect of many data structure techniques, because we can only execute one action on an item if and only if we locate the item. To determine if an element is present in a collection of components, many methods have been devised as we will discuss them in this article.
 <!--more-->
 
@@ -17,7 +21,7 @@ Sorting is the process of arranging data in a chosen order in a data structure. 
 
 Sorting, for example, is required before using Binary Search, and it is also utilized in Database methods. Sorted arrays and lists make it easier to locate items fast. In this article, we will learn about various sorting and searching techniques and their implementation in data structures and algorithms. 
 
-### Table of Contents
+### Table of contents
 - [What is searching?](#what-is-searching)
 - [What is sorting?](#what-is-sorting)
 - [Techniques for searching and how they are implemented ](#techniques-for-searching-and-how-they-are-implemented )
@@ -39,27 +43,32 @@ Searching in data structure refers to the act of locating needed information fro
 
 ### What is sorting?
 Sorting refers to the operation or technique of ordering and rearranging groups of data in a specified order.
+
 ### Techniques for searching and how they are implemented 
 These techniques are divided into categories depending on the kind of search operation they undertake, for example:
+
 #### 1. Linear Search
 The linear search method is a pretty simple search method. A sequential search is performed on all things one by one in this sort of search. Every item is verified, and if a match is discovered, that item is returned; if not, the search continues until the data collection is complete.
-**Algorithm**
-step 1:  Determine the size of the data set.
 
-step 2: Set the counter to zero.
+#### Algorithm
+Step 1:  Determine the size of the data set.
 
-step 3: Examine the value in the counter position of the list.
+Step 2: Set the counter to zero.
 
-step 4: Examine to see if the value at that place corresponds to the value you're searching for.
+Step 3: Examine the value in the counter position of the list.
 
-step 5: If it matches, the value has been discovered. Send a message to bring the search to a close.
+Step 4: Examine to see if the value at that place corresponds to the value you're searching for.
 
-step 6: If not, go return to step 3 and increase the counter by one until there are no more things to search for.
+Step 5: If it matches, the value has been discovered. Send a message to bring the search to a close.
 
-step 7: Send a message if all of the objects have been searched and no match has been found.
-#### 2. Binary Search
+Step 6: If not, go return to step 3 and increase the counter by one until there are no more things to search for.
+
+Step 7: Send a message if all of the objects have been searched and no match has been found.
+
+#### 2. Binary search
 To search a sorted array, divide the search interval in half regularly. Begin by creating an interval that spans the whole array. If the search key's value is less than the item in the interval's midpoint, the interval should be narrowed to the bottom half. Otherwise, limit it to the upper half of the page. Check the value until it is discovered or the interval is empty.
-**Algorithm**
+
+#### Algorithm
 The procedures for implementing binary search are as follows:
 
 Step 1: Ask the user for the search element.
@@ -76,16 +85,18 @@ Step 6 - If the element you're looking for isn't in the center, repeat steps 2, 
 #### 3. Interpolation Search
 Depending on the value of the key being searched, interpolation search may go to various places. If the key's value is closer to the final element, for example, interpolation search is more likely to begin at the end.
 
- Interpolation search utilizes the formula below to get the place to be searched.
+Interpolation search utilizes the formula below to get the place to be searched.
+
 ```bash
- pos = i + [ (k-ar[i])*(z-i) / (ar[z]-ar[i]) ]
- ```
+pos = i + [ (k-ar[i])*(z-i) / (ar[z]-ar[i]) ]
+```
 Let's look at the meaning of this formula:
 - ar[]: Array where elements need to be searched
 - k: Element to be searched
 - i: Starting index in ar[]
 - z: Ending index in ar[]
-**Algorithm**
+
+#### Algorithm
 Step 1: Begin looking for information in the middle of the list.
 
 Step 2: If there is a match, return the item's index and leave.
@@ -99,11 +110,13 @@ Step 5: If the data is larger than the center, look for it in a higher sub-list.
 Step 6: If the data is less than the middle, look in the lowest sub-list.
 
 Step 7: Continue until you've found a match.
+
 #### 4. Jump Search
 The Jump Search Approach is a new sorting method that locates a particular component in a sorted list. When compared to a linear search algorithm, the basic principle behind this searching strategy is to search a smaller amount of elements.
 
 In each iteration, this can be accomplished by skipping a fixed number of array elements or leaping ahead a fixed number of steps.
-**Algorithm**
+
+#### Algorithm
 Consider the x=3 block size.
 
 The first element is k and the second is m.
@@ -119,8 +132,8 @@ Elements in a data structure can be sorted using the sorting techniques as discu
 Insertion sort is a sorting method in which each item in a sorted list is added one at a moment. The list members are compared progressively before being placed in a specific order.
  
 In this sorting technique, an element is inserted at a certain location.
-##### Algorithm
 
+##### Algorithm
 Example of Insertion Sort Algorithm using C Programming Language
 #include<stdio.h>
 #include<conio.h>
