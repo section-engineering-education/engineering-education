@@ -19,9 +19,15 @@ Python-binance is an application programming interface that allows you to connec
 
 In this tutorial, we'll show you how to extract and analyze real-time securities and crypto data from Binance using the python-binance API and Pandas library.
 
+### Prerequisites
+To follow along, a reader needs to be familiar with:
+- Python programming language. 
+- The [Binance](https://www.binance.com/en) cryptocurrency exchange. 
+- [Pandas](https://pandas.pydata.org/) and [Matplotlib](https://matplotlib.org/) libraries. 
+
 ### Table of contents
 - [The Python-Binance API](#the-python-binance-api)
-- [Setting up the binance API](#setting-up-the-binace-api)
+- [Setting up the binance API](#setting-up-the-binance-api)
 - [Installing and importing dependencies](#installing-and-importing-dependencies)
 - [Performing authentication](#performing-authentication)
 - [Pulling data from binance using Python-Binance](#pulling-data-from-binance-using-python-binance)
@@ -33,9 +39,9 @@ In this tutorial, we'll show you how to extract and analyze real-time securities
 - [Futher reading](#further-reading)
 
 ### The Python-Binance API
-[Binance](https://www.binance.com/en) is currently the largest cryptocurrency exchange in the world as far as daily trading volumes in concerned. It was founded in 2017 by Changpeng Zhao, and its headquarter is in the Cayman Islands. It allows you to buy, sell, trade, and swap cryptocurrency easily.
+[Binance](https://www.binance.com/en) is currently the largest cryptocurrency exchange in the world as far as daily trading volumes in concerned. It was founded in 2017 by Changpeng Zhao, and its headquarters is in the Cayman Islands. It allows you to buy, sell, trade, and swap cryptocurrency easily.
 
-Python-binance is an application programming interface that allows you to connect to the Binance servers via the python programming language. It is important to note that the python-binance library is not affiliated with Binance. With the API, you can make orders, trade, withdraw and get real-time data from the Binance exchange. To learn more about the library, feel free to read their [documentation](https://python-binance.readthedocs.io/en/latest/index.html).
+Python-binance is an application programming interface that allows you to connect to the Binance servers via the python programming language. With the API, you can make orders, trade, withdraw and get real-time data from the Binance exchange. To learn more about the library, feel free to read their [documentation](https://python-binance.readthedocs.io/en/latest/index.html).
 
 ### Setting up the binance API
 We first need to set up an API key by registering an account on Binance. This step involves heading to the Binance [website](https://www.binance.com/en) and signing up if you don't have an account with them yet. Registration is straightforward, as you would register for any web application. After successfully signing up and completing the verification process, hover over the profile button and select the `API Management` option as shown below:
@@ -57,7 +63,7 @@ We've stored our API and secret keys in the `apikey` and `apisecret` variables.
 ### Installing and importing dependencies
 In this next step, we'll go ahead and install and import the necessary dependencies.
 
-```python
+```bash
 !pip install python-binance pandas mplfinance
 ```
 We've installed three dependencies:
@@ -90,6 +96,7 @@ tickers
 The function, `get_all_tickers()`, allows us to go ahead and grab all ticker values. There are a lot of other functions available for use to manage your account and place trades.
 
 Output:
+
 ```bash
  {'price': '5.47400000', 'symbol': 'ANTUSDT'},
  {'price': '0.00687000', 'symbol': 'CRVBNB'},
@@ -175,7 +182,7 @@ As we've seen, the data is stored as objects. We'll need to convert this data to
 ```python
 historical_data = client.get_historical_klines('BTCUSDT', Client.KLINE_INTERVAL_1DAY, '5 July 2020')
 ```
-The `get_historical_klines()` function allows you to retrieve Spot and Futures data from Binance. It takes three parameters, the `name of symbol pair`, `interval`, and `date`. The function returns a limit of 1000 rows of data.
+The `get_historical_klines()` function allows you to retrieve [Spot](https://academy.binance.com/en/articles/what-is-a-spot-market-and-how-to-do-spot-trading) and [Futures](https://cryptopotato.com/binance-futures-beginners-guide-exchange-review/) data from Binance. It takes three parameters, the `name of symbol pair`, `interval`, and `date`. The function returns a limit of 1000 rows of data.
 As for the interval time, there are many options you can play around with, i.e., KLINE_INTERVAL_1MINUTE, KLINE_INTERVAL_15MINUTE, KLINE_INTERVAL_1MONTH, KLINE_INTERVAL_1WEEK, etc. 
 > If you want to build a trading bot, make sure to grab historical data from a date far back to build a model that works better.
 
@@ -329,7 +336,7 @@ As we've seen, the matplotlib finance library allows us to visualize data easily
 Please find the code for this tutorial [here](https://colab.research.google.com/drive/1MP-Kk4gG-fnbCK40MxENCdIKr0KRho9f?usp=sharing).
 
 ### Summary
-In a nutshell, this tutorial has shown you what's possible with the python-binance API. We've shown you how you can perform an exploratory data analysis on Binance data. To avoid making the tutorial so long, we've only limited it to the EDA bit. In our follow-up tutorial, we'll build upon this tutorial and show you how to apply machine learning and data science to trading and finance.
+In a nutshell, this tutorial has shown you what's possible with the python-binance API. We've shown you how you can perform an exploratory data analysis on Binance data. In our follow-up tutorial, we'll build upon this tutorial and show you how to apply machine learning and data science to trading and finance.
 
 ### Further reading
 - [Mplfinance](https://github.com/matplotlib/mplfinance)
