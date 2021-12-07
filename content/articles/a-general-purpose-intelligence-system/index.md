@@ -65,3 +65,6 @@ As for the Pathways model, there's still no research paper, plan, or implementat
 
 ### Further reading
 - [Pathways](https://www.youtube.com/watch?v=Nf-d9CcEZ2w&t=24s)
+
+---
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
