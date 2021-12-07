@@ -1,17 +1,33 @@
-﻿### Introduction
-A single server cannot handle all the workload of a given application. It is likely to experience issues with performance, availability, and economics.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /understanding-the-downsides-of-load-balancing/
+title: Understanding the Downsides of Load Balancing
+description: This article will explain load balancing in terms of its methods, challenges, and possible solutions to the challenges.
+author: martha-ngugi
+date: 2021-12-07T00:00:00-17:30
+topics: [cloud computing]
+excerpt_separator: <!--more-->
+images:
 
-In order to handle increased traffic, we have to increase the capability of processing requests and can be achieved either by scaling up or scaling out.
+  - url:  /engineering-education/understanding-the-downsides-of-load-balancing/hero.jpg
+    alt: Load Balancing Example Image
+---
+Load balancing involves distributing incoming network traffic across several backend servers. Modern web applications handle millions of concurrent requests from visitors. They must respond in the shortest time possible with the right resource that has been requested.
+<!--more-->
+
+A single server cannot handle all the workload of a given application. It is likely to experience issues with performance, availability, and economics. In order to handle increased traffic, we have to increase the capability of processing requests and can be achieved either by scaling up or scaling out.
 
 However, the machine fails at times, and the cost of using a high specification machine may be huge even to afford. Spreading the workload over multiple machines may be a better approach; hence, [load balancing](https://www.citrix.com/solutions/app-delivery-and-security/load-balancing/what-is-load-balancing.html) is recommended. However, this approach may experience several challenges. In this article, we will cover some of the challenges and possible solutions.
 
 ### Article overview
-1. [Introduction](#introduction)
-2. [Concept of load balancing](#concept-of-load-balancing)
-3. [Load balancing methods](#load-balancing-methods)
-4. [The advanced challenges of load balancing and possible solutions](#the-advanced-challenges-of-load-balancing-and-possible-solutions)
-5. [Conclusion](#conclusion)
-6. [Further reading](#further-reading)
+
+1. [Concept of load balancing](#concept-of-load-balancing)
+2. [Load balancing methods](#load-balancing-methods)
+3. [The advanced challenges of load balancing and possible solutions](#the-advanced-challenges-of-load-balancing-and-possible-solutions)
+4. [Conclusion](#conclusion)
+5. [Further reading](#further-reading)
 
 ### Concept of load balancing
 Load balancing involves distributing incoming network traffic across several backend servers. Modern web applications handle millions of concurrent requests from visitors. They must respond in the shortest time possible with the right resource that has been requested. Practically, the solution would be adding more servers to handle the requests.
@@ -91,4 +107,4 @@ Therefore, there is a need to analyze new load balancing algorithms from differe
 - [Overview of load balancing](https://avinetworks.com/what-is-load-balancing).
 - [Understanding load balancing metrics](https://blog.appoptics.com/an-in-depth-guide-to-load-balancer-monitoring).
 - [The benefits of load balancing](https://www.webwerks.in/blogs/what-cloud-load-balancing-and-what-are-its-benefits).
-- [Load balancing of Heterogenous workloads](https://www.researchgate.net/publication/273568664_Load_Balancing_of_Heterogeneous_Workloads_in_Memcached_Clusters).
+- [Load balancing of Heterogeneous workloads](https://www.researchgate.net/publication/273568664_Load_Balancing_of_Heterogeneous_Workloads_in_Memcached_Clusters).
