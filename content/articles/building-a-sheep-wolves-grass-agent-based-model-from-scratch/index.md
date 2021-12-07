@@ -1,5 +1,9 @@
-### Table of Contents
+### Prerequisites
+For this tutorial, you will need:
+- Basic knowledge of HTML, CSS, and JavaScript;
+- Basic knowledge of Object-Oriented Programming (objects, classes, methods, and inheritance).
 
+### Table of contents
 - [Introduction](#introduction)
 - [p5.js](#p5.js)
 - [The Sheep - Wolves - Grass Model](#the-sheep---wolves---grass-model)
@@ -17,13 +21,6 @@
 - [Step 4 - Final tweaks and plotting](#step-4---final-tweaks-and-plotting)
 - [Conclusion](#conclusion)
 - [References](#references)
-
-### Pre-requisites
-
-For this tutorial, you will need:
-
-- Basic knowledge of HTML, CSS, and JavaScript;
-- Basic knowledge of Object-Oriented Programming (objects, classes, methods, and inheritance).
 
 ### Introduction
 
@@ -1482,3 +1479,6 @@ This is maybe the funniest part: running tests and creating hypotheses. Another 
 - [p5.collide2D library](https://github.com/bmoren/p5.collide2D)
 - [grafica.js, p5.js plotting library](https://github.com/jagracar/grafica.js/tree/master/lib)
 - [This project's GitHub repository](https://github.com/csamuelsm/sheep-wolves-grass-p5js)
+
+---
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
