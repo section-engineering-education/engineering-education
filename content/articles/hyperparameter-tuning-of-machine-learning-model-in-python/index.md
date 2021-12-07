@@ -56,7 +56,7 @@ This is a brute force searching technique. In this technique, we create a list o
 *[Image source: Medium](https://miro.medium.com/max/534/1*6mLLIGYLny9B6GAnVZcltw.png)*
 
 #### Random Search
-In this technique, we also create a list of all the combination values for hyperparameters. It's similar to grid search, but uses random search instead of using exhaustive search.
+We also create a list of all the combination values for hyperparameters in this technique. It's similar to grid search, but it uses random search instead of exhaustive search.
 For Example, instead of checking all the 10,000 possible values of hyperparameters, we can only check 500 random parameters. This is shown below.
 
 ![Random Search Technique](/engineering-education/hyperparameter-tuning-of-machine-learning-model-in-python/random-search-technique.png)
