@@ -12,20 +12,20 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/generic-singly-linked-list-data-structure-java/hero.jpg
-    alt: Implementing a Generic Singly linked list Data Structure in Java Hero Image
+    alt: Generic Singly linked list Data Structure in Java Hero Image
 ---
 A `linked list` is used to hold node-based data. Data in a linked list is spread across many locations rather than being stored in a single memory location like in an array. Each node has a reference section where the address of the next node is maintained. In addition, the brief linked list has links connecting some of the nodes.
 <!--more-->
-An array data structure is improved by addressing its limitations, such as the need for contiguous memory and the difficulty of array insertion and deletion. Additionally, a linked list makes it simple to add and remove items as needs change.
+An array data structure is improved by addressing its limitations, such as the need for contiguous memory and the difficulty of array insertion and deletion. Additionally, a linked list makes it simpler to add and remove items as needs change.
 
-The simplest type of linked list, known as a Singly Linked List, is covered in this article. Linked Lists can be used in a wide range of applications, from simple to complex. We will take a look at them one at a time.
+The simplest type of linked list, known as a Singly Linked List, will be covered in this article. Linked Lists can be used in a wide range of applications, from simple to complex. We will take a look at them one at a time.
 
 ### Prerequisites
 1. Before proceeding with this tutorial you should have a good knowledge of the Java programming language.
-2. For server-side Java development, have __IntelliJ IDEA__ as the IDE.
+2. For server-side Java development, have **IntelliJ IDEA** as the IDE.
 
 ### Table of contents
-- [The Building Blocks](#the-building-blocks)
+- [The building blocks](#the-building-blocks)
 - [Differences between a linked list and an array](#differences-between-a-linked-list-and-an-array)
 - [What a generic linked list is and how it is used](#what-a-generic-linked-list-is-and-how-it-is-used)
     - [Primary linked list member functions](#primary-linked-list-member-functions)
@@ -58,11 +58,11 @@ self.prev # Pointer to the left node
 
 ### Differences between a linked list and an array
 A linked list and an array differ in various ways that are listed below:
-1. There is only one memory address for a complete array. Whereas a linked list stores various elements at different memory locations.
-2. A linked list's data items can be added to or removed from at any time, whereas the size of an array's array is specified at the time of declaration and cannot be changed afterwards.
-3. The only place we store an array is in a large free block of space due to contiguous allocation, while in a linked list, different elements are stored in different locations. So, linked lists can be created in small free space chunks.
-4. A linked list uses less space than an array because pointers can be stored close to nodes instead of in the middle of the list.
-5. In a linked list, only linear search is performed, but linear search and binary search are used in an array.
+- There is only one memory address for a complete array. Whereas a linked list stores various elements at different memory locations.
+- A linked list's data items can be added to or removed from at any time, whereas the size of an array's array is specified at the time of declaration and cannot be changed afterwards.
+- The only place we store an array is in a large free block of space due to contiguous allocation, while in a linked list, different elements are stored in different locations. So, linked lists can be created in small free space chunks.
+- A linked list uses less space than an array because pointers can be stored close to nodes instead of in the middle of the list.
+- In a linked list, only linear search is performed, but linear search and binary search are used in an array.
 
 ### What a generic linked list is and how it is used
 There are many ways to create a generic linked list because they can carry any form of data. Implementation of linked lists that may store any data type is known as a generic linked list. Integers are stored in one linked list, while floats are stored in the other.
@@ -76,9 +76,9 @@ These are the functions that can be performed on a linked list:
 - `Traversal` - Accesses the connected list's elements one by one.
 
 ### Singly-linked lists
-It is a linked list that can only be traversed in one direction from the head to its end node, which is called a singly-linked list (tail). In a linked list, each element is called a node.List structures can be maintained by using nodes that contain data and a link to the next node.
+This is a linked list that can only be traversed in one direction from the head to its end node, which is called a singly-linked list (tail). In a linked list, each element is called a node. List structures can be maintained by using nodes that contain data and a link to the next node.
 
-This section will explore how generics can be used to implement a singly linked list in a type-safe, parameterized fashion. First, we will use the Java program below to generate our own type-safe linked list.
+This section will explore how generics can be used to implement a singly linked list in a type-safe, parameterized fashion. We will use the Java program below to generate our own type-safe linked list.
 
 ```Java
 import java.io.*;
@@ -209,7 +209,7 @@ class list<T> {
 }}
 ```
 
-Go ahead and run the code [here](https://replit.com/@Calvin49/2Implementing-a-Generic-Singly-linked-list-Data-Structure-in)
+Go ahead and run the code [here](https://replit.com/@Calvin49/2Implementing-a-Generic-Singly-linked-list-Data-Structure-in).
 
 Output:
 
@@ -234,9 +234,9 @@ Here is an example:
 ```
 
 Take advantage of Generics' SinglyLinkedList. `Node<T>` will be the type of node variable. Now that we have covered the basics, let's get down to business by implementing the methods below:
-- We'll use add(T data).
+- We'll use add (T data).
 - Add the element at the top of the list.
-- Add an element to a specific location, use add(T data, int index).
+- Add an element to a specific location, use add (T data, int index).
 
 ### Testing a Java singly-linked list
 Since we have a working linked list implementation, we can construct a test program to view its performance.
@@ -293,7 +293,7 @@ public class Cal {
 }
 ```
 
-Go ahead and run the code [here](https://replit.com/@Calvin49/Implementing-a-Generic-Singly-linked-list-Data-Structure-in)
+Go ahead and run the code [here](https://replit.com/@Calvin49/Implementing-a-Generic-Singly-linked-list-Data-Structure-in).
 
 Output:
 
@@ -317,21 +317,23 @@ Clearing list3 :
 
 ### Applications of a singly-linked list
 A linked list can be used in the following ways:
-1. Besides representing graphs as adjacent matrices, Linked Lists can also be used to represent them as a lot more space-efficient than an array. O(N2) and O(N) are the memory consumptions for an array and a linked list for a graph with `N` nodes, respectively (N).
-2. Each bucket of the hash table can be a linked list usually when implementing  the hash table.
-3. Photoshop and Microsoft Word's undo features rely on linked lists.
-4. In a Linked List, accessing the next element is faster than in an Array. Due to the nature of linked lists, they work well with caches because of their ability to take advantage of the locality of reference.
+- Besides representing graphs as adjacent matrices, linked lists can also be used to represent them in a more space-efficient way when compared to an array. O(N2) and O(N) are the memory consumptions for an array and a linked list for a graph with `N` nodes, respectively (N).
+- Each bucket of the hash table can be a linked list usually when implementing the hash table.
+- Photoshop and Microsoft Word's undo features rely on linked lists.
+- In a Linked List, accessing the next element is faster than in an Array. Due to the nature of linked lists, they work well with caches because of their ability to take advantage of the locality of reference.
 
-This brings us to the end of our article on utilizing Generics to build a linked list in Java. A circular linked list or a double linked list in Java may be implemented as a follow-up question, depending on the interviewer's taste. As an alternative, you can use them as a coding exercise to improve your skills.
+This brings us to the end of our article on utilizing generics to build a linked list in Java. A circular linked list or a double linked list in Java may be implemented as a follow-up question, depending on the interviewer's taste. As an alternative, you can use them as a coding exercise to improve your skills.
 
 Implementing various linked list methods such as inserting and deleting nodes from the beginning, middle, and end of a linked list is of interest to an interviewer. In addition, sorting and finding elements inside an array of linked lists is also used widely in interviews.
 
-Several code tasks use the linked list in this part, but remember to learn how to create a singly-linked list in Java first before moving on.
+Several code tasks use the linked list in this part, but remember to learn how to create a singly-linked list in Java before moving on.
 
 ### Conclusion
 The linked list is a standard data structure used in programming and many interview questions focus on linked lists. However, you do not need to create your own linked list to write production code.
 
-Regardless, all these interview questions need you to create a linked list in Java to meet the coding challenges presented by the Java API or the JDK. Unless you are confident in your ability to build linked lists, solving issues like reversing a linked list or finding the middle member of a linked list in a single pass would be tough.
+Regardless, all these interview questions typically have you to create a linked list in Java to meet the coding challenges presented by the Java API or the JDK. Unless you are confident in your ability to build linked lists, solving issues like reversing a linked list or finding the middle member of a linked list in a single pass would be tough.
+
+Happy coding!
 
 ---
 Peer Review Contributions by: [Dawe Daniel](/engineering-education/authors/dawe-daniel/)
