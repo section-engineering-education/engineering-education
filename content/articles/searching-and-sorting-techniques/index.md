@@ -85,7 +85,7 @@ Let's look at the meaning of this formula:
 - k: Element to be searched
 - i: Starting index in ar[]
 - z: Ending index in ar[]
-##### Algorithm
+**Algorithm**
 Step 1: Begin looking for information in the middle of the list.
 
 Step 2: If there is a match, return the item's index and leave.
