@@ -33,6 +33,7 @@ Sorting, for example, is required before using Binary Search, and it is also uti
    5. [Quick Sort](#5-quick-sort)
    6. [Heap Sort](#6-heap-sort)
    7. [Conclusion](#conclusion)
+
 ### What is searching?
 Searching in data structure refers to the act of locating needed information from a group of things stored in the form of components in the computer memory.
 
