@@ -11,19 +11,19 @@ topics: [Blockchain]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/the-basics-of-fraud-detection-analytics/hero.jpg
+  - url: /engineering-education/the-complete-roadmap-to-blockchain-development/hero.jpg
     alt: Blockchain Hero Image
 ---
 In mainstream media, talks about cryptocurrencies and how people are becoming millionaires out of them, are ever buzzing. We often hear that cryptocurrencies will not only render the banks useless but also ensure anonymity and security in financial transactions. However, this is only the surface information. Cryptocurrencies are an example use case of an underlying technology called the blockchain.
 <!--more-->
-Not so many people can explain what blockchain is, let alone how the technology is applied in cryptocurrencies. Blockchain is not a fad based on the amount of money that investors are putting into its research. In addition to that, new use cases emerge frequently, the most recent being the application of blockchain to create Non Fungible Tokens(NFTs). Additional use cases of the blockchain include secure sharing of medical data, anti-money laundering systems, and music royalties tracking.
+Not so many people can explain what blockchain is, let alone how the technology is applied in cryptocurrencies. Blockchain is not a fad based on the amount of money that investors are putting into its research. In addition to that, new use cases emerge frequently, the most recent being the application of blockchain to create non fungible tokens(NFTs). Additional use cases of the blockchain include secure sharing of medical data, anti-money laundering systems, and music royalties tracking.
 
-It is quite evident that blockchain technology will affect crucial aspects of our lives thus creating a myriad of opportunities for blockchain developers in the near future. This tutorial will give you a road map on how you can become a blockchain developer and prepare yourself for the future. As the adage says "Opportunity favors the prepared mind".
-
-Somebody with no technical background can follow along with this tutorial, the implementation is what separates the chaff from the wheat.
+It is quite evident that blockchain technology will affect crucial aspects of our lives thus creating a myriad of opportunities for blockchain developers in the near future. This tutorial will give you a road map on how you can become a blockchain developer and prepare yourself for the future. As the adage says "Opportunity favors the prepared mind". Somebody with no technical background can follow along with this tutorial, the implementation is what separates the chaff from the wheat.
 
 ### Blockchain development introduction
 A blockchain is a network of computers connected in some way and they collectively run what is called a blockchain client. The Bitcoin blockchain, Binance smart chain, and the Ethereum blockchain are examples of blockchain clients.
+
+There are two main types of developers in this technology:
 1. Core developers
 2. App developers
 
@@ -112,7 +112,7 @@ Now you have successfully deployed your smart contract on the blockchain. Proble
 In the design of the DAPP, there will be two main challenges; first, the integration with the blockchain, and secondly the integration with the wallet. For integration with the blockchain, we shall make use of a JavaScript library called Web3.js, which is quite easy and help can be found online. Integration with the wallet is a little bit sophisticated since in DAPPs the user management is decentralized and users store "passwords" themselves. In DAPPs, we don't usually use passwords but the closest equivalent is what we call private keys. With private keys, the users can sign a transaction, which is a data package that describes an action that a user wants to do, with a verifiable signature that proves the user wanted to do that transaction. The wallet recommended for integrating with the Ethereum blockchain is Metamask, though there are a lot of crypto wallets out there. You should first learn how to integrate your smart contract with the Metamask wallet and then learn the other wallets.
 
 ### Conclusion 
-Becoming a blockchain developer takes a lot of practice and commitment. It is not for the faint-hearted. It requires creativity to implement the concepts in code. After becoming proficient in the fundamental concepts of blockchain you may choose to specialize in a specific field. You may choose to become a smart contract specialist and devise more methods of gas optimization and how to enhance security in smart contracts. Alternatively, you may choose to specialize in Defi (Decentralized finance), which is the most common use case for blockchain. The main project in Defi are things like decentralized exchanges like UNISWAP, lending protocols, yield aggregators and so on. It's a whole interesting field by itself.
+Becoming a blockchain developer takes a lot of practice and commitment. It is not for the faint-hearted. It requires creativity to implement the concepts in code. After becoming proficient in the fundamental concepts of blockchain, you may choose to specialize in a specific field. You may choose to become a smart contract specialist and devise more methods of gas optimization and how to enhance security in smart contracts. Alternatively, you may choose to specialize in Defi (Decentralized finance), which is the most common use case for blockchain. The main project in Defi are things like decentralized exchanges like UNISWAP, lending protocols, yield aggregators, and so on. It's a whole interesting field by itself.
 
 Some of the projects that you can try out with your newly acquired skills are listed below by order of increasing complexity. The projects are however not limited to  the ones displayed below.
  1. Hello world.
@@ -124,4 +124,3 @@ Some of the projects that you can try out with your newly acquired skills are li
 
 ---
 Peer Review Contributions by: [Onesmus Mbaabu](/engineering-education/authors/onesmus-mbaabu/)
- 
