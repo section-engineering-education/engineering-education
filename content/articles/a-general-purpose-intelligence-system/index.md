@@ -1,8 +1,26 @@
-Artificial Intelligence (AI) is one of the most rapidly growing and exciting fields of technology in our generation. Most AI systems today are trained to perform  single tasks. But, Google's new Pathways model promises to deliver a more powerful and robust model as it is a single model trained to do many tasks all at once. This model will understand our world better like how the human brain works. This is unlike any other models ever built by competitors such as OpenAI and DeepMind. In this article, we'll discuss this novel architecture idea and understand how it operates.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /a-general-purpose-intelligence-system/
+title: A General Purpose Intelligence System
+description: In this article, we'll discuss a general purpose intelligence system known as pathways and understand how it operates.
+author: monica-dalmas
+date: 2021-12-07T00:00:00-19:00
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/a-general-purpose-intelligence-system/hero.png
+    alt: A General Purpose Intelligence System Hero image
+---
+Artificial Intelligence (AI) is one of the most rapidly growing and exciting fields of technology in our generation. Most AI systems today are trained to perform  single tasks. But, Google's new Pathways model promises to deliver a more powerful and robust model as it is a single model trained to do many tasks all at once. 
+<!--more-->
+This model will understand our world better like how the human brain works. This is unlike any other models ever built by competitors such as OpenAI and DeepMind. In this article, we'll discuss this novel architecture idea and understand how it operates.
 
 ### Table of contents
 - [What is Pathways](#what-is-pathways)
-- [Existing shortcomings and how pathways can address them](#existing-shortcomings-and-how-pathways-can-address-them)
+- [Shortcomings with current AI systems](#shortcomings-with-current-ai-systems)
 - [Is this Artificial General Intelligence?](#is-this-artificial-general-intelligence)
 - [Summary](#summary)
 - [Further reading](#further-reading)
@@ -10,7 +28,7 @@ Artificial Intelligence (AI) is one of the most rapidly growing and exciting fie
 ### What is Pathways?
 Pathways is an AI model designed by Google that introduces a new way of thinking about artificial intelligence. The model is built to overcome some of the shortcomings of the present systems while simultaenously using their benefits. It employs a single model trained to perform many tasks at once, like how our brains work where different tasks leverage different paths in the network. This model is designed to solve a variety of existing shortcomings with existing systems and improve on them.
 
-### Existing shortcomings and how pathways can address them
+### Shortcomings with current AI systems
 
 ### Single model, multiple tasks
 Rather than extending previous models to run new tasks, we train new models from scratch to accomplish only one thing. As a consequence, we end up building a lot of models for solving many different tasks. Due to this, we end up taking longer time and a lot more data learning new tasks. This is contrary to how human beings learn tasks.
