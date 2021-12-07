@@ -20,7 +20,7 @@ To proceed with this tutorial, it is important to have the following;
 ### Table of content
 - [Prerequisites](#prerequisites)
 - [Table of content](#table-of-content)
-- [Setting up the Next.js application](#setting-up-the-nextjs-application)
+- [Create a basic Next.js TypeScript application](#create-a-basic-nextjs-typescript-application)
 - [Adding packages](#adding-packages)
 - [Setting up the utilities](#setting-up-the-utilities)
 - [Setting up the components](#setting-up-the-components)
@@ -30,9 +30,10 @@ To proceed with this tutorial, it is important to have the following;
 - [Showing a single post](#showing-a-single-post)
 - [Deploy to Vercel](#deploy-to-vercel)
 - [Conclusion](#conclusion)
+- [Further reading](#further-reading)
 
-### Setting up the Next.js application
-Next.js provides a `create-next-app` command that allows you to pull a Next.js starter application. To set up the Next.js application, we will use a tool provided by the Next.js team to abstract the process of setting up an application.
+### Create a basic Next.js TypeScript application
+The `create-next-app` command in Next.js allows you to fetch a Next.js starting application. To set up the Next.js application, we will use a tool provided by the Next.js team to abstract the process of setting up an application.
 
 We will use [create next app](https://nextjs.org/docs/api-reference/create-next-app), a tool offered by the Next.js team, to simplify the process of laying down the Next.js application. Select the folder where you want the project to be saved and run the command below.
 
@@ -43,18 +44,18 @@ npx create-next-app --typescript .
 This returns a setup process for this Next.js application. The `--typescript` parameter will specify that the application will use TypeScript.
 
 ### Adding packages
-to set up this blog app, we will require the following packages based on the technology stack we are using.
+[MDX](https://mdxjs.com/docs/) is a markdown component that allows you to style your text content easily. With markdown, you can write content any such as insert bold, italic, images, e.t.c. MDX will enable you to integrate components inside of your markdown files and render them on a web page. MDX pairs well with component-based frameworks such as React Next.js. This way, we can use MDX to set up a blog and manage the entire lifecycle of those posts' content.
 
-To use with MDX;
+To set up an MDX blog app, we will require the following packages based on the technology stack we are using.
 
-- [Gray matter](https://www.npmjs.com/package/gray-matter): Gray matter is used to parse a front matter from a file or a string. We will have a look at how front matter looks like late in this guide.
-- [Next MDX remote](https://www.npmjs.com/package/next-mdx-remote): It allows you to load MDX(Markdown) content on the server and client. Markdown is frequently used in conjunction with frontmatter, which usually entails integrating some extra special functionality to handle markdown. Fortunately, this can be done wholly independent of next-mdx-remote, along with any additional custom processing required.
+- [Gray matter](https://www.npmjs.com/package/gray-matter): Gray matter is used to parse a front matter from a file or a string. We will look at how the frontmatter looks late in this guide.
+- [Next MDX remote](https://www.npmjs.com/package/next-mdx-remote): It allows you to load MDX(Markdown) content on the server and client.
 
 To use with Tailwind CSS;
 
 - [Tailwind CSS](https://www.npmjs.com/package/tailwindcss): This is a CSS framework that offers CSS styles for efficiently creating customized interface design.
 - [Post CSS](https://www.npmjs.com/package/postcss): Post CSS is a stylistic development tool that uses JavaScript modules. We will use it to transform CSS from MDX.
-- [Auto Prefixer](https://www.npmjs.com/package/autoprefixer): A Post CSS based library for parsing CSS and adding vendor prefixes to CSS rules.
+- [Auto Prefixer](https://www.npmjs.com/package/autoprefixer): A Post CSS-based library for parsing CSS and adding vendor prefixes to CSS rules.
 - [@tailwind/typography](https://www.npmjs.com/package/@tailwindcss/typography): Provides `classes` that can be used to generate beautiful typographic defaults from our components (such as HTML generated from Markdown).
 
 To install the above packages, run the following command;
@@ -71,15 +72,15 @@ npx tailwindcss init -p
 
 Open the `tailwind.config.js` file and make the following changes.
 
-```ts
+```js
 module.exports = {
-    purge: ['./components/**/*.tsx', './pages/**/*.tsx'],
-    darkMode: false,
-    theme: {
-        extend: {},
-    },
-    variants: {},
-    plugins: [require('@tailwindcss/typography')],
+  plugins: [require('@tailwindcss/typography')],
+  purge: ['./components/**/*.tsx', './pages/**/*.tsx'],
+  variants: {},
+  theme: {
+    extend: {},
+  },
+  darkMode: false, 
 };
 ```
 
@@ -94,82 +95,93 @@ import 'tailwindcss/tailwind.css';
 ### Setting up the utilities
 Since we'll be working with Markdown files, efficient utility functions will be required. This will help us perform tasks such as getting posts, getting a single post, and getting post items. We will later implement views that will be called to display these tasks.
 
-On the project root folder, create a new directory and name it `utils`. Make a `mdxUtils.ts` file in the `utils` directory. This is how we will structure the `mdxUtils.ts`.
+Create a new directory on the project root folder and name it `utils`. Make a `mdxUtils.ts` file in the `utils` directory. This is how we will structure the `mdxUtils.ts`.
 
 ```ts
-import fs from 'fs';
-import { join } from 'path';
 import matter from 'gray-matter';
+import {join} from 'path';
+import fs from 'fs';
+import { verify } from 'crypto';
+
 
 // structure of items
-type Items = {
-    [key: string]: string
+type Items =  {
+    // each post has a parameter key that takes the value of a string
+    [key: string] : string
 }
 
 // structure of a post
 type Post = {
-    data: {
-        [key: string]: string
+    data:{
+        // each post has a parameter key that takes the value of a string
+        [key: string] : string
     };
+    // each post will include the post content associated with its parameter key
     content: string
 }
 
-// path to our posts
-const POSTS_PATH = join(process.cwd(), '_posts');
+// path to our list of available posts
+const POSTS_PATH = join(process.cwd(),'_posts');
 
-// getting the file paths of all posts 
-function getPostsFilePaths(): string[] {
+// get the file paths of all available list of posts
+function getPostsFilePaths(): string[]{
     return (
+        // return the mdx file post path
         fs.readdirSync(POSTS_PATH)
-            // only include the mdx files
-            .filter((path) => /\.mdx?$/.test(path))
+        // load the post content from the mdx files
+        .filter((path) => /\.mdx?$/.test(path))
     )
 }
 
 // getting a single post
-export function getPost(slug: string): Post {
-    // post path
-    const fullPath = join(POSTS_PATH, `${slug}.mdx`);
+export function getPost(slug:string):Post {
+    // add path/location to a single post
+    const fullPath = join(POSTS_PATH,`${slug}.mdx`);
     // post's content
-    const fileContents = fs.readFileSync(fullPath, 'utf-8');
+    const fileContents = fs.readFileSync(fullPath,'utf-8');
     // get the front matter data and content
-    const { data, content } = matter(fileContents);
-    return { data, content };
+    const {data,content} = matter(fileContents);
+    // return the front matter data and content
+    return { data,content};
 }
 
-export function getPostItems(filePath: string, fields: string[] = []): Items {
-    // construct a slug from file path
-    const slug = filePath.replace(/\.mdx?$/, "");
+// load the post items
+export function getPostItems(filePath:string,fields:string[] = []): Items{
+    // create a slug from the mdx file location
+    const slug = filePath.replace(/\.mdx?$/,"");
     // get the front matter data and content
-    const { data, content } = getPost(slug);
+    const {data,content} = getPost(slug);
 
     const items: Items = {};
 
-    // Only include the data that is needed
+    // just load and include the content needed
     fields.forEach((field) => {
-        if (field === 'slug') {
+        // load the slug
+        if(field === 'slug'){
             items[field] = slug;
         }
-
-        if (field === 'content') {
+        // load the post content
+        if(field === 'content'){
             items[field] = content;
         }
 
-        // check if the specified field exists on data
-        if (data[field]) {
+        // check if the above specified field exists on data
+        if(data[field]){
+            // verify the fileds has data
             items[field] = data[field];
         }
     });
-
+    // return the post items
     return items;
 }
 
-export function getAllPosts(fields: string[]): Items[] {
-    // get all file paths
+// getting all posts
+export function getAllPosts(fields: string[]): Items []{
+    // add paths for getting all posts 
     const filePaths = getPostsFilePaths();
     // get the posts from the filepaths with the needed fields sorted by date
-    const posts = filePaths.map((filePath) => getPostItems(filePath, fields)).sort((post1, post2) => post1.date > post2.date ? 1 : -1);
-
+    const posts = filePaths.map((filePath) => getPostItems(filePath,fields)).sort((post1,post2) => post1.date > post2.date ? 1 : -1);
+    // return the available post
     return posts;
 }
 ```
@@ -179,61 +191,75 @@ We have set functions such as `getAllPosts()`, `getPostItems()`, `getPost()` and
 ### Setting up the components
 Create a directory called `components` within the project's root folder. Prepare three scripts inside this `components` directory. These are `Header.tsx`, `Thumbnail.tsx`, and `Layout.tsx`. Each script will hold different components, as described below.
 
-`Header.tsx` script will serve as the navigation bar. Open `Header.tsx` and create a simple navigation bar as shown below.
+`Header.tsx` script will serve as the navigation bar. Open `Header.tsx` and create a simple navigation bar, as shown below.
 
 ```ts
+// Import the link props
 import Link from 'next/link';
 
+// add the React Header Element
 const Header: React.FC = () => {
 
     return (
+        // header value
         <header className="py-2">
-            <Link href="/">
-                <a className="text-2xl font-bold text-green-500">My blog</a>
-            </Link>
+
+        <Link href="/">
+            <a className="text-2xl font-bold text-green-500">My Simple Blog App</a>
+        </Link>
         </header>
     )
-
 }
 
+// export Header module
 export default Header;
 ```
 
 Each blog will essentially have an image. `Thumbnail.tsx` will script down the blog post's image component as described in the code block below. We will utilize the `Image` component, which works smoothly for rendering an image in Next.js.
 
 ```ts
-import Image from 'next/image';
+// import link artifacts
 import Link from 'next/link';
+// import image artifacts
+import Image from 'next/image';
 
+// Thumbnail properties
 type Props = {
+    // Thumbnail title
     title: string;
+    // Thumbnail image src
     src: string;
-    slug?: string;
+    // Thumbnail slug link
+    slug?:string;
 }
 
-const Thumbnail: React.FC<Props> = ({ title, src, slug }: Props) => {
+
+const Thumbnail: React.FC<Props> = ({ title, src, slug}: Props) => {
+  // Add the Thumbnail cover image
     const image = (
         <Image
-            src={src}
-            alt={`Cover image for ${title}`}
-            width={1280}
-            height={720}
+        height={720}
+        width={1280}
+        src={src}
+        alt={`Thumbnail cover image ${title}`}
         />
     );
 
+    // return the Thumbnail cover image slug
     return (
         <>
-            {slug ? (
-                <Link href={`/posts/${slug}`}>
-                    <a aria-label={title}>{image}</a>
-                </Link>
-            ) : (
-                image
-            )}
-        </>
+      {slug ? (
+        <Link href={`/posts/${slug}`}>
+          <a aria-label={title}>{image}</a>
+        </Link>
+      ) : (
+        image
+      )}
+    </>
     )
 }
 
+// export Thumbnail module
 export default Thumbnail;
 ```
 
@@ -274,7 +300,8 @@ function MyApp({ Component, pageProps }: AppProps) {
 All you need is to import `Layout` and wrap the `Component` returned with `Layout`.
 
 ### Creating a blog post
-In the root of your project folder, create a `_posts` directory. Create a `getting-started.mdx` file within the `_posts` directory. In the `getting-started.mdx` file, we'll write a simple blog post as follows
+
+In your project root folder, create a `_posts` directory. Create a `getting-started.mdx` file within the `_posts` directory. In the `getting-started.mdx` file, we'll write a simple blog post as follows
 
 - Add the front-matter section.
 
@@ -331,61 +358,62 @@ export interface IPost {
 To show the posts, we will work on the `pages/index.tsx` file. Edit your `pages/index.tsx` file as follows.
 
 ```ts
-import type { NextPage, GetStaticProps } from 'next'
-import Link from 'next/link'
 import Thumbnail from '../components/Thumbnail';
+import type { NextPage, GetStaticProps } from 'next'
 import { IPost } from "../types/post";
+import Link from 'next/link'
 import { getAllPosts } from "../utils/mdxUtils";
 
 // props type
 type Props = {
-    posts: [IPost]
+  posts: [IPost]
 }
 
 // component render function
 const Home: NextPage<Props> = ({ posts }: Props) => {
-    return (
-        <div>
-            <h1 className="text-4xl font-bold mb-4">Technical articles</h1>
+  return (
+    <div>
+      <h1 className="text-4xl font-bold mb-4">Technical articles</h1>
 
-            <div className="space-y-12">
-                {posts.map((post) => (
-                    <div key={post.slug}>
-                        <div className="mb-4">
-                            <Thumbnail
-                                slug={post.slug}
-                                title={post.title}
-                                src={post.thumbnail}
-                            />
-                        </div>
-
-                        <h2 className="text-2xl font-bold mb-4">
-                            <Link href={`/posts/${post.slug}`}>
-                                <a>{post.title}</a>
-                            </Link>
-                        </h2>
-
-                        <p>{post.description}</p>
-                    </div>
-                ))}
+      <div className="space-y-12">
+        {posts.map((post) => (
+          <div key={post.slug}>
+            <div className="mb-4">
+              <Thumbnail
+                slug={post.slug}
+                title={post.title}
+                src={post.thumbnail}
+              />
             </div>
-        </div>
-    )
+
+            <h2 className="text-2xl font-bold mb-4">
+              <Link href={`/posts/${post.slug}`}>
+                <a>{post.title}</a>
+              </Link>
+            </h2>
+
+            <p>{post.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
 }
 
 export default Home
 
 // get posts from serverside at build time
 export const getStaticProps: GetStaticProps = async () => {
-    const posts = getAllPosts([
-        'slug',
-        'date',
-        'thumbnail',
-        'title',
-        'description'
-    ]);
+  const posts = getAllPosts([
+    'title',
+    'slug',
+    'date',
+    'description',
+    'thumbnail'
+  ]);
 
-    return { props: { posts } }
+  // retunr the posts props
+  return { props: { posts } }
 }
 ```
 
@@ -479,7 +507,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 export default MyApp
 ```
 
-In your `components` folder, add two more files `Prerequisites.tsx`, and *Stacks.tsx`.
+In your `components` folder, add two more files, `Prerequisites.tsx`, and *Stacks.tsx`.
 
 In the `Prerequisites.tsx` file, we will be getting the `prerequisites` from the consumer hook and mapping them on a list. Add the following code block.
 
@@ -529,24 +557,26 @@ export default Stacks;
 Within the `pages` directory, create a `posts` folder. Create a `[slug].tsx` file in the `posts` directory. The square brackets indicate that this is a dynamic file dependent on the `slug` keyword. This is how we will set up the `[slug].tsx`.
 
 ```ts
-import { GetStaticProps, GetStaticPaths } from 'next';
 import { serialize } from 'next-mdx-remote/serialize';
-import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
+import { GetStaticProps, GetStaticPaths } from 'next';
 import { useEffect } from 'react';
-import { useRouter } from 'next/router';
-import Prerequisites from '../../components/Prerequisites';
-import Stacks from '../../components/Stacks';
+import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
+
+import { useMdxComponentsContext } from '../../context/mdxContext';
 import Thumbnail from '../../components/Thumbnail';
 import { IPost } from '../../types/post';
 import { getPost, getAllPosts } from '../../utils/mdxUtils';
+import Prerequisites from '../../components/Prerequisites';
 import { ParsedUrlQuery } from 'querystring';
-import { useMdxComponentsContext } from '../../context/mdxContext';
+import Stacks from '../../components/Stacks';
 
+// props type
 type Props = {
     source: MDXRemoteSerializeResult,
     frontMatter: Omit<IPost, 'slug'>;
 }
 
+// components to render
 const components = {
     Prerequisites,
     Stacks,
@@ -554,23 +584,20 @@ const components = {
 
 const PostPage: React.FC<Props> = ({ source, frontMatter }: Props) => {
 
-    const { setPrerequisites, setStacks } = useMdxComponentsContext(); // get setters
+    // get setters
+    const { setPrerequisites, setStacks } = useMdxComponentsContext();
 
     useEffect(() => {
-        setPrerequisites(frontMatter.prerequisites); // set prerequisites
-        setStacks(frontMatter.stacks); // set stacks
+        // set prerequisites
+        setPrerequisites(frontMatter.prerequisites);
+        // set stacks
+        setStacks(frontMatter.stacks);
     }, [
         setPrerequisites,
         setStacks,
         frontMatter.prerequisites,
         frontMatter.stacks
     ]);
-
-    const router = useRouter();
-    // check if the page is building
-    if (router.isFallback) {
-        return "<h1>Loading...</h1>";
-    }
 
     return (
         <div>
@@ -599,8 +626,10 @@ interface Iparams extends ParsedUrlQuery {
 export const getStaticProps: GetStaticProps = async (context) => {
 
     const { slug } = context.params as Iparams;
-    const { content, data } = getPost(slug); // get the slug
-    const mdxSource = await serialize(content, { scope: data }); // serialize the data on the server side
+    // get the slug
+    const { content, data } = getPost(slug);
+    // serialize the data on the server side
+    const mdxSource = await serialize(content, { scope: data });
     return {
         props: {
             source: mdxSource,
@@ -610,9 +639,11 @@ export const getStaticProps: GetStaticProps = async (context) => {
 }
 
 export const getStaticPaths: GetStaticPaths = () => {
-    const posts = getAllPosts(['slug']); //only get the slug from posts 
+    //only get the slug from posts 
+    const posts = getAllPosts(['slug']);
 
-    const paths = posts.map((post) => ({ // map through to return post paths
+    // map through to return post paths
+    const paths = posts.map((post) => ({
         params: {
             slug: post.slug
         }
@@ -629,8 +660,8 @@ This dynamic file allows you to set your server-side and client-side as follows;
 
 On the server-side;
 
-- Fetch the content of the current post using `getStaticProps()`. The data of the article is serialized and returned as `source`, and `frontMatter`.
-- Fetch the paths of the post at build time from the `getStaticPaths()`. Also, return `fallback` to `false` so that every post path that is not generated at build time will generate a `404` error.
+- Fetch the content of the current post using `getStaticProps()`. The article's data is serialized and returned as `source`, and `frontMatter`.
+- Fetch the post paths at build time from the `getStaticPaths()`. Also, return `fallback` to `false` so that every post path that is not generated at build time will generate a `404` error.
 
 On the client-side;
 
@@ -643,10 +674,12 @@ Ensure that the development server is still running, and test if this works. Cli
 
 ![specific-article-page](/engineering-education/build-a-static-nextjs-markdown-files-blog-with-typescript-mdx-tailwindcss/specific-article-page.PNG)
 
-### Deploy to Vercel
-To deploy to Vercel, ensure you push/publish your code to a GitHub repository first. [Login](https://vercel.com/login) to your Vercel dashboard or [register](https://vercel.com/signup) if you don't have one.
+Check the complete working code on [GitHub](https://github.com/Rose-stack/static-nextjs-blog-with-typescript-mdx-tailwindcss).
 
-From your [dashboard](https://vercel.com/dashboard), click on [New Project](https://vercel.com/new). Ensure that you have logged in to your GitHub account, select it as your Git provider, and then search and import your project.
+### Deploy to Vercel
+To deploy to Vercel, ensure you first push/publish your code to a GitHub repository. [Login](https://vercel.com/login) to your Vercel dashboard or [register](https://vercel.com/signup) if you don't have one.
+
+Select New Project from the Vercel [dashboard](https://vercel.com/dashboard). Ensure that you have logged in to your GitHub account, select it as your Git provider, and then search and import your project.
 
 Enter your preferred project name and then click Deploy
 
@@ -658,3 +691,11 @@ After the deployment is done, click on the generated preview, and you will be re
 
 ### Conclusion
 Next.js is an amazing React-based framework. It allows you to work with almost any aspect of bot server-side and client-side content. It is very lightweight and allows you to create full fledge fast applications. In this tutorial, we built a blog application with Next.js, TypeScript, MDX, and Tailwind CSS and deployed it to Vercel. I hope you found the whole stack worth learning.
+
+### Further reading
+- [Getting started MDX](https://mdxjs.com/docs/getting-started/)
+- [How MDX works](https://mdxjs.com/docs/using-mdx/#how-mdx-works)
+- [What is MDX](https://mdxjs.com/docs/what-is-mdx/)
+- [How to Create Responsive Layouts with Material UI and Next.js](/engineering-education/creating-responsive-layouts-with-materialui-in-reactjs/)
+- [Introduction to Next.js, TypeScript, and Firebase Database](/engineering-education/introduction-to-nextjs-with-typescript-and-firebase-database/)
+- [How to build a Nextjs application with MongoDB and deploy on Vercel](/engineering-education/build-nextjs-with-mongodb-and-deploy-on-vercel/)
