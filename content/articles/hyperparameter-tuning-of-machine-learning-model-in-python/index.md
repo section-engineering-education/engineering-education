@@ -256,7 +256,7 @@ We specify the range using `NumPy`. Let's import `NumPy` using the following cod
 ```python
 import numpy as np
 ```
-Let's now create a range of `max_features` and `n_estimators`.
+Now, let's create a range of `max_features` and `n_estimators`.
 
 #### Range of max_features
 
