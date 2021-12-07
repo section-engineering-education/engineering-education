@@ -1,5 +1,21 @@
-Imbalanced-learn is a Python package used to handle imbalanced datasets in machine learning. In an imbalanced dataset, the number of data samples is not equally distributed between the classes.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /imbalanced-learn-python-package-for-machine-learning/
+title: Understanding Imbalanced-Learn package for Handling Imbalanced Datasets
+description: Imbalanced-learn is a Python library that is used for handling imbalanced datasets. In this article, we will understand 2 important techniques that we use for handling imbalanced datasets. Also, we will be analyzing its performance by measuring the accuracy score from the models of each dataset.
+author: charles-kariuki
+date: 2021-12-07T00:00:00-23:30
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
 
+ - url: /engineering-education/imbalanced-learn-python-package-for-machine-learning/hero.jpg
+   alt: Understanding Imbalanced-Learn package for Handling Imbalanced Datasets example image
+---
+Imbalanced-learn is a Python package used to handle imbalanced datasets in machine learning. In an imbalanced dataset, the number of data samples is not equally distributed between the classes.
+<!--more-->
 In an imbalanced dataset, the class labels are not equal. One class has a higher number of data samples, while the other class label has a significantly lower amount of data samples.
 
 For example, if you are predicting if a student will pass or not pass an exam, based on various input parameters. In this example, we have two class labels: `pass` and `not pass`.
@@ -385,3 +401,6 @@ To get the Google Colab link for this tutorial, click [here](https://colab.resea
 - [Handling Imbalanced Datasets in Machine Learning](/engineering-education/imbalanced-data-in-ml/)
 - [Imbalanced dataset techniques](https://towardsdatascience.com/handling-imbalanced-datasets-in-machine-learning-7a0e84220f28)
 - [Imbalanced-learn documentation](https://imbalanced-learn.org/stable/)
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
