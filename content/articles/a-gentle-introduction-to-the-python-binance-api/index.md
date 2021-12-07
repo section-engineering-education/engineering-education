@@ -6,7 +6,7 @@ url: /a-gentle-introduction-to-the-python-binance-api/
 title: A Gentle Introduction to the Python Binance API
 description: This tutorial will show the reader how to extract and analyze real-time securities and crypto data from Binance using the python-binance API and Pandas library.
 author: wilkister-mumbi
-date: 2021-12-07T00:00:00-17:30
+date: 2021-12-07T00:00:00-11:40
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -14,10 +14,10 @@ images:
   - url: /engineering-education/a-gentle-introduction-to-the-python-binance-api/hero.png
     alt: Binance Image
 ---
-Python-binance is an application programming interface that allows you to connect to the Binance servers via the python programming language. It is important to note that the python-binance library is not affiliated with Binance. 
+Python-binance is an application programming interface that allows you to connect to the Binance servers via the Python programming language. It is important to note that the python-binance library is not affiliated with Binance. 
 <!--more-->
 
-In this tutorial, we'll show you how to extract and analyze real-time securities and crypto data from Binance using the python-binance API and Pandas library.
+This tutorial will show you how to extract and analyze real-time securities and crypto data from Binance using the python-binance API and Pandas library.
 
 ### Prerequisites
 To follow along, a reader needs to be familiar with:
@@ -27,11 +27,11 @@ To follow along, a reader needs to be familiar with:
 
 ### Table of contents
 - [The Python-Binance API](#the-python-binance-api)
-- [Setting up the binance API](#setting-up-the-binance-api)
+- [Setting up the Binance API](#setting-up-the-binance-api)
 - [Installing and importing dependencies](#installing-and-importing-dependencies)
 - [Performing authentication](#performing-authentication)
 - [Pulling data from binance using Python-Binance](#pulling-data-from-binance-using-python-binance)
-- [Performing EDA with binance data](#performing-eda-with-binance-data)
+- [Performing EDA with Binance data](#performing-eda-with-binance-data)
 - [Getting historical data](#getting-historical-data)
 - [Preprocessing historical data](preprocessing-historical-data)
 - [Visualization using matplotlib finance library](#visualization-using-matplotlib-finance-library)
@@ -39,18 +39,18 @@ To follow along, a reader needs to be familiar with:
 - [Futher reading](#further-reading)
 
 ### The Python-Binance API
-[Binance](https://www.binance.com/en) is currently the largest cryptocurrency exchange in the world as far as daily trading volumes in concerned. It was founded in 2017 by Changpeng Zhao, and its headquarters is in the Cayman Islands. It allows you to buy, sell, trade, and swap cryptocurrency easily.
+[Binance](https://www.binance.com/en) is currently the largest cryptocurrency exchange in the world as far as daily trading volumes in concerned. It was founded in 2017 by Changpeng Zhao, and its headquarters is in the Cayman Islands. It allows you to easily buy, sell, trade, and swap cryptocurrency.
 
-Python-binance is an application programming interface that allows you to connect to the Binance servers via the python programming language. With the API, you can make orders, trade, withdraw and get real-time data from the Binance exchange. To learn more about the library, feel free to read their [documentation](https://python-binance.readthedocs.io/en/latest/index.html).
+Python-binance is an application programming interface that allows you to connect to the Binance servers via the Python programming language. With the API, you can make orders, trade, withdraw and get real-time data from the Binance exchange. Feel free to read their [documentation](https://python-binance.readthedocs.io/en/latest/index.html).
 
-### Setting up the binance API
+### Setting up the Binance API
 We first need to set up an API key by registering an account on Binance. This step involves heading to the Binance [website](https://www.binance.com/en) and signing up if you don't have an account with them yet. Registration is straightforward, as you would register for any web application. After successfully signing up and completing the verification process, hover over the profile button and select the `API Management` option as shown below:
 
 ![API Management](/engineering-education/a-gentle-introduction-to-the-python-binance-api/api.png)
 
-The API management is the option where you will be allowed to set up your API key. Once opened, you need to label the API you want to create, then click on the `Create API` button. For our case, we created one with the label, `BinanceIntroAPI`. After pressing the 'Create API' button, you will be prompted to perform a quick security verification. Once done, your API key will be created successfully. You will get an `API key` and a `secret key`. 
+The API management is the option where you will be allowed to set up your API key. Once opened, you need to label the API you want to create, then click on the `Create API` button. For our case, we created one with the label, `BinanceIntroAPI`. After pressing the `Create API` button, you will be prompted to perform security verification quickly. Once done, your API key will be created successfully. You will get an `API key` and a `secret key`. 
 
-We need to make our account secure. On the top right corner, you'll see a button called `Edit restrictions`. Once inside, uncheck the `Enable Spot & Margin Trading` option and check the `Restrict access to trusted IPs only (Recommended)` option. Enter your IP address, then click save. If you don't know your IP address, you can perform a quick search on Google for `my ip address`. This will be able to take away the trading permissions and only limit access to a computer with your IP address. 
+We need to make our account secure. You'll see a button called `Edit restrictions` on the top right corner. Once inside, uncheck the `Enable Spot & Margin Trading` option and check the `Restrict access to trusted IPs only (Recommended)` option. Enter your IP address, then click save. If you don't know your IP address, you can perform a quick search on Google for `my ip address`. This will take away the trading permissions and only limit access to a computer with your IP address. 
 
 Copy this API key and paste it on your notebook as shown below:
 
@@ -66,6 +66,7 @@ In this next step, we'll go ahead and install and import the necessary dependenc
 ```bash
 !pip install python-binance pandas mplfinance
 ```
+
 We've installed three dependencies:
 - `python-binance` allows us to connect to the Binance API.
 - `pandas` library will allow us to transform the crypto data.
@@ -78,7 +79,7 @@ from binance import Client, ThreadedWebsocketManager, ThreadedDepthCacheManager
 import pandas as pd
 ```
 ### Performing authentication
-Using the `Client` class we imported earlier, we import the two variables, `apikey`, and `apisecret` keys to perform authentication. We store this result in a variable called `client`.
+Using the `Client` class we imported earlier, we import the two variables, `apikey`, and `apisecret` keys, to perform authentication. Then, we store this result in a variable called `client`.
 
 ```python
 client = Client(apikey, apisecret)
@@ -111,8 +112,8 @@ Output:
  ...
 
 ```
-### Performing EDA with binance data
-Using the Pandas library, we'll perform some exploratory data analysis on the binance data.
+### Performing EDA with Binance data
+We'll perform some exploratory data analysis on Binance data using the Pandas library.
 
 ```python
 ticker_dataframe = pd.DataFrame(tickers)
@@ -167,7 +168,7 @@ Output:
 4   4672.15000000   0.10700000
 ```
 ### Getting historical data 
-This next step involves getting some historical data and preprocessing them. This process is essential as the data isn't in an appropriate format to perform calculations. Let's take a look at the current data types:
+This next step involves getting some historical data and preprocessing them. This process is essential as the data isn't appropriate for performing calculations. But, first, let's take a look at the current data types:
 
 ```python
 depth_dataframe.dtypes
@@ -177,13 +178,15 @@ Price     object
 Volume    object
 dtype: object
 ```
-As we've seen, the data is stored as objects. We'll need to convert this data to numerical so that we can perform calculations on them.
+As we've seen, the data is stored as objects. We'll need to convert this data to numerical to perform calculations on them.
 
 ```python
 historical_data = client.get_historical_klines('BTCUSDT', Client.KLINE_INTERVAL_1DAY, '5 July 2020')
 ```
 The `get_historical_klines()` function allows you to retrieve [Spot](https://academy.binance.com/en/articles/what-is-a-spot-market-and-how-to-do-spot-trading) and [Futures](https://cryptopotato.com/binance-futures-beginners-guide-exchange-review/) data from Binance. It takes three parameters, the `name of symbol pair`, `interval`, and `date`. The function returns a limit of 1000 rows of data.
+
 As for the interval time, there are many options you can play around with, i.e., KLINE_INTERVAL_1MINUTE, KLINE_INTERVAL_15MINUTE, KLINE_INTERVAL_1MONTH, KLINE_INTERVAL_1WEEK, etc. 
+
 > If you want to build a trading bot, make sure to grab historical data from a date far back to build a model that works better.
 
 If we take a look at this `historical_data`, this is what it contains:
@@ -248,7 +251,7 @@ Output:
 
 ![Converted columns](/engineering-education/a-gentle-introduction-to-the-python-binance-api/column-converted.png)
 
-If we type `hist_df.dtypes`, we'll notice that more than half of the columns are stored as objects (string). Since we are working with financial data and we would want to do computations, we need to convert this into numerical values. 
+If we type `hist_df.dtypes`, we'll notice that more than half of the columns are stored as objects (string). Since we are working with financial data and want to do computations, we need to convert this into numerical values. 
 
 ### Preprocessing historical data
 
@@ -272,7 +275,7 @@ TB Quote Volume       object
 Ignore                object
 dtype: object
 ```
-We begin by converting the `Open Time` and `Close Time` to date-time values. To do this, we'll use the `to_datetime()` function from pandas. As dates are returned from Binance as timestamps, we first divide by 1000 and then set the units to seconds to convert correctly.
+We begin by converting the `Open Time` and `Close Time` to date-time values. We'll use the `to_datetime()` function from pandas to do this. As dates are returned from Binance as timestamps, we first divide by 1000 and then set the units to seconds to convert correctly.
 
 ```python
 hist_df['Open Time'] = pd.to_datetime(hist_df['Open Time']/1000, unit='s')
@@ -311,14 +314,14 @@ dtype: object
 We've successfully preprocessed the historical data. Additionally, you can do other types of analysis on the data. Play around with `hist_df.describe()` and `hist_df.info` to see what you can find.
 
 ### Visualization using matplotlib finance library
-In this step, we will explore and visualize data using [mplfinance](https://github.com/matplotlib/mplfinance). It is a financial market data visualization tool built on top of matplotlib.
+This step will explore and visualize data using [mplfinance](https://github.com/matplotlib/mplfinance). It is a financial market data visualization tool built on top of `matplotlib`.
 
 We begin by importing the library into our notebook.
 
 ```python
 import mplfinance as mpf
 ```
-We will visualize the `Close Time` data and limit the data to only the last 100 rows of data. In the plot, we've also included the candlestick type of plotting, volume data, the title for our plot, and finally, the 10, 20, and 30 moving day averages.
+We will visualize the `Close Time` data and limit the data to only the last 100 rows. In the plot, we've also included the candlestick type of plotting, volume data, the title for our plot, and finally, the 10, 20, and 30 moving day averages.
 
 ```python
 mpf.plot(hist_df.set_index('Close Time').tail(100), 
@@ -336,7 +339,7 @@ As we've seen, the matplotlib finance library allows us to visualize data easily
 Please find the code for this tutorial [here](https://colab.research.google.com/drive/1MP-Kk4gG-fnbCK40MxENCdIKr0KRho9f?usp=sharing).
 
 ### Summary
-In a nutshell, this tutorial has shown you what's possible with the python-binance API. We've shown you how you can perform an exploratory data analysis on Binance data. In our follow-up tutorial, we'll build upon this tutorial and show you how to apply machine learning and data science to trading and finance.
+In a nutshell, this tutorial has shown you what's possible with the python-binance API. In addition, we've shown you how you can perform an exploratory data analysis on Binance data. In our follow-up tutorial, we'll build upon this tutorial and show you how to apply machine learning and data science to trading and finance.
 
 ### Further reading
 - [Mplfinance](https://github.com/matplotlib/mplfinance)
