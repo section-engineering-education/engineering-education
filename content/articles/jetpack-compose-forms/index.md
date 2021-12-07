@@ -6,7 +6,7 @@ url: /jetpack-compose-forms/
 title: Advanced form operations In Jetpack compose
 description: In this article, we will be looking at a dry approach to working with textfields in Jetpack compose.
 author: linus-muema
-date: 2021-12-01T00:00:00-00:30
+date: 2021-12-07T00:00:00-00:30
 topics: [Android]
 excerpt_separator: <!--more-->
 images:
@@ -50,7 +50,7 @@ fun Screen(){
 }
 ```
 
-Once you run your application, you will notice that there is no change as you type in the input field. This is because you are not updating the state of the field in the `onValueChange` callback.
+Once you run your application, you will notice no change as you type in the input field. This is because you are not updating the state of the field in the `onValueChange` callback.
 
 You can read more about state management on the [official documentation](https://developer.android.com/jetpack/compose/state). So go ahead and update the `Form` composable.
 
@@ -154,7 +154,7 @@ when {
 
 That is a simple validation process for our fields. However, we have much code for only two input fields. Imagine if we had ten fields each, with different validation processes. It would be even worse if we had forms on different screens, as is common in most applications.
 
-A workaround to this would be to create a form composable that handles form validation. We can create a state for the `Form` composable, and it handles all the fields we pass into it. 
+A workaround would be to create a form composable that handles form validation. We can create a state for the `Form` composable, and it handles all the fields we pass into it. 
 
 Let us go ahead and implement that.
 
@@ -179,7 +179,7 @@ Each of these will receive an optional message. This will allow us to pass in cu
 We have a `regex` validator that receives the regex that we will use to compare with the form field value.
 
 ### Step 4: Creating state for the fields
-In this step, we will create an internal state that will validate the individual input field. It will also be in charge of updating the field as the user types in it.
+This step will create an internal state that will validate the individual input field. It will also be in charge of updating the field as the user types.
 
 We will add more functions to help us manage the field, such as clearing the textfield, getting the value from the field, and showing/hiding errors.
 
@@ -227,11 +227,11 @@ class Field(val name: String, val label: String = "", val validators: List<Valid
 }
 ```
 
-We have created a class that receives three arguments. The `name` will be used to associate the field to the value later on. The `label` will be used to set the field's label and error message. `validators` will list all the validators specified for that field.
+We have created a class that receives three arguments. The `name` will be used to associate the field to the value later. The `label` will be used to set the field's label and error message. `validators` will list all the validators specified for that field.
 
-The composable function `Content` will be used to draw the field in the `Form`. The function `validate` will return a boolean to denote whether the field's value is valid or not. It will loop through the validators, checking if the value is correct based on the validator and returning true or false. 
+The composable function `Content` will draw the field in the `Form`. The function `validate` will return a boolean to denote whether the field's value is valid or not. It will loop through the validators, checking if the value is correct based on the validator and returning true or false. 
 
-> Once the user starts editing the form field, we are clearing the errors so the field goes back to an invalidated state.
+> Once the user starts editing the form field, we clear the errors, so the field goes back to an invalidated state.
 
 Add the following implementations for the validators.
 
@@ -343,10 +343,13 @@ fun Screen(){
 Once you run your application, everything should work as expected. To get the data, call the `state.getData` method, and you will receive a map of your form.
 
 ### Conclusion
-As you have seen, working with forms individually can lead to much code that is repetitive. But with this approach, you encapsulate your form functions into different classes and compostables, making your work easier and your code cleaner.
+As you have seen, working with forms individually can lead to much repetitive code. But with this approach, you encapsulate your form functions into different classes and compostables, making your work easier and your code cleaner.
 
 However, this approach has some drawbacks. For instance, it does not take care of the custom arrangement of the fields. You are restricted to a column, while you might want some fields on a row. It also does not allow modification of the fields' properties. 
 
 You can find the complete source code of the application on [GitHub](https://github.com/LinusMuema/Formzy). If you have a solution to the issues facing this approach or a suggestion, feel free to open an issue.
 
 Have fun with compose!
+
+---
+Peer Review Contributions by: [Mercy Meave](/engineering-education/authors/mercy-meave/)
