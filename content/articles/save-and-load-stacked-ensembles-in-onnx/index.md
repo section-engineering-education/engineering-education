@@ -1,5 +1,21 @@
-Stacked ensemble models are learners that increase predictive performance over stand-alone learners by combining the results of two or several machine learning models and running them through a meta-learner.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /save-and-load-stacked-ensembles-in-onnx/
+title: Saving and Loading Stacked Ensemble Classifiers in ONNX format in Python
+description: In this tutorial, the reader will learn how to build an ensemble classifiers. Also, we will learn to save and load these models using ONNX format.
+author: ian-njari
+date: 2021-12-07T00:00:00-00:00
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/save-and-load-stacked-ensembles-in-onnx/hero.jpg
+    alt: Saving and Loading Stacked Ensemble Classifiers in ONNX format in Python example image
+---
+Stacked ensemble models are learners that increase predictive performance over stand-alone learners by combining the results of two or several machine learning models and running them through a meta-learner.
+<!--more-->
 The stacked models are different (not a single type), unlike in bagging methods (just decision trees) where each model in the stack does not correct the predictions of the previous ones, like it happens in boosting. You can learn how to build one such Ensemble model by reading [this article by Adhinga Fredrick](/engineering-education/ensemble-learning-based-regression-model-using-python/).
 
 [Open Neural Network Exchange](https://onnx.ai/) (ONNX) is an open source format for deep learning and traditional machine learning developed by Microsoft that has an unified schema for saving models despite the library they were developed in.
@@ -294,4 +310,5 @@ Happy ML-ing!
 - [Common errors with onnxruntime](http://onnx.ai/sklearn-onnx/auto_examples/plot_errors_onnxruntime.html?highlight=errors)
 - [Notebook with accompanying Source Code](https://github.com/iannjari/scrapbook/blob/main/Stacked_Ensemble.ipynb).
 
-
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
