@@ -1,5 +1,12 @@
 ### Article checklist
 
+## Attention
+## Our **Peer Reviewer and Content Moderator teams do NOT provide any revisions services.** All revisions and edits should be completed on your own forked repo (as to not take up room in the queue) in order for our team to review them all in a timely manner. 
+
+**ANY ARTICLE SUBMITTED WITH GLARING ERRORS WILL BE IMMEDIATELY CLOSED.**
+
+>As a rule of thumb - please be sure to only submit articles (pull requests) that are fully polished and ready to be published. Be sure to go through our resources documents for extra and 3rd party (vetted) resources to help improve overall technical writing.
+
 #### Pre-submission checks
 > Please ensure that you have only one open topic suggestion (issue) + in-review article (linked pull request) at a time. This will ensure that we complete the review process in a timely manner from inception to publishing
 
