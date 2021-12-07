@@ -43,7 +43,7 @@ Sorting refers to the operation or technique of ordering and rearranging groups 
 These techniques are divided into categories depending on the kind of search operation they undertake, for example:
 #### 1. Linear Search
 The linear search method is a pretty simple search method. A sequential search is performed on all things one by one in this sort of search. Every item is verified, and if a match is discovered, that item is returned; if not, the search continues until the data collection is complete.
-##### Algorithm
+**Algorithm**
 step 1:  Determine the size of the data set.
 
 step 2: Set the counter to zero.
