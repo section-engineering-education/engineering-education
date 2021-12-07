@@ -6,7 +6,7 @@ url: /how-to-build-graphql-apis-with-expressjs-and-typescript/
 title: How To Build GraphQL APIs with ExpressJS and Typescript
 description: GraphQL is a query language for APIs. In this article, we will learn how to build a GraphQL API with Express.js and MongoDB.
 author: babatunde-koiki
-date: 2021-12-06T00:00:00-00:00
+date: 2021-12-07T00:00:00-12:10
 topics: [API]
 excerpt_separator: <!--more-->
 images:
@@ -16,6 +16,7 @@ images:
 ---
 [GraphQL](https://graphql.org/) is an API specification, similar to the [REST](https://restfulapi.net) and [SOAP](https://www.soapui.org/learn/api/soap-vs-rest-api/) specification. In GraphQL, all requests access the same HTTP method with a single URL endpoint.
 <!--more-->
+
 In this article, you will learn how to build a GraphQL API using Express.js. Also, you will learn how to connect your API to a database system like MongoDB with Mongoose as its wrapper. Finally, we will look into converting the codebase to Typescript.
 
 ![gql](/engineering-education/how-to-build-graphql-apis-with-expressjs-and-typescript/graphql-query.png)
@@ -23,23 +24,23 @@ In this article, you will learn how to build a GraphQL API using Express.js. Als
 Now that you have a glimpse of what GraphQL does, you might be thinking, why so much noise about it? Why can't we just stick with REST or SOAP APIs?
 
 ### How is GraphQL better than REST or SOAP?
-The following reasons do not mean that the REST or SOAP specifications are obsolete. They only highlight areas in which GraphQL shines:
+The following reasons do not mean that the REST or SOAP specifications are obsolete. Instead, they only highlight areas in which GraphQL shines:
 
 #### Accessing API with just one endpoint
 Say you have a books collection.
 
-The client will use the same URL to access all the books of the books collection, author information about a single book, and many more with just a single endpoint.
+The client will use the same URL to access all the books in the books collection, author information about a single book, and many more with a single endpoint.
 
 This makes it possible to get multiple resources with a single request. That's cool, right?
 
 #### GraphQL fetches data based on queries
 Let's say we want to fetch all books created by a user in a standard REST API. We can access that by going to `api/v1/users/books/`, to get an array of books.
 
-But, in a situation where we need just the book `title` of each book, then the API is giving us more than we need.
+But, in a situation where we need just the book `title` of each Book, the API gives us more than we need.
 
 We do not want to start requesting what we already have. Instead, we should request things that we do not have, like the `_id` of the Book.
 
-But with GraphQL, we can query all books and get just the `title` of each Book. We can do something like what we have below, and the server will return an array of Books with just the `title` field in it:
+But with GraphQL, we can query all books and get just the `title` of each Book. So we can do something like what we have below, and the server will return an array of Books with just the `title` field in it:
 
 ```graphql
 {
@@ -51,7 +52,7 @@ But with GraphQL, we can query all books and get just the `title` of each Book. 
 
 ### More about GraphQL
 #### GraphQL queries
-GraphQL queries are used to perform "read" operations on the server. Basically, those are operations that you will typically do with a `GET` request.
+GraphQL queries are used to perform "read" operations on the server. You will typically do those operations with a `GET` request.
 
 ![gql queries](/engineering-education/how-to-build-graphql-apis-with-expressjs-and-typescript/sample-gql-query.png)
 
@@ -65,7 +66,7 @@ If you're familiar with WebSockets, then you'd like GraphQL subscriptions. Graph
 
 ![gql subscriptions](/engineering-education/how-to-build-graphql-apis-with-expressjs-and-typescript/sample-gql-subscription.png)
 
-#### GraphQL Schema
+#### GraphQL schema
 A schema is used to define the kind of data that the GraphQL API expects and the kind of data it gives back to the client.
 
 It can also serve as documentation to people using our API. So, we may not even have to write documentation for our API again.
@@ -77,16 +78,16 @@ This also helps with data validation as GraphQL parses the requests and returns 
 You can check more about GraphQL in the [documentation](https://graphql.org/).
 
 ### Building the GraphQL API
-Now that we know what GraphQL is all about, let's discuss how we can use this specification to build a simple API.
+Now that we know what GraphQL is all about let's discuss how we can use this specification to build a simple API.
 
-I'm assuming that you have a basic understanding of Express.js. You can check out [this](https://codeforgeek.com/express-nodejs-tutorial/) article if you don't.
+I'm assuming that you have a basic understanding of Express.js. If you don't, you can check out [this](https://codeforgeek.com/express-nodejs-tutorial/) article.
 
-#### Getting started - Installing Deps And Setting Up The Project
-Firstly, we will create a book API to create books, update books, delete books, get all books, and get a single book.
+#### Getting started - installing Deps And setting up the project
+Firstly, we will create a book API to create, update, delete, get all, and get a single book.
 
 We will have to create our project and set it up.
 
-Let's name the api `bookrr`. Create a new `npm` project and name it `bookrr`. Your project structure should look like what we have below:
+Let's name the API `bookrr`. Create a new `npm` project and name it `bookrr`. Your project structure should look like what we have below:
 
 ![project structure](/engineering-education/how-to-build-graphql-apis-with-expressjs-and-typescript/project-structure.png)
 
@@ -102,7 +103,7 @@ Finally, we need to install our dependencies.
 npm i express express-graphql dotenv graphql
 ```
 
-We need [express](https://www.npmjs.com/package/express) to run the server and manage routes, [express-graphql](https://www.npmjs.com/package/express-graphql) to create the schema, and the handler for the route.
+We need [express](https://www.npmjs.com/package/express) to run the server and manage routes, [express-graphql](https://www.npmjs.com/package/express-graphql) to create the schema and the handler for the route.
 
 GraphQL is what we use to build our schema and [dotenv](https://www.npmjs.com/package/dotenv) to access environment variables.
 
@@ -143,11 +144,11 @@ The first four lines are where we import all the dependencies for this file.
 - It takes in a callback function with three parameters, `request`, `response`, and `graphQLParams`, and returns an object with the `schema` of the API.
 - The `root` is what the API returns based on the query or the mutation, `graphiql`, which tells GraphQL to make our API have a web client where we can test it on the browser and finally, the `context` object.
 
-It is recommended to create an `envs.js` file that encapsulates all the environment variables that we would be using in the app.
+Creating an `envs.js` file that encapsulates all the environment variables that we would be using in the app is recommended.
 
 For now, we have added `PORT` and `GRAPHQL_PATH`.
 
-The `envs.js` file will look like:
+The `envs.js` file will look like this:
 
 ```javascript
 const { config } = require( 'dotenv');
@@ -162,12 +163,12 @@ module.exports = {
 
 `Lines 9 - 20` are where most of the magic happens.
 
-We have created a route for the GraphQL code where `graphqlHTTP` creates a handler for the route. If we run the app now, we'd get errors as we haven't defined `schema` and `root`.
+We have created a route for the GraphQL code where `graphqlHTTP` creates a handler for the route. However, if we run the app now, we'd get errors as we haven't defined `schema` and `root`.
 
 ### API schema
 Create a folder called `schema` under the root folder, with the following files `schema.js`, `mutation.js`, `query.js`, and `index.js`.
 
-`types.js` is where we will write the app schema both for response and inputs, in `mutation.js` we write the resolver for mutations and `index.js` imports these files and exports `schema` from `types.js`.
+`types.js` is where we will write the app schema both for response and inputs. In `mutation.js`, we write the resolver for mutations and `index.js` imports these files and exports `schema` from `types.js`.
 
 In your `schema.js`, add the following:
 
@@ -209,19 +210,19 @@ If you hover on the `buildSchema`, you should see what we have above.
 
 The only required parameter is a string, which is the schema of our application.
 
-But, what if we have an extensive application with a lot of mutations, queries, and types? Then, it won't be a great idea to use this.
+But what if we have an extensive application with many mutations, queries, and types? Then, it won't be a great idea to use this.
 
-In such a case, you can always use apollo graphql, which is out of the scope of this article. Here, the schema contains the following: `Query`, `Mutation`, and some other types like `Book` and `Books`.
+In such a case, you can always use apollo graphql, which is out of the scope of this article. Here, the schema contains `Query`, `Mutation`, and some other types like `Book` and `Books`.
 
-The `Query` contains `books` and `book`, which denotes all books and a single book respectively. Also, we add an optional parameter for the books query: `limit` (a number), which limits the output. The `book` query takes in `ID`, which is used to search for the requested Book.
+The `Query` contains `books` and `book`, denoting all books and a single book. Also, we add an optional parameter for the books query: `limit` (a number), which limits the output. Finally, the `book` query takes in `ID`, which searches for the requested Book.
 
-The `Mutation` contains `addBook`, `updateBook`, and `deleteBook` declarations along with its parameters. They all have the same response type `Book`, since we're dealing with a single book.
+The `Mutation` contains `addBook`, `updateBook`, and `deleteBook` declarations along with its parameters. They all have the same response type, `Book` since we're dealing with a single book.
 
 The `Book` defines the structure of a single book, and `[Book]` defines books as an array of `Book`.
 
-> Note that, an exclamation mark means the field is required. 
+> Note that an exclamation mark means the field is required. 
 
-All the inputs for mutation are required. Now that, we have all our schema set, it's time to start writing the resolvers.
+All the inputs for mutation are required. Now that we have all our schema set, it's time to write the resolvers.
 
 ### GraphQL query resolver
 In your `query.js` file, add the following:
@@ -249,7 +250,7 @@ Remember that in our `graphQLHttp` function, we returned `context` and `response
 
 Also, since we're working with dummy data, we created a `data.js` where we will be store details related to the books. The `data.js` file should look like this:
 
-> We will not be using this file, after integrating it with the database.
+> We will not be using this file after integrating it with the database.
 
 ```javascript
 module.exports = [
@@ -340,9 +341,9 @@ const mutation = {
 module.exports = mutation
 ```
 
-The mutation is similar to the query. Instead of performing read operations, we're also performing write operations as required. We specified that we would return 3 different keys: `data`, `ok`, and `error` in the schema, instead of just returning the `book` object.
+The mutation is similar to the query. Instead of performing read operations, we're also writing operations as required. Instead of just returning the ' book ' object,' we specified that we would return three keys: `data`, `ok`, and `error` in the schema.
 
-The last thing that needs to be done before we can run our application, is to add some data to our `schema/index.js`.
+The last thing that needs to be done before running our application is to add some data to our `schema/index.js`.
 
 Add the following to your `schema/index.js` file.
 
@@ -363,7 +364,7 @@ Here, we create a schema object from the `schema` file and a `resolver` object f
 
 The `rootValue` object in our `graphQLHttp` in the `server.js` file expects a single object containing all resolvers for our schema.
 
-Currently, we have them in two different files, `query` and `mutation`, so we need to spread (combine) them into a single object as shown above.
+Currently, we have them in two different files, `query` and `mutation`, so we need to spread (combine) them into a single object, as shown above.
 
 Now, we have everything required to run our application.
 
@@ -373,15 +374,15 @@ On opening the URL `http://localhost:3000/graphql`, you should see the following
 
 ![gql server](/engineering-education/how-to-build-graphql-apis-with-expressjs-and-typescript/graphql-server.png)
 
-If you click on `Docs`, you can view the documentation for both `Query` and `Mutation`.
+If you click on `Docs`, you can view the documentation for `Query` and `Mutation`.
 
 Now, let's test our API by fetching all the books.
 
 ![books query](/engineering-education/how-to-build-graphql-apis-with-expressjs-and-typescript/books-query.png)
 
-As you can see, we didn't include any description to the response data, so it wasn't part of our response.
+As you can see, we didn't include any description of the response data, so it wasn't part of our response.
 
-Let's query a single book, and then we'd make two queries at the same time.
+Let's query a single book, and then we'd make two queries simultaneously.
 
 ![book query](/engineering-education/how-to-build-graphql-apis-with-expressjs-and-typescript/single-book-query.png)
 
@@ -391,9 +392,9 @@ Next, let us test the mutations.
 
 ![create and update book mutation](/engineering-education/how-to-build-graphql-APIs-with-expressjs-and-typescript/add-update-book-mutation.png)
 
-From the images above, we created a new book and updated an existing book.
+We created a new book and updated an existing book from the images above.
 
-If the book does not exist, we get a "Book not found" error. As we can also see, we were able to create multiple mutations at the same time.
+We get a "Book not found" error if the Book does not exist. As we can also see, we were able to create multiple mutations simultaneously.
 
 But, the only limitation we have is that we can not create a query and mutation together.
 
@@ -401,12 +402,12 @@ Finally, let's try to delete a book.
 
 ![delete book mutation](/engineering-education/how-to-build-graphql-apis-with-expressjs-and-typescript/delete-book-mutation.png)
 
-If we pass invalid data, the request will not be processed, since GraphQL validates before processing a request.
+If we pass invalid data, the request will not be processed since GraphQL validates it before processing a request.
 
-## Integrating database to the API
+### Integrating database to the API
 This section deals with adding MongoDB and Mongoose to our application.
 
-You can use a remote [MongoDB](https://www.mongodb.com/cloud/atlas/register) database if you don't have MongoDB locally.
+If you don't have MongoDB locally, you can use a remote [MongoDB](https://www.mongodb.com/cloud/atlas/register) database.
 
 If you want to play around with MongoDB, you can try out MongoDB queries with test data on this [website](https://www.humongous.io/app/playground/mongodb).
 
@@ -451,9 +452,9 @@ mongoose.connect(envs.dbUrl, {
 module.exports = mongoose.connection
 ```
 
-Here, we used the `mongoose.connect` function to connect to the database.
+We used the `mongoose.connect` function to connect to the database.
 
-Also, we have to add another value that contains database connection URL, to our `envs.js` file as shown:
+Also, we have to add another value that contains the database connection URL to our `envs.js` file as shown:
 
 ```javascript
 const { config } = require('dotenv');
@@ -467,7 +468,7 @@ module.exports = {
 }
 ```
 
-Finally, we exported `db` object along with 2 other objects, in the `db` folder to `db/index.js`.
+Finally, we exported the `db` object and two other objects in the `db` folder to `db/index.js`.
 
 ```javascript
 const db = require('./connect');
@@ -481,7 +482,7 @@ module.exports = {
 };
 ```
 
-To use this connection from `server.js` file, we import the `db` object using the `db.once` and `db.on` methods.
+To use this connection from the `server.js` file, we import the `db` object using the `db.once` and `db.on` methods.
 
 Add the following, just after the last import in your `server.js` file:
 
@@ -497,9 +498,9 @@ db.on('error', (err) => {
 });
 ```
 
-Now, we need to add helper functions that performs all the query operations. Doing this makes the logic of the queries and mutations much neater.
+We need to add helper functions that perform all the query operations. Doing this makes the logic of the queries and mutations much neater.
 
-This will be done in the `dbUtils.js` file under the `db` directory. Add the following inside this file:
+This will be done in the `dbUtils.js` file under the `db` directory. For example, add the following inside this file:
 
 ```javascript
 const BookModel = require('./books');
@@ -660,20 +661,20 @@ Now, we can start testing our application.
 
 ![add books mutations](/engineering-education/how-to-build-graphql-apis-with-expressjs-and-typescript/multiple-addbook-mutation-mongo.png)
 
-If we want to create the same mutation multiple times, we need to use an alias. This is done by giving each mutation an unique name.
+If we want to create the same mutation multiple times, we need to use an alias. This is done by giving each mutation a unique name.
 
-Using the `books` and `book` query, we can get all the books and a single book respectively.
+We can get all the books and a single book, respectively, using the `books` and `book` query.
 
-![books and book queries](/engineering-education/how-to-build-graphql-APIs-with-expressjs-and-typescript/books-book-query-mongo.png)
+![books and book queries](/engineering-education/how-to-build-graphql-apis-with-expressjs-and-typescript/books-book-query-mongo.png)
 
 Lastly, let's test the `updateBook` and `deleteBook` mutations.
 
-![update and delete book mutation](/engineering-education/how-to-build-graphql-APIs-with-expressjs-and-typescript/update-and-delete-book-mutations-mongo.png)
+![update and delete book mutation](/engineering-education/how-to-build-graphql-apis-with-expressjs-and-typescript/update-and-delete-book-mutations-mongo.png)
 
 If we run these mutations one more time, the `deleteBook` mutation will return "Book not found error".
 
-## Migrating to TypeScript
-Now, let's try to migrate the existing code to TypeScript, since TypeScript allows us to specify data types which helps enhance the compilation and execution time.
+### Migrating to TypeScript
+Now, let's try to migrate the existing code to TypeScript since TypeScript allows us to specify data types which helps enhance the compilation and execution time.
 
 If you are not familiar with Typescript, you can check out the official docs [here](https://www.typescriptlang.org/docs/).
 
@@ -681,9 +682,9 @@ We start by installing Typescript as a dev dependency.
 
 Then, we need to set up Typescript in our project by running `tsc --init` that generates a `tscconfig.json` file.
 
-Inside the file, set the `rootDir` value to `./` and `outDir` value to `./dist`. The `allowJs` line can be commented out, since we need not compile JavaScript files again.
+Inside the file, set the `rootDir` value to `./` and `outDir` value to `./dist`. The `allowJs` line can be commented since we need not recompile JavaScript files.
 
-The `rootDir` option tells Typescript how to find your source (Typescript) files. The `outDir` option tells Typescript where to put the compiled files.
+The `rootDir` option tells Typescript to find your source (Typescript) files. The `outDir` option tells Typescript where to put the compiled files.
 
 In your `package.json` file, add the following to your `scripts` section.
 
@@ -694,13 +695,13 @@ In your `package.json` file, add the following to your `scripts` section.
     "dev": "nodemon dist/server.js"
 ```
 
-Next, we need to change all our file names from, say, `xxx.js` to `xxx.ts`
+Next, we need to change all our file names from, say, `xxx.js` to `xxx.ts`.
 
 ![project structure](/engineering-education/how-to-build-graphql-apis-with-expressjs-and-typescript/ts-project-structure.png)
 
 If we try to compile our TypeScript code, we should have a couple of errors, the remaining part of this article will be concerned with fixing these type errors.
 
-We also need to install type definitions for our project. This helps TypeScript get the data type of functions and objects that will be used in the codebase.
+We also need to install type definitions for our project. This helps TypeScript get the data type of functions and objects used in the codebase.
 
 ```bash
 npm i @types/express @types/mongoose @types/express-graphql @types/dotenv @types/graphql -D
@@ -712,13 +713,13 @@ We also need to install `nodemon` to run our application in development mode.
 npm i nodemon -D
 ```
 
-We need to convert all our `require` to `import` statements, and our `module.exports` to `export default`.
+We need to convert all our `require` to `import` statements and our `module.exports` to `export default`.
 
 The complete typescript source code can be seen [here](https://github.com/Babatunde13/bookrr).
 
-All we have to do to fix the errors, was add types and interfaces to the codebase, change all `require` to `import` statements, create interfaces (or types) for the database schema and objects.
+To fix the errors, we had to add types and interfaces to the codebase, change all `require` to `import` statements, and create interfaces (or types) for the database schema and objects.
 
-To run the app, we build it using `npm run build` or `npm run build:watch`, if we want to run the code in watch mode.
+To run the app, we build it using `npm run build` or `npm run build:watch` if we want to run the code in watch mode.
 
 Then, to start the server, we need to run `npm start` or `npm run dev` to run it in watch mode. Everything should work as expected now.
 
@@ -733,7 +734,7 @@ You can check [this](https://graphql.org/graphql-js/authentication-and-express-m
 
 You might also want to [dockerize](https://www.bezkoder.com/docker-compose-nodejs-mongodb/) your application and deploy it to [AWS](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/nodejs-getstarted.html) or [Heroku](https://scotch.io/tutorials/how-to-deploy-a-node-js-app-to-heroku).
 
-The way we had structured the `schema` is suitable even for large applications. Let's take, for instance, an application with queries and mutations for `users`, `books`, `authors`, etc., we need to destructure all the mutations and queries in the `resolver` object inside the `schema/index.js` file.
+The way we had structured the `schema` is suitable even for large applications. Let's take, for instance, an application with queries and mutations for `users`, `books`, `authors`, etc. First, we must destructure all the mutations and queries in the `resolver` object inside the `schema/index.js` file.
 
 Implementing with [Apollo GraphQL](https://www.apollographql.com/docs/apollo-server/) is yet another option we have.
 
