@@ -1,81 +1,112 @@
- ### Authentication Using Facebook in Android Studio
- Authentication is essential for securing access to online content. The user, thus, has to provide proof of their identity.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /authentication-using-facebook-in-android-studio/
+title: Authentication using Facebook in Android Studio
+description: This tutorial will guide the readers on how to implement Facebook authentication in Android Studio.
+author: michael-johnson-owallah
+date: 2021-12-06T00:00:00-04:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
-In this article, we will be discussing Facebook Authentication on android apps.
+  - url: /engineering-education/authentication-using-facebook-in-android-studio/hero.jpg
+    alt: Authentication Using Facebook Hero Image
+---
+Authentication is essential for securing access to specific online content. A user has to provide proof of their identity.
+<!--more-->
+In this article, we will discuss how to implement Facebook authentication in Android apps.
 
-### What you need to have
-To follow in this article, the reader should equip themselves with the following:
-- Have an installed functional `Android Studio IDE`
-- Have some basic knowledge in `Kotlin`
-- Have some basic Know-how on Creating projects in `Android Studio`
-- Have some basic knowledge of authentication with `Firebase`
-### What You will Know
-At the end of this article the reader will have learned the following:
-- An understanding of Facebook Authentication.
-- Know-how on the creation of `Facebook Developer` account
-- Know-how on the creation of projects on the `Facebook Developers` console
+### Prerequisites
+To follow along, the reader should have:
+- Android Studio installed.
+- Some basic knowledge of `Kotlin`.
+- Some knowledge of authentication using `Firebase`.
+
+### Goal
+At the end of this article, the reader will have learned how Facebook authentication works.
+
 ### Introduction
-When accessing third-party services, not only the user should identify themselves. The app should receive authority to act on behalf of the user.
-Among the ways to deal with authentication today is Facebook Authentication.
-Facebook has provided an authentication SDK. This SDK enables authentication to access third-party services by use of `Facebook Login`
-### An Overview of Other Authentication Forms
-Firebase has provided other ways to offer authentication to third-party content. For instance the use of `Email and Password`
-This is through `firebaseAuth.createUserWithEmailAndPassword(email,password)`
-This process, yet, is somewhat tedious as it involves the user creating an account. Later then they can use the details to log in to the app.
+When accessing third-party services, most applications require users to identify themselves. One of the popular authentication frameworks is Facebook.
+
+This software giant has an SDK that enables authentication. Therefore, developers can use to ensure that individuals sign in before accessing third-party services.
+
+### Firebase overview
+Firebase is also a common system for authentication and data storage. It allows users to authenticate themselves using `emails`, `passwords`, and even `phone numbers`.
+
+The `firebaseAuth.createUserWithEmailAndPassword(email,password)` method authenticates authenticates a person using the provided credetials (email and password).
+
+However, Firebase authentication is tedious and challenging to implement. This is why some developers still build their authentication systems from scratch.
+
 ### Why Facebook Login?
-The Superiority of Facebook Login above the other traditional authentication are as follows:
-- When users sign in to your app with Facebook, they grant your app permission. This permission can allow your app to access information. Your app can also perform actions on Facebook on behalf of the user.
-- With a Facebook login, the user does not need to create a new account before accessing content on your app. At the click of a button, the user is immediately identified. That is if they have a prior Facebook account) then the login.
-## Enough on the much theory. Now let us make things happen!
+Facebook authentication is superior to other traditional frameworks as follows:
 
-In our example, we will be creating an application that authenticates with Facebook. The application will also display the user's Facebook details. For instance  `username, email, birthday, gender and profile pic`.
-### Step 1: Creation of a Project
-In this step, we will create a project with an empty activity in Android Studio.
-In your Android Studio, at the top left corner, click on File -> New -> New Project -> Empty Activity
-![creating a project](/engineering-education/authentication-with-facebook-in-android-studio/creating_project.png)
-You click on next then give your project a name of your choice. 
+- When individuals sign in using Facebook, they grant your app permission to access information or perform different actions.
+
+- With a Facebook login, the user does not need to create a new account to access your app's content. 
+
+In this tutorial, we will create an application that authenticates users using Facebook. 
+
+The application will also display the user's Facebook details. For instance  `username, email, birthday, gender, and profile pic`.
+
+### Step 1: Getting started
+In this step, we will create a project with an `empty activity` template.
+
+In Android Studio, navigate to the top left corner and click on File -> New -> New Project -> Empty Activity.
+
+![creating a project](/engineering-education/authentication-using-facebook-in-android-studio/creating_project.png)
+
+### Step 2: Connecting your application to Firebase
+At the top of your `Android Studio`, click on `Tools` then on `Firebase`. On the assistant window that appears on your right select `Authentication`.
 
 
-### Step 2: Connecting your Application to Firebase
-At the top of your android studio, click on Tools.
-Click on firebase. On the assistant window that appears on your right select Authentication.
-You then select Facebook.
-Go ahead and click on Connect to Firebase. You then click on Add Firebase Authentication to your app.
+You need to select `Facebook` and `connect to Firebase`. The next step is to add `Firebase Authentication` to your app.
 
-On your browser open the Firebase console and select your project. Under authentication click on Facebook and enable it.
-### Step 3: Facebook for Developers
-Head over to https://developers.facebook.com/ and create an account (If you do not have one).
-Then click on my apps and create a new app. on the drop-down select Consumer then click next.
-Enter the app details and click next.
-On your left click on Settings and select basic. You can now copy the App ID and App Secret. Paste these into the firebase console fields under Facebook authentication.
-Now click on the dashboard and select the Facebook setup option. Select Android and click on next.
-![creating a project](/engineering-education/authentication-with-facebook-in-android-studio/facebook_for_developers.png)
-Under the first step, click next.
-### Step 4: Adding Dependencies
-In your settings.gradle file, add `mavenCentral()` under repositories.
+On your browser open the `Firebase console` and then select your project. Under `authentication`, click on `Facebook` and enable it.
 
-```In your build.gradle(Module.app) add the following dependencies:
-implementation 'com.github.bumptech.glide:glide:4.12.0'
+### Step 3: Facebook for developers
+Navigate to https://developers.facebook.com/ and create an account (If you do not have one).
+
+Then click on `my apps` to create a new app. On the drop-down menu, select `Consumer` then click `next`. Enter the `app details` to complete the registration
+
+On your left, click on `Settings` and select `basic`. You can now copy the `App ID` and `App Secret`. 
+
+Paste these details into the `Firebase console fields` under `Facebook authentication`.
+
+Now, click on the `dashboard` and choose the `Facebook setup` option. Select `Android` and click on next.
+
+![creating a project](/engineering-education/authentication-using-facebook-in-android-studio/facebook_for_developers.png)
+
+### Step 4: Adding dependencies
+In your `settings.gradle` file, add `mavenCentral()` under repositories.
+
+In the app level `build.gradle` file, include the following dependencies:
+
+```gradle
 //Glide
+implementation 'com.github.bumptech.glide:glide:4.12.0'
 annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
+//Facebook
 implementation 'com.facebook.android:facebook-android-sdk:12.1.0'
- ```
+```
 
- Add the following to your build.gradle(Module.app) under Android
- ```
+Also, add the following setting in the `build.gradle` file:
+
+```gradle
 buildFeatures {
         viewBinding true
     }
- ```
-### Step 5: More App Details on Facebook Developers
-Add your package and default activity class names in the fields provided. Click on next.
+```
 
-### Step 6: Hash Key Generation
-Using your SHA1 key, generate a hash key and paste it on the `key hashes option`
+#### Step 5: Generating the Hash Key
+Using your `SHA1` key, generate a `hash key` and paste it in the `key hashes option`
 
-### Step 7: Editing the Manifest and String files
-Add the following lines of code to your Manifest and String files:
-``` Manifest
+### Step 6: Editing the Manifest and String files
+Add the following lines of code to your `Manifest.xml` and `string.xml` files:
+
+**Manifest.xml**
+```xml
 <uses-permission android:name="android.permission.INTERNET"/>
 
 //in Application
@@ -97,13 +128,14 @@ Add the following lines of code to your Manifest and String files:
         </activity>
 ```
 
-``` Strings
+**String.xml**
+```xml
 <string name="facebook_app_id">214268554165523</string>
 <string name="fb_login_protocol_scheme">fb214268554165523</string>
 ```
 
-### Step 8: XML Layout
-We will now create our User Interface 
+### Step 8: Creating the user interface
+Our user interface will include the following components:
 
 ```Xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -218,10 +250,12 @@ We will now create our User Interface
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
 
-### Step 9: The Code
-We will now write our code in the MainActivity
+Note that we have imported `<com.facebook.login.widget.LoginButton/>` from the Facebook authentication package.
 
-```Kotlin
+### Step 9: MainActivity
+We need to include some logic in the `MainActivity.kt` file. Note that I have explained the following code using in-line comments.
+
+```kotlin
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -236,38 +270,38 @@ import java.util.*
 
 private const val TAG = "MainActivity"
 class MainActivity : AppCompatActivity() {
+
 //To avoid findViewById, we use view binding.
-//Declare it as bellow
     private lateinit var binding: ActivityMainBinding
+
 //Declare the Facebook callbackmanager    
     private lateinit var callBackManager: CallbackManager
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view: View = binding.root
         setContentView(view)
         
-//Now Initialize the callbackmanager
+//Now initialize the callbackmanager
 
         callBackManager = CallbackManager.Factory.create()
         
-//set the login button with permissions to read and ad to a list all user data you want to get   
+//set the login button with permissions to read and add to a list all user data 
 
         binding.loginButton.setReadPermissions(listOf("email","public_profile","user_gender","user_birthday"))
         
-//now after the login button is clicked a callback is registered.
-//This callback can return an error, success or can be cancelled
+//A callback is registered when the login button is clicked.
+//The callback can return an error or success message. It can also be canceled
 
         binding.loginButton.registerCallback(callBackManager, object : FacebookCallback<LoginResult>{
-            override fun onCancel() {
+            override fun onCancel() { // this method is invoked when the request is cancelled
                 Toast.makeText(this@MainActivity,
                     "Cancelled",
-                    Toast.LENGTH_SHORT).show() }
+                    Toast.LENGTH_SHORT).show() } 
 
             override fun onError(error: FacebookException) {
                 Toast.makeText(this@MainActivity, "$error", Toast.LENGTH_SHORT).show() }
-
+                //Incase of an error, the above message is displayed.
             override fun onSuccess(result: LoginResult) {
                 val graphRequest = GraphRequest.newMeRequest(result?.accessToken){`object` ,response ->
                 getFacebookData(`object`)
@@ -278,9 +312,9 @@ class MainActivity : AppCompatActivity() {
                 graphRequest.executeAsync()
             } })
     }
-//This function gets the users facebook data.
-//This includes the username, email, birthday, gener and the ptofile picture.
-//As they appear in facebook
+//This function gets the users' Facebook data.
+//This includes the username, email, birthday, gender, and profile picture.
+//As they appear on Facebook
 
     private fun getFacebookData(jsonObject: JSONObject?) {
         val profilePic = "https://graph.facebook.com/${jsonObject
@@ -305,14 +339,15 @@ class MainActivity : AppCompatActivity() {
 }
 ```
 
-### Output
-After running your app, this should be your expected output:
-![Demo](/engineering-education/authentication-with-facebook-in-android-studio/20211115174442.mp4)
+When you run the above application, you should be able to access Facebook authentication.
 
 ### Conclusion
-Facebook Authentication entails so much more than this. We scratched the surface.
-Keep Exploring and studying.
+In this tutorial, we have discussed some basic aspects of Facebook Authentication. You can, therefore, use this knowledge to craft other beautiful applications.
 
-### Resources
-[Facebook for developers](https://developers.facebook.com/)
-[Firebase](https://console.firebase.google.com/)
+### Further reading
+- [Facebook for developers](https://developers.facebook.com/)
+- [Firebase](https://console.firebase.google.com/)
+
+
+---
+Peer Review Contributions by: [Wanja Mike](/engineering-education/authors/michael-barasa/)
