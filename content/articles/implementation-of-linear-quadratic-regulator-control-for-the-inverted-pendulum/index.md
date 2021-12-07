@@ -6,7 +6,7 @@ url: /implementation-of-linear-quadratic-regulator-control-for-the-inverted-pend
 title: Implementation of Linear Quadratic Regulator Control for the Inverted Pendulum
 description: This tutorial will give a step by step process of designing a controller for the inverted pendulum on a cart. The controller will use the linear quadratic regulator to balance it upright.
 author: atieno-dorine
-date: 2021-12-01T00:00:00-11:10
+date: 2021-12-07T00:00:00-10:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -36,7 +36,7 @@ This system seems more physical than a simple pendulum with some torque at the b
 
 In this system, we consider the following parameters:
 - State of the system (x): It is the cart's position.
-- Angle of the pendulum arm(`\theta`).
+- Angle of the pendulum arm($\theta$).
 
 ![inverted cart with parameters](/engineering-education/implementation-of-linear-quadratic-regulator-control-for-the-inverted-pendulum/pendulum-two.png)
 
@@ -44,7 +44,7 @@ We are going to represent our dynamical state by vector `x` and the positions as
 
 $$\begin{vmatrix}x\\\dot{x}\\\theta\\\dot{\theta}\end{vmatrix}$$
 
-So, this is a two-degree of freedom system with the `x` values (position of the cart) and the pendulum's angle (`\theta`). Since it is two-degree freedom, from newton's second law, we get four couple `ode45`. We will have:
+This is a two-degree of freedom system with the `x` values (position of the cart) and the pendulum's angle ($\theta$). Since it is two-degree freedom, from newton's second law, we get four couple `ode45`. We will have:
 
 $$\frac{d}{dt}x=f(x)$$
 
@@ -164,7 +164,7 @@ B = [0; 1/M; 0; s*1/(M*L) 0];
 eig(A)
 ```
 
-We have obtained an A\*B matrix for the linear system of the equation. Since the up and down linearization shares a lot in common, we decide to use switch `s`.
+We have obtained an A\*B matrix for the linear system of the equation. Since the up and down linearization shares a lot in common, we use switch `s`.
 
 When the pendulum is up, the switch is 1, and when it is down, it is -1. For now, it is 1, which means the pendulum is up, but when we want to make it down, we change it to -1.
 
@@ -176,7 +176,7 @@ Now, we want to know if `A` and `B` are controllable. To do that, we use the `ct
 ctrb(A.B)
 ```
 
-When we execute this, we will have the controllability matrix. It is a `4x4` matrix. After getting this matrix, we find the rank of this matrix. If the rank is 4, then our system is controllable, if not, then it is uncontrollable. To find the rank, execute the code below:
+When we execute this, we will have the controllability matrix. It is a `4x4` matrix. After getting this matrix, we find its rank. If the rank is 4, then our system is controllable, if not, then it is uncontrollable. To find the rank, execute the code below:
 
 ```Matlab
 rank(ctrb(A,B))
@@ -200,7 +200,7 @@ k = place(A,B, eig)
 
 We then take the controller and apply it to the non-linear system to show that we can stabilize the unstable inverted pendulum configuration.
 
-### Linear Quadratic regulator(LQR)
+### Linear Quadratic regulator (LQR)
 Initially, we said that the state feedback allows us to place our eigenvalues anywhere. However, the problem is knowing the right place to put them.
 
 There is a powerful tool in the control theory called LQR. It is the essential solution to the problem stated. The idea is, we can cook the cost function that tells us how bad it is, if our state is slow to converge to where we want it to be.
@@ -234,7 +234,7 @@ R = 0.001
 
 In Matlab, if you have `Q` and `R`, it turns out that `k` is the optimal matrix. Note that the best `k` is the best controller that minimizes the cost function, the `LQR`.
 
-Now applying this in Matlab is as easy as shown below:
+Applying this in Matlab is as easy as shown below:
 
 ```Matlab
 k = lqr(A,B,Q,R)
@@ -252,7 +252,7 @@ tspan = [0: .001: 10]
 
 ![final output](</engineering-education/implementation-of-linear-quadratic-regulator-control-for-the-inverted-pendulum/pendulum-four.png>)
 
-This system finds `k` and simulates. It then stabilizes to the position specified by the `Q` and `R` vectors. For example, to see where our LQR choose to place the `eig` values, execute the code below:
+This system finds `k` and simulates. It then stabilizes to the position specified by the `Q` and `R` vectors. For example, to see where our LQR chose to place the `eig` values, execute the code below:
 
 ```Matlab
 eig(A-B*k)
