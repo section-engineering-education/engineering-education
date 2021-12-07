@@ -103,7 +103,7 @@ Step 7: Continue until you've found a match.
 The Jump Search Approach is a new sorting method that locates a particular component in a sorted list. When compared to a linear search algorithm, the basic principle behind this searching strategy is to search a smaller amount of elements.
 
 In each iteration, this can be accomplished by skipping a fixed number of array elements or leaping ahead a fixed number of steps.
-##### Algorithm
+**Algorithm**
 Consider the x=3 block size.
 
 The first element is k and the second is m.
