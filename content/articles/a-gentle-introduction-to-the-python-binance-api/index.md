@@ -1,3 +1,22 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /a-gentle-introduction-to-the-python-binance-api/
+title: A Gentle Introduction to the Python Binance API
+description: This tutorial will show the reader how to extract and analyze real-time securities and crypto data from Binance using the python-binance API and Pandas library.
+author: wilkister-mumbi
+date: 2021-12-07T00:00:00-17:30
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/a-gentle-introduction-to-the-python-binance-api/hero.png
+    alt: Binance Image
+---
+Python-binance is an application programming interface that allows you to connect to the Binance servers via the python programming language. It is important to note that the python-binance library is not affiliated with Binance. 
+<!--more-->
+
 In this tutorial, we'll show you how to extract and analyze real-time securities and crypto data from Binance using the python-binance API and Pandas library.
 
 ### Table of contents
