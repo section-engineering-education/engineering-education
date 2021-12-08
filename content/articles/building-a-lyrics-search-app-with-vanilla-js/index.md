@@ -319,13 +319,11 @@ async function getLyrics(artist, songTitle) {
 ```
 Note, the api doesn't have all the lyrics of songs it suggests, it's still in progress, if you wish to have an app that can return so many lyrics, i will suggest you get a paid lyrics api. The lyrics that are not avialable, returns undefined in the div to display lyrics, it also alerts you that the lyrics is not available on the api. Also, when you input a song title to search from, you have to exercise little patience for the data to load because it is a bit slow.
 
-Next, you can decide to implement the regular expression syntax in the variable lyrics using the `replace` method. For well-aligned lyrics, the carriage returns, and line breaks are removed and replaced with a <br>. The regular expressions help to look through for any carriage return alone or carriage return with a new line and replace it with the <br>. 
+Next, you can decide to implement the regular expression syntax in the variable lyrics using the `replace` method, by adding `.replace(/(\r\n|\r|\n)/g, '<br>')` to the lyrics variable, meaning you should have something like this, `const lyrics = data.lyrics.replace(/(\r\n|\r|\n)/g, '<br>');`. For well-aligned lyrics, the carriage returns, and line breaks are removed and replaced with a <br>. The regular expressions help to look through for any carriage return alone or carriage return with a new line and replace it with the <br>. 
 
 The `/g` is a regular expression flag, it means globally, the entire document to be searched through(all matches).
 
 Output content displays song titles in bolder form compared to the artist name because of the strong tag. 
-
-
 
 Finally, the lyrics are displayed in the paragraph tag when the span tag is clicked.
 
