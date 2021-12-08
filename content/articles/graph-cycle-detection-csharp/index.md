@@ -12,7 +12,7 @@ excerpt_separator: <!--more-->
 images:
 
  - url: /engineering-education/graph-cycle-detection-csharp/hero.jpg
-   alt: cycle img graph
+   alt: cycle Detection in C sharp image graph
 ---
 Graphs are one of the most versatile data structures. This is because they allow us to solve interesting problems.
 <!--more-->
