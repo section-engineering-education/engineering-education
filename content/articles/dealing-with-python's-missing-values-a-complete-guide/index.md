@@ -20,7 +20,7 @@ The dataset's data structure can be improved by removing errors, duplication, co
 ### Significance of handling the missing values
 Effective data management necessitates the ability to fill in blanks. It's a big deal in data analysis because it has such an impact on the outcome.
 
-When you're aware of so many data gaps, it's hard to accept the results. The statistical strength of a study might be weakened by skewed estimates, leading to inaccurate results.
+There are so many data gaps that it's hard to accept the results when you know there are so many of them. In a statistical study, skewed estimates could make it less reliable and give people the wrong results.
 
 ### Problems caused by missing values
 - Because of this, it becomes more difficult to rule out the [null hypothesis](https://en.wikipedia.org/wiki/Null_hypothesis) during testing.
@@ -34,7 +34,7 @@ When you're aware of so many data gaps, it's hard to accept the results. The sta
 Several classification or prediction models depends on the pattern of the data lacking from the dataset.
 
 #### 1. Missing completely at random
-It doesn't matter if there are observed or unobserved data when using MCAR. The participants with incomplete data and those with complete data did not show any systematic differences. If data are MCAR, the remaining data can be viewed as a simple random sample of the entire dataset of interest. According to most, MCAR is an overly optimistic and frequently unfounded assumption.
+It doesn't matter if there are observed or unobserved data when using MCAR. If data are MCAR, the remaining data can be viewed as a simple random sample of the entire dataset of interest. According to most, MCAR is an overly optimistic and frequently unfounded assumption.
 
 This occurs when the chance of missing data is unrelated to the prediction value or the observed response to a query.
 
@@ -52,7 +52,7 @@ __Solution:__ Imputation of data.
 We impute the missing data, when we find that missing data has high correlation to the target variable that might result in better model results.
 
 #### 3. Missing not at Random
-Whenever data are MNAR, the missingness is systematically linked to the unobserved data, meaning that the missingness is linked to events or factors that the researcher is unable to measure. If a complete case analysis of a data set containing MNAR data is biased, the fact that sources of missing data are unmeasured means that this issue cannot be addressed in analysis and the estimate of effect will likely be biased.
+When data are MNAR, the missing data is always linked to the unobserved data, which means that the missing data is linked to things or events that the researcher can't measure. Complete case analysis of a data set with MNAR data can be biased because the sources of missing data aren't measured. This means that this issue can't be addressed in the analysis, which means that your conclusion about the effect of the data set will be skewed by this fact.
 
 Missing not at random is the only piece of information that is lacking, other than the previously listed categories.
 
@@ -67,7 +67,7 @@ A variety of sizes and shapes are offered in the form of imputations. To build a
 - __Numerous imputations:__ Duplicate missing value imputation across multiple rows of data. To get multiple imputed datasets, you must basically repeat a single imputation process.
 - __Multivariate imputation:__ Impute values based on other variables, such as estimating missing values using linear regression. 
 ### How to fix our dataset's missing data
-There are a variety of approaches to dealing with missing data; we will look at some of them, but first, we will start from the beginning with things like importing libraries.
+There are a variety of approaches to dealing with missing data. We will look at some of them, but first, we will start from the beginning with things like importing libraries.
 ```Python
 import pandas as pan
 import numpy as num
@@ -102,14 +102,14 @@ AgeNumber    1
 PhD          0
 dtype: int64
 ```
-Don't worry about missing information. The algorithm decides how to interpret the data you provide and also are affected by missing data. Training loss reduction algorithms yields optimal imputation values for missing data.
+Don't worry about not having enough information. The algorithm decides how to read the data you give it and how it will be used if there isn't enough of it. Loss-reduction algorithms can be trained to find the best values for missing data.
 
 An error can be made in linear regression. We need to deal with the lack of data until we figure out what went wrong with the model. If it's positive, we'll go ahead. If not, we'll stop.
 ```Python
 dataset["AgeNumber"][:10]
 ```
 #### Removing the rows/columns that are not in use
-The next simplest strategy is to exclude observations with missing data. In the end, you can miss out on important pieces of information. Python's pandas module has a dropna() method for getting rid of empty columns. When dealing with machine learning issues, rely on your own experience or that of a domain expert rather than attempting to fill in every blank in every column.
+The next simplest thing to do is to leave out observations that don't have any data. In the end, you might not know important things. Python's pandas module has a method called `dropna()` that can be used to get rid of empty rows. When you're dealing with machine learning problems, don't try to fill in every blank in every column.
 
 There are both advantages and disadvantages to removing the rows/columns; 
 #### Advantages:
@@ -144,7 +144,7 @@ dataset["AgeNumber"] = dataset["AgeNumber"].replace(num.NaN, dataset["AgeNumber"
 print(dataset["AgeNumber"][:10])
 ```
 #### Imputation based on the most common values (mode)
-It can be applied to categorical variables with a restricted number of values. `Education level` is a good example of an ordinal categorical attribute that falls into this category: Data bias can occur since feature relationships are not considered when utilizing this procedure. If the category values are not evenly distributed among the categories, the likelihood of biasing the data increases.
+It can be applied to categorical variables with a restricted number of values. `Education level` is a good example of an ordinal categorical attribute that falls into this category. Data bias can occur since feature relationships are not considered when utilizing this procedure. If the category values are not evenly distributed among the categories, the likelihood of biasing the data increases.
 
 It is compatible with all data formats, and the value of covariance between independent features cannot be predicted.
 
@@ -153,13 +153,13 @@ import statistics
 dataset["AgeNumber"] = dataset["AgeNumber"].replace(num.NaN, statistics.mode(dataset["AgeNumber"]))
 print(dataset["AgeNumber"][:10])
 ```
-#### Interpolation – Linear
-It is a where a straight line is used to join dots in increasing order to approximate a missing value. For the most part, the unknown value is calculated in the same ascending order as the previous values. We didn't have to specify Linear Interpolation because it is the default method. Almost always, it will be used in a time-series dataset.
+#### Interpolation–Linear
+It is where a straight line is used to join dots in increasing order to approximate a missing value. For the most part, the unknown value is calculated in the same ascending order as the previous values. We don't have to specify Linear Interpolation because it is the default method. Almost always, it will be used in a time-series dataset.
 ```Python
 dataset["AgeNumber"] = dataset["AgeNumber"].interpolate(method='linear', limit_direction='forward', axis=0)
 dataset.isnull().sum()
 ```
-> To fill in the blanks in our dataset, we can make use of the aforementioned concepts. When it comes to finding missing values, there isn't a single method that works best; the answer for finding missing values differs based on the feature and application we want to use. As a result, we'll have to experiment to find the best solution for our application.
+> To fill in the blanks in our dataset, we can make use of the forementioned concepts. When it comes to finding missing values, there isn't a single method that works best. The answer for finding missing values differs based on the feature and application we want to use. As a result, we'll have to experiment to find the best solution for our application.
 
 You can run the codes [here](https://colab.research.google.com/drive/1O7O4oo2k5FIFFTcE-bU8kBGxeumyv1v2?usp=sharing)
 ### Reference 
