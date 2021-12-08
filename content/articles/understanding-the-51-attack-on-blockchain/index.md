@@ -1,4 +1,4 @@
----
+﻿---
 layout: engineering-education
 status: publish
 published: true
@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/understanding-the-51-attack-on-blockchain/hero.jpeg
     alt: Understanding the 51% attack on blockchain example Image
 ---
-[Blockchain](https://www.ibm.com/topics/what-is-blockchain) technology is not a new term in today’s digital world. The technology has existed over the past few years. 
+[Blockchain](https://www.ibm.com/topics/what-is-blockchain) technology is not a new term in today’s digital world. The technology has existed over the past few years.
 <!--more-->
 It is prevalent when cryptocurrencies such as [Bitcoin](https://bitcoin.org/en/) are mentioned. However, according to numerous research reports, businesses have not fully adopted the use of cryptocurrencies. Most of these businesses are relying on traditional methods in their operations instead of using blockchain technology.
 
@@ -28,13 +28,13 @@ This article will cover the 51% attack on the blockchain. The reader will unders
 
 ### Overview
 1. [Introduction](#introduction)
-2. [Understanding 51% attack on Bitcoin and Blockchain](#understanding-51%-attack-on-bitcoin-and-blockchain)
-3. [The impacts of 51% attack on Blockchain and Bitcoin](#the-impacts-of-51%-attack-on-blockchain-and-bitcoin)
-4. [Risks involved with 51% attack](#risks-involved-with-51%-attack)
-4. [The platforms faced a 51% attack](#the-platforms-faced-a-51%-attack)
-5. [Comparing a 51% attack with a 34% attack](#comparing-a-51%-attack-with-a-34%-attack)
-6. [Ways to prevent a 51% attack](#ways-to-prevent-a-51%-attack)
-7. [Can 51% attack reoccur?](#can-51%-attack-reoccur?)
+2. [Understanding 51% attack on Bitcoin and Blockchain](#understanding-51-attack-on-bitcoin-and-blockchain)
+3. [The impacts of 51% attack on Blockchain and Bitcoin](#the-impacts-of-51-attack-on-blockchain-and-bitcoin)
+4. [Risks involved with 51% attack](#risks-involved-with-51-attack)
+4. [The platforms faced a 51% attack](#the-platforms-faced-a-51-attack)
+5. [Comparing a 51% attack with a 34% attack](#comparing-a-51-attack-with-a-34-attack)
+6. [Ways to prevent a 51% attack](#ways-to-prevent-a-51-attack)
+7. [Can 51% attack reoccur?](#can-51-attack-reoccur?)
 8. [Wrapping up](#wrapping-up)
 9. [Further reading](#further-reading)
 
@@ -109,7 +109,7 @@ A good example is Bitcoin, where its network and hash rate are vast and complex 
 #### Using Proof of Stake
 A single miner can become the majority player in a small blockchain network.  All the blockchain networks that use PoW have a policy that the miners have to upgrade their equipment regularly. Failure to which, they may not receive the block rewards, and they will fall behind other miners in the network.
 
-In order to avoid the risk of a 51% attack, the blockchain can use [Proof of Stake](https://www.fool.com/investing/stock-market/market-sectors/financials/cryptocurrency-stocks/proof-of-stake) (PoS), which is a more secure consensus than PoW. In most cases, the PoS incentives are controlled by most affluent users unlikely to perform the attack. However, blockchains have moved from this structure, and they prefer more decentralized alternatives such as [Delegated-Proof-of-Stake](https://academy.binance.com/en/articles/delegated-proof-of-stake-explained) (DPoS).
+To avoid the risk of a 51% attack, the blockchain can use [Proof of Stake](https://www.fool.com/investing/stock-market/market-sectors/financials/cryptocurrency-stocks/proof-of-stake) (PoS), which is a more secure consensus than PoW. In most cases, the PoS incentives are controlled by most affluent users unlikely to perform the attack. However, blockchains have moved from this structure, and they prefer more decentralized alternatives such as [Delegated-Proof-of-Stake](https://academy.binance.com/en/articles/delegated-proof-of-stake-explained) (DPoS).
 
 #### Strong network community
 When using the PoS or DPoS, a user with a minimal stake level in a network is voted a [block validator](https://support.avax.network/en/articles/4064704-what-is-a-blockchain-validator). The validators are voted in by the community. In case of collusion to compromise the network, they are thrown out of the network by the community.
@@ -117,7 +117,7 @@ When using the PoS or DPoS, a user with a minimal stake level in a network is vo
 This approach prevents the occurrence of a 51% attack. It is also effective in avoiding double-spending as the rules for the malicious validators are coded into the blockchain.
 
 ### Can 51% attack reoccur?
-There is a high possibility that a 51% attack can reoccur if the attacker embedded a bug in the blockchain’s code. An attacker can manipulate the blockchain to reproduce new blocks at a faster rate in order to initiate the second attack.
+There is a high possibility that a 51% attack can reoccur if the attacker embedded a bug in the blockchain’s code. An attacker can manipulate the blockchain to reproduce new blocks faster to initiate the second attack.
 
 In summary, an attacker can attack the blockchain again. It is upon the blockchain to ensure that their systems are more secure and resilient.
 
