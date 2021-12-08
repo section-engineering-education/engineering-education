@@ -12,7 +12,7 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/pure-css-wave-animations-website/hero.jpg
-    alt: animations img
+    alt: Pure CSS Waves animations image
 ---
 Adding animations to your website makes it look livelier and more attractive to your users, it increases its presence, and improves conversions. The downfall of adding animations using JavaScript is that they reduce a website's performance, especially when the developer fails to select an optimized library. 
 <!--more-->
