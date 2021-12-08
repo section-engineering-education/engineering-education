@@ -2,22 +2,20 @@
 layout: engineering-education
 status: publish
 published: true
-url: /how-to-add-pure-css-wave-animations-to-your-website/
-title: How To Add Pure CSS Waves To Your Website
+url: /pure-css-wave-animations-website/
+title: How to Add Pure CSS Waves to Your Website
 description: In this article, we will use pure CSS and HTML to add animations to a website.
 author: linchez-maina
-date: 2021-12-04T00:00:00-15:20
+date: 2021-12-08T00:00:00-11:10
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/how-to-add-pure-css-wave-animations-to-your-website/hero.jpg
+  - url: /engineering-education/pure-css-wave-animations-website/hero.jpg
     alt: animations img
 ---
-Adding animations to your website makes it look livelier and more attractive to your users, increases its presence, and improves conversions. 
+Adding animations to your website makes it look livelier and more attractive to your users, it increases its presence, and improves conversions. The downfall of adding animations using JavaScript is that they reduce a website's performance, especially when the developer fails to select an optimized library. 
 <!--more-->
-The downfall of adding animations using JavaScript is that they reduce a website's performance, especially when the developer fails to select an optimized library. 
-
 However, there is a turnaround to such a problem, and that is using pure CSS and HTML. 
 
 ### Goal
@@ -37,32 +35,28 @@ To follow along with this tutorial, you should have:
 ### CSS Animations
 CSS animations lets an element gradually change from one CSS configuration style to another.
 
-They contain two components:
+They contain a couple of components:
 - A style configuring the CSS animation.
-- A stack of keyframes indicating how the animation style will begin and finish;
+- A stack of keyframes indicating how the animation style will begin and finish.
 - Intermediate waypoints are also possible.
 
-### Advantages of Using CSS Animations
+### Advantages of using CSS animations
 A few of the advantages of using CSS animations, particularly over script-driven animation techniques like JavaScript, include:
-- Simplicity; you do not have to learn complex programming concepts.
+- Simplicity, you do not have to learn complex programming concepts.
 - You let the browser control the animation sequence when using CSS animations. This optimizes performance and efficiency.
 
 The browser achieves this by reducing update times of animations running in tabs that are not visible.
-- Good loading score. CSS animations load well, even under moderate system load.
+- Good loading score. CSS animations load well, even under moderate system load. Using JavaScript can often make simple animations load poorly.
 
-Using JavaScript can often make simple animations load poorly.
-
-### How to Use the CSS Animation Property
+### How to use the CSS animation property
 To create a CSS animation, you will have to design the elements you wish to animate with the `animation property` and its sub-properties.
 - The `animation property` lets you configure values like duration.
 - It does not dictate the natural appearance of the animation, as it is accomplished by utilizing the `@keyframes at-rule.`
 
 You can learn how to configure the animation property using its sub-properties from [here](https://www.w3schools.com/cssref/css3_pr_animation.asp)
 
-### Defining The Animation Order Using The `@Keyframes Rule.`
-After you have set your animation's sub-properties, ensuring the `animation-duration` priority, you need to define the animation's sequence or appearance. 
-
-This is done by configuring more than one keyframe using the `@keyframes rule.`
+### Defining the animation order using the '@Keyframes rule'
+After you have set your animation's sub-properties, and ensuring the `animation-duration` priority, you need to define the animation's sequence or appearance. This is done by configuring more than one keyframe using the `@keyframes rule.`
 
 You can learn how to use the `@keyfreame rule` from [here](https://www.w3schools.com/cssref/css3_pr_animation-keyframes.asp)
 
@@ -105,15 +99,15 @@ You can learn how to use the `@keyfreame rule` from [here](https://www.w3schools
 
 We will now give each of them a background obtained from the web.
 
-> The background sets both backgrounds of the two `<div>` tags with an image of something that looks like one wave crest.    
+> The background sets both backgrounds of the two `<div>` tags with an image of something that looks like one wave crest.
+
 It then sets it to repeat to appear to be always onscreen like a long chain.
 
 - We style the two `<div>` so that they are above each other by setting the top property with a negative value, giving them a width and height, and then setting the animation property.
 
 > We use a shorthand method to describe all animation sub-properties instead of writing each sub-property line by line.
 
-- We first give our animation a name:
- `wave-one` : Which we will use with the `@keyframes rule` to set the animation's keyframes.
+- We first give our animation a name: `wave-one`, which we will use with the `@keyframes rule` to set the animation's keyframes.
  
 - Then we set it to go through one cycle in eight seconds by setting the animation duration to 8s.
 ```css
@@ -170,6 +164,7 @@ animation: wave-one 8s cubic-bezier (0.37, 0.44, 0.64, 0.54) -.124s
 - It will have a negative value as its `animation-delay` property value.
 
 - It's then set to run forever (infinite). Next, we proceed and set the element to opacity value of `1` to distinguish it from the first element.
+
 ```css
 .blue-child:nth-of-type(2) {
   top: -174px;
@@ -178,9 +173,7 @@ animation: wave-one 8s cubic-bezier (0.37, 0.44, 0.64, 0.54) -.124s
   }
 ```
 
-> We use the `@keyframes rule` when defining the animations' sequence. This allows us to define how our animations 'behave' at certain times. 
- 
-In our case, we will first define a keyframe for the `wave-one` animation. We define two time stops: `0%` and `100%`.
+We use the `@keyframes rule` when defining the animations' sequence. This allows us to define how our animations 'behave' at certain times. In our case, we will first define a keyframe for the `wave-one` animation. We define two time stops: `0%` and `100%`.
 
 - At the start state, we will set the left margin to `0`, then a negative value of `1600` pixels at the stop state. This allows the elements to move from right to left.
 ```css
@@ -197,6 +190,7 @@ In our case, we will first define a keyframe for the `wave-one` animation. We de
 - We define a transform property with the value `translate3d` and set the y-value to go from a negative to a positive.
 
 - The value then changes back to a negative value to make the second child element move up and down, completing the building of a wavy animation.
+
 ```css
 @keyframes crests {
   0%, 100% {
@@ -207,6 +201,7 @@ In our case, we will first define a keyframe for the `wave-one` animation. We de
   }
 }
 ```
+
 Our final code will look like this:
 
 #### HTML
@@ -228,6 +223,7 @@ Our final code will look like this:
 </body>
 </html>
 ```
+
 #### CSS
 
 ```css
@@ -280,18 +276,17 @@ body {
   }
 }
 ```
+
 Our final website will have a wave animation that moves from right to left.
 
 You can also look up this [GitHub repository](https://github.com/lin-chez/How-To-Add-Pure-CSS-Waves-To-Your-Website.git) to find the full code on how to add pure wave css animations to your website. 
 
 ### Conclusion
-Using HTML and CSS only, we have created a wave animation that is simple to implement and will improve the website's performance.
+Using HTML and CSS only, we have created a wave animation that is simple to implement and will improve the website's performance. No one ever wants a slow loading website. Always keep that in mind while creating your website.
 
-No one ever wants a slow website. Always keep that in mind while creating your website.
+I hope this tutorial will help you develop an efficient and responsive website. Thank you for reading this tutorial.
 
-I hope this tutorial will help you develop an efficient and responsive website.
-
-Thank you for reading this tutorial.
+Happy coding!
 
 ---
 Peer Review Contributions by: [Miller Juma](/engineering-education/content/authors/miller-juma/)
