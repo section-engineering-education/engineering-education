@@ -7,7 +7,7 @@ title: How to Update a Spatial Database via API
 description: This article will walk you through how to update a spatial database via API. We will use Flask-RESTful to create a RESTful API for our application.
 author: isaiah-olatunbosun
 date: 2021-12-08T00:00:00-13:30
-topics: [Languages]
+topics: [API]
 excerpt_separator: <!--more-->
 images:
   - url: /engineering-education/updating-a-spatial-database-via-api/hero.png
