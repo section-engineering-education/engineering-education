@@ -1,5 +1,5 @@
 #### Using Kotlinx Coroutines in Firebase Authentication and Realtime Database in Android
-To authenticate users to your project, Firebase Authentication delivers backend services, easy-to-use SDKs, and ready-to-use UI frameworks. Firebase Realtime Database can be used to store the details of users. Because Android developers do not wish to write their own backends, all of this makes their job easier. 
+For user authentication to an app, Firebase offers a ready made backend that developers can leverage and add authentication feature to their apps. Also, Firebase Realtime Database can be used to store the details of users. Because Android developers do not wish to write their own backends, all of this makes their job easier. 
 
 In Android, while making network calls such as user Authentication, sending, or querying data from Firebase Database; you shouldn't perform such tasks on the `Main Thread`. You should do such tasks on the `Background Thread` and then update the UI accordingly. 
 
@@ -18,7 +18,6 @@ Our code appears cleaner with no boilerplate code when we use `Coroutines` to do
 - [ViewModel Class](#step-8---viewmodel-class)
 - [Register Activity](#step-9---register-activity)
 - [Login Activity](#step-10---login-activity)
-- [Demo](#demo)
 - [Conclusion](#conclusion)
 - [References](#references)
 
@@ -93,210 +92,12 @@ After creating the two activities, we will then define what their layout should 
 
 #### For the `activity_register.xml`, here is what it should look like, feel free to add more fields depending on your use case.
 
-```Xml
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.RegisterActivity">
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        android:text="Sign Up"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/editTextName"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:hint="Name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView">
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textCapWords" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/editTextEmail"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:hint="Email"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextName">
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textEmailAddress" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/editTextPhone"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:hint="Phone No"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextEmail">
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="phone" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/editTextPassword"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:hint="Password"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPhone">
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPassword" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/buttonRegister"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:padding="12dp"
-        android:text="Register"
-        app:layout_constraintEnd_toEndOf="@+id/editTextPassword"
-        app:layout_constraintStart_toStartOf="@+id/editTextPassword"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
-
-    <ProgressBar
-        android:id="@+id/registerProgress"
-        style="?android:attr/progressBarStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/buttonRegister"
-        app:layout_constraintStart_toStartOf="@+id/buttonRegister"
-        app:layout_constraintTop_toBottomOf="@+id/buttonRegister" />
-</androidx.constraintlayout.widget.ConstraintLayout>
-```
+[!demo1](section-engineering/using-kotlinx-coroutines-in-firebase-authentication-and-realtime-database-in-android/demo1.png)
 
 #### For the `activity_login.xml`, here is how to should look like.
-```Xml
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.LoginActivity">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        android:text="Sign In"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+[!demo2](section-engineering/using-kotlinx-coroutines-in-firebase-authentication-and-realtime-database-in-android/demo2.png)
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/editTextLoginEmail"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:hint="Email"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView">
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textEmailAddress" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/editTextLoginPass"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:hint="Password"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextLoginEmail">
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textEmailAddress" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/buttonLogin"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:padding="12dp"
-        android:text="Login"
-        app:layout_constraintEnd_toEndOf="@+id/editTextLoginPass"
-        app:layout_constraintStart_toStartOf="@+id/editTextLoginPass"
-        app:layout_constraintTop_toBottomOf="@+id/editTextLoginPass" />
-
-    <ProgressBar
-        android:id="@+id/loginProgressBar"
-        style="?android:attr/progressBarStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonLogin" />
-</androidx.constraintlayout.widget.ConstraintLayout>
-```
 
 ### Step 5 - Model Class
 Let's define a model class for a user.
@@ -311,7 +112,7 @@ data class User(
 ### Step 6 - Utility Items
 Before we go any further, let's define two items in the `util` directory
 
-1. `SafeCall` function
+`SafeCall` function
 This inline function will enable us to make safe network requests.
 
 ```Kotlin
@@ -321,17 +122,6 @@ inline fun <T> safeCall(action: () -> Resource<T>): Resource<T> {
     } catch (e: Exception) {
         Resource.Error(e.message ?: "An unknown Error Occurred")
     }
-}
-```
-
-2. `Resource` class
-This sealed class will represent the three states of our network calls, either `Loading`, `Success`, or `Error`
-
-```Kotlin
-sealed class Resource<T>(val data: T? = null, val message: String? = null) {
-    class Success<T>(data: T) : Resource<T>(data)
-    class Loading<T>(data: T? = null) : Resource<T>(data)
-    class Error<T>(message: String, data: T? = null) : Resource<T>(data, message)
 }
 ```
 
@@ -349,14 +139,14 @@ First define the following variables
 #### Registering a User
 Let's define a function that will have the logic to register a user and store his/her details in Firebase Database.
 ```Kotlin
-suspend fun register(name: String, email: String, phone: String, password: String): Resource<AuthResult> {
+suspend fun createUser(userName: String, userEmailAddress: String, userPhoneNum: String, userLoginPassword: String): Resource<AuthResult> {
     return withContext(Dispatchers.IO) {
         safeCall {
-            val result = firebaseAuth.createUserWithEmailAndPassword(email, password).await()
-            val uid = result.user?.uid!!
-            val user = User(name, email, phone)
-            databaseReference.child(uid).setValue(user).await()
-            Resource.Success(result)
+            val registrationResult = firebaseAuth.createUserWithEmailAndPassword(userEmailAddress, userLoginPassword).await()
+            val userId = registrationResult.user?.uid!!
+            val newUser = User(userName, userEmailAddress, userPhoneNum)
+            databaseReference.child(userId).setValue(newUser).await()
+            Resource.Success(registrationResult)
         }
     }
 }
@@ -393,49 +183,46 @@ Once you are done working on our `MainRepository`, right-click on the `viewmodel
 Inside the `ViewModel` we will define some variables to represent the status of creating and logging in a user and also an instance of our `Repository`.
 
 ```Kotlin
-class MainViewModel : ViewModel() {
-    private val _registerStatus = MutableLiveData<Resource<AuthResult>>()
-    val registerStatus: LiveData<Resource<AuthResult>> = _registerStatus
+private val _userRegistrationStatus = MutableLiveData<Resource<AuthResult>>()
+val userRegistrationStatus: LiveData<Resource<AuthResult>> = _userRegistrationStatus
 
-    private val _loginStatus = MutableLiveData<Resource<AuthResult>>()
-    val loginStatus: LiveData<Resource<AuthResult>> = _loginStatus
+private val _userSignUpStatus = MutableLiveData<Resource<AuthResult>>()
+val userSignUpStatus: LiveData<Resource<AuthResult>> = _userSignUpStatus
 
-    private val repository = MainRepository()
-
-    ...
-
+private val mainRepository = MainRepository()
 ```
 
 We then define two functions corresponding to login and register functions as defined in the `Repository`
 
 ```Kotlin
-fun registerUser(name: String, email: String, phone: String, password: String) {
-    var error = if (email.isEmpty() || name.isEmpty() || password.isEmpty() || phone.isEmpty()) {
+fun createUser(userName: String, userEmailAddress: String, userPhoneNum: String, userLoginPassword: String) {
+    var error =
+        if (userEmailAddress.isEmpty() || userName.isEmpty() || userLoginPassword.isEmpty() || userPhoneNum.isEmpty()) {
             "Empty Strings"
-        } else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+        } else if (!Patterns.EMAIL_ADDRESS.matcher(userEmailAddress).matches()) {
             "Not a valid Email"
         } else null
 
-        error?.let {
-        _registerStatus.postValue(Resource.Error(it))
+    error?.let {
+        _userRegistrationStatus.postValue(Resource.Error(it))
         return
     }
-     _registerStatus.postValue(Resource.Loading())
+    _userRegistrationStatus.postValue(Resource.Loading())
 
     viewModelScope.launch(Dispatchers.Main) {
-        val result = repository.register(name, email, phone, password)
-        _registerStatus.postValue(result)
+        val registerResult = mainRepository.createUser(userName = userName, userEmailAddress = userEmailAddress, userPhoneNum = userPhoneNum, userLoginPassword = userLoginPassword)
+        _userRegistrationStatus.postValue(registerResult)
     }
 }
 
-fun loginUser(email: String, password: String) {
-    if (email.isEmpty() || password.isEmpty()) {
-        loginStatus.postValue(Resource.Error("Empty Strings"))
+fun signInUser(userEmailAddress: String, userLoginPassword: String) {
+    if (userEmailAddress.isEmpty() || userLoginPassword.isEmpty()) {
+        _userSignUpStatus.postValue(Resource.Error("Empty Strings"))
     } else {
-        _loginStatus.postValue(Resource.Loading())
+        _userSignUpStatus.postValue(Resource.Loading())
         viewModelScope.launch(Dispatchers.Main) {
-            val result = repository.login(email, password)
-            _loginStatus.postValue(result)
+            val loginResult = mainRepository.login(userEmailAddress, userLoginPassword)
+            _userSignUpStatus.postValue(loginResult)
         }
     }
 }
@@ -448,69 +235,50 @@ In both functions, we make sure we call the `Repository` functions inside a `vie
 Once a user clicks on the register button, we call the `registerUser` function in the `ViewModel` passing the necessary parameters. We also observe the status of login as either loading, error, or success.
 
 ```Kotlin
-class RegisterActivity : AppCompatActivity() {
-
-    private lateinit var binding: ActivityRegisterBinding
-    private lateinit var viewModel: MainViewModel
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        binding = ActivityRegisterBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
-        viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
-
-        binding.buttonRegister.setOnClickListener {
-            viewModel.registerUser(
-                binding.editTextName.editText?.text.toString(),
-                binding.editTextEmail.editText?.text.toString(),
-                binding.editTextPhone.editText?.text.toString(),
-                binding.editTextPassword.editText?.text.toString()
-            )
-        }
-
-        viewModel.registerStatus.observe(this, Observer {
-            when (it) {
-                is Resource.Loading -> {
-                    binding.registerProgress.isVisible = true
-                }
-                is Resource.Success -> {
-                    binding.registerProgress.isVisible = false
-                    Toast.makeText(applicationContext, "Registered Successfully", Toast.LENGTH_SHORT).show()
-                }
-                is Resource.Error -> {
-                    binding.registerProgress.isVisible = false
-                    Toast.makeText(applicationContext, it.message, Toast.LENGTH_SHORT).show()
-                }
-            }
-        })
-    }
+binding.userRegisterButton.setOnClickListener {
+    viewModel.createUser(
+        binding.edxtUserName.editText?.text.toString(),
+        binding.edxtEmailAddress.editText?.text.toString(),
+        binding.edxtPhoneNum.editText?.text.toString(),
+        binding.edxtPassword.editText?.text.toString()
+    )
 }
+```
+
+Also, we will define an observe to observe the state of login
+```Kotlin
+viewModel.registerStatus.observe(this, Observer {
+    when (it) {
+        is Resource.Loading -> {
+            binding.registerProgress.isVisible = true
+        }
+        is Resource.Success -> {
+            binding.registerProgress.isVisible = false
+            Toast.makeText(applicationContext, "Registered Successfully", Toast.LENGTH_SHORT).show()
+        }
+        is Resource.Error -> {
+            binding.registerProgress.isVisible = false
+            Toast.makeText(applicationContext, it.message, Toast.LENGTH_SHORT).show()
+        }
+    }
+})
 ```
 
 ### Step 10 - Login Activity
 Once a user clicks on the Login button, we call the `loginUser` function in the `ViewModel` passing the necessary parameters. We also observe the status of login as either loading, error, or success.
 
 ```Kotlin
-class LoginActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityLoginBinding
-    private lateinit var viewModel: MainViewModel
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        binding = ActivityLoginBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
-        viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
-
-        binding.buttonLogin.setOnClickListener {
+binding.buttonLogin.setOnClickListener {
             viewModel.loginUser(
                 binding.editTextLoginEmail.editText?.text.toString(),
                 binding.editTextLoginPass.editText?.text.toString()
             )
-        }
+}
+```
 
-        viewModel.loginStatus.observe(this, Observer {
+Also, we will define an observe to observe the state of login
+```Kotlin
+viewModel.loginStatus.observe(this, Observer {
             when (it) {
                 is Resource.Loading -> {
                     binding.loginProgressBar.isVisible = true
@@ -524,15 +292,8 @@ class LoginActivity : AppCompatActivity() {
                     Toast.makeText(applicationContext, it.message, Toast.LENGTH_SHORT).show()
                 }
             }
-        })
-    }
-}
+})
 ```
-
-### Demo
-[!demo1](section-engineering/using-kotlinx-coroutines-in-firebase-authentication-and-realtime-database-in-android/demo1.png)
-
-[!demo2](section-engineering/using-kotlinx-coroutines-in-firebase-authentication-and-realtime-database-in-android/demo2.png)
 
 ### Conclusion
 In this tutorial, we have learned how to run Firebase functions in the background thread with Coroutines. To see the full implementation of this tutorial, feel free to check out this Github repository [FirebaseCoroutinesDemo](https://github.com/JoelKanyi/FirebaseCoroutinesDemo).
