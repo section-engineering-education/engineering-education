@@ -30,13 +30,13 @@ It is a thread synchronization construct that is used to communicate between thr
 
 ### Prerequisites
 1. Before beginning this tutorial, you should be familiar with the Java programming language.
-2. As the IDE for server-side Java development, have (IntelliJ IDEA)[https://www.jetbrains.com/idea/] installed.
+2. The IDE for server-side Java development have (IntelliJ IDEA)[https://www.jetbrains.com/idea/] installed.
 
 ### Uses of semaphores
 - When multiple processes are running simultaneously, semaphore variables can be used to keep them in sync.
 - We can avoid race condition circumstances by using semaphores.
 - Semaphores ensure that any missed signals are unavoidable.
-- Semaphores keep track of who has access to a shared resource. To gain access, the user needs to have a counter greater than 0.There is resticted access in this situation. A counter in the shared resource keeps track of who has access to it. For this circumstance, a thread's access to the data is required by the semaphore.
+- Semaphores keep track of who has access to a shared resource. To gain access, the user needs to have a counter greater than 0. There is restricted access in this situation. A counter in the shared resource keeps track of who has access to it. For this circumstance, a thread's access to the data is required by the semaphore.
 
 ### Semaphore operation
 - A semaphore is in charge of restricting access to a resource, as we may infer from the usage of counters.
@@ -55,7 +55,7 @@ Semaphore(int number, boolean how)
 
 The `number` tells how many permits can be given out at the start. If you want to use a shared resource, you need to have enough threads to use it. When multiple threads share a resource, only one can use it simultaneously. 
 
-The default is permision to all waiting threads  in an unknown order, with the first thread getting permission first. How can it be used to limit how access is given to threads waiting for their turn.
+The default is  permission to all waiting threads  in an unknown order, with the first thread getting permission first. How can it be used to limit how access is given to threads waiting for their turn.
 
 #### Semaphore-class methods:
 Semaphore class has the following methods:
@@ -178,7 +178,7 @@ count: 0
 The counter variable's final value will always be 0 in this program.
 
 ### How the application works 
-When accessing the count variable in the shared class, a semaphore keeps track how many threads are looking at it.
+When accessing the count variable in the shared class, a semaphore keeps tracking how many threads are looking at it.
 
 Thread `b1` increments and decrements the `SharedR.count` five times each. As a safeguard, access to `SharedR.count` is only grantable once a semaphore has granted permission for it. Upon completion, the permission is released. One thread attempts to access the SharedR.count, as can be seen in the output.
 
@@ -190,7 +190,7 @@ The semaphore prevents both threads from concurrently accessing Shared.count. Yo
 
 ### Semaphore types
 #### 1. Counting semaphores
-Counting semaphores is in handy when multiple processes are simultaneously vying to control a single vital section. It is the `take()` method that implements a semaphore.
+Counting semaphores is handy when multiple processes simultaneously vying to control a single vital section. It is the `take()` method that implements a semaphore.
 
 #### 2. Bounded semaphores
 The maximum number of signals stored in counting semaphores is unbounded. As a result, the upper bound is set using bounded semaphores.
@@ -199,7 +199,7 @@ The maximum number of signals stored in counting semaphores is unbounded. As a r
 Timers are semaphores that can be programmed to run at specific intervals for predetermined lengths of time. If you wait until the timer goes out for this long, all of your permissions will be released.
 
 #### 4. Binary semaphores
-Unlike counting semaphores, binary semaphores can only take one of two possible values: 0 or 1. The binary semaphore is easier to implement than the counting semaphore. For the signal action to succeed, the value must be at least 1. Otherwise, it fails.
+Unlike counting semaphores, binary semaphores can only take one of two possible values: 0 or 1. The binary semaphore is more accessible to implement than the counting semaphore. For the signal action to succeed, the value must be at least 1. Otherwise, it fails.
 
 ### Using semaphores as locks
 As demonstrated here, an abounded semaphore can likewise be used as a lock. Take() and release() methods should be called in this case, as the higher limit must be set to 1. Let's see an example below:
