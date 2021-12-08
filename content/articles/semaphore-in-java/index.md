@@ -1,3 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /semaphore-in-java/
+title: Semaphore in Java
+description: This article wil cover Semaphors in Java.
+author: mark-moki
+date: 2021-12-T00:00:00-17:10
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/semaphore-in-java/hero.jpg
+    alt: Semaphore in Java
+---
 Semaphores in java are the subject of this article. In java, a semaphore uses a counter to manage access to a shared resource. It is a thread synchronization construct that is used to communicate between threads in order to avoid missing signals or to protect a critical section.
 ### Prerequisite
 1. Before beginning this tutorial, you should be familiar with the Java programming language.
