@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /understanding-server-side-request-forgery-attacks/
+url: /server-side-request-forgery-attacks/
 title: Understanding Server-Side Request Forgery Attacks
 description: This article will provide an overview of the server-side request forgery attacks, how they occur, and how to mitigate them.
 author: felix-vaati
@@ -10,7 +10,7 @@ date: 2021-12-06T00:00:00-13:30
 topics: [Security]
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/understanding-server-side-request-forgery-attacks/hero.png
+  - url: /engineering-education/server-side-request-forgery-attacks/hero.png
     alt: Understanding Server-Side Request Forgery Attacks
 ---
 Server-side request forgery (SSRF) is among the newest additions to the OWASP Top 10 list released this year (2021). It comes in at Number 10 on the list.
@@ -61,17 +61,17 @@ In our lab, to identify the SSRF vulnerability, we are required to delete a user
 
 When you intercept the request, you will view the stock request URL.
 
-![Stock request URL](/engineering-education/understanding-server-side-request-forgery-attacks/lab1capture.png)
+![Stock request URL](/engineering-education/server-side-request-forgery-attacks/lab1capture.png)
 
 With this, we try to replace the original request URL with a new URL requesting the server to produce the admin page.
 
-![Replacing the url](/engineering-education/understanding-server-side-request-forgery-attacks/lab1capture2.png)
+![Replacing the url](/engineering-education/server-side-request-forgery-attacks/lab1capture2.png)
 
 As shown in the picture above, we encoded our URL, but even without encoding it, the URL will work in this given lab.
 
 Once the request is submitted, we get to see the admin page:
 
-![Admin Page](/engineering-education/understanding-server-side-request-forgery-attacks/lab1capture3.png)
+![Admin Page](/engineering-education/server-side-request-forgery-attacks/lab1capture3.png)
 
 This is the first sign that our lab is vulnerable to SSRF. 
 
@@ -79,19 +79,19 @@ To escalate this, we will try to delete one user displayed in this admin panel.
 
 When we inspect the HTML page, we can see the URL for deleting the users.
 
-![admin inspect](/engineering-education/understanding-server-side-request-forgery-attacks/adminpageinspect.png)
+![admin inspect](/engineering-education/server-side-request-forgery-attacks/adminpageinspect.png)
 
 Now that we have the specific URL for performing a delete action, we will request the stock amounts again and replace the URL with this new one that we have found.
 
-![delete Request](/engineering-education/understanding-server-side-request-forgery-attacks/deleteuserrequest.png)
+![delete Request](/engineering-education/server-side-request-forgery-attacks/deleteuserrequest.png)
 
 Once submitted, these are the result:
 
-![Response for the delete request](/engineering-education/understanding-server-side-request-forgery-attacks/redirect.png)
+![Response for the delete request](/engineering-education/server-side-request-forgery-attacks/redirect.png)
 
 To confirm that our request was successful, we resubmit our request for the admin page. We can now confirm that our action was successful.
 
-![admin page after deletion](/engineering-education/understanding-server-side-request-forgery-attacks/lab1cspture%20.png)
+![admin page after deletion](/engineering-education/server-side-request-forgery-attacks/lab1cspture%20.png)
 
 Sometimes, where the organization is using a reserved IP address, we might need to try several addresses to get the internal network pages. Some of these addresses include:
 
