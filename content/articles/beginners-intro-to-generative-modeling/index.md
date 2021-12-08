@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /beginners-intro-to-generative-modeling/
 title: Implementing GANs from Scratch
-description: In this article we will consider the topic of generative modeling and disucss it in detail. We will also understand the need for generative modeling and how it is different from discriminative modeling.
+description: In this article, we will consider the topic of generative modeling and discuss it in detail. We will also understand the need for generative modeling and how it is different from discriminative modeling.
 author: tanmoy-ghosh
-date: 2021-12-02T00:00:00-18:00
+date: 2021-12-09T00:00:00-18:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -15,9 +15,12 @@ images:
    alt: Implementing GANs example image
 ---
 
-As we know, deep learning has been the most evolving area in Artificial intelligence since the last decade due to research advancements in this area. However, generative modeling is a specific field in Deep Learning that has been a topic of interest for the last few years after discovery of GANs. In this article, we will be looking forward to the concept of generative modeling from scratch and understanding its significance. Also, we will understand variational autoencoder with implementation and GANs, which are two of the most famous techniques for generative modeling.
+As we know, deep learning has been the most evolving area in Artificial intelligence since the last decade due to research advancements in this area. However, generative modeling is a specific field in Deep Learning that has been a topic of interest for the last few years after discovering GANs. 
 
 <!--more-->
+
+In this article, we will be looking forward to the concept of generative modeling from scratch and understanding its significance. Also, we will understand variational autoencoder with implementation and GANs, which are two of the most famous techniques for generative modeling.
+
 
 **Table of content**
 - [Prerequisites](#prerequisites)
@@ -39,7 +42,7 @@ Although I have tried to keep this blog as self-contained as possible, basic pri
 
 ### Key takeaways
 
-After finishing this blog, readers will understand what a generative model is, how it works, the difference between generative and discriminative models, and how it can impact the future of AI.
+After finishing this blog, readers will understand what a generative model is and how it works. Additionally, the reader will also note the differences between generative and discriminative models and their impact on the future of AI.
 
 ### Introduction
 
@@ -65,7 +68,7 @@ Now ideally, you want $x^*$ to be almost the same as $x$, but it will solely dep
 
 ### Discriminative and generative modeling
 
-Machine learning models can broadly be categorized into two categories, discriminative and generative models. Before we compare both of them, let's talk about the discriminative models. In simple terms, as its name suggests, the discriminative model aims to discriminate between multiple data instances. It takes input data for training and makes predictions for the unseen data. Most of the classification and regression techniques fall under this category.
+Machine learning models can broadly be categorized into two categories, discriminative and generative models. Before comparing both of them, let's talk about the discriminative models. In simple terms, as its name suggests, the discriminative model aims to discriminate between multiple data instances. It takes input data for training and makes predictions for the unseen data. Most of the classification and regression techniques fall under this category.
 To understand it mathematically, let's take an example of a set of data instances $X$ and a corresponding set of labels $Y$.
 
 ![discriminative-vs-generative](discriminative-vs-generative.png)
@@ -82,7 +85,7 @@ The discriminative model aims to capture $p(Y|X)$, that is, the conditional prob
 
 There have been many recent advancements in the field of generative modeling since the last decade. However, still, a lot of research is going on this topic. This section will discuss why generating data is essential and how it can transform the future of machine learning by taking a few interesting use-cases.
 
-The most trending topic in generative modeling is GAN. Yann LeCun, Chief AI Scientist, Facebook, even described GANs as "the most interesting idea  in the last 10 years in Machine Learning". We will talk more about GAN in the next section. For now, let's stick to its applications. GANs have transformed the world of deep learning and are considered the most remarkable invention in artificial intelligence. From generating portraits to the whole new virtual world, GAN never fails to surprise. [Here](https://www.cnet.com/news/ai-made-portrait-sells-at-christies-auction-for-432500/) is one such exciting story of GANs. In 2018, a French art collective named Obvious used GAN to generate a portrait sold for half a million dollars. 
+The most trending topic in generative modeling is GAN. Yann LeCun, Chief AI Scientist, Facebook, even described GANs as "the most interesting idea  in the last 10 years in Machine Learning". We will talk more about GAN in the next section. For now, let's stick to its applications. GANs have transformed the world of deep learning and are considered the most remarkable invention in artificial intelligence. GAN never fails to surprise from generating portraits to the whole new virtual world. [Here](https://www.cnet.com/news/ai-made-portrait-sells-at-christies-auction-for-432500/) is one such exciting story of GANs. In 2018, a French art collective named Obvious used GAN to generate a portrait sold for half a million dollars. 
 
 ![portrait-news](portrait.png)
 
@@ -90,7 +93,7 @@ The most trending topic in generative modeling is GAN. Yann LeCun, Chief AI Scie
 
 Imagine what a future would be if one can use generative modeling to make a complete 2-hour movie using existing movies, compose a piece of music, or maybe write a novel. The innovation will match human expertise, which is the end goal of an AI system.
 
-One more important application of generative modeling is data augmentation. Of course, the most crucial aspect for applying any ML technique is training data. Still, there are certain areas where we have a lot of constraints associated with data availability. One such sector is the medical field. There are a lot of applications of machine learning in the medical field, from diagnosing disease to finding its cure. But medical datasets are harder to collect. Here generative modeling plays a vital role to produce the synthetic data to enlarge the training dataset. This process of extending the training dataset by producing the synthetic data is called Data Augmentation. There is much work done in data augmentation using generative modeling. For example, one such work is done by [Maayan Frid-Adar and others](https://arxiv.org/abs/1803.01229) where they used GAN for synthetic image augmentation to increase the existing performance for liver lesion classification.
+One more important application of generative modeling is data augmentation. Of course, the most crucial aspect for applying any ML technique is training data. Still, there are certain areas where we have a lot of constraints associated with data availability. One such sector is the medical field. There are a lot of applications of machine learning in the medical field, from diagnosing disease to finding its cure. But medical datasets are harder to collect. Here generative modeling plays a vital role in producing synthetic data to enlarge the training dataset. Extending the training dataset by producing the synthetic data is called Data Augmentation. There is much work done in data augmentation using generative modeling. For example, one such work is done by [Maayan Frid-Adar and others](https://arxiv.org/abs/1803.01229) where they used GAN for synthetic image augmentation to increase the existing performance for liver lesion classification.
 
 Now we will cover two famous techniques for generative modeling, variational autoencoder and GAN.
 
@@ -108,13 +111,13 @@ An autoencoder is a type of feed-forward neural network which does the following
 
 The $x'$ is a reconstructed version of the original input $x$. The autoencoder aims to minimize a specific loss function to ensure that the $x'$ is close to our original input $x$.
 
-Now, let us take an example where we have images belonging to three categories, say, $x_1$, $x_2$ and $x_3$, and we have trained an autoencoder on these examples. Let us assume latent representation has two dimensions, and its distribution looks like this.
+Now, let us take an example of images belonging to three categories, say, $x_1$, $x_2$ and $x_3$, and we have trained an autoencoder on these examples. Let us assume latent representation has two dimensions, and its distribution looks like this.
 
 ![distribution](latent-distribution.png)
 
 Notice that these latent vectors have formed clusters according to their categories. And from here starts the role of generative modeling. Using one of these latent vectors, one can generate the image belonging to one of the three classes. 
 
-Variational autoencoders or vae provides us probabilistic approach to representing these latent vectors. In a normal autoencoder, we will try to represent each attribute of the latent state by a single variable. In vae, we will try to formulate **probability distribution** for each attribute of latent representation. In vae, we will sample from these latent learned distributions, resulting in the generation of new images. Now, when we vary the sampling process randomly among these distributions, we get unique results every time, and hence we use the term **variational** in vae. 
+Variational autoencoders or vae provides us probabilistic approach to representing these latent vectors. In a normal autoencoder, we will try to represent each attribute of the latent state by a single variable. In vae, we will try to formulate **probability distribution** for each attribute of latent representation. In vae, we will sample from these latent learned distributions, resulting in new images. Now, when we vary the sampling process randomly among these distributions, we get unique results every time, and hence we use the term **variational** in vae. 
 
 To represent the probability distribution of each class of examples in latent space, we will use $\mu$(mean) and sigma $\sigma$(standard deviation). We will learn $\mu$ and $\sigma$ by backpropagating through the network. The loss function that will drive the learning process is:
 
@@ -178,7 +181,7 @@ def sample(args):
 ```
 ![vae-architecture](vae-architecture.png)
 
-Finally, it's time to define the model. We will be using functional API from keras. So, first, we will define the encoder model, then the decoder model, and finally, using these two models, we will define vae. 
+Finally, it's time to define the model. Again, we will be using functional API from keras. So, first, we will define the encoder model, then the decoder model, and finally, using these two models, we will define vae. 
 
 The input to the encoder model will be the image. The encoder model, in our case, has one hidden layer of dimension 128. The output layer of the encoder has mean and std deviation, which we will be using a vector of dimension 4 to represent. And, finally, we will use a sample method for sampling with the help of the lambda layer. 
 
@@ -192,7 +195,7 @@ latent_sample = layers.Lambda(sample, output_shape=(4,))([latent_mean, latent_st
   
 encoder_model = Model(input_layer, [latent_mean, latent_std, latent_sample], name='encoder_model')
 ```
-Now we will move to the decoder part. Remember, we will feed a sampled vector using $\mu$ and $\sigma$, which have a dimension of 4 as an input to the decoder. Again, the decoder is also a three-layered network with a hidden layer with dimension 128 and an output layer that returns the reconstructed version of the input image as an output. We are using sigmoid as an activation function for the final layer because pixel values are between 0 and 1.
+Now we will move to the decoder part. Remember, we will feed a sampled vector using $\mu$ and $\sigma$, which have a dimension of 4 as an input to the decoder. Again, the decoder is also a three-layered network with a hidden layer with dimension 128 and an output layer that returns the reconstructed version of the input image as an output. We use sigmoid as an activation function for the final layer because pixel values are between 0 and 1.
 
 ```python
 #Decoder model
@@ -219,7 +222,7 @@ def vae_loss(x, z_decoded, latent_mean=latent_mean, latent_std=latent_std):
     kl_loss = -1e-4 * K.mean(1 + latent_std - K.square(latent_mean) - K.exp(latent_std), axis=-1)
     return K.mean(recon_loss + kl_loss)
 ```
-Now, as an optimizer, I am going to use rmsprop. You are free to experiment with other optimizers as well.
+Now, as an optimizer, I am going to use rmsprop. But, of course, you are free to experiment with other optimizers as well.
 
 ```python
 vae.compile(optimizer='rmsprop', loss=vae_loss)
@@ -227,7 +230,7 @@ vae.summary()
 ```
 ![vae-summary](model-summary.PNG)
 
-Finally we are ready to train our model.
+Finally, we are ready to train our model.
 
 ```python
 vae.fit(x_train, x_train,
@@ -235,7 +238,7 @@ vae.fit(x_train, x_train,
         epochs=50,
         batch_size=100)
 ```
-Once the training is finished, we are ready to generate the data. We will take a random vector of 4 dimensions over the normal distribution and feed it to the decoder model. Here I am plotting 100 such images using the matplotlib library.
+Once the training is finished, we are ready to generate the data. First, we will take a random vector of 4 dimensions over the normal distribution and feed it to the decoder model. Here I am plotting 100 such images using the matplotlib library.
 
 ```python
 n=10
@@ -259,7 +262,7 @@ plt.show()
 
 ### GAN
 
-GANs are the class of ML techniques that consist of two simultaneously trained neural networks, one is the generator which is used to generate the fake data, and the other is discriminator, which is used to classify whether input given to it is real (image from training dataset) or fake (generated by the discriminator).
+GANs are the class of ML techniques consisting of two simultaneously trained neural networks. One is the generator used to generate the fake data. The other is the discriminator, which is used to classify whether the input is real (image from training dataset) or fake (generated by the discriminator).
 
 The word **adversarial** points to the competitive dynamic between the generator and the discriminator where the generator tries to fool the discriminator by passing fake data. The discriminator's job is to detect the fake data generated by the generator. To understand this, let's imagine a scenario where a thief tries to steal a painting from a museum by replacing it with a fake painting, whereas there will be a curator whose job will be to detect whether the painting is real or fake. In this example, our thief is the generator, and the curator is the discriminator.
 
@@ -267,12 +270,12 @@ Now let's take a look at the architecture of GAN.
 
 ![gan-architecture](gan-architecture.png)
 
-We provide random noise input to our generator, which transforms the noise into a data sample. The generated data then acts as an input to the discriminator model. The discriminator model also takes real data samples as input, and its job is to classify the input as fake generated data or real data samples. In this way, we frame two loss functions, one is discriminator loss, and the other is generator loss. The discriminator loss is a classification error, and it is back-propagated through the discriminator network. In contrast, the generator loss is an error of classifying the fake generated data as real data, and it is back-propagated through the generator network. This way, two neural networks are being trained simultaneously in an adversarial manner. 
+We provide random noise input to our generator, transforming the noise into a data sample. The generated data then acts as an input to the discriminator model. The discriminator model also takes real data samples as input, and its job is to classify the input as fake generated data or real data samples. In this way, we frame two loss functions, one is discriminator loss, and the other is generator loss. The discriminator loss is a classification error, and it is back-propagated through the discriminator network. In contrast, the generator loss is an error of classifying the fake generated data as real data, and it is back-propagated through the generator network. This way, two neural networks are being trained simultaneously in an adversarial manner. 
 
-The convergence of training a GAN is when the discriminator cannot classify between real and fake generated data, which means the probability of classification becomes $0.5$. This point of convergence is known as **Nash Equilibrium**. You can read more about the training of GANs from this excellent [article](https://developers.google.com/machine-learning/gan) by Google Developers.
+The GAN's convergence is when the discriminator cannot classify between real and fake generated data, which means the probability of classification becomes $0.5$. This point of convergence is known as **Nash Equilibrium**. You can read more about the training of GANs from this excellent [article](https://developers.google.com/machine-learning/gan) by Google Developers.
 
 ### Conclusion
-In this blog, we have seen how innovative a generative model can be. To manage such innovation, we will need AI systems that can deal with the changing environment. For that, old discriminative models trained on a large amount of hand-labelled data for a fixed environment will fail. Therefore, we need generative models in future to respond to that rapidly changing social environment. Moreover, in the future, the generative models will empathize and co-create with humans, which will prove to be a stimulating environment for people to live in.
+We have seen how innovative a generative model can be in this blog. However, we will need AI systems to manage such innovation to deal with the changing environment. For that, old discriminative models trained on a large amount of hand-labelled data for a fixed environment will fail. Therefore, we need generative models in future to respond to that rapidly changing social environment. Moreover, in the future, the generative models will empathize and co-create with humans, which will prove to be a stimulating environment for people to live in.
 
 ---
 Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
