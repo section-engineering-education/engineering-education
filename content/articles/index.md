@@ -5,7 +5,7 @@ published: true
 url: /Automatic-type-promotion/
 title: Automatic type promotion
 description: This article will cover a brief introduction to auto type promotion and method overloading and their relationships, reasons or circumstances under which you may be required to apply automatic type promotion and the different types or ways of implementing type promotion. 
-author: 
+author: ckrine-awino
 date: 2021-11-27T00:00:00-12:10
 topics: [Languages]
 excerpt_separator: <!--more-->
@@ -19,7 +19,7 @@ Type promotion is a common occurrence in java programming which, can be achieved
 Sometimes automatic type casting is confused with typecasting, which should not be the case as casting is achieved manually by a programmer during system coding.
 You also need to understand that datatypes once promoted cannot be "depromoted."
 
-Overloading is a concept in java where different methods are allowed to have a common name. The methods, however, differ by the parameters that they take in or even their input data types.
+Overloading is a concept in java where different methods can have a common name. The methods, however, differ by the parameters that they take in or even their input data types.
 
 Automatic type casting mainly occurs in method overloading; hence, it is incumbent that we understand both concepts clearly before we begin
 
@@ -90,7 +90,7 @@ public class AutoTypePromotion {
 }
 ```
 
-The output `25.0` which is a double because the result of the expression automatically becomes a double as stated by the above rule.
+The output `25.0` is a double because the result of the expression automatically becomes a double as stated by the above rule.
 
 ### Automatic type promotion with method overloading
 
@@ -122,7 +122,7 @@ As useful as automatic type promotion is in java, it may sometimes result in com
 
 ![problem](/engineering-education/Automatic-type-promotion/int2.png)
 
-This error is caused by the automatic promotion of the type `byte` to the entire execution time. Therefore if it has to be a `byte`, then typecasting needs to be performed explicitly.
+This error is caused by the automatic promotion of the type `byte` to the entire execution time. Therefore if it has to be a byte, typecasting needs to be performed explicitly.
 
 Below is a full java program illustrating Automatic type promotion:
 
@@ -167,7 +167,7 @@ Output:
 ![output](/engineering-education/Automatic-type-promotion/ou.png)
 
 ### Conclusion
-Despite the benefits we have seen with automatic type promotion, some requirements do not support it. It only supports [typecasting](https://www.javatpoint.com/type-casting-in-java) or widening, which means [narrowing](https://www.tutorialspoint.com/narrowing-conversion-in-java#:~:text=Narrowing%20conversion%20is%20needed%20when,to%20integer%20using%20Narrowing%20Conversion.) is uncatered for; hence narrowing has to be done manually by the programmer, which raises the need to learn manual types of casting.
+Despite the benefits of ith automatic type promotion, some requirements do not support it. It only supports [typecasting](https://www.javatpoint.com/type-casting-in-java) or widening, which means [narrowing](https://www.tutorialspoint.com/narrowing-conversion-in-java#:~:text=Narrowing%20conversion%20is%20needed%20when,to%20integer%20using%20Narrowing%20Conversion.) is uncatered for; hence narrowing has to be done manually by the programmer, which raises the need to learn manual types of casting.
 
 Happy learning!
 
