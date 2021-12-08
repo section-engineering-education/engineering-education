@@ -27,7 +27,7 @@ To be able to follow this article well, one needs:
 3. Some understanding of how to build a graph using an adjacency list and matrix. -[Adjacency list](https://www.section.io/engineering-education/graphs-in-data-structure-using-cplusplus/)
 4. A basic understanding of c# or any object-oriented programming language.
 
-#### Key Takeaways
+#### Key takeaways
 - A brief overview of a graph.
 - Understand what a cycle is in a graph.
 - Understand how to detect a cycle. 
@@ -37,84 +37,59 @@ To be able to follow this article well, one needs:
 - Understand different applications of cycle detection.
 
 ### A brief overview of graph
-A graph is like a tree but without any cycles. We do not have a root node in graphs.
-
-Below, is an example of a graph with four nodes or vertex and six edges or lines. We don't have a limitation of how many connections we can have from one node.
+A graph is like a tree but without any cycles. We do not have a root node in graphs. Below, is an example of a graph with four nodes or vertex and six edges or lines. We don't have a limitation of how many connections we can have from one node.
 
 If two nodes are connected, we say they are adjacent or neighbors. `John` and `bob` are neighbors. `John` and `Sam` are not because they are not connected.
 
 ![image of a Graph](/engineering-education/graph-cycle-detection-csharp/graphexample.png/)
 
-If the edges have a direction, we say we have a directed graph. From the directed graph image below, `John` is connected to `Bob` but the opposite is not true.
-
-This is like how Twitter works. If you follow someone, there is a connection from your account to their account. Not the other way round unless they follow you as well.
+If the edges have a direction, we say we have a directed graph. From the directed graph image below, `John` is connected to `Bob` but the opposite is not true. This is like how Twitter works. If you follow someone, there is a connection from your account to their account. Not the other way round unless they follow you as well.
 
 ![image of a directed-graph](/engineering-education/graph-cycle-detection-csharp/directed-graph.png/)
 
-There are undirected graphs as well. An example of this can be Facebook. When you add a friend, there is a connection from you to them. The Vice verse is true.
+There are undirected graphs as well. An example of this can be Facebook. When you add a friend, there is a connection from you to them. The Vice verse is true. The connections do not have a direction.
 
-The connections do not have a direction.
-
-The edges can also have weights. We use these weights to represent how strong the connection is, For example, Facebook. 
-
-When two people communicate, we can put more weight on them. We then use that to show their best friends using the nodes that have the highest weights.
+The edges can also have weights. We use these weights to represent how strong the connection is, For example, Facebook. When two people communicate, we can put more weight on them. We then use that to show their best friends using the nodes that have the highest weights.
 
 ![Image of Weighted Graph](/engineering-education/graph-cycle-detection-csharp/weightedgraph.png/)
 
 With this brief description, we can get to know what a cycle is and how to detect that in a graph.
 
 ### What is a cycle in graphs?
-A cycle in a graph is where the first and the last vertices are the same. 
-
-If one starts from one vertex, travels along a path, and ends up at the starting vertex, then this path is a cycle. 
+A cycle in a graph is where the first and the last vertices are the same. If one starts from one vertex, travels along a path, and ends up at the starting vertex, then this path is a cycle. 
 
 > Cycle detection is the process of finding a cycle.
 
-In our example below, we have a cycle in the path `1` to `3`to `4` and back to `1`. There is no cycle in the top part of the graph.
-
-These are paths `1` to `2` to `6` and `1` to `2` to `7`. In any search, if you know there is a possibility of a cycle, you need to manage it.
+In our example below, we have a cycle in the path `1` to `3`to `4` and back to `1`. There is no cycle in the top part of the graph. These are paths `1` to `2` to `6` and `1` to `2` to `7`. In any search, if you know there is a possibility of a cycle, you need to manage it.
 
 When this is not managed, your algorithm will run infinite times. This leads to a `StackOverflow` exception error.
 
 ![Image of Cycle Graph](/engineering-education/graph-cycle-detection-csharp/Cyclegraph.png/)
 
 #### An example of how an infinite loop occurs.
-Let's lookup for node `6`. If we start our search going through the path of `1` to `3` to `4`, we will get back to `1`.
-
-We have detected a loop at this point. There is no way of ending it. This cycle will keep going. Thus, we will never get to `6`.
+Let's lookup for node `6`. If we start our search going through the path of `1` to `3` to `4`, we will get back to `1`. We have detected a loop at this point. There is no way of ending it. This cycle will keep going. Thus, we will never get to `6`.
 
 ### How to detect a cycle.
 To detect a cycle in a graph, depth first search algorithm is the best algorithm to use.
 
 #### Depth first search.
-Depth First Search (DFS), is a graph traversal method. We start our search from a particular vertex.
-
-We then explore all other vertexes as long as we can go along that path. On reaching the end of that path, we do a backtrack up to the point where we began from. 
+Depth First Search (DFS), is a graph traversal method. We start our search from a particular vertex. We then explore all other vertexes as long as we can go along that path. On reaching the end of that path, we do a backtrack up to the point where we began from. 
 
 The stack data structure is the best for doing the backtracking.
 
 ![Image of DFS](/engineering-education/graph-cycle-detection-csharp/dfs.png/)
 
 #### Example of how DFS works.
-From the DFS diagram above, say `1` is our start node. We look at the first item that will be in our adjacency matrix. That is `2`. 
+From the DFS diagram above, say `1` is our start node. We look at the first item that will be in our adjacency matrix. That is `2`. Instead of queueing nodes adjacent to `1`, we queue nodes that are adjacent to `2`. So we will go to `6`.
 
-Instead of queueing nodes adjacent to `1`, we queue nodes that are adjacent to `2`. So we will go to `6`.
+If `6` is the node we were looking for we stop. Let us assume it is not. We backtrack to `2`. From `2`, we look for other nodes that are connected to it. That is `7`. Since `7` does not have any other connected node and it isn't what we are looking for, we backtrack to `2`. We have finished visiting all nodes connected to `2`. So we backtrack to `1`.
 
-If `6` is the node we were looking for we stop. Let us assume it is not. We backtrack to `2`. From `2`, we look for other nodes that are connected to it. That is `7`. 
+From `1`, we check which other node is connected to it. We have `3`. We visit node `3` and check the nodes connected to it. We have `8`. We visit `8`. It is the last node. No other node is connected to it. If it isn't what we are looking for we backtrack to `3`. `3` does not have other nodes connected to it. We backtrack back to `1`.
 
-Since `7` does not have any other connected node and it isn't what we are looking for, we backtrack to `2`. We have finished visiting all nodes connected to `2`. So we backtrack to `1`.
+We again check from our list for any other node connected to `1`. We have `4`. We visit `4`. `4` doesn't have any other node connected to it. We backtrack to `1`. `1` still has `5` connected to it. We visit `5` and backtrack back to `1`. We are done visiting all nodes.
 
-From `1`, we check which other node is connected to it. We have `3`. We visit node `3` and check the nodes connected to it. We have `8`. We visit `8`. It is the last node. No other node is connected to it. 
-
-If it isn't what we are looking for we backtrack to `3`. `3` does not have other nodes connected to it. We backtrack back to `1`.
-
-We again check from our list for any other node connected to `1`. We have `4`. We visit `4`. `4` doesn't have any other node connected to it. We backtrack to `1`. `1` still has `5` connected to it. We visit `5` and backtrack back to `1`.
-
-We are done visiting all nodes.
-
-### Implementing cycle detection using DFS.
-
-#### 1. Cycle detection in a directed Graph.
+### Implementing cycle detection using DFS
+#### 1. Cycle detection in a directed Graph
 To detect a cycle in a graph, we visit the node, mark it as visited. Then visit all the nodes connected to it.
 
 A cycle will be detected when visiting a node that has been marked as visited. The node will also be part of the current path. Below is an explanation, using the cycle graph image.
@@ -136,7 +111,7 @@ We have visited nodes `1`, `2`, `5`, `6`, and only node `1` is part of the curre
 
 At this point, we find that `1` is part of our current path. It is also marked as visited. A cycle is detected.
 
-### Code Implementation of cycle detection in C#.
+### Code implementation of cycle detection in C#
 1. Open Visual Studio. Create a Console Application called `GraphCycleDetect`.
 2. In the `Main()` method we create a jagged array. This is what will show how vertexes are connected.
 3. We Declare a variable called `graph` to hold the number of vertexes.
