@@ -29,7 +29,7 @@ Gradient descent is the optimal method for optimizing neural networks and variou
 - [How to choose an optimizer](#how-to-choose-an-optimizer)
 
 ### Optimization techniques
-We'll consider various optimization methods frequently employed in Deep Learning for a brief while. We will also look at some Adaptive Optimization Algorithms (AOA). Compiling a program based on the current execution profile is known as adaptive optimization in computer science. You can easily make a tradeoff between JIT compilation and instruction interpretation in an adaptive optimizer solution.
+We'll consider various optimization methods frequently employed in Deep Learning for a brief while. We will also look at some Adaptive Optimization Algorithms (AOA). Compiling a program based on the current execution profile is known as adaptive optimization in computer science. You can easily make a tradeoff between Just-In-Time (JIT) compilation and instruction interpretation in an adaptive optimizer solution.
 #### Why do we optimize our machine learning models?
 Every iteration is compared to the previous one, and the hyperparameters are tweaked until the results are as good as they can be. We can produce a model that is both accurate and error-free. A model can be optimized in a variety of ways.
 
@@ -90,7 +90,7 @@ According to earlier AdaGrad computations in the update rule for all parameters,
 
 __Cons:__ The denominator rises in a quadratic fashion, making it challenging to work with since adding each additional word raises the total value. The value grows with time. As a result, learning becomes sluggish and eventually comes to a halt. 
 ### AdaDelta
-Adadelta optimization is a stochastic gradient descent method that uses an adaptive learning rate for each dimension to address two problems: 
+Adadelta optimization is a stochastic gradient descent method that uses an adaptive learning rate for each dimension to address the following problems: 
 - It can be hard to figure out how much to learn in each dimension.
 - The rate at which you learn decreases over time during training.
 - The need for a global learning rate that can be set manually.
