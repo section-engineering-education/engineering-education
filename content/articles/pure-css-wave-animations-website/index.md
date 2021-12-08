@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /pure-css-wave-animations-website/
 title: How to Add Pure CSS Waves to Your Website
-description: In this article, we will use pure CSS and HTML to add animations to a website.
+description: In this article, we will use pure CSS and HTML to add animations to a website. CSS animations lets an element gradually change from one CSS configuration style to another.
 author: linchez-maina
 date: 2021-12-08T00:00:00-11:10
 topics: [Languages]
