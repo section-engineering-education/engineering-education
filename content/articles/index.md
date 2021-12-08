@@ -21,7 +21,7 @@ You also need to understand that datatypes once promoted cannot be "depromoted."
 
 Overloading is a concept in java where different methods can have a common name. The methods, however, differ by the parameters that they take in or even their input data types.
 
-Automatic type casting mainly occurs in method overloading; hence, it is incumbent that we understand both concepts clearly before we begin
+Automatic type casting mainly occurs in method overloading; hence, it is incumbent that we understand both concepts clearly before we begin.
 
 ### Table of contents
 1. [Prerequisites](#prerequisites)
@@ -61,8 +61,8 @@ When the multiplication is done, the product cannot be contained in a `byte` loc
 ### Rules for automatic type promotion
 The following rules for type promotion must be followed when executing expressions in java to achieve correct results:
 1. All variables of the types `byte`, `short`, and `char` must be auto type promoted to `int`.
-2. If any variable taking part in an operation is `long`, the operation result has to be `long`.
-3. If any variable taking part in an operation is `float`, the operation result has to be `float`. An example is shown below illustrating this rule:
+2. If any variable taking part in an operation is `long`, the operation result must be `long`.
+3. If any variable taking part in an operation is `float`, the operation result must `float`. An example below illustrates this rule:
 
 ```java
 public class AutoTypePromotion {
@@ -75,9 +75,9 @@ public class AutoTypePromotion {
  }
 }
 ``` 
-The output is  `720.98f`, which is also a floating-point value hence confirming the rule in question.
+The output is `720.98f`, a floating-point value, confirming the rule in question.
 
-4. If any variable taking part in an operation is `double`, the operation result has to be `double`. An example is shown below illustrating this rule:
+4. If any variable taking part in an operation is `double`, the operation result must be `double`. An example is shown below illustrating this rule:
 
 ```java
 public class AutoTypePromotion {
@@ -90,7 +90,7 @@ public class AutoTypePromotion {
 }
 ```
 
-The output `25.0` is a double because the result of the expression automatically becomes a double as stated by the above rule.
+The output of 25.0 is a double because the result of the expression automatically becomes a double, as stated by the above rule.
 
 ### Automatic type promotion with method overloading
 
@@ -118,7 +118,7 @@ The above code fragment implements a method overloading by having two functions,
 
 ### Problems that may arise due to automatic type promotion
 
-As useful as automatic type promotion is in java, it may sometimes result in compilation confusions like the one shown in the illustratory diagram below:
+As valuable as automatic type promotion is in java, it may sometimes result in compilation confusions like the one shown in the illustratory diagram below:
 
 ![problem](/engineering-education/Automatic-type-promotion/int2.png)
 
