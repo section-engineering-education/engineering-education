@@ -25,7 +25,7 @@ It lays out the rules in a format that is simple to read and understand, allowin
 - They give the most ideal manner to use the C# programming language.
 
 ### Coding conventions used in the C# programming language
-There are a few naming conventions that should be followed while writing C# code. All information about public elements applies as well to private and protected internal elements in the following scenarios, which are all supposed to be visible to external callers.
+There are a few naming conventions that should be followed while writing C# code. All information about public elements applies to private and protected internal elements which are all supposed to be visible to external callers.
 
 The coding conventions used in the C# programming language are:
 1. Naming conventions
@@ -135,7 +135,7 @@ public T SomeMethod<T>(int someNumber, bool isValid)
 }
 ```
 
-Apart from the above conventions, there are other several conventions that a programmer needs to consider and apply while in their daily routine of programming. They include:
+Apart from the above conventions, there are others that a programmer needs to consider and apply while in their daily routine of programming. They include:
 1. The choice of word - Use readable identifier names, underscores, hyphens, and other non-alphanumeric characters should not be used. The choice of the word implies that not any word can be used when programming, instead the proper words should be used.
 2. Hungarian notation is neither acceptable nor encouraged - A Hungarian notation is whereby the name of a variable or function denotes its intent or kind, as well as its type in some languages. Thus, it creates a programming language dependency and makes maintenance more difficult.
 3. The use of abbreviations and acronyms - Do not use acronyms that are not generally recognized, and even if they are, only use them when essential.
