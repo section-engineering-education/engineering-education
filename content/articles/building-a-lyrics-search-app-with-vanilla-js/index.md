@@ -46,7 +46,7 @@ In the `lyrics.html` file, include the code below to create the structure for th
             </div>
         </div>
     </div>
-    <script src="script.js">
+    <script src="lyrics.js">
         
     </script>
 </body>
