@@ -113,7 +113,7 @@ https://flaskflutterlogin.herokuapp.com/login
 #### Installation
 To build a flutter app, Flutter has to be installed on the computer. Click [here and follow each step to download](https://flutter.dev/docs/get-started/install) if you do not know how to. Then a new flutter project was created from the terminal using the command shown below.
 
-```terminal
+```bash
 flutter create name-of-app
 ```
 After installation, the `main.dart` file located inside the lib folder, which is found inside the project directory, was cleared and replaced with the code snippet below.
