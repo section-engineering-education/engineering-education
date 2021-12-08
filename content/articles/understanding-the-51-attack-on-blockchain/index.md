@@ -131,3 +131,6 @@ The upcoming technology is promising, though, to solve these security hitches an
 - [Overview of 51% Attack](https://www.coindesk.com/learn/what-is-a-51-attack/).
 - [Implementation of Blockchain Consensus Algorithm](https://www.hindawi.com/journals/scn/2021/9918697/).
 - [Chain Reorganization](https://learnmeabitcoin.com/technical/chain-reorganisation).
+
+---
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
