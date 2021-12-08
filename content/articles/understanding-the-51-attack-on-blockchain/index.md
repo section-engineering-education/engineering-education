@@ -1,5 +1,22 @@
-﻿### Introduction
-[Blockchain](https://www.ibm.com/topics/what-is-blockchain) technology is not a new term in today’s digital world.  Technology has existed over the past few years. It is prevalent when cryptocurrencies such as [Bitcoin](https://bitcoin.org/en/) are mentioned. However, according to numerous research reports, businesses have not fully adopted the use of cryptocurrencies. Most of these businesses are relying on traditional methods in their operations instead of using blockchain technology.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /understanding-the-51-attack-on-blockchain/
+title: Understanding the 51% attack on blockchain
+description: This article will cover the 51% attack on the blockchain. The reader will understand what it entails, its risks, and possible ways to prevent it.
+author: ephraim-njoroge
+date: 2021-12-08T00:00:00-17:00
+topics: [Blockchain]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/understanding-the-51-attack-on-blockchain/hero.jpeg
+    alt: Understanding the 51% attack on blockchain example Image
+---
+[Blockchain](https://www.ibm.com/topics/what-is-blockchain) technology is not a new term in today’s digital world. The technology has existed over the past few years. 
+<!--more-->
+It is prevalent when cryptocurrencies such as [Bitcoin](https://bitcoin.org/en/) are mentioned. However, according to numerous research reports, businesses have not fully adopted the use of cryptocurrencies. Most of these businesses are relying on traditional methods in their operations instead of using blockchain technology.
 
 Blockchain technology can be described as a structure that stores public transaction records in various databases in a network-connected environment through peer-to-peer nodes. The transactional records are known as blocks, and the various interconnected databases are referred to as a chain.
 
