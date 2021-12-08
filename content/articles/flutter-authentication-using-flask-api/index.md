@@ -1,3 +1,20 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /flutter-authentication-using-flask-api/
+title: Flutter Authentication Using Flask API
+description: This article will show a reader how  Flutter apps interact with the backend and how authentication works using Flask as the backend technology. 
+author: Nathaniel-dauda-wobin
+date: 2021-10-14T00:00:00-04:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/flutter-authentication-using-flask-api/hero.jpg
+    alt: Flutter Authentication Using Flask API Image
+---
+
 ### Introduction
 Software or applications mostly hold data that is not accessible to everyone. This has made authentication a core aspect of software or application development.
 
@@ -10,10 +27,10 @@ UIs built with Flutter always depend on the backend technology stack for core fu
 Authentication is the process of proving if a user trying to access a system has permission to do so. 
 
 ### Prerequisite
-In this guide flutter version, 2.5 is used to build the flutter project, and the android studio is the IDE used to write the code, but visual studio code can be used. To code along, the tools mentioned previously are recommended. This article assumes the reader has a background knowledge of flutter and python flask.
+In this guide flutter version, 2.5 is used to build the flutter project, and the android studio is the IDE used to write the code, but visual studio code can be used. To code along with this article, the tools mentioned previously are recommended. This article assumes the reader has a background knowledge of flutter and python flask.
 
 ### Goals
-This guide is written to help understand how Flutter apps interact with the backend and how authentication works using flask as the backend technology. An app will be built at the end of the guide, which will work as shown below.
+This guide will help the reader to understand how Flutter applications interact with the backend and how authentication occurs when Flask is used as the backend technology. In the process, we will build a Flutter application that authenticates users using a Flask API, which will work as shown below.
 ![demo](/engineering-education/flutter-authentication-using-flask-api/demo.gif)
 
 ### Understanding apps
@@ -22,7 +39,7 @@ Web Applications are primarily built in two parts. There is the *frontend* and t
 The frontend part of an app is also known as the client-side of the app. It
  focuses on how the application looks, and frontend developers make sure the apps look good and are responsive(i.e., it looks good on all sizes of screens). 
  
- The backend part of an app focuses on how the application works. The backend of an app is also known as the server-side of the app. Backend developers make sure data received from users are properly stored and are quickly rendered to users with speed and efficiency.
+ The backend part of an app focuses on how the application works. The backend of an app is also known as the server-side of the app. Backend developers make sure data received from users are appropriately stored and are quickly rendered to users with speed and efficiency.
 
 #### Applicaion Programming Interface(APIs )
 An API is like a middle man between the backend and frontend. It connects computers or computer programs using endpoints. An endpoint means communication between two or more systems where a request is sent from the frontend to a web application or a web server.
@@ -94,7 +111,7 @@ https://flaskflutterlogin.herokuapp.com/login
 ```
 ### Flutter App Design
 #### Installation
-To build a flutter app, flutter has to be installed on the computer. Click [here and follow each step to download](https://flutter.dev/docs/get-started/install) if you do not know how to. Then a new flutter project was created from the terminal using the command shown below.
+To build a flutter app, Flutter has to be installed on the computer. Click [here and follow each step to download](https://flutter.dev/docs/get-started/install) if you do not know how to. Then a new flutter project was created from the terminal using the command shown below.
 
 ```terminal
 flutter create name-of-app
@@ -475,4 +492,5 @@ We built an app that can register and login a user using API endpoints. The Gith
 - [flutter user authentication](https://medium.com/codex/flutter-user-authentication-part-1-models-and-api-acf33cf42f83)
 - [How To Create Login System in Flutter With Rest API ](https://www.youtube.com/watch?v=2DtFGF2v_vk)
 
-
+---
+Peer Review Contributions by: [Jerim Kaura](/engineering-education/authors/jerim-kaura/)
