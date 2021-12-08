@@ -10,7 +10,6 @@ In this tutorial, we will discuss the use of the python libraries we will need, 
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
-- [Python libraries we will need](#python-libraries-we-will-need)
 - [Referral hand image](#referral-hand-image)
 - [Creating a hand gesture volume controller](#creating-a-hand-gesture-volume-controller)
 - [Results](#results)
@@ -21,21 +20,13 @@ For you to follow through this article you need to:
 - Be familiar with the Python programming language.
 - Have **Pycharm** installed on their computer. If this is not the case, download it from here. [Pycharm Community Edition ](https://www.jetbrains.com/pycharm/download/)
 
-### Python libraries we will need
-The libraries that we will be interacting with while creating our hand gesture volume controller will be the following:
-- *numpy* This library will help us work with arrays.
-- *cv2* We will use this library to capture an image using the webcam and convert the image to RGB.
-- *mediapipe* This is an open-source library developed by Google. It is used for both face and gesture recognition. For the matter of this tutorial, we will use it for hand gesture recognition.
-- *math* We will use this library to find the distance between point number 4 (the thumb) and point number 8 (the index finger) using hypotenuse.
-- *ctypes* and *comtypes* These two libraries are depended upon by pycaw. Ctypes to provide C language compatible data types. Comtypes bases on the ctypes FFI(Foreign Function Interface) library.
-- *pycaw* We will need this library to access the device's speaker and its master volume.
 ### Referral hand image
 ![hand](/engineering-education/creating-a-hand-gesture-volume-controller-using-python-and-pycharm/hand.jpg)
 
 
 *[Image Source: Aniketiq](https://www.bing.com/images/search?view=detailV2&ccid=A16aeeUy&id=2B00C1DE13C6EFD132E8FCABF5CF0A11695E1FCA&thid=OIP.A16aeeUyQVRHqGt_rphzJQHaCl&mediaurl=https%3a%2f%2fcdn.hashnode.com%2fres%2fhashnode%2fimage%2fupload%2fv1629398588657%2fboG68w85n.png%3fauto%3dcompress%2cformat%26format%3dwebp&cdnurl=https%3a%2f%2fth.bing.com%2fth%2fid%2fR.035e9a79e532415447a86b7fae987325%3frik%3dyh9eaREKz%252fWr%252fA%26pid%3dImgRaw%26r%3d0&exph=538&expw=1543&q=mediapipe+hand+tracking+points&simid=607990468186358942&FORM=IRPRST&ck=C941CC346294E5FC99172E9ED31C9E5B&selectedIndex=4)*
 
-The above image shows the numbers of the points that mediapipe uses to refer to different points of the hand.
+The above image shows the numbers of the points that mediapipe uses to refer to different points of the hand. In this tutorial, we are going to use point 4 and point 8 which are the thumb and the index finger respectively.
 ### Creating a hand gesture volume controller
 First of all, we will prepare our workspace. Launch the pycharm app. Click on the create a new project. This is shown in the screenshot provided below.
 
@@ -43,10 +34,11 @@ First of all, we will prepare our workspace. Launch the pycharm app. Click on th
 
 Click on the create button on the window that appears next.
 
-We now need to install the libraries we did discuss above in our project. To do so, follow the following steps. To install numpy, open the terminal and type the following command. 
+We now need to install the libraries we need to use in our project. To do so, follow the following steps. To install numpy, open the terminal and type the following command. 
 ```bash
 pip install numpy
 ```
+*numpy* will help us work with arrays.
 
 ![Terminal](/engineering-education/creating-a-hand-gesture-volume-controller-using-python-and-pycharm/terminal.png)
 
@@ -57,23 +49,24 @@ Wait for a few seconds till numpy is installed successfully. We are going to rep
  pip install opencv-python
 
 ```
-
+ This library is imported as *cv2*. We will use this library to capture an image using the webcam and convert the image to RGB.
  ```bash
 pip install mediapipe
 
  ```
+ This is an open-source library developed by Google. It is used for both face and gesture recognition. For the matter of this tutorial, we will use it for hand gesture recognition.
  ```bash
 pip install pycaw
  ```
+  We will need this library to access the device's speaker and its master volume.
  ```bash
 pip install python-math
  ```
+ We will use this library to find the distance between point number 4 (the thumb) and point number 8 (the index finger) using hypotenuse.
  ```bash
- pip install comtypes
+pip install gpib-ctypes, comtypes
  ```
- ```bash
- pip install ctypes
- ```
+ These two libraries are depended upon by pycaw. Ctypes to provide C language compatible data types. Comtypes bases on the ctypes FFI(Foreign Function Interface) library.
 
 Now let us jump into coding. This is where the most fun is as we get hands-on.
 
@@ -85,60 +78,163 @@ from ctypes import cast, POINTER
 from comtypes import CLSCTX_ALL
 from pycaw.pycaw import AudioUtilities, IAudioEndpointVolume
 import numpy as np
+```
+In the above code segment, we are importing each library we did discuss into our project.
 
-cap = cv2.VideoCapture(0)  # Getting video input from our primary camera.
-# Detecting, initializing and configuring the hands.
+```python
+cap = cv2.VideoCapture(0) 
+```
+We are getting the video input from our computer's primary camera. If you are using any other camera, replace the number 0 with that of the camera you are using.
+
+### Detecting, initializing, and configuring the hands
+```python
 mpHands = mp.solutions.hands
 hands = mpHands.Hands()
 mpDraw = mp.solutions.drawing_utils
-# Accessing the speaker through pycaw.
+```
+- `mp.solutions.hands` : 
+We are calling on mediapipe hand module to detect the hands from the video input we did get.
+- `mpHands.Hands()` :
+This completes the initialization and configuration of the hands we did detect.
+- `mp.solutions.drawing_utils` : 
+Draws the connections and landmarks of the hand image. 
+
+### Accessing the speaker through pycaw
+```python
 devices = AudioUtilities.GetSpeakers()
 interface = devices.Activate(IAudioEndpointVolume._iid_, CLSCTX_ALL, None)
 volume = cast(interface, POINTER(IAudioEndpointVolume))
+```
+This are the initializations we need for pycaw. The library developer provides them so we will not change anything. They are found [here](https://github.com/AndreMiras/pycaw).
 
+### Finding the volume range between the minimum and maximum volume
+```python
 volMin, volMax = volume.GetVolumeRange()[:2]
-
+```
+We are calling the pycaw `volume.GetVolumeRange()` function to find the volume range between the minimum and maximum volume.
+### Capturing an image from our camera and converting it to an RGB image
+```python
 while True:
-    success, img = cap.read()  # if the camera we have specified works, we will capture an image.
-    imgRGB = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)  # converting the image the camera captures to RGB Image.
-    results = hands.process(imgRGB)  # completes the processing of the converted image.
+    success, img = cap.read()
+    imgRGB = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+    results = hands.process(imgRGB)
+```
+- `success, img = cap.read()`: Checking whether the camera we have specified works, we will capture an image.
+- `imgRGB = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)`: Converting the image the camera captures to RGB image.
+- ` results = hands.process(imgRGB)`: Completes the processing of the converted image.
 
-    lmList = []  # creating an empty list.
-    if results.multi_hand_landmarks:  # A list of all the detected hands.
-        #  Creating a loop so we can the list above so as to get the corresponding flag bit of each hand.
+### Checking whether we have multiple hands in our input
+```python
+
+    lmList = []
+    if results.multi_hand_landmarks: 
+```
+- `lmList = []`:
+We are creating an empty list which we will use to store the list of elements of the detected hands. i.e The number points of the hand.
+- `if results.multi_hand_landmarks:` We are checking if the input has multiple hands.
+### Creating a for loop to manipulate each hand
+```python
         for handlandmark in results.multi_hand_landmarks:
-            for id, lm in enumerate(handlandmark.landmark):  # We are adding a counter and then returning it.
-                # Finding the finger joints of the hand
-                h, w, _ = img.shape
+            for id, lm in enumerate(handlandmark.landmark):
+                h, w, c = img.shape
                 cx, cy = int(lm.x * w), int(lm.y * h)
-                lmList.append([id, cx, cy])  # Adding to the empty list we created "lmlist".
-            mpDraw.draw_landmarks(img, handlandmark, mpHands.HAND_CONNECTIONS)  # We draw all the landmarks in the frame
+                lmList.append([id, cx, cy]) 
+            mpDraw.draw_landmarks(img, handlandmark, mpHands.HAND_CONNECTIONS)
+```
+- `for handlandmark in results.multi_hand_landmarks`: Creating a for loop to interact with each hand in the results.
+- `for id, lm in enumerate(handlandmark.landmark)`: Creating a for loop to get the `id` (id number) and `lm` (landmark information) for each handlandmark. The landmark information will give us the x and y coordinates. The id number is the number assigned to the various hand points.
+- `h, w, c = img.shape`: Checking the height width and channels of our image. This will give us the width and height of the image.
+- `cx, cy = int(lm.x * w), int(lm.y * h)`: Finding the central position of our image. We achieve this by multiplying *lm.x by the width* and assigning the value obtained to cx. Then multiply lm.y by the height and assign the value obtained to cy. **NB** lm stands for landmark.
+- `lmList.append([id, cx, cy])`: We are adding the values of id,cx and cy to lmList.
+- ` mpDraw.draw_landmarks(img, handlandmark, mpHands.HAND_CONNECTIONS)`:
+We pass our image (`img`) then we call *mpDraw.draw_landmarks* to draw all the landmarks of the hand.
 
+### Specifying the points of the thumb and middle finger we will use
+```python
     if lmList != []:
-        x1, y1 = lmList[4][1], lmList[4][2]  # specifying point 4 of the thumb. Refer to the hand image we discussed.
-        x2, y2 = lmList[8][1], lmList[8][2]  # specifying point 8 of the index finger. Refer to the hand image we
-                                             # discussed.
-        # We now create a circle around the thumb and the index finger.
-        cv2.circle(img, (x1, y1), 4, (255, 0, 0), cv2.FILLED)  # circle around the thumb.
-        cv2.circle(img, (x2, y2), 4, (255, 0, 0), cv2.FILLED)  # circle around the index finger.
-        cv2.line(img, (x1, y1), (x2, y2), (255, 0, 0), 3)  # Drawing a line between the index finger and the thumb.
+        x1, y1 = lmList[4][1], lmList[4][2]
+        x2, y2 = lmList[8][1], lmList[8][2]
+ ```
+ - `if lmlist != []`: 
+ We use this statement to specify that the number of elements should not be null.
+ - `x1, y1 = lmList[4][1], lmList[4][2]` :
+ We are assigning variables x1 and y1 the x and y coordinates of point 4 respectively. This is the tip of the thumb. 
+ - `x2, y2 = lmList[8][1], lmList[8][2]` :
+ We are assigning variables x2 and y2 the x and y coordinates of point 8 respectively. This is the tip of the index finger. 
+ 
+ Refer to the had image diagram we did discuss to identify the [points](#referral-hand-image).
 
-        length = hypot(x2 - x1, y2 - y1)  # Finding distance between the tips of the thumb and index finger using
-                                            # hypotenuse.
-        vol = np.interp(length, [15, 220], [volMin, volMax])  # Hand range 15 - 220
+ ### Drawing a line between the tip of the thumb and the tip of the index finger
+ ```python                                            
+        cv2.circle(img, (x1, y1), 15, (255, 0, 0), cv2.FILLED)  
+        cv2.circle(img, (x2, y2), 15, (255, 0, 0), cv2.FILLED)  
+```
+- `cv2.circle(img, (x1, y1), 4, (255, 0, 0), cv2.FILLED)`:
+We are calling the `cv2.circle` and passing our image `img`.
+- ` (x1, y1)`:
+Specifies that we will draw the circle at the tip of the thumb.
+- `15`:
+This is the radius of the circle.
+- `(255, 0, 0)`: 
+This is the color of the circle.
+- `cv2.FILLED`:
+This refers to the thickness of -1 pixels. It will fill the circle with the color we specify.
+
+We will repeat the same for the index finger in the line of code: 
+
+`cv2.circle(img, (x2, y2), 15, (255, 0, 0), cv2.FILLED)`. 
+
+### Drawing a line between points 4 and 8
+```python
+        cv2.line(img, (x1, y1), (x2, y2), (255, 0, 0), 3)
+```
+In the above code, we are using the cv2.line function to draw a line between point four of the hand, and point 8.
+- `img`:
+We are passing our image to the function.
+- `(x1, y1), (x2, y2)`:
+We are specifying that the line we will draw will connect point 4 (`(x1, y1)`) which is the tip of the thumb and point 8 (`(x2, y2)`) which is the tip of the index finger.
+- `(255, 0, 0)`:
+This is the color of the line.
+- `3`:
+This is the thickness of the line.
+
+### Finding the distance between points 4 and 8
+```python
+        length = hypot(x2 - x1, y2 - y1)
+```
+In the above code, we are finding the distance between the tip of the thumb and the index finger using hypotenuse. We achieve this by calling the math hypot function and passing the difference between x2 and x1 and the difference between y2 and y1.
+### Converting the hand range to the volume range
+```python                                          
+        vol = np.interp(length, [15, 220], [volMin, volMax])
         print(vol, length)
-        volume.SetMasterVolumeLevel(vol, None)  # Setting the master volume in accordance to hand range.
-                                                # Volume range -63.5 - 0.0
+```
+We are calling on the numpy function `np.interp` to convert the hand range to the volume range. The arguments used are:
+- `length`: This is the value we want to convert.
+- `[150 - 220]`: This is the hand range.
+- `[volMin, volMax]`: Giving the range to which we want to convert.
 
-    cv2.imshow('Image', img)  # Showing the real time video which shows how the user is adjusting the volume using their
-                                # hand gesture
-    if cv2.waitKey(1) & 0xff == ord('q'):  # Terminate the program if the user does press letter q.
+### Setting the master volume
+```python        
+        volume.SetMasterVolumeLevel(vol, None)  
+```
+We are setting the master volume level in accordance with the hand range. We achieve this by passing `vol` which is the value of the hand range we did convert to volume range.
+
+### Displaying the video output used to interact with the user
+```python
+    cv2.imshow('Image', img) 
+```
+The above code shows the real-time video showing the user interacting with the program. i.e The user uses the thumb finger and the index finger to control the volume.
+
+### Terminating the program
+```python
+    if cv2.waitKey(1) & 0xff == ord('q'): 
         break
 ```
+The above code will terminate the program if the user presses the q key.
 ### Results
 When the code above has run to completion without any errors, the results will be as those shown in the screenshot below.
 
-![Results](/engineering-education/creating-a-hand-gesture-volume-controller-using-python-and-pycharm/results.png)
+![Results](/engineering-education/creating-a-hand-gesture-volume-controller-using-python-and-pycharm/results.gif)
 
 ### Conclusion 
 You now have all the skills required to create a hand gesture volume controller. Do your work while listening to your favorite music. You don't have to worry about dirtying your hands. By just a gesture of your hand, you can control the volume level of your music. You
