@@ -76,9 +76,9 @@ The peer clients forward the request as many times as possible until the data it
 1. Memory footprint is the primary memory size a process is taking up. The size of the mobile database affects the amount of memory a process will take. Mobile databases should have a small print since mobile devices have limited memory.
 2. Flash optimized storage system- Mobile database needs to be optimized to use the new storage devices. 
 3. Data synchronization- Mobile database should have the synchronize functionality to maintain consistency within the data.
-4. Security- Mobile database should implement complete end security to ensure data transfer is secure.
+4. Security- Mobile database should implement complete end security to ensure secure data transfer.
 5. Low power consumption- Optimization needs to be done in mobile databases for efficient power consumption.
-6. Self management- Mobile database needs to understand its responsibilities and perform the database administrator tasks.
+6. Self-management9- Mobile database needs to understand its responsibilities and perform the database administrator tasks.
 7. Embeddable- Database must be embeddable as a Dynamic Link Library file so that administrators can have direct access to mobile devices.
 
 ### Transaction management in mobile database systems
