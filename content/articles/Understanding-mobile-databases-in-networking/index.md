@@ -14,18 +14,15 @@ images:
   - url: /engineering-education/Understanding-mobile-databases-in-networking/hero.jpg
     alt: Understanding mobile databases in networking Hero Image
 ---
-### UNDERSTANDING MOBILE DATABASES IN NETWORKING
-
-Mobile databases make data from database applications available to mobile users, and they support applications that involve data processing. 
-
-In general, a mobile database enables a connection between computing devices across a wireless mobile network.
-
+Mobile databases make data from database applications available to mobile users, and they support applications that involve data processing. In general, a mobile database enables a connection between computing devices across a wireless mobile network.
+<!--more-->
 Mobile computing makes it possible for users to communicate while on their move.
+
 ### Table of contents
 - [ Properties of mobile databases](#Properties-of-mobile-databases)
 - [ Types of mobile databases](#Types-of-mobile-databases)
 - [Advantages of mobile databases](#Advantages-of-mobile-databases)
-- [Disdvantages of mobile databases](#Disdvantages-of-mobile-databases)
+- [Disadvantages of mobile databases](#Disdvantages-of-mobile-databases)
 - [Characteristics of mobile environments](#Characteristics-of-mobile-environments)
 - [Requirements of mobile databases](#Requirements-of-mobile-databases)
 - [Transaction management in mobile database systems](#Transaction-management-in-mobile-database-systems)
@@ -33,113 +30,108 @@ Mobile computing makes it possible for users to communicate while on their move.
 - [Conclusion](#conclusion)
 
 ### Properties of mobile databases
-- It resides on mobile devices
+- It resides on mobile devices.
 - It provides a communication link between a central database server and other mobile links that allow a transfer.
-- The mobile database connects the database of the main system.
+- The mobile database connects the database of the central system.
 - A mobile database enables users to view information while on the move.
 - Mobile databases analyze data on mobile devices.
 
 ### Types of mobile databases
-
 #### Client-server mobile database.
+In the client-server, the database server connects the client machine with the running application programs that users are using. The client machines have running application programs that users are using. The programs are the ones in charge of query generation. 
 
-In the client-server, the database server connects the client machine with the running application programs that users are using.
-The client machines have running application programs that users are using. The programs are the ones in charge of query generation.
-The computer network makes it possible for the generated query to get accessed by the database. The database server will check the query, the required data for the query processing, which user has sent the query, and the respective authenticity of the new use.
-The processed result is allocated to the respective client machine which displays the result to the user. The central server checks the syntax of the commands from the client's queries.
-The server system is hidden in a way that the user does not know about the server's hardware and software.
-#### Peer-to-Peer Mobile Database.
-It is a database stored in the peers of a mobile peer-to-peer network. The database maintenance activities get distributed among clients where each device has a mobile database that is in charge of storing data items. This forms the mobile peer-to-peer database.
-The peer clients forward the request as many times as possible until the data items are found. The concept of a peer-to-peer database proposes searching local information like information of a temporary nature. For example, if there's the availability of a parking slot in a specific geographical area.
-Applications of peer-to-peer mobile database
+The computer network makes it possible for the generated query to get accessed by the database. The database server will check the query, the required data for the query processing, which user has sent the query, and the respective authenticity of the new use. 
 
- - Social networks
+The processed result is allocated to the respective client machine, which displays the result to the user. The central server checks the syntax of the commands from the client's queries. The server system is hidden so that the user does not know about the server's hardware and software.
+
+#### Peer-to-Peer mobile database
+It is a database stored in the peers of a mobile peer-to-peer network. The database maintenance activities get distributed among clients. Each device has a mobile database that stores data items, which forms the mobile peer-to-peer database. 
+
+The peer clients forward the request as many times as possible until the data items are found. The concept of a peer-to-peer database proposes searching local information like information of a temporary nature. For example, if there is the availability of a parking slot in a specific geographical area. Applications of the peer-to-peer mobile databases are:
+ - Social networks.
  - Airport application.
  - Mobile E-commerce.
  - Transport safety and efficiency.
 
 ### Advantages of mobile databases
-
- - It provides wireless database access.   
- - Support and maintenance are easily done.
- - It is easy to manage.
- - It is used with multiple devices.
+- Limited bandwidth of wireless networks.
+- It needs low power.
+- It should enhance mobility.
+- Disconnections.
+- It does not require many resources.
 
 ### Disadvantages of mobile databases
-
  - It is less secure.
  - Bandwidth is limited.
  - The mobile database consumes more power.
 
 ### Characteristics of mobile environments
-
-- Limited bandwidth of wireless networks 
-- It needs low power
-- It should enhance mobility
-- Disconnections
-- It doesn't require many resources
+- Limited bandwidth of wireless networks.
+- It needs low power.
+- It should enhance mobility.
+- Disconnections.
+- It doesn't require many resources.
 
 ### Requirements of mobile databases
-1. Memory footprint- This is the size of the main memory a process is taking up. The size of the mobile database affects the amount of memory a process will take. Mobile databases should have a small print since mobile devices have limited memory. 
-2. Flash optimized storage system-mobile database needs to be optimized to make use of the new storage devices.
-3. Data synchronization-mobile database should have the synchronize functionality to maintain consistency within the data.
-4. Security-mobile database should implement complete end security to ensure the transfer of data is secure.
-5. Low power consumption- optimization needs to be done in mobile databases for efficient power consumption.
-6. Self management-mobile database needs to understand its responsibilities and perform the database administrator tasks.
+1. Memory footprint is the primary memory size a process is taking up. The size of the mobile database affects the amount of memory a process will take. Mobile databases should have a small print since mobile devices have limited memory.
+2. Flash optimized storage system- Mobile database needs to be optimized to use the new storage devices. 
+3. Data synchronization- Mobile database should have the synchronize functionality to maintain consistency within the data.
+4. Security- Mobile database should implement complete end security to ensure data transfer is secure.
+5. Low power consumption- Optimization needs to be done in mobile databases for efficient power consumption.
+6. Self management- Mobile database needs to understand its responsibilities and perform the database administrator tasks.
 7. Embeddable- Database must be embeddable as a Dynamic Link Library file so that administrators can have direct access to mobile devices.
 
 ### Transaction management in mobile database systems
+- A transaction is a unit of work carrying out instructions within a database management system. In a mobile environment, one should consider a restricted bandwidth because of the mobility of the host.
+- If the bandwidth is high, information is easily accessed as there is a strong connection, while there is a weak connection if the bandwidth is low. Mobile transaction checks if the bandwidth is high or low, it can switch from a powerful connection to an inadequate connection or conversely. With this, mobile users start transactions from anywhere, maintaining consistency.
 
-- A transaction is a unit of work carrying out instructions within a database management system. 
-In a mobile environment, one should consider a restricted bandwidth because of the mobility of the host. 
-- If the bandwidth is high, information is easily accessed as there's a strong connection while else if the bandwidth is low, there's a weak connection. Mobile transaction checks if the bandwidth is high or low, it can switch from a powerful connection to an inadequate connection or conversely. With this, mobile users start transactions from anywhere maintaining consistency.
 #### Mobile transaction models
 1. Report and co-transaction model
 2. Pre-serialization transaction model
 3. Two-tire transaction model
 4. Moflex transaction model
 
-For more enquiries about transaction models visit [Overview of trasaction models](  https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.22.2097&rep=rep1&type=pdf )
+For more inquiries about transaction models, visit [Overview of transaction models](https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.22.2097&rep=rep1&type=pdf).
  
 ### Mobile database recovery
-- Mobile database systems can store actual databases at one or multiple locations.
-In case of failure, recovery of the mobile database system is possible. Mobile database recovery is more complex than the traditional database. 
+Mobile database systems can store actual databases at one or multiple locations.
+
+In case of failure, recovery of the mobile database system is possible. Mobile database recovery is more complex than the traditional database.
+
 #### Factors that affect recovery
 1. The mobile device might be broken, stolen, or gets lost.
 2. There are areas with a poor network connection.
 3. There may be network problems like weak wireless connections.
-4. Mobility
+4. Mobility.
 
-The new recovery scheme is more suitable for mobile databases than the traditional one.
-The main types of traditional schemes are the lazy and pessimistic approaches.
+The new recovery scheme is more suitable for mobile databases than the traditional one. The main types of traditional schemes are the lazy and pessimistic approaches.
+
 #### New scheme
-Its main goal is managing and maintaining any changes made to the data.
-It focuses on the recovery of the mobile unit at the time of conveyance.
-One should note the changes made to the data as they can be of help when trying to recover the mobile unit in case of failure.
-The new scheme considers two conditions for recovery:
-- 1st condition
-If the device recovers in the same base station where it crashed.
-- 2nd condition
-If the device moves to a Designated Base Station as you try to recover it, the old base station is unrecognized.
+Its main goal is managing and maintaining any changes made to the data. It focuses on the recovery of the mobile unit at the time of conveyance. One should note the changes made to the data as they can help when trying to recover the mobile unit in case of failure. The new scheme considers two conditions for recovery:
+- 1st condition: If the device recovers in the same base station where it crashed.
+- 2nd condition: If the device moves to a Designated Base Station as you try to recover it, the old base station is unrecognized.
 
 The old base station notifies the new base station about the mobile device's data. A query is sent to the DBS requesting information about the mobile device and the data that was on it.
 
-Pros and Cons of the new scheme
-
-Pros
+#### Pros and Cons of the new scheme
+##### Pros
 - It avoids numerous copies of data.
 - Data gets saved at one central place for faster recovery reducing recovery time.
-- Maintained data on the previous base station becomes an updated version in case of recovery.
+- Maintained data on the previous base station becomes an updated version of recovery.
 
-Cons
-- The Base stations have the same DBS and data stored on one DBS gets overloaded sometimes.
+##### Cons
+- The Base stations have the same DBS, and data stored on one DBS gets overloaded sometimes.
 
-Existing mobile databases
-
+#### Existing mobile databases
  - Sybase SQL Anywhere.
- - Oracle lite
- - Microsoft SQL server compact
- - SQ lite
- - IBM DB2 everyplace (DB2e)
+ - Oracle lite.
+ - Microsoft SQL server compact.
+ - SQ lite.
+ - IBM DB2 everyplace (DB2e).
+ 
 ### Conclusion
-In conclusion, every device we use has a working database that makes data available to the users. After reading the article users should know how configuration takes place in mobile databases.
+In conclusion, every device we use has a working database that makes data available to the users. After reading the article, users should know how configuration occurs in mobile databases.
+
+Happy learning!
+
+Peer Review Contributions by: [Briana Nzivu](/engineering-education/authors/briana-nzivu/
