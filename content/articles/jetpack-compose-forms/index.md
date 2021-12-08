@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /jetpack-compose-forms/
-title: Advanced form operations In Jetpack compose
-description: In this article, we will be looking at a dry approach to working with textfields in Jetpack compose.
+title: Advanced Form Operations in Jetpack Compose
+description: In this article, we will be looking at a dry approach to working with textfields in Jetpack compose such as advanced form operations.
 author: linus-muema
-date: 2021-12-07T00:00:00-00:30
+date: 2021-12-08T00:00:00-10:30
 topics: [Android]
 excerpt_separator: <!--more-->
 images:
@@ -14,30 +14,29 @@ images:
 - url: /engineering-education/jetpack-compose-forms/hero.jpg
   alt: jetpack compose forms image
 ---
-
 When developing an application, it is always a good idea to write code that is not repetitive. This principle is known as [DRY](https://en.Wikipedia.org/wiki/Don't_repeat_yourself). It works hand in hand with code decoupling.
 <!--more-->
-These two ensure that code is easily scalable as a change in one part of the application does not affect other unrelated areas. A modification is done uniformly across the components/modules.
+These two ensure that code is easily scalable, as a change in one part of the application does not affect other unrelated areas. A modification is done uniformly across the components/modules.
 
-In this article, we will be looking at a dry approach to working with text fields in Jetpack compose. By the end of the article, you should:
+In this article, we will look at a DRY approach to working with text fields in Jetpack compose. 
+
+By the end of the article, you should:
 - Know how to work with text fields in Jetpack compose. This involves state management and validation.
-- Know how to decouple text field operations
-- Know how to abstract the various `form` activities
+- Know how to decouple text field operations.
+- Know how to abstract the various `form` activities.
 
 ### Prerequisites
 In order to follow up with this tutorial comfortably, you will need:
-- Android studio 4.2 (Arctic Fox) and above
-- Knowledge of Kotlin language
-- Knowledge in Jetpack compose
-- Physical device or emulator to run the application
+- Android studio 4.2 (Arctic Fox) and above.
+- Knowledge of Kotlin language.
+- Knowledge in Jetpack compose.
+- Physical device or emulator to run the application.
 
-### Step 1 : Setup
-Open up Android Studio and create a new project using the "Empty Compose activity" template to get started. Give it any name you would like.
+### Step 1: Setup
+Open up Android Studio and create a new project using the "Empty Compose activity" template to get started. Give it any name you would like. You can go ahead to customize the theme to your liking.
 
-You can go ahead to customize the theme to your liking.
-
-### Step 2 : Form operations
-When developing mobile applications, likely, we come across `Forms` or some form of input to collect data from users. With Jetpack compose, we have the `TextField` composable from Material.
+### Step 2: Form operations
+When developing mobile applications, we are likely to come across `Forms` or some form of input to collect data from users. With Jetpack compose, we have the `TextField` composable from Material.
 
 Go ahead and add it to your screen.
 
@@ -64,9 +63,7 @@ fun Screen(){
 }
 ```
 
-As you can see, you are managing the state of the field by defining a `State<String>` then updating it as the value changes. 
-
-Let us go ahead and add another field to get the email address and button to submit our details. 
+As you can see, you are managing the state of the field by defining a `State<String>` then updating it as the value changes. Let us go ahead and add another field to get the email address and button to submit our details. 
 
 ```kotlin
 @Composable
@@ -100,7 +97,7 @@ fun Context.toast(message: String){
 
 It is common to run validations after submission to ensure data validity. For our case, we can run one to check that the `name` field is not empty and the `email` field matches the required regex.
 
-We also need to show the required errors to notify the users of the issues. So go ahead and modify the `Form` composable as shown below:
+We also need to show the required errors to notify the users of the issues. Let's go ahead and modify the `Form` composable as shown below:
 
 ```kotlin
 @Composable
@@ -152,16 +149,14 @@ when {
 }
 ```
 
-That is a simple validation process for our fields. However, we have much code for only two input fields. Imagine if we had ten fields each, with different validation processes. It would be even worse if we had forms on different screens, as is common in most applications.
+That is a simple validation process for our fields. However, we have much code for only two input fields. Imagine if we had ten fields each, with different validation processes. It would be worse if we had forms on different screens, as is common in most applications.
 
 A workaround would be to create a form composable that handles form validation. We can create a state for the `Form` composable, and it handles all the fields we pass into it. 
 
 Let us go ahead and implement that.
 
-### Step 3 : Validators
-We can start with validators. They all have similar ways of working. They return boolean based on whether the value passed meets specific criteria. 
-
-Go ahead and create a sealed interface called `Validator`. All of our validators will be of this type.
+### Step 3: Validators
+We can start with validators. They all have similar ways of working. They return boolean based on whether the value passed meets specific criteria. Go ahead and create a sealed interface called `Validator`. All of our validators will be of this type.
 
 ```kotlin
 private const val EMAIL_MESSAGE = "invalid email address"
@@ -231,9 +226,7 @@ We have created a class that receives three arguments. The `name` will be used t
 
 The composable function `Content` will draw the field in the `Form`. The function `validate` will return a boolean to denote whether the field's value is valid or not. It will loop through the validators, checking if the value is correct based on the validator and returning true or false. 
 
-> Once the user starts editing the form field, we clear the errors, so the field goes back to an invalidated state.
-
-Add the following implementations for the validators.
+> Once the user starts editing the form field, we clear the errors, so the field goes back to an invalidated state. Add the following implementations for the validators.
 
 ```kotlin
 fun validate(): Boolean {
@@ -268,9 +261,7 @@ fun validate(): Boolean {
 The function should return the matching boolean from the validation process.
 
 ### Step 5: Creating state for the form
-This form state will draw our form fields and validate all the fields passed into it.
-
-Go ahead and create a class called `FormState`.
+This form state will draw our form fields and validate all the fields passed into it. Go ahead and create a class called `FormState`.
 
 ```kotlin
 class FormState {
@@ -290,16 +281,13 @@ class FormState {
 }
 ```
 
-The `validate` function here also returns a boolean if any of the fields' validation does not pass. We break the loop at that point to save on resources. 
-
-The `getData` function maps the form field names to the corresponding values for easy management on the receiving end. 
-
+The `validate` function here also returns a boolean if any of the fields' validation does not pass. We break the loop at that point to save on resources. The `getData` function maps the form field names to the corresponding values for easy management on the receiving end. 
 
 ### Step 6: Putting it all together
 Create a `Form` composable that receives two arguments.
 
-* **state:** this will be an instance of the `FormState` class we just created above.
-* **fields:** this will be a list of the form fields with their respective validators.
+- **state:** This will be an instance of the `FormState` class we just created above.
+- **fields:** This will be a list of the form fields with their respective validators.
 
 ```kotlin
 @Composable
@@ -314,11 +302,7 @@ fun Form(state: FormState, fields: List<Field>){
 }
 ```
 
-We set the state's fields using the setter method. We then display the form fields in a column by calling the field's `Content` composable function.
-
-And with that, our form is complete 😁
-
-To use it in your application, modify your UI as below.
+We set the state's fields using the setter method. We then display the form fields in a column by calling the field's `Content` composable function. With that, our form is complete 😁. To use it in your application, modify your UI as below.
 
 ```kotlin
 @Composable
