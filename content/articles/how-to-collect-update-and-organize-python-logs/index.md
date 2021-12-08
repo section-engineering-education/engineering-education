@@ -16,7 +16,7 @@ The logging library follows a secluded plan and is isolated into four classes: l
 The three significant measures of `basicConfig()` are: 
 - level: plunging succession of events. The log ranks congenial are DEBUG, INFO, WARNING, ERROR, and CRITICAL. In addition, the level is set to Notice clearly, which proposes that Python's logging module will ignore any Research or Information messages. 
 - controller: determines where the application will pipe your logs.
-- design: Messges are logged in this format: `LEVEL>:LOGGER NAME>: MESSAGE>`. In the following module, I'll talk about how to alter this to fuse timestamps and supplemental data that is significant for investigating. 
+- design: Messages are logged in this format: `LEVEL>:LOGGER NAME>: MESSAGE>`. In the following module, I'll talk about how to alter this to fuse timestamps and supplemental data that is significant for investigating. 
 Inferable from how the logging module includes WARNING and more significant level logs as a substitute, you might be missing out on genuinely low logs that can work with rhizome cause assessment. Maybe utilizing a `StreamHandler` or a `SocketHandler` to channel logs to the control center or an unessential help over the organization, use a `FileHandler` to log single or extra documents on the circle.  
 Benefits of logging documents 
 - While streaming logs to an outside objective, your application doesn't need to reckon for the possibility of organization-related irregularities. In the event of any issues happening while at the same time streaming logs over the organization you'll not lose admittance to those logs since they'll have been upheld on every server. 
@@ -33,25 +33,33 @@ The more your application ranges, the more you are needed to utilize a solid, ex
 ```
 lumberjack = logging.getLogger(__name__) 
 ```
-`getLogger()` sets lumberjack character to _ _identity_ _ , that [concides with the productive ID of the module](https://docs.python.org/3/reference/import.html?highlight=__name__#__name__) from which the strategy is determined. This guides you to realize which portion in your application brought about each message. Then, at that point, you can comprehend your logs. Thus, when you change the log design and consolidate the lumberjack identity(identity)s, the subtleties will be shown in each log message. 
+`getLogger()` sets lumberjack character to _ _identity_ _ , that [coincides with the productive ID of the module](https://docs.python.org/3/reference/import.html?highlight=__name__#__name__) from which the strategy is determined. This guides you to realize which portion in your application brought about each message. Then, at that point, you can comprehend your logs. Thus, when you change the log design and consolidate the lumberjack identity(identity)s, the subtleties will be shown in each log message. 
 ```python 
-# higher_module.py 
-import logging 
-import lessermodule 
-logging.basicConfig(level=logging.DEBUG, format='%(asctime)s %(call)s %(rankname)s:%(tenor)s') 
-lumberjack = logging.getLogger(__name__) 
-def document_word_count(myid): 
-logger.info("igniting the function") 
-# use the try except block to configure multiple logs
-try: 
-word_count = lessermodule.word_count(myid) 
-with open('frametallyarchive.csv', 'a') as record: 
-line = str(myid) + ',' + str(word_count) 
-index.write(row + '\n') 
-except: 
-logger.warning("unable to generate report%s to impartial", myid) 
-finally: 
-logger.debug("the task is ramshackle the report %s", myid) 
+# lessermodule.py
+import logging.config
+import traceback
+
+logging.config.fileConfig('logging.ini', disable_existing_loggers=False)
+logger = logging.getLogger(__name__)
+
+def word_count(myid):
+    try:
+        # count the number of words in a file, myid, and log the result
+        with open(myfile, 'r+') as f:
+            file_data = f.read()
+            words = file_data.split(" ")
+            final_word_count = len(words)
+            logger.info("this file has %d words", final_word_count)
+            f.write("this file has %d words", final_word_count)
+            return final_word_count
+    except OSError as e:
+        logger.error(e, exc_info=True)
+    except:
+        logger.error("uncaught exception: %s", traceback.format_exc())
+        return False
+
+if __name__ == '__main__':
+    word_count('myid.txt')
 ```
 Running the higher_module.py, the logging will yield the accompanying. 
 ```
@@ -72,24 +80,27 @@ A logging setup record needs to contain most extreme three sections:
  Keys direct the personality of different parts that you will be needed to design, arranged as `[<SECTION_NAME>_<KEY_NAME>]`, by which the fragment name is either lumberjack, controller, or formatter. 
 The following is a basic outline of a logging setup document.
 ```python 
-# Each  section contains a key
-[loggers] 
-keys=root 
-[handlers] 
-keys=fileHandler 
-[formatters] 
-keys=simpleFormatter 
-[logger_root] 
-stage=DEBUG 
-handlers=indexHandler 
-[handler_fileHandler] 
-magnificence=IndexHandler 
-degree=DEBUG 
-formatter=simpleFormatter 
-# state the path of your logs
-args=("/way/to/log/record.log",) 
-[formatter_plainFormatter] 
-exhibit=%(asctime)s %(call)s - %(rankname)s:%(tenor)s
+[loggers]
+keys=root
+
+[handlers]
+keys=fileHandler
+
+[formatters]
+keys=simpleFormatter
+
+[logger_root]
+level=DEBUG
+handlers=fileHandler
+
+[handler_fileHandler]
+class=FileHandler
+level=DEBUG
+formatter=simpleFormatter
+args=("/path/to/log/file.log",)
+
+[formatter_simpleFormatter]
+format=%(asctime)s %(name)s - %(levelname)s:%(message)s
 ```
 Python library directs that only one overseer can be appended to one lumberjack. More data on engendering see the [documentation](https://docs.python.org/3/library/logging.html#logging.Logger.propagate).Taking a gander at the outline '( higher module and lesser module)', the two lumberjacks will give a DEBUG yield and high-need signs in the arrangement '(formatter_simpleFormatter)' and incorporate them into a log record (file.log) i.e:  
 This will take out the need to annex `logging.basicConfig(level=logging.DEBUG, format='%(asctime)s %(name)s %(levelname)s:%(message)s')` in your portions. 
@@ -128,7 +139,7 @@ LOGGING = {
 }, 
 }, 
 # Loggers appended
-'lumberjacks': { 
+'loggers': { 
 'django': { 
 'overseers': ['file', 'console'], 
 'level': 'Investigate', 
@@ -148,46 +159,23 @@ Loggers log your server or software details. Django provides several loggers, fo
 Logging tracebacks in your exception logs are huge in researching. `Logging.error()` doesn't connect any tracebacks nuances anyway it shows exception as an error.Set the sys.exc_info to True to enable `logging.error()` get tracebacks. 
 Description of `exc_info` : 
 ```python 
-# lesser_module.py 
-logging.config.indexConfig('/way/to/logging.ini', disable_existing_loggers=Faulty) 
-logger = logging.getLogger(__name__) 
-def word_count(myid): 
-endeavor: 
-# remember the number of words for a record, file, and log the result 
-[...] 
-be that as it may, OSError as e: 
-logger.error(e) 
-logger.error(e, exc_info=True) 
-[...] 
+# lessermodule.py
+logging.config.fileConfig('/path/to/logging.ini', disable_existing_loggers=False)
+logger = logging.getLogger(__name__)
+
+def word_count(myid):
+    try:
+    # count the number of words in a file, myid, and log the result
+    [...]
+    except OSError as e:
+        logger.error(e)
+        logger.error(e, exc_info=True)
 ```
 - Recording unhandled exceptional cases: 
 It isn't easy to go before and resolve each achievable exceptional case. But, fundamentally, guarantee your logs can get every exclusion, and you can deal with them later. 
 An unhandled exclusion happens when the application code doesn't true to form handle extraordinary cases that are outside the `try...except` block. For instance, when you endeavor to open a record on a plate, it's anything but a surprising issue for the archive not to exist. The .NET Framework will then throw a 'FileNotFoundException'.  More to that you can use python's standard [traceback lirary](https://docs.python.org/3/library/traceback.html) to coordinate traceback and connect it in the log message in an event as under:
 ```python 
-# lesser_module.py 
-import logging.config
-import traceback 
-logging.config.fileConfig('logging.ini', enfeeble_existing_loggers=Faulty) 
-logger = logging.getLogger(__name__) 
-define word_count(myid): 
-endeavor: 
-# recollect the number of words for a record, document, and log the outcome
-with open(myid, 'r+') as f: 
-file_data = j.read() 
-words = file_data.split(" ") 
-final_word_count = len(words) 
-# basic details of the document
-logger.info("this document has %d words", final_word_count) 
-j.write ("this document has %d words", final_word_count) 
-return final_word_count 
-however, OSError as r: 
-logger.error(r, exc_info=True) 
-be that as it may: 
-# exception handling and tracebacks
-logger.error("uncaught exceptional case: %s", traceback.format_exc()) 
-return False 
-in case __name__ == '__main__': 
-word_count('myfile.txt') 
+
 ```
 This dictates that the code contains a `TypeError` unique case that isn't dealt with in the endeavor except for reasoning, yet It will be logged since we fused the 'traceback' code.
 ### To work with investigating, design your logs in JSON and merge them 
@@ -201,62 +189,66 @@ pip introduce python-json-lumberjack
 After establishment, you'll need to refresh design records to make the current formatter redid or add a new formatter that will style signs in JSON ([formatter_json]). JSON formatter utilizes [pythonjsonlogger.jsonlogger.JsonFormater class](https://github.com/madzak/python-json-logger#using-a-config-document). You can determine the characteristics you need to remember for each log record, as the outline beneath.
 ```python
 [loggers]
-keys=root,lesser_module
-# specify attributes in each log record
+keys=root,lowermodule
+
 [handlers]
-keys=animateHandler,IndexHandler
+keys=consoleHandler,fileHandler
+
 [formatters]
-keys=plainFormatter,json
+keys=simpleFormatter,json
+
 [logger_root]
 level=DEBUG
-handlers=animateHandler
-[logger_lesser_module]
+handlers=consoleHandler
+
+[logger_lowermodule]
 level=DEBUG
-handlers=indexHandler
-qualname=lesser_module
-[handler_animateHandler]
+handlers=fileHandler
+qualname=lowermodule
+
+[handler_consoleHandler]
 class=StreamHandler
 level=DEBUG
-formatter=plainFormatter
+formatter=simpleFormatter
 args=(sys.stdout,)
-[handler_indexHandler]
-class=IndexHandler
-rank=DEBUG
+
+[handler_fileHandler]
+class=FileHandler
+level=DEBUG
 formatter=json
 args=("/home/molly/myid.log",)
-# customization by adding new formatter
+
 [formatter_json]
 class=pythonjsonlogger.jsonlogger.JsonFormatter
-format=%(asctime)s %(call)s %(rankname)s %(tenor)s
+format=%(asctime)s %(name)s %(levelname)s %(message)s
+
 [formatter_simpleFormatter]
-format=%(asctime)s %(call)s - %(rankname)s:%(tenor)s
+format=%(asctime)s %(name)s - %(levelname)s:%(message)s
 ```
 Logs shipped from the command prompt `(with consoleHandler)` follow the `simpleFormatter` style to enhance readability. After the inclusion of pythonjsonlogger.jsonlogger.JsonFormatter class in your configuration file, the fileConfig() function will create the JsonFormatter if the code runs in an environment that can import pythonjsonlogger. In case you're not utilizing record based setup, you should append the python-json-lumberjack assortment in your function code and characterize a controller and formatter, as depicted in the [library](https://github.com/madzak/python-json-logger#integrating-with-pythons-logging-framework):
 - Add custom ascribes to your JSON logs 
 One more advantage of signing in JSON is adding credits that an outer log the executive's administration can parse and investigate consequently. Prior we arranged for the organization to incorporate standard ascribes like `%(asctime)s`, `%(name)s`, `%(levelname)s`, and `%(message)s`. 
 ```python
-# lesser_module.py 
-import logging.config 
-import traceback 
-import time 
-# indicate the name of your file
-def word_count(myid): 
-lumberjack = logging.getLogger(__name__) 
-logging.indexConfig('logging.ini', disable_existing_loggers=False) 
-attempt: 
-# start time
-ignitiontime = time.time() 
-with open(myid, 'r') as j: 
-index_data = j.read() 
-words = file_data.split(" ") 
-final_word_count = len(words) 
-stoptime = time.time() 
-term = stoptime - ignitiontime 
-# termination and return of the results
-logger.info("this record has %d words", final_word_count, extra={"run_duration":duration}) 
-return final_word_count 
-but OSError as r: 
-[...]
+# lessermodule.py
+import logging.config
+import traceback
+import time
+
+def word_count(myid):
+    logger = logging.getLogger(__name__)
+    logging.fileConfig('logging.ini', disable_existing_loggers=False)
+    try:
+        starttime = time.time()
+        with open(myfile, 'r') as f:
+            file_data = f.read()
+            words = file_data.split(" ")
+            final_word_count = len(words)
+            endtime = time.time()
+            duration = endtime - starttime 
+            logger.info("this file has %d words", final_word_count, extra={"run_duration":duration})
+            return final_word_count
+    except OSError as e:
+        [...]
 ```
 In the program above, `run_duration`, portrays the estimation of the span of the action right away.
 ```
