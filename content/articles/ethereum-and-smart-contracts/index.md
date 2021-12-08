@@ -1,4 +1,22 @@
-According to the [website](https://ethereum.org/en/), Ethereum is a community-run technology that powers the cryptocurrency ether (ETH) as well as thousands of decentralized applications. For the Ethereum platform to be functional, it is powered by the Blockchain protocol. [Blockchain](https://en.wikipedia.org/wiki/Blockchain) is a system of decentralized nodes comprised of a network's resources where transaction data is distributed and stored using a consensus algorithm. That means that all the parties under the blockchain network protocol must approve the ledger's state to increase the trust of unknown peers in a decentralized environment. In contrast to [Bitcoin](https://www.investopedia.com/terms/b/bitcoin.asp), Ethereum is more than just a cryptocurrency as developers can use it to deploy smart contracts and decentralized applications, or [dapps](https://ethereum.org/en/dapps/).
+---
+layout: engineering-education
+status: publish
+published: true
+url: /ethereum-and-smart-contracts/
+title: Understanding Ethereum and smart contracts
+description: In this tutorial, we will learn about the basics of Ethereum, smart contracts and various use case of Ethereum smart contracts
+author: wilson-gichuhi
+date: 2021-12-08T00:00:00-10:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/ethereum-and-smart-contracts/hero.jpeg
+    alt: Understanding Ethereum and smart contracts
+---
+
+According to the [website](https://ethereum.org/en/), Ethereum is a community-run technology that powers the cryptocurrency ether (ETH) as well as thousands of decentralized applications. For the Ethereum platform to be functional, it is powered by the Blockchain protocol.
+
+[Blockchain](https://en.wikipedia.org/wiki/Blockchain) is a system of decentralized nodes comprised of a network's resources where transaction data is distributed and stored using a consensus algorithm. That means that all the parties under the blockchain network protocol must approve the ledger's state to increase the trust of unknown peers in a decentralized environment. In contrast to [Bitcoin](https://www.investopedia.com/terms/b/bitcoin.asp), Ethereum is more than just a cryptocurrency as developers can use it to deploy smart contracts and decentralized applications, or [dapps](https://ethereum.org/en/dapps/).
 
 This article will discuss how Ethereum works, its disruptive technologies, and the smart contracts ecosystem.
 
@@ -33,7 +51,7 @@ In the Ethereum network, participants often need to execute operations. In such 
 Consensus is the method that validates and records data on the Blockchain. In scenarios of cryptocurrencies, this is the mechanism that maintains transparency and security on the network. It is also responsible for issuing new tokens into circulation. Instead, a single entity controls nothing; every participating network can see, share, or track transactional data.
 
 ### The Ethereum Virtual Machine (EVM)
-In a nutshell, the Ethereum network provides access to the Ethereum Virtual Machine (EVM) – a decentralized blockchain computer where developers can build smart contracts and embed them into the application. It's a virtual computer where all Ethereum contracts are executed. 
+In a nutshell, the Ethereum network provides access to the Ethereum Virtual Machine (EVM) – a decentralized blockchain computer where developers can build smart contracts and embed them into the application. It's a virtual computer where all Ethereum contracts are executed.
 
 Furthermore, the EVM is deterministic in that given an input of a smart contract running on an EVM, it will always produce the same output. The process is essential because the Blockchain will need to achieve its functionality by ensuring that all blocks agree on smart contract results and reach a consensus. Thus, the EVM provides a consistent way for smart contracts to execute without downtime, censorship, or influence from any third parties.
 
@@ -70,3 +88,8 @@ The health industry is booming. However, with the vast volume of medical data, t
 
 ### Conclusion
 As a digital platform, Ethereum gives developers a platform to build a wide range of decentralized applications such as security systems, voting systems, payment methods, and more. Despite its significant benefits such as safety, confidentiality, the technology is relatively new to users and still faces limitations from government regulations. However, Blockchain can be the mover and shaker of the [fourth industrial revolution](https://www.salesforce.com/blog/what-is-the-fourth-industrial-revolution-4ir/).
+
+
+---
+
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
