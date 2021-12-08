@@ -15,12 +15,12 @@ To follow through this tutorial, the reader should have the following:
 The various ways of ensuring security include: 
 
 #### 1. Asking for Users credentials
-This is the most basic method for ensuring that your application is secured. User's credentials include passwords, PINs, patterns, and biometrics such as fingerprint and face recognition.
+This is the most basic method for ensuring that your application is secured. Passwords, PINs, patterns, and biometrics such as fingerprint and face recognition are all examples of user credentials. 
 As a developer, you can implement these constraints in the program to help the user secure the data in the application.
 
-#### 2. Enforcing Secure Communication Between Your App and Other Apps
+#### 2. Ensuring That Your App and Other Apps Communicate in a Secure Manner 
 
-This involves safeguarding the data you are sharing with other applications. While sharing your app's data with another application, you should ensure that your data is secured. There are also instances that your app can share data with a website. This should be done in a secured manner to prevent security breaches.
+This entails protecting the information you share with other apps.  While sharing your app's data with another application, you should ensure that your data is secured. There are also instances that your app can share data with a website. This should be done in a secured manner to prevent security breaches.
 
 In enforcing secure communication we imply the concept of implicit intents that involves the communication of your app with other applications. In this scenario, we are going to see how to use implicit intents and non-exported content providers to enforce security while sharing app data with other apps or websites.
 
@@ -52,9 +52,10 @@ A content provider is a class that provides structured access to the data being 
 
 If you intend to develop an application that runs on Android 4.1.1(API level 16) and below, you should set the [`ContentProvider`](https://developer.android.com/reference/android/content/ContentProvider) permission to false in the manifest to disallow other apps that might be accessing data from your app.
 
-Since the `android:exported` attribute of the [`<provider>`](https://developer.android.com/guide/topics/manifest/provider-element) element is always `true` by default on the Android versions 4.1.1 while false for devices running Android API level 17 and above, setting it to true will ensure that the data being managed by your app is secured. When it's set to `true`, the provider is available for other applications while when it's set to `false`, the provider is not available for other devices.
+Because the ['provider>'](https://developer.android.com/guide/topics/manifest/provider-element)  has a 'android:exported' attribute,
+setting the element to true ensures that the data managed by your app is secure. The element is always 'true' by default on Android versions 4.1.1, while it is false for devices running Android API level 17 and above.  When it's set to `true`, the provider is available for other applications while when it's set to `false`, the provider is not available for other devices.
 
-Permissions are always set in the manifest. Add the following permission in the AndroidManifest.xml to disallow other apps from accessing the `ContentProvider`.
+Permissions are always set in the manifest. Add the following permission in the AndroidManifest.xml to deny other apps access to the `ContentProvider`.
 
 ```manifest
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
@@ -103,7 +104,7 @@ For instance, when using the firebase auth dependency above, it's appropriate to
 
 Dependencies also include libraries like Sofware Development Kits(SDKs) which can be updated directly from Android Studio using the SDK Manager.
 
->Note: Dependencies are added in the build.gradle in the android studio. Ensure you check the websites of the libraries that your app uses to have the updated version.
+>Note: Dependencies are added in the build.gradle in the android studio. Because some dependencies are deprecated or no longer supported, make sure you check the websites of the libraries your app requires for the most recent version. 
 
 Some dependencies are deprecated or are no longer supported. Using them can cause insecurity in your application.
 
@@ -111,19 +112,25 @@ Some dependencies are deprecated or are no longer supported. Using them can caus
 Network security measures are the tools that are added to a network to secure stored or transmitted data. To secure your app's data as a developer, you should include the following security measures if the app is intended to share data in a network.
 
 The security measures include:
-##### 1. Use of SSL traffic
+##### 1. Use of Secure Sockets Layer Traffic
 SSL stands for Secure Sockets Layer which is the standard technology for ensuring that an internet connection is secure. It also safeguards any sensitive data that is being shared via the internet.
 
-If you are developing an app that communicates with a web server and the server has a certificate issued by a trusted Certificate Authority, then sending the HTTPS request will be very simple.
+Sending an HTTPS request will be fairly straightforward if you are designing an app that communicates with a web server that has a certificate issued by a trusted Certificate Authority. 
 
 HTTPS requests are used when you want to send POST or GET requests to a remote or web server. You must ensure that you are doing so via a secure channel. For example, you want to send a GET request, you will ensure that it is secured as in the code snippet below.
 ```kotlin
-  fun sendGetRequest() {
-        val url = URL("http://www.google.com/")
-
-        with(url.openConnection() as HttpURLConnection) {
+   // Function for sending a secure GET request
+  fun getRequest() {
+        // GET request URL
+        val requestUrl = URL("https://www.section.io/")
+        
+        /* Sending secure GET request
+        * Opening the connection via HttpURLConnection
+        */
+        
+        with(requestUrl.openConnection() as HttpURLConnection) {
             requestMethod = "GET"
-            println("\nSent 'GET' request to URL : $url; Response Code : $responseCode")
+            println("\nSent 'GET' request to URL : $requestUrl; Response Code : $responseCode")
             inputStream.bufferedReader().use { response -> 
                 response.lines().forEach { message ->
                     println(message)
