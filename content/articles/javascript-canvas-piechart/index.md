@@ -118,11 +118,11 @@ This is where our article is based on. We will start by creating a `results` obj
 
 ```javascript
 const results = [
-    {mood: "Angry", count: 1499, color: "#0a9627"},
-    {mood: "Happy", count: 478, color: "#960A2C"},
-    {mood: "Melancholic", count:332, color: "#332E2E"},
-    {mood: "Gloomy", count: 195, color: "#F73809"}
-];
+        {mood: "Angry", total: 1499, shade: "#0a9627"},
+        {mood: "Happy", total: 478, shade: "#960A2C"},
+        {mood: "Melancholic", total:332, shade: "#332E2E"},
+        {mood: "Gloomy", total: 195, shade: "#F73809"}
+    ];
 ```
 It contains different moods of people, their total number, and the color representing the mood in descending order. (Let's assume it's from a surveying API 😃).
 
