@@ -7,7 +7,7 @@ title: Advanced Form Operations in Jetpack Compose
 description: In this article, we will be looking at a dry approach to working with textfields in Jetpack compose such as advanced form operations.
 author: linus-muema
 date: 2021-12-08T00:00:00-10:30
-topics: [Android]
+topics: []
 excerpt_separator: <!--more-->
 images:
 
