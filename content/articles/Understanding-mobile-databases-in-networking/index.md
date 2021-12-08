@@ -1,3 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /Understanding-mobile-databases-in-networking/
+title: Understanding mobile databases in networking
+description: A mobile database is connected to a computer device over a wireless mobile network. This article will cover mobile databases in networking.
+author: christine-muthoni
+date: 2021-12-08T00:00:00-06:10
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/Understanding-mobile-databases-in-networking/hero.jpg
+    alt: Understanding mobile databases in networking Hero Image
+---
 ### UNDERSTANDING MOBILE DATABASES IN NETWORKING
 
 Mobile databases make data from database applications available to mobile users, and they support applications that involve data processing. 
