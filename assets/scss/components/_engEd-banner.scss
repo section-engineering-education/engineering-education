@@ -1,0 +1,26 @@
+.engEd-banner {
+  display: block;
+  padding: 20px 20px;
+  
+  .copy {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+
+    h2 {
+      width: 25%;
+      @include gt-medium;
+      font-size: 22px;
+    }
+
+    p {
+      width: 75%;
+
+      a {
+        color: #fff;
+      }
+    }
+  }
+}
