@@ -18,7 +18,7 @@ This article will discuss how Ethereum works, its disruptive technologies, and t
 
 ## Understanding Ethereum and smart contracts
 
-![Smart Contracts](./smartcontracts.jpg)
+![Smart Contracts](/engineering-education/ethereum-and-smart-contracts/smartcontracts.jpg)
 
 Before understanding smart contracts, the following is what Ethereum consists of:
 In a nutshell, Ethereum uses the blockchain protocol to store the record of transactions. In a blockchain, information needs to be stored in chunks structured in blocks. The chain of blocks needs to be encrypted in digital cryptographic signatures to ensure security. Each block in the network contains data and its hash. A hash needs to be unique and include a group of transactions that have been permanently committed to the database. Each new block introduced will then need to be linked to the previous one. The network is peer-to-peer to eliminate any central authority. When we present a new block, the system will synchronize it with everyone in the network. Therefore, each node in the network validates the block before adding it to its Blockchain. If any of the blocks have been tampered with, other nodes in the network will reject to approve them.
@@ -39,7 +39,6 @@ Ethereum platform can run smart contracts. This agreement is programmed into cod
 With blockchain-driven contracts on the rise, some of the industries that can implement this technology will include:
 
 #### Supply Chain
-![supply chain](./supply-chain-management.jpg)
 
 Blockchain can drive the new era of Logistics and supply chain management. As businesses expand, the production and complexity of managing the isolated units are demanding. We can effectively implement blockchain capabilities in the supply chain administration in some ways. Blockchain slots in when a chain grows, and hence, many third-party agents get involved. The issues guarantee efficiency, transparency, and overall honesty. Since Blockchain is a distributed ledger, it becomes handy in the following ways.
 
@@ -62,7 +61,7 @@ The health industry is booming. However, with the vast volume of medical data, t
 - Involving several parties means that we need to improve trust by reducing the trustee middlemen to improve efficiency. Therefore, Blockchain can create the version of truth by building consensus while giving the end-users control of data.
 - To achieve transparency and integrity, the data needs to be decentralized and encrypted to avoid the ineffectiveness of central authority failures.
 
-![Healthcare](./data-transaction-healthcare.png)
+![Healthcare](/engineering-education/ethereum-and-smart-contracts/data-transaction-healthcare.png)
 
 ### Conclusion
 As a digital platform, Ethereum gives developers a platform to build a wide range of decentralized applications such as security systems, voting systems, payment methods, and more. Despite its significant benefits such as safety, confidentiality, the technology is relatively new to users and still faces limitations from government regulations. However, Blockchain can be the mover and shaker of the [fourth industrial revolution](https://www.salesforce.com/blog/what-is-the-fourth-industrial-revolution-4ir/).
