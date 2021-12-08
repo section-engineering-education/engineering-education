@@ -6,7 +6,7 @@ url: /responsive-charts-with-semantic-ui-and-react/
 title: Creating Responsive Line and Bar charts with React and Semantic-UI
 description: In this article, the reader will learn how to build a responsive application that implements Line and Bar charts using Semantic-UI, React, and vanilla CSS.
 author: fred-benson
-date: 2021-12-8T00:00:00-10:40
+date: 2021-12-08T00:00:00-10:40
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
