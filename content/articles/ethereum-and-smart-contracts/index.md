@@ -3,37 +3,42 @@ According to the [website](https://ethereum.org/en/), Ethereum is a community-ru
 This article will discuss how Ethereum works, its disruptive technologies, and the smart contracts ecosystem.
 
 ### Table of contents
+- [Table of contents](#table-of-contents)
 - [Understanding Ethereum and smart contracts](#understanding-ethereum-and-smart-contracts)
-  - [Ether](#ether)
-  - [Use of the Consensus mechanism](#use-of-the-consensus-mechanism)
-  - [The Ethereum Virtual Machine (EVM)](#the-ethereum-virtual-machine-evm)
-  - [The smart contracts](#the-smart-contracts)
-  - [Common Blockchain and smart contracts use cases](#common-blockchain-and-smart-contracts-use-cases)
+- [Ether](#ether)
+- [Use of the Consensus mechanism](#use-of-the-consensus-mechanism)
+- [The Ethereum Virtual Machine (EVM)](#the-ethereum-virtual-machine-evm)
+- [The smart contracts](#the-smart-contracts)
+- [Common Blockchain and smart contracts use cases](#common-blockchain-and-smart-contracts-use-cases)
     - [Supply Chain](#supply-chain)
     - [Real Estate](#real-estate)
     - [Banking](#banking)
     - [Health Care](#health-care)
-  - [Conclusion](#conclusion)
+- [Conclusion](#conclusion)
 
 
-## Understanding Ethereum and smart contracts
+### Understanding Ethereum and smart contracts
 
 ![Smart Contracts](/engineering-education/ethereum-and-smart-contracts/smartcontracts.jpg)
 
 Before understanding smart contracts, the following is what Ethereum consists of:
-In a nutshell, Ethereum uses the blockchain protocol to store the record of transactions. In a blockchain, information needs to be stored in chunks structured in blocks. The chain of blocks needs to be encrypted in digital cryptographic signatures to ensure security. Each block in the network contains data and its hash. A hash needs to be unique and include a group of transactions that have been permanently committed to the database. Each new block introduced will then need to be linked to the previous one. The network is peer-to-peer to eliminate any central authority. When we present a new block, the system will synchronize it with everyone in the network. Therefore, each node in the network validates the block before adding it to its Blockchain. If any of the blocks have been tampered with, other nodes in the network will reject to approve them.
+In a nutshell, Ethereum uses the blockchain protocol to store the record of transactions. In a blockchain, information needs to be stored in chunks structured in blocks. The chain of blocks needs to be encrypted in digital cryptographic signatures to ensure security. 
+
+Therefore, each block in the network contains data and its hash. A hash needs to be unique and include a group of transactions that have been permanently committed to the database. Each new block introduced will need to be linked to the previous one. The network is peer-to-peer to eliminate any central authority. When we present a new block, the system will synchronize it with everyone in the network. Therefore, each node in the network validates the block before adding it to its Blockchain. If any of the blocks have been tampered with, other nodes in the network will reject to approve them.
 
 ### Ether
-In the Ethereum network, participants often need to execute operations. In such scenarios, a payment solution is needed. The Ethereum network uses Ether as the cryptocurrency(i.e. transactional token). Using this form of payment does not need a third party to approve transactions. 
+In the Ethereum network, participants often need to execute operations. In such scenarios, a payment solution is required. The Ethereum network uses Ether as the cryptocurrency(i.e., transactional token). Using this form of payment does not need a third party to approve transactions.
 
 ### Use of the Consensus mechanism
 Consensus is the method that validates and records data on the Blockchain. In scenarios of cryptocurrencies, this is the mechanism that maintains transparency and security on the network. It is also responsible for issuing new tokens into circulation. Instead, a single entity controls nothing; every participating network can see, share, or track transactional data.
 
 ### The Ethereum Virtual Machine (EVM)
-In a nutshell, the Ethereum network provides access to the Ethereum Virtual Machine (EVM) – a decentralized blockchain computer where developers can build smart contracts and embed them into the application. It's a virtual computer where all Ethereum contracts are executed. Furthermore, the EVM is deterministic in that given an input of a smart contract running on an EVM; it will always produce the same output. The process is essential because the Blockchain will need to achieve its functionality by ensuring that all blocks agree on smart contract results and reach a consensus. Thus, the EVM provides a consistent way for smart contracts to execute without downtime, censorship, or influence from any third parties.
+In a nutshell, the Ethereum network provides access to the Ethereum Virtual Machine (EVM) – a decentralized blockchain computer where developers can build smart contracts and embed them into the application. It's a virtual computer where all Ethereum contracts are executed. 
+
+Furthermore, the EVM is deterministic in that given an input of a smart contract running on an EVM, it will always produce the same output. The process is essential because the Blockchain will need to achieve its functionality by ensuring that all blocks agree on smart contract results and reach a consensus. Thus, the EVM provides a consistent way for smart contracts to execute without downtime, censorship, or influence from any third parties.
 
 ### The smart contracts
-Ethereum platform can run smart contracts. This agreement is programmed into code(i.e., controlled by its internal code). In a smart contract, the conditions of the contract are digitally enforced within the code. Therefore, it is a self-executing contract in a decentralized environment. The system first needs to store conditions that will execute, validate, and make terminations, ensuring that each participant has equal outcomes. An example is having two parties place a bet on a race. Using smart contracts, we can ensure each participant's money is safe before automatically executing the contract conditions when met.
+Ethereum platform can run smart contracts. This agreement is programmed into code(i.e., controlled by its internal code). In a smart contract, the conditions of the contract are digitally enforced within the code. Therefore, it is a self-executing contract in a decentralized environment. The system first needs to store conditions that will execute, validate, and make terminations, ensuring that each participant has equal outcomes. An example is having two parties place a bet on a race. We can ensure each participant's money is safe before automatically executing the contract conditions when met using smart contracts.
 
 ### Common Blockchain and smart contracts use cases
 With blockchain-driven contracts on the rise, some of the industries that can implement this technology will include:
