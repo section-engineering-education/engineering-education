@@ -200,7 +200,7 @@ The style classes used here are all from Tailwind CSS. The loops and logical ope
 
 We will get the Side Menu section as shown in the screenshot below:
 
-![side menu section](/engineering-education/build-a-twitter-homepage-using-vuejs-and-tailwind-css/side-menu-section.jpg)
+![side menu section](/engineering-education/clone-twitter-home-page-with-vue-and-tailwind/side-menu-section.jpg)
 
 ### Add side menu dropdown
 Now, we are going to add a dropdown menu to the bottom of the Side menu section. This dropdown will hold the user information and some buttons.
@@ -249,7 +249,7 @@ Next, we need to add the dropdown template code to just below the Upper menu sec
 
 We will get the result as shown in the code snippet below:
 
-![add side menu dropdown](/engineering-education/build-a-twitter-homepage-using-vuejs-and-tailwind-css/add-side-menu-dropdown.gif)
+![add side menu dropdown](/engineering-education/clone-twitter-home-page-with-vue-and-tailwind/add-side-menu-dropdown.gif)
 
 ### Creating a trending section
 Now, we are going to add the trending section to our UI. This section will be displayed on the right side of the screen and show the trending topics. 
@@ -269,7 +269,7 @@ In order to add this section, we need to add the code from the following code sn
 
 We will get the result shown in the screenshot below:
 
-![create trending section](/engineering-education/build-a-twitter-homepage-using-vuejs-and-tailwind-css/create-trending-section.jpg)
+![create trending section](/engineering-education/clone-twitter-home-page-with-vue-and-tailwind/create-trending-section.jpg)
 
 Here, we already have the trending section along with a search bar. Now, we are going to add the trending topics section inside it.
 
@@ -310,7 +310,7 @@ Now, we are going to loop through the `trending` array and display the UI templa
 
 We will get the trending topics section as shown in the screenshot below:
 
-![trending topics section](/engineering-education/build-a-twitter-homepage-using-vuejs-and-tailwind-css/trending-topics-section.jpg)
+![trending topics section](/engineering-education/clone-twitter-home-page-with-vue-and-tailwind/trending-topics-section.jpg)
 
 Now, just below the trending topics section inside the trending section, we are going to add the Follow section. The Follow section will display the user accounts that the user should follow. 
 
@@ -349,7 +349,7 @@ Now to add the UI for the Follow section, we need to use the code from the follo
 
 We will get the result as shown in the screenshot below:
 
-![follow section](/engineering-education/build-a-twitter-homepage-using-vuejs-and-tailwind-css/follow-section.jpg)
+![follow section](/engineering-education/clone-twitter-home-page-with-vue-and-tailwind/follow-section.jpg)
 
 ### Creating middle tweet section
 Now, we are going to create the tweet section which is the middle part of the UI. This section will contain a Header, a Tweet input section to enter the tweets, and a tweets display section just below the input section.
@@ -370,7 +370,7 @@ The code for this is provided in the code snippet below:
 
 We will get the Header section as shown in the code snippet below:
 
-![middle tweet section](/engineering-education/build-a-twitter-homepage-using-vuejs-and-tailwind-css/middle-tweet-section.jpg)
+![middle tweet section](/engineering-education/clone-twitter-home-page-with-vue-and-tailwind/middle-tweet-section.jpg)
 
 
 Next, is the Tweet Input section. The Tweet Input section will contain a text editor to write the tweets and a button to add the tweet to the tweet list.
@@ -427,7 +427,7 @@ Here, we have used the `form` tag and called our `addTweet` function in the `sub
 
 We can see the Tweet Input section as shown in the screenshot below:
 
-![tweet input section](/engineering-education/build-a-twitter-homepage-using-vuejs-and-tailwind-css/tweet-input-section.jpg)
+![tweet input section](/engineering-education/clone-twitter-home-page-with-vue-and-tailwind/tweet-input-section.jpg)
 
 Now, we need to display the tweet list just below the Tweet Input section. For that, we need to use the code from the following code snippet:
 
@@ -471,7 +471,7 @@ Now, we need to display the tweet list just below the Tweet Input section. For t
 
 We can now add our tweets to the tweet list as shown in the demo below:
 
-![show tweet list](/engineering-education/build-a-twitter-homepage-using-vuejs-and-tailwind-css/show-tweet-list.gif)
+![show tweet list](/engineering-education/clone-twitter-home-page-with-vue-and-tailwind/show-tweet-list.gif)
 
 Now, we are also going to add some mock tweets from the user. For that, we need to define an array variable that will hold the information regarding user image, name, username, tweet, time, likes, and comments as shown in the code snippet below:
 
@@ -523,7 +523,7 @@ Now, we just need to loop through the array to display these tweets. For that, w
 
 Hence, we will get the result as shown in the code snippet below:
 
-![complete twitter clone with vue and tailwind](/engineering-education/build-a-twitter-homepage-using-vuejs-and-tailwind-css/complete-twitter-clone-with-vue-and-tailwind.jpg)
+![complete twitter clone with vue and tailwind](/engineering-education/clone-twitter-home-page-with-vue-and-tailwind/complete-twitter-clone-with-vue-and-tailwind.jpg)
 
 Finally, we have successfully implemented the Twitter Home Page UI clone using Vue version 3 along with Tailwind CSS.
 
