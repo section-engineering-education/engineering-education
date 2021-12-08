@@ -14,10 +14,10 @@ images:
   - url: /engineering-education/semaphore-in-java/hero.jpg
     alt: Semaphore in Java
 ---
-Semaphores in java are the subject of this article. In java, a semaphore uses a counter to manage access to a shared resource. It is a thread synchronization construct that is used to communicate between threads in order to avoid missing signals or to protect a critical section.
-### Prerequisite
-1. Before beginning this tutorial, you should be familiar with the Java programming language.
-2. For server-side Java development, have (**IntelliJ IDEA**)[https://www.jetbrains.com/idea/] as the IDE.
+In java, a semaphore uses a counter to manage access to a shared resource.
+<!--more-->
+It is a thread synchronization construct that is used to communicate between threads to avoid missing signals or protect a critical section.
+
 ### Table of contents
 - [Uses of semaphores](#uses-of-semaphores)
 - [Semaphore operation](#semaphore-operation)
@@ -27,32 +27,46 @@ Semaphores in java are the subject of this article. In java, a semaphore uses a 
 - [Semaphore types](#semaphore-types)
 - [Using semaphores as locks](#using-semaphores-as-locks)
 - [Conclusion](#conclusion)
+
+### Prerequisites
+1. Before beginning this tutorial, you should be familiar with the Java programming language.
+2. As the IDE for server-side Java development, have (IntelliJ IDEA)[https://www.jetbrains.com/idea/] installed.
+
 ### Uses of semaphores
-- When multiple processes are running at the same time, semaphore variables can be used to keep them in sync.
-- We can avoid race condition circumstances by using semaphores. 
-- Semaphores ensure that any missed signals are not avoided. 
-- Semaphores are used to track who has access to a common resource. To gain access, the user needs to have a counter that is greater than 0. Access can also be denied in this situation. There's a counter in the shared resource that keeps track of who has access to it. For this circumstance, a thread's access to the data is required by the semaphore.
+- When multiple processes are running simultaneously, semaphore variables can be used to keep them in sync.
+- We can avoid race condition circumstances by using semaphores.
+- Semaphores ensure that any missed signals are unavoidable.
+- Semaphores keep track of who has access to a shared resource. To gain access, the user needs to have a counter greater than 0.There is resticted access in this situation. A counter in the shared resource keeps track of who has access to it. For this circumstance, a thread's access to the data is required by the semaphore.
+
 ### Semaphore operation
-1. A semaphore is in charge of restricting access to a resource, as we may infer from the usage of counters. 
-2. It is possible that the thread will gain access to the resource if its counter increases over zero and is denied access to the resource if the counter is zero.
-3. When a thread finishes its work in the resources or no longer needs the resource, the counter is incremented. The permit is then released.
-> Instead of creating your own semaphore classes, use the `Java.util.concurrent` library. There is no need to implement the semaphore class manually because it provides all of the functionality.
+- A semaphore is in charge of restricting access to a resource, as we may infer from the usage of counters.
+- The thread may gain access to the resource if its counter increases over zero and is denied access to the resource if the counter is zero.
+- When a thread finishes its work in the resources or no longer needs them, the counter is incremented. The permit is then released.
+
+Instead of creating your semaphore classes, use the `java.util.concurrent` library. There is no need to implement the semaphore class manually because it provides all the functionality.
+
 ### Semaphore class 
 The semaphore class has two constructors:
-```Java
+
+```java
 Semaphore(int number)
 Semaphore(int number, boolean how)
 ```
-__Number__ tells how many permits can be given out at the start. If you want to use a shared resource, you need to have enough threads to use it. When a resource is shared by multiple threads, only one can use it at a time. As is the default, all waiting threads are given permission in an unknown order, with the first thread getting permission first. How  can be used to limit how access is given to threads that are waiting for their turn.
+
+The `number` tells how many permits can be given out at the start. If you want to use a shared resource, you need to have enough threads to use it. When multiple threads share a resource, only one can use it simultaneously. 
+
+The default is permision to all waiting threads  in an unknown order, with the first thread getting permission first. How can it be used to limit how access is given to threads waiting for their turn.
+
 #### Semaphore-class methods:
 Semaphore class has the following methods:
 - The `acquire()` method: Obtains the permit and waits for one to become available before returning true or false.
 - The `release()` method: A permit can be released using this method.
-- The `Permits()` method: Returns the current number of permits that are currently available.
+- The `Permits()` method: Returns the current number of currently available permits.
 
 ### Semaphore implementation 
 Let us see how we can implement semaphores in the following code below:
-```Java
+
+```java
 import java.util.concurrent.* ;
 
 class SharedR {
@@ -141,11 +155,11 @@ public class SemaphoreDemo {
 ```
 Output:
 ```bash
-Starting :Thread2
+Starting: Thread2
 Starting Thread1
-Thread1 : waiting for a permit.
+Thread1: waiting for a permit.
 Thread2: waiting for a permit.
-Thread1 : getting a permit.
+Thread1: getting a permit.
 Thread1: 1
 Thread1: 2
 Thread1: 3
@@ -161,33 +175,36 @@ Thread2: 0
 Thread2: releasing the permit.
 count: 0
 ```
-> Counter variable's final value will always be 0 in this program.
+The counter variable's final value will always be 0 in this program.
+
 ### How the application works 
-When accessing the count variable in the shared class, a semaphore is utilized to keep track of how many threads are looking at it.
+When accessing the count variable in the shared class, a semaphore keeps track how many threads are looking at it.
 
-Thread `b1` increments and decrements the __SharedR.count__ five times each. As a safeguard, access to __SharedR.count__ can only be granted once a semaphore has granted permission for it. Upon completion, the permission is released. One thread at a time attempts to access the __SharedR.count__, as can be seen in the output.
+Thread `b1` increments and decrements the `SharedR.count` five times each. As a safeguard, access to `SharedR.count` is only grantable once a semaphore has granted permission for it. Upon completion, the permission is released. One thread attempts to access the SharedR.count, as can be seen in the output.
 
-In addition to their `start()` methods, thread classes provide a built-in `Sleep()` function that can be used from within them. Semaphore, which synchronizes access to __SharedR.count__, is used to demonstrate this. The `sleep()` method is invoked in the `start()` method between each visit to the counter. This means that the second thread can proceed. No other threads can access the resource until the first thread releases the semaphore. A total of five times, threads `b1` and `b2` each increment and decrement the __Shared.count__, respectively. Assembly code does not mix up the increments and decrements.
+In addition to their `start()` methods, thread classes provide a built-in `Sleep()` function used from within them. Semaphore, which synchronizes access to `SharedR.count`, is used to demonstrate this. The `sleep()` method is invoked in the `start()` method between each visit to the counter, which means that the second thread can proceed. 
 
-The semaphore is used to prevent both threads from concurrently accessing __Shared.count__. You can test this by omitting the calls to `acquire()` and `release()` in your script. There is no longer synchronized access to the common counter, therefore you will not always get a starting count of 0.
+No other threads can access the resource until the first thread releases the semaphore. A total of five times, threads b1 and b2 each increment and decrement the `Shared.count`, respectively. Assembly code does not mix up the increments and decrements.
+
+The semaphore prevents both threads from concurrently accessing Shared.count. You can test this by omitting the calls to acquire() and release() in your script. There is no longer synchronized access to the standard counter. Therefore you will not always get a starting count of 0.
+
 ### Semaphore types
-#### 1. Counting Semaphores
+#### 1. Counting semaphores
+Counting semaphores is in handy when multiple processes are simultaneously vying to control a single vital section. It is the `take()` method that implements a semaphore.
 
-Counting semaphores are in handy when multiple processes are vying for control of a single vital section at the same time.
-It is the `take()` method that is used to implement Semaphore.
-#### 2. Bounded Semaphores
+#### 2. Bounded semaphores
+The maximum number of signals stored in counting semaphores is unbounded. As a result, the upper bound is set using bounded semaphores.
 
-The maximum number of signals that can be stored in counting semaphores is unbounded. As a result, the upper bound is set using bounded semaphores.
-#### 3. Timed Semaphores
-
+#### 3. Timed semaphores
 Timers are semaphores that can be programmed to run at specific intervals for predetermined lengths of time. If you wait until the timer goes out for this long, all of your permissions will be released.
-#### 4. Binary Semaphores
 
+#### 4. Binary semaphores
 Unlike counting semaphores, binary semaphores can only take one of two possible values: 0 or 1. The binary semaphore is easier to implement than the counting semaphore. For the signal action to succeed, the value must be at least 1. Otherwise, it fails.
+
 ### Using semaphores as locks
-A bounded semaphore can likewise be used as a lock, as demonstrated here. `Take()` and `release()` methods should be called in this case, as the higher limit must be set to 1.
-Let's see an example below:
-```Java
+As demonstrated here, an abounded semaphore can likewise be used as a lock. Take() and release() methods should be called in this case, as the higher limit must be set to 1. Let's see an example below:
+
+```java
 BoundedSemaphore ourBoundedSemaphore = new BoundedSemaphore(1);
 
 ourBoundedSemaphore.take();
@@ -197,9 +214,10 @@ finally {
   ourBoundedSemaphore.release();
 }
 ```
+
 ### Conclusion
-A counter on a semaphore restricts access to a shared resource. If the counter is greater than zero, the user is permitted access. Access is denied if the number is zero. There is a tally on the counter that shows how many permits have been given out for the shared resource. As a result, a thread must have a semaphore permit in order to access the resource.
+A counter on a semaphore restricts access to a shared resource. If the counter is more significant than zero, the user is permitted access. Access is denied if the number is zero. A tally on the counter shows how many permits have been given out for the shared resource. 
 
-Our study of Java Semaphores comes to an end here. With the examples, we learned about the fundamentals of Semaphores, including how they work and the many types of Semaphores.
+As a result, a thread must have a semaphore permit to access the resource. Our study of Java Semaphores comes to an end here. Using examples, we learned about the fundamentals of Semaphores, including how they work and the many types of Semaphores.
 
-I hope that you have now grasped the concept of semaphores and how they work in practice.
+I hope you have now grasped the concept of semaphores and how they work in practice.
