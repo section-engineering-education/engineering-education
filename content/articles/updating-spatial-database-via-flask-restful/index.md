@@ -15,11 +15,9 @@ images:
 ---
 In this tutorial, we are going to build a REST API that can be used to update a geospatial database.
 <!--more-->
-Using flask restful, we will perform basic CRUD (create, read, update and delete) operations on spatial data. It is recommended that readers should know how to create a geospatial database.
+Using Flask-Restful, we will perform basic CRUD (create, read, update and delete) operations on spatial data. It is recommended that readers know how to create a geospatial database.
 
-We are going to learn how to create, read, update and delete spatial data from a geospatial database using `flask_restful`.
-
-We will be converting the code in [this tutorial](https://www.section.io/engineering-education/how-to-create-a-geoserver-and-geodatabase/) to an API so that it can accept a request from different apps such as mobile apps, web apps, and desktop apps.
+We will be converting the code from [this tutorial](https://www.section.io/engineering-education/how-to-create-a-geoserver-and-geodatabase/) to an API so that it can accept a request from different apps such as mobile apps, web apps, and desktop apps.
 
 ### Table of Contents
 - [Prerequisites](#prerequisites)
@@ -36,16 +34,16 @@ We will be converting the code in [this tutorial](https://www.section.io/enginee
 To follow along with this tutorial, you are required to have some knowledge on:
 - How to create a Flask app
 - How to use Postman
-- How to create a geospatial database and server. You can [click here](https://www.section.io/engineering-education/how-to-create-a-geoserver-and-geodatabase/) to learn how to create a geospatial database, server, and a new flask app.
+- How to create a geospatial database and server. You can [click here](https://www.section.io/engineering-education/how-to-create-a-geoserver-and-geodatabase/) to learn how to create a geospatial database, server, and a new Flask app.
 
 ### Setup
-First, install Flask Restful, by running the command below in your terminal.
+First, install Flask-Restful by running the command below in your terminal.
 
 ```bash
 pip install flask_restful
 ```
 
-The next step is to import the  API object from `flask_restful` and store it in a variable called `api`.
+Then import the API object from `flask_restful` and store it in a variable called `api`.
 
 ```python
 from flask_restful import Api
@@ -53,7 +51,7 @@ from flask_restful import Api
 api = Api(app)
 ```
 
-After creating the `api` variable we will need to create our API endpoints. The `api` object and the `add_resource()` method will be used to create the endpoints.
+After creating the `api` variable, we will need to create our API endpoints. The `api` object and the `add_resource()` method will be used to create the endpoints.
 
 ### POST request
 Flask-Restful resources give us access to different HTTP methods. One resource can contain multiple HTTP methods such as: `get`, `post`, `put`, and `delete`.
@@ -62,7 +60,7 @@ Each method will return a value and a response code after execution.
 
 Using the code snippet below, let's create our first class coordinate using the `flask_restful` resource.
 
-The route will use the `post` request method for saving coordinates to the database
+The route will use the `post` request method for saving coordinates to the database.
 
 ```python
 from flask_restful import Api, Resource
@@ -149,7 +147,7 @@ We created a new class called `Coordinates` that will retrieve all the coordinat
 
 The naming convention is important in Python because it represents what the class entails.
 
-We used only one method because we want to retrieve the saved data only. If coordinates are fetched from the database the `get` method will return the updated response message and 200 status code but if none is available it returns 204.
+We only used one method because we want to retrieve the saved data only. If coordinates are fetched from the database, the `get` method will return the updated response message and 200 status code but if none is available it returns 204.
 
 To create the endpoint, we will also pass the class and endpoint name as parameters to the `add_resource` method.
 
@@ -190,7 +188,7 @@ We created a new class `CoordinateId`. ID was added to its name because we will 
 
 We added a new parameter `cordinate_id` to the `get` method because it will display the ID that is passed to the method. The ID is also passed to the search query to retrieve it from the database.
 
-If the ID is available it will be displayed and status code 200 is returned but if it's not available the default response message is displayed and the status code 204 is returned.
+If the ID is available, it will be displayed and the status code 200 will be returned. If it's not available, the default response message will be displayed and the status code 204 is returned.
 
 The `coordinate_id` will be passed as a parameter to the URL.
 
@@ -235,7 +233,7 @@ After retrieving a coordinate using its ID, we can update it by sending a put re
         return response, 204
 ```
 
-Just like the last `get` method, the `put` method also accepts the `coordinate_id` that was passed from the URL, and it will use the same endpoint.
+Just like the `get` method, the `put` method also accepts the `coordinate_id` that was passed from the URL, and it will use the same endpoint.
 
 ### Delete coordinate
 This method is used for deleting the selected coordinate by sending a delete request from Postman. We will add the method to the `CoordinateId` class so that it will receive the `coordinate_id`.
@@ -259,14 +257,12 @@ def delete(self, coordinate_id):
         return response, 200
 ```
 
-If the coordinate is deleted successfully it will return the updated response code and status 200. If not, the default response will be returned.
+If the coordinate is deleted successfully, it will return the updated response code and status 200. If not, the default response will be returned.
 
 ### Conclusion
-APIs play a great role in web development because they allow programs to communicate easily and multiple users can have access to the program. 
+APIs play a great role in web development because they allow programs to communicate easily and multiple users can have access to the program. It is also a source of income for the developers because users can be charged for using the API.
 
-It is also a source of income for the developers because users can be charged for using the API.
-
-Building an API that can update spatial records can serve as a spatial data bank that allows users to perform CRUD operations on spatial data accessible from mobile, web, and desktop apps by sending requests to our server. All we need to do is to write documentation on how they can use it.
+Building an API that can update spatial records can serve as a spatial data bank that allow users to perform CRUD operations on spatial data accessible from mobile, web, and desktop apps by sending requests to our server. All we need to do is to write documentation on how they can use it.
 
 The code in this tutorial is available on [this GitHub repo](https://github.com/isaiaholadapo/api-geodatabase).
 
