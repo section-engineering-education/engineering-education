@@ -15,10 +15,10 @@ images:
     alt: The Stateful vs Stateless Architectures Hero Image
 ---
 
-When developing applications and services, developers consider several factors to ensure their applications run in the most optimum way. Factors such as the scalability of the application/service, the hardware need such as networks speed and bandwidth required by the application, and the amount of temporary and permanent storage form a few of the factors that developers consider during the application development process. Additionally, developers consider the processing time, mainly determined by processor speed and application building architecture.
+When developing applications and services, developers consider several factors to ensure they run optimally. Factors such as the scalability of the application/service, the hardware needs such as network speed and bandwidth required by the application, and the amount of temporary and permanent storage form a few of the factors that developers consider during the application development process. Additionally, developers consider the processing time, mainly determined by processor speed and application building architecture.
 
 ### Learning Points 
-The article will cover:
+This article will cover:
 - How stateful and stateless architectures affect the running of an application/ service on a server. 
 - A short history to get you acquainted with what stateful and stateless application/ services mean. 
 - A list of the various protocols that utilize each of the mentioned architectures. 
@@ -33,15 +33,15 @@ Let's get started!
 3.  You should have founding knowledge of networks bandwidths, servers, and clients.
 
 ### Introduction 
-During the 1980s, servers handled most of the complex computations as clients were limited in the scope of operations that they could fulfill. However, as time passed by, a global increase in web usage led to the development of the Hypertext Transfer Protocol (HTTP), web browsers, and other client-side software and hardware.
+During the 1980s, servers handled most of the complex computations as clients were limited in the scope of operations that they could fulfill. However, as time passed, a global increase in web usage led to the development of the Hypertext Transfer Protocol (HTTP), web browsers, and other client-side software and hardware.
 
-Coincidentally, the rise in web usage led to an increase in the number of clients, as the clients could also handle many of the functions previously performed on servers.
+Coincidentally, the rise in web usage led to an increase in the number of clients, as they could also handle many of the functions previously performed on servers.
 
 ### What Are Stateful and Stateless Architectures 
 
 Stateful and stateless architectures define how users interact with services on the internet. 
 
-Stateful based services maintain track of clients' records or sessions and apply different functionalities to similar user inputs based on the user's previous records. on the other hand, stateless services rely on the clients to keep track of transaction data, focusing on operations that  modifiy the system's resources instead of its state.
+Stateful-based services maintain track of clients' records or sessions and apply different functionalities to similar user inputs based on the user's previous records. On the other hand, stateless services rely on the clients to keep track of transaction data, focusing on operations that modify the system's resources instead of its state.
 
 ### Network Protocols and their Architectures
 
@@ -63,7 +63,7 @@ On the other hand, the receiver can keep session state/status info from the prev
 ### Examples of Stateful Protocols
 - The File Transfer Protocol (FTP).
 
-> The traditional FTP server couples with the client in an interactive session where while in session, a user is provided with a way to verify and set a few variables, all stored server-side, as part of the session state.
+> The traditional FTP server pairs with the client in an interactive session where when in session, a user is provided with a way to verify and set a few variables, all stored server-side, as part of the session state.
 
 - Telnet 
 - The Transmission Control Protocol (TCP)
@@ -81,9 +81,9 @@ The main differences between the two architectures relate to how they handle use
 
 **Stateless**|**Stateful**
 :-----:|:-----:
-It relies on clients to store session state information using cookies and local storage.|Rely on servers to store session state information.
+It relies on clients to store session state information using cookies and local storage.| Rely on servers to store session state information.
 Server design is simple as it does not handle most of the functionality.|Server design is complex as it handles a lot of complexity
-The server can process requests quickly as it only needs to look at the request given to it. The request contains all the information the server needs to process.|The server handles user requests relatively slower than stateless-based servers. The server must manage the state sessions on its own. Thus, responses get to the client much slower.
+The server can process requests quickly as it only needs to look at the request given to it. The request contains all the information the server needs to process.|The server handles user requests relatively slower than stateless-based servers. This is because the server must manage the state sessions on its own. Thus, responses get to the client much slower.
 The server and client are independent and loosely coupled.|The server and client are dependent on each other.
 The server and client are independent and loosely coupled.|The server and client are dependent on each other.
 Servers in this architecture are crash-proof. They can be restarted after a failure. The other servers could continue to handle a user request when the server handling it goes down.|Servers in this architecture do not recover quickly from a crash. They store session status and information about a client during sessions. So if they crash, the session has to start over.
@@ -97,21 +97,24 @@ Servers in this architecture are crash-proof. They can be restarted after a fail
 6.  Memory usage on the server-side reduces because any information used to handle requests is not stored there.
 
 ### The Disadvantage of Stateless Protocols 
-1.  Recurring poor network performances. This might occur when increasing the redundant data sent in sequences of requests. Remember, in a stateless architecture; we mentioned that no data is left on the server.
+1.  Recurring poor network performances. This might occur when increasing the redundant data sent in sequences of requests. Remember, in a stateless architecture, we mentioned that no data is left on the server.
 
 ### The Advantage of Stateful Architecture
-1.  A stateful architecture may add a security advantage to systems. That is why many banks rely on it to allow users to make online transactions. Its disadvantages, however, outweigh its benefits.
+1.  A stateful architecture adds a security advantage to systems. That is why many banks rely on it to allow users to make online transactions.
+
+Its disadvantages, however, outweigh its benefits.
 
 ### The Disadvantages of Stateful Architecture
-1.  It does not quickly recover from partial failures. When a server fails, it cannot just restart or pass a user request to another server because it needs to hold the session state along with the details.
-2.  As much of the complex functionality is handled server-side, an intricate server design is needed to design the server.
+1.  It does not quickly recover from partial failures. When a server fails, it cannot restart or pass a user request to another server because it needs to hold the session state along with the details.
+2.  requires an intricate server design as much of complex functions are handled on the server-side.
+
 3.  Too much dependency between server and client that when one side fails, all connections are lost, and the running process has to start over.
 
 ### Conclusion
 
-Developers develop a majority of modern systems using a stateless design. The server-focused stateful approach, in which clients were passive interfaces reliant on servers to perform most of the computing tasks, gave rise to the popularity of the stateless architecture.
+In the current era, most developers develop their systems using a stateless design. The server-focused stateful approach, in which clients were passive interfaces reliant on servers to perform most of the computing tasks,has lost popularity due to its inability to easily scale and thus gave rise to asubsequent adoption of the stateless architecture.
 
-Advances in technology, combined with the introduction of powerful client computers, promoted a shift to a stateless preferred environment. This allowed developers to spend their time and effort on product development rather than solving technical issues, like server software implementation, common in stateful-based systems.
+Additionally, advances in technology, combined with the introduction of powerful client computers, promoted a shift to a stateless preferred environment. This allowed developers to spend their time and effort on product development rather than solving technical issues, like server software implementation, common in the stateful-based systems.
 
 ---
 
