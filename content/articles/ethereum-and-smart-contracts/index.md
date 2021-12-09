@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /ethereum-and-smart-contracts/
-title: Understanding Ethereum and Smart Contracts
+title: Understanding the Basics of Ethereum and Smart Contracts
 description: In this tutorial, we will learn about the basics of Ethereum, smart contracts and various use caseS of Ethereum smart contracts.
 author: wilson-gichuhi
 date: 2021-12-09T00:00:00-01:34
