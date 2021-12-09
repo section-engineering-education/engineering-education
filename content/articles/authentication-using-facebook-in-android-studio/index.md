@@ -6,13 +6,13 @@ url: /authentication-using-facebook-in-android-studio/
 title: Authentication using Facebook in Android Studio
 description: This tutorial will guide the readers on how to implement Facebook authentication in Android Studio.
 author: michael-johnson-owallah
-date: 2021-12-06T00:00:00-04:00
+date: 2021-12-09T00:00:00-09:33
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/authentication-using-facebook-in-android-studio/hero.jpg
-    alt: Authentication Using Facebook Hero Image
+    alt: Authentication using Facebook Hero Image
 ---
 Authentication is essential for securing access to specific online content. A user has to provide proof of their identity.
 <!--more-->
@@ -35,11 +35,11 @@ This software giant has an SDK that enables authentication. Therefore, developer
 ### Firebase overview
 Firebase is also a common system for authentication and data storage. It allows users to authenticate themselves using `emails`, `passwords`, and even `phone numbers`.
 
-The `firebaseAuth.createUserWithEmailAndPassword(email,password)` method authenticates authenticates a person using the provided credetials (email and password).
+The `firebaseAuth.createUserWithEmailAndPassword(email,password)` method authenticates a person using the provided credetials (email and password).
 
 However, Firebase authentication is tedious and challenging to implement. This is why some developers still build their authentication systems from scratch.
 
-### Why Facebook Login?
+### Why Facebook login?
 Facebook authentication is superior to other traditional frameworks as follows:
 
 - When individuals sign in using Facebook, they grant your app permission to access information or perform different actions.
@@ -68,7 +68,7 @@ On your browser open the `Firebase console` and then select your project. Under 
 ### Step 3: Facebook for developers
 Navigate to https://developers.facebook.com/ and create an account (If you do not have one).
 
-Then click on `my apps` to create a new app. On the drop-down menu, select `Consumer` then click `next`. Enter the `app details` to complete the registration
+Then click on `my apps` to create a new app. On the drop-down menu, select `Consumer` then click `next`. Enter the `app details` to complete the registration.
 
 On your left, click on `Settings` and select `basic`. You can now copy the `App ID` and `App Secret`. 
 
@@ -99,8 +99,8 @@ buildFeatures {
     }
 ```
 
-#### Step 5: Generating the Hash Key
-Using your `SHA1` key, generate a `hash key` and paste it in the `key hashes option`
+### Step 5: Generating the Hash Key
+Using your `SHA1` key, generate a `hash key` and paste it in the `key hashes option`.
 
 ### Step 6: Editing the Manifest and String files
 Add the following lines of code to your `Manifest.xml` and `string.xml` files:
