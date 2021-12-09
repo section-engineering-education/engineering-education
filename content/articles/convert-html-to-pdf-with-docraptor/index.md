@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/convert-html-to-pdf-with-docraptor//hero.png 
+  - url: /engineering-education/convert-html-to-pdf-with-docraptor//hero.jpg 
     alt: Convert HTML to pdf using Docraptor Image.
 ---
 
@@ -232,3 +232,6 @@ This article covered converting HTML documents to PDF using the DocRaptor API. T
 In addition, the code snippets are easy to understand and test. You can find more information about DocRaptor at [DocRaptor's API documentation](https://github.com/DocRaptor/docraptor-php).
 
 Happy Coding!
+
+---
+Peer Review Contributions by: [Mercy Meave](/engineering-education/authors/mercy-meave/)
