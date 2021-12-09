@@ -90,78 +90,6 @@ If successful, it returns to the particular signal handler that was in charge of
 
 
 ### Implementation
-The illustration below shows how to use the `SIGINT` technique to construct a signal handling procedure.
-
-```c++
-#include <iostream>
-#include <csignal>
-
-using namespace std;
-
-void signalHandler( int signumber ) {
-   cout << "Interrupt signal (" << signumber << ") acquired .\n";
-
-   // Here's where you'll clean up and close things up.
-   // halt the program
-   exit(signumber);  
-}
-
-int main () {
-   // include signal SIGINT and signal handler  
-   signal(SIGINT, signalHandler);  
-
-   while(1) {
-      cout << "Sleeping peacefully...." << endl;
-      sleep(1);
-   }
-
-   return 0;
-}
-```
-
-Once compiled and executed, the return value will indicate the following result: 
-
-```
-Sleeping peacefully....
-Sleeping peacefully....
-Sleeping peacefully....
-```
-
-The compilation below illustrates the implementation of a signal handling process using the `SIGABRT` method.
-```c++
-#include <iostream>  
-#include <csignal>  
-   
-using namespace std;  
-  
-sig_atomic_t signal_value = 0;  
-  
-void s_handler(int signl)  
-{  
-    signal_value = signl;  
-}  
-  
-int main()  
-{  
-    signal(SIGABRT, s_handler);  
-    cout << "Prior to calling the signal handler" << endl;  
-    cout << "Signal is : " << signal_value << endl;   
-    raise(SIGABRT);  
-    cout << "After the signal handler has been invoked" << endl;  
-    cout << "Signal = " << signal_value << endl;  
-  
-    return 0;  
-}  
-```
-Once compiled and executed, the return value will indicate the following result:
-
-```
-Prior to calling the signal handler
-Signal is 0
-After the signal handler has been invoked
-Signal is 6
-```
-
 The compilation below illustrates the implementation of a signal handling process when the `SIGSEGV` method is used.
  
 
@@ -187,6 +115,7 @@ int main()
 ```  
 
 Once compiled and executed, the return value will indicate the following result:
+
 ```
 Before the signal handler has been invoked 0
 After the signal handler has been invoked 11
