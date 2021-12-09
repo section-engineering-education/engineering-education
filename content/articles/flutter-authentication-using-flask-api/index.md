@@ -16,15 +16,12 @@ images:
 ---
 
 ### Introduction
-Software or applications mostly hold data that is not accessible to everyone. This has made authentication a core aspect of software or application development.
+Software or applications mostly hold data that is not accessible to everyone. This has made authentication a core aspect of software or application development. Authentication is the process of proving if a user trying to access a system has permission to do so. 
 
 #### Understanding the Flutter framework
 Flutter is a UI toolkit created by google. It is used to build cross-platform mobile applications for Android and IOS and desktop applications for Windows, Mac, and Linux. 
 
 UIs built with Flutter always depend on the backend technology stack for core functionalities like authentication and access control. One of these backend technologies is the Flask framework. Flask is a python web framework for building web applications.
-
-#### Authentication
-Authentication is the process of proving if a user trying to access a system has permission to do so. 
 
 ### Prerequisite
 In this guide flutter version, 2.5 is used to build the flutter project, and the android studio is the IDE used to write the code, but visual studio code can be used. To code along with this article, the tools mentioned previously are recommended. This article assumes the reader has a background knowledge of flutter and python flask.
@@ -33,7 +30,7 @@ In this guide flutter version, 2.5 is used to build the flutter project, and the
 This guide will help the reader to understand how Flutter applications interact with the backend and how authentication occurs when Flask is used as the backend technology. In the process, we will build a Flutter application that authenticates users using a Flask API, which will work as shown below.
 ![demo](/engineering-education/flutter-authentication-using-flask-api/demo.gif)
 
-### Understanding apps
+### Understanding applications
 Web Applications are primarily built in two parts. There is the *frontend* and the *backend*. The two parts are very delicate in that they are mostly built differently and sometimes by different developers. \
 
 The frontend part of an app is also known as the client-side of the app. It
@@ -99,16 +96,8 @@ The code snippet for the register-endpoint above accepts data from a form and fi
 
 The code snippet for the login endpoint filters the data to make sure the user is registered if registered. Then, the user is given access to information in the system. If not, the user gets a message telling that the credentials are wrong. 
 
-The endpoint above can be accessed using the link below. 
+The [register](https://flaskflutterlogin.herokuapp.com/register) and [login](https://flaskflutterlogin.herokuapp.com/login) endpoints above can be accessed using the links. 
 
-#### Register
-```
-https://flaskflutterlogin.herokuapp.com/register
-```
-#### Login
-```
-https://flaskflutterlogin.herokuapp.com/login
-```
 ### Flutter App Design
 #### Installation
 To build a flutter app, Flutter has to be installed on the computer. Click [here and follow each step to download](https://flutter.dev/docs/get-started/install) if you do not know how to. Then a new flutter project was created from the terminal using the command shown below.
@@ -157,7 +146,7 @@ A `MaterialApp` was returned Inside the build widget. It has a title and home su
 
 To fix the red-line error,  add the `welcomePage` class, create two new folders inside the lib folder and name them `views,` and `service` inside the views folder create three files with names `login.dart`, `register.dart`, and `welcome.dart` and add the code snippet below into;
 
-#### Welcome
+#### Working on the Welcome page
 ```dart
 import 'package:flutter/material.dart';
 import 'package:loginwithapi/views/login.dart';
@@ -233,7 +222,7 @@ class _WelcomePageState extends State<WelcomePage> {
 ```
 
 
-#### Login
+#### Login page design
 
 ```dart
 import 'package:flutter/material.dart';
@@ -308,7 +297,7 @@ class _LoginPageState extends State<LoginPage> {
 }
 ```
 
-### Register
+### Registration page code
 
 ```dart
 import 'package:flutter/material.dart';
@@ -393,7 +382,7 @@ You will observe a red line on `import 'package:loginwithapi/service/http_servic
 
 ![Register Page](/engineering-education/flutter-authentication-using-flask-api/register.jpeg)
 
-### Login and Register Logic
+### Login and Registration Logic
 
 To write the login and register logic, create a file inside the service folder we created earlier and paste the code snippet below.
 
