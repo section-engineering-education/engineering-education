@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /a-general-purpose-intelligence-system/
+url: /general-purpose-intelligence-system/
 title: A General Purpose Intelligence System
 description: In this article, we'll discuss a general purpose intelligence system known as pathways and understand how it operates.
 author: monica-dalmas
@@ -11,7 +11,7 @@ topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/a-general-purpose-intelligence-system/hero.png
+  - url: /engineering-education/general-purpose-intelligence-system/hero.png
     alt: A General Purpose Intelligence System Hero image
 ---
 Artificial Intelligence (AI) is one of the most rapidly growing and exciting technology fields in our generation. Most AI systems today are trained to perform single tasks. But, Google's new Pathways model promises to deliver a more powerful and robust model as it is a single model trained to do many tasks all at once. 
