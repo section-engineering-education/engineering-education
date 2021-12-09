@@ -4,33 +4,28 @@ status: publish
 published: true
 url: /save-and-load-stacked-ensembles-in-onnx/
 title: Saving and Loading Stacked Ensemble Classifiers in ONNX format in Python
-description: In this tutorial, the reader will learn how to build an ensemble classifiers. Also, we will learn to save and load these models using ONNX format.
+description: In this tutorial, the reader will learn how to build an ensemble classifiers. They will learn to save and load these models using ONNX format.
 author: ian-njari
-date: 2021-12-07T00:00:00-00:00
+date: 2021-12-09T00:00:00-13:40
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/save-and-load-stacked-ensembles-in-onnx/hero.jpg
-    alt: Saving and Loading Stacked Ensemble Classifiers in ONNX format in Python example image
+    alt: Stacked Ensemble Classifiers in ONNX format in Python example image
 ---
 Stacked ensemble models are learners that increase predictive performance over stand-alone learners by combining the results of two or several machine learning models and running them through a meta-learner.
 <!--more-->
-The stacked models are different (not a single type), unlike in bagging methods (just decision trees) where each model in the stack does not correct the predictions of the previous ones like it happens in boosting. You can learn how to build one such Ensemble model by reading [this article by Adhinga Fredrick](/engineering-education/ensemble-learning-based-regression-model-using-python/).
+The stacked models are different (not a single type), unlike in bagging methods (just decision trees) where each model in the stack does not correct the predictions of the previous ones like it happens in boosting. You can learn how to build one such Ensemble model by reading [this article](/engineering-education/ensemble-learning-based-regression-model-using-python/) by [Adhinga Fredrick](/engineering-education/authors/adhinga-fredrick/).
 
 [Open Neural Network Exchange](https://onnx.ai/) (ONNX) is an open-source format for deep learning and traditional machine learning developed by Microsoft that has a unified schema for saving models despite the library they were developed in.
 
-Launched in December 2017, it gives data scientists and machine learning engineers a way to persist models without worrying about platform inconsistencies and library version deprecation.
-
+Launched in December 2017, this gave data scientists and machine learning engineers a way to persist models without worrying about platform inconsistencies and library version deprecation.
 It acts as a means to avoid vendor locking since ONNX models can be deployed on any platform - not just where they were trained.
 
-Assume you trained an image recognition model on NVIDIA's GPUs. But, for operations purposes, you decide to deploy it to a production environment on Google's TPUs.
+Assume you trained an image recognition model on NVIDIA's GPUs. But, for operations purposes, you decide to deploy it to a production environment on Google's TPUs. Well, ONNX is a nifty tool to transfer the model between the two. Container-based methods for pushing models to the production environment using Docker can also be bypassed altogether. 
 
-Well, ONNX is a nifty tool to transfer the model between the two.
-
-Container-based methods for pushing models to the production environment using Docker can also be bypassed altogether. For machine learning engineers, who want to ship models across platforms, or containerizing them can be avoided by ONNX models.
-
-So, how can stacked ensembles be serialized using ONNX?
+For machine learning engineers who may want to ship models across platforms, or containerizing them, ONNX models can help avoid that all together. 
 
 ### Table of contents
 - Preparing the environments.
@@ -100,6 +95,7 @@ You can read more about the dataset [here](https://www.kaggle.com/fedesoriano/he
 ##### Output:
 
 ![DataFrame](/engineering-education/save-and-load-stacked-ensembles-in-onnx/df1.png)
+
 *Screenshot of the dataset by author*
 
 We will separate out the target data column `Outcome` from the other feature columns as shown:
@@ -124,13 +120,9 @@ x_train, x_test, y_train, y_test = train_test_split(
 ### Training and evaluating the stacked classifier
 We shall employ a stack with a [random forest classifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html), [kNN classifier](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html), [gradient boosting classifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingClassifier.html), and a [logistic regressor](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html) as a final model.
 
-A random forest classifier uses a number of decision trees on randomly selected subsets of the data and makes decisions out of these trees based on votes.
+A random forest classifier uses a number of decision trees on randomly selected subsets of the data and makes decisions out of these trees based on votes. A k-Nearest Neighbors classifier classifies possible data points based on distance similarity.
 
-A k-Nearest Neighbors classifier classifies possible data points based on distance similarity.
-
-A gradient boosing classifier combines many weak learning classifiers together to create a strong predictive model.
-
-The logistic regression is used to model data like linear regression and then predict the outcome that falls into classes, instead of having them as continuous values.
+A gradient boosing classifier combines many weak learning classifiers together to create a strong predictive model. The logistic regression is used to model data like linear regression and then predict the outcome that falls into classes, instead of having them as continuous values.
 
 Let's import all the necessary packages:
 
@@ -170,7 +162,7 @@ print(pipeline.score(x_test,y_test))
 0.7716535433070866
 ```
 
-On evaluating the model using a confusion matrix as shown, we get the precision, recall, and F1 scores:
+When evaluating the model using a confusion matrix as shown, we can get the precision, recall, and F1 scores:
 
 ```python
 from sklearn.metrics import confusion_matrix
@@ -204,9 +196,7 @@ from skl2onnx import convert_sklearn
 from skl2onnx.common.data_types import FloatTensorType
 ```
 
-The `convert_sklearn` function requires a parameter `initial_types` to save the model. Each data type of the data columns must be assigned to this parameter.
-
-For example, if the data contains 3 columns with `float` followed by 2 of `String` types, and 1 with `int64`, then the following would be the declaration:
+The `convert_sklearn` function requires a parameter `initial_types` to save the model. Each data type of the data columns must be assigned to this parameter. For example, if the data contains 3 columns with `float` followed by 2 of `String` types, and 1 with `int64`, then the following would be the declaration:
 
 ```python
 initial_types =  [('feature_input', FloatTensorType([None, 3])),
@@ -237,7 +227,7 @@ with open("stacked_clf.onnx", "wb") as f:
 
 The model is saved sucessfully.
 
-> NOTE: If establishing the initial types is too challenging. For example, the data has too many features, then `to_onnx` method can do the same for you.
+> NOTE: If establishing the initial types is too challenging. For example, if the data has too many features, then the `to_onnx` method can do be used.
 
 You just need to pass the `x_test` data (or one of it's column) as an argurment and ONNX extracts it automatically.
 
@@ -290,14 +280,12 @@ print(pred_onx)
         1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0], dtype=int64)]
 ```
 
-As you can see here, we have saved models in ONNX format, and then tried to load them for prediction.
+As you can see here, we have saved models in the ONNX format, and then tried to load them for prediction.
 
 ### Conclusion
-In this tutorial, you learned how to install ONNX and `onnxruntime`, determine ONNX input initial types, serializing, saving a stacked ensemble to ONNX format, and, loading it to production using an ONNX runtime Inference session.
+In this tutorial, we learned how to install ONNX and `onnxruntime`, determine ONNX input initial types, serializing, saved a stacked ensemble to ONNX format, and, loaded it to production using an ONNX runtime inference session.
 
-This model can now be served via any web application framework like Streamlit or Dash using Django or Flask via an API.
-
-In case of a hard nut to crack with ONNX, you can raise an issue on [ONNX's github](https://github.com/onnx/sklearn-onnx/issues).
+This model can now be served via any web application framework like Streamlit or Dash using Django or Flask via an API. In case of any issues with ONNX, you can raise an issue on [ONNX's GitHub](https://github.com/onnx/sklearn-onnx/issues).
 
 You can find the full code [here](https://github.com/iannjari/scrapbook/blob/main/Stacked_Ensemble.ipynb).
 
