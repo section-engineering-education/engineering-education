@@ -1,6 +1,6 @@
 ### Electrocardiogram's(ECG's) QRS peak and heart rate detection using Discrete Wavelet Transform(DWT) in Matlab
 ### Introduction
-The QRS combines three deflections (Q, R, and S) seen on a typical ECG. It corresponds to the depolarization of the right and left ventricles of the human heart and contraction of the large ventricular muscles. In numerical and functional analysis, a discrete wavelet transform (DWT) is any wavelet transform in which the wavelets are discretely sampled. The discrete wavelet transform has many engineering, mathematics, and computer science applications. Most notably, it is used for signal coding to represent a discrete signal in a more redundant form, often as preconditioning for data compression.
+The QRS is the combinination of three deflections (Q, R, and S) seen on a typical ECG. It corresponds to the depolarization of the right and left ventricles of the human heart and contraction of the large ventricular muscles. In numerical and functional analysis, a discrete wavelet transform (DWT) is any wavelet transform in which the wavelets are discretely sampled. The discrete wavelet transform has many engineering, mathematics, and computer science applications. Most notably, it is used for signal coding to represent a discrete signal in a more redundant form, often as preconditioning for data compression.
 
 The `sym4` wavelet resembles the QRS, suitable for QRS detection. Therefore, this process can help to diagnose various heart diseases. This tutorial will look at how to obtain the peak and rate of detection of these ECGs using the ECG database. From this method, we can get the heart rate. 
 
@@ -35,7 +35,7 @@ The amplitude of a normal QRS is 5 to 30mm, and the duration is 0.06 to 0.12 sec
 ![qrs complex configuration](/engineering-education/electrocardiogram's(ecg's)-qrs-peak-and-heart-rate-detection-using-dwt-using-matlab/imageTwo.png)
 
 ### ECG database on PhysioNet
-For analysis, a few ecg signals from MIT-BIH arrhythmia and the ECG-ID database are downloaded from [PhysioNet](https://physionet.org/). Each ecg signal on PhysioNet has the following three files.
+For this tutorial we use signals from MIT-BIH arrhythmia and the ECG-ID database which are downloaded from [PhysioNet](https://physionet.org/). Each ecg signal on PhysioNet has the following three files.
 1. *.atr: Reference Annotation.
 2. *.dat: Datafile(signal).
 3. *.hea: Header file.
@@ -61,7 +61,7 @@ Since we need to read it in Matlab, we export it. To do that, we select the `exp
 Since we only need the signal, we download the `.mat` file.
 
 ### Use of symlet4 wavelet for ecg signal analysis
-The `sym4` wavelet resembles the QRS complex, making it a good choice for QRS detection. To illustrate this more clearly, see the extracted QRS complex and a dilated `sym4` wavelet for comparison in the figure.
+The `sym4` wavelet is similar to the QRS complex. It is why prefered for QRS detection. To make this clear, look at the image below of extracted QRS complex and dilated `sym4` wavelet and make a comparison.
 
 ![comparison](/engineering-education/electrocardiogram's(ecg's)-qrs-peak-and-heart-rate-detection-using-dwt-using-matlab/imageSeven.png)
 
@@ -80,7 +80,7 @@ The relationship between these three frequencies will be;
 
 f1>f2>f3
 
-Now, our objective is that we want to preserve all the R-peaks and eliminate all the other frequencies. To make it clear, we say that we want to eliminate `f1` and `f3` but preserve `f2`. It is called bandpass filtering, and you achieve the filtering with the help of the wavelet transform. Wavelet transform separates signal components into different frequency bands. Therefore, You can implement bandpass filtering by eliminating some frequency bands.
+Now, our objective is that we want to preserve all the R-peaks and eliminate all the other frequencies. To make it clear, we say that we want to eliminate `f1` and `f3` but preserve `f2`. It is called bandpass filtering, and you achieve the filtering with the help of the wavelet transform. Wavelet transform groups signals of the same frequency bands. Therefore, You can implement bandpass filtering by eliminating some frequency bands.
 
 This bandpass filtering can be achieved by eliminating wavelet coefficients of some lower scale(high frequencies) and higher scales(lower frequency) of ecg signals. For this purpose, an undecimated wavelet transform is used to get wavelet coefficients.
 
