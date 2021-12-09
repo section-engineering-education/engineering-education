@@ -1,19 +1,5 @@
----
-layout: engineering-education
-status: publish
-published: true
-url: /facebook-ads-in-android-studio/
-title: Integrating Facebook Ads with your Android App in Android Studio
-description: In this article, we will go over how to integrate Facebook ads with android applications in Android Studio.
-author: victor-Kamau
-date: 2021-12-07T00:00:00-16:30
-topics: []
-excerpt_separator: <!--more-->
-images:
+### Integrating Facebook Ads into your Android App in Android Studio
 
-  - url: /engineering-education/facebook-ads-in-android-studio/hero.png
-    alt: Facebook Ads Android App in Android Studio
----
 ### Introduction
 Monetizing an application is just as an important goal for a developer as producing the required product. This motivates developers and programmers to come up with more software with a financial thought in mind which triggers quality.
 
