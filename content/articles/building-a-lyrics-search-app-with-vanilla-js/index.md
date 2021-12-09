@@ -1,12 +1,21 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /building-a-lyrics-search-app-with-vanilla-js/
+title: Building a Lyrics Search App with Vanilla JavaScript
+description: In this article, we will be creating a platform where users can search for lyrics by entering the artist name or title of the song.
+author: 
+date: 
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-##Building a Lyrics Search app with Vanilla Javascript
-
-![hero image](/building-a-lyrics-search-app-with-vanilla-javascript/hero.jpg)
-
-Not knowing the lyrics of a song is a problem most song-lovers encounter, especially when it's a rap song.
-
-In this article, we will be creating a platform where users can search for lyrics by entering the artist name or title of the song.
-
+ - url: /engineering-education/building-a-lyrics-search-app-with-vanilla-js/hero.jpg
+   alt: Lyrics Search App with JavaScript
+---
+Not knowing the lyrics of a song is a problem most song-lovers encounter, especially when it's a rap song.In this article, we will be creating a platform where users can search for lyrics by entering the artist name or title of the song.
+<!--more-->
 We will be creating the search app using HTML5, CSS3, Vanilla JS, async-await with fetch method, OVH API, and ES6 features like arrow functions.
 
 ### Prerequisites
@@ -159,7 +168,7 @@ form {
 You have successfully designed the web page by adding colors, font sizes, font family, padding, margin, and so on just to make this web app look nice.
 
 Here is what your web page should look like now:
-![Screenshot for design](/building-a-lyrics-search-app-with-vanilla-javascript/design-screenshot.jpg)
+![Screenshot for design](/engineering-education/building-a-lyrics-search-app-with-vanilla-javascript/design-screenshot.jpg)
 
 ### Adding functionality with JavaScript.
 In your `lyrics.js` file,  declare variables and use the DOM selectors to bring in elements from the lyrics.html file into our javascript file using the code snippet below:
@@ -226,7 +235,7 @@ Comment out the showData function in the code snippet above(remember to uncommen
 
 Your screen should be like the screenshot below:
 
-![Screenshot for consoled data](/building-a-lyrics-search-app-with-vanilla-javascript/console-screenshot.jpg)
+![Screenshot for consoled data](/engineering-education/building-a-lyrics-search-app-with-vanilla-javascript/console-screenshot.jpg)
 
 The next thing to do is to create a function that will display the data in the console on the webpage. The function(showData)  is being called from the async function `startSearch()`.
 
@@ -463,8 +472,11 @@ form.addEventListener("submit", e => {
 
 
 ### Conclusion
- In this tutorial, we built a lyrics search web app using HTML5, CSS3, Vanilla Javascript alongside ES6 features.
+In this tutorial, we built a lyrics search web app using HTML5, CSS3, Vanilla Javascript alongside ES6 features.
 
 I’m a big fan of you not just stopping at what is provided in this tutorial. if indeed you’ve learned something from this, I challenge you to add some more features to this web app and also make the UI better. You can add a button that copies the lyrics to the clipboard or a button that helps you share lyrics with friends via social media.
 
 The source code is available on [Github](https://github.com/shegz101/Lyrics-Web-App).
+
+---
+Peer Review Contributions by: [Adrian Murage](/engineering-education/authors/adrian-murage/)
