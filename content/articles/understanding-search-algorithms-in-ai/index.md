@@ -84,7 +84,7 @@ This is an algorithm used for searching graph or tree data structures. It begins
 This is an algorithm used for searching graph or tree data structures. Unlike the breadth-first search, it begins at the root node. It traverses the branch nodes and then backtracks. The data structure of this search uses the concept of LIFO (last in first out).
 
 ##### Uniform cost search
-These algorithms differ from the breadth-first and depth-first algorithms in that they consider cost. When there are different paths for attaining the desired goal, the optimal solution of uniform cost algorithms is the solution that is associated with the least cost. 	
+These algorithms differ from the breadth-first and depth-first algorithms in that they consider the cost. When there are different paths for attaining the desired goal, the optimal solution of uniform cost algorithms is the solution that is associated with the least cost. 	
 
 #### Informed search algorithms
 These are heuristic algorithms that consist of the problem definition and supplementary information that assists in achieving the desired goal state. They are better at solving complex problems than uninformed algorithms. 
@@ -105,7 +105,7 @@ h (x) is known as the forward cost while g (x) is the backward cost. The forward
 A* tree algorithm is optimal when the forward cost (h (x)) is less than or equal to the actual cost (h* (x)) for all nodes. This is called the admissibility property of A* tree algorithm. The strategy is to select the node with the lowest total cost value (f (x)). 
 
 ##### A* graph search 
-The major drawback of A* tree algorithm is that there is wastage of time due to the re-exploration of branches that were initially explored. This drawback has been overcome by the A* graph algorithm, which configures a rule that averts the re-exploration of initially explored branches. 
+The major drawback of A* tree algorithm is that there is a wastage of time due to the re-exploration of branches that were initially explored. This drawback has been overcome by the A* graph algorithm, which configures a rule that averts the re-exploration of initially explored branches. 
 
 The optimal solution in the A* graph algorithm is achieved when the forward cost of two successive nodes is less than or equal to their backward cost. This property is termed as the consistency property of this algorithm. 
 
