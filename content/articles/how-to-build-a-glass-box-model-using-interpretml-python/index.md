@@ -1,3 +1,20 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-build-a-glass-box-model-using-interpretml-python/
+title: Building a Glass-box model using InterprateML
+description: This article will provide a guide on how to us InterpretML to build glass box machine learning models.
+author: charles-ndirutu
+date: 2021-12-09T00:00:00-11:27
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /how-to-build-a-glass-box-model-using-interpretml-python/hero.png
+    alt: Building a Glass-box model using InterprateML Image
+---
+
 Glass box models are models that are transparent to the user. In a glass box model, all the features and the model parameters are known to the user. They also know the criteria used by the model to reach its prediction results and conclusion. 
 
 This gives full transparency. One can know how the model works and functions behind the scenes. Glass box models are more robust and easily adaptable in a production environment.
@@ -321,3 +338,6 @@ Glass box models are always the better alternative, and users can easily trust t
 - [Advantages of glass box models](https://towardsdatascience.com/think-outside-the-black-box-7e6c95bd2234)
 - [Sckit-learn documentation](https://scikit-learn.org/stable/)
 - [InterpretMl documentation](https://github.com/interpretml/interpret)
+
+---
+Peer Review Contributions by: [Mercy Meave](/engineering-education/authors/mercy-meave/)
