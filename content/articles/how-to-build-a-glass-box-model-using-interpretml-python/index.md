@@ -11,7 +11,7 @@ topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /how-to-build-a-glass-box-model-using-interpretml-python/hero.png
+  - url: /how-to-build-a-glass-box-model-using-interpretml-python/hero.jpg
     alt: Building a Glass-box model using InterprateML Image
 ---
 
