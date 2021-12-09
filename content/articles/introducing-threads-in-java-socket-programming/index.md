@@ -35,9 +35,9 @@ Client-side construction shall begin with a collection of streams and port numbe
 - A while loop will build socket objects that receive connections from server socket objects.
 - The streams of the requests will be incorporated into the current socket.
 - Client handler objects are created by the class from streams and port numbers.
-- Starting the program will be invoking the `start()` method. This new thread object's `start()` method must be called before it may begin working.
+- Starting the program will be invoking the `start()` method. The `start()` function of this new thread object must be invoked in order for it to begin operating.
 __ClientHandler class:__
-All of the thread's attributes are passed down to the framework-based client handler class. The class's constructor requires three parameters: a Socket, a DataInputStream, and a DataOutputStream. When creating a new thread object, the server initially receives the port number and data input and output stream objects for it. After the user selects whether they need time or date, the `run()` function of this class returns those objects via input and output streams to the developer.
+All of the thread's attributes are passed down to the framework-based client handler class. The class's constructor requires three parameters: a Socket, a DataInputStream, and a DataOutputStream. The server gets the thread's port number and data input and output stream objects when it creates it. After the user picks time or date, the run() method delivers those objects to the developer through input and output streams.
 
 The Java server-side software includes the Server and ClientHandler classes. The following is the server's code:
 ```java
@@ -167,7 +167,7 @@ Output:
 ```bash
 A new connection identified : Socket[addr=/127.0.0.1,port=60536,localport=5056]
 Thread assigned
-Client Socket[addr=/127.0.0.1,port=60536,localport=5056] sends exit...
+Client Socket[addr=/127.0.0.1,port=60536,localport=5056] Exit...
 Connection closing...
 Closed
 ```
@@ -184,45 +184,47 @@ import java.net.*;
 
 public class NewClient
 {
-   public static void main(String[] args) throws IOException
-   {
-       try
-       {
-           Scanner newscanner = new Scanner(System.in);
-           InetAddress adress = InetAddress.getByName("localhost");
-           // establishing the connection 
-           Socket newsoct = new Socket(adress, 3333);           
-           DataInputStream sdtinput = new DataInputStream(newsoct.getInputStream());
-           DataOutputStream sdtOutput = new DataOutputStream(newsoct.getOutputStream());
-   // The following loop is responsible for exchanging data between the client and client handle.
-           while (true)
-           {
-               System.out.println(sdtinput.readUTF());
-               String tosend = newscanner.nextLine();
-               sdtOutput.writeUTF(tosend);
-               // If the client sends an exit, then the connection should be closed and the while loo should be terminated.
-               if(tosend.equals("Exit"))
-               {
-                   System.out.println("Connection closing... : " + newsoct);
-                   newsoct.close();
-                   System.out.println("Closed");
-                   break;
-               }
-               
-               
-               String newresuiltReceived = sdtinput.readUTF();
-               System.out.println(newresuiltReceived);
-           }
-           
-           newscanner.close();
-           sdtinput.close();
-           sdtOutput.close();
-       }catch(Exception e){
-           e.printStackTrace();
-       }
-   }
+    public static void main(String[] args) throws IOException
+    {
+        try
+        {
+            Scanner ourNewscanner = new Scanner(System.in);
+            InetAddress inetadress = InetAddress.getByName("localhost");
+            // establishing the connection 
+            Socket ournewsocket = new Socket(inetadress, 3333);           
+            DataInputStream ournewDataInputstream = new DataInputStream(ournewsocket.getInputStream());
+            DataOutputStream 			this.ournewDataOutputstream.close();
+ = new DataOutputStream(ournewsocket.getOutputStream());
+    // In the following loop, the client and client handle exchange data.
+            while (true)
+            {
+                System.out.println(ournewDataInputstream.readUTF());
+                String tosend = ourNewscanner.nextLine();
+                			this.ournewDataOutputstream.close();
+.writeUTF(tosend);
+                // Exiting from a while loo should be done when a client gives an exit message.
+                if(tosend.equals("Exit"))
+                {
+                    System.out.println("Connection closing... : " + ournewsocket);
+                    ournewsocket.close();
+                    System.out.println("Closed");
+                    break;
+                }
+                
+                
+                String newresuiltReceivedString = ournewDataInputstream.readUTF();
+                System.out.println(newresuiltReceivedString);
+            }
+            
+            ourNewscanner.close();
+            ournewDataInputstream.close();
+            			this.ournewDataOutputstream.close();
+.close();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }
 }
-
 
  ```
  Output:
@@ -249,7 +251,7 @@ Open java client socket programs on both computers or the same network. The clie
 ### How these programs operate together
 - Each time a client requests a connection to the server, a new thread is started.
 - The new thread gets access to all available streams as soon as it is allocated. While the server is allocated, it will accept this request.
-- Until the first request is complete, the server accepts and processes the second one. At the same time, several requests may be handled simultaneously, even as others are being handled.
+- Until the first request is complete, the server accepts and processes the second one. Several requests may be processed concurrently while others are not.
 
 ### Testing the program
 It does matter where you save the two applications. Run the `Server.java` and the `Client.java` one after the other. To execute numerous instances of the client program simultaneously, utilize an IDE like multiple instances, or run the client software in separate files. To get the results data input stream displayed above, you will need numerous clients.
