@@ -163,7 +163,7 @@ class ClientHandler extends thread
 
 ```
 Output:
-"`bash
+```bash
 A new client is connected : Socket[addr=/127.0.0.1,port=60536,localport=5056]
 Assigning new thread for this client
 Client Socket[addr=/127.0.0.1,port=60536,localport=5056] sends exit...
