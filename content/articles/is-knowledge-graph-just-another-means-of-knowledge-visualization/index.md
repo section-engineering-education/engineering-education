@@ -71,5 +71,7 @@ A knowledge graph is not just another means of knowledge visualization. It is a 
 
 Knowledge graphs have become integral in business. Their ability to help create network linking nodes is significant to companies. It helps identify potential clients and target them for advertisements on social media platforms. Knowledge graphs are transforming decision-making processes in businesses by widening their knowledge map and improving their overall functioning.
 
+Happy learning!
+
 ---
 Peer Review Contributions by: [Onesmus Mbaabu](/engineering-education/authors/onesmus-mbaabu/)
