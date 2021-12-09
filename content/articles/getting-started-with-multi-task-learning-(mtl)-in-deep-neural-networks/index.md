@@ -1,8 +1,8 @@
-It is common practice in machine learning to focus on improving a certain statistic such as a business KPI score or a benchmark score. A model or a group of models are trained to fulfill the intended task. These models are then fine-tuned and tweaked to the point where their performance is no longer able to improve.
+It is common practice in machine learning to focus on improving a certain statistic such as a business KPI score or a benchmark score. A model or a group of models are trained to fulfill the intended task. The performance of these models is then tuned and adjusted to the level where it can no longer improve.
 
 By focusing only on one activity, we miss out on information that could help us improve our performance. This performance is on the parts we are most concerned about. It's the training signals of related tasks that provide this knowledge. To improve our model's ability to generalize, we can share representations between tasks that are similar. This type of learning is called  multi-task learning (MTL).
 
-This article will take you through the basics of multi-task learning and how you can get started with MTL in deep neural networks. It will also look at the MTL methods for deep learning, MTL mechanisms, and the main applications of this phenomenon. 
+This article will take you through an overview of MTL and how you can get started with MTL in deep neural networks. It will also look at the MTL methods for deep learning and  MTL mechanisms. Lastly, we will take a look at some of the applications of MTL. 
 
 ### Table of contents
 - [An overview of multi-task learning (MTL)](#an-overview-of-multi-task-learning-mtl)
@@ -21,10 +21,10 @@ Models trained using data from multiple tasks are trained at the same time, usin
 For example when a child is young, when he or she first learns to walk or use their hands, he or she develops basic motor abilities that are based on principles of balance and intuition. With a prior understanding of basic motor abilities and abstract concepts, people can build on their previous knowledge of more harder tasks such as riding a bike or walking a tightrope. When we attempt to learn anything new, we bring a great deal of previously acquired knowledge with us. As a result, it's no surprise that neural networks require a large number of training samples and a significant amount of processing time. It would be difficult to walk a tightrope without first knowing how to walk on solid ground. We believe that the goal of multi-task learning, as well as the allied fields of meta-learning, transfer learning, and continuous learning, should be the development of systems to facilitate this process. This process is critical to humans' ability to learn quickly and with a limited number of instances.
 
 ### MTL methods for deep learning
-For multi-task learning using deep learning, either [hard or soft parameter sharing](https://avivnavon.github.io/blog/parameter-sharing-in-deep-learning/) is used for hidden layers.
+The two most common methods for performing MTL with deep neural networks are [hard or soft parameter sharing](https://avivnavon.github.io/blog/parameter-sharing-in-deep-learning/).
 
 #### Hard parameter sharing 
-Multi-tasking learning in neural networks is most achieved via sharing hard parameters. It is implemented by sharing the hidden layers amongst all jobs while maintaining several task-specific output layers. This is a very beneficial strategy since it reduces the danger of overfitting by having a model for diverse tasks using a common hidden layer. Overfitting is when the model takes in and learns concepts from the noise or random oscillations in the training data.
+MTL in deep neural networks is most achieved through sharing hard parameters. This is put into practise by sharing the hidden layers amongst all jobs while at the same time maintaining several task-specific output layers. This is a very beneficial strategy since it reduces the danger of overfitting by having a model for diverse tasks using a common hidden layer. Overfitting is when the model takes in and learns concepts from the noise or random oscillations in the training data.
 
 #### Soft parameter sharing 
 Soft parameter sharing adds a constraint to achieve similarity among related parameters rather than sharing the same value. Furthermore, we penalize the difference in parameters across the models that we train for each task. By loosely connecting the shared space representations, this method, in contrast to rigid sharing, allows activities greater flexibility. 
@@ -36,14 +36,14 @@ Understanding multi-task learning requires knowing the mechanisms that underlie 
 It may be challenging for a model to distinguish between important and irrelevant variables. If the job is noisy or if the data set is small yet high-dimensional. As subsequent tasks provide further evidence for the insignificance of those features. Multi-tasking learning can enable the model to concentrate on those features.
  
 #### 2. Regularization 
-MTL is a regularizer since it introduces an inductive bias into the equation. As a result, the threat of overfitting and then the ability of the model to fit random noise are reduced. 
+MTL is a regularizer since it introduces an inductive bias into the equation discouraging earning a more complicated or flexible model. As a result, the threat of [overfitting](https://www.edureka.co/blog/overfitting-in-machine-learning/) and then the ability of the model to fit random noise are reduced. 
  
 #### 3. Eavesdropping 
 A task may find it easy to learn some features while another task may find it difficult to learn these features. The difficulty in learning may be because the task is interacting in a much more complex manner with the features. It may also be because other features are interfering with the ability of the model to learn this feature.
 
 Multi-tasking learning enables us to allow the task with difficulty in learning the new feature to eavesdrop on the task that learns the new feature. By doing this the task with difficulty in learning will be able to learn the new feature. 
 
-Directly teaching the model to anticipate the most critical traits via hints is the quickest and most straightforward method of achieving this goal. 
+The simplest and most straightforward technique of attaining this goal is to directly teach the model to anticipate the most important traits via hints. 
 
 #### 4.Implicit data augmentation 
 Training our model on more data is made easier thanks to MTL. We want to build a suitable representation for a task that avoids data-dependent noise. It should generalize effectively when you want to train a model on a certain task because all tasks are at least slightly noisy. 
@@ -59,9 +59,9 @@ Because of the group-sparsity constraint, our model can only investigate a few f
 In order to distinguish between tasks that are linked and those that are not, we would like to employ past knowledge rather than relying exclusively on a lack of information. In this situation, a restriction that necessitates task grouping may be more appropriate. Using a constraint to apply a clustering constraint to your task column vectors, it recommends penalizing the norms and variance of your task column vectors.
  
  ### Auxiliary tasks in MTL
-If we want to anticipate the outcomes of numerous tasks at once, MTL is the ideal tool for the job. In finance and economics forecasting, for example, we might wish to anticipate the value of numerous presumably linked variables, or in bioinformatics, where we would want to predict indicators for various illnesses at once. Drug discovery situations, in which tens or even hundreds of active molecules must be predicted, increase the accuracy of MTL with each additional work.
+If we want to anticipate the outcomes of numerous tasks at once, MTL is the ideal tool for the job. In finance and economics forecasting, for example, we might wish to anticipate the value of numerous presumably linked variables, or in bioinformatics, where we would want to predict signs and symptoms of various illnesses right away. Drug discovery situations, in a large number of active molecules must be predicted, increase the accuracy of MTL with each additional work.
 
-However, in most cases, we just worry about one thing: our performance on that one activity. In this section, we'll look at how we can still reap the rewards of multi-task learning by finding a good auxiliary task. 
+However, in most cases, we just worry about one thing: our performance on that one activity. In this section, we'll look at how we can still reap the rewards of MTL by finding a good auxiliary task. 
 
 #### 1. Focusing attention 
 The auxiliary job can also be utilized to draw attention to sections of the picture that a network would otherwise overlook. Lane markings, for example, may be overlooked in the context of a single-task paradigm since they take up only a tiny portion of the image which is not always there. However, auxiliary tasks like predicting lane markings push a model to learn to represent them. This may subsequently be employed for the main goal. Face recognition can be improved by learning to predict the placement of facial landmarks points as an auxiliary job. 
@@ -88,8 +88,8 @@ In many object identification systems, the use of alternative computer vision te
 
 ### Conclusion
 In this article, we have looked at how you can get started with multi-task learning in deep neural networks. To summarize;
-1. We have looked at an overview of MTL
-2. We have learned about the methods and some of the mechanisms for MTL 
+1. We have looked at an overview of MTL.
+2. We have learned about two methods and some of the various mechanisms for MTL. 
 3. We have also learned about the non-neural models and some auxiliary tasks.
 
 I hope this essay helps you implement MTL by illuminating how MTL works. 
