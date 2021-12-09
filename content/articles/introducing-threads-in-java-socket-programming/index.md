@@ -1,4 +1,4 @@
-In order to communicate between two computers on the same network, socket programming must be used. A second socket attempts to connect to a first socket by listening on a given port at a specific IP address.
+To communicate between two computers on the same network, socket programming must be used. A second socket attempts to connect to a first socket by listening to a given port at a specific IP address.
 Socket communication utilizes two protocols:-
 1. User Datagram Protocol(UDP): This is a connectionless protocol. It is mainly used to establish a low latency connection between two nodes.
 2. Transport control protocol(TCP): This is a connection-oriented protocol. It is used to establish a connection between two nodes.
@@ -20,10 +20,10 @@ Socket communication utilizes two protocols:-
 - [Conclusion](#conclusion)
 
 ### Threads
-Each sequential program starts, runs through its execution and ends. In a threaded program, the program's control moves logically. It's a separate way to go through the program's source code. Several apps employ a single thread of execution when several activities need to happen simultaneously. When many threads are running at the same time, the code flow might vary. ` Java.lang` is in charge of making and managing every thread in the `Java.Class` of threads.
+Each sequential program starts, runs through its execution and ends. In a threaded program, the program's control moves logically. It's a separate way to go through the program's source code. Several apps employ a single thread of execution when several activities need to happen simultaneously. When many threads are running simultaneously, the code flow might vary. ` Java.lang` is in charge of making and managing every thread in the `Java.Class` of threads.
 
 ### Why threads
-It's also essential that the server can handle multiple clients at once. Having the ability to manage several consumers simultaneously is a requirement of our design framework. In order to assign each request to a data input stream thread as it arrives, our server-side architecture necessitates threading. Starting a new Java thread is easy:
+It's also essential that the server can handle multiple clients at once. Having the ability to manage several consumers simultaneously is a requirement of our design framework. To assign each request to a data input stream thread as it arrives, our server-side architecture necessitates threading. Starting a new Java thread is easy:
 - It is important to implement the Runnable interface. It is possible by running `java.lang.Runnable`.
 - Extending the Thread class by running `java.lang.Thread`.
 
@@ -35,9 +35,9 @@ Client-side construction shall begin with a collection of streams and port numbe
 - A while loop will build socket objects that receive connections from server socket objects.
 - The streams of the requests will be incorporated into the current socket.
 - Client handler objects are created by the class from streams and port numbers.
-- Starting the program will be invoking the `start()` method. The `start()` function of this new thread object must be invoked in order for it to begin operating.
+- Starting the program will be invoking the `start()` method. The `start()` function of this new thread object must be invoked to begin operating.
 __ClientHandler class:__
-All of the thread's attributes are passed down to the framework-based client handler class. The class's constructor requires three parameters: a Socket, a DataInputStream, and a DataOutputStream. The server gets the thread's port number and data input and output stream objects when it creates it. After the user picks time or date, the run() method delivers those objects to the developer through input and output streams.
+The thread's attributes are passed down to the framework-based client handler class. The class's constructor requires three parameters: a Socket, a DataInputStream, and a DataOutputStream. The server gets the thread's port number and data input and output stream objects when it creates it. After the user picks time or date, the run() method delivers those objects to the developer through input and output streams.
 
 The Java server-side software includes the Server and ClientHandler classes. The following is the server's code:
 ```java
@@ -172,7 +172,7 @@ Connection closing...
 Closed
 ```
 ### Client-Side Programming
-Traditional socket programming, as well as client-side programming, have a number of common features.
+Traditional socket programming, as well as client-side programming, have several common features.
  - Socket Connection Procedure.
  - Communication.
 Below is the code for the client:
@@ -253,7 +253,7 @@ Open java client socket programs on both computers or the same network. The clie
 - The new thread gets access to all available streams as soon as it is allocated. While the server is allocated, it will accept this request.
 - Until the first request is complete, the server accepts and processes the second one. 
 ### Testing the program
-It does matter where you save the two applications. Run the `Server.java` and the `Client.java` one after the other. To execute numerous instances of the client program simultaneously, utilize an IDE like multiple instances, or run the client software in separate files. To get the results data input stream displayed above, you will need numerous clients.
+It does matter where you save the two applications. Run the `Server.java` and the `Client.java` one after another. To execute numerous instances of the client program simultaneously, utilize an IDE like multiple instances, or run the client software in separate files. To get the results data input stream displayed above, you will need numerous clients.
 
 ### Conclusion
 This article taught socket programming, thread and its use, server-side programming, and client-side programming.
@@ -261,3 +261,4 @@ This article taught socket programming, thread and its use, server-side programm
 Our implementation showed the importance of threads in Java, enhancing and understanding threads in java socket programming.
 
 Happy learning!
+
