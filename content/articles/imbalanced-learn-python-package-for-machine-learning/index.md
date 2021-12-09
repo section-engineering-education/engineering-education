@@ -6,7 +6,7 @@ url: /imbalanced-learn-python-package-for-machine-learning/
 title: Understanding the Imbalanced-Learn Package for Handling Imbalanced Datasets
 description: Imbalanced-learn is a Python library that is used for handling imbalanced datasets. In this article, we will understand 2 important techniques that we use for handling imbalanced datasets. Also, we will be analyzing its performance by measuring the accuracy score from the models of each dataset.
 author: charles-kariuki
-date: 2021-12-07T00:00:00-23:30
+date: 2021-12-09T00:00:00-11:30
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
