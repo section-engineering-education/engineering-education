@@ -46,7 +46,7 @@ After finishing this blog, readers will understand what a generative model is an
 
 ### Introduction
 
-Before we dig deeper, I will try to present a basic notion of generative modeling for our readers by taking an example. Let us suppose we want to classify an image into a dog or a cat. We can solve this problem simply by feeding the image as an input to a convolutional neural network that can output the image's corresponding category. What if we want this process to be reversed? We describe what we want as an input to the model and get the image as output, and this is generative modeling in its simplest and most informal form.
+Before we dig deeper, I will present a basic notion of generative modeling by taking an example. Supposing we want to classify an image as a dog or a cat. We can solve this problem simply by feeding the image as an input to a convolutional neural network that can output the image's corresponding category. What if we want this process to be reversed? We describe what we want as an input to the model and get the image as output. This is generative modeling in its simplest and most informal form.
 
 Most machine learning practitioners are exposed to the classification or the regression tasks in machine learning first due to its extensive scope and straightforward approach. However, the topic we will cover is not widely known amongst machine learning practitioners. So let's dive deep into the concepts of generative modeling and understand how it can affect the future of machine learning.
 
@@ -56,13 +56,13 @@ Before we start, let's get into the formal definition of generative modeling:
 
 >Generative modeling is an unsupervised form of machine learning where the model learns to discover the patterns in input data. Using this knowledge, the model can generate new data on its own, which is relatable to the original training dataset.
 
-To understand it a bit more formally, let $x$ be the actual data sample. We will take a particular prescription $z$ using which we will try to generate a sample $x^*$. Ideally, this generated sample $x^*$ would look like one from the actual sample $x$. The prescription $z$ is called a learned representation of $x$, present in a latent space and acts as an inspiration. Therefore, the $x^*$ is different every time. Different models will have different $z$ for the same dataset.
+To understand it a bit more formally, let $x$ be the actual data sample. We will take a particular prescription $z$ using which we will try to generate a sample $x^\*$. Ideally, this generated sample $x^\*$ would look like one from the actual sample $x$. The prescription $z$ is called a learned representation of $x$, present in a latent space and acts as an inspiration. Therefore, the $x^\*$ is different every time. Different models will have different $z$ for the same dataset.
 
 #### Example
 
-Let's try to understand generative models by taking a real-life example. Consider a scenario where you get appointed as a machine learning engineer in some company. Now, you give this excellent news to your parents, and now they ask you what an ML engineer is and what will be your everyday job. 
+Let's try to understand generative models by taking a real-life example. Consider a scenario where you get appointed as a machine learning engineer in your dream company. Now, you give this excellent news to your parents, and they ask you what an ML engineer is and what a day in your job looks like? 
 
-Let us take your information about an ML engineer as $x$. To make someone understand who has never studied ML in their life, you have to give some basic information only because too much of the technicalities will be of no use. Now you explain your job to parents in leman terms, let the information they learnt as $z$(hidden representation of actual information $x$). Now using this $z$ as an inspiration, they will draw a picture in their mind of what an ML engineer does, $x^*$. 
+Let us take your information about an ML engineer as $x$. To help someone understand who has never studied ML in their life, you have to give some basic information only because too much of the technicalities will be of no use. Now you explain your job to parents in leman terms, let the information they learnt as $z$(hidden representation of actual information $x$). Now using this $z$ as an inspiration, they will draw a picture in their mind of what an ML engineer does, $x^*$. 
 
 Now ideally, you want $x^*$ to be almost the same as $x$, but it will solely depend on the hidden representation of the $x$. Again, if you have to give the same information to one of your colleagues who knows ML, the $z$ will be different, and the $x^*$ will be closer to the $x$. The same applies to generative modeling. Different models will learn different hidden representations $z$ of original data, and the generated data becomes unique. 
 
