@@ -1,4 +1,4 @@
-It is necessary to use socket programming in order to enable communication between two computers connected to the same network. A second socket attempts to connect to a first socket by listening on a given port at a specific IP address.
+In order to communicate between two computers on the same network, socket programming must be used. A second socket attempts to connect to a first socket by listening on a given port at a specific IP address.
 Socket communication utilizes two protocols:-
 1. User Datagram Protocol(UDP): This is a connectionless protocol. It is mainly used to establish a low latency connection between two nodes.
 2. Transport control protocol(TCP): This is a connection-oriented protocol. It is used to establish a connection between two nodes.
@@ -20,11 +20,11 @@ Socket communication utilizes two protocols:-
 - [Conclusion](#conclusion)
 
 ### Threads
-Each sequential program starts, runs through its execution and ends. In a threaded program, the program's control moves logically. It's a separate way to go through the program's source code. When many events or actions need to happen simultaneously, many applications are made to work on a single thread. When many threads are running simultaneously, it is common for one thread to take a different path through the same code as the rest. ` Java.lang` is in charge of making and managing every thread in the `Java.Class` of threads.
+Each sequential program starts, runs through its execution and ends. In a threaded program, the program's control moves logically. It's a separate way to go through the program's source code. When a large number of things need to happen at the same time, a single thread of execution is used by several applications. A varied path through the same code is typical when numerous threads are operating at the same time. ` Java.lang` is in charge of making and managing every thread in the `Java.Class` of threads.
 
 ### Why threads
-It's also essential that the server can handle multiple clients at once. Having the ability to manage several consumers simultaneously is a requirement of our design framework. In order to assign each request to a data input stream thread as it arrives, our server-side architecture necessitates threading. Starting a new thread in Java is accomplished in one of two ways:
-- Runnable interface implementation is necessary. It is possible by running `java.lang.Runnable`.
+It's also essential that the server can handle multiple clients at once. Having the ability to manage several consumers simultaneously is a requirement of our design framework. In order to assign each request to a data input stream thread as it arrives, our server-side architecture necessitates threading. There are two ways to start a new Java thread:
+- It is important to implement the Runnable interface. It is possible by running `java.lang.Runnable`.
 - Extending the Thread class by running `java.lang.Thread`.
 
 ### Server-Side Programming
@@ -35,10 +35,9 @@ Client-side construction shall begin with a collection of streams and port numbe
 - A while loop will build socket objects that receive connections from server socket objects.
 - The streams of the requests will be incorporated into the current socket.
 - Client handler objects are created by the class from streams and port numbers.
-- Starting the program will be invoking the `start()` method. The start() method of this new thread object must be called in order for it to function.
-- 
+- Starting the program will be invoking the `start()` method. This new thread object's `start()` method must be called before it may begin working.
 __ClientHandler class:__
-All of the thread's attributes are passed down to the framework-based client handler class. The class's constructor requires three parameters: a Socket, a DataInputStream, and a DataOutputStream. As a first step, the server builds and launches a new instance of this kind of thread object, receiving its port number as well as the data input and output stream objects. Once the user has indicated whether they require time or date, the `run()` function of this class returns those objects to the developer via an input and output stream.
+All of the thread's attributes are passed down to the framework-based client handler class. The class's constructor requires three parameters: a Socket, a DataInputStream, and a DataOutputStream. When creating a new thread object, the server initially receives the port number and data input and output stream objects for it. After the user selects whether they need time or date, the `run()` function of this class returns those objects via input and output streams to the developer.
 
 The Java server-side software includes the Server and ClientHandler classes. The following is the server's code:
 ```java
@@ -47,116 +46,122 @@ import java.text.*;
 import java.util.*;
 import java.net.*;
 
-public class Serverclass
+public class TestingServer
 {
-	public static void main(String[] args) throws IOException
-	{
-		ServerSocket myserverSocket = new ServerSocket(5056);
-		// getting client request
-		while (true)
-		{
-			Socket mynewSocket = null;
-			
-			try
-			{
-				// Receiving incoming client requests through mynewSocket
-				mynewSocket = myserverSocket.accept();
-				
-				System.out.println("A new connection identified : " + mynewSocket);
-				DataInputStream ournewDataInputstream = new DataInputStream(mynewSocket.getInputStream());
-				DataOutputStream ournewDataOutputstream = new DataOutputStream(mynewSocket.getOutputStream());
-				
-				System.out.println("Thread assigned");
+    public static void main(String[] args) throws IOException
+    {   
+        ServerSocket ourNewSocketServer = new ServerSocket(3333);
+        // Forcing a client request into an unending loop
+        while (true)
+        {
+            Socket newsoct = null;            
+            try
+            {               
+            // receive inbound requests from clients
+                newsoct = ourNewSocketServer.accept();
+                
+                System.out.println("A new connection identified : " + newsoct);
+                     
+                DataInputStream sdtinput = new DataInputStream(newsoct.getInputStream());
 
-				Thread myThread = new ClientHandler(mynewSocket, ournewDataInputstream, ournewDataOutputstream);
-				// starting
-				myThread.start();
-				
-			}
-			catch (Exception e){
-				mynewSocket.close();
-				e.printStackTrace();
-			}
-		}
-	}
+                DataOutputStream sdtOutput = new DataOutputStream(newsoct.getOutputStream());
+                
+                System.out.println("Thread assigned");
+
+                
+                Thread ourThread = new ClientHandler(newsoct, sdtinput, sdtOutput);
+
+                ourThread.start();
+                
+            }
+            catch (Exception e){
+                newsoct.close();
+                e.printStackTrace();
+            }
+        }
+    }
 }
 
-class ClientHandler extends Thread
+
+class OurClientHandler extends Thread
 {
-	DateFormat forourdate = new SimpleDateFormat("yyyy/MM/dd");
-	DateFormat forourtime = new SimpleDateFormat("hh:mm:myserverSocket");
-	final DataInputStream ournewDataInputstream;
-	final DataOutputStream ournewDataOutputstream;
-	final Socket mynewSocket;
-	
+    DateFormat newDtformat = new SimpleDateFormat("yyyy/MM/dd");
 
-	// Constructor
-	public ClientHandler(Socket mynewSocket, DataInputStream ournewDataInputstream, DataOutputStream ournewDataOutputstream)
-	{
-		this.mynewSocket = mynewSocket;
-		this.ournewDataInputstream = ournewDataInputstream;
-		this.ournewDataOutputstream = ournewDataOutputstream;
-	}
+    DateFormat newtimeformat = new SimpleDateFormat("hh:mm:ourNewSocketServer");
+    
+    final DataInputStream sdtinput;
 
-	@Override
-	public void run()
-	{
-		String receivedString;
-		String stringToReturn;
-		while (true)
-		{
-			try {
-				ournewDataOutputstream.writeUTF("Choose: [Date | Time]..\n"+
-							"Or Exit");
-				
-				// getting answers from client
-				receivedString = ournewDataInputstream.readUTF();
-				
-				if(receivedString.equals("Exit"))
-				{
-					System.out.println("Client " + this.mynewSocket + " sends exit...");
-					System.out.println("Connection closing...");
-					this.mynewSocket.close();
-					System.out.println("Closed");
-					break;
-				}
-				
-				// creating Date object
-				Date mynewDate = new Date();
+    final DataOutputStream sdtOutput;
+    final Socket newsoct;
+    // Constructor
+    
+    public OurClientHandler(Socket newsoct, DataInputStream sdtinput, DataOutputStream sdtOutput)
+    {
+        this.newsoct = newsoct;
 
-				switch (receivedString) {
-				
-					case "Date" :
-						stringToReturn = forourdate.format(mynewDate);
-						ournewDataOutputstream.writeUTF(stringToReturn);
-						break;
-						
-					case "Time" :
-						stringToReturn = forourtime.format(mynewDate);
-						ournewDataOutputstream.writeUTF(stringToReturn);
-						break;
-						
-					default:
-						ournewDataOutputstream.writeUTF("Invalid input");
-						break;
-				}
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		}
-		
-		try
-		{
-			// closing resources
-			this.ournewDataInputstream.close();
-			this.ournewDataOutputstream.close();
-			
-		}catch(IOException e){
-			e.printStackTrace();
-		}
-	}
+        this.sdtinput = sdtinput;
+        this.sdtOutput = sdtOutput;
+    }
+
+    @Override
+    public void run()
+    {
+        String newresuiltReceived;
+        String newresuiltToreturn;
+        //Implementing a loop
+        while (true)
+        {
+            try {
+
+                
+                sdtOutput.writeUTF("Choose[Date | Time].."+
+                            "Or Exit");
+                 newresuiltReceived = sdtinput.readUTF();
+                
+                if(newresuiltReceived.equals("Exit"))
+                {
+                    System.out.println("Connection closing...");
+                    this.newsoct.close();
+                    System.out.println("Closed");
+                    break;
+                }
+                
+                
+                Date newDt = new Date();
+                
+                // output stream dependent on the client's response
+                switch (newresuiltReceived) {
+                
+                    case "Date" :
+                        newresuiltToreturn = new.format(newDt);
+                        sdtOutput.writeUTF(newresuiltToreturn);
+                        break;
+                        
+                    case "Time" :
+                        newresuiltToreturn = new.format(newDt);
+                        sdtOutput.writeUTF(newresuiltToreturn);
+                        break;
+                        
+                    default:
+                        sdtOutput.writeUTF("Invalid input");
+                        break;
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        
+        try
+        {
+           
+            this.sdtinput.close();
+            this.sdtOutput.close();
+            
+        }catch(IOException e){
+            e.printStackTrace();
+        }
+    }
 }
-
 ```
 Output:
 ```bash
@@ -167,7 +172,7 @@ Connection closing...
 Closed
 ```
 ### Client-Side Programming
-Several elements of both client-side and traditional socket programming are shared by the two approaches.
+Traditional socket programming, as well as client-side programming, have a number of common features.
  - Socket Connection Procedure.
  - Communication.
 Below is the code for the client:
@@ -179,47 +184,45 @@ import java.net.*;
 
 public class NewClient
 {
-    public static void main(String[] args) throws IOException
-    {
-        try
-        {
-            Scanner ourNewscanner = new Scanner(System.in);
-            InetAddress inetadress = InetAddress.getByName("localhost");
-            // creating a relationship
-            Socket ournewsocket = new Socket(inetadress, 3333);           
-            DataInputStream ournewDataInputstream = new DataInputStream(ournewsocket.getInputStream());
-            DataOutputStream 			this.ournewDataOutputstream.close();
- = new DataOutputStream(ournewsocket.getOutputStream());
-    // In the following loop, the client and client handle exchange data.
-            while (true)
-            {
-                System.out.println(ournewDataInputstream.readUTF());
-                String tosend = ourNewscanner.nextLine();
-                			this.ournewDataOutputstream.close();
-.writeUTF(tosend);
-                // Exiting from a while loo should be done when a client gives an exit message.
-                if(tosend.equals("Exit"))
-                {
-                    System.out.println("Connection closing... : " + ournewsocket);
-                    ournewsocket.close();
-                    System.out.println("Closed");
-                    break;
-                }
-                
-                
-                String newresuiltReceivedString = ournewDataInputstream.readUTF();
-                System.out.println(newresuiltReceivedString);
-            }
-            
-            ourNewscanner.close();
-            ournewDataInputstream.close();
-            			this.ournewDataOutputstream.close();
-.close();
-        }catch(Exception e){
-            e.printStackTrace();
-        }
-    }
+   public static void main(String[] args) throws IOException
+   {
+       try
+       {
+           Scanner newscanner = new Scanner(System.in);
+           InetAddress adress = InetAddress.getByName("localhost");
+           // establishing the connection 
+           Socket newsoct = new Socket(adress, 3333);           
+           DataInputStream sdtinput = new DataInputStream(newsoct.getInputStream());
+           DataOutputStream sdtOutput = new DataOutputStream(newsoct.getOutputStream());
+   // The following loop is responsible for exchanging data between the client and client handle.
+           while (true)
+           {
+               System.out.println(sdtinput.readUTF());
+               String tosend = newscanner.nextLine();
+               sdtOutput.writeUTF(tosend);
+               // If the client sends an exit, then the connection should be closed and the while loo should be terminated.
+               if(tosend.equals("Exit"))
+               {
+                   System.out.println("Connection closing... : " + newsoct);
+                   newsoct.close();
+                   System.out.println("Closed");
+                   break;
+               }
+               
+               
+               String newresuiltReceived = sdtinput.readUTF();
+               System.out.println(newresuiltReceived);
+           }
+           
+           newscanner.close();
+           sdtinput.close();
+           sdtOutput.close();
+       }catch(Exception e){
+           e.printStackTrace();
+       }
+   }
 }
+
 
  ```
  Output:
@@ -244,9 +247,9 @@ To run the java server socket program, you must first launch it from the data ou
 Open java client socket programs on both computers or the same network. The client program will wait for your input when you start it up. If you input a message and press `ENTER,` the server will display the message. When the client transmits the word "bye" from the client-side of the connection, the connection is terminated.
 
 ### How these programs operate together
-- Each time a client makes a request, a new thread is initiated to connect to the server.
-- As soon as the new thread is assigned, it has access to all the accessible streams. While the server is allocated, it will accept this request.
-- Until the first request is complete, the server accepts and processes the second one. Many requests can be dealt with at the same time, even while others are being dealt with.
+- Each time a client requests a connection to the server, a new thread is started.
+- The new thread gets access to all available streams as soon as it is allocated. While the server is allocated, it will accept this request.
+- Until the first request is complete, the server accepts and processes the second one. At the same time, several requests may be handled simultaneously, even as others are being handled.
 
 ### Testing the program
 It does matter where you save the two applications. Run the `Server.java` and the `Client.java` one after the other. To execute numerous instances of the client program simultaneously, utilize an IDE like multiple instances, or run the client software in separate files. To get the results data input stream displayed above, you will need numerous clients.
