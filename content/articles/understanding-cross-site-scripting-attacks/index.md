@@ -36,12 +36,12 @@ Cross-site scripting is accomplished by fooling susceptible web applications int
 
 Among other information.
 
-![xss](/understanding-cross-site-scripting-attacks/xss.png)
+![xss](/engineering-education/understanding-cross-site-scripting-attacks/xss.png)
 
 ### XSS Attack
 First, we need to find a vulnerable website. As we can't go around testing random websites on the internet, we'll be carrying out this attack on an intentionally vulnerable website. We'll be making use of an online vulnerable web application by [Acunetix](https://acunetix.com). To use the vulnerable web app, we visit [Acunetix vulnerable application](http://testphp.vulnweb.com/).
 
-![acunetix](/understanding-cross-site-scripting-attacks/acunetix.png)
+![acunetix](/engineering-education/understanding-cross-site-scripting-attacks/acunetix.png)
 
 The next step is to locate an input field where we can paste our script. It could be a username, a search box, a text area, or any other type of input field. Our vulnerable website has a search box, perfect! Now, let's give it some simple HTML code and see what happens. Type in the following HTML code in the search box and hit the go button:
 
@@ -50,11 +50,11 @@ The next step is to locate an input field where we can paste our script. It coul
 <!-- the HTML u tag or underline tag is used to give a word an underline in HTML -->
 ```
 
-![html](/understanding-cross-site-scripting-attacks/u.png)
+![html](/engineering-education/understanding-cross-site-scripting-attacks/u.png)
 
 From the screenshot above we can see that the word `test` is underlined. Perfect! We are getting a reflection on the page. By viewing the application's source code, we can also see how it's reflected.
 
-![view-page source](/understanding-cross-site-scripting-attacks/test1.png)
+![view-page source](/engineering-education/understanding-cross-site-scripting-attacks/test1.png)
 
 Now let's look for XSS. The most simple XSS payload is the script tag. A script tag can either reference or embed JavaScript code. One of the most common XSS payloads is the use of the JavaScript alert function in a script tag. Let's try this by entering the following payload in our web application's search box:
 
@@ -62,11 +62,12 @@ Now let's look for XSS. The most simple XSS payload is the script tag. A script 
 <script>alert(1)</script>
 ```
 
-![alert](/understanding-cross-site-scripting-attacks/alert.png)
+![alert](/engineering-education/understanding-cross-site-scripting-attacks/alert.png)
 
 We notice that as soon as we hit the go button after entering our XSS payload, we get an alert box with `1` displayed, which means our payload worked successfully. We just used the [alert](https://www.w3schools.com/jsref/met_win_alert.asp) function within JavaScript to display 1.
 
 ### Types of XSS
+
 #### Reflected XSS
 This is a one-time XSS. The malicious script is part of the victim's online application request which is frequently reflected in the application's response.
 
@@ -78,7 +79,7 @@ Also known as `Persistent XSS`, the payload is saved on the server and can be tr
 #### Stored XSS Example
 Let's go back to our vulnerable web application. We click on the `Your profile` tab, which presents us with a login page.
 
-![profile-login](/understanding-cross-site-scripting-attacks/profile-login.png)
+![profile-login](/engineering-education/understanding-cross-site-scripting-attacks/profile-login.png)
 
 Now let's log in with these default credentials: 
 
@@ -87,7 +88,7 @@ username: test
 password: test
 ```
 
-![logged in](/understanding-cross-site-scripting-attacks/in.png)
+![logged in](/engineering-education/understanding-cross-site-scripting-attacks/in.png)
 
 Now that we are logged in, let's inject our payload in the name field and click on the update button to update our profile:
 
@@ -95,7 +96,7 @@ Now that we are logged in, let's inject our payload in the name field and click 
 <script>alert(1)</script>
 ```
 
-![stored](/understanding-cross-site-scripting-attacks/stored.png)
+![stored](/engineering-education/understanding-cross-site-scripting-attacks/stored.png)
 
 As we can see, we got an alert box. This occurred because the payload was saved in the name field, and the alert box was triggered every time the page was loaded.
 
