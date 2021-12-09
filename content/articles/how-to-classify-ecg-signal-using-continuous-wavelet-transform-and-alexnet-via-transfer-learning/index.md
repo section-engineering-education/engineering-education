@@ -18,7 +18,7 @@ Primarily, we are taking three types of ecg signals:
 
 They are shown below:
 
-![types of signals](/engineering-education/how-to-classify-ecg-signals-using-continuous-wavelet-transform-and-alexnet-via-transfer-learning/classOne.png)
+![types of signals](/engineering-education/how-to-classify-ecg-signals-using-continuous-wavelet-transform-and-alexnet-via-transfer-learning/class-one.png)
 
 The main object here is to train a CNN to distinguish between ARR, CHF, and NSR. These three signals(162 ecg recording) are obtained from ecg signal databases from the physionet. The databases include:
 
@@ -28,7 +28,7 @@ The main object here is to train a CNN to distinguish between ARR, CHF, and NSR.
 
 The first step is downloading the data from the [github repository](https://github.com/mathworks/physionet_ECG_data/). Next, click on the `code` tab and select `download the zip` to download the database.
 
-![github repository](/engineering-education/how-to-classify-ecg-signals-using-continuous-wavelet-transform-and-alexnet-via-transfer-learning/classTwo.png)
+![github repository](/engineering-education/how-to-classify-ecg-signals-using-continuous-wavelet-transform-and-alexnet-via-transfer-learning/class-two.png)
 
 In this `.zip`file, we only need the ECGData.mat. It means that we `unzip` this file to get it. Afterwards, we place it in Matlab's current directory. Then, executing the `load` function with the database as the argument to download it to Matlab.
 
@@ -64,13 +64,13 @@ Now, we want to convert all the 1-D signals into images cwt to be used as inputs
 
 For cwt, the wavelet used is `analytic Morlet(amor)'. These are wavelets with one-sided spectra and are complex-valued in the time domain. These wavelets are suitable for obtaining a time-frequency analysis using the cwt. The wavelet has equal variance in time and frequency.
 
-![ecg signal vs image](/engineering-education/how-to-classify-ecg-signals-using-continuous-wavelet-transform-and-alexnet-via-transfer-learning/classThree.png)
+![ecg signal vs image](/engineering-education/how-to-classify-ecg-signals-using-continuous-wavelet-transform-and-alexnet-via-transfer-learning/class-three.png)
 
 ### Transfer learning via AlexNet
 Transfer learning is called fine-tuning a pre-trained CNN to perform classification on a new collection of images. Transfer learning is quick and easy rather than training a CNN from scratch, which requires millions of inputs, lots of training time, and high-speed, efficient hardware.
 For ecg signal classification, we use a pre-trained deep CNN. AlexNet has been trained on over one million images and can classify images into 1000 objects categories. 
 
-![transfer learning procedure](/engineering-education/how-to-classify-ecg-signals-using-continuous-wavelet-transform-and-alexnet-via-transfer-learning/classFour.png)
+![transfer learning procedure](/engineering-education/how-to-classify-ecg-signals-using-continuous-wavelet-transform-and-alexnet-via-transfer-learning/class-four.png)
 
 ### Matlab code for database creation(image signal to scalogram image conversion)
 
@@ -131,13 +131,13 @@ This function takes the signal type and the filterbank `fb` as inputs. It takes 
 
 It is how we create our databases. We have the main folder `dataset` created with the subfolder `arr`, `nsr`, and `chf` as shown below when we execute this program.
 
-![show current directory](/engineering-education/how-to-classify-ecg-signals-using-continuous-wavelet-transform-and-alexnet-via-transfer-learning/classFive.png)
+![show current directory](/engineering-education/how-to-classify-ecg-signals-using-continuous-wavelet-transform-and-alexnet-via-transfer-learning/class-five.png)
 _main folder_
 
-![current directory](/engineering-education/how-to-classify-ecg-signals-using-continuous-wavelet-transform-and-alexnet-via-transfer-learning/classSix.png)
+![current directory](/engineering-education/how-to-classify-ecg-signals-using-continuous-wavelet-transform-and-alexnet-via-transfer-learning/class-six.png)
 _subfolders_
 
-![current directory](/engineering-education/how-to-classify-ecg-signals-using-continuous-wavelet-transform-and-alexnet-via-transfer-learning/classSeven.png)
+![current directory](/engineering-education/how-to-classify-ecg-signals-using-continuous-wavelet-transform-and-alexnet-via-transfer-learning/class-seven.png)
 _Inside the subfolders_
 
 The `ecg2cwtscg` is not a matlab function. It is a custom function that we created for the conversion purpose. The function is as shown:
@@ -332,17 +332,17 @@ Let's now execute our program.
 
 When we run the program, we see the training progress as shown below:
 
-![training progress](/engineering-education/how-to-classify-ecg-signals-using-continuous-wavelet-transform-and-alexnet-via-transfer-learning/classEight.png)
+![training progress](/engineering-education/how-to-classify-ecg-signals-using-continuous-wavelet-transform-and-alexnet-via-transfer-learning/class-eight.png)
 
 We have the two graphs here. The upper one shows the accuracy, while the lower one shows the loss. As the accuracy increases, the losses decreases. The number of epochs is 8. Also, we have the plots for training and that for validation. The plot for the final training is as shown below:
 
-![final training](/engineering-education/how-to-classify-ecg-signals-using-continuous-wavelet-transform-and-alexnet-via-transfer-learning/classNine.png)
+![final training](/engineering-education/how-to-classify-ecg-signals-using-continuous-wavelet-transform-and-alexnet-via-transfer-learning/class-nine.png)
 
 In the final training, we see that the accuracy achieved is 96.67%, which is good.
 
 Let's look at the confusion matrix.
 
-![confusion matrix](/engineering-education/how-to-classify-ecg-signals-using-continuous-wavelet-transform-and-alexnet-via-transfer-learning/classTen.png)
+![confusion matrix](/engineering-education/how-to-classify-ecg-signals-using-continuous-wavelet-transform-and-alexnet-via-transfer-learning/class-ten.png)
 
 The confusion matrix shows the relation between the output class and the target class regarding classification and misclassifications. For example, `arr`, we see that out of 50 testing images, 48 are correctly classified, 2 are misclassified as `chf`. On the other hand, for `chf`, 49 images are correctly classified, and one is misclassified as `nsr`.
 
