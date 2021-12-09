@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /imbalanced-learn-python-package-for-machine-learning/
-title: Understanding Imbalanced-Learn package for Handling Imbalanced Datasets
+title: Understanding the Imbalanced-Learn Package for Handling Imbalanced Datasets
 description: Imbalanced-learn is a Python library that is used for handling imbalanced datasets. In this article, we will understand 2 important techniques that we use for handling imbalanced datasets. Also, we will be analyzing its performance by measuring the accuracy score from the models of each dataset.
 author: charles-kariuki
 date: 2021-12-07T00:00:00-23:30
@@ -12,17 +12,13 @@ excerpt_separator: <!--more-->
 images:
 
  - url: /engineering-education/imbalanced-learn-python-package-for-machine-learning/hero.jpg
-   alt: Understanding Imbalanced-Learn package for Handling Imbalanced Datasets example image
+   alt: Imbalanced-Learn package Imbalanced Datasets example image
 ---
 Imbalanced-learn is a Python package used to handle imbalanced datasets in machine learning. In an imbalanced dataset, the number of data samples is not equally distributed between the classes.
 <!--more-->
-In an imbalanced dataset, the class labels are not equal. One class has a higher number of data samples, while the other class label has a significantly lower amount of data samples.
+In an imbalanced dataset, the class labels are not equal. One class has a higher number of data samples, while the other class label has a significantly lower amount of data samples. For example, if you are predicting if a student will pass or not pass an exam, based on various input parameters. In this example, we have two class labels: `pass` and `not pass`.
 
-For example, if you are predicting if a student will pass or not pass an exam, based on various input parameters. In this example, we have two class labels: `pass` and `not pass`.
-
-The dataset is imbalanced when we have 2000 data samples for the `pass` class and 200 for the `not pass` class. The `pass` class label is ten times more than the `not pass` class label.
-
-When an imbalanced dataset is used, it will lead to model bias and inaccurate results. That's why we have to use various techniques and libraries to balance the dataset.
+The dataset is imbalanced when we have 2000 data samples for the `pass` class and 200 for the `not pass` class. The `pass` class label is ten times more than the `not pass` class label. When an imbalanced dataset is used, it will lead to model bias and inaccurate results. That's why we have to use various techniques and libraries to balance the dataset.
 
 In this tutorial, we will use the `imbalanced-learn` library to handle this problem. It helps us balance the sample dataset by having an equal split among the classes.
 
@@ -57,9 +53,7 @@ pip install -U imbalanced-learn
 Let's load our imbalanced dataset.
 
 ### Imbalanced dataset
-The dataset used is for Hepatitis C virus classification. The dataset has an `Activity` column with two class labels: `active` and `inactive`. The two-class labels are imbalanced.
-
-Let's import `pandas` which will be used to load our dataset.
+The dataset used here is for Hepatitis C virus classification. The dataset has an `Activity` column with two class labels: `active` and `inactive`. The two-class labels are imbalanced. Let's import `pandas` which will be used to load our dataset.
 
 ```python
 import pandas as pd
@@ -140,19 +134,13 @@ Let's now split the dataset.
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 ```
 
-The dataset will be split using a `test_size=0.2`.
-
-It means that 80% of the split dataset will be the training set and 20% will be the testing set.
-
-Let's have a look at the sizes of both splits.
+The dataset will be split using a `test_size=0.2`. It means that 80% of the split dataset will be the training set and 20% will be the testing set. Let's have a look at the sizes of both splits.
 
 ```bash
 ((462, 881), (462,), (116, 881), (116,))
 ```
 
-Our training set is `(462, 881)`. It has `462` data samples and `881` columns. This is the set we will balance.
-
-Let's see the size of the `active` and `inactive` classes in this test set.
+Our training set is `(462, 881)`. It has `462` data samples and `881` columns. This is the set we will balance. Let's see the size of the `active` and `inactive` classes in this test set.
 
 ```python
 print(y_train.value_counts())
@@ -184,9 +172,7 @@ In this tutorial, we will be focusing only on two techniques:
 #### Random undersampling technique
 In the random undersampling technique, the "majority" class which is the `active` class will be reduced. This makes it have the same proportion as that of the "minority" class, which is the `inactive` class.
 
-The "majority" class has `330` data samples while the "minority" class has `132` data samples.
-
-Using this technique, the `330` data samples of the `active` class will be reduced to `132`. This will make the two classes to be balanced.
+The "majority" class has `330` data samples while the "minority" class has `132` data samples.  Using this technique, the `330` data samples of the `active` class will be reduced to `132`. This will make the two classes balanced.
 
 The random undersampling technique has functions and algorithms that balance the dataset. Let's import one of the functions.
 
@@ -203,8 +189,7 @@ X_train_rus, y_train_rus = rus.fit_resample(X_train, y_train)
 
 In the code above, we specify the `sampling_strategy=1`. This ensures that the "majority" class and the "minority" class will have a `1:1` class distribution. We then add `X_train, y_train` which contain the training dataset that we are balancing.
 
-`rus.fit_resample` method ensures that our function fully fits in the training set. No data sample is left out during balancing.
-Finally, we save our balanced dataset into a new variable `X_train_rus, y_train_rus`.
+`rus.fit_resample` method ensures that our function fully fits in the training set. No data sample is left out during balancing. We then save our balanced dataset into a new variable `X_train_rus, y_train_rus`.
 
 Let's plot a pie chart of the new balanced dataset.
 
@@ -217,9 +202,7 @@ The plot is shown below:
 
 ![Balanced dataset using random undersampling](/engineering-education/imbalanced-learn-python-package-for-machine-learning/random-undersampling.png)
 
-From the image above, we can see that both the `active` class and the `inactive` class are `50%`. This shows that our dataset is balanced.
-
-Let's see the size of both the `active` and `inactive` classes.
+From the image above, we can see that both the `active` class and the `inactive` class are `50%`. This shows that our dataset is balanced. Let's see the size of both the `active` and `inactive` classes.
 
 ```python
 print(y_train_rus.value_counts())
@@ -232,13 +215,9 @@ The output is shown below:
 The `active` and `inactive` classes are balanced.
 
 #### Random oversampling technique
-In the random oversampling technique, the "minority" class is increased so that it's equal to the "majority" class.
+In the random oversampling technique, the "minority" class is increased so that it's equal to the "majority" class. Here, the "majority" class has `330` data samples while the "minority" class has `132` data samples. 
 
-Here, the "majority" class has `330` data samples while the "minority" class has `132` data samples. 
-
-In this technique, `132` data samples of the `inactive` class will be increased to `330`. This will make the two classes to be balanced.
-
-The random oversampling technique has functions and algorithms used to balance the dataset. Let's import one of the functions.
+In this technique, `132` data samples of the `inactive` class will be increased to `330`. This will make the two classes to be balanced. The random oversampling technique has functions and algorithms used to balance the dataset. Let's import one of the functions.
 
 ```python
 from imblearn.over_sampling import RandomOverSampler
@@ -253,8 +232,7 @@ X_train_ros, y_train_ros = ros.fit_resample(X_train, y_train)
 
 In the code above, we specify the `sampling_strategy=1`. This ensures that the "minority" class and the "majority" class will have a `1:1` class distribution. We then add `X_train, y_train` which is the training dataset that we are balancing.
 
-`rus.fit_resample` method ensures that our function fully fits in the training set. No data sample is left out during balancing.
-Finally, we save our balanced dataset into a new variable `X_train_ros, y_train_ros`.
+`rus.fit_resample` method ensures that our function fully fits in the training set. No data sample is left out during balancing. Now we save our balanced dataset into a new variable `X_train_ros, y_train_ros`.
 
 Let's plot a pie chart of the new balanced dataset.
 
@@ -264,11 +242,10 @@ _ = ax.set_title("Over-sampling")
 ```
 
 The plot is shown below.
+
 ![Balanced dataset using random oversampling](/engineering-education/imbalanced-learn-python-package-for-machine-learning/random-oversampling.png)
 
-Using this technique we can still see that both the `active` class and the `inactive` class are `50%`. This shows that our dataset is balanced.
-
-Let's see the size of both the `active` and `inactive` classes.
+Using this technique we can still see that both the `active` class and the `inactive` class are `50%`. This shows that our dataset is balanced. Let's see the size of both the `active` and `inactive` classes.
 
 ```python
 print(y_train_ros.value_counts())
@@ -277,9 +254,7 @@ The output is shown below:
 
 ![Class distribution](/engineering-education/imbalanced-learn-python-package-for-machine-learning/class-distribution3.png)
 
-Now that we have balanced our dataset using the techniques, let's start building our model.
-
-We will build our model using the dataset balanced by the techniques. We will then compare the accuracy score of both the models and see which technique is better.
+Now that we have balanced our dataset using the techniques, let's start building our model. We will build our model using the dataset balanced by the techniques. We will then compare the accuracy score of both the models and see which technique is better.
 
 ### Model building using the undersampled balanced class
 Let's import the algorithm used to build our model.
@@ -288,7 +263,7 @@ Let's import the algorithm used to build our model.
 from sklearn.ensemble import RandomForestClassifier
 ```
 
-We will use the `RandomForestClassifier` for building our model.
+We will use the `RandomForestClassifier` when building our model.
 
 ```python
 model = RandomForestClassifier(random_state=42)
@@ -301,19 +276,15 @@ Let's now fit our dataset into our balanced dataset. We saved our balanced datas
 model.fit(X_train_rus, y_train_rus)
 ```
 
-The model will learn from the sample dataset and eventually improve on its own. Let's calculate the model accuracy score.
+The model will learn from the sample dataset and eventually improve on its own. Let's calculate the model accuracy score. We calculate the model accuracy score with the model's ability to make predictions. We use the testing dataset to make predictions. 
 
-We calculate the model accuracy score with the model's ability to make predictions. We use the testing dataset to make predictions. The model will classify the data sample into either the `active` or `inactive` class.
-
-Let's import the package required to make predictions:
+The model will classify the data sample into either the `active` or `inactive` class. Let's import the package required to make predictions:
 
 ```python
 from sklearn.metrics import matthews_corrcoef
 ```
 
-`matthews_corrcoef` will be used to automatically calculate the model's accuracy score. It also helps in making predictions.
-
-Let's apply the `model.predict` to make predictions.
+`matthews_corrcoef` will be used to automatically calculate the model's accuracy score. It also helps in making predictions. Let's apply the `model.predict` to make predictions.
 
 `matthews_corrcoef` will output the accuracy score of the predictions using the `X_test` and `y_test`. These two variables holds the test split dataset.
 
@@ -381,18 +352,14 @@ The model accuracy score is shown below:
 
 ![Accuracy score](/engineering-education/imbalanced-learn-python-package-for-machine-learning/accuracy-score1.png)
 
-The model accuracy score is `0.744225`, which is `74.4225%`.
-
-This is higher compared to the accuracy score of the first approach. This shows the random oversampling technique is better than the random undersampling technique.
+The model accuracy score is `0.744225`, which is `74.4225%`. This is higher compared to the accuracy score of the first approach. This shows the random oversampling technique is better than the random undersampling technique.
 
 > NOTE: These techniques also depend on the dataset that we work with.
 
 ### Conclusion
 In this tutorial, we have learned about the `imbalanced-learn` package. We went through the installation process of `imbalanced-learn` and explored various techniques used to handle imbalanced datasets.
 
-We then implemented both the random oversampling technique and the random undersampling technique. We then build our model using the dataset balanced by both techniques.
-
-Finally, we concluded that, for this dataset, random oversampling is the better technique.
+We then implemented both the random oversampling technique and the random undersampling technique. We then built our model using the dataset balanced by both techniques. Finally, we concluded that, for this dataset, random oversampling is the better technique.
 
 To get the Google Colab link for this tutorial, click [here](https://colab.research.google.com/drive/15yNJImOflD40-AAjSarVvz8qiN93GfSG?usp=sharing).
 
