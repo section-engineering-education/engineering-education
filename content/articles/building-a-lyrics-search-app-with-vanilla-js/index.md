@@ -5,9 +5,9 @@ published: true
 url: /building-a-lyrics-search-app-with-vanilla-js/
 title: Building a Lyrics Search App with Vanilla JavaScript
 description: In this article, we will be creating a platform where users can search for lyrics by entering the artist name or title of the song.
-author: 
+author: olusegun-isaac
 date: 
-topics: []
+topics: [JavaScript]
 excerpt_separator: <!--more-->
 images:
 
