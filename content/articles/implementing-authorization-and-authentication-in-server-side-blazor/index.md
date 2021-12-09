@@ -9,7 +9,6 @@ In this tutorial, we will discuss how authentication and authorization are imple
 - Object Relation Mapping/Database
   
 ### Table of contents
-- [Table of contents](#table-of-contents)
 - [Prerequisites](#prerequisites)
 - [Getting started](#getting-started)
 - [The user interface](#the-user-interface)
