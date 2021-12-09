@@ -3,25 +3,24 @@ layout: engineering-education
 status: publish
 published: true
 url: /ethereum-and-smart-contracts/
-title: Understanding Ethereum and smart contracts
-description: In this tutorial, we will learn about the basics of Ethereum, smart contracts and various use case of Ethereum smart contracts
+title: Understanding Ethereum and Smart Contracts
+description: In this tutorial, we will learn about the basics of Ethereum, smart contracts and various use caseS of Ethereum smart contracts.
 author: wilson-gichuhi
-date: 2021-12-08T00:00:00-10:00
-topics: []
+date: 2021-12-09T00:00:00-01:34
+topics: [Blockchain]
 excerpt_separator: <!--more-->
 images:
   - url: /engineering-education/ethereum-and-smart-contracts/hero.jpeg
     alt: Understanding Ethereum and smart contracts
 ---
 
-According to the [website](https://ethereum.org/en/), Ethereum is a community-run technology that powers the cryptocurrency ether (ETH) as well as thousands of decentralized applications. For the Ethereum platform to be functional, it is powered by the Blockchain protocol.
+According to the [website](https://ethereum.org/en/), Ethereum is a community-run technology that powers the cryptocurrency ether (ETH) as well as thousands of decentralized applications.
 
 [Blockchain](https://en.wikipedia.org/wiki/Blockchain) is a system of decentralized nodes comprised of a network's resources where transaction data is distributed and stored using a consensus algorithm. That means that all the parties under the blockchain network protocol must approve the ledger's state to increase the trust of unknown peers in a decentralized environment. In contrast to [Bitcoin](https://www.investopedia.com/terms/b/bitcoin.asp), Ethereum is more than just a cryptocurrency as developers can use it to deploy smart contracts and decentralized applications, or [dapps](https://ethereum.org/en/dapps/).
 
 This article will discuss how Ethereum works, its disruptive technologies, and the smart contracts ecosystem.
 
 ### Table of contents
-- [Table of contents](#table-of-contents)
 - [Understanding Ethereum and smart contracts](#understanding-ethereum-and-smart-contracts)
 - [Ether](#ether)
 - [Use of the Consensus mechanism](#use-of-the-consensus-mechanism)
@@ -61,7 +60,7 @@ Ethereum platform can run smart contracts. This agreement is programmed into cod
 ### Common Blockchain and smart contracts use cases
 With blockchain-driven contracts on the rise, some of the industries that can implement this technology will include:
 
-#### Supply Chain
+#### Supply chain
 
 Blockchain can drive the new era of Logistics and supply chain management. As businesses expand, the production and complexity of managing the isolated units are demanding. We can effectively implement blockchain capabilities in the supply chain administration in some ways. Blockchain slots in when a chain grows, and hence, many third-party agents get involved. The issues guarantee efficiency, transparency, and overall honesty. Since Blockchain is a distributed ledger, it becomes handy in the following ways.
 
@@ -72,13 +71,13 @@ Blockchain can drive the new era of Logistics and supply chain management. As bu
 - Applying a universal solution in cost reduction: The blockchain technology architecture can scale in distributed ledger infrastructure. Therefore, we can create a shared network for order management from suppliers. Thus, the approval and validation of orders are automated.
 
 
-#### Real Estate
+#### Real estate
 In the ministries of land and real estate, a lot of paperwork is involved. Blockchain can progress the industry by minimizing the paperwork and applying smart contracts to automate verification and validation of property ownership. In addition, the timestamping of records over the decentralized ledger can improve time-taking processes.
 
 #### Banking
-The modern financial system relies on centralized banks to hold the fiat currency to validate and perform transactions. However, the banking software system adds extra cost and hassles making it inefficient. We can build a faster-protected lending platform in an anonymous system using smart contracts and the rise of [DeFi](https://www.coindesk.com/learn/what-is-defi/) using smart contracts (https:// to complete traditional financial transactions without a governing body.
+The modern financial system relies on centralized banks to hold the fiat currency to validate and perform transactions. However, the banking software system adds extra cost and hassles making it inefficient. We can build a faster-protected lending platform in an anonymous system using smart contracts and the rise of [DeFi](https://www.coindesk.com/learn/what-is-defi/) using smart contracts to complete traditional financial transactions without a governing body.
 
-#### Health Care
+#### Health care
 The health industry is booming. However, with the vast volume of medical data, the regulation still makes most of this information remain inaccessible from the outside. However, imposed restrictions make it hard for research of increasing complexity of diseases, data breaches, and innovation. However, Blockchain is a technology that can fix most of these issues when implemented. Below is why Blockchain is a great fit:
 
 - Involving several parties means that we need to improve trust by reducing the trustee middlemen to improve efficiency. Therefore, Blockchain can create the version of truth by building consensus while giving the end-users control of data.
