@@ -5,7 +5,7 @@ published: true
 url: /Automatic-type-promotion/
 title: Automatic type promotion
 description: This article will cover a brief introduction to auto type promotion and method overloading and their relationships, reasons or circumstances under which you may be required to apply automatic type promotion and the different types or ways of implementing type promotion. 
-author: ckrine-awino
+author: mackrine-awino
 date: 2021-11-27T00:00:00-12:10
 topics: [Languages]
 excerpt_separator: <!--more-->
