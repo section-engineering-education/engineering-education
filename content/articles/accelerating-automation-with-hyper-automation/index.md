@@ -20,7 +20,7 @@ Hyperautomation is an advanced form of automation. It combines artificial intell
 
 In this article, we'll discuss what hyperautomation is and how it compares to intelligent automation. We'll also have a look at the benefits that hyperautomation brings to businesses, how it supports end-to-end automation, and where it is applied in real-life.
 
-#### What is Hyperautomation?
+### What is Hyperautomation?
 Gartner introduced the term [hyperautomation](https://www.gartner.com/en/information-technology/glossary/hyperautomation) in 2019. Hyperautomation refers to a system that incorporates additional intelligence into the already present automation initiatives. It focuses on optimizing various stages in business operations, especially the difficult ones.
 
 Hyperautomation combines advanced technologies, such as artificial intelligence, natural language processing, machine learning, optical character recognition, and robotic process automation. Besides, it automates complex processes in an organization, including those requiring special expertise. The merging of artificial intelligence with robotic process automation has elevated it further. It can now undertake virtual tasks previously reserved for employees.
