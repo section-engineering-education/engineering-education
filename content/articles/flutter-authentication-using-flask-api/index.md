@@ -378,6 +378,8 @@ You will observe a red line on `import 'package:loginwithapi/service/http_servic
 
 ![Welcome Page](/engineering-education/flutter-authentication-using-flask-api/welcome.jpeg)
 
+![demo](/engineering-education/flutter-authentication-using-flask-api/dashboard.jpeg)
+
 ![Login Page](/engineering-education/flutter-authentication-using-flask-api/login.jpeg)
 
 ![Register Page](/engineering-education/flutter-authentication-using-flask-api/register.jpeg)
