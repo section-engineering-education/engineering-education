@@ -20,10 +20,10 @@ Socket communication utilizes two protocols:-
 - [Conclusion](#conclusion)
 
 ### Threads
-Each sequential program starts, runs through its execution and ends. In a threaded program, the program's control moves logically. It's a separate way to go through the program's source code. When a large number of things need to happen at the same time, a single thread of execution is used by several applications. A varied path through the same code is typical when numerous threads are operating at the same time. ` Java.lang` is in charge of making and managing every thread in the `Java.Class` of threads.
+Each sequential program starts, runs through its execution and ends. In a threaded program, the program's control moves logically. It's a separate way to go through the program's source code. Several apps employ a single thread of execution when several activities need to happen simultaneously. When many threads are running at the same time, the code flow might vary. ` Java.lang` is in charge of making and managing every thread in the `Java.Class` of threads.
 
 ### Why threads
-It's also essential that the server can handle multiple clients at once. Having the ability to manage several consumers simultaneously is a requirement of our design framework. In order to assign each request to a data input stream thread as it arrives, our server-side architecture necessitates threading. There are two ways to start a new Java thread:
+It's also essential that the server can handle multiple clients at once. Having the ability to manage several consumers simultaneously is a requirement of our design framework. In order to assign each request to a data input stream thread as it arrives, our server-side architecture necessitates threading. Starting a new Java thread is easy:
 - It is important to implement the Runnable interface. It is possible by running `java.lang.Runnable`.
 - Extending the Thread class by running `java.lang.Thread`.
 
@@ -251,8 +251,7 @@ Open java client socket programs on both computers or the same network. The clie
 ### How these programs operate together
 - Each time a client requests a connection to the server, a new thread is started.
 - The new thread gets access to all available streams as soon as it is allocated. While the server is allocated, it will accept this request.
-- Until the first request is complete, the server accepts and processes the second one. Several requests may be processed concurrently while others are not.
-
+- Until the first request is complete, the server accepts and processes the second one. 
 ### Testing the program
 It does matter where you save the two applications. Run the `Server.java` and the `Client.java` one after the other. To execute numerous instances of the client program simultaneously, utilize an IDE like multiple instances, or run the client software in separate files. To get the results data input stream displayed above, you will need numerous clients.
 
