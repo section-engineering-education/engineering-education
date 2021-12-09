@@ -223,7 +223,31 @@ It isn't easy to go before and resolve each achievable exceptional case. But, fu
 An unhandled exclusion happens when the application code doesn't true to form handle extraordinary cases that are outside the `try...except` block. For instance, when you endeavor to open a record on a plate, it's anything but a surprising issue for the archive not to exist. The .NET Framework will then throw a 'FileNotFoundException'.  More to that you can use python's standard [traceback lirary](https://docs.python.org/3/library/traceback.html) to coordinate traceback and connect it in the log message in an event as under:
 
 ```python
+# lessermodule.py
+import logging.config
+import traceback
 
+logging.config.fileConfig('logging.ini', disable_existing_loggers=False)
+logger = logging.getLogger(__name__)
+
+def word_count(myid):
+    try:
+        # count the number of words in a file, myid, and log the result
+        with open(myid, 'r+') as f:
+            file_data = f.read()
+            words = file_data.split(" ")
+            final_word_count = len(words)
+            logger.info("this file has %d words", final_word_count)
+            f.write("this file has %d words", final_word_count)
+            return final_word_count
+    except OSError as e:
+        logger.error(e, exc_info=True)
+    except:
+        logger.error("uncaught exception: %s", traceback.format_exc())
+        return False
+
+if __name__ == '__main__':
+    word_count('myid.txt')
 ```
 
 This dictates that the code contains a `TypeError` unique case that isn't dealt with in the endeavor except for reasoning, yet It will be logged since we fused the 'traceback' code.
