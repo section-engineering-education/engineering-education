@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /save-and-load-stacked-ensembles-in-onnx/
-title: Saving and Loading Stacked Ensemble Classifiers in ONNX format in Python
+title: Saving and Loading Stacked Ensemble Classifiers in ONNX Format in Python
 description: In this tutorial, the reader will learn how to build an ensemble classifiers. They will learn to save and load these models using ONNX format.
 author: ian-njari
 date: 2021-12-09T00:00:00-13:40
