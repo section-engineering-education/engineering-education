@@ -18,7 +18,7 @@ Incorporating [artificial intelligence](/engineering-education/differences-betwe
 <!--more-->
 Machine vision plays a crucial role in transforming images into digital data. Computers analyze the data to arrive at vital conclusions needed to make business and non-business decisions. A combination of artificial intelligence features and machine vision will make computer vision more effective.
 
-This article discusses machine vision and intelligent automation's relevance to machine vision. It also describes computer vision technology used and what to expect of computer vision technology and intelligent automation in the future.
+This article discusses machine vision and intelligent automation's relevance to machine vision. It also describes the computer vision technology used and what to expect of computer vision technology and intelligent automation in the future.
 
 ### What is machine vision?
 Machine vision refers to the ability of a computer to see and comprehend images. But in this case, it uses a camera to capture the images of objects within its vicinity. Data from the taken picture is subject to analysis to determine the next action. A machine vision system constitutes a set of components including sensors, frame-grabber, cameras, software, algorithms, and output devices, such as screens.
@@ -58,7 +58,7 @@ In the pharmaceutical industry and other companies that deal in sensitive produc
 In e-commerce, machine vision makes it possible to search for products online using pictures. Computer vision benefits consumers by improving their shopping experience. It eliminates potential errors that individuals make when buying replica products. Besides, it removes the ambiguity that people experience when reading product descriptions. Once you upload a specific image, the visual computing system in computer vision identifies it.
 
 #### Agriculture
-Farmers use computer vision system to harvest their farm products quickly. A computer vision algorithm classifies the farm products based on their quality, size, and shapes. The algorithm then directs robots to pluck the farm produce. Computer vision has been used to harvest crops in some regions of the world and proved efficient. 
+Farmers use the computer vision system to harvest their farm products quickly. A computer vision algorithm classifies the farm products based on their quality, size, and shapes. The algorithm then directs robots to pluck the farm produce. Computer vision has been used to harvest crops in some regions of the world and proved efficient. 
 
 In India, for example, computer vision has been used to [harvest grapes](https://www.roboticsbusinessreview.com/agriculture/tabletop-grapes-picked-robots-india-virginia-tech/). AI-powered computer vision robots grade the quality of the fruits before picking them. Computer vision also facilitates supervision of the crop in the field using drones. Drones can detect unfavorable weather conditions for their growth, ensuring that the farmers take appropriate measures to avoid loss of yields. Besides, drones fitted with computer vision also help detect ailing crops for spraying purposes.
 
