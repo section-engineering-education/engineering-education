@@ -6,7 +6,7 @@ url: /hyperparameter-tuning-of-machine-learning-model-in-python/
 title: Hyperparameter Tuning of Machine Learning Model in Python
 description: This tutorial aims to increase the model's accuracy score. It will guide you on how to create a list of all the possible values for hyperparameters and iterate through the values, finding all the hyperparameters combinations. We will then show you how to calculate and record the performance of each parameter.
 author: willyngashu
-date: 2021-12-08T00:00:00-19:00
+date: 2021-12-10T00:00:00-09:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -37,31 +37,31 @@ This tutorial will increase the model's accuracy score. This ensures that the mo
 ### Prerequisites
 To follow along, a reader is required:
 - To have [Python](https://www.python.org/) installed.
-- To know [Python programming](/engineering-education/python-projects-for-beginners/)
-- To know how to train a [machine learning model](/engineering-education/house-price-prediction/)
-- To know how to work with the [Scikit-learn library.](https://scikit-learn.org/stable/)
-- To know how to work with [Google Colab notebook.](https://research.google.com/colaboratory/)
+- To know [Python programming](/engineering-education/python-projects-for-beginners/).
+- To know how to train a [machine learning model](/engineering-education/house-price-prediction/).
+- To know how to work with the [Scikit-learn library](https://scikit-learn.org/stable/).
+- To know how to work with [Google Colab notebook](https://research.google.com/colaboratory/).
 
 ### Hyperparameter tuning techniques
 Choosing the optimal hyperparameters is important in building a successful machine learning model. Hyperparameters have a great impact on the machine learning algorithms used. Manual searching for the best hyper-parameter is a tedious process. Therefore, we need techniques that simplify this work. 
 
 These techniques are as follows:
 
-#### Grid Search
+#### Grid search
 This is a brute force searching technique. In this technique, we create a list of all the combination values for hyperparameters.  We then iterate through all hyperparameters. Finally, it records the best performing hyperparameters used in model training. This is shown below:
 
 ![Grid Search Technique](/engineering-education/hyperparameter-tuning-of-machine-learning-model-in-python/grid-search-technique.png)
 
 *[Image source: Medium](https://miro.medium.com/max/534/1*6mLLIGYLny9B6GAnVZcltw.png)*
 
-#### Random Search
+#### Random search
 We also create a list of all the combination values for hyperparameters in this technique. It's similar to grid search, but it uses random search instead of exhaustive search. For example, instead of checking all the 10,000 possible values of hyperparameters, we can only check 500 random parameters. This is shown below:
 
 ![Random Search Technique](/engineering-education/hyperparameter-tuning-of-machine-learning-model-in-python/random-search-technique.png)
 
 *[Image source: Medium](https://miro.medium.com/max/610/1*ijBbgo-2nyMdHLc40_zgQQ.png)*
 
-#### Bayesian Optimization
+#### Bayesian optimization
 This technique uses probability to find a model with the minimum loss function. It does this by mapping the hyperparameters to the function that will produce an optimal model. Bayesian Optimization ensures that the process takes the minimum number of steps.
 
 #### Gradient-based optimization
@@ -164,13 +164,10 @@ Let's import the necessary machine learning packages.
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
 ```
-Let's explore what we have imported.
 
-- `RandomForestClassifier`
-This is the classification algorithm used to build our machine learning model.
-
-- `accuracy_score`
- It calculates how accurate the model is when making predictions.
+Let's explore what we have imported:
+- `RandomForestClassifier`: This is the classification algorithm used to build our machine learning model.
+- `accuracy_score`: It calculates how accurate the model is when making predictions.
 
 We now assign the random forest classifier to the `rf` variable.
 
@@ -179,11 +176,9 @@ rf = RandomForestClassifier(max_features=5, n_estimators=100)
 ```
 The `RandomForestClassifier` has two important parameters that we can adjust. The parameters that are specified above are as follows:
 
-- `max_features=5`
-This represents the number of input features used to build our model. We have specified it to `5`. We will adjust this number to produce an optimal model. 
+- `max_features=5`: This represents the number of input features used to build our model. We have specified it to `5`. We will adjust this number to produce an optimal model. 
 
-- `n_estimators=100`
-This represents the number of trees used to create the random forest algorithm. The trees are used to build the machine learning model. We have specified it to `100`.
+- `n_estimators=100`: This represents the number of trees used to create the random forest algorithm. The trees are used to build the machine learning model. We have specified it to `100`.
 
 We will also adjust this number to produce an optimal model.
 
@@ -234,27 +229,21 @@ When converted into a percentage, it becomes `87.5%`. This accuracy can be furth
 ### Getting started with hyperparameter tuning
 In this section, we will fine-tune the parameters of the random forest algorithm. Random forest algorithm has two important parameters: `max_features` and the `n_estimators.`
 
-- `max_features`
-This represents the number of features used to build our machine learning model.
-
-- `n_estimators`
-This represents the number of trees used to create the random forest algorithm. The trees are used to build the machine learning model.
-
-Let's import functions used for hyperparameter tuning. 
+We are going to use the Grid search technique:
 
 ```python
 from sklearn.model_selection import GridSearchCV
 ```
-The `GridSearchCV` function exhaustively searches the optimal parameters. This is performed in a grid-wise manner. Let's start tuning the hyperparameters. 
+The `GridSearchCV` function exhaustively searches the optimal parameters. This is performed in a grid-wise manner. 
 
 To perform hyperparameter tuning, we must specify the range `max_features` and `n_estimators`. These will be used to create a grid of hyperparameters.
 
-We specify the range using `NumPy`. Let's import `NumPy` using the following code.
+We specify the range using `NumPy`. Import `NumPy` using the following code:
 
 ```python
 import numpy as np
 ```
-Now, let's create a range of `max_features` and `n_estimators`.
+Now, we have to create a range of `max_features` and `n_estimators`.
 
 #### Range of max_features
 
@@ -313,7 +302,7 @@ The optimized model output is shown below:
 
 ![Optimized model](/engineering-education/hyperparameter-tuning-of-machine-learning-model-in-python/optimized-model.png)
 
-The model used will be used to produce the best solution. Let's now check the best parameters of this model.
+The model will be used to produce the best solution.
 
 ### The best parameters for the model
 To check the best parameters selected by the `GridSearchCV` function, run this code:
@@ -329,9 +318,11 @@ The output below shows the best parameters and the accuracy score for the model.
 The best parameters are `max_features: 1` and `n_estimators: 140`. The optimized score is `91%`.
 
 ### Conclusion
-In this tutorial, we have learned about the different techniques used to perform hyperparameter tuning. We then trained our machine learning model. Finally, we started hyperparameter tuning using the grid search technique. We fine-tuned the `max_features` and `n_estimators` parameters of the random forest algorithm. After hyperparameter tuning, model accuracy increased from `87.5%` to `91%`. This shows that our model has improved and will produce an optimal solution. 
+In this tutorial, we have learned about the different techniques used to perform hyperparameter tuning. We then trained our machine learning model. Finally, we started hyperparameter tuning using the grid search technique. We fine-tuned the `max_features` and `n_estimators` parameters of the random forest algorithm.
 
-To view the model in this tutorial, click [here](https://colab.research.google.com/drive/1U2_6VtBLvgeTWYkq_M6Jzo54UgUrASZN?usp=sharing)
+After hyperparameter tuning, model accuracy increased from `87.5%` to `91%`. This shows that our model has improved and will produce an optimal solution. 
+
+You can find the model we built in this [here](https://colab.research.google.com/drive/1U2_6VtBLvgeTWYkq_M6Jzo54UgUrASZN?usp=sharing)
 
 ### References
 - [Python code notebook](https://colab.research.google.com/drive/1U2_6VtBLvgeTWYkq_M6Jzo54UgUrASZN?usp=sharing)
