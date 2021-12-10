@@ -8,7 +8,7 @@ Before beginning this lesson, you should have a basic understanding of Java and 
 
 ### The following are the contents of this article.
 - [JSP Overview](#jsp-overview)
-- [JSP Benefits](#JSP-benefits)
+- [JSP Benefits](#jsp-benefits)
 - [The Lifecycle of JSP Pages](#the-lifecycle-of-jsp-pages)
 - [JSP directory structure](#jsp-directory-structure) 
 - [Conclusion](#conclusion)
