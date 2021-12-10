@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /deploying-a-serverless-django-restapi-with-zappa-on-aws/
 title: Deploying serverless Django REST-API with Zappa on AWS
-description: This article will explain how Zappa is implemented in Django by building a serverless Django REST API and deploying the application to AWS Lambda using Zappa.
+description: This article will explain how Zappa works with Django by building a serverless Django REST API and deploying the application to AWS Lambda using Zappa.
 author: anita-achu
 date: 2021-09-23T00:00:00-00:00
 topics: [Languages]
@@ -52,8 +52,7 @@ In the Django application, this is how Zappa works:
 - Next, the request is sent to the server, which the Django app handles via the WSGI layer. 
 - Lastly, the server transmits the response to the API Gateway shortly before it is destroyed and then provides the client with a response.
 
-![/engineering-education/deploying-a-serverless-django-restapi-with-zappa-on-aws/architecture.jpg](/engineering-education/deploying-a-serverless-django-restapi-with-zappa-on-aws/meme.jpg)
-[Image source](https://www.google.com/url?sa=i&url=https%3A%2F%2Fblog.archerysec.com%2FDeploy-ArcherySec-as-a-Serverless-on-AWS-using-Zappa%2F&psig=AOvVaw3-f5XWObLOEIa1mnBtnqSv&ust=1638433318404000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCNis2_WVwvQCFQAAAAAdAAAAABBW)
+![Architecture](/engineering-education/deploying-a-serverless-django-restapi-with-zappa-on-aws/architecture.png)
 
 This project will work on how Zappa is implemented in Django by building a serverless Django REST API and deploying the application to AWS Lambda using Zappa.
 
@@ -222,9 +221,6 @@ urlpatterns = [
 ### Testing the API
 Lastly, test out the API to see the work we have done to ensure it is running successfully. To test locally, run  `python manage.py runserver`, and in your browser, hit the endpoint [http://120.0.0.1:8000/api/books](http://120.0.0.1:8000/api/books).
 
-![Deployment meme](/engineering-education/deploying-a-serverless-django-restapi-with-zappa-on-aws/meme.jpg)
-
-[Image source](https://www.google.com/url?sa=i&url=https%3A%2F%2Fmakeameme.org%2Fmeme%2Fbrace-yourself-deploy&psig=AOvVaw30-YKcrTN4IWmGoZeWsnAT&ust=1637270554714000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPiBt6GqoPQCFQAAAAAdAAAAABAJ)
 
 ### Setting up AWS
 At this point, you should have created an AWS account and have access to an AWS IAM user for the Zappa utility. 
@@ -240,6 +236,11 @@ Briefly, let us set up AWS on your console to utilize Zappa properly.
 - Skip Add tags, move to Review and create a user.
 
 *Successfully created!* We have also been supplied with an access key and secret access key. Download the *.csv file* which contains these keys, as these pieces of information will be lost when the page closes.
+
+
+![Deployment meme](/engineering-education/deploying-a-serverless-django-restapi-with-zappa-on-aws/meme.jpg)
+
+[Image source](https://www.google.com/url?sa=i&url=https%3A%2F%2Fmakeameme.org%2Fmeme%2Fbrace-yourself-deploy&psig=AOvVaw30-YKcrTN4IWmGoZeWsnAT&ust=1637270554714000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPiBt6GqoPQCFQAAAAAdAAAAABAJ)
 
 ### Deploying with Zappa
 The first step is to install Zappa in our virtual environment:
@@ -262,11 +263,10 @@ Once the command executes in your terminal, you will get the following output an
 
 Flowing from this instruction, select an environment name. We used the default name, '*dev' in this project.*
 
-![/engineering-education/deploying-a-serverless-django-restapi-with-zappa-on-aws/zappa2.PNG]
-(/engineering-education/deploying-a-serverless-django-restapi-with-zappa-on-aws/zappainit.PNG)
+![Zappa configuration](/engineering-education/deploying-a-serverless-django-restapi-with-zappa-on-aws/zappa2.PNG)
 
 
-Here, Zappa created a bucket for handling uploaded files. Our Django application would be set in a private s3 bucket. Select the default.
+Here, Zappa created a bucket for handling uploaded files. Our Django application would be set in a private s3 bucket. 
 
 
 Lastly, we deploy by running,
@@ -274,6 +274,8 @@ Lastly, we deploy by running,
 ```bash
 zappa deploy dev
 ```
+
+![Zappa Deploy](/engineering-education/deploying-a-serverless-django-restapi-with-zappa-on-aws/zappa3.PNG) 
 
 This command deploys our application which we named, ''dev",  however, an error was raised due to improper configuration of SQLite. To solve this, in your `settings.py` comment out the database.
 
@@ -312,7 +314,7 @@ ALLOWED_HOSTS = ["oitzappv43.execute-api.eu-west-2.amazonaws.com"]
 
 Now, we can run this URL and load our application.
 
-![/engineering-education/deploying-a-serverless-django-restapi-with-zappa-on-aws/admin.png](/engineering-education/deploying-a-serverless-django-restapi-with-zappa-on-aws/admin.png)
+![Admin](/engineering-education/deploying-a-serverless-django-restapi-with-zappa-on-aws/admin.PNG)
 
 We have successfully redeployed the application. However, notice that the styling is not working correctly. We failed to map our application across to the CSS, which contains the styling. Let us quickly do that.
 
@@ -379,7 +381,7 @@ zappa manage dev "collectstatic --noinput"
 
 Re-run the admin page. The API at this point should render the required styles accurately.
 
-![/engineering-education/deploying-a-serverless-django-restapi-with-zappa-on-aws/admin.png](/engineering-education/deploying-a-serverless-django-restapi-with-zappa-on-aws/admin.png)
+![New Admin](/engineering-education/deploying-a-serverless-django-restapi-with-zappa-on-aws/newadmin.PNG)
 
 As seen, our application is running successfully.
 
