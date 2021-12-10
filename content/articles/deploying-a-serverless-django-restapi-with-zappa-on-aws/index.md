@@ -1,6 +1,26 @@
-Serverless technology has gradually become an area of interest in software development. A few years back, all applications built on classic web servers were manually managed until the development of this technology. 
+---
+layout: engineering-education
+status: publish
+published: true
+url: /deploying-a-serverless-django-restapi-with-zappa-on-aws/
+title: Deploying serverless Django REST-API with Zappa on AWS
+description: This article will explain how Zappa is implemented in Django by building a serverless Django REST API and deploying the application to AWS Lambda using Zappa.
+author: anita-achu
+date: 2021-09-23T00:00:00-00:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images: 
 
-This technology guarantees automatic web server configuration or permissions, allowing the developer to focus solely on developing and designing web applications while their cloud provider handles the heavy lifting by managing the servers. Thereby, the user does not have to worry about the manual configuration of servers.
+  - url: /engineering-education/deploying-a-serverless-django-restapi-with-zappa-on-aws/hero.png
+    alt: Deploying serverless Django REST-API with Zappa on AWS Image
+---
+
+
+Serverless technology has gradually become an area of interest in software development. Before, all applications built on classic web servers were manually managed until the development of this technology. 
+
+This technology guarantees automatic web server configuration and permissions, allowing the developer to focus solely on developing and designing web applications while their cloud provider handles the heavy tasks by managing the servers. 
+
+For this reason, the user does not have to worry about the manual configuration of servers.
 
 The primary purpose of the development of serverless technology is to aid developers in building and running applications without interacting with or managing servers.
 
@@ -8,34 +28,34 @@ Now, this does not mean the application runs entirely without a server, but that
 
 One of the upsides of serverless technology is that it runs on pay-per *request*. So, for example, a new company or startup that is low on budget can host their web apps on [AWS Lambda](https://aws.amazon.com/lambda/) to pay only when a user sends a request to the web app.
 
-[AWS Lambda](https://aws.amazon.com/lambda/) is an Amazon serverless computing platform, referred to as the crux of AWS serverless offering that enables the user to run functions manage computer resources automatically.
+[AWS Lambda](https://aws.amazon.com/lambda/) is an Amazon serverless computing platform that enables users to run functions and manage computer resources automatically.
 
-Other AWS services will be used for this project, including : 
+Other AWS services that will be used for this project include: 
 - API Gateway for managing and handling API HTTP endpoints.
 - S3 bucket: Simple Storage Service is also known as S3 for storing data such as static files
 - IAM roles for storing roles, user groups, and policies.
 
-This process is quite exciting, although the implementation in Django may be challenging. However, this is made easy using ***Zappa***.
+This process is quite exciting; although the implementation in Django may be challenging, Zappa makes it easy.
 
 [Zappa](https://www.zappa.io/) is an open-source tool for developing, deploying, and maintaining serverless Python applications on Amazon Web Services (AWS) technologies, including Lambda and [API Gateway](https://aws.amazon.com/api-gateway/).
 
-These configurations and deployment are handled automatically by Zappa with just a click. First, you need to configure Zappa by running Zappa `init` and setting a few parameters using a CLI interface. 
+Zappa handles the configurations and deployment automatically with just a click, but first, you need to configure Zappa by running Zappa `init` and setting a few parameters using a CLI interface. 
 
 ### How does Zappa work
 With Zappa, developers can deploy a WSGI-compatible application. Web Server Gateway Interface (WSGI) is a web server calling method used in sending requests to web apps implemented in Python. 
 
-It describes how webservers and applications, e.g., Django, Flask, etc., communicate. WSGI uses Amazon Web Service products such as Lambda, API Gateway, and S3.  
+It describes how webservers and applications like Django and Flask communicate. WSGI uses Amazon Web Service products such as Lambda, API Gateway, and S3.  
 
 In the Django application, this is how Zappa works:
 
-- When a request is sent to the server, it is received by API Gateway, which handles HTTP requests. This API Gateway starts an instance in our AWS lambda function where the server is managed. Then, Lambda processes this request and sends it to the server.
+- When a request is sent to the server, it is received by API Gateway, which handles HTTP requests. This API Gateway starts an instance in our AWS lambda function where the server is managed. Lambda then processes this request and sends it to the server.
 - Next, the request is sent to the server, which the Django app handles via the WSGI layer. 
 - Lastly, the server transmits the response to the API Gateway shortly before it is destroyed and then provides the client with a response.
 
 ![/engineering-education/deploying-a-serverless-django-restapi-with-zappa-on-aws/architecture.jpg](/engineering-education/deploying-a-serverless-django-restapi-with-zappa-on-aws/meme.jpg)
 [Image source](https://www.google.com/url?sa=i&url=https%3A%2F%2Fblog.archerysec.com%2FDeploy-ArcherySec-as-a-Serverless-on-AWS-using-Zappa%2F&psig=AOvVaw3-f5XWObLOEIa1mnBtnqSv&ust=1638433318404000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCNis2_WVwvQCFQAAAAAdAAAAABBW)
 
-In this project, we will work on how Zappa is implemented in Django by building a serverless Django REST API and deploying the application to AWS Lambda using Zappa.
+This project will work on how Zappa is implemented in Django by building a serverless Django REST API and deploying the application to AWS Lambda using Zappa.
 
 ### Prerequisites
 - Basic knowledge of Python.
@@ -61,13 +81,12 @@ pip install virtualenv
 virtual env
 ```
 
-Let us activate our virtual environment.
+Let us activate our virtual environment by running the following command: 
 
 For Windows:
 
 ```bash
 env\Scripts\activate
-
 ```
 
 For Mac/Linux:
@@ -105,8 +124,8 @@ INSTALLED_APPS = [
 ]
 ```
 
-### Creating models
- This step will build a model that stores information about books.
+### Creating the application models
+ This step will build a model that stores information about books. Models specify how data appears in the database.
 
 ```python
 from django.db import models
@@ -149,7 +168,7 @@ admin.site.register(Book)
 ### Creating Serializer file
 Create a new file, `serializers.py` file, in your app directory.
 
-Serializer converts the data in our models or queryset into data types such as JSON, XML, etc., that can be easily understood. Now add these lines of code to create a serializer class:
+Serializer converts the data in our models or queryset into data types such as JSON and XML that can be easily understood. Now add these lines of code to create a serializer class:
 
 ```python
 from rest_framework import serializers
@@ -181,7 +200,7 @@ class BookDetail(generics.RetrieveUpdateDestroyAPIView):
 
 The *BookList* view displays a list of all books and also allows the users to create a new book.
 
-The *BookDetail*, the other view, allows the user to create, retrieve, update, and delete a specific book.
+The *BookDetail*, the other view, allows the user retrieve, update, and delete a specific book.
 
 ### Create a URL handler
 When a user makes a request, the Django controller takes over and searches the `urls.py` file for the corresponding view, returning the response or an error if not found.
@@ -201,7 +220,7 @@ urlpatterns = [
 ```
 
 ### Testing the API
-Lastly, test out the API to see the work we have done to ensure it's running successfully. To test locally, run this command in your terminal, `python manage.py runserver`, and in your browser, hit the endpoint [http://120.0.0.1:8000/api/books](http://120.0.0.1:8000/api/books).
+Lastly, test out the API to see the work we have done to ensure it is running successfully. To test locally, run  `python manage.py runserver`, and in your browser, hit the endpoint [http://120.0.0.1:8000/api/books](http://120.0.0.1:8000/api/books).
 
 ![/engineering-education/deploying-a-serverless-django-restapi-with-zappa-on-aws/meme.jpg](/engineering-education/deploying-a-serverless-django-restapi-with-zappa-on-aws/meme.jpg)
 
@@ -210,7 +229,7 @@ Lastly, test out the API to see the work we have done to ensure it's running suc
 ### Setting up AWS
 At this point, you should have created an AWS account and have access to an AWS IAM user for the Zappa utility. 
 
-Zappa utility handles tasks such as automatically creating an s3 bucket for deployment, creating lambda execution IAM roles, API gateways for web traffic work, etc., on your behalf.
+Zappa utility handles tasks such as automatically creating an s3 bucket for deployment, creating lambda execution IAM roles, API gateways for web traffic work, among other functionalities on your behalf.
 
 Briefly, let us set up AWS on your console to utilize Zappa properly.
 
@@ -220,9 +239,7 @@ Briefly, let us set up AWS on your console to utilize Zappa properly.
 - Move on the permission and select *'Attach existing policies directly*. We will be accessing two policies. The first is '*IAMFullAccess*" This creates users for Lambda to be executed. The second is *'PowerUserAccess'* for creating API gateway and S3 bucket. Search for these policies and click on their boxes.
 - Skip Add tags, move to Review and create a user.
 
-*Successfully created!* We have also been supplied with an access key and secret access key. Download the *.csv file* which contains these keys, as these pieces of information will be lost when the page closes
-
-Briefly, let us set up AWS on your console to utilize Zappa properly.
+*Successfully created!* We have also been supplied with an access key and secret access key. Download the *.csv file* which contains these keys, as these pieces of information will be lost when the page closes.
 
 ### Deploying with Zappa
 The first step is to install Zappa in our virtual environment:
@@ -239,19 +256,20 @@ zappa init
 
 ![/engineering-education/deploying-a-serverless-django-restapi-with-zappa-on-aws/zappainit.PNG](/engineering-education/deploying-a-serverless-django-restapi-with-zappa-on-aws/zappainit.PNG)
 
-This command initializes Zappa and creates a `zappa_settings.json` file. Once the command executes in your terminal, you will get the following output and instructions.
+This command initializes Zappa and creates a `zappa_settings.json` file. 
+
+Once the command executes in your terminal, you will get the following output and instructions.
 
 Flowing from this instruction, select an environment name. We used the default name, '*dev' in this project.*
 
-![/engineering-education/deploying-a-serverless-django-restapi-with-zappa-on-aws/zappa2.PNG](/engineering-education/deploying-a-serverless-django-restapi-with-zappa-on-aws/zappainit.PNG)
+![/engineering-education/deploying-a-serverless-django-restapi-with-zappa-on-aws/zappa2.PNG]
+(/engineering-education/deploying-a-serverless-django-restapi-with-zappa-on-aws/zappainit.PNG)
 
 
 Here, Zappa created a bucket for handling uploaded files. Our Django application would be set in a private s3 bucket. Select the default.
 
 ![/engineering-education/deploying-a-serverless-django-restapi-with-zappa-on-aws/zappa3.PNG](/engineering-education/deploying-a-serverless-django-restapi-with-zappa-on-aws/zappainit.PNG)
 
-
-A new file, `zappa_settings.json`, has been automatically created to handle the configurations in your code editor.
 
 Lastly, we deploy by running,
 
@@ -283,9 +301,8 @@ N.B, This command updates changes that have been made to deployment. Therefore, 
 
 After successful deployment, you should receive a URL to access your API over the web.
 
-```
+```bash
 <https://oitzappv43.execute-api.eu-west-2.amazonaws.com/dev>
-
 ```
 
 Copy the generated URL for your app and paste it into the project's `ALLOWED_HOSTS` in your `settings.py.`
@@ -355,7 +372,7 @@ STATIC_URL = "https://%s/" % AWS_S3_CUSTOM_DOMAIN
 #AWS_S3_PUBLIC_URL_STATIC = "<https://static.yourdomain.com/>"
 ```
 
-Afterward, run the following commands to update the changes and upload the static files to the bucket:
+Afterwards, run the following commands to update the changes and upload the static files to the bucket:
 
 ```bash
 zappa update dev
@@ -371,7 +388,7 @@ As seen, our application is running successfully.
 ### Conclusion
 This course provides a walk-through on creating a Django REST API and deploying the API as a serverless application using Zappa on AWS Lambda. 
 
-We began by building a simple REST API  before proceeding to deploy on AWS. Having understood what Zappa is and how it works in Django,t his knowledge can also be applied in your project, giving you the ease of building an application in which the server is managed automatically.
+We began by building a simple REST API  before proceeding to deploy on AWS. Having understood what Zappa is and how it works in Django, this knowledge can also be applied in your project, giving you the ease of building an application in which the server is managed automatically.
 
 Happy coding! 🙂
 
@@ -380,3 +397,5 @@ Happy coding! 🙂
 The code in this project is contained in this repo: 
 [https://github.com/Anitaachu/Bookshop](https://github.com/Anitaachu/Bookshop) 
 
+---
+Peer Review Contributions by: [Jerim Kaura](/engineering-education/authors/jerim-kaura/)
