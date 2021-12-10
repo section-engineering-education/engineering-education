@@ -19,14 +19,14 @@ Mobile databases make data from database applications available to mobile users,
 Mobile computing makes it possible for users to communicate while on the move.
 
 ### Table of contents
-- [ Properties of mobile databases](#Properties-of-mobile-databases)
-- [ Types of mobile databases](#Types-of-mobile-databases)
-- [Advantages of mobile databases](#Advantages-of-mobile-databases)
-- [Disadvantages of mobile databases](#Disdvantages-of-mobile-databases)
-- [Characteristics of mobile environments](#Characteristics-of-mobile-environments)
-- [Requirements of mobile databases](#Requirements-of-mobile-databases)
-- [Transaction management in mobile database systems](#Transaction-management-in-mobile-database-systems)
-- [Existing mobile databases](#Existing-mobile-databases)
+- [Properties of mobile databases](#properties-of-mobile-databases)
+- [Types of mobile databases](#types-of-mobile-databases)
+- [Advantages of mobile databases](#advantages-of-mobile-databases)
+- [Disadvantages of mobile databases](#disdvantages-of-mobile-databases)
+- [Characteristics of mobile environments](#characteristics-of-mobile-environments)
+- [Requirements of mobile databases](#requirements-of-mobile-databases)
+- [Transaction management in mobile database systems](#transaction-management-in-mobile-database-systems)
+- [Existing mobile databases](#existing-mobile-databases)
 - [Conclusion](#conclusion)
 
 ### Properties of mobile databases
