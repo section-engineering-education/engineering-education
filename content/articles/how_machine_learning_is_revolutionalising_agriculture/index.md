@@ -15,6 +15,7 @@ Machine learning works through teaching computers to learn and make improvements
 There are two main machine learning techniques which are vital in the agricultural industry. They are:
 
 - Supervised learning
+
 - Unsupervised learning
 
 #### Supervised learning
@@ -57,16 +58,18 @@ ML surveillance system is an enabler of revolution through increasing operationa
 
 Machine learning is vital in predicting crop yield through visual analytic data and real-time sensor data. The drones and smart sensors capture data that experts in the agricultural industry use in the analysis. The drawn and smart sensor captures data on fertilizer, moisture, and natural nutrient levels. The data is vital in assessing the crop's growth pattern and optimizing crop yields.
 
-Machine learning can combine different sets of data and advice on ways to optimize agricultural production. Machine learning can combine and regression and CART to improve the health and quality of products. 
+Machine learning can combine different sets of data and advice on ways to optimize agricultural production. Machine learning can combine and regression and CART to improve the health and quality of products.
 
 ##### How does ML combine algorithm for improving agricultural output?
 
 Various machine learning algorithms are combined to improve agricultural output. Critical ML algorithms used to enhance agricultural output include Linear regression, K nearest neighbor (KNN), decision tree regression, etc. For example, decision trees, KNN, and Linear regression are combined for analyzing rainfall parameters, which is vital in improving agricultural output. Other algorithms such as Support Vector Machines (SVMs) could validate the analysis of rainfall parameters. An efficient combination of the ML algorithms is vital in efficiently improving the agricultural output.
+
 ### Impact of machine learning in agriculture
 
 Machine learning has or is likely to impact agriculture in various ways, as discussed below.
 
 - Improving the quality of the harvest - Due to ML's precision in detecting pests, diseases and close monitoring of fields, the quality of the harvest has significantly improved. Thus, the health of the crops is usually prioritized with the use of machine learning.
+
 - Reducing the use of pesticides - the machine learning technology can identify the weed in place, thus, pesticides are used when needed in the farms. The analysis ensures that the pesticides are not toxic to the plants.
 
 ### Why is machine learning efficient compared to other technologies in the agricultural revolution?
@@ -102,8 +105,9 @@ As we can see, machine learning is critical in the agricultural revolution.
 Happy Learning!
 
 ### Further reading
+
 - [Introduction to Neural Networks](/engineering-education/introduction-to-neural-networks/)
 
 - [Differences between Artificial Intelligence, Machine Learning, and Deep Learning](/engineering-education/differences-between-artificial-intelligence-machine-learning-and-deep-learning/)
 
-- [Introduction to Machine Learning using C++](https://www.section.io/engineering-education/an-introduction-to-machine-learning-using-c++/)
+- [Introduction to Machine Learning using C++](https://www.section.io/engineering-education/an-introduction-to-machine-learning--using-c++/)
