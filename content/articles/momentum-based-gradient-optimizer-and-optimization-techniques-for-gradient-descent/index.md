@@ -50,11 +50,13 @@ $V_\theta$ is averaged across its preceding $\frac{1}{(1 - \beta)\theta_p}$ iter
 ### How does momentum help in gradient descent
 When this method is in use, it looks for the direction of the steepest slope in its current state. Then, it moves in the direction of that steepest slope to change its status.
 
-Momentum helps Gradient Descent distinguish recent derivatives as it nears the middle of the ravine allowing the gradient descent to move in the right direction.
+Momentum helps gradient descent distinguish recent derivatives as it nears the middle of the ravine allowing the gradient descent to move in the right direction.
 
 Momentum looks at the gradients of the steps that came before and the coming up steps to figure out which one is the best one to take. 
 ###  Stochastic Gradient Descent 
-It's better to use Stochastic Gradient Descent because it fixes many problems. It tries to make up that it doesn't do calculations very well. It makes a lot more noise than Gradient Descent. Using SGD takes a lot longer to get to a simple solution. It is different from Gradient Descent in that SGD does the derivatives for all points simultaneously.
+It is a way to keep trying to improve an objective function that has good smoothness properties (e.g. differentiable or subdifferentiable). It can be thought of as a stochastic approximation of gradient descent optimization, because it changes the actual gradient (calculated from the whole data set) with an estimate of it (calculated from a randomly selected subset of the data). In high-dimensional optimization problems, this helps cut down on the amount of time it takes to solve them. This leads to faster iterations in exchange for a slower convergence rate.
+
+It's better to use stochastic gradient descent because it fixes many problems. It makes a lot more noise than gradient descent. Using SGD takes a lot longer to get to a simple solution. It is different from gradient descent in that SGD does the derivatives for all points simultaneously.
 ### Adaptive Moment Estimation
 RMSProp and momentum combine to create this. Like momentum, it saves the declining arithmetic mean of the squared gradients and an average of past gradients, which is similar.
 
@@ -84,7 +86,7 @@ W = W- \alpha \frac{dW}{(\sqrt{S} + \epsilon)}
 $$
 
 ### AdaGrad
-When employing an Adaptive Gradient, you'll have to adjust the learning rate for parameters at each iteration based on where they're found. The learning rate equals squared times the square root of that number ($\gamma^2*\sqrt{N}$). This method works.
+When employing an adaptive gradient, you'll have to adjust the learning rate for parameters at each iteration based on where they're found. The learning rate equals squared times the square root of that number ($\gamma^2*\sqrt{N}$). This method works.
 
 According to earlier AdaGrad computations in the update rule for all parameters, AdaGrad changes the general learning rate. 
 
