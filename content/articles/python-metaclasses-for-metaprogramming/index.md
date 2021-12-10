@@ -1,7 +1,7 @@
 ### Introduction
-As a rule of thumb, metaprogramming can be done via decorators and metaclasses. No matter how outlandish. Metaprogramming is the practice of writing code that manipulates other code. The term `metaprogramming` refers to a computer program's capacity to comprehend or regulate itself. Python's metaclasses are a kind of class metaprogramming.
-An essential part of Python programming is the use of the `OOPS concept`. Even if you're not aware of it, you're already engaging in this practice.
-Some of the prerequisites include decorators in Python and `OOPS concepts in Python.`
+Metaprogramming is the practice of writing code that manipulates other code. `Metaprogramming` refers to a computer program's capacity to comprehend or regulate itself.  As a rule of thumb, metaprogramming can be done via decorators and metaclasses. For example, python's metaclasses are a kind of class metaprogramming.
+
+The object-oriented programming(OOPS)  concept is essential for Python programming. So even if you are not aware of it, you are already using metaprogramming when using OOP. Some of the prerequisites include decorators in Python and `OOPS concepts in Python.`
 
 ### Table of contents
 - [What are metaclasses](#what-are-metaclasses)
@@ -13,14 +13,12 @@ Some of the prerequisites include decorators in Python and `OOPS concepts in Pyt
 - [Conclusion](#conclusion)
 
 ### What are metaclasses?
-To build classes, you must first utilize the Metaclass. These classes may then be used to build other objects.
-Metaclasses can be created by modifying how classes are created by adding additional code or processes to the Metaclass framework. Metaclasses are seldom used by end-users, although they are essential in several cases.
-Metaclasses and non-metaclasses can be used to address some problems but not others.
+Metaclasses are classes whose instances are other classes that are then used to build objects.
+
+Metaclasses can be created by modifying how classes are created. We need to add additional code or processes to the Metaclass framework. Although end-users seldom use Metaclasses, they are essential in some programming problems.
 
 ### Understanding metaclasses with examples
-Every module and function in python has a type given to it.  If the user requests it, a `int` type is allocated to integer variables. The `type()` function may be used to determine the type of any object.
-
-#### Example 1
+Every module and function in python has a type given to it.  If the user requests to get the type of the data, a corresponding data type is returned. The `type()` function may be used to determine the type of any object.
 
 ```python
 number = 15  
@@ -34,17 +32,15 @@ print("Sort of name is:", type(name))
 ```
 
 #### Output
-
 ```python
 Sort of number is: <class 'int'>
 Sort of list is: <class 'list'>
 Sort of name is: <class 'str'>
 ```
 
-#### Description
-Python's class system is in charge of defining all of the language's types. The above example uses class `int,` `list,` or `str`, unlike other basic data types that include `int,` `char,` and `float` as found in C and Java. New kinds may be generated using user-defined classes. In an example, we will use `Town` class as a new sort of object.
+Python's class system is in charge of defining all of the language's types. The above example uses class `int,` `list,` or `str`, unlike other basic data types that include `int,` `char,` and `float` as found in C and Java.
 
-#### Example 2
+New data types may be generated using user-defined classes. We will use the `Town` class as a new object in an example.
 
 ```python
 class Town:  
@@ -54,14 +50,11 @@ print("Sort of Town_object is:", type(Town_object))
 ```
 
 #### Output
-
 ```python
 Sort of Town_object is: <class '__main__.Town'>
 ```
 
-A class is an instance of Metaclass since it is an object in Python. There have been various class types that can be found via the Metaclass, where we establish new Classes and Class objects. For instance, `town` search `type,`.
-
-#### Example 3
+A class is an instance of Metaclass since it is an object in Python. Therefore, various class types can be found via the Metaclass, where we establish new Classes and Class objects. For instance, `town` search `type,`.
 
 ```python
 class Town:  
@@ -70,14 +63,11 @@ print("Sort of Town class is:", type(Town))
 ```
 
 #### Output
-
 ```python
 Sort of Town class is: <class 'type'>
 ```
 
-We can alter the classes since they are also objects. User-created properties and methods may be added or removed from the class.
-
-#### Example 4
+We can alter the classes since they are also objects. For example, user-created properties and methods may be added or removed from the class.
 
 ```python
 class Town:  
@@ -97,34 +87,33 @@ enjoyerobject.foo()
 Dusk
 ```
 
-#### Description
-We may proceed by starting with a class that does not utilize any methods or variables from the class. The method variables and class methods will then be specified in the following steps. In the end, we will create the final object.
+We may proceed by starting with a class that does not utilize any methods or variables from the class. Then, the method variables and class methods will be specified in the following steps. In the end, we will create the final object.
 
 ### Reasons to use metaclasses instead of functions
-- It's apparent what the goal is. In `UpperAttrMetaclass(type)`, it is clear what comes next.
-- OOP is an option. Parent method may be inherited by metaclasses.
+- It is apparent what the goal is.  In `UpperAttrMetaclass(type)`, it is clear what comes next.
+- OOP is an option. Metaclasses may inherit the parent method.
 - A class's subclasses are instances of its metaclass if the metaclass-class is given, but not the metaclass function.
-- You may improve the organization of your code. Using metaclasses for a simple example like this is a waste of time. It's normally reserved for a more difficult task. Making several methods and grouping them into a single class makes the code more readable.
-- It's possible to hook on `new`, `init`, and `call` hooks. So you may do other things, as a result.
+- You may improve the organization of your code. Using metaclasses for a simple example like this is a waste of time. It is usually reserved for a more difficult task. Making several methods and grouping them into a single class makes the code more readable.
+- It is possible to hook on `new`, `init`, and `call` hooks. So you may do other things, as a result.
 
 ### Instances to use metaclasses
-The general public seldom utilizes metaclasses since they are primarily employed in complex scenarios. Metaclasses may be used in a limited number of situations, though.
+The general public seldom utilizes metaclasses since they are primarily employed in complex scenarios. However, metaclasses may be used in the following limited number of situations.
 - While generating down the hierarchies for inheritance.
 - If the user wishes to alter the class automatically.
 - If the user is a developer of application programming interfaces.
 
 ### Customizing the Metaclass
 The user-created Metaclass must inherit the type metaclass and, in most cases, override it, such as:
-- `__new__()`: This method comes before `__int__()` in the class hierarchy. With this method, we can create and return the object. Bear in mind that we can override it to control how objects are created.
+
+- `__new__()`: This method comes before `__int__()` in the class hierarchy. With this method, we can create and return the object. Remember that we can override it to control how objects are created.
 - `__int__()`: This function enables the initialization of the objects that have been created, and therefore, to call the object, you have to pass it as an argument
+
 The `type()` function may be used directly by the user to construct classes, and there are possibilities of utilizing this function in different ways.
-The type may be sent in as a single parameter, as seen in the preceding example.
-It may be called with three different arguments by the user. Creating the class will be done by this. Some of the arguments include:
+
+The preceding example shows that the type may be sent in as a single parameter. It may be called with three different arguments by the user. Creating the class will be done by this. Some of the arguments include:
 - Class name
 - Pass the tuple of base classes that class has inherited
 - Class dictionary: Some functions and variables occupy this namespace, which the class will use itself.
-
-#### Example
 
 ```python
 def Town_method(persona):  
@@ -151,11 +140,10 @@ Town class method!
 John Doe
 ```
 
-#### Description
-We will create the basic class then use the `type()` method to generate the city class dynamically. We'll put the City type on there and then construct a City class instance. The inherited method will be called next. The City class method is what we'll be using here. Finally, we will see the variable.
+We will create the basic class then use the `type()` method to generate the city class dynamically. We will put the City type there and construct a City class instance. The inherited method will be called next. The City class method is what we will be using here. Finally, we will see the variable.
 
 ### Using a metaclass to fix an issue
-Some of the challenges users face may be addressed with the help of metaclasses and decorators. However, a metaclass is the only approach to address specific issues. When debugging, the body of class functions should always be executed before the fully qualified name is displayed.
+Some of the challenges users face may be addressed with the help of metaclasses and decorators. However, a metaclass is the only approach to address specific issues. For example, when debugging, the body of class functions should always be executed before the fully qualified name is displayed.
 
 ```python
 from functools import wraps  
@@ -196,11 +184,11 @@ print(enjoyer_cal.div(30, 5))
 6.0
 ```
 
-#### Description
-The prior procedure must first apply the decorator function to all subclasses descended from the `Calc` class. Decorators must be added to each subclass individually, as shown in the previous example with the `Calc` class.
-A time-consuming and challenging process is implementing the decorator function for each subclass of the class. If the debug property is present in all subclasses, metaclasses can be utilized to solve this issue.
+The prior procedure must first apply the decorator function to all subclasses descended from the `Calc` class. Then, decorators must be added to each subclass individually, as shown in the previous example with the `Calc` class.
+
+A time-consuming and challenging process is implementing the decorator function for each subclass of the class. However, if the debug property is present in all subclasses, metaclasses can solve this issue.
 
 ### Conclusion
-In this tutorial, we have covered the different aspects of metaclasses and understanding what metaclasses entail. We have gone through how to customize metaclasses. We applied this concept in solving problems.
+In this tutorial, we have covered the different aspects of metaclasses and understanding what metaclasses entail. Then, we have gone through how to customize metaclasses. Finally, we applied this concept in solving problems.
 
 Happy learning!
