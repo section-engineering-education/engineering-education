@@ -2,11 +2,11 @@ A constructor is a quick and easy technique to set up class properties. It's als
 
 This article explains the basic structure of a constructor, the two types of constructors, then the init block, and when to use it. Finally, we'll also discuss some best practices related to object-oriented programming.
 
-### Topics
+### Table of Contents
 - [What is a constructor?](#what-is-a-constructor)
-- [How to instatiate objects using constructors](#how-to-use-constructors-to-create-an-object)
-- [Types of constructors in kotlin](#types-of-constructors-in-kotlin)
-- [When to use the init block in kotlin](#init-blocks)
+- [How to use constructors to create an object](#how-to-use-constructors-to-create-an-object)
+- [Types of constructors in Kotlin](#types-of-constructors-in-kotlin)
+- [Init blocks](#init-blocks)
 - [Best practices for object-oriented programming](#best-practices-for-object-oriented-programming)
 
 ### Prerequisites
@@ -22,7 +22,7 @@ A constructor is a block of code that is similar to a procedure or a method, usu
 ### How to use constructors to create an object
 As a function, the primary constructor must be defined with the same name as the class, followed by parentheses. However, the secondary constructor must be expressed with the `constructor` keyword.
 
-### Types of Constructors in Kotlin
+### Types of constructors in Kotlin
 There are two different kinds of constructors in Kotlin, which are:
 
 - The primary constructor
