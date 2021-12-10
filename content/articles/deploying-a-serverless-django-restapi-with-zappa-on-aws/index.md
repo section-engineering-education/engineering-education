@@ -222,7 +222,7 @@ urlpatterns = [
 ### Testing the API
 Lastly, test out the API to see the work we have done to ensure it is running successfully. To test locally, run  `python manage.py runserver`, and in your browser, hit the endpoint [http://120.0.0.1:8000/api/books](http://120.0.0.1:8000/api/books).
 
-![/engineering-education/deploying-a-serverless-django-restapi-with-zappa-on-aws/meme.jpg](/engineering-education/deploying-a-serverless-django-restapi-with-zappa-on-aws/meme.jpg)
+![Deployment meme](/engineering-education/deploying-a-serverless-django-restapi-with-zappa-on-aws/meme.jpg)
 
 [Image source](https://www.google.com/url?sa=i&url=https%3A%2F%2Fmakeameme.org%2Fmeme%2Fbrace-yourself-deploy&psig=AOvVaw30-YKcrTN4IWmGoZeWsnAT&ust=1637270554714000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPiBt6GqoPQCFQAAAAAdAAAAABAJ)
 
@@ -254,7 +254,7 @@ Next, initialize Zappa,
 zappa init
 ```
 
-![/engineering-education/deploying-a-serverless-django-restapi-with-zappa-on-aws/zappainit.PNG](/engineering-education/deploying-a-serverless-django-restapi-with-zappa-on-aws/zappainit.PNG)
+![Zappa Init](/engineering-education/deploying-a-serverless-django-restapi-with-zappa-on-aws/zappainit.PNG)
 
 This command initializes Zappa and creates a `zappa_settings.json` file. 
 
@@ -267,8 +267,6 @@ Flowing from this instruction, select an environment name. We used the default n
 
 
 Here, Zappa created a bucket for handling uploaded files. Our Django application would be set in a private s3 bucket. Select the default.
-
-![/engineering-education/deploying-a-serverless-django-restapi-with-zappa-on-aws/zappa3.PNG](/engineering-education/deploying-a-serverless-django-restapi-with-zappa-on-aws/zappainit.PNG)
 
 
 Lastly, we deploy by running,
