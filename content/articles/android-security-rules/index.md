@@ -1,3 +1,20 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /android-security-rules/
+title: Getting the basics of Android security rules
+description: This tutorial will help the reader understand the basics of android security to build applications that are secure internally and ensure safety when communicating with other applications.
+author: collince-okeyo
+date: 2021-121-06T00:00:00-04:10
+topics: [Android]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/android-security-rules/hero.png
+    alt: Getting the basics of Android security rules Hero Image
+---
+
 Security is a fundamental factor in android applications. Maintaining the security of an android application ensures the confidentiality of users' data. This tutorial will look at how to secure an android application's data. Furthermore, we will see how to secure data while sharing it with other users.
 
 ### Reasons for Android security rules
@@ -146,7 +163,6 @@ HTTPS requests are used to send POST or GET requests to a remote or web server. 
 ```manifest
 <uses-permission android:name="android.permission.INTERNET"/>
 ```
-### Conclusion
-Android application security entails the security of data being shared across networks and the security of data stored on the Android device. To learn more about data security stored on the device, visit [here](https://developer.android.com/topic/security/best-practices). 
 
-Finally, this article only covered the most basic and frequently used security methods in this article.
+### Conclusion
+Android application security entails the security of data being shared across networks and the security of data stored on the Android device. This article only covered the most basic and frequently used security methods in this article.To learn more about data security stored on the device, visit [here](https://developer.android.com/topic/security/best-practices). 
