@@ -82,7 +82,7 @@ Gridbag layout is one of the most flexible but complex layout managers among all
 
 Gridbag layout represents the position of each component in the form of a table containing rows and columns. The component's positions are outlined using gridlines like in the image below.
 
-![Gridbag layout sketch](/working-with-gridbag-layout-in-java/1-layout-sketch.jpg)
+![Gridbag layout sketch](/engineering-education/working-with-gridbag-layout-in-java/1-layout-sketch.jpg)
 
 It is always advisable to draft out the components in a panel using gridlines before coding them out with Gridbag layout. This will give you a visual insight into the location of each component on the panel. As seen from the image above, some components occupy only one grid, while some occupy more than one. 
 
