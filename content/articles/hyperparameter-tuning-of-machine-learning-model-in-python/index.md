@@ -322,7 +322,7 @@ In this tutorial, we have learned about the different techniques used to perform
 
 After hyperparameter tuning, model accuracy increased from `87.5%` to `91%`. This shows that our model has improved and will produce an optimal solution. 
 
-You can find the model we built in this [here](https://colab.research.google.com/drive/1U2_6VtBLvgeTWYkq_M6Jzo54UgUrASZN?usp=sharing)
+You can find the model we built in this tutorial [here](https://colab.research.google.com/drive/1U2_6VtBLvgeTWYkq_M6Jzo54UgUrASZN?usp=sharing).
 
 ### References
 - [Python code notebook](https://colab.research.google.com/drive/1U2_6VtBLvgeTWYkq_M6Jzo54UgUrASZN?usp=sharing)
