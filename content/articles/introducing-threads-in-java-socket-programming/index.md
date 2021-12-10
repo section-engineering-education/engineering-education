@@ -46,136 +46,130 @@ import java.text.*;
 import java.util.*;
 import java.net.*;
 
-public class TestingServer
+public class Serverclass
 {
-    public static void main(String[] args) throws IOException
-    {   
-        ServerSocket ourNewSocketServer = new ServerSocket(3333);
-        // Forcing a client request into an unending loop
-        while (true)
-        {
-            Socket newsoct = null;            
-            try
-            {               
-            // receive inbound requests from clients
-                newsoct = ourNewSocketServer.accept();
-                
-                System.out.println("A new connection identified : " + newsoct);
-                     
-                DataInputStream sdtinput = new DataInputStream(newsoct.getInputStream());
+	public static void main(String[] args) throws IOException
+	{
+		ServerSocket myserverSocket = new ServerSocket(5056);
+		// getting client request
+		while (true)
+		{
+			Socket mynewSocket = null;
+			
+			try
+			{
+				// mynewSocket object to receive incoming client requests
+				mynewSocket = myserverSocket.accept();
+				
+				System.out.println("A new connection identified : " + mynewSocket);
+				DataInputStream ournewDataInputstream = new DataInputStream(mynewSocket.getInputStream());
+				DataOutputStream ournewDataOutputstream = new DataOutputStream(mynewSocket.getOutputStream());
+				
+				System.out.println("Thread assigned");
 
-                DataOutputStream sdtOutput = new DataOutputStream(newsoct.getOutputStream());
-                
-                System.out.println("Thread assigned");
-
-                
-                Thread ourThread = new ClientHandler(newsoct, sdtinput, sdtOutput);
-
-                ourThread.start();
-                
-            }
-            catch (Exception e){
-                newsoct.close();
-                e.printStackTrace();
-            }
-        }
-    }
+				Thread myThread = new ClientHandler(mynewSocket, ournewDataInputstream, ournewDataOutputstream);
+				// starting
+				myThread.start();
+				
+			}
+			catch (Exception e){
+				mynewSocket.close();
+				e.printStackTrace();
+			}
+		}
+	}
 }
 
-
-class OurClientHandler extends Thread
+class ClientHandler extends Thread
 {
-    DateFormat newDtformat = new SimpleDateFormat("yyyy/MM/dd");
+	DateFormat forourdate = new SimpleDateFormat("yyyy/MM/dd");
+	DateFormat forourtime = new SimpleDateFormat("hh:mm:myserverSocket");
+	final DataInputStream ournewDataInputstream;
+	final DataOutputStream ournewDataOutputstream;
+	final Socket mynewSocket;
+	
 
-    DateFormat newtimeformat = new SimpleDateFormat("hh:mm:ourNewSocketServer");
-    
-    final DataInputStream sdtinput;
+	// Constructor
+	public ClientHandler(Socket mynewSocket, DataInputStream ournewDataInputstream, DataOutputStream ournewDataOutputstream)
+	{
+		this.mynewSocket = mynewSocket;
+		this.ournewDataInputstream = ournewDataInputstream;
+		this.ournewDataOutputstream = ournewDataOutputstream;
+	}
 
-    final DataOutputStream sdtOutput;
-    final Socket newsoct;
-    // Constructor
-    
-    public OurClientHandler(Socket newsoct, DataInputStream sdtinput, DataOutputStream sdtOutput)
-    {
-        this.newsoct = newsoct;
+	@Override
+	public void run()
+	{
+		String receivedString;
+		String stringToReturn;
+		while (true)
+		{
+			try {
+				ournewDataOutputstream.writeUTF("Choose: [Date | Time]..\n"+
+							"Or Exit");
+				
+				// getting answers from client
+				receivedString = ournewDataInputstream.readUTF();
+				
+				if(receivedString.equals("Exit"))
+				{
+					System.out.println("Client " + this.mynewSocket + " sends exit...");
+					System.out.println("Connection closing...");
+					this.mynewSocket.close();
+					System.out.println("Closed");
+					break;
+				}
+				
+				// creating Date object
+				Date mynewDate = new Date();
 
-        this.sdtinput = sdtinput;
-        this.sdtOutput = sdtOutput;
-    }
-
-    @Override
-    public void run()
-    {
-        String newresuiltReceived;
-        String newresuiltToreturn;
-        //Implementing a loop
-        while (true)
-        {
-            try {
-
-                
-                sdtOutput.writeUTF("Choose[Date | Time].."+
-                            "Or Exit");
-                 newresuiltReceived = sdtinput.readUTF();
-                
-                if(newresuiltReceived.equals("Exit"))
-                {
-                    System.out.println("Connection closing...");
-                    this.newsoct.close();
-                    System.out.println("Closed");
-                    break;
-                }
-                
-                
-                Date newDt = new Date();
-                
-                // output stream dependent on the client's response
-                switch (newresuiltReceived) {
-                
-                    case "Date" :
-                        newresuiltToreturn = new.format(newDt);
-                        sdtOutput.writeUTF(newresuiltToreturn);
-                        break;
-                        
-                    case "Time" :
-                        newresuiltToreturn = new.format(newDt);
-                        sdtOutput.writeUTF(newresuiltToreturn);
-                        break;
-                        
-                    default:
-                        sdtOutput.writeUTF("Invalid input");
-                        break;
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-        
-        try
-        {
-           
-            this.sdtinput.close();
-            this.sdtOutput.close();
-            
-        }catch(IOException e){
-            e.printStackTrace();
-        }
-    }
+				switch (receivedString) {
+				
+					case "Date" :
+						stringToReturn = forourdate.format(mynewDate);
+						ournewDataOutputstream.writeUTF(stringToReturn);
+						break;
+						
+					case "Time" :
+						stringToReturn = forourtime.format(mynewDate);
+						ournewDataOutputstream.writeUTF(stringToReturn);
+						break;
+						
+					default:
+						ournewDataOutputstream.writeUTF("Invalid input");
+						break;
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		try
+		{
+			// closing resources
+			this.ournewDataInputstream.close();
+			this.ournewDataOutputstream.close();
+			
+		}catch(IOException e){
+			e.printStackTrace();
+		}
+	}
 }
+
 ```
 Output:
 ```bash
 A new connection identified : Socket[addr=/127.0.0.1,port=60536,localport=5056]
 Thread assigned
-Client Socket[addr=/127.0.0.1,port=60536,localport=5056] Exit...
+Client Socket[addr=/127.0.0.1,port=60536,localport=5056] sends exit...
 Connection closing...
 Closed
 ```
-### Client-Side Programming
-Traditional socket programming, as well as client-side programming, have several common features.
- - Socket Connection Procedure.
+ ### Client-Side Programming
+ There are many similarities between client-side programming and traditional mynewSocket programming which include:
+ - Establishing a Socket Connection.
  - Communication.
-Below is the code for the client:
+
  ```java
 import java.util.Scanner;
 import java.io.*;
@@ -228,7 +222,7 @@ public class NewClient
 
  ```
  Output:
-```
+```bash
 Choose[Date | Time]..
 Or Exit 
 Date
