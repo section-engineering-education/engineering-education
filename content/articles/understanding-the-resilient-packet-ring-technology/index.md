@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /understanding-the-resilient-packet-ring-technology/
 title: Understanding the Resilient Packet Ring Technology
-description: This article provides a basic understanding of the resilient packet ring technology. It provides an overview of fundamental aspects such as the traffic queues, class of service, adopted types of transmission media, and the applications of this technology. 
+description: This article will provide a basic understanding of resilient packet ring technology. It will go through fundamental aspects such as the traffic queues, class of service, adopted types of transmission media, and the applications of this technology. 
 author: eunice-wanjiku
 date: 2021-12-09T00:00:00-14:00
 topics: [Networks]
@@ -18,16 +18,16 @@ RPR is standardized by IEEE 802.17 and is a protocol for the transmission of dat
 <!--more-->
 With the deployment of resilient packet rings, the network has better utilization of bandwidth, throughput, higher deployment speed, optimization of operational cost and equipment. RPR was developed because the traditional ethernet cannot handle or offer business-class reliability. Also, it cannot deal with latency adequately and the quality of services for voice packets.  
 
-In this article, we will look at the basics of the resilient packet ring technology. We will go through an overview of this technology, traffic queues, adopted types of transmission media, and its key applications. 
+In this article, we will look at the basics of resilient packet ring technology. We will go through an overview of this technology, traffic queues, adopted types of transmission media, and its key applications. 
 
 ### Table of contents
-- [Introduction](#introduction)
-- [Basics of Resilient Packet Ring](#basics-of-resilient-packet-ring)
-- [Traffic queues and Class of Service in Resilience Packet Ring](#traffic-queues-and-class-of-service-in-resilience-packet-ring)
-- [Adopted types of Transmission Media](#adopted-types-of-transmission-media)
-- [Application of Packet Ring Technology](#application-of-packet-ring-technology)
-- [Limitations related to Resilient Packet Ring](#limitations-related-to-resilient-packet-ring)
+- [Basics of Resilient Packet Ring (RPR)](#basics-of-resilient-packet-ring-rpr)
+- [Traffic queues and class of service in Resilience Packet Ring](#traffic-queues-and-class-of-service-in-resilience-packet-ring)
+- [Adopted types of transmission media](#adopted-types-of-transmission-media)
+- [Applications of Packet Ring Technology](#applications-of-packet-ring-technology)
+- [Limitations of Resilient Packet Ring](#limitations-of-resilient-packet-ring)
 - [Conclusion](#conclusion)
+- [Resources](#resources)
 
 ### Basics of Resilient Packet Ring (RPR)
 A resilient packet ring station is established where fiber installation is done in a ringway. It has developed from Ethernet and SONET that were previously installed. It is generally a media access control packet that helps in numerical multiplexing over spatial reuse infrastructure. The spatial reuse infrastructure allows continued utilization of freed space to maximize the traffic being carried across. It meets the packet-based metropolitan area network requirements. 
@@ -74,7 +74,7 @@ RPR technology aims at providing users with smart metro technology that offers t
 
 The resilient packet ring technology is complementary to various Layer 1 technologies such as SONET. It operates at Layer 2 and can function over Ethernet or SONET. It helps service providers to ensure scalability and have efficient metro networks while using physical layers such as Ethernet. It is easy to integrate this technology with the other existing technologies. This powers it into offering a significant-based approach, building efficient metro networks.   
 
-### Relevant sources
+### Resources
 - [RPR](https://www.pcmag.com/encyclopedia/term/rpr)
 - [Resilient Packet Ring basics](https://www.networkworld.com/article/2339177/resilient-packet-ring-basics.html)
 - [Resilient Packet Ring (RPR) - IEEE 802.17](https://www.tutorialspoint.com/resilient-packet-ring-rpr-ieee-802-17)
