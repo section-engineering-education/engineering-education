@@ -6,12 +6,12 @@ url: /how-intelligent-automation-is-powering-machine-vision/
 title: How Intelligent Automation is Powering Machine Vision
 description: This article will look at intelligent automation and how it is relevant to machine vision. It will also discuss the computer vision technology used and the future of intelligent automation.
 author: nelly-atieno
-date: 2021-12-07T00:00:00-14:00
+date: 2021-12-11T00:00:00-01:38
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /how-intelligent-automation-is-powering-machine-vision/hero.png
+  - url: /how-intelligent-automation-is-powering-machine-vision/hero.jpg
     alt: Intelligent Automation Example Image
 ---
 Incorporating [artificial intelligence](/engineering-education/differences-between-artificial-intelligence-machine-learning-and-deep-learning/) into the day-to-day operations of firms has become increasingly common. Having intelligent automation running operations is advantageous in many ways. It brings efficiency and effectiveness to a business's operations. Applications of intelligent automation today include machine vision, a key technology in the business world.
@@ -63,7 +63,9 @@ Farmers use the computer vision system to harvest their farm products quickly. A
 In India, for example, computer vision has been used to [harvest grapes](https://www.roboticsbusinessreview.com/agriculture/tabletop-grapes-picked-robots-india-virginia-tech/). AI-powered computer vision robots grade the quality of the fruits before picking them. Computer vision also facilitates supervision of the crop in the field using drones. Drones can detect unfavorable weather conditions for their growth, ensuring that the farmers take appropriate measures to avoid loss of yields. Besides, drones fitted with computer vision also help detect ailing crops for spraying purposes.
 
 ### The future of computer vision technology and intelligent automation
-With time, computer vision and intelligent automation technologies will become increasingly inseparable. Companies like [Tesla](https://www.tesla.com/) and [Waymo](https://waymo.com/) are venturing into autonomous cars, giving a glimpse of what the future for these technologies could become. Self-driving systems use computer vision coupled with artificial intelligence to assume the function of a driver. They detect movements in 360 degrees to watch out for other vehicles, pedestrians, and cyclists. Also, they follow the traffic flow and regulations. However, there are some challenges with autonomous cars, as noted from a [driverless Tesla car that caused crashes](https://www.nytimes.com/2021/04/18/business/tesla-fatal-crash-texas.html). The advancements made so far indicate that self-driving is possible with further improvements in computer vision and intelligent automation.
+With time, computer vision and intelligent automation technologies will become increasingly inseparable. Companies like [Tesla](https://www.tesla.com/) and [Waymo](https://waymo.com/) are venturing into autonomous cars, giving a glimpse of what the future for these technologies could become.
+
+Self-driving systems use computer vision coupled with artificial intelligence to assume the function of a driver. They detect movements in 360 degrees to watch out for other vehicles, pedestrians, and cyclists. Also, they follow the traffic flow and regulations. However, there are some challenges with autonomous cars, as noted from a [driverless Tesla car that caused crashes](https://www.nytimes.com/2021/04/18/business/tesla-fatal-crash-texas.html). The advancements made so far indicate that self-driving is possible with further improvements in computer vision and intelligent automation.
 
 Computer vision and technology combined with intelligent automation will guarantee an automated future. Companies will no longer rely on human labor to drive a competitive advantage anymore. Instead, employees will be overseeing the running of automated systems. The manufacturing processes will become more efficient because of improved data collection and analysis. It will become easier to track products during their assembly and speed up their packing and distribution.
 
