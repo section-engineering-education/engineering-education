@@ -43,7 +43,7 @@ To create a Facebook manager account, go to https://business.facebook.com/overvi
 Set up a FAN account using the business manager account you created to make sure they are all integrated.
 
 #### Step 4 Build Application properties for your account
-Once you have created your FAN account, click on the extension/dropdown button at the top and select the monetization manager. Click on integration>properties, key in your Application name and id then select your platform, either Android or iOS.
+Once you have created your FAN account, click on the extension/dropdown button at the top and select the monetization manager. Click on `integration` then `properties`, key in your application name and id then select your platform, either Android or iOS.
 
 If you don't have a ready App, follow these [directives](#integration-in-android-studio) to create a simple test application.
 
