@@ -32,7 +32,7 @@ Before beginning the integration process, you have to first set up your Facebook
 The steps below will guide you in setting up your account.
 
 #### Step 1. **Set-up a  Business Page**
-The first and foremost step is to set up a business page where your ads will appear. You can follow this short [video](https://www.youtube.com/watch?v=fzW4eHQQLFk) to see how you can create your page.
+The first step is to set up a business page where your ads will appear. You can follow this short [video](https://www.youtube.com/watch?v=fzW4eHQQLFk) to see how you can create your page.
 
 #### Step 2 **Set up a Facebook Manager  account**
 To create a Facebook manager account, go to https://business.facebook.com/overview to first create a Facebook manager account as shown in the picture below.
