@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /getting-started-with-multi-task-learning-(mtl)-in-deep-neural-networks/
 title: Getting Started with Multi-Task Learning (MTL) in Deep Neural Networks
-description: In this article, we will go through the basics of multi-task learning (MTL), its mechanisms and real-life applications. We will also look at how you can get started with MTL in deep neural networks. 
+description: In this article, we will go through the basics of multi-task learning (MTL), its mechanisms, and real-life applications. We will also look at how you can get started with MTL in deep neural networks. 
 author: purity-mutunga
 date: 2021-12-09T00:00:00-14:00
 topics: [Networks]
@@ -106,12 +106,12 @@ In many object identification systems, the use of alternative computer vision te
 ### Conclusion
 In this article, we have looked at how you can get started with multi-task learning in deep neural networks. To summarize;
 1. We have looked at an overview of MTL.
-2. We have learned about the two MTL methods for deep learning. 
+2. We have learned about the two main MTL methods for deep learning. 
 3. We have gained an overview of the main mechanisms of MTL.
 4. We have gained an understanding of the non-neural models and some auxiliary tasks.
 5. We have learned the real-life applications of MTL.
 
-I hope this article helps you implement MTL by illuminating how MTL works. 
+I hope this article helps you implement MTL by illuminating how it works. 
 
 ### Further reading
 1. [How to Do Multi-Task Learning Intelligently](https://thegradient.pub/how-to-do-multi-task-learning-intelligently/)
