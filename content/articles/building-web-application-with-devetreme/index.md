@@ -19,7 +19,7 @@ I recommend you try to use DevExtreme with your favorite Javascript framework so
 ### Download DexExpress
 To finally use Devextreme you have to download [DevExpress](https://www.devexpress.com/) because it's one of the Devexpress components. You can find the link to download it [here](https://js.devexpress.com/Download/)
 
-**Note** DevExpress is not free, but to start, you can use the free trial version.
+> DevExpress is not free, but to start, you can use the free trial version.
 
 ### Requirements for DevExtreme
 - Node.js v12.6.0 or later
