@@ -1,13 +1,15 @@
 [Ktor](https://ktor.io/) is a server-side framework that helps us build applications in Kotlin. It is a modern asynchronous framework built on top of Kotlin coroutines. It is not only a back-end framework with but also a client, like a network library such as [OkHttp](https://square.github.io/okhttp/) and [Retrofit](https://square.github.io/retrofit/). We can use it to make network requests HTTP requests to an API to get the response back to an application. Adding networking capabilities to an application developed with a traditional UI toolkit or Jetpack Compose is straightforward with the [Ktor client](https://ktor.io/docs/getting-started-ktor-client.html).
 
-One of the closest relatives of Ktor is Retrofit. Retrofit is also used to consume and API data in android. Retrofit is a java based android library. Retrofit can only be used to develop android based applications. However, it can also be used to create an IOS application. Nevertheless, the Retrofit implementation in these cross platforms remains different.
+One of the closest relatives of Ktor is Retrofit, which is also used to consume and API data in android. Retrofit is a java based android library. It can only be used to develop android based applications. However, it can also be used to create IOS applications. Nevertheless, the Retrofit implementation in these cross platforms remains different.
 
-On the other hand, Ktor is an asynchronous HTTP client that runs on several platforms. Ktor client is designed on various platforms, such as Android, Native (iOS and desktop), JVM, and JavaScript. Ktor is designed on Kotlin multi-platform mobile (KMM). This means you can create both iOS and Android applications with Kotlin and share a huge part of Kotlin code for both platforms. The Kotlin multi-platform mobile uses Kotlin as the base code. This means you have to use the Kotlin libraries if you want to share these codes across android and iOS. Ktor client is a Kotlin based library, thus making it easier to implement the KMM principles.
+On the other hand, Ktor is an asynchronous HTTP client that runs on several platforms. Ktor client is designed on various platforms, such as Android, Native (iOS and desktop), JVM, and JavaScript. Ktor is designed on Kotlin multi-platform mobile (KMM). This means you can create both iOS and Android applications with Kotlin and share a huge part of Kotlin code for both platforms.
+
+The Kotlin multi-platform mobile uses Kotlin as the base code. This means you have to use the Kotlin libraries if you want to share these codes across android and iOS. Ktor client is a Kotlin based library, thus making it easier to implement the KMM principles.
 
 ### Goal
-This guide will help you learn more about Ktor. We will set up Ktor client to make HTTP Requests to a JSON API and display the data response using android studio and Jetpack Compose UI. We will use Jetpack Compose to set up views. This will allow us to have lesser boilerplate codes while using the Ktor HTTP client. This streamlines and speeds Android UI development.
+This guide will help you learn more about Ktor. We will set up Ktor client to make HTTP Requests to a JSON API and display the data response using android studio and Jetpack Compose UI. We will use Jetpack Compose to set up composables. This will allow us to have lesser boilerplate codes while using the Ktor HTTP client. This streamlines and speeds Android UI development.
 
-We will process requests and responses for [this product's JSON data](https://fakestoreapi.com/products") and show the results to the android back-end.
+We will process requests and responses for [this product's JSON data](https://fakestoreapi.com/products) and show the results to the android back-end.
 
 ### Prerequisites
 To follow along with this tutorial, the following requirements will be essential.
@@ -36,7 +38,7 @@ Let's now add all the necessary libraries that we need to process and display th
 
 Ktor has a number of libraries that you can see depending on you processing your API data. In this app, we will use the libraries below;
 
-```java
+```kotlin
 //Ktor dependencies
 def ktor_version = '1.6.4'
 implementation "io.ktor:ktor-client-core:$ktor_version"
@@ -67,14 +69,14 @@ We have set the Ktor serialization dependencies to serialize our data. This will
 
 Thus we will use the Kotlinx serialization plugin to serialize and deserialize JSON data.
 
-```java
+```kotlin
 def serialization_version = '1.3.0'
 implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:$serialization_version"
 ```
 
 We also need to apply these plugins in your `app.gradle` file plugin scaffold.
 
-```java
+```kotlin
 plugins {
     id 'org.jetbrains.kotlin.plugin.serialization'
 }
@@ -84,7 +86,7 @@ plugins {
 
 [Coil](https://coil-kt.github.io/coil/) Fast, lightweight, and easy to use image loading dependency android backed by Kotlin Coroutines. The data we are using has image URLs. To load these images and show them to our application using Ktor, we need an additional library to parse and load the responses with image URLs.
 
-```java
+```kotlin
 //Coil Image
 implementation "io.coil-kt:coil-compose:1.4.0"
 ```
@@ -93,16 +95,14 @@ implementation "io.coil-kt:coil-compose:1.4.0"
 
 To use the above Kotlinx plugin, we need to set up a classpath so that android can find this plugin and use it. So add the following dependency in your `build.gradle` project file.
 
-```java
+```kotlin
 classpath "org.jetbrains.kotlin:kotlin-serialization:1.5.21"
 ```
 
 Once the above processes are complete, click `sync now` to download and set up the dependencies and jump into structuring our client app.
 
 ### Setting up data models
-A model is a data transfer object. It has data classes that represent what we get from an API. We will then process this returned data and show them in Jetpack Compose composable. To set up this data transfer object, create a `Models` package. Inside this package, create a new Kotlin data class and name it `ResponseModel`. Here we will represent the data that we want to get from the API.
-
-![api-data](/engineering-education/http-requests-with-ktor-client-in-android-jetpack-compose/api-data.png)
+A model is a data transfer object. It has data classes that represent what we get from an API. We will then process this returned data and show them in Jetpack Compose composable. To set up this data transfer object, create a `Models` package. Create a new Kotlin data class inside this package and name it `ResponseModel`. Here we will represent the data that we want to get from [this API](https://fakestoreapi.com/products).
 
 In this application, we will only get the product's `title`, `body`, and the `image` URL.
 
@@ -119,7 +119,7 @@ data class ResponseModel(
 
 Note that we are denoting this class as serializable using `@Serializable`. With that, the serialization Kotlin plugin knows that we want to serialize this class.
 
-In your `Models` package, create another data class file and name it `RequestModel`. This will represent the request data that we want to send to the server.
+Create another data class file in your `Models` package and name it `RequestModel`. This will represent the request data that we want to send to the server.
 
 ```kotlin
 @Serializable
@@ -131,7 +131,7 @@ data class RequestModel(
 ```
 
 ### Setup the API endpoint
-We need to specify the endpoint where this data is coming from. This is just a basic URL that will help us access this JSON data. Go ahead and create a `Network` package. Inside this package, create a new Kotlin Object file and name it `ApiRoutes`. This is how we will set out the API endpoint.
+We need to specify the endpoint where this data is coming from. This is just a basic URL that will help us access this JSON data. Go ahead and create a `Network` package. Create a new Kotlin Object file inside this package and name it `ApiRoutes`. This is how we will set out the API endpoint.
 
 ```kotlin
 object ApiRoutes {
@@ -195,7 +195,7 @@ interface ApiService {
 
 Here we are creating two functions, `getProducts()` to return the list of products and `createProducts()` to create a product. So we send a data request to the server and then respond that the `createProducts()` function will return.
 
-We then create an instance of an HTTP client that defines basic information and features about the Ktor client. For example, we are setting the Ktor logging feature. This logs all the Ktor requests and responses that help you while debugging your application. We are adding the `KotlinxSerializer` to serialize and deserialize the returned JSON data. Also, if the server took a long time to respond, we are adding `HttpTimeout` that defines the time the server takes to receive a Request, connect to the server timeout, and Socket (read and write) timeout.
+We then create an instance of an HTTP client that defines basic information and features about the Ktor client. For example, we are setting the Ktor logging feature. This logs all the Ktor requests and responses that help you while debugging your application. We add the `KotlinxSerializer` to serialize and deserialize the returned JSON data. Also, if the server took a long time to respond, we add `HttpTimeout` that defines the time the server takes to receive a Request, connect to the server timeout, and Socket (read and write) timeout.
 
 Now we need to implement the actual network call using the Ktor client. Create a new `ApiServiceImpl` Kotlin class (call it `ApiServiceImpl`) inside the `Network` package, as shown below.
 
@@ -255,7 +255,7 @@ We have the data instance ready, we have processed all the requests and response
 
 Typically to display a large number of items in an android application, you would set up a Recycler View adapter. With Jetpack Compose, you don't need to set up this adapter since you won't use any XML UIs. Jetpack Compose allows you to use `LazyColumn` that replaces the typical Recycler View adapter. You don't even need a View holder class since Jetpack Compose allows you to achieve the same thing we just a few lines of code. Check this guide to learn more about the [Jetpack Compose LazyColumn](/engineering-education/building-scrollable-and-lazy-components-in-jetpack-compose/)
 
-Lets we how we can set up this list of products using the Jetpack Compose `LazyColumn`. `LazyColumn` allows you to display list items in a vertical orientation. And if you want to achieve the horizontal orientation, you use `LazyRow`.
+Let's see how we can set up this list of products using the Jetpack Compose `LazyColumn`. `LazyColumn` allows you to display list items in a vertical orientation. And if you want to achieve the horizontal orientation, you use `LazyRow`.
 
 First, we need to access our client data. Just above the `onCreate()`, add our API data as shown below;
 
@@ -345,6 +345,8 @@ First, we will process the returned data and get the value of the `image`. The r
 If it returns `false`, we skip executing the request and builder an optional lambda) configure the request, and set an error drawable resources. The Text composable will load the values of product `title` and `description`.
 
 The app is now ready, and you can run it to test if everything works as expected.
+
+![ktor-client](/engineering-education/http-requests-with-ktor-client-in-android-jetpack-compose/ktor-client.png)
 
 ### Conclusion
 Ktor is used for HTTP requests such as get, post, delete, and update. Ktor is a straightforward, easy-to-use framework language that is entirely built on coroutines. It enables asynchronous programming with minimal boilerplate code.
