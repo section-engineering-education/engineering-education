@@ -1,21 +1,21 @@
 ### Introduction
-DevOps is practices or stages that every application will go through before and after deployment in the industry. This ensures both continuous integration and deployment of the application, by allowing a series of updates in the code repository.
+DevOps is practices or stages that every application will go through before and after deployment in the industry. It ensures continuous integration and deployment of the application. The CI-CD automates processes of changes in the code repository.
 
-There are varieties of tools that can be used to automate these practices. All stages of DevOps will be defined in this tutorial. 
+The software development life cycle called `SDLC` in conjunction with the operations cycle makes the development and operations in the industry. 
 
-Docker packages applications into images and stores them as containers with their configurations defined in the `DockerFile`. These images are being managed with cloud build and container registry. These tools are the set of infrastructures given by the Google Cloud Platform.
+Docker packages applications into images and stores them as containers with their configurations defined in the `DockerFile`.  Both the cloud build and container registry are used to manage the docker images built. These tools are the set of infrastructures given by the Google Cloud Platform.
 
 ### Table of Contents
 - [Prerequisites](#prerequisites)
 - [Objectives](#objectives)
 - [Define the stages of DevOps pipelines](#define-the-stages-of-devOps-pipelines)
-- [Create a Git Repository](#create-a-git-repository)
+- [Make a repository for the application](#make-a-repository-for-the-application)
 - [Create a Python application](#create-a-simple-python-application)
-- [Test your Web Application in Cloud Shell](#test-your-web-application-in-cloud-shell)
-- [Define a Docker build](#define-a-docker-build)
-- [Manage Docker images with Cloud Build and Container Registry](#manage-docker-images-with-cloud-build-and-container-registry)
-- [Automate builds with Triggers](#automate-builds-with-triggers)
-- [Test your build changes](#test-your-build-changes)
+- [Cloud Shell usages for testing](#cloud-shell-usages-for-testing)
+- [Building the Docker images](#building-the-docker-images)
+- [Using Container Registry to manage images](#using-conatiner-registry-to-manage-images)
+- [Processing automation with triggers](#processing-automation-with-triggers)
+- [Build changes testing](#build-changes-tssting)
 - [Conclusion](#conclusion)
 
 
@@ -29,19 +29,19 @@ To follow along with this tutorial with ease, one should meet the following requ
 
 
 ### Objectives
-In this tutorial, we will be learning how to automate DevOps pipelines using the cloud build. You will learn how to perform the following tasks;
+In this tutorial, we will be learning how to automate DevOps pipelines using the cloud build. You will gain experience with the following;
 
 - Define the stages of DevOps pipelines 
-- Create a Git Repository
+- Make a repository for the application
 -  Create a Python application
--  Test your Web Application in Cloud Shell
--  Define a Docker build
-- Manage Docker images with Cloud Build and Container Registry
-- Automate builds with Triggers
-- Test your build changes
+-  Cloud Shell usages for testing
+-  Building the Docker images
+- Using Container Registry to manage images
+- Processing automation with triggers
+- Build changes testing
 
 
-### Define the stages of DevOps pipelines 
+### Define the stages of DevOps pipelines
 There are different stages involved in building pipelines from development to production. These are defined development and operations pipelines in the industry. The picture below describes all the pre-defined;
 
 ![DevOps Stages](/engineering-education/devops-pipelines-automation-with-cloud-build-and-triggers/stages.png)
@@ -59,7 +59,7 @@ In this stage, the application developed shall be packaged and built into images
 ##### `Test`
 A Series of tests will run through the application for better performance. Tests like `unit`, `integrating` etc will be conducted during development.
 
-Other tests can be accomplished by the testers and quality assurance engineers. Several tools are capable of doing this but the most popular is `Selenium`. Other stages are done by the operation team and they are as follows;
+Other tests can be accomplished by the testers and quality assurance engineers. `Selenium` is the most popular continuous testing framework used in the industry. 
 
 ##### `Release`
 This is where the stage of continuous integration begins. This stage will be repeated countless times whenever there is any update in the application. The popular tools used for this in the industry are `Jenkins`, `GitHub Actions`, `Team City`, and more. 
@@ -80,7 +80,7 @@ All of these stages aside the coding and planning parts can be done in the cloud
 In this tutorial, I am going to walk you through these pipelines by building a demo application. You will experience the development and operation part of `DevOps` architecture.  
 
 
-### Create a git repository
+### Make a repository for the application
 
 First, you will create a free trial account on the google cloud console. This free account will run through the span of a year with a sum of the amount for billing purposes. Click on the link below to the create account;
 
@@ -88,11 +88,11 @@ First, you will create a free trial account on the google cloud console. This fr
 
 Having successfully created the account, you will be redirected to the dashboard page. This looks like the page in the image below;
 
-![Dashboard](/engineering-education/devops-pipelines-automation-with-cloud-build-and-triggers/dashboard.png)
+![Cloud Console Dashboard](/engineering-education/devops-pipelines-automation-with-cloud-build-and-triggers/dashboard.png)
 
 Before any resources can be consumed in the cloud, a project must be created. You can create the project by clicking on the dropdown menu in the navigation bar. Then tap on the `New Project` button inside the pop-up page.
 
-Note that every project created is under an organization which is optional when creating the project. A project has both `name` and an `ID`, and such id is automatically assigned using the name provided.
+Note that every project created is under an organization, while folders wrap up the project. A project has both `name` and an `ID`, and such id is automatically assigned using the name provided.
 
 Furthermore, we will make use of the cloud source repository provided. The cloud source repository is used to keep track of the code repository while in the cloud. This provides the same functionality with other platforms like 'Github', `Gitlab`, `Bitbucket`, and more.
 
@@ -100,15 +100,14 @@ Eventually, you will create a build trigger that starts a continuous integration
 
 -  In the cloud console menu, click `Source Repositories`.
 -  Click on the button `Add repository`.
-- Select Create new repository and click Continue.
+- Select Create a new repository and click Continue.
 -  Name the repository `devops-repo`
 -  Select your current project ID from the list.
 -  Click Create.
 
-The image below is the redirection page having created the repository. Return to the Source Repositories page and refresh the repository to verify that your changes were uploaded.
+The image below is the redirection page having created the repository. Refresh the repository to verify that your changes were uploaded.
 
 ![Source Repository](/engineering-education/devops-pipelines-automation-with-cloud-build-and-triggers/sourcerepo.png)
-
 
 -  Return to the Cloud console dashboard, and click `Activate Cloud Shell` in the top menu bar.
 
@@ -131,7 +130,7 @@ We will create a Flask application for demonstration. The application will be go
 
 - In the Cloud Shell, click `Open Editor` to open the code editor.
 -  Select the `learning-devops > devops-repo` folder in the explorer tree on the left.
--  On the File menu, click `New File` and name the file `main.py`
+-  Click `New File` and name the file `main.py`.
 -  Paste the following into the file you just created:
 
 ```Python
@@ -147,15 +146,13 @@ if __name__ == "__main__":
 - Save your changes.
 -  Right-click on the devops-repo folder and add a new folder called templates.
 -  In that folder, add a new file called `layout.html`.
--  Add the following code and save the file as you did before:
+- Ensure the file is saved having added the below codes.
 
 ```HTML
 <!doctype html>
 <html lang="en">
 <head>
     <title>{{model.title}}</title>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 </head>
 <body>
     <div class="container">
@@ -172,48 +169,46 @@ if __name__ == "__main__":
 ```HTML
 {% extends "layout.html" %}
 {% block content %}
-<div class="jumbotron">
-    <div class="container">
+<div>
+    <div>
         <h1>{{model.title}}</h1>
     </div>
 </div>
 {% endblock %}
 ```
--  In Python, application prerequisites are managed using pip. Now you will add a file that lists the requirements for this application. In the `devops-repo` folder `not the templates folder`, create a file called `requirements.txt`.
+-  In Python, application dependencies are managed using the `pip` package manager. Now you will add a file that lists the requirements for this application. In the `devops-repo` folder `not the templates folder`, create a file called `requirements.txt`.
 - Add and save the command below to that file.
 
 ```Python
 Flask==1.1.2
 ```
--  You have some files now, so save them to the repository. First, you need to add all the files you created to your local Git repo. In Cloud Shell, enter the following code:
+- In Cloud Shell, type the following code:
 
 ```bash
 cd ~/learning-devops/devops-repo
  git add --all
 ```
--  To commit changes to the repository, you have to identify yourself. Enter the following commands, but with your information (you can just use your Gmail address or any other email address):
+-  To commit changes to the repository, you have to identify yourself.
 
 ```bash
-git config -g user.email "you@example.com"
-git config -g user.name "Your Name"
+git config -g user.email "your-mail-here"
+git config -g user.name "Your Name Here"
 ```
 -  Now, commit the changes locally:
 
 ```bash
 git commit -a -m "Initial Commit"
 ```
--  You committed the changes locally, but have not updated the Git repository you created in Cloud Source Repositories. Enter the following command to push your changes to the cloud:
-
+-  You committed the changes locally, but have not updated the Git repository you created in Cloud Source Repositories.
 ```bash
 git push origin master
 ```
 Note:) Refresh the Source Repositories web page. You would see the files created.
 
 
-### Test your Web application in the Cloud Shell
-You need to make sure the code works. It can be tested using Cloud Shell. The following are the steps for testing with the shell;
-
--  Back in Cloud Shell, make sure you are in your application's root folder, and then install the Flask framework using pip:
+### Cloud Shell usages for testing
+The application can be tested using Cloud Shell. The following are the steps for testing with the shell;
+- Back in Cloud Shell, make sure you are in your application's root folder, and then install the Flask framework using pip:
 
 ```bash
 cd ~/learning-devops/devops-repo
@@ -224,15 +219,14 @@ sudo pip3 install -r requirements.txt
 ```
 python3 main.py
 ```
-Note:} The program is configured to run on port 8080. You can see this if you look at the main.py file. At the bottom, when the app server runs, the port is set.
-
--  To see the program running, click `Web Preview` in the toolbar of Cloud Shell. Then, click `Preview on port 8080`. The program would be displayed in a new browser tab.
+Note:} The server is configured to run on port `8080`. At the bottom, when the app server runs, the port is set.
+- To see the program running, click `Web Preview` in the toolbar of Cloud Shell. Then, click `Preview on port 8080`. The program would be displayed in a new browser tab.
 
 ![Result of deployment](/engineering-education/devops-pipelines-automation-with-cloud-build-and-triggers/result1.png)
 
 -  To stop the program, return to the Cloud Console and press Ctrl+C in Cloud Shell.
--  In the code editor, expand the `learning-devops/devops-repo` folder in the explorer pane on the left. Then, click main.py to open it.
--  In the main() function, change the title to something else (whatever you want), as shown below.
+-  In the code editor, expand the `learning-devops/devops-repo` folder in the explorer pane on the left, and open the main.py file.
+-  Change the title to something else as shown below.
 
 ```Python
 @app.route("/")
@@ -242,30 +236,26 @@ def main():
 ```
 
 -  On the Code Editor toolbar, on the File menu, click Save to save your change.
--  In the Cloud Shell window at the bottom, commit your changes using the following commands:
-
+- Navigate to the Cloud Shell and commit the changes to the repository.
 ```bash
 cd ~/gcp-course/devops-repo
-git commit -a -m "Second Commit"
+git commit -a -m "committing another changes"
 ```
-
 -  Push your changes to the cloud using the following command:
 
 ```bash
 git push origin master
 ```
-
 -  Return to the Source Repositories page and refresh the repository to verify that your changes were uploaded.
 
 
-### Define a Docker Build
-The first step to using Docker is to create a file called `DockerFile`. This file defines how a Docker container is constructed. It also described the various dependencies required by the application before it starts working locally.
+### Building the Docker images
+The first step to using Docker is to create a file called `DockerFile`. This file defines how a Docker container is made. It also described the various dependencies required by the application before it starts working locally.
 
 The following are the set of commands required by our flask application inside the DockerFile;
 
 - In the Cloud shell code editor, expand the `learning-devops/devops-repo` folder.  Click on `New File` and the name it `DockerFile`. 
--  At the top of the file, enter the following;
-
+- Specify the Python image as below at the topmost of the file.
 ```
 FROM python:3.7
 ```
@@ -290,7 +280,7 @@ ENV PORT=80
 CMD exec gunicorn --bind :$PORT --workers 1 --threads 8 main:app
 ```
 The environment variable sets the port that the application will run on `in this case, 80`. The last line runs the web app using the gunicorn web server.
--  Verify that the completed file looks as follows and save it:
+-  Ensure that the `DockerFile` looks as follows then save:
 
 ``` dockerfile
     FROM python:3.7
@@ -304,13 +294,13 @@ The environment variable sets the port that the application will run on `in this
 
 
 ### Manage Docker images with Cloud Build and Container Registry
-The Docker image would be created and store in the registry. This image would be wrapped up with the start-up commands in the container.
+The Docker image would be created and stored in the registry. This image would be wrapped up with the start-up commands in the container.
 
 The Cloud build is the infrastructure provided by the Google cloud platform for building Docker images. While the Container Registry stores the images built and can be accessed from there. You will use Cloud Build and Container Registry.
 
 Note:) The Docker image can also be stored in the Docker Hub and then be pulled from there.
 
--  Return to Cloud Shell. Make sure you are in the right folder:
+-  Return to Cloud Shell and navigate to the file below. 
 ```bash
 cd ~/learning-devops/devops-repo
 ```
@@ -323,7 +313,7 @@ echo $DEVSHELL_PROJECT_ID
 gcloud builds submit --tag gcr.io/$DEVSHELL_PROJECT_ID/devops-image:v0.1 .
 ```
 Notice the environment variable in the command. The image will be stored in Container Registry.
--  If asked to enable Cloud Build in your project, type Yes. Wait for the build to complete successfully.
+-  If asked to enable Cloud Build in your project, type `Yes` and let it build successfully.
 
 Note:) If you receive the error `INVALID_ARGUMENT: unable to resolve source` wait a few minutes and try again.
 In Container Registry, the image name always begins with `gcr.io/`, followed by the project ID of the project you are working in, followed by the image name and version.
@@ -380,7 +370,7 @@ Note:) The image below describes the way your build configurations will be.
 - To test the trigger, click `Run` and then `Run trigger`.
 -  Click the `History` link and you should see a build running. Wait for the build to finish, and then click the link to it to see its details.
 - Scroll down and look at the logs. The output of the build here is what you would have seen if you were running it on your machine.
-- Return to the Container Registry service. You should see a new folder, `devops-repo`, with a new image in it.
+- In the Container registry, you should see a new folder `devops-repo` with the new image.
 - Return to the Cloud Shell Code Editor. Find the file main.py in the `learning-devops/devops-repo` folder.
 - In the main() function, change the title property to `This is from build trigger.` as shown below:
 
@@ -402,18 +392,20 @@ git push origin master
 - Return to the Cloud Console and the Cloud Build service. You should see another build running.
 
 
-### Testing Build Changes
-1. When the build completes, click on it to see its details. Under Execution Details, copy the image link, the format should be `gcr.io/<your-project-id>/devops-repoxx34345xx`.
-2. Go to the Compute Engine service. As you did earlier, create a new virtual machine to test this image. Click on the box to deploy a container image to the virtual machine, and paste the copied image.
-3. Select Allow HTTP traffic.
-4. When the new machine is created, you can test your changes by requesting the virtual machine's external IP address in your browser. Your new message would be displayed.
+### Build changes testing
+- When the build completes, click on it to see its details. Under Execution Details, copy the image link, the format should be `gcr.io/<your-project-id>/devops-repoxx34345xx`.
+- Go to the Compute Engine service. As you did earlier, create a new virtual machine to test this image.  
+- Click on the box to deploy a container image to the virtual machine, and paste the copied image.
+- Select Allow HTTP traffic.
+- When the new machine is created, you can test your changes by requesting the virtual machine's external IP address in your browser. Your new message would be displayed.
 
 Note:) You might have to wait a few minutes after the VM is created for the Docker container to start.
 
-### Conclusion
-In this tutorial, you built a continuous integration pipeline using the Google Cloud tools like Cloud Source Repositories, cloud build, uild triggers and container registry. You learned how the automation of pipelines works using the build triggers when there is update in the code repository. You also learned about the basics commands with git and how to spin up the Flask server from ground up. 
 
-### Reference Codes
-[Repository](https://github.com/damikanye/flaskproject)
+### Conclusion
+In this tutorial, you built a continuous integration pipeline using the Google Cloud tools like Cloud Source Repositories, cloud build, build triggers, and container registry. You learned how the automation of pipelines works using the build triggers when there is an update in the code repository. You also learned about the basics commands with git and how to spin up the Flask server from the ground up. 
+
+### Reference Repository
+[Code Repository](https://github.com/damikanye/flaskproject)
 
 Happy coding!
