@@ -340,11 +340,7 @@ Here is a video of the app in action:
 <iframe width="727" height="409" src="https://www.youtube.com/embed/wXfwsipIthE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
  
 ### Conclusion
-While building the currency converter, we used ReactJS and its hooks to implement its functionalities. 
-
-We also styled the application with CSS3 and React’s Material UI components.
-
-With that, you have a completely functional currency converter. You can get the source code from my [Github](https://github.com/Nomzy-kush/currency-converter-react) Repo. 
+While building the currency converter, we used ReactJS and its hooks to implement its functionalities. We also styled the application with CSS3 and React’s Material UI components. With that, you have a completely functional currency converter. You can get the source code from my [Github](https://github.com/Nomzy-kush/currency-converter-react) Repo. 
 
 ---
 Peer Review Contributions by: [Mercy Meave](/engineering-education/authors/mercy-meave/)
