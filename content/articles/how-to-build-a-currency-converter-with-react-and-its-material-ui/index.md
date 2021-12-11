@@ -1,13 +1,30 @@
-#How to build a Currency Converter with React and Material UI
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-build-a-currency-converter-with-react-and-its-material-ui/
+title: Building a Music Player with Vanilla JavaScript
+description: In this article, we will demonstrate how to create a currency converter with a react and Material-UI.
+author: doro-onome
+date: 2021-08-25T00:00:00-17:30
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /how-to-build-a-currency-converter-with-react-and-its-material-ui/hero.jpg
+    alt: Building a Music Player with Vanilla JavaScript Image
+--- 
 
 A currency converter is an application that displays the equivalent value represented by the different currencies in the world. This article will give the reader a step-by-step guide on building a currency converting application with React and styling its components with Material UI. 
 
-##Prerequisites for this article
-A text editor, e.g., VSCode.
-A good understanding of HTML, CSS, and JavaScript programming language.
-A working installation of Node.js.
+<!--more-->
 
-##Creating the React app
+### Prerequisites for this article
+- A text editor, e.g., VSCode.
+- A good understanding of HTML, CSS, and JavaScript programming language.
+- A working installation of Node.js.
+
+### Creating the React app
 Head to the project folder and run the command below to create a new React application.
 
 ```bash
@@ -21,12 +38,12 @@ To open the application locally in a browser, run:
 npm start
 ```
 
-##Getting started with Material UI
+### Getting started with Material UI
 [Material UI](https://mui.com/) is a component-based CSS framework that helps developers build React applications by providing several relevant components for different parts of your project. 
 
 MUI components work separately. They are self-supporting and will only display the styles they need to show. Therefore, they do not depend on worldwide style-sheets like [normalize.css](https://github.com/necolas/normalize.css/).
 
-You require the `@material-ui/core`, which can easily be installed with `npm` or `yarn`. You can also include the `@material-ui/icons` package if you wish to use icons. 
+You require the `@material-ui/core`, which can easily be installed with `npm` or `yarn`. If you wish to use icons, you can also include the `@material-ui/icons` package. 
 
 Here is the command to install these packages in your app as dependencies:
 
@@ -54,12 +71,13 @@ function App() {
 ReactDOM.render(<App />, document.querySelector('#app'));
 ```
 
-###Building the currency converter 
+### Building the currency converter 
 This app will have “dollar icons” from Material UI, a header, two `inputs` for the currencies you are comparing, and two `select` components that you will use to choose the currencies. 
 
 This app will use `fixer.io` API to fetch the latest currency rates. So, if you change the values in one currency, the equivalent value for another set currency will be automatically displayed. 
 
 To get started, create a new file and name it `CurrencyInput.js`. Create a `CurrencyInput` function and pass in `props` as an argument. Then, create two `input` and `select` elements. Pass in `props.amount` and `props.currency` as values in the `input` and `select` tags respectively. 
+
 Next, set a `map` function that will iterate through the `option` tag in the `select` tag, which we will call `currency`, and set its value to `currency`. 
 
 The next thing to do is to define the `propTypes`. `propTypes` in React are a mechanism that makes sure that components use the right data sort and pass the correct data, and that components use the right type of `props` and that receiving components get the correct type of `props`. To do that, first, run the command below in your terminal:
@@ -126,7 +144,7 @@ function App() {
 }
 ```
 
-###Using `fixer.io` to get Real Currency Data
+### Using `fixer.io` to get Real Currency Data
 Head to the [Fixer official site](https://fixer.io/login) and click on “GET YOUR FREE API KEY” if you do not already have an account with them. Next, navigate to the free plan, which will direct you to a Signup page where you will be required to fill in your correct credentials. 
 
 After signing in, you will be redirected to a page to see your API access keys and endpoints. Copy the endpoint data. Your application will need to get the latest currency rates with another react hook called `useEffect`. 
@@ -193,8 +211,8 @@ CurrencyInput.propTypes = {
 }
 ```
 
-##The state management functions
-###The `handleAmount1Change` function
+### The state management functions
+#### The `handleAmount1Change` function
 It would help if you used the `rates` from `fixer.io` to re-calculate the values according to the set currency. To do that, create a function in the `App.js`, call it `handleAmount1Change`, and pass in `amount1` as an `argument`. 
 
 This function will help update the state of the first input element. So, when the values in the first input change, the values in the second input will also change for the currency the user sets. 
@@ -218,7 +236,7 @@ return (
 )
 ```
 
-###The `handleCurrency1Change` function 
+#### The `handleCurrency1Change` function 
 Now, create another function called `handleCurrency1Change` that will handle the state change for the `select` elements that will handle the change in currencies. 
 
 The same code works except that  `currency1` is passed  in the `setCurrency1` function this time. Then, call the `onCurrencyChange` function in the `CurrencyInput` JSX element and pass in this `handleCurrency1Change` function.
@@ -238,7 +256,7 @@ function handleCurrency1Change(currency1) {
   )
 ```
 
-### The `handleAmount2Change` function
+#### The `handleAmount2Change` function
 This function will handle the change in the state of the second input in the app. 
 
 Pass in `amount2` as an `argument`. Then, `setAmount1` to be equal to `amount2` times the rate of `currency1` divided by the rate of `currency2`. 
@@ -260,7 +278,7 @@ function handleAmount2Change(amount2) {
  )
 ```
 
-### The `handleCurrency2Change` function
+#### The `handleCurrency2Change` function
 This function will regulate the change in the state of the second `select` element, which controls whatever currency the user chooses. 
 
 Again, the same code as the `handleAmount2Change` is used here, except that you will call the `setCurrency2` and pass in `currency2`. Now, you can call the `onCurrencyChange` method in the `CurrentInput` tag and pass it in `handleCurrency2Change`. 
@@ -321,9 +339,12 @@ Here is a video of the app in action:
 
 <iframe width="727" height="409" src="https://www.youtube.com/embed/wXfwsipIthE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
  
-##Conclusion
+### Conclusion
 While building the currency converter, we used ReactJS and its hooks to implement its functionalities. 
 
 We also styled the application with CSS3 and React’s Material UI components.
 
 With that, you have a completely functional currency converter. You can get the source code from my [Github](https://github.com/Nomzy-kush/currency-converter-react) Repo. 
+
+---
+Peer Review Contributions by: [Mercy Meave](/engineering-education/authors/mercy-meave/)
