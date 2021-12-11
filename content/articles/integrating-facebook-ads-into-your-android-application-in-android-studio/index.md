@@ -16,10 +16,10 @@ Apart from designing mobile applications for technological advancements, develop
 
 ### Prerequisites
 The key requirements for a successful integration include:
-- [Facebook Audience Network SDK](#https://developers.facebook.com/resources/audience-network-sdk-6.7.0.zip)
-- [Facebook Audience Network account](#https://business.facebook.com/pub/home/?source=help&business_id=1101812683558213&global_scope_id=1101812683558213)
-- [Android Studio](#https://developer.android.com/studio/releases)
-- [Facebook business account](#https://business.facebook.com/overview)
+- [Facebook Audience Network SDK](https://developers.facebook.com/resources/audience-network-sdk-6.7.0.zip)
+- [Facebook Audience Network account](https://business.facebook.com/pub/home/?source=help&business_id=1101812683558213&global_scope_id=1101812683558213)
+- [Android Studio](https://developer.android.com/studio/releases)
+- [Facebook business account](https://business.facebook.com/overview)
 
 You also need to be familiar with the layout and how to use Android studio. With all these requirements in place, you can move on to the steps involved in the integration process.
 Assuming you have your Android studio up and running, the only thing you have to install is the FAN SDK.
