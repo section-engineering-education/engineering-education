@@ -72,7 +72,7 @@ This dependency integrates the SDK into your Application.
 /sdk.png)
 
 #### Adding the Ads to your App
-In this case, we are going to add Banner Ads as follows;
+In this case, you are going to add Banner Ads as follows;
 
 On the XML file(activity.xml), add a layout for the Banner Ads and implement it in the java file.This code below does everything for you.
 ```kotlin
@@ -141,7 +141,7 @@ In-App advertisement as seen earlier has many advantages. Besides, it is not alw
 
 Here are some demerits in an in-App advertisement;
 
-- People/users might hate the App due to **disturbances from ads pop-up**. This may discourage users from using known Applications with in-App advertisements.
+- **Disturbances from ads pop-up** creates a user's negative view towards the application. This may discourage users from using applications known to have in-App advertisements.
 
 - For some people, it may be **difficult to navigate**. Some interested customers may not get to see the advertisement due to the incompatibility of the ads with some phones.
 
