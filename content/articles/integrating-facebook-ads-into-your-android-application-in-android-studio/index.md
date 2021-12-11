@@ -74,7 +74,7 @@ This dependency integrates the SDK into your Application.
 #### Adding the Ads to your App
 In this case, you are going to add Banner Ads as follows;
 
-On the XML file(activity.xml), add a layout for the Banner Ads and implement it in the java file.This code below does everything for you.
+On the XML file(activity.xml), add a layout for the Banner Ads and implement it in the java file.This code creates a layout for holding the intended ads.
 ```kotlin
 <?xml version="1.0" encoding="utf-8">;
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -116,7 +116,7 @@ In your activity's `onDestroy()` function, paste the following code. This is don
 @Override
 protected void onDestroy() {
 if (adView != null) {
-adView.destroy();
+adView.destroy(); //checks an ad, if the ad is not present(null) the view is destroyed
 }
 super.onDestroy();
 }
