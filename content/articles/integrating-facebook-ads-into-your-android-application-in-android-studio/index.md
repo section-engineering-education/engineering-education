@@ -53,7 +53,7 @@ Once done, you are ready for the integration process in the Android studio.
 
 
 ### Integration in Android Studio
-Don't have an Application? No need to worry since you can set up a simple application in a few steps below.
+If you are a beginner and don't have a ready-made app, you can set up a simple application in a few steps given below.
 
 #### Step 1: Create a new project
 For beginners, open your Android Studio and create a new project with Ads activity. Since it is a test Application, you can use it without altering it. This [article](https://www.section.io/engineering-education/first-android-App/) can be very useful in helping you with proper project creation.
