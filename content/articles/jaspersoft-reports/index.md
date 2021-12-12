@@ -1,34 +1,30 @@
-### How to generate reports in a SpringBoot App leveraging Jaspersoft
+We use reports in our day-to-day activities whether we are purchasing products and services online or managing the transactions of an information system in an organization. These reports include summary reports, financial reports, inventory reports, sales reports, and budget reports just to mention a few. These reports help in generating insights into an organization and making the right decision based on the knowledge generated from them. For example, an inventory report can help an organization on deciding on the appropriate reorder level to use during the acquisition of products.
 
-We use reports in our day-to-day activities whether we are purchasing products and services online or managing the transactions of an information system in an organization.
-
-These reports include summary reports, financial reports, inventory reports, sales reports, and budget reports just but to mention a few. These reports help in generating insights into an organization and making the right decision based on the knowledge generated from them.
-
-For example, an inventory report can help an organization on deciding on the appropriate reorder level to use during the acquisition of products.
-
-In this tutorial, the reader will learn how to design an inventory report, integrate it into a SpringBoot application, and use custom products to generate a standard report that can be used in an organization.
+In this tutorial, the reader will learn how to design an inventory report, integrate it into a Spring Boot application, and use custom products to generate a standard report that can be used in an organization.
 
 ### Table of contents
+
 - [Prerequisites](#prerequisites)
 - [Create a Spring Boot application](#create-a-spring-boot-application)
 - [Add database configuration properties](#add-database-configuration-properties)
 - [Create a products model](#create-a-products-model)
 - [Create a products repository to find all products by date](#create-a-products-repository-to-find-all-products-by-date)
-- [Create a report service to filter product by type](#create-a-report-service-to-filter-product-by-type)
+- [Create a report service to filter products by type](#create-a-report-service-to-filter-products-by-type)
 - [Design a report using jaspersoft template](#design-a-report-using-jaspersoft-template)
 - [Add the design to our spring boot application](#add-the-design-to-our-spring-boot-application)
-- [Add jaspersoft dependency to our spring boot app](#add-jaspersoft-dependency-to-our-spring-boot-app)
+- [Add the jaspersoft dependency to our spring boot app](#add-the-jaspersoft-dependency-to-our-spring-boot-app)
 - [Load and compile the jaspersoft design source file in the report service](#load-and-compile-the-jaspersoft-design-source-file-in-the-report-service)
 - [Create a folder to store the report](#create-a-folder-to-store-the-report)
 - [Create a resource handler to display the generated pdf](#create-a-resource-handler-to-display-the-generated-pdf)
 - [Generate a report with the filtered products](#generate-a-report-with-the-filtered-products)
-- [Create a report controller and add a get mapping to display the products page](#create-a-report-controller-and-add-a-get-mapping-to-display-the-products-page)
+- [Create a report controller](#create-a-report-controller)
 - [Create a products page with date and file type fields](#Create-a-products-page-with-date-and-file-type-fields)
 - [Add a post mapping that returns the link to the generated pdf report](#add-a-post-mapping-that-returns-the-link-to-the-generated-pdf-report)
 - [Test the application](#Test-the-application)
 - [Conclusion](#conclusion)
 
 ### Prerequisites
+
 - Knowledge in [Spring Boot](https://spring.io/guides/gs/spring-boot/).
 - Knowledge in [Thymeleaf](https://www.thymeleaf.org/).
 - [JDK 11+](https://www.oracle.com/java/technologies/javase-downloads.html) installed on your computer.
@@ -37,14 +33,16 @@ In this tutorial, the reader will learn how to design an inventory report, integ
 - [MySQL connector](https://www.mysql.com/products/connector/) jar file.
 
 ### Create a Spring Boot application
-On the browser, go to [spring initializr](https://start.spring.io/) and create a new application with dependency `Spring Web`, `MySQL Driver`, `Thymeleaf`, `Lombok`, and `Spring Data JPA` as shown below.
 
-![new project image](spring-initializr.png)
+On your browser, go to [spring initializr](https://start.spring.io/) and create a new application with the dependencies: `Spring Web`, `MySQL Driver`, `Thymeleaf`, `Lombok`, and `Spring Data JPA` as shown below:
+
+![new project image](/jaspersoft-reports/spring-initializr.png)
 
 Extract the zip file to the desired folder on the computer and import the application in Intellij. Maven will download all our dependencies from the internet so an active internet connection is required during this process.
 
 ### Add database configuration properties
-Add the following properties in the `application.properties` file and the main properties include the database `URL`, `username`, and `password`.
+
+Add the following properties in the `application.properties` file. The main properties include the database URL, username, and password:
 
 ```properties
 #Database connection properties
@@ -57,16 +55,11 @@ spring.jpa.properties.hibernate.format_sql=true
 spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
 ```
 
-The `spring.jpa.hibernate.ddl-auto` is a hibernate property that allows us to create database tables automatically by mapping our classes.
-
-The `spring.jpa.show-sql` property displays the generated queries by hibernate to the console to know when errors occur.
-
-The `spring.jpa.properties.hibernate.format_sql` property displays the generated SQL statements in a format that is easy for us to understand.
-
-The `spring.jpa.properties.hibernate.dialect` property tells the application the type and version of the database being used.
+The `spring.jpa.hibernate.ddl-auto` is a hibernate property that allows us to create database tables automatically by mapping our classes. The `spring.jpa.show-sql` property prints the queries generated by hibernate to the console. This is so we know when errors occur. The `spring.jpa.properties.hibernate.format_sql` property displays the generated SQL statements in a format that is easy for us to understand. The `spring.jpa.properties.hibernate.dialect` property tells the application the type and version of the database being used.
 
 ### Create a Products model
-Create a class named Product with fields `name`, `description`, `productType`, `price`, and `createdAt`. The `price` if of type `BigDecimal`, `productType` is an enum with either `COMPUTER` or `PHONE` values, and `createdAt` is of type `LocalDate`.
+
+Create a class named Product with fields `name`, `description`, `productType`, `price`, and `createdAt`. The `price` is of type `BigDecimal`, `productType` is an enum with either `COMPUTER` or `PHONE` values, and `createdAt` is of type `LocalDate`.
 
 
 ```java
@@ -124,12 +117,13 @@ public class Product {
     }
 }
 ```
-The `@Data` annotation will help us to generate the getter and setter methods to ensure we can display the list of products on our thymeleaf page.
+The `@Data` annotation will help us generate the getter and setter methods to ensure we can display the list of products on our thymeleaf page.
 
 The `@NoArgsConstructor` generates an empty constructor that must be added when we declare this class as an entity using the `@Entity` annotation.
 
 ### Create a products repository to find all products by date
-Create an interface named `ProductRepository` that extends `JpaRepository` and create a method that returns a collection of products queried by date.
+
+Create an interface named `ProductRepository` that extends `JpaRepository`. Inside that interface, create a method that returns a collection of products queried by date:
 
 ```java
 import com.reports.jaspersoft.jasperreports.model.Product;
@@ -143,8 +137,9 @@ public interface ProductRepository extends JpaRepository<Product,Long> {
 }
 ```
 
-### Create a report service to filter product by type
-Create a class named `ReportService` and add two methods where the first method returns the report link given the date and the file format while the other method returns a collection of products from the database.
+### Create a report service to filter products by type
+
+Create an interface named `ReportService` and add two methods. The first method returns the report link given the date and the file format while the other method returns a collection of products from the database.
 
 ```java
 import com.reports.jaspersoft.jasperreports.model.Product;
@@ -162,55 +157,52 @@ public interface ReportService {
 ```
 
 ### Design a report using Jaspersoft template
-Open JasperSoft studio and before we create a design of the report, we will add the MySQL connector to the classpath to ensure we can connect to our database and generate the desired fields from our table automatically.
 
-On the Jaspersoft studio, toolbar click on help, install new software, manage, java, build path, classpath variables, new and add the jar file on the window that opens with the desired name as shown below.
+First, open JasperSoft studio. Before we create a design of the report, we will add the MySQL connector to the classpath to ensure we can connect to our database and generate the desired fields from our table automatically.
 
-![java connector](jaspersoft-connector.jpg)
+In Jaspersoft studio, click on *help* (located on the toolbar), *install new software*, *manage*, *java*, *build path*, *classpath variables*, *new* and add the jar file on the window that opens with the desired name as shown below:
+
+![java connector](/jaspersoft-reports/jaspersoft-connector.jpg)
 
 Once we have added the MySQL connector, we then run our spring boot app to generate the tables required by Jaspersoft studio.
 
-To create a design of our report from existing templates, on the Jaspersoft toolbar click on the file, new, jasper report, and a window opens with a list of templates to choose from.
+To create a design of our report from existing templates, on the Jaspersoft toolbar click on *file*, *new*, *jasper report*, and a window opens with a list of templates to choose from. For this tutorial, select the template named *simple blue* and click next. Add a new `.jrxml` file using the window that opens up. This is simply an extension for jasper report files. For our case name the file as `products.jrxml` and click next.
 
-For this tutorial, select the template named `simple blue` and click next, add a file name on the window that opens with `.jrxml` extensions which is simply an extension for jasper reports. For our case name the file as `products.jrxml` and click next.
+The window that opens next requires us to provide a data source which is simply our database URL, username, and password to connect to our database. Click on new and on the data adapters window select database JDBC connection and click next. A window then opens where we need to fill the database connection properties as shown below.
 
-The window that opens after naming our file and selecting a parent folder requires us to provide a data source which is simply our database URL, username, and password to connect to our database.
+![data source configuration](/jaspersoft-reports/data-source.jpg)
 
-Click on new and on the data adapters window select database JDBC connection and click next, a window opens and we fill the database connection properties as shown below.
+Once the connection is successful, write a query on the next window to select all the fields on the products table and click next:
 
-![data source configuration](data-source.jpg)
+![all product fields](/jaspersoft-reports/all-products.png)
 
-Once the connection is successful, write a query on the next window to select all the fields on the products table as shown below and click next.
+The new window that appears displays all the fields from our database table. Here, we need to add all the fields we want to appear in the report from the data fields on the left side to the fields section on the right side. You can do this using the button with the greater than symbol:
 
-![all product fields](all-products.png)
+![report fields](/jaspersoft-reports/report-fields.jpg)
 
-The next window displays all the fields and we add all the fields we want to appear in the report from the data fields on the left side to the fields section on the right side using the greater than symbol as shown below.
+Click the Finish button to generate the final report with our fields from the products entity as shown below. We can edit the title and the description on the design header to reflect the function of the report where necessary:
 
-![report fields](report-fields.jpg)
-
-Click the Finish button to generate the final report with our fields from the products entity as shown below. We can edit the title and the description on the design header to reflect the function of the report where necessary.
-
-![final design](final-design.png)
+![final design](/jaspersoft-reports/final-design.png)
 
 ### Add the design to our spring boot application
-The design we have just created generates XML describing the report structure and the code can be obtained by clicking the source button on the bottom of the Jaspersoft design window.
 
-![source file](source-file.png)
+The design we have just created generates XML describing the report structure. The code for it can be obtained by clicking the source button on the bottom of the Jaspersoft design window:
 
-Remove the properties in the field tags on the source file and ensure the class property of the field tag is of the same type as that of our product fields and the same case with the field names.
+![source file](/jaspersoft-reports/source-file.png)
 
-We also need to ensure that the text field expression on the details section is of the same name as that of our product fields in our Spring Boot application.
-
-Copy the entire source code and on our Spring Boot application create a new file named `products.jrxml` in the resources package and paste the XML code in this file.
+Remove the properties in the field tags in the source file and ensure the class and name properties of the field tag are the same as that of our product model:
 
 ![remove properties](remove-properties.jpg)
 
+We also need to ensure that the text field expression in the details section is of the same name as that of our product fields in our Spring Boot application:
+
 ![modify detail fields](modify-detail-fields.jpg)
 
-### Add Jaspersoft dependency to our spring boot app
-The Jaspersoft dependency will help us in adding the functionalities to work with the jasper report file such as loading, compiling, filling, and generating the document based on our query.
+Copy the entire source code in our Spring Boot application as a new file named `products.jrxml` in the resources package.
 
-Add the following dependency which can be obtained from [maven central repository]() in `pom.xml` file and maven will download it for us and add it to the classpath where we can invoke its methods. 
+### Add the Jaspersoft dependency to our spring boot app
+
+The Jaspersoft dependency will help us in adding the functionalities to work with the jasper report file such as loading, compiling, filling, and generating the document based on our query. You can add this dependency in the `pom.xml` file and maven will download it for us and add it to the classpath where we can invoke its methods:
 
 ```xml
         <dependency>
@@ -219,13 +211,11 @@ Add the following dependency which can be obtained from [maven central repositor
             <version>6.18.1</version>
         </dependency>
 ```
+> Maven dependencies can be found in the [maven central repository]()
 
 ### Load and compile the Jaspersoft design source file in the report service
-Create a class named `ReportServiceImpl` that implements the `ReportService` interface and override the `generateReport()` and `findAllProducts()` methods.
 
-We will leverage another method to realize the function of compiling the jasper report file. This method accepts the collection of data to be filled to the report and a string indicating the location of the jasper report source file.
-
-Create a method named `getJasperPrint()` that returns `JasperPrint` with the above-indicated parameters and add the functionality to load and compile the file as shown below.
+Create a class named `ReportServiceImpl` that implements the `ReportService` interface and override the `generateReport()` and `findAllProducts()` methods. We will leverage a new `getJasperPrint()` method to implement the functionality of compiling the jasper report file. This method accepts the collection of data to be filled to the report and a string indicating the location of the jasper report source file. When run, the function returns an instance of `JasperPrint`:
 
 ```java
 import com.reports.jaspersoft.jasperreports.model.Product;
@@ -272,13 +262,9 @@ public class ReportServiceImpl implements ReportService{
 }
 
 ```
-
 ### Create a folder to store the report
-In the `ReportServiceImpl` class create a method named `getUploadPath()` with the parameters file format, `JasperPrint` returned from the above method and a file name of type string.
 
-This method creates the specified file if it does not exist and also creates the generated pdf file in the folder with the specified file name passed as a parameter as shown below.
-
-We will also add a method named `getPdfFileLink()` that returns the link to our generated report by passing the value of type `Path` returned by the `getUploadPath()` method.
+In the `ReportServiceImpl` class create a method named `getUploadPath()` with the file format, a `JasperPrint` returned from the above method, and a file name as parameters. This method creates the specified directory if it does not exist and also creates the generated pdf file in the folder with the file name passed to it. We will also add a method named `getPdfFileLink()` that returns the link to our generated report. It does so by passing the value of type `Path` returned by the `getUploadPath()` method.
 
 ```java
 import com.reports.jaspersoft.jasperreports.model.Product;
@@ -350,9 +336,7 @@ public class ReportServiceImpl implements ReportService{
 }
 ``` 
 ### Create a resource handler to display the generated pdf
-Create a class name `AppWebConfig` that implements `MvcConfigurer` and override the `addResourceHandlers()` method.
-
-Create a method named `uploadPath()` that returns the absolute path of our specified folder. We indicate using the handler that the application should allow requests to our pdf links using the `/generated-reports/**` and then pass the absolute path returned by the method as the resource location of our generated report. 
+Create a class named `AppWebConfig` that implements `MvcConfigurer` and override the `addResourceHandlers()` method. Then, create a method named `uploadPath()` that returns the absolute path of our specified folder. We indicate using the handler that the application should allow requests to our pdf links using the string `/generated-reports/**`. We then pass the absolute path returned by the method as the resource location of our generated report. 
 
 ```java
 import org.springframework.context.annotation.Configuration;
@@ -380,13 +364,9 @@ public class AppWebConfig implements WebMvcConfigurer {
 ```
 
 ### Generate a report with the filtered products
-This functionality will be realized by the `generateReport()` method in the `ReportServiceImpl` class and it accepts two parameters of type `LocalDate` and `String`.
+This functionality will be implemented using the `generateReport()` method in the `ReportServiceImpl` class. This method accepts two parameters of type `LocalDate` and `String`. Since this method will be responsible for searching products by date, we inject the `ProductsRepository` bean. We use it to search for products created on that specific day using the `findAllByCreatedAt()` method.
 
-Since this method will be responsible for searching products by date, we add the `ProductsRepository` and use the data provided by the method to search for products created in that specific day using the `findAllByCreatedAt()` method.
-
-Create a string containing the resource location of our source file. i.e, `products.jrxml`.
-
-Call the `getJasperPrint()` method, and pass the collection of products retrieved from the database as the first parameter and the above string as the second parameter.
+Create a string containing the resource location of our source file. i.e, `products.jrxml`. Call the `getJasperPrint()` method, and pass the collection of products retrieved from the database as the first parameter and the above string as the second parameter.
 
 Create a string containing the name of the pdf report to be generated. i.e `products.pdf`.
 
@@ -480,8 +460,8 @@ public class ReportServiceImpl implements ReportService{
 ```
 Our products page will display the list of products in the database and to achieve this we have to ensure that the `findAllProducts()` calls the `findAll()` method instead of returning `null`.
 
-### Create a report controller and add a get mapping to display the products page
-Our products page will be displayed by any request to the path `/` and we will iterate through the list of products using the `products` model that fetches a list of products using the `findAllProducts()` method of the `ReportService`.
+### Create a report controller
+Our products page will be displayed by any request to the path `/` and will iterate through the list of products using a `products` model. We set the value of this model by fetching a list of products using the `findAllProducts()` method of the `ReportService`:
 
 ```java
 import com.reports.jaspersoft.jasperreports.service.ReportService;
@@ -504,9 +484,7 @@ public class ReportController {
 ```
 
 ### Create a products page with date and file type fields
-The products page contains two sections, one has a form where we enter the date and select the document type to be generated which in our case is a pdf document.
-
-These two values will be obtained as request parameters and we do these in thymeleaf by leveraging the `th:name` property as shown on the input and option tags of the form below.
+The products page contains two sections, one has a form where we enter the date and select the document type to be generated which in our case is a pdf document. These two values will be obtained as request parameters. We make this possible with thymeleaf by leveraging the `th:name` property as shown on the input and option tags of the form below.
 
 products.html
 ```html
@@ -629,13 +607,9 @@ body{
 ```
 
 ### Add a post mapping that returns the link to the generated pdf report
-When we press the generate report button of the above form a post request is issued using the `/report` path to the `generateReport()` method of the controller.
+When we press the generate report button of the above form a post request is issued to the `/report` path. This URL corresponds to the `generateReport()` method of the controller.
 
-The `@RequestParam` annotations retrieve the date and the file format from the request and pass the values to the `generateReport()` method of our `ReportService`.
-
-This method returns a string containing the path to our generated pdf as we discussed earlier and we issue a new request to the path by redirecting it in the controller.
-
-The redirect allows us to display the report in our browser and note that the resource handler must be configured for this to work.
+The `@RequestParam` annotation retrieves the date and the file format from the request and passes the values to the `generateReport()` method of our `ReportService`. This method returns a string containing the path to our generated pdf as we discussed earlier. We then issue a new request to the path by redirecting to it in the controller. The redirect allows us to display the report in our browser. Note that the resource handler must be configured for this to work.
 
 ```java
 import com.reports.jaspersoft.jasperreports.service.ReportService;
@@ -666,7 +640,7 @@ public class ReportController {
 ```
 
 ### Test the application
-We need to populate our products table with dummy data for testing purposes and we can achieve this by adding a `CommandLineRunner` with a list of products to be created when our application starts up as shown below.
+We need to populate our products table with dummy data for testing purposes. We can achieve this by adding a `CommandLineRunner` with a list of products to be created when our application starts up:
 
 ```java
 import com.reports.jaspersoft.jasperreports.model.Product;
@@ -730,37 +704,17 @@ public class JasperReportsApplication {
 
 }
 ```
-Run the Spring Boot application and hit the following URL.
+Run the Spring Boot application and visit the page at localhost 8080. Our page is loaded displaying a form and a list of products:
 
-- [localhost:8080](http://localhost:8080/)
+![products page](/jaspersoft-reports/products-page.png)
 
-Our page is loaded displaying a form and a list of products as shown below.
+Enter the current date, select pdf as the file type, and press the generate button which redirects us to the generated pdf on a new browser tab as shown below.
 
-![products page](products-page.png)
+> Note that the dates will be different from the example provided depending on the time you are reading this article.
 
-Enter the current date, select the type of document as pdf, and press the generate button which redirects us to the generated pdf on a new browser tab as shown below.
-
-Note that the dates will be different from the example provided depending on the time you are reading this article.
-
-![generated report](generated-report.png)
+![generated report](/jaspersoft-reports/generated-report.png)
 
 We can play with the results using the current and previous date as some of the products created have `LocalDate.now()` to get the current date while others have `LocalDate.now().minusDays(1)` to get the date of the previous day.
 
 ### Conclusion
-In this tutorial, we have learned how to generate a pdf report using Jaspersoft studio where we have used an existing template and customized it to meet our needs. This tutorial has also demonstrated in detail a crucial approach of how to load, compile, fill and generate the different types of documents based on the option specified on the form. We have also been advised on major considerations such as ensuring the resource handler is added to avoid error codes such as files not found.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+In this tutorial, we have learned how to generate a pdf report using Jaspersoft studio where we have used an existing template and customized it to meet our needs. This tutorial also demonstrated in detail a crucial approach of how to load, compile, fill and generate the different types of documents based on the option specified on the form. We have also been advised on major considerations such as ensuring the resource handler is added to avoid error codes such as a file not found error.
