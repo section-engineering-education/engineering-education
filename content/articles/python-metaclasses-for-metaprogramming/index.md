@@ -1,5 +1,5 @@
 ### Introduction
-Metaprogramming is the practice of writing code that manipulates other code. `Metaprogramming` refers to a computer program's capacity to comprehend or regulate itself.  As a rule of thumb, metaprogramming can be done via decorators and metaclasses. For example, python's metaclasses are a kind of class metaprogramming.
+Metaprogramming is the practice of writing code that manipulates other code. It refers to a computer program's capacity to comprehend or regulate itself.  As a rule of thumb, metaprogramming can be done via decorators and metaclasses. For example, Python's metaclasses are a kind of class metaprogramming.
 
 The object-oriented programming(OOPS)  concept is essential for Python programming. So even if you are not aware of it, you are already using metaprogramming when using OOP. Some of the prerequisites include decorators in Python and `OOPS concepts in Python.`
 
@@ -13,12 +13,12 @@ The object-oriented programming(OOPS)  concept is essential for Python programmi
 - [Conclusion](#conclusion)
 
 ### What are metaclasses?
-Metaclasses are classes whose instances are other classes that are then used to build objects.
+Metaclasses are classes whose instances are other classes used to build objects.
 
 Metaclasses can be created by modifying how classes are created. We need to add additional code or processes to the Metaclass framework. Although end-users seldom use Metaclasses, they are essential in some programming problems.
 
 ### Understanding metaclasses with examples
-Every module and function in python has a type given to it.  If the user requests to get the type of the data, a corresponding data type is returned. The `type()` function may be used to determine the type of any object.
+Every module and function in python has a type given to it.  If the user requests to get the type of the data, a corresponding data type is returned. The `type()` function is used to determine the type of any object.
 
 ```python
 number = 15  
@@ -189,6 +189,6 @@ The prior procedure must first apply the decorator function to all subclasses de
 A time-consuming and challenging process is implementing the decorator function for each subclass of the class. However, if the debug property is present in all subclasses, metaclasses can solve this issue.
 
 ### Conclusion
-In this tutorial, we have covered the different aspects of metaclasses and understanding what metaclasses entail. Then, we have gone through how to customize metaclasses. Finally, we applied this concept in solving problems.
+In this tutorial, we have covered the different aspects of metaclasses and understanding what metaclasses entail. Then, we have gone through how to customize metaclasses. Finally, we applied this concept in solving selected problems.
 
 Happy learning!
