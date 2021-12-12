@@ -3,22 +3,23 @@ layout: engineering-education
 status: publish
 published: true
 url: /picking-pdf-and-image-from-phone-storage/
-title: How to Pick PDF Files and Images from Phone Storage in Android Using Kotlin
+title: How to Pick PDF Files and Images from Phone Storage in Android using Kotlin
 description: In this tutorial, we will learn how to pick PDF files and images from phone storage in Android using implicit intents
-author: hepatrique
-date: 2021-12-10T00:00:00-10:00
-topics: [Android]
+author: hepatrique-okeyo
+date: 2021-12-12T00:00:00-10:45
+topics: []
 excerpt_separator: <!--more-->
 images:
+
   - url: /engineering-education/picking-pdf-and-image-from-phone-storage/hero.png
-    alt: How to Pick PDF Files and Images from Phone Storage in Android Using Kotlin
+    alt: PDF Files and Images from Phone Storage in Android Using Kotlin
 ---
+This tutorial will cover how to open gallery and files apps from your android application and pick an image and a PDF file. 
+<!--more-->
+In addition, you will learn about intents and specifically implicit intents.
 
-This tutorial will cover how to open gallery and files apps from your android application and pick an image and a PDF file. In addition, you will learn about intents, specifically implicit intents.
-There has been a challenge of choosing files from the phone storage since the contents available on the internet are ambiguous. This tutorial is going to simplify your work.
-
-### Table of Contents
-- [Table of Contents](#table-of-contents)
+### Table of contents
+- [Table of contents](#table-of-contents)
 - [Prerequisites](#prerequisites)
 - [Goals](#goals)
 - [What is Intents](#what-is-intents)
@@ -32,31 +33,29 @@ There has been a challenge of choosing files from the phone storage since the co
 - [Conclusion](#conclusion)
 
 ### Prerequisites
-Understanding this tutorial requires that you have: 
+Understanding this tutorial will require that you have: 
 - [Android Studio IDE](https://developer.android.com/studio/index.html) installed.
-- Basic understanding of [Kotlin](https://kotlinlang.org/) programming language. 
+- Basic understanding of [Kotlin](https://kotlinlang.org/) programming language.
 - Basic understanding of [Intents](https://developer.android.com/guide/components/intents-filters).
 
 ### Goals
-- Picking images from gallery and loading to `ImageView`.
+- Picking images from the gallery and loading them to `ImageView`.
 - Taking photos and loading to `ImageView`.
 - Picking PDF file and display in a `TextView`. 
 
-File choosing in Android involves implicit intents. Implicit intent is a type of intent that navigates the user to another application. For File choosing to be successful, certain permissions MUST  be allowed in the app manifest.
+File choosing in Android involves implicit intents. Implicit intent is a type of intent that navigates the user to another application. For File choosing to be successful, certain permissions MUST be allowed in the app manifest.
 
-### What is Intents
-Intent is an object that facilitates communication between app components. For example, intents are used when an application starts an activity, starts a service, or delivers a broadcast.
+### What are intents
+An intent is an object that facilitates communication between app components. For example, intents are used when an application starts an activity, starts a service, or delivers a broadcast.
 
-### Types of Intents
+### Types of intents
 Intents consist of two types:
 
 #### Implicit intents
 Implicit intent is a type of intent that facilitates communication between two different apps. For instance, in this tutorial, we will imply implicit intent to communicate with the gallery and files apps. Implicit intents only need the declaration of the general action to be performed.
 
 #### Explicit intents
-An explicit intent is a type of intent that allows communication between application components. For example, you will trigger an explicit intent when you want to navigate one activity to the next.
-
-Enough of theory let's dive into implementation.
+An explicit intent is a type of intent that allows communication between application components. For example, you will trigger an explicit intent when you want to navigate one activity to the next. Enough of the theory let's dive into implementation.
 
 ### Adding Permissions
 Permissions are always added to the `AndroidManifest.xml`. In the manifest add the following permission.
@@ -65,8 +64,8 @@ Permissions are always added to the `AndroidManifest.xml`. In the manifest add t
  <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 ```
 
-### Designing Layout
-The layout will only include a `TextView` for displaying the selected PDF file and an `ImageView` for displaying the chosen image gallery or camera captured image. Remember to use `ConstraintLayout` to come up with the design.
+### Designing layout
+The layout will only include a `TextView` for displaying the selected PDF file and an `ImageView` for displaying the chosen image gallery or camera captured image. Remember to use the `ConstraintLayout` to come up with the design.
 
 The simple layout can be implemented by including the XML code below:
 ```xml
@@ -110,10 +109,10 @@ The simple layout can be implemented by including the XML code below:
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 ```
-### Picking Image
+### Picking an image
 To open the phone's gallery you need an intent to handle the action. You will click on the `TextView` that will pop up an alert dialog having options to take a photo or choose an image from the gallery. You will also learn how to trigger alert dialogs in this tutorial.
 
-Add the following function to your code to display the alert dialog for selecting an image from the gallery or taking a photo.
+Add the following function to your code to display the alert dialog when selecting an image from the gallery or taking a photo.
 
 ```kotlin
     // Function for displaying an AlertDialogue for choosing an image
@@ -143,6 +142,7 @@ Add the following function to your code to display the alert dialog for selectin
         myAlertDialog.show()
     }
 ```
+
 Below is a screenshot of the alert dialog.
 
 [Alert Dialog](/engineering-education/picking-pdf-and-image-from-phone-storage/alert-dialog.png)
@@ -153,10 +153,10 @@ Below is a screenshot of the alert dialog.
 pickFromGallery.type = "/image"
 ```
 
-The difference between selecting an image from a gallery and taking a camera comes in the type of action passed in the intent. For the gallery, consider using `Intent.ACTION_GET_CONTENT`, while you can use `MediaStore.ACTION_IMAGE_CAPTURE` for the camera.
+The difference between selecting an image from a gallery and taking a picture via your camera comes in the type of action passed in the intent. For the gallery, consider using `Intent.ACTION_GET_CONTENT`, while you can use `MediaStore.ACTION_IMAGE_CAPTURE` for the camera.
 
 ### Picking PDF file
-You will learn how to pick a PDF from files and display it on the `TextView`. Picking PDF files comes in handy when developing an application that requires the user to select a PDF file and upload or share it with other users. Include the method below in your code to pick a PDF from files.
+You will learn how to pick a PDF from your files and display it on the `TextView`. Picking PDF files comes in handy when developing an application that requires the user to select a PDF file and upload or share it with other users. Include the method below in your code to pick a PDF from files.
 
 ```kotlin
     // Intent for navigating to the files
@@ -228,7 +228,8 @@ override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) 
         }
     }
 ```
-The complete code implementation is as follows,
+
+The complete code implementation is as follows:
 
 ```kotlin
 class MainActivity : AppCompatActivity() {
@@ -351,10 +352,10 @@ class MainActivity : AppCompatActivity() {
     }
 ```
 
-[Screenshot](!/engineering-education/picking-pdf-and-image-from-phone-storage/screenshot.png)
+[Screenshot](/engineering-education/picking-pdf-and-image-from-phone-storage/screenshot.png)
 
 ### Conclusion
-This tutorial is only meant to guide you through. First, you need to try the codes provided to practice and master the concept. [Intents](https://developer.android.com/guide/components/intents-filters) have various uses in Android development and should be well understood.
+This tutorial is only meant to guide you through the intial steps. First, you will need to try the codes provided to practice and master the concept. [Intents](https://developer.android.com/guide/components/intents-filters) have various uses in Android development and should be well understood.
 
 Happy coding!
 
