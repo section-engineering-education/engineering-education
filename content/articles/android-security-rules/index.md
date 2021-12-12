@@ -6,7 +6,7 @@ url: /android-security-rules/
 title: Getting the basics of Android security rules
 description: This tutorial will help the reader understand the basics of android security to build applications that are secure internally and ensure safety when communicating with other applications.
 author: collince-okeyo
-date: 2021-121-06T00:00:00-04:10
+date: 2021-12-12T00:00:00-04:10
 topics: [Android]
 excerpt_separator: <!--more-->
 images:
