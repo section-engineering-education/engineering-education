@@ -1,6 +1,6 @@
 Building Web applications from scratch as a Web developer can be painful and time-consuming. As web developers, we want to build fast and responsive web applications. We are always implementing the same UI components (ex. authentication, headers, user menu, footer, navigation, etc) in every project so why start over and over again. DevExtreme is here to take all the pain away. Devextreme is one of the [DevExpress](https://www.devexpress.com/) components. It includes a collection of high-performance and responsive UI widgets which can be used to build both mobile and web applications.
 
-DevExtreme mainly works with the Javascript frameworks: Angular, React jQuery, and Vue. It can also be used with technologies like ASP.NET MVC, Knockout, and ASP.NET Core. It is fast and easy to use because of its ready-built responsive UI components. These include interactive charts, Data editors, drop-down boxes, and much more. DevExtreme can also be added to existing applications. [Read More](https://js.devexpress.com/)
+DevExtreme mainly works with the Javascript frameworks: Angular, React jQuery, and Vue. It can also be used with technologies like ASP.NET MVC, Knockout, and ASP.NET Core. It is fast and easy to use because of its ready-built responsive UI components. These include interactive charts, Data editors, drop-down boxes, and much more. DevExtreme can also be added to existing applications. For futher studies [read More](https://js.devexpress.com/)
 
 ### Prerequisites
 To understand this article basic knowledge of the following is required:
@@ -12,7 +12,7 @@ To understand this article basic knowledge of the following is required:
 DevExtreme is recommended when building a CRM system or robust application. Otherwise, it's not a good choice when building simple websites or apps due to the heavy bundled template size. 
 
 ### DevExtreme UI components
-DevExtreme has several ready-built, interactive UI components for you to build your next application easily. These include data tables, charts, data reporting tools, autocomplete, file managers, file uploader buttons, boxes, accordions, etc. With all these ready-built components, building applications are very easy, fast, and fun using DevExtreme.  [Read more](https://js.devexpress.com/Documentation/Guide/UI_Components/).
+DevExtreme has several ready-built, interactive UI components for you to build your next application easily. These include data tables, charts, data reporting tools, autocomplete, file managers, file uploader buttons, boxes, accordions, etc. With all these ready-built components, building applications are very easy, fast, and fun using DevExtreme. For futher studies [read more](https://js.devexpress.com/Documentation/Guide/UI_Components/).
 
 I recommend you try to use DevExtreme with your favorite Javascript framework so you can make use of these awesome reactive components.
 
@@ -54,7 +54,8 @@ The way we create Devextreme applications is quite different depending on the ja
  3. ```npm run start```
 - [Documentation](https://js.devexpress.com/Documentation/Guide/Vue_Components/Create_a_DevExtreme_Application/)
 
-### For the demonstration purpose in this tutorial I will create a DevExtreme application using my favorite JS framework Angular.
+### Building an Angular DevExtreme 
+For the demonstration purpose in this tutorial I will create a DevExtreme application using my favorite JS framework Angular.
 
 - To create my Angular app, firstly I have to run:
 ```
