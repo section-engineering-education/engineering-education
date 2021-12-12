@@ -14,7 +14,7 @@ images:
  - url: /engineering-education/momentum-based-gradient-optimizer-and-optimization-techniques-for-gradient-descent/hero.jpg
    alt: Gradient Descent Based Optimization Techniques example image
 ---
-Gradient descent is the optimal method for optimizing neural networks and various other machine learning algorithms. This post delves into the inner workings of some of the most popular gradient-based optimization algorithms. These algorithms include: Momentum, Adagrad, and Adam.
+Gradient descent is optimal for optimizing neural networks and various other machine learning algorithms. This post delves into the inner workings of some of the most popular gradient-based optimization algorithms. These algorithms include Momentum, Adagrad, and Adam.
 
 ### Table of contents
 - [Table of contents](#table-of-contents)
@@ -38,12 +38,12 @@ Gradient descent is the optimal method for optimizing neural networks and variou
 We will look at various optimization methods frequently employed in Deep Learning. We will also look at some Adaptive Optimization Algorithms (AOA). Compiling a program based on the current execution profile is known as adaptive optimization in computer science. You can easily make a tradeoff between Just-In-Time (JIT) compilation and instruction interpretation in an adaptive optimizer solution.
 
 #### Why do we optimize our machine learning models?
-Every iteration is compared to the previous one, and the hyper-parameters are tweaked until the results are as good as they can be. We can produce a model that is both accurate and error-free. A model can be optimized in a variety of ways.
+Every iteration is compared to the previous one, and the hyper-parameters are tweaked until the results are as good as they can be. We can produce a model that is both accurate and error-free. 
 
 This page includes a quick overview of the many approaches that are accessible, including those provided by the Keras package.
 
 ### Momentum-based optimization
-Momentum-based optimization utilizes an Adaptive Optimization Algorithm (AOA) that uses exponentially-weighted averaging of gradients from prior rounds to keep convergence from deviating. Most real-world applications such as deep neural networks rely on noisy input to train.
+Momentum-based optimization utilizes an Adaptive Optimization Algorithm (AOA) that uses exponentially-weighted averaging gradients from prior rounds to keep convergence from deviating. Most real-world applications such as deep neural networks rely on noisy input to train.
 
 There is a systematic approach to feeding the data to minimize the impact of noise during optimization. Using exponentially weighted averages can solve.
 
@@ -63,10 +63,10 @@ When this method is in use, it looks for the direction of the steepest slope in 
 
 Momentum helps Gradient Descent distinguish recent derivatives as it nears the middle of the ravine allowing the gradient descent to move in the right direction.
 
-Momentum looks at the gradients of the steps that came before and the coming up steps to figure out which one is the best one to take.
+Momentum looks at the gradients of the steps that came before and the following to figure out which one is the best to take.
 
 ### Stochastic Gradient Descent
-It's better to use Stochastic Gradient Descent because it fixes many problems. It tries to make up for it's inability do calculations very well. It makes a lot more noise than Gradient Descent. Using SGD takes a lot longer to get to a simple solution. It is different from Gradient Descent in that SGD does the derivatives for all points simultaneously.
+It's better to use Stochastic Gradient Descent because it fixes many problems. It tries to make up for its inability to do calculations very well. It makes a lot more noise than Gradient Descent. Using SGD takes a lot longer to get to a simple solution. It is different from Gradient Descent in that SGD does the derivatives for all points simultaneously.
 
 ### Adaptive Moment Estimation
 RMSProp and momentum combine to create this. Like momentum, it saves the declining arithmetic mean of the squared gradients and an average of past gradients, which is similar.
@@ -115,15 +115,15 @@ Adadelta optimization is a stochastic gradient descent method that uses an adapt
 - The rate at which you learn decreases over time during training.
 - The need for a global learning rate that can be set manually.
 
-> Add-on: Adadelta is a more powerful version of Adagrad. It changes learning rates based on a moving window of gradient updates rather than accumulating all past gradients as Adagrad does. This way, Adadelta can keep learning even though there have been a lot of changes. In the original version of Adadelta, you don't have to set a learning rate. You can set the speed you start learning in this version like most other Keras optimizers.
+> Add-on: Adadelta is a more powerful version of Adagrad. It changes learning rates based on a moving window of gradient updates rather than accumulating all past gradients as Adagrad does. This way, Adadelta can keep learning even though there have been a lot of changes. In the original version of Adadelta, you don't have to set a learning rate. Like most Keras optimizers, you can set the speed you start learning in this version.
 
 #### There have been significant developments on the Adadelta front
 Adadelta has implemented two new ideas to overcome Adagrad's shortcomings:
 - Within a limited time, the sum of squared gradients accumulated. The sum of squared slopes in Adagrad can be accumulated up to infinity, for example, but this is not the case here. Learning rate approaches 0 as sum approaches infinite since this total is in denominator and learning rate is in the numerator. To keep the learning going even after many iterations, Adadelta limits the maximum size of the whole computed.
-- Correct the inconsistencies in the units used in gradient descent algorithms. In other words, the update's teams don't line up with the parameter's units. A Hessian approximation is used in place of the learning to ensure that the update direction matches the negative gradient at every step as in SGD. As a result, there is no longer a need to set the learning rate in the update rule manually.
+- Correct the inconsistencies in the units used in gradient descent algorithms. In other words, the update's teams don't line up with the parameter's units. A Hessian approximation is used in place of the learning to ensure that the update direction matches the negative gradient at every step as in SGD. As a result, there is no longer a need to manually set the learning rate in the update rule.
 
 ### Mini Batch Stochastic Gradient Descent
-Several improvements have been made to the SGD algorithm in recent years. SGD is time-consuming since it computes derivatives for every point in the dataset individually.
+Several improvements have been made to the SGD algorithm in recent years. SGD is time-consuming since it computes derivatives individually for every point in the dataset.
 
 After a few iterations, the MB-SGD loss function's derivative resembles the GD loss function. However, far more iterations are required to reach a minimum in the MB-SGD case than in the GD case, making it computationally costly. In addition, because the derivative does not always point towards minima, the weights update has a more significant impact.
 
@@ -159,7 +159,7 @@ It is well known that SGD can discover a minimum. Still, it may take longer than
 The adaptive learning rate approaches, on the other hand, are ideal if you want to achieve fast convergence and train a deep or complicated neural network.
 
 ### Conclusion
-In other words, optimization algorithms are in charge of cutting costs while delivering the most precise outcomes. For each new epoch, the weight is reset using several initialization procedures. As a result, some optimization procedures or algorithms dubbed optimizer produce the best results.
+In other words, optimization algorithms are in charge of cutting costs while delivering the most precise outcomes. For each new epoch, the weight is reset using several initialization procedures. As a result, some optimization procedures or algorithms dubbed optimizers produce the best results.
 ---
 Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
 
