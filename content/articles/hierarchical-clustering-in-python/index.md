@@ -1,8 +1,26 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /hierarchical-clustering-in-python/
+title: Getting Started with Hierarchical Clustering in Python
+description: In this article, we will be learning about the basics of hierarchical clustering in Python
+author: dennis-kimutai-koech
+date: 2021-12-12T00:00:00-17:10
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/hierarchical-clustering-in-python/hero.png
+    alt: Getting Started with Hierarchical Clustering in Python
+---
+
 ### Getting Started with Hierarchical Clustering in Python
-Hierarchical clustering is one of the popular unsupervised learning algorithms. Hierarchical clustering obtained its name from the word hierarchy. This word means ranking things according to their importance. This is what hierarchical clustering does. It finds elements of the dataset with similar properties under consideration and groups them together in a cluster. In the end, we obtain a single big cluster whose main elements are clusters of data points or clusters of other clusters. Hierarchical clustering approaches clustering problems in two ways. Let's look at these two approaches of hierarchical clustering.
+Hierarchical clustering is one of the popular unsupervised learning algorithms. Hierarchical clustering obtained its name from the word hierarchy,this word means ranking things according to their importance. This is what hierarchical clustering does. It finds elements of the dataset with similar properties under consideration and groups them together in a cluster. In the end, we obtain a single big cluster whose main elements are clusters of data points or clusters of other clusters. Hierarchical clustering approaches clustering problems in two ways. Let's look at these two approaches of hierarchical clustering.
 
 ### Prerequsites:
-To get along comfortably with this material, you are required to have a basic understanding of python programming.
+1. Python 3.6 or above installed on your computer.
+2. Knowlege of Python programming language.
 
 ### Types of Hierarchical Clustering
 #### Agglomerative clustering
@@ -14,10 +32,10 @@ We can further enhance our understanding of this algorithm by considering the fl
 Source:[Displayr](https://www.displayr.com/what-is-hierarchical-clustering/)
 
 In this flowchart, we assumed a dataset with N elements where N = 6. Below are the steps involved in the above clustering.
-- *Step 1:* Initially, assume each data point is an independent cluster, i.e., 6 clusters.
-- *Step 2:* Into a single cluster, merge the two closest data points. By so doing, we ended up with 5 clusters.
-*Step 3:* Again, merge the two closest clusters into a single cluster. By so doing, we ended up with 4 clusters.
-- *Step 4:* Reapt step three above until a single cluster of all data points is obtained.
+- **Step 1:** Initially, assume each data point is an independent cluster, i.e., 6 clusters.
+- **Step 2:** Into a single cluster, merge the two closest data points. By so doing, we ended up with 5 clusters.
+**Step 3:** Again, merge the two closest clusters into a single cluster. By so doing, we ended up with 4 clusters.
+- **Step 4:** Reapt step three above until a single cluster of all data points is obtained.
 
 If we visualize the dendrogram, we should obtain a tree-like structure with the root at the top like the one shown below. 
 
@@ -26,7 +44,7 @@ If we visualize the dendrogram, we should obtain a tree-like structure with the 
 Generally, this is what the Agglomerative clustering algorithm is.
 
 #### Divisive clustering
- Divisive clustering is a top-down approach. In other words, we can comfortably say it is a reverse order of Agglomerative clustering. At the beginning of clustering, all data points are considered homogeneous, and hence it starts with one big cluster of all data points. Then, at each clustering iteration, the most heterogeneous group is **divided** into two different clusters such that the variance in them is reduced. The process continues until all the optimal number of clusters is attained.
+Divisive clustering is a top-down approach. In other words, we can comfortably say it is a reverse order of Agglomerative clustering. At the beginning of clustering, all data points are considered homogeneous, and hence it starts with one big cluster of all data points. Then, at each clustering iteration, the most heterogeneous group is **divided** into two different clusters such that the variance in them is reduced. The process continues until all the optimal number of clusters is attained.
 
 In the real world, however, the initial assumption of the Divisive clustering, the data is homogeneous, holds less weight than the Agglomerative clustering assumption that all data points are different from each other. This makes this algorithm less utilized in the clustering tasks than agglomerative clustering. With this said, this article will give close attention to Agglomerative clustering as it is the algorithm we are most likely to apply in future clustering tasks,
 
@@ -46,7 +64,7 @@ The Euclidean distance has shown a wide range of use in distance measurement com
 
 Since we know the metrics we can use and measure the distance between fixed points, now it's time to go back and answer our question; how do we take this measurement between clusters?
 
- When we talk about clusters, we refer to a group of points. To measure the distance between these groups of points, we need to develop a well-defined approach to enhance consistency in our clustering task. The distance between two clusters can be taken in five different approaches. These approaches are generally known as **Linkage methods**.
+When we talk about clusters, we refer to a group of points. To measure the distance between these groups of points, we need to develop a well-defined approach to enhance consistency in our clustering task. The distance between two clusters can be taken in five different approaches. These approaches are generally known as **Linkage methods**.
 
 Let us look at them and try to understand how they work. 
 1. **Single-linkage:** 
@@ -74,12 +92,12 @@ This method involves centering each cluster and then measuring the distance betw
 Now is the time to put all we have discussed above into action. Here we shall use a real-world dataset to implement an Agglomerative clustering model and finally visualize how the model could discover various clusters from the data. So, with that said, you can download this dataset from this [link](https://github.com/DennisKimt/datasets/blob/main/Mall_Customers.csv) and get started as below:
 
 Once we have downloaded our data, the first thing is to import all the necessary libraries for this session. The following code import these libraries.
+
 ### Importing necessary libraries
 ```python
 import numpy as np # to handle numeric data
 import matplotlib.pyplot as plt # for visualization
 import pandas as pd # for handling dataframe
-
 ```
 ### Reading the dataset to workspace
 Now that our libraries are imported, let us read THE data to OUR workspace and print the first five rows using the `head()` function.
@@ -87,7 +105,6 @@ Now that our libraries are imported, let us read THE data to OUR workspace and p
 ```python
 ourData = pd.read_csv('Mall_Customers.csv') # read the data
 ourData.head() # print the first five rows of our dataset
-
 ```
 ![data head](/engineering-education/hierarchical-clustering-in-python/data-head.png)
 
@@ -95,7 +112,6 @@ We shall implement our hierarchical clustering model on the  `Annual Income (k$)
 
 ```python
 newData = ourData.iloc[:, [3, 4]].values # extract the two features from our dataset
-
 ```
 The two features of our *newData* are almost on the same scale. Therefore, we do not need to scale the data up. However, this will not always be the case. For example, we shall be working with datasets whose values are totally on a different scale. In such a situation, we shall have to scale the data so that various features are comparable; otherwise, we will end up with an inferior model. The reason is that hierarchical clustering, like many other algorithms in machine learning, is distance-based (Euclidean distance).
 
@@ -111,7 +127,6 @@ plt.title('Dendrogram') # title of the dendrogram
 plt.xlabel('Customers') # label of the x-axis
 plt.ylabel('Euclidean distances') # label of the y-axis
 plt.show() # show the dendrogram
-
 ```
 #### Output
 The code above returns a dendrogram, as shown below.
@@ -130,14 +145,12 @@ Knowing the optimal number our data should cluster into; we can now train our cl
 from sklearn.cluster import AgglomerativeClustering # this line of code imports AgglomerativeClustering model from sk-learn
 '''
 we need to create an AgglomerativeClustering object, and in it, we pass the following parameters:
-
 n_cluster= 5, the number of clusters our model should return
 affinity=euclidean, specify metric to be used to calculate distances
 linkage= ward to regulate how distance calculation will be carried out between different clusters.
 '''
-Agg_hc = AgglomerativeClustering(n_clusters = 5, affinity = 'euclidean', linkage = 'ward') 
+Agg_hc = AgglomerativeClustering(n_clusters = 5, affinity = 'euclidean', linkage = 'ward')
 y_hc = Agg_hc.fit_predict(newData) # model fitting on the dataset
-
 ```
 The code above trained our model, and we can now go on and visualize how the data were clustered. To do this, let's run the code below.
 
@@ -159,13 +172,16 @@ plt.ylabel('Spending Score (1-100)')
 plt.legend() 
 # show the plot
 plt.show()
-
 ```
 ![Scatter plot](/engineering-education/hierarchical-clustering-in-python/customer-clusters.png)
 
-The final thing we need to know about hierarchical clustering is that it's time and space complexity and therefore is not a suitable solution for clustering problems with large datasets. 
+The final thing we need to know about hierarchical clustering is that it's time and space complexity and therefore is not a suitable solution for clustering problems with large datasets.
 
 ### Conclusion
-In this article, we looked at hierarchical clustering and its types. First, we learned how these types of hierarchical clustering work and later concluded that the most appropriate type is agglomerative clustering. Also, we looked at various methods used to measure distances between data points and criterion that guides us on how to take these measurements (*Linkage Methods*).
+In this article, we looked at hierarchical clustering and its types. First, we learned how these types of hierarchical clustering work and later concluded that the most appropriate type is agglomerative clustering. Also, we looked at various methods used to measure distances between data points and criterion that guides us on how to take these measurements (*inkage Methods*).
 
 Finally, we implemented our model, and in the process, we learned how to obtain an optimal number of clusters using a dendrogram. Here we reach the end of this session.
+
+---
+
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
