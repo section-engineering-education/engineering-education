@@ -41,9 +41,9 @@ This process entails protecting the information you share with other apps.  Whil
 There are also instances when an app can share data with a website. Again, this should be done in a secured manner to prevent security breaches.
 
 In enforcing secure communications,  we imply the concept of implicit intents that involves your app's communication with other applications. 
-In this scenario, we will see how to use implicit intents and non-exported content providers to enforce security while sharing app data with other apps or websites.
+This scenario will show how to use implicit intents and non-exported content providers to enforce security while sharing app data with other apps or websites.
 
-In the implicit intents, it is good to show an app chooser when the intent can launch more than two apps on the user's device. Doing so will allow the user only to transfer sensitive information to an application that they fully trust.
+It is good to show an app chooser when the intent can launch more than two apps on the user's device in the implicit intents. Doing so will allow the user only to transfer sensitive information to an application that they fully trust.
 
 App chooser can be implemented as below:
 ```kotlin
@@ -64,10 +64,11 @@ App chooser can be implemented as below:
             }
         }
 ```
-The intent example above has a simple layout having a button that triggers the intent to allow you to choose the app you intend to share your data with.
+
+The intent example above has a simple layout with a button that triggers the intent to choose the app you intend to share your data with.
 
 #### 3. Limit content providers data access 
-A content provider is a class that provides structured access to the data being managed by the Android application. Various content providers must be defined in the `<provider>` element in the manifest.
+A content provider is a class that provides structured access to the data being managed by the Android application. Various content providers must be defined in the manifest's `<provider>` element.
 
 If you intend to develop an application that runs on Android 4.1.1(API level 16) and below, you should set the [`ContentProvider`](https://developer.android.com/reference/android/content/ContentProvider) permission to false in the manifest to disallow other apps that might be accessing data from your app.
 
@@ -116,7 +117,7 @@ Background Service: A service that performs operations that the user cannot noti
 
 For instance, if your app uses Google Play Services, you should ensure that it is updated on your device.
 
-Next are the dependencies. Dependencies are the external libraries or local JavaArchive(jar) files included in an Android project. For example, when using Google Firebase to authenticate a user, you add a firebase dependency for authentication in the build.gradle(Module App) as:
+Next are the dependencies. Dependencies are the external libraries or local JavaArchive(jar) files included in an Android project. For example, when using Google Firebase to authenticate a user, you add a firebase dependency for authentication in the **build.gradle(Module App)** as:
 
 ```gradle
 implementation 'com.google.firebase:firebase-auth:21.0.1'
@@ -125,7 +126,7 @@ For instance, using the firebase auth dependency above is appropriate to use the
 
 Dependencies also include libraries like Sofware Development Kits(SDKs) which can be updated directly from Android Studio using the SDK Manager.
 
->Note: Dependencies are added in the build.gradle in the android studio. Because some dependencies are deprecated or no longer supported, make sure you check the websites of the libraries your app requires for the most recent version. 
+>Note: Dependencies are added in the `build.gradle` in the android studio. Because some dependencies are deprecated or no longer supported, make sure you check the websites of the libraries your app requires for the most recent version. 
 
 Some dependencies are deprecated or are no longer supported. Using them can cause insecurity in your application.
 
@@ -133,11 +134,11 @@ Some dependencies are deprecated or are no longer supported. Using them can caus
 Network security measures are the tools added to a network to secure stored or transmitted data. To secure your app's data as a developer, you should include the following security measures if the app is intended to share data in a network.
 
 ##### Use of Secure Sockets Layer traffic
-SSL stands for Secure Sockets Layer, the standard technology for ensuring that an internet connection is secure. It also safeguards any sensitive data that is being shared via the internet.
+SSL stands for Secure Sockets Layer, the standard technology for ensuring a secure internet connection. It also safeguards any sensitive data that is being shared via the internet.
 
 Sending an HTTPS request will be pretty straightforward if you design an app that communicates with a web server with a certificate issued by a trusted Certificate Authority. 
 
-HTTPS requests are used to send POST or GET requests to a remote or web server. You must ensure that you are doing so via a secure channel. For example, you want to send a GET request to secure it, as in the code snippet below.
+HTTPS requests send POST or GET requests to a remote or web server. You must ensure that you are doing so via a secure channel. For example, you want to send a GET request to secure it, as in the code snippet below.
 ```kotlin
    // Function for sending a secure GET request
   fun getRequest() {
@@ -165,4 +166,7 @@ HTTPS requests are used to send POST or GET requests to a remote or web server. 
 ```
 
 ### Conclusion
-Android application security entails the security of data being shared across networks and the security of data stored on the Android device. This article only covered the most basic and frequently used security methods in this article.To learn more about data security stored on the device, visit [here](https://developer.android.com/topic/security/best-practices). 
+Android application security entails the security of data being shared across networks and the security of data stored on the Android device. This article only covered the most basic and frequently used security methods. To learn more about data security stored on the device, visit [here](https://developer.android.com/topic/security/best-practices). 
+
+---
+Peer Review Contributions by: [Jerim Kaura](/engineering-education/authors/jerim-kaura/)
