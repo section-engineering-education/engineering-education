@@ -1,19 +1,13 @@
-Augmented Reality (AR) is a technology that combines digital content with real-world objects. It allows users to interact with the world around them through their mobile devices.
+Augmented Reality (AR) is a new technology that merges digital elements with real-world objects. Its users may interact with their environments with their smart phones.
 
-Augmented Reality is currently one of the most revolutionary features of technology in recent years. With AR, we can bend reality in the way that we want. This is like an extension of reality, or we can say, reevaluating the future. AR is currently being used from many different perspectives like for innovation and safety. AR helps us interact with the environment we are in.
-Augmented Reality is almost as same as virtual Reality but there is a slight difference between them. 
-The difference between them is:
-AR uses the being real-world terrain and puts virtual information on top of it to enhance the experience while virtual reality immerses druggies, allowing them to"inhabit"an entirely different terrain altogether, specially a virtual one created and rendered by computers. Druggies may be immersed in an animated scene or a factual position that has been mugged and bedded in a virtual reality app. Through a virtual reality bystander, druggies can look up, down, or any which way, as if they were actually there.
-The other difference is that VR uses a headset while AR just uses  mobile devices using their camera.
-
+Augmented Reality is currently one of the most revolutionary features of technology in recent years. With AR, we can bend reality in how we want. This is like an extension of reality, or, we can say, re-evaluating the future. AR is currently being used from many perspectives as to innovation and safety
 I am excited to share with you what I think will be the next huge technological innovation. In this article, we will learn how to create a simple AR application with Android Studio.
-
 ### Table of contents
 - [prerequisites](#prerequisites)
 - [Configuring android studio](#configuring-android-studio)
 - [Adding the 3D model to the project](#adding-the-3D-model-to-the-project)
-- [Adding sceneform ux library](#adding-sceneform-ux-library)
-- [Adding permissions for camera](#adding-permissions-for-camera)
+- [permissions](#permissions)
+- [Fixing errors](#Fixing-errors)
 - [Application design](#application-design)
 - [Java codes](#java-codes)
 - [Running the app](#Running-the-app)
@@ -25,119 +19,289 @@ I am excited to share with you what I think will be the next huge technological 
 
 - You must have a basic understanding of the Java programming language.
 - You should be equipped with Android Studio 3.1 or above.
+- Your device should have Google Play Services for AR.
 
 ### configuring android studio
-To create an augmented reality application, you must have Android Studio 3.1 or above. Now open your Android Studio, create a new project, and here you give a name to your app, Set the language to Java; the minimum API level should be at least API 24: Android 7.0. Now you have completed the first part of configuring the IDE to create an AR app.
+To create an Augmented Reality application, your Android IDE should be updated to version 3.0 or above. Now open your Android Studio, create a new project, and here you give a name to your app, Set the language to Java; the minimum API level should be at least API 24: Android 7.0. The first part of configuring Android Studio is done.
 
 The next step is to download the plugin necessary for supporting Augmented Reality by importing 3D models and viewing them. To do this, go to settings (in Android Studio IDE), then to plugins and search for Google Sceneform Tools, install it, and restart your Android Studio.
-You should have some 3D models. You can download 3D objects from:
-[here](https://drive.google.com/folderview?id=1Ls6fzMiFTx8_uE7A6or_l6YnouJIFSsc). I would suggest you use a 3D object with over 75 points. 
 
 ### Adding the 3D model to the project.
 
-After downloading the folders, you will copy the sampledata folder to the go-to Android Studio, right-click on the app section, select "open in," then select "Explorer." Paste the sampledata folder here.
+Well, for AR apps we want Sceneform SDK. SceneForm 1.15.0 is incredibly popular, but I faced of errors while getting the “Google Sceneform Tools (Beta)” plugin within the latest Android Studio 3.0. So I used Sceneform 1.16.0 SDK which I had to manually set it up.
+The Sceneform folders are [here](https://github.com/iannnooooo/Asset). Download and copy them in your app's folder.
+Then  now go to Gradle > settings.gradle(Project Settings) and add these lines:
 
-In the Java section, right-click and select the new folder "assets." Right-click on the new assets directory and select "open in Explorer" and paste the AR.src (from the one that you downloaded in the assets folder) file there. This is shown here.
-
- ![alt text](/engineering-education/creating-simple-visual-augmented-reality-application-in-android/assets.png)
-
-### Adding sceneform ux library
-
-We add the libraries to dependacies in build.grindle:(app)
-They are 
 ```java
-    implementation 'com.google.ar.sceneform.ux:sceneform-ux:1.17.1'
-    implementation 'com.google.ar.sceneform:core:1.17.1'
-    implementation 'com.google.sceneform:1.17.1'
+include ‘:sceneform’
+project(‘:sceneform’).projectDir = new File(‘sceneformsrc/sceneform’)
+include ‘:sceneformux’
+project(‘:sceneformux’).projectDir = new File(‘sceneformux/ux’)
 ```
-They are to be implemented as shown here 
-![alt text](/engineering-education/creating-simple-visual-augmented-reality-application-in-android/dependencies.png)
+They will add sceneformux and sceneform to your project.
 
-On the same build.gridle(:app) window add the highlighted codes.
+Then go to Gradle > build.gradle(Module:app) and add the line below inside the dependencies block.
 
-
-![alt text](/engineering-education/creating-simple-visual-augmented-reality-application-in-android/dependenciesid.png)
-
-Add the highlighted classpath as shown here 
-
-![alt text](/engineering-education/creating-simple-visual-augmented-reality-application-in-android/dependence.png)
-
-Lastly, add the plugin id in build.gridle(:app)
-
- ![alt text](/engineering-education/creating-simple-visual-augmented-reality-application-in-android/dependenciesid.png)
-
-
-
-### Adding permissions for camera
-
-On the AndroidManifest.xml page, add the following codes;
-
-```java    
-    <uses-permission android:name="android.permission.CAMERA"/>
-    <uses-feature android:name="android.hardware.camera.ar" android:required="true"/>
+```java
+api project(":sceneformux")
 ```
+You should have some 3D models. You can download any 3D file from internet. These files show be .glb. You can download my simple 3D object [here](https://drive.google.com/file/d/1J6Cv8w3jDDqC0i92YpPQxtTujJ_k1-F1/view?usp=sharing). 
 
-They should be as shown here
- ![alt text](/engineering-education/creating-simple-visual-augmented-reality-application-in-android/permission.png)
+Now you need to add the 3D files in your project. To do this, go to Android Studio right click on res directory then New > Android Resouce Directory and change Resouce Type to Raw. On this Raw folder copy the .glb file under it.
+
+### permissions
+
+On the app > manifests > AdnroidManifest.xml we add some lines of codes to ask for permission to access camera, check some features in the phone`s hardware and the last line indicates that the app requires Google play services for AR.
+
+```xml
+<uses-permission android:name="android.permission.CAMERA" />
+<uses-feature android:glEsVersion="0x00030000" android:required="true"
+<uses-feature android:name="android.hardware.camera.ar" android:required="true"/>
+
+```
+They are to be added on the application block.
+
+Add this code before Activity block:
+```xml
+<meta-data android:name="com.google.ar.core" android:value="required" />
+```
+ARcore is needed to be intalled.
+
+In general, the AdnroidManifest.xml codes are:
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+	package="com.wheic.arapp">
+	<uses-permission android:name="android.permission.CAMERA" />
+
+	<uses-feature
+		android:glEsVersion="0x00030000"
+		android:required="true" />
+
+	<uses-feature
+		android:name="android.hardware.camera.ar"
+		android:required="true" />
+	
+	<application
+		android:allowBackup="true"
+		android:icon="@mipmap/ic_launcher"
+		android:label="@string/app_name"
+		android:roundIcon="@mipmap/ic_launcher_round"
+		android:supportsRtl="true"
+		android:theme="@style/Theme.ARApp">
+
+		<meta-data
+			android:name="com.google.ar.core"
+			android:value="required" />
+
+		<activity android:name=".MainActivity">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
+
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+	</application>
+
+</manifest>
+```
+### Fixing errors
+
+The files we imported contains some java files that need correction. This may not occur but in case it generates errors, you will to change the following paths that will generate the errors.
+
+android.support.annotation change to androidx.annotation.
+androidx.core.app change to androidx.fragment.app.
+android.support.v7.widget. change to androidx.appcompat.widget. 
 
 ### Application design
 
-We now need to configure the layout of the application. On the activity_main.xml window under layout folder modify existing codes to these shown below.
+On the res > layout > activity_main.xml, we now design the layout of the app.
 
-![alt text](/engineering-education/creating-simple-visual-augmented-reality-application-in-android/mainactivity.png)
+We will use ArFragment because it contains plenty of features itself. It asks you to download ARCore if it’s not installed on your phone and asks for camera permission if it’s not granted.
 
-Note that we change the layout from the dafault layout to relative layout.
+Here is the code for activity_main.xml:
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	tools:context=".MainActivity">
+
+	<fragment
+		android:id="@+id/arCameraArea"
+		android:name="com.google.ar.sceneform.ux.ArFragment"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+```
 
 ### Java codes
-These codes are written in the MainActivity.Java window. These codes are:
+We now write the codes for the app. They are written on java > MainActivity.java.
+
+First, make an object for ArFragment
+```java 
+private ArFragment aCam;
+```
+Next, we create functions to check if the device meets minimum requirements in order to run the app.
+
+We check:
+-If API is equal to or above 24,
+-If OpenGL is equal to or above 3.0.
+
+These are the mandatory requirements to run the app.
+
+The codes are:
 ```java
-package com.example.AugmetedReality2;
+public static boolean checkSystemSupport(Activity activity) {
+	if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
 
-import androidx.appcompat.app.AppCompatActivity;
-import android.os.Bundle;
-
-public class MainActivity extends AppCompatActivity {
-    private ArFragmet arFragmet;
-
-       @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-
-        arFragmet=(ArFragmet)getSupportFragmentManager().findFragmentById(R.id.arFragment);
-        arFragmet.setOnTabArPlaneListener((hitResult, plane, motionEvent) ->{
-            final Anchor anchor=hitResult.createAnchor();
-            ModelRenderable.builder()
-                    .setSource(context:this Uri.parse("AR.sfb"))
-                    .build()
-                    .theAccept(modelRenderable -> addModelToScene(anchor, modelRenderable));
-
-        });
-        private void addModelToScene(Anchor anchor, ModelRenderable modelRenderable){
-            AnchorNode_node=new AnchorNode(anchor);
-            TrasformableNode trasformableNode =new TrasformableNode(arFragmet.getTransformationSystem());
-            trasformableNode.setParent(node);
-            trasformableNode.setRenderable(modelRenderable);
-
-
-            arFragmet.getArSceneView().getScene().addChild(node);
-            trasformableNode.select();
-        }
-    }
+		String openGlVersion = ((ActivityManager) Objects.requireNonNull(activity.getSystemService(Context.ACTIVITY_SERVICE))).getDeviceConfigurationInfo().getGlEsVersion();
+		if (Double.parseDouble(openGlVersion) >= 3.0) {
+			return true;
+		} else {
+			Toast.makeText(activity, "OpenGl Version 3.0 or higher is needed", Toast.LENGTH_SHORT).show();
+			activity.finish();
+			return false;
+		}
+	} else {
+		Toast.makeText(activity, "App does not support required Build Version", Toast.LENGTH_SHORT).show();
+		activity.finish();
+		return false;
+	}
 }
 ```
-This code should be implemented as shown:
+Now, if the above function returns true, the rest of the code will be executed.
 
- ![alt text](/engineering-education/creating-simple-visual-augmented-reality-application-in-android/mainactivity_app.png)
+We now need to link ArFragement with it`s id used in activity_main.xml.
+```java
+arCam = (ArFragment) getSupportFragmentManager().findFragmentById(R.id.arCameraArea);
+```
+We now use the onTabListener to point out the model when the screen is tabbed. We call setOnTabArPlaneListener and an anchor is formed, which will help to bring objects on the screen and maintain their position in space. ModelRendarable is now used with its functions to render the model by attaching it to an AncorNode.
+```java
+arCam.setOnTapArPlaneListener((hitResult, plane, motionEvent) -> {
+	
+	clickNo++;
+	if (clickNo == 1) {
 
-  ![alt text](/engineering-education/creating-simple-visual-augmented-reality-application-in-android/mainactivityjava.png)
+		Anchor anchor = hitResult.createAnchor();
+		ModelRenderable.builder()
+				.setSource(this, R.raw.gfg_gold_text_stand_2)
+				.setIsFilamentGltf(true)
+				.build()
+				.thenAccept(modelRenderable -> addModel(anchor, modelRenderable))
+				.exceptionally(throwable -> {
+					AlertDialog.Builder builder = new AlertDialog.Builder(this);
+					builder.setMessage("Something is not right" + throwable.getMessage()).show();
+					return null;
+				});
+	}
+});
+```
+We now add the TransformableNode that helps the user to interact with the model.
+```java
+private void addModel(Anchor anchor, ModelRenderable modelRenderable) {
 
-The codes will allow users to drag or trasform the 3D object.
+	AnchorNode anchorNode = new AnchorNode(anchor);
+	anchorNode.setParent(arCam.getArSceneView().getScene());
+	TransformableNode transform = new TransformableNode(arCam.getTransformationSystem());
+	the TransformableNode
+	transform.setParent(anchorNode);
+	transform.setRenderable(modelRenderable);
+	transform.select();
+}
+```
+The code above creates an AnchorNode and attaches it to ArFragment and TrasformableNode then attaching the Model with TrasformableNode
+
+Below are the complete codes for MainActivity.java
+
+```java
+import android.app.Activity;
+import android.app.ActivityManager;
+import android.app.AlertDialog;
+import android.content.Context;
+import android.os.Build;
+import android.os.Bundle;
+import android.widget.Toast;
+import androidx.appcompat.app.AppCompatActivity;
+import com.google.ar.core.Anchor;
+import com.google.ar.sceneform.AnchorNode;
+import com.google.ar.sceneform.rendering.ModelRenderable;
+import com.google.ar.sceneform.ux.ArFragment;
+import com.google.ar.sceneform.ux.TransformableNode;
+import java.util.Objects;
+public class MainActivity extends AppCompatActivity {
+	private ArFragment arCam;
+	private int clickNo = 0;
+
+	public static boolean checkSystemSupport(Activity activity) {
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+			String openGlVersion = ((ActivityManager) Objects.requireNonNull(activity.getSystemService(Context.ACTIVITY_SERVICE))).getDeviceConfigurationInfo().getGlEsVersion();
+			if (Double.parseDouble(openGlVersion) >= 3.0) {
+				return true;
+			} else {
+				Toast.makeText(activity, "OpenGl Version 3.0 or higher is needed", Toast.LENGTH_SHORT).show();
+				activity.finish();
+				return false;
+			}
+		} else {
+			Toast.makeText(activity, "App does not support required Build Version", Toast.LENGTH_SHORT).show();
+			activity.finish();
+			return false;
+		}
+	}
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+
+		if (checkSystemSupport(this)) {
+			arCam = (ArFragment) getSupportFragmentManager().findFragmentById(R.id.arCameraArea);		
+			arCam.setOnTapArPlaneListener((hitResult, plane, motionEvent) -> {
+				clickNo++;
+				if (clickNo == 1) {
+					Anchor anchor = hitResult.createAnchor();
+					ModelRenderable.builder()
+							.setSource(this, R.raw.gfg_gold_text_stand_2)
+							.setIsFilamentGltf(true)
+							.build()
+							.thenAccept(modelRenderable -> addModel(anchor, modelRenderable))
+							.exceptionally(throwable -> {
+								AlertDialog.Builder builder = new AlertDialog.Builder(this);
+								builder.setMessage("Something is not right" + throwable.getMessage()).show();
+								return null;
+							});
+				}
+			});
+		} else {
+			return;
+		}
+	}
+
+	private void addModel(Anchor anchor, ModelRenderable modelRenderable) {
+		AnchorNode anchorNode = new AnchorNode(anchor);
+		anchorNode.setParent(arCam.getArSceneView().getScene());
+		TransformableNode model = new TransformableNode(arCam.getTransformationSystem());
+		model.setParent(anchorNode);
+		model.setRenderable(modelRenderable);
+		model.select();
+	}
+}
+```
+
 
 ### Running the app
 
 Connect your Android phone to the PC via USB (USB debugging), and run the app.
+To get the app click [here](https://drive.google.com/drive/folders/1AXTHCmvrLldv_QILwsMyNadve74fMwhQ?usp=sharing)
 
 ### Conclusion 
 
