@@ -57,7 +57,7 @@ Implicit intent is a type of intent that facilitates communication between two d
 #### Explicit intents
 An explicit intent is a type of intent that allows communication between application components. For example, you will trigger an explicit intent when you want to navigate one activity to the next. Enough of the theory let's dive into implementation.
 
-### Adding Permissions
+### Adding permissions
 Permissions are always added to the `AndroidManifest.xml`. In the manifest add the following permission.
 
 ```xml
@@ -145,7 +145,7 @@ Add the following function to your code to display the alert dialog when selecti
 
 Below is a screenshot of the alert dialog.
 
-[Alert Dialog](/engineering-education/picking-pdf-and-image-from-phone-storage/alert-dialog.png)
+![Alert Dialog](/engineering-education/picking-pdf-and-image-from-phone-storage/alert-dialog.png)
 
 >Note: When you want only the images in your gallery to be displayed, you include the intent to be images, but if you want to display videos, do not specify the type. You can specify the type by including the code below in your intent:
 
@@ -352,7 +352,7 @@ class MainActivity : AppCompatActivity() {
     }
 ```
 
-[Screenshot](/engineering-education/picking-pdf-and-image-from-phone-storage/screenshot.png)
+![Screenshot](/engineering-education/picking-pdf-and-image-from-phone-storage/screenshot.png)
 
 ### Conclusion
 This tutorial is only meant to guide you through the intial steps. First, you will need to try the codes provided to practice and master the concept. [Intents](https://developer.android.com/guide/components/intents-filters) have various uses in Android development and should be well understood.
