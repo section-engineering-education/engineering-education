@@ -3,8 +3,8 @@ layout: engineering-education
 status: publish
 published: true
 url: /how-to-build-a-currency-converter-with-react-and-its-material-ui/
-title: Building a Music Player with Vanilla JavaScript
-description: In this article, we will demonstrate how to create a currency converter with a react and Material-UI.
+title: Building a currency convereter using Fixer.io react and material-UI
+description: In this article, we will demonstrate how to create a currency converter with a React and Material-UI with data fetched from Fixer.io API
 author: doro-onome
 date: 2021-08-25T00:00:00-17:30
 topics: [Languages]
@@ -12,7 +12,7 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /how-to-build-a-currency-converter-with-react-and-its-material-ui/hero.jpg
-    alt: Building a Music Player with Vanilla JavaScript Image
+    alt: Building a currency convereter using Fixer.io react and material-UI Image
 --- 
 
 A currency converter is an application that displays the equivalent value represented by the different currencies in the world. This article will give the reader a step-by-step guide on building a currency converting application with React and styling its components with Material UI. 
