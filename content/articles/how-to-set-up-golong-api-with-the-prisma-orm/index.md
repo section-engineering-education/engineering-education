@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
- - url: /engineering-education/how-to-set-up-golong-api-with-the-prisma-orm/hero.png
+ - url: /engineering-education/how-to-set-up-golong-api-with-the-prisma-orm/hero.jpg
    alt: Setting up a Golang API with Prisma ORM Image
 ---
 
@@ -341,9 +341,7 @@ Hit **Send** to execute the above method, and the added to-do will be added to t
 
 ![post-todo](/engineering-education/how-to-set-up-golong-api-with-the-prisma-orm/post-todo.png)
 
-You can go ahead and try out adding several new to-dos.
-
-Also, note that a log will be registered in your command line console every time you execute a method.
+You can go ahead and try out adding several new to-dos. Also, note that a log will be registered in your command line console every time you execute a method.
 
 ![http-logs](/engineering-education/how-to-set-up-golong-api-with-the-prisma-orm/logs.png)
 
