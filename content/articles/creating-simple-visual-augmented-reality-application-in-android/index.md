@@ -311,4 +311,4 @@ In conclusion, we have gone through what augmented reality is and how to make a 
 You can learn more about Augmented Reality programming from these articles.
 [here](https://developers.google.com/ar)
 
-[here](https://www.codiant.com/services/augmented-reality-app-development)
+[here](https://www.codiant.com/services/augmented-reality-app-development).
