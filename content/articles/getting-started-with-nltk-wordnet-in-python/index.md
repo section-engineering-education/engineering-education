@@ -1,5 +1,5 @@
 ### Intoduction
-In Python's Natural Language Tool Kit (NLTK), you'll find the WordNet English dictionary. Natural Language Processing (NLP) is made simple with the help of this complete set of tools. As a part of this tutorial, we'll cover some of the program's most basic functions. To get started with WordNet, you first need to import the data.
+The WordNet English dictionary can be found in Python's Natural Language Tool Kit (NLTK), which is part of the Natural Language Tool Kit (NLTK). Using this comprehensive set of tools, Natural Language Processing (NLP) may be made simple and straightforward. As a part of this tutorial, we'll cover some of the program's most basic functions. To get started with WordNet, you first need to import the data.
 ```python
 from nltk.corpus import wordnet as wn 
 ```
@@ -10,11 +10,11 @@ from nltk.corpus import wordnet as wn
 - [Entailments](#entailments)
 - [Conclusion](#conclusion)
 ### Synonyms and Synsets
-All of the concepts in a synset have the same meaning since they are all synonyms in WordNet, which preserves synonyms in their natural form. A synset is a group of synonyms that are related to one another in the context of linguistics. The definition of a synset can be found in the synset's own language. According to what we'll see in the next section, the synset relationships are maintained.
+All of the concepts in a synset have the same meaning since they are all synonyms in WordNet, which preserves synonyms in their natural form. A synset is a group of synonyms that are related to one another in the context of linguistics.It is possible to find the definition of a synset in the synset's native language.It will be seen in the following section that the synset relationships have been preserved.
 
-In the NLTK, the Synset interface can be used to search the WordNet database for a certain term. It's a list of words that convey the same meaning as each other. Words each have their own unique number of Synsets linked to them. A Synset can be created from a group of WordNet words that are conceptually related (short for Synonym-set). Each Synset is assigned a numerical value in addition to the names and pieces of speech it represents. A Synset is made up of these words.
+In the NLTK, the Synset interface can be used to search the WordNet database for a certain term. It's a list of words that convey the same meaning as each other.There are an infinite number of Synsets associated with each word. A Synset can be created from a group of WordNet words that are conceptually related (short for Synonym-set). Each Synset is assigned a numerical value in addition to the names and pieces of speech it represents. A Synset is made up of these words.
 #### 1. Getting Synsets.
-Synsets relating to the word you gave in as an argument to wordnet.synsets("word") can be retrieved using this method.
+Synsets that are related to the word that you entered as an argument to wordnet.synsets("word")  can be obtained from a database using this method.
 ```python
 import nltk
 from nltk.corpus import wordnet as wn 
@@ -125,7 +125,7 @@ OUTPUT
 ['book', 'rule_book']
 ```
 ### Hypernyms and Hyponyms.
-A Hyponym is a type of Synset that has been modified for a specific purpose, as opposed to a generic Synset. It can be thought of as a child (or derived) class in the context of inheritance. A synonym is a function that returns an array containing all of the Synsets that are Hyponyms of the Synset that was passed in as an argument to the function (). Hypernyms exist in a number of shapes and sizes, but the Synset is by far the most popular. The terms Hyponym and Hypernym are diametrically opposed. The hypernyms of a Synset are returned as an array of values ().
+A Hyponym is a type of Synset that has been modified for a specific purpose, as opposed to a generic Synset. In terms of inheritance, it's similar to the concept of a "child class." A synonym is a function that returns an array containing all of the Synsets that are Hyponyms of the Synset that was passed in as an argument to the function (). Hypernyms exist in a number of shapes and sizes, but the Synset is by far the most popular. The terms Hyponym and Hypernym are diametrically opposed. A Synset's hypernyms are returned in the form of an array of numbers ().
 
 For example, the words 'banana' and 'mango' are hyponyms for the word 'fruit'. In this case, they are more specific concepts of the word 'fruit'. Furthermore, the term "fruit" is a hypernym for the words "banana" and "mango" because it refers to the general idea of fruits.
 
