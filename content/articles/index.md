@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /Automatic-type-promotion/
 title: Automatic type promotion
-description: This article will cover a brief introduction to auto type promotion and method overloading and their relationships, reasons or circumstances under which you may be required to apply automatic type promotion and the different types or ways of implementing type promotion. 
+description: This article will cover a brief introduction to auto type promotion and method overloading and their relationships, reasons or circumstances under which you may be required to apply automatic type promotion and the different types or ways of implementing it. 
 author: mackrine-awino
 date: 2021-11-27T00:00:00-12:10
 topics: [Languages]
@@ -14,12 +14,11 @@ images:
   - url: /engineering-education/Automatic-type-promotion/hero.jpg
     alt: Automatic type promotion Hero Image
 ---
-Type promotion is a common occurrence in java programming which, can be achieved automatically in the case of primitive data types through the use of autotype promotion which is also referred to as automatic data type promotion.
+Type promotion is a common occurrence in Java programming which can be achieved automatically in the case of primitive data types through the use of autotype promotion. It is also referred to as automatic data type promotion.
 <!--more-->
-Sometimes automatic type casting is confused with typecasting, which should not be the case as casting is achieved manually by a programmer during system coding.
-You also need to understand that datatypes once promoted cannot be "depromoted."
+Sometimes automatic type casting is confused with typecasting, which should not be the case as casting is achieved manually by a programmer during system coding. You should also understand that datatypes once promoted cannot be "depromoted".
 
-Overloading is a concept in java where different methods can have a common name. The methods, however, differ by the parameters that they take in or even their input data types.
+Overloading is a concept in Java where different methods can have a common name. The methods, however, differ by the parameters that they take in or even their input data types.
 
 Automatic type casting mainly occurs in method overloading; hence, it is incumbent that we understand both concepts clearly before we begin.
 
@@ -48,7 +47,7 @@ Below is a diagrammatic illustration of possible type promotions:
 
 ![type promotions](/engineering-education/Automatic-type-promotion/INT.png)
 
-The Java code fragment below shows the variable declaration and instantiation of 2 variables, `num1` and `num2`, each byte. It then declares a variable mult1 which is int and is expected to store the products of `num1` and `num2`.
+The Java code fragment below shows the variable declaration and instantiation of 2 variables, `num1` and `num2`, each byte. It then declares a variable `mult1` of type int and is expected to store the products of `num1` and `num2`.
 
 ``` java
 byte num1 = 200;
@@ -122,7 +121,7 @@ As valuable as automatic type promotion is in java, it may sometimes result in c
 
 ![problem](/engineering-education/Automatic-type-promotion/int2.png)
 
-This error is caused by the automatic promotion of the type `byte` to the entire execution time. Therefore if it has to be a byte, typecasting needs to be performed explicitly.
+This error is caused by automatically promoting the type `byte` to the entire execution time. Therefore, typecasting needs to be performed explicitly if it has to be a byte.
 
 Below is a full java program illustrating Automatic type promotion:
 
@@ -167,7 +166,7 @@ Output:
 ![output](/engineering-education/Automatic-type-promotion/ou.png)
 
 ### Conclusion
-Despite the benefits of ith automatic type promotion, some requirements do not support it. It only supports [typecasting](https://www.javatpoint.com/type-casting-in-java) or widening, which means [narrowing](https://www.tutorialspoint.com/narrowing-conversion-in-java#:~:text=Narrowing%20conversion%20is%20needed%20when,to%20integer%20using%20Narrowing%20Conversion.) is uncatered for; hence narrowing has to be done manually by the programmer, which raises the need to learn manual types of casting.
+Despite the benefits of ith automatic type promotion, some requirements do not support it. For example, it only supports [typecasting](https://www.javatpoint.com/type-casting-in-java) or widening, which means [narrowing](https://www.tutorialspoint.com/narrowing-conversion-in-java#:~:text=Narrowing%20conversion%20is%20needed%20when,to%20integer%20using%20Narrowing%20Conversion.) is uncatered for; hence narrowing has to be done manually by the programmer, which raises the need to learn manual types of casting.
 
 Happy learning!
 
