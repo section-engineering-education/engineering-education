@@ -15,11 +15,11 @@ All of the concepts in a synset have the same meaning since they are all synonym
 In the NLTK, the Synset interface can be used to search the WordNet database for a certain term. It's a list of words that convey the same meaning as each other.There are an infinite number of Synsets associated with each word. A Synset can be created from a group of WordNet words that are conceptually related (short for Synonym-set). Each Synset is assigned a numerical value in addition to the names and pieces of speech it represents. A Synset is made up of these words.
 #### 1. Getting Synsets.
 Synsets that are related to the word that you entered as an argument to wordnet.synsets("word")  can be obtained from a database using this method.
+
 ```python
 import nltk
 from nltk.corpus import wordnet as wn 
 wn.synsets('book')
-```
 OUTPUT
 ```bash
 [Synset('book.n.01'),Synset('book.n.02'),Synset('record.n.05'),Synset('script.n.01'),Synset('ledger.n.01'),Synset('book.n.06'),Synset('book.n.07'),Synset('koran.n.01'),Synset('bible.n.01'),Synset('book.n.10'),Synset('book.n.11'),Synset('book.v.01'),Synset('reserve.v.04'),Synset('book.v.03'),Synset('book.v.04')]
