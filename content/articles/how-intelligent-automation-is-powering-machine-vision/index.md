@@ -11,7 +11,7 @@ topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /how-intelligent-automation-is-powering-machine-vision/hero.jpg
+  - url: /engineering-education/how-intelligent-automation-is-powering-machine-vision/hero.jpg
     alt: Intelligent Automation Example Image
 ---
 Incorporating [artificial intelligence](/engineering-education/differences-between-artificial-intelligence-machine-learning-and-deep-learning/) into the day-to-day operations of firms has become increasingly common. Having intelligent automation running operations is advantageous in many ways. It brings efficiency and effectiveness to a business's operations. Applications of intelligent automation today include machine vision, a key technology in the business world.
