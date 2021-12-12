@@ -1,9 +1,12 @@
-# Getting Started with Hierarchical Clustering in Python
-Hierarchical clustering is one of the popular unsupervised learning algorithms. It is used in grouping data points into groups of similar properties. Also known as, Hierarchical cluster analysis, this algorithm inherits its name from the word *hierarchy*, which means ranking or arranging things in order of their importance. This is what hierarchical clustering does. It identifies elements with a particular similarity in a dataset and clusters them until, in the end, we have a single cluster. Hierarchical clustering approaches clustering problems in two ways. These two approaches form the two types of hierarchical clustering. Let us look at each of them.
+### Getting Started with Hierarchical Clustering in Python
+Hierarchical clustering is one of the popular unsupervised learning algorithms. Hierarchical clustering obtained its name from the word hierarchy. This word means ranking things according to their importance. This is what hierarchical clustering does. It finds elements of the dataset with similar properties under consideration and groups them together in a cluster. In the end, we obtain a single big cluster whose main elements are clusters of data points or clusters of other clusters. Hierarchical clustering approaches clustering problems in two ways. Let's look at these two approaches of hierarchical clustering.
+
+### Prerequsites:
+To get along comfortably with this material, you are required to have a basic understanding of python programming.
 
 ### Types of Hierarchical Clustering
-#### Agglomerative clustering.
-- **Agglomerative clustering:** Agglomerative clustering is a bottom-up approach. Initially, it assumes that each data point in the dataset is an independent cluster. So, in the beginning, each data point is considered a single-element cluster (leaf). Then, it tries to reduce the number of these clusters at each stage by merging the two most similar clusters into a new cluster. This process continues until we obtain one big cluster(root) whose elements are clusters of comparable properties. Once all clustering is completed, we visualize data clusters using a scatter plot.
+#### Agglomerative clustering
+- **Agglomerative clustering:** In this clustering approach, we start with the cluster leaf and then move upward until the cluster root is finally obtained. Initially, this approach assumes each data point in the dataset is an independent cluster. So, in the beginning, each data point is considered a single-element cluster (leaf). Since the two most similar clusters are combined at each step, we obtain fewer clusters at each current iteration than the previous iteration. This process continues until we obtain one big cluster(root) whose elements are clusters of comparable properties. Once all clustering is completed, we visualize data clusters using a scatter plot.
 
 We can further enhance our understanding of this algorithm by considering the flowchart below.
 
@@ -11,26 +14,26 @@ We can further enhance our understanding of this algorithm by considering the fl
 Source:[Displayr](https://www.displayr.com/what-is-hierarchical-clustering/)
 
 In this flowchart, we assumed a dataset with N elements where N = 6. Below are the steps involved in the above clustering.
-- *Step 0:* Initially, assume each data point is an independent cluster.
-- *Step 1:* Make each data point a single-point cluster, i.e., 6 clusters.
-- *Step 2:* Take the two closest data points and merge them into a single cluster. By so doing, we ended up with 5 clusters.
-- *Step 3:* Take the two closest clusters and merge them into a single cluster. By so doing, we ended up with 4 clusters.
-- *Step 4:* Reapt step three until we have only one cluster.
+- *Step 1:* Initially, assume each data point is an independent cluster, i.e., 6 clusters.
+- *Step 2:* Into a single cluster, merge the two closest data points. By so doing, we ended up with 5 clusters.
+*Step 3:* Again, merge the two closest clusters into a single cluster. By so doing, we ended up with 4 clusters.
+- *Step 4:* Reapt step three above until a single cluster of all data points is obtained.
 
 If we visualize the dendrogram, we should obtain a tree-like structure with the root at the top like the one shown below. 
 
 ![Dendrogram](/engineering-education/hierarchical-clustering-in-python/dendogram.png)
 
-Generally, this is the Agglomerative clustering algorithm.
+Generally, this is what the Agglomerative clustering algorithm is.
 
-#### Divisive hierarchical clustering:
- Divisive clustering is a top-down approach. In other words, we can comfortably say it is a reverse order of Agglomerative clustering. It begins with the root, in which all objects are included as a single cluster. Then, the most heterogeneous group gets **divided** into two different clusters at each iteration step. The process continues until all the optimal number of clusters is attained.
+#### Divisive clustering
+ Divisive clustering is a top-down approach. In other words, we can comfortably say it is a reverse order of Agglomerative clustering. At the beginning of clustering, all data points are considered homogeneous, and hence it starts with one big cluster of all data points. Then, at each clustering iteration, the most heterogeneous group is **divided** into two different clusters such that the variance in them is reduced. The process continues until all the optimal number of clusters is attained.
 
 In the real world, however, the initial assumption of the Divisive clustering, the data is homogeneous, holds less weight than the Agglomerative clustering assumption that all data points are different from each other. This makes this algorithm less utilized in the clustering tasks than agglomerative clustering. With this said, this article will give close attention to Agglomerative clustering as it is the algorithm we are most likely to apply in future clustering tasks,
 
 Our agglomerative clustering algorithm talked about $two\ closest\ clusters$. So how do we determine how fur clusters are from each other?
 
  In machine learning, there are various distance metrics that we can utilize and measure the distance between various points.
+
 These metrics include:
 - Euclidean distance
 - Minkowski distance
@@ -43,20 +46,24 @@ The Euclidean distance has shown a wide range of use in distance measurement com
 
 Since we know the metrics we can use and measure the distance between fixed points, now it's time to go back and answer our question; how do we take this measurement between clusters?
 
- When we talk about clusters, we refer to a group of points. To measure the distance between these groups of points, we need to develop a well-defined approach to enhance consistency in our clustering task. There are five ways we can adopt and measure distances between clusters. Generally, these methods are known as **Linkage methods**.
+ When we talk about clusters, we refer to a group of points. To measure the distance between these groups of points, we need to develop a well-defined approach to enhance consistency in our clustering task. The distance between two clusters can be taken in five different approaches. These approaches are generally known as **Linkage methods**.
 
 Let us look at them and try to understand how they work. 
-1. **Single-linkage:** According to this method, the distance between two clusters is the distance between the closest points between the two clusters, say cluster \(C_1\) and \(C_2\).
+1. **Single-linkage:** 
+This method computes dissimilarities between all pairs of elements in the two clusters. The minimum dissimilarity is what qualifies to be the distance between the two clusters. This is illustrated in the figure below.
 
 ![Single-linkage](/engineering-education/hierarchical-clustering-in-python/single-linkage.png)
 
-2. **Complete-linkage:** This method computes dissimilarities of all pairwise elements between two clusters, \(C_1\) and \(C_2\), and chooses the maximum value as the distance between these clusters.
+2. **Complete-linkage:**
+This method computes dissimilarities between all pairs of elements in the two clusters. The maximum dissimilarity is what qualifies to be the distance between the two clusters. This is illustrated in the figure below.
+
 ![Complete-linkage](/engineering-education/hierarchical-clustering-in-python/complete-linkage.png)
 
-3. **Average Linkage:** According to this method, the distance between two clusters, \(C_1\), and \(C_2\), is the average of all pairwise distances between the two clusters.
+3. **Average Linkage:**
+This method computes the distance between two clusters by finding all possible dissimilarities between the two clusters. All the dissimilarities are then averaged, and the average value is then taken as the distance between these clusters.
 
-
-4. **Centroid linkage:** According to the centroid linkage, we first find the centroid for each cluster and then take the distance between these centroids in the two clusters.
+4. **Centroid linkage:**
+This method involves centering each cluster and then measuring the distance between the obtained centers of the two clusters.
 
 ![Centroid distance](/engineering-education/hierarchical-clustering-in-python/centroid.png)
 
@@ -64,17 +71,17 @@ Let us look at them and try to understand how they work.
 
 
 ### Implementing Hierarchical Clustering
-Now is the time to put all we have discussed above into action. Here we shall use a real-world dataset to implement an Agglomerative clustering model and finally visualize how the model could discover various clusters from the data. So let download this dataset [here](https://github.com/DennisKimt/datasets/blob/main/Mall_Customers.csv) and get started as follows:
+Now is the time to put all we have discussed above into action. Here we shall use a real-world dataset to implement an Agglomerative clustering model and finally visualize how the model could discover various clusters from the data. So, with that said, you can download this dataset from this [link](https://github.com/DennisKimt/datasets/blob/main/Mall_Customers.csv) and get started as below:
 
 Once we have downloaded our data, the first thing is to import all the necessary libraries for this session. The following code import these libraries.
-### Importing the libraries
+### Importing necessary libraries
 ```python
-import numpy as np # linear algebra
-import matplotlib.pyplot as plt # this is used for the visualization
-import pandas as pd # this is used for data preprocessing
+import numpy as np # to handle numeric data
+import matplotlib.pyplot as plt # for visualization
+import pandas as pd # for handling dataframe
 
 ```
-### Import the dataset
+### Reading the dataset to workspace
 Now that our libraries are imported, let us read THE data to OUR workspace and print the first five rows using the `head()` function.
 
 ```python
@@ -92,9 +99,10 @@ newData = ourData.iloc[:, [3, 4]].values # extract the two features from our dat
 ```
 The two features of our *newData* are almost on the same scale. Therefore, we do not need to scale the data up. However, this will not always be the case. For example, we shall be working with datasets whose values are totally on a different scale. In such a situation, we shall have to scale the data so that various features are comparable; otherwise, we will end up with an inferior model. The reason is that hierarchical clustering, like many other algorithms in machine learning, is distance-based (Euclidean distance).
 
-The next thing is to find the optimal number of clusters we should cluster our data. To do this, we shall first implement a dendrogram using our dataset.
+Before attempting to cluster our data, we need to know how many clusters our data can be optimally be clustered to. So let's first implement a dendrogram on our dataset to gain this knowledge.
 
-### Finding the optimal number of clusters using dendrogram.
+### Determining the optimal number of clusters with dendrogram.
+The code below will build a dendrogram on our dataset.
 
 ```python
 import scipy.cluster.hierarchy as sch # importing scipy.cluster.hierarchy for dendrogram
@@ -109,41 +117,48 @@ plt.show() # show the dendrogram
 The code above returns a dendrogram, as shown below.
 ![Dendrogram](/engineering-education/hierarchical-clustering-in-python/dendogram.png)
 
-To determine the optimal number of clusters using a dendrogram, we extrapolate all the horizontal lines of the dendrogram across it. We then find the longest verticle line that does not cross those hypothetical lines. Across that longest line, we establish a threshold. The total number of verticle lines this threshold cuts across is optimal clusters.
+Considering the dendrogram above, the optimal number of clusters can be determined as follows; hypothetically, extrapolate all the horizontal lines across the entire dendrogram and then find the longest verticle line that does not cross those hypothetical lines. Across that longest line,  establish a threshold. The number of clusters we can optimally cluster our data equals the count of euclidean distances(verticle lines) the established threshold cuts across.
 
-In the dendrogram we have just obtained, the longest verticle line with no extended horizontal line crosses is at the green section. The third line is between euclidian distance (110 - 250). If we take the threshold like 150, we get the optimal number of clusters as 5.
 
-We know the number of clusters our data can be grouped into, and now we train our model to obtain these clusters.
+In the dendrogram we have just obtained, the longest verticle line with no extended horizontal line crosses is at the green section. The third line is between euclidian distances (110 - 250). Taking our threshold to be 150, the optimal number of clusters obtained is five.
 
-### Training the Hierarchical Clustering model on the dataset
+Knowing the optimal number our data should cluster into; we can now train our clustering model to achieve this goal.
+
+### Hierarchical Clustering model training on the data
 
 ```python
-from sklearn.cluster import AgglomerativeClustering # importing the AgglomerativeClustering model from scikit learn
+from sklearn.cluster import AgglomerativeClustering # this line of code imports AgglomerativeClustering model from sk-learn
 '''
-build an object of AgglomerativeClustering and pass the following parameters:
+we need to create an AgglomerativeClustering object, and in it, we pass the following parameters:
 
-n_cluster= 5 so that the model returns an exact 5 clusters
-affinity=euclidean to specify our distance computation metric.
+n_cluster= 5, the number of clusters our model should return
+affinity=euclidean, specify metric to be used to calculate distances
 linkage= ward to regulate how distance calculation will be carried out between different clusters.
 '''
-hc = AgglomerativeClustering(n_clusters = 5, affinity = 'euclidean', linkage = 'ward') 
-y_hc = hc.fit_predict(X) # fitting the model to the dataset
+Agg_hc = AgglomerativeClustering(n_clusters = 5, affinity = 'euclidean', linkage = 'ward') 
+y_hc = Agg_hc.fit_predict(newData) # model fitting on the dataset
 
 ```
-The code above successfully trained our model, and we can now go on and visualize how our data was classified as follows.
+The code above trained our model, and we can now go on and visualize how the data were clustered. To do this, let's run the code below.
 
-### Viaualizing clusters
+### Clusters viaualization
 ```python
-plt.scatter(newData[y_hc == 0, 0], newData[y_hc == 0, 1], s = 100, c = 'red', label = 'Cluster 1') # plotting the first cluster
-plt.scatter(newData[y_hc == 1, 0], newData[y_hc == 1, 1], s = 100, c = 'blue', label = 'Cluster 2') # plotting the second cluster
-plt.scatter(newData[y_hc == 2, 0], newData[y_hc == 2, 1], s = 100, c = 'green', label = 'Cluster 3') # plotting the third cluster
-plt.scatter(newData[y_hc == 3, 0], newData[y_hc == 3, 1], s = 100, c = 'cyan', label = 'Cluster 4')  # plotting the fourth cluster
-plt.scatter(newData[y_hc == 4, 0], newData[y_hc == 4, 1], s = 100, c = 'magenta', label = 'Cluster 5') # plotting the fifth cluster
-plt.title('Clusters of customers') # title of the plot
-plt.xlabel('Annual Income (k$)') # label of the x-axis
-plt.ylabel('Spending Score (1-100)') # label of the y-axis
-plt.legend() # print the legend
-plt.show() # show the plot
+# plotting cluster 1
+plt.scatter(newData[y_hc == 0, 0], newData[y_hc == 0, 1], s = 100, c = 'red', label = 'Cluster 1') # plotting cluster 2
+plt.scatter(newData[y_hc == 1, 0], newData[y_hc == 1, 1], s = 100, c = 'blue', label = 'Cluster 2') # plotting cluster 3
+plt.scatter(newData[y_hc == 2, 0], newData[y_hc == 2, 1], s = 100, c = 'green', label = 'Cluster 3') # plotting cluster 4
+plt.scatter(newData[y_hc == 3, 0], newData[y_hc == 3, 1], s = 100, c = 'cyan', label = 'Cluster 4')  # plotting cluster 5
+plt.scatter(newData[y_hc == 4, 0], newData[y_hc == 4, 1], s = 100, c = 'magenta', label = 'Cluster 5')
+# plot title addition
+plt.title('Clusters of customers')
+# labelling the x-axis
+plt.xlabel('Annual Income (k$)')
+# label of the y-axis
+plt.ylabel('Spending Score (1-100)')
+# printing the legend
+plt.legend() 
+# show the plot
+plt.show()
 
 ```
 ![Scatter plot](/engineering-education/hierarchical-clustering-in-python/customer-clusters.png)
