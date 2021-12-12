@@ -204,9 +204,7 @@ The *BookDetail*, the other view, allows the user retrieve, update, and delete a
 ### Create a URL handler
 When a user makes a request, the Django controller takes over and searches the `urls.py` file for the corresponding view, returning the response or an error if not found.
 
-In Django, the "*urlpatterns*" tuple is the most significant element. The URL-to-view mapping is defined here. 
-
-Next, create a `urls.py` file in your app directory, and add the following code:
+In Django, the "*urlpatterns*" tuple is the most significant element. The URL-to-view mapping is defined here. Next, create a `urls.py` file in your app directory, and add the following code:
 
 ```python
 from django.urls import path
@@ -257,19 +255,9 @@ zappa init
 
 ![Zappa Init](/engineering-education/deploying-a-serverless-django-restapi-with-zappa-on-aws/zappainit.PNG)
 
-This command initializes Zappa and creates a `zappa_settings.json` file. 
-
-Once the command executes in your terminal, you will get the following output and instructions.
-
-Flowing from this instruction, select an environment name. We used the default name, '*dev' in this project.*
+This command initializes Zappa and creates a `zappa_settings.json` file. Once the command executes in your terminal, you will get the following output and instructions. Flowing from this instruction, select an environment name. We used the default name, '*dev' in this project.* Here, Zappa created a bucket for handling uploaded files. Our Django application would be set in a private s3 bucket. Lastly, we deploy by running,
 
 ![Zappa configuration](/engineering-education/deploying-a-serverless-django-restapi-with-zappa-on-aws/zappa2.PNG)
-
-
-Here, Zappa created a bucket for handling uploaded files. Our Django application would be set in a private s3 bucket. 
-
-
-Lastly, we deploy by running,
 
 ```bash
 zappa deploy dev
