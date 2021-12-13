@@ -16,7 +16,7 @@ images:
 ---
 In the older computer generations, running simple codes was much trickier than one might have thought. This challenge is because computers do everything in machine languages written on punch cards. It then went to mnemonics, as used in the [Assembly language](https://en.wikipedia.org/wiki/Assembly_language). These were simpler but still required an understanding of machine language.
 <!--more-->
-Developers needed high-level languages more than ever, since computers seemed effective in repetitive tasks.
+Developers needed high-level languages more than ever since computers seemed effective in repetitive tasks.
 
 The invention of a high-level language compiler was a significant breakthrough in the computer growth phase. This breakthrough was because high-level languages are understandable by most people, though much overhead is needed.
 
@@ -100,7 +100,7 @@ Tokens are defined as anything that can be recognized in [Context-Free Grammars 
 #### Patterns
 Patterns can be of specific formats that are used to recognize tokens. Compilers can use them to identify letters, words, and special characters. These can then be classified as terminals or non-terminals, among others.
 
-Patterns can be user-defined or come pre-defined with the program before-hand.
+Patterns can be user-defined or come pre-defined with the program beforehand.
 
 #### Lexemes
 On the other hand, lexemes can be said as a combination of tokens that convey a more understandable meaning when combined.
@@ -110,7 +110,7 @@ This Java code prints a 'Hello World' message when running the code below:
 
 ```java
 /*Print 'Hello World!'*/
-/*Comments and whitespaces are not count*/
+/*Comments and whitespaces are not counted*/
 public class HelloWorld
 {
   public static void main(String[] args) {
