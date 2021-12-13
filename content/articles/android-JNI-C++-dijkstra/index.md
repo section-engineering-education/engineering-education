@@ -38,7 +38,7 @@ Additionally, you need Android Studio or IntellijIDEA(configured for android dev
 ### A brief overview of the Android NDK and the JNI
 Think of JNI(Java Native Interface) as a tool used for communication between java bytecode and other native languages such as C. We can write programs in another language and make them communicate with languages that can run on the Java Virtual Machine(e.g, Kotlin, Clojure) thanks to JNI. This allows us to implement features that are not easily done using these JVM-based languages, such as communicating with the low-level components such as the memory, hardware, etc. Moreover, applications/products written using the native languages run faster.
 
-NDK is a tool that facilitates the linking of the languages and JNI. Moreover, it allows us to debug and run our applications.
+NDK is a tool that facilitates the linking of the languages and the JNI. Moreover, it allows us to debug and run our applications.
 
 For more info on these, please follow the links listed below:
 
