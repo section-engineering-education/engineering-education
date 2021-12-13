@@ -1,4 +1,4 @@
-Many times, one may be caught in traffic jams during rush hours. It may be in the morning when late for that office meeting, or in the evening when you have a longing to see your pet. Due to this, the person may want to know the shortest route to navigate through the jam, right? 
+Many times, one may be caught in traffic jams during rush hours. It may be in the morning when late for that office meeting, or in the evening when you have a longing to see your pet. Due to this, the person may want to know the shortest route to navigate through the jam, right?
 We are going to see how to create a simple app to do that using Dijkstra's Shortest Path First(DSPF) algorithm. Think of the one found in Google Maps but a very simpler and basic version as shown in the image below:
 
 [screenshot 1](/engineering-education/android-JNI-C++-dijkstra/shot-one.png)
@@ -9,13 +9,13 @@ We will be using C++ for the path computation and then consume and display the r
 
 ### Prerequisites
 
-To follow through this easily, a piece of knowledge in the following is required.
+A piece of knowledge in the following is required to follow through this effortlessly.
 
 1. **C++**
-Being well-versed with it is required. Key areas to have a keen eye on is namespaces, string methods, and pointers. When using JNI, the latter is very much important as it helps in memory management and optimization for apps you want to come up with.
+Being well-versed with it is required. Key areas to have a keen eye on is namespaces, string methods, and pointers. The latter is very important when using JNI because it helps in memory management and optimization for apps you want to come up with.
 
 2. **Kotlin**
-Basic knowledge of Kotlin is required. We will use data binding at only one instance for a simple text display.
+Basic knowledge of Kotlin is required. We will use data binding for a simple text display in only one instance.
 
 3. **Java(not so necessary)**
 It will be required to understand the working of the JNI.
@@ -23,9 +23,9 @@ It will be required to understand the working of the JNI.
 Additionally, you need Android Studio or IntellijIDEA(configured for android development) in your machine.
 
 ### A brief overview of the Android NDK and the JNI
-Think of JNI(Java Native Interface) as a tool used for communication between java bytecode and other native languages such as C. We can write programs in another language and make them communicate with languages that can run on the Java Virtual Machine(e.g Kotlin, Clojure) thanks to JNI. This allows us to implement features that are not easily done using these JVM-based languages such as communicating with the low-level components such as the memory, hardware, etc. Moreover, applications/products written using the native languages run faster.
+Think of JNI(Java Native Interface) as a tool used for communication between java bytecode and other native languages such as C. We can write programs in another language and make them communicate with languages that can run on the Java Virtual Machine(e.g, Kotlin, Clojure) thanks to JNI. This allows us to implement features that are not easily done using these JVM-based languages, such as communicating with the low-level components such as the memory, hardware, etc. Moreover, applications/products written using the native languages run faster.
 
-NDK is a tool that facilitates the linking and allows us to debug and run our applications.
+NDK is a tool that facilitates linking and allows us to debug and run our applications.
 
 For more info on these, please follow the links listed below:
 
@@ -36,15 +36,15 @@ For more info on these, please follow the links listed below:
 For us to write these native apps, we have to install the tools listed below:
 
 1. **NDK**
-2. **CMake** - It is a tool used to manage the compiling, builds, and everything needed for a successful run of a software/application creation. Find more about it [here](https://cmake.org/)
+2. **CMake** - It is a tool used to manage the compiling, builds, and everything needed for a successful software/application creation run. Find more about it [here](https://cmake.org/)
 
-Installing them is very simple. In your IDE(Android Studio or INtellijIDEA), access the SDK Manager then click the **SDK Tools** tab. Check the **NDK(Side by side)** and the **CMake** options and then click the OK button to start installing. Check the figure shown below.
+Installing them is very simple. In your IDE(Android Studio or INtellijIDEA), access the SDK Manager, then click the **SDK Tools** tab. Check the **NDK(Side by side)** and the **CMake** options, and click the OK button to start installing. Check the figure shown below.
 
 [screen two](/engineering-education/android-JNI-C++-dijkstra/shot-two.png)
 
 > To access the SDK Manager, click on the **Tools** tab -> **Android** -> **SDK Manager**.
 
-After the installation finishes, modify your app's gradle file's `defaultConfig` and add the NDK version you are using i.e
+After the installation finishes, modify your app's Gradle file's `defaultConfig` and add the NDK version you are using i.e
 
 ```kotlin
 defaultConfig {
@@ -64,7 +64,7 @@ defaultConfig {
     }
 ```
 
-> Before running the app, do that, or else your IDE will start downloading another NDK version thereby keeping you waiting(it's not always the case though). If it does before you change, you can just cancel the build process(or close and reopen the project), update your gradle, then run the app again.
+> Before running the app, do that, or else your IDE will start downloading another NDK version, thereby keeping you waiting(it's not always the case, though). If it does before you change, you can cancel the build process(or close and reopen the project), update your Gradle, then rerun the app.
 
 > You can check the NDK version installed at `your-installation-path/Android/Sdk/ndk`. You will get a folder named using the version number.
 
@@ -76,17 +76,17 @@ Start a new project creation process. On the **Phone and Tablet** option, choose
 
 [screen three](/engineering-education/android-JNI-C++-dijkstra/shot-three.png)
 
-On the next screen, set your preferred app name, choose Kotlin as the language option, and then click **Next**. 
+Set your preferred app name on the next screen, choose Kotlin as the language option, and then click **Next**. 
 
 [screen three](/engineering-education/android-JNI-C++-dijkstra/shot-four.png)
 
-Finally, choose the C++ standard version then finish. Let's stick with the **Toolchain Default** option for this article.
+Finally, choose the C++ standard version, then finish. Let's stick with the **Toolchain Default** option for this article.
 
 [screen five](/engineering-education/android-JNI-C++-dijkstra/shot-five.png)
 
 #### Project structure
 
-We see two folders(*cpp* and *java*) instead of the usual *java* folder only in the *src* folder. The *cpp* folder holds the native C++ source files together with the **CMakeLists.txt** file. This file is a configuration file used by the CMake in managing the compilation process. The *java* folder is where the kotlin files are found.
+We see two folders(*cpp* and *java*) instead of the usual *java* folder only in the *src* folder. The *cpp* folder holds the native C++ source files and the **CMakeLists.txt** file. This file is a configuration file used by the CMake in managing the compilation process. The *java* folder is where the kotlin files are found.
 
 [screen six](/engineering-education/android-JNI-C++-dijkstra/shot-six.png)
 
@@ -119,7 +119,7 @@ We then return the string to be displayed(`hello`) using the `NewStringUTF()` me
 
 > The environment's attributes and methods are accessed using the arrow( -> ) operator.
 
-The `NewStringUTF()` creates a string based on UTF-8 characters from a C++ string passed to it as an argument.
+The `NewStringUTF()` creates a string based on UTF-8 characters from a C++ string passed as an argument.
 
 In the Kotlin file, we load the C++ file using this code.
 
@@ -145,7 +145,7 @@ We will change the code in the two files to implement Dijkstra's Shortest Path F
 
 ### Dijkstra's Shortest Path First algorithm
 
-This is a type of greedy algorithm that finds the minimum weights between a graph structure. For example, finding the shortest distance between points in a graph. A graph can be anything in real-life such as road networks, rail networks, internet routes, etc.
+This type of greedy algorithm finds the minimum weights between a graph structure. For example, finding the shortest distance between points in a graph. A graph can be anything in real-life such as road networks, rail networks, internet routes, etc.
 
 > A **greedy algorithm** is an algorithm that tries to find the most optimal solution at each stage before it moves on to the next stage. An example is finding the traffic route with the least time to maneuver at a certain area of a town.
 
@@ -153,7 +153,7 @@ Take this graph, for instance:
 
 [graph](/engineering-education/android-JNI-C++-dijkstra/graph-one.png)
 
-We want to calculate the shortest distance between points 0 and 6. It works by storing visited nodes, calculating their distances between them and point 0. It only adds them to the shortest path list if their distance is the shortest compared to adjacent vertices. It is explained [here](https://www.section.io/engineering-education/dijkstra-python/) in this EngEd article. The article uses the same graph and same values we will use here. It also talks about graphs. If you want to have a clear working of the algorithm, please check it out. 
+We want to calculate the shortest distance between points 0 and 6. It works by storing visited nodes and calculating their distances and 0. It only adds them to the shortest path list if their distance is the shortest compared to adjacent vertices. It is explained [here](https://www.section.io/engineering-education/dijkstra-python/) in this EngEd article. The article uses the same graph and same values we will use here. It also talks about graphs. If you want to work the algorithm, please check it out
 
 > NOTE: You will only need the theory part. The article implements it using Python at the end. If you would like to try the Python code, well and good. But the theory part is what is needed for this article.
 
@@ -174,7 +174,7 @@ Node    Distance from 0
 6       19
 ```
 
-For our application, we will use the same graph and same values, but we will assume the values to be time taken to move between the streets rather than distance.
+We will use the same graph and same values for our application, but we will assume the values to be time taken to move between the streets rather than distance.
 
 ```bash
 Node    Time taken from 0
@@ -601,7 +601,7 @@ Let's have a look at the final graph.
 
 []()
 
-It is obvious that the path will be `0 -> 1 -> 3 -> 4 -> 6` i.e `Georgia -> Mitte St. -> Alexa St. -> Quincy St. -> Apple St.`. Oops! Our path printing function missed the fourth street. This is because of the conditional checks. As it checked the durations, it skipped Quincy Street to display `Georgia -> Mitte St. -> Alexa St. -> Apple St.`. Of course, this can be maneuvered by adding another nested loop. But what if we fed in a more complex graph? What if the duration between adjacent vertices is equal? If we feed in a different position, through the Kotlin file, the accuracy deteriorates even more(you can try it).
+It is obvious that the path will be `0 -> 1 -> 3 -> 4 -> 6` i.e `Georgia -> Mitte St. -> Alexa St. -> Quincy St. -> Apple St.`. Oops! Our path printing function missed the fourth street. This is because of the conditional checks. As it checked the durations, it skipped Quincy Street to display `Georgia -> Mitte St. -> Alexa St. -> Apple St.`. Of course, this can be maneuvered by adding another nested `if` statements. But what if we fed in a more complex graph? What if the duration between adjacent vertices is equal? If we feed in a different position, through the Kotlin file, the accuracy deteriorates even more(you can try it).
 
 All this leads us to a conclusion, this application needs a visual solution. Something animated, canvas-based, right? Let's have a look at the final graph again.
 
@@ -615,6 +615,6 @@ Remember, the DSPF algorithm only compares the weights, marks the nodes, and upd
 Now that you have the algorithm, you can use the android canvas to draw a graph or a simple map then simulate the algorithm by changing the colors of the nodes and edges to give a path. You can further enhance it by changing the values on runtime so that the path changes according to the simulated traffic situations.
 
 ### Conclusion
-We looked at a brief overview of the JNI, NDK definition, and installed the required components in our environment. We then looked at a guide on creating a sample native app, skimmed through the DSPF, and finally created our recommender app and dissected its code. Hope you had a great read. 
+We looked at a brief overview of the JNI, NDK definitions and installed the required components in our environment. We then looked at a guide on creating a sample native app, skimmed through the DSPF, and finally completed our recommender app and dissected its code. I hope you had a great read.
 
 Happy coding!
