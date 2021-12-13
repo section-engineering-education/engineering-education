@@ -2,17 +2,17 @@
 layout: engineering-education
 status: publish
 published: true
-url: /Servlet-Filter-API/
+url: /servlet-filter-api/
 title: Servlet Filter API
-description: This article deals with Servlet: Filter API.
+description: This article deals with Servlet filter API.
 author: Bensonsapan
-date: 2021-11-03T00:00:00-06:10
-topics: [Languages]
+date: 2021-12-13T00:00:00-13:00
+topics: [API]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/Servlet-Filter-API/hero.jpg
-    alt: Servlet: Filter API Hero Image
+  - url: /engineering-education/servlet-filter-api/hero.jpg
+    alt: Servlet Filter API Hero Image
 ---
 A filter is an object used to execute filtering operations such as conversion, logging, compression, encryption and decryption, input validation, and many more.
 <!--more-->
@@ -59,7 +59,7 @@ You will need the following tools to go along with this article:
 
 #### How Servlet Filters Works
 
-![How Filter works ](/engineering-education/Servlet-Filter-API/serletfilterprocess.png)
+![How Filter works ](/engineering-education/servlet-filter-api/serletfilterprocess.png)
 
 #### Explanation:
 - When a request enters the Web Container, it is checked to see whether any filters have URL patterns that match the incoming URL.
@@ -154,12 +154,12 @@ We assumed you already knew how to use the eclipse IDE and configure the Tomcat 
 #### Step one: Authentication example: dynamic web project
 Open Eclipse IDE for Java EE developers. Create a web project by selecting Files -> New -> Dynamic Web Project and provide a project name. We will name it `Authentication Example`, -> select `Finish`.
 
-![Authentication Example Project](/engineering-education/Servlet-Filter-API/projectname.png)
+![Authentication Example Project](/engineering-education/servlet-filter-api/projectname.png)
 
 #### Step two: Creating a login HTML page
 By right-clicking on the `Authentication Example` in the Project Explorer, select new -> HTML file option -> finish by giving your HTML page a name. We'll call it `login.html`, in this case. 
 
-![login page](/engineering-education/Servlet-Filter-API/loginhtml.png)
+![login page](/engineering-education/servlet-filter-api/loginhtml.png)
 
 ```html
 <!DOCTYPE html>
@@ -189,7 +189,7 @@ To navigate into the package you have created above, expand `src/main/Java`.
 
 Right-click on the `com. demo` package on the `Authentication Example` Project, select new -> Filter and finish by giving your Filter class a name. We will call it `CheckPassword` in this case.
 
-![CheckPassword lenght Filter](/engineering-education/Servlet-Filter-API/checkpasswordlenght.png)
+![CheckPassword lenght Filter](/engineering-education/servlet-filter-api/checkpasswordlenght.png)
 
 ```java
 package com. demo;
@@ -339,7 +339,7 @@ We used two filters in our example, one to check the password length and another
 
 Lastly, this article will give you a solid foundation of Filters. To improve your understanding and enhance your coding skills, start exploring more.
 
-Happy Learning!
+Happy coding!
 
 ---
 Peer Review Contributions by: [Briana Nzivu](/engineering-education/authors/briana-nzivu/)
