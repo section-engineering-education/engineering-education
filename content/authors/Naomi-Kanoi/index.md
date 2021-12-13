@@ -1,5 +1,5 @@
 ---
-title: naomi kanoi
+title: Naomi Kanoi
 type: authors
 github: https://github.com/kanoinikita
 - url: /engineering-education/authors/Naomi-Kanoi/avatar.jpg
