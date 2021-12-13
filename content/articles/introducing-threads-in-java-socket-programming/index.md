@@ -53,6 +53,7 @@ public class Serverclass
 		ServerSocket myserverSocket = new ServerSocket(5056);
 		// getting client request
 		while (true)
+    // running infinite loop 
 		{
 			Socket mynewSocket = null;
 			
@@ -62,6 +63,7 @@ public class Serverclass
 				mynewSocket = myserverSocket.accept();
 				
 				System.out.println("A new connection identified : " + mynewSocket);
+        // obtaining input and out streams
 				DataInputStream ournewDataInputstream = new DataInputStream(mynewSocket.getInputStream());
 				DataOutputStream ournewDataOutputstream = new DataOutputStream(mynewSocket.getOutputStream());
 				
@@ -187,15 +189,13 @@ public class NewClient
             // establishing the connection 
             Socket ournewsocket = new Socket(inetadress, 3333);           
             DataInputStream ournewDataInputstream = new DataInputStream(ournewsocket.getInputStream());
-            DataOutputStream 			this.ournewDataOutputstream.close();
- = new DataOutputStream(ournewsocket.getOutputStream());
+            DataOutputStream ournewDataOutputstream = new DataOutputStream(ournewsocket.getOutputStream());
     // In the following loop, the client and client handle exchange data.
             while (true)
             {
                 System.out.println(ournewDataInputstream.readUTF());
                 String tosend = ourNewscanner.nextLine();
-                			this.ournewDataOutputstream.close();
-.writeUTF(tosend);
+                ournewDataOutputstream.writeUTF(tosend);
                 // Exiting from a while loo should be done when a client gives an exit message.
                 if(tosend.equals("Exit"))
                 {
@@ -205,15 +205,14 @@ public class NewClient
                     break;
                 }
                 
-                
+                // printing date or time as requested by client
                 String newresuiltReceivedString = ournewDataInputstream.readUTF();
                 System.out.println(newresuiltReceivedString);
             }
             
             ourNewscanner.close();
             ournewDataInputstream.close();
-            			this.ournewDataOutputstream.close();
-.close();
+            ournewDataOutputstream.close();
         }catch(Exception e){
             e.printStackTrace();
         }
