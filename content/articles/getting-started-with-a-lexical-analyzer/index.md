@@ -1,5 +1,21 @@
-In the older computer generations, running simple codes was much trickier than one might have thought. This challenge is because computers do everything in machine languages written on punch cards. It then went to mnemonics, as used in the [Assembly language](https://en.wikipedia.org/wiki/Assembly_language). These were simpler but still required an understanding of machine language.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /getting-started-with-a-lexical-analyzer/
+title: Getting Started with a Lexical Analyzer
+description: In this article, the reader will learn about compilers and how they work. The reader will dive deep into Lexical analysis to understand how it works by building few lexical analyzers
+author: francis-kaguongo
+date: 2021-12-13T00:00:00-23:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/getting-started-with-a-lexical-analyzer/hero.png
+    alt: Getting Started with a Lexical Analyzer Hero Image
+---
+In the older computer generations, running simple codes was much trickier than one might have thought. This challenge is because computers do everything in machine languages written on punch cards. It then went to mnemonics, as used in the [Assembly language](https://en.wikipedia.org/wiki/Assembly_language). These were simpler but still required an understanding of machine language.
+<!--more-->
 Developers needed high-level languages more than ever, since computers seemed effective in repetitive tasks.
 
 The invention of a high-level language compiler was a significant breakthrough in the computer growth phase. This breakthrough was because high-level languages are understandable by most people, though much overhead is needed.
@@ -16,7 +32,7 @@ Compiler design involves several phases. Such phases include the following:
 - Error handling
 - Symbol table generation
 
-![Compiler Construction Steps](/engineering-education/get-started-with-a-lexical-analyzer/compiler-construction-steps.png)
+![Compiler Construction Steps](/engineering-education/getting-started-with-a-lexical-analyzer/compiler-construction-steps.png)
 
 A Lexical analyzer is found in the first phase of compiler construction.
 
@@ -107,7 +123,7 @@ The number of tokens recognized by a lexical analyzer is `27`.
 
 Check out the image below to see how they are counted:
 
-![Token count](/engineering-education/get-started-with-a-lexical-analyzer/token-count.png)
+![Token count](/engineering-education/getting-started-with-a-lexical-analyzer/token-count.png)
 
 The lexical analyzers recognize tokens such as:
 - Keywords
@@ -185,7 +201,7 @@ Add the binaries to the `PATH` variable by doing the following:
 - Select the 'Environment Variables' option.
 - In the 'Path' option, paste the location of the bin folder. The folder path to be pasted is `C:\Program Files (x86)\GnuWin32\bin`.
 
-![Path location](/engineering-education/get-started-with-a-lexical-analyzer/path.png)
+![Path location](/engineering-education/getting-started-with-a-lexical-analyzer/path.png)
 
 - Save it and close the windows.
 
@@ -237,7 +253,7 @@ The three sections are divided by delimiters (`%%`) as shown below:
 
 The image below shows a brief explanation of the code structure based on the parts defined and explained above:
 
-![Code structure](/engineering-education/get-started-with-a-lexical-analyzer/code-structure.png)
+![Code structure](/engineering-education/getting-started-with-a-lexical-analyzer/code-structure.png)
 
 ### Create a Lex file and run it
 Let us create a Lex analyzer that counts the number of words in a file and their total size.
@@ -329,11 +345,11 @@ gcc lex.yy.c
 
 How the process looks like:
 
-![Lex Analyzer Process](/engineering-education/get-started-with-a-lexical-analyzer/lex-analyzer-process.png)
+![Lex Analyzer Process](/engineering-education/getting-started-with-a-lexical-analyzer/lex-analyzer-process.png)
 
 The output on the terminal is as shown below:
 
-![Terminal code run output](/engineering-education/get-started-with-a-lexical-analyzer/terminal-output.png)
+![Terminal code run output](/engineering-education/getting-started-with-a-lexical-analyzer/terminal-output.png)
 
 > YACC comes with predefined language reserved words, also known as keywords. Among these terms are "_yytext_," "_yylex_," and "_yywrap_", to name a few.
 
@@ -465,7 +481,7 @@ We can see abc turn to ABC in javaabcfilewithoutknowingABCDabcd
 
 The output is as follows:
 
-![Second program output](/engineering-education/get-started-with-a-lexical-analyzer/second-program-output.png)
+![Second program output](/engineering-education/getting-started-with-a-lexical-analyzer/second-program-output.png)
 
 ### A lex analyzer that identifies certain words
 This lex analyzer will identify words among a pre-defined set. It then returns an output if it is among the Set or not.
@@ -548,7 +564,7 @@ Kelly is going home today
 
 The results look as shown below:
 
-![Check on verbs in a sentence](/engineering-education/get-started-with-a-lexical-analyzer/verbs-l-run.png)
+![Check on verbs in a sentence](/engineering-education/getting-started-with-a-lexical-analyzer/verbs-l-run.png)
 
 You can find the full code [here](https://github.com/franciskaguongo/Get-started-with-a-Lexical-Analyser).
 
@@ -572,3 +588,6 @@ At this point, the learner has been able to gain the following knowledge:
 - Lexical analysis research [document](https://webcache.googleusercontent.com/search?q=cache:XJzw8xH2YtgJ:https://www.iith.ac.in/~ramakrishna/Compilers-Aug14/doc/flex.pdf+&cd=9&hl=en&ct=clnk&gl=ke)
 - Lexical analyzer [IBM documentation](https://www.ibm.com/docs/en/zos/2.2.0?topic=section-lexical-analyzer)
 - Lexical analysis [reference material](https://lambda.uta.edu/cse5317/notes/node6.html)
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
