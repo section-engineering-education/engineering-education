@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /Automatic-type-promotion/
+url: /automatic-type-promotion/
 title: Automatic type promotion
 description: This article will cover a brief introduction to auto type promotion and method overloading and their relationships, reasons or circumstances under which you may be required to apply automatic type promotion and the different types or ways of implementing it. 
 author: mackrine-awino
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/Automatic-type-promotion/hero.jpg
+  - url: /engineering-education/automatic-type-promotion/hero.jpg
     alt: Automatic type promotion Hero Image
 ---
 Type promotion is a common occurrence in Java programming which can be achieved automatically in the case of primitive data types through the use of autotype promotion. It is also referred to as automatic data type promotion.
