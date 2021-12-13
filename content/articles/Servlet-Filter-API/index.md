@@ -132,7 +132,7 @@ public void doFilter(HttpServletRequest request, HttpServletResponse response);
 ```
 
 ### FilterConfig
-The web container generates a `FilterConfig` object used to retrieve configuration information from the web.xml file.
+The web container generates a `FilterConfig` object to retrieve configuration information from the web.xml file.
 
 #### FilterConfig interface methods
 In the FilterConfig interface, there are four methods:
@@ -142,7 +142,7 @@ In the FilterConfig interface, there are four methods:
 4. `getServletContext()`: This method returns the `ServletContext` object.
 
 ### Authentication example using filter
-In this example, we are demonstrate how a `Filter` is used to achieve authentication. We are using two filters here: one to verify if a password is more significant than seven characters, and the other to check the user name and password supplied by the user. 
+This example demonstrates how a Filter is used to achieve authentication. We are using two filters here: one to verify if a password is more significant than seven characters, and the other to check the user name and password supplied by the user. 
 
 Filter 1 will forward the request to a second Filter if the password length is correct. Otherwise, an error notice will appear.
 
