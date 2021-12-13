@@ -1,6 +1,6 @@
 Building Web applications from scratch as a Web developer can be painful and time-consuming. As web developers, we want to build fast and responsive web applications. We are always implementing the same UI components (ex. authentication, headers, user menu, footer, navigation, etc) in every project so why start over and over again. DevExtreme is here to take all the pain away. Devextreme is one of the [DevExpress](https://www.devexpress.com/) components. It includes a collection of high-performance and responsive UI widgets which can be used to build both mobile and web applications.
 
-DevExtreme mainly works with the Javascript frameworks: Angular, React jQuery, and Vue. It can also be used with technologies like ASP.NET MVC, Knockout, and ASP.NET Core. It is fast and easy to use because of its ready-built responsive UI components. These include interactive charts, Data editors, drop-down boxes, and much more. DevExtreme can also be added to existing applications. For futher studies [read More](https://js.devexpress.com/)
+DevExtreme mainly works with the Javascript frameworks: Angular, React jQuery, and Vue. It can also be used with technologies like ASP.NET MVC, Knockout, and ASP.NET Core. It is fast and easy to use because of its ready-built responsive UI components. These include interactive charts, Data editors, drop-down boxes, and much more. DevExtreme can also be added to existing applications. For further studies [read more](https://js.devexpress.com/)
 
 ### Prerequisites
 To understand this article basic knowledge of the following is required:
@@ -12,7 +12,7 @@ To understand this article basic knowledge of the following is required:
 DevExtreme is recommended when building a CRM system or robust application. Otherwise, it's not a good choice when building simple websites or apps due to the heavy bundled template size. 
 
 ### DevExtreme UI components
-DevExtreme has several ready-built, interactive UI components for you to build your next application easily. These include data tables, charts, data reporting tools, autocomplete, file managers, file uploader buttons, boxes, accordions, etc. With all these ready-built components, building applications are very easy, fast, and fun using DevExtreme. For futher studies [read more](https://js.devexpress.com/Documentation/Guide/UI_Components/).
+DevExtreme has several ready-built, interactive UI components for you to build your next application easily. These include data tables, charts, data reporting tools, autocomplete, file managers, file uploader buttons, boxes, accordions, etc. With all these ready-built components, building applications are very easy, fast, and fun using DevExtreme. For further studies [read more](https://js.devexpress.com/Documentation/Guide/UI_Components/).
 
 I recommend you try to use DevExtreme with your favorite Javascript framework so you can make use of these awesome reactive components.
 
@@ -39,33 +39,33 @@ The way we create Devextreme applications is quite different depending on the ja
  2. ```cd application name```
  3. ```npm run start```
 
-- [Documentation](https://js.devexpress.com/Documentation/Guide/React_Components/Create_a_DevExtreme_Application/)
+> The documentation for this can be found [here](https://js.devexpress.com/Documentation/Guide/React_Components/Create_a_DevExtreme_Application/)
 
 #### For Angular applications
  1. ```npx -p devextreme-cli devextreme new angular-app application-name```
  2. ```cd application name```
  3. ```npm run start```
 
-- [Documentation](https://js.devexpress.com/Documentation/Guide/Angular_Components/Getting_Started/Create_a_DevExtreme_Application/)
+> The documentation for this can be found [here](https://js.devexpress.com/Documentation/Guide/Angular_Components/Getting_Started/Create_a_DevExtreme_Application/)
 
 #### For Vue applications
  1. ```npx -p devextreme-cli devextreme new vue-app application-name```
  2. ```cd application name```
  3. ```npm run start```
-- [Documentation](https://js.devexpress.com/Documentation/Guide/Vue_Components/Create_a_DevExtreme_Application/)
+> The documentation for this can be found [here](https://js.devexpress.com/Documentation/Guide/Vue_Components/Create_a_DevExtreme_Application/)
 
-### Building an Angular DevExtreme 
-For the demonstration purpose in this tutorial I will create a DevExtreme application using my favorite JS framework Angular.
+### Building an Angular DevExtreme Application
+For demonstration purposes, I will create a DevExtreme application using my favorite JS framework, Angular.
 
-- To create my Angular app, firstly I have to run:
+To create my Angular app, firstly I have to run:
 ```
 npx -p devextreme-cli devextreme new angular-app my-extreme-app
 ```
-- After the installation, I have to cd into the project:
+After the installation, I have to cd into the project:
 ```
 cd my-extreme-app
 ```
-- to start my application:
+To start my application:
 ```
 npm run start
 ```
@@ -74,7 +74,7 @@ To view your DevExtreme template, DevExtreme runs on default port 4200 which cor
 > The DevExtreme application template comes with Drawer, Data Grid, and forms Components.
 
 ### Default Template View
-![image info](image1.png)
+![/building-web-application-with-devetreme/default-template-view](image1.png)
 
 ### DevExtreme ThemeBuilder
 Manipulating DevExtreme is really easy. Using the *ThemeBuilder*,  you can customize themes based on the DevExtreme default theme. The link to use the ThemeBuilder can be found [here](https://devexpress.github.io/ThemeBuilder/).
@@ -107,7 +107,9 @@ Manipulating DevExtreme is really easy. Using the *ThemeBuilder*,  you can custo
 }
 }
 ```
-![image info](image2.png)
+Below is the result of the above changes:
+
+![blue-theme](/building-web-application-with-devetreme/image2.png)
 
 Click [here](https://js.devexpress.com/Documentation/Guide/Themes_and_Styles/Predefined_Themes/) to view the DevExtreme predefined themes using material design themes and generic compact.
 
@@ -117,4 +119,3 @@ DevExtreme is one of DevExpress' components that works with Javascript framework
 ### Further reading
 [DevExpress Documentation](https://docs.devexpress.com/)
 [The DevExtreme Documentation](https://js.devexpress.com/Overview/)
-
