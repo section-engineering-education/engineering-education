@@ -64,6 +64,8 @@ Managing the MNAR datasets is a significant annoyance. Modeling the missing data
 
 __Solution:__ Improve dataset find data.
 
+> You can read more about these [here](https://www.ncbi.nlm.nih.gov/books/NBK493614/).
+
 ### Types of imputed information
 A variety of sizes and shapes are offered in the form of imputations.
 
@@ -272,6 +274,9 @@ In conclusion, we looked at various approaches to handling missing data and how 
 Happy coding!
 
 ### References
-1. [See the whole code of the tutorial](https://colab.research.google.com/drive/1O7O4oo2k5FIFFTcE-bU8kBGxeumyv1v2?usp=sharing)
-1. [Handling missing data](https://machinelearningmastery.com/handle-missing-data-python/)
-2. [Causes and solutions of missing data](https://phoenixnap.com/kb/handling-missing-data-in-python)
+- [See the whole code of the tutorial](https://colab.research.google.com/drive/1O7O4oo2k5FIFFTcE-bU8kBGxeumyv1v2?usp=sharing)
+- [Handling missing data](https://machinelearningmastery.com/handle-missing-data-python/)
+- [Causes and solutions of missing data](https://phoenixnap.com/kb/handling-missing-data-in-python)
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
