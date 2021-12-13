@@ -48,39 +48,69 @@ The following screen shows how you can create an account:
 
 Similarly, you can create a new property by clicking on `Create Property`.
 
-###  Create view with user ID enabled
+### Create view with user ID enabled
 A `view` can be considered as a collection of rules that Google uses to process traffic on a domain.
 
-This is the step where we are stepping into the user id tracking. Generally, when you create a `view` by default the User-id option is off. Now, you need to switch it on to track individual users.
+This is the step where we are stepping into the `user id` tracking.
+
+Generally, when you create a `view`, by default the `user-id` option is `OFF`. Now, you need to switch it `ON`, to track individual users:
+
 ![analytics-view-with-user-id](/engineering-education/track-individual-logged-in-users-using-google-analytics/analytics-view-with-userid.jpg)
 
-### Create Custom Dimensions to Track User Types
-`Custom dimensions` and `custom metrics` are like default dimensions and metrics in your Analytics account, except you create them yourself. You can use them to collect and analyze data that Analytics doesn't automatically track.
-Then in this step, you need to create custom dimensions. Google analytics by default has metrics and dimensions. We need to create custom dimensions to capture and send data to Google about the logged-in user.
-For example, consider we have different types of users like, general users who do not log in but use the site anonymously. Then we have general basic members, authors, and admin. So three types of logged-in users. This is just for example's sake. You might be having only one type ( just logged-in user). In any case, you need to create a dimension as user-type. Because we are going to supply the different user types as values.
+### Create custom dimensions to track user types
+`Custom Dimensions` and `Custom Metrics` are set by the default dimensions and metrics of your Analytics account.
+
+You can use them to collect and analyze data that Google doesn't automatically track. So, let's create our own dimension and metric.
+
+We create custom dimensions to capture and analyze the data sent to Google, about the logged-in user.
+
+For example, consider we have different types of users like, general users who do not log-in, but use the site anonymously. There are basic members, authors, and admin who accesses the webpage.
+
+For any case, you need to create a dimension as `user-type` that supplies different user types as values.
+
 ![google-analytics-custom-dimension-user-type](/engineering-education/track-individual-logged-in-users-using-google-analytics/google-analytics-custom-dimension-user-type.jpg)
+
 ![analytics-custom-dimentions](/engineering-education/track-individual-logged-in-users-using-google-analytics/analytics-custom-dimension.jpg)
 
-###  Modify tracking code to include logged in user-id and custom dimensions
-In website analytics, a `tracking code` is a snippet of JavaScript code that tracks the activity of a website user by collecting data and sending it to the analytics module. The code is generated automatically, is different for each website, and has to be installed on each page you want to track. From the above step, we have got the code for adding the dimension.
+### Modify tracking code
+In website analytics, a `tracking code` is a snippet of JavaScript code that tracks the activity of a website user by collecting data and sending it to the analytics module.
+
+The code generated automatically is different for each website, and has to be installed on each page that you want to tracked.
+
+From the above step, we have to add the code for setting the dimension:
 
 ```javascript
 ga('set', 'dimension1', dimensionValue);
 ```
-This is the code that needs to be added to your Google Analytics tracking code. Here `dimension1` represents the custom dimension you have created in the previous step. In our example, it is `User Type`. dimensionValue can be `{‘Anonymous User’, ‘Member’, ‘Author’, ‘Admin’}` as per the state of your application. Using your application login session etc, you can supply that value. You should be using Google Universal Analytics and the tracking code will be as below for a non-logged-in user. You should substitute your `UA-id` in the below code.
+
+- Here, `dimension1` represents a custom dimension that we created in the previous step. In our example, it is `User Type`.
+- `dimensionValue` can be `{'Anonymous User', 'Member', 'Author', 'Admin'}` depending on the state of your application.
+- Using the application login sessions, you can supply these values.
+- The tracking code will be as below for a non-logged-in user:
 
 ```javascript
 <script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+(function(i,s,o,g,r,a,m) {
+  i['GoogleAnalyticsObject']=r;i[r]=i[r] || function() {
+      (i[r].q=i[r].q||[]).push(arguments)
+    },
+    i[r].l=1*new Date();
+    a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];
+    a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})
+(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 ga('create', 'UA-1111112345-1', 'auto');
 ga('set', 'dimension1', 'Visitor');
 ga('send', 'pageview');
 </script>
 ```
-For a logged-in user, it will be as shown below. You should note the line where we are setting the `userId` field and its value as `147`. This 147 is the ID within our application like a primary key that is used to individually identify a user. You should not set it as email or other common information using which Google can identify a user and its violation of the agreement. The value should be strictly in the context of your application and it should not make any sense for Google. Then the next thing you should note is the value set for the `dimension1` as `Author`.
+
+> You should substitute your `UA-id` in the above code
+
+For a logged-in user, it will be as shown below.
+
+You should note the line where we are setting the `userId` field and its value as `147`. This 147 is the ID within our application like a primary key that is used to individually identify a user. You should not set it as email or other common information using which Google can identify a user and its violation of the agreement. The value should be strictly in the context of your application and it should not make any sense for Google. Then the next thing you should note is the value set for the `dimension1` as `Author`.
 
 ```javascript
 <script>
