@@ -17,6 +17,7 @@ images:
 ### Video player in Flutter using Chewie and Getx
 
 ### Introduction
+
 A frequent requirement when building applications is playing video files. Doing so with Flutter is fairly straightforward, but you should know a few things about it. The code samples in this tutorial use Chewie for networking and Getx.
 The default flutter `video_player` limits the user when they want to perform an action to a video. Chewie is an Application Programming Interface that adds more functionality to the default flutter video player. Some of these functions include are like the addition of play controls to the video player.
 
@@ -46,6 +47,7 @@ We'll take advantage of the first library, `Chewie` to play videos and audio fil
 We're going to create a screen to show our video player. This screen will have buttons for controlling the playback and two text fields to write the URL of the resource we want to play and its title.Our videos will be fetched from the internet rather than playing the local videos in our phones.
 
 #### VideoScreen
+
 This is the homepage of our Video player application. This is the page that we will use to interact with our videos. Let's start with the basic page with a title. Our title will be positioned at the top of our page and contained in the Appbar Widget.
 
 ```dart 
@@ -83,6 +85,7 @@ Widget build(BuildContext context) {
 As you see, we have a simple screen with an appbar , which will have the title of our player, and a Scaffold. The Scaffold will contain the background image of our video player and two rows: one with the "Play" button on top and another showing the title and URL of the selected resource. We will use the play button to execute the streaming of our video. The Title and URL are simply for identification purposes of our video to be sure which video is playing at that time.
 
 #### Align Widget
+
 This widget contains a container where we will add our components. The main purpose of the align widget is to make sure that the componets will be placed correctly and in a more appealing location on the screen.
 
 ```dart
@@ -114,6 +117,7 @@ Widget build(BuildContext context) {
 We use the `Align` widget to align the element in the `Center` of the screen. In this case, it will be a `Container`, so we'll add a white background and a black border with inner padding of 16dp.The choice of the color is so that the video can be seen more clearly regardless of the video quality.
 
 #### Row widget
+
 The Row widget will contain buttons of applications. This widget holds components from top to bottom or vice versa.
 ```dart
 
@@ -180,7 +184,9 @@ We use two `Expanded` widgets. The first one lets us add a `border-radius` to ou
 We're going to use `Padding` during the whole screen, but on this `Row`, we need it in both directions because we'll have one button that stretches across all its width (the "PLAY") and another that has a smaller width (the "STEP_BACKWARD").
 
 Now, let's see how we'll build the elements on this row. First of all, we have to create a button with some text inside it:
+
 #### Buttons
+
 The Button widgets are used to execute actions or used to activate an action in our application.
 ```dart
 Widget buildButton(String title, BuildContext context) { 
@@ -277,7 +283,9 @@ Widget buildButton(String title, BuildContext context, [Color color]) {
 
 ```
  Chewie and Getx is a perfect combination to make an app like this in Flutter. You can test the application on your phone, add more features, and use it for your good or develop your video player.
+ 
 ### Conclusion
+
 So that's it. We built a nice video player app using Flutter. With Chewie, getting the media streaming capabilities of YouTube was straightforward, and all I had to do was get an API key from Google. Getting playback controls on-screen with Flutter was also super easy, thanks to Getx. 
 You can find the complete code of this example [here](https://github.com/kanoinikita/flutter-chewie-getx/tree/master/videoplayer)
 Enjoy Coding Geeks
