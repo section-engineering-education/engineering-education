@@ -1,22 +1,30 @@
 ### Intoduction
-The WordNet English dictionary can be found in Python's Natural Language Tool Kit (NLTK), which is part of the Natural Language Tool Kit (NLTK). Using this comprehensive set of tools, Natural Language Processing (NLP) may be made simple and straightforward. As a part of this tutorial, we'll cover some of the program's most basic functions.
+The WordNet English dictionary can be found in Python's Natural Language Tool Kit (NLTK), part of the Natural Language Tool Kit (NLTK). Natural Language Processing (NLP) may be made simple and straightforward using this comprehensive set of tools. As a part of this tutorial, we will cover some of the program's most basic functions.
+
 ### Prerequisites
-To have a better understanding of this article you should:
+To have a better understanding of this article, you should:
 - Have basic knowledge of the python language.
 - Have [python](https://www.python.org/downloads/) installed.
 - Have [nltk](https://www.nltk.org/install.html) and its [corpus](https://www.nltk.org/data.html) installed.
+- 
 ### Table of contents
 - [Understanding NLTK Synonyms and Synsets](#understanding-nltk-synonyms-and-synsets)
 - [Understanding NLTK Hypernyms and Hyponyms](#understanding-nltk-hypernyms-and-hyponyms)
 - [Understanding NLTK Meronyms and Holonyms ](#understanding-nltk-meronyms-and-holonyms)
 - [Understanding NLTK Entailments](#understanding-nltk-entailments)
 - [Conclusion](#conclusion)
+- 
 ### Understanding NLTK Synonyms and Synsets
-All of the concepts in a synset have the same meaning since they are all synonyms in WordNet, which preserves synonyms in their natural form. A synset is a group of synonyms that are related to one another in the context of linguistics.It is possible to find the definition of a synset in the synset's native language.It will be seen in the following section that the synset relationships have been preserved.
+All concepts in a synset have the same meaning since they are all synonyms in WordNet, which preserves synonyms in their natural form. A synset is a group of synonyms related to one another in the context of linguistics. 
 
-In the NLTK, the Synset interface can be used to search the WordNet database for a certain term. It's a list of words that convey the same meaning as each other.There are an infinite number of Synsets associated with each word. A Synset can be created from a group of WordNet words that are conceptually related (short for Synonym-set). Each Synset is assigned a numerical value in addition to the names and pieces of speech it represents. A Synset is made up of these words.
+It is possible to find the definition of a synset in the synset's native language. It will be seen in the following section that the synset relationships have been preserved.
+
+In the NLTK, the Synset interface can search the WordNet database for a certain term. It is a list of words that convey the same meaning. There are an infinite number of Synsets associated with each word.
+
+A Synset can be created from a group of WordNet words that are conceptually related (short for Synonym-set). Each Synset is assigned a numerical value in addition to the names and pieces of speech it represents. A Synset is made up of these words.
+
 #### 1. Getting Synsets.
-Synsets that are related to the word that you entered as an argument to wordnet.synsets("word")  can be obtained from a database using this method.
+Synsets are words related to the word that you entered as an argument to wordnet.synsets("word")  can be obtained from a database using this method.
 
 ```python
 import nltk
@@ -28,7 +36,7 @@ OUTPUT
 ```bash
 [Synset('book.n.01'),Synset('book.n.02'),Synset('record.n.05'),Synset('script.n.01'),Synset('ledger.n.01'),Synset('book.n.06'),Synset('book.n.07'),Synset('koran.n.01'),Synset('bible.n.01'),Synset('book.n.10'),Synset('book.n.11'),Synset('book.v.01'),Synset('reserve.v.04'),Synset('book.v.03'),Synset('book.v.04')]
 ```
-The function also allows you to restrict the part of speech of the word by providing an optional position argument.
+The function also allows you to restrict the word's part of speech by providing an optional position argument.
 
 Example for verbs
 ```python
@@ -131,7 +139,11 @@ OUTPUT
 ['book', 'rule_book']
 ```
 ### Understanding NLTK Hypernyms and Hyponyms.
-A Hyponym is a type of Synset that has been modified for a specific purpose, as opposed to a generic Synset. In terms of inheritance, it's similar to the concept of a "child class." A synonym is a function that returns an array containing all of the Synsets that are Hyponyms of the Synset that was passed in as an argument to the function (). Hypernyms exist in a number of shapes and sizes, but the Synset is by far the most popular. The terms Hyponym and Hypernym are diametrically opposed. A Synset's hypernyms are returned in the form of an array of numbers ().
+A Hyponym is a type of Synset that has been modified for a specific purpose instead of a generic Synset. 
+
+In terms of inheritance, it is similar to the concept of a "child class." A synonym is a function that returns an array containing all of the Synsets that are Hyponyms of the Synset that was passed in as an argument to the function (). 
+
+Hypernyms exist in several shapes and sizes, but the Synset is by far the most popular. The terms Hyponym and Hypernym are opposed. A Synset's hypernyms are returned in the form of an array of numbers ().
 
 For example, the words 'banana' and 'mango' are hyponyms for the word 'fruit'. In this case, they are more specific concepts of the word 'fruit'. Furthermore, the term "fruit" is a hypernym for the words "banana" and "mango" because it refers to the general idea of fruits.
 
@@ -166,9 +178,9 @@ OUTPUT
 [Synset('eclipse.n.01')]
 ```
 ### Understanding NLTK Meronyms and Holonyms
-By using Meronyms and Holonyms, we can create a part-to-whole connection. Meronym and holonym are both used to express a portion of a bigger whole. Meronym and holonym both refer to the same thing, but in different ways. The half is represented by the meronym, whereas the whole is represented by the holonym.
+By using Meronyms and Holonyms, we can create a part-to-whole connection. Meronym and holonym are both used to express a portion of a bigger whole. Meronym and holonym both refer to the same thing, but in different ways. The meronym represents the half, whereas the holonym represents the whole.
 
-For example, the word 'bedroom' is a meronym for the word home. This is due to the fact that the bedroom is considered a component of the house. The words nose, eyes, and mouth are all meronyms for the word face.
+For example, the word 'bedroom' is a meronym for the word home. This is because the bedroom is considered a component of the house. Likewise, the words nose, eyes, and mouth are all meronyms for the word face.
 
 Examples
 ```python
@@ -201,7 +213,7 @@ wn.synset('face.n.01').part_meronyms()
 [Synset('beard.n.01'),Synset('brow.n.01'),Synset('cheek.n.01'),Synset('chin.n.01'),Synset('eye.n.01'),Synset('eyebrow.n.01'),Synset('facial.n.01'),Synset('facial_muscle.n.01'),Synset('facial_vein.n.01'),Synset('feature.n.02'),Synset('jaw.n.02'),Synset('jowl.n.02'),Synset('mouth.n.02'),Synset('nose.n.01')]
 ```
 ### Understanding NLTK Entailments
-An entailment is similar to an insinuation. Which is a conclusion that can only be derived from something even though it is not specifically expressed.
+An entailment is similar to an insinuation. A conclusion can only be derived from something even though it is not specifically expressed.
 
 For example
 ```python
@@ -232,8 +244,3 @@ OUTPUT
 
 ### Conclusion
 In this article, we have looked at the different concepts that are applied using the nltk wordnet in python. We started with understanding the Synonyms and Synsets by discussing how to use different methods to get Synsets, the definition of Synsets, and all Lemmas of a Synset. We also looked at the Hypernyms and Hyponyms. Lastly, we went through Meronyms, Holonyms, and Entailments. 
- 
-
-
-
-
