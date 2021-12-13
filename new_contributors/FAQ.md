@@ -69,6 +69,13 @@ We always encourage friendly reviews among the community to help each other out 
 ### How often are article payouts?
 We typically send article payouts once a week (usually of Fridays) but that may vary depending on holidays, sick, or OOO (out-of-office) days.
 
+### Do we need a PayPal account to participate in the EngEd program?
+We ask all students to have an active, verified, fully set up PayPal account (that is registered under their name) to get any compensation for the articles published.
+
+Not having a PayPal account DOES NOT BAR anyone from participating, building up a resume, and published works to enhance one’s career. 
+
+You can contribute articles to publish to build up a portfolio without a PayPal account.
+
 ### Does Section provide revision services?
 We will look over the all articles that come in to ensure they are publish worthy - but our peer reviewer team is only looking to improve the content by making suggestions. 
 For revisions services we recommend using a few of the [services we have vetted](https://www.fiverr.com/johnbatsoniii/proofread-and-edit-your-writing-for-publication?context_referrer=user_page&ref_ctx_id=9caf75ed-ce79-4880-b2fc-5b09e92e23d6&pckg_id=1&pos=1) - both economical and professional.
