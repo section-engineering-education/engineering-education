@@ -1,8 +1,10 @@
-In the older computer generations, running simple codes was much trickier than one might have thought. This challenge is because computers do everything in machine languages written on punch cards. It then went to mnemonics, as used in the Assembly language. These were simpler but still required an understanding of machine language.
+In the older computer generations, running simple codes was much trickier than one might have thought. This challenge is because computers do everything in machine languages written on punch cards. It then went to mnemonics, as used in the [Assembly language](https://en.wikipedia.org/wiki/Assembly_language). These were simpler but still required an understanding of machine language.
 
-Developers needed high-level languages more than ever since computers seemed effective in repetitive tasks.
+Developers needed high-level languages more than ever, since computers seemed effective in repetitive tasks.
 
-The invention of a high-level language compiler was a significant breakthrough in the computer growth phase. This breakthrough was because high-level languages are understandable by most people, though much overhead is needed. Hence, for one to be able to appreciate the compilers and their work in code conversion from source to optimized object code, one has to understand how they are designed.
+The invention of a high-level language compiler was a significant breakthrough in the computer growth phase. This breakthrough was because high-level languages are understandable by most people, though much overhead is needed.
+
+Hence, for one to be able to appreciate the compilers and their work in code conversion from source to optimized object code, one has to understand how they are designed.
 
 Compiler design involves several phases. Such phases include the following:
 - Lexical analysis
@@ -14,12 +16,11 @@ Compiler design involves several phases. Such phases include the following:
 - Error handling
 - Symbol table generation
 
-![CompilerCompiler Construction Steps Construction Steps](/engineering-education/get-started-with-a-lexical-analyzer/compiler-construction-steps.png "Compiler Construction Steps")
+![Compiler Construction Steps](/engineering-education/get-started-with-a-lexical-analyzer/compiler-construction-steps.png)
 
 A Lexical analyzer is found in the first phase of compiler construction.
 
 ### Table of contents
-
 - [Key takeaways](#key-takeaways)
 - [Pre-requisites](#pre-requisites)
 - [What is Lexical analysis?](#what-is-lexical-analysis)
@@ -55,9 +56,11 @@ For one to quickly follow up with the article, the following knowledge is requir
 Let us get into the article now:
 
 ### What is Lexical analysis?
-Lexical analysis is the first phase of the compiler, also known as a scanner. Lexical analysis is the process of converting high-level source code into a series of tokens that the compiler can easily recognize.
+Lexical analysis is the first phase of the compiler, also known as a scanner. It is the process of converting a high-level source code into a series of tokens that the compiler can easily recognize.
+
 These tokens are then passed through a series of steps to check if they are in the correct format. These steps include checking its syntax and semantics.
 As a result, the input to lexical analyzers is a programmer's high-level language source code.
+
 It then splits it into smaller chunks that can be quickly and easily analyzed and worked on.
 
 > **NOTE**: Lexical analyzers do not change code or check for errors.
@@ -70,17 +73,25 @@ Some terms that are used include:
 
 Let us take a look at what they are:
 
-**Tokens** are defined as anything that can be recognized in Context-Free Grammars (CFGs). It represents an information unit. They may be between terminals, non-terminals, production rules, and the `Start` symbol (T, N, P, S). Terminals are characters that represent the final value; non-terminals can be replaced with either terminals or non-terminals.
-Production rules are combinations of terminals and non-terminals that can be combined in a format that makes sense and represents certain operations.
-The Start symbol, on the other hand, is a special non-terminal symbol that shows the start of an application.
+#### Tokens
+Tokens are defined as anything that can be recognized in [Context-Free Grammars (CFGs)](https://en.wikipedia.org/wiki/Context-free_grammar). It represents an information unit. They may be between terminals, non-terminals, production rules, and the `Start` symbol `(T, N, P, S)`.
 
-**Patterns**: These can be specific formats used to recognize tokens. Compilers can use them to identify letters, words, and special characters. These can then be classified as terminals or non-terminals, among others.
-Patterns can be user-defined or come predefined with the program beforehand.
+- Terminals (T) are characters that represent the final value
+- Non-terminals (N) can be replaced with either terminals or non-terminals.
+- Production rules (P) are combinations of terminals and non-terminals that can be combined in a format that makes sense and represents certain operations.
+- The `Start` (S) symbol, on the other hand, is a special non-terminal symbol that shows the start of an application.
 
-**Lexemes**: on the other hand, it can be said to be a combination of tokens that convey a greater, more understandable meaning when combined.
+#### Patterns
+Patterns can be of specific formats that are used to recognize tokens. Compilers can use them to identify letters, words, and special characters. These can then be classified as terminals or non-terminals, among others.
+
+Patterns can be user-defined or come pre-defined with the program before-hand.
+
+#### Lexemes
+On the other hand, lexemes can be said as a combination of tokens that convey a more understandable meaning when combined.
 
 ### A token count based on a sample code
-The Java application prints a 'Hello World' message when running the code below.
+This Java code prints a 'Hello World' message when running the code below:
+
 ```java
 /*Print 'Hello World!'*/
 /*Comments and whitespaces are not count*/
@@ -92,19 +103,20 @@ public class HelloWorld
 }
 ```
 
-The number of tokens recognized by a lexical analyzer is 27.
+The number of tokens recognized by a lexical analyzer is `27`.
 
 Check out the image below to see how they are counted:
 
-![Token count](/engineering-education/get-started-with-a-lexical-analyzer/token-count.png "Token count")
+![Token count](/engineering-education/get-started-with-a-lexical-analyzer/token-count.png)
 
-The Lexical analyzers recognize tokens such as:
-- keywords
+The lexical analyzers recognize tokens such as:
+- Keywords
 - Special characters
 - Macros and special directives
 - Strings, integers, floats, identifiers, among others.
 
 This kind of token can then be passed to syntax analyzers, generating parse trees based on the Symbol table to see if they are correct.
+
 Non-tokens include spaces, tabs, and comments, among others.
 
 ### Lexical analysis tools
@@ -113,18 +125,25 @@ Some tools used to create and use lexical analyzers include:
 - YACC
 - A C compiler
 
-A **LEX tool**: It is also known as Flex (GNU tool). It creates a _C source core_. It can be made to be integrated into an application or be a stand-alone application.
+#### LEX tool
+It is also known as Flex (GNU tool). It creates a _C source core_.
+
+It can be integrated with any application or can work as a stand-alone application.
+
 It first sets some configurations that define the tokens expected from an input and what actions to take before parsing (sending them to a syntactical analyzer).
 
-**YACC**(Yet Another Compiler Compiler): A UNIX standard utility compiles LALR (1) grammar using the Look Ahead Left-to-Right parsing style. It is open-source and generates code for the parser in the C language.
+#### YACC (Yet Another Compiler Compiler)
+A UNIX standard utility compiles `LALR (1)` grammar using the `Look Ahead Left-to-Right` parsing style. It is an open-source compiler that generates code for the parser in the C language.
 
-**C compiler**: This is a typical C language compiler. GNU CC will work out perfectly.
+#### C compiler
+This is a typical C language compiler. GNU CC will work out perfectly.
 
 ### Set up the tools
 This section will feature the installation of the lexical analysis tools discussed above.
 
 #### Linux Installation
 To do this on Ubuntu, run the following commands:
+
 - Get current software updates for installed apps
 ```bash
 sudo apt-get update
@@ -153,25 +172,26 @@ sudo apt-get install bison++
 ```
 
 #### Windows Installation
-
 To install Flex and Bison for Yacc, do the following:
-- Head over to this [site](http://gnuwin32.sourceforge.net/packages.html). All GNU utilities such as Bison and Flex are found there. Download Bison Setup found on the same site or by clicking [here](http://gnuwin32.sourceforge.net/packages/bison.htm).
+- Head over to this [site](http://gnuwin32.sourceforge.net/packages.html). All GNU utilities such as Bison and Flex can be found there.
+- Download Bison Setup found on the same site or by clicking [here](http://gnuwin32.sourceforge.net/packages/bison.htm).
 - Install it by running it.
 - Download Flex setup by clicking [here](http://gnuwin32.sourceforge.net/packages/flex.htm). Install it after the downloading process is complete.
 
-Add the binaries to the PATH variable by doing the following:
-- Open the folder in which the program files for Bison and Flex are installed. It is by default found in the `C:\Program Files (x86)\GnuWin32` file.
-- Copy its location path
+Add the binaries to the `PATH` variable by doing the following:
+- Open the folder where the program files for Bison and Flex are installed. It is by default found in the `C:\Program Files (x86)\GnuWin32` file.
+- Copy its location path.
 - Search in the Windows taskbar for `Environment Variables` and select the 'Edit the System Environment Variables' option.
 - Select the 'Environment Variables' option.
 - In the 'Path' option, paste the location of the bin folder. The folder path to be pasted is `C:\Program Files (x86)\GnuWin32\bin`.
 
-![Path location](/engineering-education/get-started-with-a-lexical-analyzer/path.png "Path location")
+![Path location](/engineering-education/get-started-with-a-lexical-analyzer/path.png)
 
 - Save it and close the windows.
 
 ### Architecture of Lex files
 Lex files have a `.l` extension.
+
 However, before creating a Lex file, let us first know the parts of a Lex file.
 
 #### Lex file parts
@@ -182,20 +202,25 @@ Lex files have three main parts. These parts are the following:
 
 ##### Definition
 It contains literal blocks, definitions, internal table declarations, start conditions, and translations.
+
 It can contain things like the 'include' section found in the C program. This statement states the things that the program could need.
+
 Definitions can be written inside the `%{` and `%}` signs.
 
 ##### Rules and actions
-This section carries patterns and _C_ code(actions). These patterns can be in ECMAScript RegEx or wildcard format. It specifies the tokens the program checks, and the C code states what happens when they are found in the Actions section.
-Actions can be found inside the curly brackets({ ... }).
-The actions or macros can be optional too. Hence, they can be left blank.
+This section carries patterns and _C_ code(actions). These patterns can be in ECMAScript, RegEx or wildcard format.
+
+It specifies the tokens the program checks, and the C code states what happens when they are found in the Actions section.
+
+Actions can be found inside the curly brackets (`{ ... }`). The actions or macros can be optional too. Hence, they can be left blank.
 
 ##### Subroutines
-C codes that state additional user-defined functions executed when the patterns are found or not found.
-They can also contain other functions that the program may execute on the run.
-These are optional.
+C codes that state additional user-defined functions executed when the patterns are found or not found. They also contain other functions that the program may execute on the run.
+
+These are optional too.
 
 The three sections are divided by delimiters (`%%`) as shown below:
+
 ```c
 %{    
     
@@ -206,23 +231,23 @@ The three sections are divided by delimiters (`%%`) as shown below:
 
 %%
 
-
 ```
 
-`y.tab.c` is an output file that is compiled producing a yyparse function. It is produced with a C language compiler.
+`y.tab.c` is an output file that is compiled producing a `yyparse` function. It is produced with a C language compiler.
 
 The image below shows a brief explanation of the code structure based on the parts defined and explained above:
-![Code structure](/engineering-education/get-started-with-a-lexical-analyzer/code-structure.png "Code structure")
+
+![Code structure](/engineering-education/get-started-with-a-lexical-analyzer/code-structure.png)
 
 ### Create a Lex file and run it
-
 Let us create a Lex analyzer that counts the number of words in a file and their total size.
 
 - Create a root folder named 'flex-projects'.
 
 - In it, create a file named `counter.l`
 
-- Open it and do the following: Add lines of code that state the program declarations as follows:
+- Open it and add the lines of code that state the program declarations as follows:
+
 ```c
 /* Definitions */
 %{
@@ -233,7 +258,8 @@ int lines=1, words=0, lowercase_letters=0, uppercase_letters=0, numbers=0, speci
 %%
 ```
 
-- Add the rules and actions. Uppercase and lowercase letters, numbers, special characters, letters, and line instances will all be checked.Check it out in the code below:
+- Add the rules and actions. Uppercase and lowercase letters, numbers, special characters, letters, and line instances will all be checked. Check it out in the code below:
+
 ```c
 \n { lines++; words++;} /* Adds to the lines and words variables a value of 1 when one goes to a new line */
  [\t ' '] words++; /* Adds a value to the words variable when one moves from one word to another (words are separated by a space) */
@@ -247,6 +273,7 @@ int lines=1, words=0, lowercase_letters=0, uppercase_letters=0, numbers=0, speci
 ```
 
 - In the User sub-routines section, add the main program that prints the totals. Check it out in the line of code below:
+
 ```c
 int yywrap()
 {
@@ -274,6 +301,7 @@ printf("\n\t The total size of the file characters in bytes is: %d bytes.\n", si
 
 - Create a new file by the name of 'test.txt' and open it.
 - Add the following text to it:
+
 ```txt
 Hello Mark and Jane! Did you go for launch?
 I am coming back tomorrow. Don't go home yet...
@@ -282,35 +310,44 @@ I will visit you at 0945hrs on 27th November this year
 
 - Open the folder where the file resides in the terminal or command line (in Windows).
 - Change the lex file into a C Source Core using the command below:
+
 ```bash
 flex counter.l
 ```
 
 - Convert the C Source Core into an executable file by running the code below in the terminal:
+
 ```bash
 gcc lex.yy.c
 ```
 
 - Run the executable. This process runs the analyzer created so that it can use the input file as the input and generate the output on the terminals:
+
 ```bash
 ./a.out
 ```
 
 How the process looks like:
 
-![Lex Analyzer Process](/engineering-education/get-started-with-a-lexical-analyzer/lex-analyzer-process.png "Lex Analyzer Process")
+![Lex Analyzer Process](/engineering-education/get-started-with-a-lexical-analyzer/lex-analyzer-process.png)
 
 The output on the terminal is as shown below:
 
-![Terminal code run output](/engineering-education/get-started-with-a-lexical-analyzer/terminal-output.png "Terminal code run output")
+![Terminal code run output](/engineering-education/get-started-with-a-lexical-analyzer/terminal-output.png)
 
 > YACC comes with predefined language reserved words, also known as keywords. Among these terms are "_yytext_," "_yylex_," and "_yywrap_", to name a few.
-> As one can notice, they start with `yy`. This step is because YACC uses that prefix before keywords to recognize them by default. One can also set the program to use another prefix of two characters. The characters can be lowercase, one uppercase, and the other lowercase.
+
+As one can notice, they start with `yy`. This step is because YACC uses that prefix before keywords to recognize them by default.
+
+One can also set the program to use another prefix of two characters. The characters can be lowercase, one uppercase, and the other lowercase.
+
 > Both can not be uppercase since all uppercase combinations have been used for other keywords.
 
-`yylex()` is a function that passes tokens found to `yyparse()` each time it is called. It returns 0 or a negative value whenever an EOF (End of File) error is returned. It utilizes a routine called `yygetc()` to fetch these values.
-`yyparse()` calls upon `yylex()` to obtain any tokens passed to the program. It then matches it against the patterns used for matches to determine the kind of action to be performed.
-`yywrap()` is used to show the end of the execution of the code. It returns a value of 1 if the program's run is over and a value of 0 if it is ongoing.
+- `yylex()` is a function that passes tokens found to `yyparse()` each time it is called. It returns 0 or a negative value whenever an `EOF` (End of File) error is returned.
+- It utilizes a routine called `yygetc()` to fetch these values.
+- `yyparse()` calls upon `yylex()` to obtain any tokens passed to the program.
+- It then matches it against the patterns used for matches to determine the kind of action to be performed.
+- `yywrap()` is used to show the end of the execution of the code. It returns a value of 1 if the program's run is over and a value of 0 if it is ongoing.
 
 Yacc also has some predefined variables. These variables include the following:
 - **yytext**: It defines the current recognizable input token by the lexical scanner.
@@ -322,7 +359,6 @@ Yacc also has some predefined variables. These variables include the following:
 > `yyin` and `yyout` can be interchanged. This interchanging can be done by assignment.
 
 ### A Lex analyzer that converts instances of certain characters into a particular pattern
-
 Let us create a lex analyzer that changes 'abc' occurrences in the input to 'ABC'.
 
 - Accomplish this by creating a file named `strings.l`.
@@ -343,6 +379,7 @@ int i;
 
 %%
 ```
+
 > As for comments in a lex file, make sure to begin with double-spacing first to avoid errors.
 
 - Add rules to check on words only entered (with either upper or lowercase) containing the characters 'abc' following each other.
@@ -401,7 +438,8 @@ return 1;
 ```
 
 > **ECHO** is a macro that is used as an action to copy the matched input token in the `yytext` variable to the lex output stream found in `yyout`.
-> It is a macro just like the `yygetc()` and `BEGIN`, among others.
+
+It is a macro just like the `yygetc()` and `BEGIN`, among others.
 
 - Run the following command in the terminal:
 ```bash
@@ -427,11 +465,13 @@ We can see abc turn to ABC in javaabcfilewithoutknowingABCDabcd
 
 The output is as follows:
 
-![Second program output](/engineering-education/get-started-with-a-lexical-analyzer/second- program-output.png "Second program output")
+![Second program output](/engineering-education/get-started-with-a-lexical-analyzer/second-program-output.png)
 
 ### A lex analyzer that identifies certain words
+This lex analyzer will identify words among a pre-defined set. It then returns an output if it is among the Set or not.
 
-This lex analyzer will identify words among a predefined set. It then returns an output if it is among the Set or not. In this case, it shall be checking for verbs.
+In this case, it shall be checking for verbs.
+
 - Create a new file known as `verbs.l`.
 - Begin with the definitions as follows:
 ```c
@@ -508,15 +548,15 @@ Kelly is going home today
 
 The results look as shown below:
 
-![Check on verbs in a sentence](/engineering-education/get-started-with-a-lexical-analyzer/verbs.l-run.png "Check on verbs in a sentence")
+![Check on verbs in a sentence](/engineering-education/get-started-with-a-lexical-analyzer/verbs-l-run.png)
 
-Find the full code in this [link](https://github.com/franciskaguongo/Get-started-with-a-Lexical-Analyser).
+You can find the full code [here](https://github.com/franciskaguongo/Get-started-with-a-Lexical-Analyser).
 
 ### Conclusion
+Creating high-level compilers was one of the most significant steps in the computer software development process. High-level language compilers attract more developers to the existing languages due to their ease of understanding.
 
-Creating high-level compilers was one of the most significant steps in the computer software development process.
-High-level language compilers attract more developers to the existing languages due to their ease of understanding.
 Lexical analysis is a phase in the compilation process of crucial importance. It identifies tokens and passes them to Syntax analysis before proceeding to other steps.
+
 The knowledge of how the analyzers are created is essential in making one try to understand how compilers work.
 
 At this point, the learner has been able to gain the following knowledge:
@@ -528,7 +568,6 @@ At this point, the learner has been able to gain the following knowledge:
 - Running lex files
 
 ### References
-
 - Lexical analysis [definitions](https://en.wikipedia.org/wiki/Lexical_analysis)
 - Lexical analysis research [document](https://webcache.googleusercontent.com/search?q=cache:XJzw8xH2YtgJ:https://www.iith.ac.in/~ramakrishna/Compilers-Aug14/doc/flex.pdf+&cd=9&hl=en&ct=clnk&gl=ke)
 - Lexical analyzer [IBM documentation](https://www.ibm.com/docs/en/zos/2.2.0?topic=section-lexical-analyzer)
