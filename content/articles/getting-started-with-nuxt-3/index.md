@@ -1,9 +1,9 @@
 # Getting started with Nuxt 3
-[Nuxt 3](https://v3.nuxtjs.org/) is the Hybrid Vue Framework that allows you to create server-side rendered applications using Vue.js and, more importantly, Vue.js 3. Nuxt 3 was launched on October 12, 2021 and will be used in Vue and Nuxt developer ecosystems. This is an updated version of Nuxt 2 that has been redesigned to improve performance and facilitate builds.
+[Nuxt 3](https://v3.nuxtjs.org/) is a Hybrid Vue Framework that allows you to use Vue.js and, most importantly, Vue.js 3 to build server-side rendered applications. Nuxt 3 was released on October 12, 2021 and will be used in Vue and Nuxt developer ecosystems. This is an updated version of Nuxt 2 that has been redesigned to improve performance and facilitate builds.
 
-The release of Nuxt 3 came loaded with alot of features and developer experience enhancements mentioned in this article. Therefore using this framework will allow you to build web applications without worrying about the finer details. The goal of Nuxt is to make web development robust and performant while also providing a fantastic developer experience.
+The Nuxt 3 has introduced alot of features and developer experience improvements described in this article. Therefore using this framework will allow you to build web applications without worrying about the finer details. The goal of Nuxt is to make web development robust and performant while also providing a fantastic developer experience.
 
-This article will look at Nuxt 3 installation process and everything you need to start building with Nuxt, go through its features, plugins, and why you need to use it in the next project. Now let's talk about what to expect from Nuxt and the kind of improvements it has brought.
+This article will look at Nuxt 3 installation process and everything you need to start building with Nuxt 3, go through its features, plugins, and why you need to use it in the next project. Now let's discuss about what to expect from Nuxt 3 and the kind of enhancements it has brought.
 
 ### Table of contents
 + [Nuxt 3](#nuxt-3)
@@ -27,7 +27,7 @@ Nuxt 3 is currently in beta. It is not yet production-ready. Let's take a look a
 
 [Image source](https://v3.nuxtjs.org/getting-started/introduction/#comparison)
 
-There are two ways you can use to create your Nuxt 3 application. You can use Nuxt 3 or bridge. The bridge is a way to take your existing Nuxt 2 application and upgrade it in the meantime until Nuxt 3 is production-ready. It gives you some cool features as you know the differences between Nuxt 2, Nuxt bridge, and Nuxt 3. You can see that Nuxt 3 is currently unstable, so obviously, you will use it when it's production-ready.
+There are two ways you can use to create your Nuxt 3 application. You can use Nuxt 3 or bridge. The bridge allows you to upgrade your existing Nuxt 2 application while waiting for Nuxt 3 to be ready for production. As you are aware of the distinctions between Nuxt 2, Nuxt Bridge, and Nuxt 3, it provides you with some fascinating features. You can see that Nuxt 3 is currently unstable, so obviously, you will use it when it's production-ready.
 
 If you want to use Nuxt Bridge, it's semi-stable, so it's better. You can see the performance is faster and a lot more features in Nuxt 3. You will learn about Nuxt 3 features later in this article. Go through this [migration guide](https://v3.nuxtjs.org/getting-started/migration/) to learn how to upgrade from Nuxt 2 to Nuxt 3.
 
@@ -38,7 +38,7 @@ Open a VS Code terminal and type the following command to create a new project.
 `npx nuxi init nuxt3`
 `nuxt3` is our project name.
 
-The next step is to install the dependencies contained in the generated `package.json` file. First, `cd` into the nuxt3 directory
+The next step is to install the dependencies in the generated `package.json` file. First, `cd` into the nuxt3 directory
 `cd nuxt3` then install the dependencies with `npm i` or `yarn i`. In our scenario, we'll use:
 `npm i`
 
@@ -54,17 +54,17 @@ If all works well, copy and open the [localhost] (http://localhost:3000/) link o
 ![Nuxt 3 Project](/engineering-education/getting-started-with-nuxt-3/nuxt3-project.jpg)
 
 ### Nuxt 3 features
-There are a couple of things provided by Nuxt 3 that helps to improve developers' productivity. Let's have a look at a general picture of what to expect from Nuxt.
+There are a couple of things provided by Nuxt 3 that helps to improve developers' productivity. Let's look at a general picture of what to expect from Nuxt.
 
 #### General optimizations
-Nuxt 3 brings alot of improvements and general optimizations. Nuxt 3 is much lighter compared to Nuxt 2. Thus there is improved performance. Developers can notice the excellent performance during development due to the Nitro server engine with cold starts and dynamic code-splitting.
+Nuxt 3 presents numerous improvements and general optimizations. Nuxt 3 is much lighter compared to Nuxt 2. Thus there is improved performance. Developers can observe exceptional performance during development because of the Nitro server engine's cold starts and dynamic code-splitting.
 
 With other tool parts upgrades, Webpack 5, Vite, ESBuild, and PostCSS are now supported. This means that both development and production are built remarkably quickly.
 
 #### Nitro Engine
 Nitro engine is the main feature of Nuxt 3. It is Nuxt 3's new server engine.
 
-The Nitro engine adds many capabilities and new features to Nuxt applications. It also drives better performance and improvements in Nuxt 3.
+The Nitro engine gives Nuxt applications a lot of additional capabilities and features. It also boosts Nuxt 3's performance and improvements.
 
 #### Nuxt Bridge
 The Nuxt Bridge is a compatibility layer that enables you to upgrade from Nuxt 2 to Nuxt 3. It enables you to access the new Nuxt 3 features on an existing Nuxt 2 application. The new set of features includes:
@@ -77,17 +77,17 @@ The Nuxt Bridge is a compatibility layer that enables you to upgrade from Nuxt 2
 You can learn more about the [Nuxt Bridge here](https://v3.nuxtjs.org/getting-started/bridge/).
 
 #### Vue 3 and Vite support
-Nuxt 3 was designed to support Vue 3. Since Nuxt 3 is written in Vue 3, you can access features like the Composition API, improved module imports, and faster overall app speeds.
+Nuxt 3 was created to work with Vue 3. You can use features like the Composition API, enhanced module imports, and faster overall app speeds because Nuxt 3 is written in Vue 3.
 
 #### TypeScript
 Nuxt 3 is written in TypeScript for easier maintenance and built-in Typescript support.
 
 Nuxt 3 adopts TypeScript and ES Modules (ESM)to enhance the development experience. TypeScript will prevent runtime errors and enhance auto-completion.
 
-However, it's not a must to write your Nuxt 3 application in TypeScript (using JavaScript is fine and works as expected). You'll still be able to use Nuxt with no problems.
+However, it's not a must to write your Nuxt 3 application in TypeScript (using JavaScript is fine and works as expected). You'll be able to use Nuxt 3 all the same with no problems.
 
 #### New file structure
-The `app.vue` file serves as the primary component of your Nuxt application. With Nuxt 3, the `pages/` directory is optional, and you can work with one page `app.vue`. Everything you add to `app.vue`, such as JavaScript and CSS, will be shared across all pages. 
+The `app.vue` file act as the primary element of your Nuxt 3 application. The `pages/` directory is optional in Nuxt 3, and you can work with a single page, `app.vue`. Everything you add to `app.vue`, such as JavaScript and CSS, will be shared across all pages. 
 
 #### Cross-platform support
 Over the years, JavaScript has come a long way, and there are now a number of platforms that use it. Nuxt 3 will run smoothly in any JS environment. This includes Node.js, Cloudflare Workers, and Deno.
@@ -99,6 +99,7 @@ Plugins in Nuxt allow you to extend your applications' functionalities with the 
  + Using external javascript packages and modules into your Nuxt application.
 
  You can learn more about [plugins here](https://v3.nuxtjs.org/docs/directory-structure/plugins/).
+
 ### Why you need to use Nuxt 3
 Here are some of the main reasons Nuxt 3 is a great framework and why you should use it in your next project.
 
@@ -109,18 +110,18 @@ In this mode, the entire website is rendered at the build step so that you can s
 + Server Rendered
 You can create highly dynamic sites by running a node server in this mode. Each hit is rendered to the server before the browser returns a response. Again, after the initial hit, it's still  SPA.
 + SPA Mode
-In this mode, only the bare app shell is returned when the first page loads.
+Only the bare app shell is returned when the first page loads in this mode.
 
 2. Improved performance
 Nuxt is very well optimized for web performance. Nuxt has high speed and covers most by default from preload, prefetch, and lazy-loading.
 
 3. Nuxt Bridge
-The Nuxt Bridge makes migration from Nuxt 2 to Nuxt 3 easy. This layer lets you upgrade to Nuxt 3 improvements on performance and features. Also, it makes migration to be seamless.
+The Nuxt Bridge facilitates the transition from Nuxt 2 to Nuxt 3. This layer lets you upgrade to Nuxt 3 improvements on performance and features. Also, it makes migration to be seamless.
 
 ### Conclusion
 I hope you are as excited as I am about the features and possibilities that Nuxt 3 provides. We learned that Nuxt 3 has numerous features to improve the project or application's performance. Nuxt 3 is an excellent framework for making the switch.
 
-Although Nuxt 3 is still in beta, it is recommended not to be used in production until its stable.
+Although Nuxt 3 is still in beta, it is not advised for production use until it is stable.
 
 To summarize, we learned about:
 + Nuxt 3
