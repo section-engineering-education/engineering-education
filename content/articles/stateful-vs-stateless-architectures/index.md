@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /stateful-vs-stateless-architectures/hero.png
+  - url: /engineering-education/stateful-vs-stateless-architectures/hero.png
     alt: The Stateful vs Stateless Architectures Hero Image
 ---
 When developing applications, developers consider several factors to ensure they run optimally. 
