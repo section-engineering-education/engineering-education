@@ -1,7 +1,7 @@
 
-Serverless databases are all the rage these days since they allow you to develop a fully functional app without building a server or writing any server code. A serverless database is a cloud computing solution that enables resources to be distributed and managed flexibly.
+Serverless databases are all the rage these days since they allow you to develop a fully functional app without building a server or writing server code. A serverless database is a cloud computing solution that enables resources to be distributed and managed flexibly.
 
-In this tutorial, we will learn how to build a full stack application with  ***Supabase***, ***React***, and ***tailwindcss*** in ***nextJs***.
+In this Tutorial, We'll build a full-stack application with  ***Supabase***, ***React***, and ***tailwindcss*** in ***nextJs*** in this tutorial.
 
 ### Prerequisite
 
@@ -30,7 +30,7 @@ PostgreSQL is an object-relational database system that has been actively develo
 
 ### Step 1: Setting Up A Project
 
-We'll build our project and learn how to integrate supabase in our app in this section.
+This section will build our project and integrate supabase into our application.
 
 #### Sign up for a Supabase account and create a project
 
@@ -541,7 +541,7 @@ Let's test our application, and we should be able to add a new task and see all 
 
 ![NextJs App Result](/engineering-education/how-to-build-a-full-stack-application-with-supabase-react-and-tailwindcss-in-nextJs/app-result.png)
 
-It works! However, in order to see the new task, we had to refresh the page when a new task was added. We don't want it to happen. Let us update out `addTask` function with the  code snippet below:
+It works! However, we had to refresh the page when a new task was added to see the new task. We don't want that. Let us update our `addTask` function with the  code snippet below:
 
 ```Javascript
   async function addTask() {
