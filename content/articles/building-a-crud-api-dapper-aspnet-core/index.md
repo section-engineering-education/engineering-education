@@ -16,7 +16,7 @@ images:
 ---
 
 ### Building a CRUD API with the Dapper ORM in ASP.NET Core
-ORM stands for Object Relational Mapper(ORM). It could also stand for Object Relational Mapping, which describes the method that ORMs apply. An ORM is usually a library that makes interacting with our database easy. It acts as a spokesman for us to our database. ORMs employ [abstraction](https://en.wikipedia.org/wiki/Abstraction_computer_science) to ‘mask’ the unwanted details and focus on the very important and basic functionalities. After abstraction, our data is then broken into smaller parts which are referred to as [models](https://en.wikipedia.org/wiki/Database_model). In this article, we'll be learning how to build an API by using [Dapper](https://dapper-tutorial.net/) to make queries.
+ORM stands for Object Relational Mapper(ORM). It could also stand for Object Relational Mapping, which describes the method that ORMs apply. An ORM is usually a library that makes interacting with our database easy. It acts as a spokesman for us to our database. ORMs employ [abstraction](https://en.wikipedia.org/wiki/Abstraction_computer_science) to ‘mask’ the unwanted details and focus on the essential and basic functionalities. After abstraction, our data is then broken into smaller parts referred to as [models](https://en.wikipedia.org/wiki/Database_model). In this article, we'll learn how to build an API using [Dapper](https://dapper-tutorial.net/) to make queries.
 
 ### Key Takeaways
   At the end of this article, you should be able to:
@@ -62,7 +62,7 @@ Dapper is an ORM for the .NET framework. Dapper is lightweight, fast and since y
 
 #### Dapper Methods
 ##### Execute
-The `Execute` method executes a command and returns the number of affected rows. It is usually used to perform INSERT, UPDATE, and DELETE operations.
+The `Execute` method executes a command and returns the affected rows. It is usually used to perform INSERT, UPDATE, and DELETE operations.
 
 ##### Query
 This method executes a query and maps the result. It is usually used to fetch multiple objects from the database.
@@ -74,7 +74,7 @@ This method executes a query and maps the first result that matches the paramete
 This functions like `QueryFirst` but returns a default value if the sequence contains no elements.
 
 ##### QuerySingle
-It executes a query and maps the result provided that there is only one item in the sequence. It throws an exception if there is not exactly one element in the sequence, which happens when no element or more than one element is returned.
+It executes a query and maps the result provided that there is only one item in the sequence. If there is not exactly one element in the sequence, it throws an exception when no element or more than one element is returned.
 
 ##### QuerySingleOrDefault
 This method works like `QuerySingle` but returns a default value if no item is returned from the database.
@@ -92,7 +92,7 @@ After installing the Dotnet Framework SDK, go ahead to your console and type the
  $ dotnet --version
  5.0.301
 ```
-If you have the framework installed, you should see the version of your SDK just below your command. If you don't, download it from [here](https://dotnet.microsoft.com/download). After making sure we have the SDK installed, we can go ahead to create our project. Since we'll be building an API, we'll use the command for creating an API project. To do this, open a terminal or command prompt and navigate to the directory in which you'd like your project to be created. Now enter the command below:
+If you have the framework installed, you should see the version of your SDK just below your command. If you don't, download it from [here](https://dotnet.microsoft.com/download). After making sure we have the SDK installed, we can create our project. Since we'll be building an API, we'll use the command for creating an API project. To do this, open a terminal or command prompt and navigate to the directory in which you'd like your project to be created. Now enter the command below:
 
 ```bash
  $ dotnet new webapi -n TodoAPI
@@ -217,7 +217,7 @@ namespace TodoAPI.Migrations
 }
 ```
 
-One migration creates the tables that we need and the other provides us with seed data so that we have data to work within our database. "But how do we run the migrations?", one might ask. Well, that's where FluentMigrator's runner comes in. Let's create an extension that runs our migrations just before our app is run.
+One migration creates the tables that we need, and the other provides us with seed data so that we have data to work within our database. "But how do we run the migrations?", one might ask. Well, that's where FluentMigrator's runner comes in. So let's create an extension that runs our migrations just before our app is run.
 
 Create a new folder `Extensions` and add the file below to it:
 
@@ -320,7 +320,7 @@ The class above is responsible for creating a connection to our database. Dapper
         }
 ```
 ### Adding our App Logic(Models and Repositories)
-Now let's add the real logic for our API. Create a new folder, `Domain`. In this new folder, create three folders namely `Entities`, `Repositories` and `DTOs`.
+Now let's add the real logic for our API. First, create a new folder, `Domain`. This new folder creates three folders, namely `Entities`, `Repositories` and `DTOs`.
 
 In the `Entities` folder is where we will define our models. Go ahead and add the following files:
 
@@ -464,7 +464,7 @@ namespace TodoAPI.Domain.Repositories
 
 These are the methods that will, with the help of Dapper, communicate directly with our databases. Our actual repository classes will inherit from these interfaces.
 
-Now create a folder `Repositories` in your `Data` folder. In this folder, we will add our repositories. These classes will implement the interfaces we added earlier in the `Domain/Repositories/` folder. This ensures that we are using the correct methods to communicate with our database. This folder will house the following files:
+Now create a folder `Repositories` in your `Data` folder. In this folder, we will add our repositories. These classes will implement the interfaces we added earlier in the `Domain/Repositories/` folder. This ensures that we use the correct methods to communicate with our database. This folder will house the following files:
 
 ```C#
 using System.Collections.Generic;
@@ -629,9 +629,9 @@ The `GetAll` method works similarly to the `Create` method but uses the `connect
 
 `GetById` uses `connection.QuerySingleAsync<TodoItem>()` since we ID property is unique. As stated earlier in this article, it throws an error if more than one element is found.
 
-`GetByUser` will fetch all the items that have their `UserId` to be the same as the UserId in the query parameters. Like `GetAll` uses `connection.QueryAsync<TodoItem>()` as we want to fetch multiple items.
+`GetByUser` will fetch all the items with their `UserId` to be the same as the UserId in the query parameters. Like `GetAll` uses `connection.QueryAsync<TodoItem>()` as we want to fetch multiple items.
 
-The `Update` and `Delete` methods work similarly to the `Create`. They also use the `connection.ExecuteAsync()` method as do not need any data to be returned.
+The `Update` and `Delete` methods work similarly to the `Create`. They also use the `connection.ExecuteAsync()` method as they do not need any data returned.
 
 ### Adding Our Controllers
 In the `Controllers` folder, add the following files:
@@ -917,7 +917,7 @@ For the ASP.NET Core 5, there is built-in support for OpenAPI and Swagger UI. Al
 ![swagger docs](/engineering-education/building-a-crud-api-dapper-aspnet-core/swagger.png)
 
 ### Conclusion
-This article introduced you to or gave you more insight into what Object Relational Mappers(ORMs) are and how they work. More specifically, it explains what Dapper is and why you would want to use it. We also learnt first-hand how to integrate Dapper into an ASP.NET Core API. As a bonus, we saw how to generate the Swagger Docs for our API. The complete code for this article is here: [Dapper-ASP.NET-Core-TodoAPI](https://github.com/olumidayy/Dapper-ASP.NET-Core-TodoAPI). Feel free to add more features or contribute!
+This article introduced you to or gave you more insight into what Object Relational Mappers(ORMs) are and how they work. More specifically, it explains what Dapper is and why you want to use it. We also learned first-hand how to integrate Dapper into an ASP.NET Core API. As a bonus, we saw how to generate the Swagger Docs for our API. The complete code is here: [Dapper-ASP.NET-Core-TodoAPI](https://github.com/olumidayy/Dapper-ASP.NET-Core-TodoAPI). Feel free to add more features or contribute!
 
 
 ---
