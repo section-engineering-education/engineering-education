@@ -288,7 +288,9 @@ Widget buildButton(String title, BuildContext context, [Color color]) {
 
 So that's it. We built a nice video player app using Flutter. With Chewie, getting the media streaming capabilities of YouTube was straightforward, and all I had to do was get an API key from Google. Getting playback controls on-screen with Flutter was also super easy, thanks to Getx. 
 You can find the complete code of this example [here](https://github.com/kanoinikita/flutter-chewie-getx/tree/master/videoplayer)
+
 Enjoy Coding Geeks
+
 ---
 
 Peer Review Contributions by: [Okelo Violet](/engineering-education/authors/okelo-violet/)
