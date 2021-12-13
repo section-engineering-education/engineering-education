@@ -20,7 +20,7 @@ Cloud computing can be either public, private, or a hybrid (a combination of pri
 
 This article will explore public, private, and hybrid cloud environments, their benefits and drawbacks, and help users decide on the best cloud solution according to their needs.
 
-To introduce cloud computing and the three cloud deployment models (public cloud, hybrid cloud, and private cloud), have a look at this [article](/introduction-to-cloud-computing/).
+To introduce cloud computing and the three cloud deployment models (public cloud, hybrid cloud, and private cloud), have a look at this [article](/engineering-education/introduction-to-cloud-computing/).
 
 ### Keywords
 - Application Packaging Standard (APS) – To integrate an application software with a hosting platform, you need to follow the technology defined by APS.

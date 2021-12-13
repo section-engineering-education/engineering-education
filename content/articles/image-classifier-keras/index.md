@@ -31,7 +31,7 @@ The colab notebook for this project is [here](https://github.com/Inyrkz/covid-cl
  
 ### Prerequisites
 Before we begin it would be helpful to have the following understanding on the:
-- Basics of Convolutional Neural Network. I recommend this [article](/basics-of-convolution-neural-networks/) by Willies Ogola to get started.
+- Basics of Convolutional Neural Network. I recommend this [article](/engineering-education/basics-of-convolution-neural-networks/) by Willies Ogola to get started.
 - Python Programming.
 - [Colab Notebook](https://colab.research.google.com/).
 

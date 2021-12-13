@@ -10,6 +10,7 @@ date: 2021-07-08T00:00:00-08:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
+
   - url: /engineering-education/creating-a-responsive-navigation-bar-using-tailwind-css-and-javascript/hero.jpg
     alt: Navigation Bar Image Example
 ---
@@ -423,6 +424,10 @@ c) On small screens
 In this article, we have gone through creating our own responsive navigation bar using Tailwind CSS. We have also learnt how to create the toggle functionality for our navbar using JavaScript. A navigation bar is an example of the many things you can create using Tailwind CSS classes. A navigation bar is an important tool for user navigation experience.
 
 I hope you will find this tutorial helpful!
+
+### Resources & References
+- [Building Tailwind CSS Navbars - Mobile Navigation Too! ](https://www.youtube.com/watch?v=puaX_nhTMRU)
+- [Tailwind CSS framework](/engineering-education/introduction-to-tailwind-css/)
 
 ---
 Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)

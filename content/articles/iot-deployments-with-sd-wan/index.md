@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/iot-deployments-with-sd-wan/hero.jpg
     alt: IoT Deployments with SD-WAN example image
 ---
-The introduction of SD-WAN changed how a [wide area network](/network-types-topologies/) is managed and deployed. This technology has evolved together with the internet of things (IoT) to become two widely accepted technologies globally. IoT introduces the power of the internet, data analytics, and data processing to the real world of physical devices.
+The introduction of SD-WAN changed how a [wide area network](/engineering-education/network-types-topologies/) is managed and deployed. This technology has evolved together with the internet of things (IoT) to become two widely accepted technologies globally. IoT introduces the power of the internet, data analytics, and data processing to the real world of physical devices.
 <!--more-->
 However, various challenges hold the IoT back, including inadequate network resources, security, and lack of interoperability in IoT devices. SD-WAN comes to solve some of the primary issues that IoT is facing.
 

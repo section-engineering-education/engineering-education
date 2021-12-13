@@ -18,7 +18,7 @@ Many modern web applications today are served from [the cloud](https://en.wikipe
 <!--more-->
 
 ### Introduction
-An [Introduction To Cloud Computing](/introduction-to-cloud-computing/) can be found on [Section's Engineering Education blog](/).
+An [Introduction To Cloud Computing](/engineering-education/introduction-to-cloud-computing/) can be found on [Section's Engineering Education blog](/engineering-education/).
 
 Web applications can be served on [Virtual Machines](https://en.wikipedia.org/wiki/Virtual_machine) provisioned on a public cloud. In this tutorial, we will cover exactly how to provision a Virtual Machine running Ubuntu 18.04 on AWS, and [SSH](https://en.wikipedia.org/wiki/Secure_Shell) into it.
 
