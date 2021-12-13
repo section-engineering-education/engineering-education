@@ -33,7 +33,7 @@ We'll be making use of two libraries:
 
 * `Chewie`, the flutter plugin for decoding, playback, and camera. Build amazing videos with access to the frame by frame control and camera view.Chewie is a fully customizable video player which can play/stream almost any kind of format and provides an easy to use api.
 
-* GetX, a dart library for downloading files from the internet. It makes it very easy to download from a URL or a file into an input stream.Getx is a wrapper around the low-level android & ios media APIs.Like requestPermission, getToken, etc. You can use it to play videos too or capture photos.
+* `GetX`, a dart library for downloading files from the internet. It makes it very easy to download from a URL or a file into an input stream.Getx is a wrapper around the low-level android & ios media APIs.Like requestPermission, getToken, etc. You can use it to play videos too or capture photos.
 We'll take advantage of the first library, `Chewie` to play videos and audio files, and the second one, `GetX`, for downloading them from Youtube's  API.
 
 ### Prerequisites
