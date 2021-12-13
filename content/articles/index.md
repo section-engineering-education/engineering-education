@@ -1,28 +1,48 @@
 ### Introduction
-CSV addresses Comma-Separated Values. Is a document design utilized to keep information in an accounting page or dataset, in a straightforward text structure. A delimiter is utilized to recognize and isolate information in comma-separated values. The CSV record design is utilized when we move plain information between programs that locally work on incongruent organizations.
+CSV addresses Comma-Separated Values. It is a document design utilized to keep information in an accounting page or dataset in a straightforward text structure. A delimiter is used to recognize and isolate information in comma-separated values. The CSV record design is utilized to move plain information between programs that locally work on incongruent organizations.
+
 ### Prerequisites
-To follow along you should
-- Have a basic knowledge of java.
-- Have [Eclipse](https://www.eclipse.org/downloads/download.php?file=/oomph/epp/2021-09/R/eclipse-inst-jre-win64.exe&mirror_id=1281) IDE in your computer.
+To follow along, you should
+- Have a basic knowledge of Java.
+- Have an IDE of your choice installed. I use [Eclipse](https://www.eclipse.org/downloads/download.php?file=/oomph/epp/2021-09/R/eclipse-inst-jre-win64.exe&mirror_id=1281) IDE.
+
 ### Table of contents
-- [Step by step instructions to make CSV document, utilizing notepad and Microsoft Excel.](#Step-by-step-instructions-to-make-CSV-document-utilizing-notepad-and-Microsoft-Excel.)
-- [Java String.split() technique.](#Java-String.split()-technique.)
-- [Java scanner class.](#Java-scanner-class.)
-- [Using open CSV API.](#Using-open-CSV-API.)
-### Step by step instructions to make CSV document, utilizing notepad and Microsoft Excel.
-#### **Microsoft Excel office.**
+- [Introduction](#introduction)
+- [Prerequisites](#prerequisites)
+- [Table of contents](#table-of-contents)
+- [Creating a CSV file](#creating-a-csv-file)
+  - [Microsoft Excel office](#microsoft-excel-office)
+  - [Notepad](#notepad)
+- [Java String.split() technique.](#java-stringsplit-technique)
+- [Java scanner class.](#java-scanner-class)
+- [Using openCSV API.](#using-opencsv-api)
+  - [Important OpenCSV classes](#important-opencsv-classes)
+- [Reading CSV files in Java](#reading-csv-files-in-java)
+  - [Step 1](#step-1)
+  - [Step 2](#step-2)
+  - [Step 3](#step-3)
+  - [Step 4](#step-4)
+  - [Step 5](#step-5)
+  - [Step 6](#step-6)
+- [Conclusion](#conclusion)
+
+
+### Creating a CSV file
+#### Microsoft Excel office
 - First, open the Excel office on your computer.
 - Second, open a blank workbook. Then fed the information beneath into the excel document.
 
 ![microsoft-excel-csv](/engineering-education/working-with-CSV-files-in-java/microsoft-excel-csv.png)
-- Have you fed the data? I guess yes. Save the excel file as CSV(comma delimited). Name the document as commaseparated, and finish saving it.
+
+- Have you fed the data? I guess yes. Save the excel file as CSV(comma delimited). Name the document as comma-separated, and finish saving it.
 
 ![excelsave](/engineering-education/working-with-CSV-files-in-java/excel-save.png)
-#### **Notepad**
+
+#### Notepad
 - let's get started, first we open our Notepad.
 - Second, fed in the information as displayed below. Remember to separate each data with a comma(,).
 
-```
+```bash
 Student Name,Faculty,Registration No,Fees Balance,Campus
 Stanley Kuria,Education,37916808,3150,Main
 Davidson Kanyua,Computing,38094044,8500,Meru
@@ -34,10 +54,11 @@ Esther Njoroge,Health,37809504,5500,Nakuru
 The file we created should look like the one below.
 
 ![notepadcsv](/engineering-education/working-with-csv-files-in-java/notepadcsv.png)
+
 ### Java String.split() technique.
-String.split, applied to break string around matches of the given standard articulation.
-After splitting is done, this method returns a character array.
-In the code below we imported BufferedReader. BufferedReader reads the file line by line to the end.
+`String.split`, applied to break string around matches of the given standard articulation.
+In the code below, we imported BufferedReader. BufferedReader reads the file line by line to the end.
+
 ```Java
 import java.io.FileReader;
 import java.io.IOException;//signals an exception of some kind has occurred
@@ -64,17 +85,21 @@ class readcsv
     }
 }
 ```
+
 The output of the code is as shown below.
-```
+
+```bash
 Name: Student Name,Faculty: Faculty, Registration: Registration No, Fees Balance: Fees Balance, Campus:  Campus
 Name: Stanley Kuria,Faculty: Education, Registration: 37916808, Fees Balance: 3150, Campus:  Main
 Name: Davidson Kanyua,Faculty: Computing, Registration: 38094044, Fees Balance: 8500, Campus:  Meru
 Name: Tess Wambui,Faculty: Engineering, Registration: 21666504, Fees Balance: 13500, Campus:  Nairobi
 Name: Esther Njoroge,Faculty: Health, Registration: 37809504, Fees Balance: 5500, Campus:  Nakuru
 ```
+
 ### Java scanner class.
-Is a class in Java.util bundle, used to get input from the user. Breaks information into tokens, utilizing the delimiter pattern. It is the most straightforward method to read input in java code.
-In the code below, we used the scanner class to read CSV files in Java.
+It is a class in the `Java.util` bundle, used to get input from the user. Breaks information into tokens, utilizing the delimiter pattern. It is the most straightforward method to read input in java code.
+We used the scanner class to read CSV files in Java in the code below.
+
 ```Java
 import java.util.Scanner;//contains scanner class
 import java.io.*;
@@ -91,9 +116,11 @@ class mycsvread
         myscanner.close();  //myscanner is closed
     }
 }
-``` 
-The output is as shown below.
 ```
+
+The output is as shown below.
+
+```bash
 Student Name,Faculty,Registration No,Fees Balance,Campus
 Stanley Kuria,Education,37916808,3150,Main
 Davidson Kanyua,Computing,38094044,8500,Meru
@@ -101,38 +128,39 @@ Tess Wambui,Engineering,21666504,13500,Nairobi
 Esther Njoroge,Health,37809504,5500,Nakuru
 ```
 ### Using openCSV API.
-OpenCSV is an outsider API, utilized to peruse different adaptations of the comma-separated document. It supports all basic Comma-separated operations.
+OpenCSV is an outsider API utilized to peruse different adaptations of the comma-separated document. It supports all basic Comma-separated operations.
+
 OpenCSV is used since Java does not provide native support to read Comma-Separated values.
 
-**Important classes of OpenCSV**
-- CSVWrite -  enables writing data into a CSV file.
-- CSVToBean - utilized to populate Java Application with CSV data.
-- BeanToCSV - applied to export information from JavaBean to Comma-seperated value file.
+#### Important OpenCSV classes
+- `CSVWrite` -  enables writing data into a CSV file.
+- `CSVToBean` - utilized to populate Java Application with CSV data.
+- `BeanToCSV` - applied to export information from JavaBean to Comma-seperated value file.
 Comma-separated values are read in two ways, namely:
-- By line: In this case, the comma-separated values are read from one line to another consecutively.
-- All data: utilizes readAll() technique to peruse all records at once. 
+- By line: In this case, the comma-separated values are consecutively read from one line to another.
+- All data: utilizes readAll() technique to peruse all records at once.
 `Example: List allData = csvReader.readAll();`
 
 The syntax for open CSV: `public CSVReader(Reader reader, char separator) `
 
-**Reading CSV file using Eclipse**
+### Reading CSV files in Java
 
-**step1**
+#### Step 1
 
-create two folders in eclipse-workspace and name them CSVDoc and CSVdocuments. In the CSVdocuments folder, move the CSV files that you are going to use. In this case, we are going to use, comma-separated and semicolon-separated files. Then in the CSVDoc folder paste `opencsv-5.5.2` and `commons-lang3-3.1` jar files.
+Create two folders in eclipse-workspace and name them CSVDoc and CSVdocuments. In the CSVdocuments folder, move the CSV files that you will use. In this case, we will use comma-separated and semicolon-separated files. Then in the CSVDoc folder paste `opencsv-5.5.2` and `commons-lang3-3.1` jar files.
 If you don't have them, download them by clicking [opencsv5.5.2](https://repo1.maven.org/maven2/com/opencsv/opencsv/5.5.2/opencsv-5.5.2.jar) and [commonlangs3-3.1](https://repo1.maven.org/maven2/org/apache/commons/commons-lang3/3.1/commons-lang3-3.1.jar)
 
 ![csvdoc](/engineering-education/working-with-csv-files-in-java/csvdoc.png)
 
-**step2**
+#### Step 2
 
 Open Eclipse, and create a java project. Name the project as CSVOperation and click next.
 
 ![createproject](/engineering-education/working-with-csv-files-in-java/createproject.png)
 
-**step3**
+#### Step 3
 
-Then click Libraries and select Classpath. Then select add external Jars and add jars from CSVDoc in the Eclipse-workspace folder. 
+Then click Libraries and select Classpath. Then select add external Jars and add jars from CSVDoc in the Eclipse-workspace folder.
 And click finish.
 
 ![libraries](/engineering-education/working-with-csv-files-in-java/libraries.png)
@@ -141,46 +169,46 @@ And click finish.
 
 ![externaljars](/engineering-education/working-with-csv-files-in-java/externaljars.png)
 
-**Step4**
+#### Step 4
 
 After that, open a java class. Right-click on the project CSVOperation and select new then select class.
 
 ![class](/engineering-education/working-with-csv-files-in-java/class.png)
 
-**step5**
+#### Step 5
 
-Name the class as ReadCSVExample and click finish.
+Name the class as `ReadCSVExample` and click finish.
 
 ![nameclass](/engineering-education/working-with-csv-files-in-java/nameclass.png)
 
-**step6**
+#### Step 6
 
  Then copy the code sample beneath and paste. Run the program.
 ```Java
-import com.opencsv.CSVReader;//external library 
-import java.io.FileReader; //Reads text from character files using a default buffer size 
+import com.opencsv.CSVReader;//external library
+import java.io.FileReader; //Reads text from character files using a default buffer size
 public class ReadCSVExample
-{ 
+{
 private static String LOCATION_OF_THE_FILE="C:\\Users\\davis\\eclipse-workspace\\CSVdocuments\\commaseperated.csv";//file location
-public static void main(String[] args)  
-{  
+public static void main(String[] args)
+{
     LineByLine(LOCATION_OF_THE_FILE);
         }
     public static void LineByLine(String myfile)
       {
-       try 
+       try
            {
            FileReader freader= new FileReader(myfile);//created an object of freader class
         @SuppressWarnings("resource")
         CSVReader creader= new CSVReader(freader);// created creader object by parsing freader as a parameter
            String [] nextRecord;// created an array of type String
-         //read data line by line 
+         //read data line by line
         while((nextRecord = creader.readNext())!=null)
            {
                for(String token: nextRecord)
                System.out.println(token +"\t"); //will bring the value of cell seperated by tab space
            }
-           System.out.println();   
+           System.out.println();
            }
           catch(Exception e) //to catch any exception inside try block
        {
@@ -191,36 +219,40 @@ public static void main(String[] args)
 
 }
 ```
-The output should resemble, the one below.
-```
-Student Name    
-Faculty 
-Registration No 
-Fees Balance    
-Campus  
-Stanley Kuria   
-Education   
-37916808    
-3150    
-Main    
-Davidson Kanyua 
-Computing   
-38094044    
-8500    
-Meru    
-Tess Wambui 
-Engineering 
-21666504    
-13500   
-Nairobi 
-Esther Njoroge  
-Health  
-37809504    
-5500    
-Nakuru  
+
+The output should resemble the one below.
+
+```bash
+Student Name
+Faculty
+Registration No
+Fees Balance
+Campus
+Stanley Kuria
+Education
+37916808
+3150
+Main
+Davidson Kanyua
+Computing
+38094044
+8500
+Meru
+Tess Wambui
+Engineering
+21666504
+13500
+Nairobi
+Esther Njoroge
+Health
+37809504
+5500
+Nakuru
 
 ```
-In the output above you will note the absence of commas(,). This is because when using open CSV API, the commas are ignored.
+
+You will note the absence of commas(,). This is because when using open CSV API, the commas are ignored.
+
 Let's use implement a program to read a CSV file that is not separated by commas.
 It's separated with semi-colons(;).
 The CSV file that we are going to read is shown below.
@@ -230,30 +262,30 @@ The CSV file that we are going to read is shown below.
 Copy the program below and paste, and run it.
 
 ```Java
-import com.opencsv.CSVReader;//external library 
-import java.io.FileReader; //Reads text from character files using a default buffer size 
+import com.opencsv.CSVReader;//external library
+import java.io.FileReader; //Reads text from character files using a default buffer size
 public class ReadCSVExample
-{ 
+{
 private static String LOCATION_OF_THE_FILE="C:\\Users\\davis\\eclipse-workspace\\CSVdocuments\\semicolonseperated.csv";//file location
-public static void main(String[] args)  
-{  
+public static void main(String[] args)
+{
     LineByLine(LOCATION_OF_THE_FILE);
         }
     public static void LineByLine(String myfile)
       {
-       try 
+       try
            {
            FileReader freader= new FileReader(myfile);//created an object of freader class
         @SuppressWarnings("resource")
         CSVReader creader= new CSVReader(freader);// created creader object by parsing freader as a parameter
            String [] nextRecord;// created an array of type String
-         //read data line by line 
+         //read data line by line
         while((nextRecord = creader.readNext())!=null)
            {
                for(String token: nextRecord)
                System.out.println(token +"\t"); //will bring the value of cell seperated by tab space
            }
-           System.out.println();   
+           System.out.println();
            }
           catch(Exception e) //to catch any exception inside try block
        {
@@ -264,15 +296,21 @@ public static void main(String[] args)
 
 }
 ```
+
 The output is shown below.
-```
-Student Name;Faculty;Registration No;Fees Balance;Campus    
-Stanley Kuria;Education;37916808;3150;Main  
-Davidson Kanyua;Computing;38094044;8500;Meru    
-Tess Wambui;Engineering;21666504;13500;Nairobi  
-Esther Njoroge;Health;37809504;5500;Nakuru  
+
+```bash
+Student Name;Faculty;Registration No;Fees Balance;Campus
+Stanley Kuria;Education;37916808;3150;Main
+Davidson Kanyua;Computing;38094044;8500;Meru
+Tess Wambui;Engineering;21666504;13500;Nairobi
+Esther Njoroge;Health;37809504;5500;Nakuru
 
 ```
-In the output above you will note the presence of semi-colon(;) separators. Commas are ignored by OpenCSV, but other separators are recognized.
+
+In the output above, you will note the presence of semi-colon(;) separators. This is because OpenCSV ignores commas, but other separators are recognized.
+
 ### Conclusion
-In this article, you have learned various techniques for creating CSV files in Java. Also, you learned different methods of reading Comma Separated Values(CSV) in Java. Lastly, we used open CSV API to read CSV files.  Happy coding!
+In this article, you have learned various techniques for creating CSV files in Java. Also, you learned different methods of reading Comma Separated Values(CSV) in Java. Lastly, we used open CSV API to read CSV files.
+
+Happy coding!
