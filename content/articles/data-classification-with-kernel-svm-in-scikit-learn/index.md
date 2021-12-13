@@ -36,7 +36,9 @@ As we saw in the non-linear scatter plot above, it is impossible to classify dat
 
 As we can see in the above plot, transforming the data is now linearly separable, and we can classify it using a linear hyperplane. Since we mapped our data from two to three dimensions, the decision boundary that optimally classifies our data is a plane.
 
-Most non-linear datasets are usually in high dimensional space in the real-world scenario. Mapping these features further to higher dimensional(kernel space) can result in even theoretically infinite-dimensional feature space. As a result, the processing time and power required on this kernel space are very high, making this approach inefficient. Also, the other problem associated with this approach is that the model obtained on such a higher dimension is very complex. Therefore, we employ a technique known as the *kernel trick* to make things less complex. This technique enables us to work in the input space without visiting the kernel space.
+Most non-linear datasets are usually in high dimensional space in the real-world scenario. Mapping these features further to higher dimensional(kernel space) can result in even theoretically infinite-dimensional feature space. As a result, the processing time and power required on this kernel space are very high, making this approach inefficient.
+
+Other problem associated with higher dimensional mapping is that the model obtained on such a higher dimension is very complex. Therefore, we employ a technique known as the *kernel trick* to make things less complex. This technique enables us to work in the input space without visiting the kernel space.
 
 Let us understand the intuition behind the kernel trick.
 
