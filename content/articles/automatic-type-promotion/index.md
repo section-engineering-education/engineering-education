@@ -45,7 +45,7 @@ For a reader to understand this article, they should have to know the following:
 
 Below is a diagrammatic illustration of possible type promotions:
 
-![type promotions](/engineering-education/Automatic-type-promotion/INT.png)
+![type promotions](/engineering-education/automatic-type-promotion/INT.png)
 
 The Java code fragment below shows the variable declaration and instantiation of 2 variables, `num1` and `num2`, each byte. It then declares a variable `mult1` of type int and is expected to store the products of `num1` and `num2`.
 
@@ -119,7 +119,7 @@ The above code fragment implements a method overloading by having two functions,
 
 As valuable as automatic type promotion is in java, it may sometimes result in compilation confusions like the one shown in the illustratory diagram below:
 
-![problem](/engineering-education/Automatic-type-promotion/int2.png)
+![problem](/engineering-education/automatic-type-promotion/int2.png)
 
 This error is caused by automatically promoting the type `byte` to the entire execution time. Therefore, typecasting needs to be performed explicitly if it has to be a byte.
 
@@ -163,7 +163,7 @@ public class AutomaticTypePromotion
 
 Output:
 
-![output](/engineering-education/Automatic-type-promotion/ou.png)
+![output](/engineering-education/automatic-type-promotion/ou.png)
 
 ### Conclusion
 Despite the benefits of ith automatic type promotion, some requirements do not support it. For example, it only supports [typecasting](https://www.javatpoint.com/type-casting-in-java) or widening, which means [narrowing](https://www.tutorialspoint.com/narrowing-conversion-in-java#:~:text=Narrowing%20conversion%20is%20needed%20when,to%20integer%20using%20Narrowing%20Conversion.) is uncatered for; hence narrowing has to be done manually by the programmer, which raises the need to learn manual types of casting.
