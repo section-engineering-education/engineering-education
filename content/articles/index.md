@@ -136,6 +136,7 @@ OpenCSV is used since Java does not provide native support to read Comma-Separat
 - `CSVWrite` -  enables writing data into a CSV file.
 - `CSVToBean` - utilized to populate Java Application with CSV data.
 - `BeanToCSV` - applied to export information from JavaBean to Comma-seperated value file.
+
 Comma-separated values are read in two ways, namely:
 - By line: In this case, the comma-separated values are consecutively read from one line to another.
 - All data: utilizes readAll() technique to peruse all records at once.
