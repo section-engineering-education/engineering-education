@@ -1,5 +1,5 @@
 ### Introduction
-Deploying applications to production is a complex process requiring many configurations and testing. Imagine that you want to deploy a new version of your application to production. It would help if you made sure that the new version is stable and compatible with the existing version of your application. You will need to repeat the deployment steps for each application version. If you want to deploy your application to production several times, manual deployment becomes tiresome. This is where [ansible](https://www.ansible.com/) comes in. We can automate the deployment process with ansible.
+Deploying applications to production is a complex process requiring many configurations and testing. Imagine that you want to deploy a new version of your application to production. It would help if you made sure that the new version is stable and compatible with the existing version of your application. You will need to repeat the deployment steps for each application version. Manual deployment becomes tiresome if you want to deploy your application to production several times. This is where [ansible](https://www.ansible.com/) comes in. We can automate the deployment process with ansible.
 
 In this article, we will be deploying a Django application to production. We will be using the [Django](https://docs.djangoproject.com/en/2.0/intro/tutorial01/) framework and [ansible](https://www.ansible.com/). We will also use the [nginx](https://www.nginx.com/) webserver.
 
@@ -13,8 +13,10 @@ In this article, we will be deploying a Django application to production. We wil
   - [Views](#views)
   - [URL Configuration](#url-configuration)
 - [Ansible](#ansible)
+  - [System Packages](#system-packages)
   - [Update](#update)
   - [Generate SSH Key](#generate-ssh-key)
+- [Deployment](#deployment)
   - [Repository configuration](#repository-configuration)
   - [Ansible Shell Command](#ansible-shell-command)
 - [Conclusion](#conclusion)
@@ -151,6 +153,30 @@ urlpatterns = [
 ### Ansible
 Ansible uses `yml` files to configure your server. The ansible `yml` files are also called `playbooks`. Create a new directory named `ansible` in the root project folder.
 
+#### System Packages
+1. In the `ansible` directory, create a new file named `packages.yml`.
+2. Add the following code snippet to the `packages.yml` file.
+```yml
+---
+- hosts: all
+  gather_facts: no
+  tasks:
+    - name: Running apt update
+      apt: update_cache=yes
+    - name: Installing required packages
+      apt: name={{item}} state=present
+      with_items:
+        - fail2ban
+        - git
+        - python-pip
+        - rdiff-backup
+        - libpq-dev
+        - uwsgi
+        - uwsgi-plugin-python
+        - nginx
+```
+The above file contains all the system packages that we require for our application to run on the server.
+
 #### Update
 1. In the `ansible` directory, create a new file named `update.yml`.
 2. Add the following code to the `update.yml` file:
@@ -186,6 +212,60 @@ To make it possible for our server to connect with GitLab and pull the latest co
 ```
 The above playbook generates an SSH key on our server and stores it in the `.ssh/id_rsa.pub` file.
 
+### Deployment
+1. In the `ansible` directory, create a new file named `deploy.yml`.
+2. Add the code snippet below to the `deploy.yml` file.
+```yaml
+---
+- hosts: all
+  become: yes
+  become_user: ubuntu
+  gather_facts: no
+
+  tasks:
+    - name: pull branch master
+      git: repo={{ repo_url }}/{{ repo }}.git
+        dest={{ repo_dir }}
+        accept_hostkey=yes
+
+- hosts: all
+  gather_facts: no
+  tasks:
+    - name: install python requirements
+      pip: requirements={{ repo_dir }}/requirements/production.txt extra_args=--upgrade
+
+- hosts: all
+  become: yes
+  become_user: ubuntu
+  gather_facts: no
+  environment:
+    DJANGO_SETTINGS_MODULE: "{{ django_project }}.settings.production"
+    STATIC_ROOT: "{{ static_dir }}"
+
+  tasks:
+    - name: create static_root dir
+      file: path={{ static_dir }} state=directory mode=0755
+    - name: django collectstatic
+      shell: ./manage.py collectstatic --noinput chdir={{ django_dir }}
+    - name: django migrate
+      shell: ./manage.py migrate --noinput chdir={{ django_dir }}
+    - name: django loaddata
+      shell: ./manage.py loaddata user chdir={{ django_dir }}
+
+- hosts: all
+  gather_facts: no
+  tasks:
+    - name: uwsgi restart
+      service: name=uwsgi state=restarted
+
+```
+The configuration above will pull the latest code from GitLab and install the required Python packages.
+It will also:-
+1. Create the `static_root` directory and run the `collectstatic` command to collect all static files.
+2. Run the `migrate` command to migrate the database.
+3. Load the `user` fixture to populate the database.
+4. Restart the `uwsgi` service.
+
 #### Repository configuration
 We need to configure our server to connect to our repository to pull the latest code.
 1. In the `ansible` directory, create a new file named `hosts`.
@@ -209,9 +289,28 @@ To pull the code from the repository to the server, we need a shell command that
 2. Add the code snippet below to the `ansible.sh` file created above.
 
 ```bash
+#!/bin/bash
 ansible-playbook -i ./hosts $1
 ```
 The code snippet above will run the server's `ansible-playbook` command.
 
+Excecute the `ansible.sh` file using the following command:
+```bash
+./ansible.sh generate_ssh_key.yaml
+```
+The command above generates an SSH key on the server and stores it in the `.ssh/id_rsa.pub` file; the SSH key is also added to the Git repository.
+
+Once the SSH key is added to the Git repository, we can pull the latest code to the server. Execute the commands below to pull the latest code from the repository and deploy it on the server.
+
+```bash
+./ansible.sh packages.yaml
+./ansible.sh update.yaml
+./ansible.sh deploy.yaml
+```
+Whenever we want to update our application, we only need to execute the command below to pull the latest code from the repository and deploy on the server.
+
+```bash
+./ansible.sh deploy.yaml
+```
 ### Conclusion
-In this tutorial, we have created a budget management application and deployed it to production using ansible. First, try implementing automated deployments using ansible in Django projects to reduce the time spent on manual Django application deployments.
+In this tutorial, we have created a budget management application and deployed it to production using ansible. First, try implementing automated deployments using ansible in Django projects to reduce the time spent on manual Django application deployments. You can download the source code of this tutorial [here](https://drive.google.com/file/d/19ST8qXnaHC0Rep7C9nO7uxg-yOENGfcR/view?usp=sharing).
