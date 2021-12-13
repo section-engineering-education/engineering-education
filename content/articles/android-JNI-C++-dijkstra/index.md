@@ -7,6 +7,19 @@ To achieve high speed in updating the dynamic traffic changes, we will need to b
 
 We will be using C++ for the path computation and then consume and display the results to the user using Kotlin.
 
+### Table of Contents
+
+1. [Prerequisites](#prerequisites)
+2. [A brief overview of the Android NDK and the JNI](#a-brief-overview-of-the-android-ndk-and-the-jni)
+3. [Installing the required components](#installing-the-required-components)
+4. [Dijkstra's Shortest Path First algorithm](#dijkstra's-shortest-path-first-algorithm)
+5. [The C++ code](#the-c++-code)
+6. [Kotlin and XML](#kotlin-and-xml)
+7. [Accuracy](#accuracy)
+8. [Further practice](#further-practice)
+9. [Further reading](#further-reading)
+10. [Conclusion](#conclusion)
+
 ### Prerequisites
 
 A piece of knowledge in the following is required to follow through this effortlessly.
@@ -25,12 +38,13 @@ Additionally, you need Android Studio or IntellijIDEA(configured for android dev
 ### A brief overview of the Android NDK and the JNI
 Think of JNI(Java Native Interface) as a tool used for communication between java bytecode and other native languages such as C. We can write programs in another language and make them communicate with languages that can run on the Java Virtual Machine(e.g, Kotlin, Clojure) thanks to JNI. This allows us to implement features that are not easily done using these JVM-based languages, such as communicating with the low-level components such as the memory, hardware, etc. Moreover, applications/products written using the native languages run faster.
 
-NDK is a tool that facilitates linking and allows us to debug and run our applications.
+NDK is a tool that facilitates the linking of the languages and JNI. Moreover, it allows us to debug and run our applications.
 
 For more info on these, please follow the links listed below:
 
 1. [MindOrks](https://blog.mindorks.com/getting-started-with-android-ndk-android-tutorial)
 2. [ProAndroidDev](https://proandroiddev.com/android-ndk-interaction-of-kotlin-and-c-c-5e19e35bac74)
+3. [JNI Official Documentation](https://docs.oracle.com/javase/7/docs/technotes/guides/jni/spec/jniTOC.html)
 
 ### Installing the required components
 For us to write these native apps, we have to install the tools listed below:
@@ -145,15 +159,15 @@ We will change the code in the two files to implement Dijkstra's Shortest Path F
 
 ### Dijkstra's Shortest Path First algorithm
 
-This type of greedy algorithm finds the minimum weights between a graph structure. For example, finding the shortest distance between points in a graph. A graph can be anything in real-life such as road networks, rail networks, internet routes, etc.
+This type of greedy algorithm finds the minimum weights between nodes in a graph data structure. For example, finding the shortest distance between points in a graph. A graph can be anything in real-life such as road networks, rail networks, internet routes, etc.
 
-> A **greedy algorithm** is an algorithm that tries to find the most optimal solution at each stage before it moves on to the next stage. An example is finding the traffic route with the least time to maneuver at a certain area of a town.
+> A **greedy algorithm** is an algorithm that tries to find the most optimal solution at each stage before it moves on to the next stage. An example is finding the traffic route with the least time to maneuver at a certain area of a town. Find out more about greedy algorithms [here](https://brilliant.org/wiki/greedy-algorithm/).
 
 Take this graph, for instance:
 
 [graph](/engineering-education/android-JNI-C++-dijkstra/graph-one.png)
 
-We want to calculate the shortest distance between points 0 and 6. It works by storing visited nodes and calculating their distances and 0. It only adds them to the shortest path list if their distance is the shortest compared to adjacent vertices. It is explained [here](https://www.section.io/engineering-education/dijkstra-python/) in this EngEd article. The article uses the same graph and same values we will use here. It also talks about graphs. If you want to work the algorithm, please check it out
+We want to calculate the shortest distance between points 0 and 6. It works by storing visited nodes and calculating the distances between them and 0. It only adds them to the shortest path list if their distance is the shortest compared to adjacent vertices. It is explained [here](https://www.section.io/engineering-education/dijkstra-python/) in this EngEd article. The article uses the same graph and same values we will use here. It also talks about graphs. If you want to have a clear working of algorithm, please check it out.
 
 > NOTE: You will only need the theory part. The article implements it using Python at the end. If you would like to try the Python code, well and good. But the theory part is what is needed for this article.
 
@@ -614,7 +628,14 @@ Remember, the DSPF algorithm only compares the weights, marks the nodes, and upd
 ### Further practice
 Now that you have the algorithm, you can use the android canvas to draw a graph or a simple map then simulate the algorithm by changing the colors of the nodes and edges to give a path. You can further enhance it by changing the values on runtime so that the path changes according to the simulated traffic situations.
 
+### Further reading
+Check out these links for more indepth knowledge.
+
+1. [GeeksForGeeks Greedy Algorithms](https://www.geeksforgeeks.org/greedy-algorithms/)
+2. [JNI Tips](https://developer.android.com/training/articles/perf-jni)
+3. [Guide to JNI(Baeldung blog)](https://www.baeldung.com/jni)
+
 ### Conclusion
-We looked at a brief overview of the JNI, NDK definitions and installed the required components in our environment. We then looked at a guide on creating a sample native app, skimmed through the DSPF, and finally completed our recommender app and dissected its code. I hope you had a great read.
+We looked at a brief overview of the JNI, the NDK definition, and installed the required components in our environment. We then looked at a guide on creating a sample native app, skimmed through the DSPF, and finally created our recommender app and dissected its code. I hope you had a great read.
 
 Happy coding!
