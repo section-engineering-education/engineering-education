@@ -72,7 +72,7 @@ We attribute the missing data when we find that missing data has a high correlat
 #### Missing not at Random (MNAR)
 When data are MNAR, the missing data is always linked to the unobserved data, which means the missing data is linked to things or events that the researcher can't measure.
 
-Complete case analysis of a data set with MNAR data can be biased, because the missing data sources aren't counted. This means that this issue can't be addressed in the analysis, which means that this fact will skew your conclusion about the effect of the data set.
+Complete case analysis of a data set with MNAR data can be biased because the missing data sources aren't counted. This means that this issue can't be addressed in the analysis, which means that this fact will skew your conclusion about the effect of the data set.
 
 Missing not at random is the only information that is lacking, other than the previously listed categories.
 
@@ -85,14 +85,14 @@ __Solution:__ Improve dataset find data.
 ### Types of imputed information
 A variety of sizes and shapes are offered in the form of imputations.
 
-To build an accurate model of our application, we must first fill in any data gaps in our dataset. These are few techniques:
+To build an accurate model of our application, we must first fill in any data gaps in our dataset. These are a few techniques:
 - __Single Imputation:__ Only add missing values to the dataset once, to create an imputed dataset.
-- __Univariate Imputation:__ Is the case in which only the target variable is used to generate the imputed values.
+- __Univariate Imputation:__ This is the case in which only the target variable is used to generate the imputed values.
 - __Numerous imputations:__ Duplicate missing value imputation across multiple rows of data. To get multiple imputed datasets, you must repeat a single imputation process.
 - __Multivariate Imputation:__ Impute values based on other variables, such as estimating missing values using linear regression.
 
 ### How to fix our dataset's missing data
-There are a variety of approaches to daal with missing data. We will look at some of them, but first, we will start with things like importing libraries.
+There are a variety of approaches to deal with missing data. We will look at some of them, but first, we will start with things like importing libraries.
 
 ```Python
 import pandas as pan
