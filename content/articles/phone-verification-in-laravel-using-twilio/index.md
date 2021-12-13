@@ -3,7 +3,7 @@
 
 Almost every online registration that requires a user's phone number will verify the phone number's legitimacy in some way, either via a text message, a phone call, or any other handy technique. It's vital to double-check a phone number, especially if it's the only means to reach the person.
 
-In this article, we will learn how create an application in Laravel to call a user's registered phone number and also verify the phone number's authenticity using Twilio Programmable Voice API . If the user answers the phone, he or she will be asked to enter a one-time password (OTP) that was generated and displayed on his or her screen during the signup process. The user account will not be verified if an incorrect OTP is entered or if the user refuses to answer the phone. The user account will be verified if the user answers the phone and enters the correct OTP.
+In this article, we will learn how create an application in Laravel that will allow us call a user's registered phone number and also verify the phone number's authenticity using Twilio Programmable Voice API . If the user answers the phone, he or she will be asked to enter a one-time password (OTP) that was generated and displayed on his or her screen during the signup process. The user account will not be verified if an incorrect OTP is entered or if the user refuses to answer the phone. The user account will be verified if the user answers the phone and enters the correct OTP.
 
 ### Table of Contents
 - [Prerequisites](#prerequisites)
@@ -27,7 +27,7 @@ To follow this tutorial, ensure that
 - Larave 8.x is install in your machine
 - MySQL is install on your machine.
 - [Composer](https://getcomposer.org/doc/00-intro.md) is globally install in your machine.
-- You has a [Ngrok](https://ngrok.com/) account well set up.
+- You have a [Ngrok](https://ngrok.com/) account well set up.
 - You have a working [Twilio ](https://www.twilio.com/)account.
 - Your twilio number is verified (If you are in trial mode).
 - You are having a [voice-enabled Twilio phone number]([url](https://www.twilio.com/console/phone-numbers/incoming))
@@ -39,14 +39,11 @@ We'll be using  the composer command to create a new Laravel installation. We do
 composer create-project laravel/laravel programmable-voice
 ```
 To navigate to our project folder, run the bellow command on the same terminal
+
 ```
 cd programmable-voice
 ```
-Start your project by running 
-```
-php artisan serve
-```
-Open the `.env` file and add the database credentials and the database credential to the following.
+Open the `.env` file and add the followng database credentials.
 ```
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
@@ -55,7 +52,7 @@ DB_DATABASE=twilio
 DB_USERNAME=root
 DB_PASSWORD=
 ```
-Using MYSQL database management application, create a new database called twilio and then Run the following artisan command in your terminal
+Using MYSQL database management application, create a new database called twilio and then run the following artisan command in your terminal
 ```
 php artisan serve
 ```
@@ -212,10 +209,10 @@ public function index()
 
     }
 ```
-We have now added all that we need to authenticate a user in our` app/Http/Controllers/Auth/AuthController.php`. The `index `method, the `registration `method, and the `reverify `method returns the `login`, `registration `, and `verification `view respectively. The `dashboard `method returns the `dashboard ` view only if the user is authenticated, else it will redirect to the `login `with an error message. This is done using the `Auth::check()`. The `postRegistration ` method saves all the user’s input and makes sure that the data provided by the user passes the validation check, it then redirects the user to the login page with a success message. The `postLogin` method authenticates the user base on the credentials provided by the user and the verification status. this uses the `Auth::attempt($credentials)`. The `logout ` method logs the user out and also clears the session using the `Session::flush()`
+We have now added all that we need to authenticate a user in our `app/Http/Controllers/Auth/AuthController.php`. The `index `method, the `registration` method, and the `reverify` method returns the `login`, `registration`, and `verification` view respectively. The `dashboard` method returns the `dashboard` view only if the user is authenticated, else it will redirect to the `login` with an error message. This is done using the `Auth::check()`. The `postRegistration` method saves all the user’s input and makes sure that the data provided by the user passes the validation check, it then redirects the user to the login page with a success message. The `postLogin` method authenticates the user base on the credentials provided by the user and the verification status. this uses the `Auth::attempt($credentials)`. The `logout` method logs the user out and also clears the session using the `Session::flush()`
 
 #### Routes
-We need to add how routes to enable users to navigate through pages in our application. Add the following code to `routes/web.php `
+We need to add how routes to enable users to navigate through pages in our application. Add the following code to `routes/web.php`
 
 ```
     Route::get('login', [AuthController::class, 'index'])->name('login');
@@ -1129,7 +1126,7 @@ class PhoneVerificationController extends Controller
 
 }
 ```
-if you take a look at the preceding code more closely. The class now has two new methods, each with a specific use case, but both of them use the Twilio SDK's `VoiceResponse() ` class to construct the TwiML response. The `userInput `method does the magic of giving instruction to the user on what to do and also collecting use keypad input after which it sends a request with the collected data to a specified URL while the `verifyNumber `method does the phone number verification using the collected data from `userInput` method. The `VoiceResponse()` class has some methods that are used to interact with the user which are as follows.
+if you take a look at the preceding code more closely. The class now has two new methods, each with a specific use case, but both of them use the Twilio SDK's `VoiceResponse()` class to construct the TwiML response. The `userInput` method does the magic of giving instruction to the user on what to do and also collecting use keypad input after which it sends a request with the collected data to a specified URL while the `verifyNumber `method does the phone number verification using the collected data from `userInput` method. The `VoiceResponse()` class has some methods that are used to interact with the user which are as follows.
 
 - The `say() `method takes a string and read text to the user
 
@@ -1187,7 +1184,7 @@ protected $except = [
     ];
 ```
 ### Exposing the Application
-At this level, for us to have a perfectly working application, our application needs to be accessible online. lucky for us, the possibility can be achieved with ngrok. You can learn how to set up ngrok from their official doc. Let’s start the laravel application by opening the terminal and navigating to the application folder, then enter the following commands:
+At this level, for us to have a perfectly working application, our application needs to be accessible online. lucky for us, the possibility can be achieved with ngrok. You can learn how to [set up ngrok](https://ngrok.com/docs) from their official doc. Let’s start the laravel application by opening the terminal and navigating to the application folder, then enter the following commands:
 
 ```
 php artisan serve
