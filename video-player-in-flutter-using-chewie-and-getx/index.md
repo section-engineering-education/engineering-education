@@ -5,7 +5,7 @@ published: true
 url: /engineering-education/video-player-in-flutter-using-chewie-and-getx/
 title: Video player in flutter using Chewie and Getx 
 description: This tutorial will guide you on how to set up and integrate Chewie and Getx in your Flutter application.
-author: Naomi-Kanoi
+author: naomi-kanoi
 date: 2021-11-05T00:00:00-11:00
 topics: [API]
 excerpt_separator: <!--more-->
