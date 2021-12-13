@@ -4,7 +4,7 @@ In this article, we will implement Lottie animation in a flutter application. We
 
 ### Prerequisites
 
-    1. Basic knowledge of Futter widgets
+    1. Basic knowledge of Flutter widgets
     2. Basic knowledge of using animation controllers
 
 Let us jump right into it!
