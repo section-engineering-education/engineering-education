@@ -1,4 +1,5 @@
 In the older computer generations, running simple codes was much trickier than one might have thought. This challenge is because computers do everything in machine languages written on punch cards. It then went to mnemonics, as used in the Assembly language. These were simpler but still required an understanding of machine language.
+
 Developers needed high-level languages more than ever since computers seemed effective in repetitive tasks.
 
 The invention of a high-level language compiler was a significant breakthrough in the computer growth phase. This breakthrough was because high-level languages are understandable by most people, though much overhead is needed. Hence, for one to be able to appreciate the compilers and their work in code conversion from source to optimized object code, one has to understand how they are designed.
