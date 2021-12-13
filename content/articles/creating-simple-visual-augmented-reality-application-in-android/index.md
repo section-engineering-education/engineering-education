@@ -63,10 +63,9 @@ Then go to Gradle > build.gradle(Module:app) and add the line below inside the d
 ```gradle
 api project(":sceneformux")
 ```
+You can download my simple 3D object [here](https://drive.google.com/file/d/1J6Cv8w3jDDqC0i92YpPQxtTujJ_k1-F1/view?usp=sharing). 
 
-You can download any 3D file from the internet. These files show be .glb. You can download my simple 3D object [here](https://drive.google.com/file/d/1J6Cv8w3jDDqC0i92YpPQxtTujJ_k1-F1/view?usp=sharing). 
-
-Now you need to add the 3D files to your project. To do this, go to Android Studio, right-click on res directory -> New Android Resouce Directory, and change resouce type to `raw`. On this `raw` folder, copy the `.glb` file under it.
+Now you need to add the 3D files to your project. To do this, go to Android Studio, right-click on res directory -> New Android resource Directory, and change resource type to `raw`. On this `raw` folder, copy the `.glb` file under it.
 
 ### Step three: Adding permissions to our application
 In your AndroidManifest.xml, add the following lines of code to ask for permission to access the camera, check some features in the phone's hardware, and the last line indicates that the app requires Google play services for AR.
@@ -136,10 +135,10 @@ androidx.core.app change to androidx.fragment.app.
 android.support.v7.widget. change to androidx.appcompat.widget. 
 ```
 
-#### Step five: Dessinging our application's UI
+#### Step five: Designing our application's UI
 In our activity_main.xml, let us design the layout of the app.
 
-We will use ArFragment because it contains plenty of features itself. It asks you to download ARCore if it is not installed on your phone and asks for camera permission if it's not granted.
+We will use ArFragment because it contains plenty of features itself. It asks you to download ARCore if it is not installed on your phone and asks for camera permission if it is not granted.
 
 Here is the code for activity_main.xml:
 
@@ -203,7 +202,7 @@ We now need to link ArFragement with it`s id used in `activity_main.xml`.
 arCam = (ArFragment) getSupportFragmentManager().findFragmentById(R.id.arCameraArea);
 ```
 
-We now use the `onTabListener` to point out the model when the screen is tabbed. We call `setOnTabArPlaneListener` and an anchor is formed, which will help to bring objects on the screen and maintain their position in space. `ModelRendarable` is now used with its functions to render the model by attaching it to an AncorNode.
+We now use the `onTabListener` to point out the model when the screen is tabbed. We call `setOnTabArPlaneListener`, and an anchor is formed, which will help bring objects on the screen and maintain their position in space. `ModelRendarable` with its functions to render the model by attaching it to an AncorNode.
 
 ```java
 arCam.setOnTapArPlaneListener((hitResult, plane, motionEvent) -> {
@@ -319,7 +318,7 @@ public class MainActivity extends AppCompatActivity {
 Connect your Android phone to the PC via USB (USB debugging), and run the app. To get the sample APK for this project, click [here](https://drive.google.com/drive/folders/1AXTHCmvrLldv_QILwsMyNadve74fMwhQ?usp=sharing).
 
 ### Conclusion 
-In conclusion, we have gone through augmented reality and how to make a simple visual augmented reality app. This article serves only as an introduction to building a visual augmented reality android application. It's highly recommended to try out the code manually by reading further from the referenced articles.
+In conclusion, we have gone through augmented Reality and how to make a simple visual augmented reality app. This article serves only as an introduction to building a visual augmented reality android application. It is highly recommended to try out the code manually by reading further from the referenced articles.
 
 ### References
 You can learn more about Augmented Reality programming from these [AR codes](https://developers.google.com/ar) and [Codiant](https://www.codiant.com/services/augmented-reality-app-development).
