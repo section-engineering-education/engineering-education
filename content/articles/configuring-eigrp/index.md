@@ -30,12 +30,12 @@ For a better understanding of this tutorial, the reader is expected to have:
 - The Cisco Packet tracer which can be downloaded [here](https://www.netacad.com/portal/resources/packet-tracer).
 
 ### Table of contents
-[Introduction](#introduction)
-[Enhanced Interior Gateway Routing Protocol (EIGRP)](#enhanced-interior-gateway-routing-protocol-eigrp)
-[EIGRP Features](#eigrp-features)
-[Configuring EIGRP](#configuring-eigrp)
-[Steps to configure EIGRP for IPv4](#steps-to-configure-eigrp-for-ipv4)
-[Configuring EIGRP for IPv4](#configuring-eigrp-for-ipv4)
+- [Introduction](#introduction)
+- [Enhanced Interior Gateway Routing Protocol (EIGRP)](#enhanced-interior-gateway-routing-protocol-eigrp)
+- [EIGRP Features](#eigrp-features)
+- [Configuring EIGRP](#configuring-eigrp)
+- [Steps to configure EIGRP for IPv4](#steps-to-configure-eigrp-for-ipv4)
+- [Configuring EIGRP for IPv4](#configuring-eigrp-for-ipv4)
 
 ### Enhanced Interior Gateway Routing Protocol (EIGRP) 
 Routing is the process in which algorithms are used to facilitate the exchange of information for path selection along which data can be transferred from a source to destination. It is done by a routing device known as a Router. 
