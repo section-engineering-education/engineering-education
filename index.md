@@ -27,18 +27,6 @@ The logging library follows a secluded plan and is isolated into four classes: `
 - [To work with investigating, design your logs in JSON and merge them](#to-work-with-investigating-design-your-logs-in-json-and-merge-them)
 - [Conclusion](#conclusion)
 - [Further activity reading](#further-activity-reading)
-  - [Benefits of logging documents](#benefits-of-logging-documents)
-  - [Representation of `basicConfig()`](#representation-of-basicconfig)
-- [Introduction](#introduction)
-- [Table of Contents](#table-of-contents)
-- [Modifying your logs' need level and objective](#modifying-your-logs-need-level-and-objective)
-  - [Benefits of logging documents](#benefits-of-logging-documents)
-  - [Representation of `basicConfig()`](#representation-of-basicconfig)
-- [Make a redid arrangement with different loggers and objections.](#make-a-redid-arrangement-with-different-loggers-and-objections)
-- [Fuse tracebacks and exceptional case managing in your logs](#fuse-tracebacks-and-exceptional-case-managing-in-your-logs)
-- [To work with investigating, design your logs in JSON and merge them](#to-work-with-investigating-design-your-logs-in-json-and-merge-them)
-- [Conclusion](#conclusion)
-- [Further activity reading](#further-activity-reading)
 ### Modifying your logs' need level and objective
 The `basicConfig()` technique for the logging module is the quickest strategy for planning your lumberjack's ideal direction. Notwithstanding, the [Python documentation](https://docs.python.org/3.7/library/logging.html#logger-objects) proposes making a lumberjack for every module in your application and arranging a lumberjack for each module gameplan utilizing `basicConfig()` alone can be annoying.
 The three significant measures of `basicConfig()` are:
