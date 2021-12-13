@@ -1,4 +1,6 @@
-Svelte is a JavaScript front-end framework for building reactive and interactive UI components like React, Angular, and Vue. Unlike its peers would ship a JavaScript runtime to the browser to make your code work, Svelte is a compiler. It converts the declarative code that you write into imperative code that works with native browser APIs. This produces highly performant applications in a very small codebase, allowing you to write complex applications. Svelte also runs with no virtual DOM. This guide will build a portfolio application that shows how to use Vite, TypeScript, and Tailwind CSS in a Svelte application.
+Svelte is a JavaScript front-end framework for building reactive and interactive UI components like React, Angular, and Vue. Svelte is a compiler, unlike its peers, which provides a JavaScript runtime to the browser to make your code work. It converts the declarative code that you write into imperative code that works with native browser APIs. This produces highly performant applications in a very small codebase, allowing you to write complex applications.
+
+This tutorial will build a portfolio application that demonstrates how to utilize Vite, TypeScript, and Tailwind CSS in a Svelte application.
 
 ### Prerequisites
 - Basic knowledge working with TypeScript, Tailwind CSS and Svelte.
@@ -16,8 +18,19 @@ Svelte is a JavaScript front-end framework for building reactive and interactive
   - [Set up the Team component](#set-up-the-team-component)
   - [Set up the Footer component](#set-up-the-footer-component)
 - [Conclusion](#conclusion)
+- [Additional Resources](#additional-resources)
 
 ### Setting up the application with Vite and TypeScript
+Vite is a JavaScript development server tooling that makes front-end development more easier. Vite distributes your app source files through native ES modules, allowing you to quickly start or reload your development server. Vite starts the server right away, and it takes the dependencies that don't change often and pre-bundles them using ES build.
+
+It then uses route-based code splitting to figure out what parts of the code need to be loaded. It does this on the fly, and it doesn't have to rebundle everything every time.
+
+This ES build is written in Go, making it faster than JavaScript-based bundlers such as Webpack.
+
+Some of the key feature of Vite include;
+
+- Bear module resolving - When you import from a package it does not contain the relative path to installed ode.js modules.
+- 
 Create a project folder and run the following command inside that folder.
 
 ```bash
@@ -26,34 +39,40 @@ npm init vite@latest
 
 The above command will create an interactive window. Go ahead and;
 
-- Enter your preferred application name.
+- Enter your preferred application name as `svelte-app`.
 - Select `svelte` as the framework you want to use.
-- Select `svelte.ts` since we are working with TypeScript.
+- Select `svelte.ts` since you are working with TypeScript.
 
 ![svelte-app](/engineering-education/svelte-with-vite-typescript-and-tailwind-css/svelte.png)
 
-When the process is complete, navigate to your created application folder and run the following command to install the default dependencies;
+When the process is complete, navigate to your created application folder;
+
+```bash
+cd svelte-app
+```
+
+Then run the following command to install the default dependencies;
 
 ```bash
 npm install
 ```
 
-Your application will build using the vite dependencies.
+Your application will build using the Vite dependencies.
 
 ![vite](/engineering-education/svelte-with-vite-typescript-and-tailwind-css/vite.png)
 
-This we create a simple TypeScript boilerplate application. You can test it by starting the development server using the following command;
+This will create a simple TypeScript boilerplate application. You can test it by starting the development server using the below command;
 
 ```bash
 npm run dev
 ```
 
-On your browser, navigate to the URL that is logged on your console, e.g., `http://localhost:3000`. This will save you a simple TypeScript Svelte application, as shown below.
+On your browser, navigate to the URL that is logged on your console, e.g., `http://localhost:3000`. This will sarve you a simple TypeScript Svelte application, as shown below.
 
 ![default-landing-page](/engineering-education/svelte-with-vite-typescript-and-tailwind-css/default-landing-page.PNG)
 
 ### Setting up Tailwind CSS
-Open a new tab on your terminal and run the following command to install Tailwind and its peer dependencies.
+Open a new tab on your terminal and run the following command to install TailwindCSS and its peer dependencies.
 
 ```bash
 npm install -D tailwindcss@latest postcss@latest autoprefixer@latest
@@ -140,10 +159,10 @@ After the script tag, call the `TailwindCSS` component to apply the overall styl
 Having configured Tailwind, we will create a simple portfolio page that demonstrates how to use the whole setup. Start by creating the following components inside the `src/lib` folder:
 
 - `Nav.svelte`: This module will be used to construct a navigation bar.
-- `Hero.svelte`: Will be used to create a Hero section component.
-- `Services.svelte`: Will be used to create the Services section component.
-- `Team.svelte`: Will be used to create the Team section component.
-- `Footer.svelte`: Will be used to create a footer component.
+- `Hero.svelte`: This will be used to create a Hero section component.
+- `Services.svelte`: This will be used to create the Services section component.
+- `Team.svelte`: This will be used to create the Team section component.
+- `Footer.svelte`: This will be used to create a footer section.
 
 #### Set up the navigation bar component
 Add the following to `Nav.svelte`.
@@ -202,22 +221,16 @@ Add the following to `Nav.svelte`.
             })
           
         }>Our team</a>
-      </nav>
-    </div>
-  </header>
+    </nav>
+  </div>
+</header>
 ```
 
-From above, we are;
-
-- Importing `animateScroll` from `svelte-scrollto` package, which we do not have installed. Run the command below from your terminal to install the package:
+This will render the navigation links with an on-click function that scrolls you to a specified section. Thus we need to import `animateScroll` from `svelte-scrollto` package. With the help of this package, users will be able to browse and scroll through the various sections of our page. This is not installed yet. Run the command below from your terminal to install it;
 
 ```bash
 npm i svelte-scrollto
 ```
-
-We shall be able to browse and scroll through the various areas of our page with the help of this package.
-
-- Rendering the navigation links, each with an on-click function that scrolls you to a specified section.
 
 #### Set up the Hero component
 Add the following to the `Hero.svelte` component.
@@ -252,7 +265,7 @@ Add the following to the `Hero.svelte` component.
 </section>
 ```
 
-From above, we are simply showing dummy content, including a button that scrolls to the services section.
+This displays dummy content, including a button that scrolls to the services section.
 
 #### Set up the services component
 Add the following to the `services.svelte` component.
@@ -262,7 +275,7 @@ Add the following to the `services.svelte` component.
 
 ```
 
-From above, we are simply rendering dummy services.
+Create a dummy services section from the above component.
 
 #### Set up the Team component
 Add the following to the `Team.svelte` component.
@@ -271,7 +284,7 @@ Add the following to the `Team.svelte` component.
 <p>Our team section</p>
 ```
 
-From above, we are rendering dummy team members.
+Create a dummy team members section from the above component.
 
 #### Set up the Footer component
 Add the following to the `Footer.svelte` component.
@@ -287,7 +300,7 @@ Add the following to the `Footer.svelte` component.
 </footer>
 ```
 
-From above, we are rendering a simple footer section.
+This creates and renders a simple footer section.
 
 Import the components in the `src/App.svelte` under the `script` section.
 
@@ -323,7 +336,15 @@ Run your development server using `npm rum dev` and open `http://localhost:3000`
 ![new-landing-page](/engineering-education/svelte-with-vite-typescript-and-tailwind-css/new-landing-page.png)
 
 ### Conclusion
-We used TypeScript with TailwindCSS to construct a Svelte application in this post. Refer to the following links for further information about the tools and resources used.
+This guide has illustrated how you set up a TypeScript Svelte boilerplate that you can use to write TypeScript code within a Svelte application. We also configured and used TailwindCSS to create a Svelte portfolio application.
+
+### Additional Resources
+For further information on the tools and resources used in this guide, check the following articles.
 
 - [Vite guide](https://vitejs.dev/guide/#overview)
-- [Building for production](https://vitejs.dev/guide/build.html#public-base-path)
+- [Building Vite for production](https://vitejs.dev/guide/build.html#public-base-path)
+- [A Friendly Beginner's Guide to TypeScript](/engineering-education/a-friendly-beginner-guide-to-typescript/)
+- [Why Static Typing & Why is TypeScript so popular?](/engineering-education/typescript-static-typing/)
+- [Introduction to Tailwind CSS](/engineering-education/introduction-to-tailwind-css/)
+- [Using Tailwind CSS Grid Classes](/engineering-education/using-tailwind-css-grid-classes/)
+- [Making Card Components Using Tailwind CSS](/engineering-education/card-components-using-tailwind-css/)
