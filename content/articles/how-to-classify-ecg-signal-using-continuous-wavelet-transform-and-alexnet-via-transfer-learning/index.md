@@ -1,29 +1,28 @@
-ECG signals represent the heart's electrical activity observed from a strategic point of the human body, characterized by Quasi-periodic voltage. AlexNet is a convolutional neural network that has eight different layers. This method is commonly used in the science sector and for image studies. Transfer learning (TL) is a research problem in machine learning that focuses on storing knowledge gained while solving one problem and applying it to a different but related problem. For example, knowledge gained while learning to recognize cars could be used when trying to recognize trucks.
+ECG signals represent the heart's electrical activity observed from a strategic point of the human body, characterized by Quasi-periodic voltage. AlexNet is a convolutional neural network that has eight different layers. This method is commonly used in the science sector and for image studies. 
+
+Transfer learning (TL) is a research problem in machine learning that focuses on storing knowledge gained while solving one problem and applying it to a different but related problem. For example, knowledge gained while learning to recognize cars could be used when trying to recognize trucks.
 
 This tutorial will classify the ECG signals using pre-trained deep CNN(AlexNet) via transfer learning in Matlab. For this purpose, we utilized the strength of a container wavelet transforms to represent the one dimension ECG signals as images. It makes it possible to be used as an input in the AlexNet.
 
 ### Prerequisites
-
 To follow along with this tutorial, you'll need:
 
 - [MATLAB](https://www.mathworks.com/products/get-matlab.html?s_tid=gn_getml) installed.
 - Proper understanding of [MATLAB](https://www.section.io/engineering-education/getting-started-with-matlab/) basics.
 
 ### Types of ECG signal for classification
-
-Primarily, we are taking three types of ecg signals:
+Primarily, we are taking three types of ECG signals:
 - ARR: Arrhythmias
 - CHF: Congestive heart failure, and
-- NSR: Normal Sinus Rythm
+- NSR: Normal Sinus Rhythm
 
 They are shown below:
-
 ![types of signals](/engineering-education/how-to-classify-ecg-signals-using-continuous-wavelet-transform-and-alexnet-via-transfer-learning/class-one.png)
 
 The main object here is to train a CNN to distinguish between ARR, CHF, and NSR. These three signals(162 ecg recording) are obtained from ecg signal databases from the physionet. The databases include:
 
 1. MIT-BIH Arrhythmia database(96recordings)[ARR signals]
-2. MIT-BIH Normal Sinus Rythm Database(30recordings)[NSR signals]
+2. MIT-BIH Normal Sinus Rhythm Database(30recordings)[NSR signals]
 3. BIDMC Congestive Heart failure Database(36recordings)[CHF signals]
 
 The first step is downloading the data from the [github repository](https://github.com/mathworks/physionet_ECG_data/). Next, click on the `code` tab and select `download the zip` to download the database.
@@ -36,7 +35,7 @@ In this `.zip`file, we only need the ECGData.mat. It means that we `unzip` this 
 load(ECGData.mat);   %load ecg
 ```
 
-To get the signal in your data, execute the code below;
+To get the signal in your data, execute the code below:
 
 ```Matlab
 data=ECGData.Data;
@@ -51,18 +50,15 @@ labels=ECGData.Labels;          %getting labels
 Now, this signal is a matrix of size `162 x 65536`. So it means that it carries 162 ECG signals of size 65536 samples each.
 
 ### ECG signal database preparation
-
-For our problem, we preprocess the database. Each recording is 65536 samples. It means we will break the signals into small signals of length 500 samples. This is done to increase the size of the database to make it appropriate to train CNN. For this purpose:
-
+For our problem, we pre-process the database. Each recording is `65536` samples. It means we will break the signals into small signals of length 500 samples. This is done to increase the size of the database to make it appropriate to train CNN. For this purpose:
 - We take 30 recordings of each type to have equal distribution.
 - Each record is broken into 10 pieces, each of length 500 samples.
 - Out of the 900 recordings, we are using 750 recordings for training and 150 for testing.
 
 ### ECG signal to image conversion using cwt
+Now, we want to convert all the 1-D signals into images cwt to be used as inputs to CNN for classification. The deep CNN that we are using is Alex, and it takes images as the input. For this purpose, we take the CWT of each one dimension signal, and all the coefficients are arranged to form a cwt scalogram. Each scalogram is represented in the color map of the type jet of 128 colors. Scalograms are then converted into images and saved into folders corresponding to each class since we create folders for each signal type. Each image is of the size `227x227` and in the RGB color format.
 
-Now, we want to convert all the 1-D signals into images cwt to be used as inputs to CNN for classification. The deep CNN that we are using is Alex, and it takes images as the input. For this purpose, we take the CWT of each one dimension signal, and all the coefficients are arranged to form a cwt scalogram. Each scalogram is represented in the colormap of the type jet of 128 colors. Scalograms are then converted into images and saved into folders corresponding to each class since we create folders for each signal type. Each image is of the size `227x227` and in the RGB color format.
-
-For cwt, the wavelet used is `analytic Morlet(amor)'. These are wavelets with one-sided spectra and are complex-valued in the time domain. These wavelets are suitable for obtaining a time-frequency analysis using the cwt. The wavelet has equal variance in time and frequency.
+For cwt, the wavelet used is `analytic Morlet(amor)`. These are wavelets with one-sided spectra and are complex-valued in the time domain. These wavelets are suitable for obtaining a time-frequency analysis using the cwt. The wavelet has equal variance in time and frequency.
 
 ![ecg signal vs image](/engineering-education/how-to-classify-ecg-signals-using-continuous-wavelet-transform-and-alexnet-via-transfer-learning/class-three.png)
 
@@ -73,7 +69,6 @@ For ecg signal classification, we use a pre-trained deep CNN. AlexNet has been t
 ![transfer learning procedure](/engineering-education/how-to-classify-ecg-signals-using-continuous-wavelet-transform-and-alexnet-via-transfer-learning/class-four.png)
 
 ### Matlab code for database creation(image signal to scalogram image conversion)
-
 We first load the ecg signal using the `load` command and the labels giving the data a `.Label` extension. This extension extracts the data labels.
 
 ```matlab
@@ -202,7 +197,9 @@ end
 ```
 
 The number of signal `nos` is 10. Since we have three signals, 10 by 3 gives you the number of recordings we said to be 30. The colormap we are using is `jet(128)`, and the signal length remains the same.
-Now there is a section of this function that is repeated. The `else` and the `elseif` statements are repeated with only the signal type changed. Now lets look at a section of that:
+Now there is a section of this function that is repeated. The `else` and the `elseif` statements are repeated with only the signal type changed.
+
+Now lets look at a section of that:
 
 ```matlab
 if ecgtype == 'ARR'
@@ -223,13 +220,13 @@ if ecgtype == 'ARR'
     end
 ```
 
-This program means that if the signal is of `ARR` type, create a folder `arr` and store the images there. The `for` loop defines the number of iterations which is 30 for the first 30recordings. Inside the `for` loop, we extract the signals using `ecgdata(i, indx+1: indx+no1)`. We then find the wavelet coefficients with the filter `fb`. `abs(cwtfb.wt(ecgsignal))` this command gives the wavelet coefficients stored in the variable `cfs`. The `abs` means taking the absolute value since the coefficients are complex.
+This program means that if the signal is of `ARR` type, create a folder `arr` and store the images there. The `for` loop defines the number of iterations which is 30 for the first 30 recordings. Inside the `for` loop, we extract the signals using `ecgdata(i, indx+1: indx+no1)`. We then find the wavelet coefficients with the filter `fb`. The `abs(cwtfb.wt(ecgsignal))` command gives the wavelet coefficients stored in the variable `cfs`. The `abs` means taking the absolute value since the coefficients are complex.
 
 ```matlab
 im = ind2rgb(im2uint8(rescale(cfs)), colormap);
 ```
 
-Convert the coefficent to images using `ind2rgb` but first rescale these coefficients using `rescale` function. `im2uint8` converts the signals to the `uint8` type so that it becomes an image. The `colormap` defines the color since the images are in `rgb` form.
+Convert the coefficients to images using `ind2rgb` but first rescale these coefficients using `rescale` function. `im2uint8` converts the signals to the `uint8` type so that it becomes an image. The `colormap` defines the color since the images are in `rgb` form.
 
 ```matlab
  filenameindex = findx + k;
@@ -238,15 +235,15 @@ Convert the coefficent to images using `ind2rgb` but first rescale these coeffic
             indx = indx + no1;
 ```
 
-The image is saved using the `imwrite` function with the proper name after resizing it to `227 x 227` pixels. The images are saved in the indexed from, i.e., `1.jpg`, `2.jpg` e.tc. using the `indx` function.
+The image is saved using the `imwrite` function with the proper name after resizing it to `227 x 227` pixels. The images are saved in the indexed from, i.e., `1.jpg`, `2.jpg` etc. using the `indx` function.
 
-This procedure remains the same for other signals. So the only thing that we change is the signal type, and that is why we have a long function above.
+This procedure remains the same for other signals. So the only thing that we change is the signal type, hence the long function above.
 
 ### Matlab code for training AlexNet(transfer learning)
 
 For this, we need to download a toolbox(deep learning toolbox for AlexNet network). Click on the `adds on` and select `get add on` on the home page to get this. When you click this, you get a window requesting your Mathworks account. Log in and search for `deep learning toolbox for alexnet network` and download it.
 
-After this is done, start the training process. The first step is reading the images in the database folder(images that we converted):
+Afterwards, start the training process. The first step is reading the images in the database folder(images that we converted):
 
 ```Matlab
 % Training and validation using AlexNet
@@ -268,7 +265,7 @@ numTrainFiles = 250;
 
 All the training images are stored in the `TrainImages` variable, and test images are stored in the `TestImages`. The splitting is done by the `splitEachLabel` function, which is `randomized`.
 
-Load the pre-trained network `alexnet`. To load this network, we execute the command `alexnet`. Now, this command is not functional until you download the toolbox.
+Load the pre-trained network `alexnet`. To load this network, we execute the command `alexnet`. This command is not functional until you download the toolbox.
 
 ```Matlab
 net = alexnet;  %importing pre-trained alexnet(requires support package)
@@ -294,7 +291,7 @@ layers = [layersTransfer
 
 For for more information on the layer, you can check [here](https://www.section.io/engineering-education/deep-neural-systems-matlab/).
 
-Now we want define the training options. It gives the direction in which the training should be carried. We define the solver, `sgdm`, the learning rate, `1e-4`, validation frequency training progress in plot form.
+Now we want to define the training options. It gives the direction in which the training should be carried. We define the solver, `sgdm`, the learning rate, `1e-4`, validation frequency training progress in plot form.
 
 ```Matlab
 %training options
@@ -303,7 +300,7 @@ options = trainingOptions('sgdm', 'MiniBatchSize', 20, 'MaxEpochs', 8, ...
     'ValidationFrequency', 10, 'Verbose', false, 'Plots', 'training-progress');
 ```
 
-After defining all the layers and the transfer options, we start the training. To start the training, we use the command `trainNetwork` function. The function takes the images and trains them according to the `options`. It means the arguments of this function are the training images, layers, and options.
+After defining all the layers and the transfer options, we start the training. To begin, we use the command `trainNetwork` function. The function takes the images and trains them according to the `options`. It means the arguments of this function are the training images, layers, and options.
 
 ```Matlab
 % training the Alexnet
