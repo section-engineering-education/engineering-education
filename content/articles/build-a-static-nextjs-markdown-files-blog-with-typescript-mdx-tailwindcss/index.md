@@ -1,5 +1,21 @@
-Next.js is a framework that is built over React.js. React is a client-side rendering library where everything gets rendered on the client-side of the user's browser. Next.js brought in server-side rendering to React.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /build-a-static-nextjs-markdown-files-blog-with-typescript-mdx-tailwindcss/
+title: Build a Static Next.js Markdown Blog with Typescript, MDX, and Tailwind CSS
+description: This article will provide a step-by-step guide on how to create a markdown blog using TypeScript, MDX, and Tailwind CSS.
+author: rose-waitherero 
+date: 2021-12-14T00:00:00-23:40
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/build-a-static-nextjs-markdown-files-blog-with-typescript-mdx-tailwindcss/hero.jpg
+    alt: Build a Static Next.js Markdown Blog with Typescript, MDX, and Tailwind CSS Hero Image
+---
+Next.js is a framework that is built over React.js. React is a client-side rendering library where everything gets rendered on the client-side of the user's browser. Next.js brought in server-side rendering to React.
+<!--more-->
 First and foremost, it was for server-side rendering, where you can render components on the server-side and show them to the user.
 
 Next.js further supports static sites generation. This means you can easily build both server-side rendering applications and static site-generated applications.
@@ -736,3 +752,6 @@ I hope you found the whole stack worth learning.
 - [How to Create Responsive Layouts with Material UI and Next.js](/engineering-education/creating-responsive-layouts-with-materialui-in-reactjs/)
 - [Introduction to Next.js, TypeScript, and Firebase Database](/engineering-education/introduction-to-nextjs-with-typescript-and-firebase-database/)
 - [How to build a Nextjs application with MongoDB and deploy on Vercel](/engineering-education/build-nextjs-with-mongodb-and-deploy-on-vercel/)
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
