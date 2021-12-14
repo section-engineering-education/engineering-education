@@ -1,9 +1,9 @@
-### Machine Learning Image Classification with Javacsript and Nyckel.
+### Machine Learning Image Classification with Javascript and Nyckel.
 
 ### Introduction
-Artificial intelligence has become the future of technology and everyone is trying to apply it in all areas. Artificially intelligent applications are a huge contribution to AI technology with the likes of trading bots and others. Web developers too want to integrate these models into their applications.
+Artificial intelligence has become the future of technology, and everyone is trying to apply it in all areas. Artificially intelligent applications contribute to AI technology, with trading bots and others. Web developers, too, want to integrate these models into their applications.
 
-This article shows how you can implement machine learning models in a web application to classify images. In this case, we will classify and identify the images of people that are wearing and those who are not wearing a mask.
+This article shows how to implement machine learning models in a web application to classify images. In this case, we will classify and identify the images of people wearing and those not wearing a mask.
 
 ### Table of Contents
 - [Introduction](#introduction)
@@ -13,22 +13,25 @@ This article shows how you can implement machine learning models in a web applic
 - [Machine learning model integration with the Web Application](#machine-learning-model-integration-with-the-web-application)
 - [App live testing](#app-live-testing)
 - [Conclusion](#conclusion)
+
 ### Requirements
 To develop, you will need the following;
-- A suitable editor like visual studio, sublime and others.
-- Prior knowledge to Nyckel, css, JavaScript.
+- A suitable editor like visual studio, sublime, and others.
+- Prior knowledge of Nyckel, css, JavaScript.
 - HTML basics.
+
 ### What is Nyckel?
 Nyckel is a machine learning API that provides automated training to models instead of manually writing the code. It also allows these models to be integrated into applications with the best simplicity.
 
-With these requirements in place, the coding journey can kick off.
+With these requirements in place, the coding journey can kick-off.
 Follow each step below to develop your own machine learning-enabled web application.
-### JavaScript CSS and HTML website build
-We are going to build a simple web application where you can upload a photo from the desktop into the app. The layout will only need a section to place your photo and an button to make a system call to the file explorer.
-#### **HTML Build-up**
-Below are the steps involved in HTML build-up. Create a file with .html extension and follow the following steps.
-This code is placed under the head tag creates a connection to the JavaScript file.
 
+### JavaScript CSS and HTML website build
+We will build a simple web application to upload a photo from the desktop into the app. The layout will only need a section to place your photo and a button to make a system call to the file explorer.
+
+#### **HTML Build-up**
+Below are the steps involved in HTML build-up. First, create a file with a `.html` extension and follow the following steps.
+This code is placed under the `<head>` tag creates a connection to the JavaScript file.
 ```html
 <html>
 
@@ -37,8 +40,8 @@ This code is placed under the head tag creates a connection to the JavaScript fi
 </head>
 
 ```
-Under the body tag is where the upload button and the upload section lies. This code creates what is required under the body section without any styling.
 
+Under the body, the tag is where the upload button and the upload section lies. This code creates what is required under the body section without any styling.
 ```html
 <body>
 
@@ -55,26 +58,29 @@ Under the body tag is where the upload button and the upload section lies. This 
   </div>
 </body>
 ```
-A container is created to hold the photo once uploaded using the division class `upload-area`.
 
-When you run the combination of the code above, you should have a web page with a button and an upload section only as shown in the photo below.
+Once uploaded, a container is created to hold the photo using the division class `upload-area`.
+
+When you run the combination of the code above, you should have a web page with a button and an upload section only, as shown in the photo below.
 
 ![htmlResult](/engineering-education/machine-learning-image-classification-with-javascript-and-nyckel/htmlResult.png)
 
-The photo above shows the results with no styling applied. Since this tutorial is not deeply involved in website styling, you can apply your own styles
-and learn how to link them to the application. For more information on css styling, you can refer to this [article](https://www.section.io/engineering-education/getting-started-with-css/) for css beginners.. To get my styles that have been used for this particular tutorial, you can refer to my github [repository](https://github.com/del-ui/Machine-Learning-Image-Classifier-Application/blob/main/style.css) to get the full css code.
+The photo above shows the results with no styling applied. 
+
+> Since this tutorial is not deeply involved in website styling, you can use your styles
+and learn how to link them to the application. For more information on css styling, you can refer to this [article](https://www.section.io/engineering-education/getting-started-with-css/) for css beginners. To get my styles that have been used for this particular tutorial, you can refer to my Github [repository](https://github.com/del-ui/Machine-Learning-Image-Classifier-Application/blob/main/style.css) to get the full css code.
 
 When you use the code from the above link, similar results as those in the photo below are obtained.
 ![styled](/engineering-education/machine-learning-image-classification-with-javascript-and-nyckel/styled.png)
+
 #### **JavaScript functions**
-JavaScript helps in client-side scripting. It mostly uses functions to enabled some activities in a webpage. Example of such activities to be enabled by these functions in this page include; upload by dragging, sending AJAX request to Nyckel to run against machine learning model, ensure what is uploaded is an image, resizing large images and many more.
+JavaScript helps in client-side scripting. However, it primarily uses functions to enable some activities in a webpage. Examples of such actions to be encouraged by these functions in this page include; upload by dragging, sending AJAX requests to Nyckel to run against the machine learning model, ensuring that an image is uploaded, resizing large images, and many more.
 
-The following code contains such functions. Create a JavaScript file(.js) and place the code below in it. The first section of the code enables different functionalities like photo drag-over, image resizing and specify file type as indicated in the comments among others.
-
+The following code contains such functions. First, create a JavaScript file (.js) and place the code below in it. The first section of the code enables different functionalities like photo drag-over, image resizing, and file type as indicated in the comments.
 ```JavaScript
 $(function ()
 {
-    // preventing page from redirecting
+    // preventing the page from redirecting
     
     $("html").on("dragover", function (d)
     {
@@ -99,7 +105,7 @@ $(function ()
         $("h2").text("Drop");
     });
 
-    // Dragging over as 'dragover'
+    // Dragging over as 'dragover.'
     
     $('.upload-area').on('dragover', function (d)
     {
@@ -112,7 +118,7 @@ $(function ()
     $('.upload-area').on('drop', 
     function (d)
       {
-      // after dropping the image(propagation) this prevents page from going back to default but insteadlet the image stick
+      // after dropping the image(propagation), this prevents the page from going back to default but instead let the image stick
 
         d.stopPropagation();
         d.preventDefault();
@@ -195,21 +201,21 @@ function resizeAndUploadImage(file)
             }
             image.src = readerEvent.target.result;
         }
-        //this ensures that the image is read by Nyckel as raw data
+        //this ensures that Nyckel reads the image as raw data
         reader.readAsDataURL(file);
     }
     else
     {
-    // If the file is not an image, upload is rejected with an alert and the page is reset to default
+    // If the file is not an image, upload is rejected with an alert, and the page is reset to default
         alert("You must choose an image");
         resetPage();
     }
 }
 ```
-The rectangular area for hosting the uploaded image is called a **canvas** in html. A **blob** on the other hand represents objects in form of raw data. Converting canvas to blob translates the images uploaded to your application in a way that the model can understand.
 
-The code below is a utility function that further extends the JavaScript file to convert a canvas to a blob.
+The rectangular area for hosting the uploaded image is called a **canvas** in html. A **blob**, on the other hand, represents objects in the form of raw data. Converting canvas to blob translates the images uploaded to your application so that the model can understand.
 
+The code below is a utility function extending the JavaScript file to convert a canvas to a blob.
 ```JavaScript
 /* Utility function to convert a canvas to a BLOB */
 var dataURLToBlob = function (dataURL)
@@ -259,6 +265,7 @@ function resetPage()
     $("h2").text("Drop JPG here");
 }
 ```
+
 The last section of the script introduces AJAX (Asynchronous JavaScript and XML) which invokes the machine learning model by sending a request to Nyckel to run against your saved model using the url. Copy the url provided by Nyckel after training your model and replace the one given in this code.
 
 ```JavaScript
@@ -277,7 +284,7 @@ function checkImageWithNyckel(image)
         dataType: 'json',
         success: function (response) // the image is checked against the model for classification
         {
-        // Once checked, the right classification response is displayed as "with mask" or "without mask"
+        // Once checked, the right classification response is displayed as "with mask" or "without mask."
             displayResult(response);
 
             //Show the JSON response in the console
@@ -285,7 +292,7 @@ function checkImageWithNyckel(image)
         },
         error: function (response)
         {
-        // Incase the model is unable to classify the image, the page is reset to indicate a classification error.
+        //In case the model cannot classify the image, the page is reset to indicate a classification error.
             alert("Error checking image", response);
             $("#title").show();
             resetPage();
@@ -299,40 +306,47 @@ To link this file to the html file, you will similarly create a JavaScript refer
 <script type="text/Javascript" src="../mlApp/js/main.js"></script>
 
 ```
-Now refresh your page and try clicking on the upload area. It opens the windows explorer to allow you upload a photo.
+
+Now refresh your page and try clicking on the upload area. It opens windows explorer to allow you to upload a photo.
+
 ### Building the Machine Learning model Using Nyckel
+In this section, we will train a model using Nyckel to classify images of people wearing a mask and those not wearing a mask. You will require a web association with access 'Nyckel website' to prepare the model. The steps below will produce a successfully trained model for our web application.
 
-In this section, we are going to train a model using Nyckel to classify images of people wearing a mask and those not wearing a mask. You will require a web association with access 'Nyckel website' for worked on preparing of the model. The steps below will produce a successfully trained model for our web application.
 #### **Create a Nyckel account**
-Creating an account will allow you to use Nyckel training site for your model. To sign-up, go to [nyckel.com](https://login.nyckel.com/login?state=hKFo2SBTbW16WjhGLWFjQ1A5UU5sbjZ5SmVSVG0ySmhLSVhYWaFupWxvZ2luo3RpZNkgdjd6bWtmdGRHUFRkNmpaOHNoVEdOSW0tX202QTg5clKjY2lk2SBJdnlPaktQa011YXJHMzZIb2xYb3NUU1BNVnJaT0xtOQ&client=IvyOjKPkMuarG36HolXosTSPMVrZOLm9&protocol=oauth2&redirect_uri=https%3A%2F%2Fwww.nyckel.com%2Fauthentication%2Flogin-callback&response_type=code&scope=openid%20profile%20email&code_challenge=hQvJg-KMgpHyRS8Z7JXGLBtZ1Kg31lFTdjh1Ns566Yc&code_challenge_method=S256&response_mode=query) sign-up page to set up your connection with this API.
+Creating an account will allow you to use the Nyckel training site for your model. To sign-up, go to [nyckel.com](https://login.nyckel.com/login?state=hKFo2SBTbW16WjhGLWFjQ1A5UU5sbjZ5SmVSVG0ySmhLSVhYWaFupWxvZ2luo3RpZNkgdjd6bWtmdGRHUFRkNmpaOHNoVEdOSW0tX202QTg5clKjY2lk2SBJdnlPaktQa011YXJHMzZIb2xYb3NUU1BNVnJaT0xtOQ&client=IvyOjKPkMuarG36HolXosTSPMVrZOLm9&protocol=oauth2&redirect_uri=https%3A%2F%2Fwww.nyckel.com%2Fauthentication%2Flogin-callback&response_type=code&scope=openid%20profile%20email&code_challenge=hQvJg-KMgpHyRS8Z7JXGLBtZ1Kg31lFTdjh1Ns566Yc&code_challenge_method=S256&response_mode=query) sign-up page to set up your connection with this API.
 
-- After signing up, select input type (image for this case) then add output categories as  `with mask` and `without mask` then hit `create function` button. 
-- In the area provided, upload your photos, two with mask on and two without masks then label them correctly using the two labels. 
-- Upload more photos and import while checking their categorization accuracy. The more photos used for training, the higher the accuracy of the model.
+- After signing up, select input type (image for this case), add output categories as  `with mask` and `without mask`, then hit the `create function` button. 
+- In the area provided, upload your photos, two with the mask on and two without masks, then label them correctly using the two labels. 
+- Upload more photos and import while checking their categorization accuracy. The more photos used for training, the higher the model's accuracy.
 
 After categorizing, you will get a notification that your model is trained.
-Navigate to invoke section and perform a satisfaction test on the model by upload a different photo from the ones used in training the check the output function.
+Navigate to invoke section and perform a satisfaction test on the model by uploading a different photo from the ones used to check the output function.
 
 Having done all that, your model is trained and ready to use.
+
 ### Machine Learning model integration with the web application
-To integrate the trained model to the web application, navigate to API section and copy the url given and paste in the JavaScript code under `$ajax`. The url looks almost familiar to the one shown below ending with the word `invoke`.
+To integrate the trained model to the web application, navigate to the API section and copy the url given and paste in the JavaScript code under `$ajax`. The url looks almost familiar to the one shown below, ending with `invoke`.
 ```
 https://www.nyckel.com/v1/functions/j3l3xdfs0fv4tec7/invoke
 
 ```
 
-Once done, your application is ready for testing with photos which were not included during training. 
-### App live testing
+Once done, your application is ready for testing with photos that were not included during training. 
+
+### App live to test
 After integrating the model with the web application, you can now upload photos to see how good the app is. The photo below shows how a successful categorization is displayed.
+
 #### Result for a picture with a mask
 ![with mask](/engineering-education/machine-learning-image-classification-with-javascript-and-nyckel/withmask.png)
-#### Result for picture without a mask 
+
+#### Result for a picture without a mask 
 ![without mask](/engineering-education/machine-learning-image-classification-with-javascript-and-nyckel/withoutmask.png)
+
 ### Conclusion
-To this extent, you must have learnt how to train a model, a web application that is compatible with a machine learning model and how to integrate the model into web applications.
-Having learnt this, developers can build any type of a machine learning-enable web application. The flexibility and easy usability with Nyckel will highly help in growth of Artificial Intelligence technology in the near future.
+To this extent, you must have learned how to train a model, a web application compatible with a machine learning model, and integrate the model into web applications.
+Having learned this, developers can build any machine learning-enabled web application. Furthermore, the flexibility and easy usability with Nyckel will greatly help grow Artificial Intelligence technology shortly.
 
 I hope you find this tutorial helpful.
 
 ---
-Happy coding...
+Happy coding!
