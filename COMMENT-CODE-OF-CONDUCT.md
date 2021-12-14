@@ -1,7 +1,7 @@
 # EngEd Comment Moderation Rules
 The EngEd community is subject to the following moderation guidelines:
 
-We pledge to foster an open and welcoming environment. Our community is a harassment-free experience for everyone, regardless of age, body size, disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, religion, or sexual identity and orientation.
+We pledge to foster an open and welcoming environment. Our community (& comment section) is a harassment-free experience for everyone, regardless of age, body size, disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, religion, or sexual identity and orientation.
 
 ## EngEd Standards
 *Examples of behavior that contributes to creating a positive environment include:*
