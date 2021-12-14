@@ -1,0 +1,1 @@
+Gregory is a software engineering student learning to build commercial applications. He loves to build innovative solutions that solve real-life world problems.  

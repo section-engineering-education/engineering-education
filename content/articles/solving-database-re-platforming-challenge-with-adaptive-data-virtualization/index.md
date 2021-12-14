@@ -1,6 +1,6 @@
 Solving Database Re-Platforming Challenge with Adaptive Data Virtualization
 
-Many organizations are exploiting the advantages of cloud computing. But doing so often comes with a high cost if they choose to use the conventional data migration approach. They face challenges of costs, timing, and scalability. These problems can discourage some of these organizations from migrating to cloud computing services.
+Many organizations are exploiting the advantages of cloud computing. However, doing so often comes with a high cost if they choose to use the conventional data migration approach. They face challenges of costs, timing, and scalability. These problems can discourage some of these organizations from migrating to cloud computing services.
 
 Adaptive Data Virtualization (ADV) removes that barrier and allows companies to transition to cloud computing. It facilitates quick migration of services to cloud data warehouses at low costs. ADV's approach is suitable for corporate firms seeking to adopt cloud services quickly without facing financial and time risks.
 
@@ -46,7 +46,7 @@ The most significant advantage that adaptive data virtualization offers to data 
 
 #### Adaptive Data virtualization offers a variety of data from one source
 
-Because adaptive data visualization combines data, it becomes easier for several experts and non-experts to access information fitting their goals. For instance, in a database of organizations collecting information on Ebola Virus epidemic in West Africa, several experts would be interested in the data. Some will need it to determine the extent of the current spread or racking purposes. Others will need data to predict future occurrences of the disease, and others will need data on the number of strains of the virus.
+Since adaptive data visualization combines data, it becomes easier for several experts and non-experts to access information fitting their goals. For instance, in a database of organizations collecting information on the Ebola Virus epidemic in West Africa, several experts would be interested in the data. Some will need it to determine the extent of the current spread or racking purposes. Others will need data to predict future occurrences of the disease, and others will need data on the number of strains of the virus.
 
 All this data is slightly different, and specific people will be handling it. Such is the case that every firm deals with varying forms of data. Thus, having an adaptive data virtualization system would enhance its visualization. It would allow people to access several forms of data and enhance their analysis.
 
@@ -54,7 +54,7 @@ All this data is slightly different, and specific people will be handling it. Su
 
 #### Migration to the cloud
 
-Adaptive data virtualization has become more superior to conventional data migration systems owing to its advanced features. Adaptive data virtualization facilitates re-platforming by allowing applications to move to the cloud as they are, without needing to instant modifications. In contrast, conventional migration often entails cumbersome re-writing and re-architecting of applications.
+Adaptive data virtualization has become more superior to conventional data migration systems owing to its advanced features. Adaptive data virtualization facilitates re-platforming by allowing applications to move to the cloud as they are, without needing instant modifications. In contrast, conventional migration often entails cumbersome re-writing and re-architecting of applications.
 
 Adaptive data virtualization faces fewer challenges when re-platforming because applications do not need modification. Thus, it is faster to perform cloud migrations than using the traditional approach.
 
@@ -74,7 +74,7 @@ Conventional migration is more costly than adaptive data virtualization because 
 
 Conventional migration to the cloud is a complex process. Re-writing code from scratch to create a functional application is time-consuming. It is also precarious for any business model because the costs could jeopardize its profitability. A company undertaking this process risks losing its clients due to a delayed release of a functional application.
 
-Adaptive visualization takes advantage of the traditional approach's weaknesses. It enhances the speed of re-platforming while lowering the costs of doing so. It promotes re-platforming of applications without necessarily modifying them.
+Adaptive visualization takes advantage of the traditional approach's weaknesses. It enhances the speed of re-platforming while lowering the costs of doing so. It promotes the re-platforming of applications without necessarily modifying them.
 
 ### Futher reading 
 - [An Overview of Database Testing](/engineering-education/an-overview-of-database-testing/)
