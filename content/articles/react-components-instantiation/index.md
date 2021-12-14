@@ -38,14 +38,14 @@ After importing the React library, we will import `ReactDOM`. `ReactDom` is a di
 
 Let's now create a component class. To create our component class, we will subclass `React.Component`. We will do this by using the following syntax: `class V extends React.Component {}`. This is how ES6 creates a stateful component. 
 
-We will now add the `render` function to our code:
+We will now add the `render()` function to our code:
 
 ```js
    class V extends React.Component {
    render() {}
    }
 ```
-The motive of the `render` function in our application is to enable React to render HTML on our webpage. It's a must for a `render` function to have a `return` statement. A JSX expression is returned by the `return` statement in the `render` function as shown:
+The motive of the `render()` function in our application is to enable React to render HTML on our webpage. It's a must for a `render()` function to have a `return` statement. A JSX expression is returned by the `return` statement in the `render()` function as shown:
 
 ```js
   class V extends React.Component {
@@ -86,12 +86,12 @@ Let's now render our component:
   );
 ```
 
-The `render` method is called when `ReactDOM.render()` tells our component class `<Valley />` to call its `render` method. Class `<Valley />` then calls its `render` method, which  returns the JSX element `<h1>Welcome to React World</h1>`.  This will enable “Welcome to React World” to be displayed on the screen.
+The `render()` method is called when `ReactDOM.render()` tells our component class `<Valley />` to call its `render()` method. Class `<Valley />` then calls its `render()` method, which  returns the JSX element `<h1>Welcome to React World</h1>`.  This will enable “Welcome to React World” to be displayed on the screen.
 
 #### Using a new keyword 
 The `new` keyword creates a blank, simple JavaScript item. Its syntax is `new constructor[([arguments])]`. When you create an object, a class instance is created.The class name to be instantiated is provided by the constructor name. The constructor initializes the new object.A reference is returned to the object created by the `new` operator.
 
-The `new` keyword makes the `this` keyword point to the object that has been newly created. Each time `this` is mentioned, the `new` keyword executes the constructor function, using the object that has been newly created. Hence, the newly created object is returned.
+The `new` keyword makes `this` keyword to point to the object that has been newly created, each time `this` keyword is mentioned. The `new` keyword executes the constructor function, using the object that has been newly created. Hence, the newly created object is returned.
 
  #### Instantiating function components
 Function components are simple JavaScript components. They don't use a `render` method. Instead, they are responsible for rendering the user interface. They also accept and use props. A function component is considered a "dump" because it simply accepts data.
@@ -106,16 +106,16 @@ Function components are simple JavaScript components. They don't use a `render` 
 
   console.log(study);
   ```
-The code above outputs the student's marks. This is because the JS engine will see the `new` keyword, then it will create a new object and set the prototype  to `Student.prototype`. If a property is undefined in the new object that is requested, the script will check the [[Prototype]] object for the property.
+The code above outputs the student's marks. This is because the JS engine will see the `new` keyword, then it will create a new object and set the prototype  to `Student.prototype`. If a property is undefined in the new object that is requested, the script will check the [[Prototype]] object for the property. Object's prototype property is invisible,hence we will add `Object.getPrototypeOf(obj)` method to access prototype object.
 
-Let's add `console.log(Object.getPrototypeOf(studdy) === Student.prototype)` to see if prototype of `study` is `Student` which will output true. If we add `Student` instead of `study` as shown `console.log(Object.getPrototypeOf(Student) === Student.prototype)` it will output false because Student is not a prototype of Student.
+Let's add `console.log(Object.getPrototypeOf(study) === Student.prototype)` to see if prototype of `study` is `Student` which will output true. If we add `Student` instead of `study` as shown `console.log(Object.getPrototypeOf(Student) === Student.prototype)` it will output false because Student is not a prototype of Student.
 
 ****What happens in the code above?****
-- `const studdy` means: Memory is needed for variable declaration.
+- `const study` means: Memory is needed for variable declaration.
 - Assignment operator `=` means: `this` variable will be initialized with the expression after the assignment operator `=`.
 - Expression `new Student(50)`: A new object is created  and the prototype is set to student.prototype.
-- The marks get assigned to the newly created studdy object.
-- The object that has been newly created gets returned and is assigned to the variable studdy.
+- The marks get assigned to the newly created `study` object.
+- The object that has been newly created gets returned and is assigned to the variable `study`.
 
 #### Instantiating the class component 
 A class is a blueprint that helps you define the shared structure and behavior between similar objects. Class components implement logic and state; hence they are considered "smart" Props are passed down to class components and accessed with `this.props`.
@@ -136,9 +136,9 @@ In the code below, the developer class defines a constructor function. The devel
  ```
 
 #### Below is an example of code to show class component instantiation that outputs greetings.
-There is a human class and a student class that extends the human class in our code. Both classes define a constructor function. Every student is a human too. The human class expects the name argument, and that value is stored on the instance using the `this` keyword.
+There is a human class and a student class that extends the human class in our code. Both classes define a `constructor()` function. Every student is a human too. The human class expects the name argument, and that value is stored on the instance using the `this` keyword.
 
-The student class expects the name and the level argument, and then the level value is stored on its instance. Since the student class extends the human class, the student class calls the `super` method with the `name` argument, which will invoke the human class constructor function and store the name. Finally, both classes define the `greet` function.
+The student class expects the name and the level argument, and then the level value is stored on its instance. Since the student class extends the human class, the student class calls the `super()` method with the `name` argument, which will invoke the human class constructor function and store the name. Finally, both classes define the `greet()` function.
 
 ```js
   class Human{
@@ -162,7 +162,7 @@ class Student extends Human {
 ```
 The arguments we pass when we instantiate these objects are accessible in the class's constructor function.The constructor function will get called whenever an object is instantiated outside of the class, which we do by using the `new` keyword as shown below.
 
-We instantiate one object from the human class and two others from the student class. In the third object, which we instantiated from the student class, we define a `greet` function directly on the object.
+We instantiate one object from the human class and two others from the student class. In the third object, which we instantiated from the student class, we define a `greet()` function directly on the object.
 
 ```js
 const o1 = new Human("John");
