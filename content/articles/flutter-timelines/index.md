@@ -1,19 +1,19 @@
 ### Introduction
 Timelines can be viewed as progress indicators that show a user the level of completion of a task and all the steps completed in executing a given activity. As a result, timelines form a significant role in most applications today.
 
-Flutter timelines can be applied to various applications today for their ease of implementation and the straightforward and user-friendly interface they provide. 
+Flutter timelines can be applied to various applications today for easy implementation and a straightforward and user-friendly interface. 
 
 ### Examples where timelines are used
 A wide range of applications implements timelines and can easily integrate flutter timelines to enhance their functionality, look, and feel. However, the most prominent examples are:
 
 - #### Delivery applications
-    Timelines can show every instance of the delivery process from the packaging, pickup to transport. This is mainly implemented using real-time tracking maps to show the user the progress of the delivery.
+    Timelines can show every instance of the delivery process from the packaging, pickup to transport. This concept is mainly implemented using real-time tracking maps to show the user the progress of the delivery.
 
 - #### Multi-step forms
     Some forms are so large that they cannot be filled in a single screen. For this reason, such forms can be divided into steps depending on the data to be entered, for instance, personal details, location details, educational background, and professional life. 
 
 - #### Progress tracking applications
-    Let us say you want to simulate the progress of a project using an application such that after every step, you update the system to display the progress status. In such a case, you can apply the flutter timelines.
+    Let us say one wants to simulate the progress of a project using an application such that after every step, you update the system to display the progress status. In such a case, you can apply the flutter timelines.
 
 
 ### Article Goal
@@ -193,8 +193,8 @@ It would be best if you had an emulator or a mobile device to carry run the appl
 
 Your application should look like this upon successful execution.
 
-![timeline part one](timeline-one.jpg)
-![timeline part two](timeline-two.jpg)
+![timeline part one](/engineering-education/flutter-timelines/timeline-one.jpg)
+![timeline part two](/engineering-education/flutter-timelines/timeline-two.jpg)
 
 ### Conclusion
 This article introduced the reader to Flutter timelines. Next, we developed an understanding of the benefits of Flutter timelines and provided real-life use cases of the same concept. Lastly, we developed an application that emulated the Engineering Education review process to emulate the use of Timelines.
