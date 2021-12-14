@@ -185,7 +185,7 @@ o3.greet = () => console.log('I am wonderful!');
 - Const 03 will use its own directly defined greet method.
 
 #### Conclusion
-The JSX syntax is transpiled by Babel and used by React to create instances of your Objects. When using JSX with Babel,we  need to import react.This is like telling Babel you are  providing  a JSX file.
+The JSX syntax is transpiled by Babel and used by React to create instances of your objects. When using JSX with Babel,we  need to import react, this is like telling Babel you are  providing  a JSX file.
 
 A react component instance uses classes to instantiate a react component. You can either use multiple instances or just a single instance in your React application. Each instance can perform individually, making them a requirement when creating an application. Instances are duplicates of the original class. 
 
