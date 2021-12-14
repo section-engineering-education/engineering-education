@@ -110,15 +110,15 @@ JFrame frJ = new JFrame("EVENT HANDLER ILLUSTRATOR");
 
 When you run your program, the first output will be as shown below:
 
-![Button](/engineering-education/advancement-of-swing-frameworks-in-java/button.png)
+![Button](/engineering-education/advancement-of-swing-frameworks-in-java/Button.png)
 
 When you click the first button, you get the display shown below:
 
-![Event1](/engineering-education/advancement-of-swing-frameworks-in-java/event1.png)
+![Event1](/engineering-education/advancement-of-swing-frameworks-in-java/Event1.png)
 
 When you click the second button, you get the output display shown below:
 
-![Event2](/engineering-education/advancement-of-swing-frameworks-in-java/event2.png)
+![Event2](/engineering-education/advancement-of-swing-frameworks-in-java/Event2.png)
 
 ### Performing swing painting
 For the painting to be achieved, we need to understand the following. Swing Framework is robust as it happens that it does not limit to using Swing Framework since it has functions allowing users to input directly into the output area of the frame, panel, or other components of Swing, such as JLabel.
@@ -202,7 +202,7 @@ class PaintPanel extends JPanel {
 }
 ```
 
-![Painting](/engineering-education/advancement-of-swing-frameworks-in-java/painting.png)
+![Painting](/engineering-education/advancement-of-swing-frameworks-in-java/Painting.png)
 
 The `paintComponent()` method is overridden by the PaintPanel, to manage painting. It also enables the PaintPanel to write directly onto the output display of the component while painting is being carried out.
 
