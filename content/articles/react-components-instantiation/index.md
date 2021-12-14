@@ -34,7 +34,7 @@ After importing the React library, we will import `ReactDOM`. `ReactDom` is a di
 ```js
     import ReactDOM from 'react-dom';
 ```    
-`ReactDOM` is important for rendering JSX elements and react components to the DOM. The DOM is the representation of the whole user interface of your application. 
+`ReactDOM` is important for rendering JSX elements and react components to the `DOM`. The `DOM` is the representation of the whole user interface of your application. 
 
 Let's now create a component class. To create our component class, we will subclass `React.Component`. We will do this by using the following syntax: `class V extends React.Component {}`. This is how ES6 creates a stateful component. 
 
