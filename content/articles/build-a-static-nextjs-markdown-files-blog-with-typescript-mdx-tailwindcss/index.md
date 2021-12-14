@@ -1,25 +1,21 @@
-Next.js is a framework that is built on React. Next.js first came about because react is a client-side rendering library. Everything changes on the client-side in the user's browser. Next.js brought in server-side rendering to react. First and foremost, it was for server-side rendering, where you can render components on the server-side and show them to the user. Next.js further supports static sites generation. This means you can easily build both server-side rendering applications and static site-generated applications.
+Next.js is a framework that is built over React.js. React is a client-side rendering library where everything gets rendered on the client-side of the user's browser. Next.js brought in server-side rendering to React.
 
-Building an application with Next.js is made powerful by some of the cool features that it has. This includes;
+First and foremost, it was for server-side rendering, where you can render components on the server-side and show them to the user.
 
-- Hot code reloading - when you're working on your application, it'll reload quickly on the side. You don't have to refresh the page.
-- Static File Serving - it helps you serve any static files such as images, icons, robots.txt, .html, etc.
-- Fast- Next.js does the heavy lifting and handles it for us. It loads the file. Files such as HTML files are generated ahead of time. This implies that once a user requests a webpage, it gets loaded and served instantly. This happened pretty quickly since this site is static, and the generator produces the webpages at build time.
-- Integrative with many different styling options. With Next.js, styling options just come out of the box. You can use JSX CSS, less, sass, Tailwind, CSS modules, etc.
-- Provides Typescript support out of the box. You don't have to install anything special to make Typescript work with Next.js. Typescript is a superset of JavaScript. Typescript is a static type version of JavaScript. Next.js provides a one-time create-next-app command that will help you bootstrap Typescript supported templates. You can also change your files `.js` names to `.ts`, which will work the same with environment variables.
+Next.js further supports static sites generation. This means you can easily build both server-side rendering applications and static site-generated applications.
 
-In this guide, we will build a static Next.js Markdown files blog with Typescript, MDX, Tailwind CSS. We will discuss technologies and build an entire application from scratch using this stack. Finally, set up the whole stack to the CI/CD Versel deployment.
+In this guide, we will build a static Next.js markdown files blog with Typescript, MDX, and Tailwind CSS.
+
+We will discuss technologies to build an entire application from scratch using this stack. Finally, we will set up the whole stack to the CI/CD Versel deployment.
 
 ### Prerequisites
-To proceed with this tutorial, it is important to have the following;
-
+To proceed with this tutorial, it is important to have the following:
 - [Node.js](https://nodejs.org/en/) installed on your system.
 - Basic knowledge working with React, Next.js, and TypeScript.
 - Basic understanding of Git and GitHub.
 
-### Table of content
-- [Prerequisites](#prerequisites)
-- [Table of content](#table-of-content)
+### Table of contents
+- [Why Next.js?](#why-nextjs)
 - [Create a basic Next.js TypeScript application](#create-a-basic-nextjs-typescript-application)
 - [Adding packages](#adding-packages)
 - [Setting up the utilities](#setting-up-the-utilities)
@@ -32,10 +28,38 @@ To proceed with this tutorial, it is important to have the following;
 - [Conclusion](#conclusion)
 - [Further reading](#further-reading)
 
-### Create a basic Next.js TypeScript application
-The `create-next-app` command in Next.js allows you to fetch a Next.js starting application. To set up the Next.js application, we will use a tool provided by the Next.js team to abstract the process of setting up an application.
+### Why Next.js?
+Building an application with Next.js is made powerful by some of the cool features that it has. This includes:
 
-We will use [create next app](https://nextjs.org/docs/api-reference/create-next-app), a tool offered by the Next.js team, to simplify the process of laying down the Next.js application. Select the folder where you want the project to be saved and run the command below.
+#### Hot code reloading
+When you're working on your application, it'll reload quickly on the side, and you don't have to refresh the page to view the changes.
+
+#### Static file serving
+It helps you serve any static files such as images, icons, robots.txt, `.html`, etc.
+
+#### Fast
+Next.js does the heavy lifting for us. It loads the files such as HTML files that are generated ahead of time. This implies that once a user requests a webpage, it gets loaded and served instantly.
+
+This happens pretty quickly since the site is static, and the generator produces the webpages at the build time.
+
+#### Integration with several styling frameworks
+With Next.js, you can start styling with JSX CSS, less, sass, Tailwind, CSS modules, or any other styling framework.
+
+#### Supports TypeScript
+You don't have to install anything special to make Typescript work with Next.js. Typescript is a superset and a static type version of JavaScript.
+
+Next.js provides an one-time `create-next-app` command that helps you bootstrap and load TypeScript supported templates.
+
+Even if you change your files from `.js` to `.ts`, it works the same.
+
+### Create a basic Next.js TypeScript application
+The `create-next-app` command in Next.js allows you to fetch a boostrapped Next.js application.
+
+To set up the Next.js application, we will use a tool provided by the Next.js team to abstract the process of setting up an application.
+
+We will use [create next app](https://nextjs.org/docs/api-reference/create-next-app) to simplify the process of laying down the Next.js application.
+
+Select the folder where you want the project to be saved and run the command below:
 
 ```bash
 npx create-next-app --typescript .
@@ -44,14 +68,18 @@ npx create-next-app --typescript .
 This returns a setup process for this Next.js application. The `--typescript` parameter will specify that the application will use TypeScript.
 
 ### Adding packages
-[MDX](https://mdxjs.com/docs/) is a markdown component that allows you to style your text content easily. With markdown, you can write content any such as insert bold, italic, images, e.t.c. MDX will enable you to integrate components inside of your markdown files and render them on a web page. MDX pairs well with component-based frameworks such as React Next.js. This way, we can use MDX to set up a blog and manage the entire lifecycle of those posts' content.
+[MDX](https://mdxjs.com/docs/) is a markdown component that allows you to style your text content easily. With markdown, you can write content any such as insert bold, italic, images, e.t.c.
 
-To set up an MDX blog app, we will require the following packages based on the technology stack we are using.
+MDX will enable you to integrate components inside of your markdown files and render them on a web page. MDX pairs well with component-based frameworks such as React.js or Next.js.
 
-- [Gray matter](https://www.npmjs.com/package/gray-matter): Gray matter is used to parse a front matter from a file or a string. We will look at how the frontmatter looks late in this guide.
-- [Next MDX remote](https://www.npmjs.com/package/next-mdx-remote): It allows you to load MDX(Markdown) content on the server and client.
+This way, we can use MDX to set up a blog and manage the entire lifecycle of those posts.
 
-To use with Tailwind CSS;
+To set up an MDX blog app, we will require the following packages based on the technology stack we are using:
+
+- [Gray matter](https://www.npmjs.com/package/gray-matter): Gray matter is used to parse a front matter from a file or a string.
+- [Next MDX remote](https://www.npmjs.com/package/next-mdx-remote): It allows you to load MDX (Markdown) content on the server and client.
+
+To use with Tailwind CSS:
 
 - [Tailwind CSS](https://www.npmjs.com/package/tailwindcss): This is a CSS framework that offers CSS styles for efficiently creating customized interface design.
 - [Post CSS](https://www.npmjs.com/package/postcss): Post CSS is a stylistic development tool that uses JavaScript modules. We will use it to transform CSS from MDX.
@@ -64,13 +92,13 @@ To install the above packages, run the following command;
 npm i gray-matter next-mdx-remote tailwindcss postcss autoprefixer @tailwindcss/typography
 ```
 
-We also need to set up Post CSS and Tailwind CSS. Run the following command to generate `tailwind` and `postcss` config files.
+We also need to set up Post CSS and Tailwind CSS. Run the following command to generate `tailwind` and `postcss` configuration files:
 
 ```bash
 npx tailwindcss init -p
 ```
 
-Open the `tailwind.config.js` file and make the following changes.
+Open the `tailwind.config.js` file and make the following changes:
 
 ```js
 module.exports = {
@@ -84,25 +112,24 @@ module.exports = {
 };
 ```
 
-This configuration will set the `purge` option to remove unused styles in production from the specified files. The plugin `@tailwindcss/typography` will allow you to use pre-styled classes.
+This configuration will set the `purge` option to remove unused styles from the production environment. The plugin `@tailwindcss/typography` allows you to use pre-styled classes.
 
-To leverage these tailwind configurations in our application, we'll need to include this import to `pages/_app.tsx`.
+To leverage these tailwind configurations in our application, we'll need to include this import to `pages/_app.tsx` as shown:
 
 ```ts
 import 'tailwindcss/tailwind.css';
 ```
 
 ### Setting up the utilities
-Since we'll be working with Markdown files, efficient utility functions will be required. This will help us perform tasks such as getting posts, getting a single post, and getting post items. We will later implement views that will be called to display these tasks.
+Since we'll be working with Markdown files, efficient utility functions will be required. This will help us perform tasks such as getting posts, getting a single post, and getting post items.
 
-Create a new directory on the project root folder and name it `utils`. Make a `mdxUtils.ts` file in the `utils` directory. This is how we will structure the `mdxUtils.ts`.
+Create a new directory on the project root folder and name it `utils`. Create a `mdxUtils.ts` file under the `utils` directory as shown:
 
 ```ts
 import matter from 'gray-matter';
 import {join} from 'path';
 import fs from 'fs';
 import { verify } from 'crypto';
-
 
 // structure of items
 type Items =  {
@@ -164,7 +191,6 @@ export function getPostItems(filePath:string,fields:string[] = []): Items{
         if(field === 'content'){
             items[field] = content;
         }
-
         // check if the above specified field exists on data
         if(data[field]){
             // verify the fileds has data
@@ -186,12 +212,14 @@ export function getAllPosts(fields: string[]): Items []{
 }
 ```
 
-We have set functions such as `getAllPosts()`, `getPostItems()`, `getPost()` and `getPostsFilePaths()`. This way, we can access the Markdown files and read their content. Then fetch these files as blog posts with paths that will allow you to fetch a single post or the whole list of the available posts.
+We have created functions such as `getAllPosts()`, `getPostItems()`, `getPost()`, and `getPostsFilePaths()`. This way, we can access the markdown files to read their content. Then, fetch these files as blog posts with paths that will allow you to fetch a single post or the whole list of the available posts.
 
 ### Setting up the components
-Create a directory called `components` within the project's root folder. Prepare three scripts inside this `components` directory. These are `Header.tsx`, `Thumbnail.tsx`, and `Layout.tsx`. Each script will hold different components, as described below.
+Create a directory called `components` within the project's root folder.
 
-`Header.tsx` script will serve as the navigation bar. Open `Header.tsx` and create a simple navigation bar, as shown below.
+Prepare three scripts inside this `components` directory. These are `Header.tsx`, `Thumbnail.tsx`, and `Layout.tsx`. Each script will hold different components, as described below:
+
+`Header.tsx` script will serve as the navigation bar as shown below:
 
 ```ts
 // Import the link props
@@ -232,7 +260,6 @@ type Props = {
     // Thumbnail slug link
     slug?:string;
 }
-
 
 const Thumbnail: React.FC<Props> = ({ title, src, slug}: Props) => {
   // Add the Thumbnail cover image
@@ -286,7 +313,9 @@ const Layout: React.FC<Props> = ({ children }: Props) => {
 export default Layout;
 ```
 
-We call the `Header` and then attach the page dynamic content that will go under the `children` section. To apply the above layout to all pages, we'll make the following modifications to the `pages/_app.tsx` file.
+We call the `Header` and then attach the dynamic page content that will go under the `children` section.
+
+To apply the above layout to all pages, we'll make the following modifications to the `pages/_app.tsx` file:
 
 ```ts
 import Layout from '../components/Layout';
@@ -300,8 +329,9 @@ function MyApp({ Component, pageProps }: AppProps) {
 All you need is to import `Layout` and wrap the `Component` returned with `Layout`.
 
 ### Creating a blog post
+In your project root folder, create a `getting-started.mdx` file within the `_posts` directory.
 
-In your project root folder, create a `_posts` directory. Create a `getting-started.mdx` file within the `_posts` directory. In the `getting-started.mdx` file, we'll write a simple blog post as follows
+In the `getting-started.mdx` file, we'll write a simple blog post as follows:
 
 - Add the front-matter section.
 
@@ -323,7 +353,7 @@ stacks: ['Next.js','TypeScript','Git']
 <Stacks />
 ```
 
-Using MDX, you can be able to use the component-based structure provided by JSX.
+Using MDX, you can use the component-based structure provided by JSX.
 
 - Add some extra content. The content below is just for demonstration purposes. You can customize it to your liking.
 
@@ -335,12 +365,12 @@ Kama bei ilivyopangwa. Cras vel vestibulum nibh, non pellentesque massa. Katika 
 
 - Go to [unsplash](https://unsplash.com/), download an image of your preference, and add it to `/public/assets/`, i.e., `/public/assets/getting-started.jpeg`.
 
-Our blog post will follow the above structure. Feel free to create others using the same steps we have done.
-
 Our blog posts will adhere to the structure outlined above. Try creating more posts by following the same steps we did.
 
 ### Creating types
-Since we are using TypeScript, it will be helpful to define the structure of our data. TypeScript support type annotation allows you to define which data types you are dealing with. In the project root directory, create a `type` folder. Create a `post.ts` file in the `types` folder and specify the structure of a post, as shown below.
+Since we are using TypeScript, it will be helpful to define the structure of our data. TypeScript support type annotation allows you to define which data types you are dealing with.
+
+In the project root directory, create a `post.ts` file in the `types` folder and specify the structure of a post, as shown below:
 
 ```ts
 export interface IPost {
@@ -355,7 +385,7 @@ export interface IPost {
 ```
 
 ### Showing all posts
-To show the posts, we will work on the `pages/index.tsx` file. Edit your `pages/index.tsx` file as follows.
+To show the posts, we will work on the `pages/index.tsx` file. Edit your `pages/index.tsx` file as follows:
 
 ```ts
 import Thumbnail from '../components/Thumbnail';
@@ -417,25 +447,26 @@ export const getStaticProps: GetStaticProps = async () => {
 }
 ```
 
-We are simply;
-
-- Fetching the posts at build time from the server-side using the `getStaticProps()` component function as previously defined in the `mdxUtils.ts` utility functions.
+We are simply doing the following:
+- Fetching the posts at the build time from the server-side using the `getStaticProps()` component function, as previously defined in the `mdxUtils.ts` utility functions.
 - Displaying the fetched posts from the rendered component function.
 
-Let's test if everything is working right. From your project folder, run the following command to start the development server.
+Let's test if everything is working right.
+
+From your project folder, run the following command to start the development server:
 
 ```bash
 npm run dev
 ```
 
-Open the running server on a browser using `http://localhost:3000`. And now you should be able to have the added MDX content on your webpage.
+Open the running server on a browser using `http://localhost:3000`. And now, you should be able to have the added MDX content on your webpage.
 
 ![home-page](/engineering-education/build-a-static-nextjs-markdown-files-blog-with-typescript-mdx-tailwindcss/home-page.PNG)
 
 ### Showing a single post
-We will first handle the state management in the application for managing our component's data. We will use the Context API, which is present in Next.js.
+We will first handle the state management in the application for managing our component's data. We will use the Context API that is present in Next.js.
 
-Create a `context` directory on the project root folder. Inside the `context` directory, create an `mdxContext.tsx` file. Edit your `mdxContext.tsx` as shown below.
+Create a `context` directory on the project root folder with a `mdxContext.tsx` file. Edit your `mdxContext.tsx` as shown below:
 
 ```ts
 import {
@@ -484,9 +515,9 @@ export function useMdxComponentsContext(): ContextProps {
 } 
 ```
 
-The above code block manages the state of our components. This includes `prerequisites`, and `stacks`. Then exporting a `Provider (MdxComponentsProvider)` and a `Consumer hook function (useMdxComponentsContext)`
+The above code block manages the state of our components. This includes `prerequisites`, and `stacks`. Then, we export the `Provider (MdxComponentsProvider)` and a `Consumer hook function (useMdxComponentsContext)`.
 
-The next step is to embed `MdxComponentsProvider` in the `pages/_app.tsx` file to be accessed on all pages by wrapping the components with it.
+The next step is to embed `MdxComponentsProvider` in the `pages/_app.tsx` file to be accessed on all pages by wrapping the components with it:
 
 ```ts
 import type { AppProps } from 'next/app';
@@ -495,21 +526,20 @@ import 'tailwindcss/tailwind.css'
 import { MdxComponentsProvider } from '../context/mdxContext';
 
 function MyApp({ Component, pageProps }: AppProps) {
-    return <MdxComponentsProvider> <Layout>
-
-        <Component {...pageProps} />
-
-    </Layout>
-
-    </MdxComponentsProvider>
+    return (
+    <MdxComponentsProvider>
+        <Layout>
+            <Component {...pageProps} />
+        </Layout>
+    </MdxComponentsProvider>)
 }
 
 export default MyApp
 ```
 
-In your `components` folder, add two more files, `Prerequisites.tsx`, and *Stacks.tsx`.
+In your `components` folder, add two more files, `Prerequisites.tsx`, and `Stacks.tsx`.
 
-In the `Prerequisites.tsx` file, we will be getting the `prerequisites` from the consumer hook and mapping them on a list. Add the following code block.
+In the `Prerequisites.tsx` file, we will be getting the `prerequisites` from the consumer hook and mapping them on a list. Add the following code block:
 
 ```tsx
 import { useMdxComponentsContext } from "../context/mdxContext";
@@ -531,22 +561,21 @@ const Prerequisites: React.FC = () => {
 export default Prerequisites;
 ```
 
-The `Stacks.tsx` will get the `stacks` from the consumer hook and map them on a list. Add the following code block.
+The `Stacks.tsx` will get the `stacks` from the consumer hook and map them to a list as shown:
 
 ```ts
 import {useMdxComponentsContext} from "../context/mdxContext";
-
 
 const Stacks: React.FC = () => {
     const stacks = useMdxComponentsContext().stacks;
     return (
         <>
-        <h2>Stacks</h2>
-        <ol>
-            {stacks.map((stack, index) => (
-            <li key={index}>{stack}</li>
-            ))}
-        </ol>
+            <h2>Stacks</h2>
+            <ol>
+                {stacks.map((stack, index) => (
+                <li key={index}>{stack}</li>
+                ))}
+            </ol>
         </>
     )
 }
@@ -554,7 +583,9 @@ const Stacks: React.FC = () => {
 export default Stacks;
 ```
 
-Within the `pages` directory, create a `posts` folder. Create a `[slug].tsx` file in the `posts` directory. The square brackets indicate that this is a dynamic file dependent on the `slug` keyword. This is how we will set up the `[slug].tsx`.
+Within the `pages` directory, create a `posts` folder with a `[slug].tsx` file under it.
+
+The square brackets indicate that this is a dynamic file dependent on the `slug` keyword. This is how we will set up the `[slug].tsx`:
 
 ```ts
 import { serialize } from 'next-mdx-remote/serialize';
@@ -656,14 +687,14 @@ export const getStaticPaths: GetStaticPaths = () => {
 }
 ```
 
-This dynamic file allows you to set your server-side and client-side as follows;
+This dynamic file allows you to set your server-side and client-side as follows:
 
-On the server-side;
+On the server-side:
 
 - Fetch the content of the current post using `getStaticProps()`. The article's data is serialized and returned as `source`, and `frontMatter`.
 - Fetch the post paths at build time from the `getStaticPaths()`. Also, return `fallback` to `false` so that every post path that is not generated at build time will generate a `404` error.
 
-On the client-side;
+On the client-side:
 
 - Get the `source`, and the `frontMatter` sent from the server.
 - Set the data to the application context using the consumer hook.
@@ -677,20 +708,26 @@ Ensure that the development server is still running, and test if this works. Cli
 Check the complete working code on [GitHub](https://github.com/Rose-stack/static-nextjs-blog-with-typescript-mdx-tailwindcss).
 
 ### Deploy to Vercel
-To deploy to Vercel, ensure you first push/publish your code to a GitHub repository. [Login](https://vercel.com/login) to your Vercel dashboard or [register](https://vercel.com/signup) if you don't have one.
+To deploy to Vercel, ensure you first push/publish your code to a GitHub repository.
 
-Select New Project from the Vercel [dashboard](https://vercel.com/dashboard). Ensure that you have logged in to your GitHub account, select it as your Git provider, and then search and import your project.
+[Login](https://vercel.com/login) to your Vercel dashboard or [register](https://vercel.com/signup) if you don't have one.
+
+Select `New Project` from the Vercel [dashboard](https://vercel.com/dashboard). Ensure that you have logged in to your GitHub account, select it as your Git provider, and then search and import your project.
 
 Enter your preferred project name and then click Deploy
 
 ![vercel-deployment-conf](/engineering-education/build-a-static-nextjs-markdown-files-blog-with-typescript-mdx-tailwindcss/vercel-deployment-conf.PNG)
 
-After the deployment is done, click on the generated preview, and you will be redirected to your hosted blog application which you can share with friends and the general community.
+After the deployment is done, click on the generated preview. You will be redirected to your hosted blog application which you can share with friends and the general community.
 
 ![hosted-blog-application](/engineering-education/build-a-static-nextjs-markdown-files-blog-with-typescript-mdx-tailwindcss/hosted-blog-application.PNG)
 
 ### Conclusion
-Next.js is an amazing React-based framework. It allows you to work with almost any aspect of bot server-side and client-side content. It is very lightweight and allows you to create full fledge fast applications. In this tutorial, we built a blog application with Next.js, TypeScript, MDX, and Tailwind CSS and deployed it to Vercel. I hope you found the whole stack worth learning.
+Next.js is an amazing React-based framework. It allows you to work with almost any aspect of both server-side and client-side content. It is very lightweight and allows you to create full fledge fast applications.
+
+In this tutorial, we built a blog application with Next.js, TypeScript, MDX, and Tailwind CSS and deployed it to Vercel.
+
+I hope you found the whole stack worth learning.
 
 ### Further reading
 - [Getting started MDX](https://mdxjs.com/docs/getting-started/)
