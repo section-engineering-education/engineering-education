@@ -291,14 +291,14 @@ const Thumbnail: React.FC<Props> = ({ title, src, slug}: Props) => {
     // return the Thumbnail cover image slug
     return (
         <>
-      {slug ? (
-        <Link href={`/posts/${slug}`}>
-          <a aria-label={title}>{image}</a>
-        </Link>
-      ) : (
-        image
-      )}
-    </>
+            {slug ? (
+                <Link href={`/posts/${slug}`}>
+                <a aria-label={title}>{image}</a>
+                </Link>
+            ) : (
+                image
+            )}
+        </>
     )
 }
 
@@ -336,9 +336,11 @@ To apply the above layout to all pages, we'll make the following modifications t
 ```ts
 import Layout from '../components/Layout';
 function MyApp({ Component, pageProps }: AppProps) {
-    return <Layout>
-        <Component {...pageProps} />
-    </Layout>
+    return (
+        <Layout>
+            <Component {...pageProps} />
+        </Layout>
+    );
 }
 ```
 
