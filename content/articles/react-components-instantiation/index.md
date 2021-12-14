@@ -7,9 +7,9 @@ Throughout this tutorial, we will be mostly talking about JSX. The JSX element c
 
 #### Prerequisites
 To effectively understand the tutorial, the reader will need the following:
-- Basic understanding of the React library
+- Basic understanding of the React library.
 - A suitable IDE such as VS Code.
-- Basic understanding of JSX
+- Basic understanding of JSX.
 
 **In this tutorial, we will use [JS complete](https://jscomplete.com/playground).To use JS complete with React, first install the [React Developer Tools extension.](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en)**
 
@@ -27,23 +27,25 @@ Let's begin by importing the React library.
   import React from 'react'; 
 ```
 
-We are importing React because JSX will be converted to regular JavaScript, which uses React's `React.createElement` method. Therefore, we need to import React when using JSX. Your normal compiler does not understand JSX.This is like telling your compiler you provide a JSX file.
+We are importing React because JSX will be converted to regular JavaScript, which uses React's `React.createElement` method. Therefore, we need to import React when using JSX.
 
-After importing the React library, we will import ReactDOM. ReactDom is a different module. If you are not using ES6, install `react-dom` in your IDE using `npm install react-dom`. But since we will be using ES6, we will import `ReactDOM` using the code below:
+After importing the React library, we will import `ReactDOM`. `ReactDom` is a different module. If you are not using ES6, install `react-dom` in your IDE using `npm install react-dom`. But since we will be using ES6, we will import `ReactDOM` using the code below:
 
 ```js
     import ReactDOM from 'react-dom';
 ```    
-ReactDOM is important for rendering JSX elements and react components to the DOM. The DOM is the representation of the whole user interface of your application. Let's now create a component class. To create our component class, we will subclass React.Component. We will do this by using the following syntax: `class V extends React.Component {}`. This is how ES6 creates a stateful component. 
+`ReactDOM` is important for rendering JSX elements and react components to the DOM. The DOM is the representation of the whole user interface of your application. 
 
-We will now add the render function to our code:
+Let's now create a component class. To create our component class, we will subclass `React.Component`. We will do this by using the following syntax: `class V extends React.Component {}`. This is how ES6 creates a stateful component. 
+
+We will now add the `render` function to our code:
 
 ```js
    class V extends React.Component {
    render() {}
    }
 ```
-The motive of the render function in our application is to enable React to render HTML on our webpage. It's a must for a render function to have a return statement. A JSX expression is returned by the return statement in the render function as shown:
+The motive of the `render` function in our application is to enable React to render HTML on our webpage. It's a must for a `render` function to have a `return` statement. A JSX expression is returned by the `return` statement in the `render` function as shown:
 
 ```js
   class V extends React.Component {
@@ -84,15 +86,15 @@ Let's now render our component:
   );
 ```
 
-The render method is called when `ReactDOM.render()` tells our component class `<Valley />` to call its render method. Class `<Valley />` then calls its render method, which  returns the JSX element `<h1>Welcome to React World</h1>`.  This will enable “Welcome to React World” to be displayed on the screen.
+The `render` method is called when `ReactDOM.render()` tells our component class `<Valley />` to call its `render` method. Class `<Valley />` then calls its `render` method, which  returns the JSX element `<h1>Welcome to React World</h1>`.  This will enable “Welcome to React World” to be displayed on the screen.
 
 #### Using a new keyword 
-The new keyword creates a blank, simple JavaScript item. Its syntax is `new constructor[([arguments])]`. When you create an object, a class instance is created.The class name to be instantiated is provided by the constructor name. The constructor initializes the new object.A reference is returned to the object created by the new operator.
+The `new` keyword creates a blank, simple JavaScript item. Its syntax is `new constructor[([arguments])]`. When you create an object, a class instance is created.The class name to be instantiated is provided by the constructor name. The constructor initializes the new object.A reference is returned to the object created by the `new` operator.
 
-The new keyword makes the `this` keyword point to the object that has been newly created. Each time `this` is mentioned, the new keyword executes the constructor function, using the object that has been newly created. Hence, the newly created object is returned.
+The `new` keyword makes the `this` keyword point to the object that has been newly created. Each time `this` is mentioned, the `new` keyword executes the constructor function, using the object that has been newly created. Hence, the newly created object is returned.
 
  #### Instantiating function components
-Function components are simple JavaScript components. They don't use a render method. Instead, they are responsible for rendering the user interface. They also accept and use props. A function component is considered a "dump" because it simply accepts data.
+Function components are simple JavaScript components. They don't use a `render` method. Instead, they are responsible for rendering the user interface. They also accept and use props. A function component is considered a "dump" because it simply accepts data.
 
  ***example***
  ```js
@@ -100,25 +102,25 @@ Function components are simple JavaScript components. They don't use a render me
   this.marks = marks;
   }
 
- const studdy = new Student(50);
+ const study = new Student(50);
 
-  console.log(studdy);
+  console.log(study);
   ```
-The code above outputs the student's marks. This is because the JS engine will see the new keyword, then it will create a new object and set the prototype  to Student.prototype. If a property is undefined in the new object that is requested, the script will check the [[Prototype]] object for the property.
+The code above outputs the student's marks. This is because the JS engine will see the `new` keyword, then it will create a new object and set the prototype  to `Student.prototype`. If a property is undefined in the new object that is requested, the script will check the [[Prototype]] object for the property.
 
-Lets add `console.log(Object.getPrototypeOf(studdy) === Student.prototype)` to see if prototype of studdy is student which will output true. If we add `Student` instead of `studdy` as shown `console.log(Object.getPrototypeOf(Student) === Student.prototype)` it will output false because Student is not a prototype of Student.
+Let's add `console.log(Object.getPrototypeOf(studdy) === Student.prototype)` to see if prototype of `study` is `Student` which will output true. If we add `Student` instead of `study` as shown `console.log(Object.getPrototypeOf(Student) === Student.prototype)` it will output false because Student is not a prototype of Student.
 
 ****What happens in the code above?****
 - `const studdy` means: Memory is needed for variable declaration.
 - Assignment operator `=` means: `this` variable will be initialized with the expression after the assignment operator `=`.
-- Expression `new Student(50): A new object is created  and the prototype is set to student.prototype.
+- Expression `new Student(50)`: A new object is created  and the prototype is set to student.prototype.
 - The marks get assigned to the newly created studdy object.
 - The object that has been newly created gets returned and is assigned to the variable studdy.
 
 #### Instantiating the class component 
-A class is a blueprint that helps you define the shared structure and behavior between similar objects. Class components implement logic and state; hence they are considered "smart." Props are passed down to class components and accessed with `this.props`.
+A class is a blueprint that helps you define the shared structure and behavior between similar objects. Class components implement logic and state; hence they are considered "smart" Props are passed down to class components and accessed with `this.props`.
 
-In the code below, the developer class defines a constructor function. The developer class expects the name argument, and it uses the `this` keyword to store that value on the instance. The new keyword generates a new object. Hence, dev1 is returned as the new object, and hence it outputs `Tom` as our new developer.
+In the code below, the developer class defines a constructor function. The developer class expects the name argument, and it uses the `this` keyword to store that value on the instance. The `new` keyword generates a new object. Hence, `dev1` is returned as the new object, and hence it outputs `Tom` as our new developer.
 
 ```js
    class Developer {
@@ -160,7 +162,7 @@ class Student extends Human {
 ```
 The arguments we pass when we instantiate these objects are accessible in the class's constructor function.The constructor function will get called whenever an object is instantiated outside of the class, which we do by using the `new` keyword as shown below.
 
-We instantiate one object from the human class and two others from the student class. In the third object, which we instantiated from the student class, we define a greet function directly on the object.
+We instantiate one object from the human class and two others from the student class. In the third object, which we instantiated from the student class, we define a `greet` function directly on the object.
 
 ```js
 const o1 = new Human("John");
@@ -183,6 +185,8 @@ o3.greet = () => console.log('I am wonderful!');
 - Const 03 will use its own directly defined greet method.
 
 #### Conclusion
-A react component instance uses classes to instantiate a react component. You can either use multiple instances or just a single instance in your React application. Each instance can perform individually, making them a requirement when creating an application. Instances are duplicates of the original class. A component in React can be either a class or a function.
+The JSX syntax is transpiled by Babel and used by React to create instances of your Objects. When using JSX with Babel,we  need to import react.This is like telling Babel you are  providing  a JSX file.
+
+A react component instance uses classes to instantiate a react component. You can either use multiple instances or just a single instance in your React application. Each instance can perform individually, making them a requirement when creating an application. Instances are duplicates of the original class. 
 
 Happy learning!
