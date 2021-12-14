@@ -1,23 +1,23 @@
 ### Intoduction
-The WordNet English dictionary can be found in Python's Natural Language Tool Kit (NLTK), part of the Natural Language Tool Kit (NLTK). Natural Language Processing (NLP) may be made simple and straightforward using this comprehensive set of tools. As a part of this tutorial, we will cover some of the program's most basic functions.
+The WordNet English dictionary is part of Python's Natural Language Tool Kit (NLTK).  Natural Language Processing (NLP) may be made simple and straightforward using this comprehensive set of tools. This tutorial will cover the basic actions that can be done using this tool.
 
 ### Prerequisites
-To have a better understanding of this article, you should:
+To have a better understanding of this article, the reader should:
 - Have basic knowledge of the python language.
 - Have [python](https://www.python.org/downloads/) installed.
 - Have [nltk](https://www.nltk.org/install.html) and its [corpus](https://www.nltk.org/data.html) installed.
 - 
 ### Table of contents
-- [Understanding NLTK Synonyms and Synsets](#understanding-nltk-synonyms-and-synsets)
+- [ A start with Synonyms and Synsets](#understanding-nltk-synonyms-and-synsets)
 - [Understanding NLTK Hypernyms and Hyponyms](#understanding-nltk-hypernyms-and-hyponyms)
-- [Understanding NLTK Meronyms and Holonyms ](#understanding-nltk-meronyms-and-holonyms)
+- [A look into Meronyms and Holonyms ](#understanding-nltk-meronyms-and-holonyms)
 - [Understanding NLTK Entailments](#understanding-nltk-entailments)
 - [Conclusion](#conclusion)
 - 
 ### Understanding NLTK Synonyms and Synsets
-All concepts in a synset have the same meaning since they are all synonyms in WordNet, which preserves synonyms in their natural form. A synset is a group of synonyms related to one another in the context of linguistics. 
+All concepts in a synset have the same meaning since they are all synonyms in WordNet, which preserves synonyms in their natural form. A synset is a group of synonyms related to one another in linguistics. 
 
-It is possible to find the definition of a synset in the synset's native language. It will be seen in the following section that the synset relationships have been preserved.
+It is possible to find the definition of a synset in the Synset's native language. It will be seen in the following section that the synset relationships have been preserved.
 
 In the NLTK, the Synset interface can search the WordNet database for a certain term. It is a list of words that convey the same meaning. There are an infinite number of Synsets associated with each word.
 
@@ -77,7 +77,7 @@ synset_array[1].definition()
 ```
 OUTPUT
 ```bash
-'physical objects consisting of a number of pages bound together'
+'physical objects consisting of a number of pages bound together
 ```
 Example two
 ```python
@@ -90,7 +90,7 @@ OUTPUT
 ```bash
 'a written version of a play or other dramatic composition; used in preparing for a performance'
 ```
-Names, a part of speech, and how many times a Synset has been defined can be obtained using Synset() 
+Names, a part of speech, and how many times a Synset has been defined can be obtained using Synset () 
 
 Example one
 ```python
@@ -100,7 +100,7 @@ wordnet.synset('book.n.02').definition()
 ```
 OUTPUT
 ```bash
-'physical objects consisting of a number of pages bound together'
+'physical objects consisting of a number of pages bound together
 ```
 Example two
 ```python
@@ -110,7 +110,7 @@ wordnet.synset('script.n.01').definition()
 ```
 OUTPUT
 ```bash
-'physical objects consisting of a number of pages bound together'
+'physical objects consisting of a number of pages bound together
 ```
 #### 3. How to get Lemmas of a Synset.
 Lemma names(), on the other hand, can be used in two different ways to get an array of all the Lemma names:
