@@ -150,17 +150,4 @@
 {{ end }}
 <script async type="text/javascript" src="//talk.hyvor.com/web-api/embed.js"></script>
 
-{{ $featureToggle := resources.Get "js/featureToggle.js" }}
-<script defer language="javascript" type="text/javascript" src="{{ $featureToggle.Permalink }}"></script>
-
-<script type="text/javascript">
-  document.addEventListener("DOMContentLoaded", async function() {
-
-    if (await unleash.isEnabled("section.io.hyvorTalk", {}, false)) {
-      const commentsBox = document.getElementById('hyvor-talk-view');
-      commentsBox.classList.add('visible');
-    }
-  });
-</script>
-
 {{ end }}
