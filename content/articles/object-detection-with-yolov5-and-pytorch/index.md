@@ -1,5 +1,21 @@
-﻿Object detection is usually one of the most interesting computer vision tasks that a beginner or an enthusiast can use to jump-start their career in computer vision and artificial Intelligence.
+﻿---
+layout: engineering-education
+status: publish
+published: true
+url: /object-detection-with-yolov5-and-pytorch/
+title: Object Detection with YOLOv5 and PyTorch
+description: In this tutorial, the reader will understand the basics of object detection with YOLO model. We will also be building a simple object detector.
+author: adhinga-fredrick
+date: 2021-12-14T00:00:00-22:20
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /object-detection-with-yolov5-and-pytorch/hero.jpg
+    alt: Object Detection with YOLOv5 and PyTorch Hero Image
+---
+Object detection is usually one of the most interesting computer vision tasks that a beginner or an enthusiast can use to jump-start their career in computer vision and artificial Intelligence.
+<!--more-->
 In this article, we will learn some basics about object detection before proceeding to perform object detection using [YOLOv5](https://github.com/ultralytics/yolov5) and the [COCO dataset](https://cocodataset.org/#home).
 
 ### Table of Contents
@@ -216,3 +232,6 @@ Happy coding!
 
 ### Further reading
 -  [YOLOv5 Documentation](https://docs.ultralytics.com/)
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
