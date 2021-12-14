@@ -17,8 +17,8 @@ At the end of this article, the reader should have understood exceptions and how
 To better understand this article, the reader is expected to have a basic understanding of Python and is familiar with working with any code editor. In this article,  the Jupyter notebook was used. 
 
 ### Table of contents
-- [Keyboard interrupt error](#keyboard interrupt error)
-- [Exception](#exception)
+- [Keyboard interrupt error](#keyboard-interrupt-error)
+- [Python exception](#python-exception)
 - [Handling exceptions](#handling-exceptions)
 - [Handling multiple exceptions in one block of code](#handling-multiple-exceptions-in-one-block-of-code)
 - [The “Finally Block”](#the-“finally-block”)
@@ -30,6 +30,7 @@ Python 3 has 63 defined built-in exceptions, with all of them arranged to form a
 ![exception_hierarchy](exceptions-and-error/exception_hierarchy.png)
 
 [Source](https://w3.cs.jmu.edu/lam2mo/cs240_2014_08/lab05-exceptions.html)
+The image above shows the Python exception hierarchy
 
 The tree form starts from the root going up. At the top of this tree is the most general exception called the “Base exception”. After the base exception, the next in this hierarchy are; system exit, exception, general exit, and keyboard interrupt.  
 
@@ -44,6 +45,7 @@ The exception error is the branch with the most errors you will encounter more o
 Here, we will look at attribute error, name error, type-error, arithmetic error, and its branches, and then lookup error and its branches (index error and key error). 
 
 ![The Exception branch](/exceptions-and-error/except.png)
+The image above shows the exception branch in Python.
 
 #### The Attribute error
 This error is raised when you try to call an attribute that a particular object or data type does not support. For example, if you call the  `key()` method on a list it will raise an attribute error because the list does not support the  `key()` method; rather, it is a dictionary method that returns the keys of the specified dictionary. 
@@ -60,6 +62,7 @@ This means that a variable or function can only be called or used after being cr
 ```
 ![Name Error](/exceptions-and-error/nameerror.jpg)
 Image by author
+The image above shows a name error recieved for using a wrong variable name.
 
 You will get a **name error** when you run the code above because the list created was stored in variable “Names”, not “names”. Python is case sensitive, so it sees “Names” and “names” as two different variables, with one declared the other undeclared.
  
@@ -77,6 +80,7 @@ A type error is raised when you try to perform an operation that is not supporte
 In the code above, we assigned **James**  to the variable name and performed a division operation. Unfortunately, we will get a “TyrpeError” because “name” is a string that does not support that division type of operation. 
 
 ![Type error](/exceptions-and-error/type.jpg)
+The image above shows type error message.
 
 #### Arithmetic error
 The arithmetic error occurs when an error is encountered during numeric calculations in Python. This includes Zerodivision Error and Floating point error. Zero division error is raised when you try to divide a numeric value by zero. 
@@ -118,10 +122,11 @@ In the first part of this article, we cover some exceptions; though these are no
 
 In the second part of this article, we will be discussing how to handle these exceptions in a python program such that the program will continue running when these errors are encountered. 
  
-To handle exceptions, Python has four major defined components: Try, except,  else, and finally. The image below shows how these four-component are used in exception handling.
+To handle exceptions, Python has four major defined components: Try, except,  else, and finally.
+![The try-except bl0ck](/exceptions-and-error/try.png)
+[Source](https://www.datacamp.com/community/tutorials/exception-handling-python)
+ The image  above shows how the four-component are used in exception handling.
 
-![The try-except blck](/exceptions-and-error/try.png)
- [Source](https://www.datacamp.com/community/tutorials/exception-handling-python)
 
 1. Try: The try block specifies the code to “try” for an exception.
 2. Except: With the except, you specify the expected exception that you want your try block to search for and the message you want to be displayed should this be caught.
@@ -176,7 +181,7 @@ print(“You are welcome”)
 ```
  Whenever a wrong index is used, the program will print “wrong index used”. 
  
-## Working with multiple exceptions in one block of code. 
+### Working with multiple exceptions in one block of code. 
 Python provides you the ability to have multiple exceptions within a single block of code. This simplifies your work and avoids unfavorable code growth in your program. 
 
 ``` 
