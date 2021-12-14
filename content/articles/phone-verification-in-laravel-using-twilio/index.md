@@ -1,9 +1,7 @@
 
 # Phone Verification Laravel Using Twilio
 
-Almost every online registration that requires a user's phone number will verify the phone number's legitimacy in some way, either via a text message, a phone call, or any other handy technique. It's vital to double-check a phone number, especially if it's the only means to reach the person.
-
-In this article, we will learn how create an application in Laravel that will allow us call a user's registered phone number and also verify the phone number's authenticity using Twilio Programmable Voice API . If the user answers the phone, he or she will be asked to enter a one-time password (OTP) that was generated and displayed on his or her screen during the signup process. The user account will not be verified if an incorrect OTP is entered or if the user refuses to answer the phone. The user account will be verified if the user answers the phone and enters the correct OTP.
+Almost every online registration that requires a user's phone number will verify the phone number's legitimacy in some way. In this article, we will learn how to verify phone number in [Laravel](https://laravel.com/docs/8.x) using [Twilio Programmable Voice API](https://www.twilio.com/docs/voice) by placing a call to the number and engaging the user.
 
 ### Table of Contents
 - [Prerequisites](#prerequisites)
@@ -209,7 +207,14 @@ public function index()
 
     }
 ```
-We have now added all that we need to authenticate a user in our `app/Http/Controllers/Auth/AuthController.php`. The `index `method, the `registration` method, and the `reverify` method returns the `login`, `registration`, and `verification` view respectively. The `dashboard` method returns the `dashboard` view only if the user is authenticated, else it will redirect to the `login` with an error message. This is done using the `Auth::check()`. The `postRegistration` method saves all the user’s input and makes sure that the data provided by the user passes the validation check, it then redirects the user to the login page with a success message. The `postLogin` method authenticates the user base on the credentials provided by the user and the verification status. this uses the `Auth::attempt($credentials)`. The `logout` method logs the user out and also clears the session using the `Session::flush()`
+We have now added all that we need to authenticate a user in our `app/Http/Controllers/Auth/AuthController.php`. Now, let us have an explanation of what each method in the Auth Controller does. 
+- `index `method returns the `login` view.
+- `registration` method returns the `registration` view
+- `reverify` method returns the `verification` view. 
+- `dashboard` method returns the `dashboard` view only if the user is authenticated, else it will redirect to the `login` with an error message. This is done using the `Auth::check()`. 
+- `postRegistration` method saves all the user’s input and makes sure that the data provided by the user passes the validation check, it then redirects the user to the login page with a success message. 
+- `postLogin` method authenticates the user base on the credentials provided by the user and the verification status. this uses the `Auth::attempt($credentials)`.
+- `logout` method logs the user out and also clears the session using the `Session::flush()`
 
 #### Routes
 We need to add how routes to enable users to navigate through pages in our application. Add the following code to `routes/web.php`
@@ -242,7 +247,6 @@ Open `resources/views` create a new file and name it `layout.blade.php`. open th
 `resources/views/layout.blade.php` 
 
 ```
-
 <!DOCTYPE html>
 
 <html>
@@ -251,63 +255,38 @@ Open `resources/views` create a new file and name it `layout.blade.php`. open th
 
     <title>Phone verification</title>
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-
-    <style type="text/css">
-
-        @import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
-
-  
-
-        body{
-
-            background-color: #f2f2f2;
-
-        }
-
-        .navbar-bar-head
-
-        {
-
-            box-shadow: rgba(0,0,0,.04) 0 2px 4px;
-
-        }
-
-        
-    </style>
-
 </head>
 
 <body>
-<div class="navbar navbar-expand-lg navbar-bar-head">
+<div>
 
-    <div class="container">
+    <div>
 
-        <a class="navbar-brand" style="color: gray;" href="#">Phone Verification</a>
+        <a>Phone Verification</a>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div id="navbarSupportedContent">
 
-            <ul class="navbar-nav ml-auto">
+            <ul>
 
                 @guest
 
-                    <li class="nav-item">
+                    <li>
 
-                        <a class="nav-link" style="color: gray;" href="{{ route('login') }}">Login</a>
+                        <a href="{{ route('login') }}">Login</a>
 
                     </li>
 
-                    <li class="nav-item">
+                    <li>
 
-                        <a class="nav-link" style="color: gray;" href="{{ route('register') }}">Register</a>
+                        <a href="{{ route('register') }}">Register</a>
 
                     </li>
 
                 @else
 
-                    <li class="nav-item">
+                    <li>
 
-                        <a class="nav-link" href="{{ route('logout') }}">Logout</a>
+                        <a class href="{{ route('logout') }}">Logout</a>
 
                     </li>
 
@@ -336,117 +315,10 @@ In `resources/views/auth` create a new file and name it `Login.blade.php`. open 
 
 @extends('layout')
 
-  
-
 @section('content')
-<style>
-
-.main-div{   
-
-    margin-left: 20%;
-
-    margin-right: 20%;
-
-    margin-top: 2%;
-
-    text-align: center;
-
-    background-color: white;
-}
-
-.input-item{
-
-    display: block;
-
-    padding-top: 10px;
-
-    padding-left: 10px;
-
-    text-align: justify;
-
-}
-
-.input-style{
-
-  width: 80%;
-
-  margin-bottom: 8px;
-  border-radius: 5px;
-
-  border: 1px solid gray;
-
-  padding: 11px 19px;
-
-}
-
-.submit-bn{
-
-  margin: 7px 0;
-
-  background-color: #1E90FF;
-
-  width: 20%;
-
-  color: white;
-
-  padding: 10px 17px;
-
-  cursor: pointer;
-
-  border: none;
-
-  border-radius: 5px;
-
-}
-
-label{
-
-    font-size: 20px;
-
-    font-weight: 400;
-
-}
-
-.small-error{
-
-    color: red;
-
-}
-.error-flag{
-
-background-color: #ffcccc;
-
-color: red;
-
-border: none;
-
-padding-top: 20px;
-
-padding-bottom: 20px;
-
-}
-
-
-
-.info-flag{
-
-background-color: #b3e6ff;
-
-color: blue;
-
-border: none;
-
-padding-top: 20px;
-
-padding-bottom: 20px;
-
-}
-
-</style>
-
 <div class="main-div">
 
-    <h2 style="color: gray; padding-top:20px;">LOGIN</h2>
+    <h2>LOGIN</h2>
 
 @if (Session::has('errors'))
 
@@ -460,11 +332,11 @@ padding-bottom: 20px;
 
                     @if (Session('status'))
 
-                        <div class="error-flag">
+                        <div>
 
                             Your account has not been verified, click the verify button to verify account
 
-                            <a class="submit-bn" href= "{{ route('reverify') }}">Verify</a>
+                            <a href= "{{ route('reverify') }}">Verify</a>
 
 
 
@@ -478,13 +350,13 @@ padding-bottom: 20px;
 
                     @if(session('success'))
 
-                        <div class="info-flag"> 
+                        <div> 
 
                             Your Verification code is <strong>{{session('success')}}</strong> 
 
                             Please answer the call and follow the intruction. You can login on successful registration
 
-                            <a class="submit-bn" href= "{{ route('reverify') }}">Try again</a>
+                            <a href= "{{ route('reverify') }}">Try again</a>
 
                         </div>
 
@@ -496,17 +368,17 @@ padding-bottom: 20px;
 
                           @csrf
 
-                          <div class="input-item">
+                          <div>
 
-                              <label class="">Phone Number</label>
+                              <label>Phone Number</label>
 
-                              <div class="">
+                              <div>
 
-                                  <input type="number" class="input-style" name="phone_number" required> <br/>
+                                  <input type="number" name="phone_number" required> <br/>
 
                                   @if ($errors->has('phone_number'))
 
-                                      <span class="small-error">{{ $errors->first('phone_number') }}</span>
+                                      <span>{{ $errors->first('phone_number') }}</span>
 
                                   @endif
 
@@ -520,17 +392,17 @@ padding-bottom: 20px;
 
   
 
-                          <div class="input-item">
+                          <div>
 
-                              <label class="">Password</label>
+                              <label>Password</label>
 
-                              <div class="">
+                              <div>
 
-                                  <input type="password"  class="input-style" name="password" required> <br/>
+                                  <input type="password" name="password" required> <br/>
 
                                   @if ($errors->has('password'))
 
-                                      <span class="small-error"> {{$errors->first('password')}} </span>
+                                      <span> {{$errors->first('password')}} </span>
 
                                   @endif
 
@@ -542,7 +414,7 @@ padding-bottom: 20px;
 
                           <div class="">
 
-                              <button type="submit" class="submit-bn">
+                              <button type="submit">
 
                                   Login
 
@@ -561,126 +433,42 @@ Open `resources/views/auth` create a new file and name it `registration.blade.ph
 @extends('layout')
 @section('content')
 
+<div>
 
-<style>
-
-
-
-.main-div{
-
-    margin-left: 20%;
-
-    margin-right: 20%;
-
-    margin-top: 2%;
-
-    text-align: center;
-
-    background-color: white;
-
-    
-}
-
-.input-item{
-
-    display: block;
-
-    padding-top: 10px;
-
-    padding-left: 10px;
-
-    text-align: justify;
-
-    
-}
-
-.input-style{
-
-  width: 80%;
-
-  margin-bottom: 8px;
-
-  border-radius: 5px;
-
-  border: 1px solid gray;
-
-  padding: 11px 19px;
-
-}
-
-.submit-bn{
-
-  margin: 7px 0;
-
-  background-color: #1E90FF;
-
-  width: 20%;
-
-  color: white;
-
-  padding: 10px 17px;
-
-  cursor: pointer;
-
-  border: none;
-
-  border-radius: 5px;
-
-}
-
-label{
-
-    font-size: 20px;
-
-    font-weight: 400;
-
-}
-
-.small-error{
-
-    color: red;
-
-}
-
-</style>
-
-
-<div class="main-div">
-
-    <h2 style="color: gray; padding-top:20px;">REGISTRATION</h2>
+    <h2>REGISTRATION</h2>
 
                     <form action="{{ route('register.post') }}" method="POST">
 
                           @csrf
 
-                          <div class="input-item">
+                          <div>
 
-                              <label class="">Name</label>
+                              <label>Name</label>
 
-                              <div class="">
+                              <div>
 
-                                  <input type="text" class="input-style" name="name" required><br/>
+                                  <input type="text" name="name" required><br/>
 
                                   @if ($errors->has('name'))
 
-                                      <span class="small-error">{{ $errors->first('name') }}</span>
+                                      <span>{{ $errors->first('name') }}</span>
 
                                   @endif
 
                               </div>
 
                           </div>
-                          <div class="input-item">
+                          <div>
 
-                              <label class="">Phone Number</label>
+                              <label >Phone Number</label>
 
-                              <div class="">
+                              <div>
 
-                                  <input type="number" class="input-style" name="phone_number" required><br/>
+                                  <input type="number" name="phone_number" required><br/>
 
                                   @if ($errors->has('phone_number'))
 
-                                      <span class="small-error">{{ $errors->first('phone_number') }}</span>
+                                      <span>{{ $errors->first('phone_number') }}</span>
 
                                   @endif
 
@@ -690,17 +478,17 @@ label{
 
   
 
-                          <div class="input-item">
+                          <div>
 
-                              <label class="">Password</label>
+                              <label>Password</label>
 
-                              <div class="">
+                              <div>
 
-                                  <input type="password" class="input-style" name="password" required> <br/>
+                                  <input type="password" name="password" required> <br/>
 
                                   @if ($errors->has('password'))
 
-                                      <span class="small-error">{{ $errors->first('password') }}</span>
+                                      <span>{{ $errors->first('password') }}</span>
 
                                   @endif
 
@@ -710,7 +498,7 @@ label{
 
                           <div class="">
 
-                              <button type="submit" class="submit-bn">
+                              <button type="submit">
 
                                   Register
 
@@ -737,19 +525,17 @@ Open `resources/views/auth`, create a new file, and name it `verification.blade.
 
   @section('content')
 
-<main class="login-form">
+<main>
 
-  <div class="cotainer">
+  <div>
 
-      <div class="row justify-content-center">
+      
 
-          <div class="col-md-8">
+          
 
-              <div class="card">
+                  <h2>Phone Verification</h2>
 
-                  <div class="card-header">Phone Verification</div>
-
-                  <div class="card-body">
+                  
 
   
 
@@ -757,27 +543,27 @@ Open `resources/views/auth`, create a new file, and name it `verification.blade.
 
                           @csrf
 
-                          <div class="form-group row">
+                          <div>
 
-                              <label for="phone_number" class="col-md-4 col-form-label text-md-right">enter your registered Phone Number</label>
+                              <label for="phone_number">enter your registered Phone Number</label>
 
-                              <div class="col-md-6">
+                              <div>
 
-                                  <input type="number" id="phone_number" class="form-control" name="phone_number" required autofocus>
+                                  <input type="number" id="phone_number" name="phone_number" required autofocus>
 
                                   @if ($errors->has('phone_number'))
 
-                                      <span class="text-danger">{{ $errors->first('phone_number') }}</span>
+                                      <span>{{ $errors->first('phone_number') }}</span>
 
                                   @endif
 
                               </div>
 
                           </div>
-                          <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
-                          <div class="col-md-6 offset-md-4">
+                          <div>
+                          <div>
 
-                              <button type="submit" class="btn btn-primary">
+                              <button type="submit">
 
                                   Verify
 
@@ -789,13 +575,7 @@ Open `resources/views/auth`, create a new file, and name it `verification.blade.
 
                   </div>
 
-              </div>
 
-          </div>
-
-      </div>
-
-  </div>
 
 </main>
 
@@ -812,51 +592,17 @@ Open `resources/views/`, create a new file and name it `dashboard.blade.php`. op
 
 @section('content')
 
-<style>
+<div>
 
-    .success-flag{
-
-background-color: #ccffcc;
-
-color: green;
-
-border: none;
-
-padding-top: 20px;
-
-padding-bottom: 20px;
-
-}
-
-.main-div{
-
-    
-
-    margin-left: 20%;
-
-    margin-right: 20%;
-
-    margin-top: 2%;
-
-    text-align: center;
-
-    background-color: white;
-
-}
-
-</style>
-
-<div class="main-div">
-
-    <h2 style="color: gray; padding-top:20px;">DASHBOARD</h2>
+    <h2 >DASHBOARD</h2>
 
                     @if (session('success'))
 
-                        <div class="success-flag">
+                        <h3 >
 
                             {{ session('success') }}
 
-                        </div>
+                        </h3>
 
                     @endif
 
