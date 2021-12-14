@@ -1,56 +1,81 @@
-### Introduction
-
-   In our modern world, technology has enhanced the building of some smart self-driven cars, smart digital systems such as “Alexa”, and even smart medical and agricultural equipment’s all around us which are been built using the principle of deep learning. This developed technology has been of great benefits to our everyday society. For that reason, the quest in understanding how this AI based technology (Deep learning) works is paramount for a faster production of similar systems. As such, people have come up with questions like; 
+### INTRODUCTION
+Technology is fast growing in the world today. This recency in growth is enhancing the livelihoods of humans and their environment. This includes the building of many self-driven cars and some smart digital systems.
+A few problems in the understanding of its working algorithm have arisen. 
    
-  **The principle behind deep learning?**  
-     Why do smart systems like Alexa recognize human and objects and how can a car drive itself without human beings sitting in to control it?
+   These problems have triggered developers to ask questions like: "
 
-       Excessive volume of information can be fine-tuned using learning algorithms in deep learning. The system learning algorithm tends to be smarter having gathered functional experience from more data sets just like humans get smarter by learning.
-       
-### Do you think Deep Learning is enhancing the modern technology?
-      Yes, Deep learning is the trending technology all around us. The ability of a system to cluster(collect) data and make predictions with incredible accuracy makes deep learning. Facial recognition is a predictive analysis from a group of data sets of consumer behavior. Deep learning enables higher percentage of turn in data sets and also increase intelligence in technology. With the rapid growth in technology around us, Deep Learning has uniquely aid in the major breakthrough of technology to almost if not all aspect of life such as medicine, science, agriculture, etc. Deep learning has always greatly enhance the improvement of humans lives when considering technologies like IoT, embedded system and Robotics. Unsurprisingly, considered problem and tuning budget are the two major factors used to checkmate the performance rate of any Deep Learning optimizer.
-     
- ### Factors That Affects The Performance Of System Using Deep Learning 
+* What is the design algorithm enhancing deep learning?
+* Why are recent developed systems able to recognize humans and their environment?
+* How can devices move accurately without human beings controlling them?
 
-i. **Considered problem;** 
-      
-      This simply means what task is the system about to be design handling. While modelling an algorithm, this problem is to be considered as most important. 
-    
-     Basic problems;
+      An excessive volume of information (data sets) can be trained. This uses learning algorithms in deep learning. Deep learning systems tend to gather functional facts from larger datasets. This experience (learning) is in relation to human ways of getting smarter. 
 
-     - Why is this system develop?
-     - How will the developed system handle the user’s demands,  
-     - Re-engineering adaptive ability 
+#### Do you think deep learning will make current technologies better?
 
-  
-ii.  **Evaluation of default hyperparameters for multiple optimisers is not easily achieved**
+Deep learning is, without a doubt, at the pinnacle of the most current technological hierarchy. The ability to collect data is crucial for systems (information). The data acquired enables exact forecasting and establishes the DL. As a prediction analysis, comprehending the facial recognition algorithm. This analysis functions by collecting a group of consumer behavior data sets. The intelligence and accuracy rate of deep learning are immense, and they are being checked at all levels. Humans and their environments have been great benefactors of this recent smart technology.
+ The ability to fine-tune the budget and the considered problem are two enhancing variables in Deep Learning. Any optimizer’s accuracy is measured using these factors. 
 
-        This is due the lack of awareness of what is been learnt by the system algorithm using adaptive methods like the Adams optimiser.
+### Some Determinants That Transform Deep Learning Systems' Performance
 
-iii. **Technical know-how**
+#### i. Taking into account the issue (considered problem) that the system will be tasked with resolving; 
+          Simply said, this refers to the task for which the system will be created. This problem, which the system must solve, is the most crucial consideration when modeling an algorithm.
+ ######  Basic problems
+* What kind of system should be built? 
+* How will the developed algorithm handle the immediate user’s demands?
+* How easily will re-engineering be made possible?
 
-       It needs one with a great and deep understanding of deep learning to turn the learning rate schedule to improve the performance system. 
+#### ii. Evaluation difficulties of default hyperparameters for multiple optimisers.
+          Poor accuracy is obtained here as a result of low awareness from training the system data sets. The Adams optimiser is used in this deep system algorithm, which is adaptable. 
 
-iv.  **Which optimiser suits best**
+#### iii. Technical expertise in deep learning system network design.
 
-     Research has it that the optimiser with the best and strongest performance rate is the Adam optimiser. Other methods (optimisers) lacks its outperforming abilities. 
+          The demand and need for deep learning experts is highly recommended here. Experience is needed to increase the learning rate and improve the system's performance.
 
-### Steps Involved In Getting A Perfect Performance Rate Of A System
+#### iv. Which optimiser suits the deep network best?
+          According to research, the Adam optimiser offers the highest and best performance rate. The ability to outperform other approaches (optimisers) is lacking. 
 
-**The Functionality of individual units(layers) in a Deep Neural Network**
+### How To Get A Perfect Performance Rate From A Deep Learning System
 
- Considering individual activation levels in Convolutional Neural Networks is very essential though abstruse. The problem of unit interpretability in deep networks needs to be understood to help hint the deep network and not completely opaque black boxes. Network Dissection is our method for measuring the performance rate of a system in deep learning. The performance rate is interpreted to the network system for each individual network layer in the deep convolutional network. Network Dissection also involves the measurements of alignments between different layers (units) therefore, the segmentation of dense data sets for a faster performance rate are drawn from this concept which is also called Broden. This technique is also been applied to a VGG-16 scene classifier and Progressive generative adversarial network(P-GAN) with which trains on the generator and discriminator progression layers of the deep learning system. Convolutional neural network (CNN) based classifier has two layers namely the earlier and the later layers. The later associates objects and parts emerged in the layers when been observed by the system while colors dictation occurs greatly in the earlier layers. Research shows that classification of accuracy and strong performance of a Deep Learning network is highly important in such a network neurons as CNN. For the generator network based classifier, the reserve case of the Convolution neural network occurs were colors dictation happens at the later layers while objects and part association happens at the earlier layers most frequently. Some deep network systems are trained to generator scenes while some are trained to discriminate scenes. This helps in the enhancement of information flow in the system. Manipulation of unit generating outlets of GAN is considered a challenge in artificial pruning. Trained images are designed and structured and highlighted on specific neurons like Adversarial examples which are been highly regarded by interested applications due to the reasons of manipulations.
+#### 1. A Deep Neural Network System's Individual Units' (Layers') Functionality 
 
-**The efficiency of Soft Convolutional Inductive Biases in vision transformation improvement**
+Convolutional neural networks must take individual activation levels into account. This step, though, is difficult to achieve. First, the issue of unit interpretability in deep networks must be grasped.
+This knowledge will assist the network in avoiding becoming a completely opaque black box. Our measurement method is network dissection. This method calculates a system's deep learning performance rate.
+Measurements of alignments between different levels are also part of network dissection in the deep convolutional network (units). It is being done to separate dense data sets for a quicker performance rate. This segmentation notion is also known as "broden." Other classifier networks can use the Broden approach as well. The Progressive generative adversarial network with the VGG-16 scene classifier (P-GAN). The most common are these two.
+The network's training methods are the generator and discriminator progression layers. A convolutional neural network (CNN)-based classifier is made up of two layers. These layers, which are referred to as the earlier and later layers,  The final layer is made up of two levels: objects and parts. The system associates with the layers and emerges when it notices this sub-layer. There is a lot of color dictation in the early levels.
+ Research has highlighted the importance of performance rate categorization in CNN neurons. Some deep neural networks are trained to create scenes, while others are trained to recognize them. This helps to improve the data flow in the system. 
+Manipulation of GAN's unit-producing outlets is complicated by artificial pruning. Trained images, like adversarial examples, are developed, categorized, and highlighted on certain neurons. These neurons are treated in some way in order to attain precision. 
 
-  Inductive bias layers is highly supported by convolution network. The concept of weight sharing and locally notified in the convolution network layers is said to be built on the principles of imagery(translation, symmetric transformation, reflection). Activation patters are observed in visible corrected. Big data set training are not easy to achieve on CNNs despite their strong performance in the small data sets. Vision transformers performance rate tends to be more stable with big data algorithm system as well as it self-attention mechanism when been per-trained. D'Ascoli et al.(2021) propounded Gated Positional Self-Attention (GPSA) to help study the quality and performance of this big data. GPSA uses self convolutional inductive bias with freedom to escape layers localities. This system can navigate through different localities(layers), learns, regulates and collects content information from the hyperparameters during its training period. Hyperparameters visualisation and correctness is greatly improving in the method compare to the standard vision transformer method as the author last further explain using Image net sample and parameter efficiency. Interestingly, GPSA initialises more hyperparameters in its earlier layers while the later focuses more on content data( other distinctive data sets). 
+#### 2. Soft Convolutional Inductive Biases' Effectiveness in Vision Transformation Improvement
 
-**Suitable degrees of freedom**
+The convolution network strongly supports inductive bias layers. The convolution network layers are made up of the concepts of weight sharing and localisation. These layers are based on imaging principles (translation, symmetric transformation, reflection). In visible corrected, activation patterns may be seen. 
+On CNNs, training large data sets is difficult. The performance rate of Vision transformers is more consistent. Big data set algorithm systems have demonstrated this stability. When pre-trained, it is also termed a self-attention mechanism. (2021). The concept of Gated Positional Self-Attention (GPSA) has been proposed. This was done to aid in the investigation of the data's quality and performance. To avoid layer locations, GPSA employs self-convolutional inductive bias with freedom. Systems can move through various layers (locations), learn, govern, and collect content-specific data. During their training period, the hyperparameters provide this information. The method dramatically improves the display and correctness of hyperparameters. When compared to the traditional vision transformer method, this improvement is significant. The author goes on to discuss how to use image net samples and parameter efficiency in more detail. 
+In its earliest layers, GPSA appears to initialize more hyperparameters. The final (later) levels are more concerned with content data (other distinctive data sets).
+ 
+#### 3. Enough degrees of freedom 
 
-  Here the major challenge is how to fine-tune the hyperparameters in the deep neural network for a for a more accurate output. What basic factors are used to measure the degree of freedom in a network. Just like basic statistical speculation postulate exists to help analyse the probability rate of an event turning out successful, Larsen et all.(2021) propose a theory. This theoretical hypothesis is based on probability rate of hitting success when the hyperparameters of a system data sets is under training.The possibility of success(accuracy) is wholly dependent on the degree of freedom in a deep neural network. The theory has factors to consider during training process like dimensionality, sub-space distance between parameters and sub-level set, geometry, etc. The theory proof a powerful theorem, which generalises Gordon’s Escape Theorem to well-known sets. The primary outcomes highlights the existence of a section transition in the success chance. During the initialisation of parameters, it is best to keep dimensioning simple and clear. The possibility of the subspace been proportional to the loss sub-level set is wholly dependent on dimensionality.
-The theory (lottery subspaces) aims at reiterating information from previous training tests, sets parameters to a low dimensional projection, compares the parameters to the top dimensional principal components of such trajectory. This theoretical hypothesis lead to a conclusion that subspace-confined neural networks may even outperform lottery tickets for similar compression.
+The main challenge here is fine-tuning the deep network's hyperparameters. This is a difficult task because the output's accuracy is in question. 
+What key elements are used to determine a network's degree of freedom? 
+Basic statistical speculation postulates exist to help examine the likelihood rate of an event. Larsen et al. (2021) suggest a theory to aid in the resolution of the fine-tuning issue. The probability of success in a deep network underpins this idea. This is what is expected to happen when the hyperparameters of a system data set are being trained.
+In a deep network, the degree of freedom determines whether or not success (accuracy) is possible. During the training process, the theory has aspects to consider. Gordon's Escape Theorem is generalized by the theory that establishes a powerful theorem. This theorem can be applied to any set that is well-known. In a successful chance, the principal outcome emphasizes the presence of a section transition. It's best to keep dimensionality as low as possible while initializing parameters. Dimensionality influences the sub-level set of network layers.
+The theory (lottery subspaces) seeks to repeat data from prior training experiments. It then establishes the settings for a low-dimensional projection. It compares the parameters to such a trajectory's top-dimensional principal components. The result of this theoretical hypothesis is that both postulates are true. For the same compression, subspace-confined neural networks could even outperform lottery tickets. 
 
-### Diagram demonstrating the different scenarios one can fall into when configuring the learning rate.
+ ### CONCULSION
+With the vast and rapid development of technology, deep learning is the key to today’s smart world. This has brought an ease in communication between humans and their daily environment. There are some difficulties in understanding the deep learning system algorithm.
+Some real-life postulates are cited to help design the deep network algorithm.
+
+There are some factors that affect the performance of  deep learning systems. These factors tend to reduce the accuracy level of the system: These factors include: 
+* Considered a problem.
+* Evaluation difficulties of default hyperparameters for multiple optimisers.
+* Technical know-how
+* Which optimiser suits the learning algorithm best?
+
+There are some steps to aim at in order to achieve a perfect performance rate in a deep learning system. Factors like;
+* The functionality of individual layers in the deep network system.
+* The efficiency of soft convolutional inductive biases in vision transformation improvement.
+* Suitable degrees of freedom to aim at in the deep network while training.
+
+
+### Diagram Demonstrating The Different Scenarios One Can Fall Into When Configuring The Learning Rate.
 
  ![different_scenarios_one_needs_to_know_when_configurating_the_learning_rate_in_deep_learning] (engineeringeducation/factors_that_affects_the_performance_of_system_using_deep_learning/display_rate_charts.png) 
 
