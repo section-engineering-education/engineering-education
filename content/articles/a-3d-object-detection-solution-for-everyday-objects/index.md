@@ -114,3 +114,6 @@ We're living in very exciting times. Breakthroughs in artificial intelligence ca
 - [MediaPipe Objectron](https://google.github.io/mediapipe/solutions/objectron)
 - [Objectron: A Large Scale Dataset of Object-Centric Videos in the Wild with Pose Annotations](https://arxiv.org/pdf/2012.09988.pdf)
 - [Hero image](https://unsplash.com/@sebastiansvenson?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+
+---
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
