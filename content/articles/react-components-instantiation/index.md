@@ -94,7 +94,7 @@ The `new` keyword creates a blank, simple JavaScript item. Its syntax is `new co
 The `new` keyword makes `this` keyword to point to the object that has been newly created, each time `this` keyword is mentioned. The `new` keyword executes the constructor function, using the object that has been newly created. Hence, the newly created object is returned.
 
  #### Instantiating function components
-Function components are simple JavaScript components. They don't use a `render` method. Instead, they are responsible for rendering the user interface. They also accept and use props. A function component is considered a "dump" because it simply accepts data.
+Function components are simple JavaScript components. They don't use a `render()` method. Instead, they are responsible for rendering the user interface. They also accept and use props. A function component is considered a "dump" because it simply accepts data.
 
  ***example***
  ```js
