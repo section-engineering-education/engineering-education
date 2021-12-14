@@ -1,10 +1,10 @@
 Building Web applications from scratch as a Web developer can be painful and time-consuming. As web developers, we want to build fast and responsive web applications. We are always implementing the same UI components (ex. authentication, headers, user menu, footer, navigation, etc) in every project so why start over and over again. DevExtreme is here to take all the pain away. Devextreme is one of the [DevExpress](https://www.devexpress.com/) components. It includes a collection of high-performance and responsive UI widgets which can be used to build both mobile and web applications.
 
-DevExtreme mainly works with the Javascript frameworks: Angular, React jQuery, and Vue. It can also be used with technologies like ASP.NET MVC, Knockout, and ASP.NET Core. It is fast and easy to use because of its ready-built responsive UI components. These include interactive charts, Data editors, drop-down boxes, and much more. DevExtreme can also be added to existing applications. For further studies, you can find more info [here](https://js.devexpress.com/)
+DevExtreme mainly works with the Javascript frameworks: Angular, React, jQuery, and Vue. It can also be used with technologies like ASP.NET MVC, Knockout, and ASP.NET Core. It is fast and easy to use because of its ready-built responsive UI components. These include interactive charts, data editors, drop-down boxes, and much more. DevExtreme can also be added to existing applications. For further studies, you can find more info [here](https://js.devexpress.com/)
 
 ### Prerequisites
 To understand this article basic knowledge of the following is required:
-- JavaScript frameworks (React, Angular, Vue, and jQuery).
+- JavaScript frameworks (React, Angular, Vue, or jQuery).
 - App templating.
 - Visual Studio Code/Visual Studio (Recommended)
 
@@ -36,19 +36,19 @@ The way we create Devextreme applications is quite different depending on the ja
 
 #### For React applications
  1. ```npx -p devextreme-cli devextreme new react-app application-name```
- 2. ```cd application name```
+ 2. ```cd application-name```
  3. ```npm run start```
 > The documentation for this can be found [here](https://js.devexpress.com/Documentation/Guide/React_Components/Create_a_DevExtreme_Application/)
 
 #### For Angular applications
  1. ```npx -p devextreme-cli devextreme new angular-app application-name```
- 2. ```cd application name```
+ 2. ```cd application-name```
  3. ```npm run start```
 > The documentation for this can be found [here](https://js.devexpress.com/Documentation/Guide/Angular_Components/Getting_Started/Create_a_DevExtreme_Application/)
 
 #### For Vue applications
  1. ```npx -p devextreme-cli devextreme new vue-app application-name```
- 2. ```cd application name```
+ 2. ```cd application-name```
  3. ```npm run start```
 > The documentation for this can be found [here](https://js.devexpress.com/Documentation/Guide/Vue_Components/Create_a_DevExtreme_Application/)
 
