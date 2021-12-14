@@ -76,7 +76,7 @@ It would be best to give it the same name as the component class. For example, l
  }
    <Valley />
 ```
-The code appears this way after creating a component instance. So there’s your component instance! It gets instantiated when class `Valley` gets passed as an argument in `ReactDOM.render`. 
+The code appears this way after creating a component instance. So there’s your component instance! It gets instantiated when class `Valley` gets passed as an argument in `ReactDOM.render()`. 
 
 Let's now render our component:
 ```js
