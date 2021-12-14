@@ -1,6 +1,6 @@
 
-Floating Action Buttons or FAB are different from other UI elements. FAB is a circular-shaped button with a centralized icon.
-This button usually appears on top of all screen content. It promotes different actions including adding an item to a list. 
+FABs, or Floating Action Buttons, are distinct from other UI elements. FAB is a circular-shaped button with a centralized icon.
+This button usually appears on top of all screen content. It promotes  a variety of actions, such as adding an item to a list.
 
 ### Prerequisites
 
@@ -12,7 +12,7 @@ To follow along, you need:
 This tutorial will accomplish the following objectives:
 - Using material design components.
 - Creating a bottom navigation bar.
-- Adding a custom floating action button at the center of a bottom navigation bar.
+- How to add a FAB to a BottomNavigationBar
 
 ### Introduction
 
@@ -31,7 +31,7 @@ The Bottom Navigation Bar is imported from the [`material design`](https://mater
 In your app-level `build.gradle` file, ensure that you have the `material design library.
 > Note that a `Bottom Navigation Bar` can contain a single task or component. However, it's advisable to include at least three destination icons.
 
-### Step 1: Create a new project
+### Step 1: Creating a new project
 
 - To create a new project, click on File followed by New then Project
 - Select Empty Activity then click Next.
