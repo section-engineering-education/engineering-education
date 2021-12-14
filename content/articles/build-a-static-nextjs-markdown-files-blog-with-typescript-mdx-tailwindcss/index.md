@@ -22,7 +22,7 @@ Next.js further supports static sites generation. This means you can easily buil
 
 In this guide, we will build a static Next.js markdown files blog with Typescript, MDX, and Tailwind CSS.
 
-We will discuss technologies to build an entire application from scratch using this stack. Finally, we will set up the whole stack to the CI/CD Versel deployment.
+We will discuss technologies to build an entire application from scratch using this stack. Finally, we will set up the whole stack for the CI/CD Vercel deployment.
 
 ### Prerequisites
 To proceed with this tutorial, it is important to have the following:
@@ -64,12 +64,12 @@ With Next.js, you can start styling with JSX CSS, less, sass, Tailwind, CSS modu
 #### Supports TypeScript
 You don't have to install anything special to make Typescript work with Next.js. Typescript is a superset and a static type version of JavaScript.
 
-Next.js provides an one-time `create-next-app` command that helps you bootstrap and load TypeScript supported templates.
+Next.js provides a one-time `create-next-app` command that helps you bootstrap and load TypeScript supported templates.
 
 Even if you change your files from `.js` to `.ts`, it works the same.
 
 ### Create a basic Next.js TypeScript application
-The `create-next-app` command in Next.js allows you to fetch a boostrapped Next.js application.
+The `create-next-app` command in Next.js allows you to fetch a bootstrapped Next.js application.
 
 To set up the Next.js application, we will use a tool provided by the Next.js team to abstract the process of setting up an application.
 
