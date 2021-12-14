@@ -49,11 +49,11 @@ In this tutorial, we will be using  **YOLO** (_You Only Look Once_) specifically
 
 YOLO is a fast and accurate approach to object detection. The algorithm only looks at an image once and detects all the objects that are present along with their location.
 
-YOLO works by splitting images into a grid where each grid cell identifies an object by itself. The grid cells predict all the bounding boxes and gives each of them a confidence scores to detemine the accuracy of each prediction.
+YOLO works by splitting images into a grid where each grid cell identifies an object by itself. The grid cells predict all the bounding boxes and give each of them a confidence score to determine the accuracy of each prediction.
 
-When it comes to perfomance, YOLO outperforms other object detectors by far. In real-time, it can process images at a rate of around 155 frames per second (fps), achieving double the mAP(Mean Average Precision - *a popular evaluation metric for object detectors*) of other object detectors like R-CNN.
+When it comes to performance, YOLO outperforms other object detectors by far. In real-time, it can process images at a rate of around 155 frames per second (fps), achieving double the mAP(Mean Average Precision - *a popular evaluation metric for object detectors*) of other object detectors like R-CNN.
 
-YOLOv5, the latest release of the YOLO family is a group of compound-scaled object detection models trained on the COCO dataset used for model ensembling (*combining multiple models in the prediction process*), Test Time Augmentation (*performing random modifications to the test images like flipping, rotating etc.*) and hyperparameter evolution (*optimizing hyperparameters using a genetic algorithm for optimization*).
+YOLOv5, the latest release of the YOLO family is a group of compound-scaled object detection models trained on the COCO dataset used for model ensembling (*combining multiple models in the prediction process*), Test Time Augmentation (*performing random modifications to the test images like flipping, rotating, etc.*) and hyperparameter evolution (*optimizing hyperparameters using a genetic algorithm for optimization*).
 
 ### Setting up the development environment
 To set up our development environment, we will start by creating our project's virtual environment as shown below:
@@ -80,7 +80,7 @@ cd ..
 cd ..
 ```
 
-Once our environment setup is done, we will then move on to installing our projects dependencies.
+Once our environment setup is done, we will then move on to installing our project's dependencies.
 
 ### Installing project dependencies
 We will start by first cloning the YOLOV5 repository on GitHub using the following command:
@@ -113,7 +113,7 @@ python detect.py --source 0
 
 ![object1](/engineering-education/building-an-object-detection-model-with-yolov5-and-pytorch/object1.png)
 
-To test its peformance on other sources like an image file (let's say `img.jpg`), use the following command:
+To test its performance on other sources like an image file (let's say `img.jpg`), use the following command:
 
 ```bash
 python detect.py --source img.jpg  # for a specific image file
@@ -125,7 +125,7 @@ Running the following command will detect objects on our images stored in the pa
 python detect.py --weights yolov5s.pt --img 640 --conf 0.25 --source data/images
 ```
 
-Here, we are using yolov5 pretrained weights to train images at a default resolution of `--img 640` (size 640 pixels) from source `data/images`.
+Here, we are using yolov5 pre-trained weights to train images at a default resolution of `--img 640` (size 640 pixels) from source `data/images`.
 
 ![boda](/engineering-education/building-an-object-detection-model-with-yolov5-and-pytorch/boda1.jpg)
 
@@ -145,7 +145,7 @@ python detect.py --source 'https://youtu.be/Zgi9g1ksQHc'  # for a specific YouTu
 python detect.py --source 'rtsp://example.com/media.mp4'  # for a specific RTSP, RTMP, or HTTP stream
 ```
 
->**NOTE**: Before running the commands above, make sure the objects that you want to detect are located under `data/...` folder. For example, `data/videos`, `data/images` etc.
+>**NOTE**: Before running the commands above, make sure the objects that you want to detect are located under the `data/...` folder. For example, `data/videos`, `data/images`, etc.
 
 ### Model inference with PyTorch Hub and YOLOv5
 To check the inference using PyTorch, we will load the pre-trained `YOLOv5s` model from PyTorch Hub and then pass an image for inference.
@@ -174,7 +174,7 @@ The result of the above code will be something like this:
 You can also access the results of the code above on [GitHub](https://github.com/FREDERICO23/object-detection).
 
 ### Model training
-We will proceed to train our model on [COCO128](https://www.kaggle.com/ultralytics/coco128) that is downloaded along with YOLOv5 from [YOLOv5 latest releases](https://github.com/ultralytics/yolov5/releases).
+We will proceed to train our model on [COCO128](https://www.kaggle.com/ultralytics/coco128) that is downloaded along with YOLOv5 from [YOLOv5's latest releases](https://github.com/ultralytics/yolov5/releases).
 
 We will use YOLOv5 pretrained weights (`--weights yolov5s.pt`)  when training our custom model as shown below:
 
@@ -211,7 +211,7 @@ Once done, we will then run the following command to validate our model.
 python val.py --weights yolov5x.pt --data coco.yaml --img 640 --iou 0.65 --half
 ```
 
-Here, we test YOLOv5x on [COCO val2017](https://cocodataset.org/) dataset at image size `640` pixels.
+Here, we test the `YOLOv5x` on [COCO val2017](https://cocodataset.org/) dataset at image size `640` pixels.
 
 Below is an example of our output:
 
@@ -220,11 +220,11 @@ Below is an example of our output:
 The model's evaluation results will be saved to directory `runs/val/exp`.
 
 ### Conclusion
-To wrap up, we have learned what object detection is, its applications and implementation.
+To wrap up, we have learned what object detection is, its applications, and its implementation.
 
 We have also tackled the YOLO object detection algorithm (YOLOv5 particularly) which we used to perform our own object detection by setting up the environment to detect images and videos.
 
-> NOTE: The actual process of building of the model from scratch goes beyond this tutorial.
+> NOTE: The actual process of building the model from scratch goes beyond this tutorial.
 
 Code for the object detector can be found [here](https://github.com/FREDERICO23/object-detection).
 
