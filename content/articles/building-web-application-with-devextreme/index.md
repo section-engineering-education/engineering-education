@@ -112,7 +112,7 @@ Below is the result of the above changes:
 Click [here](https://js.devexpress.com/Documentation/Guide/Themes_and_Styles/Predefined_Themes/) to view the DevExtreme predefined themes using material design themes and generic compact.
 
 ### Conclusion
-DevExtreme is one of DevExpress' components that works with Javascript frameworks (React, Angular, Vue, and jQuery) to build fast responsive web or mobile applications. It has a lot of ready-built UI Components and other awesome features. DevExtreme is fast easy to use and well documented. I suggest you read more about DevExpress [here](https://docs.devexpress.com/).
+DevExtreme is one of DevExpress' components that works with Javascript frameworks (React, Angular, Vue, and jQuery) to build a fast responsive web or mobile applications. It has a lot of ready-built UI Components and other awesome features. DevExtreme is fast easy to use and well documented. I suggest you read more about DevExpress [here](https://docs.devexpress.com/).
 
 ### Further reading
 [DevExpress Documentation](https://docs.devexpress.com/)
