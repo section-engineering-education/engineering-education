@@ -11,11 +11,11 @@ To follow through, you need to have these:
 
 We will be creating an app that displays a dialog asking the user if he/she is still active or not. The method for displaying the dialog will be fired after 15 seconds of inactivity. We check for the user's activeness by checking if he is doing some tapping on the screen. We embed our gesture detector on the whole screen and not on individual subclassed views. This enables us to detect gestures done on the whole screen. This will be the final output.
 
-![screen-one](before.png)
+![screen-one](/engineering-education/android-autologout-kotlin/before.png)
 
 The first screenshot before the time elapses.
 
-![screen-two](after.png)
+![screen-two](/engineering-education/android-autologout-kotlin/after.png)
 
 The second screenshot after the time elapses.
 
