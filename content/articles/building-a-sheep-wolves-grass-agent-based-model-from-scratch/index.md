@@ -187,9 +187,7 @@ http-server
 ```
 
 Go to `[http://localhost:8080](http://localhost:8080)` and *yay! A gray square!!*
-
-> Note: for now on, we will need to update this page several times. If you update it and see no changes, try to update using Ctrl + F5 or Cmd + F5.
-> 
+> Note: From now on, we will need to update this page several times. If you update it and see no changes, try to update using `Ctrl + F5` or `Cmd + F5`.
 
 ### Step 2 - Programming the agents
 
