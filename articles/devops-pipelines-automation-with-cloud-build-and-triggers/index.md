@@ -18,9 +18,9 @@ DevOps is a set of practices or stages that every application goes through befor
 <!--more-->
 The Software Development Life Cycle (SDLC) in conjunction with the operations cycle makes the development and operations (known as DevOps). 
 
-Docker packages applications as docker images and stores them into containers with their configurations defined within the `DockerFile`.
+Docker packages applications as Docker images and stores them into containers with their configurations defined within the `DockerFile`.
 
-Both the Google Cloud Platform's (GCP) [`Cloud Build`](https://cloud.google.com/build) and [Container Registry](https://cloud.google.com/container-registry) are used to build and manage the built docker images.
+Both the Google Cloud Platform's (GCP) [`Cloud Build`](https://cloud.google.com/build) and [Container Registry](https://cloud.google.com/container-registry) is used to build and manage the built docker images.
 
 ### Table of contents
 - [Pre-requisites](#pre-requisites)
@@ -36,7 +36,7 @@ Both the Google Cloud Platform's (GCP) [`Cloud Build`](https://cloud.google.com/
 - [Conclusion](#conclusion)
 
 ### Prerequisites
-To follow along this tutorial with ease, one should have the following:
+To follow along with this tutorial with ease, one should have the following:
 - Have a basic understanding of Git repository and programming languages like Python.
 - Have installed [Python](https://www.python.org/downloads/).
 - Have installed an IDE or code editor, preferably [Visual Studio Code](https://code.visualstudio.com/download).
@@ -63,7 +63,7 @@ The picture below describes all the pre-defined stages:
 
 ![DevOps Stages](/engineering-education/devops-pipelines-automation-with-cloud-build-and-triggers/stages.png)
 
-Let's understand more about each stages:
+Let's understand more about each stage:
 
 #### Plan
 Without a proper plan, no one can successfully develop an application. An adequate plan must be put in place before embarking on the journey of development.
@@ -74,7 +74,7 @@ This is the stage where the justifications shall be given to technology stacks a
 Developers embark on the coding part after the requirements have been set in stage one. They will work on the application by collaborating through a single source of a repository. 
 
 #### Build
-In this stage, the application developed shall be packaged and built into images using their choice of a package manager like `Docker`.
+In this stage, the application developed shall be packaged and built into images using the choice of a package manager like `Docker`.
 
 The application will also be shipped into containers with the configurations file required for its start-up.
 
@@ -89,7 +89,7 @@ This is where the stage of continuous integration begins. This stage will be rep
 The popular tools used for this are `Jenkins`, `GitHub Actions`, `Team City`, and many more. 
 
 #### Deploy
-An application that passed the continuous integration stage will proceed to the deployment stage. Staging will be the first thing before deployment using tools like `Ansible`, `Puppet` or `Chef`. 
+An application that passed the continuous integration stage will proceed to the deployment stage. Staging will be the first thing before deployment using tools like `Ansible`, `Puppet`, or `Chef`. 
 
 #### Operate 
 The actual deployment starts in this stage using tools like `terraform` etc. The refined application will then be deployed and its operations will be monitored. 
@@ -143,7 +143,7 @@ gcloud config set project
 ```
 
 - If prompted, click `Continue`.
-- Enter the following commands in cloud shell to create a new folder `learning-devops`, and clone the created repository created:
+- Enter the following commands in the cloud shell to create a new folder `learning-devops`, and clone the created repository created:
 
 ```bash
 mkdir learning-devops
@@ -156,7 +156,7 @@ gcloud source repos clone devops-repo
 ### Create a Python application
 We will create a Flask application for demonstration. The application will be good enough to test the pipeline that you are going to build.
 
-Below are the set of instructions for the application:
+Below is the set of instructions for the application:
 - In the cloud shell, click `Open Editor` to open the code editor.
 - Select the `learning-devops > devops-repo` folder in the explorer tree on the left.
 - Click `New File` and name it `main.py`.
@@ -454,7 +454,7 @@ git push origin master
 ### Conclusion
 In this tutorial, you built a continuous integration pipeline using the Google Cloud services like Cloud Source Repositories, `Cloud Build`, `Build Triggers`, and `Container Registry`.
 
-You learned how the automation of pipelines works using the build triggers, when there is an update in the code repository. You also learned about the basics commands with git and how to spin up the Flask server from the ground up. 
+You learned how the automation of pipelines works using the build triggers when there is an update in the code repository. You also learned about the basics commands with git and how to spin up the Flask server from the ground up. 
 
 You can find the full code [here]([Code Repository](https://github.com/damikanye/flaskproject)).
 
