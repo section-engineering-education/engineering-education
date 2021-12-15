@@ -1,4 +1,21 @@
-[Ktor](https://ktor.io/) is a client-server framework that helps us build applications in Kotlin. It is a modern asynchronous framework backed by Kotlin coroutines. Ktor can be compared to a network library such as [OkHttp](https://square.github.io/okhttp/) and [Retrofit](https://square.github.io/retrofit/).
+---
+layout: engineering-education
+status: publish
+published: true
+url: /making-http-requests-with-ktor-in-android/
+title: How to Make HTTP Requests With Ktor-Client in Android Jetpack Compose
+description: This tutorial provides a step-by-step guide on how to make HTTP requests with Ktor-Client in Android Jetpack Compose.
+author: moses-chege
+date: 2021-12-15T00:00:00-16:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/making-http-requests-with-ktor-in-android/hero.jpg
+    alt: How to Make HTTP Requests With Ktor-Client in Android Jetpack Compose
+---
+[Ktor](https://ktor.io/) is a client-server framework that helps us build applications in Kotlin. It is a modern asynchronous framework backed by Kotlin coroutines.
+<!--more-->
+Ktor can be compared to network library such as [OkHttp](https://square.github.io/okhttp/) and [Retrofit](https://square.github.io/retrofit/).
 
 We can use Ktor to make HTTP network requests to an API to get the response back to an application. Adding networking capabilities to an application developed with a traditional UI toolkit or Jetpack Compose is straightforward with the [Ktor Client](https://ktor.io/docs/getting-started-ktor-client.html).
 
@@ -23,7 +40,7 @@ To follow along with this tutorial, you will need to have:
 ### Setting up a Jetpack Compose Android project
 To use Jetpack Compose, you need to create a project that has a Jetpack Compose toolkit. To do this, navigate to your Android Studio and create a new Empty Compose project.
 
-![compose-activity](/engineering-education/http-requests-with-ktor-client-in-android-jetpack-compose/compose-activity.png)
+![compose-activity](/engineering-education/making-http-requests-with-ktor-in-android/compose-activity.png)
 
 Once the project is ready, open `AndroidManifest.xml` and add internet permission as shown below:
 
@@ -37,7 +54,6 @@ Internet permission is required to make HTTP requests to the API.
 Let's add all the necessary libraries that we need to process and display data. We need the following libraries:
 
 #### Ktor dependencies
-
 Ktor has a number of libraries that you can use depending on the intent you want to achieve. In this app, we will use the libraries below:
 
 ```gradle
@@ -83,7 +99,6 @@ plugins {
 ```
 
 #### Coil image dependency
-
 [Coil](https://coil-kt.github.io/coil/) is a fast, lightweight, and easy to use Android image loading library backed by Kotlin coroutines. The data we are using contains image URLs. We'll  use Coil to parse and load the responses with image URLs in our application.
 
 ```kotlin
@@ -92,14 +107,13 @@ implementation "io.coil-kt:coil-compose:1.4.0"
 ```
 
 #### Setting up the `build.gradle` project file
-
 To use the above Kotlinx plugin, we need to set up a classpath so that Android can find this plugin and use it. Add the following classpath in your `build.gradle` project file.
 
 ```gradle
 classpath "org.jetbrains.kotlin:kotlin-serialization:1.5.21"
 ```
 
-Once the above processes are done, click `sync now` to download the dependencies and jump into structuring our client app.
+Once the above processes are done, click `sync now` to download the dependencies and jump into structuring your client app.
 
 ### Setting up the data models
 A model is a data transfer object. It has data classes that represent what we get from an API. We will process the returned data and show it in Jetpack Compose composables.
@@ -275,7 +289,7 @@ private val apiService by lazy {
 
 This will create a new instance of the lazy that uses the specified initialization function initializer and the default thread-safety mode `LazyThreadSafetyMode.SYNCHRONIZED`.
 
-Create an empty `initialValue` that returns an observable snapshot state that produces values over time without a defined data source. This will allow the client to access the data source asynchronously as data is being populated to the set Jetpack Compose states. 
+Create an empty `initialValue` that returns an observable snapshot state that produces values over time without a defined data source. This will allow the client to access the data source asynchronously as data is being populated to the set Jetpack Compose states.
 
 Also, we will add a `producer` that returns the values of the defined data source. Add the following code block inside the application Theme block.
 
@@ -350,13 +364,15 @@ This column is similar an actual RecyclerView. Here we are using Jetpack Compose
 
 We are wrapping each item in a `Box` that has three properties, the `Image` and two `Text` blocks.
 
-First, we will process the returned data and get the value of the `image`. The returned string is a URL that loads an image from the server. To load these images, we are using a Coil image loader as mentioned earlier. Here we set the image URL, pass the parameter `data` and assign it the value of the returned image URL. This will launch an image request. If return `true`, we proceed with the response and load the image into the Image composable using the Painter. This will create a composable that lays out and draws a given Painter. This will attempt to size the composable according to the Painter's intrinsic size and the `Modifier` parameters.
+First, we will process the returned data and get the value of the `image`. The returned string is a URL that loads an image from the server. To load these images, we are using a Coil image loader as mentioned earlier. Here we set the image URL, pass the parameter `data` and assign it the value of the returned image URL. This will launch an image request.
+
+If it returns `true`, we proceed with the response and load the image into the Image composable using the Painter. This will create a composable that lays out and draws a given Painter. This will attempt to size the composable according to the Painter's intrinsic size and the `Modifier` parameters.
 
 If it returns `false`, we skip executing the request and build an optional lambda,configure the request, and set an error drawable resource. The Text composable will load the values of product `title` and `description`.
 
 The app is now ready, and you can run it to test if everything works as expected.
 
-![ktor-client](/engineering-education/http-requests-with-ktor-client-in-android-jetpack-compose/ktor-client.png)
+![ktor-client](/engineering-education/making-http-requests-with-ktor-in-android/ktor-client.png)
 
 ### Conclusion
 Ktor is used for HTTP requests such as get, post, delete, and update. Ktor is a straightforward, easy-to-use framework language that is entirely built on coroutines. It enables asynchronous programming with minimal boilerplate code.
@@ -364,3 +380,6 @@ Ktor is used for HTTP requests such as get, post, delete, and update. Ktor is a 
 In this tutorial, we have learned how we can use the Ktor client and perform HTTP requests. We have used the turned response and displayed the whole list of data using Jetpack Compose and processed the image responses using Coil.
 
 Happy Composing!
+
+---
+Peer Review Contributions by: [Eric Gacoki](/engineering-education/authors/eric-gacoki/)
