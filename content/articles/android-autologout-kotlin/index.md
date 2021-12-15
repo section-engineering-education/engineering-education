@@ -9,27 +9,19 @@ To follow through, you need to have these:
 
 ### What we will be doing
 
-We will be creating an app that displays a dialog asking the user if he/she is still active or not. The method for displaying the dialog will be fired after 15 seconds of inactivity. We check for the user's activeness by checking if he is doing some tapping on the screen. We embed our gesture detector on the whole screen and not on individual subclassed views. This enables us to detect gestures done on the whole screen. This will be the final output.
-
-![screen-one](/engineering-education/android-autologout-kotlin/before.png)
-
-The first screenshot before the time elapses.
-
-![screen-two](/engineering-education/android-autologout-kotlin/after.png)
-
-The second screenshot after the time elapses.
+We will be creating an app that displays a dialog asking the user if he/she is still active or not. The method for displaying the dialog will be fired after 15 seconds of inactivity. We check for the user's activeness by checking if he is doing some tapping on the screen. We embed our gesture detector on the whole screen and not on individual subclassed views. This enables us to detect gestures done on the whole screen.
 
 ### The theory of auto logging out in our app
 
 For any gesture detected, the following actions are done.
 
-We first count the number of clicks. This will be done at every gesture detected on the screen. For example, if a user scrolls, the number of clicks is increased by 1. If he scrolls again, the count is incremented again making the number of clicks to 2. The same will be done for all other gestures.  
+We first count the number of clicks. This will be done at every gesture detected on the screen. For example, if a user scrolls, the number of clicks is increased by 1. If he scrolls again, the count is incremented again making the number of clicks to 2. The same will be done for all other gestures.
 
 Second, the user's active status will be set to `true`.
 
 Lastly, we start tracking the user's active status. There is a catch here. To avoid the dialog being displayed many times, we will only call the handler to the dialog display method only once. We achieve that by calling this method when the number of clicks is 1.
 
-We earlier stated that we will display the dialog after 15 seconds. We split this into 10 seconds and 5 seconds. That is, once we start detecting inactivity after a user interacts with the app, wait for 10 seconds. After that, deliberately set the active status to `false`, wait again for 5 seconds, and check the active status again. If the user has not interacted with the screen, definitely the status will still be `false`. Now that it is `false`, we display the dialog. Otherwise, when he/she interacts with the screen, the active status will be `true`, so don't display the dialog. It is as simple as that. 
+We earlier stated that we will display the dialog after 15 seconds. We split this into 10 seconds and 5 seconds. That is, once we start detecting inactivity after a user interacts with the app, wait for 10 seconds. After that, deliberately set the active status to `false`, wait again for 5 seconds, and check the active status again. If the user has not interacted with the screen, definitely the status will still be `false`. Now that it is `false`, we display the dialog. Otherwise, when he/she interacts with the screen, the active status will be `true`, so don't display the dialog. It is as simple as that.
 
 Before we start creating the app, we will first briefly look at the two 'tools' we will use:
 
@@ -112,7 +104,7 @@ class MainActivity :
     }
 ```
 
-The first thing we note is that our Activity class extends the interface(`GestureDetector.OnGestureListener`). And since it is an interface, we have to use all methods provided by it as you can see. We override them to put in our custom code. In the `onCreate()` method, we instantiate the gesture detector and then pass in the current application context and an implementation of GestureDetector.OnGestureListener as the arguments. 
+The first thing we note is that our Activity class extends the interface(`GestureDetector.OnGestureListener`). And since it is an interface, we have to use all methods provided by it as you can see. We override them to put in our custom code. In the `onCreate()` method, we instantiate the gesture detector and then pass in the current application context and an implementation of GestureDetector.OnGestureListener as the arguments.
 
 In all the overridden methods, you will notice two similarities - they take in a `MotionEvent` object and return `true`. The `MotionEvent` is used to report movement events happening in the Activity. We return `true` to show that the event has been detected. For the `onFling()` and the `onScroll()` methods, we pass in extra parameters that are used for detecting the position where the two gestures were performed. They may be important when creating products like games etc. We will not use them for our article.
 
@@ -128,7 +120,7 @@ Handler(Looper.getMainLooper()).postDelayed({
 }, 5000)
 ```
 
-In the `Handler` class' constructor, we pass in a `postDelayed()` method from the `Looper`'s `getMainLooper()` method. A Looper is used to run a message loop for a thread(according to the official documentation). The `getMainLooper()`, as the name suggests, gets the looper running in an application's main thread. 
+In the `Handler` class' constructor, we pass in a `postDelayed()` method from the `Looper`'s `getMainLooper()` method. A Looper is used to run a message loop for a thread(according to the official documentation). The `getMainLooper()`, as the name suggests, gets the looper running in an application's main thread.
 
 The `postDelayed()` method enables a [Runnable](https://developer.android.com/reference/java/lang/Runnable) to run after a specified amount of time. The `Runnable`, in this case, it may be a method. Check this code.
 
@@ -293,7 +285,7 @@ class MainActivity :
 }
 ```
 
-After importing the required packages, we then declare the variable to hold our detector object, instantiate the values to hold the number of clicks, delay time, and the user's active status. The overridden methods are implemented as we discussed beforehand only that we pass in a `startDetection()` method to each of them. Let's see what the `startDetection()` method does. 
+After importing the required packages, we then declare the variable to hold our detector object, instantiate the values to hold the number of clicks, delay time, and the user's active status. The overridden methods are implemented as we discussed beforehand only that we pass in a `startDetection()` method to each of them. Let's see what the `startDetection()` method does.
 
 ```kotlin
     //a method to start detection
@@ -312,7 +304,7 @@ After importing the required packages, we then declare the variable to hold our 
     }
 ```
 
-Here is where the inactivity detection starts. We begin by setting the user's active status to `true` and increasing the number of clicks by 1. A conditional check is done to allow listening for clicks only once after the first one was passed in. 
+Here is where the inactivity detection starts. We begin by setting the user's active status to `true` and increasing the number of clicks by 1. A conditional check is done to allow listening for clicks only once after the first one was passed in.
 
 Moving to the `startListener()` method.
 
@@ -407,6 +399,6 @@ Run the app and do some touches, scrolls, and wait for 15 seconds to check the f
 Now, this was for one screen. What if you wanted to implement it on many screens? Would you rewrite the code in each Activity? Definitely, no. So get some coffee and write an inheritable(extendable) class which you can call on any screen. You can also make the function open another activity instead of the dialog. Also, you can implement a counter for the last 5 seconds and then later do a certain action like opening a Login screen.
 
 ### Conclusion
-We looked at the theory of the working, briefly touched on the `GestureDetector` and `Handler` classes, and finally created an auto-logout app using the two classes. Hope you had a great read. 
+We looked at the theory of the working, briefly touched on the `GestureDetector` and `Handler` classes, and finally created an auto-logout app using the two classes. Hope you had a great read.
 
 Happy coding!
