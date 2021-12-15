@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /how-to-build-a-glass-box-model-using-interpretml-python/
 title: Building a Glass-box model using InterprateML
-description: This article will provide a guide on how to us InterpretML to build glass box machine learning models.
+description: This article will provide a guide on how to use InterpretML to build glass box machine learning models.
 author: charles-ndirutu
-date: 2021-12-09T00:00:00-11:27
+date: 2021-12-15T00:00:00-04:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -16,7 +16,7 @@ images:
 ---
 
 Glass box models are models that are transparent to the user. In a glass box model, all the features and the model parameters are known to the user. They also know the criteria used by the model to reach its prediction results and conclusion. 
-
+<!--more-->
 This gives full transparency. One can know how the model works and functions behind the scenes. Glass box models are more robust and easily adaptable in a production environment.
 
 Traditionally, many machine learning engineers have been building black-box models. However, in black-box models, the users do not know the internal workings of the model. As a result, users cannot understand these models and accept the model blindly.
@@ -60,7 +60,7 @@ Glass box models have the following advantages.
 ### Install InterpretMl
 To use InterpretMl, we need to install it. Let us install it using the following code.
 
-```python
+```bash
 ! pip install interpret
 ```
 
@@ -80,7 +80,7 @@ A snip of the dataset is shown below.
 
 ![Dataset snip](/engineering-education/how-to-build-a-glass-box-model-using-interpretml-python/dataset-snip.png)
 
-To get the full dataset used in this tutorial, click [here](https://drive.google.com/file/d/1bJn59P8fJCWR059zD98yT7JU1t35XZwR/view?usp=sharing)then use the snippet below to load the dataset.
+To get the full dataset used in this tutorial, click [here](https://drive.google.com/file/d/1bJn59P8fJCWR059zD98yT7JU1t35XZwR/view?usp=sharing) then use the snippet below to load the dataset.
 
 ```python
 df = pd.read_csv("/content/bank-full.csv",sep=';')
@@ -116,7 +116,7 @@ To convert our data type run this code.
 df1 = pd.DataFrame({col: df[col].astype('category').cat.codes for col in df}, index=df.index)
 ```
 
-The code above `cat.codes` assigns numeric numbers to the categories or groups in our dataset. To see the results run this code.
+In the code above `cat.codes` assigns numeric numbers to the categories or groups in our dataset. To see the results run this code.
 
 ```python
 df1.head()
@@ -138,17 +138,13 @@ from sklearn.model_selection import train_test_split,cross_val_score
 
 Let us see what we have imported.
 
-#### LogisticRegression
-This is the algorithm used to train our black box classification model.
+**LogisticRegression**: this is the algorithm used to train our black box classification model.
 
-#### train_test_split
-It will split the dataset into a train set and a test set.
+**train_test_split**: it will split the dataset into a train set and a test set.
 
-#### cross_val_score
-Will be used to calculate the accuracy score of the machine learning model.
+**cross_val_score**: will be used to calculate the accuracy score of the machine learning model.
 
 ### Labels and features
-
 Features are the `X variable` in our dataset. This represents all the input columns that will be used during model training.
 
 ```python
@@ -169,7 +165,7 @@ To split the dataset, run this command.
 x_train,x_test,y_train,y_test = train_test_split(Xfeatures,ylabels,test_size=0.3,random_state=7)
 ```
 
-The dataset will be split using `test_size=0.3`. 70% of the dataset will be used for training and `30%` for testing.
+The dataset will be split using `test_size=0.3`. `70%` of the dataset will be used for training and `30%` for testing.
 
 We will build the model using the `LogisticRegression` algorithm.
 
@@ -322,7 +318,7 @@ The interface is shown below.
 
 ![Local explantion UI](/engineering-education/how-to-build-a-glass-box-model-using-interpretml-python/local-explanation.png)
 
-The features are grouped into features that contributed to the prediction result and those against the prediction results. Features for the prediction results are colored `orange`.on the other hand, those against the prediction are colored `blue`.  Using the UI, users can now know the role played by each feature. This leads to more transparent models that people can easily understand.
+The features are grouped into features that contributed to the prediction result and those against the prediction results. Features for the prediction results are colored `orange`. On the other hand, those against the prediction are colored `blue`.  Using the UI, users can now know the role played by each feature. This leads to more transparent models that people can easily understand.
 
 ### Conclusion
 
