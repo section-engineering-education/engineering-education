@@ -6,7 +6,7 @@ url: /building-a-sheep-wolves-grass-agent-based-model-from-scratch/
 title: Building a Sheep-Wolves-Grass Agent-Based Model from scratch using p5.js
 description: This tutorial will take you through how to create an Agent-Based Model from scratch using the Sheep-Wolves-Grass dynamics model.
 author: samuel-santos
-date: 2021-12-07T00:00:00-19:00
+date: 2021-12-15T00:00:00-19:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,6 +14,9 @@ images:
   - url: /engineering-education/building-a-sheep-wolves-grass-agent-based-model-from-scratch/hero.jpg
     alt: Building a Sheep-Wolves-Grass Agent-Based Model Hero image
 ---
+In this tutorial, we are going to create an Agent-Based Model from scratch. The model in question is the Sheep - Wolves - Grass dynamics.
+<!--more-->
+
 ### Prerequisites
 For this tutorial, you will need:
 - Basic knowledge of HTML, CSS, and JavaScript;
@@ -21,7 +24,7 @@ For this tutorial, you will need:
 
 ### Table of contents
 - [Introduction](#introduction)
-- [p5.js](#p5.js)
+- [p5.js](#p5js)
 - [The Sheep - Wolves - Grass Model](#the-sheep---wolves---grass-model)
     - [The agents and the mechanisms of interaction](#the-agents-and-the-mechanisms-of-interaction)
     - [The environment](#the-environment)
@@ -31,7 +34,7 @@ For this tutorial, you will need:
         - [Wander](#wander)
         - [Seek](#seek)
         - [Flee](#flee)
-    - [Life and Death (and Eating too)](#life-and-death-(and-eating-too))
+    - [Life and Death (and Eating too)](#life-and-death-and-eating-too)
     - [Reproduction](#reproduction)
 - [Step 3 - Programming the environment](#step-3---programming-the-environment)
 - [Step 4 - Final tweaks and plotting](#step-4---final-tweaks-and-plotting)
@@ -39,8 +42,7 @@ For this tutorial, you will need:
 - [References](#references)
 
 ### Introduction
-
-There are some complex dynamics and systems that we are not able to observe. That often happens for practical or ethical reasons. In these situations, simulations are very handy. With them, we are able to create an artificial environment with pre-defined rules. We can then simulate a whole system in this environment and analyze how it behaves. This is a model.
+There are some complex dynamics and systems that we are not able to observe. That often happens for practical or ethical reasons. In these situations, simulations are very handy. With them, we can create an artificial environment with pre-defined rules. We can then simulate a whole system in this environment and analyze how it behaves. This is a model.
 
 Models are abstract and simplified representations of reality. As the name implies, the purpose of models is not to faithfully reproduce a complex dynamic or system. But that doesn't imply they don't have their value. Models are powerful explanatory and predictive tools. We can extrapolate many insights from good models to real-world systems.
 
@@ -52,7 +54,7 @@ In this tutorial, we are going to create an Agent-Based Model from scratch. The 
 
 > If you are already familiar with p5.js you can skip this section. 
 
-We a going to use [p5.js, a Javascript library for creative coding,](https://p5js.org/)  to create our model. One of the applications of creative coding is to explain things visually. This is particularly interesting when we combine it with Agent-Based Models. With p5.js, we are able to:
+We a going to use [p5.js, a Javascript library for creative coding,](https://p5js.org/)  to create our model. One of the applications of creative coding is to explain things visually. This is particularly interesting when we combine it with Agent-Based Models. With p5.js, we can:
 
 - create visualizations of our model's complex dynamics;
 - manipulate parameters from our model;
@@ -74,7 +76,7 @@ In `setup()` we declare everything we need for the initial state of the sketch. 
 
 The `draw()` block functions like a loop. What we write inside of it will run several frames per second. This way we can update our initial state and create animations and interactions. It's like the functioning of a game. In the `draw()` block we usually draw objects and shapes, move them and update their state.
 
-I didn't show any concrete p5.js real example yet but don't worry, we'll see it along the tutorial.
+I didn't show any concrete p5.js real example yet but don't worry, we'll see it along with the tutorial.
 
 ### The Sheep - Wolves - Grass Model
 
@@ -88,7 +90,7 @@ With this, we can specify our Sheep - Wolves - Grass Model. For a reference and 
 
 #### The agents and the mechanisms of interaction
 
-As the model's name says, we have only 2 agents: the **sheep** and the **wolves**. We'll start our model with a fixed number of agents of each type randomly positioned and then they will wander through the environment. At each step of time, they will have a probability to reproduce, generating new agents of the same type. The agents will also have an initial amount of energy that decreases with time. When the energy gets to 0, they die. In order to live, the agents need to get new energy by eating.
+As the model's name says, we have only 2 agents: the **sheep** and the **wolves**. We'll start our model with a fixed number of agents of each type randomly positioned and then they will wander through the environment. At each step of time, they will have a probability to reproduce, generating new agents of the same type. The agents will also have an initial amount of energy that decreases with time. When the energy gets to 0, they die. To live, the agents need to get new energy by eating.
 
 - The wolves get a fixed amount of energy by eating sheep, thus they will hunt the sheep;
 - The sheep need to flee from the wolves to survive. Besides, they get a fixed amount of energy by eating grass. This leads us to our next section.
@@ -743,7 +745,7 @@ function draw() {
 }
 ```
 
-Update on the browser and there it is: the wolves hunting sheep inside their vision radius. Now we need to make the sheep flee from the wolves.
+Update on the browser and there are the wolves hunting sheep inside their vision radius. Now we need to make the sheep flee from the wolves.
 
 ##### Flee
 
@@ -808,7 +810,7 @@ if (closestWolf == null) {
 }
 ```
 
-This is pretty much the same thing we did for wolves, but for sheep and replacing `seek()` with `flee()`. You can update your page now and see it. It's getting very nice, right? If you want to, you can comment the code that draws our agents' vision fields to make our sketch simpler.
+This is pretty much the same thing we did for wolves, but for sheep and replacing `seek()` with `flee()`. You can update your page now and see it. It's getting very nice, right? If you want to, you can comment on the code that draws our agents' vision fields to make our sketch simpler.
 
 #### Life and Death (and Eating too)
 
@@ -1379,7 +1381,7 @@ Inside `setup()`, initialize `environment` with:
 environment = new Environment(width, height, tile_size, grow_time)
 ```
 
-Recall that `width` and `height` are global variables from p5.js, so we don't need to worry with them.
+Recall that `width` and `height` are global variables from p5.js, so we don't need to worry about them.
 
 Now, remove the `background(200, 200, 200)` at the beginning of `draw()`. Replace it with:
 
@@ -1483,7 +1485,7 @@ That's it! We finished! Let's update our page (use Ctrl + F5 or Cmd + F5 if you 
 
 What we can do now is to play with the parameters and see what happens when we add different values. For example, what happens when there's a lot of sheep and just a few wolves? What happens if there's a lot of wolves but just a few sheep? And if the grass takes too long to regrow? How do the initial energy, the food energy, and the lost energy values interfere in the model? Is there a set of values that creates an equilibrium where wolves and sheep live together without one or both going extinct?
 
-This is maybe the funniest part: running tests and creating hypotheses. Another thing you can try is to create variations of this model, maybe simplify it a bit or maybe add other parameters and make it more complex. You can also create your own models from scratch now! Use your creativity and have fun!
+This is maybe the funniest part: running tests and creating hypotheses. Another thing you can try is to create variations of this model, maybe simplify it a bit or maybe add other parameters and make it more complex. You can also create your models from scratch now! Use your creativity and have fun!
 
 ### References
 
