@@ -98,7 +98,6 @@ class MainActivity :
 
     override fun onLongPress(event: MotionEvent) {
         //do something
-        return true
     }
 
     override fun onScroll(
@@ -113,7 +112,6 @@ class MainActivity :
 
     override fun onShowPress(event: MotionEvent) {
         //do something
-        return true
     }
 
     override fun onSingleTapUp(event: MotionEvent): Boolean {
@@ -218,7 +216,6 @@ class MainActivity :
 
     override fun onLongPress(event: MotionEvent) {
         startDetection()
-        return true
     }
 
     override fun onScroll(
@@ -233,7 +230,6 @@ class MainActivity :
 
     override fun onShowPress(event: MotionEvent) {
         startDetection()
-        return true
     }
 
     override fun onSingleTapUp(event: MotionEvent): Boolean {
