@@ -2,23 +2,23 @@
 layout: engineering-education
 status: publish
 published: true
-url: /a-look-at-c#-coding-conventions/
+url: /a-look-at-csharp-coding-conventions/
 title: A Look at C# Coding Conventions
 description: In this tutorial, we will look at the C# language coding conventions that a programmer needs to consider and apply when programming.
 author: amos-njoroge
-date: 2021-12-04T00:00:00-12:00
+date: 2021-12-15T00:00:00-09:14
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/a-look-at-c#-coding-conventions/hero.jpg
+  - url: /engineering-education/a-look-at-csharp-coding-conventions/hero.jpg
     alt: A Look at C# Coding Conventions Hero Image
 ---
-This article outlines a set of coding guidelines, design principles, and naming conventions for the C# programming language and the `.NET` framework. 
+This article outlines a set of coding guidelines, design principles, and naming conventions for the C# programming language and the `.NET` framework.
 <!--more-->
 It lays out the rules in a format that is simple to read and understand, allowing software engineers to apply them rapidly. The article aims to serve as a primary source of information and efficiency for programmers.
 
-### Benefits of coding conventions:
+### Benefits of coding conventions
 - They make copying, changing, and maintaining code easier.
 - They help readers understand the code faster by allowing them to make assumptions based on prior knowledge.
 - They give the code a unified design so readers may concentrate on the content rather than the layout.
@@ -38,7 +38,7 @@ In the Pascal case, the first letter of every word is capitalized as displayed i
 
 When naming a class, record, or struct, use pascal casing ("PascalCasing") as shown in the code below:
 
-```
+```bash
 PublicSchool1
 ```
 
@@ -102,7 +102,7 @@ public record PublicIntitution
 ### Camel case
 The `camelCasing` convention, which is used for parameter names, capitalizes the first letter of every word except the first.
 
-```
+```bash
 voidMain
 ```
 
@@ -136,19 +136,28 @@ public T SomeMethod<T>(int someNumber, bool isValid)
 ```
 
 Apart from the above conventions, there are others that a programmer needs to consider and apply while in their daily routine of programming. They include:
+
 1. The choice of word - Use readable identifier names, underscores, hyphens, and other non-alphanumeric characters should not be used. The choice of the word implies that not any word can be used when programming, instead the proper words should be used.
+
 2. Hungarian notation is neither acceptable nor encouraged - A Hungarian notation is whereby the name of a variable or function denotes its intent or kind, as well as its type in some languages. Thus, it creates a programming language dependency and makes maintenance more difficult.
+
 3. The use of abbreviations and acronyms - Do not use acronyms that are not generally recognized, and even if they are, only use them when essential.
+
 4. Abbreviations and contractions should not be used as identifier names - This simply means that when one is writing an identifier, words should not be contracted but instead, well-known identifiers should be used.
 
 ### Layout conventions
 For a clear understanding of the code and its structure, formatting is exercised as a coding convention.
 
 Some of the layout coding conventions are:
+
 - Use the code editor's default settings that use smart indenting, four-character indents, and tabs that are saved as spaces.
+
 - Each line should accommodate one statement, i.e `// This is a comment for a single statement`. The disqualified one is, `// This is a comment 1, This is another comment`. Every single comment should be in a single statement.
+
 - Each line should only accommodate one declaration, eg. `varx=13`; and not `var x=13`; `var y =14;`
+
 - If the continuation lines are not indented consequently, they are supposed to be indented at a stop of one tab.
+
 - At least a single blank line is supposed to be added between the property definitions and the method. This is done to make sure that your code is clean and neat so that it is readable. A reader will have an easy time following your code and knowing what each line entails.
 
 Use enclosure or parenthesis to make provisions in an articulation clear, as displayed in the code below:
@@ -162,8 +171,11 @@ if ((valxyz > valxyz) && (valabc > valabc))
 
 ### Coding conventions for commenting
 - It is advisable to write a comment on its separate line for understandability.
+
 - It is also wise to start a comment with an uppercase letter.
+
 - The remark content should be ended with a period.
+
 - It is also advisable to place a single space between the comment delimiter `//` and the comment content, as displayed in the example below.
 
 ```c#
@@ -172,6 +184,7 @@ if ((valxyz > valxyz) && (valabc > valabc))
 ```
 
 - It is not advisable to use formatted blocks of asterisks `*` to surround comments.
+
 - Unearth that all public members are using the appropriate XML comments to describe their actions.
 
 ### A look at some language guidelines
@@ -208,7 +221,7 @@ When initializing arrays on the declaration line, use the `succinct` syntax. Let
 
 ```c#
 string[] alphabets1 = { "u", "v", "w", "x", "y", "z" };
-You can use var if you utilize explicit instantiation.
+// You can use var if you utilize explicit instantiation.
 var aplphabets2 = new string[] { "u", "v", "w", "x", "y", "z" };
 ```
 
@@ -225,9 +238,13 @@ alphabet3[1] = "b";
 In conclusion, a code is not only written but written under strict rules or standards that enable the output to be much more correct and to perform its task.
 
 The following is achieved using the coding conventions:
+
 1. Users will put their focus on the content rather than the layout because your code will have a consistent appearance.
+
 2. Based on earlier experience, readers may understand your code easily.
+
 3. Code becomes easier to copy, update, and maintain.
+
 4. You contribute to ensuring that your code follows Visual Basic's "best practices".
 
 Follow the conventions to become a perfect programmer!
