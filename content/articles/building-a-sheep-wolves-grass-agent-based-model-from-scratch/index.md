@@ -76,7 +76,7 @@ In `setup()` we declare everything we need for the initial state of the sketch. 
 
 The `draw()` block functions like a loop. What we write inside of it will run several frames per second. This way we can update our initial state and create animations and interactions. It's like the functioning of a game. In the `draw()` block we usually draw objects and shapes, move them and update their state.
 
-I didn't show any concrete p5.js real example yet but don't worry, we'll see it along with the tutorial.
+We didn't show any concrete p5.js real example yet but don't worry, we'll see it along with the tutorial.
 
 ### The Sheep - Wolves - Grass Model
 
@@ -1477,7 +1477,7 @@ You can see the whole code in [this GitHub repository](https://github.com/csamue
 
 ### Conclusion
 
-That's it! We finished! Let's update our page (use Ctrl + F5 or Cmd + F5 if you see no changes).
+That's it! We finished! Let's update our page (use `Ctrl + F5` or `Cmd + F5` if you see no changes).
 
 What we can do now is to play with the parameters and see what happens when we add different values. For example, what happens when there's a lot of sheep and just a few wolves? What happens if there's a lot of wolves but just a few sheep? And if the grass takes too long to regrow? How do the initial energy, the food energy, and the lost energy values interfere in the model? Is there a set of values that creates an equilibrium where wolves and sheep live together without one or both going extinct?
 
