@@ -67,17 +67,17 @@ To start my application:
 ```
 npm run start
 ```
-To view your DevExtreme template, DevExtreme runs on default port 4200 which corresponds to the URL: http://localhost:4200. Visit that URL on your favorite browser after running the application. Always remember to go through the `ReadMe` file before starting the application in case of any change or update. 
+To view your DevExtreme template, DevExtreme runs on a default port of 4200 which corresponds to the URL: http://localhost:4200. Visit that URL on your favorite browser after running the application. Always remember to go through the `ReadMe` file before starting the application in case of any change or update. 
 
-> The DevExtreme application template comes with Drawer, Data Grid, and forms Components.
+> The DevExtreme application template comes with drawer, data grid, and forms components.
 
 ### Default Template View
 ![/building-web-applications-with-devextreme/default-template-view](image1.png)
 
 ### DevExtreme ThemeBuilder
-Manipulating DevExtreme is really easy. Using the *ThemeBuilder*,  you can customize themes based on the DevExtreme default theme. The link to use the ThemeBuilder can be found [here](https://devexpress.github.io/ThemeBuilder/).
+Manipulating DevExtreme is really easy. Using the *ThemeBuilder*, you can customize themes based on the DevExtreme default theme. The link to use the ThemeBuilder can be found [here](https://devexpress.github.io/ThemeBuilder/).
 
- To configure the template theme open `src\themes\metadata.additional.json` and `src\themes\metadata.base.json`. In the template, edit the theme name in the JSON file. By default, the theme is orange as you can see in the image above. I changed mine to blue in the two JSON files:
+To configure the template theme open `src\themes\metadata.additional.json` and `src\themes\metadata.base.json`. In the template, edit the theme name in the JSON file. By default, the theme is orange as you can see in the image above. I changed mine to blue in the two JSON files:
 
 ```json
 {
@@ -91,7 +91,7 @@ Manipulating DevExtreme is really easy. Using the *ThemeBuilder*,  you can custo
 
 ```json
 {
- {
+ 
   "items": [],
   "baseTheme": "material.blue.dark",
   "assetsBasePath": "../../../node_modules/devextreme/dist/css/",
@@ -102,7 +102,7 @@ Manipulating DevExtreme is really easy. Using the *ThemeBuilder*,  you can custo
     "treeview",
     "navbar"
   ]
-}
+
 }
 ```
 Below is the result of the above changes:
