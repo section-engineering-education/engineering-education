@@ -156,7 +156,7 @@ li {
 
 From the above code, we have imported Axios and utilized the [async and await](https://www.javascripttutorial.net/es-next/javascript-async-await/) keywords, which build on promises and allow you to construct asynchronous code.
 
-### Adding data using `POST`
+### Adding data using POST
 You can make `POST`, `PUT`, `PATCH` or `DELETE` requests to the database using Axios.
 
 `POST` is a HTTP method used to create or add data in the database. In our project, let's add `POST` method to add an item in our shopping list:
@@ -239,7 +239,7 @@ input {
 
 Here, we have added an input area and a button. We have also added `addItem()` method that is called once you click the button to add the item. JSON server handles `id` property by incrementing it by 1 automatically. We are then setting the new items to contain every item element, and then add the item to the end of the list.
 
-### Updating data using `PATCH`
+### Updating data using PATCH
 We use the `PATCH` method to update one value in an object. We will be striking out the items we already bought by adding the following code in the methods field:
 
 ```js
@@ -262,7 +262,7 @@ async boughtItem(id) {
 }
 ```
 
-### Deleting data using `DELETE`
+### Deleting data using DELETE
 The `DELETE` method is a request used to delete a specific data in a server. We can do this by adding the following code in the methods field:
 
 ```js
@@ -383,7 +383,6 @@ input {
   text-decoration: line-through;
 }
 </style>
-
 ```
 
 In your browser, you should see the application with the list of items. The items should be striked out when you click on them and deleted when you double click on them:
