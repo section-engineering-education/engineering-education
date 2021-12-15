@@ -720,7 +720,7 @@ Next.js is an amazing React-based framework. It allows you to work with almost a
 
 In this tutorial, we built a blog application with Next.js, TypeScript, MDX, and Tailwind CSS and deployed it to Vercel.
 
-I hope you found the whole stack worth learning.
+I hope you found the entire stack worth learning.
 
 Happy coding!
 
