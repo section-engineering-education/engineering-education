@@ -16,7 +16,7 @@ There is a [Technical Writing One introduction](https://developers.google.com/te
 
 There is a [Technical Writing Two introduction](https://developers.google.com/tech-writing/two) which helps technical people improve their technical communication skills.
 
-These courses are recommeneded for any students that may lack exprience with technical writing, or students would like to improve their articles in the queue.
+We recommend these courses for any students that may lack experience with technical writing, or students would like to improve their articles in the queue.
 
 For any students that may be having trouble with grammar we suggest this [Just enough grammar](https://developers.google.com/tech-writing/one/just-enough-grammar) course, which provides grammar help.
 
