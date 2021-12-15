@@ -16,7 +16,7 @@ images:
 ---
 Transitioning from console apps to GUI apps is a very challenging goal for up and coming developers. The challenge comes when you discover that GUI is only fun when you know how, when, and what to use.
 <!--more-->
-### Table of Contents
+### Table of contents
 - [Table of Contents](#table-of-contents)
 - [Introduction](#introduction)
 - [Prerequisites](#prerequisites)
