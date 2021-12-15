@@ -1,5 +1,21 @@
-DevOps is a set of practices or stages that every application goes through before and after deployment which ensures continuous integration and deployment (CI/CD) of the application. The CI/CD pipeline automates the process for the deployment of code changes to the specified type of environment.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/devops-pipelines-automation-with-cloud-build-and-triggers/
+title: DevOps Pipeline Automation with Google Cloud Build and Triggers
+description: This tutorial will be an introduction to DevOps pipeline automation with Google Cloud Platform's Cloud Build and Container Registry. The reader will build a simple Python Flask application and set up a pipeline for automating builds.
+author: francisca-adekanye
+date: 2021-12-15T00:00:00-23:00
+topics: [Containers, API]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/devops-pipelines-automation-with-cloud-build-and-triggers/hero.jpg
+    alt: DevOps Pipeline Automation with Cloud Build and Triggers Hero Image
+---
+DevOps is a set of practices or stages that every application goes through before and after deployment which ensures continuous integration and deployment (CI/CD) of the application. The CI/CD pipeline automates the process for the deployment of code changes to the specified type of environment.
+<!--more-->
 The Software Development Life Cycle (SDLC) in conjunction with the operations cycle makes the development and operations (known as DevOps). 
 
 Docker packages applications as docker images and stores them into containers with their configurations defined within the `DockerFile`.
@@ -443,3 +459,6 @@ You learned how the automation of pipelines works using the build triggers, when
 You can find the full code [here]([Code Repository](https://github.com/damikanye/flaskproject)).
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
