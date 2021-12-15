@@ -31,9 +31,9 @@ Unlike humans, who have the human ability to recognize emotion from speech, mach
 
 
 
-Emotions are vital in day-to-day life, especially in interpersonal human interaction. They are helpful both in intelligent and rational decisions. Unlike humans, who have the human ability to recognize emotion from speech, machines do not have the sense to analyze feelings. Speech emotional recognition is vital in understanding human emotions such as amusement, frustration, or disappointment. Speech emotion recognition informs the computer on an individual&#39;s physical and emotional state from a speech.
+Emotions are vital in day-to-day life, especially in interpersonal human interaction. They are helpful both in intelligent and rational decisions. Unlike humans, who have the human ability to recognize emotion from speech, machines do not have the sense to analyze feelings. Speech emotional recognition is vital in understanding human emotions such as amusement, frustration, or disappointment. Speech emotion recognition informs the computer on an individual's physical and emotional state from a speech.
 
-A wide range of studies has focused on detecting a person&#39;s emotions. They include computer games, audio surveillance, robots, others. Machine learning algorithms have been termed more efficient in classification and prediction, vital in speech emotion recognition. However, there is a lot of information about the use of [CART](/engineering-education/decision-tree-in-python/) in speech emotion recognition that needs assessment which is the key focus of the study focuses.
+A wide range of studies has focused on detecting a person's emotions. They include computer games, audio surveillance, robots, others. Machine learning algorithms have been termed more efficient in classification and prediction, vital in speech emotion recognition. However, there is a lot of information about the use of [CART](/engineering-education/decision-tree-in-python/) in speech emotion recognition that needs assessment which is the key focus of the study focuses.
 
 The article focuses on assessing the substantial use of CART algorithms in speech emotion recognition. In achieving the purpose, the article reviews the speech emotion system, how CART works, and various reasons affiliated with its effectiveness.
 
@@ -84,7 +84,7 @@ CART is vital in the training step to learn the models for data sample classific
 
 #### Classification
 
-CART classifies the main 13 features from recognizing emotions. The key models used in the learning stage are used in the classification. CART classification mechanism entails dynamic feature construction and automatic class balancing. The classification tree under CART is based on the binary feature&#39;s splitting. The classification uses Gini-index for attribute splitting. CART puts into inner clusters of the file, which are vital in making decisions.
+CART classifies the main 13 features from recognizing emotions. The key models used in the learning stage are used in the classification. CART classification mechanism entails dynamic feature construction and automatic class balancing. The classification tree under CART is based on the binary feature's splitting. The classification uses Gini-index for attribute splitting. CART puts into inner clusters of the file, which are vital in making decisions.
 
 #### Emotion recognition
 
