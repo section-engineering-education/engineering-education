@@ -23,19 +23,173 @@ To make the most of this tutorial, it is required to have:
 The traditional approach would have been to constantly fetch and iterate over the stream of data – readings, get the sum of power used and subtract it from the threshold to get the values of power used and power remaining. This is a less efficient approach. With the F function, a single reading object (meant for the user) can be updated on the fly, without reference to the previous data, saved to the database and ready for the user to see. You can do this for multiple fields at a go.
 
 ### Implementing models for usage in demonstration
-Our small demonstration of how F function works will require three models: `RegisterMeter`, `MeterReading` and `CurrentUsage`. The pictures below show the models and serializers for creating these models.
-![models](/engineering-education/runtime-update-of-multiple-fields-in-django-using-the-f-function-the-most-efficient-way-to-go/models.jpg)
-![serializers](/engineering-education/runtime-update-of-multiple-fields-in-django-using-the-f-function-the-most-efficient-way-to-go/serializers.jpg)
+Our small demonstration of how F function works will require three models: `RegisterMeter`, `MeterReading` and `CurrentUsage`. The code snippets below show the models and serializers for creating these models.
+
+```python
+from django.db import models
+
+
+class RegisterMeter(models.Model):
+    meter_id = models.CharField(max_length=10)
+    date_added = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return str(self.pk)
+
+
+class MeterReading(models.Model):
+    meter = models.CharField(max_length=10)
+    meter_reading = models.IntegerField()
+    date_sent = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.meter
+
+
+class CurrentUsage(models.Model):
+    meter = models.CharField(max_length=10)
+    total_power_used = models.CharField(max_length=10)
+    power_remaining = models.CharField(max_length=10)
+
+    def __str__(self):
+        return self.meter
+```
+
+```python
+from rest_framework import serializers
+from .models import MeterReading, CurrentUsage, RegisterMeter
+
+
+class MeterReadingSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = MeterReading
+        fields = '__all__'
+
+
+class CurrentUsageSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CurrentUsage
+        fields = '__all__'
+
+
+class RegisterMeterSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = RegisterMeter
+        fields = '__all__'
+```
+
 The `RegisterMeter` on-boards an electricity meter, `MeterReading` represents a single data body generated from the electricity meter and sent to the Power Office and the `CurrentUsage` is what reading the user sees displaying his power used and power remaining.
 The idea is that, while onboarding an electricity meter, a default `CurrentUsage` is created, where the `total_power_used` and `power_remaining` are both zeores for the meter and on the creation of every `MeterReading` object, the `CurrentUsage` object is always updated. The `view` and `url` for onboarding a meter is shown below:
-![addmeter](/engineering-education/runtime-update-of-multiple-fields-in-django-using-the-f-function-the-most-efficient-way-to-go/addmeterview.jpg)
-![addmeterurl](/engineering-education/runtime-update-of-multiple-fields-in-django-using-the-f-function-the-most-efficient-way-to-go/addmeterurl.jpg)
-As a result of the above, we also need to have a view and URL to check for a `CurrentUsage` object using the `meter`’s ID
-![usageview](/engineering-education/runtime-update-of-multiple-fields-in-django-using-the-f-function-the-most-efficient-way-to-go/ usageview.jpg)
-![usageurl](/engineering-education/runtime-update-of-multiple-fields-in-django-using-the-f-function-the-most-efficient-way-to-go/ usageurl.jpg)
-![createreadingview](/engineering-education/runtime-update-of-multiple-fields-in-django-using-the-f-function-the-most-efficient-way-to-go/ createreadingview.jpg)
-![ createreadingurl](/engineering-education/runtime-update-of-multiple-fields-in-django-using-the-f-function-the-most-efficient-way-to-go/ createreadingurl.jpg)
 
+```python
+class RegisterMeterCreateView(generics.CreateAPIView):
+    queryset = RegisterMeter.objects.all()
+    serializer_class = RegisterMeterSerializer
+
+    def post(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        if not serializer.is_valid(raise_exception=True):
+            return Response({"message": "Something went wrong"}, status=status.HTTP_400_BAD_REQUEST)
+
+        meter = request.data.get('meter_id')
+
+        payload = {
+            "meter": meter,
+            "total_power_used": "0",
+            "power_remaining": "0",
+        }
+
+        CurrentUsage.objects.create(**payload)
+
+        if serializer.is_valid():
+            serializer.save()
+
+        return Response({"message": "Meter has been on-boarded and a default current reading created"},
+                        status=status.HTTP_200_OK)
+```
+
+```python
+from django.urls import path
+
+from meter.views import RegisterMeterCreateView, check_meter_usage, CreateMeterReading, \
+    AllMetersListView
+
+urlpatterns = [
+    path('add-meter', RegisterMeterCreateView.as_view()),
+    path('all-meters', AllMetersListView.as_view()),
+]
+```
+
+To view all meters that have been registered, the view is shown in the snippet below:
+
+```python
+class AllMetersListView(generics.ListAPIView):
+    queryset = RegisterMeter.objects.all()
+    serializer_class = RegisterMeterSerializer
+```
+
+As a result of the above, we also need to have a view and URL to check for a `CurrentUsage` object using the `meter`’s ID
+
+```python
+@api_view(['GET'])
+def check_meter_usage(self, meter_id):
+    meter_reading = CurrentUsageSerializer(CurrentUsage.objects.get(meter=meter_id))
+    return Response(meter_reading.data)
+```
+
+```python
+from django.urls import path
+
+from meter.views import RegisterMeterCreateView, check_meter_usage, CreateMeterReading, \
+    AllMetersListView
+
+urlpatterns = [
+    path('add-meter', RegisterMeterCreateView.as_view()),
+    path('all-meters', AllMetersListView.as_view()),
+    path('meter-usage/<str:meter_id>', check_meter_usage), #  New
+```
+The view and URL to create a single meter reading object are shown in the code snippet below:
+
+```python
+class CreateMeterReading(generics.CreateAPIView):   # New
+    queryset = MeterReading.objects.all()
+    serializer_class = MeterReadingSerializer
+
+    def post(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        if not serializer.is_valid(raise_exception=True):
+            return Response({"message": "Something went wrong"}, status=status.HTTP_400_BAD_REQUEST)
+
+        meter = request.data.get('meter')
+        meter_reading = int(request.data.get('meter_reading'))
+
+        meter_usage_object = CurrentUsage.objects.get(meter=meter)
+        CurrentUsage.objects.filter(meter=meter_usage_object.meter).update(
+            total_power_used=F("total_power_used") + meter_reading,
+            power_remaining=25 - (F("total_power_used") + meter_reading)
+        )
+
+        meter_usage_object.refresh_from_db()
+
+        if serializer.is_valid():
+            serializer.save()
+        return Response({"message": "Reading created, current usage updated"}, status=status.HTTP_200_OK)
+```
+
+```python
+
+from django.urls import path
+
+from meter.views import RegisterMeterCreateView, check_meter_usage, CreateMeterReading, \
+    AllMetersListView
+
+urlpatterns = [
+    path('add-meter', RegisterMeterCreateView.as_view()),
+    path('all-meters', AllMetersListView.as_view()),
+    path('meter-usage/<str:meter_id>', check_meter_usage),
+    path('create-reading', CreateMeterReading.as_view()),  # new
+]
+```
 ### How the F function works actually
 Now, that we have our models, serializers, views and URL, let us begin the actual demonstration of the mini-project. We create/register a new meter using the endpoint `localhost:8000/add-meter` and fill in the page accordingly.
 To check that the meter was successfully registered and a new `CurrentUsage` was created in the process, visit `localhost:8000/all-meters` and `localhost:8000/meter-usage/PM01`
