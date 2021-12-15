@@ -1,78 +1,103 @@
-### introduction
-Discord is a robust communication app used by a large community of gamers, developers, and cryptocurrency enthusiasts. Admins can add a plethora of unique Discord bots to their servers. There are also powerful APIs for creating Discord bots for those who prefer to take matters into their own hands.
-With Discord.js, it is relatively simple to create a Discord bot using Javascript. In this Discord bot tutorial, we'll go over everything you need to know to get a bot up and running on the Discord server.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-build-discord-bot-with-javascript/
+title: How to Build a Discord Bot using JavaScript
+description: This tutorial will help readers understand how to build a Discord bot using JavaScript. The bot will be able to answer certain messages automatically.
+author: kamau-wambui
+date: 2021-12-15T00:00:00-03:33
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/how-to-build-discord-bot-with-javascript/hero.png
+    alt: Build a Discord Bot using JavaScript Hero Image
+---
+Discord is a robust communication app used by a large community of gamers, developers, and cryptocurrency enthusiasts. 
+<!--more-->
+Admins can add unique Discord bots to their servers. There are also powerful APIs for creating Discord bots for those who prefer to take matters into their own hands. 
+
+For instance, [Discord.js](https://discord.js.org/#/) allows us to create a simple Discord bot using Javascript. 
+
+In this tutorial, we'll discuss how to create a Discord bot and run it on the server.
 
 ### Table of content
-- [introduction](#introduction)
-- [Table of content](#table-of-content)
 - [Requirements](#requirements)
-- [Add New Discord Application](#add-new-discord-application)
-- [Creating Node.js project](#creating-nodejs-project)
-- [Install dependencies.](#install-dependencies)
-- [Building our bot](#building-our-bot)
+- [Add a new Discord application](#add-a-new-discord-application)
+- [Creating a Node.js project](#creating-a-nodejs-project)
+- [Installing dependencies.](#installing-dependencies)
+- [Building a Discord bot](#building-a-discord-bot)
 - [Create the bot file](#create-the-bot-file)
-- [Have bot reply to messages](#have-bot-reply-to-messages)
+- [Replying to messages](#replying-to-messages)
 - [Summary](#summary)
 - [Conclusion](#conclusion)
 
 ### Requirements
-1. Wi-Fi connection
-2. Discord account
-3. Text editor
-4. Node v17.1.0 (latest version)
+To follow along, you need:
+- A Wi-Fi connection.
+- A Discord account.
+- A code editor such as Visual Studio Code.
+- [Node v17.1.0](https://nodejs.org/en/).
 
-### Add New Discord Application
-To get started, we need to register the application and is done via Discord Developer's portal. To access this portal visit https://discord.com/developers/applications. 
- Click on the New Application button on the highest right-hand side.
+### Add a new Discord application
+To get started, we need to register the application via Discord Developer's portal. To access this portal, navigate to https://discord.com/developers/applications. 
 
-   ![new application](/education-engineering/how-to-build-discord-bot-with-javascript/new.png)
+Then click on the `New Application` button on the right-hand side.
 
-   After clicking the button a dialog box will pop up which will ask you to name your bot, In my case, I will name mine 'mybot'. This is the screen that will appear:
+![new application](/engineering-education/how-to-build-discord-bot-with-javascript/new.png)
 
-   ![Dialog](/education-engineering/how-to-build-discord-bot-with-javascript/dialog.png)
+After clicking the button, a dialog box will pop up which will ask you to name your bot. In my case, I will name the bot simply as 'mybot':
 
-Having named your bot, click the bot option, followed by add bot button. 
-This dialog will pop up.
+![Dialog](/engineering-education/how-to-build-discord-bot-with-javascript/dialog.png)
 
-![Confirmation](/education-engineering/how-to-build-discord-bot-with-javascript/yes.png)
+Next, click the `bot option`, followed by the `add bot` button. The following dialog will pop up:
 
-Confirm the creation of the new application and that is it, you have a bot. But I don't think you want a dummy bot, so let's add some pizzas by giving it extra permission which will improve its interactivity with users. Click the OAuth2 menu and check the boxes as shown below. Copy the link that appears in the text box.
+![Confirmation](/engineering-education/how-to-build-discord-bot-with-javascript/yes.png)
 
-   ![bot](/education-engineering/how-to-build-discord-bot-with-javascript/bot.png)
+Finally, confirm the creation of the new application and that is it; you have a bot. 
 
-   ![permission](/education-engineering/how-to-build-discord-bot-with-javascript/permission.png)
-
- Paste your copied link to any browser of your choice. This screen should appear.
-
-   ![paste-link](/education-engineering/how-to-build-discord-bot-with-javascript/link.png)
-
- select your server, hit authorize.
-
-   ![authorize](/education-engineering/how-to-build-discord-bot-with-javascript/authorize.png)
-
-in case you don't have a server follow this [link](https://discord.com/.) to login to your discord account and create one. 
+However, I don't think you want a dummy bot. Let's add some extra features by giving it several permissions which will improve its interactivity with users. 
 
 
+Click the `OAuth2` menu and check the `boxes`, as shown below. Then, copy the link that appears in the text box:
 
-### Creating Node.js project
-Having our bot registered we need to set up our project by create a folder where you want to store your files and initialize a new node.js project.
+![bot](/engineering-education/how-to-build-discord-bot-with-javascript/bot.png)
 
- Navigate through this [link](https://nodejs.org/en/download/) to install node.js/update if necessary.
+![permission](/engineering-education/how-to-build-discord-bot-with-javascript/permission.png)
+
+Next, paste the link you copied earlier in any browser. You should see the following screen:
+
+![paste-link](/engineering-education/how-to-build-discord-bot-with-javascript/link.png)
+
+Select your server and then click on the `authorize` button:
+
+![authorize](/engineering-education/how-to-build-discord-bot-with-javascript/authorize.png)
+
+In case you don't have a server, follow this [link](https://discord.com/) to create one. 
+
+### Creating a Node.js project
+Since we have registered our bot, we now need to create a folder where will store our node.js files.
+
+You can download the latest Node.js version from [here](https://nodejs.org/en/download/).
 
 
- ### Install dependencies.
-Dependencies are packages that are required by other packages to work. The only necessary library is `discord.js`. But we will install `dotenv` to assist in managing mybot token so that our call is properly authorized,  and `nodemon` library.
-Select a new terminal and type the following command that will help you initialize your project.
+### Installing dependencies.
+Dependencies are packages that are required by the application to work. In our case, we only need the `discord.js` library. 
 
-```
+Nevertheless, we will install the `dotenv` package to assist in managing `mybot token`. This will ensure that all calls are properly authorized. We also require `nodemon` to keep the server running.
+
+Start a `new terminal` and type in the following command to initialize the project:
+
+```bash
 npm init -y
 ```
 
-Note how the code generates npm project without going through the interactive process.
-In my case, the following are the result. 
+> Note how the above command generates an npm project without going through the interactive process.
 
-```
+In my case, the following are the results:
+
+```json
 {
   "name": "mybot",
   "version": "1.0.0",
@@ -86,35 +111,35 @@ In my case, the following are the result.
 }
 ```
 
-The command below will help you install discord.js and dotenv library in your workspace 
+The command below will install `discord.js` and `dotenv` library in the project:
 
-```
+```bash
 npm install discord.js dotenv
 ```
 
-Now let's install nodemon library, write the following command.
+To install `nodemon` library, use the following command:
 
-```
+```bash
 npm install -D nodemon
 ```
 
 Nodemon restarts the server every time we make a change to our files.
 
 ### Building our bot
-There is one more thing we need to do in the Discord application developers portal before we start coding. To authorize calls from Discord.js, we must first copy our Bot's token.
+We need to authorize calls from `Discord.js` in the developers' portal. To do this, we must copy our bot's token.
 
-![copy-token](/education-engineering/how-to-build-discord-bot-with-javascript/Token.png)
+![copy-token](/engineering-education/how-to-build-discord-bot-with-javascript/token.png)
 
 Once copied, open a new file and name it `.env`, then paste it in the following format
 
-```
+```bash
 TOKEN=Paste_token_here
 ```
 
 ### Create the bot file
-In my case, I will name my file as `bot.js` in the main project directory.
+Create a new file and name it as `bot.js` in the main project directory.
 
-First, we will set up environment variables using the `dotenv` package, import classes from `discord.js`, and then start up a new client. This is accomplished utilizing the accompanying code:
+First, we will set up environment variables using the `dotenv` package, import classes from `discord.js`, and then start up a new client:
 
 ```javascript
 require("dotenv").config(); //to start process from .env file
@@ -131,22 +156,22 @@ client.once("ready", () =>{
 client.login(process.env.TOKEN);
 ```
 
-To run your bot, type the following in your terminal:
+To run the bot, type the following in your terminal:
 
-```
+```bash
 node bot.js
 ```
 
-![bot-online](/education-engineering/how-to-build-discord-bot-with-javascript/botonline.png)
+![bot-online](/engineering-education/how-to-build-discord-bot-with-javascript/botonline.png)
 
-As you can see above, our bot is online but it does not have any functionality.
+As shown above, our bot is online but it does not have any functionality.
 
-Note we are authenticating the named variable from our .env file, which authenticates our bot with Discord API. To test our bot we have to be logged into a Discord account and have a server running.
+> Note that we are authenticating the `named variable` from our `.env` file, which is connected to the `Discord API`. To test the bot, we have to be logged into a Discord account and have a server running.
 
-### Have bot reply to messages
-So far our bot is online but has no active functionality, The following lines of code will have our bot reply to a simple hello message.
+### Replying to messages
+So far, our bot is online but has no active functionality. The following lines of code will have our bot reply to a simple hello message:
 
-```
+```js
 client.on('message',
 function (messages){
     if(messages.content.toLocaleLowerCase()==='hello') 
@@ -154,32 +179,25 @@ function (messages){
 })
 ```
 
-Our bot will reply hello message and mention the sender.
+Our bot will reply to the `hello` message and mention the `sender`.
 
-![reply-message](/education-engineering/how-to-build-discord-bot-with-javascript/reply.png)
-
+![reply-message](/engineering-education/how-to-build-discord-bot-with-javascript/reply.png)
 
 ### Summary
-In recap, we have added a new Discord application via the discord developers portal [](https://discord.com/developers/applications), in order to code our bot we have created node.js project in the same folder where we have installed dependencies and stored bot(.js) file. After that we make our bot reply to a text.
+We added a new Discord application via the [Discord developers portal](https://discord.com/developers/applications).
 
-Follow this [link](https://github.com/Kamau-ke/how-to-build-discord-bot-with-javascript) to check out for the complete code.
+To develop our bot, we created a Node.js project and installed the required dependencies. We then allowed the bot to reply to certain messages from users.
+
+You can access the complete code from [here](https://github.com/Kamau-ke/how-to-build-discord-bot-with-javascript).
 
 ### Conclusion
-Discord platform is rapidly growing since it has opened a secure way for gamers, entrepreneurs, and cryptocurrency enthusiastic to communicate and connect with other like-minded people. Having a good bot that will assist in replying, banning, and muting members is an added advantage. 
+The discord platform is growing rapidly. It has created a secure way for gamers, entrepreneurs, and cryptocurrency enthusiastic to communicate and connect with other like-minded people. 
 
-In this article, we covered how to make the bot do a simple task and that is replying to a text. However, there is a batch of free bots which you can use if you want more added functionality to your bot.
+Having a good bot that can reply, ban, and mute members is an added advantage. 
+
+In this article, we covered how to create a bot to reply to certain text. You can, therefore, use this knowledge to incorporate other functionalities.
 
 Happy coding!
 
-
-
-
-
-
-
-
-
-
-   
-
-
+---
+Peer Review Contributions by: [Wanja Mike](/engineering-education/authors/michael-barasa/)
