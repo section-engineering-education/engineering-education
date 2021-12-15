@@ -6,7 +6,7 @@ url: /getting-started-with-a-lexical-analyzer/
 title: Getting Started with a Lexical Analyzer
 description: In this article, the reader will learn about compilers and how they work. The reader will dive deep into Lexical analysis to understand how it works by building few lexical analyzers
 author: francis-kaguongo
-date: 2021-12-13T00:00:00-23:00
+date: 2021-12-15T00:00:00-12:45
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,11 +14,12 @@ images:
   - url: /engineering-education/getting-started-with-a-lexical-analyzer/hero.png
     alt: Getting Started with a Lexical Analyzer Hero Image
 ---
-In the older computer generations, running simple codes was much trickier than one might have thought. This challenge is because computers do everything in machine languages written on punch cards. It then went to mnemonics, as used in the [Assembly language](https://en.wikipedia.org/wiki/Assembly_language). These were simpler but still required an understanding of machine language.
-<!--more-->
-Developers needed high-level languages more than ever since computers seemed effective in repetitive tasks.
 
-The invention of a high-level language compiler was a significant breakthrough in the computer growth phase. This breakthrough was because high-level languages are understandable by most people, though much overhead is needed.
+In older computer generations, running simple code was much harder than one might have thought. This challenge was because computers did everything in machine languages written on punch cards. It then went to mnemonics, as used in the [Assembly language](https://en.wikipedia.org/wiki/Assembly_language). 
+<!--more-->
+These were simpler but still required an understanding of machine language. Developers needed high-level languages more than ever since computers seemed effective in repetitive tasks.
+
+The invention of a high-level language compiler was a significant breakthrough in the computer growth phase. This was because high-level languages are understandable by most people, though much overhead is needed.
 
 Hence, for one to be able to appreciate the compilers and their work in code conversion from source to optimized object code, one has to understand how they are designed.
 
@@ -44,10 +45,7 @@ A Lexical analyzer is found in the first phase of compiler construction.
 - [A token count based on a sample code](#a-token-count-based-on-a-sample-code)
 - [Lexical analysis tools](#lexical-analysis-tools)
 - [Set up the tools](#set-up-the-tools)
-  - [Linux Installation](#linux-installation)
-  - [Windows Installation](#windows-installation)
 - [Architecture of Lex files](#architecture-of-lex-files)
-  - [Lex file parts](#lex-file-parts)
 - [Create a Lex file and run it](#create-a-lex-file-and-run-it)
 - [A Lex analyzer that converts instances of certain characters into a particular pattern](#a-lex-analyzer-that-converts-instances-of-certain-characters-into-a-particular-pattern)
 - [A lex analyzer that identifies certain words](#a-lex-analyzer-that-identifies-certain-words)
@@ -63,7 +61,7 @@ In this article, one will learn the following:
 - Building a lexical analyzer with code examples
 
 ### Pre-requisites
-For one to quickly follow up with the article, the following knowledge is required:
+For one to follow up with the article, the following knowledge is required:
 - A good internet connection
 - Know how to use Regular Expressions
 - Knowledge of C programming
@@ -246,7 +244,6 @@ The three sections are divided by delimiters (`%%`) as shown below:
 
 
 %%
-
 ```
 
 `y.tab.c` is an output file that is compiled producing a `yyparse` function. It is produced with a C language compiler.
@@ -258,23 +255,26 @@ The image below shows a brief explanation of the code structure based on the par
 ### Create a Lex file and run it
 Let us create a Lex analyzer that counts the number of words in a file and their total size.
 
-- Create a root folder named 'flex-projects'.
-
-- In it, create a file named `counter.l`
-
-- Open it and add the lines of code that state the program declarations as follows:
+Create a root folder named 'flex-projects'. In it, create a file named `counter.l`. Open it and add the lines of code that state the program declarations as follows:
 
 ```c
-/* Definitions */
+/* Definitions */ 
 %{
-int lines=1, words=0, lowercase_letters=0, uppercase_letters=0, numbers=0, special_characters=0, totals=0, size=0;
-%}
+  int lines = 1,
+  words = 0,
+  lowercase_letters = 0,
+  uppercase_letters = 0,
+  numbers = 0,
+  special_characters = 0,
+  totals = 0,
+  size = 0; %
+}
 
 /* Delimiters: These separate the definitions from the Rules and actions section */
 %%
 ```
 
-- Add the rules and actions. Uppercase and lowercase letters, numbers, special characters, letters, and line instances will all be checked. Check it out in the code below:
+Add the rules and actions. Uppercase and lowercase letters, numbers, special characters, letters, and line instances will all be checked. Check it out in the code below:
 
 ```c
 \n { lines++; words++;} /* Adds to the lines and words variables a value of 1 when one goes to a new line */
@@ -288,35 +288,32 @@ int lines=1, words=0, lowercase_letters=0, uppercase_letters=0, numbers=0, speci
  %%
 ```
 
-- In the User sub-routines section, add the main program that prints the totals. Check it out in the line of code below:
+In the User sub-routines section, add the main program that prints the totals.
 
 ```c
-int yywrap()
-{
+int yywrap() {
 
 }
 
-int main()
-{
-yyin= fopen("test.txt", "r"); /* Open the 'test.txt' file in a read only fomart */
-yylex();
-totals= special_characters + numbers + uppercase_letters + lowercase_letters;
-size = (totals * 1); /* The total size in bytes is equal to the total number of characters multiplied by one byte since each is one byte */
+int main() {
+  yyin = fopen("test.txt", "r"); /* Open the 'test.txt' file in a read only fomart */
+  yylex();
+  totals = special_characters + numbers + uppercase_letters + lowercase_letters;
+  size = (totals * 1); /* The total size in bytes is equal to the total number of characters multiplied by one byte since each is one byte */
 
-/* Prints the output */
-printf("This file contains the following:");
-printf("\n\t%d lines", lines);
-printf("\n\t%d words", words);
-printf("\n\t%d Lowercase letters", lowercase_letters);
-printf("\n\t%d Uppercase letters", uppercase_letters);
-printf("\n\t%d digits", numbers);
-printf("\n\t%d special characters", special_characters);
-printf("\n\t The total size of the file characters in bytes is: %d bytes.\n", size);
+  /* Prints the output */
+  printf("This file contains the following:");
+  printf("\n\t%d lines", lines);
+  printf("\n\t%d words", words);
+  printf("\n\t%d Lowercase letters", lowercase_letters);
+  printf("\n\t%d Uppercase letters", uppercase_letters);
+  printf("\n\t%d digits", numbers);
+  printf("\n\t%d special characters", special_characters);
+  printf("\n\t The total size of the file characters in bytes is: %d bytes.\n", size);
 }
 ```
 
-- Create a new file by the name of 'test.txt' and open it.
-- Add the following text to it:
+Create a new file named 'test.txt' and open it. Add the following text to it:
 
 ```txt
 Hello Mark and Jane! Did you go for launch?
@@ -324,20 +321,19 @@ I am coming back tomorrow. Don't go home yet...
 I will visit you at 0945hrs on 27th November this year
 ```
 
-- Open the folder where the file resides in the terminal or command line (in Windows).
-- Change the lex file into a C Source Core using the command below:
+Open the folder where the file resides in the terminal or command line (in Windows). Change the lex file into a C Source Core using the command below:
 
 ```bash
 flex counter.l
 ```
 
-- Convert the C Source Core into an executable file by running the code below in the terminal:
+Convert the C Source Core into an executable file by running the code below in the terminal:
 
 ```bash
 gcc lex.yy.c
 ```
 
-- Run the executable. This process runs the analyzer created so that it can use the input file as the input and generate the output on the terminals:
+Run the executable. This process runs the analyzer created so that it can use the input file as the input and generate the output on the terminals:
 
 ```bash
 ./a.out
@@ -359,11 +355,11 @@ One can also set the program to use another prefix of two characters. The charac
 
 > Both can not be uppercase since all uppercase combinations have been used for other keywords.
 
-- `yylex()` is a function that passes tokens found to `yyparse()` each time it is called. It returns 0 or a negative value whenever an `EOF` (End of File) error is returned.
-- It utilizes a routine called `yygetc()` to fetch these values.
-- `yyparse()` calls upon `yylex()` to obtain any tokens passed to the program.
-- It then matches it against the patterns used for matches to determine the kind of action to be performed.
-- `yywrap()` is used to show the end of the execution of the code. It returns a value of 1 if the program's run is over and a value of 0 if it is ongoing.
+`yylex()` is a function that passes tokens found to `yyparse()` each time it is called. It returns 0 or a negative value whenever an `EOF` (End of File) error is returned. It utilizes a routine called `yygetc()` to fetch these values.
+
+`yyparse()` calls upon `yylex()` to obtain any tokens passed to the program. It then matches it against the patterns used for matches to determine the kind of action to be performed.
+
+`yywrap()` is used to show the end of the execution of the code. It returns a value of 1 if the program's run is over and a value of 0 if it is ongoing.
 
 Yacc also has some predefined variables. These variables include the following:
 - **yytext**: It defines the current recognizable input token by the lexical scanner.
@@ -375,11 +371,7 @@ Yacc also has some predefined variables. These variables include the following:
 > `yyin` and `yyout` can be interchanged. This interchanging can be done by assignment.
 
 ### A Lex analyzer that converts instances of certain characters into a particular pattern
-Let us create a lex analyzer that changes 'abc' occurrences in the input to 'ABC'.
-
-- Accomplish this by creating a file named `strings.l`.
-
-- In it, add the following in the definitions section:
+Let us create a lex analyzer that changes 'abc' occurrences in the input to 'ABC'. Create a file named `strings.l`. In it, add the following in the definitions section:
 
 ```c
 %{
@@ -398,83 +390,79 @@ int i;
 
 > As for comments in a lex file, make sure to begin with double-spacing first to avoid errors.
 
-- Add rules to check on words only entered (with either upper or lowercase) containing the characters 'abc' following each other.
-  If yes, then replace the specified characters only.
+Add rules to check on words only entered (with either upper or lowercase) containing the characters 'abc' following each other. If yes, then replace the specified characters only.
 
 ```c
-[a-z A-Z]* {
+[a - z A - Z] * {
 
-for(i=0;i<=yyleng;i++)
+  for (i = 0; i <= yyleng; i++)
 
-{
+  {
 
-if((yytext[i]=='a')&&(yytext[i+1]=='b')&&(yytext[i+2]=='c'))
+    if ((yytext[i] == 'a') && (yytext[i + 1] == 'b') && (yytext[i + 2] == 'c'))
 
-{
+    {
 
-yytext[i]='A';
+      yytext[i] = 'A';
 
-yytext[i+1]='B';
+      yytext[i + 1] = 'B';
 
-yytext[i+2]='C';
+      yytext[i + 2] = 'C';
+
+    }
+
+  }
+
+  printf("%s", yytext);
 
 }
 
+.*{
+  ECHO;
 }
 
-printf("%s",yytext);
-
+\
+n {
+  printf("%s", yytext);
 }
-
-.* {ECHO;}
-
-\n {printf("%s",yytext);}
 
 %%
 ```
 
-- As for the user subroutines section, copy-paste the following:
+As for the user subroutines section, copy-paste the following:
 
 ```c
-int main()
-
-{
-
-yylex();
+int main() {
+  yylex();
 
 }
 
-int yywrap()
-
-{
-
-return 1;
-
+int yywrap() {
+  return 1;
 }
 ```
 
-> **ECHO** is a macro that is used as an action to copy the matched input token in the `yytext` variable to the lex output stream found in `yyout`.
+**ECHO** is a macro that is used as an action to copy the matched input token in the `yytext` variable to the lex output stream found in `yyout`.
 
-It is a macro just like the `yygetc()` and `BEGIN`, among others.
+It is a macro just like the `yygetc()` and `BEGIN`, among others. Run the following command in the terminal:
 
-- Run the following command in the terminal:
 ```bash
 lex strings.l
 ```
 
-- Then, run the following:
+Then, run the following:
 ```bash
 cc lex.yy.c
 ```
 
-> `Flex` and `gcc` can be replaced with `lex` and `cc` as seen above.
+`Flex` and `gcc` can be replaced with `lex` and `cc` as seen above.
 
-- Run the following command to run the executable:
+Run the following command to run the executable:
 ```bash
 ./a.out
 ```
 
-- It now allows input from the terminal. Key in the following to see if it works:
+It now allows input from the terminal. Key in the following to see if it works:
 ```bash
 We can see abc turn to ABC in javaabcfilewithoutknowingABCDabcd
 ```
@@ -486,10 +474,7 @@ The output is as follows:
 ### A lex analyzer that identifies certain words
 This lex analyzer will identify words among a pre-defined set. It then returns an output if it is among the Set or not.
 
-In this case, it shall be checking for verbs.
-
-- Create a new file known as `verbs.l`.
-- Begin with the definitions as follows:
+In this case, it shall be checking for verbs. Create a new file known as `verbs.l`. Begin with the definitions as follows:
 ```c
 %{
     //program to classify a word as a verb or not a verb
@@ -498,7 +483,7 @@ In this case, it shall be checking for verbs.
 %%
 ```
 
-- In the rules and actions section, copy-paste the following:
+In the rules and actions section, paste the following:
 ```c
 [\t]+ //Ignore the white spaces/tabs 
 
@@ -532,7 +517,7 @@ go   { printf("%s: is a verb\n", yytext);}
 This code contains a series of verbs that act as the patterns defined. If it finds any of them, it returns and says it is a verb; otherwise, it is not.
 For each word passed to it, e.g., in a sentence, it does this.
 
-- In the User subroutine section, create the main application as shown below:
+In the User subroutine section, create the main application as shown below:
 ```c
 int yywrap(){}
 
@@ -542,22 +527,22 @@ int main(){
 }
 ```
 
-- Run it by executing the following in the terminal:
+Run it by executing the following in the terminal:
 ```bash
 lex verbs.l
 ```
 
-- Convert the C source core created into an executable analyzer using the command below:
+Convert the C source core created into an executable analyzer using the command below:
 ```bash
 cc lex.yy.c
 ```
 
-- Run the executable as follows:
+Run the executable as follows:
 ```bash
 ./a.out
 ```
 
-- Key in some characters on the terminal and check out the results. For example, key in the sentence below:
+Key in some characters on the terminal and check out the results. For example, key in the sentence below:
 ```bash
 Kelly is going home today
 ```
@@ -574,14 +559,6 @@ Creating high-level compilers was one of the most significant steps in the compu
 Lexical analysis is a phase in the compilation process of crucial importance. It identifies tokens and passes them to Syntax analysis before proceeding to other steps.
 
 The knowledge of how the analyzers are created is essential in making one try to understand how compilers work.
-
-At this point, the learner has been able to gain the following knowledge:
-- What is lexical analysis
-- Importance of lexical analysis and lexical analyzers
-- Installation of the YACC lexical analyzer on Windows and Linux
-- Creation of Lex Files
-- Lex file parts
-- Running lex files
 
 ### References
 - Lexical analysis [definitions](https://en.wikipedia.org/wiki/Lexical_analysis)
