@@ -2,16 +2,16 @@
 layout: engineering-education
 status: publish
 published: true
-url: /implementing authentication and authorization in server side blazor/
+url: /authorization-and-authentication-in-server-side-blazor/
 title: Implementing authentication and authorization in Server Side Blazor
 description: This tutorial gives a step by step process of applying authorization and authentication into websites.
 author: daniel-masika
-date: 2021-10-18T00:00:00-09:47
+date: 2021-12-14T00:00:00-12:47
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/implementing authentication and authorization in server side blazor/hero.jpg
+  - url: /engineering-education/authorization-and-authentication-in-server-side-blazor/hero.jpg
     alt: Implementing authentication and authorization in Server Side Blazor Hero Image
 ---
 Today, there are many websites providing important services to the society. In order to carry out this process, they need to protect their websites from unethical users. This has led to the introduction of authentication and authorization on their websites.
