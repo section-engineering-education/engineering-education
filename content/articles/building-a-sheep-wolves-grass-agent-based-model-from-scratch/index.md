@@ -72,41 +72,37 @@ function draw() {
 }
 ```
 
-In `setup()` we declare everything we need for the initial state of the sketch. For example, we can set up the size of our canvas, the color of the background, the initial position of an object, etc.
+In `setup()`, we declare everything we need for the initial state of the sketch. For example, we can set up the size of our canvas, the color of the background, the initial position of an object, etc.
 
 The `draw()` block functions like a loop. What we write inside of it will run several frames per second. This way we can update our initial state and create animations and interactions. It's like the functioning of a game. In the `draw()` block we usually draw objects and shapes, move them and update their state.
 
 We didn't show any concrete p5.js real example yet but don't worry, we'll see it along with the tutorial.
 
 ### The Sheep - Wolves - Grass Model
+Before we start to code, we need to know better what we are going to build.  Let's define an [Agent-Based Model](https://jasss.soc.surrey.ac.uk/12/4/4.html) with 3 elements:
 
-Before we start to code, we need to know better what we are going to build.  Let's define [Agent-Based Models](https://jasss.soc.surrey.ac.uk/12/4/4.html) with 3 elements:
-
-- The **agents** and their behavior;
-- The **environment** and its influence on agents;
+- The **agents** and their behavior.
+- The **environment** and its influence on agents.
 - The **mechanisms of interaction** between agents.
 
 With this, we can specify our Sheep - Wolves - Grass Model. For a reference and inspiration for this tutorial, you can look at [NetLogo's Wolf Sheep Predation model](https://ccl.northwestern.edu/netlogo/models/WolfSheepPredation).
 
 #### The agents and the mechanisms of interaction
+As the model's name says, we have only 2 agents: the **sheep** and the **wolves**. We'll start our model with a fixed number of agents of each type randomly positioned and then they will wander through the environment. At each time step, they will have a probability to reproduce, generating new agents of the same type. The agents will also have an initial amount of energy that decreases with time. When the energy gets to 0, they die. To live, the agents need to get new energy by eating.
 
-As the model's name says, we have only 2 agents: the **sheep** and the **wolves**. We'll start our model with a fixed number of agents of each type randomly positioned and then they will wander through the environment. At each step of time, they will have a probability to reproduce, generating new agents of the same type. The agents will also have an initial amount of energy that decreases with time. When the energy gets to 0, they die. To live, the agents need to get new energy by eating.
-
-- The wolves get a fixed amount of energy by eating sheep, thus they will hunt the sheep;
+- The wolves get a fixed amount of energy by eating sheep, thus they will hunt the sheep.
 - The sheep need to flee from the wolves to survive. Besides, they get a fixed amount of energy by eating grass. This leads us to our next section.
 
 #### The environment
-
 Our environment is a grass field. We'll define it as a grid of squares where each square is "a unity of grass". The environment behaves this way:
 
-- When a sheep hovers a unity of grass, she eats it.
+- When a sheep hovers over a unity of grass, she eats it.
 - When a unity of grass gets eaten, it disappears and the sheep can't get energy from that unity anymore until it regrows.
 - A unity of grass regrows after a fixed amount of time has passed.
 
-That's our environment! Very simple, huh?! Now that you're already familiar with the basic functioning of our model, we are ready to go!
+That's our environment! Now that you're already familiar with the basic functioning of our model, we are ready to go!
 
 ### Step 1 - Basic Structure
-
 First, we need to set some things up. Start by creating a directory to store our files. Then, create a `index.html` file, and let's add the link to p5.js inside of it:
 
 ```html
@@ -152,7 +148,7 @@ function draw() {
 }
 ```
 
-What we are doing here is just creating a canvas with the specified width and height. Then we are coloring the canvas' background with the color `RGB(200, 200, 200)`. Think of the canvas as a coordinate system. We can position objects on it by specifying the x and y positions.
+We've created a canvas with the specified width and height. Then, we are coloring the canvas' background with the color `RGB(200, 200, 200)`. Think of the canvas as a coordinate system. We can position objects on it by specifying the x and y positions.
 
 Let's just add a link to `sketch.js` and `style.css` in the `index.html`. It should look like this:
 
@@ -172,25 +168,25 @@ Let's just add a link to `sketch.js` and `style.css` in the `index.html`. It sho
 </html>
 ```
 
-We can then open our `index.html` in the browser and... It's stuck on *"Loading..."* forever! That's because we still need one more thing: a local server. In this tutorial, we are going to use the Node HTTP-server, [but there are many options you can use instead if you want to](https://github.com/processing/p5.js/wiki/Local-server). 
+We can then open our `index.html` in the browser. If the web page gets stuck on *"Loading..."*, that's because we still need one more thing: a local server. In this tutorial, we are going to use the Node HTTP-server, [but there are many options you can use instead if you want to](https://github.com/processing/p5.js/wiki/Local-server). 
 
-If you don't have node.js installed yet, [go on and install it](https://github.com/processing/p5.js/wiki/Local-server). Then, open your terminal and type:
+If you don't have node.js installed yet, go on and [install it](https://github.com/processing/p5.js/wiki/Local-server). Then, open your terminal and type:
 
 ```bash
 npm install -g http-server
 ```
 
-Now, we're done! `cd` to our project's directory and type:
+Now, we're done! `cd` into our project's directory and type:
 
 ```bash
 http-server
 ```
 
 Go to `[http://localhost:8080](http://localhost:8080)` and *yay! A gray square!!*
+
 > Note: From now on, we will need to update this page several times. If you update it and see no changes, try to update using `Ctrl + F5` or `Cmd + F5`.
 
 ### Step 2 - Programming the agents
-
 We have two different types of agents: the Sheep and the Wolves. But they have a lot in common, right? For example, they have an initial amount of energy; when they eat they earn more energy; they have a reproduction probability, etc. So it may be beneficial for us to create an `Agent` class and make `Sheep` and `Wolf` inherit from it.
 
 So, let's create `agent.js` and create our `Agent` class and constructor:
@@ -263,7 +259,7 @@ constructor(...) {
 }
 ```
 
-We can already create our `Sheep` and `Wolf`. Create two more files: `sheep.js` and `wolf.js`. Create the respective classes:
+We have already created our `Sheep` and `Wolf`. Create two more files: `sheep.js` and `wolf.js`. Create the respective classes:
 
 ```jsx
 // wolf.js
@@ -325,7 +321,7 @@ let wolfMaxSpeed = 10
 let wolfR = 8
 ```
 
-You can change those values to whatever you want, there are no right or wrong values. Now, inside the constructors of Sheep and Wolf, let's call the superclass' constructor using `super()` and passing the parameters.
+You can change those values to whatever you want, there are no right or wrong values. Now, inside the constructors of Sheep and Wolf, let's call the superclass' constructor using `super()` and pass the parameters.
 
 ```jsx
 constructor() {
@@ -424,7 +420,6 @@ function draw() {
 And *voilà*! Update your page in the browser and you should see a white circle and a gray triangle randomly positioned over a light gray background. Now it's time to make them move!
 
 #### Movement
-
 We have three moving behaviors for our agents:
 
 - If a sheep is inside the vision radius of a wolf, the wolf will hunt her. This is the Seek behavior;
@@ -434,8 +429,7 @@ We have three moving behaviors for our agents:
 These behaviors are not so hard to implement. But maybe they go out of this article's scope that's about Agent-Based Models and p5.js. Happily, Daniel Shiffman from The Coding Train implemented this all and has made it available for us! Thank you, Daniel Shiffman and The Coding Train! Now we don't have to worry about our agent's movement behaviors. To understand better how it all works, you can also see the explanatory videos on [The Coding Train's YouTube channel](https://www.youtube.com/channel/UCvjgXvBlbQiydffZU7m1_aw).
 
 ##### Wander
-
-Go to [this Github link](https://github.com/CodingTrain/website/blob/main/learning/nature-of-code/5.5-wander/main/vehicle.js) and download the `vehicle.js` to our project's directory. In `index.html` head, add a link to it before the links to our other *.js* files:
+Go to this [Github link](https://github.com/CodingTrain/website/blob/main/learning/nature-of-code/5.5-wander/main/vehicle.js) and download the `vehicle.js` to our project's directory. In `index.html` head, add a link to it before the links to our other *.js* files:
 
 ```jsx
 <script language="javascript" type="text/javascript" src="vehicle.js"></script>
@@ -521,7 +515,7 @@ function draw() {
 }
 ```
 
-If you run it, you should have only one circle and one triangle wandering. But we have another problem: if the agent goes out of the canvas, it might not come back. Luckily, in `vehicle.js` we also have a turnaround for this. In `draw()`, after each agent's `show()`, let's call `edges()`:
+If you run it, you should have only one circle and one triangle wandering. But we have another problem. If the agent goes out of the canvas, it might not come back. Luckily, in `vehicle.js` we also have a turnaround for this. In `draw()`, after each agent's `show()`, let's call `edges()`:
 
 ```jsx
 function draw() {
@@ -545,7 +539,7 @@ If you update it again, you will see that when an agent goes out of the canvas i
 
 Okay, let's quickly see what's happening here. `wander()` makes the calculations, and `update()` updates the acceleration, velocity, and position of the agents. The `maxSpeed` parameter of `Agent` is used in the `Vehicle` superclass to limit the velocity. All the movement is handled by `Vehicle`, and then we display the object in the new position using `show()`. Finally, `edges()` prevent the agents from going out of the screen.
 
-To make the movement more nice-looking, let's just add one thing in Wolf's `show()`. Before `triangle()`, add `rotate(this.vel.heading())`. This will make the triangle point to the direction of its movement, instead of always pointing to the right. 
+To make the movement more nice-looking, let's add one thing in Wolf's `show()`. Before `triangle()`, add `rotate(this.vel.heading())`. This will make the triangle point to the direction of its movement, instead of always pointing to the right. 
 
 ```jsx
 show() {
@@ -566,7 +560,7 @@ show() {
 }
 ```
 
-Update the page. Very nice, huh? This `show()` method in `Wolf` is very inspired by Vehicle's `show()`. So, thank you again, Daniel Shiffman and The Coding Train! 
+Update the page. Very nice! This `show()` method in `Wolf` is very inspired by Vehicle's `show()`. So, thank you again, Daniel Shiffman and The Coding Train! 
 
 Let's add more agents to our canvas?! First, let's declare the initial number of sheep and wolves in `sketch.js` outside `setup()` and `draw()`:
 
@@ -620,10 +614,9 @@ for (let i = 0; i < wolves.length; i++) {
 
 If you update the project's page now, you should see several sheep and wolves wandering through the canvas.
 
-For now, the agents are just wandering, we still need to implement the Seek and Flee behaviors. These behaviors happen when there's an overlap between an agent from a type and the vision field of an agent from another type. 
+For now, the agents are just wandering, we still need to implement the `Seek` and `Flee` behaviors. These behaviors happen when there's an overlap between an agent from a type and the vision field of an agent from another type. 
 
 ##### Seek
-
 The vision field of the agents is a circle of radius `visionR` that we declared before. Let's visualize this. In `sheep.js`, let's draw the vision field after `translate()`.
 
 ```jsx
@@ -643,7 +636,7 @@ show() {
 
 We need to place it after `translate()` and before the rest of the code because we want it to be behind our sheep. The sheep's vision field color here is `rgba(0, 0, 255, 0.3)`, a deep blue with 30% of opacity. Do the same thing in `wolf.js`, but change the color to a red using `fill('rgba(255, 0, 0, 0.3)')`. Now we can see our agents' vision fields.
 
-To know if an agent is in the vision field of another agent we need to check if the agent is colliding with another agent's vision field. To do this, let's add the [p5.collide2D library](https://github.com/bmoren/p5.collide2D#collidecirclecircle). Add this to your `index.html` head:
+To know if an agent is in the vision field of another agent, we need to check if the agent is colliding with another agent's vision field. To do this, let's add the [p5.collide2D library](https://github.com/bmoren/p5.collide2D#collidecirclecircle). Add this to your `index.html` head:
 
 ```jsx
 <script defer src="https://unpkg.com/p5.collide2d"></script>
@@ -688,12 +681,13 @@ if (closestSheep == null) {
 }
 ```
 
-What we are doing here:
+What are we doing here:
 
-- we check if there's any sheep in the wolf's vision radius;
-- if this is true, we make the wolf seek the sheep;
-- if this is false, the wolf keeps wandering;
-- it there's more than one sheep in the vision radius, the wolf will hunt the closest one.
+- We check if there's any sheep in the wolf's vision radius;
+- If this is true, we make the wolf seek the sheep;
+- If this is false, the wolf keeps wandering;
+- If there's more than one sheep in the vision radius, the wolf will hunt the closest one.
+
 This is how our `draw()` function looks like now:
 ```jsx
 function draw() {
@@ -741,10 +735,9 @@ function draw() {
 }
 ```
 
-Update on the browser and there are the wolves hunting sheep inside their vision radius. Now we need to make the sheep flee from the wolves.
+Update on the browser. The wolves are hunting sheep inside their vision radius. Now we need to make the sheep flee from the wolves.
 
 ##### Flee
-
 To check if a sheep needs to flee, we need to check if the sheep's vision radius overlaps with the wolf. This is a little more complex because now the collision is not between two circles, but between a circle and a triangle that rotates. To check this, we need this function from p5.collide2D:
 
 ```jsx
@@ -809,10 +802,9 @@ if (closestWolf == null) {
 This is pretty much the same thing we did for wolves, but for sheep and replacing `seek()` with `flee()`. You can update your page now and see it. It's getting very nice, right? If you want to, you can comment on the code that draws our agents' vision fields to make our sketch simpler.
 
 #### Life and Death (and Eating too)
-
 There are 4 more behaviors that our agents have in common. They are: live, die, eat, and reproduce. In this step, we are going to deal with live, die, and eat. 
 
-In our case, to live is to lose energy at each time step. To die is to be eaten or to not have energy. And to eat is to get energy from food. Let's add the methods `live()`, `died()`, and `eat()` to Agent in `agent.js`. They are very simple methods
+In our case, to live is to lose energy at each time step. To die is to be eaten or to not have energy. And to eat is to get energy from food. Let's add the methods `live()`, `died()`, and `eat()` to Agent in `agent.js`. They are very simple methods.
 
 ```jsx
 live() {
@@ -979,8 +971,7 @@ function draw() {
 
 Update your page. Our agents are pretty complex now: they wander, seek, flee, live, die, and eat. That's a lot! 
 
-> Note: if your agents are dying very fast or reproducing a lot or any weird thing like this is happening, try to modify the parameters in `sheep.js` and `wolf.js`, and the initial number of agents in `sketch.js`.
-> 
+> Note: If your agents are dying very fast or reproducing a lot or any weird thing like this is happening, try to modify the parameters in `sheep.js` and `wolf.js`, and the initial number of agents in `sketch.js`.
 
 #### Reproduction
 
@@ -1135,7 +1126,6 @@ function draw() {
 ```
 
 ### Step 3 - Programming the Environment
-
 Start by creating `environment.js` and linking it in `index.html` head.
 
 ```jsx
@@ -1401,7 +1391,6 @@ if (grassAvailable != null && grassAvailable[2]) {
 Our model is now complete! All the agents are wandering, seeking or fleeing, living, dying, reproducing, and eating. Let's now just add a plot of populations and do a few tweaks!
 
 ### Step 4 - Final tweaks and plotting
-
 Let's add some variables to make it easier for us to manipulate the width, height, and frame rate: 
 
 ```jsx
@@ -1472,19 +1461,16 @@ plot.endDraw()
 // updating time_step
 time_step += 1
 ```
-
-You can see the whole code in [this GitHub repository](https://github.com/csamuelsm/sheep-wolves-grass-p5js).
-
-### Conclusion
-
 That's it! We finished! Let's update our page (use `Ctrl + F5` or `Cmd + F5` if you see no changes).
 
+You can view the whole code in this [GitHub repository](https://github.com/csamuelsm/sheep-wolves-grass-p5js).
+
+### Conclusion
 What we can do now is to play with the parameters and see what happens when we add different values. For example, what happens when there's a lot of sheep and just a few wolves? What happens if there's a lot of wolves but just a few sheep? And if the grass takes too long to regrow? How do the initial energy, the food energy, and the lost energy values interfere in the model? Is there a set of values that creates an equilibrium where wolves and sheep live together without one or both going extinct?
 
 This is maybe the funniest part: running tests and creating hypotheses. Another thing you can try is to create variations of this model, maybe simplify it a bit or maybe add other parameters and make it more complex. You can also create your models from scratch now! Use your creativity and have fun!
 
 ### References
-
 - [p5.js, a Javascript library for creative coding](https://p5js.org/)
 - [Agent Based Modeling and Simulation: An Informatics Perspective](https://jasss.soc.surrey.ac.uk/12/4/4.html)
 - [NetLogo's Wolf Sheep Predation model](https://ccl.northwestern.edu/netlogo/models/WolfSheepPredation)
