@@ -27,11 +27,23 @@ It then uses route-based code splitting to figure out what parts of the code nee
 
 This ES build is written in Go, making it faster than JavaScript-based bundlers such as Webpack.
 
-Some of the key feature of Vite include;
+Some of the key features of Vite include;
 
-- Bear module resolving - When you import from a package it does not contain the relative path to installed ode.js modules.
-- 
-Create a project folder and run the following command inside that folder.
+- On-demand compilation - Vite compiles your project source files as the browser requests them. The only code imported and required on the current screen/page is compiled on-demand, making your page serve fast and on-demand. This makes Vite suitable for building and serving large projects.
+- Hot Module Replacement - When you Vite bundler, all our file changes are reflected in the browser almost immediately.
+- Bear Module Resolving - When you import from a package, it does not contain the relative path to installed Node.js modules. Vite checks your packages imports, rewrites them, and performs module resolution to locate the correct files in your project's dependencies.
+- Advanced configuration options - Vite gives you control to extend the default configuration of your project. It allows you to extend, use, and run TypeScript.
+
+On the other side, TypeScript is a superset of JavaScript that allows static typing of your code. This means TypeScript includes all possible valid JavaScript features plus some extra features, functionalities, and syntax on top of it. TypeScript is compiled down into regular JavaScript so that the browser can understand it.
+
+Some of the main features TypeScript offers are;
+
+- It offers is type checking - This allows you to specify variables and functions types whenever you use them. This makes your code readable and descriptive, especially when building a large-scale project. For example, when you have a lot of different variables and functions that you need to keep track of.
+- It has static typing - Static typing means that a lot of basic errors can be caught by the compiler. This allows you to check any possible errors before runtime.
+- TypeScript offers classes - This means you can use object-oriented programming principles such as encapsulation, access modifiers, and inheritance.
+- It has support for ES6 syntax.
+
+To set up a Svelte application with Vite and TypeScript support, create a project folder and run the following command inside that folder.
 
 ```bash
 npm init vite@latest
@@ -67,12 +79,14 @@ This will create a simple TypeScript boilerplate application. You can test it by
 npm run dev
 ```
 
-On your browser, navigate to the URL that is logged on your console, e.g., `http://localhost:3000`. This will sarve you a simple TypeScript Svelte application, as shown below.
+On your browser, navigate to the URL that is logged on your console, e.g., `http://localhost:3000`. This will serve you a simple TypeScript Svelte application, as shown below.
 
 ![default-landing-page](/engineering-education/svelte-with-vite-typescript-and-tailwind-css/default-landing-page.PNG)
 
 ### Setting up Tailwind CSS
-Open a new tab on your terminal and run the following command to install TailwindCSS and its peer dependencies.
+Tailwind is a collection of CSS utility classes that allows you to write less CSS code. Tailwind enables you to use these utility classes and create responsive, animated UI components easier and faster. One of the significant reasons Tailwind is popular is because it works well with component-based JavaScript frameworks such as  Svelte, Vue, React, and Angular.
+
+To set up Tailwind for Svelte, open a new tab on your terminal and run the following command to install TailwindCSS and its peer dependencies.
 
 ```bash
 npm install -D tailwindcss@latest postcss@latest autoprefixer@latest
@@ -100,7 +114,7 @@ export default {
 }
 ```
 
-We have also included the `index.html`, and `svelte,js,ts` files on a purge to remove any unused CSS from files with such extensions.
+We have also included the `index.html`, and `svelte, js, ts` files on a purge to remove any unused CSS from files with such extensions.
 
 Also, update the `postcss.config.js` as follows.
 
@@ -167,60 +181,57 @@ Having configured Tailwind, we will create a simple portfolio page that demonstr
 #### Set up the navigation bar component
 Add the following to `Nav.svelte`.
 
-```js
+```ts
 <script>
   import * as animateScroll from "svelte-scrollto";
 </script>
 
 <header class="text-gray-600 body-font">
-    <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-      <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0" href="/" 
-      on:click={
-        () => {
-          window.scrollTo({
-            top:0,
-            left:0,
-            behavior:"smooth"
-          })
-        }
+  <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+    <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0" href="/" 
+    on:click={
+      () => {
+        window.scrollTo({
+          top:0,
+          left:0,
+          behavior:"smooth"
+        })
       }
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
-          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-        </svg>
-        <span class="ml-3 text-xl">ABC</span>
-      </a>
-      <nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
-        <a class="mr-5 cursor:pointer transition duration-500 ease-in-out hover:text-anaranjado transform hover:-translate-y-1 hover:scale-110"
-        name="navigation"
-        on:click={
-          () => 
-            animateScroll.scrollTo({
-              element:"#home",
-              offset:50
-            })
-          
-        }>Home</a>
-        <a class="mr-5 cursor:pointer transition duration-500 ease-in-out hover:text-anaranjado transform hover:-translate-y-1 hover:scale-110"  
-        name="navigation"
-        on:click={
-          () => 
-            animateScroll.scrollTo({
-              element:"#services",
-              offset:50
-            })
-          
-        }>Our Services</a>
-        <a class="mr-5 cursor:pointer transition duration-500 ease-in-out hover:text-anaranjado transform hover:-translate-y-1 hover:scale-110"
-        name="navigation"
-        on:click={
-          () => 
-            animateScroll.scrollTo({
-              element:"#team",
-              offset:50
-            })
-          
-        }>Our team</a>
+    }
+    >       
+      <h2 class="ml-3 text-xl">ABC</h2>
+    </a>
+    <nav class="md:mx-auto flex flex-wrap items-center justify-center">
+      <a class="mr-5"
+      name="navigation"
+      on:click={
+        () => 
+          animateScroll.scrollTo({
+            element:"#home",
+            offset:50
+          })
+        
+      }>Home</a>
+      <a class="mr-5"  
+      name="navigation"
+      on:click={
+        () => 
+          animateScroll.scrollTo({
+            element:"#services",
+            offset:50
+          })
+        
+      }>Our Services</a>
+      <a class="mr-5"
+      name="navigation"
+      on:click={
+        () => 
+          animateScroll.scrollTo({
+            element:"#team",
+            offset:50
+          })
+        
+      }>Our team</a>
     </nav>
   </div>
 </header>
@@ -241,14 +252,15 @@ Add the following to the `Hero.svelte` component.
 </script>
 
 <section id="home" class="text-gray-600 body-font">
-  <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
-    <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
-      <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
+  <div class="container mx-auto flex items-start justify-between">
+    <div class="py-20">
+      <h1 class="title-font text-gray-900 mb-10 title-font font-medium">
         Trusted by over one thousand clients
       </h1>
       <p class="mb-8 leading-relaxed">We offer the best web service to our clients. </p>
-      <div class="flex justify-center">
-        <button class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"
+      <div class="flex items-center">
+        <button
+        class="bg-blue-600 px-6 py-2 text-white rounded-full hover:bg-blue-500 focus:outline-none focus:shadow-outline"
         on:click={
           () => animateScroll.scrollTo({
             element:"#services",
@@ -257,7 +269,7 @@ Add the following to the `Hero.svelte` component.
         }
         >Our services</button>
       </div>
-    </div>
+      </div>
     <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
       <img class="object-cover object-center rounded" alt="hero" src="https://images.unsplash.com/photo-1633114127451-558041183c3b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80">
     </div>
@@ -270,9 +282,39 @@ This displays dummy content, including a button that scrolls to the services sec
 #### Set up the services component
 Add the following to the `services.svelte` component.
 
-```js
-<p>Our services section</p>
-
+```ts
+<section id="services">
+  <div class="container mx-auto">
+    <div class="py-20">
+      <h1 class="title-font text-center text-gray-900 mb-10 title-font font-medium">
+        Our services
+      </h1>
+      <p class="mb-8 leading-relaxed text-center">We offer the following services to our clients. </p>
+      <div class="flex flex-wrap lg:w-4/5 sm:mx-auto">
+          <div class="p-2 md:w-1/2 w-full">
+              <div class="bg-blue-600 rounded p-4 text-center text-white">
+                  <p>Website design</p>
+              </div>
+          </div>
+          <div class="p-2 md:w-1/2 w-full">
+              <div class="bg-blue-600 rounded p-4 text-center text-white">
+                  <p>Website development</p>
+              </div>
+          </div>
+          <div class="p-2 md:w-1/2 w-full">
+              <div class="bg-blue-600 rounded p-4 text-center text-white">
+                  <p>Mobile application design</p>
+              </div>
+          </div>
+          <div class="p-2 md:w-1/2 w-full">
+              <div class="bg-blue-600 rounded p-4 text-center text-white">
+                  <p>Mobile application development</p>
+              </div>
+          </div>
+      </div>
+      </div>
+  </div>
+</section>
 ```
 
 Create a dummy services section from the above component.
@@ -281,7 +323,42 @@ Create a dummy services section from the above component.
 Add the following to the `Team.svelte` component.
 
 ```ts
-<p>Our team section</p>
+<section id="teams">
+    <div class="container mx-auto">
+      <div class="py-20">
+        <h1 class="title-font text-center text-gray-900 mb-10 title-font font-medium">
+          Our team
+        </h1>
+        <p class="mb-8 leading-relaxed text-center"> Our pool of talented employees </p>
+        <div class="flex flex-wrap lg:w-4/5 sm:mx-auto">
+            <div class="p-2 md:w-1/2 w-full">
+                <div class="bg-gray-400 rounded p-4 text-center ">
+                    <p>John Doe</p>
+                    <p>C.E.O/Co-founder</p>
+                </div>
+            </div>
+            <div class="p-2 md:w-1/2 w-full">
+                <div class="bg-gray-400 rounded p-4 text-center">
+                    <p>Jane Doe</p>
+                    <p>Co-founder/ Product management</p>
+                </div>
+            </div>
+            <div class="p-2 md:w-1/2 w-full">
+                <div class="bg-gray-400 rounded p-4 text-center">
+                    <p>Alex Doe</p>
+                    <p>Wed developer</p>
+                </div>
+            </div>
+            <div class="p-2 md:w-1/2 w-full">
+                <div class="bg-gray-400 rounded p-4 text-center">
+                    <p>Alice Doe</p>
+                    <p>Mobile application developer</p>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</section>
 ```
 
 Create a dummy team members section from the above component.
@@ -331,9 +408,13 @@ Call the components inside the `main` section of the app.
 </main>
 ```
 
-Run your development server using `npm rum dev` and open `http://localhost:3000` on your browser to view this portfolio.
+To view this portfolio, launch your Svelte development server using `npm run dev` and then navigate to `http://localhost:3000` in your browser.
 
 ![new-landing-page](/engineering-education/svelte-with-vite-typescript-and-tailwind-css/new-landing-page.png)
+
+![our-services-section](/engineering-education/svelte-with-vite-typescript-and-tailwind-css/our-services-section.png)
+
+![our-team-section](/engineering-education/svelte-with-vite-typescript-and-tailwind-css/our-team-section.png)
 
 ### Conclusion
 This guide has illustrated how you set up a TypeScript Svelte boilerplate that you can use to write TypeScript code within a Svelte application. We also configured and used TailwindCSS to create a Svelte portfolio application.
