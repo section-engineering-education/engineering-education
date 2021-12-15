@@ -3,8 +3,8 @@ layout: engineering-education
 status: publish
 published: true
 url: /authorization-and-authentication-in-server-side-blazor/
-title: Implementing authentication and authorization in Server Side Blazor
-description: This tutorial gives a step by step process of applying authorization and authentication into websites.
+title: Implementing Authentication and Authorization in Server Side Blazor
+description: This tutorial gives a step by step process of applying authorization and authentication in blazor into websites.
 author: daniel-masika
 date: 2021-12-14T00:00:00-12:47
 topics: [Languages]
@@ -14,13 +14,13 @@ images:
   - url: /engineering-education/authorization-and-authentication-in-server-side-blazor/hero.jpg
     alt: Implementing authentication and authorization in Server Side Blazor Hero Image
 ---
-Today, there are many websites providing important services to the society. In order to carry out this process, they need to protect their websites from unethical users. This has led to the introduction of authentication and authorization on their websites.
+Today, there are many websites providing important services. In order to carry out this process, they need to protect their websites from unethical users. This has led to the introduction of authentication and authorization on their websites.
 <!--more-->
-
 Authentication is the process or action of verifying the identity of a user or process. User authentication for each device ensures that the individual using the device is recognized by the company, and authorization gives users permission to access a service.
 
-In this tutorial, we will discuss how authentication and authorization are implemented in the functionality layer. There are three different basic layers which are:
+In this tutorial, we will discuss how authentication and authorization are implemented in the functionality layer. 
 
+There are three different basic layers:
 - User interface (UI) layer
 - Functionality layer
 - Object Relation Mapping/Database
@@ -31,12 +31,11 @@ In this tutorial, we will discuss how authentication and authorization are imple
 - [Getting started](#getting-started)
 - [The user interface](#the-user-interface)
 - [Functionality layer](#functionality-layer)
-- [Object relation mapping or Data base](#object-relation-mapping-or-data-base)
+- [Object relation mapping or data base](#object-relation-mapping-or-data-base)
 - [Conclusion](#conclusion)
 
 ### Prerequisites
 To follow through this tutorial, we will need:
-
 - [Visual Studio](https://visualstudio.microsoft.com/vs/community/) installed.
 - Basic understanding of [C#](https://docs.microsoft.com/en-us/dotnet/csharp/)
 - Basic understanding of [Blazor](https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor)
@@ -44,19 +43,19 @@ To follow through this tutorial, we will need:
 ### Getting started
 We will start by creating a server side blazor app. To do this, we will Open Microsoft Visual Studio and select `Create a New Project`.
 
-![New Project](/engineering-education/creating-a-blazor-server-side-application-using-aspdotnet-core-to-perform-crud-operations/newproject.jpg)
+![New Project](/engineering-education/authorization-and-authentication-in-server-side-blazor/newproject.jpg)
 
 On the next screen, we will select `Blazor server App` and click `Next`.
 
-![Type of Application](/engineering-education/creating-a-blazor-server-side-application-using-aspdotnet-core-to-perform-crud-operations/blazorserver.jpg)
+![Type of Application](/engineering-education/authorization-and-authentication-in-server-side-blazor/blazorserver.jpg)
 
 On the next screen, where we are required to configure our new project, we will enter the name of the project and click `Next`.
 
-![Name of Application](/engineering-education/creating-a-blazor-server-side-application-using-aspdotnet-core-to-perform-crud-operations/nameapp.jpg)
+![Name of Application](/engineering-education/authorization-and-authentication-in-server-side-blazor/nameapp.jpg)
 
 On the next screen, we will choose `.NET Core 3.1 (Long-term support)` as our target framework, then click on `Create`.
 
-![Target framework](/engineering-education/creating-a-blazor-server-side-application-using-aspdotnet-core-to-perform-crud-operations/framework.jpg)
+![Target framework](/engineering-education/authorization-and-authentication-in-server-side-blazor/framework.jpg)
 
 ### The user interface
 This is the layer that the user interacts with. It enables users to register, log in, recover passwords, and manage user profiles.
@@ -71,9 +70,9 @@ To start our authentication functionality, we will go to the `startup.cs` file, 
     app.UseAuthorization();
 ```
 
-Now, the next step, we will add an authentication state provider which will give us the state of the user. To do this, we will add a class named `AuthStateProvider` in our Data folder.
+In the next step, we will add an authentication state provider which will give us the state of the user. To do this, we will add a class named `AuthStateProvider` in our Data folder.
 
-Now in the created class, in order to return the authentication state of the hard coded user, e.g, `johndoe@gmail.com` because there is no user logged in to the system, we will use the code below:
+Now in the created class, in order to return the authentication state of the hard coded user, for example, `johndoe@gmail.com` because there is no user logged in to the system, we will use the code below:
 
 ```c#
 namespace ServerApp.Data
@@ -94,15 +93,15 @@ namespace ServerApp.Data
 }
 ```
 
-The next thing is to add the authentication state provider in the `startup.cs` file. This is done in the `ConfigureServices` method. Use the code line below:
+The next thing is to add the authentication state provider in the `startup.cs` file. This is done in the `ConfigureServices` method. 
+
+Use the code line below:
 
 ```c#
 services.AddScoped<NewAuthenticationStateProvider, NewAuthenticationStateProvider>();
 ```
 
-In the code above, we are adding a scoped instance of the state provider and implementing it with the `NewAuthenticationStateProvider`.
-
-Now we tell the application route that we are expecting `NewAuthenticationStateProvider` as the cascading parameter which could be passed across the application and we could use it.
+In the code above, we are adding a scoped instance of the state provider and implementing it with the `NewAuthenticationStateProvider`. Now we tell the application route that we are expecting `NewAuthenticationStateProvider` as the cascading parameter which could be passed across the application and we could use it.
 
 To implement this, go to the `app.razor` file, edit this code line `<RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />` to `<AuthorizeRouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />`. The `AuthorizeRouteView` takes state provider as cascading parameter and can be used whenever it is needed.
 
@@ -134,7 +133,9 @@ Now, on the index page, we need to show the name of authenticated user on the sc
 
 `@context.User.Identity.Name` is showing the name of the user when he or she has successfully logged in. If the user is not logged in, they will see `Please log in to access the page. Thank you`.
 
-Next, we need to create a log in page to enable the user to sign in. To do this, go to the pages folder and add another page. Open the file and add the following code:
+Next, we need to create a log in page to enable the user to sign in. To do this, go to the pages folder and add another page. 
+
+Open the file and add the following code:
 
 ```c#
 @page "/login"
@@ -219,7 +220,7 @@ public NewAuthenticationStateProvider(ISessionStorageService sessionStorageServi
 }
 ```
 
-Now that we have the session state provider, when the browser is refreshed and user has some value, we need the browser to return the user data, else, log out the user. This is implemented by using the code below in the `public override Task<AuthenticationState> GetAuthenticationStateAsync()` function, and calling it whenever you refresh the browser:
+Now that we have the session state provider, when the browser is refreshed and user has some value, we need the browser to return the user data, otherwise, log out the user. This is implemented by using the code below in the `public override Task<AuthenticationState> GetAuthenticationStateAsync()` function, and calling it whenever you refresh the browser:
 
 ```c#
 var emailAddress = await _sessionStorageService.GetItemAsync<string>(emailAddress);
@@ -243,9 +244,7 @@ We will also need to tell the function that it is an async function because we a
 public override async Task<AuthenticationState> GetAuthenticationStateAsync()
 ```
 
-Change the code line `return Task.FromResult(true);` to `return await Task.FromResult(true);` by adding the `await` keyword.
-
-The last thing to do is implement the log out function. We will navigate to the `shared` folder, open the `MainLayout.razor` file, then create an authorize view inside the `div class ="main"` i.e:
+Change the code line `return Task.FromResult(true);` to `return await Task.FromResult(true);` by adding the `await` keyword. The last thing to do is implement the log out function. We will navigate to the `shared` folder, open the `MainLayout.razor` file, then create an authorize view inside the `div class ="main"` i.e:
 
 ```HTML
 <AuthorizeView>
@@ -272,7 +271,7 @@ public UserLoggedOut()
 }
 ```
 
-We will need to inject the authorization state provide in the `MainLayout.razor` page;
+We will need to inject the authorization state provider in the `MainLayout.razor` page;
 
 ```c#
 @inject AuthenticationStateProvider AuthenticationStateProvider
@@ -287,13 +286,13 @@ public void Logout()
 }
 ```
 
-### Object relation mapping or Data base
+### Object relation mapping or database
 This layer stores, operates, and updates user information.
 
 ### Conclusion
-From this tutorial, we have learnt how to implement server side authorization in blazor by taking you through each and every step, easy to understand and follow along.
+From this tutorial, we learned how to implement server side authorization in blazor by taking you through each and every step, easy to understand and follow along.
 
-**NOTE:** _Any errors in the project are solved by importing the necessary C# packages._
+**NOTE:** *Any errors in the project are solved by importing the necessary C# packages.*
 
 I hope you find this tutorial helpful.
 
