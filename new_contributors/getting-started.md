@@ -18,7 +18,7 @@ There is a [Technical Writing Two introduction](https://developers.google.com/te
 
 These courses are recommeneded for any students that may lack exprience with technical writing, or students would like to improve their articles in the queue.
 
-For any students that may be having trouble with grammar we suggest this [Just enough grammar] course, which provides grammar help.
+For any students that may be having trouble with grammar we suggest this [Just enough grammar](https://developers.google.com/tech-writing/one/just-enough-grammar) course, which provides grammar help.
 
 ### Suggest a topic
 Then you are ready to suggests a topic idea to be approved [via this form](https://github.com/section-io/engineering-education/issues/new?assignees=&labels=topic+suggestion&template=enged-content-idea-suggestion.md&title=).
