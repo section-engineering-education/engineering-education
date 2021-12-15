@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /build-a-static-nextjs-markdown-files-blog-with-typescript-mdx-tailwindcss/
+url: /static-nextjs-markdown-blog-typescript-mdx-tailwindcss/
 title: Build a Static Next.js Markdown Blog with Typescript, MDX, and Tailwind CSS
 description: This article will provide a step-by-step guide on how to create a markdown blog using TypeScript, MDX, and Tailwind CSS.
 author: rose-waitherero 
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/build-a-static-nextjs-markdown-files-blog-with-typescript-mdx-tailwindcss/hero.jpg
+  - url: /engineering-education/static-nextjs-markdown-blog-typescript-mdx-tailwindcss/hero.jpg
     alt: Build a Static Next.js Markdown Blog with Typescript, MDX, and Tailwind CSS Hero Image
 ---
 Next.js is a framework that is built over React.js. React is a client-side rendering library where everything gets rendered on the client-side of the user's browser. Next.js brought in server-side rendering to React.
@@ -479,7 +479,7 @@ npm run dev
 
 Open the running server on a browser using `http://localhost:3000`. And now, you should be able to have the added MDX content on your webpage.
 
-![home-page](/engineering-education/build-a-static-nextjs-markdown-files-blog-with-typescript-mdx-tailwindcss/home-page.PNG)
+![home-page](/engineering-education/static-nextjs-markdown-blog-typescript-mdx-tailwindcss/home-page.PNG)
 
 ### Showing a single post
 We will first handle the state management in the application for managing our component's data. We will use the Context API that is present in Next.js.
@@ -721,7 +721,7 @@ On the client-side:
 
 Ensure that the development server is still running, and test if this works. Click on any article from the home page, and a single article page should be loaded.
 
-![specific-article-page](/engineering-education/build-a-static-nextjs-markdown-files-blog-with-typescript-mdx-tailwindcss/specific-article-page.PNG)
+![specific-article-page](/engineering-education/static-nextjs-markdown-blog-typescript-mdx-tailwindcss/specific-article-page.PNG)
 
 Check the complete working code on [GitHub](https://github.com/Rose-stack/static-nextjs-blog-with-typescript-mdx-tailwindcss).
 
@@ -734,11 +734,11 @@ Select `New Project` from the Vercel [dashboard](https://vercel.com/dashboard). 
 
 Enter your preferred project name and then click Deploy
 
-![vercel-deployment-conf](/engineering-education/build-a-static-nextjs-markdown-files-blog-with-typescript-mdx-tailwindcss/vercel-deployment-conf.PNG)
+![vercel-deployment-conf](/engineering-education/static-nextjs-markdown-blog-typescript-mdx-tailwindcss/vercel-deployment-conf.PNG)
 
 After the deployment is done, click on the generated preview. You will be redirected to your hosted blog application which you can share with friends and the general community.
 
-![hosted-blog-application](/engineering-education/build-a-static-nextjs-markdown-files-blog-with-typescript-mdx-tailwindcss/hosted-blog-application.PNG)
+![hosted-blog-application](/engineering-education/static-nextjs-markdown-blog-typescript-mdx-tailwindcss/hosted-blog-application.PNG)
 
 ### Conclusion
 Next.js is an amazing React-based framework. It allows you to work with almost any aspect of both server-side and client-side content. It is very lightweight and allows you to create full fledge fast applications.
