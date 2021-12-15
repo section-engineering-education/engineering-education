@@ -16,7 +16,7 @@ images:
 ---
 Today, there are many websites providing important services. In order to carry out this process, they need to protect their websites from unethical users. This has led to the introduction of authentication and authorization on their websites.
 <!--more-->
-Authentication is the process or action of verifying the identity of a user or process. User authentication for each device ensures that the individual using the device is recognized by the company, and authorization gives users permission to access a service.
+Authentication is the process or action of verifying the identity of a user or process. User authentication for each device ensures the company recognizes the individual using the device, and authorization gives users permission to access a service.
 
 In this tutorial, we will discuss how authentication and authorization are implemented in the functionality layer. 
 
