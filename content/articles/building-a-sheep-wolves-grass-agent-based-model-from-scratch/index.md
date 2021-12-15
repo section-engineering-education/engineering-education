@@ -696,9 +696,7 @@ What we are doing here:
 - if this is true, we make the wolf seek the sheep;
 - if this is false, the wolf keeps wandering;
 - it there's more than one sheep in the vision radius, the wolf will hunt the closest one.
-
-This is our `draw()` now:
-
+This is how our `draw()` function looks like now:
 ```jsx
 function draw() {
 
