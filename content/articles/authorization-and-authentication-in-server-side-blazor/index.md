@@ -12,7 +12,7 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/authorization-and-authentication-in-server-side-blazor/hero.jpg
-    alt: Implementing authentication and authorization in Server Side Blazor Hero Image
+    alt: authentication authorization Server Side Blazor Hero Image
 ---
 Today, there are many websites providing important services. In order to carry out this process, they need to protect their websites from unethical users. This has led to the introduction of authentication and authorization on their websites.
 <!--more-->
