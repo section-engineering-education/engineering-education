@@ -3,16 +3,17 @@ layout: engineering-education
 status: publish
 published: true
 url: /making-http-requests-with-ktor-in-android/
-title: How to Make HTTP Requests With Ktor-Client in Android Jetpack Compose
+title: How to Make HTTP Requests With Ktor-Client in Android
 description: This tutorial provides a step-by-step guide on how to make HTTP requests with Ktor-Client in Android Jetpack Compose.
 author: moses-chege
-date: 2021-12-15T00:00:00-16:00
+date: 2021-12-16T00:00:00-03:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
   - url: /engineering-education/making-http-requests-with-ktor-in-android/hero.jpg
     alt: How to Make HTTP Requests With Ktor-Client in Android Jetpack Compose
 ---
+
 [Ktor](https://ktor.io/) is a client-server framework that helps us build applications in Kotlin. It is a modern asynchronous framework backed by Kotlin coroutines.
 <!--more-->
 Ktor can be compared to network library such as [OkHttp](https://square.github.io/okhttp/) and [Retrofit](https://square.github.io/retrofit/).
@@ -266,7 +267,9 @@ class ApiServiceImpl(
 }
 ```
 
-The above two methods `createProducts()` and `getProducts()` are injected constructors. We are using the `private val client: HttpClientobject` to make network calls to get the list of products from the API endpoint. This sends an asynchronous client to perform HTTP requests that use the Ktor `HttpClientEngine`. In each case, we specify the response type, i.e., `get` and `post`, to send requests and post responses to and from the server respectively.
+The two methods `createProducts()` and `getProducts()` are injected constructors. We are using the `private val client: HttpClientobject` to make network calls to get the list of products from the API endpoint. 
+
+This sends an asynchronous client to perform HTTP requests that use the Ktor `HttpClientEngine`. In each case, we specify the response type, i.e., `get` and `post`, to send requests and post responses to and from the server respectively.
 
 We are performing this request to a server. Likewise, we are getting data responses from the server. This means that a bad request/something that goes wrong will make Ktor throw an exception. Thus, we need to handle and catch any exceptions such as unhandled redirect exceptions, server error exceptions, and bad client request exceptions.
 
@@ -375,7 +378,7 @@ The app is now ready, and you can run it to test if everything works as expected
 ![ktor-client](/engineering-education/making-http-requests-with-ktor-in-android/ktor-client.png)
 
 ### Conclusion
-Ktor is used for HTTP requests such as get, post, delete, and update. Ktor is a straightforward, easy-to-use framework language that is entirely built on coroutines. It enables asynchronous programming with minimal boilerplate code.
+Ktor is used for HTTP requests such as get, post, delete, and update. It is a straightforward, easy-to-use framework language that is entirely built on coroutines. It enables asynchronous programming with minimal boilerplate code.
 
 In this tutorial, we have learned how we can use the Ktor client and perform HTTP requests. We have used the turned response and displayed the whole list of data using Jetpack Compose and processed the image responses using Coil.
 
