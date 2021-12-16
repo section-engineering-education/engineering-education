@@ -1,11 +1,11 @@
 ### Introduction
 Hibernate is a java object-relational mapping (ORM) and durability framework that lets you map regular Java objects to database tables. Hibernate's primary objective is to relieve the developer of typical data persistence-related chores.
-### What is Hibernate?
-Hibernate is a Java technology that makes it easier to createdatabase-interactive Java applications.
+### Hibernate Definition
+Hibernate is a Java technique that enables developing database-interactive Java applications more easier.
 It's an ORM (Object Relational Mapping) tool that's open source and lightweight.
 ### Table of contents
-- [Architecture](#architecture)
-- [Components of Hibernate Architecture](#components-of-hibernate-architecture)
+- [Hibernate Architecture](#hibernate-architecture)
+- [Architecture Components ](#architecture-components)
   1. [SessionFactory object](#1-sessionFactory-object)
   2. [session object](#2-session-object)
   3. [Transaction object](#3-transaction-object)
@@ -17,14 +17,12 @@ It's an ORM (Object Relational Mapping) tool that's open source and lightweight.
 - [Hibernate example](#hibernate-example)
 - [Conclusion](#conclusion)
 
-### Architecture
-Hibernate offers a layered design that allows users to work without needing to understand the 
-underlying APIs.Hibernate uses the database and configuration data to deliver persistence functions.
-There are four levels to Hibernate's architecture:
+### Hibernate Architecture
+Hibernate has a layered architecture that allows users to operate without having to know the core APIs. To provide durable features, Hibernate makes use of the databases and configurable information. Hibernate's architecture is divided into four levels:
 
-    1.Java application level
-    2. Hibernate Framework level
-    3. Backhand API level
+    1. Application Java
+    2. Hibernate Framework
+    3. Backhand API
     4. Database level
 The Hibernate Application Architecture is depicted in the diagram below at a high level:
 ![High-Level View Architecture](/engineering-education/introduction-to-hibernate/high.png)
@@ -32,22 +30,18 @@ The Hibernate Application Architecture is depicted in full below, along with its
 ![Detailed View Architecture](/engineering-education/introduction-to-hibernate/detailed.png)
 
 #### Components of Hibernate Architecture 
-This part provides a summary of each of the Hibernate Application Architecture class objects.
+Each of the Application Level class objects is summarized in this section.
 
 #### SessionFactory Object
-The ConnectionProvider's SessionFactory is a session and client factory. It stores data in a 
-second-level cache.
+SessionFactory is a session and client factory for the ConnectionProvider. In a second-level cache, data is saved..
 
 #### Session Object
-The session object acts as a conduit between the data in the database and the application. It encapsulates
-the JDBC connection and is a small object. It is a Transaction, Query, and Criteria factory. It has a compulsory first-level cache of data.
+The session object serves as a link between the database and the application's data. It is a tiny object that wraps the JDBC connection. It's a factory for transactions, queries, and criteria. 
 
 #### Transaction Object
-The atomic unit of work specified by the transaction object and methods for
-transaction management is provided via the user interface for transactions.
-
+The user interface for transactions provides the single set of activities specified by the transaction object, as well as functions for transaction processing.
 #### ConnectionProvider
-It's a JDBC connection factory. It hides the application's connection to the DataSource.
+It's a factory for JDBC connections. It hides the application's connection to the DataSource.
 
 #### TransactionFactory
 This is a factory that is used for transactions and it is optional.
@@ -133,225 +127,122 @@ time-consuming than beneficial.
 For batch processing, it's best to stick with plain JDBC because Hibernate's performance 
 is not great.
 
-#### 5.A lot of effort to learn API 
+#### 5.Alot of effort to learn API 
 Learning Hibernate takes a lot of time and effort. As a result, learning Hibernate is not a simple task.
 
 #### Hibernate Example
-Following is a demonstration of how Hibernate may be used to offer Java persistence in a single
-package. We'll walk through the various procedures required in developing a Java application with
-Hibernate.
+Here's an example of  implementation of Hibernate.It is for one-to-one biderectional mapping.
+ //This is customer.java class
+import java.io.Serializable;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
 
-Step 1:Creating the Java Plain Old Java Project class (or classes) that will be saved to the database,
-depending on the application. Let us create a class called "Student".
+@Entity
+public class customer implements Serializable {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
 
-public class Student {
-   private int studentId;
-   private String firstName; 
-   private String surname;   
-   private int age;  
+	@Column(name = "customer_name")
+	private String customer_name;
 
-   public Student() {}
-   public Student(String fname, String surname, int age) {
-      this.firstName = fname;
-      this.lastName = surname;
-      this.age= age;
-   }
-   
-   public int getId() {
-      return studentId;
-   }
-   
-   public void setStudentId( int StudentId ) {
-      this. studentId= studentId;
-   }
-   
-   public String getFirstName() {
-      return firstName;
-   }
-   
-   public void setFirstName( String first_name ) {
-      this.firstName = first_name;
-   }
-   
-   public String getSurName() {
-      return surName;
-   }
-   
-   public void setSurName( String sur_name ) {
-      this.surName = sur_name;
-   }
-   
-   public int getAge() {
-      return age;
-   }
-   
-   public void setAge( int age ) {
-      this.age = age;
-   }
+	@Column(name = "custmer_id")
+	private String custmer_id;
+
+	@Column(name = "customer_email")
+	private customer_email;
+
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "location_id", referencedColumnName = "id")
+	private Location location;
+	
 }
+//This is location.java class
+//import  the same packages  as the one imported in customer.java class
+@Entity
+public class Location {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
 
-Step 2:Create tables in the database. Each object would have its table, 
-and you are ready to offer persistence.
+	@Column(name = "state")
+	private String state;
 
-create table Student (
-   studentId INT NOT NULL auto_increment,
-   first_name VARCHAR(30) NOT NULL,
-   sur_name  VARCHAR(30) NOT NULL,
-   age     INT  default NULL,
-   PRIMARY KEY (studentId)
-);
+	@Column(name = "state_number")
+	private String state_number;
 
-Step 3:Create a mapping file that tells Hibernate how to map the specified 
-class to database tables.
+	@OneToOne(cascade = CascadeType.ALL, mappedBy = "location")
+	private Customer customer;
 
-<?xml version = "1.0" encoding = "utf-8"?>
-<!DOCTYPE hibernate-mapping PUBLIC 
-"-//Hibernate/Hibernate Mapping DTD//EN"
-"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
-
-<hibernate-mapping>
-   <class name = "Student" table = "STUDENT">
-      
-      <meta attribute = "class-description">
-         This class contains the student detail. 
-      </meta>
-      
-      <id name = "studentId" type = "int" column = "studentId">
-         <generator class="native"/>
-      </id>
-      
-      <property name = "firstName" column = "first_name" type = "string"/>
-      <property name = "surName" column = "sur_name" type = "string"/>
-      <property name = "age" column = "age" type = "int"/>
-      
-   </class>
-</hibernate-mapping>
-
-Step 4:Lastly, we'll build our application class and launch it using the main() function.
-We'll use this application to save a few Student records before performing create, read, update
-and delete operations on them.
-
-import java.util.List; 
-import java.util.Date;
-import java.util.Iterator; 
- 
-import org.hibernate.HibernateException; 
-import org.hibernate.Session; 
+}
+//main class
+import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 import org.hibernate.SessionFactory;
+import java.util.List;
 import org.hibernate.cfg.Configuration;
+import com.netsurfingzone.entity.Location;
+import com.netsurfingzone.entity.Customer;
 
-public class ManageStudent {
-   private static SessionFactory factory; 
-   public static void main(String[] args) {
-      
-      try {
-         factory = new Configuration().configure().buildSessionFactory();
-      } catch (Throwable ex) { 
-         System.err.println("Failed to create sessionFactory object." + ex);
-         throw new ExceptionInInitializerError(ex); 
-      }
-      
-      ManageStudent MS = new ManageStudent();
+public class Main {
+	public static void main(String[] args) {
+		SessionFactory factory = null;
+		Session session = null;
+		Configuration configuration = new Configuration().configure();
+		try {
 
-      /* Add few student records in database */
-      Integer empID1 = MS.addStudent("David", "Richards", 1000);
-      Integer empID2 = MS.addStudent("Jesse", "Ben", 5000);
-      Integer empID3 = MS.addStudent("Kelvin", "Wesly", 10000);
+			factory = configuration.buildSessionFactory();
+			session = factory.openSession();
+			Transaction k = session.beginTransaction();
+			
+			
+			Customer customer1 = new Customer();
+			customer1.setCustomerName("Kelvin");
+			customer1.setCustomerId("56");
+			customer1.setCustomerEmail("kelvin@gmail.com");
+			
+			Customer customer2 = new Customer();
+			customer2.setCustomerName("Joy");
+			customer2.setCustomerId("26");
+			customer2.setCustomerEmail("joy@gmail.com");
+			
+			Location location1 = new Location();
+			location1.setState("Turs");
+			location1.setStateNumber(51");
+			Location location2 = new Location();
+			location2.setState("Rouds");
+			location2.setStateNumber(45");
+			
+			
+			customer1.setLocation(location1);
+			customer2.setLocation(location2);
+			session.save(customer1);
+			session.save(customer2);
+			
+			
+			k.commit();
+		} catch (Exception e) {
+			e.printStackTrace();
 
-      /* List down all the students */
-      ME.listStudent();
+		} finally {
+            factory.close();
+			session.close();
+			
+		}
+	}
 
-      /* Update student's records */
-      ME.updateStudent(empID1, 5000);
-
-      /* Delete an student from the database */
-      ME.deleteStudent(empID2);
-
-      /* List down new list of the student */
-      ME.listStudent();
-   }
-   
-   /* Method to CREATE an Student in the database */
-   public Integer addStudent(String fname, String surname, int age){
-      Session session = factory.openSession();
-      Transaction x = null;
-      Integer studentID = null;
-      
-      try {
-         tx = session.beginTransaction();
-          Student student = new Student(fname, surname, age);
-         studentID = (Integer) session.save(student); 
-         x.commit();
-      } catch (HibernateException e) {
-         if (x!=null) x.rollback();
-         e.printStackTrace(); 
-      } finally {
-         session.close(); 
-      }
-      return studentID;
-   }
-   
-   /* Method to  READ all the student */
-   public void listStudent( ){
-      Session session = factory.openSession();
-      Transaction x = null;
-      
-      try {
-         x = session.beginTransaction();
-         List student = session.createQuery("FROM Student").list(); 
-         for (Iterator iterator =student.iterator(); iterator.hasNext();){
-            Student student = (Student) iterator.next(); 
-            System.out.print("First Name: " + student.getFirstName()); 
-            System.out.print("  SurName: " + student.geSurName()); 
-            System.out.println("  Age: " + student.getAge()); 
-         }
-         x.commit();
-      } catch (HibernateException e) {
-         if (x!=null) x.rollback();
-         e.printStackTrace(); 
-      } finally {
-         session.close(); 
-      }
-   }
-   
-   /* Method to UPDATE age for an student */
-   public void updateStudent(Integer studentID, int age ){
-      Session session = factory.openSession();
-      Transaction x = null;
-      
-      try {
-         tx = session.beginTransaction();
-         Student student = (Student)session.get(Student.class, StudentID); 
-         student.setAge( age );
-		 session.update(student); 
-         x.commit();
-      } catch(HibernateException e) {
-         if (x!=null) x.rollback();
-         e.printStackTrace(); 
-      } finally {
-         session.close(); 
-      }
-   }
-   
-   /* Method to DELETE an student from the records */
-   public void deleteStudent(Integer StudentID){
-      Session session = factory.openSession();
-      Transaction x = null;
-      
-      try {
-         x = session.beginTransaction();
-         Student student = (Student)session.get(Student.class, StudentID); 
-         session.delete(student); 
-         x.commit();
-      } catch(HibernateException e) {
-         if (x!=null) x.rollback();
-         e.printStackTrace(); 
-      } finally {
-         session.close(); 
-      }
-   }
 }
+
+
+
 
 ### Conclusion
 Hibernate is an ORM technology that is used to map database structures to Java objects in real-time.
