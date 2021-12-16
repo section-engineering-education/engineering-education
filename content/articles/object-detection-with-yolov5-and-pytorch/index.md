@@ -11,7 +11,7 @@ topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /object-detection-with-yolov5-and-pytorch/hero.jpg
+  - url: /engineering-education/object-detection-with-yolov5-and-pytorch/hero.jpg
     alt: Object Detection with YOLOv5 and PyTorch Hero Image
 ---
 Object detection is usually one of the most interesting computer vision tasks that a beginner or an enthusiast can use to jump-start their career in computer vision and artificial Intelligence.

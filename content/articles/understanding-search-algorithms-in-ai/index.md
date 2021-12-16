@@ -11,7 +11,7 @@ topics: [Artificial Intelligence]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /understanding-search-algorithms-in-ai/hero.jpg
+  - url: /engineering-education/understanding-search-algorithms-in-ai/hero.jpg
     alt: Search Algorithm Example Image
 ---
 Search algorithms are important because they solve various problems in artificial intelligence. There are various search algorithms in AI. This article takes you through search algorithms, including their importance and properties. It will also provide the classification of search algorithms and identify the popular search algorithms in AI.
