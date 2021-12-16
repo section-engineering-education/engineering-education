@@ -66,18 +66,15 @@ Here we will look at some of the machine learning algorithms.
 #### Linear regression
 Linear regression is a prominent Machine Learning method. It is a statistical forecasting method. Linear regression predicts sales, salary, age, product price, etc.
 
-A linear relationship exists between a dependent (y) and one or more independent variables (y). Since linear regression displays a linear connection, it finds how the dependent variable changes concerning the independent variable.
+A dependent (y) has a linear connection with one or more independent variables (y). Since linear regression displays a linear connection, it finds how the dependent variable changes concerning the independent variable. It shows a straight line connecting variables.:
 
-The linear regression model illustrates a sloping straight line between variables. Think about this:
+![Image 1](/engineering-education/understanding-machine-learning-algorithms-and-how-to-implement-them/image1)
 
-![Image 1](image1)
-
-Mathematically, linear regression is expressed as:
+Linear regression is stated mathematically as:
 
 ```bash
 y= a0+a1x+ ε
 ```
-where 
 
 `Y` denotes the Dependent Variable, `X` denotes an independent variable, `a0` represents the line's intercept, `a1` is the coefficient of linear regression and `ε` is an abbreviation for random error.
 
@@ -87,86 +84,33 @@ Linear regression algorithms are divided into two:
 - `Many Linear Regression predicts the value of a numerical dependent variable using `multiple independent variables.`
 
 ##### Linear Regression Line
-A regression line shows the relationship between two variables. As a consequence, a regression line may show
+This graph depicts the association between two variables. As a result, a regression line appears.
 
-- `positive linear connection`- As the Y-axis of the dependent variable rises, so does the X-axis of the independent variable.
+- `positive linear connection`- Axis of the dependent variable increases as the independent variable X rises.
 
-![Image 2](image2)
+![Image 2](/engineering-education/understanding-machine-learning-algorithms-and-how-to-implement-them/image2)
 
 - `Negative Linear Relationship` -Y drops while X rises, indicating a negative linear relationship.
 
-![Image 4](image4)
+![Image 4](/engineering-education/understanding-machine-learning-algorithms-and-how-to-implement-them/image4)
 
 ##### Choosing the best fit line
-To find the best fit line in linear regression, we minimize the difference between predicted and actual values. The best fit line.
+In linear regression, the best fit line is the one with the least anticipated and actual values. The ideal line.
 
 Using the cost function, we can find the optimum values for a0 and a1.
 
 **Cost function**
-- The cost function is used to estimate the coefficient values for the best fit line.
-- The cost function optimizes regression coefficients. It evaluates a linear regression model.
 - The cost function may be used to determine the mapping function's accuracy.These are Hypothesis functions.
+- It maximizes regression coefficients. It assesses a linear regression.
+- The cost function estimates the best fit line's coefficients.
 
-If you use linear regression, you use the MSE cost function, which is the average of the predicted and actual values. It is spelled:
+You employ the MSE cost function (average of anticipated and actual values) while using linear regression. It is spelled:
 
 The mean square error (MSE) for the linear equation above may be determined as follows:
 
-![Image 3](image3)
+![Image 3](/engineering-education/understanding-machine-learning-algorithms-and-how-to-implement-them/image3)
 
 where `N` denotes the total number of observations, `Yi` is the actual value, and `(a1xi+a0)` predicted the value.
-
-Alternatively, while using the python programming language, one can use the following code to find the best fit line.
-
-```python
-import matplotlib.pyplot as plt
-plt.scatter(X, Y)
-
-yfit = [a + b * xi for xi in X]
-plt.plot(X, yfit)
-```
-
-Let's develop a Python linear regression model.
-
-Assume you've been provided data singlevar.txt, which includes one variable. Data in this form has been broken down into several lines, each of which comprises an input value and an output value. Input parameter should be used.
-
-For a collection of points, the line of best fit is `y = a + b * x.`
-For this reason, use the following code.
-
-```python
-
-X = [0, 6, 11, 14, 22]
-Y = [1, 7, 12, 15, 21]
-
-def best_fit(X, Y):
-   xbar = sum(X)/len(X)
-   ybar = sum(Y)/len(Y)
-   n = len(X) 
-
-   numer = sum([xi*yi for xi,yi in zip(X, Y)]) - n * xbar * ybar
-   denum = sum([xi**2 for xi in X]) - n * xbar**2
-
-   b = numer / denum
-   a = ybar - b * xbar
-
-   print('best fit line:\ny = {:.2f} + {:.2f}x'.format(a, b))
-   
-   return a, b
-
-a, b = best_fit(X, Y)
-
-import matplotlib.pyplot as plt
-plt.scatter(X, Y)
-yfit = [a + b * xi for xi in X]
-plt.plot(X, yfit)
-plt.show()
-best fit line:
-y = 1.48 + 0.92x
-```
-The above code output the following 
-
-![Image 11](image11)
-
-This example uses the diabetes dataset's first feature to produce a two-dimensional regression graph. In linear regression, the residual sum of squares between observed and predicted responses is minimized by drawing a straight line.
 
 #### K-Nearest Neighbors implementation
 K-NN divides data into training and test samples. The k closest method is implemented as follows in a classification issue.
@@ -190,15 +134,15 @@ The following methods may be used to compute distance:
 
 1. Euclidian distance
 
-![Image 5](image6)
+![Image 5](/engineering-education/understanding-machine-learning-algorithms-and-how-to-implement-them/image6)
 
 2. Manhattan distance
 
-![Image 6](image6)
+![Image 6](/engineering-education/understanding-machine-learning-algorithms-and-how-to-implement-them/image6)
 
 3. Weighted distance
 
-![Image 7](image7)
+![Image 7](/engineering-education/understanding-machine-learning-algorithms-and-how-to-implement-them/image7)
 
 ##### How to pick the Weights
 The weighted distance approach may be utilized for both classification and regression issues. Assigning weights indicates the relative importance of each neighbor's contributions, with the closest neighbors receiving a higher weight, indicating a greater overall contribution.
@@ -217,7 +161,7 @@ Weighing options include:
 
 for example 
 
-![Image 8](image8)
+![Image 8](/engineering-education/understanding-machine-learning-algorithms-and-how-to-implement-them/image8)
 
 We've got N locations in D-space and one unlabeled sample q. We need to identify the point closest to q. For big N and D, the KNN method is unworkable.
 
