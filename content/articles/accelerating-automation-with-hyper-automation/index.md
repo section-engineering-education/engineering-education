@@ -11,9 +11,10 @@ topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /accelerating-automation-with-hyper-automation/hero.jpg
+  - url: /engineering-education/accelerating-automation-with-hyper-automation/hero.jpg
     alt: Hyperautomation Example Image
 ---
+
 Every organization strives to make its operations faster and more efficient. One way to achieve this is through automation. Automation has helped many organizations accomplish a given level of their desired efficiency. 
 <!--more-->
 Yet, they still want to optimize their resources and costs further. That is where hyperautomation comes in as the next better option.
