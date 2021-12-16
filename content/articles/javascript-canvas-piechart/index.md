@@ -237,11 +237,12 @@ Here is the full code:
 </html>
 ```
 
-### Further practice
 To build on this more, you can create line charts, bar charts, etc using the canvas. Note that you have to play with rotations because the canvas starts to draw from the top-left and not the bottom-left. You can also add text to the slices.
 
 ### Conclusion
-
 In a nutshell, we walked through the canvas briefly, looked at the canvas' methods we would use and the JavaScript's `reduce()` method. Lastly, we quickly created the pie using a simple JavaScript code.
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
