@@ -19,9 +19,9 @@ In this tutorial, we will perform 3D object detection using the mediapipe librar
 
 ### Prerequisites
 To follow along with this tutorial, you need to:
-- Be familiar with machine learning modelling.
+- Be familiar with machine learning modeling.
 - Be familiar with the python programming language.
-- Install either Jupyter notebook or Google colab.
+- Install either Jupyter notebook or Google Colab.
 > To follow along with this tutorial, please use Jupyter Notebook.
 
 ### Table of contents
