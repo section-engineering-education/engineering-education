@@ -45,55 +45,6 @@ dataset
 
 ![Dataset Preview](/engineering-education/how-to-implement-k-fold-cross-validation/dataset_preview.PNG)
 
-```python
-# check dataset info
-dataset.info()
-```
-
-*Output:*
-```
-    <class 'pandas.core.frame.DataFrame'>
-    RangeIndex: 569 entries, 0 to 568
-    Data columns (total 33 columns):
-     #   Column                   Non-Null Count  Dtype  
-    ---  ------                   --------------  -----  
-     0   id                       569 non-null    int64  
-     1   diagnosis                569 non-null    object 
-     2   radius_mean              569 non-null    float64
-     3   texture_mean             569 non-null    float64
-     4   perimeter_mean           569 non-null    float64
-     5   area_mean                569 non-null    float64
-     6   smoothness_mean          569 non-null    float64
-     7   compactness_mean         569 non-null    float64
-     8   concavity_mean           569 non-null    float64
-     9   concave points_mean      569 non-null    float64
-     10  symmetry_mean            569 non-null    float64
-     11  fractal_dimension_mean   569 non-null    float64
-     12  radius_se                569 non-null    float64
-     13  texture_se               569 non-null    float64
-     14  perimeter_se             569 non-null    float64
-     15  area_se                  569 non-null    float64
-     16  smoothness_se            569 non-null    float64
-     17  compactness_se           569 non-null    float64
-     18  concavity_se             569 non-null    float64
-     19  concave points_se        569 non-null    float64
-     20  symmetry_se              569 non-null    float64
-     21  fractal_dimension_se     569 non-null    float64
-     22  radius_worst             569 non-null    float64
-     23  texture_worst            569 non-null    float64
-     24  perimeter_worst          569 non-null    float64
-     25  area_worst               569 non-null    float64
-     26  smoothness_worst         569 non-null    float64
-     27  compactness_worst        569 non-null    float64
-     28  concavity_worst          569 non-null    float64
-     29  concave points_worst     569 non-null    float64
-     30  symmetry_worst           569 non-null    float64
-     31  fractal_dimension_worst  569 non-null    float64
-     32  Unnamed: 32              0 non-null      float64
-    dtypes: float64(31), int64(1), object(1)
-    memory usage: 146.8+ KB
-```
-
 The target variable is the diagnosis column. It has an index of 1. The features are all the columns except the id, diagnosis and Unnamed: 32 columns.
 
 ```python
@@ -105,7 +56,7 @@ print("--------------------------------------------------")
 print("Target Variable", y, sep='\n')
 ```
 
-*Output:*
+**Output:**
 ```
     Matrix of features
     [[1.799e+01 1.038e+01 1.228e+02 ... 2.654e-01 4.601e-01 1.189e-01]
@@ -164,7 +115,7 @@ print("Mapping of Label Encoded Classes", label_encoder_name_mapping, sep="\n")
 print("Label Encoded Target Variable", encoded_y, sep="\n")
 ```
 
-*Output:*
+**Output:**
 ```
     Mapping of Label Encoded Classes
     {'B': 0, 'M': 1}
@@ -298,7 +249,7 @@ decision_tree_result = cross_validation(decision_tree_model, X, encoded_y, 5)
 print(decision_tree_result)
 ```
 
-*Output:*
+**Output:**
 ```
 {'Training Accuracy scores': array([1., 1., 1., 1., 1.]),
 'Mean Training Accuracy': 100.0,
@@ -387,7 +338,7 @@ decision_tree_result_2 = cross_validation(decision_tree_model_2, X, encoded_y, 5
 print(decision_tree_result_2)
 ```
 
-*Output:*
+**Output:**
 ```
 {'Training Accuracy scores': array([0.99340659, 0.99340659, 1.        , 0.9956044 , 0.99342105]), 
 'Mean Training Accuracy': 99.51677270098322, 
