@@ -6,22 +6,16 @@ To have a better understanding of this article, the reader should:
 - Have basic knowledge of the python language.
 - Have [python](https://www.python.org/downloads/) installed.
 - Have [nltk](https://www.nltk.org/install.html) and its [corpus](https://www.nltk.org/data.html) installed.
-- 
+ 
 ### Table of contents
-- [ A start with Synonyms and Synsets](#understanding-nltk-synonyms-and-synsets)
+- [A start with Synonyms and Synsets](#a-start-with-synonyms-and-synsets)
 - [Understanding NLTK Hypernyms and Hyponyms](#understanding-nltk-hypernyms-and-hyponyms)
-- [A look into Meronyms and Holonyms ](#understanding-nltk-meronyms-and-holonyms)
+- [A look into Meronyms and Holonyms](#a-look-into-meronyms-and-holonyms)
 - [Understanding NLTK Entailments](#understanding-nltk-entailments)
 - [Conclusion](#conclusion)
-- 
-### Understanding NLTK Synonyms and Synsets
-All concepts in a synset have the same meaning since they are all synonyms in WordNet, which preserves synonyms in their natural form. A synset is a group of synonyms related to one another in linguistics. 
 
-It is possible to find the definition of a synset in the Synset's native language. It will be seen in the following section that the synset relationships have been preserved.
-
-In the NLTK, the Synset interface can search the WordNet database for a certain term. It is a list of words that convey the same meaning. There are an infinite number of Synsets associated with each word.
-
-A Synset can be created from a group of WordNet words that are conceptually related (short for Synonym-set). Each Synset is assigned a numerical value in addition to the names and pieces of speech it represents. A Synset is made up of these words.
+### A start with Synonyms and Synsets
+WordNet categorizes English words into groups of synonyms, which are referred to as synsets (short for set of synonyms). Every Synset contains a name, a part-of-speech ( include nouns, verbs, adverbs, and adjectives) and a number. Synsets are used to store synonyms, where each word in the synset shares the same meaning . Essentially, each synset is a collection of synonyms. Some of the words have just one Synset, while others have multiple Synsets.  Every synset has a definition associated with it. Synset make it easier for users to look up words in the WordNet database.
 
 #### 1. Getting Synsets.
 Synsets are words related to the word that you entered as an argument to wordnet.synsets("word")  can be obtained from a database using this method.
@@ -113,7 +107,7 @@ OUTPUT
 'physical objects consisting of a number of pages bound together
 ```
 #### 3. How to get Lemmas of a Synset.
-Lemma names(), on the other hand, can be used in two different ways to get an array of all the Lemma names:
+Lemmas are all the words that are in a Synset. Using the Lemma_names() method the user is able to get all lemmas of the specified synset. This method can be used in two different ways to get an array of all the Lemma names:
 
 First way
 ```python
@@ -177,8 +171,8 @@ OUTPUT
 ```bash
 [Synset('eclipse.n.01')]
 ```
-### Understanding NLTK Meronyms and Holonyms
-By using Meronyms and Holonyms, we can create a part-to-whole connection. Meronym and holonym are both used to express a portion of a bigger whole. Meronym and holonym both refer to the same thing, but in different ways. The meronym represents the half, whereas the holonym represents the whole.
+### A look into Meronyms and Holonyms
+Meronyms and Holonyms create a part-to-whole relationship. The meronym represents the half, whereas the holonym represents the whole. As you can see, the Meronym and holonym both refer to the same thing, but in different ways.
 
 For example, the word 'bedroom' is a meronym for the word home. This is because the bedroom is considered a component of the house. Likewise, the words nose, eyes, and mouth are all meronyms for the word face.
 
