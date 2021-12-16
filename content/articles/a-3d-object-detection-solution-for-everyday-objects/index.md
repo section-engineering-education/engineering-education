@@ -37,7 +37,7 @@ Over the years, object detection research has solely focused on performing 2D ob
 
 3D object detection is important as it would enable us capture object’s sizes, orientation, and position in the world. As a result, we would be able to use these 3D detections in real-world applications such as Augmented Reality (AR), self-driving cars, and robotics which perceive the world the same way we do as humans.
 
-Amazingly, Google has come up with a model that can view the world and detect objects in real world in 3-dimension. This model is known as the Objectron.
+Amazingly, Google has come up with a model that can view the world and detect real-world objects in 3-dimension. This model is known as the Objectron.
 
 ### What is the Objectron
 The Objectron is a real-time 3D object detection solution that is able to detect objects in the real world. The model first detects cropped objects in 2D images. Afterwards, it estimates their poses through a machine learning (ML) model that is trained on the [Objectron dataset](https://github.com/google-research-datasets/Objectron). It is able to create 3D bounding box around an object with `x`, `y`, and `z` coordinates. Currently, it can detect only four objects, a shoe, camera, cup, and a chair.
