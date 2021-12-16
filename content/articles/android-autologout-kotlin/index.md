@@ -408,6 +408,8 @@ This is the XML code. It contains a TextView displaying "*Hello there. You will 
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
 
+> You can find the apk file [here](https://drive.google.com/file/d/1HzbdZfBlbM2cubW230K7zcFoh47HVgxD/view?usp=sharing). The whole project is open-sourced too. Make contributions to it via this [GitHub](https://github.com/vinstex/android-autologout) link.
+
 Run the app and do some touches, scrolls, and wait 15 seconds to check the feature. Also, do the same before the seconds elapse and check. Change the numbers and check too.
 
 ### Further practice
