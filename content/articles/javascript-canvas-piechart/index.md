@@ -28,7 +28,7 @@ It is easy to position, give custom shapes and color to items in the DOM using t
 1. Scalable Vector Graphics (SVG)
 2. Canvas
 
- SVG is used to create vector graphics, as the name suggests, in XML format. This article focuses on the canvas, so we won't go further into SVG. Read more about it [here](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/svg) if you are interested in SVG. 
+ As the name suggests, SVG is used to create vector graphics in XML format. This article focuses on the canvas, so we won't go further into SVG. Read more about it [here](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/svg) if you are interested in SVG. 
  
  The second option is the canvas. A canvas is a single DOM element that gives us a way to draw shapes on a node's space using its provided drawing interface and methods. You can declare a simple canvas element as shown in the line below:
 
