@@ -25,7 +25,7 @@ To follow through this, you will be required to have a basic understanding of th
 
 ### An overview of the canvas
 It is easy to position, give custom shapes and color to items in the DOM using the CSS styling provided. Some operations, however, like drawing lines between two or more locations, are particularly difficult to accomplish with standard HTML components. That being said, there are two other options provided:
-1. SVG(Scalable Vector Graphics)
+1. Scalable Vector Graphics (SVG)
 2. Canvas
 
  SVG is used to create vector graphics, as the name suggests, in XML format. This article focuses on the canvas, so we won't go further into SVG. Read more about it [here](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/svg) if you are interested in SVG. 
