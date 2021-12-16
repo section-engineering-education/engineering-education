@@ -1,4 +1,21 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-classify-ecg-signals-using-continuous-wavelet-transform-and-alexnet-via-transfer-learning/
+title: How to Classify ECG Signals Using Continuous Wavelet Transform and AlexNet via Transfer Learning
+description: This tutorial will look at how one can use AlexNet to classify ECG signals via transfer learning in Matlab.
+author: paul-juma
+date: 2021-09-15T00:00:00-21:35
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+    - url: /engineering-education/how-to-classify-ecg-signals-using-continuous-wavelet-transform-and-alexnet-via-transfer-learning/hero.jpg
+      alt: Classifying ECG signals using continuous wavelet transform Hero Image
+---
 ECG signals represent the heart's electrical activity observed from a strategic point of the human body, characterized by Quasi-periodic voltage. AlexNet is a convolutional neural network that has eight different layers. This method is commonly used in the science sector and for image studies. 
+<!--more-->
 
 Transfer learning (TL) is a research problem in machine learning that focuses on storing knowledge gained while solving one problem and applying it to a different but related problem. For example, knowledge gained while learning to recognize cars could be used when trying to recognize trucks.
 
@@ -350,3 +367,6 @@ This is how we can train our deep CNN, a pretrained network, via transfer learni
 I hope found this tutorial helpful.
 
 Happy Coding!
+
+---
+Peer Review Contributions by: [Monica Masae](/engineering-education/authors/monica-masae/)
