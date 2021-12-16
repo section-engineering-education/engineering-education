@@ -1,33 +1,33 @@
-### Getting Started with Kernel SVM in Python.
-Kernel SVM is a class of SVM that uses kernel functions to perform the SVM. This technique is a generalization of the linear SVM. Kernel SVM offers much flexibility in a situation where we are dealing with a non-linearly separable dataset.
+### Getting Started with Kernel Support Vector Machine in Python.
+Kernel SVMs are a class of Support Vector Machines (SVMs) that use kernel functions to classify data. It is a generalization technique of the linear SVM on nonlinear data. Indeep, the Kernel SVM offers more flexibility when dealing with a linearly inseparable classification task.
 
 ### Prerequisites:
 For learners to benefit most from this material, they should be comfortable working with the scikit learn library in python. They are also encouraged to have basic knowledge of the linear SVM.
 
 ### Introduction to Kernel SVM
-Before understanding how the Kernel SVM works, we need to revisit the two linear SVM versions.
+Before understanding how this algorithm works, we need to revisit the two linear SVM versions.
 
-1. Hard SVM: According to this version, data is assumed to be perfectly linearly separable, i.e., we can classify data using a linear hyperplane such that all the data points of a class lie on the same side of the hyperplane.
+1. Hard Support Vector Machine: According to this version, data is assumed to be perfectly linearly separable, i.e., we can classify data using a linear hyperplane such that all the data points of a class lie on the same side of the hyperplane.
 
-An example of a Hard SVM is shown in the figure below.
+An example of a Hard Support Vector Machine is shown below.
 
 ![image](/engineering-education/kernel-svm-in-python/hard-margin.png)
 
 As we can see, there is no misclassification in this case.
 
-2. Soft SVM: This version is more general and can be used for non-linear separability. According to this version, data is not linearly separable but still can be classified using a linear hyperplane with minimum trade-off possible. An example of Soft SVM is shown in the figure below.
+2. Soft Support Vector Machine: This version is more general and can be used for nonlinear separability. According to this version, data is not linearly separable but still can be classified using a linear hyperplane with minimum trade-off possible. An example of Soft SVM is shown in the figure below.
 
 ![image](/engineering-education/kernel-svm-in-python/soft-margin.png)
 
 As we can see, there is minor misclassification in the case of soft SVM.
 
-Although the soft SVM can handle non-linear data with the least number of errors, there are cases where the data is highly non-linear. Therefore, it cannot obtain a hyperplane with minimum data misclassifications. An example of highly non-linear data is shown in the scatter plot below.
+Although the soft Support vector machine can handle nonlinear data with the least number of errors, there are cases in which the data is highly nonlinear. Therefore, it cannot obtain a hyperplane with minimum data misclassifications. An example of highly nonlinear data is shown in the scatter plot below.
 
 ![scatter plot](/engineering-education/kernel-svm-in-python/non-linear.png)
 
-In this kind of problem, we say data is linearly inseparable. No matter how we try to fit linear decision boundaries to the data, the model's accuracy can only be less than 50%. Thus, we cannot use linear SVM to solve this problem.
+In this kind of problem, we say data is linearly inseparable. Regardless of how we fit linear decision boundaries to the data, the model's accuracy can only be less than 50%. Thus, we cannot use linear SVM to solve this problem.
 
-In such a problem, the Kernelized form of SVM comes into play. So let us now look at kernel SVMs in detail.
+In such a problem, the Kernelized form of the Support Vector Machine comes into play. So let us now look at kernel SVMs in detail.
 
 ### Kernel SVM
 As we saw in the non-linear scatter plot above, it is impossible to classify data points using a linear hyperplane. However, if we transform the data from two-dimensional to three-dimensional, we obtain a plot similar to the figure below.
