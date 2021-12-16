@@ -15,11 +15,11 @@
 - [Conclusions](#conclusions)
 
 ### Introduction
-CRUD (Create, Read, Update, Delete) operations are composed of pages or endpoints allowing users to interact with entities stored in a database. Strapi, an open source headless CMS, connects writer's front-end with Strapi's back-end.
+CRUD (Create, Read, Update, Delete) operations are composed of pages or endpoints allowing users to interact with entities stored in a database. Strapi, an open-source headless CMS, connects the writer's front-end with Strapi's back-end.
 
-GraphQL gives engineers admittance to simply the specific information they need in a particular solicitation by utilizing only one endpoint, which gets what the front end application expects and returns exactly.
+GraphQL gives engineers admittance to simply the specific information they need in a particular solicitation by utilizing only one endpoint, which gets what the front-end application expects and returns exactly.
 
-The CRUD operations are used to modify a GraphQL service by defining types and fields of those types then provide functions for each type.
+The CRUD operations are used to modify a GraphQL service by defining types and fields of those types then providing functions for each type.
 
 ### Requirements
 
@@ -57,7 +57,7 @@ return db.students.get(args.id);
 
 } 
 
-/for each single understudy object returned,resolver is summoned 
+/for each single understudy object returned, the resolver is summoned 
 
 const Student = { 
 
@@ -89,23 +89,23 @@ input UpdatedJoule {
 }
 ```
 
-GraphQL has mostly three significant parts diagram , inquiries and resolver work. 
+GraphQL has mostly three significant parts diagram, inquiries, and resolver work. 
 
-Inquiries: It has extremely straightforward and straightforward construction used to recover information from server. 
+Inquiries: It has extremely straightforward and straightforward construction used to recover information from the server. 
 
-Diagram: Data-model of the application and its connections. It characterizes what kind of questions can be produced using customers. 
+Diagram: Data model of the application and its connections. It characterizes what kind of questions can be produced using customers. 
 
-Resolver work: Functions gets information from genuine back closes like DBs and do some business rationale on it and returns the outcome. It tends to be called transformations, as this capacity are utilized to change/update the genuine information. 
+Resolver work: Functions gets information from genuine back closes like DBs and do some business rationale on it and returns the outcome. It tends to be called transformations, as this capacity is utilized to change/update genuine information. 
 
-Some more benefits of GraphQL is designer can characterize what information they need from server. Essential approvals like information types and compulsory fields for a question are taken care of by server itself. 
+One more benefit of GraphQL is a designer can characterize what information they need from the server. Essential approvals like information types and compulsory fields for a question are taken care of by the server itself. 
 
-The following is the essential CRUD activities every one of the codes are clear as crystal. 
+The following are the essential CRUD activities every one of the codes is clear as crystal. 
 
 The following is the server.js record. Graphql end focuses gives the UI to perform 
  
- Here is an examle of CRUD operation with graphql server;
+ Here is an example of CRUD operation with graphQL server;
 
- -create operation with graphql server
+ -create an operation with graphQL server
 
  ```python
  mutation{
@@ -161,7 +161,7 @@ mutation {
 ```
 
 ### Fetching single and multiple contents
-For a single content fetching, having a large code, you nrrd to identify the conlent you need and its ID as in the main code. For instance, you need to fetch a field named "Joel" in the field type "Cleansl":
+For a single content fetching, having a large code, you need to identify the content you need and its ID as in the main code. For instance, you need to fetch a field named "Joel" in the field type "Cleanse":
 ```python
 {
   name: "Cleansl"
@@ -180,10 +180,10 @@ For a single content fetching, having a large code, you nrrd to identify the con
 }
 ```
 
-For multiple contect fetching, you need a more specified code that fetches every detail you need and the id they are registered to.
+For multiple context fetching, you need a more specified code that fetches every detail you need and the id they are registered to.
 Here is an example of a multiple content fetcher;
 ```python
-type Joe entreprise {
+type Joe enterprise {
   skip: Int!
   limit: Int!
   total: Int!
@@ -205,13 +205,13 @@ type Query {
 ```
 
 ### Implementing graphql in strapi
-Strapi is an effectively adaptable open-source headless CMS. Strapi's API can return reactions in both REST or GraphQL. In this instructional exercise, we will take a gander at how GraphQL functions in Strapi.
+Strapi is an effectively adaptable open-source headless CMS. Strapi's API can return reactions in both REST and GraphQL. In this instructional exercise, we will take a gander at how GraphQL functions in Strapi.
 
-To review the operations of graphql on strapi, it would be advisable to create a strapi project first. This command may be used to create a strapi project:
+To review the operations of graphQL on strapi, it would be advisable to create a strapi project first. This command may be used to create a strapi project:
 ```python
 npx create-strapi-app my-project --quickstart
 ```
-The command will create a new project in your browser. After the strapi browser is created, it is easy to implement graphql by following the instructions indicated below;
+The command will create a new project in your browser. After the Strapi browser is created, it is easy to implement graphql by following the instructions indicated below;
  -Pick a system to execute your GraphQL server. We'll utilize Express. 
 
  -Characterize outline so GraphQL realizes how to course approaching questions. 
@@ -220,15 +220,15 @@ The command will create a new project in your browser. After the strapi browser 
 
  -Develop an endpoint. 
 
- -Compose a customer side question that gets information.
+ -Compose a customer-side question that gets information.
 
  ### Reading and writing data in graphql
  You can read and write information straightforwardly to the Apollo Client store, without communicating with your GraphQL server. You can interface with information that you recently got from your server, and with information that is just accessible locally.
 
- Under this sub-topic, we shall focus on simple codes tha reads and writes date on graphql.
- heere is an example of the read query;
+ Under this sub-topic, we shall focus on simple codes that read and writes the date on graphQL.
+ Here is an example of the read query;
  ```python
- const READ_TODO = gql' 
+ const READ_TODO = 'gql' 
 
 question ReadTodo($id: ID!) { 
 
@@ -260,7 +260,7 @@ id: 5,
 
 });
 ```
-If the store is missing information for any of the inquiry's fields, readQuery brings invalid back. It doesn't endeavor to bring information from your GraphQL server. 
+If the store is missing information for any of the inquiry's fields, `readQuery` brings invalid back. It doesn't endeavor to bring information from your GraphQL server. 
 
 The inquiry you give readQuery can incorporate fields that are not characterized in your GraphQL server's mapping.
 
@@ -289,8 +289,8 @@ phyll.writeQuery({
 });
 ```
 
-Its important to note that;
-- Any progressions you make to reserved information with writeQuery are not pushed to your GraphQL server. In the event that you reload your current circumstance, these progressions vanish. 
+It is important to note that;
+- Any progressions you make to reserved information with `writeQuery` are not pushed to your GraphQL server. If you reload your current circumstance, these progressions vanish. 
 
 - The state of your inquiry isn't authorized by your GraphQL server's mapping: 
 
@@ -299,4 +299,6 @@ Its important to note that;
 - You can (however normally shouldn't) give esteems to pattern handles that are invalid as per your diagram.
 
 ### Conclusions
-GraphQl makes an adptable API as well as the reason why it is acquiring abiguity. the more you check out about the grapghQL and its operations, the more admirable it becomes. To execute various queries as a whole and the strapi changes using REST that is sometimes used in place of graphQL, you will have to take a great deal of time. by utilising graphQL, you can uncover CRUD operations in your information on an entirely adaptable manner. This must be amazing.
+GraphQl makes an adaptable API as well as the reason why it is acquiring ambiguity. the more you check out about the grapghQL and its operations, the more admirable it becomes. To execute various queries as a whole and the Strapi changes using REST that is sometimes used in place of graphQL, you will have to take a great deal of time. by utilizing graphQL, you can uncover CRUD operations in your information in an entirely adaptable manner. This must be amazing.
+
+Happy coding!
