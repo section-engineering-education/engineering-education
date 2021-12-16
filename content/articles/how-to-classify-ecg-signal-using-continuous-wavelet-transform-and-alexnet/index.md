@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/how-to-classify-ecg-signal-using-continuous-wavelet-transform-and-alexnet/hero.jpg
     alt: How to Classify ECG Signals Using Continuous Wavelet Transform and AlexNet Hero Image
 ---
-ECG signals represent the heart's electrical activity observed from a strategic point of the human body, characterized by Quasi-periodic voltage. AlexNet is a convolutional neural network that has eight different layers. This method is commonly used in the science sector and for image studies.
+ECG signals represent the electrical activity of the heart observed from a strategic point of the human body, characterized by Quasi-periodic voltage. AlexNet is a convolutional neural network that has eight different layers. This method is commonly used in the science sector and for image studies.
 <!--more-->
 Transfer learning (TL) is a research problem in machine learning that focuses on storing knowledge gained while solving one problem and applying it to a different but related problem.
 
