@@ -35,7 +35,7 @@ To follow along with this tutorial, you need to:
 ### Why 3D detection is important
 Over the years, object detection research has solely focused on performing 2D object detections. We've seen this with the likes of RCNN, Fast RCNN, SSD, and Masked RCNN. In the real-world, we have 3D objects. Because of this, it would be better if we had 3D bounding boxes to bound objects detected in the real world, rather than the commonly used 2D detections. 
 
-3D object detection is important as it would enable us capture object’s sizes, orientation, and position in the world. As a result, we would be able to use these 3D detections in real-world applications such as Augmented Reality (AR), self-driving cars, and robotics which perceive the world the same way we do as humans.
+3D object detection is important as it would enable us to capture objects’ sizes, orientation, and position in the world. As a result, we would be able to use these 3D detection in real-world applications such as Augmented Reality (AR), self-driving cars, and robotics which perceive the world the same way we do as humans.
 
 Amazingly, Google has come up with a model that can view the world and detect real-world objects in 3-dimension. This model is known as the Objectron.
 
