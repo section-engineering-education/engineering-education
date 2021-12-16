@@ -11,8 +11,27 @@ Choosing which to use on your dataset is subjective to your dataset, the machine
 
  In this approach, we will learn how to implement each. We will first build a prediction model without feature scaling, one with standardized features, and lastly one with Normalized features. We will also use the same dataset for the three to be able to compare how our dataset affects the choice of the technique we use.
 
+### Table of contents
+1.[Prerequisites](#prerequisites)
+
+2.[Importing the libraries](#importing-the-libraries)
+
+3.[The initial model](#1the-initial-model)
+
+4.[Using Standard Scaling](#2using-standard-scaling)
+
+5.[Using Normalization](#3using-normalization)
+
+6.[Effects of the feature scaling](#effects-of-the-feature-scaling)
+
+7.[Choosing between the two scaling techniques](#choosing-between-the-two-scaling-techniques)
+
+8.[Exceptions](#exceptions)
+
+9.[Conclusion](#conclusion)
+
 ###  Prerequisites
-You will need :
+We will need :
 1. Fundamental knowledge in Python programming language.
 2. Fundamental knowledge in Machine Learning.
 3. A python IDE. I recommend Jupyter Notebook/Jupyter Lab/google colab.
@@ -21,7 +40,7 @@ We will build models to predict if a patient was diagnosed with either disease `
 The complete code for this tutorial can also be found [here](https://colab.research.google.com/drive/1v_KegBZvxju3DxGcnsTjQcy_6lPIPG_i?usp=sharing)
 
 ###  Importing the libraries
-In your notebook, import the following and run the cell:
+In our notebook, let us import the following libraries and run the cell:
 ```python
 import pandas as pd
 import numpy as np
@@ -30,7 +49,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.svm import LinearSVC,SVC
 from sklearn.metrics import classification_report
 ```
-###  1. The initial model
+### 1.The initial model
 
 #### (i) Fetching the dataset from github
 We will use pandas to read the CSV file from the raw dataset url:
@@ -45,7 +64,7 @@ df.info()
 ```
 to check what our dataset consists of:
 
- ![df.info()](/engineering-education/effects-of-standard-scaling-on-a-machine-learning-model/df_info.JPG)
+ ![df.info()](/engineering-education/effects-of-standard-scaling-on-a-machine-learning-model/df-info.JPG)
 
  As you can see, our dataset entails 32 columns, where most are floats and one contains objects. The first 31 columns are also in a good state hence no need for replacing or removing some rows.
  We can also use :
@@ -54,7 +73,7 @@ to check what our dataset consists of:
  ```
 to have a look at the values in the first ten rows of our dataset:
 
-![fd.head(10)](/engineering-education/effects-of-standard-scaling-on-a-machine-learning-model/df_head.JPG)
+![fd.head(10)](/engineering-education/effects-of-standard-scaling-on-a-machine-learning-model/df-head.JPG)
 
 ####  (iii) Preparing the dataset
 We will now select a set of attributes that can affect the dependent variables(diagnosis) in our dataset:
@@ -77,7 +96,7 @@ If you check `y` now, you will see that it transformed into an array of `1's` an
 ```python
 print(y)
 ```
-![print(y)](/engineering-education/effects-of-standard-scaling-on-a-machine-learning-model/print_y.JPG)
+![print(y)](/engineering-education/effects-of-standard-scaling-on-a-machine-learning-model/print-y.JPG)
 
 After that we can now go ahead and split our dataset into the training set and testing set in the ratios of 30:70:
 ```python
@@ -99,13 +118,13 @@ We can then print both the prediction and testing sample and try to compare the 
 ```python
 print(y_predict)
 ```
-![print(y_predict)](/engineering-education/effects-of-standard-scaling-on-a-machine-learning-model/y_predict.JPG)
+![print(y_predict)](/engineering-education/effects-of-standard-scaling-on-a-machine-learning-model/y-predict.JPG)
 ```python
 print(y_test)
 ```
-![print(y_test)](/engineering-education/effects-of-standard-scaling-on-a-machine-learning-model/y_test.JPG)
+![print(y_test)](/engineering-education/effects-of-standard-scaling-on-a-machine-learning-model/y-test.JPG)
 
-###  2. Using Standard Scaling
+###  2.Using Standard Scaling
 We will build another model that uses `standard scaling` to level the dataset before fitting.
 ####  (i) Creating and analyzing dataframe
 Use the code below to import the dataset and read then create the second dataframe:
@@ -116,7 +135,7 @@ df1.head(10)
 ```
 Take note of how the values across the columns are distributed in a wide range. ie some are 122.80 and ,others  0.11840 :
 
-![df.head(10)](/engineering-education/effects-of-standard-scaling-on-a-machine-learning-model/df_head.JPG)
+![df.head(10)](/engineering-education/effects-of-standard-scaling-on-a-machine-learning-model/df-head.JPG)
 ####  (ii) Implementing standard scaling
 In order to scale properly, we will first collect the names of all the numerical columns in a list then use the list to fit  the standard scaler.
 ```python 
@@ -138,7 +157,7 @@ df1.head(10)
 ```
  you will notice how the range between the values has been reduced:
 
- ![df.head(10)](/engineering-education/effects-of-standard-scaling-on-a-machine-learning-model/df1_head_after.JPG)
+ ![df.head(10)](/engineering-education/effects-of-standard-scaling-on-a-machine-learning-model/df1-head-after.JPG)
 #### (iii) Spliting our dataset 
 `y1` is given diagnosis status that is already encoded in numerical form, while `X1` is assigned the same features as those of the first model.
 ```python
@@ -183,7 +202,7 @@ df2.describe()
 ```
 Take note of the values:
 
-![df2.describe()](/engineering-education/effects-of-standard-scaling-on-a-machine-learning-model/df2_before.JPG)
+![df2.describe()](/engineering-education/effects-of-standard-scaling-on-a-machine-learning-model/df2-before.JPG)
 ####  (ii) Spliting data between dependent (Y) and independent (X) variables
 Here we will select the target, features, and also label encode our non-numerical target(y2).
 ```python
@@ -202,9 +221,9 @@ Now, let us take a look at our dataset after normalization:
 X2_df = pd.DataFrame(X2)
 X2_df.describe()
 ```
-![df2.describe()](/engineering-education/effects-of-standard-scaling-on-a-machine-learning-model/df2_after.JPG)
+![df2.describe()](/engineering-education/effects-of-standard-scaling-on-a-machine-learning-model/df2-after.JPG)
 
-If compare this description to the one just above, you will notice the difference.
+If you compare this description to the one just above, you will notice the difference.
 If you check the `min` and `max` values for all the columns, they are `0` and `1` respectively. This means our features are now rescaled between 1 and zero.
 #### (iv) Splitting dataset into training and testing sets
 Now we can split our dataset into training and testing sets:
@@ -250,8 +269,9 @@ When it comes to choosing between `Normalization` and `standardization`, It depe
 As for us, `Standard Scaling` gives better results.
 
 ###  Exceptions
-1. Feature scaling is not required when using tree-based algorithms ie: Random Forest and Decision Tree. 
-2. When using Standardisation with a dataset that contains categorical data that is one-hot encoded, you should exclude the encoded columns. Not doing so might lead to your dataset losing its categorical property. 
+1.Feature scaling is not required when using tree-based algorithms ie: Random Forest and Decision Tree. 
+
+2.When using Standardisation with a dataset that contains categorical data that is one-hot encoded, you should exclude the encoded columns. Not doing so might lead to your dataset losing its categorical property. 
 
 ### Conclusion
 We have learned the importance of `feature scaling`, looked at both the `Standard Scaling` technique and `Nomarlization` technique, and learned how to implement each and compared the results of using each. 
