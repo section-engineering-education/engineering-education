@@ -1,4 +1,21 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /leveraging-gptneo-to-generate-ai--based-blog-content/
+title: Leveraging GPT-Neo to Generate AI-based Blog Content
+description: This tutorial will take you through how to build an AI-powered blog content generator using GPT-Neo.
+author: willies-ogola
+date: 2021-12-16T00:00:00-14:00
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/leveraging-gptneo-to-generate-ai--based-blog-content/hero.png
+    alt: GPT-Neo Hero Image
+---
 In this tutorial, we will take you through how to build an AI-powered blog content generator using a GPT-3 clone known as GPT-Neo.
+<!--more-->
 
 ### Prerequisites
 To follow along with this tutorial, you need to be familiar with:
@@ -128,3 +145,6 @@ Transformers allow you to quickly perform NLP tasks like question and answering,
 ### Further reading
 - [Gradio](https://gradio.app/)
 - [GPT Neo](https://github.com/EleutherAI/gpt-neo)
+
+---
+Peer Review Contributions by: [Collins Ayuya](https://www.section.io/engineering-education/authors/collins-ayuya/)
