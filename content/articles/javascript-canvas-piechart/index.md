@@ -17,6 +17,13 @@ images:
 In some cases, you may want to create a chart without any library. That means you will have to create one from scratch. We will see how to do that using JavaScript, HTML Canvas, and CSS.
 <!--more-->
 
+### Table of contents
+
+1. [Prerequisites](#prerequisites)
+2. [An overview of the canvas](#an-overview-of-the-canvas)
+3. [Drawing the pie](#drawing-the-pie)
+4. [Conclusion](#conclusion)
+
 ### Prerequisites
 To follow through this, you will be required to have a basic understanding of these:
 1. HTML
