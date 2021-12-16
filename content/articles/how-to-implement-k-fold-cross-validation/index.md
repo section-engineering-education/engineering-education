@@ -1,6 +1,6 @@
 ### How to Implement K fold Cross-Validation in Scikit-Learn
 
-In machine learning, the most common approach is to split a data set into the training set and the validation set. The splitting ratio could be 70:30 or 80:20. It is the holdout method. The problem with this approach is we are not sure if a good validation accuracy means the model is good. What if the part of the data used as validation luckily gave us a good result?  If we had used another part of the data set as a validation set, would our model still give us a good accuracy? These are some questions that K fold CV answers. The GitHub repo for this project is [here](https://github.com/Inyrkz/breast_cancer/blob/main/k_fold_cv_article_guide.ipynb).
+The most typical strategy in machine learning is to divide a data set into training and validation sets. 70:30 or 80:20 could be the split ratio. It is the holdout method. The problem with this strategy is that we don't know if a high validation accuracy indicates a good model. What if the part of the data we utilized for validation turned out to be a success? Would our model still be accurate if we used a different section of the data set as a validation set? These are some questions that K fold CV answers. The GitHub repo for this project is [here](https://github.com/Inyrkz/breast_cancer/blob/main/k_fold_cv_article_guide.ipynb).
 
 ### Prerequisites
 - Wisconsin Breast Cancer data set [here](https://www.kaggle.com/uciml/breast-cancer-wisconsin-data)
@@ -16,7 +16,7 @@ In machine learning, the most common approach is to split a data set into the tr
 - [References](#references)
 
 ### Introduction
-K fold cross-validation provides a better way of validating our model performance. It evaluates the model using different portions of the data set as the validation set in various iterations.
+K fold cross-validation is a superior technique to validate the performance of our model. It evaluates the model using different chunks of the data set as the validation set. 
 
 We divide our data set into K folds. K represents the number of folds into which you want to split your data. If we use 5-folds, the data set divides into five sections. In different iterations, one part becomes the validation set.
 
@@ -457,7 +457,7 @@ We can see that the validation results of the second model in each fold are bett
 
 
 ### Conclusion
-The K fold cross-validation technique is helpful when training a model on a small data set. You may not need to use K fold cross-validation if your data collection is huge. The reason is you have enough records in your validation set to check the machine learning model. Also, using the K fold cross-validation on a large data set will take a lot of time and resources.
+When training a model on a small data set, the K fold cross-validation technique comes in handy. You may not need to use K fold cross-validation if your data collection is huge. The reason is you have enough records in your validation set to check the machine learning model.  It takes a lot of time to use K fold cross-validation on a large data collection. 
 
 Finally, using more folds to check your model consumes more computing resources. The higher the value of K, the longer it will take to train the model. If K=5, the model trains five times using five different folds as the validation set. If K=10, the model trains ten times. 
 
