@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /building-a-sheep-wolves-grass-agent-based-model-from-scratch/
-title: Building a Sheep-Wolves-Grass Agent-Based Model from scratch using p5.js
-description: This tutorial will take you through how to create an Agent-Based Model from scratch using the Sheep-Wolves-Grass dynamics model.
+title: Building a Sheep-Wolves-Grass Agent-Based Model using p5.js
+description: This tutorial will take you through how to create an agent-based Model from scratch using the sheep-wolves-grass dynamics model.
 author: samuel-santos
-date: 2021-12-15T00:00:00-19:00
+date: 2021-12-16T00:00:00-02:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,6 +14,7 @@ images:
   - url: /engineering-education/building-a-sheep-wolves-grass-agent-based-model-from-scratch/hero.jpg
     alt: Building a Sheep-Wolves-Grass Agent-Based Model Hero image
 ---
+
 In this tutorial, we are going to create an Agent-Based Model from scratch. The model in question is the Sheep - Wolves - Grass dynamics.
 <!--more-->
 
@@ -26,23 +27,17 @@ For this tutorial, you will need:
 - [Introduction](#introduction)
 - [p5.js](#p5js)
 - [The Sheep - Wolves - Grass Model](#the-sheep---wolves---grass-model)
-    - [The agents and the mechanisms of interaction](#the-agents-and-the-mechanisms-of-interaction)
-    - [The environment](#the-environment)
 - [Step 1 - Basic Structure](#step-1---basic-structure)
 - [Step 2 - Programming the agents](#step-2---programming-the-agents)
-    - [Movement](#movement)
-        - [Wander](#wander)
-        - [Seek](#seek)
-        - [Flee](#flee)
-    - [Life and Death (and Eating too)](#life-and-death-and-eating-too)
-    - [Reproduction](#reproduction)
 - [Step 3 - Programming the environment](#step-3---programming-the-environment)
 - [Step 4 - Final tweaks and plotting](#step-4---final-tweaks-and-plotting)
 - [Conclusion](#conclusion)
 - [References](#references)
 
 ### Introduction
-There are some complex dynamics and systems that we are not able to observe. That often happens for practical or ethical reasons. In these situations, simulations are very handy. With them, we can create an artificial environment with pre-defined rules. We can then simulate a whole system in this environment and analyze how it behaves. This is a model.
+There are some complex dynamics and systems that we are not able to observe. That often happens for practical or ethical reasons. In these situations, simulations are very handy. 
+
+With them, we can create an artificial environment with pre-defined rules. We can then simulate a whole system in this environment and analyze how it behaves. This is a model.
 
 Models are abstract and simplified representations of reality. As the name implies, the purpose of models is not to faithfully reproduce a complex dynamic or system. But that doesn't imply they don't have their value. Models are powerful explanatory and predictive tools. We can extrapolate many insights from good models to real-world systems.
 
@@ -54,11 +49,10 @@ In this tutorial, we are going to create an Agent-Based Model from scratch. The 
 
 > If you are already familiar with p5.js you can skip this section. 
 
-We a going to use [p5.js, a Javascript library for creative coding,](https://p5js.org/)  to create our model. One of the applications of creative coding is to explain things visually. This is particularly interesting when we combine it with Agent-Based Models. With p5.js, we can:
-
-- create visualizations of our model's complex dynamics;
-- manipulate parameters from our model;
-- make it all very nice-looking and intuitive for non-experts.
+We a going to use [p5.js](https://p5js.org/), a Javascript library for creative coding, to create our model. One of the applications of creative coding is to explain things visually. This is particularly interesting when we combine it with Agent-Based Models. With p5.js, we can:
+- create visualizations of our model's complex dynamics
+- manipulate parameters from our model
+- make it all very nice-looking and intuitive for non-experts
 
 So, let's have a quick introduction to p5.js. The basic structure of a p5.js sketch is the following:
 
@@ -80,7 +74,6 @@ We didn't show any concrete p5.js real example yet but don't worry, we'll see it
 
 ### The Sheep - Wolves - Grass Model
 Before we start to code, we need to know better what we are going to build.  Let's define an [Agent-Based Model](https://jasss.soc.surrey.ac.uk/12/4/4.html) with 3 elements:
-
 - The **agents** and their behavior.
 - The **environment** and its influence on agents.
 - The **mechanisms of interaction** between agents.
@@ -88,14 +81,16 @@ Before we start to code, we need to know better what we are going to build.  Let
 With this, we can specify our Sheep - Wolves - Grass Model. For a reference and inspiration for this tutorial, you can look at [NetLogo's Wolf Sheep Predation model](https://ccl.northwestern.edu/netlogo/models/WolfSheepPredation).
 
 #### The agents and the mechanisms of interaction
-As the model's name says, we have only 2 agents: the **sheep** and the **wolves**. We'll start our model with a fixed number of agents of each type randomly positioned and then they will wander through the environment. At each time step, they will have a probability to reproduce, generating new agents of the same type. The agents will also have an initial amount of energy that decreases with time. When the energy gets to 0, they die. To live, the agents need to get new energy by eating.
+As the model's name says, we have only 2 agents: the **sheep** and the **wolves**. 
 
+We'll start our model with a fixed number of agents of each type randomly positioned and then they will wander through the environment. At each time step, they will have a probability to reproduce, generating new agents of the same type. 
+
+The agents will also have an initial amount of energy that decreases with time. When the energy gets to 0, they die. To live, the agents need to get new energy by eating.
 - The wolves get a fixed amount of energy by eating sheep, thus they will hunt the sheep.
 - The sheep need to flee from the wolves to survive. Besides, they get a fixed amount of energy by eating grass. This leads us to our next section.
 
 #### The environment
 Our environment is a grass field. We'll define it as a grid of squares where each square is "a unity of grass". The environment behaves this way:
-
 - When a sheep hovers over a unity of grass, she eats it.
 - When a unity of grass gets eaten, it disappears and the sheep can't get energy from that unity anymore until it regrows.
 - A unity of grass regrows after a fixed amount of time has passed.
@@ -168,7 +163,7 @@ Let's just add a link to `sketch.js` and `style.css` in the `index.html`. It sho
 </html>
 ```
 
-We can then open our `index.html` in the browser. If the web page gets stuck on *"Loading..."*, that's because we still need one more thing: a local server. In this tutorial, we are going to use the Node HTTP-server, [but there are many options you can use instead if you want to](https://github.com/processing/p5.js/wiki/Local-server). 
+We can then open our `index.html` in the browser. If the web page gets stuck on *"Loading..."*, that's because we still need one more thing: a local server. In this tutorial, we are going to use the Node HTTP-server, but there are [many options](https://github.com/processing/p5.js/wiki/Local-server) you can use instead if you want to. 
 
 If you don't have node.js installed yet, go on and [install it](https://github.com/processing/p5.js/wiki/Local-server). Then, open your terminal and type:
 
@@ -182,12 +177,14 @@ Now, we're done! `cd` into our project's directory and type:
 http-server
 ```
 
-Go to `[http://localhost:8080](http://localhost:8080)` and *yay! A gray square!!*
+Go to [http://localhost:8080](http://localhost:8080) and *yay! A gray square!!*
 
 > Note: From now on, we will need to update this page several times. If you update it and see no changes, try to update using `Ctrl + F5` or `Cmd + F5`.
 
 ### Step 2 - Programming the agents
-We have two different types of agents: the Sheep and the Wolves. But they have a lot in common, right? For example, they have an initial amount of energy; when they eat they earn more energy; they have a reproduction probability, etc. So it may be beneficial for us to create an `Agent` class and make `Sheep` and `Wolf` inherit from it.
+We have two different types of agents: the Sheep and the Wolves. But they have a lot in common, right? 
+
+For example, they have an initial amount of energy; when they eat they earn more energy; they have a reproduction probability, etc. So it may be beneficial for us to create an `Agent` class and make `Sheep` and `Wolf` inherit from it.
 
 So, let's create `agent.js` and create our `Agent` class and constructor:
 
@@ -426,7 +423,9 @@ We have three moving behaviors for our agents:
 - If a wolf is inside the vision radius of a sheep, the sheep will try to not be eaten. This is the Flee behavior;
 - When an agent is not Seeking nor Fleeing, it will walk aimlessly through the grass field. This is the Wander behavior.
 
-These behaviors are not so hard to implement. But maybe they go out of this article's scope that's about Agent-Based Models and p5.js. Happily, Daniel Shiffman from The Coding Train implemented this all and has made it available for us! Thank you, Daniel Shiffman and The Coding Train! Now we don't have to worry about our agent's movement behaviors. To understand better how it all works, you can also see the explanatory videos on [The Coding Train's YouTube channel](https://www.youtube.com/channel/UCvjgXvBlbQiydffZU7m1_aw).
+These behaviors are not so hard to implement. But maybe they go out of this article's scope that's about Agent-Based Models and p5.js. 
+
+Happily, Daniel Shiffman from The Coding Train implemented this all and has made it available for us! Thanks to him, now we don't have to worry about our agent's movement behaviors. To understand better how it all works, you can also see the explanatory videos on The Coding Train's [YouTube channel](https://www.youtube.com/channel/UCvjgXvBlbQiydffZU7m1_aw).
 
 ##### Wander
 Go to this [Github link](https://github.com/CodingTrain/website/blob/main/learning/nature-of-code/5.5-wander/main/vehicle.js) and download the `vehicle.js` to our project's directory. In `index.html` head, add a link to it before the links to our other *.js* files:
@@ -435,7 +434,9 @@ Go to this [Github link](https://github.com/CodingTrain/website/blob/main/learni
 <script language="javascript" type="text/javascript" src="vehicle.js"></script>
 ```
 
-Now, let's make our `Agent` class inherit from the `Vehicle` class we just linked. In `agent.js`, change the line `class Agent` to `class Agent extends Vehicle`. In the constructor, change the line `this.pos = createVector(x, y)` to `super(x, y)`. Don't worry about the variable `pos`, the `Vehicle` constructor we called with `super()` will declare it. Now your `Agent` class should look like this:
+Now, let's make our `Agent` class inherit from the `Vehicle` class we just linked. In `agent.js`, change the line `class Agent` to `class Agent extends Vehicle`. 
+
+In the constructor, change the line `this.pos = createVector(x, y)` to `super(x, y)`. Don't worry about the variable `pos`, the `Vehicle` constructor we called with `super()` will declare it. Now your `Agent` class should look like this:
 
 ```jsx
 class Agent extends Vehicle{
@@ -614,7 +615,7 @@ for (let i = 0; i < wolves.length; i++) {
 
 If you update the project's page now, you should see several sheep and wolves wandering through the canvas.
 
-For now, the agents are just wandering, we still need to implement the `Seek` and `Flee` behaviors. These behaviors happen when there's an overlap between an agent from a type and the vision field of an agent from another type. 
+For now, the agents are just wandering. We still need to implement the `Seek` and `Flee` behaviors. These behaviors happen when there's an overlap between an agent from a type and the vision field of an agent from another type. 
 
 ##### Seek
 The vision field of the agents is a circle of radius `visionR` that we declared before. Let's visualize this. In `sheep.js`, let's draw the vision field after `translate()`.
@@ -682,7 +683,6 @@ if (closestSheep == null) {
 ```
 
 What are we doing here:
-
 - We check if there's any sheep in the wolf's vision radius;
 - If this is true, we make the wolf seek the sheep;
 - If this is false, the wolf keeps wandering;
@@ -745,7 +745,6 @@ collideCirclePoly(circle_x, circle_y, circle_radius, [polygon_vertices])
 ```
 
 The circle coordinates are easy, we already have them. But we don't have the wolves' triangle vertices. Let's calculate it! In `wolf.js`, look at the `show()` method. We draw a triangle with the following vertices:
-
 - vertex 1: (`-this.r`, `-this.r / 2`);
 - vertex 2: (`-this.r`, `this.r / 2`);
 - vertex 3: (`this.r`, 0).
@@ -1132,7 +1131,9 @@ Start by creating `environment.js` and linking it in `index.html` head.
 <script language="javascript" type="text/javascript" src="environment.js"></script>
 ```
 
-Our environment is a grass field. We'll implement it as a square grid where each tile is a unity of grass. Let `tile_size` be the size of our tiles. Then, we have `width`/`tile_size` X `height`/`tile_size` tiles. Let's create a `width`/`tile_size` X `height`/`tile_size` matrix called `grass_sate` to represent the state of each grass tile. The possible states are `1` — there's grass in the tile — or `n` — the grass has been eaten and still needs to wait `n` time steps to regrow. If a tile of grass has been eaten by a sheep, it regrows after `growTime` time steps. The initial state of the environment is fully covered by grass, i.e., all the values in `grass_state` are `1`.
+Our environment is a grass field. We'll implement it as a square grid where each tile is a unity of grass. Let `tile_size` be the size of our tiles. Then, we have `width`/`tile_size` X `height`/`tile_size` tiles. Let's create a `width`/`tile_size` X `height`/`tile_size` matrix called `grass_sate` to represent the state of each grass tile. 
+
+The possible states are `1` — there's grass in the tile — or `n` — the grass has been eaten and still needs to wait `n` time steps to regrow. If a tile of grass has been eaten by a sheep, it regrows after `growTime` time steps. The initial state of the environment is fully covered by grass, i.e., all the values in `grass_state` are `1`.
 
 Let's create a class `Environment` in `environment.js` and implement this:
 
@@ -1406,7 +1407,7 @@ frameRate(fr)
 createCanvas(w, h)
 ```
 
-To make the plot, we are going to need grafica.js, a plotting library for p5js. Go to [grafica.js GitHub page](https://github.com/jagracar/grafica.js/tree/master/lib) and download the file `grafica.min.js` to our work directory. Add them to our project in `index.html`:
+To make the plot, we are going to need grafica.js, a plotting library for p5js. Go to grafica.js [GitHub page](https://github.com/jagracar/grafica.js/tree/master/lib) and download the file `grafica.min.js` to our work directory. Add them to our project in `index.html`:
 
 ```jsx
 <script language="javascript" type="text/javascript" src="grafica.min.js"></script>
