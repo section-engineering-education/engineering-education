@@ -5,45 +5,45 @@ Although databases are often used to store data, they are not the only way to st
 
 You can store data in a structured way inside a file. The file will allow you to write and retrieve data for use in your program.
 
-Some of the most used files are text files and JSON files.
+Some of the most used files are **Text** files and **JSON** files.
 
-### Using .txt file as a database
+### Using `.txt` file as a database
 Text files are one of the most used file formats in the world today.
 
-One of the main reason text files are used is simplicity. Text files don't require any special software to be used. They don't even require any formatting knowledge, unlike databases.
+One of the main reasons text files are used is simplicity. Text files don't require any special software to be used. They don't even require any formatting knowledge, unlike databases.
 
 Text files can be used to store all sorts of data. Mostly, they are used to store simple text that requires no special formatting. For example, a text file can be used to export a list of names, emails, or a combination of both.
 
-#### Writing data to a text file using write()
+#### Writing data to a text file using `write()`
 In Python, reading and writing text files are supported by default and require no additional libraries.
 
 To demonstrate how we can use a text file to store data, let's build a simple program that will store a list of employees in a text file.
 
 Create a new file `app.py` somewhere on your machine and open it on your code editor. 
 
-Add the following code.
+Add the following code:
 
 ```python
 employees = ['John', 'Mary', 'Bob', 'Jane']
 
-f = open('employees.txt', "a")
+file = open('employees.txt', "a")
 
 for employee in employees:
-    f.write(employee + '\n')
+    file.write(employee + '\n')
 
-f.close()
+file.close()
 ```
 
 We first create a list containing the names of employees. Then, we open a file called `employees.txt`. It's important to note that if a file with the same name already exists, items will be appended to it. If it doesn't exist, a new file will be created.
 
-We then loop through the list and write each employee's name to the file. We use the `write()` method to write to the file. We use the `\n` character to separate each employee's name with a new line.
+We then loop through the list and write each employee's name to the file using the `write()` method. We use the `\n` character to separate each employee's name with a new line.
 
 Finally, we close the file.
 
-#### Writing data to a text file using writelines()
-The `writelines()` method is similar to the `write()` method, but it takes a list of strings as an argument.
+#### Writing data to a text file using `writelines()`
+The `writelines()` method is similar to the `write()` method, only that it takes a list of strings as an argument.
 
-To demonstrate how this works, run the code below.
+To demonstrate how this works, run the code below:
 
 ```python
 items = ['John', 'Mary', 'Bob', 'Jane']
@@ -66,8 +66,8 @@ We use the `separator` function to append a newline (`/n`) to each item in the l
 
 The file is overwritten (existing content is cleared then new content is written) each time we run the program.
 
-#### Reading data from a text file using read()
-To read data from a text file, we use the `read()` method. The `read()` method returns a string containing the contents of the file.
+#### Reading data from a text file using `read()`
+To read data from a text file, we use the `read()` method. This method returns a string containing the contents of the file.
 
 ```python
 file = open('employees.txt', "r")
@@ -81,13 +81,13 @@ file.close()
 
 We open the file in read mode(`r`) and then print the content of the file.
 
-We use the `type()` method to get the type of the content. We can see that the content is a string. When we print the content, the content is broken into multiple lines. This is due to the `\n` character that we appended when writing the file.
+We use the `type()` method to get the type of the content. We can see that the content is a string. When we print the content, it is broken into multiple lines. This is due to the `\n` character that we appended when writing the file.
 
-Using the `read()` method is the best way to read files. This is because most of the time, you need to use the file content somewhere in your program.
+Using the `read()` method is not the best way to read files. This is because most of the time, you need to use the file content somewhere in your program.
 
 To fix this, we can use the `readlines()` method.
 
-#### Reading data from a text file using readlines()
+#### Reading data from a text file using `readlines()`
 The `readlines()` method returns a list of strings, each string representing a line in the file.
 
 ```python
@@ -125,12 +125,12 @@ file.close()
 
 We loop through the list appending each line to the `employees` list. You can now use this list in your program.
 
-This implementation is however quite basic. 
+This implementation is however quite basic.
 
 Assume you want to store objects in a text file. How would you do it?
 
 #### Storing objects in a text file
-To store objects in a text file, we need to convert the objects to strings before writing them to a file.
+To store objects in a text file, we need to convert them to strings before writing them to a file.
 
 ```python
 employees = [
@@ -152,7 +152,7 @@ file.close()
 
 We first create a list of dictionaries containing the employees. Then, we loop through the list and create a string for each employee.
 
-We use the `format()` method to create the string. We use the `**` operator to unpack the dictionary.
+We use the `format()` method and the `**` operator to create the string and unpack the dictionary respectively.
 
 Let's now convert this string back to its original form.
 
@@ -181,7 +181,7 @@ You can now use this list in your program.
 
 > To build, store and read large structures using text files, you might consider using the `pickle` module. It provides a way to serialize and deserialize Python objects for storage in files.
 
-If using text files feels a little messy for you, then you might consider using JSON.
+If using text files feels a little messy for you, you might consider using JSON files.
 
 ### Using a JSON file as a database
 JSON is a human-readable data format that's easy to read and is natively supported in almost all major programming languages.
@@ -198,7 +198,7 @@ JSON stores data in a key-value pair format. Here's an example of a JSON object:
 }
 ```
 
-To demonstrate how we can write to JSON files, run the code below.
+To demonstrate how we can write to JSON files, run the code below:
 
 ```python
 import json
@@ -215,7 +215,7 @@ employees = [
         "is_developer": False
     }, {
         "name": "Eric",
-        "age": 17,
+        "age": 20,
         "is_developer": True
     }
 ]
@@ -230,9 +230,9 @@ file.close()
 
 First, we create the `employees` list of dictionaries. We then use the `json.dumps()` method to convert the list to a JSON string. We then write the JSON string to a file. We use the `indent=4` parameter to format the JSON string.
 
-To read the JSON file, we use the `json.loads()` method to convert the JSON string to a list of dictionaries.
+To read the JSON file, we use the `json.loads()` method that converts the JSON string to a list of dictionaries.
 
-> It's necessary to use the `indent=4` parameter when writing JSON files. This will make the JSON file human readable.
+> It's necessary to use the `indent=4` parameter when writing JSON files. This will make the JSON file human-readable.
 
 ```python
 import json
@@ -286,15 +286,14 @@ We first read the contents of the file. Using the `json.loads()` method, we conv
 We finally write the updated employees list back to the file.
 
 ### Conclusion
-Text files can serve a variety of purposes. You can use them to store simple text and even structured data. You can parse the text files to get back the structured data, for use inside your program. 
+Text files can serve a variety of purposes. You can use them to store simple text and even structured data. You can parse the text files to get back the structured data, for use in your program.
 
 It's important to note that when parsing integers, you have to convert them back to integers using the `str()` method.
 
 JSON files can be used to store structured data in a human-readable format. They don't need parsing, as the `json` module provides a simple way to read and write JSON files.
 
-It's also important to note that you can't rely on these files when working with a high-speed application. In such cases, a database is a better choice.
+It's also important to note that you can't rely on these files when working with a high-speed application. In such cases, a database would be an optimal choice.
 
 ### Further reading
 1. [JSON encoder and decoder - Python3 Docs](https://docs.python.org/3/library/json.html#json.JSONEncoder)
 2. [Python object serialization with  Pickle- Python3 Docs](https://docs.python.org/3/library/pickle.html)
-
