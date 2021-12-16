@@ -30,7 +30,7 @@ Azure Tools for VS Code are required to allow the developers to use the commands
 
 To achieve that, we will browse to the VS Code extension manager located at the left side of the window and search for the [Azure Tools extension pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-azureextensionpack) and install it, as shown in the figure below:
 
-![Extension pack](/engineering-education/overview-of-developing-serverless-applications=in-c/azure-extensions.PNG)
+![Extension pack](/engineering-education/overview-of-developing-serverless-applications-in-c/azure-extensions.png)
 
 Next, will be to sign in to Azure by pressing the keys `CTRL+Shift+P` on the keyboard to launch a Command Palette in the VS Code editor.
 
@@ -77,7 +77,7 @@ The developer would need the following before coding Lambda functions:
 
 Next, a developer will launch Visual Studio. A `Getting Started with the AWS Toolkit for Visual Studio` window will be displayed next to the `Start Page` tab as shown below:
 
-![Getting started with AWS](/engineering-education/overview-of-developing-serverless-applications=in-c/getting-started-with-aws.PNG)
+![Getting started with AWS](/engineering-education/overview-of-developing-serverless-applications-in-c/getting-started-with-aws.png)
 
 The developer will be required to input the AWS credentials such as `Access Key` and `Secret Key`. These credentials can be retrieved by reading the steps provided in the same window.
 
@@ -85,7 +85,7 @@ Below are the steps the developer can follow when coding the Lambda function:
 - Launch a Visual Studio IDE, navigate to `File`, select the `New` option, and click on the `Project` option to create a new project.
 - Next, click on `Visual C#` then select the `AWS Lambda Project (.NET Core)` option as shown in the following figure:
 
-![New AWS project](/engineering-education/overview-of-developing-serverless-applications=in-c/aws-project.PNG)
+![New AWS project](/engineering-education/overview-of-developing-serverless-applications-in-c/aws-project.png)
 
 - Input the project name with the preferred name and click the `Ok` button. The other options should be left as default.
 - Select the Lambda project type based on project requirements.
@@ -93,7 +93,7 @@ Below are the steps the developer can follow when coding the Lambda function:
 
 It is better to note that a file with the named `aws-lambda-tools-defaults.json` will be created and displayed on the solution explorer as shown below:
 
-![JSON File](/engineering-education/overview-of-developing-serverless-applications=in-c/json-file.PNG)
+![JSON File](/engineering-education/overview-of-developing-serverless-applications-in-c/json-file.png)
 
 Note that this file is essential because the function handler and other options are set.
 
@@ -103,11 +103,11 @@ Once the code has been successfully reviewed, the next step will be to run it on
 Below are the steps to be followed:
 - In the solution explorer on the right side of the Visual Studio IDE, right-click on the project name and click on the `Publish to AWS Lambda` button as shown below:
 
-![Publish to AWS](/engineering-education/overview-of-developing-serverless-applications=in-c/aws-publish.PNG)
+![Publish to AWS](/engineering-education/overview-of-developing-serverless-applications-in-c/aws-publish.png)
 
 - Next, in the `Upload to AWS Lambda` pop up window displayed, input the function's name and click the `Next` button as demonstrated in the below figure. Note that developers can input any name based on their preferences.
 
-![AWS Upload window](/engineering-education/overview-of-developing-serverless-applications=in-c/aws-window.PNG)
+![AWS Upload window](/engineering-education/overview-of-developing-serverless-applications-in-c/aws-window.png)
 
 - Next, input a role associated with the developer AWS account on the `Advanced Function Details` window. There are more sections on this page, including VPC and the Environment section. A developer can only use the VPC section of the function to access resources available in the Amazon VPC.
 - A progress window will appear, showing the upload status once the process begins. Note that a page will appear where the developer can test the function and view logs.
